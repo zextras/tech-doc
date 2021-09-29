@@ -1,0 +1,3 @@
+Sphinx
+groundwork-sphinx-theme
+sphinx-design
