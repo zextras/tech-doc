@@ -7,6 +7,8 @@
  Welcome to Zextras Documentation Hub!
 ***************************************
 
+|
+
 .. rubric:: This page contains descriptions of all Zextras products
    and services with links to the corresponding documentation.
 
@@ -32,10 +34,10 @@ congue ac pretium bibendum, tristique ac mi.
       :text-align: center
       :class-card: sd-bg-light sd-text-black
       :class-title: sd-fs-1
-
+      
       Zextras Carbonio Enterprise
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      [[ Description of Zextras Carbonio ]]
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+      The new collaboration server with full enterprise features
       +++
       .. button-link:: http://192.168.157.66/enterprise/html/index.html
          :color: warning
@@ -49,12 +51,12 @@ congue ac pretium bibendum, tristique ac mi.
 
       Zextras Carbonio Community
       ^^^^^^^^^^^^^^^^^^^^^^^^^^
-      [[ Description of Zextras Carbonio Community ]]
+      Zextras Carbonio in its open and free version
       +++
       .. button-link::  http://192.168.157.66/carbonio/html/index.html
          :color: warning
 
-         Go to Zextras Community
+         Go to Carbonio Community docs
  
 
    .. grid-item-card::
@@ -65,7 +67,7 @@ congue ac pretium bibendum, tristique ac mi.
 
       Zextras Suite
       ^^^^^^^^^^^^^
-      [[ Description of Zextras Suite ]]
+      Zextras Suite enhances Zimbra with exclusive features 
       +++
       .. button-link:: http://192.168.157.66/suite/html/index.html
          :color: warning
@@ -80,7 +82,7 @@ congue ac pretium bibendum, tristique ac mi.
 
       Zimbra 9 OSE by Zextras
       ^^^^^^^^^^^^^^^^^^^^^^^
-      The deep knowledge of Zimbra gave us the confidence to take the responsibility of building and maintaining a professional Zimbra 9 Open Source Edition (Zimbra 9 OSE) based on Zimbra’s official repositories: welcome to the Zimbra 9 Open Source build by Zextras.
+      The Zimbra 9 Open Source Edition build by Zextras
       +++
       .. button-link:: https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html
          :color: warning
@@ -94,7 +96,7 @@ congue ac pretium bibendum, tristique ac mi.
 
        Zextras Support Portal
        ^^^^^^^^^^^^^^^^^^^^^^
-       The most efficient way to report a ZeXtras Suite issue is the one that allows both the Reporter and the ZeXtras Team to best reach their common goal: the solution of the issue. 
+       Welcome to the Zextras Support Portal - Your best place for Technical Support 
        +++
        .. button-link:: https://support.zextras.com/
           :color: warning
@@ -102,4 +104,5 @@ congue ac pretium bibendum, tristique ac mi.
           Go to Zextras Support Portal
 
 
-
+|
+|
