@@ -53,8 +53,8 @@ rst_prolog = """
 """ + open("replace.txt").read()
 
 extlinks = {
-    'carbonio': ('http://192.168.157.66/carbonio/html/%s.', None ),
-    'enterprise': ('http://192.168.157.66/enterprise/html/%s', None ),
+    'carbonio': ('/carbonio/html/%s.', None ),
+    'enterprise': ('/enterprise/html/%s', None ),
     'community': ('https://community.zextras.com/', None)
 }
 

@@ -39,7 +39,7 @@ congue ac pretium bibendum, tristique ac mi.
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
       The new collaboration server with full enterprise features
       +++
-      .. button-link:: http://192.168.157.66/enterprise/html/index.html
+      .. button-link:: /enterprise/html/index.html
          :color: warning
 
          Go to Carbonio docs
@@ -53,7 +53,7 @@ congue ac pretium bibendum, tristique ac mi.
       ^^^^^^^^^^^^^^^^^^^^^^^^^^
       Zextras Carbonio in its open and free version
       +++
-      .. button-link::  http://192.168.157.66/carbonio/html/index.html
+      .. button-link::  /carbonio/html/index.html
          :color: warning
 
          Go to Carbonio Community docs
@@ -69,7 +69,7 @@ congue ac pretium bibendum, tristique ac mi.
       ^^^^^^^^^^^^^
       Zextras Suite enhances Zimbra with exclusive features 
       +++
-      .. button-link:: http://192.168.157.66/suite/html/index.html
+      .. button-link:: /suite/html/index.html
          :color: warning
 
          Go to Zextras Suite docs

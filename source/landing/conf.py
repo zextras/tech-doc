@@ -43,8 +43,8 @@ exclude_patterns = []
 # provisional configuration, to be fixed when the final hosting has
 # been setup - change it locally to your like for tests
 extlinks = {
-    'carbonio': ('http://192.168.157.66/carbonio/html/%s.', None ),
-    'enterprise': ('http://192.168.157.66/enterprise/html/%s', None ),
+    'carbonio': ('/carbonio/html/%s.', None ),
+    'enterprise': ('/enterprise/html/%s', None ),
     'community': ('https://community.zextras.com/', None)
 }
 
