@@ -30,7 +30,7 @@ congue ac pretium bibendum, tristique ac mi.
    :gutter: 1
 
    .. grid-item-card::
-      :columns: 12
+      :columns: 6 
       :text-align: center
       :class-card: sd-bg-light sd-text-black
       :class-title: sd-fs-1
@@ -103,6 +103,16 @@ congue ac pretium bibendum, tristique ac mi.
 
           Go to Zextras Support Portal
 
+   .. grid-item-card::
+       :columns: 6
+       :text-align: center
+       :class-card: sd-bg-light sd-text-black
 
-|
-|
+       Zextras Community 
+       ^^^^^^^^^^^^^^^^^
+       Welcome to the Zextras Community 
+       +++
+       .. button-link:: https://community.zextras.com/
+          :color: warning
+
+          Go to Zextras Community
