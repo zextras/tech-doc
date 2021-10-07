@@ -6,23 +6,11 @@
 ***************************************
  Welcome to Zextras Documentation Hub!
 ***************************************
-
-|
+.. image:: img/tech-area.png
+   :width: 200
 
 .. rubric:: This page contains descriptions of all Zextras products
    and services with links to the corresponding documentation.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Quisque ex
-sapien, tristique ac mollis eu, imperdiet in elit. Nulla
-facilisi.
-
-Fusce eget leo metus. Etiam lacinia sollicitudin nisl, et
-gravida dui. Pellentesque pellentesque placerat aliquet. Nam et nisl
-ut lacus dapibus tempor. Vestibulum placerat lacus id purus sagittis
-rutrum.
-
-Maecenas et sollicitudin justo. Vestibulum ligula ipsum,
-congue ac pretium bibendum, tristique ac mi.
 
 |
 
@@ -35,12 +23,12 @@ congue ac pretium bibendum, tristique ac mi.
       :class-card: sd-bg-light sd-text-black
       :class-title: sd-fs-1
       
-      Zextras Carbonio Enterprise
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+      **Zextras Carbonio Enterprise**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
       The new collaboration server with full enterprise features
       +++
       .. button-link:: /enterprise/html/index.html
-         :color: warning
+         :color: danger
 
          Go to Carbonio docs
 
@@ -49,12 +37,12 @@ congue ac pretium bibendum, tristique ac mi.
       :text-align: center
       :class-card: sd-bg-light sd-text-black
 
-      Zextras Carbonio Community
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      **Zextras Carbonio Community**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
       Zextras Carbonio in its open and free version
       +++
       .. button-link::  /carbonio/html/index.html
-         :color: warning
+         :color: danger
 
          Go to Carbonio Community docs
  
@@ -65,12 +53,12 @@ congue ac pretium bibendum, tristique ac mi.
       :class-card: sd-bg-light sd-text-black
       :class-title: sd-fs-2
 
-      Zextras Suite
-      ^^^^^^^^^^^^^
+      **Zextras Suite**
+      ^^^^^^^^^^^^^^^^^
       Zextras Suite enhances Zimbra with exclusive features 
       +++
       .. button-link:: /suite/html/index.html
-         :color: warning
+         :color: danger
 
          Go to Zextras Suite docs
 
@@ -80,12 +68,12 @@ congue ac pretium bibendum, tristique ac mi.
       :class-card: sd-bg-light sd-text-black
       :class-title: sd-fs-3
 
-      Zimbra 9 OSE by Zextras
-      ^^^^^^^^^^^^^^^^^^^^^^^
+      **Zimbra 9 OSE by Zextras**
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
       The Zimbra 9 Open Source Edition build by Zextras
       +++
       .. button-link:: https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html
-         :color: warning
+         :color: danger
 
          Go to Zimbra 9 OSE docs
 
@@ -94,12 +82,12 @@ congue ac pretium bibendum, tristique ac mi.
        :text-align: center
        :class-card: sd-bg-light sd-text-black
 
-       Zextras Support Portal
-       ^^^^^^^^^^^^^^^^^^^^^^
+       **Zextras Support Portal**
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^
        Welcome to the Zextras Support Portal - Your best place for Technical Support 
        +++
        .. button-link:: https://support.zextras.com/
-          :color: warning
+          :color: danger
 
           Go to Zextras Support Portal
 
@@ -108,11 +96,13 @@ congue ac pretium bibendum, tristique ac mi.
        :text-align: center
        :class-card: sd-bg-light sd-text-black
 
-       Zextras Community 
-       ^^^^^^^^^^^^^^^^^
+       **Zextras Community** 
+       ^^^^^^^^^^^^^^^^^^^^^
        Welcome to the Zextras Community 
        +++
        .. button-link:: https://community.zextras.com/
-          :color: warning
+          :color: danger
 
           Go to Zextras Community
+
+|
