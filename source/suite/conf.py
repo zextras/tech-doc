@@ -19,7 +19,7 @@ current_year = time.strftime('%Y')
 
 # -- Project information -----------------------------------------------------
 
-project = 'Zextras Carbonio Community'
+project = 'Zextras Suite'
 copyright = '2021, The Zextras Team'
 author = 'The Zextras Team'
 
@@ -40,12 +40,15 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = [ 'includes' ]
 
 rst_prolog = """
 
 .. note:: All content is provisional and is meant **only** to showcase
    the feature of the new framework.
+
+.. role:: red
+.. role:: green
 
 """ + open("replace.txt").read()
 
@@ -69,11 +72,11 @@ html_favicon = 'img/favicon.png'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = [ 'css/community.css' ]
+html_css_files = [ 'css/suite.css' ]
 html_logo = 'img/zextras_white.svg'
 
 
-# html_theme_options = {
-#     'sticky_navigation': True,
-#     'logo_only': True
-# }
+html_theme_options = {
+    'style_nav_header_background': '#2B55BD',
+#    'logo_only': True
+}

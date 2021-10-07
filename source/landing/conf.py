@@ -10,22 +10,20 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
-import sys
+# import os
+# import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
-import time
-current_year = time.strftime('%Y')
 
 # -- Project information -----------------------------------------------------
 
-project = 'Zextras Carbonio Community'
+project = 'Zextras Documentation Hub'
 copyright = '2021, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1-alpha'
-
+root_doc = 'home'
 
 # -- General configuration ---------------------------------------------------
 
@@ -42,38 +40,27 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-rst_prolog = """
-
-.. note:: All content is provisional and is meant **only** to showcase
-   the feature of the new framework.
-
-""" + open("replace.txt").read()
-
+# provisional configuration, to be fixed when the final hosting has
+# been setup - change it locally to your like for tests
 extlinks = {
     'carbonio': ('http://192.168.157.66/carbonio/html/%s.', None ),
     'enterprise': ('http://192.168.157.66/enterprise/html/%s', None ),
     'community': ('https://community.zextras.com/', None)
 }
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
-html_show_sourcelink = False
-html_favicon = 'img/favicon.png'
+# using a custom theme to get rid of sidebar and have a minimalistic
+# output. Theme configuration can be found in theme/theme.conf
+html_theme = 'theme'
+html_theme_path = [ '.' ]
 
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
-html_css_files = [ 'css/community.css' ]
+# This does not seemingly  work, so not including it in the build.
+#html_js_files =  [ 'js/tabs.js' ]
 html_logo = 'img/zextras_white.svg'
+html_show_sphinx = False
 
-
-# html_theme_options = {
-#     'sticky_navigation': True,
-#     'logo_only': True
-# }
+#html_theme_options = {}
