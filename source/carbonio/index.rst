@@ -7,11 +7,11 @@
  Welcome to |community| Documentation!
 ********************************************
 
-.. rubric:: |community| Technical Documentation
+This is the documentation of |community| edition, whose features are
+shared with the |enterprise| Edition. Functionalities available on
+|enterprise| only are described in :enterprise:`Carbonio Extras <extras.html>`
 
-This is the documentation of |community| edition.
-
-|enterprise| Edition has a `dedicated page <../../enterprise/html/index.html>`_.
+|enterprise| Edition has a :enterprise:`dedicated documentation <index.html>`.
 
 .. toctree::
    :maxdepth: 2

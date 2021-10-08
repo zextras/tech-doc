@@ -32,8 +32,7 @@ release = '0.1-alpha'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ 'sphinx_design'
-]
+extensions = [ 'sphinx_design', 'sphinx.ext.extlinks' ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -45,8 +44,17 @@ exclude_patterns = []
 
 rst_prolog = """
 
-.. role:: foo
+.. note:: All content is provisional and is meant **only** to showcase
+   the feature of the new framework.
+
 """ + open("replace.txt").read()
+
+extlinks = {
+    'carbonio': ('/carbonio/html/%s.', None ),
+    'enterprise': ('/enterprise/html/%s', None ),
+    'community': ('https://community.zextras.com/', None)
+}
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -61,7 +69,7 @@ html_favicon = 'img/favicon.png'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-
+html_css_files = [ 'css/enterprise.css' ]
 html_logo = 'img/zextras_white.svg'
 
 

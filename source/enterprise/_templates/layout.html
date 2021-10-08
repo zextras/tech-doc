@@ -1,14 +1,12 @@
 {% extends "!layout.html" %}
-  {% block footer %} {{ super() }}
-
-  <style>
-    /* Sidebar header (and topbar for mobile) */
-    .wy-side-nav-search, .wy-nav-top {
-      background: #00506D;
-    }
-    /* Sidebar */
-    .wy-nav-side {
-      background: #00506D;
-    }
-  </style>
+{% block menu %}
+  {{ super() }}
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
 {% endblock %}

@@ -23,14 +23,15 @@ This is the documentation of |enterprise| edition.
 .. toctree::
    :maxdepth: 2
    :caption:  Admin:
-   
+
    administration
    management
-  
+
 .. toctree::
    :maxdepth: 2
    :caption:  Use:
- 
+
+   extras
    usage
    deep-view
    glossary

@@ -1,2 +1,3 @@
 .. |community|  replace:: Zextras Carbonio Community
 .. |enterprise|  replace:: Zextras Carbonio Enterprise
+.. |suite| replace:: Zextras Suite

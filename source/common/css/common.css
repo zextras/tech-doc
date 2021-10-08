@@ -1,0 +1,21 @@
+/* This file contains CSS styles shared by all Zextras products - (C)
+   2021 Zextras */
+
+/* Custom roles */
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+/* Width of the text content */
+.wy-nav-content {
+    max-width: 1200px;
+}
+
+/* Width of logo on the upper left corner */
+.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
+    width:300px}
