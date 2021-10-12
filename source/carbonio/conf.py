@@ -19,7 +19,7 @@ current_year = time.strftime('%Y')
 
 # -- Project information -----------------------------------------------------
 
-project = 'Zextras Carbonio Community'
+project = 'Zextras Carbonio CE'
 copyright = '2021, The Zextras Team'
 author = 'The Zextras Team'
 
@@ -49,12 +49,6 @@ rst_prolog = """
 
 """ + open("replace.txt").read()
 
-extlinks = {
-    'carbonio': ('/carbonio/html/%s.', None ),
-    'enterprise': ('/enterprise/html/%s', None ),
-    'community': ('https://community.zextras.com/', None)
-}
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -63,7 +57,6 @@ extlinks = {
 #
 html_theme = 'sphinx_rtd_theme'
 html_show_sourcelink = False
-html_favicon = 'img/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -71,6 +64,7 @@ html_favicon = 'img/favicon.ico'
 html_static_path = ['_static']
 html_css_files = [ 'css/community.css' ]
 html_logo = 'img/zextras_white.svg'
+html_favicon = 'img/favicon.ico'
 
 
 # html_theme_options = {
