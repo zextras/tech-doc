@@ -2,13 +2,14 @@
 @import url("common.css");
 
 body {
-    background-color: #222;
+    background-color: white;
     margin: 0;
     padding: 0;
     font-family: 'Lato','proxima-nova','Helvetica Neue','Arial', sans-serif;
     /* font-family:'Georgia', serif; */
     font-size: 15px;
     color: #eee;
+    max-width: 1200px;
 }
 
 div.footer {
@@ -37,6 +38,7 @@ div.footer a {
     border-bottom: 1px solid black;
     padding: 0 15px 0 15px;
     margin: 0;
+    text-align: center;
 }
 
 h1 {
