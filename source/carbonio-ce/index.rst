@@ -9,9 +9,10 @@
 
 This is the documentation of |community| edition, whose features are
 shared with the |enterprise| Edition. Functionalities available on
-|enterprise| only are described in :enterprise:`Carbonio Extras <extras.html>`
+|enterprise| only are described in :carbonio:`Carbonio Advanced
+Features <advanced.html>`.
 
-|enterprise| Edition has a :enterprise:`dedicated documentation <index.html>`.
+|enterprise| has a :carbonio:`dedicated documentation <index.html>`.
 
 .. toctree::
    :maxdepth: 2

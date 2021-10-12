@@ -9,9 +9,9 @@
 
 .. rubric:: |enterprise| Technical Documentation
 
-This is the documentation of |enterprise| edition.
+This is the documentation of |enterprise|.
 
-|community| Edition has a `dedicated page <../../carbonio/html/index.html>`_.
+|community| has a `dedicated page <../../carbonio-ce/html/index.html>`_.
 
 .. toctree::
    :maxdepth: 2
@@ -31,7 +31,7 @@ This is the documentation of |enterprise| edition.
    :maxdepth: 2
    :caption:  Use:
 
-   extras
+   advanced
    usage
    deep-view
    glossary

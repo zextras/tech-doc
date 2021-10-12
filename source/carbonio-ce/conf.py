@@ -49,6 +49,11 @@ rst_prolog = """
 
 """ + open("replace.txt").read()
 
+extlinks = {
+    'carbonio': ('/carbonio/html/%s', None ),
+    'ce': ('/carbonio-ce/html/%s', None ),
+    'community': ('https://community.zextras.com/', None)
+}
 
 # -- Options for HTML output -------------------------------------------------
 
