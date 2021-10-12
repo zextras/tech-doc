@@ -16,7 +16,7 @@
 
 /* Width of the text content */
 .wy-nav-content {
-    max-width: 1200px;
+    max-width: inherit;
 }
 
 /* Width of logo on the upper left corner */

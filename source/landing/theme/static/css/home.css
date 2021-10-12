@@ -9,7 +9,7 @@ body {
     /* font-family:'Georgia', serif; */
     font-size: 15px;
     color: #eee;
-    max-width: 1200px;
+    max-width: inherit;
 }
 
 div.footer {

@@ -77,6 +77,6 @@ html_logo = 'img/zextras_white.svg'
 
 
 html_theme_options = {
-#    'style_nav_header_background': '#2B55BD',
+    'style_nav_header_background': '#00506d',
 #    'logo_only': True
 }
