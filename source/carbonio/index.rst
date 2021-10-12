@@ -24,6 +24,7 @@ shared with the |enterprise| Edition. Functionalities available on
    :maxdepth: 2
    :caption:  Admin:
    
+   administration
    management
   
 .. toctree::
@@ -31,4 +32,5 @@ shared with the |enterprise| Edition. Functionalities available on
    :caption:  Use:
  
    usage
+   deep-view
    glossary

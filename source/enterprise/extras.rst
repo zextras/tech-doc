@@ -1,6 +1,6 @@
-=================
- Carbonio Extras
-=================
+=====================================
+ Carbonio Extras (Advanced Features)
+=====================================
 
 Carbonio-extras package includes the following functionalities, provided by Zextras.
 
