@@ -6,103 +6,57 @@
 ***************************************
  Welcome to Zextras Documentation Hub!
 ***************************************
-.. image:: img/tech-area.png
-   :width: 200
 
-.. rubric:: This page contains descriptions of all Zextras products
-   and services with links to the corresponding documentation.
+.. rubric:: Here you will find all the documentation related to Zextras solutions and services
 
 |
+.. panels::
 
-.. grid::
-   :gutter: 1
-
-   .. grid-item-card::
-      :columns: 6 
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
-      :class-title: sd-fs-1
-      
-      **Zextras Carbonio**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+    .. link-button:: /carbonio/html/index.html 
+        :text: Carbonio
+        :classes: stretched-link
+        +++
       The new collaboration server with full enterprise features
-      +++
-      .. button-link:: /carbonio/html/index.html
-         :color: danger
 
-         Go to Carbonio docs
+   ---
 
-   .. grid-item-card::
-      :columns: 6
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
+    .. link-button:: /carbonio-ce/html/index.html 
+        :text: Carbonio CE
+        :classes: stretched-link
+        +++ 
+     Zextras Carbonio Community Edition, the open and free version
 
-      **Zextras Carbonio CE**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      Zextras Carbonio Community Edition, the open and free version
-      +++
-      .. button-link::  /carbonio-ce/html/index.html
-         :color: danger
+   ---
 
-         Go to Carbonio Community docs
- 
+    .. link-button:: /suite/html/index.html 
+        :text: Zextras Suite
+        :classes: stretched-link
+        +++ 
+     Zextras Suite enhances Zimbra with exclusive features
 
-   .. grid-item-card::
-      :columns: 6
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
-      :class-title: sd-fs-2
+   ---
 
-      **Zextras Suite**
-      ^^^^^^^^^^^^^^^^^
-      Zextras Suite enhances Zimbra with exclusive features 
-      +++
-      .. button-link:: /suite/html/index.html
-         :color: danger
+    .. link-button:: https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html 
+        :text: Zimbra 9 OSE docs
+        :classes: stretched-link
+        +++ 
+     The Zimbra 9 Open Source Edition build by Zextras
 
-         Go to Zextras Suite docs
+   ---
 
-   .. grid-item-card::
-      :columns: 6
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
-      :class-title: sd-fs-3
+    .. link-button:: https://support.zextras.com/ 
+        :text: Support
+        :classes: stretched-link
+        +++  
+     Zextras Support Portal - Your best place for Technical Support
 
-      **Zimbra 9 OSE by Zextras**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      The Zimbra 9 Open Source Edition build by Zextras
-      +++
-      .. button-link:: https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html
-         :color: danger
+   ---
 
-         Go to Zimbra 9 OSE docs
+    .. link-button:: https://community.zextras.com/ 
+        :text: Community
+        :classes: stretched-link
+        +++  
+     Tips & tricks, Zextras products and more!
 
-   .. grid-item-card::
-       :columns: 6
-       :text-align: center
-       :class-card: sd-bg-light sd-text-black
-
-       **Zextras Support Portal**
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^
-       Welcome to the Zextras Support Portal - Your best place for Technical Support 
-       +++
-       .. button-link:: https://support.zextras.com/
-          :color: danger
-
-          Go to Zextras Support Portal
-
-   .. grid-item-card::
-       :columns: 6
-       :text-align: center
-       :class-card: sd-bg-light sd-text-black
-
-       **Zextras Community** 
-       ^^^^^^^^^^^^^^^^^^^^^
-       Welcome to the Zextras Community 
-       +++
-       .. button-link:: https://community.zextras.com/
-          :color: danger
-
-          Go to Zextras Community
-
+|
 |
