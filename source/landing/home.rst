@@ -23,11 +23,11 @@
       :class-card: sd-bg-light sd-text-black
       :class-title: sd-fs-1
       
-      **Zextras Carbonio Enterprise**
+      **Zextras Carbonio**
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
       The new collaboration server with full enterprise features
       +++
-      .. button-link:: /enterprise/html/index.html
+      .. button-link:: /carbonio/html/index.html
          :color: danger
 
          Go to Carbonio docs
@@ -37,11 +37,11 @@
       :text-align: center
       :class-card: sd-bg-light sd-text-black
 
-      **Zextras Carbonio Community**
+      **Zextras Carbonio CE**
       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      Zextras Carbonio in its open and free version
+      Zextras Carbonio Community Edition, the open and free version
       +++
-      .. button-link::  /carbonio/html/index.html
+      .. button-link::  /carbonio-ce/html/index.html
          :color: danger
 
          Go to Carbonio Community docs

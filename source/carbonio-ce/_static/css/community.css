@@ -1,13 +1,13 @@
 @import url("common.css");
 
 .wy-nav-side {
-    background: #27AADC;
+    background: var(--zx-brand);
 }
 
 .caption-text {
     color: #5C5555;
 }
 .wy-side-nav-search {
-    background: #27AADC;
+    background: var(--zx-brand);
 }
 

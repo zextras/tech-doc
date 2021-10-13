@@ -61,6 +61,7 @@ html_theme_path = [ '.' ]
 # This does not seemingly  work, so not including it in the build.
 #html_js_files =  [ 'js/tabs.js' ]
 html_logo = 'img/zextras_white.svg'
+html_favicon = 'img/favicon.ico'
 html_show_sphinx = False
 
 #html_theme_options = {}

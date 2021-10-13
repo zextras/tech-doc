@@ -2,8 +2,6 @@
  Carbonio Installation
 =======================
 
-This page guides you in the installation of |community|.
-
 System Requirements
 ===================
 
@@ -13,6 +11,7 @@ Software Components
 Single-Server Installation
 ==========================
 
+.. _multi-server-install:
 
-Multi-server Installation
+Multi-Server Installation
 =========================

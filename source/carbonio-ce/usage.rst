@@ -6,5 +6,5 @@
 Webmail
 =======
 
-Mobile clients: Mail, Files, Chat
-=================================
+Mobile clients: Mail
+====================

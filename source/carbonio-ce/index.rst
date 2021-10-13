@@ -4,14 +4,15 @@
    contain the root `toctree` directive.
 
 ********************************************
- Welcome to |enterprise| Documentation!
+ Welcome to |community| Documentation!
 ********************************************
 
-.. rubric:: |enterprise| Technical Documentation
+This is the documentation of |community| edition, whose features are
+shared with the |enterprise| Edition. Functionalities available on
+|enterprise| only are described in :carbonio:`Carbonio Advanced
+Features <advanced.html>`.
 
-This is the documentation of |enterprise| edition.
-
-|community| Edition has a `dedicated page <../../carbonio/html/index.html>`_.
+|enterprise| has a :carbonio:`dedicated documentation <index.html>`.
 
 .. toctree::
    :maxdepth: 2
@@ -23,15 +24,14 @@ This is the documentation of |enterprise| edition.
 .. toctree::
    :maxdepth: 2
    :caption:  Admin:
-
+   
    administration
    management
-
+  
 .. toctree::
    :maxdepth: 2
    :caption:  Use:
-
-   extras
+ 
    usage
    deep-view
    glossary
