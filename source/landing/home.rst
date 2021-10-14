@@ -13,8 +13,11 @@
 .. grid::
    :gutter: 3
 
+   .. grid-item::
+      :columns: 2
+
    .. grid-item-card::
-      :columns: 6
+      :columns: 4
       :shadow: sm
 
       .. button-link:: /carbonio/html/index.html
@@ -22,13 +25,12 @@
 
          Carbonio
 
-
       +++
 
       The new collaboration server with full enterprise features
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 4
       :shadow: sm
 
       .. button-link:: /carbonio-ce/html/index.html
@@ -40,8 +42,14 @@
 
       Zextras Carbonio Community Edition, the open and free version
 
+   .. grid-item::
+      :columns: 2
+
+   .. grid-item::
+      :columns: 2
+
    .. grid-item-card::
-      :columns: 6
+      :columns: 4
       :shadow: sm
 
       .. button-link:: /suite/html/index.html
@@ -53,9 +61,8 @@
 
       Zextras Suite enhances Zimbra with exclusive features
 
-
    .. grid-item-card::
-      :columns: 6
+      :columns: 4
       :shadow: sm
 
       .. button-link::  https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html
@@ -67,9 +74,14 @@
 
       The Zimbra 9 Open Source Edition build by Zextras
 
+   .. grid-item::
+      :columns: 2
+
+   .. grid-item::
+      :columns: 2
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 4
       :shadow: sm
 
       .. button-link:: https://support.zextras.com/
@@ -81,9 +93,8 @@
 
       Zextras Support Portal - Your best place for Technical Support
 
-
    .. grid-item-card::
-      :columns: 6
+      :columns: 4
       :shadow: sm
 
       .. button-link::  https://community.zextras.com/
