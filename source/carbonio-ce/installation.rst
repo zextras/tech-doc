@@ -19,12 +19,32 @@ Before attempting the installation of |community| you need:
 .. dropdown:: A supported Linux server distribution
 
    It is assumed that you have already set up and configured a Linux
-   server and have access as the ``root`` user to it. 
+   server and have access as the ``root`` user to it.
 
    Supported Linux distributions are **Ubuntu**, **CentOS**, or
    **Redhat**.
 
-   .. note:: Make sure that the system is up-to-date.
+   Make sure that the system is up-to-date.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+
+         Run as the ``root`` user these commands.
+
+         .. code:: bash
+
+            # apt-get update --fix-missing
+            # apt-get update
+            # apt-get -y upgrade
+
+      .. tab-item:: Centos/RedHat
+
+         Run as the ``root`` user these commands.
+
+         .. code:: bash
+
+            # dnf upgrade
 
 .. dropdown:: To install required software packages
 
@@ -32,6 +52,7 @@ Before attempting the installation of |community| you need:
 
    * **gnupg2**
    * **ca-certificates**
+   * **dnsmasq**
 
    Use the following command as the `root` user to install them.
 
@@ -43,15 +64,15 @@ Before attempting the installation of |community| you need:
 
          .. code:: bash
 
-            # apt install gnupg2 ca-certificates
+            # apt install gnupg2 ca-certificates dnsmasq
 
          .. code:: bash
 
-            # apt-get install gnupg2 ca-certificates
+            # apt-get install gnupg2 ca-certificates dnsmasq
 
          .. code:: bash
 
-            # aptitude install gnupg2 ca-certificates
+            # aptitude install gnupg2 ca-certificates dnsmasq
 
       .. tab-item:: Centos/RedHat
 
@@ -59,11 +80,18 @@ Before attempting the installation of |community| you need:
 
          .. code:: bash
 
-            # yum install gnupg2 ca-certificates
+            # yum install gnupg2 ca-certificates dnsmasq
 
          .. code:: bash
 
-            # dnf install gnupg2 ca-certificates
+            # dnf install gnupg2 ca-certificates dnsmasq
+
+   To configure dnsmasq, execute this command, the same on all
+   systems:
+
+   .. code:: bash
+
+      echo -e  '127.0.0.1 localhost \n'$(hostname -I) 'carbonio.loc carbonio' >> /etc/hosts
 
 .. dropdown:: Credentials to access |zx| repository
 
@@ -89,7 +117,7 @@ Before attempting the installation of |community| you need:
          Safely skip to next step.
 
 .. dropdown:: To setup |zx| repository
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu
@@ -116,18 +144,17 @@ Before attempting the installation of |community| you need:
             gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
 
 .. dropdown:: The public |zx| GPG signing key
-   :open:
 
    The last step is to import |zx| GPG key. This step is not necessary
    on CentOS/RedHat, as the GPG key is part of the repository configuration.
- 
+
    .. tab-set::
-      
+
       .. tab-item:: Ubuntu
 
          Import the GPG key with this command.
-         
-         .. code:: bash 
+
+         .. code:: bash
 
             # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
 
@@ -152,24 +179,25 @@ To install |community| on a Single-Server setup, execute the following
 commands.
 
 .. tab-set::
-      
+
    .. tab-item:: Ubuntu
 
       Update the list of available packages, then install the
       packages:
-         
-      .. code:: bash 
 
-            # apt-get update && apt-get install carbonio-ce
+      .. code:: bash
+
+         # apt-get update && apt-get install carbonio-ce
 
    .. tab-item:: CentOS/RedHat
 
       Update the list of available packages, then install the
       packages:
 
-      .. code:: bash 
+      .. code:: bash
 
-         dnf install carbonio-ce
+         # dnf-update
+         # dnf install carbonio-ce
 
 
 .. _multi-server-install:
