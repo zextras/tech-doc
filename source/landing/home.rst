@@ -9,54 +9,88 @@
 
 .. rubric:: Here you will find all the documentation related to Zextras solutions and services
 
-|
-.. panels::
 
-    .. link-button:: /carbonio/html/index.html 
-        :text: Carbonio
-        :classes: stretched-link
-        +++
+.. grid::
+   :gutter: 3
+
+   .. grid-item-card::
+      :columns: 6
+      :shadow: sm
+
+      .. button-link:: /carbonio/html/index.html
+         :click-parent:
+
+         Carbonio
+
+
+      +++
+
       The new collaboration server with full enterprise features
 
-   ---
+   .. grid-item-card::
+      :columns: 6
+      :shadow: sm
 
-    .. link-button:: /carbonio-ce/html/index.html 
-        :text: Carbonio CE
-        :classes: stretched-link
-        +++ 
-     Zextras Carbonio Community Edition, the open and free version
+      .. button-link:: /carbonio-ce/html/index.html
+         :click-parent:
 
-   ---
+         Carbonio CE
 
-    .. link-button:: /suite/html/index.html 
-        :text: Zextras Suite
-        :classes: stretched-link
-        +++ 
-     Zextras Suite enhances Zimbra with exclusive features
+      +++
 
-   ---
+      Zextras Carbonio Community Edition, the open and free version
 
-    .. link-button:: https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html 
-        :text: Zimbra 9 OSE docs
-        :classes: stretched-link
-        +++ 
-     The Zimbra 9 Open Source Edition build by Zextras
+   .. grid-item-card::
+      :columns: 6
+      :shadow: sm
 
-   ---
+      .. button-link:: /suite/html/index.html
+         :click-parent:
 
-    .. link-button:: https://support.zextras.com/ 
-        :text: Support
-        :classes: stretched-link
-        +++  
-     Zextras Support Portal - Your best place for Technical Support
+         Zextras Suite
 
-   ---
+      +++
 
-    .. link-button:: https://community.zextras.com/ 
-        :text: Community
-        :classes: stretched-link
-        +++  
-     Tips & tricks, Zextras products and more!
+      Zextras Suite enhances Zimbra with exclusive features
 
-|
-|
+
+   .. grid-item-card::
+      :columns: 6
+      :shadow: sm
+
+      .. button-link::  https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html
+         :click-parent:
+
+         Zimbra 9 OSE docs
+
+      +++
+
+      The Zimbra 9 Open Source Edition build by Zextras
+
+
+   .. grid-item-card::
+      :columns: 6
+      :shadow: sm
+
+      .. button-link:: https://support.zextras.com/
+         :click-parent:
+
+         Support
+
+      +++
+
+      Zextras Support Portal - Your best place for Technical Support
+
+
+   .. grid-item-card::
+      :columns: 6
+      :shadow: sm
+
+      .. button-link::  https://community.zextras.com/
+         :click-parent:
+
+         Community
+
+      +++
+
+      Tips & tricks, Zextras products and more!

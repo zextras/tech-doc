@@ -425,3 +425,7 @@ div.math p {
 span.eqno {
     float: right;
 }
+
+.sd-card-footer {
+    background-color: #E8E8E8 !important;
+}
