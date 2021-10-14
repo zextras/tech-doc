@@ -18,8 +18,9 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Documentation Hub'
-copyright = '2021, The Zextras Team'
+copyright = '2021, Zextras'
 author = 'The Zextras Team'
+logo_color = 'img/zextras_colors.png'
 
 # The full version, including alpha/beta/rc tags
 release = '0.1-alpha'
@@ -57,6 +58,7 @@ extlinks = {
 # output. Theme configuration can be found in theme/theme.conf
 html_theme = 'theme'
 html_theme_path = [ '.' ]
+html_static_path = ['img/zextras_colors.svg']
 
 # This does not seemingly  work, so not including it in the build.
 #html_js_files =  [ 'js/tabs.js' ]

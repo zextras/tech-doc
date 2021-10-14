@@ -9,13 +9,26 @@
 {% block relbar1 %}{% endblock %}
 {% block relbar2 %}{% endblock %}
 {% block content %}
-    <div id="content">
-      <div class="header">
-      </div>
-      <div class="wy-nav-content">
-        <div role="main">
-        {% block body %}{% endblock %}
-        </div>
-      </div>
+<div id="content">
+  <div class="header">
+  </div>
+  <div class="wy-nav-content">
+    <div role="main">
+      {% block body %}{% endblock %}
     </div>
+  </div>
+</div>
+<footer>
+  <div class="row">
+    <div class="column">
+      <p>{% trans copyright=copyright|e %}&copy; Copyright {{ copyright
+        }}{% endtrans %}. All rights reserved
+      </p>
+      <img alt="ZEXTRAS" src="_static/zextras_colors.svg"  width="121" height="20">
+    </div>
+    <div class="column">
+      <p>Zimbra is a registered trademark of Synacor, Inc.</p>
+    </div>
+  </div>
+</footer>
 {% endblock %}
