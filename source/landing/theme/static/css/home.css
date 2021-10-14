@@ -428,7 +428,7 @@ span.eqno {
 /* custom Zextras styles */
 
 .sd-card-footer {
-    background-color: #E8E8E8 !important;
+    background-color: var(--zx-color-card-footer) !important;
 }
 
 .column {
