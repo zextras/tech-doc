@@ -12,7 +12,7 @@
 
 .. grid::
    :gutter: 3
-   :margin: 4 4 0 0 
+   :margin: 4 4 0 0
 
    .. grid-item::
       :columns: 2
@@ -66,7 +66,7 @@
       :columns: 4
       :shadow: sm
 
-      .. button-link::  https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html
+      .. button-link:: /suite/html/zimbra9ose.html
          :click-parent:
 
          Zimbra 9 OSE docs
