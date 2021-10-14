@@ -35,7 +35,13 @@ Before attempting the installation of |community| you need:
          .. code:: bash
 
             # apt-get update --fix-missing
+
+         .. code:: bash
+
             # apt-get update
+
+         .. code:: bash
+
             # apt-get -y upgrade
 
       .. tab-item:: Centos/RedHat
