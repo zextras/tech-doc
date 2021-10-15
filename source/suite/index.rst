@@ -34,4 +34,5 @@ What's different than other Zextras doc:
    docs
    auth
    team
+   Zimbra 9 OSE <zimbra9ose>
    cli

@@ -6,103 +6,103 @@
 ***************************************
  Welcome to Zextras Documentation Hub!
 ***************************************
-.. image:: img/tech-area.png
-   :width: 200
 
-.. rubric:: This page contains descriptions of all Zextras products
-   and services with links to the corresponding documentation.
+.. rubric:: Here you will find all the documentation related to Zextras solutions and services
 
-|
 
 .. grid::
-   :gutter: 1
+   :gutter: 3
+   :margin: 4 4 0 0
+
+   .. grid-item::
+      :columns: 2
 
    .. grid-item-card::
-      :columns: 6 
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
-      :class-title: sd-fs-1
-      
-      **Zextras Carbonio**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
-      The new collaboration server with full enterprise features
-      +++
+      :columns: 4
+      :shadow: sm
+
       .. button-link:: /carbonio/html/index.html
-         :color: danger
+         :click-parent:
 
-         Go to Carbonio docs
+         Carbonio
+
+      +++
+
+      The new collaboration server with full enterprise features
 
    .. grid-item-card::
-      :columns: 6
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
+      :columns: 4
+      :shadow: sm
 
-      **Zextras Carbonio CE**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      .. button-link:: /carbonio-ce/html/index.html
+         :click-parent:
+
+         Carbonio CE
+
+      +++
+
       Zextras Carbonio Community Edition, the open and free version
-      +++
-      .. button-link::  /carbonio-ce/html/index.html
-         :color: danger
 
-         Go to Carbonio Community docs
- 
+   .. grid-item::
+      :columns: 2
+
+   .. grid-item::
+      :columns: 2
 
    .. grid-item-card::
-      :columns: 6
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
-      :class-title: sd-fs-2
+      :columns: 4
+      :shadow: sm
 
-      **Zextras Suite**
-      ^^^^^^^^^^^^^^^^^
-      Zextras Suite enhances Zimbra with exclusive features 
-      +++
       .. button-link:: /suite/html/index.html
-         :color: danger
+         :click-parent:
 
-         Go to Zextras Suite docs
+         Zextras Suite
 
-   .. grid-item-card::
-      :columns: 6
-      :text-align: center
-      :class-card: sd-bg-light sd-text-black
-      :class-title: sd-fs-3
-
-      **Zimbra 9 OSE by Zextras**
-      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-      The Zimbra 9 Open Source Edition build by Zextras
       +++
-      .. button-link:: https://docs.zextras.com/zextras-suite-documentation/latest/zimbra9ose.html
-         :color: danger
 
-         Go to Zimbra 9 OSE docs
+      Zextras Suite enhances Zimbra with exclusive features
 
    .. grid-item-card::
-       :columns: 6
-       :text-align: center
-       :class-card: sd-bg-light sd-text-black
+      :columns: 4
+      :shadow: sm
 
-       **Zextras Support Portal**
-       ^^^^^^^^^^^^^^^^^^^^^^^^^^
-       Welcome to the Zextras Support Portal - Your best place for Technical Support 
-       +++
-       .. button-link:: https://support.zextras.com/
-          :color: danger
+      .. button-link:: /suite/html/zimbra9ose.html
+         :click-parent:
 
-          Go to Zextras Support Portal
+         Zimbra 9 OSE docs
+
+      +++
+
+      The Zimbra 9 Open Source Edition build by Zextras
+
+   .. grid-item::
+      :columns: 2
+
+   .. grid-item::
+      :columns: 2
 
    .. grid-item-card::
-       :columns: 6
-       :text-align: center
-       :class-card: sd-bg-light sd-text-black
+      :columns: 4
+      :shadow: sm
 
-       **Zextras Community** 
-       ^^^^^^^^^^^^^^^^^^^^^
-       Welcome to the Zextras Community 
-       +++
-       .. button-link:: https://community.zextras.com/
-          :color: danger
+      .. button-link:: https://support.zextras.com/
+         :click-parent:
 
-          Go to Zextras Community
+         Support
 
-|
+      +++
+
+      Zextras Support Portal - Your best place for Technical Support
+
+   .. grid-item-card::
+      :columns: 4
+      :shadow: sm
+
+      .. button-link::  https://community.zextras.com/
+         :click-parent:
+
+         Community
+
+      +++
+
+      Tips & tricks, Zextras products and more!

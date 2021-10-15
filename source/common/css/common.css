@@ -2,6 +2,8 @@
    2021 Zextras */
 :root {
     --zx-brand: #00506D;
+    --zx-color-card-footer: #E8E8E8;
+    --zx-color-card-header: #E8E8E8;
 }
 
 /* Custom roles */

@@ -1,3 +1,5 @@
 Sphinx
 sphinx-design
 sphinx_rtd_theme
+sphinx-panels
+sphinx_copybutton

@@ -18,6 +18,7 @@ Contained in the file requirements.txt:
 - Sphinx
 - sphinx-design
 - sphinx_rtd_theme
+- sphinx_copybutton
 
 To install these items run: pip3 install -r requirements.txt
 

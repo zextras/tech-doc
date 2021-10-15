@@ -425,3 +425,19 @@ div.math p {
 span.eqno {
     float: right;
 }
+/* custom Zextras styles */
+
+.sd-card-footer {
+    background-color: var(--zx-color-card-footer) !important;
+}
+
+.column {
+    float: left;
+    width: 30%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

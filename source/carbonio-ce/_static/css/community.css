@@ -11,3 +11,5 @@
     background: var(--zx-brand);
 }
 
+.sd-dropdown .sd-card-header {
+    background-color: var(--zx-color-card-header);

@@ -1,6 +1,8 @@
-FROM sphinxdoc/sphinx
+FROM python
+ENV VIRTUAL_ENV=/docs
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-WORKDIR /docs
-ADD requirements.txt /docs
-RUN /usr/local/bin/python3 -m pip install --upgrade pip
-RUN pip3 install -r requirements.txt
+COPY requirements.txt .
+RUN python3 -m pip install --upgrade pip
+RUN pip install -r requirements.txt

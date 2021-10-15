@@ -9,13 +9,16 @@
 {% block relbar1 %}{% endblock %}
 {% block relbar2 %}{% endblock %}
 {% block content %}
-    <div id="content">
-      <div class="header">
-      </div>
-      <div class="wy-nav-content">
-        <div role="main">
-        {% block body %}{% endblock %}
-        </div>
-      </div>
+<div id="content">
+  <div class="header">
+  </div>
+  <div class="wy-nav-content">
+    <div role="main">
+      {% block body %}{% endblock %}
     </div>
+  </div>
+</div>
+{% endblock %}
+{% block footer %}
+{% include "footer.html" %}
 {% endblock %}
