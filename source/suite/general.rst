@@ -6,7 +6,6 @@ Zextras Suite is an all-in-one solution that seamlessly integrate with Zimbra Op
 
 Some strong points of Zextras Suite are: security (including encrypted communication channels, 2FA and SAML authentication), data protection and data ownership (you control your data: choose where to store data and backups, what to delete, and so on), full GDPR compliance.
 
-Main Features & Components
 Zextras Suite is organised in modules, that can be purchased in different bundles, according to the available licenses. More information on Zextras Store.
 
 -  Zextras Auth is the authentication layer that takes care of the login modalities and access to mailbox and other modules
