@@ -69,7 +69,7 @@ up.
 -  Set the correct permission on the backup path: ``chown zimbra:zimbra
    /opt/zimbra/backup/zextras``
 
-.. figure:: backup-ui.png
+.. figure:: /img/backup-ui.png
    :alt: Zextras Backup Admin Console
 
    Zextras Backup Admin Console
@@ -117,7 +117,7 @@ Figure `figure_title <#img-backup-console>`_, for example:
    **Information** to one of **Warning**, **Error**, or **Critical**
    (see Figure `figure_title <#img-backup-notification>`_).
 
-.. figure:: backup-notification-level.png
+.. figure:: /img/backup-notification-level.png
    :alt: Zextras Backup Notification Level
 
    Zextras Backup Notification Level

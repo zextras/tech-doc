@@ -12,11 +12,6 @@ Compatibility list
 .. include:: /00-includes/compatibility.rst
 
 
-Installation Guide
-==================
-
-.. include:: /00-includes/installation.rst
-
 Internationalization
 ====================
 
