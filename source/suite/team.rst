@@ -994,13 +994,13 @@ remove <./cli.xml#team_video-server_remove>`_ \|
 
 .. |check circle| image:: ./images/icons/check-circle.png
 .. |times circle| image:: ./images/icons/times-circle.png
-.. |google play badge| image:: google-play-badge.png
-.. |app store badge| image:: app_store-badge.png
-.. |team new tab modal| image:: team-new-tab-modal.png
-.. |team tab| image:: team-tab.png
-.. |cinema mode| image:: team-cinema-mode.png
-.. |cinema mode| image:: team-grid-layout.png
-.. |team chat| image:: team-chat.png
-.. |space channel| image:: space-channel.png
+.. |google play badge| image:: /img/google-play-badge.png
+.. |app store badge| image:: /img/app_store-badge.png
+.. |team new tab modal| image:: /img/team-new-tab-modal.png
+.. |team tab| image:: /img/team-tab.png
+.. |cinema mode| image:: /img/team-cinema-mode.png
+.. |cinema mode| image:: /img/team-grid-layout.png
+.. |team chat| image:: /img/team-chat.png
+.. |space channel| image:: /img/space-channel.png
 .. |connect_autocomplete_management.jpeg| image:: connect_autocomplete_management.jpeg
-.. |connect_message_delivered_1.png| image:: connect_message_delivered_1.png
+.. |connect_message_delivered_1.png| image:: /img/connect_message_delivered_1.png
