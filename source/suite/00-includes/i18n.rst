@@ -1,8 +1,64 @@
+..
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Quisque ex
-sapien, tristique ac mollis eu, imperdiet in elit. Nulla
-facilisi. Fusce eget leo metus. Etiam lacinia sollicitudin nisl, et
-gravida dui. Pellentesque pellentesque placerat aliquet. Nam et nisl
-ut lacus dapibus tempor. Vestibulum placerat lacus id purus sagittis
-rutrum.  Maecenas et sollicitudin justo. Vestibulum ligula ipsum,
-congue ac pretium bibendum, tristique ac mi.
+   **Warning**
+
+   Product and Translation is still in beta stage. Incomplete or
+   imperfect translations are to be expected.
+
+.. _product_localisation:
+
+Product Localisation
+--------------------
+
+Zextras Suite and its zimlets are available in all languages officially
+supported by Zimbra.
+
+Unofficial languages can still be used but are not officially supported
+and require the language to be added to Zimbra.
+
+.. _available_languages:
+
+Available Languages
+-------------------
+
+Zextras Suite’s main language is English, and the following languages
+are also included:
+
+.. table:: *Languages in*\ **bold**\ *are considered completed and out
+of Beta*
+
+   +----------------------+----------------------+-----------------------+
+   | **English** (GB, US, | **Italian**          | **French**            |
+   | AU)                  |                      |                       |
+   +----------------------+----------------------+-----------------------+
+   | **Spanish**          | **Portuguese** (PT,  | German                |
+   |                      | BR)                  |                       |
+   +----------------------+----------------------+-----------------------+
+   | Dutch                | Turkish              | Russian               |
+   +----------------------+----------------------+-----------------------+
+   | Thai                 | Hindi                | Indonesian            |
+   +----------------------+----------------------+-----------------------+
+   | Japanese             | Simplified Chinese   |                       |
+   +----------------------+----------------------+-----------------------+
+
+This includes both the Client components (Drive, Team and Docs Zimlets,
+plus the Client Zimlet and any other collateral client entity) and, to
+our best effort, the Zextras Administration Zimlet.
+
+The Zextras CLI is not internationalized nor translated and there are no
+current plans to do so.
+
+.. _volunteer_translators:
+
+Volunteer Translators
+---------------------
+
+Zextras makes available an online translation platform to those
+qualified individuals wishing to help the translation process.
+
+Translation in languages that are not currently supported by Zimbra is
+encouraged, albeit we cannot guarantee any estimate upon the official
+inclusion in the product.
+
+Please contact translators@zextras.com for any information on the topic
+or to volunteer as a translator.
