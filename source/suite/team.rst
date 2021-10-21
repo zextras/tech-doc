@@ -1,12 +1,7 @@
+
 ===============
 Zextras Team
 ===============
-
-:Date:   2021-10-20
-
-.. contents::
-   :depth: 3
-..
 
 .. _what_is_Zextras Team:
 
@@ -18,12 +13,10 @@ platform inside the Zimbra WebClient, including Group and Corporate
 Messaging, File Sharing, Screen Sharing and informal Video Chat
 capabilities.
 
-   **Warning**
+.. warning:: Zextras Team is not compatible with Zimbra version 8.8.11
+   and lower.
 
-   Zextras Team is not compatible with Zimbra version 8.8.11 and
-   lower.
-
-.. _frontend_features:
+.. _team_frontend_features:
 
 Frontend Features
 -----------------
@@ -50,7 +43,7 @@ Zextras Team includes the following front-end features:
 
 -  Mute conversations and notifications
 
-.. _backend_features:
+.. _team_backend_features:
 
 Backend Features
 ----------------
@@ -70,7 +63,7 @@ Zextras Team includes the following backend features:
 
 -  Dedicated audit log
 
-.. _licensing:
+.. _team_licensing:
 
 Licensing
 =========
@@ -98,7 +91,7 @@ zimbra@129efa51bd95:~$ zxsuite core getLicenseInfo
 
 This count is updated every 15 minutes.
 
-.. _Zextras Team_zimlet_installation:
+.. _team_Zextras Team_zimlet_installation:
 
 Zextras Team Zimlet installation
 ===================================
@@ -109,7 +102,7 @@ of the Zextras Administration Zimlet.
 No configuration on the mailboxd side is needed after the Zimlet has
 been deployed and enabled.
 
-.. _urls_and_ports:
+.. _team_urls_and_ports:
 
 URLs and Ports
 ==============
@@ -147,7 +140,7 @@ For Video Chats and Instant Meetings, the following rules apply:
 
    -  Most TURN servers can also be configured to use TCP insted of UDP.
 
-.. _Zextras Team_administration:
+.. _team_Zextras Team_administration:
 
 Zextras Team administration
 ==============================
@@ -190,7 +183,7 @@ line utility:
 
    -  Available in: global, server, COS, account
 
-.. _browser_compatibility:
+.. _team_browser_compatibility:
 
 Browser compatibility
 =====================
@@ -198,77 +191,33 @@ Browser compatibility
 The following list shows which browsers are known to fully support all
 Zextras features.
 
-+-----------------+-----------------+-----------------+-----------------+
-| Browser         | Version         | OS              | Supported       |
-+=================+=================+=================+=================+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | **Latest**      | **Windows**     | |check circle|  |
-| Edge            |                 |                 | **Yes**         |
-| (Chromium)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | Others          | Windows         | |check circle|  |
-| Edge            |                 |                 | Limited         |
-| (Chromium)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | Any             | Windows         | |times circle|  |
-| Edge            |                 |                 | No              |
-| (EdgeHTML)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Internet      | Any             | Windows         | |times circle|  |
-| Explorer**      |                 |                 | No              |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | **Latest**      | **Windows/Linux | |check circle|  |
-| Firefox**       |                 | /OSX**          | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | ESR             | Windows/Linux/O | |check circle|  |
-| Firefox**       |                 | SX              | Yes             |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | Others          | Windows/Linux/O | |check circle|  |
-| Firefox**       |                 | SX              | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Google        | **Latest**      | **Windows/Linux | |check circle|  |
-| Chrome**        |                 | /OSX**          | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Google        | Others          | Windows/Linux/O | |check circle|  |
-| Chrome**        |                 | SX              | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Safari**      | **Latest**      | **OSX**         | |check circle|  |
-|                 |                 |                 | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Safari**      | Others          | OSX             | |check circle|  |
-|                 |                 |                 | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
-
-Items marked as "|check circle| Limited" are only supported on the
-browser’s two previous stable releases.
+.. csv-table::
+   :header: "Browser", "Version", "OS", "Supported"
+   :file: browsercompatibility.csv
+          
+Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
+supported on the browser’s two previous stable releases.
 
 Firefox users must be sure to be running at least version 66 of the
 browser to be able to use the Screen Sharing feature.
 
-.. _mobile_app:
+.. _team_mobile_app:
 
 Mobile App
 ==========
 
 A dedicated Zextras Team mobile app is available for both Android and
 iOS.
+           
+.. image:: /img/google-play-badge.png
+.. image:: /img/app_store-badge.png
+   
+   
+.. warning:: In order for mobile message delivery to work, the Zimbra
+   server must be able to communicate with the
+   ``notifications.zextras.com`` service on port 443
 
-|google play badge| |app store badge|
-
-   **Warning**
-
-   In order for mobile message delivery to work, the Zimbra server must
-   be able to communicate with the ``notifications.zextras.com`` service
-   on port 443
-
-.. _notifications_on_android_devices:
+.. _team_notifications_on_android_devices:
 
 Notifications on Android Devices
 --------------------------------
@@ -300,17 +249,15 @@ these steps:
 
    ..
 
-      **Warning**
+   .. warning:: Entries marked as (:sup:`1`) might have a different
+      name depending on your device’s manufacturer and UI.
 
-      Entries marked as (:sup:`1`) might have a different name depending
-      on your device’s manufacturer and UI.
-
-.. _user_interface:
+.. _team_user_interface:
 
 User Interface
 ==============
 
-.. _team_tab:
+.. _team_team_tab:
 
 Team Tab
 --------
@@ -326,7 +273,7 @@ features are only available to Advanced users. The tab appearance
 changes depending on which of the textual or video conversation feature
 is used.
 
-.. _meetings_on_a_new_browser_tab:
+.. _team_meetings_on_a_new_browser_tab:
 
 Meetings on a New Browser Tab
 -----------------------------
@@ -338,7 +285,8 @@ When users start a call, the following modal appears.
 
 **Launch Team in a new browser tab.**
 
-|team new tab modal|
+.. image:: /img/team-new-tab-modal.png
+
 
 Default Mode
    The Team app starts within the Zimbra application under the same tab.
@@ -349,7 +297,7 @@ Dedicated Mode
 Select SAVE SETTING to set one of the above two modes as default for
 each meeting.
 
-.. _changing_the_selected_mode:
+.. _team_changing_the_selected_mode:
 
 Changing the Selected Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -368,7 +316,7 @@ The following steps help change the mode for future interactions.
 5. Select one of **Default** or **Dedicated** modes. The selection is
    automatically applied.
 
-.. _textual_conversations_chats_and_spaces:
+.. _team_textual_conversations_chats_and_spaces:
 
 Textual Conversations (Chats) and Spaces
 ----------------------------------------
@@ -388,10 +336,8 @@ The Team tab is divided into three main parts:
    between the users, also its start time and end time are shown in the
    flow of messages.
 
-      **Tip**
-
-      The time is reported according to the configured timezone on the
-      user’s workstation.
+   .. tip:: The time is reported according to the configured timezone
+      on the user’s workstation.
 
 -  The right column, which displays information about the current
    conversation or space and allows to either mute notifications or
@@ -399,13 +345,14 @@ The Team tab is divided into three main parts:
 
 **The Team Tab Graphic User Interface.**
 
-|team tab|
+.. image:: /img/team-tab.png
+
 
 When the Video Chat or Instant Meeting are used, the UI changes, see
 section `Video Conversations (Video Chats) and Instant
 Meetings <#video-chat>`_.
 
-.. _minichats:
+.. _team_minichats:
 
 Minichats
 ~~~~~~~~~
@@ -424,7 +371,7 @@ the camera icon.
 Incoming Space or Channel conversation are automatically opened as
 Minichats in case the user is on tab different from the **Team** tab.
 
-.. _video-chat:
+.. _team_video-chat:
 
 Video Conversations (Video Chats) and Instant Meetings
 ------------------------------------------------------
@@ -461,7 +408,7 @@ The UI parts common to Video Chat and Instant meetings, are:
    Instant Meeting will hear a sound and see a visual animation until
    another user joins.
 
-.. _screen_sharing:
+.. _team_screen_sharing:
 
 Screen Sharing
 ~~~~~~~~~~~~~~
@@ -504,7 +451,8 @@ available in cinema mode:
 
 **Video Conversation in Cinema Mode.**
 
-|cinema mode|
+.. figure:: /img/team-cinema-mode.png
+
 
 The **Grid Layout** of an Instant Meeting (see Figure
 `formalpara_title <#img-grid-layout>`_) allows to show all the
@@ -520,9 +468,9 @@ are:
 
 **Video Conversation in Grid Layout.**
 
-|cinema mode|
-
-.. _instant_messaging_and_corporate_communication:
+.. image:: /img/team-grid-layout.png
+                         
+.. _team_instant_messaging_and_corporate_communication:
 
 Instant Messaging and Corporate Communication
 =============================================
@@ -541,7 +489,7 @@ In the case of Instant Meetings, only logged in users can join. External
 users can join, but they need to provide a nickname and a valid email
 address.
 
-   **Important**
+.. important::
 
    Instant Meetings can have two or more participants, Chats exactly
    two, Video Chats at least **three** persons (one host and two more
@@ -550,7 +498,8 @@ address.
 
 **Dialog window to create a chat.**
 
-|team chat|
+.. image:: /img/team-chat.png
+
 
 The process to create a Channel is a bit different, as this is a feature
 internal to spaces. So, to create a Channel it is necessary to set up a
@@ -559,14 +508,15 @@ Now. you’ll see a window similar to the one above, where you can add a
 title and a topic. The Channel will appear underneath the space name,
 indented, to underline that it is tight to the space.
 
-   **Note**
+.. note::
 
    You can not select the users in a channel, because participation to
    channels is optional and open to all members of the space.
 
 **A space with a channel.**
 
-|space channel|
+
+.. image:: /img/space-channel.png
 
 Once you have set up an instance, you can immediately start a textual
 chat with all the participants or start a video call by clicking on the
@@ -578,7 +528,7 @@ Recent conversation appear in the left column, for a quick access.
 The main features of the various communication means are described in
 the remainder of this section.
 
-.. _moderators_in_rooms:
+.. _team_moderators_in_rooms:
 
 Moderators in Rooms
 -------------------
@@ -593,10 +543,8 @@ A moderator can promote any user as moderator and can leave the room
 only if either no other users are present in the room or another
 moderator is present in the room.
 
-   **Note**
-
-   In groups created before the moderator role has been introduced, all
-   members are automatically promoted as moderators.
+.. note:: In groups created before the moderator role has been
+   introduced, all members are automatically promoted as moderators.
 
 The moderator status can be set either using the icons from the GUI,
 next to each room participant, or from the CLI, using the `zxsuite team
@@ -609,7 +557,7 @@ issued from the CLI:
 
    zxsuite team addOwner  aced5e2e-f457-4d30-a3fb-9b18fac486a6@example.com user2@example.com
 
-.. _groups:
+.. _team_groups:
 
 Groups
 ------
@@ -620,7 +568,7 @@ any specific space. Any user can create a group inviting people, and any
 group member can invite more people in the same way. When all users
 leave a group, the group itself ceases to exist.
 
-.. _groups_features:
+.. _team_groups_features:
 
 Groups Features
 ~~~~~~~~~~~~~~~
@@ -642,7 +590,7 @@ Global Administrators can change the allowed maximum number of group
 members in the Zextras Team section of the Global settings in the
 Admin Console.
 
-.. _spaces:
+.. _team_spaces:
 
 Spaces
 ------
@@ -651,7 +599,7 @@ Spaces are a themed container that can hold any number of Channels.
 Think of a Space as a community center where people gather to discuss
 different topics in dedicated areas (named Channels).
 
-.. _spaces_features:
+.. _team_spaces_features:
 
 Spaces Features
 ~~~~~~~~~~~~~~~
@@ -668,7 +616,7 @@ Spaces Features
 -  Members can upload, share, and forward messages and attachments in
    Spaces
 
-.. _space_settings:
+.. _team_space_settings:
 
 Space Settings
 ~~~~~~~~~~~~~~
@@ -682,7 +630,7 @@ appropriate entry of the participant list.
 Only Space Administrators can invite new participants, create new
 channels, kick people, and delete channels within the space.
 
-.. _channels:
+.. _team_channels:
 
 Channels
 --------
@@ -696,7 +644,7 @@ Each new Space has a "General" channel automatically created within it,
 which defines the space’s properties (e.g., Title and Topic) and which
 all users automatically join when they join the Space.
 
-.. _channels_features:
+.. _team_channels_features:
 
 Channels Features
 ~~~~~~~~~~~~~~~~~
@@ -711,7 +659,7 @@ Channels Features
 -  A user in a Channel can upload, share, and forward messages and
    attachments
 
-.. _mute_notifications_and_conversations:
+.. _team_mute_notifications_and_conversations:
 
 Mute Notifications and Conversations
 ------------------------------------
@@ -735,11 +683,9 @@ by clicking Unmute or the notification.
 In Video Chats, users can selectively mute other participants; a
 moderator, however, can mute everyone at the same time.
 
-   **Note**
+.. note:: Notifications for Instant meetings can not be muted.
 
-   Notifications for Instant meetings can not be muted.
-
-.. _file_sharing:
+.. _team_file_sharing:
 
 File sharing
 ============
@@ -759,7 +705,7 @@ sender’s Drive called ``Team sent files``, thus counting towards the
 sender’s mailbox quota, and will remain available for download in the
 chat window for all participants until deleted from Drive by the sender.
 
-.. _autocomplete:
+.. _team_autocomplete:
 
 Autocomplete
 ============
@@ -794,11 +740,11 @@ property to either ``local``, ``extended`` or ``global`` using the
       opposed to the strict email addres match required in *extended*
       mode.
 
-|connect_autocomplete_management.jpeg|
+.. image:: /img/connect_autocomplete_management.jpeg
 
 The default setting inherited by all COS is *local*.
 
-.. _presence:
+.. _team_presence:
 
 Presence
 ========
@@ -810,7 +756,7 @@ as **online**.
 As part of the user presence system, all messages get displayed with a
 variable number of check symbols:
 
-|connect_message_delivered_1.png|
+.. image:: /img/connect_message_delivered_1.png
 
 -  0 checks, message not delivered to the server
 
@@ -822,7 +768,7 @@ When sending a text message, if privacy is enabled, then only one *gray*
 check is shown, meaning that the server has received the message. No
 acknowledgement will be sent back by the receiving user.
 
-.. _unread_messages:
+.. _team_unread_messages:
 
 Unread Messages
 ===============
@@ -833,7 +779,7 @@ space, instant meeting) appears on the right side of both the *Chats*,
 and in the list of conversions underneath, next to the actual chat
 generating the message.
 
-.. _edit_reply_forward_and_delete_messages:
+.. _team_edit_reply_forward_and_delete_messages:
 
 Edit, Reply, Forward and Delete Messages
 ========================================
@@ -856,31 +802,17 @@ a context menu that shows the available actions:
 
 The following table recaps all message interactions:
 
-+-----------------+-----------------+-----------------+-----------------+
-| Type            | Can be edited   | Can be deleted  | Can be          |
-|                 |                 |                 | forwarded       |
-+-----------------+-----------------+-----------------+-----------------+
-| Text Message    | |check circle|  | |check circle|  | |check circle|  |
-|                 | (Only own       |                 |                 |
-|                 | messages)       |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| File Attachment | |check circle|  | |check circle|  | |check circle|  |
-| message         | (Only if        |                 |                 |
-|                 | description     |                 |                 |
-|                 | already exists) |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| Conversation    | |times circle|  | |times circle|  | |times circle|  |
-| Status message  |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| Edited message  | |check circle|  | |check circle|  | |check circle|  |
-+-----------------+-----------------+-----------------+-----------------+
-| Forwarded       | |times circle|  | |check circle|  | |times circle|  |
-| message         |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| Deleted message | |times circle|  | |times circle|  | |times circle|  |
-+-----------------+-----------------+-----------------+-----------------+
+.. csv-table::
+   :header: "Type", "Edit", "Delete", "Forward"
 
-.. _chat_history:
+   "Text Message",":fa:`check-circle;sd-text-success` (Only own messages)",":fa:`check-circle;sd-text-success`",":fa:`check-circle;sd-text-success`"
+   "File Attachment message",":fa:`check-circle;sd-text-success` (Only if description already exists)",":fa:`check-circle;sd-text-success`",":fa:`check-circle;sd-text-success`"
+   "Conversation Status message",":fa:`times-circle;sd-text-warning`",":fa:`times-circle;sd-text-warning`",":fa:`times-circle;sd-text-warning`"
+   "Edited message",":fa:`check-circle;sd-text-success`",":fa:`check-circle;sd-text-success`",":fa:`check-circle;sd-text-success`"
+   "Forwarded message",":fa:`times-circle;sd-text-warning`",":fa:`check-circle;sd-text-success`",":fa:`times-circle;sd-text-warning`"
+   "Deleted message",":fa:`times-circle;sd-text-warning`",":fa:`times-circle;sd-text-warning`",":fa:`times-circle;sd-text-warning`"
+
+.. _team_chat_history:
 
 Chat History
 ============
@@ -890,7 +822,7 @@ the very same window (e.g., enter a Channel to see all of that channel’s
 history) and messages delivered to offline users appear in the
 appropriate IM conversation, Group or Channel.
 
-.. _stunturn_server:
+.. _team_stunturn_server:
 
 STUN/TURN Server
 ================
@@ -905,7 +837,7 @@ proper communication between all peers. Zextras Team is designed to
 allow using a STUN/TURN server out of the box by simply adding the TURN
 server’s URL and login information in the zimlet configuration.
 
-.. _setting_up_Zextras Team_to_use_a_turn_server:
+.. _team_setting_up_Zextras Team_to_use_a_turn_server:
 
 Setting up Zextras Team to use a TURN server
 -----------------------------------------------
@@ -961,7 +893,7 @@ user, authenticated with a username and secret key, for ease-of-use
 reasons as a 1:1 correspondence between Zimbra users and TURN users is
 not necessary.
 
-.. _zextras_team_cli:
+.. _team_zextras_team_cli:
 
 Zextras Team CLI
 ================
@@ -992,15 +924,3 @@ remove <./cli.xml#team_iceServer_remove>`_ \|
 add <./cli.xml#team_video-server_add>`_ \| `video-server
 remove <./cli.xml#team_video-server_remove>`_ \|
 
-.. |check circle| image:: ./images/icons/check-circle.png
-.. |times circle| image:: ./images/icons/times-circle.png
-.. |google play badge| image:: google-play-badge.png
-.. |app store badge| image:: app_store-badge.png
-.. |team new tab modal| image:: team-new-tab-modal.png
-.. |team tab| image:: team-tab.png
-.. |cinema mode| image:: team-cinema-mode.png
-.. |cinema mode| image:: team-grid-layout.png
-.. |team chat| image:: team-chat.png
-.. |space channel| image:: space-channel.png
-.. |connect_autocomplete_management.jpeg| image:: connect_autocomplete_management.jpeg
-.. |connect_message_delivered_1.png| image:: connect_message_delivered_1.png
