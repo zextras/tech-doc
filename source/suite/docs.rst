@@ -2,13 +2,7 @@
 Zextras Docs
 ============
 
-:Date:   2021-10-20
-
-.. contents::
-   :depth: 3
-..
-
-.. _introduction:
+.. _docs_introduction:
 
 Introduction
 ============
@@ -17,16 +11,15 @@ Zextras Docs is based on a heavily customized LibreOffice online package
 allowing for collaborative editing of documents, spreadsheets and
 presentations straight from the Zimbra WebClient.
 
-   **Warning**
+.. warning:: Zextras Docs is not compatible with Zimbra version 8.8.11
+   and lower.
 
-   Zextras Docs is not compatible with Zimbra version 8.8.11 and lower.
-
-.. _components:
+.. _docs_components:
 
 Components
 ==========
 
-.. _zextras_docs_server:
+.. _docs_zextras_docs_server:
 
 Zextras Docs Server
 -------------------
@@ -35,12 +28,11 @@ The Zextras Docs server is the heart of the service. The service hosts
 each document opened through a LibreOffice engine and responds to the
 client via an image upon every keystroke and change in the document.
 
-   **Important**
+.. important:: This component must be installed on one or more
+   dedicated nodes running Ubuntu 16.04 LTS, Ubuntu 18.04 LTS or Red
+   Hat Centos 7.
 
-   This component must be installed on one or more dedicated nodes
-   running Ubuntu 16.04 LTS, Ubuntu 18.04 LTS or Red Hat Centos 7.
-
-.. _zextras_docs_extension:
+.. _docs_zextras_docs_extension:
 
 Zextras Docs Extension
 ----------------------
@@ -64,7 +56,7 @@ main tasks are:
 The Zextras Docs Extension is contained within the Zextras Core
 component of Zextras Suite.
 
-.. _zextras_docs_zimlet:
+.. _docs_zextras_docs_zimlet:
 
 Zextras Docs Zimlet
 -------------------
@@ -87,7 +79,7 @@ Its main tasks are:
 
 -  Allow the preview of documents.
 
-.. _minimum_system_requirements:
+.. _docs_minimum_system_requirements:
 
 Minimum System Requirements
 ===========================
@@ -103,7 +95,7 @@ server:
 
 -  At least 4 GB free disk space
 
-.. _browser_compatibility:
+.. _docs_browser_compatibility:
 
 Browser compatibility
 =====================
@@ -111,58 +103,15 @@ Browser compatibility
 The following list shows which browsers are known to fully support all
 Zextras features.
 
-+-----------------+-----------------+-----------------+-----------------+
-| Browser         | Version         | OS              | Supported       |
-+=================+=================+=================+=================+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | **Latest**      | **Windows**     | |check circle|  |
-| Edge            |                 |                 | **Yes**         |
-| (Chromium)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | Others          | Windows         | |check circle|  |
-| Edge            |                 |                 | Limited         |
-| (Chromium)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | Any             | Windows         | |times circle|  |
-| Edge            |                 |                 | No              |
-| (EdgeHTML)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Internet      | Any             | Windows         | |times circle|  |
-| Explorer**      |                 |                 | No              |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | **Latest**      | **Windows/Linux | |check circle|  |
-| Firefox**       |                 | /OSX**          | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | ESR             | Windows/Linux/O | |check circle|  |
-| Firefox**       |                 | SX              | Yes             |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | Others          | Windows/Linux/O | |check circle|  |
-| Firefox**       |                 | SX              | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Google        | **Latest**      | **Windows/Linux | |check circle|  |
-| Chrome**        |                 | /OSX**          | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Google        | Others          | Windows/Linux/O | |check circle|  |
-| Chrome**        |                 | SX              | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Safari**      | **Latest**      | **OSX**         | |check circle|  |
-|                 |                 |                 | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Safari**      | Others          | OSX             | |check circle|  |
-|                 |                 |                 | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
+.. csv-table::
+   :header: "Browser", "Version", "OS", "Supported"
+   :file: browsercompatibility.csv
 
-Items marked as "|check circle| Limited" are only supported on the
-browser’s two previous stable releases.
+          
+Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
+supported on the browser’s two previous stable releases.
 
-.. _document_management_flow:
+.. _docs_document_management_flow:
 
 Document Management Flow
 ========================
@@ -224,7 +173,7 @@ document:
                       Load Client             |                    |
                       Open client websocket   +--------------------+
 
-.. _networking_and_ports:
+.. _docs_networking_and_ports:
 
 Networking and ports
 ====================
@@ -239,17 +188,16 @@ allowed. The Docs Server component must also be able to directly
 communicate with the master LDAP server as well as with all Proxy
 servers.
 
-.. _installation_and_configuration:
+.. _docs_installation_and_configuration:
 
 Installation and Configuration
 ==============================
 
-   **Important**
+.. important:: This component must be installed on one or more
+   dedicated nodes running Ubuntu 16.04 LTS, Ubuntu 18.04 LTS or Red
+   Hat Centos 7.
 
-   This component must be installed on one or more dedicated nodes
-   running Ubuntu 16.04 LTS, Ubuntu 18.04 LTS or Red Hat Centos 7.
-
-.. _docs_nodes:
+.. _docs_docs_nodes:
 
 Docs Nodes
 ----------
@@ -283,7 +231,7 @@ node, and will read the LDAP in order to write the configuration in
 
 Once the setup is completed no other configuration is needed.
 
-.. _docs_server_download_links: 
+.. _docs_docs_server_download_links: 
 
 Docs Server download links
 --------------------------
@@ -297,7 +245,7 @@ Ubuntu 16
 Ubuntu 18                                                               
 <https://download.zextras.com/zextras-docs-installer/latest/zextras-docs-ubuntu18.tgz> 
 
-.. _adding_custom_fonts_to_the_docs_server:
+.. _docs_adding_custom_fonts_to_the_docs_server:
 
 Adding Custom Fonts to the Docs Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -318,13 +266,11 @@ Docs Server’s Operating System:
 
 ``fc-cache /opt/zimbra/docs/zextras-docs-core/share/fonts``
 
-   **Warning**
+.. warning:: The server will briefly be unavailable during the
+   restart, and clients will need to close and open again any open
+   document to see the new fonts in the list.
 
-   The server will briefly be unavailable during the restart, and
-   clients will need to close and open again any open document to see
-   the new fonts in the list.
-
-.. _mailbox_nodes:
+.. _docs_mailbox_nodes:
 
 Mailbox Nodes
 -------------
@@ -340,7 +286,7 @@ of the Zextras Adminictration Zimlet.
 No configuration on the mailboxd side is needed after the Zimlet has
 been deployed and enabled.
 
-.. _proxy_nodes:
+.. _docs_proxy_nodes:
 
 Proxy Nodes
 -----------
@@ -354,7 +300,7 @@ user.
 The new docs nodes will be read from ldap and no manual configuration is
 needed.
 
-.. _licensing:
+.. _docs_licensing:
 
 Licensing
 =========
@@ -364,7 +310,7 @@ Licensing
 The standalone installer is released under the MPLv2 license while the
 extension and Zimlet are released under a proprietary license.
 
-.. _removal:
+.. _docs_removal:
 
 Removal
 =======
@@ -378,12 +324,12 @@ or via the zmprov command from any zimbra node
 
 ``zmprov deleteServer {servername}``
 
-.. _commands:
+.. _docs_commands:
 
 Commands
 ========
 
-.. _zextras_docs_server_cli_zdocs:
+.. _docs_zextras_docs_server_cli_zdocs:
 
 Zextras Docs Server CLI - zdocs
 -------------------------------
@@ -448,7 +394,7 @@ from ldap, test configuration and manage the service.
    #remove the local server from LDAP, useful when destroying the server, you can also use 'zmprov deleteServer' from a mailbox server.
      zdocs remove-local-server
 
-.. _zextras_docs_extension_cli_zxsuite_docs:
+.. _docs_zextras_docs_extension_cli_zxsuite_docs:
 
 Zextras Docs Extension CLI - zxsuite docs
 -----------------------------------------
@@ -487,7 +433,7 @@ a configuration reload and to see the Docs Servers' status.
    resource usage (if connected).
                                 zxsuite docs status
 
-.. _troubleshooting:
+.. _docs_troubleshooting:
 
 Troubleshooting
 ===============
@@ -516,7 +462,7 @@ server to read and write the document. Check name resolution and SSL
 certificate of mailboxd which must be valid for the Docs server that
 does not inherit Zimbra certificate management.
 
-.. _zextras_docs_cli:
+.. _docs_zextras_docs_cli:
 
 Zextras Docs CLI
 ================
@@ -532,6 +478,3 @@ section <./cli.xml#_zxdocs_cli_commands>`_.
 `doStopService <./cli.xml#docs_doStopService>`_ \|
 `getServices <./cli.xml#docs_getServices>`_ \|
 `status <./cli.xml#docs_status>`_
-
-.. |check circle| image:: ./images/icons/check-circle.png
-.. |times circle| image:: ./images/icons/times-circle.png
