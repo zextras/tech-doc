@@ -22,11 +22,7 @@ pipeline {
                }
       stage('Build Sphinx with Docker and upload to AWS') {
         steps {
-            script {
-              env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt  sphinx_builder -v ${WORKSPACE}:/docs').trim()
-            }
-
-            sh 'docker exec -t ${env.CONTAINER_ID} bash -c sphinx-build source/carbonio build/carbonio'
+            docker run -dt -v $(pwd):/docs sphinx_builder python -m sphinx source/suite build/
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
                  includePathPattern: '**',
