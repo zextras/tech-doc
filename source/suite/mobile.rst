@@ -2,12 +2,6 @@
 Zextras Mobile
 ==============
 
-:Date:   2021-10-19
-
-.. contents::
-   :depth: 3
-..
-
 .. _enable_zextras_mobile_synchronization_for_a_cos:
 
 Enable Zextras Mobile Synchronization for a COS
@@ -18,7 +12,7 @@ Enable Zextras Mobile Synchronization for a COS
 How to Enable Zextras Mobile for all Users in a Class Of Service
 ----------------------------------------------------------------
 
-.. _from_the_administration_console:
+.. _mobile_from_the_administration_console:
 
 From the Administration Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,7 +29,7 @@ Console:
 
 -  Check the ``Enable mobile synchronization`` button.
 
-.. _from_the_zimbra_cli:
+.. _mobile_from_the_zimbra_cli:
 
 From the Zimbra CLI
 ~~~~~~~~~~~~~~~~~~~
@@ -50,7 +44,7 @@ To enable Zextras Mobile for all users in a COS from the CLI:
 How to Disable Zextras Mobile for all Users in a Class Of Service
 -----------------------------------------------------------------
 
-.. _from_the_administration_console_2:
+.. _mobile_from_the_administration_console_2:
 
 From the Administration Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -66,7 +60,7 @@ Console:
 -  Click the Mobile tab and uncheck the ``Enable mobile
    synchronization`` button.
 
-.. _from_the_zimbra_cli_2:
+.. _mobile_from_the_zimbra_cli_2:
 
 From the Zimbra CLI
 ~~~~~~~~~~~~~~~~~~~
@@ -76,7 +70,7 @@ To disable Zextras Mobile for all users in a COS from the CLI:
 -  As the 'zimbra' user run: **``zmprov mc COSName
    zimbraFeatureMobileSyncEnabled FALSE``**
 
-.. _note_about_settings_hierarchy:
+.. _mobile_note_about_settings_hierarchy:
 
 Note about Settings Hierarchy
 -----------------------------
@@ -97,7 +91,7 @@ Module.
 How to Enable Zextras Mobile for a Single User
 ----------------------------------------------
 
-.. _from_the_zimbra_administration_console:
+.. _mobile_from_the_zimbra_administration_console:
 
 From the Zimbra Administration Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,7 +108,7 @@ Console:
 
 -  Check ``Enable mobile synchronization``.
 
-.. _from_the_zimbra_cli_3:
+.. _mobile_from_the_zimbra_cli_3:
 
 From the Zimbra CLI
 ~~~~~~~~~~~~~~~~~~~
@@ -124,12 +118,12 @@ To enable Zextras Mobile for a single user from the CLI:
 -  As the 'zimbra' user run: **``zmprov ma user@example.com
    zimbraFeatureMobileSyncEnabled TRUE``**
 
-.. _how_to_disable_zextras_mobile_for_a_single_user:
+.. _mobile_how_to_disable_zextras_mobile_for_a_single_user:
 
 How to Disable Zextras Mobile for a Single User
 -----------------------------------------------
 
-.. _from_the_zimbra_administration_console_2:
+.. _mobile_from_the_zimbra_administration_console_2:
 
 From the Zimbra Administration Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -144,7 +138,7 @@ To disable Zextras Mobile for a single user from the CLI:
 -  Click the Zextras Mobile tab and uncheck ``Enable mobile
    synchronization``.
 
-.. _from_the_zimbra_cli_4:
+.. _mobile_from_the_zimbra_cli_4:
 
 From the Zimbra CLI
 ~~~~~~~~~~~~~~~~~~~
@@ -154,7 +148,7 @@ To disable Zextras Mobile for a single user from the CLI:
 -  As the 'zimbra' user run: **``zmprov ma user@example.com
    zimbraFeatureMobileSyncEnabled FALSE``**
 
-.. _note_about_settings_hierarchy_2:
+.. _mobile_note_about_settings_hierarchy_2:
 
 Note about Settings Hierarchy
 -----------------------------
@@ -220,7 +214,7 @@ Own Device`` corporate policies, allowing users to connect their
 personal mobile devices to the corporate servers, while reducing the
 risk of security breaches to a minimum.
 
-.. _provisioning_features_available_on_your_client:
+.. _mobile_provisioning_features_available_on_your_client:
 
 Provisioning Features Available on Your Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,7 +236,7 @@ a quick ``one for many`` setup and user-based customized management. In
 both cases, Mobile Management Options are available in the ``Mobile``
 tab.
 
-.. _provisioning_options:
+.. _mobile_provisioning_options:
 
 Provisioning Options
 ~~~~~~~~~~~~~~~~~~~~
@@ -259,15 +253,11 @@ The following provisioning options are available:
    synchronize any device that does not support one or more applicable
    policies.
 
-..
+.. hint:: By default, MDM is disabled in Zextras Mobile. To enable
+   navigate to Zextras Suite → Mobile → Advanced Settings and check
+   the “Enable Mobile Device Management” option
 
-   **Tip**
-
-   By default, MDM is disabled in Zextras Mobile. To enable navigate to
-   Zextras Suite → Mobile → Advanced Settings and check the “Enable
-   Mobile Device Management” option
-
-.. _enforceable_policies:
+.. _mobile_enforceable_policies:
 
 Enforceable Policies
 ~~~~~~~~~~~~~~~~~~~~
@@ -304,7 +294,7 @@ While conceptually similar, the mobile password feature is not part of
 Mobile Device Management and can be used with any version of the EAS
 protocol.
 
-.. _syncstates:
+.. _mobile_syncstates:
 
 SyncStates
 ==========
@@ -347,7 +337,7 @@ The SyncState is the combination of the SyncKeys saved on step 2 and the
 itemIds saved on step 3. It’s saved by the server per the
 userId/deviceId unique pair.
 
-.. _sync_request:
+.. _mobile_sync_request:
 
 Sync Request
 ~~~~~~~~~~~~
@@ -366,12 +356,12 @@ A sync request is issued when:
 -  The current ``ping`` expires and a new one is sent by the device (the
    keepalive duration is defined by the client).
 
-.. _managing_the_syncstates:
+.. _mobile_managing_the_syncstates:
 
 Managing the SyncStates
 -----------------------
 
-.. _via_the_administration_zimlet:
+.. _mobile_via_the_administration_zimlet:
 
 Via the Administration Zimlet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -387,7 +377,7 @@ manage the SyncStates of synchronized mobile devices:
    server. Useful when a mobile device is not used anymore or is
    assigned to a different employee in the same company.
 
-.. _via_the_cli:
+.. _mobile_via_the_cli:
 
 Via the CLI
 ~~~~~~~~~~~
@@ -395,7 +385,7 @@ Via the CLI
 To manage the SyncStates of synchronized mobile devices via the CLI, use
 one of the following commands:
 
-.. _the_doremovedevice_command:
+.. _mobile_the_doremovedevice_command:
 
 The doRemoveDevice command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -418,7 +408,7 @@ The doRemoveDevice command
    zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S
    Removes John's Appl79032X2WA4S device SyncState
 
-.. _the_doresetaccount_command:
+.. _mobile_the_doresetaccount_command:
 
 The doResetAccount command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -463,7 +453,7 @@ The doResetDevice command
    zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S
    Resets John's Appl79032X2WA4S device SyncState
 
-.. _advanced_settings:
+.. _mobile_advanced_settings:
 
 Advanced Settings
 =================
@@ -483,12 +473,10 @@ attacks, and stability by blocking clients that are performing too many
 requests due to bugs or malfunctioning saving resources for all other
 clients.
 
-   **Warning**
+.. warning:: The Mobile DoS filter is disabled by default, and can be
+   enabled as needed via CLI.
 
-   The Mobile DoS filter is disabled by default, and can be enabled as
-   needed via CLI.
-
-.. _configuration:
+.. _mobile_configuration:
 
 Configuration
 ~~~~~~~~~~~~~
@@ -530,10 +518,8 @@ window, all new requests from this device/account are dropped for
 When the rate has been exceeded, a warning is sent via email to admin
 and added to server notifications.
 
-   **Note**
-
-   Issuing the command ``zxsuite mobile doRestartService anti-dos`` will
-   reset all jails and counters.
+.. note:: Issuing the command ``zxsuite mobile doRestartService
+   anti-dos`` will reset all jails and counters.
 
 .. _zextras_autodiscover:
 
@@ -634,12 +620,12 @@ Zextras Mobile Performance Tuning
 Zextras Mobile provides three useful options to fine-tune Zextras Mobile
 according to system performance.
 
-.. _performance_tuning_settings:
+.. _mobile_performance_tuning_settings:
 
 Performance Tuning Settings
 ---------------------------
 
-.. _available_settings:
+.. _mobile_available_settings:
 
 Available Settings
 ~~~~~~~~~~~~~~~~~~
@@ -658,7 +644,7 @@ Available Settings
 All settings can be edited in the Administration Zimlet or via CLI using
 the ``zxsuite config`` command.
 
-.. _when_to_edit_the_performance_tuning_settings:
+.. _mobile_when_to_edit_the_performance_tuning_settings:
 
 When to Edit the Performance Tuning Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -687,12 +673,12 @@ solution.
 | excessive delay                   |                                   |
 +-----------------------------------+-----------------------------------+
 
-.. _shared_folders:
+.. _mobile_shared_folders:
 
 Shared Folders
 ==============
 
-.. _shared_folders_and_you_and_your_mobile:
+.. _mobile_shared_folders_and_you_and_your_mobile:
 
 Shared Folders and You (and Your Mobile)
 ----------------------------------------
@@ -706,10 +692,8 @@ list to mobile devices.
 Specific features available on mobile devices might differ, based on the
 client in use.
 
-   **Warning**
-
-   Not all clients support the synchronization of multiple address
-   books, calendars or task lists via Exchange ActiveSync.
+.. warning:: Not all clients support the synchronization of multiple
+   address books, calendars or task lists via Exchange ActiveSync.
 
 .. _how_to_sync_a_shared_folder_to_your_mobile_devices:
 
@@ -758,7 +742,7 @@ To exclude a shared folder from syncing with a mobile device:
 
 -  Press OK.
 
-.. _restrictions:
+.. _mobile_restrictions:
 
 Restrictions
 ------------
@@ -777,7 +761,7 @@ The following restrictions apply to shared folder synchronization:
    inconsistencies between the client and the server, along with many
    errors.
 
-.. _eas_filters:
+.. _mobile_eas_filters:
 
 EAS Filters
 ===========
@@ -794,7 +778,7 @@ Multiple EAS filters can be set up and will be evaluated in sequential
 order (see the ``getAllEASFilters`` and ``doMoveEASFilter`` commands
 below).
 
-.. _anatomy_of_an_eas_filter:
+.. _mobile_anatomy_of_an_eas_filter:
 
 Anatomy of an EAS Filter
 ------------------------
@@ -815,7 +799,7 @@ An EAS filter is composed of 5 parts:
 -  ``Blocking`` boolean value: Defines whether other filters are
    executed once the current one is successfully matched.
 
-.. _managing_eas_filters:
+.. _mobile_managing_eas_filters:
 
 Managing EAS Filters
 --------------------
@@ -961,15 +945,11 @@ specified:
 -  The ``window_size`` to enforce on all devices synchronizing with the
    account while the logger is running.
 
-..
+.. warning:: Account loggers are removed automatically when the
+   mailboxd is stopped or restarted and do not usually survive a
+   mailboxd crash. Log files won’t be affected.
 
-   **Warning**
-
-   Account loggers are removed automatically when the mailboxd is
-   stopped or restarted and do not usually survive a mailboxd crash. Log
-   files won’t be affected.
-
-.. _account_logger_management:
+.. _mobile_account_logger_management:
 
 Account Logger Management
 -------------------------
@@ -1052,12 +1032,12 @@ Sample output:
                    description                                                 Logging account user@example.com using level debug, log file /tmp/user.log
                    remove command                                              zxsuite mobile doRemoveLogger 7
 
-.. _abq_allowblockquarantine_device_control:
+.. _mobile_abq_allowblockquarantine_device_control:
 
 ABQ - Allow/Block/Quarantine device control
 ===========================================
 
-.. _abq_service:
+.. _mobile_abq_service:
 
 ABQ Service
 -----------
@@ -1070,7 +1050,7 @@ synchronization with server. This allows a full administrator to keep
 track of all mobile device used in their network. Presently only CLI
 tools are provided; a web GUI will be released in the future.
 
-.. _components:
+.. _mobile_components:
 
 Components
 ~~~~~~~~~~
@@ -1083,7 +1063,7 @@ The ABQ feature is composed of three main logical components:
 
 -  a set of CLI tools
 
-.. _device_control_list:
+.. _mobile_device_control_list:
 
 Device Control List
 ^^^^^^^^^^^^^^^^^^^
@@ -1096,13 +1076,11 @@ which can be obtained via CLI.
 It is also possible to further limit access by limiting the accounts
 that can synchronise with the server on a specific device.
 
-   **Note**
+.. note:: On module startup, if the Device Control List is empty all
+   mobile devices previously recognized by the Zimbra server will be
+   imported as **Allowed**.
 
-   On module startup, if the Device Control List is empty all mobile
-   devices previously recognized by the Zimbra server will be imported
-   as **Allowed**.
-
-.. _authorization_engine:
+.. _mobile_authorization_engine:
 
 Authorization Engine
 ^^^^^^^^^^^^^^^^^^^^
@@ -1115,7 +1093,7 @@ Each rule is applied to all accounts connecting using a device it is a
 device id. It applies to a specific account connecting using that device
 if it has the format device_id/account_id or device_id/accountName
 
-.. _cli_toolset:
+.. _mobile_cli_toolset:
 
 CLI Toolset.
 ^^^^^^^^^^^^
@@ -1140,7 +1118,7 @@ re-sync folders with the server resulting in an immediate re-route to
 either a `dummy virtual mailbox <#_dummy_data>`_ that will explain to
 the user what’s happened, or to the real mailbox to perform the re-sync.
 
-.. _abq_modes:
+.. _mobile_abq_modes:
 
 ABQ Modes
 ~~~~~~~~~
@@ -1150,7 +1128,7 @@ synchronize with server, and can be set to one of four possible modes:
 "Permissive", "Interactive", "Strict” and "Disabled". This attribute is
 Global for all the cluster.
 
-.. _permissive_mode:
+.. _mobile_permissive_mode:
 
 "Permissive" mode:
 ^^^^^^^^^^^^^^^^^^
@@ -1160,7 +1138,7 @@ and checking their account status for safety reasons, the
 synchronization will continue. It is still possible to block specific
 devices but non-blocked devices will always be allowed to sync.
 
-.. _interactive_mode:
+.. _mobile_interactive_mode:
 
 "Interactive" mode:
 ^^^^^^^^^^^^^^^^^^^
@@ -1185,7 +1163,7 @@ notification email will only include new Quarantined devices. They will
 then be able to allow or deny the synchronization for each device using
 the appropriate CLI tools.
 
-.. _strict_mode:
+.. _mobile_strict_mode:
 
 "Strict" mode:
 ^^^^^^^^^^^^^^
@@ -1202,14 +1180,14 @@ sent by the device against the list of allowed devices:
    email notifying the user of the device’s "Blocked" status will be
    sent.
 
-.. _disabled_mode:
+.. _mobile_disabled_mode:
 
 "Disabled" mode:
 ^^^^^^^^^^^^^^^^
 
 ABQ is disabled, no checks are triggered and no policies are enforced.
 
-.. _abq_mode_control:
+.. _mobile_abq_mode_control:
 
 ABQ Mode Control
 ~~~~~~~~~~~~~~~~
@@ -1226,7 +1204,7 @@ The ABQ mode can be changed running the following command:
 
    zxsuite config global set attribute abqMode value [Permissive|Interactive|Strict|Disabled]
 
-.. _dummy_data:
+.. _mobile_dummy_data:
 
 Dummy data
 ~~~~~~~~~~
@@ -1249,7 +1227,7 @@ alternative being forcing the synchronization to fail with no
 descriptive response for the user itself – which would likely cause a
 significant overhead on support calls.
 
-.. _custom_abq_emails:
+.. _mobile_custom_abq_emails:
 
 Custom ABQ emails
 ~~~~~~~~~~~~~~~~~
@@ -1309,13 +1287,12 @@ address, the following command will set the quarantine message for the
 
 ``zxsuite mobile setABQMessage domain example.com quarantined fr from support@example.com body_plain_file /tmp/quarantine_body.txt body_html_file /tmp/quarantine_body.html``
 
-   **Warning**
+.. warning:: Before being able to customize the ABQ messages, a
+   default must be set using ``default`` as the language in the
+   command, e.g., ``zxsuite mobile setABQMessage global quarantined
+   default […​]``
 
-   | Before being able to customize the ABQ messages, a default must be
-     set using ``default`` as the language in the command, e.g.
-   | ``zxsuite mobile setABQMessage global quarantined default […​]``
-
-.. _notifications:
+.. _mobile_notifications:
 
 Notifications
 ~~~~~~~~~~~~~
@@ -1339,7 +1316,7 @@ The interval can be changed running the following command:
 By default, the ``abqNotificationsInterval`` is set to 0 - meaning that
 no notifications will be delivered.
 
-.. _abq_service_status:
+.. _mobile_abq_service_status:
 
 ABQ Service Status
 ^^^^^^^^^^^^^^^^^^
@@ -1361,7 +1338,7 @@ of the Mobile module:
 When mode is Disabled ABQ service won’t automatically start and devices
 are always allowed to sync.
 
-.. _abq_cli:
+.. _mobile_abq_cli:
 
 ABQ CLI
 ~~~~~~~
@@ -1395,7 +1372,7 @@ A list of all ABQ CLI commands can be displayed running:
        setNotificationInterval - Set the notification interval for new quarantined devices
                                  zxsuite mobile ABQ setNotificationInterval {45m|6h|1d|0}
 
-.. _abq_list_command:
+.. _mobile_abq_list_command:
 
 ABQ "list" Command
 ^^^^^^^^^^^^^^^^^^
@@ -1436,7 +1413,7 @@ Example:
                    device_id   SAMSUNG1239862958
                    status      Allowed
 
-.. _abq_import_command:
+.. _mobile_abq_import_command:
 
 ABQ "import" Command
 ^^^^^^^^^^^^^^^^^^^^
@@ -1483,7 +1460,7 @@ In the example above, devices ``androidc133785981`` and
 account, while device ``SAMSUNG1239862958`` can only synchronise the
 ``user@example.com`` account
 
-.. _abq_allow_command:
+.. _mobile_abq_allow_command:
 
 ABQ "allow" Command
 ^^^^^^^^^^^^^^^^^^^
@@ -1507,7 +1484,7 @@ status to **Allowed**.
 
    (M) = mandatory parameter, (O) = optional parameter
 
-.. _abq_block_command:
+.. _mobile_abq_block_command:
 
 ABQ "block" Command
 ^^^^^^^^^^^^^^^^^^^
@@ -1531,7 +1508,7 @@ status to **Blocked**.
 
    (M) = mandatory parameter, (O) = optional parameter
 
-.. _abq_set_command:
+.. _mobile_abq_set_command:
 
 ABQ "set" Command
 ^^^^^^^^^^^^^^^^^
@@ -1555,7 +1532,7 @@ Set any status for any single device (either known or unknown).
 
    (M) = mandatory parameter, (O) = optional parameter
 
-.. _abq_rule_commands:
+.. _mobile_abq_rule_commands:
 
 ABQ "rule" Commands
 ^^^^^^^^^^^^^^^^^^^
@@ -1563,10 +1540,8 @@ ABQ "rule" Commands
 This set of commands allows to manage ABQ rules via custom regular
 expressions.
 
-   **Warning**
-
-   Mobile ABQ regular expressions comply with the "Java regex patterns"
-   standard (ERE with doubled backslashes).
+.. warning:: Mobile ABQ regular expressions comply with the "Java
+   regex patterns" standard (ERE with doubled backslashes).
 
 -  ``zxsuite mobile abq setRule`` - equivalent of the ``set`` command
    for regex-based rules
@@ -1618,7 +1593,7 @@ expressions.
 
 Standard and regex-based rules can be freely mixed and matched.
 
-   **Community Article:**
+.. seealso:: Community Article
 
    https://community.zextras.com/zextras-suite-3-1-8-added-features-to-abq/
 
@@ -1626,7 +1601,7 @@ Standard and regex-based rules can be freely mixed and matched.
    ``listRules`` commands, including an important section about the
    order of evaluation or Regular Expressions.
 
-.. _abq_delete_command:
+.. _mobile_abq_delete_command:
 
 ABQ "delete" Command
 ^^^^^^^^^^^^^^^^^^^^
@@ -1649,7 +1624,7 @@ Delete a device from all lists.
 
    (M) = mandatory parameter, (O) = optional parameter
 
-.. _abq_setnotificationinterval_command:
+.. _mobile_abq_setnotificationinterval_command:
 
 ABQ "setNotificationInterval" Command
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
