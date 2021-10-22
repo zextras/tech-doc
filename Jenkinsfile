@@ -14,28 +14,26 @@ pipeline {
         SOURCE_DIR  = './source'
         WORKSPACE = pwd()
     }
-
     stages {
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                   pip install -r ${SPHINX_DIR}/requirements.txt
-                '''
-            }
-        }
-        stage('Build') {
-            steps {
-                // clear out old files
-                sh 'rm -rf ${BUILD_DIR}'
-                sh 'rm -f ${SPHINX_DIR}/sphinx-build.log'
+      stage('Install dependencies') {
+        steps {
+            sh 'docker build -f Dockerfile -t sphinx_builder .'
+                          }
+               }
+      stage('Build Sphinx with Docker') {
+        steps {
+	    sh 'docker run -v $(pwd):/docs sphinx_builder python -m sphinx source/suite build/'
 
-                sh '''
-                   ${WORKSPACE}/bin/sphinx-build \
-                   -q -w ${SPHINX_DIR}/sphinx-build.log \
-                   -b html \
-                   -d ${BUILD_DIR} ${SOURCE_DIR} ${BUILD_DIR}
-                '''
-            }
+            withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
+                 s3Upload(bucket: "zextrasdoc",
+                 includePathPattern: '**',
+                 workingDir: 'build'
+                               )
+                           }
+                }
+        }
+    }
+
             post {
                 failure {
                     sh 'cat ${SPHINX_DIR}/sphinx-build.log'
@@ -47,5 +45,3 @@ pipeline {
                  }
             }
         }
-}
-}
