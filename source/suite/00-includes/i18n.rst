@@ -24,22 +24,13 @@ Available Languages
 Zextras Suite’s main language is English, and the following languages
 are also included:
 
-.. table:: *Languages in*\ **bold**\ *are considered completed and out
-of Beta*
-
-   +----------------------+----------------------+-----------------------+
-   | **English** (GB, US, | **Italian**          | **French**            |
-   | AU)                  |                      |                       |
-   +----------------------+----------------------+-----------------------+
-   | **Spanish**          | **Portuguese** (PT,  | German                |
-   |                      | BR)                  |                       |
-   +----------------------+----------------------+-----------------------+
-   | Dutch                | Turkish              | Russian               |
-   +----------------------+----------------------+-----------------------+
-   | Thai                 | Hindi                | Indonesian            |
-   +----------------------+----------------------+-----------------------+
-   | Japanese             | Simplified Chinese   |                       |
-   +----------------------+----------------------+-----------------------+
+.. csv-table:: 
+ 
+   "**English** (GB, US, AU)", "**Italian**", "**French**"
+   "**Spanish**", "**Portuguese** (PT, BR)", "German"
+   "Dutch", "Turkish", "Russian"
+   "Thai", "Hindi", "Indonesian" 
+   "Japanese", "Simplified Chinese", ""
 
 This includes both the Client components (Drive, Team and Docs Zimlets,
 plus the Client Zimlet and any other collateral client entity) and, to

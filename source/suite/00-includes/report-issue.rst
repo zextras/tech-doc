@@ -42,7 +42,7 @@ In order to report a Zextras Suite issue, please follow this steps:
 .. _issue-definition:
 
 Definition of "issue"
---------------------
+---------------------
 
 While you as a user can experience different problems, not in all of
 them the Technical Support Team can be helpful.
@@ -175,10 +175,8 @@ file to debug by running the command ``zxsuite config global set
 attribute ZxCore_LogLevel value 0``. **Make sure** to set it back to
 **1** once finished the operation to avoid filling the disk with logs.
 
-   **Note**
-
-   When reporting migration issues, please specify this data for both
-   the source and destination server.
+.. note:: When reporting migration issues, please specify this data
+   for both the source and destination server.
 
 .. _zextras_powerstore:
 
