@@ -2,12 +2,6 @@
 Zextras Backup
 ==============
 
-:Date:   2021-10-19
-
-.. contents::
-   :depth: 3
-..
-
 This chapter describes Zextras Backup, Zextras Suite’s component that is
 responsible to back up all the data. The chapter is divided into several
 sections: at the beginning, an overview of the most common task is given
@@ -21,17 +15,13 @@ Finally, the available options to periodically store and check the data
 backed up are presented. All sections are accompanied with the
 corresponding Command Line Reference.
 
-   **Important**
+.. important:: `Restore Strategies
+   <restorestrategies.xml#backup-restore-strategies>`_ for the Backup
+   and `Advanced Backup Techniques
+   <advancedbackup.xml#backup-advanced-techniques>`_, including
+   Disaster Recovery, have now a dedicated chapter.
 
-   `Restore
-   Strategies <restorestrategies.xml#backup-restore-strategies>`_ for
-   the Backup and `Advanced Backup
-   Techniques <advancedbackup.xml#backup-advanced-techniques>`_,
-   including Disaster Recovery, have now a dedicated chapter.
-
-..
-
-   **Community Article:**
+.. seealso:: Community Article
 
    https://community.zextras.com/zimbra-migration-with-zextras-backup/
 
@@ -59,12 +49,8 @@ up.
    ``/opt/zimbra/backup/zextras`` throughout this section; remember to
    replace it with the path you chose.
 
-..
-
-   **Important**
-
-   The size of the device should be at least 80% of primary + secondary
-   volume size.
+.. important:: The size of the device should be at least 80% of
+   primary + secondary volume size.
 
 -  Set the correct permission on the backup path: ``chown zimbra:zimbra
    /opt/zimbra/backup/zextras``
@@ -108,12 +94,8 @@ Figure `figure_title <#img-backup-console>`_, for example:
    `SmartScan <./cli.xml#backup_doSmartScan>`_ for the first time:
    ``zxsuite backup doSmartScan start``
 
-..
-
-   **Tip**
-
-   To avoid a flood of notifications about running operations, it is
-   suggested to lower the default *Notification level* from
+.. hint:: To avoid a flood of notifications about running operations,
+   it is suggested to lower the default *Notification level* from
    **Information** to one of **Warning**, **Error**, or **Critical**
    (see Figure `figure_title <#img-backup-notification>`_).
 
@@ -178,13 +160,9 @@ backup, for example:
 
 -  a class of services (COS)
 
-..
-
-   **Note**
-
-   the last three items (distribution lists, domains, classes of
-   services) are subject to the SmartScan **only**, i.e., the Real Time
-   Scan will **not** record any change of their state.
+.. note:: The last three items (distribution lists, domains, classes
+   of services) are subject to the SmartScan **only**, i.e., the Real
+   Time Scan will **not** record any change of their state.
 
 There are also objects that are **not** items, and as such will never be
 scanned for changes by the Real Time Scan and will never be part of a
@@ -217,12 +195,10 @@ Item <#_structure_of_an_item>`_ section.
 
 A **Deleted Item** is an item that has been marked for removal.
 
-   **Note**
-
-   An element in the thrash bin is not considered as a **deleted item**:
-   It is a regular item, placed in a folder that is special only to us,
-   from the Zextras Backup’s point of view, the item has only changed
-   its state when moved to the thrash bin.
+.. note:: An element in the thrash bin is not considered as a
+   **deleted item**: It is a regular item, placed in a folder that is
+   special only to us, from the Zextras Backup’s point of view, the
+   item has only changed its state when moved to the thrash bin.
 
 .. _transaction:
 
@@ -248,15 +224,14 @@ and used to populate the backup. The SmartScan is then executed at every
 start of the module and on a daily basis if the **Scan Operation
 Scheduling** is enabled in the Administration Zimlet.
 
-   **Important**
-
-   SmartScan runs at a fixed time—​that can be configured—​on a daily
-   basis and is not deferred. This implies that, if for any reason (like
-   e.g., the server is turned off, or Zextras is not running), SmartScan
-   does **not run**, it will **not run** until the next day. You may
-   however configure the Backup to run the SmartScan every time Zextras
-   Suite is restarted (although this is discouraged), or you may
-   manually run SmartScan to compensate for the missing run.
+.. important:: SmartScan runs at a fixed time—​that can be
+   configured—​on a daily basis and is not deferred. This implies that,
+   if for any reason (like e.g., the server is turned off, or Zextras
+   is not running), SmartScan does **not run**, it will **not run**
+   until the next day. You may however configure the Backup to run the
+   SmartScan every time Zextras Suite is restarted (although this is
+   discouraged), or you may manually run SmartScan to compensate for
+   the missing run.
 
 SmartScan’s main purpose is to check for items modified since its
 previous run and to update the database with any new information.
@@ -272,9 +247,8 @@ Both SmartScan and Real Time Scan are enabled by default. While both can
 be (independently) stopped, it is suggested to leave them running, as
 they are intended to complement each other.
 
-   **Warning**
-
-   If none of the two Scan Operations is active, no backup is created.
+.. warning:: If none of the two Scan Operations is active, no backup
+   is created.
 
 Backups are written on disk, therefore the Scan operations result in I/O
 disk access. Therefore, there are a number of scenarios in which either
@@ -350,9 +324,9 @@ important files and directories are present:
    ``/backup/zextras/accounts/xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/id_mapper.log``.
    This file is present only in case of an external restore.
 
-..
 
-   **Community Article:**
+
+.. seealso:: Community Article
 
    https://community.zextras.com/zextras-backup-path/
 
@@ -371,14 +345,11 @@ The Backup Path can be set both via GUI and via CLI:
 -  Via CLI: using the `config server <../cli.xml#config_server>`_
    command to change the ``ZxBackup_DestPath`` config key.
 
-..
-
-   **Warning**
-
-   Backup paths are unique and not reusable. Copying a Backup Path to a
-   new server and setting it as its current Backup Path will return an
-   error, and forcing this in any way by tampering with the backup file
-   will cause corruption of both old and new backup data.
+.. warning:: Backup paths are unique and not reusable. Copying a
+   Backup Path to a new server and setting it as its current Backup
+   Path will return an error, and forcing this in any way by tampering
+   with the backup file will cause corruption of both old and new
+   backup data.
 
 .. _retention_policy:
 
@@ -436,9 +407,7 @@ Quick reference
 
    zxsuite backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
 
-..
-
-   **Community Article:**
+.. seealso:: Community Article
 
    https://community.zextras.com/coherency-check/
 
@@ -466,12 +435,8 @@ order to be eligible to be used as the Backup Path, a directory must:
 
 -  Use a case sensitive filesystem.
 
-..
-
-   **Tip**
-
-   You can modify the default setting by using either technique shown in
-   `Setting the Backup Path <#setting-backup-path>`_.
+.. hint:: You can modify the default setting by using either technique
+   shown in `Setting the Backup Path <#setting-backup-path>`_.
 
 When first started, Zextras Backup launches a SmartScan, to fetch from
 the mailbox all data and create the initial backup structure, in which
@@ -566,12 +531,10 @@ When LDAP is part of the setup, SmartScan will save in the Backup Path a
 compressed LDAP dump that can also be used standalone to restore a
 broken LDAP configuration.
 
-   **Note**
-
-   In case the LDAP backup can not be executed (e.g., because the access
-   credential are wrong or invalid, SmartScan will simply ignore to back
-   up the LDAP configuration, but will nonetheless save a backup of all
-   the remaining configuration
+.. note:: In case the LDAP backup can not be executed (e.g., because
+   the access credential are wrong or invalid, SmartScan will simply
+   ignore to back up the LDAP configuration, but will nonetheless save
+   a backup of all the remaining configuration
 
 When the Backup on External Volume functionality is active, SmartScan
 creates one (daily) archive for each account which include all the
@@ -585,17 +548,14 @@ When is a SmartScan Executed?
 
 -  When the Zextras Backup module is started.
 
-..
-
-   **Note**
-
-   While it is possible to enable this option, it is suggested to leave
-   it disabled, because in certain situations, running SmartScan at
-   every module restart can become a performance bottleneck, as it has
-   been `discussed previously <#disable-scan>`_. \* Daily, if the Scan
-   Operation Scheduling is enabled in the Administration Zimlet \* When
-   the Real Time Scanner is re-enabled via the Administration Zimlet
-   after being previously disabled
+.. note:: While it is possible to enable this option, it is suggested
+   to leave it disabled, because in certain situations, running
+   SmartScan at every module restart can become a performance
+   bottleneck, as it has been `discussed previously
+   <#disable-scan>`_. \* Daily, if the Scan Operation Scheduling is
+   enabled in the Administration Zimlet \* When the Real Time Scanner
+   is re-enabled via the Administration Zimlet after being previously
+   disabled
 
 .. _running_a_smartscan:
 
@@ -699,11 +659,7 @@ Via the Administration Zimlet
 
 -  Under Real Time Scanner, press the ``Enable`` button.
 
-..
-
-   **Note**
-
-   When the Real Time Scanner is enabled for the first time or
+.. note:: When the Real Time Scanner is enabled for the first time or
    re-enabled after a stop, a SmartScan is required. A warning will be
    displayed after enabling the Real Time Scanner, and you will be
    prompted to start the SmartScan.
@@ -883,29 +839,25 @@ discuss those cases here.
    necessary to restore it at a point in time which is **antecedent**
    the emails were deleted.
 
-1. When using the **POP3/POP3S** protocol, if the email client is
+#. When using the **POP3/POP3S** protocol, if the email client is
    configured to download email messages and delete them immediately
    from the server, these messages may not be included in the backup.
    This does not happen if the Zextras Powerstore component is
    installed.
 
-2. When sending an email directly through an SMTP connection (e.g.,
+#. When sending an email directly through an SMTP connection (e.g.,
    using a multipurpose device or connecting to the STMP server using
    ``telnet``), then that email will not be part of the backup.
 
-3. When sending email using an IMAP/SMTP client, the IMAP client must be
+#. When sending email using an IMAP/SMTP client, the IMAP client must be
    configured to store the send email in a remote folder (using the IMAP
    STORE command) after the send operation, otherwise the email may not
    be included in the backup.
 
-..
-
-   **Note**
-
-   The last two cases do not apply when using a browser to connect to
-   the Mailbox. In this case is it the Mailbox that contacts the SMTP
-   server to send the email and automatically passes the email to
-   ``mailboxd``.
+.. note:: The last two cases do not apply when using a browser to
+   connect to the Mailbox. In this case is it the Mailbox that
+   contacts the SMTP server to send the email and automatically passes
+   the email to ``mailboxd``.
 
 .. _troubleshooting_ldap_backup:
 
@@ -950,12 +902,9 @@ file, remember to restore the verbosity to the previous level:
 
    zxsuite config server set $(zmhostname) attribute ZxCore_LogLevel value 1
 
-..
-
-   **Tip**
-
-   Increasing log verbosity can prove useful whenever troubleshooting a
-   problem or searching for more information about a problem.
+.. hint:: Increasing log verbosity can prove useful whenever
+   troubleshooting a problem or searching for more information about a
+   problem.
 
 .. _missing_root_credentials:
 
