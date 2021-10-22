@@ -22,7 +22,7 @@ pipeline {
                }
       stage('Build Sphinx with Docker') {
         steps {
-            sh 'docker run -dt -v $(pwd):/docs sphinx_builder python -m sphinx source/suite build/suite/'
+            sh 'docker run -dt -v $(pwd):/docs sphinx_builder python -m sphinx source/suite build/suite'
             sh 'ls $(pwd)'
                           }
                }
@@ -31,7 +31,7 @@ pipeline {
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
                  includePathPattern: '**',
-                 workingDir: '/tmp/workspace/d_zextras_ztd-sphinx_pre_release/build'
+                 workingDir: 'build'
                                )
                            }
                 }
@@ -44,7 +44,7 @@ pipeline {
                 }
                 success {
                      script {
-                         notifications.emailNotification subject: "Sphinx documentation was released on $BUCKET_NAME", attachLog: true, rcpts: ['luca.arcara@zextras.com']
+                         notifications.emailNotification subject: "Sphinx documentation was released on $BUCKET_NAME", attachLog: true, rcpts: ['fabio.francescone@zextras.com']
                      }
                  }
             }
