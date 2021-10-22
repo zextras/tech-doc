@@ -39,8 +39,6 @@ pipeline {
                    -b html \
                    -d ${BUILD_DIR} ${SOURCE_DIR} ${BUILD_DIR}
                 '''
-            }
-
 
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
