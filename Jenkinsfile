@@ -20,9 +20,13 @@ pipeline {
             sh 'docker build -f Dockerfile -t sphinx_builder .'
                           }
                }
-      stage('Build Sphinx with Docker and upload to AWS') {
+      stage('Build Sphinx with Docker') {
         steps {
             sh 'docker run -dt -v $(pwd):/docs sphinx_builder python -m sphinx source/suite build/'
+                          }
+               }
+      stage('Upload to AWS') {
+        steps {
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
                  includePathPattern: '**',
