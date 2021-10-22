@@ -15,23 +15,14 @@ pipeline {
         WORKSPACE = pwd()
     }
     stages {
-        stage('Install Dependencies') {
-            steps {
-                sh '''
-                   virtualenv pyenv
-                   . pyenv/bin/activate
-                   pip install -r ${SPHINX_DIR}/requirements.txt
-                '''
-            }
-  {
       stage('Building Sphinx using doker') {
         steps {
-                sh '''
-                   ${WORKSPACE}/pyenv/bin/sphinx-build \
+            sh 'docker build -f Dockerfile -t sphinx_builder .'
+	    sh 'python -m sphinx \
                    -q -w ${SPHINX_DIR}/sphinx-build.log \
                    -b html \
-                   -d ${BUILD_DIR}/doctrees ${SOURCE_DIR} ${BUILD_DIR}
-                '''
+                   -d ${BUILD_DIR}/doctrees ${SOURCE_DIR} ${BUILD_DIR}'
+
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
                  includePathPattern: '**',
