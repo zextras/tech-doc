@@ -2,13 +2,7 @@
 Zextras Powerstore
 ==================
 
-:Date:   2021-10-19
-
-.. contents::
-   :depth: 3
-..
-
-.. _introduction:
+.. _pws_introduction:
 
 Introduction
 ============
@@ -27,12 +21,12 @@ will manage older data.
 The remainder of this section describes volumes and their management,
 policies, HSM, and various advanced techniques.
 
-.. _zimbra_stores:
+.. _pws_zimbra_stores:
 
 Zimbra Stores
 =============
 
-.. _the_basics_types_of_stores_and_their_uses:
+.. _pws_the_basics_types_of_stores_and_their_uses:
 
 The Basics: Types of Stores and Their Uses
 ------------------------------------------
@@ -50,7 +44,7 @@ You can have multiple stores of each type, but only one Index Store, one
 Primary Data Store and one Secondary Data Store can be set as *Current*
 (meaning that is currently used by Zimbra).
 
-.. _primary_and_secondary_data_stores:
+.. _pws_primary_and_secondary_data_stores:
 
 Primary and Secondary Data Stores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +55,7 @@ Data Store.
 Data is moved between the *current* Primary Data Store and the *current*
 Secondary Data Store according to a defined policy.
 
-.. _zextras_powerstore_moving_items_between_stores:
+.. _pws_zextras_powerstore_moving_items_between_stores:
 
 Zextras Powerstore: Moving Items between Stores
 -----------------------------------------------
@@ -96,7 +90,7 @@ The Move operation is *stateful* - each step is executed only if the
 previous step has been completed successfully - so the risk of data loss
 during a Move operation is nonexistent.
 
-.. _centralized_storage:
+.. _pws_centralized_storage:
 
 Centralized Storage
 ===================
@@ -117,7 +111,7 @@ account before deloying are the following
 
 2. **Only S3 buckets** can be used for centralized storage
 
-.. _enabling_centralized_storage:
+.. _pws_enabling_centralized_storage:
 
 Enabling Centralized Storage
 ----------------------------
@@ -140,7 +134,7 @@ Enabling Centralized Storage
    a. The full syntax for the command is zxsuite powerstore
       doCreateVolume Centralized {server_name} {volume_name}
 
-.. _centralized_storage_structure:
+.. _pws_centralized_storage_structure:
 
 Centralized Storage Structure
 -----------------------------
@@ -198,7 +192,7 @@ storage.
     |-- 383-130.msg
     |-- 384-131.msg
 
-.. _volume_management:
+.. _pws_volume_management:
 
 Volume Management
 =================
@@ -206,7 +200,7 @@ Volume Management
 Both primary and secondary volumes can be created on either local
 storage or on supported third-party storage solutions.
 
-.. _zimbra_volumes:
+.. _pws_zimbra_volumes:
 
 Zimbra Volumes
 --------------
@@ -214,7 +208,7 @@ Zimbra Volumes
 A volume is a distinct entity (path) on a filesystem with all the
 associated properties that contain Zimbra Blobs.
 
-.. _volume_properties:
+.. _pws_volume_properties:
 
 Volume Properties
 ~~~~~~~~~~~~~~~~~
@@ -225,9 +219,8 @@ All Zimbra volumes are defined by the following properties:
 
 -  Path: The path where the data is going to be saved.
 
-      **Important**
-
-      The *zimbra* user must have r/w permissions on this path.
+   .. important:: The *zimbra* user must have r/w permissions on this
+      path.
 
 -  Compression: Enable or Disable the file compression for the volume.
 
@@ -239,7 +232,7 @@ All Zimbra volumes are defined by the following properties:
    upon arrival (Primary Current) or HSM policy application (Secondary
    Current).
 
-.. _local_volumes:
+.. _pws_local_volumes:
 
 Local Volumes
 ~~~~~~~~~~~~~
@@ -258,12 +251,10 @@ the following properties:
 -  **Compression Threshold:** the minimum file size that will trigger
    the compression.
 
-      **Important**
+   .. important:: Files under this size will never be compressed even
+      if compression is enabled.
 
-      Files under this size will never be compressed even if compression
-      is enabled.
-
-.. _current_volumes:
+.. _pws_current_volumes:
 
 Current Volumes
 ~~~~~~~~~~~~~~~
@@ -273,12 +264,12 @@ A *Current Volume* is a volume where data will be written upon arrival
 not set as Current won’t be written upon except by specific manual
 operations such as the Volume-to-Volume move.
 
-.. _volume_management_with_zextras_powerstore_administration_zimlet:
+.. _pws_volume_management_with_zextras_powerstore_administration_zimlet:
 
 Volume Management with Zextras Powerstore - Administration Zimlet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _creating_a_new_volume_with_the_administration_zimlet:
+.. _pws_creating_a_new_volume_with_the_administration_zimlet:
 
 Creating a New Volume with the Administration Zimlet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -307,7 +298,7 @@ Administration Zimlet:
 -  Press *OK* to create the new volume. Should the operation fail, a
    notification containing any related errors will be generated.
 
-.. _editing_a_volume_with_the_administration_zimlet:
+.. _pws_editing_a_volume_with_the_administration_zimlet:
 
 Editing a Volume with the Administration Zimlet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -315,7 +306,7 @@ Editing a Volume with the Administration Zimlet
 To edit a volume from the Administration Zimlet, simply select an
 existing volume and press the appropriate *Edit* button.
 
-.. _deleting-a-volume:
+.. _pws_deleting-a-volume:
 
 Deleting a Volume with the Administration Zimlet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -324,15 +315,14 @@ To delete a volume from the Administration Zimlet, select an existing
 volume and press the appropriate *Delete* button. Remember that only
 **empty** volumes can be deleted.
 
-.. _volume_management_with_zextras_powerstore_from_the_cli:
+.. _pws_volume_management_with_zextras_powerstore_from_the_cli:
 
 Volume Management with Zextras Powerstore - From the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Important**
-
-   Beginning with release 8.8.9, all volume creation and update commands
-   have been updated, as the ``storeType`` argument is now required.
+.. important:: Beginning with release 8.8.9, all volume creation and
+   update commands have been updated, as the ``storeType`` argument is
+   now required.
 
 The ``storeType`` argument is **mandatory**, it is always the on the
 first position and accepts any one value corresponding to the
@@ -340,7 +330,7 @@ first position and accepts any one value corresponding to the
 The arguments that follow in the command now depend on the selected
 ``storeType``.
 
-.. _fileblob_local:
+.. _pws_fileblob_local:
 
 FileBlob (Local)
 ^^^^^^^^^^^^^^^^
@@ -398,7 +388,7 @@ zxsuite powerstore doUpdateVolume FileBlob
 
    (M) == mandatory parameter, (O) == optional parameter
 
-.. _s3-buckets:
+.. _pws_s3-buckets:
 
 S3 (Amazon and any S3-compatible solution not explicitly supported)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -471,7 +461,7 @@ zxsuite powerstore doUpdateVolume S3
 
    (M) == mandatory parameter, (O) == optional parameter
 
-.. _scality_s3_compatible_object_storage:
+.. _pws_scality_s3_compatible_object_storage:
 
 Scality (S3 compatible object storage)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -533,7 +523,7 @@ zxsuite powerstore doUpdateVolume ScalityS3
 
    (M) == mandatory parameter, (O) == optional parameter
 
-.. _emc_s3_compatible_object_storage:
+.. _pws_emc_s3_compatible_object_storage:
 
 EMC (S3 compatible object storage)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -595,7 +585,7 @@ zxsuite powerstore doUpdateVolume EMC
 
    (M) == mandatory parameter, (O) == optional parameter
 
-.. _openio:
+.. _pws_openio:
 
 OpenIO
 ^^^^^^
@@ -654,7 +644,7 @@ accountName namespaceString proxy_port 6006 account_port 6009
 
    (M) == mandatory parameter, (O) == optional parameter
 
-.. _swift:
+.. _pws_swift:
 
 Swift
 ^^^^^
@@ -714,7 +704,7 @@ zxsuite powerstore doUpdateVolume Swift
 
    (M) == mandatory parameter, (O) == optional parameter
 
-.. _cloudian_s3_compatible_object_storage:
+.. _pws_cloudian_s3_compatible_object_storage:
 
 Cloudian (S3 compatible object storage)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -776,7 +766,7 @@ zxsuite powerstore doUpdateVolume Cloudian
 
    (M) == mandatory parameter, (O) == optional parameter
 
-.. _volume_deletion:
+.. _pws_volume_deletion:
 
 Volume Deletion
 ~~~~~~~~~~~~~~~
@@ -800,7 +790,7 @@ zxsuite powerstore doDeleteVolume
    zxsuite powerstore dodeletevolume hsm
    Deletes volume with name hsm
 
-.. _move_all_data_from_a_volume_to_another:
+.. _pws_move_all_data_from_a_volume_to_another:
 
 Move all data from a volume to another
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -826,12 +816,12 @@ Move all data from a volume to another
    zxsuite hsm doVolumeToVolumeMove sourceVolume destVolume
    Moves the whole sourceVolume to destVolume
 
-.. _hsm:
+.. _pws_hsm:
 
 Hierarchical Storage Management
 ===============================
 
-.. _the_hierarchical_storage_management_technique:
+.. _pws_the_hierarchical_storage_management_technique:
 
 The Hierarchical Storage Management Technique
 ---------------------------------------------
@@ -853,7 +843,7 @@ The advantages of the HSM technique are clear: Lowering the overall
 storage cost since only a small part of your data needs to be on costly
 storage, and improving the overall user experience.
 
-.. _stores_volumes_and_policies:
+.. _pws_stores_volumes_and_policies:
 
 Stores, Volumes and Policies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -866,12 +856,12 @@ Using HSM requires a clear understanding of some related terms:
 -  Secondary Store: The *slow-but-cheap* store where *older* data will
    be moved to.
 
-.. _domoveblobs:
+.. _pws_domoveblobs:
 
 doMoveBlobs
 -----------
 
-.. _the_domoveblobs_operation_of_zextras_powerstore:
+.. _pws_the_domoveblobs_operation_of_zextras_powerstore:
 
 The doMoveBlobs Operation of Zextras Powerstore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -895,7 +885,7 @@ steps are performed:
 
 -  The original Blob is deleted from the Current Primary Store.
 
-.. _what_is_moved:
+.. _pws_what_is_moved:
 
 What is Moved?
 ^^^^^^^^^^^^^^
@@ -914,13 +904,11 @@ The following policy
 will move all emails and documents older than 20 days along with all
 emails older than 10 days that contain an attachment.
 
-   **Warning**
+.. warning:: By default, results from the Trash folder do not appear
+   in any search--and this includes the HSM Policy. In order to ensure
+   that all items are moved, add "is:anywhere" to your policy.
 
-   By default, results from the Trash folder do not appear in any search
-   - and this includes the HSM Policy. In order to ensure that all items
-   are moved add "is:anywhere" to your policy.
-
-.. _policy_order:
+.. _pws_policy_order:
 
 Policy Order
 ^^^^^^^^^^^^
@@ -960,7 +948,7 @@ on.
 This is just an example and does not apply to all cases, but gives an
 idea of the need to carefully plan your HSM policy.
 
-.. _executing_the_domoveblobs_operation_a_k_a_applying_the_hsm_policy:
+.. _pws_executing_the_domoveblobs_operation_a_k_a_applying_the_hsm_policy:
 
 Executing the doMoveBlobs Operation (a.k.a. Applying the HSM Policy)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -977,15 +965,11 @@ Zextras Powerstore gives you three different options:
 
 -  Through Scheduling
 
-..
+.. warning:: Items in **Trash** or dumpster folders are not moved to
+   the secondary store by the HSM module. Currently, there is no
+   option to define a policy for **Trash** and dumpster.
 
-   **Warning**
-
-   Items in **Trash** or dumpster folders are not moved to the secondary
-   store by the HSM module. Currently, there is no option to define a
-   policy for **Trash** and dumpster.
-
-.. _apply_the_hsm_policy_via_the_administration_zimlet:
+.. _pws_apply_the_hsm_policy_via_the_administration_zimlet:
 
 Apply the HSM Policy via the Administration Zimlet
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -998,7 +982,7 @@ To apply the HSM Policy via the Administration Zimlet:
 
 -  Click the *Apply Policy* button.
 
-.. _apply_the_hsm_policy_via_the_cli:
+.. _pws_apply_the_hsm_policy_via_the_cli:
 
 Apply the HSM Policy via the CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1008,7 +992,7 @@ To apply the HSM Policy via the CLI, run the following command as the
 
 ``zxsuite powerstore doMoveBlobs``
 
-.. _apply_the_hsm_policy_through_scheduling:
+.. _pws_apply_the_hsm_policy_through_scheduling:
 
 Apply the HSM Policy through Scheduling
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1025,7 +1009,7 @@ To schedule a daily execution of the ``doMoveBlobs`` operation:
 -  Select the hour to run the operation under
    ``HSM Session scheduled for:``.
 
-.. _domoveblobs_stats_and_info:
+.. _pws_domoveblobs_stats_and_info:
 
 doMoveBlobs Stats and Info
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1035,12 +1019,12 @@ are available by clicking the *Stats* button under the ``Secondary
 Volumes`` list in the Zextras Powerstore tab of the Administration
 Zimlet.
 
-.. _policy_management:
+.. _pws_policy_management:
 
 Policy Management
 =================
 
-.. _what_is_a_policy:
+.. _pws_what_is_a_policy:
 
 What is a Policy?
 -----------------
@@ -1056,7 +1040,7 @@ A policy can consist of a single rule that is valid for all item types
 using Zimbra’s `search
 syntax <http://wiki.zimbra.com/wiki/Zimbra_Web_Client_Search_Tips>`_.
 
-.. _policy_examples:
+.. _pws_policy_examples:
 
 Policy Examples
 ~~~~~~~~~~~~~~~
@@ -1072,7 +1056,7 @@ Zextras Powerstore module, see below.
 -  *Move calendar items older than 15 days, Drive items older than 20
    days and all emails in the "Archive" folder*
 
-.. _defining_a_policy:
+.. _pws_defining_a_policy:
 
 Defining a Policy
 -----------------
@@ -1081,7 +1065,7 @@ Policies can be defined both from the Zextras Powerstore tab of the
 Administration Zimlet and from the CLI. You can specify a Zimbra Search
 in both cases.
 
-.. _from_the_administration_zimlet:
+.. _pws_from_the_administration_zimlet:
 
 From the Administration Zimlet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1104,7 +1088,7 @@ To define a policy from the Administration Zimlet:
    will be evaluated and executed after the line before has been
    applied.
 
-.. _from_the_cli:
+.. _pws_from_the_cli:
 
 From the CLI
 ~~~~~~~~~~~~
@@ -1126,7 +1110,7 @@ difference is that ``setHSMPolicy`` creates **new** policies,
 *replacing* existing one, while ``+setHSMPolicy`` *adds* policies to
 existing ones.
 
-.. _zextras_powerstore_and_s3_buckets:
+.. _pws_zextras_powerstore_and_s3_buckets:
 
 Zextras Powerstore and S3 buckets
 =================================
@@ -1135,7 +1119,7 @@ Primary and Secondary volumes created with Zextras Powerstore can be
 hosted on S3 buckets, effectively moving the largest part of your data
 to secure and durable cloud storage.
 
-.. _s3_compatible_services:
+.. _pws_s3_compatible_services:
 
 S3-compatible Services
 ----------------------
@@ -1160,7 +1144,7 @@ officially supported platforms:
 
 -  Custom S3 (any unsupported S3-compliant solution)
 
-.. _primary_volumes_and_the_incoming_directory:
+.. _pws_primary_volumes_and_the_incoming_directory:
 
 Primary Volumes and the "Incoming" directory
 --------------------------------------------
@@ -1175,7 +1159,7 @@ using these commands:
    zxsuite config server get $(zmhostname) attribute incomingPath
    zxsuite config server set $(zmhostname) attribute incomingPath value /path/to/dir
 
-.. _local_cache:
+.. _pws_local_cache:
 
 Local Cache
 -----------
@@ -1191,13 +1175,12 @@ in the Zimbra Administration Console.
 If the Local Cache directory is not set, you won’t be able to create any
 secondary volume on an S3-compatible device or service.
 
-   **Warning**
+.. warning:: Failing to correctly configure the cache directory will
+   cause items to be unretrievable, meaning that users will get a ``No
+   such BLOB`` error when trying to access any item stored on an S3
+   volume.
 
-   Failing to correctly configure the cache directory will cause items
-   to be unretrievable, meaning that users will get a ``No such BLOB``
-   error when trying to access any item stored on an S3 volume.
-
-.. _bucket_setup:
+.. _pws_bucket_setup:
 
 Bucket Setup
 ------------
@@ -1217,7 +1200,7 @@ All you need to start storing your secondary volumes on S3 is:
 
 -  A policy that grants the user full rights on your bucket.
 
-.. _bucket_management:
+.. _pws_bucket_management:
 
 Bucket Management
 -----------------
@@ -1274,7 +1257,7 @@ It’s also possible to create new buckets via the CLI using the
      Alibaba                  - Add a bucket configuration for Alibaba Object Storage
                                 zxsuite core doCreateBucket Alibaba {Bucket name} {Service username} {Service password} [attr1 value1 [attr2 value2...]]
 
-.. _bucket_paths_and_naming:
+.. _pws_bucket_paths_and_naming:
 
 Bucket paths and naming
 -----------------------
@@ -1294,7 +1277,7 @@ volumes:
    and it’s a quick way to differentiate and recognize different volumes
    within the bucket.
 
-.. _creating_volumes_with_zextras_powerstore:
+.. _pws_creating_volumes_with_zextras_powerstore:
 
 Creating Volumes with Zextras Powerstore
 ----------------------------------------
@@ -1312,13 +1295,11 @@ Administration Console:
 
 -  Enter the required volume information
 
-      **Important**
+.. important:: Each volume type will require different information to
+   be set up, please refer to your storage provider’s online resources
+   to obtain those details.
 
-      Each volume type will require different information to be set up,
-      please refer to your storage provider’s online resources to obtain
-      those details.
-
-.. _editing_volumes_with_zextras_powerstore:
+.. _pws_editing_volumes_with_zextras_powerstore:
 
 Editing Volumes with Zextras Powerstore
 ---------------------------------------
@@ -1335,7 +1316,7 @@ Console:
 
 -  When done, click *Save*
 
-.. _deleting_volumes_with_zextras_powerstore:
+.. _pws_deleting_volumes_with_zextras_powerstore:
 
 Deleting Volumes with Zextras Powerstore
 ----------------------------------------
@@ -1350,18 +1331,14 @@ Administration Console:
 
 -  Click on *Delete*
 
-..
+.. note:: Only empty volumes can be deleted.
 
-   **Note**
-
-   Only empty volumes can be deleted.
-
-.. _amazon_s3_tips:
+.. _pws_amazon_s3_tips:
 
 Amazon S3 Tips
 --------------
 
-.. _bucket:
+.. _pws_bucket:
 
 Bucket
 ~~~~~~
@@ -1370,7 +1347,7 @@ Storing your secondary Zimbra volumes on Amazon S3 doesn’t have any
 specific bucket requirements, but we suggest that you create a dedicated
 bucket and disable Static Website Hosting for easier management.
 
-.. _user:
+.. _pws_user:
 
 User
 ~~~~
@@ -1379,7 +1356,7 @@ To obtain an Access Key and the related Secret, a ``Programmatic
 Access`` user is needed. We suggest that you create a dedicated user in
 Amazon’s IAM Service for easier management.
 
-.. _rights_management:
+.. _pws_rights_management:
 
 Rights Management
 ~~~~~~~~~~~~~~~~~
@@ -1409,12 +1386,8 @@ following example:
        ]
    }
 
-..
-
-   **Warning**
-
-   This is not a valid configuration policy. Don’t copy and paste it
-   into your user’s settings as it won’t be validated.
+.. warning:: This is not a valid configuration policy. Don’t copy and
+   paste it into your user’s settings as it won’t be validated.
 
 If you only wish to grant minimal permissions, change the ``Action``
 section to:
@@ -1432,7 +1405,7 @@ The bucket’s ARN is expressed according to Amazon’s standard naming
 format: **arn:partition:service:region:account-id:resource**. For more
 information about this topic, please see Amazon’s documentation.
 
-.. _bucket_paths_and_naming_2:
+.. _pws_bucket_paths_and_naming_2:
 
 Bucket Paths and Naming
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1452,7 +1425,7 @@ The **Volume Prefix**, on the other hand, is specific to each volume and
 it’s a quick way to differentiate and recognize different volumes within
 the bucket.
 
-.. _infrequent_access_storage_class:
+.. _pws_infrequent_access_storage_class:
 
 Infrequent Access Storage Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1464,10 +1437,10 @@ Threshold`` value to this storage class as long as the option has been
 enabled on the volume.
 
 For more information about Infrequent Access, please refer to the
-`official Amazon S3
-Documentation <https://aws.amazon.com/s3/storage-classes>`_.
+official Amazon S3 `Infrequent Access Documentation
+<https://aws.amazon.com/s3/storage-classes/#Infrequent_access>`_.
 
-.. _intelligent_tiering_storage_class:
+.. _pws_intelligent_tiering_storage_class:
 
 Intelligent Tiering Storage Class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1478,15 +1451,15 @@ appropriate Intelligent Tiering flag on all files, as long as the option
 has been enabled on the volume.
 
 For more information about Intelligent Tiering, please refer to the
-`official Amazon S3
-Documentation <https://aws.amazon.com/about-aws/whats-new/2018/11/s3-intelligent-tiering/>`_.
+official Amazon S3 `Intelligent Tiering Documentation
+<https://aws.amazon.com/s3/storage-classes/#Unknown_or_changing_access/>`_.
 
-.. _item_deduplication:
+.. _pws_item_deduplication:
 
 Item Deduplication
 ==================
 
-.. _what_is_item_deduplication:
+.. _pws_what_is_item_deduplication:
 
 What is Item Deduplication
 --------------------------
@@ -1499,7 +1472,7 @@ copy only once.
 This might seem like a minor improvement. However, in practical use, it
 makes a significant difference.
 
-.. _item_deduplication_in_zimbra:
+.. _pws_item_deduplication_in_zimbra:
 
 Item Deduplication in Zimbra
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1572,7 +1545,7 @@ Timeout for each entry in the dedupe cache.
 (older Zimbra versions might use different attributes or lack some of
 them)
 
-.. _item_deduplication_and_zextras_powerstore:
+.. _pws_item_deduplication_and_zextras_powerstore:
 
 Item Deduplication and Zextras Powerstore
 -----------------------------------------
@@ -1589,12 +1562,12 @@ Running the ``doDeduplicate`` operation is also highly suggested after a
 migration or a large data import in order to optimize your storage
 usage.
 
-.. _running_a_volume_deduplication:
+.. _pws_running_a_volume_deduplication:
 
 Running a Volume Deduplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _via_the_administration_zimlet:
+.. _pws_via_the_administration_zimlet:
 
 Via the Administration Zimlet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1603,7 +1576,7 @@ To run a volume deduplication via the Administration Zimlet, simply
 click on the *Zextras Powerstore* tab, select the volume you wish to
 deduplicate and press the *Deduplicate* button.
 
-.. _via_the_cli:
+.. _pws_via_the_cli:
 
 Via the CLI
 ~~~~~~~~~~~
@@ -1636,7 +1609,7 @@ command:
 To list all available volumes, you can use the *\`zxsuite powerstore
 getAllVolumes\`* command.
 
-.. _dodeduplicate_stats:
+.. _pws_dodeduplicate_stats:
 
 ``doDeduplicate`` Stats
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1691,12 +1664,12 @@ Looking at the sample output above we can see that:
 -  The current operation deduplicated 64868 BLOBs, for a total disk
    space saving of 21.88GB.
 
-.. _advanced_volume_operations:
+.. _pws_advanced_volume_operations:
 
 Advanced Volume Operations
 ==========================
 
-.. _zextras_powerstore_more_than_meets_the_eye:
+.. _pws_zextras_powerstore_more_than_meets_the_eye:
 
 Zextras Powerstore: More than Meets the Eye
 -------------------------------------------
@@ -1708,7 +1681,7 @@ that are not directly related to HSM.
 Due to the implicit risks in volume management, these tools are only
 available through the CLI.
 
-.. _volume_operations_at_a_glance:
+.. _pws_volume_operations_at_a_glance:
 
 Volume Operations at a Glance
 -----------------------------
@@ -1724,12 +1697,12 @@ The following volume operations are available:
 **getVolumeStats**: Display information about a volume’s size and number
 of thereby contained items/blobs.
 
-.. _volume_operation_analysis:
+.. _pws_volume_operation_analysis:
 
 Volume Operation Analysis
 -------------------------
 
-.. _docheckblobs:
+.. _pws_docheckblobs:
 
 doCheckBlobs
 ~~~~~~~~~~~~
@@ -1792,15 +1765,11 @@ Specifically, the following checks are made:
    whether the BLOB file’s size is coherent with the expected size
    (stored in the DB).
 
-..
+.. important:: The old ``zmblobchk`` command is deprecated and
+   replaced by ``zxsuite powerstore doCheckBlobs`` on all
+   infrastructures using Zextras Powerstore module.
 
-   **Important**
-
-   The old ``zmblobchk`` command is deprecated and replaced by
-   ``zxsuite powerstore doCheckBlobs`` on all infrastructures using
-   Zextras Powerstore module.
-
-.. _dodeduplicate:
+.. _pws_dodeduplicate:
 
 doDeduplicate
 ~~~~~~~~~~~~~
@@ -1829,7 +1798,7 @@ Usage
    zxsuite powerstore dodeduplicate secondvolume
    Starts a deduplication on volume secondvolume
 
-.. _dovolumetovolumemove:
+.. _pws_dovolumetovolumemove:
 
 doVolumeToVolumeMove
 ~~~~~~~~~~~~~~~~~~~~
@@ -1874,14 +1843,10 @@ stop using a volume, such as:
    example, if you redesigned your storage infrastructure or you are
    tidying up your Zimbra volumes.
 
-..
+.. hint:: Starting from version 3.0.10, Zextras Powerstore can also
+   move "Index" volumes.
 
-   **Tip**
-
-   Starting from version 3.0.10, Zextras Powerstore can also move
-   "Index" volumes.
-
-.. _getvolumestats:
+.. _pws_getvolumestats:
 
 getVolumeStats
 ~~~~~~~~~~~~~~
@@ -1917,56 +1882,39 @@ getVolumeStats
 
 This command provides the following information about a volume:
 
-+-----------------------------------+-----------------------------------+
-| name                              | description                       |
-+===================================+===================================+
-| id                                | The ID of the volume              |
-+-----------------------------------+-----------------------------------+
-| name                              | The Name of the volume            |
-+-----------------------------------+-----------------------------------+
-| path                              | The Path of the volume            |
-+-----------------------------------+-----------------------------------+
-| compressed                        | Compression enabled/disabled      |
-+-----------------------------------+-----------------------------------+
-| threshold                         | Compression threshold (in bytes)  |
-+-----------------------------------+-----------------------------------+
-| lastMoveOutcome                   | Exit status of the latest         |
-|                                   | doMoveBlobs operation             |
-+-----------------------------------+-----------------------------------+
-| lastMoveTimestamp                 | End timestamp of the latest       |
-|                                   | doMoveBlobs operation             |
-+-----------------------------------+-----------------------------------+
-| lastMoveDuration                  | Duration of the last doMoveBlobs  |
-|                                   | operation                         |
-+-----------------------------------+-----------------------------------+
-| lastItemMovedCount                | Number of items moved to the      |
-|                                   | current secondary volume during   |
-|                                   | the latest doMoveBlobs operation  |
-+-----------------------------------+-----------------------------------+
-| bytesSaved                        | Total amount of disk space freed  |
-|                                   | up thanks to deduplication and    |
-|                                   | compression                       |
-+-----------------------------------+-----------------------------------+
-| bytesSavedLast                    | Amount of disk space freed up     |
-|                                   | thanks to deduplication and       |
-|                                   | compression during the latest     |
-|                                   | doMoveBlobs operation             |
-+-----------------------------------+-----------------------------------+
+.. csv-table::
+   :header: "Name","Description"
+   :widths: 20, 80
+            
+   "id", "The ID of the volume"
+   "name", "The Name of the volume"
+   "path", "The Path of the volume"
+   "compressed", "Compression enabled/disabled"
+   "threshold", "Compression threshold (in bytes)"
+   "lastMoveOutcome", "Exit status of the latest doMoveBlobs
+   operation"
+   "lastMoveTimestamp", "End timestamp of the latest doMoveBlobs
+   operation"
+   "lastMoveDuration", "Duration of the last doMoveBlobs operation"
+   "lastItemMovedCount", "Number of items moved to the current
+   secondary volume during the latest doMoveBlobs operation"
+   "bytesSaved", "Total amount of disk space freed up thanks to
+   deduplication and compression"
+   "bytesSavedLast", "Amount of disk space freed up thanks to
+   deduplication and compression during the latest doMoveBlobs
+   operation"
 
 The ``show_volume_size`` and ``show_blob_num`` options will add the
 following data to the output:
 
-+----------------------+----------------------+-----------------------+
-| option               | name                 | description           |
-+======================+======================+=======================+
-| show_volume_size     | totSize              | Total disk space used |
-|                      |                      | up by the volume      |
-+----------------------+----------------------+-----------------------+
-| show_blob_num        | blobNumber           | Number of BLOB files  |
-|                      |                      | in the volume         |
-+----------------------+----------------------+-----------------------+
+.. csv-table::
+   :header: "Option", "Name", "description"
+            
+   "show_volume_size", "totSize", "Total disk space used"           
+   "show_blob_num", "blobNumber", "Number of BLOB files"
 
-.. _moving_mailboxes_between_mailstores:
+
+.. _pws_moving_mailboxes_between_mailstores:
 
 Moving Mailboxes Between Mailstores
 ===================================
@@ -1975,12 +1923,10 @@ The ``doMailboxMove`` command allows you to move a single mailbox or all
 accounts from a given domain, from one mailbox server to another within
 the same Zimbra infrastructure.
 
-   **Warning**
-
-   If the Zextras Powerstore module is installed and enabled, this
-   command replaces the old ``zmmboxmove`` and ``zmmailboxmove``
-   commands. Using any of the legacy commands will return an error and
-   won’t move any data.
+.. warning:: If the Zextras Powerstore module is installed and
+   enabled, this command replaces the old ``zmmboxmove`` and
+   ``zmmailboxmove`` commands. Using any of the legacy commands will
+   return an error and won’t move any data.
 
 **Syntax**
 
@@ -2146,12 +2092,12 @@ Parameter List
 -  If for any reason the second stage is not successful, HSM is not
    executed.
 
-.. _zextras_powerstore_attachment_indexing:
+.. _pws_zextras_powerstore_attachment_indexing:
 
 Zextras Powerstore Attachment Indexing
 ======================================
 
-.. _how_indexing_works:
+.. _pws_how_indexing_works:
 
 How Indexing Works
 ------------------
@@ -2174,255 +2120,108 @@ Datastreams over 10Kb are cached by default, and the cache hold 10000
 entries, while smaller datastreams are not cached as the cache benefits
 only apply to large datastreams.
 
-.. _indexed_formats:
+.. _pws_indexed_formats:
 
 Indexed Formats
 ---------------
 
-.. _web:
+.. _pws_web:
 
 Web
 ~~~
 
-+----------------------+----------------------+-----------------------+
-| Extension            | Parser               | Content-type          |
-+======================+======================+=======================+
-| ``asp``              | ``HtmlParser``       | application/x-asp     |
-+----------------------+----------------------+-----------------------+
-| ``htm``              | ``HtmlParser``       | application/xhtml+xml |
-+----------------------+----------------------+-----------------------+
-| ``html``             | ``HtmlParser``       | application/xhtml+xml |
-|                      |                      | ,                     |
-|                      |                      | text/html             |
-+----------------------+----------------------+-----------------------+
-| ``shtml``            | ``HtmlParser``       | application/xhtml+xml |
-+----------------------+----------------------+-----------------------+
-| ``xhtml``            | ``HtmlParser``       | application/xhtml+xml |
-+----------------------+----------------------+-----------------------+
+.. csv-table::
+   :header: "Extension", "Parser", "Content-type"
 
-.. _documents:
+   "``asp``", "``HtmlParser``", "application/x-asp"
+   "``htm``", "``HtmlParser``", "application/xhtml+xml"
+   "``html``", "``HtmlParser``", "application/xhtml+xml, text/html"
+   "``shtml``", "``HtmlParser``", "application/xhtml+xml"
+   "``xhtml``", "``HtmlParser``", "application/xhtml+xml"
+
+.. _pws_documents:
 
 Documents
 ~~~~~~~~~
 
-+----------------------+----------------------+-----------------------+
-| Extension            | Parser               | Content-type          |
-+======================+======================+=======================+
-| ``rtf``              | ``RTFParser``        | application/rtf       |
-+----------------------+----------------------+-----------------------+
-| ``pdf``              | ``PDFParser``        | application/pdf       |
-+----------------------+----------------------+-----------------------+
-| ``pub``              | ``OfficeParser``     | application/x-mspubli |
-|                      |                      | sher                  |
-+----------------------+----------------------+-----------------------+
-| ``xls``              | ``OfficeParser``     | application/vnd.ms-ex |
-|                      |                      | cel                   |
-+----------------------+----------------------+-----------------------+
-| ``xlt``              | ``OfficeParser``     | application/vnd.ms-ex |
-|                      |                      | cel                   |
-+----------------------+----------------------+-----------------------+
-| ``xlw``              | ``OfficeParser``     | application/vnd.ms-ex |
-|                      |                      | cel                   |
-+----------------------+----------------------+-----------------------+
-| ``ppt``              | ``OfficeParser``     | application/vnd.ms-po |
-|                      |                      | werpoint              |
-+----------------------+----------------------+-----------------------+
-| ``pps``              | ``OfficeParser``     | application/vnd.ms-po |
-|                      |                      | werpoint              |
-+----------------------+----------------------+-----------------------+
-| ``mpp``              | ``OfficeParser``     | application/vnd.ms-pr |
-|                      |                      | oject                 |
-+----------------------+----------------------+-----------------------+
-| ``doc``              | ``OfficeParser``     | application/msword    |
-+----------------------+----------------------+-----------------------+
-| ``dot``              | ``OfficeParser``     | application/msword    |
-+----------------------+----------------------+-----------------------+
-| ``msg``              | ``OfficeParser``     | application/vnd.ms-ou |
-|                      |                      | tlook                 |
-+----------------------+----------------------+-----------------------+
-| ``vsd``              | ``OfficeParser``     | application/vnd.visio |
-+----------------------+----------------------+-----------------------+
-| ``vst``              | ``OfficeParser``     | application/vnd.visio |
-+----------------------+----------------------+-----------------------+
-| ``vss``              | ``OfficeParser``     | application/vnd.visio |
-+----------------------+----------------------+-----------------------+
-| ``vsw``              | ``OfficeParser``     | application/vnd.visio |
-+----------------------+----------------------+-----------------------+
-| ``xlsm``             | ``OOXMLParser``      | application/vnd.ms-ex |
-|                      |                      | cel.sheet.macroenable |
-|                      |                      | d.12                  |
-+----------------------+----------------------+-----------------------+
-| ``pptm``             | ``OOXMLParser``      | application/vnd.ms-po |
-|                      |                      | werpoint.presentation |
-|                      |                      | .macroenabled.12      |
-+----------------------+----------------------+-----------------------+
-| ``xltx``             | ``OOXMLParser``      | application/vnd.openx |
-|                      |                      | mlformats-officedocum |
-|                      |                      | ent.spreadsheetml.tem |
-|                      |                      | plate                 |
-+----------------------+----------------------+-----------------------+
-| ``docx``             | ``OOXMLParser``      | application/vnd.openx |
-|                      |                      | mlformats-officedocum |
-|                      |                      | ent.wordprocessingml. |
-|                      |                      | document              |
-+----------------------+----------------------+-----------------------+
-| ``potx``             | ``OOXMLParser``      | application/vnd.openx |
-|                      |                      | mlformats-officedocum |
-|                      |                      | ent.presentationml.te |
-|                      |                      | mplate                |
-+----------------------+----------------------+-----------------------+
-| ``xlsx``             | ``OOXMLParser``      | application/vnd.openx |
-|                      |                      | mlformats-officedocum |
-|                      |                      | ent.spreadsheetml.she |
-|                      |                      | et                    |
-+----------------------+----------------------+-----------------------+
-| ``pptx``             | ``OOXMLParser``      | application/vnd.openx |
-|                      |                      | mlformats-officedocum |
-|                      |                      | ent.presentationml.pr |
-|                      |                      | esentation            |
-+----------------------+----------------------+-----------------------+
-| ``xlam``             | ``OOXMLParser``      | application/vnd.ms-ex |
-|                      |                      | cel.addin.macroenable |
-|                      |                      | d.12                  |
-+----------------------+----------------------+-----------------------+
-| ``docm``             | ``OOXMLParser``      | application/vnd.ms-wo |
-|                      |                      | rd.document.macroenab |
-|                      |                      | led.12                |
-+----------------------+----------------------+-----------------------+
-| ``xltm``             | ``OOXMLParser``      | application/vnd.ms-ex |
-|                      |                      | cel.template.macroena |
-|                      |                      | bled.12               |
-+----------------------+----------------------+-----------------------+
-| ``dotx``             | ``OOXMLParser``      | application/vnd.openx |
-|                      |                      | mlformats-officedocum |
-|                      |                      | ent.wordprocessingml. |
-|                      |                      | template              |
-+----------------------+----------------------+-----------------------+
-| ``ppsm``             | ``OOXMLParser``      | application/vnd.ms-po |
-|                      |                      | werpoint.slideshow.ma |
-|                      |                      | croenabled.12         |
-+----------------------+----------------------+-----------------------+
-| ``ppam``             | ``OOXMLParser``      | application/vnd.ms-po |
-|                      |                      | werpoint.addin.macroe |
-|                      |                      | nabled.12             |
-+----------------------+----------------------+-----------------------+
-| ``dotm``             | ``OOXMLParser``      | application/vnd.ms-wo |
-|                      |                      | rd.template.macroenab |
-|                      |                      | led.12                |
-+----------------------+----------------------+-----------------------+
-| ``ppsx``             | ``OOXMLParser``      | application/vnd.openx |
-|                      |                      | mlformats-officedocum |
-|                      |                      | ent.presentationml.sl |
-|                      |                      | ideshow               |
-+----------------------+----------------------+-----------------------+
-| ``odt``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.text    |
-+----------------------+----------------------+-----------------------+
-| ``ods``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.spreads |
-|                      |                      | heet                  |
-+----------------------+----------------------+-----------------------+
-| ``odp``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.present |
-|                      |                      | ation                 |
-+----------------------+----------------------+-----------------------+
-| ``odg``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.graphic |
-|                      |                      | s                     |
-+----------------------+----------------------+-----------------------+
-| ``odc``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.chart   |
-+----------------------+----------------------+-----------------------+
-| ``odf``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.formula |
-+----------------------+----------------------+-----------------------+
-| ``odi``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.image   |
-+----------------------+----------------------+-----------------------+
-| ``odm``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.text-ma |
-|                      |                      | ster                  |
-+----------------------+----------------------+-----------------------+
-| ``ott``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.text-te |
-|                      |                      | mplate                |
-+----------------------+----------------------+-----------------------+
-| ``ots``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.spreads |
-|                      |                      | heet-template         |
-+----------------------+----------------------+-----------------------+
-| ``otp``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.present |
-|                      |                      | ation-template        |
-+----------------------+----------------------+-----------------------+
-| ``otg``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.graphic |
-|                      |                      | s-template            |
-+----------------------+----------------------+-----------------------+
-| ``otc``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.chart-t |
-|                      |                      | emplate               |
-+----------------------+----------------------+-----------------------+
-| ``otf``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.formula |
-|                      |                      | -template             |
-+----------------------+----------------------+-----------------------+
-| ``oti``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.image-t |
-|                      |                      | emplate               |
-+----------------------+----------------------+-----------------------+
-| ``oth``              | ``OpenDocumentParser | application/vnd.oasis |
-|                      | ``                   | .opendocument.text-we |
-|                      |                      | b                     |
-+----------------------+----------------------+-----------------------+
-| ``sxw``              | ``OpenDocumentParser | application/vnd.sun.x |
-|                      | ``                   | ml.writer             |
-+----------------------+----------------------+-----------------------+
+.. csv-table::
+   :header: "Extension", "Parser", "Content-type"
 
-.. _packages_and_archives:
+   "``rtf``", "``RTFParser``", "application/rtf"
+   "``pdf``", "``PDFParser``", "application/pdf"
+   "``pub``", "``OfficeParser``", "application/x-mspublisher"
+   "``xls``", "``OfficeParser``", "application/vnd.ms-excel"
+   "``xlt``", "``OfficeParser``", "application/vnd.ms-excel"
+   "``xlw``", "``OfficeParser``", "application/vnd.ms-excel"
+   "``ppt``", "``OfficeParser``", "application/vnd.ms-powerpoint"
+   "``pps``", "``OfficeParser``", "application/vnd.ms-powerpoint"
+   "``mpp``", "``OfficeParser``", "application/vnd.ms-project"
+   "``doc``", "``OfficeParser``", "application/msword"
+   "``dot``", "``OfficeParser``", "application/msword"
+   "``msg``", "``OfficeParser``", "application/vnd.ms-outlook"
+   "``vsd``", "``OfficeParser``", "application/vnd.visio"
+   "``vst``", "``OfficeParser``", "application/vnd.visio"
+   "``vss``", "``OfficeParser``", "application/vnd.visio"
+   "``vsw``", "``OfficeParser``", "application/vnd.visio"
+   "``xlsm``", "``OOXMLParser``", "application/vnd.ms-excel.sheet.macroenabled.12"
+   "``pptm``", "``OOXMLParser``", "application/vnd.ms-powerpoint.presentation.macroenabled.12"
+   "``xltx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.spreadsheetml.template"
+   "``docx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+   "``potx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.template"
+   "``xlsx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+   "``pptx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+   "``xlam``", "``OOXMLParser``", "application/vnd.ms-excel.addin.macroenabled.12"
+   "``docm``", "``OOXMLParser``", "application/vnd.ms-word.document.macroenabled.12"
+   "``xltm``", "``OOXMLParser``", "application/vnd.ms-excel.template.macroenabled.12"
+   "``dotx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.wordprocessingml.template"
+   "``ppsm``", "``OOXMLParser``", "application/vnd.ms-powerpoint.slideshow.macroenabled.12"
+   "``ppam``", "``OOXMLParser``", "application/vnd.ms-powerpoint.addin.macroenabled.12"
+   "``dotm``", "``OOXMLParser``", "application/vnd.ms-word.template.macroenabled.12"
+   "``ppsx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.slideshow"
+   "``odt``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text"
+   "``ods``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.spreadsheet"
+   "``odp``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.presentation"
+   "``odg``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.graphics"
+   "``odc``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.chart"
+   "``odf``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.formula"
+   "``odi``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.image"
+   "``odm``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-master"
+   "``ott``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-template"
+   "``ots``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.spreadsheet-template"
+   "``otp``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.presentation-template",
+   "``otg``",  "``OpenDocumentParser``", "application/vnd.oasis.opendocument.graphics-template",
+   "``otc``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.chart-template",
+   "``otf``","``OpenDocumentParser``", "application/vnd.oasis.opendocument.formula-template",
+   "``oti``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.image-template",
+   "``oth``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-web",
+   "``sxw``", "``OpenDocumentParser``", "application/vnd.sun.xml.writer"
+
+.. _pws_packages_and_archives:
 
 Packages and Archives
 ~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------+----------------------+-----------------------+
-| Extension            | Parser               | Content-Type          |
-+======================+======================+=======================+
-| ``z``                | ``CompressorParser`` | application/x-compres |
-|                      |                      | s                     |
-+----------------------+----------------------+-----------------------+
-| ``bz``               | ``CompressorParser`` | application/x-bzip    |
-+----------------------+----------------------+-----------------------+
-| ``boz``              | ``CompressorParser`` | application/x-bzip2   |
-+----------------------+----------------------+-----------------------+
-| ``bz2``              | ``CompressorParser`` | application/x-bzip2   |
-+----------------------+----------------------+-----------------------+
-| ``gz``               | ``CompressorParser`` | application/gzip      |
-+----------------------+----------------------+-----------------------+
-| ``gz``               | ``CompressorParser`` | application/x-gzip    |
-+----------------------+----------------------+-----------------------+
-| ``gzip``             | ``CompressorParser`` | application/x-gzip    |
-+----------------------+----------------------+-----------------------+
-| ``xz``               | ``CompressorParser`` | application/x-xz      |
-+----------------------+----------------------+-----------------------+
-| ``tar``              | ``PackageParser``    | application/x-tar     |
-+----------------------+----------------------+-----------------------+
-| ``jar``              | ``PackageParser``    | application/java-arch |
-|                      |                      | ive                   |
-+----------------------+----------------------+-----------------------+
-| ``7z``               | ``PackageParser``    | application/x-7z-comp |
-|                      |                      | ressed                |
-+----------------------+----------------------+-----------------------+
-| ``cpio``             | ``PackageParser``    | application/x-cpio    |
-+----------------------+----------------------+-----------------------+
-| ``zip``              | ``PackageParser``    | application/zip       |
-+----------------------+----------------------+-----------------------+
-| ``rar``              | ``RarParser``        | application/x-rar-com |
-|                      |                      | pressed               |
-+----------------------+----------------------+-----------------------+
-| ``txt``              | ``TXTParser``        | text/plain            |
-+----------------------+----------------------+-----------------------+
 
-.. _parser_controls:
+.. csv-table::
+   :header: "Extension", "Parser", "Content-type"
+
+   "``z``", "``CompressorParser``", "application/x-compress"
+   "``bz``", "``CompressorParser``", "application/x-bzip"
+   "``boz``", "``CompressorParser``", "application/x-bzip2"
+   "``bz2``", "``CompressorParser``", "application/x-bzip2"
+   "``gz``", "``CompressorParser``", "application/gzip"
+   "``gz``", "``CompressorParser``", "application/x-gzip"
+   "``gzip``", "``CompressorParser``", "application/x-gzip"
+   "``xz``", "``CompressorParser``", "application/x-xz"
+   "``tar``", "``PackageParser``", "application/x-tar"
+   "``jar``", "``PackageParser``", "application/java-archive"
+   "``7z``", "``PackageParser``", "application/x-7z-compressed"
+   "``cpio``", "``PackageParser``", "application/x-cpio"
+   "``zip``", "``PackageParser``", "application/zip"
+   "``rar``", "``RarParser``", "application/x-rar-compressed"
+   "``txt``", "``TXTParser``", "text/plain"
+
+.. _pws_parser_controls:
 
 Parser Controls
 ---------------
@@ -2430,21 +2229,14 @@ Parser Controls
 Parsers can be turned on or off by changing the related value to
 ``true`` or ``false`` via the ``zxsuite config`` CLI command.
 
-+-----------------------------------+-----------------------------------+
-| Attribute                         | Parsers                           |
-+===================================+===================================+
-| pdfParsingEnabled                 | PDFParser                         |
-+-----------------------------------+-----------------------------------+
-| odfParsingEnabled                 | OpenDocumentParser                |
-+-----------------------------------+-----------------------------------+
-| archivesParsingEnabled            | CompressorParser, PackageParser,  |
-|                                   | RarParser                         |
-+-----------------------------------+-----------------------------------+
-| microsoftParsingEnabled           | OfficeParser, OOXMLParser,        |
-|                                   | OldExcelParser                    |
-+-----------------------------------+-----------------------------------+
-| rtfParsingEnabled                 | RTFParser                         |
-+-----------------------------------+-----------------------------------+
+.. csv-table::
+   :header: "Attribute", "Parsers"
+
+   "pdfParsingEnabled", "PDFParser"
+   "odfParsingEnabled", "OpenDocumentParser"
+   "archivesParsingEnabled", "CompressorParser, PackageParser, RarParser"
+   "microsoftParsingEnabled", "OfficeParser, OOXMLParser, OldExcelParser"
+   "rtfParsingEnabled", "RTFParser"
 
 e.g. to disable PDF parsing run:
 
@@ -2454,15 +2246,13 @@ e.g. to disable PDF parsing run:
 
 By default, all parsers are active.
 
-.. _external_content_extractor:
+.. _pws_external_content_extractor:
 
 External Content Extractor
 ==========================
 
-   **Warning**
-
-   This feature is currently in beta, usage in production environment is
-   not recommended.
+.. warning:: This feature is currently in beta, usage in production
+   environment is not recommended.
 
 The external content extractor detects and extracts metadata and text
 from over a thousand different file types (such as PPT, XLS, and PDF).
@@ -2470,7 +2260,7 @@ All of these file types can be parsed through a single interface, making
 it useful for search engine indexing, content analysis, translation, and
 much more.
 
-.. _why_use_tika_server_as_content_extractor:
+.. _pws_why_use_tika_server_as_content_extractor:
 
 Why use Tika Server as Content Extractor?
 -----------------------------------------
@@ -2480,7 +2270,7 @@ Zextras uses a Tika library that shares the same Java Virtual Machine
 Tika servers indexing the content separated from the mailbox. In case of
 a crash of a Tika server, the mailbox JVM remains unaffected.
 
-.. _switching_to_the_tika_server:
+.. _pws_switching_to_the_tika_server:
 
 Switching to the Tika Server
 ----------------------------
@@ -2489,7 +2279,7 @@ You can run Tika server as a `docker
 container <https://github.com/apache/tika-docker>`_, on the same server
 as the mailbox; or on separate servers accessible by Zimbra.
 
-.. _add_a_tika_server:
+.. _pws_add_a_tika_server:
 
 Add a Tika Server
 ~~~~~~~~~~~~~~~~~
@@ -2546,7 +2336,7 @@ Add tika endpoint for all mailbox stores (applies only to mailbox stores that do
 
    zxsuite powerstore Indexing content-extraction-tool add http://test.example.com:9998/tika global true
 
-.. _list_tika_servers:
+.. _pws_list_tika_servers:
 
 List Tika Servers
 ~~~~~~~~~~~~~~~~~
@@ -2571,7 +2361,7 @@ Explanation
    Zextras lists all the running Tika servers with their addresses and
    the ports on which they are listening.
 
-.. _remove_a_tika_server:
+.. _pws_remove_a_tika_server:
 
 Remove a Tika Server
 ~~~~~~~~~~~~~~~~~~~~
@@ -2610,7 +2400,7 @@ Explanation
    Zextras removes the server with address ``http://test.example.com``
    listening on port ``9997``
 
-.. _is_the_tika_server_running:
+.. _pws_is_the_tika_server_running:
 
 Is the Tika Server Running?
 ---------------------------
