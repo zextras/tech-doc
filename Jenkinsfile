@@ -19,8 +19,6 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
-                   virtualenv pyenv
-                   . pyenv/bin/activate
                    pip install -r ${SPHINX_DIR}/requirements.txt
                 '''
             }
@@ -32,7 +30,7 @@ pipeline {
                 sh 'rm -f ${SPHINX_DIR}/sphinx-build.log'
 
                 sh '''
-                   ${WORKSPACE}/pyenv/bin/sphinx-build \
+                   ${WORKSPACE}/bin/sphinx-build \
                    -q -w ${SPHINX_DIR}/sphinx-build.log \
                    -b html \
                    -d ${BUILD_DIR} ${SOURCE_DIR} ${BUILD_DIR}
