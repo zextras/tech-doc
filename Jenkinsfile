@@ -16,17 +16,21 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
-                // virtualenv may not be necessary with root,
-                // but I still think it's a good idea.
                 sh '''
                    virtualenv pyenv
                    . pyenv/bin/activate
                    pip install -r ${SPHINX_DIR}/requirements.txt
-		'''
-                   sh 'rm -rf ${BUILD_DIR}'
-                   sh 'rm -f ${SPHINX_DIR}/sphinx-build.log'
+                '''
+            }
+        }
+        stage('Build') {
+            steps {
+                // clear out old files
+                sh 'rm -rf ${BUILD_DIR}'
+                sh 'rm -f ${SPHINX_DIR}/sphinx-build.log'
+
                 sh '''
                    ${WORKSPACE}/pyenv/bin/sphinx-build \
                    -q -w ${SPHINX_DIR}/sphinx-build.log \
@@ -34,8 +38,6 @@ pipeline {
                    -d ${BUILD_DIR} ${SOURCE_DIR} ${BUILD_DIR}
                 '''
             }
-        }
-
             post {
                 failure {
                     sh 'cat ${SPHINX_DIR}/sphinx-build.log'
