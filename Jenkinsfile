@@ -30,7 +30,7 @@ pipeline {
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
                  includePathPattern: '**',
-                 workingDir: ${BUILD_DIR}
+                 workingDir: 'build'
                                )
                            }
                 }
