@@ -18,10 +18,6 @@ pipeline {
       stage('Building Sphinx using doker') {
         steps {
             sh 'docker build -f Dockerfile -t sphinx_builder .'
-	    sh 'python -m sphinx \
-                   -q -w ${SPHINX_DIR}/sphinx-build.log \
-                   -b html \
-                   -d ${BUILD_DIR}/doctrees ${SOURCE_DIR} ${BUILD_DIR}'
 
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
