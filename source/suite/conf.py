@@ -72,11 +72,5 @@ html_favicon = 'img/favicon.ico'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = [ 'css/suite.css' ]
+html_css_files = [ 'css/suite.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css' ]
 html_logo = 'img/zextras_white.svg'
-html_css_files = ["https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"]
-
-html_theme_options = {
-    'style_nav_header_background': '#00506d',
-#    'logo_only': True
-}
