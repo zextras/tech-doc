@@ -1,7 +1,17 @@
-.. _what_is_zextras_auth:
-
+============
 Zextras Auth
 ============
+
+:Date:   2021-10-20
+
+.. contents::
+   :depth: 3
+..
+
+.. _what_is_zextras_auth:
+
+What is Zextras Auth
+====================
 
 Zextras Auth is the Zextras Suite module that influences the process of
 accessing a Zextras instance from the Login Page onwards, including:
@@ -9,10 +19,10 @@ accessing a Zextras instance from the Login Page onwards, including:
 1. The access modality. Depending on the authentication backends
    configured, the access mask changes, to allow user to provide their
    credentials using any of the backends. This also is reflected in the
-   :ref:`Auth Zimlet <zxauth-zimlet>`.
+   `Auth Zimlet <#zxauth-zimlet>`_.
 
-2. Customisations. How the :ref:`login page <zxauth-login-page>` looks
-   like. See the :ref:`dedicated section <zxauth-login-page>` for a list
+2. Customisations. How the `login page <#zxauth-login-page>`_ looks
+   like. See the `dedicated section <#zxauth-login-page>`_ for a list
    of customisable items.
 
 Zextras Auth allows to manage all the Authentication Strategies
@@ -22,11 +32,11 @@ supported by Zextras.
 This section is divided in three main parts and organised as follows.
 Immediately below, you can find the description of all supported
 authentication methods; the next two sections are dedicated to
-:ref:`administration tasks <zxauth-admins>`, which require privileged
-access and are mostly carried out from the CLI, and :ref:`everyday’s
-task <zxauth-zimlet>`, which can be carried out from the Web GUI by
-both administrators and users, respectively. Finally, the :ref:`list of all
-CLI commands <zxauth-cli>` is given as a reference, with link to each
+`administration tasks <#zxauth-admins>`_, which require privileged
+access and are mostly carried out from the CLI, and `everyday’s
+task <#zxauth-zimlet>`_, which can be carried out from the Web GUI by
+both administrators and users, respectively. Finally, the `list of all
+CLI commands <#zxauth-cli>`_ is given as a reference, with link to each
 command.
 
 .. _supported_authentication_methods:
@@ -56,15 +66,15 @@ Self Service Credentials Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Self-service credential management allows every user to create new
-passwords and QR codes for third-parties—for example team members,
-personal assistants—accessing her/his email account and Zextras
+passwords and QR codes for third-parties—​for example team members,
+personal assistants—​accessing her/his email account and Zextras
 Applications from mobile devices.
 
 QR Codes in particular can be used to access Zextras Apps, currently
 Team and Drive.
 
 More information and step by step guidelines can be found in Section
-:ref:`ZxAuth for users (Auth Zimlet) <zxauth-zimlet>`.
+`ZxAuth for users (Auth Zimlet) <#zxauth-zimlet>`_.
 
 .. _custom_login_page:
 
@@ -78,7 +88,7 @@ identity.
 
 This feature is carried out from the CLI and therefore requires
 administrator privileges; more information and guidelines in section
-:ref:`Custom Login Page <zxauth-login-page>`.
+`Custom Login Page <#zxauth-login-page>`_.
 
 SAML
 ~~~~
@@ -117,8 +127,8 @@ Moreover, the Assertion Consumer Service (ACS) endpoint is a location to
 which the SSO tokens are sent, according to partner requirements.
 
 Directions on how to configure SAML and integrate other applications in
-Zextras Suite is described in :ref:`Configuring SAML in Zextras
-Suite <zxauth-saml-config>`.
+Zextras Suite is described in `Configuring SAML in Zextras
+Suite <#zxauth-saml-config>`_.
 
 .. _two-fa:
 
@@ -144,9 +154,9 @@ successful for any login originating from there, while the
 otherwise it will fail: if a 2FA login is carried out on Chrome,
 accessing the same page with Firefox will require a new login.
 
-In order to use the OTP, a domain must be configured (see :ref:`QR Code
-Requirements <qr-code-req>`) by the site admin, while users can
-configure it using the :ref:`Auth Zimlet <zimlet-create-otp>`.
+In order to use the OTP, a domain must be configured (see `QR Code
+Requirements <#qr-code-req>`_) by the site admin, while users can
+configure it using the `Auth Zimlet <#zimlet-create-otp>`_.
 
    **Community Article:**
 
@@ -159,7 +169,7 @@ configure it using the :ref:`Auth Zimlet <zimlet-create-otp>`.
 .. _zxauth-admins:
 
 ZxAuth for Admins
------------------
+=================
 
 This section is dedicated to administrators and the activities they can
 carry out to manage and maintain Zextras Auth. Here administrators can
@@ -170,12 +180,12 @@ option to customise the login page at the end.
 .. _requirements:
 
 Requirements
-~~~~~~~~~~~~
+------------
 
 .. _qr-code-req:
 
 QR Code Requirements
-++++++++++++++++++++
+~~~~~~~~~~~~~~~~~~~~
 
 The QR Code Application Password feature requires the following
 properties to be set at domain level in order to be functional:
@@ -193,23 +203,27 @@ properties.
 .. _2fa_requirements:
 
 2FA Requirements
-++++++++++++++++
+~~~~~~~~~~~~~~~~
 
 In order to properly have 2FA set up, the ``zimbraAuthMech`` attribute
 bust be configured at domain level:
 
-zmprov modifyDomain example.com zimbraAuthMech
-custom:zx</programlisting>
+::
+
+   zmprov modifyDomain example.com zimbraAuthMech custom:zx
+
 To enable 2FA it is also necessary to:
 
--  Enter the addresses of all mailbox and MTAs as *ZimbraMailTrustedIp*
+-  Enter the addresses of all mailbox and MTAs as 'ZimbraMailTrustedIp'
 
--  A *trusted ip range* must be defined for all services
+-  A 'trusted ip range' must be defined for all services
 
--  For all services the *ipcanchange* attribute must be validated on
-   *true* and *trustedDevice = 1*
+-  For all services the 'ipcanchange' attribute must be validated on
+   'true' and 'trustedDevice = 1'
 
-.. important::
+..
+
+   **Important**
 
    2FA requires a specific zimbraAuthMech and this make it not
    compatible with other mechanism such as ldap, ad or kerberos5
@@ -217,7 +231,7 @@ To enable 2FA it is also necessary to:
 .. _saml_requirements:
 
 SAML Requirements
-+++++++++++++++++
+~~~~~~~~~~~~~~~~~
 
 Before enabling SAML login, it is necessary to modify the Zextras
 Backend processing, because these header attributes are required to
@@ -235,16 +249,21 @@ The files affected by this change are the templates:
 
 In each of them, the ``location ^~ /zx/`` code should be changed:
 
-location ^~ /zx/ { proxy_set_header X-Forwarded-For
-$proxy_add_x_forwarded_for; proxy_set_header Host $http_host;
-proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header
-X-Forwarded-Port $server_port; proxy_pass ${web.upstream.zx};
-}</programlisting>
+::
+
+   location ^~ /zx/
+     {
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header Host $http_host;
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_set_header X-Forwarded-Port $server_port;
+         proxy_pass ${web.upstream.zx};
+     }
+
 .. _installing_the_zextras_auth_zimlet:
 
 Installing the Zextras Auth Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+----------------------------------
 
 To deploy the Zextras Auth Zimlet, simply run ``zxsuite auth
 doDeployAuthZimlet`` as the zimbra user on any mailbox server of your
@@ -294,7 +313,7 @@ Auth CLI command.
 .. _image_file_locations_and_sizes:
 
 Image File Locations and Sizes
-++++++++++++++++++++++++++++++
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Zextras Auth offers two options for custom image files used by the Login
 Page, either by embedding remote image files or hosting them locally.
@@ -306,7 +325,9 @@ Image files can be used for logo, background, and favicon.
    the resource in the CLI command, for example:
    ``https://www.example.com/resources/logo.png``
 
-.. tip::
+..
+
+   **Tip**
 
    This is the preferred alternative.
 
@@ -331,16 +352,25 @@ than the background image.
 .. _login_page_title:
 
 Login Page Title
-++++++++++++++++
+^^^^^^^^^^^^^^^^
 
 The login page title can be modified by using either of the following
 commands:
 
 -  *global* level `zxsuite auth loginPage setTitle
-   global <./cli.adoc#auth_loginpage_setTitle_global.adoc>`_
+   global <./cli.xml#auth_loginpage_setTitle_global.adoc>`_
+
+.. container:: informalexample
+
+   zxsuite auth loginPage setTitle global *'My Custom Login Page'*
 
 -  *domain* level `zxsuite auth loginPage setTitle
-   domain <./cli.adoc#auth_loginpage_setTitle_domain.adoc>`_
+   domain <./cli.xml#auth_loginpage_setTitle_domain.adoc>`_
+
+.. container:: informalexample
+
+   zxsuite auth loginPage setTitle domain *domain* *'My Custom Login
+   Page'*
 
 .. _viewing_the_current_configuration:
 
@@ -349,7 +379,7 @@ Viewing the current configuration
 
 The current Login Page settings for a domain can be viewed by using the
 `zxsuite auth loginPage getConfig
-domain <./cli.adoc#auth_loginpage_getConfig_domain.adoc>`_ command:
+domain <./cli.xml#auth_loginpage_getConfig_domain.adoc>`_ command:
 
 ::
 
@@ -366,12 +396,12 @@ domain <./cli.adoc#auth_loginpage_getConfig_domain.adoc>`_ command:
 .. _zxauth-saml-config:
 
 Configuring SAML in Zextras Suite
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 .. _importing_saml_configuration:
 
 Importing SAML Configuration
-----------------------------
+============================
 
 You can integrate a SAML application in Zextras in two ways — automatic
 and manual. The following sections describe each method in detail.
@@ -379,7 +409,7 @@ and manual. The following sections describe each method in detail.
 .. _import_saml_configuration_automatically:
 
 Import SAML Configuration Automatically
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 To integrate a SAML application into Zextras automatically, you need to
 configure the IDP using the Zextras SAML SDP data, which can be obtained
@@ -396,10 +426,10 @@ Above all, the following parameters must be taken into account:
    "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress ",
 
 -  "sp.entityid":
-   >>https://ZIMBRA_PUBLIC_URL/zx/auth/samlMetadata?domain=example.com<<,
+   >>\ `https://ZIMBRA_PUBLIC_URL/zx/auth/samlMetadata?domain=example.com<&lt <https://ZIMBRA_PUBLIC_URL/zx/auth/samlMetadata?domain=example.com<&lt>`_;,
 
 -  "sp.assertion_consumer_service.url":
-   >>https://ZIMBRA_PUBLIC_URL/zx/auth/saml<<,
+   >>\ `https://ZIMBRA_PUBLIC_URL/zx/auth/saml<&lt <https://ZIMBRA_PUBLIC_URL/zx/auth/saml<&lt>`_;,
 
 Once the IDP is configured and you have the IDP metadata URL, you can
 import the configuration using the command (assuming the IDP metadata
@@ -421,7 +451,7 @@ You are now DONE! You can see the SAML button.
 .. _import_saml_configuration_manually:
 
 Import SAML Configuration Manually
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------
 
 If you need to manually edit the SAML configuration, you can:
 
@@ -447,7 +477,9 @@ If you need to manually edit the SAML configuration, you can:
 
    zxsuite auth saml import example.com /tmp/saml.json
 
-.. tip::
+..
+
+   **Tip**
 
    It is also possible to view or edit single attributes by using the
    ``zxsuite auth saml get`` and ``zxsuite auth saml set`` command
@@ -456,16 +488,16 @@ If you need to manually edit the SAML configuration, you can:
 .. _zxauth-zimlet:
 
 ZxAuth for users (Auth Zimlet)
-------------------------------
+==============================
 
 Zextras Auth features a dedicated zimlet to manage all user-side
 credential and features, such as the EAS Mobile Password, Mobile App QR
-Codes, and OTP for :ref:`Two Factor Authentication <two-fa>`.
+Codes, and OTP for `Two Factor Authentication <#two-fa>`_.
 
 .. _zextras_auth_zimlet_overview:
 
 Zextras Auth Zimlet overview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 The Zextras Auth Zimlet can be accessed from the "Zimlets" section of
 the Zimbra Web Client. Users do not need any CLI access to use the
@@ -475,12 +507,12 @@ The creation of a new credential allows to give access to the account,
 possibly including the Zextras Mobile Apps, to other persons without
 having to share the personal credentials.
 
-|zextras_auth_overview.png|
+|zextras auth overview|
 
 From the zimlet, the user can:
 
--  **Add new credentials** by clicking on either btn:[Authentication
-   Type] (for text codes and QR codes) or btn:[One Time Password]
+-  **Add new credentials** by clicking on either Authentication Type
+   (for text codes and QR codes) or One Time Password
 
 -  **Check the status** and other information for every *Authentication
    Type* created. Each entry of the list displays the label of the
@@ -497,9 +529,11 @@ From the zimlet, the user can:
    shown.
 
 -  **Delete** any credential created, by simply selecting it and
-   clicking on the btn:[DELETE] button
+   clicking on the DELETE button
 
-.. important::
+..
+
+   **Important**
 
    Users can in no case modify their assigned credentials, change the
    password of credentials they generate, or modify any property of the
@@ -512,11 +546,11 @@ possibilities.
 .. _zimlet-create-mobile:
 
 Create New Credentials: Text Code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 To create a new Mobile Password (for **EAS** service), open the Zextras
-Auth Zimlet and click on btn:[Authentication type], then on btn:[NEW
-AUTHENTICATION].
+Auth Zimlet and click on Authentication type, then on NEW
+AUTHENTICATION.
 
 -  Here, enter an easy to remember identifier for the password in the
    *Authentication description* field and select **Text code** as the
@@ -524,38 +558,40 @@ AUTHENTICATION].
 
 |zextras_auth_mobilepass1.png|
 
--  Click btn:[Next]. The new Mobile Password will be displayed:
+-  Click Next. The new Mobile Password will be displayed:
 
 |zextras_auth_mobilepass2.png|
 
 -  Click on the small blue icon on the right-hand side of the password
    to copy it to the clipboard.
 
-.. warning::
+..
+
+   **Warning**
 
    Mobile Passwords are randomly generated and cannot be displayed again
    after the creation is complete.
 
--  Click on btn:[DONE] to close the Zextras Auth window. An entry for
-   the new Mobile Password is now visible in the *Active Passwords* list
-   of the Zextras Auth Zimlet.
+-  Click on DONE to close the Zextras Auth window. An entry for the new
+   Mobile Password is now visible in the *Active Passwords* list of the
+   Zextras Auth Zimlet.
 
 |zextras_auth_mobilepass3.png|
 
 .. _create_new_credentials_qr_code:
 
 Create New Credentials: QR Code
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 Zextras Auth can speed up and manage Zextras Application logins, such as
-those for the :ref:`Team App <team-mobile-app>` and
-:ref:`Drive App <drive-mobile-app>`.
+those for the `Team App <team.html#_mobile_app>`_ and `Drive
+App <drive.html#_mobile_app>`_.
 
 This is achieved through the creation of a QR Code, which the user can
 then scan from the App’s login page to log in. The procedure is very
 similar to the one described in the previous section.
 
-.. warning::
+   **Warning**
 
    QR Codes are a one-time credential only, meaning that once generated
    it will grant access to the app until the relevant credential itself
@@ -563,8 +599,8 @@ similar to the one described in the previous section.
    viewed once.
 
 In order to create a new QR Code for Mobile Application, open the
-Zextras Auth Zimlet and click on btn:[Authentication type], then on
-btn:[NEW AUTHENTICATION].
+Zextras Auth Zimlet and click on Authentication type, then on NEW
+AUTHENTICATION.
 
 -  Here, enter an easy to remember identifier for the password in the
    *Authentication description* field and select **QR code** as the
@@ -572,28 +608,31 @@ btn:[NEW AUTHENTICATION].
 
 |zextras_auth_qrcode1.png|
 
--  Click btn:[Next]. The QR code for Mobile Application will be
-   displayed:
+-  Click Next. The QR code for Mobile Application will be displayed:
 
 |zextras_auth_qrcode2.png|
 
 Use the Zextras mobile app to frame the code and grant access to the
 app.
 
-.. warning::
+   **Warning**
 
    QR Codes are randomly generated and cannot be displayed again after
    the creation is complete.
 
--  Click on btn:[DONE] to close the Zextras Auth window. An entry for
-   the new Mobile Application is now visible in the *Active Passwords*
-   list of the Zextras Auth Zimlet.
+-  Click on DONE to close the Zextras Auth window. An entry for the new
+   Mobile Application is now visible in the *Active Passwords* list of
+   the Zextras Auth Zimlet.
 
 |zextras_auth_qrcode3.png|
 
+.. _zimlet-create-otp:
+
+Create New Credentials: OTP
+---------------------------
+
 In order to create a new QR Code for One Time Password access, open the
-Zextras Auth Zimlet and click on btn:[One Time Password], then on
-btn:[NEW OTP].
+Zextras Auth Zimlet and click on One Time Password, then on NEW OTP.
 
 |zextras_auth_otp1.png|
 
@@ -605,55 +644,163 @@ btn:[NEW OTP].
 -  Click on the small blue icon on the right-hand side of the PIN list
    to print the codes on paper or to a file.
 
-.. warning::
+..
+
+   **Warning**
 
    QR codes and its associated PINs are randomly generated and cannot be
    displayed again after the creation is complete.
 
--  Click on btn:[DONE] to close the Zextras Auth window. An entry for
-   the new OTP entry will be shown in the list.
+-  Click on DONE to close the Zextras Auth window. An entry for the new
+   OTP entry will be shown in the list.
 
-.. note::
+..
+
+   **Note**
 
    The *Description* is automatically created using the email address to
    which it is associated.
 
 |zextras_auth_otp3.png|
 
-.. _zimlet-create-otp:
-
-Create New Credentials: OTP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-[ not converted ]
-
 .. _delete_credentials:
 
 Delete Credentials
-~~~~~~~~~~~~~~~~~~
+------------------
 
 In order to delete a credential, simply select it from the list of
-Active passwords or OTPs, and click on the btn:[DELETE] button:
+Active passwords or OTPs, and click on the DELETE button:
 
 |zextras_auth_delete_credential.png|
 
-Click on btn:[YES] to confirm the removal of the credential.
-
-.. |zextras_auth_overview.png| image:: /img/auth/zextras_auth_overview.png
-.. |zextras_auth_mobilepass1.png| image:: /img/auth/zextras_auth_mobilepass1.png
-.. |zextras_auth_mobilepass2.png| image:: /img/auth/zextras_auth_mobilepass2.png
-.. |zextras_auth_mobilepass3.png| image:: /img/auth/zextras_auth_mobilepass3.png
-.. |zextras_auth_qrcode1.png| image:: /img/auth/zextras_auth_qrcode1.png
-.. |zextras_auth_qrcode2.png| image:: /img/auth/zextras_auth_qrcode2.png
-.. |zextras_auth_qrcode3.png| image:: /img/auth/zextras_auth_qrcode3.png
-.. |zextras_auth_otp1.png| image:: /img/auth/zextras_auth_otp1.png
-.. |zextras_auth_otp2.png| image:: /img/auth/zextras_auth_otp2.png
-.. |zextras_auth_otp3.png| image:: /img/auth/zextras_auth_otp3.png
-.. |zextras_auth_delete_credential.png| image:: /img/auth/zextras_auth_delete_credential.png
+Click on YES to confirm the removal of the credential.
 
 .. _zxauth-cli:
 
 Zextras Auth CLI
-----------------
+================
 
-[not converted yet]
+This section contains the index of all the available ``zextras auth``
+commands. Full reference can be found in `the dedicated
+section <./cli.xml#_zxauth_cli_commands>`_.
+
+`credential add <./cli.xml#auth_credential_add>`_ \| `credential
+delete <./cli.xml#auth_credential_delete>`_ \| `credential
+list <./cli.xml#auth_credential_list>`_ \| `credential
+update <./cli.xml#auth_credential_update>`_ \|
+`doDeployAuthZimlet <./cli.xml#auth_doDeployAuthZimlet>`_ \|
+`doRestartService <./cli.xml#auth_doRestartService>`_ \|
+`doStartService <./cli.xml#auth_doStartService>`_ \|
+`doStopService <./cli.xml#auth_doStopService>`_ \| `enforce2FA get
+account <./cli.xml#auth_enforce2FA_get_account>`_ \| `enforce2FA get
+cos <./cli.xml#auth_enforce2FA_get_cos>`_ \| `enforce2FA set
+account <./cli.xml#auth_enforce2FA_set_account>`_ \| `enforce2FA set
+cos <./cli.xml#auth_enforce2FA_set_cos>`_ \|
+`getServices <./cli.xml#auth_getServices>`_ \| `loginPage
+getBackgroundImage
+domain <./cli.xml#auth_loginPage_getBackgroundImage_domain>`_ \|
+`loginPage getBackgroundImage
+global <./cli.xml#auth_loginPage_getBackgroundImage_global>`_ \|
+`loginPage getColorPalette
+domain <./cli.xml#auth_loginPage_getColorPalette_domain>`_ \|
+`loginPage getColorPalette
+global <./cli.xml#auth_loginPage_getColorPalette_global>`_ \|
+`loginPage getConfig
+domain <./cli.xml#auth_loginPage_getConfig_domain>`_ \| `loginPage
+getConfig global <./cli.xml#auth_loginPage_getConfig_global>`_ \|
+`loginPage getFavicon
+domain <./cli.xml#auth_loginPage_getFavicon_domain>`_ \| `loginPage
+getFavicon global <./cli.xml#auth_loginPage_getFavicon_global>`_ \|
+`loginPage getLogo domain <./cli.xml#auth_loginPage_getLogo_domain>`_
+\| `loginPage getLogo
+global <./cli.xml#auth_loginPage_getLogo_global>`_ \| `loginPage
+getSkinLogoAppBanner
+domain <./cli.xml#auth_loginPage_getSkinLogoAppBanner_domain>`_ \|
+`loginPage getSkinLogoAppBanner
+global <./cli.xml#auth_loginPage_getSkinLogoAppBanner_global>`_ \|
+`loginPage getSkinLogoURL
+domain <./cli.xml#auth_loginPage_getSkinLogoURL_domain>`_ \| `loginPage
+getSkinLogoURL
+global <./cli.xml#auth_loginPage_getSkinLogoURL_global>`_ \| `loginPage
+getTitle domain <./cli.xml#auth_loginPage_getTitle_domain>`_ \|
+`loginPage getTitle global <./cli.xml#auth_loginPage_getTitle_global>`_
+\| `loginPage setBackgroundImage
+domain <./cli.xml#auth_loginPage_setBackgroundImage_domain>`_ \|
+`loginPage setBackgroundImage
+global <./cli.xml#auth_loginPage_setBackgroundImage_global>`_ \|
+`loginPage setColorPalette
+domain <./cli.xml#auth_loginPage_setColorPalette_domain>`_ \|
+`loginPage setColorPalette
+global <./cli.xml#auth_loginPage_setColorPalette_global>`_ \|
+`loginPage setFavicon
+domain <./cli.xml#auth_loginPage_setFavicon_domain>`_ \| `loginPage
+setFavicon global <./cli.xml#auth_loginPage_setFavicon_global>`_ \|
+`loginPage setLogo domain <./cli.xml#auth_loginPage_setLogo_domain>`_
+\| `loginPage setLogo
+global <./cli.xml#auth_loginPage_setLogo_global>`_ \| `loginPage
+setSkinLogoAppBanner
+domain <./cli.xml#auth_loginPage_setSkinLogoAppBanner_domain>`_ \|
+`loginPage setSkinLogoAppBanner
+global <./cli.xml#auth_loginPage_setSkinLogoAppBanner_global>`_ \|
+`loginPage setSkinLogoURL
+domain <./cli.xml#auth_loginPage_setSkinLogoURL_domain>`_ \| `loginPage
+setSkinLogoURL
+global <./cli.xml#auth_loginPage_setSkinLogoURL_global>`_ \| `loginPage
+setTitle domain <./cli.xml#auth_loginPage_setTitle_domain>`_ \|
+`loginPage setTitle global <./cli.xml#auth_loginPage_setTitle_global>`_
+\| `policy list domain <./cli.xml#auth_policy_list_domain>`_ \| `policy
+list global <./cli.xml#auth_policy_list_global>`_ \| `policy set Cli
+domain <./cli.xml#auth_policy_set_Cli_domain>`_ \| `policy set Cli
+global <./cli.xml#auth_policy_set_Cli_global>`_ \| `policy set Dav
+domain <./cli.xml#auth_policy_set_Dav_domain>`_ \| `policy set Dav
+global <./cli.xml#auth_policy_set_Dav_global>`_ \| `policy set EAS
+domain <./cli.xml#auth_policy_set_EAS_domain>`_ \| `policy set EAS
+global <./cli.xml#auth_policy_set_EAS_global>`_ \| `policy set Imap
+domain <./cli.xml#auth_policy_set_Imap_domain>`_ \| `policy set Imap
+global <./cli.xml#auth_policy_set_Imap_global>`_ \| `policy set
+MobileApp domain <./cli.xml#auth_policy_set_MobileApp_domain>`_ \|
+`policy set MobileApp
+global <./cli.xml#auth_policy_set_MobileApp_global>`_ \| `policy set
+Pop3 domain <./cli.xml#auth_policy_set_Pop3_domain>`_ \| `policy set
+Pop3 global <./cli.xml#auth_policy_set_Pop3_global>`_ \| `policy set
+Smtp domain <./cli.xml#auth_policy_set_Smtp_domain>`_ \| `policy set
+Smtp global <./cli.xml#auth_policy_set_Smtp_global>`_ \| `policy set
+WebAdminUI domain <./cli.xml#auth_policy_set_WebAdminUI_domain>`_ \|
+`policy set WebAdminUI
+global <./cli.xml#auth_policy_set_WebAdminUI_global>`_ \| `policy set
+WebUI domain <./cli.xml#auth_policy_set_WebUI_domain>`_ \| `policy set
+WebUI global <./cli.xml#auth_policy_set_WebUI_global>`_ \| `policy set
+ZmWebUI domain <./cli.xml#auth_policy_set_ZmWebUI_domain>`_ \| `policy
+set ZmWebUI global <./cli.xml#auth_policy_set_ZmWebUI_global>`_ \|
+`policy trustedDevice getExpiration
+domain <./cli.xml#auth_policy_trustedDevice_getExpiration_domain>`_ \|
+`policy trustedDevice getExpiration
+global <./cli.xml#auth_policy_trustedDevice_getExpiration_global>`_ \|
+`policy trustedDevice setExpiration
+domain <./cli.xml#auth_policy_trustedDevice_setExpiration_domain>`_ \|
+`policy trustedDevice setExpiration
+global <./cli.xml#auth_policy_trustedDevice_setExpiration_global>`_ \|
+`saml delete <./cli.xml#auth_saml_delete>`_ \| `saml
+get <./cli.xml#auth_saml_get>`_ \| `saml
+import <./cli.xml#auth_saml_import>`_ \| `saml
+update <./cli.xml#auth_saml_update>`_ \| `saml
+validate <./cli.xml#auth_saml_validate>`_ \| `token
+invalidate <./cli.xml#auth_token_invalidate>`_ \| `token
+list <./cli.xml#auth_token_list>`_ \| `totp
+delete <./cli.xml#auth_totp_delete>`_ \| `totp
+generate <./cli.xml#auth_totp_generate>`_ \| `totp
+list <./cli.xml#auth_totp_list>`_ \| `trustedDevice
+delete <./cli.xml#auth_trustedDevice_delete>`_ \| `trustedDevice
+list <./cli.xml#auth_trustedDevice_list>`_
+
+.. |zextras auth overview| image:: /img/zextras_auth_overview.png
+.. |zextras_auth_mobilepass1.png| image:: /img/zextras_auth_mobilepass1.png
+.. |zextras_auth_mobilepass2.png| image:: /img/zextras_auth_mobilepass2.png
+.. |zextras_auth_mobilepass3.png| image:: /img/zextras_auth_mobilepass3.png
+.. |zextras_auth_qrcode1.png| image:: /img/zextras_auth_qrcode1.png
+.. |zextras_auth_qrcode2.png| image:: /img/zextras_auth_qrcode2.png
+.. |zextras_auth_qrcode3.png| image:: /img/zextras_auth_qrcode3.png
+.. |zextras_auth_otp1.png| image:: /img/zextras_auth_otp1.png
+.. |zextras_auth_otp2.png| image:: /img/zextras_auth_otp2.png
+.. |zextras_auth_otp3.png| image:: /img/zextras_auth_otp3.png
+.. |zextras_auth_delete_credential.png| image:: /img/zextras_auth_delete_credential.png
