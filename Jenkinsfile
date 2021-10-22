@@ -18,15 +18,7 @@ pipeline {
       stage('Building Sphinx using doker') {
         steps {
             sh 'docker build -f Dockerfile -t sphinx_builder .'
-            script {
-              env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt  sphinx_builder -v ${WORKSPACE}:/docs').trim()'
-            }
-
-            "docker exec -t ${env.CONTAINER_ID} bash -c 'sphinx-build source/carbonio build/carbonio'"
-            "docker exec -t ${env.CONTAINER_ID} bash -c 'sphinx-build source/carbonio-ce build/carbonio-ce'"
-            "docker exec -t ${env.CONTAINER_ID} bash -c 'sphinx-build source/suite build/suite'"
-            "docker exec -t ${env.CONTAINER_ID} bash -c 'sphinx-build source/landing build/landing'"\
-
+            sh "docker run -v $(pwd):/docs sphinx_builder bash -c 'sphinx-build source/suite build/suite'"
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
                  includePathPattern: '**',
