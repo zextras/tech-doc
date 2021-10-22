@@ -40,11 +40,12 @@ pipeline {
 
             post {
                 failure {
-                    sh 'cat ${SPHINX_DIR}/sphinx-build.log'
-                }
+                     script {
+                         notifications.emailNotification subject: "Sphinx documentation failed", attachLog: false, rcpts: ['fabio.francescone@zextras.com']
+                     }
                 success {
                      script {
-                         notifications.emailNotification subject: "Sphinx documentation was released on $BUCKET_NAME", attachLog: true, rcpts: ['fabio.francescone@zextras.com']
+                         notifications.emailNotification subject: "Sphinx documentation was released on $BUCKET_NAME", attachLog: false, rcpts: ['fabio.francescone@zextras.com']
                      }
                  }
             }
