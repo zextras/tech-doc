@@ -14,10 +14,33 @@ pipeline {
         SOURCE_DIR  = './source'
         WORKSPACE = pwd()
     }
+
     stages {
-      stage('Building Sphinx using doker') {
-        steps {
-            sh 'docker build -f Dockerfile -t sphinx_builder .'
+        stage('Install Dependencies') {
+            steps {
+                // virtualenv may not be necessary with root,
+                // but I still think it's a good idea.
+                sh '''
+                   virtualenv pyenv
+                   . pyenv/bin/activate
+                   pip install -r ${SPHINX_DIR}/requirements.txt
+                '''
+            }
+        }
+        stage('Build') {
+            steps {
+                // clear out old files
+                sh 'rm -rf ${BUILD_DIR}'
+                sh 'rm -f ${SPHINX_DIR}/sphinx-build.log'
+
+                sh '''
+                   ${WORKSPACE}/pyenv/bin/sphinx-build \
+                   -q -w ${SPHINX_DIR}/sphinx-build.log \
+                   -b html \
+                   -d ${BUILD_DIR} ${SOURCE_DIR} ${BUILD_DIR}
+                '''
+            }
+
 
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
                  s3Upload(bucket: "zextrasdoc",
