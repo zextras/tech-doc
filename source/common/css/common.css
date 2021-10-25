@@ -24,3 +24,16 @@
 /* Width of logo on the upper left corner */
 .wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
     width:300px}
+
+.rst-content .topic-title {
+ font-weight:bold;
+ margin-bottom:12px;
+ left-border: 2px solid
+}
+
+.topic {
+    width: 75%;
+    min-width: 200px;
+    padding: 5px;
+    margin: 15px
+}
