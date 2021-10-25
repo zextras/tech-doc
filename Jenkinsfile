@@ -18,8 +18,17 @@ pipeline {
       stage('Install dependencies') {
         steps {
             sh 'docker build -f Dockerfile -t sphinx_builder .'
+                        script {
+              env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt  sphinx_builder -v ${WORKSPACE}:/docs').trim()
+            }
+            
+            sh(script: "docker exec  -t ${env.CONTAINER_ID} bash -c 'sphinx-build source/carbonio build/suite'")       
                           }
                }
+               
+
+
+               
       stage('Build Sphinx with Docker') {
         steps {
             sh 'docker run -dt -v $(pwd):/docs sphinx_builder python -m sphinx source/suite build'
