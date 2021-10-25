@@ -24,17 +24,19 @@ pipeline {
             
             sh(script: "docker exec  -t ${env.CONTAINER_ID} bash -c 'sphinx-build source/carbonio build/suite'")       
                           }
-               }
-               
-
+               }               
 
                
       stage('Build Sphinx with Docker') {
         steps {
-            sh 'docker run -dt -v $(pwd):/docs sphinx_builder python -m sphinx source/suite build'
-            sh 'ls $(pwd)'
+           script {
+              env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt  sphinx_builder -v ${WORKSPACE}:/docs').trim()
+            }
+            
+            sh 'docker exec  -t ${env.CONTAINER_ID} bash -c sphinx-build source/carbonio build/suite'       
                           }
                }
+
       stage('Upload to AWS') {
         steps {
             withAWS(region: "eu-west-1", credentials: "doc-zextras-area51-s3-key") {
