@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zextras Docs &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zextras Auth" href="auth.html" />
+    <link rel="prev" title="Zextras Drive" href="drive.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00506d" >
+            <a href="index.html" class="icon icon-home"> Zextras Suite
+            <img src="_static/zextras_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">Zextras Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Zextras Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drive.html">Zextras Drive</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Zextras Docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-docs-server">Zextras Docs Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-docs-extension">Zextras Docs Extension</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-docs-zimlet">Zextras Docs Zimlet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#minimum-system-requirements">Minimum System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#browser-compatibility">Browser compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#document-management-flow">Document Management Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#networking-and-ports">Networking and ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-and-configuration">Installation and Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#docs-nodes">Docs Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docs-server-download-links">Docs Server download links</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-custom-fonts-to-the-docs-server">Adding Custom Fonts to the Docs Server</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mailbox-nodes">Mailbox Nodes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#proxy-nodes">Proxy Nodes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#removal">Removal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-docs-server-cli-zdocs">Zextras Docs Server CLI - zdocs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-docs-extension-cli-zxsuite-docs">Zextras Docs Extension CLI - zxsuite docs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-docs-cli">Zextras Docs CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Zextras Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #00506d" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Zextras Docs</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="zextras-docs">
+<h1><a class="toc-backref" href="#id23">Zextras Docs</a><a class="headerlink" href="#zextras-docs" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>2021-10-20</p>
+</dd>
+</dl>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#zextras-docs" id="id23">Zextras Docs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id24">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#components" id="id25">Components</a></p>
+<ul>
+<li><p><a class="reference internal" href="#zextras-docs-server" id="id26">Zextras Docs Server</a></p></li>
+<li><p><a class="reference internal" href="#zextras-docs-extension" id="id27">Zextras Docs Extension</a></p></li>
+<li><p><a class="reference internal" href="#zextras-docs-zimlet" id="id28">Zextras Docs Zimlet</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#minimum-system-requirements" id="id29">Minimum System Requirements</a></p></li>
+<li><p><a class="reference internal" href="#browser-compatibility" id="id30">Browser compatibility</a></p></li>
+<li><p><a class="reference internal" href="#document-management-flow" id="id31">Document Management Flow</a></p></li>
+<li><p><a class="reference internal" href="#networking-and-ports" id="id32">Networking and ports</a></p></li>
+<li><p><a class="reference internal" href="#installation-and-configuration" id="id33">Installation and Configuration</a></p>
+<ul>
+<li><p><a class="reference internal" href="#docs-nodes" id="id34">Docs Nodes</a></p></li>
+<li><p><a class="reference internal" href="#docs-server-download-links" id="id35">Docs Server download links</a></p></li>
+<li><p><a class="reference internal" href="#mailbox-nodes" id="id36">Mailbox Nodes</a></p></li>
+<li><p><a class="reference internal" href="#proxy-nodes" id="id37">Proxy Nodes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#licensing" id="id38">Licensing</a></p></li>
+<li><p><a class="reference internal" href="#removal" id="id39">Removal</a></p></li>
+<li><p><a class="reference internal" href="#commands" id="id40">Commands</a></p>
+<ul>
+<li><p><a class="reference internal" href="#zextras-docs-server-cli-zdocs" id="id41">Zextras Docs Server CLI - zdocs</a></p></li>
+<li><p><a class="reference internal" href="#zextras-docs-extension-cli-zxsuite-docs" id="id42">Zextras Docs Extension CLI - zxsuite docs</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#troubleshooting" id="id43">Troubleshooting</a></p></li>
+<li><p><a class="reference internal" href="#zextras-docs-cli" id="id44">Zextras Docs CLI</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<span id="id1"></span><h2><a class="toc-backref" href="#id24">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>Zextras Docs is based on a heavily customized LibreOffice online package
+allowing for collaborative editing of documents, spreadsheets and
+presentations straight from the Zimbra WebClient.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Zextras Docs is not compatible with Zimbra version 8.8.11 and lower.</p>
+</div></blockquote>
+</section>
+<section id="components">
+<span id="id2"></span><h2><a class="toc-backref" href="#id25">Components</a><a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<section id="zextras-docs-server">
+<span id="id3"></span><h3><a class="toc-backref" href="#id26">Zextras Docs Server</a><a class="headerlink" href="#zextras-docs-server" title="Permalink to this headline"></a></h3>
+<p>The Zextras Docs server is the heart of the service. The service hosts
+each document opened through a LibreOffice engine and responds to the
+client via an image upon every keystroke and change in the document.</p>
+<blockquote>
+<div><p><strong>Important</strong></p>
+<p>This component must be installed on one or more dedicated nodes
+running Ubuntu 16.04 LTS, Ubuntu 18.04 LTS or Red Hat Centos 7.</p>
+</div></blockquote>
+</section>
+<section id="zextras-docs-extension">
+<span id="id4"></span><h3><a class="toc-backref" href="#id27">Zextras Docs Extension</a><a class="headerlink" href="#zextras-docs-extension" title="Permalink to this headline"></a></h3>
+<p>The extension is the key component which coordinates everything. Its
+main tasks are:</p>
+<ul class="simple">
+<li><p>Select which Docs server the next document will be opened on.</p></li>
+<li><p>Redirect the client when it needs to open a document.</p></li>
+<li><p>Read and write documents to and from system storage on behalf of the
+Docs server.</p></li>
+<li><p>Connect to each Docs server via an administrative websocket and keep
+track of the availability and the resource usage of each.</p></li>
+<li><p>Orchestrate concurrent user connections to the same document in the
+same server. (document sharing)</p></li>
+</ul>
+<p>The Zextras Docs Extension is contained within the Zextras Core
+component of Zextras Suite.</p>
+</section>
+<section id="zextras-docs-zimlet">
+<span id="id5"></span><h3><a class="toc-backref" href="#id28">Zextras Docs Zimlet</a><a class="headerlink" href="#zextras-docs-zimlet" title="Permalink to this headline"></a></h3>
+<p>A Zextras Docs Zimlet handles the integration with Drive items and with
+email attachments. It is a thin web client which connects to a native
+server instance via websocket, renders a document and only sends changes
+to the client in order to keep the fidelity of the document on par with
+a desktop client while at the same time reducing the bandwidth to the
+bare minimum.</p>
+<p>Documents in preview and attachments are shown in read-only mode with a
+simplified interface, while edit mode has a full interface.</p>
+<p>Its main tasks are:</p>
+<ul class="simple">
+<li><p>Change the “create” button in the ZWC to the related Docs feature.</p></li>
+<li><p>Change the preview feature to use Docs.</p></li>
+<li><p>Allow the preview of documents.</p></li>
+</ul>
+</section>
+</section>
+<section id="minimum-system-requirements">
+<span id="id6"></span><h2><a class="toc-backref" href="#id29">Minimum System Requirements</a><a class="headerlink" href="#minimum-system-requirements" title="Permalink to this headline"></a></h2>
+<p>Following are the minimum system requirements to install Zextras Docs
+server:</p>
+<ul class="simple">
+<li><p>Centos 7, Ubuntu 16.04, or Ubuntu 18.04</p></li>
+<li><p>At least 2 CPU cores</p></li>
+<li><p>At least 4 GB RAM</p></li>
+<li><p>At least 4 GB free disk space</p></li>
+</ul>
+</section>
+<section id="browser-compatibility">
+<span id="id7"></span><h2><a class="toc-backref" href="#id30">Browser compatibility</a><a class="headerlink" href="#browser-compatibility" title="Permalink to this headline"></a></h2>
+<p>The following list shows which browsers are known to fully support all
+Zextras features.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Browser</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>OS</p></th>
+<th class="head"><p>Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Microsoft
+Edge
+(Chromium)</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>Windows</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Microsoft
+Edge
+(Chromium)</strong></p></td>
+<td><p>Others</p></td>
+<td><p>Windows</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Microsoft
+Edge
+(EdgeHTML)</strong></p></td>
+<td><p>Any</p></td>
+<td><p>Windows</p></td>
+<td><p><img alt="times circle" src="images/icons/times-circle.png" />
+No</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Internet
+Explorer</strong></p></td>
+<td><p>Any</p></td>
+<td><p>Windows</p></td>
+<td><p><img alt="times circle" src="images/icons/times-circle.png" />
+No</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mozilla
+Firefox</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>Windows/Linux
+/OSX</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Mozilla
+Firefox</strong></p></td>
+<td><p>ESR</p></td>
+<td><p>Windows/Linux/O
+SX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mozilla
+Firefox</strong></p></td>
+<td><p>Others</p></td>
+<td><p>Windows/Linux/O
+SX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Google
+Chrome</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>Windows/Linux
+/OSX</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Google
+Chrome</strong></p></td>
+<td><p>Others</p></td>
+<td><p>Windows/Linux/O
+SX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Safari</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>OSX</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Safari</strong></p></td>
+<td><p>Others</p></td>
+<td><p>OSX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+</tbody>
+</table>
+<p>Items marked as “<img alt="check circle" src="images/icons/check-circle.png" /> Limited” are only supported on the
+browser’s two previous stable releases.</p>
+</section>
+<section id="document-management-flow">
+<span id="id8"></span><h2><a class="toc-backref" href="#id31">Document Management Flow</a><a class="headerlink" href="#document-management-flow" title="Permalink to this headline"></a></h2>
+<p>This is what happens “behind the scenes” when a user creates a new
+document:</p>
+<ol class="arabic simple">
+<li><p>The Zimlet prompts the Extension to create a new empty document</p></li>
+<li><p>The Extension creates the document and returns the document’s ID to
+the client</p></li>
+<li><p>The Zimlet opens a new Zimbra tab containing an iframe pointing
+towards ‘/service/extension/wopi-proxy’</p></li>
+<li><p>The extension receives the request from the client, creates a new
+token for the needed document, and replies with a new url</p></li>
+<li><p>The new url points toward <code class="docutils literal notranslate"><span class="pre">/docs/[docs-node-id]/[token]</span></code>, which
+will be proxied by nginx to the specific Docs Server node</p></li>
+<li><p>The Docs Server will respond with the web application in Javascript</p></li>
+<li><p>The web application opens a websocket connection, going through the
+nginx</p></li>
+<li><p>Docs Server receives the websocket connection along with a token,
+sends a <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">wopi</span></code> command towards the mailbox url indicated in
+the parameters (the url is validates against allowed nodes)</p></li>
+<li><p>The Extension validates the token and replies with information and
+content</p></li>
+<li><p>The Docs Server node parses the document, renders it and sends it
+back to the client.</p></li>
+<li><p>The document is fully opened and editable.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Open</span> <span class="n">document</span>
+                                  <span class="n">redirect</span> <span class="n">to</span> <span class="n">docs</span>
+    <span class="o">+------------------------+</span>             <span class="o">+----------------------+</span>
+    <span class="o">|</span>     <span class="n">Zimbra</span> <span class="n">Proxy</span>       <span class="o">|</span>             <span class="o">|</span>       <span class="n">Mailbox</span>        <span class="o">|</span>
+    <span class="o">|</span>                        <span class="o">+-------------&gt;</span>                      <span class="o">|</span>
+    <span class="o">|</span>      <span class="n">Nginx</span>             <span class="o">|</span>             <span class="o">|</span> <span class="n">Zextras</span> <span class="n">Docs</span> <span class="n">Extension</span><span class="o">|</span>
+    <span class="o">+------------------------+</span>             <span class="o">+----------------------+</span>
+                      <span class="o">|</span>                        <span class="o">|</span>              <span class="o">^</span>
+                      <span class="o">|</span>                        <span class="o">|</span>              <span class="o">|</span>
+                      <span class="o">|</span>                        <span class="o">|</span>             <span class="n">WOPI</span><span class="p">:</span>
+                      <span class="o">|</span>                   <span class="n">Admin</span> <span class="n">Web</span>          <span class="n">Read</span><span class="o">/</span><span class="n">Write</span>
+                      <span class="o">|</span>                   <span class="n">Socket</span>             <span class="n">Documents</span>
+                      <span class="o">|</span>                        <span class="o">|</span>              <span class="o">|</span>
+                      <span class="o">|</span>                        <span class="o">|</span>              <span class="o">|</span>
+                      <span class="o">|</span>                        <span class="o">|</span>              <span class="o">|</span>
+                      <span class="o">|</span>                    <span class="o">+---</span><span class="n">v</span><span class="o">----------------+</span>
+                      <span class="o">|</span>                    <span class="o">|</span>                    <span class="o">|</span>
+                      <span class="o">+--------------------&gt;</span>   <span class="n">Docs</span> <span class="n">Server</span>      <span class="o">|</span>
+                   <span class="n">Load</span> <span class="n">Client</span>             <span class="o">|</span>                    <span class="o">|</span>
+                   <span class="n">Open</span> <span class="n">client</span> <span class="n">websocket</span>   <span class="o">+--------------------+</span>
+</pre></div>
+</div>
+</section>
+<section id="networking-and-ports">
+<span id="id9"></span><h2><a class="toc-backref" href="#id32">Networking and ports</a><a class="headerlink" href="#networking-and-ports" title="Permalink to this headline"></a></h2>
+<p>All mailbox servers will need to be able to directly communicate with
+the Docs Server over port 8443 (HTTPS Backend), which must be open on
+both ends.</p>
+<p>The Docs Server communicates with the Extension through port 9980, so
+incoming traffic from all mailbox and proxy servers to that port must be
+allowed. The Docs Server component must also be able to directly
+communicate with the master LDAP server as well as with all Proxy
+servers.</p>
+</section>
+<section id="installation-and-configuration">
+<span id="id10"></span><h2><a class="toc-backref" href="#id33">Installation and Configuration</a><a class="headerlink" href="#installation-and-configuration" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p><strong>Important</strong></p>
+<p>This component must be installed on one or more dedicated nodes
+running Ubuntu 16.04 LTS, Ubuntu 18.04 LTS or Red Hat Centos 7.</p>
+</div></blockquote>
+<section id="docs-nodes">
+<span id="id11"></span><h3><a class="toc-backref" href="#id34">Docs Nodes</a><a class="headerlink" href="#docs-nodes" title="Permalink to this headline"></a></h3>
+<p>Download the <code class="docutils literal notranslate"><span class="pre">zimbra-docs</span> <span class="pre">tgz</span></code> standalone installer, extract it and as
+the <em>root</em> user execute the <code class="docutils literal notranslate"><span class="pre">install.sh</span></code> script contained in the
+package.</p>
+<p>To obtain the information required for the initial Docs Server setup,
+run the following command on any mailbox server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mbx1:~$ zmlocalconfig -s ldap_master_url zimbra_ldap_user zimbra_ldap_userdn zimbra_ldap_password
+</pre></div>
+</div>
+<p>This will return the info you need in the following format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ldap_master_url</span> <span class="o">=</span> <span class="n">ldap</span><span class="p">:</span><span class="o">//</span><span class="n">ldap01</span><span class="o">.</span><span class="n">cfd6a9e5</span><span class="o">.</span><span class="n">test</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">389</span>
+<span class="n">zimbra_ldap_user</span> <span class="o">=</span> <span class="n">zimbra</span>
+<span class="n">zimbra_ldap_userdn</span> <span class="o">=</span> <span class="n">uid</span><span class="o">=</span><span class="n">zimbra</span><span class="p">,</span><span class="n">cn</span><span class="o">=</span><span class="n">admins</span><span class="p">,</span><span class="n">cn</span><span class="o">=</span><span class="n">zimbra</span>
+<span class="n">zimbra_ldap_password</span> <span class="o">=</span> <span class="n">Deyked4ofMarj</span>
+</pre></div>
+</div>
+<p>The script will install the Zextras Docs package and then ask the
+information about the master ldap, url, username and password, which
+will be used to add a new server in the LDAP with just the ‘docs’
+service installed/enabled. Every Docs Server will be visible by every
+node, and will read the LDAP in order to write the configuration in
+<code class="docutils literal notranslate"><span class="pre">/opt/zimbra/conf/docs/loolwsd.xml</span></code>.</p>
+<p>Once the setup is completed no other configuration is needed.</p>
+</section>
+<section id="docs-server-download-links">
+<span id="id12"></span><h3><a class="toc-backref" href="#id35">Docs Server download links</a><a class="headerlink" href="#docs-server-download-links" title="Permalink to this headline"></a></h3>
+<p>Centos 7
+&lt;<a class="reference external" href="https://download.zextras.com/zextras-docs-installer/latest/zextras-docs-centos7.tgz">https://download.zextras.com/zextras-docs-installer/latest/zextras-docs-centos7.tgz</a>&gt;</p>
+<p>Ubuntu 16
+&lt;<a class="reference external" href="https://download.zextras.com/zextras-docs-installer/latest/zextras-docs-ubuntu16.tgz">https://download.zextras.com/zextras-docs-installer/latest/zextras-docs-ubuntu16.tgz</a>&gt;</p>
+<p>Ubuntu 18
+&lt;<a class="reference external" href="https://download.zextras.com/zextras-docs-installer/latest/zextras-docs-ubuntu18.tgz">https://download.zextras.com/zextras-docs-installer/latest/zextras-docs-ubuntu18.tgz</a>&gt;</p>
+<section id="adding-custom-fonts-to-the-docs-server">
+<span id="id13"></span><h4>Adding Custom Fonts to the Docs Server<a class="headerlink" href="#adding-custom-fonts-to-the-docs-server" title="Permalink to this headline"></a></h4>
+<p>To add Custom Fonts to your Docs Server, simply copy the <code class="docutils literal notranslate"><span class="pre">.ttf</span></code> font
+files in the <code class="docutils literal notranslate"><span class="pre">/opt/zimbra/docs/core/share/fonts/truetype/</span></code> directory,
+then generate the new font cache and restart the docs server running
+<code class="docutils literal notranslate"><span class="pre">zdocs</span> <span class="pre">restart</span></code> as <code class="docutils literal notranslate"><span class="pre">root</span></code>.</p>
+<p>To generate the new font cache, run the following command based on the
+Docs Server’s Operating System:</p>
+<p><strong>Ubuntu 16 and Ubuntu 18.</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">dpkg-reconfigure</span> <span class="pre">zextras-docs-server</span></code></p>
+<p><strong>CentOS 7.</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">fc-cache</span> <span class="pre">/opt/zimbra/docs/zextras-docs-core/share/fonts</span></code></p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>The server will briefly be unavailable during the restart, and
+clients will need to close and open again any open document to see
+the new fonts in the list.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="mailbox-nodes">
+<span id="id14"></span><h3><a class="toc-backref" href="#id36">Mailbox Nodes</a><a class="headerlink" href="#mailbox-nodes" title="Permalink to this headline"></a></h3>
+<p>While the Zextras Docs extension is already contained within Zextras
+Suite, the com_zextras_docs Zimlet needs to be deployed on the server
+and enabled on all users and COS that need to have access to the Zextras
+Docs features.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">com_zextras_docs</span></code> Zimlet can be deployed from the “Core” section
+of the Zextras Adminictration Zimlet.</p>
+<p>No configuration on the mailboxd side is needed after the Zimlet has
+been deployed and enabled.</p>
+</section>
+<section id="proxy-nodes">
+<span id="id15"></span><h3><a class="toc-backref" href="#id37">Proxy Nodes</a><a class="headerlink" href="#proxy-nodes" title="Permalink to this headline"></a></h3>
+<p>The proxy configuration must be re-generated after adding one or more
+Zextras Docs Servers to the infrastructure: to do so, run
+<code class="docutils literal notranslate"><span class="pre">/opt/zimbra/libexec/zmproxyconfgen</span></code> as the <em>zimbra</em> user and then
+restart the proxy service running <code class="docutils literal notranslate"><span class="pre">zmproxyctl</span> <span class="pre">restart</span></code> as the same
+user.</p>
+<p>The new docs nodes will be read from ldap and no manual configuration is
+needed.</p>
+</section>
+</section>
+<section id="licensing">
+<span id="id16"></span><h2><a class="toc-backref" href="#id38">Licensing</a><a class="headerlink" href="#licensing" title="Permalink to this headline"></a></h2>
+<p><strong>Zextras Docs is included in every Zextras Suite Pro license..</strong></p>
+<p>The standalone installer is released under the MPLv2 license while the
+extension and Zimlet are released under a proprietary license.</p>
+</section>
+<section id="removal">
+<span id="id17"></span><h2><a class="toc-backref" href="#id39">Removal</a><a class="headerlink" href="#removal" title="Permalink to this headline"></a></h2>
+<p>Before uninstalling the software the node must be removed form LDAP
+either from the docs node via command</p>
+<p><code class="docutils literal notranslate"><span class="pre">zdocs</span> <span class="pre">remove-local-server</span></code></p>
+<p>or via the zmprov command from any zimbra node</p>
+<p><code class="docutils literal notranslate"><span class="pre">zmprov</span> <span class="pre">deleteServer</span> <span class="pre">{servername}</span></code></p>
+</section>
+<section id="commands">
+<span id="id18"></span><h2><a class="toc-backref" href="#id40">Commands</a><a class="headerlink" href="#commands" title="Permalink to this headline"></a></h2>
+<section id="zextras-docs-server-cli-zdocs">
+<span id="id19"></span><h3><a class="toc-backref" href="#id41">Zextras Docs Server CLI - zdocs</a><a class="headerlink" href="#zextras-docs-server-cli-zdocs" title="Permalink to this headline"></a></h3>
+<p>On Docs server zdocs (/usr/local/bin/zdocs as root) command can generate
+the config for lool (it’s already on cron), add/remove the docs server
+from ldap, test configuration and manage the service.</p>
+<p><strong>``zdocs`` command.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>usage: zdocs <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--auto-restart<span class="o">]</span> <span class="o">[</span>--ldap-dn LDAP_DN<span class="o">]</span> <span class="o">[</span>--ldap-pass LDAP_PASS<span class="o">]</span>
+             <span class="o">[</span>--ldap-url LDAP_URL<span class="o">]</span> <span class="o">[</span>--hostname HOSTNAME<span class="o">]</span> <span class="o">[</span>--debug<span class="o">][</span>--cron<span class="o">]</span>
+
+<span class="o">{</span>genkey,write-local-server,remove-local-server,generate-config,ldap-write-config,ldap-test,start,stop,restart,status,setup<span class="o">}</span>
+
+Manage Zextras Docs service.
+
+Available commands:
+  genkey                Generate a private key needed <span class="k">for</span> authentication between docs and mailbox servers.
+  write-local-server    Add or update in LDAP the necessary server entry <span class="k">for</span> this server in order to be reachable from other servers.
+  remove-local-server   Remove <span class="nb">local</span> server entry in LDAP.
+  generate-config       Populate the config template with ldap values and write a new configuration file.
+  ldap-write-config     Write new configuration about the ldap access needed to generate the docs configuration file.
+  ldap-test             Check the ldap connection.
+  start                 Start the service.
+  stop                  Stop the service.
+  restart               Restart the service.
+  status                Print service status.
+  setup                 Start the initial setup.
+
+positional arguments:
+<span class="o">{</span>genkey,write-local-server,remove-local-server,generate-config,ldap-write-config,ldap-test,start,stop,restart,status,setup<span class="o">}</span>
+
+optional arguments:
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --auto-restart        Automatically restart the service <span class="k">if</span> configuration is changed <span class="o">(</span>to be used with generate-config<span class="o">)</span>
+  --ldap-dn LDAP_DN     Ldap dn <span class="o">(</span>distinguish name<span class="o">)</span> to <span class="nb">bind</span> to <span class="o">(</span>to be used with ldap-test and ldap-settings<span class="o">)</span>
+  --ldap-pass LDAP_PASS Ldap password used of the DN <span class="o">(</span>to be used with ldap-test and ldap-settings<span class="o">)</span>
+  --ldap-url LDAP_URL   Ldap url completed with schema <span class="o">(</span>ex.: ldaps://ldap.example.com, to be used with ldap-test and ldap-settings<span class="o">)</span>
+  --hostname HOSTNAME   Hostname of this server <span class="o">(</span>to be used with add-local-server<span class="o">)</span>
+  --debug               Show <span class="nb">complete</span> errors when things go bad.
+  --cron                Start in cron mode, avoid any output unless there is an error <span class="o">(</span>to be used with generate-config<span class="o">)</span>.
+
+examples:
+<span class="c1">#regenerate the config and restart the server if config changed</span>
+  zdocs --auto-restart generate-config
+<span class="c1">#restart the service</span>
+  zdocs restart
+<span class="c1">#check ldap connection availability using current settings</span>
+  zdocs ldap-test
+<span class="c1">#check ldap connection using custom settings</span>
+  zdocs --ldap-url ldaps://ldap.example.com/ --ldap-dn <span class="s1">&#39;uid=zimbra,cn=admins,cn=zimbra&#39;</span> --ldap-pass password ldap-test
+<span class="c1">#change the ldap connection settings</span>
+  zdocs --ldap-url ldap://ldap2.example.com/ --ldap-dn <span class="s1">&#39;uid=zimbra,cn=admins,cn=zimbra&#39;</span> --ldap-pass password
+ldap-write-config
+<span class="c1">#add the local server</span>
+  zdocs write-local-server
+<span class="c1">#add the local server with a custom hostname in LDAP, this command should be already invoked during setup.</span>
+  zdocs --hostname myhostname write-local-server
+<span class="c1">#remove the local server from LDAP, useful when destroying the server, you can also use &#39;zmprov deleteServer&#39; from a mailbox server.</span>
+  zdocs remove-local-server
+</pre></div>
+</div>
+</section>
+<section id="zextras-docs-extension-cli-zxsuite-docs">
+<span id="id20"></span><h3><a class="toc-backref" href="#id42">Zextras Docs Extension CLI - zxsuite docs</a><a class="headerlink" href="#zextras-docs-extension-cli-zxsuite-docs" title="Permalink to this headline"></a></h3>
+<p>On a Mailbox server, the <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">docs</span></code> command is available. This
+command allows to check and control the Docs service’s status, to force
+a configuration reload and to see the Docs Servers’ status.</p>
+<p><strong>zxsuite docs.</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>zxsuite docs
+
+Commands regarding docs module
+
+  doReloadConfig           - reload docs configuration from ldap, which
+would happen once a minute.
+                             zxsuite docs doReloadConfig
+
+  doRestartService         - restart a given service
+                             zxsuite docs doRestartService
+<span class="o">{</span>service_name<span class="o">}</span>
+
+  doStartService           - start a given service
+                             zxsuite docs doStartService <span class="o">{</span>service_name<span class="o">}</span>
+
+  doStopService            - stop a given service
+                             zxsuite docs doStopService <span class="o">{</span>service_name<span class="o">}</span>
+
+  getServices              - show current status of all services <span class="k">for</span>
+this module
+                             zxsuite docs getServices
+
+  status                   - show Zextras Docs servers status with their
+resource usage <span class="o">(</span><span class="k">if</span> connected<span class="o">)</span>.
+                             zxsuite docs status
+</pre></div>
+</div>
+</section>
+</section>
+<section id="troubleshooting">
+<span id="id21"></span><h2><a class="toc-backref" href="#id43">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
+<p><strong>Nothing happens when opening a document / extension requests returns
+503..</strong></p>
+<p>This is most likely due to a connection issue between the mailbox server
+and the Docs server. Check the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code> and see the reason for
+the connection failure. If there are no connection errors, check the
+Docs server with <code class="docutils literal notranslate"><span class="pre">zdocs</span> <span class="pre">status</span></code> on the docs node.</p>
+<p>The mailbox will log every connection and disconnection for each Docs
+server.</p>
+<p><strong>404 error code instead of docs.</strong></p>
+<p>The proxy configuration needs to be re-generated and the proxy
+restarted.</p>
+<p><strong>Docs opens but a message “this is embarrassing…​” appears instead of
+the document..</strong></p>
+<p>This happens if the Docs server cannot connect back to the mailbox
+server to read and write the document. Check name resolution and SSL
+certificate of mailboxd which must be valid for the Docs server that
+does not inherit Zimbra certificate management.</p>
+</section>
+<section id="zextras-docs-cli">
+<span id="id22"></span><h2><a class="toc-backref" href="#id44">Zextras Docs CLI</a><a class="headerlink" href="#zextras-docs-cli" title="Permalink to this headline"></a></h2>
+<p>This section contains the index of all the available <code class="docutils literal notranslate"><span class="pre">zextras</span> <span class="pre">docs</span></code>
+commands. Full reference can be found in <a class="reference external" href="./cli.xml#_zxdocs_cli_commands">the dedicated
+section</a>.</p>
+<p><a class="reference external" href="./cli.xml#docs_doDeployDocsZimlet">doDeployDocsZimlet</a> |
+<a class="reference external" href="./cli.xml#docs_doReloadConfig">doReloadConfig</a> |
+<a class="reference external" href="./cli.xml#docs_doRestartService">doRestartService</a> |
+<a class="reference external" href="./cli.xml#docs_doStartService">doStartService</a> |
+<a class="reference external" href="./cli.xml#docs_doStopService">doStopService</a> |
+<a class="reference external" href="./cli.xml#docs_getServices">getServices</a> |
+<a class="reference external" href="./cli.xml#docs_status">status</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="drive.html" class="btn btn-neutral float-left" title="Zextras Drive" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="auth.html" class="btn btn-neutral float-right" title="Zextras Auth" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

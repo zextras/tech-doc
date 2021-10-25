@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zextras Mobile &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zextras Powerstore" href="powerstore.html" />
+    <link rel="prev" title="Zextras Backup" href="backup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00506d" >
+            <a href="index.html" class="icon icon-home"> Zextras Suite
+            <img src="_static/zextras_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Zextras Mobile</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#enable-zextras-mobile-synchronization-for-a-cos">Enable Zextras Mobile Synchronization for a COS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-enable-zextras-mobile-for-all-users-in-a-class-of-service">How to Enable Zextras Mobile for all Users in a Class Of Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-console">From the Administration Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-zimbra-cli">From the Zimbra CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-disable-zextras-mobile-for-all-users-in-a-class-of-service">How to Disable Zextras Mobile for all Users in a Class Of Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-console-2">From the Administration Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-zimbra-cli-2">From the Zimbra CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#note-about-settings-hierarchy">Note about Settings Hierarchy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#enable-zextras-mobile-for-a-single-user">Enable Zextras Mobile for a Single User</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-enable-zextras-mobile-for-a-single-user">How to Enable Zextras Mobile for a Single User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-zimbra-administration-console">From the Zimbra Administration Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-zimbra-cli-3">From the Zimbra CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-disable-zextras-mobile-for-a-single-user">How to Disable Zextras Mobile for a Single User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-zimbra-administration-console-2">From the Zimbra Administration Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-zimbra-cli-4">From the Zimbra CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#note-about-settings-hierarchy-2">Note about Settings Hierarchy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-mobile-password-feature">The Mobile Password Feature</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mobile-passwords-and-you">Mobile Passwords and You</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-set-a-mobile-password-for-a-mailbox">How to Set a Mobile Password for a Mailbox</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mobile-device-management-a-k-a-mobile-provisioning">Mobile Device Management a.k.a. Mobile Provisioning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-mobile-device-management">What is Mobile Device Management?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#provisioning-features-available-on-your-client">Provisioning Features Available on Your Client</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-suite-and-mdm">Zextras Suite and MDM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#provisioning-options">Provisioning Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enforceable-policies">Enforceable Policies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id25">Mobile Password</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#syncstates">SyncStates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-mobile-and-the-syncstate">Zextras Mobile and the SyncState</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sync-request">Sync Request</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-the-syncstates">Managing the SyncStates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#via-the-administration-zimlet">Via the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#via-the-cli">Via the CLI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-doremovedevice-command">The doRemoveDevice command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-doresetaccount-command">The doResetAccount command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-doresetdevice-command">The doResetDevice command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-settings">Advanced Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-mobile-dos-filter">Zextras Mobile DoS Filter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-mobile-dos-filter-works">How Mobile DoS Filter works</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-autodiscover">Zextras Autodiscover</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#how-to-enable-zextras-autodiscover">How to enable Zextras Autodiscover</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-mobile-performance-tuning">Zextras Mobile Performance Tuning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-tuning-settings">Performance Tuning Settings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#available-settings">Available Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#when-to-edit-the-performance-tuning-settings">When to Edit the Performance Tuning Settings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#shared-folders">Shared Folders</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#shared-folders-and-you-and-your-mobile">Shared Folders and You (and Your Mobile)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-sync-a-shared-folder-to-your-mobile-devices">How to Sync a Shared Folder to Your Mobile Devices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enable-mobile-synchronization-for-a-shared-folder">Enable Mobile Synchronization for a Shared Folder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#disable-mobile-synchronization-for-a-shared-folder">Disable Mobile Synchronization for a Shared Folder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#restrictions">Restrictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#eas-filters">EAS Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anatomy-of-an-eas-filter">Anatomy of an EAS Filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-eas-filters">Managing EAS Filters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mobile-account-loggers">Mobile Account Loggers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#account-logger-management">Account Logger Management</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#zxsuite-mobile-doaddaccountlogger">zxsuite mobile doAddAccountLogger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zxsuite-mobile-doremovelogger">zxsuite mobile doRemoveLogger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zxsuite-mobile-getaccountloggers">zxsuite mobile getAccountLoggers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#abq-allow-block-quarantine-device-control">ABQ - Allow/Block/Quarantine device control</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#abq-service">ABQ Service</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#components">Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abq-modes">ABQ Modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abq-mode-control">ABQ Mode Control</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dummy-data">Dummy data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#custom-abq-emails">Custom ABQ emails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#notifications">Notifications</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#abq-cli">ABQ CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-mobile-cli">Zextras Mobile CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Zextras Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drive.html">Zextras Drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Zextras Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Zextras Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #00506d" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Zextras Mobile</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="zextras-mobile">
+<h1><a class="toc-backref" href="#id86">Zextras Mobile</a><a class="headerlink" href="#zextras-mobile" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>2021-10-19</p>
+</dd>
+</dl>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#zextras-mobile" id="id86">Zextras Mobile</a></p>
+<ul>
+<li><p><a class="reference internal" href="#enable-zextras-mobile-synchronization-for-a-cos" id="id87">Enable Zextras Mobile Synchronization for a COS</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-enable-zextras-mobile-for-all-users-in-a-class-of-service" id="id88">How to Enable Zextras Mobile for all Users in a Class Of Service</a></p></li>
+<li><p><a class="reference internal" href="#how-to-disable-zextras-mobile-for-all-users-in-a-class-of-service" id="id89">How to Disable Zextras Mobile for all Users in a Class Of Service</a></p></li>
+<li><p><a class="reference internal" href="#note-about-settings-hierarchy" id="id90">Note about Settings Hierarchy</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#enable-zextras-mobile-for-a-single-user" id="id91">Enable Zextras Mobile for a Single User</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-to-enable-zextras-mobile-for-a-single-user" id="id92">How to Enable Zextras Mobile for a Single User</a></p></li>
+<li><p><a class="reference internal" href="#how-to-disable-zextras-mobile-for-a-single-user" id="id93">How to Disable Zextras Mobile for a Single User</a></p></li>
+<li><p><a class="reference internal" href="#note-about-settings-hierarchy-2" id="id94">Note about Settings Hierarchy</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#the-mobile-password-feature" id="id95">The Mobile Password Feature</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mobile-passwords-and-you" id="id96">Mobile Passwords and You</a></p></li>
+<li><p><a class="reference internal" href="#how-to-set-a-mobile-password-for-a-mailbox" id="id97">How to Set a Mobile Password for a Mailbox</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mobile-device-management-a-k-a-mobile-provisioning" id="id98">Mobile Device Management a.k.a. Mobile Provisioning</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-mobile-device-management" id="id99">What is Mobile Device Management?</a></p></li>
+<li><p><a class="reference internal" href="#zextras-suite-and-mdm" id="id100">Zextras Suite and MDM</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#syncstates" id="id101">SyncStates</a></p>
+<ul>
+<li><p><a class="reference internal" href="#zextras-mobile-and-the-syncstate" id="id102">Zextras Mobile and the SyncState</a></p></li>
+<li><p><a class="reference internal" href="#managing-the-syncstates" id="id103">Managing the SyncStates</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#advanced-settings" id="id104">Advanced Settings</a></p>
+<ul>
+<li><p><a class="reference internal" href="#zextras-mobile-dos-filter" id="id105">Zextras Mobile DoS Filter</a></p></li>
+<li><p><a class="reference internal" href="#zextras-autodiscover" id="id106">Zextras Autodiscover</a></p></li>
+<li><p><a class="reference internal" href="#zextras-mobile-performance-tuning" id="id107">Zextras Mobile Performance Tuning</a></p></li>
+<li><p><a class="reference internal" href="#performance-tuning-settings" id="id108">Performance Tuning Settings</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#shared-folders" id="id109">Shared Folders</a></p>
+<ul>
+<li><p><a class="reference internal" href="#shared-folders-and-you-and-your-mobile" id="id110">Shared Folders and You (and Your Mobile)</a></p></li>
+<li><p><a class="reference internal" href="#how-to-sync-a-shared-folder-to-your-mobile-devices" id="id111">How to Sync a Shared Folder to Your Mobile Devices</a></p></li>
+<li><p><a class="reference internal" href="#restrictions" id="id112">Restrictions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#eas-filters" id="id113">EAS Filters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#anatomy-of-an-eas-filter" id="id114">Anatomy of an EAS Filter</a></p></li>
+<li><p><a class="reference internal" href="#managing-eas-filters" id="id115">Managing EAS Filters</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#mobile-account-loggers" id="id116">Mobile Account Loggers</a></p>
+<ul>
+<li><p><a class="reference internal" href="#account-logger-management" id="id117">Account Logger Management</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#abq-allow-block-quarantine-device-control" id="id118">ABQ - Allow/Block/Quarantine device control</a></p>
+<ul>
+<li><p><a class="reference internal" href="#abq-service" id="id119">ABQ Service</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#zextras-mobile-cli" id="id120">Zextras Mobile CLI</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="enable-zextras-mobile-synchronization-for-a-cos">
+<span id="id1"></span><h2><a class="toc-backref" href="#id87">Enable Zextras Mobile Synchronization for a COS</a><a class="headerlink" href="#enable-zextras-mobile-synchronization-for-a-cos" title="Permalink to this headline"></a></h2>
+<section id="how-to-enable-zextras-mobile-for-all-users-in-a-class-of-service">
+<span id="id2"></span><h3><a class="toc-backref" href="#id88">How to Enable Zextras Mobile for all Users in a Class Of Service</a><a class="headerlink" href="#how-to-enable-zextras-mobile-for-all-users-in-a-class-of-service" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-console">
+<span id="id3"></span><h4>From the Administration Console<a class="headerlink" href="#from-the-administration-console" title="Permalink to this headline"></a></h4>
+<p>To enable Zextras Mobile for all users in a COS from the Administration
+Console:</p>
+<ul class="simple">
+<li><p>Open the Zimbra Administration Console.</p></li>
+<li><p>Double-click the Class Of Service you want to edit (on the left,
+under Configuration → Class of Service).</p></li>
+<li><p>Click the Mobile tab.</p></li>
+<li><p>Check the <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">mobile</span> <span class="pre">synchronization</span></code> button.</p></li>
+</ul>
+</section>
+<section id="from-the-zimbra-cli">
+<span id="id4"></span><h4>From the Zimbra CLI<a class="headerlink" href="#from-the-zimbra-cli" title="Permalink to this headline"></a></h4>
+<p>To enable Zextras Mobile for all users in a COS from the CLI:</p>
+<ul class="simple">
+<li><p>As the ‘zimbra’ user run: <strong>``zmprov mc COSName
+zimbraFeatureMobileSyncEnabled TRUE``</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="how-to-disable-zextras-mobile-for-all-users-in-a-class-of-service">
+<span id="id5"></span><h3><a class="toc-backref" href="#id89">How to Disable Zextras Mobile for all Users in a Class Of Service</a><a class="headerlink" href="#how-to-disable-zextras-mobile-for-all-users-in-a-class-of-service" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-console-2">
+<span id="id6"></span><h4>From the Administration Console<a class="headerlink" href="#from-the-administration-console-2" title="Permalink to this headline"></a></h4>
+<p>To disable Zextras Mobile for all users in a COS from the Administration
+Console:</p>
+<ul class="simple">
+<li><p>Open the Zimbra Administration Console.</p></li>
+<li><p>Double-click the Class Of Service you want to edit (on the left,
+under Configuration → Class of Service).</p></li>
+<li><p>Click the Mobile tab and uncheck the <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">mobile</span>
+<span class="pre">synchronization</span></code> button.</p></li>
+</ul>
+</section>
+<section id="from-the-zimbra-cli-2">
+<span id="id7"></span><h4>From the Zimbra CLI<a class="headerlink" href="#from-the-zimbra-cli-2" title="Permalink to this headline"></a></h4>
+<p>To disable Zextras Mobile for all users in a COS from the CLI:</p>
+<ul class="simple">
+<li><p>As the ‘zimbra’ user run: <strong>``zmprov mc COSName
+zimbraFeatureMobileSyncEnabled FALSE``</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="note-about-settings-hierarchy">
+<span id="id8"></span><h3><a class="toc-backref" href="#id90">Note about Settings Hierarchy</a><a class="headerlink" href="#note-about-settings-hierarchy" title="Permalink to this headline"></a></h3>
+<p>COS-level settings are overridden by user-level settings.</p>
+</section>
+</section>
+<section id="enable-zextras-mobile-for-a-single-user">
+<span id="id9"></span><h2><a class="toc-backref" href="#id91">Enable Zextras Mobile for a Single User</a><a class="headerlink" href="#enable-zextras-mobile-for-a-single-user" title="Permalink to this headline"></a></h2>
+<p>By enabling the Zextras Mobile Module for a single user you authorize a
+single user to use all the mobile functions of the Zextras Mobile
+Module.</p>
+<section id="how-to-enable-zextras-mobile-for-a-single-user">
+<span id="id10"></span><h3><a class="toc-backref" href="#id92">How to Enable Zextras Mobile for a Single User</a><a class="headerlink" href="#how-to-enable-zextras-mobile-for-a-single-user" title="Permalink to this headline"></a></h3>
+<section id="from-the-zimbra-administration-console">
+<span id="id11"></span><h4>From the Zimbra Administration Console<a class="headerlink" href="#from-the-zimbra-administration-console" title="Permalink to this headline"></a></h4>
+<p>To enable Zextras Mobile for a single user from the Administration
+Console:</p>
+<ul class="simple">
+<li><p>Open the Zimbra Administration Console.</p></li>
+<li><p>Double-click the user you want to edit (on the left, under Manage →
+Accounts).</p></li>
+<li><p>Click the Mobile tab.</p></li>
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">mobile</span> <span class="pre">synchronization</span></code>.</p></li>
+</ul>
+</section>
+<section id="from-the-zimbra-cli-3">
+<span id="id12"></span><h4>From the Zimbra CLI<a class="headerlink" href="#from-the-zimbra-cli-3" title="Permalink to this headline"></a></h4>
+<p>To enable Zextras Mobile for a single user from the CLI:</p>
+<ul class="simple">
+<li><p>As the ‘zimbra’ user run: <strong>``zmprov ma user&#64;example.com
+zimbraFeatureMobileSyncEnabled TRUE``</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="how-to-disable-zextras-mobile-for-a-single-user">
+<span id="id13"></span><h3><a class="toc-backref" href="#id93">How to Disable Zextras Mobile for a Single User</a><a class="headerlink" href="#how-to-disable-zextras-mobile-for-a-single-user" title="Permalink to this headline"></a></h3>
+<section id="from-the-zimbra-administration-console-2">
+<span id="id14"></span><h4>From the Zimbra Administration Console<a class="headerlink" href="#from-the-zimbra-administration-console-2" title="Permalink to this headline"></a></h4>
+<p>To disable Zextras Mobile for a single user from the CLI:</p>
+<ul class="simple">
+<li><p>Open the Zimbra Administration Console.</p></li>
+<li><p>Double-click the user you want to edit (on the left, under Manage →
+Accounts).</p></li>
+<li><p>Click the Zextras Mobile tab and uncheck <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">mobile</span>
+<span class="pre">synchronization</span></code>.</p></li>
+</ul>
+</section>
+<section id="from-the-zimbra-cli-4">
+<span id="id15"></span><h4>From the Zimbra CLI<a class="headerlink" href="#from-the-zimbra-cli-4" title="Permalink to this headline"></a></h4>
+<p>To disable Zextras Mobile for a single user from the CLI:</p>
+<ul class="simple">
+<li><p>As the ‘zimbra’ user run: <strong>``zmprov ma user&#64;example.com
+zimbraFeatureMobileSyncEnabled FALSE``</strong></p></li>
+</ul>
+</section>
+</section>
+<section id="note-about-settings-hierarchy-2">
+<span id="id16"></span><h3><a class="toc-backref" href="#id94">Note about Settings Hierarchy</a><a class="headerlink" href="#note-about-settings-hierarchy-2" title="Permalink to this headline"></a></h3>
+<p>User-level settings override COS-level settings.</p>
+</section>
+</section>
+<section id="the-mobile-password-feature">
+<span id="mobile-password"></span><h2><a class="toc-backref" href="#id95">The Mobile Password Feature</a><a class="headerlink" href="#the-mobile-password-feature" title="Permalink to this headline"></a></h2>
+<section id="mobile-passwords-and-you">
+<span id="id17"></span><h3><a class="toc-backref" href="#id96">Mobile Passwords and You</a><a class="headerlink" href="#mobile-passwords-and-you" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Mobile</span> <span class="pre">Password</span></code> feature allows Global and Delegated Admins to
+set an additional password for an account to be used for Exchange
+ActiveSync authentications only.</p>
+<p>The main benefits of using this feature are:</p>
+<ul class="simple">
+<li><p>Enforce <code class="docutils literal notranslate"><span class="pre">set-and-forget</span></code> safe passwords, regardless of any other
+password policy, so that you won’t need to change the password saved
+on all mobile devices synchronized with an account should this
+account’s Zimbra password change.</p></li>
+<li><p>Avoid the <code class="docutils literal notranslate"><span class="pre">real</span></code> password to be disclosed in case of unauthorized
+access to the device/client.</p></li>
+</ul>
+<p>A <code class="docutils literal notranslate"><span class="pre">Mobile</span> <span class="pre">Password</span></code> will not be valid for Webmail/POP3/IMAP/SMTP
+logins, and the account password will not be valid for mobile logins.</p>
+</section>
+<section id="how-to-set-a-mobile-password-for-a-mailbox">
+<span id="id18"></span><h3><a class="toc-backref" href="#id97">How to Set a Mobile Password for a Mailbox</a><a class="headerlink" href="#how-to-set-a-mobile-password-for-a-mailbox" title="Permalink to this headline"></a></h3>
+<p>Mobile Passwords are handled by the Zextras Auth module, more
+information can be found <a class="reference external" href="auth.html#mobile-password">at this link</a>.</p>
+</section>
+</section>
+<section id="mobile-device-management-a-k-a-mobile-provisioning">
+<span id="id19"></span><h2><a class="toc-backref" href="#id98">Mobile Device Management a.k.a. Mobile Provisioning</a><a class="headerlink" href="#mobile-device-management-a-k-a-mobile-provisioning" title="Permalink to this headline"></a></h2>
+<section id="what-is-mobile-device-management">
+<span id="id20"></span><h3><a class="toc-backref" href="#id99">What is Mobile Device Management?</a><a class="headerlink" href="#what-is-mobile-device-management" title="Permalink to this headline"></a></h3>
+<p>Mobile Device Management (MDM - also known as provisioning) allows an
+administrator to define a set of rules and security settings that are
+applied Over The Air to one or more mobile devices, ranging from PIN
+policies to Allowed/Blocked app lists and including <code class="docutils literal notranslate"><span class="pre">one</span> <span class="pre">time</span></code>
+commands, such as the remote wipe of the entire device.</p>
+<p>MDM effectively allows administrators to limit and restrict the use of
+corporate mobile devices to avoid risky or improper behaviors.</p>
+<p>MDM is also a priceless aid for <code class="docutils literal notranslate"><span class="pre">Bring</span> <span class="pre">Your</span>
+<span class="pre">Own</span> <span class="pre">Device</span></code> corporate policies, allowing users to connect their
+personal mobile devices to the corporate servers, while reducing the
+risk of security breaches to a minimum.</p>
+<section id="provisioning-features-available-on-your-client">
+<span id="id21"></span><h4>Provisioning Features Available on Your Client<a class="headerlink" href="#provisioning-features-available-on-your-client" title="Permalink to this headline"></a></h4>
+<p>Not all provisioning features are available on all clients. Please refer
+to your device’s manufacturer and online resources for specific
+information about the MDM features supported by the device itself.</p>
+</section>
+</section>
+<section id="zextras-suite-and-mdm">
+<span id="id22"></span><h3><a class="toc-backref" href="#id100">Zextras Suite and MDM</a><a class="headerlink" href="#zextras-suite-and-mdm" title="Permalink to this headline"></a></h3>
+<p>Zextras Suite features advanced MDM features through the Exchange
+ActiveSync protocol version 14+.</p>
+<p>Mobile policies can be enabled at COS and mailbox levels, allowing both
+a quick <code class="docutils literal notranslate"><span class="pre">one</span> <span class="pre">for</span> <span class="pre">many</span></code> setup and user-based customized management. In
+both cases, Mobile Management Options are available in the <code class="docutils literal notranslate"><span class="pre">Mobile</span></code>
+tab.</p>
+<section id="provisioning-options">
+<span id="id23"></span><h4>Provisioning Options<a class="headerlink" href="#provisioning-options" title="Permalink to this headline"></a></h4>
+<p>The following provisioning options are available:</p>
+<ul class="simple">
+<li><p>Enable Mobile Device Management: Enable or disable the use of mobile
+policies for the current user/COS.</p></li>
+<li><p>Allow non-provisionable devices: Allow the user to synchronize any
+device that does not support provisioning.</p></li>
+<li><p>Allow partial policy enforcement on device: Allow the user to
+synchronize any device that does not support one or more applicable
+policies.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Tip</strong></p>
+<p>By default, MDM is disabled in Zextras Mobile. To enable navigate to
+Zextras Suite → Mobile → Advanced Settings and check the “Enable
+Mobile Device Management” option</p>
+</div></blockquote>
+</section>
+<section id="enforceable-policies">
+<span id="id24"></span><h4>Enforceable Policies<a class="headerlink" href="#enforceable-policies" title="Permalink to this headline"></a></h4>
+<p>Enforceable Policies are available right below the <code class="docutils literal notranslate"><span class="pre">Mobile</span> <span class="pre">Devices</span></code>
+list, grouped in the following categories:</p>
+<ul class="simple">
+<li><p>Sync Settings: Set synchronization spans and limits.</p></li>
+<li><p>Device Settings: Enable or disable device features such as camera,
+WiFi, removable storage or Bluetooth.</p></li>
+<li><p>Device Security Settings: Force an unlock code and define the minimum
+requirements for the code itself.</p></li>
+<li><p>Device Applications: Enable or disable <code class="docutils literal notranslate"><span class="pre">standard</span></code> device
+applications such as the Browser and POP/IMAP client or unsigned
+apps.</p></li>
+</ul>
+<p>Two lists are also available for application whitelist/blacklist
+management:</p>
+<ul class="simple">
+<li><p>Approved Applications: A customizable list of approved applications.</p></li>
+<li><p>Blocked Applications: A customizable list of blocked applications
+that won’t be usable on the device.</p></li>
+</ul>
+</section>
+<section id="id25">
+<span id="id26"></span><h4>Mobile Password<a class="headerlink" href="#id25" title="Permalink to this headline"></a></h4>
+<p>While conceptually similar, the mobile password feature is not part of
+Mobile Device Management and can be used with any version of the EAS
+protocol.</p>
+</section>
+</section>
+</section>
+<section id="syncstates">
+<span id="id27"></span><h2><a class="toc-backref" href="#id101">SyncStates</a><a class="headerlink" href="#syncstates" title="Permalink to this headline"></a></h2>
+<section id="zextras-mobile-and-the-syncstate">
+<span id="id28"></span><h3><a class="toc-backref" href="#id102">Zextras Mobile and the SyncState</a><a class="headerlink" href="#zextras-mobile-and-the-syncstate" title="Permalink to this headline"></a></h3>
+<p>The SyncState (short for Synchronization Status) is a set of information
+kept on the server about the synchronization with a mobile device. Each
+time a device establishes a connection with Zextras Mobile, the
+following steps take place:</p>
+<ul class="simple">
+<li><p>1. The device requests a folderSync operation to synchronize the
+local Folders with the ones on the server.</p></li>
+</ul>
+<p>``    One SyncKey per local folder is sent (or a single SyncKey set to ‘0’ if this is the first connection between the device and the server)   ``</p>
+<ul class="simple">
+<li><ol class="arabic simple" start="2">
+<li><p>The server replies with a list of available folders.</p></li>
+</ol>
+</li>
+</ul>
+<p>``    One SyncKey per folder is sent by the server.``</p>
+<ul class="simple">
+<li><p>3. Then, the device requests an itemSync operation to synchronize all
+due items.</p></li>
+</ul>
+<p>``    The server stores the items synchronized in the SyncState.``</p>
+<ul class="simple">
+<li><p>4. After completing the itemSync operation, the device sends a ‘ping’
+command to keep the connection alive.</p></li>
+</ul>
+<p>``    Step 4 is repeated as long as no changes happen to the synchronized account.``</p>
+<p>Every time a new item is stored on the mailbox or an old item is
+modified, the server notifies the availability to the device, which
+closes the active connection (the one kept alive by the ping command)
+and repeats steps 3 and 4.</p>
+<p>The SyncState is the combination of the SyncKeys saved on step 2 and the
+itemIds saved on step 3. It’s saved by the server per the
+userId/deviceId unique pair.</p>
+<section id="sync-request">
+<span id="id29"></span><h4>Sync Request<a class="headerlink" href="#sync-request" title="Permalink to this headline"></a></h4>
+<p>The Sync Request is the actual synchronization process, started by
+either Zextras Mobile or by the client. During a sync request, any
+change in the mailbox that happened since the last request is
+synchronized to the device and vice versa.</p>
+<p>A sync request is issued when:</p>
+<ul class="simple">
+<li><p>The SyncState changes.</p></li>
+<li><p>A sync is forced client-side.</p></li>
+<li><p>The current <code class="docutils literal notranslate"><span class="pre">ping</span></code> expires and a new one is sent by the device (the
+keepalive duration is defined by the client).</p></li>
+</ul>
+</section>
+</section>
+<section id="managing-the-syncstates">
+<span id="id30"></span><h3><a class="toc-backref" href="#id103">Managing the SyncStates</a><a class="headerlink" href="#managing-the-syncstates" title="Permalink to this headline"></a></h3>
+<section id="via-the-administration-zimlet">
+<span id="id31"></span><h4>Via the Administration Zimlet<a class="headerlink" href="#via-the-administration-zimlet" title="Permalink to this headline"></a></h4>
+<p>Zextras Mobile provides two options in the Administration Zimlet to
+manage the SyncStates of synchronized mobile devices:</p>
+<ul class="simple">
+<li><p>Reset Device: Resets the device’s SyncState for a single account,
+forcing a full re-synchronization the next time the device connects
+to the server.</p></li>
+<li><p>Wipe Device: Removes all the device’s SyncState and history from the
+server. Useful when a mobile device is not used anymore or is
+assigned to a different employee in the same company.</p></li>
+</ul>
+</section>
+<section id="via-the-cli">
+<span id="id32"></span><h4>Via the CLI<a class="headerlink" href="#via-the-cli" title="Permalink to this headline"></a></h4>
+<p>To manage the SyncStates of synchronized mobile devices via the CLI, use
+one of the following commands:</p>
+</section>
+<section id="the-doremovedevice-command">
+<span id="id33"></span><h4>The doRemoveDevice command<a class="headerlink" href="#the-doremovedevice-command" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doRemoveDevice</span> <span class="p">{</span><span class="n">account</span><span class="p">}</span> <span class="p">{</span><span class="n">device_id</span><span class="p">}</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>            <span class="n">TYPE</span>
+<span class="n">account</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>      <span class="n">Account</span> <span class="n">Name</span>
+<span class="n">device_id</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">String</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doRemoveDevice</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">Appl79032X2WA4S</span>
+<span class="n">Removes</span> <span class="n">John</span><span class="s1">&#39;s Appl79032X2WA4S device SyncState</span>
+</pre></div>
+</div>
+</section>
+<section id="the-doresetaccount-command">
+<span id="id34"></span><h4>The doResetAccount command<a class="headerlink" href="#the-doresetaccount-command" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doResetAccount</span> <span class="p">{</span><span class="n">account</span><span class="p">}</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>          <span class="n">TYPE</span>
+<span class="n">account</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">Account</span> <span class="n">Name</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doResetAccount</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">Resets</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">device</span> <span class="n">states</span> <span class="k">for</span> <span class="n">John</span><span class="s1">&#39;s account</span>
+</pre></div>
+</div>
+</section>
+<section id="the-doresetdevice-command">
+<span id="id35"></span><h4>The doResetDevice command<a class="headerlink" href="#the-doresetdevice-command" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doResetDevice</span> <span class="p">{</span><span class="n">account</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>            <span class="n">TYPE</span>            <span class="n">DEFAULT</span>
+<span class="n">account</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>      <span class="n">Account</span> <span class="n">Name</span>
+<span class="n">device_id</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">String</span>          <span class="nb">all</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doResetDevice</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">Appl79032X2WA4S</span>
+<span class="n">Resets</span> <span class="n">John</span><span class="s1">&#39;s Appl79032X2WA4S device SyncState</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="advanced-settings">
+<span id="id36"></span><h2><a class="toc-backref" href="#id104">Advanced Settings</a><a class="headerlink" href="#advanced-settings" title="Permalink to this headline"></a></h2>
+<section id="zextras-mobile-dos-filter">
+<span id="id37"></span><h3><a class="toc-backref" href="#id105">Zextras Mobile DoS Filter</a><a class="headerlink" href="#zextras-mobile-dos-filter" title="Permalink to this headline"></a></h3>
+<p>Zextras Mobile includes a dedicated DoS Filter component to improve both
+security and stability. The filter will kick in whenever a device
+exceeds the chosen connection rate over time and will “jail” the device
+for a set period of time, refusing any connections from it.</p>
+<p>This improves both security, helping to prevent Denial of Service
+attacks, and stability by blocking clients that are performing too many
+requests due to bugs or malfunctioning saving resources for all other
+clients.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>The Mobile DoS filter is disabled by default, and can be enabled as
+needed via CLI.</p>
+</div></blockquote>
+<section id="configuration">
+<span id="id38"></span><h4>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline"></a></h4>
+<p>The Mobile DoS Filter is entirely configured via CLI, using the
+following attributes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mobileAntiDosServiceEnabled</span></code>: enable the Mobile DoS Filter
+service. Default <code class="docutils literal notranslate"><span class="pre">false</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mobileAntiDosServiceJailDuration</span></code>: duration (in milliseconds) of
+synchronization “jail”. Default 600000;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mobileAntiDosServiceTimeWindow</span></code> interval of time to calculate the
+connection ratio. The jail is triggered if a device sends more than
+<code class="docutils literal notranslate"><span class="pre">mobileAntiDosServiceMaxRequests</span></code> requests in this time window.
+Default 30000ms;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mobileAntiDosServiceMaxRequests</span></code> maximum number of requests
+received within <code class="docutils literal notranslate"><span class="pre">mobileAntiDosServiceTimeWindow</span></code> milliseconds).
+Default 150;</p></li>
+</ul>
+<p>All attributes are set at global level with
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">global</span> <span class="pre">set|get|clear</span></code>. Specific info for each property
+can be obtained via <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">info</span> <span class="pre">attribute</span> <span class="pre">[propertyname]</span></code>.</p>
+</section>
+<section id="how-mobile-dos-filter-works">
+<span id="id39"></span><h4>How Mobile DoS Filter works<a class="headerlink" href="#how-mobile-dos-filter-works" title="Permalink to this headline"></a></h4>
+<p>When the anti-dos service is running and <code class="docutils literal notranslate"><span class="pre">mobileAntiDosMaxRequests</span></code> is
+greater than 0, the system stores in memory the timestamp of the last
+<code class="docutils literal notranslate"><span class="pre">mobileAntiDosMaxRequests</span></code> requests. If the maximum number of request
+timestamps has been stored and all stored requests are within the time
+window, all new requests from this device/account are dropped for
+<code class="docutils literal notranslate"><span class="pre">mobileAntiDosJailDuration</span></code> milliseconds.</p>
+<p>When the rate has been exceeded, a warning is sent via email to admin
+and added to server notifications.</p>
+<blockquote>
+<div><p><strong>Note</strong></p>
+<p>Issuing the command <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">doRestartService</span> <span class="pre">anti-dos</span></code> will
+reset all jails and counters.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="zextras-autodiscover">
+<span id="id40"></span><h3><a class="toc-backref" href="#id106">Zextras Autodiscover</a><a class="headerlink" href="#zextras-autodiscover" title="Permalink to this headline"></a></h3>
+<p>Zextras Autodiscover is Zextras implementation of the Autodiscover
+protocol, which allows mail clients to automatically configure the
+appropriate server settings, avoiding the necessity of a manual
+configuration. This is a very useful functionality and it is also
+secure, since it also needs an <strong>SSL trusted certificate</strong> to work.</p>
+<section id="how-to-enable-zextras-autodiscover">
+<span id="id41"></span><h4>How to enable Zextras Autodiscover<a class="headerlink" href="#how-to-enable-zextras-autodiscover" title="Permalink to this headline"></a></h4>
+<p>To use Zextras Autodiscover you have to edit the <strong>jetty template
+configuration file</strong> <code class="docutils literal notranslate"><span class="pre">/opt/zimbra/jetty/etc/jetty.xml.in</span></code> on all the
+mailstore servers.</p>
+<p>The file is by default as follows:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Call</span> <span class="na">name=</span><span class="s">&quot;addRule&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Arg&gt;</span>
+    <span class="nt">&lt;New</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.jetty.rewrite.handler.RewritePatternRule&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;pattern&quot;</span><span class="nt">&gt;</span>/autodiscover/*<span class="nt">&lt;/Set&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;replacement&quot;</span><span class="nt">&gt;</span>/service/autodiscover<span class="nt">&lt;/Set&gt;</span>
+    <span class="nt">&lt;/New&gt;</span>
+  <span class="nt">&lt;/Arg&gt;</span>
+<span class="nt">&lt;/Call&gt;</span>
+
+<span class="nt">&lt;Call</span> <span class="na">name=</span><span class="s">&quot;addRule&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Arg&gt;</span>
+    <span class="nt">&lt;New</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.jetty.rewrite.handler.RewritePatternRule&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;pattern&quot;</span><span class="nt">&gt;</span>/Autodiscover/*<span class="nt">&lt;/Set&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;replacement&quot;</span><span class="nt">&gt;</span>/service/autodiscover<span class="nt">&lt;/Set&gt;</span>
+    <span class="nt">&lt;/New&gt;</span>
+  <span class="nt">&lt;/Arg&gt;</span>
+<span class="nt">&lt;/Call&gt;</span>
+
+<span class="nt">&lt;Call</span> <span class="na">name=</span><span class="s">&quot;addRule&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Arg&gt;</span>
+    <span class="nt">&lt;New</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.jetty.rewrite.handler.RewritePatternRule&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;pattern&quot;</span><span class="nt">&gt;</span>/AutoDiscover/*<span class="nt">&lt;/Set&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;replacement&quot;</span><span class="nt">&gt;</span>/service/autodiscover<span class="nt">&lt;/Set&gt;</span>
+    <span class="nt">&lt;/New&gt;</span>
+  <span class="nt">&lt;/Arg&gt;</span>
+<span class="nt">&lt;/Call&gt;</span>
+</pre></div>
+</div>
+<p>You need to change it to:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Call</span> <span class="na">name=</span><span class="s">&quot;addRule&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Arg&gt;</span>
+    <span class="nt">&lt;New</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.jetty.rewrite.handler.RewritePatternRule&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;pattern&quot;</span><span class="nt">&gt;</span>/autodiscover/*<span class="nt">&lt;/Set&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;replacement&quot;</span><span class="nt">&gt;</span>/service/extension/autodiscover<span class="nt">&lt;/Set&gt;</span>
+    <span class="nt">&lt;/New&gt;</span>
+  <span class="nt">&lt;/Arg&gt;</span>
+<span class="nt">&lt;/Call&gt;</span>
+
+<span class="nt">&lt;Call</span> <span class="na">name=</span><span class="s">&quot;addRule&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Arg&gt;</span>
+    <span class="nt">&lt;New</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.jetty.rewrite.handler.RewritePatternRule&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;pattern&quot;</span><span class="nt">&gt;</span>/Autodiscover/*<span class="nt">&lt;/Set&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;replacement&quot;</span><span class="nt">&gt;</span>/service/extension/autodiscover<span class="nt">&lt;/Set&gt;</span>
+    <span class="nt">&lt;/New&gt;</span>
+  <span class="nt">&lt;/Arg&gt;</span>
+<span class="nt">&lt;/Call&gt;</span>
+
+<span class="nt">&lt;Call</span> <span class="na">name=</span><span class="s">&quot;addRule&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Arg&gt;</span>
+    <span class="nt">&lt;New</span> <span class="na">class=</span><span class="s">&quot;org.eclipse.jetty.rewrite.handler.RewritePatternRule&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;pattern&quot;</span><span class="nt">&gt;</span>/AutoDiscover/*<span class="nt">&lt;/Set&gt;</span>
+            <span class="nt">&lt;Set</span> <span class="na">name=</span><span class="s">&quot;replacement&quot;</span><span class="nt">&gt;</span>/service/extension/autodiscover<span class="nt">&lt;/Set&gt;</span>
+    <span class="nt">&lt;/New&gt;</span>
+  <span class="nt">&lt;/Arg&gt;</span>
+<span class="nt">&lt;/Call&gt;</span>
+</pre></div>
+</div>
+<p>This change is mandatory if you use <a class="reference external" href="./auth.xml#zimlet-create-mobile">mobile
+password</a>.</p>
+<p>You can also easily change this settings with this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed -i <span class="s1">&#39;s|/service/autodiscover|/service/extension/autodiscover|g&#39;</span> /opt/zimbra/jetty/etc/jetty.xml.in
+</pre></div>
+</div>
+</section>
+</section>
+<section id="zextras-mobile-performance-tuning">
+<span id="id43"></span><h3><a class="toc-backref" href="#id107">Zextras Mobile Performance Tuning</a><a class="headerlink" href="#zextras-mobile-performance-tuning" title="Permalink to this headline"></a></h3>
+<p>Zextras Mobile provides three useful options to fine-tune Zextras Mobile
+according to system performance.</p>
+</section>
+<section id="performance-tuning-settings">
+<span id="id44"></span><h3><a class="toc-backref" href="#id108">Performance Tuning Settings</a><a class="headerlink" href="#performance-tuning-settings" title="Permalink to this headline"></a></h3>
+<section id="available-settings">
+<span id="id45"></span><h4>Available Settings<a class="headerlink" href="#available-settings" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Notifications Latency (ZxMobile_NotificationsLatency): The seconds of
+delay between an event on the server and its notification to the
+mobile device.</p></li>
+<li><p>Use Instant Notifications (ZxMobile_UseInstantNotficiations):
+Enable/Disable instant notifications. Overrides Notifications Latency
+if true.</p></li>
+<li><p>Max Ping Heartbeat (ZxMobile_MaxPingHeartbeat): Maximum interval
+between ‘ping’ commands.</p></li>
+</ul>
+<p>All settings can be edited in the Administration Zimlet or via CLI using
+the <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span></code> command.</p>
+</section>
+<section id="when-to-edit-the-performance-tuning-settings">
+<span id="id46"></span><h4>When to Edit the Performance Tuning Settings<a class="headerlink" href="#when-to-edit-the-performance-tuning-settings" title="Permalink to this headline"></a></h4>
+<p>Default settings should be optimal for most situations. If you
+experience one or more of the problems below, please apply the proper
+solution.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Problem</p></th>
+<th class="head"><p>Solution</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>High system load</p></td>
+<td><p>Disable instant notifications</p></td>
+</tr>
+<tr class="row-odd"><td><p>High system load after disabling
+instant notifications</p></td>
+<td><p>Raise notification latency</p></td>
+</tr>
+<tr class="row-even"><td><p>Mobile users experience high
+network usage</p></td>
+<td><p>Disable instant notifications and
+tweak notifications latency</p></td>
+</tr>
+<tr class="row-odd"><td><p>Devices can connect but sessions
+are interrupted frequently</p></td>
+<td><p>Adjust Max Ping Heartbeat
+according to your network
+configuration</p></td>
+</tr>
+<tr class="row-even"><td><p>Items are synchronized from
+server-to-device with an
+excessive delay</p></td>
+<td><p>Lower notification latency or
+enable instant notifications</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="shared-folders">
+<span id="id47"></span><h2><a class="toc-backref" href="#id109">Shared Folders</a><a class="headerlink" href="#shared-folders" title="Permalink to this headline"></a></h2>
+<section id="shared-folders-and-you-and-your-mobile">
+<span id="id48"></span><h3><a class="toc-backref" href="#id110">Shared Folders and You (and Your Mobile)</a><a class="headerlink" href="#shared-folders-and-you-and-your-mobile" title="Permalink to this headline"></a></h3>
+<p>With Zextras Suite, it’s possible to synchronize folders that are not
+owned by the user itself to mobile devices. This applies to all item
+types available through the Exchange ActiveSync protocol, so you’ll be
+able to sync any shared email folder, address book, calendar or task
+list to mobile devices.</p>
+<p>Specific features available on mobile devices might differ, based on the
+client in use.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Not all clients support the synchronization of multiple address
+books, calendars or task lists via Exchange ActiveSync.</p>
+</div></blockquote>
+</section>
+<section id="how-to-sync-a-shared-folder-to-your-mobile-devices">
+<span id="id49"></span><h3><a class="toc-backref" href="#id111">How to Sync a Shared Folder to Your Mobile Devices</a><a class="headerlink" href="#how-to-sync-a-shared-folder-to-your-mobile-devices" title="Permalink to this headline"></a></h3>
+<p>To allow a higher level of control over synchronization, users can
+choose the shared folders to synchronize with their mobile devices.</p>
+<section id="enable-mobile-synchronization-for-a-shared-folder">
+<span id="id50"></span><h4>Enable Mobile Synchronization for a Shared Folder<a class="headerlink" href="#enable-mobile-synchronization-for-a-shared-folder" title="Permalink to this headline"></a></h4>
+<p>To enable mobile synchronization for a shared folder:</p>
+<ul class="simple">
+<li><p>Log in to the Zimbra Web Client.</p></li>
+<li><p>Right-click the shared folder to sync.</p></li>
+<li><p>Select <strong>Folder Sync Settings</strong> in the drop-down menu.</p></li>
+<li><p>Select the checkbox <strong>Enable synchronization for this folder</strong>
+checkbox.</p></li>
+<li><p>Press OK.</p></li>
+</ul>
+<p>The new folder will be synchronized to any mobile device connected to
+the account.</p>
+</section>
+<section id="disable-mobile-synchronization-for-a-shared-folder">
+<span id="id51"></span><h4>Disable Mobile Synchronization for a Shared Folder<a class="headerlink" href="#disable-mobile-synchronization-for-a-shared-folder" title="Permalink to this headline"></a></h4>
+<p>To exclude a shared folder from syncing with a mobile device:</p>
+<ul class="simple">
+<li><p>Log in to the Zimbra Web Client.</p></li>
+<li><p>Right-click the shared folder to sync.</p></li>
+<li><p>Select <strong>Folder Sync Settings</strong> in the drop-down menu.</p></li>
+<li><p>Clear the checkbox <strong>Enable synchronization for this folder</strong>
+checkbox.</p></li>
+<li><p>Press OK.</p></li>
+</ul>
+</section>
+</section>
+<section id="restrictions">
+<span id="id52"></span><h3><a class="toc-backref" href="#id112">Restrictions</a><a class="headerlink" href="#restrictions" title="Permalink to this headline"></a></h3>
+<p>The following restrictions apply to shared folder synchronization:</p>
+<ul class="simple">
+<li><p>It’s not possible to sync a mountpoint referring to a full account
+share.</p></li>
+<li><p>It’s not possible to sync a subfolder of a shared folder, as doing so
+would return an incomplete folder tree.</p></li>
+<li><p>It’s not possible to sync a read-only share, as the Exchange
+ActiveSync protocol does not envision the concept of a <code class="docutils literal notranslate"><span class="pre">read-only</span></code>
+resource. Synchronizing a read-only folder will cause severe
+inconsistencies between the client and the server, along with many
+errors.</p></li>
+</ul>
+</section>
+</section>
+<section id="eas-filters">
+<span id="id53"></span><h2><a class="toc-backref" href="#id113">EAS Filters</a><a class="headerlink" href="#eas-filters" title="Permalink to this headline"></a></h2>
+<p>In the EAS protocol, the protocol version used for the synchronization
+is defined during the initial handshake and never changed. The server
+presents a list of all available protocol versions and the client
+chooses one among that list.</p>
+<p>EAS filters are a way to limit the EAS version available to a subset of
+users or clients to ensure that the proper version is used.</p>
+<p>Multiple EAS filters can be set up and will be evaluated in sequential
+order (see the <code class="docutils literal notranslate"><span class="pre">getAllEASFilters</span></code> and <code class="docutils literal notranslate"><span class="pre">doMoveEASFilter</span></code> commands
+below).</p>
+<section id="anatomy-of-an-eas-filter">
+<span id="id54"></span><h3><a class="toc-backref" href="#id114">Anatomy of an EAS Filter</a><a class="headerlink" href="#anatomy-of-an-eas-filter" title="Permalink to this headline"></a></h3>
+<p>An EAS filter is composed of 5 parts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Type</span></code>: Defines the type of filter rule.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Parameter</span></code>: The filtering identifier (e.g. device brand or email
+address).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Mode</span></code>: Defines whether the software will limit the available
+versions or provide a fixed list.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">easversions</span></code> field: Contains the protocol versions enforced by the
+filter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Blocking</span></code> boolean value: Defines whether other filters are
+executed once the current one is successfully matched.</p></li>
+</ul>
+</section>
+<section id="managing-eas-filters">
+<span id="id55"></span><h3><a class="toc-backref" href="#id115">Managing EAS Filters</a><a class="headerlink" href="#managing-eas-filters" title="Permalink to this headline"></a></h3>
+<p>EAS filters are managed through the CLI using the following four
+dedicated commands.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">getAllEASFilters</span></code></p></li>
+</ul>
+<p>This command lists all existing filters.</p>
+<p>Sample Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filters</span>
+
+        <span class="n">ID</span>                                                          <span class="mi">0</span>
+        <span class="n">mode</span>                                                        <span class="n">fixed</span>
+        <span class="n">rule</span>                                                        <span class="p">[</span><span class="nb">type</span> <span class="o">=</span> <span class="ow">or</span><span class="p">;</span> <span class="n">rules</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">type</span> <span class="o">=</span> <span class="n">contains</span><span class="p">;</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">outlook</span><span class="o">/</span><span class="p">]</span> <span class="n">OR</span> <span class="p">[</span><span class="nb">type</span> <span class="o">=</span> <span class="n">contains</span><span class="p">;</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">microsoft</span><span class="o">.</span><span class="n">outlook</span><span class="p">]]</span>
+        <span class="n">easversions</span>                                                 <span class="mf">14.0</span>
+        <span class="n">blocking</span>                                                    <span class="n">true</span>
+
+        <span class="n">ID</span>                                                          <span class="mi">1</span>
+        <span class="n">mode</span>                                                        <span class="n">limit</span>
+        <span class="n">rule</span>                                                        <span class="p">[</span><span class="nb">type</span> <span class="o">=</span> <span class="n">contains</span><span class="p">;</span> <span class="n">rule</span> <span class="o">=</span> <span class="n">samsung</span><span class="p">]</span>
+        <span class="n">easversions</span>                                                 <span class="mf">2.5</span>
+        <span class="n">blocking</span>                                                    <span class="n">false</span>
+
+        <span class="n">ID</span>                                                          <span class="mi">2</span>
+        <span class="n">mode</span>                                                        <span class="n">limit</span>
+        <span class="n">rule</span>                                                        <span class="p">[</span><span class="nb">type</span> <span class="o">=</span> <span class="n">always</span><span class="p">]</span>
+        <span class="n">easversions</span>                                                 <span class="mf">14.1</span>
+        <span class="n">blocking</span>                                                    <span class="n">false</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">doAddEASFilter</span></code></p></li>
+</ul>
+<p>This command adds a new EAS filter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doAddEASFilter</span>
+
+<span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doAddEASFilter</span> <span class="p">{</span><span class="ow">and</span><span class="o">|</span><span class="ow">or</span><span class="o">|</span><span class="n">regex</span><span class="o">|</span><span class="n">contains</span><span class="o">|</span><span class="n">account</span><span class="p">}</span> <span class="p">{</span><span class="n">text</span><span class="o">|</span><span class="n">people</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="o">|</span><span class="n">account</span><span class="o">=</span><span class="n">example</span><span class="nd">@ff</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">contains</span><span class="o">=</span><span class="n">android</span><span class="p">}</span> <span class="p">{</span><span class="n">add</span><span class="o">|</span><span class="n">subtract</span><span class="o">|</span><span class="n">fixed</span><span class="o">|</span><span class="n">limit</span><span class="p">}</span> <span class="p">{</span><span class="n">easversions</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span><span class="p">]]</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>              <span class="n">TYPE</span>               <span class="n">EXPECTED</span> <span class="n">VALUES</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>           <span class="n">Multiple</span> <span class="n">choice</span>    <span class="ow">and</span><span class="o">|</span><span class="ow">or</span><span class="o">|</span><span class="n">regex</span><span class="o">|</span><span class="n">contains</span><span class="o">|</span><span class="n">account</span>
+<span class="n">parameter</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>      <span class="n">String</span>             <span class="n">text</span><span class="o">|</span><span class="n">people</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="o">|</span><span class="n">account</span><span class="o">=</span><span class="n">example</span><span class="nd">@ff</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">contains</span><span class="o">=</span><span class="n">android</span>
+<span class="n">mode</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>           <span class="n">Multiple</span> <span class="n">choice</span>    <span class="n">add</span><span class="o">|</span><span class="n">subtract</span><span class="o">|</span><span class="n">fixed</span><span class="o">|</span><span class="n">limit</span>
+<span class="n">easversions</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">String</span><span class="p">[,</span><span class="o">..</span><span class="p">]</span>
+<span class="n">blocking</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>       <span class="n">Boolean</span>            <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doAddEASFilter</span> <span class="n">contains</span> <span class="n">android</span> <span class="n">fixed</span> <span class="mf">2.5</span><span class="p">,</span><span class="mf">12.0</span><span class="p">,</span><span class="mf">14.1</span>
+<span class="n">Adds</span> <span class="n">a</span> <span class="n">protocol</span> <span class="nb">filter</span> <span class="n">that</span> <span class="n">will</span> <span class="n">restrict</span> <span class="n">the</span> <span class="n">pool</span> <span class="n">of</span> <span class="n">available</span> <span class="n">EAS</span> <span class="n">versions</span> <span class="n">to</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">12.0</span> <span class="ow">and</span> <span class="mf">14.1</span> <span class="k">if</span> <span class="n">the</span> <span class="n">user</span> <span class="n">agent</span> <span class="n">name</span>
+<span class="n">contains</span> <span class="n">the</span> <span class="n">string</span> <span class="s1">&#39;android&#39;</span><span class="o">.</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doAddEASFilter</span> <span class="ow">and</span> <span class="n">account</span><span class="o">=</span><span class="n">user</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">contains</span><span class="o">=</span><span class="n">android</span> <span class="n">fixed</span> <span class="mf">14.1</span> <span class="n">blocking</span> <span class="n">true</span>
+<span class="n">Adds</span> <span class="n">a</span> <span class="n">protocol</span> <span class="nb">filter</span> <span class="n">that</span> <span class="n">will</span> <span class="n">restrict</span> <span class="n">the</span> <span class="n">pool</span> <span class="n">of</span> <span class="n">available</span> <span class="n">EAS</span> <span class="n">versions</span> <span class="n">to</span> <span class="mf">14.1</span> <span class="k">if</span> <span class="n">the</span> <span class="n">user</span> <span class="n">agent</span> <span class="n">name</span>
+<span class="n">contains</span> <span class="n">the</span> <span class="n">string</span> <span class="s1">&#39;android&#39;</span> <span class="n">only</span> <span class="k">for</span> <span class="n">user</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="o">.</span> <span class="n">No</span> <span class="n">more</span> <span class="n">EAS</span> <span class="n">filters</span> <span class="n">will</span> <span class="n">be</span> <span class="n">evaluated</span> <span class="n">after</span> <span class="n">this</span> <span class="n">one</span> <span class="n">due</span> <span class="n">to</span> <span class="n">the</span> <span class="s1">&#39;blocking&#39;</span> <span class="n">directive</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">doDeleteEASFilter</span></code></p></li>
+</ul>
+<p>This command deletes an existing EAS Filter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doDeleteEASFilter</span>
+<span class="n">command</span> <span class="n">doDeleteEASFilter</span> <span class="n">requires</span> <span class="n">more</span> <span class="n">parameters</span>
+
+<span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doDeleteEASFilter</span> <span class="p">{</span><span class="nb">id</span><span class="p">}</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>     <span class="n">TYPE</span>
+<span class="nb">id</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">Integer</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doDeleteEASFilter</span> <span class="mi">2</span>
+<span class="n">Removes</span> <span class="n">the</span> <span class="nb">filter</span> <span class="k">with</span> <span class="nb">id</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">To</span> <span class="n">show</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">filters</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span>
+    <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">getAllEASFilters</span>
+<span class="n">command</span><span class="o">.</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">doMoveEASFilter</span></code></p></li>
+</ul>
+<p>This command is used to move EAS filters to a different position in the
+filter queue.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doMoveEASFilter</span>
+<span class="n">command</span> <span class="n">doMoveEASFilter</span> <span class="n">requires</span> <span class="n">more</span> <span class="n">parameters</span>
+
+<span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doMoveEASFilter</span> <span class="p">{</span><span class="n">from</span><span class="p">}</span> <span class="p">{</span><span class="n">to</span><span class="p">}</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>       <span class="n">TYPE</span>
+<span class="n">from</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">Integer</span>
+<span class="n">to</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>      <span class="n">Integer</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doMoveEASFilter</span> <span class="mi">0</span> <span class="mi">5</span>
+<span class="n">Moves</span> <span class="n">the</span> <span class="nb">filter</span> <span class="k">with</span> <span class="nb">id</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">to</span> <span class="n">the</span> <span class="n">position</span> <span class="mf">5.</span>
+<span class="n">To</span> <span class="n">show</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">filters</span><span class="p">,</span> <span class="n">use</span> <span class="n">the</span>
+    <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">getAllEASFilters</span>
+<span class="n">command</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="mobile-account-loggers">
+<span id="id56"></span><h2><a class="toc-backref" href="#id116">Mobile Account Loggers</a><a class="headerlink" href="#mobile-account-loggers" title="Permalink to this headline"></a></h2>
+<p>Mobile account loggers are dedicated loggers that can output the
+entirety of a user’s EAS logs into a dedicated logfile, with a different
+verbosity than the one of the <code class="docutils literal notranslate"><span class="pre">sync.log</span></code>. This allows for quicker
+troubleshooting.</p>
+<p>When creating an account logger, the following parameters must be
+specified:</p>
+<ul class="simple">
+<li><p>The target <code class="docutils literal notranslate"><span class="pre">account</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">log_level</span></code> (verbosity) of the log.</p></li>
+<li><p>The dedicated <code class="docutils literal notranslate"><span class="pre">log_file</span></code>.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">window_size</span></code> to enforce on all devices synchronizing with the
+account while the logger is running.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Account loggers are removed automatically when the mailboxd is
+stopped or restarted and do not usually survive a mailboxd crash. Log
+files won’t be affected.</p>
+</div></blockquote>
+<section id="account-logger-management">
+<span id="id57"></span><h3><a class="toc-backref" href="#id117">Account Logger Management</a><a class="headerlink" href="#account-logger-management" title="Permalink to this headline"></a></h3>
+<p>Account loggers can only be managed via the CLI through the following
+commands:</p>
+<section id="zxsuite-mobile-doaddaccountlogger">
+<span id="id58"></span><h4>zxsuite mobile doAddAccountLogger<a class="headerlink" href="#zxsuite-mobile-doaddaccountlogger" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doAddAccountLogger</span>
+<span class="n">command</span> <span class="n">doAddAccountLogger</span> <span class="n">requires</span> <span class="n">more</span> <span class="n">parameters</span>
+
+<span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doAddAccountLogger</span> <span class="p">{</span><span class="n">account</span><span class="p">}</span> <span class="p">{</span><span class="n">debug</span><span class="o">|</span><span class="n">info</span><span class="o">|</span><span class="n">warn</span><span class="o">|</span><span class="n">err</span><span class="o">|</span><span class="n">crit</span><span class="p">}</span> <span class="p">{</span><span class="n">log_file</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span><span class="p">]]</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>              <span class="n">TYPE</span>               <span class="n">EXPECTED</span> <span class="n">VALUES</span>
+<span class="n">account</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>        <span class="n">Account</span> <span class="n">Name</span>
+<span class="n">log_level</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>      <span class="n">Multiple</span> <span class="n">choice</span>    <span class="n">debug</span><span class="o">|</span><span class="n">info</span><span class="o">|</span><span class="n">warn</span><span class="o">|</span><span class="n">err</span><span class="o">|</span><span class="n">crit</span>
+<span class="n">log_file</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>       <span class="n">Path</span>
+<span class="n">window_size</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">Integer</span>            <span class="n">a</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doaddaccountlogger</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">info</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">john_logger</span>
+<span class="n">Creates</span> <span class="n">an</span> <span class="n">info</span> <span class="n">account</span> <span class="n">logger</span> <span class="k">for</span> <span class="n">john</span><span class="s1">&#39;s account to file /tmp/john_logger</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doaddaccountlogger</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">info</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">john_logger</span> <span class="n">window_size</span> <span class="mi">1</span>
+<span class="n">Creates</span> <span class="n">an</span> <span class="n">info</span> <span class="n">account</span> <span class="n">logger</span> <span class="k">for</span> <span class="n">john</span><span class="s1">&#39;s account to file /tmp/john_logger with window size set to 1.</span>
+</pre></div>
+</div>
+</section>
+<section id="zxsuite-mobile-doremovelogger">
+<span id="id59"></span><h4>zxsuite mobile doRemoveLogger<a class="headerlink" href="#zxsuite-mobile-doremovelogger" title="Permalink to this headline"></a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doRemoveLogger</span>
+<span class="n">command</span> <span class="n">doRemoveLogger</span> <span class="n">requires</span> <span class="n">more</span> <span class="n">parameters</span>
+
+<span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doRemoveLogger</span> <span class="p">{</span><span class="n">logger_id</span><span class="o">|</span><span class="s2">&quot;all_loggers&quot;</span><span class="p">}</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>            <span class="n">TYPE</span>               <span class="n">EXPECTED</span> <span class="n">VALUES</span>
+<span class="n">logger_id</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">Multiple</span> <span class="n">choice</span>    <span class="n">logger_id</span><span class="o">|</span><span class="s2">&quot;all_loggers&quot;</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doremovelogger</span> <span class="mi">5</span>
+<span class="n">Removes</span> <span class="n">the</span> <span class="n">account</span> <span class="n">logger</span> <span class="k">with</span> <span class="n">ID</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</section>
+<section id="zxsuite-mobile-getaccountloggers">
+<span id="id60"></span><h4>zxsuite mobile getAccountLoggers<a class="headerlink" href="#zxsuite-mobile-getaccountloggers" title="Permalink to this headline"></a></h4>
+<p>Sample output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">getAccountLoggers</span>
+
+        <span class="n">loggers</span>
+
+                <span class="nb">id</span>                                                          <span class="mi">7</span>
+                <span class="n">level</span>                                                       <span class="n">DEBUG</span>
+                <span class="n">name</span>                                                        <span class="n">AccountLogger</span>
+                <span class="n">description</span>                                                 <span class="n">Logging</span> <span class="n">account</span> <span class="n">user</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">using</span> <span class="n">level</span> <span class="n">debug</span><span class="p">,</span> <span class="n">log</span> <span class="n">file</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">user</span><span class="o">.</span><span class="n">log</span>
+                <span class="n">remove</span> <span class="n">command</span>                                              <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doRemoveLogger</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="abq-allow-block-quarantine-device-control">
+<span id="abq-allowblockquarantine-device-control"></span><h2><a class="toc-backref" href="#id118">ABQ - Allow/Block/Quarantine device control</a><a class="headerlink" href="#abq-allow-block-quarantine-device-control" title="Permalink to this headline"></a></h2>
+<section id="abq-service">
+<span id="id61"></span><h3><a class="toc-backref" href="#id119">ABQ Service</a><a class="headerlink" href="#abq-service" title="Permalink to this headline"></a></h3>
+<p>The “Allow/Block/Quarantine” feature allows for granular access control
+of mobile devices connecting to the server. It’s a “pre-emptive” type of
+security feature, meaning that it acts upon the first connection to the
+server and it’s made to ensure that only authorized devices can finalize
+synchronization with server. This allows a full administrator to keep
+track of all mobile device used in their network. Presently only CLI
+tools are provided; a web GUI will be released in the future.</p>
+<section id="components">
+<span id="id62"></span><h4>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h4>
+<p>The ABQ feature is composed of three main logical components:</p>
+<ul class="simple">
+<li><p>a Device Control List</p></li>
+<li><p>an Authorization Engine</p></li>
+<li><p>a set of CLI tools</p></li>
+</ul>
+<section id="device-control-list">
+<span id="id63"></span><h5>Device Control List<a class="headerlink" href="#device-control-list" title="Permalink to this headline"></a></h5>
+<p>The Device Control List, also known as the “ABQ List”, holds the
+information about allowed devices within the config engine. Devices can
+be added to the Device Control List via CLI based on their “Device ID”
+which can be obtained via CLI.</p>
+<p>It is also possible to further limit access by limiting the accounts
+that can synchronise with the server on a specific device.</p>
+<blockquote>
+<div><p><strong>Note</strong></p>
+<p>On module startup, if the Device Control List is empty all mobile
+devices previously recognized by the Zimbra server will be imported
+as <strong>Allowed</strong>.</p>
+</div></blockquote>
+</section>
+<section id="authorization-engine">
+<span id="id64"></span><h5>Authorization Engine<a class="headerlink" href="#authorization-engine" title="Permalink to this headline"></a></h5>
+<p>The Authorization Engine takes care of checking devices against the
+Device Control List and setting their ABQ status to the appropriate
+value.</p>
+<p>Each rule is applied to all accounts connecting using a device it is a
+device id. It applies to a specific account connecting using that device
+if it has the format device_id/account_id or device_id/accountName</p>
+</section>
+<section id="cli-toolset">
+<span id="id65"></span><h5>CLI Toolset.<a class="headerlink" href="#cli-toolset" title="Permalink to this headline"></a></h5>
+<p>The CLI Toolset allows administrators to interact with the device
+control list and with the synchronization status of a device,
+specifically to:</p>
+<ul class="simple">
+<li><p>Display the Device Control List</p></li>
+<li><p>Display all Quarantined and Blocked Devices</p></li>
+<li><p>Add one or more devices to the Device Control List</p></li>
+<li><p>Move a device from “Quarantine” to “Allowed” or “Blocked”</p></li>
+<li><p>Change the synchronization status of a device</p></li>
+</ul>
+<p>Every time the administrator changes a device’s status in an ABQ-enabled
+environment, depending on the issued state the device will be forced to
+re-sync folders with the server resulting in an immediate re-route to
+either a <a class="reference external" href="#_dummy_data">dummy virtual mailbox</a> that will explain to
+the user what’s happened, or to the real mailbox to perform the re-sync.</p>
+</section>
+</section>
+<section id="abq-modes">
+<span id="id66"></span><h4>ABQ Modes<a class="headerlink" href="#abq-modes" title="Permalink to this headline"></a></h4>
+<p>The ABQ feature is triggered for every mobile device that tries to
+synchronize with server, and can be set to one of four possible modes:
+“Permissive”, “Interactive”, “Strict” and “Disabled”. This attribute is
+Global for all the cluster.</p>
+<section id="permissive-mode">
+<span id="id67"></span><h5>“Permissive” mode:<a class="headerlink" href="#permissive-mode" title="Permalink to this headline"></a></h5>
+<p>The Authorization Engine is not active, so after authenticating the user
+and checking their account status for safety reasons, the
+synchronization will continue. It is still possible to block specific
+devices but non-blocked devices will always be allowed to sync.</p>
+</section>
+<section id="interactive-mode">
+<span id="id68"></span><h5>“Interactive” mode:<a class="headerlink" href="#interactive-mode" title="Permalink to this headline"></a></h5>
+<p>After authenticating the user and checking their account status for
+safety reasons, the Device Control system will check the “Device ID”
+sent by the device against the list of allowed devices:</p>
+<ul class="simple">
+<li><p>if the device/user couple is in the “allowed” list the
+synchronization will continue.</p></li>
+<li><p>if the device/user couple is not in the device list but device is in
+the “allowed” list the synchronization will continue.</p></li>
+<li><p>if the device is not in the “allowed” list the synchronization will
+be paused, a dummy email notifying the user of its “Quarantine”
+status will be sent and the connection will be set to “Quarantine”
+status.</p></li>
+</ul>
+<p>Administrators can be notified at regular intervals, and every
+notification email will only include new Quarantined devices. They will
+then be able to allow or deny the synchronization for each device using
+the appropriate CLI tools.</p>
+</section>
+<section id="strict-mode">
+<span id="id69"></span><h5>“Strict” mode:<a class="headerlink" href="#strict-mode" title="Permalink to this headline"></a></h5>
+<p>After authenticating the user and checking their account status for
+safety reasons, the Device Control system will check the “Device ID”
+sent by the device against the list of allowed devices:</p>
+<ul class="simple">
+<li><p>if the device/user couple or the device by itself is in the “allowed”
+list the synchronization will continue.</p></li>
+<li><p>if the device is not in the “allowed” list the synchronization will
+be put in “Blocked” state, no data will be synchronized and a dummy
+email notifying the user of the device’s “Blocked” status will be
+sent.</p></li>
+</ul>
+</section>
+<section id="disabled-mode">
+<span id="id70"></span><h5>“Disabled” mode:<a class="headerlink" href="#disabled-mode" title="Permalink to this headline"></a></h5>
+<p>ABQ is disabled, no checks are triggered and no policies are enforced.</p>
+</section>
+</section>
+<section id="abq-mode-control">
+<span id="id71"></span><h4>ABQ Mode Control<a class="headerlink" href="#abq-mode-control" title="Permalink to this headline"></a></h4>
+<p>The current mode can be checked by running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">config</span> <span class="k">global</span> <span class="n">get</span> <span class="n">attribute</span> <span class="n">abqMode</span>
+</pre></div>
+</div>
+<p>The ABQ mode can be changed running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">config</span> <span class="k">global</span> <span class="nb">set</span> <span class="n">attribute</span> <span class="n">abqMode</span> <span class="n">value</span> <span class="p">[</span><span class="n">Permissive</span><span class="o">|</span><span class="n">Interactive</span><span class="o">|</span><span class="n">Strict</span><span class="o">|</span><span class="n">Disabled</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="dummy-data">
+<span id="id72"></span><h4>Dummy data<a class="headerlink" href="#dummy-data" title="Permalink to this headline"></a></h4>
+<p>The feature makes use of “Dummy emails” and a “Dummy mailbox” to put
+devices on hold while waiting for authorization (Interactive Mode) or to
+notify their “Blocked” status (Permissive Mode, Interactive Mode and
+Strict Mode).</p>
+<p>The Dummy Mailbox is a virtual mailbox consisting of only an “Inbox”
+folder that will be synchronized to the device while this is in either
+Quarantine or Block status. Dummy Emails are predefined email messages
+that are synchronized to a device in Quarantine or Block status to alert
+the user. For now these messages aren’t customizable, and will be
+localized in the future. Whenever the ABQ status of a device is changed,
+the device’s sync state will be reset.</p>
+<p>This was designed to make sure the user knows what’s happening, the
+alternative being forcing the synchronization to fail with no
+descriptive response for the user itself – which would likely cause a
+significant overhead on support calls.</p>
+</section>
+<section id="custom-abq-emails">
+<span id="id73"></span><h4>Custom ABQ emails<a class="headerlink" href="#custom-abq-emails" title="Permalink to this headline"></a></h4>
+<p>Quarantine and block dummy emails can be customized by using the
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">setABQMessage</span></code> message command.</p>
+<p>Messages can be customized globally or by domain, and multiple languages
+can be set.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">setABQMessage</span></code> command accepts the following
+parameters:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Default</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>configLevel</p></td>
+<td><p>string</p></td>
+<td><p>global,domain</p></td>
+<td><p>global</p></td>
+</tr>
+<tr class="row-odd"><td><p>domain</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>only if config
+!= global</p></td>
+</tr>
+<tr class="row-even"><td><p>messageClass</p></td>
+<td><p>enum</p></td>
+<td><p>blocked,quarant
+ined</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>language</p></td>
+<td><p>enum</p></td>
+<td><p>locale (e.g.
+“en-us”)</p></td>
+<td><p>system default</p></td>
+</tr>
+<tr class="row-even"><td><p>from</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Admin Address</p></td>
+</tr>
+<tr class="row-odd"><td><p>reply_to</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-even"><td><p>subject</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Built-in
+default</p></td>
+</tr>
+<tr class="row-odd"><td><p>body_plain</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Built-in
+default</p></td>
+</tr>
+<tr class="row-even"><td><p>body_plain_file</p></td>
+<td><p>path</p></td>
+<td><p>Path to the
+file to use as
+plain text body</p></td>
+<td><p>N/A</p></td>
+</tr>
+<tr class="row-odd"><td><p>body_html</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Built-in
+default</p></td>
+</tr>
+<tr class="row-even"><td><p>body_html_file</p></td>
+<td><p>path</p></td>
+<td><p>Path to the
+file to use as
+html body</p></td>
+<td><p>N/A</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Setup Example.</strong></p>
+<p>Given two files, <code class="docutils literal notranslate"><span class="pre">/tmp/quarantine_body.txt</span></code> and
+<code class="docutils literal notranslate"><span class="pre">/tmp/quarantine_body.html</span></code> containing the French language plaintext
+and html message bodies and the <code class="docutils literal notranslate"><span class="pre">support&#64;example.com</span></code> support email
+address, the following command will set the quarantine message for the
+<code class="docutils literal notranslate"><span class="pre">example.com</span></code> domain without affecting other domains or users:</p>
+<p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">setABQMessage</span> <span class="pre">domain</span> <span class="pre">example.com</span> <span class="pre">quarantined</span> <span class="pre">fr</span> <span class="pre">from</span> <span class="pre">support&#64;example.com</span> <span class="pre">body_plain_file</span> <span class="pre">/tmp/quarantine_body.txt</span> <span class="pre">body_html_file</span> <span class="pre">/tmp/quarantine_body.html</span></code></p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<div class="line-block">
+<div class="line">Before being able to customize the ABQ messages, a default must be
+set using <code class="docutils literal notranslate"><span class="pre">default</span></code> as the language in the command, e.g.</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">setABQMessage</span> <span class="pre">global</span> <span class="pre">quarantined</span> <span class="pre">default</span> <span class="pre">[…​]</span></code></div>
+</div>
+</div></blockquote>
+</section>
+<section id="notifications">
+<span id="id74"></span><h4>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline"></a></h4>
+<p>Administrators can be notified via email of quarantined devices at a
+specific interval defined by the <code class="docutils literal notranslate"><span class="pre">abqNotificationsInterval</span></code>
+configuration attribute, expressed in milliseconds:</p>
+<p>The interval can be checked by running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">config</span> <span class="k">global</span> <span class="n">get</span> <span class="n">attribute</span> <span class="n">abqNotificationsInterval</span>
+</pre></div>
+</div>
+<p>The interval can be changed running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">config</span> <span class="k">global</span> <span class="nb">set</span> <span class="n">attribute</span> <span class="n">abqNotificationsInterval</span> <span class="n">value</span> <span class="p">[</span><span class="n">delay</span> <span class="ow">in</span> <span class="n">milliseconds</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>By default, the <code class="docutils literal notranslate"><span class="pre">abqNotificationsInterval</span></code> is set to 0 - meaning that
+no notifications will be delivered.</p>
+<section id="abq-service-status">
+<span id="id75"></span><h5>ABQ Service Status<a class="headerlink" href="#abq-service-status" title="Permalink to this headline"></a></h5>
+<p>The ABQ service status can be checked running the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">getServices</span>
+</pre></div>
+</div>
+<p>The service can be stopped or started using the default service control
+of the Mobile module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doStartService</span> <span class="n">abq</span>
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">doStopService</span> <span class="n">abq</span>
+</pre></div>
+</div>
+<p>When mode is Disabled ABQ service won’t automatically start and devices
+are always allowed to sync.</p>
+</section>
+</section>
+<section id="abq-cli">
+<span id="id76"></span><h4>ABQ CLI<a class="headerlink" href="#abq-cli" title="Permalink to this headline"></a></h4>
+<p>A list of all ABQ CLI commands can be displayed running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zxsuite mobile abq
+
+Allow/Block/Quarantine mobile devices management
+
+    list                    - List devices.
+                              zxsuite mobile ABQ list [attr1 value1 [attr2 value2...] ]
+
+    add                     - add/import devices
+                              zxsuite mobile ABQ add [attr1 value1 [attr2 value2...] ]
+
+    allow                   - Allow synchronization for a quarantined device
+                              zxsuite mobile ABQ allow {device_id}
+
+    block                   - Deny synchronization for a quarantined device
+                              zxsuite mobile ABQ block {device_id}
+
+    set                     - Set synchronization status for a device
+                              zxsuite mobile ABQ set {device_id} {Allowed|Blocked|Quarantined}
+
+    delete                  - Delete device from ABQ
+                              zxsuite mobile ABQ delete {device_id}
+
+    setNotificationInterval - Set the notification interval for new quarantined devices
+                              zxsuite mobile ABQ setNotificationInterval {45m|6h|1d|0}
+</pre></div>
+</div>
+<section id="abq-list-command">
+<span id="id77"></span><h5>ABQ “list” Command<a class="headerlink" href="#abq-list-command" title="Permalink to this headline"></a></h5>
+<p>List all devices ABQ status. The “status” argument will filter the list
+in order to only show devices in that specific status.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zxsuite mobile abq list
+List devices.
+
+Syntax:
+   zxsuite mobile ABQ list [attr1 value1 [attr2 value2...] ]
+
+
+PARAMETER LIST
+
+NAME        TYPE    EXPECTED VALUES
+status(O)   String  Allowed|Blocked|Quarantined
+
+(M) = mandatory parameter, (O) = optional parameter
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[zimbra@mail ~]$ zxsuite mobile abq list
+
+        devices
+
+                device_id   androidc133785981
+                status      Quarantined
+
+                device_id   androidc1024711770
+                status      Blocked
+
+                device_id   SAMSUNG1239862958
+                status      Allowed
+</pre></div>
+</div>
+</section>
+<section id="abq-import-command">
+<span id="id78"></span><h5>ABQ “import” Command<a class="headerlink" href="#abq-import-command" title="Permalink to this headline"></a></h5>
+<p>This command imports a list of device ids from a file, and always
+requires two parameters: an Input File with a list of Device IDs
+separated by a newline and the “status” the imported device(s) will be
+set to.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[zimbra@mail ~]$ zxsuite mobile abq import
+command import requires more parameters
+
+Syntax:
+    zxsuite mobile ABQ import {Path to file} {Allowed|Blocked|Quarantined}
+
+PARAMETER LIST
+
+NAME            TYPE        EXPECTED VALUES
+input_file(M)   String      Path to file
+status(M)       String      Allowed|Blocked|Quarantined
+
+(M) = mandatory parameter, (O) = optional parameter
+
+Usage example:
+
+zxsuite mobile ABQ import /path/to/file Allowed
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[zimbra@mail ~]$ zxsuite mobile abq import /tmp/list Allowed
+3 devices added
+
+[zimbra@mail ~]$ cat /tmp/list
+androidc133785981
+androidc1024711770
+SAMSUNG1239862958/user@example.com
+</pre></div>
+</div>
+<p>In the example above, devices <code class="docutils literal notranslate"><span class="pre">androidc133785981</span></code> and
+<code class="docutils literal notranslate"><span class="pre">androidc1024711770</span></code> are allowed to sync entirely regardless of the
+account, while device <code class="docutils literal notranslate"><span class="pre">SAMSUNG1239862958</span></code> can only synchronise the
+<code class="docutils literal notranslate"><span class="pre">user&#64;example.com</span></code> account</p>
+</section>
+<section id="abq-allow-command">
+<span id="id79"></span><h5>ABQ “allow” Command<a class="headerlink" href="#abq-allow-command" title="Permalink to this headline"></a></h5>
+<p>This is a specific command for quarantined device, and sets device
+status to <strong>Allowed</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zxsuite mobile abq allow
+Allow synchronization for a quarantined device
+
+Syntax:
+   zxsuite mobile ABQ allow {device_id} [attr1 value1 [attr2 value2...]]
+
+PARAMETER LIST
+
+NAME            TYPE      EXPECTED VALUES
+device_id(M)    String
+account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
+
+(M) = mandatory parameter, (O) = optional parameter
+</pre></div>
+</div>
+</section>
+<section id="abq-block-command">
+<span id="id80"></span><h5>ABQ “block” Command<a class="headerlink" href="#abq-block-command" title="Permalink to this headline"></a></h5>
+<p>This is a specific command for quarantined device, and sets device
+status to <strong>Blocked</strong>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zxsuite mobile abq block
+Deny synchronization for a quarantined device
+
+Syntax:
+   zxsuite mobile ABQ block {device_id} [attr1 value1 [attr2 value2...]]
+
+PARAMETER LIST
+
+NAME            TYPE      EXPECTED VALUES
+device_id(M)    String
+account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
+
+(M) = mandatory parameter, (O) = optional parameter
+</pre></div>
+</div>
+</section>
+<section id="abq-set-command">
+<span id="id81"></span><h5>ABQ “set” Command<a class="headerlink" href="#abq-set-command" title="Permalink to this headline"></a></h5>
+<p>Set any status for any single device (either known or unknown).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zxsuite mobile abq set
+Set synchronization status for a device
+
+Syntax:
+   zxsuite mobile ABQ set {device_id} {Allowed|Blocked|Quarantined} [attr1 value1 [attr2 value2...]]
+
+PARAMETER LIST
+
+NAME            TYPE      EXPECTED VALUES
+device_id(M)    String
+status(M)       String    Allowed|Blocked|Quarantined
+account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
+
+(M) = mandatory parameter, (O) = optional parameter
+</pre></div>
+</div>
+</section>
+<section id="abq-rule-commands">
+<span id="id82"></span><h5>ABQ “rule” Commands<a class="headerlink" href="#abq-rule-commands" title="Permalink to this headline"></a></h5>
+<p>This set of commands allows to manage ABQ rules via custom regular
+expressions.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Mobile ABQ regular expressions comply with the “Java regex patterns”
+standard (ERE with doubled backslashes).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">abq</span> <span class="pre">setRule</span></code> - equivalent of the <code class="docutils literal notranslate"><span class="pre">set</span></code> command
+for regex-based rules</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite mobile abq setRule
+command setRule requires more parameters
+
+Syntax:
+   zxsuite mobile ABQ setRule {regex} {Allowed|Blocked|Quarantined} {order} [attr1 value1 [attr2 value2...]]
+
+PARAMETER LIST
+
+NAME         TYPE      EXPECTED VALUES
+regex(M)     String
+status(M)    String    Allowed|Blocked|Quarantined
+order(M)     Long
+domain(O)    String    Domain name|id
+
+(M) == mandatory parameter, (O) == optional parameter
+
+Usage example:
+
+zxsuite mobile ABQ setRule &quot;android.*&quot; Blocked 10 domain example.com
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">abq</span> <span class="pre">deleteRule</span></code> - equivalent of the <code class="docutils literal notranslate"><span class="pre">delete</span></code>
+command for regex-based rules</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">ABQ</span> <span class="n">deleteRule</span> <span class="p">{</span><span class="n">regex</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span><span class="p">]]</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>         <span class="n">TYPE</span>      <span class="n">EXPECTED</span> <span class="n">VALUES</span>
+<span class="n">regex</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>     <span class="n">String</span>
+<span class="n">domain</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">String</span>    <span class="n">Domain</span> <span class="n">name</span><span class="o">|</span><span class="nb">id</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">mobile</span> <span class="n">ABQ</span> <span class="n">deleteRule</span> <span class="s2">&quot;android.*&quot;</span> <span class="n">domain</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">abq</span> <span class="pre">listRules</span></code> - equivalent of the <code class="docutils literal notranslate"><span class="pre">list</span></code> command
+for regex-based rules</p></li>
+</ul>
+<p>Standard and regex-based rules can be freely mixed and matched.</p>
+<blockquote>
+<div><p><strong>Community Article:</strong></p>
+<p><a class="reference external" href="https://community.zextras.com/zextras-suite-3-1-8-added-features-to-abq/">https://community.zextras.com/zextras-suite-3-1-8-added-features-to-abq/</a></p>
+<p>An in-depth article about the <code class="docutils literal notranslate"><span class="pre">setRule</span></code>, <code class="docutils literal notranslate"><span class="pre">deleteRule</span></code>,
+<code class="docutils literal notranslate"><span class="pre">listRules</span></code> commands, including an important section about the
+order of evaluation or Regular Expressions.</p>
+</div></blockquote>
+</section>
+<section id="abq-delete-command">
+<span id="id83"></span><h5>ABQ “delete” Command<a class="headerlink" href="#abq-delete-command" title="Permalink to this headline"></a></h5>
+<p>Delete a device from all lists.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zxsuite help mobile abq delete
+Delete device from ABQ
+
+Syntax:
+   zxsuite mobile ABQ delete {device_id} [attr1 value1 [attr2 value2...]]
+
+PARAMETER LIST
+
+NAME            TYPE      EXPECTED VALUES
+device_id(M)    String
+account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
+
+(M) = mandatory parameter, (O) = optional parameter
+</pre></div>
+</div>
+</section>
+<section id="abq-setnotificationinterval-command">
+<span id="id84"></span><h5>ABQ “setNotificationInterval” Command<a class="headerlink" href="#abq-setnotificationinterval-command" title="Permalink to this headline"></a></h5>
+<p>Set notification interval for new quarantined devices.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ zxsuite mobile abq setNotificationInterval
+command setNotificationInterval requires more parameters
+
+Syntax:
+    zxsuite mobile ABQ setNotificationInterval {45m|6h|1d}
+
+PARAMETER LIST
+
+NAME            TYPE        EXPECTED VALUES
+interval(M)     String      45m|6h|1d
+
+(M) = mandatory parameter, (O) = optional parameter
+
+Usage example:
+
+Set notification of new quarantined devices every 45 minutes
+    zxsuite mobile abq setNotificationInterval 45m
+Set notification of new quarantined devices every 6 hours
+    zxsuite mobile abq setNotificationInterval 6h
+Set notification of new quarantined devices once every day
+    zxsuite mobile abq setNotificationInterval 1d
+Disable notifications of new quarantined devices
+    zxsuite mobile abq setNotificationInterval 0
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="zextras-mobile-cli">
+<span id="id85"></span><h2><a class="toc-backref" href="#id120">Zextras Mobile CLI</a><a class="headerlink" href="#zextras-mobile-cli" title="Permalink to this headline"></a></h2>
+<p>This section contains the index of all <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span></code> commands. Full
+reference can be found in <a class="reference external" href="./cli.xml#_zxmobile_cli_commands">the dedicated
+section</a>.</p>
+<p><a class="reference external" href="./cli.xml#mobile_ABQ_allow">ABQ allow</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_block">ABQ
+block</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_delete">ABQ
+delete</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_deleteRule">ABQ
+deleteRule</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_import">ABQ
+import</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_list">ABQ
+list</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_listRules">ABQ
+listRules</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_set">ABQ
+set</a> | <a class="reference external" href="./cli.xml#mobile_ABQ_setNotificationInterval">ABQ
+setNotificationInterval</a>
+| <a class="reference external" href="./cli.xml#mobile_ABQ_setRule">ABQ setRule</a> | <a class="reference external" href="./cli.xml#mobile_addressBook_add_domain">addressBook add
+domain</a> | <a class="reference external" href="./cli.xml#mobile_addressBook_add_global">addressBook add
+global</a> | <a class="reference external" href="./cli.xml#mobile_addressBook_list_domain">addressBook list
+domain</a> | <a class="reference external" href="./cli.xml#mobile_addressBook_list_global">addressBook
+list global</a> |
+<a class="reference external" href="./cli.xml#mobile_addressBook_remove_domain">addressBook remove
+domain</a> | <a class="reference external" href="./cli.xml#mobile_addressBook_remove_global">addressBook
+remove global</a> |
+<a class="reference external" href="./cli.xml#mobile_deleteABQMessage_domain">deleteABQMessage domain</a>
+| <a class="reference external" href="./cli.xml#mobile_deleteABQMessage_global">deleteABQMessage
+global</a> |
+<a class="reference external" href="./cli.xml#mobile_doAddAccountLogger">doAddAccountLogger</a> |
+<a class="reference external" href="./cli.xml#mobile_doAddEASFilter">doAddEASFilter</a> |
+<a class="reference external" href="./cli.xml#mobile_doDeleteEASFilter">doDeleteEASFilter</a> |
+<a class="reference external" href="./cli.xml#mobile_doMoveEASFilter">doMoveEASFilter</a> |
+<a class="reference external" href="./cli.xml#mobile_doRemoveDevice">doRemoveDevice</a> |
+<a class="reference external" href="./cli.xml#mobile_doRemoveLogger">doRemoveLogger</a> |
+<a class="reference external" href="./cli.xml#mobile_doResetAccount">doResetAccount</a> |
+<a class="reference external" href="./cli.xml#mobile_doResetDevice">doResetDevice</a> |
+<a class="reference external" href="./cli.xml#mobile_doRestartService">doRestartService</a> |
+<a class="reference external" href="./cli.xml#mobile_doResumeDeviceSync">doResumeDeviceSync</a> |
+<a class="reference external" href="./cli.xml#mobile_doSimulateSync">doSimulateSync</a> |
+<a class="reference external" href="./cli.xml#mobile_doStartService">doStartService</a> |
+<a class="reference external" href="./cli.xml#mobile_doStopService">doStopService</a> |
+<a class="reference external" href="./cli.xml#mobile_doSuspendDeviceSync">doSuspendDeviceSync</a> |
+<a class="reference external" href="./cli.xml#mobile_doWipeDevice">doWipeDevice</a> | <a class="reference external" href="./cli.xml#mobile_duplicateABQMessage_domain">duplicateABQMessage
+domain</a> |
+<a class="reference external" href="./cli.xml#mobile_duplicateABQMessage_global">duplicateABQMessage
+global</a> |
+<a class="reference external" href="./cli.xml#mobile_getABQMessage_domain">getABQMessage domain</a> |
+<a class="reference external" href="./cli.xml#mobile_getABQMessage_global">getABQMessage global</a> |
+<a class="reference external" href="./cli.xml#mobile_getAccountLoggers">getAccountLoggers</a> |
+<a class="reference external" href="./cli.xml#mobile_getAllDevices">getAllDevices</a> |
+<a class="reference external" href="./cli.xml#mobile_getAllEASFilters">getAllEASFilters</a> |
+<a class="reference external" href="./cli.xml#mobile_getDeviceInfo">getDeviceInfo</a> |
+<a class="reference external" href="./cli.xml#mobile_getDeviceList">getDeviceList</a> |
+<a class="reference external" href="./cli.xml#mobile_getProperty">getProperty</a> |
+<a class="reference external" href="./cli.xml#mobile_getProvisioning">getProvisioning</a> |
+<a class="reference external" href="./cli.xml#mobile_getServices">getServices</a> |
+<a class="reference external" href="./cli.xml#mobile_initABQMessage">initABQMessage</a> | <a class="reference external" href="./cli.xml#mobile_setABQMessage_domain">setABQMessage
+domain</a> | <a class="reference external" href="./cli.xml#mobile_setABQMessage_global">setABQMessage
+global</a> |
+<a class="reference external" href="./cli.xml#mobile_setProperty">setProperty</a> |
+<a class="reference external" href="./cli.xml#mobile_setProvisioning">setProvisioning</a> |
+<a class="reference external" href="./cli.xml#mobile_setSharedFolderSync">setSharedFolderSync</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backup.html" class="btn btn-neutral float-left" title="Zextras Backup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powerstore.html" class="btn btn-neutral float-right" title="Zextras Powerstore" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

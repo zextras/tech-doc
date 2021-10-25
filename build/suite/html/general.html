@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zextras Suite Installation Guide" href="installation.html" />
+    <link rel="prev" title="Welcome to Zextras Suite Documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00506d" >
+            <a href="index.html" class="icon icon-home"> Zextras Suite
+            <img src="_static/zextras_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#compatibility-list">Compatibility list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#internationalization">Internationalization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#product-localisation">Product Localisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#available-languages">Available Languages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volunteer-translators">Volunteer Translators</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#services-and-service-management">Services and Service management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#services">Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#service-management">Service Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-services">Backup Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mobile-services">Mobile Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#powerstore-services">Powerstore Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#admin-services">Admin Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#team-services">Team Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drive-services">Drive Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#auth-services">Auth Services</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-report-an-issue">How to report an issue</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-by-step-guide">Step by step guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#issue-definition">Definition of “issue”</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tools-of-the-trade">Tools of the trade</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required-info-ticket">What information to include in your report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help-us-improve-zextras-suite">Help us improve Zextras Suite</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">Zextras Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Zextras Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drive.html">Zextras Drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Zextras Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Zextras Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #00506d" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<p>Zextras Suite is an all-in-one solution that seamlessly integrate with Zimbra Open Source Edition, avoiding issues like conflicts with Zimbra.</p>
+<p>Some strong points of Zextras Suite are: security (including encrypted communication channels, 2FA and SAML authentication), data protection and data ownership (you control your data: choose where to store data and backups, what to delete, and so on), full GDPR compliance.</p>
+<p>Zextras Suite is organised in modules, that can be purchased in different bundles, according to the available licenses. More information on Zextras Store.</p>
+<ul class="simple">
+<li><p>Zextras Auth is the authentication layer that takes care of the login modalities and access to mailbox and other modules</p></li>
+<li><p>Zextras Backup concerns primarily methods to save your mail, documents, and data. The module also encompasses Restore Strategies to recover deleted items or accounts, and Advanced Backup Techniques, which include Disaster Recovery.</p></li>
+<li><p>Zextras Mobile allows to manage mobile devices and their access to address book, shared resources, and to the Zextras modules</p></li>
+<li><p>Zextras Powerstore contains advanced concepts and techniques for storage management on Zextras</p></li>
+<li><p>Zextras Admin describes advanced management task for administrators</p></li>
+<li><p>Zextras Drive is used to share drafts, full documents, videos, and every kind of files, with all your colleagues</p></li>
+<li><p>Zextras Docs provides a collaborative editing environment for documents, spreadsheets, presentations, and more</p></li>
+<li><p>Zextras Team a fully-fledged communication system for chat, videoconferencing and remote presentations</p></li>
+</ul>
+<p>Modules can be individually enabled or disabled by an administrator. Instructions for this are provided within each module’s documentation.</p>
+<section id="compatibility-list">
+<span id="id1"></span><h2>Compatibility list<a class="headerlink" href="#compatibility-list" title="Permalink to this headline"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Zimbra Version</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Build</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Zimbra 9 Open Source build by Zextras</p></td>
+<td><p><span class="green">COMPATIBLE</span></p></td>
+<td><p><cite>Current</cite></p></td>
+</tr>
+<tr class="row-odd"><td><p>8.7.0 - 8.8.x</p></td>
+<td><p><span class="green">COMPATIBLE</span></p></td>
+<td><p><cite>Current</cite></p></td>
+</tr>
+<tr class="row-even"><td><p>8.6.x</p></td>
+<td><p><span class="green">COMPATIBLE</span></p></td>
+<td><p>(3.1.10)</p></td>
+</tr>
+<tr class="row-odd"><td><p>8.0.0 - 8.5.x</p></td>
+<td><p><span class="green">COMPATIBLE</span></p></td>
+<td><p>(2.14.1)</p></td>
+</tr>
+<tr class="row-even"><td><p>7.x and older</p></td>
+<td><p><span class="red">NOT COMPATIBLE</span></p></td>
+<td><p><cite>Legacy</cite></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="internationalization">
+<h2>Internationalization<a class="headerlink" href="#internationalization" title="Permalink to this headline"></a></h2>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Product and Translation is still in beta stage. Incomplete or
+imperfect translations are to be expected.</p>
+</div></blockquote>
+<section id="product-localisation">
+<span id="id2"></span><h3>Product Localisation<a class="headerlink" href="#product-localisation" title="Permalink to this headline"></a></h3>
+<p>Zextras Suite and its zimlets are available in all languages officially
+supported by Zimbra.</p>
+<p>Unofficial languages can still be used but are not officially supported
+and require the language to be added to Zimbra.</p>
+</section>
+<section id="available-languages">
+<span id="id3"></span><h3>Available Languages<a class="headerlink" href="#available-languages" title="Permalink to this headline"></a></h3>
+<p>Zextras Suite’s main language is English, and the following languages
+are also included:</p>
+<p>of Beta*</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 34%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>English</strong> (GB, US,
+AU)</p></td>
+<td><p><strong>Italian</strong></p></td>
+<td><p><strong>French</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Spanish</strong></p></td>
+<td><p><strong>Portuguese</strong> (PT,
+BR)</p></td>
+<td><p>German</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dutch</p></td>
+<td><p>Turkish</p></td>
+<td><p>Russian</p></td>
+</tr>
+<tr class="row-even"><td><p>Thai</p></td>
+<td><p>Hindi</p></td>
+<td><p>Indonesian</p></td>
+</tr>
+<tr class="row-odd"><td><p>Japanese</p></td>
+<td><p>Simplified Chinese</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>This includes both the Client components (Drive, Team and Docs Zimlets,
+plus the Client Zimlet and any other collateral client entity) and, to
+our best effort, the Zextras Administration Zimlet.</p>
+<p>The Zextras CLI is not internationalized nor translated and there are no
+current plans to do so.</p>
+</section>
+<section id="volunteer-translators">
+<span id="id4"></span><h3>Volunteer Translators<a class="headerlink" href="#volunteer-translators" title="Permalink to this headline"></a></h3>
+<p>Zextras makes available an online translation platform to those
+qualified individuals wishing to help the translation process.</p>
+<p>Translation in languages that are not currently supported by Zimbra is
+encouraged, albeit we cannot guarantee any estimate upon the official
+inclusion in the product.</p>
+<p>Please contact <a class="reference external" href="mailto:translators&#37;&#52;&#48;zextras&#46;com">translators<span>&#64;</span>zextras<span>&#46;</span>com</a> for any information on the topic
+or to volunteer as a translator.</p>
+</section>
+</section>
+<section id="services-and-service-management">
+<h2>Services and Service management<a class="headerlink" href="#services-and-service-management" title="Permalink to this headline"></a></h2>
+<section id="services">
+<h3>Services<a class="headerlink" href="#services" title="Permalink to this headline"></a></h3>
+<p>Each Zextras Suite module is composed by multiple “services”, each one
+providing a specific set of features.</p>
+<p>All modules include at least the <code class="docutils literal notranslate"><span class="pre">module</span></code> service, which governs the
+entire module: stopping the service will stop the module, and disabling
+the auto-start of this service will prevent the entire module to be
+loaded when the mailboxd service starts.</p>
+</section>
+<section id="service-management">
+<span id="id5"></span><h3>Service Management<a class="headerlink" href="#service-management" title="Permalink to this headline"></a></h3>
+<p>Services can be controlled via the Zextras CLI using the following
+module commands:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">getServices</span></code> - lists all services and shows their status</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doStartService</span> <span class="pre">[serviceName]</span></code> - starts the <em>serviceName</em> service</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doStopService</span> <span class="pre">[serviceName]</span></code> - stops the <em>serviceName</em> service</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">doRestartService</span> <span class="pre">[serviceName]</span></code> - restarts the <em>serviceName</em>
+service</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">getServices</span></code> command will show whether the module is <code class="docutils literal notranslate"><span class="pre">running</span></code>
+and if it can be started or stopped, e.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite backup getServices
+
+        services
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            backup-realtime
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            [...]
+</pre></div>
+</div>
+<p>If a service cannot be started, the <code class="docutils literal notranslate"><span class="pre">getServices</span></code> command will also
+display the reason:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite mobile getServices
+
+[...]
+            anti-dos
+                could_not_start_because                                     anti-dos disabled
+                could_start                                                 false
+                could_stop                                                  false
+                running                                                     false
+</pre></div>
+</div>
+</section>
+<section id="backup-services">
+<span id="id6"></span><h3>Backup Services<a class="headerlink" href="#backup-services" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite backup getServices
+
+        services
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            backup-realtime
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            purge-cron
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            smartscan-cron
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-realtime
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            backup-attributes-listener
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+</pre></div>
+</div>
+<table class="docutils align-default" id="id18">
+<caption><span class="caption-text">Backup Service List</span><a class="headerlink" href="#id18" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">module</span></code></p></td>
+<td><p>the entire module</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">backup-realtime</span></code></p></td>
+<td><p>handles the RealTime Scanner and its features</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">purge-cron</span></code></p></td>
+<td><p>handles the scheduling of the weekly Purge</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">smartscan-cron</span></code></p></td>
+<td><p>handles the scheduling of the daily SmartScan</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">drive-realtime</span></code></p></td>
+<td><p>handles the realtime backup of Zextras Drive
+items</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">backup-attributes-</span>
+<span class="pre">listener</span></code></p></td>
+<td><p>handles instant configuration changes without
+service restarts</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="mobile-services">
+<span id="id7"></span><h3>Mobile Services<a class="headerlink" href="#mobile-services" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite mobile getServices
+
+        services
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            activesync
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            autodiscover
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            abq
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            anti-dos
+                could_not_start_because                                     anti-dos disabled
+                could_start                                                 false
+                could_stop                                                  false
+                running                                                     false
+</pre></div>
+</div>
+<table class="docutils align-default" id="id19">
+<caption><span class="caption-text">Mobile Service List</span><a class="headerlink" href="#id19" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">module</span></code></p></td>
+<td><p>the entire module</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">activesync</span></code></p></td>
+<td><p>handles all Activesync features</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">autodiscover</span></code></p></td>
+<td><p>handles the Autodiscovery feature</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">abq</span></code></p></td>
+<td><p>handles the ABQ feature</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">anti-dos</span></code></p></td>
+<td><p>handles the Mobile Anti DOS feature</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="powerstore-services">
+<span id="id8"></span><h3>Powerstore Services<a class="headerlink" href="#powerstore-services" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite powerstore getServices
+
+        services
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            powerstore-log
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            store-manager-service
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            schedule-move-operation
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            indexer-manager
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            powerstore-attribute-listeners
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+</pre></div>
+</div>
+<table class="docutils align-default" id="id20">
+<caption><span class="caption-text">Powerstore Service List</span><a class="headerlink" href="#id20" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">module</span></code></p></td>
+<td><p>the entire module</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">powerstore-log</span></code></p></td>
+<td><p>handles operation logging</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">store-manager-serv</span>
+<span class="pre">ices</span></code></p></td>
+<td><p>handles StoreManager override and third party
+storages</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">schedule-move-oper</span>
+<span class="pre">ations</span></code></p></td>
+<td><p>handles the scheduling of the daily HSM move</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">indexer-manager</span></code></p></td>
+<td><p>handles the internal indexer for mail
+attachments and files</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">powerstore-attribu</span>
+<span class="pre">te-listener</span></code></p></td>
+<td><p>handles instant configuration changes without
+service restarts</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="admin-services">
+<span id="id9"></span><h3>Admin Services<a class="headerlink" href="#admin-services" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite admin getServices
+
+        services
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            logging
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            report-cron
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            admin-attributes-listener
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+</pre></div>
+</div>
+<table class="docutils align-default" id="id21">
+<caption><span class="caption-text">Admin Service List</span><a class="headerlink" href="#id21" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Service</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">module</span></code></p></td>
+<td><p>the entire module</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">logging</span></code></p></td>
+<td><p>handles Admin Logging (reports and auditing)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">report-cron</span></code></p></td>
+<td><p>handles the scheduling of Admin Report
+generation and distribution</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">admin-attributes-l</span>
+<span class="pre">istener</span></code></p></td>
+<td><p>handles instant configuration changes without
+service restarts</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="team-services">
+<span id="id10"></span><h3>Team Services<a class="headerlink" href="#team-services" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mail:~$ zxsuite team getServices
+
+        services
+            database
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            current-chat-services
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-cluster-status
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-api
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-websocket
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-firebase-notifications
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-meeting-manager
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-room-resolver
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-websocket-handler
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-http-handler
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-audit-logger
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-clustering
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-request-router
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            team-janus-pool
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            rooms-cleanup-service
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+</pre></div>
+</div>
+<table class="docutils align-default" id="id22">
+<caption><span class="caption-text">Team Service List</span><a class="headerlink" href="#id22" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Service</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>database</p></td>
+<td><p>handles the Team HSQL DB</p></td>
+</tr>
+<tr class="row-odd"><td><p>current-chat-service
+s</p></td>
+<td><p>handles Team services</p></td>
+</tr>
+<tr class="row-even"><td><p>module</p></td>
+<td><p>the entire module</p></td>
+</tr>
+<tr class="row-odd"><td><p>team-cluster-status</p></td>
+<td><p>keeps track of all available Team API
+versions in the cluster</p></td>
+</tr>
+<tr class="row-even"><td><p>team-api</p></td>
+<td><p>handles all private APIs</p></td>
+</tr>
+<tr class="row-odd"><td><p>team-websocket</p></td>
+<td><p>handles websockets needed for all connections</p></td>
+</tr>
+<tr class="row-even"><td><p>team-firebase-notifi
+cations</p></td>
+<td><p>handles mobile notifications</p></td>
+</tr>
+<tr class="row-odd"><td><p>team-meeting-manager</p></td>
+<td><p>handles Instant Meetings</p></td>
+</tr>
+<tr class="row-even"><td><p>team-room-resolver</p></td>
+<td><p>handles the resolution of Spaces and Channels
+across servers</p></td>
+</tr>
+<tr class="row-odd"><td><p>team-websocket-handl
+er</p></td>
+<td><p>handles websocket creation and management</p></td>
+</tr>
+<tr class="row-even"><td><p>team-http-handler</p></td>
+<td><p>handles http/s requests</p></td>
+</tr>
+<tr class="row-odd"><td><p>team-audit-logger</p></td>
+<td><p>handles the Audit Logging feature</p></td>
+</tr>
+<tr class="row-even"><td><p>team-clustering</p></td>
+<td><p>handles clustering between Team instances in
+the same infrastructure</p></td>
+</tr>
+<tr class="row-odd"><td><p>team-request-router</p></td>
+<td><p>handles the routing of requests across
+servers</p></td>
+</tr>
+<tr class="row-even"><td><p>team-janus-pool</p></td>
+<td><p>Handles Videoserver pooling</p></td>
+</tr>
+<tr class="row-odd"><td><p>rooms-cleanup-servic
+e</p></td>
+<td><p>handles the cleanup of empty and unused
+Spaces, Channels and Groups</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="drive-services">
+<span id="id11"></span><h3>Drive Services<a class="headerlink" href="#drive-services" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[zimbra@mail ~]$ zxsuite drive getServices
+
+        services
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-register-api-service
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-websocket
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-preview
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-index
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-purge-tombstones
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-remove-nodes-marked-for-deletion
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-account-cleaner
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            drive-request-service
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+</pre></div>
+</div>
+<table class="docutils align-default" id="id23">
+<caption><span class="caption-text">Drive Service List</span><a class="headerlink" href="#id23" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>module</p></td>
+<td><p>the entire module</p></td>
+</tr>
+<tr class="row-even"><td><p>drive-register-api-s
+ervice</p></td>
+<td><p>handles private API registration</p></td>
+</tr>
+<tr class="row-odd"><td><p>drive-websocket</p></td>
+<td><p>handles all websockets needed by Drive</p></td>
+</tr>
+<tr class="row-even"><td><p>drive-preview</p></td>
+<td><p>handles file preview generation</p></td>
+</tr>
+<tr class="row-odd"><td><p>drive-index</p></td>
+<td><p>handles file content indexing</p></td>
+</tr>
+<tr class="row-even"><td><p>drive-purge-tombston
+es</p></td>
+<td><p>handles pruning of recently deleted files</p></td>
+</tr>
+<tr class="row-odd"><td><p>drive-remove-nodes-m
+arked-for-deletion</p></td>
+<td><p>handles file deletion</p></td>
+</tr>
+<tr class="row-even"><td><p>drive-account-cleane
+r</p></td>
+<td><p>cleans up the Drive HSQL database from
+accounts deleted from Zimbra</p></td>
+</tr>
+<tr class="row-odd"><td><p>drive-request-servic
+e</p></td>
+<td><p>handles private APIs</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="auth-services">
+<span id="id12"></span><h3>Auth Services<a class="headerlink" href="#auth-services" title="Permalink to this headline"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[zimbra@mail ~]$ zxsuite auth getServices
+
+        services
+            module
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            auth-database
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            auth-database-updater
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            user-gateway
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            login-assets
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            authorization-service
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            authentication-service
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            key-manager
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            migrate-mobile-passwords
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+</pre></div>
+</div>
+<table class="docutils align-default" id="id24">
+<caption><span class="caption-text">Auth Service List</span><a class="headerlink" href="#id24" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>module</p></td>
+<td><p>the module itself</p></td>
+</tr>
+<tr class="row-even"><td><p>auth-database</p></td>
+<td><p>handles the Auth HSQL DB</p></td>
+</tr>
+<tr class="row-odd"><td><p>auth-database-update
+r</p></td>
+<td><p>handles database schema updates</p></td>
+</tr>
+<tr class="row-even"><td><p>user-gateway</p></td>
+<td><p><em>inactive</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>login-assets</p></td>
+<td><p><em>inactive</em></p></td>
+</tr>
+<tr class="row-even"><td><p>authorization-servic
+e</p></td>
+<td><p><em>inactive</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>authentication-servi
+ce</p></td>
+<td><p>handles authentication features such as
+Mobile Passwords</p></td>
+</tr>
+<tr class="row-even"><td><p>key-manager</p></td>
+<td><p>handles encryption keys and secrets</p></td>
+</tr>
+<tr class="row-odd"><td><p>migrate-mobile-passw
+ords</p></td>
+<td><p>handles Mobile Password migrations from
+pre-Auth Zextras Suite versions</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="how-to-report-an-issue">
+<h2>How to report an issue<a class="headerlink" href="#how-to-report-an-issue" title="Permalink to this headline"></a></h2>
+<p>The most efficient way to report a Zextras Suite issue is the one that
+allows both the <em>Reporter</em> and the <em>Technical Support Team</em> to reach
+their common goal—​the solution of the issue!–in the quickest and more
+robust way.</p>
+<p>Preparing an accurate and complete report that describes the issue you
+experienced and attach it to the bug report or ticket that you are
+opening is the most important starting point, because in these cases the
+Technical Support Team can immediately look into the issue without the
+necessity to ask for more information. Building such a report may
+require to execute commands, prepare screenshots, describe the steps to
+reproduce the problem, and so on. This section focuses on how to gather
+information about Zextras Suite and its modules.</p>
+<section id="step-by-step-guide">
+<span id="id13"></span><h3>Step by step guide<a class="headerlink" href="#step-by-step-guide" title="Permalink to this headline"></a></h3>
+<p>In order to report a Zextras Suite issue, please follow this steps:</p>
+<ul class="simple">
+<li><p>Read through the appropriate sections of the <a class="reference external" href="https://docs.zextras.com/zextras-suite-documentation/latest/home.html">Technical
+Documentation</a>
+(make sure you select the correct version of your Zextras
+installation), to check whether you can find useful advises</p></li>
+<li><p>search on the <a class="reference external" href="https://community.zextras.com/">Community</a> if there
+are articles that cover a solution to your problem</p></li>
+<li><p>Make sure that what you report is a software issue (see <a class="reference external" href="#issue-definition">Definition
+of “issue”</a>).</p></li>
+<li><p>Gather all information specified in the <a class="reference external" href="#required-info-ticket">What information to include
+in your report</a>section of this page.</p></li>
+<li><p>File a case in the Zextras Support Portal at
+<a class="reference external" href="https://support.zextras.com/">https://support.zextras.com/</a>, providing the most amount of
+information possible.</p></li>
+</ul>
+</section>
+<section id="issue-definition">
+<span id="id14"></span><h3>Definition of “issue”<a class="headerlink" href="#issue-definition" title="Permalink to this headline"></a></h3>
+<p>While you as a user can experience different problems, not in all of
+them the Technical Support Team can be helpful.</p>
+<p>In this cases the Technical Support Team will <strong>not</strong> be able to help
+you:</p>
+<ul class="simple">
+<li><p><em>Licensing complaints</em>: while we do our best to provide the fairest
+licensing model possible, we know this can’t please each and every
+customer in the world. If you feel that the Zextras Licensing does
+not suit your needs and wish to let us know your opinion, please
+contact the Sales Team through the form you can find at
+<a class="reference external" href="https://www.zextras.com/contact-us">https://www.zextras.com/contact-us</a></p></li>
+<li><p><em>Issues affecting old versions of Zextras Suite</em>: In order to provide
+a better service, technical support is limited to the latest Zextras
+Suite version. If you are not running the latest version, please
+update Zextras Suite - should the issue persist, then please proceed
+with your report as described in the remainder of this page.</p></li>
+<li><p><em>Hardware related issue</em>: If the server on which Zextras is installed
+does not operate correctly, the Technical Support team will not be
+able to help. For optimisations and tuning options, however, you can
+refer to Zimbra’s <a class="reference external" href="http://wiki.zimbra.com/wiki/Performance_Tuning_Guidelines_for_Large_Deployments">Tuning
+Guidelines</a>.</p></li>
+</ul>
+<p>The Technical Support Team will be keen to help in these cases:</p>
+<ul class="simple">
+<li><p><em>Bug reports</em>: When you are using some feature in Zextras and the
+result you obtain is an error message or some unexpected behaviour
+(for example, you change the Backup Path, but backups are saved
+elsewhere), you need to inform the Technical Support Team that will
+forward your report to the appropriate development team.</p></li>
+<li><p><em>Suggestions for new features</em>: We at Zextras really love to know
+which new features our users would like in Zextras Suite. If you have
+an idea for a new feature, please open a case in the Support Portal
+to the Technical Support team.</p></li>
+<li><p><em>Configuration or customisation not applied</em>: in this category fall
+most of the ticket, including for example an account not receiving
+e-mails although (apparently) correctly configured; the custom
+company logo not showing up on the login portal,</p></li>
+</ul>
+</section>
+<section id="tools-of-the-trade">
+<span id="id15"></span><h3>Tools of the trade<a class="headerlink" href="#tools-of-the-trade" title="Permalink to this headline"></a></h3>
+<p>In order to obtain the information you need to file a bug report, the
+following tools will surely come handy:</p>
+<ul class="simple">
+<li><p>A way to read logfiles on your Zimbra server (using <code class="docutils literal notranslate"><span class="pre">less</span></code> after a
+SSH access would suffice)</p></li>
+<li><p>The Zimbra Web Client’s Dev Mode</p></li>
+<li><p>Your browser’s Dev Tools (<em>Web Developer</em> on Firefox, <em>Developer
+Tools</em> on Chrome)</p></li>
+<li><p>Zextras Suite log level management</p></li>
+</ul>
+<p>In order to gather useful details from the log files, set both the Log
+Level and Notification Level to <strong>Debug</strong> in the Core tab of the Zimbra
+Administration Console, when experiencing an issue.</p>
+<p>On Zimbra 8.x version or later, after raising the Log and Notification
+Levels and logging into Dev Mode, the Zimbra Administration Console may
+get stuck during the page loading.</p>
+<p>When this happens, chances are that the <strong>Zimbra DoS filter</strong> is
+blocking the access due to the high number of connections created in
+Debug Mode. Please check the dedicated <a class="reference external" href="install-guide.xml#dos-filter">Zimbra DoS
+Filter</a> section to learn about it, its
+options and how to tweak them for a smoother loading.</p>
+<p>It’s very important to use Zimbra’s debug mode when gathering
+information, because it allows to identify the exact module causing the
+error. To enter the debug mode, simply add the <strong>?dev=1</strong> string at the
+end of your URL (e.g. <a class="reference external" href="http://mail.example.com/?dev=1">http://mail.example.com/?dev=1</a>). This forces
+Zimbra to ignore any cached data to and reload any Javascript component
+separately.</p>
+<p><strong>Checking for exceptions in the Zimbra Administration Console:</strong></p>
+<ul class="simple">
+<li><p>Log into the Zimbra Web Client adding <strong>?dev=1</strong> after the URL of
+your server (e.g. <a class="reference external" href="https://mail.example.com/?dev=1">https://mail.example.com/?dev=1</a>)</p></li>
+<li><p>Verify if the issue still occours. If not, clearing the browser’s
+cache should solve the issue permanently.</p></li>
+<li><p>If the issue persists, open your browser’s debug tool: <em>Web
+Developer</em> on Firefox, <em>Developer Tools</em> on Chrome</p></li>
+<li><p>Reload the Zimbra Web Client (keeping the <strong>?dev=1</strong> parameter) and
+search for any error or exception in the debug tool’s console</p></li>
+<li><p>Include the complete error or exception in your bug report</p></li>
+</ul>
+</section>
+<section id="required-info-ticket">
+<span id="id16"></span><h3>What information to include in your report<a class="headerlink" href="#required-info-ticket" title="Permalink to this headline"></a></h3>
+<p>Depending on the Zextras module on which you experience an issue, you
+should include in your report different information, most of which are
+available as output of CLI commands. It is therefore required to have
+console or SSH access to the mailserver in order to issue these
+commands.</p>
+<p>Make sure to attach <strong>all</strong> the information listed in the
+<a class="reference external" href="#_common_information">ticket-common-information_title</a> to each
+ticket you open on the Support Portal. You can then skip to the
+appropriate section, dedicated to each Zextras module and gather
+additional information.</p>
+<p>These data must be provided for every ticket opened.</p>
+<ol class="arabic simple">
+<li><p>the full output of <code class="docutils literal notranslate"><span class="pre">zmcontrol</span> <span class="pre">-v</span></code></p></li>
+<li><p>the full output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">--host</span> <span class="pre">all_servers</span> <span class="pre">core</span> <span class="pre">getVersion</span></code></p></li>
+<li><p>the full output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">core</span> <span class="pre">getLicenseInfo</span></code> commands.</p></li>
+</ol>
+<p>Take note of the <em>order_id</em> field you get from the last command and
+properly insert it in the ticket’s <strong>license ID</strong> field</p>
+<p>Before reproducing the issue, set the verbosity of the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code>
+file to debug by running the command <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">global</span> <span class="pre">set</span>
+<span class="pre">attribute</span> <span class="pre">ZxCore_LogLevel</span> <span class="pre">value</span> <span class="pre">0</span></code>. <strong>Make sure</strong> to set it back to
+<strong>1</strong> once finished the operation to avoid filling the disk with logs.</p>
+<blockquote>
+<div><p><strong>Note</strong></p>
+<p>When reporting migration issues, please specify this data for both
+the source and destination server.</p>
+</div></blockquote>
+<p id="zextras-powerstore"><strong>Zextras Powerstore</strong></p>
+<ul class="simple">
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">powerstore</span> <span class="pre">getAllVolumes</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">powerstore</span> <span class="pre">getPowerstorePolicy</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">powerstore</span> <span class="pre">getMovedMailboxes</span></code> and
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">powerstore</span> <span class="pre">getNonLocalMailboxes</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code> file reproducing the issue</p></li>
+</ul>
+<p id="zextras-backup"><strong>Zextras Backup</strong></p>
+<ul class="simple">
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">server</span> <span class="pre">get</span> <span class="pre">$(zmhostname)</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">backup</span> <span class="pre">getBackupInfo</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">mount</span></code> command</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code> file relative to the operation</p></li>
+</ul>
+<p id="zextras-mobile"><strong>Zextras Mobile</strong></p>
+<ol class="arabic simple">
+<li><p>activate an account logger in debug mode on one of the affected
+devices with
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">mobile</span> <span class="pre">doAddAccountLogger</span> <span class="pre">user&#64;domain.tdl</span> <span class="pre">debug</span> <span class="pre">/path/to/log/file.log</span></code></p></li>
+<li><p>remove the account from the device</p></li>
+<li><p>add the account on the device again</p></li>
+<li><p>try to reproduce the issue</p></li>
+</ol>
+<p>and then attach to the report the <code class="docutils literal notranslate"><span class="pre">/path/to/log/file.log</span></code> file,
+together with:</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code> and the <code class="docutils literal notranslate"><span class="pre">sync.log</span></code> files relative to the
+operations above</p></li>
+<li><p>a brief explanation of how to reproduce the issue</p></li>
+<li><p>manufacturer, model and exact OS version of the device</p></li>
+</ul>
+<p id="zextras-team"><strong>Zextras Team</strong></p>
+<ul class="simple">
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zmprov</span> <span class="pre">gas</span></code> and <code class="docutils literal notranslate"><span class="pre">zmprov</span> <span class="pre">gas</span> <span class="pre">mailbox</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">global</span> <span class="pre">get</span></code>,
+<code class="docutils literal notranslate"><span class="pre">zmzimletctl</span> <span class="pre">listZimlets</span></code>,
+<code class="docutils literal notranslate"><span class="pre">zmzimletctl</span> <span class="pre">info</span> <span class="pre">com_zimbra_Team_classic</span></code> and
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">Team</span> <span class="pre">clusterStatus</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">Team</span> <span class="pre">getServices</span></code> and
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">Team</span> <span class="pre">iceServer</span> <span class="pre">get</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">cos</span> <span class="pre">in</span> <span class="pre">$(zmprov</span> <span class="pre">gac);</span> <span class="pre">do</span> <span class="pre">zmprov</span> <span class="pre">gc</span> <span class="pre">$cos;</span> <span class="pre">done</span></code>
+and <code class="docutils literal notranslate"><span class="pre">zmprov</span> <span class="pre">ga</span> <span class="pre">USER&#64;DOMAIN.TDL</span></code> of one of the affected users</p></li>
+<li><p>the output of
+<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">cos</span> <span class="pre">in</span> <span class="pre">$(zmprov</span> <span class="pre">gac);</span> <span class="pre">do</span> <span class="pre">echo</span> <span class="pre">$cos;</span> <span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">cos</span> <span class="pre">get</span> <span class="pre">$cos;</span> <span class="pre">done</span></code>
+and <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">account</span> <span class="pre">get</span> <span class="pre">USER&#64;DOMAIN.TDL</span></code> of the same user
+as the previous command</p></li>
+<li><p>the output of
+<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">dom</span> <span class="pre">in</span> <span class="pre">$(zmprov</span> <span class="pre">gad);</span> <span class="pre">do</span> <span class="pre">zmprov</span> <span class="pre">gd</span> <span class="pre">$dom</span> <span class="pre">zimbraPublicServiceProtocol</span> <span class="pre">zimbraPublicServiceHostname</span> <span class="pre">zimbraPublicServicePort;</span> <span class="pre">done</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">--host</span> <span class="pre">all_servers</span> <span class="pre">powerstore</span> <span class="pre">getAllVolumes</span></code></p></li>
+<li><p>the output of <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">--host</span> <span class="pre">all_servers</span> <span class="pre">core</span> <span class="pre">apiversions</span> <span class="pre">team</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code> file relative to a restart of the mailboxd with
+<code class="docutils literal notranslate"><span class="pre">zmmailboxdctl</span> <span class="pre">restart</span></code></p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code> and the <code class="docutils literal notranslate"><span class="pre">zmmailboxd.out</span></code> files of the last
+couple of days</p></li>
+<li><p>A test account without admin privileges could also be useful.</p></li>
+</ul>
+</section>
+<section id="help-us-improve-zextras-suite">
+<span id="id17"></span><h3>Help us improve Zextras Suite<a class="headerlink" href="#help-us-improve-zextras-suite" title="Permalink to this headline"></a></h3>
+<p>A “Send full error data to Zextras to help us improve Zextras Suite”
+checkbox is available in the “Core” section of the Zextras
+Administration Zimlet. This will allow us to improve Zextras Suite by
+gathering an extended set of error information, which might include:</p>
+<ul class="simple">
+<li><p>Full error messages and stacktraces.</p></li>
+<li><p>Email Addresses.</p></li>
+<li><p>Mobile phone brand, model and ID.</p></li>
+<li><p>Message Headers and Contents.</p></li>
+</ul>
+<p>This information will be handled by automated systems and will only be
+used for bughunting and software analysis</p>
+<p>You can also enable this feature by setting the
+<code class="docutils literal notranslate"><span class="pre">ZxCore_SendFullErrorReports</span></code> Zextras Core property to <strong>TRUE</strong>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Zextras Suite Documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Zextras Suite Installation Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

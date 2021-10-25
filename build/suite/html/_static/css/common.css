@@ -1,0 +1,26 @@
+/* This file contains CSS styles shared by all Zextras products - (C)
+   2021 Zextras */
+:root {
+    --zx-brand: #00506D;
+    --zx-color-card-footer: #E8E8E8;
+    --zx-color-card-header: #E8E8E8;
+}
+
+/* Custom roles */
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+/* Width of the text content */
+.wy-nav-content {
+    max-width: inherit;
+}
+
+/* Width of logo on the upper left corner */
+.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
+    width:300px}

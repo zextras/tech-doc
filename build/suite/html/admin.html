@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zextras Admin &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zextras Drive" href="drive.html" />
+    <link rel="prev" title="Zextras Powerstore" href="powerstore.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00506d" >
+            <a href="index.html" class="icon icon-home"> Zextras Suite
+            <img src="_static/zextras_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">Zextras Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Zextras Admin</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#delegated-admin-provisioning">Delegated Admin Provisioning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-delegated-admin-provisioning">What is Delegated Admin Provisioning?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#granting-delegated-admin-rights-to-a-user">Granting Delegated Admin Rights to a User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-zimlet">From the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-cli">From the CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#editing-the-rights-of-an-existing-delegated-admin">Editing the Rights of an Existing Delegated Admin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-zimlet-2">From the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-cli-2">From the CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#revoke-delegated-admin-rights-from-a-user">Revoke Delegated Admin Rights from a User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-zimlet-3">From the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-cli-3">From the CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#quota-management">Quota Management</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-quota-management">What is Quota Management?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-grant-limit">The <code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-domain-quota">The <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#grant-limit-vs-domain-quota"><code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> vs <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#a-delegated-admins-grant-limit-is-lower-than-the-domain-quota">A Delegated Admin’s Grant Limit is lower than the Domain Quota</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#domain-limits">Domain Limits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-domain-limit-management-a-k-a-domain-settings">What is Domain Limit Management (a.k.a. <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Settings</span></code>)?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#domain-limits-2">Domain Limits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-the-limits-of-a-domain">Edit the Limits of a Domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-zimlet-4">From the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-cli-4">From the CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#reset-the-limits-of-a-domain">Reset the Limits of a Domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-zimlet-5">From the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-cli-5">From the CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#zimbra-administration-as-a-delegated-admin">Zimbra Administration as a Delegated Admin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-the-zimbra-administration-console-as-a-delegated-admin">Accessing the Zimbra Administration Console as a Delegated Admin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delegated-admin-can-and-cant-table">Delegated Admin CAN and CAN’T Table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overview-of-the-zimbra-administration-console-for-delegated-admins">Overview of the Zimbra Administration Console for Delegated Admins</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delegated-admin-log-browsing">Delegated Admin Log Browsing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-delegated-admin-log-browsing">What is Delegated Admin Log Browsing?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-zextras-admin-log-browser">The Zextras Admin Log Browser</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-action-filter">The <code class="docutils literal notranslate"><span class="pre">Action</span></code> filter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#reports-and-information">Reports and Information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zextras-admin-monthly-reports">Zextras Admin Monthly Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-the-monthly-report-system-work">How does the Monthly Report system work?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-access-the-monthly-reports">How to Access the Monthly Reports</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-administration-zimlet-6">From the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-cli-6">From the CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#partial-reports">Partial Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-zextras-admin-log-path">The Zextras Admin Log Path</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-zextras-admin-log-path-structure-and-contents">The Zextras Admin Log Path Structure and Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changing-the-zextras-admin-log-path">Changing the Zextras Admin Log Path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-reset">Configuration Reset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-the-zextras-admin-configuration-reset">What is the Zextras Admin Configuration Reset?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#what-does-the-admin-configuration-reset-clear">What does the Admin Configuration Reset clear?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#when-should-i-use-the-admin-config-reset">When should I use the Admin Config Reset?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-do-i-use-the-admin-configuration-reset">How do I use the Admin Configuration Reset?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-admin-cli">Zextras Admin CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="drive.html">Zextras Drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Zextras Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Zextras Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #00506d" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Zextras Admin</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="zextras-admin">
+<h1><a class="toc-backref" href="#id51">Zextras Admin</a><a class="headerlink" href="#zextras-admin" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>2021-10-20</p>
+</dd>
+</dl>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#zextras-admin" id="id51">Zextras Admin</a></p>
+<ul>
+<li><p><a class="reference internal" href="#delegated-admin-provisioning" id="id52">Delegated Admin Provisioning</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-delegated-admin-provisioning" id="id53">What is Delegated Admin Provisioning?</a></p></li>
+<li><p><a class="reference internal" href="#granting-delegated-admin-rights-to-a-user" id="id54">Granting Delegated Admin Rights to a User</a></p></li>
+<li><p><a class="reference internal" href="#editing-the-rights-of-an-existing-delegated-admin" id="id55">Editing the Rights of an Existing Delegated Admin</a></p></li>
+<li><p><a class="reference internal" href="#revoke-delegated-admin-rights-from-a-user" id="id56">Revoke Delegated Admin Rights from a User</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#quota-management" id="id57">Quota Management</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-quota-management" id="id58">What is Quota Management?</a></p></li>
+<li><p><a class="reference internal" href="#grant-limit-vs-domain-quota" id="id59"><code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> vs <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#domain-limits" id="id60">Domain Limits</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-domain-limit-management-a-k-a-domain-settings" id="id61">What is Domain Limit Management (a.k.a. <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Settings</span></code>)?</a></p></li>
+<li><p><a class="reference internal" href="#edit-the-limits-of-a-domain" id="id62">Edit the Limits of a Domain</a></p></li>
+<li><p><a class="reference internal" href="#reset-the-limits-of-a-domain" id="id63">Reset the Limits of a Domain</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#zimbra-administration-as-a-delegated-admin" id="id64">Zimbra Administration as a Delegated Admin</a></p>
+<ul>
+<li><p><a class="reference internal" href="#accessing-the-zimbra-administration-console-as-a-delegated-admin" id="id65">Accessing the Zimbra Administration Console as a Delegated Admin</a></p></li>
+<li><p><a class="reference internal" href="#delegated-admin-can-and-cant-table" id="id66">Delegated Admin CAN and CAN’T Table</a></p></li>
+<li><p><a class="reference internal" href="#overview-of-the-zimbra-administration-console-for-delegated-admins" id="id67">Overview of the Zimbra Administration Console for Delegated Admins</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#delegated-admin-log-browsing" id="id68">Delegated Admin Log Browsing</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-delegated-admin-log-browsing" id="id69">What is Delegated Admin Log Browsing?</a></p></li>
+<li><p><a class="reference internal" href="#the-zextras-admin-log-browser" id="id70">The Zextras Admin Log Browser</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#reports-and-information" id="id71">Reports and Information</a></p>
+<ul>
+<li><p><a class="reference internal" href="#zextras-admin-monthly-reports" id="id72">Zextras Admin Monthly Reports</a></p></li>
+<li><p><a class="reference internal" href="#how-does-the-monthly-report-system-work" id="id73">How does the Monthly Report system work?</a></p></li>
+<li><p><a class="reference internal" href="#how-to-access-the-monthly-reports" id="id74">How to Access the Monthly Reports</a></p></li>
+<li><p><a class="reference internal" href="#partial-reports" id="id75">Partial Reports</a></p></li>
+<li><p><a class="reference internal" href="#the-zextras-admin-log-path" id="id76">The Zextras Admin Log Path</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#configuration-reset" id="id77">Configuration Reset</a></p>
+<ul>
+<li><p><a class="reference internal" href="#what-is-the-zextras-admin-configuration-reset" id="id78">What is the Zextras Admin Configuration Reset?</a></p></li>
+<li><p><a class="reference internal" href="#when-should-i-use-the-admin-config-reset" id="id79">When should I use the Admin Config Reset?</a></p></li>
+<li><p><a class="reference internal" href="#how-do-i-use-the-admin-configuration-reset" id="id80">How do I use the Admin Configuration Reset?</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#zextras-admin-cli" id="id81">Zextras Admin CLI</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="delegated-admin-provisioning">
+<span id="id1"></span><h2><a class="toc-backref" href="#id52">Delegated Admin Provisioning</a><a class="headerlink" href="#delegated-admin-provisioning" title="Permalink to this headline"></a></h2>
+<section id="what-is-delegated-admin-provisioning">
+<span id="id2"></span><h3><a class="toc-backref" href="#id53">What is Delegated Admin Provisioning?</a><a class="headerlink" href="#what-is-delegated-admin-provisioning" title="Permalink to this headline"></a></h3>
+<p>Delegated Admin Provisioning is the set of operations that allow you to
+grant, edit and revoke Domain Admin rights to a user.</p>
+<p>All Delegated Admin Provisioning operations can be performed:</p>
+<ul class="simple">
+<li><p>From the Zextras Admin tab of the Administration Zimlet</p></li>
+<li><p>From the CLI, running the appropriate <em>zxsuite</em> command as the
+<em>zimbra</em> user</p></li>
+</ul>
+</section>
+<section id="granting-delegated-admin-rights-to-a-user">
+<span id="id3"></span><h3><a class="toc-backref" href="#id54">Granting Delegated Admin Rights to a User</a><a class="headerlink" href="#granting-delegated-admin-rights-to-a-user" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-zimlet">
+<span id="id4"></span><h4>From the Administration Zimlet<a class="headerlink" href="#from-the-administration-zimlet" title="Permalink to this headline"></a></h4>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Delegated</span> <span class="pre">Admins</span></code> section of the Zextras Admin tab in the
+Administration Zimlet, click the <code class="docutils literal notranslate"><span class="pre">Add</span></code> button.</p>
+<p>You will be be prompted for the following information:</p>
+<ul class="simple">
+<li><p>Account: The email address to which you want to grant Delegated Admin
+rights.</p></li>
+<li><p>Domain: The domain on which the Delegated Admin will have control.</p></li>
+<li><p>Delegated Auth: Check this box to allow the Delegated Admin to use
+the <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Mail</span></code> features on any mailbox in the selected domain.</p></li>
+<li><p>Grant Limit: The maximum mailbox quota this Delegated Admin can
+assign to a user.</p></li>
+<li><p>Edit Features: Defines whether the Delegated Admin is able to edit
+the contents of the <code class="docutils literal notranslate"><span class="pre">Features</span></code> tab for its assigned users.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<div class="line-block">
+<div class="line">If the <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code> is lower than the <code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code>, the
+<code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> value will be ignored.</div>
+<div class="line">Disk space and Quota limits can be entered in Gigabytes (gb),
+Megabytes (mb) or Kilobytes (kb).</div>
+</div>
+</div></blockquote>
+</section>
+<section id="from-the-cli">
+<span id="id5"></span><h4>From the CLI<a class="headerlink" href="#from-the-cli" title="Permalink to this headline"></a></h4>
+<p>To grant Delegated Admin rights to a user, use the
+<code class="docutils literal notranslate"><span class="pre">doAddDelegationSettings</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doAddDelegationSettings</span> <span class="p">{</span><span class="n">account</span><span class="p">}</span> <span class="p">{</span><span class="n">domain</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span><span class="p">]]</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>               <span class="n">TYPE</span>       <span class="n">EXPECTED</span> <span class="n">VALUES</span>    <span class="n">DEFAULT</span>
+<span class="n">account</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>         <span class="n">String</span>
+<span class="n">domain</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>          <span class="n">String</span>
+<span class="n">viewMail</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>        <span class="n">Boolean</span>    <span class="n">true</span><span class="o">|</span><span class="n">false</span>         <span class="n">false</span>
+<span class="n">editFeatures</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">Boolean</span>    <span class="n">true</span><span class="o">|</span><span class="n">false</span>         <span class="n">false</span>
+<span class="n">adminQuota</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>      <span class="n">String</span>                        <span class="o">-</span><span class="mi">1</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doAddDelegationSettings</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">viewMail</span> <span class="n">true</span> <span class="n">adminQuota</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Adds</span> <span class="n">John</span> <span class="k">as</span> <span class="n">delegated</span> <span class="n">administrator</span> <span class="n">of</span> <span class="n">domain</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span> <span class="k">with</span> <span class="n">the</span> <span class="n">right</span> <span class="n">to</span> <span class="n">view</span> <span class="n">user</span> <span class="n">mail</span> <span class="n">on</span> <span class="n">such</span> <span class="n">domain</span> <span class="ow">and</span>
+<span class="n">no</span> <span class="n">right</span> <span class="n">to</span> <span class="n">grand</span> <span class="n">quotas</span> <span class="n">to</span> <span class="n">users</span><span class="o">.</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doAddDelegationSettings</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">adminQuota</span> <span class="mi">0</span>
+<span class="n">Adds</span> <span class="n">John</span> <span class="k">as</span> <span class="n">delegated</span> <span class="n">administrator</span> <span class="n">of</span> <span class="n">domain</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span> <span class="k">with</span> <span class="n">the</span> <span class="n">right</span> <span class="n">to</span> <span class="n">assign</span> <span class="n">unlimited</span> <span class="n">quotas</span> <span class="n">to</span> <span class="n">users</span><span class="o">.</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doAddDelegationSettings</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">adminQuota</span> <span class="mi">10</span><span class="n">gb</span>
+<span class="n">Adds</span> <span class="n">John</span> <span class="k">as</span> <span class="n">delegated</span> <span class="n">administrator</span> <span class="n">of</span> <span class="n">domain</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span> <span class="k">with</span> <span class="n">the</span> <span class="n">right</span> <span class="n">to</span> <span class="n">assign</span> <span class="n">quotas</span> <span class="n">up</span> <span class="n">to</span> <span class="mi">10</span><span class="n">gb</span> <span class="n">to</span> <span class="n">each</span> <span class="n">user</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="editing-the-rights-of-an-existing-delegated-admin">
+<span id="id6"></span><h3><a class="toc-backref" href="#id55">Editing the Rights of an Existing Delegated Admin</a><a class="headerlink" href="#editing-the-rights-of-an-existing-delegated-admin" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-zimlet-2">
+<span id="id7"></span><h4>From the Administration Zimlet<a class="headerlink" href="#from-the-administration-zimlet-2" title="Permalink to this headline"></a></h4>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Delegated</span> <span class="pre">Admins</span></code> section of the Zextras Admin tab in the
+Administration Zimlet, select an entry in the list and click the
+<code class="docutils literal notranslate"><span class="pre">Edit</span></code> button.</p>
+<p>You can also double click an entry on the list to edit it.</p>
+</section>
+<section id="from-the-cli-2">
+<span id="id8"></span><h4>From the CLI<a class="headerlink" href="#from-the-cli-2" title="Permalink to this headline"></a></h4>
+<p>To edit the rights of an existing Delegated Admin, use the
+<code class="docutils literal notranslate"><span class="pre">doEditDelegationSettings</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doEditDelegationSettings</span> <span class="p">{</span><span class="n">account</span><span class="p">}</span> <span class="p">{</span><span class="n">domain</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span><span class="p">]]</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>               <span class="n">TYPE</span>       <span class="n">EXPECTED</span> <span class="n">VALUES</span>
+<span class="n">account</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>         <span class="n">String</span>
+<span class="n">domain</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>          <span class="n">String</span>
+<span class="n">viewMail</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>        <span class="n">Boolean</span>    <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+<span class="n">editFeatures</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">Boolean</span>    <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+<span class="n">adminQuota</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>      <span class="n">String</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doEditDelegationSettings</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">viewMail</span> <span class="n">true</span> <span class="n">adminQuota</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Edits</span> <span class="n">John</span><span class="s1">&#39;s delegation rights for domain example.com, with the right to view user mail on such domain and</span>
+<span class="n">no</span> <span class="n">right</span> <span class="n">to</span> <span class="n">grand</span> <span class="n">quotas</span> <span class="n">to</span> <span class="n">users</span><span class="o">.</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doEditDelegationSettings</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">adminQuota</span> <span class="mi">0</span>
+<span class="n">Edits</span> <span class="n">John</span><span class="s1">&#39;s delegation rights for domain example.com, with the right to assign unlimited quotas to users.</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doEditDelegationSettings</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">adminQuota</span> <span class="mi">10</span><span class="n">gb</span>
+<span class="n">Edits</span> <span class="n">John</span><span class="s1">&#39;s delegation rights for domain example.com, with the right to assign quotas up to 10gb to each user.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="revoke-delegated-admin-rights-from-a-user">
+<span id="id9"></span><h3><a class="toc-backref" href="#id56">Revoke Delegated Admin Rights from a User</a><a class="headerlink" href="#revoke-delegated-admin-rights-from-a-user" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-zimlet-3">
+<span id="id10"></span><h4>From the Administration Zimlet<a class="headerlink" href="#from-the-administration-zimlet-3" title="Permalink to this headline"></a></h4>
+<p>In the <code class="docutils literal notranslate"><span class="pre">Delegated</span> <span class="pre">Admins</span></code> section of the Zextras Admin Tab in the
+Administration Zimlet, select an entry in the list and click the
+<code class="docutils literal notranslate"><span class="pre">Delete</span></code> button.</p>
+</section>
+<section id="from-the-cli-3">
+<span id="id11"></span><h4>From the CLI<a class="headerlink" href="#from-the-cli-3" title="Permalink to this headline"></a></h4>
+<p>To revoke Delegated Admin rights from a user, use the
+<code class="docutils literal notranslate"><span class="pre">doRemoveDelegationSettings</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doRemoveDelegationSettings</span> <span class="p">{</span><span class="n">account</span><span class="p">}</span> <span class="p">{</span><span class="n">domain</span><span class="p">}</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>          <span class="n">TYPE</span>
+<span class="n">account</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">String</span>
+<span class="n">domain</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>     <span class="n">String</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doRemoveDelegationSettings</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">John</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">administers</span> <span class="n">domain</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="quota-management">
+<span id="id12"></span><h2><a class="toc-backref" href="#id57">Quota Management</a><a class="headerlink" href="#quota-management" title="Permalink to this headline"></a></h2>
+<section id="what-is-quota-management">
+<span id="id13"></span><h3><a class="toc-backref" href="#id58">What is Quota Management?</a><a class="headerlink" href="#what-is-quota-management" title="Permalink to this headline"></a></h3>
+<p>Zextras Admin allows the Global Administrator to set two different types
+of quota limits: the <code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> and the <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code>.</p>
+<p>Neither the <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code> nor the <code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> are mandatory,
+meaning that a Delegated Admin can be allowed to grant any quota to a
+user and that a domain can lack a maximum quota limit.</p>
+<section id="the-grant-limit">
+<span id="id14"></span><h4>The <code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code><a class="headerlink" href="#the-grant-limit" title="Permalink to this headline"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> is one of the properties of a Delegated Admin.</p>
+<p>It specifies the maximum mailbox quota that the Delegated Admin can
+grant to a mailbox and can be set and changed in the Delegated Admin’s
+settings.</p>
+<p>Three options are available:</p>
+<ul class="simple">
+<li><p>None: The Delegated Admin cannot edit the Quota attribute of a
+mailbox.</p></li>
+<li><p>Custom: The Delegated Admin can grant up to the specified value. This
+overrides any domain/COS quota setting.</p></li>
+<li><p>Unlimited: The Delegated Admin can grant any quota to the mailbox.
+This overrides any domain/COS quota setting.</p></li>
+</ul>
+</section>
+<section id="the-domain-quota">
+<span id="id15"></span><h4>The <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code><a class="headerlink" href="#the-domain-quota" title="Permalink to this headline"></a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code> is a property that specifies the maximum mailbox
+quota that <strong>any Administrator</strong> can grant to a mailbox in the domain.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Assigning an unlimited quota to a mailbox will override the Domain
+Quota setting.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="grant-limit-vs-domain-quota">
+<span id="id16"></span><h3><a class="toc-backref" href="#id59"><code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> vs <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code></a><a class="headerlink" href="#grant-limit-vs-domain-quota" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Grant</span> <span class="pre">Limit</span></code> and <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code> properties are mutually
+exclusive on a restrictive basis.</p>
+<p>This means that the following scenarios may occur:</p>
+<ul class="simple">
+<li><p>A Global Admin grants a user a higher quota than the allowed Domain
+Quota</p></li>
+<li><p>A Delegated Admin grants a user a higher quota than the allowed
+Domain Quota</p></li>
+<li><p>A Delegated Admin’s Grant Limit is lower than the Domain Quota</p></li>
+</ul>
+<p>Let’s examine these scenario one by one.</p>
+<p><strong>A Global Admin grants a user a higher quota than the allowed Domain
+Quota.</strong></p>
+<p>Since the Domain Quota applies to a given domain, not to a given Admin,
+the effective quota for the user will be the maximum quota allowed by
+the <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code> setting.</p>
+<p><strong>A Delegated Admin grants a user a higher quota than the allowed Domain
+Quota.</strong></p>
+<p>In this case, the effective quota for the user will be the maximum quota
+allowed by the <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Quota</span></code> setting, even if the Delegated Admin’s
+Grant Limit is higher than the Domain Quota.</p>
+<section id="a-delegated-admins-grant-limit-is-lower-than-the-domain-quota">
+<span id="id17"></span><h4>A Delegated Admin’s Grant Limit is lower than the Domain Quota<a class="headerlink" href="#a-delegated-admins-grant-limit-is-lower-than-the-domain-quota" title="Permalink to this headline"></a></h4>
+<p>In this case, the maximum quota that the Delegated Admin can grant to a
+user will be the one defined by the Grant Limit, even if the Domain
+Quota is higher. A Global Admin, which is not bound to any Grant Limit
+restriction, will be allowed to assign any mailbox quota to the user up
+to the limit allowed by the Domain Quota.</p>
+</section>
+</section>
+</section>
+<section id="domain-limits">
+<span id="id18"></span><h2><a class="toc-backref" href="#id60">Domain Limits</a><a class="headerlink" href="#domain-limits" title="Permalink to this headline"></a></h2>
+<section id="what-is-domain-limit-management-a-k-a-domain-settings">
+<span id="id19"></span><h3><a class="toc-backref" href="#id61">What is Domain Limit Management (a.k.a. <code class="docutils literal notranslate"><span class="pre">Domain</span> <span class="pre">Settings</span></code>)?</a><a class="headerlink" href="#what-is-domain-limit-management-a-k-a-domain-settings" title="Permalink to this headline"></a></h3>
+<p>Domain Limit Management is a feature of the Zextras Admin module. It
+allows a Global Administrator to set domain level limits that cannot be
+exceeded by any Administrator.</p>
+<p>The only way to exceed a Domain Limit is to change the Domain Limit
+itself.</p>
+<section id="domain-limits-2">
+<span id="id20"></span><h4>Domain Limits<a class="headerlink" href="#domain-limits-2" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Global Account Limit: The maximum number of accounts that can be
+created on this domain.</p></li>
+<li><p>Domain Quota: The maximum mailbox quota that any Administrator can
+grant to a mailbox in the domain.</p></li>
+<li><p>COS Limits: Define which Classes of Service can be used for users in
+the domain and the maximum number of users per Class of Service.</p></li>
+</ul>
+</section>
+</section>
+<section id="edit-the-limits-of-a-domain">
+<span id="id21"></span><h3><a class="toc-backref" href="#id62">Edit the Limits of a Domain</a><a class="headerlink" href="#edit-the-limits-of-a-domain" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-zimlet-4">
+<span id="id22"></span><h4>From the Administration Zimlet<a class="headerlink" href="#from-the-administration-zimlet-4" title="Permalink to this headline"></a></h4>
+<p>All the domains in the Zimbra infrastructure are listed in the <code class="docutils literal notranslate"><span class="pre">Domain</span>
+<span class="pre">Settings</span></code> list in the Zextras Admin tab of the Administration Zimlet.</p>
+<p>To edit the limits of a domain, select the domain from the <code class="docutils literal notranslate"><span class="pre">Domain</span>
+<span class="pre">Settings</span></code> list and press the <code class="docutils literal notranslate"><span class="pre">Edit</span></code> button.</p>
+</section>
+<section id="from-the-cli-4">
+<span id="id23"></span><h4>From the CLI<a class="headerlink" href="#from-the-cli-4" title="Permalink to this headline"></a></h4>
+<p>To edit the limits of a domain through the CLI, use the
+<code class="docutils literal notranslate"><span class="pre">setDomainSettings</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">setDomainSettings</span> <span class="p">{</span><span class="n">domain</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>                       <span class="n">TYPE</span>       <span class="n">EXPECTED</span> <span class="n">VALUES</span>                   <span class="n">DEFAULT</span>
+<span class="n">domain</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>                  <span class="n">String</span>
+<span class="n">account_limit</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>           <span class="n">Integer</span>                                       <span class="n">don</span><span class="s1">&#39;t change setting</span>
+<span class="n">domain_account_quota</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">String</span>                                        <span class="n">don</span><span class="s1">&#39;t change setting</span>
+<span class="n">cos_limits</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>              <span class="n">String</span>     <span class="n">cosname1</span><span class="p">:</span><span class="n">limit1</span><span class="p">,</span><span class="n">cosname2</span><span class="p">:</span><span class="n">limit2</span>    <span class="n">don</span><span class="s1">&#39;t change setting</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">setDomainSettings</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">account_limit</span> <span class="mi">100</span> <span class="n">domain_account_quota</span> <span class="mi">100</span><span class="n">mb</span> <span class="n">cos_limits</span> <span class="n">cos1</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span><span class="n">cos2</span><span class="p">:</span><span class="mi">80</span>
+
+<span class="n">Sets</span> <span class="n">a</span> <span class="k">global</span> <span class="n">account</span> <span class="n">limit</span> <span class="n">on</span> <span class="n">the</span> <span class="n">domain</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">of</span> <span class="mi">100</span> <span class="n">accounts</span><span class="p">,</span>
+<span class="k">with</span> <span class="n">a</span> <span class="n">domain</span> <span class="n">account</span> <span class="n">quota</span> <span class="n">of</span> <span class="mi">100</span> <span class="n">megabytes</span>
+<span class="ow">and</span> <span class="k">with</span> <span class="n">cos</span> <span class="n">account</span> <span class="n">limits</span> <span class="n">of</span> <span class="mi">30</span> <span class="k">for</span> <span class="n">cos1</span> <span class="ow">and</span> <span class="mi">80</span> <span class="k">for</span> <span class="n">cos2</span><span class="o">.</span>
+
+<span class="n">Note</span><span class="p">:</span> <span class="n">A</span> <span class="n">cos</span> <span class="n">limit</span> <span class="n">of</span> <span class="o">-</span><span class="mi">1</span> <span class="n">removes</span> <span class="n">the</span> <span class="n">limit</span> <span class="k">for</span> <span class="n">the</span> <span class="n">cos</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="reset-the-limits-of-a-domain">
+<span id="id24"></span><h3><a class="toc-backref" href="#id63">Reset the Limits of a Domain</a><a class="headerlink" href="#reset-the-limits-of-a-domain" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-zimlet-5">
+<span id="id25"></span><h4>From the Administration Zimlet<a class="headerlink" href="#from-the-administration-zimlet-5" title="Permalink to this headline"></a></h4>
+<p>All the domains in the Zimbra infrastructure are listed in the <code class="docutils literal notranslate"><span class="pre">Domain</span>
+<span class="pre">Settings</span></code> list in the Zextras Admin tab of the Administration Zimlet.</p>
+<p>To reset the limits of a domain, select the domain from the <code class="docutils literal notranslate"><span class="pre">Domain</span>
+<span class="pre">Settings</span></code> list and press the <code class="docutils literal notranslate"><span class="pre">Reset</span></code> button, then click <code class="docutils literal notranslate"><span class="pre">Ok</span></code> in the
+confirmation pop-up.</p>
+</section>
+<section id="from-the-cli-5">
+<span id="id26"></span><h4>From the CLI<a class="headerlink" href="#from-the-cli-5" title="Permalink to this headline"></a></h4>
+<p>To reset the limits of a Domain through the CLI, use the
+<code class="docutils literal notranslate"><span class="pre">resetDomainSettings</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">resetDomainSettings</span> <span class="p">{</span><span class="n">domain</span><span class="p">}</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>         <span class="n">TYPE</span>
+<span class="n">domain</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>    <span class="n">String</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="zimbra-administration-as-a-delegated-admin">
+<span id="id27"></span><h2><a class="toc-backref" href="#id64">Zimbra Administration as a Delegated Admin</a><a class="headerlink" href="#zimbra-administration-as-a-delegated-admin" title="Permalink to this headline"></a></h2>
+<section id="accessing-the-zimbra-administration-console-as-a-delegated-admin">
+<span id="id28"></span><h3><a class="toc-backref" href="#id65">Accessing the Zimbra Administration Console as a Delegated Admin</a><a class="headerlink" href="#accessing-the-zimbra-administration-console-as-a-delegated-admin" title="Permalink to this headline"></a></h3>
+<p>To access the Zimbra Administration Console, connect to port 7071 of
+your mailserver with a web browser and login with your Zimbra
+credentials.</p>
+<p>E.g: <a class="reference external" href="https://mail.example.com:7071">https://mail.example.com:7071</a></p>
+</section>
+<section id="delegated-admin-can-and-cant-table">
+<span id="id29"></span><h3><a class="toc-backref" href="#id66">Delegated Admin CAN and CAN’T Table</a><a class="headerlink" href="#delegated-admin-can-and-cant-table" title="Permalink to this headline"></a></h3>
+<p>Here is a quick reference of what a Delegated Admin CAN and CAN’T do
+through the Zextras Admin module.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>CAN</p></th>
+<th class="head"><p>CAN’T</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>View the account list of any
+domain for which they are granted
+Delegate Admin rights</p></td>
+<td><p>View the account list belonging
+to any other domain</p></td>
+</tr>
+<tr class="row-odd"><td><p>Edit any user account in any
+domain for which they are granted
+Delegate Admin rights</p></td>
+<td><p>Edit any user account belonging
+to any other domain</p></td>
+</tr>
+<tr class="row-even"><td><p>Edit any alias, distribution list
+or resource in any domain for
+which they are granted Delegate
+Admin rights</p></td>
+<td><p>Edit any alias, distribution list
+or resource belonging to any
+other domain</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Edit any Global Admin account</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Grant Global Admin or Delegated
+Admin rights to any user</p></td>
+</tr>
+<tr class="row-odd"><td><p>Create an account on a domain for
+which they are granted Delegated
+Admin rights</p></td>
+<td><p>Create an account on any other
+domain</p></td>
+</tr>
+<tr class="row-even"><td><p>Select the Class Of Service of an
+account between those available
+for that account’s domain</p></td>
+<td><p>Arbitrarily set the Class of
+Service of an account between
+those available on the server</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Edit COS settings</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Edit Domain Settings that may
+interfere with the proper
+functioning of the server</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>See or edit any server setting</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>See or edit any global setting</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="overview-of-the-zimbra-administration-console-for-delegated-admins">
+<span id="id30"></span><h3><a class="toc-backref" href="#id67">Overview of the Zimbra Administration Console for Delegated Admins</a><a class="headerlink" href="#overview-of-the-zimbra-administration-console-for-delegated-admins" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Manage</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Accounts</span></code>: Manage the Accounts belonging to any domain for
+which delegated admin rights have been granted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Aliases</span></code>: Manage Aliases of accounts belonging to any domain
+for which delegated admin rights have been granted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distribution</span> <span class="pre">Lists</span></code>: Manage the Distribution Lists belonging to
+any domain for which delegated admin rights have been granted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Resources</span></code>: Manage the Resources belonging to any domain for
+which delegated admin rights have been granted.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Configure</span></code>: View the configuration of any domain for which
+delegated admin rights have been granted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Search</span></code>: Perform advanced Searches.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Zextras</span> <span class="pre">Suite</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Zextras</span> <span class="pre">Mobile</span></code>: Manage the synchronization of mobile devices
+and clients belonging to any domain for which delegated admin
+rights have been granted.</p></li>
+<li><p>“Zextras Admin: View the list of Delegated Admins belonging to any
+domain for which delegated admin rights have been granted as well
+as quota usage informations.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Search</span> <span class="pre">Bar</span></code>: Perform quick searches.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[username]</span></code>: Log Out from the Zimbra Administration Console.</p></li>
+</ul>
+</section>
+</section>
+<section id="delegated-admin-log-browsing">
+<span id="id31"></span><h2><a class="toc-backref" href="#id68">Delegated Admin Log Browsing</a><a class="headerlink" href="#delegated-admin-log-browsing" title="Permalink to this headline"></a></h2>
+<section id="what-is-delegated-admin-log-browsing">
+<span id="id32"></span><h3><a class="toc-backref" href="#id69">What is Delegated Admin Log Browsing?</a><a class="headerlink" href="#what-is-delegated-admin-log-browsing" title="Permalink to this headline"></a></h3>
+<p>The Zextras Admin allows a Global Admin to easily keep track of all
+Admins’ activity through a search-based graphical log browser.</p>
+</section>
+<section id="the-zextras-admin-log-browser">
+<span id="id33"></span><h3><a class="toc-backref" href="#id70">The Zextras Admin Log Browser</a><a class="headerlink" href="#the-zextras-admin-log-browser" title="Permalink to this headline"></a></h3>
+<p>The Zextras Admin Log Browser can be accessed by clicking
+<code class="docutils literal notranslate"><span class="pre">Browse</span> <span class="pre">Logs</span></code> in the Zextras Admin tab of the Administration Zimlet.
+The <code class="docutils literal notranslate"><span class="pre">Filter</span> <span class="pre">Log</span></code> pop-up dialog will open, allowing you to apply some
+filters to the logs you want to browse.</p>
+<p>The available filters are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Basic</span></code> filters</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Admin</span></code>: Filter the logs to only view operations performed by a
+single Domain Admin.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Action</span></code>: Filter the logs to only view one particular action.
+See below for the available actions.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Advanced</span></code> filters</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Client</span> <span class="pre">IP</span></code>: Filters the logs to only show operations performed
+from a determined IP address.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Logins</span></code>: Select this checkbox to also show when the Domain
+Admins log into the Zimbra Web Client.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Outcome</span></code>: Filters the logs to either show all operations,
+successful operations or failed operations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Start</span></code> and <code class="docutils literal notranslate"><span class="pre">End</span></code>: Limits the logs shown to a specific
+timespan (default: the current day).</p></li>
+</ul>
+</li>
+</ul>
+<p>Clicking the <code class="docutils literal notranslate"><span class="pre">Details</span></code> button will apply the selected filters and show
+the log browser.</p>
+<section id="the-action-filter">
+<span id="id34"></span><h4>The <code class="docutils literal notranslate"><span class="pre">Action</span></code> filter<a class="headerlink" href="#the-action-filter" title="Permalink to this headline"></a></h4>
+<p>Any operation an Administrator can perform is available in the drop-down
+menu of the <code class="docutils literal notranslate"><span class="pre">Action</span></code> filter.</p>
+<p>All of these operations are important to keep track of your admin’s
+actions and to troubleshoot issues.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Auth</span></code>: All ZWC authentications.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DelegateAuth</span></code>: All Delegated Authentications, either through the
+<code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Mail</span></code> button or through the <code class="docutils literal notranslate"><span class="pre">-z</span></code> option of the <em>zmmailbox</em>
+command.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CreateAccount</span></code>: All account creations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DeleteAccount</span></code>: All account deletions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Set</span> <span class="pre">Password</span></code>: All mailbox password changes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RemoveAccountAlias</span></code>: All alias deletions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DeleteDistributionList</span></code>: All distribution lists deletions.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="reports-and-information">
+<span id="id35"></span><h2><a class="toc-backref" href="#id71">Reports and Information</a><a class="headerlink" href="#reports-and-information" title="Permalink to this headline"></a></h2>
+<section id="zextras-admin-monthly-reports">
+<span id="id36"></span><h3><a class="toc-backref" href="#id72">Zextras Admin Monthly Reports</a><a class="headerlink" href="#zextras-admin-monthly-reports" title="Permalink to this headline"></a></h3>
+<p>The Zextras Admin module includes a very useful <code class="docutils literal notranslate"><span class="pre">Monthly</span> <span class="pre">Reports</span></code>
+feature that allows Global Administrators to keep track of both
+Delegated Admin operations and domain status for a given month.</p>
+</section>
+<section id="how-does-the-monthly-report-system-work">
+<span id="id37"></span><h3><a class="toc-backref" href="#id73">How does the Monthly Report system work?</a><a class="headerlink" href="#how-does-the-monthly-report-system-work" title="Permalink to this headline"></a></h3>
+<p>On the first day of each month, the Zextras Admin module automatically
+creates a report based on the data gathered in the Zextras Admin Log.</p>
+<p>This monthly report includes:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GLOBAL REPORT</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>First logged action</p></td>
+<td><p>Timestamp of the first action
+performed by an Admin this month</p></td>
+</tr>
+<tr class="row-odd"><td><p>Last logged action</p></td>
+<td><p>Timestamp of the last action
+performed by an Admin this month</p></td>
+</tr>
+<tr class="row-even"><td><p>Last admin login by</p></td>
+<td><p>Latest administrative login
+timestamp</p></td>
+</tr>
+<tr class="row-odd"><td><p>Most active admin</p></td>
+<td><p>Name of the Admin with the
+highest number of actions logged</p></td>
+</tr>
+<tr class="row-even"><td><p>Most used address</p></td>
+<td><p>Most common IP Address for admin
+logins</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total accounts</p></td>
+<td><p>Total number of mailboxes</p></td>
+</tr>
+<tr class="row-even"><td><p>Total created accounts</p></td>
+<td><p>Number of mailboxes created
+during the month</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total deleted accounts</p></td>
+<td><p>Number of mailboxes deleted
+during the month</p></td>
+</tr>
+<tr class="row-even"><td><p>Total created domains</p></td>
+<td><p>Number of domains created during
+the month</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total created distribution lists</p></td>
+<td><p>Number of distribution lists
+created during the month</p></td>
+</tr>
+<tr class="row-even"><td><p>Total deleted distribution lists</p></td>
+<td><p>Number of distribution lists
+deleted during the month</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>DOMAIN REPORT</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Domain</p></td>
+<td><p>The name of the domain this data
+refers to</p></td>
+</tr>
+<tr class="row-odd"><td><p>Last admin login</p></td>
+<td><p>Latest administrative login
+timestamp</p></td>
+</tr>
+<tr class="row-even"><td><p>Account/max accounts</p></td>
+<td><p>Current and maximum number of
+accounts</p></td>
+</tr>
+<tr class="row-odd"><td><p>Current Domain Size</p></td>
+<td><p>Sum of the quotas used by all
+mailboxes in the domain</p></td>
+</tr>
+<tr class="row-even"><td><p>Maximum Domain Size</p></td>
+<td><p>Sum of the maximum quota of all
+mailboxes (excluding
+<code class="docutils literal notranslate"><span class="pre">Unlimited</span></code> mailboxes)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Accounts with no quota limit</p></td>
+<td><p>Number of mailboxes that don’t
+have a quota limit</p></td>
+</tr>
+<tr class="row-even"><td><p>Total size of accounts with no
+quota limit</p></td>
+<td><p>Sum of the quotas used by all
+mailboxes with no quota limit</p></td>
+</tr>
+<tr class="row-odd"><td><p>System Resources in the domain</p></td>
+<td><p>Number of system resource
+accounts in the domain</p></td>
+</tr>
+<tr class="row-even"><td><p>Calendar Resources in the domain</p></td>
+<td><p>Number of calendar resource
+accounts in the domain</p></td>
+</tr>
+<tr class="row-odd"><td><p>Successful domain actions</p></td>
+<td><p>Number of successful actions done
+by admins on this domain</p></td>
+</tr>
+<tr class="row-even"><td><p>Unsuccessful domain actions</p></td>
+<td><p>Number of unsuccessful actions
+done by admins on this domain</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ADMIN REPORT</p></th>
+<th class="head"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Admin</p></td>
+<td><p>The name of the admin this data
+refers to</p></td>
+</tr>
+<tr class="row-odd"><td><p>Successful logins</p></td>
+<td><p>Number of successful logins into
+the Admin Console</p></td>
+</tr>
+<tr class="row-even"><td><p>Unsuccessful logins</p></td>
+<td><p>Number of unsuccessful logins
+into the Admin Console</p></td>
+</tr>
+<tr class="row-odd"><td><p>View mails</p></td>
+<td><p>Number of times this admin used
+the <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">Mail</span></code> feature during
+the month</p></td>
+</tr>
+<tr class="row-even"><td><p>Last login</p></td>
+<td><p>Timestamp of the last login of
+this admin into the
+Administration Console</p></td>
+</tr>
+<tr class="row-odd"><td><p>Most used address</p></td>
+<td><p>The email address most used by
+this admin to login</p></td>
+</tr>
+<tr class="row-even"><td><p>Total actions</p></td>
+<td><p>The number of actions performed
+by this admin during the month</p></td>
+</tr>
+<tr class="row-odd"><td><p>Accounts created</p></td>
+<td><p>Number of accounts created by
+this admin during the month</p></td>
+</tr>
+<tr class="row-even"><td><p>Accounts deleted</p></td>
+<td><p>Number of accounts deleted by
+this admin during the month</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="how-to-access-the-monthly-reports">
+<span id="id38"></span><h3><a class="toc-backref" href="#id74">How to Access the Monthly Reports</a><a class="headerlink" href="#how-to-access-the-monthly-reports" title="Permalink to this headline"></a></h3>
+<section id="from-the-administration-zimlet-6">
+<span id="id39"></span><h4>From the Administration Zimlet<a class="headerlink" href="#from-the-administration-zimlet-6" title="Permalink to this headline"></a></h4>
+<p>To access the <code class="docutils literal notranslate"><span class="pre">Monthly</span> <span class="pre">Reports</span></code>:</p>
+<ul class="simple">
+<li><p>Log into the Zimbra Administration Console as a Global Admin.</p></li>
+<li><p>On the Zextras Admin tab of the Administration Zimlet, click the
+<code class="docutils literal notranslate"><span class="pre">Monthly</span> <span class="pre">Reports</span></code> button on the top-right of the page.</p></li>
+<li><p>Select the month you wish to view and click <code class="docutils literal notranslate"><span class="pre">Show</span>
+<span class="pre">Report</span></code>.</p></li>
+</ul>
+</section>
+<section id="from-the-cli-6">
+<span id="id40"></span><h4>From the CLI<a class="headerlink" href="#from-the-cli-6" title="Permalink to this headline"></a></h4>
+<p>To view the Monthly Reports from the CLI, use the <code class="docutils literal notranslate"><span class="pre">getMonthlyReport</span></code>
+command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">getMonthlyReport</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>        <span class="n">TYPE</span>       <span class="n">EXPECTED</span> <span class="n">VALUES</span>    <span class="n">DEFAULT</span>
+<span class="n">month</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">String</span>     <span class="n">mm</span><span class="o">/</span><span class="n">yyyy</span>            <span class="mi">12</span><span class="o">/</span><span class="mi">2012</span>
+<span class="n">local</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">Boolean</span>    <span class="n">true</span><span class="o">|</span><span class="n">false</span>         <span class="n">false</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">getMonthlyReport</span>
+<span class="n">Shows</span> <span class="n">the</span> <span class="n">monthly</span> <span class="n">report</span> <span class="k">for</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">month</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">getMonthlyReport</span> <span class="n">month</span> <span class="mi">11</span><span class="o">/</span><span class="mi">2012</span>
+<span class="n">Shows</span> <span class="n">the</span> <span class="n">monthly</span> <span class="n">report</span> <span class="k">for</span> <span class="n">the</span> <span class="n">month</span> <span class="s1">&#39;11/2012&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="partial-reports">
+<span id="id41"></span><h3><a class="toc-backref" href="#id75">Partial Reports</a><a class="headerlink" href="#partial-reports" title="Permalink to this headline"></a></h3>
+<p>To create a partial report for the current month, use the
+<code class="docutils literal notranslate"><span class="pre">doMonthlyReport</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doMonthlyReport</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>        <span class="n">TYPE</span>       <span class="n">EXPECTED</span> <span class="n">VALUES</span>    <span class="n">DEFAULT</span>
+<span class="n">month</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">String</span>     <span class="n">mm</span><span class="o">/</span><span class="n">yyyy</span>            <span class="mi">12</span><span class="o">/</span><span class="mi">2012</span>
+<span class="n">force</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">Boolean</span>    <span class="n">true</span><span class="o">|</span><span class="n">false</span>         <span class="n">false</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+
+<span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doMonthlyReport</span>
+<span class="n">Generates</span> <span class="n">the</span> <span class="n">monthly</span> <span class="n">report</span> <span class="k">for</span> <span class="n">the</span> <span class="n">previous</span> <span class="n">month</span> <span class="ow">and</span> <span class="n">saves</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">Zextras</span> <span class="n">Admin</span> <span class="n">log</span> <span class="n">path</span>
+
+<span class="n">zxsuite</span> <span class="n">admin</span> <span class="n">doMonthlyReport</span> <span class="n">month</span> <span class="mi">01</span><span class="o">/</span><span class="mi">2013</span>
+<span class="n">Generates</span> <span class="n">a</span> <span class="n">PARTIAL</span> <span class="n">monthly</span> <span class="n">report</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">month</span><span class="p">,</span> <span class="n">without</span> <span class="n">saving</span> <span class="n">it</span> <span class="n">to</span> <span class="n">disk</span>
+
+<span class="o">**</span> <span class="n">NOTE</span><span class="o">**</span>
+
+<span class="n">This</span> <span class="n">command</span> <span class="ow">is</span> <span class="n">automatically</span> <span class="n">executed</span> <span class="n">once</span> <span class="n">a</span> <span class="n">month</span> <span class="n">to</span> <span class="n">generate</span> <span class="n">a</span> <span class="n">file</span> <span class="n">containing</span>
+<span class="n">the</span> <span class="n">report</span> <span class="k">for</span> <span class="n">the</span>
+<span class="n">previous</span> <span class="n">month</span><span class="o">.</span> <span class="n">To</span> <span class="n">overwrite</span> <span class="n">an</span> <span class="n">existing</span> <span class="n">report</span> <span class="n">file</span><span class="p">,</span> <span class="nb">set</span> <span class="n">the</span> <span class="s1">&#39;force&#39;</span> <span class="n">parameter</span> <span class="n">to</span> <span class="n">true</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="the-zextras-admin-log-path">
+<span id="id42"></span><h3><a class="toc-backref" href="#id76">The Zextras Admin Log Path</a><a class="headerlink" href="#the-zextras-admin-log-path" title="Permalink to this headline"></a></h3>
+<p>The Zextras Admin Module stores all monthly reports, together with the
+logs used to generate the Monthly reports and to provide information via
+the <code class="docutils literal notranslate"><span class="pre">Admin</span> <span class="pre">Log</span> <span class="pre">Browser</span></code> feature, in a path inside the
+<code class="docutils literal notranslate"><span class="pre">/opt/zimbra/conf/</span></code> folder (default
+<code class="docutils literal notranslate"><span class="pre">/opt/zimbra/conf/zextras/zxadmin/</span></code>). This particular default path has
+been chosen because it is the only directory that CANNOT be deleted
+during a Zimbra update.</p>
+<section id="the-zextras-admin-log-path-structure-and-contents">
+<span id="id43"></span><h4>The Zextras Admin Log Path Structure and Contents<a class="headerlink" href="#the-zextras-admin-log-path-structure-and-contents" title="Permalink to this headline"></a></h4>
+<p>The Zextras Admin log path is a flat directory containing the following
+files:</p>
+<ul class="simple">
+<li><p>One or more <code class="docutils literal notranslate"><span class="pre">YYYY_MM</span></code> files containing the logs for the file’s
+namesake month.</p></li>
+<li><p>Zero or more <code class="docutils literal notranslate"><span class="pre">YYYY_MM.report</span></code> files containing the monthly report
+for the file’s namesake month.</p></li>
+<li><p>Zero or more <code class="docutils literal notranslate"><span class="pre">YYYY_MM.X</span></code> files containing partial logs for the
+file’s namesake month. These files are created when changing the
+Zextras Admin Log Path.</p></li>
+</ul>
+</section>
+<section id="changing-the-zextras-admin-log-path">
+<span id="id44"></span><h4>Changing the Zextras Admin Log Path<a class="headerlink" href="#changing-the-zextras-admin-log-path" title="Permalink to this headline"></a></h4>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Carefully read this paragraph before changing the Zextras Admin Log
+Path. Any error on the procedure will cause a potential log loss that
+will render the <code class="docutils literal notranslate"><span class="pre">Monthly</span> <span class="pre">Report</span></code> and <code class="docutils literal notranslate"><span class="pre">Show</span> <span class="pre">Admin</span> <span class="pre">Logs</span></code> features
+highly unreliable.</p>
+</div></blockquote>
+<p>To safely change the Zextras Admin Log Path, follow these steps:</p>
+<ul class="simple">
+<li><p>Create the folder that will contain the logs:</p>
+<ul>
+<li><p>The folder’s ownership must be <code class="docutils literal notranslate"><span class="pre">zimbra:zimbra</span></code>.</p></li>
+<li><p>The ‘zimbra’ user must have read and write permissions to the
+folder.</p></li>
+<li><p>The folder must be empty.</p></li>
+</ul>
+</li>
+<li><p>Log into the Zimbra Administration Console as a Global Admin.</p></li>
+<li><p>Open the Zextras Admin tab in the Administration Zimlet.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">Basic</span> <span class="pre">Module</span> <span class="pre">Configuration</span></code> section, click the <code class="docutils literal notranslate"><span class="pre">Change</span></code>
+button near the Admin Log Path line.</p></li>
+<li><p>Enter the new path and click <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">Path</span></code>.</p></li>
+<li><p>If no errors are shown, move all the contents of the old log path.</p>
+<ul>
+<li><p>It’s perfectly normal to only see <code class="docutils literal notranslate"><span class="pre">.report</span></code> and <code class="docutils literal notranslate"><span class="pre">.X</span></code> files in
+the old log path, as the current log file will be given the <code class="docutils literal notranslate"><span class="pre">.1</span></code>
+extension to mark it as a partial. Any previous <code class="docutils literal notranslate"><span class="pre">.X</span></code> files will
+have their extension number increased by 1.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="configuration-reset">
+<span id="id45"></span><h2><a class="toc-backref" href="#id77">Configuration Reset</a><a class="headerlink" href="#configuration-reset" title="Permalink to this headline"></a></h2>
+<section id="what-is-the-zextras-admin-configuration-reset">
+<span id="id46"></span><h3><a class="toc-backref" href="#id78">What is the Zextras Admin Configuration Reset?</a><a class="headerlink" href="#what-is-the-zextras-admin-configuration-reset" title="Permalink to this headline"></a></h3>
+<p>The Zextras Admin Configuration Reset is a free feature of the Zextras
+Admin module that allows a Global Administrator to completely wipe all
+delegation rights from the server.</p>
+<p>This is not a <code class="docutils literal notranslate"><span class="pre">rollback</span></code> feature that cleans the Zextras Admin
+module’s configuration. Resetting the Admin Configuration will affect
+both Zextras Admin and Zimbra delegation rights.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Using the Admin Configuration Reset feature will completely wipe all
+delegation configuration from the server, bringing it back to the
+state of a fresh installation. Only Admin Delegation settings will be
+wiped, no other kind of data will be affected.</p>
+</div></blockquote>
+<section id="what-does-the-admin-configuration-reset-clear">
+<span id="id47"></span><h4>What does the Admin Configuration Reset clear?<a class="headerlink" href="#what-does-the-admin-configuration-reset-clear" title="Permalink to this headline"></a></h4>
+<p>The Admin Configuration Reset clears the following configurations:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">isDelegatedAdmin</span></code> account property for all accounts on the
+server</p></li>
+<li><p>All Access Control Entries and all Access Control Lists for</p>
+<ul>
+<li><p>Users</p></li>
+<li><p>Domains</p></li>
+<li><p>Classes of service</p></li>
+<li><p>Local configuration</p></li>
+<li><p>Server configuration</p></li>
+<li><p>Zimlets</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="when-should-i-use-the-admin-config-reset">
+<span id="id48"></span><h3><a class="toc-backref" href="#id79">When should I use the Admin Config Reset?</a><a class="headerlink" href="#when-should-i-use-the-admin-config-reset" title="Permalink to this headline"></a></h3>
+<p>The Admin Config Reset should only be used in the following cases:</p>
+<ul class="simple">
+<li><p>To completely reset a compromised situation</p>
+<ul>
+<li><p>If one or more wrong ACL or ACE settings cause your Zimbra
+Administration Console to be unstable or not to properly show
+(e.g. displaying a blank page or missing one or more UI elements),
+use the Admin Configuration Reset as a final resolution.</p></li>
+</ul>
+</li>
+<li><p>If you plan to stop using the Zextras Admin module</p>
+<ul>
+<li><p>The reset option is available even if no valid Zextras Suite
+license is active. Remember that this will also wipe any manually
+set Delegation settings.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="how-do-i-use-the-admin-configuration-reset">
+<span id="id49"></span><h3><a class="toc-backref" href="#id80">How do I use the Admin Configuration Reset?</a><a class="headerlink" href="#how-do-i-use-the-admin-configuration-reset" title="Permalink to this headline"></a></h3>
+<p>If you <strong>really</strong> want to reset the Admin Delegation configuration,
+simply run this CLI command:</p>
+<p><code class="docutils literal notranslate"><span class="pre">zxsuite core doDeleteAllDelegatedRights</span></code></p>
+<p>You will be asked to enter a confirmation string to avoid any accidental
+use of the command.</p>
+</section>
+</section>
+<section id="zextras-admin-cli">
+<span id="id50"></span><h2><a class="toc-backref" href="#id81">Zextras Admin CLI</a><a class="headerlink" href="#zextras-admin-cli" title="Permalink to this headline"></a></h2>
+<p>This section contains the index of all the available <code class="docutils literal notranslate"><span class="pre">zextras</span> <span class="pre">admin</span></code>
+commands. Full reference can be found in <a class="reference external" href="./cli.xml#_zxadmin_cli_commands">the dedicated
+section</a>.</p>
+<p><a class="reference external" href="./cli.xml#admin_doAddDelegationSettings">doAddDelegationSettings</a> |
+<a class="reference external" href="./cli.xml#admin_doEditDelegationSettings">doEditDelegationSettings</a>
+| <a class="reference external" href="./cli.xml#admin_doExportQuotaHistory">doExportQuotaHistory</a> |
+<a class="reference external" href="./cli.xml#admin_doMigrateAdmin">doMigrateAdmin</a> |
+<a class="reference external" href="./cli.xml#admin_doMonthlyReport">doMonthlyReport</a> |
+<a class="reference external" href="./cli.xml#admin_doRemoveDelegationSettings">doRemoveDelegationSettings</a>
+| <a class="reference external" href="./cli.xml#admin_doRepairAdmin">doRepairAdmin</a> |
+<a class="reference external" href="./cli.xml#admin_doRestartService">doRestartService</a> |
+<a class="reference external" href="./cli.xml#admin_doSetZimletRights">doSetZimletRights</a> |
+<a class="reference external" href="./cli.xml#admin_doShowAdminActivity">doShowAdminActivity</a> |
+<a class="reference external" href="./cli.xml#admin_doStartService">doStartService</a> |
+<a class="reference external" href="./cli.xml#admin_doStopAllOperations">doStopAllOperations</a> |
+<a class="reference external" href="./cli.xml#admin_doStopOperation">doStopOperation</a> |
+<a class="reference external" href="./cli.xml#admin_doStopService">doStopService</a> |
+<a class="reference external" href="./cli.xml#admin_getAllOperations">getAllOperations</a> |
+<a class="reference external" href="./cli.xml#admin_getDelegationSettings">getDelegationSettings</a> |
+<a class="reference external" href="./cli.xml#admin_getDomainSettings">getDomainSettings</a> |
+<a class="reference external" href="./cli.xml#admin_getMonthlyReport">getMonthlyReport</a> |
+<a class="reference external" href="./cli.xml#admin_getProperty">getProperty</a> |
+<a class="reference external" href="./cli.xml#admin_getServices">getServices</a> |
+<a class="reference external" href="./cli.xml#admin_monitor">monitor</a> |
+<a class="reference external" href="./cli.xml#admin_resetDomainSettings">resetDomainSettings</a> |
+<a class="reference external" href="./cli.xml#admin_setDomainSettings">setDomainSettings</a> |
+<a class="reference external" href="./cli.xml#admin_setProperty">setProperty</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="powerstore.html" class="btn btn-neutral float-left" title="Zextras Powerstore" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="drive.html" class="btn btn-neutral float-right" title="Zextras Drive" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

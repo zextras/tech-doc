@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zextras Drive &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zextras Docs" href="docs.html" />
+    <link rel="prev" title="Zextras Admin" href="admin.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #00506d" >
+            <a href="index.html" class="icon icon-home"> Zextras Suite
+            <img src="_static/zextras_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">Zextras Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Zextras Admin</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Zextras Drive</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frontend">Frontend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backend">Backend</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#differences-between-briefcase-and-drive">Differences between Briefcase and Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zimlet-installation">Zimlet Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#browser-compatibility">Browser compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobile-app">Mobile App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drive-ui">Drive UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-description">Feature Description</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#upload-and-download">Upload and Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigation">Navigation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#folder-creation">Folder Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-and-folder-naming">File and Folder naming</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing">Sharing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#item-deletion">Item Deletion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#infobox">InfoBox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-versioning">File Versioning</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-information">Technical information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#file-storage">File Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#volumes">Volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#urls-and-ports">URLs and Ports</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-drive-backup-and-hsm">Zextras Drive Backup and HSM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#backup">Backup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hsm">HSM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-the-drive-primary-volume">Setting the Drive Primary volume</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setting-the-drive-secondary-volume">Setting the Drive Secondary volume</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#briefcase-migration">Briefcase Migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-drive-cli">Zextras Drive CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Zextras Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Zextras Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #00506d" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Zextras Drive</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="zextras-drive">
+<h1><a class="toc-backref" href="#id30">Zextras Drive</a><a class="headerlink" href="#zextras-drive" title="Permalink to this headline"></a></h1>
+<dl class="field-list simple">
+<dt class="field-odd">Date</dt>
+<dd class="field-odd"><p>2021-10-20</p>
+</dd>
+</dl>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#zextras-drive" id="id30">Zextras Drive</a></p>
+<ul>
+<li><p><a class="reference internal" href="#introduction" id="id31">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#features" id="id32">Features</a></p>
+<ul>
+<li><p><a class="reference internal" href="#frontend" id="id33">Frontend</a></p></li>
+<li><p><a class="reference internal" href="#backend" id="id34">Backend</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#differences-between-briefcase-and-drive" id="id35">Differences between Briefcase and Drive</a></p></li>
+<li><p><a class="reference internal" href="#zimlet-installation" id="id36">Zimlet Installation</a></p></li>
+<li><p><a class="reference internal" href="#browser-compatibility" id="id37">Browser compatibility</a></p></li>
+<li><p><a class="reference internal" href="#mobile-app" id="id38">Mobile App</a></p></li>
+<li><p><a class="reference internal" href="#drive-ui" id="id39">Drive UI</a></p></li>
+<li><p><a class="reference internal" href="#feature-description" id="id40">Feature Description</a></p>
+<ul>
+<li><p><a class="reference internal" href="#upload-and-download" id="id41">Upload and Download</a></p></li>
+<li><p><a class="reference internal" href="#navigation" id="id42">Navigation</a></p></li>
+<li><p><a class="reference internal" href="#folder-creation" id="id43">Folder Creation</a></p></li>
+<li><p><a class="reference internal" href="#file-and-folder-naming" id="id44">File and Folder naming</a></p></li>
+<li><p><a class="reference internal" href="#sharing" id="id45">Sharing</a></p></li>
+<li><p><a class="reference internal" href="#item-deletion" id="id46">Item Deletion</a></p></li>
+<li><p><a class="reference internal" href="#infobox" id="id47">InfoBox</a></p></li>
+<li><p><a class="reference internal" href="#file-versioning" id="id48">File Versioning</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#technical-information" id="id49">Technical information</a></p>
+<ul>
+<li><p><a class="reference internal" href="#file-storage" id="id50">File Storage</a></p></li>
+<li><p><a class="reference internal" href="#volumes" id="id51">Volumes</a></p></li>
+<li><p><a class="reference internal" href="#urls-and-ports" id="id52">URLs and Ports</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#zextras-drive-backup-and-hsm" id="id53">Zextras Drive Backup and HSM</a></p>
+<ul>
+<li><p><a class="reference internal" href="#backup" id="id54">Backup</a></p></li>
+<li><p><a class="reference internal" href="#hsm" id="id55">HSM</a></p></li>
+<li><p><a class="reference internal" href="#setting-the-drive-primary-volume" id="id56">Setting the Drive Primary volume</a></p></li>
+<li><p><a class="reference internal" href="#setting-the-drive-secondary-volume" id="id57">Setting the Drive Secondary volume</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#briefcase-migration" id="id58">Briefcase Migration</a></p></li>
+<li><p><a class="reference internal" href="#zextras-drive-cli" id="id59">Zextras Drive CLI</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<span id="id1"></span><h2><a class="toc-backref" href="#id31">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>Zextras Drive is a new Zimbra component that provides both a fully
+fledged file storage system integrated with the Zimbra WebClient and a
+replacement to the old “Briefcase” component.</p>
+<blockquote>
+<div><p><strong>Warning</strong></p>
+<p>Zextras Drive is not compatible with Zimbra version 8.8.11 and lower.</p>
+</div></blockquote>
+</section>
+<section id="features">
+<span id="id2"></span><h2><a class="toc-backref" href="#id32">Features</a><a class="headerlink" href="#features" title="Permalink to this headline"></a></h2>
+<section id="frontend">
+<span id="id3"></span><h3><a class="toc-backref" href="#id33">Frontend</a><a class="headerlink" href="#frontend" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Upload, manage and download files</p></li>
+<li><p>Organize files within navigable folders</p></li>
+<li><p>Preview files</p></li>
+<li><p>Mark files as “preferred” for quick access</p></li>
+<li><p>Add custom notes (descriptions) to files</p></li>
+<li><p>Share files to internal users</p></li>
+<li><p>Share files to external users (NYI)</p></li>
+<li><p>Integration with Zimbra Docs</p></li>
+<li><p>File search</p></li>
+<li><p>Folder-based navigation</p></li>
+<li><p>Quick “stateful” navigation</p></li>
+</ul>
+</section>
+<section id="backend">
+<span id="id4"></span><h3><a class="toc-backref" href="#id34">Backend</a><a class="headerlink" href="#backend" title="Permalink to this headline"></a></h3>
+<ul class="simple">
+<li><p>Option to store files on dedicated Zimbra volumes</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">drive</span></code> CLI</p></li>
+</ul>
+</section>
+</section>
+<section id="differences-between-briefcase-and-drive">
+<span id="id5"></span><h2><a class="toc-backref" href="#id35">Differences between Briefcase and Drive</a><a class="headerlink" href="#differences-between-briefcase-and-drive" title="Permalink to this headline"></a></h2>
+<p>Zextras Drive does not follow the usual mailbox-driven behaviors when it
+comes to file storage, navigation, sharing, and item deletion. See each
+feature’s dedicated paragraph for a complete explanation of the
+differences and of the features themselves.</p>
+</section>
+<section id="zimlet-installation">
+<span id="id6"></span><h2><a class="toc-backref" href="#id36">Zimlet Installation</a><a class="headerlink" href="#zimlet-installation" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">com_zextras_drive</span></code> Zimlet can be deployed from the “Core” section
+of the Zextras Adminictration Zimlet.</p>
+<p>No configuration on the mailboxd side is needed after the Zimlet has
+been deployed and enabled.</p>
+</section>
+<section id="browser-compatibility">
+<span id="id7"></span><h2><a class="toc-backref" href="#id37">Browser compatibility</a><a class="headerlink" href="#browser-compatibility" title="Permalink to this headline"></a></h2>
+<p>The following list shows which browsers are known to fully support all
+Zextras features.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Browser</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>OS</p></th>
+<th class="head"><p>Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Microsoft
+Edge
+(Chromium)</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>Windows</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Microsoft
+Edge
+(Chromium)</strong></p></td>
+<td><p>Others</p></td>
+<td><p>Windows</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Microsoft
+Edge
+(EdgeHTML)</strong></p></td>
+<td><p>Any</p></td>
+<td><p>Windows</p></td>
+<td><p><img alt="times circle" src="images/icons/times-circle.png" />
+No</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Internet
+Explorer</strong></p></td>
+<td><p>Any</p></td>
+<td><p>Windows</p></td>
+<td><p><img alt="times circle" src="images/icons/times-circle.png" />
+No</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mozilla
+Firefox</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>Windows/Linux
+/OSX</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Mozilla
+Firefox</strong></p></td>
+<td><p>ESR</p></td>
+<td><p>Windows/Linux/O
+SX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Mozilla
+Firefox</strong></p></td>
+<td><p>Others</p></td>
+<td><p>Windows/Linux/O
+SX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>Google
+Chrome</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>Windows/Linux
+/OSX</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Google
+Chrome</strong></p></td>
+<td><p>Others</p></td>
+<td><p>Windows/Linux/O
+SX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Safari</strong></p></td>
+<td><p><strong>Latest</strong></p></td>
+<td><p><strong>OSX</strong></p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+<strong>Yes</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Safari</strong></p></td>
+<td><p>Others</p></td>
+<td><p>OSX</p></td>
+<td><p><img alt="check circle" src="images/icons/check-circle.png" />
+Limited</p></td>
+</tr>
+</tbody>
+</table>
+<p>Items marked as “<img alt="check circle" src="images/icons/check-circle.png" /> Limited” are only supported on the
+browser’s two previous stable releases.</p>
+</section>
+<section id="mobile-app">
+<span id="id8"></span><h2><a class="toc-backref" href="#id38">Mobile App</a><a class="headerlink" href="#mobile-app" title="Permalink to this headline"></a></h2>
+<p>A dedicated Zextras Drive mobile app is available for both Android and
+iOS.</p>
+<p><img alt="google play badge" src="_images/google-play-badge.png" /> <img alt="app store badge" src="_images/app_store-badge.png" /></p>
+</section>
+<section id="drive-ui">
+<span id="id9"></span><h2><a class="toc-backref" href="#id39">Drive UI</a><a class="headerlink" href="#drive-ui" title="Permalink to this headline"></a></h2>
+<p><img alt="Zextras Drive UI" src="_images/drive_ui.png" /></p>
+<ol class="arabic simple">
+<li><p>Quick Access navigation panel;</p></li>
+<li><p>Folder navigation panel;</p></li>
+<li><p>InfoBox control;</p></li>
+<li><p>New, Upload and Search features;</p></li>
+<li><p>Folder list;</p></li>
+<li><p>File list;</p></li>
+</ol>
+</section>
+<section id="feature-description">
+<span id="id10"></span><h2><a class="toc-backref" href="#id40">Feature Description</a><a class="headerlink" href="#feature-description" title="Permalink to this headline"></a></h2>
+<section id="upload-and-download">
+<span id="id11"></span><h3><a class="toc-backref" href="#id41">Upload and Download</a><a class="headerlink" href="#upload-and-download" title="Permalink to this headline"></a></h3>
+<p>To upload a file to Drive, either click on the “Upload” button above the
+file list or drag and drop any number of files from your computer to the
+main Drive window.</p>
+<p><img alt="Upload a file" src="_images/drive_upload.png" /></p>
+<p>To download a file from Drive, right-click on it and select “Download”:</p>
+<p><img alt="Download a file" src="_images/drive_download.png" /></p>
+<p>Any file and folder in Drive can be renamed by right-clicking on it and
+selecting the “Rename” option in the context menu.</p>
+</section>
+<section id="navigation">
+<span id="id12"></span><h3><a class="toc-backref" href="#id42">Navigation</a><a class="headerlink" href="#navigation" title="Permalink to this headline"></a></h3>
+<p>Briefcase items are part of the mailbox’s folder and item hierarchy,
+while Drive has its own internal folder structure and navigation.
+Navigating through Drive folders is done through the Navigation Bar on
+top of the UI instead of through a tree view and folders are visible in
+the main section of the UI above files.</p>
+<p><img alt="Navigate through folders and files" src="_images/drive_navigation.png" /></p>
+<p>On top of the standard folder-based navigation, a “Quick Access” menu is
+available on the left side of the UI, which allows to quickly view the
+following types of items: • “Preferred Items” – items marked with the
+“Star” option available in the right-click context menu; • “Recently
+Edited” – items edited recently, sorted from the most recently edited; •
+“Shared with me” – items shared by other users • “Shared by me” – items
+shared to other users • “Marked for deletion” – items marked for
+deletion</p>
+</section>
+<section id="folder-creation">
+<span id="id13"></span><h3><a class="toc-backref" href="#id43">Folder Creation</a><a class="headerlink" href="#folder-creation" title="Permalink to this headline"></a></h3>
+<p>To create a folder in Drive, click on the “New” button above the file
+list and select “Folder”:</p>
+<p><img alt="Create a new folder" src="_images/drive_newfolder.png" /></p>
+</section>
+<section id="file-and-folder-naming">
+<span id="id14"></span><h3><a class="toc-backref" href="#id44">File and Folder naming</a><a class="headerlink" href="#file-and-folder-naming" title="Permalink to this headline"></a></h3>
+<p>The following characters cannot be used in Drive folders and files:</p>
+<ul class="simple">
+<li><p>Slash - <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>Backslash - <code class="docutils literal notranslate"><span class="pre">\</span></code></p></li>
+<li><p>Semicolon - <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p>Question Mark - <code class="docutils literal notranslate"><span class="pre">?</span></code></p></li>
+<li><p>Plus sign - <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>Asterisk - <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+<li><p>Percent sign - <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+</ul>
+</section>
+<section id="sharing">
+<span id="id15"></span><h3><a class="toc-backref" href="#id45">Sharing</a><a class="headerlink" href="#sharing" title="Permalink to this headline"></a></h3>
+<p>Being separated from the mailbox’s item hierarchy, Drive files and
+folders can be shared independently. Sharing permissions can be chosen
+among 3 options: “View”, “Edit” and “Edit and Share” – the latter two
+options include the “View” right by default.</p>
+<p>To share a file or a folder, right-click on it and select “Edit Shares”.
+After entering the email address of the destination user and selecting
+the sharing permissions, click the (+) button to add the share to the
+list:</p>
+<p><img alt="Share an item (folder or file)" src="_images/drive_addshare.png" /></p>
+<p>To edit or delete a share, simply click on the dropdown permission
+selector to change the sharing permissions of the file/folder or click
+the trash bin icon to delete the share:</p>
+<p><img alt="Edit an existing share" src="_images/drive_editshare.png" /></p>
+<p>In Drive sharing rights are only “positive”, so it’s not possible to
+share an item with a lower permission than its parent, e.g. if a folder
+is shared with “Edit” permissions it’s not possible to share one of its
+items with “View” rights with the same person.</p>
+</section>
+<section id="item-deletion">
+<span id="id16"></span><h3><a class="toc-backref" href="#id46">Item Deletion</a><a class="headerlink" href="#item-deletion" title="Permalink to this headline"></a></h3>
+<p>When deleted, Drive items are not put into the Trash like every other
+item type in Zimbra, as such items are marked for deletion instead. To
+mark a file or a folder for deletion, right-click on it and select “Mark
+for Deletion”:</p>
+<p><img alt="Mark an item for deletion" src="_images/drive_deletefile.png" /></p>
+<p>Items marked for deletion are displayed on the bottom of the file list
+with a strikethrough line and can be deleted permanently clicking on the
+“Delete Permanently” entry within the right-click context menu of a file
+marked for deletion while the “Restore” entry will unmark the file:</p>
+<p><img alt="Restore or permanently delete a file" src="_images/drive_restorepermdelete.png" /></p>
+<p>While any user with “Edit” or “Edit and Share” rights on an item or
+folder can mark it for deletion, only the original owner can delete it
+permanently.</p>
+<p>Items marked for deletion cannot be accessed, so should a user try to do
+so a pop-up message will ask whether to restore the item and access it
+or to stop the attempt and leave it as marked for deletion.</p>
+</section>
+<section id="infobox">
+<span id="id17"></span><h3><a class="toc-backref" href="#id47">InfoBox</a><a class="headerlink" href="#infobox" title="Permalink to this headline"></a></h3>
+<p>The InfoBox is a collapsible element that contains all information and
+controls for the selected file or folder, as well as a preview of the
+file itself if in a compatible format (pictures, PDFs and more).</p>
+<p>To display the Infobox, click on the “(i)” button on the top-right of
+the Drive UI:</p>
+<p><img alt="Open the InfoBox" src="_images/drive_infobutton.png" /></p>
+<p>The infobox will appear on the right side of the screen:</p>
+<p><img alt="The InfoBox" src="_images/drive_infobox.png" /></p>
+<p>Top-to-bottom, the InfoBox contains:</p>
+<ul class="simple">
+<li><p>The name of the selected file</p></li>
+<li><p>The preview of the file (or a format icon for unsupported formats)</p></li>
+<li><p>All action items available in the right-click context menu</p></li>
+<li><p>Share information</p></li>
+<li><p>Creation and edit information</p></li>
+<li><p>A customizable “Description” field</p></li>
+</ul>
+</section>
+<section id="file-versioning">
+<span id="id18"></span><h3><a class="toc-backref" href="#id48">File Versioning</a><a class="headerlink" href="#file-versioning" title="Permalink to this headline"></a></h3>
+<p>File versioning keeps track of all the versions of files stored in
+{zdrivev2-name} and allows end users to recover and download previous
+file versions.</p>
+<p>To access the versioning menu of a file, simply right-click the file and
+select “File Versions” from the drop down menu.</p>
+<p><img alt="Access File Versioning" src="_images/drive_versioning_menu.png" /></p>
+<p><img alt="Drive Versioning Menu" src="_images/drive_versioning.png" /></p>
+<p>The File Versioning Menu lists all stored versions of a file, sorted by
+date descending, and allows to open, download or permanently store each
+single version through the “options” button on the right side of every
+entry. On top of this, it is also allows to upload a new version or to
+purge all existing versions using the “Upload Version” and “Purge
+Versions” buttons at the bottom of the window.</p>
+<blockquote>
+<div><p><strong>Note</strong></p>
+<p>Files can only be opened for editing if Zextras Docs is installed and
+the file type is supported.</p>
+</div></blockquote>
+<p>By default, Zimbra Drive will save 20 versions for each file for up to
+90 days. This can be changed by setting the following properties at
+global, COS or account level:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">driveMaxVersionRetentionDays</span></code>: maximum retention time in days.
+Value between 0 (no time limit) and 365. Default 90.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">driveMaxVersionNumber</span></code>: maximum number of versions to store. When
+reached, any newer version will replace the oldest one as in a FIFO
+queue. Value 0 (no limit) or higher. Default 20.</p></li>
+</ul>
+<p>E.g.</p>
+<ul class="simple">
+<li><p>To set the maximum retention duration to 120 at global level, run
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">global</span> <span class="pre">set</span> <span class="pre">attribute</span> <span class="pre">driveMaxVersionRetentionDays</span> <span class="pre">value</span> <span class="pre">120</span></code></p></li>
+<li><p>To set the maximum number of stored version to 5 for the
+<a class="reference external" href="mailto:user&#37;&#52;&#48;example&#46;com">user<span>&#64;</span>example<span>&#46;</span>com</a> account, run
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">account</span> <span class="pre">set</span> <span class="pre">user&#64;example.com</span>&#160; <span class="pre">attribute</span> <span class="pre">driveMaxVersionNumber</span> <span class="pre">value</span> <span class="pre">5</span></code></p></li>
+<li><p>To reset the maximum retention duration at global level, run
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">global</span> <span class="pre">empty</span> <span class="pre">attribute</span> <span class="pre">driveMaxVersionRetentionDays</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="technical-information">
+<span id="id19"></span><h2><a class="toc-backref" href="#id49">Technical information</a><a class="headerlink" href="#technical-information" title="Permalink to this headline"></a></h2>
+<section id="file-storage">
+<span id="id20"></span><h3><a class="toc-backref" href="#id50">File Storage</a><a class="headerlink" href="#file-storage" title="Permalink to this headline"></a></h3>
+<p>While Briefcase files are stored as mail-like items within the mailbox’s
+folder tree, Drive features a detached folder hierarchy based on nodes:
+thus, Drive folders do not appear as mailbox folders (e.g. in the output
+of <code class="docutils literal notranslate"><span class="pre">zmmailbox</span> <span class="pre">getAllFolders</span></code>). Drive metadata are stored in a
+dedicated HSQL Database while all files (including previous file
+versions and file previews) are stored in a dedicated folder within a
+volume’s root. File naming is now hash-based instead of id-based to
+achieve native deduplication, compression rules follow the volume’s
+settings</p>
+<p>e.g. Filesystem path for a briefcase file:
+/opt/zimbra/store/0/[mID]/msg/0/[itemid]-[revision].msg Filesystem path
+for a Drive file: /opt/zimbra/store/drive/[hash]-[revision].[extension]</p>
+</section>
+<section id="volumes">
+<span id="id21"></span><h3><a class="toc-backref" href="#id51">Volumes</a><a class="headerlink" href="#volumes" title="Permalink to this headline"></a></h3>
+<p>As of this release, Drive files are stored in the Current Primary volume
+as any other item.</p>
+<p>Integration with Zimbra Docs If the Zimbra Docs zimlet is correctly
+installed, dedicated document options will appear in the “New” button
+above the file list:</p>
+<p><img alt="Create documents with Zimbra Docs" src="_images/drive_docsintegration.png" /></p>
+<p>When right-clicking on a compatible file, an “Open with Docs” option
+will also appear:</p>
+<p><img alt="Open files stored in Drive with Docs" src="_images/drive_openwithdocs.png" /></p>
+<p>Furthermore, Zimbra Docs will also allow for previews of compatible
+document formats to be displayed in the InfoBox.</p>
+</section>
+<section id="urls-and-ports">
+<span id="id22"></span><h3><a class="toc-backref" href="#id52">URLs and Ports</a><a class="headerlink" href="#urls-and-ports" title="Permalink to this headline"></a></h3>
+<p>To build URLs and links (e.g. for External Shares) Zextras Drive uses
+the default Zimbra settings for the domain of the account in use - the
+<code class="docutils literal notranslate"><span class="pre">zimbraPublicServiceHostname</span></code> property is used for the URL itself
+while the <code class="docutils literal notranslate"><span class="pre">zimbraPublicServicePort</span></code> property is used for the port.</p>
+<p>Should any of the two not be set up, the system will always fall back to
+the <code class="docutils literal notranslate"><span class="pre">zimbraServiceHostname</span></code> and <code class="docutils literal notranslate"><span class="pre">zimbraMailPort</span></code> or
+<code class="docutils literal notranslate"><span class="pre">zimbraMailSSLPort</span></code> server-level properties.</p>
+</section>
+</section>
+<section id="zextras-drive-backup-and-hsm">
+<span id="id23"></span><h2><a class="toc-backref" href="#id53">Zextras Drive Backup and HSM</a><a class="headerlink" href="#zextras-drive-backup-and-hsm" title="Permalink to this headline"></a></h2>
+<section id="backup">
+<span id="id24"></span><h3><a class="toc-backref" href="#id54">Backup</a><a class="headerlink" href="#backup" title="Permalink to this headline"></a></h3>
+<p>Drive files are included in Backup, and both the RealTime Scanner and
+the SmartScan are aware of those and no additional actions must be taken
+in order to ensure the files’ safety.</p>
+<p>The Restore on New Account and External Restore modes will also restore
+Drive files, while other restore modes such as the Undelete Restore do
+not operate on such files.</p>
+</section>
+<section id="hsm">
+<span id="id25"></span><h3><a class="toc-backref" href="#id55">HSM</a><a class="headerlink" href="#hsm" title="Permalink to this headline"></a></h3>
+<p>Drive can store its data on a different volume than the default Current
+Primary one, and HSM policies can move Drive files onto a different
+volume than the Current Secondary one, thus effectively allowing
+independent storage management for Drive files.</p>
+<p>When an HSM policy is applied, Drive files will be handled under the
+“document” item type.</p>
+<p>This setting is applied at the server level so that different mailbox
+servers can use different volumes.</p>
+</section>
+<section id="setting-the-drive-primary-volume">
+<span id="id26"></span><h3><a class="toc-backref" href="#id56">Setting the Drive Primary volume</a><a class="headerlink" href="#setting-the-drive-primary-volume" title="Permalink to this headline"></a></h3>
+<p>To set the Drive Primary volume, first find out the volumeID of the
+target volume by running <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">hsm</span> <span class="pre">getAllVolumes</span></code>.</p>
+<p>Once the volumeID has been identified, simply run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zxsuite config server set `zmhostname` attribute driveStore value [volumeID]
+</pre></div>
+</div>
+<p>(where [volumeID] is the ID found with the previous command)</p>
+</section>
+<section id="setting-the-drive-secondary-volume">
+<span id="id27"></span><h3><a class="toc-backref" href="#id57">Setting the Drive Secondary volume</a><a class="headerlink" href="#setting-the-drive-secondary-volume" title="Permalink to this headline"></a></h3>
+<p>To set the Drive Secondary volume, find out the volumeID of the target
+volume as described in the previous paragraph and then run the following
+command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zxsuite config server set `zmhostname` attribute driveSecondaryStore value [volumeID]
+</pre></div>
+</div>
+</section>
+</section>
+<section id="briefcase-migration">
+<span id="id28"></span><h2><a class="toc-backref" href="#id58">Briefcase Migration</a><a class="headerlink" href="#briefcase-migration" title="Permalink to this headline"></a></h2>
+<p>Briefcase data can be migrated to Drive using the dedicated
+<code class="docutils literal notranslate"><span class="pre">doImportBriefcase</span></code> CLI command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@test:~$ zxsuite drive doImportBriefcase
+
+Syntax:
+   zxsuite drive doImportBriefcase {john@example.com,test.com[,...]} [attr1 value1 [attr2 value2...]]
+</pre></div>
+</div>
+<p>The command accepts a comma-separated list of targets to migrate, which
+can be either mailboxes or domains, and different target types can be
+used on the same command.</p>
+<p>The following attributes can be used to customize the migration:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>NAME</p></th>
+<th class="head"><p>TYPE</p></th>
+<th class="head"><p>EXPECTED
+VALUES</p></th>
+<th class="head"><p>DEFAULT</p></th>
+<th class="head"><p>DESCRIPTION</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>targets(M)</p></td>
+<td><p>String[,..]</p></td>
+<td><p><a class="reference external" href="mailto:john&#37;&#52;&#48;exampl">john<span>&#64;</span>exampl</a>
+e.com,test.
+com[,…​]</p></td>
+<td></td>
+<td><p>Comma
+separated
+list of
+targets to
+migrate</p></td>
+</tr>
+<tr class="row-odd"><td><p>dryRun(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true or
+false</p></td>
+<td><p>false</p></td>
+<td><p>Only
+perform a
+test run
+without
+affecting
+the data</p></td>
+</tr>
+<tr class="row-even"><td><p>allVersions
+(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true or
+false</p></td>
+<td><p>false</p></td>
+<td><p>Migrate all
+versions of
+every file</p></td>
+</tr>
+<tr class="row-odd"><td><p>deleteSourc
+es(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true or
+false</p></td>
+<td><p>false</p></td>
+<td><p>Delete
+migrated
+files from
+the
+Briefcase</p></td>
+</tr>
+<tr class="row-even"><td><p>overwrite(O
+)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true or
+false</p></td>
+<td><p>false</p></td>
+<td><p>Overwrite
+existing
+files</p></td>
+</tr>
+<tr class="row-odd"><td><p>showIgnored
+Accounts(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true or
+false</p></td>
+<td><p>false</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>ignoreQuota
+(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true or
+false</p></td>
+<td><p>false</p></td>
+<td><p>Ignore
+mailbox
+quota when
+migrating</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="zextras-drive-cli">
+<span id="id29"></span><h2><a class="toc-backref" href="#id59">Zextras Drive CLI</a><a class="headerlink" href="#zextras-drive-cli" title="Permalink to this headline"></a></h2>
+<p>This section contains the index of all <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">drive</span></code> commands. Full
+reference can be found in <a class="reference external" href="./cli.xml#_zxdrive_cli_commands">the dedicated
+section</a>.</p>
+<p><a class="reference external" href="./cli.xml#drive_doDeleteBriefcaseData">doDeleteBriefcaseData</a> |
+<a class="reference external" href="./cli.xml#drive_doDeployDriveZimlet">doDeployDriveZimlet</a> |
+<a class="reference external" href="./cli.xml#drive_doImportBriefcase">doImportBriefcase</a> |
+<a class="reference external" href="./cli.xml#drive_doRestartService">doRestartService</a> |
+<a class="reference external" href="./cli.xml#drive_doStartService">doStartService</a> |
+<a class="reference external" href="./cli.xml#drive_doStopService">doStopService</a> |
+<a class="reference external" href="./cli.xml#drive_dumpSessions">dumpSessions</a> |
+<a class="reference external" href="./cli.xml#drive_getServices">getServices</a> |
+<a class="reference external" href="./cli.xml#drive_monitor">monitor</a> |</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="admin.html" class="btn btn-neutral float-left" title="Zextras Admin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="docs.html" class="btn btn-neutral float-right" title="Zextras Docs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
