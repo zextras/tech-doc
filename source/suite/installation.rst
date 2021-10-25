@@ -1,17 +1,13 @@
+.. _install-guide:
+
 ================================
 Zextras Suite Installation Guide
 ================================
 
-:Date:   2021-10-20
-
-.. contents::
-   :depth: 3
-..
-
 This section contains various information—​requirements, configuration
-details, and guidelines—​for a successful installation of Zextras Suite.
-Please read carefully next section, `Basic Information <#basic-info>`_,
-to make sure you do not miss any important piece required to set up
+details, and guidelines—​for a successful installation of Zextras
+Suite.  Please read carefully next section, :ref:`basic-info`, to
+make sure you do not miss any important piece required to set up
 Zextras Suite.
 
 .. _basic-info:
@@ -29,14 +25,14 @@ by a standard Zimbra deployment is necessary in order to install Zextras
 Suite. If you did not yet install Zimbra, you can check `Zimbra’s System
 Requirements <https://zimbra.github.io/installguides/latest/single.html#System_Requirements>`_.
 
-If you plan to use either `./drive.xml <./drive.xml>`_,
-`./team.xml <./team.xml>`_, or both, you need some additional setup.
+If you plan to use either :doc:`drive`,
+:doc:`team`, or both, you need some additional setup.
 These two apps, indeed, need to communicate using web sockets on ports
 **tcp 8742** and **tcp 8743** respectively, therefore you need to edit
 file ``/opt/zimbra/conf/nginx/includes/nginx.conf.web`` to include the
 following code.
 
-::
+.. code:: nginx
 
    upstream zx
        {
@@ -52,12 +48,8 @@ following code.
 
 -  replace *mail.example.com* with your server.
 
-..
-
-   **Note**
-
-   In the reminder of this installation guide, all commands **must** be
-   executed as ``root``, unless differently specified
+.. note:: In the reminder of this installation guide, all commands
+   **must** be executed as ``root``, unless differently specified
 
 .. _minimum_requirements_and_tweaking:
 
@@ -91,17 +83,14 @@ Installation possibilities
 These are the alternatives to install Zextras:
 
 -  single-store installation on a single server. This is the easiest and
-   is described in Section `Quick Installation
-   Guide <#quick-installation>`_.
+   is described in Section :ref:`quick-installation`.
 
 -  single-store installation on a multiserver. This approach is
    equivalent to the previous one and applies when the installation is
-   in a multiserver installation, see `Installing Zextras Suite on a
-   Single-store infrastructure <#setup-single-store>`_.
+   in a multiserver installation, see :ref:`setup-single-store`.
 
--  multistore installation: This approach is required if yuo need to ru
-   multiple ``mailboxd`` services, see `Installing Zextras Suite on a
-   Multistore infrastructure <#setup-multiserver>`_
+-  multistore installation. This approach is required if you need to run
+   multiple ``mailboxd`` services, see :ref:`setup-multiserver`.
 
 .. _components:
 
@@ -118,7 +107,7 @@ Zextras Suite is comprised of three major components:
    the Core.
 
 -  **ZAL** - An Open Source abstraction layer for Zimbra. Please read
-   `these advises <#setup-zal>`_ about ZAL insallation.
+   :ref:`these advises <setup-zal>` about ZAL insallation.
 
 The installation script follows the aforementioned structure allowing
 you three installation targets: **core**, **zimlet**, and **all**. The
@@ -132,8 +121,7 @@ Other Zextras Zimlets
 
 While the Zextras Suite package includes the Zextras Administration
 Zimlet, the Zextras Client Zimlet must be deployed separately. Check
-section `Zxclient <#zxclient>`_ at the bottom of this page for
-directions
+section :ref:`zxclient` at the bottom of this page for directions
 
 .. _where_to_get_the_zextras_suite_package:
 
@@ -169,14 +157,12 @@ Zextras Suite package, but during the installation process the *Zextras
 Installer* will automatically detect the most appropriate library
 version and will download and install it autonomously.
 
-   **Note**
-
-   Should the automatic download fail, the installation will end.
-   However, a direct download link will be provided: the downloaded file
-   must be renamed to **zal.jar** and copied into the *packages/*
-   subdirectory of the Zextras Suite installation package. A restart of
-   the installer will detect the new file and install it along with
-   Zextras Suite.
+.. note:: Should the automatic download fail, the installation will
+   end. However, a direct download link will be provided: the
+   downloaded file must be renamed to **zal.jar** and copied into the
+   *packages/* subdirectory of the Zextras Suite installation
+   package. A restart of the installer will detect the new file and
+   install it along with Zextras Suite.
 
 .. _dos-filter:
 
@@ -216,85 +202,77 @@ Managing the DoS Filter
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 There are 3 different configuration properties controlling the DoS
-Filter:
-
--  `zimbraHttpDosFilterDelayMillis <#dosfilter-delay>`_
-
--  `zimbraHttpDosFilterMaxRequestsPerSec <#dosfilter-mrs>`_
-
--  `zimbraHttpThrottleSafeIPs <#dosfilter-wl>`_
-
-Each attribute is inherited from global or is configurable at the server
+Filter. Each attribute is inherited from global or is configurable at the server
 level.
 
-   **Tip**
+.. hint:: The recommendation is to preserve the default configuration
+   whenever possible.
 
-   The recommendation is to preserve the default configuration whenever
-   possible.
+.. grid::
+   :gutter: 3
 
-**DoSFilter Delay (milliseconds) - zimbraHttpDosFilterDelayMillis.**
+   .. grid-item-card:: **DoSFilter Delay (milliseconds) - zimbraHttpDosFilterDelayMillis**
 
-Delay is enforced on all requests over the rate limit, before they are
-considered at all.
+      Delay is enforced on all requests over the rate limit, before they are
+      considered at all.
 
--  **-1** = Reject request
+      -  **-1** = Reject request
 
--  **0** = No delay
+      -  **0** = No delay
 
--  **Any** other integer value = Delay in ms
+      -  **Any** other integer value = Delay in ms
 
-The default is *-1*.
+      The default is *-1*.
 
-To modify in the global configuration (e.g. set the delay to 20ms):
+      To modify in the global configuration (e.g. set the delay to 20ms):
 
-::
+      ::
 
-   zmprov mcf zimbraHttpDosFilterDelayMillis 20
+         zmprov mcf zimbraHttpDosFilterDelayMillis 20
 
-**DoSFilter Maximum Requests Per Second -
-zimbraHttpDosFilterMaxRequestsPerSec.**
+   .. grid-item-card:: **DoSFilter Maximum Requests Per Second -
+      zimbraHttpDosFilterMaxRequestsPerSec**
 
-Maximum number of requests per second from a connection. All requests in
-excess of this value are throttled. The default is 30 and the minimum is
-1.
+      Maximum number of requests per second from a connection. All requests in
+      excess of this value are throttled. The default is 30 and the minimum is
+      1.
 
-To set the maximum number for requests in the global configuration:
+      To set the maximum number for requests in the global configuration:
 
-::
+      ::
 
-   zmprov mcf zimbraHttpDosFilterMaxRequestsPerSec 100
+         zmprov mcf zimbraHttpDosFilterMaxRequestsPerSec 100
 
-**DoSFilter IP Addresses Whitelist - zimbraHttpThrottleSafeIPs.**
+   .. grid-item-card:: **DoSFilter IP Addresses Whitelist -
+      zimbraHttpThrottleSafeIPs**
 
-IP addresses to ignore when applying Jetty DosFilter. While this
-attribute does not have a default value, nonetheless these loopback IPs
-are whitelisted by default:
+      IP addresses to ignore when applying Jetty DosFilter. While this
+      attribute does not have a default value, nonetheless these loopback IPs
+      are whitelisted by default:
 
--  127.0.0.1
+      -  127.0.0.1
 
--  ::1
+      -  ::1
 
--  0:0:0:0:0:0:0:1
+      -  0:0:0:0:0:0:0:1
 
--  All mailboxd servers
+      -  All mailboxd servers
 
-You can check if these hosts have been correctly whitelisted by the log
-entry in ``/opt/zimbra/log/mailbox.log``. This log entry should contain
-all of the default whitelisted hosts as well as any IPs added to
-**zimbraHttpThrottleSafeIPs**:
+      You can check if these hosts have been correctly whitelisted by the log
+      entry in ``/opt/zimbra/log/mailbox.log``. This log entry should contain
+      all of the default whitelisted hosts as well as any IPs added to
+      **zimbraHttpThrottleSafeIPs**:
 
-::
+      ::
 
-   2021-03-09 10:33:47,772 INFO  [main] [] misc - DoSFilter: Configured
-   whitelist IPs = 192.168.234.130,127.0.0.1,::1,0:0:0:0:0:0:0:1
+         2021-03-09 10:33:47,772 INFO  [main] [] misc - DoSFilter: Configured
+         whitelist IPs = 192.168.234.130,127.0.0.1,::1,0:0:0:0:0:0:0:1
 
-See how to add single IP addresses or IP ranges in the `examples
-below <#dosfilter-examples>`_.
+      See how to add single IP addresses or IP ranges in the
+      :ref:`example below <dosfilter-example>`.
 
-   **Note**
-
-   Proxy nodes should not need to be whitelisted, as long as the
-   *Originating-IP feature* is correctly configured in ZCS, see
+.. note:: Proxy nodes should not need to be whitelisted, as long as
+   the *Originating-IP feature* is correctly configured in ZCS, see
    https://wiki.zimbra.com/wiki/Log_Files#Logging_the_Originating_IP.
 
 External hosts that makes SOAP requests for provisioning or any kind of
@@ -310,34 +288,34 @@ for more information and directions.
 IP addresses should be supplied in the multi-valued
 **zimbraHttpThrottleSafeIPs** attribute.
 
-   **Tip**
+.. hint:: Add to **zimbraHttpThrottleSafeIPs** your private networks
+   and/or IP addresses behind which lay multiple clients.
 
-   Add to **zimbraHttpThrottleSafeIPs** your private networks and/or IP
-   addresses behind which lay multiple clients.
+.. _dosfilter-example:
 
-**Examples in ZCS 8.7 or above**
+.. topic:: :octicon:`comment` Examples in ZCS 8.7 or above**
 
-The following command adds a single IP and an IP range too
-**zimbraHttpThrottleSafeIPs**:
+   The following command adds a single IP and an IP range too
+   **zimbraHttpThrottleSafeIPs**:
 
-::
+   ::
 
-   zmprov mcf zimbraHttpThrottleSafeIPs 192.168.234.130/32 zimbraHttpThrottleSafeIPs 192.168.4.0/24
+      zmprov mcf zimbraHttpThrottleSafeIPs 192.168.234.130/32 zimbraHttpThrottleSafeIPs 192.168.4.0/24
 
-To append the values to an existing list of multi-valued
-**zimbraHttpThrottleSafeIPs**:
+   To append the values to an existing list of multi-valued
+   **zimbraHttpThrottleSafeIPs**:
 
-::
+   ::
 
-   zmprov mcf +zimbraHttpThrottleSafeIPs 192.168.234.130/32
-   zmprov mcf +zimbraHttpThrottleSafeIPs 192.168.4.0/24
+      zmprov mcf +zimbraHttpThrottleSafeIPs 192.168.234.130/32
+      zmprov mcf +zimbraHttpThrottleSafeIPs 192.168.4.0/24
 
-All of this properties require a mailboxd service restart in order for
-any change to be applied
+   All of this properties require a mailboxd service restart in order for
+   any change to be applied
 
-::
+   ::
 
-   zmmailboxdctl restart
+      zmmailboxdctl restart
 
 .. _oip-logging-issue:
 
@@ -363,13 +341,13 @@ load balancer only. To see the original IP address of the client, the
 
 Here the values form a comma-separated list of the IP addresses:
 
--  the left-most (<client>) is the original client IP address
+-  the left-most (`<client>`) is the original client IP address
 
--  each successive IP address (<ext-proxy1>, <ext-proxy2>, …​) is a
+-  each successive IP address (`<ext-proxy1>`, `<ext-proxy2>`, ...) is a
    proxy that passed the request, adding the IP address where it
    received the request from.
 
--  the right-most IP address (<ext-proxyN>) is the IP address of the
+-  the right-most IP address (`<ext-proxyN>`) is the IP address of the
    most recent proxy
 
 Sample log entries:
@@ -391,14 +369,11 @@ Sample log entries:
 -  ``yyy.yyy.yyy.yyy`` is the First Proxy server which will send request
    to another proxy server or the destination server.
 
-..
-
-   **Note**
-
-   If there are multiple proxy servers, then the left most will always
-   be the IP address of the Originating client. If there is only one
-   proxy server which forwards request directly to destination server,
-   then OIP will have only one entry (i.e. for Originating client IP).
+.. note:: If there are multiple proxy servers, then the left-most will
+   always be the IP address of the Originating client. If there is
+   only one proxy server which forwards request directly to
+   destination server, then OIP will have only one entry (i.e. for
+   Originating client IP).
 
 .. _nginx-templates-oip:
 
@@ -407,9 +382,7 @@ Modify Nginx Templates Files for Correct OIP Logging
 
 In order to properly log the OIP, Nginx templates must be modified.
 
-   **Warning**
-
-   These commands must be run as the **ROOT** user!
+.. warning:: These commands must be run as the **ROOT** user!
 
 First, take a backup of existing Nginx conf directory.
 
@@ -425,12 +398,8 @@ Next, replace ``$proxy_add_x_forwarded_for`` with
 
    sed -i 's/$proxy_add_x_forwarded_for/$http_x_forwarded_for/g' /opt/zimbra/conf/nginx/templates/*
 
-..
-
-   **Tip**
-
-   Replacement must be checked and reapplied after every patch or zimbra
-   proxy realated installation or upgrade.
+.. hint:: Replacement must be checked and reapplied after every patch
+   or zimbra proxy realated installation or upgrade.
 
 Finally, restart the proxy service.
 
@@ -438,12 +407,10 @@ Finally, restart the proxy service.
 
    zmproxyctl restart
 
-..
+.. note:: If multiple zimbra-proxy servers present in the setup, then
+   make these changes on *all* zimbra-proxies.
 
-   **Note**
-
-   If multiple zimbra-proxy servers present in the setup, then make
-   these changes on *all* zimbra-proxies.
+.. _zimbra_upgrade:
 
 Zimbra Upgrade
 --------------
@@ -454,12 +421,10 @@ data and settings will be maintained, therefore after re-installing the
 Zextras Suite, the set up will be exactly the same as before the Zimbra
 upgrade.
 
-   **Warning**
-
-   Before upgrading your Zimbra server, please make sure that a
-   compatible Zextras Suite version has been released. A Zextras Suite
-   *compatibility release* is usually available within **48** hours
-   after the release of a new Zimbra version.
+.. warning:: Before upgrading your Zimbra server, please make sure
+   that a compatible Zextras Suite version has been released. A
+   Zextras Suite *compatibility release* is usually available within
+   **48** hours after the release of a new Zimbra version.
 
 .. _zimbra_patches:
 
@@ -564,11 +529,10 @@ options:
    * In order to use Zextras Suite, both
    * Core and Zimlet need to be installed.
 
-A Zextras Theme is automatically installed during a `Zextras Suite Full
-Installation <#zx-full-install>`_ or `Zextras Suite Full
-Upgrade <#zx-full-upgrade>`_, but also a standalone
-``zextras-theme-installer`` script can be used to install an updated
-version of the theme.
+A Zextras Theme is automatically installed during a
+:ref:`zx-full-install` or :ref:`zx-full-upgrade`, but also a
+standalone ``zextras-theme-installer`` script can be used to install
+an updated version of the theme.
 
 In order to successfully perform the Zextras suite installation, one
 shall need to either become the ``root`` user or execute the script with
@@ -578,11 +542,9 @@ Once launched, the script will determine the installed Zimbra version
 and search for a preexisting installation of either Zextras Suite or
 Zextras Migration Tool.
 
-   **Warning**
-
-   Should any component of Zextras Migration Tool be detected, you will
-   be prompted to uninstall them and run again the Zextras Suite
-   installation script afterwards.
+.. warning:: Should any component of Zextras Migration Tool be
+   detected, you will be prompted to uninstall them and run again the
+   Zextras Suite installation script afterwards.
 
 Before proceeding with the installation, you will be required to accept
 the EULA of Zextras, after which the actual installation shall take
@@ -597,9 +559,9 @@ In order to install Zextras Suite you need both Core and Zimlet to be
 correctly deployed and operational. By choosing **all** as target, Core
 and Zimlet will be installed in order, in one go.
 
-Full installation:
-
-``$ ./install.sh all``
+Full installation::
+  
+  ./install.sh all
 
 You will need to restart Zimbra after the installation has successfully
 completed. The script itself will prompt you to do so.
@@ -616,17 +578,15 @@ Afterwards, the script will carry out a series of checks, including for
 previous installation of Zextras Core and if needed, it will install the
 jar file among the Zimbra extensions.
 
-Core-only installation:
+Core-only installation::
 
-``$ ./install.sh core``
+  ./install.sh core
 
 Once the Core has been deployed, Zimbra must be restarted to verify the
 former’s correct operation.
 
-   **Note**
-
-   If you are using the **all** target to install both Core and Zimlet,
-   the script itself will prompt to start Zimbra.
+.. note:: If you are using the **all** target to install both Core and
+   Zimlet, the script itself will prompt to start Zimbra.
 
 .. _zx-zimlet-install:
 
@@ -653,8 +613,8 @@ In case of an existing instance of Zextras Suite on your system, the
 installation of a newer version will automatically perform an upgrade.
 Please refer to the instructions above for the installation procedure.
 
-If you just upgraded your Zimbra installation, please see the `Zimbra
-Upgrade <#zimbra-upgrade>`_ section above.
+If you just upgraded your Zimbra installation, please see the
+:ref:`zimbra-upgrade` section above.
 
 .. _upgrading_zextras_suite_on_a_multiserver_infrastructure:
 
@@ -705,10 +665,9 @@ latter task can be carried out by running the command:
 
 as the **zimbra** user.
 
-   **Note**
-
-   While the Zextras Suite package includes the Zextras Administration
-   Zimlet, the *Zextras Client Zimlet* must be deployed separately.
+.. note:: While the Zextras Suite package includes the Zextras
+   Administration Zimlet, the *Zextras Client Zimlet* must be deployed
+   separately.
 
 .. _additional_components:
 
