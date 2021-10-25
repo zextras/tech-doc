@@ -18,11 +18,7 @@ pipeline {
       stage('Build Sphinx with Docker') {
         steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
-           script {
-              env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt -v ${WORKSPACE}:/docs sphinx_builder').trim()
-            }
-            sh "docker exec -t ${env.CONTAINER_ID} pwd;ls source/suite/"
-            sh "docker exec -w /docs ${env.CONTAINER_ID} sh doc_build_all.sh"
+           sh 'docker run -dt -v ${WORKSPACE}:/docs sphinx_builder python -m sphinx source/suite/ build/suite/'
                           }
                }
 
