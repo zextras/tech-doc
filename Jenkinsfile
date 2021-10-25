@@ -14,16 +14,10 @@ pipeline {
         SOURCE_DIR  = './source'
         WORKSPACE = pwd()
     }
-    stages {
-      stage('Install dependencies') {
-        steps {
-            sh 'docker build -f Dockerfile -t sphinx_builder .'   
-                          }
-               }               
-
-               
+    stages {               
       stage('Build Sphinx with Docker') {
         steps {
+           sh 'docker build -f Dockerfile -t sphinx_builder .'
            script {
               env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt -v ${WORKSPACE}:/docs sphinx_builder ').trim()
             }
