@@ -12,6 +12,8 @@ Here you can find a description of its functionalities and configuration options
    general
    installation
    backup
+   restorestrategies
+   advancedbackup
    mobile 
    powerstore
    admin
