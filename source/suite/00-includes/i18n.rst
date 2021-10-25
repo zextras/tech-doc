@@ -1,9 +1,5 @@
-..
-
-   **Warning**
-
-   Product and Translation is still in beta stage. Incomplete or
-   imperfect translations are to be expected.
+.. warning:: Product and Translation is still in beta
+   stage. Incomplete or imperfect translations are to be expected.
 
 .. _product_localisation:
 
@@ -31,6 +27,7 @@ are also included:
    "Dutch", "Turkish", "Russian"
    "Thai", "Hindi", "Indonesian" 
    "Japanese", "Simplified Chinese", ""
+
 
 This includes both the Client components (Drive, Team and Docs Zimlets,
 plus the Client Zimlet and any other collateral client entity) and, to
