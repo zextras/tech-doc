@@ -10,8 +10,8 @@ pipeline {
   	}
     environment {
         SPHINX_DIR  = '.'
-        BUILD_DIR   = './build'
-        SOURCE_DIR  = './source'
+        BUILD_DIR   = 'build'
+        SOURCE_DIR  = 'source'
         WORKSPACE = pwd()
     }
     stages {               
