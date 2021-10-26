@@ -18,7 +18,7 @@ pipeline {
       stage('Build Sphinx with Docker') {
         steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
-           sh 'docker run --rm -v $(pwd)/source/suite:/docs/source/suite sphinx_builder ls -latr source;chown -R agent:agent source/suite;ls -latr source/suite;sh make html'
+           sh 'docker run --rm -v $(pwd)/source/suite:/docs/source/suite sphinx_builder ls -latr source;chown -R agent:agent source/suite;ls -latr source/suite;whereis python'
                           }
                }
 
