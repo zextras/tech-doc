@@ -1,3 +1,4 @@
+
 ==============
 Zextras Backup
 ==============
@@ -15,11 +16,9 @@ Finally, the available options to periodically store and check the data
 backed up are presented. All sections are accompanied with the
 corresponding Command Line Reference.
 
-.. important:: `Restore Strategies
-   <restorestrategies.xml#backup-restore-strategies>`_ for the Backup
-   and `Advanced Backup Techniques
-   <advancedbackup.xml#backup-advanced-techniques>`_, including
-   Disaster Recovery, have now a dedicated chapter.
+.. important:: :doc:`Restore Strategies <restorestrategies>` for the
+   Backup and :doc:`Advanced Backup Techniques <advancedbackup>`,
+   including Disaster Recovery are in dedicated chapters.
 
 .. seealso:: Community Article
 
@@ -55,49 +54,49 @@ up.
 -  Set the correct permission on the backup path: ``chown zimbra:zimbra
    /opt/zimbra/backup/zextras``
 
+.. _img-backup-console:
+
 .. figure:: /img/backup-ui.png
    :alt: Zextras Backup Admin Console
 
    Zextras Backup Admin Console
 
-You can optionally customise some of the Zextras Backup options shown in
-Figure `figure_title <#img-backup-console>`_, for example:
+.. topic:: :octicon:`comment` Basic Customisation of Backup
+              
+   You can optionally customise some of the Zextras Backup options that
+   appear in :numref:`img-backup-console`, like the full path for backups,
+   which can be achieved also with the following command.
 
--  Change the backup path. You can modify the full path for backups
-   either from the admin console (see screenshot of Figure
-   `figure_title <#img-backup-console>`_), or from the command line,
-   for example:
+   .. code:: console
 
-.. code:: console
+      zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/zimbra-backup
 
-   zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/zimbra-backup
+   - Backup Zimbra customisations. With this option, configuration and
+     other changes made to Zimbra are saved in a separate file named
+     ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
+     represents the date when the backup was created, while ``xx_xx``
+     is an identifier. The archive contains the full configuration of
+     zimbra: crontab, nginx webserver, postfix and antivirus, LDAP
+     connection, Zimbra templates, and more.
 
--  Backup Zimbra customisations. With this option, configuration and
-   other changes made to Zimbra are saved in a separate file named
-   ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
-   represents the date when the backup was created, while ``xx_xx`` is
-   an identifier. The archive contains the full configuration of zimbra:
-   crontab, nginx webserver, postfix and antivirus, LDAP connection,
-   Zimbra templates, and more.
+   - Enable the :ref:`real_time_scan`, by clicking the
+     :bdg-secondary:`Enable` button in the *RealTime Scanner* box
 
--  Enable the `Real Time
-   Scan <./architecture.xml#<emphasis>smartscan_and_real_time_scan>`_,
-   by clicking the Enable button in the \_RealTime Scanner</emphasis>
-   box
 
--  Once you have specified the backup path, it must be initialised, an
-   operation that can be done either from the admin console or the
-   command line. In the first case, click on the Initialize NOW! button
-   on the top right corner of Figure
-   `figure_title <#img-backup-console>`_ screenshot. From the CLI,
-   initialization is done by simply starting
-   `SmartScan <./cli.xml#backup_doSmartScan>`_ for the first time:
-   ``zxsuite backup doSmartScan start``
+Once you have specified the backup path, it must be initialised, an
+operation that can be done either from the admin console or the
+command line. In the first case, click on the
+:bdg-secondary:`Initialize NOW!` button on the top right corner of
+:numref:`img-backup-console`. From the CLI, initialization is done by
+simply :ref:`starting SmartScan <running_a_smartscan>` for the first
+time: ``zxsuite backup doSmartScan start``
 
 .. hint:: To avoid a flood of notifications about running operations,
    it is suggested to lower the default *Notification level* from
    **Information** to one of **Warning**, **Error**, or **Critical**
-   (see Figure `figure_title <#img-backup-notification>`_).
+   (see :numref:`img-backup-notification`).
+
+.. _img-backup-notification:
 
 .. figure:: /img/backup-notification-level.png
    :alt: Zextras Backup Notification Level
@@ -190,8 +189,8 @@ Examples of metadata associated to an item include:
 -  the change of status of an item (e.g, an account)
 
 Technically, an item is stored as a **JSON** Array containing all
-changes in the item’s lifetime. More about this in the `Structure of an
-Item <#_structure_of_an_item>`_ section.
+changes in the item’s lifetime. More about this in the
+:ref:`structure_of_an_item` section.
 
 A **Deleted Item** is an item that has been marked for removal.
 
@@ -205,13 +204,12 @@ A **Deleted Item** is an item that has been marked for removal.
 Transaction
 -----------
 
-A **Transaction** is a change of state of an item. With change of state
-we mean that one of the metadata associated with an item is modified by
-a user. Therefore, a **Transaction** can be seen as a photography of the
-metadata in a moment in time. Each transaction is uniquely identified by
-a **Transaction ID**. It is possible to restore an item to any past
-transaction. See more in section
-`restorestrategies.xml <restorestrategies.xml>`_.
+A **Transaction** is a change of state of an item. With change of
+state we mean that one of the metadata associated with an item is
+modified by a user. Therefore, a **Transaction** can be seen as a
+photography of the metadata in a moment in time. Each transaction is
+uniquely identified by a **Transaction ID**. It is possible to restore
+an item to any past transaction. See more in :doc:`restorestrategies`.
 
 .. _smartscan_and_real_time_scan:
 
@@ -249,6 +247,11 @@ they are intended to complement each other.
 
 .. warning:: If none of the two Scan Operations is active, no backup
    is created.
+
+.. _backup_disable_scans:
+
+When to Disable Scan Operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Backups are written on disk, therefore the Scan operations result in I/O
 disk access. Therefore, there are a number of scenarios in which either
@@ -342,8 +345,8 @@ The Backup Path can be set both via GUI and via CLI:
 -  Via GUI: in the "Backup" section of the Zextras Administration
    Zimlet, under "Backup Path".
 
--  Via CLI: using the `config server <../cli.xml#config_server>`_
-   command to change the ``ZxBackup_DestPath`` config key.
+- Via CLI: using the :ref:`config_server` command to change the
+  ``ZxBackup_DestPath`` config key.
 
 .. warning:: Backup paths are unique and not reusable. Copying a
    Backup Path to a new server and setting it as its current Backup
@@ -399,11 +402,12 @@ modified since the last SmartScan run, the **Coherency Check** carries
 out a thorough check of all metadata and BLOBs in the Backup Path.
 
 To start a Coherency Check via the CLI, use the
-`doCoherencyCheck <../cli.xml#backup_doCoherencyCheck>`_ command:
+:ref:`backup_doCoherencyCheck` command:
 
-Quick reference
+.. Quick reference -- Need to find a replacement (admonition?) for
+   these containers
 
-.. container:: informalexample
+.. code:: console
 
    zxsuite backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
 
@@ -436,7 +440,7 @@ order to be eligible to be used as the Backup Path, a directory must:
 -  Use a case sensitive filesystem.
 
 .. hint:: You can modify the default setting by using either technique
-   shown in `Setting the Backup Path <#setting-backup-path>`_.
+   shown in section :ref:`setting-backup-path`.
 
 When first started, Zextras Backup launches a SmartScan, to fetch from
 the mailbox all data and create the initial backup structure, in which
@@ -481,11 +485,11 @@ the validity of the old and the new digest.
 Backup of Team Database
 -----------------------
 
-`Zextras Team <team.xml>`_ is an instant messaging platform with a
-number of features, including file sharing, Web conferencing, and more.
-Since Team keeps track of everything (uploaded files, chat, and so on),
-its database can grow quickly to a large size: This slows down any
-Backup operations and is not usable for a restore operation.
+:doc:`team` is an instant messaging platform with a number of
+features, including file sharing, Web conferencing, and more.  Since
+Team keeps track of everything (uploaded files, chat, and so on), its
+database can grow quickly to a large size: This slows down any Backup
+operations and is not usable for a restore operation.
 
 For this reason, the backup of Team’s DB has been disabled by default.
 An Administrator may enable it, in theory, **but only after having
@@ -536,26 +540,29 @@ broken LDAP configuration.
    ignore to back up the LDAP configuration, but will nonetheless save
    a backup of all the remaining configuration
 
-When the Backup on External Volume functionality is active, SmartScan
+When the  External Restore functionality is active, SmartScan
 creates one (daily) archive for each account which include all the
 account’s metadata and stores it on the external volume. More
-information in section `??? <#external-backup>`_.
+information in section :ref:`backup_on_external_storage`.
 
 .. _when_is_a_smartscan_executed:
 
 When is a SmartScan Executed?
 -----------------------------
 
--  When the Zextras Backup module is started.
+- When the Zextras Backup module is started.
 
-.. note:: While it is possible to enable this option, it is suggested
-   to leave it disabled, because in certain situations, running
-   SmartScan at every module restart can become a performance
-   bottleneck, as it has been `discussed previously
-   <#disable-scan>`_. \* Daily, if the Scan Operation Scheduling is
-   enabled in the Administration Zimlet \* When the Real Time Scanner
-   is re-enabled via the Administration Zimlet after being previously
-   disabled
+  .. note:: While it is possible to enable this option, it is
+     suggested to leave it disabled, because in certain situations,
+     running SmartScan at every module restart can become a
+     performance bottleneck, as it has been discussed in section
+     :ref:`backup_disable_scans`.
+
+- Daily, if the Scan Operation Scheduling is enabled in the
+  Administration Zimlet
+
+- When the Real Time Scanner is re-enabled via the Administration
+  Zimlet after being previously disabled
 
 .. _running_a_smartscan:
 
@@ -574,19 +581,19 @@ To start a SmartScan via the Administration Zimlet,
 -  If a multiserver installation, choose the server on which to run the
    SmartScan
 
--  Click on the Zextras Backup tab
+-  Click  the Zextras Backup tab
 
--  Click on ``Run Smartscan``
+-  Click  :bdg-secondary:`Run Smartscan`
 
 .. _starting_the_smartscan_via_the_cli:
 
 Starting the SmartScan via the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To start a SmartScan via the CLI, use the
-`doSmartScan <../cli.xml#backup_doSmartScan>`_ command:
+To start a SmartScan via the CLI, use the :ref:`backup_doSmartScan`
+command:
 
-.. container:: informalexample
+.. code:: console
 
    zxsuite backup doSmartScan *start* [param VALUE[,VALUE]]
 
@@ -596,18 +603,17 @@ Checking the Status of a Running Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before actually carrying out this check, it is suggested to verify how
-many operations are running, to find the correct id. you can do this by
-using the `getAllOperations <../cli.xml#backup_getAllOperations>`_
-command:
+many operations are running, to find the correct id. you can do this
+by using the :ref:`backup_getalloperations` command.
 
-.. container:: informalexample
+.. code:: console
 
    zxsuite backup getAllOperations [param VALUE[,VALUE]]
 
 To check the status of a running scan via the CLI, use the
-`monitor <../cli.xml#backup_monitor>`_ command:
+:ref:`backup_monitor` command:
 
-.. container:: informalexample
+.. code:: console
 
    zxsuite backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
@@ -657,7 +663,7 @@ Via the Administration Zimlet
 
 -  Select the Zextras Backup Tab.
 
--  Under Real Time Scanner, press the ``Enable`` button.
+-  Under Real Time Scanner, press the :bdg-secondary:`Enable` button.
 
 .. note:: When the Real Time Scanner is enabled for the first time or
    re-enabled after a stop, a SmartScan is required. A warning will be
@@ -671,9 +677,7 @@ Via the CLI
 
 To enable the Real Time Scanner via the CLI, the
 ``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
-be set to ``true``:
-
-::
+be set to ``true``::
 
    zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
 
@@ -689,7 +693,7 @@ Via the Administration Zimlet
 
 -  Select the Zextras Backup Tab.
 
--  Under Real Time Scanner, press the ``Disable`` button.
+-  Under Real Time Scanner, press the :bdg-secondary:`Disable` button.
 
 .. _via_the_cli_2:
 
@@ -722,8 +726,8 @@ Limitations and Safety Scan
 The main limitation when restoring data acquired via the Real Time
 Scanner is:
 
--  **Emptied Folder** - when a user uses the ``Empty Folder`` button in
-   the right-click context menu
+- **Emptied Folder** - when a user uses the ``Empty Folder`` button in
+  the right-click context menu
 
 In this case, and any time Zextras Backup cannot determine the status of
 an item by reading the metadata saved by the Real Time Scan, an Account
@@ -744,7 +748,7 @@ What is the Backup Purge?
 
 The Backup Purge is a cleanup operation that removes from the Backup
 Path any deleted item that exceeded the retention time defined by the
-`Data Retention Policy <#_retention_policy>`_.
+:ref:`retention_policy`.
 
 .. _how_does_it_work_3:
 
@@ -759,10 +763,10 @@ Note however, that if an item BLOB is still referenced by one or more
 valid metadata files, due to Zextras Backup’s built-in deduplication,
 the BLOB itself will not be deleted.
 
-Customizations backed up by Zextras Backup also follow the Backup Path’s
-purge policies. This can be changed in the :literal:`\`Zextras Backup`
+Customizations backed up by Zextras Backup also follow the Backup
+Path’s purge policies. This can be changed in the `Zextras Backup`
 section of the Administration Zimlet by unchecking the
-``Purge old customizations`` checkbox.
+:octicon:`tasklist` `Purge old customizations` checkbox.
 
 .. _when_is_a_backup_purge_executed:
 
@@ -801,9 +805,9 @@ Starting the Backup Purge via the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start a BackupPurge via the CLI, use the
-`doPurge <../cli.xml#backup_doPurge>`_ command:
+:ref:`backup_dopurge` command:
 
-.. container:: informalexample
+.. code:: console
 
    zxsuite backup doPurge [param VALUE[,VALUE]]
 
@@ -813,9 +817,9 @@ Checking the Status of a Running Backup Purge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To check the status of a running Purge via the CLI, use the
-`monitor <../cli.xml#backup_monitor>`_ command:
+:ref:`backup_monitor` command:
 
-.. container:: informalexample
+.. code:: console
 
    zxsuite backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
@@ -847,7 +851,7 @@ discuss those cases here.
 
 #. When sending an email directly through an SMTP connection (e.g.,
    using a multipurpose device or connecting to the STMP server using
-   ``telnet``), then that email will not be part of the backup.
+   :command:`telnet`), then that email will not be part of the backup.
 
 #. When sending email using an IMAP/SMTP client, the IMAP client must be
    configured to store the send email in a remote folder (using the IMAP
@@ -857,17 +861,15 @@ discuss those cases here.
 .. note:: The last two cases do not apply when using a browser to
    connect to the Mailbox. In this case is it the Mailbox that
    contacts the SMTP server to send the email and automatically passes
-   the email to ``mailboxd``.
+   the email to :command:`mailboxd`.
 
 .. _troubleshooting_ldap_backup:
 
 Troubleshooting LDAP Backup
----------------------------
+===========================
 
 In some cases, when backing up a mailbox server, the backup of only the
-LDAP data may fail and completes with a warning:
-
-::
+LDAP data may fail and completes with a warning::
 
    Unable to backup LDAP config schema: missing `ldap_root_password` in localconfig.
 
@@ -876,14 +878,14 @@ In this section we provide some suggestions to tackle this problem.
 .. _increase_log_verbosity:
 
 Increase Log Verbosity
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Depending on the mailbox server configuration, a number of log messages
 are saved in the log file. In case an LDAP backup fails and the log file
 does not report enough messages to identify the root cause of the
 failure, a first solution is to increase the **verbosity** of the log
 file.
-
+   
 .. code:: bash
 
    zxsuite config server set $(zmhostname) attribute ZxCore_LogLevel value 0
@@ -909,7 +911,7 @@ file, remember to restore the verbosity to the previous level:
 .. _missing_root_credentials:
 
 Missing root credentials
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 To be able to back up LDAP data, Zextras Suite needs to establish a
 remote connection to the LDAP server using **LDAP root credentials**.
@@ -948,35 +950,45 @@ configuration.
 
 To fix the problem, follow this three step procedure.
 
-**1. Discover the ldap master server.**
+.. dropdown:: **1. Discover the ldap master server.**
 
-.. code:: bash
+   .. code:: bash
 
-   zmlocalconfig ldap_master_url
+      zmlocalconfig ldap_master_url
 
-**2. Connect to the ldap master server and obtain the root password.**
+.. dropdown:: **2. Obtain the root password.**
 
-.. code:: bash
+   Connect to the ldap master server and get the LDAP root password.
+   
+   .. code:: bash
 
-   zmlocalconfig -s ldap_root_password
+      zmlocalconfig -s ldap_root_password
 
-This command will output the password that you need then to store on all
-mailbox servers on which either ``zxsuite`` is running, LDAP backup is
-enabled, or both.
+   This command will print on the standard output the LDAP password,
+   that you need to store on all mailbox servers on which either
+   ``zxsuite`` is running, or LDAP backup is enabled, or both. 
 
-**3. Save password on all mailstores.**
+.. dropdown:: **3. Save password on all mailstores.**
 
-.. code:: bash
+   Execute *on every mailstore* the following commands, in which
+   **$LDAPPASSWORD** is the LDAP password obtained in the
+   previous step.
 
-   su - zimbra
-   zmlocalconfig -e -f ldap_root_password="Password From Previous command"
-   restart the mailbox service to avoid cached credentials problems
-   zmmailboxdctl restart
+   .. code:: bash
+
+      su - zimbra
+      zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
+             
+   Finally, restart the mailbox service to avoid cached credentials problems.
+
+   .. code:: bash
+
+      zmmailboxdctl restart
 
 .. _disable_ldap_backup:
 
 Disable LDAP Backup
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 In case you do not want to backup LDAP data together with Zextras suite,
 you can disable it entirely. On each mailbox server, to disable LDAP
@@ -991,17 +1003,18 @@ Backup, run this command.
 Backup on external storage
 ==========================
 
-To prevent misunderstandings, the sections **Backup on a Third Party
-Store** and **External Backup** have been merged and use now a more
-precise terminology. The corresponding Zextras Suite functionalities
-have not changed.
+.. topic:: :octicon:`comment` Important Changes
 
-As described in section `Architecture of Zextras
-Backup <#backup-architecture>`_, Zextras Backup is composed of metadata
-and blobs (compressed and deduplicated), saved by default on the same
-folder—​or mounted volume—​specified in the *Backup Path*. The real-time
-backup requires the Backup Path be fast enough to avoid queuing
-operations and/or risk data loss.
+   To prevent misunderstandings, the sections **Backup on a Third
+   Party Store** and **External Backup** have been merged and use now
+   a more precise terminology. The corresponding Zextras Suite
+   functionalities have not changed.
+
+As described in section :ref:`backup-architecture`, Zextras Backup is
+composed of metadata and blobs (compressed and deduplicated), saved by
+default on the same folder—​or mounted volume—​specified in the *Backup
+Path*. The real-time backup requires the Backup Path be fast enough to
+avoid queuing operations and/or risk data loss.
 
 However, S3 buckets, NFS shares, and other storage mounted using Fuse
 can be very slow and might not be suited as storage mounted on the
@@ -1033,15 +1046,15 @@ The remote metadata archiving can be also triggered manually by running
 either of the following commands and adding the
 ``remote_metadata_upload true`` parameter:
 
--  `doSmartScan <./cli.xml#backup_doSmartScan>`_
+-  :ref:`backup_doSmartScan`
 
--  `doAccountScan <./cli.xml#backup_doAccountScan>`_
+-  :ref:`backup_doAccountScan`
 
--  `doBackupServerCustomizations <./cli.xml#backup_doBackupServerCustomizations>`_
+-  :ref:`backup_doBackupServerCustomizations`
 
--  `doBackupLDAP <./cli.xml#backup_doBackupLDAP>`_
+-  :ref:`backup_doBackupLDAP`
 
--  `doBackupCluster <./cli.xml#backup_doBackupCluster>`_
+-  :ref:`backup_doBackupCluster`
 
 By splitting the *I/O intensive* metadata folder from the BLOBs one, it
 is also ensured that the backup works, even in case the remote storage
@@ -1064,21 +1077,17 @@ external storage:
    infrastructure and are therefore accessible from disaster recovery
    sites
 
-..
-
-   **Important**
-
-   When activating the Backup on External Storage, it is **not**
-   possible to modify the Backup Path from the UI. Indeed, the
+.. important:: When activating the Backup on External Storage, it is
+   **not** possible to modify the Backup Path from the UI. Indeed, the
    corresponding input text area will only be shown, but **can not be
    edited**. Moreover, the following warning will be shown:
 
-      "The backup path cannot be managed using this UI since the Backup
+      *"The backup path cannot be managed using this UI since the Backup
       On External Storage is enabled. Please use the backup CLI
-      commands"
+      commands"*
 
 In order to disable the External Storage, you can run the
-`setBackupVolume <./cli.xml#backup_setBackupVolume_Default>`_ command:
+:ref:`backup_setBackupVolume` command.
 
 .. code:: bash
 
@@ -1111,12 +1120,11 @@ account in case of Disaster Recovery or to update/fix local metadata.
 For example, this command downloads the latest metadata available in the
 remote storage to the Backup Path.
 
-.. container:: informalexample
+.. code:: console
 
    zxsuite backup retrieveMetadataFromArchive S3 *destination*
 
-See documentation of `retrieveMetadataFromArchive
-S3 <./cli.xml#backup_retrieveMetadataFromArchive_S3>`_ for more
+See documentation of `backup_retrieveMetadataFromArchive_S3` for more
 information.
 
 .. _external_storages:
@@ -1140,43 +1148,43 @@ be reused*. Depending on what approach you choose, the steps to carry
 out are different. We describe here only the easier and most reliable
 one.
 
-Single server installation
+.. dropdown:: Single server installation
 
-When NFS shares are used, you need to make them visible and accessible
-to the OS and Zextras, a task that only requires to add a row in
-``/etc/fstab`` with the necessary information to mount the volume, for
-example, to mount volume /media/mailserver/backup/ from a NAS located at
-192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line similar
-to:
+   When NFS shares are used, you need to make them visible and accessible
+   to the OS and Zextras, a task that only requires to add a row in
+   ``/etc/fstab`` with the necessary information to mount the volume, for
+   example, to mount volume /media/mailserver/backup/ from a NAS located at
+   192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line similar
+   to:
 
-.. code:: bash
+   .. code:: bash
 
-   192.168.72.16:/media/mailserver/backup/  /media/external/ nfs rw,hard,intr, 0,0
+      192.168.72.16:/media/mailserver/backup/  /media/external/ nfs rw,hard,intr, 0,0
 
-You will now be able to mount the external storage by simply using
-``mount /media/external/`` on the server.
+   You will now be able to mount the external storage by simply using
+   ``mount /media/external/`` on the server.
 
-Multiserver installation
+.. dropdown:: Multiserver installation
 
-In the case of a multiserver installation, the admin must ensure that
-each server writes **on its own directory**, and the destination share
-**must** be readable and writable by the zimbra user.
+   In the case of a multiserver installation, the admin must ensure that
+   each server writes **on its own directory**, and the destination share
+   **must** be readable and writable by the zimbra user.
 
-In a multiserver installation, consider a scenario in which the same NAS
-located on 192.168.72.16 is involved, which exposes via NFS the share as
-``/media/externalStorage``. We want to store our multiservers backups on
-this NAS.
+   In a multiserver installation, consider a scenario in which the same NAS
+   located on 192.168.72.16 is involved, which exposes via NFS the share as
+   ``/media/externalStorage``. We want to store our multiservers backups on
+   this NAS.
 
-To do so, on each server you need to add one entry similar to the
-following to ``/etc/fstab``:
+   To do so, on each server you need to add one entry similar to the
+   following to ``/etc/fstab``:
 
-.. code:: bash
+   .. code:: bash
 
-   192.168.72.16:/externalStorage/Server1 /mnt/backup nfs rw,hard,intr 0 0
+      192.168.72.16:/externalStorage/Server1 /mnt/backup nfs rw,hard,intr 0 0
 
-   192.168.72.16:/externalStorage/Server2 /mnt/backup nfs rw,hard,intr  0 0
+      192.168.72.16:/externalStorage/Server2 /mnt/backup nfs rw,hard,intr  0 0
 
-   192.168.72.16:/externalStorage/Server3 /mnt/backup nfs rw,hard,intr  0 0
+      192.168.72.16:/externalStorage/Server3 /mnt/backup nfs rw,hard,intr  0 0
 
 .. _s3_external_storage:
 
@@ -1191,10 +1199,8 @@ are not compatible with each other. If Powerstore data is stored in a
 bucket it is not possible to store Backup data on the same bucket and
 vice-versa.
 
-The `zxsuite core listBuckets all <./cli.xml#core_listBuckets>`_
-command reports the bucket usage, for example:
-
-::
+The :ref:`core_listBuckets` command reports the bucket usage, for
+example::
 
    bucketName                                                  hsm
    protocol                                                    HTTPS
@@ -1249,60 +1255,61 @@ different, depending if the new storage needs to be accessed from a
 newly installed server or if existing local backups must be migrated to
 the external storage.
 
-Configure on newly installed / uninitialized server
+.. dropdown:: Configure on newly installed / uninitialized server
 
-If there the backup has not been initialized on the server, an
-Administrator can configure the external storage by running
+   If there the backup has not been initialized on the server, an
+   Administrator can configure the external storage by running
 
-.. container:: informalexample
+   .. code:: console
 
-   zxsuite backup setBackupVolume S3 bucket_configuration_id VALUE
-   [param VALUE[,VALUE]].
+      zxsuite backup setBackupVolume S3 bucket_configuration_id VALUE
+      [param VALUE[,VALUE]].
 
-Once the backup will be initialized, it will use the external storage.
+   Once the backup will be initialized, it will use the external storage.
 
-Therefore, check for any missing blobs with doCheckBlobs in the Zimbra
-volumes to avoid integrity errors.
+   Therefore, check for any missing blobs with doCheckBlobs in the Zimbra
+   volumes to avoid integrity errors.
 
-Migrate existing backups
+.. dropdown:: Migrate existing backups
+   :open:
 
-Before actually carrying out the migration, please perform the following
-important maintenance task. This procedure will minimise the risk of
-errors:
+   Before actually carrying out the migration, please perform the following
+   important maintenance task. This procedure will minimise the risk of
+   errors:
 
-1. Double-check Zimbra permissions on the active backup path
+   1. Double-check Zimbra permissions on the active backup path
 
-2. Make sure that the Zextras cache folder is accessible by the Zimbra
-   user (typically under ``/opt/zimbra/cache``)
+   2. Make sure that the Zextras cache folder is accessible by the Zimbra
+      user (typically under ``/opt/zimbra/cache``)
 
-3. Check for table errors in the myslow.log and in the MariaDb integrity
-   check report. If any error is found, consider running the
-   ``mysqlcheck`` command to verify the database integrity.
+   3. Check for table errors in the myslow.log and in the MariaDb integrity
+      check report. If any error is found, consider running the
+      ``mysqlcheck`` command to verify the database integrity.
 
-4. Check for any missing blobs in the Zimbra volumes with
-   `doCheckBlobs <./cli.xml#powerstore_doCheckBlobs>`_
+   4. Check for any missing blobs in the Zimbra volumes with
+      :ref:`powerstore_docheckblobs`
 
-5. Check for any missing digest in the backup with `doSmartScan
-   deep=true <./cli.xml#backup_doSmartScan>`_
+   5. Check for any missing digest in the backup with
+      :ref:`doSmartScan deep=true <backup_dosmartscan>`
 
-6. Check for any orphaned digest or metadata in the Backup with
-   `doCoherencyCheck <./cli.xml#backup_doCoherencyCheck>`_
+   6. Check for any orphaned digest or metadata in the Backup with
+      :ref:`backup_docoherencycheck`
 
-7. Optionally run a `doPurge <./cli.xml#backup_doPurge>`_ to remove
-   expired data from the Backup
+   7. Optionally run a :ref:`backup_dopurge` to remove
+      expired data from the Backup
 
-You can now proceed to migrate the existing backup using the appropriate
-``zxsuite backup migrateBackupVolume`` [[
-`Default <./cli.xml#backup_migrateBackupVolume_Default>`_ \|
-`Local <./cli.xml#backup_migrateBackupVolume_Local>`_ \|
-`S3 <./cli.xml#backup_migrateBackupVolume_S3>`_ ]] command.
+   You can now proceed to migrate the existing backup using the appropriate
+   ``zxsuite backup migrateBackupVolume`` [[
+   :ref:`Default <backup_migrateBackupVolume_Default>` \|
+   :ref:`Local <backup_migrateBackupVolume_Local>` \|
+   :ref:`S3 <backup_migrateBackupVolume_S3>` ]] command.
 
-Finally, once the migration has been completed you can run this final
-task:
+   Finally, once the migration has been completed you can run this final
+   task:
 
--  Manually remove the old backup data. Indeed, the migration only
-   **copies** the files of the backup to the new external storage and
-   leaves them in the place.
+   -  Manually remove the old backup data. Indeed, the migration only
+      **copies** the files of the backup to the new external storage and
+      leaves them in the place.
 
 .. _zextras_backup_cli:
 
