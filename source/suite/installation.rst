@@ -614,7 +614,7 @@ installation of a newer version will automatically perform an upgrade.
 Please refer to the instructions above for the installation procedure.
 
 If you just upgraded your Zimbra installation, please see the
-:ref:`zimbra-upgrade` section above.
+:ref:`zimbra_upgrade` section above.
 
 .. _upgrading_zextras_suite_on_a_multiserver_infrastructure:
 
