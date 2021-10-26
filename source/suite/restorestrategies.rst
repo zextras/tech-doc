@@ -133,7 +133,7 @@ folder and soon after the folder is removed.
 Restore Deleted Account
 =======================
 
-.. __what_is_the_restore_deleted_account:
+.. _what_is_the_restore_deleted_account:
 
 What is the Restore Deleted Account?
 ------------------------------------
@@ -142,7 +142,7 @@ The Restore Deleted Account procedure allows you to restore the contents
 and preferences of a mailbox, as it was when said mailbox was deleted,
 into a completely new account.
 
-.. __how_does_it_work:
+.. _how_does_it_work:
 
 How Does it Work?
 -----------------
@@ -160,7 +160,7 @@ Policy`` box is checked.
    preserved. This is because the original share rules refer to the
    original account’s ID, not to the restored account.
 
-.. __from_the_zextras_backup_tab:
+.. _from_the_zextras_backup_tab:
 
 From the Zextras Backup tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,7 +190,7 @@ From the Zextras Backup tab
 Single Item Restore
 ===================
 
-.. __what_is_the_single_item_restore:
+.. _what_is_the_single_item_restore:
 
 What is the Single Item Restore?
 --------------------------------
@@ -199,7 +199,7 @@ The Single Item Restore is one of the Restore Modes available in Zextras
 Backup and allows to restore one item at a time, recovering its status
 even if it was deleted.
 
-.. __how_does_it_work_2:
+.. _how_does_it_work_2:
 
 How Does it Work?
 -----------------
@@ -208,19 +208,19 @@ Single Item Restore takes the **itemID** and restores the corresponding
 item from the backup to the owner’s account. Any type of item can be
 restored this way.
 
-.. __running_a_single_item_restore:
+.. _running_a_single_item_restore:
 
 Running a Single Item Restore
 -----------------------------
 
-.. __via_the_administration_zimlet:
+.. _via_the_administration_zimlet:
 
 Via the Administration Zimlet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Item Restore is only available through the CLI.
 
-.. __via_the_cli:
+.. _via_the_cli:
 
 Via the CLI
 ~~~~~~~~~~~
@@ -255,7 +255,7 @@ mailbox; while the second restores item 5923 in the
 Restore on New Account
 ======================
 
-.. __what_is_the_restore_on_new_account:
+.. _what_is_the_restore_on_new_account:
 
 What is the Restore on New Account?
 -----------------------------------
@@ -275,7 +275,7 @@ rolling back the whole mailbox. When you run this kind of restore, you
 can choose to hide the newly created account from the GAL as a security
 measure.
 
-.. __how_does_it_work_3:
+.. _how_does_it_work_3:
 
 How Does it Work?
 -----------------
@@ -299,14 +299,14 @@ restored items will be created in the current primary store unless the
    preserved. This is because the original share rules refer to the
    original account’s ID, not to the restored account.
 
-.. __running_a_restore_on_new_account_via_the_administration_zimlet:
+.. _running_a_restore_on_new_account_via_the_administration_zimlet:
 
 Running a Restore on New Account via the Administration Zimlet
 --------------------------------------------------------------
 
 A Restore on New Account can be run in two ways.
 
-.. __from_the_account_list:
+.. _from_the_account_list:
 
 From the Account List
 ~~~~~~~~~~~~~~~~~~~~~
@@ -345,7 +345,7 @@ From the Account List
 
 Click ``Finish`` to start the restore.
 
-.. __running_a_restore_on_new_account_via_the_cli:
+.. _running_a_restore_on_new_account_via_the_cli:
 
 Running a Restore on New Account via the CLI
 --------------------------------------------
@@ -384,7 +384,7 @@ doRestoreOnNewAccount command:
 Time-range Undelete
 ===================
 
-.. __what_is_time_range_undelete:
+.. _what_is_time_range_undelete:
 
 What is Time-range Undelete?
 ----------------------------
@@ -394,7 +394,7 @@ that allows an administrator to restore from a mailbox all items,
 removed from the Trash folder within a given interval of time, and
 recover their status to the last change of status.
 
-.. __how_does_it_work_4:
+.. _how_does_it_work_4:
 
 How Does it Work?
 -----------------
@@ -417,7 +417,7 @@ called ``unknown_XX``.
    items in the mailbox. A few examples can be find in the section
    `below <#timerange-undelete-cli>`__.
 
-.. __corner_cases:
+.. _corner_cases:
 
 Corner cases
 ~~~~~~~~~~~~
@@ -441,12 +441,12 @@ There are two points that is worth highlighting:
    be stripped from any restored item, for the item itself to be visible
    in the Zimbra Web Client.
 
-.. __running_a_time_range_undelete:
+.. _running_a_time_range_undelete:
 
 Running a Time-range Undelete
 -----------------------------
 
-.. __via_the_administration_console:
+.. _via_the_administration_console:
 
 Via the Administration Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -513,10 +513,12 @@ restored under a separate folder in John’s mailbox.
    the new mailbox is the same by running the command `zxsuite config
    dump <./cli.xml#zxconfig-cli-short>`__.
 
+.. _external_restore:
+
 External Restore
 ================
 
-.. __what_is_the_external_restore:
+.. _what_is_the_external_restore:
 
 What is the External Restore?
 -----------------------------
@@ -547,7 +549,7 @@ besides the data, it restores also all the **shares** of an account.
    An article describing how performances of the External restore have
    been improved form 3.1.11 release.
 
-.. __how_does_it_work_5:
+.. _how_does_it_work_5:
 
 How Does it Work?
 -----------------
@@ -564,7 +566,7 @@ server (the **destination**) you need to have access to the Backup Path
 on the Rome server (the **source**), in order to carry out the External
 restore on your Milan infrastructure.
 
-.. __skip_domain_provisioning:
+.. _skip_domain_provisioning:
 
 Skip Domain Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -632,7 +634,7 @@ will be executed.
 
 -  *'Operation Ended' notification with complete feedback*
 
-.. __folder_restore:
+.. _folder_restore:
 
 Folder restore
 ~~~~~~~~~~~~~~
@@ -659,7 +661,7 @@ Remote mailbox
    folder (created by the filter) are moved to the mountpoint target;
    also the filter to write to the restored mountpoint will be updated.
 
-.. __before_you_start:
+.. _before_you_start:
 
 Before You Start
 ----------------
@@ -695,12 +697,12 @@ the External Restore, you can implement the following suggestions.
 4. If you plan to use the CLI, check also section `Speeding up the
    Restore through Multithreading <#external-restore-speed-up>`__
 
-.. __running_an_external_restore:
+.. _running_an_external_restore:
 
 Running an External Restore
 ---------------------------
 
-.. __via_the_administration_zimlet_2:
+.. _via_the_administration_zimlet_2:
 
 Via the Administration Zimlet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -723,7 +725,7 @@ Via the Administration Zimlet
    operation is finished. Please note that the admin account and the
    user who started the restore procedure are notified by default.
 
-.. __via_the_cli_2:
+.. _via_the_cli_2:
 
 Via the CLI
 ~~~~~~~~~~~
@@ -731,7 +733,7 @@ Via the CLI
 To start an External Restore operation, use the ``doExternalRestore``
 command:
 
-.. __doexternalrestore:
+.. _doexternalrestore:
 
 doExternalRestore
 ^^^^^^^^^^^^^^^^^
@@ -843,7 +845,7 @@ This feature is available **via CLI only**.
 
    Restores the example0.com and example1.com domain, excluding system accounts, restoring 5 accounts at same time from a backup located in /tmp/external1
 
-.. __after_the_restore_message_deduplication:
+.. _after_the_restore_message_deduplication:
 
 After the Restore: Message Deduplication
 ----------------------------------------

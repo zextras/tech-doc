@@ -4,17 +4,17 @@
  Zextras Backup Advanced techniques
 ====================================
 
-.. __disaster_recovery:
+.. _disaster_recovery:
 
 Disaster Recovery
 =================
 
-.. __the_disaster:
+.. _the_disaster:
 
 The Disaster
 ------------
 
-.. __what_can_go_wrong:
+.. _what_can_go_wrong:
 
 What Can go Wrong
 ~~~~~~~~~~~~~~~~~
@@ -33,7 +33,7 @@ must happened:
 
 -  A critical failure on a software or OS update/upgrade
 
-.. __minimizing_the_chances:
+.. _minimizing_the_chances:
 
 Minimizing the Chances
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -48,12 +48,12 @@ Some suggestions to minimize the chances of a disaster:
 
 -  Carefully plan your updates and migrations
 
-.. __the_recovery:
+.. _the_recovery:
 
 The Recovery
 ------------
 
-.. __how_to_recover_your_system:
+.. _how_to_recover_your_system:
 
 How to Recover Your System
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +67,7 @@ The recovery of a system is divided into 2 steps:
    server, including domain and user configurations, COS data and
    mailbox contents)
 
-.. __how_can_zextras_backup_help_with_recovery:
+.. _how_can_zextras_backup_help_with_recovery:
 
 How can Zextras Backup Help with Recovery?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,7 +79,7 @@ Using the old server’s backup path as the import path allows you to
 restore a basic installation of Zimbra to the last valid moment of your
 old server.
 
-.. __the_recovery_process:
+.. _the_recovery_process:
 
 The Recovery Process
 ~~~~~~~~~~~~~~~~~~~~
@@ -104,7 +104,7 @@ The Recovery Process
    system will be ready for your users. Emails and other mailbox items
    will be restored afterwards.
 
-.. __settings_and_configs:
+.. _settings_and_configs:
 
 Settings and Configs
 ~~~~~~~~~~~~~~~~~~~~
@@ -191,7 +191,7 @@ backed up as well:
                    path                                                        /opt/zimbra/backup/ng/server/
                    modify date                                                 28/02/2014 04:01:14 CET
 
-.. __vms_and_snapshots:
+.. _vms_and_snapshots:
 
 VMs and Snapshots
 -----------------
@@ -206,7 +206,7 @@ possible to roll back to the latest snapshot and import the missing data
 using the ``External Restore`` feature of Zextras Backup - using the
 server’s backup path as the import path.
 
-.. __disaster_recovery_from_a_previous_vm_state:
+.. _disaster_recovery_from_a_previous_vm_state:
 
 Disaster Recovery from a Previous VM State
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -252,12 +252,12 @@ and restore user access and mail traffic.
    dump`` (See the `full reference <../cli.xml#config_dump_account>`__
    of all its sub-commands).
 
-.. __the_aftermath:
+.. _the_aftermath:
 
 The Aftermath
 -------------
 
-.. __what_now:
+.. _what_now:
 
 What Now?
 ~~~~~~~~~
@@ -265,12 +265,12 @@ What Now?
 Should you need to restore any content from before the disaster, just
 initialize a new Backup Path and store the old one.
 
-.. __unrestorable_items:
+.. _unrestorable_items:
 
 Unrestorable Items
 ==================
 
-.. __how_can_i_check_if_all_of_my_items_have_been_restored:
+.. _how_can_i_check_if_all_of_my_items_have_been_restored:
 
 How can I check if all of my items have been restored?
 ------------------------------------------------------
@@ -304,7 +304,7 @@ items:
      unrestored items: 856,13339,45200, 45655
      [...]
 
-.. __skipped_items_vs_unrestored_items:
+.. _skipped_items_vs_unrestored_items:
 
 Skipped Items vs. Unrestored Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -315,7 +315,7 @@ Skipped Items vs. Unrestored Items
 -  ``Unrestored`` item: An item that has not been restored due to an
    issue in the restore process.
 
-.. __why_have_some_of_my_items_not_been_restored:
+.. _why_have_some_of_my_items_not_been_restored:
 
 Why have some of my items not been restored?
 --------------------------------------------
@@ -332,7 +332,7 @@ There are different possible causes, the most common of which are:
    readable and the content is correct, but Zimbra refuses to inject the
    item.
 
-.. __how_can_i_identify_unrestored_items:
+.. _how_can_i_identify_unrestored_items:
 
 How Can I Identify Unrestored Items?
 ------------------------------------
@@ -342,7 +342,7 @@ The first way can be used to search for the item within the
 backup/import path, and the second can be used to view the items in the
 source server.
 
-.. __identifying_unrestorable_items_through_the_cli:
+.. _identifying_unrestorable_items_through_the_cli:
 
 Identifying Unrestorable Items through the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -373,7 +373,7 @@ the full dump of the item’s BLOB, the command would be:
 
 ``zxsuite backup getItem account2@example.com 49965 dump_blob true``
 
-.. __identifying_unrestorable_items_through_the_zimbra_webclient:
+.. _identifying_unrestorable_items_through_the_zimbra_webclient:
 
 Identifying Unrestorable Items through the Zimbra WebClient
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -403,7 +403,7 @@ To do so:
    get no results try to run the same search in the ``Address Book``,
    ``Calendar``, ``Tasks`` and ``Drive`` tabs.
 
-.. __how_can_i_restore_unrestored_items:
+.. _how_can_i_restore_unrestored_items:
 
 How Can I Restore Unrestored Items?
 -----------------------------------
@@ -417,7 +417,7 @@ In the following paragraphs, you will find a collections of tips and
 tricks that can be helpful when dealing with different kinds of
 unrestorable items.
 
-.. __items_not_restored_because_of_a_read_error:
+.. _items_not_restored_because_of_a_read_error:
 
 Items Not Restored because of a Read Error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -449,7 +449,7 @@ mitigate soft errors by following these guidelines:
 -  If using SSHfs to remotely mount the backup/import path, make sure to
    run the mount command as root using the ``-o allow_other`` option.
 
-.. __items_not_restored_because_identified_as_broken_items:
+.. _items_not_restored_because_identified_as_broken_items:
 
 Items Not Restored because Identified as Broken Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -541,7 +541,7 @@ file through the following steps:
 -  Done! You can now import the ``.eml`` file into the appropriate
    mailbox using your favorite client.
 
-.. __items_not_restored_because_identified_as_invalid_items:
+.. _items_not_restored_because_identified_as_invalid_items:
 
 Items Not Restored because Identified as Invalid Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -573,12 +573,12 @@ import:
    validator might cause display or mobile synchronization errors. Use
    at your own risk.
 
-.. __taking_additional_and_offsite_backups_of_zextras_backups_datastore:
+.. _taking_additional_and_offsite_backups_of_zextras_backups_datastore:
 
 Taking Additional and Offsite Backups of Zextras Backup’s Datastore
 ===================================================================
 
-.. __who_watches_the_watchmen:
+.. _who_watches_the_watchmen:
 
 Who Watches the Watchmen?
 -------------------------
@@ -603,7 +603,7 @@ Here are some suggestions and best practices to improve your backup
 strategy by making a backup of the Backup NG’s datastore and storing it
 offsite.
 
-.. __making_an_additional_backup_of_zextras_backups_datastore:
+.. _making_an_additional_backup_of_zextras_backups_datastore:
 
 Making an Additional Backup of Zextras Backup’s Datastore
 ---------------------------------------------------------
@@ -639,7 +639,7 @@ additional backup of Zextras Backup’s datastore using rsync, and, thanks
 to the ACID properties, you will be always able to stop the sync at any
 time and reprise it at a later point.
 
-.. __storing_your_zextras_backups_datastore_backup_offsite:
+.. _storing_your_zextras_backups_datastore_backup_offsite:
 
 Storing Your Zextras Backup’s Datastore Backup Offsite
 ------------------------------------------------------
@@ -678,7 +678,7 @@ the following best practices are recommended:
 -  Expect to experience slowness if your transfer speed is much higher
    than your storage throughput (or vice versa).
 
-.. __additionaloffsite_backup_f_a_q:
+.. _additionaloffsite_backup_f_a_q:
 
 Additional/Offsite Backup F.A.Q.
 --------------------------------
@@ -751,7 +751,7 @@ There are for sure, and some of them might even be better than the one
 described here. These are just guidelines that apply to the majority of
 cases.
 
-.. __multistore_information:
+.. _multistore_information:
 
 Multistore Information
 ======================
@@ -761,7 +761,7 @@ Multistore Information
 Zextras Backup in a Multistore Environment
 ------------------------------------------
 
-.. __command_execution_in_a_multistore_environment:
+.. _command_execution_in_a_multistore_environment:
 
 Command Execution in a Multistore Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -783,7 +783,7 @@ are:
 -  If a wrong target server for an operation is chosen, Zimbra
    **automatically proxies** the operation request to the right server
 
-.. __backup_and_restore:
+.. _backup_and_restore:
 
 Backup and Restore
 ~~~~~~~~~~~~~~~~~~
@@ -824,7 +824,7 @@ Backup and Restore operations are managed as follows:
 |                                   | automatic server selection.       |
 +-----------------------------------+-----------------------------------+
 
-.. __export_and_import:
+.. _export_and_import:
 
 Export and Import
 ~~~~~~~~~~~~~~~~~
@@ -832,7 +832,7 @@ Export and Import
 The Export and Import functions are the most different when performed on
 a Multistore environment. Here are the basic scenarios:
 
-.. __export_from_a_singlestore_and_import_to_a_multistore:
+.. _export_from_a_singlestore_and_import_to_a_multistore:
 
 Export from a Singlestore and Import to a Multistore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -845,7 +845,7 @@ A command in the CLI is available to fix the shares for accounts
 imported on different servers, please check `section
 below <#check-fix-shares-commands>`__.
 
-.. __export_from_a_multistore_and_import_to_a_single_or_multistore:
+.. _export_from_a_multistore_and_import_to_a_single_or_multistore:
 
 Export from a Multistore and Import to a Single or Multistore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -912,12 +912,12 @@ migration.
    Fixes the shares' consistency after an import according to the
    mapping contained in the /opt/zimbra/backup/ng/idmap_file
 
-.. __operation_queue_and_queue_management:
+.. _operation_queue_and_queue_management:
 
 Operation Queue and Queue Management
 ====================================
 
-.. __zextras_backups_operation_queue:
+.. _zextras_backups_operation_queue:
 
 Zextras Backup’s Operation Queue
 --------------------------------
@@ -938,17 +938,17 @@ The queue system affects the following operations:
 Changes to Zextras Backup’s configuratito on are not enqueued and are
 applied immediately.
 
-.. __operation_queue_management:
+.. _operation_queue_management:
 
 Operation Queue Management
 --------------------------
 
-.. __through_the_administration_console:
+.. _through_the_administration_console:
 
 Through the Administration Console
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. __viewing_the_queue:
+.. _viewing_the_queue:
 
 Viewing the Queue
 ^^^^^^^^^^^^^^^^^
@@ -964,7 +964,7 @@ Administration Zimlet and click the ``Operation Queue`` button.
    Zextras Backup operation and one Zextras Powerstore operation can be
    running at the same time.
 
-.. __emptying_the_queue:
+.. _emptying_the_queue:
 
 Emptying the Queue
 ^^^^^^^^^^^^^^^^^^
@@ -973,12 +973,12 @@ To stop the current operation and empty Zextras Backup’s operation
 queue, enter the ``Zextras Backup`` tab in the Administration Zimlet and
 click the ``Stop all Operations`` button.
 
-.. __through_the_cli:
+.. _through_the_cli:
 
 Through the CLI
 ~~~~~~~~~~~~~~~
 
-.. __viewing_the_queue_2:
+.. _viewing_the_queue_2:
 
 Viewing the Queue
 ^^^^^^^^^^^^^^^^^
@@ -1006,7 +1006,7 @@ command:
    zxsuite backup getAllOperations
    Shows all running and queued operations
 
-.. __emptying_the_queue_2:
+.. _emptying_the_queue_2:
 
 Emptying the Queue
 ^^^^^^^^^^^^^^^^^^
@@ -1027,7 +1027,7 @@ queue, use the ``doStopAllOperations`` command:
    zxsuite backup doStopAllOperations
    Stops all running operations
 
-.. __removing_a_single_operation_from_the_queue:
+.. _removing_a_single_operation_from_the_queue:
 
 Removing a Single Operation from the Queue
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1055,12 +1055,12 @@ queue, use the ``doStopOperation`` command:
    zxsuite backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601
    Stops operation with id = 30ed9eb9-eb28-4ca6-b65e-9940654b8601
 
-.. __cos_level_backup_management:
+.. _cos_level_backup_management:
 
 COS-level Backup Management
 ===========================
 
-.. __what_is_cos_level_backup_management:
+.. _what_is_cos_level_backup_management:
 
 What is COS-level Backup Management?
 ------------------------------------
@@ -1069,12 +1069,12 @@ COS-level Backup Management allows the administrator to disable ALL
 Zextras Backup functions for a whole Class of Service to lower storage
 usage.
 
-.. __how_does_cos_level_backup_management_work:
+.. _how_does_cos_level_backup_management_work:
 
 How Does COS-level Backup Management Work?
 ------------------------------------------
 
-.. __what_happens_if_i_disable_the_zextras_backup_module_for_a_class_of_service:
+.. _what_happens_if_i_disable_the_zextras_backup_module_for_a_class_of_service:
 
 What happens if I disable the Zextras Backup Module for a Class of Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1088,7 +1088,7 @@ What happens if I disable the Zextras Backup Module for a Class of Service?
    data for such accounts will be purged from the backup store.
    Re-enabling the backup for a Class of Service will reset this.
 
-.. __how_is_the_backup_enabledbackup_disabled_information_saved:
+.. _how_is_the_backup_enabledbackup_disabled_information_saved:
 
 How is the ``backup enabled``/``backup disabled`` information saved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
