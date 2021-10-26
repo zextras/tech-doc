@@ -52,6 +52,11 @@ rst_prolog = """
 
 """ + open("replace.txt").read()
 
+# -- Configuration of extension ----------------------------------------------
+# Enable cross referencing for figure, tables, sections, and code snippets
+
+numfig = True
+
 extlinks = {
     'carbonio': ('/carbonio/html/%s.', None ),
     'enterprise': ('/enterprise/html/%s', None ),
