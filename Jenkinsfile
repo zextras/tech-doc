@@ -19,7 +19,7 @@ pipeline {
         steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            sh 'docker run --rm -v $(pwd)/source/suite:/docs/source/suite sphinx_builder ls -latr source;chown -R agent:agent source/suite;ls -latr source/suite'
-	   sh 'docker run --rm -v $(pwd)/source/suite:/docs/source/suite -v $(pwd)/build/:/docs/build sphinx_builder python -m sphinx source/suite build/suite'
+	   sh 'docker run --rm -v $(pwd)/source/suite:/docs/source/suite -v $(pwd)/build/:/docs/build sphinx_builder chown -R agent:agent source/suite;python -m sphinx source/suite build/suite'
                           }
                }
 
