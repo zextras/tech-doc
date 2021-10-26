@@ -21,8 +21,7 @@ pipeline {
            script {
               env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt -v ${WORKSPACE}:/docs sphinx_builder').trim()
             }
-           sh "docker exec -t ${env.CONTAINER_ID} ls -latr source;chown -R agent:agent source/suite;ls -latr source/suite"
-           sh "docker exec ${env.CONTAINER_ID} python -m sphinx source/suite build/suite"
+           sh "docker exec -t ${env.CONTAINER_ID} ls -latr source;chown -R agent:agent source/suite;ls -latr source/suite;sphinx-build source/suite/ build"
                           }
                }
 
