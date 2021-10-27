@@ -17,6 +17,7 @@ pipeline {
     stages {               
       stage('Build Sphinx with Docker') {
         steps {
+           sh 'chown -R agent:agent suite'
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            sh 'docker run -v $(pwd):/docs -v $(pwd)/source/suite:/docs/source/suite sphinx_builder python -m sphinx source/suite build/suite'
                           }
