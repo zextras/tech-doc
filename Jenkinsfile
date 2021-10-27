@@ -18,7 +18,7 @@ pipeline {
       stage('Build Sphinx with Docker') {
         steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
-           sh "docker run -dt -v cd/build:/docs sphinx_builder"
+           sh "docker run -dt -v $(pwd):/docs sphinx_builder"
                           }
                }
 
