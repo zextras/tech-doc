@@ -19,9 +19,6 @@ pipeline {
         steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            sh 'docker run -dt -v $(pwd):/docs sphinx_builder:latest'
-           CNT=$(docker ps | awk ' /sphinx-builder/ { print $1 }')
-           sh 'echo $CNT'
-           sh 'docker cp $CNT:docs/build $(pwd)'
                           }
                }
 
