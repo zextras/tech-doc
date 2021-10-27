@@ -20,8 +20,8 @@ pipeline {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            script {
               env.CONTAINER_ID = sh(returnStdout: true, script: 'docker run -dt -v $(pwd):/docs sphinx_builder').trim()
+              sh 'docker cp ${env.CONTAINER_ID}/build $(pwd)'
             }
-           sh 'docker cp ${env.CONTAINER_ID}/build $(pwd)'
                           }
                }
 
