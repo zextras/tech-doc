@@ -1,6 +1,6 @@
-=======================
- IntroductionAAAAAAAAAA
-=======================
+=============
+ Introduction
+=============
 
 Zextras Suite is an all-in-one solution that seamlessly integrate with Zimbra Open Source Edition, avoiding issues like conflicts with Zimbra.
 
