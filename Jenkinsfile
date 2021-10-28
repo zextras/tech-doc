@@ -20,7 +20,7 @@ pipeline {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            sh 'docker rm -v zsphinx'
            sh 'docker run -d --name zsphinx  sphinx_builder'
-           sh 'docker cp zsphinx:docs/build $(pwd)'
+           sh 'docker cp zsphinx:docs/build/landing $(pwd)/build'
                           }
                }
 
