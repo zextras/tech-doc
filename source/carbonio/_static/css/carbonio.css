@@ -2,9 +2,9 @@
 
 /* Sidebar header (and topbar for mobile) */
 .wy-side-nav-search, .wy-nav-top {
-    background-color: var(--zx-brand);
+    background-color: var(--zx-color-abyss);
 }
 /* Sidebar */
 .wy-nav-side {
-    background-color: var(--zx-brand);
+    background-color: var(--zx-color-abyss);
 }

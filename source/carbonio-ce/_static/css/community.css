@@ -1,15 +1,19 @@
 @import url("common.css");
 
 .wy-nav-side {
-    background: var(--zx-brand);
+    background: var(--zx-color-abyss);
 }
 
 .caption-text {
     color: #5C5555;
 }
 .wy-side-nav-search {
-    background: var(--zx-brand);
+    background: var(--zx-color-abyss);
 }
 
 .sd-dropdown .sd-card-header {
     background-color: var(--zx-color-card-header);
+
+.wy-side-nav-search> a > p {
+    font-size: 120%;
+}
