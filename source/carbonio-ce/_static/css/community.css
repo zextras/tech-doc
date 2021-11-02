@@ -1,13 +1,14 @@
 @import url("common.css");
 
-.wy-nav-side {
-    background: var(--zx-color-abyss);
-}
-
 .caption-text {
     color: #5C5555;
 }
-.wy-side-nav-search {
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+    background: var(--zx-color-magma);
+}
+/* Sidebar */
+.wy-nav-side {
     background: var(--zx-color-abyss);
 }
 
