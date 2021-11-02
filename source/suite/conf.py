@@ -78,4 +78,4 @@ html_favicon = 'img/favicon.ico'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = [ 'css/suite.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css' ]
-html_logo = 'img/zextras_white.svg'
+html_logo = 'img/logos/suite-white.svg'

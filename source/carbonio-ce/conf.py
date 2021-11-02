@@ -76,11 +76,10 @@ html_show_sourcelink = False
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = [ 'css/community.css' ]
-html_logo = 'img/zextras_white.svg'
+html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 
-
-# html_theme_options = {
+html_theme_options = {
 #     'sticky_navigation': True,
-#     'logo_only': True
-# }
+    'logo_only': True
+}
