@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zextras Team &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CLI" href="cli.html" />
+    <link rel="prev" title="Zextras Auth" href="auth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   <a href="index.html" class="icon icon-home"> Zextras Suite
+</a>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restorestrategies.html">Zextras Backup Restore Strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedbackup.html">Zextras Backup Advanced techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">Zextras Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Zextras Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drive.html">Zextras Drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Zextras Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Zextras Team</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-zextras-team">What is Zextras Team</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frontend-features">Frontend Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backend-features">Backend Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#licensing">Licensing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-team-zimlet-installation">Zextras Team Zimlet installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#urls-and-ports">URLs and Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-team-administration">Zextras Team administration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#browser-compatibility">Browser compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobile-app">Mobile App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#notifications-on-android-devices">Notifications on Android Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-interface">User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#team-tab">Team Tab</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#meetings-on-a-new-browser-tab">Meetings on a New Browser Tab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#changing-the-selected-mode">Changing the Selected Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#textual-conversations-chats-and-spaces">Textual Conversations (Chats) and Spaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#minichats">Minichats</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#team-video-chat">Video Conversations (Video Chats) and Instant Meetings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#screen-sharing">Screen Sharing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#instant-messaging-and-corporate-communication">Instant Messaging and Corporate Communication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#moderators-in-rooms">Moderators in Rooms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#groups">Groups</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#groups-features">Groups Features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#spaces">Spaces</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spaces-features">Spaces Features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#space-settings">Space Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#channels">Channels</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#channels-features">Channels Features</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mute-notifications-and-conversations">Mute Notifications and Conversations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#file-sharing">File sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autocomplete">Autocomplete</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presence">Presence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unread-messages">Unread Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#edit-reply-forward-and-delete-messages">Edit, Reply, Forward and Delete Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chat-history">Chat History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stun-turn-server">STUN/TURN Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-up-zextras-team-to-use-a-turn-server">Setting up Zextras Team to use a TURN server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#zextras-team-cli">Zextras Team CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Zextras Team</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="zextras-team">
+<h1>Zextras Team<a class="headerlink" href="#zextras-team" title="Permalink to this headline"></a></h1>
+<section id="what-is-zextras-team">
+<span id="id1"></span><h2>What is Zextras Team<a class="headerlink" href="#what-is-zextras-team" title="Permalink to this headline"></a></h2>
+<p>Zextras Team integrates a fully fledged corporate instant messaging
+platform inside the Zimbra WebClient, including Group and Corporate
+Messaging, File Sharing, Screen Sharing and informal Video Chat
+capabilities.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Zextras Team is not compatible with Zimbra version 8.8.11
+and lower.</p>
+</div>
+<section id="frontend-features">
+<span id="team-frontend-features"></span><h3>Frontend Features<a class="headerlink" href="#frontend-features" title="Permalink to this headline"></a></h3>
+<p>Zextras Team includes the following front-end features:</p>
+<ul class="simple">
+<li><p>Message delivery and read awareness</p></li>
+<li><p>1-to-1 Instant Messaging</p></li>
+<li><p>Group Messaging</p></li>
+<li><p>Corporate Messaging (Spaces and Channels)</p></li>
+<li><p>Group Video Calls</p></li>
+<li><p>Channel Video calls</p></li>
+<li><p>File Sharing</p></li>
+<li><p>Screen Sharing</p></li>
+<li><p>Emojis</p></li>
+<li><p>Mute conversations and notifications</p></li>
+</ul>
+</section>
+<section id="backend-features">
+<span id="team-backend-features"></span><h3>Backend Features<a class="headerlink" href="#backend-features" title="Permalink to this headline"></a></h3>
+<p>Zextras Team includes the following backend features:</p>
+<ul class="simple">
+<li><p>COS and User availability</p></li>
+<li><p>Built-in TURN server compatibility</p></li>
+<li><p>No core installation needed. Zimlet installation through a package
+manager.</p></li>
+<li><p>No configuration needed</p></li>
+<li><p>Peer-to-Peer WebRTC protocol to avoid server load</p></li>
+<li><p>Dedicated audit log</p></li>
+</ul>
+</section>
+</section>
+<section id="licensing">
+<span id="team-licensing"></span><h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline"></a></h2>
+<p>Zextras Team is licensed on a per-user basis.</p>
+<p>Global Admins can enable its Advanced features for any number of users
+up to the limit allowed by the license, and only “advanced” users count
+towards any licensing limit.</p>
+<p>The total number of users who have the Advanced features active can be
+seen in the output of the <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">core</span> <span class="pre">getLicenseInfo</span></code> command under
+<code class="docutils literal notranslate"><span class="pre">teamChatActiveCount</span></code>:</p>
+<p><a class="reference external" href="mailto:zimbra&#37;&#52;&#48;129efa51bd95">zimbra<span>&#64;</span>129efa51bd95</a>:~$ zxsuite core getLicenseInfo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dateStart</span>                                           <span class="mi">2019</span><span class="o">-</span><span class="mi">06</span><span class="o">-</span><span class="mi">11</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">UTC</span>
+<span class="n">dateEnd</span>                                             <span class="mi">2019</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span> <span class="mi">17</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">UTC</span>
+<span class="n">expired</span>                                             <span class="n">false</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+<span class="n">teamchatActiveCount</span>                                 <span class="mi">999</span>
+<span class="p">[</span><span class="o">...</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This count is updated every 15 minutes.</p>
+</section>
+<section id="zextras-team-zimlet-installation">
+<span id="team-zextras-team-zimlet-installation"></span><h2>Zextras Team Zimlet installation<a class="headerlink" href="#zextras-team-zimlet-installation" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">com_zextras_Team</span></code> Zimlet can be deployed from the “Core” section
+of the Zextras Administration Zimlet.</p>
+<p>No configuration on the mailboxd side is needed after the Zimlet has
+been deployed and enabled.</p>
+</section>
+<section id="urls-and-ports">
+<span id="team-urls-and-ports"></span><h2>URLs and Ports<a class="headerlink" href="#urls-and-ports" title="Permalink to this headline"></a></h2>
+<p>To build URLs and links (e.g. for External Shares) Zextras Team uses the
+default Zimbra settings for the domain of the account in use - the
+<code class="docutils literal notranslate"><span class="pre">zimbraPublicServiceHostname</span></code> property is used for the URL itself
+while the <code class="docutils literal notranslate"><span class="pre">zimbraPublicServicePort</span></code> property is used for the port.</p>
+<p>Should any of the two not be set up, the system will always fall back to
+the <code class="docutils literal notranslate"><span class="pre">zimbraServiceHostname</span></code> and <code class="docutils literal notranslate"><span class="pre">zimbraMailPort</span></code> or
+<code class="docutils literal notranslate"><span class="pre">zimbraMailSSLPort</span></code> server-level properties.</p>
+<p>For Video Chats and Instant Meetings, the following rules apply:</p>
+<ul class="simple">
+<li><p>Team will work through firewalls and NATs as long as the peers can
+communicate each with the other - either directly or through a TURN
+server (which together with proper network rules is usually the
+solution to any WebRTC connection problem).</p></li>
+<li><p>When no TURN server is set up, a default STUN server is used so
+clients should be able to send outbound traffic to ports 19305/19307.
+The actual P2P connection is established between the clients on a
+random unreserved port between 1 and 65535 based on the client
+configuration and network.</p></li>
+<li><p>The default handshake/negotiation port used by most TURN servers is
+3478 (incoming, UDP), but a different port can be used as long as it
+is properly set up&gt; on the Team side the port is specified when
+adding the TURN server and the clients clients will be instructed to
+connect through it. The default P2P connection range when using a
+TURN server is 49152-65535 (usually configurable on the TURN side) so
+clients should be able to send data to that port range to the TURN
+server.</p>
+<ul>
+<li><p>Most TURN servers can also be configured to use TCP insted of UDP.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="zextras-team-administration">
+<span id="team-zextras-team-administration"></span><h2>Zextras Team administration<a class="headerlink" href="#zextras-team-administration" title="Permalink to this headline"></a></h2>
+<p>Zextras Team features can be enabled and disabled from the “Team”
+section of Accounts and Classes of Service in the Zimbra Administration
+Console.</p>
+<p>The same options are also available via the <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span></code> command
+line utility:</p>
+<ul class="simple">
+<li><p>Enable Zextras Team «Advanced» features</p>
+<ul>
+<li><p>Property: <code class="docutils literal notranslate"><span class="pre">teamChatEnabled</span></code></p></li>
+<li><p>Available in: COS, account</p></li>
+</ul>
+</li>
+<li><p>Enable or disable the chat history</p>
+<ul>
+<li><p>Property: <code class="docutils literal notranslate"><span class="pre">historyEnabled</span></code></p></li>
+<li><p>Available in: global, server, COS, account</p></li>
+</ul>
+</li>
+<li><p>Enable or disable Video Chat</p>
+<ul>
+<li><p>Property: <code class="docutils literal notranslate"><span class="pre">videoChatEnabled</span></code></p></li>
+<li><p>Available in: global, server, COS, account</p></li>
+</ul>
+</li>
+<li><p>Enable or disable user presence</p>
+<ul>
+<li><p>Property <code class="docutils literal notranslate"><span class="pre">teamHideUserPresenceUpdates</span></code></p></li>
+<li><p>Available in: global, server, COS, account</p></li>
+</ul>
+</li>
+<li><p>Enable or disable ability to receive a <em>read receipt</em> for sent
+messages</p>
+<ul>
+<li><p>Property <code class="docutils literal notranslate"><span class="pre">teamHideMessageReads</span></code></p></li>
+<li><p>Available in: global, server, COS, account</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="browser-compatibility">
+<span id="team-browser-compatibility"></span><h2>Browser compatibility<a class="headerlink" href="#browser-compatibility" title="Permalink to this headline"></a></h2>
+<p>The following list shows which browsers are known to fully support all
+Zextras features.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Browser</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>OS</p></th>
+<th class="head"><p>Supported</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>Microsoft Edge (Chromium)</em></p></td>
+<td><p><em>Latest</em></p></td>
+<td><p><em>Windows</em></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span> <em>Yes</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Microsoft Edge (Chromium)</em></p></td>
+<td><p>Others</p></td>
+<td><p>Windows</p></td>
+<td><p><span class="fa fa-check-circle sd-text-warning"></span> Limited</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Microsoft Edge (EdgeHTML)</em></p></td>
+<td><p>Any</p></td>
+<td><p>Windows</p></td>
+<td><p><span class="fa fa-times-circle sd-text-danger"></span> No</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Internet Explorer</em></p></td>
+<td><p>Any</p></td>
+<td><p>Windows</p></td>
+<td><p><span class="fa fa-times-circle sd-text-danger"></span> No</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Mozilla Firefox</em></p></td>
+<td><p><em>Latest</em></p></td>
+<td><p><em>Windows/Linux/OSX</em></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span> <em>Yes</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Mozilla Firefox</em></p></td>
+<td><p>ESR</p></td>
+<td><p>Windows/Linux/OSX</p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span> Yes</p></td>
+</tr>
+<tr class="row-even"><td><p><em>Mozilla Firefox</em></p></td>
+<td><p>Others</p></td>
+<td><p>Windows/Linux/OSX</p></td>
+<td><p><span class="fa fa-check-circle sd-text-warning"></span> Limited</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Google Chrome</em></p></td>
+<td><p><em>Latest</em></p></td>
+<td><p><em>Windows/Linux/OSX</em></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span> <em>Yes</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Google Chrome</em></p></td>
+<td><p>Others</p></td>
+<td><p>Windows/Linux/OSX</p></td>
+<td><p><span class="fa fa-check-circle sd-text-warning"></span> Limited</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>Safari</em></p></td>
+<td><p><em>Latest</em></p></td>
+<td><p><em>OSX</em></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span> <em>Yes</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>Safari</em></p></td>
+<td><p>Others</p></td>
+<td><p>OSX</p></td>
+<td><p><span class="fa fa-check-circle sd-text-warning"></span> Limited</p></td>
+</tr>
+</tbody>
+</table>
+<p>Items marked as “<span class="fa fa-check-circle sd-text-warning"></span> Limited” are only
+supported on the browser’s two previous stable releases.</p>
+<p>Firefox users must be sure to be running at least version 66 of the
+browser to be able to use the Screen Sharing feature.</p>
+</section>
+<section id="mobile-app">
+<span id="team-mobile-app"></span><h2>Mobile App<a class="headerlink" href="#mobile-app" title="Permalink to this headline"></a></h2>
+<p>A dedicated Zextras Team mobile app is available for both Android and
+iOS.</p>
+<img alt="_images/google-play-badge.png" src="_images/google-play-badge.png" />
+<img alt="_images/app_store-badge.png" src="_images/app_store-badge.png" />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In order for mobile message delivery to work, the Zimbra
+server must be able to communicate with the
+<code class="docutils literal notranslate"><span class="pre">notifications.zextras.com</span></code> service on port 443</p>
+</div>
+<section id="notifications-on-android-devices">
+<span id="team-notifications-on-android-devices"></span><h3>Notifications on Android Devices<a class="headerlink" href="#notifications-on-android-devices" title="Permalink to this headline"></a></h3>
+<p>Several Android devices manufacturers have strict default settings on
+which apps can display notifications, sometimes causing the
+Zextras Team App not to be able to notify new messages.</p>
+<p>To make sure that your device allows all required notifications, follow
+these steps:</p>
+<div class="informalexample docutils container">
+<ol class="arabic simple">
+<li><p>Log out from the app;</p></li>
+<li><p>Access the device’s Settings, then enter the “Apps &amp;
+Notifications”<sup>1</sup> menu;</p></li>
+<li><p>Select the <em>Team</em> app from the list of all installed apps;</p></li>
+<li><p>Enter the “Notifications”<sup>1</sup> section;</p></li>
+<li><p>Enable the notifications (first option on the top);</p></li>
+<li><p>Enable the banner notification on the “Chat”, “Group” and “Spaces
+&amp; Channels” subsections;</p></li>
+<li><p>Log back in, notifications should now work;</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Entries marked as (<sup>1</sup>) might have a different
+name depending on your device’s manufacturer and UI.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="user-interface">
+<span id="team-user-interface"></span><h2>User Interface<a class="headerlink" href="#user-interface" title="Permalink to this headline"></a></h2>
+<section id="team-tab">
+<span id="team-team-tab"></span><h3>Team Tab<a class="headerlink" href="#team-tab" title="Permalink to this headline"></a></h3>
+<p>The Team Tab is a fully fledged Zimbra feature tab that can be accessed
+in the same way as all other feature tabs (e.g., Mail or Calendar). The
+Zextras Team UI is seamlessly integrated with the Zimbra Web Client.</p>
+<p>The Team Tab is the full-sized Zextras Team UI, which contains all
+corporate instant messaging features such as Spaces and Channels. The
+tab itself is available for both Basic and Advanced users, but corporate
+features are only available to Advanced users. The tab appearance
+changes depending on which of the textual or video conversation feature
+is used.</p>
+</section>
+<section id="meetings-on-a-new-browser-tab">
+<span id="team-meetings-on-a-new-browser-tab"></span><h3>Meetings on a New Browser Tab<a class="headerlink" href="#meetings-on-a-new-browser-tab" title="Permalink to this headline"></a></h3>
+<p>Users can now start their meetings from a new browser tab or continue
+the call in the same tab.</p>
+<p>When users start a call, the following modal appears.</p>
+<p><strong>Launch Team in a new browser tab.</strong></p>
+<img alt="_images/team-new-tab-modal.png" src="_images/team-new-tab-modal.png" />
+<dl class="simple">
+<dt>Default Mode</dt><dd><p>The Team app starts within the Zimbra application under the same tab.</p>
+</dd>
+<dt>Dedicated Mode</dt><dd><p>The team app starts in a new tab.</p>
+</dd>
+</dl>
+<p>Select SAVE SETTING to set one of the above two modes as default for
+each meeting.</p>
+<section id="changing-the-selected-mode">
+<span id="team-changing-the-selected-mode"></span><h4>Changing the Selected Mode<a class="headerlink" href="#changing-the-selected-mode" title="Permalink to this headline"></a></h4>
+<p>The following steps help change the mode for future interactions.</p>
+<ol class="arabic simple">
+<li><p>Log in to Zimbra.</p></li>
+<li><p>Select Teams from the app bar.</p></li>
+<li><p>Select the gear icon from the left pane to open <strong>Settings</strong>.</p></li>
+<li><p>Under <strong>Team Settings</strong> modal, scroll down to <strong>Meetings Environment
+Settings</strong>.</p></li>
+<li><p>Select one of <strong>Default</strong> or <strong>Dedicated</strong> modes. The selection is
+automatically applied.</p></li>
+</ol>
+</section>
+</section>
+<section id="textual-conversations-chats-and-spaces">
+<span id="team-textual-conversations-chats-and-spaces"></span><h3>Textual Conversations (Chats) and Spaces<a class="headerlink" href="#textual-conversations-chats-and-spaces" title="Permalink to this headline"></a></h3>
+<p>Team allows to communicate with single (1-to-1) or multiple users at
+once. Besides text, file sharing is also possible.</p>
+<p>The Team tab is divided into three main parts:</p>
+<ul>
+<li><p>The left-hand side column, which contains the list of conversations
+(both 1-to-1 chats and groups), spaces, and active instant meetings.
+It also allows to create new communication channels (chats, groups,
+spaces, instant meetings)</p></li>
+<li><p>The central area, where the messages in conversation are shown,
+grouped by day. Moreover, in case a Video Conversation takes place
+between the users, also its start time and end time are shown in the
+flow of messages.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The time is reported according to the configured timezone
+on the user’s workstation.</p>
+</div>
+</li>
+<li><p>The right column, which displays information about the current
+conversation or space and allows to either mute notifications or
+remove all the chat history.</p></li>
+</ul>
+<p><strong>The Team Tab Graphic User Interface.</strong></p>
+<img alt="_images/team-tab.png" src="_images/team-tab.png" />
+<p>When the Video Chat or Instant Meeting are used, the UI changes, see
+section <a class="reference external" href="#video-chat">Video Conversations (Video Chats) and Instant
+Meetings</a>.</p>
+<section id="minichats">
+<span id="team-minichats"></span><h4>Minichats<a class="headerlink" href="#minichats" title="Permalink to this headline"></a></h4>
+<p>Chats, as well as conversations in Spaces and Channels, can be minimised
+by clicking the arrow on the top right corner of the central area. This
+also causes the UI to go to the <strong>Mail</strong> tab, with the chats shown as
+small overlays on the Mail tab. They can be further minimised by
+clicking the title bar, restored to full browser-sized window by
+clicking the arrow or closed with a click on the <strong>X</strong>.</p>
+<p>Moreover, Instant Meetings (if minichat is a chat) or Video Chats (if
+minichat is a Space or Channel conversation) can be started by clicking
+the camera icon.</p>
+<p>Incoming Space or Channel conversation are automatically opened as
+Minichats in case the user is on tab different from the <strong>Team</strong> tab.</p>
+</section>
+</section>
+<section id="team-video-chat">
+<span id="id2"></span><h3>Video Conversations (Video Chats) and Instant Meetings<a class="headerlink" href="#team-video-chat" title="Permalink to this headline"></a></h3>
+<p>Video Conversations allow individuals or members of spaces and groups to
+join a video call for real time verbal communication. Any user can start
+a Video Conversation or Instant Meeting with other users; the receiving
+users will be notified by a modal window in the browser and by an audio
+signal, that will last at most 10 seconds.</p>
+<p>During video chats and instant meetings, the Team tab is composed of
+four parts. However, there are slight differences when using Video Chat
+(i.e., a call between two persons) or the Instant Meeting (i.e., a video
+call among three or more users). The latter also features two
+alternative UIs, namely <strong>Cinema Mode</strong>, which is similar to Video
+Chats, and <strong>Grid Layout</strong>.</p>
+<p>The UI parts common to Video Chat and Instant meetings, are:</p>
+<ul class="simple">
+<li><p>The left column, which contains the text chat</p></li>
+<li><p>The central area, which contains the video stream</p></li>
+<li><p>The right column, which contains a miniature of the other participant
+(or participants in an Instant Meeting). This column is called
+<strong>Carousel</strong>.</p></li>
+<li><p>The bottom bar, which is a self-hiding bar that allows to control the
+video call and the UI itself. From the bottom bar you can hide the
+chat, maximise the central area to full screen, disable microphone or
+webcam, share the screen, or close the call.</p></li>
+<li><p>Additionally, the first participant to access a Video Chat or an
+Instant Meeting will hear a sound and see a visual animation until
+another user joins.</p></li>
+</ul>
+<section id="screen-sharing">
+<span id="team-screen-sharing"></span><h4>Screen Sharing<a class="headerlink" href="#screen-sharing" title="Permalink to this headline"></a></h4>
+<p><strong>Screen sharing</strong> is an additional feature of chats, that allows
+participants to show either a single window, one screen, or all the
+screens of their workstation. Multiple persons can share their screen at
+the same time and the screen of the last person will automatically
+become active and shown in the central area. When a screen share is
+stopped, the central area will switch to either the previous active
+screen share (if there are any), or to the previous view, Cinema mode or
+Grid Layout (if no more screen shares are active).</p>
+<p>Moreover, when a user in a video chat or instant meeting shares a window
+or the whole screen, in the right column both the video of the user
+<em>and</em> the screen share will be shown. This happens because the stream
+sent by the webcam and the stream of the screen share are distinct and
+treated as separate users.</p>
+<p>When using the Instant Meeting in <strong>Cinema Mode</strong> (see Figure
+<a class="reference external" href="#img-cinema-mode">formalpara_title</a>), the central area contains the
+stream of the person who is taking, although at any time it is possible
+to pin the video of another participant. These additional features are
+available in cinema mode:</p>
+<ul class="simple">
+<li><p>A miniature for every participant is shown in the right column</p></li>
+<li><p>A button to hide the list of participants is added to the right of
+the bottom bar</p></li>
+<li><p>Another button to switch between Grid Layout and Cinema Mode is added
+to the center of the bottom bar</p></li>
+<li><p>If the video stream of a person is pinned and another participant
+talks for more than <strong>two</strong> seconds, the latter’s stream is shown in
+the right-hand Carousel, framed in green</p></li>
+<li><p>An icon shows whether the microphone or the webcam of the participant
+is turned off</p></li>
+</ul>
+<p><strong>Video Conversation in Cinema Mode.</strong></p>
+<figure class="align-default">
+<img alt="_images/team-cinema-mode.png" src="_images/team-cinema-mode.png" />
+</figure>
+<p>The <strong>Grid Layout</strong> of an Instant Meeting (see Figure
+<a class="reference external" href="#img-grid-layout">formalpara_title</a>) allows to show all the
+participants in the central area. The differences with the Cinema Mode
+are:</p>
+<ul class="simple">
+<li><p>There is no left column as it is part of the central area</p></li>
+<li><p>In the bottom bar the button to hide the list of participant
+disappears</p></li>
+<li><p>The stream of the person who is talking has a green frame</p></li>
+</ul>
+<p><strong>Video Conversation in Grid Layout.</strong></p>
+<img alt="_images/team-grid-layout.png" src="_images/team-grid-layout.png" />
+</section>
+</section>
+</section>
+<section id="instant-messaging-and-corporate-communication">
+<span id="team-instant-messaging-and-corporate-communication"></span><h2>Instant Messaging and Corporate Communication<a class="headerlink" href="#instant-messaging-and-corporate-communication" title="Permalink to this headline"></a></h2>
+<p>In the left-hand side column it is possible to create new instances of
+<strong>Chats</strong> and <strong>Group Chats</strong>, <strong>Spaces</strong> and <strong>Instant Meetings</strong>. The
+User Experience has been improved and now the process of setting up a
+new instance is the same: First, click on the Chats, Spaces, or Instant
+Meetings, then on <em>CREATE</em>. In <em>Chats</em> (See
+<a class="reference external" href="#img-create-chat">formalpara_title</a>), choose whether this is a
+1-to-1 or group chat, then simply add participants from the dialog
+window that appears. For Spaces and Instant Meetings, you can also add a
+title or topic.</p>
+<p>In the case of Instant Meetings, only logged in users can join. External
+users can join, but they need to provide a nickname and a valid email
+address.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Instant Meetings can have two or more participants, Chats exactly
+two, Video Chats at least <strong>three</strong> persons (one host and two more
+participants), while Spaces can be empty, i.e., they can be created
+without inviting any user.</p>
+</div>
+<p><strong>Dialog window to create a chat.</strong></p>
+<img alt="_images/team-chat.png" src="_images/team-chat.png" />
+<p>The process to create a Channel is a bit different, as this is a feature
+internal to spaces. So, to create a Channel it is necessary to set up a
+Space, then click on the <em>Add Channel</em> button in the <em>right</em> column.
+Now. you’ll see a window similar to the one above, where you can add a
+title and a topic. The Channel will appear underneath the space name,
+indented, to underline that it is tight to the space.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can not select the users in a channel, because participation to
+channels is optional and open to all members of the space.</p>
+</div>
+<p><strong>A space with a channel.</strong></p>
+<img alt="_images/space-channel.png" src="_images/space-channel.png" />
+<p>Once you have set up an instance, you can immediately start a textual
+chat with all the participants or start a video call by clicking on the
+camera icon on the top right corner of the central area. Next to that
+icon, an arrow icon allows to minimise the Zextras Team tab.</p>
+<p>Recent conversation appear in the left column, for a quick access.</p>
+<p>The main features of the various communication means are described in
+the remainder of this section.</p>
+<section id="moderators-in-rooms">
+<span id="team-moderators-in-rooms"></span><h3>Moderators in Rooms<a class="headerlink" href="#moderators-in-rooms" title="Permalink to this headline"></a></h3>
+<p>The user that creates a <strong>room</strong> (we call <em>room</em> either a channel, a
+space, or a group) becomes automatically the <strong>Room Moderator</strong> and can
+manage the room’s textual and video conversations. In particular, the
+<em>Mute For All</em> and <em>Add new members</em> functionalities are reserved for
+Moderators only.</p>
+<p>A moderator can promote any user as moderator and can leave the room
+only if either no other users are present in the room or another
+moderator is present in the room.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In groups created before the moderator role has been
+introduced, all members are automatically promoted as moderators.</p>
+</div>
+<p>The moderator status can be set either using the icons from the GUI,
+next to each room participant, or from the CLI, using the <a class="reference external" href="./cli.xml#team_addOwner">zxsuite team
+addOwner</a> command. for example, to make
+<a class="reference external" href="mailto:user2&#37;&#52;&#48;example&#46;com">user2<span>&#64;</span>example<span>&#46;</span>com</a> owner of the rooms with conversation_id
+<a class="reference external" href="mailto:aced5e2e-f457-4d30-a3fb-9b18fac486a6&#37;&#52;&#48;example&#46;com">aced5e2e-f457-4d30-a3fb-9b18fac486a6<span>&#64;</span>example<span>&#46;</span>com</a> this command can be
+issued from the CLI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">team</span> <span class="n">addOwner</span>  <span class="n">aced5e2e</span><span class="o">-</span><span class="n">f457</span><span class="o">-</span><span class="mi">4</span><span class="n">d30</span><span class="o">-</span><span class="n">a3fb</span><span class="o">-</span><span class="mi">9</span><span class="n">b18fac486a6</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">user2</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</section>
+<section id="groups">
+<span id="team-groups"></span><h3>Groups<a class="headerlink" href="#groups" title="Permalink to this headline"></a></h3>
+<p>Groups are used to communicate with multiple people at the same time (by
+default up to 5 in total). Those are non-persistent entities not tied to
+any specific space. Any user can create a group inviting people, and any
+group member can invite more people in the same way. When all users
+leave a group, the group itself ceases to exist.</p>
+<section id="groups-features">
+<span id="team-groups-features"></span><h4>Groups Features<a class="headerlink" href="#groups-features" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>A user in a Group can add more users to the Group itself up to the
+allowed limit and share the whole chat history with them</p></li>
+<li><p>A user in a Group can chat with all of the others. All members of
+that Group can view all messages sent to the Group.</p></li>
+<li><p>A user in a Group can send files to all of the others. Files sent in
+a Group are available to all members of that Group.</p></li>
+<li><p>An user in a Group can start a video chat with all of the others.
+Group video chats can be joined at any time by all members of the
+Group.</p></li>
+</ul>
+<p>Global Administrators can change the allowed maximum number of group
+members in the Zextras Team section of the Global settings in the
+Admin Console.</p>
+</section>
+</section>
+<section id="spaces">
+<span id="team-spaces"></span><h3>Spaces<a class="headerlink" href="#spaces" title="Permalink to this headline"></a></h3>
+<p>Spaces are a themed container that can hold any number of Channels.
+Think of a Space as a community center where people gather to discuss
+different topics in dedicated areas (named Channels).</p>
+<section id="spaces-features">
+<span id="team-spaces-features"></span><h4>Spaces Features<a class="headerlink" href="#spaces-features" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Each space has a unique name and topic. You may change both the name
+and the Topic by clicking on the relevant field in the Space’s
+settings.</p></li>
+<li><p>Members can leave a space at any time.</p></li>
+<li><p>Space Administrators can create new channels and invite new people to
+the space using the appropriate buttons.</p></li>
+<li><p>Members can upload, share, and forward messages and attachments in
+Spaces</p></li>
+</ul>
+</section>
+<section id="space-settings">
+<span id="team-space-settings"></span><h4>Space Settings<a class="headerlink" href="#space-settings" title="Permalink to this headline"></a></h4>
+<p>Its General Channel Info defines a Space’s settings (see below).</p>
+<p>The Space’s creator is also the first Space Administrator and can grant
+the same rights to any other user by clicking on the crown icon in the
+appropriate entry of the participant list.</p>
+<p>Only Space Administrators can invite new participants, create new
+channels, kick people, and delete channels within the space.</p>
+</section>
+</section>
+<section id="channels">
+<span id="team-channels"></span><h3>Channels<a class="headerlink" href="#channels" title="Permalink to this headline"></a></h3>
+<p>Channels are topic-defined areas inside of the same space. Those can
+contain any number of users, and unlike Groups, users can autonomously
+join any Channel in a Space they are in instead of being invited to it
+by a member.</p>
+<p>Each new Space has a “General” channel automatically created within it,
+which defines the space’s properties (e.g., Title and Topic) and which
+all users automatically join when they join the Space.</p>
+<section id="channels-features">
+<span id="team-channels-features"></span><h4>Channels Features<a class="headerlink" href="#channels-features" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>A user in a Channel can chat with all of the others. All members of
+that channel can view all messages sent on the Channel.</p></li>
+<li><p>A user in a Channel can start a video chat with all of the others.
+Channel video chats can be joined at any time by all members of the
+Channel.</p></li>
+<li><p>A user in a Channel can upload, share, and forward messages and
+attachments</p></li>
+</ul>
+</section>
+</section>
+<section id="mute-notifications-and-conversations">
+<span id="team-mute-notifications-and-conversations"></span><h3>Mute Notifications and Conversations<a class="headerlink" href="#mute-notifications-and-conversations" title="Permalink to this headline"></a></h3>
+<p>When receiving a message or attachment in a 1-to-1 Chat, in a Channel,
+or Space, notifications like sounds, mini-chats or other pop-us are used
+in case the browser with Teams, the Android app, or the iOS app are in
+the background.</p>
+<p>This standard behaviour can be changed to mute all or some of the
+notifications, even if users that are communicating are on different
+server. This <code class="docutils literal notranslate"><span class="pre">mute</span></code> or <code class="docutils literal notranslate"><span class="pre">active</span></code> status is stored and maintained in
+the properties of each Chat, Channel, or Space and is kept even in case
+a Mailbox is moved to a new server.</p>
+<p>In 1-to-1 chats, if there is feedback or background noise, users can
+mute other participant’s microphones. Muted participants see a toast
+notification on the screen. Participants can reactivate their microphone
+by clicking Unmute or the notification.</p>
+<p>In Video Chats, users can selectively mute other participants; a
+moderator, however, can mute everyone at the same time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notifications for Instant meetings can not be muted.</p>
+</div>
+</section>
+</section>
+<section id="file-sharing">
+<span id="team-file-sharing"></span><h2>File sharing<a class="headerlink" href="#file-sharing" title="Permalink to this headline"></a></h2>
+<p>Users can easily share files via Team to Chats and Groups by dragging
+and dropping the files directly into the chat interface (both in the
+minichat and in the Teamtab) or by clicking the “paperclip” icon on the
+right of the message input field. Multiple files can be uploaded at
+once, and image files will show a preview of the file while other common
+filetypes will display a custom icon.</p>
+<p>Clicking on a file within a chat window will download it to the local
+client using the browser’s own download interface.</p>
+<p>Files shared via Team will be stored inside a protected root folder the
+sender’s Drive called <code class="docutils literal notranslate"><span class="pre">Team</span> <span class="pre">sent</span> <span class="pre">files</span></code>, thus counting towards the
+sender’s mailbox quota, and will remain available for download in the
+chat window for all participants until deleted from Drive by the sender.</p>
+</section>
+<section id="autocomplete">
+<span id="team-autocomplete"></span><h2>Autocomplete<a class="headerlink" href="#autocomplete" title="Permalink to this headline"></a></h2>
+<p>Autocomplete in Team is split in two different categories: <strong>Internal</strong>
+Autocomplete and <strong>External</strong> autocomplete.</p>
+<p>Internal autocomplete kicks in when selecting a target for 1-1 Chats,
+Group Chats, Spaces and Channels, while External autocomplete is only
+used for Instant Meeting attendees.</p>
+<p>This can be changed by setting the <code class="docutils literal notranslate"><span class="pre">teamCrossDomainSearchMode</span></code> COS
+property to either <code class="docutils literal notranslate"><span class="pre">local</span></code>, <code class="docutils literal notranslate"><span class="pre">extended</span></code> or <code class="docutils literal notranslate"><span class="pre">global</span></code> using the
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">[get/set/empty]</span></code> CLI toolset.</p>
+<ul class="simple">
+<li><p><em>local</em> mode, in which Internal Autocomplete will draw its
+information from the GAL, while External autocomplete will draw its
+information from the user’s Contacts and GAL.</p></li>
+<li><p><em>extended</em> mode is a superset of <em>local</em> that also matches full email
+addresses of any user in the same infrastructure as internal users.</p>
+<ul>
+<li><p>This allows to initiate a 1-1 Chat with or to add to a
+Group/Space/Channel any user that is on the same infrastructure
+but out of the GAL as long as the exact email address is entered.</p></li>
+</ul>
+</li>
+<li><p><em>global</em> mode is a superset of <em>extended</em> that does not require an
+exact match on the email address to autocomplete users in the same
+infrastructure.</p>
+<ul>
+<li><p>This allows to autocomplete any user in the infrastructure as
+opposed to the strict email addres match required in <em>extended</em>
+mode.</p></li>
+</ul>
+</li>
+</ul>
+<img alt="_images/connect_autocomplete_management.jpeg" src="_images/connect_autocomplete_management.jpeg" />
+<p>The default setting inherited by all COS is <em>local</em>.</p>
+</section>
+<section id="presence">
+<span id="team-presence"></span><h2>Presence<a class="headerlink" href="#presence" title="Permalink to this headline"></a></h2>
+<p>Presence is managed automatically in Zextras Team: whenever a user
+logs in, regardless of whether the Team Tab has the focus, they appear
+as <strong>online</strong>.</p>
+<p>As part of the user presence system, all messages get displayed with a
+variable number of check symbols:</p>
+<img alt="_images/connect_message_delivered_1.png" src="_images/connect_message_delivered_1.png" />
+<ul class="simple">
+<li><p>0 checks, message not delivered to the server</p></li>
+<li><p>1 check, message delivered to the server</p></li>
+<li><p>2 checks, message viewed by all users</p></li>
+</ul>
+<p>When sending a text message, if privacy is enabled, then only one <em>gray</em>
+check is shown, meaning that the server has received the message. No
+acknowledgement will be sent back by the receiving user.</p>
+</section>
+<section id="unread-messages">
+<span id="team-unread-messages"></span><h2>Unread Messages<a class="headerlink" href="#unread-messages" title="Permalink to this headline"></a></h2>
+<p>The number of unread messages in any conversation (Group, Channel,
+space, instant meeting) appears on the right side of both the <em>Chats</em>,
+<em>Spaces</em>, <em>Instant Meetings</em> label from where the message originated,
+and in the list of conversions underneath, next to the actual chat
+generating the message.</p>
+</section>
+<section id="edit-reply-forward-and-delete-messages">
+<span id="team-edit-reply-forward-and-delete-messages"></span><h2>Edit, Reply, Forward and Delete Messages<a class="headerlink" href="#edit-reply-forward-and-delete-messages" title="Permalink to this headline"></a></h2>
+<p>Right clicking on a message or hovering on a message and clicking on the
+arrowhead that appears on the right side of the message bubble displays
+a context menu that shows the available actions:</p>
+<ul class="simple">
+<li><p>Edit: change the message’s content. The “edited” string will appear
+next to the message delivery icon.</p></li>
+<li><p>Reply: reply to a message. The reply will be in the same chat and
+will not be private</p></li>
+<li><p>Forward: forward a message to another chat, group or channel.</p></li>
+<li><p>Delete: delete a message. The message bubble’s color will change to
+gray and the “Deleted Message” string will appear instead of the
+original text.</p></li>
+</ul>
+<p>The following table recaps all message interactions:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Edit</p></th>
+<th class="head"><p>Delete</p></th>
+<th class="head"><p>Forward</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Text Message</p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span> (Only own messages)</p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>File Attachment message</p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span> (Only if description already exists)</p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Conversation Status message</p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Edited message</p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+</tr>
+<tr class="row-even"><td><p>Forwarded message</p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+<td><p><span class="fa fa-check-circle sd-text-success"></span></p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Deleted message</p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+<td><p><span class="fa fa-times-circle sd-text-warning"></span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="chat-history">
+<span id="team-chat-history"></span><h2>Chat History<a class="headerlink" href="#chat-history" title="Permalink to this headline"></a></h2>
+<p>Chat History for each 1-to-1 Chat, Group, and Channel is available in
+the very same window (e.g., enter a Channel to see all of that channel’s
+history) and messages delivered to offline users appear in the
+appropriate IM conversation, Group or Channel.</p>
+</section>
+<section id="stun-turn-server">
+<span id="team-stunturn-server"></span><h2>STUN/TURN Server<a class="headerlink" href="#stun-turn-server" title="Permalink to this headline"></a></h2>
+<p>Since WebRTC is a peer-to-peer protocol, all users in a video chat must
+be able to reach each other’s client for the connections to get
+established.</p>
+<p>Should this not be possible, because of NAT rules on the network or
+because of a Service Provider’s policy, using a TURN server ensures
+proper communication between all peers. Zextras Team is designed to
+allow using a STUN/TURN server out of the box by simply adding the TURN
+server’s URL and login information in the zimlet configuration.</p>
+<section id="setting-up-zextras-team-to-use-a-turn-server">
+<span id="team-setting-up-zextras-team-to-use-a-turn-server"></span><h3>Setting up Zextras Team to use a TURN server<a class="headerlink" href="#setting-up-zextras-team-to-use-a-turn-server" title="Permalink to this headline"></a></h3>
+<p>A dedicated set of TURN configuration tools is available via CLI through
+the <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">team</span> <span class="pre">iceServer</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zimbra@mailserver:~$ zxsuite Team iceServer
+
+Edit the list of ice servers which will be used to establish connections for video calls.
+Configuration available for global(default), cos or account.
+
+  add                      - add ice server candidates using global (default), cos or account
+                             zxsuite Team iceServer add {turn:turn.example.com:3478?transport=udp} [attr1 value1 [attr2 value2...]]
+
+  remove                   - remove ice server candidates using global (default), cos or account
+                             zxsuite Team iceServer remove {turn:turn.example.com:3478?transport=udp} [attr1 value1 [attr2 value2...]]
+
+  get                      - get ice server candidates using global (default), cos or account
+                             zxsuite Team iceServer get [attr1 value1 [attr2 value2...]]
+</pre></div>
+</div>
+<p>The “add” subcommand is used to add a new TURN server:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Syntax:
+   zxsuite Team iceServer add {turn:turn.example.com:3478?transport=udp} [attr1 value1 [attr2 value2...]]
+
+PARAMETER LIST
+
+NAME             TYPE      EXPECTED VALUES
+url(M)           String    turn:turn.example.com:3478?transport=udp
+username(O)      String    myuser
+credential(O)    String    mysecretkey
+account(O)       String    user@example.com
+cos(O)           String    default
+
+(M) == mandatory parameter, (O) == optional parameter
+
+Usage example:
+
+zxsuite Team iceserver add turn:turn.example.com credential mysecret username myuser
+zxsuite Team iceserver add turn:turn.example.com credential mysecret username myuser account testaccount@example.com
+</pre></div>
+</div>
+<p>Multiple TURN servers can be added to handle different users or Classes
+of Service (defined through the <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">cos</span></code> optional parameters
+of the command above).</p>
+<p>On the TURN server side, it is strongly recommended to have a single
+user, authenticated with a username and secret key, for ease-of-use
+reasons as a 1:1 correspondence between Zimbra users and TURN users is
+not necessary.</p>
+</section>
+</section>
+<section id="zextras-team-cli">
+<span id="team-zextras-team-cli"></span><h2>Zextras Team CLI<a class="headerlink" href="#zextras-team-cli" title="Permalink to this headline"></a></h2>
+<p>This section contains the index of all the available <code class="docutils literal notranslate"><span class="pre">zextras</span> <span class="pre">team</span></code>
+commands. Full reference can be found in <a class="reference external" href="./cli.xml#_zxteam_cli_commands">the dedicated
+section</a>.</p>
+<p><a class="reference external" href="./cli.xml#team_addOwner">addOwner</a> |
+<a class="reference external" href="./cli.xml#team_clusterStatus">clusterStatus</a> |
+<a class="reference external" href="./cli.xml#team_doClearChatDB">doClearChatDB</a> |
+<a class="reference external" href="./cli.xml#team_doDeployTeamZimlet">doDeployTeamZimlet</a> |
+<a class="reference external" href="./cli.xml#team_doImportChannels">doImportChannels</a> |
+<a class="reference external" href="./cli.xml#team_doMoveAllRooms">doMoveAllRooms</a> |
+<a class="reference external" href="./cli.xml#team_doMoveRoom">doMoveRoom</a> |
+<a class="reference external" href="./cli.xml#team_doRestartService">doRestartService</a> |
+<a class="reference external" href="./cli.xml#team_doStartService">doStartService</a> |
+<a class="reference external" href="./cli.xml#team_doStopService">doStopService</a> |
+<a class="reference external" href="./cli.xml#team_doUsersCleanup">doUsersCleanup</a> |
+<a class="reference external" href="./cli.xml#team_dumpSessions">dumpSessions</a> |
+<a class="reference external" href="./cli.xml#team_flushConversationsCache">flushConversationsCache</a> |
+<a class="reference external" href="./cli.xml#team_getServices">getServices</a> | <a class="reference external" href="./cli.xml#team_iceServer_add">iceServer
+add</a> | <a class="reference external" href="./cli.xml#team_iceServer_get">iceServer
+get</a> | <a class="reference external" href="./cli.xml#team_iceServer_remove">iceServer
+remove</a> |
+<a class="reference external" href="./cli.xml#team_monitor">monitor</a> | <a class="reference external" href="./cli.xml#team_rooms">rooms</a>
+| <a class="reference external" href="./cli.xml#team_space_get">space get</a> | <a class="reference external" href="./cli.xml#team_video-server_add">video-server
+add</a> | <a class="reference external" href="./cli.xml#team_video-server_remove">video-server
+remove</a> |</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="auth.html" class="btn btn-neutral float-left" title="Zextras Auth" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cli.html" class="btn btn-neutral float-right" title="CLI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

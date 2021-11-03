@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLI &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Zextras Team" href="team.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   <a href="index.html" class="icon icon-home"> Zextras Suite
+</a>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restorestrategies.html">Zextras Backup Restore Strategies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advancedbackup.html">Zextras Backup Advanced techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">Zextras Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Zextras Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drive.html">Zextras Drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Zextras Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Zextras Team</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-config-server">zxsuite config server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-docoherencycheck">zxsuite backup doCoherencyCheck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-dosmartscan">zxsuite backup doSmartScan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-getalloperations">zxsuite backup  getAllOperations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-monitor">zxsuite backup monitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-dopurge">zxsuite backup doPurge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-doaccountscan">zxsuite backup doAccountScan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-dobackupservercustomizations">zxsuite backup doBackupServerCustomizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-dobackupldap">zxsuite backup doBackupLDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-dobackupcluster">zxsuite backup doBackupCluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-setbackupvolume">zxsuite backup setBackupVolume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-retrievemetadatafromarchive-s3">zxsuite backup retrieveMetadataFromArchive_S3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-core-listbuckets">zxsuite core listBuckets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-powerstore-docheckblobs">zxsuite powerstore doCheckBlobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-migratebackupvolume-default">zxsuite backup migrateBackupVolume Default</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-migratebackupvolume-local">zxsuite backup_migrateBackupVolume_Local</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zxsuite-backup-migratebackupvolume-s3">zxsuite backup migrateBackupVolume_S3</a></li>
+</ul>
+</li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>CLI</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="cli">
+<h1>CLI<a class="headerlink" href="#cli" title="Permalink to this headline"></a></h1>
+<section id="zxsuite-config-server">
+<span id="config-server"></span><h2>zxsuite config server<a class="headerlink" href="#zxsuite-config-server" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-docoherencycheck">
+<span id="backup-docoherencycheck"></span><h2>zxsuite backup doCoherencyCheck<a class="headerlink" href="#zxsuite-backup-docoherencycheck" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-dosmartscan">
+<span id="backup-dosmartscan"></span><h2>zxsuite backup doSmartScan<a class="headerlink" href="#zxsuite-backup-dosmartscan" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-getalloperations">
+<span id="backup-getalloperations"></span><h2>zxsuite backup  getAllOperations<a class="headerlink" href="#zxsuite-backup-getalloperations" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-monitor">
+<span id="backup-monitor"></span><h2>zxsuite backup monitor<a class="headerlink" href="#zxsuite-backup-monitor" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-dopurge">
+<span id="backup-dopurge"></span><h2>zxsuite backup doPurge<a class="headerlink" href="#zxsuite-backup-dopurge" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-doaccountscan">
+<span id="backup-doaccountscan"></span><h2>zxsuite backup doAccountScan<a class="headerlink" href="#zxsuite-backup-doaccountscan" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-dobackupservercustomizations">
+<span id="backup-dobackupservercustomizations"></span><h2>zxsuite backup doBackupServerCustomizations<a class="headerlink" href="#zxsuite-backup-dobackupservercustomizations" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-dobackupldap">
+<span id="backup-dobackupldap"></span><h2>zxsuite backup doBackupLDAP<a class="headerlink" href="#zxsuite-backup-dobackupldap" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-dobackupcluster">
+<span id="backup-dobackupcluster"></span><h2>zxsuite backup doBackupCluster<a class="headerlink" href="#zxsuite-backup-dobackupcluster" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-setbackupvolume">
+<span id="backup-setbackupvolume"></span><h2>zxsuite backup setBackupVolume<a class="headerlink" href="#zxsuite-backup-setbackupvolume" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-retrievemetadatafromarchive-s3">
+<span id="backup-retrievemetadatafromarchive-s3"></span><h2>zxsuite backup retrieveMetadataFromArchive_S3<a class="headerlink" href="#zxsuite-backup-retrievemetadatafromarchive-s3" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-core-listbuckets">
+<span id="core-listbuckets"></span><h2>zxsuite core listBuckets<a class="headerlink" href="#zxsuite-core-listbuckets" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-powerstore-docheckblobs">
+<span id="powerstore-docheckblobs"></span><h2>zxsuite powerstore doCheckBlobs<a class="headerlink" href="#zxsuite-powerstore-docheckblobs" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-migratebackupvolume-default">
+<span id="backup-migratebackupvolume-default"></span><h2>zxsuite backup migrateBackupVolume Default<a class="headerlink" href="#zxsuite-backup-migratebackupvolume-default" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-migratebackupvolume-local">
+<span id="backup-migratebackupvolume-local"></span><h2>zxsuite backup_migrateBackupVolume_Local<a class="headerlink" href="#zxsuite-backup-migratebackupvolume-local" title="Permalink to this headline"></a></h2>
+</section>
+<section id="zxsuite-backup-migratebackupvolume-s3">
+<span id="backup-migratebackupvolume-s3"></span><h2>zxsuite backup migrateBackupVolume_S3<a class="headerlink" href="#zxsuite-backup-migratebackupvolume-s3" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="team.html" class="btn btn-neutral float-left" title="Zextras Team" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

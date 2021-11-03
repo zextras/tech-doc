@@ -1,0 +1,18 @@
+
+================
+ Carbonio Usage
+================
+
+Access to the mailbox
+=====================
+Access to the mailbox can be done through any device, connected to the internet, via a browser.
+For a better use of the Carbonio features it is recommended to use up-to-date Firefox or Chrome.
+
+To access the mailbox use the address of your webmail (for example https://mail.example.com)
+
+**Username**: your email
+**Password**: the same password associated with your "username"
+**Version**: Here you can choose between the classic interface and the Iris interface
+
+Mobile clients: Mail, Files, Chat
+=================================

@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zextras Backup Restore Strategies &mdash; Zextras Suite 0.1-alpha documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/design-style.d53ab927f7bad3eaa42da95908504b10.min.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/suite.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" type="text/css" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/design-tabs.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Zextras Backup Advanced techniques" href="advancedbackup.html" />
+    <link rel="prev" title="Zextras Backup" href="backup.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+   <a href="index.html" class="icon icon-home"> Zextras Suite
+</a>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+  
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="general.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Zextras Suite Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup.html">Zextras Backup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Zextras Backup Restore Strategies</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#restore-deleted-account">Restore Deleted Account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-the-restore-deleted-account">What is the Restore Deleted Account?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-it-work">How Does it Work?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-zextras-backup-tab">From the Zextras Backup tab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#single-item-restore">Single Item Restore</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-the-single-item-restore">What is the Single Item Restore?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-it-work-2">How Does it Work?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-single-item-restore">Running a Single Item Restore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#via-the-administration-zimlet">Via the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#via-the-cli">Via the CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#restore-on-new-account">Restore on New Account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-the-restore-on-new-account">What is the Restore on New Account?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-it-work-3">How Does it Work?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-restore-on-new-account-via-the-administration-zimlet">Running a Restore on New Account via the Administration Zimlet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-account-list">From the Account List</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-restore-on-new-account-via-the-cli">Running a Restore on New Account via the CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#time-range-undelete">Time-range Undelete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-time-range-undelete">What is Time-range Undelete?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-it-work-4">How Does it Work?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#corner-cases">Corner cases</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-a-time-range-undelete">Running a Time-range Undelete</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#via-the-administration-console">Via the Administration Console</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#timerange-undelete-cli">Via the CLI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#external-restore">External Restore</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-the-external-restore">What is the External Restore?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-does-it-work-5">How Does it Work?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#skip-domain-provisioning">Skip Domain Provisioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#folder-restore">Folder restore</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#before-you-start">Before You Start</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-an-external-restore">Running an External Restore</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#via-the-administration-zimlet-2">Via the Administration Zimlet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#via-the-cli-2">Via the CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#speeding-up-the-restore-through-multithreading">Speeding up the Restore through Multithreading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#after-the-restore-message-deduplication">After the Restore: Message Deduplication</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advancedbackup.html">Zextras Backup Advanced techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">Zextras Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerstore.html">Zextras Powerstore</a></li>
+<li class="toctree-l1"><a class="reference internal" href="admin.html">Zextras Admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="drive.html">Zextras Drive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs.html">Zextras Docs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auth.html">Zextras Auth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="team.html">Zextras Team</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">CLI</a></li>
+</ul>
+
+<hr />
+<ul>
+  <li class="toctree-l1">
+    <a href="/landing/html/home.html">Back to
+      Zextras Documentation hub
+    </a>
+  </li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zextras Suite</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Zextras Backup Restore Strategies</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All content is provisional and is meant <strong>only</strong> to showcase
+the feature of the new framework.</p>
+</div>
+<section id="zextras-backup-restore-strategies">
+<span id="backup-retore-strategies"></span><h1>Zextras Backup Restore Strategies<a class="headerlink" href="#zextras-backup-restore-strategies" title="Permalink to this headline"></a></h1>
+<p><strong>Restore strategies</strong> are required in different scenarios, which may
+change according on the actors involved, the scope and extend of the
+restore, and the purpose. Some examples of these scenarios are:</p>
+<ul class="simple">
+<li><p>the accidental deletion of emails, as a result of an end-user error
+like for example emptying the Trash can folder</p></li>
+<li><p>a problem on the file system, which may cause reading and writing
+errors and therefore make some parts of an account inaccessible</p></li>
+<li><p>administrative errors for example during an undelete process</p></li>
+<li><p>an account has being compromised because its credentials were stolen
+or obtained by fraudulent means</p></li>
+<li><p>an account is being under investigation, and its complete history is
+needed by the enforcement authorities</p></li>
+</ul>
+<p>In all these cases, data in a mailbox can be recovered and, depending on
+the destination of the recovered data, restore strategies are grouped in
+<strong>two</strong> categories: recovery on the same server—​or same
+infrastructure—​and recovery on a different infrastructure.</p>
+<dl class="simple">
+<dt>Same infrastructure restore</dt><dd><p>These strategies are meant to be used when you need to restore only
+part of an account on <strong>the same server</strong> as the origin server. In
+this category fall <a class="reference external" href="#account-restore">Restore on New Account (and Account
+Restore)</a> , <a class="reference external" href="#time-range-undelete">Time-range
+Undelete</a>, <a class="reference external" href="#single-item-restore">Single Item
+Restore</a>, and <a class="reference external" href="#UndeleteItem">???</a>.</p>
+</dd>
+<dt>Different infrastructure restore</dt><dd><p>When the restore process is not possible or not feasible on the same
+infrastructure as the original, the possibility is to use the
+<a class="reference external" href="#external-restore">External Restore</a> strategy.</p>
+</dd>
+</dl>
+<p>It is important to remark that items in Zextras Backup are labelled as
+<strong>deleted</strong> only after they have been removed from a mailbox following a
+<a class="reference external" href="backup.xml#_backup_purge">Backup Purge</a> operation; until that moment
+they are still available to Zextras.</p>
+<p>Finally, all restore strategies:</p>
+<ul class="simple">
+<li><p>recover items at a given moment (or interval) in time, which implies
+that also their status at that time is recovered</p></li>
+<li><p>recover an item in a different folder than the original one</p></li>
+<li><p>always send an email to the initiator of the restore procedure and to
+the administrator, at the beginning and end of the procedure</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><a class="reference external" href="advancedbackup.xml#_disaster_recovery">Disaster Recovery</a> is now
+part of the <a class="reference external" href="advancedbackup.xml">Advanced Techniques</a> Chapter,
+because it is intended more as a last-resort technique in case
+something wreaked havoc on your infrastructure.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">itemID</span></code> is one of the <strong>metadata</strong> of an item and consists of an
+unambiguous code that uniquely identifies an object in a mailbox.</p>
+<p>Along with all other metadata about an item, the <code class="docutils literal notranslate"><span class="pre">itemID</span></code> is assigned
+by the server stored in a file inside the <strong>items</strong> directory of the
+proper account under the directory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[backup path]/accounts/[accountID]/items/[last 2 digits of itemID]/[itemID]</span></code></p>
+<p>For example, when a new email message arrives, the log file may show an
+entry like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">```2020-07-18 12:22:01,495 INFO  [btpool0-4361://localhost/service/soap/MsgActionRequest [name=user&#64;example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;] mailop - adding Message (id=339) to Folder Inbox (id=1)</span></code></p>
+<ul class="simple">
+<li><p>Backup_path: <code class="docutils literal notranslate"><span class="pre">/opt/zimbra/backup/ng/</span></code></p></li>
+<li><p>Account ID: <strong>4a217bb3-6861-4c9f-80f8-f345ae2897b5</strong></p></li>
+<li><p>Item ID: <strong>2057</strong></p></li>
+</ul>
+<p>This item, and all its associated metadata is located in:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/opt/zimbra/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057</span></code></p>
+<p>As a regular user, there is only one possibility to find the itemID:
+select a message and then from the <code class="docutils literal notranslate"><span class="pre">Options</span></code> menu click on <code class="docutils literal notranslate"><span class="pre">Show</span>
+<span class="pre">original</span></code>. In the URL that will open, similar to the one below, the id
+is the trailing part, in this case <strong>2057</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://mail.example.com/service/home/~/?auth=co&amp;view=text&amp;id=2057</span></code></p>
+<p>All item’s metadata are stored in a plain text file, so Linux tools like
+<code class="docutils literal notranslate"><span class="pre">grep</span></code> and <code class="docutils literal notranslate"><span class="pre">find</span></code> can be combined to search for items and their
+content. To see the metadata contained in a file in a more readable
+format, you can use the <code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">backup</span> <span class="pre">getItem</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Syntax:
+   zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+
+Usage example:
+
+user@zimbra:~$ zxsuite backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
+</pre></div>
+</div>
+<p>Options in <code class="docutils literal notranslate"><span class="pre">{curly</span> <span class="pre">braces}</span></code> are mandatory:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">account</span></code> is the ID of an account</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">item</span></code> is the itemID</p></li>
+</ul>
+<p>In case the message is no longer available, for example because it was
+removed from the trash bin, it is still possible to obtain it by looking
+at the <code class="docutils literal notranslate"><span class="pre">mailbox.log</span></code> log file and searching for one of the other
+metadata of the message, like for example the time when it was deleted,
+the sender or recipient, the content and so on. This method however is
+valid only with administrative access, so in case you do not have them,
+you need to ask to your admin for assistance.</p>
+<p><code class="docutils literal notranslate"><span class="pre">2020-07-18 15:22:01,495 INFO  [btpool0-4361://localhost/service/soap/MsgActionRequest [name=user&#64;example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;] mailop - moving Message (id=339) to Folder Trash (id=3)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">2020-07-18 15:25:08,962 INFO  [btpool0-4364://localhost/service/soap/FolderActionRequest] [name=user&#64;example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;] mailbox - Emptying 9 items from /Trash, removeSubfolders=true.</span></code></p>
+<p>In the above example, the item with id <strong>339</strong> is moved to the trash
+folder and soon after the folder is removed.</p>
+<section id="restore-deleted-account">
+<span id="undelete-item"></span><h2>Restore Deleted Account<a class="headerlink" href="#restore-deleted-account" title="Permalink to this headline"></a></h2>
+<section id="what-is-the-restore-deleted-account">
+<span id="id1"></span><h3>What is the Restore Deleted Account?<a class="headerlink" href="#what-is-the-restore-deleted-account" title="Permalink to this headline"></a></h3>
+<p>The Restore Deleted Account procedure allows you to restore the contents
+and preferences of a mailbox, as it was when said mailbox was deleted,
+into a completely new account.</p>
+</section>
+<section id="how-does-it-work">
+<span id="id2"></span><h3>How Does it Work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline"></a></h3>
+<p>When a Restore Deleted Account starts, a new account is created (the
+Destination Account), and all the items existing in the source account
+at the moment of the deletion are recreated in the destination account,
+including the folder structure and all the user’s data. All restored
+items will be created in the current primary store unless the <code class="docutils literal notranslate"><span class="pre">Obey</span> <span class="pre">HSM</span>
+<span class="pre">Policy</span></code> box is checked.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When restoring data on a new account, shared items consistency is not
+preserved. This is because the original share rules refer to the
+original account’s ID, not to the restored account.</p>
+</div>
+<section id="from-the-zextras-backup-tab">
+<span id="id3"></span><h4>From the Zextras Backup tab<a class="headerlink" href="#from-the-zextras-backup-tab" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">`Zextras</span> <span class="pre">Backup</span></code> in the left pane of the
+Administration Console to show the Zextras Backup tab.</p></li>
+<li><p>On the top bar, push the <code class="docutils literal notranslate"><span class="pre">Restore</span> <span class="pre">Deleted</span> <span class="pre">Account</span></code> button.</p></li>
+<li><p>Choose the restore date. Day/Month/Year can be selected via a
+minical, the hour via a drop-down menu and the minute and second via
+two text boxes. Click <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p></li>
+<li><p>Browse the list and click the account to be restored (Source).</p></li>
+<li><p>Enter the name of the new account (Destination) in the text box. You
+can then choose whether to Hide in GAL the new account or not. When
+you’re done choosing, press <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p></li>
+<li><p>Verify all your choices in the Operation Summary window. You can also
+add additional email addresses to be notified when the restore
+operation is finished. Please notice that the admin account and the
+user who started the Restore procedure are notified by default.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Finish</span></code> to start the Restore.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="single-item-restore">
+<h2>Single Item Restore<a class="headerlink" href="#single-item-restore" title="Permalink to this headline"></a></h2>
+<section id="what-is-the-single-item-restore">
+<span id="id4"></span><h3>What is the Single Item Restore?<a class="headerlink" href="#what-is-the-single-item-restore" title="Permalink to this headline"></a></h3>
+<p>The Single Item Restore is one of the Restore Modes available in Zextras
+Backup and allows to restore one item at a time, recovering its status
+even if it was deleted.</p>
+</section>
+<section id="how-does-it-work-2">
+<span id="id5"></span><h3>How Does it Work?<a class="headerlink" href="#how-does-it-work-2" title="Permalink to this headline"></a></h3>
+<p>Single Item Restore takes the <strong>itemID</strong> and restores the corresponding
+item from the backup to the owner’s account. Any type of item can be
+restored this way.</p>
+</section>
+<section id="running-a-single-item-restore">
+<span id="id6"></span><h3>Running a Single Item Restore<a class="headerlink" href="#running-a-single-item-restore" title="Permalink to this headline"></a></h3>
+<section id="via-the-administration-zimlet">
+<span id="id7"></span><h4>Via the Administration Zimlet<a class="headerlink" href="#via-the-administration-zimlet" title="Permalink to this headline"></a></h4>
+<p>Item Restore is only available through the CLI.</p>
+</section>
+<section id="via-the-cli">
+<span id="id8"></span><h4>Via the CLI<a class="headerlink" href="#via-the-cli" title="Permalink to this headline"></a></h4>
+<p>To start an Item Restore operation, use the <code class="docutils literal notranslate"><span class="pre">doItemRestore</span></code> command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Syntax</span><span class="p">:</span>
+   <span class="n">zxsuite</span> <span class="n">backup</span> <span class="n">doItemRestore</span> <span class="p">{</span><span class="n">account_name</span> <span class="ow">or</span> <span class="nb">id</span><span class="p">}</span> <span class="p">{</span><span class="n">item_id</span><span class="p">}</span> <span class="p">[</span><span class="n">attr1</span> <span class="n">value1</span> <span class="p">[</span><span class="n">attr2</span> <span class="n">value2</span><span class="o">...</span>
+
+<span class="n">PARAMETER</span> <span class="n">LIST</span>
+
+<span class="n">NAME</span>                 <span class="n">TYPE</span>
+<span class="n">account_name</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>      <span class="n">Account</span> <span class="n">Name</span>
+<span class="n">item_id</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>           <span class="n">Integer</span>
+<span class="n">date</span>
+<span class="n">restore_folder</span><span class="p">(</span><span class="n">O</span><span class="p">)</span>    <span class="n">String</span>
+
+<span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="o">==</span> <span class="n">mandatory</span> <span class="n">parameter</span><span class="p">,</span> <span class="p">(</span><span class="n">O</span><span class="p">)</span> <span class="o">==</span> <span class="n">optional</span> <span class="n">parameter</span>
+</pre></div>
+</div>
+<p>zxsuite backup doItemRestore <a class="reference external" href="mailto:john&#37;&#52;&#48;example&#46;com">john<span>&#64;</span>example<span>&#46;</span>com</a> 4784</p>
+<p>zxsuite backup doItemRestore 968df11c-8f8b-429a-9f29-4503d08544b3 5923</p>
+<p>The first command restores item 4784 in the <code class="docutils literal notranslate"><span class="pre">john&#64;example.com</span></code>
+mailbox; while the second restores item 5923 in the
+<code class="docutils literal notranslate"><span class="pre">968df11c-8f8b-429a-9f29-4503d08544b3</span></code> mailbox</p>
+</section>
+</section>
+</section>
+<section id="restore-on-new-account">
+<span id="account-restore"></span><h2>Restore on New Account<a class="headerlink" href="#restore-on-new-account" title="Permalink to this headline"></a></h2>
+<section id="what-is-the-restore-on-new-account">
+<span id="id9"></span><h3>What is the Restore on New Account?<a class="headerlink" href="#what-is-the-restore-on-new-account" title="Permalink to this headline"></a></h3>
+<p>The <strong>Restore on New Account</strong> and the <strong>Account Restore</strong> procedures
+allow you to restore the content of a mailbox as it was in a given
+moment in time. While they share the same CLI options, the differences
+between the two are in the status of the account and in how the mailbox
+will be restored: If the account was deleted, it can be restored with
+the <strong>same accountID</strong>–Account Restore, whereas if the account is still
+in use, it is possible to restore it into a completely new account,
+i.e., with a completely new <strong>accountID</strong>.</p>
+<p>The source account is not changed in any way, so it is possible to
+recover one or more deleted items in a user’s account without actually
+rolling back the whole mailbox. When you run this kind of restore, you
+can choose to hide the newly created account from the GAL as a security
+measure.</p>
+</section>
+<section id="how-does-it-work-3">
+<span id="id10"></span><h3>How Does it Work?<a class="headerlink" href="#how-does-it-work-3" title="Permalink to this headline"></a></h3>
+<p>This procedure is useful in several scenarios: when a whole account has
+been deleted or is no longer operational, as either the result of an
+external problem (hardware or filesystem failure), or a human mistake
+(like e.g., a wrong delete/purge operation launched by the user or
+system administrator).</p>
+<p>When a <strong>Restore on New Account</strong> procedure starts, a new account is
+created, called the <em>destination account</em>. All the items existing in the
+source account at the moment selected are recreated in the destination
+account, including the folder structure and all the user’s data. All
+restored items will be created in the current primary store unless the
+<code class="docutils literal notranslate"><span class="pre">Obey</span> <span class="pre">HSM</span> <span class="pre">Policy</span></code> box is checked.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>When restoring data on a new account, shared items consistency is not
+preserved. This is because the original share rules refer to the
+original account’s ID, not to the restored account.</p>
+</div>
+</section>
+<section id="running-a-restore-on-new-account-via-the-administration-zimlet">
+<span id="id11"></span><h3>Running a Restore on New Account via the Administration Zimlet<a class="headerlink" href="#running-a-restore-on-new-account-via-the-administration-zimlet" title="Permalink to this headline"></a></h3>
+<p>A Restore on New Account can be run in two ways.</p>
+<section id="from-the-account-list">
+<span id="id12"></span><h4>From the Account List<a class="headerlink" href="#from-the-account-list" title="Permalink to this headline"></a></h4>
+<div class="line-block">
+<div class="line">Running Restore from the <code class="docutils literal notranslate"><span class="pre">Accounts</span></code> tab in the Zimbra Administration
+Console allows you to operate on users currently existing on the
+server.</div>
+<div class="line">If you need to restore a deleted user, please proceed to Restore via
+the Administration Zimlet.</div>
+</div>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Accounts</span></code> in the left pane of the Administration Console to
+show the Accounts List.</p></li>
+<li><p>Browse the list and click the account to be restored (<em>Source
+account</em>).</p></li>
+<li><p>On the top bar, press the wheel and then the <code class="docutils literal notranslate"><span class="pre">Restore</span></code> button.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Restore</span> <span class="pre">on</span> <span class="pre">New</span> <span class="pre">Account</span></code> as the Restore Mode and enter the
+name of the new account (<em>Destination account</em>) into the text box.
+You can then choose whether to Hide in GAL the new account or not.
+When you’re done, press <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p></li>
+<li><p>Choose the restore date. Day/Month/Year can be selected via a minical
+WIDGET, the hour via a drop-down menu and minute and second via two
+text boxes. Click <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p></li>
+<li><p>Verify all your choices in the Operation Summary window. You can also
+add additional email addresses to be notified when the restore
+operation is completed successfully.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The admin account and the user who started the restore procedure are
+notified by default.</p>
+</div>
+<p>Click <code class="docutils literal notranslate"><span class="pre">Finish</span></code> to start the restore.</p>
+</section>
+</section>
+<section id="running-a-restore-on-new-account-via-the-cli">
+<span id="id13"></span><h3>Running a Restore on New Account via the CLI<a class="headerlink" href="#running-a-restore-on-new-account-via-the-cli" title="Permalink to this headline"></a></h3>
+<p>To start a Restore on New Account via the CLI, use the
+doRestoreOnNewAccount command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Syntax:
+   zxsuite backup doRestoreOnNewAccount {source_account} {destination_account} {&quot;dd/MM/yyyy HH:mm:ss&quot;|last} [attr1 value1 [attr2 value2...
+
+PARAMETER LIST
+
+NAME                       TYPE                  EXPECTED VALUES
+source_account(M)          Account Name
+destination_account(M)     Account Name/ID
+date(M)                    Date                  `dd/MM/yyyy HH:mm:ss`|last
+restore_chat_buddies(O)    Boolean               true|false
+notifications(O)           Email Address[,..]
+
+(M) == mandatory parameter, (O) == optional parameter
+
+Usage example:
+
+zxsuite backup dorestoreonnewaccount John NewJohn `28/09/2012 10:15:10`
+Restores John&#39;s account in a new account named NewJohn
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>At the end of the operation, you can check that the configuration of
+the new mailbox is the same by running the command
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">dump</span></code> (See
+<a class="reference external" href="cli.xml#_zextras_config_cli">cli.xml</a>)</p>
+</div>
+</section>
+</section>
+<section id="time-range-undelete">
+<h2>Time-range Undelete<a class="headerlink" href="#time-range-undelete" title="Permalink to this headline"></a></h2>
+<section id="what-is-time-range-undelete">
+<span id="id14"></span><h3>What is Time-range Undelete?<a class="headerlink" href="#what-is-time-range-undelete" title="Permalink to this headline"></a></h3>
+<p>Time-range Undelete, also called <strong>Undelete Restore</strong> is a Restore Mode
+that allows an administrator to restore from a mailbox all items,
+removed from the Trash folder within a given interval of time, and
+recover their status to the last change of status.</p>
+</section>
+<section id="how-does-it-work-4">
+<span id="id15"></span><h3>How Does it Work?<a class="headerlink" href="#how-does-it-work-4" title="Permalink to this headline"></a></h3>
+<p>During a Time-range Undelete, the Zextras Backup engine searches the
+backup datastore for items flagged as <code class="docutils literal notranslate"><span class="pre">DELETED</span></code> in the selected time
+range, and restores them in the <em>source folder</em> of the mailbox. All the
+restored items will be tagged with a string named <code class="docutils literal notranslate"><span class="pre">undelete_DD_MM_YY</span></code>,
+in which DD_MM_YY represents the date when the undelete has been made.</p>
+<p>The structure of the undeleted items is preserved, with each subfolder
+restored using its latest attribute available in the time window that is
+being restored. If no information is available, the folder will be
+called <code class="docutils literal notranslate"><span class="pre">unknown_XX</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By using the CLI it is possible to restore items under a <em>dedicated</em>
+folder. Moreover, the <code class="docutils literal notranslate"><span class="pre">undelete_DD_MM_YY</span></code> tag can be used to filter
+items in the mailbox. A few examples can be find in the section
+<a class="reference external" href="#timerange-undelete-cli">below</a>.</p>
+</div>
+<section id="corner-cases">
+<span id="id16"></span><h4>Corner cases<a class="headerlink" href="#corner-cases" title="Permalink to this headline"></a></h4>
+<p>There are two points that is worth highlighting:</p>
+<ol class="arabic simple">
+<li><p>In case an item or folder for some reason had the trash bin as its
+first position and this was its only position, they will be restored
+in the trash bin.</p></li>
+<li><p>Suppose you have a folder called <strong>Conference 2021</strong>, then delete all
+of the item it contains and rename it to <strong>Conference 2022</strong>. You
+later—​on 15th of November 2021—​carry out an Undelete Restore on the
+mailbox. All of the items and content will be restored under folder
+<strong>Conference 2021</strong> and tagged as <code class="docutils literal notranslate"><span class="pre">undelete_15_11_21</span></code>.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To deal with IMAP-deleted emails in a more comfortable way for the
+user, during the Time-range Undelete the <code class="docutils literal notranslate"><span class="pre">deleted</span></code> IMAP flag will
+be stripped from any restored item, for the item itself to be visible
+in the Zimbra Web Client.</p>
+</div>
+</section>
+</section>
+<section id="running-a-time-range-undelete">
+<span id="id17"></span><h3>Running a Time-range Undelete<a class="headerlink" href="#running-a-time-range-undelete" title="Permalink to this headline"></a></h3>
+<section id="via-the-administration-console">
+<span id="id18"></span><h4>Via the Administration Console<a class="headerlink" href="#via-the-administration-console" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Accounts</span></code> in the left pane of the Administration Console to
+show the Accounts List.</p></li>
+<li><p>Browse the list and click on the account to be restored (<em>Source
+account</em>).</p></li>
+<li><p>On the top bar, press the wheel and then the <code class="docutils literal notranslate"><span class="pre">Restore</span></code> button.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">Undelete</span></code> as the <em>Restore Mode</em> and press <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p></li>
+<li><p>Choose the restore date-time slot. Day/Month/Year can be selected via
+a mini-calendar widget, the hour via a drop-down menu, while the
+minute and second can be entered in two text boxes. Once done, click
+on <code class="docutils literal notranslate"><span class="pre">Next</span></code>.</p></li>
+<li><p>Verify your choices in the Operation Summary window. You can also add
+more email addresses to be notified when the restore operation is
+finished. Please note that the admin account and the user who started
+the restore procedure are notified by default.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Finish</span></code> to start the Restore.</p></li>
+</ul>
+</section>
+<section id="timerange-undelete-cli">
+<span id="id19"></span><h4>Via the CLI<a class="headerlink" href="#timerange-undelete-cli" title="Permalink to this headline"></a></h4>
+<p>To start a Time-range Undelete operation, use the
+<a class="reference external" href="./cli.xml#backup_doUndelete">doUndelete</a> command:</p>
+<p>Quick reference</p>
+<div class="informalexample docutils container">
+<p>zxsuite backup doUndelete <em>account</em> <em>“dd/MM/yyyy HH:mm:ss”|first</em>
+<em>“dd/MM/yyyy HH:mm:ss”|last</em> [param VALUE[,VALUE]]</p>
+</div>
+<p>Examples:</p>
+<div class="informalexample docutils container">
+<p>zxsuite backup doUndelete John <code class="docutils literal notranslate"><span class="pre">08/10/2020</span> <span class="pre">10:15:00</span></code> last</p>
+</div>
+<p>Performs an undelete on John’s account of all items created between
+08/10/2012 10:15:00 and the latest data available and restores them in
+John’s mailbox, tagged with <code class="docutils literal notranslate"><span class="pre">undelete_04_05_21</span></code>.</p>
+<div class="informalexample docutils container">
+<p>zxsuite backup doUndelete John <code class="docutils literal notranslate"><span class="pre">08/10/2012</span> <span class="pre">10:15:00</span></code> last
+target_original_folder false</p>
+</div>
+<p>Performs an undelete on John’s account of all items created between
+08/10/2012 10:15:00 and the latest data available. The items will be
+restored under a separate folder in John’s mailbox.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>At the end of the operation, you can check that the configuration of
+the new mailbox is the same by running the command <a class="reference external" href="./cli.xml#zxconfig-cli-short">zxsuite config
+dump</a>.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="external-restore">
+<span id="id20"></span><h2>External Restore<a class="headerlink" href="#external-restore" title="Permalink to this headline"></a></h2>
+<section id="what-is-the-external-restore">
+<span id="id21"></span><h3>What is the External Restore?<a class="headerlink" href="#what-is-the-external-restore" title="Permalink to this headline"></a></h3>
+<p>The External Restore allow to import backups that were produced on a
+different infrastructure, which is useful for setting up a test
+environment that resembles the production environment, and for advanced
+tasks like migration—​of accounts or of whole domains—​or disaster
+recovery. Moreover, it is the only strategy for which the source server
+and the destination server could <strong>not</strong> be the same.</p>
+<p>An interesting and useful functionality of External Restore is that
+besides the data, it restores also all the <strong>shares</strong> of an account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to run an External Restore with the <strong>same
+infrastructure</strong> as destination, but this is a rather advanced
+technique and will be discussed in the <a class="reference external" href="advancedbackup.xml">Advanced
+Techniques</a> Chapter.</p>
+</div>
+<blockquote>
+<div><p><strong>Community Article:</strong></p>
+<p><a class="reference external" href="https://community.zextras.com/external-restore-performance-optimization/">https://community.zextras.com/external-restore-performance-optimization/</a></p>
+<p>An article describing how performances of the External restore have
+been improved form 3.1.11 release.</p>
+</div></blockquote>
+</section>
+<section id="how-does-it-work-5">
+<span id="id22"></span><h3>How Does it Work?<a class="headerlink" href="#how-does-it-work-5" title="Permalink to this headline"></a></h3>
+<p>The External Restore reads data, metadata, and configuration from the
+Backup Path on the source server and copies them on a new server. The
+procedure consists of a workflow with a number of steps, and is outlined
+below, divided into three Phases.</p>
+<p>A typical scenario in which External Restore proves useful: you have to
+migrate a server from the infrastructure you have in Rome to the one you
+have in Milan. The basic access requirement is that from the Milan
+server (the <strong>destination</strong>) you need to have access to the Backup Path
+on the Rome server (the <strong>source</strong>), in order to carry out the External
+restore on your Milan infrastructure.</p>
+<section id="skip-domain-provisioning">
+<span id="id23"></span><h4>Skip Domain Provisioning<a class="headerlink" href="#skip-domain-provisioning" title="Permalink to this headline"></a></h4>
+<p>While the External Restore is typically used on a whole infrastructure,
+nonetheless it can be applied also to individual or multiple accounts:
+in this case, only the data and metadata that belong to those accounts
+will be restored, whereas domain-level customisations (including COS,
+GAL, quota, and so on) will not be restored. This task can be carried
+out by using the <code class="docutils literal notranslate"><span class="pre">skip_domain_provisioning</span></code> parameter, like in the
+following example, that restores only the accounts <strong>john</strong> and
+<strong>alice</strong> in domain <strong>example.com</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">zxsuite backup doexternalrestore  /opt/backup/zextras/ accounts john@example.com,alice@example.com domains example.com skip_domain_provisioning true</span>
+</pre></div>
+</div>
+<p>The workflow described below does not apply when using the
+<code class="docutils literal notranslate"><span class="pre">skip_domain_provisioning</span></code> parameter: since all domain configuration
+will not be impacted, only the <em>Restore all Accounts’ attributes</em> step
+will be executed.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Two points of the External Restore must be highlighted:</p>
+<ol class="arabic simple">
+<li><p>The External Restore is quite a complex and resource-intensive
+procedure; to minimise its impact on the current server’s
+operations, read the <a class="reference external" href="#_before_you_start">Before You Start</a>
+section below for a few tips.</p></li>
+<li><p><strong>All commands</strong> and operations must be run on the <strong>destination</strong>
+server.</p></li>
+</ol>
+</div>
+<p><strong>PHASE 1</strong></p>
+<ul class="simple">
+<li><p><em>‘Operation Started’ notification</em></p></li>
+<li><p>Read Server Backup Data</p></li>
+<li><p>Create empty Domains</p></li>
+<li><p>Create needed COS (only those effectively used by the imported
+accounts)</p></li>
+<li><p>Create empty DLs</p></li>
+<li><p>Create empty Accounts</p></li>
+<li><p>Restore all Accounts’ attributes</p></li>
+<li><p>Restore all Domains’ attributes</p></li>
+<li><p>Restore all DLs’ attributes and share information</p></li>
+<li><p><em>‘PHASE1 Feedback’ Notification</em></p></li>
+</ul>
+<p><strong>PHASE 2</strong></p>
+<ul class="simple">
+<li><p>Restore all Items</p></li>
+</ul>
+<p><strong>PHASE 3</strong></p>
+<ul class="simple">
+<li><p>Restore all Mountpoints and Datasources</p></li>
+<li><p><em>‘Operation Ended’ notification with complete feedback</em></p></li>
+</ul>
+</section>
+<section id="folder-restore">
+<span id="id24"></span><h4>Folder restore<a class="headerlink" href="#folder-restore" title="Permalink to this headline"></a></h4>
+<p>Suppose you have created a folder called <code class="docutils literal notranslate"><span class="pre">Inbox/Zextras</span></code>(which is
+also its Backup Path), and later deleted from it some messages, which
+are in some backup. When an External Restore is carried out, those
+messages are restored, along with any existent message, in the
+<code class="docutils literal notranslate"><span class="pre">Inbox/Zextras</span></code> folder. In other words, since the restored folder
+shares the same <em>Backup Path</em> with an existing folder, then the restored
+messages end up there.</p>
+<p>In more details, the following happens:</p>
+<dl class="simple">
+<dt>Local folder</dt><dd><p>If a folder with the <strong>same path</strong> was already created by a filter,
+the <em>backup folder id</em> will be mapped to the <em>existing folder id</em>.
+Moreover, all items that were in the original folder will be restored
+to the same path.</p>
+</dd>
+<dt>Remote mailbox</dt><dd><p>If a folder with that <strong>same path</strong> was already created by a filter,
+the mountpoint will be restored. Additionally, all items in the
+folder (created by the filter) are moved to the mountpoint target;
+also the filter to write to the restored mountpoint will be updated.</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="before-you-start">
+<span id="id25"></span><h3>Before You Start<a class="headerlink" href="#before-you-start" title="Permalink to this headline"></a></h3>
+<p>It is assumed that you have already installed a new vanilla
+infrastructure; that is, a new Zextras instance without having yet done
+any operation or configuration on it besides a standard installation.</p>
+<p>The first task to carry out, indeed, is to define a <strong>Backup Path</strong> on
+the new infrastructure, unless you want to use the default one
+(<code class="docutils literal notranslate"><span class="pre">/opt/zextras/backup/zextras</span></code>), and <a class="reference external" href="backup.xml#init-zextras-backup">initialize Zextras
+Backup</a>.</p>
+<p>Moreover, to reduce the overall overhead and load on the server during
+the External Restore, you can implement the following suggestions.</p>
+<ol class="arabic simple">
+<li><p>If Zextras Backup is already initialized on the destination server,
+<strong>disable</strong> the <strong>RealTime Scanner</strong> to improve both memory usage and
+I/O performance.</p></li>
+<li><p>To reduce the I/O overhead and the amount of disk space used for the
+migration, advanced users may <strong>tweak or disable</strong> Zimbra’s RedoLog
+for the duration of the import.</p></li>
+<li><p>To further reduce the amount of disk space used, it’s possible to
+<strong>enable compression</strong> on your current primary volume before starting
+the import. If you do not wish to use a compressed primary volume
+after migration, it’s possible to create a new and uncompressed
+primary volume, set it to <code class="docutils literal notranslate"><span class="pre">Current</span></code> and switch the old one to
+<code class="docutils literal notranslate"><span class="pre">Secondary</span></code>. This operation is possible by using the <a class="reference external" href="../powerstore.xml">Zextras
+Powerstore</a> module.</p></li>
+<li><p>If you plan to use the CLI, check also section <a class="reference external" href="#external-restore-speed-up">Speeding up the
+Restore through Multithreading</a></p></li>
+</ol>
+</section>
+<section id="running-an-external-restore">
+<span id="id26"></span><h3>Running an External Restore<a class="headerlink" href="#running-an-external-restore" title="Permalink to this headline"></a></h3>
+<section id="via-the-administration-zimlet-2">
+<span id="id27"></span><h4>Via the Administration Zimlet<a class="headerlink" href="#via-the-administration-zimlet-2" title="Permalink to this headline"></a></h4>
+<ul class="simple">
+<li><p>Click the Zextras Backup tab.</p></li>
+<li><p>Click on the <code class="docutils literal notranslate"><span class="pre">Import</span> <span class="pre">Backup</span></code> button under <code class="docutils literal notranslate"><span class="pre">Import/Export</span></code> to open
+the Import Backup wizard.</p></li>
+<li><p>Enter the Destination Path into the text box and press Forward. The
+software will check if the destination folder contains a valid backup
+and whether the ‘zimbra’ user has Read permissions.</p></li>
+<li><p>Select the domains you want to import and press Forward.</p></li>
+<li><p>Select the accounts you want to import and press Forward.</p></li>
+<li><p>Verify all your choices in the Operation Summary window. You can also
+add additional email addresses to be notified when the restore
+operation is finished. Please note that the admin account and the
+user who started the restore procedure are notified by default.</p></li>
+</ul>
+</section>
+<section id="via-the-cli-2">
+<span id="id28"></span><h4>Via the CLI<a class="headerlink" href="#via-the-cli-2" title="Permalink to this headline"></a></h4>
+<p>To start an External Restore operation, use the <code class="docutils literal notranslate"><span class="pre">doExternalRestore</span></code>
+command:</p>
+<section id="doexternalrestore">
+<span id="id29"></span><h5>doExternalRestore<a class="headerlink" href="#doexternalrestore" title="Permalink to this headline"></a></h5>
+<div class="informalexample docutils container">
+<p>zxsuite backup doExternalRestore <em>source_path</em> [param VALUE[,VALUE]]</p>
+</div>
+<p>PARAMETER LIST</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>NAME</p></td>
+<td><p>TYPE</p></td>
+<td><p>EXPECTED VALUES</p></td>
+<td><p>DEFAULT</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>sou
+rce_path</strong>(M)</p></td>
+<td><p>Path</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>accounts(O)</p></td>
+<td><p>Account
+Name[,..]</p></td>
+<td></td>
+<td><p>all</p></td>
+</tr>
+<tr class="row-even"><td><p>input_file(O)</p></td>
+<td><p>String</p></td>
+<td><p>list of
+accounts, one
+per line</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>domains(O)</p></td>
+<td><p>Domain
+Name[,..]</p></td>
+<td></td>
+<td><p>all</p></td>
+</tr>
+<tr class="row-even"><td><p>fi
+lter_deleted(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>skip_sys
+tem_accounts(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>skip_aliases(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>skip_distri
+bution_lists(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>skip_coses(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p><a href="#id31"><span class="problematic" id="id32">skip_account_</span></a>
+provisioning(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p><a href="#id33"><span class="problematic" id="id34">skip_domain_</span></a>
+provisioning(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>provi
+sioning_only(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>n
+otifications(O)</p></td>
+<td><p>Email Address</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>concurr
+ent_accounts(O)</p></td>
+<td><p>Integer</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>m
+ax_file_size(O)</p></td>
+<td><p>Integer</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>restor
+e_datasource(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>force_as_exte
+rnal_restore(O)</p></td>
+<td><p>Boolean</p></td>
+<td><p>true|false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>b
+lobs_archive(O)</p></td>
+<td><p>String</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol class="upperalpha simple" start="13">
+<li><p>== mandatory parameter, (O) == optional parameter</p></li>
+</ol>
+<p><strong>Example:.</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zxsuite</span> <span class="n">backup</span> <span class="n">doExternalRestore</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">data</span><span class="o">/</span> <span class="n">accounts</span> <span class="n">john</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">jack</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span> <span class="n">domains</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span> <span class="n">filter_deleted</span> <span class="n">false</span> <span class="n">skip_system_accounts</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>Restores the example.com domain, including all system accounts, and the
+<a class="reference external" href="mailto:john&#37;&#52;&#48;example&#46;com">john<span>&#64;</span>example<span>&#46;</span>com</a> and <a class="reference external" href="mailto:jack&#37;&#52;&#48;example&#46;com">jack<span>&#64;</span>example<span>&#46;</span>com</a> accounts from a backup located in
+/path/to/data/</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>At the end of the operation, you can check that the configuration of
+the new mailbox is the same by running the command
+<code class="docutils literal notranslate"><span class="pre">zxsuite</span> <span class="pre">config</span> <span class="pre">dump</span></code> (See the <a class="reference external" href="../cli.xml#config_dump_account">full
+reference</a> of all its
+sub-commands).</p>
+</div>
+</section>
+</section>
+</section>
+<section id="speeding-up-the-restore-through-multithreading">
+<span id="external-restore-speed-up"></span><h3>Speeding up the Restore through Multithreading<a class="headerlink" href="#speeding-up-the-restore-through-multithreading" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">concurrent_accounts</span></code> parameter allows you to restore multiple
+accounts at the same time, thus greatly speeding up the restore process.
+This feature is available <strong>via CLI only</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Albeit resource consumption does not grow linearly with the number of
+accounts restored at the same time, it can easily become taxing.
+Start from a low number of concurrent accounts, and raise it
+according to your server’s performance.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usage</span> <span class="n">example</span><span class="p">:</span>
+
+<span class="n">zxsuite</span> <span class="n">backup</span> <span class="n">doExternalRestore</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">external1</span> <span class="n">domains</span> <span class="n">example0</span><span class="o">.</span><span class="n">com</span><span class="p">,</span><span class="n">example1</span><span class="o">.</span><span class="n">com</span> <span class="n">concurrent_accounts</span> <span class="mi">5</span>
+
+<span class="n">Restores</span> <span class="n">the</span> <span class="n">example0</span><span class="o">.</span><span class="n">com</span> <span class="ow">and</span> <span class="n">example1</span><span class="o">.</span><span class="n">com</span> <span class="n">domain</span><span class="p">,</span> <span class="n">excluding</span> <span class="n">system</span> <span class="n">accounts</span><span class="p">,</span> <span class="n">restoring</span> <span class="mi">5</span> <span class="n">accounts</span> <span class="n">at</span> <span class="n">same</span> <span class="n">time</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">backup</span> <span class="n">located</span> <span class="ow">in</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">external1</span>
+</pre></div>
+</div>
+</section>
+<section id="after-the-restore-message-deduplication">
+<span id="id30"></span><h3>After the Restore: Message Deduplication<a class="headerlink" href="#after-the-restore-message-deduplication" title="Permalink to this headline"></a></h3>
+<p>Running a volume-wide deduplication with the Zextras Powerstore module
+is highly recommended after an External Restore, since the native
+deduplication system might be ineffective when sequentially importing
+accounts.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backup.html" class="btn btn-neutral float-left" title="Zextras Backup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="advancedbackup.html" class="btn btn-neutral float-right" title="Zextras Backup Advanced techniques" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, The Zextras Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
