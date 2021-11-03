@@ -30,20 +30,18 @@ infrastructure—​and recovery on a different infrastructure.
 Same infrastructure restore
    These strategies are meant to be used when you need to restore only
    part of an account on **the same server** as the origin server. In
-   this category fall `Restore on New Account (and Account
-   Restore) <#account-restore>`__ , `Time-range
-   Undelete <#time-range-undelete>`__, `Single Item
-   Restore <#single-item-restore>`__, and `??? <#Undelete Item>`__.
+   this category fall :ref:`account_restore` ,
+   :ref:`time_range_undelete`, and :ref:`single_item_restore`.
 
 Different infrastructure restore
    When the restore process is not possible or not feasible on the same
    infrastructure as the original, the possibility is to use the
-   `External Restore <#external-restore>`__ strategy.
+   :ref:`external_restore` strategy.
 
 It is important to remark that items in Zextras Backup are labelled as
-**deleted** only after they have been removed from a mailbox following a
-`Backup Purge <backup.xml#_backup_purge>`__ operation; until that moment
-they are still available to Zextras.
+**deleted** only after they have been removed from a mailbox following
+a :ref:`backup_purge` operation; until that moment they are still
+available to Zextras.
 
 Finally, all restore strategies:
 
@@ -56,62 +54,67 @@ Finally, all restore strategies:
    the administrator, at the beginning and end of the procedure
 
 .. important::
+   :ref:`disaster_recovery` is now part of the :doc:`advancedbackup`
+   Chapter, because it is intended more as a last-resort technique in
+   case something wreaked havoc on your infrastructure.
 
-   `Disaster Recovery <advancedbackup.xml#_disaster_recovery>`__ is now
-   part of the `Advanced Techniques <advancedbackup.xml>`__ Chapter,
-   because it is intended more as a last-resort technique in case
-   something wreaked havoc on your infrastructure.
+.. topic:: How to obtain the itemID
 
-The ``itemID`` is one of the **metadata** of an item and consists of an
-unambiguous code that uniquely identifies an object in a mailbox.
+   The ``itemID`` is one of the **metadata** of an item and consists of an
+   unambiguous code that uniquely identifies an object in a mailbox.
 
-Along with all other metadata about an item, the ``itemID`` is assigned
-by the server stored in a file inside the **items** directory of the
-proper account under the directory:
+   Along with all other metadata about an item, the ``itemID`` is assigned
+   by the server stored in a file inside the **items** directory of the
+   proper account under the directory::
 
-``[backup path]/accounts/[accountID]/items/[last 2 digits of itemID]/[itemID]``
+     [backup path]/accounts/[accountID]/items/[last 2 digits of itemID]/[itemID]
 
-For example, when a new email message arrives, the log file may show an
-entry like:
+   For example, when a new email message arrives, the log file may
+   show an entry like::
 
-:literal:`\```2020-07-18 12:22:01,495 INFO  [btpool0-4361://localhost/service/soap/MsgActionRequest [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;] mailop - adding Message (id=339) to Folder Inbox (id=1)`
+     2020-07-18 12:22:01,495 INFO [btpool0-4361://localhost/service/soap/MsgActionRequest]
+     [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;]
+     mailop - adding Message (id=339) to Folder Inbox (id=1)`
 
--  Backup_path: ``/opt/zimbra/backup/ng/``
+   .. card::
 
--  Account ID: **4a217bb3-6861-4c9f-80f8-f345ae2897b5**
+      Recognise an item's ID
+      ^^^^
 
--  Item ID: **2057**
+      -  Backup_path: ``/opt/zimbra/backup/ng/``
 
-This item, and all its associated metadata is located in:
+      -  Account ID: **4a217bb3-6861-4c9f-80f8-f345ae2897b5**
 
-``/opt/zimbra/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057``
+      -  Item ID: **2057**
 
-As a regular user, there is only one possibility to find the itemID:
-select a message and then from the ``Options`` menu click on ``Show
-original``. In the URL that will open, similar to the one below, the id
-is the trailing part, in this case **2057**.
+      This item, and all its associated metadata is located in:
 
-``https://mail.example.com/service/home/~/?auth=co&view=text&id=2057``
+      ``/opt/zimbra/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057``
 
-All item’s metadata are stored in a plain text file, so Linux tools like
-``grep`` and ``find`` can be combined to search for items and their
-content. To see the metadata contained in a file in a more readable
-format, you can use the ``zxsuite backup getItem`` command:
+   As a regular user, there is only one possibility to find the itemID:
+   select a message and then from the ``Options`` menu click on ``Show
+   original``. In the URL that will open, similar to the one below, the *id*
+   is the trailing part, in this case **2057**::
 
-::
+     https://mail.example.com/service/home/~/?auth=co&view=text&id=2057
 
-   Syntax:
-      zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+   All item’s metadata are stored in a plain text file, so Linux tools like
+   ``grep`` and ``find`` can be combined to search for items and their
+   content. To see the metadata contained in a file in a more readable
+   format, you can use the ``zxsuite backup getItem`` command::
 
-   Usage example:
+      Syntax:
+         zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
-   user@zimbra:~$ zxsuite backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
+      Usage example:
 
-Options in ``{curly braces}`` are mandatory:
+      user@zimbra:~$ zxsuite backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
 
--  ``account`` is the ID of an account
+   Options in ``{curly braces}`` are mandatory:
 
--  ``item`` is the itemID
+   -  ``account`` is the ID of an account
+
+   -  ``item`` is the itemID
 
 In case the message is no longer available, for example because it was
 removed from the trash bin, it is still possible to obtain it by looking
@@ -121,14 +124,20 @@ the sender or recipient, the content and so on. This method however is
 valid only with administrative access, so in case you do not have them,
 you need to ask to your admin for assistance.
 
-``2020-07-18 15:22:01,495 INFO  [btpool0-4361://localhost/service/soap/MsgActionRequest [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;] mailop - moving Message (id=339) to Folder Trash (id=3)``
+.. card:: Example log entry
 
-``2020-07-18 15:25:08,962 INFO  [btpool0-4364://localhost/service/soap/FolderActionRequest] [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;] mailbox - Emptying 9 items from /Trash, removeSubfolders=true.``
+   In the above example, the item with id **339** is moved to the
+   trash folder and soon after the folder is removed::
 
-In the above example, the item with id **339** is moved to the trash
-folder and soon after the folder is removed.
+      2020-07-18 15:22:01,495 INFO [btpool0-4361://localhost/service/soap/MsgActionRequest]
+      [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;]
+      mailop - moving Message (id=339) to Folder Trash (id=3)
 
-.. _undelete-item:
+      2020-07-18 15:25:08,962 INFO  [btpool0-4364://localhost/service/soap/FolderActionRequest]
+      [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;]
+      mailbox - Emptying 9 items from /Trash, removeSubfolders=true.
+
+.. _restore_deleted_account:
 
 Restore Deleted Account
 =======================
@@ -154,18 +163,17 @@ including the folder structure and all the user’s data. All restored
 items will be created in the current primary store unless the ``Obey HSM
 Policy`` box is checked.
 
-.. warning::
-
-   When restoring data on a new account, shared items consistency is not
-   preserved. This is because the original share rules refer to the
-   original account’s ID, not to the restored account.
+.. warning:: When restoring data on a new account, shared items
+   consistency is not preserved. This is because the original share
+   rules refer to the original account’s ID, not to the restored
+   account.
 
 .. _from_the_zextras_backup_tab:
 
 From the Zextras Backup tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Select :literal:`\`Zextras Backup` in the left pane of the
+-  Select ``Zextras Backup`` in the left pane of the
    Administration Console to show the Zextras Backup tab.
 
 -  On the top bar, push the ``Restore Deleted Account`` button.
@@ -186,6 +194,8 @@ From the Zextras Backup tab
    user who started the Restore procedure are notified by default.
 
 -  Click ``Finish`` to start the Restore.
+
+.. _single_item_restore:
 
 Single Item Restore
 ===================
@@ -213,44 +223,38 @@ restored this way.
 Running a Single Item Restore
 -----------------------------
 
-.. _via_the_administration_zimlet:
+.. dropdown:: Via the Administration Zimlet
 
-Via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Item Restore is only available through the CLI.
 
-Item Restore is only available through the CLI.
+.. dropdown:: Via the CLI
 
-.. _via_the_cli:
+   To start an Item Restore operation, use the ``doItemRestore`` command::
 
-Via the CLI
-~~~~~~~~~~~
+      Syntax:
+         zxsuite backup doItemRestore {account_name or id} {item_id} [attr1 value1 [attr2 value2...
 
-To start an Item Restore operation, use the ``doItemRestore`` command:
+      PARAMETER LIST
 
-::
+      NAME                 TYPE
+      account_name(M)      Account Name
+      item_id(M)           Integer
+      date
+      restore_folder(O)    String
 
-   Syntax:
-      zxsuite backup doItemRestore {account_name or id} {item_id} [attr1 value1 [attr2 value2...
+      (M) == mandatory parameter, (O) == optional parameter
 
-   PARAMETER LIST
+   .. card:: Usage examples
 
-   NAME                 TYPE
-   account_name(M)      Account Name
-   item_id(M)           Integer
-   date
-   restore_folder(O)    String
+      zxsuite backup doItemRestore john@example.com 4784
 
-   (M) == mandatory parameter, (O) == optional parameter
+      zxsuite backup doItemRestore 968df11c-8f8b-429a-9f29-4503d08544b3 5923
 
-zxsuite backup doItemRestore john@example.com 4784
+   The first command restores item 4784 in the ``john@example.com``
+   mailbox; while the second restores item 5923 in the
+   ``968df11c-8f8b-429a-9f29-4503d08544b3`` mailbox
 
-zxsuite backup doItemRestore 968df11c-8f8b-429a-9f29-4503d08544b3 5923
-
-The first command restores item 4784 in the ``john@example.com``
-mailbox; while the second restores item 5923 in the
-``968df11c-8f8b-429a-9f29-4503d08544b3`` mailbox
-
-.. _account-restore:
+.. _account_restore:
 
 Restore on New Account
 ======================
@@ -293,93 +297,86 @@ account, including the folder structure and all the user’s data. All
 restored items will be created in the current primary store unless the
 ``Obey HSM Policy`` box is checked.
 
-.. warning::
+.. warning:: When restoring data on a new account, shared items
+   consistency is not preserved. This is because the original share
+   rules refer to the original account’s ID, not to the restored
+   account.
 
-   When restoring data on a new account, shared items consistency is not
-   preserved. This is because the original share rules refer to the
-   original account’s ID, not to the restored account.
+.. _running_a_restore_on_new_account:
 
-.. _running_a_restore_on_new_account_via_the_administration_zimlet:
+Running a Restore on New Account
+--------------------------------
 
-Running a Restore on New Account via the Administration Zimlet
---------------------------------------------------------------
+.. dropdown:: Via the Administration Zimlet
 
-A Restore on New Account can be run in two ways.
+   A Restore on New Account can be used in two scenarios:
 
-.. _from_the_account_list:
+   #. Running Restore from the ``Accounts`` tab in the Zimbra
+      Administration Console allows you to operate on users currently
+      existing on the server.
 
-From the Account List
-~~~~~~~~~~~~~~~~~~~~~
+   #. If you need to restore a deleted user, please proceed to Restore
+      via the Administration Zimlet.
 
-| Running Restore from the ``Accounts`` tab in the Zimbra Administration
-  Console allows you to operate on users currently existing on the
-  server.
-| If you need to restore a deleted user, please proceed to Restore via
-  the Administration Zimlet.
+   In either case, go to the **Account List**, then follow these
+   directions.
 
--  Select ``Accounts`` in the left pane of the Administration Console to
-   show the Accounts List.
+   -  Select ``Accounts`` in the left pane of the Administration Console to
+      show the Accounts List.
 
--  Browse the list and click the account to be restored (*Source
-   account*).
+   -  Browse the list and click the account to be restored (*Source
+      account*).
 
--  On the top bar, press the wheel and then the ``Restore`` button.
+   -  On the top bar, press the wheel and then the ``Restore`` button.
 
--  Select ``Restore on New Account`` as the Restore Mode and enter the
-   name of the new account (*Destination account*) into the text box.
-   You can then choose whether to Hide in GAL the new account or not.
-   When you’re done, press ``Next``.
+   -  Select ``Restore on New Account`` as the Restore Mode and enter the
+      name of the new account (*Destination account*) into the text box.
+      You can then choose whether to Hide in GAL the new account or not.
+      When you’re done, press ``Next``.
 
--  Choose the restore date. Day/Month/Year can be selected via a minical
-   WIDGET, the hour via a drop-down menu and minute and second via two
-   text boxes. Click ``Next``.
+   -  Choose the restore date. Day/Month/Year can be selected via a minical
+      WIDGET, the hour via a drop-down menu and minute and second via two
+      text boxes. Click ``Next``.
 
--  Verify all your choices in the Operation Summary window. You can also
-   add additional email addresses to be notified when the restore
-   operation is completed successfully.
+   -  Verify all your choices in the Operation Summary window. You can also
+      add additional email addresses to be notified when the restore
+      operation is completed successfully.
 
-.. note::
+   .. note:: The admin account and the user who started the restore
+      procedure are notified by default.
 
-   The admin account and the user who started the restore procedure are
-   notified by default.
+   Click ``Finish`` to start the restore.
 
-Click ``Finish`` to start the restore.
+.. dropdown:: Running a Restore on New Account via the CLI
 
-.. _running_a_restore_on_new_account_via_the_cli:
+   To start a Restore on New Account via the CLI, use the
+   doRestoreOnNewAccount command::
 
-Running a Restore on New Account via the CLI
---------------------------------------------
+      Syntax:
+         zxsuite backup doRestoreOnNewAccount {source_account} {destination_account} {"dd/MM/yyyy HH:mm:ss"|last} [attr1 value1 [attr2 value2...
 
-To start a Restore on New Account via the CLI, use the
-doRestoreOnNewAccount command:
+      PARAMETER LIST
 
-::
+      NAME                       TYPE                  EXPECTED VALUES
+      source_account(M)          Account Name
+      destination_account(M)     Account Name/ID
+      date(M)                    Date                  `dd/MM/yyyy HH:mm:ss`|last
+      restore_chat_buddies(O)    Boolean               true|false
+      notifications(O)           Email Address[,..]
 
-   Syntax:
-      zxsuite backup doRestoreOnNewAccount {source_account} {destination_account} {"dd/MM/yyyy HH:mm:ss"|last} [attr1 value1 [attr2 value2...
+      (M) == mandatory parameter, (O) == optional parameter
 
-   PARAMETER LIST
+     .. card:: Usage example
 
-   NAME                       TYPE                  EXPECTED VALUES
-   source_account(M)          Account Name
-   destination_account(M)     Account Name/ID
-   date(M)                    Date                  `dd/MM/yyyy HH:mm:ss`|last
-   restore_chat_buddies(O)    Boolean               true|false
-   notifications(O)           Email Address[,..]
+        zxsuite backup dorestoreonnewaccount John NewJohn `28/09/2012 10:15:10`
 
-   (M) == mandatory parameter, (O) == optional parameter
+      Restores John's account in a new account named NewJohn
 
-   Usage example:
+   .. tip:: At the end of the operation, you can check that the
+      configuration of the new mailbox is the same by running the
+      command ``zxsuite config dump`` (See :ref:`zextras_config_cli`)
 
-   zxsuite backup dorestoreonnewaccount John NewJohn `28/09/2012 10:15:10`
-   Restores John's account in a new account named NewJohn
-
-.. tip::
-
-   At the end of the operation, you can check that the configuration of
-   the new mailbox is the same by running the command
-   ``zxsuite config dump`` (See
-   `cli.xml <cli.xml#_zextras_config_cli>`__)
+.. _time_range_undelete:
 
 Time-range Undelete
 ===================
@@ -410,12 +407,10 @@ restored using its latest attribute available in the time window that is
 being restored. If no information is available, the folder will be
 called ``unknown_XX``.
 
-.. tip::
-
-   By using the CLI it is possible to restore items under a *dedicated*
-   folder. Moreover, the ``undelete_DD_MM_YY`` tag can be used to filter
-   items in the mailbox. A few examples can be find in the section
-   `below <#timerange-undelete-cli>`__.
+.. hint:: By using the CLI it is possible to restore items under a
+   *dedicated* folder. Moreover, the ``undelete_DD_MM_YY`` tag can be
+   used to filter items in the mailbox. A few examples can be find in
+   the section :ref:`running_a_time_range_undelete`.
 
 .. _corner_cases:
 
@@ -434,84 +429,71 @@ There are two points that is worth highlighting:
    mailbox. All of the items and content will be restored under folder
    **Conference 2021** and tagged as ``undelete_15_11_21``.
 
-.. warning::
-
-   To deal with IMAP-deleted emails in a more comfortable way for the
-   user, during the Time-range Undelete the ``deleted`` IMAP flag will
-   be stripped from any restored item, for the item itself to be visible
-   in the Zimbra Web Client.
+.. warning:: To deal with IMAP-deleted emails in a more comfortable
+   way for the user, during the Time-range Undelete the ``deleted``
+   IMAP flag will be stripped from any restored item, for the item
+   itself to be visible in the Zimbra Web Client.
 
 .. _running_a_time_range_undelete:
 
 Running a Time-range Undelete
 -----------------------------
 
-.. _via_the_administration_console:
+.. dropdown:: Via the Administration Console
 
-Via the Administration Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -  Select ``Accounts`` in the left pane of the Administration Console to
+      show the Accounts List.
 
--  Select ``Accounts`` in the left pane of the Administration Console to
-   show the Accounts List.
+   -  Browse the list and click on the account to be restored (*Source
+      account*).
 
--  Browse the list and click on the account to be restored (*Source
-   account*).
+   -  On the top bar, press the wheel and then the ``Restore`` button.
 
--  On the top bar, press the wheel and then the ``Restore`` button.
+   -  Select ``Undelete`` as the *Restore Mode* and press ``Next``.
 
--  Select ``Undelete`` as the *Restore Mode* and press ``Next``.
+   -  Choose the restore date-time slot. Day/Month/Year can be selected via
+      a mini-calendar widget, the hour via a drop-down menu, while the
+      minute and second can be entered in two text boxes. Once done, click
+      on ``Next``.
 
--  Choose the restore date-time slot. Day/Month/Year can be selected via
-   a mini-calendar widget, the hour via a drop-down menu, while the
-   minute and second can be entered in two text boxes. Once done, click
-   on ``Next``.
+   -  Verify your choices in the Operation Summary window. You can also add
+      more email addresses to be notified when the restore operation is
+      finished. Please note that the admin account and the user who started
+      the restore procedure are notified by default.
 
--  Verify your choices in the Operation Summary window. You can also add
-   more email addresses to be notified when the restore operation is
-   finished. Please note that the admin account and the user who started
-   the restore procedure are notified by default.
+   -  Click ``Finish`` to start the Restore.
 
--  Click ``Finish`` to start the Restore.
+.. dropdown:: Via the CLI
 
-.. _timerange-undelete-cli:
+   To start a Time-range Undelete operation, use the
+   :ref:`backup_doUndelete` command:
 
-Via the CLI
-~~~~~~~~~~~
+   Quick reference
 
-To start a Time-range Undelete operation, use the
-`doUndelete <./cli.xml#backup_doUndelete>`__ command:
+   .. code:: console
 
-Quick reference
+      zxsuite backup doUndelete *account* *"dd/MM/yyyy HH:mm:ss"|first*
+      *"dd/MM/yyyy HH:mm:ss"|last* [param VALUE[,VALUE]]
 
-.. container:: informalexample
+   .. card:: Usage Examples
 
-   zxsuite backup doUndelete *account* *"dd/MM/yyyy HH:mm:ss"|first*
-   *"dd/MM/yyyy HH:mm:ss"|last* [param VALUE[,VALUE]]
+      zxsuite backup doUndelete John ``08/10/2020 10:15:00`` last
 
-Examples:
+      zxsuite backup doUndelete John ``08/10/2020 10:15:00`` last
+      target_original_folder false
 
-.. container:: informalexample
+      The first command performs an undelete on John’s account of all
+      items created between 08/10/2012 10:15:00 and the latest data
+      available and restores them in John’s mailbox, tagged with
+      ``undelete_04_05_21``.
 
-   zxsuite backup doUndelete John ``08/10/2020 10:15:00`` last
+      The second command carries out exactly the same operation, but
+      the items will be restored under a separate folder in John’s
+      mailbox.
 
-Performs an undelete on John’s account of all items created between
-08/10/2012 10:15:00 and the latest data available and restores them in
-John’s mailbox, tagged with ``undelete_04_05_21``.
-
-.. container:: informalexample
-
-   zxsuite backup doUndelete John ``08/10/2012 10:15:00`` last
-   target_original_folder false
-
-Performs an undelete on John’s account of all items created between
-08/10/2012 10:15:00 and the latest data available. The items will be
-restored under a separate folder in John’s mailbox.
-
-.. tip::
-
-   At the end of the operation, you can check that the configuration of
-   the new mailbox is the same by running the command `zxsuite config
-   dump <./cli.xml#zxconfig-cli-short>`__.
+   .. hint:: At the end of the operation, you can check that the
+      configuration of the new mailbox is the same by running the
+      command ``zxsuite config dump`` (See :ref:`zextras_config_cli`).
 
 .. _external_restore:
 
@@ -537,12 +519,10 @@ besides the data, it restores also all the **shares** of an account.
 
    It is possible to run an External Restore with the **same
    infrastructure** as destination, but this is a rather advanced
-   technique and will be discussed in the `Advanced
-   Techniques <advancedbackup.xml>`__ Chapter.
+   technique and will be discussed in the :doc:`advancedbackup`
+   Chapter.
 
-..
-
-   **Community Article:**
+.. seealso:: Community Article:
 
    https://community.zextras.com/external-restore-performance-optimization/
 
@@ -586,53 +566,51 @@ following example, that restores only the accounts **john** and
 
 The workflow described below does not apply when using the
 ``skip_domain_provisioning`` parameter: since all domain configuration
-will not be impacted, only the *Restore all Accounts' attributes* step
-will be executed.
+will not be impacted, in Phase 1 only the *Restore all Accounts'
+attributes* step will be executed.
 
-.. important::
-
-   Two points of the External Restore must be highlighted:
+.. important:: Two points of the External Restore must be highlighted:
 
    1. The External Restore is quite a complex and resource-intensive
       procedure; to minimise its impact on the current server’s
-      operations, read the `Before You Start <#_before_you_start>`__
-      section below for a few tips.
+      operations, read the :ref:`before_you_start` section below for
+      a few tips.
 
    2. **All commands** and operations must be run on the **destination**
       server.
 
-**PHASE 1**
+.. dropdown:: PHASE 1
 
--  *'Operation Started' notification*
+   -  `Operation Started` notification
 
--  Read Server Backup Data
+   -  Read Server Backup Data
 
--  Create empty Domains
+   -  Create empty Domains
 
--  Create needed COS (only those effectively used by the imported
-   accounts)
+   -  Create needed COS (only those effectively used by the imported
+      accounts)
 
--  Create empty DLs
+   -  Create empty DLs
 
--  Create empty Accounts
+   -  Create empty Accounts
 
--  Restore all Accounts' attributes
+   -  Restore all Accounts' attributes
 
--  Restore all Domains' attributes
+   -  Restore all Domains' attributes
 
--  Restore all DLs' attributes and share information
+   -  Restore all DLs' attributes and share information
 
--  *'PHASE1 Feedback' Notification*
+   -  `PHASE 1 Feedback` Notification
 
-**PHASE 2**
+.. dropdown:: PHASE 2
 
--  Restore all Items
+   -  Restore all Items
 
-**PHASE 3**
+.. dropdown:: PHASE 3
 
--  Restore all Mountpoints and Datasources
+   -  Restore all Mountpoints and Datasources
 
--  *'Operation Ended' notification with complete feedback*
+   -  `Operation Ended` notification with **complete feedback**
 
 .. _folder_restore:
 
@@ -672,154 +650,76 @@ any operation or configuration on it besides a standard installation.
 
 The first task to carry out, indeed, is to define a **Backup Path** on
 the new infrastructure, unless you want to use the default one
-(``/opt/zextras/backup/zextras``), and `initialize Zextras
-Backup <backup.xml#init-zextras-backup>`__.
+(``/opt/zextras/backup/zextras``), and :ref:`initialize Zextras Backup
+<init-zextras-backup>`.
 
 Moreover, to reduce the overall overhead and load on the server during
 the External Restore, you can implement the following suggestions.
 
 1. If Zextras Backup is already initialized on the destination server,
    **disable** the **RealTime Scanner** to improve both memory usage and
-   I/O performance.
+   I/O performance
 
 2. To reduce the I/O overhead and the amount of disk space used for the
    migration, advanced users may **tweak or disable** Zimbra’s RedoLog
-   for the duration of the import.
+   for the duration of the import
 
-3. To further reduce the amount of disk space used, it’s possible to
-   **enable compression** on your current primary volume before starting
-   the import. If you do not wish to use a compressed primary volume
-   after migration, it’s possible to create a new and uncompressed
-   primary volume, set it to ``Current`` and switch the old one to
-   ``Secondary``. This operation is possible by using the `Zextras
-   Powerstore <../powerstore.xml>`__ module.
+3. To further reduce the amount of disk space used, it is possible to
+   **enable compression** on your current primary volume before
+   starting the import. If you do not wish to use a compressed primary
+   volume after migration, it is possible to create a new and
+   uncompressed primary volume, set it to ``Current`` and switch the
+   old one to ``Secondary``. This operation is possible by using the
+   :doc:`powerstore` module.
 
-4. If you plan to use the CLI, check also section `Speeding up the
-   Restore through Multithreading <#external-restore-speed-up>`__
+4. If you plan to use the CLI, check also section
+   :ref:`external-restore-speed-up`
 
 .. _running_an_external_restore:
 
 Running an External Restore
 ---------------------------
 
-.. _via_the_administration_zimlet_2:
+.. dropdown:: Via the Administration Zimlet
 
-Via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -  Click the Zextras Backup tab.
 
--  Click the Zextras Backup tab.
+   -  Click on the ``Import Backup`` button under ``Import/Export`` to open
+      the Import Backup wizard.
 
--  Click on the ``Import Backup`` button under ``Import/Export`` to open
-   the Import Backup wizard.
+   -  Enter the Destination Path into the text box and press Forward. The
+      software will check if the destination folder contains a valid backup
+      and whether the 'zimbra' user has Read permissions.
 
--  Enter the Destination Path into the text box and press Forward. The
-   software will check if the destination folder contains a valid backup
-   and whether the 'zimbra' user has Read permissions.
+   -  Select the domains you want to import and press Forward.
 
--  Select the domains you want to import and press Forward.
+   -  Select the accounts you want to import and press Forward.
 
--  Select the accounts you want to import and press Forward.
+   -  Verify all your choices in the Operation Summary window. You can also
+      add additional email addresses to be notified when the restore
+      operation is finished. Please note that the admin account and the
+      user who started the restore procedure are notified by default.
 
--  Verify all your choices in the Operation Summary window. You can also
-   add additional email addresses to be notified when the restore
-   operation is finished. Please note that the admin account and the
-   user who started the restore procedure are notified by default.
+.. dropdown:: Via the CLI
 
-.. _via_the_cli_2:
+   To start an External Restore operation, use the ``doExternalRestore``
+   command:
 
-Via the CLI
-~~~~~~~~~~~
+   .. code:: console
 
-To start an External Restore operation, use the ``doExternalRestore``
-command:
+      zxsuite backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
-.. _doexternalrestore:
+   .. card:: Usage example
 
-doExternalRestore
-^^^^^^^^^^^^^^^^^
+      zxsuite backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
 
-.. container:: informalexample
+      Restores the example.com domain, including all system accounts,
+      and the john@example.com and jack@example.com accounts from a
+      backup located in /path/to/data/
 
-   zxsuite backup doExternalRestore *source_path* [param VALUE[,VALUE]]
-
-PARAMETER LIST
-
-+-----------------+-----------------+-----------------+-----------------+
-| NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
-+-----------------+-----------------+-----------------+-----------------+
-| **sou           | Path            |                 |                 |
-| rce_path**\ (M) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| accounts(O)     | Account         |                 | all             |
-|                 | Name[,..]       |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| input_file(O)   | String          | list of         |                 |
-|                 |                 | accounts, one   |                 |
-|                 |                 | per line        |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| domains(O)      | Domain          |                 | all             |
-|                 | Name[,..]       |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| fi              | Boolean         | true|false      | true            |
-| lter_deleted(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| skip_sys        | Boolean         | true|false      | true            |
-| tem_accounts(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| skip_aliases(O) | Boolean         | true|false      | false           |
-+-----------------+-----------------+-----------------+-----------------+
-| skip_distri     | Boolean         | true|false      | false           |
-| bution_lists(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| skip_coses(O)   | Boolean         | true|false      | false           |
-+-----------------+-----------------+-----------------+-----------------+
-| skip_account_   | Boolean         | true|false      | false           |
-| provisioning(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| skip_domain_    | Boolean         | true|false      | false           |
-| provisioning(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| provi           | Boolean         | true|false      | false           |
-| sioning_only(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| n               | Email Address   |                 |                 |
-| otifications(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| concurr         | Integer         |                 |                 |
-| ent_accounts(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| m               | Integer         |                 |                 |
-| ax_file_size(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| restor          | Boolean         | true|false      | true            |
-| e_datasource(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| force_as_exte   | Boolean         | true|false      | false           |
-| rnal_restore(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| b               | String          |                 |                 |
-| lobs_archive(O) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-
-(M) == mandatory parameter, (O) == optional parameter
-
-**Example:.**
-
-::
-
-   zxsuite backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
-
-Restores the example.com domain, including all system accounts, and the
-john@example.com and jack@example.com accounts from a backup located in
-/path/to/data/
-
-.. tip::
-
-   At the end of the operation, you can check that the configuration of
-   the new mailbox is the same by running the command
-   ``zxsuite config dump`` (See the `full
-   reference <../cli.xml#config_dump_account>`__ of all its
-   sub-commands).
+   .. hint:: At the end of the operation, you can check that the
+      configuration of the new mailbox is the same by running the
+      command ``zxsuite config dump`` (See :ref:`zextras_config_cli`).
 
 .. _external-restore-speed-up:
 
@@ -830,20 +730,18 @@ The ``concurrent_accounts`` parameter allows you to restore multiple
 accounts at the same time, thus greatly speeding up the restore process.
 This feature is available **via CLI only**.
 
-.. warning::
-
-   Albeit resource consumption does not grow linearly with the number of
-   accounts restored at the same time, it can easily become taxing.
-   Start from a low number of concurrent accounts, and raise it
-   according to your server’s performance.
-
-::
-
-   Usage example:
+.. card:: Usage example:
 
    zxsuite backup doExternalRestore /tmp/external1 domains example0.com,example1.com concurrent_accounts 5
 
-   Restores the example0.com and example1.com domain, excluding system accounts, restoring 5 accounts at same time from a backup located in /tmp/external1
+   Restores the example0.com and example1.com domain, excluding system
+   accounts, restoring 5 accounts at same time from a backup located
+   in /tmp/external1
+
+.. warning:: Albeit resource consumption does not grow linearly with
+   the number of accounts restored at the same time, it can easily
+   become taxing.  Start from a low number of concurrent accounts, and
+   raise it according to your server’s performance.
 
 .. _after_the_restore_message_deduplication:
 

@@ -2,12 +2,15 @@
  CLI
 =====
 
-
 .. _config_server:
 
 zxsuite config server
 =====================
 
+.. _zextras_config_cli:
+
+zextras config cli
+==================
 
 .. _backup_docoherencycheck:
 
@@ -21,8 +24,8 @@ zxsuite backup doSmartScan
 
 .. _backup_getalloperations:
 
-zxsuite backup  getAllOperations
-================================
+zxsuite backup getAllOperations
+===============================
 
 .. _backup_monitor:
 
@@ -33,6 +36,11 @@ zxsuite backup monitor
 
 zxsuite backup doPurge
 ======================
+
+.. _backup_doundelete:
+
+zxsuite backup doUndelete
+=========================
 
 .. _backup_doaccountscan:
 
