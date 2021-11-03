@@ -516,7 +516,6 @@ Administration Zimlet). Once a week, on a day set by the user, a Purge
 is executed together with the SmartScan to clear Zextras Backup’s
 datastore from any deleted item that exceeded the retention period.
 
-.. _how_does_it_work:
 
 How Does it Work?
 -----------------
@@ -635,7 +634,6 @@ item for its entire lifetime.
 Thanks to the Real Time Scan, it is possible to recover any item at any
 point in time.
 
-.. _how_does_it_work_2:
 
 How Does it Work?
 -----------------
@@ -750,7 +748,6 @@ The Backup Purge is a cleanup operation that removes from the Backup
 Path any deleted item that exceeded the retention time defined by the
 :ref:`retention_policy`.
 
-.. _how_does_it_work_3:
 
 How Does it Work?
 -----------------

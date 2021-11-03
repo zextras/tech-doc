@@ -151,7 +151,6 @@ The Restore Deleted Account procedure allows you to restore the contents
 and preferences of a mailbox, as it was when said mailbox was deleted,
 into a completely new account.
 
-.. _how_does_it_work:
 
 How Does it Work?
 -----------------
@@ -209,7 +208,6 @@ The Single Item Restore is one of the Restore Modes available in Zextras
 Backup and allows to restore one item at a time, recovering its status
 even if it was deleted.
 
-.. _how_does_it_work_2:
 
 How Does it Work?
 -----------------
@@ -279,7 +277,6 @@ rolling back the whole mailbox. When you run this kind of restore, you
 can choose to hide the newly created account from the GAL as a security
 measure.
 
-.. _how_does_it_work_3:
 
 How Does it Work?
 -----------------
@@ -391,7 +388,6 @@ that allows an administrator to restore from a mailbox all items,
 removed from the Trash folder within a given interval of time, and
 recover their status to the last change of status.
 
-.. _how_does_it_work_4:
 
 How Does it Work?
 -----------------
@@ -529,7 +525,6 @@ besides the data, it restores also all the **shares** of an account.
    An article describing how performances of the External restore have
    been improved form 3.1.11 release.
 
-.. _how_does_it_work_5:
 
 How Does it Work?
 -----------------
