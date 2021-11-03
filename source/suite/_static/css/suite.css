@@ -3,9 +3,9 @@
 
 /* Sidebar header (and topbar for mobile) */
 .wy-side-nav-search, .wy-nav-top {
-    background: var(--zx-color-flame);
+    background: var(--zx-color-magma);
 }
 /* Sidebar */
 .wy-nav-side {
-    background: var(--zx-color-carbon);
+    background: var(--zx-color-abyss);
 }
