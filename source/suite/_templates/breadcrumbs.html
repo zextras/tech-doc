@@ -1,0 +1,9 @@
+
+{%- block breadcrumbs %}
+<a href="{{ pathto(master_doc) }}" class="icon fa-arrow-circle-up"></a> &raquo;</li>
+    {%- for doc in parents %}
+      <a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;
+    {%- endfor %}
+{{ title }}
+{%- endblock %}
+

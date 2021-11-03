@@ -4,7 +4,7 @@
 <hr />
 <ul>
   <li class="toctree-l1">
-    <a href="/landing/html/home.html">Back to
+    <a class="icon icon-home" href="/landing/html/home.html"> Back to
       Zextras Documentation hub
     </a>
   </li>
@@ -12,17 +12,13 @@
 {% endblock %}
 {% block sidebartitle %}
 {%- if logo and theme_logo_only %}
-   <a href="{{ pathto(master_doc) }}">
+   <a href="{{ pathto(master_doc) }}" class="fa fa-arrow-circle-up">
 {%- else %}
-   <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
+   <a href="{{ pathto(master_doc) }}" class="fa fa-arrow-circle-up"> {{ project }}
 {%- endif %}
      
 {%- if logo %}
-   {%- if sphinx_version_info < (4, 0) -%}
-      <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="{{ _('Logo') }}"/>
-   {%- else %}
-       <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
-   {%- endif %}
+    <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
 {%- endif %}
 </a>
    
