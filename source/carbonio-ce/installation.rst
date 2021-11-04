@@ -100,31 +100,36 @@ Before attempting the installation of |community| you need:
 
 .. dropdown:: Credentials to access |zx| repository
 
-   The credentials are provided by |zx|. On Ubuntu, you need to store
-   them in a file, while on CentOS/RedHat you can skip this steps,
-   because credentials are stored in the repository configuration.
+   Information about how the credentials will be
+   provided soon.
+   
+   ..
+      The credentials are provided by |zx|. On Ubuntu, you need to store
+      them in a file, while on CentOS/RedHat you can skip this steps,
+      because credentials are stored in the repository configuration.
 
-   .. tab-set::
+      .. tab-set::
 
-      .. tab-item:: Ubuntu
+         .. tab-item:: Ubuntu
 
-         Create file :file:`/etc/apt/auth.conf.d/zextras.conf` with the
-         following content.
+            Create file :file:`/etc/apt/auth.conf.d/zextras.conf` with the
+            following content.
 
-         .. code:: ini
+            .. code:: ini
 
-            machine zextras.jfrog.io
-            login username
-            password token
+               machine zextras.jfrog.io
+               login username
+               password token
 
-      .. tab-item:: CentOS/RedHat
+         .. tab-item:: CentOS/RedHat
 
-         Safely skip to next step.
+            Safely skip to next step.
 
-.. dropdown:: To setup |zx| repository
+.. Dropdown:: To setup |zx| repository
 
    Information about how to set up the zextras repository will be
    provided soon.
+
    ..
       .. tab-set::
 
