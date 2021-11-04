@@ -36,16 +36,4 @@ pipeline {
         }
     }
 
-            post {
-                failure {
-                     script {
-                         notifications.emailNotification subject: "Sphinx documentation failed", attachLog: false, rcpts: ['fabio.francescone@zextras.com']
-                     }
-                 }
-                success {
-                     script {
-                         notifications.emailNotification subject: "Sphinx documentation was released on $BUCKET_NAME", attachLog: false, rcpts: ['fabio.francescone@zextras.com']
-                     }
-                 }
-            }
-        }
+}
