@@ -11,16 +11,8 @@
 </ul>
 {% endblock %}
 {% block sidebartitle %}
-{%- if logo and theme_logo_only %}
-   <a href="{{ pathto(master_doc) }}" class="fa fa-arrow-circle-up">
-{%- else %}
-   <a href="{{ pathto(master_doc) }}" class="fa fa-arrow-circle-up"> {{ project }}
-{%- endif %}
-     
-{%- if logo %}
-   <img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
-   <p>Community Edition</p>
-{%- endif %}
+<a href="{{ pathto(master_doc) }}"><img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
+  <p class="fa fa-arrow-circle-left"> Community Edition</p>
 </a>
    
 {%- if theme_display_version %}
