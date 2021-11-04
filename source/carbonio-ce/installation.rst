@@ -125,6 +125,7 @@ Before attempting the installation of |community| you need:
 
    Information about how to set up the zextras repository will be
    provided soon.
+   
    ..
       .. tab-set::
 
