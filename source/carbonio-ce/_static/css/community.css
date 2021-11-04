@@ -1,7 +1,7 @@
 @import url("common.css");
 
-.caption-text {
-    color: #5C5555;
+.wy-nav-side p.caption {
+    color: var(--zx-color-flame);
 }
 /* Sidebar header (and topbar for mobile) */
 .wy-side-nav-search, .wy-nav-top {
@@ -12,9 +12,11 @@
     background: var(--zx-color-carbon);
 }
 
+
+
 .sd-dropdown .sd-card-header {
     background-color: var(--zx-color-card-header);
 
-.wy-side-nav-search> a > p {
+.wy-side-nav-search > a > p {
     font-size: 120%;
 }
