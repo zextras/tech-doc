@@ -478,8 +478,8 @@ immediately, therefore the solution is to provide a temporary link
 Administrators can generate a auth link easily from the
 Administration GUI:
 
-#. In the user's _General Information_ section, in box called
-   *Temporary link*, click the btn:[Create a temporary link] button
+#. In the user's **General Information** section, in box called
+   *Temporary link*, click the :bdg:`Create a temporary link` button
 
 #. A URL link will be shown in an overlay window and can be copied by
    clicking on the accompanying button
