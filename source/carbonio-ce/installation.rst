@@ -123,49 +123,56 @@ Before attempting the installation of |community| you need:
 
 .. dropdown:: To setup |zx| repository
 
-   .. tab-set::
+   Information about how to set up the zextras repository will be
+   provided soon.
+   ..
+      .. tab-set::
 
-      .. tab-item:: Ubuntu
+         .. tab-item:: Ubuntu
 
-         Create file :file:`/etc/apt/sources.list.d/zextras.conf` with the
-         following content.
+            Create file :file:`/etc/apt/sources.list.d/zextras.conf` with the
+            following content.
 
-         .. code:: text
+            .. code:: text
 
-            deb [trusted=yes] https://zextras.jfrog.io/artifactory/ubuntu-playground bionic main
+               deb [trusted=yes] https://zextras.jfrog.io/artifactory/ubuntu-playground bionic main
 
-      .. tab-item:: CentOS/RedHat
+         .. tab-item:: CentOS/RedHat
 
-         Create a `.repo` file :file:`/etc/yum.repos.d/zextras.repo` with the
-         following content.
+            Create a `.repo` file :file:`/etc/yum.repos.d/zextras.repo` with the
+            following content.
 
-         .. code:: ini
+            .. code:: ini
 
-            [Zextras]
-            name=Zextras
-            baseurl=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/
-            enabled=1
-            gpgcheck=1
-            gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
+               [Zextras]
+               name=Zextras
+               baseurl=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/
+               enabled=1
+               gpgcheck=1
+               gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
 
 .. dropdown:: The public |zx| GPG signing key
 
-   The last step is to import |zx| GPG key. This step is not necessary
-   on CentOS/RedHat, as the GPG key is part of the repository configuration.
+   The GPG key will be provided as soon as the repositories will be
+   set up.
 
-   .. tab-set::
+   ..
+      The last step is to import |zx| GPG key. This step is not necessary
+      on CentOS/RedHat, as the GPG key is part of the repository configuration.
 
-      .. tab-item:: Ubuntu
+      .. tab-set::
 
-         Import the GPG key with this command.
+         .. tab-item:: Ubuntu
 
-         .. code:: bash
+            Import the GPG key with this command.
 
-            # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
+            .. code:: bash
 
-      .. tab-item:: CentOS/RedHat
+               # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
 
-         Safely skip this step.
+         .. tab-item:: CentOS/RedHat
+
+            Safely skip this step.
 
 Once all these steps have been successfully accomplished, you can
 proceed to install |community| packages, either on a

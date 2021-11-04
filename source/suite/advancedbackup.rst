@@ -20,18 +20,18 @@ What Can go Wrong
 ~~~~~~~~~~~~~~~~~
 
 To classify a problem as a ``Disaster``, one or more of the following
-must happened:
+must happen:
 
--  Hardware failure of one or more vital filesystems (such as / or
-   /opt/zimbra/)
+- Hardware failure of one or more vital filesystems (such as :file:`/`
+  or :file:`/opt/zimbra/`)
 
--  Contents of a vital filesystem made unusable by internal or external
-   factors (like a careless **rm \*** or an external intrusion)
+- Contents of a vital filesystem made unusable by internal or external
+  factors (like a careless :command:`rm *` or an external intrusion)
 
--  Hardware failure of the physical machine hosting the Zimbra service
-   or of the related virtualization infrastructure
+- Hardware failure of the physical machine hosting the Zimbra service
+  or of the related virtualization infrastructure
 
--  A critical failure on a software or OS update/upgrade
+- A critical failure on a software or OS update/upgrade
 
 .. _minimizing_the_chances:
 
@@ -40,13 +40,13 @@ Minimizing the Chances
 
 Some suggestions to minimize the chances of a disaster:
 
--  Always keep vital filesystems on different drives (namely /,
-   /opt/zimbra/ and your Zextras Backup path)
+- Always keep vital filesystems on different drives (namely :file:`/`
+  :file:`/opt/zimbra/`, or your Zextras Backup Path)
 
--  Use a monitoring/alerting tool for your server to become aware of
-   problems as soon as they appear
+- Use a monitoring/alerting tool for your server to become aware of
+  problems as soon as they appear
 
--  Carefully plan your updates and migrations
+- Carefully plan your updates and migrations
 
 .. _the_recovery:
 
@@ -72,7 +72,7 @@ The recovery of a system is divided into 2 steps:
 How can Zextras Backup Help with Recovery?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``Import Backup`` feature of Zextras Backup provides an easy and
+The **Import Backup** feature of Zextras Backup provides an easy and
 safe way to perform step 2 of a recovery.
 
 Using the old server’s backup path as the import path allows you to
@@ -84,25 +84,25 @@ old server.
 The Recovery Process
 ~~~~~~~~~~~~~~~~~~~~
 
--  Install Zimbra on a new server and configure the Server and Global
-   settings.
+- Install Zimbra on a new server and configure the Server and Global
+  settings.
 
--  Install Zextras Suite on the new server.
+- Install Zextras Suite on the new server.
 
--  Mount the backup folder of the old server onto the new one. If this
-   is not available, use the last external backup available or the
-   latest copy of either.
+- Mount the backup folder of the old server onto the new one. If this
+  is not available, use the last external backup available or the
+  latest copy of either.
 
--  Begin an External Restore on the new server using the following CLI
-   command:
+- Begin an External Restore on the new server using the following CLI
+  command::
 
-``zxsuite backup doExternalRestore /path/to/the/old/store``
+     zxsuite backup doExternalRestore /path/to/the/old/store
 
--  The External Restore operation will immediately create the domains,
-   accounts and distribution lists, so as soon as the first part of the
-   Restore is completed (check your Zextras Suite Notifications), the
-   system will be ready for your users. Emails and other mailbox items
-   will be restored afterwards.
+- The External Restore operation will immediately create the domains,
+  accounts and distribution lists, so as soon as the first part of the
+  Restore is completed (check your Zextras Suite Notifications), the
+  system will be ready for your users. Emails and other mailbox items
+  will be restored afterwards.
 
 .. _settings_and_configs:
 
@@ -117,10 +117,7 @@ minimum Zimbra version required to run Zextras Suite.
 
 Whether you wish to create a perfect copy of the old server or just take
 a cue from the old server’s settings to adapt those to a new
-environment, Zextras Backup comes with a very handy CLI command:
-``getServerConfig``.
-
-::
+environment, Zextras Backup comes with a very handy CLI command::
 
    zimbra@test:~$ zxsuite backup getServerConfig
    command getServerConfig requires more parameters
@@ -129,67 +126,57 @@ environment, Zextras Backup comes with a very handy CLI command:
    Syntax:
       zxsuite backup getServerConfig {standard|customizations} [attr1 value1 [attr2 value2...
 
+.. grid::
+   :gutter: 3
 
-   PARAMETER LIST
+   .. grid-item-card:: Usage example
+      :columns: 6
 
+      ``zxsuite backup getserverconfig standard date last``
+         Display the latest backup data for Server and Global
+         configuration.
 
-   NAME              TYPE               EXPECTED VALUES                       DEFAULT
-   type(M)           Multiple choice    standard|customizations
-   date(O)           String             `dd/MM/yyyy HH:mm:ss`|"last"|"all"
-   backup_path(O)    Path                                                     /opt/zimbra/backup/ng/
-   file(O)           String             Path to backup file
-   query(O)          String             section/id/key
-   verbose(O)        String                                                   false
-   colors(O)         String                                                   false
+      ``zxsuite backup getserverconfig standard file /path/to/backup/file``
+         Display the contents of a backup file instead of the current
+         server backup.
 
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-
-   Usage example:
-
-
-   zxsuite backup getserverconfig standard date last
-    Display the latest backup data for Server and Global configuration.
-   zxsuite backup getserverconfig standard file /path/to/backup/file
-    Display the contents of a backup file instead of the current server backup.
-   zxsuite backup getserverconfig standard date last query zimlets/com_zimbra_ymemoticons colors true verbose true
-    Displays all settings for the com_zimbra_ymemoticons zimlet, using colored output and high verbosity.
-
-Specifically, this will display the latest backed up configurations:
-
-::
-
-   zxsuite backup getServerConfig standard backup_path /your/backup/path/ date last query / | less
-
-You can change the ``query`` argument to display specific settings, e.g.
-
-::
-
-   zimbra@test:~$ zxsuite backup getServerConfig standard date last backup_path /opt/zimbra/backup/ng/ query serverConfig/zimbraMailMode/test.example.com
+      ``zxsuite backup getserverconfig standard date last query zimlets/com_zimbra_ymemoticons colors true verbose true``
+         Displays all settings for the com_zimbra_ymemoticons zimlet,
+         using colored output and high verbosity.
 
 
-   config date_______________________________________________________________________________________________28/02/2014 04:01:14 CET
-   test.example.com____________________________________________________________________________________________________________both
+      ``zxsuite backup getServerConfig standard backup_path /your/backup/path/ date last query / | less``
+         Display the latest backed up configurations
 
-The {zimbrahome}/conf/ and {zimbrahome}/postfix/conf/ directories are
-backed up as well:
+   .. grid-item-card:: Advanced usage
+      :columns: 6
 
-::
+      Change the ``query`` argument to display specific settings
 
-   zimbra@test:~$ zxsuite backup getServerConfig customizations date last verbose true
-   ATTENTION: These files contain the directories {zimbraHome}/conf/ and {zimbraHome}/postfix/conf/ compressed into a single archive.
-              Restore can only be performed manually. Do it only if you know what you're doing.
+      .. code:: console
 
+         zxsuite backup getServerConfig standard date last backup_path /opt/zimbra/backup/ng/ query serverConfig/zimbraMailMode/test.example.com
 
-
-
-           archives
+         config date_______________________________________________________________________________________________28/02/2014 04:01:14 CET
+         test.example.com____________________________________________________________________________________________________________both
 
 
-                   filename                                                    customizations_28_02_14#04_01_14.tar.gz
-                   path                                                        /opt/zimbra/backup/ng/server/
-                   modify date                                                 28/02/2014 04:01:14 CET
+      Use the ``verbose true`` parameter to show more details; for
+      example, that the :file:`{zimbrahome}/conf/` and :file:`{zimbrahome}/postfix/conf/` directories are
+      backed up as well
+
+      .. code:: console
+
+         zimbra@test:~$ zxsuite backup getServerConfig customizations date last verbose true
+         ATTENTION: These files contain the directories {zimbraHome}/conf/ and {zimbraHome}/postfix/conf/ compressed into a single archive.
+         Restore can only be performed manually. Do it only if you know what you're doing.
+
+         archives
+            filename                                                    customizations_28_02_14#04_01_14.tar.gz
+            path                                                        /opt/zimbra/backup/ng/server/
+            modify date                                                 28/02/2014 04:01:14 CET
+
+
 
 .. _vms_and_snapshots:
 
@@ -216,26 +203,27 @@ VM in a valid state and rollback to it at will. To 100% ensure data
 consistency, it’s better to take snapshot copies of switched off VMs,
 but this is not mandatory.
 
-**When using these kinds of systems, it’s vital to make sure that the
-Backup Path isn’t either part of the snapshot (e.g. by setting the vdisk
-to \`Independent Persistent in VMWare ESX/i) or altered in any way when
-rolling back in order for the missing data to be available for import.**
+.. warning:: When using these kinds of systems, it’s vital to make
+   sure that the Backup Path isn’t either part of the snapshot
+   (e.g. by setting the vdisk to `Independent Persistent` in VMWare
+   ESX/i) or altered in any way when rolling back in order for the
+   missing data to be available for import.
 
 To perform a disaster recovery from a previous machine state with
 Zextras Backup, you need to:
 
--  Restore the last valid backup into a separate (clone) VM in an
-   isolated network, making sure that users can’t access it and that
-   both incoming and outgoing emails are not delivered.
+- Restore the last valid backup into a separate (clone) VM in an
+  isolated network, making sure that users can’t access it and that
+  both incoming and outgoing emails are not delivered.
 
--  Switch on the clone and wait for Zimbra to start.
+- Switch on the clone and wait for Zimbra to start.
 
--  Disable Zextras Backup’s RealTime Scanner.
+- Disable Zextras Backup’s RealTime Scanner.
 
--  Connect the Virtual Disk containing the untampered Backup Path to the
-   clone and mount it (on a different path).
+- Connect the Virtual Disk containing the untampered Backup Path to
+  the clone and mount it (on a different path).
 
--  Start an External Restore using the Backup Path as the Import Path.
+- Start an External Restore using the Backup Path as the Import Path.
 
 Doing so will parse all items in the Backup Path and import the missing
 ones, speeding up the disaster recovery. These steps can be repeated as
@@ -245,12 +233,10 @@ inhibited.
 After the restore is completed, make sure that everything is functional
 and restore user access and mail traffic.
 
-.. tip::
-
-   At the end of the operation, you can check that the configuration of
-   the new mailbox is the same by running the command ``zxsuite config
-   dump`` (See the `full reference <../cli.xml#config_dump_account>`__
-   of all its sub-commands).
+.. hint:: At the end of the operation, you can check that the
+   configuration of the new mailbox is the same by running the command
+   ``zxsuite config dump`` (See the :ref:`full reference
+   <zextras_config_cli>`).
 
 .. _the_aftermath:
 
@@ -283,37 +269,37 @@ Zimlet, and it’s also emailed to the address you specified in the
 E-Mail recipient address``.
 
 The ``skipped items`` section contains a per-account list of unrestored
-items:
+items, like shown by the following excerpt::
 
-::
+   [...]
+   - stats -
+   Restored Items: 15233
+   Skipped Items:  125
+   Unrestored Items: 10
 
-     [...]
-     - stats -
-     Restored Items: 15233
-     Skipped Items:  125
-     Unrestored Items: 10
+   - unrestored items -
+   account: account1@example.com
+   unrestored items: 1255,1369
 
-     - unrestored items -
-     account: account1@example.com
-     unrestored items: 1255,1369
+   account: account2@example.com
+   unrestored items: 49965
 
-     account: account2@example.com
-     unrestored items: 49965
-
-     account: account14@example.com
-     unrestored items: 856,13339,45200, 45655
-     [...]
+   account: account14@example.com
+   unrestored items: 856,13339,45200, 45655
+   [...]
 
 .. _skipped_items_vs_unrestored_items:
 
 Skipped Items vs. Unrestored Items
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  ``Skipped`` item: An item that has already been restored, either
-   during the current restore or in a previous one.
+``Skipped`` item
+   An item that has already been restored, either during the current
+   restore or in a previous one.
 
--  ``Unrestored`` item: An item that has not been restored due to an
-   issue in the restore process.
+``Unrestored`` item
+   An item that has not been restored due to an issue in the restore
+   process.
 
 .. _why_have_some_of_my_items_not_been_restored:
 
@@ -322,15 +308,17 @@ Why have some of my items not been restored?
 
 There are different possible causes, the most common of which are:
 
--  **Read Error**: Either the raw item or the metadata file is not
-   readable due to an I/O exception or a permission issue.
+**Read Error**
+   Either the raw item or the metadata file is not readable due to an
+   I/O exception or a permission issue.
 
--  **Broken item**: Both the the raw item or the metadata file are
-   readable by Zextras Backup but their content is broken/corrupted.
+**Broken item**
+   Both the the raw item or the metadata file are readable by Zextras
+   Backup but their content is broken/corrupted.
 
--  **Invalid item**: Both the the raw item or the metadata file are
-   readable and the content is correct, but Zimbra refuses to inject the
-   item.
+**Invalid item**
+   Both the the raw item or the metadata file are readable and the
+   content is correct, but Zimbra refuses to inject the item.
 
 .. _how_can_i_identify_unrestored_items:
 
@@ -342,66 +330,48 @@ The first way can be used to search for the item within the
 backup/import path, and the second can be used to view the items in the
 source server.
 
+.. _identifying_unrestorable_items_through_the_webclient:
+
+.. dropdown:: Using the Zimbra WebClient
+
+   The comma separated list of unrestored items displayed in the
+   ``Operation
+   Complete`` notification can be used as a search argument in the Zimbra
+   Web Client to perform an item search.
+
+   To do so:
+
+   - Log into the Zimbra Administration Console in the source server.
+
+   - Use the ``View Mail`` feature to access the account containing the
+     unrestored items.
+
+   - In the search box, enter **item:** followed by the comma separated
+     list of itemIDs, for example: ``item: 856,13339,45200,45655``
+
+   .. warning:: Remember that any search is executed only within the
+      current tab, so if you are running the search from the ``Email``
+      tab and get no results try to run the same search in the ``Address
+      Book``, ``Calendar``, ``Tasks`` and ``Drive`` tabs.
+
 .. _identifying_unrestorable_items_through_the_cli:
 
-Identifying Unrestorable Items through the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. dropdown:: Using  the CLI
 
-The ``getItem`` CLI command can display an item and the related
-metadata, extracting all information from a backup path/external backup.
+   The ``getItem`` CLI command can display an item and the related
+   metadata, extracting all information from a backup path/external backup.
 
-The syntax of the command is:
+   The syntax of the command is::
 
-::
+     zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
-      zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+   .. card:: Usage example
 
-   PARAMETER LIST
+      ``zxsuite backup getItem account2@example.com 49965 dump blob true``
 
-   NAME              TYPE               EXPECTED VALUES            DEFAULT
-   account(M)        Account Name/ID
-   item(M)           Integer
-   backup_path(O)    Path                                          /opt/zimbra/backup/ng/
-   dump_blob(O)      Boolean            true|false                 false
-   date(O)           Date               dd/mm/yyyy hh:mm:ss|all    last
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-To extract the raw data and metadata information of the item whose
-itemID is *49965* belonging to *account2@example.com* ,also including
-the full dump of the item’s BLOB, the command would be:
-
-``zxsuite backup getItem account2@example.com 49965 dump_blob true``
-
-.. _identifying_unrestorable_items_through_the_zimbra_webclient:
-
-Identifying Unrestorable Items through the Zimbra WebClient
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The comma separated list of unrestored items displayed in the
-``Operation
-Complete`` notification can be used as a search argument in the Zimbra
-Web Client to perform an item search.
-
-To do so:
-
--  Log into the Zimbra Administration Console in the source server.
-
--  Use the ``View Mail`` feature to access the account containing the
-   unrestored items.
-
--  In the search box, enter **item:** followed by the comma separated
-   list of itemIDs.
-
-| ``e.g.``
-| ``item: 856,13339,45200,45655``
-
-.. warning::
-
-   Remember that any search is executed only within the tab it is
-   executed, so if you are running the search from the ``Email`` tab and
-   get no results try to run the same search in the ``Address Book``,
-   ``Calendar``, ``Tasks`` and ``Drive`` tabs.
+      Extract the raw data and metadata information of the item whose
+      itemID is *49965* belonging to *account2@example.com* ,also
+      including the full dump of the item’s BLOB
 
 .. _how_can_i_restore_unrestored_items:
 
@@ -419,159 +389,147 @@ unrestorable items.
 
 .. _items_not_restored_because_of_a_read_error:
 
-Items Not Restored because of a Read Error
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. dropdown:: Items Not Restored because of a Read Error
 
-A dutiful distinction must be done about the read errors that can cause
-items not to be restored:
+   A dutiful distinction must be done about the read errors that can cause
+   items not to be restored:
 
--  **hard** errors: Hardware failures and all other ``destructive``
-   errors that cause an unrecoverable data loss.
+   **Hard errors**
+      Hardware failures and all other `destructive` errors that cause
+      an unrecoverable data loss.
 
--  **soft** errors: ``non-destructive`` errors such as wrong
-   permissions, filesystem errors, RAID issues (e.g.: broken RAID1
-   mirroring), etc.
+   **Soft errors**
+      `non-destructive` errors, including for example wrong permissions,
+      filesystem errors, RAID issues (e.g.: broken RAID1 mirroring), and
+      so on.
 
-While there is nothing much to do about hard errors, you can prevent or
-mitigate soft errors by following these guidelines:
+   While there is nothing much to do about hard errors, you can prevent or
+   mitigate soft errors by following these guidelines:
 
--  Run a filesystem check.
+   - Run a filesystem check.
 
--  If using a RAID disk setup, check the array for possible issues
-   (depending on RAID level).
+   - If using a RAID disk setup, check the array for possible issues
+     (depending on RAID level).
 
--  Make sure that the 'zimbra' user has r/w access to the backup/import
-   path, all its subfolders and all thereby contained files.
+   - Make sure that the 'zimbra' user has r/w access to the backup/import
+     path, all its subfolders and all thereby contained files.
 
--  Carefully check the link quality of network-shared filesystems. If
-   link quality is poor, consider transferring the data with rsync.
+   - Carefully check the link quality of network-shared filesystems. If
+     link quality is poor, consider transferring the data with rsync.
 
--  If using SSHfs to remotely mount the backup/import path, make sure to
-   run the mount command as root using the ``-o allow_other`` option.
+   - If using **SSHfs** to remotely mount the backup/import path, make
+     sure to run the mount command as root using the ``-o allow_other``
+     option.
 
 .. _items_not_restored_because_identified_as_broken_items:
 
-Items Not Restored because Identified as Broken Items
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. dropdown:: Items Not Restored because Identified as Broken Items
 
-Unfortunately, this is the worst category of unrestored items in terms
-of ``salvageability``.
+   Unfortunately, this is the worst category of unrestored items in terms
+   of ``salvageability``.
 
-Based on the degree of corruption of the item, it might be possible to
-recover either a previous state or the raw object (this is only valid
-for emails). To identify the degree of corruption, use the ``getItem``
-CLI command:
+   Based on the degree of corruption of the item, it might be possible to
+   recover either a previous state or the raw object (this is only valid
+   for emails). To identify the degree of corruption, use the ``getItem``
+   CLI command::
 
-::
+     zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
-      zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+   .. card:: Example of how to restore an item
 
-   PARAMETER LIST
 
-   NAME              TYPE               EXPECTED VALUES            DEFAULT
-   account(M)        Account Name/ID
-   item(M)           Integer
-   backup_path(O)    Path                                          /opt/zimbra/backup/ng/
-   dump_blob(O)      Boolean            true|false                 false
-   date(O)           Date               dd/mm/yyyy hh:mm:ss|all    last
+      To search for a broken item, setting the ``backup_path``
+      parameter to the import path and the ``date`` parameter to
+      ``all``, will display all valid states for the item::
+      
+        zimbra@test:~$ zxsuite backup getItem admin@example.com 24700 backup path /mnt/import/ date all
+             itemStates
+                     start date                                                  12/07/2013 16:35:44
+                     type                                                        message
+                     deleted                                                     true
+                     blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+                     start date                                                  12/07/2013 17:04:33
+                     type                                                        message
+                     deleted                                                     true
+                     blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+                     start date                                                  15/07/2013 10:03:26
+                     type                                                        message
+                     deleted                                                     true
+                     blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
 
-   (M) == mandatory parameter, (O) == optional parameter
+   If the item is an email, you will be able to recover a standard ``.eml``
+   file through the following steps:
 
-Searching for the broken item, setting the ``backup_path`` parameter to
-the import path and the ``date`` parameter to ``all``, will display all
-valid states for the item.
+   #. Identify the latest valid state
 
-::
+      From the above snippet, consider::
 
-   zimbra@test:~$ zxsuite backup getItem admin@example.com 24700 backup_path /mnt/import/ date all
-          itemStates                              
-                  start_date                                                  12/07/2013 16:35:44
-                  type                                                        message
-                  deleted                                                     true
-                  blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
-                  start_date                                                  12/07/2013 17:04:33
-                  type                                                        message
-                  deleted                                                     true
-                  blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
-                  start_date                                                  15/07/2013 10:03:26
-                  type                                                        message
-                  deleted                                                     true
-                  blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+         /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+                      start_date                                                  15/07/2013 10:03:26
+                      type                                                        message
+                      deleted                                                     true
+                      blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
 
-If the item is an email, you will be able to recover a standard ``.eml``
-file through the following steps:
+   #. Identify the ``blob path``
+      
+      Take the **blob path** from the previous step::
 
--  Identify the latest valid state
+        blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
 
-::
+   #.  Use gzip to uncompress the BLOB file into an ``.eml`` file
 
-   /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
-                 start_date                                                  15/07/2013 10:03:26
-                 type                                                        message
-                 deleted                                                     true
-                 blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+   .. code:: console
 
--  Identify the ``blob path``
+      zimbra@test:~$ gunzip -c /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ= > /tmp/restored.eml
 
-``blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=``
+      zimbra@test:~$ cat /tmp/restored.eml
 
--  Use gzip to uncompress the BLOB file into an ``.eml`` file
+      Return-Path: zimbra@test.example.com
 
-::
+      Received: from test.example.com (LHLO test.example.com) (192.168.1.123)
+      by test.example.com with LMTP; Fri, 12 Jul 2013 16:35:43 +0200 (CEST)
 
-   zimbra@test:~$ gunzip -c /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ= > /tmp/restored.eml
+      Received: by test.example.com (Postfix, from userid 1001) id 4F34A120CC4;
+      Fri, 12 Jul 2013 16:35:43 +0200 (CEST)
+      To: admin@example.com
+      From: admin@example.com
+      Subject: Service mailboxd started on test.example.com
+      Message-Id: <20130712143543.4F34A120CC4@test.example.com>
+      Date: Fri, 12 Jul 2013 16:35:43 +0200 (CEST)
 
-   zimbra@test:~$ cat /tmp/restored.eml
+      Jul 12 16:35:42 test zmconfigd[14198]: Service status change: test.example.com mailboxd changed from stopped to running
 
-   Return-Path: zimbra@test.example.com
-
-   Received: from test.example.com (LHLO test.example.com) (192.168.1.123)
-   by test.example.com with LMTP; Fri, 12 Jul 2013 16:35:43 +0200 (CEST)
-
-   Received: by test.example.com (Postfix, from userid 1001) id 4F34A120CC4; 
-   Fri, 12 Jul 2013 16:35:43 +0200 (CEST)
-   To: admin@example.com
-   From: admin@example.com
-   Subject: Service mailboxd started on test.example.com
-   Message-Id: <20130712143543.4F34A120CC4@test.example.com>
-   Date: Fri, 12 Jul 2013 16:35:43 +0200 (CEST)
-
-   Jul 12 16:35:42 test zmconfigd[14198]: Service status change: test.example.com mailboxd changed from stopped to running
-
--  Done! You can now import the ``.eml`` file into the appropriate
-   mailbox using your favorite client.
+   #. Done! You can now import the ``.eml`` file into the appropriate
+      mailbox using your favorite client.
 
 .. _items_not_restored_because_identified_as_invalid_items:
 
-Items Not Restored because Identified as Invalid Items
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. dropdown:: Items Not Restored because Identified as Invalid Items
 
-An item is identified as ``Invalid`` when, albeit being formally
-correct, is discarded by Zimbra’s LMTP Validator upon injection. This is
-common when importing items created on an older version of Zimbra to a
-newer one, Validation rules are updated very often, so not all messages
-considered valid by a certain Zimbra version are still considered valid
-by a newer version.
+   An item is identified as ``Invalid`` when, albeit being formally
+   correct, is discarded by Zimbra’s LMTP Validator upon injection. This is
+   common when importing items created on an older version of Zimbra to a
+   newer one, Validation rules are updated very often, so not all messages
+   considered valid by a certain Zimbra version are still considered valid
+   by a newer version.
 
-If you experienced a lot of unrestored items during an import, it might
-be a good idea to momentarily disable the LMTP validator and repeat the
-import:
+   If you experienced a lot of unrestored items during an import, it might
+   be a good idea to momentarily disable the LMTP validator and repeat the
+   import:
 
--  To disable Zimbra’s LMTP Validator, run the following command as the
-   Zimbra user:
+   - To disable Zimbra’s LMTP Validator, run the following command as
+     the Zimbra user::
 
-``zmlocalconfig -e zimbra_lmtp_validate_messages=false``
+       zmlocalconfig -e zimbra_lmtp_validate_messages=false
 
--  Once the import is completed, you can enable the LMTP validator
-   running
+   - Once the import is completed, you can enable the LMTP validator
+     by running::
 
-``zmlocalconfig -e zimbra_lmtp_validate_messages=true``
+       zmlocalconfig -e zimbra_lmtp_validate_messages=true
 
-.. warning::
-
-   This is a ``dirty`` workaround, as items deemed invalid by the LMTP
-   validator might cause display or mobile synchronization errors. Use
-   at your own risk.
+   .. warning:: This is a ``dirty`` workaround, as items deemed
+      invalid by the LMTP validator might cause display or mobile
+      synchronisation errors. Use at your own risk.
 
 .. _taking_additional_and_offsite_backups_of_zextras_backups_datastore:
 
@@ -590,14 +548,14 @@ backup strategy gives a false sense of security, while actually turning
 even the best backup systems in the world into yet another breaking
 point.
 
-Devising a backup strategy is no easy matter, and at some point you will
-most likely be confronted with the following question:
-**``What if I lose the data I
-backed up?``**. The chances of this happening ultimately only depend on
-how you make and manage your backups. For example, it’s more likely that
-you will lose all of your backed up data if you store both your data and
-your backups in a same, single SATA-II disk than if you store your
-backed up data on a dedicated SAN using a RAID 1+0 setup.
+Devising a backup strategy is no easy matter, and at some point you
+will most likely be confronted with the following question: **"What if
+I lose the data I backed up?"**. The chances of this happening
+ultimately only depend on how you make and manage your backups. For
+example, it’s more likely that you will lose all of your backed up
+data if you store both your data and your backups in a same, single
+SATA-II disk than if you store your backed up data on a dedicated SAN
+using a RAID 1+0 setup.
 
 Here are some suggestions and best practices to improve your backup
 strategy by making a backup of the Backup NG’s datastore and storing it
@@ -612,17 +570,30 @@ In order to minimise the possible loss of data, a backup can take
 advantage of the well-known database properties called **ACID**, that
 guarantee data validity and integrity.
 
--  **Atomicity**: Any transaction is committed and written to the disk
-   only when completed.
+.. topic:: **ACID** properties
 
--  **Consistency**: Any committed transaction is valid, and no invalid
-   transaction will be committed and written to the disk.
+   A set of database operations that satisfy the following four
+   properties is called a `transaction` and represent a
+   single logical unit of work. A transaction guarantees the logical
+   consistency of the data stored and, in the context of Zextras
+   Backup, it  allows for easy data back-up and roll-back to a
+   previous state in case of serious database problems.
+   
+   *A*\ tomicity
+      Any transaction is committed and written to the disk only when
+      completed.
 
--  **Isolation**: All transactions are executed sequentially so that no
-   more than 1 transaction can affect the same item at once.
+   *C*\ onsistency
+      Any committed transaction is valid, and no invalid transaction
+      will be committed and written to the disk.
 
--  **Durability**: Once a transaction is committed, it will stay so even
-   in case of a crash (e.g. power loss or hardware failure).
+   *I*\ solation
+      All transactions are executed sequentially so that no more than
+      1 transaction can affect the same item at once.
+
+   *D*\ urability
+      Once a transaction is committed, it will stay so even in case of
+      a crash (e.g. power loss or hardware failure).
 
 By respecting these properties, it’s very easy to make a backup of the
 Datastore and make sure of the content’s integrity and validity. The
@@ -683,73 +654,76 @@ the following best practices are recommended:
 Additional/Offsite Backup F.A.Q.
 --------------------------------
 
-Why shouldn’t I use the ``Export Backup`` feature of Zextras Backup
-instead of rsync?
+.. dropdown:: Why shouldn’t I use the **Export Backup** feature of
+   Zextras Backup instead of rsync?
 
-For many reasons:
+   For many reasons:
 
--  The ``Export Backup`` feature is designed to perform migrations. It
-   exports a ``snapshot`` that is an end in itself and was not designed
-   to be managed incrementally. Each time an Export Backup is run, it’ll
-   probably take just as much time as the previous one, while using
-   rsync is much more time-efficient.
+   - The ``Export Backup`` feature is designed to perform migrations. It
+     exports a ``snapshot`` that is an end in itself and was not designed
+     to be managed incrementally. Each time an Export Backup is run,
+     it’ll probably take just as much time as the previous one, while
+     using rsync is much more time-efficient.
 
--  Being a Zextras Backup operation, any other operation started while
-   the Export Backup is running will be queued until the Export Backup
-   is completed.
+   - Being a Zextras Backup operation, any other operation started while
+     the Export Backup is running will be queued until the Export Backup
+     is completed
 
--  An ``Export Backup`` operation has a higher impact on system
-   resources than an rsync.
+   - An ``Export Backup`` operation has a higher impact on system
+     resources than an rsync
 
--  Should you need to stop an Export Backup operation, you won’t be able
-   to reprise it, and you’ll need to start from scratch.
+   - Should you need to stop an Export Backup operation, you won’t be
+     able to reprise it, and you’ll need to start from scratch
 
-Can I use this for Disaster Recovery?
+.. dropdown:: Can I use this for Disaster Recovery?
 
-Yes. Obviously, if your Backup Path is still available. it’s better to
-use that, as it will restore all items and settings to the last valid
-state. However, should your Backup Path be lost, you’ll be able to use
-your additional/offsite backup.
+   Yes. Obviously, if your Backup Path is still available. it’s better
+   to use that, as it will restore all items and settings to the last
+   valid state. However, should your Backup Path be lost, you’ll be
+   able to use your additional/offsite backup.
 
-Can I use this to restore data on the server the backup copy belongs to?
+.. dropdown:: Can I use this to restore data on the server the backup
+   copy belongs to?
 
-Yes, but not through the ``External Restore`` operation, since item and
-folder IDs are the same.
+   Yes, but not through the ``External Restore`` operation, since item and
+   folder IDs are the same.
 
-The most appropriate steps to restore data from a copy of the backup
-path to the very same server are as follows:
+   The most appropriate steps to restore data from a copy of the backup
+   path to the very same server are as follows:
 
--  Stop the RealTime Scanner.
+   - Stop the RealTime Scanner
 
--  Change the Backup Path to the copy you wish to restore your data
-   from.
+   - Change the Backup Path to the copy you wish to restore your data
+     from
 
--  Run either ``Restore on New Account`` or a
-   ``Restore Deleted Account``.
+   - Run either ``Restore on New Account`` or a ``Restore Deleted
+     Account``.
 
--  Once the restore is over, change the backup path to the original one.
+   -  Once the restore is over, change the backup path to the original one.
 
--  Start the RealTime Scanner. A SmartScan will be triggered to update
-   the backup data.
+   -  Start the RealTime Scanner. A SmartScan will be triggered to update
+      the backup data.
 
-Can I use this to create an Active/Standby infrastructure?
+.. dropdown:: Can I use this to create an Active/Standby
+   infrastructure?
 
-No, because the ``External Restore`` operation does not perform any
-deletions. By running several External Restores, you’ll end up filling
-up your mailboxes with unwanted content, since items deleted from the
-original mailbox will not be deleted on the ``standby`` server.
+   No, because the ``External Restore`` operation does not perform any
+   deletions. By running several External Restores, you’ll end up
+   filling up your mailboxes with unwanted content, since items
+   deleted from the original mailbox will not be deleted on the
+   ``standby`` server.
 
-The ``External Restore`` operation has been designed so that accounts
-will be available for use as soon as the operation is started, so your
-users will be able to send and receive emails even if the restore is
-running.
+   The ``External Restore`` operation has been designed so that
+   accounts will be available for use as soon as the operation is
+   started, so your users will be able to send and receive emails even
+   if the restore is running.
 
-Are there any other ways to do an Additional/Offsite backup of my
-system?
+.. dropdown:: Are there any other ways to do an Additional/Offsite
+   backup of my system?
 
-There are for sure, and some of them might even be better than the one
-described here. These are just guidelines that apply to the majority of
-cases.
+   There are for sure, and some of them might even be better than the
+   one described here. These are just guidelines that apply to the
+   majority of cases.
 
 .. _multistore_information:
 
@@ -774,14 +748,14 @@ Zimbra Administration Console of another server.
 Specific differences between Singlestore and Multistore environments
 are:
 
--  In a Multistore environment, ``Restore on New Account`` operations
-   ALWAYS create the new account in the Source account’s mailbox server
+- In a Multistore environment, ``Restore on New Account`` operations
+  ALWAYS create the new account in the Source account’s mailbox server
 
--  All operations are logged on the **target** server, not in the server
-   that launched the operation
+- All operations are logged on the **target** server, not in the
+  server that launched the operation
 
--  If a wrong target server for an operation is chosen, Zimbra
-   **automatically proxies** the operation request to the right server
+- If a wrong target server for an operation is chosen, Zimbra
+  **automatically proxies** the operation request to the right server
 
 .. _backup_and_restore:
 
@@ -799,30 +773,24 @@ applies also to Zextras Backup settings.
 
 Backup and Restore operations are managed as follows:
 
--  Smartscans can be executed on **single servers** via *the
-   Administration Zimlet* or on **multiple servers** via the *CLI*
+- Smartscans can be executed on **single servers** via *the
+  Administration Zimlet* or on **multiple servers** via the *CLI*
 
--  Restores can be started either from the ``Accounts`` tab in the
-   Zimbra Admin Console, from each server tab in the Zextras Backup menu
-   of the Administration Zimlet or via the CLI. The differences between
-   these methods are:
+- Restores can be started either from the ``Accounts`` tab in the
+  Zimbra Admin Console, from each server tab in the Zextras Backup
+  menu of the Administration Zimlet or via the CLI. The differences
+  between these methods are:
 
-+-----------------------------------+-----------------------------------+
-| Operation started from:           | Options                           |
-+===================================+===================================+
-| ``Accounts tab``                  | The selected account’s restore is |
-|                                   | automatically started in the      |
-|                                   | proper server.                    |
-+-----------------------------------+-----------------------------------+
-| ``Server tab``                    | Any accounts eligible for a       |
-|                                   | restore on the selected server    |
-|                                   | can be chosen as the restore      |
-|                                   | 'source'                          |
-+-----------------------------------+-----------------------------------+
-| ``CLI``                           | Any account on any server can     |
-|                                   | restored, but there is no         |
-|                                   | automatic server selection.       |
-+-----------------------------------+-----------------------------------+
+.. csv-table::
+   :header: "Operation started from:", "Options"
+
+   "``Accounts tab``", "The selected account’s restore is
+   automatically started in the proper server."
+   "``Server tab``", "Any accounts eligible for a restore on the
+   selected server can be chosen as the restore 'source'"
+   "``CLI``", "Any account on any server can restored, but there is no
+   automatic server selection."
+
 
 .. _export_and_import:
 
@@ -834,83 +802,52 @@ a Multistore environment. Here are the basic scenarios:
 
 .. _export_from_a_singlestore_and_import_to_a_multistore:
 
-Export from a Singlestore and Import to a Multistore
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. dropdown:: Export from a Singlestore and Import to a Multistore
 
-Importing multiple accounts of a single domain to a different store will
-break the consistency of ALL the items that are shared from/to a mailbox
-on a different server.
 
-A command in the CLI is available to fix the shares for accounts
-imported on different servers, please check `section
-below <#check-fix-shares-commands>`__.
+   Importing multiple accounts of a single domain to a different store
+   will break the consistency of ALL the items that are shared from/to
+   a mailbox on a different server.
+
+   A command in the CLI is available to fix the shares for accounts
+   imported on different servers, please check section
+   :ref:`check-fix-shares-commands`.
 
 .. _export_from_a_multistore_and_import_to_a_single_or_multistore:
 
-Export from a Multistore and Import to a Single or Multistore
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. dropdown:: Export from a Multistore and Import to a Single or Multistore
 
-Two different scenarios apply here:
+   Two different scenarios apply here:
 
--  ``Mirror`` import: Same number of source and destination mailstores.
-   Each export is imported on a different server. This will break the
-   consistency of ALL the items that are shared from/to a mailbox on a
-   different server. The ``doCheckShares`` and ``doFixShares`` CLI
-   commands are available to check and fix share consistency (see `the
-   next section <#check-fix-shares-commands>`__).
+   - ``Mirror`` import: Same number of source and destination mailstores.
+     Each export is imported on a different server. This will break the
+     consistency of ALL the items that are shared from/to a mailbox on a
+     different server. The ``doCheckShares`` and ``doFixShares`` CLI
+     commands are available to check and fix share consistency (see `the
+     next section <#check-fix-shares-commands>`__).
 
--  ``Composite`` import: Same or different number of source and
-   destination servers. Domains or accounts are manually imported into
-   different servers. This will break the consistency of ALL the items
-   that are shared from/to a mailbox on a different server. Also in this
-   case, the ``doCheckShares`` and ``doFixShares`` CLI commands are
-   available.
+   - ``Composite`` import: Same or different number of source and
+     destination servers. Domains or accounts are manually imported into
+     different servers. This will break the consistency of ALL the items
+     that are shared from/to a mailbox on a different server. Also in
+     this case, the ``doCheckShares`` and ``doFixShares`` CLI commands
+     are available.
 
 .. _check-fix-shares-commands:
 
 The ``doCheckShares`` and ``doFixShares`` Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``doCheckShares`` command will parse all share information in local
-accounts and report any error:
 
-::
+The ``doCheckShares`` command will parse all share information in local
+accounts and report any error:::
 
    zimbra@test:~$ zxsuite help backup doCheckShares
 
-   Syntax:
-      zxsuite backup doCheckShares
-
-
-   Usage example:
-
-   zxsuite backup doCheckShares
-   Check all shares on local accounts
-
 The ``doFixShares`` will fix all share inconsistencies using a
-migration.
-
-::
+migration::
 
    zimbra@test:~$ zxsuite help backup doFixShares
-
-   Syntax:
-      zxsuite backup doFixShares {import_idmap_file}
-
-
-   PARAMETER LIST
-
-   NAME                    TYPE
-   import_idmap_file(M)    String
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite backup doFixShares idmap_file
-
-   Fixes the shares' consistency after an import according to the
-   mapping contained in the /opt/zimbra/backup/ng/idmap_file
 
 .. _operation_queue_and_queue_management:
 
@@ -929,11 +866,11 @@ dequeued (either because it has been completed or terminated).
 
 The queue system affects the following operations:
 
--  External backup
+- External backup
 
--  All restore operations
+- All restore operations
 
--  Smartscan
+- SmartScan
 
 Changes to Zextras Backup’s configuratito on are not enqueued and are
 applied immediately.
@@ -945,115 +882,76 @@ Operation Queue Management
 
 .. _through_the_administration_console:
 
-Through the Administration Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. dropdown:: Through the Administration Console
 
-.. _viewing_the_queue:
+   * Viewing the Queue
+   
+     To view the operation queue, access the ``Notifications`` tab in
+     the Administration Zimlet and click the ``Operation Queue``
+     button.
 
-Viewing the Queue
-^^^^^^^^^^^^^^^^^
+     .. warning:: The Administration Zimlet displays operations queued
+        both by Zextras Backup and Zextras Powerstore in a single
+        view. This is just a design choice, as the two queues are
+        completely separate, meaning that one Zextras Backup operation
+        and one Zextras Powerstore operation can be running at the
+        same time.
 
-To view the operation queue, access the ``Notifications`` tab in the
-Administration Zimlet and click the ``Operation Queue`` button.
+   * Emptying the Queue
 
-.. warning::
-
-   The Administration Zimlet displays operations queued both by Zextras
-   Backup and Zextras Powerstore in a single view. This is just a design
-   choice, as the two queues are completely separate, meaning that one
-   Zextras Backup operation and one Zextras Powerstore operation can be
-   running at the same time.
-
-.. _emptying_the_queue:
-
-Emptying the Queue
-^^^^^^^^^^^^^^^^^^
-
-To stop the current operation and empty Zextras Backup’s operation
-queue, enter the ``Zextras Backup`` tab in the Administration Zimlet and
-click the ``Stop all Operations`` button.
+     To stop the current operation and empty Zextras Backup’s
+     operation queue, enter the ``Zextras Backup`` tab in the
+     Administration Zimlet and click the ``Stop all Operations``
+     button.
 
 .. _through_the_cli:
 
-Through the CLI
-~~~~~~~~~~~~~~~
+.. dropdown:: Through the CLI
 
-.. _viewing_the_queue_2:
-
-Viewing the Queue
-^^^^^^^^^^^^^^^^^
-
-To view Zextras Backup’s operation queue, use the ``getAllOperations``
-command:
-
-::
-
-   zimbra@server:~$ zxsuite help backup getAllOperations
-
-   Syntax:
-      zxsuite backup getAllOperations [attr1 value1 [attr2 value2...
+   * Viewing the Queue
 
 
-   PARAMETER LIST
+     To view Zextras Backup’s operation queue, use the ``getAllOperations``
+     command:::
 
-   NAME          TYPE       EXPECTED VALUES    DEFAULT
-   verbose(O)    Boolean    true|false         false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite backup getAllOperations
-   Shows all running and queued operations
-
-.. _emptying_the_queue_2:
-
-Emptying the Queue
-^^^^^^^^^^^^^^^^^^
-
-To stop the current operation and empty Zextras Backup’s operation
-queue, use the ``doStopAllOperations`` command:
-
-::
-
-   zimbra@mail:~$ zxsuite help backup doStopAllOperations
-
-   Syntax:
-      zxsuite backup doStopAllOperations
+       zxsuite help backup getAllOperations
 
 
-   Usage example:
+     .. card:: Usage example
 
-   zxsuite backup doStopAllOperations
-   Stops all running operations
+        ``zxsuite backup getAllOperations``
 
-.. _removing_a_single_operation_from_the_queue:
-
-Removing a Single Operation from the Queue
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To stop the current operation or to remove a specific operation from the
-queue, use the ``doStopOperation`` command:
-
-::
-
-   zimbra@mail:~$ zxsuite help backup doStopOperation
-
-   Syntax:
-      zxsuite backup doStopOperation {operation_uuid}
+        Shows all running and queued operations
 
 
-   PARAMETER LIST
+   * Emptying the Queue
+   
+     To stop the current operation and empty Zextras Backup’s operation
+     queue, use the ``doStopAllOperations`` command::
 
-   NAME                 TYPE
-   operation_uuid(M)    Uiid
+       zimbra@mail:~$ zxsuite help backup doStopAllOperations
 
-   (M) == mandatory parameter, (O) == optional parameter
 
-   Usage example:
+     .. card:: Usage example
 
-   zxsuite backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601
-   Stops operation with id = 30ed9eb9-eb28-4ca6-b65e-9940654b8601
+        ``zxsuite backup doStopAllOperations``
+        
+        Stops all running operations
+
+
+   * Removing a Single Operation from the Queue
+
+
+     To stop the current operation or to remove a specific operation
+     from the queue, use the ``doStopOperation`` command::
+
+       zimbra@mail:~$ zxsuite help backup doStopOperation
+
+     .. card:: Usage example
+
+        ``zxsuite backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601``
+        
+        Stops operation with id = 30ed9eb9-eb28-4ca6-b65e-9940654b8601
 
 .. _cos_level_backup_management:
 
@@ -1079,14 +977,14 @@ How Does COS-level Backup Management Work?
 What happens if I disable the Zextras Backup Module for a Class of Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  The Real Time Scanner will ignore all accounts in the COS.
+- The Real Time Scanner will ignore all accounts in the COS.
 
--  The Export Backup function WILL NOT EXPORT accounts in the COS.
+- The Export Backup function WILL NOT EXPORT accounts in the COS.
 
--  Accounts in the COS will be treated as ``Deleted`` by the backup
-   system. This means that after the data retention period expires, all
-   data for such accounts will be purged from the backup store.
-   Re-enabling the backup for a Class of Service will reset this.
+- Accounts in the COS will be treated as ``Deleted`` by the backup
+  system. This means that after the data retention period expires, all
+  data for such accounts will be purged from the backup store.
+  Re-enabling the backup for a Class of Service will reset this.
 
 .. _how_is_the_backup_enabledbackup_disabled_information_saved:
 
@@ -1094,8 +992,8 @@ How is the ``backup enabled``/``backup disabled`` information saved?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Disabling the backup for a Class of Service will add the following
-marker to the Class of Service’s ``Notes`` field:
-**${ZxBackup_Disabled}**
+marker to the Class of Service’s `Notes` field:
+``${ZxBackup_Disabled}``
 
 While the Notes field remains fully editable and usable, changing or
 deleting this marker will re-enable the backup for the COS.
