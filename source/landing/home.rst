@@ -69,11 +69,11 @@
       .. button-link:: https://www.zextras.com/professional-services
          :click-parent:
 
-         Zextras professional services
+         Zextras Professional Services
 
       +++
 
-      Information about Zextras professional services
+      Information about Zextras Professional Services
 
    .. grid-item::
       :columns: 2
