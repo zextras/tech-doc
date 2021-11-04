@@ -408,9 +408,9 @@ Here, **ZIMBRA_PUBLIC_URL** is the URL of the Zextras instance and
 
 Above all, the following parameters must be taken into account:
 
-* "sp.nameidformat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress ",
-* "sp.entityid": >>https://ZIMBRA_PUBLIC_URL/zx/auth/samlMetadata?domain=example.com<<,
-* "sp.assertion_consumer_service.url": >>https://ZIMBRA_PUBLIC_URL/zx/auth/saml<<,
+* "sp.nameidformat": "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress "
+* "sp.entityid": https://ZIMBRA_PUBLIC_URL/zx/auth/samlMetadata?domain=example.com
+* "sp.assertion_consumer_service.url": https://ZIMBRA_PUBLIC_URL/zx/auth/saml
 
 Once the IDP is configured and you have the IDP metadata URL, you can
 import the configuration using the command (assuming the IDP metadata
@@ -461,6 +461,33 @@ If you need to manually edit the SAML configuration, you can:
 .. hint:: It is also possible to view or edit single attributes by
    using the ``zxsuite auth saml get`` and ``zxsuite auth saml set``
    command options.
+
+.. _temp_auth_link:
+
+Temporary Auth Link
+-------------------
+
+A typical user-management task that an administrator needs to carry
+out is to allow the first access to the company's infrastructure to a
+new colleague or employee.
+
+When 2FA is enabled on the mailstore, a new user can not login
+immediately, therefore the solution is to provide a temporary link
+(auth link) that allows the user to access and configure 2FA.
+
+Administrators can generate a auth link easily from the
+Administration GUI:
+
+#. In the user's **General Information** section, in box called
+   *Temporary link*, click the :bdg:`Create a temporary link` button
+
+#. A URL link will be shown in an overlay window and can be copied by
+   clicking on the accompanying button
+
+#. The link can then be sent to the new user
+
+#. The user must access the mailbox within 12 hours before the link
+   expires
 
 .. _auth_zxauth-zimlet:
 
