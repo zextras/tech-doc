@@ -39,7 +39,7 @@ Mobile clients: Mail
 ====================
 Android device configuration
 
-Configurazione dispositivi iOS
+iOS device configuration
 
 APP for mobile devices
 ======================
