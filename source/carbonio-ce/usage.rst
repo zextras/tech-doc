@@ -37,6 +37,9 @@ From here the user can set preferences for the operation of the mailbox.
 
 Mobile clients: Mail
 ====================
+Android device configuration
+
+Configurazione dispositivi iOS
 
 APP for mobile devices
 ======================
