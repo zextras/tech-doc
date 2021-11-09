@@ -1236,7 +1236,7 @@ commands` (namely ``deleteRule``, ``listRules``, and
 ``list``, and ``set`` counterparts, with the difference that the `Rule
 commands` accept regular expressions, which must comply with the `Java
 regex patterns
-<https://www.oracle.com/technical-resources/articles/java/regex.html`_
+<https://www.oracle.com/technical-resources/articles/java/regex.html>`_
 standard (ERE with doubled backslashes).
 
 ``allow`` A specific command for quarantined device, and sets device
