@@ -17,7 +17,9 @@
 | otifications(O) | Address[,..]    |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
+
+.. rubric:: Usage Example
 
 zxsuite --progress team doMoveAllRooms server3.example.com notifications
 user1@example.com,\ user2@example.com

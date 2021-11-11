@@ -3,7 +3,7 @@
 
    zxsuite team clusterStatus
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

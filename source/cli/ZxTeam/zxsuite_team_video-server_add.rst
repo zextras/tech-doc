@@ -17,7 +17,9 @@
 | secret(O)       | String          | api-secret      |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
+
+.. rubric:: Usage Example
 
 zxsuite team video-server add videoserver.example.com
 

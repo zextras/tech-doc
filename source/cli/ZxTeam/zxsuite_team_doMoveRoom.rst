@@ -1,9 +1,7 @@
 
 .. code:: bash
 
-   zxsuite team doMoveRoom
-   *0b313912-1334-43d6-b1ad-ec8500fa1505@example.com*
-   *mail3.example.com* [param VALUE[,VALUE]]
+   zxsuite team doMoveRoom   *room-id* *destination* [param VALUE[,VALUE]]
 
 .. rubric:: Parameter List
 
@@ -11,11 +9,11 @@
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
 |                 | String          | 0b3             |                 |
-| *room-id**\ (M) |                 | 13912-1334-43d6 |                 |
+|**room-id**\ (M) |                 | 13912-1334-43d6 |                 |
 |                 |                 | -b1ad-ec8500fa1 |                 |
 |                 |                 | 505@example.com |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| **des           | String          | ma              |                 |
+| **des           | String          | ma\             |                 |
 | tination**\ (M) |                 | il3.example.com |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | force(O)        | Boolean         | false           | false           |
@@ -24,7 +22,9 @@
 | otifications(O) | Address[,..]    |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
+
+.. rubric:: Usage Example
 
 zxsuite --progress team doMoveRoom ROOM-ID server3.example.com
 notifications user1@example.com, user2@example.com

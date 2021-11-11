@@ -3,7 +3,7 @@
 
    zxsuite team doRoomsCleanup
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

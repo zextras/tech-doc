@@ -3,7 +3,7 @@
 
    zxsuite team doDeployTeamZimlet
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

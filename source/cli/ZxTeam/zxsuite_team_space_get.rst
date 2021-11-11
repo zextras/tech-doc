@@ -3,7 +3,7 @@
 
    zxsuite team space get
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

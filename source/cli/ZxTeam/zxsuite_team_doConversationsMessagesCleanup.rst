@@ -3,7 +3,7 @@
 
    zxsuite team doConversationsMessagesCleanup
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

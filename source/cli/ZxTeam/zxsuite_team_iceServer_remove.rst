@@ -23,15 +23,15 @@
 | cos(O)          | String          | default         |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 
    zxsuite team iceServer remove turn:turn.example.com credential mysecret username myuser
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

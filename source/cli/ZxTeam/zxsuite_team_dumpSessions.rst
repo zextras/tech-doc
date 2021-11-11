@@ -3,7 +3,7 @@
 
    zxsuite team dumpSessions
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

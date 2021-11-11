@@ -13,9 +13,9 @@
 | efore_import(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

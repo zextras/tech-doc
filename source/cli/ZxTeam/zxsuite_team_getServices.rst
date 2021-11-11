@@ -3,7 +3,7 @@
 
    zxsuite team getServices
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

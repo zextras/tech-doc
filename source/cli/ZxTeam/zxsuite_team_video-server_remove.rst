@@ -15,7 +15,9 @@
 | port(O)         | Integer         | 2003            | 8188            |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
+
+.. rubric:: Usage Example
 
 zxsuite team video-server remove videoserver.example.com
 

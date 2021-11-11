@@ -3,7 +3,7 @@
 
    zxsuite team doUsersCleanup
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

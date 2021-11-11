@@ -1,0 +1,33 @@
+.. _auth_policy_set_MobileApp_global:
+
+global
+------
+
+.. container:: informalexample
+
+   zxsuite auth policy set MobileApp global [param VALUE[,VALUE]]
+
+PARAMETER LIST
+
++-----------------+-----------------+-----------------+-----------------+
+| NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
++-----------------+-----------------+-----------------+-----------------+
+| i               | Boolean         | true|false      |                 |
+| p_can_change(O) |                 |                 |                 |
++-----------------+-----------------+-----------------+-----------------+
+| trus            | String[,..]     | 192.168         |                 |
+| ted_ip_range(O) |                 | .0.1/16,192.168 |                 |
+|                 |                 | .100.14/24[,…​] |                 |
++-----------------+-----------------+-----------------+-----------------+
+| 2fa_policy(O)   | Integer         | 0 (no_2fa) \| 1 |                 |
+|                 |                 | (ip_2fa) \| 2   |                 |
+|                 |                 | (device_2fa)    |                 |
++-----------------+-----------------+-----------------+-----------------+
+
+(M) -- mandatory parameter, (O) -- optional parameter
+
+**Example:.**
+
+::
+
+   zxsuite auth policy set MobileApp global ip_can_change true

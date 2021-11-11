@@ -1,0 +1,6 @@
+
+**Example:.**
+
+::
+
+   zxsuite core getServices

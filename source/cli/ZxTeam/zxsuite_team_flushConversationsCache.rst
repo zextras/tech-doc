@@ -3,7 +3,7 @@
 
    zxsuite team flushConversationsCache
 
-.. rubric:: Example
+.. rubric:: Usage Example
 
 .. code:: bash
 

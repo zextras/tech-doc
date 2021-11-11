@@ -1,0 +1,45 @@
+.. _backup_getAccountInfo:
+
+getAccountInfo
+--------------
+
+.. container:: informalexample
+
+   zxsuite backup getAccountInfo *account* [param VALUE[,VALUE]]
+
+PARAMETER LIST
+
++-----------------+-----------------+-----------------+-----------------+
+| NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
++-----------------+-----------------+-----------------+-----------------+
+| *               | Account Name/ID |                 |                 |
+| *account**\ (M) |                 |                 |                 |
++-----------------+-----------------+-----------------+-----------------+
+| backup_path(O)  | Path            |                 |                 |
++-----------------+-----------------+-----------------+-----------------+
+| date(O)         | Multiple choice | "dd/MM/yyyy     | most_recent     |
+|                 |                 | HH:mm:ss        |                 |
+|                 |                 | "|most_recent|l |                 |
+|                 |                 | east_recent|all |                 |
++-----------------+-----------------+-----------------+-----------------+
+| backupstats(O)  | Boolean         | true|false      | false           |
++-----------------+-----------------+-----------------+-----------------+
+
+(M) -- mandatory parameter, (O) -- optional parameter
+
+**Example:.**
+
+::
+
+   zxsuite backup getAccountInfo john@example.com
+
+Displays info about the account john@example.com
+
+**Example:.**
+
+::
+
+   zxsuite backup getAccountInfo 04b4bfbe-6675-43eb-b5ea-098b4681869e
+
+Displays info for the account with id
+04b4bfbe-6675-43eb-b5ea-098b4681869e
