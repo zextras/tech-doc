@@ -46,3 +46,8 @@
     padding: 5px;
     margin: 15px
 }
+
+.sd-dropdown .sd-card-header {
+    background-color: var(--zx-color-card-header);
+
+}
