@@ -51,3 +51,10 @@
     background-color: var(--zx-color-card-header);
 
 }
+/* search box with ZX radius*/
+.wy-side-nav-search input[type="text"] {
+ width:100%;
+ border-radius: 0.3rem;
+ padding:6px 12px;
+ border-color:#2472a4
+}
