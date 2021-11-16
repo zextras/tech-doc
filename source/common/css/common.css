@@ -58,3 +58,31 @@
  padding:6px 12px;
  border-color:#2472a4
 }
+
+footer {
+    background-color: black;
+    color:white;
+    padding: 1.618em 3.236em;
+    min-width: 100%
+}
+
+.zxlogo {
+    background-image: url("logo_zextras.png");
+    display: inline-block;
+    height: 30px;
+    width: 170px;
+}
+
+.d-flex {
+    display: flex !important;
+}
+.row {
+    flex-wrap: wrap;
+}
+.list-inline-item {
+    display: inline-block;
+    margin-right: .5rem;
+    width: 36.15385px;
+    height: 36.15385px;
+}
+    
