@@ -1,0 +1,53 @@
+/* This file contains CSS styles shared by all Zextras products - (C)
+   2021 Zextras */
+:root {
+    --zx-color-magma: #E51A1A;
+    --zx-color-carbon: #182126;
+    --zx-color-flame: #FD830B;
+    --zx-color-spark: #F4C64C;
+    --zx-color-ice: #CBDDE4;
+    --zx-color-pebble: #F5F5F5;
+    --zx-color-snow: #FFFFFF;
+    --zx-color-abyss: #00506D;;
+    --zx-color-card-footer: #E8E8E8;
+    --zx-color-card-header: #E8E8E8;
+
+}
+
+/* Custom roles */
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+/* Width of the text content */
+.wy-nav-content {
+    max-width: inherit;
+}
+
+/* Width of logo on the upper left corner */
+.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
+    width:300px
+}
+
+.rst-content .topic-title {
+ font-weight:bold;
+ margin-bottom:12px;
+ left-border: 2px solid
+}
+
+.topic {
+    width: 75%;
+    min-width: 200px;
+    padding: 5px;
+    margin: 15px
+}
+
+.sd-dropdown .sd-card-header {
+    background-color: var(--zx-color-card-header);
+
+}
