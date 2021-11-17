@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+.logo {
+  margin-top: 5px;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: #00506d;
+}
+main {
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+  font-family: "Lato", sans-serif;
+  height: 1000px;
+}
+#title {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 3% 0 10px 0;
+}
+#description {
+  font-weight: 400;
+  font-size: 90%;
+  padding-bottom: 10px;
+}
+.card {
+  background-color: #fff;
+  color: white;
+  padding-top: 0rem;
+  padding-left: 1rem;
+  padding-bottom: -0.9rem;
+  padding-right: 1rem;
+  height: 12rem;
+  border-radius: 10px;
+  color: black;
+  text-align: left;
+}
+
+.h3 {
+  font-weight: bold;
+  font-size: 0.5rem;
+}
+.p {
+  font-size: 0.2rem;
+}
+
+.cards {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+#carbonio {
+  background-image: url("carbonio.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#carbonio_ce {
+  background-image: url("carbonio_ce.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#suite {
+  background-image: url("suite.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#prof_services {
+  background-image: url("prof_services.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#support {
+  background-image: url("support.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#community {
+  background-image: url("community.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Screen larger than 600px? 2 column */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+#btn {
+  color: white;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: 1px;
+  border-color: white;
+  border-radius: 3px;
+  background-color: #e51a1a;
+  padding: 5px;
+}
+
+#btn:hover {
+  background-color: white;
+  border-color: #e51a1a;
+  color: #e51a1a;
+}
+.form-small-text {
+  font-size: 75%;
+}
+
+a:link {
+  text-decoration: none;
+  color: #e51a1a;
+}
+
+a:visited {
+  text-decoration: underline;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #e51a1a;
+}
+
+a:active {
+  text-decoration: none;
+  color: #e51a1a;
+}
