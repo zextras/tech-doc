@@ -12,11 +12,6 @@
     background: var(--zx-color-carbon);
 }
 
-
-
-.sd-dropdown .sd-card-header {
-    background-color: var(--zx-color-card-header);
-
 .wy-side-nav-search > a > p {
     font-size: 120%;
 }

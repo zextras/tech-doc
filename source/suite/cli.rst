@@ -1,99 +1,82 @@
-=====
- CLI
-=====
+===
+CLI
+===
 
-.. _config_server:
+.. _zextras_admin_full_cli:
 
-zxsuite config server
+ZxAdmin CLI Commands
+====================
+
+.. include:: /cli/zxadmin.rst
+
+.. _zextras_auth_full_cli:
+
+..
+   ZxAuth CLI Commands
+   ===================
+
+   .. include:: /cli/zxauth.rst
+
+   .. _zextras_backup_full_cli:
+
+   ZxBackup CLI Commands
+   =====================
+
+   .. include:: /cli/zxbackup.rst
+
+.. _zextras_config_full_cli:
+
+ZxConfig CLI Commands
 =====================
 
-.. _zextras_config_cli:
+.. include:: /cli/zxconfig.rst
 
-zextras config cli
-==================
+..
+   .. _zextras_core_full_cli:
 
-.. _backup_docoherencycheck:
+   ZxCore CLI Commands
+   ===================
 
-zxsuite backup doCoherencyCheck
-===============================
+   .. include:: /cli/zxcore.rst
 
-.. _backup_dosmartscan:
+.. _zextras_docs_full_cli:
 
-zxsuite backup doSmartScan
-==========================
+ZxDocs CLI Commands
+===================
 
-.. _backup_getalloperations:
+.. include:: /cli/zxdocs.rst
 
-zxsuite backup getAllOperations
-===============================
+.. _zextras_drive_full_cli:
 
-.. _backup_monitor:
+ZxDrive CLI Commands
+====================
 
-zxsuite backup monitor
-======================
+.. include:: /cli/zxdrive.rst
 
-.. _backup_dopurge:
+.. _zextras_mobile_full_cli:
 
-zxsuite backup doPurge
-======================
+ZxMobile CLI Commands
+=====================
 
-.. _backup_doundelete:
+.. include:: /cli/zxmobile.rst
 
-zxsuite backup doUndelete
+.. _zextras_powerstore_full_cli:
+
+ZxPowerstore CLI Commands
 =========================
 
-.. _backup_doaccountscan:
+.. include:: /cli/zxpowerstore.rst
 
-zxsuite backup doAccountScan
-============================
+.. _zextras_team_full_cli:
 
-.. _backup_dobackupservercustomizations:
+ZxTeam CLI Commands
+===================
 
-zxsuite backup doBackupServerCustomizations
-===========================================
+.. include:: /cli/zxteam.rst
 
-.. _backup_dobackupldap:
+.. _zextras_update_full_cli:
 
-zxsuite backup doBackupLDAP
-===========================
+ZxUpdate CLI Commands
+=====================
 
-.. _backup_dobackupcluster:
-
-zxsuite backup doBackupCluster
-==============================
-
-.. _backup_setbackupvolume:
-
-zxsuite backup setBackupVolume
-==============================
-
-.. _backup_retrievemetadatafromarchive_S3:
-
-zxsuite backup retrieveMetadataFromArchive_S3
-=============================================
-
-.. _core_listbuckets:
-
-zxsuite core listBuckets
-========================
-
-
-.. _powerstore_docheckblobs:
-
-zxsuite powerstore doCheckBlobs
-===============================
-
-.. _backup_migrateBackupVolume_Default:
-
-zxsuite backup migrateBackupVolume Default
-==========================================
-
-.. _backup_migrateBackupVolume_Local:
-
-zxsuite backup_migrateBackupVolume_Local
-========================================
-
-.. _backup_migrateBackupVolume_S3:
-
-zxsuite backup migrateBackupVolume_S3
-=====================================
+.. include:: /cli/zxupdate.rst

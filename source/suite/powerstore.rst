@@ -113,26 +113,77 @@ account before deloying are the following
 
 .. _pws_enabling_centralized_storage:
 
-Enabling Centralized Storage
-----------------------------
+Setting up Centralized Storage
+------------------------------
 
-1. Create the centralized volume on any one of your servers using the
-   ``zxsuite powerstore doCreateVolume`` command.
+In order to set up a bucket for centralized storage, three steps are
+necessary: Create a bucket, test connection to the bucket, and create
+the volumes on each mailstore.
 
-   a. All volume types except for FileBlob are compatible;
+In details, the recommended procedure is the following and requires
+to use CLI commands.
 
-   b. Make sure to add the centralized TRUE flag to set the volume as a
-      Centralized Storage;
+1. Create an S3 bucket using the ZxCore command `doCreateBucket`::
 
-   c. The full syntax for the command depends on the storage type;
+     zxsuite core doCreateBucket S3 _Amazon_AWS_bucket_ _Service_username_ _Service_password_ [param VALUE[,VALUE]]
 
-2. Once the Centralized Volume has been created, use the
-   ``zxsuite doCreateVolume Centralized`` command on all other mailbox
-   servers to copy the Centralized Volume’s configuration from the first
-   server and add it to the volume list.
+   For example::
 
-   a. The full syntax for the command is zxsuite powerstore
-      doCreateVolume Centralized {server_name} {volume_name}
+     zxsuite core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf https://example_bucket_provider.com
+
+   In this example, we use the following values:
+
+   * *S3* as the type of bucket
+   * *BucketName* as the name of the bucket, which *must coincide*
+     with the name on the remote provider, otherwise the command will
+     fail
+   * *X58Y54E5687R543* as the remote username
+   * *abCderT577eDfjhf* as the remote password
+   * *https://example_bucket_provider.com* as the URL for the
+     connection. You can also enter the IP address of the provider
+     instead of the URL.
+
+   See the xref:./cli.adoc#core_doCreateBucket_S3[doCreateBucket
+   S3] full reference for details and more options.
+
+   When successful, the command outputs a string, which is the unique
+   *bucket ID*, for example *28m6u4KBwSUnYaPp86XG*. Take note of it
+   because it is required in the remainder of the procedure.
+
+2. Test the connection using the bucket ID received in the previous
+   step (**28m6u4KBwSUnYaPp86XG**)::
+
+     zxsuite core testS3Connection 28m6u4KBwSUnYaPp86XG
+
+   If the command is successful, proceed with the next step.
+
+3. Associate the bucket to the volumes on _each mailstore_::
+
+     zxsuite powerstore doCreateVolume S3 _Name of the zimbra store_ _primary|secondary_ [param VALUE[,VALUE]]
+
+
+   For example::
+
+     zxsuite powerstore doCreateVolume S3 VolumeName secondary bucket_configuration_id 28m6u4KBwSUnYaPp86XG volume_prefix main_vol centralized true current_volume true
+
+
+   In this example, these values are used:
+
+   * *S3*: the type of bucket
+   * *VolumeName*: the volume name as defined on the server on which the
+      command is executed
+   * *secondary*: the type of the volume 
+   * *28m6u4KBwSUnYaPp86XG*: the _bucket ID_ as received in step 1
+   * *volume_prefix main_vol*: an ID assigned to the volume, used for
+      quick searches (e.g., *main_vol*)
+   * *centralized true*: whether the storage is centralized or not
+   * *current_volume true*: set the volume to be able to receive
+      immediately data. If not specified, it is necessary to issue 
+      later a command to make the volume _current_.
+
+   See the xref:./cli.adoc#powerstore_doCreateVolume_S3[doCreateVolume
+   S3] full reference for details and more options.
+
 
 .. _pws_centralized_storage_structure:
 

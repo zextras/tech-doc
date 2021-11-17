@@ -28,10 +28,12 @@ the destination of the recovered data, restore strategies are grouped in
 infrastructure—​and recovery on a different infrastructure.
 
 Same infrastructure restore
+
    These strategies are meant to be used when you need to restore only
    part of an account on **the same server** as the origin server. In
-   this category fall :ref:`account_restore` ,
-   :ref:`time_range_undelete`, and :ref:`single_item_restore`.
+   this category fall :ref:`restore_deleted_account`,
+   :ref:`single_item_restore`, :ref:`account_restore`, and
+   :ref:`time_range_undelete`.
 
 Different infrastructure restore
    When the restore process is not possible or not feasible on the same

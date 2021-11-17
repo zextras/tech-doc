@@ -14,7 +14,9 @@ Here you can find a description of its functionalities and configuration options
    backup
    restorestrategies
    advancedbackup
-   mobile 
+   mobile
+   ldapaddressbook
+   mobile-troubleshooting
    powerstore
    admin
    drive
@@ -22,3 +24,4 @@ Here you can find a description of its functionalities and configuration options
    auth
    team
    cli
+   glossary
