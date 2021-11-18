@@ -345,7 +345,7 @@ The Backup Path can be set both via GUI and via CLI:
 -  Via GUI: in the "Backup" section of the Zextras Administration
    Zimlet, under "Backup Path".
 
-- Via CLI: using the :ref:`config_server` command to change the
+- Via CLI: using the :ref:`zxsuite config server <zxsuite_config_server>` command to change the
   ``ZxBackup_DestPath`` config key.
 
 .. warning:: Backup paths are unique and not reusable. Copying a
@@ -402,7 +402,7 @@ modified since the last SmartScan run, the **Coherency Check** carries
 out a thorough check of all metadata and BLOBs in the Backup Path.
 
 To start a Coherency Check via the CLI, use the
-:ref:`backup_doCoherencyCheck` command:
+:ref:`zxsuite backup doCoherencyCheck <zxsuite_backup_docoherencycheck>` command:
 
 .. Quick reference -- Need to find a replacement (admonition?) for
    these containers
@@ -589,8 +589,8 @@ To start a SmartScan via the Administration Zimlet,
 Starting the SmartScan via the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To start a SmartScan via the CLI, use the :ref:`backup_doSmartScan`
-command:
+To start a SmartScan via the CLI, use the :ref:`zxsuite backup
+doSmartScan <zxsuite_backup_doSmartScan>` command:
 
 .. code:: console
 
@@ -603,14 +603,15 @@ Checking the Status of a Running Scan
 
 Before actually carrying out this check, it is suggested to verify how
 many operations are running, to find the correct id. you can do this
-by using the :ref:`backup_getalloperations` command.
+by using the :ref:`zxsuite backup getAllOperations
+<zxsuite_backup_getAllOperations>` command.
 
 .. code:: console
 
    zxsuite backup getAllOperations [param VALUE[,VALUE]]
 
 To check the status of a running scan via the CLI, use the
-:ref:`backup_monitor` command:
+:ref:`zxsuite backup monitor <zxsuite_backup_monitor>` command:
 
 .. code:: console
 
@@ -802,7 +803,7 @@ Starting the Backup Purge via the CLI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To start a BackupPurge via the CLI, use the
-:ref:`backup_dopurge` command:
+:ref:`zxsuite backup doPurge <zxsuite_backup_doPurge>` command:
 
 .. code:: console
 
@@ -814,7 +815,7 @@ Checking the Status of a Running Backup Purge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To check the status of a running Purge via the CLI, use the
-:ref:`backup_monitor` command:
+:ref:`zxsuite backup monitor <zxsuite_backup_monitor>` command:
 
 .. code:: console
 
@@ -1043,15 +1044,17 @@ The remote metadata archiving can be also triggered manually by running
 either of the following commands and adding the
 ``remote_metadata_upload true`` parameter:
 
--  :ref:`backup_doSmartScan`
+- :ref:`zxsuite backup doSmartScan <zxsuite_backup_doSmartScan>`
 
--  :ref:`backup_doAccountScan`
+- :ref:`zxsuite backup doAccountScan <zxsuite_backup_doAccountScan>`
 
--  :ref:`backup_doBackupServerCustomizations`
+- :ref:`zxsuite backup doBackupServerCustomizations
+  <zxsuite_backup_doBackupServerCustomizations>`
 
--  :ref:`backup_doBackupLDAP`
+- :ref:`zxsuite backup doBackupLDAP <zxsuite_backup_doBackupLDAP>`
 
--  :ref:`backup_doBackupCluster`
+- :ref:`zxsuite backup doBackupCluster
+  <zxsuite_backup_doBackupCluster>`
 
 By splitting the *I/O intensive* metadata folder from the BLOBs one, it
 is also ensured that the backup works, even in case the remote storage
@@ -1084,7 +1087,8 @@ external storage:
       commands"*
 
 In order to disable the External Storage, you can run the
-:ref:`backup_setBackupVolume` command.
+:ref:`zxsuite backup setBackupVolume Default <zxsuite_backup_setBackupVolume_Default>`
+command.
 
 .. code:: bash
 
@@ -1121,7 +1125,8 @@ remote storage to the Backup Path.
 
    zxsuite backup retrieveMetadataFromArchive S3 *destination*
 
-See documentation of `backup_retrieveMetadataFromArchive_S3` for more
+See documentation of :ref:`zxsuite backup retrieveMetadataFromArchive
+S3 <zxsuite_backup_retrieveMetadataFromArchive_S3>` for more
 information.
 
 .. _external_storages:
@@ -1196,8 +1201,8 @@ are not compatible with each other. If Powerstore data is stored in a
 bucket it is not possible to store Backup data on the same bucket and
 vice-versa.
 
-The :ref:`core_listBuckets` command reports the bucket usage, for
-example::
+The :ref:`zxsuite core listBuckets <zxsuite_core_listBuckets>` command
+reports the bucket usage, for example::
 
    bucketName                                                  hsm
    protocol                                                    HTTPS
@@ -1283,22 +1288,22 @@ the external storage.
       ``mysqlcheck`` command to verify the database integrity.
 
    4. Check for any missing blobs in the Zimbra volumes with
-      :ref:`powerstore_docheckblobs`
+      :ref:`zxsuite powerstore doCheckBlobs <zxsuite_powerstore_doCheckBlobs>`
 
    5. Check for any missing digest in the backup with
-      :ref:`doSmartScan deep=true <backup_dosmartscan>`
+      :ref:`doSmartScan deep=true <zxsuite_backup_doSmartScan>`
 
    6. Check for any orphaned digest or metadata in the Backup with
-      :ref:`backup_docoherencycheck`
+      :ref:`zxsuite backup doCoherencyCheck <zxsuite_backup_docoherencycheck>`
 
-   7. Optionally run a :ref:`backup_dopurge` to remove
+   7. Optionally run a :ref:`zxsuite backup doPurge <zxsuite_backup_doPurge>` to remove
       expired data from the Backup
 
    You can now proceed to migrate the existing backup using the appropriate
    ``zxsuite backup migrateBackupVolume`` [[
-   :ref:`Default <backup_migrateBackupVolume_Default>` \|
-   :ref:`Local <backup_migrateBackupVolume_Local>` \|
-   :ref:`S3 <backup_migrateBackupVolume_S3>` ]] command.
+   :ref:`Default <zxsuite_backup_migrateBackupVolume_Default>` \|
+   :ref:`Local <zxsuite_backup_migrateBackupVolume_Local>` \|
+   :ref:`S3 <zxsuite_backup_migrateBackupVolume_S3>` ]] command.
 
    Finally, once the migration has been completed you can run this final
    task:
