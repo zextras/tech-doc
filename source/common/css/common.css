@@ -59,20 +59,19 @@
  border-color:#2472a4
 }
 
+/* layout for footer and related classes borrowed from zextras' web
+   page*/
 footer {
     background-color: black;
     color:white;
     padding: 1.618em 3.236em;
-    min-width: 100%
 }
-
 .zxlogo {
     background-image: url("logo_zextras.png");
     display: inline-block;
     height: 30px;
     width: 170px;
 }
-
 .d-flex {
     display: flex !important;
 }
@@ -85,4 +84,32 @@ footer {
     width: 36.15385px;
     height: 36.15385px;
 }
-    
+
+/* Force Lato fonts on all document */
+.rst-content .toctree-wrapper>p.caption,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+    margin-top:0;
+    font-weight:700;
+    font-family:Lato,proxima-nova,Helvetica Neue,Arial,sans-serif
+}
+
+.rst-content .sidebar .sidebar-title {
+ display:block;
+ font-family:Lato,proxima-nova,Helvetica Neue,Arial,sans-serif
+ font-weight:700;
+ background:#e1e4e5;
+ padding:6px 12px;
+ margin:-24px -24px 24px;
+ font-size:100%
+}
+
+/* link color */
+.std-ref, .std-numref, .doc, .reference.external {
+    color: var(--zx-color-magma)
+}
