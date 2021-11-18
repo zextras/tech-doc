@@ -1,13 +1,9 @@
-.. _auth_saml_validate:
 
-validate
---------
-
-.. container:: informalexample
+::
 
    zxsuite auth saml validate *./saml-config.json*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -16,9 +12,9 @@ PARAMETER LIST
 |                 |                 | aml-config.json |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

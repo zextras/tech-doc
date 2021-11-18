@@ -1,20 +1,24 @@
 
-PARAMETER LIST
+::
+
+   zxsuite metrics percentiles *set|get|empty* [param VALUE[,VALUE]]
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | set|get|empty   |                 |
-| *command**\ (M) |                 |                 |                 |
+| **com           | String          | set | get |     |                 |
+| mand**\ (M)     |                 | empty           |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | attribute(O)    | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | value(O)        | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -22,7 +26,7 @@ PARAMETER LIST
 
 Get the current percentiles values
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

@@ -17,12 +17,12 @@ ZxAdmin CLI Commands
 
    .. include:: /cli/zxauth.rst
 
-   .. _zextras_backup_full_cli:
+.. _zextras_backup_full_cli:
 
-   ZxBackup CLI Commands
-   =====================
+ZxBackup CLI Commands
+=====================
 
-   .. include:: /cli/zxbackup.rst
+.. include:: /cli/zxbackup.rst
 
 .. _zextras_config_full_cli:
 

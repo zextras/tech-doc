@@ -1,13 +1,9 @@
-.. _backup_doFixShares:
 
-doFixShares
------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doFixShares *import_idmap_file*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -16,9 +12,9 @@ PARAMETER LIST
 | map_file**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

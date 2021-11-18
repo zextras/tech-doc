@@ -1,5 +1,9 @@
 
-**Example:.**
+::
+
+   zxsuite core getServices
+
+.. rubric:: Usage Example
 
 ::
 

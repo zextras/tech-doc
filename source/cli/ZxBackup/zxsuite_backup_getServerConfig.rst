@@ -1,24 +1,20 @@
-.. _backup_getServerConfig:
 
-getServerConfig
----------------
-
-.. container:: informalexample
+::
 
    zxsuite backup getServerConfig *standard|customizations* [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| **type**\ (M)   | Multiple choice | standard        |                 |
-|                 |                 | |customizations |                 |
+| **type**\ (M)   | Multiple choice | standard |      |                 |
+|                 |                 | customizations  |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | date(O)         | String          | "dd/MM/yyyy     |                 |
-|                 |                 | HH:mm:s         |                 |
-|                 |                 | s"|"last"|"all" |                 |
+|                 |                 | HH:mm:ss" |     |                 |
+|                 |                 | "last" | "all"  |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | backup_path(O)  | Path            |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
@@ -32,9 +28,9 @@ PARAMETER LIST
 | colors(O)       | String          |                 | false           |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -43,7 +39,7 @@ PARAMETER LIST
 Display a summary of the latest backup data for Server and Global
 configuration.
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -51,7 +47,7 @@ configuration.
 
 Display the latest backed up server and global configuration settings.
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -60,7 +56,7 @@ Display the latest backed up server and global configuration settings.
 Display the contents of a backup file instead of the current server
 backup.
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

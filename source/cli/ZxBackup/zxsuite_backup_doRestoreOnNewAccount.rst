@@ -1,15 +1,9 @@
-.. _backup_doRestoreOnNewAccount:
 
-doRestoreOnNewAccount
----------------------
+.. parsed-literal::
 
-.. container:: informalexample
+   zxsuite backup doRestoreOnNewAccount *Account name or id* *destination_account* *"dd/MM/yyyy HH:mm:ss"|last* [param VALUE[,VALUE]]
 
-   zxsuite backup doRestoreOnNewAccount *Account name or id*
-   *destination_account* *"dd/MM/yyyy HH:mm:ss"|last* [param
-   VALUE[,VALUE]]
-
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -21,12 +15,12 @@ PARAMETER LIST
 | _account**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | **date**\ (M)   | Date            | "dd/MM/yyyy     | last            |
-|                 |                 | HH:mm:ss"|last  |                 |
+|                 |                 | HH:mm:ss"| last |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| restore_        | Boolean         | true|false      |                 |
-| chat_buddies(O) |                 |                 |                 |
+| restore_cha     | Boolean         | true | false    |                 |
+| t_buddies(O)    |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| apply_hsm(O)    | Boolean         | true|false      |                 |
+| apply_hsm(O)    | Boolean         | true | false    |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | n               | Email           |                 |                 |
 | otifications(O) | Address[,..]    |                 |                 |
@@ -35,9 +29,9 @@ PARAMETER LIST
 | e_datasource(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

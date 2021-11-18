@@ -1,20 +1,16 @@
-.. _auth_token_list:
 
-list
-----
-
-.. container:: informalexample
+::
 
    zxsuite auth token list *uuid\|\ *\ user1@example.com [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | uuid\|\ us      |                 |
-| *account**\ (M) |                 | er1@example.com |                 |
+| **acc\          | String          | user\@exam\     |                 |
+| ount**\ (M)     |                 | ple.com | uuid  |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | c               | String          |                 |                 |
 | redential_id(O) |                 |                 |                 |
@@ -23,9 +19,9 @@ PARAMETER LIST
 | ential_label(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

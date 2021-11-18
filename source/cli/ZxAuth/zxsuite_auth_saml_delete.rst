@@ -1,13 +1,9 @@
-.. _auth_saml_delete:
 
-delete
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth saml delete *example.com* *organization.name*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -18,9 +14,9 @@ PARAMETER LIST
 |                 |                 | ganization.name |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

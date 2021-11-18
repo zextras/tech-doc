@@ -1,24 +1,20 @@
-.. _auth_credential_delete:
 
-delete
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth credential delete *john@example.com* *f51as*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | j               |                 |
-| *account**\ (M) |                 | ohn@example.com |                 |
+| **acc\          | String          | john@\          |                 |
+| ount**\ (M)     |                 | example.com     |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| **pas           | String          | f51as           |                 |
+| **pas\          | String          | f51as           |                 |
 | sword_id**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite auth delete john@example.com f51as

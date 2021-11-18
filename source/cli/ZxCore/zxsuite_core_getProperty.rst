@@ -1,5 +1,9 @@
 
-PARAMETER LIST
+::
+
+   zxsuite core getProperty [param VALUE[,VALUE]]
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -10,17 +14,15 @@ PARAMETER LIST
 | roperty_name(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
    zxsuite core getProperty
 
-.. warning::
-
-   this command is deprecated, please use instead:
+.. warning:: This command is deprecated, please use instead:
 
 ::
 

@@ -1,14 +1,10 @@
-.. _auth_loginPage_setSkinLogoURL_domain:
 
-domain
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth loginPage setSkinLogoURL domain *domain*
    http://wwww.example.com/images/myimage.jpg
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -20,9 +16,9 @@ PARAMETER LIST
 |                 |                 | ges/myimage.jpg |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

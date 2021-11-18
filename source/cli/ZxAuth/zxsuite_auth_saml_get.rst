@@ -1,13 +1,9 @@
-.. _auth_saml_get:
 
-get
----
-
-.. container:: informalexample
+::
 
    zxsuite auth saml get *example.com* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -21,9 +17,9 @@ PARAMETER LIST
 |                 |                 | aml-config.json |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

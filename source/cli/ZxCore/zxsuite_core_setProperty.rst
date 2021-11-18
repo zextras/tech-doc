@@ -1,5 +1,9 @@
 
-PARAMETER LIST
+::
+
+   zxsuite core setProperty *property_name* *property_value*
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -11,17 +15,15 @@ PARAMETER LIST
 | ty_value**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
    zxsuite core setProperty
 
-.. warning::
-
-   this command is deprecated, please use instead:
+.. warning:: This command is deprecated, please use instead:
 
 ::
 

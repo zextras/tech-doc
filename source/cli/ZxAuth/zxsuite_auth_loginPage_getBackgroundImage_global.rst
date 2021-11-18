@@ -1,13 +1,9 @@
-.. _auth_loginPage_getBackgroundImage_global:
 
-global
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth loginPage getBackgroundImage global
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

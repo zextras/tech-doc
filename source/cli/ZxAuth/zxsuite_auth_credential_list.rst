@@ -1,21 +1,17 @@
-.. _auth_credential_list:
 
-list
-----
-
-.. container:: informalexample
+::
 
    zxsuite auth credential list *john@example.com*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | j               |                 |
-| *account**\ (M) |                 | ohn@example.com |                 |
+| **acc\          | String          | john@\          |                 |
+| ount**\ (M)     |                 | example.com     |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite auth list john@example.com

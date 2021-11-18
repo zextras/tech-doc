@@ -1,13 +1,9 @@
-.. _backup_monitor:
 
-monitor
--------
-
-.. container:: informalexample
+::
 
    zxsuite backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -19,9 +15,9 @@ PARAMETER LIST
 | eration_host(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

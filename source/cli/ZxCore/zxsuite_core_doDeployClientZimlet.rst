@@ -1,5 +1,9 @@
 
-**Example:.**
+::
+
+   zxsuite core doDeployClientZimlet
+
+.. rubric:: Usage Example
 
 ::
 

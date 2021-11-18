@@ -1,6 +1,10 @@
+
+::
+
+   zxsuite core doCreateBucket Yandex *Bucket name* *Service username*
    *Service password* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -18,6 +22,6 @@ PARAMETER LIST
 |                 |                 | blobs keys      |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite core createVolume Yandex bucketName accessKey secretKey

@@ -1,13 +1,9 @@
-.. _auth_doDeployAuthZimlet:
 
-doDeployAuthZimlet
-------------------
-
-.. container:: informalexample
+::
 
    zxsuite auth doDeployAuthZimlet
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

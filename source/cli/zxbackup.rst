@@ -198,7 +198,7 @@
 
 .. _zxsuite_backup_getProperty.rst:
 
-.. dropdown:: zxsuite_backup_getProperty.rst
+.. dropdown:: zxsuite_backup_getProperty.rst :bdg-warning:`Deprecated`
 
    .. include:: /cli/ZxBackup/zxsuite_backup_getProperty.rst
 
@@ -270,7 +270,7 @@
 
 .. _zxsuite_backup_setProperty.rst:
 
-.. dropdown:: zxsuite_backup_setProperty.rst
+.. dropdown:: zxsuite_backup_setProperty.rst :bdg-warning:`Deprecated`
 
    .. include:: /cli/ZxBackup/zxsuite_backup_setProperty.rst
 

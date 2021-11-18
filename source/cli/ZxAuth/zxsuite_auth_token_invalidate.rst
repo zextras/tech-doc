@@ -1,27 +1,23 @@
-.. _auth_token_invalidate:
 
-invalidate
-----------
-
-.. container:: informalexample
+::
 
    zxsuite auth token invalidate *user@example.com|uuid* *uuid|all*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | user@exam       |                 |
-| *account**\ (M) |                 | ple.com\ \|uuid |                 |
+| **acc\          | String          | user\@exam\     |                 |
+| ount**\ (M)     |                 | ple.com | uuid  |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| **              | String          | uuid|all        |                 |
-| token_id**\ (M) |                 |                 |                 |
+| **t\            | String          | uuid | all      |                 |
+| oken_id**\ (M)  |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

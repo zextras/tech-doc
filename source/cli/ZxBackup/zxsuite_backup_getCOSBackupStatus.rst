@@ -1,13 +1,9 @@
-.. _backup_getCOSBackupStatus:
 
-getCOSBackupStatus
-------------------
-
-.. container:: informalexample
+::
 
    zxsuite backup getCOSBackupStatus [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -15,9 +11,9 @@ PARAMETER LIST
 | cos_name(O)     | String          |                 | all             |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

@@ -1,24 +1,20 @@
-.. _auth_trustedDevice_list:
 
-list
-----
-
-.. container:: informalexample
+::
 
    zxsuite auth trustedDevice list *account*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **account**     | String          |                 |                 |
+| (M)             |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

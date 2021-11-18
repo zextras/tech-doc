@@ -1,16 +1,20 @@
 
-PARAMETER LIST
+::
+
+   zxsuite metrics remove *graphite*
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| **              | String          | graphite        |                 |
-| endpoint**\ (M) |                 |                 |                 |
+| **end           | String          | graphite        |                 |
+| point**\ (M)    |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
