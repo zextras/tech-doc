@@ -71,6 +71,7 @@ footer {
     display: inline-block;
     height: 30px;
     width: 170px;
+    margin-bottom: 0px
 }
 .d-flex {
     display: flex !important;
@@ -113,3 +114,4 @@ legend {
 .std-ref, .std-numref, .doc, .reference.external {
     color: var(--zx-color-magma)
 }
+

@@ -20,21 +20,27 @@
       {%- if hasdoc('copyright') %}
         {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
       {%- else %}
-        {%- trans copyright=copyright|e %}<p class="zxlogo"></p><p>&#169; Copyright {{
-      copyright }} ZEXTRAS; All rights reserved</p>{% endtrans %}
+        {%- trans copyright=copyright|e %}<p class="zxlogo"></p><p>
+      Copyright &#169 2021: ZEXTRAS; All rights reserved</p>{% endtrans %}
     {%- endif %}
 
     {%- endif %}
    </div>
    <div class="sd-col-md4 sd-col-lg-4">Zimbra is a
      registered trademark of Synacor, Inc.<br>  ActiveSync is a
-     registered Trademark of Microsoft Corporation.</li>
+     registered Trademark of Microsoft Corporation.
     </div>
     <div class="sd-col-md4 sd-col-lg-4 sd-text-right">
       <ul class="list-unstyled ">
-        <li class="sd-d-inline-block sd-px-3 sd-fs-4"><p class="fa fa-facebook"><a href="https://www.facebook.com/zextras"></a>
-        <li class="sd-d-inline-block sd-px-3 sd-fs-4"><p class="fa fa-linkedin"><a href="http://www.linkedin.com/company/2277799?trk=tyah&trkInfo=tas%3Azextras"></a>
-        <li class="sd-d-inline-block sd-px-3 sd-fs-4"><p class="fa fa-twitter"><a href="http://www.twitter.com/ZeXtras"></a>
+        <li class="sd-d-inline-block sd-px-3
+        sd-fs-4"><a href="https://www.facebook.com/zextras"
+        class="icon fa-facebook"></a></li>
+        <li class="sd-d-inline-block sd-px-3
+        sd-fs-4"><a href="http://www.linkedin.com/company/2277799?trk=tyah&trkInfo=tas%3Azextras"
+        class="icon fa fa-linkedin"></a></li>
+        <li class="sd-d-inline-block sd-px-3
+        sd-fs-4"><a href="http://www.twitter.com/ZeXtras" class="fa
+                                                                 fa-twitter" alt="Twitter"></a></li>
       </ul>
     </div>
   {%- endblock %}
