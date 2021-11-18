@@ -115,3 +115,12 @@ legend {
     color: var(--zx-color-magma)
 }
 
+
+.std-ref:hover, .std-numref:hover, .doc:hover, .reference.external:hover {
+    text-decoration: underline;
+}
+
+.icon, .icon:visited {
+    color: white;
+}
+
