@@ -1,10 +1,7 @@
 
 @import url("common.css");
 
-/* Sidebar header (and topbar for mobile) */
-.wy-side-nav-search, .wy-nav-top {
-    background: var(--zx-color-magma);
-}
+
 /* Sidebar */
 .wy-nav-side {
     background: var(--zx-color-abyss);
