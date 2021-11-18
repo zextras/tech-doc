@@ -11,11 +11,10 @@ ZxAdmin CLI Commands
 
 .. _zextras_auth_full_cli:
 
-..
-   ZxAuth CLI Commands
-   ===================
+ZxAuth CLI Commands
+===================
 
-   .. include:: /cli/zxauth.rst
+.. include:: /cli/zxauth.rst
 
 .. _zextras_backup_full_cli:
 
@@ -31,13 +30,12 @@ ZxConfig CLI Commands
 
 .. include:: /cli/zxconfig.rst
 
-..
-   .. _zextras_core_full_cli:
+.. _zextras_core_full_cli:
 
-   ZxCore CLI Commands
-   ===================
+ZxCore CLI Commands
+===================
 
-   .. include:: /cli/zxcore.rst
+.. include:: /cli/zxcore.rst
 
 .. _zextras_docs_full_cli:
 

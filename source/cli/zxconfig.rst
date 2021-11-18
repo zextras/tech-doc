@@ -1,228 +1,228 @@
-.. _zxsuite_config_account.rst:
+.. _zxsuite_config_account:
 
-.. dropdown:: zxsuite_config_account.rst :bdg-warning:`Deprecated`
+.. dropdown:: zxsuite_config_account :bdg-warning:`Deprecated`
 
    .. include:: /cli/ZxConfig/zxsuite_config_account.rst
 
-.. _zxsuite_config_clean.rst:
+.. _zxsuite_config_clean:
 
-.. dropdown:: zxsuite_config_clean.rst
+.. dropdown:: zxsuite_config_clean
 
    .. include:: /cli/ZxConfig/zxsuite_config_clean.rst
 
-.. _zxsuite_config_cos.rst:
+.. _zxsuite_config_cos:
 
-.. dropdown:: zxsuite_config_cos.rst :bdg-warning:`Deprecated`
+.. dropdown:: zxsuite_config_cos :bdg-warning:`Deprecated`
 
    .. include:: /cli/ZxConfig/zxsuite_config_cos.rst
 
-.. _zxsuite_config_distributionList.rst:
+.. _zxsuite_config_distributionList:
 
-.. dropdown:: zxsuite_config_distributionList.rst
+.. dropdown:: zxsuite_config_distributionList
 
    .. include:: /cli/ZxConfig/zxsuite_config_distributionList.rst
 
-.. _zxsuite_config_doRestartService.rst:
+.. _zxsuite_config_doRestartService:
 
-.. dropdown:: zxsuite_config_doRestartService.rst
+.. dropdown:: zxsuite_config_doRestartService
 
    .. include:: /cli/ZxConfig/zxsuite_config_doRestartService.rst
 
-.. _zxsuite_config_doStartService.rst:
+.. _zxsuite_config_doStartService:
 
-.. dropdown:: zxsuite_config_doStartService.rst
+.. dropdown:: zxsuite_config_doStartService
 
    .. include:: /cli/ZxConfig/zxsuite_config_doStartService.rst
 
-.. _zxsuite_config_doStopService.rst:
+.. _zxsuite_config_doStopService:
 
-.. dropdown:: zxsuite_config_doStopService.rst
+.. dropdown:: zxsuite_config_doStopService
 
    .. include:: /cli/ZxConfig/zxsuite_config_doStopService.rst
 
-.. _zxsuite_config_domain.rst:
+.. _zxsuite_config_domain:
 
-.. dropdown:: zxsuite_config_domain.rst :bdg-warning:`Deprecated`
+.. dropdown:: zxsuite_config_domain :bdg-warning:`Deprecated`
 
    .. include:: /cli/ZxConfig/zxsuite_config_domain.rst
 
-.. _zxsuite_config_dump_account.rst:
+.. _zxsuite_config_dump_account:
 
-.. dropdown:: zxsuite_config_dump_account.rst
+.. dropdown:: zxsuite_config_dump_account
 
    .. include:: /cli/ZxConfig/zxsuite_config_dump_account.rst
 
-.. _zxsuite_config_dump_cos.rst:
+.. _zxsuite_config_dump_cos:
 
-.. dropdown:: zxsuite_config_dump_cos.rst
+.. dropdown:: zxsuite_config_dump_cos
 
    .. include:: /cli/ZxConfig/zxsuite_config_dump_cos.rst
 
-.. _zxsuite_config_dump_domain.rst:
+.. _zxsuite_config_dump_domain:
 
-.. dropdown:: zxsuite_config_dump_domain.rst
+.. dropdown:: zxsuite_config_dump_domain
 
    .. include:: /cli/ZxConfig/zxsuite_config_dump_domain.rst
 
-.. _zxsuite_config_dump_global.rst:
+.. _zxsuite_config_dump_global:
 
-.. dropdown:: zxsuite_config_dump_global.rst
+.. dropdown:: zxsuite_config_dump_global
 
    .. include:: /cli/ZxConfig/zxsuite_config_dump_global.rst
 
-.. _zxsuite_config_dump_server.rst:
+.. _zxsuite_config_dump_server:
 
-.. dropdown:: zxsuite_config_dump_server.rst
+.. dropdown:: zxsuite_config_dump_server
 
    .. include:: /cli/ZxConfig/zxsuite_config_dump_server.rst
 
-.. _zxsuite_config_empty_account.rst:
+.. _zxsuite_config_empty_account:
 
-.. dropdown:: zxsuite_config_empty_account.rst
+.. dropdown:: zxsuite_config_empty_account
 
    .. include:: /cli/ZxConfig/zxsuite_config_empty_account.rst
 
-.. _zxsuite_config_empty_cos.rst:
+.. _zxsuite_config_empty_cos:
 
-.. dropdown:: zxsuite_config_empty_cos.rst
+.. dropdown:: zxsuite_config_empty_cos
 
    .. include:: /cli/ZxConfig/zxsuite_config_empty_cos.rst
 
-.. _zxsuite_config_empty_domain.rst:
+.. _zxsuite_config_empty_domain:
 
-.. dropdown:: zxsuite_config_empty_domain.rst
+.. dropdown:: zxsuite_config_empty_domain
 
    .. include:: /cli/ZxConfig/zxsuite_config_empty_domain.rst
 
-.. _zxsuite_config_empty_global.rst:
+.. _zxsuite_config_empty_global:
 
-.. dropdown:: zxsuite_config_empty_global.rst
+.. dropdown:: zxsuite_config_empty_global
 
    .. include:: /cli/ZxConfig/zxsuite_config_empty_global.rst
 
-.. _zxsuite_config_empty_server.rst:
+.. _zxsuite_config_empty_server:
 
-.. dropdown:: zxsuite_config_empty_server.rst
+.. dropdown:: zxsuite_config_empty_server
 
    .. include:: /cli/ZxConfig/zxsuite_config_empty_server.rst
 
-.. _zxsuite_config_getServices.rst:
+.. _zxsuite_config_getServices:
 
-.. dropdown:: zxsuite_config_getServices.rst
+.. dropdown:: zxsuite_config_getServices
 
    .. include:: /cli/ZxConfig/zxsuite_config_getServices.rst
 
-.. _zxsuite_config_get_account.rst:
+.. _zxsuite_config_get_account:
 
-.. dropdown:: zxsuite_config_get_account.rst
+.. dropdown:: zxsuite_config_get_account
 
    .. include:: /cli/ZxConfig/zxsuite_config_get_account.rst
 
-.. _zxsuite_config_get_cos.rst:
+.. _zxsuite_config_get_cos:
 
-.. dropdown:: zxsuite_config_get_cos.rst
+.. dropdown:: zxsuite_config_get_cos
 
    .. include:: /cli/ZxConfig/zxsuite_config_get_cos.rst
 
-.. _zxsuite_config_get_domain.rst:
+.. _zxsuite_config_get_domain:
 
-.. dropdown:: zxsuite_config_get_domain.rst
+.. dropdown:: zxsuite_config_get_domain
 
    .. include:: /cli/ZxConfig/zxsuite_config_get_domain.rst
 
-.. _zxsuite_config_get_global.rst:
+.. _zxsuite_config_get_global:
 
-.. dropdown:: zxsuite_config_get_global.rst
+.. dropdown:: zxsuite_config_get_global
 
    .. include:: /cli/ZxConfig/zxsuite_config_get_global.rst
 
-.. _zxsuite_config_get_server.rst:
+.. _zxsuite_config_get_server:
 
-.. dropdown:: zxsuite_config_get_server.rst
+.. dropdown:: zxsuite_config_get_server
 
    .. include:: /cli/ZxConfig/zxsuite_config_get_server.rst
 
-.. _zxsuite_config_global.rst:
+.. _zxsuite_config_global:
 
-.. dropdown:: zxsuite_config_global.rst :bdg-warning:`Deprecated`
+.. dropdown:: zxsuite_config_global :bdg-warning:`Deprecated`
 
    .. include:: /cli/ZxConfig/zxsuite_config_global.rst
 
-.. _zxsuite_config_info.rst:
+.. _zxsuite_config_info:
 
-.. dropdown:: zxsuite_config_info.rst
+.. dropdown:: zxsuite_config_info
 
    .. include:: /cli/ZxConfig/zxsuite_config_info.rst
 
-.. _zxsuite_config_server.rst:
+.. _zxsuite_config_server:
 
-.. dropdown:: zxsuite_config_server.rst :bdg-warning:`Deprecated`
+.. dropdown:: zxsuite_config_server :bdg-warning:`Deprecated`
 
    .. include:: /cli/ZxConfig/zxsuite_config_server.rst
 
-.. _zxsuite_config_set_account.rst:
+.. _zxsuite_config_set_account:
 
-.. dropdown:: zxsuite_config_set_account.rst
+.. dropdown:: zxsuite_config_set_account
 
    .. include:: /cli/ZxConfig/zxsuite_config_set_account.rst
 
-.. _zxsuite_config_set_cos.rst:
+.. _zxsuite_config_set_cos:
 
-.. dropdown:: zxsuite_config_set_cos.rst
+.. dropdown:: zxsuite_config_set_cos
 
    .. include:: /cli/ZxConfig/zxsuite_config_set_cos.rst
 
-.. _zxsuite_config_set_domain.rst:
+.. _zxsuite_config_set_domain:
 
-.. dropdown:: zxsuite_config_set_domain.rst
+.. dropdown:: zxsuite_config_set_domain
 
    .. include:: /cli/ZxConfig/zxsuite_config_set_domain.rst
 
-.. _zxsuite_config_set_global.rst:
+.. _zxsuite_config_set_global:
 
-.. dropdown:: zxsuite_config_set_global.rst
+.. dropdown:: zxsuite_config_set_global
 
    .. include:: /cli/ZxConfig/zxsuite_config_set_global.rst
 
-.. _zxsuite_config_set_server.rst:
+.. _zxsuite_config_set_server:
 
-.. dropdown:: zxsuite_config_set_server.rst
+.. dropdown:: zxsuite_config_set_server
 
    .. include:: /cli/ZxConfig/zxsuite_config_set_server.rst
 
-.. _zxsuite_config_status.rst:
+.. _zxsuite_config_status:
 
-.. dropdown:: zxsuite_config_status.rst
+.. dropdown:: zxsuite_config_status
 
    .. include:: /cli/ZxConfig/zxsuite_config_status.rst
 
-.. _zxsuite_config_unset_account.rst:
+.. _zxsuite_config_unset_account:
 
-.. dropdown:: zxsuite_config_unset_account.rst
+.. dropdown:: zxsuite_config_unset_account
 
    .. include:: /cli/ZxConfig/zxsuite_config_unset_account.rst
 
-.. _zxsuite_config_unset_cos.rst:
+.. _zxsuite_config_unset_cos:
 
-.. dropdown:: zxsuite_config_unset_cos.rst
+.. dropdown:: zxsuite_config_unset_cos
 
    .. include:: /cli/ZxConfig/zxsuite_config_unset_cos.rst
 
-.. _zxsuite_config_unset_domain.rst:
+.. _zxsuite_config_unset_domain:
 
-.. dropdown:: zxsuite_config_unset_domain.rst
+.. dropdown:: zxsuite_config_unset_domain
 
    .. include:: /cli/ZxConfig/zxsuite_config_unset_domain.rst
 
-.. _zxsuite_config_unset_global.rst:
+.. _zxsuite_config_unset_global:
 
-.. dropdown:: zxsuite_config_unset_global.rst
+.. dropdown:: zxsuite_config_unset_global
 
    .. include:: /cli/ZxConfig/zxsuite_config_unset_global.rst
 
-.. _zxsuite_config_unset_server.rst:
+.. _zxsuite_config_unset_server:
 
-.. dropdown:: zxsuite_config_unset_server.rst
+.. dropdown:: zxsuite_config_unset_server
 
    .. include:: /cli/ZxConfig/zxsuite_config_unset_server.rst
 
