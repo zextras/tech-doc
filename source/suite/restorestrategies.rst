@@ -464,7 +464,7 @@ Running a Time-range Undelete
 .. dropdown:: Via the CLI
 
    To start a Time-range Undelete operation, use the
-   :ref:`zxsuite-backup_doUndelete` command:
+   :ref:`zxsuite backup doUndelete <zxsuite_backup_doUndelete>` command:
 
    Quick reference
 
