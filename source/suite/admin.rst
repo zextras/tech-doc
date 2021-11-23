@@ -2,12 +2,6 @@
 Zextras Admin
 =============
 
-:Date:   2021-10-20
-
-.. contents::
-   :depth: 3
-..
-
 .. _delegated_admin_provisioning:
 
 Delegated Admin Provisioning
@@ -57,14 +51,10 @@ You will be be prompted for the following information:
 -  Edit Features: Defines whether the Delegated Admin is able to edit
    the contents of the ``Features`` tab for its assigned users.
 
-..
-
-   **Warning**
-
-   | If the ``Domain Quota`` is lower than the ``Grant Limit``, the
-     ``Grant Limit`` value will be ignored.
-   | Disk space and Quota limits can be entered in Gigabytes (gb),
-     Megabytes (mb) or Kilobytes (kb).
+.. warning:: If the ``Domain Quota`` is lower than the ``Grant
+   Limit``, the ``Grant Limit`` value will be ignored.  Disk space and
+   Quota limits can be entered in Gigabytes (gb), Megabytes (mb) or
+   Kilobytes (kb).
 
 .. _from_the_cli:
 
@@ -72,36 +62,11 @@ From the CLI
 ~~~~~~~~~~~~
 
 To grant Delegated Admin rights to a user, use the
-``doAddDelegationSettings`` command:
+``doAddDelegationSettings`` command.
 
-::
-
-   Syntax:
-      zxsuite admin doAddDelegationSettings {account} {domain} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME               TYPE       EXPECTED VALUES    DEFAULT
-   account(M)         String
-   domain(M)          String
-   viewMail(O)        Boolean    true|false         false
-   editFeatures(O)    Boolean    true|false         false
-   adminQuota(O)      String                        -1
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-
-   zxsuite admin doAddDelegationSettings john@example.com example.com viewMail true adminQuota -1
-   Adds John as delegated administrator of domain example.com, with the right to view user mail on such domain and
-   no right to grand quotas to users.
-
-   zxsuite admin doAddDelegationSettings john@example.com example.com adminQuota 0
-   Adds John as delegated administrator of domain example.com, with the right to assign unlimited quotas to users.
-
-   zxsuite admin doAddDelegationSettings john@example.com example.com adminQuota 10gb
-   Adds John as delegated administrator of domain example.com, with the right to assign quotas up to 10gb to each user.
+.. card::
+   
+   .. include:: /cli/ZxAdmin/zxsuite_admin_doAddDelegationSettings.rst
 
 .. _editing_the_rights_of_an_existing_delegated_admin:
 
@@ -125,36 +90,12 @@ From the CLI
 ~~~~~~~~~~~~
 
 To edit the rights of an existing Delegated Admin, use the
-``doEditDelegationSettings`` command:
+``doEditDelegationSettings`` command.
 
-::
+.. card::
+   
+   .. include:: /cli/ZxAdmin/zxsuite_admin_doEditDelegationSettings.rst
 
-   Syntax:
-      zxsuite admin doEditDelegationSettings {account} {domain} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME               TYPE       EXPECTED VALUES
-   account(M)         String
-   domain(M)          String
-   viewMail(O)        Boolean    true|false
-   editFeatures(O)    Boolean    true|false
-   adminQuota(O)      String
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-
-   zxsuite admin doEditDelegationSettings john@example.com example.com viewMail true adminQuota -1
-   Edits John's delegation rights for domain example.com, with the right to view user mail on such domain and
-   no right to grand quotas to users.
-
-   zxsuite admin doEditDelegationSettings john@example.com example.com adminQuota 0
-   Edits John's delegation rights for domain example.com, with the right to assign unlimited quotas to users.
-
-   zxsuite admin doEditDelegationSettings john@example.com example.com adminQuota 10gb
-   Edits John's delegation rights for domain example.com, with the right to assign quotas up to 10gb to each user.
 
 .. _revoke_delegated_admin_rights_from_a_user:
 
@@ -178,22 +119,9 @@ From the CLI
 To revoke Delegated Admin rights from a user, use the
 ``doRemoveDelegationSettings`` command:
 
-::
-
-   zxsuite admin doRemoveDelegationSettings {account} {domain}
-
-   PARAMETER LIST
-
-   NAME          TYPE
-   account(M)    String
-   domain(M)     String
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite admin doRemoveDelegationSettings john@example.com example.com
-   John no longer administers domain example.com
+.. card::
+   
+   .. include:: /cli/ZxAdmin/zxsuite_admin_doRemoveDelegationSettings.rst
 
 .. _quota_management:
 
@@ -242,10 +170,8 @@ The ``Domain Quota``
 The ``Domain Quota`` is a property that specifies the maximum mailbox
 quota that **any Administrator** can grant to a mailbox in the domain.
 
-   **Warning**
-
-   Assigning an unlimited quota to a mailbox will override the Domain
-   Quota setting.
+.. warning:: Assigning an unlimited quota to a mailbox will override
+   the Domain Quota setting.
 
 .. _grant_limit_vs_domain_quota:
 
@@ -257,40 +183,27 @@ exclusive on a restrictive basis.
 
 This means that the following scenarios may occur:
 
--  A Global Admin grants a user a higher quota than the allowed Domain
-   Quota
+- A Global Admin grants a user a higher quota than the allowed Domain
+  Quota.
 
--  A Delegated Admin grants a user a higher quota than the allowed
-   Domain Quota
+  Since the Domain Quota applies to a given domain, not to a given
+  Admin, the effective quota for the user will be the maximum quota
+  allowed by the ``Domain Quota`` setting.
 
--  A Delegated Admin’s Grant Limit is lower than the Domain Quota
+- A Delegated Admin grants a user a higher quota than the allowed
+  Domain Quota
 
-Let’s examine these scenario one by one.
+  In this case, the effective quota for the user will be the maximum
+  quota allowed by the ``Domain Quota`` setting, even if the Delegated
+  Admin’s Grant Limit is higher than the Domain Quota.
 
-**A Global Admin grants a user a higher quota than the allowed Domain
-Quota.**
+- A Delegated Admin’s Grant Limit is lower than the Domain Quota
 
-Since the Domain Quota applies to a given domain, not to a given Admin,
-the effective quota for the user will be the maximum quota allowed by
-the ``Domain Quota`` setting.
-
-**A Delegated Admin grants a user a higher quota than the allowed Domain
-Quota.**
-
-In this case, the effective quota for the user will be the maximum quota
-allowed by the ``Domain Quota`` setting, even if the Delegated Admin’s
-Grant Limit is higher than the Domain Quota.
-
-.. _a_delegated_admins_grant_limit_is_lower_than_the_domain_quota:
-
-A Delegated Admin’s Grant Limit is lower than the Domain Quota
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this case, the maximum quota that the Delegated Admin can grant to a
-user will be the one defined by the Grant Limit, even if the Domain
-Quota is higher. A Global Admin, which is not bound to any Grant Limit
-restriction, will be allowed to assign any mailbox quota to the user up
-to the limit allowed by the Domain Quota.
+  In this case, the maximum quota that the Delegated Admin can grant
+  to a user will be the one defined by the Grant Limit, even if the
+  Domain Quota is higher. A Global Admin, which is not bound to any
+  Grant Limit restriction, will be allowed to assign any mailbox quota
+  to the user up to the limit allowed by the Domain Quota.
 
 .. _domain_limits:
 
@@ -345,33 +258,11 @@ From the CLI
 ~~~~~~~~~~~~
 
 To edit the limits of a domain through the CLI, use the
-``setDomainSettings`` command:
+``setDomainSettings`` command.
 
-::
-
-   Syntax:
-      zxsuite admin setDomainSettings {domain} [attr1 value1 [attr2 value2...
-
-   PARAMETER LIST
-
-   NAME                       TYPE       EXPECTED VALUES                   DEFAULT
-   domain(M)                  String
-   account_limit(O)           Integer                                       don't change setting
-   domain_account_quota(O)    String                                        don't change setting
-   cos_limits(O)              String     cosname1:limit1,cosname2:limit2    don't change setting
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-
-   zxsuite admin setDomainSettings example.com account_limit 100 domain_account_quota 100mb cos_limits cos1:30,cos2:80
-
-   Sets a global account limit on the domain example.com of 100 accounts,
-   with a domain account quota of 100 megabytes
-   and with cos account limits of 30 for cos1 and 80 for cos2.
-
-   Note: A cos limit of -1 removes the limit for the cos.
+.. card::
+   
+   .. include:: /cli/ZxAdmin/zxsuite_admin_setDomainSettings.rst
 
 .. _reset_the_limits_of_a_domain:
 
@@ -398,17 +289,10 @@ From the CLI
 To reset the limits of a Domain through the CLI, use the
 ``resetDomainSettings`` command:
 
-::
 
-   Syntax:
-      zxsuite admin resetDomainSettings {domain}
-
-   PARAMETER LIST
-
-   NAME         TYPE
-   domain(M)    String
-
-   (M) == mandatory parameter, (O) == optional parameter
+.. card::
+   
+   .. include:: /cli/ZxAdmin/zxsuite_admin_resetDomainSettings.rst
 
 .. _zimbra_administration_as_a_delegated_admin:
 
@@ -746,27 +630,11 @@ From the CLI
 ~~~~~~~~~~~~
 
 To view the Monthly Reports from the CLI, use the ``getMonthlyReport``
-command:
+command.
 
-::
-
-   zxsuite admin getMonthlyReport [attr1 value1 [attr2 value2...
-
-   PARAMETER LIST
-
-   NAME        TYPE       EXPECTED VALUES    DEFAULT
-   month(O)    String     mm/yyyy            12/2012
-   local(O)    Boolean    true|false         false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite admin getMonthlyReport
-   Shows the monthly report for the previous month
-
-   zxsuite admin getMonthlyReport month 11/2012
-   Shows the monthly report for the month '11/2012'
+.. card::
+   
+   .. include:: /cli/ZxAdmin/zxsuite_admin_getMonthlyReport.rst
 
 .. _partial_reports:
 
@@ -774,33 +642,11 @@ Partial Reports
 ---------------
 
 To create a partial report for the current month, use the
-``doMonthlyReport`` command:
+``doMonthlyReport`` command.
 
-::
-
-   zxsuite admin doMonthlyReport [attr1 value1 [attr2 value2...
-
-   PARAMETER LIST
-
-   NAME        TYPE       EXPECTED VALUES    DEFAULT
-   month(O)    String     mm/yyyy            12/2012
-   force(O)    Boolean    true|false         false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite admin doMonthlyReport
-   Generates the monthly report for the previous month and saves it in the current Zextras Admin log path
-
-   zxsuite admin doMonthlyReport month 01/2013
-   Generates a PARTIAL monthly report for the current month, without saving it to disk
-
-   ** NOTE**
-
-   This command is automatically executed once a month to generate a file containing
-   the report for the
-   previous month. To overwrite an existing report file, set the 'force' parameter to true.
+.. card::
+   
+   .. include:: /cli/ZxAdmin/zxsuite_admin_doMonthlyReport.rst
 
 .. _the_zextras_admin_log_path:
 
@@ -838,12 +684,10 @@ files:
 Changing the Zextras Admin Log Path
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   **Warning**
-
-   Carefully read this paragraph before changing the Zextras Admin Log
-   Path. Any error on the procedure will cause a potential log loss that
-   will render the ``Monthly Report`` and ``Show Admin Logs`` features
-   highly unreliable.
+.. warning:: Carefully read this paragraph before changing the Zextras
+   Admin Log Path. Any error on the procedure will cause a potential
+   log loss that will render the ``Monthly Report`` and ``Show Admin
+   Logs`` features highly unreliable.
 
 To safely change the Zextras Admin Log Path, follow these steps:
 
@@ -890,12 +734,11 @@ This is not a ``rollback`` feature that cleans the Zextras Admin
 module’s configuration. Resetting the Admin Configuration will affect
 both Zextras Admin and Zimbra delegation rights.
 
-   **Warning**
-
-   Using the Admin Configuration Reset feature will completely wipe all
-   delegation configuration from the server, bringing it back to the
-   state of a fresh installation. Only Admin Delegation settings will be
-   wiped, no other kind of data will be affected.
+.. warning:: Using the Admin Configuration Reset feature will
+   completely wipe all delegation configuration from the server,
+   bringing it back to the state of a fresh installation. Only Admin
+   Delegation settings will be wiped, no other kind of data will be
+   affected.
 
 .. _what_does_the_admin_configuration_reset_clear:
 
