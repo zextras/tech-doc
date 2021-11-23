@@ -286,7 +286,7 @@ The InfoBox is a collapsible element that contains all information and
 controls for the selected file or folder, as well as a preview of the
 file itself if in a compatible format (pictures, PDFs and more).
 
-To display the Infobox, click on the "(i)" button on the top-right of
+To display the Infobox, click the :octicon:`info` icon on the top-right of
 the Drive UI:
 
 .. image:: /img/drive_infobutton.png
