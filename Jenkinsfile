@@ -23,6 +23,7 @@ pipeline {
         STAGING_CREDENTIALS="doc-zextras-area51-s3-key"
         REGION='eu-west-1'
     }
+
     stages {
       stage('Build Sphinx with Docker') {
         when {
@@ -72,34 +73,34 @@ pipeline {
             DESTINATION = "$STAGING_BUCKET_NAME"
             }
         }
-    }
-    stage('Upload to PRODUCTION') {
-      when {
-            beforeAgent true
-            allOf {
-                not {
-                    changeRequest();
-                }
-                anyOf {
-                    branch "${PRODUCTION_BRANCH}"
-                    buildingTag();
-                }
+      }
+      stage('Upload to PRODUCTION') {
+        when {
+              beforeAgent true
+              allOf {
+                  not {
+                      changeRequest();
+                  }
+                  anyOf {
+                      branch "${PRODUCTION_BRANCH}"
+                      buildingTag();
+                  }
+              }
+        }
+        steps {
+            unstash "build_done"
+            withAWS(region: REGION, credentials: PRODUCTION_CREDENTIALS) {
+                s3Upload(bucket: PRODUCTION_BUCKET_NAME,
+                         includePathPattern: '**',
+                         workingDir: 'build'
+                )
             }
-      }
-      steps {
-          unstash "build_done"
-          withAWS(region: REGION, credentials: PRODUCTION_CREDENTIALS) {
-              s3Upload(bucket: PRODUCTION_BUCKET_NAME,
-                       includePathPattern: '**',
-                       workingDir: 'build'
-              )
+            script {
+              DESTINATION = "$PRODUCTION_BUCKET_NAME"
+            }
           }
-          script {
-          DESTINATION = "$PRODUCTION_BUCKET_NAME"
-          }
-      }
-  }
-
+     }
+    }
     post {
         success {
             script {
