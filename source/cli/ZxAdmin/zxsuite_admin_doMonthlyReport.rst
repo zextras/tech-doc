@@ -19,7 +19,7 @@
 | otify_admins(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) -- optional parameter
 
 .. rubric:: Usage Example
 
@@ -39,13 +39,10 @@ currentZextras Admin log path
 Generates a PARTIAL monthly report for the current month, without saving
 it to disk.
 
--  NOTE*\*
+.. note:: This command is automatically executed once a month to
+   generate a file containing the report for the previous month. To
+   overwrite an existing report file, set the 'force' parameter to
+   true.
 
-This command is automatically executed once a month to generate a file
-containing the report for the
-
-previous month. To overwrite an existing report file, set the 'force'
-parameter to true.
-
-If you just want to display an existing report, use the zxsuite admin
-getMonthlyReport instead.
+   If you just want to display an existing report, use the
+   :ref:`getMonthlyReport <zxsuite_admin_getMonthlyReport>` instead.
