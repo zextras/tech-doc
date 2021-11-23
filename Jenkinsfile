@@ -28,16 +28,11 @@ pipeline {
       stage('Build Sphinx with Docker') {
         when {
               beforeAgent true
-              allOf {
-                  not {
-                      //changeRequest();
-                  }
                   anyOf {
                       branch "${PRODUCTION_BRANCH}"
                       branch "${STAGING_BRANCH}"
                       buildingTag();
                   }
-              }
             }
         steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
