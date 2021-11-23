@@ -7,11 +7,11 @@ Zextras Drive
 Introduction
 ============
 
-Zextras Drive is a new Zimbra component that provides both a fully
+Zextras Drive is a  Zimbra component that provides both a fully
 fledged file storage system integrated with the Zimbra WebClient and a
 replacement to the old "Briefcase" component.
 
-.. warning:: Zextras Drive is not compatible with Zimbra version
+.. warning:: Zextras Drive is not compatible with Zimbra versions
    8.8.11 and lower.
 
 .. _drive_features:
@@ -88,7 +88,7 @@ Zextras features.
    :header: "Browser", "Version", "OS", "Supported"
    :file: browsercompatibility.csv
 
-          
+
 Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
 supported on the browser’s two previous stable releases.
 
@@ -101,27 +101,30 @@ A dedicated Zextras Drive mobile app is available for both Android and
 iOS.
 
 .. image:: /img/google-play-badge.png
+   :scale: 50%
+
 .. image:: /img/app_store-badge.png
+   :scale: 50%
 
 .. _drive_drive_ui:
 
 Drive UI
 ========
 
-.. image:: /img/drive_ui.png
+.. figure:: /img/drive_ui.png
+   :scale: 50%
 
+   Overview of Zextras Drive UI
 
-1. Quick Access navigation panel;
+   .. csv-table::
+      :widths: 10, 40
 
-2. Folder navigation panel;
-
-3. InfoBox control;
-
-4. New, Upload and Search features;
-
-5. Folder list;
-
-6. File list;
+      "1", "Quick Access navigation panel"
+      "2", "Folder navigation panel"
+      "3", "InfoBox control"
+      "4", "New, Upload and Search features"
+      "5", "Folder list"
+      "6", "File list"
 
 .. _drive_feature_description:
 
@@ -138,10 +141,12 @@ file list or drag and drop any number of files from your computer to the
 main Drive window.
 
 .. image:: /img/drive_upload.png
+   :scale: 50%
 
 To download a file from Drive, right-click on it and select "Download":
 
 .. image:: /img/drive_download.png
+   :scale: 50%
 
 Any file and folder in Drive can be renamed by right-clicking on it and
 selecting the "Rename" option in the context menu.
@@ -158,15 +163,28 @@ top of the UI instead of through a tree view and folders are visible in
 the main section of the UI above files.
 
 .. image:: /img/drive_navigation.png
+   :scale: 50%
 
 On top of the standard folder-based navigation, a "Quick Access" menu is
 available on the left side of the UI, which allows to quickly view the
-following types of items: • "Preferred Items" – items marked with the
-"Star" option available in the right-click context menu; • "Recently
-Edited" – items edited recently, sorted from the most recently edited; •
-"Shared with me" – items shared by other users • "Shared by me" – items
-shared to other users • "Marked for deletion" – items marked for
-deletion
+following types of items:
+
+Preferred Items
+   Items marked with the "Star" option available in the right-click
+   context menu.
+
+Recently Edited
+   Items edited recently, sorted from the most recently edited.
+
+
+Shared with me
+   Items shared by other users.
+
+Shared by me
+   Items shared to other users
+
+Marked for deletion
+   Items marked for deletion
 
 .. _drive_folder_creation:
 
@@ -177,6 +195,7 @@ To create a folder in Drive, click on the "New" button above the file
 list and select "Folder":
 
 .. image:: /img/drive_newfolder.png
+   :scale: 50%
 
 .. _drive_file_and_folder_naming:
 
@@ -185,19 +204,19 @@ File and Folder naming
 
 The following characters cannot be used in Drive folders and files:
 
--  Slash - ``/``
+-  Slash ``/``
 
--  Backslash - ``\``
+-  Backslash ``\``
 
--  Semicolon - ``:``
+-  Semicolon ``:``
 
--  Question Mark - ``?``
+-  Question Mark ``?``
 
--  Plus sign - ``+``
+-  Plus sign ``+``
 
--  Asterisk - ``*``
+-  Asterisk ``*``
 
--  Percent sign - ``%``
+-  Percent sign ``%``
 
 .. _drive_sharing:
 
@@ -215,12 +234,14 @@ the sharing permissions, click the (+) button to add the share to the
 list:
 
 .. image:: /img/drive_addshare.png
+   :scale: 50%
 
 To edit or delete a share, simply click on the dropdown permission
 selector to change the sharing permissions of the file/folder or click
 the trash bin icon to delete the share:
 
 .. image:: /img/drive_editshare.png
+   :scale: 50%
 
 In Drive sharing rights are only "positive", so it’s not possible to
 share an item with a lower permission than its parent, e.g. if a folder
@@ -238,6 +259,7 @@ mark a file or a folder for deletion, right-click on it and select "Mark
 for Deletion":
 
 .. image:: /img/drive_deletefile.png
+   :scale: 50%
 
 Items marked for deletion are displayed on the bottom of the file list
 with a strikethrough line and can be deleted permanently clicking on the
@@ -245,6 +267,7 @@ with a strikethrough line and can be deleted permanently clicking on the
 marked for deletion while the "Restore" entry will unmark the file:
 
 .. image:: /img/drive_restorepermdelete.png
+   :scale: 50%
 
 While any user with "Edit" or "Edit and Share" rights on an item or
 folder can mark it for deletion, only the original owner can delete it
@@ -267,7 +290,7 @@ To display the Infobox, click on the "(i)" button on the top-right of
 the Drive UI:
 
 .. image:: /img/drive_infobutton.png
-
+   :scale: 50%
 
 The infobox will appear on the right side of the screen:
 
@@ -300,7 +323,10 @@ To access the versioning menu of a file, simply right-click the file and
 select "File Versions" from the drop down menu.
 
 .. image:: /img/drive_versioning_menu.png
+   :scale: 50%
+
 .. image:: /img/drive_versioning.png
+   :scale: 50%
 
 The File Versioning Menu lists all stored versions of a file, sorted by
 date descending, and allows to open, download or permanently store each
@@ -353,11 +379,15 @@ dedicated HSQL Database while all files (including previous file
 versions and file previews) are stored in a dedicated folder within a
 volume’s root. File naming is now hash-based instead of id-based to
 achieve native deduplication, compression rules follow the volume’s
-settings
+settings.
 
-e.g. Filesystem path for a briefcase file:
-/opt/zimbra/store/0/[mID]/msg/0/[itemid]-[revision].msg Filesystem path
-for a Drive file: /opt/zimbra/store/drive/[hash]-[revision].[extension]
+For example, a filesystem path for a briefcase file looks like::
+
+  /opt/zimbra/store/0/[mID]/msg/0/[itemid]-[revision].msg
+
+while a filesystem path for a Drive file is::
+
+  /opt/zimbra/store/drive/[hash]-[revision].[extension]
 
 .. _drive_volumes:
 
@@ -501,18 +531,18 @@ The following attributes can be used to customize the migration:
 | (O)         |             | false       |             | versions of |
 |             |             |             |             | every file  |
 +-------------+-------------+-------------+-------------+-------------+
-| deleteSourc | Boolean     | true or     | false       | Delete      |
-| es(O)       |             | false       |             | migrated    |
+|deleteSourc\ | Boolean     | true or     | false       | Delete      |
+|es(O)        |             | false       |             | migrated    |
 |             |             |             |             | files from  |
 |             |             |             |             | the         |
 |             |             |             |             | Briefcase   |
 +-------------+-------------+-------------+-------------+-------------+
-| overwrite(O | Boolean     | true or     | false       | Overwrite   |
-| )           |             | false       |             | existing    |
+| overwrite(O)| Boolean     | true or     | false       | Overwrite   |
+|             |             | false       |             | existing    |
 |             |             |             |             | files       |
 +-------------+-------------+-------------+-------------+-------------+
-| showIgnored | Boolean     | true or     | false       |             |
-| Accounts(O) |             | false       |             |             |
+|showIgnored\ | Boolean     | true or     | false       |             |
+|Accounts(O)  |             | false       |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | ignoreQuota | Boolean     | true or     | false       | Ignore      |
 | (O)         |             | false       |             | mailbox     |
