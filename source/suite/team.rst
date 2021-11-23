@@ -76,11 +76,9 @@ towards any licensing limit.
 
 The total number of users who have the Advanced features active can be
 seen in the output of the ``zxsuite core getLicenseInfo`` command under
-``teamChatActiveCount``:
+``teamChatActiveCount``::
 
-zimbra@129efa51bd95:~$ zxsuite core getLicenseInfo
-
-::
+  zxsuite core getLicenseInfo
 
    dateStart                                           2019-06-11 00:00:00 UTC
    dateEnd                                             2019-12-31 17:00:00 UTC
@@ -152,36 +150,19 @@ Console.
 The same options are also available via the ``zxsuite config`` command
 line utility:
 
--  Enable Zextras Team «Advanced» features
+.. csv-table::
+   :header: "Feature", "Property", "Available in"
 
-   -  Property: ``teamChatEnabled``
-
-   -  Available in: COS, account
-
--  Enable or disable the chat history
-
-   -  Property: ``historyEnabled``
-
-   -  Available in: global, server, COS, account
-
--  Enable or disable Video Chat
-
-   -  Property: ``videoChatEnabled``
-
-   -  Available in: global, server, COS, account
-
--  Enable or disable user presence
-
-   -  Property ``teamHideUserPresenceUpdates``
-
-   -  Available in: global, server, COS, account
-
--  Enable or disable ability to receive a *read receipt* for sent
-   messages
-
-   -  Property ``teamHideMessageReads``
-
-   -  Available in: global, server, COS, account
+   "Enable «Advanced» features", "``teamChatEnabled``","COS, account"
+   "Enable the chat history", "``historyEnabled``", "global, server,
+   COS, account"
+   "Enable Video Chat","``videoChatEnabled``", "global, server, COS,
+   account"
+   "Enable user presence", "``teamHideUserPresenceUpdates``", "global,
+   server, COS, account"
+   "Enable *read receipt* for sent
+   messages","``teamHideMessageReads``", "global, server, COS,
+   account"
 
 .. _team_browser_compatibility:
 
@@ -210,8 +191,10 @@ A dedicated Zextras Team mobile app is available for both Android and
 iOS.
            
 .. image:: /img/google-play-badge.png
+   :scale: 50%
+
 .. image:: /img/app_store-badge.png
-   
+   :scale: 50% 
    
 .. warning:: In order for mobile message delivery to work, the Zimbra
    server must be able to communicate with the
@@ -229,7 +212,7 @@ Zextras Team App not to be able to notify new messages.
 To make sure that your device allows all required notifications, follow
 these steps:
 
-.. container:: informalexample
+.. card::
 
    1. Log out from the app;
 
@@ -247,9 +230,7 @@ these steps:
 
    7. Log back in, notifications should now work;
 
-   ..
-
-   .. warning:: Entries marked as (:sup:`1`) might have a different
+   .. note:: Entries marked as (:sup:`1`) might have a different
       name depending on your device’s manufacturer and UI.
 
 .. _team_user_interface:
@@ -283,10 +264,9 @@ the call in the same tab.
 
 When users start a call, the following modal appears.
 
-**Launch Team in a new browser tab.**
+.. figure:: /img/team-new-tab-modal.png
 
-.. image:: /img/team-new-tab-modal.png
-
+   Launch Team in a new browser tab
 
 Default Mode
    The Team app starts within the Zimbra application under the same tab.
@@ -294,9 +274,9 @@ Default Mode
 Dedicated Mode
    The team app starts in a new tab.
 
-Select SAVE SETTING to set one of the above two modes as default for
-each meeting.
-
+Select :bdg-primary:`SAVE SETTING` to set one of the above two modes
+as default for each meeting.
+   
 .. _team_changing_the_selected_mode:
 
 Changing the Selected Mode
@@ -336,37 +316,38 @@ The Team tab is divided into three main parts:
    between the users, also its start time and end time are shown in the
    flow of messages.
 
-   .. tip:: The time is reported according to the configured timezone
+   .. hint:: The time is reported according to the configured timezone
       on the user’s workstation.
 
 -  The right column, which displays information about the current
    conversation or space and allows to either mute notifications or
    remove all the chat history.
 
-**The Team Tab Graphic User Interface.**
+.. figure:: /img/team-tab.png
 
-.. image:: /img/team-tab.png
-
-
+   The Team Tab Graphic User Interface.
+            
 When the Video Chat or Instant Meeting are used, the UI changes, see
-section `Video Conversations (Video Chats) and Instant
-Meetings <#video-chat>`_.
+section :ref:`team_video-chat`.
 
 .. _team_minichats:
 
 Minichats
 ~~~~~~~~~
 
-Chats, as well as conversations in Spaces and Channels, can be minimised
-by clicking the arrow on the top right corner of the central area. This
-also causes the UI to go to the **Mail** tab, with the chats shown as
-small overlays on the Mail tab. They can be further minimised by
-clicking the title bar, restored to full browser-sized window by
-clicking the arrow or closed with a click on the **X**.
+Chats, as well as conversations in Spaces and Channels, can be
+minimised by clicking the arrow on the top right corner of the central
+area. This also causes the UI to go to the **Mail** tab, with the
+chats shown as small overlays on the Mail tab. They can be further
+minimised by clicking the title bar, restored to full browser-sized
+window by clicking :octicon:`arrow-up-right;1em;sd-text-white
+sd-bg-primary` or closed with a click on :octicon:`x;1em;sd-text-white
+sd-bg-primary`. 
 
 Moreover, Instant Meetings (if minichat is a chat) or Video Chats (if
-minichat is a Space or Channel conversation) can be started by clicking
-the camera icon.
+minichat is a Space or Channel conversation) can be started by
+clicking the :fa:`video; sd-text-white sd-bg-primary sd-px-1 sd-py-1`
+icon.
 
 Incoming Space or Channel conversation are automatically opened as
 Minichats in case the user is on tab different from the **Team** tab.
@@ -428,10 +409,10 @@ or the whole screen, in the right column both the video of the user
 sent by the webcam and the stream of the screen share are distinct and
 treated as separate users.
 
-When using the Instant Meeting in **Cinema Mode** (see Figure
-`formalpara_title <#img-cinema-mode>`_), the central area contains the
-stream of the person who is taking, although at any time it is possible
-to pin the video of another participant. These additional features are
+When using the Instant Meeting in **Cinema Mode** (see
+:numref:`fig_team_cinema_mode`), the central area contains the stream
+of the person who is taking, although at any time it is possible to
+pin the video of another participant. These additional features are
 available in cinema mode:
 
 -  A miniature for every participant is shown in the right column
@@ -449,15 +430,16 @@ available in cinema mode:
 -  An icon shows whether the microphone or the webcam of the participant
    is turned off
 
-**Video Conversation in Cinema Mode.**
+.. _fig_team_cinema_mode:
 
 .. figure:: /img/team-cinema-mode.png
 
+   Video Conversation in Cinema Mode.
 
-The **Grid Layout** of an Instant Meeting (see Figure
-`formalpara_title <#img-grid-layout>`_) allows to show all the
-participants in the central area. The differences with the Cinema Mode
-are:
+
+The **Grid Layout** of an Instant Meeting (see
+:numref:`fig_team_grid`) allows to show all the participants in the
+central area. The differences with the Cinema Mode are:
 
 -  There is no left column as it is part of the central area
 
@@ -466,9 +448,11 @@ are:
 
 -  The stream of the person who is talking has a green frame
 
-**Video Conversation in Grid Layout.**
+.. _fig_team_grid:
 
-.. image:: /img/team-grid-layout.png
+.. figure:: /img/team-grid-layout.png
+
+   Video Conversation in Grid Layout.
                          
 .. _team_instant_messaging_and_corporate_communication:
 
@@ -476,30 +460,29 @@ Instant Messaging and Corporate Communication
 =============================================
 
 In the left-hand side column it is possible to create new instances of
-**Chats** and **Group Chats**, **Spaces** and **Instant Meetings**. The
-User Experience has been improved and now the process of setting up a
-new instance is the same: First, click on the Chats, Spaces, or Instant
-Meetings, then on *CREATE*. In *Chats* (See
-`formalpara_title <#img-create-chat>`_), choose whether this is a
-1-to-1 or group chat, then simply add participants from the dialog
-window that appears. For Spaces and Instant Meetings, you can also add a
-title or topic.
+**Chats** and **Group Chats**, **Spaces** and **Instant
+Meetings**. The User Experience has been improved and now the process
+of setting up a new instance is the same: First, click on the Chats,
+Spaces, or Instant Meetings, then on *CREATE*. In *Chats* (See
+:numref:`fig_team_create_chat`), choose whether this is a 1-to-1 or
+group chat, then simply add participants from the dialog window that
+appears. For Spaces and Instant Meetings, you can also add a title or
+topic.
 
 In the case of Instant Meetings, only logged in users can join. External
 users can join, but they need to provide a nickname and a valid email
 address.
 
-.. important::
+.. note:: Instant Meetings can have two or more participants, Chats
+   exactly two, Video Chats at least **three** persons (one host and
+   two more participants), while Spaces can be empty, i.e., they can
+   be created without inviting any user.
 
-   Instant Meetings can have two or more participants, Chats exactly
-   two, Video Chats at least **three** persons (one host and two more
-   participants), while Spaces can be empty, i.e., they can be created
-   without inviting any user.
+.. _fig_team_create_chat:
 
-**Dialog window to create a chat.**
+.. figure:: /img/team-chat.png
 
-.. image:: /img/team-chat.png
-
+   Dialog window to create a chat.
 
 The process to create a Channel is a bit different, as this is a feature
 internal to spaces. So, to create a Channel it is necessary to set up a
@@ -508,15 +491,15 @@ Now. you’ll see a window similar to the one above, where you can add a
 title and a topic. The Channel will appear underneath the space name,
 indented, to underline that it is tight to the space.
 
-.. note::
+.. note:: You can *not* select the users in a channel, because
+   participation to channels is optional and open to all members of
+   the space.
 
-   You can not select the users in a channel, because participation to
-   channels is optional and open to all members of the space.
+.. _fig_team_space_channel:
 
-**A space with a channel.**
+.. figure:: /img/space-channel.png
 
-
-.. image:: /img/space-channel.png
+   A space with a channel.
 
 Once you have set up an instance, you can immediately start a textual
 chat with all the participants or start a video call by clicking on the
@@ -533,8 +516,8 @@ the remainder of this section.
 Moderators in Rooms
 -------------------
 
-The user that creates a **room** (we call *room* either a channel, a
-space, or a group) becomes automatically the **Room Moderator** and can
+The user that creates a **room** (we call *room* either a Channel, a
+Space, or a Group) becomes automatically the **Room Moderator** and can
 manage the room’s textual and video conversations. In particular, the
 *Mute For All* and *Add new members* functionalities are reserved for
 Moderators only.
@@ -547,13 +530,11 @@ moderator is present in the room.
    introduced, all members are automatically promoted as moderators.
 
 The moderator status can be set either using the icons from the GUI,
-next to each room participant, or from the CLI, using the `zxsuite team
-addOwner <./cli.xml#team_addOwner>`_ command. for example, to make
-user2@example.com owner of the rooms with conversation_id
-aced5e2e-f457-4d30-a3fb-9b18fac486a6@example.com this command can be
-issued from the CLI:
-
-::
+next to each room participant, or from the CLI, using the
+:ref:`zxsuite team addOwner <zxsuite_team_addOwner>` command. For
+example, to make user2@example.com owner of the rooms with
+conversation_id aced5e2e-f457-4d30-a3fb-9b18fac486a6@example.com this
+command can be issued from the CLI::
 
    zxsuite team addOwner  aced5e2e-f457-4d30-a3fb-9b18fac486a6@example.com user2@example.com
 
@@ -677,8 +658,8 @@ a Mailbox is moved to a new server.
 
 In 1-to-1 chats, if there is feedback or background noise, users can
 mute other participant’s microphones. Muted participants see a toast
-notification on the screen. Participants can reactivate their microphone
-by clicking Unmute or the notification.
+notification on the screen. Participants can reactivate their
+microphone by clicking :bdg-dark-line:`Unmute` or the notification.
 
 In Video Chats, users can selectively mute other participants; a
 moderator, however, can mute everyone at the same time.
@@ -700,10 +681,11 @@ filetypes will display a custom icon.
 Clicking on a file within a chat window will download it to the local
 client using the browser’s own download interface.
 
-Files shared via Team will be stored inside a protected root folder the
-sender’s Drive called ``Team sent files``, thus counting towards the
-sender’s mailbox quota, and will remain available for download in the
-chat window for all participants until deleted from Drive by the sender.
+Files shared via Team will be stored inside a protected root folder in
+the sender’s Drive called ``Team sent files``, thus counting towards
+the sender’s mailbox quota, and will remain available for download in
+the chat window for all participants until deleted from Drive by the
+sender.
 
 .. _team_autocomplete:
 
@@ -713,36 +695,39 @@ Autocomplete
 Autocomplete in Team is split in two different categories: **Internal**
 Autocomplete and **External** autocomplete.
 
-Internal autocomplete kicks in when selecting a target for 1-1 Chats,
-Group Chats, Spaces and Channels, while External autocomplete is only
+*Internal Autocomplete* kicks in when selecting a target for 1-1 Chats,
+Group Chats, Spaces, and Channels, while *External Autocomplete* is only
 used for Instant Meeting attendees.
 
 This can be changed by setting the ``teamCrossDomainSearchMode`` COS
 property to either ``local``, ``extended`` or ``global`` using the
 ``zxsuite config [get/set/empty]`` CLI toolset.
 
--  *local* mode, in which Internal Autocomplete will draw its
-   information from the GAL, while External autocomplete will draw its
-   information from the user’s Contacts and GAL.
+**Local** mode (Default)
+   In which Internal Autocomplete will draw its information from the
+   GAL, while External autocomplete will draw its information from the
+   user’s Contacts and GAL.
 
--  *extended* mode is a superset of *local* that also matches full email
-   addresses of any user in the same infrastructure as internal users.
+**Extended** mode
+   It is a superset of *local* that also matches full email addresses
+   of any user in the same infrastructure as internal users.
 
-   -  This allows to initiate a 1-1 Chat with or to add to a
-      Group/Space/Channel any user that is on the same infrastructure
-      but out of the GAL as long as the exact email address is entered.
+   This allows to initiate a 1-1 Chat with or to add to a
+   Group/Space/Channel any user that is on the same infrastructure but
+   out of the GAL as long as the exact email address is entered.
 
--  *global* mode is a superset of *extended* that does not require an
-   exact match on the email address to autocomplete users in the same
+**Global** mode
+   A superset of *extended* mode that does not require an exact match
+   on the email address to autocomplete users in the same
    infrastructure.
 
-   -  This allows to autocomplete any user in the infrastructure as
-      opposed to the strict email addres match required in *extended*
-      mode.
+   This allows to autocomplete any user in the infrastructure as
+   opposed to the strict email addres match required in *extended*
+   mode.
 
-.. image:: /img/connect_autocomplete_management.jpeg
+.. figure:: /img/connect_autocomplete_management.jpeg
 
-The default setting inherited by all COS is *local*.
+   Overview of autocomplete management
 
 .. _team_presence:
 
@@ -758,11 +743,11 @@ variable number of check symbols:
 
 .. image:: /img/connect_message_delivered_1.png
 
--  0 checks, message not delivered to the server
+-  0 grey checks, message not delivered to the server
 
--  1 check, message delivered to the server
+-  1 grey check, message delivered to the server
 
--  2 checks, message viewed by all users
+-  2 blue checks, message viewed by all users
 
 When sending a text message, if privacy is enabled, then only one *gray*
 check is shown, meaning that the server has received the message. No
@@ -842,47 +827,11 @@ server’s URL and login information in the zimlet configuration.
 Setting up Zextras Team to use a TURN server
 -----------------------------------------------
 
-A dedicated set of TURN configuration tools is available via CLI through
-the ``zxsuite team iceServer`` command:
-
-::
-
-   zimbra@mailserver:~$ zxsuite Team iceServer
-
-   Edit the list of ice servers which will be used to establish connections for video calls.
-   Configuration available for global(default), cos or account.
-
-     add                      - add ice server candidates using global (default), cos or account
-                                zxsuite Team iceServer add {turn:turn.example.com:3478?transport=udp} [attr1 value1 [attr2 value2...]]
-
-     remove                   - remove ice server candidates using global (default), cos or account
-                                zxsuite Team iceServer remove {turn:turn.example.com:3478?transport=udp} [attr1 value1 [attr2 value2...]]
-
-     get                      - get ice server candidates using global (default), cos or account
-                                zxsuite Team iceServer get [attr1 value1 [attr2 value2...]]
-
-The "add" subcommand is used to add a new TURN server:
-
-::
-
-   Syntax:
-      zxsuite Team iceServer add {turn:turn.example.com:3478?transport=udp} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME             TYPE      EXPECTED VALUES
-   url(M)           String    turn:turn.example.com:3478?transport=udp
-   username(O)      String    myuser
-   credential(O)    String    mysecretkey
-   account(O)       String    user@example.com
-   cos(O)           String    default
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite Team iceserver add turn:turn.example.com credential mysecret username myuser
-   zxsuite Team iceserver add turn:turn.example.com credential mysecret username myuser account testaccount@example.com
+A dedicated set of TURN configuration tools is available via CLI
+through the ``zxsuite team iceServer``\'s [ :ref:`add
+<zxsuite_team_iceServer_add>` \| :ref:`get
+<zxsuite_team_iceServer_get>` \| :ref:`remove
+<zxsuite_team_iceServer_remove>` ] commands
 
 Multiple TURN servers can be added to handle different users or Classes
 of Service (defined through the ``user`` and ``cos`` optional parameters
