@@ -30,7 +30,7 @@ pipeline {
               beforeAgent true
               allOf {
                   not {
-                      changeRequest();
+                      //changeRequest();
                   }
                   anyOf {
                       branch "${PRODUCTION_BRANCH}"
