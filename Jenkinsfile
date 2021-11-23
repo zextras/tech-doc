@@ -103,9 +103,9 @@ pipeline {
     }
     post {
         success {
-            script {
-                notifications.emailNotification subject: "$PROJECT  was released on $DESTINATION", attachLog: true, rcpts: ['luca.arcara@zextras.com']
-            }
+           mail to: 'luca.arcara@zextras.com',
+                subject: "$PROJECT  was released on $DESTINATION",
+                body: "Build is back to normal (success): ${env.BUILD_URL}"
         }
         failure {
             script {
