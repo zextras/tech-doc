@@ -2,7 +2,7 @@ FROM python
 
 WORKDIR /docs
 ADD requirements.txt /docs
-ADD build /docs/build
+#ADD build /docs/build
 COPY source /docs/source
 COPY source/suite /docs/source/suite
 COPY source/carbonio /docs/source/carbonio
