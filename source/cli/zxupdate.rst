@@ -1,3 +1,8 @@
+.. _zextras_update_full_cli:
+
+ZxUpdate CLI Commands
+=====================
+
 .. _zxsuite_update_doStartService:
 
 .. dropdown:: zxsuite update doStartService

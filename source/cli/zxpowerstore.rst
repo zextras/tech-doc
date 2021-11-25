@@ -1,3 +1,8 @@
+.. _zextras_powerstore_full_cli:
+
+ZxPowerstore CLI Commands
+=========================
+
 .. _zxsuite_core_testS3Connection:
 
 .. dropdown:: zxsuite core testS3Connection

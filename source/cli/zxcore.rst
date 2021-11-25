@@ -1,3 +1,8 @@
+.. _zextras_core_full_cli:
+
+ZxCore CLI Commands
+===================
+
 .. _zxsuite_core_apiVersions_purgeOrphans:
 
 .. dropdown:: zxsuite core apiVersions purgeOrphans

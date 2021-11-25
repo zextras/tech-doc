@@ -1,3 +1,8 @@
+.. _zextras_mobile_full_cli:
+
+ZxMobile CLI Commands
+=====================
+
 .. _zxsuite_mobile_ABQ_allow:
 
 .. dropdown:: zxsuite mobile ABQ allow

@@ -1,3 +1,8 @@
+.. _zextras_docs_full_cli:
+
+ZxDocs CLI Commands
+===================
+
 .. _zxsuite_docs_doDeployDocsZimlet:
 
 .. dropdown:: zxsuite docs doDeployDocsZimlet

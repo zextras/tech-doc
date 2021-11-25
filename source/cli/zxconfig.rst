@@ -1,3 +1,8 @@
+.. _zextras_config_full_cli:
+
+ZxConfig CLI Commands
+=====================
+
 .. _zxsuite_config_account:
 
 .. dropdown:: zxsuite config account :bdg-warning:`Deprecated`

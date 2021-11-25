@@ -1,3 +1,8 @@
+.. _zextras_admin_full_cli:
+
+ZxAdmin CLI Commands
+====================
+
 .. _zxsuite_admin_doAddDelegationSettings:
 
 .. dropdown:: zxsuite admin doAddDelegationSettings

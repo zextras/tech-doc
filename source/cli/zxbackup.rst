@@ -1,3 +1,8 @@
+.. _zextras_backup_full_cli:
+
+ZxBackup CLI Commands
+=====================
+
 .. _zxsuite_backup_doAccountScan:
 
 .. dropdown:: zxsuite backup doAccountScan

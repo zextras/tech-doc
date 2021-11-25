@@ -1,3 +1,8 @@
+.. _zextras_auth_full_cli:
+
+ZxAuth CLI Commands
+===================
+
 .. _zxsuite_auth_credential_add:
 
 .. dropdown:: zxsuite auth credential add

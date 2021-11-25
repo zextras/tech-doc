@@ -1,3 +1,8 @@
+.. _zextras_drive_full_cli:
+
+ZxDrive CLI Commands
+====================
+
 .. _zxsuite_drive_doDeleteBriefcaseData:
 
 .. dropdown:: zxsuite drive doDeleteBriefcaseData

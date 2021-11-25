@@ -1,3 +1,7 @@
+.. _zextras_team_full_cli:
+
+ZxTeam CLI Commands
+===================
 
 .. _zxsuite_team_addOwner:
 
