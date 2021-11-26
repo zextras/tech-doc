@@ -1,0 +1,67 @@
+
+Zextras Suite Changelog - Release 3.7.0
+=======================================
+
+Release Date: November 2nd, 2021
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-314
+
+* *Title:* Password change with custom zimbraAuthMech
+
+* *Description:* It is now possible for the users to change their password after admins have enabled the custom:zx zimbraAuthMech
+
+..
+
+* *Issue ID:* AUTH-320
+
+* *Title:* New tab for Auth zimlet
+
+* *Description:* By clicking on the Zextras Auth zimlet, a new Auth tab will be opened resulting in a clearer interface for the users.
+
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-589
+
+* *Title:* Moved mailboxes now marked as deleted
+
+* *Description:* The doPurgeMailboxes operation now marks as deleted mailboxes the ones that are moved to other servers. This makes the Backup purge operation clean the data left after by the move operations too.
+
+
+.. rubric:: General
+
+* *Issue ID:* COR-639
+
+* *Title:* Text selection and contextual menu in administration console fixed
+
+* *Description:* Fixed a bug that caused the text selection and the contextual menu in the Zimbra administration console not to work properly.
+
+..
+   
+* *Issue ID:* COR-644
+
+* *Title:* Temporary link for 2FA users login
+
+* *Description:* In order to allow users with 2FA enabled to log in, Admin generates a preauth link from the admin console and can send the link to the user, that will be able to access the webmail
+
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-357
+
+* *Title:* Bug with PARTSTAT field on appointment invitation fixed
+
+* *Description:* Fixed a bug that caused the PARTSTAT field of an invitation to be wrongly set as NEED-ACTION on accepting one appointment via Exchange ActiveSync. This bug caused the appointment not to be shown via CalDAV.
+
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-3215
+
+* *Title:* Accessibility improved in Team
+
+* *Description:* Now every icon in Team has an alternative text, a title and a label to improve accessibility.
+
+

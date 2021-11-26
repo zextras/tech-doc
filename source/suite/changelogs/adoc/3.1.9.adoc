@@ -1,0 +1,352 @@
+
+[caption = ""]
+
+== Zextras Suite 3.1.9
+//Version 3.1.9 - March 22nd, 2021
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-24
+
+4+|*Title:* Fixed and added more info to restore blobs command for notifications
+
+4+|*Description:* Now, after a restore blobs operation has been performed, the list of parameters is correctly displayed.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-437
+
+4+|*Title:* Backup's CLI doItemRestore accepts parameter in different forms
+
+4+|*Description:* Now the CLI accepts the account's name or the account's id as parameter
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-439
+
+4+|*Title:* Changed backupChatEnabled attribute default value to false
+
+4+|*Description:* Now, by default, the backup has been disabled.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-446
+
+4+|*Title:* Added a new parameter to undelete command
+
+4+|*Description:* Now, with the undelete command is possible to restore deleted items in their original folder
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-447
+
+4+|*Title:* NullPointerException during purge with third party backup fixed
+
+4+|*Description:* Fixed a bug that prevented to complete the purge operation if third party backup on S3 is enabled
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-461
+
+4+|*Title:* doRestoreOnNewAccount command has been fixed
+
+4+|*Description:* Fixed issue that prevented restoring older deleted account when backup contains multiple accounts with the same name.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-493
+
+4+|*Title:* Backup on external volume has been fixed
+
+4+|*Description:* Fixed the check if backup is migrated on a new bucket with the same credentials
+Fixed the creation of backup volume directly from migrate/set command
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-515
+
+4+|*Title:* doDeployClientZimlet download fixed
+
+4+|*Description:* Fixed a bug that was downloading the zimlet from a wrong path
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-516
+
+4+|*Title:* The doDeploy command's error message has been improved with explanation
+
+4+|*Description:* Now, when doDeploy command fails, a message is displayed containing the error and the explanation
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-572
+
+4+|*Title:* GetAllOperations command has been fixed
+
+4+|*Description:* Fixed a bug that prevented the correct output from being displayed if no operations were running
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-584
+
+4+|*Title:* The display of the config status has been improved
+
+4+|*Description:* Now, in the case of out-of-sync nodes the config status reports the errors and the related causes
+|===
+
+=== Docs
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-113
+
+4+|*Title:* Popup error if user clicks on preferences before complete zimlet load
+
+4+|*Description:* Popup error if a user clicks on preferences before complete Docs zimlet load
+|===
+
+=== Drive
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-974
+
+4+|*Title:* Special characters in Drive file name fixed
+
+4+|*Description:* Now it is possible to save into Drive attachments that have a single quote in the name
+|===
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-306
+
+4+|*Title:* Shared folders file download fixed
+
+4+|*Description:* Fixed a bug that prevented attachments to be downloaded from emails in shared folders.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-308
+
+4+|*Title:* EAS autocomplete honor zimbra contacts autocomplete settings
+
+4+|*Description:* When composing a new mail via EAS device, autocomplete on recipient address will search in local contact, GAL, or shared contacts, honoring Zimbra contacts settings (zimbraPrefSharedAddrBookAutoCompleteEnabled, A_zimbraPrefGalAutoCompleteEnabled)
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-286
+
+4+|*Title:* Fixed logs for mailbox purge command
+
+4+|*Description:* Fixed a bug that wrongly displayed the logs for mailbox purge command
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-291
+
+4+|*Title:* DoMailboxMove now returns an error for missing parameters
+
+4+|*Description:* Added an error that is shown when a user tries to perform a mailbox move operation by CLI without specifying any parameters or specifying the wrong ones.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-297
+
+4+|*Title:* BulkDelete service fixed
+
+4+|*Description:* Fixed a bug that doesn't retry failed deletions on the local file system
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2054
+
+4+|*Title:* Improved Instant Meeting UI
+
+4+|*Description:* Such a big  UI improvement for Instant Meeting, with a new layout with grid-mode or cinema-mode, both with fullscreen available; see the list of who is speaking, use the push to talk feature or mute/unmute someone with microphone issues.
+Participants list is cleaner and more organized, you can cycle it if your meeting is large.
+Resizing the window will adjust automatically every ui component of the instant meeting.
+Instant Metting will remain open if the owner is still in there, otherwise if owner left and you're the last user in there the Instant Meeting will close automatically.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2128
+
+4+|*Title:* Mute notifications button added
+
+4+|*Description:* Added mute notifications button in one to one conversations, groups, spaces.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2167
+
+4+|*Title:* Mute feature for conversations added
+
+4+|*Description:* It is now possible to mute the conversations, groups and spaces to avoid notifications.
+
+4+|*Notes:* _this is very useful for noisy groups!_
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2353
+
+4+|*Title:* Meeting views on grid mode have been improved
+
+4+|*Description:* Now, during a meeting, a user can see if other users are talking, via the green border that appears in their panel
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2356
+
+4+|*Title:* Little tiles separation
+
+4+|*Description:* Stream components are more visible thanks to its margin
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2357
+
+4+|*Title:* Writing notification fixed in conversations
+
+4+|*Description:* If the connection with the server is lost while writing, the "is writing" notification will remain until logout. Now this has been fixed.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2376
+
+4+|*Title:* Chat list filter has been improved
+
+4+|*Description:* Now, when the user clicks on the "chats" tab after filtering the chat list, the filter is reset
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2380
+
+4+|*Title:* Removed notifications for messages of join, left and kicked type on channels and spaces
+
+4+|*Description:* Removed notifications for messages from badge for channels and spaces in case someone joins, left or has been kicked out from a channel or space, only if these messages were received during the session
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2382
+
+4+|*Title:* A new button has been added to mini-chat for calls
+
+4+|*Description:* Added a new button on mini-chat header that allows you to call the other member/members who are part of the conversation
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2384
+
+4+|*Title:* A new button has been added to switch from the Team tab to the related mini-chat
+
+4+|*Description:* Added a new button on conversation header that allows you to direct to the related mini-chat
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2385
+
+4+|*Title:* A new button has been added to switch from the mini-chat to the Team tab
+
+4+|*Description:* Added a new button on mini-chat header that allows you to direct to the related conversation on the Team tab
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2392
+
+4+|*Title:* Team user search does not performs too many searches
+
+4+|*Description:* Check if team search do not performs too many searches
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2433
+
+4+|*Title:* Added copy in message menu
+
+4+|*Description:* Added copy functionality on bubble contextual menu
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2477
+
+4+|*Title:* Mailbox move must handle mute
+
+4+|*Description:* When mailbox move is performed, even mute conversation info should be moved
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2491
+
+4+|*Title:* GetHistory doesn't show deleted messages
+
+4+|*Description:* GetHistory doesn't show deleted messages
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2498
+
+4+|*Title:* Add papyrous as conversation background image
+
+4+|*Description:* Add papyrous as conversation background image
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2615
+
+4+|*Title:* Video Server installer differentiates Zimbra NE and OSE installation
+
+4+|*Description:* Now the Video Server installer provides the command to run to configure it both on Zimbra Network Edition and Zimbra Open Source Edition.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2620
+
+4+|*Title:* Error with multi version cluster
+
+4+|*Description:* Exception is thrown when a user on a server using APIv9 create a conversation with a user on a server using APIv10
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2621
+
+4+|*Title:* Fixed janus calls bug on rooms
+
+4+|*Description:* Fixed a bug that prevented the calls in rooms to be started if these rooms are on a different server than the user's.
+|===
+

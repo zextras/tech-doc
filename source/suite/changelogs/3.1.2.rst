@@ -1,0 +1,245 @@
+
+Zextras Suite 3.1.2
+===================
+
+Release Date: September 10th, 2020
+
+.. rubric:: Backup
+
+..
+
+* Issue ID: BCK-233
+
+* *Title:* Improved backup feedback on web console
+
+* *Description:* A better warning is returned in the web admin console if there are issues with the backup directory (backup damaged, disk full, etc)
+
+
+
+..
+
+* Issue ID: BCK-307
+
+* *Title:* Bug preventing files revisions' metadata to be created in backup fixed
+
+* *Description:* Metadata were not properly created in the backup by the Real Time Scanner for Briefcase's files' revisions while they was by the Smart Scan. Now also the Real Time Scanner correctly creates metadata for revisions.
+
+
+
+..
+
+* Issue ID: BCK-319
+
+* *Title:* Backup GetAvailableAccounts count fix
+
+* *Description:* Fixed an issue that would cause incorrect list of available accounts from the backup when an account was deleted and then restored with the same name
+
+
+
+..
+
+* Issue ID: BCK-326
+
+* *Title:* Coherency check fixBackup can now handle Drive missing blobs
+
+* *Description:* The coherency check with fixBackup flag set to true can now handle Drive's missing blobs.
+
+
+
+..
+
+* Issue ID: BCK-329
+
+* *Title:* doRestoreOnNewAccount fails when user has zimbraPrefWhenInFolderIds pointing to a shared subfolder
+
+* *Description:* Fixed a NullPointer exception error in resolving the foler's account owner since maps are not available during that stage of the operation
+
+
+
+..
+
+* Issue ID: BCK-341
+
+* *Title:* Backup exports now filter disabled cos
+
+* *Description:* Coses removed from backup will no longer be included in backup exports
+
+
+
+..
+
+* Issue ID: BCK-358
+
+* *Title:* External restore now restores Drive's shares
+
+* *Description:* The external restore operation now restores the Drive's shared resources too. The doFixShares operation can also handle different type of serialized maps to be compatible with mapped id's from Drive.
+
+
+.. rubric:: General
+
+..
+
+* Issue ID: COR-452
+
+* *Title:* Improved server-to-server connection handling
+
+* *Description:* Every time the DataStoreServiceAccessor performs an
+  operation a new connection is created and closed. This slows down
+  cluster synchronization by a substantial amount.  Replace this with
+  a permanent connection which will be initialized and closed with the
+  DataStoreServiceAccessor lifecycle.
+
+
+.. rubric:: Docs
+
+..
+
+* Issue ID: DOCS-96
+
+* *Title:* Docs memory check fix
+
+* *Description:* Fixed an issue that caused incorrect output values for totalAvailableMemory and usedMemory of the command zxsuite docs status
+
+
+.. rubric:: Mobile
+
+..
+
+* Issue ID: MOB-207
+
+* *Title:* Added a parameter to configure Outlook EAS filter
+
+* *Description:* Now the default Outlook EAS filter could be modified with ZxMobile_MaxOutlookVersion parameter to customize the EAS version used by Outlook clients.
+
+
+
+..
+
+* Issue ID: MOB-215
+
+* *Title:* "No such folder id: 0" error on search
+
+* *Description:* A bug caused mobile searches to return an error when searching for a string that returns no result.
+
+
+
+..
+
+* Issue ID: MOB-216
+
+* *Title:* Reactions to invites from mobile devices fixed
+
+* *Description:* Fixed a bug that prevented the reactions sent from mobile devices to be displayed in the details of the appointment.
+
+
+
+..
+
+* Issue ID: MOB-222
+
+* *Title:* Samsung EAS16 sync loop workaround
+
+* *Description:* Samsung devices could enter a loop when using EAS16 if an invalid email address is saved in a draft.
+
+
+
+..
+
+* Issue ID: MOB-223
+
+* *Title:* Recurring appointments' attachments bugfixes
+
+* *Description:* Fixed three bugs that prevented the attachments to be properly synchronized in recurring appointments on an invite.
+
+
+
+..
+
+* Issue ID: MOB-224
+
+* *Title:* Completed tasks sync bug fixed
+
+* *Description:* Fixed a bug that prevented the completed tasks to be correctly synchronized via EAS.
+
+
+
+..
+
+* Issue ID: MOB-252
+
+* *Title:* Fixed a bug that could cause all appontiment attendees to receive a "Appointment Deleted" notification when one attendee declined the invite from a mobile device.
+
+* *Description:* Fixed a bug that could cause all appontiment attendees to receive a "Declined" notification when one attendee declined the invite from a mobile device.
+
+
+.. rubric:: Powerstore
+
+..
+
+* Issue ID: PS-244
+
+* *Title:* Improved doVolumeToVolumeMove reliability when orphaned mailboxes are present
+
+* *Description:* The doVolumeToVolumeMove operation often failed when the server had orphaned mailboxes. Issues regarding orphaned/missing mailboxes are now properly handled and logged.
+
+
+
+..
+
+* Issue ID: PS-248
+
+* *Title:* Misleading reports removed from doVolumeToVolumeMove operation
+
+* *Description:* When running a doVolumeToVolumeMove operation, the count of source blobs' deletions can show misleading numbers in lazy deleting file systems, so the confirmation has been removed.
+
+
+
+..
+
+* Issue ID: PS-250
+
+* *Title:* Added incorrectly compressed digest handling
+
+* *Description:* Docheckblobs operations with fix_incorrect_compresset digests flag set to true now verify if the digest is calculated on the compressed blob even if the blob is not and fixes it.a
+
+
+
+..
+
+* Issue ID: PS-259
+
+* *Title:* Moving a mailbox with empty Drive document fixed
+
+* *Description:* Solved a bug that prevented a mailbox containing an empty Drive document to be properly moved to another mailboxd.
+
+
+.. rubric:: Team
+
+..
+
+* Issue ID: TEAMS-1755
+
+* *Title:* WebSocket stability improvement
+
+* *Description:* In order to improve stabilty on slow connections, a delay has been added between the disconnect of a client and the closing of the related WebSocket
+
+
+
+..
+
+* Issue ID: TEAMS-1756
+
+* *Title:* UX Improvements when connection issues are experienced
+
+* *Description:* Sometimes, in case of connection issues, the same message is displayed multiple times in the chat. When the client is refreshed, the additional copies disappear.
+
+
+
+..
+
+* Issue ID: TEAMS-1768
+
+* *Title:* Chat sidebar graphical fix
+
+* *Description:* Fixed a bug that caused the Zimbra components in the top bar to shift upward when the icons in the chat sidebar exceedes the height of the screen.
+

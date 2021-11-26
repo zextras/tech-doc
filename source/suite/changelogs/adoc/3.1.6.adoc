@@ -1,0 +1,172 @@
+[caption='']
+== Zextras Suite 3.1.6
+//Version 3.1.6 - January 4th, 2021
+
+=== Auth
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-132
+
+4+|*Title:* Cli commands date improvement
+
+4+|*Description:* Improved the output of the commands zxsuite auth, now returned dates are no longer in epoch format
+
+4+|*Notes:* __command output is no longer ambiguous__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-151
+
+4+|*Title:* Auth credential backup improvement
+
+4+|*Description:* Improved the auth backup behavior, now credentials are added to the backup by the real time scanner instead of just the daily operation
+
+4+|*Notes:* __auth credentials added now are backed up by the real time scanner__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-165
+
+4+|*Title:* Auth saml output default settings change
+
+4+|*Description:* Changed the default output format of zxsuite auth saml get that is no longer json
+
+4+|*Notes:* __json format is now optional__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-166
+
+4+|*Title:* Auth commands improvements
+
+4+|*Description:* Improved zx auth saml commands, all is now the default key value
+
+4+|*Notes:* __default key value is now all__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-174
+
+4+|*Title:* Cli commands date improvement
+
+4+|*Description:* Improved the output of the commands zxsuite auth, now returned dates are no longer in epoch format
+
+4+|*Notes:* __date format is Dayofweek gg mm yyyy ad hh:mm:ss__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-175
+
+4+|*Title:* Auth cli commands improvement
+
+4+|*Description:* Improved the examples returned by the zxsuite auth commands that now use generic names like example.com and organization.name
+
+4+|*Notes:* __no specific existing domain is returned__
+|===
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-367
+
+4+|*Title:* Restoreonnewaccount log improvement
+
+4+|*Description:* Improved the logs for restoreonnewaccount operations that no longer list entries regarding the delegated admin function, since those settings are not restored with this option.
+
+4+|*Notes:* __restoreonnewaccount commands now ignore delegatedadmin configuration__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-403
+
+4+|*Title:* Bucket cli command improvement
+
+4+|*Description:* Improved the placement of bucket cli commands that are now under zxsuite core
+
+4+|*Notes:* __bucket related commands have been moved under zxsuite core__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-411
+
+4+|*Title:* Backup path can change without restarting the mailboxd
+
+4+|*Description:* Backup can now handle the change of the backup path without restarting the mailboxd.
+
+4+|*Notes:* __now you can change the backup path without restarting the mailboxd__
+|===
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-280
+
+4+|*Title:* Exchange ActiveSync malformed emails synchronization improvement
+
+4+|*Description:* Now the synchronization of the devices via EAS do not break when a message cannot be parsed by Zimbra.
+
+4+|*Notes:* __synchronization is now more reliable also with malformed emails__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-282
+
+4+|*Title:* Appointment's description on acceptance bug fixed
+
+4+|*Description:* A bug that made the description of an appointment to be cleared on accepting it via Exchange ActiveSync.
+
+4+|*Notes:* __works as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-287
+
+4+|*Title:* Mobile shared folder bug fix
+
+4+|*Description:* Fixed an issue that would prevend mobile devices from syncing shared folders
+
+4+|*Notes:* __shared folders on mobile feature restored__
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2069
+
+4+|*Title:* Missing Team placeholder
+
+4+|*Description:* Text is now returned when the cursor is hovering over the Team section of the menu
+
+4+|*Notes:* __text is returned as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2143
+
+4+|*Title:* Added scroll functionality to instant message replies
+
+4+|*Description:* It is now possible to scroll to the original message by clicking on the text attached to replies to instant messages
+
+4+|*Notes:* __new scroll functionality appears to be functional__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2166
+
+4+|*Title:* Forwarded instant message visualization improvement
+
+4+|*Description:* Text of long forwarded instant messages is no longer cropped making it easier to read
+
+4+|*Notes:* __forwarded messages are now easily readable__
+|===

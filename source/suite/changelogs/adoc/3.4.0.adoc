@@ -1,0 +1,70 @@
+[caption = ""]
+
+= Zextras Suite Changelog - Release 3.4.0
+
+Release Date August 9th, 2021
+
+== Solved Issues
+
+=== Auth
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* AUTH-255
+
+4+|*Title:* Static OTP codes usable only once
+
+4+|*Description:* When requested for the OTP, the user inputs one of the static codes. If the code is correct and available the access is granted. Additionally, the user receives an email notifying that one code has been used, and that the user have other X codes.
+
+|===
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* MOB-352
+
+4+|*Title:* EAS account logger WindowSize is not honored
+
+4+|*Description:* Now EAS account logger works with Window Size.
+
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2891
+
+4+|*Title:* Minichat with space and channel conversations
+
+4+|*Description:* Minichat can display Space and Channel conversations as well.
+
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2933
+
+4+|*Title:* Added addOwner usage examples
+
+4+|*Description:* Improved the 'Usage example' description to better document the 'addOwner' command.
+
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2936
+
+4+|*Title:* Enabled to forward messages/attachments to Spaces and Channels
+
+4+|*Description:* With API V15 users can forward messages/attachments to Spaces and Channels.
+
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2963
+
+4+|*Title:* Meetings can be opened on a new browser tab
+
+4+|*Description:* Now, users can decide to open the meetings on another browser tab
+
+|===

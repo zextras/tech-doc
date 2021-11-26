@@ -1,0 +1,273 @@
+[caption='']
+== Zextras Suite 3.1.3
+//Version 3.1.3 - October 5th, 2020
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-365
+
+4+|*Title:* CoherencyCheck stopping procedure fixed
+
+4+|*Description:* Now the Coherency Check stops without checking server configurations if stop is sent before the check starts.
+
+4+|*Notes:* __now the stop command is correctly handled__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-370
+
+4+|*Title:* Restore operation now preserve folders' colors
+
+4+|*Description:* Colors of folders are now preserved while restoring from an external source.
+
+4+|*Notes:* __Zimbra is now more colorful__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-373
+
+4+|*Title:* Fixed restore of Drive revisions
+
+4+|*Description:* A bug that prevented the current version of a Drive document to be correctly restored in an external restore has been fixed.
+
+4+|*Notes:* __now the external restore actually restores all files' versions__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-374
+
+4+|*Title:* Restore operation now preserves keep forever attribute in Drive
+
+4+|*Description:* The "keep forever" attribute of Drive file versions is now preserved on external restore.
+
+4+|*Notes:* __keep forever attribute is now preserved__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-380
+
+4+|*Title:* Improve restore drive share loglines
+
+4+|*Description:* Improved restore operation loglines for drive shares so that no longer point to "new target"
+
+4+|*Notes:* __restore lines for drive shared items have been changed__
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-374
+
+4+|*Title:* Notification panel redesign
+
+4+|*Description:* Based on customers' inquiries, the notifications' list and the operations' queue in the zimbraAdmin have been completely redesigned to be more clear and and easily usable by admins.
+
+4+|*Notes:* __now the notifications' panel is more easy to use and clearer to read__
+|===
+
+=== Drive
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-885
+
+4+|*Title:* Improve deleted shared drive items handling
+
+4+|*Description:* Drive shared items are now shown as striked in "shared with me" instead of being listed in the trash folder
+
+4+|*Notes:* __Shared drive items marked for deletion are correctly shown in shared with me__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-928
+
+4+|*Title:* A new command shows Drive quotas
+
+4+|*Description:* Upon customers' inquiry, a new CLI command has been added to read the Drive quotas.
+
+4+|*Notes:* __known issue: help is not shown if no parameter is given__
+|===
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-244
+
+4+|*Title:* getAllDevices now supports multiserver environments
+
+4+|*Description:* You can now use the getAllDevices command to ask the devices list to all store servers.
+
+4+|*Notes:* __you can now have the list of all devices in all the infrastructure from a single server via CLI__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-246
+
+4+|*Title:* Fixed attachments in recurring appointments exceptions
+
+4+|*Description:* A bug that prevented the attachments in exceptions of recurring appointments to be downloaded has been fixed.
+
+4+|*Notes:* __the bug has been fixed and the attachments can successfully be opened__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-256
+
+4+|*Title:* Calendar attachment deletion fixed
+
+4+|*Description:* Fixed a bug that prevented the calendar attachments to be deleted from synchronized devices.
+
+4+|*Notes:* __works as expected__
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-257
+
+4+|*Title:* Centralized volumes as secondary store
+
+4+|*Description:* Centralized volumes now inherit the type on all the servers, if the centralized volume on the main server is created as secondary volume, then the centralized volumes that derive from it in other servers will be secondary too.
+
+4+|*Notes:* __now you can have centralized secondary volumes too__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-261
+
+4+|*Title:* DoCheckBlobs orphaned mailbox handling improvement
+
+4+|*Description:* Improved orphaned mailbox handling so that DoCheckBlobs no longer returns an error when one is found
+
+4+|*Notes:* __no exception is logged anymore__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-264
+
+4+|*Title:* Moveblobs log improvement
+
+4+|*Description:* Moveblobs log no longer contain a Dumpster log line if dumpster items were not included in the hsm policy
+
+4+|*Notes:* __moveblobs logs are cleaner__
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1393
+
+4+|*Title:* Improved sharing link for instant meetings
+
+4+|*Description:* Links for joining instant meetings have been improved to easier share them avoiding errors.
+
+4+|*Notes:* __no more encoding errors in sharing bug__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1778
+
+4+|*Title:* Improved synchronization of Team's database
+
+4+|*Description:* Now the Team nodes bulk insert users when populating rooms between different Team nodes
+
+4+|*Notes:* _None_
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1782
+
+4+|*Title:* Move room errors fixed
+
+4+|*Description:* A bug that prevented the error messages to be logged when moving a single room between stores in a multiserver environment has been fixed.
+
+4+|*Notes:* __now failure notifications are correctly reported on moving rooms__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1783
+
+4+|*Title:* Unused rooms cleared daily
+
+4+|*Description:* A scheduler now cleans daily the Team rooms left without any member.
+
+4+|*Notes:* __no more empty rooms left in the database__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1809
+
+4+|*Title:* Improved Group name handling
+
+4+|*Description:* Group names no longer trigger an error during a file upload if their name contains characters that cannot be handled by drive
+
+4+|*Notes:* __no error is returned__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1821
+
+4+|*Title:* Team loading splash screen added
+
+4+|*Description:* A splash screen will be shown to the users while Team is loading.
+
+4+|*Notes:* __splash screen is now shown to users while Team is loading__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1827
+
+4+|*Title:* Improved Instant meeting creation
+
+4+|*Description:* When choosing to create a new instant meeting an option is now given to the user that must decide between creating a new one while terminating the existing one or abort the operation
+
+4+|*Notes:* __feature implemented as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1831
+
+4+|*Title:* Anonymous user cleanup from room fix
+
+4+|*Description:* Fixed an issue that would cause certain anonymous users to be removed from rooms after 1 hour
+
+4+|*Notes:* __instant meetings function reliably after the one hour mark__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1833
+
+4+|*Title:* User status truncated at 256 chars length
+
+4+|*Description:* The setStatus handler now truncates the user status at 256 chars length to be compliant with the Team API.
+
+4+|*Notes:* __setStatus is now compliant with the Team API__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1836
+
+4+|*Title:* Instant meetings' and spaces' topic added on invite email
+
+4+|*Description:* To avoid Zimbra grouping invites to instant meetins and spaces, the topic has been added to the mail's subject.
+
+4+|*Notes:* __invites are no more grouped__
+|===

@@ -1,0 +1,390 @@
+[caption = ""]
+
+== Zextras Suite 3.1.10
+Version 3.1.10 - April 19th, 2021
+
+=== Auth
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* AUTH-189
+
+4+|*Title:* Login page Zimbra parameters
+
+4+|*Description:* Login page now support standard Zimbra parameters
+
+4+|*Notes:*
+
+Known issue:
+
+To use both domain and customerDomain you have to specify the parameter twice. Eg: `https://infra-576dd838.testarea.zextras.com/zx/login/page/?domain=example.com&customerDomain=example.com`_
+
+|===
+
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* AUTH-201
+
+4+|*Title:* Login page issue on changing color palette fixed
+
+4+|*Description:* Fixed an issue that made the Login button disappear on changing color palette in the login page.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* AUTH-209
+
+4+|*Title:* Auth zimlet minor graphical refactoring
+
+4+|*Description:* Some useless labels have been removed from the Auth zimlet
+
+|===
+
+<<<
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-422
+
+4+|*Title:* External restore operation now considers already existent folders
+
+4+|*Description:* During an external restore operation, if a folder with the same path and name is already present in the account, it will be used instead of creating a new one with the same name.
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-485
+
+4+|*Title:* External restore operation now considers already existent mount points
+
+4+|*Description:* During an external restore operation, if a mount point with the same path has already been created by a filter in the account, it will be used instead of creating a new one.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-491
+
+4+|*Title:* Backup on S3 storage class improvement
+
+4+|*Description:* Items' storage classes in the S3 store reflect the current storage class settings for the backup.
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-515
+
+4+|*Title:* Purge operation during backup migration fixed
+
+4+|*Description:* During a backup migration operation, if a purge operation occurs it will be queued and will wait for the first operation to finish. The same happens if a purge operation is running and a migration operation attempts to start. This avoids the migration operation from failing.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-517
+
+4+|*Title:* Account scan information improved
+
+4+|*Description:* Now account id and mailbox id are reported in account scan notifications
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-524
+
+4+|*Title:* Backup migration to third party store improved
+
+4+|*Description:* Now the backup migration to a third party store also copies the metadata, the server's configuration and the map files.
+
+The progress will display the number of archives, server configurations and maps uploaded.
+If the server's logs are set to debug level, a line for every file uploaded will be reported.
+The final notification will not propose to run a smart scan with deep and remote_metadata_upload flags anymore.
+
+|===
+
+<<<
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* COR-489
+
+4+|*Title:* Notifications: date column sortable
+
+4+|*Description:* Date column must be sortable and must show the full time field
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* COR-492
+
+4+|*Title:* Detail panel disappear on notification list
+
+4+|*Description:* There's no scroll bar, and scrolling on the last element of the list makes the detail panel disappear
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* COR-508
+
+4+|*Title:* Auth deploy from Core
+
+4+|*Description:* Auth Zimlet cannot be deployed from the Core panel
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* COR-598
+
+4+|*Title:* Added a new command to dump configuration
+
+4+|*Description:* It is now possible to dump configuration attributes, both inherited or not
+|===
+
+<<<
+=== Drive
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* DRIV-385
+
+4+|*Title:* Content-Type header in Drive responses fixed
+
+4+|*Description:* Fixed a bug that prevented the Content-Type header to be inserted in requests. This caused Docs' documents not to be showed in some browsers if "X-Content-Type-Options nosniff" header was set.
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* DRIV-1031
+
+4+|*Title:* Fixed logo size issue with Drive email notifications in Outlook
+
+4+|*Description:* Creating, modifying or revoking Drive shares generates a mail notification that contains the Drive logo. The image size has been fixed to be shown correctly also in Outlook.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* DRIV-1146
+
+4+|*Title:* Drive database queries speed up improvements
+
+4+|*Description:* The Drive database and queries have been optimized to speed up the opening of files.
+
+The current version has been added to the node table to avoid calculating the maximum version of each node during the fetch of the related node and revision information.
+The database has been updated to version 10.
+
+|===
+
+<<<
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* MOB-38
+
+4+|*Title:* Activate ABQ by global/cos/account
+
+4+|*Description:* the ABQ can be set at COS and account level too.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* MOB-305
+
+4+|*Title:* All weekdays recurrence in appointments synchronization fixed
+
+4+|*Description:* Fixed a bug that prevented appointments recurring all the weekdays to be properly synchronized.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* MOB-307
+
+4+|*Title:* EAS  Organizer of shared calendar
+
+4+|*Description:* Creating appointments on someone else's calendar via EAS causes the appointment to be wrongly seen as an invite accepted as tentative by the calendar's owner.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* MOB-340
+
+4+|*Title:* EAS Contacts' birthday synchronization
+
+4+|*Description:* This covers a bug where ZxMobile will shift birthday time according to the server's timezone, so birthdays will be showed a day before the correct data for GMT+x timezone
+
+|===
+
+<<<
+=== Subscription Management
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* SM-7
+
+4+|*Title:* Empty license warning notification
+
+4+|*Description:* When the number of created users exceeds the number of licensed a warning was sent without the necessary information
+
+|===
+
+<<<
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-1837
+
+4+|*Title:* Team desktop notification fixed
+
+4+|*Description:* Fixed a bug that prevent zimbra tab to open when clicking on team desktop notification (chrome only)
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2472
+
+4+|*Title:* Leave group as last participant fix
+
+4+|*Description:* Fixed a bug that show and endless load page with Team logo when leaving a group type conversation as last partecipant
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2483
+
+4+|*Title:* Clear history button added
+
+4+|*Description:* Added clear history button in one to one conversations, groups, spaces.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2500
+
+4+|*Title:* "who is writing" notifications
+
+4+|*Description:* This fixes a bug where the "...is writing" message was shown even when the chat user had finished writing
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2517
+
+4+|*Title:* Video Server issue related to IPv6 fixed
+
+4+|*Description:* Fixed a bug that prevented the Video Server service to properly bind on the 8188 port if the IPv6 interface is disabled
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2524
+
+4+|*Title:* Added a new config attribute for user presence
+
+4+|*Description:* Now, sysadmins can set a config attribute to allow or block the sending or receiving information of user presence ("online"/"offline" status, "is writing" status and "is writing" )
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2526
+
+4+|*Title:* Added a new config attribute for message reads(ACKs)
+
+4+|*Description:* Now, sysadmins can set a config attribute to allow or block receiving information of message reads
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2573
+
+4+|*Title:* Start/end meeting date
+
+4+|*Description:* A timestamp has been added to team meeting service notifications.
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2574
+
+4+|*Title:* Free signal on meetings
+
+4+|*Description:* Added a Free signal while user is waiting other participants to join on meetings
+
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2630
+
+4+|*Title:* Fixed a bug that mutes the client when the video will be disabled by user
+
+4+|*Description:* Fixed a problem that mutes the audio while user disable the video
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2726
+
+4+|*Title:* Team connection bug fixed
+
+4+|*Description:* Fixed a bug that caused Team connection to be dropped on downloading all the attachments from an email.
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2743
+
+4+|*Title:* Instant meeting bug fixed
+
+4+|*Description:* Fixed rendering bug that prevented the instant meetings to start correctly.
+|===
+
+<<<
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2767
+
+4+|*Title:* Team conversations rendering fix
+
+4+|*Description:* Fixed rendering bug that prevent to see others participants names inside conversation title
+|===
+
+<<<

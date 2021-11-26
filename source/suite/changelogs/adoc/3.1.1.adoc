@@ -1,0 +1,602 @@
+
+[caption='']
+== Zextras Suite 3.1.1
+//Version 3.1.1 - August 10th, 2020
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-290
+
+4+|*Title:* Improved restore operation error handling
+
+4+|*Description:* Improved restore operation so that it will complete even if any Drive's blob is missing from the backup.
+
+4+|*Notes:* __Missing Drive's blobs no more stop the restore operation__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-305
+
+4+|*Title:* Improved Restore Operation Feedback
+
+4+|*Description:* Improved restore operation operation log, now restored/unrestored/skipped zimbra and drive items are counted both on undelete and restoreonnewaccount operations
+
+4+|*Notes:* __restore operation logs contain all the expected counters__
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-406
+
+4+|*Title:* Removed case sensitiveness to mobile device list
+
+4+|*Description:* Hostname checks are no longer case sensitive for the list of user mobile devices in the web admin panel, this would prevent admins to edit users settings
+
+4+|*Notes:* __case mismatch between hostname and ldap settings no longer cause the issue__
+|===
+
+=== Docs
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-90
+
+4+|*Title:* Removed incorrect "too many open documents" error
+
+4+|*Description:* There is no longer a warning where more than 50 documents are opened at the same time
+
+4+|*Notes:* __zimbra@mail:~$ zxsuite docs status
+                id                                                          e465363b-6d1b-48a7-bb17-5d542b655991
+                name                                                        346eee7be0b2
+                hostname                                                    346eee7be0b2
+                status                                                      online
+                activeDocuments                                             55
+                activeUsers                                                 66
+                totalAvailableMemory                                        201.19 MB
+                usedMemory                                                  5.94 MB
+                version                                                     4.2.1
+__
+|===
+
+=== Drive
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-776
+
+4+|*Title:* Fixed PDF scrolling bug on Firefox
+
+4+|*Description:* Fixed a bug where opening a PDF file using the Firefox browser the page wouldn't scroll using the keyboard
+
+4+|*Notes:* __PDF files can be scrolled using the keyboard on Firefox__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-821
+
+4+|*Title:* Removed "Save into Drive" option for mail-type attachment
+
+4+|*Description:* The option to save into Drive for mail-type attachment was removed
+
+4+|*Notes:* __Cannot save into Drive .eml attachments__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-828
+
+4+|*Title:* Drive file versioning window improvement
+
+4+|*Description:* Minor graphical improvement regarding the spacing between text and icon in the first line of the drive file versioning window
+
+4+|*Notes:* __spaces have been added to improve readability__
+|===
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-208
+
+4+|*Title:* Mobile invalid address handling improvement
+
+4+|*Description:* Implemented a workaround for mobile devices that do not validate destination accounts that would end up in a loop when sending mails with invalid addresses.
+
+4+|*Notes:* __mail is sent only once and an error mail is returned. One message still shows up in the dumpster__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-217
+
+4+|*Title:* Blank Bcc field stripped from email in mobile devices
+
+4+|*Description:* Fixed a bug that showed a blank Bcc field in mobile devices when the recipient is in Bcc
+
+4+|*Notes:* __some clients hide blank Bcc fields__
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-251
+
+4+|*Title:* Added log line on docheckblobs item deletion
+
+4+|*Description:* Added a log line for the docheckblobs whenever an item is removed by missing_blob_delete_item option
+
+4+|*Notes:* __log behaves as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-252
+
+4+|*Title:* Implemented double compression handling
+
+4+|*Description:* Docheckblobs operations now fix double compressed items if check_incorrect_compressed_digests is set to true
+
+4+|*Notes:* __tested successfully with suggested parameters__
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1119
+
+4+|*Title:* Start a new instant meeting from new conversations
+
+4+|*Description:* Now users can start a new instant meeting from a new conversation without having written a single message first
+
+4+|*Notes:* __Now you can start a new instant meeting without even write a single message__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1317
+
+4+|*Title:* Instant meeting ringing handling improved
+
+4+|*Description:* Improved the handling of rings on instant meeting calls. Now the ringing in web browser stops when user answer the call from a the mobile app
+
+4+|*Notes:* __no more annoying ringing on the web interface__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1436
+
+4+|*Title:* Instant message duplication on connection loss
+
+4+|*Description:* If connections from the server are dropped during a conversation messages gets duplicated as they kept being resend while the connection is down
+
+4+|*Notes:* __messages are not duplicated, it might be necessary to refresh the page__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1581
+
+4+|*Title:* Added move room between hosts feature
+
+4+|*Description:* It is now possible to move groups/spaces/channels between hosts
+
+4+|*Notes:* __new implemented commands appear to work properly__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1622
+
+4+|*Title:* Data are being preserved while creating new instant meetings
+
+4+|*Description:* While creating a new instant meeting, you can now switch tabs without losing the data already inserted.
+
+4+|*Notes:* __you will no longer lost already inserted attendees while checking the other emails to add__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1688
+
+4+|*Title:* Team and Drive hidden in mobile browsers
+
+4+|*Description:* Team and Drive have been hidden from mobile browsers because users can use the relative mobile apps
+
+4+|*Notes:* __mobile apps are preferred for mobile devices__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1689
+
+4+|*Title:* Fixed multiple preview_ready websocket messages
+
+4+|*Description:* A bug that sent multiple "preview_ready" messages via WebSocket while uploading an image in a conversation has been fixed. Now only one message is sent when the preview is ready.
+
+4+|*Notes:* __works as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1735
+
+4+|*Title:* Fixed conversation GUI issue on Firefox
+
+4+|*Description:* Fixed a issue that would present itself on Firefox, where opening a conversation the user interface would brake
+
+4+|*Notes:* __no GUI issues on Firefox with conversations__
+|===
+
+[caption=""]
+//Version 3.1.0 - July 14th, 2020
+_Release Date: July 14th, 2020_
+== Zextras Suite 3.1.0
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-230
+
+4+|*Title:* Itemrestore logs improvements
+
+4+|*Description:* Restore log lines now specify the primary address of the restored item's account
+
+4+|*Notes:* __[Restores item] log lines have been modified as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-248
+
+4+|*Title:* Missing digests reported in backup coherency check
+
+4+|*Description:* Fixed a bug that prevented missing digests to be reported in backup coherency check.
+
+4+|*Notes:* __The missing digests are now correctly reported.__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-262
+
+4+|*Title:* RestoreOnNewAccount domain creation fix
+
+4+|*Description:* Fixed a bug that caused a domain to be undeleted when running a dorestoreonnewaccount operation recovering an account from a deleted domain
+
+4+|*Notes:* __Account is created but no domain is recovered__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-273
+
+4+|*Title:* HSM service mandatory for restore operation
+
+4+|*Description:* RestoreBlob operations now require the hsm module to be running, otherwise an error is returned
+
+4+|*Notes:* __"Request ignored since module hsm is disabled" error is returned__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-284
+
+4+|*Title:* Restore account with deleted COS fixed
+
+4+|*Description:* Fixed a bug that caused the restore on new account to fail when the assigned COS was deleted.
+
+4+|*Notes:* __works as expected__
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-300
+
+4+|*Title:* Made CLI parameters and attribute names case-insensitive
+
+4+|*Description:* Parameters and attribute names are now recognized with any capitalization to improve CLI usability
+
+4+|*Notes:* __the CLI usage experience is strongly improved__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-361
+
+4+|*Title:* No more false unknown logins in admin panel reported
+
+4+|*Description:* Fixed a bug that caused false unknown logins to be reported in the monthly report relative to admins activities.
+
+4+|*Notes:* __now it works as expected, please note that if no information is provided neither via cookies nor via "name" parameter, the name will always be "unknown"__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-371
+
+4+|*Title:* Added admin interface translations
+
+4+|*Description:* Admin interface has been translate into Portuguese, French, German, Italian, Spanish, Dutch,  Japanese, Simplified Chinese, Indonesian, Thai, and Hindi.
+
+4+|*Notes:* __web admin interface appears to have been correctly translated__
+|===
+
+=== Drive
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-338
+
+4+|*Title:* Several minor drive import improvements
+
+4+|*Description:* Logging has been improved for doImportBriefcase operations: user details for each line, exceptions are listed, the number of account is liste, a final report has been added and a missing account is no longer a blocking condition
+
+4+|*Notes:* __logs for doImportBriefcase operations are much more verbose__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-750
+
+4+|*Title:* Fixed drive cyrillic fonts handling on download
+
+4+|*Description:* Fixed an issue that mangled the filename of drive items on download when cyrillic fonts were present
+
+4+|*Notes:* __cyrillic names aren't renamed any longer__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-765
+
+4+|*Title:* Completed translation for Drive's docs menu entries
+
+4+|*Description:* Docs related menu entries under the drive tab have all been translated
+
+4+|*Notes:* __translation of the elements under the drive tab appears to be completed__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-771
+
+4+|*Title:* Made Drive panel similar between classic and modern
+
+4+|*Description:* Done some graphical review of Drive panel to make it very similar between classic and modern GUI.
+
+4+|*Notes:* __the two panels are now very similar__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-783
+
+4+|*Title:* Info button in Drive search views fixed
+
+4+|*Description:* Fixed a bug that prevented the info button to be clickable in search views, these comprehend the default views (starred, shared by me, shared with me and Trash views).
+
+4+|*Notes:* __now you can open the info box from all search views__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-785
+
+4+|*Title:* Versions' Upload and Purge buttons disabled in view only shares
+
+4+|*Description:* Purge and Upload buttons remained enabled in versioning for view only shares. Now this has been fixed.
+
+4+|*Notes:* __now the buttons are correctly disabled in view only shares__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-786
+
+4+|*Title:* Improved versioning description
+
+4+|*Description:* The versioning description is now independent from the retention time and the number of versions to keep.
+
+4+|*Notes:* __the description now is more correct__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-790
+
+4+|*Title:* Removed meaningless drive menu entry
+
+4+|*Description:* The Dirve move menu entry has been removed for "shared with me" items
+
+4+|*Notes:* __Menu entry has been removed__
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-235
+
+4+|*Title:* Check_digests implicit for fix_incorrect_compressed_digests
+
+4+|*Description:* It is no longer necessary to specify check_digests true when fix_incorrect_compressed_digests is also true
+
+4+|*Notes:* __fix_incorrect_compressed_digests no longer requires check_digests__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-241
+
+4+|*Title:* Fixed missing text on web admin interface
+
+4+|*Description:* The command for viewing the current moveblobs operation is now returned when a mailboxmove operation is launched from the web interface
+
+4+|*Notes:* __command string has been restored__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-242
+
+4+|*Title:* Fixed customs3 bucket migration issue
+
+4+|*Description:* Fixed an issue that would not add "storeType CUSTOM_S3" to custom buckets configuration when upgrading to the new bucket management if a custom_s3 bucket and at least one swift or openio volume is present
+
+4+|*Notes:* __upgrade is tested as successful__
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1329
+
+4+|*Title:* Missing Safari notifications fix
+
+4+|*Description:* Fixed on screen notifications that were missing in safari
+
+4+|*Notes:* __notifications now work on safari too__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1389
+
+4+|*Title:* Provide relative path for websocket and v7 API
+
+4+|*Description:* Team login now provides a relative local path for websockets and the version 7 of the API
+
+4+|*Notes:* __works as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1561
+
+4+|*Title:* Graphical improvements for emoji selector
+
+4+|*Description:* Made the emoji selector more harmonious
+
+4+|*Notes:* __the emoji selector is now in line with graphic__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1562
+
+4+|*Title:* Added scrollbars to instant messaging elements
+
+4+|*Description:* Scrollbars are available to view all the elements available in the interface.
+
+4+|*Notes:* __scrollbars are clearly visible__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1579
+
+4+|*Title:* Improved instant message lenght limit management
+
+4+|*Description:* It should not be possible to instert more than 4096 character in an instant message (previously it was possible to do so but it would have been truncated)
+
+4+|*Notes:* __it is now impossible to insert messages longer that the maximus deliverable size__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1580
+
+4+|*Title:* Improved add participants view
+
+4+|*Description:* The avatar icon has been added to the add participants view of the instant meetings
+
+4+|*Notes:* _Improved add participants view_
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1588
+
+4+|*Title:* Improved send message icon
+
+4+|*Description:* The icon used to send instant messages should switch from an airplane to a clip depending if text has been inserted in the textbox
+
+4+|*Notes:* __the send message/attachment icon switches as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1612
+
+4+|*Title:* Added empty message handling
+
+4+|*Description:* It should not possible to send an instant message made only of empty space
+
+4+|*Notes:* __sending of messages made only of spaces is no longer possible__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1614
+
+4+|*Title:* Improved notifications of read messages
+
+4+|*Description:* The notifications of read messages now shows who has read the messages in groups, spaces and instant meetings.
+
+4+|*Notes:* __now you can easily know who read your messages__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1628
+
+4+|*Title:* Improved user details section
+
+4+|*Description:* Improved the user details section of one on one conversations where the user's name was truncated too early
+
+4+|*Notes:* __the username can now span all of the infopanel's length__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1633
+
+4+|*Title:* Completed translations of user's settings
+
+4+|*Description:* The device settings of the user's settings section are now translated
+
+4+|*Notes:* __interface translation now looks complete__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1634
+
+4+|*Title:* Added translation for file description
+
+4+|*Description:* Added translation for the file description when attaching a file to an instant message
+
+4+|*Notes:* __interface translation now looks complete__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1638
+
+4+|*Title:* Removed end meeting notification
+
+4+|*Description:* The end meeting message does no longer trigger a notification
+
+4+|*Notes:* __notification for the meeting end event has been suppressed__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1650
+
+4+|*Title:* Updated translations for new graphics
+
+4+|*Description:* Translations have been extended and now all elements for audio/video meetings are translated
+
+4+|*Notes:* __translation of the last elements has been included__
+|===

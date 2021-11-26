@@ -1,0 +1,263 @@
+[caption='']
+== Zextras Suite 3.1.2
+//Version 3.1.2 - September 10th, 2020
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-233
+
+4+|*Title:* Improved backup feedback on web console
+
+4+|*Description:* A better warning is returned in the web admin console if there are issues with the backup directory (backup damaged, disk full, etc)
+
+4+|*Notes:* __new error forces the admin to verify the root cause__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-307
+
+4+|*Title:* Bug preventing files revisions' metadata to be created in backup fixed
+
+4+|*Description:* Metadata were not properly created in the backup by the Real Time Scanner for Briefcase's files' revisions while they was by the Smart Scan. Now also the Real Time Scanner correctly creates metadata for revisions.
+
+4+|*Notes:* __a correct backup of Briefcase's files' versions is now correctly taken by the Real Time Scanner without wait for the Smart Scan__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-319
+
+4+|*Title:* Backup GetAvailableAccounts count fix
+
+4+|*Description:* Fixed an issue that would cause incorrect list of available accounts from the backup when an account was deleted and then restored with the same name
+
+4+|*Notes:* __accounts with the same name are now handled properly in the backup__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-326
+
+4+|*Title:* Coherency check fixBackup can now handle Drive missing blobs
+
+4+|*Description:* The coherency check with fixBackup flag set to true can now handle Drive's missing blobs.
+
+4+|*Notes:* __the restoration of Drive's missing blobs works as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-329
+
+4+|*Title:* doRestoreOnNewAccount fails when user has zimbraPrefWhenInFolderIds pointing to a shared subfolder
+
+4+|*Description:* Fixed a NullPointer exception error in resolving the foler's account owner since maps are not available during that stage of the operation
+
+4+|*Notes:* __Working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-341
+
+4+|*Title:* Backup exports now filter disabled cos
+
+4+|*Description:* Coses removed from backup will no longer be included in backup exports
+
+4+|*Notes:* __accounts are filtered by cos during export__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-358
+
+4+|*Title:* External restore now restores Drive's shares
+
+4+|*Description:* The external restore operation now restores the Drive's shared resources too. The doFixShares operation can also handle different type of serialized maps to be compatible with mapped id's from Drive.
+
+4+|*Notes:* __you don't need to run the doFixShares operation to restore Drive's shares, but it is compatible with Drive's ids__
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-452
+
+4+|*Title:* Improved server-to-server connection handling
+
+4+|*Description:* Every time the DataStoreServiceAccessor performs an operation a new connection is created and closed. This slows down cluster synchronization by a substantial amount.
+Replace this with a permanent connection which will be initialized and closed with the DataStoreServiceAccessor lifecycle.
+
+4+|*Notes:* __Tested in dogfood environment__
+|===
+
+=== Docs
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-96
+
+4+|*Title:* Docs memory check fix
+
+4+|*Description:* Fixed an issue that caused incorrect output values for totalAvailableMemory and usedMemory of the command zxsuite docs status
+
+4+|*Notes:* __totalAvailableMemory and usedMemory value appear to be correct__
+|===
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-207
+
+4+|*Title:* Added a parameter to configure Outlook EAS filter
+
+4+|*Description:* Now the default Outlook EAS filter could be modified with ZxMobile_MaxOutlookVersion parameter to customize the EAS version used by Outlook clients.
+
+4+|*Notes:* _Outlook clients can now be synchronized with any EAS version._
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-215
+
+4+|*Title:* "No such folder id: 0" error on search
+
+4+|*Description:* A bug caused mobile searches to return an error when searching for a string that returns no result.
+
+4+|*Notes:* __Working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-216
+
+4+|*Title:* Reactions to invites from mobile devices fixed
+
+4+|*Description:* Fixed a bug that prevented the reactions sent from mobile devices to be displayed in the details of the appointment.
+
+4+|*Notes:* __the bug has been fixed__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-222
+
+4+|*Title:* Samsung EAS16 sync loop workaround
+
+4+|*Description:* Samsung devices could enter a loop when using EAS16 if an invalid email address is saved in a draft.
+
+4+|*Notes:* __Working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-223
+
+4+|*Title:* Recurring appointments' attachments bugfixes
+
+4+|*Description:* Fixed three bugs that prevented the attachments to be properly synchronized in recurring appointments on an invite.
+
+4+|*Notes:* __attachments correctly synchonized__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-224
+
+4+|*Title:* Completed tasks sync bug fixed
+
+4+|*Description:* Fixed a bug that prevented the completed tasks to be correctly synchronized via EAS.
+
+4+|*Notes:* __now completed tasks are correctly synchronized__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-252
+
+4+|*Title:* Fixed a bug that could cause all appontiment attendees to receive a "Appointment Deleted" notification when one attendee declined the invite from a mobile device.
+
+4+|*Description:* Fixed a bug that could cause all appontiment attendees to receive a "Declined" notification when one attendee declined the invite from a mobile device.
+
+4+|*Notes:* __Working as intended__
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-244
+
+4+|*Title:* Improved doVolumeToVolumeMove reliability when orphaned mailboxes are present
+
+4+|*Description:* The doVolumeToVolumeMove operation often failed when the server had orphaned mailboxes. Issues regarding orphaned/missing mailboxes are now properly handled and logged.
+
+4+|*Notes:* __Working as Intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-248
+
+4+|*Title:* Misleading reports removed from doVolumeToVolumeMove operation
+
+4+|*Description:* When running a doVolumeToVolumeMove operation, the count of source blobs' deletions can show misleading numbers in lazy deleting file systems, so the confirmation has been removed.
+
+4+|*Notes:* __now the source blobs' deletions count are correct__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-250
+
+4+|*Title:* Added incorrectly compressed digest handling
+
+4+|*Description:* Docheckblobs operations with fix_incorrect_compresset digests flag set to true now verify if the digest is calculated on the compressed blob even if the blob is not and fixes it.a
+
+4+|*Notes:* __digests are fixed__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-259
+
+4+|*Title:* Moving a mailbox with empty Drive document fixed
+
+4+|*Description:* Solved a bug that prevented a mailbox containing an empty Drive document to be properly moved to another mailboxd.
+
+4+|*Notes:* __the mailbox can actually be moved even when containing empty Drive docs__
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1755
+
+4+|*Title:* WebSocket stability improvement
+
+4+|*Description:* In order to improve stabilty on slow connections, a delay has been added between the disconnect of a client and the closing of the related WebSocket
+
+4+|*Notes:* __Tested on dogfood environment__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1756
+
+4+|*Title:* UX Improvements when connection issues are experienced
+
+4+|*Description:* Sometimes, in case of connection issues, the same message is displayed multiple times in the chat. When the client is refreshed, the additional copies disappear.
+
+4+|*Notes:* __Working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1768
+
+4+|*Title:* Chat sidebar graphical fix
+
+4+|*Description:* Fixed a bug that caused the Zimbra components in the top bar to shift upward when the icons in the chat sidebar exceedes the height of the screen.
+
+4+|*Notes:* __works as intended__
+|===

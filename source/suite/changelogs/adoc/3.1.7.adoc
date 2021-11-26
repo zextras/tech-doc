@@ -1,0 +1,242 @@
+[caption='']
+== Zextras Suite 3.1.7
+//Version 3.1.7 - January 25th 2021
+
+=== Auth
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-131
+
+4+|*Title:* "Password Label" arrow keys navigation
+
+4+|*Description:* Fixed a bug that caused the arrow keys not to work in the "Password Label" field when creating a new Auth password.
+
+4+|*Notes:* __working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-184
+
+4+|*Title:* Domain configuration warning disable option
+
+4+|*Description:* It is now possible to disable the domain warning if zimbraPubliService values have not been set.
+
+4+|*Notes:* __the setting successfully disables notifications for missing configuration__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-185
+
+4+|*Title:* Account credential creation update
+
+4+|*Description:* It is now possible to create a user credential even if the zimbraPublicServiceHostname is not set if qrcode is set to false
+
+4+|*Notes:* __system no longer verifies publicservicehostname value if qrcode is set to false__
+|===
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-414
+
+4+|*Title:* DoRestoreOnNewAccount feedback improvement
+
+4+|*Description:* Improved the output of doRestoreOnNewAccount operations, now if a non exixting source account is specified a correct output is returned
+
+4+|*Notes:* __error handling has been improved__
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-568
+
+4+|*Title:* i18n Updates (Core)
+
+4+|*Description:* i18n updates on Core modules
+
+4+|*Notes:* _N/A_
+|===
+
+=== Docs
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-80
+
+4+|*Title:* Open in a new browser tab docs documents
+
+4+|*Description:* Docs documents are now opened in a new browser tab for improved usability
+
+4+|*Notes:* __application behaves as expected__
+|===
+
+=== Drive
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DRIV-1008
+
+4+|*Title:* i18n Updates (Drive)
+
+4+|*Description:* i18n updates on Drive
+
+4+|*Notes:* _N/A_
+|===
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-295
+
+4+|*Title:* Workaround to fix synchronization of recurring appointment created by Outlook for Mac
+
+4+|*Description:* Added a workaround to fix a an Outlook for Mac bug that causes recurring appointments to be created with bad recurrence metadata and thus not to sync to mobile devices via EAS.
+
+4+|*Notes:* __working as intended__
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-278
+
+4+|*Title:* Volume removal performance improvement
+
+4+|*Description:* Improved the volume removal check so that when a volume is removed the sistem will check only once if there is data on that volume
+
+4+|*Notes:* __check is no longer executed twice__
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1897
+
+4+|*Title:* TEAM infopanel improvement
+
+4+|*Description:* Team infopanel layout has been refactored to improve usability
+
+4+|*Notes:* __working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-1999
+
+4+|*Title:* Team UI Refactoring
+
+4+|*Description:* Refactored several UI components to be more streamlined and usable
+
+4+|*Notes:* __working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2066
+
+4+|*Title:* Images in replies improvement
+
+4+|*Description:* Improved the arragment of images when replying to 1:1 conversation or group messages, now the list is no longer reversed
+
+4+|*Notes:* __Images are shown in the correct order__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2067
+
+4+|*Title:* Zimlet version copy added
+
+4+|*Description:* When using instant messaging functions it is now possible to copy the zimlet version just by clicking it.
+
+4+|*Notes:* __Zimlet version is copied correctly__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2158
+
+4+|*Title:* Space addowner fix
+
+4+|*Description:* Fixed an issue that would prevent the administrator to add space owners.
+
+4+|*Notes:* __command now behaves as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2172
+
+4+|*Title:* Placeholder page on instant meetings loaded on mobile browser
+
+4+|*Description:* Instant meetings opened from received link on a mobile device caused the browser and endless load a web page. This was confusing for users and an UX/UI improvement was necessary.
+
+4+|*Notes:* __working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2197
+
+4+|*Title:* Message edit interface improvement
+
+4+|*Description:* Improved the edit function for messages in TEAM that increases the editing section.
+
+4+|*Notes:* __function is now much easier to use__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2233
+
+4+|*Title:* Microphone/Webcam modal pop-up bugfix
+
+4+|*Description:* Fixed a bug that could cause the initial "Microphone/Webcam" modal to remain open when joining an Instant Meeting as an external guest.
+
+4+|*Notes:* __working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2245
+
+4+|*Title:* Fixed a logic loophole that allowed to forward forwarded messages
+
+4+|*Description:* It is no longer possible to forward forwarded messages in groups/spaces/channels and 1:1 conversations
+
+4+|*Notes:* __forward option disabled where necessary__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2249
+
+4+|*Title:* Forwarded message original sender improvement
+
+4+|*Description:* Messages forwarded in conversations/groups/spaces/channels now show who wrote the message even if the sender is not a contact.
+
+4+|*Notes:* __user details are shown as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2259
+
+4+|*Title:* i18n Updates (Team)
+
+4+|*Description:* i18n updates for Team
+
+4+|*Notes:* _N/A_
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2263
+
+4+|*Title:* Quick access sidebar has been removed
+
+4+|*Description:* The Quick Access sidebar in the "Mail" view, which showed the most recent conversations and allowed to start chats, has been removed.
+
+4+|*Notes:* __working as intended__
+|===

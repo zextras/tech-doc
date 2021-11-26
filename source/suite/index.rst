@@ -8,6 +8,7 @@ Here you can find a description of its functionalities and configuration options
 
 .. toctree::
    :maxdepth: 2
+   :includehidden:
 
    general
    installation
@@ -25,3 +26,4 @@ Here you can find a description of its functionalities and configuration options
    team
    cli
    glossary
+   Changelogs <changelog>

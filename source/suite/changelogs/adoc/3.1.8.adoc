@@ -1,0 +1,255 @@
+
+[caption = ""]
+
+== Zextras Suite 3.1.8 
+//Version 3.1.8 - February 22nd, 2021
+
+=== Auth
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: AUTH-196
+
+4+|*Title:* Improved logging
+
+4+|*Description:* Added more information to the log when an invalid credential is used
+
+4+|*Notes:* __Working as intended__
+|===
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-291
+
+4+|*Title:* Missing Blob logging improvement
+
+4+|*Description:* Missing Blob log lines have been made more specific
+
+4+|*Notes:* __Working as Intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-364
+
+4+|*Title:* Coherency Check logic improvement
+
+4+|*Description:* Anomaly and error management logic in the Coherency Check has been improved.
+
+4+|*Notes:* __Logic Change__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-431
+
+4+|*Title:* `doStopAllOperation` realtime scanner queue bugfix
+
+4+|*Description:* Due to a bug, pending RealTime Scanner operations were not properly cleared out from the operation queue by the `doStopAllOperations` command.
+
+4+|*Notes:* __Working as Intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: BCK-433
+
+4+|*Title:* Added backup of all ldap master host
+
+4+|*Description:* Fixed an issue with the command zxsuite core getnotification when a host was specified with --host
+
+4+|*Notes:* __ldap dump is repeated for all listed master hosts__
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: COR-402
+
+4+|*Title:* Remote getnotification fix
+
+4+|*Description:* Fixed an issue with the command zxsuite core getnotification when a host was specified with --host
+
+4+|*Notes:* __getnotification can now be used successfully in conjunction with --host__
+|===
+
+=== Docs
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-95
+
+4+|*Title:* Docs Sidebar View bugfix
+
+4+|*Description:* Due to some missing icons, the sidebar in Docs appeared broken.
+
+4+|*Notes:* __Working as intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-117
+
+4+|*Title:* Docs logging improvement
+
+4+|*Description:* Docs logging has been made more verbose, now save operations are logged in /opt/zimbra/log/docs-server.log
+
+4+|*Notes:* __save operations are logged as expected__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-118
+
+4+|*Title:* Docs idle/standby removal
+
+4+|*Description:* Docs no longer sets itself in idle/standby remaining ready to accept user interaction
+
+4+|*Notes:* __standby feature disabled__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: DOCS-125
+
+4+|*Title:* Docs document limit bugfix
+
+4+|*Description:* Fixed a bug that caused a 50 concurrent documents limit on the server's side
+
+4+|*Notes:* __Working as intended__
+|===
+
+
+=== Mobile
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-288
+
+4+|*Title:* Added regex filtering to ABQ
+
+4+|*Description:* It is now possible to filter devices via RegEx through a dedicated ABQ command set.
+
+4+|*Notes:* __Working as Intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: MOB-301
+
+4+|*Title:* Eas 2.5 and Samsung allday calendar item fix
+
+4+|*Description:* Fixed an issue that would cause allday calendar events created or accepted on mobile to be moved to the day before if the device is Samsung or using an older eas version
+
+4+|*Notes:* __issue no longer present itself__
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-276
+
+4+|*Title:* Powerstore cache improvements
+
+4+|*Description:* After a mailboxd failure or restard under heavy load, several partial blobs were left over in the cache.
+
+4+|*Notes:* __Working as Intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-277
+
+4+|*Title:* 'doMailboxMove` can now move mailboxless accounts
+
+4+|*Description:* The `doMailboxMove` is now capable to move accounts that lack a mailbox.
+
+4+|*Notes:* __Working as Intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: PS-284
+
+4+|*Title:* Mailbox Move concurrency issue fixed
+
+4+|*Description:* Fixed a bug that caused mailbox moves to hang due to drive indexing being running on the same mailbox.
+
+4+|*Notes:* __Working as Intended__
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2265
+
+4+|*Title:* doDeployTeamZimlet error line fix
+
+4+|*Description:* Fixed the error output appearing when the doDeployTeamZimlet fails, previously it was incorrectly refering to Drive
+
+4+|*Notes:* __error description is now correct__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2297
+
+4+|*Title:* Multiple VideoServers can now be used
+
+4+|*Description:* The hard limit on one VideoServer per infrastructure has been lifted. It is now possible to set up multiple VideoServer instances on the same infrastructure
+
+4+|*Notes:* __Working as Intended__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2310
+
+4+|*Title:* Messages longer than 4096 handling
+
+4+|*Description:* instant messages longer than 4096 characters are now truncated and no longer stay in queue
+
+4+|*Notes:* __message is truncated__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2312
+
+4+|*Title:* Added # character to channels
+
+4+|*Description:* Channel names now have the character # in front of their name
+
+4+|*Notes:* __feature implemented correctly__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2366
+
+4+|*Title:* Edit message behavior improvement
+
+4+|*Description:* Edited messages, either in 1:1 conversations, groups, spaces or channels, are not resend if the content has not been changed
+
+4+|*Notes:* __behavior compatible with new specifications__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2405
+
+4+|*Title:* Instant messaging interface font
+
+4+|*Description:* Fonts now honor the small-normal-large-verylarge value of the display font size option for the instant messaging features
+
+4+|*Notes:* __Font size option is now honored__
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|Issue ID: TEAMS-2447
+
+4+|*Title:* VideoServer installer improvements
+
+4+|*Description:* The VideoServer installer has been updated in order to avoid some corner cases that could cause the installation to fail.
+
+4+|*Notes:* __Working as Intended__
+|===

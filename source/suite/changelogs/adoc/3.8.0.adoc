@@ -1,0 +1,77 @@
+== Solved Issues
+
+=== Auth
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* AUTH-252
+
+4+|*Title:* Double click support for zimlets
+
+4+|*Description:* Added support for double-click to the zimlets in the webmail.
+
+|===
+
+=== Backup
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-641
+
+4+|*Title:* False-positive errors in coherency check operation fixed
+
+4+|*Description:* Fixed a bug that caused false-positive errors to be reported during the doCoherencyCheck operations if any tags/flags were present.
+
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* BCK-643
+
+4+|*Title:* doSmartScan help usage example fixed
+
+4+|*Description:* Added the `start` parameter to doSmartScan example in the command help which was missing.
+
+|===
+
+=== Drive
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* DRIV-1366
+
+4+|*Title:* Permit renaming of files without extension parameter
+
+4+|*Description:* In Drive, you can now rename files even if their extension is missing.
+
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* DRIV-1510
+
+4+|*Title:* Add app version and powered by Zextras section
+
+4+|*Description:* A section reporting the app version is now present in the Drive tab at its bottom left corner.
+Clicking on it will copy the current Drive version to the clipboard.
+
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* PS-349
+
+4+|*Title:* Improve the creation of JSON file under account_info during MailboxMove
+
+4+|*Description:* Under a few specific scenarios during the MailboxMove procedure, the `account_info` file was corrupted, making the JSON file invalid. This has now been fixed.
+
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* PS-356
+
+4+|*Title:* Improvements to commands usage examples
+
+4+|*Description:* Updated the usage examples to reflect the current parameters for the following commands: `doCreateBucket`, `doDeleteAllDelegatedRights`, `doDeleteBucket`, `doRestartService`, `doStartService`, `doStopService`, `doUpdateBucket` and `doUploadLicense`.
+
+|===
+

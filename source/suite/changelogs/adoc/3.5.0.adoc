@@ -1,0 +1,172 @@
+[caption = ""]
+
+= Zextras Suite Changelog - Release 3.5.0
+
+Release Date September 6th, 2021
+
+== Solved Issues
+
+=== Auth
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* AUTH-291
+
+4+|*Title:* Improve logs for failed OTP attempt
+
+4+|*Description:* The audit logs now display the account name for failed OTP attempts.
+|===
+
+=== General
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* COR-595
+
+4+|*Title:* Text selection now possible in admin panels
+
+4+|*Description:* In Zextras suite (not Zimbra Network Edition or Zimbra Suite Plus) users can now select and copy text in admin panel's web interface.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* COR-628
+
+4+|*Title:* `getNotification` command -- support for `json`
+
+4+|*Description:* For enhanced monitoring and increased automation, `getNotification` command now supports `json` format output.
+|===
+
+=== Powerstore
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* PS-338
+
+4+|*Title:* Improved store purge operation
+
+4+|*Description:* Zimbra mail and drive items are now properly purged in case of centralized volumes.
+|===
+
+=== Team
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2816
+
+4+|*Title:* Enhanced input textbox for creating one to one chats
+
+4+|*Description:* When users searched for a contact to add in the one to one chat textbox, they couldn't see the text they typed; this issue is now fixed.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2966
+
+4+|*Title:* Changed "Mute for All" to "Mute"
+
+4+|*Description:* Changed the meeting action from "Mute for All" to "Mute"
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2971
+
+4+|*Title:* Fixed appearance of bubble notifications of conversations in Safari
+
+4+|*Description:* Notifications appeared truncated for Safari users. This issue is now fixed and text in notifications appear correctly.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2981
+
+4+|*Title:* Fixed the string video-server as it appeared on the command's description.
+
+4+|*Description:* Fixed an inconsistency in `video-server`'s command description which appeared When users checked help for "zxsuite team video-server add" or "zxsuite team video-server remove", the description carried different spellings for "video-server".
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2982
+
+4+|*Title:* Fixed minichat trigger on receiving a system message.
+
+4+|*Description:* Minichats no longer open for following system messages:
+- Meeting started
+- Meeting ended
+- Someone joins the conversation
+- Someone leaves the conversation
+- Someone has changed the topic, title, or avatar of conversation
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2983
+
+4+|*Title:* Mini chats no longer available after user removal
+
+4+|*Description:* Mini chats automatically close after a user is no longer a part of the conversation. Earlier even when users were not a part of a conversation, the chat box remained enabled.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2991
+
+4+|*Title:* Fixed selection of appropriate Zimlet
+
+4+|*Description:* If a meeting is opened with dedicated mode and the user is authenticated then the Zimlet must be equal to the one opened by Zextras.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-2997
+
+4+|*Title:* Fixed `UsersCleanup` command
+
+4+|*Description:* Fixed `UsersCleanup` command to remove deleted users' data from participants list of all conversations
+
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-3013
+
+4+|*Title:* Remove secondary bar on external meeting
+
+4+|*Description:*  Removed secondary bar on external meeting and updated year in the external access login page
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-3022
+
+4+|*Title:* Hide Emoji panel on dropping file
+
+4+|*Description:* Fixed an unexpected behaviour that prevented the emoji panel to close when it is opened and a file is dropped in a conversation with the purpose of sending it
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-3027
+
+4+|*Title:* Remove new meeting notification on meeting external tab
+
+4+|*Description:* Notifications of new meetings have been removed on participating in a meeting from an external tab.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-3031
+
+4+|*Title:* Minichat configuration now differentiates the conversations to show
+
+4+|*Description:* Users can now decide whether to show mini chats based on the chat as the configuration differentiates between one to one chats, groups, and spaces.
+|===
+
+[cols="4*a", options="footer"]
+|===
+4+|*Issue ID:* TEAMS-3035
+
+4+|*Title:* Meetings on external tab require login if domain is different from user's one
+
+4+|*Description:* Meetings on external tab require login if the domain is different from the user's one because login data are saved on local storage
+
+4+|*Notes:* _Works as expected_
+|===

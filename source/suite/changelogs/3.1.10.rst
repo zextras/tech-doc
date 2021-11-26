@@ -1,0 +1,303 @@
+
+Zextras Suite 3.1.10
+====================
+
+Release Date: April 19th, 2021
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-189
+
+* *Title:* Login page Zimbra parameters
+
+* *Description:* Login page now support standard Zimbra parameters
+
+
+.. note:: Known issue: To use both domain and customerDomain you have
+   to specify the parameter twice. Eg:
+   `https://infra-576dd838.testarea.zextras.com/zx/login/page/?domain=example.com&customerDomain=example.com`
+
+..
+
+* *Issue ID:* AUTH-201
+
+* *Title:* Login page issue on changing color palette fixed
+
+* *Description:* Fixed an issue that made the Login button disappear on changing color palette in the login page.
+
+..
+
+* *Issue ID:* AUTH-209
+
+* *Title:* Auth zimlet minor graphical refactoring
+
+* *Description:* Some useless labels have been removed from the Auth zimlet
+
+
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-422
+
+* *Title:* External restore operation now considers already existent folders
+
+* *Description:* During an external restore operation, if a folder with the same path and name is already present in the account, it will be used instead of creating a new one with the same name.
+
+..
+
+* *Issue ID:* BCK-485
+
+* *Title:* External restore operation now considers already existent mount points
+
+* *Description:* During an external restore operation, if a mount point with the same path has already been created by a filter in the account, it will be used instead of creating a new one.
+
+..
+
+* *Issue ID:* BCK-491
+
+* *Title:* Backup on S3 storage class improvement
+
+* *Description:* Items' storage classes in the S3 store reflect the current storage class settings for the backup.
+
+..
+
+* *Issue ID:* BCK-515
+
+* *Title:* Purge operation during backup migration fixed
+
+* *Description:* During a backup migration operation, if a purge operation occurs it will be queued and will wait for the first operation to finish. The same happens if a purge operation is running and a migration operation attempts to start. This avoids the migration operation from failing.
+
+..
+
+* *Issue ID:* BCK-517
+
+* *Title:* Account scan information improved
+
+* *Description:* Now account id and mailbox id are reported in account scan notifications
+
+..
+
+* *Issue ID:* BCK-524
+
+* *Title:* Backup migration to third party store improved
+
+* *Description:* Now the backup migration to a third party store also copies the metadata, the server's configuration and the map files.
+
+The progress will display the number of archives, server configurations and maps uploaded.
+If the server's logs are set to debug level, a line for every file uploaded will be reported.
+The final notification will not propose to run a smart scan with deep and remote_metadata_upload flags anymore.
+
+
+
+.. rubric:: General
+
+* *Issue ID:* COR-489
+
+* *Title:* Notifications: date column sortable
+
+* *Description:* Date column must be sortable and must show the full time field
+
+
+..
+
+* *Issue ID:* COR-492
+
+* *Title:* Detail panel disappear on notification list
+
+* *Description:* There's no scroll bar, and scrolling on the last element of the list makes the detail panel disappear
+
+..
+
+* *Issue ID:* COR-508
+
+* *Title:* Auth deploy from Core
+
+* *Description:* Auth Zimlet cannot be deployed from the Core panel
+
+..
+
+* *Issue ID:* COR-598
+
+* *Title:* Added a new command to dump configuration
+
+* *Description:* It is now possible to dump configuration attributes, both inherited or not
+
+
+.. rubric:: Drive
+
+* *Issue ID:* DRIV-385
+
+* *Title:* Content-Type header in Drive responses fixed
+
+* *Description:* Fixed a bug that prevented the Content-Type header to be inserted in requests. This caused Docs' documents not to be showed in some browsers if "X-Content-Type-Options nosniff" header was set.
+
+..
+
+* *Issue ID:* DRIV-1031
+
+* *Title:* Fixed logo size issue with Drive email notifications in Outlook
+
+* *Description:* Creating, modifying or revoking Drive shares generates a mail notification that contains the Drive logo. The image size has been fixed to be shown correctly also in Outlook.
+
+..
+
+* *Issue ID:* DRIV-1146
+
+* *Title:* Drive database queries speed up improvements
+
+* *Description:* The Drive database and queries have been optimized to speed up the opening of files.
+
+The current version has been added to the node table to avoid calculating the maximum version of each node during the fetch of the related node and revision information.
+The database has been updated to version 10.
+
+
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-38
+
+* *Title:* Activate ABQ by global/cos/account
+
+* *Description:* the ABQ can be set at COS and account level too.
+
+..
+
+* *Issue ID:* MOB-305
+
+* *Title:* All weekdays recurrence in appointments synchronization fixed
+
+* *Description:* Fixed a bug that prevented appointments recurring all the weekdays to be properly synchronized.
+
+..
+
+* *Issue ID:* MOB-307
+
+* *Title:* EAS  Organizer of shared calendar
+
+* *Description:* Creating appointments on someone else's calendar via EAS causes the appointment to be wrongly seen as an invite accepted as tentative by the calendar's owner.
+
+..
+
+* *Issue ID:* MOB-340
+
+* *Title:* EAS Contacts' birthday synchronization
+
+* *Description:* This covers a bug where ZxMobile will shift birthday time according to the server's timezone, so birthdays will be showed a day before the correct data for GMT+x timezone
+
+
+
+.. rubric:: Subscription Management
+
+* *Issue ID:* SM-7
+
+* *Title:* Empty license warning notification
+
+* *Description:* When the number of created users exceeds the number of licensed a warning was sent without the necessary information
+
+
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-1837
+
+* *Title:* Team desktop notification fixed
+
+* *Description:* Fixed a bug that prevent zimbra tab to open when clicking on team desktop notification (chrome only)
+
+..
+
+* *Issue ID:* TEAMS-2472
+
+* *Title:* Leave group as last participant fix
+
+* *Description:* Fixed a bug that show and endless load page with Team logo when leaving a group type conversation as last partecipant
+
+..
+
+* *Issue ID:* TEAMS-2483
+
+* *Title:* Clear history button added
+
+* *Description:* Added clear history button in one to one conversations, groups, spaces.
+
+..
+
+* *Issue ID:* TEAMS-2500
+
+* *Title:* "who is writing" notifications
+
+* *Description:* This fixes a bug where the "...is writing" message was shown even when the chat user had finished writing
+
+..
+
+* *Issue ID:* TEAMS-2517
+
+* *Title:* Video Server issue related to IPv6 fixed
+
+* *Description:* Fixed a bug that prevented the Video Server service to properly bind on the 8188 port if the IPv6 interface is disabled
+
+..
+
+* *Issue ID:* TEAMS-2524
+
+* *Title:* Added a new config attribute for user presence
+
+* *Description:* Now, sysadmins can set a config attribute to allow or block the sending or receiving information of user presence ("online"/"offline" status, "is writing" status and "is writing" )
+
+..
+
+* *Issue ID:* TEAMS-2526
+
+* *Title:* Added a new config attribute for message reads(ACKs)
+
+* *Description:* Now, sysadmins can set a config attribute to allow or block receiving information of message reads
+
+..
+
+* *Issue ID:* TEAMS-2573
+
+* *Title:* Start/end meeting date
+
+* *Description:* A timestamp has been added to team meeting service notifications.
+
+..
+
+* *Issue ID:* TEAMS-2574
+
+* *Title:* Free signal on meetings
+
+* *Description:* Added a Free signal while user is waiting other participants to join on meetings
+
+..
+
+* *Issue ID:* TEAMS-2630
+
+* *Title:* Fixed a bug that mutes the client when the video will be disabled by user
+
+* *Description:* Fixed a problem that mutes the audio while user disable the video
+
+..
+
+* *Issue ID:* TEAMS-2726
+
+* *Title:* Team connection bug fixed
+
+* *Description:* Fixed a bug that caused Team connection to be dropped on downloading all the attachments from an email.
+
+..
+
+* *Issue ID:* TEAMS-2743
+
+* *Title:* Instant meeting bug fixed
+
+* *Description:* Fixed rendering bug that prevented the instant meetings to start correctly.
+
+..
+
+* *Issue ID:* TEAMS-2767
+
+* *Title:* Team conversations rendering fix
+
+* *Description:* Fixed rendering bug that prevent to see others participants names inside conversation title
+
+
