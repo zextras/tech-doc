@@ -1,22 +1,18 @@
-.. _auth_credential_update:
 
-update
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth credential update *john@example.com* *f51as* [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | j               |                 |
-| *account**\ (M) |                 | ohn@example.com |                 |
+| **acc\          | String          | john@\          |                 |
+| ount**\ (M)     |                 | example.com     |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| **pas           | String          | f51as           |                 |
+| **pas\          | String          | f51as           |                 |
 | sword_id**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | label(O)        | String          | myLabel         |                 |
@@ -26,7 +22,7 @@ PARAMETER LIST
 | service(O)      | String[,..]     |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite auth update john@example.com f51as label myLabel enabled false
 service WebUI

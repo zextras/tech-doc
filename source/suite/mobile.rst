@@ -1306,61 +1306,59 @@ standard (ERE with doubled backslashes).
 Zextras Mobile CLI
 ==================
 
-This section contains the index of all ``zxsuite mobile`` commands. Full
-reference can be found in `the dedicated
-section <./cli.xml#_zxmobile_cli_commands>`_.
 
-`ABQ allow <./cli.xml#mobile_ABQ_allow>`_ \| `ABQ
-block <./cli.xml#mobile_ABQ_block>`_ \| `ABQ
-delete <./cli.xml#mobile_ABQ_delete>`_ \| `ABQ
-deleteRule <./cli.xml#mobile_ABQ_deleteRule>`_ \| `ABQ
-import <./cli.xml#mobile_ABQ_import>`_ \| `ABQ
-list <./cli.xml#mobile_ABQ_list>`_ \| `ABQ
-listRules <./cli.xml#mobile_ABQ_listRules>`_ \| `ABQ
-set <./cli.xml#mobile_ABQ_set>`_ \| `ABQ
-setNotificationInterval <./cli.xml#mobile_ABQ_setNotificationInterval>`_
-\| `ABQ setRule <./cli.xml#mobile_ABQ_setRule>`_ \| `addressBook add
-domain <./cli.xml#mobile_addressBook_add_domain>`_ \| `addressBook add
-global <./cli.xml#mobile_addressBook_add_global>`_ \| `addressBook list
-domain <./cli.xml#mobile_addressBook_list_domain>`_ \| `addressBook
-list global <./cli.xml#mobile_addressBook_list_global>`_ \|
-`addressBook remove
-domain <./cli.xml#mobile_addressBook_remove_domain>`_ \| `addressBook
-remove global <./cli.xml#mobile_addressBook_remove_global>`_ \|
-`deleteABQMessage domain <./cli.xml#mobile_deleteABQMessage_domain>`_
-\| `deleteABQMessage
-global <./cli.xml#mobile_deleteABQMessage_global>`_ \|
-`doAddAccountLogger <./cli.xml#mobile_doAddAccountLogger>`_ \|
-`doAddEASFilter <./cli.xml#mobile_doAddEASFilter>`_ \|
-`doDeleteEASFilter <./cli.xml#mobile_doDeleteEASFilter>`_ \|
-`doMoveEASFilter <./cli.xml#mobile_doMoveEASFilter>`_ \|
-`doRemoveDevice <./cli.xml#mobile_doRemoveDevice>`_ \|
-`doRemoveLogger <./cli.xml#mobile_doRemoveLogger>`_ \|
-`doResetAccount <./cli.xml#mobile_doResetAccount>`_ \|
-`doResetDevice <./cli.xml#mobile_doResetDevice>`_ \|
-`doRestartService <./cli.xml#mobile_doRestartService>`_ \|
-`doResumeDeviceSync <./cli.xml#mobile_doResumeDeviceSync>`_ \|
-`doSimulateSync <./cli.xml#mobile_doSimulateSync>`_ \|
-`doStartService <./cli.xml#mobile_doStartService>`_ \|
-`doStopService <./cli.xml#mobile_doStopService>`_ \|
-`doSuspendDeviceSync <./cli.xml#mobile_doSuspendDeviceSync>`_ \|
-`doWipeDevice <./cli.xml#mobile_doWipeDevice>`_ \| `duplicateABQMessage
-domain <./cli.xml#mobile_duplicateABQMessage_domain>`_ \|
-`duplicateABQMessage
-global <./cli.xml#mobile_duplicateABQMessage_global>`_ \|
-`getABQMessage domain <./cli.xml#mobile_getABQMessage_domain>`_ \|
-`getABQMessage global <./cli.xml#mobile_getABQMessage_global>`_ \|
-`getAccountLoggers <./cli.xml#mobile_getAccountLoggers>`_ \|
-`getAllDevices <./cli.xml#mobile_getAllDevices>`_ \|
-`getAllEASFilters <./cli.xml#mobile_getAllEASFilters>`_ \|
-`getDeviceInfo <./cli.xml#mobile_getDeviceInfo>`_ \|
-`getDeviceList <./cli.xml#mobile_getDeviceList>`_ \|
-`getProperty <./cli.xml#mobile_getProperty>`_ \|
-`getProvisioning <./cli.xml#mobile_getProvisioning>`_ \|
-`getServices <./cli.xml#mobile_getServices>`_ \|
-`initABQMessage <./cli.xml#mobile_initABQMessage>`_ \| `setABQMessage
-domain <./cli.xml#mobile_setABQMessage_domain>`_ \| `setABQMessage
-global <./cli.xml#mobile_setABQMessage_global>`_ \|
-`setProperty <./cli.xml#mobile_setProperty>`_ \|
-`setProvisioning <./cli.xml#mobile_setProvisioning>`_ \|
-`setSharedFolderSync <./cli.xml#mobile_setSharedFolderSync>`_
+This section contains the index of all ``zxsuite mobile``
+commands. Full reference can be found in the dedicated section
+:ref:`zextras_mobile_full_cli`.
+
+:ref:`ABQ allow <zxsuite_mobile_ABQ_allow>`
+:octicon:`dash` :ref:`ABQ block <zxsuite_mobile_ABQ_block>`
+:octicon:`dash` :ref:`ABQ delete <zxsuite_mobile_ABQ_delete>`
+:octicon:`dash` :ref:`ABQ deleteRule <zxsuite_mobile_ABQ_deleteRule>`
+:octicon:`dash` :ref:`ABQ import <zxsuite_mobile_ABQ_import>`
+:octicon:`dash` :ref:`ABQ list <zxsuite_mobile_ABQ_list>`
+:octicon:`dash` :ref:`ABQ listRules <zxsuite_mobile_ABQ_listRules>`
+:octicon:`dash` :ref:`ABQ set <zxsuite_mobile_ABQ_set>`
+:octicon:`dash` :ref:`ABQ setNotificationInterval <zxsuite_mobile_ABQ_setNotificationInterval>`
+:octicon:`dash` :ref:`ABQ setRule <zxsuite_mobile_ABQ_setRule>`
+:octicon:`dash` :ref:`addressBook add domain <zxsuite_mobile_addressBook_add_domain>`
+:octicon:`dash` :ref:`addressBook add global <zxsuite_mobile_addressBook_add_global>`
+:octicon:`dash` :ref:`addressBook list domain <zxsuite_mobile_addressBook_list_domain>`
+:octicon:`dash` :ref:`addressBook list global <zxsuite_mobile_addressBook_list_global>`
+:octicon:`dash` :ref:`addressBook remove domain <zxsuite_mobile_addressBook_remove_domain>`
+:octicon:`dash` :ref:`addressBook remove global <zxsuite_mobile_addressBook_remove_global>`
+:octicon:`dash` :ref:`deleteABQMessage domain <zxsuite_mobile_deleteABQMessage_domain>`
+:octicon:`dash` :ref:`deleteABQMessage global <zxsuite_mobile_deleteABQMessage_global>`
+:octicon:`dash` :ref:`doAddAccountLogger <zxsuite_mobile_doAddAccountLogger>`
+:octicon:`dash` :ref:`doAddEASFilter <zxsuite_mobile_doAddEASFilter>`
+:octicon:`dash` :ref:`doDeleteEASFilter <zxsuite_mobile_doDeleteEASFilter>`
+:octicon:`dash` :ref:`doMoveEASFilter <zxsuite_mobile_doMoveEASFilter>`
+:octicon:`dash` :ref:`doRemoveDevice <zxsuite_mobile_doRemoveDevice>`
+:octicon:`dash` :ref:`doRemoveLogger <zxsuite_mobile_doRemoveLogger>`
+:octicon:`dash` :ref:`doResetAccount <zxsuite_mobile_doResetAccount>`
+:octicon:`dash` :ref:`doResetDevice <zxsuite_mobile_doResetDevice>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_mobile_doRestartService>`
+:octicon:`dash` :ref:`doResumeDeviceSync <zxsuite_mobile_doResumeDeviceSync>`
+:octicon:`dash` :ref:`doSimulateSync <zxsuite_mobile_doSimulateSync>`
+:octicon:`dash` :ref:`doStartService <zxsuite_mobile_doStartService>`
+:octicon:`dash` :ref:`doStopService <zxsuite_mobile_doStopService>`
+:octicon:`dash` :ref:`doSuspendDeviceSync <zxsuite_mobile_doSuspendDeviceSync>`
+:octicon:`dash` :ref:`doWipeDevice <zxsuite_mobile_doWipeDevice>`
+:octicon:`dash` :ref:`duplicateABQMessage domain <zxsuite_mobile_duplicateABQMessage_domain>`
+:octicon:`dash` :ref:`duplicateABQMessage global <zxsuite_mobile_duplicateABQMessage_global>`
+:octicon:`dash` :ref:`getABQMessage domain <zxsuite_mobile_getABQMessage_domain>`
+:octicon:`dash` :ref:`getABQMessage global <zxsuite_mobile_getABQMessage_global>`
+:octicon:`dash` :ref:`getAccountLoggers <zxsuite_mobile_getAccountLoggers>`
+:octicon:`dash` :ref:`getAllDevices <zxsuite_mobile_getAllDevices>`
+:octicon:`dash` :ref:`getAllEASFilters <zxsuite_mobile_getAllEASFilters>`
+:octicon:`dash` :ref:`getDeviceInfo <zxsuite_mobile_getDeviceInfo>`
+:octicon:`dash` :ref:`getDeviceList <zxsuite_mobile_getDeviceList>`
+:octicon:`dash` :ref:`getProperty <zxsuite_mobile_getProperty>`
+:octicon:`dash` :ref:`getProvisioning <zxsuite_mobile_getProvisioning>`
+:octicon:`dash` :ref:`getServices <zxsuite_mobile_getServices>`
+:octicon:`dash` :ref:`initABQMessage <zxsuite_mobile_initABQMessage>`
+:octicon:`dash` :ref:`setABQMessage domain <zxsuite_mobile_setABQMessage_domain>`
+:octicon:`dash` :ref:`setABQMessage global <zxsuite_mobile_setABQMessage_global>`
+:octicon:`dash` :ref:`setProperty <zxsuite_mobile_setProperty>`
+:octicon:`dash` :ref:`setProvisioning <zxsuite_mobile_setProvisioning>`
+:octicon:`dash` :ref:`setSharedFolderSync <zxsuite_mobile_setSharedFolderSync>`

@@ -1,26 +1,22 @@
-.. _auth_totp_delete:
 
-delete
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth totp delete *account* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **account**     | String          |                 |                 |
+| (M)             |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | id(O)           | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

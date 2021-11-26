@@ -20,7 +20,7 @@
 | adminQuota(O)    | String          |                 | -1              |
 +------------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) -- optional parameter
 
 .. rubric:: Usage Example
 
@@ -29,9 +29,7 @@
    zxsuite admin doAddDelegationSettings john@example.com example.com viewMail true adminQuota -1
 
 Adds John as delegated administrator of domain example.com, with the
-right to view user mail on such domain and
-
-no right to grand quotas to users.
+right to view user mail on such domain and no right to grand quotas to users.
 
 .. rubric:: Usage Example
 

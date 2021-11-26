@@ -1,14 +1,10 @@
-.. _backup_retrieveMetadataFromArchive_S3:
 
-S3
---
-
-.. container:: informalexample
+::
 
    zxsuite backup retrieveMetadataFromArchive S3 *destination* [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -63,9 +59,9 @@ PARAMETER LIST
 | otifications(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

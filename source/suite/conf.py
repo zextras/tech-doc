@@ -40,7 +40,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [ '00-includes', 'cli' ]
+exclude_patterns = [ '00-includes', 'cli/*/', 'changelogs/3.1.*' ]
 
 rst_prolog = """
 
@@ -79,3 +79,10 @@ html_favicon = 'img/favicon.ico'
 html_static_path = ['_static']
 html_css_files = [ 'css/suite.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css' ]
 html_logo = 'img/logos/suite-white.svg'
+
+html_theme_options= {
+    'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    'analytics_anonymize_ip': False,
+    'style_nav_header_background': 'var(--zx-color-magma)',
+    'style_external_links': True
+}

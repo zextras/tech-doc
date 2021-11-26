@@ -1,13 +1,9 @@
-.. _backup_getServices:
 
-getServices
------------
-
-.. container:: informalexample
+::
 
    zxsuite backup getServices
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

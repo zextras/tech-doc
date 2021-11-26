@@ -1,4 +1,4 @@
-.. _backup_retore-strategies:
+.. _backup_restore-strategies:
 
 ===================================
  Zextras Backup Restore Strategies
@@ -373,7 +373,7 @@ Running a Restore on New Account
 
    .. tip:: At the end of the operation, you can check that the
       configuration of the new mailbox is the same by running the
-      command ``zxsuite config dump`` (See :ref:`zextras_config_cli`)
+      command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`)
 
 .. _time_range_undelete:
 
@@ -464,7 +464,7 @@ Running a Time-range Undelete
 .. dropdown:: Via the CLI
 
    To start a Time-range Undelete operation, use the
-   :ref:`backup_doUndelete` command:
+   :ref:`zxsuite backup doUndelete <zxsuite_backup_doUndelete>` command:
 
    Quick reference
 
@@ -491,7 +491,7 @@ Running a Time-range Undelete
 
    .. hint:: At the end of the operation, you can check that the
       configuration of the new mailbox is the same by running the
-      command ``zxsuite config dump`` (See :ref:`zextras_config_cli`).
+      command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`).
 
 .. _external_restore:
 
@@ -716,7 +716,7 @@ Running an External Restore
 
    .. hint:: At the end of the operation, you can check that the
       configuration of the new mailbox is the same by running the
-      command ``zxsuite config dump`` (See :ref:`zextras_config_cli`).
+      command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`).
 
 .. _external-restore-speed-up:
 

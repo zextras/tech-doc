@@ -1,13 +1,9 @@
-.. _backup_doBackupLDAP:
 
-doBackupLDAP
-------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doBackupLDAP *start* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -18,9 +14,9 @@ PARAMETER LIST
 | adata_upload(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

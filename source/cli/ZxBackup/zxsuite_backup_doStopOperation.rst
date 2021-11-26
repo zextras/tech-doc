@@ -1,13 +1,9 @@
-.. _backup_doStopOperation:
 
-doStopOperation
----------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doStopOperation *operation_uuid*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -16,9 +12,9 @@ PARAMETER LIST
 | ion_uuid**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

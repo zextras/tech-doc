@@ -8,12 +8,13 @@ Here you can find a description of its functionalities and configuration options
 
 .. toctree::
    :maxdepth: 2
+   :includehidden:
 
    general
    installation
    backup
-   restorestrategies
-   advancedbackup
+   Restore Strategies <restorestrategies>
+   Advanced Backup <advancedbackup>
    mobile
    ldapaddressbook
    mobile-troubleshooting
@@ -25,3 +26,4 @@ Here you can find a description of its functionalities and configuration options
    team
    cli
    glossary
+   Changelogs <changelog>

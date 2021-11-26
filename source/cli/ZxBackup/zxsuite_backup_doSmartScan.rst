@@ -1,13 +1,9 @@
-.. _backup_doSmartScan:
 
-doSmartScan
------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doSmartScan *start* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -29,9 +25,9 @@ PARAMETER LIST
 | te_fake_blob(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

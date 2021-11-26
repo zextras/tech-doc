@@ -1,13 +1,9 @@
-.. _auth_saml_import:
 
-import
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth saml import *example.com* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -24,9 +20,9 @@ PARAMETER LIST
 | low_unsecure(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

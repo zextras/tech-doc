@@ -1,33 +1,29 @@
-.. _backup_getAccountInfo:
 
-getAccountInfo
---------------
-
-.. container:: informalexample
+::
 
    zxsuite backup getAccountInfo *account* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | Account Name/ID |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **acc           | Account Name/ID |                 |                 |
+| ount**\ (M)     |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | backup_path(O)  | Path            |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | date(O)         | Multiple choice | "dd/MM/yyyy     | most_recent     |
-|                 |                 | HH:mm:ss        |                 |
-|                 |                 | "|most_recent|l |                 |
-|                 |                 | east_recent|all |                 |
+|                 |                 | HH:mm:ss" | m   |                 |
+|                 |                 | ost_recent | lea|                 |
+|                 |                 | ast_recent | all|                 |
 +-----------------+-----------------+-----------------+-----------------+
 | backupstats(O)  | Boolean         | true|false      | false           |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -35,7 +31,7 @@ PARAMETER LIST
 
 Displays info about the account john@example.com
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

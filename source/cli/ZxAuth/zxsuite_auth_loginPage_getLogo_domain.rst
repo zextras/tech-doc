@@ -1,13 +1,9 @@
-.. _auth_loginPage_getLogo_domain:
 
-domain
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth loginPage getLogo domain *domain*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -15,6 +11,6 @@ PARAMETER LIST
 | **domain**\ (M) | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite auth loginPage getLogo domain example.com

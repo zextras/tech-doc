@@ -1,0 +1,51 @@
+<footer>
+  {%- if (theme_prev_next_buttons_location == 'bottom' or theme_prev_next_buttons_location == 'both') and (next or prev) %}
+    {#- Translators: This is an ARIA section label for the footer section of the page. -#}
+    <div class="rst-footer-buttons" role="navigation" aria-label="{{ _('Footer') }}">
+      {%- if prev %}
+        <a href="{{ prev.link|e }}" class="btn btn-neutral float-left" title="{{ prev.title|striptags|e }}" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> {{ _('Previous') }}</a>
+      {%- endif %}
+      {%- if next %}
+        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n" rel="next">{{ _('Next') }} <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      {%- endif %}
+    </div>
+  {%- endif %}
+
+  <hr/>
+
+  <div role="contentinfo" class="row d-flex">
+  {%- block contentinfo %}
+   <div class="sd-col-md4 sd-col-lg-4">
+    {%- if show_copyright %}
+      {%- if hasdoc('copyright') %}
+        {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
+      {%- else %}
+        {%- trans copyright=copyright|e %}<p class="zxlogo"></p><p>
+      Copyright &#169 2021: ZEXTRAS; All rights reserved</p>{% endtrans %}
+    {%- endif %}
+
+    {%- endif %}
+   </div>
+   <div class="sd-col-md4 sd-col-lg-4">Zimbra is a
+     registered trademark of Synacor, Inc.<br>  ActiveSync is a
+     registered Trademark of Microsoft Corporation.
+    </div>
+    <div class="sd-col-md4 sd-col-lg-4 sd-text-right">
+      <ul class="list-unstyled ">
+        <li class="sd-d-inline-block sd-px-3
+        sd-fs-4"><a href="https://www.facebook.com/zextras"
+        class="icon fa-facebook" target="_blank"></a></li>
+        <li class="sd-d-inline-block sd-px-3
+        sd-fs-4"><a href="http://www.linkedin.com/company/2277799?trk=tyah&trkInfo=tas%3Azextras"
+        class="icon fa fa-linkedin" target="_blank"></a></li>
+        <li class="sd-d-inline-block sd-px-3
+        sd-fs-4"><a href="http://www.twitter.com/ZeXtras" class="icon
+        fa fa-twitter" target="_blank"></a></li>
+      </ul>
+    </div>
+  {%- endblock %}
+  </div>
+
+  {%- block extrafooter %} {% endblock %}
+
+</footer>

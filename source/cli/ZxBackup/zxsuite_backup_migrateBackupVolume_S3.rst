@@ -1,13 +1,9 @@
-.. _backup_migrateBackupVolume_S3:
 
-S3
---
-
-.. container:: informalexample
+::
 
    zxsuite backup migrateBackupVolume S3 [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -65,9 +61,9 @@ PARAMETER LIST
 | threads(O)      | Integer         |                 | 10              |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

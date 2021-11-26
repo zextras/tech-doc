@@ -1,13 +1,9 @@
-.. _backup_doExternalRestore:
 
-doExternalRestore
------------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -38,11 +34,11 @@ PARAMETER LIST
 +-----------------+-----------------+-----------------+-----------------+
 | skip_coses(O)   | Boolean         | true|false      | false           |
 +-----------------+-----------------+-----------------+-----------------+
-| skip_account_   | Boolean         | true|false      | false           |
-| provisioning(O) |                 |                 |                 |
+| skip_account_p  | Boolean         | true|false      | false           |
+| rovisioning(O)  |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| skip_domain_    | Boolean         | true|false      | false           |
-| provisioning(O) |                 |                 |                 |
+| skip_domain_p   | Boolean         | true|false      | false           |
+| rovisioning(O)  |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | provi           | Boolean         | true|false      | false           |
 | sioning_only(O) |                 |                 |                 |
@@ -66,9 +62,9 @@ PARAMETER LIST
 | lobs_archive(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

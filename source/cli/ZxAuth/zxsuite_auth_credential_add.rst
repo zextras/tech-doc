@@ -1,19 +1,15 @@
-.. _auth_credential_add:
 
-add
----
-
-.. container:: informalexample
+::
 
    zxsuite auth credential add *john@example.com* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | j               |                 |
-| *account**\ (M) |                 | ohn@example.com |                 |
+| **acc\          | String          | john@\          |                 |
+| ount**\ (M)     |                 | example.com     |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | password(O)     | String          | myPassword      |                 |
 +-----------------+-----------------+-----------------+-----------------+
@@ -24,9 +20,9 @@ PARAMETER LIST
 | service(O)      | String[,..]     |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

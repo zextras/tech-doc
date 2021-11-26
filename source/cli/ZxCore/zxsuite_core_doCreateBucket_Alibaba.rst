@@ -1,6 +1,10 @@
+
+::
+
+   zxsuite core doCreateBucket Alibaba *Bucket name* *Service username*
    *Service password* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -29,7 +33,7 @@ PARAMETER LIST
 |                 |                 | configuration)  |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite core createVolume Alibaba bucketName accessKey secretKey url
 http://host/service

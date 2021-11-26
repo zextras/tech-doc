@@ -1,19 +1,15 @@
-.. _auth_totp_generate:
 
-generate
---------
-
-.. container:: informalexample
+::
 
    zxsuite auth totp generate *account* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **account**     | String          |                 |                 |
+| (M)             |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | algorithm(O)    | String          | SHA             | SHA1            |
 |                 |                 | 1|SHA256|SHA512 |                 |
@@ -44,9 +40,9 @@ PARAMETER LIST
 |                 |                 | characters      |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

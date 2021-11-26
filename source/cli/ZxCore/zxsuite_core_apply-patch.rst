@@ -1,18 +1,22 @@
 
-PARAMETER LIST
+::
+
+   zxsuite core apply-patch *service* [param VALUE[,VALUE]]
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          |                 |                 |
-| *service**\ (M) |                 |                 |                 |
+| **ser           | String          |                 |                 |
+| vice**\ (M)     |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | hosts(O)        | String[,..]     |                 | all_servers     |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -21,7 +25,7 @@ PARAMETER LIST
 applies the latest patch available for the proxy service on
 nginx1.example.com and nginx2.example.com, based on their version
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

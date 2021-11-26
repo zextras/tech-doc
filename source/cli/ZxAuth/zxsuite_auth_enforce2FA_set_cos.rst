@@ -1,15 +1,11 @@
-.. _auth_enforce2FA_set_cos:
 
-cos
----
-
-.. container:: informalexample
+::
 
    zxsuite auth enforce2FA set cos
    *8916a2c1-5ae6-4ed2-be53-4fded8071428* *0 (no_2fa) \| 1 (ip_2fa) \| 2
    (device_2fa)*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -23,9 +19,9 @@ PARAMETER LIST
 |                 |                 | (device_2fa)    |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

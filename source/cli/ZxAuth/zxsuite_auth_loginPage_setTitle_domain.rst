@@ -1,14 +1,10 @@
-.. _auth_loginPage_setTitle_domain:
 
-domain
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth loginPage setTitle domain *domain* *'My Custom Login
    Page'*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -19,9 +15,9 @@ PARAMETER LIST
 |                 |                 | Login Page'     |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

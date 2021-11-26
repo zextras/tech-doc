@@ -1,0 +1,221 @@
+Zextras Suite 3.1.1
+===================
+
+Release Date: August 10th, 2020
+
+.. rubric:: Backup
+
+..
+
+* Issue ID: BCK-290
+
+* *Title:* Improved restore operation error handling
+
+* *Description:* Improved restore operation so that it will complete even if any Drive's blob is missing from the backup.
+
+..
+
+* Issue ID: BCK-305
+
+* *Title:* Improved Restore Operation Feedback
+
+* *Description:* Improved restore operation operation log, now restored/unrestored/skipped zimbra and drive items are counted both on undelete and restoreonnewaccount operations
+
+.. rubric:: General
+
+..
+
+* Issue ID: COR-406
+
+* *Title:* Removed case sensitiveness to mobile device list
+
+* *Description:* Hostname checks are no longer case sensitive for the list of user mobile devices in the web admin panel, this would prevent admins to edit users settings
+
+.. rubric:: Docs
+
+..
+
+* Issue ID: DOCS-90
+
+* *Title:* Removed incorrect "too many open documents" error
+
+* *Description:* There is no longer a warning where more than 50
+  documents are opened at the same time
+  
+.. rubric:: Drive
+
+..
+
+* Issue ID: DRIV-776
+
+* *Title:* Fixed PDF scrolling bug on Firefox
+
+* *Description:* Fixed a bug where opening a PDF file using the Firefox browser the page wouldn't scroll using the keyboard
+
+..
+
+* Issue ID: DRIV-821
+
+* *Title:* Removed "Save into Drive" option for mail-type attachment
+
+* *Description:* The option to save into Drive for mail-type attachment was removed
+
+
+
+
+
+..
+
+* Issue ID: DRIV-828
+
+* *Title:* Drive file versioning window improvement
+
+* *Description:* Minor graphical improvement regarding the spacing between text and icon in the first line of the drive file versioning window
+
+
+
+.. rubric:: Mobile
+
+
+..
+
+* Issue ID: MOB-208
+
+* *Title:* Mobile invalid address handling improvement
+
+* *Description:* Implemented a workaround for mobile devices that do not validate destination accounts that would end up in a loop when sending mails with invalid addresses.
+
+
+
+
+
+..
+
+* Issue ID: MOB-217
+
+* *Title:* Blank Bcc field stripped from email in mobile devices
+
+* *Description:* Fixed a bug that showed a blank Bcc field in mobile devices when the recipient is in Bcc
+
+
+
+.. rubric:: Powerstore
+
+
+..
+
+* Issue ID: PS-251
+
+* *Title:* Added log line on docheckblobs item deletion
+
+* *Description:* Added a log line for the docheckblobs whenever an item is removed by missing_blob_delete_item option
+
+
+
+
+
+..
+
+* Issue ID: PS-252
+
+* *Title:* Implemented double compression handling
+
+* *Description:* Docheckblobs operations now fix double compressed items if check_incorrect_compressed_digests is set to true
+
+
+
+.. rubric:: Team
+
+
+..
+
+* Issue ID: TEAMS-1119
+
+* *Title:* Start a new instant meeting from new conversations
+
+* *Description:* Now users can start a new instant meeting from a new conversation without having written a single message first
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1317
+
+* *Title:* Instant meeting ringing handling improved
+
+* *Description:* Improved the handling of rings on instant meeting calls. Now the ringing in web browser stops when user answer the call from a the mobile app
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1436
+
+* *Title:* Instant message duplication on connection loss
+
+* *Description:* If connections from the server are dropped during a conversation messages gets duplicated as they kept being resend while the connection is down
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1581
+
+* *Title:* Added move room between hosts feature
+
+* *Description:* It is now possible to move groups/spaces/channels between hosts
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1622
+
+* *Title:* Data are being preserved while creating new instant meetings
+
+* *Description:* While creating a new instant meeting, you can now switch tabs without losing the data already inserted.
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1688
+
+* *Title:* Team and Drive hidden in mobile browsers
+
+* *Description:* Team and Drive have been hidden from mobile browsers because users can use the relative mobile apps
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1689
+
+* *Title:* Fixed multiple preview_ready websocket messages
+
+* *Description:* A bug that sent multiple "preview_ready" messages via WebSocket while uploading an image in a conversation has been fixed. Now only one message is sent when the preview is ready.
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1735
+
+* *Title:* Fixed conversation GUI issue on Firefox
+
+* *Description:* Fixed a issue that would present itself on Firefox, where opening a conversation the user interface would brake
+

@@ -15,7 +15,7 @@
 | ty_value**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) -- optional parameter
 
 .. rubric:: Usage Example
 

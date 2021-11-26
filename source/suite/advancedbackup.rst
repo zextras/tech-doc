@@ -236,7 +236,7 @@ and restore user access and mail traffic.
 .. hint:: At the end of the operation, you can check that the
    configuration of the new mailbox is the same by running the command
    ``zxsuite config dump`` (See the :ref:`full reference
-   <zextras_config_cli>`).
+   <zextras_config_full_cli>`).
 
 .. _the_aftermath:
 

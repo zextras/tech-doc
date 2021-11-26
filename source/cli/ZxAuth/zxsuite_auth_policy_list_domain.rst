@@ -1,13 +1,9 @@
-.. _auth_policy_list_domain:
 
-domain
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth policy list domain *domain* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -17,9 +13,9 @@ PARAMETER LIST
 | service(O)      | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

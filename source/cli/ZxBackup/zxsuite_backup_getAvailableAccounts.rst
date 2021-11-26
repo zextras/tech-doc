@@ -1,19 +1,15 @@
-.. _backup_getAvailableAccounts:
 
-getAvailableAccounts
---------------------
-
-.. container:: informalexample
+::
 
    zxsuite backup getAvailableAccounts [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
 | date(O)         | Date            | "dd/MM/yyyy     | last            |
-|                 |                 | HH:mm:ss"|last  |                 |
+|                 |                 | HH:mm:ss" | last|                 |
 +-----------------+-----------------+-----------------+-----------------+
 | backup_path(O)  | Path            |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
@@ -29,9 +25,9 @@ PARAMETER LIST
 | ing_accounts(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

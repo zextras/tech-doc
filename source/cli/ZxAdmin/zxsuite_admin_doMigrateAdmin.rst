@@ -13,7 +13,7 @@
 | force(O)        | Boolean         | true|false      | false           |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) -- optional parameter
 
 .. rubric:: Usage Example
 

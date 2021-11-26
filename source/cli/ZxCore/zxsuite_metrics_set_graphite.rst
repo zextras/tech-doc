@@ -1,12 +1,16 @@
+
+::
+
+   zxsuite metrics set graphite *plaintext|udp|pickle*
    *metrics.example.com* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| **              | String          | plain           |                 |
-| protocol**\ (M) |                 | text|udp|pickle |                 |
+| **pro           | String          | plain text |    |                 |
+| tocol**\ (M)    |                 | udp | pickle    |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | **host**\ (M)   | String          | metr            |                 |
 |                 |                 | ics.example.com |                 |
@@ -14,9 +18,9 @@ PARAMETER LIST
 | port(O)         | Long            | 2003            |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
