@@ -454,14 +454,20 @@ Troubleshooting
 Zextras Docs CLI
 ================
 
+
+This section contains the index of all ``zxsuite docs`` commands. Full
+reference can be found in the dedicated
+section :ref:`zextras_docs_full_cli`.
+
+This section contains the index of all ``zxsuite auth``
 This section contains the index of all the available ``zextras docs``
 commands. Full reference can be found in `the dedicated
 section <./cli.xml#_zxdocs_cli_commands>`_.
 
-`doDeployDocsZimlet <./cli.xml#docs_doDeployDocsZimlet>`_ \|
-`doReloadConfig <./cli.xml#docs_doReloadConfig>`_ \|
-`doRestartService <./cli.xml#docs_doRestartService>`_ \|
-`doStartService <./cli.xml#docs_doStartService>`_ \|
-`doStopService <./cli.xml#docs_doStopService>`_ \|
-`getServices <./cli.xml#docs_getServices>`_ \|
-`status <./cli.xml#docs_status>`_
+:ref:`doDeployDocsZimlet <zxsuite_docs_doDeployDocsZimlet>`
+:octicon:`dash` :ref:`doReloadConfig <zxsuite_docs_doReloadConfig>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_docs_doRestartService>`
+:octicon:`dash` :ref:`doStartService <zxsuite_docs_doStartService>`
+:octicon:`dash` :ref:`doStopService <zxsuite_docs_doStopService>`
+:octicon:`dash` :ref:`getServices <zxsuite_docs_getServices>`
+:octicon:`dash` :ref:`status <zxsuite_docs_status>`

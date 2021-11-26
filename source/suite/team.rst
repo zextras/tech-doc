@@ -847,29 +847,31 @@ not necessary.
 Zextras Team CLI
 ================
 
-This section contains the index of all the available ``zextras team``
-commands. Full reference can be found in `the dedicated
-section <./cli.xml#_zxteam_cli_commands>`_.
+This section contains the index of all ``zxsuite team`` commands. Full
+reference can be found in the dedicated section
+:ref:`zextras_team_full_cli`.
 
-`addOwner <./cli.xml#team_addOwner>`_ \|
-`clusterStatus <./cli.xml#team_clusterStatus>`_ \|
-`doClearChatDB <./cli.xml#team_doClearChatDB>`_ \|
-`doDeployTeamZimlet <./cli.xml#team_doDeployTeamZimlet>`_ \|
-`doImportChannels <./cli.xml#team_doImportChannels>`_ \|
-`doMoveAllRooms <./cli.xml#team_doMoveAllRooms>`_ \|
-`doMoveRoom <./cli.xml#team_doMoveRoom>`_ \|
-`doRestartService <./cli.xml#team_doRestartService>`_ \|
-`doStartService <./cli.xml#team_doStartService>`_ \|
-`doStopService <./cli.xml#team_doStopService>`_ \|
-`doUsersCleanup <./cli.xml#team_doUsersCleanup>`_ \|
-`dumpSessions <./cli.xml#team_dumpSessions>`_ \|
-`flushConversationsCache <./cli.xml#team_flushConversationsCache>`_ \|
-`getServices <./cli.xml#team_getServices>`_ \| `iceServer
-add <./cli.xml#team_iceServer_add>`_ \| `iceServer
-get <./cli.xml#team_iceServer_get>`_ \| `iceServer
-remove <./cli.xml#team_iceServer_remove>`_ \|
-`monitor <./cli.xml#team_monitor>`_ \| `rooms <./cli.xml#team_rooms>`_
-\| `space get <./cli.xml#team_space_get>`_ \| `video-server
-add <./cli.xml#team_video-server_add>`_ \| `video-server
-remove <./cli.xml#team_video-server_remove>`_ \|
-
+:ref:`addOwner <zxsuite_team_addOwner>`
+:octicon:`dash` :ref:`clusterStatus <zxsuite_team_clusterStatus>`
+:octicon:`dash` :ref:`doClearChatDB <zxsuite_team_doClearChatDB>`
+:octicon:`dash` :ref:`doConversationsMessagesCleanup <zxsuite_team_doConversationsMessagesCleanup>`
+:octicon:`dash` :ref:`doDeployTeamZimlet <zxsuite_team_doDeployTeamZimlet>`
+:octicon:`dash` :ref:`doImportChannels <zxsuite_team_doImportChannels>`
+:octicon:`dash` :ref:`doMoveAllRooms <zxsuite_team_doMoveAllRooms>`
+:octicon:`dash` :ref:`doMoveRoom <zxsuite_team_doMoveRoom>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_team_doRestartService>`
+:octicon:`dash` :ref:`doRoomsCleanup <zxsuite_team_doRoomsCleanup>`
+:octicon:`dash` :ref:`doStartService <zxsuite_team_doStartService>`
+:octicon:`dash` :ref:`doStopService <zxsuite_team_doStopService>`
+:octicon:`dash` :ref:`doUsersCleanup <zxsuite_team_doUsersCleanup>`
+:octicon:`dash` :ref:`dumpSessions <zxsuite_team_dumpSessions>`
+:octicon:`dash` :ref:`flushConversationsCache <zxsuite_team_flushConversationsCache>`
+:octicon:`dash` :ref:`getServices <zxsuite_team_getServices>`
+:octicon:`dash` :ref:`iceServer add <zxsuite_team_iceServer_add>`
+:octicon:`dash` :ref:`iceServer get <zxsuite_team_iceServer_get>`
+:octicon:`dash` :ref:`iceServer remove <zxsuite_team_iceServer_remove>`
+:octicon:`dash` :ref:`monitor <zxsuite_team_monitor>`
+:octicon:`dash` :ref:`rooms <zxsuite_team_rooms>`
+:octicon:`dash` :ref:`space get <zxsuite_team_space_get>`
+:octicon:`dash` :ref:`video-server add <zxsuite_team_video-server_add>`
+:octicon:`dash` :ref:`video-server remove <zxsuite_team_video-server_remove>`

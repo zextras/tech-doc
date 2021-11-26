@@ -556,15 +556,17 @@ Zextras Drive CLI
 =================
 
 This section contains the index of all ``zxsuite drive`` commands. Full
-reference can be found in `the dedicated
-section <./cli.xml#_zxdrive_cli_commands>`_.
+reference can be found in the dedicated
+section :ref:`zextras_drive_full_cli`.
 
-`doDeleteBriefcaseData <./cli.xml#drive_doDeleteBriefcaseData>`_ \|
-`doDeployDriveZimlet <./cli.xml#drive_doDeployDriveZimlet>`_ \|
-`doImportBriefcase <./cli.xml#drive_doImportBriefcase>`_ \|
-`doRestartService <./cli.xml#drive_doRestartService>`_ \|
-`doStartService <./cli.xml#drive_doStartService>`_ \|
-`doStopService <./cli.xml#drive_doStopService>`_ \|
-`dumpSessions <./cli.xml#drive_dumpSessions>`_ \|
-`getServices <./cli.xml#drive_getServices>`_ \|
-`monitor <./cli.xml#drive_monitor>`_ \|
+:ref:`doDeleteBriefcaseData <zxsuite_drive_doDeleteBriefcaseData>`
+:octicon:`dash` :ref:`doDeployDriveZimlet <zxsuite_drive_doDeployDriveZimlet>`
+:octicon:`dash` :ref:`doImportBriefcase <zxsuite_drive_doImportBriefcase>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_drive_doRestartService>`
+:octicon:`dash` :ref:`doStartService <zxsuite_drive_doStartService>`
+:octicon:`dash` :ref:`doStopService <zxsuite_drive_doStopService>`
+:octicon:`dash` :ref:`dumpSessions <zxsuite_drive_dumpSessions>`
+:octicon:`dash` :ref:`getQuota <zxsuite_drive_getQuota>`
+:octicon:`dash` :ref:`getServices <zxsuite_drive_getServices>`
+:octicon:`dash` :ref:`monitor <zxsuite_drive_monitor>`
+

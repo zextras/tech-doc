@@ -1812,71 +1812,60 @@ running.
 Zextras Powerstore CLI
 ======================
 
-This section contains the index of all ``zxsuite powerstore`` commands.
-Full reference can be found in `the dedicated
-section <zxsuite__zxpowerstore_cli_commands>`_.
+This section contains the index of all ``zxsuite powerstore``
+commands. Full reference can be found in the dedicated section
+:ref:`zextras_powerstore_full_cli`.
 
-`testS3Connection <zxsuite_core_testS3Connection>`_ \|
-`doCheckBlobs <zxsuite_powerstore_doCheckBlobs>`_ \| `doCreateVolume
-Alibaba <zxsuite_powerstore_doCreateVolume_Alibaba>`_ \|
-`doCreateVolume
-Centralized <zxsuite_powerstore_doCreateVolume_Centralized>`_ \|
-`doCreateVolume Ceph <zxsuite_powerstore_doCreateVolume_Ceph>`_ \|
-`doCreateVolume
-Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>`_ \|
-`doCreateVolume
-CustomS3 <zxsuite_powerstore_doCreateVolume_CustomS3>`_ \|
-`doCreateVolume EMC <zxsuite_powerstore_doCreateVolume_EMC>`_ \|
-`doCreateVolume
-FileBlob <zxsuite_powerstore_doCreateVolume_FileBlob>`_ \|
-`doCreateVolume OpenIO <zxsuite_powerstore_doCreateVolume_OpenIO>`_
-\| `doCreateVolume S3 <zxsuite_powerstore_doCreateVolume_S3>`_ \|
-`doCreateVolume_ScalityS3 <zxsuite_powerstore_doCreateVolume_ScalityS3>`_
-\| `doCreateVolume Swift <zxsuite_powerstore_doCreateVolume_Swift>`_
-\| `doDeduplicate <zxsuite_powerstore_doDeduplicate>`_ \|
-`doDeleteDrivePreviews <zxsuite_powerstore_doDeleteDrivePreviews>`_
-\| `doDeleteVolume <zxsuite_powerstore_doDeleteVolume>`_ \|
-`doMailboxMove <zxsuite_powerstore_doMailboxMove>`_ \|
-`doMoveBlobs <zxsuite_powerstore_doMoveBlobs>`_ \|
-`doPurgeMailboxes <zxsuite_powerstore_doPurgeMailboxes>`_ \|
-`doRemoveHsmPolicy <zxsuite_powerstore_doRemoveHsmPolicy>`_ \|
-`doRemoveOrphanedBlobs <zxsuite_powerstore_doRemoveOrphanedBlobs>`_
-\| `doRestartService <zxsuite_powerstore_doRestartService>`_ \|
-`doStartService <zxsuite_powerstore_doStartService>`_ \|
-`doStopAllOperations <zxsuite_powerstore_doStopAllOperations>`_ \|
-`doStopOperation <zxsuite_powerstore_doStopOperation>`_ \|
-`doStopService <zxsuite_powerstore_doStopService>`_ \|
-`doUpdateVolume Alibaba <zxsuite_powerstore_doUpdateVolume_Alibaba>`_
-\| `doUpdateVolume Ceph <zxsuite_powerstore_doUpdateVolume_Ceph>`_ \|
-`doUpdateVolume
-Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`_ \|
-`doUpdateVolume
-CustomS3 <zxsuite_powerstore_doUpdateVolume_CustomS3>`_ \|
-`doUpdateVolume EMC <zxsuite_powerstore_doUpdateVolume_EMC>`_ \|
-`doUpdateVolume
-FileBlob <zxsuite_powerstore_doUpdateVolume_FileBlob>`_ \|
-`doUpdateVolume OpenIO <zxsuite_powerstore_doUpdateVolume_OpenIO>`_
-\| `doUpdateVolume S3 <zxsuite_powerstore_doUpdateVolume_S3>`_ \|
-`doUpdateVolume
-ScalityS3 <zxsuite_powerstore_doUpdateVolume_ScalityS3>`_ \|
-`doUpdateVolume Swift <zxsuite_powerstore_doUpdateVolume_Swift>`_ \|
-`doVolumeToVolumeMove <zxsuite_powerstore_doVolumeToVolumeMove>`_ \|
-`getAllOperations <zxsuite_powerstore_getAllOperations>`_ \|
-`getAllVolumes <zxsuite_powerstore_getAllVolumes>`_ \|
-`getHsmPolicy <zxsuite_powerstore_getHsmPolicy>`_ \|
-`getMovedMailboxes <zxsuite_powerstore_getMovedMailboxes>`_ \|
-`getNonLocalMailboxes <zxsuite_powerstore_getNonLocalMailboxes>`_ \|
-`getProperty <zxsuite_powerstore_getProperty>`_ \|
-`getServices <zxsuite_powerstore_getServices>`_ \|
-`getVolumeStats <zxsuite_powerstore_getVolumeStats>`_ \| `Indexing
-content-extraction-tool
-add <zxsuite_powerstore_Indexing_content-extraction-tool_add>`_ \|
-`Indexing content-extraction-tool
-list <zxsuite_powerstore_Indexing_content-extraction-tool_list>`_ \|
-`Indexing content-extraction-tool
-remove <zxsuite_powerstore_Indexing_content-extraction-tool_remove>`_
-\| `monitor <zxsuite_powerstore_monitor>`_ \|
-`runBulkDelete <zxsuite_powerstore_runBulkDelete>`_ \|
-`+setHsmPolicy <zxsuite_powerstore_plus_setHsmPolicy>`_ \|
-`setHSMPolicy <zxsuite_powerstore_setHSMPolicy>`_ \|
-`setProperty <zxsuite_powerstore_setProperty>`_ \|
+:ref:`testS3Connection <zxsuite_core_testS3Connection>`
+:octicon:`dash` :ref:`Indexing content-extraction-tool add <zxsuite_powerstore_Indexing_content-extraction-tool_add>`
+:octicon:`dash` :ref:`Indexing content-extraction-tool list <zxsuite_powerstore_Indexing_content-extraction-tool_list>`
+:octicon:`dash` :ref:`Indexing content-extraction-tool remove <zxsuite_powerstore_Indexing_content-extraction-tool_remove>`
+:octicon:`dash` :ref:`doCheckBlobs <zxsuite_powerstore_doCheckBlobs>`
+:octicon:`dash` :ref:`doCreateVolume Alibaba <zxsuite_powerstore_doCreateVolume_Alibaba>`
+:octicon:`dash` :ref:`doCreateVolume Centralized <zxsuite_powerstore_doCreateVolume_Centralized>`
+:octicon:`dash` :ref:`doCreateVolume Ceph <zxsuite_powerstore_doCreateVolume_Ceph>`
+:octicon:`dash` :ref:`doCreateVolume Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>`
+:octicon:`dash` :ref:`doCreateVolume CustomS3 <zxsuite_powerstore_doCreateVolume_CustomS3>`
+:octicon:`dash` :ref:`doCreateVolume EMC <zxsuite_powerstore_doCreateVolume_EMC>`
+:octicon:`dash` :ref:`doCreateVolume FileBlob <zxsuite_powerstore_doCreateVolume_FileBlob>`
+:octicon:`dash` :ref:`doCreateVolume OpenIO <zxsuite_powerstore_doCreateVolume_OpenIO>`
+:octicon:`dash` :ref:`doCreateVolume S3 <zxsuite_powerstore_doCreateVolume_S3>`
+:octicon:`dash` :ref:`doCreateVolume ScalityS3 <zxsuite_powerstore_doCreateVolume_ScalityS3>`
+:octicon:`dash` :ref:`doCreateVolume Swift <zxsuite_powerstore_doCreateVolume_Swift>`
+:octicon:`dash` :ref:`doDeduplicate <zxsuite_powerstore_doDeduplicate>`
+:octicon:`dash` :ref:`doDeleteDrivePreviews <zxsuite_powerstore_doDeleteDrivePreviews>`
+:octicon:`dash` :ref:`doDeleteVolume <zxsuite_powerstore_doDeleteVolume>`
+:octicon:`dash` :ref:`doMailboxMove <zxsuite_powerstore_doMailboxMove>`
+:octicon:`dash` :ref:`doMoveBlobs <zxsuite_powerstore_doMoveBlobs>`
+:octicon:`dash` :ref:`doPurgeMailboxes <zxsuite_powerstore_doPurgeMailboxes>`
+:octicon:`dash` :ref:`doRemoveHsmPolicy <zxsuite_powerstore_doRemoveHsmPolicy>`
+:octicon:`dash` :ref:`doRemoveOrphanedBlobs <zxsuite_powerstore_doRemoveOrphanedBlobs>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_powerstore_doRestartService>`
+:octicon:`dash` :ref:`doStartService <zxsuite_powerstore_doStartService>`
+:octicon:`dash` :ref:`doStopAllOperations <zxsuite_powerstore_doStopAllOperations>`
+:octicon:`dash` :ref:`doStopOperation <zxsuite_powerstore_doStopOperation>`
+:octicon:`dash` :ref:`doStopService <zxsuite_powerstore_doStopService>`
+:octicon:`dash` :ref:`doUpdateVolume Alibaba <zxsuite_powerstore_doUpdateVolume_Alibaba>`
+:octicon:`dash` :ref:`doUpdateVolume Ceph <zxsuite_powerstore_doUpdateVolume_Ceph>`
+:octicon:`dash` :ref:`doUpdateVolume Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`
+:octicon:`dash` :ref:`doUpdateVolume CustomS3 <zxsuite_powerstore_doUpdateVolume_CustomS3>`
+:octicon:`dash` :ref:`doUpdateVolume EMC <zxsuite_powerstore_doUpdateVolume_EMC>`
+:octicon:`dash` :ref:`doUpdateVolume FileBlob <zxsuite_powerstore_doUpdateVolume_FileBlob>`
+:octicon:`dash` :ref:`doUpdateVolume OpenIO <zxsuite_powerstore_doUpdateVolume_OpenIO>`
+:octicon:`dash` :ref:`doUpdateVolume S3 <zxsuite_powerstore_doUpdateVolume_S3>`
+:octicon:`dash` :ref:`doUpdateVolume ScalityS3 <zxsuite_powerstore_doUpdateVolume_ScalityS3>`
+:octicon:`dash` :ref:`doUpdateVolume Swift <zxsuite_powerstore_doUpdateVolume_Swift>`
+:octicon:`dash` :ref:`doVolumeToVolumeMove <zxsuite_powerstore_doVolumeToVolumeMove>`
+:octicon:`dash` :ref:`getAllOperations <zxsuite_powerstore_getAllOperations>`
+:octicon:`dash` :ref:`getAllVolumes <zxsuite_powerstore_getAllVolumes>`
+:octicon:`dash` :ref:`getHsmPolicy <zxsuite_powerstore_getHsmPolicy>`
+:octicon:`dash` :ref:`getMovedMailboxes <zxsuite_powerstore_getMovedMailboxes>`
+:octicon:`dash` :ref:`getNonLocalMailboxes <zxsuite_powerstore_getNonLocalMailboxes>`
+:octicon:`dash` :ref:`getProperty <zxsuite_powerstore_getProperty>`
+:octicon:`dash` :ref:`getServices <zxsuite_powerstore_getServices>`
+:octicon:`dash` :ref:`getVolumeStats <zxsuite_powerstore_getVolumeStats>`
+:octicon:`dash` :ref:`monitor <zxsuite_powerstore_monitor>`
+:octicon:`dash` :ref:`runBulkDelete <zxsuite_powerstore_runBulkDelete>`
+:octicon:`dash` :ref:`setHSMPolicy <zxsuite_powerstore_setHSMPolicy>`
+:octicon:`dash` :ref:`setProperty <zxsuite_powerstore_setProperty>`
+:octicon:`dash` :ref:`+setHsmPolicy <zxsuite_powerstore_+setHsmPolicy>`

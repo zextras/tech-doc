@@ -1317,60 +1317,57 @@ the external storage.
 Zextras Backup CLI
 ==================
 
-This section is work in progress
+This section contains the index of all ``zxsuite backup`` commands. Full
+reference can be found in the dedicated
+section :ref:`zextras_backup_full_cli`.
 
-..
-   This section contains the index of all ``zxsuite backup`` commands. Full
-   reference can be found in `the dedicated
-   section <./cli.xml#zxbackup-cli-full>`_.
+:ref:`doAccountScan <zxsuite_backup_doAccountScan>`
+:octicon:`dash` :ref:`doBackupAuthToken <zxsuite_backup_doBackupAuthToken>`
+:octicon:`dash` :ref:`doBackupChat <zxsuite_backup_doBackupChat>`
+:octicon:`dash` :ref:`doBackupCluster <zxsuite_backup_doBackupCluster>`
+:octicon:`dash` :ref:`doBackupLDAP <zxsuite_backup_doBackupLDAP>`
+:octicon:`dash` :ref:`doBackupServerCustomizations <zxsuite_backup_doBackupServerCustomizations>`
+:octicon:`dash` :ref:`doCheckShares <zxsuite_backup_doCheckShares>`
+:octicon:`dash` :ref:`doCoherencyCheck <zxsuite_backup_doCoherencyCheck>`
+:octicon:`dash` :ref:`doEnableDisableCOS <zxsuite_backup_doEnableDisableCOS>`
+:octicon:`dash` :ref:`doExport <zxsuite_backup_doExport>`
+:octicon:`dash` :ref:`doExternalRestore <zxsuite_backup_doExternalRestore>`
+:octicon:`dash` :ref:`doFixShares <zxsuite_backup_doFixShares>`
+:octicon:`dash` :ref:`doItemRestore <zxsuite_backup_doItemRestore>`
+:octicon:`dash` :ref:`doItemSearch <zxsuite_backup_doItemSearch>`
+:octicon:`dash` :ref:`doPurge <zxsuite_backup_doPurge>`
+:octicon:`dash` :ref:`doRawRestore <zxsuite_backup_doRawRestore>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_backup_doRestartService>`
+:octicon:`dash` :ref:`doRestoreBlobs <zxsuite_backup_doRestoreBlobs>`
+:octicon:`dash` :ref:`doRestoreOnNewAccount <zxsuite_backup_doRestoreOnNewAccount>`
+:octicon:`dash` :ref:`doSmartScan <zxsuite_backup_doSmartScan>`
+:octicon:`dash` :ref:`doStartService <zxsuite_backup_doStartService>`
+:octicon:`dash` :ref:`doStopAllOperations <zxsuite_backup_doStopAllOperations>`
+:octicon:`dash` :ref:`doStopOperation <zxsuite_backup_doStopOperation>`
+:octicon:`dash` :ref:`doStopService <zxsuite_backup_doStopService>`
+:octicon:`dash` :ref:`doUndelete <zxsuite_backup_doUndelete>`
+:octicon:`dash` :ref:`getAccountInfo <zxsuite_backup_getAccountInfo>`
+:octicon:`dash` :ref:`getAllOperations <zxsuite_backup_getAllOperations>`
+:octicon:`dash` :ref:`getAvailableAccounts <zxsuite_backup_getAvailableAccounts>`
+:octicon:`dash` :ref:`getAvailableDomains <zxsuite_backup_getAvailableDomains>`
+:octicon:`dash` :ref:`getBackupInfo <zxsuite_backup_getBackupInfo>`
+:octicon:`dash` :ref:`getCOSBackupStatus <zxsuite_backup_getCOSBackupStatus>`
+:octicon:`dash` :ref:`getItem <zxsuite_backup_getItem>`
+:octicon:`dash` :ref:`getMap <zxsuite_backup_getMap>`
+:octicon:`dash` :ref:`getProperty <zxsuite_backup_getProperty>`
+:octicon:`dash` :ref:`getServerConfig <zxsuite_backup_getServerConfig>`
+:octicon:`dash` :ref:`getServices <zxsuite_backup_getServices>`
+:octicon:`dash` :ref:`migrateBackupVolume Default <zxsuite_backup_migrateBackupVolume_Default>`
+:octicon:`dash` :ref:`migrateBackupVolume Local <zxsuite_backup_migrateBackupVolume_Local>`
+:octicon:`dash` :ref:`migrateBackupVolume S3 <zxsuite_backup_migrateBackupVolume_S3>`
+:octicon:`dash` :ref:`monitor <zxsuite_backup_monitor>`
+:octicon:`dash` :ref:`retrieveMetadataFromArchive Local <zxsuite_backup_retrieveMetadataFromArchive_Local>`
+:octicon:`dash` :ref:`retrieveMetadataFromArchive S3 <zxsuite_backup_retrieveMetadataFromArchive_S3>`
+:octicon:`dash` :ref:`setBackupVolume Default <zxsuite_backup_setBackupVolume_Default>`
+:octicon:`dash` :ref:`setBackupVolume Local <zxsuite_backup_setBackupVolume_Local>`
+:octicon:`dash` :ref:`setBackupVolume S3 <zxsuite_backup_setBackupVolume_S3>`
+:octicon:`dash` :ref:`setProperty <zxsuite_backup_setProperty>`
+:octicon:`dash` :ref:`updateBackupVolume S3 <zxsuite_backup_updateBackupVolume_S3>`
 
-   `doAccountScan <./cli.xml#backup_doAccountScan>`_ \|
-   `doBackupAuthToken <./cli.xml#backup_doBackupAuthToken>`_ \|
-   `doBackupChat <./cli.xml#backup_doBackupChat>`_ \|
-   `doBackupCluster <./cli.xml#backup_doBackupCluster>`_ \|
-   `doBackupLDAP <./cli.xml#backup_doBackupLDAP>`_ \|
-   `doBackupServerCustomizations <./cli.xml#backup_doBackupServerCustomizations>`_
-   \| `doCheckShares <./cli.xml#backup_doCheckShares>`_ \|
-   `doCoherencyCheck <./cli.xml#backup_doCoherencyCheck>`_ \|
-   `doEnableDisableCOS <./cli.xml#backup_doEnableDisableCOS>`_ \|
-   `doExport <./cli.xml#backup_doExport>`_ \|
-   `doExternalRestore <./cli.xml#backup_doExternalRestore>`_ \|
-   `doFixShares <./cli.xml#backup_doFixShares>`_ \|
-   `doItemRestore <./cli.xml#backup_doItemRestore>`_ \|
-   `doItemSearch <./cli.xml#backup_doItemSearch>`_ \|
-   `doPurge <./cli.xml#backup_doPurge>`_ \|
-   `doRawRestore <./cli.xml#backup_doRawRestore>`_ \|
-   `doRestartService <./cli.xml#backup_doRestartService>`_ \|
-   `doRestoreBlobs <./cli.xml#backup_doRestoreBlobs>`_ \|
-   `doRestoreChat <./cli.xml#backup_doRestoreChat>`_ \|
-   `doRestoreOnNewAccount <./cli.xml#backup_doRestoreOnNewAccount>`_ \|
-   `doSmartScan <./cli.xml#backup_doSmartScan>`_ \|
-   `doStartService <./cli.xml#backup_doStartService>`_ \|
-   `doStopAllOperations <./cli.xml#backup_doStopAllOperations>`_ \|
-   `doStopOperation <./cli.xml#backup_doStopOperation>`_ \|
-   `doStopService <./cli.xml#backup_doStopService>`_ \|
-   `doUndelete <./cli.xml#backup_doUndelete>`_ \|
-   `getAccountInfo <./cli.xml#backup_getAccountInfo>`_ \|
-   `getAllOperations <./cli.xml#backup_getAllOperations>`_ \|
-   `getAvailableAccounts <./cli.xml#backup_getAvailableAccounts>`_ \|
-   `getAvailableDomains <./cli.xml#backup_getAvailableDomains>`_ \|
-   `getBackupInfo <./cli.xml#backup_getBackupInfo>`_ \|
-   `getCOSBackupStatus <./cli.xml#backup_getCOSBackupStatus>`_ \|
-   `getItem <./cli.xml#backup_getItem>`_ \|
-   `getMap <./cli.xml#backup_getMap>`_ \|
-   `getProperty <./cli.xml#backup_getProperty>`_ \|
-   `getServerConfig <./cli.xml#backup_getServerConfig>`_ \|
-   `getServices <./cli.xml#backup_getServices>`_ \| `migrateBackupVolume
-   Default <./cli.xml#backup_migrateBackupVolume_Default>`_ \|
-   `migrateBackupVolume
-   Local <./cli.xml#backup_migrateBackupVolume_Local>`_ \|
-   `migrateBackupVolume S3 <./cli.xml#backup_migrateBackupVolume_S3>`_ \|
-   `monitor <./cli.xml#backup_monitor>`_ \| `retrieveMetadataFromArchive
-   Local <./cli.xml#backup_retrieveMetadataFromArchive_Local>`_ \|
-   `retrieveMetadataFromArchive
-   S3 <./cli.xml#backup_retrieveMetadataFromArchive_S3>`_ \|
-   `setBackupVolume Default <./cli.xml#backup_setBackupVolume_Default>`_
-   \| `setBackupVolume Local <./cli.xml#backup_setBackupVolume_Local>`_ \|
-   `setBackupVolume S3 <./cli.xml#backup_setBackupVolume_S3>`_ \|
-   `setProperty <./cli.xml#backup_setProperty>`_ \| `updateBackupVolume
-   S3 <./cli.xml#backup_updateBackupVolume_S3>`_
+
+

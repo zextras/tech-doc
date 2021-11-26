@@ -802,31 +802,31 @@ use of the command.
 Zextras Admin CLI
 =================
 
-This section contains the index of all the available ``zextras admin``
-commands. Full reference can be found in `the dedicated
-section <./cli.xml#_zxadmin_cli_commands>`_.
+This section contains the index of all ``zxsuite admin`` commands. Full
+reference can be found in the dedicated
+section :ref:`zextras_admin_full_cli`.
 
-`doAddDelegationSettings <./cli.xml#admin_doAddDelegationSettings>`_ \|
-`doEditDelegationSettings <./cli.xml#admin_doEditDelegationSettings>`_
-\| `doExportQuotaHistory <./cli.xml#admin_doExportQuotaHistory>`_ \|
-`doMigrateAdmin <./cli.xml#admin_doMigrateAdmin>`_ \|
-`doMonthlyReport <./cli.xml#admin_doMonthlyReport>`_ \|
-`doRemoveDelegationSettings <./cli.xml#admin_doRemoveDelegationSettings>`_
-\| `doRepairAdmin <./cli.xml#admin_doRepairAdmin>`_ \|
-`doRestartService <./cli.xml#admin_doRestartService>`_ \|
-`doSetZimletRights <./cli.xml#admin_doSetZimletRights>`_ \|
-`doShowAdminActivity <./cli.xml#admin_doShowAdminActivity>`_ \|
-`doStartService <./cli.xml#admin_doStartService>`_ \|
-`doStopAllOperations <./cli.xml#admin_doStopAllOperations>`_ \|
-`doStopOperation <./cli.xml#admin_doStopOperation>`_ \|
-`doStopService <./cli.xml#admin_doStopService>`_ \|
-`getAllOperations <./cli.xml#admin_getAllOperations>`_ \|
-`getDelegationSettings <./cli.xml#admin_getDelegationSettings>`_ \|
-`getDomainSettings <./cli.xml#admin_getDomainSettings>`_ \|
-`getMonthlyReport <./cli.xml#admin_getMonthlyReport>`_ \|
-`getProperty <./cli.xml#admin_getProperty>`_ \|
-`getServices <./cli.xml#admin_getServices>`_ \|
-`monitor <./cli.xml#admin_monitor>`_ \|
-`resetDomainSettings <./cli.xml#admin_resetDomainSettings>`_ \|
-`setDomainSettings <./cli.xml#admin_setDomainSettings>`_ \|
-`setProperty <./cli.xml#admin_setProperty>`_
+:ref:`doAddDelegationSettings <zxsuite_admin_doAddDelegationSettings>`
+:octicon:`dash` :ref:`doEditDelegationSettings <zxsuite_admin_doEditDelegationSettings>`
+:octicon:`dash` :ref:`doExportQuotaHistory <zxsuite_admin_doExportQuotaHistory>`
+:octicon:`dash` :ref:`doMigrateAdmin <zxsuite_admin_doMigrateAdmin>`
+:octicon:`dash` :ref:`doMonthlyReport <zxsuite_admin_doMonthlyReport>`
+:octicon:`dash` :ref:`doRemoveDelegationSettings <zxsuite_admin_doRemoveDelegationSettings>`
+:octicon:`dash` :ref:`doRepairAdmin <zxsuite_admin_doRepairAdmin>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_admin_doRestartService>`
+:octicon:`dash` :ref:`doSetZimletRights <zxsuite_admin_doSetZimletRights>`
+:octicon:`dash` :ref:`doShowAdminActivity <zxsuite_admin_doShowAdminActivity>`
+:octicon:`dash` :ref:`doStartService <zxsuite_admin_doStartService>`
+:octicon:`dash` :ref:`doStopAllOperations <zxsuite_admin_doStopAllOperations>`
+:octicon:`dash` :ref:`doStopOperation <zxsuite_admin_doStopOperation>`
+:octicon:`dash` :ref:`doStopService <zxsuite_admin_doStopService>`
+:octicon:`dash` :ref:`getAllOperations <zxsuite_admin_getAllOperations>`
+:octicon:`dash` :ref:`getDelegationSettings <zxsuite_admin_getDelegationSettings>`
+:octicon:`dash` :ref:`getDomainSettings <zxsuite_admin_getDomainSettings>`
+:octicon:`dash` :ref:`getMonthlyReport <zxsuite_admin_getMonthlyReport>`
+:octicon:`dash` :ref:`getProperty <zxsuite_admin_getProperty>`
+:octicon:`dash` :ref:`getServices <zxsuite_admin_getServices>`
+:octicon:`dash` :ref:`monitor <zxsuite_admin_monitor>`
+:octicon:`dash` :ref:`resetDomainSettings <zxsuite_admin_resetDomainSettings>`
+:octicon:`dash` :ref:`setDomainSettings <zxsuite_admin_setDomainSettings>`
+:octicon:`dash` :ref:`setProperty <zxsuite_admin_setProperty>`
