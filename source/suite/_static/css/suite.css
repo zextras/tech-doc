@@ -6,3 +6,8 @@
 .wy-nav-side {
     background: var(--zx-color-abyss);
 }
+
+.wy-menu > ul > li > a[href$="restorestrategies.html"],
+.wy-menu > ul > li > a[href$="advancedbackup.html"] {
+    margin-left: 20px;
+}

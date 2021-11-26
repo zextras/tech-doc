@@ -1,4 +1,4 @@
-.. _backup_retore-strategies:
+.. _backup_restore-strategies:
 
 ===================================
  Zextras Backup Restore Strategies

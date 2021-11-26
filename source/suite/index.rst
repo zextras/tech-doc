@@ -13,8 +13,8 @@ Here you can find a description of its functionalities and configuration options
    general
    installation
    backup
-   restorestrategies
-   advancedbackup
+   Restore Strategies <restorestrategies>
+   Advanced Backup <advancedbackup>
    mobile
    ldapaddressbook
    mobile-troubleshooting
