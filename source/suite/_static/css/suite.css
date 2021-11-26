@@ -7,7 +7,10 @@
     background: var(--zx-color-abyss);
 }
 
+/* indent "subtopics" */ 
 .wy-menu > ul > li > a[href$="restorestrategies.html"],
-.wy-menu > ul > li > a[href$="advancedbackup.html"] {
+.wy-menu > ul > li > a[href$="advancedbackup.html"],
+.wy-menu > ul > li > a[href$="ldapaddressbook.html"],
+.wy-menu > ul > li > a[href$="mobile-troubleshooting.html"] {
     margin-left: 20px;
 }
