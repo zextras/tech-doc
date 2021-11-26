@@ -24,19 +24,25 @@ div.footer a {
     color: #eee;
 }
 
-.header {
-    background: url(../zextras_white.svg) no-repeat center 0 var(--zx-brand);
-    display: block;
+.frame {
     width: 100%;
+    padding: 20px;
+    background-color: var(--zx-color-abyss);
+    margin-bottom: 20px;               
+}
+
+.header {
+    background: url(../zextras_white.svg) no-repeat center 0 var(--zx-color-abyss);
+    display: block;
+    width: 99%;
     height: 100px;
-    border: 6px solid var(--zx-brand);
+    border: 20px 10px solid var(--zx-color-abyss);
 }
 
 #content {
     background-color: white;
     color: #111;
     border-bottom: 1px solid black;
-    padding: 0 15px 0 15px;
     margin: 0;
     text-align: center;
 }

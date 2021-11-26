@@ -1,0 +1,834 @@
+
+Zextras Suite 3.1.4
+===================
+
+Release Date: November 2nd, 2020
+
+.. rubric:: Backup
+
+..
+
+* Issue ID: BCK-308
+
+* *Title:* Account deletion logging improvement
+
+* *Description:* Improved logging of account deletion operation that caused non-relevant lines to be logged when backup service is running but not initialized
+
+
+
+..
+
+* Issue ID: BCK-366
+
+* *Title:* External Restore backward compatibility improvement
+
+* *Description:* Restoring data from backups made on very old releases now correctly import tag data
+
+
+
+..
+
+* Issue ID: BCK-384
+
+* *Title:* Added chat backup disable option
+
+* *Description:* It is now possible to disable the chat backup from the scheduled operation
+
+
+
+..
+
+* Issue ID: BCK-385
+
+* *Title:* Improved restore date handling
+
+* *Description:* A more readable error is returned when a restore is attempted specifying a date from before the account was first backed up
+
+
+
+..
+
+* Issue ID: BCK-386
+
+* *Title:* Fixed doExport admin mail
+
+* *Description:* Fixed the value of the backup export directory returned in the operation log mail received by the administrator
+
+
+
+..
+
+* Issue ID: BCK-399
+
+* *Title:* Added support for backup to external volume
+
+* *Description:* It is now possible to use an external volume, for example an s3 bucket, as store for backup data
+
+
+.. rubric:: General
+
+..
+
+* Issue ID: COR-417
+
+* *Title:* Core page inaccessible with expired license fix
+
+* *Description:* Fixed an issue that would make the core section of the zextras menu unusable with an expired license
+
+
+.. rubric:: Docs
+
+..
+
+* Issue ID: DOCS-92
+
+* *Title:* Docs codebase udate
+
+* *Description:* Upgraded libreoffice component to version 4.2.6
+
+
+
+..
+
+* Issue ID: DOCS-99
+
+* *Title:* Added Roboto font to Docs
+
+* *Description:* Added the Roboto Font to Docs
+
+
+
+..
+
+* Issue ID: DOCS-106
+
+* *Title:* Fixed Safari compatibility issue
+
+* *Description:* Fixed an issue that would prevent DOCS from opening, returning a security error
+
+
+.. rubric:: Drive
+
+..
+
+* Issue ID: DRIV-83
+
+* *Title:* Added Drive maintenance mode handling
+
+* *Description:* Drive now no longer shows items shared by an account in maintenance mode
+
+
+
+..
+
+* Issue ID: DRIV-933
+
+* *Title:* Fixed Drive last version editor error
+
+* *Description:* Fixed an issue that would cause an error to pop up if a user had a drive object last edited by another user that no longer exists
+
+
+
+..
+
+* Issue ID: DRIV-952
+
+* *Title:* Improved deleted user handling in version
+
+* *Description:* Improved Drive version list so that if a user that edited a file is deleted now "deleted user" is listed in the versions list
+
+
+
+..
+
+* Issue ID: DRIV-956
+
+* *Title:* Fixed drive shared folder handling
+
+* *Description:* Fixed an issue that would rend impossible to users to upload files to drive in a shared folder located on a different host
+
+
+
+..
+
+* Issue ID: DRIV-988
+
+* *Title:* Drive public share Fix
+
+* *Description:* Fixed an issue that would cause an error to be returned when opening the link of a public shared object
+
+
+.. rubric:: Mobile
+
+..
+
+* Issue ID: MOB-239
+
+* *Title:* Appointment acceptation date/time fix
+
+* *Description:* On accepting an appointment via Exchange ActiveSync, its date and time changed to the ones of the acceptation. Now this has been fixed.
+
+
+
+..
+
+* Issue ID: MOB-242
+
+* *Title:* Added mobile custom zimbraId handling
+
+* *Description:* Added support on Mobile for accounts having custon zimbraID uuid
+
+
+
+..
+
+* Issue ID: MOB-248
+
+* *Title:* Mobile password management removed from the Admin GUI
+
+* *Description:* The mobile password management has been removed from the Admin GUI to be compliant with the new multiple mobile password management.
+
+
+
+..
+
+* Issue ID: MOB-254
+
+* *Title:* Mobile calendar location parameters fix
+
+* *Description:* Fixed an issue that would prevend calendar syncronization if a location was set and some fields were not compiled
+
+.. rubric:: Backup
+
+..
+
+* Issue ID: BCK-308
+
+* *Title:* Account deletion logging improvement
+
+* *Description:* Improved logging of account deletion operation that caused non-relevant lines to be logged when backup service is running but not initialized
+
+
+
+..
+
+* Issue ID: BCK-366
+
+* *Title:* External Restore backward compatibility improvement
+
+* *Description:* Restoring data from backups made on very old releases now correctly import tag data
+
+
+
+..
+
+* Issue ID: BCK-384
+
+* *Title:* Added chat backup disable option
+
+* *Description:* It is now possible to disable the chat backup from the scheduled operation
+
+
+
+..
+
+* Issue ID: BCK-385
+
+* *Title:* Improved restore date handling
+
+* *Description:* A more readable error is returned when a restore is attempted specifying a date from before the account was first backed up
+
+
+
+..
+
+* Issue ID: BCK-386
+
+* *Title:* Fixed doExport admin mail
+
+* *Description:* Fixed the value of the backup export directory returned in the operation log mail received by the administrator
+
+
+
+..
+
+* Issue ID: BCK-399
+
+* *Title:* Added support for backup to external volume
+
+* *Description:* It is now possible to use an external volume, for example an s3 bucket, as store for backup data
+
+
+.. rubric:: General
+
+..
+
+* Issue ID: COR-417
+
+* *Title:* Core page inaccessible with expired license fix
+
+* *Description:* Fixed an issue that would make the core section of the zextras menu unusable with an expired license
+
+
+.. rubric:: Docs
+
+..
+
+* Issue ID: DOCS-92
+
+* *Title:* Docs codebase update
+
+* *Description:* Upgraded libreoffice component to version 4.2.6
+
+
+
+..
+
+* Issue ID: DOCS-99
+
+* *Title:* Added Roboto font to Docs
+
+* *Description:* Added the Roboto Font to Docs
+
+
+
+..
+
+* Issue ID: DOCS-106
+
+* *Title:* Fixed Safari compatibility issue
+
+* *Description:* Fixed an issue that would prevent DOCS from opening, returning a security error
+
+
+.. rubric:: Drive
+
+..
+
+* Issue ID: DRIV-83
+
+* *Title:* Added Drive maintenance mode handling
+
+* *Description:* Drive now no longer shows items shared by an account in maintenance mode
+
+
+
+..
+
+* Issue ID: DRIV-933
+
+* *Title:* Fixed Drive last version editor error
+
+* *Description:* Fixed an issue that would cause an error to pop up if a user had a drive object last edited by another user that no longer exists
+
+
+
+..
+
+* Issue ID: DRIV-952
+
+* *Title:* Improved deleted user handling in version
+
+* *Description:* Improved Drive version list so that if a user that edited a file is deleted now "deleted user" is listed in the versions list
+
+
+
+..
+
+* Issue ID: DRIV-956
+
+* *Title:* Fixed drive shared folder handling
+
+* *Description:* Fixed an issue that would rend impossible to users to upload files to drive in a shared folder located on a different host
+
+
+.. rubric:: Backup
+
+..
+
+* Issue ID: BCK-308
+
+* *Title:* Account deletion logging improvement
+
+* *Description:* Improved logging of account deletion operation that caused non-relevant lines to be logged when backup service is running but not initialized
+
+
+
+..
+
+* Issue ID: BCK-366
+
+* *Title:* External Restore backward compatibility improvement
+
+* *Description:* Restoring data from backups made on very old releases now correctly import tag data
+
+
+
+..
+
+* Issue ID: BCK-384
+
+* *Title:* Added chat backup disable option
+
+* *Description:* It is now possible to disable the chat backup from the scheduled operation
+
+
+
+..
+
+* Issue ID: BCK-385
+
+* *Title:* Improved restore date handling
+
+* *Description:* A more readable error is returned when a restore is attempted specifying a date from before the account was first backed up
+
+
+
+..
+
+* Issue ID: BCK-386
+
+* *Title:* Fixed doExport admin mail
+
+* *Description:* Fixed the value of the backup export directory returned in the operation log mail received by the administrator
+
+
+
+..
+
+* Issue ID: BCK-399
+
+* *Title:* Added support for backup to external volume
+
+* *Description:* It is now possible to use an external volume, for example an s3 bucket, as store for backup data
+
+
+.. rubric:: General
+
+..
+
+* Issue ID: COR-417
+
+* *Title:* Core page inaccessible with expired license fix
+
+* *Description:* Fixed an issue that would make the core section of the zextras menu unusable with an expired license
+
+
+.. rubric:: Docs
+
+..
+
+* Issue ID: DOCS-92
+
+* *Title:* Docs codebase udate
+
+* *Description:* Upgraded libreoffice component to version 4.2.6
+
+
+
+..
+
+* Issue ID: DOCS-99
+
+* *Title:* Added Roboto font to Docs
+
+* *Description:* Added the Roboto Font to Docs
+
+
+
+..
+
+* Issue ID: DOCS-106
+
+* *Title:* Fixed Safari compatibility issue
+
+* *Description:* Fixed an issue that would prevent DOCS from opening, returning a security error
+
+
+.. rubric:: Drive
+
+..
+
+* Issue ID: DRIV-83
+
+* *Title:* Added Drive maintenance mode handling
+
+* *Description:* Drive now no longer shows items shared by an account in maintenance mode
+
+
+
+..
+
+* Issue ID: DRIV-933
+
+* *Title:* Fixed Drive last version editor error
+
+* *Description:* Fixed an issue that would cause an error to pop up if a user had a drive object last edited by another user that no longer exists
+
+
+
+..
+
+* Issue ID: DRIV-952
+
+* *Title:* Improved deleted user handling in version
+
+* *Description:* Improved Drive version list so that if a user that edited a file is deleted now "deleted user" is listed in the versions list
+
+
+
+..
+
+* Issue ID: DRIV-956
+
+* *Title:* Fixed drive shared folder handling
+
+* *Description:* Fixed an issue that would rend impossible to users to upload files to drive in a shared folder located on a different host
+
+
+
+..
+
+* Issue ID: DRIV-988
+
+* *Title:* Drive public share Fix
+
+* *Description:* Fixed an issue that would cause an error to be returned when opening the link of a public shared object
+
+
+.. rubric:: Mobile
+
+..
+
+* Issue ID: MOB-239
+
+* *Title:* Appointment acceptation date/time fix
+
+* *Description:* On accepting an appointment via Exchange ActiveSync, its date and time changed to the ones of the acceptation. Now this has been fixed.
+
+
+
+..
+
+* Issue ID: MOB-242
+
+* *Title:* Added mobile custom zimbraId handling
+
+* *Description:* Added support on Mobile for accounts having custon zimbraID uuid
+
+
+
+..
+
+* Issue ID: MOB-248
+
+* *Title:* Mobile password management removed from the Admin GUI
+
+* *Description:* The mobile password management has been removed from the Admin GUI to be compliant with the new multiple mobile password management.
+
+
+
+..
+
+* Issue ID: MOB-254
+
+* *Title:* Mobile calendar location parameters fix
+
+* *Description:* Fixed an issue that would prevend calendar syncronization if a location was set and some fields were not compiled
+
+
+
+..
+
+* Issue ID: MOB-255
+
+* *Title:* Mobile mail sender improvement
+
+* *Description:* Improved behavior of mobile module that now predictably uses the main address as sender when personas are configured
+
+
+
+..
+
+* Issue ID: MOB-273
+
+* *Title:* Mobile device list Fix
+
+* *Description:* Fixed an issue that would prevent the mobile section of the web admin console to show the list of mobile devices
+
+
+.. rubric:: Powerstore
+
+..
+
+* Issue ID: PS-263
+
+* *Title:* S3 volume connections handling improvement
+
+* *Description:* Improved s3 code to reduce the number of http(s) calls to a minimum
+
+
+.. rubric:: Team
+
+..
+
+* Issue ID: TEAMS-1786
+
+* *Title:* Webcam enabling on screen share ending fixed
+
+* *Description:* Fixed the behaviour of the instant meeting that enabled the webcam after a screen sharing session during an instant meeting even if it was disabled before starting the screen share session.
+
+
+
+..
+
+* Issue ID: TEAMS-1819
+
+* *Title:* Added status and avatar unset configuration
+
+* *Description:* It is now possible to edit the user status and unset the avatar picture in the instant messaging settings
+
+
+
+..
+
+* Issue ID: TEAMS-1835
+
+* *Title:* Instant meeting creation Improvement
+
+* *Description:* When a new instant meeting is created while another one is running all fields now appear empty
+
+
+
+..
+
+* Issue ID: TEAMS-1869
+
+* *Title:* Improved connection issue notification
+
+* *Description:* A message is clearly shown when instant messaging is not possible due to connection issues
+
+
+
+..
+
+* Issue ID: TEAMS-1930
+
+* *Title:* Added Turkish translation to Team
+
+* *Description:* Instant messaging interface now has Turkish translation
+
+
+
+..
+
+* Issue ID: DRIV-988
+
+* *Title:* Drive public share Fix
+
+* *Description:* Fixed an issue that would cause an error to be returned when opening the link of a public shared object
+
+
+.. rubric:: Mobile
+
+..
+
+* Issue ID: MOB-239
+
+* *Title:* Appointment acceptation date/time fix
+
+* *Description:* On accepting an appointment via Exchange ActiveSync, its date and time changed to the ones of the acceptation. Now this has been fixed.
+
+
+
+..
+
+* Issue ID: MOB-242
+
+* *Title:* Added mobile custom zimbraId handling
+
+* *Description:* Added support on Mobile for accounts having custon zimbraID uuid
+
+
+
+..
+
+* Issue ID: MOB-248
+
+* *Title:* Mobile password management removed from the Admin GUI
+
+* *Description:* The mobile password management has been removed from the Admin GUI to be compliant with the new multiple mobile password management.
+
+
+
+..
+
+* Issue ID: MOB-254
+
+* *Title:* Mobile calendar location parameters fix
+
+* *Description:* Fixed an issue that would prevend calendar syncronization if a location was set and some fields were not compiled
+
+
+
+..
+
+* Issue ID: MOB-255
+
+* *Title:* Mobile mail sender improvement
+
+* *Description:* Improved behavior of mobile module that now predictably uses the main address as sender when personas are configured
+
+
+
+..
+
+* Issue ID: MOB-273
+
+* *Title:* Mobile device list Fix
+
+* *Description:* Fixed an issue that would prevent the mobile section of the web admin console to show the list of mobile devices
+
+
+.. rubric:: Powerstore
+
+..
+
+* Issue ID: PS-263
+
+* *Title:* S3 volume connections handling improvement
+
+* *Description:* Improved s3 code to reduce the number of http(s) calls to a minimum
+
+
+.. rubric:: Team
+
+..
+
+* Issue ID: TEAMS-1786
+
+* *Title:* Webcam enabling on screen share ending fixed
+
+* *Description:* Fixed the behaviour of the instant meeting that enabled the webcam after a screen sharing session during an instant meeting even if it was disabled before starting the screen share session.
+
+
+
+..
+
+* Issue ID: TEAMS-1819
+
+* *Title:* Added status and avatar unset configuration
+
+* *Description:* It is now possible to edit the user status and unset the avatar picture in the instant messaging settings
+
+
+
+..
+
+* Issue ID: TEAMS-1835
+
+* *Title:* Instant meeting creation Improvement
+
+* *Description:* When a new instant meeting is created while another one is running all fields now appear empty
+
+
+
+..
+
+* Issue ID: TEAMS-1869
+
+* *Title:* Improved connection issue notification
+
+* *Description:* A message is clearly shown when instant messaging is not possible due to connection issues
+
+
+
+..
+
+* Issue ID: TEAMS-1930
+
+* *Title:* Added Turkish translation to Team
+
+* *Description:* Instant messaging interface now has Turkish translation
+
+
+..
+
+* Issue ID: MOB-255
+
+* *Title:* Mobile mail sender improvement
+
+* *Description:* Improved behavior of mobile module that now predictably uses the main address as sender when personas are configured
+
+
+
+..
+
+* Issue ID: MOB-273
+
+* *Title:* Mobile device list Fix
+
+* *Description:* Fixed an issue that would prevent the mobile section of the web admin console to show the list of mobile devices
+
+
+.. rubric:: Powerstore
+
+..
+
+* Issue ID: PS-263
+
+* *Title:* S3 volume connections handling improvement
+
+* *Description:* Improved s3 code to reduce the number of http(s) calls to a minimum
+
+
+.. rubric:: Team
+
+..
+
+* Issue ID: TEAMS-1786
+
+* *Title:* Webcam enabling on screen share ending fixed
+
+* *Description:* Fixed the behaviour of the instant meeting that enabled the webcam after a screen sharing session during an instant meeting even if it was disabled before starting the screen share session.
+
+
+
+..
+
+* Issue ID: TEAMS-1819
+
+* *Title:* Added status and avatar unset configuration
+
+* *Description:* It is now possible to edit the user status and unset the avatar picture in the instant messaging settings
+
+
+
+..
+
+* Issue ID: TEAMS-1835
+
+* *Title:* Instant meeting creation Improvement
+
+* *Description:* When a new instant meeting is created while another one is running all fields now appear empty
+
+
+
+..
+
+* Issue ID: TEAMS-1869
+
+* *Title:* Improved connection issue notification
+
+* *Description:* A message is clearly shown when instant messaging is not possible due to connection issues
+
+
+
+..
+
+* Issue ID: TEAMS-1930
+
+* *Title:* Added Turkish translation to Team
+
+* *Description:* Instant messaging interface now has Turkish translation
+

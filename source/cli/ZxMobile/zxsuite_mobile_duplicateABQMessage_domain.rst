@@ -1,0 +1,31 @@
+
+::
+
+   zxsuite mobile duplicateABQMessage domain *example.com*
+   *blocked|quarantined* *default|a valid locale* *default|a valid
+   locale*
+
+.. rubric:: Parameter List
+
++-----------------+-----------------+-----------------+-----------------+
+| NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
++-----------------+-----------------+-----------------+-----------------+
+| **domain**\ (M) | String          | example.com     |                 |
++-----------------+-----------------+-----------------+-----------------+
+| **type**\ (M)   | String          | bloc            |                 |
+|                 |                 | ked|quarantined |                 |
++-----------------+-----------------+-----------------+-----------------+
+| **loc           | String          | default|a valid |                 |
+| ale_from**\ (M) |                 | locale          |                 |
++-----------------+-----------------+-----------------+-----------------+
+| **l             | String          | default|a valid |                 |
+| ocale_to**\ (M) |                 | locale          |                 |
++-----------------+-----------------+-----------------+-----------------+
+
+\(M) == mandatory parameter, (O) == optional parameter
+
+.. rubric:: Usage Example
+
+::
+
+   zxsuite mobile duplicateABQMessage domain example.com en_US en_UK

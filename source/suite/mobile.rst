@@ -1,12 +1,6 @@
-==============
-Zextras Mobile
-==============
-
-:Date:   2021-10-19
-
-.. contents::
-   :depth: 3
-..
+================
+ Zextras Mobile
+================
 
 .. _enable_zextras_mobile_synchronization_for_a_cos:
 
@@ -18,65 +12,53 @@ Enable Zextras Mobile Synchronization for a COS
 How to Enable Zextras Mobile for all Users in a Class Of Service
 ----------------------------------------------------------------
 
-.. _from_the_administration_console:
+.. dropdown:: From the Administration Console
 
-From the Administration Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   To enable Zextras Mobile for all users in a COS from the Administration
+   Console:
 
-To enable Zextras Mobile for all users in a COS from the Administration
-Console:
+   - Open the Zimbra Administration Console
 
--  Open the Zimbra Administration Console.
+   - Double-click the Class Of Service you want to edit (on the left,
+     under :menuselection:`Configuration --> Class of Service`)
 
--  Double-click the Class Of Service you want to edit (on the left,
-   under Configuration → Class of Service).
+   - Click the Mobile tab
 
--  Click the Mobile tab.
+   - Check the ``Enable mobile synchronization`` button
 
--  Check the ``Enable mobile synchronization`` button.
+.. dropdown:: From the Zimbra CLI
 
-.. _from_the_zimbra_cli:
+   To enable Zextras Mobile for all users in a COS from the CLI:
 
-From the Zimbra CLI
-~~~~~~~~~~~~~~~~~~~
-
-To enable Zextras Mobile for all users in a COS from the CLI:
-
--  As the 'zimbra' user run: **``zmprov mc COSName
-   zimbraFeatureMobileSyncEnabled TRUE``**
+   - As the 'zimbra' user run :command:`zmprov mc COSName
+     zimbraFeatureMobileSyncEnabled TRUE`
 
 .. _how_to_disable_zextras_mobile_for_all_users_in_a_class_of_service:
 
 How to Disable Zextras Mobile for all Users in a Class Of Service
 -----------------------------------------------------------------
 
-.. _from_the_administration_console_2:
+.. dropdown:: From the Administration Console
 
-From the Administration Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   To disable Zextras Mobile for all users in a COS from the Administration
+   Console:
 
-To disable Zextras Mobile for all users in a COS from the Administration
-Console:
+   - Open the Zimbra Administration Console
 
--  Open the Zimbra Administration Console.
+   - Double-click the Class Of Service you want to edit (on the left,
+     under :menuselection:`Configuration --> Class of Service`).
 
--  Double-click the Class Of Service you want to edit (on the left,
-   under Configuration → Class of Service).
+   - Click the Mobile tab and uncheck the ``Enable mobile
+     synchronization`` button.
 
--  Click the Mobile tab and uncheck the ``Enable mobile
-   synchronization`` button.
+.. dropdown:: From the Zimbra CLI
 
-.. _from_the_zimbra_cli_2:
+   To disable Zextras Mobile for all users in a COS from the CLI:
 
-From the Zimbra CLI
-~~~~~~~~~~~~~~~~~~~
+   - As the 'zimbra' user run :command:`zmprov mc COSName
+     zimbraFeatureMobileSyncEnabled FALSE`
 
-To disable Zextras Mobile for all users in a COS from the CLI:
-
--  As the 'zimbra' user run: **``zmprov mc COSName
-   zimbraFeatureMobileSyncEnabled FALSE``**
-
-.. _note_about_settings_hierarchy:
+.. _mobile_note_about_settings_hierarchy:
 
 Note about Settings Hierarchy
 -----------------------------
@@ -97,64 +79,54 @@ Module.
 How to Enable Zextras Mobile for a Single User
 ----------------------------------------------
 
-.. _from_the_zimbra_administration_console:
+.. dropdown::   From the Zimbra Administration Console
 
-From the Zimbra Administration Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   To enable Zextras Mobile for a single user from the Administration
+   Console:
 
-To enable Zextras Mobile for a single user from the Administration
-Console:
+   - Open the Zimbra Administration Console
 
--  Open the Zimbra Administration Console.
+   - Double-click the user you want to edit (on the left, under
+     :menuselection:`Manage --> Accounts`)
 
--  Double-click the user you want to edit (on the left, under Manage →
-   Accounts).
+   - Click the Mobile tab
 
--  Click the Mobile tab.
+   - Check ``Enable mobile synchronization``
 
--  Check ``Enable mobile synchronization``.
+   .. _mobile_from_the_zimbra_cli_3:
 
-.. _from_the_zimbra_cli_3:
+.. dropdown:: From the Zimbra CLI
 
-From the Zimbra CLI
-~~~~~~~~~~~~~~~~~~~
+   To enable Zextras Mobile for a single user from the CLI:
 
-To enable Zextras Mobile for a single user from the CLI:
+   - As the 'zimbra' user run: :command:`zmprov ma user@example.com
+     zimbraFeatureMobileSyncEnabled TRUE`
 
--  As the 'zimbra' user run: **``zmprov ma user@example.com
-   zimbraFeatureMobileSyncEnabled TRUE``**
-
-.. _how_to_disable_zextras_mobile_for_a_single_user:
+.. _mobile_how_to_disable_zextras_mobile_for_a_single_user:
 
 How to Disable Zextras Mobile for a Single User
 -----------------------------------------------
 
-.. _from_the_zimbra_administration_console_2:
+.. dropdown:: From the Zimbra Administration Console
 
-From the Zimbra Administration Console
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   To disable Zextras Mobile for a single user from the CLI:
 
-To disable Zextras Mobile for a single user from the CLI:
+   - Open the Zimbra Administration Console
 
--  Open the Zimbra Administration Console.
+   - Double-click the user you want to edit (on the left, under
+     :menuselection:`Manage -> Accounts`)
 
--  Double-click the user you want to edit (on the left, under Manage →
-   Accounts).
+   - Click the Zextras Mobile tab and uncheck ``Enable mobile
+     synchronization``
 
--  Click the Zextras Mobile tab and uncheck ``Enable mobile
-   synchronization``.
+.. dropdown:: From the Zimbra CLI
 
-.. _from_the_zimbra_cli_4:
+   To disable Zextras Mobile for a single user from the CLI:
 
-From the Zimbra CLI
-~~~~~~~~~~~~~~~~~~~
+   - As the 'zimbra' user run :command:`zmprov ma user@example.com
+     zimbraFeatureMobileSyncEnabled FALSE`
 
-To disable Zextras Mobile for a single user from the CLI:
-
--  As the 'zimbra' user run: **``zmprov ma user@example.com
-   zimbraFeatureMobileSyncEnabled FALSE``**
-
-.. _note_about_settings_hierarchy_2:
+.. _mobile_note_about_settings_hierarchy_2:
 
 Note about Settings Hierarchy
 -----------------------------
@@ -177,13 +149,13 @@ ActiveSync authentications only.
 
 The main benefits of using this feature are:
 
--  Enforce ``set-and-forget`` safe passwords, regardless of any other
-   password policy, so that you won’t need to change the password saved
-   on all mobile devices synchronized with an account should this
-   account’s Zimbra password change.
+- Enforce ``set-and-forget`` safe passwords, regardless of any other
+  password policy, so that you won't need to change the password saved
+  on all mobile devices synchronized with an account should this
+  account’s Zimbra password change
 
--  Avoid the ``real`` password to be disclosed in case of unauthorized
-   access to the device/client.
+- Avoid the ``real`` password to be disclosed in case of unauthorised
+  access to the device/client
 
 A ``Mobile Password`` will not be valid for Webmail/POP3/IMAP/SMTP
 logins, and the account password will not be valid for mobile logins.
@@ -194,7 +166,7 @@ How to Set a Mobile Password for a Mailbox
 ------------------------------------------
 
 Mobile Passwords are handled by the Zextras Auth module, more
-information can be found `at this link <auth.html#mobile-password>`_.
+information can be found in section :ref:`auth_zimlet-create-mobile`.
 
 .. _mobile_device_management_a_k_a_mobile_provisioning:
 
@@ -220,7 +192,7 @@ Own Device`` corporate policies, allowing users to connect their
 personal mobile devices to the corporate servers, while reducing the
 risk of security breaches to a minimum.
 
-.. _provisioning_features_available_on_your_client:
+.. _mobile_provisioning_features_available_on_your_client:
 
 Provisioning Features Available on Your Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -242,32 +214,28 @@ a quick ``one for many`` setup and user-based customized management. In
 both cases, Mobile Management Options are available in the ``Mobile``
 tab.
 
-.. _provisioning_options:
+.. _mobile_provisioning_options:
 
 Provisioning Options
 ~~~~~~~~~~~~~~~~~~~~
 
 The following provisioning options are available:
 
--  Enable Mobile Device Management: Enable or disable the use of mobile
-   policies for the current user/COS.
+- Enable Mobile Device Management: Enable or disable the use of mobile
+  policies for the current user/COS
 
--  Allow non-provisionable devices: Allow the user to synchronize any
-   device that does not support provisioning.
+- Allow non-provisionable devices: Allow the user to synchronize any
+  device that does not support provisioning
 
--  Allow partial policy enforcement on device: Allow the user to
-   synchronize any device that does not support one or more applicable
-   policies.
+- Allow partial policy enforcement on device: Allow the user to
+  synchronize any device that does not support one or more applicable
+  policies
 
-..
+.. hint:: By default, MDM is disabled in Zextras Mobile. To enable
+   navigate to :menuselection:`Zextras Suite --> Mobile --> Advanced
+   Settings` and check the ``Enable Mobile Device Management`` option
 
-   **Tip**
-
-   By default, MDM is disabled in Zextras Mobile. To enable navigate to
-   Zextras Suite → Mobile → Advanced Settings and check the “Enable
-   Mobile Device Management” option
-
-.. _enforceable_policies:
+.. _mobile_enforceable_policies:
 
 Enforceable Policies
 ~~~~~~~~~~~~~~~~~~~~
@@ -275,25 +243,27 @@ Enforceable Policies
 Enforceable Policies are available right below the ``Mobile Devices``
 list, grouped in the following categories:
 
--  Sync Settings: Set synchronization spans and limits.
+- Sync Settings: Set synchronization spans and limits
 
--  Device Settings: Enable or disable device features such as camera,
-   WiFi, removable storage or Bluetooth.
+- Device Settings: Enable or disable device features such as camera,
+  WiFi, removable storage or Bluetooth
 
--  Device Security Settings: Force an unlock code and define the minimum
-   requirements for the code itself.
+- Device Security Settings: Force an unlock code and define the
+  minimum requirements for the code itself
 
--  Device Applications: Enable or disable ``standard`` device
-   applications such as the Browser and POP/IMAP client or unsigned
-   apps.
+- Device Applications: Enable or disable ``standard`` device
+  applications such as the Browser and POP/IMAP client or unsigned
+  apps
 
 Two lists are also available for application whitelist/blacklist
 management:
 
--  Approved Applications: A customizable list of approved applications.
+Approved Applications
+   A customizable list of approved applications.
 
--  Blocked Applications: A customizable list of blocked applications
-   that won’t be usable on the device.
+Blocked Applications
+   A customizable list of blocked applications that won’t be usable on
+   the device.
 
 .. _mobile_password:
 
@@ -304,7 +274,7 @@ While conceptually similar, the mobile password feature is not part of
 Mobile Device Management and can be used with any version of the EAS
 protocol.
 
-.. _syncstates:
+.. _mobile_syncstates:
 
 SyncStates
 ==========
@@ -319,24 +289,28 @@ kept on the server about the synchronization with a mobile device. Each
 time a device establishes a connection with Zextras Mobile, the
 following steps take place:
 
--  1. The device requests a folderSync operation to synchronize the
-   local Folders with the ones on the server.
+1. The device requests a folderSync operation to synchronize the local
+   Folders with the ones on the server.
 
-``    One SyncKey per local folder is sent (or a single SyncKey set to '0' if this is the first connection between the device and the server)   ``
+   :fa:`arrow-right` One SyncKey per local folder is sent (or a single
+   SyncKey set to '0' if this is the first connection between the
+   device and the server)
 
--  2. The server replies with a list of available folders.
+2. The server replies with a list of available folders.
 
-``    One SyncKey per folder is sent by the server.``
+   :fa:`arrow-right` One SyncKey per folder is sent by the server.
 
--  3. Then, the device requests an itemSync operation to synchronize all
-   due items.
+3. The device requests an itemSync operation to synchronize all due
+   items.
 
-``    The server stores the items synchronized in the SyncState.``
+   :fa:`arrow-right` The server stores the items synchronized in the
+   SyncState.
 
--  4. After completing the itemSync operation, the device sends a 'ping'
+4. After completing the itemSync operation, the device sends a 'ping'
    command to keep the connection alive.
 
-``    Step 4 is repeated as long as no changes happen to the synchronized account.``
+   :fa:`arrow-right` Step 4 is repeated as long as no changes happen
+   to the synchronised account.
 
 Every time a new item is stored on the mailbox or an old item is
 modified, the server notifies the availability to the device, which
@@ -344,10 +318,10 @@ closes the active connection (the one kept alive by the ping command)
 and repeats steps 3 and 4.
 
 The SyncState is the combination of the SyncKeys saved on step 2 and the
-itemIds saved on step 3. It’s saved by the server per the
-userId/deviceId unique pair.
+`itemID`\s saved on step 3. It is saved by the server per the
+userID/deviceID unique pair.
 
-.. _sync_request:
+.. _mobile_sync_request:
 
 Sync Request
 ~~~~~~~~~~~~
@@ -359,111 +333,88 @@ synchronized to the device and vice versa.
 
 A sync request is issued when:
 
--  The SyncState changes.
+- The SyncState changes.
 
--  A sync is forced client-side.
+- A sync is forced client-side.
 
--  The current ``ping`` expires and a new one is sent by the device (the
-   keepalive duration is defined by the client).
+- The current :command:`ping` expires and a new one is sent by the
+  device (the keepalive duration is defined by the client).
 
-.. _managing_the_syncstates:
+.. _mobile_managing_the_syncstates:
 
 Managing the SyncStates
 -----------------------
 
-.. _via_the_administration_zimlet:
+.. dropdown:: Via the Administration Zimlet
 
-Via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Zextras Mobile provides two options in the Administration Zimlet to
+   manage the SyncStates of synchronized mobile devices:
 
-Zextras Mobile provides two options in the Administration Zimlet to
-manage the SyncStates of synchronized mobile devices:
+   - Reset Device: Resets the device’s SyncState for a single account,
+     forcing a full re-synchronization the next time the device connects
+     to the server.
 
--  Reset Device: Resets the device’s SyncState for a single account,
-   forcing a full re-synchronization the next time the device connects
-   to the server.
+   - Wipe Device: Removes all the device’s SyncState and history from the
+     server. Useful when a mobile device is not used anymore or is
+     assigned to a different employee in the same company.
 
--  Wipe Device: Removes all the device’s SyncState and history from the
-   server. Useful when a mobile device is not used anymore or is
-   assigned to a different employee in the same company.
+.. dropdown:: Via the CLI
 
-.. _via_the_cli:
+   To manage the SyncStates of synchronized mobile devices via the
+   CLI, use one of the following commands:
 
-Via the CLI
-~~~~~~~~~~~
+   .. grid::
+      :gutter: 3
 
-To manage the SyncStates of synchronized mobile devices via the CLI, use
-one of the following commands:
+      .. grid-item-card::
+         :columns: 4
 
-.. _the_doremovedevice_command:
+         The doRemoveDevice command
+         ^^^^^
 
-The doRemoveDevice command
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+         Syntax::
 
-::
+           zxsuite mobile doRemoveDevice {account} {device_id}
 
-   Syntax:
-      zxsuite mobile doRemoveDevice {account} {device_id}
+         Usage example:
 
-   PARAMETER LIST
+         zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S
 
-   NAME            TYPE
-   account(M)      Account Name
-   device_id(M)    String
+         Removes John's Appl79032X2WA4S device SyncState
 
-   (M) == mandatory parameter, (O) == optional parameter
+      .. grid-item-card::
+         :columns: 4
 
-   Usage example:
+         The doResetAccount command
+         ^^^^^^
 
-   zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S
-   Removes John's Appl79032X2WA4S device SyncState
+         Syntax::
+               zxsuite mobile doResetAccount {account}
 
-.. _the_doresetaccount_command:
+         Usage example:
 
-The doResetAccount command
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+            zxsuite mobile doResetAccount john@example.com
 
-::
+         Resets all the device states for John's account
 
-   Syntax:
-      zxsuite mobile doResetAccount {account}
 
-   PARAMETER LIST
+      .. grid-item-card::
+         :columns: 4
 
-   NAME          TYPE
-   account(M)    Account Name
+         The doResetDevice command
+         ^^^^^
 
-   (M) == mandatory parameter, (O) == optional parameter
+         Syntax::
 
-   Usage example:
+           zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
 
-   zxsuite mobile doResetAccount john@example.com
-   Resets all the device states for John's account
+         Usage example::
 
-.. _the_doresetdevice_command:
+           zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S
 
-The doResetDevice command
-~~~~~~~~~~~~~~~~~~~~~~~~~
+         Resets John's Appl79032X2WA4S device SyncState
 
-::
-
-   Syntax:
-      zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
-
-   PARAMETER LIST
-
-   NAME            TYPE            DEFAULT
-   account(M)      Account Name
-   device_id(O)    String          all
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S
-   Resets John's Appl79032X2WA4S device SyncState
-
-.. _advanced_settings:
+.. _mobile_advanced_settings:
 
 Advanced Settings
 =================
@@ -483,12 +434,10 @@ attacks, and stability by blocking clients that are performing too many
 requests due to bugs or malfunctioning saving resources for all other
 clients.
 
-   **Warning**
+.. warning:: The Mobile DoS filter is disabled by default, and can be
+   enabled as needed via CLI.
 
-   The Mobile DoS filter is disabled by default, and can be enabled as
-   needed via CLI.
-
-.. _configuration:
+.. _mobile_configuration:
 
 Configuration
 ~~~~~~~~~~~~~
@@ -530,10 +479,8 @@ window, all new requests from this device/account are dropped for
 When the rate has been exceeded, a warning is sent via email to admin
 and added to server notifications.
 
-   **Note**
-
-   Issuing the command ``zxsuite mobile doRestartService anti-dos`` will
-   reset all jails and counters.
+.. note:: Issuing the command :command:`zxsuite mobile
+   doRestartService anti-dos` will reset all jails and counters.
 
 .. _zextras_autodiscover:
 
@@ -552,75 +499,83 @@ How to enable Zextras Autodiscover
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To use Zextras Autodiscover you have to edit the **jetty template
-configuration file** ``/opt/zimbra/jetty/etc/jetty.xml.in`` on all the
-mailstore servers.
+configuration file** :file:`/opt/zimbra/jetty/etc/jetty.xml.in` on
+**all** the mailstore servers as follows.
 
-The file is by default as follows:
+.. grid::
+   :gutter: 2
 
-.. code:: xml
+   .. grid-item-card::
 
-   <Call name="addRule">
-     <Arg>
-       <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
-               <Set name="pattern">/autodiscover/*</Set>
-               <Set name="replacement">/service/autodiscover</Set>
-       </New>
-     </Arg>
-   </Call>
+      Default jetty template
+      ^^^^
+      .. code:: xml
 
-   <Call name="addRule">
-     <Arg>
-       <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
-               <Set name="pattern">/Autodiscover/*</Set>
-               <Set name="replacement">/service/autodiscover</Set>
-       </New>
-     </Arg>
-   </Call>
+         <Call name="addRule">
+           <Arg>
+             <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
+                     <Set name="pattern">/autodiscover/*</Set>
+                     <Set name="replacement">/service/autodiscover</Set>
+             </New>
+           </Arg>
+         </Call>
 
-   <Call name="addRule">
-     <Arg>
-       <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
-               <Set name="pattern">/AutoDiscover/*</Set>
-               <Set name="replacement">/service/autodiscover</Set>
-       </New>
-     </Arg>
-   </Call>
+         <Call name="addRule">
+           <Arg>
+             <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
+                     <Set name="pattern">/Autodiscover/*</Set>
+                     <Set name="replacement">/service/autodiscover</Set>
+             </New>
+           </Arg>
+         </Call>
 
-You need to change it to:
+         <Call name="addRule">
+           <Arg>
+             <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
+                     <Set name="pattern">/AutoDiscover/*</Set>
+                     <Set name="replacement">/service/autodiscover</Set>
+             </New>
+           </Arg>
+         </Call>
 
-.. code:: xml
+   .. grid-item-card::
 
-   <Call name="addRule">
-     <Arg>
-       <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
-               <Set name="pattern">/autodiscover/*</Set>
-               <Set name="replacement">/service/extension/autodiscover</Set>
-       </New>
-     </Arg>
-   </Call>
+      Jetty template for Autodiscover
+      ^^^^
 
-   <Call name="addRule">
-     <Arg>
-       <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
-               <Set name="pattern">/Autodiscover/*</Set>
-               <Set name="replacement">/service/extension/autodiscover</Set>
-       </New>
-     </Arg>
-   </Call>
+      .. parsed-literal::
 
-   <Call name="addRule">
-     <Arg>
-       <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
-               <Set name="pattern">/AutoDiscover/*</Set>
-               <Set name="replacement">/service/extension/autodiscover</Set>
-       </New>
-     </Arg>
-   </Call>
+         <Call name="addRule">
+           <Arg>
+             <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
+                     <Set name="pattern">/autodiscover/\*</Set>
+                     **<Set name="replacement">/service/extension/autodiscover</Set>**
+             </New>
+           </Arg>
+         </Call>
 
-This change is mandatory if you use `mobile
-password <./auth.xml#zimlet-create-mobile>`_.
+         <Call name="addRule">
+           <Arg>
+             <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
+                     <Set name="pattern">/Autodiscover/\*</Set>
+                     **<Set name="replacement">/service/extension/autodiscover</Set>**
+             </New>
+           </Arg>
+         </Call>
 
-You can also easily change this settings with this command:
+         <Call name="addRule">
+           <Arg>
+             <New class="org.eclipse.jetty.rewrite.handler.RewritePatternRule">
+                     <Set name="pattern">/AutoDiscover/\*</Set>
+                     **<Set name="replacement">/service/extension/autodiscover</Set>**
+             </New>
+           </Arg>
+         </Call>
+
+This change is **mandatory** if you use :ref:`mobile password
+<auth_zimlet-create-mobile>`.
+
+You can easily change this settings with this command:
 
 .. code:: bash
 
@@ -634,31 +589,32 @@ Zextras Mobile Performance Tuning
 Zextras Mobile provides three useful options to fine-tune Zextras Mobile
 according to system performance.
 
-.. _performance_tuning_settings:
+.. _mobile_performance_tuning_settings:
 
 Performance Tuning Settings
 ---------------------------
 
-.. _available_settings:
+.. _mobile_available_settings:
 
 Available Settings
 ~~~~~~~~~~~~~~~~~~
 
--  Notifications Latency (ZxMobile_NotificationsLatency): The seconds of
-   delay between an event on the server and its notification to the
-   mobile device.
+Notifications Latency
+  (ZxMobile_NotificationsLatency): The seconds of delay between an
+  event on the server and its notification to the mobile device.
 
--  Use Instant Notifications (ZxMobile_UseInstantNotficiations):
-   Enable/Disable instant notifications. Overrides Notifications Latency
-   if true.
+Use Instant Notifications
+  (ZxMobile_UseInstantNotficiations): Enable/Disable instant
+  notifications. Overrides Notifications Latency if true.
 
--  Max Ping Heartbeat (ZxMobile_MaxPingHeartbeat): Maximum interval
-   between 'ping' commands.
+Max Ping Heartbeat
+  (ZxMobile_MaxPingHeartbeat): Maximum interval between 'ping'
+  commands.
 
 All settings can be edited in the Administration Zimlet or via CLI using
 the ``zxsuite config`` command.
 
-.. _when_to_edit_the_performance_tuning_settings:
+.. _mobile_when_to_edit_the_performance_tuning_settings:
 
 When to Edit the Performance Tuning Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -687,12 +643,12 @@ solution.
 | excessive delay                   |                                   |
 +-----------------------------------+-----------------------------------+
 
-.. _shared_folders:
+.. _mobile_shared_folders:
 
 Shared Folders
 ==============
 
-.. _shared_folders_and_you_and_your_mobile:
+.. _mobile_shared_folders_and_you_and_your_mobile:
 
 Shared Folders and You (and Your Mobile)
 ----------------------------------------
@@ -706,10 +662,8 @@ list to mobile devices.
 Specific features available on mobile devices might differ, based on the
 client in use.
 
-   **Warning**
-
-   Not all clients support the synchronization of multiple address
-   books, calendars or task lists via Exchange ActiveSync.
+.. warning:: Not all clients support the synchronization of multiple
+   address books, calendars or task lists via Exchange ActiveSync.
 
 .. _how_to_sync_a_shared_folder_to_your_mobile_devices:
 
@@ -726,16 +680,16 @@ Enable Mobile Synchronization for a Shared Folder
 
 To enable mobile synchronization for a shared folder:
 
--  Log in to the Zimbra Web Client.
+- Log in to the Zimbra Web Client
 
--  Right-click the shared folder to sync.
+- Right-click the shared folder to sync
 
--  Select **Folder Sync Settings** in the drop-down menu.
+- Select **Folder Sync Settings** in the drop-down menu
 
--  Select the checkbox **Enable synchronization for this folder**
-   checkbox.
+- Select the checkbox **Enable synchronization for this folder**
+  checkbox
 
--  Press OK.
+- Press :bdg:`OK`
 
 The new folder will be synchronized to any mobile device connected to
 the account.
@@ -747,37 +701,37 @@ Disable Mobile Synchronization for a Shared Folder
 
 To exclude a shared folder from syncing with a mobile device:
 
--  Log in to the Zimbra Web Client.
+- Log in to the Zimbra Web Client
 
--  Right-click the shared folder to sync.
+- Right-click the shared folder to sync
 
--  Select **Folder Sync Settings** in the drop-down menu.
+- Select **Folder Sync Settings** in the drop-down menu
 
--  Clear the checkbox **Enable synchronization for this folder**
-   checkbox.
+- Clear the checkbox **Enable synchronization for this folder**
+  checkbox
 
--  Press OK.
+- Press :bdg:`OK`
 
-.. _restrictions:
+.. _mobile_restrictions:
 
 Restrictions
 ------------
 
 The following restrictions apply to shared folder synchronization:
 
--  It’s not possible to sync a mountpoint referring to a full account
-   share.
+- It is not possible to sync a mountpoint referring to a full account
+  share
 
--  It’s not possible to sync a subfolder of a shared folder, as doing so
-   would return an incomplete folder tree.
+- It is not possible to sync a subfolder of a shared folder, as doing
+  so would return an incomplete folder tree
 
--  It’s not possible to sync a read-only share, as the Exchange
-   ActiveSync protocol does not envision the concept of a ``read-only``
-   resource. Synchronizing a read-only folder will cause severe
-   inconsistencies between the client and the server, along with many
-   errors.
+- It is not possible to sync a read-only share, as the Exchange
+  ActiveSync protocol does not envision the concept of a `read-only`
+  resource. Synchronizing a read-only folder will cause severe
+  inconsistencies between the client and the server, along with many
+  errors
 
-.. _eas_filters:
+.. _mobile_eas_filters:
 
 EAS Filters
 ===========
@@ -792,30 +746,33 @@ users or clients to ensure that the proper version is used.
 
 Multiple EAS filters can be set up and will be evaluated in sequential
 order (see the ``getAllEASFilters`` and ``doMoveEASFilter`` commands
-below).
+in section :ref:`mobile_managing_eas_filters` below).
 
-.. _anatomy_of_an_eas_filter:
+.. _mobile_anatomy_of_an_eas_filter:
 
 Anatomy of an EAS Filter
 ------------------------
 
 An EAS filter is composed of 5 parts:
 
--  ``Type``: Defines the type of filter rule.
+Type
+   Defines the type of filter rule.
 
--  ``Parameter``: The filtering identifier (e.g. device brand or email
-   address).
+Parameter
+   The filtering identifier (e.g. device brand or email address).
 
--  ``Mode``: Defines whether the software will limit the available
-   versions or provide a fixed list.
+Mode
+   Defines whether the software will limit the available versions or
+   provide a fixed list.
 
--  ``easversions`` field: Contains the protocol versions enforced by the
-   filter.
+``easversions`` field
+   Contains the protocol versions enforced by the filter.
 
--  ``Blocking`` boolean value: Defines whether other filters are
-   executed once the current one is successfully matched.
+``Blocking`` Boolean value
+   Defines whether other filters are executed once the current one is
+   successfully matched.
 
-.. _managing_eas_filters:
+.. _mobile_managing_eas_filters:
 
 Managing EAS Filters
 --------------------
@@ -823,121 +780,104 @@ Managing EAS Filters
 EAS filters are managed through the CLI using the following four
 dedicated commands.
 
--  ``zxsuite mobile getAllEASFilters``
+.. grid::
+   :gutter: 2
 
-This command lists all existing filters.
+   .. grid-item-card::
+      :columns: 6
 
-Sample Output:
+      getAllEASFilters
+      ^^^^
 
-::
+      This command lists all existing filters.
 
-           filters
+      Sample Output::
 
-                   ID                                                          0
-                   mode                                                        fixed
-                   rule                                                        [type = or; rules = [[type = contains; rule = outlook/] OR [type = contains; rule = microsoft.outlook]]
-                   easversions                                                 14.0
-                   blocking                                                    true
+        filters
 
-                   ID                                                          1
-                   mode                                                        limit
-                   rule                                                        [type = contains; rule = samsung]
-                   easversions                                                 2.5
-                   blocking                                                    false
+                 ID                                                          0
+                 mode                                                        fixed
+                 rule                                                        [type = or; rules = [[type = contains; rule = outlook/] OR [type = contains; rule = microsoft.outlook]]
+                 easversions                                                 14.0
+                 blocking                                                    true
 
-                   ID                                                          2
-                   mode                                                        limit
-                   rule                                                        [type = always]
-                   easversions                                                 14.1
-                   blocking                                                    false
+                 ID                                                          1
+                 mode                                                        limit
+                 rule                                                        [type = contains; rule = samsung]
+                 easversions                                                 2.5
+                 blocking                                                    false
 
--  ``zxsuite mobile doAddEASFilter``
+                 ID                                                          2
+                 mode                                                        limit
+                 rule                                                        [type = always]
+                 easversions                                                 14.1
+                 blocking                                                    false
 
-This command adds a new EAS filter.
+   .. grid-item-card::
+      :columns: 6
 
-::
+      doAddEASFilter
+      ^^^^
 
-   zxsuite mobile doAddEASFilter
+      This command adds a new EAS filter::
 
-   Syntax:
-      zxsuite mobile doAddEASFilter {and|or|regex|contains|account} {text|people@example.com|account=example@ff.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
+        Syntax:
 
-   PARAMETER LIST
+        zxsuite mobile doAddEASFilter {and|or|regex|contains|account} {text|user@example.com|account=otheruser@example.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
 
-   NAME              TYPE               EXPECTED VALUES
-   type(M)           Multiple choice    and|or|regex|contains|account
-   parameter(M)      String             text|people@example.com|account=example@ff.com,contains=android
-   mode(M)           Multiple choice    add|subtract|fixed|limit
-   easversions(M)    String[,..]
-   blocking(O)       Boolean            true|false
+      Usage example::
 
-   (M) == mandatory parameter, (O) == optional parameter
+          zxsuite mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
 
-   Usage example:
+      Adds a protocol filter that will restrict the pool of available
+      EAS versions to 2.5, 12.0 and 14.1 if the user agent name
+      contains the string 'android'.
 
-   zxsuite mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
-   Adds a protocol filter that will restrict the pool of available EAS versions to 2.5, 12.0 and 14.1 if the user agent name
-   contains the string 'android'.
+      ::
 
-   zxsuite mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
-   Adds a protocol filter that will restrict the pool of available EAS versions to 14.1 if the user agent name
-   contains the string 'android' only for user@example.com. No more EAS filters will be evaluated after this one due to the 'blocking' directive.
+           zxsuite mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
 
--  ``zxsuite mobile doDeleteEASFilter``
+      Adds a protocol filter that will restrict the pool of available
+      EAS versions to 14.1 if the user agent name contains the string
+      'android' only for user@example.com. No more EAS filters will be
+      evaluated after this one due to the 'blocking' directive.
 
-This command deletes an existing EAS Filter.
+   .. grid-item-card::
+      :columns: 6
 
-::
+      doDeleteEASFilter
+      ^^^^
 
-   zxsuite mobile doDeleteEASFilter
-   command doDeleteEASFilter requires more parameters
+      This command deletes an existing EAS Filter.
 
-   Syntax:
-      zxsuite mobile doDeleteEASFilter {id}
+      Syntax::
 
-   PARAMETER LIST
+        zxsuite mobile doDeleteEASFilter _id_
 
-   NAME     TYPE
-   id(M)    Integer
+      Usage example::
 
-   (M) == mandatory parameter, (O) == optional parameter
+        zxsuite mobile doDeleteEASFilter 2
 
-   Usage example:
+      Removes the filter with id = 2.
 
-   zxsuite mobile doDeleteEASFilter 2
-   Removes the filter with id = 2.
-   To show a list of the filters, use the
-       zxsuite mobile getAllEASFilters
-   command.
+   .. grid-item-card::
+      :columns: 6
 
--  ``zxsuite mobile doMoveEASFilter``
+      doMoveEASFilter
+      ^^^^
 
-This command is used to move EAS filters to a different position in the
-filter queue.
+      This command is used to move EAS filters to a different position in the
+      filter queue.
 
-::
+      Syntax::
 
-   zxsuite mobile doMoveEASFilter
-   command doMoveEASFilter requires more parameters
+        zxsuite mobile doMoveEASFilter {from} {to}
 
-   Syntax:
-      zxsuite mobile doMoveEASFilter {from} {to}
+      Usage example::
 
-   PARAMETER LIST
+        zxsuite mobile doMoveEASFilter 0 5
 
-   NAME       TYPE
-   from(M)    Integer
-   to(M)      Integer
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite mobile doMoveEASFilter 0 5
-   Moves the filter with id = 0 to the position 5.
-   To show a list of the filters, use the
-       zxsuite mobile getAllEASFilters
-   command.
+      Moves the filter with id = 0 to the position 5.
 
 .. _mobile_account_loggers:
 
@@ -961,15 +901,11 @@ specified:
 -  The ``window_size`` to enforce on all devices synchronizing with the
    account while the logger is running.
 
-..
+.. warning:: Account loggers are removed automatically when the
+   mailboxd is stopped or restarted and do not usually survive a
+   mailboxd crash. Log files won’t be affected.
 
-   **Warning**
-
-   Account loggers are removed automatically when the mailboxd is
-   stopped or restarted and do not usually survive a mailboxd crash. Log
-   files won’t be affected.
-
-.. _account_logger_management:
+.. _mobile_account_logger_management:
 
 Account Logger Management
 -------------------------
@@ -977,87 +913,72 @@ Account Logger Management
 Account loggers can only be managed via the CLI through the following
 commands:
 
-.. _zxsuite_mobile_doaddaccountlogger:
+.. grid::
+   :gutter: 3
 
-zxsuite mobile doAddAccountLogger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. grid-item-card::
+      :columns: 4
 
-::
+      doAddAccountLogger
+      ^^^^
 
-   zxsuite mobile doAddAccountLogger
-   command doAddAccountLogger requires more parameters
+      Syntax::
 
-   Syntax:
-      zxsuite mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
+        zxsuite mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
 
-   PARAMETER LIST
+      Usage example::
 
-   NAME              TYPE               EXPECTED VALUES
-   account(M)        Account Name
-   log_level(M)      Multiple choice    debug|info|warn|err|crit
-   log_file(M)       Path
-   window_size(O)    Integer            a value > 0
+        zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger
 
-   (M) == mandatory parameter, (O) == optional parameter
+      Creates an info account logger for john's account to file /tmp/john_logger
 
-   Usage example:
+      ::
 
-   zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger
-   Creates an info account logger for john's account to file /tmp/john_logger
+         zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
 
-   zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
-   Creates an info account logger for john's account to file /tmp/john_logger with window size set to 1.
+      Creates an info account logger for john's account to file /tmp/john_logger with window size set to 1.
 
-.. _zxsuite_mobile_doremovelogger:
+   .. grid-item-card::
+      :columns: 4
 
-zxsuite mobile doRemoveLogger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      doRemoveLogger
+      ^^^^
 
-::
 
-   zxsuite mobile doRemoveLogger
-   command doRemoveLogger requires more parameters
+      Syntax::
 
-   Syntax:
-      zxsuite mobile doRemoveLogger {logger_id|"all_loggers"}
+        zxsuite mobile doRemoveLogger {logger_id|"all_loggers"}
 
-   PARAMETER LIST
+      Usage example::
 
-   NAME            TYPE               EXPECTED VALUES
-   logger_id(M)    Multiple choice    logger_id|"all_loggers"
+        zxsuite mobile doremovelogger 5
 
-   (M) == mandatory parameter, (O) == optional parameter
+      Removes the account logger with ID = 5
 
-   Usage example:
+   .. grid-item-card::
+      :columns: 4
 
-   zxsuite mobile doremovelogger 5
-   Removes the account logger with ID = 5
+      getAccountLoggers
+      ^^^^
 
-.. _zxsuite_mobile_getaccountloggers:
+      Sample output::
 
-zxsuite mobile getAccountLoggers
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        zxsuite mobile getAccountLoggers
 
-Sample output:
+              loggers
 
-::
+                      id                                                          7
+                      level                                                       DEBUG
+                      name                                                        AccountLogger
+                      description                                                 Logging account user@example.com using level debug, log file /tmp/user.log
+                      remove command                                              zxsuite mobile doRemoveLogger 7
 
-   zxsuite mobile getAccountLoggers
-
-           loggers
-
-                   id                                                          7
-                   level                                                       DEBUG
-                   name                                                        AccountLogger
-                   description                                                 Logging account user@example.com using level debug, log file /tmp/user.log
-                   remove command                                              zxsuite mobile doRemoveLogger 7
-
-.. _abq_allowblockquarantine_device_control:
+.. _mobile_abq_allowblockquarantine_device_control:
 
 ABQ - Allow/Block/Quarantine device control
 ===========================================
 
-.. _abq_service:
+.. _mobile_abq_service:
 
 ABQ Service
 -----------
@@ -1070,77 +991,82 @@ synchronization with server. This allows a full administrator to keep
 track of all mobile device used in their network. Presently only CLI
 tools are provided; a web GUI will be released in the future.
 
-.. _components:
+.. _mobile_components:
 
 Components
 ~~~~~~~~~~
 
 The ABQ feature is composed of three main logical components:
 
--  a Device Control List
+- a Device Control List
 
--  an Authorization Engine
+- an Authorization Engine
 
--  a set of CLI tools
+- a set of CLI tools
 
-.. _device_control_list:
+.. grid::
+   :gutter: 2
 
-Device Control List
-^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card::
+      :columns: 4
 
-The Device Control List, also known as the "ABQ List", holds the
-information about allowed devices within the config engine. Devices can
-be added to the Device Control List via CLI based on their “Device ID”
-which can be obtained via CLI.
+      Device Control List
+      ^^^^
 
-It is also possible to further limit access by limiting the accounts
-that can synchronise with the server on a specific device.
+      The Device Control List, also known as the "ABQ List", holds the
+      information about allowed devices within the config engine. Devices can
+      be added to the Device Control List via CLI based on their “Device ID”
+      which can be obtained via CLI.
 
-   **Note**
+      It is also possible to further limit access by limiting the accounts
+      that can synchronise with the server on a specific device.
 
-   On module startup, if the Device Control List is empty all mobile
-   devices previously recognized by the Zimbra server will be imported
-   as **Allowed**.
+      .. note:: On module startup, if the Device Control List is empty all
+         mobile devices previously recognized by the Zimbra server will be
+         imported as **Allowed**.
 
-.. _authorization_engine:
+   .. grid-item-card::
+      :columns: 4
 
-Authorization Engine
-^^^^^^^^^^^^^^^^^^^^
+      Authorization Engine
+      ^^^^^
 
-The Authorization Engine takes care of checking devices against the
-Device Control List and setting their ABQ status to the appropriate
-value.
+      The Authorization Engine takes care of checking devices against the
+      Device Control List and setting their ABQ status to the appropriate
+      value.
 
-Each rule is applied to all accounts connecting using a device it is a
-device id. It applies to a specific account connecting using that device
-if it has the format device_id/account_id or device_id/accountName
+      Each rule is applied to all accounts connecting using a device it is a
+      device id. It applies to a specific account connecting using that device
+      if it has the format device_id/account_id or device_id/accountName
 
-.. _cli_toolset:
+   .. grid-item-card::
+      :columns: 4
 
-CLI Toolset.
-^^^^^^^^^^^^
+      CLI Toolset.
+      ^^^^^
 
-The CLI Toolset allows administrators to interact with the device
-control list and with the synchronization status of a device,
-specifically to:
+      The CLI Toolset allows administrators to interact with the device
+      control list and with the synchronization status of a device,
+      specifically to:
 
--  Display the Device Control List
+      - Display the Device Control List
 
--  Display all Quarantined and Blocked Devices
+      - Display all Quarantined and Blocked Devices
 
--  Add one or more devices to the Device Control List
+      - Add one or more devices to the Device Control List
 
--  Move a device from “Quarantine” to “Allowed” or “Blocked”
+      - Move a device from “Quarantine” to “Allowed” or “Blocked”
 
--  Change the synchronization status of a device
+      - Change the synchronization status of a device
 
-Every time the administrator changes a device’s status in an ABQ-enabled
-environment, depending on the issued state the device will be forced to
-re-sync folders with the server resulting in an immediate re-route to
-either a `dummy virtual mailbox <#_dummy_data>`_ that will explain to
-the user what’s happened, or to the real mailbox to perform the re-sync.
+Every time the administrator changes a device's status in an
+ABQ-enabled environment, depending on the issued state the device will
+be forced to re-sync folders with the server resulting in an immediate
+re-route to either a :ref:`mobile_dummy_data` that will explain to
+the user what’s happened, or to the real mailbox to perform the
+re-sync.
 
-.. _abq_modes:
+.. _mobile_abq_modes:
 
 ABQ Modes
 ~~~~~~~~~
@@ -1150,83 +1076,65 @@ synchronize with server, and can be set to one of four possible modes:
 "Permissive", "Interactive", "Strict” and "Disabled". This attribute is
 Global for all the cluster.
 
-.. _permissive_mode:
+Permissive
+   The Authorization Engine is not active, so after authenticating the
+   user and checking their account status for safety reasons, the
+   synchronization will continue. It is still possible to block
+   specific devices but non-blocked devices will always be allowed to
+   sync.
 
-"Permissive" mode:
-^^^^^^^^^^^^^^^^^^
+Interactive
+   After authenticating the user and checking their account status for
+   safety reasons, the Device Control system will check the "Device ID"
+   sent by the device against the list of allowed devices:
 
-The Authorization Engine is not active, so after authenticating the user
-and checking their account status for safety reasons, the
-synchronization will continue. It is still possible to block specific
-devices but non-blocked devices will always be allowed to sync.
+   -  if the device/user couple is in the "allowed" list the
+      synchronization will continue.
 
-.. _interactive_mode:
+   -  if the device/user couple is not in the device list but device is in
+      the "allowed" list the synchronization will continue.
 
-"Interactive" mode:
-^^^^^^^^^^^^^^^^^^^
+   -  if the device is not in the “allowed” list the synchronization will
+      be paused, a dummy email notifying the user of its "Quarantine"
+      status will be sent and the connection will be set to "Quarantine"
+      status.
 
-After authenticating the user and checking their account status for
-safety reasons, the Device Control system will check the "Device ID"
-sent by the device against the list of allowed devices:
+   Administrators can be notified at regular intervals, and every
+   notification email will only include new Quarantined devices. They will
+   then be able to allow or deny the synchronization for each device using
+   the appropriate CLI tools.
 
--  if the device/user couple is in the "allowed" list the
-   synchronization will continue.
 
--  if the device/user couple is not in the device list but device is in
-   the "allowed" list the synchronization will continue.
+Strict
+   After authenticating the user and checking their account status for
+   safety reasons, the Device Control system will check the "Device ID"
+   sent by the device against the list of allowed devices:
 
--  if the device is not in the “allowed” list the synchronization will
-   be paused, a dummy email notifying the user of its "Quarantine"
-   status will be sent and the connection will be set to "Quarantine"
-   status.
+   - if the device/user couple or the device by itself is in the
+     "allowed" list the synchronization will continue.
 
-Administrators can be notified at regular intervals, and every
-notification email will only include new Quarantined devices. They will
-then be able to allow or deny the synchronization for each device using
-the appropriate CLI tools.
+   - if the device is not in the “allowed” list the synchronization
+     will be put in "Blocked" state, no data will be synchronized and
+     a dummy email notifying the user of the device’s "Blocked" status
+     will be sent.
 
-.. _strict_mode:
+Disabled
+   ABQ is disabled, no checks are triggered and no policies are enforced.
 
-"Strict" mode:
-^^^^^^^^^^^^^^
-
-After authenticating the user and checking their account status for
-safety reasons, the Device Control system will check the "Device ID"
-sent by the device against the list of allowed devices:
-
--  if the device/user couple or the device by itself is in the "allowed"
-   list the synchronization will continue.
-
--  if the device is not in the “allowed” list the synchronization will
-   be put in "Blocked" state, no data will be synchronized and a dummy
-   email notifying the user of the device’s "Blocked" status will be
-   sent.
-
-.. _disabled_mode:
-
-"Disabled" mode:
-^^^^^^^^^^^^^^^^
-
-ABQ is disabled, no checks are triggered and no policies are enforced.
-
-.. _abq_mode_control:
+.. _mobile_abq_mode_control:
 
 ABQ Mode Control
 ~~~~~~~~~~~~~~~~
 
-The current mode can be checked by running the following command:
-
-::
+The current mode can be checked by running the following command::
 
    zxsuite config global get attribute abqMode
 
-The ABQ mode can be changed running the following command:
-
-::
+The ABQ mode can be changed running the following command::
 
    zxsuite config global set attribute abqMode value [Permissive|Interactive|Strict|Disabled]
 
-.. _dummy_data:
+.. _mobile_dummy_data:
 
 Dummy data
 ~~~~~~~~~~
@@ -1249,73 +1157,33 @@ alternative being forcing the synchronization to fail with no
 descriptive response for the user itself – which would likely cause a
 significant overhead on support calls.
 
-.. _custom_abq_emails:
+.. _mobile_custom_abq_emails:
 
 Custom ABQ emails
 ~~~~~~~~~~~~~~~~~
 
 Quarantine and block dummy emails can be customized by using the
-``zxsuite mobile setABQMessage`` message command.
+:command:`zxsuite mobile setABQMessage` message command; messages can
+be customised at global or domain level, and multiple languages can be
+set.
 
-Messages can be customized globally or by domain, and multiple languages
-can be set.
+.. card:: Setup Example
 
-The ``zxsuite mobile setABQMessage`` command accepts the following
-parameters:
+   Given two files, :file:`/tmp/quarantine_body.txt` and
+   :file:`/tmp/quarantine_body.html` containing the French language
+   plaintext and html message bodies and the support@example.com
+   support email address, the following command will set the
+   quarantine message for the `example.com` domain without affecting
+   other domains or users::
 
-+-----------------+-----------------+-----------------+-----------------+
-| Parameter       | Type            | Value           | Default         |
-+=================+=================+=================+=================+
-| configLevel     | string          | global,domain   | global          |
-+-----------------+-----------------+-----------------+-----------------+
-| domain          | string          |                 | only if config  |
-|                 |                 |                 | != global       |
-+-----------------+-----------------+-----------------+-----------------+
-| messageClass    | enum            | blocked,quarant |                 |
-|                 |                 | ined            |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| language        | enum            | locale (e.g.    | system default  |
-|                 |                 | "en-us")        |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| from            | string          |                 | Admin Address   |
-+-----------------+-----------------+-----------------+-----------------+
-| reply_to        | string          |                 | N/A             |
-+-----------------+-----------------+-----------------+-----------------+
-| subject         | string          |                 | Built-in        |
-|                 |                 |                 | default         |
-+-----------------+-----------------+-----------------+-----------------+
-| body_plain      | string          |                 | Built-in        |
-|                 |                 |                 | default         |
-+-----------------+-----------------+-----------------+-----------------+
-| body_plain_file | path            | Path to the     | N/A             |
-|                 |                 | file to use as  |                 |
-|                 |                 | plain text body |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| body_html       | string          |                 | Built-in        |
-|                 |                 |                 | default         |
-+-----------------+-----------------+-----------------+-----------------+
-| body_html_file  | path            | Path to the     | N/A             |
-|                 |                 | file to use as  |                 |
-|                 |                 | html body       |                 |
-+-----------------+-----------------+-----------------+-----------------+
+     zxsuite mobile setABQMessage domain example.com quarantined fr from support@example.com body_plain_file /tmp/quarantine_body.txt body_html_file /tmp/quarantine_body.html``
 
-**Setup Example.**
+   .. warning:: Before being able to customize the ABQ messages, a
+      default must be set using **default** as the language in the
+      command, e.g., :command:`zxsuite mobile setABQMessage global
+      quarantined default`
 
-Given two files, ``/tmp/quarantine_body.txt`` and
-``/tmp/quarantine_body.html`` containing the French language plaintext
-and html message bodies and the ``support@example.com`` support email
-address, the following command will set the quarantine message for the
-``example.com`` domain without affecting other domains or users:
-
-``zxsuite mobile setABQMessage domain example.com quarantined fr from support@example.com body_plain_file /tmp/quarantine_body.txt body_html_file /tmp/quarantine_body.html``
-
-   **Warning**
-
-   | Before being able to customize the ABQ messages, a default must be
-     set using ``default`` as the language in the command, e.g.
-   | ``zxsuite mobile setABQMessage global quarantined default […​]``
-
-.. _notifications:
+.. _mobile_notifications:
 
 Notifications
 ~~~~~~~~~~~~~
@@ -1324,25 +1192,21 @@ Administrators can be notified via email of quarantined devices at a
 specific interval defined by the ``abqNotificationsInterval``
 configuration attribute, expressed in milliseconds:
 
-The interval can be checked by running the following command:
-
-::
+The interval can be checked by running the following command::
 
    zxsuite config global get attribute abqNotificationsInterval
 
-The interval can be changed running the following command:
-
-::
+The interval can be changed running the following command::
 
    zxsuite config global set attribute abqNotificationsInterval value [delay in milliseconds]
 
 By default, the ``abqNotificationsInterval`` is set to 0 - meaning that
 no notifications will be delivered.
 
-.. _abq_service_status:
+.. _mobile_abq_service_status:
 
 ABQ Service Status
-^^^^^^^^^^^^^^^^^^
+++++++++++++++++++
 
 The ABQ service status can be checked running the following command:
 
@@ -1361,264 +1225,75 @@ of the Mobile module:
 When mode is Disabled ABQ service won’t automatically start and devices
 are always allowed to sync.
 
-.. _abq_cli:
+.. _mobile_abq_cli:
 
 ABQ CLI
 ~~~~~~~
 
-A list of all ABQ CLI commands can be displayed running:
+The ABQ has its own set of CLI commands, including three `Rule
+commands` (namely ``deleteRule``, ``listRules``, and
+``setRule``). They share the same syntax of their ``delete``,
+``list``, and ``set`` counterparts, with the difference that the `Rule
+commands` accept regular expressions, which must comply with the `Java
+regex patterns
+<https://www.oracle.com/technical-resources/articles/java/regex.html>`_
+standard (ERE with doubled backslashes).
 
-::
+``allow`` A specific command for quarantined device, and sets device
+   status to Allowed.
 
-   $ zxsuite mobile abq
+``block``
+   A specific command for quarantined device, and sets device status
+   to Blocked.
 
-   Allow/Block/Quarantine mobile devices management
+``delete`` and ``deleteRule``
+   Delete a device from all lists.
 
-       list                    - List devices.
-                                 zxsuite mobile ABQ list [attr1 value1 [attr2 value2...] ]
+``import``
+   This command imports a list of device ids from a file, and always
+   requires two parameters: an Input File with a list of Device IDs
+   separated by a newline and the "status" the imported device(s) will
+   be set to.
 
-       add                     - add/import devices
-                                 zxsuite mobile ABQ add [attr1 value1 [attr2 value2...] ]
+   Given file :file:`/tmp/list` with content::
 
-       allow                   - Allow synchronization for a quarantined device
-                                 zxsuite mobile ABQ allow {device_id}
+     androidc133785981
+     androidc1024711770
+     SAMSUNG1239862958/user@example.com,
 
-       block                   - Deny synchronization for a quarantined device
-                                 zxsuite mobile ABQ block {device_id}
+   the command::
 
-       set                     - Set synchronization status for a device
-                                 zxsuite mobile ABQ set {device_id} {Allowed|Blocked|Quarantined}
+      zxsuite mobile abq import /tmp/list Allowed
 
-       delete                  - Delete device from ABQ
-                                 zxsuite mobile ABQ delete {device_id}
+   allows devices **androidc133785981** and **androidc1024711770** to
+   sync entirely regardless of the account, while device
+   **SAMSUNG1239862958** can only synchronise the `user@example.com`
+   account
 
-       setNotificationInterval - Set the notification interval for new quarantined devices
-                                 zxsuite mobile ABQ setNotificationInterval {45m|6h|1d|0}
+``list`` and ``listRules``
+   List all devices ABQ status. The "status" argument will filter the
+   list in order to only show devices in that specific status.
 
-.. _abq_list_command:
+   Sample output::
 
-ABQ "list" Command
-^^^^^^^^^^^^^^^^^^
+     devices
+            device_id   androidc133785981
+            status      Quarantined
 
-List all devices ABQ status. The "status" argument will filter the list
-in order to only show devices in that specific status.
+            device_id   androidc1024711770
+            status      Blocked
 
-::
+            device_id   SAMSUNG1239862958
+            status      Allowed
 
-   $ zxsuite mobile abq list
-   List devices.
+``set`` and ``setRule``
+   Set any status for any single device (either known or unknown).
 
-   Syntax:
-      zxsuite mobile ABQ list [attr1 value1 [attr2 value2...] ]
+``setNotificationInterval``
+   Set the notification interval for new quarantined devices.
 
 
-   PARAMETER LIST
-
-   NAME        TYPE    EXPECTED VALUES
-   status(O)   String  Allowed|Blocked|Quarantined
-
-   (M) = mandatory parameter, (O) = optional parameter
-
-Example:
-
-::
-
-   [zimbra@mail ~]$ zxsuite mobile abq list
-
-           devices
-
-                   device_id   androidc133785981
-                   status      Quarantined
-
-                   device_id   androidc1024711770
-                   status      Blocked
-
-                   device_id   SAMSUNG1239862958
-                   status      Allowed
-
-.. _abq_import_command:
-
-ABQ "import" Command
-^^^^^^^^^^^^^^^^^^^^
-
-This command imports a list of device ids from a file, and always
-requires two parameters: an Input File with a list of Device IDs
-separated by a newline and the "status" the imported device(s) will be
-set to.
-
-::
-
-   [zimbra@mail ~]$ zxsuite mobile abq import
-   command import requires more parameters
-
-   Syntax:
-       zxsuite mobile ABQ import {Path to file} {Allowed|Blocked|Quarantined}
-
-   PARAMETER LIST
-
-   NAME            TYPE        EXPECTED VALUES
-   input_file(M)   String      Path to file
-   status(M)       String      Allowed|Blocked|Quarantined
-
-   (M) = mandatory parameter, (O) = optional parameter
-
-   Usage example:
-
-   zxsuite mobile ABQ import /path/to/file Allowed
-
-Example:
-
-::
-
-   [zimbra@mail ~]$ zxsuite mobile abq import /tmp/list Allowed
-   3 devices added
-
-   [zimbra@mail ~]$ cat /tmp/list
-   androidc133785981
-   androidc1024711770
-   SAMSUNG1239862958/user@example.com
-
-In the example above, devices ``androidc133785981`` and
-``androidc1024711770`` are allowed to sync entirely regardless of the
-account, while device ``SAMSUNG1239862958`` can only synchronise the
-``user@example.com`` account
-
-.. _abq_allow_command:
-
-ABQ "allow" Command
-^^^^^^^^^^^^^^^^^^^
-
-This is a specific command for quarantined device, and sets device
-status to **Allowed**.
-
-::
-
-   $ zxsuite mobile abq allow
-   Allow synchronization for a quarantined device
-
-   Syntax:
-      zxsuite mobile ABQ allow {device_id} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME            TYPE      EXPECTED VALUES
-   device_id(M)    String
-   account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
-
-   (M) = mandatory parameter, (O) = optional parameter
-
-.. _abq_block_command:
-
-ABQ "block" Command
-^^^^^^^^^^^^^^^^^^^
-
-This is a specific command for quarantined device, and sets device
-status to **Blocked**.
-
-::
-
-   $ zxsuite mobile abq block
-   Deny synchronization for a quarantined device
-
-   Syntax:
-      zxsuite mobile ABQ block {device_id} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME            TYPE      EXPECTED VALUES
-   device_id(M)    String
-   account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
-
-   (M) = mandatory parameter, (O) = optional parameter
-
-.. _abq_set_command:
-
-ABQ "set" Command
-^^^^^^^^^^^^^^^^^
-
-Set any status for any single device (either known or unknown).
-
-::
-
-   $ zxsuite mobile abq set
-   Set synchronization status for a device
-
-   Syntax:
-      zxsuite mobile ABQ set {device_id} {Allowed|Blocked|Quarantined} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME            TYPE      EXPECTED VALUES
-   device_id(M)    String
-   status(M)       String    Allowed|Blocked|Quarantined
-   account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
-
-   (M) = mandatory parameter, (O) = optional parameter
-
-.. _abq_rule_commands:
-
-ABQ "rule" Commands
-^^^^^^^^^^^^^^^^^^^
-
-This set of commands allows to manage ABQ rules via custom regular
-expressions.
-
-   **Warning**
-
-   Mobile ABQ regular expressions comply with the "Java regex patterns"
-   standard (ERE with doubled backslashes).
-
--  ``zxsuite mobile abq setRule`` - equivalent of the ``set`` command
-   for regex-based rules
-
-::
-
-   zimbra@mail:~$ zxsuite mobile abq setRule
-   command setRule requires more parameters
-
-   Syntax:
-      zxsuite mobile ABQ setRule {regex} {Allowed|Blocked|Quarantined} {order} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME         TYPE      EXPECTED VALUES
-   regex(M)     String
-   status(M)    String    Allowed|Blocked|Quarantined
-   order(M)     Long
-   domain(O)    String    Domain name|id
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite mobile ABQ setRule "android.*" Blocked 10 domain example.com
-
--  ``zxsuite mobile abq deleteRule`` - equivalent of the ``delete``
-   command for regex-based rules
-
-::
-
-   Syntax:
-      zxsuite mobile ABQ deleteRule {regex} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME         TYPE      EXPECTED VALUES
-   regex(M)     String
-   domain(O)    String    Domain name|id
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite mobile ABQ deleteRule "android.*" domain example.com
-
--  ``zxsuite mobile abq listRules`` - equivalent of the ``list`` command
-   for regex-based rules
-
-Standard and regex-based rules can be freely mixed and matched.
-
-   **Community Article:**
+.. seealso:: Community Article
 
    https://community.zextras.com/zextras-suite-3-1-8-added-features-to-abq/
 
@@ -1626,122 +1301,64 @@ Standard and regex-based rules can be freely mixed and matched.
    ``listRules`` commands, including an important section about the
    order of evaluation or Regular Expressions.
 
-.. _abq_delete_command:
-
-ABQ "delete" Command
-^^^^^^^^^^^^^^^^^^^^
-
-Delete a device from all lists.
-
-::
-
-   $ zxsuite help mobile abq delete
-   Delete device from ABQ
-
-   Syntax:
-      zxsuite mobile ABQ delete {device_id} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME            TYPE      EXPECTED VALUES
-   device_id(M)    String
-   account(O)      String    27ee8dd9-d813-4ca7-a988-580df0027a58|user1@example.com
-
-   (M) = mandatory parameter, (O) = optional parameter
-
-.. _abq_setnotificationinterval_command:
-
-ABQ "setNotificationInterval" Command
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Set notification interval for new quarantined devices.
-
-::
-
-   $ zxsuite mobile abq setNotificationInterval
-   command setNotificationInterval requires more parameters
-
-   Syntax:
-       zxsuite mobile ABQ setNotificationInterval {45m|6h|1d}
-
-   PARAMETER LIST
-
-   NAME            TYPE        EXPECTED VALUES
-   interval(M)     String      45m|6h|1d
-
-   (M) = mandatory parameter, (O) = optional parameter
-
-   Usage example:
-
-   Set notification of new quarantined devices every 45 minutes
-       zxsuite mobile abq setNotificationInterval 45m
-   Set notification of new quarantined devices every 6 hours
-       zxsuite mobile abq setNotificationInterval 6h
-   Set notification of new quarantined devices once every day
-       zxsuite mobile abq setNotificationInterval 1d
-   Disable notifications of new quarantined devices
-       zxsuite mobile abq setNotificationInterval 0
-
 .. _zextras_mobile_cli:
 
 Zextras Mobile CLI
 ==================
 
-This section contains the index of all ``zxsuite mobile`` commands. Full
-reference can be found in `the dedicated
-section <./cli.xml#_zxmobile_cli_commands>`_.
 
-`ABQ allow <./cli.xml#mobile_ABQ_allow>`_ \| `ABQ
-block <./cli.xml#mobile_ABQ_block>`_ \| `ABQ
-delete <./cli.xml#mobile_ABQ_delete>`_ \| `ABQ
-deleteRule <./cli.xml#mobile_ABQ_deleteRule>`_ \| `ABQ
-import <./cli.xml#mobile_ABQ_import>`_ \| `ABQ
-list <./cli.xml#mobile_ABQ_list>`_ \| `ABQ
-listRules <./cli.xml#mobile_ABQ_listRules>`_ \| `ABQ
-set <./cli.xml#mobile_ABQ_set>`_ \| `ABQ
-setNotificationInterval <./cli.xml#mobile_ABQ_setNotificationInterval>`_
-\| `ABQ setRule <./cli.xml#mobile_ABQ_setRule>`_ \| `addressBook add
-domain <./cli.xml#mobile_addressBook_add_domain>`_ \| `addressBook add
-global <./cli.xml#mobile_addressBook_add_global>`_ \| `addressBook list
-domain <./cli.xml#mobile_addressBook_list_domain>`_ \| `addressBook
-list global <./cli.xml#mobile_addressBook_list_global>`_ \|
-`addressBook remove
-domain <./cli.xml#mobile_addressBook_remove_domain>`_ \| `addressBook
-remove global <./cli.xml#mobile_addressBook_remove_global>`_ \|
-`deleteABQMessage domain <./cli.xml#mobile_deleteABQMessage_domain>`_
-\| `deleteABQMessage
-global <./cli.xml#mobile_deleteABQMessage_global>`_ \|
-`doAddAccountLogger <./cli.xml#mobile_doAddAccountLogger>`_ \|
-`doAddEASFilter <./cli.xml#mobile_doAddEASFilter>`_ \|
-`doDeleteEASFilter <./cli.xml#mobile_doDeleteEASFilter>`_ \|
-`doMoveEASFilter <./cli.xml#mobile_doMoveEASFilter>`_ \|
-`doRemoveDevice <./cli.xml#mobile_doRemoveDevice>`_ \|
-`doRemoveLogger <./cli.xml#mobile_doRemoveLogger>`_ \|
-`doResetAccount <./cli.xml#mobile_doResetAccount>`_ \|
-`doResetDevice <./cli.xml#mobile_doResetDevice>`_ \|
-`doRestartService <./cli.xml#mobile_doRestartService>`_ \|
-`doResumeDeviceSync <./cli.xml#mobile_doResumeDeviceSync>`_ \|
-`doSimulateSync <./cli.xml#mobile_doSimulateSync>`_ \|
-`doStartService <./cli.xml#mobile_doStartService>`_ \|
-`doStopService <./cli.xml#mobile_doStopService>`_ \|
-`doSuspendDeviceSync <./cli.xml#mobile_doSuspendDeviceSync>`_ \|
-`doWipeDevice <./cli.xml#mobile_doWipeDevice>`_ \| `duplicateABQMessage
-domain <./cli.xml#mobile_duplicateABQMessage_domain>`_ \|
-`duplicateABQMessage
-global <./cli.xml#mobile_duplicateABQMessage_global>`_ \|
-`getABQMessage domain <./cli.xml#mobile_getABQMessage_domain>`_ \|
-`getABQMessage global <./cli.xml#mobile_getABQMessage_global>`_ \|
-`getAccountLoggers <./cli.xml#mobile_getAccountLoggers>`_ \|
-`getAllDevices <./cli.xml#mobile_getAllDevices>`_ \|
-`getAllEASFilters <./cli.xml#mobile_getAllEASFilters>`_ \|
-`getDeviceInfo <./cli.xml#mobile_getDeviceInfo>`_ \|
-`getDeviceList <./cli.xml#mobile_getDeviceList>`_ \|
-`getProperty <./cli.xml#mobile_getProperty>`_ \|
-`getProvisioning <./cli.xml#mobile_getProvisioning>`_ \|
-`getServices <./cli.xml#mobile_getServices>`_ \|
-`initABQMessage <./cli.xml#mobile_initABQMessage>`_ \| `setABQMessage
-domain <./cli.xml#mobile_setABQMessage_domain>`_ \| `setABQMessage
-global <./cli.xml#mobile_setABQMessage_global>`_ \|
-`setProperty <./cli.xml#mobile_setProperty>`_ \|
-`setProvisioning <./cli.xml#mobile_setProvisioning>`_ \|
-`setSharedFolderSync <./cli.xml#mobile_setSharedFolderSync>`_
+This section contains the index of all ``zxsuite mobile``
+commands. Full reference can be found in the dedicated section
+:ref:`zextras_mobile_full_cli`.
+
+:ref:`ABQ allow <zxsuite_mobile_ABQ_allow>`
+:octicon:`dash` :ref:`ABQ block <zxsuite_mobile_ABQ_block>`
+:octicon:`dash` :ref:`ABQ delete <zxsuite_mobile_ABQ_delete>`
+:octicon:`dash` :ref:`ABQ deleteRule <zxsuite_mobile_ABQ_deleteRule>`
+:octicon:`dash` :ref:`ABQ import <zxsuite_mobile_ABQ_import>`
+:octicon:`dash` :ref:`ABQ list <zxsuite_mobile_ABQ_list>`
+:octicon:`dash` :ref:`ABQ listRules <zxsuite_mobile_ABQ_listRules>`
+:octicon:`dash` :ref:`ABQ set <zxsuite_mobile_ABQ_set>`
+:octicon:`dash` :ref:`ABQ setNotificationInterval <zxsuite_mobile_ABQ_setNotificationInterval>`
+:octicon:`dash` :ref:`ABQ setRule <zxsuite_mobile_ABQ_setRule>`
+:octicon:`dash` :ref:`addressBook add domain <zxsuite_mobile_addressBook_add_domain>`
+:octicon:`dash` :ref:`addressBook add global <zxsuite_mobile_addressBook_add_global>`
+:octicon:`dash` :ref:`addressBook list domain <zxsuite_mobile_addressBook_list_domain>`
+:octicon:`dash` :ref:`addressBook list global <zxsuite_mobile_addressBook_list_global>`
+:octicon:`dash` :ref:`addressBook remove domain <zxsuite_mobile_addressBook_remove_domain>`
+:octicon:`dash` :ref:`addressBook remove global <zxsuite_mobile_addressBook_remove_global>`
+:octicon:`dash` :ref:`deleteABQMessage domain <zxsuite_mobile_deleteABQMessage_domain>`
+:octicon:`dash` :ref:`deleteABQMessage global <zxsuite_mobile_deleteABQMessage_global>`
+:octicon:`dash` :ref:`doAddAccountLogger <zxsuite_mobile_doAddAccountLogger>`
+:octicon:`dash` :ref:`doAddEASFilter <zxsuite_mobile_doAddEASFilter>`
+:octicon:`dash` :ref:`doDeleteEASFilter <zxsuite_mobile_doDeleteEASFilter>`
+:octicon:`dash` :ref:`doMoveEASFilter <zxsuite_mobile_doMoveEASFilter>`
+:octicon:`dash` :ref:`doRemoveDevice <zxsuite_mobile_doRemoveDevice>`
+:octicon:`dash` :ref:`doRemoveLogger <zxsuite_mobile_doRemoveLogger>`
+:octicon:`dash` :ref:`doResetAccount <zxsuite_mobile_doResetAccount>`
+:octicon:`dash` :ref:`doResetDevice <zxsuite_mobile_doResetDevice>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_mobile_doRestartService>`
+:octicon:`dash` :ref:`doResumeDeviceSync <zxsuite_mobile_doResumeDeviceSync>`
+:octicon:`dash` :ref:`doSimulateSync <zxsuite_mobile_doSimulateSync>`
+:octicon:`dash` :ref:`doStartService <zxsuite_mobile_doStartService>`
+:octicon:`dash` :ref:`doStopService <zxsuite_mobile_doStopService>`
+:octicon:`dash` :ref:`doSuspendDeviceSync <zxsuite_mobile_doSuspendDeviceSync>`
+:octicon:`dash` :ref:`doWipeDevice <zxsuite_mobile_doWipeDevice>`
+:octicon:`dash` :ref:`duplicateABQMessage domain <zxsuite_mobile_duplicateABQMessage_domain>`
+:octicon:`dash` :ref:`duplicateABQMessage global <zxsuite_mobile_duplicateABQMessage_global>`
+:octicon:`dash` :ref:`getABQMessage domain <zxsuite_mobile_getABQMessage_domain>`
+:octicon:`dash` :ref:`getABQMessage global <zxsuite_mobile_getABQMessage_global>`
+:octicon:`dash` :ref:`getAccountLoggers <zxsuite_mobile_getAccountLoggers>`
+:octicon:`dash` :ref:`getAllDevices <zxsuite_mobile_getAllDevices>`
+:octicon:`dash` :ref:`getAllEASFilters <zxsuite_mobile_getAllEASFilters>`
+:octicon:`dash` :ref:`getDeviceInfo <zxsuite_mobile_getDeviceInfo>`
+:octicon:`dash` :ref:`getDeviceList <zxsuite_mobile_getDeviceList>`
+:octicon:`dash` :ref:`getProperty <zxsuite_mobile_getProperty>`
+:octicon:`dash` :ref:`getProvisioning <zxsuite_mobile_getProvisioning>`
+:octicon:`dash` :ref:`getServices <zxsuite_mobile_getServices>`
+:octicon:`dash` :ref:`initABQMessage <zxsuite_mobile_initABQMessage>`
+:octicon:`dash` :ref:`setABQMessage domain <zxsuite_mobile_setABQMessage_domain>`
+:octicon:`dash` :ref:`setABQMessage global <zxsuite_mobile_setABQMessage_global>`
+:octicon:`dash` :ref:`setProperty <zxsuite_mobile_setProperty>`
+:octicon:`dash` :ref:`setProvisioning <zxsuite_mobile_setProvisioning>`
+:octicon:`dash` :ref:`setSharedFolderSync <zxsuite_mobile_setSharedFolderSync>`

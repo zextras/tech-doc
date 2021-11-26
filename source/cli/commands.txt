@@ -1,0 +1,12 @@
+
+admin 24
+auth 81
+backup 47
+config 38
+core 54
+docs 7
+drive 10
+mobile 51
+powerstore 53
+team 24
+update 7

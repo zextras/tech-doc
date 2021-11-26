@@ -28,7 +28,7 @@
 
       +++
 
-      The new collaboration server with full enterprise features
+      The full private e-mail and collaboration platform
 
    .. grid-item-card::
       :columns: 4
@@ -37,11 +37,11 @@
       .. button-link:: /carbonio-ce/html/index.html
          :click-parent:
 
-         Carbonio CE
+         Carbonio Community Edition
 
       +++
 
-      Zextras Carbonio Community Edition, the open and free version
+      The free and open-source e-mail and collaboration platform
 
    .. grid-item::
       :columns: 2
@@ -56,24 +56,24 @@
       .. button-link:: /suite/html/index.html
          :click-parent:
 
-         Zextras Suite
+         Suite for Zimbra
 
       +++
 
-      Zextras Suite enhances Zimbra with exclusive features
+      The native plugin to extend Zimbra Open Source features 
 
    .. grid-item-card::
       :columns: 4
       :shadow: sm
 
-      .. button-link:: /suite/html/zimbra9ose.html
+      .. button-link:: https://www.zextras.com/professional-services
          :click-parent:
 
-         Zimbra 9 OSE docs
+         Zextras Professional Services
 
       +++
 
-      The Zimbra 9 Open Source Edition build by Zextras
+      Information about Zextras Professional Services
 
    .. grid-item::
       :columns: 2
@@ -92,7 +92,7 @@
 
       +++
 
-      Zextras Support Portal - Your best place for Technical Support
+      The portal where to find help from Zextras dedicated team
 
    .. grid-item-card::
       :columns: 4
@@ -105,4 +105,4 @@
 
       +++
 
-      Tips & tricks, Zextras products and more!
+      Tips & tricks about Zextras products and more!
