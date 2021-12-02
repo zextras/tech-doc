@@ -56,7 +56,7 @@ up.
 
 .. _img-backup-console:
 
-.. figure:: /img/backup-ui.png
+.. figure:: /img/backup/ui.png
    :alt: Zextras Backup Admin Console
 
    Zextras Backup Admin Console
@@ -98,7 +98,7 @@ time: ``zxsuite backup doSmartScan start``
 
 .. _img-backup-notification:
 
-.. figure:: /img/backup-notification-level.png
+.. figure:: /img/backup/notification-level.png
    :alt: Zextras Backup Notification Level
 
    Zextras Backup Notification Level
