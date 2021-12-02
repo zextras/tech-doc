@@ -264,7 +264,7 @@ the call in the same tab.
 
 When users start a call, the following modal appears.
 
-.. figure:: /img/team-new-tab-modal.png
+.. figure:: /img/team/new-tab-modal.png
 
    Launch Team in a new browser tab
 
@@ -323,7 +323,7 @@ The Team tab is divided into three main parts:
    conversation or space and allows to either mute notifications or
    remove all the chat history.
 
-.. figure:: /img/team-tab.png
+.. figure:: /img/team/tab.png
 
    The Team Tab Graphic User Interface.
             
@@ -432,7 +432,7 @@ available in cinema mode:
 
 .. _fig_team_cinema_mode:
 
-.. figure:: /img/team-cinema-mode.png
+.. figure:: /img/team/cinema-mode.png
 
    Video Conversation in Cinema Mode.
 
@@ -450,7 +450,7 @@ central area. The differences with the Cinema Mode are:
 
 .. _fig_team_grid:
 
-.. figure:: /img/team-grid-layout.png
+.. figure:: /img/team/grid-layout.png
 
    Video Conversation in Grid Layout.
                          
@@ -480,7 +480,7 @@ address.
 
 .. _fig_team_create_chat:
 
-.. figure:: /img/team-chat.png
+.. figure:: /img/team/chat.png
 
    Dialog window to create a chat.
 
@@ -497,7 +497,7 @@ indented, to underline that it is tight to the space.
 
 .. _fig_team_space_channel:
 
-.. figure:: /img/space-channel.png
+.. figure:: /img/team/space-channel.png
 
    A space with a channel.
 
@@ -725,7 +725,7 @@ property to either ``local``, ``extended`` or ``global`` using the
    opposed to the strict email addres match required in *extended*
    mode.
 
-.. figure:: /img/connect_autocomplete_management.jpeg
+.. figure:: /img/team/connect_autocomplete_management.png
 
    Overview of autocomplete management
 
@@ -741,7 +741,7 @@ as **online**.
 As part of the user presence system, all messages get displayed with a
 variable number of check symbols:
 
-.. image:: /img/connect_message_delivered_1.png
+.. image:: /img/team/connect_message_delivered.png
 
 -  0 grey checks, message not delivered to the server
 
