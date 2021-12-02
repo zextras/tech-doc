@@ -157,13 +157,13 @@ To access the LDAP Address Book from Outlook simply follow these steps:
 
 -  Select "Internet Directory Service (LDAP)" and press "Next".
 
-.. figure:: /img/ldap_addressbook_setup1.png
+.. figure:: /img/mobile/ldap_addressbook_setup1.png
 
 -  Enter the direct URL of the mailbox server, then tick the "This
    server requires me to log in" option and enter your email address and
    password (or Mobile Password if existing).
 
-.. figure:: /img/ldap_addressbook_setup2.png
+.. figure:: /img/mobile/ldap_addressbook_setup2.png
 
 -  Click on "More Settings"
 
@@ -171,12 +171,12 @@ To access the LDAP Address Book from Outlook simply follow these steps:
    and ``8389`` as the port, then tick the "Use Secure Socket Layer"
    option.
 
-.. figure:: /img/ldap_addressbook_setup3.png 
+.. figure:: /img/mobile/ldap_addressbook_setup3.png 
 
 -  In the "Search" tab, select "Custom" as the search base and leave the
    input field blank.
 
-.. figure:: /img/ldap_addressbook_setup4.png
+.. figure:: /img/mobile/ldap_addressbook_setup4.png
 
 -  Click on "Ok" to close the "More Options" window and "Next" on the
    "Add Account" window to conclude the process.
