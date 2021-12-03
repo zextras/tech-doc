@@ -444,7 +444,7 @@ import the configuration using the command:
 
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
-.. figure:: /img/saml-login.png
+.. figure:: /img/auth/saml-login.png
    :scale: 50%
 
    Login page with enabled SAML.
@@ -607,7 +607,7 @@ The creation of a new credential allows to give access to the account,
 possibly including the Zextras Mobile Apps, to other persons without
 having to share the personal credentials.
 
-.. image:: /img/zextras_auth_overview.png
+.. image:: /img/auth/overview.png
 
 From the zimlet, the user can:
 
@@ -657,12 +657,12 @@ Zextras Auth Zimlet and click `Authentication Type`, then
   *Authentication description* field and select **Text code** as the
   *Authentication mode*
 
-   .. image:: /img/zextras_auth_mobilepass1.png
+   .. image:: /img/auth/mobilepass1.png
 
 - Click :bdg-primary:`NEXT`. The new Mobile Password will be
   displayed.
 
-   .. image:: /img/zextras_auth_mobilepass2.png
+   .. image:: /img/auth/mobilepass2.png
 
 - Click the small blue icon :octicon:`copy;1em;sd-text-primary` on
   the right-hand side of the password to copy it to the clipboard
@@ -674,7 +674,7 @@ Zextras Auth Zimlet and click `Authentication Type`, then
   for the new Mobile Password is now visible in the *Active Passwords*
   list of the Zextras Auth Zimlet.
 
-  .. image:: /img/zextras_auth_mobilepass3.png
+  .. image:: /img/auth/mobilepass3.png
 
 .. _auth_create_new_credentials_qr_code:
 
@@ -702,11 +702,11 @@ Zextras Auth Zimlet and click `Authentication type`, then
   *Authentication description* field and select **QR code** as the
   *Authentication mode*
 
-   .. image:: /img/zextras_auth_qrcode1.png
+   .. image:: /img/auth/qrcode1.png
 
 - Click Next. The QR code for Mobile Application will be displayed.
 
-   .. image:: /img/zextras_auth_qrcode2.png
+   .. image:: /img/auth/qrcode2.png
 
 Use the Zextras mobile app to frame the code and grant access to the
 app.
@@ -718,7 +718,7 @@ app.
   entry for the new Mobile Application is now visible in the *Active
   Passwords* list of the Zextras Auth Zimlet.
 
-   .. image::  /img/zextras_auth_qrcode3.png
+   .. image::  /img/auth/qrcode3.png
 
 .. _auth_zimlet-create-otp:
 
@@ -728,12 +728,12 @@ Create New Credentials: OTP
 In order to create a new QR Code for One Time Password access, open the
 Zextras Auth Zimlet and click on One Time Password, then on NEW OTP.
 
-.. image:: /img/zextras_auth_otp1.png
+.. image:: /img/auth/otp1.png
 
 - No additional step is required, you will be presented with the QR
   code and a list of PIN codes to be used for authentication.
 
-   .. image:: /img/zextras_auth_otp2.png
+   .. image:: /img/auth/otp2.png
 
 - Click on the small blue icon :fa:`print;sd-text-primary` on the
   right-hand side of the PIN list to print the codes on paper or to a
@@ -749,7 +749,7 @@ Zextras Auth Zimlet and click on One Time Password, then on NEW OTP.
 .. note:: The *Description* is automatically created using the email
    address to which it is associated.
 
-.. image:: /img/zextras_auth_otp3.png
+.. image:: /img/auth/otp3.png
 
 .. _auth_delete_credentials:
 
@@ -760,7 +760,7 @@ In order to delete a credential, simply select it from the list of
 Active passwords or OTPs, and click on the :bdg-danger-line:`DELETE`
 button:
 
-.. image:: /img/zextras_auth_delete_credential.png
+.. image:: /img/auth/delete_credential.png
 
 Click on :bdg-danger:`YES` to confirm the removal of the credential.
 

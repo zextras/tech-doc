@@ -59,31 +59,13 @@
  border-color:#2472a4
 }
 
-/* layout for footer and related classes borrowed from zextras' web
-   page*/
-footer {
-    background-color: black;
-    color:white;
-    padding: 1.618em 3.236em;
-}
+/* Simple class to display Zextras logo */
 .zxlogo {
     background-image: url("logo_zextras.png");
     display: inline-block;
     height: 30px;
     width: 170px;
     margin-bottom: 0px
-}
-.d-flex {
-    display: flex !important;
-}
-.row {
-    flex-wrap: wrap;
-}
-.list-inline-item {
-    display: inline-block;
-    margin-right: .5rem;
-    width: 36.15385px;
-    height: 36.15385px;
 }
 
 /* Force Lato fonts on all document */

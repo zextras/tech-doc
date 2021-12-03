@@ -12,6 +12,7 @@ Here you can find a description of its functionalities and configuration options
 
    general
    installation
+   licensing
    backup
    Restore Strategies <restorestrategies>
    Advanced Backup <advancedbackup>
