@@ -111,7 +111,7 @@ iOS.
 Drive UI
 ========
 
-.. figure:: /img/drive_ui.png
+.. figure:: /img/drive/ui.png
    :scale: 50%
 
    Overview of Zextras Drive UI
@@ -140,12 +140,12 @@ To upload a file to Drive, either click on the "Upload" button above the
 file list or drag and drop any number of files from your computer to the
 main Drive window.
 
-.. image:: /img/drive_upload.png
+.. image:: /img/drive/upload.png
    :scale: 50%
 
 To download a file from Drive, right-click on it and select "Download":
 
-.. image:: /img/drive_download.png
+.. image:: /img/drive/download.png
    :scale: 50%
 
 Any file and folder in Drive can be renamed by right-clicking on it and
@@ -162,7 +162,7 @@ Navigating through Drive folders is done through the Navigation Bar on
 top of the UI instead of through a tree view and folders are visible in
 the main section of the UI above files.
 
-.. image:: /img/drive_navigation.png
+.. image:: /img/drive/navigation.png
    :scale: 50%
 
 On top of the standard folder-based navigation, a "Quick Access" menu is
@@ -194,7 +194,7 @@ Folder Creation
 To create a folder in Drive, click on the "New" button above the file
 list and select "Folder":
 
-.. image:: /img/drive_newfolder.png
+.. image:: /img/drive/newfolder.png
    :scale: 50%
 
 .. _drive_file_and_folder_naming:
@@ -233,14 +233,14 @@ After entering the email address of the destination user and selecting
 the sharing permissions, click the (+) button to add the share to the
 list:
 
-.. image:: /img/drive_addshare.png
+.. image:: /img/drive/addshare.png
    :scale: 50%
 
 To edit or delete a share, simply click on the dropdown permission
 selector to change the sharing permissions of the file/folder or click
 the trash bin icon to delete the share:
 
-.. image:: /img/drive_editshare.png
+.. image:: /img/drive/editshare.png
    :scale: 50%
 
 In Drive sharing rights are only "positive", so it’s not possible to
@@ -258,7 +258,7 @@ item type in Zimbra, as such items are marked for deletion instead. To
 mark a file or a folder for deletion, right-click on it and select "Mark
 for Deletion":
 
-.. image:: /img/drive_deletefile.png
+.. image:: /img/drive/deletefile.png
    :scale: 50%
 
 Items marked for deletion are displayed on the bottom of the file list
@@ -266,7 +266,7 @@ with a strikethrough line and can be deleted permanently clicking on the
 "Delete Permanently" entry within the right-click context menu of a file
 marked for deletion while the "Restore" entry will unmark the file:
 
-.. image:: /img/drive_restorepermdelete.png
+.. image:: /img/drive/restorepermdelete.png
    :scale: 50%
 
 While any user with "Edit" or "Edit and Share" rights on an item or
@@ -289,12 +289,12 @@ file itself if in a compatible format (pictures, PDFs and more).
 To display the Infobox, click the :octicon:`info` icon on the top-right of
 the Drive UI:
 
-.. image:: /img/drive_infobutton.png
+.. image:: /img/drive/infobutton.png
    :scale: 50%
 
 The infobox will appear on the right side of the screen:
 
-.. image:: /img/drive_infobox.png
+.. image:: /img/drive/infobox.png
 
 Top-to-bottom, the InfoBox contains:
 
@@ -322,10 +322,10 @@ file versions.
 To access the versioning menu of a file, simply right-click the file and
 select "File Versions" from the drop down menu.
 
-.. image:: /img/drive_versioning_menu.png
+.. image:: /img/drive/versioning_menu.png
    :scale: 50%
 
-.. image:: /img/drive_versioning.png
+.. image:: /img/drive/versioning.png
    :scale: 50%
 
 The File Versioning Menu lists all stored versions of a file, sorted by
@@ -401,12 +401,12 @@ Integration with Zimbra Docs If the Zimbra Docs zimlet is correctly
 installed, dedicated document options will appear in the "New" button
 above the file list:
 
-.. image:: /img/drive_docsintegration.png
+.. image:: /img/drive/docsintegration.png
 
 When right-clicking on a compatible file, an "Open with Docs" option
 will also appear:
 
-.. image:: /img/drive_openwithdocs.png
+.. image:: /img/drive/openwithdocs.png
 
 
 Furthermore, Zimbra Docs will also allow for previews of compatible
