@@ -404,9 +404,6 @@ out a thorough check of all metadata and BLOBs in the Backup Path.
 To start a Coherency Check via the CLI, use the
 :ref:`zxsuite backup doCoherencyCheck <zxsuite_backup_docoherencycheck>` command:
 
-.. Quick reference -- Need to find a replacement (admonition?) for
-   these containers
-
 .. code:: console
 
    zxsuite backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
@@ -568,33 +565,32 @@ When is a SmartScan Executed?
 Running a SmartScan
 -------------------
 
-.. _starting_the_scan_via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Starting the Scan via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. grid-item-card:: Starting the Scan via the Administration Zimlet
+      :columns: 6
 
-To start a SmartScan via the Administration Zimlet,
+      To start a SmartScan via the Administration Zimlet,
 
--  Open the Administration Zimlet
+      -  Open the Administration Zimlet
 
--  If a multiserver installation, choose the server on which to run the
-   SmartScan
+      -  If a multiserver installation, choose the server on which to run the
+         SmartScan
 
--  Click  the Zextras Backup tab
+      -  Click  the Zextras Backup tab
 
--  Click  :bdg-secondary:`Run Smartscan`
+      -  Click  :bdg-secondary:`Run Smartscan`
 
-.. _starting_the_smartscan_via_the_cli:
+   .. grid-item-card:: Starting the SmartScan via the CLI
+      :columns: 6
 
-Starting the SmartScan via the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      To start a SmartScan via the CLI, use the :ref:`zxsuite backup
+      doSmartScan <zxsuite_backup_doSmartScan>` command:
 
-To start a SmartScan via the CLI, use the :ref:`zxsuite backup
-doSmartScan <zxsuite_backup_doSmartScan>` command:
+      .. code:: console
 
-.. code:: console
-
-   zxsuite backup doSmartScan *start* [param VALUE[,VALUE]]
+         zxsuite backup doSmartScan *start* [param VALUE[,VALUE]]
 
 .. _checking_the_status_of_a_running_scan:
 
@@ -655,57 +651,57 @@ Managing the Real Time Scanner
 Enabling the Real Time Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Via the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
--  Select the Zextras Backup Tab.
+      -  Select the Zextras Backup Tab.
 
--  Under Real Time Scanner, press the :bdg-secondary:`Enable` button.
+      -  Under Real Time Scanner, press the :bdg-secondary:`Enable` button.
 
-.. note:: When the Real Time Scanner is enabled for the first time or
-   re-enabled after a stop, a SmartScan is required. A warning will be
-   displayed after enabling the Real Time Scanner, and you will be
-   prompted to start the SmartScan.
+      .. note:: When the Real Time Scanner is enabled for the first time or
+         re-enabled after a stop, a SmartScan is required. A warning will be
+         displayed after enabling the Real Time Scanner, and you will be
+         prompted to start the SmartScan.
 
-.. _via_the_cli:
+      .. _via_the_cli:
 
-Via the CLI
-^^^^^^^^^^^
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-To enable the Real Time Scanner via the CLI, the
-``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
-be set to ``true``::
+      To enable the Real Time Scanner via the CLI, the
+      ``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
+      be set to ``true``::
 
-   zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
+         zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
 
 .. _disabling_the_real_time_scanner:
 
 Disabling the Real Time Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _via_the_administration_zimlet_2:
+.. grid::
+   :gutter: 3
 
-Via the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
--  Select the Zextras Backup Tab.
+      -  Select the Zextras Backup Tab.
 
--  Under Real Time Scanner, press the :bdg-secondary:`Disable` button.
+      -  Under Real Time Scanner, press the :bdg-secondary:`Disable` button.
 
-.. _via_the_cli_2:
+      .. _via_the_cli_2:
 
-Via the CLI
-^^^^^^^^^^^
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-To disable the Real Time Scanner via the CLI, the
-``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
-be set to ``false``:
+      To disable the Real Time Scanner via the CLI, the
+      ``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
+      be set to ``false``::
 
-::
-
-   zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
+        zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
 
 .. _why_should_i_disable_the_real_time_scanner:
 
@@ -786,28 +782,29 @@ item will ever exceed the retention time.
 Running a Backup Purge
 ----------------------
 
-.. _starting_the_backup_purge_via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Starting the Backup Purge via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-To start a BackupPurge via the Administration Zimlet:
+      To start a BackupPurge via the Administration Zimlet:
 
--  Click the Zextras Backup tab (be sure to have a valid license).
+      - Click the Zextras Backup tab (be sure to have a valid
+        license).
 
--  Click the ``Run Purge`` button in the top-right part of the UI.
+      - Click the ``Run Purge`` button in the top-right part of the
+        UI.
 
-.. _starting_the_backup_purge_via_the_cli:
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-Starting the Backup Purge via the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      To start a BackupPurge via the CLI, use the
+      :ref:`zxsuite backup doPurge <zxsuite_backup_doPurge>` command:
 
-To start a BackupPurge via the CLI, use the
-:ref:`zxsuite backup doPurge <zxsuite_backup_doPurge>` command:
+      .. code:: console
 
-.. code:: console
-
-   zxsuite backup doPurge [param VALUE[,VALUE]]
+         zxsuite backup doPurge [param VALUE[,VALUE]]
 
 .. _checking_the_status_of_a_running_backup_purge:
 
@@ -948,40 +945,51 @@ configuration.
 
 To fix the problem, follow this three step procedure.
 
-.. dropdown:: **1. Discover the ldap master server.**
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card::
 
-   .. code:: bash
+      1. Discover the ldap master server.
+      ^^^^^^
+      .. code:: bash
 
-      zmlocalconfig ldap_master_url
+         zmlocalconfig ldap_master_url
 
-.. dropdown:: **2. Obtain the root password.**
+   .. grid-item-card::
 
-   Connect to the ldap master server and get the LDAP root password.
-   
-   .. code:: bash
+      2. Obtain the root password.
+      ^^^^^
 
-      zmlocalconfig -s ldap_root_password
+      Connect to the ldap master server and get the LDAP root password.
 
-   This command will print on the standard output the LDAP password,
-   that you need to store on all mailbox servers on which either
-   ``zxsuite`` is running, or LDAP backup is enabled, or both. 
+      .. code:: bash
 
-.. dropdown:: **3. Save password on all mailstores.**
+         zmlocalconfig -s ldap_root_password
 
-   Execute *on every mailstore* the following commands, in which
-   **$LDAPPASSWORD** is the LDAP password obtained in the
-   previous step.
+      This command will print on the standard output the LDAP password,
+      that you need to store on all mailbox servers on which either
+      ``zxsuite`` is running, or LDAP backup is enabled, or both. 
 
-   .. code:: bash
+   .. grid-item-card::
 
-      su - zimbra
-      zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
-             
-   Finally, restart the mailbox service to avoid cached credentials problems.
+      3. Save password on all mailstores.
+      ^^^^^^
+      
+      Execute *on every mailstore* the following commands, in which
+      **$LDAPPASSWORD** is the LDAP password obtained in the
+      previous step.
 
-   .. code:: bash
+      .. code:: bash
 
-      zmmailboxdctl restart
+         su - zimbra
+         zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
+
+      Finally, restart the mailbox service to avoid cached credentials problems.
+
+      .. code:: bash
+
+         zmmailboxdctl restart
 
 .. _disable_ldap_backup:
 
@@ -1150,7 +1158,7 @@ be reused*. Depending on what approach you choose, the steps to carry
 out are different. We describe here only the easier and most reliable
 one.
 
-.. dropdown:: Single server installation
+.. card:: Single server installation
 
    When NFS shares are used, you need to make them visible and accessible
    to the OS and Zextras, a task that only requires to add a row in
@@ -1166,7 +1174,7 @@ one.
    You will now be able to mount the external storage by simply using
    ``mount /media/external/`` on the server.
 
-.. dropdown:: Multiserver installation
+.. card:: Multiserver installation
 
    In the case of a multiserver installation, the admin must ensure that
    each server writes **on its own directory**, and the destination share
@@ -1257,7 +1265,7 @@ different, depending if the new storage needs to be accessed from a
 newly installed server or if existing local backups must be migrated to
 the external storage.
 
-.. dropdown:: Configure on newly installed / uninitialized server
+.. card:: Configure on newly installed / uninitialized server
 
    If there the backup has not been initialized on the server, an
    Administrator can configure the external storage by running
@@ -1272,7 +1280,7 @@ the external storage.
    Therefore, check for any missing blobs with doCheckBlobs in the Zimbra
    volumes to avoid integrity errors.
 
-.. dropdown:: Migrate existing backups
+.. card:: Migrate existing backups
 
    Before actually carrying out the migration, please perform the following
    important maintenance task. This procedure will minimise the risk of
