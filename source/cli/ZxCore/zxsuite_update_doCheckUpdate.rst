@@ -1,0 +1,4 @@
+
+::
+
+   zxsuite update doCheckUpdate

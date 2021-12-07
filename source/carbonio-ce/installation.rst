@@ -100,72 +100,84 @@ Before attempting the installation of |community| you need:
 
 .. dropdown:: Credentials to access |zx| repository
 
-   The credentials are provided by |zx|. On Ubuntu, you need to store
-   them in a file, while on CentOS/RedHat you can skip this steps,
-   because credentials are stored in the repository configuration.
+   Information about how the credentials will be
+   provided soon.
+   
+   ..
+      The credentials are provided by |zx|. On Ubuntu, you need to store
+      them in a file, while on CentOS/RedHat you can skip this steps,
+      because credentials are stored in the repository configuration.
 
-   .. tab-set::
+      .. tab-set::
 
-      .. tab-item:: Ubuntu
+         .. tab-item:: Ubuntu
 
-         Create file :file:`/etc/apt/auth.conf.d/zextras.conf` with the
-         following content.
+            Create file :file:`/etc/apt/auth.conf.d/zextras.conf` with the
+            following content.
 
-         .. code:: ini
+            .. code:: ini
 
-            machine zextras.jfrog.io
-            login username
-            password token
+               machine zextras.jfrog.io
+               login username
+               password token
 
-      .. tab-item:: CentOS/RedHat
+         .. tab-item:: CentOS/RedHat
 
-         Safely skip to next step.
+            Safely skip to next step.
 
-.. dropdown:: To setup |zx| repository
+.. Dropdown:: To setup |zx| repository
 
-   .. tab-set::
+   Information about how to set up the zextras repository will be
+   provided soon.
 
-      .. tab-item:: Ubuntu
+   ..
+      .. tab-set::
 
-         Create file :file:`/etc/apt/sources.list.d/zextras.conf` with the
-         following content.
+         .. tab-item:: Ubuntu
 
-         .. code:: text
+            Create file :file:`/etc/apt/sources.list.d/zextras.conf` with the
+            following content.
 
-            deb [trusted=yes] https://zextras.jfrog.io/artifactory/ubuntu-playground bionic main
+            .. code:: text
 
-      .. tab-item:: CentOS/RedHat
+               deb [trusted=yes] https://zextras.jfrog.io/artifactory/ubuntu-playground bionic main
 
-         Create a `.repo` file :file:`/etc/yum.repos.d/zextras.repo` with the
-         following content.
+         .. tab-item:: CentOS/RedHat
 
-         .. code:: ini
+            Create a `.repo` file :file:`/etc/yum.repos.d/zextras.repo` with the
+            following content.
 
-            [Zextras]
-            name=Zextras
-            baseurl=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/
-            enabled=1
-            gpgcheck=1
-            gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
+            .. code:: ini
+
+               [Zextras]
+               name=Zextras
+               baseurl=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/
+               enabled=1
+               gpgcheck=1
+               gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
 
 .. dropdown:: The public |zx| GPG signing key
 
-   The last step is to import |zx| GPG key. This step is not necessary
-   on CentOS/RedHat, as the GPG key is part of the repository configuration.
+   The GPG key will be provided as soon as the repositories will be
+   set up.
 
-   .. tab-set::
+   ..
+      The last step is to import |zx| GPG key. This step is not necessary
+      on CentOS/RedHat, as the GPG key is part of the repository configuration.
 
-      .. tab-item:: Ubuntu
+      .. tab-set::
 
-         Import the GPG key with this command.
+         .. tab-item:: Ubuntu
 
-         .. code:: bash
+            Import the GPG key with this command.
 
-            # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
+            .. code:: bash
 
-      .. tab-item:: CentOS/RedHat
+               # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
 
-         Safely skip this step.
+         .. tab-item:: CentOS/RedHat
+
+            Safely skip this step.
 
 Once all these steps have been successfully accomplished, you can
 proceed to install |community| packages, either on a

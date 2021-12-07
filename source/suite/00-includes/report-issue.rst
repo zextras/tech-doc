@@ -1,4 +1,3 @@
-..
 
 The most efficient way to report a Zextras Suite issue is the one that
 allows both the *Reporter* and the *Technical Support Team* to reach
@@ -29,11 +28,11 @@ In order to report a Zextras Suite issue, please follow this steps:
 -  search on the `Community <https://community.zextras.com/>`_ if there
    are articles that cover a solution to your problem
 
--  Make sure that what you report is a software issue (see `Definition
-   of "issue" <#issue-definition>`_).
+-  Make sure that what you report is a software issue (see :ref:`Definition
+   of "issue" <issue-definition>`).
 
--  Gather all information specified in the `What information to include
-   in your report <#required-info-ticket>`_\ section of this page.
+-  Gather all information specified in the :ref:`What information to include
+   in your report <required-info-ticket>` section of this page.
 
 -  File a case in the Zextras Support Portal at
    https://support.zextras.com/, providing the most amount of
@@ -42,7 +41,7 @@ In order to report a Zextras Suite issue, please follow this steps:
 .. _issue-definition:
 
 Definition of "issue"
---------------------
+---------------------
 
 While you as a user can experience different problems, not in all of
 them the Technical Support Team can be helpful.
@@ -115,32 +114,34 @@ get stuck during the page loading.
 
 When this happens, chances are that the **Zimbra DoS filter** is
 blocking the access due to the high number of connections created in
-Debug Mode. Please check the dedicated `Zimbra DoS
-Filter <install-guide.xml#dos-filter>`_ section to learn about it, its
-options and how to tweak them for a smoother loading.
+Debug Mode. Please check the dedicated :ref:`Zimbra DoS Filter
+<dos-filter>` section to learn about it, its options and how to tweak
+them for a smoother loading.
 
-It’s very important to use Zimbra’s debug mode when gathering
-information, because it allows to identify the exact module causing the
-error. To enter the debug mode, simply add the **?dev=1** string at the
-end of your URL (e.g. http://mail.example.com/?dev=1). This forces
-Zimbra to ignore any cached data to and reload any Javascript component
-separately.
+.. topic:: :octicon:`comment` Zimbra's Debug Mode
 
-**Checking for exceptions in the Zimbra Administration Console:**
+   It’s very important to use Zimbra’s debug mode when gathering
+   information, because it allows to identify the exact module causing the
+   error. To enter the debug mode, simply add the **?dev=1** string at the
+   end of your URL (e.g. http://mail.example.com/?dev=1). This forces
+   Zimbra to ignore any cached data to and reload any Javascript component
+   separately.
 
--  Log into the Zimbra Web Client adding **?dev=1** after the URL of
-   your server (e.g. https://mail.example.com/?dev=1)
+   .. rubric:: Check for exceptions in the Zimbra Administration Console
 
--  Verify if the issue still occours. If not, clearing the browser’s
-   cache should solve the issue permanently.
+   - Log into the Zimbra Web Client adding **?dev=1** after the URL of
+     your server (e.g. https://mail.example.com/?dev=1)
 
--  If the issue persists, open your browser’s debug tool: *Web
-   Developer* on Firefox, *Developer Tools* on Chrome
+   - Verify if the issue still occours. If not, clearing the browser’s
+     cache should solve the issue permanently.
 
--  Reload the Zimbra Web Client (keeping the **?dev=1** parameter) and
-   search for any error or exception in the debug tool’s console
+   - If the issue persists, open your browser’s debug tool: *Web
+     Developer* on Firefox, *Developer Tools* on Chrome
 
--  Include the complete error or exception in your bug report
+   - Reload the Zimbra Web Client (keeping the **?dev=1** parameter)
+     and search for any error or exception in the debug tool’s console
+
+   - Include the complete error or exception in your bug report
 
 .. _required-info-ticket:
 
@@ -159,112 +160,112 @@ ticket you open on the Support Portal. You can then skip to the
 appropriate section, dedicated to each Zextras module and gather
 additional information.
 
-These data must be provided for every ticket opened.
+.. card:: Common Information
 
-1. the full output of ``zmcontrol -v``
+   These data must be provided for every ticket opened.
 
-2. the full output of ``zxsuite --host all_servers core getVersion``
+   1. the full output of ``zmcontrol -v``
 
-3. the full output of ``zxsuite core getLicenseInfo`` commands.
+   2. the full output of ``zxsuite --host all_servers core getVersion``
 
-Take note of the *order_id* field you get from the last command and
-properly insert it in the ticket’s **license ID** field
+   3. the full output of ``zxsuite core getLicenseInfo`` commands.
+
+   Take note of the *order_id* field you get from the last command and
+   properly insert it in the ticket’s **license ID** field
 
 Before reproducing the issue, set the verbosity of the ``mailbox.log``
 file to debug by running the command ``zxsuite config global set
 attribute ZxCore_LogLevel value 0``. **Make sure** to set it back to
 **1** once finished the operation to avoid filling the disk with logs.
 
-   **Note**
+.. note:: When reporting migration issues, please specify this data
+   for both the source and destination server.
 
-   When reporting migration issues, please specify this data for both
-   the source and destination server.
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: **Zextras Powerstore**
+      :columns: 6
 
-.. _zextras_powerstore:
+      -  the output of ``zxsuite powerstore getAllVolumes``
 
-**Zextras Powerstore**
+      -  the output of ``zxsuite powerstore getPowerstorePolicy``
 
--  the output of ``zxsuite powerstore getAllVolumes``
+      -  the output of ``zxsuite powerstore getMovedMailboxes`` and
+         ``zxsuite powerstore getNonLocalMailboxes``
 
--  the output of ``zxsuite powerstore getPowerstorePolicy``
+      -  the ``mailbox.log`` file reproducing the issue
 
--  the output of ``zxsuite powerstore getMovedMailboxes`` and
-   ``zxsuite powerstore getNonLocalMailboxes``
+   .. grid-item-card:: **Zextras Backup**
+      :columns: 6
 
--  the ``mailbox.log`` file reproducing the issue
+      -  the output of ``zxsuite config server get $(zmhostname)``
 
-.. _zextras_backup:
+      -  the output of ``zxsuite backup getBackupInfo``
 
-**Zextras Backup**
+      -  the output of ``mount`` command
 
--  the output of ``zxsuite config server get $(zmhostname)``
+      -  the ``mailbox.log`` file relative to the operation
 
--  the output of ``zxsuite backup getBackupInfo``
 
--  the output of ``mount`` command
+   .. grid-item-card:: **Zextras Mobile**
+      :columns: 6
 
--  the ``mailbox.log`` file relative to the operation
+      - activate an account logger in debug mode on one of the
+        affected devices with ``zxsuite mobile doAddAccountLogger
+        user@domain.tdl debug /path/to/log/file.log``
 
-.. _zextras_mobile:
+      - remove the account from the device
 
-**Zextras Mobile**
+      - add the account on the device again
 
-1. activate an account logger in debug mode on one of the affected
-   devices with
-   ``zxsuite mobile doAddAccountLogger user@domain.tdl debug /path/to/log/file.log``
+      - try to reproduce the issue
 
-2. remove the account from the device
+      and then attach to the report the ``/path/to/log/file.log`` file,
+      together with:
 
-3. add the account on the device again
+      -  the ``mailbox.log`` and the ``sync.log`` files relative to the
+         operations above
 
-4. try to reproduce the issue
+      -  a brief explanation of how to reproduce the issue
 
-and then attach to the report the ``/path/to/log/file.log`` file,
-together with:
+      -  manufacturer, model and exact OS version of the device
 
--  the ``mailbox.log`` and the ``sync.log`` files relative to the
-   operations above
+   .. grid-item-card:: **Zextras Team**
+      :columns: 6
 
--  a brief explanation of how to reproduce the issue
+      -  the output of ``zmprov gas`` and ``zmprov gas mailbox``
 
--  manufacturer, model and exact OS version of the device
+      -  the output of ``zxsuite config global get``,
+         ``zmzimletctl listZimlets``,
+         ``zmzimletctl info com_zimbra_Team_classic`` and
+         ``zxsuite Team clusterStatus``
 
-.. _zextras_team:
+      -  the output of ``zxsuite Team getServices`` and
+         ``zxsuite Team iceServer get``
 
-**Zextras Team**
+      -  the output of ``for cos in $(zmprov gac); do zmprov gc $cos; done``
+         and ``zmprov ga USER@DOMAIN.TDL`` of one of the affected users
 
--  the output of ``zmprov gas`` and ``zmprov gas mailbox``
+      -  the output of
+         ``for cos in $(zmprov gac); do echo $cos; zxsuite config cos get $cos; done``
+         and ``zxsuite config account get USER@DOMAIN.TDL`` of the same user
+         as the previous command
 
--  the output of ``zxsuite config global get``,
-   ``zmzimletctl listZimlets``,
-   ``zmzimletctl info com_zimbra_Team_classic`` and
-   ``zxsuite Team clusterStatus``
+      -  the output of
+         ``for dom in $(zmprov gad); do zmprov gd $dom zimbraPublicServiceProtocol zimbraPublicServiceHostname zimbraPublicServicePort; done``
 
--  the output of ``zxsuite Team getServices`` and
-   ``zxsuite Team iceServer get``
+      -  the output of ``zxsuite --host all_servers powerstore getAllVolumes``
 
--  the output of ``for cos in $(zmprov gac); do zmprov gc $cos; done``
-   and ``zmprov ga USER@DOMAIN.TDL`` of one of the affected users
+      -  the output of ``zxsuite --host all_servers core apiversions team``
 
--  the output of
-   ``for cos in $(zmprov gac); do echo $cos; zxsuite config cos get $cos; done``
-   and ``zxsuite config account get USER@DOMAIN.TDL`` of the same user
-   as the previous command
+      -  the ``mailbox.log`` file relative to a restart of the mailboxd with
+         ``zmmailboxdctl restart``
 
--  the output of
-   ``for dom in $(zmprov gad); do zmprov gd $dom zimbraPublicServiceProtocol zimbraPublicServiceHostname zimbraPublicServicePort; done``
+      -  the ``mailbox.log`` and the ``zmmailboxd.out`` files of the last
+         couple of days
 
--  the output of ``zxsuite --host all_servers powerstore getAllVolumes``
-
--  the output of ``zxsuite --host all_servers core apiversions team``
-
--  the ``mailbox.log`` file relative to a restart of the mailboxd with
-   ``zmmailboxdctl restart``
-
--  the ``mailbox.log`` and the ``zmmailboxd.out`` files of the last
-   couple of days
-
--  A test account without admin privileges could also be useful.
+      -  A test account without admin privileges could also be useful.
 
 .. _help_us_improve_zextras_suite:
 

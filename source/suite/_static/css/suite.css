@@ -1,2 +1,18 @@
 
 @import url("common.css");
+
+
+/* Sidebar */
+.wy-nav-side {
+    background: var(--zx-color-abyss);
+}
+
+/* indent "subtopics" */ 
+.wy-menu > ul > li > a[href$="restorestrategies.html"],
+.wy-menu > ul > li > a[href$="advancedbackup.html"],
+.wy-menu > ul > li > a[href$="ldapaddressbook.html"],
+.wy-menu > ul > li > a[href$="mobile-troubleshooting.html"],
+.wy-menu > ul > li > a[href$="attachment.html"],
+.wy-menu > ul > li > a[href$="contentextractor.html"] {
+    margin-left: 20px;
+}

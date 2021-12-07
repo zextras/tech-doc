@@ -35,3 +35,4 @@ Features <advanced.html>`.
    usage
    deep-view
    glossary
+   cli
