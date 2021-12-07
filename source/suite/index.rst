@@ -20,6 +20,8 @@ Here you can find a description of its functionalities and configuration options
    ldapaddressbook
    mobile-troubleshooting
    powerstore
+   attachment
+   contentextractor
    admin
    drive
    docs

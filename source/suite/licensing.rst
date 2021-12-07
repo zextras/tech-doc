@@ -1,4 +1,4 @@
-=========================
+========================
  Zextras Suite Licensing
 =========================
 
@@ -118,25 +118,32 @@ path is described in the remainder of this section.
 
 -  Finally, Select the license’s duration: Yearly, Perpetual or Custom
 
-   .. dropdown::  Yearly
+   .. grid::
+      :gutter: 3
 
-      -  Valid for 365 days since the purchase
+      .. grid-item-card::  Yearly
+         :columns: 4
 
-      -  Ongoing access to upgrades and support
+         - Valid for 365 days since the purchase
 
-   .. dropdown::  Perpetual
+         - Ongoing access to upgrades and support
 
-      -  Access to upgrades and support during maintenance subscription.
-         If the maintenance subscription has expired, you can keep using
-         the product but you can’t upgrade it or benefit of our support
-         service until you subscribe to maintenance again.
+      .. grid-item-card::  Perpetual
+         :columns: 4
 
-   .. dropdown:: Custom
+         - Access to upgrades and support during maintenance
+           subscription.  If the maintenance subscription has expired,
+           you can keep using the product but you can’t upgrade it or
+           benefit of our support service until you subscribe to
+           maintenance again.
 
-      -  Choose start/end date (Minimum duration: 30 Days; Minimum
-         amount: 25 USD)
+      .. grid-item-card:: Custom
+         :columns: 4
 
-      -  Ongoing access to upgrades and support
+         - Choose start/end date (Minimum duration: 30 Days; Minimum
+           amount: 25 USD)
+
+         - Ongoing access to upgrades and support
 
 You will now display the overall cost of the licenses (you can check the
 cost’s details). Pick the payment method you prefer and then proceed

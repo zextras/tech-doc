@@ -59,210 +59,135 @@ the same sub-commands shown in the previous snippet are available
 (i.e. ``could_not_start_because``, ``could_start``, ``could_stop``,
 ``running``).
 
-.. _backup_services:
+.. grid::
+   :gutter: 3
 
-.. dropdown:: Backup Services
-   :icon: diff-added
+   .. grid-item-card:: Admin Services
+      :columns: 6
 
-   .. table:: Backup Service List
+      .. csv-table:: Admin Service List
+         :header: "Service", "Description"
 
-      +----------------------+-----------------------------------------------+
-      | Service              | Description                                   |
-      +======================+===============================================+
-      | ``module``           | the entire module                             |
-      +----------------------+-----------------------------------------------+
-      | ``backup-realtime``  | handles the RealTime Scanner and its features |
-      +----------------------+-----------------------------------------------+
-      | ``purge-cron``       | handles the scheduling of the weekly Purge    |
-      +----------------------+-----------------------------------------------+
-      | ``smartscan-cron``   | handles the scheduling of the daily SmartScan |
-      +----------------------+-----------------------------------------------+
-      | ``drive-realtime``   | handles the realtime backup of Zextras Drive  |
-      |                      | items                                         |
-      +----------------------+-----------------------------------------------+
-      | ``backup-attributes- | handles instant configuration changes without |
-      | listener``           | service restarts                              |
-      +----------------------+-----------------------------------------------+
+         "**module**", "the entire module"
+         "**logging handles**", "Admin Logging (reports and auditing)"
+         "**report-cron**", "handles the scheduling of Admin Report
+         generation and distribution"
+         "**admin-attributes-listener**", "handles instant
+         configuration changes without service restarts"
 
-.. _mobile_services:
+   .. grid-item-card:: Mobile Services
+      :columns: 6
 
-.. dropdown:: Mobile Services
-   :icon: diff-added
+      .. csv-table:: Mobile Service List
+         :header: "Service", "Description"
+                  
+         "**module**", "the entire module"
+         "**activesync**", "handles all Activesync features"
+         "**autodiscover**", "handles the Autodiscovery feature"
+         "**abq**", "handles the ABQ feature"
+         "**anti-dos**", "handles the Mobile Anti DOS feature"
 
-   .. table:: Mobile Service List
+   .. grid-item-card:: Backup Services
+      :columns: 6
 
-      +----------------------+-----------------------------------------------+
-      | Service              | Description                                   |
-      +======================+===============================================+
-      | ``module``           | the entire module                             |
-      +----------------------+-----------------------------------------------+
-      | ``activesync``       | handles all Activesync features               |
-      +----------------------+-----------------------------------------------+
-      | ``autodiscover``     | handles the Autodiscovery feature             |
-      +----------------------+-----------------------------------------------+
-      | ``abq``              | handles the ABQ feature                       |
-      +----------------------+-----------------------------------------------+
-      | ``anti-dos``         | handles the Mobile Anti DOS feature           |
-      +----------------------+-----------------------------------------------+
+      .. csv-table:: Backup Service List
+         :header: "Service", "Description"
+                  
+         "**module**", "the entire module"
+         "**backup-realtime**", "handles the RealTime Scanner and its
+         features"
+         "**purge-cron**", "handles the scheduling of the weekly
+         Purge"
+         "**smartscan-cron**", "handles the scheduling of the daily
+         SmartScan"
+         "**drive-realtime**", "handles the realtime backup of Zextras
+         Drive items"
+         "**backup-attributes-listener**", "handles instant
+         configuration changes without service restarts"
 
-.. _powerstore_services:
+   .. grid-item-card:: Powerstore Services
+      :columns: 6
 
-.. dropdown:: Powerstore Services
-   :icon: diff-added
+      .. csv-table:: Powerstore Service List
+         :header: "Service", "Description"
 
-   .. table:: Powerstore Service List
+         "**module**", "the entire module"
+         "**powerstore-log**", "handles operation logging"
+         "**store-manager-services**", "handles StoreManager override
+         and third party storages"
+         "**schedule-move-operations**", "handles the scheduling of
+         the daily HSM move"
+         "**indexer-manager**", "handles the internal indexer for mail
+         attachments and files"
+         "**powerstore-attribute-listener**", "handles instant
+         configuration changes without service restarts"
 
-      +----------------------+-----------------------------------------------+
-      | Service              | Description                                   |
-      +======================+===============================================+
-      | ``module``           | the entire module                             |
-      +----------------------+-----------------------------------------------+
-      | ``powerstore-log``   | handles operation logging                     |
-      +----------------------+-----------------------------------------------+
-      | ``store-manager-serv | handles StoreManager override and third party |
-      | ices``               | storages                                      |
-      +----------------------+-----------------------------------------------+
-      | ``schedule-move-oper | handles the scheduling of the daily HSM move  |
-      | ations``             |                                               |
-      +----------------------+-----------------------------------------------+
-      | ``indexer-manager``  | handles the internal indexer for mail         |
-      |                      | attachments and files                         |
-      +----------------------+-----------------------------------------------+
-      | ``powerstore-attribu | handles instant configuration changes without |
-      | te-listener``        | service restarts                              |
-      +----------------------+-----------------------------------------------+
+   .. grid-item-card:: Team Services
+      :columns: 6
 
-.. _admin_services:
+      .. csv-table:: Team Service List
+         :header: "Service", "Description"
 
-.. dropdown:: Admin Services
-   :icon: diff-added
+         "**database**", "handles the Team HSQL DB"
+         "**current-chat-services**", "handles Team services"
+         "**module**", "the entire module"
+         "**team-cluster-status**", "keeps track of all available Team
+         API versions in the cluster"
+         "**team-api**", "all private APIs"
+         "**team-websocket**", "handles websockets needed for all
+         connections"
+         "**team-firebase-notifications**", "handles mobile
+         notifications"
+         "**team-meeting-manager**", "handles Instant Meetings"
+         "**team-room-resolver**", "handles the resolution of Spaces
+         and Channels across servers"
+         "**team-websocket-handler**", "handles websocket creation and
+         management"
+         "**team-http-handler**", "handles http/s requests"
+         "**team-audit-logger**", "handles the Audit Logging feature"
+         "**team-clustering**", "handles clustering between Team
+         instances in the same infrastructure"
+         "**team-request-router**", "handles the routing of requests
+         across servers"
+         "**team-janus-pool**", "Handles Videoserver pooling"
+         "**rooms-cleanup-service**", "handles the cleanup of empty
+         and unused Spaces, Channels and Groups"
 
-   .. table:: Admin Service List
+   .. grid-item-card:: Drive Services
+      :columns: 6
 
-      +----------------------+-----------------------------------------------+
-      | Service              | Description                                   |
-      +======================+===============================================+
-      | ``module``           | the entire module                             |
-      +----------------------+-----------------------------------------------+
-      | ``logging``          | handles Admin Logging (reports and auditing)  |
-      +----------------------+-----------------------------------------------+
-      | ``report-cron``      | handles the scheduling of Admin Report        |
-      |                      | generation and distribution                   |
-      +----------------------+-----------------------------------------------+
-      | ``admin-attributes-l | handles instant configuration changes without |
-      | istener``            | service restarts                              |
-      +----------------------+-----------------------------------------------+
+      .. csv-table:: Drive Service List
+         :header: "Service", "Description"
 
-.. _team_services:
+         "**module**", "the entire module"
+         "**drive-register-api-service**", "handles private API
+         registration"
+         "**drive-websocket**", "handles all websockets needed by
+         Drive"
+         "**drive-preview**", "handles file preview generation"
+         "**drive-index**", "handles file content indexing"
+         "**drive-purge-tombstones**", "handles pruning of recently
+         deleted files"
+         "**drive-remove-nodes-marked-for-deletion**", "handles file
+         deletion"
+         "**drive-account-cleaner**", "cleans up the Drive HSQL
+         database from accounts deleted from Zimbra"
+         "**drive-request-service**", "handles private APIs"
 
-.. dropdown:: Team Services
-   :icon: diff-added
+   .. grid-item-card:: Auth Services
 
-   .. table:: Team Service List
+      .. csv-table:: Auth Service List
+         :header: "Service", "Description"
 
-      +----------------------+-----------------------------------------------+
-      | Service              | Description                                   |
-      +----------------------+-----------------------------------------------+
-      | database             | handles the Team HSQL DB                      |
-      +----------------------+-----------------------------------------------+
-      | current-chat-service | handles Team services                         |
-      | s                    |                                               |
-      +----------------------+-----------------------------------------------+
-      | module               | the entire module                             |
-      +----------------------+-----------------------------------------------+
-      | team-cluster-status  | keeps track of all available Team API         |
-      |                      | versions in the cluster                       |
-      +----------------------+-----------------------------------------------+
-      | team-api             | handles all private APIs                      |
-      +----------------------+-----------------------------------------------+
-      | team-websocket       | handles websockets needed for all connections |
-      +----------------------+-----------------------------------------------+
-      | team-firebase-notifi | handles mobile notifications                  |
-      | cations              |                                               |
-      +----------------------+-----------------------------------------------+
-      | team-meeting-manager | handles Instant Meetings                      |
-      +----------------------+-----------------------------------------------+
-      | team-room-resolver   | handles the resolution of Spaces and Channels |
-      |                      | across servers                                |
-      +----------------------+-----------------------------------------------+
-      | team-websocket-handl | handles websocket creation and management     |
-      | er                   |                                               |
-      +----------------------+-----------------------------------------------+
-      | team-http-handler    | handles http/s requests                       |
-      +----------------------+-----------------------------------------------+
-      | team-audit-logger    | handles the Audit Logging feature             |
-      +----------------------+-----------------------------------------------+
-      | team-clustering      | handles clustering between Team instances in  |
-      |                      | the same infrastructure                       |
-      +----------------------+-----------------------------------------------+
-      | team-request-router  | handles the routing of requests across        |
-      |                      | servers                                       |
-      +----------------------+-----------------------------------------------+
-      | team-janus-pool      | Handles Videoserver pooling                   |
-      +----------------------+-----------------------------------------------+
-      | rooms-cleanup-servic | handles the cleanup of empty and unused       |
-      | e                    | Spaces, Channels and Groups                   |
-      +----------------------+-----------------------------------------------+
-
-.. _drive_services:
-
-.. dropdown:: Drive Services
-   :icon: diff-added
-
-   .. table:: Drive Service List
-
-      +----------------------+-----------------------------------------------+
-      | module               | the entire module                             |
-      +----------------------+-----------------------------------------------+
-      | drive-register-api-s | handles private API registration              |
-      | ervice               |                                               |
-      +----------------------+-----------------------------------------------+
-      | drive-websocket      | handles all websockets needed by Drive        |
-      +----------------------+-----------------------------------------------+
-      | drive-preview        | handles file preview generation               |
-      +----------------------+-----------------------------------------------+
-      | drive-index          | handles file content indexing                 |
-      +----------------------+-----------------------------------------------+
-      | drive-purge-tombston | handles pruning of recently deleted files     |
-      | es                   |                                               |
-      +----------------------+-----------------------------------------------+
-      | drive-remove-nodes-m | handles file deletion                         |
-      | arked-for-deletion   |                                               |
-      +----------------------+-----------------------------------------------+
-      | drive-account-cleane | cleans up the Drive HSQL database from        |
-      | r                    | accounts deleted from Zimbra                  |
-      +----------------------+-----------------------------------------------+
-      | drive-request-servic | handles private APIs                          |
-      | e                    |                                               |
-      +----------------------+-----------------------------------------------+
-
-.. _auth_services:
-
-.. dropdown:: Auth Services
-   :icon: diff-added
-
-   .. table:: Auth Service List
-
-      +----------------------+-----------------------------------------------+
-      | module               | the module itself                             |
-      +----------------------+-----------------------------------------------+
-      | auth-database        | handles the Auth HSQL DB                      |
-      +----------------------+-----------------------------------------------+
-      | auth-database-update | handles database schema updates               |
-      | r                    |                                               |
-      +----------------------+-----------------------------------------------+
-      | user-gateway         | *inactive*                                    |
-      +----------------------+-----------------------------------------------+
-      | login-assets         | *inactive*                                    |
-      +----------------------+-----------------------------------------------+
-      | authorization-servic | *inactive*                                    |
-      | e                    |                                               |
-      +----------------------+-----------------------------------------------+
-      | authentication-servi | handles authentication features such as       |
-      | ce                   | Mobile Passwords                              |
-      +----------------------+-----------------------------------------------+
-      | key-manager          | handles encryption keys and secrets           |
-      +----------------------+-----------------------------------------------+
-      | migrate-mobile-passw | handles Mobile Password migrations from       |
-      | ords                 | pre-Auth Zextras Suite versions               |
-      +----------------------+-----------------------------------------------+
+         "**module**", "the module itself"
+         "**auth-database**", "handles the Auth HSQL DB"
+         "**auth-database-updater**", "handles database schema
+         updates"
+         "**user-gateway**", "*inactive*"
+         "**login-assets**", "*inactive*"
+         "**authorization-service**", "*inactive*"
+         "**authentication-service**", "handles authentication
+         features such as Mobile Passwords"
+         "**key-manager**", "handles encryption keys and secrets"
+         "**migrate-mobile-passwords**", "handles Mobile Password
+         migrations from pre-Auth Zextras Suite versions"

@@ -12,51 +12,57 @@ Enable Zextras Mobile Synchronization for a COS
 How to Enable Zextras Mobile for all Users in a Class Of Service
 ----------------------------------------------------------------
 
-.. dropdown:: From the Administration Console
+.. grid::
+   :gutter: 3
 
-   To enable Zextras Mobile for all users in a COS from the Administration
-   Console:
+   .. grid-item-card:: Via the Administration Zimlet
 
-   - Open the Zimbra Administration Console
+      To enable Zextras Mobile for all users in a COS from the Administration
+      Console:
 
-   - Double-click the Class Of Service you want to edit (on the left,
-     under :menuselection:`Configuration --> Class of Service`)
+      - Open the Zimbra Administration Console
 
-   - Click the Mobile tab
+      - Double-click the Class Of Service you want to edit (on the left,
+        under :menuselection:`Configuration --> Class of Service`)
 
-   - Check the ``Enable mobile synchronization`` button
+      - Click the Mobile tab
 
-.. dropdown:: From the Zimbra CLI
+      - Check the ``Enable mobile synchronization`` button
 
-   To enable Zextras Mobile for all users in a COS from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run :command:`zmprov mc COSName
-     zimbraFeatureMobileSyncEnabled TRUE`
+      To enable Zextras Mobile for all users in a COS from the CLI:
+
+      - As the 'zimbra' user run :command:`zmprov mc COSName
+        zimbraFeatureMobileSyncEnabled TRUE`
 
 .. _how_to_disable_zextras_mobile_for_all_users_in_a_class_of_service:
 
 How to Disable Zextras Mobile for all Users in a Class Of Service
 -----------------------------------------------------------------
 
-.. dropdown:: From the Administration Console
+.. grid::
+   :gutter: 3
 
-   To disable Zextras Mobile for all users in a COS from the Administration
-   Console:
+   .. grid-item-card:: Via the Administration Zimlet
 
-   - Open the Zimbra Administration Console
+      To disable Zextras Mobile for all users in a COS from the Administration
+      Console:
 
-   - Double-click the Class Of Service you want to edit (on the left,
-     under :menuselection:`Configuration --> Class of Service`).
+      - Open the Zimbra Administration Console
 
-   - Click the Mobile tab and uncheck the ``Enable mobile
-     synchronization`` button.
+      - Double-click the Class Of Service you want to edit (on the left,
+        under :menuselection:`Configuration --> Class of Service`).
 
-.. dropdown:: From the Zimbra CLI
+      - Click the Mobile tab and uncheck the ``Enable mobile
+        synchronization`` button.
 
-   To disable Zextras Mobile for all users in a COS from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run :command:`zmprov mc COSName
-     zimbraFeatureMobileSyncEnabled FALSE`
+      To disable Zextras Mobile for all users in a COS from the CLI:
+
+      - As the 'zimbra' user run :command:`zmprov mc COSName
+        zimbraFeatureMobileSyncEnabled FALSE`
 
 .. _mobile_note_about_settings_hierarchy:
 
@@ -79,59 +85,61 @@ Module.
 How to Enable Zextras Mobile for a Single User
 ----------------------------------------------
 
-.. dropdown::   From the Zimbra Administration Console
+.. grid::
+   :gutter: 3
 
-   To enable Zextras Mobile for a single user from the Administration
-   Console:
+   .. grid-item-card::   From the Zimbra Administration Console
 
-   - Open the Zimbra Administration Console
+      To enable Zextras Mobile for a single user from the Administration
+      Console:
 
-   - Double-click the user you want to edit (on the left, under
-     :menuselection:`Manage --> Accounts`)
+      - Open the Zimbra Administration Console
 
-   - Click the Mobile tab
+      - Double-click the user you want to edit (on the left, under
+        :menuselection:`Manage --> Accounts`)
 
-   - Check ``Enable mobile synchronization``
+      - Click the Mobile tab
 
-   .. _mobile_from_the_zimbra_cli_3:
+      - Check ``Enable mobile synchronization``
 
-.. dropdown:: From the Zimbra CLI
+      .. _mobile_from_the_zimbra_cli_3:
 
-   To enable Zextras Mobile for a single user from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run: :command:`zmprov ma user@example.com
-     zimbraFeatureMobileSyncEnabled TRUE`
+      To enable Zextras Mobile for a single user from the CLI:
+
+      - As the 'zimbra' user run: :command:`zmprov ma user@example.com
+        zimbraFeatureMobileSyncEnabled TRUE`
 
 .. _mobile_how_to_disable_zextras_mobile_for_a_single_user:
 
 How to Disable Zextras Mobile for a Single User
 -----------------------------------------------
 
-.. dropdown:: From the Zimbra Administration Console
+.. grid::
+   :gutter: 3
 
-   To disable Zextras Mobile for a single user from the CLI:
+   .. grid-item-card:: Via the Administration Zimlet
 
-   - Open the Zimbra Administration Console
+      To disable Zextras Mobile for a single user from the CLI:
 
-   - Double-click the user you want to edit (on the left, under
-     :menuselection:`Manage -> Accounts`)
+      - Open the Zimbra Administration Console
 
-   - Click the Zextras Mobile tab and uncheck ``Enable mobile
-     synchronization``
+      - Double-click the user you want to edit (on the left, under
+        :menuselection:`Manage --> Accounts`)
 
-.. dropdown:: From the Zimbra CLI
+      - Click the Zextras Mobile tab and uncheck ``Enable mobile
+        synchronization``
 
-   To disable Zextras Mobile for a single user from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run :command:`zmprov ma user@example.com
-     zimbraFeatureMobileSyncEnabled FALSE`
+      To disable Zextras Mobile for a single user from the CLI:
 
-.. _mobile_note_about_settings_hierarchy_2:
+      - As the 'zimbra' user run :command:`zmprov ma user@example.com
+        zimbraFeatureMobileSyncEnabled FALSE`
 
-Note about Settings Hierarchy
------------------------------
 
-User-level settings override COS-level settings.
+.. note:: User-level settings override COS-level settings.
 
 .. _mobile-password:
 
@@ -292,24 +300,24 @@ following steps take place:
 1. The device requests a folderSync operation to synchronize the local
    Folders with the ones on the server.
 
-   :fa:`arrow-right` One SyncKey per local folder is sent (or a single
+   :octicon:`arrow-right` One SyncKey per local folder is sent (or a single
    SyncKey set to '0' if this is the first connection between the
    device and the server)
 
 2. The server replies with a list of available folders.
 
-   :fa:`arrow-right` One SyncKey per folder is sent by the server.
+   :octicon:`arrow-right` One SyncKey per folder is sent by the server.
 
 3. The device requests an itemSync operation to synchronize all due
    items.
 
-   :fa:`arrow-right` The server stores the items synchronized in the
+   :octicon:`arrow-right` The server stores the items synchronized in the
    SyncState.
 
 4. After completing the itemSync operation, the device sends a 'ping'
    command to keep the connection alive.
 
-   :fa:`arrow-right` Step 4 is repeated as long as no changes happen
+   :octicon:`arrow-right` Step 4 is repeated as long as no changes happen
    to the synchronised account.
 
 Every time a new item is stored on the mailbox or an old item is
@@ -345,74 +353,80 @@ A sync request is issued when:
 Managing the SyncStates
 -----------------------
 
-.. dropdown:: Via the Administration Zimlet
+.. grid::
+   :gutter: 3
 
-   Zextras Mobile provides two options in the Administration Zimlet to
-   manage the SyncStates of synchronized mobile devices:
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 12
+                
+      Zextras Mobile provides two options in the Administration Zimlet to
+      manage the SyncStates of synchronized mobile devices:
 
-   - Reset Device: Resets the device’s SyncState for a single account,
-     forcing a full re-synchronization the next time the device connects
-     to the server.
+      - Reset Device: Resets the device’s SyncState for a single account,
+        forcing a full re-synchronization the next time the device connects
+        to the server.
 
-   - Wipe Device: Removes all the device’s SyncState and history from the
-     server. Useful when a mobile device is not used anymore or is
-     assigned to a different employee in the same company.
+      - Wipe Device: Removes all the device’s SyncState and history from the
+        server. Useful when a mobile device is not used anymore or is
+        assigned to a different employee in the same company.
 
-.. dropdown:: Via the CLI
+   .. grid-item-card:: Via the CLI
+      :columns: 12
 
-   To manage the SyncStates of synchronized mobile devices via the
-   CLI, use one of the following commands:
+      To manage the SyncStates of synchronized mobile devices via the
+      CLI, use one of the following commands:
 
-   .. grid::
-      :gutter: 3
+      .. grid::
+         :gutter: 1
 
-      .. grid-item-card::
-         :columns: 4
+         .. grid-item-card::
+            :columns: 4
 
-         The doRemoveDevice command
-         ^^^^^
+            The doRemoveDevice command
+            ^^^^^
 
-         Syntax::
+            Syntax::
 
-           zxsuite mobile doRemoveDevice {account} {device_id}
+              zxsuite mobile doRemoveDevice {account} {device_id}
 
-         Usage example:
+            Usage example:
 
-         zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S
+            ``zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S``
 
-         Removes John's Appl79032X2WA4S device SyncState
+            Removes John's Appl79032X2WA4S device SyncState
 
-      .. grid-item-card::
-         :columns: 4
+         .. grid-item-card::
+            :columns: 4
 
-         The doResetAccount command
-         ^^^^^^
+            The doResetAccount command
+            ^^^^^^
 
-         Syntax::
-               zxsuite mobile doResetAccount {account}
+            Syntax::
+              
+              zxsuite mobile doResetAccount {account}
 
-         Usage example:
+            Usage example:
 
-            zxsuite mobile doResetAccount john@example.com
+            ``zxsuite mobile doResetAccount john@example.com``
+               
+            Resets all the device states for John's account
 
-         Resets all the device states for John's account
 
+         .. grid-item-card::
+            :columns: 4
 
-      .. grid-item-card::
-         :columns: 4
+            The doResetDevice command
+            ^^^^^
 
-         The doResetDevice command
-         ^^^^^
+            Syntax::
 
-         Syntax::
+              zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
 
-           zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
+            Usage example:
 
-         Usage example::
+            ``zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S``
 
-           zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S
-
-         Resets John's Appl79032X2WA4S device SyncState
+            Resets John's Appl79032X2WA4S device SyncState
 
 .. _mobile_advanced_settings:
 
@@ -589,27 +603,29 @@ Zextras Mobile Performance Tuning
 Zextras Mobile provides three useful options to fine-tune Zextras Mobile
 according to system performance.
 
-.. _mobile_performance_tuning_settings:
 
-Performance Tuning Settings
----------------------------
+.. grid::
+   :gutter: 3
 
-.. _mobile_available_settings:
+   .. grid-item:: **Notifications Latency**
+      :columns: 4
+                
+      ``ZxMobile_NotificationsLatency`` represents The seconds of
+      delay between an event on the server and its notification to the
+      mobile device.
 
-Available Settings
-~~~~~~~~~~~~~~~~~~
+   .. grid-item:: **Use Instant Notifications**
+      :columns: 4
 
-Notifications Latency
-  (ZxMobile_NotificationsLatency): The seconds of delay between an
-  event on the server and its notification to the mobile device.
+      ``ZxMobile_UseInstantNotficiations`` enables or disables instant
+      notifications. If **true**, it also overrides ``Notifications
+      Latency``.
 
-Use Instant Notifications
-  (ZxMobile_UseInstantNotficiations): Enable/Disable instant
-  notifications. Overrides Notifications Latency if true.
-
-Max Ping Heartbeat
-  (ZxMobile_MaxPingHeartbeat): Maximum interval between 'ping'
-  commands.
+   .. grid-item:: **Max Ping Heartbeat**
+      :columns: 4
+                
+      ``ZxMobile_MaxPingHeartbeat`` defines the maximum interval
+      between :command:`ping` commands.
 
 All settings can be edited in the Administration Zimlet or via CLI using
 the ``zxsuite config`` command.
