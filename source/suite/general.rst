@@ -33,16 +33,28 @@ Compatibility list
 
 .. include:: /00-includes/compatibility.rst
 
+.. _zextras-internationalization:
 
 Internationalization
 ====================
 
 .. include:: /00-includes/i18n.rst
 
+.. _zextras-theme:
+
+Zextras Theme for the Zimbra Webclient
+======================================
+
+.. include:: /00-includes/theme.rst
+
+.. _zextras-services:
+
 Services and Service management
 ===============================
 
 .. include:: /00-includes/services.rst
+
+.. _zextras-report-issue:
 
 How to report an issue
 ======================
