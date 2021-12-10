@@ -2,191 +2,328 @@
  Carbonio CE Installation
 ==========================
 
-This page provides directions for the installation of |community|.
+This page provides hardware and software requirements for |community|
+and directions for the installation of |community|. Please review
+carefully this whole page before attempting to install.
 
-System Requirements
-===================
 
-|community| can be installed as a set of packages on top of an Ubuntu,
-CentOS, or RedHat Linux distribution.
+.. _system-requirements:
 
-.. note:: Since CentOS and RedHat distribution are binary compatible,
-   instructions for these two distributions are the same.
+|community| System Requirements
+===============================
 
-Before attempting the installation of |community| you need:
 
-.. dropdown:: A supported Linux server distribution
+Hardware requirements
+---------------------
 
-   It is assumed that you have already set up and configured a Linux
-   server and have access as the ``root`` user to it.
+.. grid::
+   :gutter: 3
 
-   Supported Linux distributions are **Ubuntu**, **CentOS**, or
-   **Redhat**.
+   .. grid-item-card::
+      :columns: 6
 
-   Make sure that the system is up-to-date.
+      Testing/Evaluation environment
+      ^^^^^
+      .. csv-table::
 
-   .. tab-set::
+         "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
+         "RAM", "8 Gb"
+         "Disk space (software and logs)", "40 Gb"
+         "Disk space (per mailbox)", "100 Mb"
 
-      .. tab-item:: Ubuntu
+   .. grid-item-card::
+      :columns: 6
 
-         Run as the ``root`` user these commands.
+      Production environment
+      ^^^^^
+      .. csv-table::
 
-         .. code:: bash
+         "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
+         "RAM", "8 Gb"
+         "Disk space (software and logs)", "40 Gb"
+         "Disk space (per mailbox)", "100 Mb"
 
-            # apt-get update --fix-missing
+.. _hypervisor-requirements:
 
-         .. code:: bash
+Supported Virtualization Platforms
+--------------------------------------
 
-            # apt-get update
+.. card::
 
-         .. code:: bash
+   * VMware vSphere 6.x
+   * VMware vSphere 7.x
+   * XenServer ??
+   * KVM
 
-            # apt-get -y upgrade
+.. _software-requirements:
 
-      .. tab-item:: Centos/RedHat
+|community| software requirements
+=================================
 
-         Run as the ``root`` user these commands.
+Supported Linux Server Distributions
+------------------------------------
 
-         .. code:: bash
+The following Linux distributions are supported.
 
-            # dnf upgrade
+.. card::
 
-.. dropdown:: To install required software packages
+   * Red Hat® Enterprise Linux® 9 (64-bit)
 
-   The following software packages must be installed on the system
+   * Red Hat® Enterprise Linux® 8 (64-bit)
 
-   * **gnupg2**
-   * **ca-certificates**
-   * **dnsmasq**
+   * CentOS Linux® 8 (64-bit)
 
-   Use the following command as the `root` user to install them.
+   * CentOS Linux® 7 (64-bit)
 
-   .. tab-set::
+   * Ubuntu 20.04 LTS Server Edition (64-bit)
 
-      .. tab-item:: Ubuntu
-
-         Run as the ``root`` user either of the commands.
-
-         .. code:: bash
-
-            # apt install gnupg2 ca-certificates dnsmasq
-
-         .. code:: bash
-
-            # apt-get install gnupg2 ca-certificates dnsmasq
-
-         .. code:: bash
-
-            # aptitude install gnupg2 ca-certificates dnsmasq
-
-      .. tab-item:: Centos/RedHat
-
-         Run as the ``root`` user either of the commands.
-
-         .. code:: bash
-
-            # yum install gnupg2 ca-certificates dnsmasq
-
-         .. code:: bash
-
-            # dnf install gnupg2 ca-certificates dnsmasq
-
-   To configure dnsmasq, execute this command, the same on all
-   systems:
-
-   .. code:: bash
-
-      echo -e  '127.0.0.1 localhost \n'$(hostname -I) 'carbonio.loc carbonio' >> /etc/hosts
-
-.. dropdown:: Credentials to access |zx| repository
-
-   Information about how the credentials will be
-   provided soon.
-   
-   ..
-      The credentials are provided by |zx|. On Ubuntu, you need to store
-      them in a file, while on CentOS/RedHat you can skip this steps,
-      because credentials are stored in the repository configuration.
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-
-            Create file :file:`/etc/apt/auth.conf.d/zextras.conf` with the
-            following content.
-
-            .. code:: ini
-
-               machine zextras.jfrog.io
-               login username
-               password token
-
-         .. tab-item:: CentOS/RedHat
-
-            Safely skip to next step.
-
-.. Dropdown:: To setup |zx| repository
-
-   Information about how to set up the zextras repository will be
-   provided soon.
+   * Ubuntu 18.04 LTS Server Edition (64-bit
 
    ..
-      .. tab-set::
+      * Oracle Linux x.x ?
 
-         .. tab-item:: Ubuntu
+Required software packages
+--------------------------
 
-            Create file :file:`/etc/apt/sources.list.d/zextras.conf` with the
-            following content.
+The following software packages must be installed on the system
 
-            .. code:: text
+* **gnupg2**
+* **ca-certificates**
+* **dnsmasq**
 
-               deb [trusted=yes] https://zextras.jfrog.io/artifactory/ubuntu-playground bionic main
+Use the following command as the `root` user to install them.
 
-         .. tab-item:: CentOS/RedHat
+.. tab-set::
 
-            Create a `.repo` file :file:`/etc/yum.repos.d/zextras.repo` with the
-            following content.
+   .. tab-item:: Ubuntu
 
-            .. code:: ini
+      Run as the ``root`` user either of the commands.
 
-               [Zextras]
-               name=Zextras
-               baseurl=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/
-               enabled=1
-               gpgcheck=1
-               gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
+      .. code:: bash
 
-.. dropdown:: The public |zx| GPG signing key
+         # apt install gnupg2 ca-certificates dnsmasq
 
-   The GPG key will be provided as soon as the repositories will be
-   set up.
+      .. code:: bash
 
-   ..
-      The last step is to import |zx| GPG key. This step is not necessary
-      on CentOS/RedHat, as the GPG key is part of the repository configuration.
+         # apt-get install gnupg2 ca-certificates dnsmasq
 
-      .. tab-set::
+      .. code:: bash
 
-         .. tab-item:: Ubuntu
+         # aptitude install gnupg2 ca-certificates dnsmasq
 
-            Import the GPG key with this command.
+   .. tab-item:: Centos/RedHat
 
-            .. code:: bash
+      Run as the ``root`` user either of the commands.
 
-               # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
+      .. code:: bash
 
-         .. tab-item:: CentOS/RedHat
+         # yum install gnupg2 ca-certificates dnsmasq
 
-            Safely skip this step.
+      .. code:: bash
+
+         # dnf install gnupg2 ca-certificates dnsmasq
+
+
+.. all the content below is probably unnecessary, keeping it just in case
+   .. dropdown:: Credentials to access |zx| repository
+
+      Information about how the credentials will be
+      provided soon.
+
+      ..
+         The credentials are provided by |zx|. On Ubuntu, you need to store
+         them in a file, while on CentOS/RedHat you can skip this steps,
+         because credentials are stored in the repository configuration.
+
+         .. tab-set::
+
+            .. tab-item:: Ubuntu
+
+               Create file :file:`/etc/apt/auth.conf.d/zextras.conf` with the
+               following content.
+
+               .. code:: ini
+
+                  machine zextras.jfrog.io
+                  login username
+                  password token
+
+            .. tab-item:: CentOS/RedHat
+
+               Safely skip to next step.
+
+   .. dropdown:: To setup |zx| repository
+
+         Information about how to set up the zextras repository will be
+         provided soon.
+
+         ..
+            .. tab-set::
+
+               .. tab-item:: Ubuntu
+
+                  Create file :file:`/etc/apt/sources.list.d/zextras.conf` with the
+                  following content.
+
+                  .. code:: text
+
+                     deb [trusted=yes] https://zextras.jfrog.io/artifactory/ubuntu-playground bionic main
+
+               .. tab-item:: CentOS/RedHat
+
+                  Create a `.repo` file :file:`/etc/yum.repos.d/zextras.repo` with the
+                  following content.
+
+                  .. code:: ini
+
+                     [Zextras]
+                     name=Zextras
+                     baseurl=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/
+                     enabled=1
+                     gpgcheck=1
+                     gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
+
+      .. dropdown:: The public |zx| GPG signing key
+
+         The GPG key will be provided as soon as the repositories will be
+         set up.
+
+         ..
+            The last step is to import |zx| GPG key. This step is not necessary
+            on CentOS/RedHat, as the GPG key is part of the repository configuration.
+
+            .. tab-set::
+
+               .. tab-item:: Ubuntu
+
+                  Import the GPG key with this command.
+
+                  .. code:: bash
+
+                     # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
+
+               .. tab-item:: CentOS/RedHat
+
+                  Safely skip this step.
 
 Once all these steps have been successfully accomplished, you can
 proceed to install |community| packages, either on a
 :ref:`Single-Server <single-server-install>` or a :ref:`Multi-Server
 <multi-server-install>` setup.
 
-Software Components
-===================
+.. _software_preconf:
 
+Required Software Configuration
+-------------------------------
+
+.. grid::
+   :gutter: 2
+
+            
+   .. grid-item-card::
+      :columns: 6
+                
+      DNS Configuration
+      ^^^^^
+
+      The DNS server on which |community| is installed need to resolve
+      the **MX record** of the domain that you are going to configure.
+
+      Supposing that the domain is **example.com**, you can check that
+      the MX is resolved correctly using the :command:``host`` command.
+
+      .. code:: console
+
+         # host -t MX example.com
+         example.com mail is handled by 10.mail.example.com.
+
+   .. grid-item-card::
+      :columns: 6
+
+      dnsmasq configuration
+      ^^^^^
+
+      To configure dnsmasq, execute this command, the same on all
+      systems:
+
+      .. code:: bash
+
+         echo -e  '127.0.0.1 localhost \n'$(hostname -I) 'carbonio.loc carbonio' >> /etc/hosts
+
+      .. note:: Replace the *carbonio.loc carbonio* string with the
+         actual domain name.
+
+   .. grid-item-card:: External connections
+      :columns: 6
+
+      Firewall ports
+      ^^^^^
+
+      .. csv-table::
+         :header: "Port", "Service"
+         :widths: 10 90
+                  
+         "25", "Postfix incoming mail"
+         "80", "unsecured connection to the Carbonio web client"
+         "110", "external POP3 services"
+         "143", "external IMAP services"
+         "443", "secure connection to the Carbonio web client"
+         "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_" 
+         "587", "Port for smtp autenticated relay, requires STARTTLS
+         (or opportunistic SSL/TLS)"
+         "993", "external IMAP secure access"
+         "995", "external POP3 secure access"
+
+      .. [1] This port is still used since in some cases it is
+             considered safer than 587. It requires on-connection
+             SSL.
+
+      .. warning:: SMTP, IMAP, and POP3 ports should be exposed only
+         if really needed, and preferably only accessible from a VPN
+         tunnel, if possible, to reduce the attack surface.
+                
+   .. grid-item-card:: Internal connections
+      :columns: 6
+
+      Firewall ports
+      ^^^^^
+
+      .. csv-table::
+         :header: "Port", "Service"
+         :widths: 10 90
+
+         "389", "unsecure LDAP connection"
+         "636", "secure LDAP connection"
+         "3310", "ClamAV antivirus access"
+         "7025", "local mail exchange using the LMTP protocol"
+         "7047", "used by the server to convert attachments"
+         "7071", "secure access to the Administrator console"
+         "7072", "NGINX discovery and authentication"
+         "7073", "SASL discovery and authentication"
+         "7110", "internal POP3 services"
+         "7143", "internal IMAP services"
+         "7171", "access Carbonio configuration daemon (zmconfigd)"
+         "7306", "MySQL access"
+         "7780", "the spell checker service access"
+         "7993", "internal IMAP secure access"
+         "7995", "internal POP3 secure access"
+         "8080", "internal HTTP services access"
+         "8443", "internal HTTPS services access"
+         "9071", "used only in one case [2]_"
+         "10024", "Amavis :octicon:`arrow-both` Postfix"
+         "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
+         "10026", "configuring Amavis policies"
+         "10028", "Amavis :octicon:`arrow-both` content filter"
+         "10029", "Postfix archives access"
+         "10032", "Amavis :octicon:`arrow-both` SpamAssassin"
+         "23232", "internal Amavis services access"
+         "23233", "SNMP-responder access"
+         "11211", "memcached access"
+
+      .. [2] When the NGINX support for Administration Console and the
+             ``mailboxd`` service run on the same host, this port can
+             be used to avoid overlaps between the two services
+    
 .. _single-server-install:
 
 Single-Server Installation
@@ -194,6 +331,9 @@ Single-Server Installation
 
 To install |community| on a Single-Server setup, execute the following
 commands.
+
+.. note:: Since CentOS and RedHat distributions are binary compatible,
+   instructions for these two distributions are the same.
 
 .. tab-set::
 
@@ -238,8 +378,7 @@ In order to start |community|, execute
    # bootstrap carbonio
 
 This command makes a few checks and then presents a configuration menu
-that allows to customise the installation. In case any errors are
-shown, refer to section :ref:`ts-carbonio-ce`
+that allows to customise the installation.
 
 A few messages are shown, including the name of the log file that will
 store all messages::
@@ -376,31 +515,3 @@ out. When completed successfully, the last messages shown are similar to:
    Configuration complete - press return to exit
 
 At this point is is possible to access the Web interface of Carbonio.
-
-.. _ts-carbonio-ce:
-
-Troubleshooting Installation
-============================
-
-This section contains a list of possible problems that may arise during
-the installation and the solution.
-
-.. dropdown:: DNS ERROR resolving MX for example.com
-
-   The full error is::
-
-     DNS ERROR resolving MX for example.com
-     It is suggested that the domain name have an MX record configured in DNS
-     Change domain name? [Yes]
-
-   The reason for the error is likely either of:
-
-   * a missing DNS record for the domain `example.com`
-   * a network problem
-   * a wrong or misspelled domain name.
-
-   The solution in the first and second case are outside |community|
-   configuration and require to either fix the MX record or check the
-   Internet connection.
-
-   In the third case, enter **y** and insert the correct domain name.
