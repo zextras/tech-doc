@@ -33,6 +33,4 @@ Features <advanced.html>`.
    :caption:  Use:
  
    usage
-   deep-view
    glossary
-   cli
