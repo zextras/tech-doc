@@ -303,143 +303,136 @@ operations such as the Volume-to-Volume move.
 
 .. _pws_volume_management_with_zextras_powerstore_administration_zimlet:
 
-Volume Management with Zextras Powerstore - Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Volume Management with Zextras Powerstore
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _pws_creating_a_new_volume_with_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Creating a New Volume with the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 12
 
-To create a new volume from the Zextras Powerstore tab of the
-Administration Zimlet:
+      .. grid:: 
+         
+         .. grid-item-card:: Create a New Volume 
+            :columns: 4
 
--  Click the appropriate *Add* option in the *Volumes Management*
-   section according to the type of volume you want to create.
+            To create a new volume from the Zextras Powerstore tab of the
+            Administration Zimlet:
 
--  Select the store type, choosing between local mount point or S3
-   Bucket.
+            -  Click the appropriate *Add* option in the *Volumes Management*
+               section according to the type of volume you want to create.
 
--  Enter the new volume’s name.
+            -  Select the store type, choosing between local mount point or S3
+               Bucket.
 
--  Enter a path for the new volume.
+            -  Enter the new volume’s name.
 
--  Check the *Enable Compression* button if you wish to activate data
-   compression on the new volume.
+            -  Enter a path for the new volume.
 
--  Select the Compression Threshold.
+            -  Check the *Enable Compression* button if you wish to activate data
+               compression on the new volume.
 
--  If you are using an S3 Bucket, it’s possible to store information for
-   multiple buckets.
+            -  Select the Compression Threshold.
 
--  Press *OK* to create the new volume. Should the operation fail, a
-   notification containing any related errors will be generated.
+            -  If you are using an S3 Bucket, it’s possible to store information for
+               multiple buckets.
 
-.. _pws_editing_a_volume_with_the_administration_zimlet:
+            -  Press *OK* to create the new volume. Should the operation fail, a
+               notification containing any related errors will be generated.
 
-Editing a Volume with the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         .. grid-item-card:: Edit a Volume
+            :columns: 4
 
-To edit a volume from the Administration Zimlet, simply select an
-existing volume and press the appropriate *Edit* button.
+            To edit a volume from the Administration Zimlet, simply select an
+            existing volume and press the appropriate *Edit* button.
 
-.. _pws_deleting-a-volume:
+         .. grid-item-card:: Delete a Volume
+            :columns: 4
 
-Deleting a Volume with the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            To delete a volume from the Administration Zimlet, select an existing
+            volume and press the appropriate *Delete* button. Remember that only
+            **empty** volumes can be deleted.
 
-To delete a volume from the Administration Zimlet, select an existing
-volume and press the appropriate *Delete* button. Remember that only
-**empty** volumes can be deleted.
+   .. grid-item-card:: Via the CLI
+      :columns: 12
 
-.. _pws_volume_management_with_zextras_powerstore_from_the_cli:
+      .. warning:: Beginning with release 8.8.9, all volume creation
+         and update commands have been updated, as the ``storeType``
+         argument is now required.
 
-Volume Management with Zextras Powerstore - From the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      .. broken crossref to S3 compatible services, removing it but
+         keeping original for reference
 
-.. warning:: Beginning with release 8.8.9, all volume creation and
-   update commands have been updated, as the ``storeType`` argument is
-   now required.
+         The ``storeType`` argument is **mandatory**, it is always the
+         on the first position and accepts any one value corresponding
+         to the `S3-Compatible Services <#S3-compatible-services>`_
+         listed previously.  The arguments that follow in the command
+         now depend on the selected ``storeType``.
 
-.. broken crossref  to S3 compatible services, removing it but keeping
-   original for reference
-   
-   The ``storeType`` argument is **mandatory**, it is always the on
-   the first position and accepts any one value corresponding to the
-   `S3-Compatible Services <#S3-compatible-services>`_ listed
-   previously.  The arguments that follow in the command now depend on
-   the selected ``storeType``.
+      The ``storeType`` argument is **mandatory**, it is always the on
+      the first position and accepts any one value corresponding to an
+      S3-Compatible Services.  The arguments that follow in the
+      command now depend on the selected ``storeType``.
 
-The ``storeType`` argument is **mandatory**, it is always the on the
-first position and accepts any one value corresponding to an
-S3-Compatible Services.  The arguments that follow in the command now
-depend on the selected ``storeType``.
+      The commands to manage volumes are basically three::
 
-The commands to manage volumes are basically three::
+        zxsuite powerstore doCreateVolume [type]
+        zxsuite powerstore doUpdateVolume [type]
+        zxsuite powerstore doDeleteVolume [name]
 
-   zxsuite powerstore doCreateVolume [type]
-   zxsuite powerstore doUpdateVolume [type]
-   zxsuite powerstore doDeleteVolume [name]
+      Volume deletion requires only the volume name, see
+      :ref:`doDeleteVolume <zxsuite_powerstore_doDeleteVolume>`
 
-Volume deletion requires only the volume name, see
-:ref:`doDeleteVolume <zxsuite_powerstore_doDeleteVolume>`
+      The parameters required by these commands may differ depending on the
+      `[type]` of volume to be defined, which is one of the following.
 
-The parameters required by these commands may differ depending on the
-[type] of volume to be defined, which is one of the following.
+      -  FileBlob (Local)-see :ref:`doCreateVolume
+         FileBlob <zxsuite_powerstore_doCreateVolume_FileBlob>` and
+         :ref:`doUpdateVolume
+         FileBlob <zxsuite_powerstore_doUpdateVolume_FileBlob>`
 
--  FileBlob (Local)-see :ref:`doCreateVolume
-   FileBlob <zxsuite_powerstore_doCreateVolume_FileBlob>` and
-   :ref:`doUpdateVolume
-   FileBlob <zxsuite_powerstore_doUpdateVolume_FileBlob>`
+      -  Alibaba-see :ref:`doCreateVolume
+         Alibaba <zxsuite_powerstore_doCreateVolume_Alibaba>` and
+         :ref:`doUpdateVolume
+         Alibaba <zxsuite_powerstore_doUpdateVolume_Alibaba>`
 
--  Alibaba-see :ref:`doCreateVolume
-   Alibaba <zxsuite_powerstore_doCreateVolume_Alibaba>` and
-   :ref:`doUpdateVolume
-   Alibaba <zxsuite_powerstore_doUpdateVolume_Alibaba>`
+      -  Ceph-see :ref:`doCreateVolume
+         Ceph <zxsuite_powerstore_doCreateVolume_Ceph>` and
+         :ref:`doUpdateVolume Ceph <zxsuite_powerstore_doUpdateVolume_Ceph>`
 
--  Ceph-see :ref:`doCreateVolume
-   Ceph <zxsuite_powerstore_doCreateVolume_Ceph>` and
-   :ref:`doUpdateVolume Ceph <zxsuite_powerstore_doUpdateVolume_Ceph>`
+      -  OpenIO—​see :ref:`doCreateVolume
+         OpenIO <zxsuite_powerstore_doCreateVolume_OpenIO>` and
+         :ref:`doUpdateVolume
+         OpenIO <zxsuite_powerstore_doUpdateVolume_OpenIO>`
 
--  OpenIO—​see :ref:`doCreateVolume
-   OpenIO <zxsuite_powerstore_doCreateVolume_OpenIO>` and
-   :ref:`doUpdateVolume
-   OpenIO <zxsuite_powerstore_doUpdateVolume_OpenIO>`
+      -  Swift—​see :ref:`doCreateVolume
+         Swift <zxsuite_powerstore_doCreateVolume_Swift>` and
+         :ref:`doUpdateVolume Swift <zxsuite_powerstore_doUpdateVolume_Swift>`
 
--  Swift—​see :ref:`doCreateVolume
-   Swift <zxsuite_powerstore_doCreateVolume_Swift>` and
-   :ref:`doUpdateVolume Swift <zxsuite_powerstore_doUpdateVolume_Swift>`
+      -  Cloudian (S3 compatible object storage)--see :ref:`doCreateVolume
+         Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>` and
+         :ref:`doUpdateVolume
+         Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`
 
--  Cloudian (S3 compatible object storage)--see :ref:`doCreateVolume
-   Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>` and
-   :ref:`doUpdateVolume
-   Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`
+      -  S3 (Amazon and any S3-compatible solution not explicitly
+         supported)--see :ref:`doCreateVolume
+         S3 <zxsuite_powerstore_doCreateVolume_S3>` and :ref:`doUpdateVolume
+         S3 <zxsuite_powerstore_doUpdateVolume_S3>`
 
--  S3 (Amazon and any S3-compatible solution not explicitly
-   supported)--see :ref:`doCreateVolume
-   S3 <zxsuite_powerstore_doCreateVolume_S3>` and :ref:`doUpdateVolume
-   S3 <zxsuite_powerstore_doUpdateVolume_S3>`
+      -  Scality (S3 compatible object storage)--see
+         :ref:`doCreateVolume_ScalityS3 <zxsuite_powerstore_doCreateVolume_ScalityS3>`
+         and
+         :ref:`doUpdateVolume_ScalityS3 <zxsuite_powerstore_doUpdateVolume_ScalityS3>`
 
--  Scality (S3 compatible object storage)--see
-   :ref:`doCreateVolume_ScalityS3 <zxsuite_powerstore_doCreateVolume_ScalityS3>`
-   and
-   :ref:`doUpdateVolume_ScalityS3 <zxsuite_powerstore_doUpdateVolume_ScalityS3>`
-
--  EMC (S3 compatible object storage)--see :ref:`doCreateVolume
-   EMC <zxsuite_powerstore_doCreateVolume_EMC>` and :ref:`doUpdateVolume
-   EMC <zxsuite_powerstore_doUpdateVolume_EMC>`
-
--  \* Cloudian (S3 compatible object storage)--see :ref:`doCreateVolume
-   Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>` and
-   :ref:`doUpdateVolume
-   Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`
-
--  Custom S3 :octicon:`dash` see :ref:`doCreateVolume
-   CustomS3 <zxsuite_powerstore_doCreateVolume_CustomS3>` \|
-   :ref:`doUpdateVolume
-   CustomS3 <zxsuite_powerstore_doUpdateVolume_CustomS3>`
-
-.. from here!
+      -  EMC (S3 compatible object storage)--see :ref:`doCreateVolume
+         EMC <zxsuite_powerstore_doCreateVolume_EMC>` and :ref:`doUpdateVolume
+         EMC <zxsuite_powerstore_doUpdateVolume_EMC>`
+ 
+      -  Custom S3 :octicon:`dash` see :ref:`doCreateVolume
+         CustomS3 <zxsuite_powerstore_doCreateVolume_CustomS3>` \|
+         :ref:`doUpdateVolume
+         CustomS3 <zxsuite_powerstore_doUpdateVolume_CustomS3>`
    
 .. _pws_hsm:
 
@@ -627,45 +620,46 @@ Zextras Powerstore gives you three different options:
    the secondary store by the HSM module. Currently, there is no
    option to define a policy for **Trash** and dumpster.
 
-.. _pws_apply_the_hsm_policy_via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Apply the HSM Policy via the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 4
 
-To apply the HSM Policy via the Administration Zimlet:
+      To apply the HSM Policy via the Administration Zimlet:
 
-- Log into the Zimbra Administration Console
+      - Log into the Zimbra Administration Console
 
-- Click the *Zextras Powerstore* entry in the Administration Zimlet.
+      - Click the *Zextras Powerstore* entry in the Administration Zimlet.
 
-- Click the :bdg-dark-line:`Apply Policy` button.
+      - Click the :bdg-dark-line:`Apply Policy` button.
 
-.. _pws_apply_the_hsm_policy_via_the_cli:
+      .. _pws_apply_the_hsm_policy_via_the_cli:
 
-Apply the HSM Policy via the CLI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the CLI
+      :columns: 4
 
-To apply the HSM Policy via the CLI, run the following command as the
-*zimbra* user:
+      To apply the HSM Policy via the CLI, run the following command as the
+      *zimbra* user:
 
-``zxsuite powerstore doMoveBlobs``
+      ``zxsuite powerstore doMoveBlobs``
 
-.. _pws_apply_the_hsm_policy_through_scheduling:
+      .. _pws_apply_the_hsm_policy_through_scheduling:
 
-Apply the HSM Policy through Scheduling
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via Scheduling
+      :columns: 4
 
-To schedule a daily execution of the ``doMoveBlobs`` operation:
+      To schedule a daily execution of the ``doMoveBlobs`` operation:
 
-- Log into the Zimbra Administration Console
+      - Log into the Zimbra Administration Console
 
-- Click the *Zextras Powerstore* entry in the Administration Zimlet
+      - Click the *Zextras Powerstore* entry in the Administration Zimlet
 
-- Enable scheduling by selecting the :bdg-dark-line:`Enable HSM
-  Session scheduling:` button
+      - Enable scheduling by selecting the :bdg-dark-line:`Enable HSM
+        Session scheduling:` button
 
-- Select the hour to run the operation under `HSM Session scheduled
-  for:`.
+      - Select the hour to run the operation under `HSM Session
+        scheduled for:`.
 
 .. _pws_domoveblobs_stats_and_info:
 
@@ -723,46 +717,44 @@ Policies can be defined both from the Zextras Powerstore tab of the
 Administration Zimlet and from the CLI. You can specify a Zimbra Search
 in both cases.
 
-.. _pws_from_the_administration_zimlet:
+.. grid::
 
-From the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-To define a policy from the Administration Zimlet:
+      To define a policy from the Administration Zimlet:
 
--  Log into the Zimbra Administration Console.
+      -  Log into the Zimbra Administration Console.
 
--  Click *Zextras Powerstore* on the Administration Zimlet.
+      -  Click *Zextras Powerstore* on the Administration Zimlet.
 
--  Click the *Add* button in the Storage Management Policy section.
+      -  Click the *Add* button in the Storage Management Policy section.
 
--  Select the Item Types from the ``Items to Move:`` list.
+      -  Select the Item Types from the ``Items to Move:`` list.
 
--  Enter the Item Age from the ``Move Items older than:`` box.
+      -  Enter the Item Age from the ``Move Items older than:`` box.
 
--  **OPTIONAL**: Add a Zimbra Search in the *Additional Options* box.
+      -  **OPTIONAL**: Add a Zimbra Search in the *Additional Options* box.
 
--  You can add multiple *lines* to narrow down your policy. Every *line*
-   will be evaluated and executed after the line before has been
-   applied (i.e., in top-down fashion).
+      -  You can add multiple *lines* to narrow down your policy. Every *line*
+         will be evaluated and executed after the line before has been
+         applied (i.e., in top-down fashion).
 
-.. _pws_from_the_cli:
+   .. grid-item-card:: Via  the CLI
+      :columns: 6                       
 
-From the CLI
-~~~~~~~~~~~~
+      Two policy management commands are available in the CLI::
 
-Two policy management commands are available in the CLI::
+         zxsuite powerstore setHSMPolicy hsm_policy
 
-   zxsuite powerstore setHSMPolicy hsm_policy
+         zxsuite powerstore +setHsmPolicy hsm_policy
 
-   zxsuite powerstore +setHsmPolicy hsm_policy
-
-These command share the same syntax (see
-:ref:`setHSMPolicy <zxsuite_powerstore_setHSMPolicy>` and
-:ref:`+setHsmPolicy <zxsuite_powerstore_+setHsmPolicy>`); the
-difference is that ``setHSMPolicy`` creates **new** policies,
-*replacing* existing one, while ``+setHSMPolicy`` *adds* policies to
-existing ones.
+      These command share the same syntax (see
+      :ref:`setHSMPolicy <zxsuite_powerstore_setHSMPolicy>` and
+      :ref:`+setHsmPolicy <zxsuite_powerstore_+setHsmPolicy>`); the
+      difference is that ``setHSMPolicy`` creates **new** policies,
+      *replacing* existing one, while ``+setHSMPolicy`` *adds* policies to
+      existing ones.
 
 .. _pws_zextras_powerstore_and_s3_buckets:
 
@@ -1224,28 +1216,26 @@ Running a Volume Deduplication
 
 .. _pws_via_the_administration_zimlet:
 
-Via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. grid::
+   :gutter: 3
 
-To run a volume deduplication via the Administration Zimlet, simply
-click on the *Zextras Powerstore* tab, select the volume you wish to
-deduplicate and press the *Deduplicate* button.
+   .. grid-item-card::  Via the Administration Zimlet
+      :columns: 6
 
-.. _pws_via_the_cli:
+      To run a volume deduplication via the Administration Zimlet, simply
+      click on the *Zextras Powerstore* tab, select the volume you wish to
+      deduplicate and press the *Deduplicate* button.
 
-Via the CLI
-~~~~~~~~~~~
+   .. grid-item-card::  Via the CLI
+      :columns: 6
 
-To run a volume deduplication through the CLI, use the :ref:`zxsuite
-powerstore doDeduplicate <zxsuite_powerstore_doDeduplicate>` command.
+      To run a volume deduplication through the CLI, use the :ref:`zxsuite
+      powerstore doDeduplicate <zxsuite_powerstore_doDeduplicate>` command.
 
-.. dropdown:: zxsuite powerstore doDeduplicate
-
-   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doDeduplicate.rst
-                  
+      .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doDeduplicate.rst            
       
-To list all available volumes, you can use the :command:`zxsuite
-powerstore getAllVolumes` command.
+To list all available volumes, you can use the :ref:`getAllVolumes
+<zxsuite_powerstore_getAllVolumes>` command.
 
 .. _pws_dodeduplicate_stats:
 
@@ -1549,263 +1539,6 @@ When the command is executed, it will carry out a number of task:
 
 - If for any reason the second stage is not successful, HSM is not
   executed.
-
-.. _pws_zextras_powerstore_attachment_indexing:
-
-Zextras Powerstore Attachment Indexing
-======================================
-
-.. _pws_how_indexing_works:
-
-How Indexing Works
-------------------
-
-Zextras Powerstore has a new :ref:`pws_external_content_extractor` to
-index attachment contents. This way the resources do not have to
-dedicate time reading the attachments.
-
-The external content extractor works together with Zimbra’s default
-engine. The main Zimbra indexing process analyzes the contents of an
-item, splitting it into several parts based on the MIME parts of the
-object. Next, Zimbra handles the indexing of *known*
-contents — plaintext — and passes the datastream on to the Zextras
-Powerstore handlers for all other content.
-
-The indexing engine includes an indexing cache that speeds up the
-indexing process of any content that has already been analyzed.
-Datastreams over 10Kb are cached by default, and the cache hold 10000
-entries, while smaller datastreams are not cached as the cache benefits
-only apply to large datastreams.
-
-.. _pws_indexed_formats:
-
-Indexed Formats
----------------
-
-.. dropdown:: Web
-
-   .. csv-table::
-      :header: "Extension", "Parser", "Content-type"
-
-      "``asp``", "``HtmlParser``", "application/x-asp"
-      "``htm``", "``HtmlParser``", "application/xhtml+xml"
-      "``html``", "``HtmlParser``", "application/xhtml+xml, text/html"
-      "``shtml``", "``HtmlParser``", "application/xhtml+xml"
-      "``xhtml``", "``HtmlParser``", "application/xhtml+xml"
-
-.. dropdown:: Documents
-
-   .. csv-table::
-      :header: "Extension", "Parser", "Content-type"
-
-      "``rtf``", "``RTFParser``", "application/rtf"
-      "``pdf``", "``PDFParser``", "application/pdf"
-      "``pub``", "``OfficeParser``", "application/x-mspublisher"
-      "``xls``", "``OfficeParser``", "application/vnd.ms-excel"
-      "``xlt``", "``OfficeParser``", "application/vnd.ms-excel"
-      "``xlw``", "``OfficeParser``", "application/vnd.ms-excel"
-      "``ppt``", "``OfficeParser``", "application/vnd.ms-powerpoint"
-      "``pps``", "``OfficeParser``", "application/vnd.ms-powerpoint"
-      "``mpp``", "``OfficeParser``", "application/vnd.ms-project"
-      "``doc``", "``OfficeParser``", "application/msword"
-      "``dot``", "``OfficeParser``", "application/msword"
-      "``msg``", "``OfficeParser``", "application/vnd.ms-outlook"
-      "``vsd``", "``OfficeParser``", "application/vnd.visio"
-      "``vst``", "``OfficeParser``", "application/vnd.visio"
-      "``vss``", "``OfficeParser``", "application/vnd.visio"
-      "``vsw``", "``OfficeParser``", "application/vnd.visio"
-      "``xlsm``", "``OOXMLParser``", "application/vnd.ms-excel.sheet.macroenabled.12"
-      "``pptm``", "``OOXMLParser``", "application/vnd.ms-powerpoint.presentation.macroenabled.12"
-      "``xltx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.spreadsheetml.template"
-      "``docx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-      "``potx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.template"
-      "``xlsx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-      "``pptx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-      "``xlam``", "``OOXMLParser``", "application/vnd.ms-excel.addin.macroenabled.12"
-      "``docm``", "``OOXMLParser``", "application/vnd.ms-word.document.macroenabled.12"
-      "``xltm``", "``OOXMLParser``", "application/vnd.ms-excel.template.macroenabled.12"
-      "``dotx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.wordprocessingml.template"
-      "``ppsm``", "``OOXMLParser``", "application/vnd.ms-powerpoint.slideshow.macroenabled.12"
-      "``ppam``", "``OOXMLParser``", "application/vnd.ms-powerpoint.addin.macroenabled.12"
-      "``dotm``", "``OOXMLParser``", "application/vnd.ms-word.template.macroenabled.12"
-      "``ppsx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.slideshow"
-      "``odt``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text"
-      "``ods``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.spreadsheet"
-      "``odp``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.presentation"
-      "``odg``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.graphics"
-      "``odc``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.chart"
-      "``odf``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.formula"
-      "``odi``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.image"
-      "``odm``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-master"
-      "``ott``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-template"
-      "``ots``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.spreadsheet-template"
-      "``otp``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.presentation-template",
-      "``otg``",  "``OpenDocumentParser``", "application/vnd.oasis.opendocument.graphics-template",
-      "``otc``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.chart-template",
-      "``otf``","``OpenDocumentParser``", "application/vnd.oasis.opendocument.formula-template",
-      "``oti``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.image-template",
-      "``oth``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-web",
-      "``sxw``", "``OpenDocumentParser``", "application/vnd.sun.xml.writer"
-
-.. dropdown:: Packages and Archives
-
-   .. csv-table::
-      :header: "Extension", "Parser", "Content-type"
-
-      "``z``", "``CompressorParser``", "application/x-compress"
-      "``bz``", "``CompressorParser``", "application/x-bzip"
-      "``boz``", "``CompressorParser``", "application/x-bzip2"
-      "``bz2``", "``CompressorParser``", "application/x-bzip2"
-      "``gz``", "``CompressorParser``", "application/gzip"
-      "``gz``", "``CompressorParser``", "application/x-gzip"
-      "``gzip``", "``CompressorParser``", "application/x-gzip"
-      "``xz``", "``CompressorParser``", "application/x-xz"
-      "``tar``", "``PackageParser``", "application/x-tar"
-      "``jar``", "``PackageParser``", "application/java-archive"
-      "``7z``", "``PackageParser``", "application/x-7z-compressed"
-      "``cpio``", "``PackageParser``", "application/x-cpio"
-      "``zip``", "``PackageParser``", "application/zip"
-      "``rar``", "``RarParser``", "application/x-rar-compressed"
-      "``txt``", "``TXTParser``", "text/plain"
-
-.. _pws_parser_controls:
-
-Parser Controls
----------------
-
-Parsers can be turned on or off by changing the related value to
-``true`` or ``false`` via the ``zxsuite config`` CLI command.
-
-.. csv-table::
-   :header: "Attribute", "Parsers"
-
-   "pdfParsingEnabled", "PDFParser"
-   "odfParsingEnabled", "OpenDocumentParser"
-   "archivesParsingEnabled", "CompressorParser, PackageParser, RarParser"
-   "microsoftParsingEnabled", "OfficeParser, OOXMLParser, OldExcelParser"
-   "rtfParsingEnabled", "RTFParser"
-
-e.g. to disable PDF parsing run:
-
-.. code:: bash
-
-   zxsuite config server set server.example.com attribute pdfParsingEnabled value false
-
-By default, all parsers are active.
-
-.. _pws_external_content_extractor:
-
-External Content Extractor
-==========================
-
-.. warning:: This feature is currently in beta, usage in production
-   environment is not recommended.
-
-The external content extractor detects and extracts metadata and text
-from over a thousand different file types (such as PPT, XLS, and PDF).
-All of these file types can be parsed through a single interface, making
-it useful for search engine indexing, content analysis, translation, and
-much more.
-
-.. _pws_why_use_tika_server_as_content_extractor:
-
-Why use Tika Server as Content Extractor?
------------------------------------------
-
-Zextras uses a Tika library that shares the same Java Virtual Machine
-(JVM) as the mailbox. With the Tika server you can you can have multiple
-Tika servers indexing the content separated from the mailbox. In case of
-a crash of a Tika server, the mailbox JVM remains unaffected.
-
-.. _pws_switching_to_the_tika_server:
-
-Switching to the Tika Server
-----------------------------
-
-You can run Tika server as a `docker container
-<https://github.com/apache/tika-docker>`_, on the same server as the
-mailbox; or on separate servers accessible by Zimbra.
-
-.. _pws_add_a_tika_server:
-
-Add a Tika Server
-~~~~~~~~~~~~~~~~~
-
-You can add a Tika server by running the following command on the
-Command Line Interface (CLI).
-
-.. dropdown:: ``zxsuite powerstore Indexing content-extraction-tool add``
-   
-   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_Indexing_content-extraction-tool_add.rst
-
-.. _pws_list_tika_servers:
-
-List Tika Servers
-~~~~~~~~~~~~~~~~~
-
-You can list all Tika servers by running the following command on the
-Command Line Interface (CLI).
-
-.. dropdown:: ``zxsuite powerstore Indexing content-extraction-tool list``
-   
-   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_Indexing_content-extraction-tool_list.rst
-
-
-   A sample output lists all the running Tika servers with their
-   addresses and the ports on which they are listening, for example::
-
-     content-extraction-endpoints
-                   http://test.example.com:9998/tika
-
-.. _pws_remove_a_tika_server:
-
-Remove a Tika Server
-~~~~~~~~~~~~~~~~~~~~
-
-You can remove a previously added Tika server by running the following
-command on the Command Line Interface (CLI).
-
-.. dropdown:: ``zxsuite powerstore Indexing content-extraction-tool remove``
-   
-   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_Indexing_content-extraction-tool_remove.rst
-
-.. _pws_is_the_tika_server_running:
-
-Is the Tika Server Running?
----------------------------
-
-You can use the following methods to check if the Tika Server is
-running.
-
-.. grid::
-   :gutter: 3
-
-   .. grid-item-card::
-      :columns: 6
-
-      Graphical User Interface (GUI)
-      ^^^^
-
-         1. Send an email with a new attachment
-
-         2. Search for the attachment
-
-   .. grid-item-card::
-      :columns: 6
-
-      Command Line Interface (CLI)
-      ^^^^
-
-      1. Navigate to :file:`/opt/zimbra/log`
-
-      2. View the contents of :file:`mailbox.log`
-
-         - You can use :command:`tail -f` to follow in real time the new
-           messages in the file.
-                
-      Sample Output::
-
-        2021-07-07 15:24:25,444 INFO [qtp413601558-41832:https://mail.example.com/service/soap/SearchRequest] [name=user@mail.example.com;mid=136;oip=192.168.0.10;port=33008;ua=ZimbraWebClient - FF89 (Linux)/8.8.15_GA_4007;soapId=3084e510;] mailbox - Using http://test.example.com:9997/tika for content extraction
 
 .. _zextras_powerstore_cli:
 

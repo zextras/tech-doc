@@ -223,36 +223,21 @@ restored this way.
 Running a Single Item Restore
 -----------------------------
 
-.. dropdown:: Via the Administration Zimlet
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
+                
+      Item Restore is only available through the CLI.
 
-   Item Restore is only available through the CLI.
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-.. dropdown:: Via the CLI
+      To start an Item Restore operation, use the
+      :ref:`doItemRestore <zxsuite_backup_doItemRestore>` command.
 
-   To start an Item Restore operation, use the ``doItemRestore`` command::
-
-      Syntax:
-         zxsuite backup doItemRestore {account_name or id} {item_id} [attr1 value1 [attr2 value2...
-
-      PARAMETER LIST
-
-      NAME                 TYPE
-      account_name(M)      Account Name
-      item_id(M)           Integer
-      date
-      restore_folder(O)    String
-
-      (M) == mandatory parameter, (O) == optional parameter
-
-   .. card:: Usage examples
-
-      zxsuite backup doItemRestore john@example.com 4784
-
-      zxsuite backup doItemRestore 968df11c-8f8b-429a-9f29-4503d08544b3 5923
-
-   The first command restores item 4784 in the ``john@example.com``
-   mailbox; while the second restores item 5923 in the
-   ``968df11c-8f8b-429a-9f29-4503d08544b3`` mailbox
+      .. include:: /cli/ZxBackup/zxsuite_backup_doItemRestore.rst
 
 .. _account_restore:
 
@@ -306,74 +291,61 @@ restored items will be created in the current primary store unless the
 Running a Restore on New Account
 --------------------------------
 
-.. dropdown:: Via the Administration Zimlet
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-   A Restore on New Account can be used in two scenarios:
+      A Restore on New Account can be used in two scenarios:
 
-   #. Running Restore from the ``Accounts`` tab in the Zimbra
-      Administration Console allows you to operate on users currently
-      existing on the server.
+      #. Running Restore from the ``Accounts`` tab in the Zimbra
+         Administration Console allows you to operate on users currently
+         existing on the server.
 
-   #. If you need to restore a deleted user, please proceed to Restore
-      via the Administration Zimlet.
+      #. If you need to restore a deleted user, please proceed to Restore
+         via the Administration Zimlet.
 
-   In either case, go to the **Account List**, then follow these
-   directions.
+      In either case, go to the **Account List**, then follow these
+      directions.
 
-   -  Select ``Accounts`` in the left pane of the Administration Console to
-      show the Accounts List.
+      -  Select ``Accounts`` in the left pane of the Administration Console to
+         show the Accounts List.
 
-   -  Browse the list and click the account to be restored (*Source
-      account*).
+      -  Browse the list and click the account to be restored (*Source
+         account*).
 
-   -  On the top bar, press the wheel and then the ``Restore`` button.
+      -  On the top bar, press the wheel and then the ``Restore`` button.
 
-   -  Select ``Restore on New Account`` as the Restore Mode and enter the
-      name of the new account (*Destination account*) into the text box.
-      You can then choose whether to Hide in GAL the new account or not.
-      When you’re done, press ``Next``.
+      -  Select ``Restore on New Account`` as the Restore Mode and enter the
+         name of the new account (*Destination account*) into the text box.
+         You can then choose whether to Hide in GAL the new account or not.
+         When you’re done, press ``Next``.
 
-   -  Choose the restore date. Day/Month/Year can be selected via a minical
-      WIDGET, the hour via a drop-down menu and minute and second via two
-      text boxes. Click ``Next``.
+      -  Choose the restore date. Day/Month/Year can be selected via a minical
+         WIDGET, the hour via a drop-down menu and minute and second via two
+         text boxes. Click ``Next``.
 
-   -  Verify all your choices in the Operation Summary window. You can also
-      add additional email addresses to be notified when the restore
-      operation is completed successfully.
+      -  Verify all your choices in the Operation Summary window. You can also
+         add additional email addresses to be notified when the restore
+         operation is completed successfully.
 
-   .. note:: The admin account and the user who started the restore
-      procedure are notified by default.
+      .. note:: The admin account and the user who started the restore
+         procedure are notified by default.
 
-   Click ``Finish`` to start the restore.
+      Click ``Finish`` to start the restore.
 
-.. dropdown:: Running a Restore on New Account via the CLI
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-   To start a Restore on New Account via the CLI, use the
-   doRestoreOnNewAccount command::
+      To start a Restore on New Account via the CLI, use the
+      :ref:`doRestoreOnNewAccount <zxsuite_backup_doRestoreOnNewAccount>` command.
 
-      Syntax:
-         zxsuite backup doRestoreOnNewAccount {source_account} {destination_account} {"dd/MM/yyyy HH:mm:ss"|last} [attr1 value1 [attr2 value2...
-
-      PARAMETER LIST
-
-      NAME                       TYPE                  EXPECTED VALUES
-      source_account(M)          Account Name
-      destination_account(M)     Account Name/ID
-      date(M)                    Date                  `dd/MM/yyyy HH:mm:ss`|last
-      restore_chat_buddies(O)    Boolean               true|false
-      notifications(O)           Email Address[,..]
-
-      (M) == mandatory parameter, (O) == optional parameter
-
-     .. card:: Usage example
-
-        zxsuite backup dorestoreonnewaccount John NewJohn `28/09/2012 10:15:10`
-
-      Restores John's account in a new account named NewJohn
-
-   .. tip:: At the end of the operation, you can check that the
-      configuration of the new mailbox is the same by running the
-      command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`)
+      .. include:: /cli/ZxBackup/zxsuite_backup_doRestoreOnNewAccount.rst
+                   
+      .. hint:: At the end of the operation, you can check that the
+         configuration of the new mailbox is the same by running the
+         command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`)
 
 .. _time_range_undelete:
 
@@ -437,61 +409,46 @@ There are two points that is worth highlighting:
 Running a Time-range Undelete
 -----------------------------
 
-.. dropdown:: Via the Administration Console
+.. grid::
+   :gutter: 3
 
-   -  Select ``Accounts`` in the left pane of the Administration Console to
-      show the Accounts List.
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-   -  Browse the list and click on the account to be restored (*Source
-      account*).
+      -  Select ``Accounts`` in the left pane of the Administration Console to
+         show the Accounts List.
 
-   -  On the top bar, press the wheel and then the ``Restore`` button.
+      -  Browse the list and click on the account to be restored (*Source
+         account*).
 
-   -  Select ``Undelete`` as the *Restore Mode* and press ``Next``.
+      -  On the top bar, press the wheel and then the ``Restore`` button.
 
-   -  Choose the restore date-time slot. Day/Month/Year can be selected via
-      a mini-calendar widget, the hour via a drop-down menu, while the
-      minute and second can be entered in two text boxes. Once done, click
-      on ``Next``.
+      -  Select ``Undelete`` as the *Restore Mode* and press ``Next``.
 
-   -  Verify your choices in the Operation Summary window. You can also add
-      more email addresses to be notified when the restore operation is
-      finished. Please note that the admin account and the user who started
-      the restore procedure are notified by default.
+      -  Choose the restore date-time slot. Day/Month/Year can be selected via
+         a mini-calendar widget, the hour via a drop-down menu, while the
+         minute and second can be entered in two text boxes. Once done, click
+         on ``Next``.
 
-   -  Click ``Finish`` to start the Restore.
+      -  Verify your choices in the Operation Summary window. You can also add
+         more email addresses to be notified when the restore operation is
+         finished. Please note that the admin account and the user who started
+         the restore procedure are notified by default.
 
-.. dropdown:: Via the CLI
+      -  Click ``Finish`` to start the Restore.
 
-   To start a Time-range Undelete operation, use the
-   :ref:`zxsuite backup doUndelete <zxsuite_backup_doUndelete>` command:
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-   Quick reference
+      To start a Time-range Undelete operation, use the
+      :ref:`zxsuite backup doUndelete <zxsuite_backup_doUndelete>` command.
 
-   .. code:: console
+      .. include:: /cli/ZxBackup/zxsuite_backup_doUndelete.rst
 
-      zxsuite backup doUndelete *account* *"dd/MM/yyyy HH:mm:ss"|first*
-      *"dd/MM/yyyy HH:mm:ss"|last* [param VALUE[,VALUE]]
-
-   .. card:: Usage Examples
-
-      zxsuite backup doUndelete John ``08/10/2020 10:15:00`` last
-
-      zxsuite backup doUndelete John ``08/10/2020 10:15:00`` last
-      target_original_folder false
-
-      The first command performs an undelete on John’s account of all
-      items created between 08/10/2012 10:15:00 and the latest data
-      available and restores them in John’s mailbox, tagged with
-      ``undelete_04_05_21``.
-
-      The second command carries out exactly the same operation, but
-      the items will be restored under a separate folder in John’s
-      mailbox.
-
-   .. hint:: At the end of the operation, you can check that the
-      configuration of the new mailbox is the same by running the
-      command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`).
+      .. hint:: At the end of the operation, you can check that the
+         configuration of the new mailbox is the same by running the
+         command ``zxsuite config dump`` (See
+         :ref:`zextras_config_full_cli`).
 
 .. _external_restore:
 
@@ -577,6 +534,7 @@ attributes* step will be executed.
       server.
 
 .. dropdown:: PHASE 1
+   :open:
 
    -  `Operation Started` notification
 
@@ -600,10 +558,12 @@ attributes* step will be executed.
    -  `PHASE 1 Feedback` Notification
 
 .. dropdown:: PHASE 2
+   :open:
 
    -  Restore all Items
 
 .. dropdown:: PHASE 3
+   :open:
 
    -  Restore all Mountpoints and Datasources
 
@@ -677,46 +637,52 @@ the External Restore, you can implement the following suggestions.
 Running an External Restore
 ---------------------------
 
-.. dropdown:: Via the Administration Zimlet
+.. grid::
+   :gutter: 3
 
-   -  Click the Zextras Backup tab.
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-   -  Click on the ``Import Backup`` button under ``Import/Export`` to open
-      the Import Backup wizard.
+      -  Click the Zextras Backup tab.
 
-   -  Enter the Destination Path into the text box and press Forward. The
-      software will check if the destination folder contains a valid backup
-      and whether the 'zimbra' user has Read permissions.
+      -  Click on the ``Import Backup`` button under ``Import/Export`` to open
+         the Import Backup wizard.
 
-   -  Select the domains you want to import and press Forward.
+      -  Enter the Destination Path into the text box and press Forward. The
+         software will check if the destination folder contains a valid backup
+         and whether the 'zimbra' user has Read permissions.
 
-   -  Select the accounts you want to import and press Forward.
+      -  Select the domains you want to import and press Forward.
 
-   -  Verify all your choices in the Operation Summary window. You can also
-      add additional email addresses to be notified when the restore
-      operation is finished. Please note that the admin account and the
-      user who started the restore procedure are notified by default.
+      -  Select the accounts you want to import and press Forward.
 
-.. dropdown:: Via the CLI
+      -  Verify all your choices in the Operation Summary window. You can also
+         add additional email addresses to be notified when the restore
+         operation is finished. Please note that the admin account and the
+         user who started the restore procedure are notified by default.
 
-   To start an External Restore operation, use the ``doExternalRestore``
-   command:
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-   .. code:: console
+      To start an External Restore operation, use the
+      :ref:`doExternalRestore <zxsuite_backup_doExternalRestore>`
+      command::
 
-      zxsuite backup doExternalRestore *source_path* [param VALUE[,VALUE]]
+         zxsuite backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
-   .. card:: Usage example
+      .. card:: Usage example
 
-      zxsuite backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
+         .. code:: console
+                   
+            zxsuite backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
 
-      Restores the example.com domain, including all system accounts,
-      and the john@example.com and jack@example.com accounts from a
-      backup located in /path/to/data/
+         Restores the example.com domain, including all system accounts,
+         and the john@example.com and jack@example.com accounts from a
+         backup located in /path/to/data/
 
-   .. hint:: At the end of the operation, you can check that the
-      configuration of the new mailbox is the same by running the
-      command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`).
+      .. hint:: At the end of the operation, you can check that the
+         configuration of the new mailbox is the same by running the
+         command ``zxsuite config dump`` (See :ref:`zextras_config_full_cli`).
 
 .. _external-restore-speed-up:
 
