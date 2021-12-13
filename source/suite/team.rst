@@ -847,34 +847,6 @@ not necessary.
 Zextras Team CLI
 ================
 
-<<<<<<< HEAD
-This section contains the index of all the available ``zextras team``
-commands. Full reference can be found in `the dedicated
-section <./cli.xml#_zxteam_cli_commands>`_.
-
-`addOwner <./cli.xml#team_addOwner>`_ \|
-`clusterStatus <./cli.xml#team_clusterStatus>`_ \|
-`doClearChatDB <./cli.xml#team_doClearChatDB>`_ \|
-`doDeployTeamZimlet <./cli.xml#team_doDeployTeamZimlet>`_ \|
-`doImportChannels <./cli.xml#team_doImportChannels>`_ \|
-`doMoveAllRooms <./cli.xml#team_doMoveAllRooms>`_ \|
-`doMoveRoom <./cli.xml#team_doMoveRoom>`_ \|
-`doRestartService <./cli.xml#team_doRestartService>`_ \|
-`doStartService <./cli.xml#team_doStartService>`_ \|
-`doStopService <./cli.xml#team_doStopService>`_ \|
-`doUsersCleanup <./cli.xml#team_doUsersCleanup>`_ \|
-`dumpSessions <./cli.xml#team_dumpSessions>`_ \|
-`flushConversationsCache <./cli.xml#team_flushConversationsCache>`_ \|
-`getServices <./cli.xml#team_getServices>`_ \| `iceServer
-add <./cli.xml#team_iceServer_add>`_ \| `iceServer
-get <./cli.xml#team_iceServer_get>`_ \| `iceServer
-remove <./cli.xml#team_iceServer_remove>`_ \|
-`monitor <./cli.xml#team_monitor>`_ \| `rooms <./cli.xml#team_rooms>`_
-\| `space get <./cli.xml#team_space_get>`_ \| `video-server
-add <./cli.xml#team_video-server_add>`_ \| `video-server
-remove <./cli.xml#team_video-server_remove>`_ \|
-
-=======
 This section contains the index of all ``zxsuite team`` commands. Full
 reference can be found in the dedicated section
 :ref:`zextras_team_full_cli`.
@@ -903,4 +875,3 @@ reference can be found in the dedicated section
 :octicon:`dash` :ref:`space get <zxsuite_team_space_get>`
 :octicon:`dash` :ref:`video-server add <zxsuite_team_video-server_add>`
 :octicon:`dash` :ref:`video-server remove <zxsuite_team_video-server_remove>`
->>>>>>> 0.1
