@@ -5,6 +5,7 @@
 
 Webmail
 =======
+
 Access to the mailbox can be done through any device, connected to the internet, via a browser.
 For a better use of the Zimbra features it is recommended to use up-to-date Firefox or Chrome.
 
@@ -14,40 +15,50 @@ Username: your email
 Password: the same password associated with your "username"
 Version: keep on "Iris"
 
-Once logged in, the user will be on the Home screen from which he can access all the features of his mailbox:
-- Mails
-From the email section you can manage your inbox, sending, receiving and deleting emails.
+Once logged in, the user will be on the Home screen from which he can
+access all the features of his mailbox:
 
-- Calendar
-From this section, the user can plan activities and / or appointments.
+Mails
+   From the email section you can manage your inbox, sending, receiving and deleting emails.
 
-- Contacts
-The contacts section displays all the information relating to contacts and distribution lists.
+Calendar
+   From this section, the user can plan activities and / or appointments.
 
-- Team
-Tool dedicated to individual and group chats as well as to the creation of corporate spaces and thematic channels.
+Contacts
+   The contacts section displays all the information relating to contacts and distribution lists.
 
-- Search
-From this section the user can search the messages in the mailbox
+Team
+   Tool dedicated to individual and group chats as well as to the
+   creation of corporate spaces and thematic channels. 
 
-- Settings
-From here the user can set preferences for the operation of the mailbox.
+Search
+   From this section the user can search the messages in the mailbox
+
+Settings
+
+   From here the user can set preferences for the operation of the mailbox.
 
 
 
 Mobile clients: Mail
 ====================
+
 Android device configuration
 
 iOS device configuration
 
 APP for mobile devices
 ======================
+
 Mail
-It is the client that allows the management of mail from Ios or Android mobile devices
+   It is the client that allows the management of mail from Ios or
+   Android mobile devices
 
 Team
-The Team app guarantees the creation and use of chats, instant meetings and spaces wherever the user is.
+   The Team app guarantees the creation and use of chats, instant
+   meetings and spaces wherever the user is.
 
 Drive
-The Drive app allows the user to read, upload and possibly delete the files inside the Drive. Furthermore, you can upload images and documents from your mobile device.
+   The Drive app allows the user to read, upload and possibly delete
+   the files inside the Drive. Furthermore, you can upload images and
+   documents from your mobile device.
