@@ -2,18 +2,18 @@
  Carbonio CE Installation
 ==========================
 
-This page provides directions for the installation of |community|.
+This page provides directions for the installation of |ce|.
 
 System Requirements
 ===================
 
-|community| can be installed as a set of packages on top of an Ubuntu,
+|ce| can be installed as a set of packages on top of an Ubuntu,
 CentOS, or RedHat Linux distribution.
 
 .. note:: Since CentOS and RedHat distribution are binary compatible,
    instructions for these two distributions are the same.
 
-Before attempting the installation of |community| you need:
+Before attempting the installation of |ce| you need:
 
 .. dropdown:: A supported Linux server distribution
 
@@ -180,7 +180,7 @@ Before attempting the installation of |community| you need:
             Safely skip this step.
 
 Once all these steps have been successfully accomplished, you can
-proceed to install |community| packages, either on a
+proceed to install |ce| packages, either on a
 :ref:`Single-Server <single-server-install>` or a :ref:`Multi-Server
 <multi-server-install>` setup.
 
@@ -192,7 +192,7 @@ Software Components
 Single-Server Installation
 ==========================
 
-To install |community| on a Single-Server setup, execute the following
+To install |ce| on a Single-Server setup, execute the following
 commands.
 
 .. tab-set::
@@ -218,7 +218,7 @@ commands.
 
 Once installation has completed successfully, proceed to the
 :ref:`next section <bootstrap-ce>` to learn how to configure and start
-|community|.
+|ce|.
 
 .. _multi-server-install:
 
@@ -231,7 +231,7 @@ Bootstrap Carbonio CE
 =====================
 
 
-In order to start |community|, execute
+In order to start |ce|, execute
 
 .. code:: bash
 
@@ -399,7 +399,7 @@ the installation and the solution.
    * a network problem
    * a wrong or misspelled domain name.
 
-   The solution in the first and second case are outside |community|
+   The solution in the first and second case are outside |ce|
    configuration and require to either fix the MX record or check the
    Internet connection.
 

@@ -1,8 +1,9 @@
 .. products and other company "brandings"
 
-.. |community|  replace:: Zextras Carbonio CE
-.. |enterprise|  replace:: Zextras Carbonio
+.. |ce|  replace:: Carbonio CE
+.. |carbonio|  replace:: Carbonio
 .. |suite| replace:: Zextras Suite
 .. |zx| replace:: Zextras
 .. |zose| replace:: Zimbra 9 OSE
 .. |team| replace:: |zx| Team
+
