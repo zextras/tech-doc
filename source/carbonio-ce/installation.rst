@@ -26,9 +26,9 @@ Hardware requirements
       ^^^^^
       .. csv-table::
 
-         "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-         "RAM", "8 Gb"
-         "Disk space (Operating system and Carbonio CE)", "40 Gb"
+	 "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
+	 "RAM", "8 Gb"
+	 "Disk space (Operating system and Carbonio CE)", "40 Gb"
 
    .. grid-item-card::
       :columns: 6
@@ -37,9 +37,9 @@ Hardware requirements
       ^^^^^
       .. csv-table::
 
-         "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-         "RAM", "16 Gb"
-         "Disk space (Operating system and Carbonio CE)", "40 Gb"
+	 "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
+	 "RAM", "16 Gb"
+	 "Disk space (Operating system and Carbonio CE)", "40 Gb"
 
 .. _hypervisor-requirements:
 
@@ -93,15 +93,15 @@ Use the following command as the `root` user to install them.
 
       .. code:: bash
 
-         # apt install gnupg2 ca-certificates dnsmasq
+	 # apt install gnupg2 ca-certificates dnsmasq
 
       .. code:: bash
 
-         # apt-get install gnupg2 ca-certificates dnsmasq
+	 # apt-get install gnupg2 ca-certificates dnsmasq
 
       .. code:: bash
 
-         # aptitude install gnupg2 ca-certificates dnsmasq
+	 # aptitude install gnupg2 ca-certificates dnsmasq
 
    .. tab-item:: Centos/RedHat
 
@@ -109,11 +109,11 @@ Use the following command as the `root` user to install them.
 
       .. code:: bash
 
-         # yum install gnupg2 ca-certificates dnsmasq
+	 # yum install gnupg2 ca-certificates dnsmasq
 
       .. code:: bash
 
-         # dnf install gnupg2 ca-certificates dnsmasq
+	 # dnf install gnupg2 ca-certificates dnsmasq
 
 
 Once all these steps have been successfully accomplished, you can
@@ -134,10 +134,10 @@ repositories, the DNS, and to allow communication on specific ports.
 
    .. grid-item-card::
       :columns: 6
-                      
+
       DNS Configuration
       ^^^^^
-      
+
       The DNS server on which |community| relies needs to resolve the
       **MX record** of the domain that you are going to configure.
 
@@ -173,7 +173,7 @@ repositories, the DNS, and to allow communication on specific ports.
 
 	echo "$LOCAL_IP $HOSTNAME.$DOMAIN" >> /etc/hosts
 
-      
+
    .. grid-item-card:: External connections
       :columns: 6
 
@@ -181,28 +181,28 @@ repositories, the DNS, and to allow communication on specific ports.
       ^^^^^
 
       .. csv-table::
-         :header: "Port", "Service"
-         :widths: 10 90
-                  
-         "25", "Postfix incoming mail"
-         "80", "unsecured connection to the Carbonio web client"
-         "110", "external POP3 services"
-         "143", "external IMAP services"
-         "443", "secure connection to the Carbonio web client"
-         "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_" 
-         "587", "Port for smtp autenticated relay, requires STARTTLS
-         (or opportunistic SSL/TLS)"
-         "993", "external IMAP secure access"
-         "995", "external POP3 secure access"
+	 :header: "Port", "Service"
+	 :widths: 10 90
+
+	 "25", "Postfix incoming mail"
+	 "80", "unsecured connection to the Carbonio web client"
+	 "110", "external POP3 services"
+	 "143", "external IMAP services"
+	 "443", "secure connection to the Carbonio web client"
+	 "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
+	 "587", "Port for smtp autenticated relay, requires STARTTLS
+	 (or opportunistic SSL/TLS)"
+	 "993", "external IMAP secure access"
+	 "995", "external POP3 secure access"
 
       .. [1] This port is still used since in some cases it is
-             considered safer than 587. It requires on-connection
-             SSL.
+	     considered safer than 587. It requires on-connection
+	     SSL.
 
       .. warning:: SMTP, IMAP, and POP3 ports should be exposed only
-         if really needed, and preferably only accessible from a VPN
-         tunnel, if possible, to reduce the attack surface.
-                
+	 if really needed, and preferably only accessible from a VPN
+	 tunnel, if possible, to reduce the attack surface.
+
    .. grid-item-card:: Internal connections
       :columns: 6
 
@@ -210,40 +210,40 @@ repositories, the DNS, and to allow communication on specific ports.
       ^^^^^
 
       .. csv-table::
-         :header: "Port", "Service"
-         :widths: 10 90
+	 :header: "Port", "Service"
+	 :widths: 10 90
 
-         "389", "unsecure LDAP connection"
-         "636", "secure LDAP connection"
-         "3310", "ClamAV antivirus access"
-         "7025", "local mail exchange using the LMTP protocol"
-         "7047", "used by the server to convert attachments"
-         "7071", "secure access to the Administrator console"
-         "7072", "NGINX discovery and authentication"
-         "7073", "SASL discovery and authentication"
-         "7110", "internal POP3 services"
-         "7143", "internal IMAP services"
-         "7171", "access Carbonio configuration daemon (zmconfigd)"
-         "7306", "MySQL access"
-         "7780", "the spell checker service access"
-         "7993", "internal IMAP secure access"
-         "7995", "internal POP3 secure access"
-         "8080", "internal HTTP services access"
-         "8443", "internal HTTPS services access"
-         "9071", "used only in one case [2]_"
-         "10024", "Amavis :octicon:`arrow-both` Postfix"
-         "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
-         "10026", "configuring Amavis policies"
-         "10028", "Amavis :octicon:`arrow-both` content filter"
-         "10029", "Postfix archives access"
-         "10032", "Amavis :octicon:`arrow-both` SpamAssassin"
-         "23232", "internal Amavis services access"
-         "23233", "SNMP-responder access"
-         "11211", "memcached access"
+	 "389", "unsecure LDAP connection"
+	 "636", "secure LDAP connection"
+	 "3310", "ClamAV antivirus access"
+	 "7025", "local mail exchange using the LMTP protocol"
+	 "7047", "used by the server to convert attachments"
+	 "7071", "secure access to the Administrator console"
+	 "7072", "NGINX discovery and authentication"
+	 "7073", "SASL discovery and authentication"
+	 "7110", "internal POP3 services"
+	 "7143", "internal IMAP services"
+	 "7171", "access Carbonio configuration daemon (zmconfigd)"
+	 "7306", "MySQL access"
+	 "7780", "the spell checker service access"
+	 "7993", "internal IMAP secure access"
+	 "7995", "internal POP3 secure access"
+	 "8080", "internal HTTP services access"
+	 "8443", "internal HTTPS services access"
+	 "9071", "used only in one case [2]_"
+	 "10024", "Amavis :octicon:`arrow-both` Postfix"
+	 "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
+	 "10026", "configuring Amavis policies"
+	 "10028", "Amavis :octicon:`arrow-both` content filter"
+	 "10029", "Postfix archives access"
+	 "10032", "Amavis :octicon:`arrow-both` SpamAssassin"
+	 "23232", "internal Amavis services access"
+	 "23233", "SNMP-responder access"
+	 "11211", "memcached access"
 
       .. [2] When the NGINX support for Administration Console and the
-             ``mailboxd`` service run on the same host, this port can
-             be used to avoid overlaps between the two services
+	     ``mailboxd`` service run on the same host, this port can
+	     be used to avoid overlaps between the two services
 
 .. _single-server-install:
 
@@ -255,7 +255,7 @@ execute the following commands.
 
 .. note:: Since CentOS and RedHat distributions are binary compatible,
    instructions for these two distributions are the same.
-    
+
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -265,7 +265,7 @@ execute the following commands.
 
       .. code:: bash
 
-         # apt-get update && apt-get install carbonio-ce
+	 # apt-get update && apt-get install carbonio-ce
 
    .. tab-item:: CentOS/RedHat
 
@@ -274,8 +274,8 @@ execute the following commands.
 
       .. code:: bash
 
-         # dnf-update
-         # dnf install carbonio-ce
+	 # dnf-update
+	 # dnf install carbonio-ce
 
 Once installation has completed successfully, proceed to the
 :ref:`next section <bootstrap-ce>` to learn how to configure and start
@@ -311,139 +311,14 @@ about the status of the installation.
    directory :file:`/opt/zextras/log`.
 
 After the successful installation and bootstrap, it is possible to
-install more |community| packages to add functionalities to the base
-system.
-
-Main Menu
----------
-
-When checks are completed successfully, the **main menu** is shown.
-
-.. code:: text
-
-   Main menu
-
-      1) Common Configuration:
-      2) carbonio-ldap:                           Enabled
-      3) carbonio-logger:                         Enabled
-      4) carbonio-mta:                            Enabled
-      5) carbonio-store:                          Enabled
-           +Create Admin User:                    yes
-           +Admin user to create:                 admin@example.com
-   ******* +Admin Password                        UNSET
-           +Anti-virus quarantine user:           virus-quarantine.84xjhitd9w@example.com
-           +Enable automated spam training:       yes
-           +Spam training user:                   spam.8ngxjp2w@example.com
-           +Non-spam(Ham) training user:          ham.3ixjn8gu8@example.com
-           +SMTP host:                            example.com
-           +Web server HTTP port:                 8080
-           +Web server HTTPS port:                8443
-           +Web server mode:                      https
-           +IMAP server port:                     7143
-           +IMAP server SSL port:                 7993
-           +POP server port:                      7110
-           +POP server SSL port:                  7995
-           +Use spell check server:               no
-           +Install mailstore (service webapp):   yes
-           +Install UI (zimbra,zimbraAdmin webapps): yes
-
-      6) carbonio-proxy:                          Enabled
-      7) Default Class of Service Configuration:
-      s) Save config to file
-      x) Expand menu
-      q) Quit
-
-   Address unconfigured (**) items  (? - help)
-
-The main menu shows the current values for all configuration option,
-grouped by software component. Entering a number will expand a sub-menu
-and display the available options.
-
-Items marked with asterisk still need to be configured or have an
-invalid value. In the example above, the `Admin Password` of the
-Carbonio Store is not set and therefore must be configured.
-
-.. dropdown:: Example: configure an option
-
-   To navigate across menus, enter the number or letter on the
-   left-hand side of the item, and then click :kbd:`r` to go back. The
-   same applies to access an option.  In order to configure the `Admin
-   Password`, from the main menu press :kbd:`5` then :kbd:`Enter` to
-   go down to the carbonio-store sub-menu:
-
-   .. code:: text
-
-      Store configuration
-
-         1) Status:                                  Enabled
-         2) Create Admin User:                       yes
-         3) Admin user to create:                    admin@example.com
-      ** 4) Admin Password                           UNSET
-         5) Anti-virus quarantine user:              virus-quarantine.84xjhitd9w@example.com
-         6) Enable automated spam training:          yes
-         7) Spam training user:                      spam.8ngxjp2w@example.com
-         8) Non-spam(Ham) training user:             ham.3ixjn8gu8@example.com
-         9) SMTP host:                               example.com
-        10) Web server HTTP port:                    8080
-        11) Web server HTTPS port:                   8443
-        12) Web server mode:                         https
-        13) IMAP server port:                        7143
-        14) IMAP server SSL port:                    7993
-        15) POP server port:                         7110
-        16) POP server SSL port:                     7995
-        17) Use spell check server:                  no
-        18) Install mailstore (service webapp):      yes
-        19) Install UI (zimbra,zimbraAdmin webapps): yes
-
-      Select, or 'r' for previous menu [r]
-
-   Press :kbd:`4` then :kbd:`Enter` to configure the Admin
-   Password:
-
-   .. code:: text
-
-     Password for admin@example.com (min 6 characters): [rETabJD3wF]
-
-   To accept the proposed value, simply :kbd:`Enter`, otherwise write
-   a password then press :kbd:`Enter`. To save and store the options,
-   follow the instructions:
-
-   .. code:: text
-
-      press r to return to main menu, then press a to apply
-
-When the configuration is complete, a few questions are asked to
-finalise the configuration. Accept the default values or enter other
-valid ones. Take note of the files, as they can prove useful in case
-you want to quickly check the configuration or the logs.
-
-.. code:: text
-
-   Save configuration data to a file? [Yes]
-   Save config in file: [/opt/zextras/config.3655]
-   Saving config in /opt/zextras/config.3655...done.
-   The system will be modified - continue? [No] y
-   Operations logged to /tmp/zmsetup.20211014-154807.log
-   Setting local config values...
-
-After the configuration is saved, the bootstrap will continue and
-various informative messages will appear to explain the tasks carried
-out. When completed successfully, the last messages shown are similar to:
-
-.. code:: text
-
-   Moving /tmp/zmsetup.20211014-154807.log to /opt/zextras/log
-
-   Configuration complete - press return to exit
-
-At this point is is possible to access the Web interface of Carbonio.
-
+access the Web interface of Carbonio and to install more |community|
+packages to add functionalities to the base system.
 
 Additional Software Packges
 ===========================
 
 Once the installation and initial configuration of Carbonio CE has
-been completed successfully, it is possible to install 
+been completed successfully, it is possible to install
 packages that provide additional functionalities, including Drive
 and Team. To do so, simply execute::
 
