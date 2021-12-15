@@ -9,8 +9,8 @@ carefully this whole page before attempting to install.
 
 .. _system-requirements:
 
-|community| System Requirements
-===============================
+System Requirements
+===================
 
 
 Hardware requirements
@@ -55,8 +55,8 @@ Supported Virtualization Platforms
 
 .. _software-requirements:
 
-|community| software requirements
-=================================
+Software Requirements
+=====================
 
 Supported Linux Server Distributions
 ------------------------------------
@@ -73,14 +73,15 @@ The following Linux distributions are supported.
 
    * Ubuntu 18.04 LTS Server Edition (64-bit
 
-Required software packages
+Required Software Packages
 --------------------------
 
 The following software packages must be installed on the system
 
 * **gnupg2**
 * **ca-certificates**
-* **dnsmasq**
+* **dnsmasq** is required only in case you can not rely on
+  an existent DNS server, e.g., for testing purposes
 
 Use the following command as the `root` user to install them.
 
@@ -115,88 +116,6 @@ Use the following command as the `root` user to install them.
          # dnf install gnupg2 ca-certificates dnsmasq
 
 
-.. all the content below is probably unnecessary, keeping it just in case
-   .. dropdown:: Credentials to access |zx| repository
-
-      Information about how the credentials will be
-      provided soon.
-
-      ..
-         The credentials are provided by |zx|. On Ubuntu, you need to store
-         them in a file, while on CentOS/RedHat you can skip this steps,
-         because credentials are stored in the repository configuration.
-
-         .. tab-set::
-
-            .. tab-item:: Ubuntu
-
-               Create file :file:`/etc/apt/auth.conf.d/zextras.conf` with the
-               following content.
-
-               .. code:: ini
-
-                  machine zextras.jfrog.io
-                  login username
-                  password token
-
-            .. tab-item:: CentOS/RedHat
-
-               Safely skip to next step.
-
-   .. dropdown:: To setup |zx| repository
-
-         Information about how to set up the zextras repository will be
-         provided soon.
-
-         ..
-            .. tab-set::
-
-               .. tab-item:: Ubuntu
-
-                  Create file :file:`/etc/apt/sources.list.d/zextras.conf` with the
-                  following content.
-
-                  .. code:: text
-
-                     deb [trusted=yes] https://zextras.jfrog.io/artifactory/ubuntu-playground bionic main
-
-               .. tab-item:: CentOS/RedHat
-
-                  Create a `.repo` file :file:`/etc/yum.repos.d/zextras.repo` with the
-                  following content.
-
-                  .. code:: ini
-
-                     [Zextras]
-                     name=Zextras
-                     baseurl=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/
-                     enabled=1
-                     gpgcheck=1
-                     gpgkey=https://username:token@zextras.jfrog.io/artifactory/centos8-playground/repomd.xml.key
-
-      .. dropdown:: The public |zx| GPG signing key
-
-         The GPG key will be provided as soon as the repositories will be
-         set up.
-
-         ..
-            The last step is to import |zx| GPG key. This step is not necessary
-            on CentOS/RedHat, as the GPG key is part of the repository configuration.
-
-            .. tab-set::
-
-               .. tab-item:: Ubuntu
-
-                  Import the GPG key with this command.
-
-                  .. code:: bash
-
-                     # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
-
-               .. tab-item:: CentOS/RedHat
-
-                  Safely skip this step.
-
 Once all these steps have been successfully accomplished, you can
 proceed to install |community| packages, either on a
 :ref:`Single-Server <single-server-install>` or a :ref:`Multi-Server
@@ -207,43 +126,54 @@ proceed to install |community| packages, either on a
 Required Software Configuration
 -------------------------------
 
+For |community| to operate properly, it is necessary to configure |zx|
+repositories, the DNS, and to allow communication on specific ports.
+
 .. grid::
    :gutter: 2
 
-            
    .. grid-item-card::
       :columns: 6
-                
+                      
       DNS Configuration
       ^^^^^
-
-      The DNS server on which |community| is installed need to resolve
-      the **MX record** of the domain that you are going to configure.
+      
+      The DNS server on which |community| relies needs to resolve the
+      **MX record** of the domain that you are going to configure.
 
       Supposing that the domain is **example.com**, you can check that
-      the MX is resolved correctly using the :command:``host`` command.
+      the MX is resolved correctly using the :command:`host` command.
 
       .. code:: console
 
-         # host -t MX example.com
-         example.com mail is handled by 10.mail.example.com.
+	 # host -t MX example.com
+	 example.com mail is handled by 10.mail.example.com.
 
    .. grid-item-card::
       :columns: 6
 
-      dnsmasq configuration
+      Repository Configuration
       ^^^^^
 
-      To configure dnsmasq, execute this command, the same on all
-      systems:
+      In order to add |community|\ 's repository on Ubuntu, execute
+      the following commands.
 
-      .. code:: bash
+      .. code:: console
 
-         echo -e  '127.0.0.1 localhost \n'$(hostname -I) 'carbonio.loc carbonio' >> /etc/hosts
+	 # echo 'deb [trusted=yes] https://repo.zextras.io/rc/ubuntu bionic main' >>/etc/apt/sources.list.d/zextras.list
 
-      .. note:: Replace the *carbonio.loc carbonio* string with the
-         actual domain name.
+	 # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
 
+      Then, update the list of packages and install all upgrades, if
+      any::
+
+	# apt-get update -yq && apt-get upgrade -yq
+
+      Finally, execute this command to update file :file:`/etc/hosts`::
+
+	echo "$LOCAL_IP $HOSTNAME.$DOMAIN" >> /etc/hosts
+
+      
    .. grid-item-card:: External connections
       :columns: 6
 
@@ -314,18 +244,18 @@ Required Software Configuration
       .. [2] When the NGINX support for Administration Console and the
              ``mailboxd`` service run on the same host, this port can
              be used to avoid overlaps between the two services
-    
+
 .. _single-server-install:
 
 Single-Server Installation
 ==========================
 
-To install |community| on a Single-Server setup, execute the following
-commands.
+To install the base system of |community| on a Single-Server setup,
+execute the following commands.
 
 .. note:: Since CentOS and RedHat distributions are binary compatible,
    instructions for these two distributions are the same.
-
+    
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -361,18 +291,15 @@ Multi-server Installation
 Bootstrap Carbonio CE
 =====================
 
-
 In order to start |community|, execute
 
 .. code:: bash
 
-   # bootstrap carbonio
+   # carbonio-bootstrap
 
-This command makes a few checks and then presents a configuration menu
-that allows to customise the installation.
-
-A few messages are shown, including the name of the log file that will
-store all messages::
+This command makes a few checks and then starts the installation,
+during which a few messages are shown, including the name of the log
+file that will store all messages::
 
   Operations logged to /tmp/zmsetup.20211014-154807.log
 
@@ -382,6 +309,10 @@ about the status of the installation.
 
 .. note:: When the installation completes, the log file is moved to
    directory :file:`/opt/zextras/log`.
+
+After the successful installation and bootstrap, it is possible to
+install more |community| packages to add functionalities to the base
+system.
 
 Main Menu
 ---------
@@ -506,3 +437,14 @@ out. When completed successfully, the last messages shown are similar to:
    Configuration complete - press return to exit
 
 At this point is is possible to access the Web interface of Carbonio.
+
+
+Additional Software Packges
+===========================
+
+Once the installation and initial configuration of Carbonio CE has
+been completed successfully, it is possible to install 
+packages that provide additional functionalities, including Drive
+and Team. To do so, simply execute::
+
+  apt-get install -y carbonio-drive carbonio-team
