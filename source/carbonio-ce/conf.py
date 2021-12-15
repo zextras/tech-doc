@@ -47,6 +47,8 @@ rst_prolog = """
 .. note:: All content is provisional and is meant **only** to showcase
    the feature of the new framework.
 
+.. |product| replace:: Carbonio CE
+
 """ + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
