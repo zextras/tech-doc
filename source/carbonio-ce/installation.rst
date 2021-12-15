@@ -80,8 +80,10 @@ The following software packages must be installed on the system
 
 * **gnupg2**
 * **ca-certificates**
-* **dnsmasq** is required only in case you can not rely on
-  an existent DNS server, e.g., for testing purposes
+* **dnsmasq** is required only in case you can not rely on an existent
+  DNS server, e.g., for testing purposes. A guide to configure a local
+  DNS server using dnsmasq is available on |zx| Community server:
+  https://community.zextras.com/dns-server-installation-guide-on-centos-7-rhel-7-and-centos-8-rhel-8-using-dnsmasq/ 
 
 Use the following command as the `root` user to install them.
 
