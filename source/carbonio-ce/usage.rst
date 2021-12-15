@@ -3,20 +3,32 @@
  Carbonio Usage
 ================
 
-Webmail
-=======
+.. intro
 
-Access to the mailbox can be done through any device, connected to the internet, via a browser.
-For a better use of the Zimbra features it is recommended to use up-to-date Firefox or Chrome.
+All functionalities provided by |zx| |product| are available after logging
+in to the mailbox.
 
-To access the e-mail box, use the address of your webmail (for example, https://mail.example.com)
+Access to the mailbox only requires using a browser on any device,
+provided it is connected to the Internet.
 
-Username: your email
-Password: the same password associated with your "username"
-Version: keep on "Iris"
+.. hint:: For a better use of the |product| features, it is recommended to
+   use an up-to-date version of Firefox or Chrome.
+
+On Mobile devices, dedicated application can be used to access
+specific functionalities of |product|.
+
+.. screenshot of login page?
+   
+Use the URL of your webmail (for example, https://mail.example.com/)
+to access the login page and provide your credentials:
+
+* Username: your email
+* Password: the same password associated with your "username"
+* Version: The choice is either **Iris**, |product|\ 's native GUI or
+  **Classic** 
 
 Once logged in, the user will be on the Home screen from which he can
-access all the features of his mailbox:
+access all the features of his mailbox.
 
 Mails
    From the email section you can manage your inbox, sending, receiving and deleting emails.
@@ -35,9 +47,39 @@ Search
    From this section the user can search the messages in the mailbox
 
 Settings
-
    From here the user can set preferences for the operation of the mailbox.
 
+
+
+   
+   
+Login Page
+==========
+
+
+IRIS
+----
+
+Webmail
+=======
+
+Calendar
+========
+
+Contacts
+========
+
+Search
+======
+
+New
+===
+
+Team
+====
+
+Settings
+========
 
 
 Mobile clients: Mail
