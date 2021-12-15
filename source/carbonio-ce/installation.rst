@@ -28,8 +28,7 @@ Hardware requirements
 
          "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
          "RAM", "8 Gb"
-         "Disk space (software and logs)", "40 Gb"
-         "Disk space (per mailbox)", "100 Mb"
+         "Disk space (Operating system and Carbonio CE)", "40 Gb"
 
    .. grid-item-card::
       :columns: 6
@@ -39,9 +38,8 @@ Hardware requirements
       .. csv-table::
 
          "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-         "RAM", "8 Gb"
-         "Disk space (software and logs)", "40 Gb"
-         "Disk space (per mailbox)", "100 Mb"
+         "RAM", "16 Gb"
+         "Disk space (Operating system and Carbonio CE)", "40 Gb"
 
 .. _hypervisor-requirements:
 
@@ -52,7 +50,7 @@ Supported Virtualization Platforms
 
    * VMware vSphere 6.x
    * VMware vSphere 7.x
-   * XenServer ??
+   * XenServer
    * KVM
 
 .. _software-requirements:
@@ -71,16 +69,9 @@ The following Linux distributions are supported.
 
    * Red Hat® Enterprise Linux® 8 (64-bit)
 
-   * CentOS Linux® 8 (64-bit)
-
-   * CentOS Linux® 7 (64-bit)
-
    * Ubuntu 20.04 LTS Server Edition (64-bit)
 
    * Ubuntu 18.04 LTS Server Edition (64-bit
-
-   ..
-      * Oracle Linux x.x ?
 
 Required software packages
 --------------------------
