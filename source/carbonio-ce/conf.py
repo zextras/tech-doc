@@ -44,9 +44,6 @@ exclude_patterns = ['common/cli/ZxTeam', 'cli']
 
 rst_prolog = """
 
-.. note:: All content is provisional and is meant **only** to showcase
-   the feature of the new framework.
-
 """ + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
