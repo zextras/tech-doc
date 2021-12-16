@@ -44,9 +44,6 @@ exclude_patterns = ['common/cli/ZxTeam', 'cli']
 
 rst_prolog = """
 
-.. note:: All content is provisional and is meant **only** to showcase
-   the feature of the new framework.
-
 """ + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
@@ -79,7 +76,9 @@ html_css_files = [ 'css/community.css' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 
-#html_theme_options = {
+html_theme_options = {
+      'analytics_id': 'UA-23692145-1',  
+      'analytics_anonymize_ip': False,
 #     'sticky_navigation': True,
-#    'logo_only': True
-#}
+#     'logo_only': True
+}
