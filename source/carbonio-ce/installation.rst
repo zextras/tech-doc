@@ -12,46 +12,58 @@ carefully this whole page before attempting to install.
 System Requirements
 ===================
 
-
-Hardware requirements
----------------------
-
 .. grid::
-   :gutter: 3
-
+   :gutter: 2
+	    
    .. grid-item-card::
       :columns: 6
 
-      Testing/Evaluation environment
+      Hardware requirements
       ^^^^^
+
       .. csv-table::
 
 	 "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
 	 "RAM", "8 Gb"
 	 "Disk space (Operating system and Carbonio CE)", "40 Gb"
-
+	    
    .. grid-item-card::
-      :columns: 6
+      :columns: 6   
 
-      Production environment
+      Supported Virtualization Platforms
       ^^^^^
+
       .. csv-table::
 
-	 "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-	 "RAM", "16 Gb"
-	 "Disk space (Operating system and Carbonio CE)", "40 Gb"
+	 VMware vSphere 6.x
+	 VMware vSphere 7.x
+	 XenServer
+	 KVM
+..
+   .. grid::
+      :gutter: 3
 
-.. _hypervisor-requirements:
+      .. grid-item-card::
+	 :columns: 6
 
-Supported Virtualization Platforms
---------------------------------------
+	 Testing/Evaluation environment
+	 ^^^^^
+	 .. csv-table::
 
-.. card::
+	    "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
+	    "RAM", "8 Gb"
+	    "Disk space (Operating system and Carbonio CE)", "40 Gb"
 
-   * VMware vSphere 6.x
-   * VMware vSphere 7.x
-   * XenServer
-   * KVM
+      .. grid-item-card::
+	 :columns: 6
+
+	 Production environment
+	 ^^^^^
+	 .. csv-table::
+
+	    "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
+	    "RAM", "16 Gb"
+	    "Disk space (Operating system and Carbonio CE)", "40 Gb"
 
 .. _software-requirements:
 
@@ -63,15 +75,14 @@ Supported Linux Server Distributions
 
 The following Linux distributions are supported.
 
-.. card::
+.. csv-table::
 
-   * Red Hat® Enterprise Linux® 9 (64-bit)
+   Red Hat® Enterprise Linux® 9 (64-bit)
+   Red Hat® Enterprise Linux® 8 (64-bit)
+   Ubuntu 18.04 LTS Server Edition (64-bit
 
-   * Red Hat® Enterprise Linux® 8 (64-bit)
-
-   * Ubuntu 20.04 LTS Server Edition (64-bit)
-
-   * Ubuntu 18.04 LTS Server Edition (64-bit
+..
+      * Ubuntu 20.04 LTS Server Edition (64-bit)
 
 Required Software Packages
 --------------------------
@@ -125,8 +136,8 @@ proceed to install |community| packages, either on a
 
 .. _software_preconf:
 
-Required Software Configuration
--------------------------------
+Required Configuration
+----------------------
 
 For |community| to operate properly, it is necessary to configure |zx|
 repositories, the DNS, and to allow communication on specific ports.
@@ -144,7 +155,8 @@ repositories, the DNS, and to allow communication on specific ports.
       **MX record** of the domain that you are going to configure.
 
       Supposing that the domain is **example.com**, you can check that
-      the MX is resolved correctly using the :command:`host` command.
+      the MX is resolved correctly using the :command:`host` command
+      from the console on which you will install |community|.
 
       .. code:: console
 
@@ -290,10 +302,10 @@ Multi-server Installation
 
 .. _bootstrap-ce:
 
-Bootstrap Carbonio CE
+Bootstrap |community|
 =====================
 
-In order to start |community|, execute
+In order to carry out the initial configuration and start |community|, execute
 
 .. code:: bash
 
@@ -301,27 +313,46 @@ In order to start |community|, execute
 
 This command makes a few checks and then starts the installation,
 during which a few messages are shown, including the name of the log
-file that will store all messages::
+file that will store all messages produced during the process::
 
   Operations logged to /tmp/zmsetup.20211014-154807.log
 
 In case the connection is lost during the installation, it is possible
-to log in again and check the content of the file for information
-about the status of the installation.
+to log in again and check the content of that file for information
+about the status of the installation. If the file does not exist
+anymore, the installation has already been completed and in that case
+the log file can be found in directory :file:`/opt/zextras/log`.
 
-.. note:: When the installation completes, the log file is moved to
-   directory :file:`/opt/zextras/log`.
 
-After the successful installation and bootstrap, it is possible to
-access the Web interface of Carbonio and to install more |community|
-packages to add functionalities to the base system.
+First Access to the Web Interface
+=================================
 
-Additional Software Packges
-===========================
+Once the installation has been successfully completed, it is time to
+access the Web interface of |community|. The username is **zextras**
+(all lowercase), while the password can be retrieved using the
+following command.
 
-Once the installation and initial configuration of Carbonio CE has
-been completed successfully, it is possible to install
-packages that provide additional functionalities, including Drive
-and Team. To do so, simply execute::
+.. code:: console
 
-  apt-get install -y carbonio-drive carbonio-team
+   zmlocalconfig -s zimbra_ldap_password
+
+The URL to which to connect to are:
+
+* https://mail.example.com/ for regular user access
+* https://mail.example.com:7071/ for Administrtion access.
+
+  
+..
+   After the successful installation and bootstrap, it is possible to
+   access the Web interface of Carbonio and to install more |community|
+   packages to add functionalities to the base system.
+
+   Additional Software Packges
+   ===========================
+
+   Once the installation and initial configuration of Carbonio CE has
+   been completed successfully, it is possible to install
+   packages that provide additional functionalities, including Drive
+   and Team. To do so, simply execute::
+ 
+    apt-get install -y carbonio-drive carbonio-team
