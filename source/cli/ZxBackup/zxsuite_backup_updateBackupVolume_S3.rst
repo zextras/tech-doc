@@ -1,13 +1,9 @@
-.. _backup_updateBackupVolume_S3:
 
-S3
---
-
-.. container:: informalexample
+::
 
    zxsuite backup updateBackupVolume S3 [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -22,9 +18,9 @@ PARAMETER LIST
 | gent-tiering(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -33,7 +29,7 @@ PARAMETER LIST
 Sets infrequent access storage class for new backup blobs whose size is
 bigger than 1GB
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

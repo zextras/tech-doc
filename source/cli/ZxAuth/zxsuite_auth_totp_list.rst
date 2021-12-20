@@ -1,26 +1,22 @@
-.. _auth_totp_list:
 
-list
-----
-
-.. container:: informalexample
+::
 
    zxsuite auth totp list *account* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **account**     | String          |                 |                 |
+| (M)             |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | id(O)           | Long            | 42              |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

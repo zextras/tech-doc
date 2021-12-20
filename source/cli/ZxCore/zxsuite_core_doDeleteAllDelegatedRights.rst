@@ -1,26 +1,30 @@
 
-PARAMETER LIST
+::
+
+   zxsuite core doDeleteAllDelegatedRights *confirmation string*
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          | confirmation    |                 |
-| *confirm**\ (M) |                 | string          |                 |
+| **con           | String          | confirmation    |                 |
+| firm**\ (M)     |                 | string          |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Warning**: This command will delete both Zextras Admin and Zimbra’s
-own Admin
+.. warning:: This command will delete both Zextras Admin and Zimbra’s
+   own Admin.
 
-Delegation settings reverting the Admin Delegation configuration to that
-of a fresh Zimbra installation.
+   Delegation settings reverting the Admin Delegation configuration to
+   that of a fresh Zimbra installation.
 
-Please read the documentation carefully before executing this command.
+   Please read the documentation carefully before executing this
+   command.
 
-Use the value "I read the documentation and want to delete all Admin
-Delegation settings" as 'confirmation string' in order
-
-to make sure you don’t execute this command inadvertently.
-
-No action was performed.
+   Use the value "I read the documentation and want to delete all
+   Admin Delegation settings" as 'confirmation string' in order to
+   make sure you don’t execute this command inadvertently.
+   
+   No action was performed.

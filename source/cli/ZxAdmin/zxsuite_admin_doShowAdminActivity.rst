@@ -19,7 +19,7 @@
    "notification_mode (O)", "Multiple choice", "none | email |
    briefcase | both", "none"
 
-(M) -- mandatory parameter,  (O) -- optional parameter
+\(M) == mandatory parameter,  (O) -- optional parameter
 
 .. rubric:: Usage Example
 

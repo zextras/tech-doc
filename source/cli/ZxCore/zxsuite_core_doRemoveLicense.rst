@@ -1,5 +1,9 @@
 
-PARAMETER LIST
+::
+
+   zxsuite core doRemoveLicense [param VALUE[,VALUE]]
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -7,9 +11,9 @@ PARAMETER LIST
 | iamsure(O)      | Boolean         | true|false      | false           |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

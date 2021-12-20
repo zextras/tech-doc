@@ -1,5 +1,9 @@
 
-**Example:.**
+::
+
+   zxsuite core getUnfinishedOperationLog
+
+.. rubric:: Usage Example
 
 ::
 

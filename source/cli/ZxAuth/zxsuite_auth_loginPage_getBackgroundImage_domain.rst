@@ -1,13 +1,9 @@
-.. _auth_loginPage_getBackgroundImage_domain:
 
-domain
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth loginPage getBackgroundImage domain *domain*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -15,9 +11,9 @@ PARAMETER LIST
 | **domain**\ (M) | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

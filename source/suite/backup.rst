@@ -56,7 +56,7 @@ up.
 
 .. _img-backup-console:
 
-.. figure:: /img/backup-ui.png
+.. figure:: /img/backup/ui.png
    :alt: Zextras Backup Admin Console
 
    Zextras Backup Admin Console
@@ -98,7 +98,7 @@ time: ``zxsuite backup doSmartScan start``
 
 .. _img-backup-notification:
 
-.. figure:: /img/backup-notification-level.png
+.. figure:: /img/backup/notification-level.png
    :alt: Zextras Backup Notification Level
 
    Zextras Backup Notification Level
@@ -345,7 +345,7 @@ The Backup Path can be set both via GUI and via CLI:
 -  Via GUI: in the "Backup" section of the Zextras Administration
    Zimlet, under "Backup Path".
 
-- Via CLI: using the :ref:`config_server` command to change the
+- Via CLI: using the :ref:`zxsuite config server <zxsuite_config_server>` command to change the
   ``ZxBackup_DestPath`` config key.
 
 .. warning:: Backup paths are unique and not reusable. Copying a
@@ -402,10 +402,7 @@ modified since the last SmartScan run, the **Coherency Check** carries
 out a thorough check of all metadata and BLOBs in the Backup Path.
 
 To start a Coherency Check via the CLI, use the
-:ref:`backup_doCoherencyCheck` command:
-
-.. Quick reference -- Need to find a replacement (admonition?) for
-   these containers
+:ref:`zxsuite backup doCoherencyCheck <zxsuite_backup_docoherencycheck>` command:
 
 .. code:: console
 
@@ -568,33 +565,32 @@ When is a SmartScan Executed?
 Running a SmartScan
 -------------------
 
-.. _starting_the_scan_via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Starting the Scan via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. grid-item-card:: Starting the Scan via the Administration Zimlet
+      :columns: 6
 
-To start a SmartScan via the Administration Zimlet,
+      To start a SmartScan via the Administration Zimlet,
 
--  Open the Administration Zimlet
+      -  Open the Administration Zimlet
 
--  If a multiserver installation, choose the server on which to run the
-   SmartScan
+      -  If a multiserver installation, choose the server on which to run the
+         SmartScan
 
--  Click  the Zextras Backup tab
+      -  Click  the Zextras Backup tab
 
--  Click  :bdg-secondary:`Run Smartscan`
+      -  Click  :bdg-secondary:`Run Smartscan`
 
-.. _starting_the_smartscan_via_the_cli:
+   .. grid-item-card:: Starting the SmartScan via the CLI
+      :columns: 6
 
-Starting the SmartScan via the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      To start a SmartScan via the CLI, use the :ref:`zxsuite backup
+      doSmartScan <zxsuite_backup_doSmartScan>` command:
 
-To start a SmartScan via the CLI, use the :ref:`backup_doSmartScan`
-command:
+      .. code:: console
 
-.. code:: console
-
-   zxsuite backup doSmartScan *start* [param VALUE[,VALUE]]
+         zxsuite backup doSmartScan *start* [param VALUE[,VALUE]]
 
 .. _checking_the_status_of_a_running_scan:
 
@@ -603,14 +599,15 @@ Checking the Status of a Running Scan
 
 Before actually carrying out this check, it is suggested to verify how
 many operations are running, to find the correct id. you can do this
-by using the :ref:`backup_getalloperations` command.
+by using the :ref:`zxsuite backup getAllOperations
+<zxsuite_backup_getAllOperations>` command.
 
 .. code:: console
 
    zxsuite backup getAllOperations [param VALUE[,VALUE]]
 
 To check the status of a running scan via the CLI, use the
-:ref:`backup_monitor` command:
+:ref:`zxsuite backup monitor <zxsuite_backup_monitor>` command:
 
 .. code:: console
 
@@ -654,57 +651,57 @@ Managing the Real Time Scanner
 Enabling the Real Time Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Via the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
--  Select the Zextras Backup Tab.
+      -  Select the Zextras Backup Tab.
 
--  Under Real Time Scanner, press the :bdg-secondary:`Enable` button.
+      -  Under Real Time Scanner, press the :bdg-secondary:`Enable` button.
 
-.. note:: When the Real Time Scanner is enabled for the first time or
-   re-enabled after a stop, a SmartScan is required. A warning will be
-   displayed after enabling the Real Time Scanner, and you will be
-   prompted to start the SmartScan.
+      .. note:: When the Real Time Scanner is enabled for the first time or
+         re-enabled after a stop, a SmartScan is required. A warning will be
+         displayed after enabling the Real Time Scanner, and you will be
+         prompted to start the SmartScan.
 
-.. _via_the_cli:
+      .. _via_the_cli:
 
-Via the CLI
-^^^^^^^^^^^
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-To enable the Real Time Scanner via the CLI, the
-``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
-be set to ``true``::
+      To enable the Real Time Scanner via the CLI, the
+      ``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
+      be set to ``true``::
 
-   zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
+         zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
 
 .. _disabling_the_real_time_scanner:
 
 Disabling the Real Time Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _via_the_administration_zimlet_2:
+.. grid::
+   :gutter: 3
 
-Via the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
--  Select the Zextras Backup Tab.
+      -  Select the Zextras Backup Tab.
 
--  Under Real Time Scanner, press the :bdg-secondary:`Disable` button.
+      -  Under Real Time Scanner, press the :bdg-secondary:`Disable` button.
 
-.. _via_the_cli_2:
+      .. _via_the_cli_2:
 
-Via the CLI
-^^^^^^^^^^^
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-To disable the Real Time Scanner via the CLI, the
-``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
-be set to ``false``:
+      To disable the Real Time Scanner via the CLI, the
+      ``ZxBackup_RealTimeScanner`` property of the Zextras Backup module must
+      be set to ``false``::
 
-::
-
-   zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
+        zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
 
 .. _why_should_i_disable_the_real_time_scanner:
 
@@ -785,28 +782,29 @@ item will ever exceed the retention time.
 Running a Backup Purge
 ----------------------
 
-.. _starting_the_backup_purge_via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Starting the Backup Purge via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-To start a BackupPurge via the Administration Zimlet:
+      To start a BackupPurge via the Administration Zimlet:
 
--  Click the Zextras Backup tab (be sure to have a valid license).
+      - Click the Zextras Backup tab (be sure to have a valid
+        license).
 
--  Click the ``Run Purge`` button in the top-right part of the UI.
+      - Click the ``Run Purge`` button in the top-right part of the
+        UI.
 
-.. _starting_the_backup_purge_via_the_cli:
+   .. grid-item-card:: Via the CLI
+      :columns: 6
 
-Starting the Backup Purge via the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      To start a BackupPurge via the CLI, use the
+      :ref:`zxsuite backup doPurge <zxsuite_backup_doPurge>` command:
 
-To start a BackupPurge via the CLI, use the
-:ref:`backup_dopurge` command:
+      .. code:: console
 
-.. code:: console
-
-   zxsuite backup doPurge [param VALUE[,VALUE]]
+         zxsuite backup doPurge [param VALUE[,VALUE]]
 
 .. _checking_the_status_of_a_running_backup_purge:
 
@@ -814,7 +812,7 @@ Checking the Status of a Running Backup Purge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To check the status of a running Purge via the CLI, use the
-:ref:`backup_monitor` command:
+:ref:`zxsuite backup monitor <zxsuite_backup_monitor>` command:
 
 .. code:: console
 
@@ -947,40 +945,51 @@ configuration.
 
 To fix the problem, follow this three step procedure.
 
-.. dropdown:: **1. Discover the ldap master server.**
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card::
 
-   .. code:: bash
+      1. Discover the ldap master server.
+      ^^^^^^
+      .. code:: bash
 
-      zmlocalconfig ldap_master_url
+         zmlocalconfig ldap_master_url
 
-.. dropdown:: **2. Obtain the root password.**
+   .. grid-item-card::
 
-   Connect to the ldap master server and get the LDAP root password.
-   
-   .. code:: bash
+      2. Obtain the root password.
+      ^^^^^
 
-      zmlocalconfig -s ldap_root_password
+      Connect to the ldap master server and get the LDAP root password.
 
-   This command will print on the standard output the LDAP password,
-   that you need to store on all mailbox servers on which either
-   ``zxsuite`` is running, or LDAP backup is enabled, or both. 
+      .. code:: bash
 
-.. dropdown:: **3. Save password on all mailstores.**
+         zmlocalconfig -s ldap_root_password
 
-   Execute *on every mailstore* the following commands, in which
-   **$LDAPPASSWORD** is the LDAP password obtained in the
-   previous step.
+      This command will print on the standard output the LDAP password,
+      that you need to store on all mailbox servers on which either
+      ``zxsuite`` is running, or LDAP backup is enabled, or both. 
 
-   .. code:: bash
+   .. grid-item-card::
 
-      su - zimbra
-      zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
-             
-   Finally, restart the mailbox service to avoid cached credentials problems.
+      3. Save password on all mailstores.
+      ^^^^^^
+      
+      Execute *on every mailstore* the following commands, in which
+      **$LDAPPASSWORD** is the LDAP password obtained in the
+      previous step.
 
-   .. code:: bash
+      .. code:: bash
 
-      zmmailboxdctl restart
+         su - zimbra
+         zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
+
+      Finally, restart the mailbox service to avoid cached credentials problems.
+
+      .. code:: bash
+
+         zmmailboxdctl restart
 
 .. _disable_ldap_backup:
 
@@ -1043,15 +1052,17 @@ The remote metadata archiving can be also triggered manually by running
 either of the following commands and adding the
 ``remote_metadata_upload true`` parameter:
 
--  :ref:`backup_doSmartScan`
+- :ref:`zxsuite backup doSmartScan <zxsuite_backup_doSmartScan>`
 
--  :ref:`backup_doAccountScan`
+- :ref:`zxsuite backup doAccountScan <zxsuite_backup_doAccountScan>`
 
--  :ref:`backup_doBackupServerCustomizations`
+- :ref:`zxsuite backup doBackupServerCustomizations
+  <zxsuite_backup_doBackupServerCustomizations>`
 
--  :ref:`backup_doBackupLDAP`
+- :ref:`zxsuite backup doBackupLDAP <zxsuite_backup_doBackupLDAP>`
 
--  :ref:`backup_doBackupCluster`
+- :ref:`zxsuite backup doBackupCluster
+  <zxsuite_backup_doBackupCluster>`
 
 By splitting the *I/O intensive* metadata folder from the BLOBs one, it
 is also ensured that the backup works, even in case the remote storage
@@ -1084,7 +1095,8 @@ external storage:
       commands"*
 
 In order to disable the External Storage, you can run the
-:ref:`backup_setBackupVolume` command.
+:ref:`zxsuite backup setBackupVolume Default <zxsuite_backup_setBackupVolume_Default>`
+command.
 
 .. code:: bash
 
@@ -1121,7 +1133,8 @@ remote storage to the Backup Path.
 
    zxsuite backup retrieveMetadataFromArchive S3 *destination*
 
-See documentation of `backup_retrieveMetadataFromArchive_S3` for more
+See documentation of :ref:`zxsuite backup retrieveMetadataFromArchive
+S3 <zxsuite_backup_retrieveMetadataFromArchive_S3>` for more
 information.
 
 .. _external_storages:
@@ -1145,7 +1158,7 @@ be reused*. Depending on what approach you choose, the steps to carry
 out are different. We describe here only the easier and most reliable
 one.
 
-.. dropdown:: Single server installation
+.. card:: Single server installation
 
    When NFS shares are used, you need to make them visible and accessible
    to the OS and Zextras, a task that only requires to add a row in
@@ -1161,7 +1174,7 @@ one.
    You will now be able to mount the external storage by simply using
    ``mount /media/external/`` on the server.
 
-.. dropdown:: Multiserver installation
+.. card:: Multiserver installation
 
    In the case of a multiserver installation, the admin must ensure that
    each server writes **on its own directory**, and the destination share
@@ -1196,8 +1209,8 @@ are not compatible with each other. If Powerstore data is stored in a
 bucket it is not possible to store Backup data on the same bucket and
 vice-versa.
 
-The :ref:`core_listBuckets` command reports the bucket usage, for
-example::
+The :ref:`zxsuite core listBuckets <zxsuite_core_listBuckets>` command
+reports the bucket usage, for example::
 
    bucketName                                                  hsm
    protocol                                                    HTTPS
@@ -1252,7 +1265,7 @@ different, depending if the new storage needs to be accessed from a
 newly installed server or if existing local backups must be migrated to
 the external storage.
 
-.. dropdown:: Configure on newly installed / uninitialized server
+.. card:: Configure on newly installed / uninitialized server
 
    If there the backup has not been initialized on the server, an
    Administrator can configure the external storage by running
@@ -1267,7 +1280,7 @@ the external storage.
    Therefore, check for any missing blobs with doCheckBlobs in the Zimbra
    volumes to avoid integrity errors.
 
-.. dropdown:: Migrate existing backups
+.. card:: Migrate existing backups
 
    Before actually carrying out the migration, please perform the following
    important maintenance task. This procedure will minimise the risk of
@@ -1283,22 +1296,22 @@ the external storage.
       ``mysqlcheck`` command to verify the database integrity.
 
    4. Check for any missing blobs in the Zimbra volumes with
-      :ref:`powerstore_docheckblobs`
+      :ref:`zxsuite powerstore doCheckBlobs <zxsuite_powerstore_doCheckBlobs>`
 
    5. Check for any missing digest in the backup with
-      :ref:`doSmartScan deep=true <backup_dosmartscan>`
+      :ref:`doSmartScan deep=true <zxsuite_backup_doSmartScan>`
 
    6. Check for any orphaned digest or metadata in the Backup with
-      :ref:`backup_docoherencycheck`
+      :ref:`zxsuite backup doCoherencyCheck <zxsuite_backup_docoherencycheck>`
 
-   7. Optionally run a :ref:`backup_dopurge` to remove
+   7. Optionally run a :ref:`zxsuite backup doPurge <zxsuite_backup_doPurge>` to remove
       expired data from the Backup
 
    You can now proceed to migrate the existing backup using the appropriate
    ``zxsuite backup migrateBackupVolume`` [[
-   :ref:`Default <backup_migrateBackupVolume_Default>` \|
-   :ref:`Local <backup_migrateBackupVolume_Local>` \|
-   :ref:`S3 <backup_migrateBackupVolume_S3>` ]] command.
+   :ref:`Default <zxsuite_backup_migrateBackupVolume_Default>` \|
+   :ref:`Local <zxsuite_backup_migrateBackupVolume_Local>` \|
+   :ref:`S3 <zxsuite_backup_migrateBackupVolume_S3>` ]] command.
 
    Finally, once the migration has been completed you can run this final
    task:
@@ -1312,60 +1325,57 @@ the external storage.
 Zextras Backup CLI
 ==================
 
-This section is work in progress
+This section contains the index of all ``zxsuite backup`` commands. Full
+reference can be found in the dedicated
+section :ref:`zextras_backup_full_cli`.
 
-..
-   This section contains the index of all ``zxsuite backup`` commands. Full
-   reference can be found in `the dedicated
-   section <./cli.xml#zxbackup-cli-full>`_.
+:ref:`doAccountScan <zxsuite_backup_doAccountScan>`
+:octicon:`dash` :ref:`doBackupAuthToken <zxsuite_backup_doBackupAuthToken>`
+:octicon:`dash` :ref:`doBackupChat <zxsuite_backup_doBackupChat>`
+:octicon:`dash` :ref:`doBackupCluster <zxsuite_backup_doBackupCluster>`
+:octicon:`dash` :ref:`doBackupLDAP <zxsuite_backup_doBackupLDAP>`
+:octicon:`dash` :ref:`doBackupServerCustomizations <zxsuite_backup_doBackupServerCustomizations>`
+:octicon:`dash` :ref:`doCheckShares <zxsuite_backup_doCheckShares>`
+:octicon:`dash` :ref:`doCoherencyCheck <zxsuite_backup_doCoherencyCheck>`
+:octicon:`dash` :ref:`doEnableDisableCOS <zxsuite_backup_doEnableDisableCOS>`
+:octicon:`dash` :ref:`doExport <zxsuite_backup_doExport>`
+:octicon:`dash` :ref:`doExternalRestore <zxsuite_backup_doExternalRestore>`
+:octicon:`dash` :ref:`doFixShares <zxsuite_backup_doFixShares>`
+:octicon:`dash` :ref:`doItemRestore <zxsuite_backup_doItemRestore>`
+:octicon:`dash` :ref:`doItemSearch <zxsuite_backup_doItemSearch>`
+:octicon:`dash` :ref:`doPurge <zxsuite_backup_doPurge>`
+:octicon:`dash` :ref:`doRawRestore <zxsuite_backup_doRawRestore>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_backup_doRestartService>`
+:octicon:`dash` :ref:`doRestoreBlobs <zxsuite_backup_doRestoreBlobs>`
+:octicon:`dash` :ref:`doRestoreOnNewAccount <zxsuite_backup_doRestoreOnNewAccount>`
+:octicon:`dash` :ref:`doSmartScan <zxsuite_backup_doSmartScan>`
+:octicon:`dash` :ref:`doStartService <zxsuite_backup_doStartService>`
+:octicon:`dash` :ref:`doStopAllOperations <zxsuite_backup_doStopAllOperations>`
+:octicon:`dash` :ref:`doStopOperation <zxsuite_backup_doStopOperation>`
+:octicon:`dash` :ref:`doStopService <zxsuite_backup_doStopService>`
+:octicon:`dash` :ref:`doUndelete <zxsuite_backup_doUndelete>`
+:octicon:`dash` :ref:`getAccountInfo <zxsuite_backup_getAccountInfo>`
+:octicon:`dash` :ref:`getAllOperations <zxsuite_backup_getAllOperations>`
+:octicon:`dash` :ref:`getAvailableAccounts <zxsuite_backup_getAvailableAccounts>`
+:octicon:`dash` :ref:`getAvailableDomains <zxsuite_backup_getAvailableDomains>`
+:octicon:`dash` :ref:`getBackupInfo <zxsuite_backup_getBackupInfo>`
+:octicon:`dash` :ref:`getCOSBackupStatus <zxsuite_backup_getCOSBackupStatus>`
+:octicon:`dash` :ref:`getItem <zxsuite_backup_getItem>`
+:octicon:`dash` :ref:`getMap <zxsuite_backup_getMap>`
+:octicon:`dash` :ref:`getProperty <zxsuite_backup_getProperty>`
+:octicon:`dash` :ref:`getServerConfig <zxsuite_backup_getServerConfig>`
+:octicon:`dash` :ref:`getServices <zxsuite_backup_getServices>`
+:octicon:`dash` :ref:`migrateBackupVolume Default <zxsuite_backup_migrateBackupVolume_Default>`
+:octicon:`dash` :ref:`migrateBackupVolume Local <zxsuite_backup_migrateBackupVolume_Local>`
+:octicon:`dash` :ref:`migrateBackupVolume S3 <zxsuite_backup_migrateBackupVolume_S3>`
+:octicon:`dash` :ref:`monitor <zxsuite_backup_monitor>`
+:octicon:`dash` :ref:`retrieveMetadataFromArchive Local <zxsuite_backup_retrieveMetadataFromArchive_Local>`
+:octicon:`dash` :ref:`retrieveMetadataFromArchive S3 <zxsuite_backup_retrieveMetadataFromArchive_S3>`
+:octicon:`dash` :ref:`setBackupVolume Default <zxsuite_backup_setBackupVolume_Default>`
+:octicon:`dash` :ref:`setBackupVolume Local <zxsuite_backup_setBackupVolume_Local>`
+:octicon:`dash` :ref:`setBackupVolume S3 <zxsuite_backup_setBackupVolume_S3>`
+:octicon:`dash` :ref:`setProperty <zxsuite_backup_setProperty>`
+:octicon:`dash` :ref:`updateBackupVolume S3 <zxsuite_backup_updateBackupVolume_S3>`
 
-   `doAccountScan <./cli.xml#backup_doAccountScan>`_ \|
-   `doBackupAuthToken <./cli.xml#backup_doBackupAuthToken>`_ \|
-   `doBackupChat <./cli.xml#backup_doBackupChat>`_ \|
-   `doBackupCluster <./cli.xml#backup_doBackupCluster>`_ \|
-   `doBackupLDAP <./cli.xml#backup_doBackupLDAP>`_ \|
-   `doBackupServerCustomizations <./cli.xml#backup_doBackupServerCustomizations>`_
-   \| `doCheckShares <./cli.xml#backup_doCheckShares>`_ \|
-   `doCoherencyCheck <./cli.xml#backup_doCoherencyCheck>`_ \|
-   `doEnableDisableCOS <./cli.xml#backup_doEnableDisableCOS>`_ \|
-   `doExport <./cli.xml#backup_doExport>`_ \|
-   `doExternalRestore <./cli.xml#backup_doExternalRestore>`_ \|
-   `doFixShares <./cli.xml#backup_doFixShares>`_ \|
-   `doItemRestore <./cli.xml#backup_doItemRestore>`_ \|
-   `doItemSearch <./cli.xml#backup_doItemSearch>`_ \|
-   `doPurge <./cli.xml#backup_doPurge>`_ \|
-   `doRawRestore <./cli.xml#backup_doRawRestore>`_ \|
-   `doRestartService <./cli.xml#backup_doRestartService>`_ \|
-   `doRestoreBlobs <./cli.xml#backup_doRestoreBlobs>`_ \|
-   `doRestoreChat <./cli.xml#backup_doRestoreChat>`_ \|
-   `doRestoreOnNewAccount <./cli.xml#backup_doRestoreOnNewAccount>`_ \|
-   `doSmartScan <./cli.xml#backup_doSmartScan>`_ \|
-   `doStartService <./cli.xml#backup_doStartService>`_ \|
-   `doStopAllOperations <./cli.xml#backup_doStopAllOperations>`_ \|
-   `doStopOperation <./cli.xml#backup_doStopOperation>`_ \|
-   `doStopService <./cli.xml#backup_doStopService>`_ \|
-   `doUndelete <./cli.xml#backup_doUndelete>`_ \|
-   `getAccountInfo <./cli.xml#backup_getAccountInfo>`_ \|
-   `getAllOperations <./cli.xml#backup_getAllOperations>`_ \|
-   `getAvailableAccounts <./cli.xml#backup_getAvailableAccounts>`_ \|
-   `getAvailableDomains <./cli.xml#backup_getAvailableDomains>`_ \|
-   `getBackupInfo <./cli.xml#backup_getBackupInfo>`_ \|
-   `getCOSBackupStatus <./cli.xml#backup_getCOSBackupStatus>`_ \|
-   `getItem <./cli.xml#backup_getItem>`_ \|
-   `getMap <./cli.xml#backup_getMap>`_ \|
-   `getProperty <./cli.xml#backup_getProperty>`_ \|
-   `getServerConfig <./cli.xml#backup_getServerConfig>`_ \|
-   `getServices <./cli.xml#backup_getServices>`_ \| `migrateBackupVolume
-   Default <./cli.xml#backup_migrateBackupVolume_Default>`_ \|
-   `migrateBackupVolume
-   Local <./cli.xml#backup_migrateBackupVolume_Local>`_ \|
-   `migrateBackupVolume S3 <./cli.xml#backup_migrateBackupVolume_S3>`_ \|
-   `monitor <./cli.xml#backup_monitor>`_ \| `retrieveMetadataFromArchive
-   Local <./cli.xml#backup_retrieveMetadataFromArchive_Local>`_ \|
-   `retrieveMetadataFromArchive
-   S3 <./cli.xml#backup_retrieveMetadataFromArchive_S3>`_ \|
-   `setBackupVolume Default <./cli.xml#backup_setBackupVolume_Default>`_
-   \| `setBackupVolume Local <./cli.xml#backup_setBackupVolume_Local>`_ \|
-   `setBackupVolume S3 <./cli.xml#backup_setBackupVolume_S3>`_ \|
-   `setProperty <./cli.xml#backup_setProperty>`_ \| `updateBackupVolume
-   S3 <./cli.xml#backup_updateBackupVolume_S3>`_
+
+

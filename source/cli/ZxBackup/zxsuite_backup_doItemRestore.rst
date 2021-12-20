@@ -1,37 +1,37 @@
-.. _backup_doItemRestore:
 
-doItemRestore
--------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doItemRestore *Account name or id* *item_id* [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | Account Name/ID | Account name or |                 |
-| *account**\ (M) |                 | id              |                 |
+| **acc\          | Account Name/ID | Account name or |                 |
+| ount**\ (M)     |                 | id              |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | String          |                 |                 |
-| *item_id**\ (M) |                 |                 |                 |
+| **item_id**     | String          |                 |                 |
+| \(M)            |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | date(O)         | Date            | "dd/MM/yyyy     |                 |
-|                 |                 | HH:mm:ss"|last  |                 |
+|                 |                 | HH:mm:ss" | last|                 |
 +-----------------+-----------------+-----------------+-----------------+
-| re              | String          |                 |                 |
+| re\             | String          |                 |                 |
 | store_folder(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
    zxsuite backup doItemRestore john@example.com 4784
 
-Restores item 4784 in the "john@example.com" mailbox
+   zxsuite backup doItemRestore 968df11c-8f8b-429a-9f29-4503d08544b3 5923
+
+The first command restores item 4784 in the ``john@example.com``
+mailbox; while the second restores item 5923 in the
+``968df11c-8f8b-429a-9f29-4503d08544b3`` mailbox

@@ -1,5 +1,9 @@
 
-PARAMETER LIST
+::
+
+   zxsuite core getNotification [param VALUE[,VALUE]]
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -7,9 +11,9 @@ PARAMETER LIST
 | id(O)           | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -17,7 +21,7 @@ PARAMETER LIST
 
 Shows the notification list
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

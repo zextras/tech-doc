@@ -1,13 +1,9 @@
-.. _backup_doStopAllOperations:
 
-doStopAllOperations
--------------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doStopAllOperations
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

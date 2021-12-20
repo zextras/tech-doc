@@ -12,11 +12,11 @@ variable number of secondary volumes. The purpose of the Powerstore
 module is to manage the secondary volumes and to move items between
 them.
 
-Items can be moved according using the `HSM <#hsm>`_ (Hierarchical
-Storage Management), a policy-based technique: One of the most useful is
-for example to reserve the most performing storage for intensive I/O
-operation and for data with frequent access, while the less performing
-will manage older data.
+Items can be moved according using the :ref:`pws_hsm` (Hierarchical
+Storage Management), a policy-based technique: One of the most useful
+is for example to reserve the most performing storage for intensive
+I/O operation and for data with frequent access, while the less
+performing will manage older data.
 
 The remainder of this section describes volumes and their management,
 policies, HSM, and various advanced techniques.
@@ -33,12 +33,13 @@ The Basics: Types of Stores and Their Uses
 
 Zimbra allows for **two** different types of stores:
 
--  **Index Store**: A store that contains information about your data
-   that is used by Apache Lucene to provide indexing and search
-   functions.
+**Index Store**
+   A store that contains information about your data that is used by
+   Apache Lucene to provide indexing and search functions.
 
--  **Data Store**: A store that contains all your Zimbra data organized
-   in a MySql database.
+**Data Store**
+   A store that contains all your Zimbra data organized in a MySql
+   database.
 
 You can have multiple stores of each type, but only one Index Store, one
 Primary Data Store and one Secondary Data Store can be set as *Current*
@@ -55,40 +56,26 @@ Data Store.
 Data is moved between the *current* Primary Data Store and the *current*
 Secondary Data Store according to a defined policy.
 
-.. _pws_zextras_powerstore_moving_items_between_stores:
+.. _volumes:
 
-Zextras Powerstore: Moving Items between Stores
------------------------------------------------
+Volumes
+~~~~~~~
 
-The main feature of the Zextras Powerstore module is the ability to
-apply defined HSM policies.
+Three types of volumes are defined by Zimbra:
 
-The move can be triggered in three ways:
+**Primary Current**
+   A volume where data are written upon arrival.
 
--  Click the *Apply Policy* button in the Administration Zimlet.
+**Secondary Current**
+   A volume where data are written following the application of a HSM
+   policy.
 
--  Start the ``doMoveBlobs`` operation through the CLI.
+**Not Current**
+   Volumes not set as Current and on which data is written *only* by
+   specific manual operations.
 
--  Enable Policy Application Scheduling in the Administration Zimlet and
-   wait for it to start automatically.
-
-Once the move is started, the following operations are performed:
-
--  Zextras Powerstore scans through the Primary Store to see which items
-   comply with the defined policy.
-
--  All the Blobs of the items found in the first step are copied to the
-   Secondary Store.
-
--  The database entries related to the copied items are updated to
-   reflect the move.
-
--  If the second and the third steps are completed successfully (and
-   only in this case), the old Blobs are deleted from the Primary Store.
-
-The Move operation is *stateful* - each step is executed only if the
-previous step has been completed successfully - so the risk of data loss
-during a Move operation is nonexistent.
+By default, items are placed in the *Primary Current* volume of the
+destination server.
 
 .. _pws_centralized_storage:
 
@@ -143,8 +130,8 @@ to use CLI commands.
      connection. You can also enter the IP address of the provider
      instead of the URL.
 
-   See the xref:./cli.adoc#core_doCreateBucket_S3[doCreateBucket
-   S3] full reference for details and more options.
+   See the ref:`doCreateBucket S3 <core_doCreateBucket_S3` full
+   reference for details and more options.
 
    When successful, the command outputs a string, which is the unique
    *bucket ID*, for example *28m6u4KBwSUnYaPp86XG*. Take note of it
@@ -157,7 +144,7 @@ to use CLI commands.
 
    If the command is successful, proceed with the next step.
 
-3. Associate the bucket to the volumes on _each mailstore_::
+3. Associate the bucket to the volumes on *each mailstore*::
 
      zxsuite powerstore doCreateVolume S3 _Name of the zimbra store_ _primary|secondary_ [param VALUE[,VALUE]]
 
@@ -173,7 +160,7 @@ to use CLI commands.
    * *VolumeName*: the volume name as defined on the server on which the
       command is executed
    * *secondary*: the type of the volume 
-   * *28m6u4KBwSUnYaPp86XG*: the _bucket ID_ as received in step 1
+   * *28m6u4KBwSUnYaPp86XG*: the bucket ID* as received in step 1
    * *volume_prefix main_vol*: an ID assigned to the volume, used for
       quick searches (e.g., *main_vol*)
    * *centralized true*: whether the storage is centralized or not
@@ -181,8 +168,7 @@ to use CLI commands.
       immediately data. If not specified, it is necessary to issue 
       later a command to make the volume _current_.
 
-   See the xref:./cli.adoc#powerstore_doCreateVolume_S3[doCreateVolume
-   S3] full reference for details and more options.
+   See the :ref:`doCreateVolume S3<zxsuite_powerstore_doCreateVolume_S3>` full reference for details and more options.
 
 
 .. _pws_centralized_storage_structure:
@@ -270,7 +256,7 @@ All Zimbra volumes are defined by the following properties:
 
 -  Path: The path where the data is going to be saved.
 
-   .. important:: The *zimbra* user must have r/w permissions on this
+   .. note:: The *zimbra* user must have r/w permissions on this
       path.
 
 -  Compression: Enable or Disable the file compression for the volume.
@@ -302,8 +288,8 @@ the following properties:
 -  **Compression Threshold:** the minimum file size that will trigger
    the compression.
 
-   .. important:: Files under this size will never be compressed even
-      if compression is enabled.
+   .. warning:: Files under this size will never be compressed even if
+      compression is enabled.
 
 .. _pws_current_volumes:
 
@@ -317,556 +303,137 @@ operations such as the Volume-to-Volume move.
 
 .. _pws_volume_management_with_zextras_powerstore_administration_zimlet:
 
-Volume Management with Zextras Powerstore - Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Volume Management with Zextras Powerstore
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _pws_creating_a_new_volume_with_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Creating a New Volume with the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 12
 
-To create a new volume from the Zextras Powerstore tab of the
-Administration Zimlet:
+      .. grid:: 
+         
+         .. grid-item-card:: Create a New Volume 
+            :columns: 4
 
--  Click the appropriate *Add* option in the *Volumes Management*
-   section according to the type of volume you want to create.
+            To create a new volume from the Zextras Powerstore tab of the
+            Administration Zimlet:
 
--  Select the store type, choosing between local mount point or S3
-   Bucket.
+            -  Click the appropriate *Add* option in the *Volumes Management*
+               section according to the type of volume you want to create.
 
--  Enter the new volume’s name.
+            -  Select the store type, choosing between local mount point or S3
+               Bucket.
 
--  Enter a path for the new volume.
+            -  Enter the new volume’s name.
 
--  Check the *Enable Compression* button if you wish to activate data
-   compression on the new volume.
+            -  Enter a path for the new volume.
 
--  Select the Compression Threshold.
+            -  Check the *Enable Compression* button if you wish to activate data
+               compression on the new volume.
 
--  If you are using an S3 Bucket, it’s possible to store information for
-   multiple buckets.
+            -  Select the Compression Threshold.
 
--  Press *OK* to create the new volume. Should the operation fail, a
-   notification containing any related errors will be generated.
+            -  If you are using an S3 Bucket, it’s possible to store information for
+               multiple buckets.
 
-.. _pws_editing_a_volume_with_the_administration_zimlet:
+            -  Press *OK* to create the new volume. Should the operation fail, a
+               notification containing any related errors will be generated.
 
-Editing a Volume with the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+         .. grid-item-card:: Edit a Volume
+            :columns: 4
 
-To edit a volume from the Administration Zimlet, simply select an
-existing volume and press the appropriate *Edit* button.
+            To edit a volume from the Administration Zimlet, simply select an
+            existing volume and press the appropriate *Edit* button.
 
-.. _pws_deleting-a-volume:
+         .. grid-item-card:: Delete a Volume
+            :columns: 4
 
-Deleting a Volume with the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            To delete a volume from the Administration Zimlet, select an existing
+            volume and press the appropriate *Delete* button. Remember that only
+            **empty** volumes can be deleted.
 
-To delete a volume from the Administration Zimlet, select an existing
-volume and press the appropriate *Delete* button. Remember that only
-**empty** volumes can be deleted.
+   .. grid-item-card:: Via the CLI
+      :columns: 12
 
-.. _pws_volume_management_with_zextras_powerstore_from_the_cli:
+      .. warning:: Beginning with release 8.8.9, all volume creation
+         and update commands have been updated, as the ``storeType``
+         argument is now required.
 
-Volume Management with Zextras Powerstore - From the CLI
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      .. broken crossref to S3 compatible services, removing it but
+         keeping original for reference
 
-.. important:: Beginning with release 8.8.9, all volume creation and
-   update commands have been updated, as the ``storeType`` argument is
-   now required.
+         The ``storeType`` argument is **mandatory**, it is always the
+         on the first position and accepts any one value corresponding
+         to the `S3-Compatible Services <#S3-compatible-services>`_
+         listed previously.  The arguments that follow in the command
+         now depend on the selected ``storeType``.
 
-The ``storeType`` argument is **mandatory**, it is always the on the
-first position and accepts any one value corresponding to the
-`S3-Compatible Services <#S3-compatible-services>`_ listed previously.
-The arguments that follow in the command now depend on the selected
-``storeType``.
+      The ``storeType`` argument is **mandatory**, it is always the on
+      the first position and accepts any one value corresponding to an
+      S3-Compatible Services.  The arguments that follow in the
+      command now depend on the selected ``storeType``.
 
-.. _pws_fileblob_local:
+      The commands to manage volumes are basically three::
 
-FileBlob (Local)
-^^^^^^^^^^^^^^^^
+        zxsuite powerstore doCreateVolume [type]
+        zxsuite powerstore doUpdateVolume [type]
+        zxsuite powerstore doDeleteVolume [name]
 
-Updated ``zxsuite`` syntax to create new FileBlob zimbra volume:
+      Volume deletion requires only the volume name, see
+      :ref:`doDeleteVolume <zxsuite_powerstore_doDeleteVolume>`
 
-::
+      The parameters required by these commands may differ depending on the
+      `[type]` of volume to be defined, which is one of the following.
 
-   # Add volume, run as zimbra user
-   zxsuite powerstore doCreateVolume FileBlob name secondary /path/to/store
-   # Delete volume
-   zxsuite powerstore doDeleteVolume name
-   # set current
-   zxsuite powerstore doUpdateVolume FileBlob name current_volume true
+      -  FileBlob (Local)-see :ref:`doCreateVolume
+         FileBlob <zxsuite_powerstore_doCreateVolume_FileBlob>` and
+         :ref:`doUpdateVolume
+         FileBlob <zxsuite_powerstore_doUpdateVolume_FileBlob>`
 
-zxsuite powerstore doCreateVolume FileBlob
+      -  Alibaba-see :ref:`doCreateVolume
+         Alibaba <zxsuite_powerstore_doCreateVolume_Alibaba>` and
+         :ref:`doUpdateVolume
+         Alibaba <zxsuite_powerstore_doUpdateVolume_Alibaba>`
 
-::
+      -  Ceph-see :ref:`doCreateVolume
+         Ceph <zxsuite_powerstore_doCreateVolume_Ceph>` and
+         :ref:`doUpdateVolume Ceph <zxsuite_powerstore_doUpdateVolume_Ceph>`
 
-   Syntax:
-       zxsuite powerstore doCreateVolume FileBlob {volume_name} {primary|secondary|index} {volume_path} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES             DEFAULT
-   volume_name(M)                  String
-   volume_type(M)                  Multiple choice     primary|secondary|index
-   volume_path(M)                  Path
-   volume_compressed(O)            Boolean             true|false                  false
-   compression_threshold_bytes(O)  Long                                            4096
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doCreateVolume FileBlob volumeName secondary /path/to/store volume_compressed true compression_threshold_bytes 4096
-
-zxsuite powerstore doUpdateVolume FileBlob
-
-::
-
-   Syntax:
-       zxsuite powerstore doUpdateVolume FileBlob {current_volume_name} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES             DEFAULT
-   current_volume_name(M)          String
-   volume_type(O)                  String              primary|secondary|index
-   volume_name(O)                  String
-   volume_path(O)                  Path
-   current_volume(O)               Boolean             true|false                  false
-   volume_compressed(O)            String
-   compression_threshold(O)        String
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-.. _pws_s3-buckets:
-
-S3 (Amazon and any S3-compatible solution not explicitly supported)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   # Add volume, run as zimbra user
-   zxsuite powerstore doCreateVolume S3 name secondary bucket_name bucket access_key accessKey secret secretString region EU_WEST_1
-   # Delete volume
-   zxsuite powerstore doDeleteVolume name
-   # set current
-   zxsuite powerstore doUpdateVolume S3 name current_volume true
-
-zxsuite powerstore doCreateVolume S3
-
-::
-
-   Syntax:
-       zxsuite powerstore doCreateVolume S3 {Name of the zimbra store} {primary|secondary} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES
-   volume_name(M)                  String              Name of the zimbra store
-   volume_type(M)                  Multiple choice     primary|secondary
-   bucket_name(O)                  String              Amazon AWS bucket
-   access_key(O)                   String              Service username
-   secret(O)                       String              Service password
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing S3 service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   region(O)                       String              Amazon AWS Region
-   url(O)                          String              S3 API compatible service url (ex: s3api.service.com)
-   prefix(O)                       String              Prefix added to blobs keys
-   use_infrequent_access(O)        Boolean             true|false
-   infrequent_access_threshold(O)  String
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   S3 AWS Bucket:
-       zxsuite powerstore doCreateVolume S3 volumeName primary bucket_name bucket access_key accessKey secret secretKey prefix objectKeysPrefix region EU_WEST_1 user_infrequent_access TRUE infrequent_access_threshold 4096
-
-   S3 compatible object storage:
-       zxsuite powerstore doCreateVolume S3 volumeName primary bucket_name bucket access_key accessKey secret secretKey url http://host/service
-
-   Using existing bucket configuration:
-       zxsuite powerstore doCreateVolume S3 volumeName primary bucket_configuration_id 316813fb-d3ef-4775-b5c8-f7d236fc629c
-
-zxsuite powerstore doUpdateVolume S3
-
-::
-
-   Syntax:
-       zxsuite powerstore doUpdateVolume S3 {current_volume_name} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES             DEFAULT
-   current_volume_name(M)          String
-   volume_name(O)                  String
-   volume_type(O)                  String              primary|secondary
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   use_infrequent_access(O)        Boolean             true|false
-   infrequent_access_threshold(O)  String
-   current_volume(O)               Boolean             true|false                  false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-.. _pws_scality_s3_compatible_object_storage:
-
-Scality (S3 compatible object storage)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   # Add volume, run as zimbra user
-   zxsuite powerstore doCreateVolume ScalityS3 name secondary bucket_name mybucket access_key accessKey1 secret verySecretKey1 url http://{IP_ADDRESS}:{PORT}
-   # Delete volume
-   zxsuite powerstore doDeleteVolume name
-   # set current
-   zxsuite powerstore doUpdateVolume ScalityS3 name current_volume true
-
-zxsuite powerstore doCreateVolume ScalityS3
-
-::
-
-   Syntax:
-       zxsuite powerstore doCreateVolume ScalityS3 {volume_name} {primary|secondary} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES
-   volume_name(M)                  String
-   volume_type(M)                  Multiple choice     primary|secondary
-   bucket_name(O)                  String              Bucket name
-   url(O)                          String              S3 API compatible service url (ex: s3api.service.com)
-   access_key(O)                   String              Service username
-   secret(O)                       String              Service password
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   prefix(O)                       String              Prefix added to blobs keys
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doCreateVolume ScalityS3 volumeName primary bucket_name bucket url http://host/service access_key accessKey secret secretKet
-   zxsuite powerstore doCreateVolume ScalityS3 volumeName primary bucket_configuration_id uuid
-
-zxsuite powerstore doUpdateVolume ScalityS3
-
-::
-
-   Syntax:
-       zxsuite powerstore doUpdateVolume ScalityS3 {current_volume_name} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES             DEFAULT
-   current_volume_name(M)          String
-   volume_name(O)                  String
-   volume_type(O)                  String              primary|secondary
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing S3 service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   current_volume(O)               Boolean             true|false                  false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-.. _pws_emc_s3_compatible_object_storage:
-
-EMC (S3 compatible object storage)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   # Add volume, run as zimbra user
-   zxsuite powerstore docreatevolume EMC name secondary bucket_name bucket access_key ACCESSKEY secret SECRET url https://url.of.storage
-   # Delete volume
-   zxsuite powerstore doDeleteVolume name
-   # set current
-   zxsuite powerstore doUpdateVolume EMC name current_volume true
-
-zxsuite powerstore doCreateVolume EMC
-
-::
-
-   Syntax:
-       zxsuite powerstore doCreateVolume EMC {volume_name} {primary|secondary} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES
-   volume_name(M)                  String
-   volume_type(M)                  Multiple choice     primary|secondary
-   bucket_name(O)                  String              Bucket name
-   url(O)                          String              S3 API compatible service url (ex: s3api.service.com)
-   access_key(O)                   String              Service username
-   secret(O)                       String              Service password
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   prefix(O)                       String              Prefix added to blobs keys
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doCreateVolume EMC volumeName primary bucket_name bucket url http://host/service access_key accessKey secret secretKet
-   zxsuite powerstore doCreateVolume EMC volumeName primary bucket_configuration_id uuid
-
-zxsuite powerstore doUpdateVolume EMC
-
-::
-
-   Syntax:
-       zxsuite powerstore doUpdateVolume EMC {current_volume_name} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES             DEFAULT
-   current_volume_name(M)          String
-   volume_name(O)                  String
-   volume_type(O)                  String              primary|secondary
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   current_volume(O)               Boolean             true|false                  false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-.. _pws_openio:
-
-OpenIO
-^^^^^^
-
-::
-
-   # add volume, run as zimbra user
-   zxsuite powerstore doCreateVolume OpenIO name secondary http://{IP_ADDRESS} Zextras OPENIO
-   # Delete volume
-   zxsuite powerstore doDeleteVolume name
-   # set current
-   zxsuite powerstore doUpdateVolume OpenIO name current_volume true
-
-zxsuite powerstore doCreateVolume OpenIO
-
-::
-
-   Syntax:
-       zxsuite powerstore doCreateVolume OpenIO {volume_name} {primary|secondary} {url} {account} {namespace} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES
-   volume_name(M)                  String
-   volume_type(M)                  Multiple choice     primary|secondary
-   url(M)                          String
-   account(M)                      String
-   namespace(M)                    String
-   proxy_port(O)                   Integer
-   account_port(O)                 Integer
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doCreateVolume OpenIO volumeName primary http://host/service
-
-accountName namespaceString proxy_port 6006 account_port 6009
-
-::
-
-   Syntax:
-   zxsuite powerstore doUpdateVolume OpenIO {current_volume_name} [attr1 value1
-   [attr2 value2...]]
-   PARAMETER LIST
-   NAME                            TYPE                EXPECTED VALUES             DEFAULT
-   current_volume_name(M)          String
-   volume_name(O)                  String
-   volume_type(O)                  String              primary|secondary
-   url(O)                          String
-   account(O)                      String
-   namespace(O)                    String
-   proxy_port(O)                   Integer
-   account_port(O)                 Integer
-   current_volume(O)               Boolean             true|false                  false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-.. _pws_swift:
-
-Swift
-^^^^^
-
-::
-
-   # add volume, run as zimbra user
-   zxsuite powerstore doCreateVolume Swift name secondary http://{IP_ADDRESS}:8080/auth/v1.0/ user:username password maxDeleteObjectsCount 100
-   # Delete volume
-   zxsuite powerstore doDeleteVolume name
-   # set current
-   zxsuite powerstore doUpdateVolume Swift name current_volume true
-
-zxsuite powerstore doCreateVolume Swift
-
-::
-
-   Syntax:
-       zxsuite powerstore doCreateVolume Swift {volume_name} {primary|secondary} {url} {username} {password} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                        TYPE        EXPECTED VALUES             DEFAULT
-   volume_name(O)              String
-   volume_type(O)              String      primary|secondary
-   url(O)                      String
-   username(O)                 String
-   password(O)                 String
-   maxDeleteObjectsCount(O)    Integer     Number of object in a single bulk delete request
-                                                                       500
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doCreateVolume Swift volumeName primary http://host/service accountName password max_delete_objects_count 100
-
-zxsuite powerstore doUpdateVolume Swift
-
-::
-
-   Syntax:
-       zxsuite powerstore doUpdateVolume Swift {current_volume_name} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                        TYPE        EXPECTED VALUES             DEFAULT
-   current_volume_name(M)      String
-   volume_name(O)              String
-   volume_type(O)              String      primary|secondary
-   url(O)                      String
-   username(O)                 String
-   password(O)                 String
-   maxDeleteObjectsCount(O)    Integer     Number of object in a single bulk delete request
-                                                                       500
-   current_volume(O)           Boolean     true|false                  false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-.. _pws_cloudian_s3_compatible_object_storage:
-
-Cloudian (S3 compatible object storage)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-::
-
-   # add volume, run as zimbra user
-   zxsuite powerstore doCreateVolume Cloudian name secondary bucket_name bucket access_key ACCESSKEY secret SECRET url https://url.of.storage
-   # Delete volume
-   zxsuite powerstore doDeleteVolume name
-   # set current
-   zxsuite powerstore doUpdateVolume Cloudian name current_volume true
-
-zxsuite powerstore doCreateVolume Cloudian
-
-::
-
-   Syntax:
-       zxsuite powerstore doCreateVolume Cloudian {volume_name} {primary|secondary} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES
-   volume_name(M)                  String
-   volume_type(M)                  Multiple choice     primary|secondary
-   bucket_name(O)                  String              Bucket name
-   url(O)                          String              S3 API compatible service url (ex: s3api.service.com)
-   access_key(O)                   String              Service username
-   secret(O)                       String              Service password
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   prefix(O)                       String              Prefix added to blobs keys
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doCreateVolume Cloudian volumeName primary bucket_name bucket url http://host/service access_key accessKey secret secretKet
-   zxsuite powerstore doCreateVolume Cloudian volumeName primary bucket_configuration_id uuid
-
-zxsuite powerstore doUpdateVolume Cloudian
-
-::
-
-   Syntax:
-       zxsuite powerstore doUpdateVolume Cloudian {current_volume_name} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                            TYPE                EXPECTED VALUES             DEFAULT
-   current_volume_name(M)          String
-   volume_name(O)                  String
-   volume_type(O)                  String              primary|secondary
-   server_prefix(O)                String              Prefix to the server id used in all objects keys
-   bucket_configuration_id(O)      String              UUID for already existing service credentials
-                                                       (zxsuite config global get attribute s3BucketConfigurations)
-   current_volume(O)               Boolean             true|false                  false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-.. _pws_volume_deletion:
-
-Volume Deletion
-~~~~~~~~~~~~~~~
-
-zxsuite powerstore doDeleteVolume
-
-::
-
-   Syntax:
-       zxsuite powerstore doDeleteVolume {volume_name}
-
-   PARAMETER LIST
-
-   NAME                            TYPE
-   volume_name(M)                  String
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore dodeletevolume hsm
-   Deletes volume with name hsm
-
-.. _pws_move_all_data_from_a_volume_to_another:
-
-Move all data from a volume to another
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-   Syntax:
-      zxsuite hsm doVolumeToVolumeMove {source_volume_name} {destination_volume_name} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                          TYPE       EXPECTED VALUES    DEFAULT
-   source_volume_name(M)         String
-   destination_volume_name(M)    String
-   only_drive(O)                 Boolean    true|false         false
-   read_error_threshold(O)       Integer
-   policy(O)                     String                        none
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite hsm doVolumeToVolumeMove sourceVolume destVolume
-   Moves the whole sourceVolume to destVolume
-
+      -  OpenIO—​see :ref:`doCreateVolume
+         OpenIO <zxsuite_powerstore_doCreateVolume_OpenIO>` and
+         :ref:`doUpdateVolume
+         OpenIO <zxsuite_powerstore_doUpdateVolume_OpenIO>`
+
+      -  Swift—​see :ref:`doCreateVolume
+         Swift <zxsuite_powerstore_doCreateVolume_Swift>` and
+         :ref:`doUpdateVolume Swift <zxsuite_powerstore_doUpdateVolume_Swift>`
+
+      -  Cloudian (S3 compatible object storage)--see :ref:`doCreateVolume
+         Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>` and
+         :ref:`doUpdateVolume
+         Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`
+
+      -  S3 (Amazon and any S3-compatible solution not explicitly
+         supported)--see :ref:`doCreateVolume
+         S3 <zxsuite_powerstore_doCreateVolume_S3>` and :ref:`doUpdateVolume
+         S3 <zxsuite_powerstore_doUpdateVolume_S3>`
+
+      -  Scality (S3 compatible object storage)--see
+         :ref:`doCreateVolume_ScalityS3 <zxsuite_powerstore_doCreateVolume_ScalityS3>`
+         and
+         :ref:`doUpdateVolume_ScalityS3 <zxsuite_powerstore_doUpdateVolume_ScalityS3>`
+
+      -  EMC (S3 compatible object storage)--see :ref:`doCreateVolume
+         EMC <zxsuite_powerstore_doCreateVolume_EMC>` and :ref:`doUpdateVolume
+         EMC <zxsuite_powerstore_doUpdateVolume_EMC>`
+ 
+      -  Custom S3 :octicon:`dash` see :ref:`doCreateVolume
+         CustomS3 <zxsuite_powerstore_doCreateVolume_CustomS3>` \|
+         :ref:`doUpdateVolume
+         CustomS3 <zxsuite_powerstore_doUpdateVolume_CustomS3>`
+   
 .. _pws_hsm:
 
 Hierarchical Storage Management
@@ -907,6 +474,41 @@ Using HSM requires a clear understanding of some related terms:
 -  Secondary Store: The *slow-but-cheap* store where *older* data will
    be moved to.
 
+.. _pws_zextras_powerstore_moving_items_between_stores:
+
+Moving Items between Stores
+---------------------------
+
+The main feature of the Zextras Powerstore module is the ability to
+apply defined HSM policies.
+
+The move can be triggered in three ways:
+
+-  Click :bdg-dark-line:`Apply Policy` button in the Administration Zimlet.
+
+-  Start the ``doMoveBlobs`` operation through the CLI.
+
+-  Enable Policy Application Scheduling in the Administration Zimlet and
+   wait for it to start automatically.
+
+Once the move is started, the following operations are performed:
+
+-  Zextras Powerstore scans through the Primary Store to see which items
+   comply with the defined policy.
+
+-  All the Blobs of the items found in the first step are copied to the
+   Secondary Store.
+
+-  The database entries related to the copied items are updated to
+   reflect the move.
+
+-  If the second and the third steps are completed successfully (and
+   only in this case), the old Blobs are deleted from the Primary Store.
+
+The Move operation is *stateful* - each step is executed only if the
+previous step has been completed successfully - so the risk of data loss
+during a Move operation is nonexistent.
+
 .. _pws_domoveblobs:
 
 doMoveBlobs
@@ -943,17 +545,15 @@ What is Moved?
 
 Every item that complies with the specified HSM policy is moved.
 
-Example:
+.. card:: Example
 
-The following policy
+   The following policy::
+     
+     message,document:before:-20day
+     message:before:-10day has:attachment
 
-::
-
-   message,document:before:-20day
-   message:before:-10day has:attachment
-
-will move all emails and documents older than 20 days along with all
-emails older than 10 days that contain an attachment.
+   will move all emails and documents older than 20 days along with all
+   emails older than 10 days that contain an attachment.
 
 .. warning:: By default, results from the Trash folder do not appear
    in any search--and this includes the HSM Policy. In order to ensure
@@ -988,9 +588,9 @@ will probably be slightly higher (or much higher, depending on the
 number and size of the emails on the server).
 
 This is because in the first policy, the first condition
-(message,document:before:-20day) will loop on all items and move many of
-them to the Current Secondary Store, leaving fewer items for the second
-condition to loop on.
+(``message,document:before:-20day``) will loop on all items and move
+many of them to the Current Secondary Store, leaving fewer items for
+the second condition to loop on.
 
 Likewise, having the ``message:before:-10day has:attachment`` as the
 first condition will leave more items for the second condition to loop
@@ -1010,55 +610,56 @@ defined policy.
 
 Zextras Powerstore gives you three different options:
 
--  Via the Administration Zimlet
+- Via the Administration Zimlet
 
--  Via the CLI
+- Via the CLI
 
--  Through Scheduling
+- Through Scheduling
 
 .. warning:: Items in **Trash** or dumpster folders are not moved to
    the secondary store by the HSM module. Currently, there is no
    option to define a policy for **Trash** and dumpster.
 
-.. _pws_apply_the_hsm_policy_via_the_administration_zimlet:
+.. grid::
+   :gutter: 3
 
-Apply the HSM Policy via the Administration Zimlet
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 4
 
-To apply the HSM Policy via the Administration Zimlet:
+      To apply the HSM Policy via the Administration Zimlet:
 
--  Log into the Zimbra Administration Console.
+      - Log into the Zimbra Administration Console
 
--  Click the *Zextras Powerstore* entry in the Administration Zimlet.
+      - Click the *Zextras Powerstore* entry in the Administration Zimlet.
 
--  Click the *Apply Policy* button.
+      - Click the :bdg-dark-line:`Apply Policy` button.
 
-.. _pws_apply_the_hsm_policy_via_the_cli:
+      .. _pws_apply_the_hsm_policy_via_the_cli:
 
-Apply the HSM Policy via the CLI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via the CLI
+      :columns: 4
 
-To apply the HSM Policy via the CLI, run the following command as the
-*zimbra* user:
+      To apply the HSM Policy via the CLI, run the following command as the
+      *zimbra* user:
 
-``zxsuite powerstore doMoveBlobs``
+      ``zxsuite powerstore doMoveBlobs``
 
-.. _pws_apply_the_hsm_policy_through_scheduling:
+      .. _pws_apply_the_hsm_policy_through_scheduling:
 
-Apply the HSM Policy through Scheduling
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   .. grid-item-card:: Via Scheduling
+      :columns: 4
 
-To schedule a daily execution of the ``doMoveBlobs`` operation:
+      To schedule a daily execution of the ``doMoveBlobs`` operation:
 
--  Log into the Zimbra Administration Console.
+      - Log into the Zimbra Administration Console
 
--  Click the *Zextras Powerstore* entry in the Administration Zimlet.
+      - Click the *Zextras Powerstore* entry in the Administration Zimlet
 
--  Enable scheduling by selecting the ``Enable HSM Session scheduling:``
-   button.
+      - Enable scheduling by selecting the :bdg-dark-line:`Enable HSM
+        Session scheduling:` button
 
--  Select the hour to run the operation under
-   ``HSM Session scheduled for:``.
+      - Select the hour to run the operation under `HSM Session
+        scheduled for:`.
 
 .. _pws_domoveblobs_stats_and_info:
 
@@ -1116,50 +717,44 @@ Policies can be defined both from the Zextras Powerstore tab of the
 Administration Zimlet and from the CLI. You can specify a Zimbra Search
 in both cases.
 
-.. _pws_from_the_administration_zimlet:
+.. grid::
 
-From the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-To define a policy from the Administration Zimlet:
+      To define a policy from the Administration Zimlet:
 
--  Log into the Zimbra Administration Console.
+      -  Log into the Zimbra Administration Console.
 
--  Click *Zextras Powerstore* on the Administration Zimlet.
+      -  Click *Zextras Powerstore* on the Administration Zimlet.
 
--  Click the *Add* button in the Storage Management Policy section.
+      -  Click the *Add* button in the Storage Management Policy section.
 
--  Select the Item Types from the ``Items to Move:`` list.
+      -  Select the Item Types from the ``Items to Move:`` list.
 
--  Enter the Item Age from the ``Move Items older than:`` box.
+      -  Enter the Item Age from the ``Move Items older than:`` box.
 
--  **OPTIONAL**: Add a Zimbra Search in the *Additional Options* box.
+      -  **OPTIONAL**: Add a Zimbra Search in the *Additional Options* box.
 
--  You can add multiple *lines* to narrow down your policy. Every *line*
-   will be evaluated and executed after the line before has been
-   applied.
+      -  You can add multiple *lines* to narrow down your policy. Every *line*
+         will be evaluated and executed after the line before has been
+         applied (i.e., in top-down fashion).
 
-.. _pws_from_the_cli:
+   .. grid-item-card:: Via  the CLI
+      :columns: 6                       
 
-From the CLI
-~~~~~~~~~~~~
+      Two policy management commands are available in the CLI::
 
-Two policy management commands are available in the CLI:
+         zxsuite powerstore setHSMPolicy hsm_policy
 
-.. container:: informalexample
+         zxsuite powerstore +setHsmPolicy hsm_policy
 
-   zxsuite powerstore setHSMPolicy *hsm_policy*
-
-.. container:: informalexample
-
-   zxsuite powerstore +setHsmPolicy *hsm_policy*
-
-These command share the same syntax (see
-`setHSMPolicy <./cli.xml#powerstore_setHSMPolicy>`_ and
-`+setHsmPolicy <./cli.xml#powerstore_plus_setHsmPolicy>`_); the
-difference is that ``setHSMPolicy`` creates **new** policies,
-*replacing* existing one, while ``+setHSMPolicy`` *adds* policies to
-existing ones.
+      These command share the same syntax (see
+      :ref:`setHSMPolicy <zxsuite_powerstore_setHSMPolicy>` and
+      :ref:`+setHsmPolicy <zxsuite_powerstore_+setHsmPolicy>`); the
+      difference is that ``setHSMPolicy`` creates **new** policies,
+      *replacing* existing one, while ``+setHSMPolicy`` *adds* policies to
+      existing ones.
 
 .. _pws_zextras_powerstore_and_s3_buckets:
 
@@ -1200,10 +795,10 @@ officially supported platforms:
 Primary Volumes and the "Incoming" directory
 --------------------------------------------
 
-In order to create a remote *Primary Store* on a mailbox server a local
-"Incoming" directory must exist on that server. The default directory is
-``/opt/zimbra/incoming``, but you can check or modify the current value
-using these commands:
+In order to create a remote *Primary Store* on a mailbox server a
+local "Incoming" directory must exist on that server. The default
+directory is :file:`/opt/zimbra/incoming`; you can check or modify
+the current value using these commands:
 
 .. code:: bash
 
@@ -1276,37 +871,15 @@ volume of the following type: Amazon S3, Ceph, Cloudian, EMC, Scality
 S3, Custom S3, Yandex, Alibaba.
 
 It’s also possible to create new buckets via the CLI using the
-``doCreateBucket`` command:
-
-::
-
-   zimbra@mail:~$ zxsuite core doCreateBucket
-
-   Create a bucket configuration
-
-     S3                       - Add a bucket configuration for S3 Object Storage
-                                zxsuite core doCreateBucket S3 {Amazon AWS bucket} {Service username} {Service password} [attr1 value1 [attr2 value2...]]
-
-     Ceph                     - Add a bucket configuration for Ceph Object Storage
-                                zxsuite core doCreateBucket Ceph {Bucket name} {Service username} {Service password} {S3 API compatible service url (ex: s3api.service.com)} [attr1 value1 [attr2 value2...]]
-
-     Cloudian                 - Add a bucket configuration for Cloudian Object Storage
-                                zxsuite core doCreateBucket Cloudian {Bucket name} {Service username} {Service password} {S3 API compatible service url (ex: s3api.service.com)} [attr1 value1 [attr2 value2...]]
-
-     EMC                      - Add a bucket configuration for EMC Object Storage
-                                zxsuite core doCreateBucket EMC {Bucket name} {Service username} {Service password} {S3 API compatible service url (ex: s3api.service.com)} [attr1 value1 [attr2 value2...]]
-
-     ScalityS3                - Add a bucket configuration for ScalityS3 Object Storage
-                                zxsuite core doCreateBucket ScalityS3 {Bucket name} {Service username} {Service password} {S3 API compatible service url (ex: s3api.service.com)} [attr1 value1 [attr2 value2...]]
-
-     CustomS3                 - Add a bucket configuration for CustomS3 Object Storage
-                                zxsuite core doCreateBucket CustomS3 {Bucket name} {Service username} {Service password} {S3 API compatible service url (ex: s3api.service.com)} [attr1 value1 [attr2 value2...]]
-
-     Yandex                   - Add a bucket configuration for Yandex Object Storage
-                                zxsuite core doCreateBucket Yandex {Bucket name} {Service username} {Service password} [attr1 value1 [attr2 value2...]]
-
-     Alibaba                  - Add a bucket configuration for Alibaba Object Storage
-                                zxsuite core doCreateBucket Alibaba {Bucket name} {Service username} {Service password} [attr1 value1 [attr2 value2...]]
+:command:`zxsuite-core-doCreateBucket` commands: [ :ref:`Alibaba
+<zxsuite_core_doCreateBucket_Alibaba>` :octicon:`dash` :ref:`Ceph
+<zxsuite_core_doCreateBucket_Ceph>` :octicon:`dash` :ref:`Cloudian
+<zxsuite_core_doCreateBucket_Cloudian>` :octicon:`dash` :ref:`CustomS3
+<zxsuite_core_doCreateBucket_CustomS3>` :octicon:`dash` :ref:`EMC
+<zxsuite_core_doCreateBucket_EMC>` :octicon:`dash` :ref:`S3
+<zxsuite_core_doCreateBucket_S3>` :octicon:`dash` :ref:`ScalityS3
+<zxsuite_core_doCreateBucket_ScalityS3>` :octicon:`dash`
+:ref:`Yandex<zxsuite_core_doCreateBucket_Yandex>` ]
 
 .. _pws_bucket_paths_and_naming:
 
@@ -1316,9 +889,9 @@ Bucket paths and naming
 Files are stored in a bucket according to a well-defined path, which can
 be customized at will in order to make your bucket’s contents easier to
 understand even on multi-server environments with multiple secondary
-volumes:
+volumes::
 
-``/Bucket Name/Destination Path/[Volume Prefix-]serverID/``
+  /Bucket Name/Destination Path/[Volume Prefix-]serverID/
 
 -  The **Bucket Name** and **Destination Path** are not tied to the
    volume itself, and there can be as many volumes under the same
@@ -1346,9 +919,9 @@ Administration Console:
 
 -  Enter the required volume information
 
-.. important:: Each volume type will require different information to
-   be set up, please refer to your storage provider’s online resources
-   to obtain those details.
+.. note:: Each volume type will require different information to be
+   set up, please refer to your storage provider’s online resources to
+   obtain those details.
 
 .. _pws_editing_volumes_with_zextras_powerstore:
 
@@ -1416,41 +989,49 @@ In Amazon’s IAM, you can set access policies for your users. It’s
 mandatory that the user of your Access Key and Secret has a set of
 appropriate rights both on the bucket itself and on its contents. For
 easier management, we recommend granting full rights as shown in the
-following example:
+following example.
 
-::
+.. card::
 
-   {
-       `Version`: `[LATEST API VERSION]`,
-       `Statement`: [
-           {
-               `Sid`: `[AUTOMATICALLY GENERATED]`,
-               `Effect`: `Allow`,
-               `Action`: [
-                   `s3:*`
-               ],
-               `Resource`: [
-                   `[BUCKET ARN]/*`,
-                   `[BUCKET ARN]`
-               ]
-           }
-       ]
-   }
+   Example structure of user's permission
+   ^^^^
+   
+   .. code:: 
 
-.. warning:: This is not a valid configuration policy. Don’t copy and
-   paste it into your user’s settings as it won’t be validated.
+      {
+          `Version`: `[LATEST API VERSION]`,
+          `Statement`: [
+              {
+                  `Sid`: `[AUTOMATICALLY GENERATED]`,
+                  `Effect`: `Allow`,
+                  `Action`: [
+                      `s3:*`
+                  ],
+                  `Resource`: [
+                      `[BUCKET ARN]/*`,
+                      `[BUCKET ARN]`
+                  ]
+              }
+          ]
+      }
+   ++++
+
+   .. warning:: This is not a valid configuration policy. Don’t copy and
+      paste it into your user’s settings as it won’t be validated.
 
 If you only wish to grant minimal permissions, change the ``Action``
 section to:
 
-::
+.. card::
 
-   "Action": [
-                   `s3:PutObject`,
-                   `s3:GetObject`,
-                   `s3:DeleteObject`,
-                   `s3:AbortMultipartUpload`
-                 ],
+   .. code::
+
+      "Action": [
+                      `s3:PutObject`,
+                      `s3:GetObject`,
+                      `s3:DeleteObject`,
+                      `s3:AbortMultipartUpload`
+                    ],
 
 The bucket’s ARN is expressed according to Amazon’s standard naming
 format: **arn:partition:service:region:account-id:resource**. For more
@@ -1464,9 +1045,9 @@ Bucket Paths and Naming
 Files are stored in a bucket according to a well-defined path, which can
 be customized at will to make your bucket’s contents easier to
 understand (even on multi-server environments with multiple secondary
-volumes):
+volumes)::
 
-/**Bucket Name**/**Destination Path**/**serverID**/
+  /Bucket Name/Destination Path/serverID/
 
 The **Bucket Name** and **Destination Path** are not tied to the volume
 itself, and there can be as many volumes under the same destination path
@@ -1487,9 +1068,10 @@ any file larger than the ``Infrequent Access
 Threshold`` value to this storage class as long as the option has been
 enabled on the volume.
 
-For more information about Infrequent Access, please refer to the
-official Amazon S3 `Infrequent Access Documentation
-<https://aws.amazon.com/s3/storage-classes/#Infrequent_access>`_.
+.. seealso::
+   
+   The official Amazon S3 documentation on `Infrequent Access
+   <https://aws.amazon.com/s3/storage-classes/#Infrequent_access>`_
 
 .. _pws_intelligent_tiering_storage_class:
 
@@ -1501,9 +1083,10 @@ Zextras Powerstore is compatible with the
 appropriate Intelligent Tiering flag on all files, as long as the option
 has been enabled on the volume.
 
-For more information about Intelligent Tiering, please refer to the
-official Amazon S3 `Intelligent Tiering Documentation
-<https://aws.amazon.com/s3/storage-classes/#Unknown_or_changing_access/>`_.
+.. seealso::
+   
+   The official Amazon S3 documentation on `Intelligent Tiering
+   <https://aws.amazon.com/s3/storage-classes/#Unknown_or_changing_access/>`_
 
 .. _pws_item_deduplication:
 
@@ -1536,62 +1119,75 @@ list of cached items. If there is a match, a hard link to the cached
 message’s BLOB is created instead of a whole new BLOB for the message.
 
 The dedupe cache is managed in Zimbra through the following config
-attributes:
+attributes.
 
-**zimbraPrefDedupeMessagesSentToSelf**
+.. grid::
+   :gutter: 2
+            
+   .. grid-item-card:: 
+      :columns: 3   
 
-Used to set the deduplication behavior for sent-to-self messages.
+      **zimbraPrefDedupeMessagesSentToSelf**
+      ^^^^^
 
-::
+      Used to set the deduplication behavior for sent-to-self
+      messages::
+      
+         <attr id="144" name="zimbraPrefDedupeMessagesSentToSelf" type="enum" value="dedupeNone,secondCopyifOnToOrCC,dedupeAll" cardinality="single"
+         optionalIn="account,cos" flags="accountInherited,domainAdminModifiable">
+           <defaultCOSValue>dedupeNone</defaultCOSValue>
+           <desc>dedupeNone|secondCopyIfOnToOrCC|moveSentMessageToInbox|dedupeAll</desc>
+         </attr>
+         
+   .. grid-item-card::
+      :columns: 3
 
-   <attr id="144" name="zimbraPrefDedupeMessagesSentToSelf" type="enum" value="dedupeNone,secondCopyifOnToOrCC,dedupeAll" cardinality="single"
-   optionalIn="account,cos" flags="accountInherited,domainAdminModifiable">
-     <defaultCOSValue>dedupeNone</defaultCOSValue>
-     <desc>dedupeNone|secondCopyIfOnToOrCC|moveSentMessageToInbox|dedupeAll</desc>
-   </attr>
+      **zimbraMessageIdDedupeCacheSize**
+      ^^^^
 
-**zimbraMessageIdDedupeCacheSize**
+      Number of cached Message IDs::
 
-Number of cached Message IDs.
+         <attr id="334" name="zimbraMessageIdDedupeCacheSize" type="integer" cardinality="single" optionalIn="globalConfig" min="0">
+           <globalConfigValue>3000</globalConfigValue>
+           <desc>
+             Number of Message-Id header values to keep in the LMTP dedupe cache.
+             Subsequent attempts to deliver a message with a matching Message-Id
+             to the same mailbox will be ignored.  A value of 0 disables deduping.
+           </desc>
+         </attr>
 
-::
+   .. grid-item-card:: 
+      :columns: 3
 
-   <attr id="334" name="zimbraMessageIdDedupeCacheSize" type="integer" cardinality="single" optionalIn="globalConfig" min="0">
-     <globalConfigValue>3000</globalConfigValue>
-     <desc>
-       Number of Message-Id header values to keep in the LMTP dedupe cache.
-       Subsequent attempts to deliver a message with a matching Message-Id
-       to the same mailbox will be ignored.  A value of 0 disables deduping.
-     </desc>
-   </attr>
+      **zimbraPrefMessageIdDedupingEnabled**
+      ^^^^
+      
+      Manage deduplication at account or COS-level::
+        
 
-**zimbraPrefMessageIdDedupingEnabled**
+         <attr id="1198" name="zimbraPrefMessageIdDedupingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited"
+          since="8.0.0">
+           <defaultCOSValue>TRUE</defaultCOSValue>
+           <desc>
+             Account-level switch that enables message deduping.  See zimbraMessageIdDedupeCacheSize for more details.
+           </desc>
+         </attr>
 
-Manage deduplication at account or COS-level.
+   .. grid-item-card:: 
+      :columns: 3
 
-::
+      **zimbraMessageIdDedupeCacheTimeout**
+      ^^^^
+      
+      Timeout for each entry in the dedupe cache::
 
-   <attr id="1198" name="zimbraPrefMessageIdDedupingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited"
-    since="8.0.0">
-     <defaultCOSValue>TRUE</defaultCOSValue>
-     <desc>
-       Account-level switch that enables message deduping.  See zimbraMessageIdDedupeCacheSize for more details.
-     </desc>
-   </attr>
-
-**zimbraMessageIdDedupeCacheTimeout**
-
-Timeout for each entry in the dedupe cache.
-
-::
-
-   <attr id="1340" name="zimbraMessageIdDedupeCacheTimeout" type="duration" cardinality="single" optionalIn="globalConfig" since="7.1.4">
-     <globalConfigValue>0</globalConfigValue>
-     <desc>
-       Timeout for a Message-Id entry in the LMTP dedupe cache. A value of 0 indicates no timeout.
-       zimbraMessageIdDedupeCacheSize limit is ignored when this is set to a non-zero value.
-     </desc>
-   </attr>
+         <attr id="1340" name="zimbraMessageIdDedupeCacheTimeout" type="duration" cardinality="single" optionalIn="globalConfig" since="7.1.4">
+           <globalConfigValue>0</globalConfigValue>
+           <desc>
+             Timeout for a Message-Id entry in the LMTP dedupe cache. A value of 0 indicates no timeout.
+             zimbraMessageIdDedupeCacheSize limit is ignored when this is set to a non-zero value.
+           </desc>
+         </attr>
 
 (older Zimbra versions might use different attributes or lack some of
 them)
@@ -1620,45 +1216,26 @@ Running a Volume Deduplication
 
 .. _pws_via_the_administration_zimlet:
 
-Via the Administration Zimlet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. grid::
+   :gutter: 3
 
-To run a volume deduplication via the Administration Zimlet, simply
-click on the *Zextras Powerstore* tab, select the volume you wish to
-deduplicate and press the *Deduplicate* button.
+   .. grid-item-card::  Via the Administration Zimlet
+      :columns: 6
 
-.. _pws_via_the_cli:
+      To run a volume deduplication via the Administration Zimlet, simply
+      click on the *Zextras Powerstore* tab, select the volume you wish to
+      deduplicate and press the *Deduplicate* button.
 
-Via the CLI
-~~~~~~~~~~~
+   .. grid-item-card::  Via the CLI
+      :columns: 6
 
-To run a volume deduplication through the CLI, use the ``doDeduplicate``
-command:
+      To run a volume deduplication through the CLI, use the :ref:`zxsuite
+      powerstore doDeduplicate <zxsuite_powerstore_doDeduplicate>` command.
 
-::
-
-   zimbra@mailserver:~$ zxsuite powerstore doDeduplicate
-
-   command doDeduplicate requires more parameters
-
-   Syntax:
-      zxsuite powerstore doDeduplicate {volume_name} [attr1 value1 [attr2 value2...
-
-   PARAMETER LIST
-
-   NAME              TYPE           EXPECTED VALUES    DEFAULT
-   volume_name(M)    String[,..]
-   dry_run(O)        Boolean        true|false         false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore dodeduplicate secondvolume
-   Starts a deduplication on volume secondvolume
-
-To list all available volumes, you can use the *\`zxsuite powerstore
-getAllVolumes\`* command.
+      .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doDeduplicate.rst            
+      
+To list all available volumes, you can use the :ref:`getAllVolumes
+<zxsuite_powerstore_getAllVolumes>` command.
 
 .. _pws_dodeduplicate_stats:
 
@@ -1667,12 +1244,8 @@ getAllVolumes\`* command.
 
 The ``doDeduplicate`` operation is a valid target for the ``monitor``
 command, meaning that you can watch the command’s statistics while it’s
-running through the ``zxsuite powerstore monitor [operationID]``
-command.
-
-*Sample Output*
-
-::
+running through the :command:`zxsuite powerstore monitor [operationID]`
+command. Sample Output is::
 
    Current Pass (Digest Prefix):  63/64
     Checked Mailboxes:             148/148
@@ -1748,212 +1321,122 @@ The following volume operations are available:
 **getVolumeStats**: Display information about a volume’s size and number
 of thereby contained items/blobs.
 
-.. _pws_volume_operation_analysis:
+.. grid::
+   :gutter: 3
 
-Volume Operation Analysis
--------------------------
+   .. grid-item-card::
+      :columns: 6
 
-.. _pws_docheckblobs:
+      doCheckBlobs
+      ^^^^
 
-doCheckBlobs
-~~~~~~~~~~~~
+      .. dropdown:: CLI full reference
 
-Usage
+         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doCheckBlobs.rst
 
-::
+      .. rubric:: Description and Tips
 
-   zimbra@mail:~$ zxsuite powerstore doCheckBlobs
+      The doCheckBlobs operation can be used to run BLOB coherency checks on
+      volumes and mailboxes. This can be useful when experiencing issues
+      related to broken or unviewable items, which are often caused because
+      either Zimbra cannot find or access the BLOB file related to an item or
+      there is an issue with the BLOB content itself.
 
-   command doCheckBlobs requires more parameters
+      Specifically, the following checks are made:
 
-   Syntax:
-      zxsuite powerstore doCheckBlobs {start} [attr1 value1 [attr2 value2...
+      -  DB-to-BLOB coherency: For every Item entry in Zimbra’s DB, check
+         whether the appropriate BLOB file exists.
 
-   PARAMETER LIST
+      -  BLOB-to-DB coherency: For every BLOB file in a volume/mailbox, check
+         whether the appropriate DB data exists.
 
-   NAME                           TYPE            EXPECTED VALUES    DEFAULT
-   action(M)                      String          start
-   volume_ids(O)                  Integer[,..]    1,3
-   mailbox_ids(O)                 Integer[,..]    2,9,27
-   missing_blobs_crosscheck(O)    Boolean         true|false         true
-   traced(O)                      Boolean         true|false         false
+      -  Filename coherency: Checks the coherency of each BLOB’s filename with
+         its content (as BLOBs are named after their file’s SHA hash).
 
-   (M) == mandatory parameter, (O) == optional parameter
+      -  Size coherency: For every BLOB file in a volume/mailbox, checks
+         whether the BLOB file’s size is coherent with the expected size
+         (stored in the DB).
 
-   Usage example:
+      .. important:: The old ``zmblobchk`` command is deprecated and
+         replaced by ``zxsuite powerstore doCheckBlobs`` on all
+         infrastructures using Zextras Powerstore module.
 
-   Usage examples:
-   zxsuite powerstore doCheckBlobs start: Perform a BLOB coherency check on all message volumes.
+   .. grid-item-card::
+      :columns: 6
 
-   zxsuite powerstore doCheckBlobs start volume_ids 1,3: Perform a BLOB coherency check on volumes 1 and 3.
+      doDeduplicate
+      ^^^^
+      
+      .. dropdown:: CLI full reference
+                    
+         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doDeduplicate.rst
+                   
+   .. grid-item-card::
+      :columns: 6
 
-   zxsuite powerstore doCheckBlobs start mailbox_ids 2,9,27: Perform a BLOB coherency check on mailboxes 2,9 and 27.
 
-   zxsuite powerstore doCheckBlobs start missing_blobs_crosscheck false: Perform a BLOB coherency check without checking on other volumes.
+      doVolumeToVolumeMove
+      ^^^^
 
-   zxsuite powerstore doCheckBlobs start traced true: Perform a BLOB coherency check, logging even the correct checked items.
+      .. dropdown:: CLI full reference
 
-Description and Tips
+         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doVolumeToVolumeMove.rst
 
-The doCheckBlobs operation can be used to run BLOB coherency checks on
-volumes and mailboxes. This can be useful when experiencing issues
-related to broken or unviewable items, which are often caused because
-either Zimbra cannot find or access the BLOB file related to an item or
-there is an issue with the BLOB content itself.
+      .. rubric:: **Description and Tips**
 
-Specifically, the following checks are made:
+      This command can prove highly useful in all situations where you need to
+      stop using a volume, such as:
 
--  DB-to-BLOB coherency: For every Item entry in Zimbra’s DB, check
-   whether the appropriate BLOB file exists.
+      -  Decommissioning old hardware: If you want to get rid of an old disk
+         in a physical server, create new volumes on other/newer disks and
+         move your data there.
 
--  BLOB-to-DB coherency: For every BLOB file in a volume/mailbox, check
-   whether the appropriate DB data exists.
+      -  Fixing *little mistakes*: If you accidentally create a new volume in
+         the wrong place, move the data to another volume.
 
--  Filename coherency: Checks the coherency of each BLOB’s filename with
-   its content (as BLOBs are named after their file’s SHA hash).
+      -  Centralize volumes: Centralize and move volumes as you please, for
+         example, if you redesigned your storage infrastructure or you are
+         tidying up your Zimbra volumes.
 
--  Size coherency: For every BLOB file in a volume/mailbox, checks
-   whether the BLOB file’s size is coherent with the expected size
-   (stored in the DB).
+      .. hint:: Starting from version 3.0.10, Zextras Powerstore can also
+         move "Index" volumes.
 
-.. important:: The old ``zmblobchk`` command is deprecated and
-   replaced by ``zxsuite powerstore doCheckBlobs`` on all
-   infrastructures using Zextras Powerstore module.
+   .. grid-item-card::
+      :columns: 6
 
-.. _pws_dodeduplicate:
 
-doDeduplicate
-~~~~~~~~~~~~~
+      getVolumeStats
+      ^^^^^^^^^^^^
 
-Usage
+      .. dropdown:: CLI full reference
 
-::
+         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doCheckBlobs.rst
 
-   zimbra@mail:~$ zxsuite powerstore doDeduplicate
+      .. rubric:: **Description and Tips**
 
-   command doDeduplicate requires more parameters
+      This command provides the following information about a volume:
 
-   Syntax:
-      zxsuite powerstore doDeduplicate {volume_name} [attr1 value1 [attr2 value2...
+      .. csv-table::
+         :header: "Name","Description"
+         :widths: 20, 80
 
-   PARAMETER LIST
-
-   NAME              TYPE           EXPECTED VALUES    DEFAULT
-   volume_name(M)    String[,..]
-   dry_run(O)        Boolean        true|false         false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore dodeduplicate secondvolume
-   Starts a deduplication on volume secondvolume
-
-.. _pws_dovolumetovolumemove:
-
-doVolumeToVolumeMove
-~~~~~~~~~~~~~~~~~~~~
-
-**Usage**
-
-::
-
-   zimbra@mail:~$ zxsuite powerstore doVolumeToVolumeMove
-
-   command doVolumeToVolumeMove requires more parameters
-
-   Syntax:
-      zxsuite powerstore doVolumeToVolumeMove {source_volume_name} {destination_volume_name}
-
-   PARAMETER LIST
-
-   NAME                          TYPE
-   source_volume_name(M)         String
-   destination_volume_name(M)    String
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doVolumeToVolumeMove sourceVolume destVolume
-   Moves the whole sourceVolume to destVolume
-
-**Description and Tips**
-
-This command can prove highly useful in all situations where you need to
-stop using a volume, such as:
-
--  Decommissioning old hardware: If you want to get rid of an old disk
-   in a physical server, create new volumes on other/newer disks and
-   move your data there.
-
--  Fixing *little mistakes*: If you accidentally create a new volume in
-   the wrong place, move the data to another volume.
-
--  Centralize volumes: Centralize and move volumes as you please, for
-   example, if you redesigned your storage infrastructure or you are
-   tidying up your Zimbra volumes.
-
-.. hint:: Starting from version 3.0.10, Zextras Powerstore can also
-   move "Index" volumes.
-
-.. _pws_getvolumestats:
-
-getVolumeStats
-~~~~~~~~~~~~~~
-
-**Usage**
-
-::
-
-   zimbra@mail:~$ zxsuite powerstore getVolumeStats
-
-   command getVolumeStats requires more parameters
-
-   Syntax:
-      zxsuite powerstore getVolumeStats {volume_id} [attr1 value1 [attr2 value2...
-
-   PARAMETER LIST
-
-   NAME                   TYPE       EXPECTED VALUES    DEFAULT
-   volume_id(M)           Integer
-   show_volume_size(O)    Boolean    true|false         false
-   show_blob_num(O)       Boolean    true|false         false
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   **BE CAREFUL** show_volume_size and show_blob_num options are IO intensive and thus disabled by default
-
-   zxsuite powerstore getVolumeStats 2
-   Shows stats for the volume with ID equal to 2
-
-**Description and Tips**
-
-This command provides the following information about a volume:
-
-.. csv-table::
-   :header: "Name","Description"
-   :widths: 20, 80
-            
-   "id", "The ID of the volume"
-   "name", "The Name of the volume"
-   "path", "The Path of the volume"
-   "compressed", "Compression enabled/disabled"
-   "threshold", "Compression threshold (in bytes)"
-   "lastMoveOutcome", "Exit status of the latest doMoveBlobs
-   operation"
-   "lastMoveTimestamp", "End timestamp of the latest doMoveBlobs
-   operation"
-   "lastMoveDuration", "Duration of the last doMoveBlobs operation"
-   "lastItemMovedCount", "Number of items moved to the current
-   secondary volume during the latest doMoveBlobs operation"
-   "bytesSaved", "Total amount of disk space freed up thanks to
-   deduplication and compression"
-   "bytesSavedLast", "Amount of disk space freed up thanks to
-   deduplication and compression during the latest doMoveBlobs
-   operation"
+         "id", "The ID of the volume"
+         "name", "The Name of the volume"
+         "path", "The Path of the volume"
+         "compressed", "Compression enabled/disabled"
+         "threshold", "Compression threshold (in bytes)"
+         "lastMoveOutcome", "Exit status of the latest doMoveBlobs
+         operation"
+         "lastMoveTimestamp", "End timestamp of the latest doMoveBlobs
+         operation"
+         "lastMoveDuration", "Duration of the last doMoveBlobs operation"
+         "lastItemMovedCount", "Number of items moved to the current
+         secondary volume during the latest doMoveBlobs operation"
+         "bytesSaved", "Total amount of disk space freed up thanks to
+         deduplication and compression"
+         "bytesSavedLast", "Amount of disk space freed up thanks to
+         deduplication and compression during the latest doMoveBlobs
+         operation"
 
 The ``show_volume_size`` and ``show_blob_num`` options will add the
 following data to the output:
@@ -1979,574 +1462,143 @@ the same Zimbra infrastructure.
    ``zmmailboxmove`` commands. Using any of the legacy commands will
    return an error and won’t move any data.
 
-**Syntax**
-
-::
-
-   Syntax:
-      zxsuite powerstore doMailboxMove {destinationHost} [attr1 value1 [attr2 value2...]]
-
-   PARAMETER LIST
-
-   NAME                       TYPE             EXPECTED VALUES                                      DEFAULT
-   destinationHost(M)         String
-   accounts(O)                String[,..]      john@example.com,smith@example.com[,...]
-   domains(O)                 String[,..]      example.com,test.com[,...]
-   input_file(O)              String
-   stages(O)                  String[,..]      blobs|backup|data|account data=blobs+backup[,...]    blobs,backup,account
-   compress(O)                Boolean          true|false                                           true
-   checkDigest(O)             Boolean          if false skip digest calculation and check           true
-   overwrite(O)               Boolean          true|false                                           false
-   threads(O)                 Integer                                                               1
-   hsm(O)                     Boolean          true|false                                           true
-   notifications(O)           Email Address
-   ignore_partial(O)          Boolean          true|false                                           false
-   drop_network_backup(O)     Boolean          true|false                                           false
-   read_error_threshold(O)    Integer
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-   Usage example:
-
-   zxsuite powerstore doMailboxMove mail2.example.com accounts john@example.com stages data,account
-   Move mailbox for account john@example.com to mail2.example.com host
-
-Parameter List
-
-+-----------------------------------+-----------------------------------+
-| destinationHost(M)                | The host where the mailbox must   |
-|                                   | be moved to.                      |
-+-----------------------------------+-----------------------------------+
-| accounts(O)                       | Comma separated list of           |
-|                                   | mailbox(es) to move. Can be       |
-|                                   | combined with the "domains"       |
-|                                   | option.                           |
-+-----------------------------------+-----------------------------------+
-| domains(O)                        | Comma separated list of domain(s) |
-|                                   | to move. Can be combined with the |
-|                                   | "accounts" option.                |
-+-----------------------------------+-----------------------------------+
-| input_file(O)                     | File containing the list of       |
-|                                   | mailboxes to move, one per line.  |
-+-----------------------------------+-----------------------------------+
-| stages(O)                         | The stages of the move to perform |
-|                                   | among blobs, backup, data,        |
-|                                   | account. The "Data" stage will    |
-|                                   | move both blobs and backup, while |
-|                                   | the "account" stage will          |
-|                                   | effectively move the mailbox      |
-|                                   | information.                      |
-+-----------------------------------+-----------------------------------+
-| compress(O)                       | Whether to compress the moved     |
-|                                   | blobs on the destination host or  |
-|                                   | not.                              |
-+-----------------------------------+-----------------------------------+
-| checkDigest(O)                    | Whether to check item digests     |
-|                                   | during the move or not. Safer but |
-|                                   | slower.                           |
-+-----------------------------------+-----------------------------------+
-| overwrite(O)                      | Whether to overwrite previously   |
-|                                   | moved items for the same mailbox. |
-+-----------------------------------+-----------------------------------+
-| threads(O)                        | Number of threads to use for the  |
-|                                   | move. Higher threads mean faster  |
-|                                   | moves but with more impact on the |
-|                                   | system’s performances.            |
-+-----------------------------------+-----------------------------------+
-| hsm(O)                            | Whether to apply the HSM policies |
-|                                   | on the destination host when      |
-|                                   | moving the blobs.                 |
-+-----------------------------------+-----------------------------------+
-| notifications(O)                  | Comma separated list of email     |
-|                                   | addresses to notify about the     |
-|                                   | outcome of the operation.         |
-+-----------------------------------+-----------------------------------+
-| ignore_partial(O)                 | Ignore previous move attempts.    |
-+-----------------------------------+-----------------------------------+
-| drop_network_backup(O)            | Delete Legacy Backup data during  |
-|                                   | the move                          |
-+-----------------------------------+-----------------------------------+
-| read_error_threshold(O)           | Maximum amount of read I/O errors |
-|                                   | to allow before stopping the      |
-|                                   | operation.                        |
-+-----------------------------------+-----------------------------------+
-
--  When moving a domain, each account from the current server is
-   enumerated and moved sequentially.
-
--  The mailbox is set to maintenance mode only during the 'account'
-   stage.
-
--  The move will be stopped if 5% or more write errors are encountered
-   on items being moved.
-
-   -  When multiple mailboxes are moved within the same operation, the
-      error count is global and not per-mailbox.
+.. dropdown:: ``zxsuite powerstore doMailboxMove``
+   
+   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doCheckBlobs.rst
 
--  Moves will not start if the destination server does not have enough
-   space available to host the mailbox.
+When the command is executed, it will carry out a number of task:
 
-   -  When a single operation is used to move multiple mailboxes, the
-      space check will be performed before moving each mailbox.
+- When moving a domain, each account from the current server is
+  enumerated and moved sequentially.
 
--  All data is moved at a low-level and will not be changed except for
-   the mailbox id.
+- The mailbox is set to maintenance mode only during the 'account'
+  stage.
 
--  The operation is made up of 3 stages: blobs|backup|account. For each
-   mailbox:
+- The move will be stopped if 5% or more write errors are encountered
+  on items being moved.
 
-   -  blobs: All blobs are copied from the source server to the
-      destination server.
+  - When multiple mailboxes are moved within the same operation, the
+    error count is global and not per-mailbox.
 
-   -  backup: All backup entries are copied from the source server to
-      the destination server.
+- Moves will not start if the destination server does not have enough
+  space available to host the mailbox.
 
-   -  account: All database entries are moved as-is and LDAP entries are
-      updated, effectively moving the mailbox.
+  - When a single operation is used to move multiple mailboxes, the
+    space check will be performed before moving each mailbox.
 
--  All of the stages are executed sequentially.
+- All data is moved at a low-level and will not be changed except for
+  the mailbox id.
 
--  On the reindex stage’s completion, a new HSM operation is submitted
-   to the destination server, if not specified otherwise.
+- The operation is made up of 3 stages: blobs|backup|account. For each
+  mailbox:
 
--  All volumes' compression options are taken.
+  - blobs: All blobs are copied from the source server to the
+    destination server.
 
--  The MailboxMove operation can be executed if and only if no others
-   operations are running on the source server.
+  - backup: All backup entries are copied from the source server to
+    the destination server.
 
--  A move will not start if the destination server does not have enough
-   space available or the user just belongs to the destination host.
+  - account: All database entries are moved as-is and LDAP entries are
+    updated, effectively moving the mailbox.
 
--  By default, items are placed in the Current Primary volume of the
-   destination server.
+- All of the stages are executed sequentially.
 
-   -  The ``hsm true`` option can be used to apply the HSM policies of
-      the destination server after a mailbox is successfully moved.
+- On the reindex stage’s completion, a new HSM operation is submitted
+  to the destination server, if not specified otherwise.
 
--  If, for any reason, the move stops before it is completed the
-   original account will still be active and the appropriate notificaton
-   will be issued.
+- All volumes' compression options are taken.
 
--  Should the mailboxd crash during move, the "Operation Interrupted"
-   notification is issued as for all operations, warning the users about
-   the interrupted operation.
+- The MailboxMove operation can be executed if and only if no others
+  operations are running on the source server.
 
--  Index information are moved during the 'account' stage, so no manual
-   reindexing is needed nor one will be triggered automatically.
-
--  When moving accounts from source to destination server, *by default*
-   HSM is carried out only on the moved accounts, right after they have
-   been successfully moved.
-
-   -  The admin can however choose to defer the HSM at a later point.
-
--  If for any reason the second stage is not successful, HSM is not
-   executed.
-
-.. _pws_zextras_powerstore_attachment_indexing:
-
-Zextras Powerstore Attachment Indexing
-======================================
-
-.. _pws_how_indexing_works:
-
-How Indexing Works
-------------------
-
-Zextras Powerstore has a new `External Content
-Extractor <#external content extractor>`_ to index attachment contents.
-This way the resources do not have to dedicate time reading the
-attachments.
-
-The external content extractor works together with Zimbra’s default
-engine. The main Zimbra indexing process analyzes the contents of an
-item, splitting it into several parts based on the MIME parts of the
-object. Next, Zimbra handles the indexing of *known*
-contents — plaintext — and passes the datastream on to the Zextras
-Powerstore handlers for all other content.
-
-The indexing engine includes an indexing cache that speeds up the
-indexing process of any content that has already been analyzed.
-Datastreams over 10Kb are cached by default, and the cache hold 10000
-entries, while smaller datastreams are not cached as the cache benefits
-only apply to large datastreams.
-
-.. _pws_indexed_formats:
-
-Indexed Formats
----------------
-
-.. _pws_web:
-
-Web
-~~~
-
-.. csv-table::
-   :header: "Extension", "Parser", "Content-type"
-
-   "``asp``", "``HtmlParser``", "application/x-asp"
-   "``htm``", "``HtmlParser``", "application/xhtml+xml"
-   "``html``", "``HtmlParser``", "application/xhtml+xml, text/html"
-   "``shtml``", "``HtmlParser``", "application/xhtml+xml"
-   "``xhtml``", "``HtmlParser``", "application/xhtml+xml"
-
-.. _pws_documents:
-
-Documents
-~~~~~~~~~
-
-.. csv-table::
-   :header: "Extension", "Parser", "Content-type"
-
-   "``rtf``", "``RTFParser``", "application/rtf"
-   "``pdf``", "``PDFParser``", "application/pdf"
-   "``pub``", "``OfficeParser``", "application/x-mspublisher"
-   "``xls``", "``OfficeParser``", "application/vnd.ms-excel"
-   "``xlt``", "``OfficeParser``", "application/vnd.ms-excel"
-   "``xlw``", "``OfficeParser``", "application/vnd.ms-excel"
-   "``ppt``", "``OfficeParser``", "application/vnd.ms-powerpoint"
-   "``pps``", "``OfficeParser``", "application/vnd.ms-powerpoint"
-   "``mpp``", "``OfficeParser``", "application/vnd.ms-project"
-   "``doc``", "``OfficeParser``", "application/msword"
-   "``dot``", "``OfficeParser``", "application/msword"
-   "``msg``", "``OfficeParser``", "application/vnd.ms-outlook"
-   "``vsd``", "``OfficeParser``", "application/vnd.visio"
-   "``vst``", "``OfficeParser``", "application/vnd.visio"
-   "``vss``", "``OfficeParser``", "application/vnd.visio"
-   "``vsw``", "``OfficeParser``", "application/vnd.visio"
-   "``xlsm``", "``OOXMLParser``", "application/vnd.ms-excel.sheet.macroenabled.12"
-   "``pptm``", "``OOXMLParser``", "application/vnd.ms-powerpoint.presentation.macroenabled.12"
-   "``xltx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.spreadsheetml.template"
-   "``docx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-   "``potx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.template"
-   "``xlsx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-   "``pptx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-   "``xlam``", "``OOXMLParser``", "application/vnd.ms-excel.addin.macroenabled.12"
-   "``docm``", "``OOXMLParser``", "application/vnd.ms-word.document.macroenabled.12"
-   "``xltm``", "``OOXMLParser``", "application/vnd.ms-excel.template.macroenabled.12"
-   "``dotx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.wordprocessingml.template"
-   "``ppsm``", "``OOXMLParser``", "application/vnd.ms-powerpoint.slideshow.macroenabled.12"
-   "``ppam``", "``OOXMLParser``", "application/vnd.ms-powerpoint.addin.macroenabled.12"
-   "``dotm``", "``OOXMLParser``", "application/vnd.ms-word.template.macroenabled.12"
-   "``ppsx``", "``OOXMLParser``", "application/vnd.openxmlformats-officedocument.presentationml.slideshow"
-   "``odt``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text"
-   "``ods``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.spreadsheet"
-   "``odp``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.presentation"
-   "``odg``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.graphics"
-   "``odc``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.chart"
-   "``odf``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.formula"
-   "``odi``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.image"
-   "``odm``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-master"
-   "``ott``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-template"
-   "``ots``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.spreadsheet-template"
-   "``otp``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.presentation-template",
-   "``otg``",  "``OpenDocumentParser``", "application/vnd.oasis.opendocument.graphics-template",
-   "``otc``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.chart-template",
-   "``otf``","``OpenDocumentParser``", "application/vnd.oasis.opendocument.formula-template",
-   "``oti``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.image-template",
-   "``oth``", "``OpenDocumentParser``", "application/vnd.oasis.opendocument.text-web",
-   "``sxw``", "``OpenDocumentParser``", "application/vnd.sun.xml.writer"
+- A move will not start if the destination server does not have enough
+  space available or the user just belongs to the destination host.
 
-.. _pws_packages_and_archives:
+- By default, items are placed in the Current Primary volume of the
+  destination server.
 
-Packages and Archives
-~~~~~~~~~~~~~~~~~~~~~
+  - The ``hsm true`` option can be used to apply the HSM policies of
+    the destination server after a mailbox is successfully moved.
 
+- If, for any reason, the move stops before it is completed the
+  original account will still be active and the appropriate
+  notificaton will be issued.
 
-.. csv-table::
-   :header: "Extension", "Parser", "Content-type"
+- Should the mailboxd crash during move, the "Operation Interrupted"
+  notification is issued as for all operations, warning the users
+  about the interrupted operation.
 
-   "``z``", "``CompressorParser``", "application/x-compress"
-   "``bz``", "``CompressorParser``", "application/x-bzip"
-   "``boz``", "``CompressorParser``", "application/x-bzip2"
-   "``bz2``", "``CompressorParser``", "application/x-bzip2"
-   "``gz``", "``CompressorParser``", "application/gzip"
-   "``gz``", "``CompressorParser``", "application/x-gzip"
-   "``gzip``", "``CompressorParser``", "application/x-gzip"
-   "``xz``", "``CompressorParser``", "application/x-xz"
-   "``tar``", "``PackageParser``", "application/x-tar"
-   "``jar``", "``PackageParser``", "application/java-archive"
-   "``7z``", "``PackageParser``", "application/x-7z-compressed"
-   "``cpio``", "``PackageParser``", "application/x-cpio"
-   "``zip``", "``PackageParser``", "application/zip"
-   "``rar``", "``RarParser``", "application/x-rar-compressed"
-   "``txt``", "``TXTParser``", "text/plain"
+- Index information are moved during the 'account' stage, so no manual
+  reindexing is needed nor one will be triggered automatically.
 
-.. _pws_parser_controls:
+- When moving accounts from source to destination server, *by default*
+  HSM is carried out only on the moved accounts, right after they have
+  been successfully moved.
 
-Parser Controls
----------------
+  - The admin can however choose to defer the HSM at a later point.
 
-Parsers can be turned on or off by changing the related value to
-``true`` or ``false`` via the ``zxsuite config`` CLI command.
-
-.. csv-table::
-   :header: "Attribute", "Parsers"
-
-   "pdfParsingEnabled", "PDFParser"
-   "odfParsingEnabled", "OpenDocumentParser"
-   "archivesParsingEnabled", "CompressorParser, PackageParser, RarParser"
-   "microsoftParsingEnabled", "OfficeParser, OOXMLParser, OldExcelParser"
-   "rtfParsingEnabled", "RTFParser"
-
-e.g. to disable PDF parsing run:
-
-.. code:: bash
-
-   zxsuite config server set server.example.com attribute pdfParsingEnabled value false
-
-By default, all parsers are active.
-
-.. _pws_external_content_extractor:
-
-External Content Extractor
-==========================
-
-.. warning:: This feature is currently in beta, usage in production
-   environment is not recommended.
-
-The external content extractor detects and extracts metadata and text
-from over a thousand different file types (such as PPT, XLS, and PDF).
-All of these file types can be parsed through a single interface, making
-it useful for search engine indexing, content analysis, translation, and
-much more.
-
-.. _pws_why_use_tika_server_as_content_extractor:
-
-Why use Tika Server as Content Extractor?
------------------------------------------
-
-Zextras uses a Tika library that shares the same Java Virtual Machine
-(JVM) as the mailbox. With the Tika server you can you can have multiple
-Tika servers indexing the content separated from the mailbox. In case of
-a crash of a Tika server, the mailbox JVM remains unaffected.
-
-.. _pws_switching_to_the_tika_server:
-
-Switching to the Tika Server
-----------------------------
-
-You can run Tika server as a `docker
-container <https://github.com/apache/tika-docker>`_, on the same server
-as the mailbox; or on separate servers accessible by Zimbra.
-
-.. _pws_add_a_tika_server:
-
-Add a Tika Server
-~~~~~~~~~~~~~~~~~
-
-You can add a Tika server by running the following command on the
-Command Line Interface (CLI).
-
-Format
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool add {endpoint} [attr1 value1 [attr2 value2...]]
-
-::
-
-   PARAMETER LIST
-
-::
-
-   NAME           TYPE       EXPECTED VALUES
-   endpoint(M)    String
-   server(O)      String
-   global(O)      Boolean    true|false
-
-Example
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool add http://test.example.com:9997/tika
-
-Explanation
-   Zextras adds an endpoint with address ``http://test.example.com``
-   listening on port ``9997``
-
-Add tika endpoint for this mailbox store
-   Run the below command, as a zimbra user, from the same server as the
-   mailbox
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool add http://test.example.com:9998/tika
-
-Add tika endpoint for mailbox store store1.example.com
-   Run the below command, as a zimbra user, from the same server as the
-   mailbox
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool add http://test.example.com/tika server store1.example.com
-
-Add tika endpoint for all mailbox stores (applies only to mailbox stores that don’t have any endpoint specified)
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool add http://test.example.com:9998/tika global true
-
-.. _pws_list_tika_servers:
-
-List Tika Servers
-~~~~~~~~~~~~~~~~~
-
-You can list all Tika servers by running the following command on the
-Command Line Interface (CLI).
-
-Command
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool list
-
-Sample Output
-
-.. code:: bash
-
-   content-extraction-endpoints
-                   http://test.example.com:9998/tika
-
-Explanation
-   Zextras lists all the running Tika servers with their addresses and
-   the ports on which they are listening.
-
-.. _pws_remove_a_tika_server:
-
-Remove a Tika Server
-~~~~~~~~~~~~~~~~~~~~
-
-You can remove a previously added Tika server by running the following
-command on the Command Line Interface (CLI).
-
-Format
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool remove {endpoint} [attr1 value1 [attr2 value2...]]
-
-::
-
-   PARAMETER LIST
-
-::
-
-   NAME           TYPE       EXPECTED VALUES
-   endpoint(M)    String
-   server(O)      String
-   global(O)      Boolean    true|false
-
-::
-
-   (M) == mandatory parameter, (O) == optional parameter
-
-Example
-
-.. code:: bash
-
-   zxsuite powerstore Indexing content-extraction-tool remove http://test.example.com:9997/tika
-
-Explanation
-   Zextras removes the server with address ``http://test.example.com``
-   listening on port ``9997``
-
-.. _pws_is_the_tika_server_running:
-
-Is the Tika Server Running?
----------------------------
-
-You can use the following methods to check if the Tika Server is
-running.
-
-Graphical User Interface (GUI)
-   1. Send an email with a new attachment.
-
-   2. Search for the attachment.
-
-Command Line Interface (CLI)
-   1. Navigate to ``/opt/zimbra/log``.
-
-   2. View the contents of ``mailbox.log``.
-
-      -  You can use ``tail -f``.
-
-Sample Output
-
-.. code:: bash
-
-   2021-07-07 15:24:25,444 INFO [qtp413601558-41832:https://mail.example.com/service/soap/SearchRequest] [name=user@mail.example.com;mid=136;oip=192.168.0.10;port=33008;ua=ZimbraWebClient - FF89 (Linux)/8.8.15_GA_4007;soapId=3084e510;] mailbox - Using http://test.example.com:9997/tika for content extraction
+- If for any reason the second stage is not successful, HSM is not
+  executed.
 
 .. _zextras_powerstore_cli:
 
 Zextras Powerstore CLI
 ======================
 
-This section contains the index of all ``zxsuite powerstore`` commands.
-Full reference can be found in `the dedicated
-section <./cli.xml#_zxpowerstore_cli_commands>`_.
+This section contains the index of all ``zxsuite powerstore``
+commands. Full reference can be found in the dedicated section
+:ref:`zextras_powerstore_full_cli`.
 
-`testS3Connection <./cli.xml#core_testS3Connection>`_ \|
-`doCheckBlobs <./cli.xml#powerstore_doCheckBlobs>`_ \| `doCreateVolume
-Alibaba <./cli.xml#powerstore_doCreateVolume_Alibaba>`_ \|
-`doCreateVolume
-Centralized <./cli.xml#powerstore_doCreateVolume_Centralized>`_ \|
-`doCreateVolume Ceph <./cli.xml#powerstore_doCreateVolume_Ceph>`_ \|
-`doCreateVolume
-Cloudian <./cli.xml#powerstore_doCreateVolume_Cloudian>`_ \|
-`doCreateVolume
-CustomS3 <./cli.xml#powerstore_doCreateVolume_CustomS3>`_ \|
-`doCreateVolume EMC <./cli.xml#powerstore_doCreateVolume_EMC>`_ \|
-`doCreateVolume
-FileBlob <./cli.xml#powerstore_doCreateVolume_FileBlob>`_ \|
-`doCreateVolume OpenIO <./cli.xml#powerstore_doCreateVolume_OpenIO>`_
-\| `doCreateVolume S3 <./cli.xml#powerstore_doCreateVolume_S3>`_ \|
-`doCreateVolume_ScalityS3 <./cli.xml#powerstore_doCreateVolume_ScalityS3>`_
-\| `doCreateVolume Swift <./cli.xml#powerstore_doCreateVolume_Swift>`_
-\| `doDeduplicate <./cli.xml#powerstore_doDeduplicate>`_ \|
-`doDeleteDrivePreviews <./cli.xml#powerstore_doDeleteDrivePreviews>`_
-\| `doDeleteVolume <./cli.xml#powerstore_doDeleteVolume>`_ \|
-`doMailboxMove <./cli.xml#powerstore_doMailboxMove>`_ \|
-`doMoveBlobs <./cli.xml#powerstore_doMoveBlobs>`_ \|
-`doPurgeMailboxes <./cli.xml#powerstore_doPurgeMailboxes>`_ \|
-`doRemoveHsmPolicy <./cli.xml#powerstore_doRemoveHsmPolicy>`_ \|
-`doRemoveOrphanedBlobs <./cli.xml#powerstore_doRemoveOrphanedBlobs>`_
-\| `doRestartService <./cli.xml#powerstore_doRestartService>`_ \|
-`doStartService <./cli.xml#powerstore_doStartService>`_ \|
-`doStopAllOperations <./cli.xml#powerstore_doStopAllOperations>`_ \|
-`doStopOperation <./cli.xml#powerstore_doStopOperation>`_ \|
-`doStopService <./cli.xml#powerstore_doStopService>`_ \|
-`doUpdateVolume Alibaba <./cli.xml#powerstore_doUpdateVolume_Alibaba>`_
-\| `doUpdateVolume Ceph <./cli.xml#powerstore_doUpdateVolume_Ceph>`_ \|
-`doUpdateVolume
-Cloudian <./cli.xml#powerstore_doUpdateVolume_Cloudian>`_ \|
-`doUpdateVolume
-CustomS3 <./cli.xml#powerstore_doUpdateVolume_CustomS3>`_ \|
-`doUpdateVolume EMC <./cli.xml#powerstore_doUpdateVolume_EMC>`_ \|
-`doUpdateVolume
-FileBlob <./cli.xml#powerstore_doUpdateVolume_FileBlob>`_ \|
-`doUpdateVolume OpenIO <./cli.xml#powerstore_doUpdateVolume_OpenIO>`_
-\| `doUpdateVolume S3 <./cli.xml#powerstore_doUpdateVolume_S3>`_ \|
-`doUpdateVolume
-ScalityS3 <./cli.xml#powerstore_doUpdateVolume_ScalityS3>`_ \|
-`doUpdateVolume Swift <./cli.xml#powerstore_doUpdateVolume_Swift>`_ \|
-`doVolumeToVolumeMove <./cli.xml#powerstore_doVolumeToVolumeMove>`_ \|
-`getAllOperations <./cli.xml#powerstore_getAllOperations>`_ \|
-`getAllVolumes <./cli.xml#powerstore_getAllVolumes>`_ \|
-`getHsmPolicy <./cli.xml#powerstore_getHsmPolicy>`_ \|
-`getMovedMailboxes <./cli.xml#powerstore_getMovedMailboxes>`_ \|
-`getNonLocalMailboxes <./cli.xml#powerstore_getNonLocalMailboxes>`_ \|
-`getProperty <./cli.xml#powerstore_getProperty>`_ \|
-`getServices <./cli.xml#powerstore_getServices>`_ \|
-`getVolumeStats <./cli.xml#powerstore_getVolumeStats>`_ \| `Indexing
-content-extraction-tool
-add <./cli.xml#powerstore_Indexing_content-extraction-tool_add>`_ \|
-`Indexing content-extraction-tool
-list <./cli.xml#powerstore_Indexing_content-extraction-tool_list>`_ \|
-`Indexing content-extraction-tool
-remove <./cli.xml#powerstore_Indexing_content-extraction-tool_remove>`_
-\| `monitor <./cli.xml#powerstore_monitor>`_ \|
-`runBulkDelete <./cli.xml#powerstore_runBulkDelete>`_ \|
-`+setHsmPolicy <./cli.xml#powerstore_plus_setHsmPolicy>`_ \|
-`setHSMPolicy <./cli.xml#powerstore_setHSMPolicy>`_ \|
-`setProperty <./cli.xml#powerstore_setProperty>`_ \|
+:ref:`testS3Connection <zxsuite_core_testS3Connection>`
+:octicon:`dash` :ref:`Indexing content-extraction-tool add <zxsuite_powerstore_Indexing_content-extraction-tool_add>`
+:octicon:`dash` :ref:`Indexing content-extraction-tool list <zxsuite_powerstore_Indexing_content-extraction-tool_list>`
+:octicon:`dash` :ref:`Indexing content-extraction-tool remove <zxsuite_powerstore_Indexing_content-extraction-tool_remove>`
+:octicon:`dash` :ref:`doCheckBlobs <zxsuite_powerstore_doCheckBlobs>`
+:octicon:`dash` :ref:`doCreateVolume Alibaba <zxsuite_powerstore_doCreateVolume_Alibaba>`
+:octicon:`dash` :ref:`doCreateVolume Centralized <zxsuite_powerstore_doCreateVolume_Centralized>`
+:octicon:`dash` :ref:`doCreateVolume Ceph <zxsuite_powerstore_doCreateVolume_Ceph>`
+:octicon:`dash` :ref:`doCreateVolume Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>`
+:octicon:`dash` :ref:`doCreateVolume CustomS3 <zxsuite_powerstore_doCreateVolume_CustomS3>`
+:octicon:`dash` :ref:`doCreateVolume EMC <zxsuite_powerstore_doCreateVolume_EMC>`
+:octicon:`dash` :ref:`doCreateVolume FileBlob <zxsuite_powerstore_doCreateVolume_FileBlob>`
+:octicon:`dash` :ref:`doCreateVolume OpenIO <zxsuite_powerstore_doCreateVolume_OpenIO>`
+:octicon:`dash` :ref:`doCreateVolume S3 <zxsuite_powerstore_doCreateVolume_S3>`
+:octicon:`dash` :ref:`doCreateVolume ScalityS3 <zxsuite_powerstore_doCreateVolume_ScalityS3>`
+:octicon:`dash` :ref:`doCreateVolume Swift <zxsuite_powerstore_doCreateVolume_Swift>`
+:octicon:`dash` :ref:`doDeduplicate <zxsuite_powerstore_doDeduplicate>`
+:octicon:`dash` :ref:`doDeleteDrivePreviews <zxsuite_powerstore_doDeleteDrivePreviews>`
+:octicon:`dash` :ref:`doDeleteVolume <zxsuite_powerstore_doDeleteVolume>`
+:octicon:`dash` :ref:`doMailboxMove <zxsuite_powerstore_doMailboxMove>`
+:octicon:`dash` :ref:`doMoveBlobs <zxsuite_powerstore_doMoveBlobs>`
+:octicon:`dash` :ref:`doPurgeMailboxes <zxsuite_powerstore_doPurgeMailboxes>`
+:octicon:`dash` :ref:`doRemoveHsmPolicy <zxsuite_powerstore_doRemoveHsmPolicy>`
+:octicon:`dash` :ref:`doRemoveOrphanedBlobs <zxsuite_powerstore_doRemoveOrphanedBlobs>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_powerstore_doRestartService>`
+:octicon:`dash` :ref:`doStartService <zxsuite_powerstore_doStartService>`
+:octicon:`dash` :ref:`doStopAllOperations <zxsuite_powerstore_doStopAllOperations>`
+:octicon:`dash` :ref:`doStopOperation <zxsuite_powerstore_doStopOperation>`
+:octicon:`dash` :ref:`doStopService <zxsuite_powerstore_doStopService>`
+:octicon:`dash` :ref:`doUpdateVolume Alibaba <zxsuite_powerstore_doUpdateVolume_Alibaba>`
+:octicon:`dash` :ref:`doUpdateVolume Ceph <zxsuite_powerstore_doUpdateVolume_Ceph>`
+:octicon:`dash` :ref:`doUpdateVolume Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`
+:octicon:`dash` :ref:`doUpdateVolume CustomS3 <zxsuite_powerstore_doUpdateVolume_CustomS3>`
+:octicon:`dash` :ref:`doUpdateVolume EMC <zxsuite_powerstore_doUpdateVolume_EMC>`
+:octicon:`dash` :ref:`doUpdateVolume FileBlob <zxsuite_powerstore_doUpdateVolume_FileBlob>`
+:octicon:`dash` :ref:`doUpdateVolume OpenIO <zxsuite_powerstore_doUpdateVolume_OpenIO>`
+:octicon:`dash` :ref:`doUpdateVolume S3 <zxsuite_powerstore_doUpdateVolume_S3>`
+:octicon:`dash` :ref:`doUpdateVolume ScalityS3 <zxsuite_powerstore_doUpdateVolume_ScalityS3>`
+:octicon:`dash` :ref:`doUpdateVolume Swift <zxsuite_powerstore_doUpdateVolume_Swift>`
+:octicon:`dash` :ref:`doVolumeToVolumeMove <zxsuite_powerstore_doVolumeToVolumeMove>`
+:octicon:`dash` :ref:`getAllOperations <zxsuite_powerstore_getAllOperations>`
+:octicon:`dash` :ref:`getAllVolumes <zxsuite_powerstore_getAllVolumes>`
+:octicon:`dash` :ref:`getHsmPolicy <zxsuite_powerstore_getHsmPolicy>`
+:octicon:`dash` :ref:`getMovedMailboxes <zxsuite_powerstore_getMovedMailboxes>`
+:octicon:`dash` :ref:`getNonLocalMailboxes <zxsuite_powerstore_getNonLocalMailboxes>`
+:octicon:`dash` :ref:`getProperty <zxsuite_powerstore_getProperty>`
+:octicon:`dash` :ref:`getServices <zxsuite_powerstore_getServices>`
+:octicon:`dash` :ref:`getVolumeStats <zxsuite_powerstore_getVolumeStats>`
+:octicon:`dash` :ref:`monitor <zxsuite_powerstore_monitor>`
+:octicon:`dash` :ref:`runBulkDelete <zxsuite_powerstore_runBulkDelete>`
+:octicon:`dash` :ref:`setHSMPolicy <zxsuite_powerstore_setHSMPolicy>`
+:octicon:`dash` :ref:`setProperty <zxsuite_powerstore_setProperty>`
+:octicon:`dash` :ref:`+setHsmPolicy <zxsuite_powerstore_+setHsmPolicy>`

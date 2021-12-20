@@ -1,14 +1,10 @@
-.. _auth_policy_trustedDevice_setExpiration_domain:
 
-domain
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth policy trustedDevice setExpiration domain *domain*
    *value*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -18,9 +14,9 @@ PARAMETER LIST
 | **value**\ (M)  | Long            |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

@@ -1,7 +1,11 @@
+
+::
+
+   zxsuite core doCreateBucket Cloudian *Bucket name* *Service username*
    *Service password* *S3 API compatible service url (ex:
    s3api.example.com)* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -26,7 +30,7 @@ PARAMETER LIST
 |                 |                 | blobs keys      |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite core createVolume Cloudian bucketName accessKey secretKey url
 http://host/service

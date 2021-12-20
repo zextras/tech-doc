@@ -1,13 +1,9 @@
-.. _auth_policy_trustedDevice_setExpiration_global:
 
-global
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth policy trustedDevice setExpiration global *value*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -15,9 +11,9 @@ PARAMETER LIST
 | **value**\ (M)  | Long            |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

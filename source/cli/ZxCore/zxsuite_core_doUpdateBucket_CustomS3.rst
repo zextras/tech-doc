@@ -1,30 +1,22 @@
+
+::
+
+   zxsuite core doUpdateBucket CustomS3 *bucket_configuration_id* [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
-+-----------------+-----------------+-----------------+-----------------+
-| NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
-+-----------------+-----------------+-----------------+-----------------+
-| **              | String          |                 |                 |
-| bucket_configur |                 |                 |                 |
-| ation_id**\ (M) |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| bucket_name(O)  | String          | Bucket name     |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| access_key(O)   | String          | Service         |                 |
-|                 |                 | username        |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| secret(O)       | String          | Service         |                 |
-|                 |                 | password        |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| url(O)          | String          | S3 API          |                 |
-|                 |                 | compatible      |                 |
-|                 |                 | service url     |                 |
-|                 |                 | (ex:            |                 |
-|                 |                 | s3a             |                 |
-|                 |                 | pi.example.com) |                 |
-+-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+.. csv-table::
+   :header: "NAME", "TYPE", "EXPECTED VALUES", "DEFAULT"
+
+   "**bucket_configuration_id** (M)", "String"
+   "bucket_name (O)", "String", "Bucket name"
+   "access_key (O)", "String", "Service username"
+   "secret (O)", "String", "Service password"
+   "url (O)", "String", "S3 API compatible service url (ex:
+   s3api.example.com)"
+
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite core updateVolume CustomS3 bucketName access_key accessKey

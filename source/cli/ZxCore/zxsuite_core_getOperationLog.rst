@@ -1,5 +1,9 @@
 
-**Example:.**
+::
+
+   zxsuite core getOperationLog
+
+.. rubric:: Usage Example
 
 ::
 

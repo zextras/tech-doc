@@ -1,6 +1,10 @@
+
+::
+
+   zxsuite core doCreateBucket S3 *Amazon AWS bucket* *Service username*
    *Service password* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -28,7 +32,7 @@ PARAMETER LIST
 |                 |                 | blobs keys      |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite core createVolume S3 bucketName accessKey secretKey url
 http://host/service

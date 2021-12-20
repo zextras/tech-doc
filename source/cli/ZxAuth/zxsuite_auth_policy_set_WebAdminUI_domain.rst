@@ -1,14 +1,10 @@
-.. _auth_policy_set_WebAdminUI_domain:
 
-domain
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth policy set WebAdminUI domain *domain* [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -27,9 +23,9 @@ PARAMETER LIST
 |                 |                 | (device_2fa)    |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

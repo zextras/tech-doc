@@ -1,43 +1,37 @@
-.. _backup_doRestoreOnNewAccount:
 
-doRestoreOnNewAccount
----------------------
+.. parsed-literal::
 
-.. container:: informalexample
+   zxsuite backup doRestoreOnNewAccount *Account name or id* *destination_account* *"dd/MM/yyyy HH:mm:ss"|last* [param VALUE[,VALUE]]
 
-   zxsuite backup doRestoreOnNewAccount *Account name or id*
-   *destination_account* *"dd/MM/yyyy HH:mm:ss"|last* [param
-   VALUE[,VALUE]]
-
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| **source        | String          | Account name or |                 |
+| **source\       | String          | Account name or |                 |
 | _account**\ (M) |                 | id              |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| **destination   | Account Name/ID |                 |                 |
+| **destination\  | Account Name/ID |                 |                 |
 | _account**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | **date**\ (M)   | Date            | "dd/MM/yyyy     | last            |
-|                 |                 | HH:mm:ss"|last  |                 |
+|                 |                 | HH:mm:ss"| last |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| restore_        | Boolean         | true|false      |                 |
-| chat_buddies(O) |                 |                 |                 |
+| restore_cha\    | Boolean         | true | false    |                 |
+| t_buddies(O)    |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| apply_hsm(O)    | Boolean         | true|false      |                 |
+| apply_hsm(O)    | Boolean         | true | false    |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| n               | Email           |                 |                 |
+| n\              | Email           |                 |                 |
 | otifications(O) | Address[,..]    |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| restor          | Boolean         | true|false      | true            |
+| restor\         | Boolean         | true|false      | true            |
 | e_datasource(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

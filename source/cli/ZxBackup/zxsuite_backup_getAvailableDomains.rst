@@ -1,14 +1,10 @@
-.. _backup_getAvailableDomains:
 
-getAvailableDomains
--------------------
-
-.. container:: informalexample
+::
 
    zxsuite backup getAvailableDomains *dd/MM/yyyy HH:mm:ss|"last"*
    *backup_path*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -20,9 +16,9 @@ PARAMETER LIST
 | kup_path**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

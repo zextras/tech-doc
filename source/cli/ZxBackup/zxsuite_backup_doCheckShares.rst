@@ -1,13 +1,9 @@
-.. _backup_doCheckShares:
 
-doCheckShares
--------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doCheckShares *start*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -15,9 +11,9 @@ PARAMETER LIST
 | **action**\ (M) | String          | start           |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

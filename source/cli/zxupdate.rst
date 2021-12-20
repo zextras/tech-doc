@@ -1,42 +1,47 @@
-.. _zxsuite_update_doStartService.rst:
+.. _zextras_update_full_cli:
 
-.. dropdown:: zxsuite_update_doStartService.rst
+ZxUpdate CLI Commands
+=====================
+
+.. _zxsuite_update_doStartService:
+
+.. dropdown:: zxsuite update doStartService
 
    .. include:: /cli/ZxUpdate/zxsuite_update_doStartService.rst
 
-.. _zxsuite_update_doStopService.rst:
+.. _zxsuite_update_doStopService:
 
-.. dropdown:: zxsuite_update_doStopService.rst
+.. dropdown:: zxsuite update doStopService
 
    .. include:: /cli/ZxUpdate/zxsuite_update_doStopService.rst
 
-.. _zxsuite_update_download.rst:
+.. _zxsuite_update_download:
 
-.. dropdown:: zxsuite_update_download.rst
+.. dropdown:: zxsuite update download
 
    .. include:: /cli/ZxUpdate/zxsuite_update_download.rst
 
-.. _zxsuite_update_enable.rst:
+.. _zxsuite_update_enable:
 
-.. dropdown:: zxsuite_update_enable.rst
+.. dropdown:: zxsuite update enable
 
    .. include:: /cli/ZxUpdate/zxsuite_update_enable.rst
 
-.. _zxsuite_update_getServices.rst:
+.. _zxsuite_update_getServices:
 
-.. dropdown:: zxsuite_update_getServices.rst
+.. dropdown:: zxsuite update getServices
 
    .. include:: /cli/ZxUpdate/zxsuite_update_getServices.rst
 
-.. _zxsuite_update_info.rst:
+.. _zxsuite_update_info:
 
-.. dropdown:: zxsuite_update_info.rst
+.. dropdown:: zxsuite update info
 
    .. include:: /cli/ZxUpdate/zxsuite_update_info.rst
 
-.. _zxsuite_update_start.rst:
+.. _zxsuite_update_start:
 
-.. dropdown:: zxsuite_update_start.rst
+.. dropdown:: zxsuite update start
 
    .. include:: /cli/ZxUpdate/zxsuite_update_start.rst
 

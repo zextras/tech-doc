@@ -1,13 +1,9 @@
-.. _backup_doRestartService:
 
-doRestartService
-----------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doRestartService *service_name*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -16,9 +12,9 @@ PARAMETER LIST
 | ice_name**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

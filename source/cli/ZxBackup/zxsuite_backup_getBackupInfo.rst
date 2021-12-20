@@ -1,13 +1,9 @@
-.. _backup_getBackupInfo:
 
-getBackupInfo
--------------
-
-.. container:: informalexample
+::
 
    zxsuite backup getBackupInfo [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -15,9 +11,9 @@ PARAMETER LIST
 | backup_path(O)  | Path            |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

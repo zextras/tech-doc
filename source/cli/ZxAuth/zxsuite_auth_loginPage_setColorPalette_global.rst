@@ -1,13 +1,9 @@
-.. _auth_loginPage_setColorPalette_global:
 
-global
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth loginPage setColorPalette global [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -19,6 +15,6 @@ PARAMETER LIST
 |                 |                 | color           |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite auth loginPage setColorPalette global primary 6174AE

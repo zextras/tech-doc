@@ -1,19 +1,15 @@
-.. _backup_doItemSearch:
 
-doItemSearch
-------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doItemSearch *account* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | Account Name/ID |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **acc           | Account Name/ID |                 |                 |
+| ount**\ (M)     |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | backup_path(O)  | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
@@ -22,9 +18,9 @@ PARAMETER LIST
 | s               | String          | "Case sensitive |                 |
 | earch_string(O) |                 | string"         |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| type(O)         | Multiple choice | messa           | message         |
-|                 |                 | ge|contact|fold |                 |
-|                 |                 | er|document|all |                 |
+| type(O)         | Multiple choice | message | conta | message         |
+|                 |                 | ct | folder |   |                 |
+|                 |                 | document | all  |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | before(O)       | Date            | "dd/MM/yyyy     |                 |
 |                 |                 | HH:mm:ss"       |                 |
@@ -32,15 +28,15 @@ PARAMETER LIST
 | after(O)        | Date            | "dd/MM/yyyy     |                 |
 |                 |                 | HH:mm:ss"       |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| raw_metadata(O) | Boolean         | true|false      | false           |
+| raw_metadata(O) | Boolean         | true | false    | false           |
 +-----------------+-----------------+-----------------+-----------------+
-| s               | Multiple choice | all|dele        | deleted         |
-| earch_filter(O) |                 | ted|not_deleted |                 |
+| s               | Multiple choice | all | delet     | deleted         |
+| earch_filter(O) |                 | ed | not_deleted|                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

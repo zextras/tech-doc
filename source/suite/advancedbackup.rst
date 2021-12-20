@@ -236,7 +236,7 @@ and restore user access and mail traffic.
 .. hint:: At the end of the operation, you can check that the
    configuration of the new mailbox is the same by running the command
    ``zxsuite config dump`` (See the :ref:`full reference
-   <zextras_config_cli>`).
+   <zextras_config_full_cli>`).
 
 .. _the_aftermath:
 
@@ -330,48 +330,50 @@ The first way can be used to search for the item within the
 backup/import path, and the second can be used to view the items in the
 source server.
 
-.. _identifying_unrestorable_items_through_the_webclient:
+.. grid::
+   :gutter: 3
 
-.. dropdown:: Using the Zimbra WebClient
+   .. grid-item-card:: Using the Zimbra WebClient
+      :columns: 6
 
-   The comma separated list of unrestored items displayed in the
-   ``Operation
-   Complete`` notification can be used as a search argument in the Zimbra
-   Web Client to perform an item search.
 
-   To do so:
+      The comma separated list of unrestored items displayed in the
+      ``Operation
+      Complete`` notification can be used as a search argument in the Zimbra
+      Web Client to perform an item search.
 
-   - Log into the Zimbra Administration Console in the source server.
+      To do so:
 
-   - Use the ``View Mail`` feature to access the account containing the
-     unrestored items.
+      - Log into the Zimbra Administration Console in the source server.
 
-   - In the search box, enter **item:** followed by the comma separated
-     list of itemIDs, for example: ``item: 856,13339,45200,45655``
+      - Use the ``View Mail`` feature to access the account containing the
+        unrestored items.
 
-   .. warning:: Remember that any search is executed only within the
-      current tab, so if you are running the search from the ``Email``
-      tab and get no results try to run the same search in the ``Address
-      Book``, ``Calendar``, ``Tasks`` and ``Drive`` tabs.
+      - In the search box, enter **item:** followed by the comma separated
+        list of itemIDs, for example: ``item: 856,13339,45200,45655``
 
-.. _identifying_unrestorable_items_through_the_cli:
+      .. warning:: Remember that any search is executed only within the
+         current tab, so if you are running the search from the ``Email``
+         tab and get no results try to run the same search in the ``Address
+         Book``, ``Calendar``, ``Tasks`` and ``Drive`` tabs.
 
-.. dropdown:: Using  the CLI
+   .. grid-item-card:: Using the CLI
+      :columns: 6
 
-   The ``getItem`` CLI command can display an item and the related
-   metadata, extracting all information from a backup path/external backup.
+      The :ref:`getItem <zxsuite_backup_getItem>` CLI command can display an item and the related
+      metadata, extracting all information from a backup path/external backup.
 
-   The syntax of the command is::
+      The syntax of the command is::
 
-     zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+        zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
-   .. card:: Usage example
+      .. card:: Usage example
 
-      ``zxsuite backup getItem account2@example.com 49965 dump blob true``
+         ``zxsuite backup getItem account2@example.com 49965 dump blob true``
 
-      Extract the raw data and metadata information of the item whose
-      itemID is *49965* belonging to *account2@example.com* ,also
-      including the full dump of the item’s BLOB
+         Extract the raw data and metadata information of the item whose
+         itemID is *49965* belonging to *account2@example.com* ,also
+         including the full dump of the item’s BLOB
 
 .. _how_can_i_restore_unrestored_items:
 
@@ -389,94 +391,96 @@ unrestorable items.
 
 .. _items_not_restored_because_of_a_read_error:
 
-.. dropdown:: Items Not Restored because of a Read Error
+Items Not Restored because of a Read Error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   A dutiful distinction must be done about the read errors that can cause
-   items not to be restored:
+A dutiful distinction must be done about the read errors that can cause
+items not to be restored:
 
-   **Hard errors**
-      Hardware failures and all other `destructive` errors that cause
-      an unrecoverable data loss.
+**Hard errors**
+   Hardware failures and all other `destructive` errors that cause
+   an unrecoverable data loss.
 
-   **Soft errors**
-      `non-destructive` errors, including for example wrong permissions,
-      filesystem errors, RAID issues (e.g.: broken RAID1 mirroring), and
-      so on.
+**Soft errors**
+   `non-destructive` errors, including for example wrong permissions,
+   filesystem errors, RAID issues (e.g.: broken RAID1 mirroring), and
+   so on.
 
-   While there is nothing much to do about hard errors, you can prevent or
-   mitigate soft errors by following these guidelines:
+While there is nothing much to do about hard errors, you can prevent or
+mitigate soft errors by following these guidelines:
 
-   - Run a filesystem check.
+- Run a filesystem check.
 
-   - If using a RAID disk setup, check the array for possible issues
-     (depending on RAID level).
+- If using a RAID disk setup, check the array for possible issues
+  (depending on RAID level).
 
-   - Make sure that the 'zimbra' user has r/w access to the backup/import
-     path, all its subfolders and all thereby contained files.
+- Make sure that the 'zimbra' user has r/w access to the backup/import
+  path, all its subfolders and all thereby contained files.
 
-   - Carefully check the link quality of network-shared filesystems. If
-     link quality is poor, consider transferring the data with rsync.
+- Carefully check the link quality of network-shared filesystems. If
+  link quality is poor, consider transferring the data with rsync.
 
-   - If using **SSHfs** to remotely mount the backup/import path, make
-     sure to run the mount command as root using the ``-o allow_other``
-     option.
+- If using **SSHfs** to remotely mount the backup/import path, make
+  sure to run the mount command as root using the ``-o allow_other``
+  option.
 
 .. _items_not_restored_because_identified_as_broken_items:
 
-.. dropdown:: Items Not Restored because Identified as Broken Items
+Items Not Restored because Identified as Broken Items
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   Unfortunately, this is the worst category of unrestored items in terms
-   of ``salvageability``.
+Unfortunately, this is the worst category of unrestored items in terms
+of ``salvageability``.
 
-   Based on the degree of corruption of the item, it might be possible to
-   recover either a previous state or the raw object (this is only valid
-   for emails). To identify the degree of corruption, use the ``getItem``
-   CLI command::
+Based on the degree of corruption of the item, it might be possible to
+recover either a previous state or the raw object (this is only valid
+for emails). To identify the degree of corruption, use the
+:ref:`getItem <zxsuite_backup_getItem>` CLI command::
 
-     zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+  zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
-   .. card:: Example of how to restore an item
+.. card:: Example of how to restore an item
 
 
-      To search for a broken item, setting the ``backup_path``
-      parameter to the import path and the ``date`` parameter to
-      ``all``, will display all valid states for the item::
-      
-        zimbra@test:~$ zxsuite backup getItem admin@example.com 24700 backup path /mnt/import/ date all
-             itemStates
-                     start date                                                  12/07/2013 16:35:44
-                     type                                                        message
-                     deleted                                                     true
-                     blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
-                     start date                                                  12/07/2013 17:04:33
-                     type                                                        message
-                     deleted                                                     true
-                     blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
-                     start date                                                  15/07/2013 10:03:26
-                     type                                                        message
-                     deleted                                                     true
-                     blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+   To search for a broken item, setting the ``backup_path``
+   parameter to the import path and the ``date`` parameter to
+   ``all``, will display all valid states for the item::
 
-   If the item is an email, you will be able to recover a standard ``.eml``
-   file through the following steps:
+     zimbra@test:~$ zxsuite backup getItem admin@example.com 24700 backup path /mnt/import/ date all
+          itemStates
+                  start date                                                  12/07/2013 16:35:44
+                  type                                                        message
+                  deleted                                                     true
+                  blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+                  start date                                                  12/07/2013 17:04:33
+                  type                                                        message
+                  deleted                                                     true
+                  blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+                  start date                                                  15/07/2013 10:03:26
+                  type                                                        message
+                  deleted                                                     true
+                  blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
 
-   #. Identify the latest valid state
+If the item is an email, you will be able to recover a standard ``.eml``
+file through the following steps:
 
-      From the above snippet, consider::
+#. Identify the latest valid state
 
-         /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
-                      start_date                                                  15/07/2013 10:03:26
-                      type                                                        message
-                      deleted                                                     true
-                      blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+   From the above snippet, consider::
 
-   #. Identify the ``blob path``
-      
-      Take the **blob path** from the previous step::
+      /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+                   start_date                                                  15/07/2013 10:03:26
+                   type                                                        message
+                   deleted                                                     true
+                   blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
 
-        blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+#. Identify the ``blob path``
 
-   #.  Use gzip to uncompress the BLOB file into an ``.eml`` file
+   Take the **blob path** from the previous step::
+
+     blob path /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ=
+
+#. Use gzip to uncompress the BLOB file into an ``.eml`` file
 
    .. code:: console
 
@@ -499,37 +503,38 @@ unrestorable items.
 
       Jul 12 16:35:42 test zmconfigd[14198]: Service status change: test.example.com mailboxd changed from stopped to running
 
-   #. Done! You can now import the ``.eml`` file into the appropriate
-      mailbox using your favorite client.
+#. Done! You can now import the ``.eml`` file into the appropriate
+   mailbox using your favorite client.
 
 .. _items_not_restored_because_identified_as_invalid_items:
 
-.. dropdown:: Items Not Restored because Identified as Invalid Items
+Items Not Restored because Identified as Invalid Items
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   An item is identified as ``Invalid`` when, albeit being formally
-   correct, is discarded by Zimbra’s LMTP Validator upon injection. This is
-   common when importing items created on an older version of Zimbra to a
-   newer one, Validation rules are updated very often, so not all messages
-   considered valid by a certain Zimbra version are still considered valid
-   by a newer version.
+An item is identified as ``Invalid`` when, albeit being formally
+correct, is discarded by Zimbra’s LMTP Validator upon injection. This is
+common when importing items created on an older version of Zimbra to a
+newer one, Validation rules are updated very often, so not all messages
+considered valid by a certain Zimbra version are still considered valid
+by a newer version.
 
-   If you experienced a lot of unrestored items during an import, it might
-   be a good idea to momentarily disable the LMTP validator and repeat the
-   import:
+If you experienced a lot of unrestored items during an import, it might
+be a good idea to momentarily disable the LMTP validator and repeat the
+import:
 
-   - To disable Zimbra’s LMTP Validator, run the following command as
-     the Zimbra user::
+- To disable Zimbra’s LMTP Validator, run the following command as
+  the Zimbra user::
 
-       zmlocalconfig -e zimbra_lmtp_validate_messages=false
+    zmlocalconfig -e zimbra_lmtp_validate_messages=false
 
-   - Once the import is completed, you can enable the LMTP validator
-     by running::
+- Once the import is completed, you can enable the LMTP validator
+  by running::
 
-       zmlocalconfig -e zimbra_lmtp_validate_messages=true
+    zmlocalconfig -e zimbra_lmtp_validate_messages=true
 
-   .. warning:: This is a ``dirty`` workaround, as items deemed
-      invalid by the LMTP validator might cause display or mobile
-      synchronisation errors. Use at your own risk.
+.. warning:: This is a ``dirty`` workaround, as items deemed
+   invalid by the LMTP validator might cause display or mobile
+   synchronisation errors. Use at your own risk.
 
 .. _taking_additional_and_offsite_backups_of_zextras_backups_datastore:
 
@@ -654,8 +659,8 @@ the following best practices are recommended:
 Additional/Offsite Backup F.A.Q.
 --------------------------------
 
-.. dropdown:: Why shouldn’t I use the **Export Backup** feature of
-   Zextras Backup instead of rsync?
+.. card:: :octicon:`question` Why shouldn’t I use the **Export Backup** feature of Zextras
+   Backup instead of rsync?
 
    For many reasons:
 
@@ -675,15 +680,15 @@ Additional/Offsite Backup F.A.Q.
    - Should you need to stop an Export Backup operation, you won’t be
      able to reprise it, and you’ll need to start from scratch
 
-.. dropdown:: Can I use this for Disaster Recovery?
+.. card:: :octicon:`question` Can I use this for Disaster Recovery?
 
    Yes. Obviously, if your Backup Path is still available. it’s better
    to use that, as it will restore all items and settings to the last
    valid state. However, should your Backup Path be lost, you’ll be
    able to use your additional/offsite backup.
 
-.. dropdown:: Can I use this to restore data on the server the backup
-   copy belongs to?
+.. card:: :octicon:`question` Can I use this to restore data on the
+   server the backup copy belongs to?
 
    Yes, but not through the ``External Restore`` operation, since item and
    folder IDs are the same.
@@ -704,7 +709,7 @@ Additional/Offsite Backup F.A.Q.
    -  Start the RealTime Scanner. A SmartScan will be triggered to update
       the backup data.
 
-.. dropdown:: Can I use this to create an Active/Standby
+.. card:: :octicon:`question` Can I use this to create an Active/Standby
    infrastructure?
 
    No, because the ``External Restore`` operation does not perform any
@@ -718,8 +723,8 @@ Additional/Offsite Backup F.A.Q.
    started, so your users will be able to send and receive emails even
    if the restore is running.
 
-.. dropdown:: Are there any other ways to do an Additional/Offsite
-   backup of my system?
+.. card:: :octicon:`question` Are there any other ways to do an
+   Additional/Offsite backup of my system?
 
    There are for sure, and some of them might even be better than the
    one described here. These are just guidelines that apply to the
@@ -800,52 +805,51 @@ Export and Import
 The Export and Import functions are the most different when performed on
 a Multistore environment. Here are the basic scenarios:
 
-.. _export_from_a_singlestore_and_import_to_a_multistore:
+.. grid::
+   :gutter: 3
 
-.. dropdown:: Export from a Singlestore and Import to a Multistore
+   .. grid-item-card::  Export from a Singlestore and Import to a Multistore
 
+      Importing multiple accounts of a single domain to a different
+      store will break the consistency of ALL the items that are
+      shared from/to a mailbox on a different server.
 
-   Importing multiple accounts of a single domain to a different store
-   will break the consistency of ALL the items that are shared from/to
-   a mailbox on a different server.
+      A command in the CLI is available to fix the shares for accounts
+      imported on different servers, please check section
+      :ref:`check-fix-shares-commands`.
 
-   A command in the CLI is available to fix the shares for accounts
-   imported on different servers, please check section
-   :ref:`check-fix-shares-commands`.
+   .. grid-item-card:: Export from a Multistore and Import to a Single or Multistore
 
-.. _export_from_a_multistore_and_import_to_a_single_or_multistore:
+      Two different scenarios apply here:
 
-.. dropdown:: Export from a Multistore and Import to a Single or Multistore
+      - ``Mirror`` import: Same number of source and destination
+        mailstores.  Each export is imported on a different
+        server. This will break the consistency of ALL the items that
+        are shared from/to a mailbox on a different server. The
+        :ref:`doCheckShares <zxsuite_backup_doCheckShares>` and
+        :ref:`doFixShares <zxsuite_backup_doFixShares>` CLI commands
+        are available to check and fix share consistency (see section
+        :ref:`check-fix-shares-commands` below).
 
-   Two different scenarios apply here:
-
-   - ``Mirror`` import: Same number of source and destination mailstores.
-     Each export is imported on a different server. This will break the
-     consistency of ALL the items that are shared from/to a mailbox on a
-     different server. The ``doCheckShares`` and ``doFixShares`` CLI
-     commands are available to check and fix share consistency (see `the
-     next section <#check-fix-shares-commands>`__).
-
-   - ``Composite`` import: Same or different number of source and
-     destination servers. Domains or accounts are manually imported into
-     different servers. This will break the consistency of ALL the items
-     that are shared from/to a mailbox on a different server. Also in
-     this case, the ``doCheckShares`` and ``doFixShares`` CLI commands
-     are available.
+      - ``Composite`` import: Same or different number of source and
+        destination servers. Domains or accounts are manually imported
+        into different servers. This will break the consistency of ALL
+        the items that are shared from/to a mailbox on a different
+        server. Also in this case, the ``doCheckShares`` and
+        ``doFixShares`` CLI commands are available.
 
 .. _check-fix-shares-commands:
 
 The ``doCheckShares`` and ``doFixShares`` Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-The ``doCheckShares`` command will parse all share information in local
-accounts and report any error:::
+The :ref:`doCheckShares <zxsuite_backup_doCheckShares>` command will
+parse all share information in local accounts and report any error::
 
    zimbra@test:~$ zxsuite help backup doCheckShares
 
-The ``doFixShares`` will fix all share inconsistencies using a
-migration::
+The :ref:`doFixShares <zxsuite_backup_doFixShares>` will fix all share
+inconsistencies using a migration::
 
    zimbra@test:~$ zxsuite help backup doFixShares
 
@@ -880,78 +884,78 @@ applied immediately.
 Operation Queue Management
 --------------------------
 
-.. _through_the_administration_console:
+.. grid::
+   :gutter: 3
 
-.. dropdown:: Through the Administration Console
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 6
 
-   * Viewing the Queue
-   
-     To view the operation queue, access the ``Notifications`` tab in
-     the Administration Zimlet and click the ``Operation Queue``
-     button.
+      * Viewing the Queue
 
-     .. warning:: The Administration Zimlet displays operations queued
-        both by Zextras Backup and Zextras Powerstore in a single
-        view. This is just a design choice, as the two queues are
-        completely separate, meaning that one Zextras Backup operation
-        and one Zextras Powerstore operation can be running at the
-        same time.
+        To view the operation queue, access the ``Notifications`` tab in
+        the Administration Zimlet and click the ``Operation Queue``
+        button.
 
-   * Emptying the Queue
+        .. warning:: The Administration Zimlet displays operations queued
+           both by Zextras Backup and Zextras Powerstore in a single
+           view. This is just a design choice, as the two queues are
+           completely separate, meaning that one Zextras Backup operation
+           and one Zextras Powerstore operation can be running at the
+           same time.
 
-     To stop the current operation and empty Zextras Backup’s
-     operation queue, enter the ``Zextras Backup`` tab in the
-     Administration Zimlet and click the ``Stop all Operations``
-     button.
+      * Emptying the Queue
 
-.. _through_the_cli:
+        To stop the current operation and empty Zextras Backup’s
+        operation queue, enter the ``Zextras Backup`` tab in the
+        Administration Zimlet and click the ``Stop all Operations``
+        button.
 
-.. dropdown:: Through the CLI
+   .. grid-item-card:: Through the CLI
+      :columns: 6
+                
+      * Viewing the Queue
 
-   * Viewing the Queue
+        To view Zextras Backup’s operation queue, use the ``getAllOperations``
+        command:::
 
-
-     To view Zextras Backup’s operation queue, use the ``getAllOperations``
-     command:::
-
-       zxsuite help backup getAllOperations
-
-
-     .. card:: Usage example
-
-        ``zxsuite backup getAllOperations``
-
-        Shows all running and queued operations
+          zxsuite help backup getAllOperations
 
 
-   * Emptying the Queue
-   
-     To stop the current operation and empty Zextras Backup’s operation
-     queue, use the ``doStopAllOperations`` command::
+        .. card:: Usage example
 
-       zimbra@mail:~$ zxsuite help backup doStopAllOperations
+           ``zxsuite backup getAllOperations``
 
-
-     .. card:: Usage example
-
-        ``zxsuite backup doStopAllOperations``
-        
-        Stops all running operations
+           Shows all running and queued operations
 
 
-   * Removing a Single Operation from the Queue
+      * Emptying the Queue
+
+        To stop the current operation and empty Zextras Backup’s operation
+        queue, use the ``doStopAllOperations`` command::
+
+          zimbra@mail:~$ zxsuite help backup doStopAllOperations
 
 
-     To stop the current operation or to remove a specific operation
-     from the queue, use the ``doStopOperation`` command::
+        .. card:: Usage example
 
-       zimbra@mail:~$ zxsuite help backup doStopOperation
+           ``zxsuite backup doStopAllOperations``
 
-     .. card:: Usage example
+           Stops all running operations
 
-        ``zxsuite backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601``
-        
-        Stops operation with id = 30ed9eb9-eb28-4ca6-b65e-9940654b8601
+
+      * Removing a Single Operation from the Queue
+
+
+        To stop the current operation or to remove a specific operation
+        from the queue, use the ``doStopOperation`` command::
+
+          zimbra@mail:~$ zxsuite help backup doStopOperation
+
+        .. card:: Usage example
+
+           ``zxsuite backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601``
+
+           Stops operation with id = 30ed9eb9-eb28-4ca6-b65e-9940654b8601
 
 .. _cos_level_backup_management:
 

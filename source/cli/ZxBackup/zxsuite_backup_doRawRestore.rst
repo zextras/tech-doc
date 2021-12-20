@@ -1,13 +1,9 @@
-.. _backup_doRawRestore:
 
-doRawRestore
-------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doRawRestore *source_path* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -31,9 +27,9 @@ PARAMETER LIST
 | threads(O)      | Integer         |                 | 4               |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

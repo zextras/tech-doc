@@ -1,22 +1,23 @@
+
+::
+
+   zxsuite core listBuckets
    *all|S3|Custom_S3|Scality_S3|EMC|Cloudian|Ceph|Yandex|Alibaba* [param
    VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
-+-----------------+-----------------+-----------------+-----------------+
-| NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
-+-----------------+-----------------+-----------------+-----------------+
-| **type**\ (M)   | String          | all|S3|Custom_S |                 |
-|                 |                 | 3|Scality_S3|EM |                 |
-|                 |                 | C|Cloudian|Ceph |                 |
-|                 |                 | |Yandex|Alibaba |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| show_secrets(O) | Boolean         | true|false      | false           |
-+-----------------+-----------------+-----------------+-----------------+
+.. csv-table::
+   :header: "NAME", "TYPE", "EXPECTED VALUES", "DEFAULT"
 
-(M) == mandatory parameter, (O) == optional parameter
+   "**type (M)**", "String", "all | S3 | Custom_S3 | Scality_S3 | EMC
+   | Cloudian | Ceph Yandex | Alibaba"
+   "show_secrets (O)", "Boolean", "true | false", "false"
 
-**Example:.**
+
+\(M) == mandatory parameter, (O) == optional parameter
+
+.. rubric:: Usage Example
 
 ::
 
@@ -24,7 +25,7 @@ PARAMETER LIST
 
 List all bucket configurations without displaying secrets
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

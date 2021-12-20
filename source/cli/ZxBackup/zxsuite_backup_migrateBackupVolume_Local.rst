@@ -1,13 +1,9 @@
-.. _backup_migrateBackupVolume_Local:
 
-Local
------
-
-.. container:: informalexample
+::
 
    zxsuite backup migrateBackupVolume Local *path* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -17,9 +13,9 @@ PARAMETER LIST
 | threads(O)      | Integer         |                 | 10              |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

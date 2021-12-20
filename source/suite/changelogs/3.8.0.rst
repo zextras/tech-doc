@@ -1,0 +1,69 @@
+.. uncomment in 3.9.0 release
+   
+    Zextras Suite Changelog - Release 3.8.0
+   =========================================
+
+   Release Date: November 29th, 2021
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-252
+
+* *Title:* Double click support for zimlets
+
+* *Description:* Added support for double-click to the zimlets in the webmail.
+
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-641
+
+* *Title:* False-positive errors in coherency check operation fixed
+
+* *Description:* Fixed a bug that caused false-positive errors to be reported during the doCoherencyCheck operations if any tags/flags were present.
+
+..
+
+* *Issue ID:* BCK-643
+
+* *Title:* doSmartScan help usage example fixed
+
+* *Description:* Added the `start` parameter to doSmartScan example in the command help which was missing.
+
+
+.. rubric:: Drive
+
+* *Issue ID:* DRIV-1366
+
+* *Title:* Permit renaming of files without extension parameter
+
+* *Description:* In Drive, you can now rename files even if their extension is missing.
+
+..
+
+* *Issue ID:* DRIV-1510
+
+* *Title:* Add app version and powered by Zextras section
+
+* *Description:* A section reporting the app version is now present in
+  the Drive tab at its bottom left corner. Clicking on it will copy
+  the current Drive version to the clipboard.
+
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-349
+
+* *Title:* Improve the creation of JSON file under account_info during MailboxMove
+
+* *Description:* Under a few specific scenarios during the MailboxMove procedure, the `account_info` file was corrupted, making the JSON file invalid. This has now been fixed.
+
+..
+
+* *Issue ID:* PS-356
+
+* *Title:* Improvements to commands usage examples
+
+* *Description:* Updated the usage examples to reflect the current parameters for the following commands: `doCreateBucket`, `doDeleteAllDelegatedRights`, `doDeleteBucket`, `doRestartService`, `doStartService`, `doStopService`, `doUpdateBucket` and `doUploadLicense`.
+
+

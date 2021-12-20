@@ -1,13 +1,9 @@
-.. _backup_doEnableDisableCOS:
 
-doEnableDisableCOS
-------------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doEnableDisableCOS *cos_name* *enable|disable*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -19,9 +15,9 @@ PARAMETER LIST
 | os_state**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

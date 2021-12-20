@@ -1,19 +1,15 @@
-.. _backup_getItem:
 
-getItem
--------
-
-.. container:: informalexample
+::
 
    zxsuite backup getItem *account* *item* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | Account Name/ID |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **acc           | Account Name/ID |                 |                 |
+| ount**\ (M)     |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | **item**\ (M)   | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
@@ -28,9 +24,9 @@ PARAMETER LIST
 | lobs_archive(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

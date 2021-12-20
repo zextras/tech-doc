@@ -1,13 +1,9 @@
-.. _backup_getMap:
 
-getMap
-------
-
-.. container:: informalexample
+::
 
    zxsuite backup getMap *file_path*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -16,9 +12,9 @@ PARAMETER LIST
 | ile_path**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

@@ -1,13 +1,9 @@
-.. _backup_doRestoreBlobs:
 
-doRestoreBlobs
---------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doRestoreBlobs *volume_id* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -28,9 +24,9 @@ PARAMETER LIST
 | lobs_archive(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -39,7 +35,7 @@ PARAMETER LIST
 Run a restore blob operation on volume 1 without actually restoring
 data.
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

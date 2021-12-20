@@ -12,51 +12,57 @@ Enable Zextras Mobile Synchronization for a COS
 How to Enable Zextras Mobile for all Users in a Class Of Service
 ----------------------------------------------------------------
 
-.. dropdown:: From the Administration Console
+.. grid::
+   :gutter: 3
 
-   To enable Zextras Mobile for all users in a COS from the Administration
-   Console:
+   .. grid-item-card:: Via the Administration Zimlet
 
-   - Open the Zimbra Administration Console
+      To enable Zextras Mobile for all users in a COS from the Administration
+      Console:
 
-   - Double-click the Class Of Service you want to edit (on the left,
-     under :menuselection:`Configuration --> Class of Service`)
+      - Open the Zimbra Administration Console
 
-   - Click the Mobile tab
+      - Double-click the Class Of Service you want to edit (on the left,
+        under :menuselection:`Configuration --> Class of Service`)
 
-   - Check the ``Enable mobile synchronization`` button
+      - Click the Mobile tab
 
-.. dropdown:: From the Zimbra CLI
+      - Check the ``Enable mobile synchronization`` button
 
-   To enable Zextras Mobile for all users in a COS from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run :command:`zmprov mc COSName
-     zimbraFeatureMobileSyncEnabled TRUE`
+      To enable Zextras Mobile for all users in a COS from the CLI:
+
+      - As the 'zimbra' user run :command:`zmprov mc COSName
+        zimbraFeatureMobileSyncEnabled TRUE`
 
 .. _how_to_disable_zextras_mobile_for_all_users_in_a_class_of_service:
 
 How to Disable Zextras Mobile for all Users in a Class Of Service
 -----------------------------------------------------------------
 
-.. dropdown:: From the Administration Console
+.. grid::
+   :gutter: 3
 
-   To disable Zextras Mobile for all users in a COS from the Administration
-   Console:
+   .. grid-item-card:: Via the Administration Zimlet
 
-   - Open the Zimbra Administration Console
+      To disable Zextras Mobile for all users in a COS from the Administration
+      Console:
 
-   - Double-click the Class Of Service you want to edit (on the left,
-     under :menuselection:`Configuration --> Class of Service`).
+      - Open the Zimbra Administration Console
 
-   - Click the Mobile tab and uncheck the ``Enable mobile
-     synchronization`` button.
+      - Double-click the Class Of Service you want to edit (on the left,
+        under :menuselection:`Configuration --> Class of Service`).
 
-.. dropdown:: From the Zimbra CLI
+      - Click the Mobile tab and uncheck the ``Enable mobile
+        synchronization`` button.
 
-   To disable Zextras Mobile for all users in a COS from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run :command:`zmprov mc COSName
-     zimbraFeatureMobileSyncEnabled FALSE`
+      To disable Zextras Mobile for all users in a COS from the CLI:
+
+      - As the 'zimbra' user run :command:`zmprov mc COSName
+        zimbraFeatureMobileSyncEnabled FALSE`
 
 .. _mobile_note_about_settings_hierarchy:
 
@@ -79,59 +85,61 @@ Module.
 How to Enable Zextras Mobile for a Single User
 ----------------------------------------------
 
-.. dropdown::   From the Zimbra Administration Console
+.. grid::
+   :gutter: 3
 
-   To enable Zextras Mobile for a single user from the Administration
-   Console:
+   .. grid-item-card::   From the Zimbra Administration Console
 
-   - Open the Zimbra Administration Console
+      To enable Zextras Mobile for a single user from the Administration
+      Console:
 
-   - Double-click the user you want to edit (on the left, under
-     :menuselection:`Manage --> Accounts`)
+      - Open the Zimbra Administration Console
 
-   - Click the Mobile tab
+      - Double-click the user you want to edit (on the left, under
+        :menuselection:`Manage --> Accounts`)
 
-   - Check ``Enable mobile synchronization``
+      - Click the Mobile tab
 
-   .. _mobile_from_the_zimbra_cli_3:
+      - Check ``Enable mobile synchronization``
 
-.. dropdown:: From the Zimbra CLI
+      .. _mobile_from_the_zimbra_cli_3:
 
-   To enable Zextras Mobile for a single user from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run: :command:`zmprov ma user@example.com
-     zimbraFeatureMobileSyncEnabled TRUE`
+      To enable Zextras Mobile for a single user from the CLI:
+
+      - As the 'zimbra' user run: :command:`zmprov ma user@example.com
+        zimbraFeatureMobileSyncEnabled TRUE`
 
 .. _mobile_how_to_disable_zextras_mobile_for_a_single_user:
 
 How to Disable Zextras Mobile for a Single User
 -----------------------------------------------
 
-.. dropdown:: From the Zimbra Administration Console
+.. grid::
+   :gutter: 3
 
-   To disable Zextras Mobile for a single user from the CLI:
+   .. grid-item-card:: Via the Administration Zimlet
 
-   - Open the Zimbra Administration Console
+      To disable Zextras Mobile for a single user from the CLI:
 
-   - Double-click the user you want to edit (on the left, under
-     :menuselection:`Manage -> Accounts`)
+      - Open the Zimbra Administration Console
 
-   - Click the Zextras Mobile tab and uncheck ``Enable mobile
-     synchronization``
+      - Double-click the user you want to edit (on the left, under
+        :menuselection:`Manage --> Accounts`)
 
-.. dropdown:: From the Zimbra CLI
+      - Click the Zextras Mobile tab and uncheck ``Enable mobile
+        synchronization``
 
-   To disable Zextras Mobile for a single user from the CLI:
+   .. grid-item-card:: Via the CLI
 
-   - As the 'zimbra' user run :command:`zmprov ma user@example.com
-     zimbraFeatureMobileSyncEnabled FALSE`
+      To disable Zextras Mobile for a single user from the CLI:
 
-.. _mobile_note_about_settings_hierarchy_2:
+      - As the 'zimbra' user run :command:`zmprov ma user@example.com
+        zimbraFeatureMobileSyncEnabled FALSE`
 
-Note about Settings Hierarchy
------------------------------
 
-User-level settings override COS-level settings.
+.. note:: User-level settings override COS-level settings.
 
 .. _mobile-password:
 
@@ -292,24 +300,24 @@ following steps take place:
 1. The device requests a folderSync operation to synchronize the local
    Folders with the ones on the server.
 
-   :fa:`arrow-right` One SyncKey per local folder is sent (or a single
+   :octicon:`arrow-right` One SyncKey per local folder is sent (or a single
    SyncKey set to '0' if this is the first connection between the
    device and the server)
 
 2. The server replies with a list of available folders.
 
-   :fa:`arrow-right` One SyncKey per folder is sent by the server.
+   :octicon:`arrow-right` One SyncKey per folder is sent by the server.
 
 3. The device requests an itemSync operation to synchronize all due
    items.
 
-   :fa:`arrow-right` The server stores the items synchronized in the
+   :octicon:`arrow-right` The server stores the items synchronized in the
    SyncState.
 
 4. After completing the itemSync operation, the device sends a 'ping'
    command to keep the connection alive.
 
-   :fa:`arrow-right` Step 4 is repeated as long as no changes happen
+   :octicon:`arrow-right` Step 4 is repeated as long as no changes happen
    to the synchronised account.
 
 Every time a new item is stored on the mailbox or an old item is
@@ -345,74 +353,80 @@ A sync request is issued when:
 Managing the SyncStates
 -----------------------
 
-.. dropdown:: Via the Administration Zimlet
+.. grid::
+   :gutter: 3
 
-   Zextras Mobile provides two options in the Administration Zimlet to
-   manage the SyncStates of synchronized mobile devices:
+   .. grid-item-card:: Via the Administration Zimlet
+      :columns: 12
+                
+      Zextras Mobile provides two options in the Administration Zimlet to
+      manage the SyncStates of synchronized mobile devices:
 
-   - Reset Device: Resets the device’s SyncState for a single account,
-     forcing a full re-synchronization the next time the device connects
-     to the server.
+      - Reset Device: Resets the device’s SyncState for a single account,
+        forcing a full re-synchronization the next time the device connects
+        to the server.
 
-   - Wipe Device: Removes all the device’s SyncState and history from the
-     server. Useful when a mobile device is not used anymore or is
-     assigned to a different employee in the same company.
+      - Wipe Device: Removes all the device’s SyncState and history from the
+        server. Useful when a mobile device is not used anymore or is
+        assigned to a different employee in the same company.
 
-.. dropdown:: Via the CLI
+   .. grid-item-card:: Via the CLI
+      :columns: 12
 
-   To manage the SyncStates of synchronized mobile devices via the
-   CLI, use one of the following commands:
+      To manage the SyncStates of synchronized mobile devices via the
+      CLI, use one of the following commands:
 
-   .. grid::
-      :gutter: 3
+      .. grid::
+         :gutter: 1
 
-      .. grid-item-card::
-         :columns: 4
+         .. grid-item-card::
+            :columns: 4
 
-         The doRemoveDevice command
-         ^^^^^
+            The doRemoveDevice command
+            ^^^^^
 
-         Syntax::
+            Syntax::
 
-           zxsuite mobile doRemoveDevice {account} {device_id}
+              zxsuite mobile doRemoveDevice {account} {device_id}
 
-         Usage example:
+            Usage example:
 
-         zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S
+            ``zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S``
 
-         Removes John's Appl79032X2WA4S device SyncState
+            Removes John's Appl79032X2WA4S device SyncState
 
-      .. grid-item-card::
-         :columns: 4
+         .. grid-item-card::
+            :columns: 4
 
-         The doResetAccount command
-         ^^^^^^
+            The doResetAccount command
+            ^^^^^^
 
-         Syntax::
-               zxsuite mobile doResetAccount {account}
+            Syntax::
+              
+              zxsuite mobile doResetAccount {account}
 
-         Usage example:
+            Usage example:
 
-            zxsuite mobile doResetAccount john@example.com
+            ``zxsuite mobile doResetAccount john@example.com``
+               
+            Resets all the device states for John's account
 
-         Resets all the device states for John's account
 
+         .. grid-item-card::
+            :columns: 4
 
-      .. grid-item-card::
-         :columns: 4
+            The doResetDevice command
+            ^^^^^
 
-         The doResetDevice command
-         ^^^^^
+            Syntax::
 
-         Syntax::
+              zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
 
-           zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
+            Usage example:
 
-         Usage example::
+            ``zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S``
 
-           zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S
-
-         Resets John's Appl79032X2WA4S device SyncState
+            Resets John's Appl79032X2WA4S device SyncState
 
 .. _mobile_advanced_settings:
 
@@ -589,27 +603,29 @@ Zextras Mobile Performance Tuning
 Zextras Mobile provides three useful options to fine-tune Zextras Mobile
 according to system performance.
 
-.. _mobile_performance_tuning_settings:
 
-Performance Tuning Settings
----------------------------
+.. grid::
+   :gutter: 3
 
-.. _mobile_available_settings:
+   .. grid-item:: **Notifications Latency**
+      :columns: 4
+                
+      ``ZxMobile_NotificationsLatency`` represents The seconds of
+      delay between an event on the server and its notification to the
+      mobile device.
 
-Available Settings
-~~~~~~~~~~~~~~~~~~
+   .. grid-item:: **Use Instant Notifications**
+      :columns: 4
 
-Notifications Latency
-  (ZxMobile_NotificationsLatency): The seconds of delay between an
-  event on the server and its notification to the mobile device.
+      ``ZxMobile_UseInstantNotficiations`` enables or disables instant
+      notifications. If **true**, it also overrides ``Notifications
+      Latency``.
 
-Use Instant Notifications
-  (ZxMobile_UseInstantNotficiations): Enable/Disable instant
-  notifications. Overrides Notifications Latency if true.
-
-Max Ping Heartbeat
-  (ZxMobile_MaxPingHeartbeat): Maximum interval between 'ping'
-  commands.
+   .. grid-item:: **Max Ping Heartbeat**
+      :columns: 4
+                
+      ``ZxMobile_MaxPingHeartbeat`` defines the maximum interval
+      between :command:`ping` commands.
 
 All settings can be edited in the Administration Zimlet or via CLI using
 the ``zxsuite config`` command.
@@ -1306,61 +1322,59 @@ standard (ERE with doubled backslashes).
 Zextras Mobile CLI
 ==================
 
-This section contains the index of all ``zxsuite mobile`` commands. Full
-reference can be found in `the dedicated
-section <./cli.xml#_zxmobile_cli_commands>`_.
 
-`ABQ allow <./cli.xml#mobile_ABQ_allow>`_ \| `ABQ
-block <./cli.xml#mobile_ABQ_block>`_ \| `ABQ
-delete <./cli.xml#mobile_ABQ_delete>`_ \| `ABQ
-deleteRule <./cli.xml#mobile_ABQ_deleteRule>`_ \| `ABQ
-import <./cli.xml#mobile_ABQ_import>`_ \| `ABQ
-list <./cli.xml#mobile_ABQ_list>`_ \| `ABQ
-listRules <./cli.xml#mobile_ABQ_listRules>`_ \| `ABQ
-set <./cli.xml#mobile_ABQ_set>`_ \| `ABQ
-setNotificationInterval <./cli.xml#mobile_ABQ_setNotificationInterval>`_
-\| `ABQ setRule <./cli.xml#mobile_ABQ_setRule>`_ \| `addressBook add
-domain <./cli.xml#mobile_addressBook_add_domain>`_ \| `addressBook add
-global <./cli.xml#mobile_addressBook_add_global>`_ \| `addressBook list
-domain <./cli.xml#mobile_addressBook_list_domain>`_ \| `addressBook
-list global <./cli.xml#mobile_addressBook_list_global>`_ \|
-`addressBook remove
-domain <./cli.xml#mobile_addressBook_remove_domain>`_ \| `addressBook
-remove global <./cli.xml#mobile_addressBook_remove_global>`_ \|
-`deleteABQMessage domain <./cli.xml#mobile_deleteABQMessage_domain>`_
-\| `deleteABQMessage
-global <./cli.xml#mobile_deleteABQMessage_global>`_ \|
-`doAddAccountLogger <./cli.xml#mobile_doAddAccountLogger>`_ \|
-`doAddEASFilter <./cli.xml#mobile_doAddEASFilter>`_ \|
-`doDeleteEASFilter <./cli.xml#mobile_doDeleteEASFilter>`_ \|
-`doMoveEASFilter <./cli.xml#mobile_doMoveEASFilter>`_ \|
-`doRemoveDevice <./cli.xml#mobile_doRemoveDevice>`_ \|
-`doRemoveLogger <./cli.xml#mobile_doRemoveLogger>`_ \|
-`doResetAccount <./cli.xml#mobile_doResetAccount>`_ \|
-`doResetDevice <./cli.xml#mobile_doResetDevice>`_ \|
-`doRestartService <./cli.xml#mobile_doRestartService>`_ \|
-`doResumeDeviceSync <./cli.xml#mobile_doResumeDeviceSync>`_ \|
-`doSimulateSync <./cli.xml#mobile_doSimulateSync>`_ \|
-`doStartService <./cli.xml#mobile_doStartService>`_ \|
-`doStopService <./cli.xml#mobile_doStopService>`_ \|
-`doSuspendDeviceSync <./cli.xml#mobile_doSuspendDeviceSync>`_ \|
-`doWipeDevice <./cli.xml#mobile_doWipeDevice>`_ \| `duplicateABQMessage
-domain <./cli.xml#mobile_duplicateABQMessage_domain>`_ \|
-`duplicateABQMessage
-global <./cli.xml#mobile_duplicateABQMessage_global>`_ \|
-`getABQMessage domain <./cli.xml#mobile_getABQMessage_domain>`_ \|
-`getABQMessage global <./cli.xml#mobile_getABQMessage_global>`_ \|
-`getAccountLoggers <./cli.xml#mobile_getAccountLoggers>`_ \|
-`getAllDevices <./cli.xml#mobile_getAllDevices>`_ \|
-`getAllEASFilters <./cli.xml#mobile_getAllEASFilters>`_ \|
-`getDeviceInfo <./cli.xml#mobile_getDeviceInfo>`_ \|
-`getDeviceList <./cli.xml#mobile_getDeviceList>`_ \|
-`getProperty <./cli.xml#mobile_getProperty>`_ \|
-`getProvisioning <./cli.xml#mobile_getProvisioning>`_ \|
-`getServices <./cli.xml#mobile_getServices>`_ \|
-`initABQMessage <./cli.xml#mobile_initABQMessage>`_ \| `setABQMessage
-domain <./cli.xml#mobile_setABQMessage_domain>`_ \| `setABQMessage
-global <./cli.xml#mobile_setABQMessage_global>`_ \|
-`setProperty <./cli.xml#mobile_setProperty>`_ \|
-`setProvisioning <./cli.xml#mobile_setProvisioning>`_ \|
-`setSharedFolderSync <./cli.xml#mobile_setSharedFolderSync>`_
+This section contains the index of all ``zxsuite mobile``
+commands. Full reference can be found in the dedicated section
+:ref:`zextras_mobile_full_cli`.
+
+:ref:`ABQ allow <zxsuite_mobile_ABQ_allow>`
+:octicon:`dash` :ref:`ABQ block <zxsuite_mobile_ABQ_block>`
+:octicon:`dash` :ref:`ABQ delete <zxsuite_mobile_ABQ_delete>`
+:octicon:`dash` :ref:`ABQ deleteRule <zxsuite_mobile_ABQ_deleteRule>`
+:octicon:`dash` :ref:`ABQ import <zxsuite_mobile_ABQ_import>`
+:octicon:`dash` :ref:`ABQ list <zxsuite_mobile_ABQ_list>`
+:octicon:`dash` :ref:`ABQ listRules <zxsuite_mobile_ABQ_listRules>`
+:octicon:`dash` :ref:`ABQ set <zxsuite_mobile_ABQ_set>`
+:octicon:`dash` :ref:`ABQ setNotificationInterval <zxsuite_mobile_ABQ_setNotificationInterval>`
+:octicon:`dash` :ref:`ABQ setRule <zxsuite_mobile_ABQ_setRule>`
+:octicon:`dash` :ref:`addressBook add domain <zxsuite_mobile_addressBook_add_domain>`
+:octicon:`dash` :ref:`addressBook add global <zxsuite_mobile_addressBook_add_global>`
+:octicon:`dash` :ref:`addressBook list domain <zxsuite_mobile_addressBook_list_domain>`
+:octicon:`dash` :ref:`addressBook list global <zxsuite_mobile_addressBook_list_global>`
+:octicon:`dash` :ref:`addressBook remove domain <zxsuite_mobile_addressBook_remove_domain>`
+:octicon:`dash` :ref:`addressBook remove global <zxsuite_mobile_addressBook_remove_global>`
+:octicon:`dash` :ref:`deleteABQMessage domain <zxsuite_mobile_deleteABQMessage_domain>`
+:octicon:`dash` :ref:`deleteABQMessage global <zxsuite_mobile_deleteABQMessage_global>`
+:octicon:`dash` :ref:`doAddAccountLogger <zxsuite_mobile_doAddAccountLogger>`
+:octicon:`dash` :ref:`doAddEASFilter <zxsuite_mobile_doAddEASFilter>`
+:octicon:`dash` :ref:`doDeleteEASFilter <zxsuite_mobile_doDeleteEASFilter>`
+:octicon:`dash` :ref:`doMoveEASFilter <zxsuite_mobile_doMoveEASFilter>`
+:octicon:`dash` :ref:`doRemoveDevice <zxsuite_mobile_doRemoveDevice>`
+:octicon:`dash` :ref:`doRemoveLogger <zxsuite_mobile_doRemoveLogger>`
+:octicon:`dash` :ref:`doResetAccount <zxsuite_mobile_doResetAccount>`
+:octicon:`dash` :ref:`doResetDevice <zxsuite_mobile_doResetDevice>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_mobile_doRestartService>`
+:octicon:`dash` :ref:`doResumeDeviceSync <zxsuite_mobile_doResumeDeviceSync>`
+:octicon:`dash` :ref:`doSimulateSync <zxsuite_mobile_doSimulateSync>`
+:octicon:`dash` :ref:`doStartService <zxsuite_mobile_doStartService>`
+:octicon:`dash` :ref:`doStopService <zxsuite_mobile_doStopService>`
+:octicon:`dash` :ref:`doSuspendDeviceSync <zxsuite_mobile_doSuspendDeviceSync>`
+:octicon:`dash` :ref:`doWipeDevice <zxsuite_mobile_doWipeDevice>`
+:octicon:`dash` :ref:`duplicateABQMessage domain <zxsuite_mobile_duplicateABQMessage_domain>`
+:octicon:`dash` :ref:`duplicateABQMessage global <zxsuite_mobile_duplicateABQMessage_global>`
+:octicon:`dash` :ref:`getABQMessage domain <zxsuite_mobile_getABQMessage_domain>`
+:octicon:`dash` :ref:`getABQMessage global <zxsuite_mobile_getABQMessage_global>`
+:octicon:`dash` :ref:`getAccountLoggers <zxsuite_mobile_getAccountLoggers>`
+:octicon:`dash` :ref:`getAllDevices <zxsuite_mobile_getAllDevices>`
+:octicon:`dash` :ref:`getAllEASFilters <zxsuite_mobile_getAllEASFilters>`
+:octicon:`dash` :ref:`getDeviceInfo <zxsuite_mobile_getDeviceInfo>`
+:octicon:`dash` :ref:`getDeviceList <zxsuite_mobile_getDeviceList>`
+:octicon:`dash` :ref:`getProperty <zxsuite_mobile_getProperty>`
+:octicon:`dash` :ref:`getProvisioning <zxsuite_mobile_getProvisioning>`
+:octicon:`dash` :ref:`getServices <zxsuite_mobile_getServices>`
+:octicon:`dash` :ref:`initABQMessage <zxsuite_mobile_initABQMessage>`
+:octicon:`dash` :ref:`setABQMessage domain <zxsuite_mobile_setABQMessage_domain>`
+:octicon:`dash` :ref:`setABQMessage global <zxsuite_mobile_setABQMessage_global>`
+:octicon:`dash` :ref:`setProperty <zxsuite_mobile_setProperty>`
+:octicon:`dash` :ref:`setProvisioning <zxsuite_mobile_setProvisioning>`
+:octicon:`dash` :ref:`setSharedFolderSync <zxsuite_mobile_setSharedFolderSync>`

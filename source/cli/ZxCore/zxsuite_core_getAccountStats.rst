@@ -1,16 +1,20 @@
 
-PARAMETER LIST
+::
+
+   zxsuite core getAccountStats *account*
+
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| *               | Account Name/ID |                 |                 |
-| *account**\ (M) |                 |                 |                 |
+| **acc           | Account Name/ID |                 |                 |
+| ount**\ (M)     |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) == mandatory parameter, (O) == optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

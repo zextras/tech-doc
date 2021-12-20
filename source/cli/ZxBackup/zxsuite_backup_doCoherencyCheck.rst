@@ -1,13 +1,9 @@
-.. _backup_doCoherencyCheck:
 
-doCoherencyCheck
-----------------
-
-.. container:: informalexample
+::
 
    zxsuite backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -28,9 +24,9 @@ PARAMETER LIST
 | ixDoubleGzip(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
@@ -39,7 +35,7 @@ PARAMETER LIST
 Performs a coherency check on /opt/zimbra/backup/zextras/ for Jack’s and
 John’s accounts
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 

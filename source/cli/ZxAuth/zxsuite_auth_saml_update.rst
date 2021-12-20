@@ -1,13 +1,9 @@
-.. _auth_saml_update:
 
-update
-------
-
-.. container:: informalexample
+::
 
    zxsuite auth saml update *example.com* *organization.name* *Zextras*
 
-PARAMETER LIST
+.. rubric:: Parameter List
 
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
@@ -20,9 +16,9 @@ PARAMETER LIST
 | **value**\ (M)  | String          | Zextras         |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
-(M) -- mandatory parameter, (O) -- optional parameter
+\(M) == mandatory parameter, (O) == optional parameter
 
-**Example:.**
+.. rubric:: Usage Example
 
 ::
 
