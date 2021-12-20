@@ -27,7 +27,6 @@ pipeline {
     stages {
       stage('Build Sphinx with Docker') {
       when {
-            changeRequest()
             anyOf {
                     branch 'master'
                     branch 'pre_release'
