@@ -44,9 +44,6 @@ exclude_patterns = [ '00-includes', 'cli/*/', 'changelogs/3.1.*' ]
 
 rst_prolog = """
 
-.. note:: All content is provisional and is meant **only** to showcase
-   the feature of the new framework.
-
 .. role:: red
 .. role:: green
 
