@@ -26,10 +26,11 @@ pipeline {
 
     stages {
       stage('Build Sphinx with Docker') {
-            when {
-		 anyOf { branch 'master'; branch 'pre_release' }
-		 }
-            }
+      when {
+            anyOf {
+                    branch 'master'
+                    branch 'pre_release'
+              }
             }
       steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
@@ -42,8 +43,7 @@ pipeline {
 
       stage('Upload to STAGING') {
       when {
-              branch '${STAGING_BRANCH}'
-              changeRequest()
+                    branch 'pre_release'
             }
         steps {
             unstash "build_done"
@@ -60,8 +60,7 @@ pipeline {
       }
       stage('Upload to PRODUCTION') {
       when {
-          branch '${PRODUCTION_BRANCH}'
-          changeRequest()
+                    branch 'master'
             }
         steps {
             unstash "build_done"
