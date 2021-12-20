@@ -26,15 +26,13 @@ pipeline {
 
     stages {
       stage('Build Sphinx with Docker') {
-        when {
-              beforeAgent true
-                  anyOf {
-                      branch "${PRODUCTION_BRANCH}"
-                      branch "${STAGING_BRANCH}"
-                      buildingTag();
-                  }
+      when {
+              allOf {
+                expression { BRANCH_NAME ==~ /(${PRODUCTION_BRANCH}|${STAGING_BRANCH})/ }
+                changeRequest()
+              }
             }
-        steps {
+      steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            sh 'docker rm -v zsphinx'
            sh 'docker run -d --name zsphinx  sphinx_builder'
@@ -44,18 +42,10 @@ pipeline {
       }
 
       stage('Upload to STAGING') {
-        when {
-              beforeAgent true
-              allOf {
-                  not {
-                      changeRequest();
-                  }
-                  anyOf {
-                      branch "${STAGING_BRANCH}"
-                      buildingTag();
-                  }
-              }
-        }
+      when {
+              branch '${STAGING_BRANCH}'
+              changeRequest()
+            }
         steps {
             unstash "build_done"
             withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
@@ -70,18 +60,10 @@ pipeline {
         }
       }
       stage('Upload to PRODUCTION') {
-        when {
-              beforeAgent true
-              allOf {
-                  not {
-                      changeRequest();
-                  }
-                  anyOf {
-                      branch "${PRODUCTION_BRANCH}"
-                      buildingTag();
-                  }
-              }
-        }
+      when {
+          branch '${PRODUCTION_BRANCH}'
+          changeRequest()
+            }
         steps {
             unstash "build_done"
             withAWS(region: REGION, credentials: PRODUCTION_CREDENTIALS) {
