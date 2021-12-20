@@ -4,9 +4,28 @@
 <hr />
 <ul>
   <li class="toctree-l1">
-    <a href="/landing/html/home.html">Back to
+    <a class="icon icon-home" href="../../landing/zextras_documentation.html"> Back to
       Zextras Documentation hub
     </a>
   </li>
 </ul>
 {% endblock %}
+{% block sidebartitle %}
+<a href="{{ pathto(master_doc) }}"><img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
+  <p class="fa fa-arrow-circle-left"> {{ project }}</p>
+</a>
+   
+{%- if theme_display_version %}
+   {%- set nav_version = version %}
+   {%- if READTHEDOCS and current_version %}
+      {%- set nav_version = current_version %}
+   {%- endif %}
+   {%- if nav_version %}
+      <div class="version">
+         {{ nav_version }}
+      </div>
+   {%- endif %}
+{%- endif %}
+{% include "searchbox.html" %}
+{% endblock %}
+  

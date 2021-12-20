@@ -1,0 +1,154 @@
+
+Zextras Suite Changelog - Release 3.3.0
+=======================================
+
+Release Date: July 12th, 2021
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-242
+
+* *Title:* SAML session invalidation on logout
+
+* *Description:* If provided within the SAML configuration, the logout process now calls the SAML logout endpoint to invalidate the session.
+
+
+..
+
+* *Issue ID:* AUTH-268
+
+* *Title:* Fixed warn notification in the audit log file
+
+* *Description:* Added the missing space in the authentication error notification in the audit.log file when a non-existent user logged in to the webmail from the Zextras Suite login page.
+
+
+..
+
+* *Issue ID:* AUTH-289
+
+* *Title:* unable to save the trusted device
+
+* *Description:* Before this fix, if  two or more users log in using the same browser, there was an error saving the browser ID
+
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-575
+
+* *Title:* Handle not initialized backup on external restore.
+
+* *Description:* Running an external restore without initializing the backup in the destination server now no longer generates errors.
+
+.. commented out in the original
+   * *Issue ID:* BCK-590
+
+   * *Title:* Add an account restored Completed INFO to doExternalRestore logs
+
+   * *Description:* The account restoration logs now appear in phases and completion logs at the end.
+
+
+
+* *Issue ID:* BCK-595
+
+* *Title:* `Skip_domain_provisioning` on doExternalRestore operation
+
+* *Description:* By default, the `skip_domain_provisioning` flag now set to `false` skips all the domain-based attributes on `doExternalRestore` operation. If users set `skip_domain_provisioning` to `true` and the account's domain is not present, the import fails.
+
+..
+
+* *Issue ID:* BCK-597
+
+* *Title:* External restore operation now restores shared contacts
+
+* *Description:* Improved the external restore and the fixShares operations so they can restore shared contacts in groups too.
+
+.. rubric:: General
+
+* *Issue ID:* COR-604
+
+* *Title:* New config commands
+
+* *Description:* With new configuration commands, users can now use `set`, `get`, and `unset` commands.
+
+
+.. rubric:: Admin
+
+* *Issue ID:* DELEG-38
+
+* *Title:* Now in Browse Logs window of Admin tab links to the new wiki
+
+* *Description:* Updated Admin section "Browse Logs" link from the old wiki to the latest documentation page.
+
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-343
+
+* *Title:* Users can now define the folders to exclude from Active Sync
+
+* *Description:* Users can now exclude a folder, except any of the system folders, from Active Sync.
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-318
+
+* *Title:* Indexing delayed on endpoints unavailability
+
+* *Description:* When the indexing endpoints are unavailable, the indexing is delayed, and the failure count is updated.
+
+..
+
+* *Issue ID:* PS-320
+
+* *Title:* Notify the admin if the indexing extraction tool's endpoint is  unavailable
+
+* *Description:* A notification now informs the admins when none of the indexing extraction's endpoints is unavailable.
+
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-2559
+
+* *Title:* Improved video server command's help output
+
+* *Description:* When users run the video server command without parameters, a list of options with descriptions appears as output instead of an error.
+
+.. commented out in the original
+   * *Issue ID:* TEAMS-2690
+
+   * *Title:* Margin at the end of a conversation removed
+
+   * *Description:* In Zextras Teams, each conversation had an area at the end of the chat that users could scroll further. The margin at the end of a conversation no longer appears.
+
+..
+
+* *Issue ID:* TEAMS-2842
+
+* *Title:* Conversation scroll on new messages fixed
+
+* *Description:* Fixed a bug that prevented conversations from scrolling on receiving new messages while the ``is writing`` bubble is present.
+
+..
+
+
+* *Issue ID:* TEAMS-2850
+
+* *Title:* A notification now informs the users when someone mutes them.
+
+* *Description:* Users now receive a notification when someone mutes them. This notification remains as an alert until users acknowledge it.
+
+..
+
+* *Issue ID:* TEAMS-2889
+
+* *Title:* Limited "add member" functionality to groups only to moderators.
+
+* *Description:* With API version 14, the "add member" functionality is limited to groups and restricted only to moderators.
+
+..
+
+* *Issue ID:* TEAMS-2931
+
+* *Title:* "MuteForAll" button has been limited only to moderators
+
+* *Description:* Only moderators can now mute other people in a group, space, or channel meeting.

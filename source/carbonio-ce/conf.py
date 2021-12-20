@@ -40,12 +40,9 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['common/cli/ZxTeam', 'cli']
 
 rst_prolog = """
-
-.. note:: All content is provisional and is meant **only** to showcase
-   the feature of the new framework.
 
 """ + open("replace.txt").read()
 
@@ -76,11 +73,12 @@ html_show_sourcelink = False
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = [ 'css/community.css' ]
-html_logo = 'img/zextras_white.svg'
+html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 
-
-# html_theme_options = {
+html_theme_options = {
+      'analytics_id': 'UA-23692145-1',  
+      'analytics_anonymize_ip': False,
 #     'sticky_navigation': True,
 #     'logo_only': True
-# }
+}

@@ -1,0 +1,206 @@
+Zextras Suite 3.1.7
+===================
+
+Release Date: January 25th 2021
+
+.. rubric:: Auth
+
+* Issue ID: AUTH-131
+
+* *Title:* "Password Label" arrow keys navigation
+
+* *Description:* Fixed a bug that caused the arrow keys not to work in the "Password Label" field when creating a new Auth password.
+
+
+
+..
+
+* Issue ID: AUTH-184
+
+* *Title:* Domain configuration warning disable option
+
+* *Description:* It is now possible to disable the domain warning if zimbraPubliService values have not been set.
+
+
+
+..
+
+* Issue ID: AUTH-185
+
+* *Title:* Account credential creation update
+
+* *Description:* It is now possible to create a user credential even if the zimbraPublicServiceHostname is not set if qrcode is set to false
+
+
+.. rubric:: Backup
+
+* Issue ID: BCK-414
+
+* *Title:* DoRestoreOnNewAccount feedback improvement
+
+* *Description:* Improved the output of doRestoreOnNewAccount operations, now if a non exixting source account is specified a correct output is returned
+
+
+.. rubric:: General
+
+* Issue ID: COR-568
+
+* *Title:* i18n Updates (Core)
+
+* *Description:* i18n updates on Core modules
+
+
+.. rubric:: Docs
+
+* Issue ID: DOCS-80
+
+* *Title:* Open in a new browser tab docs documents
+
+* *Description:* Docs documents are now opened in a new browser tab for improved usability
+
+
+.. rubric:: Drive
+
+* Issue ID: DRIV-1008
+
+* *Title:* i18n Updates (Drive)
+
+* *Description:* i18n updates on Drive
+
+
+.. rubric:: Mobile
+
+* Issue ID: MOB-295
+
+* *Title:* Workaround to fix synchronization of recurring appointment created by Outlook for Mac
+
+* *Description:* Added a workaround to fix a an Outlook for Mac bug that causes recurring appointments to be created with bad recurrence metadata and thus not to sync to mobile devices via EAS.
+
+
+.. rubric:: Powerstore
+
+* Issue ID: PS-278
+
+* *Title:* Volume removal performance improvement
+
+* *Description:* Improved the volume removal check so that when a volume is removed the sistem will check only once if there is data on that volume
+
+
+.. rubric:: Team
+
+* Issue ID: TEAMS-1897
+
+* *Title:* TEAM infopanel improvement
+
+* *Description:* Team infopanel layout has been refactored to improve usability
+
+
+
+..
+
+* Issue ID: TEAMS-1999
+
+* *Title:* Team UI Refactoring
+
+* *Description:* Refactored several UI components to be more streamlined and usable
+
+
+
+..
+
+* Issue ID: TEAMS-2066
+
+* *Title:* Images in replies improvement
+
+* *Description:* Improved the arragment of images when replying to 1:1 conversation or group messages, now the list is no longer reversed
+
+
+
+..
+
+* Issue ID: TEAMS-2067
+
+* *Title:* Zimlet version copy added
+
+* *Description:* When using instant messaging functions it is now possible to copy the zimlet version just by clicking it.
+
+
+
+..
+
+* Issue ID: TEAMS-2158
+
+* *Title:* Space addowner fix
+
+* *Description:* Fixed an issue that would prevent the administrator to add space owners.
+
+
+
+..
+
+* Issue ID: TEAMS-2172
+
+* *Title:* Placeholder page on instant meetings loaded on mobile browser
+
+* *Description:* Instant meetings opened from received link on a mobile device caused the browser and endless load a web page. This was confusing for users and an UX/UI improvement was necessary.
+
+
+
+..
+
+* Issue ID: TEAMS-2197
+
+* *Title:* Message edit interface improvement
+
+* *Description:* Improved the edit function for messages in TEAM that increases the editing section.
+
+
+
+..
+
+* Issue ID: TEAMS-2233
+
+* *Title:* Microphone/Webcam modal pop-up bugfix
+
+* *Description:* Fixed a bug that could cause the initial "Microphone/Webcam" modal to remain open when joining an Instant Meeting as an external guest.
+
+
+
+..
+
+* Issue ID: TEAMS-2245
+
+* *Title:* Fixed a logic loophole that allowed to forward forwarded messages
+
+* *Description:* It is no longer possible to forward forwarded messages in groups/spaces/channels and 1:1 conversations
+
+
+
+..
+
+* Issue ID: TEAMS-2249
+
+* *Title:* Forwarded message original sender improvement
+
+* *Description:* Messages forwarded in conversations/groups/spaces/channels now show who wrote the message even if the sender is not a contact.
+
+
+
+..
+
+* Issue ID: TEAMS-2259
+
+* *Title:* i18n Updates (Team)
+
+* *Description:* i18n updates for Team
+
+
+
+..
+
+* Issue ID: TEAMS-2263
+
+* *Title:* Quick access sidebar has been removed
+
+* *Description:* The Quick Access sidebar in the "Mail" view, which showed the most recent conversations and allowed to start chats, has been removed.
+
