@@ -27,6 +27,7 @@ pipeline {
     stages {
       stage('Build Sphinx with Docker') {
       when {
+	  beforeAgent true
               allOf {
                 expression { BRANCH_NAME ==~ /(${PRODUCTION_BRANCH}|${STAGING_BRANCH})/ }
                 changeRequest()
