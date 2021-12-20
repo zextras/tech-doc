@@ -8,6 +8,7 @@
 }
 
 /* indent "subtopics" */ 
+.wy-menu > ul > li > a[href$="license-file-management.html"],
 .wy-menu > ul > li > a[href$="restorestrategies.html"],
 .wy-menu > ul > li > a[href$="advancedbackup.html"],
 .wy-menu > ul > li > a[href$="ldapaddressbook.html"],
