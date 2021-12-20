@@ -2,31 +2,24 @@
 Zextras Drive
 =============
 
-:Date:   2021-10-20
-
-.. contents::
-   :depth: 3
-..
-
-.. _introduction:
+.. _drive_introduction:
 
 Introduction
 ============
 
-Zextras Drive is a new Zimbra component that provides both a fully
+Zextras Drive is a  Zimbra component that provides both a fully
 fledged file storage system integrated with the Zimbra WebClient and a
 replacement to the old "Briefcase" component.
 
-   **Warning**
+.. warning:: Zextras Drive is not compatible with Zimbra versions
+   8.8.11 and lower.
 
-   Zextras Drive is not compatible with Zimbra version 8.8.11 and lower.
-
-.. _features:
+.. _drive_features:
 
 Features
 ========
 
-.. _frontend:
+.. _drive_frontend:
 
 Frontend
 --------
@@ -53,7 +46,7 @@ Frontend
 
 -  Quick "stateful" navigation
 
-.. _backend:
+.. _drive_backend:
 
 Backend
 -------
@@ -62,7 +55,7 @@ Backend
 
 -  ``zxsuite drive`` CLI
 
-.. _differences_between_briefcase_and_drive:
+.. _drive_differences_between_briefcase_and_drive:
 
 Differences between Briefcase and Drive
 =======================================
@@ -72,7 +65,7 @@ comes to file storage, navigation, sharing, and item deletion. See each
 feature’s dedicated paragraph for a complete explanation of the
 differences and of the features themselves.
 
-.. _zimlet_installation:
+.. _drive_zimlet_installation:
 
 Zimlet Installation
 ===================
@@ -83,7 +76,7 @@ of the Zextras Adminictration Zimlet.
 No configuration on the mailboxd side is needed after the Zimlet has
 been deployed and enabled.
 
-.. _browser_compatibility:
+.. _drive_browser_compatibility:
 
 Browser compatibility
 =====================
@@ -91,58 +84,15 @@ Browser compatibility
 The following list shows which browsers are known to fully support all
 Zextras features.
 
-+-----------------+-----------------+-----------------+-----------------+
-| Browser         | Version         | OS              | Supported       |
-+=================+=================+=================+=================+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | **Latest**      | **Windows**     | |check circle|  |
-| Edge            |                 |                 | **Yes**         |
-| (Chromium)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | Others          | Windows         | |check circle|  |
-| Edge            |                 |                 | Limited         |
-| (Chromium)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Microsoft     | Any             | Windows         | |times circle|  |
-| Edge            |                 |                 | No              |
-| (EdgeHTML)**    |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Internet      | Any             | Windows         | |times circle|  |
-| Explorer**      |                 |                 | No              |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | **Latest**      | **Windows/Linux | |check circle|  |
-| Firefox**       |                 | /OSX**          | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | ESR             | Windows/Linux/O | |check circle|  |
-| Firefox**       |                 | SX              | Yes             |
-+-----------------+-----------------+-----------------+-----------------+
-| **Mozilla       | Others          | Windows/Linux/O | |check circle|  |
-| Firefox**       |                 | SX              | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Google        | **Latest**      | **Windows/Linux | |check circle|  |
-| Chrome**        |                 | /OSX**          | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Google        | Others          | Windows/Linux/O | |check circle|  |
-| Chrome**        |                 | SX              | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
-|                 |                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| **Safari**      | **Latest**      | **OSX**         | |check circle|  |
-|                 |                 |                 | **Yes**         |
-+-----------------+-----------------+-----------------+-----------------+
-| **Safari**      | Others          | OSX             | |check circle|  |
-|                 |                 |                 | Limited         |
-+-----------------+-----------------+-----------------+-----------------+
+.. csv-table::
+   :header: "Browser", "Version", "OS", "Supported"
+   :file: browsercompatibility.csv
 
-Items marked as "|check circle| Limited" are only supported on the
-browser’s two previous stable releases.
 
-.. _mobile_app:
+Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
+supported on the browser’s two previous stable releases.
+
+.. _drive_mobile_app:
 
 Mobile App
 ==========
@@ -150,33 +100,38 @@ Mobile App
 A dedicated Zextras Drive mobile app is available for both Android and
 iOS.
 
-|google play badge| |app store badge|
+.. image:: /img/google-play-badge.png
+   :scale: 50%
 
-.. _drive_ui:
+.. image:: /img/app_store-badge.png
+   :scale: 50%
+
+.. _drive_drive_ui:
 
 Drive UI
 ========
 
-|Zextras Drive UI|
+.. figure:: /img/drive/ui.png
+   :scale: 50%
 
-1. Quick Access navigation panel;
+   Overview of Zextras Drive UI
 
-2. Folder navigation panel;
+   .. csv-table::
+      :widths: 10, 40
 
-3. InfoBox control;
+      "1", "Quick Access navigation panel"
+      "2", "Folder navigation panel"
+      "3", "InfoBox control"
+      "4", "New, Upload and Search features"
+      "5", "Folder list"
+      "6", "File list"
 
-4. New, Upload and Search features;
-
-5. Folder list;
-
-6. File list;
-
-.. _feature_description:
+.. _drive_feature_description:
 
 Feature Description
 ===================
 
-.. _upload_and_download:
+.. _drive_upload_and_download:
 
 Upload and Download
 -------------------
@@ -185,16 +140,18 @@ To upload a file to Drive, either click on the "Upload" button above the
 file list or drag and drop any number of files from your computer to the
 main Drive window.
 
-|Upload a file|
+.. image:: /img/drive/upload.png
+   :scale: 50%
 
 To download a file from Drive, right-click on it and select "Download":
 
-|Download a file|
+.. image:: /img/drive/download.png
+   :scale: 50%
 
 Any file and folder in Drive can be renamed by right-clicking on it and
 selecting the "Rename" option in the context menu.
 
-.. _navigation:
+.. _drive_navigation:
 
 Navigation
 ----------
@@ -205,18 +162,31 @@ Navigating through Drive folders is done through the Navigation Bar on
 top of the UI instead of through a tree view and folders are visible in
 the main section of the UI above files.
 
-|Navigate through folders and files|
+.. image:: /img/drive/navigation.png
+   :scale: 50%
 
 On top of the standard folder-based navigation, a "Quick Access" menu is
 available on the left side of the UI, which allows to quickly view the
-following types of items: • "Preferred Items" – items marked with the
-"Star" option available in the right-click context menu; • "Recently
-Edited" – items edited recently, sorted from the most recently edited; •
-"Shared with me" – items shared by other users • "Shared by me" – items
-shared to other users • "Marked for deletion" – items marked for
-deletion
+following types of items:
 
-.. _folder_creation:
+Preferred Items
+   Items marked with the "Star" option available in the right-click
+   context menu.
+
+Recently Edited
+   Items edited recently, sorted from the most recently edited.
+
+
+Shared with me
+   Items shared by other users.
+
+Shared by me
+   Items shared to other users
+
+Marked for deletion
+   Items marked for deletion
+
+.. _drive_folder_creation:
 
 Folder Creation
 ---------------
@@ -224,30 +194,31 @@ Folder Creation
 To create a folder in Drive, click on the "New" button above the file
 list and select "Folder":
 
-|Create a new folder|
+.. image:: /img/drive/newfolder.png
+   :scale: 50%
 
-.. _file_and_folder_naming:
+.. _drive_file_and_folder_naming:
 
 File and Folder naming
 ----------------------
 
 The following characters cannot be used in Drive folders and files:
 
--  Slash - ``/``
+-  Slash ``/``
 
--  Backslash - ``\``
+-  Backslash ``\``
 
--  Semicolon - ``:``
+-  Semicolon ``:``
 
--  Question Mark - ``?``
+-  Question Mark ``?``
 
--  Plus sign - ``+``
+-  Plus sign ``+``
 
--  Asterisk - ``*``
+-  Asterisk ``*``
 
--  Percent sign - ``%``
+-  Percent sign ``%``
 
-.. _sharing:
+.. _drive_sharing:
 
 Sharing
 -------
@@ -262,20 +233,22 @@ After entering the email address of the destination user and selecting
 the sharing permissions, click the (+) button to add the share to the
 list:
 
-|Share an item (folder or file)|
+.. image:: /img/drive/addshare.png
+   :scale: 50%
 
 To edit or delete a share, simply click on the dropdown permission
 selector to change the sharing permissions of the file/folder or click
 the trash bin icon to delete the share:
 
-|Edit an existing share|
+.. image:: /img/drive/editshare.png
+   :scale: 50%
 
 In Drive sharing rights are only "positive", so it’s not possible to
 share an item with a lower permission than its parent, e.g. if a folder
 is shared with "Edit" permissions it’s not possible to share one of its
 items with "View" rights with the same person.
 
-.. _item_deletion:
+.. _drive_item_deletion:
 
 Item Deletion
 -------------
@@ -285,14 +258,16 @@ item type in Zimbra, as such items are marked for deletion instead. To
 mark a file or a folder for deletion, right-click on it and select "Mark
 for Deletion":
 
-|Mark an item for deletion|
+.. image:: /img/drive/deletefile.png
+   :scale: 50%
 
 Items marked for deletion are displayed on the bottom of the file list
 with a strikethrough line and can be deleted permanently clicking on the
 "Delete Permanently" entry within the right-click context menu of a file
 marked for deletion while the "Restore" entry will unmark the file:
 
-|Restore or permanently delete a file|
+.. image:: /img/drive/restorepermdelete.png
+   :scale: 50%
 
 While any user with "Edit" or "Edit and Share" rights on an item or
 folder can mark it for deletion, only the original owner can delete it
@@ -302,7 +277,7 @@ Items marked for deletion cannot be accessed, so should a user try to do
 so a pop-up message will ask whether to restore the item and access it
 or to stop the attempt and leave it as marked for deletion.
 
-.. _infobox:
+.. _drive_infobox:
 
 InfoBox
 -------
@@ -311,14 +286,15 @@ The InfoBox is a collapsible element that contains all information and
 controls for the selected file or folder, as well as a preview of the
 file itself if in a compatible format (pictures, PDFs and more).
 
-To display the Infobox, click on the "(i)" button on the top-right of
+To display the Infobox, click the :octicon:`info` icon on the top-right of
 the Drive UI:
 
-|Open the InfoBox|
+.. image:: /img/drive/infobutton.png
+   :scale: 50%
 
 The infobox will appear on the right side of the screen:
 
-|The InfoBox|
+.. image:: /img/drive/infobox.png
 
 Top-to-bottom, the InfoBox contains:
 
@@ -334,7 +310,7 @@ Top-to-bottom, the InfoBox contains:
 
 -  A customizable "Description" field
 
-.. _file_versioning:
+.. _drive_file_versioning:
 
 File Versioning
 ---------------
@@ -346,9 +322,11 @@ file versions.
 To access the versioning menu of a file, simply right-click the file and
 select "File Versions" from the drop down menu.
 
-|Access File Versioning|
+.. image:: /img/drive/versioning_menu.png
+   :scale: 50%
 
-|Drive Versioning Menu|
+.. image:: /img/drive/versioning.png
+   :scale: 50%
 
 The File Versioning Menu lists all stored versions of a file, sorted by
 date descending, and allows to open, download or permanently store each
@@ -357,10 +335,8 @@ entry. On top of this, it is also allows to upload a new version or to
 purge all existing versions using the "Upload Version" and "Purge
 Versions" buttons at the bottom of the window.
 
-   **Note**
-
-   Files can only be opened for editing if Zextras Docs is installed and
-   the file type is supported.
+.. note:: Files can only be opened for editing if Zextras Docs is
+   installed and the file type is supported.
 
 By default, Zimbra Drive will save 20 versions for each file for up to
 90 days. This can be changed by setting the following properties at
@@ -385,12 +361,12 @@ E.g.
 -  To reset the maximum retention duration at global level, run
    ``zxsuite config global empty attribute driveMaxVersionRetentionDays``
 
-.. _technical_information:
+.. _drive_technical_information:
 
 Technical information
 =====================
 
-.. _file_storage:
+.. _drive_file_storage:
 
 File Storage
 ------------
@@ -403,13 +379,17 @@ dedicated HSQL Database while all files (including previous file
 versions and file previews) are stored in a dedicated folder within a
 volume’s root. File naming is now hash-based instead of id-based to
 achieve native deduplication, compression rules follow the volume’s
-settings
+settings.
 
-e.g. Filesystem path for a briefcase file:
-/opt/zimbra/store/0/[mID]/msg/0/[itemid]-[revision].msg Filesystem path
-for a Drive file: /opt/zimbra/store/drive/[hash]-[revision].[extension]
+For example, a filesystem path for a briefcase file looks like::
 
-.. _volumes:
+  /opt/zimbra/store/0/[mID]/msg/0/[itemid]-[revision].msg
+
+while a filesystem path for a Drive file is::
+
+  /opt/zimbra/store/drive/[hash]-[revision].[extension]
+
+.. _drive_volumes:
 
 Volumes
 -------
@@ -421,17 +401,18 @@ Integration with Zimbra Docs If the Zimbra Docs zimlet is correctly
 installed, dedicated document options will appear in the "New" button
 above the file list:
 
-|Create documents with Zimbra Docs|
+.. image:: /img/drive/docsintegration.png
 
 When right-clicking on a compatible file, an "Open with Docs" option
 will also appear:
 
-|Open files stored in Drive with Docs|
+.. image:: /img/drive/openwithdocs.png
+
 
 Furthermore, Zimbra Docs will also allow for previews of compatible
 document formats to be displayed in the InfoBox.
 
-.. _urls_and_ports:
+.. _drive_urls_and_ports:
 
 URLs and Ports
 --------------
@@ -445,12 +426,12 @@ Should any of the two not be set up, the system will always fall back to
 the ``zimbraServiceHostname`` and ``zimbraMailPort`` or
 ``zimbraMailSSLPort`` server-level properties.
 
-.. _zextras_drive_backup_and_hsm:
+.. _drive_zextras_drive_backup_and_hsm:
 
 Zextras Drive Backup and HSM
 ============================
 
-.. _backup:
+.. _drive_backup:
 
 Backup
 ------
@@ -463,7 +444,7 @@ The Restore on New Account and External Restore modes will also restore
 Drive files, while other restore modes such as the Undelete Restore do
 not operate on such files.
 
-.. _hsm:
+.. _drive_hsm:
 
 HSM
 ---
@@ -479,7 +460,7 @@ When an HSM policy is applied, Drive files will be handled under the
 This setting is applied at the server level so that different mailbox
 servers can use different volumes.
 
-.. _setting_the_drive_primary_volume:
+.. _drive_setting_the_drive_primary_volume:
 
 Setting the Drive Primary volume
 --------------------------------
@@ -495,7 +476,7 @@ Once the volumeID has been identified, simply run
 
 (where [volumeID] is the ID found with the previous command)
 
-.. _setting_the_drive_secondary_volume:
+.. _drive_setting_the_drive_secondary_volume:
 
 Setting the Drive Secondary volume
 ----------------------------------
@@ -508,7 +489,7 @@ command
 
    zxsuite config server set `zmhostname` attribute driveSecondaryStore value [volumeID]
 
-.. _briefcase_migration:
+.. _drive_briefcase_migration:
 
 Briefcase Migration
 ===================
@@ -535,7 +516,7 @@ The following attributes can be used to customize the migration:
 +=============+=============+=============+=============+=============+
 | targets(M)  | String[,..] | john@exampl |             | Comma       |
 |             |             | e.com,test. |             | separated   |
-|             |             | com[,…​]    |             | list of     |
+|             |             | com[,...]   |             | list of     |
 |             |             |             |             | targets to  |
 |             |             |             |             | migrate     |
 +-------------+-------------+-------------+-------------+-------------+
@@ -550,18 +531,18 @@ The following attributes can be used to customize the migration:
 | (O)         |             | false       |             | versions of |
 |             |             |             |             | every file  |
 +-------------+-------------+-------------+-------------+-------------+
-| deleteSourc | Boolean     | true or     | false       | Delete      |
-| es(O)       |             | false       |             | migrated    |
+|deleteSourc\ | Boolean     | true or     | false       | Delete      |
+|es(O)        |             | false       |             | migrated    |
 |             |             |             |             | files from  |
 |             |             |             |             | the         |
 |             |             |             |             | Briefcase   |
 +-------------+-------------+-------------+-------------+-------------+
-| overwrite(O | Boolean     | true or     | false       | Overwrite   |
-| )           |             | false       |             | existing    |
+| overwrite(O)| Boolean     | true or     | false       | Overwrite   |
+|             |             | false       |             | existing    |
 |             |             |             |             | files       |
 +-------------+-------------+-------------+-------------+-------------+
-| showIgnored | Boolean     | true or     | false       |             |
-| Accounts(O) |             | false       |             |             |
+|showIgnored\ | Boolean     | true or     | false       |             |
+|Accounts(O)  |             | false       |             |             |
 +-------------+-------------+-------------+-------------+-------------+
 | ignoreQuota | Boolean     | true or     | false       | Ignore      |
 | (O)         |             | false       |             | mailbox     |
@@ -569,41 +550,23 @@ The following attributes can be used to customize the migration:
 |             |             |             |             | migrating   |
 +-------------+-------------+-------------+-------------+-------------+
 
-.. _zextras_drive_cli:
+.. _drive_zextras_drive_cli:
 
 Zextras Drive CLI
 =================
 
 This section contains the index of all ``zxsuite drive`` commands. Full
-reference can be found in `the dedicated
-section <./cli.xml#_zxdrive_cli_commands>`_.
+reference can be found in the dedicated
+section :ref:`zextras_drive_full_cli`.
 
-`doDeleteBriefcaseData <./cli.xml#drive_doDeleteBriefcaseData>`_ \|
-`doDeployDriveZimlet <./cli.xml#drive_doDeployDriveZimlet>`_ \|
-`doImportBriefcase <./cli.xml#drive_doImportBriefcase>`_ \|
-`doRestartService <./cli.xml#drive_doRestartService>`_ \|
-`doStartService <./cli.xml#drive_doStartService>`_ \|
-`doStopService <./cli.xml#drive_doStopService>`_ \|
-`dumpSessions <./cli.xml#drive_dumpSessions>`_ \|
-`getServices <./cli.xml#drive_getServices>`_ \|
-`monitor <./cli.xml#drive_monitor>`_ \|
+:ref:`doDeleteBriefcaseData <zxsuite_drive_doDeleteBriefcaseData>`
+:octicon:`dash` :ref:`doDeployDriveZimlet <zxsuite_drive_doDeployDriveZimlet>`
+:octicon:`dash` :ref:`doImportBriefcase <zxsuite_drive_doImportBriefcase>`
+:octicon:`dash` :ref:`doRestartService <zxsuite_drive_doRestartService>`
+:octicon:`dash` :ref:`doStartService <zxsuite_drive_doStartService>`
+:octicon:`dash` :ref:`doStopService <zxsuite_drive_doStopService>`
+:octicon:`dash` :ref:`dumpSessions <zxsuite_drive_dumpSessions>`
+:octicon:`dash` :ref:`getQuota <zxsuite_drive_getQuota>`
+:octicon:`dash` :ref:`getServices <zxsuite_drive_getServices>`
+:octicon:`dash` :ref:`monitor <zxsuite_drive_monitor>`
 
-.. |check circle| image:: ./images/icons/check-circle.png
-.. |times circle| image:: ./images/icons/times-circle.png
-.. |google play badge| image:: /img/google-play-badge.png
-.. |app store badge| image:: /img/app_store-badge.png
-.. |Zextras Drive UI| image:: /img/drive_ui.png
-.. |Upload a file| image:: /img/drive_upload.png
-.. |Download a file| image:: /img/drive_download.png
-.. |Navigate through folders and files| image:: /img/drive_navigation.png
-.. |Create a new folder| image:: /img/drive_newfolder.png
-.. |Share an item (folder or file)| image:: /img/drive_addshare.png
-.. |Edit an existing share| image:: /img/drive_editshare.png
-.. |Mark an item for deletion| image:: /img/drive_deletefile.png
-.. |Restore or permanently delete a file| image:: /img/drive_restorepermdelete.png
-.. |Open the InfoBox| image:: /img/drive_infobutton.png
-.. |The InfoBox| image:: /img/drive_infobox.png
-.. |Access File Versioning| image:: /img/drive_versioning_menu.png
-.. |Drive Versioning Menu| image:: /img/drive_versioning.png
-.. |Create documents with Zimbra Docs| image:: /img/drive_docsintegration.png
-.. |Open files stored in Drive with Docs| image:: /img/drive_openwithdocs.png

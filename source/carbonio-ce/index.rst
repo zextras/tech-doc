@@ -21,12 +21,13 @@ Features <advanced.html>`.
    general
    installation
 
-.. toctree::
-   :maxdepth: 2
-   :caption:  Admin:
-   
-   administration
-   management
+..
+   .. toctree::
+      :maxdepth: 2
+      :caption:  Admin:
+
+      administration
+      management
   
 .. toctree::
    :maxdepth: 2
@@ -35,3 +36,4 @@ Features <advanced.html>`.
    usage
    deep-view
    glossary
+   cli

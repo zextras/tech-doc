@@ -1,0 +1,152 @@
+Zextras Suite 3.1.6
+===================
+
+Release Date: January 4th, 2021
+
+.. rubric:: Auth
+
+* Issue ID: AUTH-132
+
+* *Title:* Cli commands date improvement
+
+* *Description:* Improved the output of the commands zxsuite auth, now returned dates are no longer in epoch format
+
+
+
+..
+
+* Issue ID: AUTH-151
+
+* *Title:* Auth credential backup improvement
+
+* *Description:* Improved the auth backup behavior, now credentials are added to the backup by the real time scanner instead of just the daily operation
+
+
+
+..
+
+* Issue ID: AUTH-165
+
+* *Title:* Auth saml output default settings change
+
+* *Description:* Changed the default output format of zxsuite auth saml get that is no longer json
+
+
+
+..
+
+* Issue ID: AUTH-166
+
+* *Title:* Auth commands improvements
+
+* *Description:* Improved zx auth saml commands, all is now the default key value
+
+
+
+..
+
+* Issue ID: AUTH-174
+
+* *Title:* Cli commands date improvement
+
+* *Description:* Improved the output of the commands zxsuite auth, now returned dates are no longer in epoch format
+
+
+
+..
+
+* Issue ID: AUTH-175
+
+* *Title:* Auth cli commands improvement
+
+* *Description:* Improved the examples returned by the zxsuite auth commands that now use generic names like example.com and organization.name
+
+
+.. rubric:: Backup
+
+* Issue ID: BCK-367
+
+* *Title:* Restoreonnewaccount log improvement
+
+* *Description:* Improved the logs for restoreonnewaccount operations that no longer list entries regarding the delegated admin function, since those settings are not restored with this option.
+
+
+
+..
+
+* Issue ID: BCK-403
+
+* *Title:* Bucket cli command improvement
+
+* *Description:* Improved the placement of bucket cli commands that are now under zxsuite core
+
+
+
+..
+
+* Issue ID: BCK-411
+
+* *Title:* Backup path can change without restarting the mailboxd
+
+* *Description:* Backup can now handle the change of the backup path without restarting the mailboxd.
+
+
+.. rubric:: Mobile
+
+..
+
+* Issue ID: MOB-280
+
+* *Title:* Exchange ActiveSync malformed emails synchronization improvement
+
+* *Description:* Now the synchronization of the devices via EAS do not break when a message cannot be parsed by Zimbra.
+
+
+
+..
+
+* Issue ID: MOB-282
+
+* *Title:* Appointment's description on acceptance bug fixed
+
+* *Description:* A bug that made the description of an appointment to be cleared on accepting it via Exchange ActiveSync.
+
+
+
+..
+
+* Issue ID: MOB-287
+
+* *Title:* Mobile shared folder bug fix
+
+* *Description:* Fixed an issue that would prevend mobile devices from syncing shared folders
+
+
+.. rubric:: Team
+
+* Issue ID: TEAMS-2069
+
+* *Title:* Missing Team placeholder
+
+* *Description:* Text is now returned when the cursor is hovering over the Team section of the menu
+
+
+
+..
+
+* Issue ID: TEAMS-2143
+
+* *Title:* Added scroll functionality to instant message replies
+
+* *Description:* It is now possible to scroll to the original message by clicking on the text attached to replies to instant messages
+
+
+
+..
+
+* Issue ID: TEAMS-2166
+
+* *Title:* Forwarded instant message visualization improvement
+
+* *Description:* Text of long forwarded instant messages is no longer cropped making it easier to read
+
