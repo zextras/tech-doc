@@ -24,7 +24,7 @@ copyright = '2021, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1-alpha'
+release = '3.8.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -69,6 +69,11 @@ extlinks = {
 html_theme = 'sphinx_rtd_theme'
 html_show_sourcelink = False
 html_favicon = 'img/favicon.ico'
+html_title = 'Welcome to %s %s Documentation' %(project, release)
+html_short_title = '%s %s Documentation' %(project, release)
+html_context = {
+    'doctitle' : html_title
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
