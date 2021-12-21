@@ -1,10 +1,12 @@
 
-********************************************
+***********************************
  Welcome to |suite| Documentation!
-********************************************
+***********************************
 
-This is the documentation of |suite| edition.
-Here you can find a description of its functionalities and configuration options.
+This is the documentation of |suite| |release| edition.
+
+Here you can find a description of its functionalities and
+configuration options.
 
 .. toctree::
    :maxdepth: 2
@@ -13,9 +15,10 @@ Here you can find a description of its functionalities and configuration options
    general
    installation
    licensing
+   license-file-management
    backup
    Restore Strategies <restorestrategies>
-   Advanced Backup <advancedbackup>
+   Advanced Techniques <advancedbackup>
    mobile
    ldapaddressbook
    mobile-troubleshooting
@@ -30,3 +33,5 @@ Here you can find a description of its functionalities and configuration options
    cli
    glossary
    Changelogs <changelog>
+
+

@@ -24,7 +24,7 @@ copyright = '2021, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1-alpha'
+release = '3.8.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -43,9 +43,6 @@ templates_path = ['_templates']
 exclude_patterns = [ '00-includes', 'cli/*/', 'changelogs/3.1.*' ]
 
 rst_prolog = """
-
-.. note:: All content is provisional and is meant **only** to showcase
-   the feature of the new framework.
 
 .. role:: red
 .. role:: green
@@ -72,6 +69,11 @@ extlinks = {
 html_theme = 'sphinx_rtd_theme'
 html_show_sourcelink = False
 html_favicon = 'img/favicon.ico'
+html_title = 'Welcome to %s %s Documentation' %(project, release)
+html_short_title = '%s %s Documentation' %(project, release)
+html_context = {
+    'doctitle' : html_title
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -81,7 +83,7 @@ html_css_files = [ 'css/suite.css', 'https://cdnjs.cloudflare.com/ajax/libs/font
 html_logo = 'img/logos/suite-white.svg'
 
 html_theme_options= {
-    'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    'analytics_id': 'UA-23692145-1',  #  Provided by Google in your dashboard
     'analytics_anonymize_ip': False,
     'style_nav_header_background': 'var(--zx-color-magma)',
     'style_external_links': True
