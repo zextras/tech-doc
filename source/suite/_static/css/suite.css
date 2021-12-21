@@ -17,3 +17,7 @@
 .wy-menu > ul > li > a[href$="contentextractor.html"] {
     margin-left: 20px;
 }
+
+.document {
+    margin-top: 10px;
+}
