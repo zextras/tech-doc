@@ -1,9 +1,9 @@
 
-********************************************
+***********************************
  Welcome to |suite| Documentation!
-********************************************
+***********************************
 
-This is the documentation of |suite| edition.
+This is the documentation of |suite| |release| edition.
 
 Here you can find a description of its functionalities and
 configuration options.
