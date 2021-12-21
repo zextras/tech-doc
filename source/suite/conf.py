@@ -83,7 +83,7 @@ html_css_files = [ 'css/suite.css', 'https://cdnjs.cloudflare.com/ajax/libs/font
 html_logo = 'img/logos/suite-white.svg'
 
 html_theme_options= {
-    'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
+    'analytics_id': 'UA-23692145-1',  #  Provided by Google in your dashboard
     'analytics_anonymize_ip': False,
     'style_nav_header_background': 'var(--zx-color-magma)',
     'style_external_links': True
