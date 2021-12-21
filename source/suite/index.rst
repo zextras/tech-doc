@@ -1,6 +1,6 @@
 
 ********************************************
- Welcome to |suite| Documentation!
+ Welcome to |suite| |release| Documentation!
 ********************************************
 
 This is the documentation of |suite| edition.
