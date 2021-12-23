@@ -2,7 +2,7 @@
  Carbonio CE Installation
 ==========================
 
-This page provides hardware and software requirements for |community|
+This page provides hardware and software requirements for |ce|
 and directions for its installation. Please review carefully this
 whole page before attempting to install.
 
@@ -139,7 +139,7 @@ proceed to install |ce| packages, either on a
 Required Configuration
 ----------------------
 
-For |community| to operate properly, it is necessary to configure |zx|
+For |ce| to operate properly, it is necessary to configure |zx|
 repositories, the DNS, and to allow communication on specific ports.
 
 .. grid::
@@ -151,12 +151,12 @@ repositories, the DNS, and to allow communication on specific ports.
       DNS Configuration
       ^^^^^
 
-      The DNS server on which |community| relies needs to resolve the
+      The DNS server on which |ce| relies needs to resolve the
       **MX record** of the domain that you are going to configure.
 
       Supposing that the domain is **example.com**, you can check that
       the MX is resolved correctly using the :command:`host` command
-      from the console on which you will install |community|.
+      from the console on which you will install |ce|.
 
       .. code:: console
 
@@ -169,7 +169,7 @@ repositories, the DNS, and to allow communication on specific ports.
       Repository Configuration
       ^^^^^
 
-      In order to add |community|\ 's repository on Ubuntu, execute
+      In order to add |ce|\ 's repository on Ubuntu, execute
       the following commands.
 
       .. code:: console
@@ -264,7 +264,7 @@ repositories, the DNS, and to allow communication on specific ports.
 Single-Server Installation
 ==========================
 
-To install the base system of |community| on a Single-Server setup,
+To install the base system of |ce| on a Single-Server setup,
 execute the following commands.
 
 .. note:: Since CentOS and RedHat distributions are binary compatible,
@@ -302,10 +302,10 @@ Multi-server Installation
 
 .. _bootstrap-ce:
 
-Bootstrap |community|
+Bootstrap |ce|
 =====================
 
-In order to carry out the initial configuration and start |community|, execute
+In order to carry out the initial configuration and start |ce|, execute
 
 .. code:: bash
 
@@ -328,7 +328,7 @@ First Access to the Web Interface
 =================================
 
 Once the installation has been successfully completed, it is time to
-access the Web interface of |community|. The username is **zextras**
+access the Web interface of |ce|. The username is **zextras**
 (all lowercase), while the password can be retrieved using the
 following command.
 
@@ -344,7 +344,7 @@ The URL to which to connect to are:
   
 ..
    After the successful installation and bootstrap, it is possible to
-   access the Web interface of Carbonio and to install more |community|
+   access the Web interface of Carbonio and to install more |ce|
    packages to add functionalities to the base system.
 
    Additional Software Packges
