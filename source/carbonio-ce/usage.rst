@@ -62,18 +62,46 @@ Settings
    Define your preferences to customise the appearance of your mailbox
    and its daily operating functionalities.
 
-Additionally, all the functionalities to create new objects in the
-various modules has been unified in the :bdg-primary:`NEW` button.
+Additionally, all the functionalities to search for objects in the
+mailbox and to create new objects in the various modules have been
+unified.
+
+The remainder of this section contains usage instructions for the most
+common tasks that can be carried out from |product|\ 's GUI.
 
 
+Quick Search And Create New Objects Functionalities
+===================================================
 
-Searching Items
-===============
+.. _fig_top_bar:
 
-Create New Item
-===============
+.. figure:: /img/carbonio/Searchbar.png
 
-   
+   The top bar of |product|, used to search for objects and to create
+   new ones.
+
+In |product|, the functionalities to create new objects (email,
+contacts, calendar appointments and events, and so on) and to search
+have been integrated into the top bar. For example, it is possible to
+create a new calendar appointment while reading e-mails or search for
+contacts when planning an event on calendar.
+
+To do so, use |product|\ 's top bar, shown in :numref:`fig_top_bar`. Click
+the blue :bdg-primary:`NEW` button to create a new object in the
+module you are currently in (i.e., while in the calendar, create a new
+appointment) or the :octicon:`chevron-down;1em;sd-bg-primary
+sd-text-white` to create a new object in another module.
+
+The search works in a similar way: the white button on the right-hand
+side of :bdg-primary:`NEW`, which changes label depending on the
+current module, can be used to search in the module the string
+provided in the text box. Click the
+:octicon:`chevron-down;1em;sd-bg-light sd-text-black` to search in a
+different module. A more advanced search is available in the
+:ref:`Advanced search module <search-mod>`.
+
+.. _loginpage:
+
 Login Page
 ==========
 
@@ -84,19 +112,29 @@ IRIS
 
 IRIS is the new web-based graphic interface of |product|.
 
-Webmail
-=======
+.. _mails-mod:
+
+Mails
+=====
+
+.. _calendar-mod:
 
 Calendar
 ========
 
 Select New
 
+.. _contacts-mod:
+
 Contacts
 ========
 
-Team
-====
+.. _search-mod:
+
+Search
+======
+
+.. _settings-mod:
 
 Settings
 ========
@@ -109,8 +147,8 @@ Android device configuration
 
 iOS device configuration
 
-APP for mobile devices
-======================
+APPs for mobile devices
+=======================
 
 Mail
    It is the client that allows the management of mail from Ios or
