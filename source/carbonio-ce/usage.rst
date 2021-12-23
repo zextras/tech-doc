@@ -1,4 +1,4 @@
-
+                    
 ================
  Carbonio Usage
 ================
@@ -86,14 +86,15 @@ have been integrated into the top bar. For example, it is possible to
 create a new calendar appointment while reading e-mails or search for
 contacts when planning an event on calendar.
 
-To do so, use |product|\ 's top bar, shown in :numref:`fig_top_bar`. Click
-the blue :bdg-primary:`NEW` button to create a new object in the
-module you are currently in (i.e., while in the calendar, create a new
-appointment) or the :octicon:`chevron-down;1em;sd-bg-primary
-sd-text-white` to create a new object in another module.
+To do so, use |product|\ 's top bar, shown in
+:numref:`fig_top_bar`. Click the blue |new| button to create a new
+object in the module you are currently in (i.e., while in the
+calendar, create a new appointment) or the
+:octicon:`chevron-down;1em;sd-bg-primary sd-text-white` to create a
+new object in another module.
 
 The search works in a similar way: the white button on the right-hand
-side of :bdg-primary:`NEW`, which changes label depending on the
+side of, which changes label depending on the
 current module, can be used to search in the module the string
 provided in the text box. Click the
 :octicon:`chevron-down;1em;sd-bg-light sd-text-black` to search in a
@@ -122,7 +123,28 @@ Mails
 Calendar
 ========
 
-Select New
+The calendar module allows to keep track of the appointments, meetings,
+and events you need to attend to and share them with your colleagues.
+
+Beside using |new|, a new appointment can be created with a click of
+the mouse on the desired date and time on the calendar. The only
+difference is in the start (and end) date and time: by using the button,
+they are set to the current date and time, by clicking the calendar
+they are taken from the clicked date and time.
+
+Shared Calendars
+----------------
+
+You can also search for calendars shared by your colleagues: click
+*Shared Calendars* in the left-hand side columns, then the
+:bdg-primary-line:`FIND SHARES` button. In the dialog that opens,
+enter the (partial) name of the colleague, then assign a colour, and
+finally click :bdg-primary:`ADD`.
+
+The calendar will appear in the list of calendars, and all the
+appointments are shown; toggle their visibility clicking the
+:octicon:`tasklist;1em;sd-text-primary` checkbox.
+
 
 .. _contacts-mod:
 
