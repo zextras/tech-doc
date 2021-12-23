@@ -1,4 +1,3 @@
-                    
 ================
  Carbonio Usage
 ================
@@ -18,14 +17,14 @@ On Mobile devices, dedicated application can be used to access
 specific functionalities of |product|.
 
 .. screenshot of login page?
-   
+
 Use the URL of your webmail to access the login page and provide your
 credentials:
 
 * Username: your e-mail address
 * Password: the same password associated with your **username**
-* Version: The choice is either **Iris**, |product|\ 's native GUI or
-  **Classic** 
+* Version: The choice is either **Iris**, |product|'s native GUI or
+  **Classic**
 
 .. note:: We use the URL https://mail.example.com/ to denote our
    fictitious domain and mailbox. Whenever you find it, remember to
@@ -67,7 +66,7 @@ mailbox and to create new objects in the various modules have been
 unified.
 
 The remainder of this section contains usage instructions for the most
-common tasks that can be carried out from |product|\ 's GUI.
+common tasks that can be carried out from |product|'s GUI.
 
 
 Quick Search And Create New Objects Functionalities
@@ -86,7 +85,7 @@ have been integrated into the top bar. For example, it is possible to
 create a new calendar appointment while reading e-mails or search for
 contacts when planning an event on calendar.
 
-To do so, use |product|\ 's top bar, shown in
+To do so, use |product|'s top bar, shown in
 :numref:`fig_top_bar`. Click the blue |new| button to create a new
 object in the module you are currently in (i.e., while in the
 calendar, create a new appointment) or the
@@ -160,6 +159,150 @@ Search
 
 Settings
 ========
+
+The Settings module allows to customise both the appearance and the
+behaviour of the modules. Configuration options are grouped in
+categories: :ref:`settings-general`, :ref:`settings-mails`,
+:ref:`settings-calendar`, and :ref:`settings-contacts`.
+
+.. _settings-general:
+
+General
+-------
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Theme Options
+   ^^^^
+
+   Choose whether the `Dark Mode` is enabled or not.
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Out of Office Settings
+   ^^^^
+
+   These setting allow you to define the behaviour of |product| when
+   e-mails are received within a time period during which you are not
+   available. You can choose whether automatic replies are sent and to
+   whom: you can also send a different message to people outside your
+   organisation or decide to notify only your colleagues (i.e., people
+   in your organisation).
+
+   Define also the time period during which you will be away. By
+   default, an appointment that matches the time period is created
+   on your calendar.
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Application versions
+   ^^^^
+
+   Informative panel reporting the versions of |product|'s
+   components.
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Account
+   ^^^^
+
+   Click :bdg-primary:`LOGOUT` to exit the current session.
+
+.. _settings-mails:
+
+Mails
+-----
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Displaying Messages
+   ^^^^
+
+   The options here control how the e-mails are displayed in the
+   mailbox and how often to check for new emails (i.e., *polling
+   interval*).
+
+   Other options allow to set the colour of incoming messages and
+   which is the default query over e-mails, that is, which e-mails are
+   shown upon logging in. By default, the query is ``in:inbox``,
+   meaning that all messages in the **Inbox** are displayed.
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Receiving Messages
+   ^^^^
+
+   These settings define the response to incoming
+   e-mails. Notification e-mails can be sent to a third party and
+   different types of desktop notification can be combined (pop-ups,
+   flashing browser title, highlight of mail tab). Notification can be
+   restricted to e-mail landing in the inbox or in all folders (in
+   case you defined Filters, see further on).
+
+   Choose also where to store e-mails sent from yourself, whether to
+   send automatic read receipts and if duplicate messages should be
+   deleted.
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Signatures
+   ^^^^
+
+   Define signatures that can be appended to the e-mails that you
+   write. Use the textarea to write a plain text or HTML (default)
+   signature, assign a name to them and add to the library by clicking
+   the :bdg-primary-line:`ADD SIGNATURE` button.
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Set Default Signatures
+   ^^^^
+
+   Choose from the signature library which signature to append by
+   default to new e-mails that you write or to replies and forward.
+
+.. card::
+   :class-header: sd-font-weight-bold
+
+   Filters
+   ^^^^
+
+   Filters determine how to move incoming or outgoing e-mails to
+   folders within your inbox.
+
+   In the list of active filters, click :bdg-primary-line:`CREATE` to
+   define a filter and, in the dialog that appears, configure the
+   condition(s) that need to be matched, the action applied, and give
+   the Filter a name. Filters are applied in a top-down fashion, so in
+   case of multiple active rules, choose whether to stop processing
+   other following filters.
+
+   When multiple rules are defined, only those among the **Active
+   Filters** are used to process e-mails. Filters can be managed
+   individually by selecting them and using the buttons
+   :bdg-primary-line:`<< ADD` (activate an available filter),
+   :bdg-danger-line:`REMOVE >>` (disable an active filter),
+   :bdg-primary-line:`EDIT` (modify a Filter), :bdg-primary-line:`RUN`
+   (execute a Filter), and :bdg-danger-line:`DELETE` (remove a
+   filter).
+
+.. _settings-calendar:
+
+Calendar
+--------
+
+.. _settings-contacts:
+
+Contacts
+--------
 
 
 Mobile clients: Mail
