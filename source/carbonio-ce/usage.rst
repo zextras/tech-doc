@@ -299,6 +299,61 @@ Mails
 Calendar
 --------
 
+.. card::
+
+   General
+   ^^^^^
+
+   General setting for Calendar allow to customise how the calendar
+   and its events are displayed, how invitations are managed, and how
+   remainders behave.
+
+   The calendar can be shown for the next Month, Day, Week, or Work
+   Week, and it is also possible to choose which day would start the
+   week (usually Sunday or Monday).
+
+   Appointments and invitation can be accepted automatically and the
+   notification e-mail deleted.
+
+   Reminders can be set up in different way: by playing sounds,
+   showing a popup or flashing the browser's bar.
+
+.. card::
+
+   Work week
+   ^^^^^
+
+   Define the times when your daily work week starts and ends.
+
+   .. note to self: customise modal seems to not yet work
+
+.. card::
+
+   Creating Appointments
+   ^^^^^
+
+   You may select on which calendar events and appointments are
+   created by default and if the default time zone is used or can be
+   chosen when creating new appointments.
+
+.. card::
+
+   Apple iCal
+   ^^^^
+
+   Allow delegation for Apple iCal.
+
+.. card::
+
+   Permissions
+   ^^^^^
+
+   Configure access to *free/busy information* of appointments, which
+   can be restricted to selected internal users, to configured domain(s), to
+   everyone (i.e., internal and external users), or none.
+
+   Moreover, you can limit the users who can send you invitations.
+   
 .. _settings-contacts:
 
 Contacts
