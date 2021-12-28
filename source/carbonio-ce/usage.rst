@@ -122,7 +122,7 @@ IRIS is the new web-based graphic interface of |product|.
 Mails
 =====
 
-The Mails module is where you store and create new email
+.. include:: /_includes/mails.rst
 
 .. _calendar-mod:
 
