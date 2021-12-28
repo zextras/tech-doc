@@ -47,12 +47,14 @@ Calendar
 Contacts
    Display all the information related to contacts and distribution lists.
 
-Chat
-   A tool dedicated to individual and group chats and to the creation
-   of corporate spaces and thematic channels (optional module).
+.. Chat and File are not confirmed to be part of initial release
+   
+   Chat
+      A tool dedicated to individual and group chats and to the creation
+      of corporate spaces and thematic channels (optional module).
 
-File
-   Share documents with colleagues (optional module).
+   File
+      Share documents with colleagues (optional module).
 
 Search
    A powerful search engine across all modules of the mailbox.
@@ -68,6 +70,9 @@ unified.
 The remainder of this section contains usage instructions for the most
 common tasks that can be carried out from |product|'s GUI.
 
+.. _global-search:
+
+.. _create-new:
 
 Quick Search And Create New Objects Functionalities
 ===================================================
@@ -117,6 +122,8 @@ IRIS is the new web-based graphic interface of |product|.
 Mails
 =====
 
+The Mails module is where you store and create new email
+
 .. _calendar-mod:
 
 Calendar
@@ -149,6 +156,37 @@ appointments are shown; toggle their visibility clicking the
 
 Contacts
 ========
+
+In the Contacts module you can keep track of all the people with whom
+you exchange e-mails and group them in address books. Existing address
+books appear on the column on the right of the module's list.
+
+You can create new contact by using the |new| button and selecting
+`New Contact`; they will be stored under the `Contacts` section of the
+Contacts module.
+
+Addresses of people to whom you send an e-mail are automatically added
+to the `Emailed Contacts`.
+
+Deleted contacts land in the special `Trash` address book, which keeps
+them until you manually empty it. To do so, right-click the address
+book and select `Empty trash`.
+
+A right-click on the address book allows to carry out a few action on
+it and its content: edit, share, empty, or delete it. Moreover, new
+address books can be created.
+
+For each contact, icons allow to carry out different actions: delete,
+move, or write an e-mail to the contact.
+
+.. hint:: To move the contacts from one address book to another, you
+   can also drag the contact and drop it on the destination address
+   book.
+
+If any colleague has shared an address book, you can click the
+:bdg-primary-line:`FIND SHARES` button under `Shared Address Book` and
+provide the e-mail address. You will see all the address books shared
+by the user.
 
 .. _search-mod:
 
