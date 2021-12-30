@@ -40,9 +40,11 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['common/cli/ZxTeam', 'cli']
+exclude_patterns = ['common/cli/ZxTeam', 'cli', '_includes']
 
 rst_prolog = """
+
+.. |product| replace:: Carbonio CE
 
 """ + open("replace.txt").read()
 
@@ -59,6 +61,8 @@ extlinks = {
 # copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
 copybutton_prompt_text = r'\$ |\#'
 copybutton_prompt_is_regexp = True
+
+numfig = True
 
 # -- Options for HTML output -------------------------------------------------
 
