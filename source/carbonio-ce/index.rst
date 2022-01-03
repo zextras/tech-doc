@@ -7,12 +7,20 @@
  Welcome to |ce| Documentation!
 ********************************************
 
-This is the documentation of |ce| edition, whose features are
-shared with the |carbonio| Edition. Functionalities available on
-|carbonio| only are described in :carbonio:`Carbonio Advanced
-Features <advanced.html>`.
+This is the documentation of |ce| edition, a free and open-source
+collaboration software.
 
-|carbonio| has a :carbonio:`dedicated documentation <index.html>`.
+Details on the functionalities can be found in :doc:`general`,
+requirements and directions for installation in :doc:`installation`,
+and usage instructions in :doc:`usage`.
+
+..
+   This is the documentation of |ce| edition, whose features are
+   shared with the |carbonio| Edition. Functionalities available on
+   |carbonio| only are described in :carbonio:`Carbonio Advanced
+   Features <advanced.html>`.
+
+   |carbonio| has a :carbonio:`dedicated documentation <index.html>`.
 
 .. toctree::
    :maxdepth: 2
