@@ -44,7 +44,11 @@
     width: 75%;
     min-width: 200px;
     padding: 5px;
-    margin: 15px
+    margin-bottom: 20px;
+    border: 1px solid;
+    border-image: linear-gradient(to right,
+                        var(--zx-color-magma),
+                        var(--zx-color-flame)) 1;
 }
 
 .sd-dropdown .sd-card-header {
