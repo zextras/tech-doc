@@ -79,7 +79,7 @@ The following Linux distributions are supported.
 
    Red Hat® Enterprise Linux® 9 (64-bit)
    Red Hat® Enterprise Linux® 8 (64-bit)
-   Ubuntu 18.04 LTS Server Edition (64-bit
+   Ubuntu 18.04 LTS Server Edition (64-bit)
 
 ..
       * Ubuntu 20.04 LTS Server Edition (64-bit)

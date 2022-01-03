@@ -3,8 +3,8 @@
 ==============
 
 
-What is Carbonio?
-=================
+What is |product|?
+==================
 
 |zx| |ce| is the free and open-source e-mail and collaboration
 software, which consists of
@@ -48,7 +48,7 @@ Besides this documentation, |zx| makes available the following online resources:
 .. card:: Community
 
    Zextras Community is a collection of articles, guidelines, howtos,
-   and other useful material about |zx|\s products, including
+   and other useful material about |zx| products, including
    |product|, whose dedicated section is
    https://community.zextras.com/zextras-carbonio/
 
@@ -58,4 +58,4 @@ Besides this documentation, |zx| makes available the following online resources:
     the place where the community members interact, search for useful
     resources, provide own feedback, share their experiences, or
     comment articles. |product| has its own
-    https://community.zextras.com/forum/carbonio-general-thread/
+    https://community.zextras.com/forum/carbonio-general-thread/ section
