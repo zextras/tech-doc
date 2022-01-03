@@ -34,6 +34,7 @@
     width:300px
 }
 
+/* topic:: directive */
 .rst-content .topic-title {
  font-weight:bold;
  margin-bottom:12px;
@@ -51,10 +52,7 @@
                         var(--zx-color-flame)) 1;
 }
 
-.sd-dropdown .sd-card-header {
-    background-color: var(--zx-color-card-header);
 
-}
 /* search box with ZX radius*/
 .wy-side-nav-search input[type="text"] {
  width:100%;
@@ -112,4 +110,34 @@ legend {
 
 .irisfont {
     font-family: "Roboto", Arial, sans-serif
+}
+
+/* Custom colors for admonitions -- taken from Carbonio's UI colors */
+
+/* success UI */
+.rst-content .hint {
+    background-color: #8bc34a
+}
+
+.rst-content .hint .admonition-title {
+    background-color: #639030
+}
+
+/* info UI */
+.rst-content .note {
+    background-color: #2196d3
+}
+
+.rst-content .note .admonition-title {
+    background-color: #176691
+}
+
+
+/* warning UI */
+.rst-content .warning {
+    background-color: #ffc107
+}
+
+.rst-content .warning .admonition-title {
+    background-color: #ba8b00
 }
