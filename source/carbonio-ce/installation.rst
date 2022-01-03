@@ -131,9 +131,9 @@ Use the following command as the `root` user to install them.
 
 
 Once all these steps have been successfully accomplished, you can
-proceed to install |ce| packages, either on a
-:ref:`Single-Server <single-server-install>` or a :ref:`Multi-Server
-<multi-server-install>` setup.
+proceed to install |ce| packages. Please refer to
+:ref:`single-server-install` for directions
+
 
 .. _software_preconf:
 
@@ -294,10 +294,11 @@ Once installation has completed successfully, proceed to the
 :ref:`next section <bootstrap-ce>` to learn how to configure and start
 |ce|.
 
-.. _multi-server-install:
+.. multiserver installation is not yet available
+   .. _multi-server-install:
 
-Multi-server Installation
-=========================
+   Multi-server Installation
+   =========================
 
 .. _bootstrap-ce:
 
@@ -338,7 +339,7 @@ following command.
 The URL to which to connect to are:
 
 * https://mail.example.com/ for regular user access
-* https://mail.example.com:7071/ for Administrtion access.
+* https://mail.example.com:7071/ for Administration access.
 
   
 ..
