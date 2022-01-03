@@ -98,9 +98,10 @@ The following software packages must be installed on the system
 
 Use the following command as the `root` user to install them.
 
-.. tab-set::
+.. grid::
+   :gutter: 2
 
-   .. tab-item:: Ubuntu
+   .. grid-item-card:: Ubuntu
 
       Run as the ``root`` user either of the commands.
 
@@ -116,7 +117,7 @@ Use the following command as the `root` user to install them.
 
 	 # aptitude install gnupg2 ca-certificates dnsmasq
 
-   .. tab-item:: Centos/RedHat
+   .. grid-item-card:: Centos/RedHat
 
       Run as the ``root`` user either of the commands.
 
@@ -267,12 +268,10 @@ Single-Server Installation
 To install the base system of |ce| on a Single-Server setup,
 execute the following commands.
 
-.. note:: Since CentOS and RedHat distributions are binary compatible,
-   instructions for these two distributions are the same.
+.. grid::
+   :gutter: 2
 
-.. tab-set::
-
-   .. tab-item:: Ubuntu
+   .. grid-item-card:: Ubuntu
 
       Update the list of available packages, then install the
       packages:
@@ -281,7 +280,7 @@ execute the following commands.
 
 	 # apt-get update && apt-get install carbonio-ce
 
-   .. tab-item:: CentOS/RedHat
+   .. grid-item-card:: CentOS/RedHat
 
       Update the list of available packages, then install the
       packages:
