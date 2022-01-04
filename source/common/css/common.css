@@ -125,7 +125,7 @@ legend {
 
 /* info UI */
 .rst-content .note {
-    background-color: #2196d3
+    background-color: #a7d7f1
 }
 
 .rst-content .note .admonition-title {
@@ -141,3 +141,4 @@ legend {
 .rst-content .warning .admonition-title {
     background-color: #ba8b00
 }
+
