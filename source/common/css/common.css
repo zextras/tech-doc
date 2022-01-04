@@ -119,7 +119,6 @@ legend {
 .rst-content .hint {
     background-color: #cee6b2
 }
-
 .rst-content .hint .admonition-title {
     background-color: #639030
 }
@@ -128,7 +127,6 @@ legend {
 .rst-content .note {
     background-color: #a7d7f1
 }
-
 .rst-content .note .admonition-title {
     background-color: #176691
 }
@@ -137,7 +135,6 @@ legend {
 .rst-content .seealso {
     background-color: #ffe699
 }
-
 .rst-content .seealso .admonition-title {
     background-color: #ba8b00
 }
@@ -146,7 +143,21 @@ legend {
 .rst-content .warning {
     background-color: #edaeab
 }
-
 .rst-content .warning .admonition-title {
     background-color: #a92a24
+}
+
+/* background color of LHS menu  */
+.wy-menu-vertical li.current ul {
+    background-color: var(--zx-color-pebble)
+}
+
+/* zx branded buttons  */
+.zx-button {
+    background-color:  var(--zx-color-magma)
+}
+.btn:hover, .zx-button:hover {
+    background-color: white;
+    border: 1px solid  var(--zx-color-magma);
+    color: var(--zx-color-magma)
 }
