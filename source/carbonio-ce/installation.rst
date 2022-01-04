@@ -74,16 +74,19 @@ Software Requirements
 Supported Linux Server Distributions
 ------------------------------------
 
-The following Linux distributions are supported.
-
-.. csv-table::
-
-   Red Hat® Enterprise Linux® 9 (64-bit)
-   Red Hat® Enterprise Linux® 8 (64-bit)
-   Ubuntu 18.04 LTS Server Edition (64-bit)
+|product| can be installed on **Ubuntu 18.04 LTS Server Edition (64-bit)**.
 
 ..
-      * Ubuntu 20.04 LTS Server Edition (64-bit)
+  The following Linux distributions are supported.
+  
+   .. csv-table::
+
+      Red Hat® Enterprise Linux® 9 (64-bit)
+      Red Hat® Enterprise Linux® 8 (64-bit)
+      Ubuntu 18.04 LTS Server Edition (64-bit)
+
+   ..
+         * Ubuntu 20.04 LTS Server Edition (64-bit)
 
 .. _software-pakages:
 
@@ -96,33 +99,41 @@ software package is necessary.
 Optional packages
 ~~~~~~~~~~~~~~~~~
 
-However, in case you can not rely on an existent DNS server for DNS
-resolution, or even for testing purposes, you can install **dnsmasq**.
+In case you can not rely on an existent DNS server for DNS resolution,
+or if you want to set up a local |product| installation for testing or demo purposes, you
+can install **dnsmasq**.
 
-Depending on the platform, use either of the following commands as the
-``root`` user to install it.
+.. code:: bash
 
-*  Ubuntu:
+   # apt install dnsmasq
 
-   .. code:: bash
+See further on for an example configuration and setup.
 
-	   # apt-get install dnsmasq
+..
+   Depending on the platform, use either of the following commands as the
+   ``root`` user to install it.
 
-* Red Hat:
+   *  Ubuntu:
 
-  .. code:: bash
+      .. code:: bash
 
-	  # yum install dnsmasq
+         # apt install dnsmasq
+
+   * Red Hat:
+
+     .. code:: bash
+
+        # yum install dnsmasq
 
 
-.. seealso:: A guide to configure a local DNS server using dnsmasq is
-   available on the |zx| Community portal:
-   
-   https://community.zextras.com/dns-server-installation-guide-on-centos-7-rhel-7-and-centos-8-rhel-8-using-dnsmasq/
+   .. seealso:: A guide to configure a local DNS server using dnsmasq is
+      available on the |zx| Community portal:
 
-Once all these steps have been successfully accomplished, you can
-proceed to install |ce| packages. Please refer to
-:ref:`single-server-install` for directions
+      https://community.zextras.com/dns-server-installation-guide-on-centos-7-rhel-7-and-centos-8-rhel-8-using-dnsmasq/
+
+   Once all these steps have been successfully accomplished, you can
+   proceed to install |ce| packages. Please refer to
+   :ref:`single-server-install` for directions
 
 ..
    .. _software_preconf:
@@ -130,54 +141,11 @@ proceed to install |ce| packages. Please refer to
    Required Configuration
    ----------------------
 
-   For |ce| to operate properly, it is necessary to configure |zx|
-   repositories, the DNS, and to allow communication on specific ports.
+   For |ce| to operate properly, it is necessary to allow
+   communication on specific ports.
 
    .. grid::
       :gutter: 2
-
-      .. grid-item-card::
-         :columns: 6
-
-         DNS Configuration
-         ^^^^^
-
-         The DNS server on which |ce| relies needs to resolve the
-         **MX record** of the domain that you are going to configure.
-
-         Supposing that the domain is **example.com**, you can check that
-         the MX is resolved correctly using the :command:`host` command
-         from the console on which you will install |ce|.
-
-         .. code:: console
-
-       # host -t MX example.com
-       example.com mail is handled by 10.mail.example.com.
-
-      .. grid-item-card::
-         :columns: 6
-
-         Repository Configuration
-         ^^^^^
-
-         In order to add |ce|\ 's repository on Ubuntu, execute
-         the following commands.
-
-         .. code:: console
-
-       # echo 'deb [trusted=yes] https://repo.zextras.io/rc/ubuntu bionic main' >>/etc/apt/sources.list.d/zextras.list
-
-       # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
-
-         Then, update the list of packages and install all upgrades, if
-         any::
-
-      # apt-get update -yq && apt-get upgrade -yq
-
-         Finally, execute this command to update file :file:`/etc/hosts`::
-
-      echo "$LOCAL_IP $HOSTNAME.$DOMAIN" >> /etc/hosts
-
 
       .. grid-item-card:: External connections
          :columns: 6
@@ -258,7 +226,9 @@ Installation
 The single server installation is organised in steps, some of which
 are preliminary configuration tasks, and some is optional. 
 
-.. rubric:: :octicon:`gear` Pre-installation steps
+.. div:: sd-fs-5
+
+   :octicon:`gear` Pre-Installation Steps
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -266,40 +236,46 @@ are preliminary configuration tasks, and some is optional.
    Step 1: Interfaces
    ^^^^^
 
-   ..
-      2 NIC consigliate, in modo che la seconda possa essere impostata
-      statica 
-   
-   .. rubric:: Installation on a hypervisor
-               
-   1) Add a new network interface in **Internal** mode. For example in
-      Virtualbox, use a `Network adapter` of type **Internal Network**.
+   We suggest to set up two NICs on the server, and assigning to one
+   a local IP address, so that |product| can always use it and rely on
+   it even if the main, public IP address changes. This setup is also
+   useful for testing purposes or when setting up a demo. 
 
-   2) Then add these lines to file :file:`/etc/netplan/01-netcfg.yaml`::
-         
-         eth1:
-            dhcp4: false
-            dhcp6: false
-            addresses: [172.16.0.10/24]
+   .. dropdown:: Example: Assign an IP Address to a local NIC.
 
-   .. hint:: You can add any unused subnet and IP as the ``addresses``.
+      Assuming that a NIC identified as **enp0s3** is free on your
+      system, for example in Virtualbox use a `Network adapter` of
+      type **Internal Network**, you can assign it an IP address in
+      the preferred way:
+
+      * use the CLI, for example  :command:`ifconfig enp0s3 172.16.0.10 up`
+
+      * Use netplan.io and add these lines to file
+        :file:`/etc/netplan/01-netcfg.yaml`::
+
+           eth1:
+             dhcp4: false
+             dhcp6: false
+             addresses: [172.16.0.10/24]
+
+        then issue the command :command:`netplan apply`
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
-   Step 2: Setting hostname
+   Step 2: Setting Hostname
    ^^^^^
 
    |product| needs a valid FQDN as hostname and a valid entry in the
    :file:`/etc/hosts` file. To configure them, execute these two commands.
 
-   3) first, set the hostname
+   1) first, set the hostname
 
       .. code:: console
 
          # hostnamectl set-hostname mail.carbonio.local
         
-   4) then update :file:`/etc/hosts`
+   2) then update :file:`/etc/hosts`
 
       .. code:: console
 
@@ -308,7 +284,7 @@ are preliminary configuration tasks, and some is optional.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
-   Step 3: DNS resolution
+   Step 3: DNS Resolution
    ^^^^^
 
    |product| needs valid DNS resolution for:
@@ -341,86 +317,88 @@ are preliminary configuration tasks, and some is optional.
                   
            # systemctl restart dnsmasq
 
-.. rubric::  :octicon:`gear`  Installation and Post-Installation
+.. div:: sd-fs-5
+         
+   :octicon:`gear` Installation and Post-Installation
             
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
-   Step 4: Repository Configuration and system upgrade
+   Step 4: Repository Configuration and System Upgrade
    ^^^^^
 
    In order to add |ce|\ 's repository on Ubuntu, execute
    the following commands.
 
-   5) add repository URL
+   3) add repository URL
 
       .. code:: console
 
          # echo 'deb [trusted=yes] https://repo.zextras.io/rc/ubuntu bionic main' >> /etc/apt/sources.list.d/zextras.list
 
-   6) add key of repository
+   4) add key of repository
 
       .. code:: console
                 
          # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
 
-   7) update the list of packages
+   5) update the list of packages
       
       .. code:: console
                 
-         # apt-get update 
+         # apt update 
 
-   8) upgrade the system
+   6) upgrade the system
 
       .. code:: console
 
-         # apt-get upgrade
+         # apt upgrade
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
-   Step 5: Installation and configuration of |product|
+   Step 5: Installation and Configuration of |product|
    ^^^^^
 
-   9) Installation of |product| requires only a command
+   7) Installation of |product| requires to run the command
 
       .. code:: console
 
-         # apt-get install carbonio-ce
+         # apt install carbonio-ce
 
-   10) In order to carry out the initial configuration and start
-       |product|, execute
+   8) In order to carry out the initial configuration and start
+      |product|, execute
 
-       .. code:: console
+      .. code:: console
                  
-          # carbonio-bootstrap
+         # carbonio-bootstrap
+          
+      .. dropdown:: What does ``carbonio-bootstrap`` do?
 
-       .. dropdown:: What does ``carbonio-bootstrap`` do?
+         This command makes a few checks and then starts the
+         installation, during which a few messages are shown,
+         including the name of the log file that will store all
+         messages produced during the process::
 
-          This command makes a few checks and then starts the
-          installation, during which a few messages are shown,
-          including the name of the log file that will store all
-          messages produced during the process::
+           Operations logged to /tmp/zmsetup.20211014-154807.log
 
-              Operations logged to /tmp/zmsetup.20211014-154807.log
+         In case the connection is lost during the installation, it is
+         possible to log in again and check the content of that file
+         for information about the status of the installation. If the
+         file does not exist anymore, the installation has already
+         been completed and in that case the log file can be found in
+         directory :file:`/opt/zextras/log`.
 
-          In case the connection is lost during the installation, it
-          is possible to log in again and check the content of that
-          file for information about the status of the
-          installation. If the file does not exist anymore, the
-          installation has already been completed and in that case the
-          log file can be found in directory :file:`/opt/zextras/log`.
+         The first part of the bootstrap enables all necessary
+         services and creates a new administrator account
+         (zextras\@carbonio.local), initially **without password**
+         (see below for instruction to set it).
 
-          The first part of the bootstrap enables all necessary
-          services and creates a new administrator account
-          (zextras\@carbonio.local), initially **without password**
-          (see below for instruction to set it).
+      Before finalising the bootstrap, press :bdg-dark-line:`a` to apply the
+      configuration. The process will continue until its completion:
+      click :bdg-dark-line:`Enter` to continue.
 
-       Before finalising the bootstrap, press **a** to apply the
-       configuration. The process will continue until its completion:
-       click :bdg-dark-line:`Enter` to continue.
-
-   11) become the ``zextras user``, then create a password for it 
+   9) become the ``zextras user``, then create a password for it 
 
        .. code:: console
 
@@ -430,10 +408,20 @@ are preliminary configuration tasks, and some is optional.
        
        Make sure that ``newpassword`` meets good security criteria.
 
-.. rubric::  :octicon:`thumbsup`  Installation Complete
+.. div:: sd-fs-5
+
+   :octicon:`thumbsup`  Installation Complete
 
 Installation is now complete, you can access |product|\ 's graphic
-interface as explained in next section.
+interface as explained in section :ref:`web-access`.
+
+.. seealso:: Our Community portal features a guide that delves more
+   into details of the installation process:
+
+   .. temp link to be replaced
+      
+   https://community.zextras.com/zextras-carbonio/
+
 
 .. multiserver installation is not yet available
    
@@ -442,8 +430,10 @@ interface as explained in next section.
    Multi-server Installation
    =========================
 
-First Access to the Web Interface
-=================================
+.. _web-access:
+
+Access to the Web Interface
+===========================
 
 The URL to which to connect to are:
 
@@ -464,4 +454,4 @@ The URL to which to connect to are:
    packages that provide additional functionalities, including Drive
    and Team. To do so, simply execute::
  
-    apt-get install -y carbonio-drive carbonio-team
+    apt install -y carbonio-drive carbonio-team
