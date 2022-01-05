@@ -96,19 +96,6 @@ Required Software Packages
 Besides a standard installation of the supported distribution, no
 software package is necessary.
 
-Optional packages
-~~~~~~~~~~~~~~~~~
-
-In case you can not rely on an existent DNS server for DNS resolution,
-or if you want to set up a local |product| installation for testing or demo purposes, you
-can install **dnsmasq**.
-
-.. code:: bash
-
-   # apt install dnsmasq
-
-See further on for an example configuration and setup.
-
 ..
    Depending on the platform, use either of the following commands as the
    ``root`` user to install it.
@@ -301,17 +288,24 @@ are preliminary configuration tasks, and some is optional.
       configure **dnsmasq**. This task is **optional** and suitable
       for demo or testing purposes only.
 
-      * Install the package as explained in Section
-        :ref:`software-pakages`
+      In case you can not rely on an existent DNS server for DNS
+      resolution, or if you want to set up a local |product|
+      installation for testing or demo purposes, you can install
+      **dnsmasq**.
 
-      * add the following lines to file :file:`/etc/dnsmasq.conf`::
+      .. code:: bash
+
+         # apt install dnsmasq
+
+      To configure it, add the following lines to file
+      :file:`/etc/dnsmasq.conf`::
 
           server=1.1.1.1
           mx-host=carbonio.local,mail.carbonio.local,50
           host-record=carbonio.local,172.16.0.10
           host-record=mail.carbonio.local,172.16.0.10
 
-      * restart the **dnsmasq** service
+      Finally, restart the **dnsmasq** service
 
         .. code:: console
                   
