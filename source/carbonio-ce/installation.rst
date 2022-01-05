@@ -370,7 +370,7 @@ are preliminary configuration tasks, and some is optional.
       .. code:: console
                  
          # carbonio-bootstrap
-          
+
       .. dropdown:: What does ``carbonio-bootstrap`` do?
 
          This command makes a few checks and then starts the
@@ -396,15 +396,30 @@ are preliminary configuration tasks, and some is optional.
       configuration. The process will continue until its completion:
       click :bdg-dark-line:`Enter` to continue.
 
-   9) become the ``zextras user``, then create a password for it 
+   9) create a password for the ``zextras@carbonio.local`` user. Log
+      in to a shell terminal as the ``zextras`` user and execute these
+      two commands. The first allows to switch to the ``zextras``
+      user, with the second you actually change the password.
 
        .. code:: console
 
           # su - zextras
-
           # zmprov setpassword zextras@carbonio.local newpassword
-       
+
        Make sure that ``newpassword`` meets good security criteria.
+
+       .. rubric:: The ``zextras`` and ``zextras@carbonio.local`` users
+
+       There is a clear distinction between these two users, which are
+       intended to execute different tasks:
+
+       ``zextras``
+          This the **unix** account of the administrator and must be
+          used to carry out administrative tasks from the command line.
+
+       ``zextras@carbonio.local``
+          This is the default administrator user to be used to access
+          the Admin UI and manage |product| from the web interface.
 
 .. div:: sd-fs-5
 
@@ -417,7 +432,7 @@ interface as explained in section :ref:`web-access`.
    into details of the installation process:
 
    .. temp link to be replaced
-      
+
    https://community.zextras.com/zextras-carbonio/
 
 
