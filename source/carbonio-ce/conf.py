@@ -20,12 +20,12 @@ current_year = time.strftime('%Y')
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Carbonio CE'
-copyright = '2021, The Zextras Team'
+copyright = '2022, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1-alpha'
-
+release = '1.0'
+version = release
 
 # -- General configuration ---------------------------------------------------
 
@@ -82,7 +82,7 @@ html_static_path = ['_static']
 html_css_files = [ 'css/community.css' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
-
+html_title = project + ' ' + release + ' Documentation'
 html_theme_options = {
       'analytics_id': 'UA-23692145-1',  
       'analytics_anonymize_ip': False,

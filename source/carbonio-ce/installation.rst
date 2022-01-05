@@ -74,7 +74,11 @@ Software Requirements
 Supported Linux Server Distributions
 ------------------------------------
 
-|product| can be installed on **Ubuntu 18.04 LTS Server Edition (64-bit)**.
+|product| is available for **64-bit** CPUs only and can be installed on
+**Ubuntu 18.04 LTS Server Edition**.
+
+Support for **Redhat/CentOS** and **Ubuntu 20.04 LTS Server Edition**
+will be available soon.
 
 ..
   The following Linux distributions are supported.
@@ -95,19 +99,6 @@ Required Software Packages
 
 Besides a standard installation of the supported distribution, no
 software package is necessary.
-
-Optional packages
-~~~~~~~~~~~~~~~~~
-
-In case you can not rely on an existent DNS server for DNS resolution,
-or if you want to set up a local |product| installation for testing or demo purposes, you
-can install **dnsmasq**.
-
-.. code:: bash
-
-   # apt install dnsmasq
-
-See further on for an example configuration and setup.
 
 ..
    Depending on the platform, use either of the following commands as the
@@ -223,8 +214,8 @@ See further on for an example configuration and setup.
 Installation
 ============
 
-The single server installation is organised in steps, some of which
-are preliminary configuration tasks, and some is optional. 
+The installation is organised in steps, some of which are preliminary
+configuration tasks, and some is optional.
 
 .. div:: sd-fs-5
 
@@ -301,17 +292,24 @@ are preliminary configuration tasks, and some is optional.
       configure **dnsmasq**. This task is **optional** and suitable
       for demo or testing purposes only.
 
-      * Install the package as explained in Section
-        :ref:`software-pakages`
+      In case you can not rely on an existent DNS server for DNS
+      resolution, or if you want to set up a local |product|
+      installation for testing or demo purposes, you can install
+      **dnsmasq**.
 
-      * add the following lines to file :file:`/etc/dnsmasq.conf`::
+      .. code:: bash
+
+         # apt install dnsmasq
+
+      To configure it, add the following lines to file
+      :file:`/etc/dnsmasq.conf`::
 
           server=1.1.1.1
           mx-host=carbonio.local,mail.carbonio.local,50
           host-record=carbonio.local,172.16.0.10
           host-record=mail.carbonio.local,172.16.0.10
 
-      * restart the **dnsmasq** service
+      Finally, restart the **dnsmasq** service
 
         .. code:: console
                   
@@ -372,7 +370,7 @@ are preliminary configuration tasks, and some is optional.
       .. code:: console
                  
          # carbonio-bootstrap
-          
+
       .. dropdown:: What does ``carbonio-bootstrap`` do?
 
          This command makes a few checks and then starts the
@@ -398,15 +396,30 @@ are preliminary configuration tasks, and some is optional.
       configuration. The process will continue until its completion:
       click :bdg-dark-line:`Enter` to continue.
 
-   9) become the ``zextras user``, then create a password for it 
+   9) create a password for the ``zextras@carbonio.local`` user. Log
+      in to a shell terminal as the ``zextras`` user and execute these
+      two commands. The first allows to switch to the ``zextras``
+      user, with the second you actually change the password.
 
        .. code:: console
 
           # su - zextras
-
           # zmprov setpassword zextras@carbonio.local newpassword
-       
+
        Make sure that ``newpassword`` meets good security criteria.
+
+       .. rubric:: The ``zextras`` and ``zextras@carbonio.local`` users
+
+       There is a clear distinction between these two users, which are
+       intended to execute different tasks:
+
+       ``zextras``
+          This the **unix** account of the administrator and must be
+          used to carry out administrative tasks from the command line.
+
+       ``zextras@carbonio.local``
+          This is the default administrator user to be used to access
+          the Admin UI and manage |product| from the web interface.
 
 .. div:: sd-fs-5
 
@@ -419,7 +432,7 @@ interface as explained in section :ref:`web-access`.
    into details of the installation process:
 
    .. temp link to be replaced
-      
+
    https://community.zextras.com/zextras-carbonio/
 
 
