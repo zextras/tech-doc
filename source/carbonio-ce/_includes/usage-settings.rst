@@ -10,7 +10,7 @@ General
 -------
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Theme Options
    ^^^^
@@ -18,7 +18,7 @@ General
    Choose whether the `Dark Mode` is enabled or not.
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Out of Office Settings
    ^^^^
@@ -35,7 +35,7 @@ General
    on your calendar.
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Application versions
    ^^^^
@@ -44,7 +44,7 @@ General
    components.
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Account
    ^^^^
@@ -57,7 +57,7 @@ Mails
 -----
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Displaying Messages
    ^^^^
@@ -72,7 +72,7 @@ Mails
    meaning that all messages in the **Inbox** are displayed.
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Receiving Messages
    ^^^^
@@ -89,7 +89,7 @@ Mails
    deleted.
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Signatures
    ^^^^
@@ -100,7 +100,7 @@ Mails
    the :bdg-primary-line:`ADD SIGNATURE` button.
 
 .. card::
-   :class-header: sd-font-weight-bold
+   :class-header: sd-font-weight-bold irisfont
 
    Set Default Signatures
    ^^^^
@@ -109,8 +109,8 @@ Mails
    default to new e-mails that you write or to replies and forward.
 
 .. card::
-   :class-header: sd-font-weight-bold
-
+   :class-header: sd-font-weight-bold irisfont
+ 
    Filters
    ^^^^
 
@@ -139,6 +139,7 @@ Calendar
 --------
 
 .. card::
+   :class-header: sd-font-weight-bold irisfont
 
    General
    ^^^^^
@@ -158,6 +159,7 @@ Calendar
    showing a popup or flashing the browser's bar.
 
 .. card::
+   :class-header: sd-font-weight-bold irisfont
 
    Work week
    ^^^^^
@@ -167,6 +169,7 @@ Calendar
    .. note to self: customise modal seems to not yet work
 
 .. card::
+   :class-header: sd-font-weight-bold irisfont
 
    Creating Appointments
    ^^^^^
@@ -176,6 +179,7 @@ Calendar
    chosen when creating new appointments.
 
 .. card::
+   :class-header: sd-font-weight-bold irisfont
 
    Apple iCal
    ^^^^
@@ -183,6 +187,7 @@ Calendar
    Allow delegation for Apple iCal.
 
 .. card::
+   :class-header: sd-font-weight-bold irisfont
 
    Permissions
    ^^^^^
@@ -199,6 +204,7 @@ Contacts
 --------
 
 .. card::
+   :class-header: sd-font-weight-bold irisfont
 
    Options
    ^^^^^
@@ -211,3 +217,4 @@ Contacts
    Autocomplete can take advantage of the GAL and of shared contacts,
    while typing a ``,`` can be used as a shortcut to confirm the
    currently highlighted suggestion.
+
