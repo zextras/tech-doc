@@ -5,7 +5,10 @@
 }
 /* Sidebar header (and topbar for mobile) */
 .wy-side-nav-search, .wy-nav-top {
-    background: var(--zx-color-flame);
+    background-image:
+        linear-gradient(to right,
+                        var(--zx-color-magma),
+                        var(--zx-color-flame));
 }
 /* Sidebar */
 .wy-nav-side {

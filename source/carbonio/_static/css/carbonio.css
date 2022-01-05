@@ -2,7 +2,8 @@
 
 /* Sidebar header (and topbar for mobile) */
 .wy-side-nav-search, .wy-nav-top {
-    background-color: var(--zx-color-carbon);
+    background: rgb(0,80,109);
+    background: linear-gradient(90deg, rgba(0,80,109,1) 26%, rgba(85,139,159,1) 65%, rgba(132,172,187,1) 86%, rgba(203,221,228,1) 100%);
 }
 /* Sidebar */
 .wy-nav-side {
