@@ -34,8 +34,8 @@ Once logged in, the user will be on the Home screen from which he can
 access all the features of his mailbox.
 
 The features of |product| are grouped in several modules, each
-accessible from the menu on the left-hand side of :ref:`iris`. At a
-glance, they are:
+accessible from the menu on the left-hand side of IRIS, |product|
+default web interface. At a glance, they are:
 
 Mails
    Manage your inbox and e-mails; add filter and sub-folders.
@@ -105,17 +105,18 @@ provided in the text box. Click the
 different module. A more advanced search is available in the
 :ref:`Advanced search module <search-mod>`.
 
-.. _loginpage:
+..
+   .. _loginpage:
 
-Login Page
-==========
+   Login Page
+   ==========
 
-.. _iris:
+   .. _iris:
 
-IRIS
-----
+   IRIS
+   ----
 
-IRIS is the new web-based graphic interface of |product|.
+   IRIS is the new web-based graphic interface of |product|.
 
 .. _mails-mod:
 
@@ -223,25 +224,26 @@ Settings
 
 .. include:: /_includes/usage-settings.rst
 
-Mobile clients: Mail
-====================
+..
+   Mobile clients: Mail
+   ====================
 
-Android device configuration
+   Android device configuration
 
-iOS device configuration
+   iOS device configuration
 
-APPs for mobile devices
-=======================
+   APPs for mobile devices
+   =======================
 
-Mail
-   It is the client that allows the management of mail from Ios or
-   Android mobile devices
+   Mail
+      It is the client that allows the management of mail from Ios or
+      Android mobile devices
 
-Team
-   The Team app guarantees the creation and use of chats, instant
-   meetings and spaces wherever the user is.
+   Team
+      The Team app guarantees the creation and use of chats, instant
+      meetings and spaces wherever the user is.
 
-Drive
-   The Drive app allows the user to read, upload and possibly delete
-   the files inside the Drive. Furthermore, you can upload images and
-   documents from your mobile device.
+   Drive
+      The Drive app allows the user to read, upload and possibly delete
+      the files inside the Drive. Furthermore, you can upload images and
+      documents from your mobile device.

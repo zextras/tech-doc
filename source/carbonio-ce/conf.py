@@ -32,7 +32,8 @@ release = '0.1-alpha'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ 'sphinx_design', 'sphinx.ext.extlinks', 'sphinx_copybutton' ]
+extensions = [ 'sphinx_design', 'sphinx.ext.extlinks',
+               'sphinx_copybutton', 'sphinxcontrib.email' ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -40,7 +41,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['common/cli/ZxTeam', 'cli', '_includes']
+exclude_patterns = ['common/cli/ZxTeam', 'cli', '_includes', 'glossary.rst']
 
 rst_prolog = """
 
@@ -63,6 +64,8 @@ copybutton_prompt_text = r'\$ |\#'
 copybutton_prompt_is_regexp = True
 
 numfig = True
+
+email_automode = True
 
 # -- Options for HTML output -------------------------------------------------
 
