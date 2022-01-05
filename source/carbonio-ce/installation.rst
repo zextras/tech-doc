@@ -214,8 +214,8 @@ software package is necessary.
 Installation
 ============
 
-The single server installation is organised in steps, some of which
-are preliminary configuration tasks, and some is optional. 
+The installation is organised in steps, some of which are preliminary
+configuration tasks, and some is optional.
 
 .. div:: sd-fs-5
 
