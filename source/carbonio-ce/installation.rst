@@ -74,7 +74,11 @@ Software Requirements
 Supported Linux Server Distributions
 ------------------------------------
 
-|product| can be installed on **Ubuntu 18.04 LTS Server Edition (64-bit)**.
+|product| is available for **64-bit** CPUs only and can be installed on
+**Ubuntu 18.04 LTS Server Edition**.
+
+Support for **Redhat/CentOS** and **Ubuntu 20.04 LTS Server Edition**
+will be available soon.
 
 ..
   The following Linux distributions are supported.
