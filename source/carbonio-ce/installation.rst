@@ -217,10 +217,13 @@ Installation
 The installation is organised in steps, some of which are preliminary
 configuration tasks, and some is optional.
 
+.. _pre-installation-steps:
+
 .. div:: sd-fs-5
 
    :octicon:`gear` Pre-Installation Steps
 
+.. _installation-step1:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
@@ -251,6 +254,8 @@ configuration tasks, and some is optional.
 
         then issue the command :command:`netplan apply`
 
+.. _installation-step2:
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
@@ -271,6 +276,8 @@ configuration tasks, and some is optional.
       .. code:: console
 
          # echo "172.16.0.10 mail.carbonio.local mail" >> /etc/hosts
+
+.. _installation-step3:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -315,7 +322,9 @@ configuration tasks, and some is optional.
                   
            # systemctl restart dnsmasq
 
-.. div:: sd-fs-5
+.. _installation-step4:
+
+.. Div:: sd-fs-5
          
    :octicon:`gear` Installation and Post-Installation
             
@@ -349,6 +358,7 @@ configuration tasks, and some is optional.
 
          # apt upgrade
 
+.. _installation-step5:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
@@ -418,7 +428,11 @@ configuration tasks, and some is optional.
           This is the default administrator user to be used to access
           the Admin UI and manage |product| from the web interface.
 
-.. div:: sd-fs-5
+.. div:: sd-mt-5
+
+.. _installation-complete:
+
+.. div:: sd-fs-5 
 
    :octicon:`thumbsup`  Installation Complete
 
