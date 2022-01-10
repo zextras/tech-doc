@@ -332,7 +332,7 @@ configuration tasks, and some is optional.
 
       .. code:: console
 
-         # echo 'deb [trusted=yes] https://repo.zextras.io/rc/ubuntu bionic main' >> /etc/apt/sources.list.d/zextras.list
+         # echo 'deb https://repo.zextras.io/rc/ubuntu bionic main' >> /etc/apt/sources.list.d/zextras.list
 
    4) add key of repository
 
@@ -392,7 +392,7 @@ configuration tasks, and some is optional.
          (zextras\@carbonio.local), initially **without password**
          (see below for instruction to set it).
 
-      Before finalising the bootstrap, press :bdg-dark-line:`a` to apply the
+      Before finalising the bootstrap, press :bdg-dark-line:`y` to apply the
       configuration. The process will continue until its completion:
       click :bdg-dark-line:`Enter` to continue.
 
@@ -431,9 +431,7 @@ interface as explained in section :ref:`web-access`.
 .. seealso:: Our Community portal features a guide that delves more
    into details of the installation process:
 
-   .. temp link to be replaced
-
-   https://community.zextras.com/zextras-carbonio/
+   https://community.zextras.com/how-to-deploy-a-private-e-mail-server-for-free-using-zextras-carbonio-ce/
 
 
 .. multiserver installation is not yet available
@@ -451,7 +449,7 @@ Access to the Web Interface
 The URL to which to connect to are:
 
 * https://mail.carbonio.local/ for regular user access
-* https://mail.carbonio.local:7071/ for Administration access.
+* https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
 
   
 ..
