@@ -14,7 +14,8 @@
 .wy-menu > ul > li > a[href$="ldapaddressbook.html"],
 .wy-menu > ul > li > a[href$="mobile-troubleshooting.html"],
 .wy-menu > ul > li > a[href$="attachment.html"],
-.wy-menu > ul > li > a[href$="contentextractor.html"] {
+.wy-menu > ul > li > a[href$="contentextractor.html"],
+.wy-menu > ul > li > a[href$="videoserver.html"]{
     margin-left: 20px;
 }
 
