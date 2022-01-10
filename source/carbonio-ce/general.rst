@@ -32,6 +32,37 @@ Licensing
 |zx| |ce| is Open Source and can be `downloaded for free
 <https://www.zextras.com/carbonio-community-edition#discoverproduct>`_.
 
+.. _supported-languages:
+
+Available Languages
+===================
+
+|product|\'s main language is English, and the following languages
+are also included:
+
+.. csv-table::
+
+   "**English** (GB, US, AU)", "**Italian**", "**French**"
+   "**Spanish**", "**Portuguese** (PT, BR)", "German"
+   "Dutch", "Turkish", "Russian"
+   "Thai", "Hindi", "Indonesian"
+   "Japanese", "Simplified Chinese", ""
+
+.. _volunteer_translators:
+
+Volunteer Translators
+---------------------
+
+|zx| makes available an online translation platform to those
+qualified individuals wishing to help the translation process.
+
+Translation in languages that are not currently supported is
+encouraged, albeit we cannot guarantee any estimate upon the official
+inclusion in the product.
+
+Please contact translators@zextras.com for any information on the topic
+or to volunteer as a translator.
+
 Contribution to the Documentation
 =================================
 
