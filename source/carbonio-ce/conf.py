@@ -82,7 +82,7 @@ html_static_path = ['_static']
 html_css_files = [ 'css/community.css' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
-html_title = project + ' ' + release + ' Documentation'
+html_title = project + ' Documentation'
 html_theme_options = {
       'analytics_id': 'UA-23692145-1',  
       'analytics_anonymize_ip': False,
