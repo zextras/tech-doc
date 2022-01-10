@@ -30,6 +30,7 @@ configuration options.
    docs
    auth
    team
+   videoserver
    cli
    glossary
    Changelogs <changelog>
