@@ -332,7 +332,7 @@ configuration tasks, and some is optional.
 
       .. code:: console
 
-         # echo 'https://repo.zextras.io/rc/ubuntu bionic main' >> /etc/apt/sources.list.d/zextras.list
+         # echo 'deb https://repo.zextras.io/rc/ubuntu bionic main' >> /etc/apt/sources.list.d/zextras.list
 
    4) add key of repository
 
@@ -431,9 +431,7 @@ interface as explained in section :ref:`web-access`.
 .. seealso:: Our Community portal features a guide that delves more
    into details of the installation process:
 
-   .. temp link to be replaced
-
-   https://community.zextras.com/zextras-carbonio/
+   https://community.zextras.com/how-to-deploy-a-private-e-mail-server-for-free-using-zextras-carbonio-ce/
 
 
 .. multiserver installation is not yet available
