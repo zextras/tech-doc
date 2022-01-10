@@ -32,7 +32,7 @@ release = '3.8.0'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ 'sphinx_design', 'sphinx.ext.extlinks' ]
+extensions = [ 'sphinx_design', 'sphinx.ext.extlinks', 'sphinx_copybutton' ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -59,6 +59,10 @@ extlinks = {
     'enterprise': ('/enterprise/html/%s', None ),
     'community': ('https://community.zextras.com/', None)
 }
+
+# copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
+copybutton_prompt_text = r'\$ |\#'
+copybutton_prompt_is_regexp = True
 
 
 # -- Options for HTML output -------------------------------------------------

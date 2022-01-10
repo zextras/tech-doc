@@ -217,10 +217,13 @@ Installation
 The installation is organised in steps, some of which are preliminary
 configuration tasks, and some is optional.
 
+.. _pre-installation-steps:
+
 .. div:: sd-fs-5
 
    :octicon:`gear` Pre-Installation Steps
 
+.. _installation-step1:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
@@ -251,6 +254,8 @@ configuration tasks, and some is optional.
 
         then issue the command :command:`netplan apply`
 
+.. _installation-step2:
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
@@ -271,6 +276,8 @@ configuration tasks, and some is optional.
       .. code:: console
 
          # echo "172.16.0.10 mail.carbonio.local mail" >> /etc/hosts
+
+.. _installation-step3:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -315,7 +322,9 @@ configuration tasks, and some is optional.
                   
            # systemctl restart dnsmasq
 
-.. div:: sd-fs-5
+.. _installation-step4:
+
+.. Div:: sd-fs-5
          
    :octicon:`gear` Installation and Post-Installation
             
@@ -325,46 +334,44 @@ configuration tasks, and some is optional.
    Step 4: Repository Configuration and System Upgrade
    ^^^^^
 
-   In order to add |ce|\ 's repository on Ubuntu, execute
-   the following commands.
+   3) In order to add Carbonio CE's repository, go to the following page and fill in the form:
 
-   3) add repository URL
+      https://www.zextras.com/carbonio-community-edition/#discoverproduct
 
-      .. code:: console
+      You will receive an e-mail containing: 
 
-         # echo 'deb https://repo.zextras.io/rc/ubuntu bionic main' >> /etc/apt/sources.list.d/zextras.list
+      * the URL of the repository
+      * the GPG key of the repository
 
-   4) add key of repository
+      Follow the instructions in the e-mail to add these data to your
+      system, then continue with the next steps:
 
-      .. code:: console
-                
-         # apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 52FD40243E584A21
-
-   5) update the list of packages
+   4) update the list of packages
       
       .. code:: console
                 
          # apt update 
 
-   6) upgrade the system
+   5) upgrade the system
 
       .. code:: console
 
          # apt upgrade
 
+.. _installation-step5:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
    Step 5: Installation and Configuration of |product|
    ^^^^^
 
-   7) Installation of |product| requires to run the command
+   6) Installation of |product| requires to run the command
 
       .. code:: console
 
          # apt install carbonio-ce
 
-   8) In order to carry out the initial configuration and start
+   7) In order to carry out the initial configuration and start
       |product|, execute
 
       .. code:: console
@@ -396,7 +403,7 @@ configuration tasks, and some is optional.
       configuration. The process will continue until its completion:
       click :bdg-dark-line:`Enter` to continue.
 
-   9) create a password for the ``zextras@carbonio.local`` user. Log
+   8) create a password for the ``zextras@carbonio.local`` user. Log
       in to a shell terminal as the ``zextras`` user and execute these
       two commands. The first allows to switch to the ``zextras``
       user, with the second you actually change the password.
@@ -421,7 +428,11 @@ configuration tasks, and some is optional.
           This is the default administrator user to be used to access
           the Admin UI and manage |product| from the web interface.
 
-.. div:: sd-fs-5
+.. div:: sd-mt-5
+
+.. _installation-complete:
+
+.. div:: sd-fs-5 
 
    :octicon:`thumbsup`  Installation Complete
 
