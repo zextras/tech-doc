@@ -320,7 +320,7 @@ Download
 .. _carb-mail-conf:
 
 |carbonio| Mail configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The mobile application is enabled by default on all users.
 These are the only server side requirements:
