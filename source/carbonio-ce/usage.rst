@@ -290,7 +290,7 @@ These are the main features of the |carbonio| Mail app:
 
    * Dark theme
 
-   * Tag e-mails (soon)
+   * Tag e-mails
 
 .. _carb-mail-download:
 
@@ -301,7 +301,7 @@ Download
 
    .. tab-item:: Android :fa:`android`
 
-      |carbonio| is available for download on the Google Play Store:
+      |carbonio| Mail is available for download on the Google Play Store:
 
       https://play.google.com/store/apps/details?id=com.zextras.iris
 
