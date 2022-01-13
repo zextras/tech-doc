@@ -360,7 +360,7 @@ In order to use |carbonio| Mail App, follow these steps:
       .. figure:: /img/login.png
          :scale: 30%
 
-         Login screen of |product| Mail app.
+         Login screen of |carbonio| Mail app.
 
    .. grid-item::
       :columns: 4
