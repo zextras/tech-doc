@@ -374,10 +374,10 @@ In order to use |carbonio| Mail App, follow these steps:
 
       * Password
 
-      * Server name, which must match the FQDN
+      * Server name, which must match the FQDN. It's not necessary to
+        enter the port number as 443 / HTTPS is set by default.
 
-      .. note:: (It's not necessary to enter the port number as 443 /
-         HTTPS is set by default
+      .. note:: Scan of QR codes is not yet supported!
 
    .. grid-item::
       :columns: 3
