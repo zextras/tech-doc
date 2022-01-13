@@ -319,13 +319,11 @@ Download
 
 .. _carb-mail-conf:
 
-|product| Mail configuration
+|carbonio| Mail configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The mobile application does not require server-side configurations,
-because it is enabled by default on all users.
-
-Nonetheless, let's recap the server-side requirements:
+The mobile application is enabled by default on all users.
+These are the only server side requirements:
 
 * Port 443/HTTPS must accessible from the Internet
 
