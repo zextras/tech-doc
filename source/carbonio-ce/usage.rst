@@ -232,7 +232,7 @@ APPs for Mobile Devices
 Currently, a mobile application to access a |product| mailbox is
 available.
 
-As new components like Chat and File will be available for |product|,
+As new components like Chats and Files will be available for |product|,
 dedicated mobile app will be made available as well.
 
 ..
@@ -262,9 +262,6 @@ These are the main features of the |carbonio| Mail app:
 
 .. hlist::
    :columns: 3
-
-   * Multi-accounts management: convey your external accounts in one
-     single place
 
    * Complete e-mail management with default Inbox, Drafts, Junk, and Trash folders
 
@@ -312,7 +309,7 @@ Download
 
       iOS version is available for download on the Apple's App Store:
 
-      https://apps.apple.com/it/app/carbonio-mail/id1490253524
+      https://apps.apple.com/app/carbonio-mail/id1490253524
 
       It is required that the iOS version be equal to or higher than
       **14**
