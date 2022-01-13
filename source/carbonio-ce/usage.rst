@@ -263,9 +263,6 @@ These are the main features of the |carbonio| Mail app:
 .. hlist::
    :columns: 3
 
-   * Multi-accounts management: convey your external accounts in one
-     single place
-
    * Complete e-mail management with default Inbox, Drafts, Junk, and Trash folders
 
    * Send later functionality
