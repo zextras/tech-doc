@@ -315,7 +315,7 @@ Download
       https://apps.apple.com/it/app/carbonio-mail/id1490253524
 
       It is required that the iOS version be equal to or higher than
-      **5.0**
+      **14**
 
 .. _carb-mail-conf:
 
