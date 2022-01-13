@@ -339,7 +339,7 @@ Login via |carbonio| Mail
 
 In order to use |carbonio| Mail App, follow these steps:
 
-#. download the application (see the :ref:`carb-mail-download`
+#. Download the application (see the :ref:`carb-mail-download`
    section)
 
 #. Activate  (see the :ref:`carb-mail-notifications`  section)
@@ -375,7 +375,7 @@ In order to use |carbonio| Mail App, follow these steps:
       * Server name, which must match the FQDN. It's not necessary to
         enter the port number as 443 / HTTPS is set by default.
 
-      .. note:: Scan of QR codes is not yet supported!
+      .. note:: Scan of QR codes is not supported on |product|!
 
    .. grid-item::
       :columns: 3
