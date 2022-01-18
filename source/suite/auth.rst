@@ -662,42 +662,43 @@ twice a new one.
 To save the new password, click the blue :bdg-primary-line:`CHANGE
 PASSWORD` button.
 
+.. _auth_zimlet-create-eas:
+
 .. _auth_zimlet-create-mobile:
 
-Create New Credentials: Text Code
----------------------------------
+Create New Credentials: EAS
+---------------------------
 
-To create a new Mobile Password (for **EAS** service), open the
-Zextras Auth Zimlet and click `Authentication Type`, then
-:bdg-primary-line:`NEW AUTHENTICATION`.
+To create a new Password for :abbr:`EAS (Exchange ActiveSync)` service, open the
+Zextras Auth Zimlet and click `Exchange ActiveSync`, then
+:bdg-primary-line:`NEW AUTHENTICATION +`.
 
-- Here, enter an easy to remember identifier for the password in the
-  *Authentication description* field and select **Text code** as the
-  *Authentication mode*
+Here, enter an easy to remember identifier for the password in the
+*Authentication description* field.
 
-   .. image:: /img/auth/mobilepass1.png
+.. figure:: /img/auth/eas1.png
+   :scale: 50%
+           
+Then click :bdg-primary:`CREATE PASSWORD`: the new Mobile Password
+will be displayed.
 
-- Click :bdg-primary:`NEXT`. The new Mobile Password will be
-  displayed.
+  .. figure:: /img/auth/eas2.png
+     :scale: 50%
 
-   .. image:: /img/auth/mobilepass2.png
+Finally, click the :bdg-primary-line:`COPY PASSWORD` button to copy
+the password to the clipboard.
 
-- Click the small blue icon :octicon:`copy;1em;sd-text-primary` on
-  the right-hand side of the password to copy it to the clipboard
-
-  .. warning:: Mobile Passwords are randomly generated and cannot be
-     displayed again after the creation is complete.
+.. warning:: Mobile Passwords are randomly generated and cannot be
+   displayed again after the creation is complete.
 
 - Click :bdg-primary:`DONE` to close the Zextras Auth window. An entry
   for the new Mobile Password is now visible in the *Active Passwords*
   list of the Zextras Auth Zimlet.
 
-  .. image:: /img/auth/mobilepass3.png
-
 .. _auth_create_new_credentials_qr_code:
 
-Create New Credentials: QR Code
--------------------------------
+Create New Credentials: Mobile Apps
+-----------------------------------
 
 Zextras Auth can speed up and manage Zextras Application logins, such
 as those for the :ref:`Team Mobile App <team_mobile_app>` and
@@ -713,30 +714,27 @@ similar to the one described in the previous section.
    QR Code can only be viewed once.
 
 In order to create a new QR Code for Mobile Application, open the
-Zextras Auth Zimlet and click `Authentication type`, then
-:bdg-primary-line:`NEW AUTHENTICATION`.
+Zextras Auth Zimlet and click `Mobile Apps`, then
+:bdg-primary-line:`NEW AUTHENTICATION +`.
 
-- Here, enter an easy to remember identifier for the password in the
-  *Authentication description* field and select **QR code** as the
-  *Authentication mode*
+Here, enter an easy to remember identifier for the password in the
+*Authentication description*.
+  
+.. figure:: /img/auth/qrcode1.png
+   :scale: 50%
 
-   .. image:: /img/auth/qrcode1.png
+Click :dbg-primary:`Create Password` and the new QR code for Mobile
+Application will be displayed.
 
-- Click Next. The QR code for Mobile Application will be displayed.
-
-   .. image:: /img/auth/qrcode2.png
-
-Use the Zextras mobile app to frame the code and grant access to the
-app.
+You can use the Zextras mobile app to frame the code and grant access
+to the app.
 
 .. warning:: QR Codes are randomly generated and cannot be displayed
    again after the creation is complete.
 
-- Click on :bdg-primary:`DONE` to close the Zextras Auth window. An
-  entry for the new Mobile Application is now visible in the *Active
-  Passwords* list of the Zextras Auth Zimlet.
-
-   .. image::  /img/auth/qrcode3.png
+Click on :bdg-primary:`DONE` to close the Zextras Auth window. An
+entry for the new Mobile Application is now visible in the *Active
+Passwords* list of the Zextras Auth Zimlet.
 
 .. _auth_zimlet-create-otp:
 
