@@ -590,9 +590,10 @@ Administration GUI:
 ZxAuth for users (Auth Zimlet)
 ==============================
 
-Zextras Auth features a dedicated zimlet (see :numref:`auth-zimlet`) to manage all user-side
-credential and features, such as the account and EAS Mobile Passwords,
-Mobile App QR Codes, and OTP for :ref:`auth_two-fa`.
+Zextras Auth features a dedicated zimlet (see :numref:`auth-zimlet`)
+to manage all user-side credential and features, such as the account
+and EAS Mobile Passwords, Mobile App QR Codes, and OTP for
+:ref:`auth_two-fa`.
 
 .. _auth_zextras_auth_zimlet_overview:
 
@@ -616,27 +617,26 @@ having to share the personal credentials.
 
 From the zimlet, the user can:
 
--  **Change the password** of the current logged in user.
+- **Change the password** of the current logged in user
 
--  **Add new credentials** by clicking on either `Authentication Type`
-   (for text codes and QR codes) or `One Time Password`
+- **Add new credentials** in the dedicated pages, accessible by
+  clicking *Exchange ActiveSync*, *Mobile Apps*, or *OTP
+  Authentication*
 
--  **Check the status** and other information for every *Authentication
-   Type* created. Each entry of the list displays the label of the
-   password, its status, the service it is valid for, and its creation
-   date.
+- **Check the status** and other information for all `Exchange
+  ActiveSync` and `Mobile Apps` credential created. In each section,
+  entries in the list display the label of the password, its status,
+  the service it is valid for, and its creation date.
 
--  **Check the status** and other information for every *One Time
-   Password*. Here, each entry shows a description, its status, the
-   failed attempts, and its creation date.
+- **Check the status** and other information for every `One Time
+  Password` created. Here, each entry shows a description, its status,
+  the failed attempts, and its creation date.
 
--  **Manage** the 2FA access. Each user can decide whether to enforce
-   access using 2FA, unless its use has been enabled or disabled at COS,
-   domain, or global level. In this case, only a greyed-out checkbox is
-   shown.
-
--  **Delete** any credential created, by simply selecting it and
-   clicking on the :bdg-danger-line:`DELETE` button
+- **Manage** the 2FA access. Each user can decide whether to enforce
+  access using 2FA, unless its use has been enabled or disabled at
+  COS, domain, or global level.
+   
+- **Delete** any credential created
 
 .. important:: Users can in no case modify their assigned credentials,
    change the password of credentials they generate, or modify any
@@ -644,7 +644,8 @@ From the zimlet, the user can:
    strictly limited to the administrators.
 
 In the remainder of this section, we give an overview of the various
-possibilities.
+possibilities to create new credentials and provide instruction to add
+or delete them them.
 
 .. _auth_change_pass:
 
@@ -691,9 +692,9 @@ the password to the clipboard.
 .. warning:: Mobile Passwords are randomly generated and cannot be
    displayed again after the creation is complete.
 
-- Click :bdg-primary:`DONE` to close the Zextras Auth window. An entry
-  for the new Mobile Password is now visible in the *Active Passwords*
-  list of the Zextras Auth Zimlet.
+Click :bdg-primary:`DONE` to close the Zextras Auth window. An entry
+for the new Mobile Password is now visible in the *Active Passwords*
+list of the Zextras Auth Zimlet.
 
 .. _auth_create_new_credentials_qr_code:
 
@@ -720,14 +721,13 @@ Zextras Auth Zimlet and click `Mobile Apps`, then
 Here, enter an easy to remember identifier for the password in the
 *Authentication description*.
   
-.. figure:: /img/auth/qrcode1.png
-   :scale: 50%
+.. commenting out due to a description error in the modal
+   .. figure:: /img/auth/qrcode1.png
+      :scale: 50%
 
-Click :dbg-primary:`Create Password` and the new QR code for Mobile
-Application will be displayed.
-
-You can use the Zextras mobile app to frame the code and grant access
-to the app.
+Click :bdg-primary:`CREATE PASSWORD` and the new QR code for Mobile
+Application will be displayed. You can use the Zextras mobile app to
+frame the code and grant access to the app.
 
 .. warning:: QR Codes are randomly generated and cannot be displayed
    again after the creation is complete.
@@ -788,12 +788,12 @@ Delete Credentials
 ------------------
 
 In order to delete a credential, simply select it from the list of
-Active passwords or OTPs, and click on the :bdg-danger-line:`DELETE`
+Active passwords or OTPs, and click the :bdg-danger-line:`DELETE x `
 button:
 
 .. image:: /img/auth/delete_credential.png
 
-Click on :bdg-danger:`YES` to confirm the removal of the credential.
+Click :bdg-danger:`YES` to confirm the removal of the credential.
 
 .. _auth_zxauth-cli:
 
