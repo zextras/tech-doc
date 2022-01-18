@@ -28,6 +28,7 @@ and usage instructions in :doc:`usage`.
 
    general
    installation
+   uninstall
 
 ..
    .. toctree::
