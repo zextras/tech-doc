@@ -788,7 +788,7 @@ Delete Credentials
 ------------------
 
 In order to delete a credential, simply select it from the list of
-Active passwords or OTPs, and click the :bdg-danger-line:`DELETE x `
+Active passwords or OTPs, and click the :bdg-danger-line:`DELETE x`
 button:
 
 .. image:: /img/auth/delete_credential.png
