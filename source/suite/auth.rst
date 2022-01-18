@@ -743,31 +743,46 @@ app.
 Create New Credentials: OTP
 ---------------------------
 
-In order to create a new QR Code for One Time Password access, open the
-Zextras Auth Zimlet and click on One Time Password, then on NEW OTP.
+In order to create a new One Time Password access, open the Zextras
+Auth Zimlet and click **OTP Authentication**, then
+:bdg-primary-line:`NEW OTP +` to open a dialog in which you have to
+enter a unique label to identify the OTP.
 
-.. image:: /img/auth/otp1.png
+.. figure:: /img/auth/otp1.png
+   :scale: 50%
 
-- No additional step is required, you will be presented with the QR
-  code and a list of PIN codes to be used for authentication.
+You will be presented with the QR code and a list of PIN codes to be
+used for authentication.
 
-   .. image:: /img/auth/otp2.png
+.. grid::
 
-- Click on the small blue icon :fa:`print;sd-text-primary` on the
-  right-hand side of the PIN list to print the codes on paper or to a
-  file.
+   .. grid-item::
 
-   .. warning:: QR codes and their associated PINs are randomly
-      generated and cannot be displayed again after the creation is
-      complete.
+      .. figure:: /img/auth/otp2a.png
+         :scale: 50%
 
-- Click on :bdg-primary:`DONE` to close the Zextras Auth window. An
-  entry for the new OTP entry will be shown in the list.
+   .. grid-item::
+
+      .. figure:: /img/auth/otp2b.png
+         :scale: 50%
+
+Next, click the :bdg-primary-line:`PRINT PIN CODES` button to print the
+codes on paper or to a file. The printed document includes all the
+codes, the username/e-mail address for which they are valid and
+instructions to use them.
+
+.. figure:: /img/auth/otp3.png
+   :scale: 50%
+   :align: center
+
+.. warning:: QR codes and their associated PINs are randomly generated
+   and cannot be displayed again after the creation is complete.
+
+Finally, click :bdg-primary:`DONE` to close the Zextras Auth
+window. An entry for the new OTP entry will be shown in the list.
 
 .. note:: The *Description* is automatically created using the email
    address to which it is associated.
-
-.. image:: /img/auth/otp3.png
 
 .. _auth_delete_credentials:
 
