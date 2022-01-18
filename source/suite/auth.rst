@@ -590,9 +590,9 @@ Administration GUI:
 ZxAuth for users (Auth Zimlet)
 ==============================
 
-Zextras Auth features a dedicated zimlet to manage all user-side
-credential and features, such as the EAS Mobile Password, Mobile App QR
-Codes, and OTP for :ref:`auth_two-fa`.
+Zextras Auth features a dedicated zimlet (see :numref:`auth-zimlet`) to manage all user-side
+credential and features, such as the account and EAS Mobile Passwords,
+Mobile App QR Codes, and OTP for :ref:`auth_two-fa`.
 
 .. _auth_zextras_auth_zimlet_overview:
 
@@ -607,9 +607,16 @@ The creation of a new credential allows to give access to the account,
 possibly including the Zextras Mobile Apps, to other persons without
 having to share the personal credentials.
 
-.. image:: /img/auth/overview.png
+.. _auth-zimlet:
+
+.. figure:: /img/auth/zimlet.png
+   :scale: 50%
+
+   The |suite| Auth zimlet.
 
 From the zimlet, the user can:
+
+-  **Change the password** of the current logged in user.
 
 -  **Add new credentials** by clicking on either `Authentication Type`
    (for text codes and QR codes) or `One Time Password`
@@ -641,8 +648,19 @@ possibilities.
 
 .. _auth_change_pass:
 
-Change Pass
------------
+Change Password
+---------------
+
+In order to change password, access the Auth zimlet and click **change
+password**. Here, you need to provide the current password, then enter
+twice a new one.
+
+.. hint:: Make sure you use a robust password, which includes
+   lowercase and uppercase letters, numbers, characters, and is at
+   least ***8** characters long.
+
+To save the new password, click the blue :bdg-primary-line:`CHANGE
+PASSWORD` button.
 
 .. _auth_zimlet-create-mobile:
 
