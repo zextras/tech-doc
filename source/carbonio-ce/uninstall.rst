@@ -3,10 +3,10 @@
 ==========================
 
 This procedure is intended for a **complete** uninstallation of
-|product| and can be suitable in case you want to reinstall |product|
-on a clean system. If you want to keep configuration files or logs, remember
-**to copy them to a different directory** before starting this
-procedure.
+|product| on an **Ubuntu 18.04 LTS Server Edition** and is suitable in
+case you want to reinstall |product| on a clean system. If you want to
+keep configuration files or logs, remember **to copy them to a
+different directory** before starting this procedure.
 
 Console access is required for successful completion, so make sure to log in as
 ``root`` user--or as a user with administrative provileges--then
@@ -15,46 +15,46 @@ execute the following commands **in the given order**.
 At the end of the procedure, when all steps have been completed, no
 |product| trace will be present on the system.
 
-.. rubric:: Step #1: stop service
+.. dropdown:: Step #1: stop service
 
-.. code:: console
+   .. code:: console
 
-   # su - zextras -c "zmcontrol stop"
+      # su - zextras -c "zmcontrol stop"
 
-.. rubric:: Step #2: remove packages
+.. dropdown:: Step #2: remove packages
 
-.. code:: console
+   .. code:: console
 
-   # apt purge "carbonio*"
+      # apt purge "carbonio*"
 
-.. note:: After this step you may get a warning that while removing
-   carbonio packages, some directories are not empty so they have not
-   been removed.
+   .. note:: After this step you may get a warning that while removing
+      carbonio packages, some directories are not empty so they have not
+      been removed.
 
-.. rubric:: Step #3: disable system service
+.. dropdown:: Step #3: disable system service
 
-.. code:: console
+   .. code:: console
 
-   # systemctl disable carbonio
+      # systemctl disable carbonio
 
-.. rubric:: Step #4: remove unused packages
+.. dropdown:: Step #4: remove unused packages
 
-.. code:: console
+   .. code:: console
 
-   # apt autoremove
+      # apt autoremove
 
-.. rubric:: Step #5: remove crontab entry
+.. dropdown:: Step #5: remove crontab entry
 
-.. code:: console
+   .. code:: console
 
-   # crontab -u zextras -r
+      # crontab -u zextras -r
 
-.. rubric:: Step #6: remove users
+.. dropdown:: Step #6: remove users
 
-.. code:: console
+   .. code:: console
 
-   # userdel -rf zextras
-   # userdel postfix
+      # userdel -rf zextras
+      # userdel postfix
 
 .. warning:: The next steps will remove all files that do not belong
    to the ``carbonio-*`` packages: customised configuration files, log
@@ -62,23 +62,23 @@ At the end of the procedure, when all steps have been completed, no
    example for diagnostics or troubleshooting, copy them away before
    removing them.
 
-.. rubric:: Step #7: remove dangling configuration files
+.. dropdown:: Step #7: remove dangling configuration files
 
-.. code:: console
+   .. code:: console
 
-   # rm -rf /opt/zextras/
+      # rm -rf /opt/zextras/
 
-.. rubric:: Step #8: remove log and system files
+.. dropdown:: Step #8: remove log and system files
 
-.. code:: console
+   .. code:: console
 
-   # rm /var/log/carbonio*
-   # rm /etc/logrotate.d/carbonio
-   # rm /etc/init.d/carbonio
-   # rm /run/systemd/generator.late/carbonio.service
+      # rm /var/log/carbonio*
+      # rm /etc/logrotate.d/carbonio
+      # rm /etc/init.d/carbonio
+      # rm /run/systemd/generator.late/carbonio.service
 
-.. rubric:: Step #9: remove repository
+.. dropdown:: Step #9: remove repository
 
-.. code:: console
+   .. code:: console
 
-   # rm /var/lib/apt/lists/repo.zextras.io*
+      # rm /var/lib/apt/lists/repo.zextras.io*
