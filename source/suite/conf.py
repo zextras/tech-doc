@@ -20,12 +20,11 @@ current_year = time.strftime('%Y')
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Suite'
-copyright = '2021, The Zextras Team'
+copyright = '2022: ZEXTRAS, All rights reserved'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '3.8.0'
-
+release = '3.9.0'
 
 # -- General configuration ---------------------------------------------------
 
