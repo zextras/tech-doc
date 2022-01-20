@@ -32,7 +32,6 @@ configuration options.
    team
    videoserver
    cli
-   glossary
    Changelogs <changelog>
 
 
