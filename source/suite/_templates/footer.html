@@ -15,15 +15,7 @@
 
   <div role="contentinfo">
   {%- block contentinfo %}
-    {%- if show_copyright %}
-      {%- if hasdoc('copyright') %}
-        {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
-      {%- else %}
-        {%- trans copyright=copyright|e %}<center>
-      Copyright &#169 2021: ZEXTRAS; All rights reserved</center>{% endtrans %}
-    {%- endif %}
-
-    {%- endif %}
+    {%- trans copyright=copyright|e %}Copyright &#169; {{ copyright }}.{% endtrans %}
   {%- endblock %}
   </div>
 
