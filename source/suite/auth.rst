@@ -590,9 +590,10 @@ Administration GUI:
 ZxAuth for users (Auth Zimlet)
 ==============================
 
-Zextras Auth features a dedicated zimlet to manage all user-side
-credential and features, such as the EAS Mobile Password, Mobile App QR
-Codes, and OTP for :ref:`auth_two-fa`.
+Zextras Auth features a dedicated zimlet (see :numref:`auth-zimlet`)
+to manage all user-side credential and features, such as the account
+and EAS Mobile Passwords, Mobile App QR Codes, and OTP for
+:ref:`auth_two-fa`.
 
 .. _auth_zextras_auth_zimlet_overview:
 
@@ -607,29 +608,35 @@ The creation of a new credential allows to give access to the account,
 possibly including the Zextras Mobile Apps, to other persons without
 having to share the personal credentials.
 
-.. image:: /img/auth/overview.png
+.. _auth-zimlet:
+
+.. figure:: /img/auth/zimlet.png
+   :scale: 50%
+
+   The |suite| Auth zimlet.
 
 From the zimlet, the user can:
 
--  **Add new credentials** by clicking on either `Authentication Type`
-   (for text codes and QR codes) or `One Time Password`
+- **Change the password** of the current logged in user
 
--  **Check the status** and other information for every *Authentication
-   Type* created. Each entry of the list displays the label of the
-   password, its status, the service it is valid for, and its creation
-   date.
+- **Add new credentials** in the dedicated pages, accessible by
+  clicking *Exchange ActiveSync*, *Mobile Apps*, or *OTP
+  Authentication*
 
--  **Check the status** and other information for every *One Time
-   Password*. Here, each entry shows a description, its status, the
-   failed attempts, and its creation date.
+- **Check the status** and other information for all `Exchange
+  ActiveSync` and `Mobile Apps` credential created. In each section,
+  entries in the list display the label of the password, its status,
+  the service it is valid for, and its creation date.
 
--  **Manage** the 2FA access. Each user can decide whether to enforce
-   access using 2FA, unless its use has been enabled or disabled at COS,
-   domain, or global level. In this case, only a greyed-out checkbox is
-   shown.
+- **Check the status** and other information for every `One Time
+  Password` created. Here, each entry shows a description, its status,
+  the failed attempts, and its creation date.
 
--  **Delete** any credential created, by simply selecting it and
-   clicking on the :bdg-danger-line:`DELETE` button
+- **Manage** the 2FA access. Each user can decide whether to enforce
+  access using 2FA, unless its use has been enabled or disabled at
+  COS, domain, or global level.
+   
+- **Delete** any credential created
 
 .. important:: Users can in no case modify their assigned credentials,
    change the password of credentials they generate, or modify any
@@ -637,49 +644,62 @@ From the zimlet, the user can:
    strictly limited to the administrators.
 
 In the remainder of this section, we give an overview of the various
-possibilities.
+possibilities to create new credentials and provide instruction to add
+or delete them them.
 
 .. _auth_change_pass:
 
-Change Pass
------------
+Change Password
+---------------
+
+In order to change password, access the Auth zimlet and click **change
+password**. Here, you need to provide the current password, then enter
+twice a new one.
+
+.. hint:: Make sure you use a robust password, which includes
+   lowercase and uppercase letters, numbers, characters, and is at
+   least ***8** characters long.
+
+To save the new password, click the blue :bdg-primary-line:`CHANGE
+PASSWORD` button.
+
+.. _auth_zimlet-create-eas:
 
 .. _auth_zimlet-create-mobile:
 
-Create New Credentials: Text Code
----------------------------------
+Create New Credentials: EAS
+---------------------------
 
-To create a new Mobile Password (for **EAS** service), open the
-Zextras Auth Zimlet and click `Authentication Type`, then
-:bdg-primary-line:`NEW AUTHENTICATION`.
+To create a new Password for :abbr:`EAS (Exchange ActiveSync)` service, open the
+Zextras Auth Zimlet and click `Exchange ActiveSync`, then
+:bdg-primary-line:`NEW AUTHENTICATION +`.
 
-- Here, enter an easy to remember identifier for the password in the
-  *Authentication description* field and select **Text code** as the
-  *Authentication mode*
+Here, enter an easy to remember identifier for the password in the
+*Authentication description* field.
 
-   .. image:: /img/auth/mobilepass1.png
+.. figure:: /img/auth/eas1.png
+   :scale: 50%
+           
+Then click :bdg-primary:`CREATE PASSWORD`: the new Mobile Password
+will be displayed.
 
-- Click :bdg-primary:`NEXT`. The new Mobile Password will be
-  displayed.
+  .. figure:: /img/auth/eas2.png
+     :scale: 50%
 
-   .. image:: /img/auth/mobilepass2.png
+Finally, click the :bdg-primary-line:`COPY PASSWORD` button to copy
+the password to the clipboard.
 
-- Click the small blue icon :octicon:`copy;1em;sd-text-primary` on
-  the right-hand side of the password to copy it to the clipboard
+.. warning:: Mobile Passwords are randomly generated and cannot be
+   displayed again after the creation is complete.
 
-  .. warning:: Mobile Passwords are randomly generated and cannot be
-     displayed again after the creation is complete.
-
-- Click :bdg-primary:`DONE` to close the Zextras Auth window. An entry
-  for the new Mobile Password is now visible in the *Active Passwords*
-  list of the Zextras Auth Zimlet.
-
-  .. image:: /img/auth/mobilepass3.png
+Click :bdg-primary:`DONE` to close the Zextras Auth window. An entry
+for the new Mobile Password is now visible in the *Active Passwords*
+list of the Zextras Auth Zimlet.
 
 .. _auth_create_new_credentials_qr_code:
 
-Create New Credentials: QR Code
--------------------------------
+Create New Credentials: Mobile Apps
+-----------------------------------
 
 Zextras Auth can speed up and manage Zextras Application logins, such
 as those for the :ref:`Team Mobile App <team_mobile_app>` and
@@ -695,61 +715,72 @@ similar to the one described in the previous section.
    QR Code can only be viewed once.
 
 In order to create a new QR Code for Mobile Application, open the
-Zextras Auth Zimlet and click `Authentication type`, then
-:bdg-primary-line:`NEW AUTHENTICATION`.
+Zextras Auth Zimlet and click `Mobile Apps`, then
+:bdg-primary-line:`NEW AUTHENTICATION +`.
 
-- Here, enter an easy to remember identifier for the password in the
-  *Authentication description* field and select **QR code** as the
-  *Authentication mode*
+Here, enter an easy to remember identifier for the password in the
+*Authentication description*.
+  
+.. commenting out due to a description error in the modal
+   .. figure:: /img/auth/qrcode1.png
+      :scale: 50%
 
-   .. image:: /img/auth/qrcode1.png
-
-- Click Next. The QR code for Mobile Application will be displayed.
-
-   .. image:: /img/auth/qrcode2.png
-
-Use the Zextras mobile app to frame the code and grant access to the
-app.
+Click :bdg-primary:`CREATE PASSWORD` and the new QR code for Mobile
+Application will be displayed. You can use the Zextras mobile app to
+frame the code and grant access to the app.
 
 .. warning:: QR Codes are randomly generated and cannot be displayed
    again after the creation is complete.
 
-- Click on :bdg-primary:`DONE` to close the Zextras Auth window. An
-  entry for the new Mobile Application is now visible in the *Active
-  Passwords* list of the Zextras Auth Zimlet.
-
-   .. image::  /img/auth/qrcode3.png
+Click on :bdg-primary:`DONE` to close the Zextras Auth window. An
+entry for the new Mobile Application is now visible in the *Active
+Passwords* list of the Zextras Auth Zimlet.
 
 .. _auth_zimlet-create-otp:
 
 Create New Credentials: OTP
 ---------------------------
 
-In order to create a new QR Code for One Time Password access, open the
-Zextras Auth Zimlet and click on One Time Password, then on NEW OTP.
+In order to create a new One Time Password access, open the Zextras
+Auth Zimlet and click **OTP Authentication**, then
+:bdg-primary-line:`NEW OTP +` to open a dialog in which you have to
+enter a unique label to identify the OTP.
 
-.. image:: /img/auth/otp1.png
+.. figure:: /img/auth/otp1.png
+   :scale: 50%
 
-- No additional step is required, you will be presented with the QR
-  code and a list of PIN codes to be used for authentication.
+You will be presented with the QR code and a list of PIN codes to be
+used for authentication.
 
-   .. image:: /img/auth/otp2.png
+.. grid::
 
-- Click on the small blue icon :fa:`print;sd-text-primary` on the
-  right-hand side of the PIN list to print the codes on paper or to a
-  file.
+   .. grid-item::
 
-   .. warning:: QR codes and their associated PINs are randomly
-      generated and cannot be displayed again after the creation is
-      complete.
+      .. figure:: /img/auth/otp2a.png
+         :scale: 50%
 
-- Click on :bdg-primary:`DONE` to close the Zextras Auth window. An
-  entry for the new OTP entry will be shown in the list.
+   .. grid-item::
+
+      .. figure:: /img/auth/otp2b.png
+         :scale: 50%
+
+Next, click the :bdg-primary-line:`PRINT PIN CODES` button to print the
+codes on paper or to a file. The printed document includes all the
+codes, the username/e-mail address for which they are valid and
+instructions to use them.
+
+.. figure:: /img/auth/otp3.png
+   :scale: 50%
+   :align: center
+
+.. warning:: QR codes and their associated PINs are randomly generated
+   and cannot be displayed again after the creation is complete.
+
+Finally, click :bdg-primary:`DONE` to close the Zextras Auth
+window. An entry for the new OTP entry will be shown in the list.
 
 .. note:: The *Description* is automatically created using the email
    address to which it is associated.
-
-.. image:: /img/auth/otp3.png
 
 .. _auth_delete_credentials:
 
@@ -757,12 +788,12 @@ Delete Credentials
 ------------------
 
 In order to delete a credential, simply select it from the list of
-Active passwords or OTPs, and click on the :bdg-danger-line:`DELETE`
+Active passwords or OTPs, and click the :bdg-danger-line:`DELETE x`
 button:
 
 .. image:: /img/auth/delete_credential.png
 
-Click on :bdg-danger:`YES` to confirm the removal of the credential.
+Click :bdg-danger:`YES` to confirm the removal of the credential.
 
 .. _auth_zxauth-cli:
 
