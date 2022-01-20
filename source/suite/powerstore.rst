@@ -103,14 +103,15 @@ account before deloying are the following
 Setting up Centralized Storage
 ------------------------------
 
-In order to set up a bucket for centralized storage, three steps are
-necessary: Create a bucket, test connection to the bucket, and create
-the volumes on each mailstore.
+In order to set up a bucket for centralized storage, a few steps are
+necessary: create a bucket, test connection to the bucket, create the
+volumes on each mailstore, and set the volume to `current`.
 
 In details, the recommended procedure is the following and requires
 to use CLI commands.
 
-1. Create an S3 bucket using the ZxCore command `doCreateBucket`::
+
+1. Create an S3 bucket using the ZxCore command ``doCreateBucket``::
 
      zxsuite core doCreateBucket S3 _Amazon_AWS_bucket_ _Service_username_ _Service_password_ [param VALUE[,VALUE]]
 
@@ -151,25 +152,41 @@ to use CLI commands.
 
    For example::
 
-     zxsuite powerstore doCreateVolume S3 VolumeName secondary bucket_configuration_id 28m6u4KBwSUnYaPp86XG volume_prefix main_vol centralized true current_volume true
-
+     zxsuite powerstore doCreateVolume S3 VolumeName secondary bucket_configuration_id 28m6u4KBwSUnYaPp86XG volume_prefix main_vol centralized
 
    In this example, these values are used:
 
    * *S3*: the type of bucket
    * *VolumeName*: the volume name as defined on the server on which the
-      command is executed
-   * *secondary*: the type of the volume 
+     command is executed
+   * *secondary*: the type of the volume
    * *28m6u4KBwSUnYaPp86XG*: the bucket ID* as received in step 1
    * *volume_prefix main_vol*: an ID assigned to the volume, used for
-      quick searches (e.g., *main_vol*)
-   * *centralized true*: whether the storage is centralized or not
-   * *current_volume true*: set the volume to be able to receive
-      immediately data. If not specified, it is necessary to issue 
-      later a command to make the volume _current_.
+     quick searches (e.g., *main_vol*)
 
-   See the :ref:`doCreateVolume S3<zxsuite_powerstore_doCreateVolume_S3>` full reference for details and more options.
+   See the :ref:`doCreateVolume
+   S3<zxsuite_powerstore_doCreateVolume_S3>` full reference for
+   details and more options.
 
+4.  Set the volume to *current*, to let it receive data immediately::
+
+      zxsuite powerstore doUpdateVolume S3 VolumeName current_volume true
+
+    For example::
+
+      zxsuite powerstore doUpdateVolume S3 VolumeName secondary current_volume true
+
+
+    In this example, these values are used:
+
+    * *S3*: the type of bucket
+    * *VolumeName*: the volume name as defined on the server on which the
+      command is executed
+    * *secondary*: the type of the volume
+
+    See the :ref:`doUpdateVolume
+    S3<zxsuite_powerstore_doUpdateVolume_S3>` full reference for
+    details and more options.
 
 .. _pws_centralized_storage_structure:
 
