@@ -56,6 +56,14 @@ At the end of the procedure, when all steps have been completed, no
       # userdel -rf zextras
       # userdel postfix
 
+   .. warning:: The first command above may fail if some processes started
+      by the ``zextras`` users are still running. You can safely
+      terminate them by issuing this command::
+
+        killall -u zextras
+
+      and then repeat the above commands.
+
 .. warning:: The next steps will remove all files that do not belong
    to the ``carbonio-*`` packages: customised configuration files, log
    files, and system files. If you think you will need them, for
