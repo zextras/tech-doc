@@ -1,9 +1,8 @@
-.. uncomment in 3.9.0 release
-   
-    Zextras Suite Changelog - Release 3.8.0
-   =========================================
 
-   Release Date: November 29th, 2021
+Zextras Suite Changelog - Release 3.8.0
+=======================================
+
+Release Date: November 29th, 2021
 
 .. rubric:: Auth
 
