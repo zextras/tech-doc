@@ -29,6 +29,7 @@ and usage instructions in :doc:`usage`.
    general
    installation
    uninstall
+   install_SSL_certificate
 
 ..
    .. toctree::
