@@ -69,23 +69,29 @@ Once the command is executed these files will be generated:
 
 To complete this step successfully, you need to submit the CSR to the
 SSL provider and get a commercial certificate in **PEM format** and
-save it as
-:file:`/opt/zextras/ssl/carbonio/commercial/commercial.crt`.
+save it as :file:`/opt/zextras/ssl/carbonio/commercial/commercial.crt`.
 
-Now, download and save the **root** and the **intermediate** CA from
-your provider to temporary files, for example :file:`/tmp/ca_root.crt`
-and :file:`/tmp/ca_intermediary.crt`, then merge the two previously
-created temporary files into a single one:
+Moreover, SSL providers supply also the **intermediate certificate**
+and the so-called **Root CA** in a bundled certificate file (*"Full
+Chain CA"*), that must be saved as
+:file:`/opt/zextras/ssl/carbonio/commercial/commercial_ca.crt`.
 
-.. code:: console
+.. topic:: How to create a Full Chain CA
 
-   # cat /tmp/ca_intermediary.crt /tmp/ca_root.crt > \
-   /opt/zextras/ssl/carbonio/commercial/commercial_ca.crt
+   However, in some cases, the SSL provider may only provide the
+   **intermediate certificate**, in which case you need to create the
+   Full CA Chain in order to install the certificate (for further
+   information: https://knowledge.digicert.com/solution/SO16297.html)
 
-.. note:: Most SSL providers provide both the intermediate certificate
-   and the so-called `Root CA`. In some cases, however, they may only
-   provide the intermediate certificate, in which case the `Root CA`
-   certificate must be explicitly requested.
+   If you don't have a full CA chain bundle, download and save the root
+   and the intermediate CA from your provider to temporary files, for
+   example /tmp/ca_root.crt and /tmp/ca_intermediary.crt, then merge the
+   two previously created temporary files into a single one:
+
+   .. code:: console
+
+      # cat /tmp/ca_intermediary.crt /tmp/ca_root.crt > \
+      /opt/zextras/ssl/carbonio/commercial/commercial_ca.crt
 
 .. rubric:: Step 3. Verification and deploy
 
