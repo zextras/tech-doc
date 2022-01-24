@@ -89,89 +89,35 @@ created temporary files into a single one:
 
 .. rubric:: Step 3. Verification and deploy
 
-Issue the following commands to verify that the certificate and your
-private key match:
-
-* become the ``zextras`` user
-
-  .. code:: console
-
-     # su - zextras
-
-* go to the directory where the certificates are stored:
-
-  .. code:: console
-
-     # cd /opt/zextras/ssl/carbonio/commercial
-
-* verify the certificates
-
-  .. code:: console
-
-     # zmcertmgr verifycrt comm commercial.key commercial.crt commercial_ca.crt
-
-
-If the verification is successful, you can deploy the SSL certificate.
-
-.. code:: console
-
-   zmcertmgr deploycrt comm commercial.crt commercial_ca.crt
-
-Finally, restart |product|.
-
-.. code:: console
-
-   zmcontrol restart
-
-Your certificate should now be installed: verify the certificate
-details by running this command:
-
-.. code:: console
-
-   zmcertmgr viewdeployedcrt
+.. include:: /_includes/verifycerts.rst
 
 .. _wildcard-cert-installation:
 
 Wildcard Certificate Installation
 =================================
 
-**Scenario:**
+To describe this procedure, we use the same server with FQDN
+`mail.example.com`, but in this case there is already a wildcard SSL
+certificate for domain ***.example.com**, that was generated on a
+server other than |product|\'s.
 
-The server FQDN is `mail.example.com`
+Therefore, you have all the necessary certificates and the procedure
+in this case is simpler
 
-There is already a wildcard SSL certificate (`*.example.com`) generated on a server other than Carbonio.
+.. rubric:: Step 1. Set up of certificates
 
-**Verification and deploy**
+The existing PEM certificate and its private key must be save as
+:file:`/opt/zextras/ssl/carbonio/commercial/commercial.crt` and
+:file:`/opt/zextras/ssl/carbonio/commercial/commercial.key`
+respectively.
 
-Save the private key in:  ``/opt/zextras/ssl/carbonio/commercial/commercial.key``
-
-Save the commercial certificate in: ``/opt/zextras/ssl/carbonio/commercial/commercial.crt``
-
-Merge the intermediate and the root CA certificate in: ``/opt/zextras/ssl/carbonio/commercial/commercial_ca.crt``
-
-* Verify that your certificate and your private key match:
-
-.. code:: console
-
-  su - zextras
-  cd /opt/zextras/ssl/carbonio/commercial
-  zmcertmgr verifycrt comm commercial.key commercial.crt commercial_ca.crt
-
-* If the verification is successful, you can deploy your SSL certificate
+Now, go to :file:`/opt/zextras/ssl/carbonio/commercial/` and merge the
+two certificates into a single one:
 
 .. code:: console
 
-  zmcertmgr deploycrt comm commercial.crt commercial_ca.crt
+   # cat commercial.crt commercial.key > commercial_ca.crt
 
-* Restart Carbonio
+.. rubric:: Step 2. Verification and deploy
 
-.. code:: console
-
-  zmcontrol restart
-
-Your certificate should now be installed.
-You can verify the certificate details by running this command:
-
-.. code:: console
-
-  zmcertmgr viewdeployedcrt
+.. include:: /_includes/verifycerts.rst
