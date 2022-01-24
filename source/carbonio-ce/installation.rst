@@ -74,11 +74,11 @@ Software Requirements
 Supported Linux Server Distributions
 ------------------------------------
 
-|product| is available for **64-bit** CPUs only and can be installed on
-**Ubuntu 18.04 LTS Server Edition**.
+|product| is available for **64-bit** CPUs only and can be installed
+on **Ubuntu 18.04 LTS Server Edition** and **Ubuntu 20.04 LTS Server
+Edition**.
 
-Support for **Redhat/CentOS** and **Ubuntu 20.04 LTS Server Edition**
-will be available soon.
+Support for **Redhat/CentOS** will be available soon.
 
 ..
   The following Linux distributions are supported.
@@ -214,8 +214,9 @@ software package is necessary.
 Installation
 ============
 
-The installation is organised in steps, some of which are preliminary
-configuration tasks, and some is optional.
+The installation on Ubuntu 18.04 and Ubuntu 20.04 is very similar and
+is organised in steps, some of which are preliminary configuration
+tasks, and some is optional.
 
 .. _pre-installation-steps:
 
@@ -293,16 +294,21 @@ configuration tasks, and some is optional.
    So make sure that the DNS is correctly configured for both **A**
    and **MX** records.
 
+   You can use any DNS resolution server, including `dnsmasq`,
+   `systemd-resolved`, and `bind`.
+
    .. dropdown:: Example: Set up of dnsmasq
 
       As an example, we provide here directions to install and
-      configure **dnsmasq**. This task is **optional** and suitable
-      for demo or testing purposes only.
-
-      In case you can not rely on an existent DNS server for DNS
+      configure **dnsmasq**. This task is **optional** and can be used
+      In cases you can not rely on an existent DNS server for DNS
       resolution, or if you want to set up a local |product|
-      installation for testing or demo purposes, you can install
-      **dnsmasq**.
+      installation for testing or demo purposes.
+
+      .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
+         may raise a port conflict over port **53 UDP** with the
+         default `systemd-resolved` service, so make sure to disable
+         the latter before continuing with the next steps.
 
       .. code:: bash
 
