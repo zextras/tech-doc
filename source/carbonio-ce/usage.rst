@@ -331,7 +331,7 @@ These are the only server side requirements:
 
 * The user with whom you log in via the |product| Mail App must be
   existing and active
-q
+
 .. _carb-mail-login:
 
 Login via |carbonio| Mail
