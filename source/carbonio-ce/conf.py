@@ -60,8 +60,9 @@ extlinks = {
 }
 
 # copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
-copybutton_prompt_text = r'\$ |\#'
+copybutton_prompt_text = r'\$\s|#\s'
 copybutton_prompt_is_regexp = True
+copybutton_line_continuation_character = "\\"
 
 numfig = True
 

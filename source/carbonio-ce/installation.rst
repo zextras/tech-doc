@@ -1,5 +1,5 @@
 ==========================
- Carbonio CE Installation
+ |product| Installation
 ==========================
 
 This page provides hardware and software requirements for |ce|
