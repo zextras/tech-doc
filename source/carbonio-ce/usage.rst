@@ -324,11 +324,14 @@ These are the only server side requirements:
 
 * Port 443/HTTPS must accessible from the Internet
 
-* A valid SSL/TLS certificate
+* A valid SSL/TLS certificate must be available for the domain
+
+  .. note:: Directions to install a valid certificate can be found in
+     section :doc:`install_SSL_certificate`.
 
 * The user with whom you log in via the |product| Mail App must be
   existing and active
-
+q
 .. _carb-mail-login:
 
 Login via |carbonio| Mail
