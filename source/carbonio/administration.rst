@@ -2,14 +2,23 @@
  Carbonio Administration
 =========================
 
-Admin Console
-=============
 
-CLI 
-===
+.. toctree::
+   :maxdepth: 1
 
-Ordinary tasks
-==============
+   auth
 
-Ordinary setting
-================
+.. aggiungere backup
+   
+..
+   Admin Console
+   =============
+
+   CLI 
+   ===
+
+   Ordinary tasks
+   ==============
+
+   Ordinary setting
+   ================

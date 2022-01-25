@@ -4,14 +4,14 @@
    contain the root `toctree` directive.
 
 ********************************************
- Welcome to |enterprise| Documentation!
+ Welcome to |carbonio| Documentation!
 ********************************************
 
-.. rubric:: |enterprise| Technical Documentation
+.. rubric:: |carbonio| Technical Documentation
 
-This is the documentation of |enterprise|.
+This is the documentation of |carbonio|.
 
-|community| has a `dedicated page <../../carbonio-ce/html/index.html>`_.
+|ce| has a `dedicated page <../../carbonio-ce/html/index.html>`_.
 
 .. toctree::
    :maxdepth: 2

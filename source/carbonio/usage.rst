@@ -224,7 +224,7 @@ Settings
 
 .. include:: /_includes/usage-settings.rst
 
-
+.. _mobile_apps:
 
 APPs for Mobile Devices
 =======================
