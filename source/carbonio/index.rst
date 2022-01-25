@@ -17,10 +17,10 @@ This is the documentation of |enterprise|.
    :maxdepth: 2
    :caption:  Install:
 
-   common/carbonio/general
-   common/carbonio/installation
-   common/carbonio/uninstall
-   common/carbonio/install_SSL_certificate
+   general
+   installation
+   uninstall
+   install_SSL_certificate
 
 
 .. toctree::
@@ -35,6 +35,6 @@ This is the documentation of |enterprise|.
    :caption:  Use:
 
    advanced
-   common/carbonio/usage
+   usage
    deep-view
-   common/carbonio/glossary
+   glossary

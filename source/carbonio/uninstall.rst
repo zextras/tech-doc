@@ -1,0 +1,1 @@
+../common/carbonio/uninstall.rst

@@ -10,9 +10,9 @@
 This is the documentation of |ce| edition, a free and open-source
 collaboration software.
 
-Details on the functionalities can be found in :doc:`common/carbonio/general`,
-requirements and directions for installation in :doc:`common/carbonio/installation`,
-and usage instructions in :doc:`common/carbonio/usage`.
+Details on the functionalities can be found in :doc:`general`,
+requirements and directions for installation in :doc:`installation`,
+and usage instructions in :doc:`usage`.
 
 ..
    This is the documentation of |ce| edition, whose features are
@@ -26,10 +26,10 @@ and usage instructions in :doc:`common/carbonio/usage`.
    :maxdepth: 2
    :caption:  Install:
 
-   common/carbonio/general
-   common/carbonio/installation
-   common/carbonio/uninstall
-   common/carbonio/install_SSL_certificate
+   general
+   installation
+   uninstall
+   install_SSL_certificate
 
 ..
    .. toctree::
@@ -43,5 +43,5 @@ and usage instructions in :doc:`common/carbonio/usage`.
    :maxdepth: 2
    :caption:  Use:
  
-   common/carbonio/usage
-   common/carbonio/glossary
+   usage
+   glossary
