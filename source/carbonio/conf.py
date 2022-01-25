@@ -20,19 +20,20 @@ current_year = time.strftime('%Y')
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Carbonio'
-copyright = '2021, The Zextras Team'
+copyright = '2022, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1-alpha'
-
+release = '1.0'
+version = release
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ 'sphinx_design', 'sphinx.ext.extlinks' ]
+extensions = [ 'sphinx_design', 'sphinx.ext.extlinks',
+               'sphinx_copybutton', 'sphinxcontrib.email' ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -40,14 +41,32 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_includes', 'common/cli', 'glossary.rst']
 
 rst_prolog = """
 
-.. note:: All content is provisional and is meant **only** to showcase
-   the feature of the new framework.
+.. |product| replace:: Carbonio
 
 """ + open("replace.txt").read()
+
+# -- Configuration of extensions ---------------------------------------------
+
+# extlinks, see
+# https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
+extlinks = {
+    'carbonio': ('/carbonio/html/%s', None ),
+    'ce': ('/carbonio-ce/html/%s', None ),
+    'community': ('https://community.zextras.com/', None)
+}
+
+# copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
+copybutton_prompt_text = r'\$\s|#\s'
+copybutton_prompt_is_regexp = True
+copybutton_line_continuation_character = "\\"
+
+numfig = True
+
+email_automode = True
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -64,9 +83,10 @@ html_static_path = ['_static']
 html_css_files = [ 'css/carbonio.css' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
-
-
-# html_theme_options = {
+html_title = project + ' Documentation'
+html_theme_options = {
+      'analytics_id': 'UA-23692145-1', 
+      'analytics_anonymize_ip': False,
 #     'sticky_navigation': True,
 #     'logo_only': True
-# }
+}
