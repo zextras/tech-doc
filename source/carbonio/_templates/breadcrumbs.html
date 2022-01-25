@@ -3,7 +3,8 @@
 <a href="{{ pathto(master_doc) }}" class="icon fa-arrow-circle-left" style="color:#2980B9"></a> &raquo;</li>
     {%- for doc in parents %}
       <a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;
-    {%- endfor %}
-{{ title }}
+      {%- endfor %}
+      {{ title }}
+      <br><br>
 {%- endblock %}
 
