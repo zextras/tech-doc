@@ -8,16 +8,11 @@ What is |auth|
 ====================
 
 |auth| is the Zextras Suite module that influences the process of
-accessing a Zextras instance from the Login Page onwards, including:
-
-1. The access modality. Depending on the authentication backends
-   configured, the access mask changes, to allow user to provide their
-   credentials using any of the backends. This also is reflected in the
-   :ref:`auth_zxauth-zimlet`.
-
-2. Customisations. Define how the login page looks like. See dedicated
-   section :ref:`auth_custom_login_page` for a list of customisable
-   items.
+accessing a Zextras instance from the Login Page onwards, including
+the access modality. Depending on the authentication backends
+configured, the access mask changes, to allow user to provide their
+credentials using any of the backends. This also is reflected in the
+:ref:`auth-user`.
 
 |auth| allows to manage all the Authentication Strategies
 (user/pwd, SAML, 2FA, MobilePwd, QrCode) and Service Authorizations
@@ -28,7 +23,7 @@ Immediately below, you can find the description of all supported
 authentication methods; the next two sections are dedicated to
 :ref:`administration tasks <auth_zxauth-admins>`, which require
 privileged access and are mostly carried out from the CLI, and
-:ref:`everyday’s task <auth_zxauth-zimlet>`, which can be carried out
+:ref:`everyday’s task <auth-user>`, which can be carried out
 from the Web GUI by both administrators and users,
 respectively. Finally, the :ref:`list of all CLI commands
 <auth_zxauth-cli>` is given as a reference, with link to each command.
@@ -45,8 +40,6 @@ Supported Authentication Methods
    -  Mobile password management
 
    -  Application password
-
--  Custom login page
 
 -  SAML integration
 
@@ -68,23 +61,8 @@ QR Codes in particular can be used to access Zextras Apps, currently
 Team and Drive.
 
 More information and step by step guidelines can be found in Section
-:ref:`auth_zxauth-zimlet`.
+:ref:`auth-user`.
 
-.. this section probably will be removed
-   
-.. _auth_custom_login_page:
-
-Custom Login Page
-~~~~~~~~~~~~~~~~~
-
-All Zextras functionality can be accessed upon login from the *login
-page* of Zextras, which can be customised in several parts, for example
-to add the company’s logo or other elements of the company’s corporate
-identity.
-
-This feature is carried out from the CLI and therefore requires
-administrator privileges; more information and guidelines in section
-:ref:`auth_custom_login_page`.
 
 SAML
 ~~~~
@@ -166,11 +144,10 @@ it using the :ref:`Auth Zimlet <auth_zimlet-create-otp>`.
 |auth| for Admins
 =================
 
-This section is dedicated to administrators and the activities they can
-carry out to manage and maintain |auth|. Here administrators can
+This section is dedicated to administrators and the activities they
+can carry out to manage and maintain |auth|. Here administrators can
 find the requirements for the various authentication methods, then the
-installation instructions. Credential management follows, with the
-option to customise the login page at the end.
+installation instructions and finally the credential management.
 
 .. _auth_requirements:
 
@@ -264,141 +241,6 @@ doDeployAuthZimlet`` as the zimbra user on any mailbox server of your
 infrastructure.
 
 
-.. this section will probably be removed
-   
-.. _auth_zxauth-login-page:
-
-Custom Login Page
------------------
-
-The |auth| module provides the ability to customise the Login Page as it
-is seen by other user.
-
-The login page can be set at domain level and customized in terms of
-title, logo, background and favicon.
-
-.. _auth_enabling_the_login_page:
-
-Enabling the Login Page
-~~~~~~~~~~~~~~~~~~~~~~~
-
-To enable the Login Page for a domain (we use **example.com**), set the
-``zimbraWebClientLoginURL`` and ``zimbraWebClientLogoutURL``
-configuration keys. You can do so from the GUI by adding the following
-two values:
-
-::
-
-   Web client login redirect URL:     /zx/login/page/?domain=example.com
-   Web client logout redirect URL:    /zx/auth/logout/
-
-The same action can be done by using the following CLI command, which
-configures also the authentication method (``zimbraAuthMech``):
-
-::
-
-   zmprov md example.com zimbraAuthMech custom:zx zimbraWebClientLoginURL /zx/login/page/?domain=example.com zimbraWebClientLogoutURL /zx/auth/logout/
-
-.. _auth_customizing_the_login_page:
-
-Customizing the Login Page
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Login Page can be customized through the use of the ``loginPage``
-Auth CLI command.
-
-.. _auth_image_file_locations_and_sizes:
-
-Image File Locations and Sizes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-|auth| offers two options for custom image files used by the Login
-Page, either by embedding remote image files or hosting them locally.
-Image files can be used for logo, background, and favicon.
-
-.. grid::
-   :gutter: 3
-
-   .. grid-item-card::
-      :class-header: sd-font-weight-bold
-
-      Remote File
-      ^^^^
-
-      The image is available on a public online resource (like, e.g.,
-      a corporate server or a hosting service) and can be directly
-      accessed. When adopting this approach, use the full URL to the
-      resource in the CLI command, for example:
-      ``https://www.example.com/resources/logo.png``
-
-      .. hint:: This is the preferred alternative.
-
-   .. grid-item-card::
-      :class-header: sd-font-weight-bold
-
-      Local File
-      ^^^^
-
-      The image is hosted locally and must be stored in a directory
-      under ``/opt/zimbra/jetty/webapps/zimbra/public/``. When
-      configuring it, the relative path to the file from the
-      ``/opt/zimbra/jetty/webapps/zimbra/`` base path must be used. If
-      the file is saved as
-      ``/opt/zimbra/jetty/webapps/zimbra/public/logo.png``, then use
-      ``/public/logo.png``
-
-The optimal size for a logo image is 320x80 pixels. Other sizes can be
-used but the logo image could be stretched or scaled resulting in poor
-quality. The aspect ratio of 4:1 should always be maintained.
-
-While the optimal size for the background image depends on the
-resolution of the client’s screen, it’s stongly advised to avoid images
-smaller than the current standard monitor resolutions to avoid vertical
-or horizontal bars to be displayed on screens with a bigger resolution
-than the background image.
-
-.. _auth_login_page_title:
-
-Login Page Title
-^^^^^^^^^^^^^^^^
-
-The login page title can be modified by using either of the following
-commands:
-
-.. readd :ref: when CLI will be available
-   
-- **Global** level by using `zxsuite auth loginPage setTitle global
-  <zxsuite_auth_loginPage_setTitle_global>` ::
-
-     zxsuite auth loginPage setTitle global 'My Custom Login Page'
-
-.. readd :ref: when CLI will be available
-   
-- **Domain** level by using `zxsuite auth loginPage setTitle
-  domain <zxsuite_auth_loginpage_setTitle_domain>` ::
-
-    zxsuite auth loginPage setTitle domain example.com 'My Custom Login Page'
-
-.. _auth_viewing_the_current_configuration:
-
-Viewing the current configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. readd :ref: when CLI will be available
-   
-The current Login Page settings for a domain can be viewed by using the
-`zxsuite auth loginPage getConfig
-domain <zxsuite_auth_loginpage_getConfig_domain>` command::
-
-   $ zxsuite auth loginPage getConfig domain example.com
-
-           zimbraPublicServiceHostname                         mail.example.com
-           loginPageBackgroundImage                            /public/background.jpg
-           zimbraPublicServicePort                             443
-           zimbraPublicServiceProtocol                         https
-           zimbraDomainName                                    example.com
-           publicUrl                                           https://mail.example.com
-           loginPageLogo                                       /public/logo.png
 
 .. _auth_set_up_saml:
 
