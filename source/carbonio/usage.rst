@@ -4,6 +4,16 @@
 
 .. intro
 
+This section contains general advices about the most common tasks and
+functionalities of the various |product| modules. The following
+modules have dedicated sections featuring more information, howtos,
+and best practices:
+
+.. toctree::
+   :maxdepth: 1
+
+   auth-user
+
 All functionalities provided by |zx| |product| are available after logging
 in to the mailbox.
 
@@ -248,6 +258,7 @@ dedicated mobile app will be made available as well.
       The Drive app allows the user to read, upload and possibly delete
       the files inside the Drive. Furthermore, you can upload images and
       documents from your mobile device.
+
 .. _carb-mail-:
 
 Mobile clients: Mail
@@ -426,3 +437,4 @@ Notifications should now work!
    notifications.zextras.com service on port 443 (The exact URL to
    which notifications are sent is:
    https://notifications.zextras.com/firebase/ )
+
