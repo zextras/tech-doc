@@ -5,6 +5,8 @@
 .. |suite| replace:: Zextras Suite
 .. |zx| replace:: Zextras
 .. |zose| replace:: Zimbra 9 OSE
+
+.. |file| replace:: |zx| Files
 .. |team| replace:: |zx| Team
 .. |auth| replace:: |carbonio| Auth
 

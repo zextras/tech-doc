@@ -13,6 +13,7 @@ and best practices:
    :maxdepth: 1
 
    auth-user
+   files
 
 All functionalities provided by |zx| |product| are available after logging
 in to the mailbox.
