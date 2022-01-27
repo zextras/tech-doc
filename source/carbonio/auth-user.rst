@@ -3,32 +3,30 @@
 |auth| for users
 ================
 
-|auth| features a dedicated zimlet (see :numref:`auth-zimlet`)
+|auth| features a dedicated settings page (see :numref:`auth-page`)
 to manage all user-side credential and features, such as the account
-and EAS Mobile Passwords, Mobile App QR Codes, and OTP for
-:ref:`auth_two-fa`.
+and EAS Mobile Passwords, Mobile App QR Codes, and OTP for 2FA.
 
-.. _auth_zextras_auth_zimlet_overview:
+.. _auth_settings_overview:
 
-|auth| Zimlet overview
-----------------------------
+|auth| settings page overview
+-----------------------------
 
-The |auth| Zimlet can be accessed from the "Zimlets" section of
-the Zimbra Web Client. Users do not need any CLI access to use the
-|auth|.
+The |auth| settings page can be accessed from the right-hand side
+menu. Users do not need any CLI access to use the |auth|.
 
 The creation of a new credential allows to give access to the account,
 possibly including the Zextras Mobile Apps, to other persons without
 having to share the personal credentials.
 
-.. _auth-zimlet:
+.. _auth-page:
 
-.. figure:: /img/auth/zimlet.png
+.. figure:: /img/auth/authpage.png
    :scale: 50%
 
-   The |auth| zimlet.
+   The |auth| settings page.
 
-From the zimlet, the user can:
+From the settings page, the user can:
 
 - **Change the password** of the current logged in user
 
@@ -65,9 +63,8 @@ or delete them them.
 Change Password
 ---------------
 
-In order to change password, access the Auth zimlet and click **change
-password**. Here, you need to provide the current password, then enter
-twice a new one.
+In order to change password, click **Change Password**. Here, you need
+to provide the current password, then enter twice a new one (see :numref:`auth-page`.
 
 .. hint:: Make sure you use a robust password, which includes
    lowercase and uppercase letters, numbers, characters, and is at
@@ -83,8 +80,8 @@ PASSWORD` button.
 Create New Credentials: EAS
 ---------------------------
 
-To create a new Password for :abbr:`EAS (Exchange ActiveSync)` service, open the
-|auth| Zimlet and click `Exchange ActiveSync`, then
+To create a new Password for :abbr:`EAS (Exchange ActiveSync)`
+service, click `Exchange ActiveSync`, then
 :bdg-primary-line:`NEW AUTHENTICATION +`.
 
 Here, enter an easy to remember identifier for the password in the
