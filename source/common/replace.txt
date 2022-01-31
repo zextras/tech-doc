@@ -9,7 +9,7 @@
 .. |file| replace:: |carbonio| Files
 .. |team| replace:: |carbonio| Chats
 .. |auth| replace:: |carbonio| Auth
-
+.. |vs| replace:: |carbonio| VideoServer
 .. common replacements for all products
 
 .. |new| replace::  :bdg-primary:`NEW`

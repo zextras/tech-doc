@@ -1,9 +1,1 @@
-==========
- Glossary
-==========
-
-.. glossary::
-   :sorted:
-
-Backup Path
-   The backup path is where your items are stored.
+../common/carbonio/glossary.rst

@@ -5,9 +5,10 @@
 .. toctree::
    :maxdepth: 2
 
-
    auth-user
    files
+   chats
+   videoserver
 
 ..
    The *Carbonio-extras* package includes the following advanced features.
