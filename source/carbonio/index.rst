@@ -34,7 +34,7 @@ This is the documentation of |carbonio|.
    :maxdepth: 2
    :caption:  Use:
 
-   advanced
    usage
+   advanced
    deep-view
    glossary

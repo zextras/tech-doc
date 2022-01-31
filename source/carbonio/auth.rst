@@ -33,17 +33,19 @@ Supported Authentication Methods
 
 |auth| supports the following backends:
 
--  Self service credentials management
+- Temporary Auth link
 
-   -  Mobile password management
+- Self service credentials management
 
-   -  Application password
+  - Mobile password management
 
--  SAML integration
+  - Application password
 
--  2FA Authentication using OTP token
+- SAML integration
 
--  Credential Management by CLI
+- 2FA Authentication (using OTP token)
+
+- Credential Management by CLI
 
 .. grid::
    :gutter: 3
@@ -249,17 +251,6 @@ In order to enable the authentication strategies available in
                proxy_pass ${web.upstream.zx};
            }
 
-.. this needs update
-   
-.. _auth_installing_the_zextras_auth_zimlet:
-
-Installing the |auth| Zimlet
-----------------------------------
-
-To deploy the |auth| Zimlet, simply run ``zxsuite auth
-doDeployAuthZimlet`` as the zimbra user on any mailbox server of your
-infrastructure.
-
 .. _auth_set_up_saml:
 
 Setting up SAML Configuration
@@ -433,8 +424,6 @@ default SAML settings, modify them, then save and import them back.
 
 Temporary Auth Link
 -------------------
-
-.. should this be added to the initial list?
    
 A typical user-management task that an administrator needs to carry
 out is to allow the first access to the company's infrastructure to a
