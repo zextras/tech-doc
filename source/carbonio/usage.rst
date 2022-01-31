@@ -9,12 +9,6 @@ functionalities of the various |product| modules. The following
 modules have dedicated sections featuring more information, howtos,
 and best practices:
 
-.. toctree::
-   :maxdepth: 1
-
-   auth-user
-   files
-
 All functionalities provided by |zx| |product| are available after logging
 in to the mailbox.
 
