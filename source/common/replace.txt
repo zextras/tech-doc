@@ -6,8 +6,8 @@
 .. |zx| replace:: Zextras
 .. |zose| replace:: Zimbra 9 OSE
 
-.. |file| replace:: |zx| Files
-.. |team| replace:: |zx| Team
+.. |file| replace:: |carbonio| Files
+.. |team| replace:: |Carbonio| Chats
 .. |auth| replace:: |carbonio| Auth
 
 .. common replacements for all products
