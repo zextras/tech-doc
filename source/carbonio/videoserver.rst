@@ -242,97 +242,108 @@ removal on the video server is required).
    on any of the available instances. Once the beta is over, load
    balancing rules will be enacted.
 
-.. _cli_commands:
+.. card::
 
-CLI Commands
-~~~~~~~~~~~~
+   CLI Commands
+   ^^^^
 
-The CLI command to manage |vs| installations is ``zxsuite
-team`` with the parameter ``video-server`` and the parameters
-`video-server add <zxsuite_team_video-server_add>` and
-`video-server remove <zxsuite_team_video-server_remove>`
-respectively.
+   The CLI command to manage |vs| installations is ``zxsuite
+   team`` with the parameter ``video-server`` and the parameters
+   `video-server add <zxsuite_team_video-server_add>` and
+   `video-server remove <zxsuite_team_video-server_remove>`
+   respectively.
 
-Quick reference:
+   Quick reference:
 
-.. code:: console
+   .. code:: console
 
-   # zxsuite team video-server add *videoserver.example.com* [param VALUE[,VALUE]]
+      # zxsuite team video-server add *videoserver.example.com* [param VALUE[,VALUE]]
 
-   # zxsuite team video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
+      # zxsuite team video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
 
 .. _bandwidth_and_codecs:
 
 Bandwidth and Codecs
 --------------------
 
-.. _video_bandwidth:
+.. grid::
+   :gutter: 3
 
-Video Bandwidth
-~~~~~~~~~~~~~~~
+   .. grid-item-card::
+      :columns: 4
 
-The administrator can set the webcam stream quality and the screenshare
-stream quality specifing the relative bitrate *in Kbps*. The values must
-be at least 100 Kbps and can be increased as desired.
+      Video Bandwidth
+      ^^^^^
 
-Higher values mean more quality but more used bandwidth.
+      The administrator can set the webcam stream quality and the screenshare
+      stream quality specifing the relative bitrate *in Kbps*. The values must
+      be at least 100 Kbps and can be increased as desired.
 
--  ``zxsuite config global set attribute teamChatWebcamBitrateCap value 200``:
-   is the command for the webcam stream quality/bandwidth
+      Higher values mean more quality but more used bandwidth.
 
--  ``zxsuite config global set attribute teamChatScreenBitrateCap value 200``:
-   is the command for the screenshare stream qualitybandwidth
+      -  ``zxsuite config global set attribute teamChatWebcamBitrateCap value 200``:
+         is the command for the webcam stream quality/bandwidth
 
-.. tip::
+      -  ``zxsuite config global set attribute teamChatScreenBitrateCap value 200``:
+         is the command for the screenshare stream qualitybandwidth
 
-   By default both the webcam bandwidth and the screen sharing bandwidth
-   are set to 200 Kbps.
+      .. tip::
 
-.. _video_codecs:
+         By default both the webcam bandwidth and the screen sharing bandwidth
+         are set to 200 Kbps.
 
-Video Codecs
-~~~~~~~~~~~~
+   .. grid-item-card::
+      :columns: 4
 
-By default, the VP8 video codec is used. This is to ensure the best
-compatibility, as this codec is available in all supported browsers, but
-other codecs can be enabled:
+      Video Codecs
+      ^^^^
 
--  AV1:
-   ``zxsuite config global set attribute teamChatVideoCodecAV1 value true``
+      By default, the VP8 video codec is used. This is to ensure the best
+      compatibility, as this codec is available in all supported browsers, but
+      other codecs can be enabled:
 
--  H264:
-   ``zxsuite config global set attribute teamChatVideoCodecH264 value true``
+      -  AV1:
+         ``zxsuite config global set attribute teamChatVideoCodecAV1 value true``
 
--  H265:
-   ``zxsuite config global set attribute teamChatVideoCodecH265 value true``
+      -  H264:
+         ``zxsuite config global set attribute teamChatVideoCodecH264 value true``
 
--  VP8:
-   ``zxsuite config global set attribute teamChatVideoCodecVP8 value true``
+      -  H265:
+         ``zxsuite config global set attribute teamChatVideoCodecH265 value true``
 
--  VP9:
-   ``zxsuite config global set attribute teamChatVideoCodecVP9 value true``
+      -  VP8:
+         ``zxsuite config global set attribute teamChatVideoCodecVP8 value true``
 
-Only one codec can be enabled at the time, so before enabling a new
-codec remember to disable the previous one using the same command as the
-one in the list above but substituting ``value true`` with
-``value false``.
+      -  VP9:
+         ``zxsuite config global set attribute teamChatVideoCodecVP9 value true``
 
-.. container:: informalexample
+      Only one codec can be enabled at the time, so before enabling a new
+      codec remember to disable the previous one using the same command as the
+      one in the list above but substituting ``value true`` with
+      ``value false``.
 
-   E.g. to enable the H264 codec run:
+      .. container:: informalexample
 
-   ``zxsuite config global set attribute teamChatVideoCodecVP8 value false``
+         E.g. to enable the H264 codec run:
 
-   ``zxsuite config global set attribute teamChatVideoCodecH264 value true``
+         ``zxsuite config global set attribute teamChatVideoCodecVP8 value false``
 
-.. _audio_codec:
+         ``zxsuite config global set attribute teamChatVideoCodecH264 value true``
 
-Audio Codec
-~~~~~~~~~~~
+   .. grid-item-card::
+      :columns: 4
 
-The audio codec used by the |vs| is Opus. No other codecs are
-supported, as Opus is currently the only reliable one available across
-all supported browsers.
+      Audio Codec
+      ^^^^
+
+      The audio codec used by the |vs| is Opus. No other codecs are
+      supported, as Opus is currently the only reliable one available across
+      all supported browsers.
+
+      .. seealso::
+
+         `Wikipedia page on Opus
+         <https://en.wikipedia.org/wiki/Opus_(audio_format)#Bandwidth_and_sampling_rate>`_
 
 .. _advanced_settings:
 
@@ -341,54 +352,53 @@ Advanced settings
 
 The following settings influence the audio experience.
 
-.. _audio_quality:
+.. grid::
+   :gutter: 3
 
-Audio Quality
-~~~~~~~~~~~~~
+   .. grid-item-card::
+      :columns: 6
 
-The administrator can set the Opus audio quality by setting the sampling
-rate (in Hz) in the ``teamChatAudioSamplingRate`` global attribute.
+      Audio Quality
+      ^^^^
 
-The available values are:
+      The administrator can set the Opus audio quality by setting the sampling
+      rate (in Hz) in the ``teamChatAudioSamplingRate`` global attribute.
 
--  8000 → represents the narrowband bandwidth
+      The available values are:
 
--  12000 → represents the mediumband bandwidth
+      -  8000 → represents the narrowband bandwidth
 
--  16000 → represents the wideband bandwidth (**default**)
+      -  12000 → represents the mediumband bandwidth
 
--  24000 → represents the superwideband bandwidth
+      -  16000 → represents the wideband bandwidth (**default**)
 
--  48000 → represents the fullband bandwidth
+      -  24000 → represents the superwideband bandwidth
 
-.. seealso::
+      -  48000 → represents the fullband bandwidth
 
-   `Wikipedia page on Opus
-   <https://en.wikipedia.org/wiki/Opus_(audio_format)#Bandwidth_and_sampling_rate>`_
-   
+   .. grid-item-card::
+      :columns: 6
 
-.. _audio_sensitivity:
+      Audio Sensitivity
+      ^^^^
 
-Audio Sensitivity
-~~~~~~~~~~~~~~~~~
+      The administrator can optimize the audio sensitivity with these two
+      commands:
 
-The administrator can optimize the audio sensitivity with these two
-commands:
+      ``zxsuite config global set attribute teamChatAudioLevelSensitivity value 25``
 
-``zxsuite config global set attribute teamChatAudioLevelSensitivity value 25``
+      ``zxsuite config global set attribute teamChatAudioSamplingSensitivityInterval value 2``
 
-``zxsuite config global set attribute teamChatAudioSamplingSensitivityInterval value 2``
+      The audio level sensitivity defines how much the audio should be
+      normalized between all the audio sources. The value has a range between
+      0 and 100 where 0 represents the audio muted and 100 the maximum audio
+      level (too loud).
 
-The audio level sensitivity defines how much the audio should be
-normalized between all the audio sources. The value has a range between
-0 and 100 where 0 represents the audio muted and 100 the maximum audio
-level (too loud).
+      By default the value is set to **25**.
 
-By default the value is set to **25**.
+      The audio sampling sensitivity interval defines the interval in seconds
+      used to compute the audio sensitivity level. By default the value is set
+      to 2 seconds, this means that the video server normalizes the audio
+      level considering the audio sources of the last 2 seconds.
 
-The audio sampling sensitivity interval defines the interval in seconds
-used to compute the audio sensitivity level. By default the value is set
-to 2 seconds, this means that the video server normalizes the audio
-level considering the audio sources of the last 2 seconds.
-
-The value should be at least **0**.
+      The value should be at least **0**.
