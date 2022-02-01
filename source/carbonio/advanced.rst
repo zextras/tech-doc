@@ -9,6 +9,9 @@
    files
    chats
    videoserver
+   backup
+   restorestrategies
+   advancedbackup
 
 ..
    The *Carbonio-extras* package includes the following advanced features.

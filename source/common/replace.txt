@@ -10,6 +10,8 @@
 .. |team| replace:: |carbonio| Chats
 .. |auth| replace:: |carbonio| Auth
 .. |vs| replace:: |carbonio| VideoServer
+.. |backup| replace:: |carbonio| Backup
+
 .. common replacements for all products
 
 .. |new| replace::  :bdg-primary:`NEW`
