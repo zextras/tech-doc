@@ -53,8 +53,7 @@ capabilities.
 
       -  Built-in TURN server compatibility
 
-      -  No core installation needed. Zimlet installation through a package
-         manager.
+      -  Installation through a package manager
 
       -  No configuration needed
 
@@ -94,6 +93,9 @@ This count is updated every 15 minutes.
 
 Browser compatibility
 =====================
+
+.. should browser compatibility be mentioned only once for all
+   modules?
 
 The following list shows which browsers are known to fully support all
 Zextras features.
@@ -149,7 +151,7 @@ For Video Chats and Instant Meetings, the following rules apply:
 .. _chats_administration:
 
 |team| administration
-==============================
+=====================
 
 .. verify section
    
@@ -220,7 +222,7 @@ line utility:
 User Interface
 ==============
 
-.. to be checked on crb1
+.. to be checked on crb1. Perhaps no need to be so detailed?
    
 .. _chats_team_tab:
 
