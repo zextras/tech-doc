@@ -76,17 +76,20 @@ and the so-called **Root CA** in a bundled certificate file (*"Full
 Chain CA"*), that must be saved as
 :file:`/opt/zextras/ssl/carbonio/commercial/commercial_ca.crt`.
 
-.. topic:: How to create a Full Chain CA
+.. _create-full-ca-chain:
 
-   However, in some cases, the SSL provider may only provide the
-   **intermediate certificate**, in which case you need to create the
-   Full CA Chain in order to install the certificate (for further
-   information: https://knowledge.digicert.com/solution/SO16297.html)
+.. topic:: How to create a Full CA Chain
 
-   If you don't have a full CA chain bundle, download and save the root
-   and the intermediate CA from your provider to temporary files, for
-   example /tmp/ca_root.crt and /tmp/ca_intermediary.crt, then merge the
-   two previously created temporary files into a single one:
+   In some cases, the SSL provider may only provide the **intermediate
+   certificate**, in which case you need to create the Full CA Chain
+   in order to install the certificate (for further information:
+   https://knowledge.digicert.com/solution/SO16297.html)
+
+   If you don't have a full CA chain bundle, download and save the
+   root and the intermediate CA from your provider to temporary files,
+   for example :file:`/tmp/ca_root.crt` and
+   :file:`/tmp/ca_intermediary.crt`, then merge the two previously
+   created temporary files into a single one:
 
    .. code:: console
 
@@ -117,12 +120,14 @@ The existing PEM certificate and its private key must be save as
 :file:`/opt/zextras/ssl/carbonio/commercial/commercial.key`
 respectively.
 
-Now, go to :file:`/opt/zextras/ssl/carbonio/commercial/` and merge the
-two certificates into a single one:
+You also need the ``commercial_ca.crt`` (Full CA chain
+bundle) certificate: If you have it on another server, copy it as
+:file:`/opt/zextras/ssl/carbonio/commercial/commercial_ca.crt` 
 
-.. code:: console
-
-   # cat commercial.crt commercial.key > commercial_ca.crt
+Otherwise, if you don't have the bundle, but the Root CA and
+intermediate certificates in two separated files, follow the procedure
+described in the box :ref:`How to create a Full CA Chain
+<create-full-ca-chain>`.
 
 .. rubric:: Step 2. Verification and deploy
 
