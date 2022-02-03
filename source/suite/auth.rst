@@ -2,8 +2,6 @@
 Zextras Auth
 ============
 
-blublublu
-
 .. _what_is_zextras_auth:
 
 What is Zextras Auth
