@@ -421,9 +421,7 @@ valid even if the IP has been trusted by another service.
 2FA Policy Management is a rather advanced technique which avoids the
 use of OTP in all cases when an authentication request is received
 from a device that is already in the Trusted Networks of Trusted
-Devices tables. For example, if your device is already authenticated
-and connected to the Mail WebUI, you do not need any other OTP to
-access Drive.
+Devices tables.
 
 To set up and manage 2FA Policies, several CLI commands are available.
 
