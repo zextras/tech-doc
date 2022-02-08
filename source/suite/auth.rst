@@ -430,6 +430,7 @@ To set up and manage 2FA Policies, several CLI commands are available.
 
    .. grid-item-card::
       :columns: 4
+      :class-header: card-abyss
                 
       Display policies
       ^^^^
@@ -460,9 +461,10 @@ To set up and manage 2FA Policies, several CLI commands are available.
       :octicon:`dash` :ref:`policy list global
       <zxsuite_auth_policy_list_global>`
          
-   .. grid-item-card::
+   .. grid-item-card:: 
       :columns: 4
-                
+      :class-header: card-abyss
+
       Manage policies
       ^^^^
       
@@ -508,7 +510,8 @@ To set up and manage 2FA Policies, several CLI commands are available.
       
    .. grid-item-card::
       :columns: 4
-                
+      :class-header: card-abyss
+
       Manage expiration time 
       ^^^^
 
