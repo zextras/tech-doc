@@ -78,19 +78,8 @@ Supported Linux Server Distributions
 on **Ubuntu 18.04 LTS Server Edition** and **Ubuntu 20.04 LTS Server
 Edition**.
 
-Support for **Redhat/CentOS** will be available soon.
-
-..
-  The following Linux distributions are supported.
-  
-   .. csv-table::
-
-      Red Hat® Enterprise Linux® 9 (64-bit)
-      Red Hat® Enterprise Linux® 8 (64-bit)
-      Ubuntu 18.04 LTS Server Edition (64-bit)
-
-   ..
-         * Ubuntu 20.04 LTS Server Edition (64-bit)
+Support for other distributions will be announced in due course when
+it becomes available.
 
 .. _software-pakages:
 
