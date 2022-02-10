@@ -35,6 +35,7 @@ This is the documentation of |carbonio|.
    :caption:  Use:
 
    usage
+   mobileapps
    advanced
    deep-view
    glossary
