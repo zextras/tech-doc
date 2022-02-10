@@ -26,6 +26,7 @@ This is the documentation of |carbonio|.
 .. toctree::
    :maxdepth: 2
    :caption:  Admin:
+   :includehidden:
 
    administration
    management

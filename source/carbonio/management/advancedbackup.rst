@@ -1,8 +1,8 @@
 .. _backup_advanced_techniques:
 
-====================================
- |backup| Advanced techniques
-====================================
+============================================
+ Backup :octicon:`dash` Advanced techniques
+============================================
 
 .. _disaster_recovery:
 

@@ -2,17 +2,29 @@
  Carbonio Management
 =====================
 
-Migrate to Carbonio
-===================
+In this section we introduce some important management tasks for
+advanced |carbonio| features.
 
-Manage Storage
-==============
+.. toctree::
+   :maxdepth: 2
+   :hidden:
 
-Backup
-======
+   VideoServer </management/videoserver>
+   /management/restorestrategies
+   /management/advancedbackup
 
-System care
-===========
+..
+   Migrate to Carbonio
+   ===================
 
-Support requests
-================
+   Manage Storage
+   ==============
+
+   Backup
+   ======
+
+   System care
+   ===========
+
+   Support requests
+   ================
