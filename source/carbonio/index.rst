@@ -30,6 +30,7 @@ This is the documentation of |carbonio|.
 
    administration
    management
+   deep-view
 
 .. toctree::
    :maxdepth: 2
@@ -38,5 +39,4 @@ This is the documentation of |carbonio|.
    usage
    mobileapps
    advanced
-   deep-view
    glossary
