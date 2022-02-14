@@ -17,27 +17,6 @@ platform inside |carbonio|, including Group and Corporate
 Messaging, File Sharing, Screen Sharing and informal Video Chat
 capabilities.
 
-.. _chats_browser_compatibility:
-
-Browser compatibility
-=====================
-
-.. should browser compatibility be mentioned only once for all
-   modules?
-
-The following list shows which browsers are known to fully support all
-Zextras features.
-
-.. csv-table::
-   :header: "Browser", "Version", "OS", "Supported"
-   :file: _includes/browsercompatibility.csv
-          
-Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
-supported on the browser’s two previous stable releases.
-
-Firefox users must be sure to be running at least version 66 of the
-browser to be able to use the Screen Sharing feature.
-
 .. _chats_urls_and_ports:
 
 URLs and Ports

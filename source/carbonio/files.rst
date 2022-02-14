@@ -232,21 +232,6 @@ in the following schemas.
       -  To reset the maximum retention duration at global level, run
          ``zxsuite config global empty attribute driveMaxVersionRetentionDays``
 
-.. _files_browser_compatibility:
-
-Browser compatibility
-=====================
-
-The following list shows which browsers are known to fully support all
-Zextras features.
-
-.. csv-table::
-   :header: "Browser", "Version", "OS", "Supported"
-   :file: _includes/browsercompatibility.csv
-
-
-Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
-supported on the browser’s two previous stable releases.
 
 .. _files_drive_ui:
 
