@@ -6,7 +6,6 @@
    :maxdepth: 2
 
    auth-user
-   files
    backup
 
 ..

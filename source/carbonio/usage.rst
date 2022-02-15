@@ -302,6 +302,11 @@ the calendar's invitation.
 
 .. video recording for meeting rooms is forthcoming!
 
+Files
+=====
+
+.. include:: /_includes/files.rst
+
 .. _search-mod:
 
 Search

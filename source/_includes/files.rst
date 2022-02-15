@@ -9,31 +9,69 @@
 |file|
 =============
 
-|File| provides both a fully fledged file storage system with ability
-to share documents with colleagues.
+Carbonio Files provides a file storage system with ability to share
+documents with colleagues, collaborative editing, and document
+versioning.
 
-.. _files_features:
 
-Features
-========
+Items in |File| have are organised in a folder structure, that can be
+browsed using the Navigation Bar on top of the UI.
 
-The Web GUI allows to carry out a number of activities related to file
-management:
+On top of the standard folder-based navigation, a
+:bdg-primary-line:`Quick Access` menu is available on the left side of
+the UI, which allows to quickly view the following types of items:
 
--  Upload, download, manage, and browse files
+Preferred Items
+   Items marked with the "Star" option available in the right-click
+   context menu.
 
--  Preview files
+Recently Edited
+   Items edited recently, sorted from the most recently edited.
 
--  Mark files as *preferred* for quick access
+Shared with me
+   Items shared by other users.
 
--  Add custom notes (descriptions) to files
+Shared by me
+   Items shared to other users
 
--  Share files with internal and external users
+Marked for deletion
+   Items marked for deletion
 
--  Integration with |carbonio| Docs
+The most common tasks that can be carried out in Files are:
 
-The most popular tasks that can be carried out in Files are summarised
-in the following schemas.
+- Upload, download, manage, and browse files
+
+- Create new folders to better organise files
+
+  .. note:: The following files can not be used in folder’s name:
+     slash ``/`` :octicon:`dash` backslash ``\`` :octicon:`dash`
+     semicolon :octicon:`dash` ``:`` :octicon:`dash` question Mark
+     ``?`` :octicon:`dash` plus sign ``+`` :octicon:`dash` asterisk
+     ``*`` :octicon:`dash` percent sign ``%``
+  
+- Share files with internal and external users
+
+.. what about support for carbonio docs?
+   
+  -  Integration with |carbonio| Docs
+
+
+.. section to be rewritten with updated (carbonio's) screenshots
+..
+   .. figure:: /img/drive/ui.png
+      :scale: 50%
+
+      Overview of |File| UI
+
+      .. csv-table::
+         :widths: 10, 40
+
+         "1", "Quick Access navigation panel"
+         "2", "Folder navigation panel"
+         "3", "InfoBox control"
+         "4", "New, Upload and Search features"
+         "5", "Folder list"
+         "6", "File list"
 
 .. review "search" and "create new" operations, because the new
    interface has a common search/create object functionality -- see
@@ -232,29 +270,6 @@ in the following schemas.
       -  To reset the maximum retention duration at global level, run
          ``zxsuite config global empty attribute driveMaxVersionRetentionDays``
 
-
-.. _files_drive_ui:
-
-|File| UI
-=========
-
-
-.. section to be rewritten with updated (carbonio's) screenshots
-..
-   .. figure:: /img/drive/ui.png
-      :scale: 50%
-
-      Overview of |File| UI
-
-      .. csv-table::
-         :widths: 10, 40
-
-         "1", "Quick Access navigation panel"
-         "2", "Folder navigation panel"
-         "3", "InfoBox control"
-         "4", "New, Upload and Search features"
-         "5", "Folder list"
-         "6", "File list"
 
 .. _files_technical_information:
 
