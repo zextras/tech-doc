@@ -495,26 +495,21 @@ these steps.
 
       # apt update && apt upgrade
 
-   Then, install the required database, `postgresql`:
+   Then, install the required database, `postgresql`.
 
    .. code:: bash
 
       # apt install postgresql
 
-   Make sure it started (example output):
+   Create a ``postgres`` user with password **SecretPass987^2** (use a
+   password of your choice).
 
    .. code:: bash
 
-      # ps -C postgres
-         PID TTY          TIME CMD
-         5841 ?        00:00:00 postgres
-         5852 ?        00:00:00 postgres
-         5853 ?        00:00:00 postgres
-         5854 ?        00:00:00 postgres
-         5855 ?        00:00:00 postgres
-         5856 ?        00:00:00 postgres
-         5857 ?        00:00:00 postgres
+      # sudo -u postgres psql -c "ALTER USER postgres with encrypted password 'SecretPass987^2';
 
+   Save the password in a safe place.
+      
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
