@@ -482,12 +482,12 @@ the validity of the old and the new digest.
 
 .. _backup_of_team_database:
 
-Backup of Team Database
------------------------
+Backup of |team| Database
+-------------------------
 
 .. does this apply to carbonio as well?
 
-:doc:`chats` is an instant messaging platform with a number of
+:ref:`chats-mod` is an instant messaging platform with a number of
 features, including file sharing, Web conferencing, and more.  Since
 Team keeps track of everything (uploaded files, chat, and so on), its
 database can grow quickly to a large size: This slows down any Backup
