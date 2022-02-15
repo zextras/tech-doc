@@ -25,8 +25,8 @@ Finally, the available options to periodically store and check the data
 backed up are presented. All sections are accompanied with the
 corresponding Command Line Reference.
 
-.. important:: :doc:`Restore Strategies <restorestrategies>` for the
-   Backup and :doc:`Advanced Backup Techniques <advancedbackup>`,
+.. important:: :ref:`Restore Strategies <backup_restore-strategies>` for the
+   Backup and :ref:`Advanced Backup Techniques <backup_advanced_techniques>`,
    including Disaster Recovery are in dedicated chapters.
 
 .. _carbonio_backup_common_tasks:
@@ -211,7 +211,8 @@ state we mean that one of the metadata associated with an item is
 modified by a user. Therefore, a **Transaction** can be seen as a
 photography of the metadata in a moment in time. Each transaction is
 uniquely identified by a **Transaction ID**. It is possible to restore
-an item to any past transaction. See more in :doc:`restorestrategies`.
+an item to any past transaction. See more in :ref:`Restore Strategies
+<backup_restore-strategies>`.
 
 .. _smartscan_and_real_time_scan:
 
