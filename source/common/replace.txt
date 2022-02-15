@@ -14,5 +14,7 @@
 
 .. common replacements for all products
 
-.. |new| replace::  :bdg-primary:`NEW`
-
+.. |new| replace:: :bdg-primary:`NEW`
+.. |create| replace:: :bdg-primary:`CREATE`
+.. |search| replace:: :bdg-primary:`SEARCH`
+.. |reset| replace:: :bdg-primary-line:`RESET`
