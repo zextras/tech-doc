@@ -463,12 +463,102 @@ The URL to which to connect to are:
    access the Web interface of Carbonio and to install more |ce|
    packages to add functionalities to the base system.
 
-   Additional Software Packges
-   ===========================
+Additional Modules Installation
+===============================
 
-   Once the installation and initial configuration of Carbonio CE has
-   been completed successfully, it is possible to install
-   packages that provide additional functionalities, including Drive
-   and Team. To do so, simply execute::
- 
-    apt install -y carbonio-drive carbonio-team
+Additional modules can be installed on |product| to extend its
+functionalities. In the remainder of this section we show how to
+install each of these modules.
+
+.. _files_install:
+
+|files|
+-------
+
+|files| requires `Carbonio Mesh` for its correct functioning, so
+please :ref:`setup Carbonio Mesh <mesh_install>` before proceeding
+further.
+
+In order to install and configure |Files| successfully, complete all
+these steps.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Update repository and install required packages
+   ^^^^^
+
+   Make sure you have the latest packages list from the repository and
+   upgrade the system.
+
+   .. code:: bash
+
+      # apt update && apt upgrade
+
+   Then, install the required database, `postgresql`:
+
+   .. code:: bash
+
+      # apt install postgresql
+
+   Make sure it started (example output):
+
+   .. code:: bash
+
+      # ps -C postgres
+         PID TTY          TIME CMD
+         5841 ?        00:00:00 postgres
+         5852 ?        00:00:00 postgres
+         5853 ?        00:00:00 postgres
+         5854 ?        00:00:00 postgres
+         5855 ?        00:00:00 postgres
+         5856 ?        00:00:00 postgres
+         5857 ?        00:00:00 postgres
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Install and configure |files|
+   ^^^^^
+
+   .. code:: bash
+
+      #  apt install carbonio-storages-ce carbonio-proxy \
+         carbonio-appserver-service carbonio-files-ce \
+         carbonio-files-db carbonio-user-management
+
+   The installation will end with message::
+
+     ======================================================
+     Carbonio Files installed successfully!
+     You must run pending-setups to configure it correctly.
+     ======================================================
+
+   Hence, execute :command:`pending-setups`
+
+   .. code:: bash
+
+      # pending-setups
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Final Tasks
+   ^^^^^
+
+   Two more steps and you'll be done. First, bootstrap |files|\'s DB:
+
+   .. code:: bash
+
+      carbonio-files-db-bootstrap postgres
+
+   Finally, install UI files:
+
+   .. code:: bash
+
+      apt install carbonio-files-ui
+
+.. _mesh_install:
+
+|mesh|
+------
