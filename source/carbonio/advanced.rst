@@ -7,7 +7,6 @@
 
    auth-user
    files
-   chats
    backup
 
 ..
