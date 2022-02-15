@@ -5,7 +5,10 @@
 .. |suite| replace:: Zextras Suite
 .. |zx| replace:: Zextras
 .. |zose| replace:: Zimbra 9 OSE
-.. |team| replace:: |zx| Team
+
+.. |team| replace:: |product| Chats
+.. |mesh| replace:: |product| Mesh
+.. |files| replace:: |product| Files
 
 .. common replacements for all products
 
