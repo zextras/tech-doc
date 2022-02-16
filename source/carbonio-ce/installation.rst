@@ -13,7 +13,7 @@ System Requirements
 
 .. grid::
    :gutter: 2
-	    
+
    .. grid-item-card::
       :columns: 6
 
@@ -25,9 +25,9 @@ System Requirements
 	      "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
 	      "RAM", "8 Gb"
 	      "Disk space (Operating system and Carbonio CE)", "40 Gb"
-	    
+
    .. grid-item-card::
-      :columns: 6   
+      :columns: 6
 
       Supported Virtualization Platforms
       ^^^^^
@@ -39,7 +39,7 @@ System Requirements
 	      XenServer
 	      KVM
          Virtualbox (testing purposes only)
-         
+
 ..
    .. grid::
       :gutter: 3
@@ -216,14 +216,14 @@ tasks, and some is optional.
 .. _installation-step1:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 1: Interfaces
    ^^^^^
 
    We suggest to set up two NICs on the server, and assigning to one
    a local IP address, so that |product| can always use it and rely on
    it even if the main, public IP address changes. This setup is also
-   useful for testing purposes or when setting up a demo. 
+   useful for testing purposes or when setting up a demo.
 
    .. dropdown:: Example: Assign an IP Address to a local NIC.
 
@@ -248,7 +248,7 @@ tasks, and some is optional.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 2: Setting Hostname
    ^^^^^
 
@@ -260,7 +260,7 @@ tasks, and some is optional.
       .. code:: console
 
          # hostnamectl set-hostname mail.carbonio.local
-        
+
    2) then update :file:`/etc/hosts`
 
       .. code:: console
@@ -271,12 +271,12 @@ tasks, and some is optional.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 3: DNS Resolution
    ^^^^^
 
    |product| needs valid DNS resolution for:
-   
+
    - the domain (MX and A record)
    - the FQDN (A record)
 
@@ -314,18 +314,18 @@ tasks, and some is optional.
       Finally, restart the **dnsmasq** service
 
         .. code:: console
-                  
+
            # systemctl restart dnsmasq
 
 .. _installation-step4:
 
 .. Div:: sd-fs-5
-         
+
    :octicon:`gear` Installation and Post-Installation
-            
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 4: Repository Configuration and System Upgrade
    ^^^^^
 
@@ -333,7 +333,7 @@ tasks, and some is optional.
 
       https://www.zextras.com/carbonio-community-edition/#discoverproduct
 
-      You will receive an e-mail containing: 
+      You will receive an e-mail containing:
 
       * the URL of the repository
       * the GPG key of the repository
@@ -342,10 +342,10 @@ tasks, and some is optional.
       system, then continue with the next steps:
 
    4) update the list of packages
-      
+
       .. code:: console
-                
-         # apt update 
+
+         # apt update
 
    5) upgrade the system
 
@@ -356,7 +356,7 @@ tasks, and some is optional.
 .. _installation-step5:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 5: Installation and Configuration of |product|
    ^^^^^
 
@@ -370,7 +370,7 @@ tasks, and some is optional.
       |product|, execute
 
       .. code:: console
-                 
+
          # carbonio-bootstrap
 
       .. dropdown:: What does ``carbonio-bootstrap`` do?
@@ -427,7 +427,7 @@ tasks, and some is optional.
 
 .. _installation-complete:
 
-.. div:: sd-fs-5 
+.. div:: sd-fs-5
 
    :octicon:`thumbsup`  Installation Complete
 
@@ -441,7 +441,7 @@ interface as explained in section :ref:`web-access`.
 
 
 .. multiserver installation is not yet available
-   
+
    .. _multi-server-install:
 
    Multi-server Installation
@@ -457,7 +457,7 @@ The URL to which to connect to are:
 * https://mail.carbonio.local/ for regular user access
 * https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
 
-  
+
 ..
    After the successful installation and bootstrap, it is possible to
    access the Web interface of Carbonio and to install more |ce|
@@ -506,10 +506,10 @@ these steps.
 
    .. code:: bash
 
-      # sudo -u postgres psql -c "ALTER USER postgres with encrypted password 'SecretPass987^2';
+      # sudo -u postgres psql -c "ALTER USER postgres with encrypted password 'SecretPass987^2';"
 
    Save the password in a safe place.
-      
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
