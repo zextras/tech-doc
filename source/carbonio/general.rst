@@ -40,6 +40,8 @@ supported browser are listed in :numref:`browser-support`.
 Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
 supported on the browser’s two previous stable releases.
 
+.. hint:: We suggest to always use the latest version available of the browser.
+
 .. _supported-languages:
 
 Available Languages
