@@ -6,11 +6,13 @@
 .. |zx| replace:: Zextras
 .. |zose| replace:: Zimbra 9 OSE
 
+
 .. |file| replace:: |carbonio| Files
 .. |team| replace:: |carbonio| Chats
 .. |auth| replace:: |carbonio| Auth
 .. |vs| replace:: |carbonio| VideoServer
 .. |backup| replace:: |carbonio| Backup
+.. |mesh| replace:: |product| Mesh
 
 .. common replacements for all products
 
