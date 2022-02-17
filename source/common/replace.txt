@@ -7,7 +7,7 @@
 .. |zose| replace:: Zimbra 9 OSE
 
 
-.. |file| replace:: |carbonio| Files
+.. |files| replace:: |carbonio| Files
 .. |team| replace:: |carbonio| Chats
 .. |auth| replace:: |carbonio| Auth
 .. |vs| replace:: |carbonio| VideoServer
