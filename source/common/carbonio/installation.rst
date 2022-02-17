@@ -2,7 +2,7 @@
  |product| Installation
 ==========================
 
-This page provides hardware and software requirements for |ce|
+This page provides hardware and software requirements for |product|
 and directions for its installation. Please review carefully this
 whole page before attempting to install.
 
@@ -469,14 +469,14 @@ install each of these modules.
 
 .. _files_install:
 
-|files|
+|file|
 -------
 
-|files| requires `Carbonio Mesh` for its correct functioning, so
+|file| requires `Carbonio Mesh` for its correct functioning, so
 please :ref:`setup Carbonio Mesh <mesh_install>` before proceeding
 further.
 
-In order to install and configure |Files| successfully, complete all
+In order to install and configure |file| successfully, complete all
 these steps.
 
 .. card::
@@ -510,7 +510,7 @@ these steps.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Install and configure |files|
+   Install and configure |file|
    ^^^^^
 
    .. code:: bash
@@ -538,7 +538,7 @@ these steps.
    Final Tasks
    ^^^^^
 
-   Two more steps and you'll be done. First, bootstrap |files|\'s DB:
+   Two more steps and you'll be done. First, bootstrap |file|\'s DB:
 
    .. code:: bash
 
