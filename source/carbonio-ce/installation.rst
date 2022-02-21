@@ -13,7 +13,7 @@ System Requirements
 
 .. grid::
    :gutter: 2
-	    
+
    .. grid-item-card::
       :columns: 6
 
@@ -25,9 +25,9 @@ System Requirements
 	      "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
 	      "RAM", "8 Gb"
 	      "Disk space (Operating system and Carbonio CE)", "40 Gb"
-	    
+
    .. grid-item-card::
-      :columns: 6   
+      :columns: 6
 
       Supported Virtualization Platforms
       ^^^^^
@@ -39,7 +39,7 @@ System Requirements
 	      XenServer
 	      KVM
          Virtualbox (testing purposes only)
-         
+
 ..
    .. grid::
       :gutter: 3
@@ -216,14 +216,14 @@ tasks, and some is optional.
 .. _installation-step1:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 1: Interfaces
    ^^^^^
 
    We suggest to set up two NICs on the server, and assigning to one
    a local IP address, so that |product| can always use it and rely on
    it even if the main, public IP address changes. This setup is also
-   useful for testing purposes or when setting up a demo. 
+   useful for testing purposes or when setting up a demo.
 
    .. dropdown:: Example: Assign an IP Address to a local NIC.
 
@@ -248,7 +248,7 @@ tasks, and some is optional.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 2: Setting Hostname
    ^^^^^
 
@@ -260,7 +260,7 @@ tasks, and some is optional.
       .. code:: console
 
          # hostnamectl set-hostname mail.carbonio.local
-        
+
    2) then update :file:`/etc/hosts`
 
       .. code:: console
@@ -271,12 +271,12 @@ tasks, and some is optional.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 3: DNS Resolution
    ^^^^^
 
    |product| needs valid DNS resolution for:
-   
+
    - the domain (MX and A record)
    - the FQDN (A record)
 
@@ -314,18 +314,18 @@ tasks, and some is optional.
       Finally, restart the **dnsmasq** service
 
         .. code:: console
-                  
+
            # systemctl restart dnsmasq
 
 .. _installation-step4:
 
 .. Div:: sd-fs-5
-         
+
    :octicon:`gear` Installation and Post-Installation
-            
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 4: Repository Configuration and System Upgrade
    ^^^^^
 
@@ -333,7 +333,7 @@ tasks, and some is optional.
 
       https://www.zextras.com/carbonio-community-edition/#discoverproduct
 
-      You will receive an e-mail containing: 
+      You will receive an e-mail containing:
 
       * the URL of the repository
       * the GPG key of the repository
@@ -342,10 +342,10 @@ tasks, and some is optional.
       system, then continue with the next steps:
 
    4) update the list of packages
-      
+
       .. code:: console
-                
-         # apt update 
+
+         # apt update
 
    5) upgrade the system
 
@@ -356,7 +356,7 @@ tasks, and some is optional.
 .. _installation-step5:
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 5: Installation and Configuration of |product|
    ^^^^^
 
@@ -370,7 +370,7 @@ tasks, and some is optional.
       |product|, execute
 
       .. code:: console
-                 
+
          # carbonio-bootstrap
 
       .. dropdown:: What does ``carbonio-bootstrap`` do?
@@ -427,7 +427,7 @@ tasks, and some is optional.
 
 .. _installation-complete:
 
-.. div:: sd-fs-5 
+.. div:: sd-fs-5
 
    :octicon:`thumbsup`  Installation Complete
 
@@ -441,7 +441,7 @@ interface as explained in section :ref:`web-access`.
 
 
 .. multiserver installation is not yet available
-   
+
    .. _multi-server-install:
 
    Multi-server Installation
@@ -457,18 +457,181 @@ The URL to which to connect to are:
 * https://mail.carbonio.local/ for regular user access
 * https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
 
-  
+
 ..
    After the successful installation and bootstrap, it is possible to
    access the Web interface of Carbonio and to install more |ce|
    packages to add functionalities to the base system.
 
-   Additional Software Packges
-   ===========================
+Additional Modules Installation
+===============================
 
-   Once the installation and initial configuration of Carbonio CE has
-   been completed successfully, it is possible to install
-   packages that provide additional functionalities, including Drive
-   and Team. To do so, simply execute::
- 
-    apt install -y carbonio-drive carbonio-team
+Additional modules can be installed on |product| to extend its
+functionalities. In the remainder of this section we show how to
+install each of these modules.
+
+.. _files_install:
+
+|files|
+-------
+
+|files| requires `Carbonio Mesh` for its correct functioning, so
+please :ref:`setup Carbonio Mesh <mesh_install>` before proceeding
+further.
+
+In order to install and configure |Files| successfully, complete all
+these steps.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Update repository and install required packages
+   ^^^^^
+
+   Make sure you have the latest packages list from the repository and
+   upgrade the system.
+
+   .. code:: bash
+
+      # apt update && apt upgrade
+
+   Then, install the required database, `postgresql`.
+
+   .. code:: bash
+
+      # apt install postgresql
+
+   Create a ``postgres`` user with password **SecretPass987^2** (use a
+   password of your choice).
+
+   .. code:: bash
+
+      # sudo -u postgres psql -c "ALTER USER postgres with encrypted password 'SecretPass987^2';"
+
+   Save the password in a safe place.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Install and configure |files|
+   ^^^^^
+
+   .. code:: bash
+
+      #  apt install carbonio-storages-ce carbonio-proxy \
+         carbonio-appserver-service carbonio-files-ce \
+         carbonio-files-db carbonio-user-management
+
+   The installation will end with message::
+
+     ======================================================
+     Carbonio Files installed successfully!
+     You must run pending-setups to configure it correctly.
+     ======================================================
+
+   Hence, execute :command:`pending-setups`
+
+   .. code:: bash
+
+      # pending-setups
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Final Tasks
+   ^^^^^
+
+   Two more steps and you'll be done. First, bootstrap |files|\'s DB:
+
+   .. code:: bash
+
+      carbonio-files-db-bootstrap postgres
+
+   Finally, install UI files:
+
+   .. code:: bash
+
+      apt install carbonio-files-ui
+
+.. _mesh_install:
+
+|mesh|
+------
+
+|mesh| is a security mechanism that secures communication of
+registered applications. It is used by |product| to add fault
+detection and dynamic routing between its components.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Install packages
+   ^^^^^
+   Packages are usually installed together with |product|\'s
+   dependencies, but make sure they are installed:
+
+   .. code:: bash
+
+      # apt install service-discover-server
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 1. Run wizard
+   ^^^^^
+
+   The configuration is automatically generated by
+
+   .. code:: bash
+
+      # service-discover setup-wizard
+
+   This command will ask for:
+
+   * the **IP address** on which |mesh| listens for incoming connections,
+     which is usually the main IP address. This IP address is needed
+     at step 3 of this procedure.
+
+   * the **cluster credential password**, used for setups and
+     management. You will need this in the next step.
+
+     .. warning:: If this password is lost, it becomes necessary to
+        start over the whole setup of |mesh|, therefore make sure to
+        store the password in a safe place (like e.g., a password
+        manager).
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 2. Create Token
+   ^^^^^
+
+   You need to create a **bootstrap token** that will be used to
+   create any additional token.
+
+   .. code:: bash
+
+      # service-discover bootstrap-token
+
+   You need to provide the **cluster credential password** that you
+   used in the previous step.
+
+   .. warning:: The *bootstrap token* is the most important building
+      block of |mesh| and should only be used to create other tokens:
+      if lost, **all tokens must be regenerated**, so keep it safe!
+
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 3. Create tunnel
+   ^^^^^
+
+   For security reasons, |Mesh| only listens on ``localhost``. To
+   access its Web UI, it is therefore necessary to create a secure
+   communication channel using ssh as follows. Replace <IP Address>
+   with the IP you used in Step 1.
+
+   .. code:: bash
+
+      # ssh -N -f -L 8500:localhost:8500 root@<IP Address>
