@@ -139,13 +139,14 @@ Supported Authentication Methods
       can configure it from their :ref:`Auth settings
       <auth_zimlet-create-otp>`.
 
-.. seealso:: Community Article
+..
+   .. seealso:: Community Article
 
-   https://community.zextras.com/improve-the-security-using-zextras-2fa/
+      https://community.zextras.com/improve-the-security-using-zextras-2fa/
 
-   This article showcases a few deployment scenarios of 2FA in Zextras
-   and describes how Administrators can take advantage of such
-   architecture.
+      This article showcases a few deployment scenarios of 2FA in Zextras
+      and describes how Administrators can take advantage of such
+      architecture.
 
 .. _auth_zxauth-admins:
 

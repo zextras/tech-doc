@@ -1,3 +1,7 @@
+.. _delegated_admin_provisioning:
+
+Delegated Admin Provisioning
+============================
 
 Delegated Admin Provisioning is the set of operations that allow you
 to `grant`, `edit` and `revoke` Domain Admin rights to a user. These
@@ -124,7 +128,7 @@ The available filters are:
       is available in the drop-down menu of the `Action` filter.The
       following filters all belong to this class.
 
-      -  `Auth`: All ZWC authentications.
+      -  `Auth`: All  authentications.
 
       -  `DelegateAuth`: All Delegated Authentications, either through the
          `View Mail` button or through the ``-z`` option of the *zmmailbox*
@@ -155,7 +159,7 @@ The available filters are:
          from a determined IP address.
 
       -  `Show Logins`: Select this checkbox to also show when the Domain
-         Admins log into the Zimbra Web Client.
+         Admins log in
 
       -  `Outcome`: Filters the logs to either show all operations,
          successful operations or failed operations.
