@@ -6,12 +6,12 @@ In this section we introduce some important management tasks for
 advanced |carbonio| features.
 
 .. toctree::
-   :maxdepth: 2
-   :hidden:
+   :maxdepth: 1
 
-   VideoServer </management/videoserver>
-   /management/restorestrategies
-   /management/advancedbackup
+   VideoServer </_management/videoserver>
+   /_management/backup
+   /_management/restorestrategies
+   /_management/advancedbackup
 
 ..
    Migrate to Carbonio
