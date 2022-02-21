@@ -45,6 +45,7 @@ rst_prolog = """
 
 .. role:: red
 .. role:: green
+.. |product| replace:: Suite
 
 """ + open("replace.txt").read()
 

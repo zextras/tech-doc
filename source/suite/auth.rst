@@ -420,7 +420,7 @@ valid even if the IP has been trusted by another service.
 
 2FA Policy Management is a rather advanced technique which avoids the
 use of OTP in all cases when an authentication request is received
-from a device that is already in the Trusted Networks of Trusted
+from a device that is already in the Trusted Networks or Trusted
 Devices tables.
 
 To set up and manage 2FA Policies, several CLI commands are available.
@@ -438,7 +438,7 @@ To set up and manage 2FA Policies, several CLI commands are available.
       The command :command:`zxsuite auth policy list` returns the list of 2FA
       by domain, with option to filter specific services.
 
-      .. rubric:: Example
+      |ex|
 
       .. code:: console
 
@@ -447,13 +447,20 @@ To set up and manage 2FA Policies, several CLI commands are available.
       Shows 2FA setting for domain **example.com** and for service
       **EAS**.
 
-      .. rubric:: Example
-
+      |ex|
+      
       .. code:: console
 
          zxsuite auth policy list global
 
-      Display for which services 2FA can be enabled.
+      Display for which services 2FA can be enabled. As a bonus, the
+      output contains a lists of **all** supporter services, which
+      fall in:
+
+      * standard protocols or technologies (CLI, |dav|, |eas|, |imap|,
+        |pop|, and |smtp|)
+      * related to |zx| Zimbra components (MobileApp, WebAdminUI,
+        WebUI, ZmWebUI).
       
       ++++
 
@@ -472,9 +479,18 @@ To set up and manage 2FA Policies, several CLI commands are available.
       disables a service and accepts the following three optional
       parameters:
 
-      ``ip_can_change``
-         This attribute allows the server to deny requests coming from
-         other IPs rather than one used during the authentication
+      ``ip_can_change``                     
+         This attribute allows the server to deny connection requests
+         coming from an IP other than the one used during the
+         authentication. As an example, suppose that authentication
+         was successfully carried out from a device with IP
+         192.168.1.72 and for any reason the IP of the device changes
+         (e.g., a laptop moved to a different subnet). If
+         ``ip_can_change`` is set to **true**, then the device is
+         still authenticated and connections are allowed, otherwise,
+         if ``ip_can_change`` is set to **false**, authentication is
+         invalidated and no connection is allowed for the device until
+         a new authentication.
 
       ``trusted_ip_range``
          It defines the **Trusted Networks**, a set of IP ranges
@@ -500,12 +516,15 @@ To set up and manage 2FA Policies, several CLI commands are available.
            device (that is, same browser or Mobile App) will not
            require the second factor.
 
+      These parameters are supported by all services.
+      
       +++++
          
       Reference: :ref:`policy set Cli domain
       <zxsuite_auth_policy_set_Cli_domain>` :octicon:`dash`
       :ref:`policy set Cli global
-      <zxsuite_auth_policy_set_Cli_global>` and following commands.
+      <zxsuite_auth_policy_set_Cli_global>` and following commands for
+      the services listed in the `Display policy` panel.
       
       
    .. grid-item-card::
