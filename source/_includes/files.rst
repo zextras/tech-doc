@@ -5,10 +5,6 @@
    
    * verify all features on a final version of Carbonio
 
-=============
-|file|
-=============
-
 Carbonio Files provides a file storage system with ability to share
 documents with colleagues, collaborative editing, and document
 versioning.
@@ -271,132 +267,133 @@ The most common tasks that can be carried out in Files are:
          ``zxsuite config global empty attribute driveMaxVersionRetentionDays``
 
 
-.. _files_technical_information:
+..
+   .. _files_technical_information:
 
-Technical information
-=====================
+   Technical information
+   =====================
 
-.. verify all technical information!!
-   
-.. _files_file_storage:
+   .. verify all technical information!!
 
-File Storage
-------------
+   .. _files_file_storage:
 
-|File| features a detached folder hierarchy based on nodes. |File|
-metadata are stored in a dedicated HSQL Database while all files
-(including previous file versions and file previews) are stored in a
-dedicated folder within a volume’s root. File naming is now hash-based
-instead of id-based to achieve native deduplication, compression rules
-follow the volume’s settings.
+   File Storage
+   ------------
 
-For example, a filesystem path for a briefcase file looks like::
+   |File| features a detached folder hierarchy based on nodes. |File|
+   metadata are stored in a dedicated HSQL Database while all files
+   (including previous file versions and file previews) are stored in a
+   dedicated folder within a volume’s root. File naming is now hash-based
+   instead of id-based to achieve native deduplication, compression rules
+   follow the volume’s settings.
 
-  /opt/zimbra/store/0/[mID]/msg/0/[itemid]-[revision].msg
+   For example, a filesystem path for a briefcase file looks like::
 
-while a filesystem path for a |File| file is::
+     /opt/zimbra/store/0/[mID]/msg/0/[itemid]-[revision].msg
 
-  /opt/zimbra/store/drive/[hash]-[revision].[extension]
+   while a filesystem path for a |File| file is::
 
-.. _files_volumes:
+     /opt/zimbra/store/drive/[hash]-[revision].[extension]
 
-Volumes
--------
+   .. _files_volumes:
 
-As of this release, |File| files are stored in the Current Primary volume
-as any other item.
+   Volumes
+   -------
 
-Integration with Zimbra Docs If the Zimbra Docs zimlet is correctly
-installed, dedicated document options will appear in the "New" button
-above the file list:
+   As of this release, |File| files are stored in the Current Primary volume
+   as any other item.
 
-.. image:: /img/drive/docsintegration.png
+   Integration with Zimbra Docs If the Zimbra Docs zimlet is correctly
+   installed, dedicated document options will appear in the "New" button
+   above the file list:
 
-When right-clicking on a compatible file, an "Open with Docs" option
-will also appear:
+   .. image:: /img/drive/docsintegration.png
 
-.. image:: /img/drive/openwithdocs.png
+   When right-clicking on a compatible file, an "Open with Docs" option
+   will also appear:
+
+   .. image:: /img/drive/openwithdocs.png
 
 
-Furthermore, Zimbra Docs will also allow for previews of compatible
-document formats to be displayed in the InfoBox.
+   Furthermore, Zimbra Docs will also allow for previews of compatible
+   document formats to be displayed in the InfoBox.
 
-.. _files_urls_and_ports:
+   .. _files_urls_and_ports:
 
-URLs and Ports
---------------
+   URLs and Ports
+   --------------
 
-To build URLs and links (e.g. for External Shares) |File| uses
-the default Zimbra settings for the domain of the account in use - the
-``zimbraPublicServiceHostname`` property is used for the URL itself
-while the ``zimbraPublicServicePort`` property is used for the port.
+   To build URLs and links (e.g. for External Shares) |File| uses
+   the default Zimbra settings for the domain of the account in use - the
+   ``zimbraPublicServiceHostname`` property is used for the URL itself
+   while the ``zimbraPublicServicePort`` property is used for the port.
 
-Should any of the two not be set up, the system will always fall back to
-the ``zimbraServiceHostname`` and ``zimbraMailPort`` or
-``zimbraMailSSLPort`` server-level properties.
+   Should any of the two not be set up, the system will always fall back to
+   the ``zimbraServiceHostname`` and ``zimbraMailPort`` or
+   ``zimbraMailSSLPort`` server-level properties.
 
-.. _files_backup_and_hsm:
+   .. _files_backup_and_hsm:
 
-|File| Backup and HSM
-============================
+   |File| Backup and HSM
+   ============================
 
-.. _files_backup:
+   .. _files_backup:
 
-Backup
-------
+   Backup
+   ------
 
-|File| files are included in Backup, and both the RealTime Scanner and
-the SmartScan are aware of those and no additional actions must be taken
-in order to ensure the files' safety.
+   |File| files are included in Backup, and both the RealTime Scanner and
+   the SmartScan are aware of those and no additional actions must be taken
+   in order to ensure the files' safety.
 
-The Restore on New Account and External Restore modes will also restore
-|File| files, while other restore modes such as the Undelete Restore do
-not operate on such files.
+   The Restore on New Account and External Restore modes will also restore
+   |File| files, while other restore modes such as the Undelete Restore do
+   not operate on such files.
 
-.. _files_hsm:
+   .. _files_hsm:
 
-HSM
----
+   HSM
+   ---
 
-|File| can store its data on a different volume than the default Current
-Primary one, and HSM policies can move |File| files onto a different
-volume than the Current Secondary one, thus effectively allowing
-independent storage management for |File| files.
+   |File| can store its data on a different volume than the default Current
+   Primary one, and HSM policies can move |File| files onto a different
+   volume than the Current Secondary one, thus effectively allowing
+   independent storage management for |File| files.
 
-When an HSM policy is applied, |File| files will be handled under the
-"document" item type.
+   When an HSM policy is applied, |File| files will be handled under the
+   "document" item type.
 
-This setting is applied at the server level so that different mailbox
-servers can use different volumes.
+   This setting is applied at the server level so that different mailbox
+   servers can use different volumes.
 
-.. _files_setting_primary_volume:
+   .. _files_setting_primary_volume:
 
-Setting the |File| Primary volume
----------------------------------
+   Setting the |File| Primary volume
+   ---------------------------------
 
-To set the |File| Primary volume, first find out the volumeID of the
-target volume by running ``zxsuite hsm getAllVolumes``.
+   To set the |File| Primary volume, first find out the volumeID of the
+   target volume by running ``zxsuite hsm getAllVolumes``.
 
-Once the volumeID has been identified, simply run
+   Once the volumeID has been identified, simply run
 
-::
+   ::
 
-   zxsuite config server set `zmhostname` attribute driveStore value [volumeID]
+      zxsuite config server set `zmhostname` attribute driveStore value [volumeID]
 
-(where [volumeID] is the ID found with the previous command)
+   (where [volumeID] is the ID found with the previous command)
 
-.. _files_setting_secondary_volume:
+   .. _files_setting_secondary_volume:
 
-Setting the Drive Secondary volume
-----------------------------------
+   Setting the Drive Secondary volume
+   ----------------------------------
 
-To set the |File| Secondary volume, find out the volumeID of the target
-volume as described in the previous paragraph and then run the following
-command
+   To set the |File| Secondary volume, find out the volumeID of the target
+   volume as described in the previous paragraph and then run the following
+   command
 
-::
+   ::
 
-   zxsuite config server set `zmhostname` attribute driveSecondaryStore value [volumeID]
+      zxsuite config server set `zmhostname` attribute driveSecondaryStore value [volumeID]
 
 
 ..
