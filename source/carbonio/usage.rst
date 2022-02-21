@@ -58,8 +58,8 @@ Contacts
       A tool dedicated to individual and group chats and to the creation
       of corporate spaces and thematic channels (optional module).
 
-   File
-      Share documents with colleagues (optional module).
+File
+   Share documents with colleagues (optional module).
 
 Search
    A powerful search engine across all modules of the mailbox.
@@ -122,6 +122,10 @@ different module. A more advanced search is available in the
    ----
 
    IRIS is the new web-based graphic interface of |product|.
+
+.. auth for users
+
+.. include:: /_includes/auth-user.rst
 
 .. _mails-mod:
 
@@ -306,7 +310,7 @@ Files
 =====
 
 .. include:: /_includes/files.rst
-
+             
 .. _search-mod:
 
 Search
@@ -341,3 +345,5 @@ Settings
 ========
 
 .. include:: /_includes/usage-settings.rst
+
+.. include:: /_includes/mobileapps.rst
