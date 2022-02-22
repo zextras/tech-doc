@@ -44,3 +44,4 @@ and usage instructions in :doc:`usage`.
    :caption:  Use:
  
    usage
+   glossary

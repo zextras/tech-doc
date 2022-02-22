@@ -6,7 +6,7 @@
 What is |product|?
 ==================
 
-|zx| |carbonio| is the free and open-source e-mail and collaboration
+|zx| |ce| is the free and open-source e-mail and collaboration
 software, which consists of
 
 - E-mail, Contacts and Calendar Essentials, all shareable across a domain
@@ -16,31 +16,21 @@ software, which consists of
 - File Management System including collaborative editing and document
   sharing
 
-Strong points of |carbonio| include:
+
+
+Strong points of |ce| include:
 
 * focus on Data Sovereignty and Privacy
 * simplicity to install as Linux packages and ready to use out of the
   box
 * flexibility to cover the needs of today's collaborative workplaces
 
-.. _browser_compatibility:
+  
+Licensing
+=========
 
-Browser Compatibility
-=====================
-
-All |carbonio| features are accessible from a browser: the
-supported browser are listed in :numref:`browser-support`.
-
-.. _browser-support:
-
-.. csv-table:: List of supported browsers
-   :header: "Browser", "Version", "OS", "Supported"
-   :file: _includes/browsercompatibility.csv
-
-Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
-supported on the browser’s two previous stable releases.
-
-.. hint:: We suggest to always use the latest version available of the browser.
+|zx| |ce| is Open Source and can be `downloaded for free
+<https://www.zextras.com/carbonio-community-edition#discoverproduct>`_.
 
 .. _supported-languages:
 
@@ -58,9 +48,31 @@ are also included:
    "Thai", "Hindi", "Indonesian"
    "Japanese", "Simplified Chinese", ""
 
+.. _volunteer_translators:
 
-Seeking Help on |carbonio|
-==========================
+Volunteer Translators
+---------------------
+
+|zx| makes available an online translation platform to those
+qualified individuals wishing to help the translation process.
+
+Translation in languages that are not currently supported is
+encouraged, albeit we cannot guarantee any estimate upon the official
+inclusion in the product.
+
+Please contact translators@zextras.com for any information on the topic
+or to volunteer as a translator.
+
+Contribution to the Documentation
+=================================
+
+We are in the process of putting the Carbonio-CE documentation on a
+public repository in order to allow contributions via pull request. In
+the meantime, if you want to help, we are happy to accept any kind of
+documentation. You can send your writings to documentation@zextras.com.
+
+Seeking Help on |ce|
+====================
 
 Besides this documentation, |zx| makes available the following online resources:
 
