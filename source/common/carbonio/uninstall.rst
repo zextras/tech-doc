@@ -3,7 +3,7 @@
 ==========================
 
 This procedure is intended for a **complete** uninstallation of
-|product| on an **Ubuntu 18.04 LTS Server Edition** and is suitable in
+|product| on an **Ubuntu 20.04 LTS Server Edition** and is suitable in
 case you want to reinstall |product| on a clean system. If you want to
 keep configuration files or logs, remember **to copy them to a
 different directory** before starting this procedure.
