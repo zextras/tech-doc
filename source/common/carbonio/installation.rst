@@ -517,7 +517,8 @@ these steps.
 
       #  apt install carbonio-storages-ce carbonio-proxy \
          carbonio-appserver-service carbonio-files-ce \
-         carbonio-files-db carbonio-user-management
+         carbonio-files-db carbonio-user-management carbonio-files-ui
+
 
    The installation will end with message::
 
@@ -535,20 +536,14 @@ these steps.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Final Tasks
+   Final Task
    ^^^^^
 
-   Two more steps and you'll be done. First, bootstrap |file|\'s DB:
+   The final steps is to bootstrap |file|\'s DB:
 
    .. code:: bash
 
       carbonio-files-db-bootstrap postgres
-
-   Finally, install UI files:
-
-   .. code:: bash
-
-      apt install carbonio-files-ui
 
 .. _mesh_install:
 
