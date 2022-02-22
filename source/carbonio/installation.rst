@@ -75,8 +75,7 @@ Supported Linux Server Distributions
 ------------------------------------
 
 |product| is available for **64-bit** CPUs only and can be installed
-on **Ubuntu 18.04 LTS Server Edition** and **Ubuntu 20.04 LTS Server
-Edition**.
+on **Ubuntu 20.04 LTS Server Edition**.
 
 Support for other distributions will be announced in due course when
 it becomes available.
