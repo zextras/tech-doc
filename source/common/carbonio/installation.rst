@@ -202,8 +202,7 @@ software package is necessary.
 Installation
 ============
 
-The installation on Ubuntu 18.04 and Ubuntu 20.04 is very similar and
-is organised in steps, some of which are preliminary configuration
+The installation is organised in steps, some of which are preliminary configuration
 tasks, and some is optional.
 
 .. _pre-installation-steps:
@@ -318,7 +317,7 @@ tasks, and some is optional.
 
 .. Div:: sd-fs-5
 
-   :octicon:`gear` Installation 
+   :octicon:`gear` Installation and Post-Installation
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -326,17 +325,115 @@ tasks, and some is optional.
    Step 4: Repository Configuration and System Upgrade
    ^^^^^
 
-   Instructions for setting up |product| repository and install
-   |carbonio| will be provided by |zx| Sales Department.
-   
+   3) In order to add Carbonio CE's repository, go to the following page and fill in the form:
+
+      https://www.zextras.com/carbonio-community-edition/#discoverproduct
+
+      You will receive an e-mail containing:
+
+      * the URL of the repository
+      * the GPG key of the repository
+
+      Follow the instructions in the e-mail to add these data to your
+      system, then continue with the next steps:
+
+   4) update the list of packages
+
+      .. code:: console
+
+         # apt update
+
+   5) upgrade the system
+
+      .. code:: console
+
+         # apt upgrade
+
+.. _installation-step5:
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 5: Installation and Configuration of |product|
+   ^^^^^
+
+   6) Installation of |product| requires to run the command
+
+      .. code:: console
+
+         # apt install carbonio-ce
+
+   7) In order to carry out the initial configuration and start
+      |product|, execute
+
+      .. code:: console
+
+         # carbonio-bootstrap
+
+      .. dropdown:: What does ``carbonio-bootstrap`` do?
+
+         This command makes a few checks and then starts the
+         installation, during which a few messages are shown,
+         including the name of the log file that will store all
+         messages produced during the process::
+
+           Operations logged to /tmp/zmsetup.20211014-154807.log
+
+         In case the connection is lost during the installation, it is
+         possible to log in again and check the content of that file
+         for information about the status of the installation. If the
+         file does not exist anymore, the installation has already
+         been completed and in that case the log file can be found in
+         directory :file:`/opt/zextras/log`.
+
+         The first part of the bootstrap enables all necessary
+         services and creates a new administrator account
+         (zextras\@carbonio.local), initially **without password**
+         (see below for instruction to set it).
+
+      Before finalising the bootstrap, press :bdg-dark-line:`y` to apply the
+      configuration. The process will continue until its completion:
+      click :bdg-dark-line:`Enter` to continue.
+
+   8) create a password for the ``zextras@carbonio.local`` user. Log
+      in to a shell terminal as the ``zextras`` user and execute these
+      two commands. The first allows to switch to the ``zextras``
+      user, with the second you actually change the password.
+
+       .. code:: console
+
+          # su - zextras
+          # zmprov setpassword zextras@carbonio.local newpassword
+
+       Make sure that ``newpassword`` meets good security criteria.
+
+       .. rubric:: The ``zextras`` and ``zextras@carbonio.local`` users
+
+       There is a clear distinction between these two users, which are
+       intended to execute different tasks:
+
+       ``zextras``
+          This the **unix** account of the administrator and must be
+          used to carry out administrative tasks from the command line.
+
+       ``zextras@carbonio.local``
+          This is the default administrator user to be used to access
+          the Admin UI and manage |product| from the web interface.
+
+.. div:: sd-mt-5
+
 .. _installation-complete:
 
 .. div:: sd-fs-5
 
    :octicon:`thumbsup`  Installation Complete
 
-After installation is complete, you can access |product|\ 's graphic
+Installation is now complete, you can access |product|\ 's graphic
 interface as explained in section :ref:`web-access`.
+
+.. seealso:: Our Community portal features a guide that delves more
+   into details of the installation process:
+
+   https://community.zextras.com/how-to-deploy-a-private-e-mail-server-for-free-using-zextras-carbonio-ce/
 
 
 .. multiserver installation is not yet available
@@ -351,16 +448,180 @@ interface as explained in section :ref:`web-access`.
 Access to the Web Interface
 ===========================
 
-To access |carbonio|\'s Administration Console, point a
-:ref:`supported browser <browser_compatibility>` to either of the URL
-below.
-
-Since |product| uses SSL to allow access to the Administration
-Console, it is strongly suggested to install an SSL
-certificate. Please refer to Section :ref:`install-SSL-cert` for
-installation of the certificate.
+The URL to which to connect to are:
 
 * https://mail.carbonio.local/ for regular user access
 * https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
 
+..
+   After the successful installation and bootstrap, it is possible to
+   access the Web interface of Carbonio and to install more |ce|
+   packages to add functionalities to the base system.
 
+Additional Modules Installation
+===============================
+
+Additional modules can be installed on |product| to extend its
+functionalities. In the remainder of this section we show how to
+install each of these modules.
+
+.. _files_install:
+
+|file|
+-------
+
+|file| requires `Carbonio Mesh` for its correct functioning, so
+please :ref:`setup Carbonio Mesh <mesh_install>` before proceeding
+further.
+
+In order to install and configure |file| successfully, complete all
+these steps.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Update repository and install required packages
+   ^^^^^
+
+   Make sure you have the latest packages list from the repository and
+   upgrade the system.
+
+   .. code:: bash
+
+      # apt update && apt upgrade
+
+   Then, install the required database, `postgresql`.
+
+   .. code:: bash
+
+      # apt install postgresql
+
+   Create a ``postgres`` user with password **SecretPass987^2** (use a
+   password of your choice).
+
+   .. code:: bash
+
+      # sudo -u postgres psql -c "ALTER USER postgres with encrypted password 'SecretPass987^2';"
+
+   Save the password in a safe place.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Install and configure |file|
+   ^^^^^
+
+   .. code:: bash
+
+      #  apt install carbonio-storages-ce carbonio-proxy \
+         carbonio-appserver-service carbonio-files-ce \
+         carbonio-files-db carbonio-user-management carbonio-files-ui
+
+
+   The installation will end with message::
+
+     ======================================================
+     Carbonio Files installed successfully!
+     You must run pending-setups to configure it correctly.
+     ======================================================
+
+   Hence, execute :command:`pending-setups`
+
+   .. code:: bash
+
+      # pending-setups
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Final Task
+   ^^^^^
+
+   The final steps is to bootstrap |file|\'s DB:
+
+   .. code:: bash
+
+      carbonio-files-db-bootstrap postgres
+
+.. _mesh_install:
+
+|mesh|
+------
+
+|mesh| is a security mechanism that secures communication of
+registered applications. It is used by |product| to add fault
+detection and dynamic routing between its components.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Install packages
+   ^^^^^
+   Packages are usually installed together with |product|\'s
+   dependencies, but make sure they are installed:
+
+   .. code:: bash
+
+      # apt install service-discover-server
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 1. Run wizard
+   ^^^^^
+
+   The configuration is automatically generated by
+
+   .. code:: bash
+
+      # service-discover setup-wizard
+
+   This command will ask for:
+
+   * the **IP address** on which |mesh| listens for incoming connections,
+     which is usually the main IP address. This IP address is needed
+     at step 3 of this procedure.
+
+   * the **cluster credential password**, used for setups and
+     management. You will need this in the next step.
+
+     .. warning:: If this password is lost, it becomes necessary to
+        start over the whole setup of |mesh|, therefore make sure to
+        store the password in a safe place (like e.g., a password
+        manager).
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 2. Create Token
+   ^^^^^
+
+   You need to create a **bootstrap token** that will be used to
+   create any additional token.
+
+   .. code:: bash
+
+      # service-discover bootstrap-token
+
+   You need to provide the **cluster credential password** that you
+   used in the previous step.
+
+   .. warning:: The *bootstrap token* is the most important building
+      block of |mesh| and should only be used to create other tokens:
+      if lost, **all tokens must be regenerated**, so keep it safe!
+
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 3. Create tunnel
+   ^^^^^
+
+   For security reasons, |Mesh| only listens on ``localhost``. To
+   access its Web UI, it is therefore necessary to create a secure
+   communication channel using ssh as follows. Replace <IP Address>
+   with the IP you used in Step 1.
+
+   .. code:: bash
+
+      # ssh -N -f -L 8500:localhost:8500 root@<IP Address>

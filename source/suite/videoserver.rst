@@ -128,7 +128,7 @@ Installation
              
      # tar zxvf videoserver-[OS]-installer.tgz
 
-- Enter the unpacked direcotry: ``cd videoserver-installer``
+- Enter the unpacked directory: ``cd videoserver-installer``
 
 - Run the installation script: ``./install.sh``
 

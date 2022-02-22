@@ -9,3 +9,7 @@
 .wy-nav-side {
     background-color: var(--zx-color-carbon);
 }
+
+.wy-side-nav-search > a > p {
+    font-size: 120%;
+}

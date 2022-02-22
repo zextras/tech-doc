@@ -6,11 +6,29 @@
 .. |zx| replace:: Zextras
 .. |zose| replace:: Zimbra 9 OSE
 
-.. |team| replace:: |product| Chats
+
+.. |file| replace:: |carbonio| Files
+.. |team| replace:: |carbonio| Chats
+.. |auth| replace:: |carbonio| Auth
+.. |vs| replace:: |carbonio| VideoServer
+.. |backup| replace:: |carbonio| Backup
 .. |mesh| replace:: |product| Mesh
-.. |files| replace:: |product| Files
 
 .. common replacements for all products
 
-.. |new| replace::  :bdg-primary:`NEW`
+.. |new| replace:: :bdg-primary:`NEW`
+.. |create| replace:: :bdg-primary:`CREATE`
+.. |search| replace:: :bdg-primary:`SEARCH`
+.. |reset| replace:: :bdg-primary-line:`RESET`
+.. |ex| replace:: :bdg-info-line:`Example`
 
+.. various acronyms
+
+
+.. |dav| replace:: :abbr:`DAV (Distributed Authoring and Versioning,
+   aka WebDAV)`
+   
+.. |eas| replace:: :abbr:`EAS (Exchange ActiveSync)`
+.. |imap| replace:: :abbr:`IMAP (Internet Message Access Protocol)`
+.. |pop| replace:: :abbr:`POP3 (Post Office Protocol)`
+.. |smtp| replace:: :abbr:`SMTP (Simple Mail Transfer Protocol)`
