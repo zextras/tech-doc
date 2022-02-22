@@ -345,5 +345,3 @@ Settings
 ========
 
 .. include:: /_includes/usage-settings.rst
-
-.. include:: /_includes/mobileapps.rst
