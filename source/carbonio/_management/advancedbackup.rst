@@ -18,12 +18,12 @@ To classify a problem as a ``Disaster``, one or more of the following
 must happen:
 
 - Hardware failure of one or more vital filesystems (such as :file:`/`
-  or :file:`/opt/zimbra/`)
+  or :file:`/opt/zextras/`)
 
 - Contents of a vital filesystem made unusable by internal or external
   factors (like a careless :command:`rm *` or an external intrusion)
 
-- Hardware failure of the physical machine hosting the Zimbra service
+- Hardware failure of the physical machine hosting the |product| service
   or of the related virtualization infrastructure
 
 - A critical failure on a software or OS update/upgrade
@@ -36,7 +36,7 @@ Minimizing the Chances
 Some suggestions to minimize the chances of a disaster:
 
 - Always keep vital filesystems on different drives (namely :file:`/`
-  :file:`/opt/zimbra/`, or your |backup| Path)
+  :file:`/opt/zextras/`, or your |backup| Path)
 
 - Use a monitoring/alerting tool for your server to become aware of
   problems as soon as they appear
@@ -55,10 +55,10 @@ How to Recover Your System
 
 The recovery of a system is divided into 2 steps:
 
--  Base system recovery (OS installation and configuration, Zimbra
+-  Base system recovery (OS installation and configuration, |carbonio|
    installation and base configuration)
 
--  Data recovery (reimporting the last available data to the Zimbra
+-  Data recovery (reimporting the last available data to the |carbonio|
    server, including domain and user configurations, COS data and
    mailbox contents)
 
@@ -71,7 +71,7 @@ The **Import Backup** feature of |backup| provides an easy and
 safe way to perform step 2 of a recovery.
 
 Using the old server’s backup path as the import path allows you to
-restore a basic installation of Zimbra to the last valid moment of your
+restore a basic installation of |carbonio| to the last valid moment of your
 old server.
 
 .. _the_recovery_process:
@@ -79,10 +79,10 @@ old server.
 The Recovery Process
 ~~~~~~~~~~~~~~~~~~~~
 
-- Install Zimbra on a new server and configure the Server and Global
+- Install |carbonio| on a new server and configure the Server and Global
   settings.
 
-- Install Zextras Suite on the new server.
+- Install |product| on the new server.
 
 - Mount the backup folder of the old server onto the new one. If this
   is not available, use the last external backup available or the
@@ -95,7 +95,7 @@ The Recovery Process
 
 - The External Restore operation will immediately create the domains,
   accounts and distribution lists, so as soon as the first part of the
-  Restore is completed (check your Zextras Suite Notifications), the
+  Restore is completed (check your |product| Notifications), the
   system will be ready for your users. Emails and other mailbox items
   will be restored afterwards.
 
@@ -105,16 +105,16 @@ Settings and Configs
 ~~~~~~~~~~~~~~~~~~~~
 
 Server and Global settings are backed up but are not restored
-automatically. |backup|’s high-level integration with Zimbra
-allows you to restore your data to a server with a different OS/Zimbra
-Release/Networking/Storage setup without any constraints other than the
-minimum Zimbra version required to run Zextras Suite.
+automatically. |backup|’s high-level integration with |carbonio|
+allows you to restore your data to a server with a different
+OS/|carbonio| Release/Networking/Storage setup without any constraints
+other than the minimum |carbonio| version required.
 
 Whether you wish to create a perfect copy of the old server or just take
 a cue from the old server’s settings to adapt those to a new
 environment, |backup| comes with a very handy CLI command::
 
-   zimbra@test:~$ zxsuite backup getServerConfig
+   # zxsuite backup getServerConfig
    command getServerConfig requires more parameters
 
 
@@ -150,25 +150,26 @@ environment, |backup| comes with a very handy CLI command::
 
       .. code:: console
 
-         zxsuite backup getServerConfig standard date last backup_path /opt/zimbra/backup/ng/ query serverConfig/zimbraMailMode/test.example.com
+         zxsuite backup getServerConfig standard date last backup_path /opt/zextras/backup/ng/ query serverConfig/zimbraMailMode/test.example.com
 
          config date_______________________________________________________________________________________________28/02/2014 04:01:14 CET
          test.example.com____________________________________________________________________________________________________________both
 
 
       Use the ``verbose true`` parameter to show more details; for
-      example, that the :file:`{zimbrahome}/conf/` and :file:`{zimbrahome}/postfix/conf/` directories are
+      example, that the :file:`/opt/zextras/conf/` and
+      :file:`/opt/zextras/postfix/conf/` directories  are
       backed up as well
 
       .. code:: console
 
-         zimbra@test:~$ zxsuite backup getServerConfig customizations date last verbose true
-         ATTENTION: These files contain the directories {zimbraHome}/conf/ and {zimbraHome}/postfix/conf/ compressed into a single archive.
+         # zxsuite backup getServerConfig customizations date last verbose true
+         ATTENTION: These files contain the directories /opt/zextras//conf/ and /opt/zextras/postfix/conf/ compressed into a single archive.
          Restore can only be performed manually. Do it only if you know what you're doing.
 
          archives
             filename                                                    customizations_28_02_14#04_01_14.tar.gz
-            path                                                        /opt/zimbra/backup/ng/server/
+            path                                                        /opt/zextras/backup/ng/server/
             modify date                                                 28/02/2014 04:01:14 CET
 
 .. _vms_and_snapshots:
@@ -178,7 +179,7 @@ VMs and Snapshots
 
 Thanks to the advent of highly evolved virtualization solutions in the
 past years, virtual machines are now the most common way to deploy
-server solutions such as Zimbra Collaboration Suite.
+server solutions such as |product|.
 
 Most hypervisors feature customizable snapshot capabilities and
 snapshot-based VM backup systems. In case of a disaster, it’s always
@@ -209,7 +210,7 @@ To perform a disaster recovery from a previous machine state with
   isolated network, making sure that users can’t access it and that
   both incoming and outgoing emails are not delivered.
 
-- Switch on the clone and wait for Zimbra to start.
+- Switch on the clone and wait for |carbonio| to start.
 
 - Disable |backup|’s RealTime Scanner.
 
@@ -252,8 +253,8 @@ How can I check if all of my items have been restored?
 It’s very easy. Check the appropriate ``Operation Completed``
 notification you received as soon as the restore operation finished. It
 can be viewed in the ``Notifications`` section of the Administration
-Zimlet, and it’s also emailed to the address you specified in the
-``Core`` section of the Administration Zimlet as the ``Notification
+Console, and it’s also emailed to the address you specified in the
+``Core`` section of the Administration Console as the ``Notification
 E-Mail recipient address``.
 
 The ``skipped items`` section contains a per-account list of unrestored
@@ -321,14 +322,14 @@ There are different possible causes, the most common of which are:
       ^^^^
 
       Both the the raw item or the metadata file are readable and the
-      content is correct, but Zimbra refuses to inject the item.
+      content is correct, but |product| refuses to inject the item.
 
 .. _how_can_i_identify_unrestored_items:
 
 How Can I Identify Unrestored Items?
 ------------------------------------
 
-There are two ways to do so: via the CLI and via the Zimbra Web Client.
+There are two ways to do so: via the CLI and via the Administration Console.
 The first way can be used to search for the item within the
 backup/import path, and the second can be used to view the items in the
 source server.
@@ -336,21 +337,20 @@ source server.
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Using the Zimbra WebClient
+   .. grid-item-card:: Using the Administration Console
       :columns: 6
 
 
       The comma separated list of unrestored items displayed in the
-      ``Operation
-      Complete`` notification can be used as a search argument in the Zimbra
-      Web Client to perform an item search.
+      ``Operation Complete`` notification can be used as a search
+      argument in the Administration Console to perform an item search.
 
       To do so:
 
-      - Log into the Zimbra Administration Console in the source server.
+      - Log into the Administration Console in the source server
 
       - Use the ``View Mail`` feature to access the account containing the
-        unrestored items.
+        unrestored items
 
       - In the search box, enter **item:** followed by the comma separated
         list of itemIDs, for example: ``item: 856,13339,45200,45655``
@@ -384,7 +384,7 @@ How Can I Restore Unrestored Items?
 -----------------------------------
 
 An item not being restored is a clear sign of an issue, either with the
-item itself or with your current Zimbra setup. In some cases, there are
+item itself or with your current |carbonio| setup. In some cases, there are
 good chances of being able to restore an item even if it was not
 restored on the first try.
 
@@ -422,7 +422,7 @@ unrestorable items.
       - If using a RAID disk setup, check the array for possible issues
         (depending on RAID level).
 
-      - Make sure that the 'zimbra' user has r/w access to the backup/import
+      - Make sure that the ``zextras`` user has r/w access to the backup/import
         path, all its subfolders and all thereby contained files.
 
       - Carefully check the link quality of network-shared filesystems. If
@@ -439,18 +439,22 @@ unrestorable items.
       ^^^^      
 
       An item is identified as ``Invalid`` when, albeit being formally
-      correct, is discarded by Zimbra’s LMTP Validator upon injection. This is
-      common when importing items created on an older version of Zimbra to a
-      newer one, Validation rules are updated very often, so not all messages
-      considered valid by a certain Zimbra version are still considered valid
-      by a newer version.
+      correct, is discarded by the LMTP Validator upon injection.
+
+      .. This is not yet applicable
+
+         This is common when importing items created on an older
+         version of |carbonio| to a newer one, Validation rules are
+         updated very often, so not all messages considered valid by a
+         certain |carbonio version are still considered valid by a
+         newer version.
 
       If you experienced a lot of unrestored items during an import, it might
       be a good idea to momentarily disable the LMTP validator and repeat the
       import:
 
-      - To disable Zimbra’s LMTP Validator, run the following command as
-        the Zimbra user::
+      - To disable the LMTP Validator, run the following command as
+        the ``zextras`` user::
 
           zmlocalconfig -e zimbra_lmtp_validate_messages=false
 
@@ -485,7 +489,7 @@ unrestorable items.
          parameter to the import path and the ``date`` parameter to
          ``all``, will display all valid states for the item::
 
-           zimbra@test:~$ zxsuite backup getItem admin@example.com 24700 backup path /mnt/import/ date all
+           # zxsuite backup getItem admin@example.com 24700 backup path /mnt/import/ date all
                 itemStates
                         start date                                                  12/07/2013 16:35:44
                         type                                                        message
@@ -523,11 +527,11 @@ unrestorable items.
 
          .. code:: console
 
-            zimbra@test:~$ gunzip -c /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ= > /tmp/restored.eml
+            # gunzip -c /mnt/import/items/c0/c0,gUlvzQfE21z6YRXJnNkKL85PrRHw0KMQUqo,pMmQ= > /tmp/restored.eml
 
-            zimbra@test:~$ cat /tmp/restored.eml
+            # cat /tmp/restored.eml
 
-            Return-Path: zimbra@test.example.com
+            Return-Path: carbonio@test.example.com
 
             Received: from test.example.com (LHLO test.example.com) (192.168.1.123)
             by test.example.com with LMTP; Fri, 12 Jul 2013 16:35:43 +0200 (CEST)
@@ -614,7 +618,7 @@ amount of data to be synced and the storage in use, while connecting to
 an rsync daemon instead of using a remote shell as a transport is
 usually much faster in transferring the data.
 
-You won’t need to stop Zimbra or the Real Time Scanner to make an
+You won’t need to stop |carbonio| or the Real Time Scanner to make an
 additional backup of |backup|’s datastore using rsync, and, thanks
 to the ACID properties, you will be always able to stop the sync at any
 time and reprise it at a later point.
@@ -652,7 +656,7 @@ the following best practices are recommended:
    Backup NG’s Backup Path must be).
 
 -  If you plan to restore directly from the remote location, make sure
-   that the *zimbra* user on your server has read and write permissions
+   that the ``zextras`` user on your server has read and write permissions
    on the transferred data.
 
 -  Expect to experience slowness if your transfer speed is much higher
@@ -751,10 +755,10 @@ Additional/Offsite Backup F.A.Q.
    Command Execution in a Multistore Environment
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   The Network Administration Zimlet simplifies the management of multiple
+   The Network Administration Console simplifies the management of multiple
    servers: You can select a server from the |backup| tab and perform
    all backup operations on that server, even if you are logged into the
-   Zimbra Administration Console of another server.
+   Administration Console of another server.
 
    Specific differences between Singlestore and Multistore environments
    are:
@@ -765,7 +769,7 @@ Additional/Offsite Backup F.A.Q.
    - All operations are logged on the **target** server, not in the
      server that launched the operation
 
-   - If a wrong target server for an operation is chosen, Zimbra
+   - If a wrong target server for an operation is chosen, |carbonio|
      **automatically proxies** the operation request to the right server
 
    .. _backup_and_restore:
@@ -777,7 +781,7 @@ Additional/Offsite Backup F.A.Q.
    a Singlestore environment.
 
    The different servers will be configured and managed separately via the
-   Administration Zimlet, but certain operations like *Live Full Scan* and
+   Administration Console, but certain operations like *Live Full Scan* and
    *Stop All* Operations can be 'broadcast' to all the mailstores via the
    ``zxsuite`` CLI using the ``--hostname all_servers`` option. This
    applies also to |backup| settings.
@@ -785,11 +789,11 @@ Additional/Offsite Backup F.A.Q.
    Backup and Restore operations are managed as follows:
 
    - Smartscans can be executed on **single servers** via *the
-     Administration Zimlet* or on **multiple servers** via the *CLI*
+     Administration Console* or on **multiple servers** via the *CLI*
 
    - Restores can be started either from the ``Accounts`` tab in the
-     Zimbra Admin Console, from each server tab in the |backup|
-     menu of the Administration Zimlet or via the CLI. The differences
+     Administration Console, from each server tab in the |backup|
+     menu of the Administration Console or via the CLI. The differences
      between these methods are:
 
    .. csv-table::
@@ -852,12 +856,12 @@ Additional/Offsite Backup F.A.Q.
    The :ref:`doCheckShares <zxsuite_backup_doCheckShares>` command will
    parse all share information in local accounts and report any error::
 
-      zimbra@test:~$ zxsuite help backup doCheckShares
+      # zxsuite help backup doCheckShares
 
    The :ref:`doFixShares <zxsuite_backup_doFixShares>` will fix all share
    inconsistencies using a migration::
 
-      zimbra@test:~$ zxsuite help backup doFixShares
+      # zxsuite help backup doFixShares
 
 .. _operation_queue_and_queue_management:
 
@@ -893,16 +897,16 @@ Operation Queue Management
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
 
       * Viewing the Queue
 
         To view the operation queue, access the ``Notifications`` tab in
-        the Administration Zimlet and click the ``Operation Queue``
+        the Administration Console and click the ``Operation Queue``
         button.
 
-        .. warning:: The Administration Zimlet displays operations queued
+        .. warning:: The Administration Console displays operations queued
            both by |backup| and Zextras Powerstore in a single
            view. This is just a design choice, as the two queues are
            completely separate, meaning that one |backup| operation
@@ -913,7 +917,7 @@ Operation Queue Management
 
         To stop the current operation and empty |backup|’s
         operation queue, enter the ``|backup|`` tab in the
-        Administration Zimlet and click the ``Stop all Operations``
+        Administration Console and click the ``Stop all Operations``
         button.
 
    .. grid-item-card:: Through the CLI
@@ -939,7 +943,7 @@ Operation Queue Management
         To stop the current operation and empty |backup|’s operation
         queue, use the ``doStopAllOperations`` command::
 
-          zimbra@mail:~$ zxsuite help backup doStopAllOperations
+          # zxsuite help backup doStopAllOperations
 
 
         .. card:: Usage example
@@ -955,7 +959,7 @@ Operation Queue Management
         To stop the current operation or to remove a specific operation
         from the queue, use the ``doStopOperation`` command::
 
-          zimbra@mail:~$ zxsuite help backup doStopOperation
+          # zxsuite help backup doStopOperation
 
         .. card:: Usage example
 

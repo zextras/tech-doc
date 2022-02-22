@@ -47,14 +47,14 @@ configure the Backup module and have all your data automatically backed
 up.
 
 -  Mount a storage device at your target location. We use the default
-   ``/opt/zimbra/backup/zextras`` throughout this section; remember to
+   ``/opt/zextras/backup/zextras`` throughout this section; remember to
    replace it with the path you chose.
 
 .. important:: The size of the device should be at least 80% of
    primary + secondary volume size.
 
 -  Set the correct permission on the backup path: ``chown zextras:zextras
-   /opt/zimbra/backup/zextras``
+   /opt/zextras/backup/zextras``
 
 .. _img-backup-console:
 
@@ -71,15 +71,16 @@ up.
 
    .. code:: console
 
-      zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/zimbra-backup
+      zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
 
-   - Backup Zimbra customisations. With this option, configuration and
-     other changes made to Zimbra are saved in a separate file named
-     ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
-     represents the date when the backup was created, while ``xx_xx``
-     is an identifier. The archive contains the full configuration of
-     zimbra: crontab, nginx webserver, postfix and antivirus, LDAP
-     connection, Zimbra templates, and more.
+   .. verify this on new interface
+      - Backup Zimbra customisations. With this option, configuration and
+        other changes made to Zimbra are saved in a separate file named
+        ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
+        represents the date when the backup was created, while ``xx_xx``
+        is an identifier. The archive contains the full configuration of
+        zimbra: crontab, nginx webserver, postfix and antivirus, LDAP
+        connection, Zimbra templates, and more.
 
    - Enable the :ref:`real_time_scan`, by clicking the
      :bdg-secondary:`Enable` button in the *RealTime Scanner* box
@@ -175,7 +176,7 @@ restore:
 
 -  Any customizations made to the software (Postfix, Jetty, etc…​)
 
-For every item managed by Zextras Suite, every variation in its
+For every item managed by |product|, every variation in its
 associated metadata is recorded and saved, allowing its restore at a
 given point in time. In other words, whenever one of the metadata
 associated with an item changes, a "photograph" of the whole item is
@@ -223,14 +224,14 @@ The initial structure of the backup is built during the *Initial Scan*,
 performed by the **SmartScan**: the actual content of a Mailbox is read
 and used to populate the backup. The SmartScan is then executed at every
 start of the module and on a daily basis if the **Scan Operation
-Scheduling** is enabled in the Administration Zimlet.
+Scheduling** is enabled in the Administration Console.
 
 .. important:: SmartScan runs at a fixed time—​that can be
    configured—​on a daily basis and is not deferred. This implies that,
    if for any reason (like e.g., the server is turned off, or Zextras
    is not running), SmartScan does **not run**, it will **not run**
    until the next day. You may however configure the Backup to run the
-   SmartScan every time Zextras Suite is restarted (although this is
+   SmartScan every time |carbonio| is restarted (although this is
    discouraged), or you may manually run SmartScan to compensate for
    the missing run.
 
@@ -286,7 +287,7 @@ The backup path is the place on a filesystem where all the information
 about the backup and archives is stored. Each server has exactly one
 backup path; different servers can not share the same backup path. It is
 structured as a hierarchy of folders, the topmost of which is by default
-``/opt/zimbra/backup/zextras/``. Under this directory, the following
+``/opt/zextras/backup/zextras/``. Under this directory, the following
 important files and directories are present:
 
 -  ``map_[server_ID]`` are so-called **map files**, that show if the
@@ -346,7 +347,7 @@ Setting the Backup Path
 The Backup Path can be set both via GUI and via CLI:
 
 - Via GUI: in the "Backup" section of the Zextras Administration
-  Zimlet, under "Backup Path".
+  Console, under "Backup Path".
 
 - Via CLI: using the `zxsuite config server <zxsuite_config_server>`
   command to change the ``ZxBackup_DestPath`` config key.
@@ -424,7 +425,7 @@ How |backup| Works
 
 |backup| has been designed to store each and every variation of an
 **ITEM**. It is not intended as a system or Operating System backup,
-therefore it can work with different OS architecture and Zimbra
+therefore it can work with different OS architecture and |product|
 versions.
 
 |backup| allows administrators to create an atomic backup of every
@@ -432,7 +433,7 @@ item in the mailbox account and restore different objects on different
 accounts or even on different servers.
 
 By default, the default |backup| setting is to save all backup
-files in the **local directory** ``/opt/zimbra/backup/zextras/``. In
+files in the **local directory** ``/opt/zextras/backup/zextras/``. In
 order to be eligible to be used as the Backup Path, a directory must:
 
 -  Be both readable and writable by the ``zextras`` user
@@ -508,7 +509,7 @@ and decrease the scan time exponentially.
 
 By default, a SmartScan is scheduled to be executed each night (if
 ``Scan Operation Scheduling`` is enabled in the |backup| section of
-the Administration Zimlet). Once a week, on a day set by the user, a
+the Administration Console). Once a week, on a day set by the user, a
 Purge is executed together with the SmartScan to clear |backup|’s
 datastore from any deleted item that exceeded the retention period.
 
@@ -516,11 +517,11 @@ datastore from any deleted item that exceeded the retention period.
 How Does it Work?
 -----------------
 
-The |backup| engine scans all the items on the Zimbra Datastore,
+The |backup| engine scans all the items on the |carbonio| mailstore,
 looking for items modified after the last SmartScan. It updates any
-outdated entry and creates any item not yet present in the backup while
-flagging as deleted any item found in the backup and not in the Zimbra
-datastore.
+outdated entry and creates any item not yet present in the backup
+while flagging as deleted any item found in the backup and not in the
+|carbonio| mailstore.
 
 Then, all configuration metadata in the backup are updated, so that
 domains, accounts, COSs and server configurations are stored along with
@@ -554,10 +555,10 @@ When is a SmartScan Executed?
      :ref:`backup_disable_scans`.
 
 - Daily, if the Scan Operation Scheduling is enabled in the
-  Administration Zimlet
+  Administration Console
 
 - When the Real Time Scanner is re-enabled via the Administration
-  Zimlet after being previously disabled
+  Console after being previously disabled
 
 .. _running_a_smartscan:
 
@@ -567,12 +568,12 @@ Running a SmartScan
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Starting the Scan via the Administration Zimlet
+   .. grid-item-card:: Starting the Scan via the Administration Console
       :columns: 6
 
-      To start a SmartScan via the Administration Zimlet,
+      To start a SmartScan via the Administration Console,
 
-      -  Open the Administration Zimlet
+      -  Open the Administration Console
 
       -  If a multiserver installation, choose the server on which to run the
          SmartScan
@@ -648,7 +649,7 @@ Enabling the Real Time Scanner
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
 
       -  Select the |backup| Tab.
@@ -679,7 +680,7 @@ Disabling the Real Time Scanner
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
 
       -  Select the |backup| Tab.
@@ -746,7 +747,7 @@ the BLOB itself will not be deleted.
 
 Customizations backed up by |backup| also follow the Backup
 Path’s purge policies. This can be changed in the `|backup|`
-section of the Administration Zimlet by unchecking the
+section of the Administration Console by unchecking the
 :octicon:`tasklist` `Purge old customizations` checkbox.
 
 .. _when_is_a_backup_purge_executed:
@@ -755,7 +756,7 @@ When is a Backup Purge Executed?
 --------------------------------
 
 -  Weekly, if the Scan Operation Scheduling is enabled in the
-   Administration Zimlet
+   Administration Console
 
 -  When manually started either via the Administration Console or the
    CLI
@@ -772,10 +773,10 @@ Running a Backup Purge
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
 
-      To start a BackupPurge via the Administration Zimlet:
+      To start a BackupPurge via the Administration Console:
 
       - Click the |backup| tab (be sure to have a valid
         license).
@@ -895,10 +896,10 @@ file, remember to restore the verbosity to the previous level:
 Missing root credentials
 ------------------------
 
-To be able to back up LDAP data, Zextras Suite needs to establish a
-remote connection to the LDAP server using **LDAP root credentials**.
+To be able to back up LDAP data, |product| needs to establish a remote
+connection to the LDAP server using **LDAP root credentials**.
 
-In particular, the password is saved in the **Zimbra localconfig**, but
+In particular, the password is saved in the **localconfig**, but
 on a mailbox server where the LDAP component is not installed, the
 **LDAP root password** is empty. Therefore, the LDAP connection
 **fails** with an **invalid credentials error** and the backup of the
@@ -909,7 +910,7 @@ commands on a mailbox server:
 
 .. code:: bash
 
-   su - zimbra
+   su - zextras
    source bin/zmshutil
    zmsetvars
    ldapwhoami -x -D $zimbra_ldap_userdn -w $zimbra_ldap_password -H $ldap_master_url
@@ -969,7 +970,7 @@ To fix the problem, follow this three step procedure.
 
       .. code:: bash
 
-         su - zimbra
+         su - zextras
          zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
 
       Finally, restart the mailbox service to avoid cached credentials problems.
@@ -983,7 +984,7 @@ To fix the problem, follow this three step procedure.
 Disable LDAP Backup
 -------------------
 
-In case you do not want to backup LDAP data together with Zextras suite,
+In case you do not want to backup LDAP data together with |product|
 you can disable it entirely. On each mailbox server, to disable LDAP
 Backup, run this command.
 
@@ -1158,7 +1159,7 @@ one.
 
    In the case of a multiserver installation, the admin must ensure that
    each server writes **on its own directory**, and the destination share
-   **must** be readable and writable by the zimbra user.
+   **must** be readable and writable by the ``zextras`` user.
 
    In a multiserver installation, consider a scenario in which the same NAS
    located on 192.168.72.16 is involved, which exposes via NFS the share as
@@ -1240,7 +1241,7 @@ Activate backup on the external storage
 ---------------------------------------
 
 Once that external storage has been set up, it is necessary to let
-Zextras Suite use the external storage. The procedure is slight
+|carbonio| use the external storage. The procedure is slight
 different, depending if the new storage needs to be accessed from a
 newly installed server or if existing local backups must be migrated to
 the external storage.
@@ -1257,7 +1258,7 @@ the external storage.
 
    Once the backup will be initialized, it will use the external storage.
 
-   Therefore, check for any missing blobs with doCheckBlobs in the Zimbra
+   Therefore, check for any missing blobs with doCheckBlobs in the mounted
    volumes to avoid integrity errors.
 
 .. card:: Migrate existing backups
@@ -1266,17 +1267,18 @@ the external storage.
    important maintenance task. This procedure will minimise the risk of
    errors:
 
-   1. Double-check Zimbra permissions on the active backup path
+   1. Double-check the permissions on the active backup path
 
-   2. Make sure that the Zextras cache folder is accessible by the Zimbra
-      user (typically under ``/opt/zimbra/cache``)
+   2. Make sure that the Zextras cache folder is accessible by the
+      ``zextras`` user (typically under ``/opt/zextras/cache``)
 
    3. Check for table errors in the myslow.log and in the MariaDb integrity
       check report. If any error is found, consider running the
       ``mysqlcheck`` command to verify the database integrity.
 
-   4. Check for any missing blobs in the Zimbra volumes with
-      `zxsuite powerstore doCheckBlobs <zxsuite_powerstore_doCheckBlobs>`
+   4. Check for any missing blobs in the mounted |carbonio| volumes
+      with `zxsuite powerstore doCheckBlobs
+      <zxsuite_powerstore_doCheckBlobs>`
 
    5. Check for any missing digest in the backup with
       `doSmartScan deep=true <zxsuite_backup_doSmartScan>`

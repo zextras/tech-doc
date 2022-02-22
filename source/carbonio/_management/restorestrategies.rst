@@ -82,7 +82,7 @@ Finally, all restore strategies do:
       Recognise an item's ID
       ^^^^
 
-      -  Backup_path: ``/opt/zimbra/backup/ng/``
+      -  Backup_path: ``/opt/zextras/backup/ng/``
 
       -  Account ID: **4a217bb3-6861-4c9f-80f8-f345ae2897b5**
 
@@ -90,7 +90,7 @@ Finally, all restore strategies do:
 
       This item, and all its associated metadata is located in:
 
-      ``/opt/zimbra/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057``
+      ``/opt/zextras/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057``
 
    As a regular user, there is only one possibility to find the itemID:
    select a message and then from the ``Options`` menu click on ``Show
@@ -109,7 +109,7 @@ Finally, all restore strategies do:
 
       Usage example:
 
-      user@zimbra:~$ zxsuite backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
+      # zxsuite backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
 
    Options in ``{curly braces}`` are mandatory:
 
@@ -215,7 +215,7 @@ Running a Single Item Restore
 .. grid::
    :gutter: 3
             
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
                 
       Item Restore is only available through the CLI.
@@ -279,17 +279,17 @@ Running a Restore on New Account
 .. grid::
    :gutter: 3
             
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
 
       A Restore on New Account can be used in two scenarios:
 
-      #. Running Restore from the ``Accounts`` tab in the Zimbra
+      #. Running Restore from the ``Accounts`` tab in the 
          Administration Console allows you to operate on users currently
          existing on the server.
 
       #. If you need to restore a deleted user, please proceed to Restore
-         via the Administration Zimlet.
+         via the Administration Console.
 
       In either case, go to the **Account List**, then follow these
       directions.
@@ -381,7 +381,7 @@ called ``unknown_XX``.
    .. warning:: To deal with IMAP-deleted emails in a more comfortable
       way for the user, during the Time-range Undelete the ``deleted``
       IMAP flag will be stripped from any restored item, for the item
-      itself to be visible in the Zimbra Web Client.
+      itself to be visible in the Administration Console.
 
 .. _running_a_time_range_undelete:
 
@@ -391,7 +391,7 @@ Running a Time-range Undelete
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
 
       -  Select ``Accounts`` in the left pane of the Administration Console to
@@ -587,7 +587,7 @@ the External Restore, you can implement the following suggestions.
    I/O performance
 
 2. To reduce the I/O overhead and the amount of disk space used for the
-   migration, advanced users may **tweak or disable** Zimbra’s RedoLog
+   migration, advanced users may **tweak or disable** the RedoLog
    for the duration of the import
 
 .. restore :doc: on `powerstore`
@@ -611,7 +611,7 @@ Running an External Restore
 .. grid::
    :gutter: 3
 
-   .. grid-item-card:: Via the Administration Zimlet
+   .. grid-item-card:: Via the Administration Console
       :columns: 6
 
       -  Click the |backup| tab.
@@ -621,7 +621,7 @@ Running an External Restore
 
       -  Enter the Destination Path into the text box and press Forward. The
          software will check if the destination folder contains a valid backup
-         and whether the 'zimbra' user has Read permissions.
+         and whether the ``zextras`` user has Read permissions.
 
       -  Select the domains you want to import and press Forward.
 
