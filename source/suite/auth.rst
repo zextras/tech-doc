@@ -820,7 +820,7 @@ having to share the personal credentials.
 
 .. _auth-zimlet:
 
-.. figure:: /img/auth/zimlet.png
+.. figure:: /img/auth/authpage.png
    :scale: 50%
 
    The |suite| Auth zimlet.
