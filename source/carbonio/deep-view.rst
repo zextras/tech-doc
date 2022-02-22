@@ -18,3 +18,5 @@ API for |product|
    1. link a pagina API di zimbra
    2. link API nuove Carbonio
       3. altro?
+
+.. include:: /common/carbonio/install_SSL_certificate.rst

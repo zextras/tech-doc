@@ -352,8 +352,16 @@ interface as explained in section :ref:`web-access`.
 Access to the Web Interface
 ===========================
 
-The URL to which to connect to are:
+To access |carbonio|\'s Administration Console, point a
+:ref:`supported browser <browser_compatibility>` to either of the URL
+below.
+
+Since |product| uses SSL to allow access to the Administration
+Console, it is strongly suggested to install an SSL
+certificate. Please refer to Section :ref:`install-SSL-cert` for
+installation of the certificate.
 
 * https://mail.carbonio.local/ for regular user access
 * https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
+
 

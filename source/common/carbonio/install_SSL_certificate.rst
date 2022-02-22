@@ -1,6 +1,7 @@
-===========================
- Deploy an SSL certificate
-===========================
+.. _install-SSL-cert:
+
+Deploy an SSL certificate
+=========================
 
 In this section we explain how to add an SSL/TLS certificate to a
 |product| installation, both a :ref:`single server
@@ -15,7 +16,7 @@ connection.
 .. _single-cert-installation:
 
 Commercial Certificate Installation
-===================================
+-----------------------------------
 
 We will describe the procedure by taking into account the following
 scenario:
@@ -100,7 +101,7 @@ Chain CA"*), that must be saved as
 .. _wildcard-cert-installation:
 
 Wildcard Certificate Installation
-=================================
+---------------------------------
 
 To describe this procedure, we use the same server with FQDN
 `mail.example.com`, but in this case there is already a wildcard SSL

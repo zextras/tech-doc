@@ -23,7 +23,7 @@ Strong points of |carbonio| include:
   box
 * flexibility to cover the needs of today's collaborative workplaces
 
-.. _files_browser_compatibility:
+.. _browser_compatibility:
 
 Browser Compatibility
 =====================

@@ -20,7 +20,6 @@ This is the documentation of |carbonio|.
    general
    installation
    uninstall
-   install_SSL_certificate
 
 
 .. toctree::
