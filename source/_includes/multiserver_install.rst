@@ -1,0 +1,252 @@
+Multiserver Installation
+========================
+
+This section describes a |product| `multiserver installation`, that
+is, a |carbonio| installation spread across multiple nodes, each with
+a precise and dedicated task.
+
+Scenario
+--------
+
+In this scenario we will set up a typical |product| multiserver
+environment, composed by **five nodes** as follows:
+
+#. An **LDAP node** containing data about the users, including access credentials
+#. An **MTA node** which is a SMTP server
+#. A **Proxy node** whose purpose is to expose a web server to allow
+   user to connect with a browser to their mailboxes
+#. Two **Store nodes**, one to be used as the actual Mailserver and
+   one to be used as **Logger node**
+
+   .. warning:: The **Logger node** must be unique within a |product| infrastructure!
+
+While your set up may vary, it is important that you install on each
+node the packages that provide the service(s) you want to run to each
+node.
+
+In our scenario, we use 5 nodes equipped with Ubuntu 20.04 LTS.
+
+Requirements
+------------
+
+For each node, the single server's :ref:`system-requirements` and
+:ref:`software-requirements` are valid and apply for multiserver
+installation as well. Moreover, make sure to configure the hostname
+and DNS resolution (See Single Server Installation's :ref:`Step 2
+<installation-step2>` and :ref:`Step 3 <installation-step3>`
+respectively.
+
+.. warning:: It is mandatory to configure the hostname, especially on
+   the LDAP node, otherwise the services will not be able to bind to
+   the correct address, leading to a disruption in |product|\'s
+   functionality.
+
+There are no additional requirements, just a few remarks:
+
+* Repositories: All packages required by a multiserver setup are
+  available in the same repository as the single server installation,
+  hence there is no need of further configuration.
+
+* Acquaintance with the use of CLI is necessary.
+
+  .. warning:: All commands must be issued as the ``root`` user, unless
+     stated other wise.
+
+* Give meaningful names to the nodes. For example, call them
+  ldap.example.com, mta.example.com, and so on. Replace
+  ``example.com`` with your domain name.
+
+* The Store and Logger nodes expose their services on port
+  **8080**. This setting can not be changed.
+
+Install packages
+----------------
+
+On each node, different packages should be installed. The
+``service-discover-server`` package must be installed on one node
+only, while on the other nodes only the agent is needed.
+
+
+* LDAP node
+
+  .. code:: console
+
+     # apt install service-discover-server carbonio-directory-server jq -y
+     
+* MTA node
+
+  .. code:: console
+
+     # apt install service-discover-agent carbonio-mta jq -y
+
+* Proxy node
+
+  .. code:: console
+
+     # apt install service-discover-agent carbonio-proxy carbonio-webui  jq -y
+
+* Store node
+
+  .. code:: console
+
+     # apt install service-discover-agent carbonio-appserver jq -y
+
+* Logger node
+
+  .. code:: console
+
+     # apt install service-discover-agent carbonio-appserver carbonio-logger jq -y
+
+Configure Nodes
+---------------
+
+After the installation has successfully completed, it is necessary to
+bootstrap the **LDAP node** as the first task, because you need to
+**LDAP bind password** to configure the other nodes as
+well. Nonetheless, to save some time, you can start the bootstrap on
+the other nodes as well.
+
+Log in to the LDAP node and execute the command
+
+.. code:: console
+
+   # carbonio-bootstrap
+
+This command will execute a number of tasks and will set up the
+node. At the end, you will be prompted with a menu and, if you already
+configured the DNS, you only need to click :bdg-secondary:`y` for
+confirmation.
+
+Then you need to retrieve the *LDAP bind passwords* with command
+
+.. code:: console
+
+   # zmlocalconfg -s | grep ldap_root_password
+
+Copy it because it is needed on the other nodes. 
+
+On **all other nodes**, execute the :command:`carbonio-bootstrap` command
+and, on the menu click :bdg-secondary:`1` to enter the *Common
+Configuration*. Here, you need the **LDAP node hostname** and the
+**LDAP bind password**. Click :bdg-secondary:`2`, and enter the *LDAP
+node hostname*, then :bdg-secondary:`4` and enter the *LDAP bind
+Password*.
+
+Once done, each node requires a specific configuration.
+
+* MTA node: define a  password for ``amavis`` and ``postfix`` user
+
+* Proxy node: define a password for ``nginx`` user
+
+* Store node: configure the MTA address
+
+* Logger node: configure the MTA address
+
+Moreover, the Logger node needs a specific configuration, as its
+purpose is to collect all *log files* from the other nodes.
+
+Open file :file:`/etc/rsyslog.conf`, find the following lines and
+uncomment them.
+
+.. code:: 
+
+   $ModLoad imudp
+   $UDPServerRun 514
+
+Then, restart the ``rsyslog`` service.
+
+.. code:: bash
+
+   # systemctl restart rsyslog
+
+and finally initialise the logging service on all nodes.
+
+.. code:: bash
+
+   # su - zextras "/opt/zextras/libexec/zmloggerinit"
+
+Once the Logger node has properly been initialised, on **all other
+nodes**, execute
+
+.. code:: bash
+
+   # /opt/zextras/libexec/zmsyslogsetup  && service rsyslog restart
+
+
+Configure Services
+------------------
+
+After all nodes have been configured, execute the following command
+**on each node** to start |carbonio|.
+
+.. code:: console
+
+   # systemctl enable carbonio
+
+The node communication and data exchange takes place thanks to a
+number of shell script, therefore it is essential that the nodes
+be able to communicate via SSH. This can be achieved by issuing:
+
+.. code:: bash
+
+   # su - zextras "/opt/zextras/bin/zmupdateauthkeys"
+
+|product| ships with a service-discover/mesh-service based on Consul,
+which needs to be manually configured to allow the nodes to
+ 
+* define the bind address of the service, which must be reachable by
+  all the other nodes
+
+* define the password to be used to encrypt the cluster credential
+
+To properly set up |mesh|, a few steps are necessary.
+
+#. On the LDAP node, run
+
+   .. code:: console
+
+      # service-discover setup $(hostname -i) --password=<MY_SECURE_PASSWORD>
+
+   .. hint:: Replace *<MY_SECURE_PASSWORD>* with a strong enough password.
+             
+#. The outcome of the previous  command is a GPG key that you need to copy to
+   all other nodes as follows.
+
+   .. note:: Replace ``proxy``, ``mta``, ``store``, and ``logger``
+      with the correct hostname or IP address of the nodes 
+
+   .. code:: console
+             
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg proxy:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg mta:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg store:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg logger:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+#. Execute the ``setup`` on all the other nodes:
+   
+   .. code:: console
+
+      # service-discover setup $(hostname -i) --password=<MY_SECURE_PASSWORD>
+
+   Make sure you use the same password used in the first step.
+      
+Complete Installation
+---------------------
+
+
+At this point, configuration and set up of all nodes has been done,
+but the services that interact with |mesh| may need to be
+initialised. On each server, execute the following command, which will
+make sure that |mesh| is initialised and all services can operate
+flawlessly.
+
+.. code:: console
+
+   # pending-setups
+
+The menu will open a short menu which lists all tasks and scripts that
+need to be executed. Select each one or click :bdg-secondary:`a` to
+run all the scripts at once.

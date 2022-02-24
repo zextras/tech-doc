@@ -199,8 +199,8 @@ software package is necessary.
 
 .. _single-server-install:
 
-Installation
-============
+Single Server Installation
+==========================
 
 The installation is organised in steps, some of which are preliminary configuration
 tasks, and some is optional.
@@ -625,3 +625,5 @@ detection and dynamic routing between its components.
    .. code:: bash
 
       # ssh -N -f -L 8500:localhost:8500 root@<IP Address>
+
+.. include:: /_includes/multiserver_install.rst
