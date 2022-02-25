@@ -68,7 +68,7 @@ Install packages
 On each node, different packages should be installed.
 
 .. note:: The ``service-discover-server`` package must be installed on one node
-only, while on the other nodes only the agent is needed.
+   only, while on the other nodes only the agent is needed.
 
 
 * Directory-server node
