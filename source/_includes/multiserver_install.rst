@@ -34,7 +34,7 @@ For each node, the single server's :ref:`system-requirements` and
 installation as well. Moreover, make sure to configure the hostname
 and DNS resolution (See Single Server Installation's :ref:`Step 2
 <installation-step2>` and :ref:`Step 3 <installation-step3>`
-respectively.
+respectively).
 
 .. warning:: It is mandatory to configure the hostname, especially on
    the LDAP node, otherwise the services will not be able to bind to
@@ -50,7 +50,7 @@ There are no additional requirements, just a few remarks:
 * Acquaintance with the use of CLI is necessary.
 
   .. warning:: All commands must be issued as the ``root`` user, unless
-     stated other wise.
+     stated otherwise.
 
 * Give meaningful names to the nodes. For example, call them
   ldap.example.com, mta.example.com, and so on. Replace
@@ -72,7 +72,7 @@ only, while on the other nodes only the agent is needed.
   .. code:: console
 
      # apt install service-discover-server carbonio-directory-server jq -y
-     
+
 * MTA node
 
   .. code:: console
@@ -123,7 +123,7 @@ Then you need to retrieve the *LDAP bind passwords* with command
 
    # zmlocalconfg -s | grep ldap_root_password
 
-Copy it because it is needed on the other nodes. 
+Copy it because it is needed on the other nodes.
 
 On **all other nodes**, execute the :command:`carbonio-bootstrap` command
 and, on the menu click :bdg-secondary:`1` to enter the *Common
@@ -148,7 +148,7 @@ purpose is to collect all *log files* from the other nodes.
 Open file :file:`/etc/rsyslog.conf`, find the following lines and
 uncomment them.
 
-.. code:: 
+.. code::
 
    $ModLoad imudp
    $UDPServerRun 514
@@ -193,7 +193,7 @@ be able to communicate via SSH. This can be achieved by issuing:
 
 |product| ships with a service-discover/mesh-service based on Consul,
 which needs to be manually configured to allow the nodes to
- 
+
 * define the bind address of the service, which must be reachable by
   all the other nodes
 
@@ -208,15 +208,15 @@ To properly set up |mesh|, a few steps are necessary.
       # service-discover setup $(hostname -i) --password=<MY_SECURE_PASSWORD>
 
    .. hint:: Replace *<MY_SECURE_PASSWORD>* with a strong enough password.
-             
+
 #. The outcome of the previous  command is a GPG key that you need to copy to
    all other nodes as follows.
 
    .. note:: Replace ``proxy``, ``mta``, ``store``, and ``logger``
-      with the correct hostname or IP address of the nodes 
+      with the correct hostname or IP address of the nodes
 
    .. code:: console
-             
+
       # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg proxy:/etc/zextras/service-discover/cluster-credentials.tar.gpg
 
       # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg mta:/etc/zextras/service-discover/cluster-credentials.tar.gpg
@@ -226,13 +226,13 @@ To properly set up |mesh|, a few steps are necessary.
       # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg logger:/etc/zextras/service-discover/cluster-credentials.tar.gpg
 
 #. Execute the ``setup`` on all the other nodes:
-   
+
    .. code:: console
 
       # service-discover setup $(hostname -i) --password=<MY_SECURE_PASSWORD>
 
    Make sure you use the same password used in the first step.
-      
+
 Complete Installation
 ---------------------
 
@@ -250,3 +250,9 @@ flawlessly.
 The menu will open a short menu which lists all tasks and scripts that
 need to be executed. Select each one or click :bdg-secondary:`a` to
 run all the scripts at once.
+
+  .. note:: WebClient is available ONLY through the proxy.
+     eg https://proxy.demo.zextras.io/static/login/
+
+     AdminClient is available ONLY through the mailstore.
+     eg https://store.demo.zextras.io:7071/carbonioAdmin
