@@ -252,7 +252,7 @@ need to be executed. Select each one or click :bdg-secondary:`a` to
 run all the scripts at once.
 
   .. note:: WebClient is available ONLY through the proxy.
-     eg https://proxy.demo.zextras.io/static/login/
+     eg https://proxy.example.com/static/login/
 
      AdminClient is available ONLY through the mailstore.
-     eg https://store.demo.zextras.io:7071/carbonioAdmin
+     eg https://store.demo.example.com:7071/carbonioAdmin
