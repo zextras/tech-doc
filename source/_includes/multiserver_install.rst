@@ -157,6 +157,9 @@ uncomment them.
    $ModLoad imudp
    $UDPServerRun 514
 
+   $ModLoad imtcp
+   $TCPServerRun 514
+
 Then, restart the ``rsyslog`` service.
 
 .. code:: bash
