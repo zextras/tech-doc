@@ -38,7 +38,7 @@ and DNS resolution (See Single Server Installation's :ref:`Step 2
 respectively).
 
 .. warning:: It is mandatory to configure the hostname, especially on
-   the LDAP node, otherwise the services will not be able to bind to
+   the Directory-Server node, otherwise the services will not be able to bind to
    the correct address, leading to a disruption in |product|\'s
    functionality.
 
@@ -54,7 +54,7 @@ There are no additional requirements, just a few remarks:
      stated otherwise.
 
 * Give meaningful names to the nodes. For example, call them
-  ldap.example.com, mta.example.com, and so on. Replace
+  proxy.example.com, mta.example.com, and so on. Replace
   ``example.com`` with your domain name.
 
 * The Store and Logger nodes expose their services on port
@@ -102,12 +102,12 @@ Configure Nodes
 ---------------
 
 After the installation has successfully completed, it is necessary to
-bootstrap the **LDAP node** as the first task, because you need to
+bootstrap the **Directory-Server node** as the first task, because you need to
 **LDAP bind password** to configure the other nodes as
 well. Nonetheless, to save some time, you can start the bootstrap on
 the other nodes as well.
 
-Log in to the LDAP node and execute the command
+Log in to the Directory-Server node and execute the command
 
 .. code:: console
 
@@ -128,8 +128,8 @@ Copy it because it is needed on the other nodes.
 
 On **all other nodes**, execute the :command:`carbonio-bootstrap` command
 and, on the menu click :bdg-secondary:`1` to enter the *Common
-Configuration*. Here, you need the **LDAP node hostname** and the
-**LDAP bind password**. Click :bdg-secondary:`2`, and enter the *LDAP
+Configuration*. Here, you need the **Directory-Server node hostname** and the
+**LDAP bind password**. Click :bdg-secondary:`2`, and enter the *Directory-Server
 node hostname*, then :bdg-secondary:`4` and enter the *LDAP bind
 Password*.
 
@@ -202,7 +202,7 @@ which needs to be manually configured to allow the nodes to
 
 To properly set up |mesh|, a few steps are necessary.
 
-#. On the LDAP node, run
+#. On the Directory-Server node, run
 
    .. code:: console
 
