@@ -249,13 +249,14 @@ run all the scripts at once.
 After all nodes have been configured, execute the following command
 **on each node** to start |carbonio|.
 
+
 .. code:: console
 
    # systemctl enable carbonio
 
 
-  .. note:: WebClient is available ONLY through the proxy (as well as other client protocols such as imap or pop)
-     eg https://proxy.example.com/static/login/
+.. note:: WebClient is available ONLY through the proxy (as well as other client protocols such as imap or pop)
+   eg https://proxy.example.com/static/login/
 
-     AdminClient is available ONLY through the mailstore.
-     eg https://store.demo.example.com:7071/carbonioAdmin
+   AdminClient is available ONLY through the mailstore.
+   eg https://store.demo.example.com:7071/carbonioAdmin
