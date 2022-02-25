@@ -11,10 +11,10 @@ Scenario
 In this scenario we will set up a typical |product| multiserver
 environment, composed by **five nodes** as follows:
 
-#. An **LDAP node** containing data about the users, including access credentials
-#. An **MTA node** which is a SMTP server
-#. A **Proxy node** whose purpose is to expose a web server to allow
-   user to connect with a browser to their mailboxes
+#. An **LDAP node**, a directory service server used for user authentication, account management, and parameter storage
+#. An **MTA node**, that takes care of the transfer and forwarding of mail, also performing filtering functions
+#. A **Proxy node**, which acts as a reverse proxy, centralizing access to mailboxes.
+   It allows mailbox servers to be hidden from the public internet
 #. Two **Store nodes**, one to be used as the actual Mailserver and
    one to be used as **Logger node**
 
