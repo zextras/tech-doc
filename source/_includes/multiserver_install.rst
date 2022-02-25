@@ -8,10 +8,10 @@ a precise and dedicated task.
 Scenario
 --------
 
-In this scenario we will set up a typical |product| multiserver
+In this suggested scenario we will set up a |product| multiserver
 environment, composed by **five nodes** as follows:
 
-#. An **LDAP node**, a directory service server used for user authentication, account management, and parameter storage
+#. A **Directory-Server node**, used for user authentication, account management, and parameter storage
 #. An **MTA node**, that takes care of the transfer and forwarding of mail, also performing filtering functions
 #. A **Proxy node**, which acts as a reverse proxy, centralizing access to mailboxes.
    It allows mailbox servers to be hidden from the public internet
@@ -29,9 +29,10 @@ In our scenario, we use 5 nodes equipped with Ubuntu 20.04 LTS.
 Requirements
 ------------
 
-For each node, the single server's :ref:`system-requirements` and
-:ref:`software-requirements` are valid and apply for multiserver
-installation as well. Moreover, make sure to configure the hostname
+For each node, the single server's :ref:`software-requirements` are valid and apply for multiserver
+installation as well. Regarding the :ref:`system-requirements`, consider that
+by dividing the load on more nodes you may need less resources
+(we recommend not to go below 4gb of ram). Moreover, make sure to configure the hostname
 and DNS resolution (See Single Server Installation's :ref:`Step 2
 <installation-step2>` and :ref:`Step 3 <installation-step3>`
 respectively).
@@ -67,7 +68,7 @@ On each node, different packages should be installed. The
 only, while on the other nodes only the agent is needed.
 
 
-* LDAP node
+* Directory-server node
 
   .. code:: console
 
@@ -121,7 +122,7 @@ Then you need to retrieve the *LDAP bind passwords* with command
 
 .. code:: console
 
-   # zmlocalconfg -s | grep ldap_root_password
+   # zmlocalconfg -s zimbra_ldap_password
 
 Copy it because it is needed on the other nodes.
 
@@ -247,11 +248,11 @@ flawlessly.
 
    # pending-setups
 
-The menu will open a short menu which lists all tasks and scripts that
+The command will open a short menu which lists all tasks and scripts that
 need to be executed. Select each one or click :bdg-secondary:`a` to
 run all the scripts at once.
 
-  .. note:: WebClient is available ONLY through the proxy.
+  .. note:: WebClient is available ONLY through the proxy (as well as other client protocols such imap or pop)
      eg https://proxy.example.com/static/login/
 
      AdminClient is available ONLY through the mailstore.
