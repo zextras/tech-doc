@@ -181,9 +181,9 @@ Configure Services
 ------------------
 
 
-The node communication and data exchange takes place thanks to a
-number of shell script, therefore it is essential that the nodes
-be able to communicate via SSH. This can be achieved by issuing:
+To guarantee the connection of the nodes and the exchange of data between them,
+it is necessary that they are able to communicate via SSH.
+This can be achieved by issuing:
 
 .. code:: bash
 
@@ -250,7 +250,7 @@ need to be executed. Select each one or click :bdg-secondary:`a` to
 run all the scripts at once.
 
 After all nodes have been configured, execute the following command
-**on each node** to start |carbonio|.
+**on each node** to enable |carbonio| at startup.
 
 
 .. code:: console
