@@ -18,6 +18,8 @@ environment, composed by **five nodes** as follows:
 #. Two **Store nodes**, one to be used as the actual Mailserver and
    one to be used as **Logger node**
 
+In addition to the listed services, an additional functionality (Mesh) adds fault detection and dynamic routing between components of the infrastructure.
+
    .. warning:: The **Logger node** must be unique within a |product| infrastructure!
 
 While your set up may vary, it is important that you install on each
@@ -63,8 +65,9 @@ There are no additional requirements, just a few remarks:
 Install packages
 ----------------
 
-On each node, different packages should be installed. The
-``service-discover-server`` package must be installed on one node
+On each node, different packages should be installed.
+
+.. note:: The ``service-discover-server`` package must be installed on one node
 only, while on the other nodes only the agent is needed.
 
 
