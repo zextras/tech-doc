@@ -177,12 +177,6 @@ nodes**, execute
 Configure Services
 ------------------
 
-After all nodes have been configured, execute the following command
-**on each node** to start |carbonio|.
-
-.. code:: console
-
-   # systemctl enable carbonio
 
 The node communication and data exchange takes place thanks to a
 number of shell script, therefore it is essential that the nodes
@@ -252,7 +246,15 @@ The command will open a short menu which lists all tasks and scripts that
 need to be executed. Select each one or click :bdg-secondary:`a` to
 run all the scripts at once.
 
-  .. note:: WebClient is available ONLY through the proxy (as well as other client protocols such imap or pop)
+After all nodes have been configured, execute the following command
+**on each node** to start |carbonio|.
+
+.. code:: console
+
+   # systemctl enable carbonio
+
+
+  .. note:: WebClient is available ONLY through the proxy (as well as other client protocols such as imap or pop)
      eg https://proxy.example.com/static/login/
 
      AdminClient is available ONLY through the mailstore.
