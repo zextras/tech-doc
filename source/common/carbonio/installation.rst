@@ -428,7 +428,7 @@ tasks, and some is optional.
    :octicon:`thumbsup`  Installation Complete
 
 Installation is now complete, you can access |product|\ 's graphic
-interface as explained in section :ref:`web-access`.
+interface as explained in section :ref:`single-web-access`.
 
 .. seealso:: Our Community portal features a guide that delves more
    into details of the installation process:
@@ -443,15 +443,17 @@ interface as explained in section :ref:`web-access`.
    Multi-server Installation
    =========================
 
-.. _web-access:
+.. _single-web-access:
 
 Access to the Web Interface
-===========================
+---------------------------
 
-The URL to which to connect to are:
+|product|\s web interface can be reached at the URLs:
 
-* https://mail.carbonio.local/ for regular user access
-* https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
+* The **WebClient** (that is, the regular user access), as well as other
+  client protocols such as IMAP or POP, is available at:
+  https://mail.carbonio.local/
+* The **AdminClient** (for Administration access) is available at: https://mail.carbonio.local:7071/carbonioAdmin
 
 ..
    After the successful installation and bootstrap, it is possible to
