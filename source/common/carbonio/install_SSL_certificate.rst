@@ -32,7 +32,7 @@ the |product| server.
 
 .. rubric:: Step 1. Certificate Signing Request generation
 
-We start by generating a :abbr:`Certificate Signing Request (CSR)`:
+We start by generating a :abbr:`CSR (Certificate Signing Request)`:
 
 .. code:: console
 

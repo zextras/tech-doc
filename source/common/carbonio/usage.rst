@@ -327,7 +327,7 @@ These are the only server side requirements:
 * A valid SSL/TLS certificate must be available for the domain
 
   .. note:: Directions to install a valid certificate can be found in
-     section :doc:`install_SSL_certificate`.
+     section :ref:`install-SSL-cert`.
 
 * The user with whom you log in via the |product| Mail App must be
   existing and active
