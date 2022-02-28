@@ -189,6 +189,13 @@ If any colleague has shared an address book, you can click the
 provide the e-mail address. You will see all the address books shared
 by the user.
 
+.. _files-mod:
+
+Files
+=====
+
+.. include:: /_includes/files.rst
+     
 .. _search-mod:
 
 Search
