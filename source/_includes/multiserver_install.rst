@@ -13,15 +13,15 @@ Scenario
 In this suggested scenario we will set up a |product| multi-server
 environment, composed by **five nodes** as follows:
 
-#. A **Directory-Server node**, used for user authentication, account
-   management, and parameter storage
+#. A **Directory-Server node**, used to manage the configuration of
+   the infrastructure and provisioning of users and domains
 #. An **MTA node**, that takes care of the transfer and forwarding of
    mail, including filtering and much more functions
 #. A **Proxy node**, which acts as a reverse proxy, centralizing
-   access to mailboxes.  It allows mailbox servers to be hidden from
-   the public internet
-#. Two **Store nodes**, one to be used as the actual Mailserver and
-   one to be used as **Logger node**
+   access to mailboxes.  It allows backend services (like e.g.,
+   mailbox servers) to be hidden from the public Internet
+#. Two **Application nodes**, one to be used as the actual Mailserver
+   or to host other services, and one to be used as **Logger node**
 
    .. note:: The **Logger node** must be unique within a |product|
       infrastructure!
