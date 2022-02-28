@@ -464,8 +464,13 @@ Additional Modules Installation
 ===============================
 
 Additional modules can be installed on |product| to extend its
-functionalities. In the remainder of this section we show how to
-install each of these modules.
+functionalities. Besides a basic |product| installation, there is no
+additional requirement. Modules can be installed on the same
+installation, although within a :ref:`Multiserver installation
+<multiserver-installation>` they can be installed on dedicated nodes.
+
+In the remainder of this section we show how to install each of these
+modules.
 
 .. _files_install:
 
