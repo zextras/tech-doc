@@ -199,7 +199,7 @@ software package is necessary.
 
 .. _single-server-install:
 
-Single Server Installation
+Single-Server Installation
 ==========================
 
 The installation is organised in steps, some of which are preliminary configuration

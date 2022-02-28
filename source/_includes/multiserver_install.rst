@@ -1,14 +1,16 @@
-Multiserver Installation
+.. _multiserver-installation:
+
+Multi-Server Installation
 ========================
 
-This section describes a |product| `multiserver installation`, that
+This section describes a |product| `multi-server installation`, that
 is, a |carbonio| installation spread across multiple nodes, each with
 a precise and dedicated task.
 
 Scenario
 --------
 
-In this suggested scenario we will set up a |product| multiserver
+In this suggested scenario we will set up a |product| multi-server
 environment, composed by **five nodes** as follows:
 
 #. A **Directory-Server node**, used for user authentication, account
@@ -38,7 +40,7 @@ Requirements
 ------------
 
 For each node, the single server's :ref:`software-requirements` are
-valid and apply for multiserver installation as well. Regarding the
+valid and apply for multi-server installation as well. Regarding the
 :ref:`system-requirements`, consider that by dividing the load on more
 nodes you may need less resources (although we recommend at least 4GB
 of RAM on each node). Moreover, make sure to configure the hostname
@@ -53,7 +55,7 @@ respectively).
 
 There are no additional requirements, just a few remarks:
 
-* Repositories: All packages required by a multiserver setup are
+* Repositories: All packages required by a multi-server setup are
   available in the same repository as the single server installation,
   hence there is no need of further configuration.
 
