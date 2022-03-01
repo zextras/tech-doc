@@ -23,6 +23,10 @@ and usage instructions in :doc:`usage`.
    |carbonio| has a :carbonio:`dedicated documentation <index.html>`.
 
 .. toctree::
+
+   changelog
+   
+.. toctree::
    :maxdepth: 2
    :caption:  Install:
 
