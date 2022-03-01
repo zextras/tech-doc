@@ -199,8 +199,8 @@ software package is necessary.
 
 .. _single-server-install:
 
-Installation
-============
+Single-Server Installation
+==========================
 
 The installation is organised in steps, some of which are preliminary configuration
 tasks, and some is optional.
@@ -428,7 +428,7 @@ tasks, and some is optional.
    :octicon:`thumbsup`  Installation Complete
 
 Installation is now complete, you can access |product|\ 's graphic
-interface as explained in section :ref:`web-access`.
+interface as explained in section :ref:`single-web-access`.
 
 .. seealso:: Our Community portal features a guide that delves more
    into details of the installation process:
@@ -443,15 +443,17 @@ interface as explained in section :ref:`web-access`.
    Multi-server Installation
    =========================
 
-.. _web-access:
+.. _single-web-access:
 
 Access to the Web Interface
-===========================
+---------------------------
 
-The URL to which to connect to are:
+|product|\s web interface can be reached at the URLs:
 
-* https://mail.carbonio.local/ for regular user access
-* https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
+* The **WebClient** (that is, the regular user access), as well as other
+  client protocols such as IMAP or POP, is available at:
+  https://mail.carbonio.local/
+* The **AdminClient** (for Administration access) is available at: https://mail.carbonio.local:7071/carbonioAdmin
 
 ..
    After the successful installation and bootstrap, it is possible to
@@ -462,8 +464,13 @@ Additional Modules Installation
 ===============================
 
 Additional modules can be installed on |product| to extend its
-functionalities. In the remainder of this section we show how to
-install each of these modules.
+functionalities. Besides a basic |product| installation, there is no
+additional requirement. Modules can be installed on the same
+installation, although within a :ref:`Multiserver installation
+<multiserver-installation>` they can be installed on dedicated nodes.
+
+In the remainder of this section we show how to install each of these
+modules.
 
 .. _files_install:
 
@@ -590,3 +597,4 @@ detection and dynamic routing between its components.
         store the password in a safe place (like e.g., a password
         manager).
 
+.. include:: /_includes/multiserver_install.rst
