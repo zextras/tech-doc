@@ -1,7 +1,7 @@
 .. _multiserver-installation:
 
 Multi-Server Installation
-========================
+=========================
 
 This section describes a |product| `multi-server installation`, that
 is, a |carbonio| installation spread across multiple nodes, each with
