@@ -12,7 +12,7 @@
 .. |auth| replace:: |carbonio| Auth
 .. |vs| replace:: |carbonio| VideoServer
 .. |backup| replace:: |carbonio| Backup
-.. |mesh| replace:: |product| Mesh
+.. |mesh| replace:: |carbonio| Mesh
 
 .. common replacements for all products
 

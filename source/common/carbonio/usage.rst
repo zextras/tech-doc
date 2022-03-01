@@ -189,6 +189,13 @@ If any colleague has shared an address book, you can click the
 provide the e-mail address. You will see all the address books shared
 by the user.
 
+.. _files-mod:
+
+Files
+=====
+
+.. include:: /_includes/files.rst
+     
 .. _search-mod:
 
 Search
@@ -327,7 +334,7 @@ These are the only server side requirements:
 * A valid SSL/TLS certificate must be available for the domain
 
   .. note:: Directions to install a valid certificate can be found in
-     section :doc:`install_SSL_certificate`.
+     section :ref:`install-SSL-cert`.
 
 * The user with whom you log in via the |product| Mail App must be
   existing and active
