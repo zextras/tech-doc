@@ -310,7 +310,7 @@ important files and directories are present:
 
    -  ``drive_items`` is a directory containing up to 256 subfolders
       (whose name is composed of two hexadecimal lowercase letters),
-      under which are stored Drive items, according to the last two
+      under which are stored |file| items, according to the last two
       letters of their UUID
 
    -  ``items`` is a directory containing up to 100 subfolders (whose
@@ -458,7 +458,7 @@ Structure of an Item
 The basic structure of the item is a **JSON Array** that records all the
 changes happening during the lifetime of each item, such as information
 related to emails (e.g., tags, visibility, email moved to a folder),
-contacts, tasks, single folders, groups, or drive documents, user’s
+contacts, tasks, single folders, groups, or |file| documents, user’s
 preferences (e.g., hash of the password, general settings).
 
 To improve performance, only the changes that are needed to restore the
@@ -478,7 +478,7 @@ deleted we store the timestamp and so, we are able to restore items that
 have been deleted within a specific time frame.
 
 Even if the blob associated to the item changes, and consequently its
-digest changes too (as happens for Drive Document), the metadata records
+digest changes too (as happens for |file| Document), the metadata records
 the validity of the old and the new digest.
 
 .. _backup_of_team_database:
@@ -490,11 +490,11 @@ Backup of |team| Database
 
 :ref:`chats-mod` is an instant messaging platform with a number of
 features, including file sharing, Web conferencing, and more.  Since
-Team keeps track of everything (uploaded files, chat, and so on), its
+|team| keeps track of everything (uploaded files, chat, and so on), its
 database can grow quickly to a large size: This slows down any Backup
 operations and is not usable for a restore operation.
 
-For this reason, the backup of Team’s DB has been disabled by default.
+For this reason, the backup of |team|\ 's DB has been disabled by default.
 An Administrator may enable it, in theory, **but only after having
 contacted beforehand a TSE** (Technical Support Engineer).
 
