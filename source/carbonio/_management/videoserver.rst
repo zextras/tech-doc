@@ -134,7 +134,7 @@ Replace `example.com` with the actual domain name and
    
 In case you forget the password, you can retrieve it using
 
-.. code:: console::
+.. code:: console
 
    # /etc/janus/janus.jcfg api_secret
 
@@ -219,11 +219,16 @@ removal on the video server is required).
    CLI Commands
    ^^^^
 
-   The CLI command to manage |vs| installations is ``zxsuite
-   team`` with the parameter ``video-server`` and the parameters
-   `video-server add <zxsuite_team_video-server_add>` and
-   `video-server remove <zxsuite_team_video-server_remove>`
-   respectively.
+    The CLI command to manage |vs| installations is :command`zxsuite
+    team` with the sub-command ``video-server`` and the parameters
+    `add` and `remove`.
+
+   ..
+      The CLI command to manage |vs| installations is ``zxsuite
+      team`` with the parameter ``video-server`` and the parameters
+      `video-server add <zxsuite_team_video-server_add>` and
+      `video-server remove <zxsuite_team_video-server_remove>`
+      respectively.
 
    Quick reference:
 
