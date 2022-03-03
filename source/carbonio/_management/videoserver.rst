@@ -3,8 +3,8 @@
 |vs|
 ====
 
-The |vs| is a WebRTC stream aggregator that improves
-Team’s performance by merging and decoding/re-encoding all streams in a
+The |vs| is a WebRTC stream aggregator that improves |team|\ 's
+performance by merging and decoding/re-encoding all streams in a
 Meeting.
 
 While the default WebRTC creates one incoming and one outgoing stream
@@ -171,7 +171,7 @@ Installation
 Architecture and Service Control
 --------------------------------
 
-A Team meeting is hosted **on one mailbox**, which also keeps the state
+A |team| meeting is hosted **on one mailbox**, which also keeps the state
 of the meeting. It is a responsibility of that mailbox to communicate
 with a videoserver instance to start a meeting and controlling it.
 
