@@ -8,6 +8,8 @@
    * check how to replace all occurrences of Zimlet / Administration
      Zimlet
 
+.. _backup-mod:
+
 ==========
  |backup|
 ==========
@@ -152,7 +154,7 @@ backup, for example:
 
 -  a task
 
--  a Drive document
+-  a |file| document
 
 -  an account (including its settings)
 
@@ -263,7 +265,7 @@ of the SmartScan or Real Time Scan might (or should) be disabled, even
 temporarily. For example:
 
 -  You have a high number of trasactions every day (or you often work
-   with Drive documents) and notice a high load in the server’s resource
+   with |file| documents) and notice a high load in the server’s resource
    consumption. In this case you can temporarily disable the Real Time
    Scan.
 

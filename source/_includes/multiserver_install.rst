@@ -60,7 +60,7 @@ There are no additional requirements, just a few remarks:
   hence there is no need of further configuration.
 
 * Acquaintance with the use of CLI is necessary. All commands must be
-     issued as the ``root`` user, unless stated otherwise.
+  issued as the ``root`` user, unless stated otherwise.
 
 * Give meaningful names to the nodes. For example, call them
   proxy.example.com, mta.example.com, and so on. Replace
@@ -69,10 +69,9 @@ There are no additional requirements, just a few remarks:
 * The Store and Logger nodes expose their services on port
   **8080**. This setting can **not** be changed.
 
-
 .. div:: sd-fs-5
 
-   :octicon:`gear` Pre-Installation Steps
+   :octicon:`gear` Package Installation
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -114,6 +113,10 @@ There are no additional requirements, just a few remarks:
      .. code:: console
 
         # apt install service-discover-agent carbonio-appserver carbonio-logger jq -y
+
+.. div:: sd-fs-5
+
+   :octicon:`gear` Nodes and Services Configuration
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -226,10 +229,25 @@ There are no additional requirements, just a few remarks:
 
          # service-discover setup $(hostname -i) --password=<MY_SECURE_PASSWORD>
 
-      .. hint:: Replace *<MY_SECURE_PASSWORD>* with a strong enough password.
+      .. hint:: Replace *<MY_SECURE_PASSWORD>* with a
+         strong enough password.
 
-   #. The outcome of the previous  command is a GPG key that you need to copy to
-      all other nodes as follows.
+      This command will:
+
+      * find the hostname IP address (:command:`hostname -i`)
+
+      * set the **cluster credential password** to
+        ``MY_SECURE_PASSWORD``. It is used for setups, management, and
+        to access the administration GUI. See section :ref:`mesh-gui`
+        for more information.
+
+      .. warning:: If this password is lost, it becomes necessary to
+         start over the whole setup of |mesh|, therefore make sure to
+         store the password in a safe place (like e.g., a password
+         manager).
+
+   #. The outcome of the previous command is a GPG key that you need
+      to copy to all other nodes as follows.
 
       .. note:: Replace ``proxy``, ``mta``, ``store``, and ``logger``
          with the correct hostname or IP address of the nodes
@@ -298,4 +316,4 @@ The URLs to which to connect to are:
   https://proxy.example.com/static/login/
 
 * The **AdminClient** is available ONLY through the mailstore:
-   https://store.demo.example.com:7071/carbonioAdmin
+  https://store.demo.example.com:7071/carbonioAdmin

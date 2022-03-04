@@ -75,7 +75,11 @@ following requirements:
       Network
       ^^^^^
 
-      -  A public IP
+      - A public IP address. This is either the IP address of |vs|, if
+        it is directly accessible from remote clients on the Internet,
+        or—​if there is a NAT-ting device in front of it (e.g., a
+        firewall or router)--the IP address with which the |vs| is
+        reachable.
 
       -  A publicly resolvable FQDN
 
@@ -106,65 +110,33 @@ following requirements:
 Installation
 ------------
 
-.. probably to (completely) review?
+Installing |vs| is straightforward. Assuming |carbonio|'s repository
+have already been configured, simply execute the two commands
 
-- Download the installer package from
-  https://www.zextras.com/it/thankyou-trial-suite/
+.. code:: console
 
-- Copy the installer package to the server
+   # apt update
+   # apt install carbonio-videoserver
 
-- Unpack the installer package, adapt it to the download
+Once the package has been successfully installed, you will be asked
+the **Public IP Address** of |vs|: this is the only bit of
+configuration required.
 
-  .. code:: console
-             
-     # tar zxvf videoserver-[OS]-installer.tgz
+After you have entered the IP address, you will be prompted to execute
+a command on each node of the |product| installation:
 
-- Enter the unpacked directory: ``cd videoserver-installer``
+.. code:: console
 
-- Run the installation script: ``./install.sh``
+   # zxsuite chats video-server add example.com port 8100 A_SECRET_PASSWORD
 
-  .. code:: console
-
-     ~/videoserver-installer# ./install.sh
-
-  This script will install |vs|, and all its runtime dependencies onto
-  the running system.
-
-  System will be modified, would you like to proceed? [Y]
-
-- The installer will first checks for the needed dependencies and
-  installs any missing one, if found. A message like::
-
-    software-properties-common not found. Would you like to install it? [Y]
-
-  Press :bdg-dark-line:`Y` to install them
+Replace `example.com` with the actual domain name and
+`A_SECRET_PASSWORD` with a robust password.
    
-- You will be then prompted to install the actual |vs| packages::
+In case you forget the password, you can retrieve it using
 
-    Would you like to install Zextras VideoServer? [Y]
+.. code:: console
 
-  Again, press :bdg-dark-line:`Y` to install them
-
-- Once all packages are installed, you will be asked the **Public IP
-  Address** of the video server.
-
-  .. hint:: The **Public IP Address** is either the IP address of the
-     video server, if it is directly accessible from remote clients on
-     the Internet, or—​if there is a NAT-ting device in front of it
-     (e.g., a firewall or router)--the IP address with which the video
-     server is reachable.
-
-  This is the only bit of configuration required. The installer will
-  set up the |vs| and then return two commands that must be
-  executed on any Mailbox Server of the infrastructure to set up the
-  connection with the |vs| and enable it for all servers::
-
-    Please execute these commands in a mailbox node as extras user
-    to complete the setup of the video server:
-
-  Copy and execute them, and refer to `zextras_team_full_cli` for
-  details about the syntax and additional options in case you want to
-  customise it.
+   # /etc/janus/janus.jcfg api_secret
 
 .. _architecture_and_service_control:
 
@@ -247,11 +219,16 @@ removal on the video server is required).
    CLI Commands
    ^^^^
 
-   The CLI command to manage |vs| installations is ``zxsuite
-   team`` with the parameter ``video-server`` and the parameters
-   `video-server add <zxsuite_team_video-server_add>` and
-   `video-server remove <zxsuite_team_video-server_remove>`
-   respectively.
+    The CLI command to manage |vs| installations is :command`zxsuite
+    team` with the sub-command ``video-server`` and the parameters
+    `add` and `remove`.
+
+   ..
+      The CLI command to manage |vs| installations is ``zxsuite
+      team`` with the parameter ``video-server`` and the parameters
+      `video-server add <zxsuite_team_video-server_add>` and
+      `video-server remove <zxsuite_team_video-server_remove>`
+      respectively.
 
    Quick reference:
 
