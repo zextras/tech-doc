@@ -156,11 +156,12 @@ There are no additional requirements, just a few remarks:
    node hostname*, then :bdg-secondary:`4` and enter the *LDAP bind
    Password*.
 
-   Once done, each node requires a specific configuration.
+   Once done, each node also requires a specific configuration based on role.
+   By default, all the bind password are configured with the same credential.
 
-   * MTA node: define a  password for ``amavis`` and ``postfix`` user
+   * MTA node: enter the password for ``amavis`` and ``postfix`` user
 
-   * Proxy node: define a password for ``nginx`` user
+   * Proxy node: enter the password for ``nginx`` user
 
    * Store node: configure the MTA address
 
