@@ -145,7 +145,7 @@ There are no additional requirements, just a few remarks:
 
    .. code:: console
 
-      # zmlocalconfg -s zimbra_ldap_password
+      # zmlocalconfig -s zimbra_ldap_password
 
    Copy it because it is needed on the other nodes.
 
