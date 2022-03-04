@@ -6,6 +6,8 @@
 This section contains various rather advanced topics that are not
 required for a everyday use of |product|.
 
+.. _mesh-gui:
+
 |mesh| Administration Interface
 ===============================
 
@@ -56,6 +58,8 @@ need the **cluster credential password** that was defined during the
    .. code:: bash
 
       # ssh -N -f -L 8500:localhost:8500 root@<IP Address>
+
+.. _carbonio-api:
 
 API for |product|
 =================

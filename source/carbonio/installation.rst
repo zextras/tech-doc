@@ -202,9 +202,9 @@ software package is necessary.
 Installation
 ============
 
-The installation on Ubuntu 18.04 and Ubuntu 20.04 is very similar and
-is organised in steps, some of which are preliminary configuration
-tasks, and some is optional.
+The installation on Ubuntu 20.04 is very similar and is organised in
+steps, some of which are preliminary configuration tasks, and some is
+optional.
 
 .. _pre-installation-steps:
 
