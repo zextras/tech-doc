@@ -543,7 +543,7 @@ these steps.
    Final Task
    ^^^^^
 
-   The final steps is to bootstrap |file|\'s DB (replacing the example password "ScrtPsw987^2" with the chosen one:
+   The final steps is to bootstrap |file|\'s DB (replacing the example password "ScrtPsw987^2" with the chosen one):
 
    .. code:: bash
 
