@@ -355,10 +355,11 @@ source server.
       - In the search box, enter **item:** followed by the comma separated
         list of itemIDs, for example: ``item: 856,13339,45200,45655``
 
-      .. warning:: Remember that any search is executed only within the
-         current tab, so if you are running the search from the ``Email``
-         tab and get no results try to run the same search in the ``Address
-         Book``, ``Calendar``, ``Tasks`` and ``Drive`` tabs.
+      .. warning:: Remember that any search is executed only within
+         the current tab, so if you are running the search from the
+         ``Email`` tab and get no results try to run the same search
+         in the other tabs, e.g., ``Address Book``, ``Calendar``,
+         ``Tasks``.
 
    .. grid-item-card:: Using the CLI
       :columns: 6

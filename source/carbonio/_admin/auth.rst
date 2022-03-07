@@ -5,8 +5,8 @@
 |auth|
 ============
 
-|auth| is the Zextras Suite module that influences the process of
-accessing a Zextras instance from the Login Page onwards, including
+|auth| is the |product| module that influences the process of
+accessing a |product| instance from the Login Page onwards, including
 the access modality. Depending on the authentication backends
 configured, the access mask changes, to allow user to provide their
 credentials using any of the backends. This also is reflected in the
@@ -14,7 +14,7 @@ credentials using any of the backends. This also is reflected in the
 
 |auth| allows to manage all the Authentication Strategies
 (user/pwd, SAML, 2FA, MobilePwd, QrCode) and Service Authorizations
-supported by Zextras.
+supported by |product|.
 
 This section is divided in three main parts and organised as follows.
 Immediately below, you can find the description of all supported
@@ -58,11 +58,11 @@ Supported Authentication Methods
 
       Self-service credential management allows every user to create new
       passwords and QR codes for third-parties—​for example team members,
-      personal assistants—​accessing her/his email account and Zextras
+      personal assistants—​accessing her/his email account and |Carbonio|
       Applications from mobile devices.
 
-      QR Codes in particular can be used to access Zextras Apps, currently
-      Team and Drive.
+      QR Codes in particular can be used to access Mobile Apps, currently
+      |team| and |file|.
 
       More information and step by step guidelines can be found in Section
       :ref:`auth-user`.
@@ -79,14 +79,15 @@ Supported Authentication Methods
       cross-domain Single Sign-On (SSO), which allows the use of the same
       credentials to access different applications.
 
-      SAML implementation in Zextras relies on an external IDentity Provider
-      (IDP), to which a user identifies; the IDP then passes authorization
-      credentials to a service providers (SP). SAML authentication is the
-      process of verifying the user’s identity and credentials. In Zextras
-      Suite, SAML requires little configuration, because an administrator can
-      generate the SAML configuration by importing SAML metadata from the ISP.
-      Each domain can have a different SAML endpoint and both SDP and IDP SAML
-      authentication is supported.
+      SAML implementation in |product| relies on an external IDentity
+      Provider (IDP), to which a user identifies; the IDP then passes
+      authorization credentials to a service providers (SP). SAML
+      authentication is the process of verifying the user’s identity
+      and credentials. In |product|, SAML requires little
+      configuration, because an administrator can generate the SAML
+      configuration by importing SAML metadata from the ISP.  Each
+      domain can have a different SAML endpoint and both SDP and IDP
+      SAML authentication is supported.
 
       These are the key concepts of SAML authentication:
 
@@ -107,7 +108,7 @@ Supported Authentication Methods
       which the SSO tokens are sent, according to partner requirements.
 
       Directions on how to configure SAML and integrate other applications
-      in Zextras Suite is described in Section :ref:`auth_set_up_saml`.
+      in |product| is described in Section :ref:`auth_set_up_saml`.
 
    .. grid-item-card::
       :columns: 4
@@ -117,10 +118,10 @@ Supported Authentication Methods
 
       Two Factor Authentication (usually spelled as **2FA**) adds a security
       layer to the login phase, making unwanted accesses less likely to take
-      place. In Zextras, this additional layer is given by an One Time
+      place. In |product|, this additional layer is given by an One Time
       Password (OTP), which can be read as a QR code on mobile devices.
 
-      When 2FA is configured on a Zextras domain, it is mandatory to have an
+      When 2FA is configured on a |product| domain, it is mandatory to have an
       OTP to be able to login: providing only username and password will fail.
       Moreover, the attribute ``zimbraAuthMech`` must be configured on the
       domain with for 2FA to work properly.
@@ -225,9 +226,10 @@ In order to enable the authentication strategies available in
       SAML Requirements
       ^^^^
 
-      Before enabling SAML login, it is necessary to modify the Zextras
-      Backend processing, because these header attributes are required to
-      compose the complete URL request: **Protocol X** and **X-Port**.
+      Before enabling SAML login, it is necessary to modify the
+      Backend processing, because these header attributes are required
+      to compose the complete URL request: **Protocol X** and
+      **X-Port**.
 
       The files affected by this change are the templates:
 
@@ -257,13 +259,13 @@ In order to enable the authentication strategies available in
 Setting up SAML Configuration
 -----------------------------
 
-To integrate a SAML application into Zextras, you need to configure the
-SAML IDP (IDentity Provider) using the Zextras SAML SP data. In our
+To integrate a SAML application into |product|, you need to configure the
+SAML IDP (IDentity Provider) using the SAML SP data. In our
 sample scenario, we want to add SAML authentication to our domain
 **example.com**, accessible at **SP_URL**.
 
-The SAML configuration is carried out at an IDP provider, then imported
-in Zextras Suite using a dedicated command.
+The SAML configuration is carried out at an IDP provider, then
+imported in |product| using a dedicated command.
 
 The most important configuration options are the following. You should
 configure them on the SAML IDP side.
@@ -277,10 +279,10 @@ configure them on the SAML IDP side.
 ``sp.nameidformat``
    **urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress**
 
-In order to validate against Zextras, make sure that the *Name of the
+In order to validate against |product|, make sure that the *Name of the
 attribute that is used as* ``NameID`` is set to **mailPrimaryAddress**.
 
-You can now integrate a SAML application in Zextras in two ways, either
+You can now integrate a SAML application in |product| in two ways, either
 automatic or manual. The following sections describe each method in
 detail.
 
@@ -411,7 +413,7 @@ default SAML settings, modify them, then save and import them back.
       ^^^^^^
 
       The final step is to save the changes made to the file and import
-      it into Zextras Suite using the command:
+      it into |product| using the command:
 
       .. code:: bash
 

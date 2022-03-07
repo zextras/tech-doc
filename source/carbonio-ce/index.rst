@@ -23,25 +23,30 @@ and usage instructions in :doc:`usage`.
    |carbonio| has a :carbonio:`dedicated documentation <index.html>`.
 
 .. toctree::
+
+   changelog
+   
+.. toctree::
    :maxdepth: 2
    :caption:  Install:
 
    general
    installation
    uninstall
-   install_SSL_certificate
 
+.. toctree::
+   :maxdepth: 2
+   :caption:  Admin:
+
+   deep-view
 ..
-   .. toctree::
-      :maxdepth: 2
-      :caption:  Admin:
+   administration
+   management
 
-      administration
-      management
-  
+
 .. toctree::
    :maxdepth: 2
    :caption:  Use:
- 
+
    usage
-   glossary
+   mobileapps
