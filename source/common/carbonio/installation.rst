@@ -507,7 +507,9 @@ these steps.
 
    .. code:: bash
 
-      # PGPASSWORD=ScrtPsw987^2 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
+      # sudo -u postgres psql
+      # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
+      # \q
 
    Save the password in a safe place.
 
@@ -545,7 +547,7 @@ these steps.
 
    .. code:: bash
 
-      carbonio-files-db-bootstrap postgres
+      PGPASSWORD=ScrtPsw987^2 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
 
 .. _mesh_install:
 
