@@ -317,4 +317,4 @@ The URLs to which to connect to are:
   https://proxy.example.com/static/login/
 
 * The **AdminClient** is available ONLY through the mailstore:
-  https://store.demo.example.com:7071/carbonioAdmin
+  https://store.example.com:7071/carbonioAdmin
