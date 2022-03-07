@@ -503,12 +503,13 @@ these steps.
 
       # apt install postgresql
 
-   Create a ``postgres`` user with password **SecretPass987^2** (use a
-   password of your choice).
+   Create a ``postgres`` superuser with password **ScrtPsw987^2** (use a password of your choice).
 
    .. code:: bash
 
-      # sudo -u postgres psql -c "ALTER USER postgres with encrypted password 'SecretPass987^2';"
+      # sudo -u postgres psql
+      # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
+      # \q
 
    Save the password in a safe place.
 
@@ -520,9 +521,7 @@ these steps.
 
    .. code:: bash
 
-      #  apt install carbonio-storages-ce carbonio-proxy \
-         carbonio-appserver-service carbonio-files-ce \
-         carbonio-files-db carbonio-user-management carbonio-files-ui
+      #  apt install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management carbonio-files-ui
 
 
    The installation will end with message::
@@ -544,11 +543,11 @@ these steps.
    Final Task
    ^^^^^
 
-   The final steps is to bootstrap |file|\'s DB:
+   The final steps is to bootstrap |file|\'s DB (replacing the example password "ScrtPsw987^2" with the chosen one):
 
    .. code:: bash
 
-      carbonio-files-db-bootstrap postgres
+      PGPASSWORD=ScrtPsw987^2 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
 
 .. _mesh_install:
 

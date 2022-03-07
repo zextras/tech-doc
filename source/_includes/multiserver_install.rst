@@ -88,31 +88,31 @@ There are no additional requirements, just a few remarks:
 
      .. code:: console
 
-        # apt install service-discover-server carbonio-directory-server jq -y
+        # apt install service-discover-server carbonio-directory-server -y
 
    * MTA node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-mta jq -y
+        # apt install service-discover-agent carbonio-mta -y
 
    * Proxy node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-proxy carbonio-webui  jq -y
+        # apt install service-discover-agent carbonio-proxy carbonio-webui  -y
 
    * Store node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-appserver jq -y
+        # apt install service-discover-agent carbonio-appserver -y
 
    * Logger node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-appserver carbonio-logger jq -y
+        # apt install service-discover-agent carbonio-appserver carbonio-logger -y
 
 .. div:: sd-fs-5
 
@@ -317,4 +317,4 @@ The URLs to which to connect to are:
   https://proxy.example.com/static/login/
 
 * The **AdminClient** is available ONLY through the mailstore:
-  https://store.demo.example.com:7071/carbonioAdmin
+  https://store.example.com:7071/carbonioAdmin
