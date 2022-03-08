@@ -10,3 +10,4 @@ by the Administrator.
 
    _admin/auth
    _admin/delegatedadmin
+   _admin/dkim
