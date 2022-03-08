@@ -1,17 +1,13 @@
-:orphan:
+.. _carbonio-admin:
 
 =========================
  Carbonio Administration
 =========================
 
-Admin Console
-=============
+In this section are described tasks and features that are carried out
+by the Administrator.
 
-CLI 
-===
+.. toctree::
+   :maxdepth: 1
 
-Ordinary tasks
-==============
-
-Ordinary setting
-================
+   _admin/dkim

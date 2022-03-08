@@ -38,9 +38,9 @@ and usage instructions in :doc:`usage`.
    :maxdepth: 2
    :caption:  Admin:
 
+   administration
    deep-view
 ..
-   administration
    management
 
 
