@@ -235,7 +235,7 @@ tasks, and some is optional.
       * Use netplan.io and add these lines to file
         :file:`/etc/netplan/01-netcfg.yaml`::
 
-           eth1:
+           enp0s3:
              dhcp4: false
              dhcp6: false
              addresses: [172.16.0.10/24]
