@@ -1177,29 +1177,31 @@ are not compatible with each other. If Powerstore data is stored in a
 bucket it is not possible to store Backup data on the same bucket and
 vice-versa.
 
-The `zxsuite core listBuckets <zxsuite_core_listBuckets>` command
-reports the bucket usage, for example::
+.. topic:: How to check a bucket's usage.
 
-   bucketName                                                  hsm
-   protocol                                                    HTTPS
-   storeType                                                   S3
-   accessKey                                                   xxxxx
-   region                                                      EU_WEST_1
-   uuid                                                        58fa4ca2-31dd-4209-aa23-48b33b116090
-   usage in powerstore volumes
+   The `zxsuite core listBuckets <zxsuite_core_listBuckets>` command
+   reports the bucket usage, for example::
+
+     bucketName                                                  hsm
+     protocol                                                    HTTPS
+     storeType                                                   S3
+     accessKey                                                   xxxxx
+     region                                                      EU_WEST_1
+     uuid                                                        58fa4ca2-31dd-4209-aa23-48b33b116090
+     usage in powerstore volumes
                      server: server1                                   volume: centralized-s3
                      server: server2                                   volume: centralized-s3
-   usage in external backup                                    unused
+     usage in external backup                                    unused
 
-   bucketName                                                  backup
-   protocol                                                    HTTPS
-   storeType                                                   S3
-   accessKey                                                   xxxxxxx
-   region                                                      EU_WEST_1
-   destinationPath                                             server2
-   uuid                                                        5d32b50d-79fc-4591-86da-35bedca95de7
-   usage in powerstore volumes                                 unused
-   usage in external backup
+     bucketName                                                  backup
+     protocol                                                    HTTPS
+     storeType                                                   S3
+     accessKey                                                   xxxxxxx
+     region                                                      EU_WEST_1
+     destinationPath                                             server2
+     uuid                                                        5d32b50d-79fc-4591-86da-35bedca95de7
+     usage in powerstore volumes                                 unused
+     usage in external backup
                      server: server2
 
 Since each |carbonio| Bucket is identified by a prefix, you can use the
