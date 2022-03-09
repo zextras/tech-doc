@@ -313,7 +313,7 @@ There are different possible causes, the most common of which are:
       ^^^^
       
       Both the the raw item or the metadata file are readable by
-      Zextras Backup but their content is broken/corrupted.
+      |backup| but their content is broken/corrupted.
 
    .. grid-item-card::
       :columns: 4
@@ -587,11 +587,11 @@ guarantee data validity and integrity.
 .. topic:: **ACID** properties
 
    A set of database operations that satisfy the following four
-   properties is called a `transaction` and represent a
-   single logical unit of work. A transaction guarantees the logical
-   consistency of the data stored and, in the context of Zextras
-   Backup, it  allows for easy data back-up and roll-back to a
-   previous state in case of serious database problems.
+   properties is called a `transaction` and represent a single logical
+   unit of work. A transaction guarantees the logical consistency of
+   the data stored and, in the context of |backup|, it allows for easy
+   data back-up and roll-back to a previous state in case of serious
+   database problems.
    
    *A*\ tomicity
       Any transaction is committed and written to the disk only when
@@ -668,8 +668,8 @@ the following best practices are recommended:
 Additional/Offsite Backup F.A.Q.
 --------------------------------
 
-.. card:: :octicon:`question` Why shouldn’t I use the **Export Backup** feature of Zextras
-   Backup instead of rsync?
+.. card:: :octicon:`question` Why shouldn’t I use the **Export
+   Backup** feature of |backup| instead of rsync?
 
    For many reasons:
 
