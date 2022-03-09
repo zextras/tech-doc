@@ -483,22 +483,6 @@ Even if the blob associated to the item changes, and consequently its
 digest changes too (as happens for |file| Document), the metadata records
 the validity of the old and the new digest.
 
-.. _backup_of_team_database:
-
-Backup of |team| Database
--------------------------
-
-.. does this apply to carbonio as well?
-
-:ref:`chats-mod` is an instant messaging platform with a number of
-features, including file sharing, Web conferencing, and more.  Since
-|team| keeps track of everything (uploaded files, chat, and so on), its
-database can grow quickly to a large size: This slows down any Backup
-operations and is not usable for a restore operation.
-
-For this reason, the backup of |team|\ 's DB has been disabled by default.
-An Administrator may enable it, in theory, **but only after having
-contacted beforehand a TSE** (Technical Support Engineer).
 
 .. _smartscan:
 
