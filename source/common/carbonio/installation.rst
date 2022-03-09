@@ -470,7 +470,7 @@ installation, although within a :ref:`Multiserver installation
 <multiserver-installation>` they can be installed on dedicated nodes.
 
 In the remainder of this section we show how to install each of these
-modules, currently only |files|.
+modules, currently only |file|.
 
 .. _files_install:
 

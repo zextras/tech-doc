@@ -7,8 +7,15 @@
 registered applications. It is used by |product| to add fault
 detection and dynamic routing between its components.
 
+The setup of |mesh| depends on the |carbonio| infrastructure, if
+a Single-Server or a Multi-Server.
+
+.. _mesh_single_install:
+
+Single-Server Setup
+~~~~~~~~~~~~~~~~~~~
+
 .. card::
-   :class-header: sd-font-weight-bold sd-fs-5
 
    Run setup
    ^^^^^
@@ -18,6 +25,8 @@ detection and dynamic routing between its components.
    .. code:: bash
 
       # service-discover setup $(hostname -i) --password=MY_SECURE_PASSWORD
+   .. hint:: Replace *MY_SECURE_PASSWORD* with a strong enough
+      password.
 
    This command will:
 
@@ -32,3 +41,60 @@ detection and dynamic routing between its components.
 	start over the whole setup of |mesh|, therefore make sure to
 	store the password in a safe place (like e.g., a password
 	manager).
+
+.. _mesh_multi_install:
+
+Multi-Server Setup
+~~~~~~~~~~~~~~~~~~
+
+The Multi-Server setup is slight more complex. as it requires to run
+commands on all the nodes.
+
+.. card::
+
+   Run setup
+   ^^^^^
+
+   The setup is the same as in :ref:`mesh_single_install`, except that
+   the command **must be** run on the *Directory-Server* node.
+
+   .. code:: console
+
+      # service-discover setup $(hostname -i) --password=MY_SECURE_PASSWORD
+
+.. card::
+
+   Copy Credentials
+   ^^^^^
+
+   The outcome of the previous command is a GPG key that you need to
+   copy to **all other nodes**.
+   
+   Assuming that you have nodes ``proxy``, ``mta``, ``store``, and
+   ``logger`` (see the Multi-Server :ref:`example installation
+   scenario <multiserver-installation>`, use the following commands,
+   provided you use the correct hostname or IP address of the nodes.
+
+   .. code:: console
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg proxy:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg mta:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg store:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg logger:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+.. card::
+
+   Complete setup on all nodes
+   ^^^^^
+
+   Log in to each nodes and run the command, making sure to use the
+   same password used in the first step.
+
+
+   .. code:: console
+
+      # service-discover setup $(hostname -i) --password=MY_SECURE_PASSWORD
+
