@@ -195,9 +195,9 @@ From the |backup| tab
 Single Item Restore
 ===================
 
-The Single Item Restore is one of the Restore Modes available in Zextras
-Backup and allows to restore one item at a time, recovering its status
-even if it was deleted.
+The Single Item Restore is one of the Restore Modes available in
+|backup| and allows to restore one item at a time, recovering its
+status even if it was deleted.
 
 
 How Does it Work?

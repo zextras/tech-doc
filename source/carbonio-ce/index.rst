@@ -3,50 +3,71 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-********************************************
+********************************
  Welcome to |ce| Documentation!
-********************************************
+********************************
 
 This is the documentation of |ce| edition, a free and open-source
 collaboration software.
 
 Details on the functionalities can be found in :doc:`general`,
 requirements and directions for installation in :doc:`installation`,
-and usage instructions in :doc:`usage`.
+common management tasks are described in :doc:`management`, while more
+technical and less commonly used tasks in :doc:`deep-view`.
 
-..
-   This is the documentation of |ce| edition, whose features are
-   shared with the |carbonio| Edition. Functionalities available on
-   |carbonio| only are described in :carbonio:`Carbonio Advanced
-   Features <advanced.html>`.
-
-   |carbonio| has a :carbonio:`dedicated documentation <index.html>`.
-
-.. toctree::
-
-   changelog
-   
-.. toctree::
-   :maxdepth: 2
-   :caption:  Install:
-
-   general
-   installation
-   uninstall
-
-.. toctree::
-   :maxdepth: 2
-   :caption:  Admin:
-
-   deep-view
-..
-   administration
-   management
+Finally, instructions to guide users in daily tasks are contained in
+:doc:`usage`.
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption:  Use:
 
-   usage
-   mobileapps
+|carbonio| has a :carbonio:`dedicated documentation <index.html>`.
+
+.. grid::
+   :gutter: 3
+
+   .. grid-item-card::
+      :columns: 4
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+	 :maxdepth: 2
+	 :caption: Install:
+
+	 general
+	 installation
+	 uninstall
+
+   .. grid-item-card::
+      :columns: 4
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+	 :maxdepth: 2
+	 :includehidden:
+	 :caption: Admin:
+
+	 management
+	 deep-view
+
+   .. grid-item-card::
+      :columns: 4
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+	 :maxdepth: 2
+	 :caption: Use:
+
+	 usage
+	 mobileapps
+
+   .. grid-item::
+      :columns: 4
+
+   .. grid-item-card::
+      :columns: 4
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+	 :maxdepth: 1
+
+	 changelog
