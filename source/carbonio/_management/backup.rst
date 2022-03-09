@@ -1164,10 +1164,10 @@ one.
 
       192.168.72.16:/externalStorage/Server3 /mnt/backup nfs rw,hard,intr  0 0
 
-.. _s3_external_storage:
+.. _external_objectstorage:
 
-S3 external storage
-~~~~~~~~~~~~~~~~~~~
+External ObjectStorage
+~~~~~~~~~~~~~~~~~~~~~~
 
 Before using an ObjectStorage, a dedicated Zextras bucket must be
 created.
@@ -1203,17 +1203,17 @@ reports the bucket usage, for example::
                      server: server2
 
 Since each Zextras Bucket is identified by a prefix, you can use the
-combination of S3 bucket credentials and Zextras bucket prefix to
-uniquely identify and store multiple Zextras Buckets within a single S3
+combination of  bucket credentials and Zextras bucket prefix to
+uniquely identify and store multiple Zextras Buckets within a single ObjectStorage
 Bucket.
 
 In other words, the same *Amazon S3 Bucket*, you could define several
 Zextras Buckets, to be used both for Powerstore HSM and Backup
 
-.. _s3_backup_in_a_multi_mailbox_environment:
+.. _objectstorage_backup_in_a_multi_mailbox_environment:
 
-S3 Backup in a multi-mailbox environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStorage Backup in a multi-mailbox environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In multi-mailbox environments, it is not necessary to create multiple
 buckets: You only enter the bucket configuration information when
