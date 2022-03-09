@@ -26,13 +26,14 @@ environment, composed by **five nodes** as follows:
    .. note:: The **Logger node** must be unique within a |product|
       infrastructure!
 
-In addition to the listed services, an additional functionality (Mesh)
-adds fault detection and dynamic routing between components of the
-infrastructure.
+In addition to the listed services, an additional functionality
+(|mesh|) adds fault detection and dynamic routing between components
+of the infrastructure.
 
 While your set up may vary, it is important that you install on each
 node the packages that provide the service(s) you want to run to each
-node.
+node. As an example, you can have MTA and Directory-Server installed
+on the same node.
 
 In our scenario, we use 5 nodes equipped with Ubuntu 20.04 LTS.
 
@@ -159,39 +160,8 @@ There are no additional requirements, just a few remarks:
 
    * Logger node: configure the MTA address
 
-   Moreover, the Logger node needs a specific configuration, as its
-   purpose is to collect all *log files* from the other nodes.
-
-   Open file :file:`/etc/rsyslog.conf`, find the following lines and
-   uncomment them.
-
-   .. code::
-
-      $ModLoad imudp
-      $UDPServerRun 514
-
-      $ModLoad imtcp
-      $TCPServerRun 514
-
-   Then, restart the ``rsyslog`` service.
-
-   .. code:: bash
-
-      # systemctl restart rsyslog
-
-   and finally initialise the logging service on all nodes.
-
-   .. code:: bash
-
-      # su - zextras "/opt/zextras/libexec/zmloggerinit"
-
-   Once the Logger node has properly been initialised, on **all other
-   nodes**, execute
-
-   .. code:: bash
-
-      # /opt/zextras/libexec/zmsyslogsetup  && service rsyslog restart
-
+   The **Logger node** requires a specific configuration and setup
+   that is described in section :ref:`logger_node_config`. 
 
 At this point, the nodes have been configured and the installation has
 been completed.
