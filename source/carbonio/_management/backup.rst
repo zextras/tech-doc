@@ -58,44 +58,6 @@ up.
 -  Set the correct permission on the backup path: ``chown zextras:zextras
    /opt/zextras/backup/zextras``
 
-.. _img-backup-console:
-
-.. figure:: /img/backup/ui.png
-   :alt: |backup| Admin Console
-
-   |backup| Admin Console
-
-.. topic:: :octicon:`comment` Basic Customisation of Backup
-              
-   You can optionally customise some of the |backup| options that
-   appear in :numref:`img-backup-console`, like the full path for backups,
-   which can be achieved also with the following command.
-
-   .. code:: console
-
-      zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
-
-   .. verify this on new interface
-      - Backup Zimbra customisations. With this option, configuration and
-        other changes made to Zimbra are saved in a separate file named
-        ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
-        represents the date when the backup was created, while ``xx_xx``
-        is an identifier. The archive contains the full configuration of
-        zimbra: crontab, nginx webserver, postfix and antivirus, LDAP
-        connection, Zimbra templates, and more.
-
-   - Enable the :ref:`real_time_scan`, by clicking the
-     :bdg-secondary:`Enable` button in the *RealTime Scanner* box
-
-
-Once you have specified the backup path, it must be initialised, an
-operation that can be done either from the admin console or the
-command line. In the first case, click on the
-:bdg-secondary:`Initialize NOW!` button on the top right corner of
-:numref:`img-backup-console`. From the CLI, initialization is done by
-simply :ref:`starting SmartScan <running_a_smartscan>` for the first
-time: ``zxsuite backup doSmartScan start``
-
 .. hint:: To avoid a flood of notifications about running operations,
    it is suggested to lower the default *Notification level* from
    **Information** to one of **Warning**, **Error**, or **Critical**
@@ -105,8 +67,48 @@ time: ``zxsuite backup doSmartScan start``
 
 .. figure:: /img/backup/notification-level.png
    :alt: |backup| Notification Level
+   :width: 95%
 
    |backup| Notification Level
+
+.. topic:: :octicon:`comment` Basic Customisation of Backup
+              
+   You can optionally customise some of the |backup| options that
+   appear in :numref:`img-backup-console`. including
+
+   - The full path for backups, which can be achieved also with the
+     following command.
+
+     .. code:: console
+
+	zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
+
+     After defining the backup path, it must be initialised: simply
+     simply :ref:`start SmartScan <running_a_smartscan>`, either from
+     the admin console or the command line.
+     
+   .. verify this on new interface
+      - Backup Zimbra customisations. With this option, configuration and
+        other changes made to Zimbra are saved in a separate file named
+        ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
+        represents the date when the backup was created, while ``xx_xx``
+        is an identifier. The archive contains the full configuration of
+        zimbra: crontab, nginx webserver, postfix and antivirus, LDAP
+        connection, Zimbra templates, and more.
+
+   - Enable the :ref:`smartscan` and its scheduling
+
+   - Change the :ref:`retention_policy`
+
+     
+   .. _img-backup-console:
+
+   .. figure:: /img/backup/ui.png
+      :alt: |backup| Admin Console
+      :width: 95%
+
+      |backup| Admin Console
+
 
 .. _backup-architecture:
 
@@ -482,7 +484,6 @@ have been deleted within a specific time frame.
 Even if the blob associated to the item changes, and consequently its
 digest changes too (as happens for |file| Document), the metadata records
 the validity of the old and the new digest.
-
 
 .. _smartscan:
 
