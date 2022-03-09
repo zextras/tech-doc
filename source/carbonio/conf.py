@@ -85,8 +85,7 @@ html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
 html_theme_options = {
-      'analytics_id': 'UA-23692145-1', 
-      'analytics_anonymize_ip': False,
-#     'sticky_navigation': True,
-#     'logo_only': True
+    'analytics_id': 'UA-23692145-1',
+    'analytics_anonymize_ip': False,
+    'collapse_navigation': False,
 }

@@ -161,3 +161,9 @@ legend {
     border: 1px solid  var(--zx-color-magma);
     color: var(--zx-color-magma)
 }
+
+/* make toctree expand button brighter */
+
+.wy-menu-vertical li button.toctree-expand {
+    color: var(--zx-color-ice)
+}
