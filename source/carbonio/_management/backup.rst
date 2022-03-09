@@ -130,7 +130,7 @@ stakeholder is willing to wait to recover its data.
 
 According to these definitions, the ideal acceptable value zero, while
 the realistic values are usually near zero, depending on the size of the
-data. In Zextras, the combination of Real Time Scan and SmartScan
+data. In |product|, the combination of Real Time Scan and SmartScan
 guarantees that both RTO and RPO values are quite low: The Real Time
 Scanner ensures that all metadata changes are recorded as soon as they
 change, while the SmartScan copies all items that have been modified,
@@ -176,7 +176,7 @@ restore:
 
 -  Server settings, i.e., the configuration of each server
 
--  Global settings of Zextras product
+-  Global settings of |product| product
 
 -  Any customizations made to the software (Postfix, Jetty, etc…​)
 
@@ -232,7 +232,7 @@ Scheduling** is enabled in the Administration Console.
 
 .. important:: SmartScan runs at a fixed time—​that can be
    configured—​on a daily basis and is not deferred. This implies that,
-   if for any reason (like e.g., the server is turned off, or Zextras
+   if for any reason (like e.g., the server is turned off, or |carbonio|
    is not running), SmartScan does **not run**, it will **not run**
    until the next day. You may however configure the Backup to run the
    SmartScan every time |carbonio| is restarted (although this is
@@ -322,7 +322,7 @@ important files and directories are present:
       according to their ID’s last two digits
 
 -  ``servers`` is a directory that contains archives of the server
-   configuration and customisations, Zextras configuration and of the
+   configuration and customisations, |product| configuration and of the
    chat, one per day up to the configured server retention time.
 
 -  ``items`` is a directory containing up to 4096 additional folders,
@@ -350,7 +350,7 @@ Setting the Backup Path
 
 The Backup Path can be set both via GUI and via CLI:
 
-- Via GUI: in the "Backup" section of the Zextras Administration
+- Via GUI: in the "Backup" section of the |carbonio| Administration
   Console, under "Backup Path".
 
 - Via CLI: using the `zxsuite config server <zxsuite_config_server>`
@@ -816,7 +816,7 @@ discuss those cases here.
 #. When using the **POP3/POP3S** protocol, if the email client is
    configured to download email messages and delete them immediately
    from the server, these messages may not be included in the backup.
-   This does not happen if the Zextras Powerstore component is
+   This does not happen if the |carbonio| Powerstore component is
    installed.
 
 #. When sending an email directly through an SMTP connection (e.g.,
@@ -1111,7 +1111,7 @@ External storages
 -----------------
 
 Supported external volumes, i.e. shared volumes mounted either at the OS
-level, or object storage entirely managed by Zextras, are of two types:
+level, or object storage entirely managed by |carbonio|, are of two types:
 NFS or Fuse external volumes, which are described in the remainder of
 this section.
 
@@ -1129,7 +1129,7 @@ one.
 .. card:: Single server installation
 
    When NFS shares are used, you need to make them visible and accessible
-   to the OS and Zextras, a task that only requires to add a row in
+   to the OS and |carbonio|, a task that only requires to add a row in
    ``/etc/fstab`` with the necessary information to mount the volume, for
    example, to mount volume /media/mailserver/backup/ from a NAS located at
    192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line similar
@@ -1169,10 +1169,10 @@ one.
 External ObjectStorage
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Before using an ObjectStorage, a dedicated Zextras bucket must be
+Before using an ObjectStorage, a dedicated |carbonio| bucket must be
 created.
 
-While similar in concept, |backup| and Zextras Powerstore buckets
+While similar in concept, |backup| and |carbonio| Powerstore buckets
 are not compatible with each other. If Powerstore data is stored in a
 bucket it is not possible to store Backup data on the same bucket and
 vice-versa.
@@ -1202,13 +1202,13 @@ reports the bucket usage, for example::
    usage in external backup
                      server: server2
 
-Since each Zextras Bucket is identified by a prefix, you can use the
-combination of  bucket credentials and Zextras bucket prefix to
-uniquely identify and store multiple Zextras Buckets within a single ObjectStorage
+Since each |carbonio| Bucket is identified by a prefix, you can use the
+combination of  bucket credentials and |carbonio| bucket prefix to
+uniquely identify and store multiple |carbonio| Buckets within a single ObjectStorage
 Bucket.
 
 In other words, the same *Amazon S3 Bucket*, you could define several
-Zextras Buckets, to be used both for Powerstore HSM and Backup
+|carbonio| Buckets, to be used both for Powerstore HSM and Backup
 
 .. _objectstorage_backup_in_a_multi_mailbox_environment:
 
@@ -1256,7 +1256,7 @@ the external storage.
 
    1. Double-check the permissions on the active backup path
 
-   2. Make sure that the Zextras cache folder is accessible by the
+   2. Make sure that the |carbonio| cache folder is accessible by the
       ``zextras`` user (typically under ``/opt/zextras/cache``)
 
    3. Check for table errors in the myslow.log and in the MariaDb integrity
