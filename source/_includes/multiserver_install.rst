@@ -26,13 +26,14 @@ environment, composed by **five nodes** as follows:
    .. note:: The **Logger node** must be unique within a |product|
       infrastructure!
 
-In addition to the listed services, an additional functionality (Mesh)
-adds fault detection and dynamic routing between components of the
-infrastructure.
+In addition to the listed services, an additional functionality
+(|mesh|) adds fault detection and dynamic routing between components
+of the infrastructure.
 
 While your set up may vary, it is important that you install on each
 node the packages that provide the service(s) you want to run to each
-node.
+node. As an example, you can have MTA and Directory-Server installed
+on the same node.
 
 In our scenario, we use 5 nodes equipped with Ubuntu 20.04 LTS.
 
@@ -69,14 +70,10 @@ There are no additional requirements, just a few remarks:
 * The Store and Logger nodes expose their services on port
   **8080**. This setting can **not** be changed.
 
-.. div:: sd-fs-5
-
-   :octicon:`gear` Package Installation
-
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Install packages
+   :octicon:`gear` Install packages
    ^^^^
 
    On each node, different packages should be installed.
@@ -114,14 +111,10 @@ There are no additional requirements, just a few remarks:
 
         # apt install service-discover-agent carbonio-appserver carbonio-logger -y
 
-.. div:: sd-fs-5
-
-   :octicon:`gear` Nodes and Services Configuration
-
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Configure Nodes
+   :octicon:`gear` Configure Nodes
    ^^^^
 
    After the installation has successfully completed, it is necessary to
@@ -167,120 +160,26 @@ There are no additional requirements, just a few remarks:
 
    * Logger node: configure the MTA address
 
-   Moreover, the Logger node needs a specific configuration, as its
-   purpose is to collect all *log files* from the other nodes.
+   The **Logger node** requires a specific configuration and setup
+   that is described in section :ref:`logger_node_config`. 
 
-   Open file :file:`/etc/rsyslog.conf`, find the following lines and
-   uncomment them.
+At this point, the nodes have been configured and the installation has
+been completed.
 
-   .. code::
+It is however required to configure the *services* running on the
+nodes before actually finalise the installation and start using
+|product|: the two tasks needed are to :ref:`update_ssh_keys` and to
+setup |mesh| for :ref:`mesh_multi_install`
 
-      $ModLoad imudp
-      $UDPServerRun 514
-
-      $ModLoad imtcp
-      $TCPServerRun 514
-
-   Then, restart the ``rsyslog`` service.
-
-   .. code:: bash
-
-      # systemctl restart rsyslog
-
-   and finally initialise the logging service on all nodes.
-
-   .. code:: bash
-
-      # su - zextras "/opt/zextras/libexec/zmloggerinit"
-
-   Once the Logger node has properly been initialised, on **all other
-   nodes**, execute
-
-   .. code:: bash
-
-      # /opt/zextras/libexec/zmsyslogsetup  && service rsyslog restart
-
+   
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Configure Services
+   :octicon:`thumbsup` Complete Installation
    ^^^^
 
-   To guarantee the connection of the nodes and the exchange of data between them,
-   it is necessary that they are able to communicate via SSH.
-   This can be achieved by issuing:
-
-   .. code:: bash
-
-      # su - zextras "/opt/zextras/bin/zmupdateauthkeys"
-
-   |product| ships with a service-discover/mesh-service based on Consul,
-   which needs to be manually configured to allow the nodes to
-
-   * define the bind address of the service, which must be reachable by
-     all the other nodes
-
-   * define the password to be used to encrypt the cluster credential
-
-   To properly set up |mesh|, a few steps are necessary.
-
-   #. On the Directory-Server node, run
-
-      .. code:: console
-
-         # service-discover setup $(hostname -i) --password=<MY_SECURE_PASSWORD>
-
-      .. hint:: Replace *<MY_SECURE_PASSWORD>* with a
-         strong enough password.
-
-      This command will:
-
-      * find the hostname IP address (:command:`hostname -i`)
-
-      * set the **cluster credential password** to
-        ``MY_SECURE_PASSWORD``. It is used for setups, management, and
-        to access the administration GUI. See section :ref:`mesh-gui`
-        for more information.
-
-      .. warning:: If this password is lost, it becomes necessary to
-         start over the whole setup of |mesh|, therefore make sure to
-         store the password in a safe place (like e.g., a password
-         manager).
-
-   #. The outcome of the previous command is a GPG key that you need
-      to copy to all other nodes as follows.
-
-      .. note:: Replace ``proxy``, ``mta``, ``store``, and ``logger``
-         with the correct hostname or IP address of the nodes
-
-      .. code:: console
-
-         # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg proxy:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-         # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg mta:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-         # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg store:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-         # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg logger:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-   #. Execute the ``setup`` on all the other nodes:
-
-      .. code:: console
-
-         # service-discover setup $(hostname -i) --password=<MY_SECURE_PASSWORD>
-
-      Make sure you use the same password used in the first step.
-
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Complete Installation
-   ^^^^
-
-   At this point, configuration and set up of all nodes has been done,
-   but the services that interact with |mesh| may need to be
-   initialised. On each server, execute the following command, which will
-   make sure that |mesh| is initialised and all services can operate
+   To complete the installation, execute the following command *On
+   each server*, which will make sure that all services can operate
    flawlessly.
 
    .. code:: console
@@ -298,12 +197,8 @@ There are no additional requirements, just a few remarks:
 
       # systemctl enable carbonio
 
-.. div:: sd-fs-5
-
-   :octicon:`thumbsup`  Installation Complete
-
-Installation is now complete, you can access |product|\ 's graphic
-interface as explained in section :ref:`multiserver-web-access`.
+   Installation is now complete, you can access |product|\ 's graphic
+   interface as explained in section :ref:`multiserver-web-access`.
 
 .. _multiserver-web-access:
 

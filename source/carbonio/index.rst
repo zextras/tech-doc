@@ -7,33 +7,55 @@
  Welcome to |carbonio| Documentation!
 ********************************************
 
-.. rubric:: |carbonio| Technical Documentation
+This is the documentation of |carbonio| The full private e-mail and
+collaboration platform.
 
-This is the documentation of |carbonio|.
+Details on the functionalities can be found in :doc:`general`,
+requirements and directions for installation in :doc:`installation`,
+common management tasks are described in :doc:`management`,
+administration tasks in :doc:`administration`, while more technical
+and less commonly used tasks in :doc:`deep-view`.
+
+Finally, instructions to guide users in daily tasks are contained in
+:doc:`usage`.
 
 |ce| has a `dedicated page <../../carbonio-ce/html/index.html>`_.
 
-.. toctree::
-   :maxdepth: 2
-   :caption:  Install:
+.. grid::
+   :gutter: 3
 
-   general
-   installation
-   uninstall
+   .. grid-item-card::
+      :columns: 4
+      :class-header: sd-font-weight-bold sd-fs-5
 
+      .. toctree::
+	 :maxdepth: 2
+	 :caption: Install:
 
-.. toctree::
-   :maxdepth: 2
-   :caption:  Admin:
-   :includehidden:
+	 general
+	 installation
+	 uninstall
 
-   administration
-   management
-   deep-view
+   .. grid-item-card::
+      :columns: 4
+      :class-header: sd-font-weight-bold sd-fs-5
 
-.. toctree::
-   :maxdepth: 2
-   :caption:  Use:
+      .. toctree::
+	 :maxdepth: 2
+	 :includehidden:
+	 :caption: Admin:
 
-   usage
-   mobileapps
+	 administration
+	 management
+	 deep-view
+
+   .. grid-item-card::
+      :columns: 4
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+	 :maxdepth: 2
+	 :caption: Use:
+
+	 usage
+	 mobileapps

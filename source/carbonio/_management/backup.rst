@@ -58,44 +58,6 @@ up.
 -  Set the correct permission on the backup path: ``chown zextras:zextras
    /opt/zextras/backup/zextras``
 
-.. _img-backup-console:
-
-.. figure:: /img/backup/ui.png
-   :alt: |backup| Admin Console
-
-   |backup| Admin Console
-
-.. topic:: :octicon:`comment` Basic Customisation of Backup
-              
-   You can optionally customise some of the |backup| options that
-   appear in :numref:`img-backup-console`, like the full path for backups,
-   which can be achieved also with the following command.
-
-   .. code:: console
-
-      zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
-
-   .. verify this on new interface
-      - Backup Zimbra customisations. With this option, configuration and
-        other changes made to Zimbra are saved in a separate file named
-        ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
-        represents the date when the backup was created, while ``xx_xx``
-        is an identifier. The archive contains the full configuration of
-        zimbra: crontab, nginx webserver, postfix and antivirus, LDAP
-        connection, Zimbra templates, and more.
-
-   - Enable the :ref:`real_time_scan`, by clicking the
-     :bdg-secondary:`Enable` button in the *RealTime Scanner* box
-
-
-Once you have specified the backup path, it must be initialised, an
-operation that can be done either from the admin console or the
-command line. In the first case, click on the
-:bdg-secondary:`Initialize NOW!` button on the top right corner of
-:numref:`img-backup-console`. From the CLI, initialization is done by
-simply :ref:`starting SmartScan <running_a_smartscan>` for the first
-time: ``zxsuite backup doSmartScan start``
-
 .. hint:: To avoid a flood of notifications about running operations,
    it is suggested to lower the default *Notification level* from
    **Information** to one of **Warning**, **Error**, or **Critical**
@@ -105,8 +67,48 @@ time: ``zxsuite backup doSmartScan start``
 
 .. figure:: /img/backup/notification-level.png
    :alt: |backup| Notification Level
+   :width: 95%
 
    |backup| Notification Level
+
+.. topic:: :octicon:`comment` Basic Customisation of Backup
+              
+   You can optionally customise some of the |backup| options that
+   appear in :numref:`img-backup-console`. including
+
+   - The full path for backups, which can be achieved also with the
+     following command.
+
+     .. code:: console
+
+	zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
+
+     After defining the backup path, it must be initialised: simply
+     simply :ref:`start SmartScan <running_a_smartscan>`, either from
+     the admin console or the command line.
+     
+   .. verify this on new interface
+      - Backup Zimbra customisations. With this option, configuration and
+        other changes made to Zimbra are saved in a separate file named
+        ``customizations_dd_mm_yyy#xx_xx.tar.gz``. Here, ``dd_mm_yyy``
+        represents the date when the backup was created, while ``xx_xx``
+        is an identifier. The archive contains the full configuration of
+        zimbra: crontab, nginx webserver, postfix and antivirus, LDAP
+        connection, Zimbra templates, and more.
+
+   - Enable the :ref:`smartscan` and its scheduling
+
+   - Change the :ref:`retention_policy`
+
+     
+   .. _img-backup-console:
+
+   .. figure:: /img/backup/ui.png
+      :alt: |backup| Admin Console
+      :width: 95%
+
+      |backup| Admin Console
+
 
 .. _backup-architecture:
 
@@ -128,7 +130,7 @@ stakeholder is willing to wait to recover its data.
 
 According to these definitions, the ideal acceptable value zero, while
 the realistic values are usually near zero, depending on the size of the
-data. In Zextras, the combination of Real Time Scan and SmartScan
+data. In |product|, the combination of Real Time Scan and SmartScan
 guarantees that both RTO and RPO values are quite low: The Real Time
 Scanner ensures that all metadata changes are recorded as soon as they
 change, while the SmartScan copies all items that have been modified,
@@ -174,7 +176,7 @@ restore:
 
 -  Server settings, i.e., the configuration of each server
 
--  Global settings of Zextras product
+-  Global settings of |product| product
 
 -  Any customizations made to the software (Postfix, Jetty, etc…​)
 
@@ -230,7 +232,7 @@ Scheduling** is enabled in the Administration Console.
 
 .. important:: SmartScan runs at a fixed time—​that can be
    configured—​on a daily basis and is not deferred. This implies that,
-   if for any reason (like e.g., the server is turned off, or Zextras
+   if for any reason (like e.g., the server is turned off, or |carbonio|
    is not running), SmartScan does **not run**, it will **not run**
    until the next day. You may however configure the Backup to run the
    SmartScan every time |carbonio| is restarted (although this is
@@ -320,7 +322,7 @@ important files and directories are present:
       according to their ID’s last two digits
 
 -  ``servers`` is a directory that contains archives of the server
-   configuration and customisations, Zextras configuration and of the
+   configuration and customisations, |product| configuration and of the
    chat, one per day up to the configured server retention time.
 
 -  ``items`` is a directory containing up to 4096 additional folders,
@@ -348,7 +350,7 @@ Setting the Backup Path
 
 The Backup Path can be set both via GUI and via CLI:
 
-- Via GUI: in the "Backup" section of the Zextras Administration
+- Via GUI: in the "Backup" section of the |carbonio| Administration
   Console, under "Backup Path".
 
 - Via CLI: using the `zxsuite config server <zxsuite_config_server>`
@@ -482,23 +484,6 @@ have been deleted within a specific time frame.
 Even if the blob associated to the item changes, and consequently its
 digest changes too (as happens for |file| Document), the metadata records
 the validity of the old and the new digest.
-
-.. _backup_of_team_database:
-
-Backup of |team| Database
--------------------------
-
-.. does this apply to carbonio as well?
-
-:ref:`chats-mod` is an instant messaging platform with a number of
-features, including file sharing, Web conferencing, and more.  Since
-|team| keeps track of everything (uploaded files, chat, and so on), its
-database can grow quickly to a large size: This slows down any Backup
-operations and is not usable for a restore operation.
-
-For this reason, the backup of |team|\ 's DB has been disabled by default.
-An Administrator may enable it, in theory, **but only after having
-contacted beforehand a TSE** (Technical Support Engineer).
 
 .. _smartscan:
 
@@ -831,7 +816,7 @@ discuss those cases here.
 #. When using the **POP3/POP3S** protocol, if the email client is
    configured to download email messages and delete them immediately
    from the server, these messages may not be included in the backup.
-   This does not happen if the Zextras Powerstore component is
+   This does not happen if the |carbonio| Powerstore component is
    installed.
 
 #. When sending an email directly through an SMTP connection (e.g.,
@@ -1126,7 +1111,7 @@ External storages
 -----------------
 
 Supported external volumes, i.e. shared volumes mounted either at the OS
-level, or object storage entirely managed by Zextras, are of two types:
+level, or object storage entirely managed by |carbonio|, are of two types:
 NFS or Fuse external volumes, which are described in the remainder of
 this section.
 
@@ -1144,7 +1129,7 @@ one.
 .. card:: Single server installation
 
    When NFS shares are used, you need to make them visible and accessible
-   to the OS and Zextras, a task that only requires to add a row in
+   to the OS and |carbonio|, a task that only requires to add a row in
    ``/etc/fstab`` with the necessary information to mount the volume, for
    example, to mount volume /media/mailserver/backup/ from a NAS located at
    192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line similar
@@ -1179,56 +1164,58 @@ one.
 
       192.168.72.16:/externalStorage/Server3 /mnt/backup nfs rw,hard,intr  0 0
 
-.. _s3_external_storage:
+.. _external_objectstorage:
 
-S3 external storage
-~~~~~~~~~~~~~~~~~~~
+External ObjectStorage
+~~~~~~~~~~~~~~~~~~~~~~
 
-Before using an ObjectStorage, a dedicated Zextras bucket must be
+Before using an ObjectStorage, a dedicated |carbonio| bucket must be
 created.
 
-While similar in concept, |backup| and Zextras Powerstore buckets
+While similar in concept, |backup| and |carbonio| Powerstore buckets
 are not compatible with each other. If Powerstore data is stored in a
 bucket it is not possible to store Backup data on the same bucket and
 vice-versa.
 
-The `zxsuite core listBuckets <zxsuite_core_listBuckets>` command
-reports the bucket usage, for example::
+.. topic:: How to check a bucket's usage.
 
-   bucketName                                                  hsm
-   protocol                                                    HTTPS
-   storeType                                                   S3
-   accessKey                                                   xxxxx
-   region                                                      EU_WEST_1
-   uuid                                                        58fa4ca2-31dd-4209-aa23-48b33b116090
-   usage in powerstore volumes
+   The `zxsuite core listBuckets <zxsuite_core_listBuckets>` command
+   reports the bucket usage, for example::
+
+     bucketName                                                  hsm
+     protocol                                                    HTTPS
+     storeType                                                   S3
+     accessKey                                                   xxxxx
+     region                                                      EU_WEST_1
+     uuid                                                        58fa4ca2-31dd-4209-aa23-48b33b116090
+     usage in powerstore volumes
                      server: server1                                   volume: centralized-s3
                      server: server2                                   volume: centralized-s3
-   usage in external backup                                    unused
+     usage in external backup                                    unused
 
-   bucketName                                                  backup
-   protocol                                                    HTTPS
-   storeType                                                   S3
-   accessKey                                                   xxxxxxx
-   region                                                      EU_WEST_1
-   destinationPath                                             server2
-   uuid                                                        5d32b50d-79fc-4591-86da-35bedca95de7
-   usage in powerstore volumes                                 unused
-   usage in external backup
+     bucketName                                                  backup
+     protocol                                                    HTTPS
+     storeType                                                   S3
+     accessKey                                                   xxxxxxx
+     region                                                      EU_WEST_1
+     destinationPath                                             server2
+     uuid                                                        5d32b50d-79fc-4591-86da-35bedca95de7
+     usage in powerstore volumes                                 unused
+     usage in external backup
                      server: server2
 
-Since each Zextras Bucket is identified by a prefix, you can use the
-combination of S3 bucket credentials and Zextras bucket prefix to
-uniquely identify and store multiple Zextras Buckets within a single S3
+Since each |carbonio| Bucket is identified by a prefix, you can use the
+combination of  bucket credentials and |carbonio| bucket prefix to
+uniquely identify and store multiple |carbonio| Buckets within a single ObjectStorage
 Bucket.
 
 In other words, the same *Amazon S3 Bucket*, you could define several
-Zextras Buckets, to be used both for Powerstore HSM and Backup
+|carbonio| Buckets, to be used both for Powerstore HSM and Backup
 
-.. _s3_backup_in_a_multi_mailbox_environment:
+.. _objectstorage_backup_in_a_multi_mailbox_environment:
 
-S3 Backup in a multi-mailbox environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStorage Backup in a multi-mailbox environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In multi-mailbox environments, it is not necessary to create multiple
 buckets: You only enter the bucket configuration information when
@@ -1271,7 +1258,7 @@ the external storage.
 
    1. Double-check the permissions on the active backup path
 
-   2. Make sure that the Zextras cache folder is accessible by the
+   2. Make sure that the |carbonio| cache folder is accessible by the
       ``zextras`` user (typically under ``/opt/zextras/cache``)
 
    3. Check for table errors in the myslow.log and in the MariaDb integrity
