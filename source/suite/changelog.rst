@@ -14,7 +14,7 @@ Previous Releases
 
 .. toctree::
 
-   Release 3.8.0 </changelogs/3.9.0.rst>
+   Release 3.9.0 </changelogs/3.9.0.rst>
    Release 3.8.0 </changelogs/3.8.0.rst>
    Release 3.7.0 </changelogs/3.7.0.rst>
    Release 3.6.0 </changelogs/3.6.0.rst>
