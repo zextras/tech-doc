@@ -1,8 +1,7 @@
-.. uncomment in 3.10.0 release
-   
-   Zextras Suite Changelog - Release 3.9.0
-   ========================================
- 
+
+Zextras Suite Changelog - Release 3.9.0
+=======================================
+
    Release Date: January 24th, 2022
 
 .. rubric:: Auth
@@ -33,4 +32,3 @@
 * *Title:* Decoded senders' display name
 
 * *Description:* Android devices can decode the Cyrillic names correctly
-

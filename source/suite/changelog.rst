@@ -1,12 +1,12 @@
 .. _changelogs:
 
-=========================================
- Zextras Suite Changelog - Release 3.9.0
-=========================================
+==========================================
+ Zextras Suite Changelog - Release 3.10.0
+==========================================
 
-Release Date: January 24th, 2022
+Release Date: March 7th, 2022
 
-.. include:: /changelogs/3.9.0.rst
+.. include:: /changelogs/3.10.0.rst
 
 
 Previous Releases
@@ -14,6 +14,7 @@ Previous Releases
 
 .. toctree::
 
+   Release 3.9.0 </changelogs/3.9.0.rst>
    Release 3.8.0 </changelogs/3.8.0.rst>
    Release 3.7.0 </changelogs/3.7.0.rst>
    Release 3.6.0 </changelogs/3.6.0.rst>
