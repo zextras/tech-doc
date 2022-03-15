@@ -121,11 +121,11 @@ environment, |backup| comes with a very handy CLI command::
    Syntax:
       zxsuite backup getServerConfig {standard|customizations} [attr1 value1 [attr2 value2...
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 1 2 
+   :gutter: 1 
 
    .. grid-item-card:: Usage example
-      :columns: 6
+      :columns: 12 12 12 6
 
       ``zxsuite backup getserverconfig standard date last``
          Display the latest backup data for Server and Global
@@ -144,7 +144,7 @@ environment, |backup| comes with a very handy CLI command::
          Display the latest backed up configurations
 
    .. grid-item-card:: Advanced usage
-      :columns: 6
+      :columns: 12 12 12 6
 
       Change the ``query`` argument to display specific settings
 
@@ -298,7 +298,6 @@ There are different possible causes, the most common of which are:
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 4
                 
       Read Error
       ^^^^
@@ -307,7 +306,6 @@ There are different possible causes, the most common of which are:
       an I/O exception or a permission issue.
 
    .. grid-item-card::
-      :columns: 4
 
       Broken item
       ^^^^
@@ -316,7 +314,6 @@ There are different possible causes, the most common of which are:
       |backup| but their content is broken/corrupted.
 
    .. grid-item-card::
-      :columns: 4
 
       Invalid item
       ^^^^
@@ -334,11 +331,11 @@ The first way can be used to search for the item within the
 backup/import path, and the second can be used to view the items in the
 source server.
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card:: Using the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
 
       The comma separated list of unrestored items displayed in the
@@ -362,7 +359,7 @@ source server.
          ``Tasks``.
 
    .. grid-item-card:: Using the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       The `getItem <zxsuite_backup_getItem>` CLI command can display an item and the related
       metadata, extracting all information from a backup path/external backup.
@@ -394,11 +391,11 @@ tricks that can be helpful when dealing with different kinds of
 unrestorable items.
 
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 1 2 
+   :gutter: 1
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Items Not Restored because of a Read Error
       ^^^^
@@ -434,7 +431,7 @@ unrestorable items.
         option.
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Items Not Restored because Identified as Invalid Items
       ^^^^      
@@ -895,11 +892,11 @@ applied immediately.
 Operation Queue Management
 --------------------------
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 1 2
+   :gutter: 1
 
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       * Viewing the Queue
 
@@ -922,7 +919,7 @@ Operation Queue Management
         button.
 
    .. grid-item-card:: Through the CLI
-      :columns: 6
+      :columns: 12 12 12 6
                 
       * Viewing the Queue
 

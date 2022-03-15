@@ -21,41 +21,41 @@ Finally, instructions to guide users in daily tasks are contained in
 
 |ce| has a `dedicated page <../../carbonio-ce/html/index.html>`_.
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 2 2 3
+   :gutter: 2
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 6 6 4
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	 :maxdepth: 2
-	 :caption: Install:
+         :maxdepth: 2
+         :caption: Install:
 
-	 general
-	 installation
-	 uninstall
+         general
+         installation
+         uninstall
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 6 6 4
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	 :maxdepth: 2
-	 :includehidden:
-	 :caption: Admin:
+         :maxdepth: 2
+         :includehidden:
+         :caption: Admin:
 
-	 administration
-	 management
-	 deep-view
+         administration
+         management
+         deep-view
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 6 6 4
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	 :maxdepth: 2
-	 :caption: Use:
+         :maxdepth: 2
+         :caption: Use:
 
-	 usage
-	 mobileapps
+         usage
+         mobileapps

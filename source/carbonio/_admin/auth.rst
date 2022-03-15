@@ -47,11 +47,11 @@ Supported Authentication Methods
 
 - Credential Management by CLI
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 2 3
+   :gutter: 1
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       Self Service Credentials Management
       ^^^^^
@@ -68,7 +68,7 @@ Supported Authentication Methods
       :ref:`auth-user`.
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       SAML
       ^^^^
@@ -111,7 +111,7 @@ Supported Authentication Methods
       in |product| is described in Section :ref:`auth_set_up_saml`.
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       Two Factor Authentication
       ^^^^^
@@ -170,11 +170,11 @@ In order to enable the authentication strategies available in
 .. note:: It is not necessary to enable all of them, simply configure
    the one you need in your infrastructure.
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 2 4
+   :gutter: 1
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       QR Code Requirements
       ^^^^
@@ -193,7 +193,7 @@ In order to enable the authentication strategies available in
       properties.
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       2FA Requirements
       ^^^^
@@ -221,7 +221,7 @@ In order to enable the authentication strategies available in
          not compatible with other mechanism such as ldap, ad or kerberos5
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       SAML Requirements
       ^^^^
@@ -325,11 +325,11 @@ If you need to manually edit the SAML configuration, you need to
 follow this 4-step procedure. In a nutshell, you need to export the
 default SAML settings, modify them, then save and import them back.
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Step 1. Export the default SAML settings
       ^^^^^
@@ -341,7 +341,7 @@ default SAML settings, modify them, then save and import them back.
          zxsuite auth saml get example.com export_to /tmp/saml.json
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Step 2. Modify :file:`/tmp/saml.json`
       ^^^^^
@@ -357,7 +357,7 @@ default SAML settings, modify them, then save and import them back.
       - ``nameidformat``
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Step 3. Check modified  :file:`/tmp/saml.json`
       ^^^^^
@@ -407,7 +407,7 @@ default SAML settings, modify them, then save and import them back.
       they are omitted for clarity.
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Step 4. Save the changes
       ^^^^^^

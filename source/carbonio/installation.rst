@@ -11,11 +11,11 @@ whole page before attempting to install.
 System Requirements
 ===================
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 2
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Hardware requirements
       ^^^^^
@@ -24,10 +24,12 @@ System Requirements
 
 	      "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
 	      "RAM", "8 Gb"
-	      "Disk space (Operating system and Carbonio CE)", "40 Gb"
+	      "Disk space\ :sup:`§` ", "40 Gb"
+
+      :sup:`§` Operating system and Carbonio CE
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Supported Virtualization Platforms
       ^^^^^
