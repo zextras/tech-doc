@@ -551,3 +551,5 @@ these steps.
 
 
 .. include:: /_includes/multiserver_install.rst
+
+.. include:: /_includes/update.rst
