@@ -60,14 +60,29 @@ Troubleshooting
    .. grid-item-card:: Solution:
       
       This is a known problem, fixed in **4.0.4**, for which the following
-      workaround exists: install package `carbonio-ce`, then upgrade and
-      remove old packages. In other words, run::
+      workaround exists: install package `carbonio-ce` (or the one
+      that failed)::
 
         # apt install carbonio-ce
-        # apt upgrade
+
+      Make sure that the `carbonio-core` package is installed and is
+      the **latest version** available::
+        
+        # apt policy carbonio-core
+
+      The outcome of the command shows the available versions of a
+      package and should include three asterisks (``***``) before the
+      latest available version. If not, install the package::
+
+        # apt install carbonio-core
+
+      Once installed, if a message appears, that some packages are not
+      needed anymore, execute::
+
         # apt autoremove
 
-      The manual installation of the **carbonio-ce** package does not have
-      any effect on the existing configurations.
+      It is worth noticing that the manual installation of the package
+      does not have any effect on its existing configurations, so you
+      can proceed without any fear to lose them.
 
 
