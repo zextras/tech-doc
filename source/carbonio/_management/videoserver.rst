@@ -50,11 +50,11 @@ Requirements
 The |vs| must be installed on a **dedicated server** and has the
 following requirements:
 
-.. grid::
+.. grid:: 1 1 2 3
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
                 
       System
       ^^^^^
@@ -70,7 +70,7 @@ following requirements:
          and power means more connected users.
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
                 
       Network
       ^^^^^
@@ -89,7 +89,7 @@ following requirements:
       -  WebSockets
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       Ports
       ^^^^
@@ -243,11 +243,11 @@ removal on the video server is required).
 Bandwidth and Codecs
 --------------------
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 2 4
+   :gutter: 2
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       Video Bandwidth
       ^^^^^
@@ -270,7 +270,7 @@ Bandwidth and Codecs
          are set to 200 Kbps.
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       Video Codecs
       ^^^^
@@ -308,7 +308,7 @@ Bandwidth and Codecs
          ``zxsuite config global set attribute teamChatVideoCodecH264 value true``
 
    .. grid-item-card::
-      :columns: 4
+      :columns: 12 12 6 4
 
       Audio Codec
       ^^^^
@@ -329,11 +329,11 @@ Advanced settings
 
 The following settings influence the audio experience.
 
-.. grid::
+.. grid:: 1 1 2 2
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 6 6
 
       Audio Quality
       ^^^^
@@ -354,7 +354,7 @@ The following settings influence the audio experience.
       -  48000 → represents the fullband bandwidth
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 6 6
 
       Audio Sensitivity
       ^^^^

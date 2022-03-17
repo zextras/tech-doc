@@ -212,16 +212,16 @@ restored this way.
 Running a Single Item Restore
 -----------------------------
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
             
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
                 
       Item Restore is only available through the CLI.
 
    .. grid-item-card:: Via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start an Item Restore operation, use the
       `doItemRestore <zxsuite_backup_doItemRestore>` command.
@@ -276,11 +276,11 @@ restored items will be created in the current primary store unless the
 Running a Restore on New Account
 --------------------------------
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
             
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       A Restore on New Account can be used in two scenarios:
 
@@ -321,7 +321,7 @@ Running a Restore on New Account
       Click ``Finish`` to start the restore.
 
    .. grid-item-card:: Via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start a Restore on New Account via the CLI, use the
       `doRestoreOnNewAccount <zxsuite_backup_doRestoreOnNewAccount>` command.
@@ -388,11 +388,11 @@ called ``unknown_XX``.
 Running a Time-range Undelete
 -----------------------------
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       -  Select ``Accounts`` in the left pane of the Administration Console to
          show the Accounts List.
@@ -417,7 +417,7 @@ Running a Time-range Undelete
       -  Click ``Finish`` to start the Restore.
 
    .. grid-item-card:: Via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start a Time-range Undelete operation, use the
       `zxsuite backup doUndelete <zxsuite_backup_doUndelete>` command.
@@ -608,11 +608,11 @@ the External Restore, you can implement the following suggestions.
 Running an External Restore
 ---------------------------
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       -  Click the |backup| tab.
 
@@ -633,7 +633,7 @@ Running an External Restore
          user who started the restore procedure are notified by default.
 
    .. grid-item-card:: Via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start an External Restore operation, use the
       `doExternalRestore <zxsuite_backup_doExternalRestore>`

@@ -73,11 +73,11 @@ The most common tasks that can be carried out in Files are:
    interface has a common search/create object functionality -- see
    :doc:`usage`
 
-.. grid::
+.. grid:: 1 2 2 4 
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 3
+      :columns: 12 6 4 3
 
       Upload and Download
       ^^^^
@@ -95,7 +95,7 @@ The most common tasks that can be carried out in Files are:
         the context menu.
 
    .. grid-item-card::
-      :columns: 3
+      :columns: 12 6 4 3
 
       .. this must be reviewed in new UI
 
@@ -127,7 +127,7 @@ The most common tasks that can be carried out in Files are:
          Items marked for deletion
 
    .. grid-item-card::
-      :columns: 3
+      :columns: 12 6 4 3
 
       Folder Creation
       ^^^^
@@ -141,7 +141,7 @@ The most common tasks that can be carried out in Files are:
          :octicon:`dash` Percent sign ``%``
 
    .. grid-item-card::
-      :columns: 3
+      :columns: 12 6 4 3
 
       .. review sharing options and functions
 
@@ -167,7 +167,7 @@ The most common tasks that can be carried out in Files are:
       to share one of its items with "View" rights with the same person.
 
    .. grid-item-card::
-      :columns: 3
+      :columns: 12 6 4 3
 
       Item Deletion
       ^^^^
@@ -193,7 +193,7 @@ The most common tasks that can be carried out in Files are:
       or to stop the attempt and leave it as marked for deletion.
 
    .. grid-item-card::
-      :columns: 3
+      :columns: 12 6 4 3
 
       InfoBox
       ^^^^
@@ -221,7 +221,7 @@ The most common tasks that can be carried out in Files are:
       -  A customizable "Description" field
 
    .. grid-item-card::
-      :columns: 3
+      :columns: 12 6 4 3
 
       File Versioning
       ^^^^

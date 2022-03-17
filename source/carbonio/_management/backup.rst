@@ -552,11 +552,11 @@ When is a SmartScan Executed?
 Running a SmartScan
 -------------------
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 1 2
+   :gutter: 1
 
    .. grid-item-card:: Starting the Scan via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start a SmartScan via the Administration Console,
 
@@ -570,7 +570,7 @@ Running a SmartScan
       -  Click  :bdg-secondary:`Run Smartscan`
 
    .. grid-item-card:: Starting the SmartScan via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start a SmartScan via the CLI, use the `zxsuite backup
       doSmartScan <zxsuite_backup_doSmartScan>` command:
@@ -633,11 +633,11 @@ Managing the Real Time Scanner
 Enabling the Real Time Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       -  Select the |backup| Tab.
 
@@ -651,7 +651,7 @@ Enabling the Real Time Scanner
       .. _via_the_cli:
 
    .. grid-item-card:: Via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To enable the Real Time Scanner via the CLI, the
       ``ZxBackup_RealTimeScanner`` property of the |backup| module must
@@ -664,11 +664,11 @@ Enabling the Real Time Scanner
 Disabling the Real Time Scanner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       -  Select the |backup| Tab.
 
@@ -677,7 +677,7 @@ Disabling the Real Time Scanner
       .. _via_the_cli_2:
 
    .. grid-item-card:: Via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To disable the Real Time Scanner via the CLI, the
       ``ZxBackup_RealTimeScanner`` property of the |backup| module must
@@ -757,11 +757,11 @@ item will ever exceed the retention time.
 Running a Backup Purge
 ----------------------
 
-.. grid::
-   :gutter: 3
+.. grid:: 1 1 1 2
+   :gutter: 2
 
    .. grid-item-card:: Via the Administration Console
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start a BackupPurge via the Administration Console:
 
@@ -772,7 +772,7 @@ Running a Backup Purge
         UI.
 
    .. grid-item-card:: Via the CLI
-      :columns: 6
+      :columns: 12 12 12 6
 
       To start a BackupPurge via the CLI, use the
       `zxsuite backup doPurge <zxsuite_backup_doPurge>` command:
@@ -920,7 +920,7 @@ configuration.
 
 To fix the problem, follow this three step procedure.
 
-.. grid::
+.. grid:: 
    :gutter: 3
             
    .. grid-item-card::
