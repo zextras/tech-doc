@@ -8,11 +8,11 @@ to `grant`, `edit` and `revoke` Domain Admin rights to a user. These
 can be performed from the CLI, by running the appropriate command as
 the ``zextras`` user and are summarised below.
 
-.. grid::
+.. grid:: 1 1 2 2
    :gutter: 3
 
    .. grid-item:: **Grant Rights**
-      :columns: 4
+      :columns: 12 12 12 6 
 
       To grant Delegated Admin rights to a user, use the
       ``doAddDelegationSettings`` command.
@@ -22,7 +22,7 @@ the ``zextras`` user and are summarised below.
          .. include:: /cli/ZxAdmin/zxsuite_admin_doAddDelegationSettings.rst
 
    .. grid-item:: **Edit Rights**
-      :columns: 4
+      :columns: 12 12 12 6
 
       To edit the rights of an existing Delegated Admin, use the
       ``doEditDelegationSettings`` command.
@@ -32,7 +32,7 @@ the ``zextras`` user and are summarised below.
          .. include:: /cli/ZxAdmin/zxsuite_admin_doEditDelegationSettings.rst
 
    .. grid-item:: **Revoke Rights**
-      :columns: 4
+      :columns: 12 12 12 12 
 
       To revoke Delegated Admin rights from a user, use the
       ``doRemoveDelegationSettings`` command:
@@ -110,11 +110,11 @@ filters to the logs you want to browse.
 
 The available filters are:
 
-.. grid::
+.. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Basic filters
       ^^^^
@@ -150,7 +150,7 @@ The available filters are:
 
 
    .. grid-item-card::
-      :columns: 6
+      :columns: 12 12 12 6
 
       Advanced filters
       ^^^^
