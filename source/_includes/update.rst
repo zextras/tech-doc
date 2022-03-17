@@ -16,12 +16,15 @@ In order to upgrade |product|, simply
 
   .. code:: console
 
-     # apt upgrade
+     # apt upgrade 
 
+It is possible to run both commands at once::
+
+  # apt update && apt upgrade
+  
 Indeed, |product| does not need any installer, but whenever new
 versions are released, the repositories are updated and packages are
 available for installation along with the other system updates.
-
 
 .. rubric:: Troubleshooting
 
