@@ -48,3 +48,5 @@ remove old packages. In other words, run::
   # apt upgrade
   # apt autoremove
 
+The manual installation of the **carbonio-ce** package does not have
+any effect on the existing configurations.
