@@ -189,6 +189,14 @@ If any colleague has shared an address book, you can click the
 provide the e-mail address. You will see all the address books shared
 by the user.
 
+.. _chats-mod:
+
+Chats
+=====
+
+The |chats| module, which includes also basic videoconferencing
+functionalities, will soon be available.
+
 .. _files-mod:
 
 Files
