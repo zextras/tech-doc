@@ -194,7 +194,7 @@ by the user.
 Chats
 =====
 
-The |team| module, which includes also basic videoconferencing
+The |team| module, which includes also videoconferencing
 functionalities, will soon be available.
 
 .. _files-mod:
