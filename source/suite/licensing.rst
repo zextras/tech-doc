@@ -31,6 +31,7 @@ Zextras Suite License Plans
    .. grid-item-card::
       :columns: 6
       :class-header: sd-font-weight-bold
+      :class-card: sd-bg-warning
 
       Suite Basic
       ^^^^^
@@ -39,7 +40,8 @@ Zextras Suite License Plans
       Support
       +++++
 
-      **Options**: Upgrade to Zextras Suite Pro
+      **Options**: This plan can not be purchased anymore, but is available
+      for renewals or upgrades of existing licenses **only**.
 
    .. grid-item-card::
       :columns: 6
@@ -75,10 +77,10 @@ Zextras Suite License Plans
 * Discussion Channels
 * A native, mobile app for Android and iOS
 
-.. _trial_mode:
+.. _suite_trial_mode:
 
 Trial Mode
-==========
+----------
 
 If no license is activated, Zextras Suite will run in Trial Mode. All
 the features will be activated for a 30-day period, with some
@@ -95,10 +97,44 @@ the items thereby contained: you will be able to import all items
 regardless of their date as long as those have been exported less than
 30 days ago.
 
-.. _how_to_purchase_a_new_zextras_suite_license:
+.. _zextras-store:
 
-How to purchase a new Zextras Suite license
-===========================================
+The new Zextras Store
+=====================
+
+The new Zextras Store features an improved layout and purchase
+workflow. The main page is the **Customer Corner**, divided into
+`Orders` and `Profile`. The first one, depicted in
+:numref:`figure_store`, displays the history of all orders, while the
+profile contains data about the purchaser, including company
+information, location, contacts, and so on.
+
+.. _figure_store:
+
+.. figure:: /img/store.png
+   :scale: 50%
+
+   The store page
+
+For each order, a number of important information is displayed: the
+unique order ID, type and expiration date, status, and cost. The
+status is either of **COMPLETE**, **PENDING**, **RENEWED**.
+
+Next to each order, a set of icons (see :numref:`figure_store_icons`)
+allows to execute an action for the order.
+
+.. _figure_store_icons:
+
+.. figure:: /img/store-icons.png
+   :scale: 90%
+
+   Available buttons for each order: download receipt, view details,
+   renew, and upgrade.
+
+.. _purchase_new_license:
+
+Purchase a New Zextras Suite License
+====================================
 
 You can buy Zextras Suite directly on our https://store.zextras.com/
 website. Here, you can choose different paths to purchase Zextras
@@ -107,267 +143,140 @@ Sales` require you to fill in a form and send it to be contacted from
 Zextras Sales Department, while the 4-step :bdg-danger:`Direct purchase`
 path is described in the remainder of this section.
 
-- The first choice is the Zextras Suite License Plan: Pro, Basic, or Mobile
+- The first choice is the total number of mailboxes on your Zimbra
+  server (minimum is **10 mailboxes**)
 
-- Then, add the total number of mailboxes on your Zimbra server
-  (minimum is **10 mailboxes**)
+- Then, add the Zextras Suite License Plan: Pro or Mobile
 
-  - If you pick Zextras Suite Pro, you can add Team
-    Pro by ticking the :bdg:`Add Team Pro for __ Accounts`
-    checkbox and select how many account will be able to use Team Pro.
+  - If you pick Zextras Suite Pro, you can add *Team Pro* to your
+    order. You need to choose the number of mailboxes, between **10**
+    (minimum) and the total number of mailboxes you choose.
 
--  Finally, Select the license’s duration: Yearly, Perpetual or Custom
+.. card::
 
-   .. grid::
-      :gutter: 3
+   Important notes
+   ^^^^^
 
-      .. grid-item-card::  Yearly
-         :columns: 4
+   * All the purchased license are **Yearly** subscription and are
+     valid for 365 days since the purchase date and includes ongoing
+     access to upgrades and support.
 
-         - Valid for 365 days since the purchase
+   * The maximum number of mailboxes that can be purchased online
+     is 2500. Orders exceeding 2500 mailboxes qualify for a custom
+     quotation so, `contact the Sales Team
+     <https://www.zextras.com/contact-us>`__.
 
-         - Ongoing access to upgrades and support
+   * If your current plan is *Perpetual*, a license plan that is no
+     longer offered, you will still be able to renew it. Please check
+     section :ref:`extend_perpetual_license` below for directions.
+   
+When you have completed your choice, the overall cost of the licenses
+are displayed and you can check the cost’s details. Pick the payment
+method you prefer and then proceed with the purchase.
 
-      .. grid-item-card::  Perpetual
-         :columns: 4
+.. _plan-options:
 
-         - Access to upgrades and support during maintenance
-           subscription.  If the maintenance subscription has expired,
-           you can keep using the product but you can’t upgrade it or
-           benefit of our support service until you subscribe to
-           maintenance again.
+Options to Modify a License Plan
+================================
 
-      .. grid-item-card:: Custom
-         :columns: 4
+This section explains all the available options to make any changes to
+an existing License Plan, which are :ref:`upgrade_plan`,
+:ref:`change_plan`, :ref:`renew_plan`, or
+:ref:`extend_perpetual_license`.
 
-         - Choose start/end date (Minimum duration: 30 Days; Minimum
-           amount: 25 USD)
+In all cases, in the remainder it is assumed that you are already
+logged in to the **Customer Corner** of your Zextras account. 
 
-         - Ongoing access to upgrades and support
+.. _upgrade_plan:
 
-You will now display the overall cost of the licenses (you can check the
-cost’s details). Pick the payment method you prefer and then proceed
-with the purchase.
+Upgrade a Zextras Suite License Plan
+------------------------------------
 
-.. note:: The maximum number of mailboxes that can be purchased online
-   is 2500. Orders exceeding 2500 mailboxes qualify for a custom
-   quotation so, `contact the Sales Team
-   <https://www.zextras.com/contact-us>`__.
+To upgrade a License Plan means adding some mailboxes and possibly
+extend the duration. To access the upgrade, Select from the *Orders*
+tab the license you want to upgrade by clicking on the *Upgrade* icon.
 
-.. _how_to_add_accounts_on_your_zextras_suite_license:
+Enter the **new total number** of mailboxes. For example, if you
+already have 10 mailboxes and you want to add 5 more, you have to
+insert **15**
 
-How to add accounts on your Zextras Suite License
-=================================================
+Zextras store will automatically calculate and show you the cost of
+the added mailboxes for the residual duration of your current
+license. Pick the payment method you prefer and then proceed with the
+purchase.
 
--  Login to your Zextras Account;
+.. _change_plan:
 
--  Go to “CUSTOMER CORNER”;
+Change a Zextras Suite License Plan
+-----------------------------------
 
--  Select from the Order Tab the license you want to upgrade by clicking
-   on “upgrade”;
+In order to change a License Plan, for example to replace *Zextras
+Suite Mobile* with **Zextras Suite Pro** or add **Team Pro** to
+*Zextras Suite Pro*, you need to fill a form.
 
--  Enter the new total number of mailboxes on your Zimbra server; 1
-   (e.g. if you already have 10 mailboxes and you want to add 5 more,
-   you you have to insert 15);
+.. _renew_plan:
 
-The store will automatically calculate the cost of the added mailboxes
-for the residual duration of your current license.
+Renew a Zextras Suite License Plan
+----------------------------------
 
-You will now display the overall cost of the licenses (you can check the
-cost’s details). Pick the payment method you prefer and then proceed
-with the purchase.
-
-.. _how_to_extend_the_duration_of_your_yearly_or_custom_zextras_suite_license:
-
-How to extend the duration of your Yearly or Custom Zextras Suite License
-=========================================================================
-
--  Login to your Zextras Account;
-
--  Go to “CUSTOMER CORNER”;
-
--  Select from the Order Tab the license you want to extend by clicking
-   on “upgrade”;
+Renewing a license means to extend the duration of the current Plan
+for a one year period. To access the Renewal, select from the *Orders*
+tab the license you want to upgrade by clicking on the *Renew* icon.
 
 In the duration box, select the new expiry date you want to apply.
 
-The store will automatically calculate the residual value of your
-current license and show you the overall cost of the new extended
-license (you can check the cost’s details). Pick the payment method you
-prefer and then proceed with the purchase.
+Zextras Store will automatically calculate and show you the cost of the
+extended Licence Plan. Pick the payment method you prefer and then
+proceed with the purchase.
 
 .. note:: You won’t have to wait the license’s expiry date. You can
    decide to extend it anytime; the system will deduct automatically
-   the residual value of your previous license from the final price.
+   the residual value of your previous license from the final price. 
 
-.. _how_to_extend_the_maintenance_service_of_your_zextras_suite_perpetual_license:
+.. _extend_perpetual_license:
 
-How to extend the Maintenance Service of your Zextras Suite Perpetual License
-=============================================================================
+Add a Maintenance Service to a Perpetual License
+------------------------------------------------
 
--  Log into your Zextras Store Account;
+The Maintenance Service is now **mandatory** for Perpetual Licenses
+too and is **cumulative**.
 
--  Go to "Customer Corner";
+Therefore, you need a valid (i.e., not-expired) Maintenance Service
+subscription to access technical support or to install software
+updates.
 
--  From the "Orders" tab click the "Upgrade" option that appears next to
-   the Perpetual License for which you want to extend the Maintenance
-   Service;
+If your Maintenance Service subscription has already expired, you need
+to pay the Maintenance Service fees for all the missing period,
+starting from the expiring date. To add a Maintenance Service, Select
+from the *Orders* tab the license by clicking on the *Upgrade* icon.
 
--  You will be prompted to the Zextras Online Store where you should see
-   on the right a checkbox that says "Add 1 more year of Maintenance
-   Service";
-
--  Flag the checkbox: at this point the Store will automatically
-   calculate the residual value of the current maintenance service (if
-   the Maintenance Service period has not already lapsed) and deduct it
-   from the final price;
-
--  See the total amount that appears below and check the cart details by
-   clicking on the "Details" option;
-
--  Pick the payment method and finalise the purchase.
-
-Important points to remark for Maintenance renewals:
-
-
-* The Maintenance Service is **not mandatory**. However, after it
-  expires, you will not be able to access Zextras software updates
-  and/or our Technical Support.
-
-* The Maintenance Service fee is **cumulative**: should you seek
-  Technical Support or new software updates when your Maintenance
-  Service subscription has already expired for more than 1 year, you
-  shall pay the Maintenance Service fees for all the years left,
-  starting from the expiring date of the original one.
-
-.. _how_to_upgrade_to_a_different_version_of_zextras_suite:
-
-How to upgrade to a different version of Zextras Suite
-======================================================
-
--  Go to “CUSTOMER CORNER”;
-
--  Select from the Order Tab the license you want to upgrade by clicking
-   on “upgrade”;
-
--  Select the version of Zextras Suite you want
-
-   -  Zextras Suite Mobile can be upgraded to Zextras Suite Pro
-
-   -  Zextras Suite Basic can be upgraded to Zextras Suite Pro
-
-   -  Zextras Suite Pro can be boosted by Team Pro
-
-The store will automatically calculate the residual value of your
-current license and calculate the cost of the new version.
-
-You will now display the overall cost of the licenses (you can check the
-cost’s details). Pick the payment method you prefer and then proceed
-with the purchase.
-
-.. note::
-
-   the minimum amount for upgrading your license is 25 USD.
-
-.. _how_to_upgrade_old_module_to_zextras_suite:
-
-How to upgrade old module to Zextras Suite
-==========================================
-
-The old modules will be converted into the new Zextras Suite as shown in
-the following table.
-
-.. _table_of_migration_license:
-
-Table of migration license
---------------------------
-
-After 7 Aug 2019, installing Zextras Suite 3.x, the existing licenses
-will be upgrades to the new ones according to the following rules:
-
-+----------------------+----------------------+-----------------------+
-| **Licenses purchased | **Licenses from 7    | **License elegible    |
-| before 7 Aug 2019**  | Aug 2019 till        | after 7 Aug 2019**    |
-|                      | license’s expiry     |                       |
-|                      | date**               |                       |
-+----------------------+----------------------+-----------------------+
-| Backup               | Backup               | Suite Basic           |
-+----------------------+----------------------+-----------------------+
-| Powerstore           | Powerstore           | Contact our team      |
-+----------------------+----------------------+-----------------------+
-| Admin                | Admin                | Contact our team      |
-+----------------------+----------------------+-----------------------+
-| Mobile               | Suite Mobile         |                       |
-|                      | (automatically)      |                       |
-+----------------------+----------------------+-----------------------+
-| Backup+Mobile        | Backup+Mobile        | Suite Pro             |
-+----------------------+----------------------+-----------------------+
-| Backup+Powerstore    | Backup+Powerstore    | Suite Basic           |
-+----------------------+----------------------+-----------------------+
-| Backup+Admin         | Backup+Admin         | Suite Basic           |
-+----------------------+----------------------+-----------------------+
-| Back                 | Back                 | Suite Pro             |
-| up+Mobile+Powerstore | up+Mobile+Powerstore |                       |
-+----------------------+----------------------+-----------------------+
-| Bac                  | Bac                  | Suite Basic           |
-| kup+Powerstore+Admin | kup+Powerstore+Admin |                       |
-+----------------------+----------------------+-----------------------+
-| Backup+Mobile+Admin  | Backup+Mobile+Admin  | Suite Pro             |
-+----------------------+----------------------+-----------------------+
-| Mobile+Powerstore    | Mobile+Powerstore    | Contact our team      |
-+----------------------+----------------------+-----------------------+
-| Mobile+Admin         | Mobile+Admin         | Contact our team      |
-+----------------------+----------------------+-----------------------+
-| Mob\                 | Mob\                 | Contact our team      |
-| ile+Powerstore+Admin | ile+Powerstore+Admin |                       |
-+----------------------+----------------------+-----------------------+
-| Powerstore+Admin     | Powerstore+Admin     | Contact our team      |
-+----------------------+----------------------+-----------------------+
-| Suite Bundle         | Suite Pro            |                       |
-|                      | (automatically)      |                       |
-+----------------------+----------------------+-----------------------+
+Tick the checkbox labelled :guilabel:`Add 1 more year of Maintenance
+Service`; Zextras Store will automatically calculate and show you the
+cost of the Maintenance Service.  Pick the payment method you prefer
+and then proceed with the purchase.
 
 .. _how_to_redeem_a_bid:
 
 How to redeem a BID
 ===================
 
-In specific circumstances, the Sales Team can release a BID code for a
-customer. In such a case, the Customer has to follow the steps listed as
-below
+In specific circumstances, the Sales Team can release a BID code
+(example shown in :numref:`figure_redeem_bid`) for a customer. In such
+a case, follow the steps listed as below from within the Customer's
+Corner.
 
-.. _figure_redeem_bid_1:
+.. _figure_redeem_bid:
 
 .. figure:: /img/Zextras_BID_1.png
-   :scale: 50
+   :scale: 50%
 
-   A BID code to redeem.
-   
+   A BID code to redeem. 
 
-- Log in to the Customer's Zextras Store Account
 
-- Find the BID code on the main page as shown in the
-  :numref:`figure_redeem_bid_1`.
+Select whether to :bdg:`BUY NOW` or pay with a :bdg:`BANK TRANSFER`.
 
-- Select one of the payment methods available among PayPal, Credit
-  Card and Bank Transfer*.
-
-  - Please note that the Bank Transfer option is available exclusively
-    on request.
-
-- Complete the purchase. You will end up in a page similar to the one
-  in :numref:`figure_redeem_bid_1`.
-
-- Click on the Download License button to download the license file.
-
-- Click on the Download Invoice button to download the invoice.
-
-.. _figure_redeem_bid_2:
-
-.. figure:: /img/Zextras_BID_2.png
-   :scale: 50
-           
-   A redeemed BID.
+.. note:: The bank transfer option is available exclusively on
+   request.
    
 .. _requirements:
 
