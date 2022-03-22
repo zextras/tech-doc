@@ -80,7 +80,7 @@ Zextras Suite License Plans
 .. _suite_trial_mode:
 
 Trial Mode
-==========
+----------
 
 If no license is activated, Zextras Suite will run in Trial Mode. All
 the features will be activated for a 30-day period, with some
@@ -185,20 +185,19 @@ an existing License Plan, which are :ref:`upgrade_plan`,
 :ref:`extend_perpetual_license`.
 
 In all cases, in the remainder it is assumed that you are already
-logged in to the **Customer Corner** of your Zextras account. In the
-cor
+logged in to the **Customer Corner** of your Zextras account. 
 
 .. _upgrade_plan:
 
 Upgrade a Zextras Suite License Plan
 ------------------------------------
 
-To upgrade a License Plan means adding some mailbox and keep the same
-duration. To access the upgrade, Select from the *Orders* tab the
-license you want to upgrade by clicking on the *Upgrade* icon.
+To upgrade a License Plan means adding some mailboxes and possibly
+extend the duration. To access the upgrade, Select from the *Orders*
+tab the license you want to upgrade by clicking on the *Upgrade* icon.
 
 Enter the **new total number** of mailboxes. For example, if you
-already have 10 mailboxes and you want to add 5 more, you you have to
+already have 10 mailboxes and you want to add 5 more, you have to
 insert **15**
 
 Zextras store will automatically calculate and show you the cost of
@@ -211,19 +210,9 @@ purchase.
 Change a Zextras Suite License Plan
 -----------------------------------
 
-With this option, a Licence Plan can be replaced with one that has
-more features:
-
-- *Zextras Suite Mobile* can be upgraded to **Zextras Suite Pro**
-
-- *Zextras Suite Basic* can be upgraded to **Zextras Suite Pro**
-
-  .. note:: Owners of Basic Plans are not forced to upgrade: they
-     can keep it.
-
-- *Zextras Suite Pro* can be boosted by **Team Pro**
-
-To change the plan, you need to fill a form.
+In order to change a License Plan, for example to replace *Zextras
+Suite Mobile* with **Zextras Suite Pro** or add **Team Pro** to
+*Zextras Suite Pro*, you need to fill a form.
 
 .. _renew_plan:
 
@@ -231,7 +220,7 @@ Renew a Zextras Suite License Plan
 ----------------------------------
 
 Renewing a license means to extend the duration of the current Plan
-for a one year period. To access the upgrade, Select from the *Orders*
+for a one year period. To access the Renewal, select from the *Orders*
 tab the license you want to upgrade by clicking on the *Renew* icon.
 
 In the duration box, select the new expiry date you want to apply.
