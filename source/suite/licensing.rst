@@ -31,21 +31,6 @@ Zextras Suite License Plans
    .. grid-item-card::
       :columns: 6
       :class-header: sd-font-weight-bold
-      :class-card: sd-bg-warning
-
-      Suite Basic
-      ^^^^^
-
-      Powerstore, Backup, Admin, Team Basic, Team App,
-      Support
-      +++++
-
-      **Options**: This plan can not be purchased anymore, but is available
-      for renewals or upgrades of existing licenses **only**.
-
-   .. grid-item-card::
-      :columns: 6
-      :class-header: sd-font-weight-bold
 
       Suite Mobile
       ^^^^^
@@ -55,6 +40,7 @@ Zextras Suite License Plans
 
       **Options**: Upgrade to Zextras Suite Pro
 
+.. note:: The Basic plan can not be purchased anymore, but is available for renewals or upgrades of existing licenses only.
 
 \*\ **Team Pro** adds a number of features to Zextras Suite Pro:
 
