@@ -14,7 +14,7 @@ Zextras Suite License Plans
 
 .. grid::
    :gutter: 3
-            
+
    .. grid-item-card::
       :columns: 6
       :class-header: sd-font-weight-bold
@@ -54,17 +54,6 @@ Zextras Suite License Plans
       +++++
 
       **Options**: Upgrade to Zextras Suite Pro
-
-   .. grid-item-card::
-      :columns: 6
-      :class-header: sd-font-weight-bold
-
-      Suite Free
-      ^^^^^
-      Team Basic
-      +++++
-
-      **Options**: :octicon:`dash`
 
 
 \*\ **Team Pro** adds a number of features to Zextras Suite Pro:
@@ -169,7 +158,7 @@ path is described in the remainder of this section.
    * If your current plan is *Perpetual*, a license plan that is no
      longer offered, you will still be able to renew it. Please check
      section :ref:`extend_perpetual_license` below for directions.
-   
+
 When you have completed your choice, the overall cost of the licenses
 are displayed and you can check the cost’s details. Pick the payment
 method you prefer and then proceed with the purchase.
@@ -185,7 +174,7 @@ an existing License Plan, which are :ref:`upgrade_plan`,
 :ref:`extend_perpetual_license`.
 
 In all cases, in the remainder it is assumed that you are already
-logged in to the **Customer Corner** of your Zextras account. 
+logged in to the **Customer Corner** of your Zextras account.
 
 .. _upgrade_plan:
 
@@ -231,7 +220,7 @@ proceed with the purchase.
 
 .. note:: You won’t have to wait the license’s expiry date. You can
    decide to extend it anytime; the system will deduct automatically
-   the residual value of your previous license from the final price. 
+   the residual value of your previous license from the final price.
 
 .. _extend_perpetual_license:
 
@@ -270,14 +259,14 @@ Corner.
 .. figure:: /img/Zextras_BID_1.png
    :scale: 50%
 
-   A BID code to redeem. 
+   A BID code to redeem.
 
 
 Select whether to :bdg:`BUY NOW` or pay with a :bdg:`BANK TRANSFER`.
 
 .. note:: The bank transfer option is available exclusively on
    request.
-   
+
 .. _requirements:
 
 Requirements
