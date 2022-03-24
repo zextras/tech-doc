@@ -23,7 +23,7 @@ Zextras Suite License Plans
       ^^^^^
 
       Powerstore, Backup, Admin, Mobile, Docs, Drive, Team
-      Basic, Team App, Drive App, Support
+      Basic, Auth, Team App, Drive App, Support
       +++++
 
       **Options**: Add Team Pro\ **\***
@@ -35,17 +35,18 @@ Zextras Suite License Plans
       Suite Mobile
       ^^^^^
 
-      Mobile, Team Basic, Team App, Support
+      Mobile, Team Basic, Auth, Team App, Support
       +++++
 
       **Options**: Upgrade to Zextras Suite Pro
 
-.. note:: The Basic plan can not be purchased anymore, but is available for renewals or upgrades of existing licenses only.
+.. note:: The Basic plan is no longer available for purchase, but it is still available for renewals or upgrades of existing licenses only.
 
 \*\ **Team Pro** adds a number of features to Zextras Suite Pro:
 
 * Group chats
-* File sharing and Screen sharing
+* File sharing
+* Screen sharing
 * Video Server
 * External meetings
 * Corporate virtual Spaces
@@ -89,11 +90,11 @@ information, location, contacts, and so on.
 .. figure:: /img/store.png
    :scale: 50%
 
-   The store page
+   The customer corner page
 
 For each order, a number of important information is displayed: the
 unique order ID, type and expiration date, status, and cost. The
-status is either of **COMPLETE**, **PENDING**, **RENEWED**.
+status could be **COMPLETE**, **PENDING**, **RENEWED**.
 
 Next to each order, a set of icons (see :numref:`figure_store_icons`)
 allows to execute an action for the order.
@@ -112,29 +113,24 @@ Purchase a New Zextras Suite License
 ====================================
 
 You can buy Zextras Suite directly on our https://store.zextras.com/
-website. Here, you can choose different paths to purchase Zextras
-Suite: `Service Provider`, `Educational/Governative`, and `Contact
-Sales` require you to fill in a form and send it to be contacted from
-Zextras Sales Department, while the 4-step :bdg-danger:`Direct purchase`
-path is described in the remainder of this section.
+website. Here you can configure your Zextras Suite license.
 
-- The first choice is the total number of mailboxes on your Zimbra
+- Firstly you have to enter the total number of mailboxes on your Zimbra
   server (minimum is **10 mailboxes**)
 
 - Then, add the Zextras Suite License Plan: Pro or Mobile
 
-  - If you pick Zextras Suite Pro, you can add *Team Pro* to your
-    order. You need to choose the number of mailboxes, between **10**
-    (minimum) and the total number of mailboxes you choose.
+  - If you choose Pro plan, you can insert the number of mailboxes
+    you want to license with Zextras Team Pro (minimum 10)
 
 .. card::
 
    Important notes
    ^^^^^
 
-   * All the purchased license are **Yearly** subscription and are
+   * All the purchased licenses are **Yearly** subscriptions and they are
      valid for 365 days since the purchase date and includes ongoing
-     access to upgrades and support.
+     access to upgrades, updates and support.
 
    * The maximum number of mailboxes that can be purchased online
      is 2500. Orders exceeding 2500 mailboxes qualify for a custom
@@ -142,11 +138,11 @@ path is described in the remainder of this section.
      <https://www.zextras.com/contact-us>`__.
 
    * If your current plan is *Perpetual*, a license plan that is no
-     longer offered, you will still be able to renew it. Please check
-     section :ref:`extend_perpetual_license` below for directions.
+     longer offered, you will still be able to renew its maintenance anyway.
+     Please check section :ref:`extend_perpetual_license` below for directions.
 
 When you have completed your choice, the overall cost of the licenses
-are displayed and you can check the cost’s details. Pick the payment
+is displayed and you can check the cost’s details. Pick the payment
 method you prefer and then proceed with the purchase.
 
 .. _plan-options:
@@ -187,7 +183,8 @@ Change a Zextras Suite License Plan
 
 In order to change a License Plan, for example to replace *Zextras
 Suite Mobile* with **Zextras Suite Pro** or add **Team Pro** to
-*Zextras Suite Pro*, you need to fill a form.
+*Zextras Suite Pro*, you need to fill the `Contact us form
+<https://www.zextras.com/contact-us>`_.
 
 .. _renew_plan:
 
@@ -196,7 +193,7 @@ Renew a Zextras Suite License Plan
 
 Renewing a license means to extend the duration of the current Plan
 for a one year period. To access the Renewal, select from the *Orders*
-tab the license you want to upgrade by clicking on the *Renew* icon.
+tab the license you want to renew by clicking on the *Renew* icon.
 
 In the duration box, select the new expiry date you want to apply.
 
@@ -213,8 +210,8 @@ proceed with the purchase.
 Add a Maintenance Service to a Perpetual License
 ------------------------------------------------
 
-The Maintenance Service is now **mandatory** for Perpetual Licenses
-too and is **cumulative**.
+The Maintenance Service is **mandatory** for Perpetual Licenses
+and it is **cumulative**.
 
 Therefore, you need a valid (i.e., not-expired) Maintenance Service
 subscription to access technical support or to install software
