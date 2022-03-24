@@ -147,14 +147,14 @@ Security and Setup
 
 The initial setup requires to complete a few steps.
 
-#. Create a dedicated **user** :bdg-primary:`gateway`
+#. Create a dedicated **user**
 
    .. code:: console
 
       # groupadd -r 'carbonio-gateway'
       # useradd -r -M -g 'carbonio-gateway' -s /sbin/nologin 'carbonio-gateway'
 
-#. Define **policies**. :bdg-primary:`gateway` It is necessary to make |mesh| aware of the
+#. Define **policies**. It is necessary to make |mesh| aware of the
    services to be routed, which in our scenario is
    :bdg-light:`carbonio-files-db`.
 
@@ -204,7 +204,7 @@ The initial setup requires to complete a few steps.
 
       # consul acl policy create -name "carbonio-gateway-policy" -description "Policy for carbonio-gateway" -rules  @/etc/carbonio/gateway/service-discover/policies.json
 
-#. Generate a new **token** :bdg-primary:`gateway`
+#. Generate a new **token**
 
    This token is associated to the policy and will be the only one needed
    to communicate with the external database.
@@ -216,7 +216,7 @@ The initial setup requires to complete a few steps.
       # chown carbonio-gateway:carbonio-gateway -R /etc/carbonio/gateway
 
 
-#. Export a new **bootstrap token** :bdg-primary:`gateway`
+#. Export a new **bootstrap token**
 
    This token allows to execute ``consul`` commands and access its
    APIs. To extract the bootstrap token, execute the following command
@@ -236,7 +236,7 @@ gateway.
 
 There is yet no CLI command for this, but we can use the APIs for this
 purpose. We first create file
-:file:`/etc/carbonio/gateway/service-discover/carbonio-files-db-external.json`  :bdg-primary:`gateway`
+:file:`/etc/carbonio/gateway/service-discover/carbonio-files-db-external.json`
 with content
 
 .. code:: json
