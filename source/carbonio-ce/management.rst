@@ -9,7 +9,8 @@ advanced |carbonio| features. Currently, the available topics are:
 
 :ref:`mesh_install`, a service discover tool based on Consul, that
 allows |product| modules to communicate with each other in a secure
-way.
+way. We introduce the setup of |mesh| to access both local and remote,
+external resources.
 
 :ref:`logger_node_config` contains the setup needed on a dedicated
 Logger Node within a Multi-Server installation.
