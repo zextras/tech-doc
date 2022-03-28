@@ -75,12 +75,16 @@ At the end of the procedure, when all steps have been completed, no
    .. code:: console
 
       # rm -rf /opt/zextras/
+      # rm -rf /opt/carbonio/
+
+   .. note:: The second command is needed only in case some external
+      service is installed.
 
 .. dropdown:: Step #8: remove log and system files
 
    .. code:: console
 
-      # rm /var/log/carbonio*
+      # rm -rf /var/log/carbonio*
       # rm /etc/logrotate.d/carbonio
       # rm /etc/init.d/carbonio
       # rm /run/systemd/generator.late/carbonio.service
