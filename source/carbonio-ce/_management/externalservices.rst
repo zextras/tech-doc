@@ -4,7 +4,7 @@ Integration of External Services
 --------------------------------
 
 |mesh| implements access control to on-premises or external resources with a single solution and it manage automatically ssl encryption certificates.
-A typical example is a cluster interacting with a database instance hosted by a third-party service provider.
+A typical example of external service integration is a cluster interacting with a database instance hosted by a third-party service provider.
 
 Scenario and Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
