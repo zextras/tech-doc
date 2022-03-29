@@ -3,7 +3,7 @@
 Integration of External Services
 --------------------------------
 
-|mseh| implements access control to on-premises or external resources with a single solution and it manage automatically ssl encryption certificates.
+|mesh| implements access control to on-premises or external resources with a single solution and it manage automatically ssl encryption certificates.
 A typical example is a cluster interacting with a database instance hosted (for example) by a third-party service provider.
 
 Scenario and Requirements
