@@ -3,11 +3,12 @@
 Integration of External Services
 --------------------------------
 
-Within an enterprise infrastructure, part of the infrastructure can be
-either outsourced, hosted in a branch office in a different city or
-country, or even supplied by a third party service provider. Typical
-examples include a central data center in the company's HQ or the use
-of services by a third-party provider.
+In several scenarios there is a service, which is used or required by
+other services on a cluster, that runs on a dedicated server. A
+typical example is a cluster interacting with a database instance
+hosted elsewhere, for example on a different subnet within the
+company's infrastructure, or hosted by a third party service
+provider.
 
 |mesh| proves useful in these situations, allowing to securely connect
 a |product| installation to external services.
@@ -15,22 +16,43 @@ a |product| installation to external services.
 Scenario and Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The remainder of this section illustrates how to configure |mesh| in a
-scenario involving a Multi-Server installation on which we will
-install two |file| nodes and allow them to access an external service
-hosting the PostgreSQL database on which |file| rely. Additionally,
-one node is elected as a **terminating gateway**, i.e., the local
-gateway that cluster services need to contact to access an external
-resource, which in our scenario is the database.
+Our sample scenario consists of a |product| Multi-Server installation
+which includes:
 
-The setup requires to access the command line on the gateway to
-configure it, because the process requires manual file editing and
-running commands. No setup or configuration is necessary on the |file|
-nodes, as they will reach the database exclusively through the
-terminating gateway.
+* One or more |file| Nodes
 
-.. note:: All commands must be executed on the node elected as
-   **terminating gateway**, unless stated differently.
+* One node in the cluster (possibly different from the |file| Nodes
+  elected as **terminating gateway**
+
+* A PostgreSQL database, which is used by |file|, installed on either
+
+  * A dedicated node within a cluster
+  * A server within the infrastructure
+  * hosted remotely, by a third party
+
+  .. note:: We will refer to this node as *database node* in the
+     remainder of this guide.
+
+.. topic:: Terminating Gateway
+
+   In ``consul`` terminology, a **terminating gateway** is a cluster
+   node that takes the responsibility to communicate with an external
+   resource. All services running on the cluster that need to access
+   this resource will contact the terminating gateway, which will
+   forward the request and send back the output received by the
+   resource. The services do not need to know anything about the
+   resource: they just contact the terminating gateway and wait for
+   the response.
+
+   Each terminating gateway is responsible for one service only, in
+   case of multiple services need to access external resources, you
+   need to spawn multiple instances of a terminating gateway.
+
+
+The setup requires to access the command line on the terminating
+gateway to configure it, because the process requires manual file
+editing and running commands, although some commands towards the end
+of the procedure requires to access the *database node*.
 
 Before reading further, make sure that |mesh| is correctly installed
 (see :ref:`mesh_single_install` or
@@ -49,6 +71,9 @@ Security and Setup
 ~~~~~~~~~~~~~~~~~~
 
 The initial setup requires to complete a few steps.
+
+.. note:: All commands must be executed on the node elected as
+   **terminating gateway**, unless stated differently.
 
 #. Create a dedicated **user**
 
@@ -128,10 +153,10 @@ The initial setup requires to complete a few steps.
 Definition of the External service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To operate properly, the gateway must be aware of the exact location
-of the remote service, therefore we define both the external service
-and how the terminating gateway can reach it and allow |file| nodes
-access to it.
+To operate properly, the terminating gateway must be aware of the
+exact location of the remote service, therefore we define both the
+external service and how the terminating gateway can reach it and
+allow |file| nodes access to it.
 
 There is yet no CLI command for this, but we can use the APIs for this
 purpose. Create file
@@ -282,14 +307,14 @@ enable the new ``carbonio-gateway`` service.
 Configuration of carbonio-files-db
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: This step only applies when like in our scenario, the
-   external resource is a database.
+.. note:: This step only applies when the external resource is a
+   database, like in our scenario.
 
 The configuration of the database, which includes transferring the DB
 credentials to |mesh| and create the DB's, is usually done by the
 :command:`carbonio-files-db-bootstrap` script. However, since the
 *carbonio-files-db* package is not installed, this task must be done
-manually using these commands.
+manually using these commands on the terminating gateway.
 
 .. code:: console
 
@@ -297,9 +322,10 @@ manually using these commands.
    # consul kv put carbonio-files/db-username <username>
    # consul kv put carbonio-files/db-password <password>
 
-On the external node on which the database is installed, create a
-``postgres`` superuser with password **ScrtPsw987^2** (use a password
-of your choice).
+Now, let's log in to the *database node*, where it is necessary to
+create a ``postgres`` superuser. In this example, we assign password
+**ScrtPsw987^2** to the user. Make sure to use a strong password of
+your choice.
 
 .. code:: bash
 
@@ -310,12 +336,12 @@ of your choice).
 |file| Nodes Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The installation of |File| is slightly different from the standard
-one. In particular, make sure that after the installation, the package
-:bdg:`carbonio-files-db` is **not** installed on any node. In our
-scenario, indeed, the database functionalities are not provided by
-that package, but by the external service. Hence, to avoid conflicts,
-you need to uninstall it.
+The installation of |File| is slightly different from the standard one
+in a Multi-Server. In particular, make sure that after the
+installation, the package :bdg:`carbonio-files-db` is **not**
+installed on any node. In our scenario, indeed, the database
+functionalities are not provided by that package, but by the external
+service. Hence, to avoid conflicts, you need to uninstall it.
 
 * Install package ``carbonio-files-ui`` on each *Proxy Node*.
 
