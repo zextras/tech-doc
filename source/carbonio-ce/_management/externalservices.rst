@@ -3,15 +3,8 @@
 Integration of External Services
 --------------------------------
 
-In several scenarios there is a service, which is used or required by
-other services on a cluster, that runs on a dedicated server. A
-typical example is a cluster interacting with a database instance
-hosted elsewhere, for example on a different subnet within the
-company's infrastructure, or hosted by a third party service
-provider.
-
-|mesh| proves useful in these situations, allowing to securely connect
-a |product| installation to external services.
+|mseh| implements access control to on-premises or external resources with a single solution and it manage automatically ssl encryption certificates.
+A typical example is a cluster interacting with a database instance hosted (for example) by a third-party service provider.
 
 Scenario and Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
