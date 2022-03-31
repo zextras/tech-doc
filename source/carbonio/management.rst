@@ -6,7 +6,7 @@ In this section we introduce some important management tasks for
 advanced |carbonio| features. Currently, these topics are available:
 
 :ref:`videoserver` is a WebRTC stream aggregator, used by the |team|
-module to improve performances and scalability.
+component to improve performances and scalability.
 
 :ref:`backup-mod` introduces the architecture of |backup| and the
 various alternatives to create backups of the data and metadata stored
