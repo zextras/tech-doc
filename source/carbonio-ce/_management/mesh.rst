@@ -3,11 +3,19 @@
 |mesh|
 ------
 
-|mesh| is a security mechanism that secures communication of
-registered applications. It is used by |product| to add fault
-detection and dynamic routing between its components.
+|mesh| is Zextras solution for service discovery and service mesh, a
+mechanism that secures communication of registered applications,
+implementing access control to on-premises or external resources with
+a single solution, including the management of SSL encryption
+certificates
 
-The setup of |mesh| depends on the |carbonio| infrastructure, if
+|mesh| is used by |product| to add health checking/fault detection,
+dynamic and secure routing between its components (excluding faulty
+instances).  Moreover, it also works as an application level firewall
+allowing the exchange of only the information necessary for the
+functioning of |product| as it was designed.
+
+The setup of |mesh| depends on the |product| infrastructure, if
 a Single-Server or a Multi-Server.
 
 .. _mesh_single_install:
@@ -38,9 +46,9 @@ Single-Server Setup
      more information.
 
      .. warning:: If this password is lost, it becomes necessary to
-	start over the whole setup of |mesh|, therefore make sure to
-	store the password in a safe place (like e.g., a password
-	manager).
+        start over the whole setup of |mesh|, therefore make sure to
+        store the password in a safe place (like e.g., a password
+        manager).
 
 .. _mesh_multi_install:
 
@@ -69,7 +77,7 @@ commands on all the nodes.
 
    The outcome of the previous command is a GPG key that you need to
    copy to **all other nodes**.
-   
+
    Assuming that you have nodes ``proxy``, ``mta``, ``store``, and
    ``logger`` (see the Multi-Server :ref:`example installation
    scenario <multiserver-installation>`, use the following commands,
@@ -93,8 +101,6 @@ commands on all the nodes.
    Log in to each nodes and run the command, making sure to use the
    same password used in the first step.
 
-
    .. code:: console
 
       # service-discover setup $(hostname -i) --password=MY_SECURE_PASSWORD
-
