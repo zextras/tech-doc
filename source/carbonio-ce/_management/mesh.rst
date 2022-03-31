@@ -3,11 +3,17 @@
 |mesh|
 ------
 
-|mesh| is the Zextras option for service discovery and service mesh.
-It is a mechanism that secures communication of registered applications.
-It is used by |product| to add health checking/fault detection, dynamic and secure routing between its components (excluding faulty instances).
+|mesh| is Zextras solution for service discovery and service mesh, a
+mechanism that secures communication of registered applications,
+implementing access control to on-premises or external resources with
+a single solution, including the management of SSL encryption
+certificates
 
-|mesh| also works as an application level firewall allowing the exchange of only the information necessary for the functioning of |product| as it was designed.
+|mesh| is used by |product| to add health checking/fault detection,
+dynamic and secure routing between its components (excluding faulty
+instances).  Moreover, it also works as an application level firewall
+allowing the exchange of only the information necessary for the
+functioning of |product| as it was designed.
 
 The setup of |mesh| depends on the |product| infrastructure, if
 a Single-Server or a Multi-Server.

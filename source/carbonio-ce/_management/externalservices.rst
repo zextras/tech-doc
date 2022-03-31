@@ -3,8 +3,10 @@
 Integration of External Services
 --------------------------------
 
-|mesh| implements access control to on-premises or external resources with a single solution and it manage automatically ssl encryption certificates.
-A typical example of external service integration is a cluster interacting with a database instance hosted by a third-party service provider.
+A typical example of external service integration is a cluster
+interacting with a database instance hosted by a third-party service
+provider. To deploy in |product| situations like this one,
+:ref:`mesh_install` is used.
 
 Scenario and Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -17,14 +19,22 @@ which includes:
 * One node in the cluster (possibly different from the |file| Nodes
   elected as **terminating gateway**
 
-* A PostgreSQL database, which is used by |file|, installed on either
+* A PostgreSQL database, which is used by |file|, which is either
 
   * A dedicated node within a cluster
   * A server within the infrastructure
-  * hosted remotely, by a third party
+  * Hosted remotely by a third-party provider
 
   .. note:: We will refer to this node as *database node* in the
      remainder of this guide.
+
+.. _fig-mesh-scenario:
+
+.. figure:: /img/carbonio/external.png
+   :width: 80%
+
+   The sample scenario used, with two |file| nodes and a database
+   hosted remotely.
 
 .. topic:: Terminating Gateway
 
@@ -41,7 +51,6 @@ which includes:
    case of multiple services need to access external resources, you
    need to spawn multiple instances of a terminating gateway.
 
-
 The setup requires to access the command line on the terminating
 gateway to configure it, because the process requires manual file
 editing and running commands, although some commands towards the end
@@ -52,7 +61,7 @@ Before reading further, make sure that |mesh| is correctly installed
 :ref:`mesh_multi_install`). Moreover, although it is not required, we
 highly suggest to use the |mesh| Administration Interface to better
 keep track of the configuration and changes. Please check
-:ref:`mesh-gui` for directions on how to configure and reach it.
+:ref:`mesh-gui` for directions on how to configure it and reach it.
 
 Finally, keep the **cluster credential password** at hand, because it
 is required for token generation.
