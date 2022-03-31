@@ -88,7 +88,7 @@ information, location, contacts, and so on.
 .. _figure_store:
 
 .. figure:: /img/store.png
-   :scale: 50%
+   :scale: 80%
 
    The customer corner page
 
@@ -104,7 +104,7 @@ allows to execute an action for the order.
 .. figure:: /img/store-icons.png
    :scale: 90%
 
-   Available buttons for each order: download receipt, view details,
+   Available buttons for each order: download licensse, view details,
    renew, and upgrade.
 
 .. _purchase_new_license:
@@ -151,12 +151,30 @@ Options to Modify a License Plan
 ================================
 
 This section explains all the available options to make any changes to
-an existing License Plan, which are :ref:`upgrade_plan`,
-:ref:`change_plan`, :ref:`renew_plan`, or
+an existing License Plan, which are :ref:`renew_plan`,
+:ref:`upgrade_plan`, :ref:`change_plan`, or
 :ref:`extend_perpetual_license`.
 
 In all cases, in the remainder it is assumed that you are already
 logged in to the **Customer Corner** of your Zextras account.
+
+.. _renew_plan:
+
+Renew a Zextras Suite License Plan
+----------------------------------
+
+Renewing a license means to extend the duration of the current
+Plan. To access the Renewal, select from the *Orders* tab the license
+you want to renew by clicking on the *Renew* icon and, in the *duration*
+box, select the new expiry date you want to apply.
+
+Zextras Store will automatically calculate and show you the cost of the
+extended Licence Plan. Pick the payment method you prefer and then
+proceed with the purchase.
+
+.. note:: You won’t have to wait the license’s expiry date. You can
+   decide to extend it anytime; the system will deduct automatically
+   the residual value of your previous license from the final price.
 
 .. _upgrade_plan:
 
@@ -185,25 +203,6 @@ In order to change a License Plan, for example to replace *Zextras
 Suite Mobile* with **Zextras Suite Pro** or add **Team Pro** to
 *Zextras Suite Pro*, you need to fill the `Contact us form
 <https://www.zextras.com/contact-us>`_.
-
-.. _renew_plan:
-
-Renew a Zextras Suite License Plan
-----------------------------------
-
-Renewing a license means to extend the duration of the current Plan
-for a one year period. To access the Renewal, select from the *Orders*
-tab the license you want to renew by clicking on the *Renew* icon.
-
-In the duration box, select the new expiry date you want to apply.
-
-Zextras Store will automatically calculate and show you the cost of the
-extended Licence Plan. Pick the payment method you prefer and then
-proceed with the purchase.
-
-.. note:: You won’t have to wait the license’s expiry date. You can
-   decide to extend it anytime; the system will deduct automatically
-   the residual value of your previous license from the final price.
 
 .. _extend_perpetual_license:
 
