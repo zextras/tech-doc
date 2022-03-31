@@ -462,6 +462,4 @@ Access to the Web Interface
 
 .. include:: /_includes/multiserver_install.rst
 
-.. include:: /_includes/modules.rst
-             
 .. include:: /_includes/update.rst
