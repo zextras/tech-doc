@@ -45,7 +45,7 @@ How to Activate |backup|
 ------------------------
 
 Once you have finished your servers setup, you need a few more steps to
-configure the Backup module and have all your data automatically backed
+configure the Backup component and have all your data automatically backed
 up.
 
 -  Mount a storage device at your target location. We use the default
@@ -227,7 +227,7 @@ SmartScan and Real Time Scan
 The initial structure of the backup is built during the *Initial Scan*,
 performed by the **SmartScan**: the actual content of a Mailbox is read
 and used to populate the backup. The SmartScan is then executed at every
-start of the module and on a daily basis if the **Scan Operation
+start of the |backup| and on a daily basis if the **Scan Operation
 Scheduling** is enabled in the Administration Console.
 
 .. important:: SmartScan runs at a fixed time—​that can be
@@ -533,11 +533,11 @@ information in section :ref:`backup_on_external_storage`.
 When is a SmartScan Executed?
 -----------------------------
 
-- When the |backup| module is started.
+- When the |backup| component is started.
 
   .. note:: While it is possible to enable this option, it is
      suggested to leave it disabled, because in certain situations,
-     running SmartScan at every module restart can become a
+     running SmartScan at every |backup| restart can become a
      performance bottleneck, as it has been discussed in section
      :ref:`backup_disable_scans`.
 
@@ -654,7 +654,7 @@ Enabling the Real Time Scanner
       :columns: 12 12 12 6
 
       To enable the Real Time Scanner via the CLI, the
-      ``ZxBackup_RealTimeScanner`` property of the |backup| module must
+      ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``true``::
 
          zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
@@ -680,7 +680,7 @@ Disabling the Real Time Scanner
       :columns: 12 12 12 6
 
       To disable the Real Time Scanner via the CLI, the
-      ``ZxBackup_RealTimeScanner`` property of the |backup| module must
+      ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``false``::
 
         zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE

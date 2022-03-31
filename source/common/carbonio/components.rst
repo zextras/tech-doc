@@ -1,15 +1,15 @@
 
-Additional Modules Installation
-===============================
+|product| Components Installation
+=================================
 
-Additional modules can be installed on |product| to extend its
+|product| components can be installed to extend its
 functionalities. Besides a basic |product| installation, there is no
-additional requirement. Modules can be installed on the same
+additional requirement. Components can be installed on the same
 installation, although within a :ref:`Multiserver installation
 <multiserver-installation>` they can be installed on dedicated nodes.
 
 In the remainder of this section we show how to install each of these
-modules, currently only |file|. The procedure is the same for both
+components, currently only |file|. The procedure is the same for both
 Single and Multi-Server, only the |file|\ 's package installation
 differs.
 

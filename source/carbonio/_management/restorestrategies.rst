@@ -598,7 +598,7 @@ the External Restore, you can implement the following suggestions.
    volume after migration, it is possible to create a new and
    uncompressed primary volume, set it to ``Current`` and switch the
    old one to ``Secondary``. This operation is possible by using the
-   `powerstore` module.
+   `powerstore` component.
 
 4. If you plan to use the CLI, check also section
    :ref:`external-restore-speed-up`
@@ -685,7 +685,7 @@ This feature is available **via CLI only**.
 After the Restore: Message Deduplication
 ----------------------------------------
 
-Running a volume-wide deduplication with the Zextras Powerstore module
+Running a volume-wide deduplication with the Zextras Powerstore component
 is highly recommended after an External Restore, since the native
 deduplication system might be ineffective when sequentially importing
 accounts.

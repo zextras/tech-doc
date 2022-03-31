@@ -5,7 +5,7 @@
 |auth|
 ============
 
-|auth| is the |product| module that influences the process of
+|auth| is the |product| component that influences the process of
 accessing a |product| instance from the Login Page onwards, including
 the access modality. Depending on the authentication backends
 configured, the access mask changes, to allow user to provide their
