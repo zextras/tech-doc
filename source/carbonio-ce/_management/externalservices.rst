@@ -16,13 +16,12 @@ which includes:
 
 * One or more |file| Nodes
 
-* One node in the cluster (possibly different from the |file| Nodes
+* One node in the cluster (possibly different from the |file| Nodes)
   elected as **terminating gateway**
 
 * A PostgreSQL database, which is used by |file|, which is either
 
-  * A dedicated node within a cluster
-  * A server within the infrastructure
+  * A server outside the |product| infrastructure
   * Hosted remotely by a third-party provider
 
   .. note:: We will refer to this node as *database node* in the
