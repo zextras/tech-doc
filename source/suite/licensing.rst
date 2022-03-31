@@ -104,7 +104,7 @@ allows to execute an action for the order.
 .. figure:: /img/store-icons.png
    :scale: 90%
 
-   Available buttons for each order: download licensse, view details,
+   Available buttons for each order: download license, view details,
    renew, and upgrade.
 
 .. _purchase_new_license:
