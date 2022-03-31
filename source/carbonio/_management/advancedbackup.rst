@@ -977,7 +977,7 @@ usage.
 
 .. card::
    
-   How to disable the |backup| Module for a COS
+   How to disable the |backup| Component for a COS
    ^^^^
 
    - The Real Time Scanner will ignore all accounts in the COS.

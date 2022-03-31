@@ -5,8 +5,8 @@
 .. intro
 
 This section contains general advices about the most common tasks and
-functionalities of the various |product| modules. The following
-modules have dedicated sections featuring more information, howtos,
+functionalities of the various |product| components. The following
+components have dedicated sections featuring more information, howtos,
 and best practices:
 
 All functionalities provided by |zx| |product| are available after logging
@@ -56,10 +56,10 @@ Contacts
 
    Chat
       A tool dedicated to individual and group chats and to the creation
-      of corporate spaces and thematic channels (optional module).
+      of corporate spaces and thematic channels (optional component).
 
 File
-   Share documents with colleagues (optional module).
+   Share documents with colleagues (optional component).
 
 Search
    A powerful search engine across all modules of the mailbox.
@@ -139,7 +139,7 @@ Mails
 Calendar
 ========
 
-The calendar module allows to keep track of the appointments, meetings,
+The calendar component allows to keep track of the appointments, meetings,
 and events you need to attend to and share them with your colleagues.
 
 Beside using |new|, a new appointment can be created with a click of
@@ -167,13 +167,13 @@ appointments are shown; toggle their visibility clicking the
 Contacts
 ========
 
-In the Contacts module you can keep track of all the people with whom
+In the Contacts component you can keep track of all the people with whom
 you exchange e-mails and group them in address books. Existing address
-books appear on the column on the right of the module's list.
+books appear on the column on the right of the component's list.
 
 You can create new contact by using the |new| button and selecting
 `New Contact`; they will be stored under the `Contacts` section of the
-Contacts module.
+Contacts component.
 
 Addresses of people to whom you send an e-mail are automatically added
 to the `Emailed Contacts`.
@@ -203,7 +203,7 @@ by the user.
 Chats
 =====
 
-Chats is a module that provides corporate instant messaging features
+Chats is a component that provides corporate instant messaging features
 such as Spaces and Channels, chats, and videoconferencing.
 
 The UI of |team| is organised in three columns:

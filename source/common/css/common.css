@@ -167,3 +167,7 @@ legend {
 .wy-menu-vertical li button.toctree-expand {
     color: var(--zx-color-ice)
 }
+
+.sd-badge {
+   font-size: .80em;
+}
