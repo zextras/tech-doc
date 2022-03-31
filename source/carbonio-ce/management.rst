@@ -1,5 +1,3 @@
-:orphan:
-
 =====================
  Carbonio Management
 =====================
@@ -8,7 +6,7 @@ In this section we introduce some important management tasks for
 advanced |carbonio| features. Currently, the available topics are:
 
 :ref:`mesh_install`, a service discover tool based on Consul, that
-allows |product| modules to communicate with each other in a secure
+allows |product| components to communicate with each other in a secure
 way.
 
 :ref:`mesh-external-services` provides step by step directions to
