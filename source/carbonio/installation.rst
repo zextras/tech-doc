@@ -24,9 +24,7 @@ System Requirements
 
 	      "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
 	      "RAM", "8 Gb"
-	      "Disk space\ :sup:`§` ", "40 Gb"
-
-      :sup:`§` Operating system and Carbonio CE
+	      "Disk space (Operating system and Carbonio)", "40 Gb"
 
    .. grid-item-card::
       :columns: 12 12 12 6
@@ -201,11 +199,10 @@ software package is necessary.
 
 .. _single-server-install:
 
-Installation
-============
+Single-Server Installation
+==========================
 
-The installation on Ubuntu 20.04 is very similar and is organised in
-steps, some of which are preliminary configuration tasks, and some is
+The installation on Ubuntu 20.04 is organised in steps, some of which are preliminary configuration tasks, and some is
 optional.
 
 .. _pre-installation-steps:
@@ -351,7 +348,7 @@ interface as explained in section :ref:`web-access`.
 .. _web-access:
 
 Access to the Web Interface
-===========================
+---------------------------
 
 To access |carbonio|\'s Administration Console, point a
 :ref:`supported browser <browser_compatibility>` to either of the URL
@@ -365,4 +362,6 @@ installation of the certificate.
 * https://mail.carbonio.local/ for regular user access
 * https://mail.carbonio.local:7071/carbonioAdmin for Administration access.
 
+.. include:: /_includes/multiserver_install.rst
 
+.. include:: /_includes/update.rst
