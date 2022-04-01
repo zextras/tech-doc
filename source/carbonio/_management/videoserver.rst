@@ -42,7 +42,7 @@ A properly set up |vs| will supersede the need of a TURN server,
 provided that all clients can reach the |vs|’s public IP and
 that UDP traffic is not filtered.
 
-.. _videoserver-requirements:
+.. _vs-requirements:
 
 Requirements
 ------------
@@ -105,10 +105,10 @@ following requirements:
    sample commands provided at the end of the installation to be
    incorrect.
 
-.. _installation:
+.. _vs-installation:
 
-Installation
-------------
+|vs| Installation
+-----------------
 
 Installing |vs| is straightforward. Assuming |carbonio|'s repository
 have already been configured, simply execute the two commands
@@ -138,7 +138,7 @@ In case you forget the password, you can retrieve it using
 
    # /etc/janus/janus.jcfg api_secret
 
-.. _architecture_and_service_control:
+.. _vs-architecture:
 
 Architecture and Service Control
 --------------------------------
@@ -190,7 +190,7 @@ control the service are straightforward:
    - ``local_meetings_hosted`` reports the number of meetings hosted
      on the *current mailbox*.
 
-.. _video_server_scaling:
+.. _vs-scaling:
 
 |vs| Scaling
 --------------------
@@ -238,7 +238,7 @@ removal on the video server is required).
 
       # zxsuite team video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
 
-.. _bandwidth_and_codecs:
+.. _vs-bandwidth-and-codecs:
 
 Bandwidth and Codecs
 --------------------
@@ -322,7 +322,7 @@ Bandwidth and Codecs
          `Wikipedia page on Opus
          <https://en.wikipedia.org/wiki/Opus_(audio_format)#Bandwidth_and_sampling_rate>`_
 
-.. _advanced_settings:
+.. _vs-advanced-settings:
 
 Advanced settings
 -----------------

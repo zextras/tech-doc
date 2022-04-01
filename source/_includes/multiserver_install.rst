@@ -203,7 +203,7 @@ setup |mesh| for :ref:`mesh_multi_install`
 .. _multiserver-web-access:
 
 Access to the Web Interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 The URLs to which to connect to are:
 
