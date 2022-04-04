@@ -45,7 +45,7 @@ these steps.
 
       # apt install postgresql
 
-   In a Multi-Server scenario it's necessary to ensure that the PostgresSQL is available across the infrastructure.
+   In a Multi-Server scenario it's necessary to ensure that PostgresSQL is available across the infrastructure.
    Here is an **example** command for a /18 subnet:
 
    .. code:: bash
@@ -54,7 +54,7 @@ these steps.
       # echo "listen_addresses = '*'"  >> /etc/postgresql/12/main/postgresql.conf
       # systemctl restart postgresql
 
-   Make sure there is a Postgres role with superuser permissions or create one, for **example** with these commands (use passwords of your choice):  
+   Make sure there is a Postgres role with superuser permissions or create one, for **example** with these commands (use passwords of your choice):
 
    .. code:: bash
 
@@ -63,7 +63,7 @@ these steps.
       # CREATE ROLE "powerstore" WITH LOGIN SUPERUSER encrypted password 'wThrPsw654£6';CREATE DATABASE "powerstore" owner "powerstore";
       # \q
 
-   Save the password in a safe place.
+   Save the passwords in a safe place.
 
 .. _files-single-install:
 
