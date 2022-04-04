@@ -16,6 +16,9 @@ capabilities.
 .. warning:: Zextras Team is not compatible with Zimbra version 8.8.11
    and lower.
 
+.. warning:: From Zextras Suite version 3.10.0 the use of instant meetings is allowed only if the infrastructure is equipped with a Video Server.
+   User will not be able to make calls until the Video Server is not online.
+
 .. _team_frontend_features:
 
 Frontend Features
@@ -175,7 +178,7 @@ Zextras features.
 .. csv-table::
    :header: "Browser", "Version", "OS", "Supported"
    :file: browsercompatibility.csv
-          
+
 Items marked as ":fa:`check-circle;sd-text-warning` Limited" are only
 supported on the browser’s two previous stable releases.
 
@@ -189,13 +192,13 @@ Mobile App
 
 A dedicated Zextras Team mobile app is available for both Android and
 iOS.
-           
+
 .. image:: /img/google-play-badge.png
    :scale: 50%
 
 .. image:: /img/app_store-badge.png
-   :scale: 50% 
-   
+   :scale: 50%
+
 .. warning:: In order for mobile message delivery to work, the Zimbra
    server must be able to communicate with the
    ``notifications.zextras.com`` service on port 443
@@ -276,7 +279,7 @@ Dedicated Mode
 
 Select :bdg-primary:`SAVE SETTING` to set one of the above two modes
 as default for each meeting.
-   
+
 .. _team_changing_the_selected_mode:
 
 Changing the Selected Mode
@@ -326,7 +329,7 @@ The Team tab is divided into three main parts:
 .. figure:: /img/team/tab.png
 
    The Team Tab Graphic User Interface.
-            
+
 When the Video Chat or Instant Meeting are used, the UI changes, see
 section :ref:`team_video-chat`.
 
@@ -342,7 +345,7 @@ chats shown as small overlays on the Mail tab. They can be further
 minimised by clicking the title bar, restored to full browser-sized
 window by clicking :octicon:`arrow-up-right;1em;sd-text-white
 sd-bg-primary` or closed with a click on :octicon:`x;1em;sd-text-white
-sd-bg-primary`. 
+sd-bg-primary`.
 
 Moreover, Instant Meetings (if minichat is a chat) or Video Chats (if
 minichat is a Space or Channel conversation) can be started by
@@ -453,7 +456,7 @@ central area. The differences with the Cinema Mode are:
 .. figure:: /img/team/grid-layout.png
 
    Video Conversation in Grid Layout.
-                         
+
 .. _team_instant_messaging_and_corporate_communication:
 
 Instant Messaging and Corporate Communication
