@@ -1,9 +1,4 @@
 
-.. _volunteer_translators:
-
-Volunteer Translators
----------------------
-
 |zx| makes available an online translation platform to qualified
 individuals wishing to help the translation process.
 

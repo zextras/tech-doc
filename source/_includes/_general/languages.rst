@@ -1,9 +1,4 @@
 
-.. _supported-languages:
-
-Available Languages
-===================
-
 |product|\'s main language is English, and the following languages
 are also included:
 
@@ -15,4 +10,3 @@ are also included:
    "Thai", "Hindi", "Indonesian"
    "Japanese", "Simplified Chinese", ""
 
-**Bold** languages are fully translated

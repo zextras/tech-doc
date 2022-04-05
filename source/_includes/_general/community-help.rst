@@ -1,7 +1,4 @@
 
-Seeking Help on |ce|
-====================
-
 Besides this documentation, |zx| makes available the following online resources:
 
 .. card:: Community

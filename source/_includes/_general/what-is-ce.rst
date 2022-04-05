@@ -1,5 +1,3 @@
-What is |product|?
-==================
 
 |zx| |ce| is the free and open-source e-mail and collaboration
 software, which consists of

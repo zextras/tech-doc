@@ -1,7 +1,3 @@
-.. _browser_compatibility:
-
-Browser Compatibility
-=====================
 
 All |carbonio| features are accessible from a browser: the
 supported browser are listed in :numref:`browser-support`.
