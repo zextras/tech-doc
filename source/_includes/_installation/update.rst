@@ -1,8 +1,3 @@
-.. _carbonio-update:
-
-|product| upgrade
-=================
-
 
 In order to upgrade |product|, simply
 
