@@ -1,7 +1,3 @@
-.. _auth-user:
-
-|auth| for users
-================
 
 |auth| features a dedicated settings page (see :numref:`auth-page`)
 to manage all user-side credential and features, such as the account
