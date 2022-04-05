@@ -2,10 +2,10 @@
  Introduction
 ==============
 
-.. include:: /_includes/what-is-ce.rst
-.. include:: /_includes/browsers.rst
-.. include:: /_includes/licensing-ce.rst
-.. include:: /_includes/languages.rst 
-.. include:: /_includes/translation.rst
-.. include:: /_includes/contribute.rst
-.. include:: /_includes/community-help.rst
+.. include:: /_includes/_general/what-is-ce.rst
+.. include:: /_includes/_general/browsers.rst
+.. include:: /_includes/_general/licensing-ce.rst
+.. include:: /_includes/_general/languages.rst 
+.. include:: /_includes/_general/translation.rst
+.. include:: /_includes/_general/contribute.rst
+.. include:: /_includes/_general/community-help.rst
