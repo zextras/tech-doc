@@ -1,7 +1,3 @@
-.. _web-access:
-
-Access to the Web Interface
----------------------------
 
 To access |carbonio|\'s Administration Console, point a
 :ref:`supported browser <browser_compatibility>` to either of the URL

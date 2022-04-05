@@ -1,9 +1,4 @@
 
-.. _single-server-install:
-
-Single-Server Installation
-==========================
-
 The installation on Ubuntu 20.04 is organised in steps, some of which are preliminary configuration tasks, and some is
 optional.
 
