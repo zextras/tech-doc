@@ -213,7 +213,7 @@ gateway for the ``carbonio-files-db`` service.
     }
    ]
 
-There are two commented entries in the file: they are optional and may
+There are two commented entries in the above file: they are optional and may
 not be specified at all in the configuration.
 
 **CAFile**
