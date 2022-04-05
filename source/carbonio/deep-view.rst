@@ -79,8 +79,8 @@ API for |product|
 
 .. deploy SSL certificate
 
-.. include:: /common/carbonio/install_SSL_certificate.rst
+.. include:: /_includes/install_SSL_certificate.rst
 
 .. create dkim record
 
-.. include:: /common/carbonio/dkim.rst
+.. include:: /_includes/dkim.rst
