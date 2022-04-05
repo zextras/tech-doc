@@ -213,9 +213,6 @@ gateway for the ``carbonio-files-db`` service.
     }
    ]
 
-.. hint:: In case more services use the same gateway, you can append
-   them to the file.
-
 There are two commented entries in the file: they are optional and may
 not be specified at all in the configuration.
 
