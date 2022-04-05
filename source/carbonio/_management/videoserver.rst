@@ -153,18 +153,18 @@ control the service are straightforward:
 
 -  Start the connection pool::
 
-     zxsuite team doStartService team-videoserver-pool.
+     zxsuite chats doStartService team-videoserver-pool.
 
 -  Shutdown the connection pool::
 
-     zxsuite team doStopService team-videoserver-pool
+     zxsuite chats doStopService team-videoserver-pool
 
 -  Check a connection pool status. This command reports information
    about the node *on which it is executed*.
 
    .. code:: console
 
-      $ zxsuite team clusterstatus
+      $ zxsuite chats clusterstatus
 
            isFullySynced                                       true
            servers
@@ -199,11 +199,11 @@ Multiple |vs| can be run on the same infrastructure.
 
 To add a new |vs| to the configuration, run the |vs| installer on a
 new server and follow the instructions - the installer will provide
-the required commands (``zxsuite team video-server add`` with the
+the required commands (``zxsuite chats video-server add`` with the
 appropriate parameters) needed to add the server to the infrastructure
 once packages are installed.
 
-To remove a |vs| from the configuration, use the ``zxsuite team
+To remove a |vs| from the configuration, use the ``zxsuite chats
 video-server remove`` command from any mailbox server - this will
 remove the appropriate entries from the Zextras Config (manual package
 removal on the video server is required).
@@ -234,9 +234,9 @@ removal on the video server is required).
 
    .. code:: console
 
-      # zxsuite team video-server add *videoserver.example.com* [param VALUE[,VALUE]]
+      # zxsuite chats video-server add *videoserver.example.com* [param VALUE[,VALUE]]
 
-      # zxsuite team video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
+      # zxsuite chats video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
 
 .. _vs-bandwidth-and-codecs:
 
