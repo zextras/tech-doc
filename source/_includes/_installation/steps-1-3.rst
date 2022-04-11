@@ -48,15 +48,14 @@ optional.
    ^^^^^
 
    |product| needs a valid FQDN as hostname and a valid entry in the
-   :file:`/etc/hosts` file. To configure them, execute these two commands.
-
-   1) first, set the hostname
+   :file:`/etc/hosts` file. To configure them, execute these two
+   commands. First, set the hostname
 
       .. code:: console
 
          # hostnamectl set-hostname mail.carbonio.local
 
-   2) then update :file:`/etc/hosts`
+   then update :file:`/etc/hosts`
 
       .. code:: console
 
@@ -76,16 +75,17 @@ optional.
    - the FQDN (A record)
 
    So make sure that the DNS is correctly configured for both **A**
-   and **MX** records.
+   and **MX** records: to do so, you can use any DNS resolution
+   server, including `dnsmasq`, `systemd-resolved`, and `bind`.
 
-   You can use any DNS resolution server, including `dnsmasq`,
-   `systemd-resolved`, and `bind`.
+   We show as an example, only suitable for **demo** or **testing
+   purposes**, how to install and configure ``dnsmasq`` for DNS
+   resolution.
 
    .. dropdown:: Example: Set up of dnsmasq
 
-      As an example, we provide here directions to install and
-      configure **dnsmasq**. This task is **optional** and suitable
-      for demo or testing purposes only.
+      Follow these simple steps to set up ``dnsmasq`` on your testing
+      environment.
 
       .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
          may raise a port conflict over port **53 UDP** with the
