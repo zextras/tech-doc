@@ -2,7 +2,7 @@
  |carbonio| User guides
 ========================
 
-.. include:: /_includes/_usage/intro.rst
+.. include:: /_includes/_usage/intro-cb.rst
 
 .. _global-search:
 
