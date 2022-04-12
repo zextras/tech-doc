@@ -63,9 +63,6 @@ There are no additional requirements, just a few remarks:
   proxy.example.com, mta.example.com, and so on. Replace
   ``example.com`` with your domain name.
 
-* The Store and Logger nodes expose their services on port
-  **8080**. This setting can **not** be changed.
-
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 

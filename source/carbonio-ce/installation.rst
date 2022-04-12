@@ -16,6 +16,7 @@ Single-Server Installation
 .. include:: /_includes/_installation/steps-1-3.rst
 .. include:: /_includes/_installation/step-4-ce.rst
 .. include:: /_includes/_installation/complete.rst
+.. include:: /_includes/_installation/users.rst
 
 .. _web-access:
 
