@@ -1,7 +1,12 @@
+.. _carbonio-requirements:
+
+Requirements
+============
+
 .. _system-requirements:
 
 System Requirements
-===================
+-------------------
 
 .. grid:: 1 1 1 2
    :gutter: 2
@@ -15,8 +20,13 @@ System Requirements
       .. csv-table::
 
 	      "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-	      "RAM", "8 Gb"
+	      "RAM", "8 Gb min, 16Gb recommended"
 	      "Disk space (Operating system and Carbonio)", "40 Gb"
+
+      These requirements are valid for Carbonio Single-Server or for
+      each Carbonio Node in a Multi-Server Installation and may vary
+      depending on the size on the infrastructure, which includes the
+      number of mailboxes and the functionalities running.
 
    .. grid-item-card::
       :columns: 12 12 12 6
@@ -32,53 +42,35 @@ System Requirements
 	      KVM
          Virtualbox (testing purposes only)
 
-..
-   .. grid::
-      :gutter: 3
-
-      .. grid-item-card::
-	 :columns: 6
-
-	 Testing/Evaluation environment
-	 ^^^^^
-	 .. csv-table::
-
-	    "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-	    "RAM", "8 Gb"
-	    "Disk space (Operating system and Carbonio CE)", "40 Gb"
-
-      .. grid-item-card::
-	 :columns: 6
-
-	 Production environment
-	 ^^^^^
-	 .. csv-table::
-
-	    "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-	    "RAM", "16 Gb"
-	    "Disk space (Operating system and Carbonio CE)", "40 Gb"
-
 .. _software-requirements:
 
 Software Requirements
-=====================
+---------------------
 
-Supported Linux Server Distributions
-------------------------------------
+.. grid:: 1 1 1 2
+   :gutter: 2
 
-|product| is available for **64-bit** CPUs only and can be installed
-on **Ubuntu 20.04 LTS Server Edition**.
+   .. grid-item-card::
+      :columns: 12 12 12 6
+                
+      Supported Linux Server Distributions
+      ^^^^^
 
-Support for other distributions will be announced in due course when
-it becomes available.
+      |product| is available for **64-bit** CPUs only and can be
+      installed on **Ubuntu 20.04 LTS Server Edition**.
 
-.. _software-pakages:
+      Support for other distributions will be announced in due course
+      when it becomes available.
 
-Required Software Packages
---------------------------
 
-Besides a standard installation of the supported distribution, no
-software package is necessary.
+   .. grid-item-card::
+      :columns: 12 12 12 6
+
+      Required Software Packages
+      ^^^^^
+
+      Besides a standard installation of the supported distribution,
+      no software package is necessary.
 
 ..
    Depending on the platform, use either of the following commands as the
