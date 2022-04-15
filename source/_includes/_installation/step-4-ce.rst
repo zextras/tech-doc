@@ -32,12 +32,29 @@
    Step 5: Installation and Configuration of |product|
    ^^^^^
 
-   The installation of |product| requires to run the command
+   The installation of |product| requires to run the command 
 
       .. code:: console
 
          # apt install carbonio-ce
 
+   This command pulls all |product| packages; however, you can install
+   only selected components, according to your needs by installing
+   them explicitly. You need to install all `Base packages` and any
+   `Additional package` suits your needs.
+
+   .. tab-set::
+
+      .. tab-item:: Base packages (required)
+
+         carbonio-proxy
+
+      .. tab-item:: Additional packages (optional)
+
+         carbonio-files
+
+            
+   
    Finally, in order to carry out the initial configuration and start
    |product|, execute
 
