@@ -52,3 +52,5 @@ Thumbs.db
 *.mov
 *.wmv
 
+Dockerfile
+Jenkinsfile
