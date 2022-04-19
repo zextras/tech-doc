@@ -25,6 +25,11 @@ Access to the Web Interface
 
 .. include:: /_includes/_installation/web-access.rst
 
+|product| Management and troubleshooting
+----------------------------------------
+
+.. include:: /_includes/_installation/commands.rst
+
 .. _multiserver-installation:
 
 Multi-Server Installation

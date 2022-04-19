@@ -1,29 +1,36 @@
 
-In order to upgrade |product|, simply
 
-* update the list of packages
+|product| does not need any installer, but whenever new versions are
+released, the repositories are updated and packages are available for
+installation along with the other system updates.  Therefore, to
+upgrade |product|, first check for new packages:
+
+.. code:: console
+
+   # apt update 
+
+Then either
+
+* upgrade |product| packages only
 
   .. code:: console
-            
-     # apt update
 
-* upgrade the system
+     # apt install "carbonio-*"
+
+or
+
+* upgrade the whole system
 
   .. code:: console
 
      # apt upgrade 
 
-It is possible to run both commands at once::
-
-  # apt update && apt upgrade
-  
-Indeed, |product| does not need any installer, but whenever new
-versions are released, the repositories are updated and packages are
-available for installation along with the other system updates.
+.. hint:: Even if you choose to upgrade only |product|, remember that
+   you should keep the whole system up to date, because new system
+   packages may contain security fixes or bug fixes.
 
 Troubleshooting
 ---------------
-
 
 .. grid:: 1 1 2 2
    :gutter: 2

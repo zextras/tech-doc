@@ -1,6 +1,6 @@
 
-The installation on Ubuntu 20.04 is organised in steps, some of which are preliminary configuration tasks, and some is
-optional.
+The installation on Ubuntu 20.04 is organised in steps, some of which
+are preliminary configuration tasks, and some is optional.
 
 .. _pre-installation-steps:
 
@@ -15,10 +15,11 @@ optional.
    Step 1: Interfaces
    ^^^^^
 
-   We suggest to set up two NICs on the server, and assigning to one
-   a local IP address, so that |product| can always use it and rely on
-   it even if the main, public IP address changes. This setup is also
-   useful for testing purposes or when setting up a demo.
+   We suggest to set up two NICs on the server, and assigning to one a
+   local IP address, that on the one side will be used as the
+   management IP, and on the other side can always be used by
+   |product| even if the main, public IP address changes. This setup
+   is also useful for testing purposes or when setting up a demo.
 
    .. dropdown:: Example: Assign an IP Address to a local NIC.
 
@@ -27,7 +28,11 @@ optional.
       type **Internal Network**, you can assign it an IP address in
       the preferred way:
 
-      * use the CLI, for example  :command:`ifconfig enp0s3 172.16.0.10 up`
+      * use the CLI, for example :command:`ifconfig enp0s3 172.16.0.10
+        up`
+
+        .. hint:: Replace **172.16.0.10** with the actual management
+           IP to be assigned to the server.
 
       * Use netplan.io and add these lines to file
         :file:`/etc/netplan/01-netcfg.yaml`::
@@ -61,6 +66,9 @@ optional.
 
          # echo "172.16.0.10 mail.carbonio.local mail" >> /etc/hosts
 
+      .. hint:: Replace **172.16.0.10** with the actual management IP
+         to be assigned to the server.
+           
 .. _installation-step3:
 
 .. card::
