@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
 This section describes a |product| `multi-server installation`, that
 is, a |carbonio| installation spread across multiple nodes, each with
 a precise and dedicated task.

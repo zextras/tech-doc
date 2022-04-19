@@ -1,3 +1,6 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 The installation on Ubuntu 20.04 is organised in steps, some of which
 are preliminary configuration tasks, and some is optional.
