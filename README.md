@@ -101,6 +101,8 @@ PR including any of the following will **not** be accepted.
 
 * changes in CSS, theme, layout, Javascript, and in general any
   changes related to the Zextras corporate identity
+* changes in licensing and copyright information (see section License
+  and Copyright at the bottom)
 * any piece of work containing inappropriate language or material,
   including but not limited to obscenity, profanity, vulgarity,
   derogative or discriminatory terms towards users or organisations
@@ -112,25 +114,20 @@ PR including any of the following will **not** be accepted.
   examples and scenarios, that we will review and include if they are
   significant.
 
-Moreover, any new file MUST report licensing information.
-
 ### Pull Requests
 
-Each PR must address one issue at a time and should contain changes to
-one topic **only**. Example: if you submit a work focused on the use
-of Calendar, the PR can not contain references to Chat or to a
-Management Task.
-
-Open a PR only when you consider it ready for review.
-
-You can prefix the PR's title like the following for a better
-understanding of your contribution
-
-* [NEW] a new and original piece of work
-* [BUG] a correction to something wrong (typos, concepts described,
-  and so on)
-* [ENH] improvements to an existing piece of work
-
+* Each PR must address one issue at a time and should contain changes
+  to one topic **only**. Example: if you submit a work focused on the
+  use of Calendar, the PR can not contain references to Chat or to a
+  Management Task.
+* Open a PR only when you consider it ready for review.
+* Make sure the PR is REUSE complaint.
+* You can prefix the PR's title like the following for a better
+  understanding of your contribution
+  * [NEW] a new and original piece of work
+  * [BUG] a correction to something wrong (typos, concepts described,
+    and so on)
+  * [ENH] improvements to an existing piece of work
 
 ### Commits and Commit Messages
 
@@ -157,8 +154,8 @@ rely on Sphinx substitutions especially for the name of the modules,
 please use them whenever possible.
 
 Avoid large edits in main rst files (i.e., thoose in the `toctree::`s,
-use Sphinx's `include::` mechanism instead (see [Included
-Files](#included-files) below).
+use Sphinx's `include::` mechanism instead (see section **Included
+Files** below).
 
 ### Included files
 
@@ -176,16 +173,22 @@ Make included files short and self contained.
 
 Keep a width of at most 70 or 80 columns for the lines.
 
-
-## License
+## License and Copyright
 
 Zextras documentation is released under [CC BY-NC-SA
 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license and
 is [REUSE](https://reuse.software/) compliant.
 
-All non-binary files in the repository need to report this copyright
-header, commented out according to the file type (.rst example):
+Each non-binary file in the repository needs to contain in its header
+the following copyright notice, which must be commented out according
+to the file type (.rst example):
 
     .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
     ..
     .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Binary files must have an entry in file `.reuse/dep5`.
+
+The only exception to this rule are [Insignificant
+files](https://reuse.software/tutorial/#insignificant-files), which
+have a **CC0-1.0** license.
