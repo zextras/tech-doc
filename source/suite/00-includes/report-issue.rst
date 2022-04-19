@@ -1,3 +1,6 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 The most efficient way to report a Zextras Suite issue is the one that
 allows both the *Reporter* and the *Technical Support Team* to reach
