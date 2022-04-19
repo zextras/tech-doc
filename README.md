@@ -112,6 +112,8 @@ PR including any of the following will **not** be accepted.
   examples and scenarios, that we will review and include if they are
   significant.
 
+Moreover, any new file MUST report licensing information.
+
 ### Pull Requests
 
 Each PR must address one issue at a time and should contain changes to
@@ -177,4 +179,13 @@ Keep a width of at most 70 or 80 columns for the lines.
 
 ## License
 
-??
+Zextras documentation is released under [CC BY-NC-SA
+4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license and
+is [REUSE](https://reuse.software/) compliant.
+
+All non-binary files in the repository need to report this copyright
+header, commented out according to the file type (.rst example):
+
+    .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+    ..
+    .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
