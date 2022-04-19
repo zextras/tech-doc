@@ -3,13 +3,14 @@
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 6. Create System User (Optional)
+   Step 6. Change Password for System User (Optional)
    ^^^^^
 
-   In order to create a password for the ``zextras@carbonio.local``
-   user, log in to a shell terminal as the ``zextras`` user and
-   execute these two commands. The first allows to switch to the
-   ``zextras`` user, with the second you actually change the password.
+   In order to change the password used by the
+   ``zextras@carbonio.local`` user for the Web access, log in to a
+   shell terminal as the ``zextras`` user and execute these two
+   commands. The first allows to switch to the ``zextras`` user, with
+   the second you actually change the password.
 
    .. code:: console
 
