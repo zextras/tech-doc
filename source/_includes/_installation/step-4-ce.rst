@@ -39,9 +39,13 @@
          # apt install carbonio-ce
 
    This command pulls all |product| packages; however, you can install
-   only selected components, according to your needs, by installing
-   them explicitly          
-   
+   only selected components according to your needs. To do so, install
+   at least the following packages, which are required to provide the
+   basic functionalities::
+
+     carbonio-directory-server carbonio-logger carbonio-mta
+     carbonio-proxy carbonio-appserver carbonio-webui
+
    Finally, in order to carry out the initial configuration and start
    |product|, execute
 
