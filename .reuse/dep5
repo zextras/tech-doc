@@ -5,14 +5,10 @@ Source:
 
 # Sample paragraph, commented out:
 #
-Files: source/img/*
+Files: source/img/* *.csv *.txt
 Copyright: 2022  Zextras <https://www.zextras.com/>
 License: CC-BY-NC-SA-4.0
 
-Files: Dockerfile
-Copyright: 2022  Zextras <https://www.zextras.com/>
-License: CC-BY-NC-SA-4.0
-
-Files: Jenkinsfile
+Files: Dockerfile Jenkinsfile
 Copyright: 2022  Zextras <https://www.zextras.com/>
 License: CC-BY-NC-SA-4.0
