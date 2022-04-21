@@ -1,8 +1,3 @@
-.. _multiserver-installation:
-
-Multi-Server Installation
-=========================
-
 This section describes a |product| `multi-server installation`, that
 is, a |carbonio| installation spread across multiple nodes, each with
 a precise and dedicated task.
@@ -67,9 +62,6 @@ There are no additional requirements, just a few remarks:
   proxy.example.com, mta.example.com, and so on. Replace
   ``example.com`` with your domain name.
 
-* The Store and Logger nodes expose their services on port
-  **8080**. This setting can **not** be changed.
-
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
@@ -85,31 +77,31 @@ There are no additional requirements, just a few remarks:
 
      .. code:: console
 
-        # apt install service-discover-server carbonio-directory-server -y
+        # apt install service-discover-server carbonio-directory-server
 
    * MTA node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-mta -y
+        # apt install service-discover-agent carbonio-mta
 
    * Proxy node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-proxy carbonio-webui  -y
+        # apt install service-discover-agent carbonio-proxy carbonio-webui
 
    * Store node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-appserver -y
+        # apt install service-discover-agent carbonio-appserver
 
    * Logger node
 
      .. code:: console
 
-        # apt install service-discover-agent carbonio-appserver carbonio-logger -y
+        # apt install service-discover-agent carbonio-appserver carbonio-logger
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -161,7 +153,7 @@ There are no additional requirements, just a few remarks:
    * Logger node: configure the MTA address
 
    The **Logger node** requires a specific configuration and setup
-   that is described in section :ref:`logger_node_config`. 
+   that is described in section :ref:`logger_node_config`.
 
 At this point, the nodes have been configured and the installation has
 been completed.
@@ -171,7 +163,7 @@ nodes before actually finalise the installation and start using
 |product|: the two tasks needed are to :ref:`update_ssh_keys` and to
 setup |mesh| for :ref:`mesh_multi_install`
 
-   
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
