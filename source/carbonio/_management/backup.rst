@@ -1295,6 +1295,31 @@ the external storage.
       **copies** the files of the backup to the new external storage and
       leaves them in the place.
 
+.. card:: Troubleshooting Backups on Defective ObjectStorages
+
+   There are unfortunate cases in which a remote ObjectStorage holding
+   a Backup becomes completely unavailable, for example because of an
+   hardware failure.
+
+   What happens in this situation is unfortunate in many points:
+
+   * All the data saved in on the Bucket are already lost
+   * The remote bucket still shows up when issuing the command
+     :command:`zxsuite core listBuckets all`
+   * The Backup still tries to use that bucket
+   * Trying to redirect the backup to a new volume with the command
+     ``migrateBackupVolume`` is fruitless, because the remote Bucket
+     is unresponsive and unaccessible.
+
+   The solution to this impasse is however quite simple: create a new
+   Backup Volume with the following command (we use a new **local**
+   bucket as example), then initialize it and start the Backup
+   following the usual procedures.
+
+   .. code:: console
+
+      # zxsuite backup setBackupVolume Local /opt/zimbra/backup/zextras
+
 ..
    .. _carbonio_backup_cli:
 
