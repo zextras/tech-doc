@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
 .. warning:: Product and Translation is still in beta
    stage. Incomplete or imperfect translations are to be expected.
 

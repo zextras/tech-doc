@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
 .. todos in this file:
 
    * verify all CLI commands mentioned in text (not zextras backup

@@ -1,7 +1,0 @@
-zxsuite_update_doStartService.rst
-zxsuite_update_doStopService.rst
-zxsuite_update_download.rst
-zxsuite_update_enable.rst
-zxsuite_update_getServices.rst
-zxsuite_update_info.rst
-zxsuite_update_start.rst

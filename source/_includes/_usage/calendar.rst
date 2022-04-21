@@ -1,3 +1,6 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 The calendar component allows to keep track of the appointments, meetings,
 and events you need to attend to and share them with your colleagues.
