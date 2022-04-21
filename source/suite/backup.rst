@@ -1335,14 +1335,15 @@ the external storage.
    * The remote bucket still shows up when issuing the command
      :command:`zxsuite core listBuckets all`
    * The Backup still tries to use that bucket
+   * The defective Bucket can not be removed
    * Trying to redirect the backup to a new volume with the command
      ``migrateBackupVolume`` is fruitless, because the remote Bucket
-     is unresponsive and unaccessible.
+     is unresponsive and unaccessible
 
    The solution to this impasse is however quite simple: create a new
    Backup Volume with the following command (we use a new **local**
-   bucket as example), then initialize it and start the Backup
-   following the usual procedures.
+   bucket as example), and at that point you can proceed to
+   remove the volume that is no longer functional.
 
    .. code:: console
 
