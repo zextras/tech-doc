@@ -1312,14 +1312,28 @@ the external storage.
      ``migrateBackupVolume`` is fruitless, because the remote Bucket
      is unresponsive and unaccessible
 
-   The solution to this impasse is however quite simple: create a new
-   Backup Volume with the following command (we use a new **local**
-   bucket as example), and at that point you can proceed to
-   remove the volume that is no longer functional.
+   The solution to this impasse is however quite simple, and indeed
+   there are two alternatives:
 
-   .. code:: console
+   #. You do not have another ObjectStorage available: use the command
 
-      # zxsuite backup setBackupVolume Local /opt/zimbra/backup/zextras
+      .. code:: console
+
+         # zxsuite backup setBackupVolume Default start
+
+      The Backup will now use the default,local bucket for the backup
+      and remote bucket will be automatically disconnected.
+
+   #. You already have another ObjectStorage available: create a new
+      Backup Volume with the following command (we use a new **local**
+      bucket as example)
+
+      .. code:: console
+
+         # zxsuite backup setBackupVolume Local /opt/zimbra/backup/zextras
+
+   In both cases, at this point you can proceed to remove the volume
+   that is no longer functional.
 
 ..
    .. _carbonio_backup_cli:
