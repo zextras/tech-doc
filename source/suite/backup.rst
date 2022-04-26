@@ -1349,16 +1349,15 @@ the external storage.
 
          # zxsuite backup setBackupVolume Default start
 
-      The Backup will now use the default,local bucket for the backup
-      and remote bucket will be automatically disconnected.
+      The Backup will now use the default, local path.
 
    #. You already have another ObjectStorage available: create a new
-      Backup Volume with the following command (we use a new **local**
+      Backup Volume with the following command (we use a new **S3**
       bucket as example)
 
       .. code:: console
 
-         # zxsuite backup setBackupVolume Local /opt/zimbra/backup/zextras
+         # zxsuite backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup 
 
    In both cases, at this point you can proceed to remove the volume
    that is no longer functional.
