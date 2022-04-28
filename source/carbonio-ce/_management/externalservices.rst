@@ -347,16 +347,40 @@ service. Hence, to avoid conflicts, you need to uninstall it.
 
 * Install package ``carbonio-files-ui`` on each *Proxy Node*.
 
-  .. code:: bash
+     .. tab-set::
 
-     # apt install carbonio-files-ui
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-files-ui
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: bash
+
+            # dnf install carbonio-files-ui
 
 * Install these packages on both Nodes on which |file| should run. We
   suggest to install them on the two *Stores Nodes*.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install carbonio-storages-ce carbonio-files-ce carbonio-user-management
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-storages-ce carbonio-files-ce carbonio-user-management
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: bash
+
+            # dnf install carbonio-storages-ce carbonio-files-ce carbonio-user-management
 
    The installation will end with message::
 

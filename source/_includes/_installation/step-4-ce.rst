@@ -36,11 +36,24 @@
    Step 5: Installation and Configuration of |product|
    ^^^^^
 
-   The installation of |product| requires to run the command 
+   The installation of |product| requires to run the command
 
-      .. code:: console
+   .. tab-set::
 
-         # apt install carbonio-ce
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-ce
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-ce
+
 
    This command pulls all |product| packages; however, you can install
    only selected components according to your needs. To do so, install

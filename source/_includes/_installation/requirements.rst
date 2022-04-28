@@ -23,9 +23,9 @@ System Requirements
 
       .. csv-table::
 
-	      "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-	      "RAM", "8 Gb min, 16Gb recommended"
-	      "Disk space (Operating system and Carbonio)", "40 Gb"
+         "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
+         "RAM", "8 Gb min, 16Gb recommended"
+         "Disk space (Operating system and Carbonio)", "40 Gb"
 
       These requirements are valid for Carbonio Single-Server or for
       each Carbonio Node in a Multi-Server Installation and may vary
@@ -40,10 +40,10 @@ System Requirements
 
       .. csv-table::
 
-	      VMware vSphere 6.x
-	      VMware vSphere 7.x
-	      XenServer
-	      KVM
+         VMware vSphere 6.x
+         VMware vSphere 7.x
+         XenServer
+         KVM
          Virtualbox (testing purposes only)
 
 .. _software-requirements:
@@ -51,14 +51,21 @@ System Requirements
 Software Requirements
 ---------------------
 
-
-|product| is available for **64-bit** CPUs only and can be
-installed on a vanilla **Ubuntu 20.04 LTS Server Edition**.
+|product| is available for **64-bit** CPUs only and can be installed
+on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
+8** installation.
 
 Support for other distributions will be announced in due course
 when it becomes available.
 
+On **RHEL 8**, make sure you also have :
 
+* an active subscription (you must be able to fetch from **BaseOS** and
+  the other main repositories)
+
+* the **CodeReady** repository enabled::
+
+    # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
 ..
    Depending on the platform, use either of the following commands as the
