@@ -3,7 +3,7 @@ FROM python
 WORKDIR /docs
 ADD requirements.txt /docs
 COPY source /docs/source
-COPY .git/ /docs/.git
+COPY .git /docs/.git
 COPY source/suite /docs/source/suite
 COPY source/carbonio /docs/source/carbonio
 COPY source/carbonio-ce /docs/source/carbonio-ce
