@@ -51,30 +51,14 @@ System Requirements
 Software Requirements
 ---------------------
 
-.. grid:: 1 1 1 2
-   :gutter: 2
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
-                
-      Supported Linux Server Distributions
-      ^^^^^
+|product| is available for **64-bit** CPUs only and can be
+installed on a vanilla **Ubuntu 20.04 LTS Server Edition**.
 
-      |product| is available for **64-bit** CPUs only and can be
-      installed on **Ubuntu 20.04 LTS Server Edition**.
-
-      Support for other distributions will be announced in due course
-      when it becomes available.
+Support for other distributions will be announced in due course
+when it becomes available.
 
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
-
-      Required Software Packages
-      ^^^^^
-
-      Besides a standard installation of the supported distribution,
-      no software package is necessary.
 
 ..
    Depending on the platform, use either of the following commands as the
