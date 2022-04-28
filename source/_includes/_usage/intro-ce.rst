@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
 .. intro for Carbonio CE usage
 
 This section contains general advices about the most common tasks and

@@ -1,3 +1,6 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 In the Contacts component you can keep track of all the people with whom
 you exchange e-mails and group them in address books. Existing address
