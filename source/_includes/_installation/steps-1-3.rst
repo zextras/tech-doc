@@ -115,7 +115,7 @@ are preliminary configuration tasks, and some is optional.
          .. tab-item:: RHEL
             :sync: rhel
 
-            .. code:: bash
+            .. code:: console
 
                # dnf install dnsmasq
 

@@ -329,7 +329,7 @@ create a ``postgres`` superuser. In this example, we assign password
 **ScrtPsw987^2** to the user. Make sure to use a strong password of
 your choice.
 
-.. code:: bash
+.. code:: console
 
    # sudo -u postgres psql
    # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
@@ -359,7 +359,7 @@ service. Hence, to avoid conflicts, you need to uninstall it.
       .. tab-item:: RHEL
          :sync: rhel
 
-         .. code:: bash
+         .. code:: console
 
             # dnf install carbonio-files-ui
 
@@ -378,7 +378,7 @@ service. Hence, to avoid conflicts, you need to uninstall it.
       .. tab-item:: RHEL
          :sync: rhel
 
-         .. code:: bash
+         .. code:: console
 
             # dnf install carbonio-storages-ce carbonio-files-ce carbonio-user-management
 
@@ -391,7 +391,7 @@ service. Hence, to avoid conflicts, you need to uninstall it.
 
    Hence, execute :command:`pending-setups`
 
-   .. code:: bash
+   .. code:: console
 
       # pending-setups
 

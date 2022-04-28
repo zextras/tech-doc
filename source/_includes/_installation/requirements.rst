@@ -73,13 +73,13 @@ On **RHEL 8**, make sure you also have :
 
    *  Ubuntu:
 
-      .. code:: bash
+      .. code:: console
 
          # apt install dnsmasq
 
    * Red Hat:
 
-     .. code:: bash
+     .. code:: console
 
         # yum install dnsmasq
 

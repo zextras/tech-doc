@@ -49,7 +49,7 @@ these steps.
       .. tab-item:: RHEL
          :sync: rhel
 
-         .. code:: bash
+         .. code:: console
 
             # dnf update && dnf upgrade
 
@@ -67,13 +67,13 @@ these steps.
       .. tab-item:: RHEL
          :sync: rhel
 
-         .. code:: bash
+         .. code:: console
 
             # dnf install postgresql
 
    Create a ``postgres`` superuser with password **ScrtPsw987^2** (use a password of your choice).
 
-   .. code:: bash
+   .. code:: console
 
       # sudo -u postgres psql
       # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
@@ -101,7 +101,7 @@ these steps.
       .. tab-item:: RHEL
          :sync: rhel
 
-         .. code:: bash
+         .. code:: console
 
             # dnf install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management carbonio-files-ui
 
@@ -120,7 +120,7 @@ these steps.
       .. tab-item:: RHEL
          :sync: rhel
 
-         .. code:: bash
+         .. code:: console
 
             # dnf install carbonio-files-ui
 
@@ -140,7 +140,7 @@ these steps.
       .. tab-item:: RHEL
          :sync: rhel
 
-         .. code:: bash
+         .. code:: console
 
             # dnf install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management
 
@@ -154,7 +154,7 @@ these steps.
 
    Hence, execute :command:`pending-setups`
 
-   .. code:: bash
+   .. code:: console
 
       # pending-setups
 
@@ -166,6 +166,6 @@ these steps.
 
    The final steps is to bootstrap |file|\'s DB (replacing the example password "ScrtPsw987^2" with the chosen one):
 
-   .. code:: bash
+   .. code:: console
 
       PGPASSWORD=ScrtPsw987^2 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
