@@ -19,16 +19,21 @@ import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
 import time
-import git
 
-# -- Get current branch and set hub's home page accordingly ------------------
-repo = git.Repo(search_parent_directories=True)
-branch = repo.active_branch
+# This approach does not currently work with Docker/Jenkins, so we set only the main doc hub for now
 
-if branch.name == 'pre_release' :
-    hubhome = 'http://zextrasdoc.s3-website-eu-west-1.amazonaws.com/landing/zextras_documentation.html'
-else :
-    hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
+# import git
+
+# # -- Get current branch and set hub's home page accordingly ------------------
+# repo = git.Repo(search_parent_directories=True)
+# branch = repo.active_branch
+
+# if branch.name == 'pre_release' :
+#     hubhome = 'http://zextrasdoc.s3-website-eu-west-1.amazonaws.com/landing/zextras_documentation.html'
+# else :
+#     hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
+
+hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
 
 # -- Get current year --------------------------------------------------------
 current_year = time.strftime('%Y')

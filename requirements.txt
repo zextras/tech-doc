@@ -7,4 +7,3 @@ sphinx-design
 sphinx_rtd_theme
 sphinx_copybutton
 sphinxcontrib-email
-gitpython
