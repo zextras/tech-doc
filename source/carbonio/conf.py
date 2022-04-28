@@ -19,6 +19,18 @@ import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
 import time
+import git
+
+# -- Get current branch and set hub's home page accordingly ------------------
+repo = git.Repo(search_parent_directories=True)
+branch = repo.active_branch
+
+if branch.name == 'pre_release' :
+    hubhome = 'http://zextrasdoc.s3-website-eu-west-1.amazonaws.com/landing/zextras_documentation.html'
+else :
+    hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
+
+# -- Get current year --------------------------------------------------------
 current_year = time.strftime('%Y')
 
 # -- Project information -----------------------------------------------------
@@ -93,3 +105,4 @@ html_theme_options = {
     'analytics_anonymize_ip': False,
     'collapse_navigation': False,
 }
+html_context = { 'hubhome' : '%s' %hubhome }
