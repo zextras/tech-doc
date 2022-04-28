@@ -1,3 +1,7 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
 The Zextras Theme for the Zimbra WebClient is a modern-looking UI
 theme 
 designed for Zimbra Network Edition and Zimbra Open Source Edition.

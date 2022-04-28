@@ -1,3 +1,7 @@
+REM SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+REM
+REM SPDX-License-Identifier: CC0-1.0
+
 @ECHO OFF
 
 pushd %~dp0

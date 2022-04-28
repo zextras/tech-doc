@@ -1,12 +1,17 @@
+<!--
+SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+
+SPDX-License-Identifier: CC-BY-NC-SA-4.0
+-->
+
 {% extends "!layout.html" %}
 {% block menu %}
   {{ super() }}
 <hr />
 <ul>
   <li class="toctree-l1">
-    <a class="icon icon-home" href="../../landing/zextras_documentation.html"> Back to
-      Zextras Documentation hub
-    </a>
+    <a class="icon icon-home" href="{{ hubhome }} ">Back to Zextras
+    Documentation hub</a>
   </li>
 </ul>
 {% endblock %}
