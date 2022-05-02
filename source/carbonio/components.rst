@@ -35,9 +35,21 @@ these steps.
    Make sure you have the latest packages list from the repository and
    upgrade the system.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt update && apt upgrade
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf update && apt upgrade
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -45,14 +57,26 @@ these steps.
    Install and configure the required database, `PostgreSQL`.
    ^^^^^
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install postgresql
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install postgresql
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install postgresql
 
    In a Multi-Server scenario it's necessary to ensure that PostgresSQL is available across the infrastructure.
    Here is an **example** command for a /18 subnet:
 
-   .. code:: bash
+   .. code:: console
 
       # echo "host    all             all             $(hostname -i)/18          md5" >>  /etc/postgresql/12/main/pg_hba.conf
       # echo "listen_addresses = '*'"  >> /etc/postgresql/12/main/postgresql.conf
@@ -60,7 +84,7 @@ these steps.
 
    Make sure there is a Postgres role with superuser permissions or create one, for **example** with these commands (use passwords of your choice):
 
-   .. code:: bash
+   .. code:: console
 
       # sudo -u postgres psql
       # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
@@ -82,18 +106,45 @@ these steps.
 
    On a **Single-Server** installation, simply execute
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install carbonio-appserver-advanced  carbonio-chats-ui
-      # apt install carbonio-files carbonio-files-db carbonio-preview carbonio-user-management carbonio-files-ui
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-appserver-advanced  carbonio-chats-ui
+            # apt install carbonio-files carbonio-files-db carbonio-preview carbonio-user-management carbonio-files-ui
+
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-appserver-advanced  carbonio-chats-ui
+            # dnf install carbonio-files carbonio-files-db carbonio-preview carbonio-user-management carbonio-files-ui
 
    On a **Multi-Server** installation, install packages ``*-ui`` on
    each *Proxy Node*.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install carbonio-files-ui
-      # apt install carbonio-chats-ui
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-files-ui
+            # apt install carbonio-chats-ui
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-files-ui
+            # dnf install carbonio-chats-ui
 
    The installation will end with messages (for |file| and |team| respectively)::
 
@@ -110,7 +161,7 @@ these steps.
    Now, install |vs|, following directions in :ref:`vs-installation`
    and finally execute :command:`pending-setups`.
 
-   .. code:: bash
+   .. code:: console
 
       # pending-setups
 
@@ -126,7 +177,7 @@ these steps.
    #. Bootstrap |file|\'s DB (replacing the example password
       "ScrtPsw987^2" with the chosen one):
 
-      .. code:: bash
+      .. code:: console
 
          PGPASSWORD=ScrtPsw987^2 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
 
@@ -136,7 +187,7 @@ these steps.
       .. note:: These commands must be executed as the ``zextras``
          user.
 
-      .. code:: bash
+      .. code:: console
 
          # zxsuite config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://LOCAL-IP/powerstore","user":"powerstore","password":"wThrPsw654£6"}'
          # zxsuite powerstore doRestartService module
@@ -148,19 +199,19 @@ these steps.
 
       * Enable Chats for the default cos
 
-        .. code:: bash
+        .. code:: console
 
            # zxsuite config set cos default teamChatEnabled true
 
       * Enable ActiveSync for the default cos
 
-        .. code:: bash
+        .. code:: console
 
            # zmprov modifyCos default zimbraFeatureMobileSyncEnabled TRUE
 
    #. Enable Cabonio service and Videoserver service at startup
 
-      .. code:: bash
+      .. code:: console
 
          # systemctl enable carbonio.service
          # systemctl enable videoserver.service
