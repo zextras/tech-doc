@@ -329,7 +329,7 @@ create a ``postgres`` superuser. In this example, we assign password
 **ScrtPsw987^2** to the user. Make sure to use a strong password of
 your choice.
 
-.. code:: bash
+.. code:: console
 
    # sudo -u postgres psql
    # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
@@ -347,16 +347,40 @@ service. Hence, to avoid conflicts, you need to uninstall it.
 
 * Install package ``carbonio-files-ui`` on each *Proxy Node*.
 
-  .. code:: bash
+     .. tab-set::
 
-     # apt install carbonio-files-ui
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-files-ui
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-files-ui
 
 * Install these packages on both Nodes on which |file| should run. We
   suggest to install them on the two *Stores Nodes*.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install carbonio-storages-ce carbonio-files-ce carbonio-user-management
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-storages-ce carbonio-files-ce carbonio-user-management
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-storages-ce carbonio-files-ce carbonio-user-management
 
    The installation will end with message::
 
@@ -367,7 +391,7 @@ service. Hence, to avoid conflicts, you need to uninstall it.
 
    Hence, execute :command:`pending-setups`
 
-   .. code:: bash
+   .. code:: console
 
       # pending-setups
 

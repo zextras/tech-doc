@@ -27,9 +27,21 @@ At the end of the procedure, when all steps have been completed, no
 
 .. dropdown:: Step #2: remove packages
 
-   .. code:: console
+   .. tab-set::
 
-      # apt purge "carbonio*"
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt purge "carbonio*"
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf purge "carbonio*"
 
    .. note:: After this step you may get a warning that while removing
       carbonio packages, some directories are not empty so they have not
@@ -43,9 +55,22 @@ At the end of the procedure, when all steps have been completed, no
 
 .. dropdown:: Step #4: remove unused packages
 
-   .. code:: console
 
-      # apt autoremove
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt autoremove
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf autoremove
 
 .. dropdown:: Step #5: remove crontab entry
 

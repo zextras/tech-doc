@@ -79,33 +79,95 @@ There are no additional requirements, just a few remarks:
 
    * Directory-server node
 
-     .. code:: console
+      .. tab-set::
 
-        # apt install service-discover-server carbonio-directory-server
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install service-discover-server carbonio-directory-server
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install service-discover-server carbonio-directory-server
 
    * MTA node
 
-     .. code:: console
 
-        # apt install service-discover-agent carbonio-mta
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install service-discover-agent carbonio-mta
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install service-discover-agent carbonio-mta
 
    * Proxy node
 
-     .. code:: console
+      .. tab-set::
 
-        # apt install service-discover-agent carbonio-proxy carbonio-webui
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install service-discover-agent carbonio-proxy carbonio-webui
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install service-discover-agent carbonio-proxy carbonio-webui
 
    * Store node
 
-     .. code:: console
 
-        # apt install service-discover-agent carbonio-appserver
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install service-discover-agent carbonio-appserver
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install service-discover-agent carbonio-appserver
 
    * Logger node
 
-     .. code:: console
+      .. tab-set::
 
-        # apt install service-discover-agent carbonio-appserver carbonio-logger
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install service-discover-agent carbonio-appserver carbonio-logger
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install service-discover-agent carbonio-appserver carbonio-logger
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5

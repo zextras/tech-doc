@@ -4,20 +4,56 @@
 
 * update the list of packages
 
-  .. code:: console
+   .. tab-set::
 
-     # apt update
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt update
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf update
 
 * upgrade the system
 
-  .. code:: console
+   .. tab-set::
 
-     # apt upgrade
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt upgrade
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf upgrade
 
 * or execute both task at once:
 
-  .. code:: console
+   .. tab-set::
 
-     # apt update && apt upgrade
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf update && dnf upgrade
 
 .. note:: The system upgrade is optional, you can skip it.
