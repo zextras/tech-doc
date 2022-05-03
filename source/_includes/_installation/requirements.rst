@@ -63,9 +63,10 @@ On **RHEL 8**, make sure you also have :
 * an active subscription (you must be able to fetch from **BaseOS** and
   the other main repositories)
 
-* the **CodeReady** repository enabled::
+..
+   * the **CodeReady** repository enabled::
 
-    # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+       # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
 ..
    Depending on the platform, use either of the following commands as the
