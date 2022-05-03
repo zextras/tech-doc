@@ -67,9 +67,15 @@ these steps.
       .. tab-item:: RHEL
          :sync: rhel
 
+	 In RHEL 8 it is necessary to specify the package version
+	 manually: Postgres **12** is required, instead of the default
+	 **10**.
+
          .. code:: console
 
-            # dnf install postgresql
+            # dnf module install postgresql:12/server
+	    # systemctl start postgresql.service
+	    # systemctl enable postgresql.service
 
    Create a ``postgres`` superuser with password **ScrtPsw987^2** (use a password of your choice).
 
