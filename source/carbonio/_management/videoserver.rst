@@ -117,10 +117,23 @@ following requirements:
 Installing |vs| is straightforward. Assuming |carbonio|'s repository
 have already been configured, simply execute the two commands
 
-.. code:: console
+.. tab-set::
 
-   # apt update
-   # apt install carbonio-videoserver
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt update
+         # apt install carbonio-videoserver
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf update
+         # dnf install carbonio-videoserver
 
 Once the package has been successfully installed, you will be asked
 the **Public IP Address** of |vs|: this is the only bit of

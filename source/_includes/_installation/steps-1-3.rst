@@ -71,7 +71,7 @@ are preliminary configuration tasks, and some is optional.
 
       .. hint:: Replace **172.16.0.10** with the actual management IP
          to be assigned to the server.
-           
+
 .. _installation-step3:
 
 .. card::
@@ -103,9 +103,21 @@ are preliminary configuration tasks, and some is optional.
          default `systemd-resolved` service, so make sure to disable
          the latter before continuing with the next steps.
 
-      .. code:: bash
+      .. tab-set::
 
-         # apt install dnsmasq
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install dnsmasq
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install dnsmasq
 
       To configure it, add the following lines to file
       :file:`/etc/dnsmasq.conf`::

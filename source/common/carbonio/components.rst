@@ -37,19 +37,49 @@ these steps.
    Make sure you have the latest packages list from the repository and
    upgrade the system.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt update && apt upgrade
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf update && dnf upgrade
 
    Then, install the required database, `postgresql`.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install postgresql
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install postgresql
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+	 In RHEL 8 it is necessary to specify the package version
+	 manually: Postgres **12** is required, instead of the default
+	 **10**.
+
+         .. code:: console
+
+            # dnf module install postgresql:12/server
+	    # systemctl start postgresql.service
+	    # systemctl enable postgresql.service
 
    Create a ``postgres`` superuser with password **ScrtPsw987^2** (use a password of your choice).
 
-   .. code:: bash
+   .. code:: console
 
       # sudo -u postgres psql
       # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
@@ -64,25 +94,61 @@ these steps.
    ^^^^^
 
    On a **Single-Server** installation, simply execute
-     
-   .. code:: bash
 
-      # apt install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management carbonio-files-ui
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management carbonio-files-ui
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management carbonio-files-ui
 
    On a **Multi-Server** installation, install package
    ``carbonio-files-ui`` on each *Proxy Node*.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install carbonio-files-ui
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-files-ui
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-files-ui
 
 
    All the other packages can be installed on any other Node, although
    we suggest to install them on the *Store Node*.
 
-   .. code:: bash
+   .. tab-set::
 
-      # apt install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management
 
 
    The installation will end with message::
@@ -94,7 +160,7 @@ these steps.
 
    Hence, execute :command:`pending-setups`
 
-   .. code:: bash
+   .. code:: console
 
       # pending-setups
 
@@ -106,7 +172,6 @@ these steps.
 
    The final steps is to bootstrap |file|\'s DB (replacing the example password "ScrtPsw987^2" with the chosen one):
 
-   .. code:: bash
+   .. code:: console
 
       PGPASSWORD=ScrtPsw987^2 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
-

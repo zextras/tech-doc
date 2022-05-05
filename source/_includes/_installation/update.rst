@@ -7,25 +7,61 @@ released, the repositories are updated and packages are available for
 installation along with the other system updates.  Therefore, to
 upgrade |product|, first check for new packages:
 
-.. code:: console
+   .. tab-set::
 
-   # apt update 
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt update
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf update
 
 Then either
 
 * upgrade |product| packages only
 
-  .. code:: console
+   .. tab-set::
 
-     # apt install "carbonio-*"
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install "carbonio-*"
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install "carbonio-*"
 
 or
 
 * upgrade the whole system
 
-  .. code:: console
+   .. tab-set::
 
-     # apt upgrade 
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt upgrade
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf upgrade
 
 .. hint:: Even if you choose to upgrade only |product|, remember that
    you should keep the whole system up to date, because new system
@@ -62,7 +98,7 @@ Troubleshooting
       given below.
 
    .. grid-item-card:: Solution:
-      
+
       This is a known problem, fixed in **4.0.4**, for which the following
       workaround exists: install package `carbonio-ce` (or the one
       that failed)::
@@ -71,7 +107,7 @@ Troubleshooting
 
       Make sure that the `carbonio-core` package is installed and is
       the **latest version** available::
-        
+
         # apt policy carbonio-core
 
       The outcome of the command shows the available versions of a
@@ -88,5 +124,3 @@ Troubleshooting
       It is worth noticing that the manual installation of the package
       does not have any effect on its existing configurations, so you
       can proceed without any fear to lose them.
-
-

@@ -2,22 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-* update the list of packages
+In order to upgrade the system, use your preferred package manager. As
+CLI utilities, you can use :command:`apt` on Ubuntu operating systems
+and :command:`dnf` or :command:`yum` on RHEL 8 operating system.
 
-  .. code:: console
-
-     # apt update
-
-* upgrade the system
-
-  .. code:: console
-
-     # apt upgrade
-
-* or execute both task at once:
-
-  .. code:: console
-
-     # apt update && apt upgrade
-
-.. note:: The system upgrade is optional, you can skip it.
