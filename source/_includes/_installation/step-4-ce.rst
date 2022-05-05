@@ -23,8 +23,8 @@
       * the URL of the repository
       * the GPG key of the repository
 
-      Follow the instructions in the e-mail to add these data to your
-      system, then continue with the next steps:
+   Follow the instructions in the e-mail to add these data to your
+   system, then upgrade the system
 
    .. include:: /_includes/upgrade.rst
 
