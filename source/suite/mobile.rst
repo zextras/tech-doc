@@ -1009,7 +1009,21 @@ security feature, meaning that it acts upon the first connection to the
 server and it’s made to ensure that only authorized devices can finalize
 synchronization with server. This allows a full administrator to keep
 track of all mobile device used in their network. Presently only CLI
-tools are provided; a web GUI will be released in the future.
+tools are provided.
+
+The global Boolean attribute ``abq_enabled_at_startup`` controls
+whether ABQ will start together with the |suite|. While by default the
+attribute is **true**, it is suggested to set it to **false** if it
+not used, because this would save server resources.
+
+To disable the ABQ, execute the following command, then restart
+``mailboxd``::
+
+  zxsuite config set global abq_enabled_at_startup false
+
+To verify that ABQ was disabled, in the output of :command:`zxsuite
+mobile getServices`, ABQ should appear as **not running**.
+
 
 .. _mobile_components:
 
