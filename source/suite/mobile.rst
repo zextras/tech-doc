@@ -1022,7 +1022,8 @@ To disable the ABQ, execute the following command, then restart
   zxsuite config set global abq_enabled_at_startup false
 
 To verify that ABQ was disabled, in the output of :command:`zxsuite
-mobile getServices`, ABQ should appear as **not running**.
+mobile getServices`, ABQ should appear as **not running** (i.e., the
+value for ABQ's *running*  property should be **false**).
 
 
 .. _mobile_components:
