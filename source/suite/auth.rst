@@ -766,7 +766,7 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: bash
 
-         zxsuite auth saml import example.com /tmp/saml.json
+         zxsuite auth saml import example.com file /tmp/saml.json
 
       .. hint:: It is also possible to view or edit single attributes
          by using the ``zxsuite auth saml get`` and ``zxsuite auth saml
