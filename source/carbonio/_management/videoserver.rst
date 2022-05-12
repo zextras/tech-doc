@@ -228,8 +228,7 @@ removal on the video server is required).
 .. once beta is over?
    
 .. warning:: When using multiple video servers, meetings are instanced
-   on any of the available instances. Once the beta is over, load
-   balancing rules will be enacted.
+   on any of the available instances.
 
 .. card::
 
