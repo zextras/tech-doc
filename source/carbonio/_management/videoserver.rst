@@ -144,10 +144,11 @@ a command on each node of the |product| installation:
 
 .. code:: console
 
-   # zxsuite chats video-server add example.com port 8100 A_SECRET_PASSWORD
+   # zxsuite chats video-server add example.com port 8100 secret A_SECRET_PASSWORD
 
-Replace `example.com` with the actual domain name and
-`A_SECRET_PASSWORD` with a robust password.
+Replace `example.com` with the actual domain name, `8100` with the
+port on which the |vs| listens and `A_SECRET_PASSWORD` with a robust
+password.
    
 In case you forget the password, you can retrieve it using
 
@@ -395,3 +396,90 @@ The following settings influence the audio experience.
       level considering the audio sources of the last 2 seconds.
 
       The value should be at least **0**.
+
+.. _vs-record-meeting:
+
+Recording a Video Meeting
+-------------------------
+
+The owner or moderator of a room can record any meeting and make it
+available for people to watch it later. A meeting can be recorded only
+once, meaning that an ongoing recording will be **unique** for that
+meeting. This means that if for any reason a recording is interrupted,
+*no other recording for the same meeting can be started*. Every user
+will be notified of the ongoing recording, while any moderator in the
+room can stop it, even if it was started by another moderator.
+
+This functionality is provided by a specific package, called
+``carbonio-videoserver-recorder``, that **must be installed together**
+with ``carbonio-videoserver``. On a Multi-Server, this means that the
+package must be installed on each node on which
+``carbonio-videoserver`` is installed.
+
+.. note:: All the instructions below must be executed on every node on
+   which ``carbonio-videoserver`` is installed, unless differently
+   specified.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+                
+      .. code:: console
+
+         # apt install carbonio-videoserver-recorder
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      
+      .. code:: console
+
+         # yum install carbonio-videoserver-recorder
+
+The package installs a so-called *servlet* that needs to be associated
+with the |vs| instance, a task that needs to be executed from the CLI,
+using a command that differ depending if you already installed and
+configured the |vs| or not.
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+
+      If you already installed |vs|, execute this command:
+
+      .. code:: console
+
+         # zxsuite chats video-server update-servlet example.com 8100 8090
+
+      Here, replace *example.com* with the domain name or IP on which
+      the |vs| is installed, *8100* the |vs| port, and *8090* (which
+      is the default value) with the port that will be used only for
+      recording. The value of the servlet port **must** match the one
+      defined in file
+      :file:`/etc/carbonio/videoserver-recorder/recordingEnv`.
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+
+      If you did not yet install |vs|, you can execute the following
+      command, which configures at the same time both the |vs| and the
+      recording servlet.
+
+      .. code:: console
+
+         # zxsuite chats video-server add example.com port 8100 servlet 8090 secret A_SECRET_PASSWORD
+
+      Replace *example.com* with the actual domain name or IP, *8100*
+      and *8090* with the ports associated with the |vs| and the
+      recorder, respectively, and *A_SECRET_PASSWORD* with a robust
+      password.
+
+
+To complete the setup, execute the command
+
+.. code:: console
+
+   # zxsuite config set global teamVideoServerRecordingEnabled true
