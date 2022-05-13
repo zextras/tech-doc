@@ -408,7 +408,7 @@ once, meaning that an ongoing recording will be **unique** for that
 meeting. In case a recording is interrupted, it can be restarted at a
 later point. Every user will be notified of the ongoing recording,
 while any moderator in the room can stop it, even if it was started by
-another moderator, and save it to a file.
+another moderator, and save it to a file or to the moderator's |file|.
 
 This functionality is provided by a specific package, called
 ``carbonio-videoserver-recorder``, that **must be installed together**

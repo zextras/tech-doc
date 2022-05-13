@@ -103,4 +103,6 @@ Planned Meetings prove useful when scheduling meetings with
 colleagues: create a planned meeting, then attach the room's link to
 the calendar's invitation.
 
-.. video recording for meeting rooms is forthcoming!
+Video calls can be recorded, but require an additional package. Please
+refer to section :ref:`vs-record-meeting` for directions and more
+information on the functionality.
