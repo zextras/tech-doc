@@ -405,10 +405,10 @@ Recording a Video Meeting
 The owner or moderator of a room can record any meeting and make it
 available for people to watch it later. A meeting can be recorded only
 once, meaning that an ongoing recording will be **unique** for that
-meeting. This means that if for any reason a recording is interrupted,
-*no other recording for the same meeting can be started*. Every user
-will be notified of the ongoing recording, while any moderator in the
-room can stop it, even if it was started by another moderator.
+meeting. In case a recording is interrupted, it can be restarted at a
+later point. Every user will be notified of the ongoing recording,
+while any moderator in the room can stop it, even if it was started by
+another moderator, and save it to a file.
 
 This functionality is provided by a specific package, called
 ``carbonio-videoserver-recorder``, that **must be installed together**
@@ -437,10 +437,10 @@ package must be installed on each node on which
 
          # yum install carbonio-videoserver-recorder
 
-The package installs a so-called *servlet* that needs to be associated
-with the |vs| instance, a task that needs to be executed from the CLI,
-using a command that differ depending if you already installed and
-configured the |vs| or not.
+The package installs a service that needs to be associated with the
+|vs| instance, a task that needs to be executed from the CLI, using a
+command that differ depending if you already installed and configured
+the |vs| or not.
 
 .. grid:: 1 1 2 2
    :gutter: 3
