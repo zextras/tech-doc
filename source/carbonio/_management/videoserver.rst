@@ -447,6 +447,10 @@ configured the |vs| or not.
 
    .. grid-item-card::
       :columns: 12 12 6 6
+      :class-header: card-abyss
+
+      |vs| already installed
+      ^^^^
 
       If you already installed |vs|, execute this command:
 
@@ -463,6 +467,10 @@ configured the |vs| or not.
 
    .. grid-item-card::
       :columns: 12 12 6 6
+      :class-header: card-abyss
+
+      |vs| not yet installed
+      ^^^^
 
       If you did not yet install |vs|, you can execute the following
       command, which configures at the same time both the |vs| and the
