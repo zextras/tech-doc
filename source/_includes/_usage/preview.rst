@@ -2,8 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-*Carbonio Preview* allows to have a quick look at those files before
-saving them on the local workstation or on |file|.
+*Carbonio Preview* allows to have a quick look at those files.
 
 Supported files that can be previewed include PDFs, text documents,
 spreadsheets and other office files, and images, but excluding the
