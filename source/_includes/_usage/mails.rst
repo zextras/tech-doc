@@ -29,12 +29,22 @@ underneath the `Share Folders`. In the dialog, enter the e-mail
 address of the colleague of which you want to find the shares. If the
 colleague has shared some folder, you'll be presented with a list.
 
+.. _mail-tags:
 
-.. are tags present in Carbonio?!
-   Tags
-   ----
+Tags
+----
 
-   A :term:`tag` can be assigned to an e-mail
+A **tag** is a label, added to either an e-mail or a calendar event
+item that helps to improve both the organisation of the e-mails or
+events themselves and the search among them.
+
+New tags can be added with a right click on the **tags** menu item,
+while an existing tag can be modified or deleted by right-clicking on
+it.
+
+To search for a tag, in the :ref:`Search quickbar <global-search>` use
+the syntax ``tag:name``, replacing *name* with the name of the tag.
+
 
 Working with e-mails
 --------------------
@@ -52,10 +62,12 @@ folder.
 
 .. hint:: Moving a single e-mail in a conversation is not possible,
    the whole conversation will be moved.
-
-A right click on the e-mail allows to carry out a number of actions:
-marking it as read/unread or as spam, print, delete or flag it. A flag
-is a simple indicator for an email that can be adapted to one's
+   
+On the top-right corner of each e-mail there are a few icons that
+allow to carry out a number of actions; click the
+:material-regular:`more_vert` icon to access them and many more: mark
+e-mail as read/unread or as spam, print, delete, tag, or flag it. A
+flag is a simple indicator for an email that can be adapted to one's
 preference: to name a few, it has some importance compared to other,
 it needs some action, or it has been processed and can be archived or
 deleted.

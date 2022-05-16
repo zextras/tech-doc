@@ -11,6 +11,8 @@ difference is in the start (and end) date and time: by using the button,
 they are set to the current date and time, by clicking the calendar
 they are taken from the clicked date and time.
 
+Additionally, :ref:`mail-tags` can be added to any calendar event.
+
 Shared Calendars
 ----------------
 

@@ -23,7 +23,7 @@ The UI of |team| is organised in three columns:
 
 .. _chats_moderators_in_rooms:
 
-Moderators in virtual Rooms
+Moderators in Virtual Rooms
 ---------------------------
 
 The user that creates a **virtual room** (we call *virtual room* a
