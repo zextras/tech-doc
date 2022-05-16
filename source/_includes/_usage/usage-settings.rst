@@ -83,9 +83,10 @@ Mails
    These settings define the response to incoming
    e-mails. Notification e-mails can be sent to a third party and
    different types of desktop notification can be combined (pop-ups,
-   flashing browser title, highlight of mail tab). Notification can be
-   restricted to e-mail landing in the inbox or in all folders (in
-   case you defined Filters, see further on).
+   flashing browser title, highlight of mail tab, play a
+   sound). Notification can be restricted to e-mail landing in the
+   inbox or in all folders (in case you defined Filters, see further
+   on).
 
    Choose also where to store e-mails sent from yourself, whether to
    send automatic read receipts and if duplicate messages should be
