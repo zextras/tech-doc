@@ -10,6 +10,7 @@ components have dedicated sections featuring more information, howtos,
 and best practices:
 
 * :ref:`global-search`: search for any item or create a new one
+* :ref:`file-preview` files without the need to save them in advance
 * :ref:`mails-comp`, the core component of |product|
 * :ref:`auth-user` or how to allow users to access |product|
 * :ref:`calendar-comp`: manage your appointments and share them with
