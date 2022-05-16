@@ -85,9 +85,9 @@ being members of the Virtual Room.
 Moreover, in the Virtual Room tab, users can see at a glance all
 ongoing and planned meetings involving them.
 
-To create a new planned meeting, click the :bdg-primary-line:`PLAN A
-MEETING` button, then enter a name. You will be automatically assigned
-the role of **Owner**. Besides being a :ref:`Moderator
+To create a new meeting, click the :bdg-primary-line:`CREATE ROOM`
+button, then enter a name. You will be automatically assigned the role
+of **Owner**. Besides being a :ref:`Moderator
 <chats_moderators_in_rooms>`, an owner can not be removed and is the
 solely person that can delete a Virtual Room.
 
