@@ -23,11 +23,11 @@ The UI of |team| is organised in three columns:
 
 .. _chats_moderators_in_rooms:
 
-Moderators in Virtual Rooms
----------------------------
+Moderators in Rooms
+-------------------
 
-The user that creates a **virtual room** (we call *virtual room* a
-Channel, a Space, a Group or a Meeting Room, see below) becomes
+The user that creates a **room** (we call *virtual room* a
+Channel, a Space, a Group or a Virtual Room, see below) becomes
 automatically the **Room Moderator** and can manage the room’s textual
 and video conversations. In particular, the *Mute For All* and *Add
 new members* functionalities are reserved for Moderators only.
@@ -106,3 +106,7 @@ link to the calendar's invitation.
 Video calls can be recorded, but require an additional package. Please
 refer to section :ref:`vs-record-meeting` for directions and more
 information on the functionality.
+
+When joining a Virtual Room, a dialog window appears, which carries
+the name of the room and allows to choose and test the audio and video
+devices.
