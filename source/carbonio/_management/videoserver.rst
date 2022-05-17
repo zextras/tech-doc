@@ -478,7 +478,7 @@ the |vs| or not.
 
       .. code:: console
 
-         # zxsuite chats video-server add example.com port 8100 servlet 8090 secret A_SECRET_PASSWORD
+         # zxsuite chats video-server add example.com port 8100 servlet_port 8090 secret A_SECRET_PASSWORD
 
       Replace *example.com* with the actual domain name or IP, *8100*
       and *8090* with the ports associated with the |vs| and the

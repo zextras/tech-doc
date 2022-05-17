@@ -20,7 +20,9 @@ will be displayed on the right of the folder name, with **99+**
 meaning there are at least 99 emails to read.
 
 A right-click also allows to carry out other actions on the selected
-folder: *move*, *wipe*, *edit*, *delete*, and *share*.
+folder: *move*, *wipe* (i.e., remove all e-mails in the folder),
+*edit*, *delete*, and *share* (with internal colleagues or even make
+it freely readable).
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
@@ -43,7 +45,9 @@ while an existing tag can be modified or deleted by right-clicking on
 it.
 
 To search for a tag, in the :ref:`Search quickbar <global-search>` use
-the syntax ``tag:name``, replacing *name* with the name of the tag.
+the syntax ``tag:name``, replacing *name* with the name of the
+tag. The same tags used for e-mail can be used to mark :ref:`Calendar
+appointment <calendar-comp>`.
 
 
 Working with e-mails
@@ -72,12 +76,13 @@ preference: to name a few, it has some importance compared to other,
 it needs some action, or it has been processed and can be archived or
 deleted.
 
+More actions are available and shown upon right-clicking an email.
+
 Trash Folder
 ------------
 
 The trash folder is a special folder in which e-mails marked for
 deletion are temporary stored, in case they need to be recovered.
-
 An e-mail in the Trash folder will be automatically deleted after a
 period equivalent to the retention time, by default **30 days**.
 
@@ -92,7 +97,9 @@ undesired, are stored.
 automatically infer whether an e-mail is legit or not and mark it as
 spam. However, in case you think an e-mail is spam but was not
 processed, it can be manually marked as spam by right-clicking it and
-selecting *Mark as spam*.
+selecting *Mark as spam*. Also that vice-versa is valid: an e-mail in
+the *Junk* folder (i.e., recognised as spam) can be marked as *not
+spam*: it will land in the **Inbox**.
 
 All the content of the junk folder helps the anti-spam engine to learn
 and improve its results.

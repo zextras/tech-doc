@@ -23,9 +23,8 @@ calendar, create a new appointment) or the
 new object in another module.
 
 The search works in a similar way: the white button on the right-hand
-side of, which changes label depending on the
-current module, can be used to search in the module the string
-provided in the text box. Click the
-:octicon:`chevron-down;1em;sd-bg-light sd-text-black` to search in a
-different module. A more advanced search is available in the
-:ref:`Advanced search module <search-comp>`.
+side of the |new| button, which changes label depending on the current
+module, can be used to search in the module the string provided in the
+text box. Click the :octicon:`chevron-down;1em;sd-bg-light
+sd-text-black` to search in a different module. A more advanced search
+is available in the :ref:`Advanced search module <search-comp>`.
