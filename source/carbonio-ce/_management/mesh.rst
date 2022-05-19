@@ -211,7 +211,7 @@ the Multi-Server there are a few more steps to carry out.
 
    .. code:: console
 
-      # export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gz.gpg | tar xOf - consul-acl-secret.json | jq .SecretID -r)
+      # export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gpg | tar xOf - consul-acl-secret.json | jq .SecretID -r)
       # consul members
 	     Node              Address              Status  Type    Build  Protocol  DC   Segment
 	     mail.example.com  192.168.56.101:8301  alive   server  1.9.3  2        

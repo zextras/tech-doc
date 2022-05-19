@@ -11,7 +11,7 @@
 What is |product|?
 ==================
 
-.. include:: /_includes/_general/what-is-ce.rst
+.. include:: /_includes/_general/what-is-cb.rst
 
 .. _browser_compatibility:
 

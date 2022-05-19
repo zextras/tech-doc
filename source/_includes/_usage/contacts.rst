@@ -5,11 +5,9 @@
 In the Contacts component you can keep track of all the people with whom
 you exchange e-mails and group them in address books. Existing address
 books appear on the column on the right of the component's list.
-
 You can create new contact by using the |new| button and selecting
 `New Contact`; they will be stored under the `Contacts` section of the
 Contacts component.
-
 Addresses of people to whom you send an e-mail are automatically added
 to the `Emailed Contacts`.
 
@@ -20,7 +18,6 @@ book and select `Empty trash`.
 A right-click on the address book allows to carry out a few action on
 it and its content: edit, share, empty, or delete it. Moreover, new
 address books can be created.
-
 For each contact, icons allow to carry out different actions: delete,
 move, or write an e-mail to the contact.
 

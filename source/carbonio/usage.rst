@@ -44,8 +44,8 @@ Mails
 
 .. _calendar-comp:
 
-Calendar
-========
+Calendars
+=========
 
 .. include:: /_includes/_usage/calendar.rst
 

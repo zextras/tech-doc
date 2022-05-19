@@ -27,11 +27,13 @@ having to share the personal credentials.
 
 From the settings page, the user can:
 
-- **Change the password** of the current logged in user
+- :ref:`Change the password <auth_change_pass>` of the currently
+  logged in user
 
 - **Add new credentials** in the dedicated pages, accessible by
-  clicking *Exchange ActiveSync*, *Mobile Apps*, or *OTP
-  Authentication*
+  clicking :ref:`Exchange ActiveSync <auth_zimlet-create-eas>`,
+  :ref:`Mobile Apps <auth_create_new_credentials_qr_code>`, or
+  :ref:`OTP Authentication <auth_zimlet-create-otp>`
 
 - **Check the status** and other information for all `Exchange
   ActiveSync` and `Mobile Apps` credential created. In each section,
@@ -46,9 +48,9 @@ From the settings page, the user can:
   access using 2FA, unless its use has been enabled or disabled at
   COS, domain, or global level.
    
-- **Delete** any credential created
+- :ref:`Delete <auth_delete_credentials>` any credential created
 
-.. important:: Users can in no case modify their assigned credentials,
+.. important:: Users can in no case modify their assigned username,
    change the password of credentials they generate, or modify any
    property of the credential. Limited editing of a credential is
    strictly limited to the administrators.
@@ -82,7 +84,6 @@ Create New Credentials: EAS
 To create a new Password for :abbr:`EAS (Exchange ActiveSync)`
 service, click `Exchange ActiveSync`, then
 :bdg-primary-line:`NEW AUTHENTICATION +`.
-
 Here, enter an easy to remember identifier for the password in the
 *Authentication description* field.
 
@@ -116,8 +117,7 @@ Create New Credentials: Mobile Apps
    :ref:`Drive Mobile App <drive_mobile_app>`.
 
 |auth| can speed up and manage Zextras Application logins, such
-as those for the :ref:`mobile_apps`.
-   
+as those for the :ref:`mobile_apps`.   
 This is achieved through the creation of a QR Code, which the user can
 then scan from the App’s login page to log in. The procedure is very
 similar to the one described in the previous section.
@@ -130,22 +130,20 @@ similar to the one described in the previous section.
 In order to create a new QR Code for Mobile Application, open the
 |auth| Zimlet and click `Mobile Apps`, then
 :bdg-primary-line:`NEW AUTHENTICATION +`.
-
 Here, enter an easy to remember identifier for the password in the
 *Authentication description*.
-  
-.. commenting out due to a description error in the modal
-   .. figure:: /img/auth/qrcode1.png
-      :scale: 50%
-
 Click :bdg-primary:`CREATE PASSWORD` and the new QR code for Mobile
 Application will be displayed. You can use the Zextras mobile app to
 frame the code and grant access to the app.
 
+.. commenting out due to a description error in the modal
+   .. figure:: /img/auth/qrcode1.png
+      :scale: 50%
+
 .. warning:: QR Codes are randomly generated and cannot be displayed
    again after the creation is complete.
 
-Click on :bdg-primary:`DONE` to close the |auth| window. An
+Click :bdg-primary:`DONE` to close the |auth| window. An
 entry for the new Mobile Application is now visible in the *Active
 Passwords* list of the |auth| Zimlet.
 
@@ -162,17 +160,22 @@ identify the OTP.
 .. figure:: /img/auth/otp1.png
    :scale: 50%
 
-You will be presented with the QR code and a list of PIN codes to be
-used for authentication.
+You will be presented with the QR code: scan it with your smartphone
+or copy it (as string) to the clipboard, then click
+:bdg-primary:`NEXT` to see the list of PIN codes to be used for
+authentication.
 
-.. grid::
-
+.. grid:: 1 1 2 2 
+   :gutter: 1
+            
    .. grid-item::
+      :columns: 6
 
       .. figure:: /img/auth/otp2a.png
          :scale: 50%
 
    .. grid-item::
+      :columns: 6
 
       .. figure:: /img/auth/otp2b.png
          :scale: 50%
@@ -205,5 +208,6 @@ Active passwords or OTPs, and click the :bdg-danger-line:`DELETE x`
 button:
 
 .. image:: /img/auth/delete_credential.png
+   :width: 30%
 
 Click :bdg-danger:`YES` to confirm the removal of the credential.
