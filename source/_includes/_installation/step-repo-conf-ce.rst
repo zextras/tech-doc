@@ -24,7 +24,7 @@
 
    .. include:: /_includes/upgrade.rst
 
-.. _installation-step5:
+.. _installation-step3:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -74,35 +74,3 @@
             carbonio-docs-connector-ce carbonio-docs-editor \
             postgresql-12
 
-
-   Once all packages have been installed, in order to carry out the
-   initial configuration of  |product| and start, execute
-
-      .. code:: console
-
-         # carbonio-bootstrap
-
-      .. dropdown:: What does ``carbonio-bootstrap`` do?
-
-         This command makes a few checks and then starts the
-         installation, during which a few messages are shown,
-         including the name of the log file that will store all
-         messages produced during the process::
-
-           Operations logged to /tmp/zmsetup.20211014-154807.log
-
-         In case the connection is lost during the installation, it is
-         possible to log in again and check the content of that file
-         for information about the status of the installation. If the
-         file does not exist anymore, the installation has already
-         been completed and in that case the log file can be found in
-         directory :file:`/opt/zextras/log`.
-
-         The first part of the bootstrap enables all necessary
-         services and creates a new administrator account
-         (zextras\@carbonio.local), initially **without password**
-         (see below for instruction to set it).
-
-      Before finalising the bootstrap, press :bdg-dark-line:`y` to apply the
-      configuration. The process will continue until its completion:
-      click :bdg-dark-line:`Enter` to continue.

@@ -19,6 +19,7 @@ Single-Server Installation
 
 .. include:: /_includes/_installation/steps-hostname.rst
 .. include:: /_includes/_installation/step-repo-conf-ce.rst
+.. include:: /_includes/_installation/step-postinst.rst
 .. include:: /_includes/_installation/complete.rst
 .. include:: /_includes/_installation/users.rst
 

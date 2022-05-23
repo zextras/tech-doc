@@ -12,14 +12,15 @@ installation, although within a :ref:`Multiserver installation
 <multiserver-installation>` they can be installed on dedicated nodes.
 
 In the remainder of this section we show how to install each of these
-components, currently only |file|. The procedure is the same for both
-Single and Multi-Server, only the |file|\ 's package installation
-differs.
+components, currently only |file|, on a Multi-Server installation.
 
+.. note:: Installation of |file| on Single-Server is part of the
+   |product| installation.
+   
 .. _files-single-install:
 
-|file|
-------
+|file| on Multi-Server
+----------------------
 
 |file| requires `Carbonio Mesh` for its correct functioning, so
 please :ref:`setup Carbonio Mesh <mesh_install>` before proceeding
@@ -37,21 +38,7 @@ these steps.
    Make sure you have the latest packages list from the repository and
    upgrade the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf update && dnf upgrade
+   .. include:: /_includes/upgrade.rst
 
    Then, install the required database, `postgresql`.
 
@@ -71,9 +58,9 @@ these steps.
 	 manually: Postgres **12** is required, instead of the default
 	 **10**.
 
-         .. code:: console
+    .. code:: console
 
-            # dnf module install postgresql:12/server
+       # dnf module install postgresql:12/server
 	    # systemctl start postgresql.service
 	    # systemctl enable postgresql.service
 
@@ -93,26 +80,10 @@ these steps.
    Install and Configure |file|
    ^^^^^
 
-   On a **Single-Server** installation, simply execute
-
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management carbonio-files-ui
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf install carbonio-storages-ce carbonio-files-ce carbonio-files-db carbonio-user-management carbonio-files-ui
-
-   On a **Multi-Server** installation, install package
-   ``carbonio-files-ui`` on each *Proxy Node*.
+   Depending on your setup, you need to install packages on different
+   nodes.
+   
+   First, install ``carbonio-files-ui`` on each *Proxy Node*.
 
    .. tab-set::
 
@@ -170,8 +141,9 @@ these steps.
    Final Task
    ^^^^^
 
-   The final steps is to bootstrap |file|\'s DB (replacing the example password "ScrtPsw987^2" with the chosen one):
+   The final steps is to bootstrap |file|\'s DB (replacing the example
+   password "My_Mesh_Password£0!" with the chosen one):
 
    .. code:: console
 
-      PGPASSWORD=ScrtPsw987^2 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
+      # PGPASSWORD=My_Mesh_Password£0! carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
