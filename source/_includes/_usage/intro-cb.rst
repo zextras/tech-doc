@@ -10,13 +10,14 @@ components have dedicated sections featuring more information, howtos,
 and best practices:
 
 * :ref:`global-search`: search for any item or create a new one
+* :ref:`file-preview` files without the need to save them in advance
 * :ref:`mails-comp`, the core component of |product|
 * :ref:`auth-user` or how to allow users to access |product|
 * :ref:`calendar-comp`: manage your appointments and share them with
   colleagues
 * :ref:`contacts-comp`, to collect and organise your e-mail addresses
 * :ref:`chats-comp`: textual and visual conversations, shared spaces,
-  meeting rooms to communicate in real-time with users
+  virtual rooms to communicate in real-time with users
 * :ref:`files-comp` is used to create, share, and collaborate on documents
 * :ref:`search-comp` completes the `Quick Search` functionality
 * :ref:`settings-comp` is the place where to customise all |product| options

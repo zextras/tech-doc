@@ -177,3 +177,9 @@ legend {
 .sd-badge {
    font-size: .80em;
 }
+
+/*class for emphasise card headers */
+.card-abyss {
+    background-color: var(--zx-color-abyss);
+    color: white;
+}

@@ -253,8 +253,7 @@ this will remove the appropriate entries from the Zextras Config (manual
 package removal on the video server is required).
 
 .. warning:: When using multiple video servers, meetings are instanced
-   on any of the available instances. Once the beta is over, load
-   balancing rules will be enacted.
+   on any of the available instances. 
 
 .. _cli_commands:
 

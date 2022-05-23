@@ -24,6 +24,16 @@ Quick Search And Create New Objects Functionalities
 
 .. include:: /_includes/_usage/auth-user.rst
 
+.. _file-preview:
+
+Preview
+=======
+
+Sharing files with a colleague is an everyday convenience: send them
+via |team| or as attachment to emails, save them in |file|.
+
+.. include:: /_includes/_usage/preview.rst
+
 .. _mails-comp:
 
 Mails
@@ -31,10 +41,11 @@ Mails
 
 .. include:: /_includes/_usage/mails.rst
 
+
 .. _calendar-comp:
 
-Calendar
-========
+Calendars
+=========
 
 .. include:: /_includes/_usage/calendar.rst
 

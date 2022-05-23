@@ -249,6 +249,8 @@ Corner.
 
 
 Select whether to :bdg:`BUY NOW` or pay with a :bdg:`BANK TRANSFER`.
+By choosing the :bdg:`BUY NOW` option, payment will be made by credit card.
+
 
 .. note:: The bank transfer option is available exclusively on
    request.

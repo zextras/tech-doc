@@ -20,7 +20,9 @@ will be displayed on the right of the folder name, with **99+**
 meaning there are at least 99 emails to read.
 
 A right-click also allows to carry out other actions on the selected
-folder: *move*, *wipe*, *edit*, *delete*, and *share*.
+folder: *move*, *wipe* (i.e., remove all e-mails in the folder),
+*edit*, *delete*, and *share* (with internal colleagues or even make
+it freely readable).
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
@@ -29,12 +31,24 @@ underneath the `Share Folders`. In the dialog, enter the e-mail
 address of the colleague of which you want to find the shares. If the
 colleague has shared some folder, you'll be presented with a list.
 
+.. _mail-tags:
 
-.. are tags present in Carbonio?!
-   Tags
-   ----
+Tags
+----
 
-   A :term:`tag` can be assigned to an e-mail
+A **tag** is a label, added to either an e-mail or a calendar event
+item that helps to improve both the organisation of the e-mails or
+events themselves and the search among them.
+
+New tags can be added with a right click on the **tags** menu item,
+while an existing tag can be modified or deleted by right-clicking on
+it.
+
+To search for a tag, in the :ref:`Search quickbar <global-search>` use
+the syntax ``tag:name``, replacing *name* with the name of the
+tag. The same tags used for e-mail can be used to mark :ref:`Calendar
+appointment <calendar-comp>`.
+
 
 Working with e-mails
 --------------------
@@ -52,20 +66,23 @@ folder.
 
 .. hint:: Moving a single e-mail in a conversation is not possible,
    the whole conversation will be moved.
-
-A right click on the e-mail allows to carry out a number of actions:
-marking it as read/unread or as spam, print, delete or flag it. A flag
-is a simple indicator for an email that can be adapted to one's
+   
+On the top-right corner of each e-mail there are a few icons that
+allow to carry out a number of actions; click the
+:material-regular:`more_vert` icon to access them and many more: mark
+e-mail as read/unread or as spam, print, delete, tag, or flag it. A
+flag is a simple indicator for an email that can be adapted to one's
 preference: to name a few, it has some importance compared to other,
 it needs some action, or it has been processed and can be archived or
 deleted.
+
+More actions are available and shown upon right-clicking an email.
 
 Trash Folder
 ------------
 
 The trash folder is a special folder in which e-mails marked for
 deletion are temporary stored, in case they need to be recovered.
-
 An e-mail in the Trash folder will be automatically deleted after a
 period equivalent to the retention time, by default **30 days**.
 
@@ -80,7 +97,9 @@ undesired, are stored.
 automatically infer whether an e-mail is legit or not and mark it as
 spam. However, in case you think an e-mail is spam but was not
 processed, it can be manually marked as spam by right-clicking it and
-selecting *Mark as spam*.
+selecting *Mark as spam*. Also that vice-versa is valid: an e-mail in
+the *Junk* folder (i.e., recognised as spam) can be marked as *not
+spam*: it will land in the **Inbox**.
 
 All the content of the junk folder helps the anti-spam engine to learn
 and improve its results.
