@@ -43,10 +43,9 @@ For each node, the single server's :ref:`software-requirements` are
 valid and apply for multi-server installation as well. Regarding the
 :ref:`system-requirements`, consider that by dividing the load on more
 nodes you may need less resources (although we recommend at least 4GB
-of RAM on each node). Moreover, make sure to configure the hostname
-and DNS resolution (See Single Server Installation's :ref:`Step 2
-<installation-step2>` and :ref:`Step 3 <installation-step3>`
-respectively).
+of RAM on each node). Moreover, make sure that both :ref:`DNS
+resolution <config-dns>` and :ref:`the hostname <installation-step1>`
+are configured.
 
 .. warning:: It is mandatory to configure the hostname, especially on
    the Directory-Server node, otherwise the services will not be able to bind to

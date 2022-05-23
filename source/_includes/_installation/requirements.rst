@@ -1,4 +1,4 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
@@ -53,7 +53,12 @@ Software Requirements
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
-8** installation.
+8** installation and requires  valid DNS resolution for
+
+- the domain (MX and A record)
+- the FQDN (A record)
+
+See :ref:`the dedicated box below <config-dns>` for details and examples.
 
 Support for other distributions will be announced in due course
 when it becomes available.
@@ -68,31 +73,57 @@ On **RHEL 8**, make sure you also have :
 
        # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
-..
-   Depending on the platform, use either of the following commands as the
-   ``root`` user to install it.
+.. _config-dns:
 
-   *  Ubuntu:
+.. topic:: Configuring DNS resolution
+           
+   To make sure that the DNS is correctly configured for both **A** and
+   **MX** records: to do so, you can use any DNS resolution server,
+   including `dnsmasq`, `systemd-resolved`, and `bind`.
 
-      .. code:: console
+   We show as an example, only suitable for **demo** or **testing
+   purposes**, how to install and configure ``dnsmasq`` for DNS
+   resolution.
 
-         # apt install dnsmasq
+   .. dropdown:: Example: Set up of dnsmasq
 
-   * Red Hat:
+      Follow these simple steps to set up ``dnsmasq`` on your testing
+      environment.
 
-     .. code:: console
+      .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
+         may raise a port conflict over port **53 UDP** with the
+         default `systemd-resolved` service, so make sure to disable
+         the latter before continuing with the next steps.
 
-        # yum install dnsmasq
+      .. tab-set::
 
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
 
-   .. seealso:: A guide to configure a local DNS server using dnsmasq is
-      available on the |zx| Community portal:
+            .. code:: console
 
-      https://community.zextras.com/dns-server-installation-guide-on-centos-7-rhel-7-and-centos-8-rhel-8-using-dnsmasq/
+               # apt install dnsmasq
 
-   Once all these steps have been successfully accomplished, you can
-   proceed to install |ce| packages. Please refer to
-   :ref:`single-server-install` for directions
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install dnsmasq
+
+      To configure it, add the following lines to file
+      :file:`/etc/dnsmasq.conf`::
+
+          server=1.1.1.1
+          mx-host=carbonio.local,mail.carbonio.local,50
+          host-record=carbonio.local,172.16.0.10
+          host-record=mail.carbonio.local,172.16.0.10
+
+      Finally, restart the **dnsmasq** service
+
+        .. code:: console
+
+           # systemctl restart dnsmasq
 
 ..
    .. _software_preconf:
@@ -172,7 +203,7 @@ On **RHEL 8**, make sure you also have :
        "23232", "internal Amavis services access"
        "23233", "SNMP-responder access"
        "11211", "memcached access"
-
-         .. [2] When the NGINX support for Administration Console and the
-           ``mailboxd`` service run on the same host, this port can
-           be used to avoid overlaps between the two services
+ 
+       .. [2] When the NGINX support for Administration Console and
+          the ``mailboxd`` service run on the same host, this port can
+          be used to avoid overlaps between the two services
