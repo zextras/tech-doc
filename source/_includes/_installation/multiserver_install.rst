@@ -232,6 +232,46 @@ setup |mesh| for :ref:`mesh_multi_install`
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
+   :octicon:`gear` Configure |mesh|
+   ^^^^^
+
+   In order to configure |mesh|, execute the following command on the
+   *Directory-Server* node.
+
+   .. code:: console
+
+      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+
+   .. hint:: Use a **robust** password of your choice.
+
+   The outcome of the previous command is a GPG key that you need to
+   copy to **all other nodes**.
+
+   Assuming that you have nodes ``proxy``, ``mta``, ``store``, and
+   ``logger`` (see the Multi-Server :ref:`example installation
+   scenario <multiserver-installation>`, use the following commands,
+   provided you use the correct hostname or IP address of the nodes.
+
+   .. code:: console
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg proxy:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg mta:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg store:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg logger:/etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+   Finally, log in to each nodes and run the command, making sure to
+   use the same password used in the first step.
+
+   .. code:: console
+
+      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
    :octicon:`thumbsup` Complete Installation
    ^^^^
 

@@ -2,92 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _mesh_install:
-
-|mesh|
-------
-
-|mesh| is Zextras solution for service discovery and service mesh, a
-mechanism that secures communication of registered applications,
-implementing access control to on-premises or external resources with
-a single solution, including the management of SSL encryption
-certificates
-
-|mesh| is used by |product| to add health checking/fault detection,
-dynamic and secure routing between its components (excluding faulty
-instances).  Moreover, it also works as an application level firewall
-allowing the exchange of only the information necessary for the
-functioning of |product| as it was designed.
-
-The setup of |mesh| depends on the |product| infrastructure, if
-a Single-Server or a Multi-Server.
-
-.. _mesh_single_install:
-
-Single-Server Setup
-~~~~~~~~~~~~~~~~~~~
-
-
-
-.. _mesh_multi_install:
-
-Multi-Server Setup
-~~~~~~~~~~~~~~~~~~
-
-The Multi-Server setup is slight more complex. as it requires to run
-commands on all the nodes.
-
-.. card::
-
-   Run setup
-   ^^^^^
-
-   The setup is the same as in :ref:`mesh_single_install`, except that
-   the command **must be** run on the *Directory-Server* node.
-
-   .. code:: console
-
-      # service-discover setup $(hostname -i) --password=MY_SECURE_PASSWORD
-
-.. card::
-
-   Copy Credentials
-   ^^^^^
-
-   The outcome of the previous command is a GPG key that you need to
-   copy to **all other nodes**.
-
-   Assuming that you have nodes ``proxy``, ``mta``, ``store``, and
-   ``logger`` (see the Multi-Server :ref:`example installation
-   scenario <multiserver-installation>`, use the following commands,
-   provided you use the correct hostname or IP address of the nodes.
-
-   .. code:: console
-
-      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg proxy:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg mta:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg store:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg logger:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-.. card::
-
-   Complete setup on all nodes
-   ^^^^^
-
-   Log in to each nodes and run the command, making sure to use the
-   same password used in the first step.
-
-   .. code:: console
-
-      # service-discover setup $(hostname -i) --password=MY_SECURE_PASSWORD
-
 .. _mesh-reset:
 
-Regenerate the Credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Regenerate |mesh| Credentials
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Whenever the **cluster credential password** of file
 :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg` are
