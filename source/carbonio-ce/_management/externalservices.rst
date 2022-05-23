@@ -9,8 +9,8 @@ Integration of External Services
 
 A typical example of external service integration is a cluster
 interacting with a database instance hosted by a third-party service
-provider. To deploy in |product| situations like this one,
-:ref:`mesh_install` is used.
+provider. To deploy in |product| situations like this one, |mesh| is
+used.
 
 Scenario and Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,12 +59,10 @@ gateway to configure it, because the process requires manual file
 editing and running commands, although some commands towards the end
 of the procedure requires to access the *database node*.
 
-Before reading further, make sure that |mesh| is correctly installed
-(see :ref:`mesh_single_install` or
-:ref:`mesh_multi_install`). Moreover, although it is not required, we
-highly suggest to use the |mesh| Administration Interface to better
-keep track of the configuration and changes. Please check
-:ref:`mesh-gui` for directions on how to configure it and reach it.
+.. hint:: It is highly suggest to use the |mesh| Administration
+   Interface to better keep track of the configuration and
+   changes. Please check :ref:`mesh-gui` for directions on how to
+   configure it and reach it.
 
 Finally, keep the **cluster credential password** at hand, because it
 is required for token generation.

@@ -22,10 +22,6 @@ components, currently only |file|, on a Multi-Server installation.
 |file| on Multi-Server
 ----------------------
 
-|file| requires `Carbonio Mesh` for its correct functioning, so
-please :ref:`setup Carbonio Mesh <mesh_install>` before proceeding
-further.
-
 In order to install and configure |file| successfully, complete all
 these steps.
 

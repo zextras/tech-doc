@@ -226,8 +226,9 @@ been completed.
 It is however required to configure the *services* running on the
 nodes before actually finalise the installation and start using
 |product|: the two tasks needed are to :ref:`update_ssh_keys` and to
-setup |mesh| for :ref:`mesh_multi_install`
+setup |mesh|, which is explained below.
 
+.. _mesh_multi_install:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
