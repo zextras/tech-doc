@@ -2,16 +2,12 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _installation-step4:
-
-.. div:: sd-fs-5
-
-   :octicon:`gear` Installation and Post-Installation
+.. _installation-step2:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 4: Repository Configuration and System Upgrade
+   Step 2: Repository Configuration and System Upgrade
    ^^^^^
 
    In order to add Carbonio CE's repository, go to the following page and fill in the form:
@@ -33,7 +29,7 @@
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 5: Installation and Configuration of |product|
+   Step 3: Installation and Configuration of |product|
    ^^^^^
 
    The installation of |product| requires to run the command
@@ -45,26 +41,42 @@
 
          .. code:: console
 
-            # apt install carbonio-ce
+            # apt install service-discover-server \
+            carbonio-directory-server \
+            carbonio-proxy \
+            carbonio-webui carbonio-files-ui \
+            carbonio-admin-login-ui \
+            carbonio-mta  \
+            carbonio-appserver carbonio-logger  \
+            carbonio-user-management \
+            carbonio-files-ce carbonio-files-db \
+            carbonio-storage-ce \
+            carbonio-preview-ce \
+            carbonio-docs-connector-ce carbonio-docs-editor \
+            postgresql-12
 
       .. tab-item:: RHEL
          :sync: rhel
 
          .. code:: console
 
-            # dnf install carbonio-ce
+            # dnf install service-discover-server \
+            carbonio-directory-server \
+            carbonio-proxy \
+            carbonio-webui carbonio-files-ui \
+            carbonio-admin-login-ui \
+            carbonio-mta  \
+            carbonio-appserver carbonio-logger  \
+            carbonio-user-management \
+            carbonio-files-ce carbonio-files-db \
+            carbonio-storage-ce \
+            carbonio-preview-ce \
+            carbonio-docs-connector-ce carbonio-docs-editor \
+            postgresql-12
 
 
-   This command pulls all |product| packages; however, you can install
-   only selected components according to your needs. To do so, install
-   at least the following packages, which are required to provide the
-   basic functionalities::
-
-     carbonio-directory-server carbonio-logger carbonio-mta
-     carbonio-proxy carbonio-appserver carbonio-webui
-
-   Finally, in order to carry out the initial configuration and start
-   |product|, execute
+   Once all packages have been installed, in order to carry out the
+   initial configuration of  |product| and start, execute
 
       .. code:: console
 
