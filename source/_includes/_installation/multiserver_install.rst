@@ -309,5 +309,5 @@ The URLs to which to connect to are:
   POP, is available ONLY through the proxy:
   https://proxy.example.com/static/login/
 
-* The **AdminClient** is available ONLY through the mailstore:
-  https://store.example.com:7071/carbonioAdmin
+* The **AdminClient** is available ONLY through the proxy:
+  https://proxy.example.com:6071/login
