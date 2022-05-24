@@ -49,9 +49,8 @@ the ``zextras`` user and are summarised below.
 ----------------------------------------------
 
 To access the |carbonio| Administration, connect with a web browser to
-https://mail.example.com:7071/carbonioAdmin (replace
-`mail.example.com` with your domain) and login with your administrator
-credentials.
+https://mail.example.com:6071/login (replace `mail.example.com` with
+your domain) and login with your administrator credentials.
 
 Delegated Admin CAN and CAN’T Table
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
