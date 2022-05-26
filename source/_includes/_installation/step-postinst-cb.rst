@@ -11,12 +11,12 @@
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 4: Set PostgreSQL and Pgpool-II   
+   Step 4: Set up PostgreSQL and Pgpool-II   
    ^^^^
 
    .. note:: This step is optional, but strongly suggested.
 
-   PostgreSQL database is used by |product| and to improve connection
+   PostgreSQL database is used by |product| and, to improve connection
    efficiency and resource consumption, we set up `Pgpool
    <https://pgpool.net/mediawiki/index.php/Main_Page>`_ to work with
    PostgreSQL.
@@ -30,15 +30,20 @@
       # port = 5433
       # systemctl stop postgresql
 
-   Next, configure pgpool to use PostgreSQL's port and restart both services.
+   Next, configure pgpool to use PostgreSQL's port.
 
    .. code:: console
 
-      echo "backend_clustering_mode = 'raw'
-      port = 5432
-      backend_hostname0 = '127.0.0.1'
-      backend_port0 = 5433" > /etc/pgpool2/pgpool.conf
-      systemctl restart pgpool2.service
+      # echo "backend_clustering_mode = 'raw'
+      # port = 5432
+      # backend_hostname0 = '127.0.0.1'
+      # backend_port0 = 5433" > /etc/pgpool2/pgpool.conf
+
+   Finally,  restart both services using this single command.
+     
+   .. code:: console
+
+      # systemctl restart pgpool2.service
       
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -143,15 +148,15 @@
 
       # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'My-Files-pwd01$'
       # CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm"
-      # CREATE ROLE "powerstore" WITH LOGIN SUPERUSER encrypted password 'My-PowerStore-pwd98%'
+      # CREATE ROLE "powerstore" WITH LOGIN encrypted password 'My-PowerStore-pwd98%'
       # CREATE DATABASE "powerstore" owner "powerstore"
-      # CREATE ROLE "activesync" WITH LOGIN SUPERUSER encrypted password 'My-Sync-pass-_#4'
+      # CREATE ROLE "activesync" WITH LOGIN encrypted password 'My-Sync-pass-_#4'
       # CREATE DATABASE "activesync" owner "activesync"
-      # CREATE ROLE "abq" WITH LOGIN SUPERUSER encrypted password 'My_AbQ-psw]4<'
+      # CREATE ROLE "abq" WITH LOGIN encrypted password 'My_AbQ-psw]4<'
       # CREATE DATABASE "abq" owner "abq"
       # \q
 
-   .. hint:: make sure to use *different* passwords for each role.
+   .. hint:: Make sure to use *different* passwords for each role.
                 
    Remember to replace all passwords with **robust** passwords of your
    choice and store them in a safe place (preferably using a password
@@ -169,7 +174,7 @@
    .. code:: console
 
       # PGPASSWORD=My_Mesh_Password£0! carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
-
+   
 .. _vs_installation:
 
 .. card::
@@ -199,24 +204,41 @@
 
              # dnf install carbonio-videoserver carbonio-videoserver-recorder
 
-   Then, start the service and configure it.
-
+   Once the package has been successfully installed, you will be asked
+   for the **public IP Address** of |vs|: enter it, then execute the
+   following commands to start the service.
+   
    .. code:: console
              
-      ## videoserver prompts a command that mus be executed on the app-node
       # systemctl enable videoserver.service 
       # systemctl start  videoserver.service
-      # su - zextras
-      ##Run the command proposed by VideoServer & Video Server Recording (E.G. :)
-      grep -i -e nat_1_1 -e api_secret /etc/janus/janus.jcfg
 
-      # zxsuite chats video-server add demo.zextras.io port 8188 servlet_port 8090 secret THE_SECRET_PASSWORD
+   Finally, the following commands enable video recording and must be
+   executed as the ``zextras`` user. 
+
+   .. code::
+      
+      # su - zextras
+      # zxsuite chats video-server add example.com port 8100 servlet 8090 secret MY_Video-ReC-pass7=6
       # zxsuite config set global teamVideoServerRecordingEnabled true
       # zxsuite config set cos default teamChatEnabled true
 
+   Here, port **8100** is the default port used by |vs|, while
+   **8100** for recording. Change these values according to your needs
+   or preferences. Remember also to replace **example.com** with your
+   domain name.
+      
+   In case you forget the password used for the video recording setup,
+   (*MY_Video-ReC-pass7=6*), you can retrieve it using this command.
+
+   .. code:: console
+             
+      # grep -i -e nat_1_1 -e api_secret /etc/janus/janus.jcfg
+   
    For information about |vs|, advances settings, and recording
    options, refer to Section :ref:`videoserver`.
-   
+
+      
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
@@ -229,9 +251,9 @@
    
    .. code:: console
 
-      # zxsuite config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://POSTGRESURL:PORT/powerstore","user":"powerstore","password":""}'
-      # zxsuite config set global abqMetadataDb '{"url":"jdbc:postgresql://POSTGRESURL:PORT/abq","user":"abq","password":"assext"}'
-      # zxsuite config set global activeSyncDb '{"url":"jdbc:postgresql://POSTGRESURL:PORT/activesync","user":"activesync","password":"assext"}'
+      # zxsuite config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://127.0.0.1:20003/powerstore","user":"powerstore","password":"My-PowerStore-pwd98%"}'
+      # zxsuite config set global activeSyncDb '{"url":"jdbc:postgresql://127.0.0.1:20003/activesync","user":"activesync","password":"My-Sync-pass-_#4"}'
+      # zxsuite config set global abqMetadataDb '{"url":"jdbc:postgresql://127.0.0.1:20003/abq","user":"abq","password":"'My_AbQ-psw]4<"}'
       # zxsuite mobile doRestartService module
       # zxsuite powerstore doRestartService module
 
