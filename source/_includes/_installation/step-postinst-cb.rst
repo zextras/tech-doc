@@ -242,7 +242,7 @@
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
-   Step 10: JDBC configuration
+   Step 10: JDBC Configuration
    ^^^^^
 
    We are reaching the end of the installation. This is the last
@@ -260,7 +260,7 @@
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
-   Step 8: Licence activation
+   Step 8: Licence Activation
    ^^^^^
    We are now on the last mile. To verify there is no dangling installation or
    configuration task, run:
