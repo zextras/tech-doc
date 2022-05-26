@@ -170,6 +170,8 @@
 
       # PGPASSWORD=My_Mesh_Password£0! carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
 
+.. _vs_installation:
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
                   
