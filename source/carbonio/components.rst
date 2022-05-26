@@ -19,9 +19,8 @@ Multi-Server, only the |file|\ 's package installation differs.
 Preliminary tasks
 -----------------
 
-Carbonio components requires Carbonio Mesh for their correct
-functioning, so please :ref:`setup Carbonio Mesh <mesh_install>`
-before proceeding further.
+Carbonio components requires |mesh| for their correct functioning, so
+please set it up before proceeding further.
 
 In order to install and configure |file| successfully, complete all
 these steps.

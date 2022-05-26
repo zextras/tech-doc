@@ -153,7 +153,7 @@ Requirements
 
 In order to successfully complete two tasks described below, you will
 need the **cluster credential password** that was defined during the
-:ref:`mesh_install` installation
+|mesh| installation.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
