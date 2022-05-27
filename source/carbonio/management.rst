@@ -22,9 +22,6 @@ recover items, accounts, or whole domains.
 :ref:`backup_advanced_techniques` presents how to use the backup in
 some advanced and less usual scenarios, like disaster recovery and
 unrestorable items
-:ref:`mesh_install`, a service discover tool based on Consul, that
-allows |product| components to communicate with each other in a secure
-way.
 
 :ref:`mesh-external-services` provides step by step directions to
 integrate external services\ :octicon:`dash`\ services not running on a
@@ -43,7 +40,6 @@ the nodes of a Multi-Server installation.
    /_management/backup
    /_management/restorestrategies
    /_management/advancedbackup
-   _management/mesh
    _management/externalservices
    _management/logger
    _management/sshkeys
