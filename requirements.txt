@@ -5,5 +5,5 @@
 Sphinx
 sphinx-design
 sphinx_rtd_theme
-sphinx_copybutton
+sphinx_copybutton==0.4.0
 sphinxcontrib-email

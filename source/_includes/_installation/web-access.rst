@@ -15,4 +15,4 @@ installation of the certificate.
   other client protocols such as IMAP or POP, is available at:
   https://mail.carbonio.local/
 * The **AdminClient** (for Administration access) is available at:
-  https://mail.carbonio.local:7071/carbonioAdmin
+  https://mail.carbonio.local:6071/login
