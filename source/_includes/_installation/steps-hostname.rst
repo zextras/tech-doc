@@ -2,8 +2,14 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The installation on Ubuntu 20.04 is organised in steps, some of which
-are preliminary configuration tasks, and some is optional.
+The installation on Ubuntu 20.04 or RHEL 8 is organised in steps, some
+of which are preliminary configuration tasks, and some is optional.
+During the installation and configuration of |product|, it is
+necessary to execute commands from the command line, so make sure you
+have access to it.
+
+We remark that, unless differently stated, **all CLI commands must be run
+as the** ``root`` **user**.
 
 .. _installation-step1:
 

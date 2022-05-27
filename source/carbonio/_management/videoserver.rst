@@ -114,47 +114,9 @@ following requirements:
 |vs| Installation
 -----------------
 
-Installing |vs| is straightforward. Assuming |carbonio|'s repository
-have already been configured, simply execute the two commands
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt update
-         # apt install carbonio-videoserver
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf update
-         # dnf install carbonio-videoserver
-
-Once the package has been successfully installed, you will be asked
-the **Public IP Address** of |vs|: this is the only bit of
-configuration required.
-
-After you have entered the IP address, you will be prompted to execute
-a command on each node of the |product| installation:
-
-.. code:: console
-
-   # zxsuite chats video-server add example.com port 8100 secret A_SECRET_PASSWORD
-
-Replace `example.com` with the actual domain name, `8100` with the
-port on which the |vs| listens and `A_SECRET_PASSWORD` with a robust
-password.
-   
-In case you forget the password, you can retrieve it using
-
-.. code:: console
-
-   # /etc/janus/janus.jcfg api_secret
+The installation process of |vs| has been moved as part of the main
+installation, please refer to the :ref:`corresponding Step
+<vs_installation>`.
 
 .. _vs-architecture:
 
