@@ -11,7 +11,7 @@
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 4: Set up PostgreSQL and Pgpool-II   
+   Step 4: Set up PostgreSQL and Pgpool-II
    ^^^^
 
    .. note:: This step is optional, but strongly suggested.
@@ -40,11 +40,11 @@
       # backend_port0 = 5433" > /etc/pgpool2/pgpool.conf
 
    Finally,  restart both services using this single command.
-     
+
    .. code:: console
 
       # systemctl restart pgpool2.service
-      
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
@@ -109,7 +109,7 @@
      ``My_Mesh_Password£0!``, which is used for setups, management,
      and to access the administration GUI. See section :ref:`mesh-gui`
      for more information.
-     
+
    * store the setup in file
      :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
 
@@ -142,9 +142,9 @@
 
    Then run the following command in order to create roles, database,
    and grant appropriate access rights.
-   
+
    .. code:: psql
-      
+
 
       # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'My-Files-pwd01$'
       # CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm"
@@ -157,29 +157,29 @@
       # \q
 
    .. hint:: Make sure to use *different* passwords for each role.
-                
+
    Remember to replace all passwords with **robust** passwords of your
    choice and store them in a safe place (preferably using a password
    manager), as you might need them in the future.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 8: Bootstrap Database of |file|
    ^^^^^
 
    The final steps is to bootstrap |file|\'s DB (replacing the example
-   password **My_Mesh_Password£0!** with the chosen one):
+   password **My-Files-pwd01$** with the chosen one):
 
    .. code:: console
 
-      # PGPASSWORD=My_Mesh_Password£0! carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
-   
+      # PGPASSWORD=My-Files-pwd01$ carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
+
 .. _vs_installation:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 9: |vs| and video recording
    ^^^^^
 
@@ -207,17 +207,17 @@
    Once the package has been successfully installed, you will be asked
    for the **public IP Address** of |vs|: enter it, then execute the
    following commands to start the service.
-   
+
    .. code:: console
-             
-      # systemctl enable videoserver.service 
+
+      # systemctl enable videoserver.service
       # systemctl start  videoserver.service
 
    Finally, the following commands enable video recording and must be
-   executed as the ``zextras`` user. 
+   executed as the ``zextras`` user.
 
    .. code::
-      
+
       # su - zextras
       # zxsuite chats video-server add example.com port 8100 servlet 8090 secret MY_Video-ReC-pass7=6
       # zxsuite config set global teamVideoServerRecordingEnabled true
@@ -227,28 +227,28 @@
    **8100** for recording. Change these values according to your needs
    or preferences. Remember also to replace **example.com** with your
    domain name.
-      
+
    In case you forget the password used for the video recording setup,
    (*MY_Video-ReC-pass7=6*), you can retrieve it using this command.
 
    .. code:: console
-             
+
       # grep -i -e nat_1_1 -e api_secret /etc/janus/janus.jcfg
-   
+
    For information about |vs|, advances settings, and recording
    options, refer to Section :ref:`videoserver`.
 
-      
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 10: JDBC Configuration
    ^^^^^
 
    We are reaching the end of the installation. This is the last
    configuration step which will set up the JDBC connections with
    PostgreSQL.
-   
+
    .. code:: console
 
       # zxsuite config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://127.0.0.1:20003/powerstore","user":"powerstore","password":"My-PowerStore-pwd98%"}'
@@ -259,14 +259,14 @@
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 8: Licence Activation
    ^^^^^
    We are now on the last mile. To verify there is no dangling installation or
    configuration task, run:
 
    .. code:: console
-             
+
       # pending-setups
 
    Finally, as the ``zextras`` user, activate |product| license,
@@ -275,4 +275,3 @@
    .. code:: console
 
       # zxsuite core activate-license TOKEN
-

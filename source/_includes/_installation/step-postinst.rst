@@ -14,7 +14,7 @@
 
    Step 4: Create Database Admin account
    ^^^^^
-   
+
    Create a ``postgres`` superuser with password **my_pg_password#3**
    (use a **robust** password of your choice).
 
@@ -65,10 +65,10 @@
       (see below for instruction to set it).
 
 .. _installation-step-mesh:
-      
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 6: Setup |mesh|
    ^^^^^
 
@@ -106,13 +106,13 @@
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
-                  
+
    Step 7: Bootstrap Database of |file|
    ^^^^^
 
    The final steps is to bootstrap |file|\'s DB (replacing the example
-   password **My_Mesh_Password£0!** with the chosen one):
+   password **my_pg_password#3** with the chosen one):
 
    .. code:: console
 
-      # PGPASSWORD=My_Mesh_Password£0! carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
+      # PGPASSWORD=my_pg_password#3 carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
