@@ -16,7 +16,7 @@ component within their respective :fa:`github` GitHub repository.
   Mails module
 * :bdg-link-danger-line:`Carbonio Design System
   <https://github.com/Zextras/carbonio-design-system/blob/devel/CHANGELOG.md>`
-  the Design System and Component Librar
+  the Design System and Component Library
 * :bdg-link-danger-line:`Carbonio Auth UI
   <https://github.com/Zextras/carbonio-auth-ui/blob/devel/CHANGELOG.md>`
   management of authentication credentials
@@ -35,9 +35,9 @@ component within their respective :fa:`github` GitHub repository.
 * :bdg-link-danger-line:`Carbonio Files UI
   <https://github.com/Zextras/carbonio-files-ui/blob/devel/CHANGELOG.md>`
   Carbonio-Files UI
-* :bdg-link-danger-line:`Carbonio UI sdk
-  https://github.com/Zextras/carbonio-ui-sdk/blob/devel/CHANGELOG.md>`
+* :bdg-link-danger-line:`Carbonio UI SDK
+  <https://github.com/Zextras/carbonio-ui-sdk/blob/devel/CHANGELOG.md>`
   Carbonio UI sdk
 * :bdg-link-danger-line:`Carbonio Auth UI
-  https://github.com/Zextras/carbonio-auth-ui/blob/devel/CHANGELOG.md`
+  <https://github.com/Zextras/carbonio-auth-ui/blob/devel/CHANGELOG.md`
   Carbonio Auth UI
