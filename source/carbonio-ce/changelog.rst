@@ -37,7 +37,7 @@ component within their respective :fa:`github` GitHub repository.
   Carbonio-Files UI
 * :bdg-link-danger-line:`Carbonio UI SDK
   <https://github.com/Zextras/carbonio-ui-sdk/blob/devel/CHANGELOG.md>`
-  Carbonio UI sdk
+  Carbonio UI SDK
 * :bdg-link-danger-line:`Carbonio Auth UI
-  <https://github.com/Zextras/carbonio-auth-ui/blob/devel/CHANGELOG.md`
+  <https://github.com/Zextras/carbonio-auth-ui/blob/devel/CHANGELOG.md>`
   Carbonio Auth UI
