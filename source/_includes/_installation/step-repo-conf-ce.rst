@@ -50,7 +50,7 @@
             carbonio-appserver carbonio-logger  \
             carbonio-user-management \
             carbonio-files-ce carbonio-files-db \
-            carbonio-storage-ce \
+            carbonio-storages-ce \
             carbonio-preview-ce \
             carbonio-docs-connector-ce carbonio-docs-editor \
             postgresql-12
@@ -73,4 +73,3 @@
             carbonio-preview-ce \
             carbonio-docs-connector-ce carbonio-docs-editor \
             postgresql-12
-
