@@ -7,7 +7,7 @@
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 6. Change Password for System User (Optional)
+   (Optional) Change Password for System User
    ^^^^^
 
    In order to change the password used by the
