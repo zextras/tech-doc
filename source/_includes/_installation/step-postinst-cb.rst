@@ -228,7 +228,7 @@ The next steps concern the configuration and setup of the various
    .. code::
 
       # su - zextras
-      # zxsuite chats video-server add example.com port 8100 servlet 8090 secret MY_Video-ReC-pass7=6
+      # zxsuite chats video-server add example.com port 8100 servlet_port 8090 secret MY_Video-ReC-pass7=6
       # zxsuite config set global teamVideoServerRecordingEnabled true
       # zxsuite config set cos default teamChatEnabled true
 
