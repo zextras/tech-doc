@@ -64,7 +64,16 @@
       (zextras\@carbonio.local), initially **without password**
       (see below for instruction to set it).
 
+.. _config-setup-tasks:
+
+.. div:: sd-fs-5
+
+   :octicon:`gear`  Configuration and Setup tasks
+
 .. _installation-step-mesh:
+
+The next steps concern the configuration and setup of the various
+|product| components.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
