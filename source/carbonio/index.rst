@@ -53,7 +53,6 @@ Finally, instructions to guide users in daily tasks are contained in
          administration
          management
          deep-view
-         mobile
 
    .. grid-item-card::
       :columns: 12 6 6 4

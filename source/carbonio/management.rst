@@ -40,6 +40,7 @@ the nodes of a Multi-Server installation.
    /_management/backup
    /_management/restorestrategies
    /_management/advancedbackup
-   _management/externalservices
-   _management/logger
-   _management/sshkeys
+   /_management/externalservices
+   /_management/logger
+   /_management/sshkeys
+   /_management/mobile
