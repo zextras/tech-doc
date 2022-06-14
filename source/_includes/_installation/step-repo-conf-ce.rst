@@ -24,6 +24,8 @@
 
    .. include:: /_includes/upgrade.rst
 
+   .. include:: /_includes/_installation/repo-info.rst
+
 .. _installation-step3:
 
 .. card::
