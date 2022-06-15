@@ -111,7 +111,7 @@ The next steps concern the configuration and setup of the various
 
    .. code:: console
 
-      # pending setups
+      # pending-setups
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
