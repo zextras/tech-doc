@@ -19,9 +19,13 @@ Logger Node within a Multi-Server installation.
 :ref:`update_ssh_keys`, which allows to keep SSH keys updated across
 the nodes of a Multi-Server installation.
 
+:ref:`carb-customisations` guides you in the customisation of
+|product| appearance.
+
 .. toctree::
-   :hidden:
+   :hidden: 
 
    _management/externalservices
    _management/logger
    _management/sshkeys
+   custom
