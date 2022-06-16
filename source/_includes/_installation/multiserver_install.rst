@@ -65,11 +65,18 @@ There are no additional requirements, just a few remarks:
   proxy.example.com, mta.example.com, and so on. Replace
   ``example.com`` with your domain name.
 
+Please also read the following information about |product| repository
+and channels.
+
+.. include:: /_includes/_installation/repo-info.rst
+
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
    :octicon:`gear` Install packages
    ^^^^
+
 
    On each node, different packages should be installed.
 
