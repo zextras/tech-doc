@@ -76,7 +76,7 @@ Module.
 
       .. code:: console
 
-         zmprov ma user@example.com a\@e zimbraFeatureMobileSyncEnabled TRUE
+         zmprov ma user@example.com zimbraFeatureMobileSyncEnabled TRUE
 
    .. grid-item-card::
       :columns: 6
@@ -96,19 +96,19 @@ Module.
 The Mobile Password Feature
 ===========================
 
-The ``Mobile Password`` feature allows Global and Delegated Admins to
+The *Mobile Password* feature allows Global and Delegated Admins to
 set an additional password for an account to be used for Exchange
 ActiveSync authentications only.
 
 The main benefits of using this feature are:
 
-- Enforce ``set-and-forget`` safe passwords, regardless of any other
-  password policy, so that you won't need to change the password saved
-  on all mobile devices synchronized with an account should this
-  account’s Zimbra password change
+- Enforce **set-and-forget** safe passwords, regardless of any other
+  password policy. In this way, in case the account password changes,
+  tthere will be no need to change the password saved on all mobile
+  devices synchronised with an account.
 
-- Avoid the ``real`` password to be disclosed in case of unauthorised
-  access to the device/client
+- Avoid to disclose the *real* password in case of unauthorised access
+  to the device/client
 
 A ``Mobile Password`` will not be valid for Webmail/POP3/IMAP/SMTP
 logins, and the account password will not be valid for mobile logins.
@@ -191,8 +191,28 @@ The following provisioning options are available:
 Enforceable Policies
 ~~~~~~~~~~~~~~~~~~~~
 
-Enforceable Policies are available right below the ``Mobile Devices``
-list, grouped in the following categories:
+Enforceable Policies can be set from the CLI to limit some of the
+functionality of the devices connected via MDM. By using the following
+command, you can see all the available policies for a COS:
+
+.. code:: console
+
+   # carbonio mobile getProvisioning cos default
+
+or for a user:
+
+.. code:: console
+
+   # carbonio mobile getProvisioning account john@example.com
+
+All the listed properties can then be modified using :command:`zxsuite
+mobile setProvisioning`, for example:
+
+.. code:: console
+
+   # carbonio mobile setProvisioning  account john@example.com AllowDesktopSync true
+
+The properties can be roughly grouped in these categories:
 
 - Sync Settings: Set synchronization spans and limits
 
@@ -202,12 +222,12 @@ list, grouped in the following categories:
 - Device Security Settings: Force an unlock code and define the
   minimum requirements for the code itself
 
-- Device Applications: Enable or disable ``standard`` device
+- Device Applications: Enable or disable `standard` device
   applications such as the Browser and POP/IMAP client or unsigned
   apps
 
-Two lists are also available for application whitelist/blacklist
-management:
+Moreover, two lists are also available for application
+whitelist/blacklist management:
 
 Approved Applications
    A customizable list of approved applications.
@@ -461,8 +481,8 @@ according to system performance.
       ``ZxMobile_MaxPingHeartbeat`` defines the maximum interval
       between :command:`ping` commands.
 
-All settings can be edited in the Administration Zimlet or via CLI using
-the ``zxsuite config`` command :command:`zxsuite config`.
+All settings can be edited via CLI using the ``zxsuite config``
+command :command:`zxsuite config`.
 
 .. _mobile_when_to_edit_the_performance_tuning_settings:
 
@@ -788,7 +808,7 @@ The ABQ feature is composed of three main logical components:
       that can synchronise with the server on a specific device.
 
       .. note:: On module startup, if the Device Control List is empty all
-         mobile devices previously recognized by the Zimbra server will be
+         mobile devices previously recognized by the |carbonio| server will be
          imported as **Allowed**.
 
    .. grid-item-card::
