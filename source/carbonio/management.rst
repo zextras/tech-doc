@@ -34,7 +34,7 @@ Logger Node within a Multi-Server installation.
 the nodes of a Multi-Server installation.
 
 :ref:`carb-customisations` guides you in the customisation of
-|product|\ appearance.
+|product| appearance.
 
 .. toctree::
    :hidden:
