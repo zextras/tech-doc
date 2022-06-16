@@ -5,7 +5,7 @@
 ==============
  In deep view
 ==============
-	
+
 This section contains various rather advanced topics that are not
 required for a everyday use of |product|.
 
@@ -14,16 +14,31 @@ required for a everyday use of |product|.
 Regenerate |mesh| Credentials
 =============================
 
-Whenever the **cluster credential password** of file
-:file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg` are
-unaccessible, it is possible to generate a new file password and
-credentials file.
+Whenever a problem arises in the |mesh| ACL system and the
+service-discover stops working, it is necessary to regenerate the
+credentials to be able to continue using |mesh|.
 
-In those cases, the command :command:`consul acl bootstrap` will
-terminate with an error message similar to::
-  
-  Failed ACL bootstrapping: Unexpected response code: 403 (Permission denied: ACL bootstrap no longer allowed (reset index: 908))
-  
+.. card::
+
+   Scenario
+   ^^^^
+
+   In this sample scenario, the command :command:`consul acl
+   bootstrap` will terminate with an error message similar to::
+
+     Failed ACL bootstrapping: Unexpected response code: 403 (Permission denied: ACL bootstrap no longer allowed (reset index: 908))
+
+   This can happen, for example, when the **cluster credential
+   password** of file
+   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
+   is unaccessible (for example, because the password has been lost),
+   but the procedure below may apply whenever the above-mentioned
+   error message appears.
+
+   It is important to take note of the index number, that is the last
+   bit of the output *(reset index: 908)*: ``908`` is the current
+   index and is needed in the procedure below.
+
 
 Before attempting the recover, be prepared for a downtime of the
 |mesh| service for the whole duration of the procedure.
@@ -38,12 +53,12 @@ the Multi-Server there are a few more steps to carry out.
 
    In case of a Single-Server node, log in to it and skip to the next
    step.
-   
+
    On a Multi-Server, you need to identify the |mesh| *leader node*
    node and log into it. Most of the times, this is the
    `Directory-Server` node, whose IP address is retrieved using the
    command below.
-   
+
    .. code:: console
 
       # zmprov gas service-discover
@@ -67,12 +82,14 @@ the Multi-Server there are a few more steps to carry out.
    ^^^^
 
    The first task, to be executed as the ``service-discover`` user, is
-   to write a **reset index**, to allow a new ACL token to be
-   generated.
+   to write the current **reset index** to a file, to allow a new ACL
+   token to be generated. As described in the Scenario above, the
+   value is **908** (change it according to the output you receive), so we need to execute:
 
    .. code:: console
 
       # sudo -u service-discover bash -c "echo 908 > /var/lib/service-discover/data/acl-bootstrap-reset"
+
 
    Then stop the *service discover* service.
 
@@ -108,8 +125,8 @@ the Multi-Server there are a few more steps to carry out.
 
       # export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gpg | tar xOf - consul-acl-secret.json | jq .SecretID -r)
       # consul members
-	     Node              Address              Status  Type    Build  Protocol  DC   Segment
-	     mail.example.com  192.168.56.101:8301  alive   server  1.9.3  2        
+        Node              Address              Status  Type    Build  Protocol  DC   Segment
+        mail.example.com  192.168.56.101:8301  alive   server  1.9.3  2
 
    On a Single-Server the procedure has been completed. Make sure to
    store the new credentials in a safe place!
@@ -130,9 +147,9 @@ the Multi-Server there are a few more steps to carry out.
    .. code:: console
 
       # rm /var/lib/service-discover/*pem
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0! 
+      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
 
-  
+
 .. _mesh-gui:
 
 |mesh| Administration Interface
