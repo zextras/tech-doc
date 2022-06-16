@@ -47,8 +47,8 @@ Mobile APPs Download
       Click on the links to access the App page on Apple App Store:
 
       * Mail https://apps.apple.com/app/carbonio-mail/id1490253524
-      * Chats https://apps.apple.com/it/app/zextras-chats/id1459844854
-      * Files https://apps.apple.com/it/app/carbonio-files/id1606750406
+      * Chats https://apps.apple.com/app/zextras-chats/id1459844854
+      * Files https://apps.apple.com/app/carbonio-files/id1606750406
 
       It is required that the iOS version be equal to or higher than
       **14**
