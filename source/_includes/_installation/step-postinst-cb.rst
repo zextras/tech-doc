@@ -131,7 +131,7 @@ The next steps concern the configuration and setup of the various
 
    .. code:: console
 
-      # pending setups
+      # pending-setups
 
 
 .. card::
