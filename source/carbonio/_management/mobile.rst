@@ -122,128 +122,130 @@ Mobile Passwords are handled by the |auth| module, so please refer to
 section :ref:`auth_create_new_credentials_qr_code` for more
 information.
 
-.. _mobile_provisioning:
+.. commenting out according to requests.
+   
+   .. _mobile_provisioning:
 
-Mobile Device Management (Mobile Provisioning)
-==============================================
+   Mobile Device Management (Mobile Provisioning)
+   ==============================================
 
-Mobile Device Management (MDM - also known as `Mobile Provisioning`)
-allows an administrator to define a set of rules and security settings
-that are applied to one or more mobile devices, ranging from PIN
-policies to Allowed/Blocked app lists and including `one time`
-commands, such as the remote wipe of the entire device.
+   Mobile Device Management (MDM - also known as `Mobile Provisioning`)
+   allows an administrator to define a set of rules and security settings
+   that are applied to one or more mobile devices, ranging from PIN
+   policies to Allowed/Blocked app lists and including `one time`
+   commands, such as the remote wipe of the entire device.
 
-MDM effectively allows administrators to limit and restrict the use of
-corporate mobile devices to avoid risky or improper behaviours.
+   MDM effectively allows administrators to limit and restrict the use of
+   corporate mobile devices to avoid risky or improper behaviours.
 
-MDM is also a priceless aid for :abbr:`BYOD (Bring Your Own Device)`
-corporate policies, allowing users to connect their personal mobile
-devices to the corporate servers, while reducing the risk of security
-breaches to a minimum.
+   MDM is also a priceless aid for :abbr:`BYOD (Bring Your Own Device)`
+   corporate policies, allowing users to connect their personal mobile
+   devices to the corporate servers, while reducing the risk of security
+   breaches to a minimum.
 
-.. _mobile_provisioning_features_available_on_your_client:
+   .. _mobile_provisioning_features_available_on_your_client:
 
-Provisioning Features Available on Your Client
-----------------------------------------------
+   Provisioning Features Available on Your Client
+   ----------------------------------------------
 
-Not all provisioning features are available on all clients. Please refer
-to your device’s manufacturer and online resources for specific
-information about the MDM features supported by the device itself.
+   Not all provisioning features are available on all clients. Please refer
+   to your device’s manufacturer and online resources for specific
+   information about the MDM features supported by the device itself.
 
-.. this whole section seems not to be available in Carbonio.
+   .. this whole section seems not to be available in Carbonio.
 
-.. _carbonio_mdm:
+   .. _carbonio_mdm:
 
-|carbonio| and MDM
-------------------
+   |carbonio| and MDM
+   ------------------
 
-|carbonio| features advanced MDM features through the Exchange
-ActiveSync protocol version 14+.
+   |carbonio| features advanced MDM features through the Exchange
+   ActiveSync protocol version 14+.
 
-Mobile policies can be enabled at COS and mailbox levels, allowing both
-a quick ``one for many`` setup and user-based customized management. In
-both cases, Mobile Management Options are available in the `Mobile`
-tab.
+   Mobile policies can be enabled at COS and mailbox levels, allowing both
+   a quick ``one for many`` setup and user-based customized management. In
+   both cases, Mobile Management Options are available in the `Mobile`
+   tab.
 
-.. _mobile_provisioning_options:
+   .. _mobile_provisioning_options:
 
-Provisioning Options
-~~~~~~~~~~~~~~~~~~~~
+   Provisioning Options
+   ~~~~~~~~~~~~~~~~~~~~
 
-The following provisioning options are available:
+   The following provisioning options are available:
 
-- Enable Mobile Device Management: Enable or disable the use of mobile
-  policies for the current user/COS
+   - Enable Mobile Device Management: Enable or disable the use of mobile
+     policies for the current user/COS
 
-- Allow non-provisionable devices: Allow the user to synchronize any
-  device that does not support provisioning
+   - Allow non-provisionable devices: Allow the user to synchronize any
+     device that does not support provisioning
 
-- Allow partial policy enforcement on device: Allow the user to
-  synchronize any device that does not support one or more applicable
-  policies
+   - Allow partial policy enforcement on device: Allow the user to
+     synchronize any device that does not support one or more applicable
+     policies
 
-.. hint:: By default, MDM is disabled in |mobile|. To enable
-   navigate to :menuselection:`Zextras Suite --> Mobile --> Advanced
-   Settings` and check the ``Enable Mobile Device Management`` option
+   .. hint:: By default, MDM is disabled in |mobile|. To enable
+      navigate to :menuselection:`Zextras Suite --> Mobile --> Advanced
+      Settings` and check the ``Enable Mobile Device Management`` option
 
-.. _mobile_enforceable_policies:
+   .. _mobile_enforceable_policies:
 
-Enforceable Policies
-~~~~~~~~~~~~~~~~~~~~
+   Enforceable Policies
+   ~~~~~~~~~~~~~~~~~~~~
 
-Enforceable Policies can be set from the CLI to limit some of the
-functionality of the devices connected via MDM. By using the following
-command, you can see all the available policies for a COS:
+   Enforceable Policies can be set from the CLI to limit some of the
+   functionality of the devices connected via MDM. By using the following
+   command, you can see all the available policies for a COS:
 
-.. code:: console
+   .. code:: console
 
-   # carbonio mobile getProvisioning cos default
+      # carbonio mobile getProvisioning cos default
 
-or for a user:
+   or for a user:
 
-.. code:: console
+   .. code:: console
 
-   # carbonio mobile getProvisioning account john@example.com
+      # carbonio mobile getProvisioning account john@example.com
 
-All the listed properties can then be modified using :command:`zxsuite
-mobile setProvisioning`, for example:
+   All the listed properties can then be modified using :command:`zxsuite
+   mobile setProvisioning`, for example:
 
-.. code:: console
+   .. code:: console
 
-   # carbonio mobile setProvisioning  account john@example.com AllowDesktopSync true
+      # carbonio mobile setProvisioning  account john@example.com AllowDesktopSync true
 
-The properties can be roughly grouped in these categories:
+   The properties can be roughly grouped in these categories:
 
-- Sync Settings: Set synchronization spans and limits
+   - Sync Settings: Set synchronization spans and limits
 
-- Device Settings: Enable or disable device features such as camera,
-  WiFi, removable storage or Bluetooth
+   - Device Settings: Enable or disable device features such as camera,
+     WiFi, removable storage or Bluetooth
 
-- Device Security Settings: Force an unlock code and define the
-  minimum requirements for the code itself
+   - Device Security Settings: Force an unlock code and define the
+     minimum requirements for the code itself
 
-- Device Applications: Enable or disable `standard` device
-  applications such as the Browser and POP/IMAP client or unsigned
-  apps
+   - Device Applications: Enable or disable `standard` device
+     applications such as the Browser and POP/IMAP client or unsigned
+     apps
 
-Moreover, two lists are also available for application
-whitelist/blacklist management:
+   Moreover, two lists are also available for application
+   whitelist/blacklist management:
 
-Approved Applications
-   A customizable list of approved applications.
+   Approved Applications
+      A customizable list of approved applications.
 
-Blocked Applications
-   A customizable list of blocked applications that won’t be usable on
-   the device.
+   Blocked Applications
+      A customizable list of blocked applications that won’t be usable on
+      the device.
 
-.. _mobile_password:
+   .. _mobile_password:
 
-Mobile Password
-~~~~~~~~~~~~~~~
+   Mobile Password
+   ~~~~~~~~~~~~~~~
 
-While conceptually similar, the mobile password feature is not part of
-Mobile Device Management and can be used with any version of the EAS
-protocol.
+   While conceptually similar, the mobile password feature is not part of
+   Mobile Device Management and can be used with any version of the EAS
+   protocol.
 
 .. _mobile_syncstates:
 
