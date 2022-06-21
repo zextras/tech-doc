@@ -25,9 +25,11 @@ authentication methods; the next two sections are dedicated to
 :ref:`administration tasks <auth_zxauth-admins>`, which require
 privileged access and are mostly carried out from the CLI, and
 :ref:`everyday’s task <auth-user>`, which can be carried out
-from the Web GUI by both administrators and users,
-respectively. Finally, the :ref:`list of all CLI commands
-<auth_zxauth-cli>` is given as a reference, with link to each command.
+from the Web GUI by both administrators and users.
+
+..
+   respectively. Finally, the :ref:`list of all CLI commands
+   <auth_zxauth-cli>` is given as a reference, with link to each command.
 
 .. _auth_supported_authentication_methods:
 
