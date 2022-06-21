@@ -53,14 +53,14 @@ configure the Backup component and have all your data automatically backed
 up.
 
 -  Mount a storage device at your target location. We use the default
-   ``/opt/zextras/backup/zextras`` throughout this section; remember to
+   :file:`/opt/zextras/backup/zextras` throughout this section; remember to
    replace it with the path you chose.
 
 .. important:: The size of the device should be at least 80% of
    primary + secondary volume size.
 
--  Set the correct permission on the backup path: ``chown zextras:zextras
-   /opt/zextras/backup/zextras``
+-  Set the correct permission on the backup path: :command:`chown zextras:zextras
+   /opt/zextras/backup/zextras`
 
 .. hint:: To avoid a flood of notifications about running operations,
    it is suggested to lower the default *Notification level* from
@@ -78,14 +78,14 @@ up.
 .. topic:: :octicon:`comment` Basic Customisation of Backup
               
    You can optionally customise some of the |backup| options that
-   appear in :numref:`img-backup-console`. including
+   appear in :numref:`img-backup-console`, including
 
    - The full path for backups, which can be achieved also with the
      following command.
 
      .. code:: console
 
-	zxsuite config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
+        carbonio config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
 
      After defining the backup path, it must be initialised: simply
      simply :ref:`start SmartScan <running_a_smartscan>`, either from
@@ -357,7 +357,7 @@ The Backup Path can be set both via GUI and via CLI:
 - Via GUI: in the "Backup" section of the |carbonio| Administration
   Console, under "Backup Path".
 
-- Via CLI: using the `zxsuite config server <zxsuite_config_server>`
+- Via CLI: using the `carbonio config server`
   command to change the ``ZxBackup_DestPath`` config key.
 
 .. warning:: Backup paths are unique and not reusable. Copying a
@@ -413,12 +413,12 @@ While the SmartScan works *incrementally* by only checking items
 modified since the last SmartScan run, the **Coherency Check** carries
 out a thorough check of all metadata and BLOBs in the Backup Path.
 
-To start a Coherency Check via the CLI, use the `zxsuite backup
-doCoherencyCheck <zxsuite_backup_docoherencycheck>` command:
+To start a Coherency Check via the CLI, use the `carbonio backup
+doCoherencyCheck <carbonio_backup_docoherencycheck>` command:
 
 .. code:: console
 
-   zxsuite backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
+   carbonio backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
 
 .. seealso:: Community Article
 
@@ -441,7 +441,7 @@ item in the mailbox account and restore different objects on different
 accounts or even on different servers.
 
 By default, the default |backup| setting is to save all backup
-files in the **local directory** ``/opt/zextras/backup/zextras/``. In
+files in the **local directory** :file:`/opt/zextras/backup/zextras/`. In
 order to be eligible to be used as the Backup Path, a directory must:
 
 -  Be both readable and writable by the ``zextras`` user
@@ -576,12 +576,12 @@ Running a SmartScan
    .. grid-item-card:: Starting the SmartScan via the CLI
       :columns: 12 12 12 6
 
-      To start a SmartScan via the CLI, use the `zxsuite backup
-      doSmartScan <zxsuite_backup_doSmartScan>` command:
+      To start a SmartScan via the CLI, use the `carbonio backup
+      doSmartScan` command:
 
       .. code:: console
 
-         zxsuite backup doSmartScan *start* [param VALUE[,VALUE]]
+         # carbonio backup doSmartScan *start* [param VALUE[,VALUE]]
 
 .. _checking_the_status_of_a_running_scan:
 
@@ -590,19 +590,19 @@ Checking the Status of a Running Scan
 
 Before actually carrying out this check, it is suggested to verify how
 many operations are running, to find the correct id. you can do this
-by using the `zxsuite backup getAllOperations
-<zxsuite_backup_getAllOperations>` command.
+by using the `carbonio backup getAllOperations
+<carbonio_backup_getAllOperations>` command.
 
 .. code:: console
 
-   zxsuite backup getAllOperations [param VALUE[,VALUE]]
+   # carbonio backup getAllOperations [param VALUE[,VALUE]]
 
 To check the status of a running scan via the CLI, use the
-`zxsuite backup monitor <zxsuite_backup_monitor>` command:
+`carbonio backup monitor <carbonio_backup_monitor>` command:
 
 .. code:: console
 
-   zxsuite backup monitor *operation_uuid* [param VALUE[,VALUE]]
+   # carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
 .. _real_time_scan:
 
@@ -661,7 +661,7 @@ Enabling the Real Time Scanner
       ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``true``::
 
-         zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
+         # carbonio config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
 
 .. _disabling_the_real_time_scanner:
 
@@ -687,7 +687,7 @@ Disabling the Real Time Scanner
       ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``false``::
 
-        zxsuite config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
+        # carbonio config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
 
 .. topic:: When Should the Real Time Scanner Be Disabled?
 
@@ -779,11 +779,11 @@ Running a Backup Purge
       :columns: 12 12 12 6
 
       To start a BackupPurge via the CLI, use the
-      `zxsuite backup doPurge <zxsuite_backup_doPurge>` command:
+      `carbonio backup doPurge` command:
 
       .. code:: console
 
-         zxsuite backup doPurge [param VALUE[,VALUE]]
+         # carbonio backup doPurge [param VALUE[,VALUE]]
 
 .. _checking_the_status_of_a_running_backup_purge:
 
@@ -791,11 +791,11 @@ Checking the Status of a Running Backup Purge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To check the status of a running Purge via the CLI, use the
-`zxsuite backup monitor <zxsuite_backup_monitor>` command:
+`carbonio backup monitor` command:
 
 .. code:: console
 
-   zxsuite backup monitor *operation_uuid* [param VALUE[,VALUE]]
+   # carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
 .. _limitations_and_corner_cases_of_the_backup:
 
@@ -860,23 +860,23 @@ does not report enough messages to identify the root cause of the
 failure, a first solution is to increase the **verbosity** of the log
 file.
    
-.. code:: bash
+.. code:: console
 
-   zxsuite config server set $(zmhostname) attribute ZxCore_LogLevel value 0
+   # carbonio config server set $(zmhostname) attribute ZxCore_LogLevel value 0
 
 Now, run a backup using the following command (that only backs up the
 LDAP data) and check again the log file.
 
-.. code:: bash
+.. code:: console
 
-   zxsuite --json backup doBackupLDAP start
+   # carbonio --json backup doBackupLDAP start
 
 After the command completes and you have finished analysing the log
 file, remember to restore the verbosity to the previous level:
 
-.. code:: bash
+.. code:: console
 
-   zxsuite config server set $(zmhostname) attribute ZxCore_LogLevel value 1
+   # carbonio config server set $(zmhostname) attribute ZxCore_LogLevel value 1
 
 .. hint:: Increasing log verbosity can prove useful whenever
    troubleshooting a problem or searching for more information about a
@@ -899,24 +899,22 @@ LDAP data is not produced.
 This situation can be verified by using the following sequence of
 commands on a mailbox server:
 
-.. code:: bash
+.. code:: console
 
-   su - zextras
-   source bin/zmshutil
-   zmsetvars
-   ldapwhoami -x -D $zimbra_ldap_userdn -w $zimbra_ldap_password -H $ldap_master_url
+   # su - zextras
+   # source bin/zmshutil
+   # zmsetvars
+   # ldapwhoami -x -D $zimbra_ldap_userdn -w $zimbra_ldap_password -H $ldap_master_url
 
-The last command should complete with output
-
-::
+The last command should complete with output::
 
    dn:uid=zimbra,cn=admins,cn=zimbra
 
 Now, running the command
 
-.. code:: bash
+.. code:: console
 
-   ldapwhoami -x -D "cn=config" -w $ldap_root_password -H $ldap_master_url
+   # ldapwhoami -x -D "cn=config" -w $ldap_root_password -H $ldap_master_url
 
 should output ``dn:cn=config``. If this is **not** the case, then the
 LDAP root password is either wrong or not stored in the local
@@ -931,7 +929,7 @@ To fix the problem, follow this three step procedure.
 
       1. Discover the ldap master server.
       ^^^^^^
-      .. code:: bash
+      .. code:: console
 
          zmlocalconfig ldap_master_url
 
@@ -942,13 +940,13 @@ To fix the problem, follow this three step procedure.
 
       Connect to the ldap master server and get the LDAP root password.
 
-      .. code:: bash
+      .. code:: console
 
          zmlocalconfig -s ldap_root_password
 
       This command will print on the standard output the LDAP password,
       that you need to store on all mailbox servers on which either
-      ``zxsuite`` is running, or LDAP backup is enabled, or both. 
+      ``carbonio`` is running, or LDAP backup is enabled, or both. 
 
    .. grid-item-card::
 
@@ -959,16 +957,16 @@ To fix the problem, follow this three step procedure.
       **$LDAPPASSWORD** is the LDAP password obtained in the
       previous step.
 
-      .. code:: bash
+      .. code:: console
 
-         su - zextras
-         zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
+         # su - zextras
+         # zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
 
       Finally, restart the mailbox service to avoid cached credentials problems.
 
-      .. code:: bash
+      .. code:: console
 
-         zmmailboxdctl restart
+         # zmmailboxdctl restart
 
 .. _disable_ldap_backup:
 
@@ -979,9 +977,9 @@ In case you do not want to backup LDAP data together with |product|
 you can disable it entirely. On each mailbox server, to disable LDAP
 Backup, run this command.
 
-.. code:: bash
+.. code:: console
 
-   zxsuite config set server $(zmhostname) ldapDumpEnabled false
+   # carbonio config set server $(zmhostname) ldapDumpEnabled false
 
 .. _backup_on_external_storage:
 
@@ -1024,17 +1022,15 @@ The remote metadata archiving can be also triggered manually by running
 either of the following commands and adding the
 ``remote_metadata_upload true`` parameter:
 
-- `zxsuite backup doSmartScan <zxsuite_backup_doSmartScan>`
+- `carbonio backup doSmartScan`
 
-- `zxsuite backup doAccountScan <zxsuite_backup_doAccountScan>`
+- `carbonio backup doAccountScan`
 
-- `zxsuite backup doBackupServerCustomizations
-  <zxsuite_backup_doBackupServerCustomizations>`
+- `carbonio backup doBackupServerCustomizations`
 
-- `zxsuite backup doBackupLDAP <zxsuite_backup_doBackupLDAP>`
+- `carbonio backup doBackupLDAP`
 
-- `zxsuite backup doBackupCluster
-  <zxsuite_backup_doBackupCluster>`
+- `carbonio backup doBackupCluster`
 
 By splitting the *I/O intensive* metadata folder from the BLOBs one, it
 is also ensured that the backup works, even in case the remote storage
@@ -1066,13 +1062,12 @@ external storage:
       On External Storage is enabled. Please use the backup CLI
       commands"*
 
-In order to disable the External Storage, you can run the
-`zxsuite backup setBackupVolume Default <zxsuite_backup_setBackupVolume_Default>`
-command.
+In order to disable the External Storage, you can run the `carbonio
+backup setBackupVolume Default` command.
 
-.. code:: bash
+.. code:: console
 
-   zxsuite backup setBackupVolume Default start
+   # carbonio backup setBackupVolume Default start
 
 .. _data_stored_in_the_external_storage:
 
@@ -1080,9 +1075,7 @@ Data stored in the external storage
 -----------------------------------
 
 Data is stored in external storage using a structure very similar to the
-one of the Backup Path:
-
-::
+one of the Backup Path::
 
    |-- accounts
    |-- items
@@ -1103,11 +1096,10 @@ remote storage to the Backup Path.
 
 .. code:: console
 
-   zxsuite backup retrieveMetadataFromArchive S3 *destination*
+   # carbonio backup retrieveMetadataFromArchive S3 *destination*
 
-See documentation of `zxsuite backup retrieveMetadataFromArchive
-S3 <zxsuite_backup_retrieveMetadataFromArchive_S3>` for more
-information.
+See documentation of `carbonio backup retrieveMetadataFromArchive S3`
+for more information.
 
 .. _external_storages:
 
@@ -1139,12 +1131,12 @@ one.
    192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line similar
    to:
 
-   .. code:: bash
+   .. code::
 
       192.168.72.16:/media/mailserver/backup/  /media/external/ nfs rw,hard,intr, 0,0
 
    You will now be able to mount the external storage by simply using
-   ``mount /media/external/`` on the server.
+   :command:`mount /media/external/` on the server.
 
 .. card:: Multiserver installation
 
@@ -1154,13 +1146,13 @@ one.
 
    In a multiserver installation, consider a scenario in which the same NAS
    located on 192.168.72.16 is involved, which exposes via NFS the share as
-   ``/media/externalStorage``. We want to store our multiservers backups on
+   :file:`/media/externalStorage`. We want to store our multiservers backups on
    this NAS.
 
    To do so, on each server you need to add one entry similar to the
-   following to ``/etc/fstab``:
+   following to :file:`/etc/fstab`:
 
-   .. code:: bash
+   .. code:: console
 
       192.168.72.16:/externalStorage/Server1 /mnt/backup nfs rw,hard,intr 0 0
 
@@ -1183,7 +1175,7 @@ vice-versa.
 
 .. topic:: How to check a bucket's usage.
 
-   The `zxsuite core listBuckets <zxsuite_core_listBuckets>` command
+   The `carbonio core listBuckets` command
    reports the bucket usage, for example::
 
      bucketName                                                  hsm
@@ -1246,8 +1238,7 @@ the external storage.
 
    .. code:: console
 
-      zxsuite backup setBackupVolume S3 bucket_configuration_id VALUE
-      [param VALUE[,VALUE]].
+      # carbonio backup setBackupVolume S3 bucket_configuration_id VALUE [param VALUE[,VALUE]].
 
    Once the backup will be initialized, it will use the external storage.
 
@@ -1263,30 +1254,35 @@ the external storage.
    1. Double-check the permissions on the active backup path
 
    2. Make sure that the |carbonio| cache folder is accessible by the
-      ``zextras`` user (typically under ``/opt/zextras/cache``)
+      ``zextras`` user (typically under :file:`/opt/zextras/cache`)
 
    3. Check for table errors in the myslow.log and in the MariaDb integrity
       check report. If any error is found, consider running the
       ``mysqlcheck`` command to verify the database integrity.
 
    4. Check for any missing blobs in the mounted |carbonio| volumes
-      with `zxsuite powerstore doCheckBlobs
-      <zxsuite_powerstore_doCheckBlobs>`
+      with `carbonio powerstore doCheckBlobs`
 
    5. Check for any missing digest in the backup with
-      `doSmartScan deep=true <zxsuite_backup_doSmartScan>`
+      `doSmartScan deep=true`
 
    6. Check for any orphaned digest or metadata in the Backup with
-      `zxsuite backup doCoherencyCheck <zxsuite_backup_docoherencycheck>`
+      `carbonio backup doCoherencyCheck`
 
-   7. Optionally run a `zxsuite backup doPurge <zxsuite_backup_doPurge>` to remove
+   7. Optionally run a `carbonio backup doPurge` to remove
       expired data from the Backup
+      
+   You can now proceed to migrate the existing backup using the
+   appropriate ``carbonio backup migrateBackupVolume`` [[ ``Default`` \|
+   ``Local`` \| ``S3`` ]] command.
 
-   You can now proceed to migrate the existing backup using the appropriate
-   ``zxsuite backup migrateBackupVolume`` [[
-   `Default <zxsuite_backup_migrateBackupVolume_Default>` \|
-   `Local <zxsuite_backup_migrateBackupVolume_Local>` \|
-   `S3 <zxsuite_backup_migrateBackupVolume_S3>` ]] command.
+   .. restore after CLI has been reintroduced
+
+      You can now proceed to migrate the existing backup using the appropriate
+      ``carbonio backup migrateBackupVolume`` [[
+      `Default <carbonio_backup_migrateBackupVolume_Default>` \|
+      `Local <carbonio_backup_migrateBackupVolume_Local>` \|
+      `S3 <carbonio_backup_migrateBackupVolume_S3>` ]] command.
 
    Finally, once the migration has been completed you can run this final
    task:
@@ -1305,7 +1301,7 @@ the external storage.
 
    * All the data saved in on the Bucket are already lost
    * The remote bucket still shows up when issuing the command
-     :command:`zxsuite core listBuckets all`
+     :command:`carbonio core listBuckets all`
    * The Backup still tries to use that bucket
    * The defective Bucket can not be removed
    * Trying to redirect the backup to a new volume with the command
@@ -1319,7 +1315,7 @@ the external storage.
 
       .. code:: console
 
-         # zxsuite backup setBackupVolume Default start
+         # carbonio backup setBackupVolume Default start
 
       The Backup will now use the default, local path.
 
@@ -1329,68 +1325,8 @@ the external storage.
 
       .. code:: console
 
-         # zxsuite backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup 
+         # carbonio backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup 
 
    In both cases, at this point you can proceed to remove the volume
    that is no longer functional.
-
-..
-   .. _carbonio_backup_cli:
-
-   |backup| CLI
-   ==================
-
-   This section contains the index of all ``zxsuite backup`` commands. Full
-   reference can be found in the dedicated
-   section :ref:`zextras_backup_full_cli`.
-
-   :ref:`doAccountScan <zxsuite_backup_doAccountScan>`
-   :octicon:`dash` :ref:`doBackupAuthToken <zxsuite_backup_doBackupAuthToken>`
-   :octicon:`dash` :ref:`doBackupChat <zxsuite_backup_doBackupChat>`
-   :octicon:`dash` :ref:`doBackupCluster <zxsuite_backup_doBackupCluster>`
-   :octicon:`dash` :ref:`doBackupLDAP <zxsuite_backup_doBackupLDAP>`
-   :octicon:`dash` :ref:`doBackupServerCustomizations <zxsuite_backup_doBackupServerCustomizations>`
-   :octicon:`dash` :ref:`doCheckShares <zxsuite_backup_doCheckShares>`
-   :octicon:`dash` :ref:`doCoherencyCheck <zxsuite_backup_doCoherencyCheck>`
-   :octicon:`dash` :ref:`doEnableDisableCOS <zxsuite_backup_doEnableDisableCOS>`
-   :octicon:`dash` :ref:`doExport <zxsuite_backup_doExport>`
-   :octicon:`dash` :ref:`doExternalRestore <zxsuite_backup_doExternalRestore>`
-   :octicon:`dash` :ref:`doFixShares <zxsuite_backup_doFixShares>`
-   :octicon:`dash` :ref:`doItemRestore <zxsuite_backup_doItemRestore>`
-   :octicon:`dash` :ref:`doItemSearch <zxsuite_backup_doItemSearch>`
-   :octicon:`dash` :ref:`doPurge <zxsuite_backup_doPurge>`
-   :octicon:`dash` :ref:`doRawRestore <zxsuite_backup_doRawRestore>`
-   :octicon:`dash` :ref:`doRestartService <zxsuite_backup_doRestartService>`
-   :octicon:`dash` :ref:`doRestoreBlobs <zxsuite_backup_doRestoreBlobs>`
-   :octicon:`dash` :ref:`doRestoreOnNewAccount <zxsuite_backup_doRestoreOnNewAccount>`
-   :octicon:`dash` :ref:`doSmartScan <zxsuite_backup_doSmartScan>`
-   :octicon:`dash` :ref:`doStartService <zxsuite_backup_doStartService>`
-   :octicon:`dash` :ref:`doStopAllOperations <zxsuite_backup_doStopAllOperations>`
-   :octicon:`dash` :ref:`doStopOperation <zxsuite_backup_doStopOperation>`
-   :octicon:`dash` :ref:`doStopService <zxsuite_backup_doStopService>`
-   :octicon:`dash` :ref:`doUndelete <zxsuite_backup_doUndelete>`
-   :octicon:`dash` :ref:`getAccountInfo <zxsuite_backup_getAccountInfo>`
-   :octicon:`dash` :ref:`getAllOperations <zxsuite_backup_getAllOperations>`
-   :octicon:`dash` :ref:`getAvailableAccounts <zxsuite_backup_getAvailableAccounts>`
-   :octicon:`dash` :ref:`getAvailableDomains <zxsuite_backup_getAvailableDomains>`
-   :octicon:`dash` :ref:`getBackupInfo <zxsuite_backup_getBackupInfo>`
-   :octicon:`dash` :ref:`getCOSBackupStatus <zxsuite_backup_getCOSBackupStatus>`
-   :octicon:`dash` :ref:`getItem <zxsuite_backup_getItem>`
-   :octicon:`dash` :ref:`getMap <zxsuite_backup_getMap>`
-   :octicon:`dash` :ref:`getProperty <zxsuite_backup_getProperty>`
-   :octicon:`dash` :ref:`getServerConfig <zxsuite_backup_getServerConfig>`
-   :octicon:`dash` :ref:`getServices <zxsuite_backup_getServices>`
-   :octicon:`dash` :ref:`migrateBackupVolume Default <zxsuite_backup_migrateBackupVolume_Default>`
-   :octicon:`dash` :ref:`migrateBackupVolume Local <zxsuite_backup_migrateBackupVolume_Local>`
-   :octicon:`dash` :ref:`migrateBackupVolume S3 <zxsuite_backup_migrateBackupVolume_S3>`
-   :octicon:`dash` :ref:`monitor <zxsuite_backup_monitor>`
-   :octicon:`dash` :ref:`retrieveMetadataFromArchive Local <zxsuite_backup_retrieveMetadataFromArchive_Local>`
-   :octicon:`dash` :ref:`retrieveMetadataFromArchive S3 <zxsuite_backup_retrieveMetadataFromArchive_S3>`
-   :octicon:`dash` :ref:`setBackupVolume Default <zxsuite_backup_setBackupVolume_Default>`
-   :octicon:`dash` :ref:`setBackupVolume Local <zxsuite_backup_setBackupVolume_Local>`
-   :octicon:`dash` :ref:`setBackupVolume S3 <zxsuite_backup_setBackupVolume_S3>`
-   :octicon:`dash` :ref:`setProperty <zxsuite_backup_setProperty>`
-   :octicon:`dash` :ref:`updateBackupVolume S3 <zxsuite_backup_updateBackupVolume_S3>`
-
-
 

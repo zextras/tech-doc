@@ -228,9 +228,9 @@ The next steps concern the configuration and setup of the various
    .. code::
 
       # su - zextras
-      # zxsuite chats video-server add example.com port 8100 servlet_port 8090 secret MY_Video-ReC-pass7=6
-      # zxsuite config set global teamVideoServerRecordingEnabled true
-      # zxsuite config set cos default teamChatEnabled true
+      # carbonio chats video-server add example.com port 8100 servlet_port 8090 secret MY_Video-ReC-pass7=6
+      # carbonio config set global teamVideoServerRecordingEnabled true
+      # carbonio config set cos default teamChatEnabled true
 
    Here, port **8100** is the default port used by |vs|, while
    **8100** for recording. Change these values according to your needs
@@ -259,11 +259,11 @@ The next steps concern the configuration and setup of the various
 
    .. code:: console
 
-      # zxsuite config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://127.0.0.1:20003/powerstore","user":"powerstore","password":"My-PowerStore-pwd98%"}'
-      # zxsuite config set global activeSyncDb '{"url":"jdbc:postgresql://127.0.0.1:20003/activesync","user":"activesync","password":"My-Sync-pass-_#4"}'
-      # zxsuite config set global abqMetadataDb '{"url":"jdbc:postgresql://127.0.0.1:20003/abq","user":"abq","password":"'My_AbQ-psw]4<"}'
-      # zxsuite mobile doRestartService module
-      # zxsuite powerstore doRestartService module
+      # carbonio config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://127.0.0.1:20003/powerstore","user":"powerstore","password":"My-PowerStore-pwd98%"}'
+      # carbonio config set global activeSyncDb '{"url":"jdbc:postgresql://127.0.0.1:20003/activesync","user":"activesync","password":"My-Sync-pass-_#4"}'
+      # carbonio config set global abqMetadataDb '{"url":"jdbc:postgresql://127.0.0.1:20003/abq","user":"abq","password":"'My_AbQ-psw]4<"}'
+      # carbonio mobile doRestartService module
+      # carbonio powerstore doRestartService module
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -282,4 +282,4 @@ The next steps concern the configuration and setup of the various
 
    .. code:: console
 
-      # zxsuite core activate-license TOKEN
+      # carbonio core activate-license TOKEN

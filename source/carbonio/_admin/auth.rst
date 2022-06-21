@@ -299,14 +299,14 @@ import the configuration using the command:
 
 .. code:: bash
 
-   zxsuite auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
+   # carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
 
 .. note:: The URL supplied by the SAML IDP for an unsecured connection
    may be slight different from the previous one, like in our example.
 
 .. code:: bash
 
-   zxsuite auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
+   # carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
 
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
@@ -339,7 +339,7 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: bash
 
-         zxsuite auth saml get example.com export_to /tmp/saml.json
+         # carbonio auth saml get example.com export_to /tmp/saml.json
 
    .. grid-item-card::
       :columns: 12 12 12 6
@@ -418,10 +418,10 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: bash
 
-         zxsuite auth saml import example.com /tmp/saml.json
+         # carbonio auth saml import example.com /tmp/saml.json
 
       .. hint:: It is also possible to view or edit single attributes
-         by using the ``zxsuite auth saml get`` and ``zxsuite auth saml
+         by using the ``carbonio auth saml get`` and ``carbonio auth saml
          set`` command options.
 
 .. _temp_auth_link:
@@ -451,96 +451,3 @@ Administration GUI:
 #. The user must access the mailbox within 12 hours before the link
    expires
 
-
-
-.. _auth_zxauth-cli:
-
-..
-   |auth| CLI
-   ================
-
-   This section contains the index of all ``zxsuite auth`` commands. Full
-   reference can be found in the dedicated section
-   :ref:`zextras_auth_full_cli`.
-
-   :ref:`credential add <zxsuite_auth_credential_add>`
-   :octicon:`dash` :ref:`credential delete <zxsuite_auth_credential_delete>`
-   :octicon:`dash` :ref:`credential list <zxsuite_auth_credential_list>`
-   :octicon:`dash` :ref:`credential update <zxsuite_auth_credential_update>`
-   :octicon:`dash` :ref:`doDeployAuthZimlet <zxsuite_auth_doDeployAuthZimlet>`
-   :octicon:`dash` :ref:`doRestartService <zxsuite_auth_doRestartService>`
-   :octicon:`dash` :ref:`doStartService <zxsuite_auth_doStartService>`
-   :octicon:`dash` :ref:`doStopService <zxsuite_auth_doStopService>`
-   :octicon:`dash` :ref:`enforce2FA get account <zxsuite_auth_enforce2FA_get_account>`
-   :octicon:`dash` :ref:`enforce2FA get cos <zxsuite_auth_enforce2FA_get_cos>`
-   :octicon:`dash` :ref:`enforce2FA set account <zxsuite_auth_enforce2FA_set_account>`
-   :octicon:`dash` :ref:`enforce2FA set cos <zxsuite_auth_enforce2FA_set_cos>`
-   :octicon:`dash` :ref:`getServices <zxsuite_auth_getServices>`
-   :octicon:`dash` :ref:`loginPage getBackgroundImage domain <zxsuite_auth_loginPage_getBackgroundImage_domain>`
-   :octicon:`dash` :ref:`loginPage getBackgroundImage global <zxsuite_auth_loginPage_getBackgroundImage_global>`
-   :octicon:`dash` :ref:`loginPage getColorPalette domain <zxsuite_auth_loginPage_getColorPalette_domain>`
-   :octicon:`dash` :ref:`loginPage getColorPalette global <zxsuite_auth_loginPage_getColorPalette_global>`
-   :octicon:`dash` :ref:`loginPage getConfig domain <zxsuite_auth_loginPage_getConfig_domain>`
-   :octicon:`dash` :ref:`loginPage getConfig global <zxsuite_auth_loginPage_getConfig_global>`
-   :octicon:`dash` :ref:`loginPage getFavicon domain <zxsuite_auth_loginPage_getFavicon_domain>`
-   :octicon:`dash` :ref:`loginPage getFavicon global <zxsuite_auth_loginPage_getFavicon_global>`
-   :octicon:`dash` :ref:`loginPage getLogo domain <zxsuite_auth_loginPage_getLogo_domain>`
-   :octicon:`dash` :ref:`loginPage getLogo global <zxsuite_auth_loginPage_getLogo_global>`
-   :octicon:`dash` :ref:`loginPage getSkinLogoAppBanner domain <zxsuite_auth_loginPage_getSkinLogoAppBanner_domain>`
-   :octicon:`dash` :ref:`loginPage getSkinLogoAppBanner global <zxsuite_auth_loginPage_getSkinLogoAppBanner_global>`
-   :octicon:`dash` :ref:`loginPage getSkinLogoURL domain <zxsuite_auth_loginPage_getSkinLogoURL_domain>`
-   :octicon:`dash` :ref:`loginPage getSkinLogoURL global <zxsuite_auth_loginPage_getSkinLogoURL_global>`
-   :octicon:`dash` :ref:`loginPage getTitle domain <zxsuite_auth_loginPage_getTitle_domain>`
-   :octicon:`dash` :ref:`loginPage getTitle global <zxsuite_auth_loginPage_getTitle_global>`
-   :octicon:`dash` :ref:`loginPage setBackgroundImage domain <zxsuite_auth_loginPage_setBackgroundImage_domain>`
-   :octicon:`dash` :ref:`loginPage setBackgroundImage global <zxsuite_auth_loginPage_setBackgroundImage_global>`
-   :octicon:`dash` :ref:`loginPage setColorPalette domain <zxsuite_auth_loginPage_setColorPalette_domain>`
-   :octicon:`dash` :ref:`loginPage setColorPalette global <zxsuite_auth_loginPage_setColorPalette_global>`
-   :octicon:`dash` :ref:`loginPage setFavicon domain <zxsuite_auth_loginPage_setFavicon_domain>`
-   :octicon:`dash` :ref:`loginPage setFavicon global <zxsuite_auth_loginPage_setFavicon_global>`
-   :octicon:`dash` :ref:`loginPage setLogo domain <zxsuite_auth_loginPage_setLogo_domain>`
-   :octicon:`dash` :ref:`loginPage setLogo global <zxsuite_auth_loginPage_setLogo_global>`
-   :octicon:`dash` :ref:`loginPage setSkinLogoAppBanner domain <zxsuite_auth_loginPage_setSkinLogoAppBanner_domain>`
-   :octicon:`dash` :ref:`loginPage setSkinLogoAppBanner global <zxsuite_auth_loginPage_setSkinLogoAppBanner_global>`
-   :octicon:`dash` :ref:`loginPage setSkinLogoURL domain <zxsuite_auth_loginPage_setSkinLogoURL_domain>`
-   :octicon:`dash` :ref:`loginPage setSkinLogoURL global <zxsuite_auth_loginPage_setSkinLogoURL_global>`
-   :octicon:`dash` :ref:`loginPage setTitle domain <zxsuite_auth_loginPage_setTitle_domain>`
-   :octicon:`dash` :ref:`loginPage setTitle global <zxsuite_auth_loginPage_setTitle_global>`
-   :octicon:`dash` :ref:`policy list domain <zxsuite_auth_policy_list_domain>`
-   :octicon:`dash` :ref:`policy list global <zxsuite_auth_policy_list_global>`
-   :octicon:`dash` :ref:`policy set Cli domain <zxsuite_auth_policy_set_Cli_domain>`
-   :octicon:`dash` :ref:`policy set Cli global <zxsuite_auth_policy_set_Cli_global>`
-   :octicon:`dash` :ref:`policy set Dav domain <zxsuite_auth_policy_set_Dav_domain>`
-   :octicon:`dash` :ref:`policy set Dav global <zxsuite_auth_policy_set_Dav_global>`
-   :octicon:`dash` :ref:`policy set EAS domain <zxsuite_auth_policy_set_EAS_domain>`
-   :octicon:`dash` :ref:`policy set EAS global <zxsuite_auth_policy_set_EAS_global>`
-   :octicon:`dash` :ref:`policy set Imap domain <zxsuite_auth_policy_set_Imap_domain>`
-   :octicon:`dash` :ref:`policy set Imap global <zxsuite_auth_policy_set_Imap_global>`
-   :octicon:`dash` :ref:`policy set MobileApp domain <zxsuite_auth_policy_set_MobileApp_domain>`
-   :octicon:`dash` :ref:`policy set MobileApp global <zxsuite_auth_policy_set_MobileApp_global>`
-   :octicon:`dash` :ref:`policy set Pop3 domain <zxsuite_auth_policy_set_Pop3_domain>`
-   :octicon:`dash` :ref:`policy set Pop3 global <zxsuite_auth_policy_set_Pop3_global>`
-   :octicon:`dash` :ref:`policy set Smtp domain <zxsuite_auth_policy_set_Smtp_domain>`
-   :octicon:`dash` :ref:`policy set Smtp global <zxsuite_auth_policy_set_Smtp_global>`
-   :octicon:`dash` :ref:`policy set WebAdminUI domain <zxsuite_auth_policy_set_WebAdminUI_domain>`
-   :octicon:`dash` :ref:`policy set WebAdminUI global <zxsuite_auth_policy_set_WebAdminUI_global>`
-   :octicon:`dash` :ref:`policy set WebUI domain <zxsuite_auth_policy_set_WebUI_domain>`
-   :octicon:`dash` :ref:`policy set WebUI global <zxsuite_auth_policy_set_WebUI_global>`
-   :octicon:`dash` :ref:`policy set ZmWebUI domain <zxsuite_auth_policy_set_ZmWebUI_domain>`
-   :octicon:`dash` :ref:`policy set ZmWebUI global <zxsuite_auth_policy_set_ZmWebUI_global>`
-   :octicon:`dash` :ref:`policy trustedDevice getExpiration domain <zxsuite_auth_policy_trustedDevice_getExpiration_domain>`
-   :octicon:`dash` :ref:`policy trustedDevice getExpiration global <zxsuite_auth_policy_trustedDevice_getExpiration_global>`
-   :octicon:`dash` :ref:`policy trustedDevice setExpiration_domain <zxsuite_auth_policy_trustedDevice_setExpiration_domain>`
-   :octicon:`dash` :ref:`policy trustedDevice setExpiration global <zxsuite_auth_policy_trustedDevice_setExpiration_global>`
-   :octicon:`dash` :ref:`saml delete <zxsuite_auth_saml_delete>`
-   :octicon:`dash` :ref:`saml get <zxsuite_auth_saml_get>`
-   :octicon:`dash` :ref:`saml import <zxsuite_auth_saml_import>`
-   :octicon:`dash` :ref:`saml update <zxsuite_auth_saml_update>`
-   :octicon:`dash` :ref:`saml validate <zxsuite_auth_saml_validate>`
-   :octicon:`dash` :ref:`token invalidate <zxsuite_auth_token_invalidate>`
-   :octicon:`dash` :ref:`token list <zxsuite_auth_token_list>`
-   :octicon:`dash` :ref:`totp delete <zxsuite_auth_totp_delete>`
-   :octicon:`dash` :ref:`totp generate <zxsuite_auth_totp_generate>`
-   :octicon:`dash` :ref:`totp list <zxsuite_auth_totp_list>`
-   :octicon:`dash` :ref:`trustedDevice delete <zxsuite_auth_trustedDevice_delete>`
-   :octicon:`dash` :ref:`trustedDevice list <zxsuite_auth_trustedDevice_list>`

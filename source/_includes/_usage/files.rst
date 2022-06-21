@@ -79,23 +79,3 @@ done on files and folders
       a new version is uploaded. Manual removal of unused or deprecated
       versions of a file is possible.
 
-..
-   .. _carbonio_files_cli:
-
-   |File| CLI
-   =================
-
-   This section contains the index of all ``zxsuite drive`` commands. Full
-   reference can be found in the dedicated
-   section :ref:`zextras_drive_full_cli`.
-
-   :ref:`doDeleteBriefcaseData <zxsuite_drive_doDeleteBriefcaseData>`
-   :octicon:`dash` :ref:`doDeployDriveZimlet <zxsuite_drive_doDeployDriveZimlet>`
-   :octicon:`dash` :ref:`doImportBriefcase <zxsuite_drive_doImportBriefcase>`
-   :octicon:`dash` :ref:`doRestartService <zxsuite_drive_doRestartService>`
-   :octicon:`dash` :ref:`doStartService <zxsuite_drive_doStartService>`
-   :octicon:`dash` :ref:`doStopService <zxsuite_drive_doStopService>`
-   :octicon:`dash` :ref:`dumpSessions <zxsuite_drive_dumpSessions>`
-   :octicon:`dash` :ref:`getQuota <zxsuite_drive_getQuota>`
-   :octicon:`dash` :ref:`getServices <zxsuite_drive_getServices>`
-   :octicon:`dash` :ref:`monitor <zxsuite_drive_monitor>`
