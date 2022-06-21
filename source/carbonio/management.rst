@@ -46,4 +46,4 @@ the nodes of a Multi-Server installation.
    /_management/externalservices
    /_management/logger
    /_management/sshkeys
-   custom
+   /_management/mobile
