@@ -210,11 +210,9 @@ bust be configured at domain level::
 To enable 2FA it is also necessary to:
 
 - Enter the addresses of all mailbox and MTAs as
-  ``ZimbraMailTrustedIp``, using the command ``zmprov`` to add either
-  a single IP Address or a whole subnet as follows::
+  ``ZimbraMailTrustedIp``, using the command::
 
-    zmprov mcf +zimbramailtrustedip IP_ADDRESS/32
-    zmprov mcf +zimbramailtrustedip IP_SUBNET/NETMASK
+    zmprov mcf +zimbramailtrustedip IP_ADDRESS
 
 -  A ``trusted ip range`` must be defined for all services
 

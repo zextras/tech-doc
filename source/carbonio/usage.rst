@@ -70,6 +70,13 @@ Files
 =====
 
 .. include:: /_includes/_usage/files.rst
+             
+.. _mobile_shared_folders:
+
+Shared Folders
+==============
+
+.. include:: /_includes/_usage/sharedfolders.rst
 
 .. _search-comp:
 
