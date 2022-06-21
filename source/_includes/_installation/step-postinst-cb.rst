@@ -233,7 +233,7 @@ The next steps concern the configuration and setup of the various
       # carbonio config set cos default teamChatEnabled true
 
    Here, port **8100** is the default port used by |vs|, while
-   **8100** for recording. Change these values according to your needs
+   **8090** for recording. Change these values according to your needs
    or preferences. Remember also to replace **example.com** with your
    domain name.
 
