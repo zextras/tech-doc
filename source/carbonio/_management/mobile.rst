@@ -38,7 +38,7 @@ each user.
 
       .. code:: console
 
-         zmprov mc COSName zimbraFeatureMobileSyncEnabled TRUE
+         # carbonio prov mc COSName zimbraFeatureMobileSyncEnabled TRUE
 
    .. grid-item-card::
       :columns: 6
@@ -51,7 +51,7 @@ each user.
 
       .. code:: console
 
-         zmprov mc COSName zimbraFeatureMobileSyncEnabled FALSE
+         # carbonio prov mc COSName zimbraFeatureMobileSyncEnabled FALSE
 
 .. _enable_carbonio_mobile_for_a_single_user:
 
@@ -76,7 +76,7 @@ Module.
 
       .. code:: console
 
-         zmprov ma user@example.com zimbraFeatureMobileSyncEnabled TRUE
+         # carbonio prov ma user@example.com zimbraFeatureMobileSyncEnabled TRUE
 
    .. grid-item-card::
       :columns: 6
@@ -89,7 +89,7 @@ Module.
 
       .. code:: console
 
-         zmprov ma user@example.com zimbraFeatureMobileSyncEnabled FALSE
+         # carbonio prov ma user@example.com zimbraFeatureMobileSyncEnabled FALSE
 
 .. _mobile-password:
 
@@ -207,7 +207,7 @@ information.
 
       # carbonio mobile getProvisioning account john@example.com
 
-   All the listed properties can then be modified using :command:`zxsuite
+   All the listed properties can then be modified using :command:`carbonio
    mobile setProvisioning`, for example:
 
    .. code:: console
@@ -334,11 +334,11 @@ use any of the following commands from the CLI:
 
       Syntax::
 
-        zxsuite mobile doRemoveDevice {account} {device_id}
+        carbonio mobile doRemoveDevice {account} {device_id}
 
       Usage example:
 
-      ``zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S``
+      ``carbonio mobile doRemoveDevice john@example.com Appl79032X2WA4S``
 
       Removes John's Appl79032X2WA4S device SyncState
 
@@ -350,11 +350,11 @@ use any of the following commands from the CLI:
 
       Syntax::
 
-        zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
+        carbonio mobile doResetDevice {account} [attr1 value1 [attr2 value2...
 
       Usage example:
 
-      ``zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S``
+      ``carbonio mobile doResetDevice john@example.com Appl79032X2WA4S``
 
       Resets John's Appl79032X2WA4S device SyncState
 
@@ -366,11 +366,11 @@ use any of the following commands from the CLI:
 
       Syntax::
 
-        zxsuite mobile doResetAccount {account}
+        carbonio mobile doResetAccount {account}
 
       Usage example:
 
-      ``zxsuite mobile doResetAccount john@example.com``
+      ``carbonio mobile doResetAccount john@example.com``
 
       Resets all the device states for John's account
 
@@ -404,8 +404,8 @@ Configuration
 ~~~~~~~~~~~~~
 
 The Mobile DoS Filter is entirely configured at global level via CLI,
-with command :command:`zxsuite config global set|get|clear`. Specific
-info for each property can be obtained via :command:`zxsuite config
+with command :command:`carbonio config global set|get|clear`. Specific
+info for each property can be obtained via :command:`carbonio config
 info attribute [name]`, where `[name]` is one of the following:
 
 -  ``mobileAntiDosServiceEnabled``: enable the Mobile DoS Filter
@@ -438,7 +438,7 @@ window, all new requests from this device/account are dropped for
 When the rate has been exceeded, a warning is sent via email to admin
 and added to server notifications.
 
-.. note:: Issuing the command :command:`zxsuite mobile
+.. note:: Issuing the command :command:`carbonio mobile
    doRestartService anti-dos` will reset all jails and counters.
 
 .. _carbonio_autodiscover:
@@ -460,7 +460,7 @@ according to system performance.
       Notifications Latency
       ^^^^
 
-      ``ZxMobile_NotificationsLatency`` represents The seconds of
+      ``ZxMobile_NotificationsLatency`` represents the seconds of
       delay between an event on the server and its notification to the
       mobile device.
 
@@ -483,8 +483,8 @@ according to system performance.
       ``ZxMobile_MaxPingHeartbeat`` defines the maximum interval
       between :command:`ping` commands.
 
-All settings can be edited via CLI using the ``zxsuite config``
-command :command:`zxsuite config`.
+All settings can be edited via CLI using the ``carbonio config``
+command :command:`carbonio config`.
 
 .. _mobile_when_to_edit_the_performance_tuning_settings:
 
@@ -601,11 +601,11 @@ dedicated commands.
 
         Syntax:
 
-        zxsuite mobile doAddEASFilter {and|or|regex|contains|account} {text|user@example.com|account=otheruser@example.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
+        carbonio mobile doAddEASFilter {and|or|regex|contains|account} {text|user@example.com|account=otheruser@example.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
 
       Usage example::
 
-          zxsuite mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
+          carbonio mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
 
       Adds a protocol filter that will restrict the pool of available
       EAS versions to 2.5, 12.0 and 14.1 if the user agent name
@@ -613,7 +613,7 @@ dedicated commands.
 
       ::
 
-           zxsuite mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
+           carbonio mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
 
       Adds a protocol filter that will restrict the pool of available
       EAS versions to 14.1 if the user agent name contains the string
@@ -630,11 +630,11 @@ dedicated commands.
 
       Syntax::
 
-        zxsuite mobile doDeleteEASFilter _id_
+        carbonio mobile doDeleteEASFilter _id_
 
       Usage example::
 
-        zxsuite mobile doDeleteEASFilter 2
+        carbonio mobile doDeleteEASFilter 2
 
       Removes the filter with id = 2.
 
@@ -649,11 +649,11 @@ dedicated commands.
 
       Syntax::
 
-        zxsuite mobile doMoveEASFilter {from} {to}
+        carbonio mobile doMoveEASFilter {from} {to}
 
       Usage example::
 
-        zxsuite mobile doMoveEASFilter 0 5
+        carbonio mobile doMoveEASFilter 0 5
 
       Moves the filter with id = 0 to the position 5.
 
@@ -702,17 +702,17 @@ commands:
 
       Syntax::
 
-        zxsuite mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
+        carbonio mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
 
       Usage example::
 
-        zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger
+        carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger
 
       Creates an info account logger for john's account to file /tmp/john_logger
 
       ::
 
-         zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
+         carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
 
       Creates an info account logger for john's account to file /tmp/john_logger with window size set to 1.
 
@@ -725,11 +725,11 @@ commands:
 
       Syntax::
 
-        zxsuite mobile doRemoveLogger {logger_id|"all_loggers"}
+        carbonio mobile doRemoveLogger {logger_id|"all_loggers"}
 
       Usage example::
 
-        zxsuite mobile doremovelogger 5
+        carbonio mobile doremovelogger 5
 
       Removes the account logger with ID = 5
 
@@ -741,7 +741,7 @@ commands:
 
       Sample output::
 
-        zxsuite mobile getAccountLoggers
+        carbonio mobile getAccountLoggers
 
               loggers
 
@@ -749,7 +749,7 @@ commands:
                       level                                                       DEBUG
                       name                                                        AccountLogger
                       description                                                 Logging account user@example.com using level debug, log file /tmp/user.log
-                      remove command                                              zxsuite mobile doRemoveLogger 7
+                      remove command                                              carbonio mobile doRemoveLogger 7
 
 .. _mobile_abq_allowblockquarantine_device_control:
 
@@ -772,9 +772,9 @@ not used, because this would save server resources.
 To disable the ABQ, execute the following command, then restart
 ``mailboxd``::
 
-  zxsuite config set global abq_enabled_at_startup false
+  # carbonio config set global abq_enabled_at_startup false
 
-To verify that ABQ was disabled, in the output of :command:`zxsuite
+To verify that ABQ was disabled, in the output of :command:`carbonio
 mobile getServices`, ABQ should appear as **not running** (i.e., the
 value for ABQ's *running*  property should be **false**).
 
@@ -930,11 +930,11 @@ ABQ Mode Control
 
 The current mode can be checked by running the following command::
 
-   zxsuite config global get attribute abqMode
+   # carbonio config global get attribute abqMode
 
 The ABQ mode can be changed running the following command::
 
-   zxsuite config global set attribute abqMode value [Permissive|Interactive|Strict|Disabled]
+   # carbonio config global set attribute abqMode value [Permissive|Interactive|Strict|Disabled]
 
 .. _mobile_dummy_data:
 
@@ -966,7 +966,7 @@ Custom ABQ emails
 -----------------
 
 Quarantine and block dummy emails can be customized by using the
-:command:`zxsuite mobile setABQMessage` message command; messages can
+:command:`carbonio mobile setABQMessage` message command; messages can
 be customised at global or domain level, and multiple languages can be
 set.
 
@@ -979,11 +979,11 @@ set.
    quarantine message for the `example.com` domain without affecting
    other domains or users::
 
-     zxsuite mobile setABQMessage domain example.com quarantined fr from support@example.com body_plain_file /tmp/quarantine_body.txt body_html_file /tmp/quarantine_body.html``
+     # carbonio mobile setABQMessage domain example.com quarantined fr from support@example.com body_plain_file /tmp/quarantine_body.txt body_html_file /tmp/quarantine_body.html``
 
    .. warning:: Before being able to customize the ABQ messages, a
       default must be set using **default** as the language in the
-      command, e.g., :command:`zxsuite mobile setABQMessage global
+      command, e.g., :command:`carbonio mobile setABQMessage global
       quarantined default`
 
 .. _mobile_notifications:
@@ -997,11 +997,11 @@ configuration attribute, expressed in milliseconds:
 
 The interval can be checked by running the following command::
 
-   zxsuite config global get attribute abqNotificationsInterval
+   # carbonio config global get attribute abqNotificationsInterval
 
 The interval can be changed running the following command::
 
-   zxsuite config global set attribute abqNotificationsInterval value [delay in milliseconds]
+   # carbonio config global set attribute abqNotificationsInterval value [delay in milliseconds]
 
 By default, the ``abqNotificationsInterval`` is set to 0, meaning that
 no notifications will be delivered.
@@ -1013,13 +1013,13 @@ ABQ Service Status
 
 The ABQ service status can be checked running the following command::
 
-   zxsuite mobile getServices
+   # carbonio mobile getServices
 
 The service can be stopped or started using the default service control
 of the Mobile module::
 
-   zxsuite mobile doStartService abq
-   zxsuite mobile doStopService abq
+   # carbonio mobile doStartService abq
+   # carbonio mobile doStopService abq
 
 When mode is `Disabled`, the ABQ service does not automatically start,
 hence devices are always allowed to sync.
@@ -1063,7 +1063,7 @@ standard (ERE with doubled backslashes).
 
    the command::
 
-      zxsuite mobile abq import /tmp/list Allowed
+      # carbonio mobile abq import /tmp/list Allowed
 
    allows devices **androidc133785981** and **androidc1024711770** to
    sync entirely regardless of the account, while device
