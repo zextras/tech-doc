@@ -123,7 +123,7 @@ section :ref:`auth_create_new_credentials_qr_code` for more
 information.
 
 .. commenting out according to requests.
-   
+
    .. _mobile_provisioning:
 
    Mobile Device Management (Mobile Provisioning)
@@ -558,11 +558,11 @@ Managing EAS Filters
 EAS filters are managed through the CLI using the following four
 dedicated commands.
 
-.. grid:: 1 1 2 2 
+.. grid:: 1 1 2 2
    :gutter: 2
 
    .. grid-item-card::
-      :columns: 12 12 12 6 
+      :columns: 12 12 12 6
 
       getAllEASFilters
       ^^^^
@@ -592,7 +592,7 @@ dedicated commands.
                  blocking                                                    false
 
    .. grid-item-card::
-      :columns: 12 12 12 6 
+      :columns: 12 12 12 6
 
       doAddEASFilter
       ^^^^
@@ -621,7 +621,7 @@ dedicated commands.
       evaluated after this one due to the 'blocking' directive.
 
    .. grid-item-card::
-      :columns: 12 12 12 6 
+      :columns: 12 12 12 6
 
       doDeleteEASFilter
       ^^^^
@@ -639,7 +639,7 @@ dedicated commands.
       Removes the filter with id = 2.
 
    .. grid-item-card::
-      :columns: 12 12 12 6 
+      :columns: 12 12 12 6
 
       doMoveEASFilter
       ^^^^
@@ -765,7 +765,7 @@ track of all mobile device used in their network. Presently only CLI
 tools are provided.
 
 The global Boolean attribute ``abq_enabled_at_startup`` controls
-whether ABQ will start together with the |suite|. While by default the
+whether ABQ will start together with Carbonio. While by default the
 attribute is **true**, it is suggested to set it to **false** if it
 not used, because this would save server resources.
 
@@ -869,7 +869,7 @@ Global for all the cluster.
 
    .. grid-item-card:: Interactive
       :columns: 4
-   
+
       After authenticating the user and checking their account status
       for safety reasons, the Device Control system will check the
       "Device ID" sent by the device against the list of allowed
@@ -894,7 +894,7 @@ Global for all the cluster.
 
    .. grid-item-card:: Strict
       :columns: 4
-      
+
       After authenticating the user and checking their account status for
       safety reasons, the Device Control system will check the "Device ID"
       sent by the device against the list of allowed devices:
@@ -916,7 +916,7 @@ Global for all the cluster.
       specific devices but non-blocked devices will always be allowed
       to sync.
 
-      
+
    .. grid-item-card:: Disabled
       :columns: 12
 
@@ -1091,4 +1091,3 @@ standard (ERE with doubled backslashes).
 
 ``setNotificationInterval``
    Set the notification interval for new quarantined devices.
-
