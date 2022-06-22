@@ -20,7 +20,7 @@ Logger Node within a Multi-Server installation.
 the nodes of a Multi-Server installation.
 
 .. toctree::
-   :hidden:
+   :hidden: 
 
    _management/externalservices
    _management/logger
