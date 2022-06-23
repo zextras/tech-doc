@@ -17,7 +17,6 @@ whole page before attempting to install.
 Single-Server Installation
 ==========================
 
-
 The installation on Ubuntu 20.04 or RHEL 8 is organised in steps, some
 of which are preliminary configuration tasks, and some is optional.
 During the installation and configuration of |product|, it is
@@ -41,22 +40,22 @@ as the** ``root`` **user**.
 
 .. div:: sd-fs-5
 
-   :octicon:`gear` Installation 
+   :octicon:`gear` Installation
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 2: Repository Configuration and System Upgrade
+   Step 2: Repository Configuration
    ^^^^^
 
    .. include:: /_includes/_installation/repo-info.rst
-   
+
 .. _installation-step3:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 3: Package Installation
+   Step 3:  System Upgrade and Package Installation
    ^^^^^
 
    .. include:: /_includes/_installation/step-repo-conf-cb.rst
@@ -101,7 +100,6 @@ The next steps concern the configuration and setup of the various
 
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
-
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
@@ -115,7 +113,7 @@ The next steps concern the configuration and setup of the various
 
    Step 8: Bootstrap Database of |file|
    ^^^^^
-   
+
    .. include:: /_includes/_installation/step-conf-files.rst
 
 .. _vs_installation:
@@ -126,7 +124,7 @@ The next steps concern the configuration and setup of the various
    Step 9: |vs| and video recording
    ^^^^^
    .. include:: /_includes/_installation/step-conf-vs.rst
-                
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 

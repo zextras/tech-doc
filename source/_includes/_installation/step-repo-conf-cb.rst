@@ -2,7 +2,28 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The installation of |product| requires to run the command 
+After configuring the repositories, the installation of |product|
+requires to run a few commands.
+
+We start by updating and upgrading the system.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt update && apt upgrade
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf upgrade
+
+Next, we install all packages needed for |product|.
 
 .. tab-set::
 
