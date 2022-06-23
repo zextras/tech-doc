@@ -2,15 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. note:: This step is optional, but strongly suggested.
+.. note:: This step is optional, as you can simply use PostgreSQL
+   directly, but we strongly suggest to use Pgpool-II.
 
 PostgreSQL database is used by |product| and, to improve connection
-efficiency and resource consumption, we set up `Pgpool
+efficiency and resource consumption, we set up `Pgpool-II
 <https://pgpool.net/mediawiki/index.php/Main_Page>`_ to work with
-PostgreSQL.
+PostgreSQL. 
 
-First, install pgpool.
-
+First, install Pgpool.
 
 .. tab-set::
 
@@ -28,18 +28,20 @@ First, install pgpool.
 
          # dnf install  pgpool2 postgresql-12-pgpool2
 
-
 Then, modify the port on which PostgreSQL listens for connections.
 
 .. code:: console
 
    # vi /etc/postgresql/12/main/postgresql.conf
 
-FInd the line starting with ``port`` and replace the default value
-(**5432**) with **5433** (or any other unused value, but remember
-that value!)
+Find the line
 
-Stop the database
+.. code:: apache
+          
+   port = 5432
+
+Replace the default value (**5432**) with **5433**, then stop the
+database
 
 .. code:: console
 
@@ -54,7 +56,7 @@ Next, configure pgpool to use PostgreSQL's port.
    # backend_hostname0 = '127.0.0.1'
    # backend_port0 = 5433" > /etc/pgpool2/pgpool.conf
 
-Finally, restart *both services* using this single command.
+Finally, restart *both PostgreSQL and Pgpool* using this single command.
 
 .. code:: console
 
