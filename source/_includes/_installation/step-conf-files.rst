@@ -2,9 +2,13 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The final steps is to bootstrap |file|\'s DB (replacing the example
-password **My-Files-pwd01$** with the chosen one):
+The password created in the previous step for the ``carbonio_adm``
+role in database is required in this step, in which we bootstrap the
+database of |file|, which requires a few commands to be executed:
 
 .. code:: console
 
-   # PGPASSWORD=My-Files-pwd01$ carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
+   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   # su - zextras
+   # zmmailboxdctl restart
