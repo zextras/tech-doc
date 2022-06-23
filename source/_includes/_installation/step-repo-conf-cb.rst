@@ -2,74 +2,56 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _installation-step2:
+The installation of |product| requires to run the command 
 
-.. div:: sd-fs-5
+.. tab-set::
 
-   :octicon:`gear` Installation 
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
+      .. code:: console
 
-   Step 2: Repository Configuration and System Upgrade
-   ^^^^^
+         # apt install service-discover-server \
+         carbonio-directory-server \
+         carbonio-proxy \
+         carbonio-webui carbonio-files-ui \
+         carbonio-chats-ui \
+         carbonio-admin-login-ui \
+         carbonio-mta \ 
+         carbonio-mailbox-db \
+         carbonio-appserver carbonio-logger \
+         carbonio-advanced carbonio-zal \
+         carbonio-user-management \
+         carbonio-files carbonio-files-db \
+         carbonio-preview \
+         carbonio-docs-connector-ce carbonio-docs-editor \
+         postgresql-12
 
-   Instructions for setting up |product| repository will be provided
-   by |zx| Sales Department.
+   .. tab-item:: RHEL
+      :sync: rhel
 
-   .. include:: /_includes/_installation/repo-info.rst
-   
-.. _installation-step3:
+      .. code:: console
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
+         # dnf install service-discover-server \
+         carbonio-directory-server \
+         carbonio-proxy \
+         carbonio-webui carbonio-files-ui \
+         carbonio-chats-ui \
+         carbonio-admin-login-ui \
+         carbonio-mta \
+         carbonio-mailbox-db \
+         carbonio-appserver carbonio-logger \
+         carbonio-advanced carbonio-zal \
+         carbonio-user-management \
+         carbonio-files carbonio-files-db \
+         carbonio-preview \
+         carbonio-docs-connector-ce carbonio-docs-editor \
+         postgresql-12
 
-   Step 3: Installation and Configuration of |product|
-   ^^^^^
+..
+   .. card::
+      :class-header: sd-font-weight-bold sd-fs-5
 
-   The installation of |product| requires to run the command
+      Step 3B: (Optional) Installation and Configuration of pgpool
+      ^^^^^
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-                   
-            # apt install service-discover-server \
-            carbonio-directory-server \
-            carbonio-proxy \
-            carbonio-webui carbonio-files-ui \
-            carbonio-chats-ui \
-            carbonio-admin-login-ui \
-            carbonio-mta \
-            carbonio-mailbox-db \
-            carbonio-appserver carbonio-logger \
-            carbonio-advanced carbonio-zal \
-            carbonio-user-management \
-            carbonio-files carbonio-files-db \
-            carbonio-preview \
-            carbonio-docs-connector-ce carbonio-docs-editor \
-            pgpool2 postgresql-12-pgpool2
-            
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-                   
-            # dnf install service-discover-server \
-            carbonio-directory-server \
-            carbonio-proxy \
-            carbonio-webui carbonio-files-ui \
-            carbonio-chats-ui \
-            carbonio-admin-login-ui \
-            carbonio-mta \
-            carbonio-mailbox-db \
-            carbonio-appserver carbonio-logger \
-            carbonio-advanced carbonio-zal \
-            carbonio-user-management \
-            carbonio-files carbonio-files-db \
-            carbonio-preview \
-            carbonio-docs-connector-ce carbonio-docs-editor \
-            pgpool2 postgresql-12-pgpool2
-            

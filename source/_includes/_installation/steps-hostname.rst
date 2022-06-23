@@ -2,36 +2,29 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The installation on Ubuntu 20.04 or RHEL 8 is organised in steps, some
-of which are preliminary configuration tasks, and some is optional.
-During the installation and configuration of |product|, it is
-necessary to execute commands from the command line, so make sure you
-have access to it.
+|product| needs a valid FQDN as hostname and a valid entry in the
+:file:`/etc/hosts` file. To configure them, execute these two
+commands. First, set the hostname
 
-We remark that, unless differently stated, **all CLI commands must be run
-as the** ``root`` **user**.
+.. code:: console
 
-.. _installation-step1:
+   # hostnamectl set-hostname mail.carbonio.local
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
+then update :file:`/etc/hosts` with IP and hostname
 
-   Step 1: Setting Hostname
-   ^^^^^
+.. code:: console
 
-   |product| needs a valid FQDN as hostname and a valid entry in the
-   :file:`/etc/hosts` file. To configure them, execute these two
-   commands. First, set the hostname
+   # echo "172.16.0.10 mail.carbonio.local mail" >> /etc/hosts
 
-      .. code:: console
+You can also simply get the current IP and hostname and save them:
 
-         # hostnamectl set-hostname mail.carbonio.local
 
-   then update :file:`/etc/hosts`
+.. code:: console
 
-      .. code:: console
+   # echo "$(hostname -I) $HOSTNAME.$DOMAIN"
 
-         # echo "172.16.0.10 mail.carbonio.local mail" >> /etc/hosts
 
-      .. hint:: Replace **172.16.0.10** with the actual management IP
-         to be assigned to the server.
+.. hint:: Replace **172.16.0.10** with the actual management IP to
+   be assigned to the server.
+
+         

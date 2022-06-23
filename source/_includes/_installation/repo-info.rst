@@ -2,6 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+Instructions for setting up |product| repository will be provided by
+|zx| Sales Department.
+
 .. card::  Repository and Channels
    
    The following are important information concerning the packages
