@@ -128,15 +128,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 10: JDBC Configuration
-   ^^^^^
-
-   .. include:: /_includes/_installation/step-conf-jdbc.rst
-
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 11: License Activation
+   Final Steps: Complete Setup and Activate License
    ^^^^^
 
    .. include:: /_includes/_installation/step-license.rst
