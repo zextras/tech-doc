@@ -66,17 +66,18 @@ as the** ``root`` **user**.
 
    :octicon:`gear`  Post Installation tasks
 
+..
+   .. card::
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      Step 4: Set up PostgreSQL and Pgpool-II
+      ^^^^
+      .. include:: /_includes/_installation/step-pgpool.rst
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 4: Set up PostgreSQL and Pgpool-II
-   ^^^^
-   .. include:: /_includes/_installation/step-pgpool.rst
-
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 5: Bootstrap |product|
+   Step 4: Bootstrap |product|
    ^^^^
 
    .. include:: /_includes/_installation/step-bootstrap.rst
@@ -95,7 +96,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 6: Setup |mesh|
+   Step 5: Setup |mesh|
    ^^^^
 
    .. include:: /_includes/_installation/step-conf-mesh.rst
@@ -103,7 +104,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 7: Configure |product| Databases
+   Step 6: Configure |product| Databases
    ^^^^
 
    .. include:: /_includes/_installation/step-conf-db.rst
@@ -111,7 +112,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 8: Bootstrap Database of |file|
+   Step 7: Bootstrap Database of |file|
    ^^^^^
 
    .. include:: /_includes/_installation/step-conf-files.rst
@@ -121,7 +122,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 9: |vs| and video recording
+   Step 8: |vs| and video recording
    ^^^^^
    .. include:: /_includes/_installation/step-conf-vs.rst
 
