@@ -15,9 +15,9 @@ There are no additional requirements, just a few remarks:
   hence there is no need of further configuration.
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
-  commands must be executed as the ``zextras`` user, while all other
-  commands must be issued as the ``root`` user, unless stated
-  otherwise.
+  commands must be executed as the ``zextras`` user (these commands
+  will feature a ``zextras$`` prompt), while all other commands must
+  be issued as the ``root`` user, unless stated otherwise.
 
 * Give meaningful names to the nodes. For example, call them
   proxy.example.com, mta.example.com, and so on. Replace
