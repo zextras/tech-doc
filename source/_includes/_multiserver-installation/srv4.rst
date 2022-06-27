@@ -87,13 +87,13 @@ To set up the |vs|, these are the necessary tasks.
       # systemctl enable videoserver.service 
       # systemctl start  videoserver.service
 
-#. Enable ``Memcached`` access using the commands
+#. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 
    .. code:: console
              
-      # carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
-      # zmmemcachedctl restart
-      # zmproxyctl restart
+      zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
+      zextras$ zmmemcachedctl restart
+      zextras$ zmproxyctl restart
 
    .. warning:: Since ``Memcached`` does not support authentication,
       make sure that the Memcached port (**11211**) is accessible only

@@ -229,7 +229,7 @@ SRV5: Advanced, AppServer, Files, and Docs
 .. include:: /_includes/_multiserver-installation/srv5.rst
 
 
-SRV1: Advanced, AppServer, Preview, and Logger
+SRV6: Advanced, AppServer, Preview, and Logger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6.rst

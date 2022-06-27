@@ -21,14 +21,16 @@ scenario we describe below can be modified at will by installing a
 
 In the suggested scenario we will set up a |product| Multi-Server
 environment, composed by **six nodes** (that we will denote as *SRV1*,
-..., *SRV6* as follows:
+..., *SRV6*) as follows:
 
 #. **SRV1** features a dedicated installation of Postgres
-#. **SRV2** LDAP Server, Directory Server, and DB connection
-#. **SRV3** MTA
-#. **SRV4** Proxy - VideoServer
-#. **SRV5** AppServer - Advanced - Files & Docs
-#. **SRV6** Consists of  AppServer - Advanced - Preview - Logger
+#. **SRV2** represents the core infrastructure of |product| and
+   installs LDAP Server, Directory Server, and DB connection
+#. **SRV3** is equipped with MTA, the mail server.
+#. **SRV4** hosts the Proxy for web access to all components and
+   VideoServer, including the recording feature
+#. **SRV5** is an AppServer which installs Files & Docs
+#. **SRV6** is another AppServer and consists of Preview and Logger
 
 
 .. note:: The **Logger node** must be unique within a |product|

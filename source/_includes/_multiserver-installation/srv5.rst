@@ -74,7 +74,13 @@ configured on the other nodes (SRV2 hostname, LDAP password,
    * in line 2 protocol is **https**
    * in line 3 there is at least the current node's (SRV5) IP
    * in line 4 the SRV4_IP is written, to allow this node's access to Memcached
-      
+
+#. Fix carbonio-mailbox token access
+   
+   .. code:: console
+
+      # chmod a+r /etc/zextras/carbonio-mailbox/token
+
 #. restart the mailbox process
 
    .. code:: console
@@ -82,24 +88,24 @@ configured on the other nodes (SRV2 hostname, LDAP password,
       # su - zextras -c "zmmailboxdctl restart"
 
  
-#. Run the command proposed during the |vs| installation, using
+#. Run as the ``zextras user`` the command proposed during the |vs| installation, using
    ``SERVLET_PORT`` and ``VS_IP`` configured on SRV4.
 
    .. code:: console
 
-      # carbonio chats video-server add VS_IP port 8100 \
+      zextras$ carbonio chats video-server add VS_IP port 8100 \
         servlet_port SERVLET_PORT secret VS_PWD
 
 
-#. Enable Chats and VideoServerRecording
+#. Enable Chats and VideoServerRecording, issuing the commands as the ``zextras user``
 
    .. code:: console
 
-      # carbonio config set global teamVideoServerRecordingEnabled true
-      # carbonio config set cos default teamChatEnabled true
+      zextras$ carbonio config set global teamVideoServerRecordingEnabled true
+      zextras$ carbonio config set cos default teamChatEnabled true
 
-#. (optional) Activate the license
+#. (optional) Activate the license as the ``zextras user``
 
    .. code:: console
 
-      # carbonio core activate-license TOKEN
+      zextras$ carbonio core activate-license TOKEN

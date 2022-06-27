@@ -53,6 +53,12 @@ Then carry out the following tasks.
 
       # service-discover setup-wizard
 
+#. Fix carbonio-mailbox token access
+   
+   .. code:: console
+
+      # chmod a+r /etc/zextras/carbonio-mailbox/token
+
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for
    section **# Nginx Lookup servers**.
