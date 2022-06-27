@@ -22,20 +22,6 @@ On this node, install the packages
 
          # dnf install service-discover-agent carbonio-mta
 
-Before proceeding, you need to retrieve the following data from SRV2:
-
-* the Directory-Server hostname (i.e., SRV2 hostname)
-
-* the *LDAP bind password* for the ``root`` user and applications (by
-  default, all the bind passwords are configured the same), that can
-  be retrieved with this command:
-
-  .. code:: console
-
-     # zmlocalconfig -s zimbra_ldap_password
-
-* The |mesh| password (``MESH_CLUSTER_PWD``)
-
 These following tasks must be executed to configure the MTA.
 
 #. Bootstrap Carbonio, using SRV2 hostname and LDAP password when required.

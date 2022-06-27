@@ -70,3 +70,19 @@ these tasks, in order.
 
       # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
       # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+Before proceeding with the installation, you need to write down the
+following information, because they will be needed to bootstrap the
+other nodes.
+
+* the hostname, that will be denoted as **SRV2 hostname**
+
+* the **LDAP bind password** for the ``root`` user and applications (by
+  default, all the bind passwords are configured the same), that can
+  be retrieved with this command:
+
+  .. code:: console
+
+     # zmlocalconfig -s zimbra_ldap_password
+
+* The |mesh| password (denoted as ``MESH_CLUSTER_PWD``)
