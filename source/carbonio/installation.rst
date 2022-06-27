@@ -201,6 +201,12 @@ SRV2: Directory Server, LDAP Server, and DB connection
 
 .. include:: /_includes/_multiserver-installation/srv2.rst
 
+
+SRV3: MTA
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv3.rst
+
 .. include:: /_includes/_installation/multiserver_install.rst
 
 .. _carbonio-update:
