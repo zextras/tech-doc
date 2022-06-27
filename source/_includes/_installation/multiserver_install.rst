@@ -2,39 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Requirements
-------------
-
-For each node, the single server's :ref:`software-requirements` are
-valid and apply for multi-server installation as well. Regarding the
-:ref:`system-requirements`, consider that by dividing the load on more
-nodes you may need less resources (although we recommend at least 4GB
-of RAM on each node). Moreover, make sure that both :ref:`DNS
-resolution <config-dns>` and :ref:`the hostname <installation-step1>`
-are configured.
-
-.. warning:: It is mandatory to configure the hostname, especially on
-   the Directory-Server node, otherwise the services will not be able to bind to
-   the correct address, leading to a disruption in |product|\'s
-   functionality.
-
-There are no additional requirements, just a few remarks:
-
-* Repositories: All packages required by a multi-server setup are
-  available in the same repository as the single server installation,
-  hence there is no need of further configuration.
-
-* Acquaintance with the use of CLI is necessary. All commands must be
-  issued as the ``root`` user, unless stated otherwise.
-
-* Give meaningful names to the nodes. For example, call them
-  proxy.example.com, mta.example.com, and so on. Replace
-  ``example.com`` with your domain name.
-
-Please also read the following information about |product| repository
-and channels.
-
-.. include:: /_includes/_installation/repo-info.rst
 
 
 .. card::

@@ -157,6 +157,28 @@ Scenario
 --------
 
 .. include:: /_includes/_multiserver-installation/scenario.rst
+
+Requirements
+------------
+
+.. include:: /_includes/_multiserver-installation/requirements.rst
+
+Preliminary steps
+-----------------
+
+.. include:: /_includes/_multiserver-installation/preliminary.rst
+
+
+.. div:: sd-fs-5
+
+   :octicon:`gear` Installation
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   SRV 1: Postgres
+
+            
 .. include:: /_includes/_installation/multiserver_install.rst
 
 .. _carbonio-update:
