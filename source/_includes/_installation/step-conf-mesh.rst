@@ -34,10 +34,3 @@ To complete |mesh| installation, run
 
    # pending-setups
 
-
-Finally, two commands are needed to fix access permission to |mesh| tokens.
-
-.. code:: console
-
-   # usermod -a -G carbonio-mailbox zextras
-   # chmod 0666 /etc/zextras/carbonio-mailbox/token

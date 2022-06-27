@@ -101,6 +101,14 @@ The next steps concern the configuration and setup of the various
 
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
+   Finally, two commands are needed to fix access permission to |mesh| tokens.
+
+   .. code:: console
+
+      # usermod -a -G carbonio-mailbox zextras
+      # chmod 0666 /etc/zextras/carbonio-mailbox/token
+
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
@@ -173,15 +181,18 @@ Preliminary Tasks
 
 Node Installation
 -----------------
-             
+
 The installation procedure follows the suggested order of nodes as
 described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 
 * it is assumed that the Postgres node is not a "real" part of the
   infrastructure, in the sense that it can also be an existent server
-  that is configured to communicate correctly with |product|. However,
-  in our scenario, we install it and configure from scratch (*SRV1*).
- 
+  that is configured to communicate correctly with |product|
+  (configuration instruction are part of SRV1 installation).
+
+  .. note:: In our scenario, we install Postgres and configure it from
+     scratch (*SRV1*).
+
 * the first node to be installed is the one that will feature the
   Directory Server/LDAP role (*SRV2*)
 
