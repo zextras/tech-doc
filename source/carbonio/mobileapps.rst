@@ -61,7 +61,7 @@ Mobile Clients Features
 .. grid:: 1 1 2 3
    :gutter: 3
 
-   .. grid-item-card:: **Mail APP**
+   .. grid-item-card:: **Mail App**
       :columns: 4
 
       |carbonio| Mail is |zx| official and free app for |carbonio| and |ce|
@@ -87,7 +87,7 @@ Mobile Clients Features
 
    .. grid-item-card:: **Chats App**
       :columns: 4
-     
+
       The |team| App is |zx| official and free app for |product| users and
       allows you to chat with colleagues and access shared spaces from your
       mobile devices.
@@ -105,8 +105,8 @@ Mobile Clients Features
       * Dark mode supported
 
    .. grid-item-card:: **Files App**
-      :columns: 4     
-      
+      :columns: 4
+
       The |file| App is |zx| official and free app for |product| users,
       which allows to manage files and documents on |file| and share them
       with colleagues.
@@ -122,7 +122,7 @@ Mobile Clients Features
       * Manage links for sharing files and folders
       * UI support for tablets
       * Preview of documental and multimedia files directly into the app
-  
+
 .. _mobile-apps-conf:
 
 Mobile APPs configuration
@@ -252,4 +252,3 @@ Notifications should now work!
    notifications.zextras.com service on port 443 (The exact URL to
    which notifications are sent is:
    https://notifications.zextras.com/firebase/ )
-
