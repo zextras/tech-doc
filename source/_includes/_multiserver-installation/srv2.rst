@@ -59,7 +59,7 @@ these tasks, in order.
 
       # carbonio-bootstrap
 
-5. Setup Service Discover
+5. Setup |mesh|
    
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
