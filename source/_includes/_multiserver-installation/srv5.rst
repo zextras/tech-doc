@@ -30,7 +30,7 @@ On this node, first install all the required packages for |file|, and .
 
 Execute the following tasks: make sure you keep at hand the data
 configured on the other nodes (SRV2 hostname, LDAP password,
-``MESH_CLUSTER_PWD``, and ``MTA_IP``.
+``MESH_CLUSTER_PWD``, and ``MTA_IP``).
 
 #.  Bootstrap Carbonio, using SRV2 hostname, LDAP password, and
     ``MTA_IP`` when required.

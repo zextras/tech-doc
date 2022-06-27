@@ -217,7 +217,11 @@ SRV5: Advanced, AppServer, Files, and Docs
 
 .. include:: /_includes/_multiserver-installation/srv5.rst
 
-.. include:: /_includes/_installation/multiserver_install.rst
+
+SRV1: Advanced, AppServer, Preview, and Logger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv6.rst
 
 .. _carbonio-update:
 
