@@ -201,8 +201,8 @@ Instructions for Multi-Server installation will follow soon.
 
          .. code:: console
 
-            # zxsuite config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://LOCAL-IP/powerstore","user":"powerstore","password":"wThrPsw654£6"}'
-            # zxsuite powerstore doRestartService module
+            # carbonio config set global powerstoreMetadataDb '{"url":"jdbc:postgresql://LOCAL-IP/powerstore","user":"powerstore","password":"wThrPsw654£6"}'
+            # carbonio powerstore doRestartService module
 
       #. Enable Carbonio-Advanced features:
 
@@ -213,7 +213,7 @@ Instructions for Multi-Server installation will follow soon.
 
            .. code:: console
 
-              # zxsuite config set cos default teamChatEnabled true
+              # carbonio config set cos default teamChatEnabled true
 
          * Enable ActiveSync for the default cos
 
