@@ -13,7 +13,9 @@
 .. |vs| replace:: |carbonio| VideoServer
 .. |backup| replace:: |carbonio| Backup
 .. |mesh| replace:: |carbonio| Mesh
+.. |sh| replace:: |carbonio| Shell
 .. |mobile| replace:: |carbonio| Mobile
+
 
 .. common replacements for all products
 

@@ -9,8 +9,8 @@ All Delegated Admin Provisioning operations can be performed:
 
 -  From the Zextras Admin tab of the Administration Zimlet
 
--  From the CLI, running the appropriate *zxsuite* command as the
-   *zimbra* user
+-  From the CLI, running the appropriate *carbonio* command as the
+   ``zextras`` user
 
 .. _granting_delegated_admin_rights_to_a_user:
 
