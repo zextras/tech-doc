@@ -195,8 +195,11 @@ SRV1: Postgres
 
 .. include:: /_includes/_multiserver-installation/srv1.rst
 
-             
 
+SRV2: Directory Server, LDAP Server, and DB connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv2.rst
 
 .. include:: /_includes/_installation/multiserver_install.rst
 
