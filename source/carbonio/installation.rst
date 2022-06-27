@@ -212,17 +212,10 @@ SRV4: Proxy and |vs|
 
 .. include:: /_includes/_multiserver-installation/srv4.rst
 
+SRV5: Advanced, AppServer, Files, and Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..
-   SRV1: Postgres
-   ~~~~~~~~~~~~~~
-
-   .. include:: /_includes/_multiserver-installation/srv1.rst
-
-   SRV1: Postgres
-   ~~~~~~~~~~~~~~
-
-   .. include:: /_includes/_multiserver-installation/srv1.rst
+.. include:: /_includes/_multiserver-installation/srv5.rst
 
 .. include:: /_includes/_installation/multiserver_install.rst
 

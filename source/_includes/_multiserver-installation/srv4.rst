@@ -77,7 +77,9 @@ To set up the |vs|, these are the necessary tasks.
 
             # dnf install carbonio-videoserver carbonio-videoserver-recorder
 
-
+   .. note:: During the installation, it will be suggested a command
+      to be run on SRV5. Copy it, because it will be needed on SRV5.
+   
 #. Enable and start the service with the commands
    
    .. code:: console
@@ -104,3 +106,16 @@ videos can not be stored.
 
 .. hint:: You can mount on that location a dedicated disk or partition
    and keep it monitored for space usage.
+
+Before proceeding further, write down these items, because they will
+be needed in the next steps.
+
+* IP address of the node (denoted as ``VS_IP``),
+
+* the command suggested during the |vs| installation (to be used on
+  SRV5)
+
+* the value of the `servlet port` (denoted as ``SERVLET_PORT``)
+  configuration option saved in file
+  :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed when
+  running the previous commands)
