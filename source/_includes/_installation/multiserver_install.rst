@@ -2,40 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-This section describes a |product| `multi-server installation`, that
-is, a |carbonio| installation spread across multiple nodes, each with
-a precise and dedicated task.
-
-Scenario
---------
-
-In this suggested scenario we will set up a |product| multi-server
-environment, composed by **five nodes** as follows:
-
-#. A **Directory-Server node**, used to manage the configuration of
-   the infrastructure and provisioning of users and domains
-#. An **MTA node**, that takes care of the transfer and forwarding of
-   mail, including filtering and much more functions
-#. A **Proxy node**, which acts as a reverse proxy, centralizing
-   access to mailboxes.  It allows backend services (like e.g.,
-   mailbox servers) to be hidden from the public Internet
-#. Two **Application nodes**, one to be used as the actual Mailserver
-   or to host other services, and one to be used as **Logger node**
-
-   .. note:: The **Logger node** must be unique within a |product|
-      infrastructure!
-
-In addition to the listed services, an additional functionality
-(|mesh|) adds fault detection and dynamic routing between components
-of the infrastructure.
-
-While your set up may vary, it is important that you install on each
-node the packages that provide the service(s) you want to run to each
-node. As an example, you can have MTA and Directory-Server installed
-on the same node.
-
-In our scenario, we use 5 nodes equipped with Ubuntu 20.04 LTS.
-
 Requirements
 ------------
 

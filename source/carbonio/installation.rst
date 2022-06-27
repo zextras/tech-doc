@@ -149,6 +149,14 @@ Access to the Web Interface
 Multi-Server Installation
 =========================
 
+This section describes a |product| `multi-server installation`, that
+is, a |carbonio| installation spread across multiple nodes, each with
+a precise and dedicated task.
+
+Scenario
+--------
+
+.. include:: /_includes/_multiserver-installation/scenario.rst
 .. include:: /_includes/_installation/multiserver_install.rst
 
 .. _carbonio-update:
