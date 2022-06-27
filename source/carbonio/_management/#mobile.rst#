@@ -2,8 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio-mobile:
-
 ==========
  |mobile|
 ==========
@@ -40,7 +38,7 @@ each user.
 
       .. code:: console
 
-         # carbonio prov mc COSName zimbraFeatureMobileSyncEnabled TRUE
+         zmprov mc COSName zimbraFeatureMobileSyncEnabled TRUE
 
    .. grid-item-card::
       :columns: 6
@@ -53,7 +51,7 @@ each user.
 
       .. code:: console
 
-         # carbonio prov mc COSName zimbraFeatureMobileSyncEnabled FALSE
+         zmprov mc COSName zimbraFeatureMobileSyncEnabled FALSE
 
 .. _enable_carbonio_mobile_for_a_single_user:
 
@@ -78,7 +76,7 @@ Module.
 
       .. code:: console
 
-         # carbonio prov ma user@example.com zimbraFeatureMobileSyncEnabled TRUE
+         zmprov ma user@example.com zimbraFeatureMobileSyncEnabled TRUE
 
    .. grid-item-card::
       :columns: 6
@@ -91,7 +89,7 @@ Module.
 
       .. code:: console
 
-         # carbonio prov ma user@example.com zimbraFeatureMobileSyncEnabled FALSE
+         zmprov ma user@example.com zimbraFeatureMobileSyncEnabled FALSE
 
 .. _mobile-password:
 
@@ -112,8 +110,9 @@ The main benefits of using this feature are:
 - Avoid to disclose the *real* password in case of unauthorised access
   to the device/client
 
-A ``Mobile Password`` will not be valid for Webmail/POP3/IMAP/SMTP
-logins, and the account password will not be valid for mobile logins.
+When the feature is activate, a *Mobile Password* will not be valid
+for Webmail/POP3/IMAP/SMTP logins, while the account password will not
+be valid for mobile logins.
 
 .. _how_to_set_a_mobile_password_for_a_mailbox:
 
@@ -124,130 +123,128 @@ Mobile Passwords are handled by the |auth| module, so please refer to
 section :ref:`auth_create_new_credentials_qr_code` for more
 information.
 
-.. commenting out according to requests.
+.. _mobile_provisioning:
 
-   .. _mobile_provisioning:
+Mobile Device Management (Mobile Provisioning)
+==============================================
 
-   Mobile Device Management (Mobile Provisioning)
-   ==============================================
+Mobile Device Management (MDM - also known as `Mobile Provisioning`)
+allows an administrator to define a set of rules and security settings
+that are applied to one or more mobile devices, ranging from PIN
+policies to Allowed/Blocked app lists and including `one time`
+commands, such as the remote wipe of the entire device.
 
-   Mobile Device Management (MDM - also known as `Mobile Provisioning`)
-   allows an administrator to define a set of rules and security settings
-   that are applied to one or more mobile devices, ranging from PIN
-   policies to Allowed/Blocked app lists and including `one time`
-   commands, such as the remote wipe of the entire device.
+MDM effectively allows administrators to limit and restrict the use of
+corporate mobile devices to avoid risky or improper behaviours.
 
-   MDM effectively allows administrators to limit and restrict the use of
-   corporate mobile devices to avoid risky or improper behaviours.
+MDM is also a priceless aid for :abbr:`BYOD (Bring Your Own Device)`
+corporate policies, allowing users to connect their personal mobile
+devices to the corporate servers, while reducing the risk of security
+breaches to a minimum.
 
-   MDM is also a priceless aid for :abbr:`BYOD (Bring Your Own Device)`
-   corporate policies, allowing users to connect their personal mobile
-   devices to the corporate servers, while reducing the risk of security
-   breaches to a minimum.
+.. _mobile_provisioning_features_available_on_your_client:
 
-   .. _mobile_provisioning_features_available_on_your_client:
+Provisioning Features Available on Your Client
+----------------------------------------------
 
-   Provisioning Features Available on Your Client
-   ----------------------------------------------
+Not all provisioning features are available on all clients. Please refer
+to your device’s manufacturer and online resources for specific
+information about the MDM features supported by the device itself.
 
-   Not all provisioning features are available on all clients. Please refer
-   to your device’s manufacturer and online resources for specific
-   information about the MDM features supported by the device itself.
+.. this whole section seems not to be available in Carbonio.
 
-   .. this whole section seems not to be available in Carbonio.
+.. _carbonio_mdm:
 
-   .. _carbonio_mdm:
+|carbonio| and MDM
+------------------
 
-   |carbonio| and MDM
-   ------------------
+|carbonio| features advanced MDM features through the Exchange
+ActiveSync protocol version 14+.
 
-   |carbonio| features advanced MDM features through the Exchange
-   ActiveSync protocol version 14+.
+Mobile policies can be enabled at COS and mailbox levels, allowing both
+a quick ``one for many`` setup and user-based customized management. In
+both cases, Mobile Management Options are available in the `Mobile`
+tab.
 
-   Mobile policies can be enabled at COS and mailbox levels, allowing both
-   a quick ``one for many`` setup and user-based customized management. In
-   both cases, Mobile Management Options are available in the `Mobile`
-   tab.
+.. _mobile_provisioning_options:
 
-   .. _mobile_provisioning_options:
+Provisioning Options
+~~~~~~~~~~~~~~~~~~~~
 
-   Provisioning Options
-   ~~~~~~~~~~~~~~~~~~~~
+The following provisioning options are available:
 
-   The following provisioning options are available:
+- Enable Mobile Device Management: Enable or disable the use of mobile
+  policies for the current user/COS
 
-   - Enable Mobile Device Management: Enable or disable the use of mobile
-     policies for the current user/COS
+- Allow non-provisionable devices: Allow the user to synchronize any
+  device that does not support provisioning
 
-   - Allow non-provisionable devices: Allow the user to synchronize any
-     device that does not support provisioning
+- Allow partial policy enforcement on device: Allow the user to
+  synchronize any device that does not support one or more applicable
+  policies
 
-   - Allow partial policy enforcement on device: Allow the user to
-     synchronize any device that does not support one or more applicable
-     policies
+.. hint:: By default, MDM is disabled in |mobile|. To enable
+   navigate to :menuselection:`Zextras Suite --> Mobile --> Advanced
+   Settings` and check the ``Enable Mobile Device Management`` option
 
-   .. hint:: By default, MDM is disabled in |mobile|. To enable
-      navigate to :menuselection:`Zextras Suite --> Mobile --> Advanced
-      Settings` and check the ``Enable Mobile Device Management`` option
+.. _mobile_enforceable_policies:
 
-   .. _mobile_enforceable_policies:
+Enforceable Policies
+~~~~~~~~~~~~~~~~~~~~
 
-   Enforceable Policies
-   ~~~~~~~~~~~~~~~~~~~~
+Enforceable Policies can be set from the CLI to limit some of the
+functionality of the devices connected via MDM. By using the following
+command, you can see all the available policies for a COS:
 
-   Enforceable Policies can be set from the CLI to limit some of the
-   functionality of the devices connected via MDM. By using the following
-   command, you can see all the available policies for a COS:
+.. code:: console
 
-   .. code:: console
+   # carbonio mobile getProvisioning cos default
 
-      # carbonio mobile getProvisioning cos default
+or for a user:
 
-   or for a user:
+.. code:: console
 
-   .. code:: console
+   # carbonio mobile getProvisioning account john@example.com
 
-      # carbonio mobile getProvisioning account john@example.com
+All the listed properties can then be modified using :command:`zxsuite
+mobile setProvisioning`, for example:
 
-   All the listed properties can then be modified using :command:`carbonio
-   mobile setProvisioning`, for example:
+.. code:: console
 
-   .. code:: console
+   # carbonio mobile setProvisioning  account john@example.com AllowDesktopSync true
 
-      # carbonio mobile setProvisioning  account john@example.com AllowDesktopSync true
+The properties can be roughly grouped in these categories:
 
-   The properties can be roughly grouped in these categories:
+- Sync Settings: Set synchronization spans and limits
 
-   - Sync Settings: Set synchronization spans and limits
+- Device Settings: Enable or disable device features such as camera,
+  WiFi, removable storage or Bluetooth
 
-   - Device Settings: Enable or disable device features such as camera,
-     WiFi, removable storage or Bluetooth
+- Device Security Settings: Force an unlock code and define the
+  minimum requirements for the code itself
 
-   - Device Security Settings: Force an unlock code and define the
-     minimum requirements for the code itself
+- Device Applications: Enable or disable `standard` device
+  applications such as the Browser and POP/IMAP client or unsigned
+  apps
 
-   - Device Applications: Enable or disable `standard` device
-     applications such as the Browser and POP/IMAP client or unsigned
-     apps
+Moreover, two lists are also available for application
+whitelist/blacklist management:
 
-   Moreover, two lists are also available for application
-   whitelist/blacklist management:
+Approved Applications
+   A customizable list of approved applications.
 
-   Approved Applications
-      A customizable list of approved applications.
+Blocked Applications
+   A customizable list of blocked applications that won’t be usable on
+   the device.
 
-   Blocked Applications
-      A customizable list of blocked applications that won’t be usable on
-      the device.
+.. _mobile_password:
 
-   .. _mobile_password:
+Mobile Password
+~~~~~~~~~~~~~~~
 
-   Mobile Password
-   ~~~~~~~~~~~~~~~
-
-   While conceptually similar, the mobile password feature is not part of
-   Mobile Device Management and can be used with any version of the EAS
-   protocol.
+While conceptually similar, the mobile password feature is not part of
+Mobile Device Management and can be used with any version of the EAS
+protocol.
 
 .. _mobile_syncstates:
 
@@ -336,11 +333,11 @@ use any of the following commands from the CLI:
 
       Syntax::
 
-        carbonio mobile doRemoveDevice {account} {device_id}
+        zxsuite mobile doRemoveDevice {account} {device_id}
 
       Usage example:
 
-      ``carbonio mobile doRemoveDevice john@example.com Appl79032X2WA4S``
+      ``zxsuite mobile doRemoveDevice john@example.com Appl79032X2WA4S``
 
       Removes John's Appl79032X2WA4S device SyncState
 
@@ -352,11 +349,11 @@ use any of the following commands from the CLI:
 
       Syntax::
 
-        carbonio mobile doResetDevice {account} [attr1 value1 [attr2 value2...
+        zxsuite mobile doResetDevice {account} [attr1 value1 [attr2 value2...
 
       Usage example:
 
-      ``carbonio mobile doResetDevice john@example.com Appl79032X2WA4S``
+      ``zxsuite mobile doResetDevice john@example.com Appl79032X2WA4S``
 
       Resets John's Appl79032X2WA4S device SyncState
 
@@ -368,11 +365,11 @@ use any of the following commands from the CLI:
 
       Syntax::
 
-        carbonio mobile doResetAccount {account}
+        zxsuite mobile doResetAccount {account}
 
       Usage example:
 
-      ``carbonio mobile doResetAccount john@example.com``
+      ``zxsuite mobile doResetAccount john@example.com``
 
       Resets all the device states for John's account
 
@@ -406,8 +403,8 @@ Configuration
 ~~~~~~~~~~~~~
 
 The Mobile DoS Filter is entirely configured at global level via CLI,
-with command :command:`carbonio config global set|get|clear`. Specific
-info for each property can be obtained via :command:`carbonio config
+with command :command:`zxsuite config global set|get|clear`. Specific
+info for each property can be obtained via :command:`zxsuite config
 info attribute [name]`, where `[name]` is one of the following:
 
 -  ``mobileAntiDosServiceEnabled``: enable the Mobile DoS Filter
@@ -440,7 +437,7 @@ window, all new requests from this device/account are dropped for
 When the rate has been exceeded, a warning is sent via email to admin
 and added to server notifications.
 
-.. note:: Issuing the command :command:`carbonio mobile
+.. note:: Issuing the command :command:`zxsuite mobile
    doRestartService anti-dos` will reset all jails and counters.
 
 .. _carbonio_autodiscover:
@@ -462,7 +459,7 @@ according to system performance.
       Notifications Latency
       ^^^^
 
-      ``ZxMobile_NotificationsLatency`` represents the seconds of
+      ``ZxMobile_NotificationsLatency`` represents The seconds of
       delay between an event on the server and its notification to the
       mobile device.
 
@@ -485,8 +482,8 @@ according to system performance.
       ``ZxMobile_MaxPingHeartbeat`` defines the maximum interval
       between :command:`ping` commands.
 
-All settings can be edited via CLI using the ``carbonio config``
-command :command:`carbonio config`.
+All settings can be edited via CLI using the ``zxsuite config``
+command :command:`zxsuite config`.
 
 .. _mobile_when_to_edit_the_performance_tuning_settings:
 
@@ -560,11 +557,11 @@ Managing EAS Filters
 EAS filters are managed through the CLI using the following four
 dedicated commands.
 
-.. grid:: 1 1 2 2
+.. grid:: 1 1 2 2 
    :gutter: 2
 
    .. grid-item-card::
-      :columns: 12 12 12 6
+      :columns: 12 12 12 6 
 
       getAllEASFilters
       ^^^^
@@ -594,7 +591,7 @@ dedicated commands.
                  blocking                                                    false
 
    .. grid-item-card::
-      :columns: 12 12 12 6
+      :columns: 12 12 12 6 
 
       doAddEASFilter
       ^^^^
@@ -603,11 +600,11 @@ dedicated commands.
 
         Syntax:
 
-        carbonio mobile doAddEASFilter {and|or|regex|contains|account} {text|user@example.com|account=otheruser@example.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
+        zxsuite mobile doAddEASFilter {and|or|regex|contains|account} {text|user@example.com|account=otheruser@example.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
 
       Usage example::
 
-          carbonio mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
+          zxsuite mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
 
       Adds a protocol filter that will restrict the pool of available
       EAS versions to 2.5, 12.0 and 14.1 if the user agent name
@@ -615,7 +612,7 @@ dedicated commands.
 
       ::
 
-           carbonio mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
+           zxsuite mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
 
       Adds a protocol filter that will restrict the pool of available
       EAS versions to 14.1 if the user agent name contains the string
@@ -623,7 +620,7 @@ dedicated commands.
       evaluated after this one due to the 'blocking' directive.
 
    .. grid-item-card::
-      :columns: 12 12 12 6
+      :columns: 12 12 12 6 
 
       doDeleteEASFilter
       ^^^^
@@ -632,16 +629,16 @@ dedicated commands.
 
       Syntax::
 
-        carbonio mobile doDeleteEASFilter _id_
+        zxsuite mobile doDeleteEASFilter _id_
 
       Usage example::
 
-        carbonio mobile doDeleteEASFilter 2
+        zxsuite mobile doDeleteEASFilter 2
 
       Removes the filter with id = 2.
 
    .. grid-item-card::
-      :columns: 12 12 12 6
+      :columns: 12 12 12 6 
 
       doMoveEASFilter
       ^^^^
@@ -651,11 +648,11 @@ dedicated commands.
 
       Syntax::
 
-        carbonio mobile doMoveEASFilter {from} {to}
+        zxsuite mobile doMoveEASFilter {from} {to}
 
       Usage example::
 
-        carbonio mobile doMoveEASFilter 0 5
+        zxsuite mobile doMoveEASFilter 0 5
 
       Moves the filter with id = 0 to the position 5.
 
@@ -704,17 +701,17 @@ commands:
 
       Syntax::
 
-        carbonio mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
+        zxsuite mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
 
       Usage example::
 
-        carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger
+        zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger
 
       Creates an info account logger for john's account to file /tmp/john_logger
 
       ::
 
-         carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
+         zxsuite mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
 
       Creates an info account logger for john's account to file /tmp/john_logger with window size set to 1.
 
@@ -727,11 +724,11 @@ commands:
 
       Syntax::
 
-        carbonio mobile doRemoveLogger {logger_id|"all_loggers"}
+        zxsuite mobile doRemoveLogger {logger_id|"all_loggers"}
 
       Usage example::
 
-        carbonio mobile doremovelogger 5
+        zxsuite mobile doremovelogger 5
 
       Removes the account logger with ID = 5
 
@@ -743,7 +740,7 @@ commands:
 
       Sample output::
 
-        carbonio mobile getAccountLoggers
+        zxsuite mobile getAccountLoggers
 
               loggers
 
@@ -751,7 +748,7 @@ commands:
                       level                                                       DEBUG
                       name                                                        AccountLogger
                       description                                                 Logging account user@example.com using level debug, log file /tmp/user.log
-                      remove command                                              carbonio mobile doRemoveLogger 7
+                      remove command                                              zxsuite mobile doRemoveLogger 7
 
 .. _mobile_abq_allowblockquarantine_device_control:
 
@@ -767,16 +764,16 @@ track of all mobile device used in their network. Presently only CLI
 tools are provided.
 
 The global Boolean attribute ``abq_enabled_at_startup`` controls
-whether ABQ will start together with Carbonio. While by default the
+whether ABQ will start together with the |suite|. While by default the
 attribute is **true**, it is suggested to set it to **false** if it
 not used, because this would save server resources.
 
 To disable the ABQ, execute the following command, then restart
 ``mailboxd``::
 
-  # carbonio config set global abq_enabled_at_startup false
+  zxsuite config set global abq_enabled_at_startup false
 
-To verify that ABQ was disabled, in the output of :command:`carbonio
+To verify that ABQ was disabled, in the output of :command:`zxsuite
 mobile getServices`, ABQ should appear as **not running** (i.e., the
 value for ABQ's *running*  property should be **false**).
 
@@ -871,7 +868,7 @@ Global for all the cluster.
 
    .. grid-item-card:: Interactive
       :columns: 4
-
+   
       After authenticating the user and checking their account status
       for safety reasons, the Device Control system will check the
       "Device ID" sent by the device against the list of allowed
@@ -896,7 +893,7 @@ Global for all the cluster.
 
    .. grid-item-card:: Strict
       :columns: 4
-
+      
       After authenticating the user and checking their account status for
       safety reasons, the Device Control system will check the "Device ID"
       sent by the device against the list of allowed devices:
@@ -918,7 +915,7 @@ Global for all the cluster.
       specific devices but non-blocked devices will always be allowed
       to sync.
 
-
+      
    .. grid-item-card:: Disabled
       :columns: 12
 
@@ -932,11 +929,11 @@ ABQ Mode Control
 
 The current mode can be checked by running the following command::
 
-   # carbonio config global get attribute abqMode
+   zxsuite config global get attribute abqMode
 
 The ABQ mode can be changed running the following command::
 
-   # carbonio config global set attribute abqMode value [Permissive|Interactive|Strict|Disabled]
+   zxsuite config global set attribute abqMode value [Permissive|Interactive|Strict|Disabled]
 
 .. _mobile_dummy_data:
 
@@ -968,7 +965,7 @@ Custom ABQ emails
 -----------------
 
 Quarantine and block dummy emails can be customized by using the
-:command:`carbonio mobile setABQMessage` message command; messages can
+:command:`zxsuite mobile setABQMessage` message command; messages can
 be customised at global or domain level, and multiple languages can be
 set.
 
@@ -981,11 +978,11 @@ set.
    quarantine message for the `example.com` domain without affecting
    other domains or users::
 
-     # carbonio mobile setABQMessage domain example.com quarantined fr from support@example.com body_plain_file /tmp/quarantine_body.txt body_html_file /tmp/quarantine_body.html``
+     zxsuite mobile setABQMessage domain example.com quarantined fr from support@example.com body_plain_file /tmp/quarantine_body.txt body_html_file /tmp/quarantine_body.html``
 
    .. warning:: Before being able to customize the ABQ messages, a
       default must be set using **default** as the language in the
-      command, e.g., :command:`carbonio mobile setABQMessage global
+      command, e.g., :command:`zxsuite mobile setABQMessage global
       quarantined default`
 
 .. _mobile_notifications:
@@ -999,11 +996,11 @@ configuration attribute, expressed in milliseconds:
 
 The interval can be checked by running the following command::
 
-   # carbonio config global get attribute abqNotificationsInterval
+   zxsuite config global get attribute abqNotificationsInterval
 
 The interval can be changed running the following command::
 
-   # carbonio config global set attribute abqNotificationsInterval value [delay in milliseconds]
+   zxsuite config global set attribute abqNotificationsInterval value [delay in milliseconds]
 
 By default, the ``abqNotificationsInterval`` is set to 0, meaning that
 no notifications will be delivered.
@@ -1015,13 +1012,13 @@ ABQ Service Status
 
 The ABQ service status can be checked running the following command::
 
-   # carbonio mobile getServices
+   zxsuite mobile getServices
 
 The service can be stopped or started using the default service control
 of the Mobile module::
 
-   # carbonio mobile doStartService abq
-   # carbonio mobile doStopService abq
+   zxsuite mobile doStartService abq
+   zxsuite mobile doStopService abq
 
 When mode is `Disabled`, the ABQ service does not automatically start,
 hence devices are always allowed to sync.
@@ -1065,7 +1062,7 @@ standard (ERE with doubled backslashes).
 
    the command::
 
-      # carbonio mobile abq import /tmp/list Allowed
+      zxsuite mobile abq import /tmp/list Allowed
 
    allows devices **androidc133785981** and **androidc1024711770** to
    sync entirely regardless of the account, while device
@@ -1093,3 +1090,4 @@ standard (ERE with doubled backslashes).
 
 ``setNotificationInterval``
    Set the notification interval for new quarantined devices.
+

@@ -95,7 +95,7 @@ The Recovery Process
 - Begin an External Restore on the new server using the following CLI
   command::
 
-     zxsuite backup doExternalRestore /path/to/the/old/store
+     # carbonio backup doExternalRestore /path/to/the/old/store
 
 - The External Restore operation will immediately create the domains,
   accounts and distribution lists, so as soon as the first part of the
@@ -118,12 +118,9 @@ Whether you wish to create a perfect copy of the old server or just take
 a cue from the old server’s settings to adapt those to a new
 environment, |backup| comes with a very handy CLI command::
 
-   # zxsuite backup getServerConfig
+   # carbonio backup getServerConfig
    command getServerConfig requires more parameters
 
-
-   Syntax:
-      zxsuite backup getServerConfig {standard|customizations} [attr1 value1 [attr2 value2...
 
 .. grid:: 1 1 1 2 
    :gutter: 1 
@@ -131,20 +128,20 @@ environment, |backup| comes with a very handy CLI command::
    .. grid-item-card:: Usage example
       :columns: 12 12 12 6
 
-      ``zxsuite backup getserverconfig standard date last``
+      ``carbonio backup getserverconfig standard date last``
          Display the latest backup data for Server and Global
          configuration.
 
-      ``zxsuite backup getserverconfig standard file /path/to/backup/file``
+      ``carbonio backup getserverconfig standard file /path/to/backup/file``
          Display the contents of a backup file instead of the current
          server backup.
 
-      ``zxsuite backup getserverconfig standard date last query zimlets/com_zimbra_ymemoticons colors true verbose true``
+      ``carbonio backup getserverconfig standard date last query zimlets/com_zimbra_ymemoticons colors true verbose true``
          Displays all settings for the com_zimbra_ymemoticons zimlet,
          using colored output and high verbosity.
 
 
-      ``zxsuite backup getServerConfig standard backup_path /your/backup/path/ date last query / | less``
+      ``carbonio backup getServerConfig standard backup_path /your/backup/path/ date last query / | less``
          Display the latest backed up configurations
 
    .. grid-item-card:: Advanced usage
@@ -154,7 +151,7 @@ environment, |backup| comes with a very handy CLI command::
 
       .. code:: console
 
-         zxsuite backup getServerConfig standard date last backup_path /opt/zextras/backup/ng/ query serverConfig/zimbraMailMode/test.example.com
+         # carbonio backup getServerConfig standard date last backup_path /opt/zextras/backup/ng/ query serverConfig/zimbraMailMode/test.example.com
 
          config date_______________________________________________________________________________________________28/02/2014 04:01:14 CET
          test.example.com____________________________________________________________________________________________________________both
@@ -167,7 +164,7 @@ environment, |backup| comes with a very handy CLI command::
 
       .. code:: console
 
-         # zxsuite backup getServerConfig customizations date last verbose true
+         # carbonio backup getServerConfig customizations date last verbose true
          ATTENTION: These files contain the directories /opt/zextras//conf/ and /opt/zextras/postfix/conf/ compressed into a single archive.
          Restore can only be performed manually. Do it only if you know what you're doing.
 
@@ -233,7 +230,7 @@ and restore user access and mail traffic.
 
 .. hint:: At the end of the operation, you can check that the
    configuration of the new mailbox is the same by running the command
-   ``zxsuite config dump`` (See the `full reference
+   ``carbonio config dump`` (See the `full reference
    <zextras_config_full_cli>`).
 
 .. _the_aftermath:
@@ -365,16 +362,16 @@ source server.
    .. grid-item-card:: Using the CLI
       :columns: 12 12 12 6
 
-      The `getItem <zxsuite_backup_getItem>` CLI command can display an item and the related
+      The `getItem <carbonio_backup_getItem>` CLI command can display an item and the related
       metadata, extracting all information from a backup path/external backup.
 
       The syntax of the command is::
 
-        zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+        # carbonio backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
       .. card:: Usage example
 
-         ``zxsuite backup getItem account2@example.com 49965 dump blob true``
+         ``carbonio backup getItem account2@example.com 49965 dump blob true``
 
          Extract the raw data and metadata information of the item whose
          itemID is *49965* belonging to *account2@example.com* ,also
@@ -458,12 +455,12 @@ unrestorable items.
       - To disable the LMTP Validator, run the following command as
         the ``zextras`` user::
 
-          zmlocalconfig -e zimbra_lmtp_validate_messages=false
+          # zmlocalconfig -e zimbra_lmtp_validate_messages=false
 
       - Once the import is completed, you can enable the LMTP validator
         by running::
 
-          zmlocalconfig -e zimbra_lmtp_validate_messages=true
+          # zmlocalconfig -e zimbra_lmtp_validate_messages=true
 
       .. warning:: This is a ``dirty`` workaround, as items deemed
          invalid by the LMTP validator might cause display or mobile
@@ -481,9 +478,9 @@ unrestorable items.
       Based on the degree of corruption of the item, it might be possible to
       recover either a previous state or the raw object (this is only valid
       for emails). To identify the degree of corruption, use the
-      `getItem <zxsuite_backup_getItem>` CLI command::
+      `getItem <carbonio_backup_getItem>` CLI command::
 
-        zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
+        carbonio backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
       .. card:: Example of how to restore an item
 
@@ -491,7 +488,7 @@ unrestorable items.
          parameter to the import path and the ``date`` parameter to
          ``all``, will display all valid states for the item::
 
-           # zxsuite backup getItem admin@example.com 24700 backup path /mnt/import/ date all
+           # carbonio backup getItem admin@example.com 24700 backup path /mnt/import/ date all
                 itemStates
                         start date                                                  12/07/2013 16:35:44
                         type                                                        message
@@ -785,7 +782,7 @@ Additional/Offsite Backup F.A.Q.
    The different servers will be configured and managed separately via the
    Administration Console, but certain operations like *Live Full Scan* and
    *Stop All* Operations can be 'broadcast' to all the mailstores via the
-   ``zxsuite`` CLI using the ``--hostname all_servers`` option. This
+   ``carbonio`` CLI using the ``--hostname all_servers`` option. This
    applies also to |backup| settings.
 
    Backup and Restore operations are managed as follows:
@@ -838,8 +835,8 @@ Additional/Offsite Backup F.A.Q.
            mailstores.  Each export is imported on a different
            server. This will break the consistency of ALL the items that
            are shared from/to a mailbox on a different server. The
-           :ref:`doCheckShares <zxsuite_backup_doCheckShares>` and
-           :ref:`doFixShares <zxsuite_backup_doFixShares>` CLI commands
+           :ref:`doCheckShares <carbonio_backup_doCheckShares>` and
+           :ref:`doFixShares <carbonio_backup_doFixShares>` CLI commands
            are available to check and fix share consistency (see section
            :ref:`check-fix-shares-commands` below).
 
@@ -855,15 +852,15 @@ Additional/Offsite Backup F.A.Q.
    The ``doCheckShares`` and ``doFixShares`` Commands
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   The :ref:`doCheckShares <zxsuite_backup_doCheckShares>` command will
+   The :ref:`doCheckShares <carbonio_backup_doCheckShares>` command will
    parse all share information in local accounts and report any error::
 
-      # zxsuite help backup doCheckShares
+      # carbonio help backup doCheckShares
 
-   The :ref:`doFixShares <zxsuite_backup_doFixShares>` will fix all share
+   The :ref:`doFixShares <carbonio_backup_doFixShares>` will fix all share
    inconsistencies using a migration::
 
-      # zxsuite help backup doFixShares
+      # carbonio help backup doFixShares
 
 .. _operation_queue_and_queue_management:
 
@@ -930,12 +927,12 @@ Operation Queue Management
         To view |backup|’s operation queue, use the ``getAllOperations``
         command:::
 
-          zxsuite help backup getAllOperations
+          # carbonio help backup getAllOperations
 
 
         .. card:: Usage example
 
-           ``zxsuite backup getAllOperations``
+           ``carbonio backup getAllOperations``
 
            Shows all running and queued operations
 
@@ -945,12 +942,12 @@ Operation Queue Management
         To stop the current operation and empty |backup|’s operation
         queue, use the ``doStopAllOperations`` command::
 
-          # zxsuite help backup doStopAllOperations
+          # carbonio help backup doStopAllOperations
 
 
         .. card:: Usage example
 
-           ``zxsuite backup doStopAllOperations``
+           ``carbonio backup doStopAllOperations``
 
            Stops all running operations
 
@@ -961,11 +958,11 @@ Operation Queue Management
         To stop the current operation or to remove a specific operation
         from the queue, use the ``doStopOperation`` command::
 
-          # zxsuite help backup doStopOperation
+          # carbonio help backup doStopOperation
 
         .. card:: Usage example
 
-           ``zxsuite backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601``
+           ``carbonio backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601``
 
            Stops operation with id = 30ed9eb9-eb28-4ca6-b65e-9940654b8601
 

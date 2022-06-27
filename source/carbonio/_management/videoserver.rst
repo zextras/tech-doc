@@ -133,18 +133,18 @@ control the service are straightforward:
 
 -  Start the connection pool::
 
-     zxsuite chats doStartService team-videoserver-pool.
+     # carbonio chats doStartService team-videoserver-pool.
 
 -  Shutdown the connection pool::
 
-     zxsuite chats doStopService team-videoserver-pool
+     # carbonio chats doStopService team-videoserver-pool
 
 -  Check a connection pool status. This command reports information
    about the node *on which it is executed*.
 
    .. code:: console
 
-      $ zxsuite chats clusterstatus
+      # carbonio chats clusterstatus
 
            isFullySynced                                       true
            servers
@@ -179,11 +179,11 @@ Multiple |vs| can be run on the same infrastructure.
 
 To add a new |vs| to the configuration, run the |vs| installer on a
 new server and follow the instructions - the installer will provide
-the required commands (``zxsuite chats video-server add`` with the
+the required commands (``carbonio chats video-server add`` with the
 appropriate parameters) needed to add the server to the infrastructure
 once packages are installed.
 
-To remove a |vs| from the configuration, use the ``zxsuite chats
+To remove a |vs| from the configuration, use the ``carbonio chats
 video-server remove`` command from any mailbox server - this will
 remove the appropriate entries from the Zextras Config (manual package
 removal on the video server is required).
@@ -198,24 +198,24 @@ removal on the video server is required).
    CLI Commands
    ^^^^
 
-    The CLI command to manage |vs| installations is :command`zxsuite
+    The CLI command to manage |vs| installations is :command`carbonio
     team` with the sub-command ``video-server`` and the parameters
     `add` and `remove`.
 
    ..
-      The CLI command to manage |vs| installations is ``zxsuite
+      The CLI command to manage |vs| installations is ``carbonio
       team`` with the parameter ``video-server`` and the parameters
-      `video-server add <zxsuite_team_video-server_add>` and
-      `video-server remove <zxsuite_team_video-server_remove>`
+      `video-server add <carbonio_team_video-server_add>` and
+      `video-server remove <carbonio_team_video-server_remove>`
       respectively.
 
    Quick reference:
 
    .. code:: console
 
-      # zxsuite chats video-server add *videoserver.example.com* [param VALUE[,VALUE]]
+      # carbonio chats video-server add *videoserver.example.com* [param VALUE[,VALUE]]
 
-      # zxsuite chats video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
+      # carbonio chats video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
 
 .. _vs-bandwidth-and-codecs:
 
@@ -237,10 +237,10 @@ Bandwidth and Codecs
 
       Higher values mean more quality but more used bandwidth.
 
-      -  ``zxsuite config global set attribute teamChatWebcamBitrateCap value 200``:
+      -  ``carbonio config global set attribute teamChatWebcamBitrateCap value 200``:
          is the command for the webcam stream quality/bandwidth
 
-      -  ``zxsuite config global set attribute teamChatScreenBitrateCap value 200``:
+      -  ``carbonio config global set attribute teamChatScreenBitrateCap value 200``:
          is the command for the screenshare stream qualitybandwidth
 
       .. tip::
@@ -259,19 +259,19 @@ Bandwidth and Codecs
       other codecs can be enabled:
 
       -  AV1:
-         ``zxsuite config global set attribute teamChatVideoCodecAV1 value true``
+         :command:`carbonio config global set attribute teamChatVideoCodecAV1 value true`
 
       -  H264:
-         ``zxsuite config global set attribute teamChatVideoCodecH264 value true``
+         :command:`carbonio config global set attribute teamChatVideoCodecH264 value true`
 
       -  H265:
-         ``zxsuite config global set attribute teamChatVideoCodecH265 value true``
+         :command:`carbonio config global set attribute teamChatVideoCodecH265 value true`
 
       -  VP8:
-         ``zxsuite config global set attribute teamChatVideoCodecVP8 value true``
+         :command:`carbonio config global set attribute teamChatVideoCodecVP8 value true`
 
       -  VP9:
-         ``zxsuite config global set attribute teamChatVideoCodecVP9 value true``
+         :command:`carbonio config global set attribute teamChatVideoCodecVP9 value true`
 
       Only one codec can be enabled at the time, so before enabling a new
       codec remember to disable the previous one using the same command as the
@@ -282,9 +282,9 @@ Bandwidth and Codecs
 
          E.g. to enable the H264 codec run:
 
-         ``zxsuite config global set attribute teamChatVideoCodecVP8 value false``
+         :command:`carbonio config global set attribute teamChatVideoCodecVP8 value false`
 
-         ``zxsuite config global set attribute teamChatVideoCodecH264 value true``
+         :command:`carbonio config global set attribute teamChatVideoCodecH264 value true`
 
    .. grid-item-card::
       :columns: 12 12 6 4
@@ -341,9 +341,9 @@ The following settings influence the audio experience.
       The administrator can optimize the audio sensitivity with these two
       commands:
 
-      ``zxsuite config global set attribute teamChatAudioLevelSensitivity value 25``
+      :command:`carbonio config global set attribute teamChatAudioLevelSensitivity value 25`
 
-      ``zxsuite config global set attribute teamChatAudioSamplingSensitivityInterval value 2``
+      :command:`carbonio config global set attribute teamChatAudioSamplingSensitivityInterval value 2`
 
       The audio level sensitivity defines how much the audio should be
       normalized between all the audio sources. The value has a range between
@@ -418,7 +418,7 @@ the |vs| or not.
 
       .. code:: console
 
-         # zxsuite chats video-server update-servlet example.com 8100 8090
+         # carbonio chats video-server update-servlet example.com 8100 8090
 
       Here, replace *example.com* with the domain name or IP on which
       the |vs| is installed, *8100* the |vs| port, and *8090* (which
@@ -440,7 +440,7 @@ the |vs| or not.
 
       .. code:: console
 
-         # zxsuite chats video-server add example.com port 8100 servlet_port 8090 secret A_SECRET_PASSWORD
+         # carbonio chats video-server add example.com port 8100 servlet_port 8090 secret A_SECRET_PASSWORD
 
       Replace *example.com* with the actual domain name or IP, *8100*
       and *8090* with the ports associated with the |vs| and the
@@ -452,4 +452,4 @@ To complete the setup, execute the command
 
 .. code:: console
 
-   # zxsuite config set global teamVideoServerRecordingEnabled true
+   # carbonio config set global teamVideoServerRecordingEnabled true

@@ -86,7 +86,7 @@ Finally, all restore strategies do:
       Recognise an item's ID
       ^^^^
 
-      -  Backup_path: ``/opt/zextras/backup/ng/``
+      -  Backup_path: :file:`/opt/zextras/backup/ng/`
 
       -  Account ID: **4a217bb3-6861-4c9f-80f8-f345ae2897b5**
 
@@ -94,7 +94,7 @@ Finally, all restore strategies do:
 
       This item, and all its associated metadata is located in:
 
-      ``/opt/zextras/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057``
+      :file:`/opt/zextras/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057`
 
    As a regular user, there is only one possibility to find the itemID:
    select a message and then from the ``Options`` menu click on ``Show
@@ -103,23 +103,22 @@ Finally, all restore strategies do:
 
      https://mail.example.com/service/home/~/?auth=co&view=text&id=2057
 
-   All item’s metadata are stored in a plain text file, so Linux tools like
-   ``grep`` and ``find`` can be combined to search for items and their
-   content. To see the metadata contained in a file in a more readable
-   format, you can use the ``zxsuite backup getItem`` command::
-
-      Syntax:
-         zxsuite backup getItem {account} {item} [attr1 value1 [attr2 value2...
-
-      Usage example:
-
-      # zxsuite backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
+   All item’s metadata are stored in a plain text file, so Linux tools
+   like ``grep`` and ``find`` can be combined to search for items and
+   their content. To see the metadata contained in a file in a more
+   readable format, you can use the ``carbonio backup getItem``
+   command, whose syntax is :command:`carbonio backup getItem {account} {item}
+   [attr1 value1 [attr2 value2...]]`
 
    Options in ``{curly braces}`` are mandatory:
 
    -  ``account`` is the ID of an account
 
    -  ``item`` is the itemID
+
+   Usage example::
+
+     # carbonio backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
 
 In case the message is no longer available, for example because it was
 removed from the trash bin, it is still possible to obtain it by looking
@@ -172,7 +171,7 @@ Policy`` box is checked.
 From the |backup| tab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--  Select ``|backup|`` in the left pane of the
+-  Select ``backup`` in the left pane of the
    Administration Console to show the |backup| tab.
 
 -  On the top bar, push the ``Restore Deleted Account`` button.
@@ -228,10 +227,10 @@ Running a Single Item Restore
       :columns: 12 12 12 6
 
       To start an Item Restore operation, use the
-      `doItemRestore <zxsuite_backup_doItemRestore>` command.
+      `doItemRestore` command.
 
       .. restore include or replace it with actual code
-         .. include:: /cli/ZxBackup/zxsuite_backup_doItemRestore.rst
+         .. include:: /cli/ZxBackup/carbonio_backup_doItemRestore.rst
 
 .. _account_restore:
 
@@ -328,14 +327,14 @@ Running a Restore on New Account
       :columns: 12 12 12 6
 
       To start a Restore on New Account via the CLI, use the
-      `doRestoreOnNewAccount <zxsuite_backup_doRestoreOnNewAccount>` command.
+      `doRestoreOnNewAccount` command.
 
       .. restore include or replace it with actual code
-         .. include:: /cli/ZxBackup/zxsuite_backup_doRestoreOnNewAccount.rst
+         .. include:: /cli/ZxBackup/carbonio_backup_doRestoreOnNewAccount.rst
                    
       .. hint:: At the end of the operation, you can check that the
          configuration of the new mailbox is the same by running the
-         command ``zxsuite config dump`` (See `zextras_config_full_cli`)
+         command ``carbonio config dump`` (See `zextras_config_full_cli`)
 
 .. _time_range_undelete:
 
@@ -424,14 +423,14 @@ Running a Time-range Undelete
       :columns: 12 12 12 6
 
       To start a Time-range Undelete operation, use the
-      `zxsuite backup doUndelete <zxsuite_backup_doUndelete>` command.
+      `carbonio backup doUndelete` command.
 
       .. restore include or replace it with actual code
-         .. include:: /cli/ZxBackup/zxsuite_backup_doUndelete.rst
+         .. include:: /cli/ZxBackup/carbonio_backup_doUndelete.rst
 
       .. hint:: At the end of the operation, you can check that the
          configuration of the new mailbox is the same by running the
-         command ``zxsuite config dump`` (See
+         command ``carbonio config dump`` (See
          `zextras_config_full_cli`).
 
 .. _external_restore:
@@ -486,7 +485,7 @@ following example, that restores only the accounts **john** and
 
 .. code:: console
 
-   zxsuite backup doexternalrestore  /opt/backup/zextras/ accounts john@example.com,alice@example.com domains example.com skip_domain_provisioning true
+   # carbonio backup doexternalrestore  /opt/backup/zextras/ accounts john@example.com,alice@example.com domains example.com skip_domain_provisioning true
 
 .. the following should be in a different section than "skip domain
    provisioning"?
@@ -640,16 +639,16 @@ Running an External Restore
       :columns: 12 12 12 6
 
       To start an External Restore operation, use the
-      `doExternalRestore <zxsuite_backup_doExternalRestore>`
+      `doExternalRestore <carbonio_backup_doExternalRestore>`
       command::
 
-         zxsuite backup doExternalRestore *source_path* [param VALUE[,VALUE]]
+         # carbonio backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
       .. card:: Usage example
 
          .. code:: console
                    
-            zxsuite backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
+            # carbonio backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
 
          Restores the example.com domain, including all system accounts,
          and the john@example.com and jack@example.com accounts from a
@@ -657,7 +656,7 @@ Running an External Restore
 
       .. hint:: At the end of the operation, you can check that the
          configuration of the new mailbox is the same by running the
-         command ``zxsuite config dump`` (See `zextras_config_full_cli`).
+         command ``carbonio config dump`` (See `zextras_config_full_cli`).
 
 .. this should go into a "best practices" section, perhaps udner "in
    deep view"
@@ -673,11 +672,13 @@ This feature is available **via CLI only**.
 
 .. card:: Usage example:
 
-   zxsuite backup doExternalRestore /tmp/external1 domains example0.com,example1.com concurrent_accounts 5
+   .. code:: console
+
+      # carbonio backup doExternalRestore /tmp/external1 domains example0.com,example1.com concurrent_accounts 5
 
    Restores the example0.com and example1.com domain, excluding system
    accounts, restoring 5 accounts at same time from a backup located
-   in /tmp/external1
+   in :file:`/tmp/external1`
 
 .. warning:: Albeit resource consumption does not grow linearly with
    the number of accounts restored at the same time, it can easily

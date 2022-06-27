@@ -112,7 +112,7 @@ the Multi-Server there are a few more steps to carry out.
 
    .. code:: console
 
-      # service-discover setup 192.168.56.101 --first-instance --password=My_Mesh_Password£0!
+      # service-discover setup 192.168.56.101 --first-instance --password=MESH_CLUSTER_PWD
 
    This is essentially the same command as the one used during the
    configuration of |mesh|, the only difference being that in this
@@ -136,18 +136,9 @@ the Multi-Server there are a few more steps to carry out.
    ^^^^
 
    On a Multi-Server, you need to copy the credentials file on all
-   other nodes, for example using :command:`scp`, like explained
-   during the
-   :ref:`installation <mesh_multi_install>`.
-
-   Finally, log in to all other nodes and repeat on *each of them* the
-   setup using the following commands
-
-   .. code:: console
-
-      # rm /var/lib/service-discover/*pem
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
-
+   other nodes, for example using :command:`scp`. The commands to be
+   used are mentioned in every node of the
+   :ref:`multiserver-installation`.
 
 .. _mesh-gui:
 

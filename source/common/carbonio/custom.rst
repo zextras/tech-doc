@@ -21,6 +21,6 @@ steps:
 
    .. code:: console
 
-      # zxsuite auth loginPage setSkinLogoAppBanner \
+      # carbonio auth loginPage setSkinLogoAppBanner \
         domain http://example.com \
         "/static/login/assets/example_logo.svg"
