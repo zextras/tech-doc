@@ -14,4 +14,4 @@ replacing **TOKEN** with your licence token.
 
 .. code:: console
 
-   # zxsuite core activate-license TOKEN
+   # carbonio core activate-license TOKEN

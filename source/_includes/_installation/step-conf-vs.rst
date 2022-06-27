@@ -41,9 +41,9 @@ executed as the ``zextras`` user.
 .. code::
 
    # su - zextras
-   # zxsuite chats video-server add example.com port 8100 servlet_port 8090 secret VIDEOSERVER_PWD
-   # zxsuite config set global teamVideoServerRecordingEnabled true
-   # zxsuite config set cos default teamChatEnabled true
+   # carbonio chats video-server add example.com port 8100 servlet_port 8090 secret VIDEOSERVER_PWD
+   # carbonio config set global teamVideoServerRecordingEnabled true
+   # carbonio config set cos default teamChatEnabled true
 
 Here, port **8100** is the default port used by |vs|, while **8090**
 for recording. Change these values according to your needs or
