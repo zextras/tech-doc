@@ -71,9 +71,9 @@ these tasks, in order.
       # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
       # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-Before proceeding with the installation, you need to write down the
-following information, because they will be needed to bootstrap the
-other nodes.
+Before proceeding with the installation, you need to gather the
+following items from this node, because they will be needed to
+bootstrap the other nodes.
 
 * the hostname, that will be denoted as **SRV2 hostname**
 

@@ -207,6 +207,23 @@ SRV3: MTA
 
 .. include:: /_includes/_multiserver-installation/srv3.rst
 
+SRV4: Proxy and |vs|
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv4.rst
+
+
+..
+   SRV1: Postgres
+   ~~~~~~~~~~~~~~
+
+   .. include:: /_includes/_multiserver-installation/srv1.rst
+
+   SRV1: Postgres
+   ~~~~~~~~~~~~~~
+
+   .. include:: /_includes/_multiserver-installation/srv1.rst
+
 .. include:: /_includes/_installation/multiserver_install.rst
 
 .. _carbonio-update:
