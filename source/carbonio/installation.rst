@@ -153,8 +153,10 @@ This section describes a |product| `multi-server installation`, that
 is, a |carbonio| installation spread across multiple nodes, each with
 a precise and dedicated task.
 
-Scenario
---------
+.. _multi-server-scenario:
+
+Six Nodes Scenario
+------------------
 
 .. include:: /_includes/_multiserver-installation/scenario.rst
 
@@ -163,22 +165,39 @@ Requirements
 
 .. include:: /_includes/_multiserver-installation/requirements.rst
 
-Preliminary steps
+Preliminary Tasks
 -----------------
 
 .. include:: /_includes/_multiserver-installation/preliminary.rst
 
 
-.. div:: sd-fs-5
+Node Installation
+-----------------
+             
+The installation procedure follows the suggested order of nodes as
+described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 
-   :octicon:`gear` Installation
+* it is assumed that the Postgres node is not a "real" part of the
+  infrastructure, in the sense that it can also be an existent server
+  that is configured to communicate correctly with |product|. However,
+  in our scenario, we install it and configure from scratch (*SRV1*).
+ 
+* the first node to be installed is the one that will feature the
+  Directory Server/LDAP role (*SRV2*)
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
+* The next server to be installed is the MTA one (*SRV3*)
 
-   SRV 1: Postgres
+* the other nodes can be installed in any order, you can skip
+  instructions for any node or role that you do not plan to install
 
-            
+SRV1: Postgres
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv1.rst
+
+             
+
+
 .. include:: /_includes/_installation/multiserver_install.rst
 
 .. _carbonio-update:
