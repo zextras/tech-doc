@@ -136,18 +136,9 @@ the Multi-Server there are a few more steps to carry out.
    ^^^^
 
    On a Multi-Server, you need to copy the credentials file on all
-   other nodes, for example using :command:`scp`, like explained
-   during the
-   :ref:`installation <mesh_multi_install>`.
-
-   Finally, log in to all other nodes and repeat on *each of them* the
-   setup using the following commands
-
-   .. code:: console
-
-      # rm /var/lib/service-discover/*pem
-      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
-
+   other nodes, for example using :command:`scp`. The commands to be
+   used are mentioned in every node of the
+   :ref:`multiserver-installation`.
 
 .. _mesh-gui:
 

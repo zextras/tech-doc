@@ -101,6 +101,14 @@ The next steps concern the configuration and setup of the various
 
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
+   Finally, two commands are needed to fix access permission to |mesh| tokens.
+
+   .. code:: console
+
+      # usermod -a -G carbonio-mailbox zextras
+      # chmod 0666 /etc/zextras/carbonio-mailbox/token
+
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
@@ -149,7 +157,82 @@ Access to the Web Interface
 Multi-Server Installation
 =========================
 
-.. include:: /_includes/_installation/multiserver_install.rst
+This section describes a |product| `multi-server installation`, that
+is, a |carbonio| installation spread across multiple nodes, each with
+a precise and dedicated task.
+
+.. _multi-server-scenario:
+
+Six Nodes Scenario
+------------------
+
+.. include:: /_includes/_multiserver-installation/scenario.rst
+
+Requirements
+------------
+
+.. include:: /_includes/_multiserver-installation/requirements.rst
+
+Preliminary Tasks
+-----------------
+
+.. include:: /_includes/_multiserver-installation/preliminary.rst
+
+
+Node Installation
+-----------------
+
+The installation procedure follows the suggested order of nodes as
+described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
+
+* it is assumed that the Postgres node is not a "real" part of the
+  infrastructure, in the sense that it can also be an existent server
+  that is configured to communicate correctly with |product|
+  (configuration instruction are part of SRV1 installation).
+
+  .. note:: In our scenario, we install Postgres and configure it from
+     scratch (*SRV1*).
+
+* the first node to be installed is the one that will feature the
+  Directory Server/LDAP role (*SRV2*)
+
+* The next server to be installed is the MTA one (*SRV3*)
+
+* the other nodes can be installed in any order, you can skip
+  instructions for any node or role that you do not plan to install
+
+SRV1: Postgres
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv1.rst
+
+
+SRV2: Directory Server, LDAP Server, and DB connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv2.rst
+
+
+SRV3: MTA
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv3.rst
+
+SRV4: Proxy and |vs|
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv4.rst
+
+SRV5: Advanced, AppServer, Files, and Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv5.rst
+
+
+SRV6: Advanced, AppServer, Preview, and Logger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv6.rst
 
 .. _carbonio-update:
 

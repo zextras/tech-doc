@@ -15,6 +15,7 @@
 .. |mesh| replace:: |carbonio| Mesh
 .. |sh| replace:: |carbonio| Shell
 .. |mobile| replace:: |carbonio| Mobile
+.. |pv| replace:: |carbonio| Preview
 
 
 .. common replacements for all products
