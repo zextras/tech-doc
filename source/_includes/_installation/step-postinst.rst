@@ -86,16 +86,16 @@ The next steps concern the configuration and setup of the various
 
    .. code:: bash
 
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
 
-   .. hint:: Replace ``My_Mesh_Password£0!`` with a **robust** password of your choice.
+   .. hint:: Replace ``MESH_CLUSTER_PWD`` with a **robust** password of your choice.
 
    This command will:
 
    * find the hostname IP address (:command:`hostname -i`)
 
    * set the **cluster credential password** to
-     ``My_Mesh_Password£0!``, which is used for setups, management,
+     ``MESH_CLUSTER_PWD``, which is used for setups, management,
      and to access the administration GUI. See section :ref:`mesh-gui`
      for more information.
 

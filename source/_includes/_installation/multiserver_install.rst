@@ -248,7 +248,7 @@ setup |mesh|, which is explained below.
 
    .. code:: console
 
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
 
    .. hint:: Use a **robust** password of your choice.
 
@@ -275,7 +275,7 @@ setup |mesh|, which is explained below.
 
    .. code:: console
 
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
