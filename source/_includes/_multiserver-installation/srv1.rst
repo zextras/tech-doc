@@ -20,7 +20,7 @@ On this node, first install PostgreSQL.
 
       .. code:: console
 
-         # dnf update install postgresql-12
+         # dnf install postgresql-12
 
 .. include:: /_includes/_installation/step-conf-db.rst
 
