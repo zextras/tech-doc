@@ -38,7 +38,6 @@ Finally, instructions to guide users in daily tasks are contained in
 
          general
          installation
-         components
          uninstall
 
    .. grid-item-card::
