@@ -17,9 +17,131 @@ whole page before attempting to install.
 Single-Server Installation
 ==========================
 
-.. include:: /_includes/_installation/steps-hostname.rst
-.. include:: /_includes/_installation/step-repo-conf-cb.rst
-.. include:: /_includes/_installation/step-postinst-cb.rst
+The installation on Ubuntu 20.04 or RHEL 8 is organised in steps, some
+of which are preliminary configuration tasks, and some is optional.
+During the installation and configuration of |product|, it is
+necessary to execute commands from the command line, so make sure you
+have access to it.
+
+We remark that, unless differently stated, **all CLI commands must be run
+as the** ``root`` **user**.
+
+.. _installation-step1:
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 1: Setting Hostname
+   ^^^^^
+
+   .. include:: /_includes/_installation/steps-hostname.rst
+
+.. _installation-step2:
+
+.. div:: sd-fs-5
+
+   :octicon:`gear` Installation
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 2: Repository Configuration
+   ^^^^^
+
+   .. include:: /_includes/_installation/repo-info.rst
+
+.. _installation-step3:
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 3:  System Upgrade and Package Installation
+   ^^^^^
+
+   .. include:: /_includes/_installation/step-repo-conf-cb.rst
+
+.. _post-inst:
+
+.. div:: sd-fs-5
+
+   :octicon:`gear`  Post Installation tasks
+
+..
+   .. card::
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      Step 4: Set up PostgreSQL and Pgpool-II
+      ^^^^
+      .. include:: /_includes/_installation/step-pgpool.rst
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 4: Bootstrap |product|
+   ^^^^
+
+   .. include:: /_includes/_installation/step-bootstrap.rst
+
+.. _config-setup-tasks:
+
+.. div:: sd-fs-5
+
+   :octicon:`gear`  Configuration and Setup tasks
+
+The next steps concern the configuration and setup of the various
+|product| components.
+
+.. _installation-step-mesh:
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 5: Setup |mesh|
+   ^^^^
+
+   .. include:: /_includes/_installation/step-conf-mesh.rst
+
+   Finally, two commands are needed to fix access permission to |mesh| tokens.
+
+   .. code:: console
+
+      # usermod -a -G carbonio-mailbox zextras
+      # chmod 0666 /etc/zextras/carbonio-mailbox/token
+
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 6: Configure |product| Databases
+   ^^^^
+
+   .. include:: /_includes/_installation/step-conf-db.rst
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 7: Bootstrap Database of |file|
+   ^^^^^
+
+   .. include:: /_includes/_installation/step-conf-files.rst
+
+.. _vs_installation:
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Step 8: |vs| and video recording
+   ^^^^^
+   .. include:: /_includes/_installation/step-conf-vs.rst
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Final Steps: Complete Setup and Activate License
+   ^^^^^
+
+   .. include:: /_includes/_installation/step-license.rst
+
 .. include:: /_includes/_installation/complete.rst
 .. include:: /_includes/_installation/users.rst
 
@@ -35,7 +157,82 @@ Access to the Web Interface
 Multi-Server Installation
 =========================
 
-.. include:: /_includes/_installation/multiserver_install.rst
+This section describes a |product| `multi-server installation`, that
+is, a |carbonio| installation spread across multiple nodes, each with
+a precise and dedicated task.
+
+.. _multi-server-scenario:
+
+Six Nodes Scenario
+------------------
+
+.. include:: /_includes/_multiserver-installation/scenario.rst
+
+Requirements
+------------
+
+.. include:: /_includes/_multiserver-installation/requirements.rst
+
+Preliminary Tasks
+-----------------
+
+.. include:: /_includes/_multiserver-installation/preliminary.rst
+
+
+Node Installation
+-----------------
+
+The installation procedure follows the suggested order of nodes as
+described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
+
+* it is assumed that the Postgres node is not a "real" part of the
+  infrastructure, in the sense that it can also be an existent server
+  that is configured to communicate correctly with |product|
+  (configuration instruction are part of SRV1 installation).
+
+  .. note:: In our scenario, we install Postgres and configure it from
+     scratch (*SRV1*).
+
+* the first node to be installed is the one that will feature the
+  Directory Server/LDAP role (*SRV2*)
+
+* The next server to be installed is the MTA one (*SRV3*)
+
+* the other nodes can be installed in any order, you can skip
+  instructions for any node or role that you do not plan to install
+
+SRV1: Postgres
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv1.rst
+
+
+SRV2: Directory Server, LDAP Server, and DB connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv2.rst
+
+
+SRV3: MTA
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv3.rst
+
+SRV4: Proxy and |vs|
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv4.rst
+
+SRV5: Advanced, AppServer, Files, and Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv5.rst
+
+
+SRV6: Advanced, AppServer, Preview, and Logger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv6.rst
 
 .. _carbonio-update:
 

@@ -33,6 +33,9 @@ Logger Node within a Multi-Server installation.
 :ref:`update_ssh_keys`, which allows to keep SSH keys updated across
 the nodes of a Multi-Server installation.
 
+:ref:`carbonio-mobile` provides instructions to access |product|
+features from mobile devices.
+     
 :ref:`carb-customisations` guides you in the customisation of
 |product| appearance.
 
@@ -47,3 +50,4 @@ the nodes of a Multi-Server installation.
    /_management/logger
    /_management/sshkeys
    /_management/mobile
+   /custom

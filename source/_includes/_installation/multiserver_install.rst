@@ -2,73 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-This section describes a |product| `multi-server installation`, that
-is, a |carbonio| installation spread across multiple nodes, each with
-a precise and dedicated task.
-
-Scenario
---------
-
-In this suggested scenario we will set up a |product| multi-server
-environment, composed by **five nodes** as follows:
-
-#. A **Directory-Server node**, used to manage the configuration of
-   the infrastructure and provisioning of users and domains
-#. An **MTA node**, that takes care of the transfer and forwarding of
-   mail, including filtering and much more functions
-#. A **Proxy node**, which acts as a reverse proxy, centralizing
-   access to mailboxes.  It allows backend services (like e.g.,
-   mailbox servers) to be hidden from the public Internet
-#. Two **Application nodes**, one to be used as the actual Mailserver
-   or to host other services, and one to be used as **Logger node**
-
-   .. note:: The **Logger node** must be unique within a |product|
-      infrastructure!
-
-In addition to the listed services, an additional functionality
-(|mesh|) adds fault detection and dynamic routing between components
-of the infrastructure.
-
-While your set up may vary, it is important that you install on each
-node the packages that provide the service(s) you want to run to each
-node. As an example, you can have MTA and Directory-Server installed
-on the same node.
-
-In our scenario, we use 5 nodes equipped with Ubuntu 20.04 LTS.
-
-Requirements
-------------
-
-For each node, the single server's :ref:`software-requirements` are
-valid and apply for multi-server installation as well. Regarding the
-:ref:`system-requirements`, consider that by dividing the load on more
-nodes you may need less resources (although we recommend at least 4GB
-of RAM on each node). Moreover, make sure that both :ref:`DNS
-resolution <config-dns>` and :ref:`the hostname <installation-step1>`
-are configured.
-
-.. warning:: It is mandatory to configure the hostname, especially on
-   the Directory-Server node, otherwise the services will not be able to bind to
-   the correct address, leading to a disruption in |product|\'s
-   functionality.
-
-There are no additional requirements, just a few remarks:
-
-* Repositories: All packages required by a multi-server setup are
-  available in the same repository as the single server installation,
-  hence there is no need of further configuration.
-
-* Acquaintance with the use of CLI is necessary. All commands must be
-  issued as the ``root`` user, unless stated otherwise.
-
-* Give meaningful names to the nodes. For example, call them
-  proxy.example.com, mta.example.com, and so on. Replace
-  ``example.com`` with your domain name.
-
-Please also read the following information about |product| repository
-and channels.
-
-.. include:: /_includes/_installation/repo-info.rst
 
 
 .. card::
@@ -248,7 +181,7 @@ setup |mesh|, which is explained below.
 
    .. code:: console
 
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
 
    .. hint:: Use a **robust** password of your choice.
 
@@ -275,7 +208,7 @@ setup |mesh|, which is explained below.
 
    .. code:: console
 
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
