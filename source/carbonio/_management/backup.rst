@@ -65,20 +65,29 @@ up.
 .. hint:: To avoid a flood of notifications about running operations,
    it is suggested to lower the default *Notification level* from
    **Information** to one of **Warning**, **Error**, or **Critical**
-   (see :numref:`img-backup-notification`).
+   using the command line:
 
-.. _img-backup-notification:
+   .. code:: console
 
-.. figure:: /img/backup/notification-level.png
-   :alt: |backup| Notification Level
-   :width: 95%
+     # carbonio config  set global ZxCore_LogLevel 0
 
-   |backup| Notification Level
+   to increase the log verbosity, or
+
+   .. code:: console 
+
+      # carbonio config set global ZxCore_LogLevel 1
+
+   to restore the normal log verbosity. you can also check the current
+   log level as follows.
+
+   .. code:: console
+
+      # carbonio config dump global|grep LogLevel 
 
 .. topic:: :octicon:`comment` Basic Customisation of Backup
               
-   You can optionally customise some of the |backup| options that
-   appear in :numref:`img-backup-console`, including
+   You can optionally customise some of the |backup| options,
+   including:
 
    - The full path for backups, which can be achieved also with the
      following command.
@@ -103,16 +112,6 @@ up.
    - Enable the :ref:`smartscan` and its scheduling
 
    - Change the :ref:`retention_policy`
-
-     
-   .. _img-backup-console:
-
-   .. figure:: /img/backup/ui.png
-      :alt: |backup| Admin Console
-      :width: 95%
-
-      |backup| Admin Console
-
 
 .. _backup-architecture:
 
@@ -384,6 +383,28 @@ retention policies in the Backup are:
 All retention times can be changed; if set to **0** (zero), archives
 will be kept forever (**infinite retention**) and the Backup Purge will
 not run.
+
+You can check the current value of the Retention Policy by using respectively
+
+.. code:: console
+          
+   zextras$ carbonio config dump global | grep ZxBackup_DataRetentionDays
+
+.. code:: console
+          
+   zextras$ carbonio config dump global | grep backupAccountsRetentionDays
+
+In order to change either value, use **0** for *infinite retention* or
+any integer value as the number of days. For example, to set the
+retention to **15 days** for data and accounts, use:
+
+.. code:: console
+          
+   zextras$ carbonio config set global ZxBackup_DataRetentionDays 15
+
+.. code:: console
+          
+   zextras$ carbonio config set global backupAccountsRetentionDays 15
 
 In case an account is deleted and must be restored after the **Data
 retention time** has expired, it will be nonetheless possible to recover
