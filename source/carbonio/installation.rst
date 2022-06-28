@@ -157,9 +157,20 @@ Access to the Web Interface
 Multi-Server Installation
 =========================
 
-This section describes a |product| `multi-server installation`, that
-is, a |carbonio| installation spread across multiple nodes, each with
-a precise and dedicated task.
+This section describes a |product| `Multi-Server installation`, that
+is, a |carbonio| installation spread across multiple nodes, each
+playing one or more **Roles**. 
+
+Rather than giving fixed installation instructions, with some
+functionality installed on any node, we present an installation
+scenario that can be adapted to the different needs of |product|
+users, who use a different number of nodes. For this reason, we
+introduce the notion of **Role**: a |product| functionality that is
+considered atomic and consists of one or more packages.
+
+A Role can be installed on any node of the cluster, therefore the
+scenario we describe below can be modified at will by installing a
+*Role* on a different node (or even on a dedicated node).
 
 .. _multi-server-scenario:
 
@@ -185,7 +196,7 @@ Node Installation
 The installation procedure follows the suggested order of nodes as
 described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 
-* it is assumed that the Postgres node is not a "real" part of the
+* It is assumed that the Postgres node is not a "real" part of the
   infrastructure, in the sense that it can also be an existent server
   that is configured to communicate correctly with |product|
   (configuration instruction are part of SRV1 installation).
@@ -193,12 +204,15 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
   .. note:: In our scenario, we install Postgres and configure it from
      scratch (*SRV1*).
 
-* the first node to be installed is the one that will feature the
-  Directory Server/LDAP role (*SRV2*)
+* The first node to be installed is the one that will feature the
+  Directory Server and LDAP roles (*SRV2*)
+
+  .. note:: If you plan to install LDAP (possibly also a master/slave
+     LDAP), install this node before the Directory Server.
 
 * The next server to be installed is the MTA one (*SRV3*)
 
-* the other nodes can be installed in any order, you can skip
+* The other nodes can be installed in any order, you can skip
   instructions for any node or role that you do not plan to install
 
 SRV1: Postgres

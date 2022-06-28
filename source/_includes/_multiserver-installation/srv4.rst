@@ -4,15 +4,15 @@
 
 .. srv1 - proxy and vs
    
-On this node you need to install the proxy, the ``*-ui`` files (i.e.,
-the front-end packages for |team| and |file|, then the packages
-related to |vs|. Since Proxy and |vs| are different roles, we separate
-their installation and setup, so they can easily be installed on
-different nodes.
+This node featurs the proxy, the ``*-ui`` files (i.e., the front-end
+packages for |team| and |file|), then the packages related to
+|vs|. Since Proxy and |vs| are different roles, we separate their
+installation and setup, so they can easily be installed on different
+nodes.
 
 These tasks need to be carried out for the Proxy.
 
-#. install packages
+#. Install packages
 
    .. tab-set::
 
@@ -32,15 +32,15 @@ These tasks need to be carried out for the Proxy.
             # dnf install service-discover-agent carbonio-proxy \
               carbonio-webui carbonio-files-ui carbonio-chats-ui
 
-#.  Bootstrap Carbonio, using SRV2 hostname and LDAP password when
-    required.
+#. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
+   required
 
    .. code:: console
 
       # carbonio-bootstrap
 
 #. Copy credentials from the Service-Discover server node (SRV2) to the
-   local server.
+   local server
 
    .. code:: console
 
@@ -50,9 +50,8 @@ These tasks need to be carried out for the Proxy.
    .. hint:: the SRV2_IP can be retrieved using command :command:`su -
       zextras -c "zmprov gas service-discover"`
 
-#. Run |mesh| setup using the password created on SRV2
-   (``MESH_CLUSTER_PWD``).
-
+#.  Run |mesh| setup using ``MESH_CLUSTER_PWD``
+   
    .. code:: console
 
       # service-discover setup-wizard
@@ -77,8 +76,9 @@ To set up the |vs|, these are the necessary tasks.
 
             # dnf install carbonio-videoserver carbonio-videoserver-recorder
 
-   .. note:: During the installation, it will be suggested a command
-      to be run on SRV5. Copy it, because it will be needed on SRV5.
+   .. note:: One of the output received during the installation is a
+      command that will be run on SRV5. Copy it, because it will be
+      needed on SRV5.
    
 #. Enable and start the service with the commands
    
@@ -107,15 +107,19 @@ videos can not be stored.
 .. hint:: You can mount on that location a dedicated disk or partition
    and keep it monitored for space usage.
 
-Before proceeding further, write down these items, because they will
-be needed in the next steps.
+.. card::
 
-* IP address of the node (denoted as ``VS_IP``),
+   Values used in the next steps
+   ^^^^
+    
+* ``VS_IP``: the IP address of this node
 
 * the command suggested during the |vs| installation (to be used on
   SRV5)
 
-* the value of the `servlet port` (denoted as ``SERVLET_PORT``)
-  configuration option saved in file
+* ``SERVLET_PORT``: the value of the `servlet port` configuration
+  option saved in file
   :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed when
-  running the previous commands)
+  running the previous command
+
+  

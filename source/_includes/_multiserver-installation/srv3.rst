@@ -4,7 +4,8 @@
 
 .. srv3 - MTA - mailsystem
    
-On this node, install the packages
+On this node we install the MTA, which is the actual software which
+sends and receives emails.
 
 .. tab-set::
 
@@ -24,14 +25,15 @@ On this node, install the packages
 
 These following tasks must be executed to configure the MTA.
 
-#. Bootstrap Carbonio, using SRV2 hostname and LDAP password when required.
+#. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
+   required
 
    .. code:: console
 
       # carbonio-bootstrap
 
-#. Copy credentials from the Service-Discover server node (SRV2) to the
-   local server.
+#. Copy the credentials from the Service-Discover server node (SRV2)
+   to the local server
 
    .. code:: console
 
@@ -41,9 +43,15 @@ These following tasks must be executed to configure the MTA.
    .. hint:: the SRV2_IP can be retrieved using command :command:`su -
       zextras -c "zmprov gas service-discover"`
 
-#. Run |mesh| setup using the password created on SRV2
-   (``MESH_CLUSTER_PWD``).
+#. Run |mesh| setup using ``MESH_CLUSTER_PWD``
 
    .. code:: console
 
       # service-discover setup-wizard
+
+.. card::
+
+   Values used in the next steps
+   ^^^^
+
+   * ``MTA_IP``: the IP address of this node
