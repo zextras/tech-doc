@@ -4,7 +4,8 @@
 
 .. srv1 - postgres
    
-On this node, first install PostgreSQL.
+The first node is dedicated to PostgreSQL and will host all the
+databases required by |product|.
 
 .. tab-set::
 
@@ -36,3 +37,13 @@ stored on this node by running these four commands.
 
 .. hint:: You may replace the ``0.0.0.0/0`` network with the one
    within the cluster is installed, to prevent unwanted accesses.
+
+.. card::
+
+   Values used in the next steps
+   ^^^^
+
+   * ``DB_ADM_PWD``: the password of the ``carbonio_adm`` database
+     role
+
+   * ``SRV1_IP`` the IP address of the node

@@ -3,8 +3,8 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 |product| relies on a number of databases to store and keep track of
-all the objects it needs to manage. In this step, we configure the
-main database in two steps.
+all the objects it needs to manage. The main database can be
+configured in two steps.
 
 The first step is to create a role and password with administrative rights.
 
@@ -12,10 +12,10 @@ The first step is to create a role and password with administrative rights.
 
    # su - postgres -c "psql --command=\"CREATE ROLE carbonio_adm WITH LOGIN SUPERUSER encrypted password 'DB_ADM_PWD';\""
 
-Remember to replace the password with **robust** passwords of your
-choice and store them in a safe place (preferably using a password
-manager), as you might need them in the future.
-
+Remember to replace the password with a **robust** password of your
+choice and store it in a safe place (preferably using a password
+manager), as you need it in the remainder of the procedure, and you
+also might need them in the future.
 
 The second step is to create the database.
 

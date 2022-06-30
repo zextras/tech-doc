@@ -8,6 +8,7 @@
 
 
 .. |file| replace:: |carbonio| Files
+.. |docs| replace:: |carbonio| Docs
 .. |team| replace:: |carbonio| Chats
 .. |auth| replace:: |carbonio| Auth
 .. |vs| replace:: |carbonio| VideoServer

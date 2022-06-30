@@ -24,8 +24,8 @@ System Requirements
       .. csv-table::
 
          "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-         "RAM", "8 Gb min, 16Gb recommended"
-         "Disk space (Operating system and Carbonio)", "40 Gb"
+         "RAM", "8 GB min, 16GB recommended"
+         "Disk space (Operating system and Carbonio)", "40 GB"
 
       These requirements are valid for Carbonio Single-Server or for
       each Carbonio Node in a Multi-Server Installation and may vary
