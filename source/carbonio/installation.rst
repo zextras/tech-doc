@@ -48,6 +48,9 @@ as the** ``root`` **user**.
    Step 2: Repository Configuration
    ^^^^^
 
+   Instructions for setting up |product| repository will be provided
+   by |zx| Sales Department.
+
    .. include:: /_includes/_installation/repo-info.rst
 
 .. _installation-step3:
