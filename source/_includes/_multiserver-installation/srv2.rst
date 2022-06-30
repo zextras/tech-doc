@@ -10,9 +10,6 @@ will feature a number of crucial services for the correct working of
 PostgreSQL node using `Pgpool-II
 <https://pgpool.net/mediawiki/index.php/Main_Page>`_, and |mesh|.
 
-Before proceeding, write down the IP address of SRV1, then carry out
-these tasks, in order.
-
 1. Install the following packages.
 
    .. tab-set::
@@ -36,8 +33,8 @@ these tasks, in order.
               carbonio-mailbox-db pgpool2
 
 2. Configure Pgpool-II to work with the node on which PostgreSQL runs
-   (SRV1), using the following command. Replace **SRV1_IP** with the
-   actual SRV1 IP address.
+   (SRV1), using the following command. Replace ``SRV1_IP`` with the
+   value saved in the previous task.
 
    .. code:: console
 
@@ -71,18 +68,19 @@ these tasks, in order.
       # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
       # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-Before proceeding with the installation, you need to gather the
-following items from this node, because they will be needed to
-bootstrap the other nodes.
+.. card::
 
-* the hostname, that will be denoted as **SRV2 hostname**
+   Values used in the next steps
+   ^^^^
+      
+   * ``SRV2_hostname``: this node's hostname
 
-* the **LDAP bind password** for the ``root`` user and applications (by
-  default, all the bind passwords are configured the same), that can
-  be retrieved with this command:
+   * ``LDAP_PWD``: the **LDAP bind password** for the ``root`` user
+     and applications (by default, all the bind passwords are
+     configured the same), that can be retrieved with this command:
 
-  .. code:: console
+     .. code:: console
 
-     # zmlocalconfig -s zimbra_ldap_password
+        # zmlocalconfig -s zimbra_ldap_password
 
-* The |mesh| password (denoted as ``MESH_CLUSTER_PWD``)
+   * ``MESH_CLUSTER_PWD``: the |mesh| password 
