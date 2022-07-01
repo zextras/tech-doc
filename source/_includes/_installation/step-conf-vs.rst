@@ -41,7 +41,7 @@ executed as the ``zextras`` user.
 .. code::
 
    # su - zextras
-   # carbonio chats video-server add example.com port 8100 servlet_port 8090 secret VIDEOSERVER_PWD
+   # carbonio chats video-server add VS_IP port 8100 servlet_port 8090 secret VIDEOSERVER_PWD
    # carbonio config set global teamVideoServerRecordingEnabled true
    # carbonio config set cos default teamChatEnabled true
 
@@ -51,7 +51,7 @@ preferences, but take into account that the value of the
 ``servlet_port`` **must match** the one defined for |vs| in file
 :file:`/etc/carbonio/videoserver-recorder/recordingEnv`.
 
-Remember also to replace **example.com** with your domain name.
+Remember also to replace ``VS_IP`` with the public IP address of the |vs|.
 
 .. hint:: In case you forget the password used for the video recording
    setup, (*VIDEOSERVER_PWD*), you can retrieve it using this command

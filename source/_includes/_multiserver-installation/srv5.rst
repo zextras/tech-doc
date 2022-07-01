@@ -29,29 +29,27 @@ On this node, first install all the required packages for |file|, and .
            carbonio-docs-editor
 
 Execute the following tasks: make sure you keep at hand the data
-configured on the other nodes (SRV2 hostname, LDAP password,
+configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 ``MESH_CLUSTER_PWD``, and ``MTA_IP``).
 
-#.  Bootstrap Carbonio, using SRV2 hostname, LDAP password, and
-    ``MTA_IP`` when required.
+#.  Bootstrap |carbonio|, using the data from previous tasks when required
 
    .. code:: console
 
       # carbonio-bootstrap
 
 #. Copy credentials from the Service-Discover server node (SRV2) to the
-   local server.
+   local server
 
    .. code:: console
 
       # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-   .. hint:: the SRV2_IP can be retrieved using command :command:`su -
+   .. hint:: The ``SRV2_IP`` can be retrieved using command :command:`su -
       zextras -c "zmprov gas service-discover"`
 
-#. Run |mesh| setup using the password created on SRV2
-   (``MESH_CLUSTER_PWD``).
+#. Run |mesh| setup using ``MESH_CLUSTER_PWD``
 
    .. code:: console
 
@@ -88,13 +86,21 @@ configured on the other nodes (SRV2 hostname, LDAP password,
       # su - zextras -c "zmmailboxdctl restart"
 
  
-#. Run as the ``zextras user`` the command proposed during the |vs| installation, using
-   ``SERVLET_PORT`` and ``VS_IP`` configured on SRV4.
+#. Run as the ``zextras user`` the command proposed during the |vs|
+   installation, using ``SERVLET_PORT`` and ``VS_IP`` configured on
+   SRV4. 
 
    .. code:: console
 
       zextras$ carbonio chats video-server add VS_IP port 8100 \
         servlet_port SERVLET_PORT secret VS_PWD
+
+   .. hint:: ``VS_PWD`` was given as part of the command, but can be
+      retrieved using this command.
+
+      .. code:: console
+
+         # grep -i -e nat_1_1 -e api_secret /etc/janus/janus.jcfg
 
 
 #. Enable Chats and VideoServerRecording, issuing the commands as the ``zextras user``
