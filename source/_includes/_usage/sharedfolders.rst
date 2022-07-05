@@ -7,7 +7,7 @@
 Shared Folders and You (and Your Mobile)
 ----------------------------------------
 
-With Zextras Suite, it’s possible to synchronize folders that are not
+With |product|, it’s possible to synchronize folders that are not
 owned by the user itself to mobile devices. This applies to all item
 types available through the Exchange ActiveSync protocol, so you’ll be
 able to sync any shared email folder, address book, calendar or task
