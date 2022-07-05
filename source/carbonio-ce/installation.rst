@@ -137,7 +137,94 @@ Access to the Web Interface
 Multi-Server Installation
 =========================
 
-.. include:: /_includes/_installation/multiserver_install.rst
+This section describes a |product| `Multi-Server installation`, that
+is, a |carbonio| installation spread across multiple nodes, each
+playing one or more **Roles**. 
+
+Rather than giving fixed installation instructions, with some
+functionality installed on any node, we present an installation
+scenario that can be adapted to the different needs of |product|
+users, who use a different number of nodes. For this reason, we
+introduce the notion of **Role**: a |product| functionality that is
+considered atomic and consists of one or more packages.
+
+A Role can be installed on any node of the cluster, therefore the
+scenario we describe below can be modified at will by installing a
+*Role* on a different node (or even on a dedicated node).
+
+.. _multi-server-scenario:
+
+Six Nodes Scenario
+------------------
+
+.. include:: /_includes/_multiserver-installation/scenario-ce.rst
+
+Requirements
+------------
+
+.. include:: /_includes/_multiserver-installation/requirements.rst
+
+Preliminary Tasks
+-----------------
+
+.. include:: /_includes/_multiserver-installation/preliminary-ce.rst
+
+Node Installation
+-----------------
+
+The installation procedure follows the suggested order of nodes as
+described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
+
+* It is assumed that the Postgres node is not a "real" part of the
+  infrastructure, in the sense that it can also be an existent server
+  that is configured to communicate correctly with |product|
+  (configuration instruction are part of SRV1 installation).
+
+  .. note:: In our scenario, we install Postgres and configure it from
+     scratch (*SRV1*).
+
+* The first node to be installed is the one that will feature the
+  Directory Server and LDAP roles (*SRV2*)
+
+  .. note:: If you plan to install LDAP (possibly also a master/slave
+     LDAP), install this node before the Directory Server.
+
+* The next server to be installed is the MTA one (*SRV3*)
+
+* The other nodes can be installed in any order, you can skip
+  instructions for any node or role that you do not plan to install
+
+SRV1: Postgres
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv1.rst
+
+
+SRV2: Directory Server, LDAP Server, and DB connection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv2-ce.rst
+
+SRV3: MTA
+~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv3.rst
+
+SRV4: Proxy
+~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv4-ce.rst
+
+SRV5: Advanced, AppServer, Files, and Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv5-ce.rst
+
+
+SRV6: Advanced, AppServer, Preview, and Logger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_multiserver-installation/srv6-ce.rst
 
 .. _carbonio-update:
 

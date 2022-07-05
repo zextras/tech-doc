@@ -7,7 +7,7 @@
 Shared Folders and You (and Your Mobile)
 ----------------------------------------
 
-With Zextras Suite, it’s possible to synchronize folders that are not
+With |product|, it’s possible to synchronize folders that are not
 owned by the user itself to mobile devices. This applies to all item
 types available through the Exchange ActiveSync protocol, so you’ll be
 able to sync any shared email folder, address book, calendar or task
@@ -19,52 +19,53 @@ client in use.
 .. warning:: Not all clients support the synchronization of multiple
    address books, calendars or task lists via Exchange ActiveSync.
 
-.. _how_to_sync_a_shared_folder_to_your_mobile_devices:
+..
+   .. _how_to_sync_a_shared_folder_to_your_mobile_devices:
 
-How to Sync a Shared Folder to Your Mobile Devices
---------------------------------------------------
+   How to Sync a Shared Folder to Your Mobile Devices
+   --------------------------------------------------
 
-To allow a higher level of control over synchronization, users can
-choose the shared folders to synchronize with their mobile devices.
+   To allow a higher level of control over synchronization, users can
+   choose the shared folders to synchronize with their mobile devices.
 
-.. _enable_mobile_synchronization_for_a_shared_folder:
+   .. _enable_mobile_synchronization_for_a_shared_folder:
 
-Enable Mobile Synchronization for a Shared Folder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Enable Mobile Synchronization for a Shared Folder
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To enable mobile synchronization for a shared folder:
+   To enable mobile synchronization for a shared folder:
 
-- Log in to the Zimbra Web Client
+   - Log in to |product|
 
-- Right-click the shared folder to sync
+   - Right-click the shared folder to sync
 
-- Select **Folder Sync Settings** in the drop-down menu
+   - Select **Manage Shares** from the drop-down menu
 
-- Select the checkbox **Enable synchronization for this folder**
-  checkbox
+   - Select the checkbox **Enable synchronization for this folder**
+     checkbox
 
-- Press :bdg:`OK`
+   - Press :bdg:`OK`
 
-The new folder will be synchronized to any mobile device connected to
-the account.
+   The new folder will be synchronized to any mobile device connected to
+   the account.
 
-.. _disable_mobile_synchronization_for_a_shared_folder:
+   .. _disable_mobile_synchronization_for_a_shared_folder:
 
-Disable Mobile Synchronization for a Shared Folder
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Disable Mobile Synchronization for a Shared Folder
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To exclude a shared folder from syncing with a mobile device:
+   To exclude a shared folder from syncing with a mobile device:
 
-- Log in to the Zimbra Web Client
+   - Log in to |product|
 
-- Right-click the shared folder to sync
+   - Right-click the shared folder to sync
 
-- Select **Folder Sync Settings** in the drop-down menu
+   - Select **Manage Shares** from the drop-down menu
 
-- Clear the checkbox **Enable synchronization for this folder**
-  checkbox
+   - Clear the checkbox **Enable synchronization for this folder**
+     checkbox
 
-- Press :bdg:`OK`
+   - Press :bdg:`OK`
 
 .. _mobile_restrictions:
 
