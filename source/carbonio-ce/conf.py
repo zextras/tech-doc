@@ -110,4 +110,4 @@ html_title = project + ' Documentation'
 #     'analytics_anonymize_ip': False,
 #     'collapse_navigation': False
 # }
-# html_context = { 'hubhome' : '%s' %hubhome }
+html_context = { 'hubhome' : '%s' %hubhome }
