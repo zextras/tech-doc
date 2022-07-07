@@ -47,7 +47,7 @@ as the** ``root`` **user**.
 
    Step 2: Repository Configuration
    ^^^^^
- 
+
    .. include:: /_includes/_installation/step-repo-conf-ce.rst
    .. include:: /_includes/_installation/repo-info.rst
 
@@ -139,7 +139,7 @@ Multi-Server Installation
 
 This section describes a |product| `Multi-Server installation`, that
 is, a |carbonio| installation spread across multiple nodes, each
-playing one or more **Roles**. 
+playing one or more **Roles**.
 
 Rather than giving fixed installation instructions, with some
 functionality installed on any node, we present an installation
@@ -200,7 +200,7 @@ SRV1: Postgres
 .. include:: /_includes/_multiserver-installation/srv1.rst
 
 
-SRV2: Directory Server, LDAP Server, and DB connection
+SRV2: Directory Server and DB connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv2-ce.rst
@@ -215,13 +215,13 @@ SRV4: Proxy
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
-SRV5: Advanced, AppServer, Files, and Docs
+SRV5: AppServer, Files and Docs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv5-ce.rst
 
 
-SRV6: Advanced, AppServer, Preview, and Logger
+SRV6: AppServer, Preview and Logger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6-ce.rst
