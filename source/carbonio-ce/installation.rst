@@ -200,7 +200,7 @@ SRV1: Postgres
 .. include:: /_includes/_multiserver-installation/srv1.rst
 
 
-SRV2: Directory Server, LDAP Server, and DB connection
+SRV2: Directory Server and DB connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv2-ce.rst
@@ -215,13 +215,13 @@ SRV4: Proxy
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
-SRV5: AppServer, Files, and Docs
+SRV5: AppServer, Files and Docs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv5-ce.rst
 
 
-SRV6: AppServer, Preview, and Logger
+SRV6: AppServer, Preview and Logger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6-ce.rst
