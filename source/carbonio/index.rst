@@ -26,10 +26,10 @@ Finally, instructions to guide users in daily tasks are contained in
 |ce| has a `dedicated page <../../carbonio-ce/html/index.html>`_.
 
 .. grid:: 1 2 2 3
-   :gutter: 2
+   :gutter: 3
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 6 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -41,7 +41,7 @@ Finally, instructions to guide users in daily tasks are contained in
          uninstall
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 6 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -54,7 +54,7 @@ Finally, instructions to guide users in daily tasks are contained in
          deep-view
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 6 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -63,3 +63,14 @@ Finally, instructions to guide users in daily tasks are contained in
 
          usage
          mobileapps
+
+
+   .. grid-item-card::
+      :columns: 12 6 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+         :caption: Develop:
+
+         api

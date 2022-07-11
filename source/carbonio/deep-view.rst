@@ -193,24 +193,6 @@ need the **cluster credential password** that was defined during the
 
       # ssh -N -f -L 8500:localhost:8500 root@<IP Address>
 
-.. _carbonio-api:
-
-API for |product|
-=================
-
-|zx| makes available to developers a couple of APIs to interact with
-|product| components. To read their documentation, follow the URLS:
-
-* `Carbonio API <../../apidoc/carbonio/index.html>`_ is used
-  to interact via SOAP with the main functions of |product|
-
-* `Carbonio Files blob <../../apidoc/files_blob/index.html>`_, for
-  managing the uploading, downloading of BLOB files and links to them
-
-* `Carbonio Files metadata <../../apidoc/files_meta/index.html>`_
-  metadata API
-
-
 .. deploy SSL certificate
 
 .. include:: /_includes/install_SSL_certificate.rst

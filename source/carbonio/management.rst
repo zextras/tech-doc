@@ -35,6 +35,8 @@ the nodes of a Multi-Server installation.
 
 :ref:`carbonio-mobile` provides instructions to access |product|
 features from mobile devices.
+
+:ref:`carbonio-shell` introduces the |sh|.
      
 :ref:`carb-customisations` guides you in the customisation of
 |product| appearance.
@@ -50,4 +52,5 @@ features from mobile devices.
    /_management/logger
    /_management/sshkeys
    /_management/mobile
+   /_management/shell
    /custom
