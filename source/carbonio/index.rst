@@ -11,18 +11,21 @@
  Welcome to |carbonio| Documentation!
 ********************************************
 
-This is the documentation of |carbonio| The full private e-mail and
+This is the documentation of |carbonio|, the full private e-mail and
 collaboration platform.
 
-Details on the functionalities can be found in :doc:`general`,
-requirements and directions for installation in :doc:`installation`,
-common management tasks are described in :doc:`management`,
-administration tasks in :doc:`administration`.
+The content is organised in four parts:
 
-Finally, instructions to guide users in daily tasks are contained in
-:doc:`usage`.
+* Install: Information on |product|, installation and upgrade
+  instructions, security tips 
+* Admin: Documentation for Administrators, management tasks, and some
+  advanced usage for |mesh|
+* Use: everyday's usage of |product|, including its use on the
+  dedicated mobile Apps
+* Develop: links to API reference
 
-|ce| has a `dedicated page <../../carbonio-ce/html/index.html>`_.
+If you are looking for |ce|'s documentation, please refer to its
+`dedicated page <../../carbonio-ce/html/index.html>`_.
 
 .. grid:: 1 2 2 3
    :gutter: 3
