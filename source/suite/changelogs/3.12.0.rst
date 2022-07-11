@@ -1,0 +1,64 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+.. uncomment for next release (3.13.0)
+   
+   Zextras Suite Changelog - Release 3.12.0
+   ========================================
+
+      Release Date: Jul 11th, 2022
+
+
+.. rubric:: Auth
+
+
+* *Issue ID:* AUTH-402
+
+* *Title:* MustChangePassword not evaluated for the application credentials
+
+* *Description:* Password change is no more considered when using
+  application credentials or QR code-based authentication for the apps
+
+.. rubric:: Backup
+
+
+* *Issue ID:* BCK-644
+
+* *Title:* Skip backup of distribution lists and dynamic groups
+
+* *Description:* A new attribute `backupSkipDLAndDynamicGroups` has
+  been added so it is now possible to skip the backup for distribution
+  lists and dynamic groups in order to improve backup time
+
+..
+
+* *Issue ID:* BCK-667
+
+* *Title:* Improved error handling for the purge operation
+
+* *Description:* Improved the error handling when running a purge and
+  the `ZxBackup_DataRetentionDays` attribute has an invalid value
+
+..
+
+* *Issue ID:* BCK-668
+
+* *Title:* Backup volume handler fixed
+
+* *Description:* Fixed a bug that prevented to update the S3 backup
+  volume
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-437
+
+* *Title:* Purge of centralized volumes blobs fixed
+
+* *Description:* Fixed a bug that prevented the blobs to be purged
+  from a centralized volume when moving a mailbox from a server with
+  that centralized volume configured to another server that doesn't
+  have it
+
+
+
