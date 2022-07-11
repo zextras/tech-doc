@@ -38,7 +38,7 @@ Finally, instructions to guide users in daily tasks are contained in
 
          general
          installation
-         uninstall
+         security
 
    .. grid-item-card::
       :columns: 12 6 6 6

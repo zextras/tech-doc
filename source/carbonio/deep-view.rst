@@ -192,11 +192,3 @@ need the **cluster credential password** that was defined during the
    .. code:: bash
 
       # ssh -N -f -L 8500:localhost:8500 root@<IP Address>
-
-.. deploy SSL certificate
-
-.. include:: /_includes/install_SSL_certificate.rst
-
-.. create dkim record
-
-.. include:: /_includes/dkim.rst
