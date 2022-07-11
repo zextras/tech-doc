@@ -17,8 +17,7 @@ collaboration platform.
 Details on the functionalities can be found in :doc:`general`,
 requirements and directions for installation in :doc:`installation`,
 common management tasks are described in :doc:`management`,
-administration tasks in :doc:`administration`, while more technical
-and less commonly used tasks in :doc:`deep-view`.
+administration tasks in :doc:`administration`.
 
 Finally, instructions to guide users in daily tasks are contained in
 :doc:`usage`.
@@ -51,7 +50,7 @@ Finally, instructions to guide users in daily tasks are contained in
 
          administration
          management
-         deep-view
+         mesh
 
    .. grid-item-card::
       :columns: 12 6 6 6

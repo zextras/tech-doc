@@ -2,12 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-==============
- In deep view
-==============
+===================
+Working with |mesh|
+===================
 
-This section contains various rather advanced topics that are not
-required for a everyday use of |product|.
+This section contains advanced topics about |mesh|.
 
 .. _mesh-reset:
 
