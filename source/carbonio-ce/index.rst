@@ -14,15 +14,18 @@
 This is the documentation of |ce| edition, a free and open-source
 collaboration software.
 
-Details on the functionalities can be found in :doc:`general`,
-requirements and directions for installation in :doc:`installation`,
-common management tasks are described in :doc:`management`, while more
-technical and less commonly used tasks in :doc:`deep-view`.
+The content is organised in four parts:
 
-Finally, instructions to guide users in daily tasks are contained in
-:doc:`usage`.
+* Install: Information on |product|, installation and upgrade
+  instructions, security tips 
+* Admin: Documentation for management tasks and some
+  advanced usage for |mesh|
+* Use: everyday's usage of |product|, including its use on the
+  dedicated mobile Apps
+* Develop: links to API reference
 
-|carbonio| has a :carbonio:`dedicated documentation <index.html>`.
+If you are looking for |carbonio|'s documentation, please refer to its
+`dedicated page <../../carbonio/html/index.html>`_.
 
 .. grid:: 1 2 2 3
    :gutter: 2
@@ -37,8 +40,7 @@ Finally, instructions to guide users in daily tasks are contained in
 
          general
          installation
-         components
-         uninstall
+         security
 
    .. grid-item-card::
       :columns: 12 6 6 4
@@ -50,7 +52,7 @@ Finally, instructions to guide users in daily tasks are contained in
          :caption: Admin:
 
          management
-         deep-view
+         mesh
 
    .. grid-item-card::
       :columns: 12 6 6 4
@@ -63,14 +65,23 @@ Finally, instructions to guide users in daily tasks are contained in
          usage
          mobileapps
   
-   .. grid-item::
-      :columns: 12 6 6 4
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
          :maxdepth: 1
-
+         :caption: Changelogs:
+                   
          changelog
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 1
+         :caption: Develop:
+                   
+         api

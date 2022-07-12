@@ -110,3 +110,15 @@ information on the functionality.
 When joining a Virtual Room, a dialog window appears, which carries
 the name of the room and allows to choose and test the audio and video
 devices.
+
+Sharing documents
+-----------------
+
+Within a textual chat, it is possible to share files by either
+uploading a file from the local workstation or mobile device or by
+providing the *public link* to a file stored in |file|. To carry out the latter
+action, click on the *paper clip* icon on the right-hand side of the
+chat's input box.
+
+Moreover, most files can be previewed before being downloaded, see
+Section :ref:`file-preview` for more information.
