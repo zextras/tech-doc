@@ -23,10 +23,6 @@ recover items, accounts, or whole domains.
 some advanced and less usual scenarios, like disaster recovery and
 unrestorable items
 
-:ref:`mesh-external-services` provides step by step directions to
-integrate external services\ :octicon:`dash`\ services not running on a
-cluster or on a |product| instance\ :octicon:`dash` using |mesh|.
-
 :ref:`logger_node_config` contains the setup needed on a dedicated
 Logger Node within a Multi-Server installation.
 
@@ -48,7 +44,6 @@ features from mobile devices.
    /_management/backup
    /_management/restorestrategies
    /_management/advancedbackup
-   /_management/externalservices
    /_management/logger
    /_management/sshkeys
    /_management/mobile
