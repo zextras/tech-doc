@@ -61,14 +61,23 @@ Finally, instructions to guide users in daily tasks are contained in
          usage
          mobileapps
   
-   .. grid-item::
-      :columns: 12 6 6 4
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
          :maxdepth: 1
-
+         :caption: Changelogs:
+                   
          changelog
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 1
+         :caption: Develop:
+                   
+         api
