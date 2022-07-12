@@ -2,12 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-==============
- In deep view
-==============
+===================
+Working with |mesh|
+===================
 
-This section contains various rather advanced topics that are not
-required for a everyday use of |product|.
+This section contains advanced topics about |mesh|.
 
 .. _mesh-reset:
 
@@ -90,7 +89,6 @@ the Multi-Server there are a few more steps to carry out.
 
       # sudo -u service-discover bash -c "echo 908 > /var/lib/service-discover/data/acl-bootstrap-reset"
 
-
    Then stop the *service discover* service.
 
    .. code:: console
@@ -113,7 +111,7 @@ the Multi-Server there are a few more steps to carry out.
 
    .. code:: console
 
-      # service-discover setup 192.168.56.101 --first-instance --password=My_Mesh_Password£0!
+      # service-discover setup 192.168.56.101 --first-instance --password=MESH_CLUSTER_PWD
 
    This is essentially the same command as the one used during the
    configuration of |mesh|, the only difference being that in this
@@ -147,7 +145,7 @@ the Multi-Server there are a few more steps to carry out.
    .. code:: console
 
       # rm /var/lib/service-discover/*pem
-      # service-discover setup $(hostname -i) --password=My_Mesh_Password£0!
+      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
 
 
 .. _mesh-gui:

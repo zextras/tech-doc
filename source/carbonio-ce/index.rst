@@ -16,8 +16,7 @@ collaboration software.
 
 Details on the functionalities can be found in :doc:`general`,
 requirements and directions for installation in :doc:`installation`,
-common management tasks are described in :doc:`management`, while more
-technical and less commonly used tasks in :doc:`deep-view`.
+common management tasks are described in :doc:`management`.
 
 Finally, instructions to guide users in daily tasks are contained in
 :doc:`usage`.
@@ -49,7 +48,7 @@ Finally, instructions to guide users in daily tasks are contained in
          :caption: Admin:
 
          management
-         deep-view
+         mesh
 
    .. grid-item-card::
       :columns: 12 6 6 4
