@@ -219,12 +219,3 @@ API for |product|
 
 * `Carbonio Files metadata <../../apidoc/files_meta/index.html>`_
   metadata API
-
-
-.. deploy SSL certificate
-
-.. include:: /_includes/install_SSL_certificate.rst
-
-.. create dkim record
-
-.. include:: /_includes/dkim.rst
