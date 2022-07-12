@@ -116,5 +116,9 @@ Sharing documents
 
 Within a textual chat, it is possible to share files by either
 uploading a file from the local workstation or mobile device or by
-providing the *public link* to a file stored in |file|. Most files can
-be previewed, see Section :ref:`file-preview` for more information.
+providing the *public link* to a file stored in |file|. To carry out the latter
+action, click on the *paper clip* icon on the right-hand side of the
+chat's input box.
+
+Moreover, most files can be previewed before being downloaded, see
+Section :ref:`file-preview` for more information.
