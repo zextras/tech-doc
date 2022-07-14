@@ -9,7 +9,15 @@ two tasks *on* **each** *of the six nodes*.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Task 1: Setting Hostname
+   Task 1: Configure repositories
+   ^^^^^
+                     
+   .. include:: /_includes/_installation/repo-info.rst
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   Task 2: Setting Hostname
    ^^^^^
    
    .. include:: /_includes/_installation/steps-hostname.rst
@@ -18,11 +26,3 @@ two tasks *on* **each** *of the six nodes*.
    Directory-Server node, otherwise the services will not be able to
    bind to the correct address, leading to a disruption in
    |product|\'s functionality.
-
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Task 2: Configure repositories
-   ^^^^^
-                     
-   .. include:: /_includes/_installation/repo-info.rst

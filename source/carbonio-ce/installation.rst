@@ -31,10 +31,11 @@ as the** ``root`` **user**.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 1: Setting Hostname
+   Step 1: Repository Configuration
    ^^^^^
 
-   .. include:: /_includes/_installation/steps-hostname.rst
+   .. include:: /_includes/_installation/step-repo-conf-ce.rst
+   .. include:: /_includes/_installation/repo-info.rst
 
 .. _installation-step2:
 
@@ -45,11 +46,10 @@ as the** ``root`` **user**.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 2: Repository Configuration
+   Step 2: Setting Hostname
    ^^^^^
 
-   .. include:: /_includes/_installation/step-repo-conf-ce.rst
-   .. include:: /_includes/_installation/repo-info.rst
+   .. include:: /_includes/_installation/steps-hostname.rst
 
 .. _installation-step-3:
 
