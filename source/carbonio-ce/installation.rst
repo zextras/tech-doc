@@ -194,32 +194,42 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 * The other nodes can be installed in any order, you can skip
   instructions for any node or role that you do not plan to install
 
+.. _srv1-install:
+
 SRV1: Postgres
 ~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv1.rst
 
+.. _srv2-install:
 
 SRV2: Directory Server and DB connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv2-ce.rst
 
+.. _srv3-install:
+
 SRV3: MTA
 ~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv3.rst
+
+.. _srv4-install:
 
 SRV4: Proxy
 ~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
+.. _srv5-install:
+
 SRV5: AppServer, Files and Docs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv5-ce.rst
 
+.. _srv6-install:
 
 SRV6: AppServer, Preview and Logger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
