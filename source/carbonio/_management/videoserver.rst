@@ -418,10 +418,10 @@ the |vs| or not.
 
       .. code:: console
 
-         # carbonio chats video-server update-servlet example.com 8100 8090
+         # carbonio chats video-server update-servlet example.com 8188 8090
 
       Here, replace *example.com* with the domain name or IP on which
-      the |vs| is installed, *8100* the |vs| port, and *8090* (which
+      the |vs| is installed, *8188* the |vs| port, and *8090* (which
       is the default value) with the port that will be used only for
       recording. The value of the servlet port **must** match the one
       defined in file
@@ -440,9 +440,9 @@ the |vs| or not.
 
       .. code:: console
 
-         # carbonio chats video-server add example.com port 8100 servlet_port 8090 secret A_SECRET_PASSWORD
+         # carbonio chats video-server add example.com port 8188 servlet_port 8090 secret A_SECRET_PASSWORD
 
-      Replace *example.com* with the actual domain name or IP, *8100*
+      Replace *example.com* with the actual domain name or IP, *8188*
       and *8090* with the ports associated with the |vs| and the
       recorder, respectively, and *A_SECRET_PASSWORD* with a robust
       password.
