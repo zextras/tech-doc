@@ -26,7 +26,7 @@ can be easily found.
 In the shell, use only the sub-command and parameters, removing the
 initial ``carbonio``. For example, command
 
-.. code::
+.. code:: console
 
    # carbonio chats clusterstatus
 
@@ -44,7 +44,7 @@ To launch multiple carbonio commands, you can save them in a file
 carbonio shell. For example, consider file
 :file:`carbonio-commands.txt` containing the commands:
 
-.. code:: bash
+.. code:: console
 
    prov ca user@example.com ''
    prov sp user@example.com password
@@ -58,7 +58,7 @@ carbonio shell. For example, consider file
 
 All these command can be executed as
 
-.. bash:: console
+.. code:: console
 
    # cat carbonio-commands.txt | carbonio
 
