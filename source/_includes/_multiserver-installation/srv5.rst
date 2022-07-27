@@ -92,7 +92,7 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 
    .. code:: console
 
-      zextras$ carbonio chats video-server add VS_IP port 8100 \
+      zextras$ carbonio chats video-server add VS_IP port 8188 \
         servlet_port SERVLET_PORT secret VS_PWD
 
    .. hint:: ``VS_PWD`` was given as part of the command, but can be
