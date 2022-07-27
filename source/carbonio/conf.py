@@ -53,8 +53,8 @@ version = release
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ 'sphinx_design', 'sphinx.ext.extlinks',
-               'sphinx_copybutton', 'sphinxcontrib.email' ]
+extensions = [ 'sphinx_design', 'sphinx_copybutton',
+               'sphinxcontrib.email' ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -71,14 +71,6 @@ rst_prolog = """
 """ + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
-
-# extlinks, see
-# https://www.sphinx-doc.org/en/master/usage/extensions/extlinks.html
-extlinks = {
-    'carbonio': ('/carbonio/html/%s', None ),
-    'ce': ('/carbonio-ce/html/%s', None ),
-    'community': ('https://community.zextras.com/', None)
-}
 
 # copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
 copybutton_prompt_text = r'\$\s|#\s|carbonio>\s\zextras$%\s'
