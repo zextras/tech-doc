@@ -9,11 +9,14 @@ Beside using |new|, a new appointment can be created with a click of
 the mouse on the desired date and time on the calendar. The only
 difference is in the start (and end) date and time: by using the
 button, they are set to the current date and time, by clicking the
-calendar they are taken from the clicked date and time. Attendees,
-whose presence is either mandatory or optional, can be added by
-writing their e-mail address. In case the invitation was not sent or
-if something went wrong, the event will show up in the calendar, but
-marked wit ha red icon.
+calendar they are taken from the clicked date and time.
+
+Attendees, whose presence is either mandatory or optional, can be
+added by writing their e-mail address. In case the invitation was not
+sent or if something went wrong, the event will show up in the
+calendar, but marked with a red icon. The attendee can propose a new
+time. In this case, new e-mail will be generated and sent to the other
+participant to inform them of the change. 
 
 Additionally, :ref:`mail-tags` can be added to any calendar event.
 
@@ -29,3 +32,4 @@ finally click :bdg-primary:`ADD`.
 The calendar will appear in the list of calendars, and all the
 appointments are shown; toggle their visibility clicking the
 :octicon:`tasklist;1em;sd-text-primary` checkbox.
+
