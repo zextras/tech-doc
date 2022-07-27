@@ -121,16 +121,23 @@ detect whether a video server is set up an use it if available.
 Installation
 ============
 
-- Download the installer package from
-  https://www.zextras.com/it/thankyou-trial-suite/
+- Download the installer package for the Linux distribution on which
+  |suite| is installed (`RHEL 7 and CentOS 7
+  <https://download.zextras.com/videoserver-installer/latest/videoserver-r7.tgz>`_
+  :octicon:`dash` `RHEL 8 and CentOS 8
+  <https://download.zextras.com/videoserver-installer/latest/videoserver-r8.tgz>`_
+  :octicon:`dash` `Ubuntu 18.04
+  <https://download.zextras.com/videoserver-installer/latest/videoserver-u18.tgz>`_)
 
 - Copy the installer package to the server
 
-- Unpack the installer package, adapt it to the download
+- Unpack the installer package, adapting the name in the example
+  below by repacing ``[OS]`` with the proper string: **r7**, **r8**,
+  or **u18** :
 
   .. code:: console
              
-     # tar zxvf videoserver-[OS]-installer.tgz
+     # tar zxvf videoserver-[OS].tgz
 
 - Enter the unpacked directory: ``cd videoserver-installer``
 

@@ -41,11 +41,11 @@ executed as the ``zextras`` user.
 .. code::
 
    # su - zextras
-   # carbonio chats video-server add VS_IP port 8100 servlet_port 8090 secret VIDEOSERVER_PWD
+   # carbonio chats video-server add VS_IP port 8188 servlet_port 8090 secret VIDEOSERVER_PWD
    # carbonio config set global teamVideoServerRecordingEnabled true
    # carbonio config set cos default teamChatEnabled true
 
-Here, port **8100** is the default port used by |vs|, while **8090**
+Here, port **8188** is the default port used by |vs|, while **8090**
 for recording. Change these values according to your needs or
 preferences, but take into account that the value of the
 ``servlet_port`` **must match** the one defined for |vs| in file
