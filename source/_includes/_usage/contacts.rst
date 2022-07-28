@@ -7,7 +7,7 @@ you exchange e-mails and group them in address books. Existing address
 books appear on the column on the right of the component's list.
 You can create new contact by using the |new| button and selecting
 `New Contact`; they will be stored under the `Contacts` section of the
-Contacts component.
+Contacts component. :ref:`mail-tags` can be added to any contacts.
 Addresses of people to whom you send an e-mail are automatically added
 to the `Emailed Contacts`.
 
