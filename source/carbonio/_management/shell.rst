@@ -26,7 +26,7 @@ can be easily found.
 In the shell, use only the sub-command and parameters, removing the
 initial ``carbonio``. For example, command
 
-.. code::
+.. code:: console
 
    # carbonio chats clusterstatus
 
@@ -38,3 +38,31 @@ can be run in |sh| as
 
 The |sh| supports all carbonio commands, including provisioning (i.e.,
 :command:`carbonio prov`) commands.
+
+To launch multiple carbonio commands, you can save them in a file
+(called :file:`carbonio-commands.txt` here) and pipe them to the
+carbonio shell. For example, consider file
+:file:`carbonio-commands.txt` containing the commands:
+
+.. code:: console
+
+   prov ca user@example.com ''
+   prov sp user@example.com password
+   mobile doAddAccountLogger user@example.com debug /tmp/user@example.com
+   prov ma user@example.com zimbraFeatureMobileSyncEnabled TRUE
+   prov sm user@example.com cf /test
+   prov sm user@example.com addMessage /test /tmp/email.eml
+   prov ma user@example.com zimbraFeatureMobileSyncEnabled FALSE
+   prov da user@example.com ''
+   prov fc all
+
+All these command can be executed as
+
+.. code:: console
+
+   # cat carbonio-commands.txt | carbonio
+
+This proves useful, for example, when finding a procedure that
+requires to execute a set of ``carbonio`` commands: copy tand paste
+them into a file and run all of them sequentially without the need to
+copy and paste each single command.
