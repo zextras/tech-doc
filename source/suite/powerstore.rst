@@ -1489,77 +1489,84 @@ the same Zimbra infrastructure.
 
 When the command is executed, it will carry out a number of task:
 
-- When moving a domain, each account from the current server is
-  enumerated and moved sequentially.
+#. When moving a domain, each account from the current server is
+   enumerated and moved sequentially
 
-- The mailbox is set to maintenance mode only during the 'account'
-  stage.
+#. The mailbox is set to maintenance mode only during the 'account'
+   stage
 
-- The move will be stopped if 5% or more write errors are encountered
-  on items being moved.
+#. The move will be stopped if 5% or more write errors are encountered
+   on items being moved
 
-  - When multiple mailboxes are moved within the same operation, the
-    error count is global and not per-mailbox.
+   - When multiple mailboxes are moved within the same operation, the
+     error count is global and not per-mailbox
 
-- Moves will not start if the destination server does not have enough
-  space available to host the mailbox.
+#. Moves will not start if the destination server does not have enough
+   space available to host the mailbox
 
-  - When a single operation is used to move multiple mailboxes, the
-    space check will be performed before moving each mailbox.
+   - When a single operation is used to move multiple mailboxes, the
+     space check will be performed before moving each mailbox
 
-- All data is moved at a low-level and will not be changed except for
-  the mailbox id.
+#. All data is moved at a low-level and will not be changed except for
+   the mailbox ID
 
-- The operation is made up of 3 stages: blobs|backup|account. For each
-  mailbox:
+#. The operation is made up of 3 stages: `blobs` :octicon:`dash` `backup`
+   :octicon:`dash` `account`. For each mailbox:
 
-  - blobs: All blobs are copied from the source server to the
-    destination server.
+   - `blobs`: All blobs are copied from the source server to the
+     destination server
 
-  - backup: All backup entries are copied from the source server to
-    the destination server.
+   - `backup`: All backup entries are copied from the source server to
+     the destination server
 
-  - account: All database entries are moved as-is and LDAP entries are
-    updated, effectively moving the mailbox.
+   - `account`: All database entries are moved as-is and LDAP entries
+     are updated, effectively moving the mailbox
 
-- All of the stages are executed sequentially.
+   - `data` can be used as a shortcut for `blobs`, `account`
 
-- On the reindex stage’s completion, a new HSM operation is submitted
-  to the destination server, if not specified otherwise.
+#. All of the stages must executed **sequentially**, hence it is not
+   possible to execute `blobs` after `backup` or `account`. A valid
+   sequence is for example `blobs`, `account` (but not vice
+   versa!). Using the order `account`, `blobs` will throw an error.
 
-- All volumes' compression options are taken.
+#. On the reindex stage’s completion, a new HSM operation is submitted
+   to the destination server, if not specified otherwise
 
-- The MailboxMove operation can be executed if and only if no others
-  operations are running on the source server.
+#. All volumes' compression options are taken
 
-- A move will not start if the destination server does not have enough
-  space available or the user just belongs to the destination host.
+#. The MailboxMove operation can be executed if and only if no others
+   operations are running on the source server
 
-- By default, items are placed in the Current Primary volume of the
-  destination server.
+#. A move will not start if the destination server does not have
+   enough space available or the user just belongs to the destination
+   host
 
-  - The ``hsm true`` option can be used to apply the HSM policies of
-    the destination server after a mailbox is successfully moved.
+#. By default, items are placed in the Current Primary volume of the
+   destination server
 
-- If, for any reason, the move stops before it is completed the
-  original account will still be active and the appropriate
-  notificaton will be issued.
+   - The ``hsm true`` option can be used to apply the HSM policies of
+     the destination server after a mailbox is successfully moved
 
-- Should the mailboxd crash during move, the "Operation Interrupted"
-  notification is issued as for all operations, warning the users
-  about the interrupted operation.
+#. If, for any reason, the move stops before it is completed the
+   original account will still be active and the appropriate
+   notificaton will be issued.
 
-- Index information are moved during the 'account' stage, so no manual
-  reindexing is needed nor one will be triggered automatically.
+#. Should the mailboxd crash during move, the ``Operation Interrupted``
+   notification is issued as for all operations, warning the users
+   about the interrupted operation
 
-- When moving accounts from source to destination server, *by default*
-  HSM is carried out only on the moved accounts, right after they have
-  been successfully moved.
+#. Index information are moved during the `account` stage, so no
+   manual reindexing is needed nor one will be triggered
+   automatically
 
-  - The admin can however choose to defer the HSM at a later point.
+#. When moving accounts from source to destination server, *by
+   default* HSM is carried out only on the moved accounts, right after
+   they have been successfully moved
 
-- If for any reason the second stage is not successful, HSM is not
-  executed.
+   - The admin can however choose to defer the HSM at a later point
+
+#. If for any reason the second stage is not successful, HSM is not
+   executed
 
 .. _zextras_powerstore_cli:
 
