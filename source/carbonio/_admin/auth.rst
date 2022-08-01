@@ -453,3 +453,21 @@ Administration GUI:
 #. The user must access the mailbox within 12 hours before the link
    expires
 
+
+Corner Cases of 2FA
+-------------------
+
+2FA is a popular mechanism to allow users a secure login to an
+infrastructure, based on a temporary token (usually in the form of a
+QR code) besides the usual user/password combination.
+
+There are however a few cases in which 2FA can not be used: consider
+for example a domain or mailstore on which 2FA is enabled, but there
+is an application that wants or needs to use the SMTP service: since
+SMTP does not support 2FA, the application would not work.
+
+To avoid situation like this, which may involve any service or
+protocol not supporting 2FA (like, e.g., the above mentioned SMTP or
+SOAP), on |product|, an Administrator can create suitable
+username/password combinations that can be used by the service to
+operate correctly.
