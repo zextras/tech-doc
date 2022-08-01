@@ -79,3 +79,8 @@ done on files and folders
       a new version is uploaded. Manual removal of unused or deprecated
       versions of a file is possible.
 
+      By default, *five* version can be stored for each file.  Editing
+      a file that has reached this limit is prevented, with an error
+      message informing of the reached limit.  This limit can be
+      customised and even removed, by configuring it to **-1**.
+
