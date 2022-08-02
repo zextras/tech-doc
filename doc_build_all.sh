@@ -7,8 +7,11 @@
 #
 # Simple script to build all products at once
 
+# to wipe out the old build and write a fresh one, use
+# make -C source/$i clean html
+
+
 for i in carbonio carbonio-ce suite ; do
-    # use clean html to wipe out the old build and write a fresh one
     make -C source/$i html
 done
 

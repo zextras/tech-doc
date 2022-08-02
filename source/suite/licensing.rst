@@ -213,12 +213,9 @@ Suite Mobile* with **Zextras Suite Pro** or add **Team Pro** to
 Add a Maintenance Service to a Perpetual License
 ------------------------------------------------
 
-The Maintenance Service is **mandatory** for Perpetual Licenses
-and it is **cumulative**.
-
-Therefore, you need a valid (i.e., not-expired) Maintenance Service
-subscription to access technical support or to install software
-updates.
+The Maintenance Service is **cumulative** and you need a valid (i.e.,
+not-expired) Maintenance Service subscription to access technical
+support or to install software updates.
 
 If your Maintenance Service subscription has already expired, you need
 to pay the Maintenance Service fees for all the missing period,

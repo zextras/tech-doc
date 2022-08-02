@@ -3,8 +3,6 @@ Upstream-Name: Zextras Documentation Hub
 Upstream-Contact: Zextras <https://www.zextras.com/>
 Source: 
 
-# Sample paragraph, commented out:
-#
 Files: source/img/* *.csv *.txt
 Copyright: 2022  Zextras <https://www.zextras.com/>
 License: CC-BY-NC-SA-4.0
