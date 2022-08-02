@@ -1,0 +1,26 @@
+/*
+ * SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+ *
+ * SPDX-License-Identifier: CC-BY-NC-SA-4.0
+ */
+
+@import url("common.css");
+
+.wy-nav-side p.caption {
+    color: var(--zx-color-flame);
+}
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+    background-image:
+        linear-gradient(to right,
+                        var(--zx-color-magma),
+                        var(--zx-color-flame));
+}
+/* Sidebar */
+.wy-nav-side {
+    background: var(--zx-color-carbon);
+}
+
+.wy-side-nav-search > a > p {
+    font-size: 120%;
+}

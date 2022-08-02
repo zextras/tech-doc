@@ -1,0 +1,340 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite 3.1.9
+===================
+
+Release Date: March 22nd, 2021
+
+.. rubric:: Backup
+
+* Issue ID: BCK-24
+
+* *Title:* Fixed and added more info to restore blobs command for notifications
+
+* *Description:* Now, after a restore blobs operation has been performed, the list of parameters is correctly displayed.
+
+..
+
+* Issue ID: BCK-437
+
+* *Title:* Backup's CLI doItemRestore accepts parameter in different forms
+
+* *Description:* Now the CLI accepts the account's name or the account's id as parameter
+
+..
+
+* Issue ID: BCK-439
+
+* *Title:* Changed backupChatEnabled attribute default value to false
+
+* *Description:* Now, by default, the backup has been disabled.
+
+..
+
+* Issue ID: BCK-446
+
+* *Title:* Added a new parameter to undelete command
+
+* *Description:* Now, with the undelete command is possible to restore deleted items in their original folder
+
+..
+
+* Issue ID: BCK-447
+
+* *Title:* NullPointerException during purge with third party backup fixed
+
+* *Description:* Fixed a bug that prevented to complete the purge operation if third party backup on S3 is enabled
+
+..
+
+* Issue ID: BCK-461
+
+* *Title:* doRestoreOnNewAccount command has been fixed
+
+* *Description:* Fixed issue that prevented restoring older deleted account when backup contains multiple accounts with the same name.
+
+
+..
+
+* Issue ID: BCK-493
+
+* *Title:* Backup on external volume has been fixed
+
+* *Description:* Fixed the check if backup is migrated on a new bucket with the same credentials
+  Fixed the creation of backup volume directly from migrate/set command
+
+.. rubric:: General
+
+* Issue ID: COR-515
+
+* *Title:* doDeployClientZimlet download fixed
+
+* *Description:* Fixed a bug that was downloading the zimlet from a wrong path
+
+
+..
+
+* Issue ID: COR-516
+
+* *Title:* The doDeploy command's error message has been improved with explanation
+
+* *Description:* Now, when doDeploy command fails, a message is displayed containing the error and the explanation
+
+
+..
+
+* Issue ID: COR-572
+
+* *Title:* GetAllOperations command has been fixed
+
+* *Description:* Fixed a bug that prevented the correct output from being displayed if no operations were running
+
+
+..
+
+* Issue ID: COR-584
+
+* *Title:* The display of the config status has been improved
+
+* *Description:* Now, in the case of out-of-sync nodes the config status reports the errors and the related causes
+
+.. rubric:: Docs
+
+* Issue ID: DOCS-113
+
+* *Title:* Popup error if user clicks on preferences before complete zimlet load
+
+* *Description:* Popup error if a user clicks on preferences before complete Docs zimlet load
+
+.. rubric:: Drive
+
+* Issue ID: DRIV-974
+
+* *Title:* Special characters in Drive file name fixed
+
+* *Description:* Now it is possible to save into Drive attachments that have a single quote in the name
+
+.. rubric:: Mobile
+
+* Issue ID: MOB-306
+
+* *Title:* Shared folders file download fixed
+
+* *Description:* Fixed a bug that prevented attachments to be downloaded from emails in shared folders.
+
+
+..
+
+* Issue ID: MOB-308
+
+* *Title:* EAS autocomplete honor zimbra contacts autocomplete settings
+
+* *Description:* When composing a new mail via EAS device, autocomplete on recipient address will search in local contact, GAL, or shared contacts, honoring Zimbra contacts settings (zimbraPrefSharedAddrBookAutoCompleteEnabled, A_zimbraPrefGalAutoCompleteEnabled)
+
+.. rubric:: Powerstore
+
+* Issue ID: PS-286
+
+* *Title:* Fixed logs for mailbox purge command
+
+* *Description:* Fixed a bug that wrongly displayed the logs for mailbox purge command
+
+
+..
+
+* Issue ID: PS-291
+
+* *Title:* DoMailboxMove now returns an error for missing parameters
+
+* *Description:* Added an error that is shown when a user tries to perform a mailbox move operation by CLI without specifying any parameters or specifying the wrong ones.
+
+
+..
+
+* Issue ID: PS-297
+
+* *Title:* BulkDelete service fixed
+
+* *Description:* Fixed a bug that doesn't retry failed deletions on the local file system
+
+.. rubric:: Team
+
+* Issue ID: TEAMS-2054
+
+* *Title:* Improved Instant Meeting UI
+
+* *Description:* Such a big UI improvement for Instant Meeting, with a
+  new layout with grid-mode or cinema-mode, both with fullscreen
+  available; see the list of who is speaking, use the push to talk
+  feature or mute/unmute someone with microphone issues.  Participants
+  list is cleaner and more organized, you can cycle it if your meeting
+  is large.  Resizing the window will adjust automatically every ui
+  component of the instant meeting.  Instant Metting will remain open
+  if the owner is still in there, otherwise if owner left and you're
+  the last user in there the Instant Meeting will close automatically.
+
+
+..
+
+* Issue ID: TEAMS-2128
+
+* *Title:* Mute notifications button added
+
+* *Description:* Added mute notifications button in one to one conversations, groups, spaces.
+
+
+..
+
+* Issue ID: TEAMS-2167
+
+* *Title:* Mute feature for conversations added
+
+* *Description:* It is now possible to mute the conversations, groups and spaces to avoid notifications.
+
+
+
+..
+
+* Issue ID: TEAMS-2353
+
+* *Title:* Meeting views on grid mode have been improved
+
+* *Description:* Now, during a meeting, a user can see if other users are talking, via the green border that appears in their panel
+
+
+..
+
+* Issue ID: TEAMS-2356
+
+* *Title:* Little tiles separation
+
+* *Description:* Stream components are more visible thanks to its margin
+
+
+..
+
+* Issue ID: TEAMS-2357
+
+* *Title:* Writing notification fixed in conversations
+
+* *Description:* If the connection with the server is lost while writing, the "is writing" notification will remain until logout. Now this has been fixed.
+
+
+..
+
+* Issue ID: TEAMS-2376
+
+* *Title:* Chat list filter has been improved
+
+* *Description:* Now, when the user clicks on the "chats" tab after filtering the chat list, the filter is reset
+
+
+..
+
+* Issue ID: TEAMS-2380
+
+* *Title:* Removed notifications for messages of join, left and kicked type on channels and spaces
+
+* *Description:* Removed notifications for messages from badge for channels and spaces in case someone joins, left or has been kicked out from a channel or space, only if these messages were received during the session
+
+
+..
+
+* Issue ID: TEAMS-2382
+
+* *Title:* A new button has been added to mini-chat for calls
+
+* *Description:* Added a new button on mini-chat header that allows you to call the other member/members who are part of the conversation
+
+
+..
+
+* Issue ID: TEAMS-2384
+
+* *Title:* A new button has been added to switch from the Team tab to the related mini-chat
+
+* *Description:* Added a new button on conversation header that allows you to direct to the related mini-chat
+
+
+..
+
+* Issue ID: TEAMS-2385
+
+* *Title:* A new button has been added to switch from the mini-chat to the Team tab
+
+* *Description:* Added a new button on mini-chat header that allows you to direct to the related conversation on the Team tab
+
+
+..
+
+* Issue ID: TEAMS-2392
+
+* *Title:* Team user search does not performs too many searches
+
+* *Description:* Check if team search do not performs too many searches
+
+
+..
+
+* Issue ID: TEAMS-2433
+
+* *Title:* Added copy in message menu
+
+* *Description:* Added copy functionality on bubble contextual menu
+
+
+..
+
+* Issue ID: TEAMS-2477
+
+* *Title:* Mailbox move must handle mute
+
+* *Description:* When mailbox move is performed, even mute conversation info should be moved
+
+
+..
+
+* Issue ID: TEAMS-2491
+
+* *Title:* GetHistory doesn't show deleted messages
+
+* *Description:* GetHistory doesn't show deleted messages
+
+
+..
+
+* Issue ID: TEAMS-2498
+
+* *Title:* Add papyrous as conversation background image
+
+* *Description:* Add papyrous as conversation background image
+
+
+..
+
+* Issue ID: TEAMS-2615
+
+* *Title:* Video Server installer differentiates Zimbra NE and OSE installation
+
+* *Description:* Now the Video Server installer provides the command to run to configure it both on Zimbra Network Edition and Zimbra Open Source Edition.
+
+
+..
+
+* Issue ID: TEAMS-2620
+
+* *Title:* Error with multi version cluster
+
+* *Description:* Exception is thrown when a user on a server using APIv9 create a conversation with a user on a server using APIv10
+
+
+..
+
+* Issue ID: TEAMS-2621
+
+* *Title:* Fixed janus calls bug on rooms
+
+* *Description:* Fixed a bug that prevented the calls in rooms to be started if these rooms are on a different server than the user's.
+

@@ -1,0 +1,37 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite Changelog - Release 3.9.0
+=======================================
+
+   Release Date: January 24th, 2022
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-316
+
+* *Title:* Print static OTP codes
+
+* *Description:* It is now possible to print the security static codes
+  generated during the configuration of the OTP authentication as a
+  user.
+
+..
+
+* *Issue ID:* AUTH-341
+
+* *Title:* Change zimbra Password After enables the custom:zx AuthMech
+
+* *Description:* After Admin enables the custom:zx AuthMech, the users
+  lost the possibility to change it password.  Admins want user to
+  change the password according to the internal policy and also Users
+  want to change the password, but users can’t.
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-3302
+
+* *Title:* Decoded senders' display name
+
+* *Description:* Android devices can decode the Cyrillic names correctly

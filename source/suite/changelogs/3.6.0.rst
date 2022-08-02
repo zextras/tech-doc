@@ -1,0 +1,80 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite Changelog - Release 3.6.0
+=======================================
+
+Release Date: October 4th, 2021
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-300
+
+* *Title:* OTP Label is now customizable
+
+* *Description:* Users can now edit labels of newly generated TOTPs.
+
+.. rubric:: Drive
+
+* *Issue ID:* DRIV-1207
+
+* *Title:* Window title now reads Drive in place of Zimbra Drive.
+
+* *Description:* The title of Drive window for external users has changed to "Drive".
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-325
+
+* *Title:* Enhanced Mailbox move speed
+
+* *Description:* Optimizations to the `MailboxMove` command operation now speeds up the operation thereby reducing the time taken.
+
+..
+
+* *Issue ID:* PS-342
+
+* *Title:* Tika indexing exceptions management enhanced
+
+* *Description:* Documents that raise 204 (no content) and 422 (unprocessable entity) HTTP codes as a result of Tika parsing are no longer re-tried and a log is reported in the `mailbox.log` file.
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-2317
+
+* *Title:* Optimized Team performance to address lag
+
+* *Description:* Zextras Team now performs better and no longer lags after prolonged usage.
+
+..
+
+* *Issue ID:* TEAMS-2440
+
+* *Title:* Updated logs for ChatAutoCleanup procedure
+
+* *Description:* The ChatAutoCleanup procedure now no longer shows incomplete logs.
+
+..
+
+* *Issue ID:* TEAMS-2510
+
+* *Title:* Teams no longer saves mute status of exiting users
+
+* *Description:* Users' mute status is no longer remembered by Teams and users returning to an ongoing conversation are not muted -- irrespective of their mute status when exiting.
+
+..
+
+* *Issue ID:* TEAMS-3034
+
+* *Title:* Improved Team file download
+
+* *Description:* Users sometimes faces issues when downloading files sent by other users. The download of a file from one-to-one chat now no longer suffers casual failures due to buffer issues.
+
+..
+
+* *Issue ID:* TEAMS-3108
+
+* *Title:* Fixed a paste issue on Chrome versions higher than 91.
+
+* *Description:* Fixed issue where users, on chrome version higher than 92, experienced issues when pasting text in a conversation.

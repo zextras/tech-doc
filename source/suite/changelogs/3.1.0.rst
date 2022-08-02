@@ -1,0 +1,409 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite 3.1.0
+===================
+
+Release Date: July 14th, 2020
+
+.. rubric:: Backup
+
+
+..
+
+* Issue ID: BCK-230
+
+* *Title:* Itemrestore logs improvements
+
+* *Description:* Restore log lines now specify the primary address of the restored item's account
+
+
+
+
+
+..
+
+* Issue ID: BCK-248
+
+* *Title:* Missing digests reported in backup coherency check
+
+* *Description:* Fixed a bug that prevented missing digests to be reported in backup coherency check.
+
+
+
+
+
+..
+
+* Issue ID: BCK-262
+
+* *Title:* RestoreOnNewAccount domain creation fix
+
+* *Description:* Fixed a bug that caused a domain to be undeleted when running a dorestoreonnewaccount operation recovering an account from a deleted domain
+
+
+
+
+
+..
+
+* Issue ID: BCK-273
+
+* *Title:* HSM service mandatory for restore operation
+
+* *Description:* RestoreBlob operations now require the hsm module to be running, otherwise an error is returned
+
+
+
+
+
+..
+
+* Issue ID: BCK-284
+
+* *Title:* Restore account with deleted COS fixed
+
+* *Description:* Fixed a bug that caused the restore on new account to fail when the assigned COS was deleted.
+
+
+
+.. rubric:: General
+
+
+..
+
+* Issue ID: COR-300
+
+* *Title:* Made CLI parameters and attribute names case-insensitive
+
+* *Description:* Parameters and attribute names are now recognized with any capitalization to improve CLI usability
+
+
+
+
+
+..
+
+* Issue ID: COR-361
+
+* *Title:* No more false unknown logins in admin panel reported
+
+* *Description:* Fixed a bug that caused false unknown logins to be reported in the monthly report relative to admins activities.
+
+
+
+
+
+..
+
+* Issue ID: COR-371
+
+* *Title:* Added admin interface translations
+
+* *Description:* Admin interface has been translate into Portuguese, French, German, Italian, Spanish, Dutch,  Japanese, Simplified Chinese, Indonesian, Thai, and Hindi.
+
+
+
+.. rubric:: Drive
+
+
+..
+
+* Issue ID: DRIV-338
+
+* *Title:* Several minor drive import improvements
+
+* *Description:* Logging has been improved for doImportBriefcase operations: user details for each line, exceptions are listed, the number of account is liste, a final report has been added and a missing account is no longer a blocking condition
+
+
+
+
+
+..
+
+* Issue ID: DRIV-750
+
+* *Title:* Fixed drive cyrillic fonts handling on download
+
+* *Description:* Fixed an issue that mangled the filename of drive items on download when cyrillic fonts were present
+
+
+
+
+
+..
+
+* Issue ID: DRIV-765
+
+* *Title:* Completed translation for Drive's docs menu entries
+
+* *Description:* Docs related menu entries under the drive tab have all been translated
+
+
+
+
+
+..
+
+* Issue ID: DRIV-771
+
+* *Title:* Made Drive panel similar between classic and modern
+
+* *Description:* Done some graphical review of Drive panel to make it very similar between classic and modern GUI.
+
+
+
+
+
+..
+
+* Issue ID: DRIV-783
+
+* *Title:* Info button in Drive search views fixed
+
+* *Description:* Fixed a bug that prevented the info button to be clickable in search views, these comprehend the default views (starred, shared by me, shared with me and Trash views).
+
+
+
+
+
+..
+
+* Issue ID: DRIV-785
+
+* *Title:* Versions' Upload and Purge buttons disabled in view only shares
+
+* *Description:* Purge and Upload buttons remained enabled in versioning for view only shares. Now this has been fixed.
+
+
+
+
+
+..
+
+* Issue ID: DRIV-786
+
+* *Title:* Improved versioning description
+
+* *Description:* The versioning description is now independent from the retention time and the number of versions to keep.
+
+
+
+
+
+..
+
+* Issue ID: DRIV-790
+
+* *Title:* Removed meaningless drive menu entry
+
+* *Description:* The Dirve move menu entry has been removed for "shared with me" items
+
+
+
+.. rubric:: Powerstore
+
+
+..
+
+* Issue ID: PS-235
+
+* *Title:* Check_digests implicit for fix_incorrect_compressed_digests
+
+* *Description:* It is no longer necessary to specify check_digests true when fix_incorrect_compressed_digests is also true
+
+
+
+
+
+..
+
+* Issue ID: PS-241
+
+* *Title:* Fixed missing text on web admin interface
+
+* *Description:* The command for viewing the current moveblobs operation is now returned when a mailboxmove operation is launched from the web interface
+
+
+
+
+
+..
+
+* Issue ID: PS-242
+
+* *Title:* Fixed customs3 bucket migration issue
+
+* *Description:* Fixed an issue that would not add "storeType CUSTOM_S3" to custom buckets configuration when upgrading to the new bucket management if a custom_s3 bucket and at least one swift or openio volume is present
+
+
+
+.. rubric:: Team
+
+
+..
+
+* Issue ID: TEAMS-1329
+
+* *Title:* Missing Safari notifications fix
+
+* *Description:* Fixed on screen notifications that were missing in safari
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1389
+
+* *Title:* Provide relative path for websocket and v7 API
+
+* *Description:* Team login now provides a relative local path for websockets and the version 7 of the API
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1561
+
+* *Title:* Graphical improvements for emoji selector
+
+* *Description:* Made the emoji selector more harmonious
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1562
+
+* *Title:* Added scrollbars to instant messaging elements
+
+* *Description:* Scrollbars are available to view all the elements available in the interface.
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1579
+
+* *Title:* Improved instant message lenght limit management
+
+* *Description:* It should not be possible to instert more than 4096 character in an instant message (previously it was possible to do so but it would have been truncated)
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1580
+
+* *Title:* Improved add participants view
+
+* *Description:* The avatar icon has been added to the add participants view of the instant meetings
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1588
+
+* *Title:* Improved send message icon
+
+* *Description:* The icon used to send instant messages should switch from an airplane to a clip depending if text has been inserted in the textbox
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1612
+
+* *Title:* Added empty message handling
+
+* *Description:* It should not possible to send an instant message made only of empty space
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1614
+
+* *Title:* Improved notifications of read messages
+
+* *Description:* The notifications of read messages now shows who has read the messages in groups, spaces and instant meetings.
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1628
+
+* *Title:* Improved user details section
+
+* *Description:* Improved the user details section of one on one conversations where the user's name was truncated too early
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1633
+
+* *Title:* Completed translations of user's settings
+
+* *Description:* The device settings of the user's settings section are now translated
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1634
+
+* *Title:* Added translation for file description
+
+* *Description:* Added translation for the file description when attaching a file to an instant message
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1638
+
+* *Title:* Removed end meeting notification
+
+* *Description:* The end meeting message does no longer trigger a notification
+
+
+
+
+
+..
+
+* Issue ID: TEAMS-1650
+
+* *Title:* Updated translations for new graphics
+
+* *Description:* Translations have been extended and now all elements for audio/video meetings are translated
+
+

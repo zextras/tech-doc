@@ -1,0 +1,219 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite 3.1.8
+===================
+
+Release Date: February 22nd, 2021
+
+.. rubric:: Auth
+
+* Issue ID: AUTH-196
+
+* *Title:* Improved logging
+
+* *Description:* Added more information to the log when an invalid credential is used
+
+
+.. rubric:: Backup
+
+* Issue ID: BCK-291
+
+* *Title:* Missing Blob logging improvement
+
+* *Description:* Missing Blob log lines have been made more specific
+
+
+..
+
+* Issue ID: BCK-364
+
+* *Title:* Coherency Check logic improvement
+
+* *Description:* Anomaly and error management logic in the Coherency Check has been improved.
+
+
+
+..
+
+* Issue ID: BCK-431
+
+* *Title:* `doStopAllOperation` realtime scanner queue bugfix
+
+* *Description:* Due to a bug, pending RealTime Scanner operations were not properly cleared out from the operation queue by the `doStopAllOperations` command.
+
+
+
+..
+
+* Issue ID: BCK-433
+
+* *Title:* Added backup of all ldap master host
+
+* *Description:* Fixed an issue with the command zxsuite core getnotification when a host was specified with --host
+
+
+.. rubric:: General
+
+* Issue ID: COR-402
+
+* *Title:* Remote getnotification fix
+
+* *Description:* Fixed an issue with the command zxsuite core getnotification when a host was specified with --host
+
+
+.. rubric:: Docs
+
+* Issue ID: DOCS-95
+
+* *Title:* Docs Sidebar View bugfix
+
+* *Description:* Due to some missing icons, the sidebar in Docs appeared broken.
+
+
+
+..
+
+* Issue ID: DOCS-117
+
+* *Title:* Docs logging improvement
+
+* *Description:* Docs logging has been made more verbose, now save operations are logged in /opt/zimbra/log/docs-server.log
+
+
+
+..
+
+* Issue ID: DOCS-118
+
+* *Title:* Docs idle/standby removal
+
+* *Description:* Docs no longer sets itself in idle/standby remaining ready to accept user interaction
+
+
+
+..
+
+* Issue ID: DOCS-125
+
+* *Title:* Docs document limit bugfix
+
+* *Description:* Fixed a bug that caused a 50 concurrent documents limit on the server's side
+
+
+
+.. rubric:: Mobile
+
+* Issue ID: MOB-288
+
+* *Title:* Added regex filtering to ABQ
+
+* *Description:* It is now possible to filter devices via RegEx through a dedicated ABQ command set.
+
+..
+
+* Issue ID: MOB-301
+
+* *Title:* Eas 2.5 and Samsung allday calendar item fix
+
+* *Description:* Fixed an issue that would cause allday calendar events created or accepted on mobile to be moved to the day before if the device is Samsung or using an older eas version
+
+
+.. rubric:: Powerstore
+
+* Issue ID: PS-276
+
+* *Title:* Powerstore cache improvements
+
+* *Description:* After a mailboxd failure or restard under heavy load, several partial blobs were left over in the cache.
+
+
+
+..
+
+* Issue ID: PS-277
+
+* *Title:* 'doMailboxMove` can now move mailboxless accounts
+
+* *Description:* The `doMailboxMove` is now capable to move accounts that lack a mailbox.
+
+
+
+..
+
+* Issue ID: PS-284
+
+* *Title:* Mailbox Move concurrency issue fixed
+
+* *Description:* Fixed a bug that caused mailbox moves to hang due to drive indexing being running on the same mailbox.
+
+
+.. rubric:: Team
+
+* Issue ID: TEAMS-2265
+
+* *Title:* doDeployTeamZimlet error line fix
+
+* *Description:* Fixed the error output appearing when the doDeployTeamZimlet fails, previously it was incorrectly refering to Drive
+
+
+
+..
+
+* Issue ID: TEAMS-2297
+
+* *Title:* Multiple VideoServers can now be used
+
+* *Description:* The hard limit on one VideoServer per infrastructure has been lifted. It is now possible to set up multiple VideoServer instances on the same infrastructure
+
+
+
+..
+
+* Issue ID: TEAMS-2310
+
+* *Title:* Messages longer than 4096 handling
+
+* *Description:* instant messages longer than 4096 characters are now truncated and no longer stay in queue
+
+
+
+..
+
+* Issue ID: TEAMS-2312
+
+* *Title:* Added # character to channels
+
+* *Description:* Channel names now have the character # in front of their name
+
+
+
+..
+
+* Issue ID: TEAMS-2366
+
+* *Title:* Edit message behavior improvement
+
+* *Description:* Edited messages, either in 1:1 conversations, groups, spaces or channels, are not resend if the content has not been changed
+
+
+
+..
+
+* Issue ID: TEAMS-2405
+
+* *Title:* Instant messaging interface font
+
+* *Description:* Fonts now honor the small-normal-large-verylarge value of the display font size option for the instant messaging features
+
+
+
+..
+
+* Issue ID: TEAMS-2447
+
+* *Title:* VideoServer installer improvements
+
+* *Description:* The VideoServer installer has been updated in order to avoid some corner cases that could cause the installation to fail.
+

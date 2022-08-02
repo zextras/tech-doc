@@ -1,0 +1,153 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite Changelog - Release 3.5.0
+=======================================
+
+Release Date: September 6th, 2021
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-291
+
+* *Title:* Improve logs for failed OTP attempt
+
+* *Description:* The audit logs now display the account name for failed OTP attempts.
+
+.. rubric:: General
+
+* *Issue ID:* COR-595
+
+* *Title:* Text selection now possible in admin panels
+
+* *Description:* In Zextras suite (not Zimbra Network Edition or Zimbra Suite Plus) users can now select and copy text in admin panel's web interface.
+
+..
+
+* *Issue ID:* COR-628
+
+* *Title:* `getNotification` command -- support for `json`
+
+* *Description:* For enhanced monitoring and increased automation, `getNotification` command now supports `json` format output.
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-338
+
+* *Title:* Improved store purge operation
+
+* *Description:* Zimbra mail and drive items are now properly purged in case of centralized volumes.
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-2816
+
+* *Title:* Enhanced input textbox for creating one to one chats
+
+* *Description:* When users searched for a contact to add in the one to one chat textbox, they couldn't see the text they typed; this issue is now fixed.
+
+..
+
+* *Issue ID:* TEAMS-2966
+
+* *Title:* Changed "Mute for All" to "Mute"
+
+* *Description:* Changed the meeting action from "Mute for All" to "Mute"
+
+..
+
+* *Issue ID:* TEAMS-2971
+
+* *Title:* Fixed appearance of bubble notifications of conversations in Safari
+
+* *Description:* Notifications appeared truncated for Safari users. This issue is now fixed and text in notifications appear correctly.
+
+..
+
+* *Issue ID:* TEAMS-2981
+
+* *Title:* Fixed the string video-server as it appeared on the command's description.
+
+* *Description:* Fixed an inconsistency in `video-server`'s command description which appeared When users checked help for "zxsuite team video-server add" or "zxsuite team video-server remove", the description carried different spellings for "video-server".
+
+..
+
+* *Issue ID:* TEAMS-2982
+
+* *Title:* Fixed minichat trigger on receiving a system message.
+
+* *Description:* Minichats no longer open for following system
+  messages:
+  
+  - Meeting started
+  - Meeting ended
+  - Someone joins the conversation
+  - Someone leaves the conversation
+  - Someone has changed the topic, title, or avatar of conversation
+
+..
+
+* *Issue ID:* TEAMS-2983
+
+* *Title:* Mini chats no longer available after user removal
+
+* *Description:* Mini chats automatically close after a user is no longer a part of the conversation. Earlier even when users were not a part of a conversation, the chat box remained enabled.
+
+..
+
+* *Issue ID:* TEAMS-2991
+
+* *Title:* Fixed selection of appropriate Zimlet
+
+* *Description:* If a meeting is opened with dedicated mode and the user is authenticated then the Zimlet must be equal to the one opened by Zextras.
+
+..
+
+* *Issue ID:* TEAMS-2997
+
+* *Title:* Fixed `UsersCleanup` command
+
+* *Description:* Fixed `UsersCleanup` command to remove deleted users' data from participants list of all conversations
+
+..
+
+
+* *Issue ID:* TEAMS-3013
+
+* *Title:* Remove secondary bar on external meeting
+
+* *Description:*  Removed secondary bar on external meeting and updated year in the external access login page
+
+..
+
+* *Issue ID:* TEAMS-3022
+
+* *Title:* Hide Emoji panel on dropping file
+
+* *Description:* Fixed an unexpected behaviour that prevented the emoji panel to close when it is opened and a file is dropped in a conversation with the purpose of sending it
+
+..
+
+* *Issue ID:* TEAMS-3027
+
+* *Title:* Remove new meeting notification on meeting external tab
+
+* *Description:* Notifications of new meetings have been removed on participating in a meeting from an external tab.
+
+..
+
+* *Issue ID:* TEAMS-3031
+
+* *Title:* Minichat configuration now differentiates the conversations to show
+
+* *Description:* Users can now decide whether to show mini chats based on the chat as the configuration differentiates between one to one chats, groups, and spaces.
+
+..
+
+* *Issue ID:* TEAMS-3035
+
+* *Title:* Meetings on external tab require login if domain is different from user's one
+
+* *Description:* Meetings on external tab require login if the domain is different from the user's one because login data are saved on local storage
+

@@ -1,0 +1,30 @@
+/*
+ * SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+ *
+ * SPDX-License-Identifier: CC-BY-NC-SA-4.0
+ */
+
+@import url("common.css");
+
+
+/* Sidebar */
+.wy-nav-side {
+    background: var(--zx-color-abyss);
+}
+
+/* indent "subtopics" */ 
+.wy-menu > ul > li > a[href$="license-file-management.html"],
+.wy-menu > ul > li > a[href$="restorestrategies.html"],
+.wy-menu > ul > li > a[href$="advancedbackup.html"],
+.wy-menu > ul > li > a[href$="ldapaddressbook.html"],
+.wy-menu > ul > li > a[href$="mobile-troubleshooting.html"],
+.wy-menu > ul > li > a[href$="attachment.html"],
+.wy-menu > ul > li > a[href$="contentextractor.html"],
+.wy-menu > ul > li > a[href$="videoserver.html"]{
+    margin-left: 20px;
+}
+
+.document {
+    margin-top: 10px;
+}
+

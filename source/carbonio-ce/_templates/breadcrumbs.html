@@ -1,0 +1,15 @@
+<!--
+SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+
+SPDX-License-Identifier: CC-BY-NC-SA-4.0
+-->
+
+{%- block breadcrumbs %}
+<a href="{{ pathto(master_doc) }}" class="icon fa-arrow-circle-left" style="color:#2980B9"></a> &raquo;</li>
+    {%- for doc in parents %}
+      <a href="{{ doc.link|e }}">{{ doc.title }}</a> &raquo;
+      {%- endfor %}
+      {{ title }}
+      <br><br>
+{%- endblock %}
+

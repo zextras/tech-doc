@@ -1,0 +1,46 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite Changelog - Release 3.10.0
+========================================
+
+Release Date: March 7th, 2022
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-345
+
+* *Title:* Delegated admins can now manage the mobile passwords
+
+* *Description:* The mobile passwords can now be created and deleted by the delegated admins.
+
+
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-649
+
+* *Title:* Orphan blobs on purge bug fixed
+
+* *Description:* Fixed a bug that made the purge operation only delete the blob relative to the last state of the item, causing lots of orphaned blobs in the backup path for items with different blob versions such as emails drafts for instance.
+
+
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-331
+
+* *Title:* Correcting the warning in check blobs operation log for unexpected folder
+
+* *Description:* In case of an unexpected folder in the store path, a clearer warning is reported in the check blobs operation log to avoid misunderstandings.
+
+
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-3403
+
+* *Title:* Solved chat database migration error
+
+* *Description:* Fixed a bug that caused the Team DB migration to fail when legacy Chat data was already present.

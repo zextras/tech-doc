@@ -1,0 +1,254 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite 3.1.3
+===================
+
+Release Date: October 5th, 2020
+
+.. rubric:: Backup
+
+..
+
+* Issue ID: BCK-365
+
+* *Title:* CoherencyCheck stopping procedure fixed
+
+* *Description:* Now the Coherency Check stops without checking server configurations if stop is sent before the check starts.
+
+
+
+..
+
+* Issue ID: BCK-370
+
+* *Title:* Restore operation now preserve folders' colors
+
+* *Description:* Colors of folders are now preserved while restoring from an external source.
+
+
+
+..
+
+* Issue ID: BCK-373
+
+* *Title:* Fixed restore of Drive revisions
+
+* *Description:* A bug that prevented the current version of a Drive document to be correctly restored in an external restore has been fixed.
+
+
+
+..
+
+* Issue ID: BCK-374
+
+* *Title:* Restore operation now preserves keep forever attribute in Drive
+
+* *Description:* The "keep forever" attribute of Drive file versions is now preserved on external restore.
+
+
+
+..
+
+* Issue ID: BCK-380
+
+* *Title:* Improve restore drive share loglines
+
+* *Description:* Improved restore operation loglines for drive shares so that no longer point to "new target"
+
+
+.. rubric:: General
+
+..
+
+* Issue ID: COR-374
+
+* *Title:* Notification panel redesign
+
+* *Description:* Based on customers' inquiries, the notifications' list and the operations' queue in the zimbraAdmin have been completely redesigned to be more clear and and easily usable by admins.
+
+
+.. rubric:: Drive
+
+..
+
+* Issue ID: DRIV-885
+
+* *Title:* Improve deleted shared drive items handling
+
+* *Description:* Drive shared items are now shown as striked in "shared with me" instead of being listed in the trash folder
+
+
+
+..
+
+* Issue ID: DRIV-928
+
+* *Title:* A new command shows Drive quotas
+
+* *Description:* Upon customers' inquiry, a new CLI command has been added to read the Drive quotas.
+
+
+.. rubric:: Mobile
+
+..
+
+* Issue ID: MOB-244
+
+* *Title:* getAllDevices now supports multiserver environments
+
+* *Description:* You can now use the getAllDevices command to ask the devices list to all store servers.
+
+
+
+..
+
+* Issue ID: MOB-246
+
+* *Title:* Fixed attachments in recurring appointments exceptions
+
+* *Description:* A bug that prevented the attachments in exceptions of recurring appointments to be downloaded has been fixed.
+
+
+
+..
+
+* Issue ID: MOB-256
+
+* *Title:* Calendar attachment deletion fixed
+
+* *Description:* Fixed a bug that prevented the calendar attachments to be deleted from synchronized devices.
+
+
+.. rubric:: Powerstore
+
+..
+
+* Issue ID: PS-257
+
+* *Title:* Centralized volumes as secondary store
+
+* *Description:* Centralized volumes now inherit the type on all the servers, if the centralized volume on the main server is created as secondary volume, then the centralized volumes that derive from it in other servers will be secondary too.
+
+
+
+..
+
+* Issue ID: PS-261
+
+* *Title:* DoCheckBlobs orphaned mailbox handling improvement
+
+* *Description:* Improved orphaned mailbox handling so that DoCheckBlobs no longer returns an error when one is found
+
+
+
+..
+
+* Issue ID: PS-264
+
+* *Title:* Moveblobs log improvement
+
+* *Description:* Moveblobs log no longer contain a Dumpster log line if dumpster items were not included in the hsm policy
+
+
+.. rubric:: Team
+
+..
+
+* Issue ID: TEAMS-1393
+
+* *Title:* Improved sharing link for instant meetings
+
+* *Description:* Links for joining instant meetings have been improved to easier share them avoiding errors.
+
+
+
+..
+
+* Issue ID: TEAMS-1778
+
+* *Title:* Improved synchronization of Team's database
+
+* *Description:* Now the Team nodes bulk insert users when populating rooms between different Team nodes
+
+
+
+..
+
+* Issue ID: TEAMS-1782
+
+* *Title:* Move room errors fixed
+
+* *Description:* A bug that prevented the error messages to be logged when moving a single room between stores in a multiserver environment has been fixed.
+
+
+
+..
+
+* Issue ID: TEAMS-1783
+
+* *Title:* Unused rooms cleared daily
+
+* *Description:* A scheduler now cleans daily the Team rooms left without any member.
+
+
+
+..
+
+* Issue ID: TEAMS-1809
+
+* *Title:* Improved Group name handling
+
+* *Description:* Group names no longer trigger an error during a file upload if their name contains characters that cannot be handled by drive
+
+
+
+..
+
+* Issue ID: TEAMS-1821
+
+* *Title:* Team loading splash screen added
+
+* *Description:* A splash screen will be shown to the users while Team is loading.
+
+
+
+..
+
+* Issue ID: TEAMS-1827
+
+* *Title:* Improved Instant meeting creation
+
+* *Description:* When choosing to create a new instant meeting an option is now given to the user that must decide between creating a new one while terminating the existing one or abort the operation
+
+
+
+..
+
+* Issue ID: TEAMS-1831
+
+* *Title:* Anonymous user cleanup from room fix
+
+* *Description:* Fixed an issue that would cause certain anonymous users to be removed from rooms after 1 hour
+
+
+
+..
+
+* Issue ID: TEAMS-1833
+
+* *Title:* User status truncated at 256 chars length
+
+* *Description:* The setStatus handler now truncates the user status at 256 chars length to be compliant with the Team API.
+
+
+
+..
+
+* Issue ID: TEAMS-1836
+
+* *Title:* Instant meetings' and spaces' topic added on invite email
+
+* *Description:* To avoid Zimbra grouping invites to instant meetins and spaces, the topic has been added to the mail's subject.
+

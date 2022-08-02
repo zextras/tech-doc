@@ -1,0 +1,162 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+
+Zextras Suite Changelog - Release 3.11.0
+========================================
+
+   Release Date: May 23rd, 2022
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-318
+
+* *Title:* SAML wrong reports in the logs fixed
+
+* *Description:* On login with SAML now the account status is reported
+  in audit.log. Before the fix, `Authenticated successful` was
+  reported for each zimbraAccountStatus.
+
+..
+
+* *Issue ID:* AUTH-370
+
+* *Title:* Logout after temporary link fixed
+
+* *Description:* Fixed a bug that threw a 500 HTTP error when
+  performing a logout after opening the webmail with a temporarily
+  link.
+
+..
+
+* *Issue ID:* AUTH-382
+
+* *Title:* Auth DB cleaner operation improvement
+
+* *Description:* Auth DB cleaner operation no more set the mailboxes
+  in maintenance mode on running. This permits concurrent operations
+  on the mailboxes during the cleanup operation.  It is also now
+  possible to modify the scheduled time of the operation from the
+  server's configuration command.
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-569
+
+* *Title:* doItemSearch command fixed
+
+* *Description:* Fixed a bug that prevented the doItemSearch command
+  to work properly. Now the command returns the results according to
+  the given filters.
+
+..
+
+* *Issue ID:* BCK-580
+
+* *Title:* External restore operation quota override
+
+* *Description:* To make the external restore operation more reliable
+  and avoid errors, now the mailboxes quota is removed during the
+  restore operation. The quota is set back once the operation
+  completes successfully.
+
+..
+
+* *Issue ID:* BCK-651
+
+* *Title:* Accounts folder on migrating to external backup fixed
+
+* *Description:* A bug that caused the metadata of the accounts to be
+  wrongly uploaded to the bucket's root folder. Now the metadata files
+  are properly uploaded to the `accounts` folder.
+
+.. rubric:: General
+
+* *Issue ID:* COR-680
+
+* *Title:* Right-click on contact and calendar folders fixed for IE11
+
+* *Description:* Fixed a bug that prevented the right-click from
+  working properly on contacts and calendars folders using Internet
+  Explorer 11 when com_zextras_client zimlet is enabled.
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-360
+
+* *Title:* ABQ disabled at startup
+
+* *Description:* A new `abq_enabled_at_startup` attribute has been
+  added to the configuration to avoid the ABQ feature being loaded at
+  server startup if not used to save the server's resources.
+
+..
+
+* *Issue ID:* MOB-362
+
+* *Title:* ABQ set command fixed
+
+* *Description:* ABQ API has been reworked to fix a bug that prevented
+  the `set` command from working with devices not already present in
+  the list.
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-329
+
+* *Title:* Splitted volumes and buckets creation
+
+* *Description:* To make the new volume creation experience simpler
+  for the admins, bucket creation has been split by the volume
+  creation commands. Admins can now create a new bucket and then pass
+  its UUID to the volume creation command.
+
+..
+
+* *Issue ID:* PS-423
+
+* *Title:* Mailbox move skips non-local accounts
+
+* *Description:* As requested by our customers, now the
+  `doMailboxMove` operation skips non-local accounts to avoid issues
+  caused by running the command on the wrong server.
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-3656
+
+* *Title:* Add tooltip on disabled create button on groups and spaces creation modals
+
+* *Description:* In order to let user knows why the create buttons is
+  disabled on the creation modal, it's been added a tooltip that tells
+  that something is missing or something has to be fixed.
+
+..
+
+* *Issue ID:* TEAMS-3720
+
+* *Title:* Minichat are not opening on Suite
+
+* *Description:* if user manually opens the minichat, it works, but if
+  the setting is set to automatically open the minichat for each
+  message, it’s not working automatically
+
+..
+
+* *Issue ID:* TEAMS-3722
+
+* *Title:* Red dot of camera is kept after meetings on internal mode
+
+* *Description:* Using internal mode, the resources are kept after the
+  user close the call. The result is that the tab keep the red-dot on
+  the browser’s tab
+
+..
+
+* *Issue ID:* TEAMS-3727
+
+* *Title:* Move room fixed
+
+* *Description:* Fixed a bug that caused a room to disappear when
+  moved between the servers.

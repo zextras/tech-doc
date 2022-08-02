@@ -1,0 +1,296 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+Zextras Suite 3.1.5
+===================
+
+Release Date: November 30th, 2020
+
+.. rubric:: Auth
+
+..
+
+* Issue ID: AUTH-161
+
+* *Title:* Mobile password must be exclusive for EAS
+
+* *Description:* Fixed a bug that caused the account's password to be usable for EAS synchronization even if a Mobile Password was set.
+
+
+
+..
+
+* Issue ID: AUTH-170
+
+* *Title:* Improved "Domain configuration missing" notification
+
+* *Description:* Auth's "Domain configuration missing" notification will now ignore domain alias and be sent at most once a day
+
+
+.. rubric:: Backup
+
+..
+
+* Issue ID: BCK-404
+
+* *Title:* Fixed typo in smartscan email log
+
+* *Description:* Added a missing hyphen in the "smarstcan completed" mail.
+
+
+
+..
+
+* Issue ID: BCK-406
+
+* *Title:* Backup volume on S3 creation fixed
+
+* *Description:* Fixed a bug that prevented the backup volume to be correctly created if S3 credentals are passed to the command.
+
+
+.. rubric:: General
+
+..
+
+* Issue ID: COR-485
+
+* *Title:* Fixed drive startup switch
+
+* *Description:* Fixed an issue that would prevent an admin to disable drive at startup from the web admin console
+
+
+
+..
+
+* Issue ID: COR-504
+
+* *Title:* CLI commands input validation for email addresses
+
+* *Description:* Input validation has been added to CLI to warn the administrator when invalid email addresses are given.
+
+
+.. rubric:: Docs
+
+..
+
+* Issue ID: DOCS-103
+
+* *Title:* Sidebar hidden by default
+
+* *Description:* The sidebar is now hidden by default in Docs so the interface is more clear.
+
+
+
+..
+
+* Issue ID: DOCS-105
+
+* *Title:* Unauthenticated access to documents redirected
+
+* *Description:* The unauthenticated access to documents is now redirected to the login page.
+
+
+.. rubric:: Drive
+
+..
+
+* Issue ID: DRIV-993
+
+* *Title:* Fixed drive shares on distribution lists
+
+* *Description:* Fixed an issue that would prevent drive items to be shared to distribution lists
+
+
+
+..
+
+* Issue ID: DRIV-1002
+
+* *Title:* Updated zimbraXverstion to 4.0.0
+
+* *Description:* Updated zimbraXVersion value in the com_zimbra_drive_modern zimlet manifest
+
+
+.. rubric:: Mobile
+
+..
+
+* Issue ID: MOB-266
+
+* *Title:* Follow-up flag improvement
+
+* *Description:* Changed the logic of FlagType so mail sent via Exchange ActiveSync will not automatically have the follow-up flag.
+
+
+
+..
+
+* Issue ID: MOB-276
+
+* *Title:* All day events added to incorrect day fixed
+
+* *Description:* Fixed a bug with the timezone that made the all day events created via Exchange ActiveSync to be added to the day before instead of the correct one on the webmail.
+
+
+.. rubric:: Powerstore
+
+..
+
+* Issue ID: PS-260
+
+* *Title:* Deprecated drivesecondarystore value migration
+
+* *Description:* Added the automatic creation of an hsm rule to implement what was once done using the parameter driveSecondaryStore
+
+
+
+..
+
+* Issue ID: PS-271
+
+* *Title:* doCreateVolume command improved for centralized volumes
+
+* *Description:* doCreateVolume command improved to give the administrator feedback when run.
+
+
+
+..
+
+* Issue ID: PS-275
+
+* *Title:* Improved zxsuite online help
+
+* *Description:* Added further examples when invoking a docheckblobs operation without parameters
+
+
+.. rubric:: Team
+
+..
+
+* Issue ID: TEAMS-1789
+
+* *Title:* Added Team account status awareness
+
+* *Description:* Team now verifies if the account status is "maintenance" and if not send or receive further messages for it.
+
+
+
+..
+
+* Issue ID: TEAMS-1873
+
+* *Title:* Added Instant message functions
+
+* *Description:* Added Edit, Delete, Forward, Reply to to messages in conversations, groups, channels.
+
+
+
+..
+
+* Issue ID: TEAMS-1895
+
+* *Title:* None
+
+* *Description:* None
+
+
+
+..
+
+* Issue ID: TEAMS-1938
+
+* *Title:* [TSE] Ticket #36850, Case 01043426
+
+* *Description:* User Report for issue TEAMS-1977
+
+
+
+..
+
+* Issue ID: TEAMS-1970
+
+* *Title:* TEAM loading screen Improvement
+
+* *Description:* Improved TEAM opening screen, now an animation makes clear to the user that the application is loading
+
+
+
+..
+
+* Issue ID: TEAMS-1987
+
+* *Title:* Fixed instant message text cleanup
+
+* *Description:* Fixed an issue that would would not clean the instant message textbox of the minichat when the message was sent from the TEAM tab using the send button instead of enter
+
+
+
+..
+
+* Issue ID: TEAMS-2013
+
+* *Title:* Changed disable microphone behavior
+
+* *Description:* Changed the disable microphone behavio, now only the local device will be muted instead of all user's devices
+
+
+
+..
+
+* Issue ID: TEAMS-2019
+
+* *Title:* Fixed minor graphic glitch
+
+* *Description:* Fixed an issue on Modern that would cause a modal window to have buttons incorrectly placed when creating a new instant meeting while another one is already running
+
+
+
+..
+
+* Issue ID: TEAMS-2020
+
+* *Title:* Fixed new instant meeting window buttons
+
+* *Description:* Fixed an issue that would prevent all abort button not to work when creating a new instant meeting while another one is already running
+
+
+
+..
+
+* Issue ID: TEAMS-2026
+
+* *Title:* Changed "Mute" behavior
+
+* *Description:* The "Mute" button has been changed to "Mute for all"
+
+
+
+..
+
+* Issue ID: TEAMS-2027
+
+* *Title:* Meeting screenshare termination fix
+
+* *Description:* Fixed an issue that would cause a screenshare to continue after closing the group/space/channel/instant meeting window
+
+
+
+..
+
+* Issue ID: TEAMS-2028
+
+* *Title:* Screen sharing avatar behavior improvement
+
+* *Description:* Improved the screen sharing avatar placement so that it no longer makes the screen sharing function difficult to use
+
+
+
+..
+
+* Issue ID: TEAMS-2034
+
+* *Title:* Fixed download concurrency issue
+
+* *Description:* Fixed an issue that would cause video conferences and instant messaging to be unavailable for a few seconds while mail attachments are downloaded
+
