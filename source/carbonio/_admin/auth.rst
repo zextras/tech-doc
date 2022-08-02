@@ -468,6 +468,5 @@ SMTP does not support 2FA, the application would not work.
 
 To avoid situation like this, which may involve any service or
 protocol not supporting 2FA (like, e.g., the above mentioned SMTP or
-SOAP), on |product|, an Administrator can create suitable
-username/password combinations that can be used by the service to
-operate correctly.
+SOAP), on |product|, an Administrator can create suitable credentials
+that can be used by the application to operate correctly.
