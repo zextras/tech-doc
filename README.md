@@ -24,6 +24,7 @@ as follows:
 * `landing`: redirect page to official docs.zextras.com landing page
 * `_includes`: source file `include::`d by both Carbonio and Carbonio
   CE
+* `LICENSES`: text of licenses that are applied to this source code
 
 
 # Build Requirements
@@ -74,16 +75,16 @@ requirement and follow the guidelines.
 
 Any contribution **must** be in form of Pull Requests (PR) to the
 public GitHub repository and must build (`make html`) with the latest
-versions of the Python packages (upgrade them with `pip install
+versions of the Python packages required (upgrade them with `pip install
 --upgrade -r /requirements.txt` before building).
 
 You must fork the public repository, make the changes you need, and
 open a PR against the `contrib` branch.
 
-All accepted contributions will be subject to reviews and if
+All accepted contributions will be subject to review and if
 successful, they will appear on the official documentation.
 
-By submitting a PR, you agree that
+By submitting a PR, you agree that:
 
 * you are the author and all the material you include in the PR is
   your own work
@@ -177,7 +178,8 @@ Keep a width of at most 70 or 80 columns for the lines.
 
 Zextras documentation is released under [CC BY-NC-SA
 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license and
-is [REUSE](https://reuse.software/) compliant.
+is [REUSE](https://reuse.software/) compliant. Contribution will be
+subject to the same license.
 
 Each non-binary file in the repository needs to contain in its header
 the following copyright notice, which must be commented out according
