@@ -6,7 +6,7 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Description
 
-This repo contains the source code of the Zextras product
+This repo contains the source code of the Zextras technical product
 documentation, written with [Python
 Sphinx](https://www.sphinx-doc.org/en/master/) and publicly available
 on https://docs.zextras.com/ web site.
