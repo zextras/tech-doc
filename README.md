@@ -38,7 +38,7 @@ Makefile, therefore the basic requirements are:
 - make
 - all python packages listed in the file `requirements.txt`
 
-To install requirements, use e.g.,
+To install requirements, use e.g.:
 
 ```
  pip install -r requirements.txt```
