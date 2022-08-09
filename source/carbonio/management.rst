@@ -34,8 +34,8 @@ features from mobile devices.
 
 :ref:`carbonio-shell` introduces the |sh|.
      
-:ref:`carb-customisations` guides you in the customisation of
-|product| appearance.
+:ref:`carb-customisations` guides you in the customisation of 
+|product|.
 
 .. toctree::
    :hidden:
