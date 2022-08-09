@@ -1,3 +1,6 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 There are several reason why an administrator wants to customise
 NGINX, for example adding a custom header for internal audit. Editing
