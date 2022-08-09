@@ -79,8 +79,9 @@ deleted.
 More actions are available and shown upon right-clicking an email.
 
 |product| has support for **e-mail receipts**: when composing an
-email, a click on the icon on the right-hand side of the subject will
-add a request for a read receipt from the e-mail recipient.
+email, a click on the :material-regular:`more_vert` icon on the
+right-hand side of the subject will add a request for a read receipt
+from the e-mail recipient.
 
 When opening for the first time an email with a receipt request, a
 modal will appear and ask to send a read receipt to the author. Click
