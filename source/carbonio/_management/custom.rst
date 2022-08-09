@@ -91,11 +91,11 @@ section, the procedure is the following.
       proxy_set_header X-CUSTOM-Forwarded-For "audit@example.com";
       }
 
-#. Restart the proxy system.
+#. Restart the proxy system **as the** ``zextras`` **user**.
 
    .. code:: console
 
-      # systemctl restart nginx
+      zextras$ zmproxyctl restart
 
    NGINX will generate the configuration from the template files, then
    start. 
