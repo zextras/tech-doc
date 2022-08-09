@@ -48,4 +48,4 @@ features from mobile devices.
    /_management/sshkeys
    /_management/mobile
    /_management/shell
-   /custom
+   /_management/custom
