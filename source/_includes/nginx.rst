@@ -17,7 +17,7 @@ which are then read and used during the everyday operations. To allow
 for custom changes, there is an additional directory,
 :file:`/opt/zextras/conf/nginx/template_custom`, which contains files
 that **override setting in the corresponding file in the**
-:file:`templates` **directory**. 
+:file:`templates` **directory**.
 
 In other words, whenever the configuration is read, if under the
 :file:`templates` and :file:`templates_custom` directories  a file
@@ -28,50 +28,76 @@ This means that a user can not store preferences in a file with a
 custom filename, but must override the default
 :file:`nginx.conf.web.http.default.template` template.
 
-Now, to implement the configuration mentioned at the beginning of this
-section, the procedure is the following.
+.. card::
 
-#. Copy file over to the custom directory.
+   Custom Configuration
+   ^^^^^
 
-   .. code:: console
+   Now, to implement the configuration mentioned at the beginning of this
+   section, the procedure is the following.
 
-      # cp /opt/zextras/conf/nginx/templates/nginx.conf.web.http.default.template \
-        /opt/zextras/conf/nginx/template_custom/nginx.conf.web.http.default.template
+   #. Copy file over to the custom directory.
 
-#. Edit file
-   :file:`/opt/zextras/conf/nginx/template_custom/nginx.conf.web.http.default.template`
-   to add the custom header. Search for the ``location`` directive to
-   which you want to add the custom header and add the following
-   line::
+      .. code:: console
 
-     proxy_set_header X-CUSTOM-Forwarded-For "audit@example.com";
+         # cp /opt/zextras/conf/nginx/templates/nginx.conf.web.http.default.template \
+           /opt/zextras/conf/nginx/template_custom/nginx.conf.web.http.default.template
 
-   The resulting configuration would look similar to the following
+   #. Edit file
+      :file:`/opt/zextras/conf/nginx/template_custom/nginx.conf.web.http.default.template`
+      to add the custom header. Search for the ``location`` directive to
+      which you want to add the custom header and add the following
+      line::
+
+        proxy_set_header X-CUSTOM-Forwarded-For "audit@example.com";
+
+      The resulting configuration would look similar to the following
 
 
-   .. code:: nginx
-             
-      location = /
-      {
-        if ($http_cookie !~ "ZM_AUTH_TOKEN=") {
-            return 307 "/static/login/";
-        }
+      .. code:: nginx
 
-      proxy_set_header X-CUSTOM-Forwarded-For "audit@example.com";
-      }
+         location = /
+         {
+           if ($http_cookie !~ "ZM_AUTH_TOKEN=") {
+               return 307 "/static/login/";
+           }
 
-#. Restart the proxy system **as the** ``zextras`` **user**.
+         proxy_set_header X-CUSTOM-Forwarded-For "audit@example.com";
+         }
 
-   .. code:: console
+   #. Restart the proxy system **as the** ``zextras`` **user**.
 
-      zextras$ zmproxyctl restart
+      .. code:: console
 
-   NGINX will generate the configuration from the template files, then
-   start. 
+         zextras$ zmproxyctl restart
 
-      
-To remove the customisation, simply remove the customised files and
-restart the proxy..
+      NGINX will generate the configuration from the template files, then
+      start.
+
+
+.. card::
+
+   Update of Customisations
+   ^^^^^
+
+   When a customisation is operational, the template does usually not
+   need any modification until the next update of NGINX. When updated
+   NGINX packages are available, it is suggested to check for any
+   changes in the default configuration, to find if any incompatible
+   values has been introduced or if some directive has been removed,
+   modified, or added. In case in the new packages the default
+   template has changed, the differences must be reflected in the
+   customised template, because otherwise the NGINX service may not
+   start properly.
+
+.. card::
+
+   Remove the Customisations
+   ^^^^^
+
+   To remove the customisation, simply remove the customised template
+   and restart the proxy.
+
 
 It is worth highlighting a few points:
 
