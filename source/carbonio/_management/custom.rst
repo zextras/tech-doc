@@ -22,12 +22,12 @@ steps:
 
    .. hint:: The optimal size for the logo is **320x80** pixels
 
-#. execute command
+#. execute this command on *every node* on which the **Proxy** is installed.
 
    .. code:: console
 
-      # carbonio auth loginPage setSkinLogoAppBanner \
-        domain http://example.com \
+      # carbonio auth loginPage setLogo \
+        domain example.com \
         "/static/login/assets/example_logo.svg"
 
 .. _nginx-custom:
