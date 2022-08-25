@@ -37,8 +37,8 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 
       # carbonio-bootstrap
 
-#. Copy credentials from the Service-Discover server node (SRV2) to the
-   local server.
+#. Copy credentials from the |mesh| server node (SRV2) to the local
+   server.
 
    .. code:: console
 
