@@ -39,8 +39,8 @@ These tasks need to be carried out for the Proxy.
 
       # carbonio-bootstrap
 
-#. Copy credentials from the Service-Discover server node (SRV2) to the
-   local server
+#. Copy credentials from the |mesh| server node (SRV2) to the local
+   server
 
    .. code:: console
 
