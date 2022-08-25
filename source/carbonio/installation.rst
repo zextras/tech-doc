@@ -227,8 +227,8 @@ SRV1: Postgres
 
 .. _srv2-install:
 
-SRV2: Directory Server, LDAP Server, and DB connection
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV2: Directory Server, DB connection, and Carbonio Mesh Server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv2.rst
 
