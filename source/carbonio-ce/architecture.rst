@@ -6,83 +6,93 @@
  Architecture of |product|
 ===========================
 
+.. the intro and the architecture's legend must be fixed after we
+   receive the final diagram!
 
-:numref:`fig-ce-arch` shows the architecture of |product|.
+:numref:`fig-ce-arch` shows the internal architecture of |product|
+with all its components.
 
 .. _fig-ce-arch:
 
 .. figure:: /img/carbonio/ce-architecture.png
+   :scale: 70%
 
    Simplified architecture of |product|.
 
-   The following notation is used:
-
-   * *1*  only one instance allowed
-   * *N* any instance can be installed
-   * *\** component has different functionalities in |carbonio| and in |ce|
-   * *Mutually exclusive* either of the alternative can be used, but not
-     all of them
+While in Single-Server all roles are installed on the same node, in a
+typical Multi-Server each of the functionalities depicted by the four
+red boxes (i.e., the :ref:`core-comp`) should installed on a dedicated
+node, while all the other (i.e., the :ref:`opt-comp` in the orange
+boxes) can be combined and installed on any node, even on dedicated
+one. For example, if |file| is heavily used, it could be a good idea
+to install Files-CE on a dedicated node. In the
+:ref:`multiserver-installation` we show how to set up a cluster of
+*six* nodes and combine the various |product|'s roles.
 
 Each of the boxes represents a **Role**, that is, a functionality that
 is considered atomic and can be added to the basic |product| by
-installing one or more packages.
+installing one or more software packages. 
 
-While all the components can be installed on a Single-Server, we
-describe here the case of a Multi-Server installation, to clarify also
-a number of concepts underlying |carbonio|. We make also a distiction
-between the :ref:`core-comp` and :ref:`opt-comp`.
+Note however, that in some cases the Role requires that some packages
+be installed on a different node: in these cases, the Role is split in
+multiple sub-roles for clarity and to highlight package
+dependencies. This is the case for example of |file| and |docs|.
 
+In :numref:`fig-ce-arch`, *dependency* are denoted by the boxes piled
+on top of the bottom one. In other words, all the ``*-UI`` packages,
+which contain the files necessary to show the Module to the users,
+**must be** installed on the Proxy Node; The Logger and Storages-CE
+roles **must be** installed on the AppServer Node, and the Docs-Editor
+and Docs-Core Roles **must be** installed together with the
+Docs-Connector-CE Role.
 
+A special case is represented by the Postgres/DB-Connection
+role. While |product| can be installed to communicate directly with a
+Postgres database, it is suggested to install a middleware (PgPool-II)
+in order to be independent of the underlying database and be able to
+scale without the need to configure multiple Postgres instances.  
 
 .. _core-comp:
 
 Core Components
 ===============
 
-The grounding components are required because they provide the basic
-functionalities of |product| and are represented by the green and cyan
-boxes. The *green* boxes mean that the node on which the component is
-installed must allow a public access, i.e., it should be exposed on
-the public network. In a Multi-server environment, each of them should
-be installed on a dedicated node. These *Roles* are:
+The Core Components are required because they provide the basic
+functionalities of |product|: to allow users to send and
+receive e-mails. They are:
 
-**Directory Server**
-   It is used to manage the configuration of the infrastructure and
-   provisioning of users and domains.
+#. **Directory Server**.  It is used to manage the configuration of
+   the infrastructure and provisioning of users and domains.
 
-**Proxy**
-   The Proxy is indeed a reverse proxy that acts as the central access
-   point of the mailboxes. It also prevents a public, direct access to
-   the mailbox servers and other backend services.
+#. **Proxy**. The Proxy is indeed a reverse proxy that acts as the
+   central access point of the mailboxes. It also prevents a public,
+   direct access to the mailbox servers and other backend services. On
+   this nodes must be installed also the ``-UI`` packages of the
+   optional components.
 
-**MTA**
-   The |mta| is the engine room of |product|. Its duties include email
-   transfer and forwarding, filtering, and other services to keep
-   email clean and secure.
+#. **MTA**.  The |mta| is the engine room of |product|. Its duties
+   include email transfer and forwarding, filtering, and other
+   services to keep email clean and secure.
 
-**AppServer**
-   The Application Server is a node on which other |product|
-   components are installed. In small environments there can be one or
-   two nodes, but more can be added to a large or growing
-   infrastructure.
+#. **AppServer**.  The Application Server is a node on which other
+   |product| components are installed. In small environments there can
+   be one or two AppServer nodes, but more can be added to a large or
+   growing infrastructure.
 
-Looking at :numref:`fig-ce-arch`, we realise that some boxes are on
-top of other: this is how we denote dependencies between
-roles. Looking at the *Proxy* role, we see that two boxes appear on
-top of it, namely **files-ui** and **web-ui**: this implies that these
-two roles (User Interface of |file| and for web access) **must** be
-installed on the same node on which *Proxy* is installed.
+#. **Carbonio Mesh**.  Based on HashiCorp's `Consul
+   <https://www.consul.io/>`_, |mesh| manages security and provides
+   fault-tolerant routing between nodes of a Multi-Server
+   installation. To operate properly, there must be **at least** one
+   |mesh| Server, which ideally should be installed on each
+   *Directory-Server* Node, while **all other nodes** must install the
+   |mesh| Agent.
 
-The **Logger** must likewise be installed on the AppServer. It is
-also important to note that the Logger must be unique within a
-Multi-Server installation.
+The core components are denoted with different colours in
+:numref:`fig-ce-arch`: The first four are red, while the cyan boxes
+denote the two |mesh| components.
 
-The cyan boxes denote the two Consul components, which provide the
-foundation of |mesh|. Consul **Server** should be installed on **one**
-node (usually together with the *Directory Server*, while Consul
-**Agent** on **each** of the other nodes.
-
-.. seealso:: More information on |mesh| on the dedicated page :ref:`mesh_install`.
+Note also that the **Proxy** and **MTA** nodes **must** be reachable
+from the Internet to work properly.
 
 .. _opt-comp:
 
@@ -90,37 +100,24 @@ Optional Components
 ===================
 
 With optional components we denote all those |carbonio| roles that add
-functionalities to the core components and are denoted by black boxes
-in :numref:`fig-ce-arch`. Currently, not all of these components are
-available: the following lists will be kept updated according to their
-availability status.
+functionalities to the core components and are denoted by orange boxes
+in :numref:`fig-ce-arch`. In a Multi-Server installation they can be
+installed on any node, provided the dependencies are respected.
 
-.. grid:: 1 1 2 2
-   :gutter: 2
-
-   .. grid-item-card:: 
-      :columns: 6
-
-      Available components  :octicon:`check;1em;sd-text-success`
-      ^^^^^
-
-      * **Files-CE** is the functionality provided by
-        :ref:`files-single-install`, which must be installed together with
-        **files-ui** and either **postgres** with **Files-db** or
-        **Consul2PG-gateway**
-      * **Files-ui**
-      * **Files-db**
-      * **Consul2PG-gateway**
-
-   .. grid-item-card:: 
-      :columns: 6
-
-      Future components  :octicon:`x-circle-fill;1em;sd-text-danger`
-      ^^^^^
-
-      * **preview-CE**
-      * **docs-connector-CE**
-      * **docs-editor** and **docs-core**
-      * **storages-CE**
-      * **User Management**
-      * **videoserver**
+* **Files-CE**. Allows users to share and edit documents. This role
+  also includes **Files-ui** and **Files-db**, that provide user
+  interface files for Files-CE and script to initialise the |file|
+  database and connections to it, respectively, and **storages-CE**
+* **DB-connection**. Provided by pgpool2, this role has the
+  responsibility to allow communication between |product| and the database.
+* **preview-CE**. A role to create thumbnailed images of documents to
+  preview them
+* **docs-CE**. Consists of **docs-connection-CE**, **docs-editor**,
+  and **docs-core** provide the collaborative editing functionalities.
+* **User Management**. It registers the user status (logged in or
+  logged out). Each |product| component queries User Management to
+  allow or not access and asking for credentials.
+* **Logger**. It must be installed on the AppServer and provides a
+  centralised log service for all Roles installed. It is also
+  important to highlight that there **must be a unique** Logger in a
+  Multi-Server installation.
