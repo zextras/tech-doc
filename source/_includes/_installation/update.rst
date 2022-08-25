@@ -23,49 +23,66 @@ upgrade |product|, first check for new packages:
 
             # dnf update
 
-Then either
+Then choose either way of upgrading:
 
-* upgrade |product| packages only
+.. grid:: 1 1 1 2
+   :gutter: 3
+   
+   .. grid-item-card:: Upgrade |product| packages
+      :columns: 12 12 12 6
+                
+      .. tab-set::
 
-   .. tab-set::
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
 
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
+            .. code:: console
 
-         .. code:: console
+               # apt install "carbonio-*"
 
-            # apt install "carbonio-*"
+         .. tab-item:: RHEL
+            :sync: rhel
 
-      .. tab-item:: RHEL
-         :sync: rhel
+            .. code:: console
 
-         .. code:: console
+               # dnf install "carbonio-*"
 
-            # dnf install "carbonio-*"
+   .. grid-item-card:: Upgrade the whole system
+      :columns: 12 12 12 6
 
-or
+      
+      .. tab-set::
 
-* upgrade the whole system
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
 
-   .. tab-set::
+            .. code:: console
 
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
+               # apt upgrade
 
-         .. code:: console
+         .. tab-item:: RHEL
+            :sync: rhel
 
-            # apt upgrade
+            .. code:: console
 
-      .. tab-item:: RHEL
-         :sync: rhel
+               # dnf upgrade
 
-         .. code:: console
+   .. grid-item:: 
+      :columns: 12 12 12 12
 
-            # dnf upgrade
+      .. hint:: Even if you choose to upgrade only |product|, remember
+         that you should keep the whole system up to date, because new
+         system packages may contain security fixes or bug fixes.
 
-.. hint:: Even if you choose to upgrade only |product|, remember that
-   you should keep the whole system up to date, because new system
-   packages may contain security fixes or bug fixes.
+Finally, since new version of |product| packages may include new
+services, it is strongly suggested to execute the command
+
+.. code:: console
+
+   # pending-setups
+
+This will register the services to |mesh|, so they can immediately be
+used.
 
 Troubleshooting
 ---------------
