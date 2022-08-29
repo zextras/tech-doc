@@ -29,7 +29,6 @@
 
 .. various acronyms
 
-
 .. |dav| replace:: :abbr:`DAV (Distributed Authoring and Versioning,
    aka WebDAV)`
    
@@ -37,3 +36,4 @@
 .. |imap| replace:: :abbr:`IMAP (Internet Message Access Protocol)`
 .. |pop| replace:: :abbr:`POP3 (Post Office Protocol)`
 .. |smtp| replace:: :abbr:`SMTP (Simple Mail Transfer Protocol)`
+.. |mta| replace:: :abbr:`MTA (Message Transfer Agent)`
