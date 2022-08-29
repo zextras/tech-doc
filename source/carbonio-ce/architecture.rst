@@ -20,14 +20,14 @@ with all its components.
    Simplified architecture of |product|.
 
 While in Single-Server all roles are installed on the same node, in a
-typical Multi-Server each of the functionalities depicted by the four
-red boxes (i.e., the :ref:`core-comp`) should installed on a dedicated
+typical Multi-Server each of the functionalities depicted by the red
+boxes (i.e., the :ref:`core-comp`) should installed on a dedicated
 node, while all the other (i.e., the :ref:`opt-comp` in the orange
 boxes) can be combined and installed on any node, even on dedicated
 one. For example, if |file| is heavily used, it could be a good idea
-to install Files-CE on a dedicated node. In the
-:ref:`multiserver-installation` we show how to set up a cluster of
-*six* nodes and combine the various |product|'s roles.
+to install Files-CE (together with Storages-CE), on a dedicated
+node. In the :ref:`multiserver-installation` we show how to set up a
+cluster of *six* nodes and combine the various |product|'s roles.
 
 Each of the boxes represents a **Role**, that is, a functionality that
 is considered atomic and can be added to the basic |product| by
@@ -41,9 +41,8 @@ dependencies. This is the case for example of |file| and |docs|.
 In :numref:`fig-ce-arch`, *dependency* are denoted by the boxes piled
 on top of the bottom one. In other words, all the ``*-UI`` packages,
 which contain the files necessary to show the Module to the users,
-**must be** installed on the Proxy Node; The Logger and Storages-CE
-roles **must be** installed on the AppServer Node, and the Docs-Editor
-and Docs-Core Roles **must be** installed together with the
+**must be** installed on the Proxy Node, while the Docs-Editor and
+Docs-Core Roles **must be** installed together with the
 Docs-Connector-CE Role.
 
 A special case is represented by the Postgres/DB-Connection
@@ -74,16 +73,15 @@ receive e-mails. They are:
    include email transfer and forwarding, filtering, and other
    services to keep email clean and secure.
 
-#. **AppServer**.  The Application Server is a node on which other
-   |product| components are installed. In small environments there can
-   be one or two AppServer nodes, but more can be added to a large or
-   growing infrastructure.
+#. **AppServer**. The Application Server contains the mailbox
+   component of |product|. In small environments there can be one or
+   two AppServer nodes, but more can be added to a large or growing
+   infrastructure.
 
-#. **Carbonio Mesh**.  Based on HashiCorp's `Consul
-   <https://www.consul.io/>`_, |mesh| manages security and provides
+#. **Carbonio Mesh**. |mesh| manages security and provides
    fault-tolerant routing between nodes of a Multi-Server
    installation. To operate properly, there must be **at least** one
-   |mesh| Server, which ideally should be installed on each
+   |mesh| Server, which ideally should be installed on the
    *Directory-Server* Node, while **all other nodes** must install the
    |mesh| Agent.
 
@@ -108,14 +106,18 @@ installed on any node, provided the dependencies are respected.
   also includes **Files-ui** and **Files-db**, that provide user
   interface files for Files-CE and script to initialise the |file|
   database and connections to it, respectively, and **storages-CE**
-* **DB-connection**. Provided by pgpool2, this role has the
-  responsibility to allow communication between |product| and the database.
+* **DB-connection**. Provided by packages **carbonio-files-db** and
+  **carbonio-mailbox-db**, this role has the responsibility to allow
+  communication between |product| and the database. The use of
+  **Pgpool-II** would improve flexibility and scalability in the
+  management of the DB instance(s).
 * **preview-CE**. A role to create thumbnailed images of documents to
   preview them
 * **docs-CE**. Consists of **docs-connection-CE**, **docs-editor**,
   and **docs-core** provide the collaborative editing functionalities.
 * **User Management**. It registers the user status (logged in or
-  logged out). Each |product| component queries User Management to
+  logged out) and user attributes (e.g., on which AppServer a user is
+  logged in). Each |product| component queries User Management to
   allow or not access and asking for credentials.
 * **Logger**. It must be installed on the AppServer and provides a
   centralised log service for all Roles installed. It is also
