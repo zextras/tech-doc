@@ -32,8 +32,8 @@ These following tasks must be executed to configure the MTA.
 
       # carbonio-bootstrap
 
-#. Copy the credentials from the Service-Discover server node (SRV2)
-   to the local server
+#. Copy the credentials from the |mesh| server node (SRV2) to the
+   local server
 
    .. code:: console
 
