@@ -6,9 +6,6 @@
  Architecture of |product|
 ===========================
 
-.. the intro and the architecture's legend must be fixed after we
-   receive the final diagram!
-
 :numref:`fig-ce-arch` shows the internal architecture of |product|
 with all its components.
 
@@ -85,10 +82,6 @@ receive e-mails. They are:
    *Directory-Server* Node, while **all other nodes** must install the
    |mesh| Agent.
 
-The core components are denoted with different colours in
-:numref:`fig-ce-arch`: The first four are red, while the cyan boxes
-denote the two |mesh| components.
-
 Note also that the **Proxy** and **MTA** nodes **must** be reachable
 from the Internet to work properly.
 
@@ -111,15 +104,14 @@ installed on any node, provided the dependencies are respected.
   communication between |product| and the database. The use of
   **Pgpool-II** would improve flexibility and scalability in the
   management of the DB instance(s).
-* **preview-CE**. A role to create thumbnailed images of documents to
+* **Preview-CE**. A role to create thumbnailed images of documents to
   preview them
-* **docs-CE**. Consists of **docs-connection-CE**, **docs-editor**,
+* **Docs-CE**. Consists of **docs-connection-CE**, **docs-editor**,
   and **docs-core** provide the collaborative editing functionalities.
 * **User Management**. It registers the user status (logged in or
   logged out) and user attributes (e.g., on which AppServer a user is
   logged in). Each |product| component queries User Management to
   allow or not access and asking for credentials.
-* **Logger**. It must be installed on the AppServer and provides a
-  centralised log service for all Roles installed. It is also
-  important to highlight that there **must be a unique** Logger in a
-  Multi-Server installation.
+* **Logger**. It provides a centralised log service for all Roles
+  installed. It is also important to highlight that there **must be a
+  unique** Logger in a Multi-Server installation.
