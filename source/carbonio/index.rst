@@ -39,6 +39,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :caption: Install:
 
          general
+         architecture
          installation
          security
 

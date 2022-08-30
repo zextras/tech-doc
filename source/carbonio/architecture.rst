@@ -6,12 +6,15 @@
  Architecture of |product|
 ===========================
 
+.. the intro and the architecture's legend must be fixed after we
+   receive the final diagram!
+
 :numref:`fig-ce-arch` shows the internal architecture of |product|
 with all its components.
 
 .. _fig-ce-arch:
 
-.. figure:: /img/carbonio/ce-architecture.png
+.. figure:: /img/carbonio/carbonio-architecture.png
    :scale: 70%
 
    Simplified architecture of |product|.
@@ -22,7 +25,7 @@ boxes (i.e., the :ref:`core-comp`) should installed on a dedicated
 node, while all the other (i.e., the :ref:`opt-comp` in the orange
 boxes) can be combined and installed on any node, even on dedicated
 one. For example, if |file| is heavily used, it could be a good idea
-to install Files-CE (together with Storages-CE), on a dedicated
+to install Files (together with Storages), on a dedicated
 node. In the :ref:`multiserver-installation` we show how to set up a
 cluster of *six* nodes and combine the various |product|'s roles.
 
@@ -40,7 +43,7 @@ on top of the bottom one. In other words, all the ``*-UI`` packages,
 which contain the files necessary to show the Module to the users,
 **must be** installed on the Proxy Node, while the Docs-Editor and
 Docs-Core Roles **must be** installed together with the
-Docs-Connector-CE Role.
+Docs-Connector Role.
 
 A special case is represented by the Postgres/DB-Connection
 role. While |product| can be installed to communicate directly with a
@@ -95,19 +98,22 @@ functionalities to the core components and are denoted by orange boxes
 in :numref:`fig-ce-arch`. In a Multi-Server installation they can be
 installed on any node, provided the dependencies are respected.
 
-* **Files-CE**. Allows users to share and edit documents. This role
+* **Chat**. Provides the chat and video call functionalities. It
+  includes **Chat-UI** and the **AppServer Advanced** roles, the
+  latter provide bu the **cabonio-advanced** package.
+* **Files**. Allows users to share and edit documents. This role
   also includes **Files-ui** and **Files-db**, that provide user
-  interface files for Files-CE and script to initialise the |file|
-  database and connections to it, respectively, and **storages-CE**
+  interface files for Files and script to initialise the |file|
+  database and connections to it, respectively, and **storages**
+* **Preview**. A role to create thumbnailed images of documents to
+  preview them
+* **Docs**. Consists of **docs-connection**, **docs-editor**,
+  and **docs-core** provide the collaborative editing functionalities.
 * **DB-connection**. Provided by packages **carbonio-files-db** and
   **carbonio-mailbox-db**, this role has the responsibility to allow
   communication between |product| and the database. The use of
   **Pgpool-II** would improve flexibility and scalability in the
   management of the DB instance(s).
-* **Preview-CE**. A role to create thumbnailed images of documents to
-  preview them
-* **Docs-CE**. Consists of **docs-connection-CE**, **docs-editor**,
-  and **docs-core** provide the collaborative editing functionalities.
 * **User Management**. It registers the user status (logged in or
   logged out) and user attributes (e.g., on which AppServer a user is
   logged in). Each |product| component queries User Management to
@@ -115,3 +121,7 @@ installed on any node, provided the dependencies are respected.
 * **Logger**. It provides a centralised log service for all Roles
   installed. It is also important to highlight that there **must be a
   unique** Logger in a Multi-Server installation.
+* **VideoServer**. It optimises streams of Video Meetings to save
+  bandwidth.
+* **VideoServer Recording**. This modules adds recording abilities to
+  the VideoServer.
