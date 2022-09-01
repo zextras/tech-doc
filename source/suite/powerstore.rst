@@ -135,7 +135,7 @@ to use CLI commands.
      connection. You can also enter the IP address of the provider
      instead of the URL.
 
-   See the ref:`doCreateBucket S3 <core_doCreateBucket_S3>` full
+   See the :ref:`doCreateBucket S3 <core_doCreateBucket_S3>` full
    reference for details and more options.
 
    When successful, the command outputs a string, which is the unique
