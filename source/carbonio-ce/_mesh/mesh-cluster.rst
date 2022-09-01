@@ -5,18 +5,18 @@
 .. _mesh-multiple:
 
 ==========================================
- Set up Multiple service-discover Servers
+ Set up Multiple |mesh| Servers
 ==========================================
 
 Within a |product| Multi-Server installation, it is possible to
-install multiple ``service-discover`` **servers**, provided they are
-in **odd** numbers, e.g., 1, 3, 5 (or even more), because they can
-always find a *quorum* and avoid deadlocks.
+install multiple |mesh| **servers**, provided they are in **odd**
+numbers, e.g., 1, 3, 5 (or even more), because they can always find a
+*quorum* and avoid deadlocks.
 
 Requirements
 ============
 
-In order to setup additional ``service-discover`` servers, you need:
+In order to setup additional |mesh| servers, you need:
 
 * having installed and configured package ``service-discover-server``
   on one node (see Section :ref:`srv2-install`)
@@ -26,17 +26,17 @@ In order to setup additional ``service-discover`` servers, you need:
   file created in the set up of the first instance of
   service-discovery
 
-Moreover, as mentioned before, make sure to install an **odd** number of
-``service-discover`` servers.
+Moreover, as mentioned before, make sure to install an **odd** number
+of |mesh| servers.
 
 .. _mesh_multiple-install:
 
 Installation
 ============
 
-Instructions to install multiple ``service-discover`` servers are
-the same for each new server installed, simply repeat the following
-procedure on each new server.
+Instructions to install multiple |mesh| servers are the same for each
+new server installed, simply repeat the following procedure on each
+of them.
 
 
 1. Install the software package.
@@ -59,7 +59,7 @@ procedure on each new server.
 
 2. Copy the
    :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg` file
-   from the first ``service-discover`` server
+   from the first |mesh| server
 
 3. Launch the setup::
 
