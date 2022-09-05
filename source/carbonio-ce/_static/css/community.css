@@ -24,3 +24,9 @@
 .wy-side-nav-search > a > p {
     font-size: 120%;
 }
+
+/* card with magma border&background*/
+.card-magma {
+    border:  1px solid var(--zx-color-magma);
+    background-color: #ff9c9c;
+}

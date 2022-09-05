@@ -9,12 +9,14 @@
 :numref:`fig-ce-arch` shows the internal architecture of |product|
 with all its components.
 
-.. _fig-ce-arch:
+.. card::
+   :width: 75%
 
-.. figure:: /img/carbonio/ce-architecture.png
-   :scale: 70%
+   .. _fig-ce-arch:
 
-   Simplified architecture of |product|.
+   .. figure:: /img/carbonio/ce-architecture.png
+
+      Simplified architecture of |product|.
 
 While in Single-Server all packages are installed on the same node, in
 a typical Multi-Server each of the services depicted by the red
@@ -60,31 +62,53 @@ The Core Components are required because they provide the basic
 functionalities of |product|: to allow users to securely send and
 receive e-mails and to manage their calendars and contacts. They are:
 
-#. **Directory Server**.  It is used to manage the configuration of
-   the infrastructure and provisioning of users and domains.
+.. grid:: 1 1 1 2
+   :gutter: 3
 
-#. **Proxy**. The Proxy is indeed a reverse proxy that acts as the
-   central access point to the Email accounts. It also prevents a
-   public, direct access to the AppServers and other backend
-   services. This node is the only one on which the ``-UI`` packages
-   can be installed.
+   .. grid-item-card:: Directory Server
+      :columns: 3
+      :class-body: card-magma
 
-#. **MTA**.  The |mta| is the engine room of |product|. Its duties
-   include email transfer and forwarding, filtering, and other
-   services to keep email clean and secure.
+      It is used to manage the configuration of the infrastructure and
+      provisioning of users and domains.
 
-#. **AppServer**. The Application Server provides the application
-   login to manage the accounts data, e.g., emails, contacts, and
-   calendar appointments. In small environments there can be one or
-   two AppServer nodes, but more can be added to a large or growing
-   infrastructure.
+   .. grid-item-card:: Proxy
+      :columns: 3
+      :class-body: card-magma
 
-#. **Carbonio Mesh**. |mesh| manages security and provides
-   fault-tolerant routing between nodes of a Multi-Server
-   installation. To operate properly, there must be **at least** one
-   |mesh| Server, which ideally should be installed on the
-   *Directory-Server* Node, while **all other nodes** must install the
-   |mesh| Agent.
+      The Proxy is indeed a reverse proxy that acts as the central
+      access point to the Email accounts. It also prevents a public,
+      direct access to the AppServers and other backend services. This
+      node is the only one on which the ``-UI`` packages can be
+      installed.
+
+   .. grid-item-card:: MTA
+      :columns: 3
+      :class-body: card-magma
+
+      The |mta| is the engine room of |product|. Its duties include
+      email transfer and forwarding, filtering, and other services to
+      keep email clean and secure.
+
+   .. grid-item-card:: AppServer
+      :columns: 3
+      :class-body: card-magma
+
+      The Application Server provides the application login to manage
+      the accounts data, e.g., emails, contacts, and calendar
+      appointments. In small environments there can be one or two
+      AppServer nodes, but more can be added to a large or growing
+      infrastructure.
+
+   .. grid-item-card:: Carbonio Mesh
+      :columns: 12
+      :class-body: card-magma
+
+      |mesh| manages security and provides fault-tolerant routing
+      between nodes of a Multi-Server installation. To operate
+      properly, there must be **at least** one |mesh| Server, which
+      ideally should be installed on the *Directory-Server* Node,
+      while **all other nodes** must install the |mesh| Agent.
 
 Note also that the **Proxy** and **MTA** nodes **must** satisfy the
 following requirements to work properly:
