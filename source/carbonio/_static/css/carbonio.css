@@ -19,3 +19,9 @@
 .wy-side-nav-search > a > p {
     font-size: 120%;
 }
+
+/* used in card with abyss border&background*/
+.abyss {
+    border:  1px solid var(--zx-color-abyss);
+    background-color: #a5c9d9;
+}
