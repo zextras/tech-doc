@@ -125,7 +125,7 @@ installed on any node, provided the dependencies are respected.
 
 * **Chat**. Provides the chat and video call functionalities. It
   includes **Chat-UI** and the **AppServer Advanced**, the
-  latter provide bu the **carbonio-advanced** package.
+  latter provided by the **carbonio-advanced** package.
 * **Files**. Allows users to store and share documents. This role also
   includes **Files-ui** and **Files-db**, that provide user interface
   files for Files and script to initialise the |file| database and
