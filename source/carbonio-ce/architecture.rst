@@ -19,26 +19,19 @@ with all its components.
       Simplified architecture of |product|.
 
 While in Single-Server all packages are installed on the same node, in
-a typical Multi-Server each of the services depicted by the red
-boxes (i.e., the :ref:`core-comp`) should be installed on a dedicated
-node, while all the other (i.e., the :ref:`opt-comp` in the orange
-boxes) can be combined and installed on any node, even on dedicated
-one. For example, **User Management** can be
-installed on the AppServer node instead of on a dedicated node.  In
-the :ref:`multiserver-installation` scenario we use as example, we
-show how to set up a cluster of *six* nodes and combine the various
-|product|'s roles.
+a typical Multi-Server each of the services depicted by the red boxes
+(i.e., the :ref:`core-comp`) should be installed on a dedicated node,
+while all the other (i.e., the :ref:`opt-comp` in the orange boxes)
+can be combined and installed on any node, even on dedicated one. For
+example, **User Management** can be installed on the AppServer node
+instead of on a dedicated node.  In the
+:ref:`multiserver-installation` scenario we use as example, we show
+how to set up a cluster of *six* nodes and combine the various
+|product|'s roles. A **Role** is a functionality that is considered
+atomic and can be added to the |product| by installing one or more
+software packages.
 
-Each of the boxes represents a **Role**, that is, a service that
-is considered atomic and can be added to the basic |product| by
-installing one or more software packages. 
-
-.. note:: In some cases, the Role requires that some packages be
-   installed on a different node: in these cases, the Role is split in
-   multiple sub-roles for clarity and to highlight package
-   dependencies.
-
-In :numref:`fig-ce-arch`, *dependency* are denoted by the boxes piled
+In :numref:`fig-ce-arch`, *dependencies* are denoted by the boxes piled
 on top of the bottom one. In other words, all the ``*-UI`` packages,
 which contain the files necessary to show the Module to the users,
 **must be** installed on the Proxy Node.

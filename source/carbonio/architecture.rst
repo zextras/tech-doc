@@ -9,7 +9,7 @@
 .. the intro and the architecture's legend must be fixed after we
    receive the final diagram!
 
-:numref:`fig-ce-arch` shows the internal architecture of |product|
+:numref:`fig-cb-arch` shows the internal architecture of |product|
 with all its components.
 
 .. card::
@@ -31,18 +31,11 @@ install it on a dedicated node, while **User Management** can be
 installed on the AppServer node instead of on a dedicated node.  In
 the :ref:`multiserver-installation` scenario we use as example, we
 show how to set up a cluster of *six* nodes and combine the various
-|product|'s roles.
+|product|'s roles.  A **Role** is a functionality that is considered
+atomic and can be added to the |product| by installing one or more
+software packages.
 
-Each of the boxes represents a **Role**, that is, a service that
-is considered atomic and can be added to the basic |product| by
-installing one or more software packages. 
-
-.. note:: In some cases, the Role requires that some packages be
-   installed on a different node: in these cases, the Role is split in
-   multiple sub-roles for clarity and to highlight package
-   dependencies.
-
-In :numref:`fig-ce-arch`, *dependencies* are denoted by the boxes piled
+In :numref:`fig-cb-arch`, *dependencies* are denoted by the boxes piled
 on top of the bottom one. In other words, all the ``*-UI`` packages,
 which contain the files necessary to show the Module to the users,
 **must be** installed on the Proxy Node.
@@ -90,7 +83,7 @@ receive e-mails and to manage their calendars and contacts. They are:
       :columns: 3
       :class-body: abyss
 
-	   The |mta| is the engine room of |product|. Its duties include
+      The |mta| is the engine room of |product|. Its duties include
       email transfer and forwarding, filtering, and other services to
       keep email clean and secure.
 
@@ -131,7 +124,7 @@ Optional Components
 
 With optional components we denote all those |carbonio| roles that add
 functionalities to the core components and are denoted by orange boxes
-in :numref:`fig-ce-arch`. In a Multi-Server installation they can be
+in :numref:`fig-cb-arch`. In a Multi-Server installation they can be
 installed on any node, provided the dependencies are respected.
 
 * **Chat**. Provides the chat and video call functionalities. It
