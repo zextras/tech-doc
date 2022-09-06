@@ -312,10 +312,13 @@ import the configuration using the command:
 
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
-.. figure:: /img/auth/saml-login.png
-   :scale: 50%
+.. card::
+   :width: 100%
 
-   Login page with enabled SAML.
+   .. figure:: /img/auth/saml-login.png
+      :align: center
+              
+      Login page with enabled SAML.
 
 By clicking it, you will be redirect to the SAML IDP login page.
 
