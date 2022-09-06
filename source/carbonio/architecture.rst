@@ -6,9 +6,6 @@
  Architecture of |product|
 ===========================
 
-.. the intro and the architecture's legend must be fixed after we
-   receive the final diagram!
-
 :numref:`fig-cb-arch` shows the internal architecture of |product|
 with all its components.
 
@@ -22,16 +19,16 @@ with all its components.
       Simplified architecture of |product|.
 
 While in Single-Server all packages are installed on the same node, in
-a typical Multi-Server each of the services depicted by the red
-boxes (i.e., the :ref:`core-comp`) should be installed on a dedicated
-node, while all the other (i.e., the :ref:`opt-comp` in the blue
-boxes) can be combined and installed on any node, even on dedicated
-one. For example, if |vs| is heavily used, it could be a good idea to
-install it on a dedicated node, while **User Management** can be
-installed on the AppServer node instead of on a dedicated node.  In
-the :ref:`multiserver-installation` scenario we use as example, we
-show how to set up a cluster of *six* nodes and combine the various
-|product|'s roles.  A **Role** is a functionality that is considered
+a typical Multi-Server each of the services depicted by the red boxes
+(i.e., the :ref:`core-comp`) should be installed on a dedicated node,
+while all the other (i.e., the :ref:`opt-comp` in the blue boxes) can
+be combined and installed on any node, even on a dedicated one. For
+example, if |vs| is heavily used, it could be a good idea to install
+it on a dedicated node, while **User Management** can be installed on
+the AppServer node instead of on a dedicated node.  In the
+:ref:`multiserver-installation` scenario we use as example, we show
+how to set up a cluster of *six* nodes and combine the various
+|product|'s roles. A **Role** is a functionality that is considered
 atomic and can be added to the |product| by installing one or more
 software packages.
 
@@ -97,7 +94,6 @@ receive e-mails and to manage their calendars and contacts. They are:
       AppServer nodes, but more can be added to a large or growing
       infrastructure.
 
-
    .. grid-item-card:: Carbonio Mesh
       :columns: 12
       :class-body: abyss
@@ -128,7 +124,7 @@ in :numref:`fig-cb-arch`. In a Multi-Server installation they can be
 installed on any node, provided the dependencies are respected.
 
 * **Chat**. Provides the chat and video call functionalities. It
-  includes **Chat-UI** and the **AppServer Advanced** roles, the
+  includes **Chat-UI** and the **AppServer Advanced**, the
   latter provide bu the **carbonio-advanced** package.
 * **Files**. Allows users to store and share documents. This role also
   includes **Files-ui** and **Files-db**, that provide user interface
@@ -136,8 +132,9 @@ installed on any node, provided the dependencies are respected.
   connections to it, respectively.
 * **Preview**. A role to create thumbnailed images of documents to
   preview them
-* **Docs**. Consists of **docs-connection**, **docs-editor**,
-  and **docs-core** provide the collaborative editing functionalities.
+* **Docs**. Consists of **docs-connection**, **docs-editor**, and
+  **docs-core**; it provides the collaborative editing
+  functionalities.
 * **DB-connection**. Provided by packages **carbonio-files-db** and
   **carbonio-mailbox-db**, this role has the responsibility to allow
   communication between |product| and the database. The use of
@@ -145,11 +142,12 @@ installed on any node, provided the dependencies are respected.
   management of the DB instance(s).
 * **User Management**. It registers the user status (logged in or
   logged out) and user attributes (e.g., on which AppServer a user is
-  logged in). 
+  logged in).
 * **Logger**. It provides a centralised log service for all Roles
   installed. It is also important to highlight that there **must be a
   unique** Logger in a Multi-Server installation.
-* **VideoServer**. It provides a  video communication capabilities and
-  is a necessary component for the proper use of videoconferencing service.
+* **VideoServer**. It provides video communication capabilities and is
+  a necessary component for the proper use of videoconferencing
+  service.
 * **VideoServer Recording**. This modules adds recording abilities to
   the VideoServer.
