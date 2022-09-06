@@ -11,6 +11,9 @@ Whenever a problem arises in the |mesh| ACL system and the
 service-discover stops working, it is necessary to regenerate the
 credentials to be able to continue using |mesh|.
 
+.. note:: The |mesh| credentials are stored in file
+   :file:`/var/lib/service-discover/password`.
+
 .. card::
 
    Scenario
