@@ -188,10 +188,7 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
      scratch (*SRV1*).
 
 * The first node to be installed is the one that will feature the
-  Directory Server and LDAP roles (*SRV2*)
-
-  .. note:: If you plan to install LDAP (possibly also a master/slave
-     LDAP), install this node before the Directory Server.
+  Directory Server and |mesh| roles (*SRV2*)
 
 * The next server to be installed is the MTA one (*SRV3*)
 
@@ -246,7 +243,6 @@ SRV6: AppServer, Preview and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
-
 
 Installing A Directory Server Replica
 =====================================

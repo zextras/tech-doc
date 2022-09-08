@@ -111,7 +111,6 @@ The next steps concern the configuration and setup of the various
       # usermod -a -G carbonio-mailbox zextras
       # chmod 0666 /etc/zextras/carbonio-mailbox/token
 
-
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
@@ -162,7 +161,7 @@ Multi-Server Installation
 
 This section describes a |product| `Multi-Server installation`, that
 is, a |carbonio| installation spread across multiple nodes, each
-playing one or more **Roles**. 
+playing one or more **Roles**.
 
 Rather than giving fixed installation instructions, with some
 functionality installed on any node, we present an installation
@@ -212,10 +211,7 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
      scratch (*SRV1*).
 
 * The first node to be installed is the one that will feature the
-  Directory Server and LDAP roles (*SRV2*)
-
-  .. note:: If you plan to install LDAP (possibly also a master/slave
-     LDAP), install this node before the Directory Server.
+  Directory Server and |mesh| roles (*SRV2*)
 
 * The next server to be installed is the MTA one (*SRV3*)
 

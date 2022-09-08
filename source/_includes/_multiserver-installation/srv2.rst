@@ -6,9 +6,9 @@
 
 The installation of this server encompasses a number of tasks, as it
 will feature a number of crucial services for the correct working of
-|product|: Directory Server and LDAP Server, connection with
-PostgreSQL node using `Pgpool-II
-<https://pgpool.net/mediawiki/index.php/Main_Page>`_, and |mesh|.
+|product|: Directory Server, DB connection with PostgreSQL node using
+`Pgpool-II <https://pgpool.net/mediawiki/index.php/Main_Page>`_, and
+|mesh|.
 
 .. note:: It is possible to install multiple instances of the
    service-discover service provided by |mesh|. Please refer to
@@ -79,7 +79,7 @@ PostgreSQL node using `Pgpool-II
       
    * ``SRV2_hostname``: this node's hostname
 
-   * ``LDAP_PWD``: the **LDAP bind password** for the ``root`` user
+   * ``LDAP_PWD``: the ``ldap_bind_password`` for the ``root`` user
      and applications (by default, all the bind passwords are
      configured the same), that can be retrieved with this command:
 
