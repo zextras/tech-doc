@@ -182,11 +182,15 @@ Six Nodes Scenario
 
 .. include:: /_includes/_multiserver-installation/scenario.rst
 
+.. _multi-server-req:
+
 Requirements
 ------------
 
 .. include:: /_includes/_multiserver-installation/requirements.rst
 
+.. _multi-server-preliminary:
+   
 Preliminary Tasks
 -----------------
 
@@ -266,3 +270,8 @@ SRV6: Advanced, AppServer, Preview, and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
+
+Installing A Directory Server Replica
+=====================================
+
+.. include:: /_includes/_installation/ds-replica.rst
