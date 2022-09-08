@@ -1,5 +1,5 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ==========================
@@ -159,11 +159,15 @@ Six Nodes Scenario
 
 .. include:: /_includes/_multiserver-installation/scenario-ce.rst
 
+.. _multi-server-req:
+
 Requirements
 ------------
 
 .. include:: /_includes/_multiserver-installation/requirements.rst
 
+.. _multi-server-preliminary:
+   
 Preliminary Tasks
 -----------------
 
@@ -242,3 +246,9 @@ SRV6: AppServer, Preview and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
+
+
+Installing A Directory Server Replica
+=====================================
+
+.. include:: /_includes/_installation/ds-replica.rst
