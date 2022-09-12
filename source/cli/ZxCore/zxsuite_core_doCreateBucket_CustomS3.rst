@@ -13,10 +13,10 @@
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| **buc           | String          | Bucket name     |                 |
+| **buc\          | String          | Bucket name     |                 |
 | ket_name**\ (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| **ac            | String          | Service         |                 |
+| **ac\           | String          | Service         |                 |
 | cess_key**\ (M) |                 | username        |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | **secret**\ (M) | String          | Service         |                 |
@@ -24,16 +24,19 @@
 +-----------------+-----------------+-----------------+-----------------+
 | **url**\ (M)    | String          | S3 API          |                 |
 |                 |                 | compatible      |                 |
-|                 |                 | service url     |                 |
+|                 |                 | service URL     |                 |
 |                 |                 | (ex:            |                 |
-|                 |                 | s3a             |                 |
+|                 |                 | s3a\            |                 |
 |                 |                 | pi.example.com) |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | prefix(O)       | String          | Prefix added to |                 |
 |                 |                 | blobs keys      |                 |
 +-----------------+-----------------+-----------------+-----------------+
+| signature_ve\   | String          | Version of the  | V2              |
+| rsion (O)       |                 | Bucket to use   |                 |
++-----------------+-----------------+-----------------+-----------------+
 
 \(M) == mandatory parameter, (O) == optional parameter
 
 zxsuite core createVolume CustomS3 bucketName accessKey secretKey url
-http://host/service
+https://host/service

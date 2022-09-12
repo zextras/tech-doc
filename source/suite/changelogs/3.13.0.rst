@@ -1,0 +1,67 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+.. uncomment for next release (3.13.0)
+   
+   Zextras Suite Changelog - Release 3.13.0
+   ========================================
+
+      Release Date: Sep 12th, 2022
+
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-403
+
+* *Title:* The Auth module  honour expired passwords.
+
+* *Description:* The auth module now honors expired passwords. and
+  "must change password" authentication exception
+
+.. rubric:: Docs
+
+* *Issue ID:* DOCS-162
+
+* *Title:* Docs preview fixed
+
+* *Description:* A bug that prevented the preview of Docs documents has been fixed.
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-364
+
+* *Title:* All day appointments 1 day shift fixed
+
+* *Description:* Fixed a bug that made the all-day appointments shift
+  by 1 day on accepting the invitation from EAS devices.
+
+..
+
+* *Issue ID:* MOB-386
+
+* *Title:* ExceptionStartTime fixed in calendar appointments
+
+* *Description:* Fixed a bug that prevented the Outlook app from
+  properly synchronising the start time of an appointment's exception.
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-368
+
+* *Title:* doMailboxMove operation now considers external accounts fetching
+
+* *Description:* The mailbox move operation now takes into account any
+  ongoing fetch operations from external accounts.
+
+..
+
+* *Issue ID:* PS-438
+
+* *Title:* Added signature V4 support for CustomS3 buckets
+
+* *Description:* `signature_version V4` parameter has been added so it
+  is now possible to use signature V4 with the CustomS3 buckets.
+
+
+
