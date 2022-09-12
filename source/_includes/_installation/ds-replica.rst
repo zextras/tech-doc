@@ -156,3 +156,110 @@ Configuration of the Replica Directory server requires a few steps.
    installation will be successfully completed and immediately after,
    the copy of the Directory Server on **SRV2** will be copied over to
    the Replica on **SRV7**.
+
+Testing
+-------
+
+In order to test whether the Replica works correctly after the
+installation was completed successfully, you can make a quick test as
+follows.
+
+#. Log in to the Master (**SRV2**) and create a test user with a
+   password:
+
+   .. code:: console
+
+      # carbonio prov ca john.doe@example.com MySecretPassword
+
+#. Log in to the replica and check that all account have been copied
+   over from the Master:
+
+   .. code:: console
+
+      # carbonio prov -l gaa
+
+   Among the results, the `john.doe@example.com` must be present.
+
+   .. hint:: you can pipe the previous command to ``grep`` to check
+      only the new account: :command:`carbonio prov -l gaa | grep
+      "john.doe@example.com"`
+
+Set up Replica to answer queries
+--------------------------------
+
+It is now time to configure the Replica to answer queries in place of
+the Master, which requires to reconfigure the value of the
+``ldap_url`` parameter and let it point to the Replica. YOu can
+achieve this set up with a few commands on the Master.
+
+.. card:: Values used in this step
+
+   You need to keep at hand the following data
+
+   * ``SRV2_hostname``: the hostname on which the Directory Server
+     Master is installed
+
+   * ``SRV7_hostname``: the hostname on which the Directory Server
+     Replica is installed
+
+   .. hint:: To retrieve the hostname, use the :command:`hostname` on
+      the Master and Replica nodes.
+
+#. Stop all |product| services
+
+   .. code:: console
+
+      # zmcontrol stop
+
+#. Update the value of ``ldap_url``
+
+   .. code:: console
+
+      # zmlocalconfig -e \
+        ldap_url="ldap://SRV7_hostname ldap://SRV2_hostname"
+
+   If you plan to install multiple Replica Directory Servers, you can
+   install all of them and then execute the above-mentioned command
+   once for all Replicas, making sure that their hostnames precede the
+   **Master's hostname**. For example, provided you installed two
+   Replica Directory Servers on ``SRV4`` and ``SRV5``, execute:
+
+   .. code:: console
+
+      # zmlocalconfig -e \
+        ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
+        ldap://SRV5_hostname ldap://SRV2_hostname"
+
+   The Replica instance to query first is the first listed in the
+   command.
+
+Uninstall a replica
+-------------------
+
+To remove a Replica, you need to carry out two tasks:
+
+#. On **each node** of the Multiple-Server installation, execute the
+   following command, which will use only the Master for the queries
+
+   .. code:: console
+
+      # zmlocalconfig -e ldap_url="ldap://SRV2_hostname"
+
+   In case you had configured multiple Replicas, the above command
+   will redirect all queries to the Master. If you want to remove only
+   some of the Replicas, simply omit its hostname from the list. For
+   example, to remove SRV5, use the command
+
+   .. code:: console
+
+      # zmlocalconfig -e \
+        ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
+        ldap://SRV2_hostname"
+
+#. Execute, **only on the MTA node** the command
+
+   .. code:: console
+
+      # /opt/zextras/libexe/zmmtainit
+
+   This command will update the configuration of postfix with new ``ldap_url``.
