@@ -135,7 +135,7 @@ to use CLI commands.
      connection. You can also enter the IP address of the provider
      instead of the URL.
 
-   See the :ref:`doCreateBucket S3 <core_doCreateBucket_S3>` full
+   See the :ref:`doCreateBucket S3 <zxsuite_core_doCreateBucket_S3>` full
    reference for details and more options.
 
    When successful, the command outputs a string, which is the unique
@@ -169,7 +169,7 @@ to use CLI commands.
    * *centralized true* creates the volume as centralized
 
    See the :ref:`doCreateVolume
-   S3<zxsuite_powerstore_doCreateVolume_S3>` full reference for
+   S3 <zxsuite_powerstore_doCreateVolume_S3>` full reference for
    details and more options.
 
 4.  Set the volume to *current*, to let it receive data immediately::
@@ -809,7 +809,8 @@ officially supported platforms:
 
 -  Cloudian
 
--  Custom S3 (any unsupported S3-compliant solution)
+-  Custom S3 (any unsupported S3-compliant solution), using both V2
+   and V4 authentication
 
 .. _pws_primary_volumes_and_the_incoming_directory:
 
