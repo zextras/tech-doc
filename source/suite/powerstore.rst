@@ -809,7 +809,8 @@ officially supported platforms:
 
 -  Cloudian
 
--  Custom S3 (any unsupported S3-compliant solution)
+-  Custom S3 (any unsupported S3-compliant solution), using both V2
+   and V4 authentication
 
 .. _pws_primary_volumes_and_the_incoming_directory:
 
