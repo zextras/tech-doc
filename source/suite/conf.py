@@ -88,5 +88,6 @@ html_theme_options= {
 #    'analytics_id': 'UA-23692145-1',  #  Provided by Google in your dashboard
 #    'analytics_anonymize_ip': False,
     'style_nav_header_background': 'var(--zx-color-magma)',
-    'style_external_links': True
+    'style_external_links': True,
+    'collapse_navigation': False
 }
