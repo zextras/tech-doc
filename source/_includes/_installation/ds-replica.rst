@@ -2,19 +2,20 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Installing a **Directory Server Replica**, that is, a second instance
-of a Directory Server in a Multi-Server, proves useful whenever the
-load on the Directory server is always high.
 
-Indeed, in this set up the *'main'* Directory Server will remain
+In this section we explain how to install a **Directory Server
+Replica**, i.e., a second instance of a Directory Server in
+*Master/Slave* setup, which proves useful whenever the load on the
+Directory server is continuously high.
+
+Indeed, in this set up the *Master* Directory Server will remain
 authoritative for storing and managing both user information and
 server configuration, but will delegate to the *Replica* all the
-queries coming from the other infrastructure nodes.
-
-Therefore, whenever some data is updated on the master, they are
-immediately copied to the slave and available for queries. The bottom
-line is that the two server will split their tasks, reducing thus the
-load on the main instance.
+queries coming from the other infrastructure nodes.  Therefore,
+whenever some data is updated on the master, they are immediately
+copied to the slave and available for queries. The bottom line is that
+the two server will split their tasks, reducing thus the load on the
+main instance.
 
 Preliminaries
 -------------
@@ -23,8 +24,9 @@ Before attempting to install a Directory Server Replica, please
 read carefully the whole procedure in this page and make sure the
 following requirements are satisfied.
 
-.. note:: We show how to install a Replica on a dedicated node, but it
-   is possible to install it also on another node in the cluster.
+In the remainder, we show how to install one Replica on a dedicated
+node, but it is possible to install it also on existent node in the
+cluster.
 
 * A Multi-Server |product| is already operating correctly
 
@@ -32,16 +34,21 @@ following requirements are satisfied.
   satisfies the :ref:`Multi Server Requirements <multi-server-req>`
   and on which the :ref:`multi-server-preliminary` have already been
   executed. We will call this node **SRV7**.
+  
+  .. note:: In case you plan to install the Replica on an existent
+     node, execute all commands on that node instead of on **SRV7**.
 
-* Except for the installation, all steps **must be executed** as the
-  ``zextras`` user
+* Except for the one in the :ref:`replica-installation` section, all
+  commands **must be executed** as the ``zextras`` user
 
 * Give the new node a meaningful name/FQDN. We will use
   `ds-replica.example.com` whenever necessary. Remember to replace it
   with the name you give.
 
-* Have CLI access to both the Main and Replica Directory Servers, as
-  you need to execute commands on both servers
+* Have CLI access to the Main and Replica Directory Servers, as you
+  need to execute commands on both servers
+
+.. _replica-installation:
 
 Installation
 ------------
@@ -112,7 +119,7 @@ Configuration of the Replica Directory server requires a few steps.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 1: Configure Replica
+   Step 4: Configure Replica
    ^^^^^
 
    You will asked to properly configure a couple of options in the
@@ -149,7 +156,7 @@ Configuration of the Replica Directory server requires a few steps.
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 1: Complete the installation
+   Step 5: Complete the installation
    ^^^^^
 
    You can now continue the bootstrap process and after a while the
@@ -169,28 +176,28 @@ follows.
 
    .. code:: console
 
-      # carbonio prov ca john.doe@example.com MySecretPassword
+      $ carbonio prov ca john.doe@example.com MySecretPassword
 
 #. Log in to the replica and check that all account have been copied
    over from the Master:
 
    .. code:: console
 
-      # carbonio prov -l gaa
+      $ carbonio prov -l gaa
 
    Among the results, the `john.doe@example.com` must be present.
 
-   .. hint:: you can pipe the previous command to ``grep`` to check
-      only the new account: :command:`carbonio prov -l gaa | grep
-      "john.doe@example.com"`
+   .. hint:: You can pipe the previous command to ``grep`` to check
+      only the new account (or any given account): :command:`carbonio
+      prov -l gaa | grep "john.doe@example.com"`
 
 Set up Replica to answer queries
 --------------------------------
 
 It is now time to configure the Replica to answer queries in place of
 the Master, which requires to reconfigure the value of the
-``ldap_url`` parameter and let it point to the Replica. YOu can
-achieve this set up with a few commands on the Master.
+``ldap_url`` parameter and let it point to the Replica. You can
+achieve this set up with a few commands on the **Master**.
 
 .. card:: Values used in this step
 
@@ -200,7 +207,7 @@ achieve this set up with a few commands on the Master.
      Master is installed
 
    * ``SRV7_hostname``: the hostname on which the Directory Server
-     Replica is installed
+     Replica is installed, e.g., `ds-replica.example.com`
 
    .. hint:: To retrieve the hostname, use the :command:`hostname` on
       the Master and Replica nodes.
@@ -209,13 +216,13 @@ achieve this set up with a few commands on the Master.
 
    .. code:: console
 
-      # zmcontrol stop
+      $ zmcontrol stop
 
 #. Update the value of ``ldap_url``
 
    .. code:: console
 
-      # zmlocalconfig -e \
+      $ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV2_hostname"
 
    If you plan to install multiple Replica Directory Servers, you can
@@ -226,7 +233,7 @@ achieve this set up with a few commands on the Master.
 
    .. code:: console
 
-      # zmlocalconfig -e \
+      $ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
         ldap://SRV5_hostname ldap://SRV2_hostname"
 
@@ -243,7 +250,7 @@ To remove a Replica, you need to carry out two tasks:
 
    .. code:: console
 
-      # zmlocalconfig -e ldap_url="ldap://SRV2_hostname"
+      $ zmlocalconfig -e ldap_url="ldap://SRV2_hostname"
 
    In case you had configured multiple Replicas, the above command
    will redirect all queries to the Master. If you want to remove only
@@ -252,7 +259,7 @@ To remove a Replica, you need to carry out two tasks:
 
    .. code:: console
 
-      # zmlocalconfig -e \
+      $ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
         ldap://SRV2_hostname"
 
@@ -260,6 +267,6 @@ To remove a Replica, you need to carry out two tasks:
 
    .. code:: console
 
-      # /opt/zextras/libexe/zmmtainit
+      $ /opt/zextras/libexe/zmmtainit
 
    This command will update the configuration of postfix with new ``ldap_url``.
