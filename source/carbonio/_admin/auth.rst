@@ -222,7 +222,8 @@ In order to enable the authentication strategies available in
 
       SAML Requirements
       ^^^^
-      There is no special requirement to enable SAML.
+      There is no special requirement to enable SAML, besides
+      having a SAML IDP Provider.
       
 .. _auth_set_up_saml:
 
