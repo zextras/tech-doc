@@ -94,7 +94,7 @@ up.
 
      .. code:: console
 
-        carbonio config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
+        carbonio config set server $(zmhostname) ZxBackup_DestPath /opt/carbonio-backup
 
      After defining the backup path, it must be initialised: simply
      simply :ref:`start SmartScan <running_a_smartscan>`, either from
@@ -682,7 +682,7 @@ Enabling the Real Time Scanner
       ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``true``::
 
-         # carbonio config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
+         # carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner TRUE
 
 .. _disabling_the_real_time_scanner:
 
@@ -708,7 +708,7 @@ Disabling the Real Time Scanner
       ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``false``::
 
-        # carbonio config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
+        # carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner FALSE
 
 .. topic:: When Should the Real Time Scanner Be Disabled?
 
@@ -883,7 +883,7 @@ file.
    
 .. code:: console
 
-   # carbonio config server set $(zmhostname) attribute ZxCore_LogLevel value 0
+   # carbonio config set server $(zmhostname) ZxCore_LogLevel 0
 
 Now, run a backup using the following command (that only backs up the
 LDAP data) and check again the log file.
@@ -897,7 +897,7 @@ file, remember to restore the verbosity to the previous level:
 
 .. code:: console
 
-   # carbonio config server set $(zmhostname) attribute ZxCore_LogLevel value 1
+   # carbonio config set server $(zmhostname) ZxCore_LogLevel 1
 
 .. hint:: Increasing log verbosity can prove useful whenever
    troubleshooting a problem or searching for more information about a
