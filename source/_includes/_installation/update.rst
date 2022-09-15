@@ -130,7 +130,7 @@ verify this with the following commands.
          # dnf info service-discover-base
          # rpm -q service-discover-base
 
-If the version is older that **1.10.12**, please upgrade the package.
+If the version is older than **1.10.12**, please upgrade the package.
 
 After you verified that the version is the correct one, please run
 this command **before** :command:`pending-setups`.
