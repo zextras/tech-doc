@@ -2,11 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv2 - Directory Server, LDAP Server, DB connection
+.. srv2 - Directory Server, Mesh Server, DB connection
 
 The installation of this server encompasses a number of tasks, as it
 will feature a number of crucial services for the correct working of
-|product|: Directory Server and LDAP Server, connection with
+|product|: Directory Server and |mesh|, connection with
 PostgreSQL node using `Pgpool-II
 <https://pgpool.net/mediawiki/index.php/Main_Page>`_, and |mesh|.
 
