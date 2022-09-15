@@ -15,4 +15,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core deleteVolume Ceph <bucket_configuration_id>
+zxsuite core doDeleteBucket Ceph <bucket_configuration_id>

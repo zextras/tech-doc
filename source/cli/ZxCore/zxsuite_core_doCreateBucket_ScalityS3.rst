@@ -35,5 +35,5 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core createVolume ScalityS3 bucketName accessKey secretKey url
+zxsuite core doCreateBucket ScalityS3 bucketName accessKey secretKey url
 http://host/service

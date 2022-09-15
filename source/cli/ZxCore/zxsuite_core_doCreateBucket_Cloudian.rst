@@ -35,5 +35,5 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core createVolume Cloudian bucketName accessKey secretKey url
+zxsuite core doCreateBucket Cloudian bucketName accessKey secretKey url
 http://host/service
