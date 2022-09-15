@@ -27,4 +27,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core createVolume Yandex bucketName accessKey secretKey
+zxsuite core doCreateBucket Yandex bucketName accessKey secretKey

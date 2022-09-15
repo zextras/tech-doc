@@ -21,4 +21,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core updateVolume ScalityS3 bucketName access_key accessKey
+zxsuite core doUpdateBucket ScalityS3 bucketName access_key accessKey
