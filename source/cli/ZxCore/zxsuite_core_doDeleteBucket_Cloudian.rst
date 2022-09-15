@@ -15,4 +15,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core deleteVolume Cloudian <bucket_configuration_id>
+zxsuite core doDeleteBucket Cloudian <bucket_configuration_id>

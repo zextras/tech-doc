@@ -15,4 +15,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core deleteVolume S3 <bucket_configuration_id>
+zxsuite core doDeleteBucket S3 <bucket_configuration_id>

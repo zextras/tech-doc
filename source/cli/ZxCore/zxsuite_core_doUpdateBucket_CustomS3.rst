@@ -22,4 +22,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core updateVolume CustomS3 bucketName access_key accessKey
+zxsuite core doUpdateBucket CustomS3 bucketName access_key accessKey
