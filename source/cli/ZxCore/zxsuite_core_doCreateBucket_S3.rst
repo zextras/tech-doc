@@ -37,5 +37,5 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core createVolume S3 bucketName accessKey secretKey url
+zxsuite core doCreateBucket S3 bucketName accessKey secretKey url
 http://host/service

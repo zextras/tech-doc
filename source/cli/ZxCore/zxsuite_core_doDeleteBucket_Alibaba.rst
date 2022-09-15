@@ -15,4 +15,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core deleteVolume Alibaba <bucket_configuration_id>
+zxsuite core doDeleteBucket Alibaba <bucket_configuration_id>
