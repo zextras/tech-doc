@@ -21,4 +21,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core updateVolume Cloudian bucketName access_key accessKey
+zxsuite core doUpdateBucket Cloudian bucketName access_key accessKey

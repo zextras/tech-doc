@@ -2,9 +2,18 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-|product| does not need any installer, but whenever new versions are
-released, the repositories are updated and packages are available for
-installation along with the other system updates.  Therefore, to
+|product| does not have any installer: whenever new versions are
+released, the |zx| repositories are updated and packages are available for
+installation along with the other system updates. Therefore, the upgrade
+procedure is usually a very quick activity, carried out with by means
+of a few commands.
+
+However, in seldom cases, some incompatibility may arise in
+third-party software, which lead to some additional manual steps to be
+carried out. Section :ref:`upgrade-troubleshooting` below contains
+information to prevent or fix these issues.
+
+Therefore, to
 upgrade |product|, first check for new packages:
 
    .. tab-set::
@@ -83,4 +92,50 @@ services, it is strongly suggested to execute the command
 
 This will register the services to |mesh|, so they can immediately be
 used.
+
+.. _upgrade-troubleshooting:
+
+Upgrade Troubleshooting
+-----------------------
+
+When installing recent version of the **Docs-Editor**, running the
+:command:`pending-setups` might abruptly exit with an error message
+similar to::
+
+  Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
+  400 (Bad request: Request decoding failed: 1 error occurred:
+  
+	* invalid config key "Websocket"
+
+To avoid this error, make sure that the installed package
+``service-discover-base`` is *at least* version **1.10.12**. You can
+verify this with the following commands.
+
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt search service-discover-base
+         # dpkg -l service-discover-base
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf info service-discover-base
+         # rpm -q service-discover-base
+
+If the version is older than **1.10.12**, please upgrade the package.
+
+After you verified that the version is the correct one, please run
+this command **before** :command:`pending-setups`.
+
+.. code:: console
+
+   # systemctl restart service-discover.service
 

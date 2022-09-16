@@ -15,4 +15,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core deleteVolume Yandex <bucket_configuration_id>
+zxsuite core doDeleteBucket Yandex <bucket_configuration_id>

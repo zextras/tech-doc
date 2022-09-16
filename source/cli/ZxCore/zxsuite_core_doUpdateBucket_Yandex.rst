@@ -19,4 +19,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core updateVolume Yandex bucketName access_key accessKey
+zxsuite core doUpdateBucket Yandex bucketName access_key accessKey
