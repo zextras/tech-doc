@@ -107,7 +107,7 @@ similar to::
   
 	* invalid config key "Websocket"
 
-This avoid this error, make sure that the installed package
+To avoid this error, make sure that the installed package
 ``service-discover-base`` is *at least* version **1.10.12**. You can
 verify this with the following commands.
 
