@@ -111,6 +111,8 @@ The next steps concern the configuration and setup of the various
       # usermod -a -G carbonio-mailbox zextras
       # chmod a+r /etc/zextras/carbonio-mailbox/token
 
+.. _config-db:
+
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 

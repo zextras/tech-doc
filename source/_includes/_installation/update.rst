@@ -90,8 +90,13 @@ bootstrap the corresponding Database, by running either of the commands.
 
 .. code:: console
 
-   # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+In the above commands, ``$DB_ADM_PWD`` is the the password of the
+``carbonio_adm`` database role, that is, the one created during
+:ref:`Step 6 <config-db>` of the Single-Server installation or the
+installation of :ref:`srv1-install` in the Multi-Server installation
 
 Finally, since new version of |product| packages may include new
 services, it is strongly suggested to execute the command
