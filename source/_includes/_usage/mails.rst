@@ -88,6 +88,11 @@ modal will appear and ask to send a read receipt to the author. Click
 :bdg-primary:`NOTIFY` to send the receipt, otherwise no receipt will
 be sent.
 
+In |product|, to prevent sending an incomplete e-mail, an automatic
+delay of three seconds takes places, and a message appears on the
+bottom right corner: click :bdg-info:`UNDO` to stop the sending and
+continue editing the e-mail.
+
 Trash Folder
 ------------
 
