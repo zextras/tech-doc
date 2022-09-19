@@ -13,33 +13,18 @@ third-party software, which lead to some additional manual steps to be
 carried out. Section :ref:`upgrade-troubleshooting` below contains
 information to prevent or fix these issues.
 
-Therefore, to
-upgrade |product|, first check for new packages:
-
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt update
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf update
-
-Then choose either way of upgrading:
+The steps required are basically two, although in some rare cases some
+additional care is required, see after the instructions below.
 
 .. grid:: 1 1 1 2
    :gutter: 3
-   
-   .. grid-item-card:: Upgrade |product| packages
+
+   .. grid-item-card:: 
       :columns: 12 12 12 6
-                
+
+      Step 1. Update package list
+      ^^^^^
+      
       .. tab-set::
 
          .. tab-item:: Ubuntu
@@ -47,18 +32,20 @@ Then choose either way of upgrading:
 
             .. code:: console
 
-               # apt install "carbonio-*"
+               # apt update
 
          .. tab-item:: RHEL
             :sync: rhel
 
             .. code:: console
 
-               # dnf install "carbonio-*"
+               # dnf update
 
-   .. grid-item-card:: Upgrade the whole system
+   .. grid-item-card:: 
       :columns: 12 12 12 6
 
+      Step 2 Install new packages
+      ^^^^^
       
       .. tab-set::
 
@@ -76,17 +63,16 @@ Then choose either way of upgrading:
 
                # dnf upgrade
 
-   .. grid-item:: 
-      :columns: 12 12 12 12
+These two commands also take care of resolving all dependencies and
+install all the upgrades available, of both the system and |product|.
 
-      .. hint:: Even if you choose to upgrade only |product|, remember
-         that you should keep the whole system up to date, because new
-         system packages may contain security fixes or bug fixes.
+Manual steps
+------------
 
-
-Whenever a ``db`` package is upgraded (currently
-``carbonio-mailbox-db`` and ``carbonio-files-db``), remember to
-bootstrap the corresponding Database, by running either of the commands.
+Whenever a ``db`` package is upgraded (currently there are two of
+these packages, ``carbonio-mailbox-db`` and ``carbonio-files-db``),
+remember to bootstrap the corresponding Database, by running either of
+the commands.
 
 .. code:: console
 
