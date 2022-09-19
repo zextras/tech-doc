@@ -83,6 +83,21 @@ Then choose either way of upgrading:
          that you should keep the whole system up to date, because new
          system packages may contain security fixes or bug fixes.
 
+
+Whenever a ``db`` package is upgraded (currently
+``carbonio-mailbox-db`` and ``carbonio-files-db``), remember to
+bootstrap the corresponding Database, by running either of the commands.
+
+.. code:: console
+
+   # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+In the above commands, ``$DB_ADM_PWD`` is the the password of the
+``carbonio_adm`` database role, that is, the one created during
+:ref:`Step 6 <config-db>` of the Single-Server installation or the
+installation of :ref:`srv1-install` in the Multi-Server installation
+
 Finally, since new version of |product| packages may include new
 services, it is strongly suggested to execute the command
 
@@ -97,6 +112,12 @@ used.
 
 Upgrade Troubleshooting
 -----------------------
+
+This section lists some troubleshooting options related to the upgrade
+process.
+
+Upgrade of Docs-Editor
+~~~~~~~~~~~~~~~~~~~~~~
 
 When installing recent version of the **Docs-Editor**, running the
 :command:`pending-setups` might abruptly exit with an error message
@@ -138,4 +159,23 @@ this command **before** :command:`pending-setups`.
 .. code:: console
 
    # systemctl restart service-discover.service
+
+
+Token-related error messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Whenever, during the upgrade process, you find any error in the log
+files, execute the following two commands.
+
+The first one must be executed as the ``root`` user.
+
+.. code:: console
+
+   # chmod a+r /etc/zextras/carbonio-mailbox/token
+
+The second one must be executed as the ``zextras`` user.
+
+.. code:: console
+
+   $ zmmailboxdctl restart
 
