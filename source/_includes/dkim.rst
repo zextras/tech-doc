@@ -28,7 +28,7 @@ Create a DKIM record
 --------------------
 
 In order to create a new DKIM record, two steps are necessary. As
-usual, we are using `mail.example.com` in our scenario: replace it
+usual, we are using `example.com` in our scenario as the domain name: replace it
 with the actual domain name.
 
 .. card:: 
@@ -36,22 +36,23 @@ with the actual domain name.
    Step 1: Generate DKIM record
    ^^^^^
 
-   Execute the following command to generate a new DKIM record.
+   Execute the following command to generate a new DKIM record for the
+   domain.
 
    .. code:: console
 
-      # /opt/zextras/libexec/zmdkimkeyutil -a -d mail.example.com
+      # /opt/zextras/libexec/zmdkimkeyutil -a -d example.com
 
    The output will be similar to the following::
 
-     DKIM Data added to LDAP for domain mail.example.com with selector D43CB080-8FE0-11EC-88DF-9958FFC5EFF5
+     DKIM Data added to LDAP for domain example.com with selector D43CB080-8FE0-11EC-88DF-9958FFC5EFF5
      Public signature to enter into DNS:
      D43CB080-8FE0-11EC-88DF-9958FFC5EFF5._domainkey IN TXT ( "v=DKIM1; k=rsa; ""p=MIIBIjANBgkqhkiG9w0BAQEFA
      AOCAQ8AMIIBCgKCAQEA6fn7z208Gj/UVAL29CeKxhyHrRnals/qs4kWxnWuPK+ogDQjZoD0aUIv6QkUX6Y/KSYUd9qHEy1I7pSNIlyS
      ecqeq/YsP5zXzoKD7WmLfE0PGIx0CEtsn4h4MJucm+LNVKziSPVzkVZ0rku15BaBO1bpFd7bvkXMffei3cc2zwrFmFSDVB5P84k1na+
      5p1o4NBq3SDn8fks9r6""CJ7dAZQ3LazNmAgenMldkWC7tv+/25CStiz3QQ4GqCn4tp0VW3hWOQm6tRSe1yHEG10XT2cSieFM1w0GzB
      XZZEedCK1POmFoOKwgqraxJtqiPdM7i+mjUOy7w1uqJa4fyxjbVp0QIDAQAB" ) ; ----- DKIM key D43CB080-8FE0-11EC-88D
-     F-9958FFC5EFF5 for mail.example.com
+     F-9958FFC5EFF5 for example.com
 
 
 .. card::
@@ -75,7 +76,7 @@ with the actual domain name.
        XZZEedCK1POmFoOKwgqraxJtqiPdM7i+mjUOy7w1uqJa4fyxjbVp0QIDAQAB"
 
      .. warning:: Depending on the DNS, it is possible that you need
-	to remove the double quotes, the white spaces, or both!
+        to remove the double quotes, the white spaces, or both!
 
 Test and Verify
 ---------------
@@ -94,7 +95,7 @@ sign the outgoing e-mails.
 
    .. code:: console
 
-      # nslookup -type=txt D43CB080-8FE0-11EC-88DF-9958FFC5EFF5._domainkey.mail.example.com
+      # nslookup -type=txt D43CB080-8FE0-11EC-88DF-9958FFC5EFF5._domainkey.example.com
 
    Make sure that you use the same name used when creating the TXT
    record.
@@ -137,10 +138,10 @@ sign the outgoing e-mails.
    In the source code, you should see a line similar to the
    following::
 
-     tests=[DKIM_SIGNED=0.1, DKIM_VALID=-0.1, DKIM_VALID_AU=-0.1 ... dkim=pass (2048-bit key) header.d=mail.example.com
+     tests=[DKIM_SIGNED=0.1, DKIM_VALID=-0.1, DKIM_VALID_AU=-0.1 ... dkim=pass (2048-bit key) header.d=example.com
 
-   Make sure the actual domain name is present instead of
-   ``mail.example.com``.
+   Make sure your actual domain name is present instead of
+   ``example.com``.
 
 
    
