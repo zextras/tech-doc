@@ -2,8 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Once all packages have been installed and the PostgreSQL user and
-database for |file| have been setup, use the following command to
+Once all packages have been installed, use the following command to
 configure and launch |product|.
 
 .. code:: console
