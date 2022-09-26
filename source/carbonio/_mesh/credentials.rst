@@ -2,17 +2,40 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _mesh-credentials:
+
+|mesh| Credentials
+==================
+
+The credentials used by |mesh| are stored in file
+:file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`,
+which is a *tar* archive that has been encrypted with GPG. The *tar*
+archive contains:
+
+* The bootstrap token
+* The |mesh| internal :abbr:`CA (Certificate Authority)` and its
+  corresponding private key
+* the encryption keys.
+
+The |mesh| credentials are used during various administration
+activities: |product| setup and upgrade, and when running
+:command:`pending-setups`. Additionally, it may be used in other minor
+tasks that involve |product| components.
+
+The file mentioned above is GPG-encrypted using a **secret** (which is
+nothing more than another password), that is stored in
+:file:`/var/lib/service-discover/password` and is accessible only by
+the ``root`` user. The **secret** is needed when running
+:command:`pending-setups`.
+         
 .. _mesh-reset:
 
 Regenerate |mesh| Credentials
-=============================
+-----------------------------
 
 Whenever a problem arises in the |mesh| ACL system and the
 service-discover stops working, it is necessary to regenerate the
 credentials to be able to continue using |mesh|.
-
-.. note:: The |mesh| credentials are stored in file
-   :file:`/var/lib/service-discover/password`.
 
 .. card::
 
