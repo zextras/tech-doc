@@ -43,7 +43,7 @@ These following tasks must be executed to configure the MTA.
    .. hint:: the SRV2_IP can be retrieved using command :command:`su -
       zextras -c "zmprov gas service-discover"`
 
-#. Run |mesh| setup using ``MESH_CLUSTER_PWD``
+#. Run |mesh| setup using ``MESH_SECRET``
 
    .. code:: console
 

@@ -15,18 +15,22 @@ archive contains:
 * The bootstrap token
 * The |mesh| internal :abbr:`CA (Certificate Authority)` and its
   corresponding private key
-* the encryption keys.
+* the encryption keys
 
-The |mesh| credentials are used during various administration
-activities: |product| setup and upgrade, and when running
-:command:`pending-setups`. Additionally, it may be used in other minor
-tasks that involve |product| components.
+The file with the |mesh| credentials must be present and accessible
+during various administration activities: |product| setup and upgrade,
+when running :command:`pending-setups`, and while carrying out other
+minor tasks that involve |product| components.
+
+If the file is not readable, is corrupted, or can not be read during
+these activities, it is necessary to :ref:`mesh-reset`.
 
 The file mentioned above is GPG-encrypted using a **secret** (which is
 nothing more than another password), that is stored in
 :file:`/var/lib/service-discover/password` and is accessible only by
-the ``root`` user. The **secret** is needed when running
-:command:`pending-setups`.
+the ``root`` user. The **secret** is needed when running the
+:command:`pending-setups` command and during the Service Discover
+installation wizard.
          
 .. _mesh-reset:
 
@@ -131,7 +135,7 @@ the Multi-Server there are a few more steps to carry out.
 
    .. code:: console
 
-      # service-discover setup 192.168.56.101 --first-instance --password=MESH_CLUSTER_PWD
+      # service-discover setup 192.168.56.101 --first-instance --password=MESH_SECRET
 
    This is essentially the same command as the one used during the
    configuration of |mesh|, the only difference being that in this
@@ -165,4 +169,4 @@ the Multi-Server there are a few more steps to carry out.
    .. code:: console
 
       # rm /var/lib/service-discover/*pem
-      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
+      # service-discover setup $(hostname -i) --password=MESH_SECRET
