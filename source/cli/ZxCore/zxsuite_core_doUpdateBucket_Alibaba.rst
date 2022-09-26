@@ -21,4 +21,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core updateVolume Alibaba bucketName access_key accessKey
+zxsuite core doUpdateBucket Alibaba bucketName access_key accessKey

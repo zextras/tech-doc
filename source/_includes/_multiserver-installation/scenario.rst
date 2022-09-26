@@ -15,7 +15,7 @@ environment, composed by **six nodes** (that we will denote as *SRV1*,
 
 #. **SRV1** features a dedicated installation of Postgres
 #. **SRV2** represents the core infrastructure of |product| and
-   installs LDAP Server, Directory Server, and DB connection
+   installs, Directory Server, |mesh|, and DB connection
 #. **SRV3** is equipped with MTA, the mail server
 #. **SRV4** hosts the Proxy, which allows web access to all
    components, and |vs|, which provides the video-conference features

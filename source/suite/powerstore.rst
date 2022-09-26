@@ -135,7 +135,7 @@ to use CLI commands.
      connection. You can also enter the IP address of the provider
      instead of the URL.
 
-   See the ref:`doCreateBucket S3 <core_doCreateBucket_S3` full
+   See the :ref:`doCreateBucket S3 <zxsuite_core_doCreateBucket_S3>` full
    reference for details and more options.
 
    When successful, the command outputs a string, which is the unique
@@ -153,10 +153,9 @@ to use CLI commands.
 
      zxsuite powerstore doCreateVolume S3 _Name of the zimbra store_ _primary|secondary_ [param VALUE[,VALUE]]
 
-
    For example::
 
-     zxsuite powerstore doCreateVolume S3 VolumeName secondary bucket_configuration_id 28m6u4KBwSUnYaPp86XG volume_prefix main_vol centralized
+     zxsuite powerstore doCreateVolume S3 VolumeName secondary 28m6u4KBwSUnYaPp86XG volume_prefix myVolPrefix centralized true
 
    In this example, these values are used:
 
@@ -165,11 +164,12 @@ to use CLI commands.
      command is executed
    * *secondary*: the type of the volume
    * *28m6u4KBwSUnYaPp86XG*: the bucket ID* as received in step 1
-   * *volume_prefix main_vol*: an ID assigned to the volume, used for
-     quick searches (e.g., *main_vol*)
+   * *volume_prefix myVolPrefix*: an ID assigned to the volume, used for
+     quick searches (e.g., *myVolPrefix*)
+   * *centralized true* creates the volume as centralized
 
    See the :ref:`doCreateVolume
-   S3<zxsuite_powerstore_doCreateVolume_S3>` full reference for
+   S3 <zxsuite_powerstore_doCreateVolume_S3>` full reference for
    details and more options.
 
 4.  Set the volume to *current*, to let it receive data immediately::
@@ -809,7 +809,8 @@ officially supported platforms:
 
 -  Cloudian
 
--  Custom S3 (any unsupported S3-compliant solution)
+-  Custom S3 (any unsupported S3-compliant solution), using both V2
+   and V4 authentication
 
 .. _pws_primary_volumes_and_the_incoming_directory:
 

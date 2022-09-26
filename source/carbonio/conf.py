@@ -74,7 +74,7 @@ rst_prolog = """
 # -- Configuration of extensions ---------------------------------------------
 
 # copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
-copybutton_prompt_text = r'\$\s|#\s|carbonio>\s\zextras$%\s'
+copybutton_prompt_text = r'\$\s|#\s|carbonio>\s|zextras\$\s'
 copybutton_prompt_is_regexp = True
 copybutton_line_continuation_character = "\\"
 
@@ -98,9 +98,7 @@ html_css_files = [ 'css/carbonio.css' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
-# html_theme_options = {
-#     'analytics_id': 'UA-23692145-1',
-#     'analytics_anonymize_ip': False,
-#     'collapse_navigation': False
-# }
+html_theme_options = {
+    'collapse_navigation': False
+}
 html_context = { 'hubhome' : '%s' %hubhome }

@@ -83,14 +83,14 @@ the Multi-Server there are a few more steps to carry out.
 
       # sudo -u service-discover bash -c "echo 908 > /var/lib/service-discover/data/acl-bootstrap-reset"
 
-   Then stop the *service discover* service.
+   Then stop the *service-discover* service.
 
    .. code:: console
 
       # systemctl stop service-discover
 
 
-   Finally, remove all certificates related to  *service discover*.
+   Finally, remove all certificates related to  *service-discover*.
 
    .. code:: console
 

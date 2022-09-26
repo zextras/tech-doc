@@ -35,5 +35,5 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core createVolume Ceph bucketName accessKey secretKey url
+zxsuite core doCreateBucket Ceph bucketName accessKey secretKey url
 http://host/service

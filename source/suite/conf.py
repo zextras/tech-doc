@@ -21,6 +21,8 @@ import sphinx_rtd_theme
 import time
 current_year = time.strftime('%Y')
 
+hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
+
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Suite'
@@ -28,7 +30,7 @@ copyright = '2022: ZEXTRAS, All rights reserved'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '3.12.0'
+release = '3.13.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -85,8 +87,8 @@ html_css_files = [ 'css/suite.css', 'https://cdnjs.cloudflare.com/ajax/libs/font
 html_logo = 'img/logos/suite-white.svg'
 
 html_theme_options= {
-#    'analytics_id': 'UA-23692145-1',  #  Provided by Google in your dashboard
-#    'analytics_anonymize_ip': False,
     'style_nav_header_background': 'var(--zx-color-magma)',
-    'style_external_links': True
+    'style_external_links': True,
+    'collapse_navigation': False
 }
+html_context = { 'hubhome' : '%s' %hubhome }

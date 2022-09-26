@@ -21,4 +21,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core updateVolume EMC bucketName access_key accessKey
+zxsuite core doUpdateBucket EMC bucketName access_key accessKey
