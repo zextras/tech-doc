@@ -109,8 +109,9 @@ The next steps concern the configuration and setup of the various
    .. code:: console
 
       # usermod -a -G carbonio-mailbox zextras
-      # chmod 0666 /etc/zextras/carbonio-mailbox/token
+      # chmod a+r /etc/zextras/carbonio-mailbox/token
 
+.. _config-db:
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -208,10 +209,7 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
      scratch (*SRV1*).
 
 * The first node to be installed is the one that will feature the
-  Directory Server and LDAP roles (*SRV2*)
-
-  .. note:: If you plan to install LDAP (possibly also a master/slave
-     LDAP), install this node before the Directory Server.
+  Directory Server role (*SRV2*)
 
 * The next server to be installed is the MTA one (*SRV3*)
 

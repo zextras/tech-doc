@@ -2,35 +2,29 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-|product| does not need any installer, but whenever new versions are
-released, the repositories are updated and packages are available for
-installation along with the other system updates.  Therefore, to
-upgrade |product|, first check for new packages:
+|product| does not have any installer: whenever new versions are
+released, the |zx| repositories are updated and packages are available for
+installation along with the other system updates. Therefore, the upgrade
+procedure is usually a very quick activity, carried out with by means
+of a few commands.
 
-   .. tab-set::
+However, in seldom cases, some incompatibility may arise in
+third-party software, which lead to some additional manual steps to be
+carried out. Section :ref:`upgrade-troubleshooting` below contains
+information to prevent or fix these issues.
 
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt update
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf update
-
-Then choose either way of upgrading:
+The steps required are basically two, although in some rare cases some
+additional care is required, see after the instructions below.
 
 .. grid:: 1 1 1 2
    :gutter: 3
-   
-   .. grid-item-card:: Upgrade |product| packages
+
+   .. grid-item-card:: 
       :columns: 12 12 12 6
-                
+
+      Step 1. Update package list
+      ^^^^^
+      
       .. tab-set::
 
          .. tab-item:: Ubuntu
@@ -38,18 +32,20 @@ Then choose either way of upgrading:
 
             .. code:: console
 
-               # apt install "carbonio-*"
+               # apt update
 
          .. tab-item:: RHEL
             :sync: rhel
 
             .. code:: console
 
-               # dnf install "carbonio-*"
+               # dnf update
 
-   .. grid-item-card:: Upgrade the whole system
+   .. grid-item-card:: 
       :columns: 12 12 12 6
 
+      Step 2 Install new packages
+      ^^^^^
       
       .. tab-set::
 
@@ -67,12 +63,26 @@ Then choose either way of upgrading:
 
                # dnf upgrade
 
-   .. grid-item:: 
-      :columns: 12 12 12 12
+These two commands also take care of resolving all dependencies and
+install all the upgrades available, of both the system and |product|.
 
-      .. hint:: Even if you choose to upgrade only |product|, remember
-         that you should keep the whole system up to date, because new
-         system packages may contain security fixes or bug fixes.
+Manual steps
+------------
+
+Whenever a ``db`` package is upgraded (currently there are two of
+these packages, ``carbonio-mailbox-db`` and ``carbonio-files-db``),
+remember to bootstrap the corresponding Database, by running either of
+the commands.
+
+.. code:: console
+
+   # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+In the above commands, ``$DB_ADM_PWD`` is the the password of the
+``carbonio_adm`` database role, that is, the one created during
+:ref:`Step 6 <config-db>` of the Single-Server installation or the
+installation of :ref:`srv1-install` in the Multi-Server installation
 
 Finally, since new version of |product| packages may include new
 services, it is strongly suggested to execute the command
@@ -84,60 +94,74 @@ services, it is strongly suggested to execute the command
 This will register the services to |mesh|, so they can immediately be
 used.
 
-Troubleshooting
----------------
+.. _upgrade-troubleshooting:
 
-.. grid:: 1 1 2 2
-   :gutter: 2
+Upgrade Troubleshooting
+-----------------------
 
-   .. grid-item-card:: Problem: Error in upgrading
+This section lists some troubleshooting options related to the upgrade
+process.
 
-      In early |product| versions, up to **4.0.3** included, an error
-      similar to the following one may arise during upgrades in both
-      Single-Server or Multi-Server installations::
+Upgrade of Docs-Editor
+~~~~~~~~~~~~~~~~~~~~~~
 
-        Preparing to unpack .../114-carbonio-core_4.0.5-1ubuntu1~focal_amd64.deb ...
-        Unpacking carbonio-core (4.0.5-1ubuntu1~focal) over (4.0.3-1ubuntu1~focal) ...
-        dpkg: error processing archive /tmp/apt-dpkg-install-GOKoug/114-carbonio-core_4.0.5-1ubuntu1~focal_amd64.deb (--unpack):
-        trying to overwrite '/opt/zextras/.mini_alue_ce', which is also in package carbonio-ce 4.0.3-1ubuntu1~focal
-        dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+When installing recent version of the **Docs-Editor**, running the
+:command:`pending-setups` might abruptly exit with an error message
+similar to::
 
-        [...]
+  Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
+  400 (Bad request: Request decoding failed: 1 error occurred:
+  
+	* invalid config key "Websocket"
 
-        Errors were encountered while processing:
-        /tmp/apt-dpkg-install-GOKoug/114-carbonio-core_4.0.5-1ubuntu1~focal_amd64.deb
-        E: Sub-process /usr/bin/dpkg returned an error code (1)
+To avoid this error, make sure that the installed package
+``service-discover-base`` is *at least* version **1.10.12**. You can
+verify this with the following commands.
 
-      In this case, the error message stems from `carbonio-ce` package, but
-      it may be related to any |carbonio| package, for example
-      `carbonio-mta`, `carbonio-proxy`, and so on. If this is the case, use
-      the proper package name (instead of `carbonio-ce`) in the commands
-      given below.
 
-   .. grid-item-card:: Solution:
+.. tab-set::
 
-      This is a known problem, fixed in **4.0.4**, for which the following
-      workaround exists: install package `carbonio-ce` (or the one
-      that failed)::
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
-        # apt install carbonio-ce
+      .. code:: console
 
-      Make sure that the `carbonio-core` package is installed and is
-      the **latest version** available::
+         # apt search service-discover-base
+         # dpkg -l service-discover-base
 
-        # apt policy carbonio-core
+   .. tab-item:: RHEL
+      :sync: rhel
 
-      The outcome of the command shows the available versions of a
-      package and should include three asterisks (``***``) before the
-      latest available version. If not, install the package::
+      .. code:: console
 
-        # apt install carbonio-core
+         # dnf info service-discover-base
+         # rpm -q service-discover-base
 
-      Once installed, if a message appears, that some packages are not
-      needed anymore, execute::
+If the version is older than **1.10.12**, please upgrade the package.
 
-        # apt autoremove
+After you verified that the version is the correct one, please run
+this command **before** :command:`pending-setups`.
 
-      It is worth noticing that the manual installation of the package
-      does not have any effect on its existing configurations, so you
-      can proceed without any fear to lose them.
+.. code:: console
+
+   # systemctl restart service-discover.service
+
+
+Token-related error messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Whenever, during the upgrade process, you find any error in the log
+files, execute the following two commands.
+
+The first one must be executed as the ``root`` user.
+
+.. code:: console
+
+   # chmod a+r /etc/zextras/carbonio-mailbox/token
+
+The second one must be executed as the ``zextras`` user.
+
+.. code:: console
+
+   $ zmmailboxdctl restart
+

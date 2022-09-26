@@ -21,4 +21,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core updateVolume Ceph bucketName access_key accessKey
+zxsuite core doUpdateBucket Ceph bucketName access_key accessKey

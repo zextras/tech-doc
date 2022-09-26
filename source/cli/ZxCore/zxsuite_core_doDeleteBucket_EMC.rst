@@ -15,4 +15,4 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core deleteVolume EMC <bucket_configuration_id>
+zxsuite core doDeleteBucket EMC <bucket_configuration_id>

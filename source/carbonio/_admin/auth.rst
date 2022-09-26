@@ -208,17 +208,11 @@ In order to enable the authentication strategies available in
 
         zmprov modifyDomain example.com zimbraAuthMech custom:zx
 
-      To enable 2FA it is also necessary to:
+      To enable 2FA it is also necessary, **for all services**:
 
-      - Enter the addresses of all mailbox and MTAs as
-        ``ZimbraMailTrustedIp``, using the command::
+      - to define a ``trusted ip range``
 
-          zmprov mcf +zimbramailtrustedip IP_ADDRESS
-
-      -  A ``trusted ip range`` must be defined for all services
-
-      -  For all services the ``ip_can_change`` attribute must be validated on
-         ``true`` and ``2fa_policy = 1``
+      - to set the ``ip_can_change`` on ``true`` and ``2fa_policy`` to 1
 
       .. warning:: 2FA requires a specific zimbraAuthMech and this makes it
          not compatible with other mechanism such as ldap, ad or kerberos5
@@ -228,35 +222,9 @@ In order to enable the authentication strategies available in
 
       SAML Requirements
       ^^^^
-
-      Before enabling SAML login, it is necessary to modify the
-      Backend processing, because these header attributes are required
-      to compose the complete URL request: **Protocol X** and
-      **X-Port**.
-
-      The files affected by this change are the templates:
-
-      -  ``nginx.conf.web.http.default.template``
-
-      -  ``nginx.conf.web.http.template``
-
-      -  ``nginx.conf.web.https.default.template``
-
-      -  ``nginx.conf.web.https.template``
-
-      In each of them, the ``location ^~ /zx/`` code should be changed.
-
-      .. code:: nginx
-
-         location ^~ /zx/
-           {
-               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-               proxy_set_header Host $http_host;
-               proxy_set_header X-Forwarded-Proto $scheme;
-               proxy_set_header X-Forwarded-Port $server_port;
-               proxy_pass ${web.upstream.zx};
-           }
-
+      There is no special requirement to enable SAML, besides
+      having a SAML IDP Provider.
+      
 .. _auth_set_up_saml:
 
 Setting up SAML Configuration

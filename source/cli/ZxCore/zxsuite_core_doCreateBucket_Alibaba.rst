@@ -38,5 +38,5 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core createVolume Alibaba bucketName accessKey secretKey url
+zxsuite core doCreateBucket Alibaba bucketName accessKey secretKey url
 http://host/service
