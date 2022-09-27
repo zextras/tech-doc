@@ -15,7 +15,7 @@ environment, composed by **six nodes** (that we will denote as *SRV1*,
 
 #. **SRV1** features a dedicated installation of Postgres
 #. **SRV2** represents the core infrastructure of |product| and
-   installs, Directory Server, |mesh|, and DB connection
+   installs Directory Server, |mesh|, and DB connection
 #. **SRV3** is equipped with MTA, the mail server
 #. **SRV4** hosts the Proxy, which allows web access to all
    components, and |vs|, which provides the video-conference features
@@ -23,7 +23,8 @@ environment, composed by **six nodes** (that we will denote as *SRV1*,
 #. **SRV5** is an AppServer which installs |file| & |docs|, that
    provide sharing and collaborative editing of documents
 #. **SRV6** is another AppServer and consists of |pv|, |carbonio|\'s
-   ability to preview snippets or thumbnails of a document, and the Logger
+   ability to preview snippets or thumbnails of a document, the
+   Logger, the User Management, and some advanced service
 
 .. note:: The **Logger node** must be unique within a |product|
    infrastructure!
