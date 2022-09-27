@@ -2,9 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv1 - AppServer - Advanced - Preview - Logger
+.. srv6 - AppServer - Advanced - Preview - Logger
 
-On this node, first install all the necessary packages:
+
+On this node we install the Preview, the Logger, and the User Management.
+
+.. hint:: We suggest that *Preview* and the |docs|-related packages be
+   installed on different physical nodes.
+
+First install all the necessary packages:
 
 .. tab-set::
 

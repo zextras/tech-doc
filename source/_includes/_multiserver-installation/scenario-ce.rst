@@ -16,7 +16,8 @@ environment, composed by **six nodes** (that we will denote as *SRV1*,
 #. **SRV5** is an AppServer which installs |file| & |docs|, that
    provide sharing and collaborative editing of documents
 #. **SRV6** is another AppServer and consists of |pv|, |carbonio|\'s
-   ability to preview snippets or thumbnails of a document, and the Logger
+   ability to preview snippets or thumbnails of a document, the
+   Logger, and the User Management
 
 .. note:: The **Logger node** must be unique within a |product|
    infrastructure!

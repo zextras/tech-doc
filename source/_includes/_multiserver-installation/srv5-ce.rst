@@ -4,7 +4,8 @@
 
 .. srv5 - Advanced, AppServer, Files, and Docs
    
-On this node, first install all the required packages for |file|, and .
+On this node, first install all the required packages for |file|, then
+configure the various services needed.
 
 .. tab-set::
 
@@ -14,7 +15,7 @@ On this node, first install all the required packages for |file|, and .
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-storages-ce carbonio-user-management
+           carbonio-storages-ce carbonio-user-management \
            carbonio-files-ce carbonio-docs-connector-ce \
            carbonio-docs-editor
            
