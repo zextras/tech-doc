@@ -15,15 +15,17 @@ archive contains:
 * The bootstrap token
 * The |mesh| internal :abbr:`CA (Certificate Authority)` and its
   corresponding private key
-* the encryption keys
+* The encryption keys
+
+.. warning:: If the file
+   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
+   becomes compromised, the security of the whole infrastructure will
+   be compromised as well.
 
 The file with the |mesh| credentials must be present and accessible
 during various administration activities: |product| setup and upgrade,
 when running :command:`pending-setups`, and while carrying out other
 minor tasks that involve |product| components.
-
-If the file is not readable, is corrupted, or can not be read during
-these activities, it is necessary to :ref:`mesh-reset`.
 
 The file mentioned above is GPG-encrypted using a **secret** (which is
 nothing more than another password), that is stored in
@@ -31,36 +33,44 @@ nothing more than another password), that is stored in
 the ``root`` user. The **secret** is needed when running the
 :command:`pending-setups` command and during the Service Discover
 installation wizard.
-         
+
+Hence, if you do not remember the password, log in as ``root`` to your
+Single-Server |product|, while if you are on a Multi-Server, log in to
+any |mesh| *Server*, then read the
+:file:`/var/lib/service-discover/password` file.
+
+In case you want to change the secret, or you *need* to change it (for
+example because it has been compromised, shared with or sent to the
+wrong persons, or if one of the system administrators has left your
+company), it is necessary to :ref:`mesh-reset`.
+
 .. _mesh-reset:
 
-Regenerate |mesh| Credentials
------------------------------
+Regenerate |mesh| Secret
+------------------------
 
-Whenever a problem arises in the |mesh| ACL system and the
-service-discover stops working, it is necessary to regenerate the
-credentials to be able to continue using |mesh|.
+In case the secret needs to be changed, there is one important
+information to know beforehand: the *reset index* value, whic is
+always an **integer**.
 
 .. card::
 
-   Scenario
+   Retrieve the reset index
    ^^^^
 
-   In this sample scenario, the command :command:`consul acl
-   bootstrap` will terminate with an error message similar to::
+   Simply execute the command
+
+   .. code:: bash
+
+      # consul acl bootstrap.
+
+   The output will always be similar to::
 
      Failed ACL bootstrapping: Unexpected response code: 403 (Permission denied: ACL bootstrap no longer allowed (reset index: 908))
 
-   This can happen, for example, when the **cluster credential
-   password** of file
-   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
-   is unaccessible (for example, because the password has been lost),
-   but the procedure below may apply whenever the above-mentioned
-   error message appears.
-
-   It is important to take note of the index number, that is the last
-   bit of the output *(reset index: 908)*: ``908`` is the current
-   index and is needed in the procedure below.
+   The *reset index value** is the last bit of the output *(reset
+   index: 908)*: in our case **908**, which is the current index and
+   is needed in the procedure below.
 
 
 Before attempting the recover, be prepared for a downtime of the
@@ -74,8 +84,8 @@ the Multi-Server there are a few more steps to carry out.
    Preliminary Tasks
    ^^^^
 
-   In case of a Single-Server node, log in to it and skip to the next
-   step.
+   In case of a Single-Server node, log in to it and skip to Step 1
+   below.
 
    On a Multi-Server, you need to identify the |mesh| *leader node*
    node and log into it. Most of the times, this is the
@@ -118,6 +128,13 @@ the Multi-Server there are a few more steps to carry out.
    .. code:: console
 
       # systemctl stop service-discover
+
+   Remove the following two files:
+
+   .. code:: console
+
+      # rm /etc/zextras/service-discover/config.json
+      # rm /etc/zextras/service-discover/main.json
 
 
    Finally, remove all certificates related to  *service-discover*.
