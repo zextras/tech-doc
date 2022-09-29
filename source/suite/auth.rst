@@ -656,7 +656,7 @@ import the configuration using the command:
 
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
-.. figure:: /img/auth/saml-login.png
+.. figure:: /img/suite/saml-login.png
    :scale: 50%
 
    Login page with enabled SAML.
