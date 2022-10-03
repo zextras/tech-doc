@@ -54,6 +54,7 @@ If you are looking for |ce|'s documentation, please refer to its
 
          administration
          management
+	 storages
          mesh
 
    .. grid-item-card::
