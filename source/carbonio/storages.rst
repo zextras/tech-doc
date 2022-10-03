@@ -11,8 +11,8 @@
 Introduction
 ============
 
-Each Zextras Suite installation consists of one primary volume and a
-variable number of secondary volumes. The purpose of the Powerstore
+Each |carbonio| installation consists of one primary volume and a
+variable number of secondary volumes. The purpose of the |storage|
 module is to manage the secondary volumes and to move items between
 them.
 
@@ -25,38 +25,36 @@ performing will manage older data.
 The remainder of this section describes volumes and their management,
 policies, HSM, and various advanced techniques.
 
-.. _pws_zimbra_stores:
+.. _pws_|carbonio|_stores:
 
-Zimbra Stores
-=============
+|Carbonio| Stores
+=================
 
-.. section to be removed or rewritten
-   
 .. _pws_the_basics_types_of_stores_and_their_uses:
 
 The Basics: Types of Stores and Their Uses
 ------------------------------------------
 
-Zimbra allows for **two** different types of stores:
+|Carbonio| allows for **two** different types of stores:
 
 **Index Store**
    A store that contains information about your data that is used by
    Apache Lucene to provide indexing and search functions.
 
 **Data Store**
-   A store that contains all your Zimbra data organized in a MySql
+   A store that contains all your |Carbonio| data organized in a MySql
    database.
 
 You can have multiple stores of each type, but only one Index Store, one
 Primary Data Store and one Secondary Data Store can be set as *Current*
-(meaning that is currently used by Zimbra).
+(meaning that is currently used by |Carbonio|).
 
 .. _pws_primary_and_secondary_data_stores:
 
 Primary and Secondary Data Stores
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A data store in Zimbra can be either a Primary Data Store or a Secondary
+A data store in |Carbonio| can be either a Primary Data Store or a Secondary
 Data Store.
 
 Data is moved between the *current* Primary Data Store and the *current*
@@ -67,7 +65,7 @@ Secondary Data Store according to a defined policy.
 Volumes
 ~~~~~~~
 
-Three types of volumes are defined by Zimbra:
+Three types of volumes are defined by |Carbonio|:
 
 **Primary Current**
    A volume where data are written upon arrival.
@@ -119,84 +117,71 @@ In details, the recommended procedure is the following and requires
 to use CLI commands.
 
 
-1. Create an S3 bucket using the ZxCore command ``doCreateBucket``::
+1. Create an S3 bucket using the command ``doCreateBucket``::
 
-     zxsuite core doCreateBucket S3 _Amazon_AWS_bucket_ _Service_username_ _Service_password_ [param VALUE[,VALUE]]
+     carbonio core doCreateBucket S3 _Amazon_AWS_bucket_ _Service_username_ _Service_password_ [param VALUE[,VALUE]]
 
    For example::
 
-     zxsuite core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf https://example_bucket_provider.com
+     carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf https://example_bucket_provider.com
 
    In this example, we use the following values:
 
-   * *S3* as the type of bucket
-   * *BucketName* as the name of the bucket, which *must coincide*
+   * **S3** as the type of bucket
+   * **BucketName** as the name of the bucket, which *must coincide*
      with the name on the remote provider, otherwise the command will
      fail
-   * *X58Y54E5687R543* as the remote username
-   * *abCderT577eDfjhf* as the remote password
-   * *https://example_bucket_provider.com* as the URL for the
+   * **X58Y54E5687R543** as the remote username
+   * **abCderT577eDfjhf** as the remote password
+   * **https://example_bucket_provider.com** as the URL for the
      connection. You can also enter the IP address of the provider
      instead of the URL.
 
-   See the ref:`doCreateBucket S3 <core_doCreateBucket_S3` full
-   reference for details and more options.
-
    When successful, the command outputs a string, which is the unique
-   *bucket ID*, for example *28m6u4KBwSUnYaPp86XG*. Take note of it
+   *bucket ID*, for example **28m6u4KBwSUnYaPp86XG**. Take note of it
    because it is required in the remainder of the procedure.
 
 2. Test the connection using the bucket ID received in the previous
    step (**28m6u4KBwSUnYaPp86XG**)::
 
-     zxsuite core testS3Connection 28m6u4KBwSUnYaPp86XG
+     carbonio core testS3Connection 28m6u4KBwSUnYaPp86XG
 
    If the command is successful, proceed with the next step.
 
 3. Associate the bucket to the volumes on *each mailstore*::
 
-     zxsuite powerstore doCreateVolume S3 _Name of the zimbra store_ _primary|secondary_ [param VALUE[,VALUE]]
+     carbonio powerstore doCreateVolume S3 _Name of the mailstore_ _primary|secondary_ [param VALUE[,VALUE]]
 
 
    For example::
 
-     zxsuite powerstore doCreateVolume S3 VolumeName secondary bucket_configuration_id 28m6u4KBwSUnYaPp86XG volume_prefix main_vol centralized
+     carbonio powerstore doCreateVolume S3 VolumeName secondary bucket_configuration_id 28m6u4KBwSUnYaPp86XG volume_prefix main_vol centralized
 
    In this example, these values are used:
 
-   * *S3*: the type of bucket
-   * *VolumeName*: the volume name as defined on the server on which the
+   * **S3**: the type of bucket
+   * **VolumeName**: the volume name as defined on the server on which the
      command is executed
-   * *secondary*: the type of the volume
-   * *28m6u4KBwSUnYaPp86XG*: the bucket ID* as received in step 1
-   * *volume_prefix main_vol*: an ID assigned to the volume, used for
+   * **secondary**: the type of the volume
+   * **28m6u4KBwSUnYaPp86XG**: the bucket ID* as received in step 1
+   * **volume_prefix main_vol**: an ID assigned to the volume, used for
      quick searches (e.g., *main_vol*)
-
-   ..
-      See the :ref:`doCreateVolume
-      S3<zxsuite_powerstore_doCreateVolume_S3>` full reference for
-      details and more options.
 
 4.  Set the volume to *current*, to let it receive data immediately::
 
-      zxsuite powerstore doUpdateVolume S3 VolumeName current_volume true
+      carbonio powerstore doUpdateVolume S3 VolumeName current_volume true
 
     For example::
 
-      zxsuite powerstore doUpdateVolume S3 VolumeName secondary current_volume true
+      carbonio powerstore doUpdateVolume S3 VolumeName secondary current_volume true
 
 
     In this example, these values are used:
 
-    * *S3*: the type of bucket
-    * *VolumeName*: the volume name as defined on the server on which the
+    * **S3**: the type of bucket
+    * **VolumeName**: the volume name as defined on the server on which the
       command is executed
-    * *secondary*: the type of the volume
-
-    ..
-       See the :ref:`doUpdateVolume
-       S3<zxsuite_powerstore_doUpdateVolume_S3>` full reference for
-       details and more options.
+    * **secondary**: the type of the volume
 
 .. _pws_centralized_storage_structure:
 
@@ -208,9 +193,9 @@ main directory of the volume contains a single empty directory for each
 server connected to the volume and a directory for each mailbox stored
 in it at the very same level.
 
-In the following example, servers 3aa2d376-1c59-4b5a-94f6-101602fa69c6
-and 595a4409-6aa1-413f-9f45-3ef0f1e560f5 are both connected to the same
-Centralized volume, where 3 mailboxes are stored. As you can see, the
+In the following example, servers *3aa2d376-1c59-4b5a-94f6-101602fa69c6*
+and *595a4409-6aa1-413f-9f45-3ef0f1e560f5* are both connected to the same
+Centralized Volume, where 3 mailboxes are stored. As you can see, the
 effective server where the mailboxes are hosted is irrelevant to the
 storage::
 
@@ -262,7 +247,7 @@ Volume Management
 Both primary and secondary volumes can be created on either local
 storage or on supported third-party storage solutions.
 
-.. _pws_zimbra_volumes:
+.. _pws_|carbonio|_volumes:
 
 |carbonio| Volumes
 ------------------
@@ -270,53 +255,51 @@ storage or on supported third-party storage solutions.
 .. this should be valid also for carbonio
 
 A volume is a distinct entity (path) on a filesystem with all the
-associated properties that contain Zimbra Blobs.
+associated properties that contain |Carbonio| Blobs.
 
 .. _pws_volume_properties:
 
 Volume Properties
 ~~~~~~~~~~~~~~~~~
 
-All Zimbra volumes are defined by the following properties:
+All |Carbonio| volumes are defined by the following properties:
 
--  Name: A unique identifier for the volume.
+- *Name*: A unique identifier for the volume
 
--  Path: The path where the data is going to be saved.
+- *Path*: The path where the data is going to be saved. The
+  ``zextras`` user must have r/w permissions on this path.
 
-   .. note:: The *zimbra* user must have r/w permissions on this
-      path.
+- *Compression*: Enable or Disable the file compression for the volume
 
--  Compression: Enable or Disable the file compression for the volume.
+- *Compression Threshold*: The minimum file size that will trigger the
+  compression. Files under this size will never be compressed even if
+  the compression is enabled.
 
--  Compression Threshold: The minimum file size that will trigger the
-   compression. 'Files under this size will never be compressed even if
-   the compression is enabled.'
-
--  Current: A *Current* volume is a volume where data will be written
-   upon arrival (Primary Current) or HSM policy application (Secondary
-   Current).
+- *Current*: A *Current* volume is a volume where data will be written
+  upon arrival (Primary Current) or HSM policy application (Secondary
+  Current).
 
 .. _pws_local_volumes:
 
 Local Volumes
 ~~~~~~~~~~~~~
 
-Local Volumes (i.e. FileBlob type) can be hosted on any mountpoint on
+.. what's fileBlob type?
+   
+Local Volumes (i.e., FileBlob type) can be hosted on any mountpoint on
 the system regardless of the mountpoint’s destination and are defined by
 the following properties:
 
--  **Name:** A unique identifier for the volume.
+- *Name*: A unique identifier for the volume
 
--  **Path:** The path where the data is going to be saved. The *zimbra*
-   user must have r/w permissions on this path.
+- *Path*: The path where the data is going to be saved. The
+  ``zextras`` user must have r/w permissions on this path
 
--  **Compression:** Enable or Disable file compression for the volume.
+- *Compression*: Enable or Disable file compression for the volume
 
--  **Compression Threshold:** the minimum file size that will trigger
-   the compression.
-
-   .. warning:: Files under this size will never be compressed even if
-      compression is enabled.
+- *Compression Threshold*: the minimum file size that will trigger the
+  compression. Files under this size will never be compressed even if
+  compression is enabled.
 
 .. _pws_current_volumes:
 
@@ -359,9 +342,9 @@ Volume Management with |storage|
 
       The commands to manage volumes are basically three::
 
-        zxsuite powerstore doCreateVolume [type]
-        zxsuite powerstore doUpdateVolume [type]
-        zxsuite powerstore doDeleteVolume [name]
+        carbonio powerstore doCreateVolume [type]
+        carbonio powerstore doUpdateVolume [type]
+        carbonio powerstore doDeleteVolume [name]
 
       Volume deletion requires only the volume name.
 
@@ -491,7 +474,7 @@ steps are performed:
 
 -  A copy of the Blob to the Current Secondary Store is created.
 
--  The Zimbra Database is updated to notify Zimbra of the item’s new
+-  The |Carbonio| Database is updated to notify |Carbonio| of the item’s new
    position.
 
 -  The original Blob is deleted from the Current Primary Store.
@@ -579,7 +562,7 @@ defined policy.
 To apply the HSM Policy via the CLI, run the following command as the
 ``zextras`` user::
 
-  ``zxsuite powerstore doMoveBlobs``
+  carbonio powerstore doMoveBlobs
 
 .. this must be checked on new UI
    .. _pws_domoveblobs_stats_and_info:
@@ -611,10 +594,6 @@ A policy can consist of a single rule that is valid for all item types
 (*Simple* policy) or multiple rules valid for one or more item types
 (*Composite* policy).
 
-..  Also, an additional *sub-rule* can be defined using Zimbra’s
-  `search syntax
-  <http://wiki.zimbra.com/wiki/Zimbra_Web_Client_Search_Tips>`_.
-
 .. _pws_policy_examples:
 
 Policy Examples
@@ -636,9 +615,8 @@ Here are some policy examples. To see how to create the policies in the
 Defining a Policy
 -----------------
 
-Policies can be defined both from the |storage| tab of the
-Administration Zimlet and from the CLI. You can specify a Zimbra Search
-in both cases.
+Policies can be defined both from the |storage| tab of the |adminui|
+and from the CLI. You can specify a |Carbonio| Search in both cases.
 
 .. grid::
 
@@ -647,9 +625,9 @@ in both cases.
 
       Two policy management commands are available in the CLI::
 
-         zxsuite powerstore setHSMPolicy hsm_policy
+         carbonio powerstore setHSMPolicy hsm_policy
 
-         zxsuite powerstore +setHsmPolicy hsm_policy
+         carbonio powerstore +setHsmPolicy hsm_policy
 
       These command share the same syntax; the difference is that
       ``setHSMPolicy`` creates **new** policies, *replacing* existing
@@ -696,13 +674,13 @@ Primary Volumes and the "Incoming" directory
 
 In order to create a remote *Primary Store* on a mailbox server a
 local "Incoming" directory must exist on that server. The default
-directory is :file:`/opt/zimbra/incoming`; you can check or modify
+directory is :file:`/opt/|carbonio|/incoming`; you can check or modify
 the current value using these commands:
 
 .. code:: bash
 
-   zxsuite config server get $(zmhostname) attribute incomingPath
-   zxsuite config server set $(zmhostname) attribute incomingPath value /path/to/dir
+   carbonio config server get $(zmhostname) attribute incomingPath
+   carbonio config server set $(zmhostname) attribute incomingPath value /path/to/dir
 
 .. _pws_local_cache:
 
@@ -711,12 +689,12 @@ Local Cache
 
 Storing a volume on third-party remote storage solutions requires a
 local directory to be used for item caching, which must be readable and
-writable by the *zimbra* user.
+writable by the *|carbonio|* user.
 
 ..
    The local directory must be created manually and its path must be
    entered in the |storage| section of the Administration Zimlet
-   in the Zimbra Administration Console.
+   in the |Carbonio| Administration Console.
 
 If the Local Cache directory is not set, you won’t be able to create any
 secondary volume on an S3-compatible device or service.
@@ -751,14 +729,14 @@ All you need to start storing your secondary volumes on S3 is:
 Bucket Management
 -----------------
 
-A centralized Bucket Management UI is available in the Zimbra
-Administration Console. This facilitates saving bucket information to be
-reused when creating a new volume on an S3-compatible storage instead of
+A centralized Bucket Management UI is available in the |Carbonio|
+|adminui|. This facilitates saving bucket information to be reused
+when creating a new volume on an S3-compatible storage instead of
 entering the information each time.
 
 To access the Bucket Management UI:
 
--  Access the Zimbra Administration Console
+-  Access |Carbonio|\'s |adminui|
 
 -  Select the "Configure" entry on the left menu
 
@@ -771,7 +749,7 @@ volume of the following type: Amazon S3, Ceph, Cloudian, EMC, Scality
 S3, Custom S3, Yandex, Alibaba.
 
 It’s also possible to create new buckets via the CLI using the
-:command:`zxsuite-core-doCreateBucket` command.
+:command:`carbonio core doCreateBucket` commands.
 
 .. _pws_bucket_paths_and_naming:
 
@@ -793,65 +771,6 @@ volumes::
    and it’s a quick way to differentiate and recognize different volumes
    within the bucket.
 
-.. verify on new UI
-   .. _pws_creating_volumes_with_zextras_powerstore:
-
-   Creating Volumes with |storage|
-   ----------------------------------------
-
-   To create a new volume with |storage| from the Zimbra
-   Administration Console:
-
-   -  Enter the HSM Section of the Zextras Administration Zimlet in the
-      Zimbra Administration Console
-
-   -  Click on *Add* under either the *Primary Volumes* or *Secondary
-      Volumes* list
-
-   -  Select the Volume Type among the available storage choices
-
-   -  Enter the required volume information
-
-   .. note:: Each volume type will require different information to be
-      set up, please refer to your storage provider’s online resources to
-      obtain those details.
-
-..
-   .. _pws_editing_volumes_with_zextras_powerstore:
-
-   Editing Volumes with |storage|
-   ---------------------------------------
-
-   To edit a volume with |storage| from the Zimbra Administration
-   Console:
-
-   -  Enter the HSM Section of the Zextras Administration Zimlet in the
-      Zimbra Administration Console
-
-   -  Select a volume
-
-   -  Click on *Edit*
-
-   -  When done, click *Save*
-
-..
-   .. _pws_deleting_volumes_with_zextras_powerstore:
-
-   Deleting Volumes with |storage|
-   ----------------------------------------
-
-   To delete a volume with |storage| from the Zimbra
-   Administration Console:
-
-   -  Enter the HSM Section of the Zextras Administration Zimlet in the
-      Zimbra Administration Console
-
-   -  Select a volume
-
-   -  Click on *Delete*
-
-   .. note:: Only empty volumes can be deleted.
-
 .. _pws_amazon_s3_tips:
 
 Amazon S3 Tips
@@ -862,7 +781,7 @@ Amazon S3 Tips
 Bucket
 ~~~~~~
 
-Storing your secondary Zimbra volumes on Amazon S3 doesn’t have any
+Storing your secondary |Carbonio| volumes on Amazon S3 doesn’t have any
 specific bucket requirements, but we suggest that you create a dedicated
 bucket and disable Static Website Hosting for easier management.
 
@@ -1001,19 +920,19 @@ copy only once.
 This might seem like a minor improvement. However, in practical use, it
 makes a significant difference.
 
-.. _pws_item_deduplication_in_zimbra:
+.. _pws_item_deduplication_in_|carbonio|:
 
-Item Deduplication in Zimbra
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Item Deduplication in |Carbonio|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Item deduplication is performed by Zimbra at the moment of storing a new
+Item deduplication is performed by |Carbonio| at the moment of storing a new
 item in the Current Primary Volume.
 
 When a new item is being created, its ``message ID`` is compared to a
 list of cached items. If there is a match, a hard link to the cached
 message’s BLOB is created instead of a whole new BLOB for the message.
 
-The dedupe cache is managed in Zimbra through the following config
+The dedupe cache is managed in |Carbonio| through the following config
 attributes.
 
 .. grid::
@@ -1028,7 +947,7 @@ attributes.
       Used to set the deduplication behavior for sent-to-self
       messages::
       
-         <attr id="144" name="zimbraPrefDedupeMessagesSentToSelf" type="enum" value="dedupeNone,secondCopyifOnToOrCC,dedupeAll" cardinality="single"
+         <attr id="144" name="|carbonio|PrefDedupeMessagesSentToSelf" type="enum" value="dedupeNone,secondCopyifOnToOrCC,dedupeAll" cardinality="single"
          optionalIn="account,cos" flags="accountInherited,domainAdminModifiable">
            <defaultCOSValue>dedupeNone</defaultCOSValue>
            <desc>dedupeNone|secondCopyIfOnToOrCC|moveSentMessageToInbox|dedupeAll</desc>
@@ -1042,7 +961,7 @@ attributes.
 
       Number of cached Message IDs::
 
-         <attr id="334" name="zimbraMessageIdDedupeCacheSize" type="integer" cardinality="single" optionalIn="globalConfig" min="0">
+         <attr id="334" name="|carbonio|MessageIdDedupeCacheSize" type="integer" cardinality="single" optionalIn="globalConfig" min="0">
            <globalConfigValue>3000</globalConfigValue>
            <desc>
              Number of Message-Id header values to keep in the LMTP dedupe cache.
@@ -1060,7 +979,7 @@ attributes.
       Manage deduplication at account or COS-level::
         
 
-         <attr id="1198" name="zimbraPrefMessageIdDedupingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited"
+         <attr id="1198" name="|carbonio|PrefMessageIdDedupingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited"
           since="8.0.0">
            <defaultCOSValue>TRUE</defaultCOSValue>
            <desc>
@@ -1084,8 +1003,8 @@ attributes.
            </desc>
          </attr>
 
-(older Zimbra versions might use different attributes or lack some of
-them)
+.. (older |Carbonio| versions might use different attributes or lack some of
+   them)
 
 .. _pws_item_deduplication_and_zextras_powerstore:
 
@@ -1095,7 +1014,7 @@ Item Deduplication and |storage|
 The |storage| features a ``doDeduplicate`` operation that
 parses a target volume to find and deduplicate any duplicated item.
 
-Doing so you will save even more disk space, as while Zimbra’s automatic
+Doing so you will save even more disk space, as while |Carbonio|’s automatic
 deduplication is bound to a limited cache, |storage|’s
 deduplication will also find and take care of multiple copies of the
 same email regardless of any cache or timing.
@@ -1109,7 +1028,7 @@ usage.
 Running a Volume Deduplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. _pws_via_the_administration_zimlet:
+
 
 .. grid::
    :gutter: 3
@@ -1118,12 +1037,12 @@ Running a Volume Deduplication
    .. grid-item-card::  Via the CLI
       :columns: 6
 
-      To run a volume deduplication through the CLI, use the :command:`zxsuite
+      To run a volume deduplication through the CLI, use the :command:`carbonio
       powerstore doDeduplicate` command.
 
-      .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doDeduplicate.rst
+      .. include:: carboniocli/carbonio_powerstore_doDeduplicate.rst
 	   
-To list all available volumes, you can use the :command:`zxsuite
+To list all available volumes, you can use the :command:`carbonio
 getAllVolumes` command.
 
 .. _pws_dodeduplicate_stats:
@@ -1133,7 +1052,7 @@ getAllVolumes` command.
 
 The ``doDeduplicate`` operation is a valid target for the ``monitor``
 command, meaning that you can watch the command’s statistics while it’s
-running through the :command:`zxsuite powerstore monitor [operationID]`
+running through the :command:`carbonio powerstore monitor [operationID]`
 command. Sample Output is::
 
    Current Pass (Digest Prefix):  63/64
@@ -1221,19 +1140,19 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doCheckBlobs.rst
+         .. include:: carboniocli/carbonio_powerstore_doCheckBlobs.rst
 
       .. rubric:: Description and Tips
 
       The doCheckBlobs operation can be used to run BLOB coherency checks on
       volumes and mailboxes. This can be useful when experiencing issues
       related to broken or unviewable items, which are often caused because
-      either Zimbra cannot find or access the BLOB file related to an item or
+      either |Carbonio| cannot find or access the BLOB file related to an item or
       there is an issue with the BLOB content itself.
 
       Specifically, the following checks are made:
 
-      -  DB-to-BLOB coherency: For every Item entry in Zimbra’s DB, check
+      -  DB-to-BLOB coherency: For every Item entry in |Carbonio|’s DB, check
          whether the appropriate BLOB file exists.
 
       -  BLOB-to-DB coherency: For every BLOB file in a volume/mailbox, check
@@ -1247,7 +1166,7 @@ of thereby contained items/blobs.
          (stored in the DB).
 
       .. important:: The old ``zmblobchk`` command is deprecated and
-         replaced by ``zxsuite powerstore doCheckBlobs`` on all
+         replaced by ``carbonio powerstore doCheckBlobs`` on all
          infrastructures using |storage| module.
 
    .. grid-item-card::
@@ -1258,7 +1177,7 @@ of thereby contained items/blobs.
       
       .. dropdown:: CLI full reference
                     
-         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doDeduplicate.rst
+         .. include:: carboniocli/carbonio_powerstore_doDeduplicate.rst
                    
    .. grid-item-card::
       :columns: 6
@@ -1269,7 +1188,7 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doVolumeToVolumeMove.rst
+         .. include:: carboniocli/carbonio_powerstore_doVolumeToVolumeMove.rst
 
       .. rubric:: **Description and Tips**
 
@@ -1285,7 +1204,7 @@ of thereby contained items/blobs.
 
       -  Centralize volumes: Centralize and move volumes as you please, for
          example, if you redesigned your storage infrastructure or you are
-         tidying up your Zimbra volumes.
+         tidying up your |Carbonio| volumes.
 
       .. hint:: Starting from version 3.0.10, |storage| can also
          move "Index" volumes.
@@ -1299,7 +1218,7 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doCheckBlobs.rst
+         .. include:: carboniocli/carbonio_powerstore_doCheckBlobs.rst
 
       .. rubric:: **Description and Tips**
 
@@ -1337,108 +1256,9 @@ following data to the output:
    "show_blob_num", "blobNumber", "Number of BLOB files"
 
 
-.. _pws_moving_mailboxes_between_mailstores:
-
-Moving Mailboxes Between Mailstores
-===================================
-
-The ``doMailboxMove`` command allows you to move a single mailbox or all
-accounts from a given domain, from one mailbox server to another within
-the same Zimbra infrastructure.
-
-.. warning:: If the |storage| module is installed and
-   enabled, this command replaces the old ``zmmboxmove`` and
-   ``zmmailboxmove`` commands. Using any of the legacy commands will
-   return an error and won’t move any data.
-
-.. dropdown:: ``zxsuite powerstore doMailboxMove``
-   
-   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doCheckBlobs.rst
-
-When the command is executed, it will carry out a number of task:
-
-#. When moving a domain, each account from the current server is
-   enumerated and moved sequentially
-
-#. The mailbox is set to maintenance mode only during the 'account'
-   stage
-
-#. The move will be stopped if 5% or more write errors are encountered
-   on items being moved
-
-   - When multiple mailboxes are moved within the same operation, the
-     error count is global and not per-mailbox
-
-#. Moves will not start if the destination server does not have enough
-   space available to host the mailbox
-
-   - When a single operation is used to move multiple mailboxes, the
-     space check will be performed before moving each mailbox
-
-#. All data is moved at a low-level and will not be changed except for
-   the mailbox ID
-
-#. The operation is made up of 3 stages: `blobs` :octicon:`dash` `backup`
-   :octicon:`dash` `account`. For each mailbox:
-
-   - `blobs`: All blobs are copied from the source server to the
-     destination server
-
-   - `backup`: All backup entries are copied from the source server to
-     the destination server
-
-   - `account`: All database entries are moved as-is and LDAP entries
-     are updated, effectively moving the mailbox
-
-   - `data` can be used as a shortcut for `blobs`, `account`
-
-#. All of the stages must executed **sequentially**, hence it is not
-   possible to execute `blobs` after `backup` or `account`. A valid
-   sequence is for example `blobs`, `account` (but not vice
-   versa!). Using the order `account`, `blobs` will throw an error.
-
-#. On the reindex stage’s completion, a new HSM operation is submitted
-   to the destination server, if not specified otherwise
-
-#. All volumes' compression options are taken
-
-#. The MailboxMove operation can be executed if and only if no others
-   operations are running on the source server
-
-#. A move will not start if the destination server does not have
-   enough space available or the user just belongs to the destination
-   host
-
-#. By default, items are placed in the Current Primary volume of the
-   destination server
-
-   - The ``hsm true`` option can be used to apply the HSM policies of
-     the destination server after a mailbox is successfully moved
-
-#. If, for any reason, the move stops before it is completed the
-   original account will still be active and the appropriate
-   notificaton will be issued.
-
-#. Should the mailboxd crash during move, the ``Operation Interrupted``
-   notification is issued as for all operations, warning the users
-   about the interrupted operation
-
-#. Index information are moved during the `account` stage, so no
-   manual reindexing is needed nor one will be triggered
-   automatically
-
-#. When moving accounts from source to destination server, *by
-   default* HSM is carried out only on the moved accounts, right after
-   they have been successfully moved
-
-   - The admin can however choose to defer the HSM at a later point
-
-#. If for any reason the second stage is not successful, HSM is not
-   executed
-
-.. _zextras_powerstore_cli:
-
 ..
+   .. _zextras_powerstore_cli:
+
    |storage| CLI
    ======================
 
