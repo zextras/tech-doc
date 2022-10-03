@@ -19,3 +19,17 @@ API for |product|
 * `Carbonio Files metadata <../../apidoc/files_meta/index.html>`_
   metadata API
 
+Third-party API
+===============
+
+Most of the software integrated in |product| exposes its own API to
+allow for programmatic access to their functionalities. This is the
+case of **clamd**, the protocol used by ClamAV. However, clamd defines
+also potentially dangerous commands like ``shutdown``, that should
+never be exposed. The solution is therefore to use a different
+approach, for example using a docker image that acts as a proxy
+towards clamd's interface, like for example
+https://hub.docker.com/r/benzino77/clamav-rest-api (see also the
+related `documentation
+<https://github.com/benzino77/clamav-rest-api>`_). This approach has
+however not yet been thoroughly tested.
