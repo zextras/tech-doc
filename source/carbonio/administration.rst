@@ -19,10 +19,14 @@ and what can not be done as a Delegated Administrator.
 
 :ref:`domain-limits` show how to change some global limit that will
 affect all users in the domain.
-     
+
+:ref:`integratedservices` is an informative section that introduces
+the services that interact with |product|\'s |mta|.
+
 .. toctree::
    :hidden:
 
    _admin/auth
    _admin/delegatedadmin
    _admin/domainlimits
+   _admin/integratedservices
