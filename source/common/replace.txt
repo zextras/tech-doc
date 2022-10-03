@@ -37,3 +37,4 @@
 .. |pop| replace:: :abbr:`POP3 (Post Office Protocol)`
 .. |smtp| replace:: :abbr:`SMTP (Simple Mail Transfer Protocol)`
 .. |mta| replace:: :abbr:`MTA (Message Transfer Agent)`
+.. |gui| replace:: :abbr:`GUI (Graphic User Interface)`
