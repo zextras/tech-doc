@@ -17,9 +17,12 @@ setup.
 the necessary privileges to administer a domain, including what can
 and what can not be done as a Delegated Administrator.
 
+:ref:`domain-limits` show how to change some global limit that will
+affect all users in the domain.
+     
 .. toctree::
    :hidden:
 
    _admin/auth
    _admin/delegatedadmin
-
+   _admin/domainlimits
