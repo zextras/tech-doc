@@ -69,3 +69,34 @@ For example, to block ``.exe`` filex, use command
    # carbonio prov mcf +zimbraMtaBlockedExtension "exe"
 
 .. hint:: Only one format/extension at a time can be specified.
+
+.. _cos-management:
+
+Management of a COS
+-------------------
+
+Each account on |product| is assigned a |cos|, a global object that is
+not restricted to a particular domain or set of domains.
+
+The |cos| assigned to an account determines the default attributes
+for that account and the features to be enabled or not for it. The COS
+controls mailbox quotas, message lifetime, password restrictions,
+attachment blocking, and server pool usage.
+
+You can create and edit the classes of services via CLI and soon also
+via the new |adminui|, in which the tasks of |cos| management will
+feature an helpful wizard that guides the Administrator through the
+creation process.
+
+.. code:: console
+
+   # carbonio prov createCos {name} [attribute value ...]
+
+
+All the attributes that need to be customised can be either added at
+the end of the base command above as ``[ attribute value ]`` pairs, or
+at a later point with the following command:
+
+.. code:: console
+
+   # carbonio prov modifyCos {name} [attribute value ...]
