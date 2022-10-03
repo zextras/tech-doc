@@ -70,6 +70,13 @@ Files
 =====
 
 .. include:: /_includes/_usage/files.rst
+
+.. _docs-comp:
+
+Docs
+====
+
+.. include:: /_includes/_usage/docs.rst
              
 .. _mobile_shared_folders:
 

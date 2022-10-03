@@ -122,3 +122,46 @@ chat's input box.
 
 Moreover, most files can be previewed before being downloaded, see
 Section :ref:`file-preview` for more information.
+
+
+.. _team_presence:
+
+Presence
+--------
+
+Presence is managed automatically in |team|: whenever a user logs in,
+regardless of whether Chats has the focus, they appear as **online**.
+
+As part of the user presence system, all messages are displayed with a
+variable number of check symbols:
+
+.. card::
+
+   .. image:: /img/chats/chats-message-read.png
+
+   - 0 grey checks: message not yet delivered to the server
+
+   - 1 grey check: message delivered to the server
+
+   - 2 grey checks: message delivered to the recipient user
+     :octicon:`dash` to all users in case of chats with multiple
+     members, Spaces, or Virtual Rooms
+
+   - 2 blue checks: message viewed by the recipient user
+     :octicon:`dash` to all users in case of chats with multiple
+     members, Spaces, or Virtual Rooms
+
+When sending a text message, if privacy is enabled, then only one *gray*
+check is shown, meaning that the server has received the message. No
+acknowledgement will be sent back by the receiving user.
+
+.. _team_unread_messages:
+
+Unread Messages
+---------------
+
+The number of unread messages in any conversation (Group, Channel,
+space, instant meeting) appears on the right side of both the *Chats*,
+*Spaces*, *Instant Meetings* label from where the message originated,
+and in the list of conversions underneath, next to the actual chat
+generating the message.
