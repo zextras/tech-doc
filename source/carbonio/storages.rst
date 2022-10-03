@@ -1218,7 +1218,7 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: carboniocli/carbonio_powerstore_doCheckBlobs.rst
+         .. include:: carboniocli/carbonio_powerstore_getVolumeStats.rst
 
       .. rubric:: **Description and Tips**
 
@@ -1262,60 +1262,60 @@ following data to the output:
    |storage| CLI
    ======================
 
-   This section contains the index of all ``zxsuite powerstore``
+   This section contains the index of all ``carbonio powerstore``
    commands. Full reference can be found in the dedicated section
    :ref:`zextras_powerstore_full_cli`.
 
-   :ref:`testS3Connection <zxsuite_core_testS3Connection>`
-   :octicon:`dash` :ref:`Indexing content-extraction-tool add <zxsuite_powerstore_Indexing_content-extraction-tool_add>`
-   :octicon:`dash` :ref:`Indexing content-extraction-tool list <zxsuite_powerstore_Indexing_content-extraction-tool_list>`
-   :octicon:`dash` :ref:`Indexing content-extraction-tool remove <zxsuite_powerstore_Indexing_content-extraction-tool_remove>`
-   :octicon:`dash` :ref:`doCheckBlobs <zxsuite_powerstore_doCheckBlobs>`
-   :octicon:`dash` :ref:`doCreateVolume Alibaba <zxsuite_powerstore_doCreateVolume_Alibaba>`
-   :octicon:`dash` :ref:`doCreateVolume Centralized <zxsuite_powerstore_doCreateVolume_Centralized>`
-   :octicon:`dash` :ref:`doCreateVolume Ceph <zxsuite_powerstore_doCreateVolume_Ceph>`
-   :octicon:`dash` :ref:`doCreateVolume Cloudian <zxsuite_powerstore_doCreateVolume_Cloudian>`
-   :octicon:`dash` :ref:`doCreateVolume CustomS3 <zxsuite_powerstore_doCreateVolume_CustomS3>`
-   :octicon:`dash` :ref:`doCreateVolume EMC <zxsuite_powerstore_doCreateVolume_EMC>`
-   :octicon:`dash` :ref:`doCreateVolume FileBlob <zxsuite_powerstore_doCreateVolume_FileBlob>`
-   :octicon:`dash` :ref:`doCreateVolume OpenIO <zxsuite_powerstore_doCreateVolume_OpenIO>`
-   :octicon:`dash` :ref:`doCreateVolume S3 <zxsuite_powerstore_doCreateVolume_S3>`
-   :octicon:`dash` :ref:`doCreateVolume ScalityS3 <zxsuite_powerstore_doCreateVolume_ScalityS3>`
-   :octicon:`dash` :ref:`doCreateVolume Swift <zxsuite_powerstore_doCreateVolume_Swift>`
-   :octicon:`dash` :ref:`doDeduplicate <zxsuite_powerstore_doDeduplicate>`
-   :octicon:`dash` :ref:`doDeleteDrivePreviews <zxsuite_powerstore_doDeleteDrivePreviews>`
-   :octicon:`dash` :ref:`doDeleteVolume <zxsuite_powerstore_doDeleteVolume>`
-   :octicon:`dash` :ref:`doMailboxMove <zxsuite_powerstore_doMailboxMove>`
-   :octicon:`dash` :ref:`doMoveBlobs <zxsuite_powerstore_doMoveBlobs>`
-   :octicon:`dash` :ref:`doPurgeMailboxes <zxsuite_powerstore_doPurgeMailboxes>`
-   :octicon:`dash` :ref:`doRemoveHsmPolicy <zxsuite_powerstore_doRemoveHsmPolicy>`
-   :octicon:`dash` :ref:`doRemoveOrphanedBlobs <zxsuite_powerstore_doRemoveOrphanedBlobs>`
-   :octicon:`dash` :ref:`doRestartService <zxsuite_powerstore_doRestartService>`
-   :octicon:`dash` :ref:`doStartService <zxsuite_powerstore_doStartService>`
-   :octicon:`dash` :ref:`doStopAllOperations <zxsuite_powerstore_doStopAllOperations>`
-   :octicon:`dash` :ref:`doStopOperation <zxsuite_powerstore_doStopOperation>`
-   :octicon:`dash` :ref:`doStopService <zxsuite_powerstore_doStopService>`
-   :octicon:`dash` :ref:`doUpdateVolume Alibaba <zxsuite_powerstore_doUpdateVolume_Alibaba>`
-   :octicon:`dash` :ref:`doUpdateVolume Ceph <zxsuite_powerstore_doUpdateVolume_Ceph>`
-   :octicon:`dash` :ref:`doUpdateVolume Cloudian <zxsuite_powerstore_doUpdateVolume_Cloudian>`
-   :octicon:`dash` :ref:`doUpdateVolume CustomS3 <zxsuite_powerstore_doUpdateVolume_CustomS3>`
-   :octicon:`dash` :ref:`doUpdateVolume EMC <zxsuite_powerstore_doUpdateVolume_EMC>`
-   :octicon:`dash` :ref:`doUpdateVolume FileBlob <zxsuite_powerstore_doUpdateVolume_FileBlob>`
-   :octicon:`dash` :ref:`doUpdateVolume OpenIO <zxsuite_powerstore_doUpdateVolume_OpenIO>`
-   :octicon:`dash` :ref:`doUpdateVolume S3 <zxsuite_powerstore_doUpdateVolume_S3>`
-   :octicon:`dash` :ref:`doUpdateVolume ScalityS3 <zxsuite_powerstore_doUpdateVolume_ScalityS3>`
-   :octicon:`dash` :ref:`doUpdateVolume Swift <zxsuite_powerstore_doUpdateVolume_Swift>`
-   :octicon:`dash` :ref:`doVolumeToVolumeMove <zxsuite_powerstore_doVolumeToVolumeMove>`
-   :octicon:`dash` :ref:`getAllOperations <zxsuite_powerstore_getAllOperations>`
-   :octicon:`dash` :ref:`getAllVolumes <zxsuite_powerstore_getAllVolumes>`
-   :octicon:`dash` :ref:`getHsmPolicy <zxsuite_powerstore_getHsmPolicy>`
-   :octicon:`dash` :ref:`getMovedMailboxes <zxsuite_powerstore_getMovedMailboxes>`
-   :octicon:`dash` :ref:`getNonLocalMailboxes <zxsuite_powerstore_getNonLocalMailboxes>`
-   :octicon:`dash` :ref:`getProperty <zxsuite_powerstore_getProperty>`
-   :octicon:`dash` :ref:`getServices <zxsuite_powerstore_getServices>`
-   :octicon:`dash` :ref:`getVolumeStats <zxsuite_powerstore_getVolumeStats>`
-   :octicon:`dash` :ref:`monitor <zxsuite_powerstore_monitor>`
-   :octicon:`dash` :ref:`runBulkDelete <zxsuite_powerstore_runBulkDelete>`
-   :octicon:`dash` :ref:`setHSMPolicy <zxsuite_powerstore_setHSMPolicy>`
-   :octicon:`dash` :ref:`setProperty <zxsuite_powerstore_setProperty>`
-   :octicon:`dash` :ref:`+setHsmPolicy <zxsuite_powerstore_+setHsmPolicy>`
+   :ref:`testS3Connection <carbonio_core_testS3Connection>`
+   :octicon:`dash` :ref:`Indexing content-extraction-tool add <carbonio_powerstore_Indexing_content-extraction-tool_add>`
+   :octicon:`dash` :ref:`Indexing content-extraction-tool list <carbonio_powerstore_Indexing_content-extraction-tool_list>`
+   :octicon:`dash` :ref:`Indexing content-extraction-tool remove <carbonio_powerstore_Indexing_content-extraction-tool_remove>`
+   :octicon:`dash` :ref:`doCheckBlobs <carbonio_powerstore_doCheckBlobs>`
+   :octicon:`dash` :ref:`doCreateVolume Alibaba <carbonio_powerstore_doCreateVolume_Alibaba>`
+   :octicon:`dash` :ref:`doCreateVolume Centralized <carbonio_powerstore_doCreateVolume_Centralized>`
+   :octicon:`dash` :ref:`doCreateVolume Ceph <carbonio_powerstore_doCreateVolume_Ceph>`
+   :octicon:`dash` :ref:`doCreateVolume Cloudian <carbonio_powerstore_doCreateVolume_Cloudian>`
+   :octicon:`dash` :ref:`doCreateVolume CustomS3 <carbonio_powerstore_doCreateVolume_CustomS3>`
+   :octicon:`dash` :ref:`doCreateVolume EMC <carbonio_powerstore_doCreateVolume_EMC>`
+   :octicon:`dash` :ref:`doCreateVolume FileBlob <carbonio_powerstore_doCreateVolume_FileBlob>`
+   :octicon:`dash` :ref:`doCreateVolume OpenIO <carbonio_powerstore_doCreateVolume_OpenIO>`
+   :octicon:`dash` :ref:`doCreateVolume S3 <carbonio_powerstore_doCreateVolume_S3>`
+   :octicon:`dash` :ref:`doCreateVolume ScalityS3 <carbonio_powerstore_doCreateVolume_ScalityS3>`
+   :octicon:`dash` :ref:`doCreateVolume Swift <carbonio_powerstore_doCreateVolume_Swift>`
+   :octicon:`dash` :ref:`doDeduplicate <carbonio_powerstore_doDeduplicate>`
+   :octicon:`dash` :ref:`doDeleteDrivePreviews <carbonio_powerstore_doDeleteDrivePreviews>`
+   :octicon:`dash` :ref:`doDeleteVolume <carbonio_powerstore_doDeleteVolume>`
+   :octicon:`dash` :ref:`doMailboxMove <carbonio_powerstore_doMailboxMove>`
+   :octicon:`dash` :ref:`doMoveBlobs <carbonio_powerstore_doMoveBlobs>`
+   :octicon:`dash` :ref:`doPurgeMailboxes <carbonio_powerstore_doPurgeMailboxes>`
+   :octicon:`dash` :ref:`doRemoveHsmPolicy <carbonio_powerstore_doRemoveHsmPolicy>`
+   :octicon:`dash` :ref:`doRemoveOrphanedBlobs <carbonio_powerstore_doRemoveOrphanedBlobs>`
+   :octicon:`dash` :ref:`doRestartService <carbonio_powerstore_doRestartService>`
+   :octicon:`dash` :ref:`doStartService <carbonio_powerstore_doStartService>`
+   :octicon:`dash` :ref:`doStopAllOperations <carbonio_powerstore_doStopAllOperations>`
+   :octicon:`dash` :ref:`doStopOperation <carbonio_powerstore_doStopOperation>`
+   :octicon:`dash` :ref:`doStopService <carbonio_powerstore_doStopService>`
+   :octicon:`dash` :ref:`doUpdateVolume Alibaba <carbonio_powerstore_doUpdateVolume_Alibaba>`
+   :octicon:`dash` :ref:`doUpdateVolume Ceph <carbonio_powerstore_doUpdateVolume_Ceph>`
+   :octicon:`dash` :ref:`doUpdateVolume Cloudian <carbonio_powerstore_doUpdateVolume_Cloudian>`
+   :octicon:`dash` :ref:`doUpdateVolume CustomS3 <carbonio_powerstore_doUpdateVolume_CustomS3>`
+   :octicon:`dash` :ref:`doUpdateVolume EMC <carbonio_powerstore_doUpdateVolume_EMC>`
+   :octicon:`dash` :ref:`doUpdateVolume FileBlob <carbonio_powerstore_doUpdateVolume_FileBlob>`
+   :octicon:`dash` :ref:`doUpdateVolume OpenIO <carbonio_powerstore_doUpdateVolume_OpenIO>`
+   :octicon:`dash` :ref:`doUpdateVolume S3 <carbonio_powerstore_doUpdateVolume_S3>`
+   :octicon:`dash` :ref:`doUpdateVolume ScalityS3 <carbonio_powerstore_doUpdateVolume_ScalityS3>`
+   :octicon:`dash` :ref:`doUpdateVolume Swift <carbonio_powerstore_doUpdateVolume_Swift>`
+   :octicon:`dash` :ref:`doVolumeToVolumeMove <carbonio_powerstore_doVolumeToVolumeMove>`
+   :octicon:`dash` :ref:`getAllOperations <carbonio_powerstore_getAllOperations>`
+   :octicon:`dash` :ref:`getAllVolumes <carbonio_powerstore_getAllVolumes>`
+   :octicon:`dash` :ref:`getHsmPolicy <carbonio_powerstore_getHsmPolicy>`
+   :octicon:`dash` :ref:`getMovedMailboxes <carbonio_powerstore_getMovedMailboxes>`
+   :octicon:`dash` :ref:`getNonLocalMailboxes <carbonio_powerstore_getNonLocalMailboxes>`
+   :octicon:`dash` :ref:`getProperty <carbonio_powerstore_getProperty>`
+   :octicon:`dash` :ref:`getServices <carbonio_powerstore_getServices>`
+   :octicon:`dash` :ref:`getVolumeStats <carbonio_powerstore_getVolumeStats>`
+   :octicon:`dash` :ref:`monitor <carbonio_powerstore_monitor>`
+   :octicon:`dash` :ref:`runBulkDelete <carbonio_powerstore_runBulkDelete>`
+   :octicon:`dash` :ref:`setHSMPolicy <carbonio_powerstore_setHSMPolicy>`
+   :octicon:`dash` :ref:`setProperty <carbonio_powerstore_setProperty>`
+   :octicon:`dash` :ref:`+setHsmPolicy <carbonio_powerstore_+setHsmPolicy>`

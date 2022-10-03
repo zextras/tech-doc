@@ -11,29 +11,29 @@
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| **action**\ (M) | String          | start           |                 |
+| **action** (M)  | String          | start           |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| volumes(O)      | String[,..]     | me              |                 |
-|                 |                 | ssage1,hsm[,…​] |                 |
+| volumes (O)     | String[, ...]   | mess\           |                 |
+|                 |                 | age1,hsm[, ...] |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| mailbox_ids(O)  | Integer[,..]    | 2,9,27          |                 |
+| mailbox_ids (O) | Integer[, ...]  | 2,9,27          |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| missing_blob    | Boolean         | true|false      | true            |
-| s_crosscheck(O) |                 |                 |                 |
+| missing_blob\   | Boolean         | true|false      | true            |
+| s_crosscheck (O)|                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| traced(O)       | Boolean         | true|false      | false           |
+| traced (O)      | Boolean         | true|false      | false           |
 +-----------------+-----------------+-----------------+-----------------+
-| fix_i           | Boolean         | true|false      | false           |
+| fix_i\          | Boolean         | true|false      | false           |
 | ncorrect_compre |                 |                 |                 |
-| ssed_digests(O) |                 |                 |                 |
+| ssed_digests (O)|                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| missing_blob    | Boolean         | true|false      | false           |
-| _delete_item(O) |                 |                 |                 |
+| missing_blob\   | Boolean         | true|false      | false           |
+| _delete_item (O)|                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| c               | Boolean         | true|false      | false           |
-| heck_digests(O) |                 |                 |                 |
+| c\              | Boolean         | true|false      | false           |
+| heck_digests (O)|                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| items(O)        | String          | z               | all             |
+| items (O)       | String          | z\              | all             |
 |                 |                 | imbra|drive|all |                 |
 +-----------------+-----------------+-----------------+-----------------+
 

@@ -11,20 +11,20 @@
 +-----------------+-----------------+-----------------+-----------------+
 | NAME            | TYPE            | EXPECTED VALUES | DEFAULT         |
 +-----------------+-----------------+-----------------+-----------------+
-| **domain**\ (M) | String          |                 |                 |
+| **domain**  (M) | String          |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| a               | Integer         |                 | no action       |
-| ccount_limit(O) |                 |                 |                 |
+| a\              | Integer         |                 | no action       |
+| ccount_limit (O)|                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| domain_a        | String          |                 | no action       |
-| ccount_quota(O) |                 |                 |                 |
+| domain_a\       | String          |                 | no action       |
+| ccount_quota (O)|                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| rese            | String          | c               | no action       |
-| t_cos_limits(O) |                 | osname1:limit1, |                 |
+| rese\           | String          | c\              | no action       |
+| t_cos_limits (O)|                 | osname1:limit1, |                 |
 |                 |                 | cosname2:limit2 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| ad              | String          | c               | no action       |
-| d_cos_limits(O) |                 | osname1:limit1, |                 |
+| ad\             | String          | c\              | no action       |
+| d_cos_limits (O)|                 | osname1:limit1, |                 |
 |                 |                 | cosname2:limit2 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 
