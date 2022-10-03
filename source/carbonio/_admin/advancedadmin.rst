@@ -45,3 +45,27 @@ Examples
 <https://www.postfix.org/STANDARD_CONFIGURATION_README.html>`_. More
 examples, depending on the use case, can be found in the official  `Postfix
 documentation <https://www.postfix.org/documentation.html>`_.
+
+Server-side Attachment Management
+---------------------------------
+
+Global e-mail attachment settings allow you to specify global rules
+for handling attachments of an e-mail message.
+
+You can set rules at COS-level and also for individual accounts. When
+attachment settings are configured in Global Settings, the global rule
+takes precedence over COS and Account settings.
+
+A list of formats (extensions) can be created via CLI to restrict the attachments
+allowed.
+
+.. warning:: All files whose extension is in the list will **never**
+   reach the recipient.
+
+For example, to block ``.exe`` filex, use command
+
+.. code:: console
+          
+   # carbonio prov mcf +zimbraMtaBlockedExtension "exe"
+
+.. hint:: Only one format/extension at a time can be specified.
