@@ -45,7 +45,7 @@ The use of the Postscreen function can be activated to provide
 additional protection against mail server overload.
 
 Role-based Access Control
-~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 |product| uses a delegation mechanism to allow the principal
 administrator to assign roles and permission to other users with the
