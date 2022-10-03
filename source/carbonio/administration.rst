@@ -23,6 +23,9 @@ affect all users in the domain.
 :ref:`integratedservices` is an informative section that introduces
 the services that interact with |product|\'s |mta|.
 
+:ref:`adv-admin` introduces some advanced topic about the
+administration of a |product| server.
+     
 .. toctree::
    :hidden:
 
@@ -30,3 +33,4 @@ the services that interact with |product|\'s |mta|.
    _admin/delegatedadmin
    _admin/domainlimits
    _admin/integratedservices
+   _admin/advancedadmin
