@@ -17,7 +17,6 @@ them.
 Anti-Virus and Anti-Spam Protection
 -----------------------------------
 
-
 The **Amavisd** utility is the interface between the |product| |mta|
 and the Clam Anti-Virus (ClamAV) and SpamAssassin software, which
 provide anti-Virus and anti-Spam features respectively.
@@ -44,3 +43,18 @@ signatures stored in either the *BerkeleyDB* or a *MariaDB* database.
 The use of the Postscreen function can be activated to provide
 additional protection against mail server overload.
 
+Accessing Qurantined e-mails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Accessing the E-mails that have been stored in the *quarantine
+mailbox* are **not accessible** to a regular user and are saved in a
+special account that can not be reached from the accounts list.
+
+To find quarantined e-mails, you need to log in to the domain with as
+Administrator, or as a Delegated Admin with access to the quarantine,
+and search for the keyword ``virus`` in the search box. The result
+will be an account with a name similar to
+``virus-quarantine.<string>@example.com``, in which `<string>` is a
+random-generated string. Right-click on it and select the `View mail`
+option. This will open the mailbox for that account, in which you can
+check the e-mails.
