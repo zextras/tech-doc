@@ -4,6 +4,8 @@
 
 The Mails module is where you store, create, and arrange new e-mails.
 
+.. _mail-folders:
+
 Folders and shares
 ------------------
 
@@ -49,6 +51,7 @@ the syntax ``tag:name``, replacing *name* with the name of the
 tag. The same tags used for e-mail can be used to mark :ref:`Calendar
 appointment <calendar-comp>`.
 
+.. _mail-working:
 
 Working with e-mails
 --------------------
@@ -93,6 +96,40 @@ delay of three seconds takes places, and a message appears on the
 bottom right corner: click :bdg-info:`UNDO` to stop the sending and
 continue editing the e-mail.
 
+.. _mail-attachments:
+
+Attachments management
+----------------------
+
+|product| supports e-mail attachments; depending whether the e-mail is
+sent or has been received, the following actions can be carried out on
+the attachment.
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item::
+      :columns: 6
+
+      **Sending an e-mail**
+
+      While composing an e-mail, any file can be added as an
+      attachment for either a local directory on the workstation or on
+      the user's personal storage on |file|.
+
+   .. grid-item::
+      :columns: 6
+
+      **Receiving an e-mail**
+
+      When an e-mail with an attachments arrives in the user's Inbox,
+      the user has the option to either download the file to a local
+      directory on the workstation, or to save it in the user's
+      personal's storage on |file|.
+      
+
+.. _mail-trash-folder:
+
 Trash Folder
 ------------
 
@@ -100,6 +137,8 @@ The trash folder is a special folder in which e-mails marked for
 deletion are temporary stored, in case they need to be recovered.
 An e-mail in the Trash folder will be automatically deleted after a
 period equivalent to the retention time, by default **30 days**.
+
+.. _mail-junk-folder:
 
 Junk Folder
 -----------
