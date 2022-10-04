@@ -151,3 +151,12 @@ installed on any node, provided the dependencies are respected.
   service.
 * **VideoServer Recording**. This modules adds recording abilities to
   the VideoServer.
+
+Supported Mail Protocols
+========================
+
+|product| supports the following protocols:
+
+* POP3 and POP3S
+* SMTP and its secure protocols SSMTP and SPTMS (SMTP over TLS/SSL)
+* IMAP and its secure protocol IMAPS (IMAP over SSL)

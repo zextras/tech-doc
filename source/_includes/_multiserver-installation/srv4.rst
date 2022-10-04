@@ -3,9 +3,9 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. srv1 - proxy and vs
-   
+
 This node featurs the proxy, the ``*-ui`` files (i.e., the front-end
-packages for |team| and |file|), then the packages related to
+packages for |team|, |adminui|, and |file|), then the packages related to
 |vs|. Since Proxy and |vs| are different roles, we separate their
 installation and setup, so they can easily be installed on different
 nodes.
@@ -21,8 +21,9 @@ These tasks need to be carried out for the Proxy.
 
          .. code:: console
 
-            # apt install service-discover-agent carbonio-proxy \ 
-              carbonio-webui carbonio-files-ui carbonio-chats-ui 
+            # apt install service-discover-agent carbonio-proxy \
+              carbonio-webui carbonio-files-ui carbonio-chats-ui \
+              carbonio-admin-ui carbonio-admin-console-ui
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -30,7 +31,8 @@ These tasks need to be carried out for the Proxy.
          .. code:: console
 
             # dnf install service-discover-agent carbonio-proxy \
-              carbonio-webui carbonio-files-ui carbonio-chats-ui
+              carbonio-webui carbonio-files-ui carbonio-chats-ui \
+              carbonio-admin-ui carbonio-admin-console-ui
 
 #. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
    required
@@ -51,12 +53,12 @@ These tasks need to be carried out for the Proxy.
       zextras -c "zmprov gas service-discover"`
 
 #.  Run |mesh| setup using ``MESH_CLUSTER_PWD``
-   
+
    .. code:: console
 
       # service-discover setup-wizard
 
-To set up the |vs|, these are the necessary tasks.
+To set up the |vs|, these are the necessary tasks. 
 
 #. Install packages
 
@@ -68,7 +70,7 @@ To set up the |vs|, these are the necessary tasks.
          .. code:: console
 
             # apt install carbonio-videoserver carbonio-videoserver-recorder
- 
+
       .. tab-item:: RHEL
          :sync: rhel
 
@@ -79,18 +81,18 @@ To set up the |vs|, these are the necessary tasks.
    .. note:: One of the output received during the installation is a
       command that will be run on SRV5. Copy it, because it will be
       needed on SRV5.
-   
+
 #. Enable and start the service with the commands
-   
+
    .. code:: console
-   
-      # systemctl enable videoserver.service 
+
+      # systemctl enable videoserver.service
       # systemctl start  videoserver.service
 
 #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 
    .. code:: console
-             
+
       zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
       zextras$ zmmemcachedctl restart
       zextras$ zmproxyctl restart
@@ -111,7 +113,7 @@ videos can not be stored.
 
    Values used in the next steps
    ^^^^
-    
+
    * ``VS_IP``: the IP address of this node
 
    * the command suggested during the |vs| installation (to be used on
@@ -121,5 +123,3 @@ videos can not be stored.
      option saved in file
      :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed when
      running the previous command
-
-  

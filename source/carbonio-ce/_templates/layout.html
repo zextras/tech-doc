@@ -31,7 +31,9 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 {% endblock %}
 {% block sidebartitle %}
 <a href="{{ pathto(master_doc) }}"><img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
-  <p>Community Edition</p>
+  <p>Community Edition <br>
+    {{ release}}
+  </p>
 </a>
    
 {% include "searchbox.html" %}

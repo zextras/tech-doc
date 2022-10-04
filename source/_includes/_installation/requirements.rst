@@ -53,11 +53,17 @@ Software Requirements
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
-8** installation and requires  valid DNS resolution for
+8** installation.
 
-- the domain (MX and A record)
-- the FQDN (A record)
 
+The following requirements must be satisfied before attempting to
+install |product|
+
+#. valid DNS resolution for both the domain (``MX`` and ``A`` records) and the
+   FQDN (``A`` record)
+#. Python 3, latest version available on the Operating System chosen
+#. Perl, latest version available on the Operating System chosen
+   
 See :ref:`the dedicated box below <config-dns>` for details and examples.
 
 Support for other distributions will be announced in due course
@@ -85,10 +91,11 @@ On **RHEL 8**, make sure you also have :
    purposes**, how to install and configure ``dnsmasq`` for DNS
    resolution.
 
-   .. dropdown:: Example: Set up of dnsmasq
+   .. dropdown:: Example: Set up of dnsmasq for demo or test environment
 
-      Follow these simple steps to set up ``dnsmasq`` on your testing
-      environment.
+      Follow these simple steps to set up ``dnsmasq``. These
+      instructions are suitable for a demo or testing environment
+      only.
 
       .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
          may raise a port conflict over port **53 UDP** with the
@@ -119,11 +126,19 @@ On **RHEL 8**, make sure you also have :
           host-record=carbonio.local,172.16.0.10
           host-record=mail.carbonio.local,172.16.0.10
 
-      Finally, restart the **dnsmasq** service
+      Remember to replace the **172.16.0.10** IP address with the one
+      of your server. Then, make sure that the :file:`etc/resolv.conf`
+      contains the line::
 
-        .. code:: console
+        nameserver 127.0.0.1
 
-           # systemctl restart dnsmasq
+      This will ensure that the local running :command:`dnsmasq` is
+      used for DNS resolution. Finally, restart the **dnsmasq**
+      service
+
+      .. code:: console
+
+         # systemctl restart dnsmasq
 
 ..
    .. _software_preconf:

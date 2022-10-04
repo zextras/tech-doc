@@ -45,7 +45,7 @@ copyright = '2022, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = '22.10.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
@@ -67,6 +67,7 @@ exclude_patterns = ['_includes', 'cli', 'common/carbonio', 'glossary.rst']
 rst_prolog = """
 
 .. |product| replace:: Carbonio
+.. |storage| replace:: Carbonio Storages
 
 """ + open("replace.txt").read()
 
