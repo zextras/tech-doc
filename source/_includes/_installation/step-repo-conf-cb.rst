@@ -46,6 +46,7 @@ Next, we install all packages needed for |product|.
          carbonio-files carbonio-files-db \
          carbonio-preview \
          carbonio-docs-connector carbonio-docs-editor \
+         carbonio-admin-ui carbonio-admin-console-ui \
          postgresql-12
 
    .. tab-item:: RHEL
@@ -67,6 +68,7 @@ Next, we install all packages needed for |product|.
          carbonio-files carbonio-files-db \
          carbonio-preview \
          carbonio-docs-connector carbonio-docs-editor \
+         carbonio-admin-ui carbonio-admin-console-ui \
          postgresql-12
 
 ..
