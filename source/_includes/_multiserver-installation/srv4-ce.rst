@@ -17,7 +17,8 @@ packages for |file|) will be installed here.
          .. code:: console
 
             # apt install service-discover-agent carbonio-proxy \ 
-              carbonio-webui carbonio-files-ui
+              carbonio-webui carbonio-files-ui \
+              carbonio-admin-ui carbonio-admin-console-ui
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -25,7 +26,8 @@ packages for |file|) will be installed here.
          .. code:: console
 
             # dnf install service-discover-agent carbonio-proxy \
-              carbonio-webui carbonio-files-ui
+              carbonio-webui carbonio-files-ui \
+              carbonio-admin-ui carbonio-admin-console-ui
 
 #. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
    required
