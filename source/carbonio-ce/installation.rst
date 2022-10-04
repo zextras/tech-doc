@@ -241,3 +241,4 @@ SRV6: AppServer, Preview and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
+.. include:: /_includes/_installation/update-ts-ce.rst

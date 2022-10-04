@@ -264,3 +264,4 @@ SRV6: Advanced, AppServer, Preview, and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
+.. include:: /_includes/_installation/update-ts-cb.rst
