@@ -4,8 +4,8 @@
 
 .. srv1 - proxy and vs
    
-This node featurs the Proxy, and all the ``*-ui`` files (i.e., the front-end
-packages for |file|) will be installed here.
+This node featurs the Proxy, and all the ``*-ui`` files (i.e., the
+front-end packages for |file| and |adminui|) will be installed here.
 
 #. Install packages
 
@@ -49,9 +49,9 @@ packages for |file|) will be installed here.
 
 #.  Run |mesh| setup using ``MESH_CLUSTER_PWD``
    
-   .. code:: console
+    .. code:: console
 
-      # service-discover setup-wizard
+       # service-discover setup-wizard
 
 #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 

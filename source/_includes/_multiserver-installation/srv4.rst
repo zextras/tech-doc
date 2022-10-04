@@ -58,7 +58,7 @@ These tasks need to be carried out for the Proxy.
 
       # service-discover setup-wizard
 
-To set up the |vs|, these are the necessary tasks.
+To set up the |vs|, these are the necessary tasks. 
 
 #. Install packages
 
