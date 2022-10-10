@@ -89,7 +89,7 @@ services, it is strongly suggested to execute the command
 
 .. code:: console
 
-   # pending-setups
+   # pending-setups -a
 
 This will register the services to |mesh|, so they can immediately be
 used.

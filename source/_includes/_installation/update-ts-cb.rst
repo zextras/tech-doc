@@ -66,7 +66,7 @@ Upgrade of Docs-Editor
 ~~~~~~~~~~~~~~~~~~~~~~
 
 When installing recent version of the **Docs-Editor**, running the
-:command:`pending-setups` might abruptly exit with an error message
+:command:`pending-setups -a` might abruptly exit with an error message
 similar to::
 
   Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
@@ -100,7 +100,7 @@ verify this with the following commands.
 If the version is older than **1.10.12**, please upgrade the package.
 
 After you verified that the version is the correct one, please run
-this command **before** :command:`pending-setups`.
+this command **before** :command:`pending-setups -a`.
 
 .. code:: console
 

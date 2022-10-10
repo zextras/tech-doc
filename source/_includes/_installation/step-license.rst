@@ -7,7 +7,7 @@ installation or configuration task, run:
 
 .. code:: console
 
-   # pending-setups
+   # pending-setups -a
 
 Finally, as the ``zextras`` user, activate |product| license,
 replacing **TOKEN** with your licence token.

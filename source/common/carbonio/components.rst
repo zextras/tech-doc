@@ -129,7 +129,7 @@ these steps.
 
    .. code:: console
 
-      # pending-setups
+      # pending-setups -a
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
