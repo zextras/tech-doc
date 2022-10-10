@@ -12,13 +12,13 @@ can use
 
 .. code:: console
 
-   # systemctl start|stop|status carbonio.*
+   # systemctl start|stop|status carbonio*
 
 to start, stop or verify the status of all the ``carbonio`` units and
 
 .. code:: console
 
-   # journalctl -u carbonio.*
+   # journalctl -u carbonio*
 
 to access the logs produced by all the units.
 
@@ -28,4 +28,4 @@ command below, then use only the unit that you would like to access.
 
 .. code:: console
    
-   # systemctl list-units "carbonio.*"
+   # systemctl list-units "carbonio*"

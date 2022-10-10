@@ -94,7 +94,7 @@ the Multi-Server there are a few more steps to carry out.
 
    .. code:: console
 
-      # zmprov gas service-discover
+      # carbonio prov gas service-discover
 
    To make sure you are on the leader, use the following command.
 

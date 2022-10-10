@@ -44,8 +44,9 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview \
-         carbonio-docs-connector carbonio-docs-editor \
+         carbonio-preview carbonio-docs-editor\
+         carbonio-docs-connector carbonio-docs-connector-db \
+         carbonio-admin-ui carbonio-admin-console-ui \
          postgresql-12
 
    .. tab-item:: RHEL
@@ -65,14 +66,8 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview \
-         carbonio-docs-connector carbonio-docs-editor \
+         carbonio-preview carbonio-docs-editor\
+         carbonio-docs-connector carbonio-docs-connector-db \
+         carbonio-admin-ui carbonio-admin-console-ui \
          postgresql-12
-
-..
-   .. card::
-      :class-header: sd-font-weight-bold sd-fs-5
-
-      Step 3B: (Optional) Installation and Configuration of pgpool
-      ^^^^^
 
