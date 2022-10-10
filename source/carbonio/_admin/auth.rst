@@ -206,7 +206,7 @@ In order to enable the authentication strategies available in
       In order to properly have 2FA set up, the ``zimbraAuthMech`` attribute
       bust be configured at domain level::
 
-        zmprov modifyDomain example.com zimbraAuthMech custom:zx
+        carbonio prov modifyDomain example.com zimbraAuthMech custom:zx
 
       To enable 2FA it is also necessary, **for all services**:
 

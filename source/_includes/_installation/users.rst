@@ -19,7 +19,7 @@
    .. code:: console
 
       # su - zextras
-      # zmprov setpassword zextras@carbonio.local newpassword
+      # carbonio prov setpassword zextras@carbonio.local newpassword
 
    Make sure that ``newpassword`` meets good security criteria.
 

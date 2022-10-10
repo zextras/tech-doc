@@ -48,7 +48,7 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
    .. hint:: The ``SRV2_IP`` can be retrieved using command :command:`su -
-      zextras -c "zmprov gas service-discover"`
+      zextras -c "carbonio prov gas service-discover"`
 
 #. Run |mesh| setup using ``MESH_CLUSTER_PWD``
 
