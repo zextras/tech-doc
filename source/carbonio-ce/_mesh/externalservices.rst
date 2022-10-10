@@ -391,7 +391,7 @@ service. Hence, to avoid conflicts, you need to uninstall it.
 
    .. code:: console
 
-      # pending-setups
+      # pending-setups -a
 
 Remove Services From Catalog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

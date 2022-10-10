@@ -32,5 +32,5 @@ To complete |mesh| installation, run
 
 .. code:: console
 
-   # pending-setups
+   # pending-setups -a
 
