@@ -35,7 +35,7 @@ First install all the necessary packages:
 
 Execute the following tasks: make sure you keep at hand the data
 configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
-``MESH_CLUSTER_PWD``, and ``MTA_IP``).
+``MESH_SECRET``, and ``MTA_IP``).
 
 #. Bootstrap |carbonio|, using the data from previous tasks when
    required
@@ -55,7 +55,7 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
    .. hint:: the SRV2_IP can be retrieved using command :command:`su -
       zextras -c "carbonio prov gas service-discover"`
 
-#. Run |mesh| setup using ``MESH_CLUSTER_PWD``
+#. Run |mesh| setup using ``MESH_SECRET``
 
    .. code:: console
 

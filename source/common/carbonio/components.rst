@@ -138,8 +138,8 @@ these steps.
    ^^^^^
 
    The final steps is to bootstrap |file|\'s DB (replacing the example
-   password "MESH_CLUSTER_PWD" with the chosen one):
+   password "MESH_SECRET" with the chosen one):
 
    .. code:: console
 
-      # PGPASSWORD=MESH_CLUSTER_PWD carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1
+      # PGPASSWORD=MESH_SECRET carbonio-files-db-bootstrap carbonio-files-adm 127.0.0.1

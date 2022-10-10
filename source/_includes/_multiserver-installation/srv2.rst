@@ -88,4 +88,4 @@ PostgreSQL node using `Pgpool-II
 
         # zmlocalconfig -s zimbra_ldap_password
 
-   * ``MESH_CLUSTER_PWD``: the |mesh| password 
+   * ``MESH_SECRET``: the |mesh| password 
