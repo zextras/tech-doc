@@ -53,14 +53,19 @@ Then installing the new package
 
          # dnf install carbonio-docs-connector
 
-Finally, since this package installs a database component, bootstrap
+Since this package installs a database component, bootstrap
 the corresponding database.
 
 .. code:: console
 
    # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+
+Finally, restart the mailbox service.
+
+.. code:: console
+   
    # su - zextras
-   # zmmailboxdctl restart
+   zextras$ zmmailboxdctl restart
 
 Upgrade of Docs-Editor
 ~~~~~~~~~~~~~~~~~~~~~~
