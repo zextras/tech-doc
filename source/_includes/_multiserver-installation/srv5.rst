@@ -33,7 +33,7 @@ Execute the following tasks: make sure you keep at hand the data
 configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 ``MESH_SECRET``, and ``MTA_IP``).
 
-#.  Bootstrap |carbonio|, using the data from previous tasks when required
+#. Bootstrap |carbonio|, using the data from previous tasks when required
 
    .. code:: console
 
@@ -55,6 +55,12 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
    .. code:: console
 
       # service-discover setup-wizard
+
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
 
 #. Let |file| use Memcached. Edit file
    :file:`/etc/carbonio/files/config.properties` and search for

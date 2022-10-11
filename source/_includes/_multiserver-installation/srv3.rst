@@ -49,6 +49,12 @@ These following tasks must be executed to configure the MTA.
 
       # service-discover setup-wizard
 
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
+
 .. card::
 
    Values used in the next steps
