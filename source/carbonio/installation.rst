@@ -107,7 +107,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 6: Configure |product| Databases
+   Step 6: Create Main DB Role and Database for |product|
    ^^^^
 
    .. include:: /_includes/_installation/step-conf-db.rst

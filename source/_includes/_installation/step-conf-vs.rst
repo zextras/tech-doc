@@ -35,15 +35,24 @@ following commands to start the service.
    # systemctl enable videoserver.service
    # systemctl start  videoserver.service
 
-Finally, the following commands enable video recording and must be
-executed as the ``zextras`` user.
+To complete the installation, first become the ``zextras`` user.
 
-.. code::
+.. code:: console
 
    # su - zextras
-   # carbonio chats video-server add VS_IP port 8188 servlet_port 8090 secret VIDEOSERVER_PWD
-   # carbonio config set global teamVideoServerRecordingEnabled true
-   # carbonio config set cos default teamChatEnabled true
+
+Execute the following command to configure video recording.
+
+.. code:: console
+
+   zextras$ carbonio chats video-server add VS_IP port 8188 servlet_port 8090 secret VIDEOSERVER_PWD
+
+Finally, enable |vs| and the recording of meetings.
+
+.. code:: console
+
+   zextras$ carbonio config set global teamVideoServerRecordingEnabled true
+   zextras$ carbonio config set cos default teamChatEnabled true
 
 Here, port **8188** is the default port used by |vs|, while **8090**
 for recording. Change these values according to your needs or

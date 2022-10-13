@@ -61,6 +61,12 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 
       # service-discover setup-wizard
 
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
+
 #. Fix carbonio-mailbox token access
 
    .. code:: console

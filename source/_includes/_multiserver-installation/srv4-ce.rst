@@ -53,6 +53,12 @@ front-end packages for |file| and |adminui|) will be installed here.
 
        # service-discover setup-wizard
 
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
+
 #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 
    .. code:: console

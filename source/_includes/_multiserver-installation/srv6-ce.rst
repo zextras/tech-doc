@@ -60,6 +60,12 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 
       # service-discover setup-wizard
 
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
+
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for
    section **# Nginx Lookup servers**.

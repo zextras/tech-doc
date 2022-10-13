@@ -65,13 +65,25 @@ PostgreSQL node using `Pgpool-II
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
 6. Bootstrap Carbonio Databases, using the Postgres user created on
-   SRV1 and the password defined in previous step.:
+   SRV1 and the password defined in previous step.
+   
+   * mailbox
 
-   .. code:: console
+     .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-      # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-      # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+   * |file|
+
+     .. code:: console
+
+        # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+   * |docs|
+
+     .. code:: console
+
+        # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
 .. card::
 

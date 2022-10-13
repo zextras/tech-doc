@@ -52,11 +52,17 @@ These tasks need to be carried out for the Proxy.
    .. hint:: the SRV2_IP can be retrieved using command :command:`su -
       zextras -c "carbonio prov gas service-discover"`
 
-#.  Run |mesh| setup using ``MESH_SECRET``
+#. Run |mesh| setup using ``MESH_SECRET``
    
    .. code:: console
 
       # service-discover setup-wizard
+
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
 
 To set up the |vs|, these are the necessary tasks. 
 
