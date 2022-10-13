@@ -181,7 +181,7 @@ setup |mesh|, which is explained below.
 
    .. code:: console
 
-      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
+      # service-discover setup $(hostname -i) --password=MESH_SECRET
 
    .. hint:: Use a **robust** password of your choice.
 
@@ -208,7 +208,7 @@ setup |mesh|, which is explained below.
 
    .. code:: console
 
-      # service-discover setup $(hostname -i) --password=MESH_CLUSTER_PWD
+      # service-discover setup $(hostname -i) --password=MESH_SECRET
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -222,11 +222,14 @@ setup |mesh|, which is explained below.
 
    .. code:: console
 
-      # pending-setups
+      # pending-setups -a
 
-   The command will open a short menu which lists all tasks and scripts that
-   need to be executed. Select each one or click :bdg-secondary:`a` to
-   run all the scripts at once.
+   The command runs all necessary scripts to finalise the
+   installation. In case you want to see which are the scripts run,
+   run the command without the ``-a``: a short menu will open, which
+   lists all tasks and scripts that need to be executed. In this case,
+   you need to press the letter corresponding to each script, or **a**
+   to run all of them at once, to complete the installation procedure.
 
    After all nodes have been configured, execute the following command
    **on each node** to enable |carbonio| at startup.

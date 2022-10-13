@@ -117,7 +117,7 @@ sign the outgoing e-mails.
 
    .. code:: console
 
-      # zmprov gs $(zmhostname)|grep -i service
+      # carbonio prov gs $(zmhostname)|grep -i service
 
    must contain the line::
 

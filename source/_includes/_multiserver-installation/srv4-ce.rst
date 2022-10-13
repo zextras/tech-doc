@@ -45,13 +45,19 @@ front-end packages for |file| and |adminui|) will be installed here.
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
    .. hint:: the SRV2_IP can be retrieved using command :command:`su -
-      zextras -c "zmprov gas service-discover"`
+      zextras -c "carbonio prov gas service-discover"`
 
-#.  Run |mesh| setup using ``MESH_CLUSTER_PWD``
+#.  Run |mesh| setup using ``MESH_SECRET``
    
     .. code:: console
 
        # service-discover setup-wizard
+
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
 
 #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 

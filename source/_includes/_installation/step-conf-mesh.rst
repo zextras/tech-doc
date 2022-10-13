@@ -13,11 +13,11 @@ This command will:
 
 * ask for the IP address and netmask
 
-* ask for the **cluster credential password**, which is used for
+* ask for the |mesh| :ref:`secret <mesh-credentials>`, which is used for
   setups, management, and to access the administration GUI. See
   section :ref:`mesh-gui` for more information.
 
-  This password will be denoted as ``MESH_CLUSTER_PWD`` throughout the
+  This password will be denoted as ``MESH_SECRET`` throughout the
   documentation.
   
   .. include:: /_includes/hint-pwd.rst
@@ -32,5 +32,5 @@ To complete |mesh| installation, run
 
 .. code:: console
 
-   # pending-setups
+   # pending-setups -a
 

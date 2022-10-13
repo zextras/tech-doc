@@ -69,15 +69,28 @@ install all the upgrades available, of both the system and |product|.
 Manual steps
 ------------
 
-Whenever a ``db`` package is upgraded (currently there are two of
-these packages, ``carbonio-mailbox-db`` and ``carbonio-files-db``),
-remember to bootstrap the corresponding Database, by running either of
-the commands.
+Whenever a ``db`` package is upgraded (currently they are
+``carbonio-mailbox-db``, ``carbonio-files-db``, and
+``carbonio-docs-connector-db``), remember to bootstrap the
+corresponding Database, by running the corresponding command.
 
-.. code:: console
+* mailbox
+  
+  .. code:: console
 
-   # $PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-   # $PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+* |file|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+* |docs|
+  
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
 In the above commands, ``$DB_ADM_PWD`` is the the password of the
 ``carbonio_adm`` database role, that is, the one created during
@@ -89,7 +102,7 @@ services, it is strongly suggested to execute the command
 
 .. code:: console
 
-   # pending-setups
+   # pending-setups -a
 
 This will register the services to |mesh|, so they can immediately be
 used.

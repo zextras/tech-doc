@@ -13,11 +13,11 @@ process.
 Preventing Docs-connector Conflicts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Previous to release **22.10.0**, |product| installed package
-``docs-connector-ce``, which was common between |carbonio| and
-|ce|. If you have it installed, make sure to remove it and that **only**
-the new package ``carbonio-docs-connector-db`` is installed, by
-executing the command
+If you are running release **22.10.0**, there are chances that you
+have installed package ``docs-connector-ce``, which was common between
+|carbonio| and |ce|. If you have it installed, make sure to remove it
+and that **only** the new package ``carbonio-docs-connector`` is
+installed, by removing the old package
 
 .. tab-set::
 
@@ -35,10 +35,7 @@ executing the command
 
          # dnf remove carbonio-docs-connector-ce
 
-The command will ask to remove the package, if present, or simply exit
-if the package otherwise.
-
-Once done, make sure that the new package is installed.
+Then installing the new package
 
 .. tab-set::
 
@@ -47,32 +44,34 @@ Once done, make sure that the new package is installed.
 
       .. code:: console
 
-         # apt install carbonio-docs-connector-cb
+         # apt install carbonio-docs-connector
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-docs-connector-cb
+         # dnf install carbonio-docs-connector
 
-If this command exits without installing the package, you are already
-done and can skip the next command.
-
-Finally, since this package installs a database component, bootstrap
+Since this package installs a database component, bootstrap
 the corresponding database.
 
 .. code:: console
 
    # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+
+Finally, restart the mailbox service.
+
+.. code:: console
+   
    # su - zextras
-   # zmmailboxdctl restart
+   zextras$ zmmailboxdctl restart
 
 Upgrade of Docs-Editor
 ~~~~~~~~~~~~~~~~~~~~~~
 
 When installing recent version of the **Docs-Editor**, running the
-:command:`pending-setups` might abruptly exit with an error message
+:command:`pending-setups -a` might abruptly exit with an error message
 similar to::
 
   Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
@@ -106,7 +105,7 @@ verify this with the following commands.
 If the version is older than **1.10.12**, please upgrade the package.
 
 After you verified that the version is the correct one, please run
-this command **before** :command:`pending-setups`.
+this command **before** :command:`pending-setups -a`.
 
 .. code:: console
 

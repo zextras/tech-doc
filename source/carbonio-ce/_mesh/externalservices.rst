@@ -316,10 +316,22 @@ credentials to |mesh| and create the DB's, is usually done by the
 *carbonio-files-db* package is not installed, this task must be done
 manually using these commands on the terminating gateway.
 
-.. code:: console
+* configure database name
+  
+  .. code:: console
 
    # consul kv put carbonio-files/db-name <database-name>
+
+* configure username
+  
+  .. code:: console
+
    # consul kv put carbonio-files/db-username <username>
+
+* configure password
+  
+  .. code:: console
+
    # consul kv put carbonio-files/db-password <password>
 
 Now, let's log in to the *database node*, where it is necessary to
@@ -327,10 +339,23 @@ create a ``postgres`` superuser. In this example, we assign password
 **ScrtPsw987^2** to the user. Make sure to use a strong password of
 your choice.
 
+First, become the ``postgres`` user and start a direct access to the
+database using the CLI client.
+
 .. code:: console
 
    # sudo -u postgres psql
-   # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2';CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
+
+Then  issue the following commands to create the user.
+
+.. code:: console
+
+   # CREATE ROLE "carbonio-files-adm" WITH LOGIN SUPERUSER encrypted password 'ScrtPsw987^2'; CREATE DATABASE "carbonio-files-adm" owner "carbonio-files-adm";
+
+Once done, exit the client.
+
+.. code:: console
+
    # \q
 
 |file| Nodes Installation
@@ -391,7 +416,7 @@ service. Hence, to avoid conflicts, you need to uninstall it.
 
    .. code:: console
 
-      # pending-setups
+      # pending-setups -a
 
 Remove Services From Catalog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
