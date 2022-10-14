@@ -113,10 +113,10 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 7: Bootstrap |product| Databases
+   Step 7: Bootstrap |file| Databases
    ^^^^^
 
-   .. include:: /_includes/_installation/step-conf-files.rst
+   .. include:: /_includes/_installation/step-conf-files-ce.rst
 
 .. include:: /_includes/_installation/complete.rst
 .. include:: /_includes/_installation/users.rst
@@ -240,4 +240,10 @@ SRV6: AppServer, Preview and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
+
+Manual steps
+------------
+
+.. include:: /_includes/_installation/update-ce.rst
+
 .. include:: /_includes/_installation/update-ts-ce.rst
