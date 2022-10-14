@@ -66,43 +66,10 @@ additional care is required, see after the instructions below.
 These two commands also take care of resolving all dependencies and
 install all the upgrades available, of both the system and |product|.
 
-Manual steps
-------------
-
-Whenever a ``db`` package is upgraded (currently they are
-``carbonio-mailbox-db``, ``carbonio-files-db``, and
-``carbonio-docs-connector-db``), remember to bootstrap the
-corresponding Database, by running the corresponding command.
-
-* mailbox
-  
-  .. code:: console
-
-     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-* |file|
-
-  .. code:: console
-
-     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-
-* |docs|
-  
-  .. code:: console
-
-     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
-
-In the above commands, ``$DB_ADM_PWD`` is the the password of the
-``carbonio_adm`` database role, that is, the one created during
-:ref:`Step 6 <config-db>` of the Single-Server installation or the
-installation of :ref:`srv1-install` in the Multi-Server installation
-
-Finally, since new version of |product| packages may include new
-services, it is strongly suggested to execute the command
-
-.. code:: console
-
-   # pending-setups -a
-
-This will register the services to |mesh|, so they can immediately be
-used.
+If you have a Multi-Server installation, you must execute the upgrade
+on each node, following the same order used during the
+installation. In other words, if you installed your Multi-Server
+according to the scenario described in
+:ref:`multiserver-installation`, you should start the upgrade from
+**SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
+**SRV6**.
