@@ -39,3 +39,7 @@
 .. |mta| replace:: :abbr:`MTA (Message Transfer Agent)`
 .. |gui| replace:: :abbr:`GUI (Graphic User Interface)`
 .. |cos| replace:: :abbr:`COS (Class of Service)`
+
+.. roles
+
+.. role:: bgreen
