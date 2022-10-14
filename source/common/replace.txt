@@ -40,6 +40,8 @@
 .. |gui| replace:: :abbr:`GUI (Graphic User Interface)`
 .. |cos| replace:: :abbr:`COS (Class of Service)`
 
-.. roles
+.. additional roles for adding inline styles
 
 .. role:: bgreen
+.. role:: red
+.. role:: green
