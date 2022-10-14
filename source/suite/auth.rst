@@ -716,7 +716,6 @@ default SAML settings, modify them, then save and import them back.
          :open:
 
          .. code-block:: json
-            :linenos:
 
             {
               "sp.entityid":"https://SP_URL/zx/auth/samlMetadata?domain=example.com",
@@ -772,6 +771,8 @@ default SAML settings, modify them, then save and import them back.
          by using the ``zxsuite auth saml get`` and ``zxsuite auth saml
          set`` command options.
 
+.. _auth-saml-logout:
+
 Configure SAML Logout
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -791,7 +792,7 @@ previous section, by modifying the configuration file
    line numbers are those
 
 First, you need to configure the SAML IDP logout service URL (line
-**7**, :bgreen:`sp.single_logout_service.url`). We use :abbr:`okta
+**7**, :bgreen:`sp.single_logout_service.url`). We use :abbr:`Okta
 (www.okta.com)` as example SAML IDP provider, so the URL will be
 similar to https://mycompany.okta.com/app/test/app_id/slo/saml.
 
