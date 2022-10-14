@@ -50,7 +50,7 @@ Regenerate |mesh| Secret
 ------------------------
 
 In case the secret needs to be changed, there is one important
-information to know beforehand: the *reset index* value, whic is
+information to know beforehand: the *reset index* value, which is
 always an **integer**.
 
 .. card::

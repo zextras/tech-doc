@@ -118,7 +118,7 @@ The next steps concern the configuration and setup of the various
    Step 7: Bootstrap |product| Databases
    ^^^^^
 
-   .. include:: /_includes/_installation/step-conf-files.rst
+   .. include:: /_includes/_installation/step-conf-files-cb.rst
 
 .. _vs_installation:
 
