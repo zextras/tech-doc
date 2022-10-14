@@ -118,7 +118,7 @@ The next steps concern the configuration and setup of the various
    Step 7: Bootstrap |product| Databases
    ^^^^^
 
-   .. include:: /_includes/_installation/step-conf-files.rst
+   .. include:: /_includes/_installation/step-conf-files-cb.rst
 
 .. _vs_installation:
 
@@ -255,4 +255,10 @@ SRV6: Advanced, AppServer, Preview, and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
+
+Manual steps
+------------
+
+.. include:: /_includes/_installation/update-cb.rst
+
 .. include:: /_includes/_installation/update-ts-cb.rst

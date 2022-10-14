@@ -39,3 +39,9 @@
 .. |mta| replace:: :abbr:`MTA (Message Transfer Agent)`
 .. |gui| replace:: :abbr:`GUI (Graphic User Interface)`
 .. |cos| replace:: :abbr:`COS (Class of Service)`
+
+.. additional roles for adding inline styles
+
+.. role:: bgreen
+.. role:: red
+.. role:: green

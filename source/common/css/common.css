@@ -198,3 +198,11 @@ legend {
 .tt, .command, .code, .rst-content code.literal {
     color: var(--zx-color-magma);
 }
+
+.green { 
+    color: green;
+}
+.bgreen {
+    color:green;
+    font-weight: 800;
+}
