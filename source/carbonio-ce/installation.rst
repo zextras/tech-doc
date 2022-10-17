@@ -23,8 +23,15 @@ During the installation and configuration of |product|, it is
 necessary to execute commands from the command line, so make sure you
 have access to it.
 
-We remark that, unless differently stated, **all CLI commands must be run
-as the** ``root`` **user**.
+Some preliminary remark:
+
+* Unless differently stated, **all CLI commands must be run as the**
+  ``root`` **user**
+* Commands or groups of commands may be different between Ubuntu and
+  RHEL 8. This is shown by blue tabs: click on the tab of your choice
+  to find the correct command.
+* When no such tabs are given, the commands to run are the same on
+  Ubuntu and RHEL 8.
 
 .. _installation-step1:
 
