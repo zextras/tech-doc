@@ -15,4 +15,4 @@ command must ebe executed *on all nodes*:
 
 .. code:: bash
 
-   # su - zextras "/opt/zextras/bin/zmupdateauthkeys"
+   # su - zextras -c "/opt/zextras/bin/zmupdateauthkeys"

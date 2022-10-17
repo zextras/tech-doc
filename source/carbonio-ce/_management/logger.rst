@@ -39,7 +39,7 @@ the other nodes must be set up to use the Logger node.
 
    .. code:: bash
 
-      # su - zextras "/opt/zextras/libexec/zmloggerinit"
+      # su - zextras -c "/opt/zextras/libexec/zmloggerinit"
 
 
 .. card::

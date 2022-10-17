@@ -785,13 +785,13 @@ level, for example to enable it globally:
 
 .. code:: console
 
-   # zxsuite config global set attribute backupBloblessMode value true
+   # carbonio config global set attribute backupBloblessMode value true
    
 Or to enable it only for domain mail.example.com:
    
 .. code:: console
 
-   # zxsuite config server set mail.example.com attribute backupBloblessMode value true
+   # carbonio config server set mail.example.com attribute backupBloblessMode value true
 
 .. _backup_purge_2:
 

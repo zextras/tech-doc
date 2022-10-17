@@ -23,18 +23,18 @@ PostgreSQL node using `Pgpool-II
 
          .. code:: console
 
-            # apt install service-discover-server \
+            # apt install service-discover-server pgpool2 \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db pgpool2
+              carbonio-mailbox-db carbonio-docs-connector-db \
 
       .. tab-item:: RHEL
          :sync: rhel
 
          .. code:: console
 
-            # dnf install service-discover-server \
+            # dnf install service-discover-server pgpool2 \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db pgpool2
+              carbonio-mailbox-db carbonio-docs-connector-db \
 
 2. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace ``SRV1_IP`` with the
@@ -64,12 +64,12 @@ PostgreSQL node using `Pgpool-II
    
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
-6. Bootstrap Carbonio Databases, using the Postgres user created on
-   SRV1 and the password defined in previous step.:
+6. Bootstrap |file| Database, using the Postgres user created on
+   SRV1 and the password defined in previous step.
 
    .. code:: console
 
-      # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 .. card::
 
@@ -86,4 +86,4 @@ PostgreSQL node using `Pgpool-II
 
         # zmlocalconfig -s zimbra_ldap_password
 
-   * ``MESH_CLUSTER_PWD``: the |mesh| password 
+   * ``MESH_SECRET``: the |mesh| password 

@@ -4,8 +4,8 @@
 
 .. srv1 - proxy and vs
    
-This node featurs the Proxy, and all the ``*-ui`` files (i.e., the front-end
-packages for |file|) will be installed here.
+This node featurs the Proxy, and all the ``*-ui`` files (i.e., the
+front-end packages for |file| and |adminui|) will be installed here.
 
 #. Install packages
 
@@ -17,7 +17,8 @@ packages for |file|) will be installed here.
          .. code:: console
 
             # apt install service-discover-agent carbonio-proxy \ 
-              carbonio-webui carbonio-files-ui
+              carbonio-webui carbonio-files-ui \
+              carbonio-admin-ui carbonio-admin-console-ui
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -25,7 +26,8 @@ packages for |file|) will be installed here.
          .. code:: console
 
             # dnf install service-discover-agent carbonio-proxy \
-              carbonio-webui carbonio-files-ui
+              carbonio-webui carbonio-files-ui \
+              carbonio-admin-ui carbonio-admin-console-ui
 
 #. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
    required
@@ -43,13 +45,19 @@ packages for |file|) will be installed here.
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
    .. hint:: the SRV2_IP can be retrieved using command :command:`su -
-      zextras -c "zmprov gas service-discover"`
+      zextras -c "carbonio prov gas service-discover"`
 
-#.  Run |mesh| setup using ``MESH_CLUSTER_PWD``
+#.  Run |mesh| setup using ``MESH_SECRET``
    
+    .. code:: console
+
+       # service-discover setup-wizard
+
+#. Complete |mesh| setup
+
    .. code:: console
 
-      # service-discover setup-wizard
+      # pending-setups -a
 
 #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 

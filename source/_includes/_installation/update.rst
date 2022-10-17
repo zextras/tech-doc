@@ -66,102 +66,10 @@ additional care is required, see after the instructions below.
 These two commands also take care of resolving all dependencies and
 install all the upgrades available, of both the system and |product|.
 
-Manual steps
-------------
-
-Whenever a ``db`` package is upgraded (currently there are two of
-these packages, ``carbonio-mailbox-db`` and ``carbonio-files-db``),
-remember to bootstrap the corresponding Database, by running either of
-the commands.
-
-.. code:: console
-
-   # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-   # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-
-In the above commands, ``$DB_ADM_PWD`` is the the password of the
-``carbonio_adm`` database role, that is, the one created during
-:ref:`Step 6 <config-db>` of the Single-Server installation or the
-installation of :ref:`srv1-install` in the Multi-Server installation
-
-Finally, since new version of |product| packages may include new
-services, it is strongly suggested to execute the command
-
-.. code:: console
-
-   # pending-setups
-
-This will register the services to |mesh|, so they can immediately be
-used.
-
-.. _upgrade-troubleshooting:
-
-Upgrade Troubleshooting
------------------------
-
-This section lists some troubleshooting options related to the upgrade
-process.
-
-Upgrade of Docs-Editor
-~~~~~~~~~~~~~~~~~~~~~~
-
-When installing recent version of the **Docs-Editor**, running the
-:command:`pending-setups` might abruptly exit with an error message
-similar to::
-
-  Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
-  400 (Bad request: Request decoding failed: 1 error occurred:
-  
-	* invalid config key "Websocket"
-
-To avoid this error, make sure that the installed package
-``service-discover-base`` is *at least* version **1.10.12**. You can
-verify this with the following commands.
-
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt search service-discover-base
-         # dpkg -l service-discover-base
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf info service-discover-base
-         # rpm -q service-discover-base
-
-If the version is older than **1.10.12**, please upgrade the package.
-
-After you verified that the version is the correct one, please run
-this command **before** :command:`pending-setups`.
-
-.. code:: console
-
-   # systemctl restart service-discover.service
-
-
-Token-related error messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Whenever, during the upgrade process, you find any error in the log
-files, execute the following two commands.
-
-The first one must be executed as the ``root`` user.
-
-.. code:: console
-
-   # chmod a+r /etc/zextras/carbonio-mailbox/token
-
-The second one must be executed as the ``zextras`` user.
-
-.. code:: console
-
-   $ zmmailboxdctl restart
-
+If you have a Multi-Server installation, you must execute the upgrade
+on each node, following the same order used during the
+installation. In other words, if you installed your Multi-Server
+according to the scenario described in
+:ref:`multiserver-installation`, you should start the upgrade from
+**SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
+**SRV6**.

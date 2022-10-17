@@ -49,8 +49,6 @@ exclude_patterns = [ '00-includes', 'cli/*/', 'changelogs/3.1.*', 'glossary.rst'
 
 rst_prolog = """
 
-.. role:: red
-.. role:: green
 .. |product| replace:: Suite
 
 """ + open("replace.txt").read()

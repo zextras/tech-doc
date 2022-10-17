@@ -4,11 +4,26 @@
 
 The password created in the previous step for the ``carbonio_adm``
 role in database is required in this step, in which we configure the
-database of |file|. First, we bootstrap the database.
+databases of |product| using a few commands. First, we bootstrap the
+databases.
 
-.. code:: console
+* mailbox
+  
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+* |file|
+
+  .. code:: console
 
      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+* |docs|
+  
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
 Then restart the main mailbox process as the ``zextras`` user.
 

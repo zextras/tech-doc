@@ -94,11 +94,10 @@ The next steps concern the configuration and setup of the various
 
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
-   Finally, two commands are needed to fix access permission to |mesh| tokens.
+   One final command is needed to fix access permission to |mesh| tokens.
 
    .. code:: console
 
-      # usermod -a -G carbonio-mailbox zextras
       # chmod a+r /etc/zextras/carbonio-mailbox/token
 
 .. _config-db:
@@ -106,7 +105,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 6: Configure |product| Databases
+   Step 6: Create Main DB Role and Database for |product|
    ^^^^
 
    .. include:: /_includes/_installation/step-conf-db.rst
@@ -114,7 +113,7 @@ The next steps concern the configuration and setup of the various
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
-   Step 7: Bootstrap Database of |file|
+   Step 7: Bootstrap |file| Databases
    ^^^^^
 
    .. include:: /_includes/_installation/step-conf-files-ce.rst
@@ -241,3 +240,10 @@ SRV6: AppServer, Preview and Logger
 =================
 
 .. include:: /_includes/_installation/update.rst
+
+Manual steps
+------------
+
+.. include:: /_includes/_installation/update-ce.rst
+
+.. include:: /_includes/_installation/update-ts-ce.rst
