@@ -4,7 +4,7 @@
 
 The password created in the previous step for the ``carbonio_adm``
 role in database is required in this step, in which we configure the
-database of |file|.First, we bootstrap the database.
+database of |file|. First, we bootstrap the database.
 
 .. code:: console
 
