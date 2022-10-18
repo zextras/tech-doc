@@ -32,9 +32,7 @@ front-end packages for |file| and |adminui|) will be installed here.
 #. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
    required
 
-   .. code:: console
-
-      # carbonio-bootstrap
+   .. include:: /_includes/_installation/bootstrap.rst
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server
@@ -51,7 +49,7 @@ front-end packages for |file| and |adminui|) will be installed here.
    
     .. code:: console
 
-       # service-discover setup-wizard
+       # service-discover setup-wizard --first-instance
 
 #. Complete |mesh| setup
 

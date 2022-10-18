@@ -19,9 +19,20 @@ databases required by |product|.
    .. tab-item:: RHEL
       :sync: rhel
 
+      We need to make sure that **Postresql 12** is installed, by running
+      commands
+
       .. code:: console
 
-         # dnf install postgresql-12
+         # dnf -qy module disable postgresql
+         # dnf -y install postgresql12 postgresql12-server
+         
+      Then, initialise and enable it.
+
+      .. code:: console
+
+         # /usr/pgsql-12/bin/postgresql-12-setup initdb
+         # systemctl enable --now postgresql-12
 
 .. include:: /_includes/_installation/step-conf-db.rst
 

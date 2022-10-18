@@ -40,9 +40,7 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 #. Bootstrap |carbonio|, using the data from previous tasks when
    required
    
-   .. code:: console
-
-      # carbonio-bootstrap
+   .. include:: /_includes/_installation/bootstrap.rst
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server.
@@ -59,7 +57,7 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 
    .. code:: console
 
-      # service-discover setup-wizard
+      # service-discover setup-wizard --first-instance
 
 #. Complete |mesh| setup
 
