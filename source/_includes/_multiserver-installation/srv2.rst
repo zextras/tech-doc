@@ -54,11 +54,9 @@ PostgreSQL node using `Pgpool-II
       # systemctl restart pgpool2.service
 
 
-4. Bootstrap Carbonio
+4. Bootstrap |carbonio|
 
-   .. code:: console
-
-      # carbonio-bootstrap
+   .. include:: /_includes/_installation/bootstrap.rst
 
 5. Setup |mesh|
    

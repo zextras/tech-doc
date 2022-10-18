@@ -5,27 +5,7 @@
 Once all packages have been installed, use the following command to
 configure and launch |product|.
 
-
- .. tab-set::
-    
-    .. tab-item:: Ubuntu
-       :sync: ubuntu
-
-       .. code:: console
-
-          # carbonio-bootstrap
-    
-
-    .. tab-item:: RHEL
-       :sync: rhel
-
-       On RHEL 8 we need to make sure log files have correct
-       permissions, then bootstrap |product|.
-       
-       .. code:: console
-
-          # chown -R zextras:zextras /opt/zextras/log
-          # carbonio-bootstrap
+.. include:: /_includes/_installation/bootstrap.rst
 
 Before finalising the bootstrap, press :bdg-dark-line:`y` to apply the
 configuration. The process will continue until its completion:
