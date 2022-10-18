@@ -68,6 +68,5 @@ Next, we install all packages needed for |product|.
          carbonio-files carbonio-files-db \
          carbonio-preview carbonio-docs-editor\
          carbonio-docs-connector carbonio-docs-connector-db \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         postgresql-12
+         carbonio-admin-ui carbonio-admin-console-ui
 
