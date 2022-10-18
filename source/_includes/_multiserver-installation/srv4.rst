@@ -37,9 +37,7 @@ These tasks need to be carried out for the Proxy.
 #. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
    required
 
-   .. code:: console
-
-      # carbonio-bootstrap
+   .. include:: /_includes/_installation/bootstrap.rst
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server
