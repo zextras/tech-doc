@@ -4,7 +4,7 @@
 
 
 Before starting with the actual installation, carry out the following
-two tasks *on* **each** *of the six nodes*.
+tasks *on* **each** *of the six nodes*.
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5

@@ -254,6 +254,40 @@ Preliminary Tasks
 
 .. include:: /_includes/_multiserver-installation/preliminary-ce.rst
 
+.. _multi-rh-preliminary:
+
+RHEL 8-only Preliminary Tasks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A few task are required for the installation of |product| on RHEL 8
+systems, they concern the configuration of SELinux and the firewall.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   SELinux and Firewall
+   ^^^^
+
+   SELinux
+      Must be set to **disabled** or **permissive** in file
+      :file:`/etc/selinux/config`. You can check the current profile
+      using the command
+
+      .. code:: console
+
+         # sestatus
+
+   Firewall  
+      All the ports needed by |product| are open on the firewall or
+      the firewall is **disabled**. To disable the firewall, issue the
+      commands
+
+      .. code:: console
+
+         # systemctl stop firewalld.service
+         # systemctl disable firewalld.service
+
+
 Node Installation
 -----------------
 
