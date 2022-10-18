@@ -38,13 +38,13 @@ Next, we install all packages needed for |product|.
          carbonio-webui carbonio-files-ui \
          carbonio-chats-ui \
          carbonio-admin-login-ui \
-         carbonio-mta \ 
+         carbonio-mta \
          carbonio-mailbox-db \
          carbonio-appserver carbonio-logger \
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview carbonio-docs-editor\
+         carbonio-preview carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
          carbonio-admin-ui carbonio-admin-console-ui \
          postgresql-12
@@ -66,7 +66,7 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview carbonio-docs-editor\
+         carbonio-preview carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
          carbonio-admin-ui carbonio-admin-console-ui
 
