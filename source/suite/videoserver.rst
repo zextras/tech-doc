@@ -204,7 +204,7 @@ control the service are straightforward:
 
 -  Start the connection pool::
 
-     zxsuite team doStartService team-videoserver-pool.
+     zxsuite team doStartService team-videoserver-pool
 
 -  Shutdown the connection pool::
 
