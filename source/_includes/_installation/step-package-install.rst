@@ -43,5 +43,4 @@ The installation of |product| requires to run the command
          carbonio-storages-ce \
          carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         postgresql-12
+         carbonio-admin-ui carbonio-admin-console-ui
