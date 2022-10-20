@@ -135,7 +135,7 @@ control the service are straightforward:
 
 -  Start the connection pool::
 
-     # carbonio chats doStartService team-videoserver-pool.
+     # carbonio chats doStartService team-videoserver-pool
 
 -  Shutdown the connection pool::
 
