@@ -98,7 +98,8 @@ and has the following requirements:
       -  The mailbox server will establish a WebSocket on port 8188 (TCP) to
          communicate with the Video Server
 
-      -  Clients will use a random UDP port between 20000 and 40000
+      -  Clients will use a random UDP port between 20000 and 40000 on
+         the public IP of the |vs|
 
 .. warning::
 
