@@ -324,6 +324,11 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 * The other nodes can be installed in any order, you can skip
   instructions for any node or role that you do not plan to install
 
+* While the overall procedure is the same for both Ubuntu and RHEL 8,
+  the actual commands and file paths may differ on the two operating
+  system, so pay attention that you execute the correct command on the
+  correct file
+
 .. _srv1-install:
 
 SRV1: Postgres
