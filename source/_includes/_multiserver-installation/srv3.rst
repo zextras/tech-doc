@@ -25,10 +25,18 @@ sends and receives emails.
 
 These following tasks must be executed to configure the MTA.
 
-#. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
-   required
+#. Bootstrap |carbonio|
 
    .. include:: /_includes/_installation/bootstrap.rst
+
+   In the bootstrap menu, use ``SRV2_hostname``, ``LDAP_PWD``,
+   ``POSTFIX_PWD``, and ``AMAVIS_PWD`` in the following items to
+   complete successfully the bootstrap.
+
+   * ``Ldap master host``: ``SRV2_hostname``
+   * ``Ldap Admin password``: ``LDAP_PWD``
+   * ``Bind password for postfix ldap user``: ``POSTFIX_PWD``
+   * ``Bind password for amavis ldap user``: ``AMAVIS_PWD``
 
 #. Copy the credentials from the |mesh| server node (SRV2) to the
    local server

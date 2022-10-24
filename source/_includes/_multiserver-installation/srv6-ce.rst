@@ -32,14 +32,17 @@ First install all the necessary packages:
            carbonio-user-management carbonio-preview-ce \
            carbonio-logger
 
-Execute the following tasks: make sure you keep at hand the data
-configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
-``MESH_SECRET``, and ``MTA_IP``).
+Execute the following tasks.
 
-#. Bootstrap |carbonio|, using the data from previous tasks when
-   required
-   
+#. Bootstrap |carbonio|
+
    .. include:: /_includes/_installation/bootstrap.rst
+
+   In the bootstrap menu, use ``SRV2_hostname``, and ``LDAP_PWD`` in
+   the following items to complete successfully the bootstrap.
+
+   * ``Ldap master host``: ``SRV2_hostname``
+   * ``Ldap Admin password``: ``LDAP_PWD``
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server.

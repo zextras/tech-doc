@@ -102,6 +102,12 @@ PostgreSQL node using `Pgpool-II
 
    .. include:: /_includes/_installation/bootstrap.rst
 
+   The bootstrap command will execute a number of tasks and will set
+   up the node. At the end, you will be prompted with a menu and, if
+   you already configured all, you only need to click
+   :bdg-secondary:`y` for confirmation.
+
+
 #. Setup |mesh|
    
    .. include:: /_includes/_installation/step-conf-mesh.rst
@@ -134,12 +140,36 @@ PostgreSQL node using `Pgpool-II
       
    * ``SRV2_hostname``: this node's hostname
 
+   * ``MESH_SECRET``: the |mesh| password 
+
    * ``LDAP_PWD``: the **LDAP bind password** for the ``root`` user
-     and applications (by default, all the bind passwords are
-     configured the same), that can be retrieved with this command:
+     and applications, retrieved with command:
 
      .. code:: console
 
         # zmlocalconfig -s zimbra_ldap_password
 
-   * ``MESH_SECRET``: the |mesh| password 
+   * ``AMAVIS_PWD``: the password used by |carbonio| for the Amavis
+     service, retrieved with command
+     
+     .. code:: console
+
+        # zmlocalconfig -s ldap_amavis_password
+
+   * ``POSTFIX_PWD``: the password used by |carbonio| for the Postfix
+     service, retrieved with command
+     
+     .. code:: console
+
+        # zmlocalconfig -s ldap_postfix_password
+
+   * ``NGINX_PWD``: the password used by |carbonio| for the NGINX
+     service, retrieved with command
+     
+     .. code:: console
+
+        # zmlocalconfig -s ldap_nginx_password
+
+   .. note:: By default, all the ``LDAP_PWD``, ``AMAVIS_PWD``,
+      ``POSTFIX_PWD``, and ``NGINX_PWD`` bind passwords have the same
+      value.

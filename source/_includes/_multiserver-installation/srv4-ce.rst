@@ -29,10 +29,15 @@ front-end packages for |file| and |adminui|) will be installed here.
               carbonio-webui carbonio-files-ui \
               carbonio-admin-ui carbonio-admin-console-ui
 
-#. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
-   required
+#. Bootstrap |carbonio|
 
    .. include:: /_includes/_installation/bootstrap.rst
+
+   In the bootstrap menu, use ``SRV2_hostname``, AND ``LDAP_PWD`` in
+   the following items to complete successfully the bootstrap.
+
+   * ``Ldap master host``: ``SRV2_hostname``
+   * ``Ldap Admin password``: ``LDAP_PWD``
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server

@@ -14,7 +14,7 @@ PostgreSQL node using `Pgpool-II
    service-discover service provided by |mesh|. Please refer to
    section :ref:`mesh-multiple` for details.
 
-#. Install the following packages from main repository.
+1. Install the following packages.
 
    .. tab-set::
 
@@ -23,7 +23,7 @@ PostgreSQL node using `Pgpool-II
 
          .. code:: console
 
-            # apt install service-discover-server \
+            # apt install service-discover-server pgpool2 \
               carbonio-directory-server carbonio-files-db \
               carbonio-mailbox-db carbonio-docs-connector-db
 
@@ -32,81 +32,42 @@ PostgreSQL node using `Pgpool-II
 
          .. code:: console
 
-            # dnf install service-discover-server \
+            # dnf install service-discover-server pgpool2 \
               carbonio-directory-server carbonio-files-db \
               carbonio-mailbox-db carbonio-docs-connector-db
 
-#. Install pgpool
-
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt install pgpool2
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf install https://www.pgpool.net/yum/rpms/4.3/redhat/rhel-8-x86_64/pgpool-II-release-4.3-1.noarch.rpm
-            
-#. Configure Pgpool-II to work with the node on which PostgreSQL runs
+2. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace ``SRV1_IP`` with the
    value saved in the previous task.
 
-   .. tab-set::
+   .. code:: console
 
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
+      # echo "backend_clustering_mode = 'raw'
+        port = 5432
+        backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
+        backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
+   
+3. restart the service using this command.
 
-         .. code:: console
+   .. code:: console
 
-            # echo "backend_clustering_mode = 'raw'
-            port = 5432
-            backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-            backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
+      # systemctl restart pgpool2.service
 
-      .. tab-item:: RHEL
-         :sync: rhel
 
-         .. code:: console
-
-            # echo "backend_clustering_mode = 'raw'
-            port = 5432
-            backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-            backend_port0 = 5432" > /etc/pgpool-II/pgpool.conf
-
-#. restart the service using this command.
-
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # systemctl restart pgpool2.service
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # systemctl restart pgpool.service
-
-#. Bootstrap |carbonio|
+4. Bootstrap |carbonio|
 
    .. include:: /_includes/_installation/bootstrap.rst
 
-#. Setup |mesh|
+   The bootstrap command will execute a number of tasks and will set
+   up the node. At the end, you will be prompted with a menu and, if
+   you already configured all, you only need to click
+   :bdg-secondary:`y` for confirmation.
+             
+5. Setup |mesh|
    
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
-#. Bootstrap |file| Database, using the Postgres user created on
+6. Bootstrap |file| Database, using the Postgres user created on
    SRV1 and the password defined in previous step.
 
    .. code:: console
