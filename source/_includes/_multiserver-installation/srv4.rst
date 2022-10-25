@@ -87,9 +87,10 @@ To set up the |vs|, these are the necessary tasks.
 
             # dnf install carbonio-videoserver carbonio-videoserver-recorder
 
-   .. note:: One of the output received during the installation is a
-      command that will be run on SRV5. Copy it, because it will be
-      needed on SRV5.
+   After the installation, make sure that the |vs| `public` IP address
+   (i.e., the one that will accept incoming connections to the |vs|)
+   is present in the configuration file :file:`/etc/janus/janus.jcfg`
+   and add it if missing.
 
 #. Enable and start the service with the commands
 
@@ -123,10 +124,7 @@ videos can not be stored.
    Values used in the next steps
    ^^^^
 
-   * ``VS_IP``: the IP address of this node
-
-   * the command suggested during the |vs| installation (to be used on
-     SRV5)
+   * ``VS_IP``: the local IP address of this node
 
    * ``SERVLET_PORT``: the value of the `servlet port` configuration
      option saved in file

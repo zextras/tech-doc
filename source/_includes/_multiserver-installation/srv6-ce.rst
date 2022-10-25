@@ -59,7 +59,7 @@ Execute the following tasks.
 
    .. code:: console
 
-      # service-discover setup-wizard --first-instance
+      # service-discover setup-wizard
 
 #. Complete |mesh| setup
 

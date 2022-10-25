@@ -53,7 +53,7 @@ These following tasks must be executed to configure the MTA.
 
    .. code:: console
 
-      # service-discover setup-wizard --first-instance
+      # service-discover setup-wizard
 
 #. Complete |mesh| setup
 

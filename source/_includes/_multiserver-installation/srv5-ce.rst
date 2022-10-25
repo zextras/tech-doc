@@ -3,7 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. srv5 - Advanced, AppServer, Files, and Docs
-   
+
 On this node, first install all the required packages for |file|, then
 configure the various services needed.
 
@@ -18,16 +18,18 @@ configure the various services needed.
            carbonio-storages-ce carbonio-user-management \
            carbonio-files-ce carbonio-docs-connector-ce \
            carbonio-docs-editor
-           
+
    .. tab-item:: RHEL
       :sync: rhel
 
+      Make sure to respect the order of installation.
+
       .. code:: console
 
-         # dnf install  service-discover-agent carbonio-appserver \
-           carbonio-storages-ce carbonio-user-management
-           carbonio-files-ce carbonio-docs-connector-ce \
-           carbonio-docs-editor
+         # yum install service-discover-agent carbonio-appserver
+         # yum install carbonio-files
+         # yum install carbonio-user-management carbonio-advanced carbonio-zal
+         # yum install carbonio-docs-connector carbonio-docs-editor
 
 Execute the following tasks.
 
@@ -58,7 +60,7 @@ Execute the following tasks.
 
    .. code:: console
 
-      # service-discover setup-wizard --first-instance
+      # service-discover setup-wizard
 
 #. Complete |mesh| setup
 

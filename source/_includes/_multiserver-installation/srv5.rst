@@ -3,7 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. srv5 - Advanced, AppServer, Files, and Docs
-   
+
 On this node, first install all the required packages for |file|, then
 configure the various services needed.
 
@@ -15,19 +15,21 @@ configure the various services needed.
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-files carbonio-advanced \
-           carbonio-zal carbonio-docs-connector \
+           carbonio-storages-ce carbonio-user-management \
+           carbonio-files-ce carbonio-docs-connector-ce \
            carbonio-docs-editor
- 
+
    .. tab-item:: RHEL
       :sync: rhel
 
+      Make sure to respect the order of installation.
+
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-files carbonio-advanced \
-           carbonio-zal carbonio-docs-connector \
-           carbonio-docs-editor
+         # yum install service-discover-agent carbonio-appserver
+         # yum install carbonio-files
+         # yum install carbonio-user-management carbonio-advanced carbonio-zal
+         # yum install carbonio-docs-connector carbonio-docs-editor
 
 Execute the following tasks.
 
@@ -58,7 +60,7 @@ Execute the following tasks.
 
    .. code:: console
 
-      # service-discover setup-wizard --first-instance
+      # service-discover setup-wizard
 
 #. Complete |mesh| setup
 
@@ -74,18 +76,18 @@ Execute the following tasks.
       :linenos:
 
       # Nginx Lookup servers
-      nginxlookup.server.protocol=https 
-      nginxlookup.server.urls=127.0.0.1 
-      memcached.server.urls=127.0.0.1   
+      nginxlookup.server.protocol=https
+      nginxlookup.server.urls=127.0.0.1
+      memcached.server.urls=127.0.0.1
 
    Make sure that:
-   
+
    * in line 2 protocol is **https**
    * in line 3 there is at least the current node's (SRV5) IP
    * in line 4 the SRV4_IP is written, to allow this node's access to Memcached
 
 #. Fix carbonio-mailbox token access
-   
+
    .. code:: console
 
       # chmod a+r /etc/zextras/carbonio-mailbox/token
@@ -96,10 +98,10 @@ Execute the following tasks.
 
       # su - zextras -c "zmmailboxdctl restart"
 
- 
+
 #. Run as the ``zextras user`` the command proposed during the |vs|
    installation, using ``SERVLET_PORT`` and ``VS_IP`` configured on
-   SRV4. 
+   SRV4.
 
    .. code:: console
 

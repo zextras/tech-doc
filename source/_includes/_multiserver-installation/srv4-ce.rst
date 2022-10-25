@@ -54,7 +54,7 @@ front-end packages for |file| and |adminui|) will be installed here.
    
     .. code:: console
 
-       # service-discover setup-wizard --first-instance
+       # service-discover setup-wizard
 
 #. Complete |mesh| setup
 
