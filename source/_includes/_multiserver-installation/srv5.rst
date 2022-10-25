@@ -96,22 +96,13 @@ Execute the following tasks.
       # su - zextras -c "zmmailboxdctl restart"
 
 
-#. Run as the ``zextras user`` the command proposed during the |vs|
-   installation, using |servletport| and |vsip| configured on
-   SRV4.
+#. Run as the ``zextras user`` the following command, using |vsip|,
+   |servletport| and |vspwd| configured on SRV4
 
    .. code:: console
 
       zextras$ carbonio chats video-server add VS_IP port 8188 \
         servlet_port SERVLET_PORT secret VS_PWD
-
-   .. hint:: ``VS_PWD`` was given as part of the command, but can be
-      retrieved using this command.
-
-      .. code:: console
-
-         # grep -i -e nat_1_1 -e api_secret /etc/janus/janus.jcfg
-
 
 #. Enable Chats and VideoServerRecording, issuing the commands as the ``zextras user``
 

@@ -71,16 +71,3 @@ front-end packages for |file| and |adminui|) will be installed here.
       make sure that the Memcached port (**11211**) is accessible only
       from internal, trusted networks.
 
-.. card::
-
-   Values used in the next steps
-   ^^^^
-    
-   * |vsip| the IP address of this node
-
-   * |servletport| the value of the `servlet port` configuration
-     option saved in file
-     :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed
-     when running the previous command
-
-  

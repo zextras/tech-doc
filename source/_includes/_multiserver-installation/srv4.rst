@@ -122,9 +122,14 @@ videos can not be stored.
    Values used in the next steps
    ^^^^
 
-   * |vsip|: the local IP address of this node
+   * |vsip| the local IP address of this node
 
-   * |servletport|: the value of the `servlet port` configuration
+   * |vspwd| the password of the |vs|, that can be retrieved by
+     running as the ``root`` user the command :command:`grep -i -e
+     nat_1_1 -e api_secret /etc/janus/janus.jcfg`
+
+
+   * |servletport| the value of the `servlet port` configuration
      option saved in file
-     :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed when
-     running the previous command
+     :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed
+     when running the previous command
