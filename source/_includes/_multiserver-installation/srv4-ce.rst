@@ -33,11 +33,11 @@ front-end packages for |file| and |adminui|) will be installed here.
 
    .. include:: /_includes/_installation/bootstrap.rst
 
-   In the bootstrap menu, use ``SRV2_hostname``, AND ``LDAP_PWD`` in
+   In the bootstrap menu, use |srv2h|, AND |ldappwd| in
    the following items to complete successfully the bootstrap.
 
-   * ``Ldap master host``: ``SRV2_hostname``
-   * ``Ldap Admin password``: ``LDAP_PWD``
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server
@@ -47,7 +47,7 @@ front-end packages for |file| and |adminui|) will be installed here.
       # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-#.  Run |mesh| setup using ``MESH_SECRET``
+#.  Run |mesh| setup using |meshsec|
    
     .. code:: console
 
@@ -76,14 +76,11 @@ front-end packages for |file| and |adminui|) will be installed here.
    Values used in the next steps
    ^^^^
     
-   * ``VS_IP``: the IP address of this node
+   * |vsip| the IP address of this node
 
-   * the command suggested during the |vs| installation (to be used on
-     SRV5)
-
-   * ``SERVLET_PORT``: the value of the `servlet port` configuration
+   * |servletport| the value of the `servlet port` configuration
      option saved in file
-     :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed when
-     running the previous command
+     :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed
+     when running the previous command
 
   

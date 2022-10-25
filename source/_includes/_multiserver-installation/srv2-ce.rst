@@ -37,7 +37,7 @@ PostgreSQL node using `Pgpool-II
               carbonio-mailbox-db carbonio-docs-connector-db
 
 #. Configure Pgpool-II to work with the node on which PostgreSQL runs
-   (SRV1), using the following command. Replace ``SRV1_IP`` with the
+   (SRV1), using the following command. Replace |srv1ip| with the
    value saved in the previous task.
 
    .. code:: console
@@ -78,40 +78,39 @@ PostgreSQL node using `Pgpool-II
    Values used in the next steps
    ^^^^
 
-   * ``SRV2_hostname``: this node's hostname, which can be retrieved
-      using the command :command:`su - zextras -c "carbonio prov gas
-      service-discover"`
+   * |srv2h| this node's hostname, which can be retrieved using the
+     command :command:`su - zextras -c "carbonio prov gas
+     service-discover"`
 
-   * ``MESH_SECRET``: the |mesh| password
+   * |meshsec| the |mesh| password
 
-   * ``LDAP_PWD``: the **LDAP bind password** for the ``root`` user
-     and applications, retrieved with command:
+   * |ldappwd| the **LDAP bind password** for the ``root`` user and
+     applications, retrieved with command:
 
      .. code:: console
 
         # zmlocalconfig -s zimbra_ldap_password
 
-   * ``AMAVIS_PWD``: the password used by |carbonio| for the Amavis
+   * |amavispwd| the password used by |carbonio| for the Amavis
      service, retrieved with command
 
      .. code:: console
 
         # zmlocalconfig -s ldap_amavis_password
 
-   * ``POSTFIX_PWD``: the password used by |carbonio| for the Postfix
+   * |postfixpwd| the password used by |carbonio| for the Postfix
      service, retrieved with command
 
      .. code:: console
 
         # zmlocalconfig -s ldap_postfix_password
 
-   * ``NGINX_PWD``: the password used by |carbonio| for the NGINX
+   * |nginxpwd| the password used by |carbonio| for the NGINX
      service, retrieved with command
 
      .. code:: console
 
         # zmlocalconfig -s ldap_nginx_password
 
-   .. note:: By default, all the ``LDAP_PWD``, ``AMAVIS_PWD``,
-      ``POSTFIX_PWD``, and ``NGINX_PWD`` bind passwords have the same
-      value.
+   .. note:: By default, all the |ldappwd|, |amavispwd|, |postfixpwd|,
+      and |nginxpwd| bind passwords have the same value.

@@ -39,11 +39,11 @@ Execute the following tasks.
 
    .. include:: /_includes/_installation/bootstrap.rst
 
-   In the bootstrap menu, use ``SRV2_hostname``, and ``LDAP_PWD`` in
+   In the bootstrap menu, use |srv2h|, and |ldappwd| in
    the following  items to complete successfully the bootstrap.
 
-   * ``Ldap master host``: ``SRV2_hostname``
-   * ``Ldap Admin password``: ``LDAP_PWD``
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server.
@@ -53,7 +53,7 @@ Execute the following tasks.
       # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-#. Run |mesh| setup using ``MESH_SECRET``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 

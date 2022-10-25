@@ -37,13 +37,13 @@ Execute the following tasks.
 
    .. include:: /_includes/_installation/bootstrap.rst
 
-   In the bootstrap menu, use ``SRV2_hostname``, ``LDAP_PWD``, and
-   ``NGINX_PWD`` in the following items to complete successfully the
+   In the bootstrap menu, use |srv2h|, |ldappwd|, and
+   |nginxpwd| in the following items to complete successfully the
    bootstrap.
 
-   * ``Ldap master host``: ``SRV2_hostname``
-   * ``Ldap Admin password``: ``LDAP_PWD``
-   * ``Bind password for nginx ldap user``: ``NGINX_PWD``
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
+   * ``Bind password for nginx ldap user``: |nginxpwd|
 
 #. Copy the credentials from the |mesh| server node (SRV2) to the
    local server
@@ -53,7 +53,7 @@ Execute the following tasks.
       # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-#. Run |mesh| setup using ``MESH_SECRET``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 
@@ -97,7 +97,7 @@ Execute the following tasks.
 
 
 #. Run as the ``zextras user`` the command proposed during the |vs|
-   installation, using ``SERVLET_PORT`` and ``VS_IP`` configured on
+   installation, using |servletport| and |vsip| configured on
    SRV4.
 
    .. code:: console

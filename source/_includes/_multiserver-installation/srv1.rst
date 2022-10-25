@@ -76,7 +76,6 @@ stored on this node by running these four commands.
    Values used in the next steps
    ^^^^
 
-   * ``DB_ADM_PWD``: the password of the ``carbonio_adm`` database
-     role
+   * |dbadmpwd| the password of the ``carbonio_adm`` database role
 
-   * ``SRV1_IP`` the IP address of the node
+   * |srv1ip| the IP address of the node

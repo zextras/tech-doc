@@ -29,14 +29,14 @@ These following tasks must be executed to configure the MTA.
 
    .. include:: /_includes/_installation/bootstrap.rst
 
-   In the bootstrap menu, use ``SRV2_hostname``, ``LDAP_PWD``,
-   ``POSTFIX_PWD``, and ``AMAVIS_PWD`` in the following items to
+   In the bootstrap menu, use |srv2h|, |ldappwd|,
+   |postfixpwd|, and |amavispwd| in the following items to
    complete successfully the bootstrap.
 
-   * ``Ldap master host``: ``SRV2_hostname``
-   * ``Ldap Admin password``: ``LDAP_PWD``
-   * ``Bind password for postfix ldap user``: ``POSTFIX_PWD``
-   * ``Bind password for amavis ldap user``: ``AMAVIS_PWD``
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
+   * ``Bind password for postfix ldap user``: |postfixpwd|
+   * ``Bind password for amavis ldap user``: |amavispwd|
 
 #. Copy the credentials from the |mesh| server node (SRV2) to the
    local server
@@ -46,7 +46,7 @@ These following tasks must be executed to configure the MTA.
       # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-#. Run |mesh| setup using ``MESH_SECRET``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 
@@ -63,4 +63,4 @@ These following tasks must be executed to configure the MTA.
    Values used in the next steps
    ^^^^
 
-   * ``MTA_IP``: the IP address of this node
+   * |mtaip| the IP address of this node
