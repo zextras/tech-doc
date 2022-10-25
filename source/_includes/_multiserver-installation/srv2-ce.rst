@@ -14,7 +14,7 @@ PostgreSQL node using `Pgpool-II
    service-discover service provided by |mesh|. Please refer to
    section :ref:`mesh-multiple` for details.
 
-1. Install the following packages.
+#. Install the following packages.
 
    .. tab-set::
 
@@ -36,7 +36,7 @@ PostgreSQL node using `Pgpool-II
               carbonio-directory-server carbonio-files-db \
               carbonio-mailbox-db carbonio-docs-connector-db
 
-2. Configure Pgpool-II to work with the node on which PostgreSQL runs
+#. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace ``SRV1_IP`` with the
    value saved in the previous task.
 
@@ -46,15 +46,14 @@ PostgreSQL node using `Pgpool-II
         port = 5432
         backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
         backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
-   
-3. restart the service using this command.
+
+#. restart the service using this command.
 
    .. code:: console
 
       # systemctl restart pgpool2.service
 
-
-4. Bootstrap |carbonio|
+#. Bootstrap |carbonio|
 
    .. include:: /_includes/_installation/bootstrap.rst
 
@@ -62,12 +61,12 @@ PostgreSQL node using `Pgpool-II
    up the node. At the end, you will be prompted with a menu and, if
    you already configured all, you only need to click
    :bdg-secondary:`y` for confirmation.
-             
-5. Setup |mesh|
-   
+
+#. Setup |mesh|
+
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
-6. Bootstrap |file| Database, using the Postgres user created on
+#. Bootstrap |file| Database, using the Postgres user created on
    SRV1 and the password defined in previous step.
 
    .. code:: console
@@ -78,15 +77,41 @@ PostgreSQL node using `Pgpool-II
 
    Values used in the next steps
    ^^^^
-      
-   * ``SRV2_hostname``: this node's hostname
+
+   * ``SRV2_hostname``: this node's hostname, which can be retrieved
+      using the command :command:`su - zextras -c "carbonio prov gas
+      service-discover"`
+
+   * ``MESH_SECRET``: the |mesh| password
 
    * ``LDAP_PWD``: the **LDAP bind password** for the ``root`` user
-     and applications (by default, all the bind passwords are
-     configured the same), that can be retrieved with this command:
+     and applications, retrieved with command:
 
      .. code:: console
 
         # zmlocalconfig -s zimbra_ldap_password
 
-   * ``MESH_SECRET``: the |mesh| password 
+   * ``AMAVIS_PWD``: the password used by |carbonio| for the Amavis
+     service, retrieved with command
+
+     .. code:: console
+
+        # zmlocalconfig -s ldap_amavis_password
+
+   * ``POSTFIX_PWD``: the password used by |carbonio| for the Postfix
+     service, retrieved with command
+
+     .. code:: console
+
+        # zmlocalconfig -s ldap_postfix_password
+
+   * ``NGINX_PWD``: the password used by |carbonio| for the NGINX
+     service, retrieved with command
+
+     .. code:: console
+
+        # zmlocalconfig -s ldap_nginx_password
+
+   .. note:: By default, all the ``LDAP_PWD``, ``AMAVIS_PWD``,
+      ``POSTFIX_PWD``, and ``NGINX_PWD`` bind passwords have the same
+      value.

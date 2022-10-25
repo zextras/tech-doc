@@ -138,7 +138,9 @@ PostgreSQL node using `Pgpool-II
    Values used in the next steps
    ^^^^
       
-   * ``SRV2_hostname``: this node's hostname
+   * ``SRV2_hostname``: this node's hostname, which can be retrieved
+      using the command :command:`su - zextras -c "carbonio prov gas
+      service-discover"`
 
    * ``MESH_SECRET``: the |mesh| password 
 

@@ -1,3 +1,4 @@
+
 .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
@@ -49,11 +50,8 @@ These tasks need to be carried out for the Proxy.
 
    .. code:: console
 
-      # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-   .. hint:: the SRV2_IP can be retrieved using command :command:`su -
-      zextras -c "carbonio prov gas service-discover"`
 
 #. Run |mesh| setup using ``MESH_SECRET``
    
