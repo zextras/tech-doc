@@ -14,14 +14,14 @@ We start by updating and upgrading the system.
 
       .. code:: console
 
-         # apt update && apt upgrade
+         # apt-cache clean &&apt update && apt upgrade
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf upgrade
+         # dnf clean all && dnf upgrade
 
 Next, we install all packages needed for |product|.
 
