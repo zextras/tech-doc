@@ -33,7 +33,7 @@ First install all the necessary packages:
       .. code:: console
 
          # dnf install service-discover-agent carbonio-appserver
-         # dnf install carbonio-user-management 
+         # dnf install carbonio-user-management carbonio-advanced carbonio-zal
          # dnf install carbonio-logger
 
 Execute the following tasks.
