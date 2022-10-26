@@ -13,16 +13,39 @@ third-party software, which lead to some additional manual steps to be
 carried out. Section :ref:`upgrade-troubleshooting` below contains
 information to prevent or fix these issues.
 
-The steps required are basically two, although in some rare cases some
+The steps required are basically three, although in some rare cases some
 additional care is required, see after the instructions below.
 
 .. grid:: 1 1 1 2
    :gutter: 3
 
    .. grid-item-card:: 
-      :columns: 12 12 12 6
+      :columns: 12 4 4 4
 
-      Step 1. Update package list
+      Step 1. Clean cached package list and information
+      ^^^^^
+      
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt cache clean
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf clean all
+
+
+   .. grid-item-card:: 
+      :columns: 12 4 4 4
+
+      Step 2. Download new package list
       ^^^^^
       
       .. tab-set::
@@ -42,9 +65,9 @@ additional care is required, see after the instructions below.
                # dnf update
 
    .. grid-item-card:: 
-      :columns: 12 12 12 6
+      :columns: 12 4 4 4
 
-      Step 2 Install new packages
+      Step 3. Install new packages
       ^^^^^
       
       .. tab-set::

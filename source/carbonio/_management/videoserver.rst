@@ -98,10 +98,12 @@ following requirements:
       Ports
       ^^^^
 
-      -  The mailbox server will establish a WebSocket on port 8188 (TCP) to
-         communicate with the |vs|
+      - The mailbox server will establish a WebSocket on port 8188
+        (TCP) to communicate with the |vs|
 
-      -  Clients will use a random UDP port between 20000 and 40000
+      - Connecting browsers will use a random UDP port between 20000
+        and 40000 on the public IP of the |vs|
+
 
 .. warning:: The |vs| installer requires the fully qualified hostname
    to be correctly configured in :file:`/etc/hosts` and
@@ -133,7 +135,7 @@ control the service are straightforward:
 
 -  Start the connection pool::
 
-     # carbonio chats doStartService team-videoserver-pool.
+     # carbonio chats doStartService team-videoserver-pool
 
 -  Shutdown the connection pool::
 

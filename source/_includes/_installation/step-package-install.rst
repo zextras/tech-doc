@@ -2,8 +2,31 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The installation of |product| requires to run the command
+After configuring the repositories, the installation of |product|
+requires to run a few commands.
 
+We start by updating and upgrading the system.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt update && apt upgrade
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf upgrade
+
+Next, we install all packages needed for |product|.
+
+.. note:: |carbonio| Preview is not yet available on RHEL 8 systems.
+          
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -29,6 +52,7 @@ The installation of |product| requires to run the command
    .. tab-item:: RHEL
       :sync: rhel
 
+      
       .. code:: console
 
          # dnf install service-discover-server \
@@ -41,7 +65,7 @@ The installation of |product| requires to run the command
          carbonio-user-management \
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
-         carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         postgresql-12
+         carbonio-admin-ui carbonio-admin-console-ui
+
+      
