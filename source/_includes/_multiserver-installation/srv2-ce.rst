@@ -14,7 +14,7 @@ PostgreSQL node using `Pgpool-II
    service-discover service provided by |mesh|. Please refer to
    section :ref:`mesh-multiple` for details.
 
-1. Install the following packages.
+#. Install the following packages.
 
    .. tab-set::
 
@@ -36,8 +36,8 @@ PostgreSQL node using `Pgpool-II
               carbonio-directory-server carbonio-files-db \
               carbonio-mailbox-db carbonio-docs-connector-db
 
-2. Configure Pgpool-II to work with the node on which PostgreSQL runs
-   (SRV1), using the following command. Replace ``SRV1_IP`` with the
+#. Configure Pgpool-II to work with the node on which PostgreSQL runs
+   (SRV1), using the following command. Replace |srv1ip| with the
    value saved in the previous task.
 
    .. code:: console
@@ -46,42 +46,71 @@ PostgreSQL node using `Pgpool-II
         port = 5432
         backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
         backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
-   
-3. restart the service using this command.
+
+#. restart the service using this command.
 
    .. code:: console
 
       # systemctl restart pgpool2.service
 
-
-4. Bootstrap |carbonio|
+#. Bootstrap |carbonio|
 
    .. include:: /_includes/_installation/bootstrap.rst
-             
-5. Setup |mesh|
-   
+
+   The bootstrap command will execute a number of tasks and will set
+   up the node. At the end, you will be prompted with a menu and, if
+   you already configured all, you only need to click
+   :bdg-secondary:`y` for confirmation.
+
+#. Setup |mesh|
+
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
-6. Bootstrap |file| Database, using the Postgres user created on
+#. Bootstrap |file| Database, using the Postgres user created on
    SRV1 and the password defined in previous step.
 
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 .. card::
 
    Values used in the next steps
    ^^^^
-      
-   * ``SRV2_hostname``: this node's hostname
 
-   * ``LDAP_PWD``: the **LDAP bind password** for the ``root`` user
-     and applications (by default, all the bind passwords are
-     configured the same), that can be retrieved with this command:
+   * |srv2h| this node's hostname, which can be retrieved using the
+     command :command:`su - zextras -c "carbonio prov gas
+     service-discover"`
+
+   * |meshsec| the |mesh| password
+
+   * |ldappwd| the **LDAP bind password** for the ``root`` user and
+     applications, retrieved with command:
 
      .. code:: console
 
         # zmlocalconfig -s zimbra_ldap_password
 
-   * ``MESH_SECRET``: the |mesh| password 
+   * |amavispwd| the password used by |carbonio| for the Amavis
+     service, retrieved with command
+
+     .. code:: console
+
+        # zmlocalconfig -s ldap_amavis_password
+
+   * |postfixpwd| the password used by |carbonio| for the Postfix
+     service, retrieved with command
+
+     .. code:: console
+
+        # zmlocalconfig -s ldap_postfix_password
+
+   * |nginxpwd| the password used by |carbonio| for the NGINX
+     service, retrieved with command
+
+     .. code:: console
+
+        # zmlocalconfig -s ldap_nginx_password
+
+   .. note:: By default, all the |ldappwd|, |amavispwd|, |postfixpwd|,
+      and |nginxpwd| bind passwords have the same value.

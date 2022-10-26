@@ -25,6 +25,8 @@ We start by updating and upgrading the system.
 
 Next, we install all packages needed for |product|.
 
+.. note:: |carbonio| Preview is not yet available for RHEL 8 systems.
+          
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -66,7 +68,7 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview carbonio-docs-editor \
+         carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
          carbonio-admin-ui carbonio-admin-console-ui
 

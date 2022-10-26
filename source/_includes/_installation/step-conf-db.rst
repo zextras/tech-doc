@@ -35,7 +35,8 @@ associated password.
 Remember to replace the password with a **robust** password of your
 choice and store it in a safe place (preferably using a password
 manager), as you need it in the remainder of the procedure, and you
-also might need them in the future.
+also might need them in the future. This password will be denoted as
+|dbadmpwd|.
 
 The second step is to create the database.
 

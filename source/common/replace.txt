@@ -45,3 +45,19 @@
 .. role:: bgreen
 .. role:: red
 .. role:: green
+
+.. badges for installation variables
+
+
+.. |dbadmpwd| replace:: :bdg-secondary-line:`DB_ADM_PWD`
+.. |srv1ip| replace:: :bdg-secondary-line:`SRV1_IP`
+.. |srv2h| replace:: :bdg-secondary-line:`SRV2_hostname`
+.. |meshsec| replace:: :bdg-secondary-line:`MESH_SECRET`
+.. |mtaip| replace:: :bdg-secondary-line:`MTA_IP`
+.. |vsip| replace:: :bdg-secondary-line:`VS_IP`
+.. |vspwd| replace:: :bdg-secondary-line:`VS_PWD`
+.. |servletport| replace:: :bdg-secondary-line:`SERVLET_PORT`
+.. |ldappwd| replace:: :bdg-secondary-line:`LDAP_PWD`
+.. |nginxpwd| replace:: :bdg-secondary-line:`NGINX_PWD`
+.. |postfixpwd| replace:: :bdg-secondary-line:`POSTFIX_PWD`
+.. |amavispwd| replace:: :bdg-secondary-line:`AMAVIS_PWD`
