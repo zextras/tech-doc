@@ -102,15 +102,16 @@ Execute the following tasks.
       # su - zextras -c "zmmailboxdctl restart"
 
 
-#. Run as the ``zextras user`` the following command, using |vsip|,
-   |servletport| and |vspwd| configured on SRV4
+#. Run as the ``zextras user`` the following command to configure the
+   Video Recording, using |vsip|, |servletport| and |vspwd| configured
+   on SRV4
 
    .. code:: console
 
       zextras$ carbonio chats video-server add VS_IP port 8188 \
         servlet_port SERVLET_PORT secret VS_PWD
 
-#. Enable Chats and VideoServerRecording, issuing the commands as the ``zextras user``
+#. Enable Chats and Video Recording, issuing the commands as the ``zextras user``
 
    .. code:: console
 
