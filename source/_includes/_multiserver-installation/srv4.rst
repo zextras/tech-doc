@@ -67,6 +67,10 @@ These tasks need to be carried out for the Proxy.
 
       # pending-setups -a
 
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
+
 To set up the |vs|, these are the necessary tasks. 
 
 #. Install packages

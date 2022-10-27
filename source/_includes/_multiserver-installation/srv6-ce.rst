@@ -70,7 +70,10 @@ Execute the following tasks.
 
       # pending-setups -a
 
-   
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
+
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for section
    **#Nginx Lookup servers**. 
