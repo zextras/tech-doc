@@ -5,9 +5,8 @@
 .. srv6 - AppServer - Advanced - Preview - Logger
 
 
-On this node we show how to install the Preview (on Ubuntu systems
-only), the Logger, and the User Management.
-
+On this node we show how to install the Preview, the Logger, and the
+User Management.
 
 .. hint:: We suggest that *Preview* and the |docs|-related packages be
    installed on different physical nodes.
@@ -69,38 +68,31 @@ Execute the following tasks.
 
       # pending-setups -a
 
-.. card::
-
-   Ubuntu-only tasks
-   ^^^^
-
-   These tasks are not necessary on RHEL 8, because the Preview is not
-   yet available on those systems.
    
-   #. Let |pv| use Memcached. Edit file
-      :file:`/etc/carbonio/preview/config.ini` and search for
-      section **# Nginx Lookup servers**.
+#. Let |pv| use Memcached. Edit file
+   :file:`/etc/carbonio/preview/config.ini` and search for section
+   **#Nginx Lookup servers**. 
 
-      .. code-block:: ini
-         :linenos:
+   .. code-block:: ini
+      :linenos:
 
-         nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
-         memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
+      nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
+      memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
 
-      Make sure that:
+   Make sure that:
 
-      * in line 1 protocol is **https** and the IP address the current
-        node's (SRV6) IP
-      * in line 2 there is the Memcached node's (SRV5) IP
+   * in line 1 protocol is **https** and the IP address the current
+     node's (SRV6) IP
+   * in line 2 there is the Memcached node's (SRV5) IP
 
-   #. Restart the |pv| process
+#. Restart the |pv| process
 
-      .. code:: console
+   .. code:: console
 
-         # systemctl restart carbonio-preview
-         # systemctl restart carbonio-preview-sidecar
+      # systemctl restart carbonio-preview
+      # systemctl restart carbonio-preview-sidecar
 
-As last task, restart the mailbox process
+#. As last task, restart the mailbox process
 
    .. code:: console
 
