@@ -60,7 +60,7 @@ always an **integer**.
 
    Simply execute the command
 
-   .. code:: bash
+   .. code:: console
 
       # consul acl bootstrap.
 

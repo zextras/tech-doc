@@ -5,7 +5,9 @@
 Once all packages have been installed, use the following command to
 configure and launch |product|.
 
-.. include:: /_includes/_installation/bootstrap.rst
+.. code:: console
+
+   # carbonio-bootstrap
 
 Before finalising the bootstrap, press :bdg-dark-line:`y` to apply the
 configuration. The process will continue until its completion:

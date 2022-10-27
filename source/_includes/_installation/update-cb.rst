@@ -43,6 +43,10 @@ services, it is strongly suggested to execute the command
 This will register the services to |mesh|, so they can immediately be
 used.
 
+.. hint:: The **secret** needed to run the above command is stored in
+   file :file:`/var/lib/service-discover/password` which is accessible
+   only by the ``root`` user.
+
 Administration console packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

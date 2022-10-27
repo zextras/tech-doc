@@ -24,8 +24,6 @@ We start by updating and upgrading the system.
          # dnf upgrade
 
 Next, we install all packages needed for |product|.
-
-.. note:: |carbonio| Preview is not yet available on RHEL 8 systems.
           
 .. tab-set::
 
@@ -38,34 +36,38 @@ Next, we install all packages needed for |product|.
          carbonio-directory-server \
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
-         carbonio-admin-login-ui \
-         carbonio-mta  \
-         carbonio-appserver carbonio-logger  \
+         carbonio-mta \
+         carbonio-appserver carbonio-logger \
          carbonio-user-management \
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
          carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-admin-ui carbonio-admin-console-ui \
-         postgresql-12
+         carbonio-admin-login-ui postgresql-12
 
    .. tab-item:: RHEL
       :sync: rhel
 
-      
+      The installation on RHEL is divided in two steps. First, install
+      the |mesh| service
+
       .. code:: console
 
-         # dnf install service-discover-server \
-         carbonio-directory-server \
+         # dnf install service-discover-server
+
+      Then, proceed with all other packages
+
+      .. code:: console
+
+         # dnf install carbonio-directory-server \
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
-         carbonio-admin-login-ui \
          carbonio-mta  \
          carbonio-appserver carbonio-logger  \
          carbonio-user-management \
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-admin-ui carbonio-admin-console-ui
-
-      
+         carbonio-admin-ui carbonio-admin-console-ui \
+         carbonio-admin-login-ui 
