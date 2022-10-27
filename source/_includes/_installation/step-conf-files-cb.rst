@@ -7,7 +7,7 @@ The password |dbadmpwd| created in the previous step for the
 we configure the databases of |product| using a few commands. First,
 we bootstrap the databases.
 
-* mailbox
+* |carbonio| Advanced
   
   .. code:: console
 

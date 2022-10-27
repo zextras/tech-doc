@@ -117,7 +117,7 @@ PostgreSQL node using `Pgpool-II
 #. Bootstrap |carbonio| Databases, using the Postgres user created on
    SRV1 and the password defined in previous step.
    
-   * mailbox
+   * |carbonio| Advanced
 
      .. code:: console
 
