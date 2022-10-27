@@ -14,17 +14,19 @@ We start by updating and upgrading the system.
 
       .. code:: console
 
-         # apt update && apt upgrade
+         # apt-cache clean &&apt update && apt upgrade
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf upgrade
+         # dnf clean all && dnf upgrade
 
 Next, we install all packages needed for |product|.
 
+.. note:: |carbonio| Preview is not yet available for RHEL 8 systems.
+          
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -38,13 +40,13 @@ Next, we install all packages needed for |product|.
          carbonio-webui carbonio-files-ui \
          carbonio-chats-ui \
          carbonio-admin-login-ui \
-         carbonio-mta \ 
+         carbonio-mta \
          carbonio-mailbox-db \
          carbonio-appserver carbonio-logger \
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview carbonio-docs-editor\
+         carbonio-preview carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
          carbonio-admin-ui carbonio-admin-console-ui \
          postgresql-12
@@ -66,8 +68,7 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview carbonio-docs-editor\
+         carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         postgresql-12
+         carbonio-admin-ui carbonio-admin-console-ui
 

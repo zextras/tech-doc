@@ -27,35 +27,36 @@ First install all the necessary packages:
    .. tab-item:: RHEL
       :sync: rhel
 
+      On RHEL system, the Preview is currently not available. Make
+      sure to respect the order of installation
+      
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-preview \
-           carbonio-advanced carbonio-zal  carbonio-logger
+         # dnf install service-discover-agent carbonio-appserver
+         # dnf install carbonio-user-management carbonio-advanced carbonio-zal
+         # dnf install carbonio-logger
 
-Execute the following tasks: make sure you keep at hand the data
-configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
-``MESH_SECRET``, and ``MTA_IP``).
+Execute the following tasks.
 
-#. Bootstrap |carbonio|, using the data from previous tasks when
-   required
-   
-   .. code:: console
+#. Bootstrap |carbonio|
 
-      # carbonio-bootstrap
+   .. include:: /_includes/_installation/bootstrap.rst
+
+   In the bootstrap menu, use |srv2h|, and |ldappwd| in
+   the following  items to complete successfully the bootstrap.
+
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server.
 
    .. code:: console
 
-      # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-   .. hint:: the SRV2_IP can be retrieved using command :command:`su -
-      zextras -c "carbonio prov gas service-discover"`
-
-#. Run |mesh| setup using ``MESH_SECRET``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 
@@ -73,24 +74,41 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 
       # chmod a+r /etc/zextras/carbonio-mailbox/token
 
-#. Let |pv| use Memcached. Edit file
-   :file:`/etc/carbonio/preview/config.ini` and search for
-   section **# Nginx Lookup servers**.
+.. card::
 
-   .. code-block:: ini
-      :linenos:
+   Ubuntu-only tasks
+   ^^^^
 
-      nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
-      memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
+   These tasks are not necessary on RHEL 8, because the Preview is not
+   yet available on those systems.
+   
+   #. Let |pv| use Memcached. Edit file
+      :file:`/etc/carbonio/preview/config.ini` and search for
+      section **# Nginx Lookup servers**.
 
-   Make sure that:
+      .. code-block:: ini
+         :linenos:
 
-   * in line 1 protocol is **https** and the IP address the current
-     node's (SRV6) IP
-   * in line 2 there is the Memcached node's (SRV5) IP
+         nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
+         memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
 
-#. Restart the mailbox process
+      Make sure that:
+
+      * in line 1 protocol is **https** and the IP address the current
+        node's (SRV6) IP
+      * in line 2 there is the Memcached node's (SRV5) IP
+
+   #. Restart the |pv| process
+
+      .. code:: console
+
+         # systemctl restart carbonio-preview
+         # systemctl restart carbonio-preview-sidecar
+
+As last task, restart the mailbox process
 
    .. code:: console
 
       # su - zextras -c "zmmailboxdctl restart"
+
+To configure the Logger, please refer to Section :ref:`logger_node_config`.

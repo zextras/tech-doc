@@ -55,7 +55,6 @@ Software Requirements
 on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
 8** installation.
 
-
 The following requirements must be satisfied before attempting to
 install |product|
 
@@ -63,26 +62,47 @@ install |product|
    FQDN (``A`` record)
 #. Python 3, latest version available on the Operating System chosen
 #. Perl, latest version available on the Operating System chosen
-   
+
 See :ref:`the dedicated box below <config-dns>` for details and examples.
 
 Support for other distributions will be announced in due course
 when it becomes available.
 
-On **RHEL 8**, make sure you also have :
+Additional requirements
+~~~~~~~~~~~~~~~~~~~~~~~
 
-* an active subscription (you must be able to fetch from **BaseOS** and
-  the other main repositories)
+ .. tab-set::
+    .. tab-item:: Ubuntu
+       :sync: ubuntu
 
-..
-   * the **CodeReady** repository enabled::
+       No additional requirement is necessary.
 
-       # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+    .. tab-item:: RHEL
+       :sync: rhel
 
+       The following additional requirements are needed.
+       
+       * An active subscription (you must be able to fetch from
+         **BaseOS** and the other main repositories)::
+
+          # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+
+       * The **CodeReady** repository enabled::
+
+           # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+
+       * The dedicated postgresql repository::
+
+           # yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+       * Fedora's epel-repository::
+
+           # yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+           
 .. _config-dns:
 
 .. topic:: Configuring DNS resolution
-           
+
    To make sure that the DNS is correctly configured for both **A** and
    **MX** records: to do so, you can use any DNS resolution server,
    including `dnsmasq`, `systemd-resolved`, and `bind`.
@@ -218,7 +238,7 @@ On **RHEL 8**, make sure you also have :
        "23232", "internal Amavis services access"
        "23233", "SNMP-responder access"
        "11211", "memcached access"
- 
+
        .. [2] When the NGINX support for Administration Console and
           the ``mailboxd`` service run on the same host, this port can
           be used to avoid overlaps between the two services

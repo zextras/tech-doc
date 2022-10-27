@@ -1,3 +1,4 @@
+
 .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
@@ -34,25 +35,25 @@ These tasks need to be carried out for the Proxy.
               carbonio-webui carbonio-files-ui carbonio-chats-ui \
               carbonio-admin-ui carbonio-admin-console-ui
 
-#. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
-   required
+#. Bootstrap |carbonio|
 
-   .. code:: console
+   .. include:: /_includes/_installation/bootstrap.rst
 
-      # carbonio-bootstrap
+   In the bootstrap menu, use |srv2h|, AND |ldappwd| in
+   the following items to complete successfully the bootstrap.
+
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server
 
    .. code:: console
 
-      # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-   .. hint:: the SRV2_IP can be retrieved using command :command:`su -
-      zextras -c "carbonio prov gas service-discover"`
-
-#. Run |mesh| setup using ``MESH_SECRET``
+#. Run |mesh| setup using |meshsec|
    
    .. code:: console
 
@@ -84,9 +85,10 @@ To set up the |vs|, these are the necessary tasks.
 
             # dnf install carbonio-videoserver carbonio-videoserver-recorder
 
-   .. note:: One of the output received during the installation is a
-      command that will be run on SRV5. Copy it, because it will be
-      needed on SRV5.
+   After the installation, make sure that the |vs| `public` IP address
+   (i.e., the one that will accept incoming connections to the |vs|)
+   is present in the configuration file :file:`/etc/janus/janus.jcfg`
+   and add it if missing.
 
 #. Enable and start the service with the commands
 
@@ -120,12 +122,14 @@ videos can not be stored.
    Values used in the next steps
    ^^^^
 
-   * ``VS_IP``: the IP address of this node
+   * |vsip| the local IP address of this node
 
-   * the command suggested during the |vs| installation (to be used on
-     SRV5)
+   * |vspwd| the password of the |vs|, that can be retrieved by
+     running as the ``root`` user the command :command:`grep -i -e
+     nat_1_1 -e api_secret /etc/janus/janus.jcfg`
 
-   * ``SERVLET_PORT``: the value of the `servlet port` configuration
+
+   * |servletport| the value of the `servlet port` configuration
      option saved in file
-     :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed when
-     running the previous command
+     :file:`/etc/carbonio/videoserver-recorder/recordingEnv`, needed
+     when running the previous command

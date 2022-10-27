@@ -3,7 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. srv5 - Advanced, AppServer, Files, and Docs
-   
+
 On this node, first install all the required packages for |file|, then
 configure the various services needed.
 
@@ -18,39 +18,42 @@ configure the various services needed.
            carbonio-storages-ce carbonio-user-management \
            carbonio-files-ce carbonio-docs-connector-ce \
            carbonio-docs-editor
-           
+
    .. tab-item:: RHEL
       :sync: rhel
 
+      Make sure to respect the order of installation.
+
       .. code:: console
 
-         # dnf install  service-discover-agent carbonio-appserver \
-           carbonio-storages-ce carbonio-user-management
-           carbonio-files-ce carbonio-docs-connector-ce \
-           carbonio-docs-editor
+         # yum install service-discover-agent carbonio-appserver
+         # yum install carbonio-files
+         # yum install carbonio-user-management carbonio-advanced carbonio-zal
+         # yum install carbonio-docs-connector carbonio-docs-editor
 
-Execute the following tasks: make sure you keep at hand the data
-configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
-``MESH_SECRET``, and ``MTA_IP``).
+Execute the following tasks.
 
-#. Bootstrap |carbonio|, using the data from previous tasks when required
+#. Bootstrap |carbonio|
 
-   .. code:: console
+   .. include:: /_includes/_installation/bootstrap.rst
 
-      # carbonio-bootstrap
+   In the bootstrap menu, use |srv2h|, |ldappwd|, and
+   |nginxpwd| in the following items to complete successfully the
+   bootstrap.
+
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
+   * ``Bind password for nginx ldap user``: |nginxpwd|
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server
 
    .. code:: console
 
-      # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-   .. hint:: The ``SRV2_IP`` can be retrieved using command :command:`su -
-      zextras -c "carbonio prov gas service-discover"`
-
-#. Run |mesh| setup using ``MESH_SECRET``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 

@@ -23,8 +23,15 @@ During the installation and configuration of |product|, it is
 necessary to execute commands from the command line, so make sure you
 have access to it.
 
-We remark that, unless differently stated, **all CLI commands must be run
-as the** ``root`` **user**.
+Some preliminary remark:
+
+* Unless differently stated, **all CLI commands must be run as the**
+  ``root`` **user**
+* Commands or groups of commands may be different between Ubuntu and
+  RHEL 8. This is shown by blue tabs: click on the tab of your choice
+  to find the correct command.
+* When no such tabs are given, the commands to run are the same on
+  Ubuntu and RHEL 8.
 
 .. _installation-step1:
 
@@ -39,10 +46,6 @@ as the** ``root`` **user**.
 
 .. _installation-step2:
 
-.. div:: sd-fs-5
-
-   :octicon:`gear` Installation
-
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
 
@@ -51,13 +54,88 @@ as the** ``root`` **user**.
 
    .. include:: /_includes/_installation/steps-hostname.rst
 
-.. _installation-step-3:
+.. _installation-rh:
 
-.. _post-inst:
+RHEL 8-only Preliminary Tasks
+-----------------------------
+
+A few task are required for the installation of |product| on RHEL 8
+systems, they concern the configuration of SELinux, the firewall, and
+the installation and configuration of Postgres 12. Indeed, The version
+of Postgres shipped by RHEL 8 is older than required by |product|.
+
+.. grid:: 1 2 2 2
+   :gutter: 2
+   
+   .. grid-item-card::
+      :columns: 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      SELinux and Firewall
+      ^^^^
+
+      SELinux
+         Must be set to **disabled** or **permissive** in file
+         :file:`/etc/selinux/config`. You can check the current profile
+         using the command
+
+         .. code:: console
+
+            # sestatus
+
+      Firewall  
+         All the ports needed by |product| are open on the firewall or
+         the firewall is **disabled**. To disable the firewall, issue the
+         commands
+
+         .. code:: console
+
+            # systemctl stop firewalld.service
+            # systemctl disable firewalld.service
+
+
+   .. grid-item-card::
+      :columns: 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      Postgres
+      ^^^^
+
+      We need to make sure that **Postresql 12** is installed, by running
+      commands
+
+      .. code:: console
+
+         # dnf -qy module disable postgresql
+         # dnf -y install postgresql12 postgresql12-server
+
+      Then, initialise and enable it.
+
+      .. code:: console
+
+         # /usr/pgsql-12/bin/postgresql-12-setup initdb
+         # systemctl enable --now postgresql-12
+
+      To complete the setup, edit file
+      :file:`/var/lib/pgsql/12/data/pg_hba.conf`, find the line::
+
+        #host    all             all             127.0.0.1/32            ident
+
+      and change it to::
+
+        #host    all             all             127.0.0.1/32            md5
+
+      To make sure the changes are picked up by Postgres, reload it.
+
+      .. code:: console
+
+         # systemctl reload postgresql-12
+   
+.. _installation-step3:
 
 .. div:: sd-fs-5
 
-   :octicon:`gear`  Post Installation tasks
+   :octicon:`gear` Installation task
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -66,6 +144,12 @@ as the** ``root`` **user**.
    ^^^^^
 
    .. include:: /_includes/_installation/step-package-install.rst
+
+.. _post-inst:
+
+.. div:: sd-fs-5
+
+   :octicon:`gear` Post-Installation tasks
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -170,6 +254,40 @@ Preliminary Tasks
 
 .. include:: /_includes/_multiserver-installation/preliminary-ce.rst
 
+.. _multi-rh-preliminary:
+
+RHEL 8-only Preliminary Tasks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A few task are required for the installation of |product| on RHEL 8
+systems, they concern the configuration of SELinux and the firewall.
+
+.. card::
+   :class-header: sd-font-weight-bold sd-fs-5
+
+   SELinux and Firewall
+   ^^^^
+
+   SELinux
+      Must be set to **disabled** or **permissive** in file
+      :file:`/etc/selinux/config`. You can check the current profile
+      using the command
+
+      .. code:: console
+
+         # sestatus
+
+   Firewall  
+      All the ports needed by |product| are open on the firewall or
+      the firewall is **disabled**. To disable the firewall, issue the
+      commands
+
+      .. code:: console
+
+         # systemctl stop firewalld.service
+         # systemctl disable firewalld.service
+
+
 Node Installation
 -----------------
 
@@ -191,6 +309,11 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 
 * The other nodes can be installed in any order, you can skip
   instructions for any node or role that you do not plan to install
+
+* While the overall procedure is the same for both Ubuntu and RHEL 8,
+  the actual commands and file paths may differ on the two operating
+  system, so pay attention that you execute the correct command on the
+  correct file
 
 .. _srv1-install:
 

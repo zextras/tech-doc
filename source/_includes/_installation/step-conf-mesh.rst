@@ -17,7 +17,7 @@ This command will:
   setups, management, and to access the administration GUI. See
   section :ref:`mesh-gui` for more information.
 
-  This password will be denoted as ``MESH_SECRET`` throughout the
+  This password will be denoted as |meshsec| throughout the
   documentation.
   
   .. include:: /_includes/hint-pwd.rst
