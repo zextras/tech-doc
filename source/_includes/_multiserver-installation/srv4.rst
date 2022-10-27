@@ -1,4 +1,3 @@
-
 .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
@@ -18,7 +17,7 @@ nodes.
 
    The proxy functionality requires no configuration, so we can just
    install the packages and configure the node only.
-   
+
    #. Install packages
 
       .. tab-set::
@@ -79,13 +78,13 @@ nodes.
 
 .. card::
 
-   |vs| and Video Recording 
+   |vs| and Video Recording
    ^^^^^
 
    It is possible to install the |vs| without the Video Recording
    feature. If you wish to do so, follow the procedure below, but
    *skip the last step*, labelled **[Video Recording]**.
-   
+
    #. Install |vs| package
 
       .. tab-set::
@@ -99,6 +98,14 @@ nodes.
 
          .. tab-item:: RHEL
             :sync: rhel
+
+            Before starting the procedure, install Fedora's epel-repository.
+
+            .. code:: console
+
+               # yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+
+            Then, install the packages.
 
             .. code:: console
 
@@ -127,9 +134,9 @@ nodes.
       .. warning:: Since ``Memcached`` does not support authentication,
          make sure that the Memcached port (**11211**) is accessible only
          from internal, trusted networks.
-                
+
    #. **[Video Recording]** To implement this feature, install package
-     
+
       .. tab-set::
 
          .. tab-item:: Ubuntu
