@@ -33,7 +33,7 @@ need the **cluster credential password** that was defined during the
    You need to create a **bootstrap token** that will be used to
    create any additional token.
 
-   .. code:: bash
+   .. code:: console
 
       # service-discover bootstrap-token
 
@@ -51,7 +51,7 @@ need the **cluster credential password** that was defined during the
    Step 3. Create tunnel
    ^^^^^
 
-   .. code:: bash
+   .. code:: console
 
       # ssh -N -f -L 8500:localhost:8500 root@<IP Address>
 

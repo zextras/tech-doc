@@ -677,7 +677,7 @@ local "Incoming" directory must exist on that server. The default
 directory is :file:`/opt/|carbonio|/incoming`; you can check or modify
 the current value using these commands:
 
-.. code:: bash
+.. code:: console
 
    carbonio config server get $(zmhostname) attribute incomingPath
    carbonio config server set $(zmhostname) attribute incomingPath value /path/to/dir
