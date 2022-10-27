@@ -35,7 +35,9 @@ Execute the following tasks.
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
+
+      # carbonio-bootstrap
 
    In the bootstrap menu, use |srv2h|, |ldappwd|, and
    |nginxpwd| in the following items to complete successfully the
@@ -64,6 +66,10 @@ Execute the following tasks.
    .. code:: console
 
       # pending-setups -a
+
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
 
 #. Let |file| use Memcached. Edit file
    :file:`/etc/carbonio/files/config.properties` and search for
@@ -96,15 +102,16 @@ Execute the following tasks.
       # su - zextras -c "zmmailboxdctl restart"
 
 
-#. Run as the ``zextras user`` the following command, using |vsip|,
-   |servletport| and |vspwd| configured on SRV4
+#. Run as the ``zextras user`` the following command to configure the
+   Video Recording, using |vsip|, |servletport| and |vspwd| configured
+   on SRV4
 
    .. code:: console
 
       zextras$ carbonio chats video-server add VS_IP port 8188 \
         servlet_port SERVLET_PORT secret VS_PWD
 
-#. Enable Chats and VideoServerRecording, issuing the commands as the ``zextras user``
+#. Enable Chats and Video Recording, issuing the commands as the ``zextras user``
 
    .. code:: console
 

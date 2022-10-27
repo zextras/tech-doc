@@ -31,13 +31,13 @@ the other nodes must be set up to use the Logger node.
 
    Then, restart the ``rsyslog`` service.
 
-   .. code:: bash
+   .. code:: console
 
       # systemctl restart rsyslog
 
    Finally, initialise the logging service for all nodes.
 
-   .. code:: bash
+   .. code:: console
 
       # su - zextras -c "/opt/zextras/libexec/zmloggerinit"
 
@@ -50,6 +50,6 @@ the other nodes must be set up to use the Logger node.
    Once the Logger node has properly been initialised, on **all other
    nodes**, execute
 
-   .. code:: bash
+   .. code:: console
 
       # /opt/zextras/libexec/zmsyslogsetup  && service rsyslog restart

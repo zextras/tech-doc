@@ -100,8 +100,10 @@ PostgreSQL node using `Pgpool-II
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
 
+      # carbonio-bootstrap
+   
    The bootstrap command will execute a number of tasks and will set
    up the node. At the end, you will be prompted with a menu and, if
    you already configured all, you only need to click
@@ -115,7 +117,7 @@ PostgreSQL node using `Pgpool-II
 #. Bootstrap |carbonio| Databases, using the Postgres user created on
    SRV1 and the password defined in previous step.
    
-   * mailbox
+   * |carbonio| Advanced
 
      .. code:: console
 

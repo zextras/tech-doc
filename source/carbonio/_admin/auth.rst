@@ -267,14 +267,14 @@ assuming that this URL is
 https://my-saml-provider.org/simplesaml/saml/idp/metadata.php, you can
 import the configuration using the command:
 
-.. code:: bash
+.. code:: console
 
    # carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
 
 .. note:: The URL supplied by the SAML IDP for an unsecured connection
    may be slight different from the previous one, like in our example.
 
-.. code:: bash
+.. code:: console
 
    # carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
 
@@ -310,7 +310,7 @@ default SAML settings, modify them, then save and import them back.
 
       In order to export the default SAML setting, use
 
-      .. code:: bash
+      .. code:: console
 
          # carbonio auth saml get example.com export_to /tmp/saml.json
 
@@ -390,7 +390,7 @@ default SAML settings, modify them, then save and import them back.
       The final step is to save the changes made to the file and import
       it into |product| using the command:
 
-      .. code:: bash
+      .. code:: console
 
          # carbonio auth saml import example.com /tmp/saml.json
 

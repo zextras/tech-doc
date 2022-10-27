@@ -26,21 +26,20 @@ First install all the necessary packages:
 
    .. tab-item:: RHEL
       :sync: rhel
-
-      On RHEL system, the Preview is currently not available. Make
-      sure to respect the order of installation
       
       .. code:: console
 
          # dnf install service-discover-agent carbonio-appserver
          # dnf install carbonio-user-management carbonio-advanced carbonio-zal
-         # dnf install carbonio-logger
+         # dnf install carbonio-logger 
 
 Execute the following tasks.
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
+
+      # carbonio-bootstrap
 
    In the bootstrap menu, use |srv2h|, and |ldappwd| in
    the following  items to complete successfully the bootstrap.
@@ -68,44 +67,40 @@ Execute the following tasks.
 
       # pending-setups -a
 
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
+   
 #. Fix carbonio-mailbox token access
 
    .. code:: console
 
       # chmod a+r /etc/zextras/carbonio-mailbox/token
 
-.. card::
+#. Let |pv| use Memcached. Edit file
+   :file:`/etc/carbonio/preview/config.ini` and search for
+   section **# Nginx Lookup servers**.
 
-   Ubuntu-only tasks
-   ^^^^
+   .. code-block:: ini
+      :linenos:
 
-   These tasks are not necessary on RHEL 8, because the Preview is not
-   yet available on those systems.
-   
-   #. Let |pv| use Memcached. Edit file
-      :file:`/etc/carbonio/preview/config.ini` and search for
-      section **# Nginx Lookup servers**.
+      nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
+      memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
 
-      .. code-block:: ini
-         :linenos:
+   Make sure that:
 
-         nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
-         memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
+   * in line 1 protocol is **https** and the IP address the current
+     node's (SRV6) IP
+   * in line 2 there is the Memcached node's (SRV5) IP
 
-      Make sure that:
+#. Restart the |pv| process
 
-      * in line 1 protocol is **https** and the IP address the current
-        node's (SRV6) IP
-      * in line 2 there is the Memcached node's (SRV5) IP
+   .. code:: console
 
-   #. Restart the |pv| process
+      # systemctl restart carbonio-preview
+      # systemctl restart carbonio-preview-sidecar
 
-      .. code:: console
-
-         # systemctl restart carbonio-preview
-         # systemctl restart carbonio-preview-sidecar
-
-As last task, restart the mailbox process
+#. As last task, restart the mailbox process
 
    .. code:: console
 

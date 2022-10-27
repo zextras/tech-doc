@@ -10,8 +10,6 @@ This page provides hardware and software requirements for |product|
 and directions for its installation. Please review carefully this
 whole page before attempting to install.
 
-.. include:: /_includes/_installation/requirements.rst
-
 .. _single-server-install:
 
 Single-Server Installation
@@ -23,15 +21,7 @@ During the installation and configuration of |product|, it is
 necessary to execute commands from the command line, so make sure you
 have access to it.
 
-Some preliminary remark:
-
-* Unless differently stated, **all CLI commands must be run as the**
-  ``root`` **user**
-* Commands or groups of commands may be different between Ubuntu and
-  RHEL 8. This is shown by blue tabs: click on the tab of your choice
-  to find the correct command.
-* When no such tabs are given, the commands to run are the same on
-  Ubuntu and RHEL 8.
+.. include:: /_includes/_installation/requirements.rst
 
 .. _installation-step1:
 

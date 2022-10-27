@@ -27,7 +27,9 @@ These following tasks must be executed to configure the MTA.
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
+
+      # carbonio-bootstrap
 
    In the bootstrap menu, use |srv2h|, |ldappwd|,
    |postfixpwd|, and |amavispwd| in the following items to
@@ -57,6 +59,10 @@ These following tasks must be executed to configure the MTA.
    .. code:: console
 
       # pending-setups -a
+
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
 
 .. card::
 
