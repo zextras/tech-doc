@@ -37,7 +37,9 @@ These tasks need to be carried out for the Proxy.
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
+
+      # carbonio-bootstrap
 
    In the bootstrap menu, use |srv2h|, AND |ldappwd| in
    the following items to complete successfully the bootstrap.

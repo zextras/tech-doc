@@ -27,7 +27,9 @@ These following tasks must be executed to configure the MTA.
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
+
+      # carbonio-bootstrap
 
    In the bootstrap menu, use |srv2h|, |ldappwd|,
    |postfixpwd|, and |amavispwd| in the following items to

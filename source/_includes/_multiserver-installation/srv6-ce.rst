@@ -40,7 +40,9 @@ Execute the following tasks.
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
+
+      # carbonio-bootstrap
 
    In the bootstrap menu, use |srv2h|, and |ldappwd| in
    the following items to complete successfully the bootstrap.
