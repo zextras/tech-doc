@@ -43,7 +43,7 @@ Additional requirements
 
            # yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
-Besides the remarks:
+Some more remarks:
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
   commands must be executed as the ``zextras`` user (these commands

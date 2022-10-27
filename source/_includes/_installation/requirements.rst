@@ -5,12 +5,13 @@
 .. _carbonio-requirements:
 
 Requirements
-============
+------------
 
 .. _system-requirements:
 
 System Requirements
--------------------
+~~~~~~~~~~~~~~~~~~~
+
 
 .. grid:: 1 1 1 2
    :gutter: 2
@@ -49,7 +50,7 @@ System Requirements
 .. _software-requirements:
 
 Software Requirements
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
@@ -98,7 +99,19 @@ Additional requirements
        * Fedora's epel-repository::
 
            # yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-           
+
+Some more remarks:
+
+* Acquaintance with the use of CLI is necessary.  All ``carbonio``
+  commands must be executed as the ``zextras`` user (these commands
+  will feature a ``zextras$`` prompt), while all other commands must
+  be issued as the ``root`` user, unless stated otherwise.
+* Commands or groups of commands may be different between Ubuntu and
+  RHEL 8. This is shown by blue tabs: click on the tab of your choice
+  to find the correct command.
+* When no such tabs are given, the commands to run are the same on
+  Ubuntu and RHEL 8.
+
 .. _config-dns:
 
 .. topic:: Configuring DNS resolution
