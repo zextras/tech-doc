@@ -165,7 +165,7 @@ to use CLI commands.
    * **Store_01**: the volume name as defined on the server on which the
      command is executed
    * **secondary**: the type of the volume
-   * **28m6u4KBwSUnYaPp86XG**: the bucket ID* as received in step 1
+   * **28m6u4KBwSUnYaPp86XG**: the bucket ID as received in step 1
    * **volume_prefix Main_Volume**: an ID assigned to the volume, used for
      quick searches (e.g., *main_vol*)
 
