@@ -15,8 +15,8 @@ configure the various services needed.
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-storages-ce carbonio-user-management \
-           carbonio-files-ce carbonio-docs-connector-ce \
+           carbonio-storages carbonio-user-management \
+           carbonio-files carbonio-docs-connector \
            carbonio-docs-editor
 
    .. tab-item:: RHEL
