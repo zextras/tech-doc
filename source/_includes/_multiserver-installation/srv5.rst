@@ -15,7 +15,7 @@ configure the various services needed.
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-storages carbonio-user-management \
+           carbonio-user-management \
            carbonio-files carbonio-docs-connector \
            carbonio-docs-editor
 
