@@ -30,7 +30,7 @@ corresponding Database, by running the corresponding command.
 
 In the above commands, |dbadmpwd| is the the password of the
 ``carbonio_adm`` database role, that is, the one created during
-:ref:`Step 6 <config-db>` of the Single-Server installation or the
+:ref:`Step 6 <installation-step6>` of the Single-Server installation or the
 installation of :ref:`srv1-install` in the Multi-Server installation
 
 Finally, since new version of |product| packages may include new

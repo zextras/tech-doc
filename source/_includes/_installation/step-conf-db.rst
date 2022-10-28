@@ -6,7 +6,7 @@
 all the objects it needs to manage. The main database can be
 configured in two steps, but if you are running |product| on RHEL 8,
 please first configure Postgres according to the :ref:`guidelines
-<installation-rh>`.
+<preliminary-rh>`.
 
 The first step is to create a role with administrative rights and an
 associated password.
