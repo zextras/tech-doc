@@ -1,0 +1,119 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+.. uncomment for next release (3.15.0)
+
+   Zextras Suite Changelog - Release 3.14.0
+   ========================================
+
+      Release Date: Oct 31st, 2022
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-312
+
+* *Title:* Support for SAML POST logout added
+
+* *Description:* Now the Zextras Suite authentication can handle
+  logouts via POST requests on SAML authentication.
+
+..
+
+
+* *Issue ID:* AUTH-422
+
+* *Title:* Wrong error messages on login fixed
+
+* *Description:* Fixed a bug that caused wrong error messages to be
+  shown on login for unexistent users or submitting wrong passwords.
+
+..
+
+
+* *Issue ID:* AUTH-439
+
+* *Title:* Ldap password Expiration causing all the Service
+  Credentials expire fixed
+
+* *Description:* Fixed a bug that caused all the service (imap, smtp,
+  pop3 etc.) credentials to expire on LDAP password expiration.
+
+..
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-366
+
+* *Title:* Attendees update on appointment cancellation fixed
+
+* *Description:* Fixed a bug that prevented the attendees to receive
+  an update when removing them from an appointment so the appointment
+  was still shown in their calendar.
+
+..
+
+
+* *Issue ID:* MOB-389
+
+* *Title:* Recurring events exceptions synchronization fixed
+
+* *Description:* Fixed a bug that made the exceptions to recurring
+  events not being synchronized with mobile devices via EAS.
+
+..
+
+
+* *Issue ID:* MOB-390
+
+* *Title:* Outlook app loop fixed
+
+* *Description:* Fixed a bug that caused the Outlook app
+  synchronization to start looping when using the remote search.
+
+..
+
+
+* *Issue ID:* MOB-392
+
+* *Title:* Accepting a single instance of an appointment fixed
+
+* *Description:* Fixed a bug that caused a single instance of an
+  appointment to be moved to the original time in the organizer's
+  calendar when the attendee accepts the invitation.
+
+..
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-446
+
+* *Title:* doMoveBlobs ignores accounts deleted during the operation
+
+* *Description:* The `doMoveBlobs` operation now ignores accounts
+  deleted after the operation starts.
+
+..
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-3891
+
+* *Title:* Audio quality of 2.12 is worst than 2.11
+
+* *Description:* We found that echo cancellation feature isn’t working
+  anymore due to a problem with the keys we used to save the
+  availability of echo cancellation on suite. We have restore it.
+
+..
+
+
+* *Issue ID:* TEAMS-3928
+
+* *Title:* Instant meeting blank screen fixed
+
+* *Description:* Fixed a bug that caused a blank screen to be shown on
+  entering in an instant meeting.
+
+..
+
