@@ -13,6 +13,6 @@ non-interactive logins. Therefore, it is necessary that the keys are
 always up-to-date and synchronised. In order to update the keys, this
 command must ebe executed *on all nodes*:
 
-.. code:: bash
+.. code:: console
 
    # su - zextras -c "/opt/zextras/bin/zmupdateauthkeys"

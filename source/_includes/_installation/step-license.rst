@@ -9,6 +9,10 @@ installation or configuration task, run:
 
    # pending-setups -a
 
+.. hint:: The **secret** needed to run the above command is stored in
+   file :file:`/var/lib/service-discover/password` which is accessible
+   only by the ``root`` user.
+   
 Finally, as the ``zextras`` user, activate |product| license,
 replacing **TOKEN** with your licence token.
 

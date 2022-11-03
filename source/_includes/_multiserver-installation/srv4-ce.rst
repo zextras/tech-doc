@@ -31,7 +31,9 @@ front-end packages for |file| and |adminui|) will be installed here.
 
 #. Bootstrap |carbonio|
 
-   .. include:: /_includes/_installation/bootstrap.rst
+   .. code:: console
+
+      # carbonio-bootstrap
 
    In the bootstrap menu, use |srv2h|, AND |ldappwd| in
    the following items to complete successfully the bootstrap.
@@ -58,6 +60,10 @@ front-end packages for |file| and |adminui|) will be installed here.
    .. code:: console
 
       # pending-setups -a
+
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
 
 #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 

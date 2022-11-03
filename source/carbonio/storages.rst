@@ -148,23 +148,25 @@ to use CLI commands.
 
    If the command is successful, proceed with the next step.
 
-3. Associate the bucket to the volumes on *each mailstore*::
+3. Associate the bucket to the volumes on *each mailstore*.
 
-     carbonio powerstore doCreateVolume S3 _Name of the mailstore_ _primary|secondary_ [param VALUE[,VALUE]]
+   .. parsed-literal::
 
+      carbonio powerstore doCreateVolume S3 *Name_of_the_volume* *primary|secondary* [bucket_id] centralized *true|false*
 
    For example::
 
-     carbonio powerstore doCreateVolume S3 VolumeName secondary bucket_configuration_id 28m6u4KBwSUnYaPp86XG volume_prefix main_vol centralized
+     carbonio powerstore doCreateVolume S3 Store_01 secondary \
+     28m6u4KBwSUnYaPp86XG volume_prefix Main_Volume centralized true
 
    In this example, these values are used:
 
    * **S3**: the type of bucket
-   * **VolumeName**: the volume name as defined on the server on which the
+   * **Store_01**: the volume name as defined on the server on which the
      command is executed
    * **secondary**: the type of the volume
-   * **28m6u4KBwSUnYaPp86XG**: the bucket ID* as received in step 1
-   * **volume_prefix main_vol**: an ID assigned to the volume, used for
+   * **28m6u4KBwSUnYaPp86XG**: the bucket ID as received in step 1
+   * **volume_prefix Main_Volume**: an ID assigned to the volume, used for
      quick searches (e.g., *main_vol*)
 
 4.  Set the volume to *current*, to let it receive data immediately::
@@ -677,7 +679,7 @@ local "Incoming" directory must exist on that server. The default
 directory is :file:`/opt/|carbonio|/incoming`; you can check or modify
 the current value using these commands:
 
-.. code:: bash
+.. code:: console
 
    carbonio config server get $(zmhostname) attribute incomingPath
    carbonio config server set $(zmhostname) attribute incomingPath value /path/to/dir

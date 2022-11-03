@@ -15,7 +15,7 @@ database, by running the  command
 
 In the above command, |dbadmpwd| is the the password of the
 ``carbonio_adm`` database role, that is, the one created during
-:ref:`Step 6 <config-db>` of the Single-Server installation or the
+:ref:`Step 6 <installation-step6>` of the Single-Server installation or the
 installation of :ref:`srv1-install` in the Multi-Server installation
 
 Finally, since new version of |product| packages may include new
@@ -27,6 +27,10 @@ services, it is strongly suggested to execute the command
 
 This will register the services to |mesh|, so they can immediately be
 used.
+
+.. hint:: The **secret** needed to run the above command is stored in
+   file :file:`/var/lib/service-discover/password` which is accessible
+   only by the ``root`` user.
 
 Administration console packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
