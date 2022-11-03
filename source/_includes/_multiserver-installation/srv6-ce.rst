@@ -27,13 +27,12 @@ First install all the necessary packages:
    .. tab-item:: RHEL
       :sync: rhel
 
-      On RHEL system, the Preview is currently not available. Make
-      sure to respect the order of installation
+      Make sure to respect the order of installation.
       
       .. code:: console
 
          # dnf install service-discover-agent carbonio-appserver
-         # dnf install carbonio-user-management 
+         # dnf install carbonio-user-management carbonio-preview-ce
          # dnf install carbonio-logger
 
 Execute the following tasks.

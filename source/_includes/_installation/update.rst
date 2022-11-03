@@ -13,28 +13,29 @@ third-party software, which lead to some additional manual steps to be
 carried out. Section :ref:`upgrade-troubleshooting` below contains
 information to prevent or fix these issues.
 
-.. card::
+..
+   .. card::
 
-   Upgrade to |carbonio| **22.11.0**
-   ^^^^^
-   
-   If you are upgrading to |carbonio| 22.11.0, make sure to stop the
-   Directory Server **before** the upgrade and restart it as soon as
-   the upgrade has completed successfully. This is required because
-   this updates introduces backward-incompatible changes, namely a few
-   new attribute in the database.
+      Upgrade to |carbonio| **22.11.0**
+      ^^^^^
 
-   The command to stop the Directory server before the upgrade is
+      If you are upgrading to |carbonio| 22.11.0, make sure to stop the
+      Directory Server **before** the upgrade and restart it as soon as
+      the upgrade has completed successfully. This is required because
+      this updates introduces backward-incompatible changes, namely a few
+      new attribute in the database.
 
-   .. code:: console
+      The command to stop the Directory server before the upgrade is
 
-      # zmcontrol stop 
+      .. code:: console
 
-   The command to restart the Directory server after the upgrade is
+         # zmcontrol stop 
 
-   .. code:: console
+      The command to restart the Directory server after the upgrade is
 
-      # zmcontrol start 
+      .. code:: console
+
+         # zmcontrol start 
 
 The steps required are basically three, although in some rare cases some
 additional care is required, see after the instructions below.
