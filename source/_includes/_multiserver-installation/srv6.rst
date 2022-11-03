@@ -21,8 +21,8 @@ First install all the necessary packages:
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-preview \
-           carbonio-advanced carbonio-zal  carbonio-logger
+           carbonio-user-management carbonio-advanced carbonio-zal \
+           carbonio-preview carbonio-logger
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -31,7 +31,7 @@ First install all the necessary packages:
 
          # dnf install service-discover-agent carbonio-appserver
          # dnf install carbonio-user-management carbonio-advanced carbonio-zal
-         # dnf install carbonio-logger 
+         # dnf install carbonio-preview carbonio-logger 
 
 Execute the following tasks.
 

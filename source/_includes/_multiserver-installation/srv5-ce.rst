@@ -26,10 +26,10 @@ configure the various services needed.
 
       .. code:: console
 
-         # yum install service-discover-agent carbonio-appserver
-         # yum install carbonio-files
-         # yum install carbonio-user-management carbonio-advanced carbonio-zal
-         # yum install carbonio-docs-connector carbonio-docs-editor
+         # dnf install service-discover-agent carbonio-appserver
+         # dnf install carbonio-storages-ce carbonio-user-management
+         # dnf install carbonio-files-ce carbonio-docs-connector-ce
+         # dnf install carbonio-docs-editor
 
 Execute the following tasks.
 
