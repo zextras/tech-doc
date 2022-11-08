@@ -14,7 +14,7 @@ We start by updating and upgrading the system.
 
       .. code:: console
 
-         # apt-cache clean &&apt update && apt upgrade
+         # apt clean &&apt update && apt upgrade
 
    .. tab-item:: RHEL
       :sync: rhel
