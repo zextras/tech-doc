@@ -66,7 +66,7 @@ Next, we install all packages needed for |product|.
          # dnf install carbonio-directory-server \
          carbonio-proxy carbonio-webui \
          carbonio-user-management \
-         carbonio-files-ui carbonio-files\
+         carbonio-files-ui carbonio-files \
          carbonio-files-db \
          carbonio-mta \
          carbonio-logger \
