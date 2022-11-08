@@ -198,5 +198,6 @@ to |mesh| after they have been restarted after the upgrade.
 
    .. code:: console
 
-      zextras$ zmmailboxdctl restart
+      zextras$ zmcontrol stop
+      zextras$ zmcontrol start
 
