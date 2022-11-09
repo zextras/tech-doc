@@ -14,5 +14,5 @@ Then restart the main mailbox process as the ``zextras`` user.
 
 .. code:: console
 
-   # su - zextras
-   # zmmailboxdctl restart
+   zextras$ zmcontrol stop
+   zextras$ zmcontrol start

@@ -64,8 +64,8 @@ Finally, restart the mailbox service.
 
 .. code:: console
    
-   # su - zextras
-   zextras$ zmmailboxdctl restart
+   zextras$ zmcontrol stop
+   zextras$ zmcontrol start
 
 Upgrade of Docs-Editor
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -127,4 +127,5 @@ The second one must be executed as the ``zextras`` user.
 
 .. code:: console
 
-   $ zmmailboxdctl restart
+   zextras$ zmcontrol stop
+   zextras$ zmcontrol start
