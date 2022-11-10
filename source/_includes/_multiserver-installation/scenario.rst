@@ -35,3 +35,8 @@ are installed with RHEL 8: the only difference is the command for the
 package installation, while the commands to configure the nodes are
 the same.
 
+We also assume that the IP address of each node is ``172.16.0.1X``,
+with ``X`` the *n-th* node. In other words, IPs will be in the range
+``172.16.0.11`` (SRV1) :octicon:`dash` ``172.16.0.16`` (second
+AppServer). These values will be used in configuration files that need
+to be manually modified during the installation or upgrade procedures.
