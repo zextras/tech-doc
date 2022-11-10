@@ -70,5 +70,6 @@ The second one must be executed as the ``zextras`` user.
 
 .. code:: console
 
-   $ zmmailboxdctl restart
+   zextras$ zmcontrol stop
+   zextras$ zmcontrol start
 

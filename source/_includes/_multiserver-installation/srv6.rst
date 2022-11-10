@@ -100,10 +100,11 @@ Execute the following tasks.
       # systemctl restart carbonio-preview
       # systemctl restart carbonio-preview-sidecar
 
-#. As last task, restart the mailbox process
+#. As last task, restart the mailbox process as the ``zextras`` user
 
    .. code:: console
 
-      # su - zextras -c "zmmailboxdctl restart"
+      zextras$ zmcontrol stop
+      zextras$ zmcontrol start
 
 To configure the Logger, please refer to Section :ref:`logger_node_config`.

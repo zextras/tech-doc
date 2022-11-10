@@ -96,12 +96,12 @@ Execute the following tasks.
 
       # chmod a+r /etc/zextras/carbonio-mailbox/token
 
-#. restart the mailbox process
+#. restart the mailbox process as the ``zextras`` user
 
    .. code:: console
 
-      # su - zextras -c "zmmailboxdctl restart"
-
+      zextras$ zmcontrol stop
+      zextras$ zmcontrol start
 
 #. Run as the ``zextras user`` the following command to configure the
    Video Recording, using |vsip|, |servletport| and |vspwd| configured
