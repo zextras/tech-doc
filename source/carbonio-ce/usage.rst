@@ -4,9 +4,9 @@
 
 .. _carbonio-usage:
 
-==================
- |carbonio| Usage
-==================
+========================
+ |carbonio| User Guides
+========================
 
 .. include:: /_includes/_usage/intro-ce.rst
 

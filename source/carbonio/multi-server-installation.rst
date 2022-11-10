@@ -141,3 +141,8 @@ SRV6: Advanced, AppServer, Preview, and Logger
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6.rst
+
+Access to the Web Interface
+---------------------------
+
+.. include:: /_includes/_installation/web-access.rst
