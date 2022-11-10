@@ -48,10 +48,10 @@
 
 .. badges for installation variables
 
-
 .. |dbadmpwd| replace:: :bdg-secondary-line:`DB_ADM_PWD`
 .. |srv1ip| replace:: :bdg-secondary-line:`SRV1_IP`
 .. |srv2h| replace:: :bdg-secondary-line:`SRV2_hostname`
+.. |srv4ip| replace:: :bdg-secondary-line:`SRV4_IP`
 .. |meshsec| replace:: :bdg-secondary-line:`MESH_SECRET`
 .. |mtaip| replace:: :bdg-secondary-line:`MTA_IP`
 .. |vsip| replace:: :bdg-secondary-line:`VS_IP`
