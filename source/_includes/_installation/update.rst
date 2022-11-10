@@ -16,6 +16,7 @@ some additional manual steps to be carried out. Section
 :ref:`upgrade-troubleshooting` below contains information to prevent
 or fix these issues.
 
+.. _upgrade-22-11:
 
 Upgrade to |carbonio| **22.11.0**
 ---------------------------------
