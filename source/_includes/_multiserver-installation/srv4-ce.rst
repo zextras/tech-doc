@@ -77,3 +77,10 @@ front-end packages for |file| and |adminui|) will be installed here.
       make sure that the Memcached port (**11211**) is accessible only
       from internal, trusted networks.
 
+
+.. card::
+
+   Values used in the next steps
+   ^^^^
+
+   * |srv4ip| the IP address of the node
