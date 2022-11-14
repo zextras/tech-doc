@@ -16,6 +16,7 @@ some additional manual steps to be carried out. Section
 :ref:`upgrade-troubleshooting` below contains information to prevent
 or fix these issues.
 
+.. _upgrade-22-11:
 
 Upgrade to |carbonio| **22.11.0**
 ---------------------------------
@@ -53,12 +54,15 @@ namely it adds a few new attributes in the database.
          .. note:: The dump will be saved in the :file:`/tmp/` directory, so
             make sure to copy it to a **safe** location.
 
+      #. Make a backup copy of file
+         :file:`/opt/zextras/conf/localconfig.xml` and **store it in a
+         safe place**.
 
       #. Stop the Directory Server service
 
          .. code:: console
 
-            # ldap stop
+            zextras$ ldap stop
 
    .. grid-item-card::
       :columns: 6
@@ -70,7 +74,7 @@ namely it adds a few new attributes in the database.
 
          .. code:: console
 
-            # ldap start
+            zextras$ ldap start
 
       #. Make sure that |mesh| picks up all changes
 
