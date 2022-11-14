@@ -52,6 +52,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :includehidden:
          :caption: Admin:
 
+         adminpanel
          administration
          management
 	 storages

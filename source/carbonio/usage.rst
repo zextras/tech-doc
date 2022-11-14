@@ -2,8 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _carbonio-usage:
+
 ========================
- |carbonio| User guides
+ |carbonio| User Guides
 ========================
 
 .. include:: /_includes/_usage/intro-cb.rst

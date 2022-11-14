@@ -17,7 +17,7 @@
 .. |sh| replace:: |carbonio| Shell
 .. |mobile| replace:: |carbonio| Mobile
 .. |pv| replace:: |carbonio| Preview
-.. |adminui| replace:: |carbonio| Advanced Admin UI
+.. |adminui| replace:: |carbonio| Admin Panel
 
 .. common replacements for all products
 
