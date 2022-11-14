@@ -28,7 +28,7 @@ First install all the necessary packages:
       :sync: rhel
 
       Make sure to respect the order of installation.
-      
+
       .. code:: console
 
          # dnf install service-discover-agent carbonio-appserver
@@ -75,19 +75,21 @@ Execute the following tasks.
 
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for section
-   **#Nginx Lookup servers**. 
+   **#Nginx Lookup servers**.
 
    .. code-block:: ini
       :linenos:
 
-      nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
-      memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
+      nginx_lookup_server_full_path_urls = https://172.16.0.16
+      memcached_server_full_path_urls = 172.16.0.14:11211
 
    Make sure that:
 
-   * in line 1 protocol is **https** and the IP address the current
-     node's (SRV6) IP
-   * in line 2 there is the Memcached node's (SRV5) IP
+   * in line 1 protocol is **https** and the IP address is the address
+     of one AppServer, we use the current node's IP Address for
+     simplicity
+   * in line 2 |srv4ip| is written, to allow this node's access to
+     Memcached, which is installed on the *Proxy Node*
 
 #. Restart the |pv| process
 
@@ -96,10 +98,11 @@ Execute the following tasks.
       # systemctl restart carbonio-preview
       # systemctl restart carbonio-preview-sidecar
 
-#. As last task, restart the mailbox process
+#. As last task, restart the mailbox process as the ``zextras`` user
 
    .. code:: console
 
-      # su - zextras -c "zmmailboxdctl restart"
+      zextras$ zmcontrol stop
+      zextras$ zmcontrol start
 
 To configure the Logger, please refer to Section :ref:`logger_node_config`.

@@ -69,10 +69,13 @@ Mails
    mailbox and how often to check for new emails (i.e., *polling
    interval*).
 
-   Other options allow to set the colour of incoming messages and
-   which is the default query over e-mails, that is, which e-mails are
-   shown upon logging in. By default, the query is ``in:inbox``,
-   meaning that all messages in the **Inbox** are displayed.
+   Other options allow to configure how to set the `unsend time`, that
+   is, the interval before an e-mail is actually sent, allowing to
+   stop the send process, whether to visualise e-mails by message or
+   conversation, and which is the default query over e-mails, that is,
+   which e-mails are shown upon logging in. By default, the query is
+   ``in:inbox``, meaning that all messages in the **Inbox** are
+   displayed.
 
 .. card::
    :class-header: sd-font-weight-bold irisfont

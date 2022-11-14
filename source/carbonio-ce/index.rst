@@ -52,6 +52,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          :includehidden:
          :caption: Admin:
 
+         adminpanel
          management
          mesh
 

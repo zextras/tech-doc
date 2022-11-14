@@ -79,15 +79,17 @@ Execute the following tasks.
       :linenos:
 
       # Nginx Lookup servers
-      nginxlookup.server.protocol=https 
-      nginxlookup.server.urls=127.0.0.1 
-      memcached.server.urls=127.0.0.1   
+      nginxlookup.server.protocol=https
+      nginxlookup.server.urls=172.16.0.15
+      memcached.server.urls=172.16.0.14
 
    Make sure that:
-   
+
    * in line 2 protocol is **https**
-   * in line 3 there is at least the current node's (SRV5) IP
-   * in line 4 the SRV4_IP is written, to allow this node's access to Memcached
+   * in line 3 there must be the IP address of one AppServer, we use
+     the current node's IP Address for simplicity
+   * in line 4 |srv4ip| is written, to allow this node's access to
+     Memcached, which is installed on the *Proxy Node*
 
 #. restart the |file| processes:
 
@@ -95,4 +97,3 @@ Execute the following tasks.
 
       # systemctl restart carbonio-files
       # systemctl restart carbonio-files-sidecar
-

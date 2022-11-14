@@ -81,14 +81,16 @@ Execute the following tasks.
 
       # Nginx Lookup servers
       nginxlookup.server.protocol=https
-      nginxlookup.server.urls=127.0.0.1
-      memcached.server.urls=127.0.0.1
+      nginxlookup.server.urls=172.16.0.15
+      memcached.server.urls=172.16.0.14
 
    Make sure that:
 
    * in line 2 protocol is **https**
-   * in line 3 there is at least the current node's (SRV5) IP
-   * in line 4 the SRV4_IP is written, to allow this node's access to Memcached
+   * in line 3 there must be the IP address of one AppServer, we use
+     the current node's IP Address for simplicity
+   * in line 4 |vsip| is written, to allow this node's access to
+     Memcached, which is installed on the *Proxy Node*
 
 #. Fix carbonio-mailbox token access
 
@@ -96,12 +98,12 @@ Execute the following tasks.
 
       # chmod a+r /etc/zextras/carbonio-mailbox/token
 
-#. restart the mailbox process
+#. restart the mailbox process as the ``zextras`` user
 
    .. code:: console
 
-      # su - zextras -c "zmmailboxdctl restart"
-
+      zextras$ zmcontrol stop
+      zextras$ zmcontrol start
 
 #. Run as the ``zextras user`` the following command to configure the
    Video Recording, using |vsip|, |servletport| and |vspwd| configured

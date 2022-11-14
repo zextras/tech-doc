@@ -151,6 +151,8 @@ installed on any node, provided the dependencies are respected.
   service.
 * **VideoServer Recording**. This modules adds recording abilities to
   the VideoServer.
+* **Admin Panel**. The core administration centre in which to manage
+  the configuration options of |product|
 
 Supported Mail Protocols
 ========================
