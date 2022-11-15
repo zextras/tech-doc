@@ -9,27 +9,29 @@
 ================
 
 This section lists some customisations for |product|. Directions to
-install :ref:`install-fonts` has been moved to the `USE:` section.
+install :ref:`install-fonts` has been moved to the
+:ref:`carbonio-usage` section.
 
-Logo
-====
+..
+   Logo
+   ====
 
-It is possible to replace |product| logo with an own logo in two
-steps:
+   It is possible to replace |product| logo with an own logo in two
+   steps:
 
-#. copy the logo (we will call it :file:`company_logo.svg`) to
-   directory  :file:`/opt/zextras/web/login/assets/` on the |product|
-   installation.
+   #. copy the logo (we will call it :file:`company_logo.svg`) to
+      directory  :file:`/opt/zextras/web/login/assets/` on the |product|
+      installation.
 
-   .. hint:: The optimal size for the logo is **320x80** pixels
+      .. hint:: The optimal size for the logo is **320x80** pixels
 
-#. execute this command on *every node* on which the **Proxy** is installed.
+   #. execute this command on *every node* on which the **Proxy** is installed.
 
-   .. code:: console
+      .. code:: console
 
-      # carbonio auth loginPage setLogo \
-        domain example.com \
-        "/static/login/assets/example_logo.svg"
+	 # carbonio auth loginPage setLogo \
+	   domain example.com \
+	   "/static/login/assets/example_logo.svg"
 
 .. _nginx-custom:
 
