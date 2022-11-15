@@ -63,7 +63,7 @@ Minimum Requirements and Tweaking
 If you are interested in resources optimization and tweaking, we suggest
 to read the following article on the Zimbra wiki, which despite the
 title applies to both large and small deployments:
-http://wiki.zimbra.com/wiki/Performance_Tuning_Guidelines_for_Large_Deployments.
+https://wiki.zimbra.com/wiki/Performance_Tuning_Guidelines_for_Large_Deployments.
 
 Another strict requirement is the composition of the Zimbra IDs in the
 system, which can only contain the following characters up to a maximum
@@ -132,10 +132,10 @@ section :ref:`zxclient` at the bottom of this page for directions
 Where to get the Zextras Suite package
 --------------------------------------
 
-The Zextras Suite installer can be obtained from the `download
-section <https://www.zextras.com/download>`_ of zextras' website, while
-*existing customers* will be able to find `a direct download
-link <https://www.zextras.com/download-customer/>`_ after logging in
+The Zextras Suite installer can be obtained from the `download section
+<https://www.zextras.com/download-trial-suite>`_ of zextras' website,
+while *existing customers* will be able to find `a direct download
+link <https://www.zextras.com/update-suite/>`_ after logging in
 with their Zextras Store account.
 
 .. _setup_information:
