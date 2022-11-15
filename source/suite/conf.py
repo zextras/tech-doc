@@ -90,3 +90,21 @@ html_theme_options= {
     'collapse_navigation': False
 }
 html_context = { 'hubhome' : '%s' %hubhome }
+
+# -- Options for linkcheck output --------------------------------------------
+
+# list of URLs to ignore
+linkcheck_ignore = [ r'.*.example.com(:\d+)?.*',
+                     'https:\/\/my-saml-provider\.org\/',
+                     'https:\/\/notifications.zextras.com\/firebase\/',
+                     r'https://support.zextras.com/',
+                     r'https://mycompany.okta.com/.*',
+                     r'../../.*' ]
+
+# cli commands contain quite a lot of broken urls for several reasons
+# - since they are all example URLS, we ignore them.
+linkcheck_exclude_documents = [ r'(.*\/)?cli\/.*' ]
+
+# there are more options, but at the moment we don't need them. They
+# can be found at
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
