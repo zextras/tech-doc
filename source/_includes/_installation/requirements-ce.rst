@@ -56,6 +56,18 @@ Software Requirements
 on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
 8** installation.
 
+.. card::
+
+   Installation on Other Linux Distributions
+   ^^^^^
+
+   While they are **not officially supported**, Linux
+   distributions compatible with Ubuntu 20.04 (e.g., Debian) and RHEL
+   8 (e.g., AlmaLinux, Rocky Linux) may be used as base OS for
+   |product|, provided all dependencies can be satisfied. This may
+   include adding third-party repositories or manually installing
+   software packages.
+
 The following requirements must be satisfied before attempting to
 install |product|.
 

@@ -6,11 +6,12 @@ Carbonio Files provides a file storage system with ability for sharing
 documents with colleagues, collaborative editing, and document
 versioning.
 
-Items in |file| are shown in the central area of |file| and are
-organised in a folder structure, which initially contain a number of
-pre-defined shortcut as icons: *Home*, *Shared with me*, *Trash*,
-*Filters*, and *Uploads*. Files can be arranged in folders under
-*Home*.
+Items saved in |file| are shown in the central area and are organised
+in a folder structure, which initially contain a number of pre-defined
+shortcut as icons: *Home*, *Shared with me*, *Trash*, *Filters*, and
+*Uploads*. Files can be arranged in folders under *Home*; a list of
+recent files and folders accessed by the user is also available, to
+allow to quickly resume work on these documents.
 
 
 Working with files
@@ -56,8 +57,8 @@ done on files and folders
 
    Details
       Shows a (partial) preview of the file, if the file belongs to a
-      recognised type. There are also a number of metadata visible; a
-      description of the file or folder can be added at the bottom.
+      recognised type. There are also a number of metadata visible and
+      a description of the file or folder can be added at the bottom.
 
    Sharing
       Lists the owner of the file or folder and who has access to it. Add
@@ -83,4 +84,3 @@ done on files and folders
       a file that has reached this limit is prevented, with an error
       message informing of the reached limit.  This limit can be
       customised and even removed, by configuring it to **-1**.
-

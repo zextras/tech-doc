@@ -465,8 +465,8 @@ section :ref:`zextras_docs_full_cli`.
 
 This section contains the index of all ``zxsuite auth``
 This section contains the index of all the available ``zextras docs``
-commands. Full reference can be found in `the dedicated
-section <./cli.xml#_zxdocs_cli_commands>`_.
+commands. Full reference can be found in :ref:`the dedicated
+section <zextras_docs_full_cli>`.
 
 :ref:`doDeployDocsZimlet <zxsuite_docs_doDeployDocsZimlet>`
 :octicon:`dash` :ref:`doReloadConfig <zxsuite_docs_doReloadConfig>`

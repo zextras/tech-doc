@@ -902,7 +902,7 @@ has been enabled on the volume.
 .. seealso::
    
    The official Amazon S3 documentation on `Intelligent Tiering
-   <https://aws.amazon.com/s3/storage-classes/#Unknown_or_changing_access/>`_
+   <https://aws.amazon.com/s3/storage-classes/intelligent-tiering/>`_
 
 .. _pws_item_deduplication:
 
