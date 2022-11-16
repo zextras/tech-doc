@@ -102,30 +102,42 @@ Attachments management
 ----------------------
 
 |product| supports e-mail attachments; depending whether the e-mail is
-sent or has been received, the following actions can be carried out on
-the attachment.
+written before it is sent or it has been received, the following
+actions are available
 
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item::
-      :columns: 6
+   .. grid-item-card::
+      :columns: 4
 
-      **Sending an e-mail**
+      Composing an e-mail
+      ^^^^
 
       While composing an e-mail, any file can be added as an
       attachment for either a local directory on the workstation or on
       the user's personal storage on |file|.
+   
+   .. grid-item-card::
+      :columns: 4
+		
+      Inline Attachments
+      ^^^^^
 
-   .. grid-item::
-      :columns: 6
+      Images on the local workstation can be included as inline
+      attachments in the body of the e-mails, using the button in the
+      bar above the editor to select them.
+      
+   .. grid-item-card::
+      :columns: 4
 
-      **Receiving an e-mail**
+      Receiving an e-mail
+      ^^^^^
 
-      When an e-mail with an attachments arrives in the user's Inbox,
-      the user has the option to either download the file to a local
-      directory on the workstation, or to save it in the user's
-      personal's storage on |file|.
+      When receiving an e-mail with attachments, the user has the
+      option to either download the file to a local directory on the
+      workstation, or to save it in the user's personal's storage on
+      |file|.
       
 
 .. _mail-trash-folder:
