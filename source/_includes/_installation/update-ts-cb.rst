@@ -10,14 +10,14 @@ Upgrade Troubleshooting
 This section lists some troubleshooting options related to the upgrade
 process.
 
-Preventing Docs-connector Conflicts
+Preventing docs-connector Conflicts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are running release **22.10.0**, there are chances that you
-have installed package ``docs-connector-ce``, which was common between
-|carbonio| and |ce|. If you have it installed, make sure to remove it
-and that **only** the new package ``carbonio-docs-connector`` is
-installed, by removing the old package
+If you are running a release prior to **22.10.0**, there are chances
+that you have installed package ``docs-connector-ce``, which was
+common between |carbonio| and |ce|. If you have it installed, make
+sure to remove it and that **only** the new package
+``carbonio-docs-connector`` is installed, by removing the old package
 
 .. tab-set::
 
