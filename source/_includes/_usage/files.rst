@@ -6,11 +6,12 @@ Carbonio Files provides a file storage system with ability for sharing
 documents with colleagues, collaborative editing, and document
 versioning.
 
-Items in |file| are shown in the central area of |file| and are
-organised in a folder structure, which initially contain a number of
-pre-defined shortcut as icons: *Home*, *Shared with me*, *Trash*,
-*Filters*, and *Uploads*. Files can be arranged in folders under
-*Home*.
+Items saved in |file| are shown in the central area and are organised
+in a folder structure, which initially contain a number of pre-defined
+shortcut as icons: *Home*, *Shared with me*, *Trash*, *Filters*, and
+*Uploads*. Files can be arranged in folders under *Home*; a list of
+recent files and folders accessed by the user is also available, to
+allow to quickly resume work on these documents.
 
 
 Working with files
