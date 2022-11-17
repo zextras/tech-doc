@@ -14,7 +14,28 @@
       :gutter: 2
 
       .. grid-item-card::
-         :columns: 6
+         :columns: 12
+         :class-header: sd-font-weight-bold sd-fs-5
+         :shadow: lg
+
+	 Repositories
+	 ^^^^^
+
+         An active subscription (you must be able to fetch from
+         **BaseOS** and the other main repositories)::
+
+	   # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+
+         The **CodeReady** repository enabled::
+
+           # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+
+         The dedicated postgresql repository::
+
+	   # yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+      .. grid-item-card::
+         :columns: 12
          :class-header: sd-font-weight-bold sd-fs-5
          :shadow: lg
 
@@ -42,7 +63,7 @@
 
 
       .. grid-item-card::
-         :columns: 6
+         :columns: 12
          :class-header: sd-font-weight-bold sd-fs-5
          :shadow: lg
 
