@@ -163,9 +163,9 @@ Some more remarks:
       :file:`/etc/dnsmasq.conf`::
 
           server=1.1.1.1
-          mx-host=carbonio.local,mail.carbonio.local,50
-          host-record=carbonio.local,172.16.0.10
-          host-record=mail.carbonio.local,172.16.0.10
+          mx-host=example.com,mail.example.com,50
+          host-record=example.com,172.16.0.10
+          host-record=mail.example.com,172.16.0.10
 
       Remember to replace the **172.16.0.10** IP address with the one
       of your server. Then, make sure that the :file:`etc/resolv.conf`
