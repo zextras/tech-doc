@@ -20,7 +20,7 @@ https://mail.example.com:6071/login, replacing `mail.example.com` with
 your domain.
 
 To access the |adminui|, the default user is
-``zextras@carbonio.local``, whose password should be changed after the
+``zextras@mail.example.com``, whose password should be changed after the
 first installation using the command shown in :ref:`Create System User
 <create-admin-user>`.
 
