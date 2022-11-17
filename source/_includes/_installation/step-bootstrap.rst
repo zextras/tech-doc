@@ -31,5 +31,5 @@ click :bdg-dark-line:`Enter` to continue.
 
    The first part of the bootstrap enables all necessary
    services and creates a new administrator account
-   (zextras\@carbonio.local), initially **without password**
+   (zextras\@mail.example.com), initially **without password**
    (see below for instruction to set it).
