@@ -84,32 +84,6 @@ when it becomes available.
 Additional requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
- .. tab-set::
-    .. tab-item:: Ubuntu
-       :sync: ubuntu
-
-       No additional requirement is necessary.
-
-    .. tab-item:: RHEL
-       :sync: rhel
-
-       The following additional requirements are needed.
-       
-       * An active subscription (you must be able to fetch from
-         **BaseOS** and the other main repositories)::
-
-          # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-
-       * The **CodeReady** repository enabled::
-
-           # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
-
-       * The dedicated postgresql repository::
-
-           # yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-
-Some more remarks:
-
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
   commands must be executed as the ``zextras`` user (these commands
   will feature a ``zextras$`` prompt), while all other commands must
