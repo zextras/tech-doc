@@ -47,8 +47,11 @@ component within their respective :fa:`github` GitHub repository.
 * :bdg-link-danger-line:`Carbonio User Management
   <https://github.com/Zextras/carbonio-user-management/blob/develop/CHANGELOG.md>`
   Carbonio User Management
-* :bdg-link-danger-line:`Carbonio Files DB <https://github.com/Zextras/carbonio-files-db/blob/develop/CHANGELOG.md>`
+* :bdg-link-danger-line:`Carbonio Files DB
+  <https://github.com/Zextras/carbonio-files-db/blob/develop/CHANGELOG.md>`
+  Carbonio Files DB
 * :bdg-link-danger-line:`Consul Client
   <https://github.com/Zextras/consul-client/blob/master/CHANGELOG.md>`
+  Consul client
 
   
