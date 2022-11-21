@@ -450,8 +450,23 @@ the |vs| or not.
       password.
 
 
-To complete the setup, execute the command
+Configure |vs| Recording
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+To complete the setup, you need to execute a few commands. First,
+make sure that the functionality is enabled on the infrastructure.
 
 .. code:: console
 
    # carbonio config set global teamVideoServerRecordingEnabled true
+
+You need then to enable the actual recording on the rooms.
+
+.. code:: console
+
+   # carbonio config global set attribute teamChatEnabled value true
+
+.. note:: In this command, every user is allowed to record a
+   meeting. It is however possible to enforce this policy at user or
+   COS level, to allow only selected users or members of a COS to
+   record meetings.
