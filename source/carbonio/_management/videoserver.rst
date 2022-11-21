@@ -464,7 +464,7 @@ You need then to enable the actual recording on the rooms.
 
 .. code:: console
 
-   # carbonio config global set attribute teamChatEnabled value true
+   # carbonio config set global attribute teamChatEnabled value true
 
 .. note:: In this command, every user is allowed to record a
    meeting. It is however possible to enforce this policy at user or
