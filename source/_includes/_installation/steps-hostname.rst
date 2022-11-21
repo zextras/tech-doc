@@ -8,13 +8,13 @@ commands. First, set the hostname
 
 .. code:: console
 
-   # hostnamectl set-hostname mail.carbonio.local
+   # hostnamectl set-hostname mail.example.com
 
 then update :file:`/etc/hosts` with IP and hostname
 
 .. code:: console
 
-   # echo "172.16.0.10 mail.carbonio.local mail" >> /etc/hosts
+   # echo "172.16.0.10 mail.example.com mail" >> /etc/hosts
 
 You can also simply get the current IP and hostname and save them:
 
