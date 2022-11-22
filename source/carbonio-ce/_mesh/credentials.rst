@@ -62,7 +62,7 @@ always an **integer**.
 
    .. code:: console
 
-      # consul acl bootstrap.
+      # consul acl bootstrap
 
    The output will always be similar to::
 
