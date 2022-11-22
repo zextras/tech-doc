@@ -37,35 +37,39 @@ carry out the most common tasks will be added soon.
 .. provisional structure, to be un-commented while doc is being developed.
 
    
-Domains
-=======
 
-Domain Details
---------------
-
-Manage Domains
---------------
+   Domains
+   =======
 
 
-Servers
-=======
-
-Global Servers
---------------
-
-Server Details
---------------
-
-Class of Services (COS)
-=======================
+   Domain Details
+   --------------
 
 
-Subscriptions
-=============
+   Manage Domains
+   --------------
 
-Privacy
-=======
 
-Backup
-======
+   Servers
+   =======
 
+   Global Servers
+   --------------
+
+   Server Details
+   --------------
+
+   Class of Services (COS)
+   =======================
+
+
+   Subscriptions
+   =============
+
+   Privacy
+   =======
+
+   Backup
+   ======
+
+   Here we can put the current backup documentation
