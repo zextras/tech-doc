@@ -65,7 +65,7 @@ Next, we install all packages needed for |product|.
          carbonio-webui carbonio-files-ui \
          carbonio-mta  \
          carbonio-appserver carbonio-logger  \
-         carbonio-user-management \
+         carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
