@@ -46,7 +46,7 @@
 .. role:: red
 .. role:: green
 
-.. badges for installation variables
+.. badges for variables in installation and other procedures
 
 .. |dbadmpwd| replace:: :bdg-secondary-line:`DB_ADM_PWD`
 .. |srv1ip| replace:: :bdg-secondary-line:`SRV1_IP`
@@ -61,3 +61,4 @@
 .. |nginxpwd| replace:: :bdg-secondary-line:`NGINX_PWD`
 .. |postfixpwd| replace:: :bdg-secondary-line:`POSTFIX_PWD`
 .. |amavispwd| replace:: :bdg-secondary-line:`AMAVIS_PWD`
+.. |leaderip| replace:: :bdg-secondary-line:`LEADER_IP`
