@@ -50,7 +50,7 @@ Regenerate |mesh| Secret
 ------------------------
 
 In case the secret needs to be changed, there is one important
-information to know beforehand: the *reset index* value, whic is
+information to know beforehand: the *reset index* value, which is
 always an **integer**.
 
 .. card::
@@ -77,7 +77,7 @@ Before attempting the recover, be prepared for a downtime of the
 |mesh| service for the whole duration of the procedure.
 
 The procedure is the same for Single-Server and Multi-Server, but on
-the Multi-Server there are a few more steps to carry out.
+the Multi-Server there are more steps to carry out.
 
 .. card::
 
@@ -88,15 +88,15 @@ the Multi-Server there are a few more steps to carry out.
    below.
 
    On a Multi-Server, you need to identify the |mesh| *leader node*
-   node and log into it. Most of the times, this is the
-   `Directory-Server` node, whose IP address is retrieved using the
-   command below.
+   node and log into it. If you followed the
+   :ref:`multiserver-installation`, this is the `Directory-Server`
+   node, whose IP address is retrieved using the command below.
 
    .. code:: console
 
       # carbonio prov gas service-discover
 
-   To make sure you are on the leader, use the following command.
+   To make sure you are on the leader node, use the following command.
 
    .. code:: console
 
@@ -104,20 +104,22 @@ the Multi-Server there are a few more steps to carry out.
 
    The output will be an IP address and a port, for example
    **192.168.56.101:8300**. If this IP is different from the
-   `Directory Server`'s, log in to the latter on (192.168.56.101).
+   `Directory Server`'s, log in to the latter on (192.168.56.101). We
+   will denote this IP with |leaderip|.
 
-   .. note:: All the commands must be run on the *leader node*, unless
-      differently specified.
-
+   .. note:: Even if you have installed multiple |mesh| Servers, *only
+      one* is the leader.
+      
 .. card::
 
    Step 1. Wipe Old Credentials
    ^^^^
 
-   The first task, to be executed as the ``service-discover`` user, is
-   to write the current **reset index** to a file, to allow a new ACL
-   token to be generated. As described in the Scenario above, the
-   value is **908** (change it according to the output you receive), so we need to execute:
+   The first task, to be executed as the ``service-discover`` user on
+   the *leader node*, is to write the current **reset index** to a file,
+   to allow a new ACL token to be generated. As described in the
+   Scenario above, the value is **908** (change it according to the
+   output you receive), so we need to execute:
 
    .. code:: console
 
@@ -152,7 +154,7 @@ the Multi-Server there are a few more steps to carry out.
 
    .. code:: console
 
-      # service-discover setup 192.168.56.101 --first-instance --password=MESH_SECRET
+      # service-discover setup LEADER_IP --first-instance --password=MESH_SECRET
 
    This is essentially the same command as the one used during the
    configuration of |mesh|, the only difference being that in this
@@ -167,23 +169,46 @@ the Multi-Server there are a few more steps to carry out.
         Node              Address              Status  Type    Build  Protocol  DC   Segment
         mail.example.com  192.168.56.101:8301  alive   server  1.9.3  2
 
-   On a Single-Server the procedure has been completed. Make sure to
-   store the new credentials in a safe place!
+On a Single-Server the procedure has been completed. Make sure to
+store the new credentials in a safe place!
 
 .. card::
 
-   Multi-Server Final Task
+   Multi-Server Tasks
    ^^^^
 
-   On a Multi-Server, you need to copy the credentials file on all
-   other nodes, for example using :command:`scp`. The commands to be
-   used are mentioned in every node of the
-   :ref:`multiserver-installation`.
-
-   Finally, log in to all other nodes and repeat on *each of them* the
-   setup using the following commands
+   On a Multi-Server, you need to carry out all the steps below on
+   **each of the other nodes**.
+   
+   Login to one node, then copy the credentials from the |leaderip|.
 
    .. code:: console
 
-      # rm /var/lib/service-discover/*pem
+      # scp root@[LEADER_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      /etc/zextras/service-discover/cluster-credentials.tar.gpg
+
+   Stop the *service-discover* service.
+
+   .. code:: console
+
+      # systemctl stop service-discover
+
+   Remove the following two files:
+
+   .. code:: console
+
+      # rm /etc/zextras/service-discover/config.json
+      # rm /etc/zextras/service-discover/main.json
+
+
+   Remove also all certificates related to *service-discover*.
+
+   .. code:: console
+
+      # rm /var/lib/service-discover/*.pem
+
+   Finally, run the |mesh| setup.
+   
+   .. code:: console
+
       # service-discover setup $(hostname -i) --password=MESH_SECRET
