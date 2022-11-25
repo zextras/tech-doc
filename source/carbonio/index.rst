@@ -17,7 +17,7 @@ collaboration platform.
 The content is organised in four parts:
 
 * Install: Information on |product|, installation and upgrade
-  instructions, security tips 
+  instructions, security tips
 * Admin: Documentation for Administrators, management tasks, and some
   advanced usage for |mesh|
 * Use: everyday's usage of |product|, including its use on the
@@ -55,7 +55,7 @@ If you are looking for |ce|'s documentation, please refer to its
          adminpanel
          administration
          management
-	 storages
+         storages
          mesh
 
    .. grid-item-card::
