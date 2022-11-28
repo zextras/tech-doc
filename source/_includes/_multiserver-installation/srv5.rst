@@ -114,12 +114,19 @@ Execute the following tasks.
       zextras$ carbonio chats video-server add VS_IP port 8188 \
         servlet_port SERVLET_PORT secret VS_PWD
 
-#. Enable Chats and Video Recording, issuing the commands as the ``zextras user``
+#. Enable |vs| at COS level, Video Recording, and the possibility for
+   each user to record meetings.
 
    .. code:: console
 
-      zextras$ carbonio config set global teamVideoServerRecordingEnabled true
       zextras$ carbonio config set cos default teamChatEnabled true
+      zextras$ carbonio config set global teamVideoServerRecordingEnabled true
+      zextras$ carbonio config set global teamMeetingRecordingEnabled true
+
+   .. note:: In the commands above, the policy allows every user to
+      record a meeting. It is however possible to enforce this policy
+      at user or COS level, to allow only selected users or members of
+      a COS to record meetings.
 
 #. (optional) Activate the license as the ``zextras user``
 
