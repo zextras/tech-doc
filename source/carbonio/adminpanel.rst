@@ -58,8 +58,9 @@ To create a new domain, fill in the form that opens upon clicking the
 |create| button.
 
 .. card::
+   :img-bottom: /img/adminpanel/new-domain.png
 
-   New Domain Options
+   Options for Domain ``acme.example.com``
    ^^^^
 
    Two types of options are available during the creation of a new
@@ -83,10 +84,19 @@ To create a new domain, fill in the form that opens upon clicking the
      on the same domain (or in a compatible one, i.e., in a valid
      alias URL, see Virtual Hosts below)
 
+   The image below shows how a sample domain is created.
+
+Further configuration option for the domain, including how to
+configure authentication and accounts in the domain, can be found in
+the :ref:`ap-domain-details` section.
+
 .. _ap-theme:
 
 Global
 ------
+
+Theme
+~~~~~
 
 Global settings concern the appearance of |product| and allow to
 customise various option that will influence how the |product| web
@@ -125,17 +135,81 @@ All customisations can be removed at one by clicking the
 Domain Details
 --------------
 
+In the various subsection present in *Domain Details*, it is possible
+to refine the configuration of the domain. Values for most of the
+options (for example the Time Zone), if not specified for a given
+domain, are inherited from the main domain defined.
+
 General Settings
 ~~~~~~~~~~~~~~~~
 
 General setting influence the basic domain configuration; most of them
 appear during :ref:`the creation of the domain
 <ap-domain-new>`. Additional options allow to define the time zone,
-the use of ``HTTP`` or ``HTTPS`` protocol (the former should be used in
-test enviromnents only), and a mail server used for spam-relay
-purposes.
+the use of ``HTTP`` or ``HTTPS`` protocol (we suggest using always the
+latter), and a mail server used for spam-relay purposes.
 
-Moreover, a default |cos| and its status can be attached to the domain.
+Moreover, a default |cos| and its status can be attached to the
+domain.
+
+.. card::
+
+   COS statuses
+   ^^^
+
+   A COS can be defined for a whole domain or an account and
+   determines its status, that is, its ability to log in to the domain
+   and access the e-mail. If the domain COS and a user's COS differ,
+   the resulting status of the account is shown. Each COS can be
+   defined with one of the following five values.
+
+   #. **Active**. The COS is enabled, therefore the domain and its
+      accounts can be used for everyday operations.
+
+   #. **Closed**. The domain is shut down, no access is granted, and
+      all incoming e-mails are bounced.
+
+      .. hint:: This status overrides the individual accounts COS status.
+
+   #. **Locked**. In this state, user access is not possible, unless
+      individual accounts are marked as *Active*. Incoming e-mails are
+      regularly delivered to the accounts.
+
+   #. **Maintenance**. Users can not log in, their incoming e-mails
+      are not delivered but are kept in a queue by the MTA.  If the
+      account’s status is *closed*, it overrides the domain status
+      setting, that is, the user's incoming e-mails are bounced.
+
+   #. **Suspended**. A status similar to *maintenance*, with the
+      difference that no accounts or distribution lists can be
+      changed. If the account’s status is *closed*, it overrides the
+      domain status setting, that is, the user's incoming e-mails are
+      bounced.
+
+We build on the domain created in :ref:`previous section
+<ap-domain-new>` and attach some property.
+
+.. card::
+   :img-bottom: /img/adminpanel/domain-details.png
+
+   Additional settings for ``acme.example.com``
+   ^^^^
+
+   We assign now the following properties to our sample domain.
+
+   #. **Public Service Protocol**. Force clients to connect only using
+      ``https``.
+   #. **Public Service Hostname**. It is the FQDN
+      (``mail.acme.example.com``) used by clients to connect to the
+      domain. It must be defined as an ``A`` record in the domain's
+      DNS.
+
+   #. The **Time Zone** is set to Hawaii's time
+   #. **Inbound SMTP Host Name**. Set to ``smtp.acme.example.com``,
+      its the URL of an SMTP server that is used for spam training.
+
+   #. **Default Class of Service**. The |cos| used by the domain,
+      which is left to the ``default`` one.
 
 GAL
 ~~~
