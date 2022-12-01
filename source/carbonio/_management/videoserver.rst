@@ -453,20 +453,27 @@ the |vs| or not.
 Configure |vs| Recording
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-To complete the setup, you need to execute a few commands. First,
-make sure that the functionality is enabled on the infrastructure.
+To complete the setup, you need to execute a few commands as the
+``zextras`` user. First, make sure that the functionality is enabled
+on the infrastructure at COS level.
 
 .. code:: console
 
-   # carbonio config set global teamVideoServerRecordingEnabled true
+   zextras$ carbonio config set cos attribute teamChatEnabled value true
 
 You need then to enable the actual recording on the rooms.
 
 .. code:: console
+          
+   zextras$ carbonio config set global teamVideoServerRecordingEnabled true
 
-   # carbonio config set global attribute teamChatEnabled value true
+Finally, allow all users to start a recording.
+   
+.. code:: console
+          
+   zextras$ carbonio config set global teamMeetingRecordingEnabled true
 
-.. note:: In this command, every user is allowed to record a
+.. note:: In this command, the policy allows every user to record a
    meeting. It is however possible to enforce this policy at user or
    COS level, to allow only selected users or members of a COS to
    record meetings.

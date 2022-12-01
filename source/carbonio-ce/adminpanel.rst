@@ -33,3 +33,43 @@ left-hand side.
 
 A dedicated *Administration Guide* featuring directions and advises to
 carry out the most common tasks will be added soon.
+
+.. provisional structure, to be un-commented while doc is being developed.
+
+   
+
+   Domains
+   =======
+
+
+   Domain Details
+   --------------
+
+
+   Manage Domains
+   --------------
+
+
+   Servers
+   =======
+
+   Global Servers
+   --------------
+
+   Server Details
+   --------------
+
+   Class of Services (COS)
+   =======================
+
+
+   Subscriptions
+   =============
+
+   Privacy
+   =======
+
+   Backup
+   ======
+
+   Here we can put the current backup documentation
