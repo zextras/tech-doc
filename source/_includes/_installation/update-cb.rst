@@ -16,7 +16,7 @@ corresponding Database, by running the command, respectively.
    which DB connection is installed, hat is, :ref:`srv2-install` in
    our Scenario.
 
-* mailbox
+* |carbonio| mailbox
   
   .. code:: console
 

@@ -18,38 +18,44 @@ third-party software, which may lead to some additional manual steps
 to be carried out. Section :ref:`upgrade-troubleshooting` below
 contains information to prevent or fix these issues.
 
-.. card:: Upgrade to |release|
-
-   In order to update to version |release| from the previous one, no
-   additional step is required.
-
 .. _upgrade-checklist:
 
 Upgrade checklist
 -----------------
 
-Regardless if you have a Single-Server or Multi-Server installation,
-make sure to check whether you are in one of this situations and
-execute the steps mentioned in addition to the normal upgrade
-procedure. In case of Multi-Server installation, run them on the
-correct node.
 
-:octicon:`check-circle;1em;sd-text-success` If you are running a
-version up to **22.9.0**, make sure to install the
-:ref:`adminpanel-packages` along with the other upgrades.
-         
-:octicon:`check-circle;1em;sd-text-success` Before starting the
-upgrade, check if the list of updates includes the Directory Server,
-i.e., package ``carbonio-directory-server``. If yes, execute the
-procedure described in :ref:`upgrade-directory-server`.
+In order to update to version |release| from the previous one, no
+additional step is required: simply follow the :ref:`Single-Server
+<upgrade-single>` or :ref:`Multi-Server
+<upgrade-multi>` Upgrade procedures.
 
-:octicon:`check-circle;1em;sd-text-success` In case any ``-db``
-package is in the upgrade list, execute the steps in
-:ref:`bootstrap-db`.
+In case you upgrade from versions previous to 22.11.0, please expand
+the following checklist for directions
 
-:octicon:`check-circle;1em;sd-text-success` In a Multi-Server
-installation, you need to execute some specific commands on the
-:ref:`AppServer nodes <upgrade-appserver>`.
+.. dropdown:: Checklist for older versions
+              
+   Regardless if you have a Single-Server or Multi-Server installation,
+   make sure to check whether you are in one of this situations and
+   execute the steps mentioned in addition to the normal upgrade
+   procedure. In case of Multi-Server installation, run them on the
+   correct node.
+
+   :octicon:`check-circle;1em;sd-text-success` If you are running a
+   version up to **22.9.0**, make sure to install the
+   :ref:`adminpanel-packages` along with the other upgrades.
+
+   :octicon:`check-circle;1em;sd-text-success` Before starting the
+   upgrade, check if the list of updates includes the Directory Server,
+   i.e., package ``carbonio-directory-server``. If yes, execute the
+   procedure described in :ref:`upgrade-directory-server`.
+
+   :octicon:`check-circle;1em;sd-text-success` In case any ``-db``
+   package is in the upgrade list, execute the steps in
+   :ref:`bootstrap-db`.
+
+   :octicon:`check-circle;1em;sd-text-success` In a Multi-Server
+   installation, you need to execute some specific commands on the
+   :ref:`AppServer nodes <upgrade-appserver>`.
 
 
 .. _upgrade-single:
