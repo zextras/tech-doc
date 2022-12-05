@@ -12,7 +12,7 @@
 functionalities of |carbonio| and is installed by default from
 |product| 22.11.0 onwards. It is not available for previous versions,
 but can be installed after upgrading to that version, see
-:ref:`upgrade-22-11`.
+:ref:`carbonio-upgrade`.
 
 Like for every other component, it can be reached using a
 :ref:`supported browser <browser_compatibility>` and point it to
