@@ -44,9 +44,8 @@ i.e., package ``carbonio-directory-server``. If yes, execute the
 procedure described in :ref:`upgrade-directory-server`.
 
 :octicon:`check-circle;1em;sd-text-success` In case any ``-db``
-package (``carbonio-mailbox-db``, ``carbonio-files-db``, or
-``carbonio-docs-connector-db``) is in the upgrade list, execute the
-steps in :ref:`bootstrap-db`.
+package is in the upgrade list, execute the steps in
+:ref:`bootstrap-db`.
 
 :octicon:`check-circle;1em;sd-text-success` In a Multi-Server
 installation, you need to execute some specific commands on the
@@ -119,7 +118,7 @@ Single-Server Upgrade Procedure
       correctly to |mesh| after they have been restarted after the
       upgrade.
 
-..  _upgrade-multi:
+.. _upgrade-multi:
    
 Multi-Server Upgrade Procedure
 ------------------------------
