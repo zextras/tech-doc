@@ -383,23 +383,56 @@ initial account configuration.
 Mailing List
 ~~~~~~~~~~~~
 
+Mailing list can be simply created by clicking the :bdg-primary:`+`
+button to open a tabbed modal dialog in which to configure the
+mailing list.
 
+In the first tab you can give a name, an address, and
+a description to the mailing list; in the second add *Members* by
+simply writing the e-mail addresses in the test field.
+
+.. hint:: E-mail addresses are auto-completed while typing.
+
+In the third tab, advanced settings can be configured, including to
+limit the members that are allowed to send e-mails to the list.
+
+The last tab recaps the settings: now you can wither go back to any of
+the previous tabs and change some of the settings, or proceed to
+create the mailing list.
+
+
+.. addressed at a later point
+
+   Dynamic Mode
+   ++++++++++++
 
 Resources
 ~~~~~~~~~
 
+A Resource is a generic object that can be assigned an e-mail
+address. A typical example of a Resource is a **meeting room**: to
+reserve the room, send an e-mail to the room's e-mail address.
+
+A policy can be assigned to Resource, to determine how to react to the
+booking request, either a manual or automatic acceptance or rejection.
+
+Additional e-mail addresses can be added to the resource, for example
+to notify the company's facility manager which meeting rooms are
+reserved and which are free.
+
+
+Servers
+=======
+
+Global Servers
+--------------
+
+Server Details
+--------------
+
 .. provisional structure, to be un-commented while doc is being developed.
 
 
-
-   Servers
-   =======
-
-   Global Servers
-   --------------
-
-   Server Details
-   --------------
 
    Class of Services (COS)
    =======================
