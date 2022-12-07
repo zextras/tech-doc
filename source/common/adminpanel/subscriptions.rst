@@ -1,0 +1,10 @@
+
+An informative page, containing the current status of the license. If
+the system is not yet registered, an activation token can be entered
+to activate |product|. 
+
+Additional data shown about |product| and the user are
+
+* The modules enabled by the license
+* The subsciption type, validity, and status
+* The company name and an e-mail contact
