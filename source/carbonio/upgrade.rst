@@ -9,6 +9,8 @@
 
 .. include:: /_includes/_installation/update.rst
 
+.. _upgrade-manual:
+
 Manual steps
 ------------
 
