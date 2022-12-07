@@ -41,22 +41,29 @@ Domains
 
 .. include:: /common/adminpanel/domains.rst
 
+.. _ap-servers:
+
 Servers
 =======
 
 .. include:: /common/adminpanel/servers.rst
 
-.. provisional structure, to be un-commented while doc is being developed.
 
+.. _ap_cos:
 
+Class of Services (COS)
+=======================
 
-   Class of Services (COS)
-   =======================
+.. include:: /common/adminpanel/cos.rst
+
+.. _ap-subscriptions:
 
 Subscriptions
 =============
    
 .. include:: /common/adminpanel/subscriptions.rst
+
+.. _ap-privacy:
 
 Privacy
 =======
