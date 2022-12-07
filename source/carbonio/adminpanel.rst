@@ -424,11 +424,48 @@ reserved and which are free.
 Servers
 =======
 
+This section is used to configure the Global e-mail server. 
+
 Global Servers
 --------------
 
+The lists of all configured server and buckets are shown here.
+
 Server Details
 --------------
+
+In the Server Details section it is possible to select a server, check
+its currently used volumes and assign new ones, and finally configure
+HSM policies.
+
+Data Volumes
+~~~~~~~~~~~~
+
+After you selected the server, the volumes it currently uses are
+shown, along with a few configured options. To add a new Volume, click
+on the :bdg-primary-line:`NEW VOLUME` button.
+
+In the dialog window, provide the basic information of the new volume
+in the first tab: The allocation type, name, and path.
+
+The second tab depends on the allocation:
+
+* **Local**: decide whether this is a primary, secondary, or index volume,
+  select a compression threshold if necessary, and finally if this
+  will become the new current volume.
+
+* **External**, **Sproxy**, **Centralized**: primary, secondary, or
+  index volume, select the type of Object Storage and a prefix to
+  identify the volume. You can set this volume as *Centralized*, which
+  proves useful in case it will be shared by multiple servers.
+
+
+
+HSM Settings
+~~~~~~~~~~~~
+
+HSM settings are policies for automatically processing objects in the
+mailstore: e-mails, documents, contacts, and events.
 
 .. provisional structure, to be un-commented while doc is being developed.
 
@@ -437,13 +474,46 @@ Server Details
    Class of Services (COS)
    =======================
 
+Subscriptions
+=============
 
-   Subscriptions
-   =============
+An informative page, containing the current status of the license. If
+the system is not yet registered, an activation token can be entered
+to activate |product|. 
 
-   Privacy
-   =======
+Additional data shown about |product| and the user are
 
+* The modules enabled by the license
+* The subsciption type, validity, and status
+* The company name and an e-mail contact
+
+      
+
+Privacy
+=======
+
+A few options about the involvement of customers with |zx| and how
+they can help evolve and shape |product|'s functionalities. It is
+important to highlight how **all information** sent to |zx| are
+**anonymous** and **only contain technical data** that help the
+development teams improve the product. These options are available:
+
+* *Send full error data*. This option will create a detailed
+  report of a bug or software failure which includes the actual
+  configuration and log files that will help developers to better
+  identify the problem
+
+* *Allow data analytics*. Usage data are collected and sent to the
+  |zx| developers to help them understand which are the most used
+  |product| features and improve them.
+
+* *Allow surveys for feedback*. When active, the user is invited to
+  participate to surveys that will help |zx| understand which are the
+  user needs and address them.
+  
+
+
+..
    Backup
    ======
 
