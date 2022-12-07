@@ -39,3 +39,51 @@ HSM Settings
 
 HSM settings are policies for automatically processing objects in the
 mailstore: e-mails, documents, contacts, and events.
+
+HSM Policies can be scheduled to be run automatically at given times
+and days; after this operation, deduplication can be enabled to save
+space in case of duplicated items, by keeping only one copy of an
+item.
+
+
+Create a New Policy
+~~~~~~~~~~~~~~~~~~~
+
+The dialog that opens after clicking the :bdg-primary-line:`NEW
+VOLUME` button allows to create a new HSM policy in a few steps.
+
+.. card:: 
+   :img-bottom: /img/adminpanel/new-hsm-settings.png
+                
+   Step 1. Policy settings
+   ^^^^^
+   
+   In this step, first select to which items the policy will be
+   applied.
+
+   .. hint:: A click on the :octicon:`square;2em;sd-text-primary`
+      **All** checkbox toggles all items at once.
+
+   The policy can be applied on the size of the items or on a time
+   interval. in our example, we remove all messages older than 7
+   days whose size is larger than 20Mb.
+
+.. card:: 
+   :img-bottom: /img/adminpanel/new-hsm-volumes.png
+                
+   Step 2. Select Volumes
+   ^^^^^
+
+   We now chose the volumes to which the policy is applied. By
+   default, **all the primary volumes** are selected. While it is
+   possible to manually specify the volumes from the list, we do not
+   change this.
+
+.. card:: 
+   :img-bottom: /img/adminpanel/new-hsm-create.png
+                
+   Step 3. Create Policy
+   ^^^^^
+
+   The last stop shows the settings for review. You can go back to
+   change any options or create the policy.
