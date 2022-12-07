@@ -9,13 +9,13 @@ and enter a name. You can then configure all the options from the
 left-hand side menu.
 
 Features
-~~~~~~~~
+--------
 
 *Features* are settings that allow the user to access the most used
 functionalities of |product|. 
 
 Preferences
-~~~~~~~~~~~
+-----------
 
 *Preferences* consist of options for the various modules, in
 particular about the appearance of |product| to web clients (for
@@ -25,7 +25,7 @@ carried out by the user, whether new e-mail contacts are added
 automatically to Contacts, or how often to check for new e-mails.
 
 Server Pools
-~~~~~~~~~~~~
+------------
 
 In this page it is possible to select on which servers new users can
 be added to the COS.
@@ -33,7 +33,7 @@ be added to the COS.
 .. note:: If only one server has been defined, no choice is possible.
 
 Advanced
-~~~~~~~~
+--------
 
 
 The *Advanced* Option allow to configure the user quota, data sources,
@@ -56,7 +56,7 @@ duration of the user passwords. It is also possible to reject common
 passwords.
 
 The **Failed Login Policy** allows to define the behaviour of
-|prodcut| when a user fails a log in. A typical policy can lock out
+|product| when a user fails a log in. A typical policy can lock out
 the user for *one hour* when *three* consecutive login attempts fail
 within *30 minutes*.
 
