@@ -2,12 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _bootstrap-db:
+
 Bootstrap database
 ~~~~~~~~~~~~~~~~~~
-   
-Whenever a ``-db`` package is upgraded (currently only
-``carbonio-files-db``), remember to bootstrap its corresponding
-database, by running the  command
+
+Whenever a ``-db`` package is upgraded (currently they are
+``carbonio-mailbox-db``, ``carbonio-files-db``, and
+``carbonio-docs-connector-db``), remember to bootstrap the
+corresponding Database, by running the command, respectively.
 
 .. code:: console
 
@@ -32,12 +35,14 @@ used.
    file :file:`/var/lib/service-discover/password` which is accessible
    only by the ``root`` user.
 
-Administration console packages
+.. _adminpanel-packages:
+
+Administration Panel Packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are upgrading to version **22.10.0**, make sure to install also
-the packages for the brand new Administration console:
-
+the packages for the brand new Administration console. In a
+Multi-Server, the commands must be executed on the **Proxy node**.
       
 .. tab-set::
 
@@ -56,4 +61,76 @@ the packages for the brand new Administration console:
 
          # dnf install carbonio-admin-console-ui carbonio-admin-ui
 
+.. _upgrade-directory-server:
 
+Upgrade Directory Server
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Whenever the upgrade involves the Directory Server, and there are some
+backward incompatible changes like the addition of new attributes in
+the database, follow these directions. On the Multi-Server, execute
+them in on the node with the Directory Server Role installed, which is
+:ref:`SRV2 <srv2-install>` in our scenario.
+
+#. Make a dump of the LDAP Database, especially if the if the upgrade
+   includes the Directory Server. This can be done using the command
+   (as the ``zextras`` user)
+
+   .. code:: console
+
+      zextras$ opt/zextras/libexec/zmslapcat /tmp
+
+   .. note:: The dump will be saved in the :file:`/tmp/` directory, so
+      make sure to copy it to a **safe** location.
+
+#. Make a backup copy of file
+   :file:`/opt/zextras/conf/localconfig.xml` and **store it in a
+   safe place**
+
+#. Stop the Directory Server service
+
+   .. code:: console
+
+      zextras$ ldap stop
+
+#. Execute the :ref:`Single-Server <upgrade-single>` upgrade
+   procedure
+
+#. Restart the Directory Server service
+
+   .. code:: console
+
+      zextras$ ldap start
+
+#. Make sure that |mesh| picks up all changes
+
+   .. code:: console
+
+      # pending-setups -a
+
+.. _upgrade-appserver:
+
+AppServer Nodes
+~~~~~~~~~~~~~~~
+
+On nodes with the AppServer (**SRV5** and **SRV6** in our
+scenario), stop the zmcontrol service
+
+
+.. code:: console
+
+   zextras$ zmcontrol stop
+
+Then, upgrade the Node as described for the :ref:`Single-Server
+<upgrade-multi>` and make sure that the mailbox token has
+correct permissions.
+
+.. code:: console
+
+   # chmod a+r /etc/zextras/carbonio-mailbox/token
+
+Finally, as the ``zextras`` user, restart the mailbox service.
+
+.. code:: console
+
+   zextras$ zmcontrol start

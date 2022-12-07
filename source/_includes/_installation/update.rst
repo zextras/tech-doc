@@ -7,89 +7,61 @@ released, the |zx| repositories are updated and packages are available
 for installation along with the other system updates. Therefore, the
 upgrade procedure is usually a very quick activity, carried out with
 by means of a few commands, which are the same for **Single-Server**
-and **Multi-Server** installations, thought on the latter some more
-work on specific nodes is required.
+and **Multi-Server** installations.
 
-Depending on the |product| setup and packages upgraded some
-incompatibilities may arise in third-party software, which lead to
-some additional manual steps to be carried out. Section
-:ref:`upgrade-troubleshooting` below contains information to prevent
-or fix these issues.
+Depending on the packages upgraded, some manual step may be
+required. In particular, please read carefully section
+:ref:`upgrade-checklist` to see if you need some additional effort.
 
-.. _upgrade-22-11:
+Moreover, incompatibilities may arise in case the upgrade includes
+third-party software, which may lead to some additional manual steps
+to be carried out. Section :ref:`upgrade-troubleshooting` below
+contains information to prevent or fix these issues.
 
-Upgrade to |carbonio| **22.11.0**
----------------------------------
+.. _upgrade-checklist:
 
-If you are upgrading to |carbonio| 22.11.0 and the upgrade includes
-the Directory Server Role, please read this section carefully, because
-you need to carry out some additional steps **before** attempting the
-upgrade and **after** the upgrade has successfully completed.
-
-.. note:: In Multi-server installations, these command must be
-   executed on the Node on which the Directory Server is installed
-   (**SRV2** in our scenario).
-
-These steps are required, because this update introduces
-backward-incompatible changes in the Directory Server infrastructure,
-namely it adds a few new attributes in the database.
-
-.. grid:: 1 1 2 2
-   :gutter: 2
-            
-   .. grid-item-card::
-      :columns: 6
-
-      Before the upgrade procedure
-      ^^^^^
-      
-      #. Make a dump of the LDAP Database, especially if the if the upgrade
-         includes the Directory Server. This can be done using the command
-         (as the ``zextras`` user)
-
-         .. code:: console
-
-            zextras$ opt/zextras/libexec/zmslapcat /tmp
-
-         .. note:: The dump will be saved in the :file:`/tmp/` directory, so
-            make sure to copy it to a **safe** location.
-
-      #. Make a backup copy of file
-         :file:`/opt/zextras/conf/localconfig.xml` and **store it in a
-         safe place**.
-
-      #. Stop the Directory Server service
-
-         .. code:: console
-
-            zextras$ ldap stop
-
-   .. grid-item-card::
-      :columns: 6
-
-      After the upgrade procedure
-      ^^^^^
-
-      #. Restart the Directory Server service
-
-         .. code:: console
-
-            zextras$ ldap start
-
-      #. Make sure that |mesh| picks up all changes
-
-         .. code:: console
-
-            # pending-setups -a
-
-Upgrade Procedure
+Upgrade checklist
 -----------------
 
-The steps required to upgrade a Single-Server and a Multi-Server are
-basically three. In the case of Single-Server, some additional manual
-step may be required, see  the instructions below, while in
-Multi-Server installations some manual step is required on some
-specific Node.
+
+In order to update to version |release| from the previous one, no
+additional step is required: simply follow the :ref:`Single-Server
+<upgrade-single>` or :ref:`Multi-Server
+<upgrade-multi>` Upgrade procedures.
+
+In case you upgrade from versions previous to 22.11.0, please expand
+the following checklist for directions
+
+.. dropdown:: Checklist for older versions
+              
+   Regardless if you have a Single-Server or Multi-Server installation,
+   make sure to check whether you are in one of this situations and
+   execute the steps mentioned in addition to the normal upgrade
+   procedure. In case of Multi-Server installation, run them on the
+   correct node.
+
+   :octicon:`check-circle;1em;sd-text-success` If you are running a
+   version up to **22.9.0**, make sure to install the
+   :ref:`adminpanel-packages` along with the other upgrades.
+
+   :octicon:`check-circle;1em;sd-text-success` Before starting the
+   upgrade, check if the list of updates includes the Directory Server,
+   i.e., package ``carbonio-directory-server``. If yes, execute the
+   procedure described in :ref:`upgrade-directory-server`.
+
+   :octicon:`check-circle;1em;sd-text-success` In case any ``-db``
+   package is in the upgrade list, execute the steps in
+   :ref:`bootstrap-db`.
+
+   :octicon:`check-circle;1em;sd-text-success` In a Multi-Server
+   installation, you need to execute some specific commands on the
+   :ref:`AppServer nodes <upgrade-appserver>`.
+
+
+.. _upgrade-single:
+   
+Single-Server Upgrade Procedure
+-------------------------------
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -106,7 +78,7 @@ specific Node.
             :sync: ubuntu
 
             .. code:: console
-
+ 
                # apt clean
 
          .. tab-item:: RHEL
@@ -120,7 +92,7 @@ specific Node.
    .. grid-item-card:: 
       :columns: 12 4 4 4
 
-      Step 2. Download new package list
+      Step 2. Update package list and install upgrades
       ^^^^^
       
       .. tab-set::
@@ -130,29 +102,7 @@ specific Node.
 
             .. code:: console
 
-               # apt update
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf update
-
-   .. grid-item-card:: 
-      :columns: 12 4 4 4
-
-      Step 3. Install new packages
-      ^^^^^
-      
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt upgrade
+               # apt update && apt upgrade
 
          .. tab-item:: RHEL
             :sync: rhel
@@ -161,47 +111,93 @@ specific Node.
 
                # dnf upgrade
 
-These commands also take care of resolving all dependencies and
-install all the upgrades available, of both the system and |product|.
+   .. grid-item-card:: 
+      :columns: 12 4 4 4
 
-Specific Instructions for Multi-Server
---------------------------------------
+      Step 3. Register upgraded packages to |mesh|
+      ^^^^^
+      .. code:: console
+                
+         # pending-setups -a
+      
+      This command makes sure that all services will be registered
+      correctly to |mesh| after they have been restarted after the
+      upgrade.
 
-If you have a Multi-Server installation, you must execute the upgrade
-on each node, following the same order used during the
-installation. In other words, if you installed your Multi-Server
-according to the scenario described in
+.. _upgrade-multi:
+   
+Multi-Server Upgrade Procedure
+------------------------------
+
+If you have a Multi-Server installation, you must **upgrade each
+node**, following the same order used during the installation. If you
+installed your Multi-Server according to the scenario described in
 :ref:`multiserver-installation`, you should start the upgrade from
 **SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
 **SRV6**.
 
-On all nodes, after the upgrade has completed, remember to run
+To upgrade one node follow the same procedure as the Single-Server
+installation, unless you marked some item in the
+:ref:`upgrade-checklist`: in this case, execute the corresponding
+:ref:`upgrade-manual`.
 
-.. code:: console
+.. grid:: 1 1 1 2
+   :gutter: 3
 
-   # pending-setups -a
+   .. grid-item-card:: 
+      :columns: 12 4 4 4
 
-This command makes sure that all services will be registered correctly
-to |mesh| after they have been restarted after the upgrade.
+      Step 1. Clean cached package list and information
+      ^^^^^
+      
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+ 
+               # apt clean
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf clean all
 
 
+   .. grid-item-card:: 
+      :columns: 12 4 4 4
 
-.. card::
+      Step 2. Update package list and install upgrades
+      ^^^^^
+      
+      .. tab-set::
 
-   AppServer Nodes
-   ^^^^^
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
 
-   On nodes with the AppServer (**SRV5** and **SRV6** in our
-   scenario), make sure that the mailbox token has correct permissions
+            .. code:: console
 
-   .. code:: console
+               # apt update && apt upgrade
 
-      # chmod a+r /etc/zextras/carbonio-mailbox/token
+         .. tab-item:: RHEL
+            :sync: rhel
 
-   Then, as the ``zextras`` user, restart the mailbox service.
+            .. code:: console
 
-   .. code:: console
+               # dnf upgrade
 
-      zextras$ zmcontrol stop
-      zextras$ zmcontrol start
+   .. grid-item-card:: 
+      :columns: 12 4 4 4
 
+      Step 3. Register upgraded packages to |mesh|
+      ^^^^^
+      .. code:: console
+                
+         # pending-setups -a
+      
+      This command makes sure that all services will be registered
+      correctly to |mesh| after they have been restarted after the
+      upgrade.
