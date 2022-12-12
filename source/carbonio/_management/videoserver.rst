@@ -130,16 +130,16 @@ of the meeting. It is a responsibility of that mailbox to communicate
 with a videoserver instance to start a meeting and controlling it.
 
 Therefore, each mailbox has its own connection pool, which can be
-controlled via the `zextras_team_full_cli`. The commands to
-control the service are straightforward:
+controlled via the Carbonio CLI. The commands to control the service
+are straightforward:
 
 -  Start the connection pool::
 
-     # carbonio chats doStartService team-videoserver-pool
+     # carbonio chats doStartService chats-video-server-connection-pool
 
 -  Shutdown the connection pool::
 
-     # carbonio chats doStopService team-videoserver-pool
+     # carbonio chats doStopService chats-video-server-connection-pool
 
 -  Check a connection pool status. This command reports information
    about the node *on which it is executed*.
@@ -343,23 +343,29 @@ The following settings influence the audio experience.
       The administrator can optimize the audio sensitivity with these two
       commands:
 
-      :command:`carbonio config global set attribute teamChatAudioLevelSensitivity value 25`
+      .. code:: console
 
-      :command:`carbonio config global set attribute teamChatAudioSamplingSensitivityInterval value 2`
+         # carbonio config global set attribute teamChatAudioLevelSensitivity value 55
+
+         # carbonio config global set attribute teamChatAudioSamplingSensitivityInterval value 10
 
       The audio level sensitivity defines how much the audio should be
-      normalized between all the audio sources. The value has a range between
-      0 and 100 where 0 represents the audio muted and 100 the maximum audio
-      level (too loud).
+      normalized between all the audio sources. The value has a range
+      between 0 and 100 where 0 represents the audio muted and 100 the
+      maximum audio level (too loud).
 
-      By default the value is set to **25**.
+      By default the value is set to **55**, which is also the
+      value suggested for optimal performances
 
-      The audio sampling sensitivity interval defines the interval in seconds
-      used to compute the audio sensitivity level. By default the value is set
-      to 2 seconds, this means that the video server normalizes the audio
-      level considering the audio sources of the last 2 seconds.
+      The audio sampling sensitivity interval defines the interval in
+      seconds used to compute the audio sensitivity level. By default
+      the value is set to 2 seconds, this means that the video server
+      normalizes the audio level considering the audio sources of the
+      last 2 seconds.
 
-      The value should be at least **0**.
+      The value should be at least **0**, but it should be set to
+      **10** seconds to provide the best performances.
+   
 
 .. _vs-record-meeting:
 
@@ -453,20 +459,27 @@ the |vs| or not.
 Configure |vs| Recording
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-To complete the setup, you need to execute a few commands. First,
-make sure that the functionality is enabled on the infrastructure.
+To complete the setup, you need to execute a few commands as the
+``zextras`` user. First, make sure that the functionality is enabled
+on the infrastructure at COS level.
 
 .. code:: console
 
-   # carbonio config set global teamVideoServerRecordingEnabled true
+   zextras$ carbonio config set cos attribute teamChatEnabled value true
 
 You need then to enable the actual recording on the rooms.
 
 .. code:: console
+          
+   zextras$ carbonio config set global teamVideoServerRecordingEnabled true
 
-   # carbonio config set global attribute teamChatEnabled value true
+Finally, allow all users to start a recording.
+   
+.. code:: console
+          
+   zextras$ carbonio config set global teamMeetingRecordingEnabled true
 
-.. note:: In this command, every user is allowed to record a
+.. note:: In this command, the policy allows every user to record a
    meeting. It is however possible to enforce this policy at user or
    COS level, to allow only selected users or members of a COS to
    record meetings.

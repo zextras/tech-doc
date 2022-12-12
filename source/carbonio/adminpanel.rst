@@ -12,7 +12,7 @@
 functionalities of |carbonio| and is installed by default from
 |product| 22.11.0 onwards. It is not available for previous versions,
 but can be installed after upgrading to that version, see
-:ref:`upgrade-22-11`.
+:ref:`carbonio-upgrade`.
 
 Like for every other component, it can be reached using a
 :ref:`supported browser <browser_compatibility>` and point it to
@@ -24,12 +24,55 @@ To access the |adminui|, the default user is
 first installation using the command shown in :ref:`Create System User
 <create-admin-user>`.
 
-|adminui| allows to manage the |product| domains, mailstores, accounts,
-|cos|, and privacy settings. The overall organisation of the panel is
-similar to the others components: a the *Top Bar* allows quick
-creation of a new domain or COS, while navigation items are on the
-left-hand side.
+|adminui| allows to manage the |product| domains, mailstores,
+accounts, |cos|, and privacy settings. The overall organisation of the
+panel is similar to the others components: a the *Top Bar* allows
+quick creation of a new domain or COS by clicking the |create| button,
+while navigation items are on the left-hand column.
 
 
-A dedicated *Administration Guide* featuring directions and advises to
-carry out the most common tasks will be added soon.
+.. A dedicated *Administration Guide* featuring directions and
+   advises to carry out the most common tasks will be added soon.
+
+.. _ap-domains:
+
+Domains
+=======
+
+.. include:: /common/adminpanel/domains.rst
+
+.. _ap-servers:
+
+Servers
+=======
+
+.. include:: /common/adminpanel/servers.rst
+
+
+.. _ap_cos:
+
+Class of Services (COS)
+=======================
+
+.. include:: /common/adminpanel/cos.rst
+
+.. _ap-subscriptions:
+
+Subscriptions
+=============
+   
+.. include:: /common/adminpanel/subscriptions.rst
+
+.. _ap-privacy:
+
+Privacy
+=======
+
+.. include:: /common/adminpanel/privacy.rst
+
+
+..
+   Backup
+   ======
+
+   Here we can put the current backup documentation

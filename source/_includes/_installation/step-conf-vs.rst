@@ -55,13 +55,6 @@ Execute the following command to configure video recording.
 
    zextras$ carbonio chats video-server add VS_IP port 8188 servlet_port 8090 secret VIDEOSERVER_PWD
 
-Finally, enable |vs| and the recording of meetings.
-
-.. code:: console
-
-   zextras$ carbonio config set global teamVideoServerRecordingEnabled true
-   zextras$ carbonio config set cos default teamChatEnabled true
-
 Here, port **8188** is the default port used by |vs|, while **8090**
 for recording. Change these values according to your needs or
 preferences, but take into account that the value of the
@@ -79,3 +72,17 @@ Remember also to replace ``VS_IP`` with the public IP address of the |vs|.
 
 For information about |vs|, advances settings, and recording
 options, refer to Section :ref:`videoserver`.
+
+Finally, enable |vs| at COS level, Video Recording, and the
+possibility for each user to record meetings.
+
+.. code:: console
+
+   zextras$ carbonio config set cos default teamChatEnabled true
+   zextras$ carbonio config set global teamVideoServerRecordingEnabled true
+   zextras$ carbonio config set global teamMeetingRecordingEnabled true
+
+.. note:: In the commands above, the policy allows every user to record a
+   meeting. It is however possible to enforce this policy at user or
+   COS level, to allow only selected users or members of a COS to
+   record meetings.
