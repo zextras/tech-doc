@@ -125,30 +125,3 @@ them in on the node with the Directory Server Role installed, which is
    .. code:: console
 
       # pending-setups -a
-
-.. _upgrade-appserver:
-
-AppServer Nodes
-~~~~~~~~~~~~~~~
-
-On nodes with the AppServer (**SRV5** and **SRV6** in our
-scenario), stop the zmcontrol service
-
-
-.. code:: console
-
-   zextras$ zmcontrol stop
-
-Then, upgrade the Node as described for the :ref:`Single-Server
-<upgrade-multi>` and make sure that the mailbox token has
-correct permissions.
-
-.. code:: console
-
-   # chmod a+r /etc/zextras/carbonio-mailbox/token
-
-Finally, as the ``zextras`` user, restart the mailbox service.
-
-.. code:: console
-
-   zextras$ zmcontrol start
