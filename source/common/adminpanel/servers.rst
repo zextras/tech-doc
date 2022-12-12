@@ -53,7 +53,6 @@ The dialog that opens after clicking the :bdg-primary-line:`NEW
 VOLUME` button allows to create a new HSM policy in a few steps.
 
 .. card:: 
-   :img-bottom: /img/adminpanel/new-hsm-settings.png
                 
    Step 1. Policy settings
    ^^^^^
@@ -68,8 +67,13 @@ VOLUME` button allows to create a new HSM policy in a few steps.
    interval. in our example, we remove all messages older than 7
    days whose size is larger than 20Mb.
 
+   +++++
+
+   .. image:: /img/adminpanel/new-hsm-settings.png
+      :scale: 50
+      :align: center
+
 .. card:: 
-   :img-bottom: /img/adminpanel/new-hsm-volumes.png
                 
    Step 2. Select Volumes
    ^^^^^
@@ -79,11 +83,23 @@ VOLUME` button allows to create a new HSM policy in a few steps.
    possible to manually specify the volumes from the list, we do not
    change this.
 
+   +++++
+
+   .. image:: /img/adminpanel/new-hsm-volumes.png
+      :scale: 50
+      :align: center
+              
 .. card:: 
-   :img-bottom: /img/adminpanel/new-hsm-create.png
                 
    Step 3. Create Policy
    ^^^^^
 
    The last stop shows the settings for review. You can go back to
    change any options or create the policy.
+
+   +++++
+
+   .. image:: /img/adminpanel/new-hsm-create.png
+      :scale: 50
+      :align: center
+              
