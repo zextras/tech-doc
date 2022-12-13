@@ -53,11 +53,6 @@ the following checklist for directions
    package is in the upgrade list, execute the steps in
    :ref:`bootstrap-db`.
 
-   :octicon:`check-circle;1em;sd-text-success` In a Multi-Server
-   installation, you need to execute some specific commands on the
-   :ref:`AppServer nodes <upgrade-appserver>`.
-
-
 .. _upgrade-single:
    
 Single-Server Upgrade Procedure
@@ -114,11 +109,18 @@ Single-Server Upgrade Procedure
    .. grid-item-card:: 
       :columns: 12 4 4 4
 
-      Step 3. Register upgraded packages to |mesh|
+      Step 3. Register upgraded packages to |mesh| and restart services
       ^^^^^
       .. code:: console
                 
          # pending-setups -a
+
+      to restart the services, execute as the ``zextras`` user
+
+      .. code:: console
+                
+         zextras$ zmcontrol stop
+         zextras$ zmcontrol start
       
       This command makes sure that all services will be registered
       correctly to |mesh| after they have been restarted after the
@@ -134,12 +136,17 @@ node**, following the same order used during the installation. If you
 installed your Multi-Server according to the scenario described in
 :ref:`multiserver-installation`, you should start the upgrade from
 **SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
-**SRV6**.
+**SRV6**. 
 
-To upgrade one node follow the same procedure as the Single-Server
-installation, unless you marked some item in the
-:ref:`upgrade-checklist`: in this case, execute the corresponding
-:ref:`upgrade-manual`.
+To upgrade one node, follow the same procedure as the Single-Server
+installation, except in these cases:
+
+* you marked some item in the :ref:`upgrade-checklist`: in this case,
+  execute the corresponding :ref:`upgrade-manual`.
+
+* you are upgrading an AppServer Node (**SRV5** and **SRV6** in our
+  scenario): in this case the upgrade procedure is slightly different,
+  Please refer to section :ref:`upgrade-appserver` for directions.
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -201,3 +208,24 @@ installation, unless you marked some item in the
       This command makes sure that all services will be registered
       correctly to |mesh| after they have been restarted after the
       upgrade.
+
+.. _upgrade-appserver:
+
+AppServer Nodes
+~~~~~~~~~~~~~~~
+
+On nodes with the AppServer (**SRV5** and **SRV6** in our
+scenario), stop the zmcontrol service
+
+
+.. code:: console
+
+   zextras$ zmcontrol stop
+
+Then, upgrade the node like the :ref:`other nodes <upgrade-multi>`.
+
+Finally, as the ``zextras`` user, restart the mailbox service.
+
+.. code:: console
+
+   zextras$ zmcontrol start
