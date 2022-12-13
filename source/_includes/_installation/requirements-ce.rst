@@ -75,6 +75,8 @@ install |product|.
    FQDN (``A`` record)
 #. Python 3, latest version available on the Operating System chosen
 #. Perl, latest version available on the Operating System chosen
+#. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
+   does not contain any IPv6 entries.  
 
 See :ref:`the dedicated box below <config-dns>` for details and examples.
 
