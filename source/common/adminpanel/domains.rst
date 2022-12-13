@@ -16,7 +16,6 @@ To create a new domain, fill in the form that opens upon clicking the
 |create| button.
 
 .. card::
-   :img-bottom: /img/adminpanel/new-domain.png
 
    Options for Domain ``acme.example``
    ^^^^
@@ -43,6 +42,13 @@ To create a new domain, fill in the form that opens upon clicking the
      alias URL, see Virtual Hosts below).
 
    The image below shows how a sample domain is created.
+
+   +++++
+
+   .. image:: /img/adminpanel/new-domain.png
+      :scale: 50
+      :align: center
+
 
 Further configuration option for the domain, including how to
 configure authentication and accounts in the domain, can be found in
@@ -148,7 +154,6 @@ We build on the domain created in :ref:`previous section
 <ap-domain-new>` and attach some property.
 
 .. card::
-   :img-bottom: /img/adminpanel/domain-details.png
 
    Additional settings for ``acme.example``
    ^^^^
@@ -168,6 +173,12 @@ We build on the domain created in :ref:`previous section
 
    #. **Default Class of Service**. The |cos| used by the domain,
       which is left to the ``default`` one.
+
+   +++++
+
+   .. image:: /img/adminpanel/domain-details.png
+      :scale: 50
+      :align: center
 
 ..
    GAL
