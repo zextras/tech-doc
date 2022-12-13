@@ -396,20 +396,22 @@ Audio Sensitivity
 The administrator can optimize the audio sensitivity with these two
 commands:
 
-``zxsuite config global set attribute teamChatAudioLevelSensitivity value 25``
+``zxsuite config global set attribute teamChatAudioLevelSensitivity value 55``
 
-``zxsuite config global set attribute teamChatAudioSamplingSensitivityInterval value 2``
+``zxsuite config global set attribute teamChatAudioSamplingSensitivityInterval value 10``
 
 The audio level sensitivity defines how much the audio should be
 normalized between all the audio sources. The value has a range between
 0 and 100 where 0 represents the audio muted and 100 the maximum audio
 level (too loud).
 
-By default the value is set to **25**.
+By default the value is set to **55**, which is also the value
+suggested for optimal performances
 
 The audio sampling sensitivity interval defines the interval in seconds
 used to compute the audio sensitivity level. By default the value is set
 to 2 seconds, this means that the video server normalizes the audio
 level considering the audio sources of the last 2 seconds.
 
-The value should be at least **0**.
+The value should be at least **0**, but it should be set to **10**
+seconds to provide the best performances.
