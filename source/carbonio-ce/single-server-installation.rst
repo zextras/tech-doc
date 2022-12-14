@@ -13,8 +13,6 @@ During the installation and configuration of |product|, it is
 necessary to execute commands from the command line, so make sure you
 have access to it.
 
-.. include:: /_includes/_installation/requirements-ce.rst
-
 .. _preliminary-rh:
 
 RHEL 8-only Preliminary Tasks
