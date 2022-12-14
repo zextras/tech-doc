@@ -157,85 +157,99 @@ Additional requirements
 
          # systemctl restart dnsmasq
 
-..
-   .. _software_preconf:
+.. _fw-ports:
 
-   Required Configuration
-   ----------------------
+Firewall Ports
+--------------
 
-   For |ce| to operate properly, it is necessary to allow
-   communication on specific ports.
+For |ce| to operate properly, it is necessary to allow
+network communication on specific ports.
 
-   .. grid::
-      :gutter: 2
+.. dropdown:: TCP External connections
+   :open: 
+	     
+   .. csv-table::
+      :header: "Port", "Service"
+      :widths: 10 90
 
-      .. grid-item-card:: External connections
-         :columns: 6
+      "25", "Postfix incoming mail"
+      "80", "unsecured connection to the Carbonio web client"
+      "110", "external POP3 services"
+      "143", "external IMAP services"
+      "443", "secure connection to the Carbonio web client"
+      "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
+      "587", "Port for smtp autenticated relay, requires STARTTLS
+      (or opportunistic SSL/TLS)"
+      "993", "external IMAP secure access"
+      "995", "external POP3 secure access"
 
-         Firewall ports
-         ^^^^^
+   .. [1] This port is still used since in some cases it is
+      considered safer than 587. It requires on-connection SSL.
 
-         .. csv-table::
-       :header: "Port", "Service"
-       :widths: 10 90
+   .. warning:: SMTP, IMAP, and POP3 ports should be exposed only if
+      really needed, and preferably only accessible from a VPN tunnel,
+      if possible, to reduce the attack surface.
 
-       "25", "Postfix incoming mail"
-       "80", "unsecured connection to the Carbonio web client"
-       "110", "external POP3 services"
-       "143", "external IMAP services"
-       "443", "secure connection to the Carbonio web client"
-       "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
-       "587", "Port for smtp autenticated relay, requires STARTTLS
-       (or opportunistic SSL/TLS)"
-       "993", "external IMAP secure access"
-       "995", "external POP3 secure access"
+.. dropdown:: TCP Internal connections
+   :open:
 
-         .. [1] This port is still used since in some cases it is
-           considered safer than 587. It requires on-connection
-           SSL.
+   .. csv-table::
+      :header: "Port", "Service"
+      :widths: 10 90
 
-         .. warning:: SMTP, IMAP, and POP3 ports should be exposed only
-       if really needed, and preferably only accessible from a VPN
-       tunnel, if possible, to reduce the attack surface.
+      "22", "SSH access"
+      "389", "unsecure LDAP connection"
+      "636", "secure LDAP connection"
+      "3310", "ClamAV antivirus access"
+      "6071", "secure access to the Admin Panel"
+      "7025", "local mail exchange using the LMTP protocol"
+      "7026", "bind address of the Milter service"
+      "7047", "used by the server to convert attachments"
+      "7072", "NGINX discovery and authentication"
+      "7073", "SASL discovery and authentication"
+      "7110", "internal POP3 services"
+      "7143", "internal IMAP services"
+      "7171", "access Carbonio configuration daemon (zmconfigd)"
+      "7306", "MySQL access"
+      "7780", "the spell checker service access"
+      "7993", "internal IMAP secure access"
+      "7995", "internal POP3 secure access"
+      "8080", "internal HTTP services access"
+      "8443", "internal HTTPS services access"
+      "8735", "Internal mailbox :octicon:`arrow-both` mailbox	communication"
+      "8742", "internal HTTP services for advanced module"
+      "8743", "internal HTTPS services for advanced module"
+      "9071", "used only in one case [2]_"
+      "10024", "Amavis :octicon:`arrow-both` Postfix"
+      "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
+      "10026", "configuring Amavis policies"
+      "10028", "Amavis :octicon:`arrow-both` content filter"
+      "10029", "Postfix archives access"
+      "10032", "Amavis :octicon:`arrow-both` SpamAssassin"
+      "23232", "internal Amavis services access"
+      "23233", "SNMP-responder access"
+      "11211", "memcached access"
+      
+   .. [2] When the NGINX support for Administration Console and the
+      ``mailboxd`` service run on the same host, this port can be used
+      to avoid overlaps between the two services
 
-      .. grid-item-card:: Internal connections
-         :columns: 6
+.. dropdown:: Ports used by |mesh| 
+   :open:
 
-         Firewall ports
-         ^^^^^
+   These ports are used by |mesh| internally.
+   
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 20 70
 
-         .. csv-table::
-       :header: "Port", "Service"
-       :widths: 10 90
+      "8300", "TCP Only", "management of incoming requests from other agents"
+      "8301", "TCP and UDP", "management of gossip protocol [3]_ in the LAN"
+      "8600", "TCP and UDP", "DNS resolutions"
+      "8500", "TCP Only", "clients access to HTTP API"
+      "21000-21255", "TCP range only", "Automatical Sidecar service
+      registrations"
 
-       "389", "unsecure LDAP connection"
-       "636", "secure LDAP connection"
-       "3310", "ClamAV antivirus access"
-       "7025", "local mail exchange using the LMTP protocol"
-       "7047", "used by the server to convert attachments"
-       "7071", "secure access to the Administrator console"
-       "7072", "NGINX discovery and authentication"
-       "7073", "SASL discovery and authentication"
-       "7110", "internal POP3 services"
-       "7143", "internal IMAP services"
-       "7171", "access Carbonio configuration daemon (zmconfigd)"
-       "7306", "MySQL access"
-       "7780", "the spell checker service access"
-       "7993", "internal IMAP secure access"
-       "7995", "internal POP3 secure access"
-       "8080", "internal HTTP services access"
-       "8443", "internal HTTPS services access"
-       "9071", "used only in one case [2]_"
-       "10024", "Amavis :octicon:`arrow-both` Postfix"
-       "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
-       "10026", "configuring Amavis policies"
-       "10028", "Amavis :octicon:`arrow-both` content filter"
-       "10029", "Postfix archives access"
-       "10032", "Amavis :octicon:`arrow-both` SpamAssassin"
-       "23232", "internal Amavis services access"
-       "23233", "SNMP-responder access"
-       "11211", "memcached access"
-
-       .. [2] When the NGINX support for Administration Console and
-          the ``mailboxd`` service run on the same host, this port can
-          be used to avoid overlaps between the two services
+   .. [3] The Gossip protocol is an encrypted communication protocol
+      used by |mesh| for message broadcasting and membership
+      management.
