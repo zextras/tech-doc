@@ -95,10 +95,11 @@ and has the following requirements:
       Ports
       ^^^^
 
-      -  The mailbox server will establish a WebSocket on port 8188 (TCP) to
-         communicate with the Video Server
+      - The mailbox server will establish a WebSocket on port 8188
+        (TCP) to communicate with the Video Server
 
-      -  Clients will use a random UDP port between 20000 and 40000
+      - Connecting browsers will use a random UDP port between 20000
+        and 40000 on the public IP of the |vs|
 
 .. warning::
 
@@ -203,7 +204,7 @@ control the service are straightforward:
 
 -  Start the connection pool::
 
-     zxsuite team doStartService team-videoserver-pool.
+     zxsuite team doStartService team-videoserver-pool
 
 -  Shutdown the connection pool::
 

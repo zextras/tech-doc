@@ -70,9 +70,10 @@ the usability of this software as an EAS client.
 Outlook Advanced Logging
 ------------------------
 
-Outlook 2013 includes the option to activate an "Advanced Logging" mode
-that can sometimes be useful to the troubleshooting process. Please see
-`this Microsoft KB article <https://support.microsoft.com/kb/2260527>`_
+Outlook 2013 includes the option to activate an "Advanced Logging"
+mode that can sometimes be useful to the troubleshooting
+process. Please see `this Microsoft KB article
+<https://support.microsoft.com/en-us/topic/how-to-enable-global-and-advanced-logging-for-microsoft-outlook-15c74560-2aaa-befd-c256-7c8823b1aefa>`_
 to learn more about "Global" and "Advanced" logging.
 
 .. _outlook_sync_issues_folder:

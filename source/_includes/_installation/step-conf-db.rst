@@ -4,9 +4,12 @@
 
 |product| relies on a number of databases to store and keep track of
 all the objects it needs to manage. The main database can be
-configured in two steps.
+configured in two steps, but if you are running |product| on RHEL 8,
+please first configure Postgres according to the :ref:`guidelines
+<preliminary-rh>`.
 
-The first step is to create a role and password with administrative rights.
+The first step is to create a role with administrative rights and an
+associated password.
 
 .. code:: console
 
@@ -15,7 +18,8 @@ The first step is to create a role and password with administrative rights.
 Remember to replace the password with a **robust** password of your
 choice and store it in a safe place (preferably using a password
 manager), as you need it in the remainder of the procedure, and you
-also might need them in the future.
+also might need them in the future. This password will be denoted as
+|dbadmpwd|.
 
 The second step is to create the database.
 

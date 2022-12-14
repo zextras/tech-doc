@@ -35,5 +35,5 @@
 
 \(M) == mandatory parameter, (O) == optional parameter
 
-zxsuite core createVolume EMC bucketName accessKey secretKey url
+zxsuite core doCreateBucket EMC bucketName accessKey secretKey url
 http://host/service

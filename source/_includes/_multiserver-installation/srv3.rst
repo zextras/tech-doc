@@ -25,33 +25,48 @@ sends and receives emails.
 
 These following tasks must be executed to configure the MTA.
 
-#. Bootstrap |carbonio|, using ``SRV2_hostname`` and ``LDAP_PWD`` when
-   required
+#. Bootstrap |carbonio|
 
    .. code:: console
 
       # carbonio-bootstrap
+
+   In the bootstrap menu, use |srv2h|, |ldappwd|,
+   |postfixpwd|, and |amavispwd| in the following items to
+   complete successfully the bootstrap.
+
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
+   * ``Bind password for postfix ldap user``: |postfixpwd|
+   * ``Bind password for amavis ldap user``: |amavispwd|
 
 #. Copy the credentials from the |mesh| server node (SRV2) to the
    local server
 
    .. code:: console
 
-      # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-   .. hint:: the SRV2_IP can be retrieved using command :command:`su -
-      zextras -c "zmprov gas service-discover"`
-
-#. Run |mesh| setup using ``MESH_CLUSTER_PWD``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 
       # service-discover setup-wizard
+
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
+
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
 
 .. card::
 
    Values used in the next steps
    ^^^^
 
-   * ``MTA_IP``: the IP address of this node
+   * |mtaip| the IP address of this node

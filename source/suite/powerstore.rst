@@ -135,7 +135,7 @@ to use CLI commands.
      connection. You can also enter the IP address of the provider
      instead of the URL.
 
-   See the :ref:`doCreateBucket S3 <core_doCreateBucket_S3>` full
+   See the :ref:`doCreateBucket S3 <zxsuite_core_doCreateBucket_S3>` full
    reference for details and more options.
 
    When successful, the command outputs a string, which is the unique
@@ -169,7 +169,7 @@ to use CLI commands.
    * *centralized true* creates the volume as centralized
 
    See the :ref:`doCreateVolume
-   S3<zxsuite_powerstore_doCreateVolume_S3>` full reference for
+   S3 <zxsuite_powerstore_doCreateVolume_S3>` full reference for
    details and more options.
 
 4.  Set the volume to *current*, to let it receive data immediately::
@@ -711,7 +711,7 @@ A policy can consist of a single rule that is valid for all item types
 (*Simple* policy) or multiple rules valid for one or more item types
 (*Composite* policy). Also, an additional *sub-rule* can be defined
 using Zimbra’s `search
-syntax <http://wiki.zimbra.com/wiki/Zimbra_Web_Client_Search_Tips>`_.
+syntax <https://wiki.zimbra.com/wiki/Zimbra_Web_Client_Search_Tips>`_.
 
 .. _pws_policy_examples:
 
@@ -809,7 +809,8 @@ officially supported platforms:
 
 -  Cloudian
 
--  Custom S3 (any unsupported S3-compliant solution)
+-  Custom S3 (any unsupported S3-compliant solution), using both V2
+   and V4 authentication
 
 .. _pws_primary_volumes_and_the_incoming_directory:
 
@@ -1107,7 +1108,7 @@ has been enabled on the volume.
 .. seealso::
    
    The official Amazon S3 documentation on `Intelligent Tiering
-   <https://aws.amazon.com/s3/storage-classes/#Unknown_or_changing_access/>`_
+   <https://aws.amazon.com/s3/storage-classes/intelligent-tiering/>`_.
 
 .. _pws_item_deduplication:
 

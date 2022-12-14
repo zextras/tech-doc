@@ -2,9 +2,16 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv1 - AppServer - Advanced - Preview - Logger
+.. srv6 - AppServer - Advanced - Preview - Logger
 
-On this node, first install all the necessary packages:
+
+On this node we install the Preview, the Logger, the User Management,
+and advanced services.
+
+.. hint:: We suggest that *Preview* and the |docs|-related packages be
+   installed on different physical nodes.
+
+First install all the necessary packages:
 
 .. tab-set::
 
@@ -14,46 +21,58 @@ On this node, first install all the necessary packages:
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-preview \
-           carbonio-advanced carbonio-zal  carbonio-logger
+           carbonio-user-management carbonio-advanced carbonio-zal \
+           carbonio-preview carbonio-logger
 
    .. tab-item:: RHEL
       :sync: rhel
 
+      Make sure to respect the order of installation.
+
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-preview \
-           carbonio-advanced carbonio-zal  carbonio-logger
+         # dnf install service-discover-agent carbonio-appserver
+         # dnf install carbonio-user-management carbonio-advanced carbonio-zal
+         # dnf install carbonio-preview carbonio-logger 
 
-Execute the following tasks: make sure you keep at hand the data
-configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
-``MESH_CLUSTER_PWD``, and ``MTA_IP``).
+Execute the following tasks.
 
-#. Bootstrap |carbonio|, using the data from previous tasks when
-   required
-   
+#. Bootstrap |carbonio|
+
    .. code:: console
 
       # carbonio-bootstrap
+
+   In the bootstrap menu, use |srv2h|, and |ldappwd| in
+   the following  items to complete successfully the bootstrap.
+
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server.
 
    .. code:: console
 
-      # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-   .. hint:: the SRV2_IP can be retrieved using command :command:`su -
-      zextras -c "zmprov gas service-discover"`
-
-#. Run |mesh| setup using ``MESH_CLUSTER_PWD``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 
       # service-discover setup-wizard
 
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
+
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
+   
 #. Fix carbonio-mailbox token access
 
    .. code:: console
@@ -67,17 +86,29 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
    .. code-block:: ini
       :linenos:
 
-      nginx_lookup_server_full_path_urls = https://127.0.0.1:7072 #<<--- must be the address of the application server. for a single server it's ok
-      memcached_server_full_path_urls = 127.0.0.1:11211           #<<--- must be the address of the memcached server. for a single server it's ok
+      nginx_lookup_server_full_path_urls = https://172.16.0.16
+      memcached_server_full_path_urls = 172.16.0.14:11211
 
    Make sure that:
 
-   * in line 1 protocol is **https** and the IP address the current
-     node's (SRV6) IP
-   * in line 2 there is the Memcached node's (SRV5) IP
+   * in line 1 protocol is **https** and the IP address is the address
+     of one AppServer, we use the current node's IP Address for
+     simplicity
+   * in line 2 |vsip| is written, to allow this node's access to
+     Memcached, which is installed on the *Proxy Node*
 
-#. Restart the mailbox process
+#. Restart the |pv| process
 
    .. code:: console
 
-      # su - zextras -c "zmmailboxdctl restart"
+      # systemctl restart carbonio-preview
+      # systemctl restart carbonio-preview-sidecar
+
+#. As last task, restart the mailbox process as the ``zextras`` user
+
+   .. code:: console
+
+      zextras$ zmcontrol stop
+      zextras$ zmcontrol start
+
+To configure the Logger, please refer to Section :ref:`logger_node_config`.

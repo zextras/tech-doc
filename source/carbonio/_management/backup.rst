@@ -94,7 +94,7 @@ up.
 
      .. code:: console
 
-        carbonio config server set $(zmhostname) attribute ZxBackup_DestPath value /opt/carbonio-backup
+        carbonio config set server $(zmhostname) ZxBackup_DestPath /opt/carbonio-backup
 
      After defining the backup path, it must be initialised: simply
      simply :ref:`start SmartScan <running_a_smartscan>`, either from
@@ -539,14 +539,14 @@ Then, all configuration metadata in the backup are updated, so that
 domains, accounts, COSs and server configurations are stored along with
 a dump of all configuration.
 
-When LDAP is part of the setup, SmartScan will save in the Backup Path a
-compressed LDAP dump that can also be used standalone to restore a
-broken LDAP configuration.
+When the backup contains LDAP data, SmartScan will save in the Backup
+Path a compressed dump that can also be used standalone to
+restore a broken configuration.
 
 .. note:: In case the LDAP backup can not be executed (e.g., because
-   the access credential are wrong or invalid, SmartScan will simply
-   ignore to back up the LDAP configuration, but will nonetheless save
-   a backup of all the remaining configuration
+   the access credential are wrong or invalid), SmartScan will simply
+   ignore to back up the Directory Server configuration, but will
+   nonetheless save a backup of all the remaining configuration
 
 When the  External Restore functionality is active, SmartScan
 creates one (daily) archive for each account which include all the
@@ -682,7 +682,7 @@ Enabling the Real Time Scanner
       ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``true``::
 
-         # carbonio config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value TRUE
+         # carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner TRUE
 
 .. _disabling_the_real_time_scanner:
 
@@ -708,7 +708,7 @@ Disabling the Real Time Scanner
       ``ZxBackup_RealTimeScanner`` property of the |backup| component must
       be set to ``false``::
 
-        # carbonio config server set $(zmhostname) attribute ZxBackup_RealTimeScanner value FALSE
+        # carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner FALSE
 
 .. topic:: When Should the Real Time Scanner Be Disabled?
 
@@ -735,6 +735,63 @@ Scan on the given account is triggered BEFORE the restore.
 
 This fixes any misaligned data and sanitizes the backed up metadata for
 the mailbox.
+
+Blobless Backup Mode
+====================
+
+|product|\'s Blobless Backup Mode is a feature that avoids backing up
+item blobs while still safeguarding all other item-related
+information.
+
+This mode is designed to take advantage of advanced storage
+capabilities of the storage solution such as built-in backup or data
+replication optimizing both the backup module’s disk space usage and
+restore speed.
+
+
+There is only one requirements to enable Blobless Backup Mode
+
+* No "independent" third-party volumes must exist: Blobless Backup
+  Mode is only compatible with local volumes and centralised
+  third-party volumes.
+
+Blobless Backup Mode is storage-agnostic and can be enabled on any
+server or infrastructure that meets the requirements above regardless
+of the specific storage vendor.
+
+How Blobless Backup Mode works
+------------------------------
+
+Blobless Backup Mode works exactly as its default counterpart: the
+RealTime Scanner takes care of backing up item changes while the
+SmartScan manages domain/cos/account consistency, the only difference
+between the two is that in Blobless Backup Mode the backup contains no
+items of kind ``blob`` while still saving all metadata and transaction
+history.
+
+It's essential to consider that once enabled, Blobless Backup Mode
+affects the entire server and no blobs get backed up regardless of the
+target volume and HSM policies.
+
+.. warning:: When the backup is set to Blobless Mode, BLOBs will not
+   be deleted until those are out of the retention period.
+
+Enabling Blobless Backup Mode
+-----------------------------
+
+Blobless Backup Mode can be enabled or disabled through the
+``backupBloblessMode`` configuration attribute at global and server
+level, for example to enable it globally:
+
+.. code:: console
+
+   # carbonio config global set attribute backupBloblessMode value true
+   
+Or to enable it only for domain mail.example.com:
+   
+.. code:: console
+
+   # carbonio config server set mail.example.com attribute backupBloblessMode value true
 
 .. _backup_purge_2:
 
@@ -858,149 +915,150 @@ discuss those cases here.
    contacts the SMTP server to send the email and automatically passes
    the email to :command:`mailboxd`.
 
-.. _troubleshooting_ldap_backup:
+..
+   .. _troubleshooting_ldap_backup:
 
-Troubleshooting LDAP Backup
-===========================
+   Troubleshooting LDAP Backup
+   ===========================
 
-In some cases, when backing up a mailbox server, the backup of only the
-LDAP data may fail and completes with a warning::
+   In some cases, when backing up a mailbox server, the backup of only the
+   LDAP data may fail and completes with a warning::
 
-   Unable to backup LDAP config schema: missing `ldap_root_password` in localconfig.
+      Unable to backup LDAP config schema: missing `ldap_root_password` in localconfig.
 
-In this section we provide some suggestions to tackle this problem.
+   In this section we provide some suggestions to tackle this problem.
 
-.. _increase_log_verbosity:
+   .. _increase_log_verbosity:
 
-Increase Log Verbosity
-----------------------
+   Increase Log Verbosity
+   ----------------------
 
-Depending on the mailbox server configuration, a number of log messages
-are saved in the log file. In case an LDAP backup fails and the log file
-does not report enough messages to identify the root cause of the
-failure, a first solution is to increase the **verbosity** of the log
-file.
-   
-.. code:: console
+   Depending on the mailbox server configuration, a number of log messages
+   are saved in the log file. In case an LDAP backup fails and the log file
+   does not report enough messages to identify the root cause of the
+   failure, a first solution is to increase the **verbosity** of the log
+   file.
 
-   # carbonio config server set $(zmhostname) attribute ZxCore_LogLevel value 0
+   .. code:: console
 
-Now, run a backup using the following command (that only backs up the
-LDAP data) and check again the log file.
+      # carbonio config set server $(zmhostname) ZxCore_LogLevel 0
 
-.. code:: console
+   Now, run a backup using the following command (that only backs up the
+   LDAP data) and check again the log file.
 
-   # carbonio --json backup doBackupLDAP start
+   .. code:: console
 
-After the command completes and you have finished analysing the log
-file, remember to restore the verbosity to the previous level:
+      # carbonio --json backup doBackupLDAP start
 
-.. code:: console
+   After the command completes and you have finished analysing the log
+   file, remember to restore the verbosity to the previous level:
 
-   # carbonio config server set $(zmhostname) attribute ZxCore_LogLevel value 1
+   .. code:: console
 
-.. hint:: Increasing log verbosity can prove useful whenever
-   troubleshooting a problem or searching for more information about a
-   problem.
+      # carbonio config set server $(zmhostname) ZxCore_LogLevel 1
 
-.. _missing_root_credentials:
+   .. hint:: Increasing log verbosity can prove useful whenever
+      troubleshooting a problem or searching for more information about a
+      problem.
 
-Missing root credentials
-------------------------
+   .. _missing_root_credentials:
 
-To be able to back up LDAP data, |product| needs to establish a remote
-connection to the LDAP server using **LDAP root credentials**.
+   Missing root credentials
+   ------------------------
 
-In particular, the password is saved in the **localconfig**, but
-on a mailbox server where the LDAP component is not installed, the
-**LDAP root password** is empty. Therefore, the LDAP connection
-**fails** with an **invalid credentials error** and the backup of the
-LDAP data is not produced.
+   To be able to back up LDAP data, |product| needs to establish a remote
+   connection to the LDAP server using **LDAP root credentials**.
 
-This situation can be verified by using the following sequence of
-commands on a mailbox server:
+   In particular, the password is saved in the **localconfig**, but
+   on a mailbox server where the LDAP component is not installed, the
+   **LDAP root password** is empty. Therefore, the LDAP connection
+   **fails** with an **invalid credentials error** and the backup of the
+   LDAP data is not produced.
 
-.. code:: console
+   This situation can be verified by using the following sequence of
+   commands on a mailbox server:
 
-   # su - zextras
-   # source bin/zmshutil
-   # zmsetvars
-   # ldapwhoami -x -D $zimbra_ldap_userdn -w $zimbra_ldap_password -H $ldap_master_url
+   .. code:: console
 
-The last command should complete with output::
+      # su - zextras
+      # source bin/zmshutil
+      # zmsetvars
+      # ldapwhoami -x -D $zimbra_ldap_userdn -w $zimbra_ldap_password -H $ldap_master_url
 
-   dn:uid=zimbra,cn=admins,cn=zimbra
+   The last command should complete with output::
 
-Now, running the command
+      dn:uid=zimbra,cn=admins,cn=zimbra
 
-.. code:: console
+   Now, running the command
 
-   # ldapwhoami -x -D "cn=config" -w $ldap_root_password -H $ldap_master_url
+   .. code:: console
 
-should output ``dn:cn=config``. If this is **not** the case, then the
-LDAP root password is either wrong or not stored in the local
-configuration.
+      # ldapwhoami -x -D "cn=config" -w $ldap_root_password -H $ldap_master_url
 
-To fix the problem, follow this three step procedure.
+   should output ``dn:cn=config``. If this is **not** the case, then the
+   LDAP root password is either wrong or not stored in the local
+   configuration.
 
-.. grid:: 
-   :gutter: 3
-            
-   .. grid-item-card::
+   To fix the problem, follow this three step procedure.
 
-      1. Discover the ldap master server.
-      ^^^^^^
-      .. code:: console
+   .. grid:: 
+      :gutter: 3
 
-         zmlocalconfig ldap_master_url
+      .. grid-item-card::
 
-   .. grid-item-card::
+         1. Discover the ldap master server.
+         ^^^^^^
+         .. code:: console
 
-      2. Obtain the root password.
-      ^^^^^
+            zmlocalconfig ldap_master_url
 
-      Connect to the ldap master server and get the LDAP root password.
+      .. grid-item-card::
 
-      .. code:: console
+         2. Obtain the root password.
+         ^^^^^
 
-         zmlocalconfig -s ldap_root_password
+         Connect to the ldap master server and get the LDAP root password.
 
-      This command will print on the standard output the LDAP password,
-      that you need to store on all mailbox servers on which either
-      ``carbonio`` is running, or LDAP backup is enabled, or both. 
+         .. code:: console
 
-   .. grid-item-card::
+            zmlocalconfig -s ldap_root_password
 
-      3. Save password on all mailstores.
-      ^^^^^^
-      
-      Execute *on every mailstore* the following commands, in which
-      **$LDAPPASSWORD** is the LDAP password obtained in the
-      previous step.
+         This command will print on the standard output the LDAP password,
+         that you need to store on all mailbox servers on which either
+         ``carbonio`` is running, or LDAP backup is enabled, or both. 
 
-      .. code:: console
+      .. grid-item-card::
 
-         # su - zextras
-         # zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
+         3. Save password on all mailstores.
+         ^^^^^^
 
-      Finally, restart the mailbox service to avoid cached credentials problems.
+         Execute *on every mailstore* the following commands, in which
+         **$LDAPPASSWORD** is the LDAP password obtained in the
+         previous step.
 
-      .. code:: console
+         .. code:: console
 
-         # zmmailboxdctl restart
+            # su - zextras
+            # zmlocalconfig -e -f ldap_root_password="$LDAPPASSWORD"
 
-.. _disable_ldap_backup:
+         Finally, restart the mailbox service to avoid cached credentials problems.
 
-Disable LDAP Backup
--------------------
+         .. code:: console
 
-In case you do not want to backup LDAP data together with |product|
-you can disable it entirely. On each mailbox server, to disable LDAP
-Backup, run this command.
+            # zmmailboxdctl restart
 
-.. code:: console
+   .. _disable_ldap_backup:
 
-   # carbonio config set server $(zmhostname) ldapDumpEnabled false
+   Disable LDAP Backup
+   -------------------
+
+   In case you do not want to backup LDAP data together with |product|
+   you can disable it entirely. On each mailbox server, to disable LDAP
+   Backup, run this command.
+
+   .. code:: console
+
+      # carbonio config set server $(zmhostname) ldapDumpEnabled false
 
 .. _backup_on_external_storage:
 

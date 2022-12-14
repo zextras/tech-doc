@@ -2,9 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-==================
- |carbonio| Usage
-==================
+.. _carbonio-usage:
+
+========================
+ |carbonio| User Guides
+========================
 
 .. include:: /_includes/_usage/intro-ce.rst
 
@@ -53,6 +55,9 @@ Contacts
 Chats
 =====
 
+.. make sure to verify which are the ADV features that are not ported
+   to CE!
+   
 The |team| component, which includes also videoconferencing
 functionalities, will soon be available.
 

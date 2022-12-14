@@ -45,7 +45,7 @@ copyright = '2022, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = '22.12.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
@@ -62,11 +62,12 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_includes', 'cli', 'common/carbonio', 'glossary.rst']
+exclude_patterns = ['_includes', 'cli', 'glossary.rst', 'common/adminpanel']
 
 rst_prolog = """
 
 .. |product| replace:: Carbonio
+.. |storage| replace:: Carbonio Storages
 
 """ + open("replace.txt").read()
 
@@ -97,9 +98,20 @@ html_css_files = [ 'css/carbonio.css' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
-# html_theme_options = {
-#     'analytics_id': 'UA-23692145-1',
-#     'analytics_anonymize_ip': False,
-#     'collapse_navigation': False
-# }
+html_theme_options = {
+    'collapse_navigation': False
+}
 html_context = { 'hubhome' : '%s' %hubhome }
+
+# -- Options for linkcheck output --------------------------------------------
+
+# list of URLs to ignore
+linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
+                     'https:\/\/my-saml-provider\.org\/',
+                     'https:\/\/notifications.zextras.com\/firebase\/',
+                     r'https://mycompany.okta.com/.*',
+                     r'../../.*' ]
+
+# there are more options, but at the moment we don't need them. They
+# can be found at
+# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder

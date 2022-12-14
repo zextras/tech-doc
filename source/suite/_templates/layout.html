@@ -6,18 +6,6 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 {% extends "!layout.html" %}
 
-{%- block extrahead %}
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23692145-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-23692145-1');
-  gtag('config', 'G-Q5GXXJPW12');
-</script>
-{% endblock %}
 
 {%- block htmltitle %}
 <title> {{ doctitle }} </title>
@@ -27,7 +15,7 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 <hr />
 <ul>
   <li class="toctree-l1">
-    <a class="icon icon-home" href="../../landing/zextras_documentation.html"> Back to
+    <a class="icon icon-home"  href="{{ hubhome }} "> Back to
       Zextras Documentation hub
     </a>
   </li>
@@ -35,7 +23,9 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 {% endblock %}
 {% block sidebartitle %}
 <a href="{{ pathto(master_doc) }}"><img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
-  <p> {{ project }}</p>
+  <p> {{ project }} <br>
+    {{ release}}
+  </p>
 </a>
    
 {%- if theme_display_version %}

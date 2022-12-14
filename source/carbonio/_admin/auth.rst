@@ -206,19 +206,13 @@ In order to enable the authentication strategies available in
       In order to properly have 2FA set up, the ``zimbraAuthMech`` attribute
       bust be configured at domain level::
 
-        zmprov modifyDomain example.com zimbraAuthMech custom:zx
+        carbonio prov modifyDomain example.com zimbraAuthMech custom:zx
 
-      To enable 2FA it is also necessary to:
+      To enable 2FA it is also necessary, **for all services**:
 
-      - Enter the addresses of all mailbox and MTAs as
-        ``ZimbraMailTrustedIp``, using the command::
+      - to define a ``trusted ip range``
 
-          zmprov mcf +zimbramailtrustedip IP_ADDRESS
-
-      -  A ``trusted ip range`` must be defined for all services
-
-      -  For all services the ``ip_can_change`` attribute must be validated on
-         ``true`` and ``2fa_policy = 1``
+      - to set the ``ip_can_change`` on ``true`` and ``2fa_policy`` to 1
 
       .. warning:: 2FA requires a specific zimbraAuthMech and this makes it
          not compatible with other mechanism such as ldap, ad or kerberos5
@@ -228,35 +222,9 @@ In order to enable the authentication strategies available in
 
       SAML Requirements
       ^^^^
-
-      Before enabling SAML login, it is necessary to modify the
-      Backend processing, because these header attributes are required
-      to compose the complete URL request: **Protocol X** and
-      **X-Port**.
-
-      The files affected by this change are the templates:
-
-      -  ``nginx.conf.web.http.default.template``
-
-      -  ``nginx.conf.web.http.template``
-
-      -  ``nginx.conf.web.https.default.template``
-
-      -  ``nginx.conf.web.https.template``
-
-      In each of them, the ``location ^~ /zx/`` code should be changed.
-
-      .. code:: nginx
-
-         location ^~ /zx/
-           {
-               proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-               proxy_set_header Host $http_host;
-               proxy_set_header X-Forwarded-Proto $scheme;
-               proxy_set_header X-Forwarded-Port $server_port;
-               proxy_pass ${web.upstream.zx};
-           }
-
+      There is no special requirement to enable SAML, besides
+      having a SAML IDP Provider.
+      
 .. _auth_set_up_saml:
 
 Setting up SAML Configuration
@@ -299,14 +267,14 @@ assuming that this URL is
 https://my-saml-provider.org/simplesaml/saml/idp/metadata.php, you can
 import the configuration using the command:
 
-.. code:: bash
+.. code:: console
 
    # carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
 
 .. note:: The URL supplied by the SAML IDP for an unsecured connection
    may be slight different from the previous one, like in our example.
 
-.. code:: bash
+.. code:: console
 
    # carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
 
@@ -342,7 +310,7 @@ default SAML settings, modify them, then save and import them back.
 
       In order to export the default SAML setting, use
 
-      .. code:: bash
+      .. code:: console
 
          # carbonio auth saml get example.com export_to /tmp/saml.json
 
@@ -371,17 +339,19 @@ default SAML settings, modify them, then save and import them back.
       The :file:`/tmp/saml.json`` file should look similar to this
       one:
 
-      .. dropdown::
+      .. dropdown:: Simple ``saml.json`` file
+         :open:
 
          .. code:: json
+
 
             {
               "sp.entityid":"https://SP_URL/zx/auth/samlMetadata?domain=example.com",
               "sp.assertion_consumer_service.url":"https://SP_URL/zx/auth/saml",
               "sp.nameidformat":"urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
               "sp.assertion_consumer_service.binding":"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
-              "sp.single_logout_service.url":"https://SP_URL/?loginOp=logout",
               "sp.single_logout_service.binding":"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+              "sp.single_logout_service.url":"https://SP_URL/?loginOp=logout",
               "sp.x509cert":"aabbcc",
 
               "idp.entityid":"https://IDP-URL/simplesamlphp/saml2/idp/metadata.php",
@@ -397,7 +367,6 @@ default SAML settings, modify them, then save and import them back.
               "security.requested_authncontextcomparison":"exact",
               "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
               "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
-              "security.logoutresponse_signed":"false",
               "security.want_nameid_encrypted":"false",
               "security.want_assertions_encrypted":"false",
               "security.want_assertions_signed":"false","debug":"true",
@@ -405,8 +374,8 @@ default SAML settings, modify them, then save and import them back.
               "security.authnrequest_signed":"false",
               "security.want_xml_validation":"true",
               "security.logoutrequest_signed":"false"
+              "security.logoutresponse_signed":"false",
             }
-
 
       Values appearing in the above code excerpt are taken from the
       example in the previous section. Certificates must be valid,
@@ -421,13 +390,111 @@ default SAML settings, modify them, then save and import them back.
       The final step is to save the changes made to the file and import
       it into |product| using the command:
 
-      .. code:: bash
+      .. code:: console
 
          # carbonio auth saml import example.com /tmp/saml.json
 
       .. hint:: It is also possible to view or edit single attributes
          by using the ``carbonio auth saml get`` and ``carbonio auth saml
          set`` command options.
+
+.. _auth-saml-logout:
+
+Configure SAML Logout
+~~~~~~~~~~~~~~~~~~~~~
+
+Some SAML IDP provider require that also the logout procedure be
+signed. In case you had already configured SAML, you can proceed in a
+similar fashion as described in the :ref:`previous section
+<auth_import_saml_configuration_manually>`: export the configuration,
+modify it, then import it again.
+
+Here we show how to add signed logout to the configuration used in the
+previous section, by modifying the configuration file
+:file:`saml.json` presented there.
+
+.. note:: We also report below the configuration file presented in the
+   previous section, modified according to the procedure described
+   below and with the lines interested by the changes highlighted. The
+   line numbers are those
+
+First, you need to configure the SAML IDP logout service URL (line
+**7**, :bgreen:`sp.single_logout_service.url`). We use :abbr:`Okta
+(www.okta.com)` as example SAML IDP provider, so the URL will be
+similar to https://mycompany.okta.com/app/test/app_id/slo/saml.
+
+Then, configure also the service provider's certificate,
+:bgreen:`sp.x509cert` (line **8**), which however should be already
+present.
+
+At this point, you should be done and you can import the modified
+configuration file.
+
+However, in case the SAMP IDP requires that also the requests be
+signed, or in case to sign the requests for security reasons, please
+follow these additional steps.
+
+* Create a new X509 certificate and register it to the SAML IDP. You
+  can use a command similar to the following one to create one with
+  :command:`openssl`
+
+  .. code-block:: console
+
+     # openssl req -x509 -sha256 -nodes -days 365  \
+     -newkey rsa:2048 -keyout privateKey.key -out certificate.crt
+
+* Add to the configuration file the certificate as
+  :bgreen:`sp.x509cert` and the private key as :bgreen:`sp.privatekey`
+  (lines **8** and **9** respectively)
+
+* Enable the signature generation, that is, set
+  :bgreen:`security.logoutrequest_signed` to ``true`` (line **30**)
+
+* You can also optionally enable the signature for the login request,
+  by setting :bgreen:`security.authnrequest_signed` ``to true`` (line
+  **32**)
+
+  
+.. dropdown:: ``saml.json`` file with signed logout and requests.
+   :open:
+
+   .. code-block:: json
+      :linenos:
+      :emphasize-lines: 7,8,9,30,32
+
+      {
+        "sp.entityid":"https://SP_URL/zx/auth/samlMetadata?domain=example.com",
+        "sp.assertion_consumer_service.url":"https://SP_URL/zx/auth/saml",
+        "sp.nameidformat":"urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress",
+        "sp.assertion_consumer_service.binding":"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST",
+        "sp.single_logout_service.binding":"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+        "sp.single_logout_service.url":"https://mycompany.okta.com/app/test/app_id/slo/saml",
+        "sp.x509cert":"aabbcc",
+        "sp.privatekey":"ddeeff",
+
+        "idp.entityid":"https://IDP-URL/simplesamlphp/saml2/idp/metadata.php",
+        "idp.x509cert":"xxyyzz",
+        "idp.single_sign_on_service.url":"https://IDP-URL/simplesamlphp/saml2/idp/SSOService.php",
+        "idp.single_sign_on_service.binding":"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+        "idp.single_logout_service.binding":"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect",
+
+        "organization.name":"ACME, INC.",
+        "organization.displayname":"Example",
+        "organization.url":"https://www.example.com/",
+
+        "security.requested_authncontextcomparison":"exact",
+        "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
+        "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
+        "security.want_nameid_encrypted":"false",
+        "security.want_assertions_encrypted":"false",
+        "security.want_assertions_signed":"false","debug":"true",
+        "security.want_messages_signed":"false",
+        "security.authnrequest_signed":"false",
+        "security.want_xml_validation":"true",
+        "security.logoutrequest_signed":"true"
+        "security.logoutresponse_signed":"true",
+        "security.authnrequest_signed":"true",
+      }
 
 .. _temp_auth_link:
 

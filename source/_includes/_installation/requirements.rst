@@ -5,12 +5,13 @@
 .. _carbonio-requirements:
 
 Requirements
-============
+------------
 
 .. _system-requirements:
 
 System Requirements
--------------------
+~~~~~~~~~~~~~~~~~~~
+
 
 .. grid:: 1 1 1 2
    :gutter: 2
@@ -49,34 +50,42 @@ System Requirements
 .. _software-requirements:
 
 Software Requirements
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
-8** installation and requires  valid DNS resolution for
+8** installation.
 
-- the domain (MX and A record)
-- the FQDN (A record)
+The following requirements must be satisfied before attempting to
+install |product|.
+
+#. valid DNS resolution for both the domain (``MX`` and ``A`` records) and the
+   FQDN (``A`` record)
+#. Python 3, latest version available on the Operating System chosen
+#. Perl, latest version available on the Operating System chosen
 
 See :ref:`the dedicated box below <config-dns>` for details and examples.
 
 Support for other distributions will be announced in due course
 when it becomes available.
 
-On **RHEL 8**, make sure you also have :
+Additional requirements
+~~~~~~~~~~~~~~~~~~~~~~~
 
-* an active subscription (you must be able to fetch from **BaseOS** and
-  the other main repositories)
-
-..
-   * the **CodeReady** repository enabled::
-
-       # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+* Acquaintance with the use of CLI is necessary.  All ``carbonio``
+  commands must be executed as the ``zextras`` user (these commands
+  will feature a ``zextras$`` prompt), while all other commands must
+  be issued as the ``root`` user, unless stated otherwise.
+* Commands or groups of commands may be different between Ubuntu and
+  RHEL 8. This is shown by blue tabs: click on the tab of your choice
+  to find the correct command.
+* When no such tabs are given, the commands to run are the same on
+  Ubuntu and RHEL 8.
 
 .. _config-dns:
 
 .. topic:: Configuring DNS resolution
-           
+
    To make sure that the DNS is correctly configured for both **A** and
    **MX** records: to do so, you can use any DNS resolution server,
    including `dnsmasq`, `systemd-resolved`, and `bind`.
@@ -85,10 +94,11 @@ On **RHEL 8**, make sure you also have :
    purposes**, how to install and configure ``dnsmasq`` for DNS
    resolution.
 
-   .. dropdown:: Example: Set up of dnsmasq
+   .. dropdown:: Example: Set up of dnsmasq for demo or test environment
 
-      Follow these simple steps to set up ``dnsmasq`` on your testing
-      environment.
+      Follow these simple steps to set up ``dnsmasq``. These
+      instructions are suitable for a demo or testing environment
+      only.
 
       .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
          may raise a port conflict over port **53 UDP** with the
@@ -115,15 +125,23 @@ On **RHEL 8**, make sure you also have :
       :file:`/etc/dnsmasq.conf`::
 
           server=1.1.1.1
-          mx-host=carbonio.local,mail.carbonio.local,50
-          host-record=carbonio.local,172.16.0.10
-          host-record=mail.carbonio.local,172.16.0.10
+          mx-host=example.com,mail.example.com,50
+          host-record=example.com,172.16.0.10
+          host-record=mail.example.com,172.16.0.10
 
-      Finally, restart the **dnsmasq** service
+      Remember to replace the **172.16.0.10** IP address with the one
+      of your server. Then, make sure that the :file:`etc/resolv.conf`
+      contains the line::
 
-        .. code:: console
+        nameserver 127.0.0.1
 
-           # systemctl restart dnsmasq
+      This will ensure that the local running :command:`dnsmasq` is
+      used for DNS resolution. Finally, restart the **dnsmasq**
+      service
+
+      .. code:: console
+
+         # systemctl restart dnsmasq
 
 ..
    .. _software_preconf:
@@ -203,7 +221,7 @@ On **RHEL 8**, make sure you also have :
        "23232", "internal Amavis services access"
        "23233", "SNMP-responder access"
        "11211", "memcached access"
- 
+
        .. [2] When the NGINX support for Administration Console and
           the ``mailboxd`` service run on the same host, this port can
           be used to avoid overlaps between the two services

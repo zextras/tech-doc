@@ -4,6 +4,8 @@
 
 The Mails module is where you store, create, and arrange new e-mails.
 
+.. _mail-folders:
+
 Folders and shares
 ------------------
 
@@ -49,6 +51,7 @@ the syntax ``tag:name``, replacing *name* with the name of the
 tag. The same tags used for e-mail can be used to mark :ref:`Calendar
 appointment <calendar-comp>`.
 
+.. _mail-working:
 
 Working with e-mails
 --------------------
@@ -88,6 +91,57 @@ modal will appear and ask to send a read receipt to the author. Click
 :bdg-primary:`NOTIFY` to send the receipt, otherwise no receipt will
 be sent.
 
+In |product|, to prevent sending an incomplete e-mail, an automatic
+delay of three seconds takes places, and a message appears on the
+bottom right corner: click :bdg-info:`UNDO` to stop the sending and
+continue editing the e-mail.
+
+.. _mail-attachments:
+
+Attachments management
+----------------------
+
+|product| supports e-mail attachments; depending whether the e-mail is
+written before it is sent or it has been received, the following
+actions are available
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item-card::
+      :columns: 4
+
+      Composing an e-mail
+      ^^^^
+
+      While composing an e-mail, any file can be added as an
+      attachment for either a local directory on the workstation or on
+      the user's personal storage on |file|.
+   
+   .. grid-item-card::
+      :columns: 4
+		
+      Inline Attachments
+      ^^^^^
+
+      Images on the local workstation can be included as inline
+      attachments in the body of the e-mails, using the button in the
+      bar above the editor to select them.
+      
+   .. grid-item-card::
+      :columns: 4
+
+      Receiving an e-mail
+      ^^^^^
+
+      When receiving an e-mail with attachments, the user has the
+      option to either download the file to a local directory on the
+      workstation, or to save it in the user's personal's storage on
+      |file|.
+      
+
+.. _mail-trash-folder:
+
 Trash Folder
 ------------
 
@@ -95,6 +149,8 @@ The trash folder is a special folder in which e-mails marked for
 deletion are temporary stored, in case they need to be recovered.
 An e-mail in the Trash folder will be automatically deleted after a
 period equivalent to the retention time, by default **30 days**.
+
+.. _mail-junk-folder:
 
 Junk Folder
 -----------

@@ -2,8 +2,29 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The installation of |product| requires to run the command
+After configuring the repositories, the installation of |product|
+requires to run a few commands.
 
+We start by updating and upgrading the system.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt update && apt upgrade
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf upgrade
+
+Next, we install all packages needed for |product|.
+          
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -15,31 +36,38 @@ The installation of |product| requires to run the command
          carbonio-directory-server \
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
-         carbonio-admin-login-ui \
-         carbonio-mta  \
-         carbonio-appserver carbonio-logger  \
+         carbonio-mta \
+         carbonio-appserver carbonio-logger \
          carbonio-user-management \
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
          carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         postgresql-12
+         carbonio-admin-ui carbonio-admin-console-ui \
+         carbonio-admin-login-ui postgresql-12
 
    .. tab-item:: RHEL
       :sync: rhel
 
+      The installation on RHEL is divided in two steps. First, install
+      the |mesh| service
+
       .. code:: console
 
-         # dnf install service-discover-server \
-         carbonio-directory-server \
+         # dnf install service-discover-server
+
+      Then, proceed with all other packages
+
+      .. code:: console
+
+         # dnf install carbonio-directory-server \
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
-         carbonio-admin-login-ui \
          carbonio-mta  \
          carbonio-appserver carbonio-logger  \
-         carbonio-user-management \
+         carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-db \
-         carbonio-storage-ce \
-         carbonio-preview-ce \
+         carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         postgresql-12
+         carbonio-admin-ui carbonio-admin-console-ui \
+         carbonio-admin-login-ui 

@@ -114,52 +114,27 @@ community members interact, search for useful resources, provide own
 feedback, share their experiences, or comment articles. Moreover, the
 forum can be used by non-licensed users to ask for help and support.
 
-The content of this site is tailored for Regular Users, who can find
-guidelines, howtos, and more generic articles about the
-functionalities. Moreover, also Administrators can find useful
-resources about Zextras and its ecosystem.
+The content of this site is divided into categories, in which userscan
+find guidelines, howtos, and more generic articles about the
+functionalities.
 
-More in detail, the article are divided into two main categories:
+More in detail, the articles about |suite| and |zose| are grouped in:
 
 * The `blog <https://community.zextras.com/blog/>`_, which consists of
   release notes, news, and more
-* The `Tech area <https://community.zextras.com/tech-area/>`_,
-  containing articles focusing on the Zextras Suite and Linux. This
-  section is further divided into three parts:
-
-  * `Zimbra OSE
-    <https://community.zextras.com/tech-area/zimbra-open-source/>`_,
-    whose articles help in installing, configuring, and managing
-    Zimbra OSE 
-
-  * `Zextras Suite
-    <https://community.zextras.com/tech-area/zextras-suite/>`_
-    containing guides to configure and use the modules of Zextras
-    Suite and deepen the knowledge of its components. this part is the
-    reference for Regular Users.
-
-  * `Linux World
-    <https://community.zextras.com/tech-area/linux-world/>`_ presents
-    articles about services configuration and virtualisation systems
-    under Linux systems; it is dedicated to all readers who also act
-    as DevOps or Sysadmins
-
-Regular User
-------------
+* The `Admin Guides
+  <https://community.zextras.com/category/zextras-suite-and-zimbra/suite-for-zimbra-admin-guide/>`_,
+  suitable for *Administrators*
+* The `User Guides
+  <https://community.zextras.com/category/zextras-suite-and-zimbra/suite-for-zimbra-user-guide/>`_,
+  suitable for *Regular Users*, i.e., everyone who uses |suite| and
+  its functionalities but has no needs to access administrative
+  functionalities and configurations
 
 .. figure:: /img/zxmail.png
    :scale: 50%
 
    A sample Zextras Suite GUI
-
-We define a *Regular User* as everyone who uses Zextras Suite and its
-functionalities. A Regular User will find a lot of configuration
-guidelines and articles about and around Zextras on the Community
-Documentation
-
-More in details, a Regular user will find useful articles in either
-the `Tech area <https://community.zextras.com/tech-area/>`_, the `blog
-<https://community.zextras.com/blog/>`_, and the forum.
 
 Administrator
 -------------
@@ -180,23 +155,26 @@ On Docs:
 
 On Community:
 
-* installation and management of
-  `Zimbra
-  OSE <https://community.zextras.com/tech-area/zimbra-open-source/>`_
-* Additional `Linux resources
-  <https://community.zextras.com/tech-area/linux-world/>`_
+* installation of `Zimbra OSE
+  <https://community.zextras.com/category/zextras-suite-and-zimbra/suite-for-zimbra-admin-guide/suite-for-zimbra-installation/>`_
+* various possibilities for `customizations
+  <https://community.zextras.com/category/zextras-suite-and-zimbra/suite-for-zimbra-admin-guide/suite-for-zimbra-customization/>`_
+  of |suite|
+  
+* many `Security-related
+  <https://community.zextras.com/category/zextras-suite-and-zimbra/suite-for-zimbra-admin-guide/suite-for-zimbra-security/>`_ resources
 
 Try and Install Zextras
 =======================
 
 
 In order to try out Zextras, you can `download a free trial
-<https://www.zextras.com/download/>`_ of the latest available version
-of Zextras suite. After filling in a form, you will be sent a link to
-download an image, that you can install as a virtual machine or on a
-physical server by following the :ref:`install-guide`, which provides
-requirements, important information, and the actual installation
-guide.
+<https://www.zextras.com/download-trial-suite/>`_ of the latest
+available version of Zextras suite. After filling in a form, you will
+be sent a link to download an image, that you can install as a virtual
+machine or on a physical server by following the :ref:`install-guide`,
+which provides requirements, important information, and the actual
+installation guide.
 
 
 .. _compatibility-list:

@@ -134,10 +134,23 @@ installed on any node, provided the dependencies are respected.
 * **Preview-CE**. A role to create thumbnailed images of documents to
   preview them
 * **Docs-CE**. Consists of **docs-connection-CE**, **docs-editor**,
-  and **docs-core**; it provides the collaborative editing functionalities.
+  and **docs-core** and provides the collaborative editing
+  functionalities
 * **User Management**. It registers the user status (logged in or
   logged out) and user attributes (e.g., on which AppServer a user is
   logged in).
 * **Logger**. It provides a centralised log service for all Roles
   installed. It is also important to highlight that there **must be a
   unique** Logger in a Multi-Server installation.
+* **Admin Panel**. The core administration centre in which to manage
+  the configuration options of |product|
+
+
+Supported Mail Protocols
+========================
+
+|product| supports the following protocols:
+
+* POP3 and POP3S
+* SMTP and its secure protocols SSMTP and SPTMS (SMTP over TLS/SSL)
+* IMAP and its secure protocol IMAPS (IMAP over SSL)

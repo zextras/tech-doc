@@ -3,8 +3,9 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. srv5 - Advanced, AppServer, Files, and Docs
-   
-On this node, first install all the required packages for |file|, and .
+
+On this node, first install all the required packages for |file|, then
+configure the various services needed.
 
 .. tab-set::
 
@@ -14,46 +15,61 @@ On this node, first install all the required packages for |file|, and .
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-storages-ce carbonio-user-management
+           carbonio-storages-ce carbonio-user-management \
            carbonio-files-ce carbonio-docs-connector-ce \
            carbonio-docs-editor
-           
+
    .. tab-item:: RHEL
       :sync: rhel
 
+      Make sure to respect the order of installation.
+
       .. code:: console
 
-         # dnf install  service-discover-agent carbonio-appserver \
-           carbonio-storages-ce carbonio-user-management
-           carbonio-files-ce carbonio-docs-connector-ce \
-           carbonio-docs-editor
+         # dnf install service-discover-agent carbonio-appserver
+         # dnf install carbonio-storages-ce carbonio-user-management
+         # dnf install carbonio-files-ce carbonio-docs-connector-ce
+         # dnf install carbonio-docs-editor
 
-Execute the following tasks: make sure you keep at hand the data
-configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
-``MESH_CLUSTER_PWD``, and ``MTA_IP``).
+Execute the following tasks.
 
-#.  Bootstrap |carbonio|, using the data from previous tasks when required
+#. Bootstrap |carbonio|
 
    .. code:: console
 
       # carbonio-bootstrap
+
+   In the bootstrap menu, use |srv2h|, |ldappwd|, and
+   |nginxpwd| in the following items to complete successfully the
+   bootstrap.
+
+   * ``Ldap master host``: |srv2h|
+   * ``Ldap Admin password``: |ldappwd|
+   * ``Bind password for nginx ldap user``: |nginxpwd|
 
 #. Copy credentials from the |mesh| server node (SRV2) to the local
    server
 
    .. code:: console
 
-      # scp root@[SRV2_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
         /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
-   .. hint:: The ``SRV2_IP`` can be retrieved using command :command:`su -
-      zextras -c "zmprov gas service-discover"`
-
-#. Run |mesh| setup using ``MESH_CLUSTER_PWD``
+#. Run |mesh| setup using |meshsec|
 
    .. code:: console
 
       # service-discover setup-wizard
+
+#. Complete |mesh| setup
+
+   .. code:: console
+
+      # pending-setups -a
+
+   .. hint:: The **secret** needed to run the above command is stored
+      in file :file:`/var/lib/service-discover/password` which is
+      accessible only by the ``root`` user.
 
 #. Let |file| use Memcached. Edit file
    :file:`/etc/carbonio/files/config.properties` and search for
@@ -63,15 +79,17 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
       :linenos:
 
       # Nginx Lookup servers
-      nginxlookup.server.protocol=https 
-      nginxlookup.server.urls=127.0.0.1 
-      memcached.server.urls=127.0.0.1   
+      nginxlookup.server.protocol=https
+      nginxlookup.server.urls=172.16.0.15
+      memcached.server.urls=172.16.0.14
 
    Make sure that:
-   
+
    * in line 2 protocol is **https**
-   * in line 3 there is at least the current node's (SRV5) IP
-   * in line 4 the SRV4_IP is written, to allow this node's access to Memcached
+   * in line 3 there must be the IP address of one AppServer, we use
+     the current node's IP Address for simplicity
+   * in line 4 |srv4ip| is written, to allow this node's access to
+     Memcached, which is installed on the *Proxy Node*
 
 #. restart the |file| processes:
 
@@ -79,4 +97,3 @@ configured on the other nodes (``SRV2_hostname``, ``LDAP_PWD``,
 
       # systemctl restart carbonio-files
       # systemctl restart carbonio-files-sidecar
-

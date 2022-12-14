@@ -2,8 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Once all packages have been installed and the PostgreSQL user and
-database for |file| have been setup, use the following command to
+Once all packages have been installed, use the following command to
 configure and launch |product|.
 
 .. code:: console
@@ -32,5 +31,5 @@ click :bdg-dark-line:`Enter` to continue.
 
    The first part of the bootstrap enables all necessary
    services and creates a new administrator account
-   (zextras\@carbonio.local), initially **without password**
+   (zextras\@mail.example.com), initially **without password**
    (see below for instruction to set it).

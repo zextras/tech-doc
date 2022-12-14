@@ -69,7 +69,7 @@ you:
    does not operate correctly, the Technical Support team will not be
    able to help. For optimisations and tuning options, however, you can
    refer to Zimbra’s `Tuning
-   Guidelines <http://wiki.zimbra.com/wiki/Performance_Tuning_Guidelines_for_Large_Deployments>`_.
+   Guidelines <https://wiki.zimbra.com/wiki/Performance_Tuning_Guidelines_for_Large_Deployments>`_.
 
 The Technical Support Team will be keen to help in these cases:
 

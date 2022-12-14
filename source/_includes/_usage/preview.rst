@@ -7,8 +7,12 @@ Supported files that can be previewed include PDFs, text documents,
 spreadsheets and other office files, and images, but excluding the
 **svg** format.
 
-By clicking *once* the name of the file, an automatic preview in JPG
-format will be opened, centred and scaled to the browser's window size.
+To preview a supported file, click **once** the name of the file: the
+*Details* view will open. Here, click the small magnifier icon above
+the details to show an automatic preview in JPG format, centred and
+scaled to the browser's window size. PDF files can be scrolled with
+buttons (``PgUp``, ``PgDown``, ``Home``, ``End``)
+
 On |file|, to open a file for editing, it is necessary to right-click
 the file name, then selecting **Open Document** from the drop-down
 menu.

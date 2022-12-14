@@ -41,7 +41,8 @@ Makefile, therefore the basic requirements are:
 To install requirements, use e.g.,
 
 ```
- pip install -r requirements.txt```
+ pip install -r requirements.txt
+```
 
 To build all product's documentation at once and producing the HTML
 output, run `./doc_build_all.sh`
@@ -52,8 +53,8 @@ This command performs a `make html` in all source sub-folders:
 - carbonio-ce
 - suite
 
-As a result of compiling you will have static html files in the output
-directory (build).
+As a result of compiling the source files you will have static html
+files in the output directory (build).
 
 To build only one of the three manuals, run `make html` from within the
 product's directory.
@@ -65,8 +66,10 @@ and browse to the documentation.
 
 # Contribute
 
-The public repository contains a `contrib` branch that is kept aligned
-with the current internal development version.
+The public repository contains the two most recent `release/` branches
+that are kept aligned with the current internal development. When a
+new `release/` branch is created, the oldest one is removed from the
+public repository.
 
 We'll be happy to accept contributions, provided they meet the
 requirement and follow the guidelines.
@@ -79,7 +82,8 @@ versions of the Python packages required (upgrade them with `pip install
 --upgrade -r /requirements.txt` before building).
 
 You must fork the public repository, make the changes you need, and
-open a PR against the `contrib` branch.
+open a PR against the most recent `release/` branch, which is always
+marked as the *default* branch.
 
 All accepted contributions will be subject to review and if
 successful, they will appear on the official documentation.

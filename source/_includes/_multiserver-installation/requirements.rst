@@ -15,11 +15,31 @@ valid, but take into account the following advices:
   on the logging level set on the nodes, the required disk space may
   greatly vary, so it is not easy to provide a minimum or suggested value.
 
-There are no additional requirements, just a few remarks:
 
-* Repositories: All packages required by a multi-server setup are
-  available in the same repository as the single server installation,
-  hence there is no need of further configuration.
+Additional requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. tab-set::
+    .. tab-item:: Ubuntu
+       :sync: ubuntu
+
+       No additional requirement is necessary.
+
+    .. tab-item:: RHEL
+       :sync: rhel
+
+       The following additional requirements are needed.
+
+       * An active subscription (you must be able to fetch from
+         **BaseOS** and the other main repositories)::
+
+           # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+
+       * The **CodeReady** repository enabled::
+
+           # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+
+Some more remarks:
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
   commands must be executed as the ``zextras`` user (these commands

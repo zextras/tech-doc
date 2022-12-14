@@ -14,17 +14,17 @@ We start by updating and upgrading the system.
 
       .. code:: console
 
-         # apt update && apt upgrade
+         # apt clean &&apt update && apt upgrade
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf upgrade
+         # dnf clean all && dnf upgrade
 
 Next, we install all packages needed for |product|.
-
+          
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -38,41 +38,43 @@ Next, we install all packages needed for |product|.
          carbonio-webui carbonio-files-ui \
          carbonio-chats-ui \
          carbonio-admin-login-ui \
-         carbonio-mta \ 
-         carbonio-mailbox-db \
-         carbonio-appserver carbonio-logger \
-         carbonio-advanced carbonio-zal \
-         carbonio-user-management \
-         carbonio-files carbonio-files-db \
-         carbonio-preview \
-         carbonio-docs-connector-ce carbonio-docs-editor \
-         postgresql-12
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install service-discover-server \
-         carbonio-directory-server \
-         carbonio-proxy \
-         carbonio-webui carbonio-files-ui \
-         carbonio-chats-ui \
-         carbonio-admin-login-ui \
          carbonio-mta \
          carbonio-mailbox-db \
          carbonio-appserver carbonio-logger \
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
-         carbonio-preview \
-         carbonio-docs-connector-ce carbonio-docs-editor \
-         postgresql-12
+         carbonio-preview carbonio-docs-editor \
+         carbonio-docs-connector carbonio-docs-connector-db \
+         carbonio-admin-ui carbonio-admin-console-ui \
+         carbonio-admin-login-ui postgresql-12
 
-..
-   .. card::
-      :class-header: sd-font-weight-bold sd-fs-5
+   .. tab-item:: RHEL
+      :sync: rhel
 
-      Step 3B: (Optional) Installation and Configuration of pgpool
-      ^^^^^
+      The installation on RHEL is divided in two steps. First, install
+      the |mesh| service
 
+      .. code:: console
+
+         # dnf install service-discover-server
+
+      Then, proceed with all other packages
+
+      .. code:: console
+
+         # dnf install carbonio-directory-server \
+         carbonio-proxy carbonio-webui \
+         carbonio-user-management \
+         carbonio-files-ui carbonio-files \
+         carbonio-files-db \
+         carbonio-mta \
+         carbonio-logger \
+         carbonio-appserver \
+         carbonio-mailbox-db \
+         carbonio-advanced carbonio-zal \
+         carbonio-chats-ui \
+         carbonio-docs-editor \
+         carbonio-docs-connector carbonio-docs-connector-db \
+         carbonio-admin-ui carbonio-admin-console-ui \
+         carbonio-admin-login-ui carbonio-preview 
