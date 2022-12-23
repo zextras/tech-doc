@@ -1,5 +1,5 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ==========================
@@ -12,6 +12,7 @@ whole page before attempting to install.
 
 .. toctree::
 
+   requirements
    single-server-installation
    multi-server-installation
    upgrade
