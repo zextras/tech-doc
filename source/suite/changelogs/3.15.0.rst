@@ -1,0 +1,104 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+.. uncomment for next release (3.16.0)
+
+   Zextras Suite Changelog - Release 3.15.0  
+   ========================================
+
+      Release Date: Dec 26th, 2022
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-593
+
+* *Title:* Accounts order in external restore honoured
+
+* *Description:* ExternalRestore follows the order of the accounts
+  provided in the accounts or input_file parameter
+
+
+* *Issue ID:* BCK-618
+
+* *Title:* getAvailableAccount command output to file
+
+* *Description:* The `getAvailableAccount` command now provides a
+  parameter to generate a file and to choose the headers.
+
+..
+
+* *Issue ID:* BCK-676
+
+* *Title:* UUID support for external restore operation
+
+* *Description:* Now the external restore operation supports the
+  accounts UUID for both the `accounts` parameter and in an input
+  file.
+
+..
+
+.. rubric:: Drive
+
+
+* *Issue ID:* DRIV-1695
+
+* *Title:* Preview performance improved
+
+* *Description:* The preview is no more offered for documents larger
+  than 10 Mb and images larger than 20 Mb to avoid server resources
+  consumption and possible crashes.
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-395
+
+* *Title:* Exceptions in recurring calendars synchronization fixed
+
+* *Description:* Fixed a bug that caused the exceptions in recurring
+  calendars to be not synchronized properly via EAS.
+
+..
+
+* *Issue ID:* MOB-396
+
+* *Title:* Appointments replies synchronization fixed for iOS
+
+* *Description:* Fixed a bug that caused iOS mobile devices to
+  synchronize replies to calendar appointments multiple times.
+
+..
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-350
+
+* *Title:* Underscore from the bucket types removed
+
+* *Description:* Underscores have been removed from object storage
+  types such as `CustomS3` and `ScalityS3`.
+
+..
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-3951
+
+* *Title:* Instant meeting link redirected to the Team app
+
+* *Description:* On mobile devices, manage the redirect to the Team
+  app when the user tap on a meeting link from outside the
+  application.
+
+..
+
+
+* *Issue ID:* TEAMS-3952
+
+* *Title:* Landing page for instant meeting on mobiles
+
+* *Description:* When a user tap on an instant meeting link from a
+  mobile device is now redirected to a stylish landing page
+
+
+

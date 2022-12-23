@@ -33,3 +33,11 @@ with ``X`` the *n-th* node. In other words, IPs will be in the range
 ``172.16.0.11`` (SRV1) :octicon:`dash` ``172.16.0.16`` (second
 AppServer). These values will be used in configuration files that need
 to be manually modified during the installation or upgrade procedures.
+
+In most Multi-Server scenarios, it proves useful to install a **Replica
+Directory Server** in a Master/Slave setup for improved reliability
+and load-balancing. We describe in a :ref:`dedicated section
+<replica-ds-install>` the procedure to install the Replica on a
+dedicated node, **SRV7** (which must be equipped with the same OS as
+the other six). However, you can install the Replica on any node other
+than **SRV2**, following the same procedure.
