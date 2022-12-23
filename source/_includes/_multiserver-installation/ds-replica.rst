@@ -51,7 +51,7 @@ cluster.
 .. _replica-installation:
 
 Installation
-------------
+~~~~~~~~~~~~
 
 The installation requires to execute this command on **SRV7**.
 
@@ -65,7 +65,7 @@ The installation requires to execute this command on **SRV7**.
    :ref:`mesh-multiple` for detailed directions.
 
 Configuration
--------------
+~~~~~~~~~~~~~
 
 Configuration of the Replica Directory server requires a few steps.
 
@@ -165,7 +165,7 @@ Configuration of the Replica Directory server requires a few steps.
    the Replica on **SRV7**.
 
 Testing
--------
+~~~~~~~
 
 In order to test whether the Replica works correctly after the
 installation was completed successfully, you can make a quick test as
@@ -192,7 +192,7 @@ follows.
       prov -l gaa | grep "john.doe@example.com"`
 
 Set up Replica to answer queries
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is now time to configure the Replica to answer queries in place of
 the Master, which requires to reconfigure the value of the
@@ -241,7 +241,7 @@ achieve this set up with a few commands on the **Master**.
    command.
 
 Uninstall a replica
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 To remove a Replica, you need to carry out two tasks:
 
