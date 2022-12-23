@@ -16,10 +16,10 @@ Release Date of |suite| |release|: Dec 26th, 2022
 Previous Releases
 =================
 
-.. grid::
+.. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: 1 1 2 2
+   .. grid-item-card::
       :columns: 6
 
       Release series 3.X.0
@@ -41,7 +41,7 @@ Previous Releases
          Release 3.3.0 </changelogs/3.3.0.rst>
          Release 3.2.0 </changelogs/3.2.0.rst>
 
-   .. grid-item-card:: 1 1 2 2
+   .. grid-item-card::
       :columns: 6
 
       Release series 3.1.X
