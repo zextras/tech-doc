@@ -2,12 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. uncomment for next release (3.13.0)
-   
-   Zextras Suite Changelog - Release 3.13.0
-   ========================================
 
-      Release Date: Sep 12th, 2022
+Zextras Suite Changelog - Release 3.13.0
+========================================
+
+   Release Date: Sep 12th, 2022
 
 
 .. rubric:: Auth

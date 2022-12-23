@@ -184,7 +184,7 @@ store the new credentials in a safe place!
 
    .. code:: console
 
-      # cp root@[LEADER_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
+      # scp root@[LEADER_IP]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
       /etc/zextras/service-discover/cluster-credentials.tar.gpg
 
    Stop the *service-discover* service.
