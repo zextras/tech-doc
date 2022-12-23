@@ -29,14 +29,22 @@ environment, composed by **six nodes** (that we will denote as *SRV1*,
 .. note:: The **Logger node** must be unique within a |product|
    infrastructure!
 
-In our scenario, we start |product| installation from 6 nodes equipped
-with *Ubuntu 20.04 LTS*. The instructions are valid for nodes which
-are installed with RHEL 8: the only difference is the command for the
-package installation, while the commands to configure the nodes are
-the same.
+In our scenario, we start |product| installation from six nodes
+equipped with *Ubuntu 20.04 LTS*. The instructions are valid for six
+nodes which are installed with *RHEL 8*: the only difference is the
+command for the package installation, while the commands to configure
+the nodes are the same.
 
 We also assume that the IP address of each node is ``172.16.0.1X``,
 with ``X`` the *n-th* node. In other words, IPs will be in the range
 ``172.16.0.11`` (SRV1) :octicon:`dash` ``172.16.0.16`` (second
 AppServer). These values will be used in configuration files that need
 to be manually modified during the installation or upgrade procedures.
+
+In most Multi-Server scenarios, it proves useful to install a **Replica
+Directory Server** in a Master/Slave setup for improved reliability
+and load-balancing. We describe in a :ref:`dedicated section
+<replica-ds-install>` the procedure to install the Replica on a
+dedicated node, **SRV7** (which must be equipped with the same OS as
+the other six). However, you can install the Replica on any node other
+than **SRV2**, following the same procedure.
