@@ -70,9 +70,7 @@ Privacy
 
 .. include:: /common/adminpanel/privacy.rst
 
+Backup
+======
 
-..
-   Backup
-   ======
-
-   Here we can put the current backup documentation
+.. include:: /common/adminpanel/backup.rst
