@@ -1,3 +1,6 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 A |cos| determines which items can be accessed by a web client and
 how, setting default for a number of options. A users that belongs to
