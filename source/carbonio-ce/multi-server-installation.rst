@@ -29,10 +29,14 @@ Six Nodes Scenario
 
 .. include:: /_includes/_multiserver-installation/scenario-ce.rst
 
+.. _multi-server-req:
+   
 Requirements
 ------------
 
 .. include:: /_includes/_multiserver-installation/requirements.rst
+
+.. _multi-server-preliminary:
 
 Preliminary Tasks
 -----------------
@@ -146,3 +150,12 @@ Access to the Web Interface
 ---------------------------
 
 .. include:: /_includes/_installation/web-access.rst
+
+.. _replica-ds-install:
+
+Install a Directory Server Replica
+==================================
+
+.. include:: /_includes/_multiserver-installation/ds-replica.rst
+
+
