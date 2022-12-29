@@ -448,7 +448,7 @@ restore on your Milan infrastructure.
 .. _skip_domain_provisioning:
 
 Skip Domain Provisioning
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 While the External Restore is typically used on a whole infrastructure,
 nonetheless it can be applied also to individual or multiple accounts:
@@ -520,7 +520,7 @@ attributes* step will be executed.
 .. _folder_restore:
 
 Folder restore
-~~~~~~~~~~~~~~
+--------------
 
 Suppose you have created a folder called ``Inbox/Zextras``\ (which is
 also its Backup Path), and later deleted from it some messages, which
