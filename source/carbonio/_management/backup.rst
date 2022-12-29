@@ -56,7 +56,7 @@ up.
    :file:`/opt/zextras/backup/zextras` throughout this section; remember to
    replace it with the path you chose.
 
-.. important:: The size of the device should be at least 80% of
+.. warning:: The size of the device should be at least 80% of
    primary + secondary volume size.
 
 -  Set the correct permission on the backup path: :command:`chown zextras:zextras
@@ -69,20 +69,20 @@ up.
 
    .. code:: console
 
-     # carbonio config  set global ZxCore_LogLevel 0
+     zextras$ carbonio config  set global ZxCore_LogLevel 0
 
    to increase the log verbosity, or
 
    .. code:: console 
 
-      # carbonio config set global ZxCore_LogLevel 1
+      zextras$ carbonio config set global ZxCore_LogLevel 1
 
    to restore the normal log verbosity. you can also check the current
    log level as follows.
 
    .. code:: console
 
-      # carbonio config dump global|grep LogLevel 
+      zextras$ carbonio config dump global|grep LogLevel 
 
 .. topic:: :octicon:`comment` Basic Customisation of Backup
               
@@ -133,7 +133,7 @@ stakeholder is willing to wait to recover its data.
 
 According to these definitions, the ideal acceptable value zero, while
 the realistic values are usually near zero, depending on the size of the
-data. In |product|, the combination of Real Time Scan and SmartScan
+data. In |product|, the combination of Realtime Scanner and SmartScan
 guarantees that both RTO and RPO values are quite low: The Real Time
 Scanner ensures that all metadata changes are recorded as soon as they
 change, while the SmartScan copies all items that have been modified,
@@ -174,7 +174,7 @@ backup, for example:
    Time Scan will **not** record any change of their state.
 
 There are also objects that are **not** items, and as such will never be
-scanned for changes by the Real Time Scan and will never be part of a
+scanned for changes by the Realtime Scanner and will never be part of a
 restore:
 
 -  Server settings, i.e., the configuration of each server
@@ -224,14 +224,14 @@ an item to any past transaction. See more in :ref:`Restore Strategies
 
 .. _smartscan_and_real_time_scan:
 
-SmartScan and Real Time Scan
-----------------------------
+SmartScan and Realtime Scanner
+------------------------------
 
 The initial structure of the backup is built during the *Initial Scan*,
 performed by the **SmartScan**: the actual content of a Mailbox is read
 and used to populate the backup. The SmartScan is then executed at every
 start of the |backup| and on a daily basis if the **Scan Operation
-Scheduling** is enabled in the Administration Console.
+Scheduling** is enabled in the |adminui|.
 
 .. important:: SmartScan runs at a fixed time—​that can be
    configured—​on a daily basis and is not deferred. This implies that,
@@ -245,14 +245,14 @@ Scheduling** is enabled in the Administration Console.
 SmartScan’s main purpose is to check for items modified since its
 previous run and to update the database with any new information.
 
-The **Real Time Scan** records live every event that takes place on the
+The **Realtime Scanner** records live every event that takes place on the
 system, allowing for a possible recovery with a split-second precision.
-The Real Time Scanner does not overwrite any data in the backup, so
+The Realtime Scanner does not overwrite any data in the backup, so
 every item has an own complete history. Moreover, it has the ability to
 detect there are more changes that relate to the same item in the same
 moment and record all them as a single metadata change.
 
-Both SmartScan and Real Time Scan are enabled by default. While both can
+Both SmartScan and Realtime Scanner are enabled by default. While both can
 be (independently) stopped, it is suggested to leave them running, as
 they are intended to complement each other.
 
@@ -266,7 +266,7 @@ When to Disable Scan Operations
 
 Backups are written on disk, therefore the Scan operations result in I/O
 disk access. Therefore, there are a number of scenarios in which either
-of the SmartScan or Real Time Scan might (or should) be disabled, even
+of the SmartScan or Realtime Scanner might (or should) be disabled, even
 temporarily. For example:
 
 -  You have a high number of trasactions every day (or you often work
@@ -280,7 +280,7 @@ temporarily. For example:
    restored item as a new one.
 
 -  You have a high traffic of incoming and outgoing emails per day. In
-   this case, you should always have the Real Time Scan active, because
+   this case, you should always have the Realtime Scanner active, because
    otherwise all transactions will be backed up **only** by the
    SmartScan, which might not be able to complete in a reasonable time,
    due to the resources required for the I/O operations.
@@ -338,8 +338,6 @@ important files and directories are present:
    ``/backup/zextras/accounts/xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/id_mapper.log``.
    This file is present only in case of an external restore.
 
-
-
 .. seealso:: Community Article
 
    https://community.zextras.com/zextras-backup-path/
@@ -350,11 +348,6 @@ important files and directories are present:
 
 Setting the Backup Path
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-The Backup Path can be set both via GUI and via CLI:
-
-- Via GUI: in the "Backup" section of the |carbonio| Administration
-  Console, under "Backup Path".
 
 - Via CLI: using the `carbonio config server`
   command to change the ``ZxBackup_DestPath`` config key.
@@ -439,7 +432,7 @@ doCoherencyCheck <carbonio_backup_docoherencycheck>` command:
 
 .. code:: console
 
-   carbonio backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
+   zextras$ carbonio backup doCoherencyCheck *backup_path* [param VALUE[,VALUE]]
 
 .. seealso:: Community Article
 
@@ -449,8 +442,8 @@ doCoherencyCheck <carbonio_backup_docoherencycheck>` command:
 
 .. _how_zextras_backup_works:
 
-How |backup| Works
-------------------------
+How Does |backup| Work
+----------------------
 
 |backup| has been designed to store each and every variation of an
 **ITEM**. It is not intended as a system or Operating System backup,
@@ -521,13 +514,10 @@ and decrease the scan time exponentially.
 
 By default, a SmartScan is scheduled to be executed each night (if
 ``Scan Operation Scheduling`` is enabled in the |backup| section of
-the Administration Console). Once a week, on a day set by the user, a
+the |adminui|). Once a week, on a day set by the user, a
 Purge is executed together with the SmartScan to clear |backup|’s
 datastore from any deleted item that exceeded the retention period.
 
-
-How Does it Work?
------------------
 
 The |backup| engine scans all the items on the |carbonio| mailstore,
 looking for items modified after the last SmartScan. It updates any
@@ -558,7 +548,7 @@ information in section :ref:`backup_on_external_storage`.
 When is a SmartScan Executed?
 -----------------------------
 
-- When the |backup| component is started.
+- When the |backup| is started.
 
   .. note:: While it is possible to enable this option, it is
      suggested to leave it disabled, because in certain situations,
@@ -566,43 +556,44 @@ When is a SmartScan Executed?
      performance bottleneck, as it has been discussed in section
      :ref:`backup_disable_scans`.
 
-- Daily, if the Scan Operation Scheduling is enabled in the
-  Administration Console
+..
+   - Daily, if the Scan Operation Scheduling is enabled in the
+     |adminui|
 
-- When the Real Time Scanner is re-enabled via the Administration
-  Console after being previously disabled
+   - When the Realtime Scanner is re-enabled via the |adminui| after
+     being previously disabled
 
 .. _running_a_smartscan:
 
 Running a SmartScan
 -------------------
 
-.. grid:: 1 1 1 2
-   :gutter: 1
+..
+   .. grid:: 1 1 1 2
+      :gutter: 1
 
-   .. grid-item-card:: Starting the Scan via the Administration Console
-      :columns: 12 12 12 6
+      .. grid-item-card:: Starting the Scan via the |adminui|
+         :columns: 12 12 12 6
 
-      To start a SmartScan via the Administration Console,
+         To start a SmartScan via the |adminui|,
 
-      -  Open the Administration Console
+         -  Open the |adminui|
 
-      -  If a multiserver installation, choose the server on which to run the
-         SmartScan
+         -  If a multiserver installation, choose the server on which to run the
+            SmartScan
 
-      -  Click  the |backup| tab
+         -  Click  the |backup| tab
 
-      -  Click  :bdg-secondary:`Run Smartscan`
+         -  Click  :bdg-secondary:`Run Smartscan`
 
-   .. grid-item-card:: Starting the SmartScan via the CLI
-      :columns: 12 12 12 6
+      .. grid-item-card:: Starting the SmartScan via the CLI
+         :columns: 12 12 12 6
 
-      To start a SmartScan via the CLI, use the `carbonio backup
-      doSmartScan` command:
+To start a SmartScan via the CLI, use the command:
 
-      .. code:: console
+.. code:: console
 
-         # carbonio backup doSmartScan *start* [param VALUE[,VALUE]]
+   zextras$ carbonio backup doSmartScan *start* [param VALUE[,VALUE]]
 
 .. _checking_the_status_of_a_running_scan:
 
@@ -611,38 +602,32 @@ Checking the Status of a Running Scan
 
 Before actually carrying out this check, it is suggested to verify how
 many operations are running, to find the correct id. you can do this
-by using the `carbonio backup getAllOperations
-<carbonio_backup_getAllOperations>` command.
+by using the command
 
 .. code:: console
 
-   # carbonio backup getAllOperations [param VALUE[,VALUE]]
+   zextras$ carbonio backup getAllOperations [param VALUE[,VALUE]]
 
-To check the status of a running scan via the CLI, use the
-`carbonio backup monitor <carbonio_backup_monitor>` command:
+To check the status of a running scan via the CLI, use the command
 
 .. code:: console
 
-   # carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
+   zextras$ carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
 .. _real_time_scan:
 
-Real Time Scan
-==============
+Realtime Scanner
+================
 
-The Real Time Scan is an engine tightly connected to the Mailbox, which
+The Realtime Scanner is an engine tightly connected to the Mailbox, which
 intercepts all the transactions that take place on each user’s mailbox
 and records them with the purpose of maintaining the whole history of an
 item for its entire lifetime.
 
-Thanks to the Real Time Scan, it is possible to recover any item at any
+Thanks to the Realtime Scanner, it is possible to recover any item at any
 point in time.
 
-
-How Does it Work?
------------------
-
-The Real Time Scanner reads all the events of the mail server almost
+The Realtime Scanner reads all the events of the mail server almost
 real-time, then it 'replicates' the same operations on its own data
 structure, creating items or updating their metadata. No information is
 ever overwritten in the backup, so every item has its own complete
@@ -650,72 +635,42 @@ history.
 
 .. _managing_the_real_time_scanner:
 
-Managing the Real Time Scanner
-------------------------------
-
-.. _enabling_the_real_time_scanner:
-
-Enabling the Real Time Scanner
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Managing the Realtime Scanner
+-----------------------------
 
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Via the Administration Console
+   .. grid-item-card::
       :columns: 12 12 12 6
 
-      -  Select the |backup| Tab.
+      Enable the Realtime Scanner
+      ^^^^^
+      
+      Set the ``ZxBackup_RealTimeScanner`` property to ``TRUE``.
 
-      -  Under Real Time Scanner, press the :bdg-secondary:`Enable` button.
+      .. code:: console
 
-      .. note:: When the Real Time Scanner is enabled for the first time or
-         re-enabled after a stop, a SmartScan is required. A warning will be
-         displayed after enabling the Real Time Scanner, and you will be
-         prompted to start the SmartScan.
+         zextras$ carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner TRUE
 
-      .. _via_the_cli:
-
-   .. grid-item-card:: Via the CLI
+   .. grid-item-card::
       :columns: 12 12 12 6
 
-      To enable the Real Time Scanner via the CLI, the
-      ``ZxBackup_RealTimeScanner`` property of the |backup| component must
-      be set to ``true``::
+      Disable the Realtime Scanner
+      ^^^^^
+      
+      Set the ``ZxBackup_RealTimeScanner`` property to ``FALSE``.
 
-         # carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner TRUE
+      .. code:: console
 
-.. _disabling_the_real_time_scanner:
+         zextras$ carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner FALSE
 
-Disabling the Real Time Scanner
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. topic:: When Should the Realtime Scanner Be Disabled?
 
-.. grid:: 1 1 1 2
-   :gutter: 3
-
-   .. grid-item-card:: Via the Administration Console
-      :columns: 12 12 12 6
-
-      -  Select the |backup| Tab.
-
-      -  Under Real Time Scanner, press the :bdg-secondary:`Disable` button.
-
-      .. _via_the_cli_2:
-
-   .. grid-item-card:: Via the CLI
-      :columns: 12 12 12 6
-
-      To disable the Real Time Scanner via the CLI, the
-      ``ZxBackup_RealTimeScanner`` property of the |backup| component must
-      be set to ``false``::
-
-        # carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner FALSE
-
-.. topic:: When Should the Real Time Scanner Be Disabled?
-
-   The only time you should disable the Real Time Scanner is while
+   The only time you should disable the Realtime Scanner is while
    performing an External Restore of multiple domains. This is a
    safety measure to avoid high load on your server. After the import,
-   re-enable the Real Time Scanner and perform a SmartScan when
+   re-enable the Realtime Scanner and perform a SmartScan when
    prompted.
 
 .. _limitations_and_safety_scan:
@@ -723,14 +678,14 @@ Disabling the Real Time Scanner
 Limitations and Safety Scan
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The main limitation when restoring data acquired via the Real Time
-Scanner is:
-
-- **Emptied Folder** - when a user uses the ``Empty Folder`` button in
-  the right-click context menu
+.. to be verified!
+ 
+The main limitation when restoring data acquired via the Realtime
+Scanner is when a user uses the ``Empty Folder`` button in the
+right-click context menu
 
 In this case, and any time |backup| cannot determine the status of
-an item by reading the metadata saved by the Real Time Scan, an Account
+an item by reading the metadata saved by the Realtime Scanner, an Account
 Scan on the given account is triggered BEFORE the restore.
 
 This fixes any misaligned data and sanitizes the backed up metadata for
@@ -748,19 +703,18 @@ capabilities of the storage solution such as built-in backup or data
 replication optimizing both the backup module’s disk space usage and
 restore speed.
 
-
 There is only one requirements to enable Blobless Backup Mode
 
-* No "independent" third-party volumes must exist: Blobless Backup
-  Mode is only compatible with local volumes and centralised
-  third-party volumes.
+#. No "independent" third-party volumes must exist: Blobless Backup
+   Mode is only compatible with local volumes and centralised
+   third-party volumes.
 
 Blobless Backup Mode is storage-agnostic and can be enabled on any
 server or infrastructure that meets the requirements above regardless
 of the specific storage vendor.
 
-How Blobless Backup Mode works
-------------------------------
+How does Blobless Backup Mode work
+----------------------------------
 
 Blobless Backup Mode works exactly as its default counterpart: the
 RealTime Scanner takes care of backing up item changes while the
@@ -769,15 +723,15 @@ between the two is that in Blobless Backup Mode the backup contains no
 items of kind ``blob`` while still saving all metadata and transaction
 history.
 
-It's essential to consider that once enabled, Blobless Backup Mode
+It is essential to consider that once enabled, Blobless Backup Mode
 affects the entire server and no blobs get backed up regardless of the
 target volume and HSM policies.
 
 .. warning:: When the backup is set to Blobless Mode, BLOBs will not
    be deleted until those are out of the retention period.
 
-Enabling Blobless Backup Mode
------------------------------
+Enable Blobless Backup Mode
+---------------------------
 
 Blobless Backup Mode can be enabled or disabled through the
 ``backupBloblessMode`` configuration attribute at global and server
@@ -785,13 +739,13 @@ level, for example to enable it globally:
 
 .. code:: console
 
-   # carbonio config global set attribute backupBloblessMode value true
+   zextras$ carbonio config global set attribute backupBloblessMode value true
    
 Or to enable it only for domain mail.example.com:
    
 .. code:: console
 
-   # carbonio config server set mail.example.com attribute backupBloblessMode value true
+   zextras$ carbonio config server set mail.example.com attribute backupBloblessMode value true
 
 .. _backup_purge_2:
 
@@ -802,10 +756,6 @@ The Backup Purge is a cleanup operation that removes from the Backup
 Path any deleted item that exceeded the retention time defined by the
 :ref:`retention_policy`.
 
-
-How Does it Work?
------------------
-
 The Purge engine scans the metadata of all the deleted items and when it
 finds an item marked for deletion whose last update is older than the
 retention time period, it erases it from the backup.
@@ -814,9 +764,11 @@ Note however, that if an item BLOB is still referenced by one or more
 valid metadata files, due to |backup|’s built-in deduplication,
 the BLOB itself will not be deleted.
 
+.. to be verified
+   
 Customizations backed up by |backup| also follow the Backup
 Path’s purge policies. This can be changed in the `|backup|`
-section of the Administration Console by unchecking the
+section of the |adminui| by unchecking the
 :octicon:`tasklist` `Purge old customizations` checkbox.
 
 .. _when_is_a_backup_purge_executed:
@@ -824,56 +776,45 @@ section of the Administration Console by unchecking the
 When is a Backup Purge Executed?
 --------------------------------
 
--  Weekly, if the Scan Operation Scheduling is enabled in the
-   Administration Console
+.. how to deal with this mix of cli/ui info?
 
--  When manually started either via the Administration Console or the
+-  Weekly, if the Scan Operation Scheduling is enabled in the
+   |adminui|
+
+-  When manually started either via the |adminui| or the
    CLI
 
 With **infinite retention** active (i.e., the *Data Retention Policy* is
 set to **0**), the Backup Purge will immediately exit since no deleted
 item will ever exceed the retention time.
 
-.. _running_a_backup_purge:
-
-Running a Backup Purge
-----------------------
-
 .. grid:: 1 1 1 2
-   :gutter: 2
+   :gutter: 3
 
-   .. grid-item-card:: Via the Administration Console
+   .. grid-item-card::
       :columns: 12 12 12 6
 
-      To start a BackupPurge via the Administration Console:
+      Run a Backup Purge
+      ^^^^^
 
-      - Click the |backup| tab (be sure to have a valid
-        license).
-
-      - Click the ``Run Purge`` button in the top-right part of the
-        UI.
-
-   .. grid-item-card:: Via the CLI
-      :columns: 12 12 12 6
-
-      To start a BackupPurge via the CLI, use the
-      `carbonio backup doPurge` command:
+      To start a Backup Purge run the command
 
       .. code:: console
 
-         # carbonio backup doPurge [param VALUE[,VALUE]]
+         zextras$ carbonio backup doPurge [param VALUE[,VALUE]]
 
-.. _checking_the_status_of_a_running_backup_purge:
+   .. grid-item-card::
+      :columns: 12 12 12 6
 
-Checking the Status of a Running Backup Purge
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Check the Status of a Running Backup Purge
+      ^^^^^
 
-To check the status of a running Purge via the CLI, use the
-`carbonio backup monitor` command:
+      To check the status of a running Purge run the
+      command
 
-.. code:: console
+      .. code:: console
 
-   # carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
+         zextras$ carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
 .. _limitations_and_corner_cases_of_the_backup:
 
@@ -941,21 +882,21 @@ discuss those cases here.
 
    .. code:: console
 
-      # carbonio config set server $(zmhostname) ZxCore_LogLevel 0
+      zextras$ carbonio config set server $(zmhostname) ZxCore_LogLevel 0
 
    Now, run a backup using the following command (that only backs up the
    LDAP data) and check again the log file.
 
    .. code:: console
 
-      # carbonio --json backup doBackupLDAP start
+      zextras$ carbonio --json backup doBackupLDAP start
 
    After the command completes and you have finished analysing the log
    file, remember to restore the verbosity to the previous level:
 
    .. code:: console
 
-      # carbonio config set server $(zmhostname) ZxCore_LogLevel 1
+      zextras$ carbonio config set server $(zmhostname) ZxCore_LogLevel 1
 
    .. hint:: Increasing log verbosity can prove useful whenever
       troubleshooting a problem or searching for more information about a
@@ -1058,7 +999,7 @@ discuss those cases here.
 
    .. code:: console
 
-      # carbonio config set server $(zmhostname) ldapDumpEnabled false
+      zextras$ carbonio config set server $(zmhostname) ldapDumpEnabled false
 
 .. _backup_on_external_storage:
 
@@ -1101,15 +1042,15 @@ The remote metadata archiving can be also triggered manually by running
 either of the following commands and adding the
 ``remote_metadata_upload true`` parameter:
 
-- `carbonio backup doSmartScan`
+- :command:`carbonio backup doSmartScan`
 
-- `carbonio backup doAccountScan`
+- :command:`carbonio backup doAccountScan`
 
-- `carbonio backup doBackupServerCustomizations`
+- :command:`carbonio backup doBackupServerCustomizations`
 
-- `carbonio backup doBackupLDAP`
+- :command:`carbonio backup doBackupLDAP`
 
-- `carbonio backup doBackupCluster`
+- :command:`carbonio backup doBackupCluster`
 
 By splitting the *I/O intensive* metadata folder from the BLOBs one, it
 is also ensured that the backup works, even in case the remote storage
@@ -1146,7 +1087,7 @@ backup setBackupVolume Default` command.
 
 .. code:: console
 
-   # carbonio backup setBackupVolume Default start
+   zextras$ carbonio backup setBackupVolume Default start
 
 .. _data_stored_in_the_external_storage:
 
@@ -1175,7 +1116,7 @@ remote storage to the Backup Path.
 
 .. code:: console
 
-   # carbonio backup retrieveMetadataFromArchive S3 *destination*
+   zextras$ carbonio backup retrieveMetadataFromArchive S3 *destination*
 
 See documentation of `carbonio backup retrieveMetadataFromArchive S3`
 for more information.
@@ -1279,13 +1220,13 @@ vice-versa.
      usage in external backup
                      server: server2
 
-Since each |carbonio| Bucket is identified by a prefix, you can use the
-combination of  bucket credentials and |carbonio| bucket prefix to
-uniquely identify and store multiple |carbonio| Buckets within a single ObjectStorage
-Bucket.
+Since each |carbonio| bucket is identified by a prefix, you can use
+the combination of bucket credentials and |carbonio| bucket prefix to
+uniquely identify and store multiple |carbonio| buckets within a
+single ObjectStorage bucket.
 
-In other words, the same *Amazon S3 Bucket*, you could define several
-|carbonio| Buckets, to be used both for Powerstore HSM and Backup
+In other words, on the same *Amazon S3 Bucket*, you could define
+several |carbonio| Buckets, to be used both for HSM and Backup
 
 .. _objectstorage_backup_in_a_multi_mailbox_environment:
 
@@ -1317,7 +1258,7 @@ the external storage.
 
    .. code:: console
 
-      # carbonio backup setBackupVolume S3 bucket_configuration_id VALUE [param VALUE[,VALUE]].
+      zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id VALUE [param VALUE[,VALUE]].
 
    Once the backup will be initialized, it will use the external storage.
 
@@ -1394,7 +1335,7 @@ the external storage.
 
       .. code:: console
 
-         # carbonio backup setBackupVolume Default start
+         zextras$ carbonio backup setBackupVolume Default start
 
       The Backup will now use the default, local path.
 
@@ -1404,7 +1345,7 @@ the external storage.
 
       .. code:: console
 
-         # carbonio backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup 
+         zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup 
 
    In both cases, at this point you can proceed to remove the volume
    that is no longer functional.
