@@ -5,7 +5,7 @@
 .. _backup_advanced_techniques:
 
 ============================================
- Backup :octicon:`dash` Advanced techniques
+ Backup :octicon:`dash` Advanced Techniques
 ============================================
 
 .. _disaster_recovery:
@@ -68,7 +68,7 @@ The recovery of a system is divided into 2 steps:
 
 .. _how_can_zextras_backup_help_with_recovery:
 
-How can |backup| Help with Recovery?
+How Can |backup| Help You with Recovery?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The **Import Backup** feature of |backup| provides an easy and
@@ -120,7 +120,6 @@ environment, |backup| comes with a very handy CLI command::
 
    # carbonio backup getServerConfig
    command getServerConfig requires more parameters
-
 
 .. grid:: 1 1 1 2 
    :gutter: 1 
