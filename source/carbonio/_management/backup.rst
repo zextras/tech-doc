@@ -2,16 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. todos in this file:
-
-   * verify all CLI commands mentioned in text (not zextras backup
-     [...] ones!)
-
-   * make new screenshots if necessary
-
-   * check how to replace all occurrences of Zimlet / Administration
-     Zimlet
-
 .. _backup-mod:
 
 ==========
@@ -27,13 +17,30 @@ Next, the architecture of |backup| is described, which includes
 also important concepts to know beforehand; the concepts will be
 detailed in the remainder of the chapter.
 
-Finally, the available options to periodically store and check the data
-backed up are presented. All sections are accompanied with the
-corresponding Command Line Reference.
+Finally, the possibilities to backup :ref:`items <item>` and accounts,
+are detailed, accompanied by the corresponding CLI commands. Tasks
+that can be carried out from the GUI can be found in :ref:`Admin
+Panel's Backup <ap-backup>`, while those that can be carried out on
+both CLI and GUI are cross-referenced between the two sections, to let
+you choose the favourite way to execute them.
 
-.. important:: :ref:`Restore Strategies <backup_restore-strategies>` for the
-   Backup and :ref:`Advanced Backup Techniques <backup_advanced_techniques>`,
-   including Disaster Recovery are in dedicated chapters.
+Documentation of the Backup is therefore split in four main parts:
+
+#. :ref:`Backup (of an AppServer) <backup-mod>` is the current page,
+   which includes: the architecture of the backup modules and a
+   glossary of most relevant terms; the most common operations related
+   to the backup and how to execute them from the CLI
+#. :ref:`Restore Strategies <backup_restore-strategies>` for the
+   Backup: how to restore items, accounts, or whole AppServers from
+   the CLI
+
+#. :ref:`Advanced Backup Techniques <backup_advanced_techniques>`,
+   including Disaster Recovery, a collection of last-resort recovery
+   possibilities after hardware or software errors (not related to
+   |product|)
+
+#. :ref:`Admin Panel's Backup <ap-backup>`, which contains all tasks
+   that can be carried out from the GUI only.
 
 .. _carbonio_backup_common_tasks:
 
@@ -48,7 +55,7 @@ the users; also links to technical resources are also provided.
 How to Activate |backup|
 ------------------------
 
-Once you have finished your servers setup, you need a few more steps to
+Once you have finished your server setup, you need a few more steps to
 configure the Backup component and have all your data automatically backed
 up.
 
@@ -69,7 +76,7 @@ up.
 
    .. code:: console
 
-     zextras$ carbonio config  set global ZxCore_LogLevel 0
+     zextras$ carbonio config set global ZxCore_LogLevel 0
 
    to increase the log verbosity, or
 
@@ -94,7 +101,7 @@ up.
 
      .. code:: console
 
-        carbonio config set server $(zmhostname) ZxBackup_DestPath /opt/carbonio-backup
+        zextras$ carbonio config set server $(zmhostname) ZxBackup_DestPath /opt/carbonio-backup
 
      After defining the backup path, it must be initialised: simply
      simply :ref:`start SmartScan <running_a_smartscan>`, either from
@@ -116,7 +123,7 @@ up.
 .. _backup-architecture:
 
 Architecture of |backup|
-==============================
+========================
 
 This section introduces the main concepts needed to understand the
 architecture of |backup| and outlines their interaction; each
@@ -163,13 +170,13 @@ backup, for example:
 
 -  an account (including its settings)
 
--  a distribution list
+-  a mailing list
 
 -  a domain
 
 -  a class of services (COS)
 
-.. note:: The last three items (distribution lists, domains, classes
+.. note:: The last three items (mailing lists, domains, classes
    of services) are subject to the SmartScan **only**, i.e., the Real
    Time Scan will **not** record any change of their state.
 
@@ -228,7 +235,7 @@ SmartScan and Realtime Scanner
 ------------------------------
 
 The initial structure of the backup is built during the *Initial Scan*,
-performed by the **SmartScan**: the actual content of a Mailbox is read
+performed by the **SmartScan**: the actual content of a AppServer is read
 and used to populate the backup. The SmartScan is then executed at every
 start of the |backup| and on a daily basis if the **Scan Operation
 Scheduling** is enabled in the |adminui|.
@@ -302,7 +309,7 @@ important files and directories are present:
    filename the unique ID of the server.
 
 -  ``accounts`` is a directory under which information of all accounts
-   defined in the Mailbox are present. In particular, the following
+   defined in the AppServer are present. In particular, the following
    important files and directories can be found there:
 
    -  ``account_info`` is a file that stores all metadata of the
@@ -330,7 +337,7 @@ important files and directories are present:
 
 -  ``items`` is a directory containing up to 4096 additional folders,
    whose name consists of two hexadecimal (uppercae and lowercase)
-   characters. **Items** in the Mailbox will be stored in the directory
+   characters. **Items** in the AppServer will be stored in the directory
    whose name has the last two characters of their ID.
 
 -  ``id_mapper.log`` is a user object ID mapping and contains a map
@@ -349,14 +356,43 @@ important files and directories are present:
 Setting the Backup Path
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-- Via CLI: using the `carbonio config server`
-  command to change the ``ZxBackup_DestPath`` config key.
+A **Backup Path** is a location in which all items and metadata are
+saved. Each server must define one Backup path, which is unique to
+that server and not reusable. In other words, trying to use a Backup
+Path on a different server and setting it there as the current Backup
+Path will return an error. Trying to force this situation in any way
+by tampering with the backup file will cause corruption of both old
+and new backup data.
 
-.. warning:: Backup paths are unique and not reusable. Copying a
-   Backup Path to a new server and setting it as its current Backup
-   Path will return an error, and forcing this in any way by tampering
-   with the backup file will cause corruption of both old and new
-   backup data.
+The current value of the Backup Path can be retrieved using the
+command
+
+.. code:: console
+
+   zextras$ carbonio config get server mail.example.com ZxBackup_DestPath
+
+        server                                              9d16badb-e89e-4dff-b5b9-bd2bddce53e2
+        values
+
+                attribute                                                   ZxBackup_DestPath
+                value                                                       /opt/zextras/backup/zextras/
+                isInherited                                                 false
+                modules
+                        ZxBackup
+
+To change the Backup Path, use the ``set`` sub-command instead of
+``get`` and append the new path,
+
+.. code:: console
+
+   zextras$ carbonio config set server mail.example.com ZxBackup_DestPath /opt/zextras/new-backup/path
+   ok
+
+The successful operation will display the **ok** message.
+
+.. seealso:: You can do the same from the |adminui| under
+   :ref:`ap-bk-server-conf` (:menuselection:`Admin Panel --> Global
+   Server Settings --> Server Config`).
 
 .. _retention_policy:
 
@@ -405,6 +441,10 @@ all items up to the **Account retention time**, because in that case,
 even if all the metadata have been purged, the digest can still contain
 the information required to restore the item.
 
+.. seealso:: You can set retention policies from the |adminui| under
+   :ref:`ap-bk-server-conf` (:menuselection:`Admin Panel --> Global
+   Server Settings --> Server Config`).
+
 .. _backup_purge:
 
 Backup Purge
@@ -451,7 +491,7 @@ therefore it can work with different OS architecture and |product|
 versions.
 
 |backup| allows administrators to create an atomic backup of every
-item in the mailbox account and restore different objects on different
+item in the AppServer account and restore different objects on different
 accounts or even on different servers.
 
 By default, the default |backup| setting is to save all backup
@@ -466,7 +506,7 @@ order to be eligible to be used as the Backup Path, a directory must:
    shown in section :ref:`setting-backup-path`.
 
 When first started, |backup| launches a SmartScan, to fetch from
-the mailbox all data and create the initial backup structure, in which
+the AppServer all data and create the initial backup structure, in which
 every item is saved along with all its metadata as a JSON array on a
 case sensitive filesystem. After the first start, either the Real Time
 Scanner, the SmartScan, or both can be employed to keep the backup
@@ -619,8 +659,8 @@ To check the status of a running scan via the CLI, use the command
 Realtime Scanner
 ================
 
-The Realtime Scanner is an engine tightly connected to the Mailbox, which
-intercepts all the transactions that take place on each user’s mailbox
+The Realtime Scanner is an engine tightly connected to the AppServer, which
+intercepts all the transactions that take place on each user’s AppServer
 and records them with the purpose of maintaining the whole history of an
 item for its entire lifetime.
 
@@ -689,7 +729,7 @@ an item by reading the metadata saved by the Realtime Scanner, an Account
 Scan on the given account is triggered BEFORE the restore.
 
 This fixes any misaligned data and sanitizes the backed up metadata for
-the mailbox.
+the AppServer.
 
 Blobless Backup Mode
 ====================
@@ -839,7 +879,7 @@ discuss those cases here.
 #. When using the **POP3/POP3S** protocol, if the email client is
    configured to download email messages and delete them immediately
    from the server, these messages may not be included in the backup.
-   This does not happen if the |carbonio| Powerstore component is
+   This does not happen if the |storage| component is
    installed.
 
 #. When sending an email directly through an SMTP connection (e.g.,
@@ -852,7 +892,7 @@ discuss those cases here.
    be included in the backup.
 
 .. note:: The last two cases do not apply when using a browser to
-   connect to the Mailbox. In this case is it the Mailbox that
+   connect to the AppServer. In this case is it the AppServer that
    contacts the SMTP server to send the email and automatically passes
    the email to :command:`mailboxd`.
 
@@ -1188,9 +1228,9 @@ External ObjectStorage
 Before using an ObjectStorage, a dedicated |carbonio| bucket must be
 created.
 
-While similar in concept, |backup| and |carbonio| Powerstore buckets
-are not compatible with each other. If Powerstore data is stored in a
-bucket it is not possible to store Backup data on the same bucket and
+While similar in concept, |backup| and |storage| buckets are not
+compatible with each other. If |storage| data is stored in a bucket it
+is not possible to store Backup data on the same bucket and
 vice-versa.
 
 .. topic:: How to check a bucket's usage.
@@ -1228,12 +1268,12 @@ single ObjectStorage bucket.
 In other words, on the same *Amazon S3 Bucket*, you could define
 several |carbonio| Buckets, to be used both for HSM and Backup
 
-.. _objectstorage_backup_in_a_multi_mailbox_environment:
+.. _objectstorage_backup_in_a_multi_AppServer_environment:
 
-ObjectStorage Backup in a multi-mailbox environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStorage Backup in a multi-AppServer environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In multi-mailbox environments, it is not necessary to create multiple
+In multi-AppServer environments, it is not necessary to create multiple
 buckets: You only enter the bucket configuration information when
 enabling the remote backup on the first server. The
 ``bucket_configuration_id`` and ``prefix`` parameters can then be used
