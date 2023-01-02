@@ -10,12 +10,16 @@ which apply to all :ref:`defined servers <ap-servers>`, and the *Server
 Specifics*, which allows to defined different backup policies to
 different servers, in case more than one server has been defined.
 
+.. _ap-bk-global:
+
 Global Server Settings
 ----------------------
 
 The main configuration options are split in two more sections: *Server
 Config*, *Advanced*, with *Server Lists* providing an overview of the
 current status of the backup on the defined servers.
+
+.. _ap-bk-server-conf:
 
 Server Config
 ~~~~~~~~~~~~~
@@ -50,6 +54,8 @@ items and account, whose default value is *30* days.
 .. hint:: Setting either retention policy to 0 will disable the Backup
    Purge and never remove items or accounts from the backup. 
 
+.. _ap-bk-adv:
+
 Advanced
 ~~~~~~~~
 
@@ -72,6 +78,7 @@ in the disk at every save**) and that the user's metadata are included
 in the remote backup (**Archive user metadata folder in the remote
 backup**)..
    
+.. _ap-bk-server-list:
 
 Server Lists
 ~~~~~~~~~~~~

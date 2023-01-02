@@ -70,6 +70,8 @@ Privacy
 
 .. include:: /common/adminpanel/privacy.rst
 
+.. _ap-backup:
+
 Backup
 ======
 
