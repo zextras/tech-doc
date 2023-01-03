@@ -261,7 +261,7 @@ a new account can be created using the :bdg-primary:`+` button.
       account has been cracked
 
    #. **Closed**. The user is not allowed to log in, incoming e-mails
-      are rejected. 
+      are rejected.
 
    #. **Pending**. This status is usually seen during the account
       creation, when it is not yet active. User can not log in,
@@ -285,9 +285,9 @@ initial account configuration.
 
 .. grid:: 1 1 2 2
    :gutter: 3
-            
+
    .. grid-item-card::
-      :columns: 12 12 6 6 
+      :columns: 12 12 6 6
 
       Step 1: Create New Account *John Smith*
       ^^^
@@ -311,15 +311,15 @@ initial account configuration.
       We also explicitly configure the **Account Status**, **Language**,
       and **Time Zone**, although they would inherit by default the
       values defined at domain level,
-      
+
    .. grid-item::
-      :columns: 12 12 6 6 
+      :columns: 12 12 6 6
 
       .. image:: /img/adminpanel/new-account-details.png
 
 .. grid:: 1 1 2 2
    :gutter: 3
-            
+
    .. grid-item-card::
       :columns: 12 12 6 6
 
@@ -336,7 +336,7 @@ initial account configuration.
 
 .. grid:: 1 1 2 2
    :gutter: 3
-            
+
    .. grid-item-card::
       :columns: 12 12 6 6
 
@@ -392,3 +392,37 @@ Additional e-mail addresses can be added to the resource, for example
 to notify the company's facility manager which meeting rooms are
 reserved and which are free.
 
+.. _restore-account:
+
+Restore Account
+~~~~~~~~~~~~~~~
+
+The *Restore Account* procedure allows you to restore the contents and
+preferences of a mailbox in the exact status when it was deleted.
+
+When a Restore Account starts, a new account is created (the
+*Destination Account*), and all the items existing in the source
+account at the moment of the deletion are recreated in the destination
+account, including the folder structure and all the user’s data. All
+restored items will be created in the current primary store unless the
+**Apply HSM Policy after the restore** box is checked.
+
+.. warning:: When restoring data on a new account, shared items
+   consistency is not preserved. This is because the original share
+   rules refer to the original account’s UUID, not to the *Destination
+   Account*, which has a completely different UUID.
+
+To start the procedure, type an e-mail address in the text-field or
+select an account from the list.
+
+Then, click on the `CONFIG` tab and select the options to apply for
+the Restore:
+
+* To which date and time to restore the account
+* Whether to use the last available status of the account
+* If External Data Sources should be restored
+* Select an e-mail to which send a notification of the successful
+  restore.
+
+  .. hint:: This could be the alternate e-mail of the user whose
+     account is being restored.

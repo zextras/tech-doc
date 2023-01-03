@@ -3,7 +3,12 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 The |adminui|\'s Backup GUI allows to configure the mail servers to
-save mailbox items in the backup.
+save mailbox items in the backup. While they are part of the Backup
+operations, :ref:`backup_restore-strategies` can currently be carried
+out only from the CLI. The only exception is for the
+:`restore-account`, which can be carreid out by the GUI only, under
+:menuselection:`Admin Panel --> Domains --> Manage --> Restore
+Account`.
 
 Setting are grouped in two main section, the *Global Server Settings*,
 which apply to all :ref:`defined servers <ap-servers>`, and the *Server
