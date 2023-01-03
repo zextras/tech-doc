@@ -1,5 +1,3 @@
-@Library('github.com/releaseworks/jenkinslib') _
-
 pipeline {
     agent {
   		  node {
@@ -42,6 +40,7 @@ pipeline {
            stash name: 'build_done', includes: 'build/**'
         }
       }
+
       stage('Upload to STAGING') {
       when {
                     branch 'pre_release'
@@ -49,7 +48,10 @@ pipeline {
         steps {
             unstash "build_done"
             withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
-                AWS("s3 sync build/ s3://${STAGING_BUCKET_NAME}/ --delete")
+                s3Upload(bucket: STAGING_BUCKET_NAME,
+                         includePathPattern: '**',
+                         workingDir: 'build'
+                )
             }
             script {
             DESTINATION = "$STAGING_BUCKET_NAME"
@@ -63,7 +65,6 @@ pipeline {
         steps {
             unstash "build_done"
             withAWS(region: REGION, credentials: PRODUCTION_CREDENTIALS) {
-                
                 s3Upload(bucket: PRODUCTION_BUCKET_NAME,
                          includePathPattern: '**',
                          workingDir: 'build'
