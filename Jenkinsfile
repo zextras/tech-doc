@@ -36,7 +36,8 @@ pipeline {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            sh 'docker rm -v zsphinx'
            sh 'docker run -d --name zsphinx  sphinx_builder'
-           sh 'docker cp zsphinx:docs/build $(pwd)'            withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
+           sh 'docker cp zsphinx:docs/build $(pwd)'
+           withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
                 s3Upload(bucket: STAGING_BUCKET_NAME,
                          includePathPattern: '**',
                          workingDir: 'build'
