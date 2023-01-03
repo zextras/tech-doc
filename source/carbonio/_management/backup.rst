@@ -80,7 +80,7 @@ up.
 
    to increase the log verbosity, or
 
-   .. code:: console 
+   .. code:: console
 
       zextras$ carbonio config set global ZxCore_LogLevel 1
 
@@ -89,10 +89,10 @@ up.
 
    .. code:: console
 
-      zextras$ carbonio config dump global|grep LogLevel 
+      zextras$ carbonio config dump global|grep LogLevel
 
 .. topic:: :octicon:`comment` Basic Customisation of Backup
-              
+
    You can optionally customise some of the |backup| options,
    including:
 
@@ -103,10 +103,10 @@ up.
 
         zextras$ carbonio config set server $(zmhostname) ZxBackup_DestPath /opt/carbonio-backup
 
-     After defining the backup path, it must be initialised: simply
-     simply :ref:`start SmartScan <running_a_smartscan>`, either from
+     After defining the Backup Path, it must be initialised: simply
+     simply :ref:`start SmartScan <smartscan>`, either from
      the admin console or the command line.
-     
+
    .. verify this on new interface
       - Backup Zimbra customisations. With this option, configuration and
         other changes made to Zimbra are saved in a separate file named
@@ -416,11 +416,11 @@ not run.
 You can check the current value of the Retention Policy by using respectively
 
 .. code:: console
-          
+
    zextras$ carbonio config dump global | grep ZxBackup_DataRetentionDays
 
 .. code:: console
-          
+
    zextras$ carbonio config dump global | grep backupAccountsRetentionDays
 
 In order to change either value, use **0** for *infinite retention* or
@@ -428,11 +428,11 @@ any integer value as the number of days. For example, to set the
 retention to **15 days** for data and accounts, use:
 
 .. code:: console
-          
+
    zextras$ carbonio config set global ZxBackup_DataRetentionDays 15
 
 .. code:: console
-          
+
    zextras$ carbonio config set global backupAccountsRetentionDays 15
 
 In case an account is deleted and must be restored after the **Data
@@ -554,16 +554,16 @@ and decrease the scan time exponentially.
 
 By default, a SmartScan is scheduled to be executed each night (if
 ``Scan Operation Scheduling`` is enabled in the |backup| section of
-the |adminui|). Once a week, on a day set by the user, a
-Purge is executed together with the SmartScan to clear |backup|’s
-datastore from any deleted item that exceeded the retention period.
+the |adminui|). Once a week, on a day set by the user, a Purge is
+executed together with the SmartScan to clear the volume on which the
+|backup| is saved from any deleted item that exceeded the retention
+period.
 
-
-The |backup| engine scans all the items on the |carbonio| mailstore,
+The |backup| engine scans all the items on the |carbonio| mailbox,
 looking for items modified after the last SmartScan. It updates any
 outdated entry and creates any item not yet present in the backup
 while flagging as deleted any item found in the backup and not in the
-|carbonio| mailstore.
+|carbonio| mailbox.
 
 Then, all configuration metadata in the backup are updated, so that
 domains, accounts, COSs and server configurations are stored along with
@@ -583,100 +583,65 @@ creates one (daily) archive for each account which include all the
 account’s metadata and stores it on the external volume. More
 information in section :ref:`backup_on_external_storage`.
 
-.. _when_is_a_smartscan_executed:
+Smartscan can be run manually from the CLI or configured from the
+:ref:`Admin Panel <ap-bk-server-conf>` (:menuselection:`Admin Panel
+--> Global Server Settings --> Server Config`).
 
-When is a SmartScan Executed?
------------------------------
+.. _run_smartscan:
 
-- When the |backup| is started.
+.. grid:: 1 1 1 2
+   :gutter: 1
 
-  .. note:: While it is possible to enable this option, it is
-     suggested to leave it disabled, because in certain situations,
-     running SmartScan at every |backup| restart can become a
-     performance bottleneck, as it has been discussed in section
-     :ref:`backup_disable_scans`.
+   .. grid-item-card::
+      :columns: 12 12 12 6
 
-..
-   - Daily, if the Scan Operation Scheduling is enabled in the
-     |adminui|
+      Running a SmartScan
+      ^^^^^
 
-   - When the Realtime Scanner is re-enabled via the |adminui| after
-     being previously disabled
+      To start a SmartScan via the CLI, use the command:
 
-.. _running_a_smartscan:
+      .. code:: console
 
-Running a SmartScan
--------------------
+         zextras$ carbonio backup doSmartScan *start* [param VALUE[,VALUE]]
 
-..
-   .. grid:: 1 1 1 2
-      :gutter: 1
+   .. grid-item-card::
+      :columns: 12 12 12 6
 
-      .. grid-item-card:: Starting the Scan via the |adminui|
-         :columns: 12 12 12 6
+      Checking the Status of a Running Scan
+      ^^^^^
 
-         To start a SmartScan via the |adminui|,
+      Before actually carrying out this check, it is suggested to verify how
+      many operations are running, to find the correct UUID. you can do this
+      by using the command
 
-         -  Open the |adminui|
+      .. code:: console
 
-         -  If a multiserver installation, choose the server on which to run the
-            SmartScan
+         zextras$ carbonio backup getAllOperations [param VALUE[,VALUE]]
 
-         -  Click  the |backup| tab
+      To check the status of a running scan via the CLI, use the command
 
-         -  Click  :bdg-secondary:`Run Smartscan`
+      .. code:: console
 
-      .. grid-item-card:: Starting the SmartScan via the CLI
-         :columns: 12 12 12 6
-
-To start a SmartScan via the CLI, use the command:
-
-.. code:: console
-
-   zextras$ carbonio backup doSmartScan *start* [param VALUE[,VALUE]]
-
-.. _checking_the_status_of_a_running_scan:
-
-Checking the Status of a Running Scan
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Before actually carrying out this check, it is suggested to verify how
-many operations are running, to find the correct id. you can do this
-by using the command
-
-.. code:: console
-
-   zextras$ carbonio backup getAllOperations [param VALUE[,VALUE]]
-
-To check the status of a running scan via the CLI, use the command
-
-.. code:: console
-
-   zextras$ carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
+         zextras$ carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
 .. _real_time_scan:
 
 Realtime Scanner
 ================
 
-The Realtime Scanner is an engine tightly connected to the AppServer, which
-intercepts all the transactions that take place on each user’s AppServer
-and records them with the purpose of maintaining the whole history of an
-item for its entire lifetime.
+The Realtime Scanner is an engine tightly connected to the AppServer,
+which intercepts all the transactions that take place on each user
+mailbox and records them with the purpose of maintaining the whole
+history of an item for its entire lifetime.
 
-Thanks to the Realtime Scanner, it is possible to recover any item at any
-point in time.
+Thanks to the Realtime Scanner, it is possible to recover any item at
+any point in time.
 
-The Realtime Scanner reads all the events of the mail server almost
-real-time, then it 'replicates' the same operations on its own data
-structure, creating items or updating their metadata. No information is
-ever overwritten in the backup, so every item has its own complete
+The Realtime Scanner reads all the events of the AppServer in almost
+real-time, then it replicates the same operations on its own data
+structure, creating items or updating their metadata. No information
+is ever overwritten in the backup, so every item has its own complete
 history.
-
-.. _managing_the_real_time_scanner:
-
-Managing the Realtime Scanner
------------------------------
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -686,7 +651,7 @@ Managing the Realtime Scanner
 
       Enable the Realtime Scanner
       ^^^^^
-      
+
       Set the ``ZxBackup_RealTimeScanner`` property to ``TRUE``.
 
       .. code:: console
@@ -698,7 +663,7 @@ Managing the Realtime Scanner
 
       Disable the Realtime Scanner
       ^^^^^
-      
+
       Set the ``ZxBackup_RealTimeScanner`` property to ``FALSE``.
 
       .. code:: console
@@ -708,7 +673,7 @@ Managing the Realtime Scanner
 .. topic:: When Should the Realtime Scanner Be Disabled?
 
    The only time you should disable the Realtime Scanner is while
-   performing an External Restore of multiple domains. This is a
+   performing an ref:`external_restore` of multiple domains. This is a
    safety measure to avoid high load on your server. After the import,
    re-enable the Realtime Scanner and perform a SmartScan when
    prompted.
@@ -716,20 +681,19 @@ Managing the Realtime Scanner
 .. _limitations_and_safety_scan:
 
 Limitations and Safety Scan
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------
 
 .. to be verified!
- 
+
 The main limitation when restoring data acquired via the Realtime
 Scanner is when a user uses the ``Empty Folder`` button in the
-right-click context menu
+right-click context menu.
 
-In this case, and any time |backup| cannot determine the status of
-an item by reading the metadata saved by the Realtime Scanner, an Account
-Scan on the given account is triggered BEFORE the restore.
-
-This fixes any misaligned data and sanitizes the backed up metadata for
-the AppServer.
+In this case, and any time |backup| cannot determine the status of an
+item in an account by reading the metadata saved by the Realtime
+Scanner, a Smartscan on the given account is triggered *before* the
+restore: this operation fixes any misaligned data and sanitizes the
+backed up metadata.
 
 Blobless Backup Mode
 ====================
@@ -745,7 +709,7 @@ restore speed.
 
 There is only one requirements to enable Blobless Backup Mode
 
-#. No "independent" third-party volumes must exist: Blobless Backup
+#. No independent third-party volumes must exist: Blobless Backup
    Mode is only compatible with local volumes and centralised
    third-party volumes.
 
@@ -753,12 +717,9 @@ Blobless Backup Mode is storage-agnostic and can be enabled on any
 server or infrastructure that meets the requirements above regardless
 of the specific storage vendor.
 
-How does Blobless Backup Mode work
-----------------------------------
-
 Blobless Backup Mode works exactly as its default counterpart: the
 RealTime Scanner takes care of backing up item changes while the
-SmartScan manages domain/cos/account consistency, the only difference
+SmartScan manages domain/COS/account consistency, the only difference
 between the two is that in Blobless Backup Mode the backup contains no
 items of kind ``blob`` while still saving all metadata and transaction
 history.
@@ -770,19 +731,16 @@ target volume and HSM policies.
 .. warning:: When the backup is set to Blobless Mode, BLOBs will not
    be deleted until those are out of the retention period.
 
-Enable Blobless Backup Mode
----------------------------
-
-Blobless Backup Mode can be enabled or disabled through the
-``backupBloblessMode`` configuration attribute at global and server
-level, for example to enable it globally:
+Blobless Backup Mode is a CLI-only feature and can be enabled or
+disabled through the ``backupBloblessMode`` configuration attribute at
+global and server level, for example to enable it globally:
 
 .. code:: console
 
    zextras$ carbonio config global set attribute backupBloblessMode value true
-   
+
 Or to enable it only for domain mail.example.com:
-   
+
 .. code:: console
 
    zextras$ carbonio config server set mail.example.com attribute backupBloblessMode value true
@@ -793,40 +751,32 @@ Backup Purge
 ============
 
 The Backup Purge is a cleanup operation that removes from the Backup
-Path any deleted item that exceeded the retention time defined by the
+Path any deleted item that exceeds the retention time defined by the
 :ref:`retention_policy`.
 
 The Purge engine scans the metadata of all the deleted items and when it
 finds an item marked for deletion whose last update is older than the
 retention time period, it erases it from the backup.
 
-Note however, that if an item BLOB is still referenced by one or more
-valid metadata files, due to |backup|’s built-in deduplication,
-the BLOB itself will not be deleted.
+Note however, that if the *blob* of an item is still referenced by one
+or more valid metadata files, due to |backup|’s built-in
+deduplication, the *blob* itself will not be deleted.
 
 .. to be verified
-   
-Customizations backed up by |backup| also follow the Backup
-Path’s purge policies. This can be changed in the `|backup|`
-section of the |adminui| by unchecking the
-:octicon:`tasklist` `Purge old customizations` checkbox.
 
-.. _when_is_a_backup_purge_executed:
+   Customizations backed up by |backup| also follow the Backup
+   Path’s purge policies. This can be changed in the |backup|
+   section of the |adminui| by unchecking the
+   :octicon:`tasklist` `Purge old customizations` checkbox.
 
-When is a Backup Purge Executed?
---------------------------------
+The Backup Purge can be started manually from the CLI or scheduled
+from the :ref:`Admin Panel <ap-bk-server-conf>` (:menuselection:`Admin
+Panel +--> Global Server Settings --> Server Config`).
 
-.. how to deal with this mix of cli/ui info?
-
--  Weekly, if the Scan Operation Scheduling is enabled in the
-   |adminui|
-
--  When manually started either via the |adminui| or the
-   CLI
-
-With **infinite retention** active (i.e., the *Data Retention Policy* is
-set to **0**), the Backup Purge will immediately exit since no deleted
-item will ever exceed the retention time.
+However, note that when **infinite retention** is active (i.e., the
+*Data Retention Policy* is set to **0**), the Backup Purge will
+immediately exit, since no deleted item will ever exceed the retention
+time.
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -982,7 +932,7 @@ discuss those cases here.
 
    To fix the problem, follow this three step procedure.
 
-   .. grid:: 
+   .. grid::
       :gutter: 3
 
       .. grid-item-card::
@@ -1006,7 +956,7 @@ discuss those cases here.
 
          This command will print on the standard output the LDAP password,
          that you need to store on all mailbox servers on which either
-         ``carbonio`` is running, or LDAP backup is enabled, or both. 
+         ``carbonio`` is running, or LDAP backup is enabled, or both.
 
       .. grid-item-card::
 
@@ -1043,32 +993,27 @@ discuss those cases here.
 
 .. _backup_on_external_storage:
 
-Backup on external storage
+Backup on External Storage
 ==========================
 
 As described in section :ref:`backup-architecture`, |backup| is
 composed of metadata and blobs (compressed and deduplicated), saved by
 default on the same folder—​or mounted volume—​specified in the *Backup
-Path*. The real-time backup requires the Backup Path be fast enough to
-avoid queuing operations and/or risk data loss.
+Path*. The real-time backup requires that the Backup Path be fast
+enough to avoid queuing operations and/or risk data loss.
 
 However, S3 buckets, NFS shares, and other storage mounted using Fuse
 can be very slow and might not be suited as storage mounted on the
 Backup Path.
 
 Because the most important part of backups is the metadata, the idea
-behind **Backup on External Storage** is to use two different storages:
+behind **Backup on External Storage** is to use two different storage:
 one local (and typically fast) for metadata and cache and one external
 (local network or cloud) for the blobs and a copy of metadata.
 
 If the external storage is remote, multiple changes will be bundled and
 sent together, while if it is local, larger but slower and cheaper
-storages can be employed.
-
-.. _how_the_backup_on_external_storage_works:
-
-How the Backup on external storage works
-----------------------------------------
+storage can be employed.
 
 Metadata are saved locally in the Backup Path, BLOBs are momentarily
 cached on the local disk and uploaded to the remote storage as soon as
@@ -1101,7 +1046,7 @@ resilience.
 .. _goals_and_benefits:
 
 Goals and benefits
-~~~~~~~~~~~~~~~~~~
+------------------
 
 It is worth to highlight the two main advantages of the Backup on
 external storage:
@@ -1113,7 +1058,7 @@ external storage:
    infrastructure and are therefore accessible from disaster recovery
    sites
 
-.. important:: When activating the Backup on External Storage, it is
+.. warning:: When activating the Backup on External Storage, it is
    **not** possible to modify the Backup Path from the UI. Indeed, the
    corresponding input text area will only be shown, but **can not be
    edited**. Moreover, the following warning will be shown:
@@ -1158,13 +1103,14 @@ remote storage to the Backup Path.
 
    zextras$ carbonio backup retrieveMetadataFromArchive S3 *destination*
 
-See documentation of `carbonio backup retrieveMetadataFromArchive S3`
-for more information.
+.. not yet available
+   See documentation of `carbonio backup retrieveMetadataFromArchive S3`
+   for more information.
 
-.. _external_storages:
+.. _external_storage:
 
-External storages
------------------
+Types of External Storage
+-------------------------
 
 Supported external volumes, i.e. shared volumes mounted either at the OS
 level, or object storage entirely managed by |carbonio|, are of two types:
@@ -1173,7 +1119,7 @@ this section.
 
 .. _nfsfuse_external_storage:
 
-NFS/Fuse external storage
+NFS/Fuse External Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before using the NFS/Fuse share, it is necessary to configure the **new
@@ -1182,43 +1128,56 @@ be reused*. Depending on what approach you choose, the steps to carry
 out are different. We describe here only the easier and most reliable
 one.
 
-.. card:: Single server installation
+.. grid:: 1 1 1 2
+   :gutter: 3
 
-   When NFS shares are used, you need to make them visible and accessible
-   to the OS and |carbonio|, a task that only requires to add a row in
-   ``/etc/fstab`` with the necessary information to mount the volume, for
-   example, to mount volume /media/mailserver/backup/ from a NAS located at
-   192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line similar
-   to:
+   .. grid-item-card::
+      :columns: 12 12 12 6
 
-   .. code::
+      Single-Server installation
+      ^^^^^
 
-      192.168.72.16:/media/mailserver/backup/  /media/external/ nfs rw,hard,intr, 0,0
+      When NFS shares are used, you need to make them visible and
+      accessible to both the Operating System and |carbonio|, a task
+      that only requires to add a row in file :file:`/etc/fstab` with the
+      necessary information to mount the volume, for example, to mount
+      volume :file:`/media/mailserver/backup/` from a NAS located at
+      192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line
+      similar to:
 
-   You will now be able to mount the external storage by simply using
-   :command:`mount /media/external/` on the server.
+      .. code::
 
-.. card:: Multiserver installation
+         192.168.72.16:/media/mailserver/backup/  /media/external/ nfs rw,hard,intr, 0,0
 
-   In the case of a multiserver installation, the admin must ensure that
-   each server writes **on its own directory**, and the destination share
-   **must** be readable and writable by the ``zextras`` user.
+      You will now be able to mount the external storage by simply using
+      :command:`mount /media/external/` on the server.
 
-   In a multiserver installation, consider a scenario in which the same NAS
-   located on 192.168.72.16 is involved, which exposes via NFS the share as
-   :file:`/media/externalStorage`. We want to store our multiservers backups on
-   this NAS.
+   .. grid-item-card::
+      :columns: 12 12 12 6
 
-   To do so, on each server you need to add one entry similar to the
-   following to :file:`/etc/fstab`:
+      Multi-Server installation
+      ^^^^^
 
-   .. code:: console
+      In the case of a Multi-Server installation, the admin must ensure that
+      each server writes **on its own directory**, and the destination volume
+      **must** be readable and writable by the ``zextras`` user.
 
-      192.168.72.16:/externalStorage/Server1 /mnt/backup nfs rw,hard,intr 0 0
+      In a Multi-Server installation, consider a scenario in which the same NAS
+      located on 192.168.72.16 is involved, which exposes via NFS the share as
+      :file:`/media/externalStorage`. We want to store our multiservers backups on
+      this NAS.
 
-      192.168.72.16:/externalStorage/Server2 /mnt/backup nfs rw,hard,intr  0 0
+      To do so, on **each server** you need to add one entry similar to the
+      following to the :file:`/etc/fstab` file:
 
-      192.168.72.16:/externalStorage/Server3 /mnt/backup nfs rw,hard,intr  0 0
+      .. code::
+
+         192.168.72.16:/externalStorage/SRV1 /mnt/backup nfs rw,hard,intr 0 0
+
+      In our sample :ref:`multi-server-scenario`, on each node you
+      need to add the entry above using **SRV1**, ..., **SRV6** on the
+      corresponding node, while on the NAS there will be six
+      directories, one for each node.
 
 .. _external_objectstorage:
 
@@ -1228,165 +1187,185 @@ External ObjectStorage
 Before using an ObjectStorage, a dedicated |carbonio| bucket must be
 created.
 
-While similar in concept, |backup| and |storage| buckets are not
-compatible with each other. If |storage| data is stored in a bucket it
-is not possible to store Backup data on the same bucket and
+Indeed, while similar in concept, |backup| and |storage| buckets are
+not compatible with each other. If |storage| data is stored in a
+bucket it is not possible to store Backup data on the same bucket and
 vice-versa.
 
 .. topic:: How to check a bucket's usage.
 
-   The `carbonio core listBuckets` command
-   reports the bucket usage, for example::
+   Use the following command to report the bucket usage.
 
-     bucketName                                                  hsm
-     protocol                                                    HTTPS
-     storeType                                                   S3
-     accessKey                                                   xxxxx
-     region                                                      EU_WEST_1
-     uuid                                                        58fa4ca2-31dd-4209-aa23-48b33b116090
-     usage in powerstore volumes
-                     server: server1                                   volume: centralized-s3
-                     server: server2                                   volume: centralized-s3
-     usage in external backup                                    unused
+   .. code:: console
 
-     bucketName                                                  backup
-     protocol                                                    HTTPS
-     storeType                                                   S3
-     accessKey                                                   xxxxxxx
-     region                                                      EU_WEST_1
-     destinationPath                                             server2
-     uuid                                                        5d32b50d-79fc-4591-86da-35bedca95de7
-     usage in powerstore volumes                                 unused
-     usage in external backup
-                     server: server2
+      zextras$  `carbonio core listBuckets`
+
+   The output will look similar to::
+     
+      bucketName                                                  hsm
+      protocol                                                    HTTPS
+      storeType                                                   S3
+      accessKey                                                   xxxxx
+      region                                                      EU_WEST_1
+      uuid                                                        58fa4ca2-31dd-4209-aa23-48b33b116090
+      usage in powerstore volumes
+                      server: srv1                                      volume: centralized-s3
+                      server: srv2                                      volume: centralized-s3
+      usage in external backup                                    unused
+
+      bucketName                                                  backup
+      protocol                                                    HTTPS
+      storeType                                                   S3
+      accessKey                                                   xxxxxxx
+      region                                                      EU_WEST_1
+      destinationPath                                             server2
+      uuid                                                        5d32b50d-79fc-4591-86da-35bedca95de7
+      usage in powerstore volumes                                 unused
+      usage in external backup
+                      server: srv2
 
 Since each |carbonio| bucket is identified by a prefix, you can use
 the combination of bucket credentials and |carbonio| bucket prefix to
 uniquely identify and store multiple |carbonio| buckets within a
 single ObjectStorage bucket.
 
-In other words, on the same *Amazon S3 Bucket*, you could define
-several |carbonio| Buckets, to be used both for HSM and Backup
+In other words, on the same *S3 Bucket*, you could define
+several |carbonio| Buckets, to be used both for HSM and Backup.
 
-.. _objectstorage_backup_in_a_multi_AppServer_environment:
+.. _objectstorage_backup_in_a_multi_Server_environment:
 
-ObjectStorage Backup in a multi-AppServer environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStorage Backup in a Multi-Server environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In multi-AppServer environments, it is not necessary to create multiple
+In Multi-Server environments, it is not necessary to create multiple
 buckets: You only enter the bucket configuration information when
 enabling the remote backup on the first server. The
 ``bucket_configuration_id`` and ``prefix`` parameters can then be used
 to store other server’s data on a separate directory on the same
 storage.
 
-.. _activate_backup_on_the_external_storage:
+.. _activate_backup_on_external_storage:
 
-Activate backup on the external storage
----------------------------------------
+Activate Backup on External Storage
+-----------------------------------
 
 Once that external storage has been set up, it is necessary to let
 |carbonio| use the external storage. The procedure is slight
 different, depending if the new storage needs to be accessed from a
-newly installed server or if existing local backups must be migrated to
-the external storage.
+newly installed server or if existing local backups must be migrated
+to the external storage.
 
-.. card:: Configure on newly installed / uninitialized server
+.. note:: External Storage is a CLI-only feature.
 
-   If there the backup has not been initialized on the server, an
-   Administrator can configure the external storage by running
+.. grid:: 1 1 1 2
+   :gutter: 3
+
+   .. grid-item-card::
+      :columns: 12 12 12 6
+                
+      Configure on newly installed / uninitialized server
+      ^^^^^
+
+      If there the backup has not been initialized on the server, an
+      Administrator can configure the external storage by running
+
+      .. code:: console
+
+         zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id VALUE [param VALUE[,VALUE]].
+
+      Once the backup will be initialized, it will use the external storage.
+
+      Therefore, check for any missing blobs with doCheckBlobs in the mounted
+      volumes to avoid integrity errors.
+
+   .. grid-item-card::
+      :columns: 12 12 12 6
+
+      Migrate existing backups
+      ^^^^^
+
+      Before actually carrying out the migration, please perform the following
+      important maintenance task. This procedure will minimise the risk of
+      errors:
+
+      1. Double-check the permissions on the active backup path
+
+      2. Make sure that the |carbonio| cache folder is accessible by the
+         ``zextras`` user (typically under :file:`/opt/zextras/cache`)
+
+      3. Check for table errors in the myslow.log and in the MariaDb integrity
+         check report. If any error is found, consider running the
+         ``mysqlcheck`` command to verify the database integrity.
+
+      4. Check for any missing blobs in the mounted |carbonio| volumes
+         with `carbonio powerstore doCheckBlobs`
+
+      5. Check for any missing digest in the backup with
+         `doSmartScan deep=true`
+
+      6. Check for any orphaned digest or metadata in the Backup with
+         `carbonio backup doCoherencyCheck`
+
+      7. Optionally run a `carbonio backup doPurge` to remove
+         expired data from the Backup
+
+      You can now proceed to migrate the existing backup using the
+      appropriate ``carbonio backup migrateBackupVolume`` [[ ``Default`` \|
+      ``Local`` \| ``S3`` ]] command.
+
+      .. restore after CLI has been reintroduced
+
+         You can now proceed to migrate the existing backup using the appropriate
+         ``carbonio backup migrateBackupVolume`` [[
+         `Default <carbonio_backup_migrateBackupVolume_Default>` \|
+         `Local <carbonio_backup_migrateBackupVolume_Local>` \|
+         `S3 <carbonio_backup_migrateBackupVolume_S3>` ]] command.
+
+      Finally, once the migration has been completed you can run this final
+      task:
+
+      -  Manually remove the old backup data. Indeed, the migration only
+         **copies** the files of the backup to the new external storage and
+         leaves them in the place.
+
+.. _backup-troubleshoot-object-storage:
+
+Troubleshooting Backups on Defective ObjectStorage
+--------------------------------------------------
+
+There are unfortunate cases in which a remote ObjectStorage holding a
+Backup becomes completely unavailable, for example because of an
+hardware failure.
+
+What happens in this situation is unfortunate in many points:
+
+* All the data saved in on the Bucket are already lost
+* The remote bucket still shows up when issuing the command
+  :command:`carbonio core listBuckets all`
+* The Backup still tries to use that bucket
+* The defective Bucket can not be removed
+* Trying to redirect the backup to a new volume with the command
+  ``migrateBackupVolume`` is fruitless, because the remote Bucket is
+  unresponsive and unaccessible
+
+The solution to this impasse is however quite simple, and indeed there
+are two alternatives:
+
+#. You do not have another ObjectStorage available: use the command
 
    .. code:: console
 
-      zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id VALUE [param VALUE[,VALUE]].
+      zextras$ carbonio backup setBackupVolume Default start
 
-   Once the backup will be initialized, it will use the external storage.
+   The Backup will now use the default, local path.
 
-   Therefore, check for any missing blobs with doCheckBlobs in the mounted
-   volumes to avoid integrity errors.
+#. You already have another ObjectStorage available: create a new
+   Backup Volume with the following command (we use a new **S3**
+   bucket as example)
 
-.. card:: Migrate existing backups
+   .. code:: console
 
-   Before actually carrying out the migration, please perform the following
-   important maintenance task. This procedure will minimise the risk of
-   errors:
+      zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup
 
-   1. Double-check the permissions on the active backup path
-
-   2. Make sure that the |carbonio| cache folder is accessible by the
-      ``zextras`` user (typically under :file:`/opt/zextras/cache`)
-
-   3. Check for table errors in the myslow.log and in the MariaDb integrity
-      check report. If any error is found, consider running the
-      ``mysqlcheck`` command to verify the database integrity.
-
-   4. Check for any missing blobs in the mounted |carbonio| volumes
-      with `carbonio powerstore doCheckBlobs`
-
-   5. Check for any missing digest in the backup with
-      `doSmartScan deep=true`
-
-   6. Check for any orphaned digest or metadata in the Backup with
-      `carbonio backup doCoherencyCheck`
-
-   7. Optionally run a `carbonio backup doPurge` to remove
-      expired data from the Backup
-      
-   You can now proceed to migrate the existing backup using the
-   appropriate ``carbonio backup migrateBackupVolume`` [[ ``Default`` \|
-   ``Local`` \| ``S3`` ]] command.
-
-   .. restore after CLI has been reintroduced
-
-      You can now proceed to migrate the existing backup using the appropriate
-      ``carbonio backup migrateBackupVolume`` [[
-      `Default <carbonio_backup_migrateBackupVolume_Default>` \|
-      `Local <carbonio_backup_migrateBackupVolume_Local>` \|
-      `S3 <carbonio_backup_migrateBackupVolume_S3>` ]] command.
-
-   Finally, once the migration has been completed you can run this final
-   task:
-
-   -  Manually remove the old backup data. Indeed, the migration only
-      **copies** the files of the backup to the new external storage and
-      leaves them in the place.
-
-.. card:: Troubleshooting Backups on Defective ObjectStorages
-
-   There are unfortunate cases in which a remote ObjectStorage holding
-   a Backup becomes completely unavailable, for example because of an
-   hardware failure.
-
-   What happens in this situation is unfortunate in many points:
-
-   * All the data saved in on the Bucket are already lost
-   * The remote bucket still shows up when issuing the command
-     :command:`carbonio core listBuckets all`
-   * The Backup still tries to use that bucket
-   * The defective Bucket can not be removed
-   * Trying to redirect the backup to a new volume with the command
-     ``migrateBackupVolume`` is fruitless, because the remote Bucket
-     is unresponsive and unaccessible
-
-   The solution to this impasse is however quite simple, and indeed
-   there are two alternatives:
-
-   #. You do not have another ObjectStorage available: use the command
-
-      .. code:: console
-
-         zextras$ carbonio backup setBackupVolume Default start
-
-      The Backup will now use the default, local path.
-
-   #. You already have another ObjectStorage available: create a new
-      Backup Volume with the following command (we use a new **S3**
-      bucket as example)
-
-      .. code:: console
-
-         zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup 
-
-   In both cases, at this point you can proceed to remove the volume
-   that is no longer functional.
-
+In both cases, at this point you can proceed to remove the volume that
+is no longer functional.

@@ -30,7 +30,14 @@ on the server.
 The first three options allow to set the auto-start of the Realtime
 scanner (**Enable Realtime Scanner**), of the module itself (**This
 module is enabled at the startup**) , and of the Smartscan (**Run the
-Smartscan at the startup**)
+Smartscan at the startup**).
+
+.. note:: While it is possible to enable the Smartscan at startup, it
+   is suggested to leave the option disabled, because in certain
+   situations, running SmartScan at every |backup| restart can become
+   a performance bottleneck, as it has been discussed in section
+   :ref:`backup_disable_scans`.
+
 
 Options about the :ref:`backup_path` follow: set the directory where
 backups will be stored, which defaults to
