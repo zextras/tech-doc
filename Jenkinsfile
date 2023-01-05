@@ -34,7 +34,7 @@ pipeline {
             }
       steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
-//           sh 'docker rm -v zsphinx'
+           sh 'docker rm -v zsphinx'
            sh 'docker run -d --name zsphinx  sphinx_builder'
            sh 'docker cp zsphinx:docs/build $(pwd)'
            stash name: 'build_done', includes: 'build/**'
@@ -49,7 +49,7 @@ pipeline {
             unstash "build_done"
             withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
                 s3Delete(bucket: STAGING_BUCKET_NAME,
-                         path:'zextrasdoc/carbonio/')
+                         path:'carbonio/')
                 s3Upload(bucket: STAGING_BUCKET_NAME,
                          includePathPattern: '**',
                          workingDir: 'build'
