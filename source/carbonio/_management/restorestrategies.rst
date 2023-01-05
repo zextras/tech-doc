@@ -26,16 +26,17 @@ restore, and the purpose. Some examples of these scenarios are:
 - an account is being under investigation, and its complete history is
   needed by the enforcement authorities
 
-In all these cases, data in a mailbox can be recovered and, depending on
-the destination of the recovered data, restore strategies are grouped in
-**two** categories: recovery on the same server—​or same
+In all these cases, data in a mailbox can be recovered and, depending
+on the destination of the recovered data, restore strategies are
+grouped in **two** categories: recovery on the same server—​or same
 infrastructure—​and recovery on a different infrastructure.
 
 Same infrastructure restore
    These strategies are meant to be used when you need to restore only
    part of an account on **the same server** as the origin server. In
    this category fall :ref:`single_item_restore`,
-   :ref:`account_restore`, and :ref:`time_range_undelete`.
+   :ref:`restore_on_new_account`, :ref:`time_range_undelete`, and
+   :ref:`restore-account`.
 
 Different infrastructure restore
    When the restore process is not possible or not feasible on the same
@@ -47,7 +48,9 @@ It is important to remark that items in |backup| are labelled as
 a :ref:`backup_purge` operation; until that moment they are still
 available.
 
-Finally, all restore strategies do:
+Finally, all restore strategies:
+
+- can be executed from the CLI only, except for :ref:`restore-account`
 
 - recover items at a given moment (or interval) in time, which implies
   that also their status at that time is recovered
@@ -142,56 +145,6 @@ you need to ask to your admin for assistance.
       [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;]
       mailbox - Emptying 9 items from /Trash, removeSubfolders=true.
 
-.. this must be moved to admin panel
-   
-   .. _restore_deleted_account:
-
-   Restore Deleted Account
-   =======================
-
-   The Restore Deleted Account procedure allows you to restore the contents
-   and preferences of a mailbox, as it was when said mailbox was deleted,
-   into a completely new account.
-
-
-   When a Restore Deleted Account starts, a new account is created (the
-   Destination Account), and all the items existing in the source account
-   at the moment of the deletion are recreated in the destination account,
-   including the folder structure and all the user’s data. All restored
-   items will be created in the current primary store unless the ``Obey HSM
-   Policy`` box is checked.
-
-   .. warning:: When restoring data on a new account, shared items
-      consistency is not preserved. This is because the original share
-      rules refer to the original account’s ID, not to the restored
-      account.
-
-   .. _from_the_zextras_backup_tab:
-
-   From the |backup| tab
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   -  Select ``backup`` in the left pane of the
-      Administration Console to show the |backup| tab.
-
-   -  On the top bar, push the ``Restore Deleted Account`` button.
-
-   -  Choose the restore date. Day/Month/Year can be selected via a
-      minical, the hour via a drop-down menu and the minute and second via
-      two text boxes. Click ``Next``.
-
-   -  Browse the list and click the account to be restored (Source).
-
-   -  Enter the name of the new account (Destination) in the text box. You
-      can then choose whether to Hide in GAL the new account or not. When
-      you’re done choosing, press ``Next``.
-
-   -  Verify all your choices in the Operation Summary window. You can also
-      add additional email addresses to be notified when the restore
-      operation is finished. Please notice that the admin account and the
-      user who started the Restore procedure are notified by default.
-
-   -  Click ``Finish`` to start the Restore.
 
 .. _single_item_restore:
 
@@ -221,19 +174,19 @@ To start an Item Restore operation, use the command
 
    zextras$ carbonio backup doItemRestore {Account name or id} {item_id} [attr1 value1 [attr2 value2...]]
             
-.. _account_restore:
+.. _restore_on_new_account:
 
 Restore on New Account
 ======================
 
-The **Restore on New Account** and the **Account Restore** procedures
-allow you to restore the content of a mailbox as it was in a given
-moment in time. While they share the same CLI options, the differences
-between the two are in the status of the account and in how the mailbox
-will be restored: If the account was deleted, it can be restored with
-the **same accountID**--Account Restore, whereas if the account is still
-in use, it is possible to restore it into a completely new account,
-i.e., with a completely new **accountID**.
+The **Restore on New Account** and the :ref:`restore-account`
+procedures allow you to restore the content of a mailbox as it was in
+a given moment in time. The differences between the two are in the
+status of the account and in how the mailbox will be restored: If the
+account was deleted, it can be restored with the **same accountID**
+(Account Restore), whereas if the account is still in use, it is
+possible to restore it into a completely new account, i.e., with a
+completely new **accountID**.
 
 The source account is not changed in any way, so it is possible to
 recover one or more deleted items in a user’s account without actually
@@ -248,11 +201,10 @@ external problem (hardware or filesystem failure), or a human mistake
 system administrator).
 
 When a **Restore on New Account** procedure starts, a new account is
-created, called the *destination account*. All the items existing in the
-source account at the moment selected are recreated in the destination
-account, including the folder structure and all the user’s data. All
-restored items will be created in the current primary store unless the
-``Obey HSM Policy`` box is checked.
+created, called the *Destination Account*. All the items existing in
+the source account at the selected moment in time are recreated in the
+destination account, including the folder structure and all the user’s
+data.
 
 .. warning:: When restoring data on a new account, shared items
    consistency is not preserved. This is because the original share
@@ -311,14 +263,16 @@ Running a Restore on New Account
 
 
 To start a Restore on New Account via the CLI, use the
-`doRestoreOnNewAccount` command.
+:command:`doRestoreOnNewAccount` command.
 
 .. restore include or replace it with actual code
    .. include:: /cli/ZxBackup/carbonio_backup_doRestoreOnNewAccount.rst
 
 .. hint:: At the end of the operation, you can check that the
    configuration of the new mailbox is the same by running the
-   command ``carbonio config dump`` (See `zextras_config_full_cli`)
+   command ``carbonio config dump``
+
+..   (See `zextras_config_full_cli`)
 
 .. _time_range_undelete:
 
