@@ -87,7 +87,7 @@ Centralized Storage
 ===================
 
 .. this section should be rather up to date, since we edited it recently
-   
+
 The Centralized Storage feature allows to use an S3 bucket to host data
 coming from multiple servers at the same time sharing the same directory
 structure, as opposed to "independent" volumes which are self-contained
@@ -117,13 +117,11 @@ In details, the recommended procedure is the following and requires
 to use CLI commands.
 
 
-1. Create an S3 bucket using the command ``doCreateBucket``::
+#. Create an S3 bucket using the command :command:`doCreateBucket`
 
-     carbonio core doCreateBucket S3 _Amazon_AWS_bucket_ _Service_username_ _Service_password_ [param VALUE[,VALUE]]
+   .. code:: console
 
-   For example::
-
-     carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf https://example_bucket_provider.com
+      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf https://example_bucket_provider.com
 
    In this example, we use the following values:
 
@@ -141,23 +139,21 @@ to use CLI commands.
    *bucket ID*, for example **28m6u4KBwSUnYaPp86XG**. Take note of it
    because it is required in the remainder of the procedure.
 
-2. Test the connection using the bucket ID received in the previous
-   step (**28m6u4KBwSUnYaPp86XG**)::
+#. Test the connection using the bucket ID received in the previous
+   step (**28m6u4KBwSUnYaPp86XG**)
 
-     carbonio core testS3Connection 28m6u4KBwSUnYaPp86XG
+   .. code:: console
+
+     zextras$ carbonio core testS3Connection 28m6u4KBwSUnYaPp86XG
 
    If the command is successful, proceed with the next step.
 
-3. Associate the bucket to the volumes on *each mailstore*.
+#. Associate the bucket to the volumes on *the first mailstore*.
 
-   .. parsed-literal::
+   .. code:: console
 
-      carbonio powerstore doCreateVolume S3 *Name_of_the_volume* *primary|secondary* [bucket_id] centralized *true|false*
-
-   For example::
-
-     carbonio powerstore doCreateVolume S3 Store_01 secondary \
-     28m6u4KBwSUnYaPp86XG volume_prefix Main_Volume centralized true
+      zextras$ carbonio powerstore doCreateVolume S3 Store_01 secondary  \
+      28m6u4KBwSUnYaPp86XG volume_prefix Main_Volume centralized true
 
    In this example, these values are used:
 
@@ -169,21 +165,37 @@ to use CLI commands.
    * **volume_prefix Main_Volume**: an ID assigned to the volume, used for
      quick searches (e.g., *main_vol*)
 
-4.  Set the volume to *current*, to let it receive data immediately::
+#.  Set the volume to *current*, to let it receive data immediately,
+    using command
+    .. code:: console
 
-      carbonio powerstore doUpdateVolume S3 VolumeName current_volume true
+       zextras$ carbonio powerstore doCreateVolume S3 Name_of_the_volume primary|secondary [bucket_id] centralized true|false
 
-    For example::
+    .. code:: console
 
-      carbonio powerstore doUpdateVolume S3 VolumeName secondary current_volume true
-
+       zextras$ carbonio powerstore doUpdateVolume S3 Store_01 secondary current_volume true
 
     In this example, these values are used:
 
     * **S3**: the type of bucket
-    * **VolumeName**: the volume name as defined on the server on which the
+    * **Store_01**: the volume name as defined on the server on which the
       command is executed
     * **secondary**: the type of the volume
+
+#. Once the Centralized Volume has been created, you need to copy the
+   Centralized Volume's configuration from the first server to all
+   mailbox servers and add it to the volume list. To do so, on all
+   other mailbox server run the command
+
+   .. code:: console
+
+      zextras$ carbonio powerstore doCreateVolume Centralized {hostname} {volumeName}
+
+   For example:
+
+   .. code:: console
+
+      zextras$ carbonio powerstore doCreateVolume Centralized mbox-02.example.com Store_01
 
 .. _pws_centralized_storage_structure:
 
@@ -287,7 +299,7 @@ Local Volumes
 ~~~~~~~~~~~~~
 
 .. what's fileBlob type?
-   
+
 Local Volumes (i.e., FileBlob type) can be hosted on any mountpoint on
 the system regardless of the mountpoint’s destination and are defined by
 the following properties:
@@ -318,62 +330,56 @@ operations such as the Volume-to-Volume move.
 Volume Management with |storage|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. grid::
-   :gutter: 3
+..
+   .. grid::
+      :gutter: 3
 
-   .. grid-item-card:: Via the CLI
-      :columns: 12
+      .. grid-item-card:: Via the CLI
+         :columns: 12
 
-      .. warning:: Beginning with release 8.8.9, all volume creation
-         and update commands have been updated, as the ``storeType``
-         argument is now required.
+.. broken crossref to S3 compatible services, removing it but
+   keeping original for reference
 
-      .. broken crossref to S3 compatible services, removing it but
-         keeping original for reference
+   The ``storeType`` argument is **mandatory**, it is always the
+   on the first position and accepts any one value corresponding
+   to the `S3-Compatible Services <#S3-compatible-services>`_
+   listed previously.  The arguments that follow in the command
+   now depend on the selected ``storeType``.
 
-         The ``storeType`` argument is **mandatory**, it is always the
-         on the first position and accepts any one value corresponding
-         to the `S3-Compatible Services <#S3-compatible-services>`_
-         listed previously.  The arguments that follow in the command
-         now depend on the selected ``storeType``.
+The commands to manage volumes are basically three: :command:`carbonio
+powerstore doCreateVolume [storeType] | zextras$ doUpdateVolume [storeType] |
+doDeleteVolume [name]`
 
-      The ``storeType`` argument is **mandatory**, it is always the on
-      the first position and accepts any one value corresponding to an
-      S3-Compatible Services.  The arguments that follow in the
-      command now depend on the selected ``storeType``.
+While volume deletion requires only the volume name, the ``storeType``
+argument in the other two operations is **mandatory** and it is always
+on the first position and accepts any one value corresponding to an
+S3-Compatible Services. The arguments that follow in the command now
+depend on the selected ``storeType``.
 
-      The commands to manage volumes are basically three::
+The parameters required by these commands may differ depending on the
+`[type]` of volume to be defined, which is one of the following.
 
-        carbonio powerstore doCreateVolume [type]
-        carbonio powerstore doUpdateVolume [type]
-        carbonio powerstore doDeleteVolume [name]
+-  FileBlob (Local)
 
-      Volume deletion requires only the volume name.
+-  Alibaba
 
-      The parameters required by these commands may differ depending on the
-      `[type]` of volume to be defined, which is one of the following.
+-  Ceph
 
-      -  FileBlob (Local)
+-  OpenIO
 
-      -  Alibaba
-	 
-      -  Ceph
-	 
-      -  OpenIO
+-  Swift
 
-      -  Swift
+-  Cloudian (S3 compatible object storage)
 
-      -  Cloudian (S3 compatible object storage)
-	 
-      -  S3 (Amazon and any S3-compatible solution not explicitly
-         supported)
+-  S3 (Amazon and any S3-compatible solution not explicitly
+   supported)
 
-      -  Scality (S3 compatible object storage)
+-  Scality (S3 compatible object storage)
 
-      -  EMC (S3 compatible object storage)
- 
-      -  Custom S3
-   
+-  EMC (S3 compatible object storage)
+
+-  Custom S3
+
 .. _pws_hsm:
 
 Hierarchical Storage Management
@@ -491,7 +497,7 @@ Every item that complies with the specified HSM policy is moved.
 .. card:: Example
 
    The following policy::
-     
+
      message,document:before:-20day
      message:before:-10day has:attachment
 
@@ -562,9 +568,11 @@ defined policy.
    option to define a policy for **Trash** and dumpster.
 
 To apply the HSM Policy via the CLI, run the following command as the
-``zextras`` user::
+``zextras`` user
 
-  carbonio powerstore doMoveBlobs
+.. doce:: console
+
+   zextras$ carbonio powerstore doMoveBlobs
 
 .. this must be checked on new UI
    .. _pws_domoveblobs_stats_and_info:
@@ -623,13 +631,18 @@ and from the CLI. You can specify a |Carbonio| Search in both cases.
 .. grid::
 
    .. grid-item-card:: Via  the CLI
-      :columns: 6                       
+      :columns: 6
 
       Two policy management commands are available in the CLI::
 
-         carbonio powerstore setHSMPolicy hsm_policy
+   .. code:: console
 
-         carbonio powerstore +setHsmPolicy hsm_policy
+         zextras$ carbonio powerstore setHSMPolicy hsm_policy
+
+   .. code:: console
+
+
+         zextras$ carbonio powerstore +setHsmPolicy hsm_policy
 
       These command share the same syntax; the difference is that
       ``setHSMPolicy`` creates **new** policies, *replacing* existing
@@ -681,8 +694,11 @@ the current value using these commands:
 
 .. code:: console
 
-   carbonio config server get $(zmhostname) attribute incomingPath
-   carbonio config server set $(zmhostname) attribute incomingPath value /path/to/dir
+   zextras$ carbonio config server get $(zmhostname) attribute incomingPath
+
+.. code:: console
+
+   zextras$ carbonio config server set $(zmhostname) attribute incomingPath value /path/to/dir
 
 .. _pws_local_cache:
 
@@ -811,8 +827,8 @@ following example.
 
    Example structure of user's permission
    ^^^^
-   
-   .. code:: 
+
+   .. code::
 
       {
           `Version`: `[LATEST API VERSION]`,
@@ -885,7 +901,7 @@ Threshold`` value to this storage class as long as the option has been
 enabled on the volume.
 
 .. seealso::
-   
+
    The official Amazon S3 documentation on `Infrequent Access
    <https://aws.amazon.com/s3/storage-classes/#Infrequent_access>`_
 
@@ -900,7 +916,7 @@ appropriate Intelligent Tiering flag on all files, as long as the option
 has been enabled on the volume.
 
 .. seealso::
-   
+
    The official Amazon S3 documentation on `Intelligent Tiering
    <https://aws.amazon.com/s3/storage-classes/intelligent-tiering/>`_
 
@@ -939,22 +955,22 @@ attributes.
 
 .. grid::
    :gutter: 2
-            
-   .. grid-item-card:: 
-      :columns: 3   
 
-      **zimbraPrefDedupeMessagesSentToSelf**
+   .. grid-item-card::
+      :columns: 3
+
+      **zimbrarefDedupeMessagesSentToSelf**
       ^^^^^
 
       Used to set the deduplication behavior for sent-to-self
       messages::
-      
+
          <attr id="144" name="|carbonio|PrefDedupeMessagesSentToSelf" type="enum" value="dedupeNone,secondCopyifOnToOrCC,dedupeAll" cardinality="single"
          optionalIn="account,cos" flags="accountInherited,domainAdminModifiable">
            <defaultCOSValue>dedupeNone</defaultCOSValue>
            <desc>dedupeNone|secondCopyIfOnToOrCC|moveSentMessageToInbox|dedupeAll</desc>
          </attr>
-         
+
    .. grid-item-card::
       :columns: 3
 
@@ -972,14 +988,14 @@ attributes.
            </desc>
          </attr>
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 3
 
       **zimbraPrefMessageIdDedupingEnabled**
       ^^^^
-      
+
       Manage deduplication at account or COS-level::
-        
+
 
          <attr id="1198" name="|carbonio|PrefMessageIdDedupingEnabled" type="boolean" cardinality="single" optionalIn="account,cos" flags="accountInherited"
           since="8.0.0">
@@ -989,12 +1005,12 @@ attributes.
            </desc>
          </attr>
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 3
 
       **zimbraMessageIdDedupeCacheTimeout**
       ^^^^
-      
+
       Timeout for each entry in the dedupe cache::
 
          <attr id="1340" name="zimbraMessageIdDedupeCacheTimeout" type="duration" cardinality="single" optionalIn="globalConfig" since="7.1.4">
@@ -1043,7 +1059,7 @@ Running a Volume Deduplication
       powerstore doDeduplicate` command.
 
       .. include:: carboniocli/carbonio_powerstore_doDeduplicate.rst
-	   
+
 To list all available volumes, you can use the :command:`carbonio
 getAllVolumes` command.
 
@@ -1176,11 +1192,11 @@ of thereby contained items/blobs.
 
       doDeduplicate
       ^^^^
-      
+
       .. dropdown:: CLI full reference
-                    
+
          .. include:: carboniocli/carbonio_powerstore_doDeduplicate.rst
-                   
+
    .. grid-item-card::
       :columns: 6
 
@@ -1253,8 +1269,8 @@ following data to the output:
 
 .. csv-table::
    :header: "Option", "Name", "description"
-            
-   "show_volume_size", "totSize", "Total disk space used"           
+
+   "show_volume_size", "totSize", "Total disk space used"
    "show_blob_num", "blobNumber", "Number of BLOB files"
 
 
