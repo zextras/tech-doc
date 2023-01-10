@@ -45,7 +45,7 @@ copyright = '2022, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '22.12.0'
+release = '23.1.0'
 version = release
 
 # -- General configuration ---------------------------------------------------

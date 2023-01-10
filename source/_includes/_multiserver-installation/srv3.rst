@@ -40,14 +40,6 @@ These following tasks must be executed to configure the MTA.
    * ``Bind password for postfix ldap user``: |postfixpwd|
    * ``Bind password for amavis ldap user``: |amavispwd|
 
-#. Copy the credentials from the |mesh| server node (SRV2) to the
-   local server
-
-   .. code:: console
-
-      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
-        /etc/zextras/service-discover/cluster-credentials.tar.gpg
-
 #. Run |mesh| setup using |meshsec|
 
    .. code:: console

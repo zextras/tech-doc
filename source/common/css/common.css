@@ -30,6 +30,11 @@
     color: green;
 }
 
+.bgreen {
+    color:green;
+    font-weight: 800;
+}
+
 /* Width of the text content */
 .wy-nav-content {
     max-width: inherit;
@@ -199,10 +204,3 @@ legend {
     color: var(--zx-color-magma);
 }
 
-.green { 
-    color: green;
-}
-.bgreen {
-    color:green;
-    font-weight: 800;
-}
