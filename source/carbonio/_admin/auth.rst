@@ -126,11 +126,6 @@ Supported Authentication Methods
       place. In |product|, this additional layer is given by an One Time
       Password (OTP), which can be read as a QR code on mobile devices.
 
-      When 2FA is configured on a |product| domain, it is mandatory to have an
-      OTP to be able to login: providing only username and password will fail.
-      Moreover, the attribute ``zimbraAuthMech`` must be configured on the
-      domain with for 2FA to work properly.
-
       2FA applies only to those protocols or apps supporting it, for example
       HTTP and HTTPS but not to IMAP and SMTP, and can be configured at either
       device, IP, or IP range level, by means of the ``trusted_device`` or
@@ -203,19 +198,14 @@ In order to enable the authentication strategies available in
       2FA Requirements
       ^^^^
 
-      In order to properly have 2FA set up, the ``zimbraAuthMech`` attribute
-      bust be configured at domain level::
-
-        carbonio prov modifyDomain example.com zimbraAuthMech custom:zx
-
-      To enable 2FA it is also necessary, **for all services**:
+      To enable 2FA it is necessary, **for all services**:
 
       - to define a ``trusted ip range``
 
       - to set the ``ip_can_change`` on ``true`` and ``2fa_policy`` to 1
 
-      .. warning:: 2FA requires a specific zimbraAuthMech and this makes it
-         not compatible with other mechanism such as ldap, ad or kerberos5
+      .. note:: 2FA is not compatible with other mechanisms such as
+         LDAP, AD, or kerberos5
 
    .. grid-item-card::
       :columns: 12 12 6 4
