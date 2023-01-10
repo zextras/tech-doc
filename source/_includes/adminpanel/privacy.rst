@@ -1,3 +1,6 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 A few options about the involvement of customers with |zx| and how
 they can help evolve and shape |product|'s functionalities. It is

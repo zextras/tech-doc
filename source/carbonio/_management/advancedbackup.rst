@@ -5,41 +5,54 @@
 .. _backup_advanced_techniques:
 
 ============================================
- Backup :octicon:`dash` Advanced techniques
+ Backup :octicon:`dash` Advanced Techniques
 ============================================
+
+This section contains various advanced techniques to deal with
+problems that may rarely arise using |product|, starting from a
+disaster recovery scenario: how to prevent it from happening and
+fixing it you find yourself in such a situation, then continuing with
+the introduction a number of possibilities to recover single lost
+items, and other advanced backup management options.
 
 .. _disaster_recovery:
 
 Disaster Recovery
 =================
 
-.. _the_disaster:
-
-The Disaster
-------------
-
-To classify a problem as a ``Disaster``, one or more of the following
+To classify a problem as a **Disaster**, one or more of the following
 must happen:
 
-- Hardware failure of one or more vital filesystems (such as :file:`/`
-  or :file:`/opt/zextras/`)
+- Hardware failure of one or more vital volumes or filesystems (such
+  as :file:`/` or :file:`/opt/zextras/`)
 
-- Contents of a vital filesystem made unusable by internal or external
-  factors (like a careless :command:`rm *` or an external intrusion)
+- Content of a vital filesystem made unusable due to internal or
+  external factors (like a careless :command:`rm *`, an external
+  intrusion, a wrong file being overwritten, or other)
 
-- Hardware failure of the physical machine hosting the |product| service
-  or of the related virtualization infrastructure
+- Issues in the infrastructure hosting |product|, either a broken
+  piece of hardware or failing hypervisor including snapshots
 
-- A critical failure on a software or OS update/upgrade
+- A critical failure on a third-party software or during OS
+  update/upgrade, for example a tainted kernel.
 
-.. _minimizing_the_chances:
+In other words, in a disaster scenario you face a data loss and need
+to either replace some hardware component or repair the virtualisation
+infrastructure, and repair or reinstall the system.
 
-Minimizing the Chances
-~~~~~~~~~~~~~~~~~~~~~~
+.. _minimise-chances:
 
-Some suggestions to minimize the chances of a disaster:
+Minimise the Chances
+--------------------
 
-- Always keep vital filesystems on different drives (namely :file:`/`
+Preventing a disaster scenario may not be as easy task, because one of
+the failures mentioned in the previous section is unpredictable and
+may happen at any time.
+
+However, to minimise the chances of a disaster, there are a number of
+good practices we can suggest, including the following:
+
+- Always keep vital filesystems on different volumes (namely :file:`/`
   :file:`/opt/zextras/`, or your |backup| Path)
 
 - Use a monitoring/alerting tool for your server to become aware of
@@ -47,63 +60,80 @@ Some suggestions to minimize the chances of a disaster:
 
 - Carefully plan your updates and migrations
 
-.. _the_recovery:
+- Consider implementing redundancy to replicate the services provided
+  by |product|
 
-The Recovery
-------------
-
-.. _how_to_recover_your_system:
-
-How to Recover Your System
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The recovery of a system is divided into 2 steps:
-
--  Base system recovery (OS installation and configuration, |carbonio|
-   installation and base configuration)
-
--  Data recovery (reimporting the last available data to the |carbonio|
-   server, including domain and user configurations, COS data and
-   mailbox contents)
-
-.. _how_can_zextras_backup_help_with_recovery:
-
-How can |backup| Help with Recovery?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The **Import Backup** feature of |backup| provides an easy and
-safe way to perform step 2 of a recovery.
-
-Using the old server’s backup path as the import path allows you to
-restore a basic installation of |carbonio| to the last valid moment of your
-old server.
+- Maintain multiple copies of the backups: for more information,
+  please refer to section :ref:`offsite-backups`
 
 .. _the_recovery_process:
 
 The Recovery Process
-~~~~~~~~~~~~~~~~~~~~
+--------------------
+
+If, despite all your efforts, you end up facing a disaster scenario,
+you can proceed to recover the system in few steps:
+
+#. **Installation** of the base system: Operating System installation
+   (not covered in this guide)
+
+#. **Installation and bootstrap** of |carbonio| (covered in sections
+   :ref:`single-server-install` and :ref:`multiserver-installation`
+
+#. **Recovery** of data (reimporting the last available data to the
+   |carbonio| server, including domain and user configurations, COS
+   data and mailbox contents)
+
+#. **Recovery** of Settings and Configurations
+
+The third point can take advantage of the **Import Backup** feature of
+|backup|, which provides an easy and safe way to recover from a
+disaster scenario.
+
+Indeed, you can use the *Backup Path* of the old server as the import
+path. allows you to restore a basic installation of |carbonio| to the
+last valid moment of your old server.
+
+There are two equivalent procedures to data recovery, both recovering
+|product| to a given status saved in a backup:
+
+#. :ref:`A generic one <disaster-data-recovery>`, which can always be
+   used
+
+#. :ref:`A VM-based <vm-recovery>` that takes advantage of
+   hypervisor's snapshot feature
+
+.. _disaster-data-recovery:
+
+Data Recovery
+~~~~~~~~~~~~~
+
+The Recovery procedure is quite easy and requires to carry out these
+steps. The time required to successfully complete the recovery depends
+on the number and type of items to be recovered and can not be easily
+quantified in advance.
 
 - Install |carbonio| on a new server and configure the Server and Global
   settings.
-
-- Install |product| on the new server.
 
 - Mount the backup folder of the old server onto the new one. If this
   is not available, use the last external backup available or the
   latest copy of either.
 
 - Begin an External Restore on the new server using the following CLI
-  command::
+  command
 
-     # carbonio backup doExternalRestore /path/to/the/old/store
+  .. code:: console
 
-- The External Restore operation will immediately create the domains,
-  accounts and distribution lists, so as soon as the first part of the
-  Restore is completed (check your |product| Notifications), the
-  system will be ready for your users. Emails and other mailbox items
-  will be restored afterwards.
+     zextras$ carbonio backup doExternalRestore /path/to/the/old/store
 
-.. _settings_and_configs:
+The External Restore operation will immediately create the domains,
+accounts and mailing lists, so as soon as the first part of the
+Restore is completed (check your |product| Notifications), the system
+will be ready for your users. E-mails and other mailbox items will be
+restored right after.
+
+.. _disaster-conf-recovery:
 
 Settings and Configs
 ~~~~~~~~~~~~~~~~~~~~
@@ -116,102 +146,99 @@ other than the minimum |carbonio| version required.
 
 Whether you wish to create a perfect copy of the old server or just take
 a cue from the old server’s settings to adapt those to a new
-environment, |backup| comes with a very handy CLI command::
+environment, |backup| comes with a very handy CLI command.
 
-   # carbonio backup getServerConfig
-   command getServerConfig requires more parameters
+.. grid:: 1 1 1 2
+   :gutter: 1
 
-
-.. grid:: 1 1 1 2 
-   :gutter: 1 
-
-   .. grid-item-card:: Usage example
+   .. grid-item-card:: Basic Usage Examples
       :columns: 12 12 12 6
 
-      ``carbonio backup getserverconfig standard date last``
-         Display the latest backup data for Server and Global
-         configuration.
+      .. code:: console
 
-      ``carbonio backup getserverconfig standard file /path/to/backup/file``
-         Display the contents of a backup file instead of the current
-         server backup.
+         zextras$ carbonio backup getserverconfig standard date last
 
-      ``carbonio backup getserverconfig standard date last query zimlets/com_zimbra_ymemoticons colors true verbose true``
-         Displays all settings for the com_zimbra_ymemoticons zimlet,
-         using colored output and high verbosity.
+      Display the latest backup data for Server and Global
+      configuration.
 
+      .. code:: console
 
-      ``carbonio backup getServerConfig standard backup_path /your/backup/path/ date last query / | less``
-         Display the latest backed up configurations
+         zextras$ carbonio backup getserverconfig standard file /path/to/backup/file
 
-   .. grid-item-card:: Advanced usage
+      Display the contents of a backup file instead of the current
+      server backup.
+
+      ..
+         ``carbonio backup getserverconfig standard date last query zimlets/com_zimbra_ymemoticons colors true verbose true``
+            Displays all settings for the com_zimbra_ymemoticons zimlet,
+            using colored output and high verbosity.
+
+      .. code:: console
+
+         zextras$ carbonio backup getServerConfig standard backup_path /your/backup/path/ date last query / | less
+
+      Display the latest backed up configurations, using a pipe
+      to show one page of output at a time.
+
+   .. grid-item-card:: Advanced Usage
       :columns: 12 12 12 6
 
       Change the ``query`` argument to display specific settings
 
       .. code:: console
 
-         # carbonio backup getServerConfig standard date last backup_path /opt/zextras/backup/ng/ query serverConfig/zimbraMailMode/test.example.com
+         zextras$ carbonio backup getServerConfig standard date last backup_path /opt/zextras/backup/mail.example/ query serverConfig/zimbraMailMode/mail.example.com
 
-         config date_______________________________________________________________________________________________28/02/2014 04:01:14 CET
-         test.example.com____________________________________________________________________________________________________________both
+         config date_______________________________________________________________________________________________28/12/2022 15:14:29 CET
+         mail.example.com____________________________________________________________________________________________________________both
 
 
       Use the ``verbose true`` parameter to show more details; for
       example, that the :file:`/opt/zextras/conf/` and
-      :file:`/opt/zextras/postfix/conf/` directories  are
-      backed up as well
+      :file:`/opt/zextras/postfix/conf/` directories are backed up as
+      well.
 
       .. code:: console
 
-         # carbonio backup getServerConfig customizations date last verbose true
+         zextras$ carbonio backup getServerConfig customizations date last verbose true
          ATTENTION: These files contain the directories /opt/zextras//conf/ and /opt/zextras/postfix/conf/ compressed into a single archive.
          Restore can only be performed manually. Do it only if you know what you're doing.
 
          archives
-            filename                                                    customizations_28_02_14#04_01_14.tar.gz
+            filename                                                    customizations_28_12_22#04_01_14.tar.gz
             path                                                        /opt/zextras/backup/ng/server/
-            modify date                                                 28/02/2014 04:01:14 CET
+            modify date                                                 28/12/2022:01:14 CET
 
-.. _vms_and_snapshots:
+.. _vm-recovery:
 
-VMs and Snapshots
------------------
+Recovery from VMs and Snapshots
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Thanks to the advent of highly evolved virtualization solutions in the
-past years, virtual machines are now the most common way to deploy
-server solutions such as |product|.
+Nowadays, one of most useful features of hypervisors are customisable
+snapshot capabilities and snapshot-based VM backup systems. In case of
+a disaster, it’s always possible to roll back to the latest snapshot
+and import the missing data using the **External Restore** feature of
+|backup| - using the server’s backup path as the import path.
 
-Most hypervisors feature customizable snapshot capabilities and
-snapshot-based VM backup systems. In case of a disaster, it’s always
-possible to roll back to the latest snapshot and import the missing data
-using the ``External Restore`` feature of |backup| - using the
-server’s backup path as the import path.
-
-.. _disaster_recovery_from_a_previous_vm_state:
-
-Disaster Recovery from a Previous VM State
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Snapshot-based backup systems allow you to keep a ``frozen`` copy of a
-VM in a valid state and rollback to it at will. To 100% ensure data
+Snapshot-based backup systems allow you to keep a *frozen* copy of a
+VM in a valid state and rollback to it at will. To ensure full data
 consistency, it’s better to take snapshot copies of switched off VMs,
 but this is not mandatory.
 
-.. warning:: When using these kinds of systems, it’s vital to make
-   sure that the Backup Path isn’t either part of the snapshot
-   (e.g. by setting the vdisk to `Independent Persistent` in VMWare
-   ESX/i) or altered in any way when rolling back in order for the
-   missing data to be available for import.
+.. warning:: When using these kinds of systems, it is vital to make
+   sure that the Backup Path is either not part of the snapshot (you
+   can ensure this for example by setting the vdisk to `Independent
+   Persistent` in VMWare ESX/i) or altered in any way when rolling
+   back, in order for the missing data to be available for import.
 
-To perform a disaster recovery from a previous machine state with
+To perform a disaster recovery from a previous VM state by using
 |backup|, you need to:
 
 - Restore the last valid backup into a separate (clone) VM in an
-  isolated network, making sure that users can’t access it and that
-  both incoming and outgoing emails are not delivered.
+  isolated network, making sure that users **can not access it** and
+  that both incoming and outgoing emails are not delivered.
 
-- Switch on the clone and wait for |carbonio| to start.
+- Switch to the clone and wait for |carbonio| to start.
 
 - Disable |backup|’s RealTime Scanner.
 
@@ -220,18 +247,19 @@ To perform a disaster recovery from a previous machine state with
 
 - Start an External Restore using the Backup Path as the Import Path.
 
-Doing so will parse all items in the Backup Path and import the missing
-ones, speeding up the disaster recovery. These steps can be repeated as
-many time as needed as long as user access and mail traffic is
-inhibited.
+This procedure parses all items in the Backup Path and import the
+missing ones, speeding up the disaster recovery. Moreover, these steps
+can be repeated as many time as needed as long as user access and mail
+traffic is inhibited.
 
 After the restore is completed, make sure that everything is functional
 and restore user access and mail traffic.
 
 .. hint:: At the end of the operation, you can check that the
    configuration of the new mailbox is the same by running the command
-   ``carbonio config dump`` (See the `full reference
-   <zextras_config_full_cli>`).
+   :command:`carbonio config dump`.
+
+   .. (See the `full reference <zextras_config_full_cli>`).
 
 .. _the_aftermath:
 
@@ -239,27 +267,54 @@ The Aftermath
 -------------
 
 Should you need to restore any content from before the disaster, just
-initialize a new Backup Path and store the old one.
+initialise a new Backup Path and store the old one.
 
 .. _unrestorable_items:
 
 Unrestorable Items
 ==================
 
-.. _how_can_i_check_if_all_of_my_items_have_been_restored:
+Items are called *unrestorable* when it was not possible to restore
+them automatically during the recovery procedure. The reasons why this
+happens may vary, the most common are:
 
-How can I check if all of my items have been restored?
-------------------------------------------------------
+.. grid::
+   :gutter: 3
 
-It’s very easy. Check the appropriate ``Operation Completed``
-notification you received as soon as the restore operation finished. It
-can be viewed in the ``Notifications`` section of the Administration
-Console, and it’s also emailed to the address you specified in the
-``Core`` section of the Administration Console as the ``Notification
-E-Mail recipient address``.
+   .. grid-item-card::
 
-The ``skipped items`` section contains a per-account list of unrestored
-items, like shown by the following excerpt::
+      Read Error
+      ^^^^
+
+      Either the raw item or the metadata file is not readable due to
+      an I/O exception or a permission issue.
+
+   .. grid-item-card::
+
+      Broken item
+      ^^^^
+
+      Both the the raw item or the metadata file are readable by
+      |backup| but their content is broken or corrupted.
+
+   .. grid-item-card::
+
+      Invalid item
+      ^^^^
+
+      Both the the raw item or the metadata file are readable and the
+      content is correct, but there is some other issue during the
+      restore.
+
+.. _check-unrestorable-items:
+
+Check for Unrestorable Items
+----------------------------
+
+When the recovery process ends, a detailed notification of `Operation
+Completed` will be sent to the administrators, which also includes a
+**skipped items** section that contains a per-account list of items
+that were not restored, like shown by the following excerpt::
 
    [...]
    - stats -
@@ -281,73 +336,47 @@ items, like shown by the following excerpt::
 In the above excerpt, we denote:
 
 `Skipped items`
-   An item that has already been restored, either during the current
-   restore or in a previous one.
+   All items that had already been restored, either during the current
+   restore or in a previous one. This is therefore just an informative
+   message.
 
 `Unrestored items`
    An item that has not been restored due to an issue in the restore
-   process.
+   process. Write down all the IDs of these items if you plan to try
+   to recover them. They will be referred to in the reminder of this
+   Section.
 
-.. _why_have_some_of_my_items_not_been_restored:
+   .. note:: Recall that an :ref:`item` can be an e-mail, a file, a
+      contact, or any other object within an account.
 
-Why have some of my items not been restored?
---------------------------------------------
+.. _identify_unrestored_items:
 
-There are different possible causes, the most common of which are:
+Identify Unrestored Items
+-------------------------
 
-.. grid::
-   :gutter: 3
-
-   .. grid-item-card::
-                
-      Read Error
-      ^^^^
-      
-      Either the raw item or the metadata file is not readable due to
-      an I/O exception or a permission issue.
-
-   .. grid-item-card::
-
-      Broken item
-      ^^^^
-      
-      Both the the raw item or the metadata file are readable by
-      |backup| but their content is broken/corrupted.
-
-   .. grid-item-card::
-
-      Invalid item
-      ^^^^
-
-      Both the the raw item or the metadata file are readable and the
-      content is correct, but |product| refuses to inject the item.
-
-.. _how_can_i_identify_unrestored_items:
-
-How Can I Identify Unrestored Items?
-------------------------------------
-
-There are two ways to do so: via the CLI and via the Administration Console.
-The first way can be used to search for the item within the
-backup/import path, and the second can be used to view the items in the
-source server.
+There are two ways to do so: via the CLI and via the |adminui|.  The
+first way can be used to search for the item within the backup/import
+path, and the second can be used to view the items in the Web
+interface.
 
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Using the Administration Console
+   .. grid-item-card::
       :columns: 12 12 12 6
 
+      Using the |adminui|
+      ^^^^^
 
       The comma separated list of unrestored items displayed in the
       ``Operation Complete`` notification can be used as a search
-      argument in the Administration Console to perform an item search.
+      argument in the |adminui| to perform an item search.
 
       To do so:
 
-      - Log into the Administration Console in the source server
+      - Log into the |adminui| of the source server.
 
-      - Use the ``View Mail`` feature to access the account containing the
+      - Use the `View Mail` feature to access the account containing the
         unrestored items
 
       - In the search box, enter **item:** followed by the comma separated
@@ -359,50 +388,55 @@ source server.
          in the other tabs, e.g., ``Address Book``, ``Calendar``,
          ``Tasks``.
 
-   .. grid-item-card:: Using the CLI
+   .. grid-item-card::
       :columns: 12 12 12 6
 
-      The `getItem <carbonio_backup_getItem>` CLI command can display an item and the related
-      metadata, extracting all information from a backup path/external backup.
+      Using the CLI
+      ^^^^^
 
-      The syntax of the command is::
+      The `backup getItem` CLI command can display an item and the related
+      metadata, extracting all information from a backup path/external
+      backup.
 
-        # carbonio backup getItem {account} {item} [attr1 value1 [attr2 value2...
+      .. code:: console
 
-      .. card:: Usage example
+         zextras$ carbonio backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
-         ``carbonio backup getItem account2@example.com 49965 dump blob true``
+      For example
 
-         Extract the raw data and metadata information of the item whose
-         itemID is *49965* belonging to *account2@example.com* ,also
-         including the full dump of the item’s BLOB
+      .. code:: console
 
-.. _how_can_i_restore_unrestored_items:
+         zextras$ carbonio backup getItem account2@example.com 49965 dump blob true
 
-How Can I Restore Unrestored Items?
------------------------------------
+      Extract the raw data and metadata information of the item whose
+      itemID is **49965** belonging to **account2@example.com** ,also
+      including the full dump of the item’s BLOB
 
-An item not being restored is a clear sign of an issue, either with the
-item itself or with your current |carbonio| setup. In some cases, there are
-good chances of being able to restore an item even if it was not
-restored on the first try.
+.. _restore_unrestored_items:
+
+Restore Unrestored Items
+------------------------
+
+An item not being restored is a clear sign of an issue, either with
+the item itself or with your current |carbonio| setup. In some cases,
+there are good chances of being able to restore an item even if it was
+not restored on the first try.
 
 In the following paragraphs, you will find a collections of tips and
 tricks that can be helpful when dealing with different kinds of
 unrestorable items.
 
 
-.. grid:: 1 1 1 2 
+.. grid:: 1 1 1 2
    :gutter: 1
 
    .. grid-item-card::
       :columns: 12 12 12 6
 
-      Items Not Restored because of a Read Error
+      Items Not Restored Because of Read Errors
       ^^^^
 
-      A dutiful distinction must be done about the read errors that can cause
-      items not to be restored:
+      Read errors that can lead to items not to be restored are of two types:
 
       **Hard errors**
          Hardware failures and all other `destructive` errors that cause
@@ -416,28 +450,30 @@ unrestorable items.
       While there is nothing much to do about hard errors, you can prevent or
       mitigate soft errors by following these guidelines:
 
-      - Run a filesystem check.
+      - Run a filesystem check
 
-      - If using a RAID disk setup, check the array for possible issues
-        (depending on RAID level).
+      - If using a RAID disk setup, check the array for possible
+        issues (depending on RAID level)
 
-      - Make sure that the ``zextras`` user has r/w access to the backup/import
-        path, all its subfolders and all thereby contained files.
+      - Make sure that the ``zextras`` user has r/w access to the
+        backup/import path, all its subfolders and all thereby
+        contained files
 
-      - Carefully check the link quality of network-shared filesystems. If
-        link quality is poor, consider transferring the data with rsync.
+      - Carefully check the link quality of network-shared
+        filesystems. If link quality is poor, consider transferring
+        the data with :command:`rsync`
 
-      - If using **SSHfs** to remotely mount the backup/import path, make
-        sure to run the mount command as root using the ``-o allow_other``
-        option.
+      - If using **SSHfs** to remotely mount the backup/import path,
+        make sure to run the mount command as root using the ``-o
+        allow_other`` option
 
    .. grid-item-card::
       :columns: 12 12 12 6
 
-      Items Not Restored because Identified as Invalid Items
-      ^^^^      
+      Items Not Restored Because Identified as Invalid Items
+      ^^^^
 
-      An item is identified as ``Invalid`` when, albeit being formally
+      An item is identified as **Invalid** when, albeit being formally
       correct, is discarded by the LMTP Validator upon injection.
 
       .. This is not yet applicable
@@ -453,14 +489,19 @@ unrestorable items.
       import:
 
       - To disable the LMTP Validator, run the following command as
-        the ``zextras`` user::
+        the ``zextras`` user.
 
-          # zmlocalconfig -e zimbra_lmtp_validate_messages=false
+        .. code:: console
+
+           zextras$ zmlocalconfig -e zimbra_lmtp_validate_messages=false
 
       - Once the import is completed, you can enable the LMTP validator
-        by running::
+        by running
 
-          # zmlocalconfig -e zimbra_lmtp_validate_messages=true
+
+        .. code:: console
+
+           zextras$ zmlocalconfig -e zimbra_lmtp_validate_messages=true
 
       .. warning:: This is a ``dirty`` workaround, as items deemed
          invalid by the LMTP validator might cause display or mobile
@@ -469,18 +510,19 @@ unrestorable items.
    .. grid-item-card::
       :columns: 12
 
-      Items Not Restored because Identified as Broken Items
+      Items Not Restored Because Identified as Broken Items
       ^^^^
 
-      Unfortunately, this is the worst category of unrestored items in terms
-      of ``salvageability``.
+      Unfortunately, this is the worst category of unrestored items,
+      and their recovery may be difficult when not impossible,
+      depending on the degree of corruption of the item. However, it
+      might be possible to recover either a previous state of the item
+      or, in case of e-mails, the raw object. To identify the degree
+      of corruption, use the :command:`backup getItem` CLI command.
 
-      Based on the degree of corruption of the item, it might be possible to
-      recover either a previous state or the raw object (this is only valid
-      for emails). To identify the degree of corruption, use the
-      `getItem <carbonio_backup_getItem>` CLI command::
+      .. code:: console
 
-        carbonio backup getItem {account} {item} [attr1 value1 [attr2 value2...
+         zextras$ carbonio backup getItem {account} {item} [attr1 value1 [attr2 value2...
 
       .. card:: Example of how to restore an item
 
@@ -488,7 +530,7 @@ unrestorable items.
          parameter to the import path and the ``date`` parameter to
          ``all``, will display all valid states for the item::
 
-           # carbonio backup getItem admin@example.com 24700 backup path /mnt/import/ date all
+           zextras$ carbonio backup getItem admin@example.com 24700 backup path /mnt/import/ date all
                 itemStates
                         start date                                                  12/07/2013 16:35:44
                         type                                                        message
@@ -548,10 +590,10 @@ unrestorable items.
       #. Done! You can now import the ``.eml`` file into the appropriate
          mailbox using your favorite client.
 
-.. _taking_additional_and_offsite_backups_of_zextras_backups_datastore:
+.. _offsite-backups:
 
-Taking Additional and Offsite Backups of |backup|’s Datastore
-===================================================================
+Taking Additional and Offsite Backups of |backup|’s Volume
+==========================================================
 
 Having backup systems is a great safety measure against data loss, but
 each backup system must be part of a broader **backup strategy** to
@@ -575,8 +617,8 @@ offsite.
 
 .. _making_an_additional_backup_of_zextras_backups_datastore:
 
-Making an Additional Backup of |backup|’s Datastore
----------------------------------------------------------
+Making an Additional Backup of |backup|’s Volume
+------------------------------------------------
 
 In order to minimise the possible loss of data, a backup can take
 advantage of the well-known database properties called **ACID**, that
@@ -590,7 +632,7 @@ guarantee data validity and integrity.
    the data stored and, in the context of |backup|, it allows for easy
    data back-up and roll-back to a previous state in case of serious
    database problems.
-   
+
    *A*\ tomicity
       Any transaction is committed and written to the disk only when
       completed.
@@ -607,28 +649,28 @@ guarantee data validity and integrity.
       Once a transaction is committed, it will stay so even in case of
       a crash (e.g. power loss or hardware failure).
 
-By respecting these properties, it’s very easy to make a backup of the
-Datastore and make sure of the content’s integrity and validity. The
-best (and easiest) way to do so is by using the ``rsync`` software,
-designed around an algorithm that only transfers *deltas* (i.e., what
-actually changed) instead of the whole data, and works incrementally.
-Specific options and parameters depend on many factors, such as the
-amount of data to be synced and the storage in use, while connecting to
-an rsync daemon instead of using a remote shell as a transport is
-usually much faster in transferring the data.
+By respecting these properties, it is very easy to make a backup of
+the Volume and make sure of the content's integrity and validity. The
+best (and easiest) way to do so is by using the :command:`rsync`
+software, designed around an algorithm that only transfers *deltas*
+(i.e., what actually changed) instead of the whole data, and works
+incrementally.  Specific options and parameters depend on many
+factors, such as the amount of data to be synced and the storage in
+use, while connecting to an ``rsync`` daemon instead of using a remote
+shell as a transport is usually much faster in transferring the data.
 
-You won’t need to stop |carbonio| or the Real Time Scanner to make an
-additional backup of |backup|’s datastore using rsync, and, thanks
-to the ACID properties, you will be always able to stop the sync at any
-time and reprise it at a later point.
+You will not need to stop |carbonio| or the Realtime Scanner to make
+an additional backup of |backup|’s datastore using :command:`rsync`,
+and, thanks to the ACID properties, you will be always able to stop
+the sync at any time and reprise it at a later point.
 
-.. _storing_your_zextras_backups_datastore_backup_offsite:
+.. _store_offsite_backups:
 
-Storing Your |backup|’s Datastore Backup Offsite
-------------------------------------------------------
+Store Additional Offsite Backups
+--------------------------------
 
 As seen in the previous section, making a backup of |backup|’s
-Datastore is very easy, and the use of rsync makes it just as easy to
+Volume is very easy, and the use of rsync makes it just as easy to
 store your backup in a remote location.
 
 To optimize your backup strategy when dealing with this kind of setup,
@@ -636,74 +678,73 @@ the following best practices are recommended:
 
 -  If you schedule your rsync backups, make sure that you leave enough
    time between an rsync instance and the next one in order for the
-   transfer to be completed.
+   transfer to be completed
 
 -  Use the ``--delete`` options so that files that have been deleted in
    the source server are deleted in the destination server to avoid
-   inconsistencies.
+   inconsistencies
 
    -  If you notice that using the ``--delete`` option takes too much
       time, schedule two different rsync instances: one with
       ``--delete`` to be run after the weekly purge and one without this
-      option.
+      option
 
 -  Make sure you transfer the *whole folder tree recursively*, starting
    from |backup|’s Backup Path. This includes server config
-   backups and mapfiles.
+   backups and map files
 
--  Make sure the destination filesystem is *case sensitive* (just as
-   Backup NG’s Backup Path must be).
+-  Make sure the destination filesystem is *case sensitive*
 
 -  If you plan to restore directly from the remote location, make sure
    that the ``zextras`` user on your server has read and write permissions
-   on the transferred data.
+   on the transferred data
 
 -  Expect to experience slowness if your transfer speed is much higher
-   than your storage throughput (or vice versa).
+   than your storage throughput (or vice versa)
 
 .. _additionaloffsite_backup_f_a_q:
 
-Additional/Offsite Backup F.A.Q.
---------------------------------
+Additional F.A.Q. for Offsite Backup
+------------------------------------
 
 .. card:: :octicon:`question` Why shouldn’t I use the **Export
-   Backup** feature of |backup| instead of rsync?
+   Backup** feature of |backup| instead of :command:`rsync`?
 
    For many reasons:
 
-   - The ``Export Backup`` feature is designed to perform migrations. It
-     exports a ``snapshot`` that is an end in itself and was not designed
-     to be managed incrementally. Each time an Export Backup is run,
-     it’ll probably take just as much time as the previous one, while
-     using rsync is much more time-efficient.
+   - The **Export Backup** feature is designed to perform
+     migrations. It exports a `snapshot` that is not designed to be
+     managed incrementally. Each time an Export Backup is run, it will
+     probably take just as much time as the previous one, while using
+     :command:`rsync` is much more time-efficient.
 
    - Being a |backup| operation, any other operation started while
      the Export Backup is running will be queued until the Export Backup
      is completed
 
-   - An ``Export Backup`` operation has a higher impact on system
-     resources than an rsync
+   - An **Export Backup** operation has a higher impact on system
+     resources than an :command:`rsync`
 
-   - Should you need to stop an Export Backup operation, you won’t be
-     able to reprise it, and you’ll need to start from scratch
+   - If you need to stop an Export Backup operation, you **will not** be
+     able to reprise it, and you will need to start from scratch
 
-.. card:: :octicon:`question` Can I use this for Disaster Recovery?
+.. card:: :octicon:`question` Can I use an Offsite Backup for Disaster Recovery?
 
    Yes. Obviously, if your Backup Path is still available. it’s better
    to use that, as it will restore all items and settings to the last
    valid state. However, should your Backup Path be lost, you’ll be
    able to use your additional/offsite backup.
 
-.. card:: :octicon:`question` Can I use this to restore data on the
+.. card:: :octicon:`question` Can I use an Offsite Backup to restore data on the
    server the backup copy belongs to?
 
-   Yes, but not through the ``External Restore`` operation, since item and
+   Yes, but not through the **External Restore** operation, since item and
    folder IDs are the same.
 
    The most appropriate steps to restore data from a copy of the backup
    path to the very same server are as follows:
 
-   - Stop the RealTime Scanner
+   - Stop the Realtime Scanner
 
    - Change the Backup Path to the copy you wish to restore your data
      from
@@ -719,13 +760,13 @@ Additional/Offsite Backup F.A.Q.
 .. card:: :octicon:`question` Can I use this to create an Active/Standby
    infrastructure?
 
-   No, because the ``External Restore`` operation does not perform any
+   No, because the **External Restore** operation does not perform any
    deletions. By running several External Restores, you’ll end up
    filling up your mailboxes with unwanted content, since items
    deleted from the original mailbox will not be deleted on the
    ``standby`` server.
 
-   The ``External Restore`` operation has been designed so that
+   The **External Restore** operation has been designed so that
    accounts will be available for use as soon as the operation is
    started, so your users will be able to send and receive emails even
    if the restore is running.
@@ -738,7 +779,7 @@ Additional/Offsite Backup F.A.Q.
    majority of cases.
 
 .. yet no carbonio multistore
-   
+
    .. _multistore_information:
 
    Multistore Information
@@ -754,10 +795,10 @@ Additional/Offsite Backup F.A.Q.
    Command Execution in a Multistore Environment
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   The Network Administration Console simplifies the management of multiple
+   The Network |adminui|simplifies the management of multiple
    servers: You can select a server from the |backup| tab and perform
    all backup operations on that server, even if you are logged into the
-   Administration Console of another server.
+   |adminui|of another server.
 
    Specific differences between Singlestore and Multistore environments
    are:
@@ -780,7 +821,7 @@ Additional/Offsite Backup F.A.Q.
    a Singlestore environment.
 
    The different servers will be configured and managed separately via the
-   Administration Console, but certain operations like *Live Full Scan* and
+   |adminui|, but certain operations like *Live Full Scan* and
    *Stop All* Operations can be 'broadcast' to all the mailstores via the
    ``carbonio`` CLI using the ``--hostname all_servers`` option. This
    applies also to |backup| settings.
@@ -788,11 +829,11 @@ Additional/Offsite Backup F.A.Q.
    Backup and Restore operations are managed as follows:
 
    - Smartscans can be executed on **single servers** via *the
-     Administration Console* or on **multiple servers** via the *CLI*
+     |adminui|* or on **multiple servers** via the *CLI*
 
    - Restores can be started either from the ``Accounts`` tab in the
-     Administration Console, from each server tab in the |backup|
-     menu of the Administration Console or via the CLI. The differences
+     |adminui|, from each server tab in the |backup|
+     menu of the |adminui|or via the CLI. The differences
      between these methods are:
 
    .. csv-table::
@@ -855,12 +896,12 @@ Additional/Offsite Backup F.A.Q.
    The :ref:`doCheckShares <carbonio_backup_doCheckShares>` command will
    parse all share information in local accounts and report any error::
 
-      # carbonio help backup doCheckShares
+      zextras$ carbonio help backup doCheckShares
 
    The :ref:`doFixShares <carbonio_backup_doFixShares>` will fix all share
    inconsistencies using a migration::
 
-      # carbonio help backup doFixShares
+      zextras$ carbonio help backup doFixShares
 
 .. _operation_queue_and_queue_management:
 
@@ -879,7 +920,7 @@ dequeued (either because it has been completed or terminated).
 
 The queue system affects the following operations:
 
-- External backup
+si'- External backup
 
 - All restore operations
 
@@ -893,111 +934,121 @@ applied immediately.
 Operation Queue Management
 --------------------------
 
-.. grid:: 1 1 1 2
-   :gutter: 1
 
-   .. grid-item-card:: Via the Administration Console
-      :columns: 12 12 12 6
+..
+   .. grid:: 1 1 1 2
+      :gutter: 1
 
-      * Viewing the Queue
+      .. grid-item-card:: Via the |adminui|
+         :columns: 12 12 12 6
 
-        To view the operation queue, access the ``Notifications`` tab in
-        the Administration Console and click the ``Operation Queue``
-        button.
+         * Viewing the Queue
 
-        .. warning:: The Administration Console displays operations queued
-           both by |backup| and Zextras Powerstore in a single
-           view. This is just a design choice, as the two queues are
-           completely separate, meaning that one |backup| operation
-           and one Zextras Powerstore operation can be running at the
-           same time.
+           To view the operation queue, access the ``Notifications`` tab in
+           the |adminui| and click the ``Operation Queue``
+           button.
 
-      * Emptying the Queue
+           .. warning:: The |adminui| displays operations queued
+              both by |backup| and Zextras Powerstore in a single
+              view. This is just a design choice, as the two queues are
+              completely separate, meaning that one |backup| operation
+              and one Zextras Powerstore operation can be running at the
+              same time.
 
-        To stop the current operation and empty |backup|’s
-        operation queue, enter the ``|backup|`` tab in the
-        Administration Console and click the ``Stop all Operations``
-        button.
+         * Emptying the Queue
 
-   .. grid-item-card:: Through the CLI
-      :columns: 12 12 12 6
-                
-      * Viewing the Queue
+           To stop the current operation and empty |backup|’s
+           operation queue, enter the ``|backup|`` tab in the
+           |adminui| and click the ``Stop all Operations``
+           button.
 
-        To view |backup|’s operation queue, use the ``getAllOperations``
-        command:::
+      .. grid-item-card:: Through the CLI
+         :columns: 12 12 12 6
 
-          # carbonio help backup getAllOperations
+It is often good to know whether there are running operation within
+|backup| and manage the queue: three useful CLI commands help in these
+situations.
 
+* View the Queue
 
-        .. card:: Usage example
+  To view all running and queued operations, use command
 
-           ``carbonio backup getAllOperations``
+  .. code:: console
 
-           Shows all running and queued operations
+     zextras$ carbonio backup getAllOperations
 
+* Clear the Queue
 
-      * Emptying the Queue
-
-        To stop the current operation and empty |backup|’s operation
-        queue, use the ``doStopAllOperations`` command::
-
-          # carbonio help backup doStopAllOperations
+  To stop **all** the current running operations and to empty
+  |backup|’s operation queue, use
 
 
-        .. card:: Usage example
+  .. code:: console
 
-           ``carbonio backup doStopAllOperations``
+     zextras$ carbonio backup doStopAllOperations
 
-           Stops all running operations
+* Remove one single operation from the queue
 
+  To remove a specific operation from the queue, use the
+  ``doStopOperation`` command with the ID of the operation. For
+  example, to stop operation with ID
+  **30ed9eb9-eb28-4ca6-b65e-9940654b8601**, run
 
-      * Removing a Single Operation from the Queue
+  .. code:: console
 
-
-        To stop the current operation or to remove a specific operation
-        from the queue, use the ``doStopOperation`` command::
-
-          # carbonio help backup doStopOperation
-
-        .. card:: Usage example
-
-           ``carbonio backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601``
-
-           Stops operation with id = 30ed9eb9-eb28-4ca6-b65e-9940654b8601
+     zextras$ carbonio backup doStopOperation 30ed9eb9-eb28-4ca6-b65e-9940654b8601
 
 .. _cos_level_backup_management:
 
 COS-level Backup Management
 ===========================
 
-COS-level Backup Management allows the administrator to disable ALL
-|backup| functions for a whole Class of Service to lower storage
-usage.
+COS-level Backup Management allows the administrator to disable
+**all** |backup| functions for a whole Class of Service. In other
+words, all members of the COS will never be part of a backup: this
+allows to lower storage usage.
+
+Disable Backup for a COS
+------------------------
 
 
-.. card::
-   
-   How to disable the |backup| Component for a COS
-   ^^^^
+Disabling the backup for a Class of Service will add the following
+marker to the Class of Service’s `Notes` field:
+``${ZxBackup_Disabled}``.
 
-   - The Real Time Scanner will ignore all accounts in the COS.
+While the Notes field remains fully editable and usable, changing or
+deleting this marker will re-enable the backup for the COS.
 
-   - The Export Backup function WILL NOT EXPORT accounts in the COS.
+Since this feature is CLI-only, to disable the backup for a given
+COS, use command :command:`carbonio backup  doEnableDisableCOS`,
+for example to remove backup from COS called EXTERNAL_COLLABORATORS, use
 
-   - Accounts in the COS will be treated as ``Deleted`` by the backup
-     system. This means that after the data retention period expires, all
-     data for such accounts will be purged from the backup store.
-     Re-enabling the backup for a Class of Service will reset this.
+.. code:: console
 
-.. card::
-   
-   How to save the `backup enabled | disabled` status
-   ^^^^
+   zextras$ carbonio backup doEnableDisableCOS EXTERNAL_COLLABORATORS disable
 
-   Disabling the backup for a Class of Service will add the following
-   marker to the Class of Service’s `Notes` field:
-   ``${ZxBackup_Disabled}``
+To enable again the backup, run the same command, but replace
+``disable`` with ``enable``.
 
-   While the Notes field remains fully editable and usable, changing or
-   deleting this marker will re-enable the backup for the COS.
+You can also check the backup status for all COS, use command
+
+.. code:: console
+
+   zextras$ carbonio backup getCOSBackupStatus
+
+     cosList                                 
+         default                                                 Enabled
+         EXTERNAL_COLLABORATORS                                  Disabled
+
+When Backup is disabled, the following happens in the COS:
+
+- The RealTime Scanner will ignore all accounts
+  
+- The Export Backup function **will not export** the accounts
+
+- Accounts will be treated as **Deleted** by the backup system. This
+  means that after the data retention period expires, all data for
+  such accounts will be purged from the backup store. Re-enabling the
+  backup for a Class of Service will reset this behaviour to the
+  default one and mark accounts as **Active**.
+

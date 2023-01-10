@@ -39,14 +39,14 @@ while navigation items are on the left-hand column.
 Domains
 =======
 
-.. include:: /common/adminpanel/domains.rst
+.. include:: /_includes/adminpanel/domains.rst
 
 .. _ap-servers:
 
 Servers
 =======
 
-.. include:: /common/adminpanel/servers.rst
+.. include:: /_includes/adminpanel/servers.rst
 
 
 .. _ap_cos:
@@ -54,25 +54,25 @@ Servers
 Class of Services (COS)
 =======================
 
-.. include:: /common/adminpanel/cos.rst
+.. include:: /_includes/adminpanel/cos.rst
 
 .. _ap-subscriptions:
 
 Subscriptions
 =============
    
-.. include:: /common/adminpanel/subscriptions.rst
+.. include:: /_includes/adminpanel/subscriptions.rst
 
 .. _ap-privacy:
 
 Privacy
 =======
 
-.. include:: /common/adminpanel/privacy.rst
+.. include:: /_includes/adminpanel/privacy.rst
 
+.. _ap-backup:
 
-..
-   Backup
-   ======
+Backup
+======
 
-   Here we can put the current backup documentation
+.. include:: /_includes/adminpanel/backup.rst

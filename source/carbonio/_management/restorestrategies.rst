@@ -9,34 +9,34 @@
 ===========================================
 
 **Restore strategies** are required in different scenarios, which may
-change according on the actors involved, the scope and extend of the
+change according to the actors involved, the scope and extent of the
 restore, and the purpose. Some examples of these scenarios are:
 
--  the accidental deletion of emails, as a result of an end-user error
-   like for example emptying the Trash can folder
+- the accidental deletion of emails, as a result of an end-user error
+  like for example emptying the Trash can folder
 
--  a problem on the file system, which may cause reading and writing
-   errors and therefore make some parts of an account inaccessible
+- a problem on the file system, which may cause reading and writing
+  errors and therefore make some parts of an account inaccessible
 
--  administrative errors for example during an undelete process
+- administrative errors for example during an undelete process
 
--  an account has being compromised because its credentials were stolen
-   or obtained by fraudulent means
+- an account has being compromised because its credentials were stolen
+  or obtained by fraudulent means
 
--  an account is being under investigation, and its complete history is
-   needed by the enforcement authorities
+- an account is being under investigation, and its complete history is
+  needed by the enforcement authorities
 
-In all these cases, data in a mailbox can be recovered and, depending on
-the destination of the recovered data, restore strategies are grouped in
-**two** categories: recovery on the same server—​or same
+In all these cases, data in a mailbox can be recovered and, depending
+on the destination of the recovered data, restore strategies are
+grouped in **two** categories: recovery on the same server—​or same
 infrastructure—​and recovery on a different infrastructure.
 
 Same infrastructure restore
    These strategies are meant to be used when you need to restore only
    part of an account on **the same server** as the origin server. In
-   this category fall :ref:`restore_deleted_account`,
-   :ref:`single_item_restore`, :ref:`account_restore`, and
-   :ref:`time_range_undelete`.
+   this category fall :ref:`single_item_restore`,
+   :ref:`restore_on_new_account`, :ref:`time_range_undelete`, and
+   :ref:`restore-account`.
 
 Different infrastructure restore
    When the restore process is not possible or not feasible on the same
@@ -48,20 +48,22 @@ It is important to remark that items in |backup| are labelled as
 a :ref:`backup_purge` operation; until that moment they are still
 available.
 
-Finally, all restore strategies do:
+Finally, all restore strategies:
 
--  recover items at a given moment (or interval) in time, which implies
-   that also their status at that time is recovered
+- can be executed from the CLI only, except for :ref:`restore-account`
 
--  recover an item in a different folder than the original one
+- recover items at a given moment (or interval) in time, which implies
+  that also their status at that time is recovered
 
--  always send an email to the initiator of the restore procedure and to
-   the administrator, at the beginning and end of the procedure
+- recover an item in a different folder than the original one
 
-.. important:: :ref:`disaster_recovery` is now part of the
+- always send an email to the initiator of the restore procedure and to
+  the administrator, at the beginning and end of the procedure
+
+.. note:: :ref:`disaster_recovery` is now part of the
    :doc:`advancedbackup` Chapter, because it is intended more as a
    last-resort technique in case something wreaked havoc on your
-   infrastructure.
+   infrastructure, than a restore strategy.
 
 .. topic:: How to obtain the itemID
 
@@ -69,7 +71,7 @@ Finally, all restore strategies do:
    unambiguous code that uniquely identifies an object in a mailbox.
 
    Along with all other metadata about an item, the ``itemID`` is assigned
-   by the server stored in a file inside the **items** directory of the
+   by the server and stored in a file inside the **items** directory of the
    proper account under the directory::
 
      [backup path]/accounts/[accountID]/items/[last 2 digits of itemID]/[itemID]
@@ -96,10 +98,12 @@ Finally, all restore strategies do:
 
       :file:`/opt/zextras/backup/zextras/accounts/4a217bb3-6861-4c9f-80f8-f345ae2897b5/items/57/2057`
 
-   As a regular user, there is only one possibility to find the itemID:
-   select a message and then from the ``Options`` menu click on ``Show
-   original``. In the URL that will open, similar to the one below, the *id*
-   is the trailing part, in this case **2057**::
+   As a regular user, there is only one possibility to find the
+   itemID: select a message and then from the ``Options`` menu
+   (the rightmost icon :fa:`ellipsis-vertical` on  top right corner of
+   the email the  click ``Show original``. In the URL that
+   will open, similar to the one below, the *id* is the trailing part,
+   in this case **2057**::
 
      https://mail.example.com/service/home/~/?auth=co&view=text&id=2057
 
@@ -118,7 +122,7 @@ Finally, all restore strategies do:
 
    Usage example::
 
-     # carbonio backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
+     zextras$ carbonio backup getitem 4a217bb3-6861-4c9f-80f8-f345ae2897b5 2057
 
 In case the message is no longer available, for example because it was
 removed from the trash bin, it is still possible to obtain it by looking
@@ -141,57 +145,6 @@ you need to ask to your admin for assistance.
       [name=user@example.com;mid=2538;oip=258.236.789.647;ua=zclient/7.2.4_GA_2900;]
       mailbox - Emptying 9 items from /Trash, removeSubfolders=true.
 
-.. _restore_deleted_account:
-
-Restore Deleted Account
-=======================
-
-The Restore Deleted Account procedure allows you to restore the contents
-and preferences of a mailbox, as it was when said mailbox was deleted,
-into a completely new account.
-
-
-How Does it Work?
------------------
-
-When a Restore Deleted Account starts, a new account is created (the
-Destination Account), and all the items existing in the source account
-at the moment of the deletion are recreated in the destination account,
-including the folder structure and all the user’s data. All restored
-items will be created in the current primary store unless the ``Obey HSM
-Policy`` box is checked.
-
-.. warning:: When restoring data on a new account, shared items
-   consistency is not preserved. This is because the original share
-   rules refer to the original account’s ID, not to the restored
-   account.
-
-.. _from_the_zextras_backup_tab:
-
-From the |backup| tab
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  Select ``backup`` in the left pane of the
-   Administration Console to show the |backup| tab.
-
--  On the top bar, push the ``Restore Deleted Account`` button.
-
--  Choose the restore date. Day/Month/Year can be selected via a
-   minical, the hour via a drop-down menu and the minute and second via
-   two text boxes. Click ``Next``.
-
--  Browse the list and click the account to be restored (Source).
-
--  Enter the name of the new account (Destination) in the text box. You
-   can then choose whether to Hide in GAL the new account or not. When
-   you’re done choosing, press ``Next``.
-
--  Verify all your choices in the Operation Summary window. You can also
-   add additional email addresses to be notified when the restore
-   operation is finished. Please notice that the admin account and the
-   user who started the Restore procedure are notified by default.
-
--  Click ``Finish`` to start the Restore.
 
 .. _single_item_restore:
 
@@ -202,10 +155,6 @@ The Single Item Restore is one of the Restore Modes available in
 |backup| and allows to restore one item at a time, recovering its
 status even if it was deleted.
 
-
-How Does it Work?
------------------
-
 Single Item Restore takes the **itemID** and restores the corresponding
 item from the backup to the owner’s account. Any type of item can be
 restored this way.
@@ -215,46 +164,35 @@ restored this way.
 Running a Single Item Restore
 -----------------------------
 
-.. grid:: 1 1 1 2
-   :gutter: 3
+
+To start an Item Restore operation, use the command
+
+.. restore include or replace it with actual code
+   .. include:: /cli/ZxBackup/carbonio_backup_doItemRestore.rst
+
+.. code:: console
+
+   zextras$ carbonio backup doItemRestore {Account name or id} {item_id} [attr1 value1 [attr2 value2...]]
             
-   .. grid-item-card:: Via the Administration Console
-      :columns: 12 12 12 6
-                
-      Item Restore is only available through the CLI.
-
-   .. grid-item-card:: Via the CLI
-      :columns: 12 12 12 6
-
-      To start an Item Restore operation, use the
-      `doItemRestore` command.
-
-      .. restore include or replace it with actual code
-         .. include:: /cli/ZxBackup/carbonio_backup_doItemRestore.rst
-
-.. _account_restore:
+.. _restore_on_new_account:
 
 Restore on New Account
 ======================
 
-The **Restore on New Account** and the **Account Restore** procedures
-allow you to restore the content of a mailbox as it was in a given
-moment in time. While they share the same CLI options, the differences
-between the two are in the status of the account and in how the mailbox
-will be restored: If the account was deleted, it can be restored with
-the **same accountID**--Account Restore, whereas if the account is still
-in use, it is possible to restore it into a completely new account,
-i.e., with a completely new **accountID**.
+The **Restore on New Account** and the :ref:`restore-account`
+procedures allow you to restore the content of a mailbox as it was in
+a given moment in time. The differences between the two are in the
+status of the account and in how the mailbox will be restored: If the
+account was deleted, it can be restored with the **same accountID**
+(Account Restore), whereas if the account is still in use, it is
+possible to restore it into a completely new account, i.e., with a
+completely new **accountID**.
 
 The source account is not changed in any way, so it is possible to
 recover one or more deleted items in a user’s account without actually
 rolling back the whole mailbox. When you run this kind of restore, you
 can choose to hide the newly created account from the GAL as a security
 measure.
-
-
-How Does it Work?
------------------
 
 This procedure is useful in several scenarios: when a whole account has
 been deleted or is no longer operational, as either the result of an
@@ -263,11 +201,10 @@ external problem (hardware or filesystem failure), or a human mistake
 system administrator).
 
 When a **Restore on New Account** procedure starts, a new account is
-created, called the *destination account*. All the items existing in the
-source account at the moment selected are recreated in the destination
-account, including the folder structure and all the user’s data. All
-restored items will be created in the current primary store unless the
-``Obey HSM Policy`` box is checked.
+created, called the *Destination Account*. All the items existing in
+the source account at the selected moment in time are recreated in the
+destination account, including the folder structure and all the user’s
+data.
 
 .. warning:: When restoring data on a new account, shared items
    consistency is not preserved. This is because the original share
@@ -279,62 +216,63 @@ restored items will be created in the current primary store unless the
 Running a Restore on New Account
 --------------------------------
 
-.. grid:: 1 1 1 2
-   :gutter: 3
-            
-   .. grid-item-card:: Via the Administration Console
-      :columns: 12 12 12 6
+..
+   .. grid:: 1 1 1 2
+      :gutter: 3
 
-      A Restore on New Account can be used in two scenarios:
+      .. grid-item-card:: Via the Administration Console
+         :columns: 12 12 12 6
 
-      #. Running Restore from the ``Accounts`` tab in the 
-         Administration Console allows you to operate on users currently
-         existing on the server.
+         A Restore on New Account can be used in two scenarios:
 
-      #. If you need to restore a deleted user, please proceed to Restore
-         via the Administration Console.
+         #. Running Restore from the ``Accounts`` tab in the 
+            Administration Console allows you to operate on users currently
+            existing on the server.
 
-      In either case, go to the **Account List**, then follow these
-      directions.
+         #. If you need to restore a deleted user, please proceed to Restore
+            via the Administration Console.
 
-      -  Select ``Accounts`` in the left pane of the Administration Console to
-         show the Accounts List.
+         In either case, go to the **Account List**, then follow these
+         directions.
 
-      -  Browse the list and click the account to be restored (*Source
-         account*).
+         -  Select ``Accounts`` in the left pane of the Administration Console to
+            show the Accounts List.
 
-      -  On the top bar, press the wheel and then the ``Restore`` button.
+         -  Browse the list and click the account to be restored (*Source
+            account*).
 
-      -  Select ``Restore on New Account`` as the Restore Mode and enter the
-         name of the new account (*Destination account*) into the text box.
-         You can then choose whether to Hide in GAL the new account or not.
-         When you’re done, press ``Next``.
+         -  On the top bar, press the wheel and then the ``Restore`` button.
 
-      -  Choose the restore date. Day/Month/Year can be selected via a minical
-         WIDGET, the hour via a drop-down menu and minute and second via two
-         text boxes. Click ``Next``.
+         -  Select ``Restore on New Account`` as the Restore Mode and enter the
+            name of the new account (*Destination account*) into the text box.
+            You can then choose whether to Hide in GAL the new account or not.
+            When you’re done, press ``Next``.
 
-      -  Verify all your choices in the Operation Summary window. You can also
-         add additional email addresses to be notified when the restore
-         operation is completed successfully.
+         -  Choose the restore date. Day/Month/Year can be selected via a minical
+            WIDGET, the hour via a drop-down menu and minute and second via two
+            text boxes. Click ``Next``.
 
-      .. note:: The admin account and the user who started the restore
-         procedure are notified by default.
+         -  Verify all your choices in the Operation Summary window. You can also
+            add additional email addresses to be notified when the restore
+            operation is completed successfully.
 
-      Click ``Finish`` to start the restore.
+         .. note:: The admin account and the user who started the restore
+            procedure are notified by default.
 
-   .. grid-item-card:: Via the CLI
-      :columns: 12 12 12 6
+         Click ``Finish`` to start the restore.
 
-      To start a Restore on New Account via the CLI, use the
-      `doRestoreOnNewAccount` command.
 
-      .. restore include or replace it with actual code
-         .. include:: /cli/ZxBackup/carbonio_backup_doRestoreOnNewAccount.rst
-                   
-      .. hint:: At the end of the operation, you can check that the
-         configuration of the new mailbox is the same by running the
-         command ``carbonio config dump`` (See `zextras_config_full_cli`)
+To start a Restore on New Account via the CLI, use the
+:command:`doRestoreOnNewAccount` command.
+
+.. restore include or replace it with actual code
+   .. include:: /cli/ZxBackup/carbonio_backup_doRestoreOnNewAccount.rst
+
+.. hint:: At the end of the operation, you can check that the
+   configuration of the new mailbox is the same by running the
+   command ``carbonio config dump``
+
+..   (See `zextras_config_full_cli`)
 
 .. _time_range_undelete:
 
@@ -345,10 +283,6 @@ Time-range Undelete, also called **Undelete Restore** is a Restore Mode
 that allows an administrator to restore from a mailbox all items,
 removed from the Trash folder within a given interval of time, and
 recover their status to the last change of status.
-
-
-How Does it Work?
------------------
 
 During a Time-range Undelete, the |backup| engine searches the
 backup datastore for items flagged as ``DELETED`` in the selected time
@@ -365,7 +299,6 @@ called ``unknown_XX``.
    *dedicated* folder. Moreover, the ``undelete_DD_MM_YY`` tag can be
    used to filter items in the mailbox. A few examples can be find in
    the section :ref:`running_a_time_range_undelete`.
-
 
 .. topic:: Corner cases
 
@@ -391,47 +324,48 @@ called ``unknown_XX``.
 Running a Time-range Undelete
 -----------------------------
 
-.. grid:: 1 1 1 2
-   :gutter: 3
+..
+   .. grid:: 1 1 1 2
+      :gutter: 3
 
-   .. grid-item-card:: Via the Administration Console
-      :columns: 12 12 12 6
+      .. grid-item-card:: Via the Administration Console
+         :columns: 12 12 12 6
 
-      -  Select ``Accounts`` in the left pane of the Administration Console to
-         show the Accounts List.
+         -  Select ``Accounts`` in the left pane of the Administration Console to
+            show the Accounts List.
 
-      -  Browse the list and click on the account to be restored (*Source
-         account*).
+         -  Browse the list and click on the account to be restored (*Source
+            account*).
 
-      -  On the top bar, press the wheel and then the ``Restore`` button.
+         -  On the top bar, press the wheel and then the ``Restore`` button.
 
-      -  Select ``Undelete`` as the *Restore Mode* and press ``Next``.
+         -  Select ``Undelete`` as the *Restore Mode* and press ``Next``.
 
-      -  Choose the restore date-time slot. Day/Month/Year can be selected via
-         a mini-calendar widget, the hour via a drop-down menu, while the
-         minute and second can be entered in two text boxes. Once done, click
-         on ``Next``.
+         -  Choose the restore date-time slot. Day/Month/Year can be selected via
+            a mini-calendar widget, the hour via a drop-down menu, while the
+            minute and second can be entered in two text boxes. Once done, click
+            on ``Next``.
 
-      -  Verify your choices in the Operation Summary window. You can also add
-         more email addresses to be notified when the restore operation is
-         finished. Please note that the admin account and the user who started
-         the restore procedure are notified by default.
+         -  Verify your choices in the Operation Summary window. You can also add
+            more email addresses to be notified when the restore operation is
+            finished. Please note that the admin account and the user who started
+            the restore procedure are notified by default.
 
-      -  Click ``Finish`` to start the Restore.
+         -  Click ``Finish`` to start the Restore.
 
-   .. grid-item-card:: Via the CLI
-      :columns: 12 12 12 6
+      .. grid-item-card:: Via the CLI
+         :columns: 12 12 12 6
 
-      To start a Time-range Undelete operation, use the
-      `carbonio backup doUndelete` command.
+To start a Time-range Undelete operation, use the
+`carbonio backup doUndelete` command.
 
-      .. restore include or replace it with actual code
-         .. include:: /cli/ZxBackup/carbonio_backup_doUndelete.rst
+.. restore include or replace it with actual code
+   .. include:: /cli/ZxBackup/carbonio_backup_doUndelete.rst
 
-      .. hint:: At the end of the operation, you can check that the
-         configuration of the new mailbox is the same by running the
-         command ``carbonio config dump`` (See
-         `zextras_config_full_cli`).
+.. hint:: At the end of the operation, you can check that the
+   configuration of the new mailbox is the same by running the
+   command ``carbonio config dump`` (See
+   `zextras_config_full_cli`).
 
 .. _external_restore:
 
@@ -453,10 +387,6 @@ besides the data, it restores also all the **shares** of an account.
    technique and will be discussed in the :doc:`advancedbackup`
    Chapter.
 
-
-How Does it Work?
------------------
-
 The External Restore reads data, metadata, and configuration from the
 Backup Path on the source server and copies them on a new server. The
 procedure consists of a workflow with a number of steps, and is outlined
@@ -472,7 +402,7 @@ restore on your Milan infrastructure.
 .. _skip_domain_provisioning:
 
 Skip Domain Provisioning
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 While the External Restore is typically used on a whole infrastructure,
 nonetheless it can be applied also to individual or multiple accounts:
@@ -485,7 +415,7 @@ following example, that restores only the accounts **john** and
 
 .. code:: console
 
-   # carbonio backup doexternalrestore  /opt/backup/zextras/ accounts john@example.com,alice@example.com domains example.com skip_domain_provisioning true
+   zextras$ carbonio backup doexternalrestore  /opt/backup/zextras/ accounts john@example.com,alice@example.com domains example.com skip_domain_provisioning true
 
 .. the following should be in a different section than "skip domain
    provisioning"?
@@ -544,7 +474,7 @@ attributes* step will be executed.
 .. _folder_restore:
 
 Folder restore
-~~~~~~~~~~~~~~
+--------------
 
 Suppose you have created a folder called ``Inbox/Zextras``\ (which is
 also its Backup Path), and later deleted from it some messages, which
@@ -611,52 +541,53 @@ the External Restore, you can implement the following suggestions.
 Running an External Restore
 ---------------------------
 
-.. grid:: 1 1 1 2
-   :gutter: 3
+..
+   .. grid:: 1 1 1 2
+      :gutter: 3
 
-   .. grid-item-card:: Via the Administration Console
-      :columns: 12 12 12 6
+      .. grid-item-card:: Via the Administration Console
+         :columns: 12 12 12 6
 
-      -  Click the |backup| tab.
+         -  Click the |backup| tab.
 
-      -  Click on the ``Import Backup`` button under ``Import/Export`` to open
-         the Import Backup wizard.
+         -  Click on the ``Import Backup`` button under ``Import/Export`` to open
+            the Import Backup wizard.
 
-      -  Enter the Destination Path into the text box and press Forward. The
-         software will check if the destination folder contains a valid backup
-         and whether the ``zextras`` user has Read permissions.
+         -  Enter the Destination Path into the text box and press Forward. The
+            software will check if the destination folder contains a valid backup
+            and whether the ``zextras`` user has Read permissions.
 
-      -  Select the domains you want to import and press Forward.
+         -  Select the domains you want to import and press Forward.
 
-      -  Select the accounts you want to import and press Forward.
+         -  Select the accounts you want to import and press Forward.
 
-      -  Verify all your choices in the Operation Summary window. You can also
-         add additional email addresses to be notified when the restore
-         operation is finished. Please note that the admin account and the
-         user who started the restore procedure are notified by default.
+         -  Verify all your choices in the Operation Summary window. You can also
+            add additional email addresses to be notified when the restore
+            operation is finished. Please note that the admin account and the
+            user who started the restore procedure are notified by default.
 
-   .. grid-item-card:: Via the CLI
-      :columns: 12 12 12 6
+      .. grid-item-card:: Via the CLI
+         :columns: 12 12 12 6
 
-      To start an External Restore operation, use the
-      `doExternalRestore <carbonio_backup_doExternalRestore>`
-      command::
+To start an External Restore operation, use the
+`doExternalRestore <carbonio_backup_doExternalRestore>`
+command::
 
-         # carbonio backup doExternalRestore *source_path* [param VALUE[,VALUE]]
+   zextras$ carbonio backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
-      .. card:: Usage example
+.. card:: Usage example
 
-         .. code:: console
-                   
-            # carbonio backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
+   .. code:: console
 
-         Restores the example.com domain, including all system accounts,
-         and the john@example.com and jack@example.com accounts from a
-         backup located in /path/to/data/
+      zextras$ carbonio backup doExternalRestore /path/to/data/ accounts john@example.com,jack@example.com domains example.com filter_deleted false skip_system_accounts false
 
-      .. hint:: At the end of the operation, you can check that the
-         configuration of the new mailbox is the same by running the
-         command ``carbonio config dump`` (See `zextras_config_full_cli`).
+   Restores the example.com domain, including all system accounts,
+   and the john@example.com and jack@example.com accounts from a
+   backup located in /path/to/data/
+
+.. hint:: At the end of the operation, you can check that the
+   configuration of the new mailbox is the same by running the
+   command ``carbonio config dump`` (See `zextras_config_full_cli`).
 
 .. this should go into a "best practices" section, perhaps udner "in
    deep view"
@@ -674,7 +605,7 @@ This feature is available **via CLI only**.
 
    .. code:: console
 
-      # carbonio backup doExternalRestore /tmp/external1 domains example0.com,example1.com concurrent_accounts 5
+      zextras$ carbonio backup doExternalRestore /tmp/external1 domains example0.com,example1.com concurrent_accounts 5
 
    Restores the example0.com and example1.com domain, excluding system
    accounts, restoring 5 accounts at same time from a backup located
