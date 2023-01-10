@@ -23,13 +23,16 @@ contains information to prevent or fix these issues.
 Upgrade checklist
 -----------------
 
-
 In order to update to version |release| from the previous one, no
 additional step is required: simply follow the :ref:`Single-Server
 <upgrade-single>` or :ref:`Multi-Server
 <upgrade-multi>` Upgrade procedures.
 
-In case you upgrade from versions previous to 22.11.0, please expand
+Since this upgrade involves the Directory Server, it is necessary to
+integrate the procedures with the steps
+:ref:`upgrade-directory-server`.
+
+In case you upgrade from versions previous to 22.12.0, please expand
 the following checklist for directions
 
 .. dropdown:: Checklist for older versions

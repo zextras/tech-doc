@@ -212,7 +212,6 @@ node hosting the **Proxy** Role.
       "7993", "internal IMAP secure access"
       "7995", "internal POP3 secure access"
       "8080", "internal HTTP services access"
-      "8188", "|vs| access"
       "8443", "internal HTTPS services access"
       "8735", "Internal mailbox :octicon:`arrow-both` mailbox communication"
       "8742", "internal HTTP services"
@@ -248,6 +247,20 @@ node hosting the **Proxy** Role.
       "21000-21255", "TCP range only", "Automatical Sidecar service
       registrations"
 
+
    .. [3] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
+      
+.. dropdown:: Ports used by |vs|
+   :open:
+
+   If you install the |vs|, you need to open these additional ports:
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 20 70
+
+      "8188", "TCP", "Internal connection"
+      "20000-40000", "UDP", "Client connections for the audio and
+      video streams" 
