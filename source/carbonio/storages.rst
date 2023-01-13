@@ -638,27 +638,24 @@ Here are some policy examples. To see how to create the policies in the
 Defining a Policy
 -----------------
 
-Policies can be defined both from the |storage| tab of the |adminui|
-and from the CLI. You can specify a |Carbonio| Search in both cases.
+..
+   Policies can be defined both from the |storage| tab of the |adminui|
+   and from the CLI. You can specify a |Carbonio| Search in both cases.
 
-.. grid::
+Policies can be defined from the CLI using one of the two policy
+management commands available.
 
-   .. grid-item-card:: Via  the CLI
-      :columns: 6
+.. code:: console
 
-      Two policy management commands are available in the CLI.
+   zextras$ carbonio powerstore setHSMPolicy hsm_policy
 
-      .. code:: console
+.. code:: console
 
-            zextras$ carbonio powerstore setHSMPolicy hsm_policy
+   zextras$ carbonio powerstore +setHsmPolicy hsm_policy
 
-      .. code:: console
-
-            zextras$ carbonio powerstore +setHsmPolicy hsm_policy
-
-      These command share the same syntax; the difference is that
-      ``setHSMPolicy`` creates **new** policies, *replacing* existing
-      one, while ``+setHSMPolicy`` *adds* policies to existing ones.
+These command share the same syntax; the difference is that
+``setHSMPolicy`` creates **new** policies, *replacing* existing one,
+while ``+setHSMPolicy`` *adds* policies to existing ones.
 
 .. _pws_zextras_powerstore_and_s3_buckets:
 
