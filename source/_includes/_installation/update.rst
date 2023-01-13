@@ -23,60 +23,80 @@ contains information to prevent or fix these issues.
 Upgrade checklist
 -----------------
 
-In order to update to version |release| from the previous one, no
-additional step is required: simply follow the :ref:`Single-Server
-<upgrade-single>` or :ref:`Multi-Server
-<upgrade-multi>` Upgrade procedures.
+We define as **current version** |version|, as **previous version**
+the version immediately before, i.e., |prev|, and as **older versions** any version
+of |product| released before these two.
 
-Since this upgrade involves the Directory Server, it is necessary to
-integrate the procedures with the steps
-:ref:`upgrade-directory-server`.
+.. grid:: 1 1 2 2
+   :gutter: 3
 
-In case you upgrade from versions previous to 22.12.0, please expand
-the following checklist for directions
+   .. grid-item-card::
+      :columns: 12 12 6 6
 
-.. dropdown:: Checklist for older versions
-              
-   Regardless if you have a Single-Server or Multi-Server installation,
-   make sure to check whether you are in one of this situations and
-   execute the steps mentioned in addition to the normal upgrade
-   procedure. In case of Multi-Server installation, run them on the
-   correct node.
+      Upgrade from |prev| to |version|
+      ^^^^^
 
-   :octicon:`check-circle;1em;sd-text-success` If you are running a
-   version up to **22.9.0**, make sure to install the
-   :ref:`adminpanel-packages` along with the other upgrades.
+      In order to update to version |release| from the previous one,
+      the first task is to follow the :ref:`Single-Server
+      <upgrade-single>` or :ref:`Multi-Server <upgrade-multi>` Upgrade
+      procedures.
 
-   :octicon:`check-circle;1em;sd-text-success` Before starting the
-   upgrade, check if the list of updates includes the Directory Server,
-   i.e., package ``carbonio-directory-server``. If yes, execute the
-   procedure described in :ref:`upgrade-directory-server`.
+      In this case, since this upgrade involves the Directory Server,
+      it is necessary to integrate the procedures with the steps
+      described in Section
+      :ref:`upgrade-directory-server`.
 
-   :octicon:`check-circle;1em;sd-text-success` In case any ``-db``
-   package is in the upgrade list, execute the steps in
-   :ref:`bootstrap-db`.
+   .. grid-item-card::
+      :columns: 12 12 6 6
+
+      Upgrade from older versions to |version|
+      ^^^^^
+
+      In case you upgrade from versions previous to 22.12.0, please expand
+      the following checklist for directions
+
+      .. dropdown:: Checklist for older versions
+
+         Regardless if you have a Single-Server or Multi-Server installation,
+         make sure to check whether you are in one of this situations and
+         execute the steps mentioned in addition to the normal upgrade
+         procedure. In case of Multi-Server installation, run them on the
+         correct node.
+
+         :octicon:`check-circle;1em;sd-text-success` If you are running a
+         version up to **22.9.0**, make sure to install the
+         :ref:`adminpanel-packages` along with the other upgrades.
+
+         :octicon:`check-circle;1em;sd-text-success` Before starting the
+         upgrade, check if the list of updates includes the Directory Server,
+         i.e., package ``carbonio-directory-server``. If yes, execute the
+         procedure described in :ref:`upgrade-directory-server`.
+
+         :octicon:`check-circle;1em;sd-text-success` In case any ``-db``
+         package is in the upgrade list, execute the steps in
+         :ref:`bootstrap-db`.
 
 .. _upgrade-single:
-   
+
 Single-Server Upgrade Procedure
 -------------------------------
 
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 12 4 4 4
 
       Step 1. Clean cached package list and information
       ^^^^^
-      
+
       .. tab-set::
 
          .. tab-item:: Ubuntu
             :sync: ubuntu
 
             .. code:: console
- 
+
                # apt clean
 
          .. tab-item:: RHEL
@@ -87,12 +107,12 @@ Single-Server Upgrade Procedure
                # dnf clean all
 
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 12 4 4 4
 
       Step 2. Update package list and install upgrades
       ^^^^^
-      
+
       .. tab-set::
 
          .. tab-item:: Ubuntu
@@ -109,28 +129,28 @@ Single-Server Upgrade Procedure
 
                # dnf upgrade
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 12 4 4 4
 
       Step 3. Register upgraded packages to |mesh| and restart services
       ^^^^^
       .. code:: console
-                
+
          # pending-setups -a
 
       to restart the services, execute as the ``zextras`` user
 
       .. code:: console
-                
+
          zextras$ zmcontrol stop
          zextras$ zmcontrol start
-      
+
       This command makes sure that all services will be registered
       correctly to |mesh| after they have been restarted after the
       upgrade.
 
 .. _upgrade-multi:
-   
+
 Multi-Server Upgrade Procedure
 ------------------------------
 
@@ -139,34 +159,34 @@ node**, following the same order used during the installation. If you
 installed your Multi-Server according to the scenario described in
 :ref:`multiserver-installation`, you should start the upgrade from
 **SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
-**SRV6**. 
+**SRV6**.
 
 To upgrade one node, follow the same procedure as the Single-Server
 installation, except in these cases:
 
-* you marked some item in the :ref:`upgrade-checklist`: in this case,
+* You marked some item in the :ref:`upgrade-checklist`: in this case,
   execute the corresponding :ref:`upgrade-manual`.
 
-* you are upgrading an AppServer Node (**SRV5** and **SRV6** in our
+* You are upgrading an AppServer Node (**SRV5** and **SRV6** in our
   scenario): in this case the upgrade procedure is slightly different,
   Please refer to section :ref:`upgrade-appserver` for directions.
 
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 12 4 4 4
 
       Step 1. Clean cached package list and information
       ^^^^^
-      
+
       .. tab-set::
 
          .. tab-item:: Ubuntu
             :sync: ubuntu
 
             .. code:: console
- 
+
                # apt clean
 
          .. tab-item:: RHEL
@@ -177,12 +197,12 @@ installation, except in these cases:
                # dnf clean all
 
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 12 4 4 4
 
       Step 2. Update package list and install upgrades
       ^^^^^
-      
+
       .. tab-set::
 
          .. tab-item:: Ubuntu
@@ -199,15 +219,15 @@ installation, except in these cases:
 
                # dnf upgrade
 
-   .. grid-item-card:: 
+   .. grid-item-card::
       :columns: 12 4 4 4
 
       Step 3. Register upgraded packages to |mesh|
       ^^^^^
       .. code:: console
-                
+
          # pending-setups -a
-      
+
       This command makes sure that all services will be registered
       correctly to |mesh| after they have been restarted after the
       upgrade.

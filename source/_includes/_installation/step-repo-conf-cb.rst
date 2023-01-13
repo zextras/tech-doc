@@ -37,7 +37,6 @@ Next, we install all packages needed for |product|.
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
          carbonio-chats-ui \
-         carbonio-admin-login-ui \
          carbonio-mta \
          carbonio-mailbox-db \
          carbonio-appserver carbonio-logger \
