@@ -161,7 +161,7 @@ while those in the *External Connections* only on the node on which
 the service runs. For example, port 443 should be opened only on the
 node hosting the **Proxy** Role.
 
-.. dropdown:: TCP External connections
+.. dropdown:: TCP External Connections
    :open:
 
    .. csv-table::
@@ -178,6 +178,7 @@ node hosting the **Proxy** Role.
       (or opportunistic SSL/TLS)"
       "993", "external IMAP secure access"
       "995", "external POP3 secure access"
+      "8389", "access to LDAP address books"
 
    .. [1] This port is still used since in some cases it is
       considered safer than 587. It requires on-connection SSL.
@@ -186,7 +187,7 @@ node hosting the **Proxy** Role.
       really needed, and preferably only accessible from a VPN tunnel,
       if possible, to reduce the attack surface.
 
-.. dropdown:: TCP Internal connections
+.. dropdown:: TCP Internal Connections
    :open:
 
    .. csv-table::
@@ -231,7 +232,7 @@ node hosting the **Proxy** Role.
       ``mailboxd`` service run on the same host, this port can be used
       to avoid overlaps between the two services
 
-.. dropdown:: Ports used by |mesh|
+.. dropdown:: Ports Used by |mesh|
    :open:
 
    These ports are used by |mesh| internally.
@@ -252,7 +253,7 @@ node hosting the **Proxy** Role.
       used by |mesh| for message broadcasting and membership
       management.
       
-.. dropdown:: Ports used by |vs|
+.. dropdown:: Ports Used by |vs|
    :open:
 
    If you install the |vs|, you need to open these additional ports:
