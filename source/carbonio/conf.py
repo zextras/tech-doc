@@ -48,6 +48,8 @@ author = 'The Zextras Team'
 release = '23.1.0'
 version = release
 
+prev = '22.12.0'
+
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -68,8 +70,8 @@ rst_prolog = """
 
 .. |product| replace:: Carbonio
 .. |storage| replace:: Carbonio Storages
-
-""" + open("replace.txt").read()
+.. |prev| replace:: %s
+""" %prev + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
 

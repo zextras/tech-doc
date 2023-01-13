@@ -110,18 +110,24 @@ Setting up Centralized Storage
 ------------------------------
 
 In order to set up a bucket for centralized storage, a few steps are
-necessary: create a bucket, test connection to the bucket, create the
-volumes on each mailstore, and set the volume to `current`.
+necessary. The procedure is described below and guides you from the
+creation of the bucket up to the association of the new Storage to
+multiple AppServers.
 
-In details, the recommended procedure is the following and requires
-to use CLI commands.
+The procedure is the same for all types of supported buckets, although
+depending on the type of the bucket, either the syntax, or some of the
+parameter may slightly change. For example, the ``URL`` parameter
+represents the API endpoint of the Object Storage and needs to be written
+in a format understandable by the Object Storage itself.
 
+In our example, we use an S3 Bucket; to set up a different type of
+bucket simply use the appropriate command for it.
 
 #. Create an S3 bucket using the command :command:`doCreateBucket`
 
    .. code:: console
 
-      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf https://example_bucket_provider.com
+      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket url https://example_bucket_provider.com
 
    In this example, we use the following values:
 
@@ -131,29 +137,35 @@ to use CLI commands.
      fail
    * **X58Y54E5687R543** as the remote username
    * **abCderT577eDfjhf** as the remote password
-   * **https://example_bucket_provider.com** as the URL for the
-     connection. You can also enter the IP address of the provider
-     instead of the URL.
+   * **My_New_Bucket** is a label given to the bucket
+   * **https://example_bucket_provider.com** is the endpoint to which
+     |storage| connects to the bucket
 
-   When successful, the command outputs a string, which is the unique
-   *bucket ID*, for example **28m6u4KBwSUnYaPp86XG**. Take note of it
-   because it is required in the remainder of the procedure.
+     .. note:: Pay attention to the format of the URL, because some
+        provider might require that also the port be specified as part
+        of the URL or that the IP address be used instead of the URL.
+
+   When successful, the command outputs the *bucket UUID*, that is, a
+   string the uniquely identifies the bucket, for example
+   **60b8139c-d56f-4012-a928-4b6182756301**. Take note of it because
+   it is required in the remainder of the procedure.
 
 #. Test the connection using the bucket ID received in the previous
-   step (**28m6u4KBwSUnYaPp86XG**)
+   step (**60b8139c-d56f-4012-a928-4b6182756301**)
 
    .. code:: console
 
-     zextras$ carbonio core testS3Connection 28m6u4KBwSUnYaPp86XG
+     zextras$ carbonio core testS3Connection 60b8139c-d56f-4012-a928-4b6182756301
 
-   If the command is successful, proceed with the next step.
+   If the command is successful you will see the message ``connection
+   ok``.
 
-#. Associate the bucket to the volumes on *the first mailstore*.
+#. On the first AppServer, create a volume associated to the bucket
 
    .. code:: console
 
       zextras$ carbonio powerstore doCreateVolume S3 Store_01 secondary  \
-      28m6u4KBwSUnYaPp86XG volume_prefix Main_Volume centralized true
+      60b8139c-d56f-4012-a928-4b6182756301 volume_prefix Main_Volume Centralized true
 
    In this example, these values are used:
 
@@ -161,20 +173,19 @@ to use CLI commands.
    * **Store_01**: the volume name as defined on the server on which the
      command is executed
    * **secondary**: the type of the volume
-   * **28m6u4KBwSUnYaPp86XG**: the bucket ID as received in step 1
-   * **volume_prefix Main_Volume**: an ID assigned to the volume, used for
+   * **60b8139c-d56f-4012-a928-4b6182756301**: the bucket ID as received in step 1
+   * **volume_prefix Main_Volume**: a label assigned to the volume, used for
      quick searches (e.g., *main_vol*)
+   * **centralized true**: the volume is centralized and can be used by
+     multiple AppServers
 
 #.  Set the volume to *current*, to let it receive data immediately,
     using command
-    .. code:: console
-
-       zextras$ carbonio powerstore doCreateVolume S3 Name_of_the_volume primary|secondary [bucket_id] centralized true|false
-
+    
     .. code:: console
 
        zextras$ carbonio powerstore doUpdateVolume S3 Store_01 secondary current_volume true
-
+       
     In this example, these values are used:
 
     * **S3**: the type of bucket
@@ -184,18 +195,20 @@ to use CLI commands.
 
 #. Once the Centralized Volume has been created, you need to copy the
    Centralized Volume's configuration from the first server to all
-   mailbox servers and add it to the volume list. To do so, on all
-   other mailbox server run the command
+   mailbox servers and add it to the volume list. To do so, on **all
+   other AppServer** that  run the command
 
    .. code:: console
 
-      zextras$ carbonio powerstore doCreateVolume Centralized {hostname} {volumeName}
+      zextras$ carbonio powerstore doCreateVolume Centralized mailbox_01.example.com Store_01
+ 
+    In this example, these values are used:
 
-   For example:
-
-   .. code:: console
-
-      zextras$ carbonio powerstore doCreateVolume Centralized mbox-02.example.com Store_01
+    * **S3**: the type of bucket
+    * **Store_01**: the volume name as defined on the server on which the
+      command is executed
+    * **mailbox_01.example.com** is the hostname of the server on
+      which the volume was defined and created.
 
 .. _pws_centralized_storage_structure:
 
@@ -570,7 +583,7 @@ defined policy.
 To apply the HSM Policy via the CLI, run the following command as the
 ``zextras`` user
 
-.. doce:: console
+.. code:: console
 
    zextras$ carbonio powerstore doMoveBlobs
 
@@ -625,28 +638,24 @@ Here are some policy examples. To see how to create the policies in the
 Defining a Policy
 -----------------
 
-Policies can be defined both from the |storage| tab of the |adminui|
-and from the CLI. You can specify a |Carbonio| Search in both cases.
+..
+   Policies can be defined both from the |storage| tab of the |adminui|
+   and from the CLI. You can specify a |Carbonio| Search in both cases.
 
-.. grid::
+Policies can be defined from the CLI using one of the two policy
+management commands available.
 
-   .. grid-item-card:: Via  the CLI
-      :columns: 6
+.. code:: console
 
-      Two policy management commands are available in the CLI::
+   zextras$ carbonio powerstore setHSMPolicy hsm_policy
 
-   .. code:: console
+.. code:: console
 
-         zextras$ carbonio powerstore setHSMPolicy hsm_policy
+   zextras$ carbonio powerstore +setHsmPolicy hsm_policy
 
-   .. code:: console
-
-
-         zextras$ carbonio powerstore +setHsmPolicy hsm_policy
-
-      These command share the same syntax; the difference is that
-      ``setHSMPolicy`` creates **new** policies, *replacing* existing
-      one, while ``+setHSMPolicy`` *adds* policies to existing ones.
+These command share the same syntax; the difference is that
+``setHSMPolicy`` creates **new** policies, *replacing* existing one,
+while ``+setHSMPolicy`` *adds* policies to existing ones.
 
 .. _pws_zextras_powerstore_and_s3_buckets:
 
@@ -752,15 +761,9 @@ A centralized Bucket Management UI is available in the |Carbonio|
 when creating a new volume on an S3-compatible storage instead of
 entering the information each time.
 
-To access the Bucket Management UI:
-
--  Access |Carbonio|\'s |adminui|
-
--  Select the "Configure" entry on the left menu
-
--  Select the "Global Settings" entry
-
--  Select the S3 Buckets entry
+To access the Bucket Management UI, access |Carbonio|\'s |adminui|,
+then go to :menuselection:`Mailstore --> Global Servers --> Bucket
+List`.
 
 Any bucket added to the system will be available when creating a new
 volume of the following type: Amazon S3, Ceph, Cloudian, EMC, Scality
