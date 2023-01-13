@@ -204,3 +204,12 @@ legend {
     color: var(--zx-color-magma);
 }
 
+/* Make sure items in unordered list show a marker and are
+   indented. This (ugly) workaround is intended to deal with an
+   unexpected behaviour of some bullet lists that does not display its
+   marker. */
+
+ul.simple li {
+    list-style: disc;
+    margin-left: 24px;
+}
