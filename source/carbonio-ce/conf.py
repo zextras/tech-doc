@@ -47,6 +47,7 @@ author = 'The Zextras Team'
 # The full version, including alpha/beta/rc tags
 release = '23.1.0'
 version = release
+prev = '22.12.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -67,8 +68,8 @@ exclude_patterns = ['_includes', 'common/cli', 'glossary.rst', 'common/adminpane
 rst_prolog = """
 
 .. |product| replace:: Carbonio CE
-
-""" + open("replace.txt").read()
+.. |prev| replace:: %s
+""" %prev + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
 
