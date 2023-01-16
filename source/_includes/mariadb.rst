@@ -22,23 +22,28 @@ become very slow, to the point of slowing down the entire mailbox and
 become evident to all users.
 
 Starting from |carbonio| **23.1.0**, there is the possibility to add
-an index to the ``locator`` field and therefore improving
-performance, by using a script that is shipped with |carbonio|: simply
-execute it and you are done. The steps to add index to locator are
-just two:
+an index to the ``locator`` field and therefore improving performance,
+by using a script that is shipped with |carbonio|: simply execute it
+and you are done. The steps to add index to locator are:
 
 
-#. As the ``root`` user, go to the directory
+#. Become the ``zextras`` user
 
    .. code:: console
 
-     # cd /opt/zextras/libexec/scripts
+      # su - zextras
+
+#. Go to the scripts directory
+
+   .. code:: console
+
+      zextras$ cd /opt/zextras/libexec/scripts
     
 #. Execute the script:
 
    .. code:: console
 
-      # perl -I. migrate20221110-AddIndexLocatorOnMailItem.pl
+      zextras$ perl -I. migrate20221110-AddIndexLocatorOnMailItem.pl
 
 You are now done, from the MariaDB prompt you can check that the
 ``mail_item`` table now contains the new index.
