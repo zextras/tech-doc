@@ -30,10 +30,52 @@ panel is similar to the others components: a the *Top Bar* allows
 quick creation of a new domain or COS by clicking the |create| button,
 while navigation items are on the left-hand column.
 
+The landing page is shown in :numref:`fig_ap-top` and
+:numref:`fig_ap-bottom`.
 
-.. A dedicated *Administration Guide* featuring directions and
-   advises to carry out the most common tasks will be added soon.
+.. grid:: 1 1 2 2
+   :gutter: 3
 
+   .. grid-item::
+      :columns: 6
+      
+      .. _fig_ap-top:
+
+      .. figure:: /img/adminpanel/AP-landing-top.png
+
+         The upper part of Admin Panel's landing page
+
+   .. grid-item::
+      :columns: 6
+
+      In the upper part, clicking on either of the boxes will open the
+      |adminui| page for the Accounts and mailing list, respectively.
+
+      The list of Notifications follows: click the `GO TO
+      NOTIFICATION` button to open the :ref:`dedicated page
+      <ap-notifications>`.      
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+                 
+   .. grid-item::
+      :columns: 6
+
+      .. _fig_ap-bottom:
+
+      .. figure:: /img/adminpanel/AP-landing-bottom.png
+
+         The lower part of Admin Panel's landing page
+
+   .. grid-item::
+      :columns: 6
+
+      In the lower part are shown the versions of |carbonio| and of
+      |carbonio| Core for all the servers defined within the
+      |carbonio| infrastructure. The button `GO TO MAILSTORES SERVERS
+      LIST` allows to open the :menuselection:`Mailstores --> Global
+      Servers --> Server List` page (see :ref:`ap-servers`).
+      
 .. _ap-domains:
 
 Domains
@@ -63,3 +105,9 @@ Privacy
 
 .. include:: /_includes/adminpanel/privacy.rst
 
+.. _ap-notifications:
+
+Notifications
+=============
+
+.. include:: /_includes/adminpanel/notifications.rst
