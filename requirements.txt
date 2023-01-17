@@ -7,3 +7,4 @@ sphinx-design
 sphinx_rtd_theme
 sphinx_copybutton==0.4.0
 sphinxcontrib-email
+docutils==0.16

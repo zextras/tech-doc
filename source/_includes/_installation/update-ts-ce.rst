@@ -54,6 +54,8 @@ this command **before** :command:`pending-setups -a`.
 
    # systemctl restart service-discover.service
 
+.. _upgrade-ts-token:
+
 Token-related error messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
