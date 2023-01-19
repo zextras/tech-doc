@@ -13,6 +13,8 @@ by the Administrator. Currently, these topics are available:
 methods supported by |product| and contains directions for their
 setup.
 
+:ref:`manage-alias` explains how to add aliases to an e-mail address.
+
 :ref:`delegated_admin_provisioning` explains how to grant to a user
 the necessary privileges to administer a domain, including what can
 and what can not be done as a Delegated Administrator.
@@ -30,6 +32,7 @@ administration of a |product| server.
    :hidden:
 
    _admin/auth
+   _admin/managealias
    _admin/delegatedadmin
    _admin/domainlimits
    _admin/integratedservices
