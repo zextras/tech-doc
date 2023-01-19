@@ -203,4 +203,8 @@ legend {
 .tt, .command, .code, .rst-content code.literal {
     color: var(--zx-color-magma);
 }
+
+/* limit text width to at most 1200 px */
+.rst-content {
+    max-width: 1200px
 }
