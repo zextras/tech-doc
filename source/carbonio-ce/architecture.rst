@@ -125,7 +125,11 @@ installed on any node, provided the dependencies are respected.
 * **Files-CE**. Allows users to store and share documents. This role
   also includes **Files-ui** and **Files-db**, that provide user
   interface files for Files-CE and script to initialise the |file|
-  database and connections to it, respectively, and **storages-CE**
+  database and connections to it, respectively, and **Storages-CE**.
+
+  .. note:: **Storages-CE** must be unique in a |product|
+     installation.
+
 * **DB-connection**. Provided by packages **carbonio-files-db** and
   **carbonio-mailbox-db**, this role has the responsibility to allow
   communication between |product| and the database. The use of
