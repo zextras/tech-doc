@@ -204,7 +204,7 @@ legend {
     color: var(--zx-color-magma);
 }
 
-/* limit text width to at most 1200 px */
+/* limit text width to 1024 pixels */
 .rst-content {
-    max-width: 1200px
+    max-width: 1024px
 }
