@@ -2,8 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _changelog:
+
 ============
- Changelogs
+ Changelog
 ============
 
 This section contains a link to the Changelog of each |product|
