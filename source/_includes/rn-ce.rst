@@ -1,4 +1,6 @@
-
+.. SPDX-FileCopyrightText: 2023 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 **IRIS-3235: Copy existing calendar events**
    Users can now quickly and easily copy existing calendar events and
