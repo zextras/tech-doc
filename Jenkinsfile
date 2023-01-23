@@ -48,10 +48,10 @@ pipeline {
         steps {
             unstash "build_done"
             withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
-                s3Delete(bucket: STAGING_BUCKET_NAME,
+/*                s3Delete(bucket: STAGING_BUCKET_NAME,
                          path:'carbonio/')
                 s3Delete(bucket: STAGING_BUCKET_NAME,
-                         path:'carbonio-ce/')
+                         path:'carbonio-ce/')                   */
                 s3Upload(bucket: STAGING_BUCKET_NAME,
                          includePathPattern: '**',
                          workingDir: 'build'
