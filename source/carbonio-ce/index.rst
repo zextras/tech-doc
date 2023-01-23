@@ -22,7 +22,7 @@ The content is organised in four parts:
   advanced usage for |mesh|
 * Use: everyday's usage of |product|, including its use on the
   dedicated mobile Apps
-* Develop: links to API reference
+* Develop: links to API reference 
 
 If you are looking for |carbonio|'s documentation, please refer to its
 `dedicated page <../../carbonio/html/index.html>`_.
@@ -30,6 +30,20 @@ If you are looking for |carbonio|'s documentation, please refer to its
 .. grid:: 1 2 2 3
    :gutter: 2
 
+
+   .. grid-item-card::
+      :columns: 12 12 12 12 
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 1
+         :caption: Release:
+
+         Release Notes <release-notes> 
+         Full Changelog <changelog>
+
+
+         
    .. grid-item-card::
       :columns: 12 6 6 4
       :class-header: sd-font-weight-bold sd-fs-5
@@ -69,17 +83,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
-
-      .. toctree::
-         :maxdepth: 1
-         :caption: Changelogs:
-
-         changelog
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12 
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
