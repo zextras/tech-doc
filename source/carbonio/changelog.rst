@@ -4,10 +4,12 @@
 
 .. _changelog:
 
-Carbonio Changelog - Release 23.1.0
-===================================
+============================
+Full Changelog for |product|
+============================
 
-Release Date: January 23th, 2023
+This is the Changelog for |product| |release|, released on 23th
+January, 2023
 
 .. rubric:: Component: Admin Console & Login UI
 

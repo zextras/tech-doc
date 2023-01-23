@@ -4,9 +4,9 @@
 
 .. _changelog:
 
-============
- Changelog
-============
+============================
+Full Changelog for |product|
+============================
 
 This section contains a link to the Changelog of each |product|
 component within their respective :fa:`github` GitHub repository.
