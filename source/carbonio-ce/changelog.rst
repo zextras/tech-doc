@@ -2,9 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-============
- Changelogs
-============
+.. _changelog:
+
+============================
+Full Changelog for |product|
+============================
 
 This section contains a link to the Changelog of each |product|
 component within their respective :fa:`github` GitHub repository.

@@ -115,7 +115,7 @@ In details, the recommended procedure is the following and requires
 to use CLI commands.
 
 
-1. Create an S3 bucket using the ZxCore command ``doCreateBucket``::
+#. Create an S3 bucket using the ZxCore command ``doCreateBucket``::
 
      zxsuite core doCreateBucket S3 _Amazon_AWS_bucket_ _Service_username_ _Service_password_ [param VALUE[,VALUE]]
 
@@ -142,20 +142,21 @@ to use CLI commands.
    *bucket ID*, for example *28m6u4KBwSUnYaPp86XG*. Take note of it
    because it is required in the remainder of the procedure.
 
-2. Test the connection using the bucket ID received in the previous
+#. Test the connection using the bucket ID received in the previous
    step (**28m6u4KBwSUnYaPp86XG**)::
 
      zxsuite core testS3Connection 28m6u4KBwSUnYaPp86XG
 
    If the command is successful, proceed with the next step.
 
-3. Associate the bucket to the volumes on *each mailstore*::
+#. Associate the bucket to the volumes on *the first mailstore*.
 
      zxsuite powerstore doCreateVolume S3 _Name of the zimbra store_ _primary|secondary_ [param VALUE[,VALUE]]
 
    For example::
 
-     zxsuite powerstore doCreateVolume S3 VolumeName secondary 28m6u4KBwSUnYaPp86XG volume_prefix myVolPrefix centralized true
+     zxsuite powerstore doCreateVolume S3 Store_01 secondary  \
+     28m6u4KBwSUnYaPp86XG volume_prefix Main_Volume centralized true 
 
    In this example, these values are used:
 
@@ -172,7 +173,7 @@ to use CLI commands.
    S3 <zxsuite_powerstore_doCreateVolume_S3>` full reference for
    details and more options.
 
-4.  Set the volume to *current*, to let it receive data immediately::
+#.  Set the volume to *current*, to let it receive data immediately::
 
       zxsuite powerstore doUpdateVolume S3 VolumeName current_volume true
 
@@ -191,6 +192,21 @@ to use CLI commands.
     See the :ref:`doUpdateVolume
     S3<zxsuite_powerstore_doUpdateVolume_S3>` full reference for
     details and more options.
+
+#. Once the Centralized Volume has been created, you need to copy the
+   Centralized Volume's configuration from the first server to all
+   mailbox servers and add it to the volume list. To do so, on all
+   other mailbox server run the command
+
+   .. code:: console
+
+      zxsuite powerstore doCreateVolume Centralized {hostname} {volumeName}
+
+   For example:
+
+   .. code:: console
+
+      zxsuite powerstore doCreateVolume Centralized mbox-02.example.com Store_01
 
 .. _pws_centralized_storage_structure:
 

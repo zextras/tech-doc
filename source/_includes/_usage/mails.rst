@@ -33,6 +33,12 @@ underneath the `Share Folders`. In the dialog, enter the e-mail
 address of the colleague of which you want to find the shares. If the
 colleague has shared some folder, you'll be presented with a list.
 
+While e-mails by default are marked as *read* when they are first
+accessed, it is possible to mark each of them manually. This option is
+particularly useful in case of shared account, to make sure that
+everybody who has access to the e-mail has read it.
+
+
 .. _mail-tags:
 
 Tags

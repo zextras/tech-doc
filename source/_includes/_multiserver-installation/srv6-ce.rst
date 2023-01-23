@@ -49,14 +49,6 @@ Execute the following tasks.
    * ``Ldap master host``: |srv2h|
    * ``Ldap Admin password``: |ldappwd|
 
-#. Copy credentials from the |mesh| server node (SRV2) to the local
-   server.
-
-   .. code:: console
-
-      # scp root@[SRV2_hostname]:/etc/zextras/service-discover/cluster-credentials.tar.gpg \
-        /etc/zextras/service-discover/cluster-credentials.tar.gpg
-
 #. Run |mesh| setup using |meshsec|
 
    .. code:: console

@@ -40,7 +40,9 @@ NGINX templates
 
 .. include:: /_includes/nginx.rst
 
+.. _mariadb-index:
 
+Add an Index to MariaDB
+=======================
 
-
-
+.. include:: /_includes/mariadb.rst

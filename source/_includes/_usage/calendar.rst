@@ -5,11 +5,18 @@
 The calendar component allows to keep track of the appointments, meetings,
 and events you need to attend to and share them with your colleagues.
 
-Beside using |new|, a new appointment can be created with a click of
-the mouse on the desired date and time on the calendar. The only
-difference is in the start (and end) date and time: by using the
-button, they are set to the current date and time, by clicking the
-calendar they are taken from the clicked date and time.
+Beside using |new|, a new appointment can be created in other
+ways. The first one is with a click of the mouse on the desired date
+and time on the calendar. The only difference is in the start (and
+end) date and time: by using the button, they are set to the current
+date and time, by clicking the calendar they are taken from the
+clicked date and time.
+
+Alternatively, you can open an existing appointment, clone it, and
+edit only the relevant details, like for example date and time,
+without the necessity to create a new one and fill in all the
+details. This option is useful if you have to schedule recurrent
+events without a fixed schedule.
 
 Attendees, whose presence is either mandatory or optional, can be
 added by writing their e-mail address. In case the invitation was not

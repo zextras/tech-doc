@@ -47,5 +47,6 @@ features from mobile devices.
    /_management/logger
    /_management/sshkeys
    /_management/mobile
+   /_management/ldapaddressbook
    /_management/shell
    /_management/custom

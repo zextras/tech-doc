@@ -79,12 +79,9 @@ Step 5: Setup |mesh|
 
 .. include:: /_includes/_installation/step-conf-mesh.rst
 
-One final command is needed to fix access permission to |mesh| tokens.
-
-.. code:: console
-
-   # chmod a+r /etc/zextras/carbonio-mailbox/token
-
+.. hint:: In case of errors related to |mesh| token, please refer to
+   section :ref:`upgrade-ts-token`. 
+   
 .. _installation-step6:
 
 Step 6: Create Main DB Role and Database for |product|

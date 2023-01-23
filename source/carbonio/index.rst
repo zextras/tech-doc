@@ -31,7 +31,20 @@ If you are looking for |ce|'s documentation, please refer to its
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 12 6 6 6
+      :columns: 12 12 12 12 
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 1
+         :caption: Release:
+
+         Release Notes <release-notes> 
+         Full Changelog <changelog>
+
+
+         
+   .. grid-item-card::
+      :columns: 12 6 6 4
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -44,7 +57,7 @@ If you are looking for |ce|'s documentation, please refer to its
          security
 
    .. grid-item-card::
-      :columns: 12 6 6 6
+      :columns: 12 6 6 4
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -59,7 +72,7 @@ If you are looking for |ce|'s documentation, please refer to its
          mesh
 
    .. grid-item-card::
-      :columns: 12 6 6 6
+      :columns: 12 6 6 4
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -71,11 +84,11 @@ If you are looking for |ce|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 6 6 6
+      :columns: 12 12 12 12 
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 2
+         :maxdepth: 1
          :caption: Develop:
 
          api

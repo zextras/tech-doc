@@ -45,8 +45,10 @@ copyright = '2022, The Zextras Team'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '22.12.0'
+release = '23.1.0'
 version = release
+
+prev = '22.12.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -68,8 +70,8 @@ rst_prolog = """
 
 .. |product| replace:: Carbonio
 .. |storage| replace:: Carbonio Storages
-
-""" + open("replace.txt").read()
+.. |prev| replace:: %s
+""" %prev + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
 
@@ -94,7 +96,9 @@ html_show_sourcelink = False
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = [ 'css/carbonio.css' ]
+html_css_files = [ 'css/carbonio.css',
+                   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+                  ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
