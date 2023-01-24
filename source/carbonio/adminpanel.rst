@@ -75,7 +75,26 @@ The landing page is shown in :numref:`fig_ap-top` and
       |carbonio| infrastructure. The button `GO TO MAILSTORES SERVERS
       LIST` allows to open the :menuselection:`Mailstores --> Global
       Servers --> Server List` page (see :ref:`ap-servers`).
-      
+
+
+.. _ap_whitelabel:
+
+White Labelling
+===============
+
+|product| supports *White Labelling*, allowing therefore to quickly
+customise many different parts of its web interface to resemble a
+company's own corporate identity.
+
+Currently, |product| supports white labelling of the following graphic
+parts, that can be defined separately for the |adminui| and the End
+User.
+
+All the White Labelling options are available in the |adminui| under
+:menuselection:`Domains --> Global --> Theme`.
+
+.. include:: /_includes/adminpanel/wl.rst
+
 .. _ap-domains:
 
 Domains

@@ -62,6 +62,8 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
+.. _global-theme:
+
 Theme
 ~~~~~
 
@@ -69,33 +71,7 @@ Global settings concern the appearance of |product| and allow to
 customise various option that will influence how the |product| web
 interface appears to the web clients.
 
-The first is the activation of the dark mode, while the other are
-grouped as follows.
-
-
-* **Title & Description** are the name of the client's tab and its
-  tooltip.
-
-  .. hint:: You can differentiate them for end User and Admin
-     Panel user.
-
-* **Logo** defines the logos used for the login page and the
-  main |product|\'s GUI, in both the light and dark mode
-
-  .. hint:: Each logo is a 240x120 pixel image in PNG or SVG format, saved on
-     a *public URL*.
-
-* **Favicon** is the URL of the favicon to be displayed, which
-  must be in ICO format, 16x16 pixels
-
-* **Background Login Page** is displayed during the login phase
-
-  .. hint:: You can choose one JPG image, 2560x1440 pixels for
-     light mode and one for dark mode. 800 KB is the maximum
-     size allowed.
-
-All customisations can be removed at one by clicking the
-:bdg-danger-line:`RESET` button.
+.. include:: /_includes/adminpanel/wl.rst
 
 .. _ap-domain-details:
 
@@ -212,6 +188,8 @@ overridden on a per-user basis.
 
 To ease monitoring user's quota, the bottom of the page contains a
 list of accounts and of their used quota.
+
+.. _domain-theme:
 
 Theme
 ~~~~~
