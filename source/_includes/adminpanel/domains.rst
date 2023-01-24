@@ -62,6 +62,8 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
+.. _global-theme:
+
 Theme
 ~~~~~
 
@@ -186,6 +188,8 @@ overridden on a per-user basis.
 
 To ease monitoring user's quota, the bottom of the page contains a
 list of accounts and of their used quota.
+
+.. _domain-theme:
 
 Theme
 ~~~~~
