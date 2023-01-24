@@ -90,6 +90,9 @@ Currently, |product| supports white labelling of the following graphic
 parts, that can be defined separately for the |adminui| and the End
 User.
 
+All the White Labelling options are available in the |adminui| under
+:menuselection:`Domains --> Global --> Theme`.
+
 .. include:: /_includes/adminpanel/wl.rst
 
 .. _ap-domains:
