@@ -41,7 +41,7 @@
       * The dimension must be **240x120** pixel
       * The format must be **PNG** or **SVG**
       * The logo must have a **transparent background**
-      * The log must be saved on a **public URL**, i.e, it must be
+      * The logo must be saved on a **public URL**, i.e., it must be
 	publicly accessible
 
    .. grid-item-card::
@@ -58,7 +58,7 @@
 
       * The dimension must be **16x16** pixel
       * The format must be **ICO**
-      * The log must be saved on a **public URL**, i.e, it must be
+      * The favicon must be saved on a **public URL**, i.e., it must be
 	publicly accessible
 
    .. grid-item-card::
@@ -79,7 +79,7 @@
       * The dimension must be **2560x1440** pixel
       * The size must be **800** Kb
       * The format must be **JPG**
-      * The log must be saved on a **public URL**, i.e, it must be
+      * The image must be saved on a **public URL**, i.e., it must be
 	publicly accessible
 
 All customisations can be removed at once by clicking the
