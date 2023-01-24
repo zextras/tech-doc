@@ -77,7 +77,7 @@
       **maximum** requirements.
 
       * The dimension must be **2560x1440** pixel
-      * The size must be 800Kb
+      * The size must be **800** Kb
       * The format must be **JPG**
       * The log must be saved on a **public URL**, i.e, it must be
 	publicly accessible
