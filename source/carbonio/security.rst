@@ -11,11 +11,8 @@
 This section contains guidelines to enforce security on a typical
 |product| installation.
 
-.. deploy SSL certificate
-
 .. include:: /_includes/install_SSL_certificate.rst
-
-.. create dkim record
 
 .. include:: /_includes/dkim.rst
 
+.. include:: /_includes/integratedservices.rst
