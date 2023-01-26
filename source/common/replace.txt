@@ -14,7 +14,7 @@
 .. |vs| replace:: |carbonio| VideoServer
 .. |backup| replace:: |carbonio| Backup
 .. |mesh| replace:: |carbonio| Mesh
-.. |sh| replace:: |carbonio| Shell
+.. |sh| replace:: |carbonio| CLI
 .. |mobile| replace:: |carbonio| Mobile
 .. |pv| replace:: |carbonio| Preview
 .. |adminui| replace:: |carbonio| Admin Panel
