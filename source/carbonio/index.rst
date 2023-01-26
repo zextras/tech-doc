@@ -72,7 +72,6 @@ If you are looking for |ce|'s documentation, please refer to its
 	 restorestrategies
 	 advancedbackup
 	 mobile
-	 ldapaddressbook
 	 storages
 	 videoserver
 	 custom
