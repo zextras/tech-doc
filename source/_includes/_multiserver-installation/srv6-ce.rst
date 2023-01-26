@@ -98,3 +98,13 @@ Execute the following tasks.
       zextras$ zmcontrol start
 
 To configure the Logger, please refer to Section :ref:`logger_node_config`.
+To configure the Logger, please refer to Section :ref:`logger_node_config`.
+
+.. card::
+
+   Values used in the next steps
+   ^^^^
+     
+   * |srv6h| this node's hostname, which can be retrieved using the
+     command :command:`su - zextras -c "carbonio prov gas
+     service-discover"`

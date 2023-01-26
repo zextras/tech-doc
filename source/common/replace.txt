@@ -62,3 +62,4 @@
 .. |postfixpwd| replace:: :bdg-secondary-line:`POSTFIX_PWD`
 .. |amavispwd| replace:: :bdg-secondary-line:`AMAVIS_PWD`
 .. |leaderip| replace:: :bdg-secondary-line:`LEADER_IP`
+.. |srv6h| replace:: :bdg-secondary-line:`SRV6_hostname`
