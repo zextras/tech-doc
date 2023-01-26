@@ -10,9 +10,9 @@
 ==========
 
 
-The |sh|  is an interactive shell that allows to execute
-|carbonio|'s commands. To launch it, simply login via console to
-|carbonio| and run
+The |sh|, also known as *Carbonio Shell*, is an interactive shell that
+allows to execute |carbonio|'s commands. To launch it, simply login
+via console to |carbonio| and run
 
 .. code:: console
 
