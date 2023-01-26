@@ -2,9 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-=========================
- Carbonio Administration
-=========================
+====================
+Administration Tasks
+====================
 
 In this section are described advanced tasks that are carried out
 by the Administrator. Currently, these topics are available:
@@ -22,9 +22,6 @@ and what can not be done as a Delegated Administrator.
 :ref:`domain-limits` show how to change some global limit that will
 affect all users in the domain.
 
-:ref:`integratedservices` is an informative section that introduces
-the services that interact with |product|\'s |mta|.
-
 :ref:`adv-admin` introduces some advanced topic about the
 administration of a |product| server.
      
@@ -35,5 +32,4 @@ administration of a |product| server.
    _admin/managealias
    _admin/delegatedadmin
    _admin/domainlimits
-   _admin/integratedservices
    _admin/advancedadmin
