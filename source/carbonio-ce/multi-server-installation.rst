@@ -151,6 +151,13 @@ Access to the Web Interface
 
 .. include:: /_includes/_installation/web-access.rst
 
+.. _logger_node_config:
+
+Centralised Logging Configuration
+---------------------------------
+
+.. include:: /_includes/_multiserver-installation/logger.rst
+
 .. _replica-ds-install:
 
 Install a Directory Server Replica

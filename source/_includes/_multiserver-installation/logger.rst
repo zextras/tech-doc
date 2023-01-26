@@ -2,15 +2,13 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _logger_node_config:
+The log system in |product| is ``rsyslog``, which supports a
+**centralised setup**: in other words, all log files produced by
+|product| can be sent to a unique host server, that is appropriately
+configured to receive log files.
 
-Logger Node Configuration
--------------------------
-
-In all Multi-Server installation in which the **Logger** is installed
-on a dedicated node, it needs a specific configuration, as its purpose
-is to collect all *log files* from the other nodes. Once configured,
-the other nodes must be set up to use the Logger node.
+In a Multi-Server installation, we elect this server as the one on
+which the *Logger* is installed.
 
 .. card::
 
@@ -35,12 +33,16 @@ the other nodes must be set up to use the Logger node.
 
       # systemctl restart rsyslog
 
-   Finally, initialise the logging service for all nodes.
+
+   Finally, specify the host server that will receive logs. Since  is the
+   Logger node, we need |srv6h|.
 
    .. code:: console
 
-      # su - zextras -c "/opt/zextras/libexec/zmloggerinit"
+      zextras$ carbonio prov mcf zimbraLogHostname SRV6_hostname
 
+   .. note:: Since ``zimbraLogHostname`` is a global attribute, this
+      command must be run only once on one node.
 
 .. card::
 
