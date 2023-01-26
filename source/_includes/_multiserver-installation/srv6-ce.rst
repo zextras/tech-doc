@@ -55,6 +55,10 @@ Execute the following tasks.
 
       # service-discover setup-wizard
 
+   Since this node is not the |mesh| Server, the
+   :file:`cluster-credentials.tar.gpg` file will be automatically
+   downloaded.
+
 #. Complete |mesh| setup
 
    .. code:: console
