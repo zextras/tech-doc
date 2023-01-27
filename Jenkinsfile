@@ -56,7 +56,7 @@ pipeline {
                          includePathPattern: '**',
                          workingDir: 'build'
                 )
-		sh 'docker rm -v zsphinx'
+//		sh 'docker rm -v zsphinx'
             }
             script {
             DESTINATION = "$STAGING_BUCKET_NAME"
