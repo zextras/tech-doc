@@ -166,6 +166,8 @@ We build on the domain created in :ref:`previous section
    Authentication
    ~~~~~~~~~~~~~~
 
+.. _ap-vhost:
+
 Virtual Hosts & Certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -197,6 +199,9 @@ to restart the node on which the **Proxy** is installed;
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
 
+.. seealso:: You can manage SSL certificates from the CLI: check out
+   section :ref:`install-SSL-cert`.
+                  
 Mailbox Quota
 ~~~~~~~~~~~~~
 
