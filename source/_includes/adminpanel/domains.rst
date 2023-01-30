@@ -166,15 +166,32 @@ We build on the domain created in :ref:`previous section
    Authentication
    ~~~~~~~~~~~~~~
 
-Virtual Hosts
-~~~~~~~~~~~~~
+Virtual Hosts & Certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A **Virtual Host** is an alternative name given to a domain that can
+A **Virtual Host** is an alternative name given to a *domain* that can
 be used to access the same domain. To be able to use the virtual host,
 the name must be registered on the domain's DNS with an ``A``
 record. Users can then log in to the domain using only their
 usernames, without the domain.
 
+To each virtual host you can associate an **SSL certificate**. Select
+the virtual host, then click :blue:`LOAD AND VERIFY CERTIFICATE`.  In
+the dialog, you can choose whether to enter the three files of the
+authorisation chain (i.e., the *Domain Certificate*, the *Certificate
+CA Chain*, and the *Private Key*) in the first or copy the content of
+the individual files in the appropriate fields. Click
+:bdg-primary:`VERIFY` to verify the certificates: if everything is
+correct, notification :bdg-success:`The certificate is valid` will
+appear. To use the certificate, click the :bdg-primary-line:`I WANT TO
+USE THIS CERTIFICATE` button to upload and use the certificate. Again,
+a notification will be shown (:bdg-success:`The certificates have been
+saved`). To complete the procedure: if you are on a Single-Node,
+restart it otherwise you need to restart the node on which the
+**Proxy** is installed;
+
+You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
+by clicking the appropriate button above the certificates themselves.
 
 Mailbox Quota
 ~~~~~~~~~~~~~
