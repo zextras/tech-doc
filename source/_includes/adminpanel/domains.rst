@@ -219,10 +219,20 @@ a new account can be created using the :bdg-primary:`+` button.
    by selecting multiple accounts, :bdg-primary-line:`BULK ACTIONS` can
    be executed on them.
 
-.. card::
+A click on any account will open a new panel that contains a number of
+information and options, including the name and aliases, if present,
+its status (see below), and creation date.
 
-   Account statuses
-   ^^^^^
+On the panel's top right corner, buttons allow to edit or delete the
+user, and also to redirect to the user's mailbox.
+
+At the bottom of the panel, a list of the *active sessions* appears:
+for example, if a user has logged in from three different devices and
+never logged out, three sessions will appear. When selecting one of
+them, clicking the :bdg-danger-line:`END SESSION` button will close
+that session.
+
+.. card:: Account statuses
 
    A user account can be in one of the following statuses.
 
