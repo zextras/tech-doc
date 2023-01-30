@@ -6,14 +6,14 @@ The |adminui|\'s Backup GUI allows to configure the mail servers to
 save mailbox items in the backup. While they are part of the Backup
 operations, :ref:`backup_restore-strategies` can currently be carried
 out only from the CLI. The only exception is for the
-:`restore-account`, which can be carreid out by the GUI only, under
+:ref:`restore-account`, which can be carried out by the GUI only, under
 :menuselection:`Admin Panel --> Domains --> Manage --> Restore
 Account`.
 
 Setting are grouped in two main section, the *Global Server Settings*,
 which apply to all :ref:`defined servers <ap-servers>`, and the *Server
-Specifics*, which allows to defined different backup policies to
-different servers, in case more than one server has been defined.
+Specifics*, which allows to define different backup policies to
+different servers, in case more than one server has been created.
 
 .. _ap-bk-global:
 
