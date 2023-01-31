@@ -1106,6 +1106,8 @@ button:
 
 Click :bdg-danger:`YES` to confirm the removal of the credential.
 
+.. include:: /credentialmanagement.rst
+
 .. _auth_zxauth-cli:
 
 Zextras Auth CLI
