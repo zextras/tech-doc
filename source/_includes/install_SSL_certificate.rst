@@ -17,7 +17,7 @@ mobile apps; it is also suggested for any installation in order to
 avoid the client browser's warning about an invalid certificate upon
 connection.
 
-.. seealso:: You can manage SSL certificates from the |adminui|: check
+.. seealso:: You can manage SSL *domain certificates* from the |adminui|: check
    out :ref:`ap-vhost`.
                   
 
