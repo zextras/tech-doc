@@ -178,9 +178,14 @@ record. Users can then log in to the domain using only their
 usernames, without the domain.
 
 To each virtual host you can associate an **SSL certificate**.
-|product| supports the upload multiple SSL certificates and associate
-them for different domains, a procedure that requires only a few
-steps.
+|product| supports the upload of multiple SSL *domain certificates*
+from the |adminui| and associate them to different domains, a
+procedure that requires only a few steps.
+
+.. note:: The generation of server-side certificates directly on
+   |product| and the management of wildcard certificate are tasks that
+   can be carried out from the CLI only: check out section
+   :ref:`install-SSL-cert` if you need to use either of them.
 
 Select the virtual host, then click :blue:`LOAD AND VERIFY
 CERTIFICATE`.  In the dialog, you can choose whether to enter the
@@ -198,9 +203,6 @@ to restart the node on which the **Proxy** is installed;
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
-
-.. seealso:: You can manage SSL certificates from the CLI: check out
-   section :ref:`install-SSL-cert`.
                   
 Mailbox Quota
 ~~~~~~~~~~~~~
