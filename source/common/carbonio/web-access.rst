@@ -2,6 +2,12 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _web-access:
+
+=============================
+ Access to the Web Interface
+=============================
+
 To access |carbonio|\'s web interface, point a :ref:`supported browser
 <browser_compatibility>` to either of the URL below. In a Multi-Server
 installation, replace the URL with the IP address or the hostname of
