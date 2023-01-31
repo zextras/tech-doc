@@ -55,6 +55,7 @@ If you are looking for |ce|'s documentation, please refer to its
          architecture
          installation
          upgrade
+         common/carbonio/web-access
          security
 
    .. grid-item-card::

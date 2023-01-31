@@ -13,6 +13,10 @@ During the installation and configuration of |product|, it is
 necessary to execute commands from the command line, so make sure you
 have access to it.
 
+When the installation process has successfully finished, you can
+access |product|\'s GUI using a browser: directions can be found in
+Section :ref:`web-access`.
+
 .. _preliminary-rh:
 
 RHEL 8-only Preliminary Tasks
@@ -98,9 +102,6 @@ Step 7: Bootstrap |product| Databases
 
 .. _vs_installation:
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
 .. _installation-step8:
 
 Step 8: |vs| and video recording
@@ -118,10 +119,3 @@ Final Steps: Complete Setup and Activate License
 
 .. include:: /_includes/_installation/complete.rst
 .. include:: /_includes/_installation/users.rst
-
-.. _web-access:
-
-Access to the Web Interface
----------------------------
-
-.. include:: /_includes/_installation/web-access.rst
