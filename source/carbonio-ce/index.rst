@@ -55,6 +55,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          general
          architecture
          installation
+         upgrade
          security
 
    .. grid-item-card::
