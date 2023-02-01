@@ -35,6 +35,10 @@
     font-weight: 800;
 }
 
+.blue {
+   color: #2B73D2;
+}
+
 /* Width of the text content */
 .wy-nav-content {
     max-width: inherit;

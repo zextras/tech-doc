@@ -16,4 +16,3 @@ whole page before attempting to install.
    requirements
    single-server-installation
    multi-server-installation
-   upgrade

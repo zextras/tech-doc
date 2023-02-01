@@ -45,6 +45,7 @@
 .. role:: bgreen
 .. role:: red
 .. role:: green
+.. role:: blue
 
 .. badges for variables in installation and other procedures
 
