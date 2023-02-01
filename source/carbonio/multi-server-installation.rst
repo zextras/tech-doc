@@ -104,6 +104,10 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
   system, so pay attention that you execute the correct command on the
   correct file
 
+When the installation process has successfully finished, you can
+access |product|\'s GUI using a browser: directions can be found in
+Section :ref:`web-access`.
+
 .. _srv1-install:
 
 SRV1: Postgres
@@ -146,10 +150,14 @@ SRV6: Advanced, AppServer, Preview, and Logger
 
 .. include:: /_includes/_multiserver-installation/srv6.rst
 
-Access to the Web Interface
----------------------------
+.. include:: /_includes/_installation/complete.rst
+             
+.. _logger_node_config:
 
-.. include:: /_includes/_installation/web-access.rst
+Centralised Logging Configuration
+---------------------------------
+
+.. include:: /_includes/_multiserver-installation/logger.rst
 
 .. _replica-ds-install:
 

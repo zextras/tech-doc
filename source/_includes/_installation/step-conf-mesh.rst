@@ -22,11 +22,11 @@ This command will:
   
   .. include:: /_includes/hint-pwd.rst
 
+  In case the password is lost or the credential file becomes
+  corrupted and unusable, you can :ref:`mesh-reset`.
+
 * store the setup in file
   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
-
-  .. warning:: In case the password is lost or the credential file
-     becomes corrupted and unusable, you can :ref:`mesh-reset`.
 
 To complete |mesh| installation, run
 
@@ -35,7 +35,7 @@ To complete |mesh| installation, run
    # pending-setups -a
 
 .. hint:: The **secret** needed to run the above command is stored in
-   file :file:`/var/lib/service-discover/password` which is accessible
+   file :file:`/var/lib/service-discover/password`, which is accessible
    only by the ``root`` user.
 
 

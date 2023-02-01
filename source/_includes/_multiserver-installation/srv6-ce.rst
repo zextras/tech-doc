@@ -55,6 +55,10 @@ Execute the following tasks.
 
       # service-discover setup-wizard
 
+   Since this node is not the |mesh| Server, the
+   :file:`cluster-credentials.tar.gpg` file will be automatically
+   downloaded.
+
 #. Complete |mesh| setup
 
    .. code:: console
@@ -98,3 +102,13 @@ Execute the following tasks.
       zextras$ zmcontrol start
 
 To configure the Logger, please refer to Section :ref:`logger_node_config`.
+To configure the Logger, please refer to Section :ref:`logger_node_config`.
+
+.. card::
+
+   Values used in the next steps
+   ^^^^
+     
+   * |srv6h| this node's hostname, which can be retrieved using the
+     command :command:`su - zextras -c "carbonio prov gas
+     service-discover"`

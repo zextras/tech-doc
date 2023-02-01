@@ -26,7 +26,8 @@ done on files and folders
    ^^^^
 
    * To upload a file to |File|, either click the
-     :bdg-primary-line:`Upload` button on the top bar.
+     :bdg-primary-line:`Upload` button on the top bar, or drag and
+     drop a file from a file browser to |file|
 
    * To download a file from |File|, right-click on it and select
      :bdg-primary-line:`Download`:

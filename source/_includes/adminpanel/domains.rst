@@ -166,16 +166,44 @@ We build on the domain created in :ref:`previous section
    Authentication
    ~~~~~~~~~~~~~~
 
-Virtual Hosts
-~~~~~~~~~~~~~
+.. _ap-vhost:
 
-A **Virtual Host** is an alternative name given to a domain that can
+Virtual Hosts & Certificate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A **Virtual Host** is an alternative name given to a *domain* that can
 be used to access the same domain. To be able to use the virtual host,
 the name must be registered on the domain's DNS with an ``A``
 record. Users can then log in to the domain using only their
 usernames, without the domain.
 
+To each virtual host you can associate an **SSL certificate**.
+|product| supports the upload of multiple SSL *domain certificates*
+from the |adminui| and associate them to different domains, a
+procedure that requires only a few steps.
 
+.. note:: The generation of server-side certificates directly on
+   |product| and the management of wildcard certificate are tasks that
+   can be carried out from the CLI only: check out section
+   :ref:`install-SSL-cert` if you need to use either of them.
+
+Select the virtual host, then click :blue:`LOAD AND VERIFY
+CERTIFICATE`.  In the dialog, you can choose whether to enter the
+three files of the authorisation chain (i.e., the *Domain
+Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
+the first or copy the content of the individual files in the
+appropriate fields. Click :bdg-primary:`VERIFY` to verify the
+certificates: if everything is correct, notification :bdg-success:`The
+certificate is valid` will appear. To use the certificate, click the
+:bdg-primary-line:`I WANT TO USE THIS CERTIFICATE` button to upload
+and use the certificate. Again, a notification will be shown
+(:bdg-success:`The certificates have been saved`). To complete the
+procedure: if you are on a Single-Node, restart it otherwise you need
+to restart the node on which the **Proxy** is installed;
+
+You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
+by clicking the appropriate button above the certificates themselves.
+                  
 Mailbox Quota
 ~~~~~~~~~~~~~
 
@@ -219,10 +247,20 @@ a new account can be created using the :bdg-primary:`+` button.
    by selecting multiple accounts, :bdg-primary-line:`BULK ACTIONS` can
    be executed on them.
 
-.. card::
+A click on any account will open a new panel that contains a number of
+information and options, including the name and aliases, if present,
+its status (see below), and creation date.
 
-   Account statuses
-   ^^^^^
+On the panel's top right corner, buttons allow to edit or delete the
+user, and also to redirect to the user's mailbox.
+
+At the bottom of the panel, a list of the *active sessions* appears:
+for example, if a user has logged in from three different devices and
+never logged out, three sessions will appear. When selecting one of
+them, clicking the :bdg-danger-line:`END SESSION` button will close
+that session.
+
+.. card:: Account statuses
 
    A user account can be in one of the following statuses.
 
