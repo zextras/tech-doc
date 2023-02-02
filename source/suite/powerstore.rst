@@ -151,7 +151,7 @@ to use CLI commands.
 
 #. Associate the bucket to the volumes on *the first mailstore*.
 
-     zxsuite powerstore doCreateVolume S3 _Name of the zimbra store_ _primary|secondary_ [param VALUE[,VALUE]]
+     zxsuite powerstore doCreateVolume S3 _Name of the zimbra store\_ _primary|secondary_ [param VALUE[,VALUE]]
 
    For example::
 
