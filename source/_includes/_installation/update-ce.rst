@@ -40,9 +40,10 @@ used.
 Administration Panel Packages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are upgrading to version **22.10.0**, make sure to install also
-the packages for the brand new Administration console. In a
-Multi-Server, the commands must be executed on the **Proxy node**.
+If you are upgrading from a version previous to **22.10.0**, make sure
+to install also the packages for the brand new Administration
+console. In a Multi-Server, the commands must be executed on the
+**Proxy node**.
       
 .. tab-set::
 
