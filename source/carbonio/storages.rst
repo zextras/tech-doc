@@ -127,7 +127,7 @@ bucket simply use the appropriate command for it.
 
    .. code:: console
 
-      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket url https://example_bucket_provider.com
+      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket
 
    In this example, we use the following values:
 
@@ -151,7 +151,7 @@ bucket simply use the appropriate command for it.
    it is required in the remainder of the procedure.
 
 #. Test the connection using the bucket ID received in the previous
-   step (**60b8139c-d56f-4012-a928-4b6182756301**)
+   step (**60b8139c-d56f-4012-a928-4b6182756301**):
 
    .. code:: console
 
@@ -160,7 +160,7 @@ bucket simply use the appropriate command for it.
    If the command is successful you will see the message ``connection
    ok``.
 
-#. On the first AppServer, create a volume associated to the bucket
+#. On the first AppServer, create a volume associated to the bucket:
 
    .. code:: console
 
@@ -180,7 +180,7 @@ bucket simply use the appropriate command for it.
      multiple AppServers
 
 #.  Set the volume to *current*, to let it receive data immediately,
-    using command
+    using command:
     
     .. code:: console
 
@@ -196,19 +196,27 @@ bucket simply use the appropriate command for it.
 #. Once the Centralized Volume has been created, you need to copy the
    Centralized Volume's configuration from the first server to all
    mailbox servers and add it to the volume list. To do so, on **all
-   other AppServer** that  run the command
+   other AppServer** that run the following commands:
 
    .. code:: console
 
       zextras$ carbonio powerstore doCreateVolume Centralized mailbox_01.example.com Store_01
  
-    In this example, these values are used:
+   In this example, these values are used:
 
-    * **S3**: the type of bucket
-    * **Store_01**: the volume name as defined on the server on which the
-      command is executed
-    * **mailbox_01.example.com** is the hostname of the server on
-      which the volume was defined and created.
+   * **S3**: the type of bucket
+   * **Store_01**: the volume name as defined on the server on which
+     the command is executed
+   * **mailbox_01.example.com** is the _servername_ of the server on
+     which the volume was defined and created.
+
+   The second command that needs to be run is the one reported in the
+   previous step:
+
+   .. code:: console
+
+      zextras$ carbonio powerstore doUpdateVolume S3 Store_01 secondary current_volume true
+       
 
 .. _pws_centralized_storage_structure:
 
