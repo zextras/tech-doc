@@ -30,11 +30,8 @@ of |product| released before these two.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Upgrade from |prev| to |version|
       :columns: 12 12 6 6
-
-      Upgrade from |prev| to |version|
-      ^^^^^
 
       In order to update to version |release| from the previous one,
       the first task is to follow the :ref:`Single-Server
@@ -43,17 +40,16 @@ of |product| released before these two.
 
       In this case, since this upgrade involves the Directory Server,
       it is necessary to integrate the procedures with the steps
-      described in Section
-      :ref:`upgrade-directory-server`.
+      described in Section :ref:`upgrade-directory-server`. 
 
-   .. grid-item-card::
+   .. grid-item-card:: Upgrade from older versions to |version|
       :columns: 12 12 6 6
 
-      Upgrade from older versions to |version|
-      ^^^^^
+      In case you upgrade from an **older version** , please expand
+      the following checklist for directions.
 
-      In case you upgrade from versions previous to 22.12.0, please expand
-      the following checklist for directions
+      .. note:: You need to verify by yourself if these steps are
+         necessary for your upgrade.
 
       .. dropdown:: Checklist for older versions
 
@@ -81,14 +77,16 @@ of |product| released before these two.
 Single-Server Upgrade Procedure
 -------------------------------
 
+We mentioned that the upgrade from |prev| to |version| involves the
+Directory Server, so please follow the steps in Section
+:ref:`upgrade-directory-server` and return here only when instructed.
+     
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 1. Clean cached package list and
+      information
       :columns: 12 4 4 4
-
-      Step 1. Clean cached package list and information
-      ^^^^^
 
       .. tab-set::
 
@@ -107,11 +105,9 @@ Single-Server Upgrade Procedure
                # dnf clean all
 
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 2. Update package list and install
+      upgrades
       :columns: 12 4 4 4
-
-      Step 2. Update package list and install upgrades
-      ^^^^^
 
       .. tab-set::
 
@@ -129,16 +125,18 @@ Single-Server Upgrade Procedure
 
                # dnf upgrade
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 3. Register upgraded packages to |mesh|
       :columns: 12 4 4 4
 
-      Step 3. Register upgraded packages to |mesh| and restart services
-      ^^^^^
       .. code:: console
 
          # pending-setups -a
 
-      to restart the services, execute as the ``zextras`` user
+
+   .. grid-item-card:: Step 4. restart services
+      :columns: 12
+
+      As the ``zextras`` user, execute:
 
       .. code:: console
 
@@ -161,94 +159,38 @@ installed your Multi-Server according to the scenario described in
 **SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
 **SRV6**.
 
-To upgrade one node, follow the same procedure as the Single-Server
-installation, except in these cases:
+For each node, the following procedure should be followed. The Roles
+that need some manual step are highlighted. In this release, the
+:bdg-warning:`Directory Server` and  :bdg-warning:`AppServer` Roles
+need a different procedure than the other nodes.
 
-* You marked some item in the :ref:`upgrade-checklist`: in this case,
-  execute the corresponding :ref:`upgrade-manual`.
+.. card:: SRV1 Postgres
 
-* You are upgrading an AppServer Node (**SRV5** and **SRV6** in our
-  scenario): in this case the upgrade procedure is slightly different,
-  Please refer to section :ref:`upgrade-appserver` for directions.
+   This node does not need any additional manual step, therefore
+   execute steps 1 to 3 of the :ref:`upgrade-single`.
 
-.. grid:: 1 1 1 2
-   :gutter: 3
+.. card:: SRV2 :bdg-warning:`Directory Server`, DB connection, and |mesh| Server)
 
-   .. grid-item-card::
-      :columns: 12 4 4 4
+   The directory server will be updated, therefore execute the
+   :ref:`upgrade-directory-server` procedure.
 
-      Step 1. Clean cached package list and information
-      ^^^^^
+.. card:: SRV3 MTA
 
-      .. tab-set::
+   This node does not need any additional manual step, therefore
+   execute steps 1 to 3 of the :ref:`upgrade-single`
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+.. card:: SRV4 Proxy and |vs| 
 
-            .. code:: console
+   This node does not need any additional manual step, therefore
+   execute steps 1 to 3 of the :ref:`upgrade-single`
 
-               # apt clean
+.. card:: SRV5 Advanced, :bdg-warning:`AppServer`, Files, and Doc
+          
+   This node does is equipped with the AppServer, therefore execute
+   the :ref:`upgrade-appserver` procedure.
 
-         .. tab-item:: RHEL
-            :sync: rhel
+.. card:: SRV6 Advanced, :bdg-warning:`AppServer`, Preview, and Logger
 
-            .. code:: console
-
-               # dnf clean all
-
-
-   .. grid-item-card::
-      :columns: 12 4 4 4
-
-      Step 2. Update package list and install upgrades
-      ^^^^^
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt update && apt upgrade
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf upgrade
-
-   .. grid-item-card::
-      :columns: 12 4 4 4
-
-      Step 3. Register upgraded packages to |mesh|
-      ^^^^^
-      .. code:: console
-
-         # pending-setups -a
-
-      This command makes sure that all services will be registered
-      correctly to |mesh| after they have been restarted after the
-      upgrade.
-
-.. _upgrade-appserver:
-
-AppServer Nodes
-~~~~~~~~~~~~~~~
-
-On nodes with the AppServer (**SRV5** and **SRV6** in our
-scenario), stop the zmcontrol service
-
-
-.. code:: console
-
-   zextras$ zmcontrol stop
-
-Then, upgrade the node like the :ref:`other nodes <upgrade-multi>`.
-
-Finally, as the ``zextras`` user, restart the mailbox service.
-
-.. code:: console
-
-   zextras$ zmcontrol start
+   This node does is equipped with the AppServer, therefore execute
+   the :ref:`upgrade-appserver` procedure.
+          
