@@ -14,6 +14,13 @@
 Manual steps
 ------------
 
-.. include:: /_includes/_installation/update-cb.rst
+If you are upgrading from |prev| to |release|, you need to execute
+these steps only if they are mentioned in Sections
+:ref:`upgrade-single` or :ref:`upgrade-multi`.
 
+If you are upgrading from an older version (i.e., previous to |prev|),
+you need to verify if any of these steps is needed.
+
+.. include:: /_includes/_installation/update-appserver.rst
+.. include:: /_includes/_installation/update-cb.rst
 .. include:: /_includes/_installation/update-ts-cb.rst
