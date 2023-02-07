@@ -7,8 +7,22 @@
 |product| upgrade
 =================
 
-.. include:: /_includes/_installation/update.rst
+.. include:: /_includes/_upgrade/checklist-cb.rst
 
+.. _upgrade-single:
+
+Single-Server Upgrade Procedure
+-------------------------------
+
+.. include:: /_includes/_upgrade/single.rst
+
+.. _upgrade-multi:
+
+Multi-Server Upgrade Procedure
+------------------------------
+
+.. include:: /_includes/_upgrade/multi-cb.rst
+             
 .. _upgrade-manual:
 
 Manual steps
@@ -21,6 +35,24 @@ these steps only if they are mentioned in Sections
 If you are upgrading from an older version (i.e., previous to |prev|),
 you need to verify if any of these steps is needed.
 
-.. include:: /_includes/_installation/update-appserver.rst
-.. include:: /_includes/_installation/update-cb.rst
-.. include:: /_includes/_installation/update-ts-cb.rst
+.. _upgrade-ds:
+
+Upgrade Directory Server
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_upgrade/ds.rst
+
+.. _upgrade-vs:
+
+Upgrade |vs| node
+~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_upgrade/vs.rst
+
+.. _upgrade-troubleshooting:
+
+Upgrade Troubleshooting
+-----------------------
+
+.. include:: /_includes/_upgrade/ts-ce.rst
+.. include:: /_includes/_upgrade/ts-cb.rst

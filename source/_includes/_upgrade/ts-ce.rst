@@ -2,23 +2,52 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _upgrade-troubleshooting:
-
-Upgrade Troubleshooting
------------------------
-
 This section lists some troubleshooting options related to the upgrade
 process.
 
-Preventing docs-connector Conflicts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. _bootstrap-db:
 
-If you are running a release prior to **22.10.0**, there are chances
-that you have installed package ``docs-connector-ce``, which was
-common between |carbonio| and |ce|. If you have it installed, make
-sure to remove it and that **only** the new package
-``carbonio-docs-connector`` is installed, by removing the old package
+Bootstrap database
+~~~~~~~~~~~~~~~~~~
 
+Whenever a ``-db`` package is upgraded (currently they are
+``carbonio-mailbox-db``, ``carbonio-files-db``, and
+``carbonio-docs-connector-db``), remember to bootstrap the
+corresponding Database, by running the command, respectively.
+
+.. code:: console
+
+   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+In the above command, |dbadmpwd| is the the password of the
+``carbonio_adm`` database role, that is, the one created during
+:ref:`Step 6 <installation-step6>` of the Single-Server installation or the
+installation of :ref:`srv1-install` in the Multi-Server installation
+
+Finally, since new version of |product| packages may include new
+services, it is strongly suggested to execute the command
+
+.. code:: console
+
+   # pending-setups -a
+
+This will register the services to |mesh|, so they can immediately be
+used.
+
+.. hint:: The **secret** needed to run the above command is stored in
+   file :file:`/var/lib/service-discover/password` which is accessible
+   only by the ``root`` user.
+
+.. _adminpanel-packages:
+
+Administration Panel Packages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you are upgrading from a version previous to **22.10.0**, make sure
+to install also the packages for the brand new Administration
+console. In a Multi-Server, the commands must be executed on the
+**Proxy node**.
+      
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -26,46 +55,17 @@ sure to remove it and that **only** the new package
 
       .. code:: console
 
-         # apt purge carbonio-docs-connector-ce
+         # apt install carbonio-admin-console-ui carbonio-admin-ui
+
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf remove carbonio-docs-connector-ce
+         # dnf install carbonio-admin-console-ui carbonio-admin-ui
 
-Then installing the new package
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt install carbonio-docs-connector
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install carbonio-docs-connector
-
-Since this package installs a database component, bootstrap
-the corresponding database.
-
-.. code:: console
-
-   # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
-
-Finally, restart the mailbox service.
-
-.. code:: console
-   
-   zextras$ zmcontrol stop
-   zextras$ zmcontrol start
+.. _upgrade-docs-editor:
 
 Upgrade of Docs-Editor
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -76,8 +76,8 @@ similar to::
 
   Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
   400 (Bad request: Request decoding failed: 1 error occurred:
-
-   * invalid config key "Websocket"
+  
+	* invalid config key "Websocket"
 
 To avoid this error, make sure that the installed package
 ``service-discover-base`` is *at least* version **1.10.12**. You can

@@ -63,10 +63,19 @@ on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
 
    While they are **not officially supported**, Linux
    distributions compatible with Ubuntu 20.04 (e.g., Debian) and RHEL
-   8 (e.g., AlmaLinux, Rocky Linux) may be used as base OS for
+   8 (e.g., AlmaLinux, Rocky Linux) *may be used* as base OS for
    |product|, provided all dependencies can be satisfied. This may
    include adding third-party repositories or manually installing
    software packages.
+
+   Moreover, even if |product| can be installed on an unsupported
+   distribution, it may require some additional effort to have all
+   |product| Components working, for example to manually edit some
+   configuration file, while some Component may be not working at
+   all. If you face some problems on unsupported distributions or if
+   you successfully installed |product| on a unsupported distribution
+   and want to share your result, you may want to join the `Official
+   Community Forum <https://community.zextras.com/forum>`_.
 
 The following requirements must be satisfied before attempting to
 install |product|.
