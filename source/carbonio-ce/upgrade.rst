@@ -7,7 +7,7 @@
 |product| upgrade
 =================
 
-.. include:: /_includes/_upgrade/checklist.rst
+.. include:: /_includes/_upgrade/checklist-ce.rst
 
 .. _upgrade-single:
 
