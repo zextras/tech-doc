@@ -27,4 +27,4 @@
 
 ::
 
-   zxsuite mobile addressBook add global user@example.com 2
+   zxsuite mobile addressBook add global user@example.com 7

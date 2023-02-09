@@ -1198,18 +1198,17 @@ added.
 
 .. code:: console
 
-   zextras$ carbonio mobile addressBook add global user@example.com 2
+   zextras$ carbonio mobile addressBook add global user@example.com 7
 
-
-This command adds folder 2 (the default /Contacts folder) of the
+This command adds folder 7 (the default /Contacts folder) of the
 ``user@example.com`` user to the LDAP Address Book of all users in
 the system.
 
 .. code:: console
 
-   zextras$ carbonio mobile addressBook add domain example.com user@example.com 2
+   zextras$ carbonio mobile addressBook add domain example.com user@example.com 7
 
-This command adds folder 2 (the default /Contacts folder) of the
+This command adds folder 7 (the default /Contacts folder) of the
 ``user@example.com`` user to the LDAP Address Book of all users in
 the ``example.com`` domain.
 
