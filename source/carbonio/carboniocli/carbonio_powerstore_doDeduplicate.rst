@@ -2,9 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-::
+.. code:: console
 
-   carbonio powerstore doDeduplicate *volume_name* [param VALUE[,VALUE]]
+   zextras$ carbonio powerstore doDeduplicate *volume_name* [param \
+   VALUE[,VALUE]]
 
 .. rubric:: Parameter List
 
@@ -21,8 +22,8 @@
 
 .. rubric:: Usage Example
 
-::
+.. code:: console
 
-   carbonio powerstore doDeduplicate secondvolume
+   zextras$ carbonio powerstore doDeduplicate secondvolume
 
 Starts a deduplication on volume secondvolume

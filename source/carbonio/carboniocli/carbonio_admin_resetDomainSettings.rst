@@ -2,9 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-::
+.. code:: console
 
-   carbonio admin resetDomainSettings *domain*
+   zextras$ carbonio admin resetDomainSettings *domain*
 
 .. rubric:: Parameter List
 
@@ -18,6 +18,6 @@
 
 .. rubric:: Usage Example
 
-::
+.. code:: console
 
-   carbonio admin resetDomainSettings
+   zextras$ carbonio admin resetDomainSettings
