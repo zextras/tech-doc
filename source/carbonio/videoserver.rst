@@ -382,7 +382,7 @@ another moderator, and save it to a file or to the moderator's |file|.
 
 .. note:: Regardless if the recording is terminated by the person who
    started it or not, a copy of the recording will always be saved in
-   the |files| account of who started the recording.
+   the |file| account of who started the recording.
 
 This functionality is provided by a specific package, called
 ``carbonio-videoserver-recorder``, that **must be installed together**
