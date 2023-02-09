@@ -834,30 +834,26 @@ appropriate rights both on the bucket itself and on its contents. For
 easier management, we recommend granting full rights as shown in the
 following example.
 
-.. card::
-
-   Example structure of user's permission
-   ^^^^
-
-   .. code::
+.. card:: Example structure of user's permission
+   
+   .. code:: json
 
       {
-          `Version`: `[LATEST API VERSION]`,
-          `Statement`: [
+          "Version": "[LATEST API VERSION]",
+          "Statement": [
               {
-                  `Sid`: `[AUTOMATICALLY GENERATED]`,
-                  `Effect`: `Allow`,
-                  `Action`: [
-                      `s3:*`
+                  "Sid": "[AUTOMATICALLY GENERATED]",
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:*"
                   ],
-                  `Resource`: [
-                      `[BUCKET ARN]/*`,
-                      `[BUCKET ARN]`
+                  "Resource": [
+                      "[BUCKET ARN]/*",
+                      "[BUCKET ARN]"
                   ]
               }
           ]
       }
-   ++++
 
    .. warning:: This is not a valid configuration policy. Don’t copy and
       paste it into your user’s settings as it won’t be validated.
@@ -870,10 +866,10 @@ section to:
    .. code::
 
       "Action": [
-                      `s3:PutObject`,
-                      `s3:GetObject`,
-                      `s3:DeleteObject`,
-                      `s3:AbortMultipartUpload`
+                      "s3:PutObject",
+                      "s3:GetObject",
+                      "s3:DeleteObject",
+                      "s3:AbortMultipartUpload"
                     ],
 
 The bucket’s ARN is expressed according to Amazon’s standard naming
