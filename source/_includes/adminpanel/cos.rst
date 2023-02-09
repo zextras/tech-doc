@@ -20,12 +20,16 @@ functionalities of |product|.
 Preferences
 -----------
 
-*Preferences* consist of options for the various modules, in
-particular about the appearance of |product| to web clients (for
-example, if e-mails are displayed as conversations, or the calendar
-shows a month or a work week) and governs the behaviour of some tasks
-carried out by the user, whether new e-mail contacts are added
-automatically to Contacts, or how often to check for new e-mails.
+*Preferences* consist of generic options for the various components
+(Mails, Calendar, Contacts).
+
+The first is the default language to be used by the members of the
+COS, which includes also the locale, The remaining options concern the
+appearance of |product| in web clients (for example, if e-mails are
+displayed as conversations, or the calendar shows a month or a work
+week) and governs the behaviour of some tasks carried out by the user,
+whether new e-mail contacts are added automatically to Contacts, or
+how often to check for new e-mails.
 
 Server Pools
 ------------
@@ -37,7 +41,6 @@ be added to the COS.
 
 Advanced
 --------
-
 
 The *Advanced* Option allow to configure the user quota, data sources,
 proxy settings, passwords, and more.
