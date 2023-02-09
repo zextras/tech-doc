@@ -144,3 +144,12 @@ Notifications
 =============
 
 .. include:: /_includes/adminpanel/notifications.rst
+
+
+.. _ap-operations:
+
+Operations
+=============
+
+.. include:: /_includes/adminpanel/operations.rst
+

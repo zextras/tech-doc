@@ -633,13 +633,13 @@ Policy Examples
 Here are some policy examples. To see how to create the policies in the
 |storage| module, see below.
 
--  *Move all items older than 30 days*
+- "Move all items older than 30 days"
 
--  *Move emails older than 15 days and items of all other kinds older
-   than 30 days*
+- "Move emails older than 15 days and items of all other kinds older
+  than 30 days"
 
--  *Move calendar items older than 15 days, Drive items older than 20
-   days and all emails in the "Archive" folder*
+- "Move calendar items older than 15 days, |file| items older than 20
+  days and all emails in the *Archive* folder"
 
 .. _pws_defining_a_policy:
 

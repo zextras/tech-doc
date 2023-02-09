@@ -2,9 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-::
+.. code:: console
 
-   carbonio admin setDomainSettings *domain* [param VALUE[,VALUE]]
+   zextras$ carbonio admin setDomainSettings *domain* [param \
+   VALUE[,VALUE]]
 
 .. rubric:: Parameter List
 
@@ -32,9 +33,10 @@
 
 .. rubric:: Usage Example
 
-::
+.. code:: console
 
-   carbonio admin setDomainSettings example.com account_limit 100 domain_account_quota 100mb reset_cos_limits cos1:30,cos2:80
+   zextras$ carbonio admin setDomainSettings example.com account_limit \
+   100 domain_account_quota 100mb reset_cos_limits cos1:30,cos2:80
 
 Sets a global account limit on the domain example.com of 100 accounts,
 with a domain account quota of 100 megabytes,
@@ -44,9 +46,10 @@ other cos settings).
 
 .. rubric:: Usage Example
 
-::
+.. code:: console
 
-   carbonio admin setDomainSettings example.com add_cos_limits cos1:30
+   zextras$ carbonio admin setDomainSettings example.com \
+   add_cos_limits cos1:30
 
 Sets cos account limits of 30 for cos1 (leaving other cos settings
 unchanged).
