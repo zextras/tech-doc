@@ -233,7 +233,10 @@ a new account can be created using the :bdg-primary:`+` button.
 
 A click on any account will open a new panel that contains a number of
 information and options, including the name and aliases, if present,
-its status (see below), and creation date.
+its status (see below), and creation date. The aliases can be easily
+managed by clicking the :bdg-primary-line:`MANAGE ALIAS` button: in
+the opening dialog window, select a domain and a new alias, then click
+:bdg-primary-line:`+` to add the alias to the user.
 
 On the panel's top right corner, buttons allow to edit or delete the
 user, and also to redirect to the user's mailbox.
