@@ -5,32 +5,22 @@
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card::       Light/Dark mode
       :columns: 6
-
-      Light/Dark mode
-      ^^^^
 
       The *light* mode features a white-based colour combination for
       the |product| login page and GUI, while the *dark* mode has a
       black-based colour combination.
 
-   .. grid-item-card::
+   .. grid-item-card:: Title & Copyrights Information 
       :columns: 6
-		
-      Title & Copyrights Information
-      ^^^^
 
       The *title* is the string that will appear on the client's tab,
       while the *copyrights information* will appear at the bottom of
       the panel in the login page.
 
-
-   .. grid-item-card::
+   .. grid-item-card:: Logo
       :columns: 6
-
-      Logo
-      ^^^^
 
       The *logo* can be defined for different parts of the GUI: the
       login page and the main page. You can select a different logo
@@ -45,13 +35,10 @@
       * The format must be **PNG** or **SVG**
       * The logo must have a **transparent background**
       * The logo must be saved on a **public URL**, i.e., it must be
-	publicly accessible
+        publicly accessible
 
-   .. grid-item-card::
+   .. grid-item-card:: Favicon
       :columns: 6
-      
-      Favicon
-      ^^^^
 
       The favicon will be displayed next to the tab's name.
       
@@ -62,13 +49,10 @@
       * The dimension must be **16x16** pixel
       * The format must be **ICO**
       * The favicon must be saved on a **public URL**, i.e., it must be
-	publicly accessible
+        publicly accessible
 
-   .. grid-item-card::
+   .. grid-item-card:: Background for the Login Page
       :columns: 12
-
-      Background for the Login Page
-      ^^^^
 
       The *background* image for the login page is displayed behind the
       login panel during the login phase, You can choose one image for
@@ -83,7 +67,7 @@
       * The size must be **800** Kb
       * The format must be **JPG**
       * The image must be saved on a **public URL**, i.e., it must be
-	publicly accessible
+        publicly accessible
 
 All customisations can be removed at once by clicking the
 :bdg-danger-line:`RESET` button.
