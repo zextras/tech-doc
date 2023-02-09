@@ -2,10 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-::
+.. code:: console
 
-   carbonio powerstore doVolumeToVolumeMove *source_volume_name*
-   *destination_volume_name* [param VALUE[,VALUE]]
+   zextras$ carbonio powerstore doVolumeToVolumeMove \
+   *source_volume_name* *destination_volume_name* [param \
+   VALUE[,VALUE]]
 
 .. rubric:: Parameter List
 
@@ -40,8 +41,9 @@
 
 .. rubric:: Usage Example
 
-::
+.. code:: console
 
-   carbonio powerstore doVolumeToVolumeMove sourceVolume destVolume
+   zextras$ carbonio powerstore doVolumeToVolumeMove sourceVolume \
+   destVolume
 
 Moves the whole sourceVolume to destVolume

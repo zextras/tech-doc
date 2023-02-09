@@ -2,9 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-::
+.. code:: console
 
-   carbonio powerstore getVolumeStats *volume_name* [param VALUE[,VALUE]]
+   zextras$ carbonio powerstore getVolumeStats *volume_name* [param \
+   VALUE[,VALUE]]
 
 .. rubric:: Parameter List
 
@@ -29,8 +30,8 @@
 
 .. rubric:: Usage Example
 
-::
+.. code:: console
 
-   carbonio powerstore getVolumeStats volumeName
+   zextras$ carbonio powerstore getVolumeStats volumeName
 
 Shows stats for the volume with name equal to volumeName
