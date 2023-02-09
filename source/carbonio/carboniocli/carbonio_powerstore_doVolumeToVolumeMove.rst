@@ -19,7 +19,8 @@
 | estination_vol\ |                 |                 |                 |
 | ume_name**  (M) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| only_drive(O)   | Boolean         | true|false      | false           |
+| only_files_an\  | Boolean         | true|false      | false           |
+| d_chats(O)      |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | read_err\       | Integer         |                 |                 |
 | or_threshold    |                 |                 |                 |
@@ -28,10 +29,7 @@
 | policy(O)       | String          |                 | none            |
 +-----------------+-----------------+-----------------+-----------------+
 | perform\        | Boolean         | true|false      | false           |
-| _deduplicate (O)|                 |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| delete_dr\      | Boolean         | true|false      | true            |
-| ive_previews (O)|                 |                 |                 |
+| _deduplicate(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | overwrite_inde\ | Boolean         | true|false      | false           |
 | x_destination   |                 |                 |                 |
