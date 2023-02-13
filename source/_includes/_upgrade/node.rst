@@ -2,11 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-
-We mentioned that the upgrade from |prev| to |version| involves the
-Directory Server, so please follow the steps in Section
-:ref:`upgrade-ds` and return here only when instructed.
-
 .. grid:: 1 1 1 2
    :gutter: 3
 
@@ -68,25 +63,11 @@ Directory Server, so please follow the steps in Section
          # pending-setups -a
 
 
-   .. grid-item-card:: Step 5. Reboot or restart services
+   .. grid-item-card:: Step 5. Reboot
       :columns: 12
 
-      For the last step, you can choose to reboot, which is the safest
-      solution especially when there is a new kernel, or simply
-      restart or services.
-
-      In the first case, run command:
+       Once the upgrade has completed successfully, run command:
 
       .. code:: console
 
          # reboot
-
-      In the second case, as the ``zextras`` user, execute:
-
-      .. code:: console
-
-         zextras$ zmcontrol start
-
-      This command makes sure that all services will be registered
-      correctly to |mesh| after they have been restarted after the
-      upgrade.
