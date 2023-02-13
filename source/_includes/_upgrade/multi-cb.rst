@@ -9,11 +9,12 @@ installed your Multi-Server according to the scenario described in
 **SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
 **SRV6**.
 
-For each node, except for the nodes equipped with the **Directory
-Server** and **VideoServer** Roles (**SRV2** and **SRV4** in our
-scenario), follow the same procedure used for the
-:ref:`upgrade-single`.
+This upgrade involves the **Directory Server** and **VideoServer**
+(**SRV2** and **SRV4** in our scenario). For all the other nodes node
+follow the same procedure used for the :ref:`upgrade-single`:
+
+.. include:: /_includes/_upgrade/node.rst
 
 For the Directory Server, please refer to section :ref:`upgrade-ds`,
-while for |vs| there are a few commands to execute, as described in
-section :ref:`upgrade-ds`.
+while for |vs|, directions are described in section :ref:`upgrade-vs`.
+
