@@ -9,7 +9,9 @@ installed your Multi-Server according to the scenario described in
 **SRV1**, then **SRV2**, **SRV3**, **SRV4**, **SRV5**, and finally
 **SRV6**.
 
-For each node, except for the nodes equipped with the **Directory
-Server** follow the same procedure used for the :ref:`upgrade-single`.
+For each node, except for the node equipped with the **Directory
+Server** follow the same procedure used for the :ref:`upgrade-single`:
+
+.. include:: /_includes/_upgrade/node.rst
 
 For the Directory Server Node, please refer to section :ref:`upgrade-ds`.
