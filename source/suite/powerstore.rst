@@ -1041,20 +1041,20 @@ following example.
    Example structure of user's permission
    ^^^^
    
-   .. code:: 
+   .. code::  json
 
       {
-          `Version`: `[LATEST API VERSION]`,
-          `Statement`: [
+          "Version": "[LATEST API VERSION]",
+          "Statement": [
               {
-                  `Sid`: `[AUTOMATICALLY GENERATED]`,
-                  `Effect`: `Allow`,
-                  `Action`: [
-                      `s3:*`
+                  "Sid": "[AUTOMATICALLY GENERATED]",
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:*"
                   ],
-                  `Resource`: [
-                      `[BUCKET ARN]/*`,
-                      `[BUCKET ARN]`
+                  "Resource": [
+                      "[BUCKET ARN]/*",
+                      "[BUCKET ARN]"
                   ]
               }
           ]
@@ -1069,13 +1069,13 @@ section to:
 
 .. card::
 
-   .. code::
+   .. code:: json
 
       "Action": [
-                      `s3:PutObject`,
-                      `s3:GetObject`,
-                      `s3:DeleteObject`,
-                      `s3:AbortMultipartUpload`
+                      "s3:PutObject",
+                      "s3:GetObject",
+                      "s3:DeleteObject",
+                      "s3:AbortMultipartUpload"
                     ],
 
 The bucket’s ARN is expressed according to Amazon’s standard naming

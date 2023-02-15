@@ -14,7 +14,7 @@
 Single-Server Upgrade Procedure
 -------------------------------
 
-.. include:: /_includes/_upgrade/single.rst
+.. include:: /_includes/_upgrade/single-ce.rst
 
 .. _upgrade-multi:
 
@@ -25,15 +25,19 @@ Multi-Server Upgrade Procedure
              
 .. _upgrade-manual:
 
-Manual steps
-------------
+.. _upgrade-troubleshooting:
+
+Manual Steps and Troubleshooting
+--------------------------------
 
 If you are upgrading from |prev| to |release|, you need to execute
 these steps only if they are mentioned in Sections
 :ref:`upgrade-single` or :ref:`upgrade-multi`.
 
 If you are upgrading from an older version (i.e., previous to |prev|),
-you need to verify if any of these steps is needed.
+you need to verify if any of these steps is needed: in other words,
+depending on the packages that will be upgraded, you might need to run
+them or not. Please check the conditions fo
 
 .. _upgrade-ds:
 
@@ -42,9 +46,6 @@ Upgrade Directory Server
 
 .. include:: /_includes/_upgrade/ds.rst
 
-.. _upgrade-troubleshooting:
-
-Upgrade Troubleshooting
------------------------
+.. troubleshooting
 
 .. include:: /_includes/_upgrade/ts-ce.rst

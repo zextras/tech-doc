@@ -2,9 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-This section lists some troubleshooting options related to the upgrade
-process.
-
 .. _bootstrap-db:
 
 Bootstrap database

@@ -14,7 +14,7 @@
 Single-Server Upgrade Procedure
 -------------------------------
 
-.. include:: /_includes/_upgrade/single.rst
+.. include:: /_includes/_upgrade/single-cb.rst
 
 .. _upgrade-multi:
 
@@ -25,8 +25,10 @@ Multi-Server Upgrade Procedure
              
 .. _upgrade-manual:
 
-Manual steps
-------------
+.. _upgrade-troubleshooting:
+
+Manual Steps and Troubleshooting
+--------------------------------
 
 If you are upgrading from |prev| to |release|, you need to execute
 these steps only if they are mentioned in Sections
@@ -49,10 +51,7 @@ Upgrade |vs| node
 
 .. include:: /_includes/_upgrade/vs.rst
 
-.. _upgrade-troubleshooting:
-
-Upgrade Troubleshooting
------------------------
+.. troubleshooting
 
 .. include:: /_includes/_upgrade/ts-ce.rst
 .. include:: /_includes/_upgrade/ts-cb.rst
