@@ -8,9 +8,10 @@ API for |product|
 =================
 
 |zx| makes available to developers a couple of APIs to interact with
-|product| components. To read their documentation, follow the URLS:
+the current version (|release|) of |product| components. To read their
+documentation, follow the URLS:
 
-* `Carbonio API <../../apidoc/carbonio/index.html>`_ is used
+* `Carbonio API <../../apidoc/api-reference/index.html>`_ is used
   to interact via SOAP with the main functions of |product|
 
 * `Carbonio Files blob <../../apidoc/files_blob/index.html>`_, for
