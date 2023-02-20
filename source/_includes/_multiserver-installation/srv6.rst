@@ -82,7 +82,7 @@ Execute the following tasks.
    .. code-block:: ini
       :linenos:
 
-      nginx_lookup_server_full_path_urls = https://172.16.0.16
+      nginx_lookup_server_full_path_urls = https://172.16.0.16:7072
       memcached_server_full_path_urls = 172.16.0.14:11211
 
    Make sure that:
@@ -90,6 +90,8 @@ Execute the following tasks.
    * in line 1 protocol is **https** and the IP address is the address
      of one AppServer, we use the current node's IP Address for
      simplicity
+   * in line 1, make also sure to specify the port used by Preview,
+     **7072**
    * in line 2 |vsip| is written, to allow this node's access to
      Memcached, which is installed on the *Proxy Node*
 
