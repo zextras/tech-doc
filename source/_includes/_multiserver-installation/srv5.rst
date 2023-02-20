@@ -68,38 +68,11 @@ Execute the following tasks.
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
 
-#. Let |file| use Memcached. Edit file
-   :file:`/etc/carbonio/files/config.properties` and search for
-   section **# Nginx Lookup servers**.
-
-   .. code-block:: apache
-      :linenos:
-
-      # Nginx Lookup servers
-      nginxlookup.server.protocol=https
-      nginxlookup.server.urls=172.16.0.15
-      memcached.server.urls=172.16.0.14
-
-   Make sure that:
-
-   * in line 2 protocol is **https**
-   * in line 3 there must be the IP address of one AppServer, we use
-     the current node's IP Address for simplicity
-   * in line 4 |vsip| is written, to allow this node's access to
-     Memcached, which is installed on the *Proxy Node*
-
 #. Fix carbonio-mailbox token access
 
    .. code:: console
 
       # chmod a+r /etc/zextras/carbonio-mailbox/token
-
-#. restart the mailbox process as the ``zextras`` user
-
-   .. code:: console
-
-      zextras$ zmcontrol stop
-      zextras$ zmcontrol start
 
 #. Run as the ``zextras user`` the following command to configure the
    Video Recording, using |vsip|, |servletport| and |vspwd| configured
