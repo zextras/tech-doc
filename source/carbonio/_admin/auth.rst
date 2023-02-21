@@ -484,14 +484,47 @@ follow these additional steps.
         "security.authnrequest_signed":"true",
       }
 
+.. _auth-saml-access:
+
+Access a Service Using SAML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once SAML authentication has been properly configured on both the SP
+and IDP sides, it is possible to access to a |product| resource using
+different modalities:
+
+#. Login to the IDP portal and click on the resource you want to
+   access.
+
+#. Directly go to the service's web page and click the
+   :bdg-primary-line:`SAML LOGIN` button that appears near the
+   username and password fields
+
+   .. note:: The label on the button might slight differ, depending on
+      IPD and configuration.
+
+#. Use the direct link to the SAML authentication of the service. For
+   example, given a |product| installation (the Service) located at
+   **mail.example.com**, and provided you are already authenticated to
+   the IDP, it is possible to access the mailbox by using the link
+   https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/mails
+
+   .. hint:: By replacing the URL after the ``redirectUrl`` it is
+      possible to allow direct access to other |carbonio| components,
+      for example:
+      https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/files
+      will open the |file| component.
+
+.. _auth-saml-azure:
+
 Example: Configure SAML on Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In this section we configure SAML on an Azure portal to allow SSO
-access to a |product| installation. This procedure requires to
-configure first the Azure portal using a few values from |product|
-installation, then configure |product| to use the Azure portal as SAML
-provider. 
+In this section we configure SAML on an Azure portal (the Identity
+Provider, *IDP*) to allow SSO access to a |product| installation (the
+Service Provider, *SP*). This procedure requires to configure first
+the Azure portal using a few values from |product| installation, then
+configure |product| to use the Azure portal as SAML provider.
 
 .. card:: Configure Azure Portal
 
