@@ -737,7 +737,6 @@ default SAML settings, modify them, then save and import them back.
               "organization.url":"https://www.example.com/",
 
               "security.requested_authncontextcomparison":"exact",
-              "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
               "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
               "security.want_nameid_encrypted":"false",
               "security.want_assertions_encrypted":"false",
@@ -856,7 +855,6 @@ follow these additional steps.
         "organization.url":"https://www.example.com/",
 
         "security.requested_authncontextcomparison":"exact",
-        "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
         "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
         "security.want_nameid_encrypted":"false",
         "security.want_assertions_encrypted":"false",
