@@ -259,14 +259,14 @@ import the configuration using the command:
 
 .. code:: console
 
-   zxsuite$ carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
+   zextras$ carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
 
 .. note:: The URL supplied by the SAML IDP for an unsecured connection
    may be slight different from the previous one, like in our example.
 
 .. code:: console
 
-   zxsuite$ carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
+   zextras$ carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
 
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
@@ -302,7 +302,7 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: console
 
-         zxsuite$ carbonio auth saml get example.com export_to /tmp/saml.json
+         zextras$ carbonio auth saml get example.com export_to /tmp/saml.json
 
    .. grid-item-card::
       :columns: 12 12 12 6
@@ -382,7 +382,7 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: console
 
-         zxsuite$ carbonio auth saml import example.com /tmp/saml.json
+         zextras$ carbonio auth saml import example.com /tmp/saml.json
 
       .. hint:: It is also possible to view or edit single attributes
          by using the ``carbonio auth saml get`` and ``carbonio auth saml
@@ -609,7 +609,7 @@ complex scenarios, including:
 
       .. code:: console
 
-         zxsuite$ carbonio auth credential add john@example.com [param VALUE[,VALUE]]
+         zextras$ carbonio auth credential add john@example.com [param VALUE[,VALUE]]
 
    .. grid-item-card:: List Existing Credential
       :columns: 6
@@ -620,7 +620,7 @@ complex scenarios, including:
 
       .. code:: console
 
-         zxsuite$ carbonio auth credential list john@example.com
+         zextras$ carbonio auth credential list john@example.com
 
       This command gives **no access** to the user’s passwords: they
       are never shown.
@@ -639,7 +639,7 @@ complex scenarios, including:
 
       .. code:: console
 
-         zxsuite$ carbonio auth credential update john@example.com [param VALUE[,VALUE]]
+         zextras$ carbonio auth credential update john@example.com [param VALUE[,VALUE]]
 
       The successful credential update will be displayed as output of the
       previous command, reporting all credential’s properties:
@@ -666,7 +666,7 @@ complex scenarios, including:
 
       .. code:: console
 
-         zxsuite$ carbonio auth credential delete john@example.com password_id
+         zextras$ carbonio auth credential delete john@example.com password_id
 
       .. hint:: The ``password_id`` is shown as ``id`` in the
          :command:`carbonio auth credential list` command.
@@ -683,7 +683,7 @@ In this section we present a few examples
 
    .. code:: bash
 
-      zxsuite$ carbonio auth credential add john@example.com password 'easpass' label "Smartphone" service eas
+      zextras$ carbonio auth credential add john@example.com password 'easpass' label "Smartphone" service eas
       Credential correctly added
 
       list
@@ -729,7 +729,7 @@ In this section we present a few examples
 
    .. code:: console
 
-      zxsuite$ carbonio auth credential add jane@example.com password \
+      zextras$ carbonio auth credential add jane@example.com password \
       'SecretPassword!' label "Web access" service WebUI
 
 #. Create a password for alice\@example.com that can be used only for
@@ -737,7 +737,7 @@ In this section we present a few examples
 
    .. code:: console
 
-      zxsuite$ carbonio auth credential add alice@example.com password \
+      zextras$ carbonio auth credential add alice@example.com password \
       'LocalClient' service imap,pop3
 
 #. Create a password for bob\@example.com/SMTP_Service_Credential can be
@@ -745,7 +745,7 @@ In this section we present a few examples
 
    .. code:: console
 
-      zxsuite$ carbonio auth credential add bob@example.com password \
+      zextras$ carbonio auth credential add bob@example.com password \
       'SMTP_Service_Credential' service smtp
 
 #. An important parameter is ``qrcode``, to create a new QR code to be
@@ -755,5 +755,5 @@ In this section we present a few examples
 
    .. code:: console
 
-      zxsuite$ carbonio auth credential add charles@example.com password \
+      zextras$ carbonio auth credential add charles@example.com password \
       'SMTP_Service_Credential' qrcode true service smtp

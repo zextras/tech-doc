@@ -36,10 +36,10 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Release:
+         :caption: Changelogs:
 
-         Release Notes <release-notes>
-         Full Changelog <changelog>
+         Release 23.2.0 <changelog-23.2.0>
+	 Release 23.1.0 <changelog>
 
 
 
