@@ -355,7 +355,6 @@ default SAML settings, modify them, then save and import them back.
               "organization.url":"https://www.example.com/",
 
               "security.requested_authncontextcomparison":"exact",
-              "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
               "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
               "security.want_nameid_encrypted":"false",
               "security.want_assertions_encrypted":"false",
@@ -473,7 +472,6 @@ follow these additional steps.
         "organization.url":"https://www.example.com/",
 
         "security.requested_authncontextcomparison":"exact",
-        "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
         "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
         "security.want_nameid_encrypted":"false",
         "security.want_assertions_encrypted":"false",
@@ -485,6 +483,153 @@ follow these additional steps.
         "security.logoutresponse_signed":"true",
         "security.authnrequest_signed":"true",
       }
+
+.. _auth-saml-access:
+
+Access a Service Using SAML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once SAML authentication has been properly configured on both the SP
+and IDP sides, it is possible to access to a |product| resource using
+different modalities:
+
+#. Login to the IDP portal and click on the resource you want to
+   access.
+
+#. Directly go to the service's web page and click the
+   :bdg-primary-line:`SAML LOGIN` button that appears near the
+   username and password fields
+
+   .. note:: The label on the button might slight differ, depending on
+      IPD and configuration.
+
+#. Use the direct link to the SAML authentication of the service. For
+   example, given a |product| installation (the Service) located at
+   **mail.example.com**, and provided you are already authenticated to
+   the IDP, it is possible to access the mailbox by using the link
+   https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/mails
+
+   .. hint:: By replacing the URL after the ``redirectUrl`` it is
+      possible to allow direct access to other |carbonio| components,
+      for example:
+      https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/files
+      will open the |file| component.
+
+.. _auth-saml-azure:
+
+Example: Configure SAML on Azure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this section we configure SAML on an Azure portal (the Identity
+Provider, *IDP*) to allow SSO access to a |product| installation (the
+Service Provider, *SP*). This procedure requires to configure first
+the Azure portal using a few values from |product| installation, then
+configure |product| to use the Azure portal as SAML provider.
+
+.. card:: Configure Azure Portal
+
+   On the Azure Portal you need to configure the following values on
+   **Basic SAML Configuration**. From your |product| installation you
+   need to know the :bdg-secondary-line:`carbonio-hostname` and the
+   :bdg-secondary-line:`carbonio-domain`.
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Value
+	- Option
+      * - Identifier (Entity ID)
+	- ``https://carbonio-hostname/zx/auth/samlMetadata?domain=carbonio-domain``
+      * - Reply URL
+	- ``https://carbonio-hostname/zx/auth/saml/?domain=carbonio-domain``
+      * - Sign on URL
+	- `You can leave this empty`
+      * - Relay State
+	- ``https://carbonio-hostname/``
+      * - Logout URL
+	- ``https://carbonio-hostname/zx/auth/logout``
+
+   Next, in **Attributes & Claims**, configure
+   
+   .. list-table::
+      :header-rows: 1
+
+      * - Value
+	- Option
+      * - Unique User Identifier
+	- ``user.mail``
+
+   As an optional step, you can upload an X.509 :abbr:`CSR
+   (Certificate Signing Request)` Certificate in case you want to
+   enable certificate signing.
+
+   The configuration on the Azure side is now complete. From here, you
+   need the following data for |product|'s configuration.
+
+   * :bdg-secondary-line:`Azure_AD_ID` the identifier of the Azure AD
+   * :bdg-secondary-line:`SAML_cert` the certificate used for the
+     connection between azure and |product|
+   * :bdg-secondary-line:`Azure_login_URL` the login URL of the Azure
+     Portal
+   * :bdg-secondary-line:`Azure_logout_URL` the logout URL of the
+     Azure Portal
+
+.. card:: Configure |product|
+
+   The configuration on the |product| side is currently possible from
+   the CLI only. Therefore, copy the :bdg-secondary-line:`SAML_cert`
+   on the |product| installation, then log in to it as the ``zextras``
+   user. The SAML configuration is carried out by means of the
+   :command:`carbonio admin saml update` command. 
+
+   .. note:: to keep consistency with the rest of the documentation,
+      we will use in the commands the value **example.com** for the
+      :bdg-secondary-line:`carbonio-domain` in the commands listed
+      below.
+			  
+   The options to configure are these four: 
+
+   #. ``idp.entityid`` using :bdg-secondary-line:`Azure_AD_ID`
+      
+      .. code:: console
+
+	 zextras$ carbonio admin saml update example.com \
+	 idp.entityid Azure_AD_ID
+
+   #. ``idp.x509cert`` using the path to the uploaded
+      :bdg-secondary-line:`SAML_cert`
+      
+      .. code:: console
+
+	 zextras$ carbonio admin saml update example.com \
+	 idp.x509cert SAML_cert
+
+   #. ``idp.single_sign_on_service.url`` using
+      :bdg-secondary-line:`Azure_login_URL`
+
+      .. code:: console
+	 
+	 zextras$ carbonio admin saml update example.com \
+	 idp.single_sign_on_service.url Azure_login_URL
+
+   #. ``idp.single_logout_service.url`` using
+      :bdg-secondary-line:`Azure_logout_URL`
+      
+      .. code:: console
+
+	 zextras$ carbonio admin saml update example.com \
+	 idp.single_logout_service.url Azure_logout_URL
+
+   As an optional step to enable certificate signing, you need the
+   private key that refers to the X.509 certificate and configure
+   the following variables, similarly to what has been done above.
+
+   * ``sp.x509cert`` is the path to :bdg-secondary-line:`SAML_cert`
+   * ``sp.privatekey`` is the private key you have generated with
+     ``sp.x509cert``
+   * ``security.logoutresponse_signed`` ,
+     ``security.logoutrequest_signed``, and
+     ``security.authnrequest_signed`` must all be set to **true**
 
 .. _temp_auth_link:
 
