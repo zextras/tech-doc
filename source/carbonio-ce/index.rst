@@ -37,10 +37,9 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Release:
+         :caption: Changelogs
 
-         Release Notes <release-notes> 
-         Full Changelog <changelog>
+	 Changelog <changelog>
 
 
          
