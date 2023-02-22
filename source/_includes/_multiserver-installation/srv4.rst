@@ -51,6 +51,7 @@ nodes.
 
       * ``Ldap master host``: |srv2h|
       * ``Ldap Admin password``: |ldappwd|
+      * ``Bind password for nginx ldap user``: |nginxpwd|
 
    #. Run |mesh| setup using |meshsec|
 
