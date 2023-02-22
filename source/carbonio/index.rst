@@ -39,7 +39,6 @@ If you are looking for |ce|'s documentation, please refer to its
          :caption: Changelogs:
 
          Release 23.2.0 <changelog-23.2.0>
-	 Release 23.1.0 <changelog>
 
 
 
@@ -68,8 +67,8 @@ If you are looking for |ce|'s documentation, please refer to its
          :caption: Admin:
 
          adminpanel
-         administration
          shell
+         administration
          backup
          restorestrategies
          advancedbackup
