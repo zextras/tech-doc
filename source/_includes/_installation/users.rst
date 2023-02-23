@@ -3,14 +3,14 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 In order to change the password used by the
-``zextras@mail.example.com`` user for the Web access, log in to a
+``zextras@example.com`` user for the Web access, log in to a
 shell terminal as the ``zextras`` user and execute these two
 commands. The first allows to switch to the ``zextras`` user, with the
 second you actually change the password.
 
 .. code:: console
 
-   # su - zextras -c "carbonio prov setpassword zextras@mail.example.com mynewsecurepassword"
+   # su - zextras -c "carbonio prov setpassword zextras@example.com mynewsecurepassword"
 
 Make sure that ``newpassword`` meets good security criteria.
 
