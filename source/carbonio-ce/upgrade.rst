@@ -4,7 +4,7 @@
 
 .. _carbonio-upgrade:
 
-|product| upgrade
+|product| Upgrade
 =================
 
 .. include:: /_includes/_upgrade/checklist-ce.rst

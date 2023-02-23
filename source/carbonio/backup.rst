@@ -1045,7 +1045,7 @@ resilience.
 
 .. _goals_and_benefits:
 
-Goals and benefits
+Goals and Benefits
 ------------------
 
 It is worth to highlight the two main advantages of the Backup on
@@ -1076,7 +1076,7 @@ backup setBackupVolume Default` command.
 
 .. _data_stored_in_the_external_storage:
 
-Data stored in the external storage
+Data Stored in the External Storage
 -----------------------------------
 
 Data is stored in external storage using a structure very similar to the

@@ -153,7 +153,7 @@ The initial setup requires to complete a few steps.
 
       # chown carbonio-gateway:carbonio-gateway -R /etc/carbonio/gateway
 
-Definition of the External service
+Definition of the External Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To operate properly, the terminating gateway must be aware of the
@@ -304,8 +304,8 @@ enable the new ``carbonio-gateway`` service.
    # systemctl daemon-reload
    # systemctl enable carbonio-gateway
 
-Configuration of carbonio-files-db
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuration of ``carbonio-files-db``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: This step only applies when the external resource is a
    database, like in our scenario.

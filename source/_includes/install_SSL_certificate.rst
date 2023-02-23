@@ -4,7 +4,7 @@
 
 .. _install-SSL-cert:
 
-Deploy an SSL certificate
+Deploy an SSL Certificate
 =========================
 
 In this section we explain how to add an SSL/TLS certificate to a

@@ -92,7 +92,7 @@ See :ref:`the dedicated box below <config-dns>` for details and examples.
 Support for other distributions will be announced in due course
 when it becomes available.
 
-Additional requirements
+Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``

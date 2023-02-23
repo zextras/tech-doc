@@ -940,7 +940,7 @@ The ABQ mode can be changed running the following command::
 
 .. _mobile_dummy_data:
 
-Dummy data
+Dummy Data
 ----------
 
 The feature makes use of *Dummy emails* and a *Dummy mailbox* to put
@@ -964,8 +964,8 @@ cause a significant overhead on support calls.
 
 .. _mobile_custom_abq_emails:
 
-Custom ABQ emails
------------------
+Custom ABQ E-mails
+------------------
 
 Quarantine and block dummy emails can be customized by using the
 :command:`carbonio mobile setABQMessage` message command; messages can
@@ -1218,7 +1218,7 @@ a slash, e.g. "John Doe/EMEA Distributors".
 
 .. _outlook_setup:
 
-Outlook setup
+Outlook Setup
 -------------
 
 To access the LDAP Address Book from Outlook simply follow these steps:
@@ -1266,7 +1266,7 @@ To access the LDAP Address Book from Outlook simply follow these steps:
 
 .. _address_book_naming:
 
-Address Book naming
+Address Book Naming
 ~~~~~~~~~~~~~~~~~~~
 
 In Outlook, own Address Books accessed by LDAP are named with a slash
