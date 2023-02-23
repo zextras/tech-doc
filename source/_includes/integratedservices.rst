@@ -43,7 +43,7 @@ signatures stored in either the *BerkeleyDB* or a *MariaDB* database.
 The use of the Postscreen function can be activated to provide
 additional protection against mail server overload.
 
-Accessing Qurantined e-mails
+Accessing Qurantined E-mails
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Accessing the E-mails that have been stored in the *quarantine

@@ -214,7 +214,7 @@ In order to enable the authentication strategies available in
       ^^^^
       There is no special requirement to enable SAML, besides
       having a SAML IDP Provider.
-      
+
 .. _auth_set_up_saml:
 
 Setting up SAML Configuration
@@ -259,14 +259,14 @@ import the configuration using the command:
 
 .. code:: console
 
-   # carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
+   zextras$ carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
 
 .. note:: The URL supplied by the SAML IDP for an unsecured connection
    may be slight different from the previous one, like in our example.
 
 .. code:: console
 
-   # carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
+   zextras$ carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
 
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
@@ -275,7 +275,7 @@ You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the l
 
    .. figure:: /img/auth/saml-login.png
       :align: center
-              
+
       Login page with enabled SAML.
 
 By clicking it, you will be redirect to the SAML IDP login page.
@@ -302,7 +302,7 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: console
 
-         # carbonio auth saml get example.com export_to /tmp/saml.json
+         zextras$ carbonio auth saml get example.com export_to /tmp/saml.json
 
    .. grid-item-card::
       :columns: 12 12 12 6
@@ -355,7 +355,6 @@ default SAML settings, modify them, then save and import them back.
               "organization.url":"https://www.example.com/",
 
               "security.requested_authncontextcomparison":"exact",
-              "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
               "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
               "security.want_nameid_encrypted":"false",
               "security.want_assertions_encrypted":"false",
@@ -382,7 +381,7 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: console
 
-         # carbonio auth saml import example.com /tmp/saml.json
+         zextras$ carbonio auth saml import example.com /tmp/saml.json
 
       .. hint:: It is also possible to view or edit single attributes
          by using the ``carbonio auth saml get`` and ``carbonio auth saml
@@ -444,7 +443,7 @@ follow these additional steps.
   by setting :bgreen:`security.authnrequest_signed` ``to true`` (line
   **32**)
 
-  
+
 .. dropdown:: ``saml.json`` file with signed logout and requests.
    :open:
 
@@ -473,7 +472,6 @@ follow these additional steps.
         "organization.url":"https://www.example.com/",
 
         "security.requested_authncontextcomparison":"exact",
-        "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
         "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
         "security.want_nameid_encrypted":"false",
         "security.want_assertions_encrypted":"false",
@@ -486,11 +484,158 @@ follow these additional steps.
         "security.authnrequest_signed":"true",
       }
 
+.. _auth-saml-access:
+
+Access a Service Using SAML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once SAML authentication has been properly configured on both the SP
+and IDP sides, it is possible to access to a |product| resource using
+different modalities:
+
+#. Login to the IDP portal and click on the resource you want to
+   access.
+
+#. Directly go to the service's web page and click the
+   :bdg-primary-line:`SAML LOGIN` button that appears near the
+   username and password fields
+
+   .. note:: The label on the button might slight differ, depending on
+      IPD and configuration.
+
+#. Use the direct link to the SAML authentication of the service. For
+   example, given a |product| installation (the Service) located at
+   **mail.example.com**, and provided you are already authenticated to
+   the IDP, it is possible to access the mailbox by using the link
+   https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/mails
+
+   .. hint:: By replacing the URL after the ``redirectUrl`` it is
+      possible to allow direct access to other |carbonio| components,
+      for example:
+      https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/files
+      will open the |file| component.
+
+.. _auth-saml-azure:
+
+Example: Configure SAML on Azure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this section we configure SAML on an Azure portal (the Identity
+Provider, *IDP*) to allow SSO access to a |product| installation (the
+Service Provider, *SP*). This procedure requires to configure first
+the Azure portal using a few values from |product| installation, then
+configure |product| to use the Azure portal as SAML provider.
+
+.. card:: Configure Azure Portal
+
+   On the Azure Portal you need to configure the following values on
+   **Basic SAML Configuration**. From your |product| installation you
+   need to know the :bdg-secondary-line:`carbonio-hostname` and the
+   :bdg-secondary-line:`carbonio-domain`.
+
+   .. list-table::
+      :header-rows: 1
+
+      * - Value
+	- Option
+      * - Identifier (Entity ID)
+	- ``https://carbonio-hostname/zx/auth/samlMetadata?domain=carbonio-domain``
+      * - Reply URL
+	- ``https://carbonio-hostname/zx/auth/saml/?domain=carbonio-domain``
+      * - Sign on URL
+	- `You can leave this empty`
+      * - Relay State
+	- ``https://carbonio-hostname/``
+      * - Logout URL
+	- ``https://carbonio-hostname/zx/auth/logout``
+
+   Next, in **Attributes & Claims**, configure
+   
+   .. list-table::
+      :header-rows: 1
+
+      * - Value
+	- Option
+      * - Unique User Identifier
+	- ``user.mail``
+
+   As an optional step, you can upload an X.509 :abbr:`CSR
+   (Certificate Signing Request)` Certificate in case you want to
+   enable certificate signing.
+
+   The configuration on the Azure side is now complete. From here, you
+   need the following data for |product|'s configuration.
+
+   * :bdg-secondary-line:`Azure_AD_ID` the identifier of the Azure AD
+   * :bdg-secondary-line:`SAML_cert` the certificate used for the
+     connection between azure and |product|
+   * :bdg-secondary-line:`Azure_login_URL` the login URL of the Azure
+     Portal
+   * :bdg-secondary-line:`Azure_logout_URL` the logout URL of the
+     Azure Portal
+
+.. card:: Configure |product|
+
+   The configuration on the |product| side is currently possible from
+   the CLI only. Therefore, copy the :bdg-secondary-line:`SAML_cert`
+   on the |product| installation, then log in to it as the ``zextras``
+   user. The SAML configuration is carried out by means of the
+   :command:`carbonio admin saml update` command. 
+
+   .. note:: to keep consistency with the rest of the documentation,
+      we will use in the commands the value **example.com** for the
+      :bdg-secondary-line:`carbonio-domain` in the commands listed
+      below.
+			  
+   The options to configure are these four: 
+
+   #. ``idp.entityid`` using :bdg-secondary-line:`Azure_AD_ID`
+      
+      .. code:: console
+
+	 zextras$ carbonio admin saml update example.com \
+	 idp.entityid Azure_AD_ID
+
+   #. ``idp.x509cert`` using the path to the uploaded
+      :bdg-secondary-line:`SAML_cert`
+      
+      .. code:: console
+
+	 zextras$ carbonio admin saml update example.com \
+	 idp.x509cert SAML_cert
+
+   #. ``idp.single_sign_on_service.url`` using
+      :bdg-secondary-line:`Azure_login_URL`
+
+      .. code:: console
+	 
+	 zextras$ carbonio admin saml update example.com \
+	 idp.single_sign_on_service.url Azure_login_URL
+
+   #. ``idp.single_logout_service.url`` using
+      :bdg-secondary-line:`Azure_logout_URL`
+      
+      .. code:: console
+
+	 zextras$ carbonio admin saml update example.com \
+	 idp.single_logout_service.url Azure_logout_URL
+
+   As an optional step to enable certificate signing, you need the
+   private key that refers to the X.509 certificate and configure
+   the following variables, similarly to what has been done above.
+
+   * ``sp.x509cert`` is the path to :bdg-secondary-line:`SAML_cert`
+   * ``sp.privatekey`` is the private key you have generated with
+     ``sp.x509cert``
+   * ``security.logoutresponse_signed`` ,
+     ``security.logoutrequest_signed``, and
+     ``security.authnrequest_signed`` must all be set to **true**
+
 .. _temp_auth_link:
 
 Temporary Auth Link
 -------------------
-   
+
 A typical user-management task that an administrator needs to carry
 out is to allow the first access to the company's infrastructure to a
 new colleague or employee.
@@ -530,3 +675,230 @@ To avoid situation like this, which may involve any service or
 protocol not supporting 2FA (like, e.g., the above mentioned SMTP or
 SOAP), on |product|, an Administrator can create suitable credentials
 that can be used by the application to operate correctly.
+
+.. _auth-credential:
+
+Credential Management
+=====================
+
+Within |product|, a **credential** is something that allows access to
+one of its services or modules.
+
+|product| Auth’s Credential Management system allows to create
+dedicated passwords to access different services such as |EAS| devices,
+Mobile Applications (e.g., |team| and |file|), or IMAP/SMTP.
+
+It is also possible to share the access to a service with other
+colleagues, team members, or even third-party persons by simply creating
+a new authentication means (e.g., a QR code for mobile access) for the
+service, without the need to share the password. Once the access for
+these persons is not needed anymore, it suffices to delete the
+authentication means to revoke the access.
+
+This also implies, as an additional advantage, that users are able to
+decide who can have access to the same services they use, providing a
+high level of granularity also at user level.
+
+In the remainder of this section, we show a few common and relevant
+tasks that an administrator can carry out, followed by a couple of
+examples.
+
+.. warning:: While Administrators can set the password of any user
+   account on the command line when they create the credentials, **In
+   no other circumstances** they have access to the password, not even
+   for changing it.
+
+.. _services_supported:
+
+Services Supported
+------------------
+
+Zextras Auth allows to create or update custom passwords for the
+following services:
+
+.. csv-table::
+
+   "EAS", "Mobile Password"
+   "WebUI", "Zextras Auth Login Page"
+   "WebAdminUI", "Admin Console"
+   "MobileApp", "Zextras Mobile Apps"
+   "Dav", "Zextras LDAP Address Book"
+   "SMTP", "SMTP Authentication"
+   "IMAP", "IMAP Authentication"
+   "POP3", "POP3 Authentication"
+
+
+Administrators can combine these services to set up multiple basic to
+complex scenarios, including:
+
+- enable only WebAccess
+
+- enable IMAP without SMTP
+
+- enable IMAP/SMTP only for managed client (pre-setup without the
+  user)
+
+- create SMTP password that are not enabled for Web/Soap/Imap access,
+  to be used for automation or external services
+
+
+.. grid:: 1 1 2 2
+   :gutter: 1
+
+   .. grid-item-card:: Add New Credential
+      :columns: 6
+
+      New credentials for each of the active authentication services
+      can be added using the :command:`carbonio auth credential add`
+      command:
+
+      .. code:: console
+
+         zextras$ carbonio auth credential add john@example.com [param VALUE[,VALUE]]
+
+   .. grid-item-card:: List Existing Credential
+      :columns: 6
+
+      System Administrators can view an extended list of all
+      credentials active on an account by using the :command:`carbonio
+      auth credential list` command:
+
+      .. code:: console
+
+         zextras$ carbonio auth credential list john@example.com
+
+      This command gives **no access** to the user’s passwords: they
+      are never shown.
+
+      The output of this command can be quite long, because it shows
+      all the credentials configured for an account, including a
+      number of additional information.
+
+   .. grid-item-card:: Edit a Credential
+      :columns: 6
+
+      While usually the credential itself cannot be edited, the System
+      Administrator can update its label and properties, including the
+      services for which it is valid, by using the :command:`carbonio
+      auth credential update` command:
+
+      .. code:: console
+
+         zextras$ carbonio auth credential update john@example.com [param VALUE[,VALUE]]
+
+      The successful credential update will be displayed as output of the
+      previous command, reporting all credential’s properties:
+
+      .. code::
+
+         Credential Fr2jM updated
+
+                 values
+                         generated           0
+                         created             Wed 05 May 2021 at 17:53:38
+                         label               New Label
+                         id                  aKcLK
+                         services            EAS
+                         hash                +Crk6YcPL7IapCg6xfT6oXWP977uTeZdJTVQDQZd+Io=
+                         enabled             true
+                         algorithm           SHA256
+
+   .. grid-item-card:: Delete a Credential
+      :columns: 6
+
+      Credentials can be delete, once at a time using the :command:`carbonio
+      auth credential delete` command:
+
+      .. code:: console
+
+         zextras$ carbonio auth credential delete john@example.com password_id
+
+      .. hint:: The ``password_id`` is shown as ``id`` in the
+         :command:`carbonio auth credential list` command.
+
+.. _examples-credential-management:
+
+Examples
+--------
+
+In this section we present a few examples
+
+#. create a password and a label for user john\@example.com who can
+   access service EAS (mobile password).
+
+   .. code:: bash
+
+      zextras$ carbonio auth credential add john@example.com password 'easpass' label "Smartphone" service eas
+      Credential correctly added
+
+      list
+         generated 0
+         created 1620892109473
+         label Smartphone
+         id aKcLK
+         services EAS
+         hash 6Fs6knbW1+fJmWMB1nKoCgLFPy+IGsuZGtmkW0NzV4A=
+         enabled true
+         algorithm SHA256
+      text_data
+         auth_method password
+         password easpass
+         user john@example.com
+
+   -  ``generated`` - whether the credential was randomly generated or not,
+      0 true and 1 means false
+
+   -  ``created`` - the creation timestamp
+
+   -  ``label`` - the label, useful to remember the purpose or user of the
+      credentials
+
+   -  ``id`` - the unique ID, which is mandatory to edit or update the
+      credentials. It is called ``password_id`` in the commands, to
+      prevent misunderstandings.
+
+   -  ``services`` - the services for which access is allowed
+
+   -  ``hash`` - the hashed credential itself
+
+   -  ``enabled`` - whether the credential can be actually used or not
+
+   -  ``algorithm`` - the hashing algorithm used
+
+   -  ``password`` - the password assigned or randomly generated. As
+      mentioned, this is the **only** occasion that the administrator can
+      see a user’s password
+
+#. Create a password for jane\@example.com, that can be used only for Web
+   Access (both ClassicUI and Zextras Login Page)
+
+   .. code:: console
+
+      zextras$ carbonio auth credential add jane@example.com password \
+      'SecretPassword!' label "Web access" service WebUI
+
+#. Create a password for alice\@example.com that can be used only for
+   IMAP and POP3 download (no SMTP)
+
+   .. code:: console
+
+      zextras$ carbonio auth credential add alice@example.com password \
+      'LocalClient' service imap,pop3
+
+#. Create a password for bob\@example.com/SMTP_Service_Credential can be
+   used to enable SMTP for an external client
+
+   .. code:: console
+
+      zextras$ carbonio auth credential add bob@example.com password \
+      'SMTP_Service_Credential' service smtp
+
+#. An important parameter is ``qrcode``, to create a new QR code to be
+   used by mobile devices, provided QR code support :ref:`has been
+   enabled <auth_requirements>`. Used together with the ``--json``
+   switch, it will show the QR code’s payload as well. An example is:
+
+   .. code:: console
+
+      zextras$ carbonio auth credential add charles@example.com password \
+      'SMTP_Service_Credential' qrcode true service smtp

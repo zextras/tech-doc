@@ -127,7 +127,7 @@ bucket simply use the appropriate command for it.
 
    .. code:: console
 
-      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket url https://example_bucket_provider.com
+      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket
 
    In this example, we use the following values:
 
@@ -151,7 +151,7 @@ bucket simply use the appropriate command for it.
    it is required in the remainder of the procedure.
 
 #. Test the connection using the bucket ID received in the previous
-   step (**60b8139c-d56f-4012-a928-4b6182756301**)
+   step (**60b8139c-d56f-4012-a928-4b6182756301**):
 
    .. code:: console
 
@@ -160,7 +160,7 @@ bucket simply use the appropriate command for it.
    If the command is successful you will see the message ``connection
    ok``.
 
-#. On the first AppServer, create a volume associated to the bucket
+#. On the first AppServer, create a volume associated to the bucket:
 
    .. code:: console
 
@@ -180,7 +180,7 @@ bucket simply use the appropriate command for it.
      multiple AppServers
 
 #.  Set the volume to *current*, to let it receive data immediately,
-    using command
+    using command:
     
     .. code:: console
 
@@ -196,19 +196,27 @@ bucket simply use the appropriate command for it.
 #. Once the Centralized Volume has been created, you need to copy the
    Centralized Volume's configuration from the first server to all
    mailbox servers and add it to the volume list. To do so, on **all
-   other AppServer** that  run the command
+   other AppServer** that run the following commands:
 
    .. code:: console
 
       zextras$ carbonio powerstore doCreateVolume Centralized mailbox_01.example.com Store_01
  
-    In this example, these values are used:
+   In this example, these values are used:
 
-    * **S3**: the type of bucket
-    * **Store_01**: the volume name as defined on the server on which the
-      command is executed
-    * **mailbox_01.example.com** is the hostname of the server on
-      which the volume was defined and created.
+   * **S3**: the type of bucket
+   * **Store_01**: the volume name as defined on the server on which
+     the command is executed
+   * **mailbox_01.example.com** is the _servername_ of the server on
+     which the volume was defined and created.
+
+   The second command that needs to be run is the one reported in the
+   previous step:
+
+   .. code:: console
+
+      zextras$ carbonio powerstore doUpdateVolume S3 Store_01 secondary current_volume true
+       
 
 .. _pws_centralized_storage_structure:
 
@@ -425,8 +433,8 @@ storage, and improving the overall user experience.
 
 .. _pws_stores_volumes_and_policies:
 
-Stores, Volumes and Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Stores, Volumes, and Policies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using HSM requires a clear understanding of some related terms:
 
@@ -625,13 +633,13 @@ Policy Examples
 Here are some policy examples. To see how to create the policies in the
 |storage| module, see below.
 
--  *Move all items older than 30 days*
+- "Move all items older than 30 days"
 
--  *Move emails older than 15 days and items of all other kinds older
-   than 30 days*
+- "Move emails older than 15 days and items of all other kinds older
+  than 30 days"
 
--  *Move calendar items older than 15 days, Drive items older than 20
-   days and all emails in the "Archive" folder*
+- "Move calendar items older than 15 days, |file| items older than 20
+  days and all emails in the *Archive* folder"
 
 .. _pws_defining_a_policy:
 
@@ -693,7 +701,7 @@ officially supported platforms:
 
 .. _pws_primary_volumes_and_the_incoming_directory:
 
-Primary Volumes and the "Incoming" directory
+Primary Volumes and the "Incoming" Directory
 --------------------------------------------
 
 In order to create a remote *Primary Store* on a mailbox server a
@@ -774,7 +782,7 @@ It’s also possible to create new buckets via the CLI using the
 
 .. _pws_bucket_paths_and_naming:
 
-Bucket paths and naming
+Bucket Paths and Naming
 -----------------------
 
 Files are stored in a bucket according to a well-defined path, which can
@@ -826,30 +834,26 @@ appropriate rights both on the bucket itself and on its contents. For
 easier management, we recommend granting full rights as shown in the
 following example.
 
-.. card::
-
-   Example structure of user's permission
-   ^^^^
-
-   .. code::
+.. card:: Example structure of user's permission
+   
+   .. code:: json
 
       {
-          `Version`: `[LATEST API VERSION]`,
-          `Statement`: [
+          "Version": "[LATEST API VERSION]",
+          "Statement": [
               {
-                  `Sid`: `[AUTOMATICALLY GENERATED]`,
-                  `Effect`: `Allow`,
-                  `Action`: [
-                      `s3:*`
+                  "Sid": "[AUTOMATICALLY GENERATED]",
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:*"
                   ],
-                  `Resource`: [
-                      `[BUCKET ARN]/*`,
-                      `[BUCKET ARN]`
+                  "Resource": [
+                      "[BUCKET ARN]/*",
+                      "[BUCKET ARN]"
                   ]
               }
           ]
       }
-   ++++
 
    .. warning:: This is not a valid configuration policy. Don’t copy and
       paste it into your user’s settings as it won’t be validated.
@@ -862,10 +866,10 @@ section to:
    .. code::
 
       "Action": [
-                      `s3:PutObject`,
-                      `s3:GetObject`,
-                      `s3:DeleteObject`,
-                      `s3:AbortMultipartUpload`
+                      "s3:PutObject",
+                      "s3:GetObject",
+                      "s3:DeleteObject",
+                      "s3:AbortMultipartUpload"
                     ],
 
 The bucket’s ARN is expressed according to Amazon’s standard naming

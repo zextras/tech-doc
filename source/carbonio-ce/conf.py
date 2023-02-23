@@ -41,13 +41,13 @@ current_year = time.strftime('%Y')
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Carbonio CE'
-copyright = '2022, The Zextras Team'
+copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '23.1.0'
+release = '23.2.0'
 version = release
-prev = '22.12.0'
+prev = '23.1.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -95,7 +95,8 @@ html_show_sourcelink = False
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = [ 'css/community.css' ]
+html_css_files = [ 'css/community.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'

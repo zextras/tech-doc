@@ -305,7 +305,7 @@ Bandwidth and Codecs
 
 .. _vs-advanced-settings:
 
-Advanced settings
+Advanced Settings
 -----------------
 
 The following settings influence the audio experience.
@@ -379,6 +379,10 @@ meeting. In case a recording is interrupted, it can be restarted at a
 later point. Every user will be notified of the ongoing recording,
 while any moderator in the room can stop it, even if it was started by
 another moderator, and save it to a file or to the moderator's |file|.
+
+.. note:: Regardless if the recording is terminated by the person who
+   started it or not, a copy of the recording will always be saved in
+   the |file| account of who started the recording.
 
 This functionality is provided by a specific package, called
 ``carbonio-videoserver-recorder``, that **must be installed together**

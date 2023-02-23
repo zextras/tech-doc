@@ -121,7 +121,7 @@ to use CLI commands.
 
    For example::
 
-     zxsuite core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf https://example_bucket_provider.com
+     zxsuite core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket
 
    In this example, we use the following values:
 
@@ -151,7 +151,7 @@ to use CLI commands.
 
 #. Associate the bucket to the volumes on *the first mailstore*.
 
-     zxsuite powerstore doCreateVolume S3 _Name of the zimbra store_ _primary|secondary_ [param VALUE[,VALUE]]
+     zxsuite powerstore doCreateVolume S3 _Name of the zimbra store\_ _primary|secondary_ [param VALUE[,VALUE]]
 
    For example::
 
@@ -196,7 +196,7 @@ to use CLI commands.
 #. Once the Centralized Volume has been created, you need to copy the
    Centralized Volume's configuration from the first server to all
    mailbox servers and add it to the volume list. To do so, on all
-   other mailbox server run the command
+   other mailbox server run the commands:
 
    .. code:: console
 
@@ -207,6 +207,13 @@ to use CLI commands.
    .. code:: console
 
       zxsuite powerstore doCreateVolume Centralized mbox-02.example.com Store_01
+
+   The second command that needs to be run is the one reported in the
+   previous step:
+
+   .. code:: console
+
+      zextras$ carbonio powerstore doUpdateVolume S3 Store_01 secondary current_volume true
 
 .. _pws_centralized_storage_structure:
 
@@ -1034,20 +1041,20 @@ following example.
    Example structure of user's permission
    ^^^^
    
-   .. code:: 
+   .. code::  json
 
       {
-          `Version`: `[LATEST API VERSION]`,
-          `Statement`: [
+          "Version": "[LATEST API VERSION]",
+          "Statement": [
               {
-                  `Sid`: `[AUTOMATICALLY GENERATED]`,
-                  `Effect`: `Allow`,
-                  `Action`: [
-                      `s3:*`
+                  "Sid": "[AUTOMATICALLY GENERATED]",
+                  "Effect": "Allow",
+                  "Action": [
+                      "s3:*"
                   ],
-                  `Resource`: [
-                      `[BUCKET ARN]/*`,
-                      `[BUCKET ARN]`
+                  "Resource": [
+                      "[BUCKET ARN]/*",
+                      "[BUCKET ARN]"
                   ]
               }
           ]
@@ -1062,13 +1069,13 @@ section to:
 
 .. card::
 
-   .. code::
+   .. code:: json
 
       "Action": [
-                      `s3:PutObject`,
-                      `s3:GetObject`,
-                      `s3:DeleteObject`,
-                      `s3:AbortMultipartUpload`
+                      "s3:PutObject",
+                      "s3:GetObject",
+                      "s3:DeleteObject",
+                      "s3:AbortMultipartUpload"
                     ],
 
 The bucket’s ARN is expressed according to Amazon’s standard naming

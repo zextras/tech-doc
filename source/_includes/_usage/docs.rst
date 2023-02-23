@@ -21,7 +21,7 @@ Every document can be shown in either a read-only mode, with a
 simplified |gui| limited to the viewing functionalities, or in edit
 (read/write) mode with a full |gui|.
 
-Key features
+Key Features
 ------------
 
 The most used key features of |docs| are:

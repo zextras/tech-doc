@@ -104,7 +104,7 @@ Step 7: Bootstrap |product| Databases
 
 .. _installation-step8:
 
-Step 8: |vs| and video recording
+Step 8: |vs| and Video Recording
 --------------------------------
 
 .. include:: /_includes/_installation/step-conf-vs.rst

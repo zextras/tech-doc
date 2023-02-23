@@ -737,7 +737,6 @@ default SAML settings, modify them, then save and import them back.
               "organization.url":"https://www.example.com/",
 
               "security.requested_authncontextcomparison":"exact",
-              "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
               "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
               "security.want_nameid_encrypted":"false",
               "security.want_assertions_encrypted":"false",
@@ -856,7 +855,6 @@ follow these additional steps.
         "organization.url":"https://www.example.com/",
 
         "security.requested_authncontextcomparison":"exact",
-        "security.requested_authncontext":"urn:oasis:names:tc:SAML:2.0:ac:classes:urn:oasis:names:tc:SAML:2.0:ac:classes:Password",
         "security.signature_algorithm":"http://www.w3.org/2000/09/xmldsig#rsa sha1",
         "security.want_nameid_encrypted":"false",
         "security.want_assertions_encrypted":"false",
@@ -868,6 +866,37 @@ follow these additional steps.
         "security.logoutresponse_signed":"true",
         "security.authnrequest_signed":"true",
       }
+
+.. _auth-saml-access:
+
+Access a Service Using SAML
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Once SAML authentication has been properly configured on both the SP
+and IDP sides, it is possible to access to a |product| resource using
+different modalities:
+
+#. Login to the IDP portal and click on the resource you want to
+   access.
+
+#. Directly go to the service's web page and click the
+   :bdg-primary-line:`SAML LOGIN` button that appears near the
+   username and password fields
+
+   .. note:: The label on the button might slight differ, depending on
+      IPD and configuration.
+
+#. Use the direct link to the SAML authentication of the service. For
+   example, given a |product| installation (the Service) located at
+   **mail.example.com**, and provided you are already authenticated to
+   the IDP, it is possible to access the mailbox by using the link
+   https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/mails
+
+   .. hint:: By replacing the URL after the ``redirectUrl`` it is
+      possible to allow direct access to other |carbonio| components,
+      for example:
+      https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/files
+      will open the |file| component.
 
 .. _temp_auth_link:
 
@@ -1105,6 +1134,8 @@ button:
 .. image:: /img/auth/delete_credential.png
 
 Click :bdg-danger:`YES` to confirm the removal of the credential.
+
+.. include:: /credentialmanagement.rst
 
 .. _auth_zxauth-cli:
 

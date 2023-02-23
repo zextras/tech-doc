@@ -14,7 +14,7 @@ recent files and folders accessed by the user is also available, to
 allow to quickly resume work on these documents.
 
 
-Working with files
+Working with Files
 ------------------
 
 The following panels summarise the most common activities that can be

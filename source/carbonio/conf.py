@@ -41,14 +41,13 @@ current_year = time.strftime('%Y')
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Carbonio'
-copyright = '2022, The Zextras Team'
+copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '23.1.0'
+release = '23.2.0'
 version = release
-
-prev = '22.12.0'
+prev = '23.1.0'
 
 # -- General configuration ---------------------------------------------------
 

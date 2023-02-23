@@ -71,7 +71,7 @@ See :ref:`the dedicated box below <config-dns>` for details and examples.
 Support for other distributions will be announced in due course
 when it becomes available.
 
-Additional requirements
+Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
@@ -178,7 +178,7 @@ node hosting the **Proxy** Role.
       (or opportunistic SSL/TLS)"
       "993", "external IMAP secure access"
       "995", "external POP3 secure access"
-      "8389", "access to LDAP address books"
+      "8636", "access to LDAP address books"
 
    .. [1] This port is still used since in some cases it is
       considered safer than 587. It requires on-connection SSL.

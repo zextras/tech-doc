@@ -940,7 +940,7 @@ The ABQ mode can be changed running the following command::
 
 .. _mobile_dummy_data:
 
-Dummy data
+Dummy Data
 ----------
 
 The feature makes use of *Dummy emails* and a *Dummy mailbox* to put
@@ -964,8 +964,8 @@ cause a significant overhead on support calls.
 
 .. _mobile_custom_abq_emails:
 
-Custom ABQ emails
------------------
+Custom ABQ E-mails
+------------------
 
 Quarantine and block dummy emails can be customized by using the
 :command:`carbonio mobile setABQMessage` message command; messages can
@@ -1108,8 +1108,8 @@ the Administrator.
 This service is the core of the LDAP Address Book feature, as it
 provides the endpoint to which the Outlook clients connect.
 
-The service is exposed on port **8389** of all mailbox services and uses the
-**TLS encryption protocol**.
+The service is exposed on port **8636** of all mailbox services and uses the
+**SSL encryption protocol**.
 
 This endpoint is read-only, to improve the system’s security.
 
@@ -1122,7 +1122,7 @@ The LDAP Address Book can be only accessed by Outlook clients through
 the same credentials used for Exchange ActiveSync connection (email
 address and either their password or a dedicated Mobile Password.)
 
-Clients can reach the service by contacting port **8389** of the
+Clients can reach the service by contacting port **8636** of the
 mailbox server hosting their mailbox.
 
 .. warning:: Since it is not possible to route requests through the
@@ -1130,7 +1130,7 @@ mailbox server hosting their mailbox.
    established to the exact server and not the system’s general FQDN.
 
 Another options would be to define custom firewall rules to forward
-port 8389 from the proxy to the AppServer, as explained in the
+port 8636 from the proxy to the AppServer, as explained in the
 procedure below, which requires to modify some system files and
 assumes the mailbox server is located at the local IP **10.129.67.1**.
 
@@ -1140,8 +1140,8 @@ assumes the mailbox server is located at the local IP **10.129.67.1**.
 
    .. code:: bash
 
-      -t nat -A PREROUTING -p tcp --dport 8389 -j DNAT --to-destination 10.129.67.1:8389
-      -A FORWARD -p tcp --dport 8389 -m state --state -NEW,ESTABLISHED,RELATED -j ACCEPT
+      -t nat -A PREROUTING -p tcp --dport 8636 -j DNAT --to-destination 10.129.67.1:8636
+      -A FORWARD -p tcp --dport 8636 -m state --state -NEW,ESTABLISHED,RELATED -j ACCEPT
 
    .. note:: The second rule is only needed if your default is rejected.
 
@@ -1198,18 +1198,17 @@ added.
 
 .. code:: console
 
-   zextras$ carbonio mobile addressBook add global user@example.com 2
+   zextras$ carbonio mobile addressBook add global user@example.com 7
 
-
-This command adds folder 2 (the default /Contacts folder) of the
+This command adds folder 7 (the default /Contacts folder) of the
 ``user@example.com`` user to the LDAP Address Book of all users in
 the system.
 
 .. code:: console
 
-   zextras$ carbonio mobile addressBook add domain example.com user@example.com 2
+   zextras$ carbonio mobile addressBook add domain example.com user@example.com 7
 
-This command adds folder 2 (the default /Contacts folder) of the
+This command adds folder 7 (the default /Contacts folder) of the
 ``user@example.com`` user to the LDAP Address Book of all users in
 the ``example.com`` domain.
 
@@ -1219,7 +1218,7 @@ a slash, e.g. "John Doe/EMEA Distributors".
 
 .. _outlook_setup:
 
-Outlook setup
+Outlook Setup
 -------------
 
 To access the LDAP Address Book from Outlook simply follow these steps:
@@ -1246,7 +1245,7 @@ To access the LDAP Address Book from Outlook simply follow these steps:
 #. Click *More Settings*
 
 #. In the *Connection* tab enter the server’s URL as the Display Name
-   and **8389** as the port, then tick the **Use Secure Socket Layer**
+   and **8636** as the port, then tick the **Use Secure Socket Layer**
    checkbox
 
    .. figure:: /img/mobile/ldap_addressbook_setup3.png
@@ -1267,7 +1266,7 @@ To access the LDAP Address Book from Outlook simply follow these steps:
 
 .. _address_book_naming:
 
-Address Book naming
+Address Book Naming
 ~~~~~~~~~~~~~~~~~~~
 
 In Outlook, own Address Books accessed by LDAP are named with a slash

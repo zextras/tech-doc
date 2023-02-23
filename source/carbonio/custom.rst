@@ -35,7 +35,7 @@ install :ref:`install-fonts` has been moved to the
 
 .. _nginx-custom:
 
-NGINX templates
+NGINX Templates
 ===============
 
 .. include:: /_includes/nginx.rst

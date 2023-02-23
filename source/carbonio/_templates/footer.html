@@ -25,7 +25,7 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
       {%- if hasdoc('copyright') %}
       {%- trans path=pathto('copyright'), copyright=copyright|e %}&#169; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}
       {%- else %}
-      {%- trans copyright=copyright|e %}&#169; Copyright {{ copyright }}.{% endtrans %}
+      {%- trans copyright=copyright|e %} Copyright &#169; {{ copyright }}.{% endtrans %}
       {%- endif %}
       {%- endif %}
       

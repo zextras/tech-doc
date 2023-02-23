@@ -18,10 +18,7 @@ Create New Domain
 To create a new domain, fill in the form that opens upon clicking the
 |create| button.
 
-.. card::
-
-   Options for Domain ``acme.example``
-   ^^^^
+.. card:: Options for Domain ``acme.example``
 
    Two types of options are available during the creation of a new
    domain:
@@ -45,8 +42,6 @@ To create a new domain, fill in the form that opens upon clicking the
      alias URL, see Virtual Hosts below).
 
    The image below shows how a sample domain is created.
-
-   +++++
 
    .. image:: /img/adminpanel/new-domain.png
       :scale: 50
@@ -95,11 +90,8 @@ latter), and a mail server used for spam-relay purposes.
 Moreover, a default |cos| and its status can be attached to the
 domain.
 
-.. card::
-
-   COS statuses
-   ^^^
-
+.. card:: COS statuses
+   
    A COS can be defined for a whole domain or an account and
    determines its status, that is, its ability to log in to the domain
    and access the e-mail. If the domain COS and a user's COS differ,
@@ -132,10 +124,8 @@ domain.
 We build on the domain created in :ref:`previous section
 <ap-domain-new>` and attach some property.
 
-.. card::
+.. card:: Additional settings for ``acme.example``
 
-   Additional settings for ``acme.example``
-   ^^^^
 
    We assign now the following properties to our sample domain.
 
@@ -152,8 +142,6 @@ We build on the domain created in :ref:`previous section
 
    #. **Default Class of Service**. The |cos| used by the domain,
       which is left to the ``default`` one.
-
-   +++++
 
    .. image:: /img/adminpanel/domain-details.png
       :scale: 50
@@ -243,22 +231,130 @@ information on their type and status.
 The list can be filtered using the text field above the list, while
 a new account can be created using the :bdg-primary:`+` button.
 
-.. not yet working!
-   by selecting multiple accounts, :bdg-primary-line:`BULK ACTIONS` can
-   be executed on them.
-
 A click on any account will open a new panel that contains a number of
 information and options, including the name and aliases, if present,
-its status (see below), and creation date.
+its status (see below), and creation date. The aliases can be easily
+managed by clicking the :bdg-primary-line:`MANAGE ALIAS` button: in
+the opening dialog window, select a domain and a new alias, then click
+:bdg-primary-line:`+` to add the alias to the user.
 
 On the panel's top right corner, buttons allow to edit or delete the
 user, and also to redirect to the user's mailbox.
+
+When editing a user's account, most of the option are the same that
+can be found in the :ref:`ap-new-account` section and are organised in
+four tabs:
+
+.. tab-set::
+
+   .. tab-item:: General
+
+      This tab contains all the options provided during the :ref:`account
+      creation <ap-new-account>` in the *Details* and *Create* steps,
+      plus other options, including the ability to prevent the user
+      from changing the password.
+
+      This tab also shown of which Mailing list the user is member.
+
+   .. tab-item:: Configuration
+
+      The listed here allows to specify forwarding addresses, to
+      prevent e-mail messages to be saved locally, and to enable
+      ActiveSync, if these operations are allowed by the
+      administrator.
+
+   .. tab-item:: User Preferences
+
+      The preferences in this tab concern how a user sees or
+      interacts with the e-mails (receive, sending, composing, adding
+      a signature) and are mostly inherited from the COS.
+
+   .. tab-item:: Security
+      
+      Options present here allow to manage the account security: OTP
+      and policies for password and failed login. New OTP tokens can
+      be created to allow the user to login by using a QR Code; a
+      policy can set to force the user to select a secure password and
+      the type of characters to be chosen. The Failed login policy
+      determines how the system behaves when a user fails too many
+      consecutive logins.
 
 At the bottom of the panel, a list of the *active sessions* appears:
 for example, if a user has logged in from three different devices and
 never logged out, three sessions will appear. When selecting one of
 them, clicking the :bdg-danger-line:`END SESSION` button will close
 that session.
+
+
+.. _ap-new-account:
+
+Create New Account
+~~~~~~~~~~~~~~~~~~
+
+In order to create a new account, click the :bdg-primary:`+`
+button. You will enter a three-step procedure that guides you in the
+initial account configuration.
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item-card:: Step 1: Create New Account *John Smith*
+      :columns: 12 12 6 6
+
+      We create the first account for the CEO of ACME Corporation and
+      provide the following data.
+
+      * **Name**, **Middle Name Initials**, and **Surname** will be used
+        to define the user name. We use only Name (John) and Surname
+        (Smith), which result in the JohnSmith **username**.
+
+        .. hint:: You can change the automatically generated username at
+           will, for example to match company policies.
+
+      * **Password** is the one used by John for the first login **only**
+
+      * **Must change password on the next login** requires that John,
+        after the first log in (and before accessing his mailbox) must
+        change the password.
+
+      We also explicitly configure the **Account Status** (see :ref:`the
+      list of possible values <ap-account-status>`).
+      
+   .. grid-item::
+      :columns: 12 12 6 6
+
+      .. image:: /img/adminpanel/new-account-details.png
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item-card:: Step 2: Confirm Account *John Smith*
+      :columns: 12 12 6 6
+
+      This dialog window recaps the values entered in the previous
+      step. Go back to change
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+
+      .. image:: /img/adminpanel/new-account-create.png
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item-card:: (Optional) Step 3: Send OTP to *John Smith*
+      :columns: 12 12 6 6
+
+      The last step is optional: here you can create an OTP code for John
+      Smith, that he can use to access his account.
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+
+      .. image:: /img/adminpanel/new-account-otp.png
+         :scale: 50 %
+
+.. _ap-account-status:
 
 .. card:: Account statuses
 
@@ -291,82 +387,6 @@ that session.
 
       .. hint:: Both the number of failed attempts and the lockout
          period can be configured.
-
-Create new account
-~~~~~~~~~~~~~~~~~~
-
-In order to create a new account, click the :bdg-primary:`+`
-button. You will enter a three-step procedure that guides you in the
-initial account configuration.
-
-.. grid:: 1 1 2 2
-   :gutter: 3
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
-
-      Step 1: Create New Account *John Smith*
-      ^^^
-
-      We create the first account for the CEO of ACME Corporation and
-      provide the following data.
-
-      * **Name**, **Middle Name Initials**, and **Surname** will be used
-        to define the user name. We use only Name (John) and Surname
-        (Smith), which result in the JohnSmith **username**.
-
-        .. hint:: You can change the automatically generated username at
-           will, for example to match company policies.
-
-      * **Password** is the one used by John for the first login **only**
-
-      * **Must change password on the next login** requires that John,
-        after the first log in (and before accessing his mailbox) must
-        change the password.
-
-      We also explicitly configure the **Account Status**, **Language**,
-      and **Time Zone**, although they would inherit by default the
-      values defined at domain level,
-
-   .. grid-item::
-      :columns: 12 12 6 6
-
-      .. image:: /img/adminpanel/new-account-details.png
-
-.. grid:: 1 1 2 2
-   :gutter: 3
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
-
-      Step 2: Confirm Account *John Smith*
-      ^^^
-
-      This dialog window recaps the values entered in the previous
-      step. Go back to change
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
-
-      .. image:: /img/adminpanel/new-account-create.png
-
-.. grid:: 1 1 2 2
-   :gutter: 3
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
-
-      (Optional) Step 3: Send OTP to *John Smith*
-      ^^^
-
-      The last step is optional: here you can create an OTP code for John
-      Smith, that he can use to access his account.
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
-
-      .. image:: /img/adminpanel/new-account-otp.png
-         :scale: 50 %
 
 Mailing List
 ~~~~~~~~~~~~

@@ -36,10 +36,9 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Release:
+         :caption: Changelogs:
 
-         Release Notes <release-notes>
-         Full Changelog <changelog>
+         Release 23.2.0 <changelog-23.2.0>
 
 
 
@@ -68,8 +67,8 @@ If you are looking for |ce|'s documentation, please refer to its
          :caption: Admin:
 
          adminpanel
-         administration
          shell
+         administration
          backup
          restorestrategies
          advancedbackup
@@ -96,7 +95,7 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	      :maxdepth: 1
-	      :caption: Develop:
+	 :maxdepth: 1
+	 :caption: Develop:
 
-	      api
+	 api

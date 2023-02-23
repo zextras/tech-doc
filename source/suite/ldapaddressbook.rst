@@ -103,7 +103,7 @@ the Address Book will be visible, either "Global" or "Domain":
    (M) == mandatory parameter, (O) == optional parameter
 
    Usage example:
-   zxsuite mobile addressBook add global user@example.com 2
+   zxsuite mobile addressBook add global user@example.com 7
 
 ::
 
@@ -122,21 +122,21 @@ the Address Book will be visible, either "Global" or "Domain":
    (M) == mandatory parameter, (O) == optional parameter
 
    Usage example:
-   zxsuite mobile addressBook add domain example.com user@example.com 2
+   zxsuite mobile addressBook add domain example.com user@example.com 7
 
 Both commands also require the owner of the Address Book, either in
 email or zimbraID form, and the FolderID of the address book being
 added, e.g:
 
--  ``zxsuite mobile addressBook add global user@example.com 2``
+-  ``zxsuite mobile addressBook add global user@example.com 7``
 
    -  This will add folder 2 (the default /Contacts folder) of the
       ``user@example.com`` user to the LDAP Address Book of all users
       **in the system**.
 
--  ``zxsuite mobile addressBook add domain example.com user@example.com 2``
+-  ``zxsuite mobile addressBook add domain example.com user@example.com 7``
 
-   -  This will add folder 2 (the default /Contacts folder) of the
+   -  This will add folder 7 (the default /Contacts folder) of the
       ``user@example.com`` user to the LDAP Address Book of all users in
       **the ``example.com`` domain**.
 
