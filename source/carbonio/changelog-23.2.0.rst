@@ -5,7 +5,7 @@
 Carbonio Changelog - Release 23.2.0
 ===================================
 
-Release Date: February 22nd, 2023
+Release Date: February 23rd, 2023
 
 .. rubric:: Component: Admin Console & Login UI
 

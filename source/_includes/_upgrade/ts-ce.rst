@@ -4,7 +4,7 @@
 
 .. _bootstrap-db:
 
-Bootstrap database
+Bootstrap Database
 ~~~~~~~~~~~~~~~~~~
 
 Whenever a ``-db`` package is upgraded (currently they are
@@ -110,7 +110,7 @@ this command **before** :command:`pending-setups -a`.
 
 .. _upgrade-ts-token:
 
-Token-related error messages
+Token-related Error Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Whenever, during the upgrade process, you find any error in the log

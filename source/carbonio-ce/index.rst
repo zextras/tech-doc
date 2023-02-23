@@ -48,7 +48,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 2
+         :maxdepth: 4
          :caption: Install:
 
          general
@@ -63,7 +63,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 2
+         :maxdepth: 4
          :includehidden:
          :caption: Admin:
 
@@ -76,7 +76,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 2
+         :maxdepth: 4
          :caption: Use:
 
          usage

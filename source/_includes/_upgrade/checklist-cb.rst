@@ -21,7 +21,7 @@ contains information to prevent or fix these issues.
 
 .. _upgrade-checklist:
 
-Upgrade checklist
+Upgrade Checklist
 -----------------
 
 We define as **current version** |version|, as **previous version**

@@ -305,7 +305,7 @@ Bandwidth and Codecs
 
 .. _vs-advanced-settings:
 
-Advanced settings
+Advanced Settings
 -----------------
 
 The following settings influence the audio experience.

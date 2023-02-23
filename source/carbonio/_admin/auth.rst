@@ -710,7 +710,7 @@ examples.
 
 .. _services_supported:
 
-Services supported
+Services Supported
 ------------------
 
 Zextras Auth allows to create or update custom passwords for the

@@ -191,7 +191,7 @@ follows.
       only the new account (or any given account): :command:`carbonio
       prov -l gaa | grep "john.doe@example.com"`
 
-Set up Replica to answer queries
+Set up Replica to Answer Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is now time to configure the Replica to answer queries in place of
@@ -240,7 +240,7 @@ achieve this set up with a few commands on the **Master**.
    The Replica instance to query first is the first listed in the
    command.
 
-Uninstall a replica
+Uninstall a Replica
 ~~~~~~~~~~~~~~~~~~~
 
 To remove a Replica, you need to carry out two tasks:

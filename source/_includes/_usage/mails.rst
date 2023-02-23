@@ -6,7 +6,7 @@ The Mails module is where you store, create, and arrange new e-mails.
 
 .. _mail-folders:
 
-Folders and shares
+Folders and Shares
 ------------------
 
 E-mail are arranged in folders, which by default are **Inbox**,
@@ -59,7 +59,7 @@ appointment <calendar-comp>`.
 
 .. _mail-working:
 
-Working with e-mails
+Working with E-mails
 --------------------
 
 By default, e-mails are placed in the **Inbox** folder upon arrival
@@ -104,7 +104,7 @@ continue editing the e-mail.
 
 .. _mail-attachments:
 
-Attachments management
+Attachments Management
 ----------------------
 
 |product| supports e-mail attachments; depending whether the e-mail is

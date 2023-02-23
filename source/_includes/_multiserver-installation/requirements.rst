@@ -16,7 +16,7 @@ valid, but take into account the following advices:
   greatly vary, so it is not easy to provide a minimum or suggested value.
 
 
-Additional requirements
+Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tab-set::
