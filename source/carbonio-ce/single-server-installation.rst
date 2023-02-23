@@ -100,7 +100,7 @@ Step 7: Bootstrap |file| Databases
 .. include:: /_includes/_installation/complete.rst
 .. include:: /_includes/_installation/users.rst
 
-|product| Management and troubleshooting
+|product| Management and Troubleshooting
 ----------------------------------------
 
 .. include:: /_includes/_installation/commands.rst

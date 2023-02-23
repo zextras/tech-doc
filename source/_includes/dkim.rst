@@ -4,7 +4,7 @@
 
 .. _dkim-record:
 
-Add a DKIM record to |product| Installation
+Add a DKIM Record to |product| Installation
 ===========================================
 
 This section provides directions to add a DKIM record to the DNS of
@@ -24,7 +24,7 @@ the domain managed by a |product| installation.
       :rfc:`6376`, later updated in :rfc:`8301` and :rfc:`8463`.
 
 
-Create a DKIM record
+Create a DKIM Record
 --------------------
 
 In order to create a new DKIM record, two steps are necessary. As

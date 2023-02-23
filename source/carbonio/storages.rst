@@ -433,8 +433,8 @@ storage, and improving the overall user experience.
 
 .. _pws_stores_volumes_and_policies:
 
-Stores, Volumes and Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Stores, Volumes, and Policies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Using HSM requires a clear understanding of some related terms:
 
@@ -701,7 +701,7 @@ officially supported platforms:
 
 .. _pws_primary_volumes_and_the_incoming_directory:
 
-Primary Volumes and the "Incoming" directory
+Primary Volumes and the "Incoming" Directory
 --------------------------------------------
 
 In order to create a remote *Primary Store* on a mailbox server a
@@ -782,7 +782,7 @@ It’s also possible to create new buckets via the CLI using the
 
 .. _pws_bucket_paths_and_naming:
 
-Bucket paths and naming
+Bucket Paths and Naming
 -----------------------
 
 Files are stored in a bucket according to a well-defined path, which can

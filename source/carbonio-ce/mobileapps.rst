@@ -100,7 +100,7 @@ Mobile Clients Features
   
 .. _mobile-apps-conf:
 
-Mobile APPs configuration
+Mobile APPs Configuration
 -------------------------
 
 In order to access from a |zx| mobile app to your account, please
@@ -117,7 +117,7 @@ in |file| for the same account.
 In the remainder, we configure the |carbonio| Mail App, but the
 directions are the same for other Apps.
 
-Server side configuration
+Server Side Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The mobile application is enabled by default on all users.

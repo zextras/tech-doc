@@ -288,7 +288,7 @@ that session.
 
 .. _ap-new-account:
 
-Create new account
+Create New Account
 ~~~~~~~~~~~~~~~~~~
 
 In order to create a new account, click the :bdg-primary:`+`

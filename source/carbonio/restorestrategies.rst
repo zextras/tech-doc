@@ -473,7 +473,7 @@ attributes* step will be executed.
 
 .. _folder_restore:
 
-Folder restore
+Folder Restore
 --------------
 
 Suppose you have created a folder called ``Inbox/Zextras``\ (which is

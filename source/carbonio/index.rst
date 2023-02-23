@@ -95,7 +95,7 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	      :maxdepth: 1
-	      :caption: Develop:
+	 :maxdepth: 1
+	 :caption: Develop:
 
-	      api
+	 api

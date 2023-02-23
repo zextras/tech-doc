@@ -4,7 +4,7 @@
 
 .. _carbonio-upgrade:
 
-|product| upgrade
+|product| Upgrade
 =================
 
 .. include:: /_includes/_upgrade/checklist-cb.rst
@@ -46,7 +46,7 @@ Upgrade Directory Server
 
 .. _upgrade-vs:
 
-Upgrade |vs| node
+Upgrade |vs| Node
 ~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_upgrade/vs.rst
