@@ -507,12 +507,12 @@ different modalities:
    example, given a |product| installation (the Service) located at
    **mail.example.com**, and provided you are already authenticated to
    the IDP, it is possible to access the mailbox by using the link
-   https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/mails
+   https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.example.com/carbonio/mails
 
    .. hint:: By replacing the URL after the ``redirectUrl`` it is
       possible to allow direct access to other |carbonio| components,
       for example:
-      https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.zextras.com/carbonio/files
+      https://mail.example.com/zx/auth/startSamlWorkflow?redirectUrl=https://mail.example.com/carbonio/files
       will open the |file| component.
 
 .. _auth-saml-azure:
