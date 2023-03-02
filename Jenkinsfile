@@ -34,11 +34,13 @@ pipeline {
             }
       steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
-           sh 'if [ $( docker ps -a | grep zsphinx | wc -l ) -gt 0 ]; then
+           sh '''
+              if [ $( docker ps -a | grep zsphinx | wc -l ) -gt 0 ]; then
               echo "zsphinx exists"
               else
               echo "zsphinx does not exist"
-              fi'
+              fi
+           '''   
 //           sh 'docker rm -v zsphinx'
            sh 'docker run -d --name zsphinx  sphinx_builder'
            sh 'docker cp zsphinx:docs/build $(pwd)'
