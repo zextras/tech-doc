@@ -34,7 +34,6 @@ pipeline {
             }
       steps {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
-<<<<<<< HEAD
            sh '''
               if [ $( docker ps -a | grep zsphinx | wc -l ) -gt 0 ]; then
               docker rm -v zsphinx
@@ -43,11 +42,7 @@ pipeline {
               fi
            '''   
 //         sh 'docker rm -v zsphinx'
-           sh 'docker run -d --name zsphinx  sphinx_builder'
-=======
-//           sh 'docker rm -v zsphinx'
            sh 'docker run -d --name zsphinx sphinx_builder'
->>>>>>> master
            sh 'docker cp zsphinx:docs/build $(pwd)'
            stash name: 'build_done', includes: 'build/**'
         }
