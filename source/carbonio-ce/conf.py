@@ -104,6 +104,7 @@ html_theme_options = {
     'collapse_navigation': False
 }
 html_context = { 'hubhome' : '%s' %hubhome }
+templates_path = [ 'common/templates' ]
 
 # -- Options for linkcheck output --------------------------------------------
 
