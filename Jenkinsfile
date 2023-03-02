@@ -36,9 +36,9 @@ pipeline {
            sh 'docker build -f Dockerfile -t sphinx_builder .'
            sh '''
               if [ $( docker ps -a | grep zsphinx | wc -l ) -gt 0 ]; then
-              echo "zsphinx exists"
+              docker rm -v zsphinx
               else
-              echo "zsphinx does not exist"
+              echo "nothing to remove zsphinx does not exist"
               fi
            '''   
 //           sh 'docker rm -v zsphinx'
