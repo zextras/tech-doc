@@ -869,7 +869,8 @@ section to:
                       "s3:PutObject",
                       "s3:GetObject",
                       "s3:DeleteObject",
-                      "s3:AbortMultipartUpload"
+                      "s3:AbortMultipartUpload",
+                      "s3:ListBucket"
                     ],
 
 The bucket’s ARN is expressed according to Amazon’s standard naming
