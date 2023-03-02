@@ -41,7 +41,7 @@ pipeline {
               echo "nothing to remove zsphinx does not exist"
               fi
            '''   
-//           sh 'docker rm -v zsphinx'
+//         sh 'docker rm -v zsphinx'
            sh 'docker run -d --name zsphinx  sphinx_builder'
            sh 'docker cp zsphinx:docs/build $(pwd)'
            stash name: 'build_done', includes: 'build/**'
