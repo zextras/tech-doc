@@ -2,6 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _ap_cos:
+
+Class of Services (COS)
+=======================
+
 A |cos| determines which items can be accessed by a web client and
 how, setting default for a number of options. A users that belongs to
 that COS may later change some of these options from the

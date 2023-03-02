@@ -2,6 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _ap-operations:
+
+Operations
+=============
 
 This page gives an overview of the routine operations that are running
 on |carbonio| and a few information on each of them.

@@ -2,6 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _ap-backup:
+
+Backup
+======
+
 The |adminui|\'s Backup GUI allows to configure the mail servers to
 save mailbox items in the backup. While they are part of the Backup
 operations, :ref:`backup_restore-strategies` can currently be carried

@@ -47,7 +47,7 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
          :caption: Install:
 
          general
@@ -62,11 +62,21 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
          :includehidden:
          :caption: Admin by GUI:
 
-         adminpanel
+         /common/carbonio/adminpanel/introduction-cb.rst
+         /common/carbonio/adminpanel/whitelabelling.rst
+         /common/carbonio/adminpanel/domains.rst
+         /common/carbonio/adminpanel/servers.rst
+         /common/carbonio/adminpanel/cos.rst
+         /common/carbonio/adminpanel/subscriptions.rst
+         /common/carbonio/adminpanel/privacy.rst
+         /common/carbonio/adminpanel/backup.rst
+         /common/carbonio/adminpanel/notifications.rst
+         /common/carbonio/adminpanel/operations.rst
+
 
 
    .. grid-item-card::
@@ -74,7 +84,7 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
          :includehidden:
          :caption: Admin by CLI:
 
@@ -94,7 +104,7 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
          :caption: Use:
 
          usage
@@ -106,7 +116,7 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-    :maxdepth: 1
-    :caption: Develop:
+         :maxdepth: 1
+         :caption: Develop:
 
-    api
+         api
