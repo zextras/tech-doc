@@ -31,7 +31,7 @@ If you are looking for |ce|'s documentation, please refer to its
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 12 12 12 12
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -43,11 +43,11 @@ If you are looking for |ce|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 2
+         :maxdepth: 1
          :caption: Install:
 
          general
@@ -58,15 +58,26 @@ If you are looking for |ce|'s documentation, please refer to its
          security
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
          :maxdepth: 1
          :includehidden:
-         :caption: Admin:
+         :caption: Admin by GUI:
 
          adminpanel
+
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 1
+         :includehidden:
+         :caption: Admin by CLI:
+
          shell
          administration
          backup
@@ -79,11 +90,11 @@ If you are looking for |ce|'s documentation, please refer to its
          mesh
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 2
+         :maxdepth: 1
          :caption: Use:
 
          usage
@@ -91,11 +102,11 @@ If you are looking for |ce|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 12 12 12
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	 :maxdepth: 1
-	 :caption: Develop:
+    :maxdepth: 1
+    :caption: Develop:
 
-	 api
+    api
