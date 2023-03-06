@@ -2,6 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _ap-domains:
+
+Domains
+=======
+
 The Domain page allows the management of domains and of related
 settings, including individual accounts, user quota and
 authentication, mailing lists, and more.
@@ -66,7 +71,7 @@ Global settings concern the appearance of |product| and allow to
 customise various option that will influence how the |product| web
 interface appears to the web clients.
 
-.. include:: /_includes/adminpanel/wl.rst
+.. include:: /common/carbonio/adminpanel/whitelabelling.rst
 
 .. _ap-domain-details:
 

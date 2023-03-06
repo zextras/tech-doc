@@ -63,7 +63,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_includes', 'cli', 'glossary.rst', 'common/adminpanel']
+exclude_patterns = ['_includes', 'cli', 'glossary.rst', 'common/carbonio/adminpanel']
 
 rst_prolog = """
 
@@ -105,6 +105,7 @@ html_theme_options = {
     'collapse_navigation': False
 }
 html_context = { 'hubhome' : '%s' %hubhome }
+templates_path = [ 'common/templates' ]
 
 # -- Options for linkcheck output --------------------------------------------
 
