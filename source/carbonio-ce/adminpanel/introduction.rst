@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _adminpanel:
 
 =========
@@ -76,38 +72,3 @@ The landing page is shown in :numref:`fig_ap-top` and
       LIST` allows to open the :menuselection:`Mailstores --> Global
       Servers --> Server List` page (see :ref:`ap-servers`).
       
-.. _ap-domains:
-
-Domains
-=======
-
-.. include:: /_includes/adminpanel/domains.rst
-
-.. _ap-servers:
-
-Servers
-=======
-
-.. include:: /_includes/adminpanel/servers.rst
-
-
-.. _ap_cos:
-
-Class of Services (COS)
-=======================
-
-.. include:: /_includes/adminpanel/cos.rst
-
-.. _ap-privacy:
-
-Privacy
-=======
-
-.. include:: /_includes/adminpanel/privacy.rst
-
-.. _ap-notifications:
-
-Notifications
-=============
-
-.. include:: /_includes/adminpanel/notifications.rst
