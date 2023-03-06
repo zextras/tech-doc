@@ -2,7 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _ap-intro:
+.. _adminpanel:
 
 |adminui| Overview
 ==================

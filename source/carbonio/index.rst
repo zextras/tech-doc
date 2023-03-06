@@ -66,16 +66,16 @@ If you are looking for |ce|'s documentation, please refer to its
          :includehidden:
          :caption: Admin by GUI:
 
-         /common/carbonio/adminpanel/introduction-cb.rst
-         /common/carbonio/adminpanel/whitelabelling.rst
-         /common/carbonio/adminpanel/domains.rst
-         /common/carbonio/adminpanel/servers.rst
-         /common/carbonio/adminpanel/cos.rst
-         /common/carbonio/adminpanel/subscriptions.rst
-         /common/carbonio/adminpanel/privacy.rst
-         /common/carbonio/adminpanel/backup.rst
-         /common/carbonio/adminpanel/notifications.rst
-         /common/carbonio/adminpanel/operations.rst
+         /adminpanel/introduction.rst
+         /adminpanel/whitelabelling.rst
+         /adminpanel/domains.rst
+         /adminpanel/servers.rst
+         /adminpanel/cos.rst
+         /adminpanel/subscriptions.rst
+         /adminpanel/privacy.rst
+         /adminpanel/backup.rst
+         /adminpanel/notifications.rst
+         /adminpanel/operations.rst
 
 
 
