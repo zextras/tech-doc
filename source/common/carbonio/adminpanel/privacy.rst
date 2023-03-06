@@ -2,6 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _ap-privacy:
+
+Privacy
+=======
+
 A few options about the involvement of customers with |zx| and how
 they can help evolve and shape |product|'s functionalities. It is
 important to highlight how **all information** sent to |zx| are

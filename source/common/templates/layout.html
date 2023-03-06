@@ -6,16 +6,6 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 {% extends "!layout.html" %}
 
-{% block menu %}
-  {{ super() }}
-<hr />
-<ul>
-  <li class="toctree-l1">
-    <a class="icon icon-home" href="{{ hubhome }} "> Back to Zextras
-    Documentation hub</a>
-  </li>
-</ul>
-{% endblock %}
 {% block sidebartitle %}
 <a href="{{ pathto(master_doc) }}"><img src="{{ logo_url }}" class="logo" alt="{{ _('Logo') }}"/>
   <p> {{ project }} <br>
@@ -24,5 +14,16 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
 </a>
    
 {% include "searchbox.html" %}
+
 {% endblock %}
-  
+
+{% block navigation %}
+<div class="centered">
+  <a class="hublink btn btn-link" href="{{ hubhome }}">
+    <span class="icon fa-home">
+      Back to Zextras<br> Documentation Hub</span>
+  </a>
+</div>
+{{ super() }}
+
+{% endblock %}

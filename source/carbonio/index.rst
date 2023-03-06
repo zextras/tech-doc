@@ -31,7 +31,7 @@ If you are looking for |ce|'s documentation, please refer to its
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 12 12 12 12
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -43,7 +43,7 @@ If you are looking for |ce|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -58,15 +58,36 @@ If you are looking for |ce|'s documentation, please refer to its
          security
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
          :includehidden:
-         :caption: Admin:
+         :caption: Admin by GUI:
 
-         adminpanel
+         /adminpanel/introduction.rst
+         /adminpanel/whitelabelling.rst
+         /adminpanel/domains.rst
+         /adminpanel/servers.rst
+         /adminpanel/cos.rst
+         /adminpanel/subscriptions.rst
+         /adminpanel/privacy.rst
+         /adminpanel/backup.rst
+         /adminpanel/notifications.rst
+         /adminpanel/operations.rst
+
+
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+         :includehidden:
+         :caption: Admin by CLI:
+
          shell
          administration
          backup
@@ -79,7 +100,7 @@ If you are looking for |ce|'s documentation, please refer to its
          mesh
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -91,11 +112,11 @@ If you are looking for |ce|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 12 12 12
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	 :maxdepth: 1
-	 :caption: Develop:
+         :maxdepth: 1
+         :caption: Develop:
 
-	 api
+         api

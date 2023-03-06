@@ -1,0 +1,1 @@
+../../common/carbonio/adminpanel/privacy.rst
