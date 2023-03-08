@@ -67,12 +67,12 @@ If you are looking for |carbonio|'s documentation, please refer to its
          :includehidden:
          :caption: Admin by GUI:
 
-         /adminpanel/introduction.rst
-         /adminpanel/domains.rst
-         /adminpanel/servers.rst
-         /adminpanel/cos.rst
-         /adminpanel/privacy.rst
-         /adminpanel/notifications.rst
+         /adminpanel/introduction
+         /adminpanel/domains
+         /adminpanel/servers
+         /adminpanel/cos
+         /adminpanel/privacy
+         /adminpanel/notifications
 
    .. grid-item-card::
       :columns:  12 12 6 6
