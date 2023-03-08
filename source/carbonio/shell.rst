@@ -5,9 +5,9 @@
 
 .. _carbonio-shell:
 
-==========
- The |sh|
-==========
+=================
+  |sh| Overview
+=================
 
 
 The |sh|, also known as *Carbonio Shell*, is an interactive shell that
