@@ -14,12 +14,15 @@
 This is the documentation of |ce| edition, a free and open-source
 collaboration software.
 
-The content is organised in four parts:
+The content is organised in multiple parts:
 
-* Install: Information on |product|, installation and upgrade
-  instructions, security tips
-* Admin: Documentation for management tasks and some
-  advanced usage for |mesh|
+* Changelogs. contains links to all changelogs of |product|'s
+  components on GitHub repositories
+* Install. Information on |product| and its architecture, installation
+  and upgrade instructions, security tips
+* Admin by GUI: |product| administration using the |adminui|
+* Admin by CLI. Administration of |product| from the command line:
+  management tasks and some advanced usage for |mesh|
 * Use: everyday's usage of |product|, including its use on the
   dedicated mobile Apps
 * Develop: links to API reference
