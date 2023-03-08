@@ -1,1 +1,6 @@
-../../common/carbonio/adminpanel/subscriptions.rst
+.. _ap-subscriptions:
+
+Subscriptions
+=============
+
+.. include:: /_includes/adminpanel/subscriptions.rst
