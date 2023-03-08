@@ -16,16 +16,16 @@ collaboration software.
 
 The content is organised in multiple parts:
 
-* Changelogs. contains links to all changelogs of |product|'s
+* Changelogs. Contains links to all changelogs of |product|'s
   components on GitHub repositories
 * Install. Information on |product| and its architecture, installation
   and upgrade instructions, security tips
-* Admin by GUI: |product| administration using the |adminui|
+* Admin by GUI. |product| administration using the |adminui|
 * Admin by CLI. Administration of |product| from the command line:
   management tasks and some advanced usage for |mesh|
-* Use: everyday's usage of |product|, including its use on the
+* Use. everyday's usage of |product|, including its use on the
   dedicated mobile Apps
-* Develop: links to API reference
+* Develop. Links to API reference
 
 If you are looking for |carbonio|'s documentation, please refer to its
 `dedicated page <../../carbonio/html/index.html>`_.
