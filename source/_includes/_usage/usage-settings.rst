@@ -12,19 +12,13 @@ categories: :ref:`settings-general`, :ref:`settings-mails`,
 General
 -------
 
-.. card::
+.. card:: Theme Options
    :class-header: sd-font-weight-bold irisfont
-
-   Theme Options
-   ^^^^
 
    Choose whether the `Dark Mode` is enabled or not.
 
-.. card::
+.. card:: Out of Office Settings
    :class-header: sd-font-weight-bold irisfont
-
-   Out of Office Settings
-   ^^^^
 
    These setting allow you to define the behaviour of |product| when
    e-mails are received within a time period during which you are not
@@ -37,20 +31,14 @@ General
    default, an appointment that matches the time period is created
    on your calendar.
 
-.. card::
+.. card:: Application versions
    :class-header: sd-font-weight-bold irisfont
-
-   Application versions
-   ^^^^
 
    Informative panel reporting the versions of |product|'s
    components.
 
-.. card::
+.. card:: Account
    :class-header: sd-font-weight-bold irisfont
-
-   Account
-   ^^^^
 
    Click :bdg-primary:`LOGOUT` to exit the current session.
 
@@ -59,11 +47,8 @@ General
 Mails
 -----
 
-.. card::
+.. card:: Displaying Messages
    :class-header: sd-font-weight-bold irisfont
-
-   Displaying Messages
-   ^^^^
 
    The options here control how the e-mails are displayed in the
    mailbox and how often to check for new emails (i.e., *polling
@@ -77,11 +62,8 @@ Mails
    ``in:inbox``, meaning that all messages in the **Inbox** are
    displayed.
 
-.. card::
+.. card:: Receiving Messages
    :class-header: sd-font-weight-bold irisfont
-
-   Receiving Messages
-   ^^^^
 
    These settings define the response to incoming
    e-mails. Notification e-mails can be sent to a third party and
@@ -95,22 +77,16 @@ Mails
    send automatic read receipts and if duplicate messages should be
    deleted.
 
-.. card::
+.. card:: Signatures
    :class-header: sd-font-weight-bold irisfont
-
-   Signatures
-   ^^^^
 
    Define signatures that can be appended to the e-mails that you
    write. Use the textarea to write a plain text or HTML (default)
    signature, assign a name to them and add to the library by clicking
    the :bdg-primary-line:`ADD SIGNATURE` button.
 
-.. card::
+.. card:: Using Signatures
    :class-header: sd-font-weight-bold irisfont
-
-   Using Signatures
-   ^^^^
 
    If, besides your primary e-mail addresses, you have aliases or can
    access shared accounts, you can associate to each of them a
@@ -118,11 +94,8 @@ Mails
    e-mail, the correct associated signature will be added, according
    to the e-mail that you choose.
 
-.. card::
+.. card:: Filters
    :class-header: sd-font-weight-bold irisfont
- 
-   Filters
-   ^^^^
 
    Filters determine how to move incoming or outgoing e-mails to
    folders within your inbox.
@@ -148,11 +121,8 @@ Mails
 Calendar
 --------
 
-.. card::
+.. card:: General
    :class-header: sd-font-weight-bold irisfont
-
-   General
-   ^^^^^
 
    General setting for Calendar allow to customise how the calendar
    and its events are displayed, how invitations are managed, and how
@@ -168,39 +138,27 @@ Calendar
    Reminders can be set up in different way: by playing sounds,
    showing a popup or flashing the browser's bar.
 
-.. card::
+.. card:: Work week
    :class-header: sd-font-weight-bold irisfont
-
-   Work week
-   ^^^^^
 
    Define the times when your daily work week starts and ends.
 
    .. note to self: customise modal seems to not yet work
 
-.. card::
+.. card:: Creating Appointments
    :class-header: sd-font-weight-bold irisfont
-
-   Creating Appointments
-   ^^^^^
 
    You may select on which calendar events and appointments are
    created by default and if the default time zone is used or can be
    chosen when creating new appointments.
 
-.. card::
+.. card:: Apple iCal
    :class-header: sd-font-weight-bold irisfont
-
-   Apple iCal
-   ^^^^
 
    Allow delegation for Apple iCal.
 
-.. card::
+.. card:: Permissions
    :class-header: sd-font-weight-bold irisfont
-
-   Permissions
-   ^^^^^
 
    Configure access to *free/busy information* of appointments, which
    can be restricted to selected internal users, to configured domain(s), to
@@ -213,11 +171,8 @@ Calendar
 Contacts
 --------
 
-.. card::
+.. card:: Options
    :class-header: sd-font-weight-bold irisfont
-
-   Options
-   ^^^^^
 
    You can define how to populate your Contacts and the behaviour of
    the autocomplete feature. New contacts can be added automatically,

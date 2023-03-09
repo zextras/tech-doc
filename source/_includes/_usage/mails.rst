@@ -119,31 +119,22 @@ actions are available
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Composing an e-mail
       :columns: 4
-
-      Composing an e-mail
-      ^^^^
 
       While composing an e-mail, any file can be added as an
       attachment for either a local directory on the workstation or on
       the user's personal storage on |file|.
    
-   .. grid-item-card::
+   .. grid-item-card:: Inline Attachments
       :columns: 4
 		
-      Inline Attachments
-      ^^^^^
-
       Images on the local workstation can be included as inline
       attachments in the body of the e-mails, using the button in the
       bar above the editor to select them.
       
-   .. grid-item-card::
+   .. grid-item-card:: Receiving an e-mail
       :columns: 4
-
-      Receiving an e-mail
-      ^^^^^
 
       When receiving an e-mail with attachments, the user has the
       option to either download the file to a local directory on the
