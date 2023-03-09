@@ -119,3 +119,9 @@ Final Steps: Complete Setup and Activate License
 
 .. include:: /_includes/_installation/complete.rst
 .. include:: /_includes/_installation/users.rst
+
+|product| Management and Troubleshooting
+----------------------------------------
+
+.. include:: /_includes/_installation/commands.rst
+(END)
