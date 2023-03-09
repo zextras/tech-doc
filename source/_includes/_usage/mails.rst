@@ -102,6 +102,11 @@ delay of three seconds takes places, and a message appears on the
 bottom right corner: click :bdg-info:`UNDO` to stop the sending and
 continue editing the e-mail.
 
+When you have multiple aliases or access to shared accounts, you can
+add a different signature whenever you create, forward, or reply to an
+e-mail: refer to section *Using Signatures* in the :ref:`Mails
+settings <settings-mails>`.
+
 .. _mail-attachments:
 
 Attachments Management

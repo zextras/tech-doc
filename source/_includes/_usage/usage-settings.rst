@@ -109,11 +109,14 @@ Mails
 .. card::
    :class-header: sd-font-weight-bold irisfont
 
-   Set Default Signatures
+   Using Signatures
    ^^^^
 
-   Choose from the signature library which signature to append by
-   default to new e-mails that you write or to replies and forward.
+   If, besides your primary e-mail addresses, you have aliases or can
+   access shared accounts, you can associate to each of them a
+   different signature. Whenever you create, forward, or reply to an
+   e-mail, the correct associated signature will be added, according
+   to the e-mail that you choose.
 
 .. card::
    :class-header: sd-font-weight-bold irisfont
