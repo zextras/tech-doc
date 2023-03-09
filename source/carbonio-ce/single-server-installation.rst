@@ -17,6 +17,10 @@ When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
 Section :ref:`web-access`.
 
+.. warning:: The Single-Server installation described here is intended
+   for demo or test purposes only; Single-Server installations in a
+   production environment are not supported anymore.
+   
 .. _preliminary-rh:
 
 RHEL 8-only Preliminary Tasks
