@@ -71,7 +71,12 @@ automatically any email to a given folder.
 E-mails are arranged in *Conversations*, meaning that an e-mail with
 all the replies it receives is packed in one single element in the
 list. Messages and conversations can be drag-and-dropped to any
-folder.
+folder. You can select one e-mail in the list by clicking on the
+*Avatar* on the left of the e-mail (i.e., the circle with the initials
+of the e-mail's sender). You will enter the so-called *Selection
+Mode*: you can select additional e-mail by clicking them, or select
+all of them by clicking the :blue:`SELECT ALL` button above the list,
+then move them to another folder.
 
 .. hint:: Moving a single e-mail in a conversation is not possible,
    the whole conversation will be moved.
@@ -84,6 +89,7 @@ flag is a simple indicator for an email that can be adapted to one's
 preference: to name a few, it has some importance compared to other,
 it needs some action, or it has been processed and can be archived or
 deleted.
+
 
 More actions are available and shown upon right-clicking an email.
 
