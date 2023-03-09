@@ -70,16 +70,16 @@ automatically any email to a given folder.
 
 E-mails are arranged in *Conversations*, meaning that an e-mail with
 all the replies it receives is packed in one single element in the
-list. Messages and conversations can be drag-and-dropped to any
-folder. You can select one e-mail in the list by clicking on the
-*Avatar* on the left of the e-mail (i.e., the circle with the initials
-of the e-mail's sender). You will enter the so-called *Selection
-Mode*: you can select additional e-mail by clicking them, or select
-all of them by clicking the :blue:`SELECT ALL` button above the list,
-then move them to another folder.
+list. Conversations (but not single messages) can be drag-and-dropped
+to any folder: you can select one conversation in the list by clicking
+on the *Avatar* on the left of the e-mail (i.e., the circle with the
+initials of the e-mail's sender). You will enter the so-called
+*Selection Mode*: you can select additional conversations by clicking
+them, or select all of them by clicking the :blue:`SELECT ALL` button
+above the list, then move them to another folder.
 
-.. hint:: Moving a single e-mail in a conversation is not possible,
-   the whole conversation will be moved.
+.. hint:: You can select immediately all conversations by clicking the
+   checkmark above the list of e-mails.  
    
 On the top-right corner of each e-mail there are a few icons that
 allow to carry out a number of actions; click the
