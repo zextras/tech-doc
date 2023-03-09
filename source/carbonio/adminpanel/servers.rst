@@ -1,1 +1,7 @@
-../../common/carbonio/adminpanel/servers.rst
+
+.. _ap-servers:
+
+Servers
+=======
+
+.. include:: /_includes/adminpanel/servers.rst

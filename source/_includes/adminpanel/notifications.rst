@@ -2,10 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _ap-notifications:
-
-Notifications
-=============
 
 The `Notification` tab allows to see all notifications that have been
 sent by |carbonio| about its status. By default, all notifications are

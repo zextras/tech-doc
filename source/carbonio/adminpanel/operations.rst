@@ -1,1 +1,6 @@
-../../common/carbonio/adminpanel/operations.rst
+.. _ap-operations:
+
+Operations
+=============
+
+.. include:: /_includes/adminpanel/operations.rst

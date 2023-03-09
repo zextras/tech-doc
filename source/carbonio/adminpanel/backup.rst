@@ -1,1 +1,6 @@
-../../common/carbonio/adminpanel/backup.rst
+.. _ap-backup:
+
+Backup
+======
+
+.. include:: /_includes/adminpanel/backup.rst
