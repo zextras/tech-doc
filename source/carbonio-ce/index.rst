@@ -72,8 +72,8 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
          /adminpanel/introduction
          /adminpanel/domains
-         /adminpanel/servers
          /adminpanel/cos
+         /adminpanel/storage
          /adminpanel/privacy
          /adminpanel/notifications
 

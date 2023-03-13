@@ -13,6 +13,10 @@ During the installation and configuration of |product|, it is
 necessary to execute commands from the command line, so make sure you
 have access to it.
 
+.. warning:: The Single-Server installation described here is intended
+   for demo or test purposes only; Single-Server installations in a
+   production environment are not supported anymore.
+
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
 Section :ref:`web-access`.
@@ -119,3 +123,9 @@ Final Steps: Complete Setup and Activate License
 
 .. include:: /_includes/_installation/complete.rst
 .. include:: /_includes/_installation/users.rst
+
+|product| Management and Troubleshooting
+----------------------------------------
+
+.. include:: /_includes/_installation/commands.rst
+(END)

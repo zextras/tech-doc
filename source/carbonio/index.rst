@@ -71,8 +71,8 @@ If you are looking for |ce|'s documentation, please refer to its
          /adminpanel/introduction
          /adminpanel/whitelabelling
          /adminpanel/domains
-         /adminpanel/servers
          /adminpanel/cos
+         /adminpanel/storage
          /adminpanel/subscriptions
          /adminpanel/privacy
          /adminpanel/backup
