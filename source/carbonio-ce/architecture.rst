@@ -93,7 +93,7 @@ receive e-mails and to manage their calendars and contacts. They are:
       AppServer nodes, but more can be added to a large or growing
       infrastructure.
 
-   .. grid-item-card:: Carbonio Mesh
+   .. grid-item-card:: |mesh|
       :columns: 12
       :class-body: card-magma
 
@@ -102,6 +102,17 @@ receive e-mails and to manage their calendars and contacts. They are:
       properly, there must be **at least** one |mesh| Server, which
       ideally should be installed on the *Directory-Server* Node,
       while **all other nodes** must install the |mesh| Agent.
+
+   .. grid-item-card:: |monit|
+      :columns: 12
+      :class-body: card-magma
+
+      |monit| is the replacement of the previous **Logger**
+      Role. Compared to the standard `syslog` monitoring system,
+      |monit| is a fully centralised log facility that stores log
+      messages in to a database, allowing therefore an administrator
+      to keep a full history of the events on the system and making
+      the search for past event easier.
 
 Note also that the **Proxy** and **MTA** nodes **must** satisfy the
 following requirements to work properly:
@@ -143,9 +154,6 @@ installed on any node, provided the dependencies are respected.
 * **User Management**. It registers the user status (logged in or
   logged out) and user attributes (e.g., on which AppServer a user is
   logged in).
-* **Logger**. It provides a centralised log service for all Roles
-  installed. It is also important to highlight that there **must be a
-  unique** Logger in a Multi-Server installation.
 * **Admin Panel**. The core administration centre in which to manage
   the configuration options of |product|
 

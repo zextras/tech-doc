@@ -18,6 +18,7 @@
 .. |mobile| replace:: |carbonio| Mobile
 .. |pv| replace:: |carbonio| Preview
 .. |adminui| replace:: |carbonio| Admin Panel
+.. |monit| replace:: |carbonio| Monitoring
 
 .. common replacements for all products
 
