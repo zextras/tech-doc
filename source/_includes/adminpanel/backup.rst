@@ -11,9 +11,9 @@ out only from the CLI. The only exception is for the
 Account`.
 
 Setting are grouped in two main section, the *Global Server Settings*,
-which apply to all :ref:`defined servers <ap-servers>`, and the *Server
-Specifics*, which allows to define different backup policies to
-different servers, in case more than one server has been created.
+which apply to all :ref:`defined storages <ap-storage>`, and the
+*Server Specifics*, which allows to define different backup policies
+to different servers, in case more than one server has been created.
 
 .. _ap-bk-global:
 

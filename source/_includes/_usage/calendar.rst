@@ -27,6 +27,15 @@ participant to inform them of the change.
 
 Additionally, :ref:`mail-tags` can be added to any calendar event.
 
+Searching for events is easy: insert a search string in the
+:ref:`quick search bar <create-new>` to retrieve a first batch of
+results. By default, all matches in the past and future 30 days are
+shown. To broaden or restrict the search, click the
+:bdg-primary:`ADVANCED FILTER` bar and select the new start and end
+dates using the date pickers. Optionally, also add more keywords to
+search.
+
+
 Shared Calendars
 ----------------
 
