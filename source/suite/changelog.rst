@@ -8,9 +8,9 @@
  |suite| Changelog - Release |release|
 ===============================================
 
-Release Date of |suite| |release|: Dec 26th, 2022
+Release Date of |suite| |release|: Mar 13th, 2023
 
-.. include:: /changelogs/3.15.0.rst
+.. include:: /changelogs/3.16.0.rst
 
 
 Previous Releases
@@ -27,6 +27,7 @@ Previous Releases
       
       .. toctree::
 
+         Release 3.15.0 </changelogs/3.15.0.rst>
          Release 3.14.0 </changelogs/3.14.0.rst>
          Release 3.13.0 </changelogs/3.13.0.rst>
          Release 3.12.0 </changelogs/3.12.0.rst>

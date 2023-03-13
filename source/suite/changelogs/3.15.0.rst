@@ -2,12 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. uncomment for next release (3.16.0)
 
-   Zextras Suite Changelog - Release 3.15.0  
-   ========================================
+Zextras Suite Changelog - Release 3.15.0  
+========================================
 
-      Release Date: Dec 26th, 2022
+   Release Date: Dec 26th, 2022
 
 .. rubric:: Backup
 
@@ -18,6 +17,7 @@
 * *Description:* ExternalRestore follows the order of the accounts
   provided in the accounts or input_file parameter
 
+..
 
 * *Issue ID:* BCK-618
 

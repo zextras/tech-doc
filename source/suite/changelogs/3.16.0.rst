@@ -1,0 +1,77 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+
+.. uncomment for next release (3.17.0)
+
+   Zextras Suite Changelog - Release 3.16.0
+   ========================================
+
+      Release Date: Mar 13th, 2023
+
+.. rubric:: Backup
+
+* *Issue ID:* BCK-679
+
+* *Title:* Undelete operation bug fixed
+
+* *Description:* Fixed a bug that caused the `doUndelete` operation to fail the restoration of some items and stop in some corner case scenarios.
+
+..
+
+* *Issue ID:* BCK-681
+
+* *Title:* Smart scan operation fixed
+
+* *Description:* Fixed a bug that caused items to be skipped when interrupting a Smart Scan operation.
+
+.. rubric::  General
+
+
+* *Issue ID:* COR-844
+
+* *Title:* Modules icons clickable
+
+* *Description:* In the admin console, now the modules icons are clickable in both multinode and single servers.
+
+.. rubric::  Drive
+
+* *Issue ID:* DRIV-1140
+
+* *Title:* Files with Cyrillic characters are correctly decoded when downloaded.
+
+* *Description:* Files which have Cyrillic characters should be correctly decoded when downloaded from a public link.
+
+.. rubric:: Mobile
+
+
+* *Issue ID:* MOB-393
+
+* *Title:* StartTime change on accepting an appointment fixed
+
+* *Description:* Fixed a bug that caused the `StartTime` value of an accepted appointment to change to the current date/time when synchronizing via EAS 14.1.
+
+..
+
+* *Issue ID:* MOB-397
+
+* *Title:* StartTime change on accepting an appointment fixed
+
+* *Description:* Fixed a bug that caused the `StartTime` value of an accepted appointment to change to the current date/time when synchronizing via EAS 14.0 and lower.
+
+..
+
+* *Issue ID:* MOB-398
+
+* *Title:* Attachment's name encoding via EAS fixed
+
+* *Description:* Fixed a bug that caused the attachment's names with non-ASCII characters to be wrongly encoded when synchronizing via EAS.
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-4009
+
+* *Title:* Meeting access page for external users Italian translation fixed
+
+* *Description:* Fixed a bug that prevented the Italian translation of the instant meeting access page to be properly shown to external users.
