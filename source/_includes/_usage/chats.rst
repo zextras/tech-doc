@@ -59,6 +59,12 @@ participant list. Like for chats, each Space has a unique identifier,
 that can be copied by clicking the :bdg-primary-line:`COPY LINK`
 button and shared.
 
+Spaces are disabled by default, but can be enabled with the command
+
+.. code:: console
+
+   zextras$ carbonio config set global teamSpacesEnabled true
+
 .. _chats_channels:
 
 Channels
