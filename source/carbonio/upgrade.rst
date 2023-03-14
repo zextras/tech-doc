@@ -7,34 +7,32 @@
 |product| Upgrade
 =================
 
+.. include:: /_includes/_upgrade/intro.rst
+
+.. _upgrade-checklist:
+
+Upgrade Checklist
+-----------------
+              
 .. include:: /_includes/_upgrade/checklist-cb.rst
 
+.. card:: Backup Node(s)
 
-.. _upgrade-procedure:
-
-Upgrade Procedure
------------------
-
-The upgrade procedure always starts from the Directory Server: first,
-make a :ref:`backup copy <backup-ds>` of the Directory Server, then:
-
-* If you are on a Single-Server, :ref:`upgrade it <upgrade-nodes>`
-* If you are on a multi-Server Node, upgrade the Directory Server
-  Node, then all the other Nodes, in the same order followed during
-  the :ref:`installation <multiserver-installation>`, using :ref:`the
-  same procedure <upgrade-nodes>` for each Node.
-
-.. _backup-ds:
+   For improved security, to prevent any data loss, it is suggested to
+   make a backup or take a snapshot (if you are using an hypervisor)
+   of each Node.
+             
+.. _pre-upgrade:
    
-Backup Directory Server
-~~~~~~~~~~~~~~~~~~~~~~~
+Preliminary Tasks
+-----------------
 
 .. include:: /_includes/_upgrade/ds.rst
 
 .. _upgrade-nodes:
 
 Upgrade Nodes
-~~~~~~~~~~~~~
+-------------
 
 .. include:: /_includes/_upgrade/node.rst
              
