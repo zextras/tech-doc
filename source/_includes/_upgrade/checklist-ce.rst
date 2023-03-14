@@ -6,8 +6,7 @@
 released, the |zx| repositories are updated and packages are available
 for installation along with the other system updates. Therefore, the
 upgrade procedure is usually a very quick activity, carried out with
-by means of a few commands, which are the same for **Single-Server**
-and **Multi-Server** installations.
+by means of a few commands to be executed on each **Node**.
 
 Depending on the packages upgraded, some manual step may be
 required. Please read carefully section :ref:`upgrade-checklist`
@@ -18,6 +17,9 @@ Moreover, incompatibilities may arise in case the upgrade includes
 third-party software, which may lead to some additional manual steps
 to be carried out. Section :ref:`upgrade-troubleshooting` below
 contains information to prevent or fix these issues.
+
+If you are upgrading from |prev| to |release|, you can skip this
+section and go to Section :ref:`upgrade-procedure`.
 
 .. _upgrade-checklist:
 
