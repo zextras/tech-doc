@@ -10,7 +10,12 @@ Deploy an SSL Certificate
 In this section we explain how to add an SSL/TLS certificate to a
 |product| installation, both a :ref:`single server
 <single-cert-installation>` and a :ref:`wildcard certificate
-<wildcard-cert-installation>`.
+<wildcard-cert-installation>`.  |product| supports the installation
+and management of *Let's Encrypt* certificates: you can find
+directions for that in a `dedicated article
+<https://community.zextras.com/free-ssl-certificates-for-carbonio-community-edition-using-lets-encrypt-and-certbot/>`_
+on |zx| Community portal.
+
 
 This setup is mandatory if |product| is used in conjunction with
 mobile apps; it is also suggested for any installation in order to
@@ -71,8 +76,8 @@ Once the command is executed these files will be generated:
 
 .. code:: console
 
-  /opt/zextras/ssl/carbonio/commercial/commercial.key
-  /opt/zextras/ssl/carbonio/commercial/commercial.csr
+  # /opt/zextras/ssl/carbonio/commercial/commercial.key
+  # /opt/zextras/ssl/carbonio/commercial/commercial.csr
 
 .. rubric:: Step 2. Get the certificates from your SSL provider
 

@@ -16,10 +16,12 @@ collaboration platform.
 
 The content is organised in four parts:
 
-* Install: Information on |product|, installation and upgrade
-  instructions, security tips
-* Admin: Documentation for Administrators, management tasks, and some
-  advanced usage for |mesh|
+* Changelogs. List of issues fixed in the current release of |product|
+* Install. Information on |product| and its architecture, installation
+  and upgrade instructions, security tips
+* Admin by GUI: |product| administration using the |adminui|
+* Admin by CLI. Administration of |product| from the command line:
+  management tasks and some advanced usage for |mesh|
 * Use: everyday's usage of |product|, including its use on the
   dedicated mobile Apps
 * Develop: links to API reference
@@ -66,16 +68,16 @@ If you are looking for |ce|'s documentation, please refer to its
          :includehidden:
          :caption: Admin by GUI:
 
-         /adminpanel/introduction.rst
-         /adminpanel/whitelabelling.rst
-         /adminpanel/domains.rst
-         /adminpanel/servers.rst
-         /adminpanel/cos.rst
-         /adminpanel/subscriptions.rst
-         /adminpanel/privacy.rst
-         /adminpanel/backup.rst
-         /adminpanel/notifications.rst
-         /adminpanel/operations.rst
+         /adminpanel/introduction
+         /adminpanel/whitelabelling
+         /adminpanel/domains
+         /adminpanel/cos
+         /adminpanel/storage
+         /adminpanel/subscriptions
+         /adminpanel/privacy
+         /adminpanel/backup
+         /adminpanel/notifications
+         /adminpanel/operations
 
 
 

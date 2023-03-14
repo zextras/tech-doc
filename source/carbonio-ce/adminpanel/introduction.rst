@@ -69,6 +69,6 @@ The landing page is shown in :numref:`fig_ap-top` and
       In the lower part are shown the versions of |carbonio| and of
       |carbonio| Core for all the servers defined within the
       |carbonio| infrastructure. The button `GO TO MAILSTORES SERVERS
-      LIST` allows to open the :menuselection:`Mailstores --> Global
-      Servers --> Server List` page (see :ref:`ap-servers`).
+      LIST` allows to open the :menuselection:`Storage --> Global
+      Servers --> Server List` page (see :ref:`ap-storage`).
       

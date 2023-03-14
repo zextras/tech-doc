@@ -1,1 +1,7 @@
-../../common/carbonio/adminpanel/notifications.rst
+
+.. _ap-notifications:
+
+Notifications
+=============
+
+.. include:: /_includes/adminpanel/notifications.rst

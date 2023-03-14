@@ -1,1 +1,6 @@
-../../common/carbonio/adminpanel/domains.rst
+.. _ap-domains:
+
+Domains
+=======
+
+.. include:: /_includes/adminpanel/domains-ce.rst

@@ -2,11 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _ap-backup:
-
-Backup
-======
-
 The |adminui|\'s Backup GUI allows to configure the mail servers to
 save mailbox items in the backup. While they are part of the Backup
 operations, :ref:`backup_restore-strategies` can currently be carried
@@ -16,9 +11,9 @@ out only from the CLI. The only exception is for the
 Account`.
 
 Setting are grouped in two main section, the *Global Server Settings*,
-which apply to all :ref:`defined servers <ap-servers>`, and the *Server
-Specifics*, which allows to define different backup policies to
-different servers, in case more than one server has been created.
+which apply to all :ref:`defined storages <ap-storage>`, and the
+*Server Specifics*, which allows to define different backup policies
+to different servers, in case more than one server has been created.
 
 .. _ap-bk-global:
 

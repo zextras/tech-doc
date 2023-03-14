@@ -2,11 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Whenever the upgrade involves the Directory Server, and there are some
-backward incompatible changes like the addition of new attributes in
-the database, follow these directions. On the Multi-Server, execute
-them in on the node with the Directory Server Role installed, which is
-:ref:`SRV2 <srv2-install>` in our scenario.
+As a preliminary task, we backup the Directory Server. On a
+Multi-Server installation, execute the following commands on the node
+with the Directory Server Role installed, which is :ref:`SRV2
+<srv2-install>` in our scenario.
 
 #. Make a dump of the LDAP Database, especially if the if the upgrade
    includes the Directory Server. This can be done using the command
@@ -29,8 +28,7 @@ them in on the node with the Directory Server Role installed, which is
 
       zextras$ ldap stop
 
-#. Execute the :ref:`Single-Server <upgrade-single>` upgrade
-   procedure
+#. Execute the :ref:`upgrade-nodes` upgrade procedure
 
 #. Restart the Directory Server service
 

@@ -1,1 +1,7 @@
-../../common/carbonio/adminpanel/privacy.rst
+
+.. _ap-privacy:
+
+Privacy
+=======
+
+.. include:: /_includes/adminpanel/privacy.rst
