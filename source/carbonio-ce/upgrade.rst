@@ -48,9 +48,9 @@ these steps only if they are mentioned in Sections
 :ref:`upgrade-checklist`.
 
 If you are upgrading from an older version (i.e., previous to |prev|),
-you need to verify if any of these steps is needed: in other words,
-depending on the packages that will be upgraded, you might need to run
-them or not. Please check the conditions fo
+you need to verify in section :ref:`upgrade-checklist` if any of these
+steps is needed: in other words, depending on the packages that will
+be upgraded, you might need to run them or not.
 
 .. troubleshooting
 
