@@ -62,6 +62,8 @@ to refine the configuration of the domain. Values for most of the
 options (for example the Time Zone), if not specified for a given
 domain, are inherited from the main domain defined.
 
+.. _ap-domain-settings:
+
 General Settings
 ~~~~~~~~~~~~~~~~
 
@@ -197,6 +199,8 @@ Manage Domains
 The *Manage Domains* page contains options to configure accounts,
 mailing, and generic resources.
 
+.. _ap-accounts:
+
 Accounts
 ~~~~~~~~
 
@@ -233,10 +237,11 @@ four tabs:
 
    .. tab-item:: Configuration
 
-      The listed here allows to specify forwarding addresses, to
-      prevent e-mail messages to be saved locally, and to enable
+      The options listed here allows to specify forwarding addresses,
+      to prevent e-mail messages to be saved locally, and to enable
       ActiveSync, if these operations are allowed by the
-      administrator.
+      administrator. Values for these options can be set from the CLI:
+      please refer to section :ref:`cli-features` for more information.
 
    .. tab-item:: User Preferences
 

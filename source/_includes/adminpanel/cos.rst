@@ -11,11 +11,17 @@ To create a COS, click the :bdg-primary-line:`CREATE NEW COS` button
 and enter a name. You can then configure all the options from the
 left-hand side menu.
 
+.. _cos-features:
+
 Features
 --------
 
-*Features* are settings that allow the user to access the most used
-functionalities of |product|. 
+*Features* are settings that allow or forbid the user to access the
+most used components of |product|, both via browser and :ref:`mobile
+apps <mobile_apps>`. Some of them can be enabled or disabled via CLI:
+please refer to section :ref:`cli-features` for more information.
+
+.. _cos-prefs:
 
 Preferences
 -----------
@@ -31,6 +37,8 @@ week) and governs the behaviour of some tasks carried out by the user,
 whether new e-mail contacts are added automatically to Contacts, or
 how often to check for new e-mails.
 
+.. _cos-pool:
+
 Server Pools
 ------------
 
@@ -38,6 +46,8 @@ In this page it is possible to select on which servers new users can
 be added to the COS.
 
 .. note:: If only one server has been defined, no choice is possible.
+
+.. _cos-adv:
 
 Advanced
 --------
