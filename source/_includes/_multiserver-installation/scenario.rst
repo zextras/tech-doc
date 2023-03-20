@@ -2,12 +2,12 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-|product| Multi-Server is the preferred method of installation,
-especially for large production system, because it is more scalable in
-case of a growth of the infrastructure and the communication across
-all nodes is set up and secured automatically by |mesh|, which also
-adds fault detection and dynamic routing between components of the
-infrastructure.
+|product| Multi-Server is the **only** supported method of
+installation in a production environment, especially for large
+production system, because it is more scalable in case of a growth of
+the infrastructure and the communication across all nodes is set up
+and secured automatically by |mesh|, which also adds fault detection
+and dynamic routing between components of the infrastructure.
 
 In the suggested scenario we will set up a |product| Multi-Server
 environment, composed by **six nodes** (that we will denote as *SRV1*,
