@@ -2,8 +2,8 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Carbonio Changelog - Release 23.2.0
-===================================
+Release 23.2.0
+==============
 
 Release Date: February 23rd, 2023
 
