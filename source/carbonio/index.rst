@@ -16,10 +16,12 @@ collaboration platform.
 
 The content is organised in four parts:
 
-* Install: Information on |product|, installation and upgrade
-  instructions, security tips
-* Admin: Documentation for Administrators, management tasks, and some
-  advanced usage for |mesh|
+* Changelogs. List of issues fixed in the current release of |product|
+* Install. Information on |product| and its architecture, installation
+  and upgrade instructions, security tips
+* Admin by GUI: |product| administration using the |adminui|
+* Admin by CLI. Administration of |product| from the command line:
+  management tasks and some advanced usage for |mesh|
 * Use: everyday's usage of |product|, including its use on the
   dedicated mobile Apps
 * Develop: links to API reference
@@ -31,19 +33,20 @@ If you are looking for |ce|'s documentation, please refer to its
    :gutter: 3
 
    .. grid-item-card::
-      :columns: 12 12 12 12
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
          :maxdepth: 1
          :caption: Changelogs:
 
-         Release 23.2.0 <changelog-23.2.0>
+         changelog-23.3.0
+         changelog-23.2.0
 
 
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -58,15 +61,36 @@ If you are looking for |ce|'s documentation, please refer to its
          security
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
          :includehidden:
-         :caption: Admin:
+         :caption: Admin by GUI:
 
-         adminpanel
+         /adminpanel/introduction
+         /adminpanel/whitelabelling
+         /adminpanel/domains
+         /adminpanel/cos
+         /adminpanel/storage
+         /adminpanel/subscriptions
+         /adminpanel/privacy
+         /adminpanel/backup
+         /adminpanel/notifications
+         /adminpanel/operations
+
+
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+         :includehidden:
+         :caption: Admin by CLI:
+
          shell
          administration
          backup
@@ -79,7 +103,7 @@ If you are looking for |ce|'s documentation, please refer to its
          mesh
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
@@ -91,11 +115,11 @@ If you are looking for |ce|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 12 12 12
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-	 :maxdepth: 1
-	 :caption: Develop:
+         :maxdepth: 1
+         :caption: Develop:
 
-	 api
+         api

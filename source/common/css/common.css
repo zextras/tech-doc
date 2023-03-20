@@ -212,3 +212,17 @@ legend {
 .rst-content {
     max-width: 1024px
 }
+
+.hublink {
+    color: white; 
+    line-height: 120%;
+    margin: 0 auto;
+    font-size: smaller
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px
+}

@@ -70,11 +70,16 @@ automatically any email to a given folder.
 
 E-mails are arranged in *Conversations*, meaning that an e-mail with
 all the replies it receives is packed in one single element in the
-list. Messages and conversations can be drag-and-dropped to any
-folder.
+list. Conversations (but not single messages) can be drag-and-dropped
+to any folder: you can select one conversation in the list by clicking
+on the *Avatar* on the left of the e-mail (i.e., the circle with the
+initials of the e-mail's sender). You will enter the so-called
+*Selection Mode*: you can select additional conversations by clicking
+them, or select all of them by clicking the :blue:`SELECT ALL` button
+above the list, then move them to another folder.
 
-.. hint:: Moving a single e-mail in a conversation is not possible,
-   the whole conversation will be moved.
+.. hint:: You can select immediately all conversations by clicking the
+   checkmark above the list of e-mails.  
    
 On the top-right corner of each e-mail there are a few icons that
 allow to carry out a number of actions; click the
@@ -84,6 +89,7 @@ flag is a simple indicator for an email that can be adapted to one's
 preference: to name a few, it has some importance compared to other,
 it needs some action, or it has been processed and can be archived or
 deleted.
+
 
 More actions are available and shown upon right-clicking an email.
 
@@ -102,6 +108,11 @@ delay of three seconds takes places, and a message appears on the
 bottom right corner: click :bdg-info:`UNDO` to stop the sending and
 continue editing the e-mail.
 
+When you have multiple aliases or access to shared accounts, you can
+add a different signature whenever you create, forward, or reply to an
+e-mail: refer to section *Using Signatures* in the :ref:`Mails
+settings <settings-mails>`.
+
 .. _mail-attachments:
 
 Attachments Management
@@ -114,31 +125,22 @@ actions are available
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Composing an e-mail
       :columns: 4
-
-      Composing an e-mail
-      ^^^^
 
       While composing an e-mail, any file can be added as an
       attachment for either a local directory on the workstation or on
       the user's personal storage on |file|.
    
-   .. grid-item-card::
+   .. grid-item-card:: Inline Attachments
       :columns: 4
 		
-      Inline Attachments
-      ^^^^^
-
       Images on the local workstation can be included as inline
       attachments in the body of the e-mails, using the button in the
       bar above the editor to select them.
       
-   .. grid-item-card::
+   .. grid-item-card:: Receiving an e-mail
       :columns: 4
-
-      Receiving an e-mail
-      ^^^^^
 
       When receiving an e-mail with attachments, the user has the
       option to either download the file to a local directory on the

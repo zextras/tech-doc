@@ -7,9 +7,8 @@ The Domain page allows the management of domains and of related
 settings, including individual accounts, user quota and
 authentication, mailing lists, and more.
 
-The following sections are available in the page: :ref:`global
-settings <ap-theme>`, :ref:`domain details <ap-domain-details>`, and
-:ref:`domain management <ap-manage-domains>`.
+The following sections are available in the page: :ref:`domain details
+<ap-domain-details>` and :ref:`domain management <ap-manage-domains>`.
 
 .. _ap-domain-new:
 
@@ -52,22 +51,6 @@ To create a new domain, fill in the form that opens upon clicking the
 Further configuration option for the domain, including how to
 configure authentication and accounts in the domain, can be found in
 the :ref:`ap-domain-details` section.
-
-.. _ap-theme:
-
-Global
-------
-
-.. _global-theme:
-
-Theme
-~~~~~
-
-Global settings concern the appearance of |product| and allow to
-customise various option that will influence how the |product| web
-interface appears to the web clients.
-
-.. include:: /_includes/adminpanel/wl.rst
 
 .. _ap-domain-details:
 
@@ -208,15 +191,6 @@ overridden on a per-user basis.
 To ease monitoring user's quota, the bottom of the page contains a
 list of accounts and of their used quota.
 
-.. _domain-theme:
-
-Theme
-~~~~~
-
-These setting are the same that appear in the :ref:`Global Theme
-<ap-theme>` section, but are domain-specific: if not defined, the
-global theme settings will be applied.
-
 .. _ap-manage-domains:
 
 Manage Domains
@@ -263,11 +237,11 @@ four tabs:
 
    .. tab-item:: Configuration
 
-      The options listed here allows to specify forwarding addresses,
-      to prevent e-mail messages to be saved locally, and to enable
-      ActiveSync, if these operations are allowed by the
-      administrator. Values for these options can be set from the CLI:
-      please refer to section :ref:`cli-features` for more information.
+      The options listed here allows to specify forwarding addresses
+      and to prevent e-mail messages to be saved locally, if these
+      operations are allowed by the administrator. Values for these
+      options can be set from the CLI: please refer to section
+      :ref:`cli-features` for more information.
 
    .. tab-item:: User Preferences
 

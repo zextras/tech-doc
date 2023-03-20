@@ -14,15 +14,18 @@
 This is the documentation of |ce| edition, a free and open-source
 collaboration software.
 
-The content is organised in four parts:
+The content is organised in multiple parts:
 
-* Install: Information on |product|, installation and upgrade
-  instructions, security tips
-* Admin: Documentation for management tasks and some
-  advanced usage for |mesh|
-* Use: everyday's usage of |product|, including its use on the
+* Changelogs. Contains links to all changelogs of |product|'s
+  components on GitHub repositories
+* Install. Information on |product| and its architecture, installation
+  and upgrade instructions, security tips
+* Admin by GUI. |product| administration using the |adminui|
+* Admin by CLI. Administration of |product| from the command line:
+  management tasks and some advanced usage for |mesh|
+* Use. everyday's usage of |product|, including its use on the
   dedicated mobile Apps
-* Develop: links to API reference 
+* Develop. Links to API reference
 
 If you are looking for |carbonio|'s documentation, please refer to its
 `dedicated page <../../carbonio/html/index.html>`_.
@@ -32,23 +35,23 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 12 12 12 
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
          :maxdepth: 1
          :caption: Changelogs
 
-	 Changelog <changelog>
+         Changelog <changelog>
 
 
-         
+
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 4
+         :maxdepth: 2
          :caption: Install:
 
          general
@@ -59,24 +62,39 @@ If you are looking for |carbonio|'s documentation, please refer to its
          security
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns:  12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 4
+         :maxdepth: 2
          :includehidden:
-         :caption: Admin:
+         :caption: Admin by GUI:
 
-         adminpanel
+         /adminpanel/introduction
+         /adminpanel/domains
+         /adminpanel/cos
+         /adminpanel/storage
+         /adminpanel/privacy
+         /adminpanel/notifications
+
+   .. grid-item-card::
+      :columns:  12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+         :includehidden:
+         :caption: Admin by CLI:
+
          management
          mesh
 
    .. grid-item-card::
-      :columns: 12 6 6 4
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 4
+         :maxdepth: 2
          :caption: Use:
 
          usage
@@ -84,7 +102,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
 
    .. grid-item-card::
-      :columns: 12 12 12 12 
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::

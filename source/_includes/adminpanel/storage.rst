@@ -2,6 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+
 This section is used to configure the Global e-mail server. 
 
 Global Servers

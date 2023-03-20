@@ -17,9 +17,13 @@ the nodes of a Multi-Server installation.
 :ref:`carb-customisations` guides you in the customisation of 
 |product|.
 
+:ref:`cli-features` explains how to set or check if Mails and Files
+components are enabled for a user or a COS.
+
 .. toctree::
    :hidden: 
 
    _management/managealias
    _management/sshkeys
    _management/custom
+   _management/setting-features

@@ -45,9 +45,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '23.2.0'
+release = '23.3.0'
 version = release
-prev = '23.1.0'
+prev = '23.2.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -63,7 +63,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_includes', 'common/cli', 'glossary.rst', 'common/adminpanel']
+exclude_patterns = ['_includes', 'common/cli', 'glossary.rst', 'common/carbonio/adminpanel']
 
 rst_prolog = """
 
@@ -104,6 +104,7 @@ html_theme_options = {
     'collapse_navigation': False
 }
 html_context = { 'hubhome' : '%s' %hubhome }
+templates_path = [ 'common/templates' ]
 
 # -- Options for linkcheck output --------------------------------------------
 

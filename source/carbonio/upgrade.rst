@@ -7,24 +7,35 @@
 |product| Upgrade
 =================
 
+.. include:: /_includes/_upgrade/intro.rst
+
+.. _upgrade-checklist:
+
+Upgrade Checklist
+-----------------
+              
 .. include:: /_includes/_upgrade/checklist-cb.rst
 
-.. _upgrade-single:
+.. card:: Backup Node(s)
 
-Single-Server Upgrade Procedure
--------------------------------
-
-.. include:: /_includes/_upgrade/single-cb.rst
-
-.. _upgrade-multi:
-
-Multi-Server Upgrade Procedure
-------------------------------
-
-.. include:: /_includes/_upgrade/multi-cb.rst
+   For improved security, to prevent any data loss, it is suggested to
+   make a backup or take a snapshot (if you are using an hypervisor)
+   of each Node.
              
-.. _upgrade-manual:
+.. _pre-upgrade:
+   
+Preliminary Tasks
+-----------------
 
+.. include:: /_includes/_upgrade/ds.rst
+
+.. _upgrade-nodes:
+
+Upgrade Nodes
+-------------
+
+.. include:: /_includes/_upgrade/node.rst
+             
 .. _upgrade-troubleshooting:
 
 Manual Steps and Troubleshooting
@@ -32,17 +43,17 @@ Manual Steps and Troubleshooting
 
 If you are upgrading from |prev| to |release|, you need to execute
 these steps only if they are mentioned in Sections
-:ref:`upgrade-single` or :ref:`upgrade-multi`.
+:ref:`upgrade-checklist`.
 
 If you are upgrading from an older version (i.e., previous to |prev|),
-you need to verify if any of these steps is needed.
+you need to verify in section :ref:`upgrade-checklist` if any of these
+steps is needed: in other words, depending on the packages that will
+be upgraded, you might need to run them or not.
 
-.. _upgrade-ds:
+.. troubleshooting
 
-Upgrade Directory Server
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: /_includes/_upgrade/ds.rst
+.. include:: /_includes/_upgrade/ts-ce.rst
+.. include:: /_includes/_upgrade/ts-cb.rst
 
 .. _upgrade-vs:
 
@@ -51,7 +62,3 @@ Upgrade |vs| Node
 
 .. include:: /_includes/_upgrade/vs.rst
 
-.. troubleshooting
-
-.. include:: /_includes/_upgrade/ts-ce.rst
-.. include:: /_includes/_upgrade/ts-cb.rst

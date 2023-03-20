@@ -16,36 +16,30 @@ System Requirements
 .. grid:: 1 1 1 2
    :gutter: 2
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
-
-      Hardware requirements
-      ^^^^^
+   .. grid-item-card:: Hardware requirements
+      :columns: 8 
 
       .. csv-table::
 
-	 "CPU", "Intel/AMD 64-bit CPU 1.5 GHz"
-	 "RAM", "8 GB min, 16GB recommended"
-	 "Disk space (Operating system and Carbonio)", "40 GB"
+         "CPU", "Intel/AMD 64-bit 4 cores min./8+ cores vCPU"
+         "RAM", "16 GB min., 32+ GB recommended"
+         "Disk space (Operating system and Carbonio)", "40 GB"
 
-      These requirements are valid for Carbonio Single-Server or for
-      each Carbonio Node in a Multi-Server Installation and may vary
-      depending on the size on the infrastructure, which includes the
-      number of mailboxes and the functionalities running.
+      These requirements are valid for each Node in a |Carbonio|
+      Installation and may vary depending on the size on the
+      infrastructure, which includes the number of mailboxes and the
+      services running on each node.
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
-
-      Supported Virtualization Platforms
-      ^^^^^
+   .. grid-item-card:: Supported Virtualization Platforms
+      :columns: 4
 
       .. csv-table::
 
-	 VMware vSphere 6.x
-	 VMware vSphere 7.x
-	 XenServer
-	 KVM
-	 Virtualbox (testing purposes only)
+         VMware vSphere 6.x
+         VMware vSphere 7.x
+         XenServer
+         KVM
+         Virtualbox (testing purposes only)
 
 .. _software-requirements:
 
@@ -103,39 +97,39 @@ Additional Requirements
       only.
 
       .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
-	 may raise a port conflict over port **53 UDP** with the
-	 default `systemd-resolved` service, so make sure to disable
-	 the latter before continuing with the next steps.
+         may raise a port conflict over port **53 UDP** with the
+         default `systemd-resolved` service, so make sure to disable
+         the latter before continuing with the next steps.
 
       .. tab-set::
 
-	 .. tab-item:: Ubuntu
-	    :sync: ubuntu
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
 
-	    .. code:: console
+            .. code:: console
 
-	       # apt install dnsmasq
+               # apt install dnsmasq
 
-	 .. tab-item:: RHEL
-	    :sync: rhel
+         .. tab-item:: RHEL
+            :sync: rhel
 
-	    .. code:: console
+            .. code:: console
 
-	       # dnf install dnsmasq
+               # dnf install dnsmasq
 
       To configure it, add the following lines to file
-      :file:`/etc/dnsmasq.conf`::
+      :file:`/etc/dnsmasq.conf`::                   
 
-	  server=1.1.1.1
-	  mx-host=example.com,mail.example.com,50
-	  host-record=example.com,172.16.0.10
-	  host-record=mail.example.com,172.16.0.10
+            server=1.1.1.1
+            mx-host=example.com,mail.example.com,50
+            host-record=example.com,172.16.0.10
+            host-record=mail.example.com,172.16.0.10
 
       Remember to replace the **172.16.0.10** IP address with the one
       of your server. Then, make sure that the :file:`etc/resolv.conf`
       contains the line::
 
-	nameserver 127.0.0.1
+        nameserver 127.0.0.1
 
       This will ensure that the local running :command:`dnsmasq` is
       used for DNS resolution. Finally, restart the **dnsmasq**
@@ -143,7 +137,7 @@ Additional Requirements
 
       .. code:: console
 
-	 # systemctl restart dnsmasq
+         # systemctl restart dnsmasq
 
 .. _fw-ports:
 
@@ -252,7 +246,7 @@ node hosting the **Proxy** Role.
    .. [3] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
-      
+
 .. dropdown:: Ports Used by |vs|
    :open:
 
@@ -264,4 +258,4 @@ node hosting the **Proxy** Role.
 
       "8188", "TCP", "Internal connection"
       "20000-40000", "UDP", "Client connections for the audio and
-      video streams" 
+      video streams"

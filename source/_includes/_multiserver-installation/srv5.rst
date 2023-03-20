@@ -68,12 +68,6 @@ Execute the following tasks.
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
 
-#. Fix carbonio-mailbox token access
-
-   .. code:: console
-
-      # chmod a+r /etc/zextras/carbonio-mailbox/token
-
 #. Run as the ``zextras user`` the following command to configure the
    Video Recording, using |vsip|, |servletport| and |vspwd| configured
    on SRV4

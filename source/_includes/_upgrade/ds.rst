@@ -2,10 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Whenever the upgrade involves the Directory Server, and there are some
-backward incompatible changes like the addition of new attributes in
-the database, follow these directions. On the Multi-Server, execute
-them in on the node with the Directory Server Role installed, which is
+As a preliminary task, we backup the LDAP data of the Directory
+Server. On a Multi-Server installation, execute the following commands
+on the node with the Directory Server Role installed, which is
 :ref:`SRV2 <srv2-install>` in our scenario.
 
 #. Make a dump of the LDAP Database, especially if the if the upgrade
@@ -22,24 +21,3 @@ them in on the node with the Directory Server Role installed, which is
 #. Make a backup copy of file
    :file:`/opt/zextras/conf/localconfig.xml` and **store it in a
    safe place**
-
-#. Stop the Directory Server service
-
-   .. code:: console
-
-      zextras$ ldap stop
-
-#. Execute the :ref:`Single-Server <upgrade-single>` upgrade
-   procedure
-
-#. Restart the Directory Server service
-
-   .. code:: console
-
-      zextras$ ldap start
-
-#. Make sure that |mesh| picks up all changes
-
-   .. code:: console
-
-      # pending-setups -a

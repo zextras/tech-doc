@@ -21,7 +21,7 @@ You can also simply get the current IP and hostname and save them:
 
 .. code:: console
 
-   # echo "$(hostname -I) $HOSTNAME.$DOMAIN"
+   # echo "$(hostname -I) $(hostname -f)"
 
 
 .. hint:: Replace **172.16.0.10** with the actual management IP to
