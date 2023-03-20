@@ -68,12 +68,6 @@ Execute the following tasks.
    .. hint:: The **secret** needed to run the above command is stored
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
-   
-#. Fix carbonio-mailbox token access
-
-   .. code:: console
-
-      # chmod a+r /etc/zextras/carbonio-mailbox/token
 
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for
