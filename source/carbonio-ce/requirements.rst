@@ -267,6 +267,11 @@ node hosting the **Proxy** Role.
    The |monit| component requires the following ports to be accessible
    by the server. Each port must be opened on the Node on which the
    corresponding exporter is installed.
+
+   .. note:: If you plan to allow access to |monit| from external
+      networks, make sure that port **9090 TCP** on the |monit| server
+      is reachable.
+
  
    .. csv-table::
       :header: "Port", "Protocol", "Package/Exporter"
