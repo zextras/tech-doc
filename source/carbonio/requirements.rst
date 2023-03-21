@@ -248,7 +248,6 @@ node hosting the **Proxy** Role.
       "21000-21255", "TCP range only", "Automatical Sidecar service
       registrations"
 
-
    .. [3] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
@@ -265,3 +264,23 @@ node hosting the **Proxy** Role.
       "8188", "TCP", "Internal connection"
       "20000-40000", "UDP", "Client connections for the audio and
       video streams" 
+
+.. dropdown:: Ports Used by |monit|
+   :open:
+
+   The |monit| component requires the following ports to be accessible
+   by the server. Each port must be opened on the Node on which the
+   corresponding exporter is installed.
+ 
+   .. csv-table::
+      :header: "Port", "Protocol", "Package/Exporter"
+      :widths: 10 20 70
+
+      "9115", "TCP", "carbonio-prometheus-blackbox-exporter"
+      "9107", "TCP", "carbonio-prometheus-consul-exporter"
+      "9104", "TCP", "carbonio-prometheus-mysqld-exporter"
+      "9113", "TCP", "carbonio-prometheus-nginx-exporter"
+      "9100", "TCP", "carbonio-prometheus-node-exporter"
+      "9330", "TCP", "carbonio-prometheus-openldap-exporter"
+      "9187", "TCP", "carbonio-prometheus-postgres-exporter"
+      "9256", "TCP", "carbonio-prometheus-process-exporter"
