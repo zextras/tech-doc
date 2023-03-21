@@ -168,7 +168,7 @@ node hosting the **Proxy** Role.
       "143", "external IMAP services"
       "443", "secure connection to the Carbonio web client"
       "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
-      "587", "Port for smtp autenticated relay, requires STARTTLS
+      "587", "Port for SMTP autenticated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "993", "external IMAP secure access"
       "995", "external POP3 secure access"
@@ -265,6 +265,11 @@ node hosting the **Proxy** Role.
    The |monit| component requires the following ports to be accessible
    by the server. Each port must be opened on the Node on which the
    corresponding exporter is installed.
+
+   .. note:: If you plan to allow access to |monit| from external
+      networks, make sure that port **9090 TCP** on the |monit| server
+      is reachable.
+
  
    .. csv-table::
       :header: "Port", "Protocol", "Package/Exporter"
