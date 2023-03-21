@@ -73,13 +73,14 @@ Execute the following tasks.
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
 
-.. this should not be necessary 
-   #. Make sure the |monit| exporter's firewall ports (**9100** and
-      **9115**) are open on the internal network, to allow the correct
-      communication with the server
 
 #. If you want that the |monit| be reachable from outside the
    local network, allow access to port **9090** on this node.
+
+   .. this should not be necessary 
+      #. Make sure the |monit| exporter's firewall ports (**9100** and
+      **9115**) are open on the internal network, to allow the correct
+      communication with the server
 
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for
