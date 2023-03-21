@@ -4,7 +4,7 @@
 
 The upgrade of |vs| requires to manually change a token used for its
 correct working. First, upgrade the node like described in
-:ref:`upgrade-single`.
+:ref:`upgrade-nodes`.
 
 Then, execute the following command:
 

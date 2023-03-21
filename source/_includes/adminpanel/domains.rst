@@ -79,6 +79,8 @@ to refine the configuration of the domain. Values for most of the
 options (for example the Time Zone), if not specified for a given
 domain, are inherited from the main domain defined.
 
+.. _ap-domain-settings:
+
 General Settings
 ~~~~~~~~~~~~~~~~
 
@@ -223,6 +225,8 @@ Manage Domains
 The *Manage Domains* page contains options to configure accounts,
 mailing, and generic resources.
 
+.. _ap-accounts:
+
 Accounts
 ~~~~~~~~
 
@@ -259,10 +263,11 @@ four tabs:
 
    .. tab-item:: Configuration
 
-      The listed here allows to specify forwarding addresses, to
-      prevent e-mail messages to be saved locally, and to enable
+      The options listed here allows to specify forwarding addresses,
+      to prevent e-mail messages to be saved locally, and to enable
       ActiveSync, if these operations are allowed by the
-      administrator.
+      administrator. Values for these options can be set from the CLI:
+      please refer to section :ref:`cli-features` for more information.
 
    .. tab-item:: User Preferences
 
@@ -279,6 +284,67 @@ four tabs:
       the type of characters to be chosen. The Failed login policy
       determines how the system behaves when a user fails too many
       consecutive logins.
+
+   .. tab-item:: Delegates
+
+      In this tab it is possible to define for which other accounts or
+      groups this account is responsible and which permissions
+      ("Rights") are granted.  The first setting allow to define
+      whether to save or not a copy of the sent messages and where:
+      only in delegated account's folder or also in the delegate's
+      folder.
+
+      The bottom part of the tab can be seen as either a *Simplified
+      View* or and *Advances View* and allows to define permissions of
+      the delegated people. There are small differences in the two
+      views, the most relevant is how to set the permission..
+
+      In the *Simplified View*, select a user or group, then the
+      permission and click the :bdg-primary-line:`ADD THE ACCOUNT`
+      button to add it as a delegate. The delegated accounts will
+      appear at the bottom of the tab.
+
+      In the *Advanced View*, a three steps procedure (:blue:`SELECT
+      MODE`, :blue:`SET RIGHTS`, and :blue:`ADD`) guides you to
+      complete the same task. The last step, similarly to the other
+      guided procedures in the |adminui|, allows to review the
+      settings before saving them.
+
+      .. card:: Available Delegate's Rights
+
+         The Simplified View permissions are granted using
+         checkboxes:
+
+         * read, access with no permission to change
+         * read/write, full read and write permission
+         * send, the recipient will see as sender the selected user
+         * send on behalf, similar to the previous. the recipient will
+           see the the sender's e-mail preceded by the string *On
+           behalf of*
+
+         In the Advanced View, rights are given in a slight different
+         way and can be defined in a more granular way. In the
+         :blue:`SET RIGHTS` step it is possible to grant the following
+         rights: **Send Mails only**, **Read Mails only**, **Send and
+         Read Mails**, **Manage** and **Send, Read, and Manage Mails
+         (all of the above)**. Depending on the choice, the bottom
+         part will show additional options, according to the following
+         table.
+
+         .. list-table::
+
+            * - Option
+              - Additional options
+            * - Send Mails only
+              - Send, Send on Behalf of
+            * - Read Mails only
+              - folders to share
+            * - Send and Read Mails
+              - Send, Send on Behalf of; folders to share
+            * - Manage
+              - Folders to share
+            * - Send, Read, and Manage Mails
+              - Send, Send on Behalf of; folders to share
 
 At the bottom of the panel, a list of the *active sessions* appears:
 for example, if a user has logged in from three different devices and

@@ -25,6 +25,9 @@ affect all users in the domain.
 :ref:`adv-admin` introduces some advanced topic about the
 administration of a |product| server.
      
+:ref:`cli-features` explains how to set or check if Mails and Files
+components are enabled for a user or a COS.
+
 .. toctree::
    :hidden:
 
@@ -33,3 +36,4 @@ administration of a |product| server.
    _admin/delegatedadmin
    _admin/domainlimits
    _admin/advancedadmin
+   _admin/setting-features
