@@ -10,10 +10,7 @@ packages for |team|, |adminui|, and |file|), then the packages related to
 installation and setup, so they can easily be installed on different
 nodes.
 
-.. card::
-
-   Proxy Installation and Node Setup
-   ^^^^^
+.. card:: Proxy Installation and Node Setup
 
    The proxy functionality requires no configuration, so we can just
    install the packages and configure the node only.
@@ -29,7 +26,9 @@ nodes.
 
                # apt install service-discover-agent carbonio-proxy \
                  carbonio-webui carbonio-files-ui carbonio-chats-ui \
-                 carbonio-admin-ui carbonio-admin-console-ui
+                 carbonio-admin-ui carbonio-admin-console-ui \
+		 carbonio-prometheus-node-exporter \
+		 carbonio-prometheus-nginx-exporter 
 
          .. tab-item:: RHEL
             :sync: rhel
@@ -38,7 +37,9 @@ nodes.
 
                # dnf install service-discover-agent carbonio-proxy \
                  carbonio-webui carbonio-files-ui carbonio-chats-ui \
-                 carbonio-admin-ui carbonio-admin-console-ui
+                 carbonio-admin-ui carbonio-admin-console-ui \
+		 carbonio-prometheus-node-exporter \
+		 carbonio-prometheus-nginx-exporter 
 
    #. Bootstrap |carbonio|
 
@@ -73,10 +74,13 @@ nodes.
          in file :file:`/var/lib/service-discover/password` which is
          accessible only by the ``root`` user.
 
-.. card::
+   
+   #. Make sure the |monit| exporter's firewall ports (**9100** and
+      **9113**) are open on the internal network, to allow the correct
+      communication with the server, that will be installed on
+      :bdg-secondary-line:`SRV-6`.
 
-   |vs| and Video Recording
-   ^^^^^
+.. card:: |vs| and Video Recording
 
    It is possible to install the |vs| without the Video Recording
    feature. If you wish to do so, follow the procedure below, but
@@ -162,10 +166,7 @@ nodes.
       .. hint:: You can mount on that location a dedicated disk or
          partition and keep it monitored for space usage.
 
-.. card::
-
-   Values used in the next steps
-   ^^^^
+.. card:: Values used in the next steps
 
    * |vsip| the local IP address of this node
 

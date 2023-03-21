@@ -32,7 +32,7 @@
 
 .. |dav| replace:: :abbr:`DAV (Distributed Authoring and Versioning,
    aka WebDAV)`
-   
+
 .. |eas| replace:: :abbr:`EAS (Exchange ActiveSync)`
 .. |imap| replace:: :abbr:`IMAP (Internet Message Access Protocol)`
 .. |pop| replace:: :abbr:`POP3 (Post Office Protocol)`

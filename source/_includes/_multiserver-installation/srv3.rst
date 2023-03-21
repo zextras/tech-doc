@@ -14,14 +14,18 @@ sends and receives emails.
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-mta
+         # apt install service-discover-agent carbonio-mta \
+	   carbonio-prometheus-node-exporter \
+	   carbonio-prometheus-mysqld-exporter 
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-mta
+         # dnf install service-discover-agent carbonio-mta \
+	   carbonio-prometheus-node-exporter \
+	   carbonio-prometheus-mysqld-exporter 
 
 These following tasks must be executed to configure the MTA.
 
@@ -60,9 +64,11 @@ These following tasks must be executed to configure the MTA.
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
 
-.. card::
+#. Make sure the |monit| exporter's firewall ports (**9100** and
+   **9104**) are open on the internal network, to allow the correct
+   communication with the server, that will be installed on
+   :bdg-secondary-line:`SRV-6`.
 
-   Values used in the next steps
-   ^^^^
+.. card:: Values used in the next steps 
 
    * |mtaip| the IP address of this node

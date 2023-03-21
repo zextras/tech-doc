@@ -25,7 +25,10 @@ PostgreSQL node using `Pgpool-II
 
             # apt install service-discover-server \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db carbonio-docs-connector-db
+              carbonio-mailbox-db carbonio-docs-connector-db \
+	      carbonio-prometheus-node-exporter \
+	      carbonio-prometheus-consul-exporter \
+	      carbonio-prometheus-openldap-exporter
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -34,7 +37,10 @@ PostgreSQL node using `Pgpool-II
 
             # dnf install service-discover-server \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db carbonio-docs-connector-db
+              carbonio-mailbox-db carbonio-docs-connector-db \
+	      carbonio-prometheus-node-exporter \
+	      carbonio-prometheus-consul-exporter \
+	      carbonio-prometheus-openldap-exporter
 
 #. Install pgpool
 
@@ -135,10 +141,12 @@ PostgreSQL node using `Pgpool-II
 
         # PGPASSWORD=DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
-.. card::
+#. Make sure the |monit| exporter's firewall ports (**9100**,
+   **9107**, **9330**) are open on the internal network, to allow the
+   correct communication with the server, that will be installed on
+   :bdg-secondary-line:`SRV-6`. 
 
-   Values used in the next steps
-   ^^^^
+.. card:: Values used in the next steps
       
    * |srv2h| this node's hostname, which can be retrieved using the
      command :command:`su - zextras -c "carbonio prov gas
