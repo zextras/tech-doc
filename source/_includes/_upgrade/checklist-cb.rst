@@ -18,6 +18,12 @@ versions** any version of |product| released before these two.
       :octicon:`check-circle;1em;sd-text-success` the |vs|, so please
       follow the directions that you find in Section
       :ref:`upgrade-vs` when upgrading the Node featuring the |vs|.
+      
+      :octicon:`check-circle;1em;sd-text-success` the Space
+      functionality in |team| is now disabled by default, so please
+      follow the directions that you find in Section
+      :ref:`chat-space-enable` when upgrading the Node featuring the
+      |vs|.
 
    .. grid-item-card:: Upgrade from older versions to |version|
       :columns: 12 12 6 6

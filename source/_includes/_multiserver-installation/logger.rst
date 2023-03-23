@@ -4,20 +4,20 @@
 
 The log system in |product| is ``rsyslog``, which supports a
 **centralised setup**: in other words, all log files produced by
-|product| can be sent to a unique host server, that is appropriately
-configured to receive log files.
+|product| can be sent to a unique host server (we call it *"Log
+Server"*), that is appropriately configured to receive log files,
+which is particularly useful in a Multi-Server installation.
 
-In a Multi-Server installation, we elect this server as the one on
-which the *Logger* is installed.
+In the instructions below, we elect the Log Server to be
+:bdg-secondary-line:`SRV-6`.
 
-.. card::
 
-   Logger Node Setup
-   ^^^^
+.. card:: Centralised Logging Setup
    
-   On the Logger node, open file :file:`/etc/rsyslog.conf`, find the
-   following lines, and uncomment them (i.e., remove the ``#``
-   character at the beginning of the line).
+   On :bdg-secondary-line:`SRV-6`, open file
+   :file:`/etc/rsyslog.conf`, find the following lines, and uncomment
+   them (i.e., remove the ``#`` character at the beginning of the
+   line).
 
    .. code::
 
@@ -33,9 +33,8 @@ which the *Logger* is installed.
 
       # systemctl restart rsyslog
 
-
-   Finally, specify the host server that will receive logs. Since  is the
-   Logger node, we need |srv6h|.
+   Finally, specify the host server that will receive logs. Since is
+   the :bdg-secondary-line:`SRV-6` node, we need |srv6h|.
 
    .. code:: console
 
@@ -44,14 +43,12 @@ which the *Logger* is installed.
    .. note:: Since ``zimbraLogHostname`` is a global attribute, this
       command must be run only once on one node.
 
-.. card::
-
-   Other Nodes Setup
-   ^^^^
+.. card:: Other Nodes Setup
    
-   Once the Logger node has properly been initialised, on **all other
+   Once the Log Server node has properly been initialised, on **all other
    nodes**, execute
 
    .. code:: console
 
       # /opt/zextras/libexec/zmsyslogsetup  && service rsyslog restart
+

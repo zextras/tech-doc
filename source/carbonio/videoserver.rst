@@ -57,11 +57,8 @@ following requirements:
 .. grid:: 1 1 2 3
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: System
       :columns: 12 12 6 4
-                
-      System
-      ^^^^^
 
       -  Minimum 4 CPU cores, suggested at least 8 to handle more than 100
          users at the same time
@@ -73,11 +70,8 @@ following requirements:
          The |vs| mainly scales on the CPU, so more CPU cores
          and power means more connected users.
 
-   .. grid-item-card::
+   .. grid-item-card:: Network
       :columns: 12 12 6 4
-                
-      Network
-      ^^^^^
 
       - A public IP address. This is either the IP address of |vs|, if
         it is directly accessible from remote clients on the Internet,
@@ -92,11 +86,8 @@ following requirements:
 
       -  WebSockets
 
-   .. grid-item-card::
+   .. grid-item-card:: Ports
       :columns: 12 12 6 4
-
-      Ports
-      ^^^^
 
       - The mailbox server will establish a WebSocket on port 8188
         (TCP) to communicate with the |vs|
@@ -133,35 +124,47 @@ Therefore, each mailbox has its own connection pool, which can be
 controlled via the Carbonio CLI. The commands to control the service
 are straightforward:
 
--  Start the connection pool::
+-  Start the connection pool
 
-     # carbonio chats doStartService chats-video-server-connection-pool
+   .. code:: console
 
--  Shutdown the connection pool::
+      zextras$ carbonio chats doStartService chats-video-server-connection-pool
 
-     # carbonio chats doStopService chats-video-server-connection-pool
+-  Shutdown the connection pool
+
+   .. code:: console
+
+      zextras$ carbonio chats doStopService chats-video-server-connection-pool
 
 -  Check a connection pool status. This command reports information
    about the node *on which it is executed*.
 
    .. code:: console
 
-      # carbonio chats clusterstatus
+      zextras$ carbonio chats clusterstatus
 
-           isFullySynced                                       true
-           servers
-           meeting_servers
-               <ip_videoserver>:8188
-                   id                                           123
-                   hostname                                     <ip_videoserver>:8188
-                   status                                       online  
-                   last_failure                                         
-                   local_meetings_hosted                        2       
+	   isFullySynced                                       true
+	   servers
+	    <ip_server>
+		online                                          true
+		min_api_version                                 1
+		max_api_version                                 22
+	   meeting_servers
+	       <ip_videoserver>:8188
+		   id                                           123
+		   hostname                                     <ip_videoserver>:8188
+		   status                                       online
+		   servlet_port                                 8090
+		   last_failure
+		   local_meetings_hosted                        2
 
    The output of this command contains this information:
-   
+
    - Should the remote |vs| be offline or unreachable, the
      status will be **offline** instead of **online**.
+
+   - The API versions supported by the server (``min_api_version`` and
+     ``min_api_version``)
 
    - ``last failure`` shows an error message (e.g., *Unauthorized
      request (wrong or missing secret/token)* or a generic *Runtime
@@ -195,10 +198,7 @@ removal on the video server is required).
 .. warning:: When using multiple video servers, meetings are instanced
    on any of the available instances.
 
-.. card::
-
-   CLI Commands
-   ^^^^
+.. card:: CLI Commands
 
     The CLI command to manage |vs| installations is :command`carbonio
     team` with the sub-command ``video-server`` and the parameters
@@ -215,9 +215,9 @@ removal on the video server is required).
 
    .. code:: console
 
-      # carbonio chats video-server add *videoserver.example.com* [param VALUE[,VALUE]]
+      zextras$ carbonio chats video-server add *videoserver.example.com* [param VALUE[,VALUE]]
 
-      # carbonio chats video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
+      zextras$ carbonio chats video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
 
 .. _vs-bandwidth-and-codecs:
 
@@ -227,11 +227,8 @@ Bandwidth and Codecs
 .. grid:: 1 1 2 4
    :gutter: 2
 
-   .. grid-item-card::
+   .. grid-item-card:: Video Bandwidth
       :columns: 12 12 6 4
-
-      Video Bandwidth
-      ^^^^^
 
       The administrator can set the webcam stream quality and the screenshare
       stream quality specifing the relative bitrate *in Kbps*. The values must
@@ -250,11 +247,8 @@ Bandwidth and Codecs
          By default both the webcam bandwidth and the screen sharing bandwidth
          are set to 200 Kbps.
 
-   .. grid-item-card::
+   .. grid-item-card:: Video Codecs
       :columns: 12 12 6 4
-
-      Video Codecs
-      ^^^^
 
       By default, the VP8 video codec is used. This is to ensure the best
       compatibility, as this codec is available in all supported browsers, but
@@ -288,11 +282,8 @@ Bandwidth and Codecs
 
          :command:`carbonio config global set attribute teamChatVideoCodecH264 value true`
 
-   .. grid-item-card::
+   .. grid-item-card:: Audio Codec
       :columns: 12 12 6 4
-
-      Audio Codec
-      ^^^^
 
       The audio codec used by the |vs| is Opus. No other codecs are
       supported, as Opus is currently the only reliable one available across
@@ -313,11 +304,8 @@ The following settings influence the audio experience.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Audio Quality
       :columns: 12 12 6 6
-
-      Audio Quality
-      ^^^^
 
       The administrator can set the Opus audio quality by setting the sampling
       rate (in Hz) in the ``teamChatAudioSamplingRate`` global attribute.
@@ -334,20 +322,17 @@ The following settings influence the audio experience.
 
       -  48000 → represents the fullband bandwidth
 
-   .. grid-item-card::
+   .. grid-item-card:: Audio Sensitivity
       :columns: 12 12 6 6
-
-      Audio Sensitivity
-      ^^^^
 
       The administrator can optimize the audio sensitivity with these two
       commands:
 
       .. code:: console
 
-         # carbonio config global set attribute teamChatAudioLevelSensitivity value 55
+         zextras$ carbonio config global set attribute teamChatAudioLevelSensitivity value 55
 
-         # carbonio config global set attribute teamChatAudioSamplingSensitivityInterval value 10
+         zextras$ carbonio config global set attribute teamChatAudioSamplingSensitivityInterval value 10
 
       The audio level sensitivity defines how much the audio should be
       normalized between all the audio sources. The value has a range
@@ -419,18 +404,14 @@ the |vs| or not.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: |vs| already installed
       :columns: 12 12 6 6
-      :class-header: card-abyss
-
-      |vs| already installed
-      ^^^^
 
       If you already installed |vs|, execute this command:
 
       .. code:: console
 
-         # carbonio chats video-server update-servlet example.com 8188 8090
+         zextras$ carbonio chats video-server update-servlet example.com 8188 8090
 
       Here, replace *example.com* with the domain name or IP on which
       the |vs| is installed, *8188* the |vs| port, and *8090* (which
@@ -439,12 +420,8 @@ the |vs| or not.
       defined in file
       :file:`/etc/carbonio/videoserver-recorder/recordingEnv`.
 
-   .. grid-item-card::
+   .. grid-item-card:: |vs| not yet installed
       :columns: 12 12 6 6
-      :class-header: card-abyss
-
-      |vs| not yet installed
-      ^^^^
 
       If you did not yet install |vs|, you can execute the following
       command, which configures at the same time both the |vs| and the
@@ -452,7 +429,7 @@ the |vs| or not.
 
       .. code:: console
 
-         # carbonio chats video-server add example.com port 8188 servlet_port 8090 secret A_SECRET_PASSWORD
+         zextras$ carbonio chats video-server add example.com port 8188 servlet_port 8090 secret A_SECRET_PASSWORD
 
       Replace *example.com* with the actual domain name or IP, *8188*
       and *8090* with the ports associated with the |vs| and the

@@ -17,14 +17,11 @@ environment, composed by **six nodes** (that we will denote as *SRV1*,
    provide sharing and collaborative editing of documents, and the
    |storage| instance
 #. **SRV6** is another AppServer and consists of |pv|, |carbonio|\'s
-   ability to preview snippets or thumbnails of a document, the
-   Logger, and the User Management
+   ability to preview snippets or thumbnails of a document, and the
+   User Management
 
-The Logger and |storage| Roles must be unique within a |product|
-infrastructure, but for different reasons. Logging is centralised so
-all logs produced by the various software running are available in a
-same place and ease the search for issues or
-troubleshooting. |storage| is a dependency for |file| and therefore it
+The |storage| Roles must be unique within a |product|
+infrastructure. |storage| is a dependency for |file| and therefore it
 is installed on the first node on which you install |file|. When you
 install |file| on another node, |carbonio| will recognise via |mesh|
 that there is already an instance of |storage|, prevent its
