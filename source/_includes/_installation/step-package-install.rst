@@ -37,7 +37,7 @@ Next, we install all packages needed for |product|.
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
          carbonio-mta \
-         carbonio-appserver carbonio-logger \
+         carbonio-appserver \
          carbonio-user-management \
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
@@ -64,7 +64,7 @@ Next, we install all packages needed for |product|.
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
          carbonio-mta  \
-         carbonio-appserver carbonio-logger  \
+         carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
