@@ -143,12 +143,13 @@ installed on any node, provided the dependencies are respected.
 * **User Management**. It registers the user status (logged in or
   logged out) and user attributes (e.g., on which AppServer a user is
   logged in).
-* **Logger**. It provides a centralised log service for all Roles
-  installed. It is also important to highlight that there **must be a
-  unique** Logger in a Multi-Server installation.
 * **Admin Panel**. The core administration centre in which to manage
   the configuration options of |product|
 
+.. note:: The **Logger** component, which is based on a cron-based
+   collection of CSV files, has been deprecated. We are working to
+   integrate in |product| a metrics-based monitoring system, based on
+   the Prometheus technology.
 
 Supported Mail Protocols
 ========================

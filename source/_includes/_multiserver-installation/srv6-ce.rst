@@ -2,11 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv6 - AppServer - Advanced - Preview - Logger
+.. srv6 - AppServer - Advanced - Preview 
 
 
-On this node we show how to install the Preview, the Logger, and the
-User Management.
+On this node we show how to install the Preview and the User
+Management.
 
 .. hint:: We suggest that *Preview* and the |docs|-related packages be
    installed on different physical nodes.
@@ -21,8 +21,7 @@ First install all the necessary packages:
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-preview-ce \
-           carbonio-logger
+           carbonio-user-management carbonio-preview-ce 
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -33,7 +32,6 @@ First install all the necessary packages:
 
          # dnf install service-discover-agent carbonio-appserver
          # dnf install carbonio-user-management carbonio-preview-ce
-         # dnf install carbonio-logger
 
 Execute the following tasks.
 
@@ -101,9 +99,6 @@ Execute the following tasks.
 
       zextras$ zmcontrol stop
       zextras$ zmcontrol start
-
-To configure the Logger, please refer to Section :ref:`logger_node_config`.
-To configure the Logger, please refer to Section :ref:`logger_node_config`.
 
 .. card::
 
