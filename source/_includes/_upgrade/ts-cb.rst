@@ -58,3 +58,16 @@ Finally, restart the mailbox service.
    
    zextras$ zmcontrol stop
    zextras$ zmcontrol start
+
+.. _chat-space-enable:
+
+Enable |team| Space Functionality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting from version |version|, the *Space* functionality in |team|
+is disabled by default. It can be enabled again with the command
+
+.. code:: console
+
+   zextras$ carbonio config set global teamSpacesEnabled true
+

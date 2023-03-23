@@ -39,6 +39,16 @@ can be run in |sh| as
 The |sh| supports all carbonio commands, including provisioning (i.e.,
 :command:`carbonio prov`) commands.
 
+Adding options to any commands is also possible; for example, you can
+run
+
+.. code:: console
+
+   carbonio> --progress powerstore doVolumeToVolumeMove sourceVolume destVolume
+
+and see informative messages printed on screen while the data is moved
+from ``sourceVolume`` to ``destVolume``.
+
 To launch multiple carbonio commands, you can save them in a file
 (called :file:`carbonio-commands.txt` here) and pipe them to the
 carbonio shell. For example, consider file
