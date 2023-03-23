@@ -37,9 +37,8 @@ Next, we install all packages needed for |product|.
          carbonio-proxy \
          carbonio-webui carbonio-files-ui \
          carbonio-chats-ui \
-         carbonio-mta \
-         carbonio-mailbox-db \
-         carbonio-appserver carbonio-logger \
+         carbonio-mta \ carbonio-mailbox-db \
+         carbonio-appserver \
          carbonio-advanced carbonio-zal \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
@@ -68,7 +67,6 @@ Next, we install all packages needed for |product|.
          carbonio-files-ui carbonio-files \
          carbonio-files-db \
          carbonio-mta \
-         carbonio-logger \
          carbonio-appserver \
          carbonio-mailbox-db \
          carbonio-advanced carbonio-zal \

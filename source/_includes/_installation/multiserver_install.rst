@@ -90,23 +90,6 @@
 
                # dnf install service-discover-agent carbonio-appserver
 
-   * Logger node
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt install service-discover-agent carbonio-appserver carbonio-logger
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf install service-discover-agent carbonio-appserver carbonio-logger
 
 .. card::
    :class-header: sd-font-weight-bold sd-fs-5
@@ -155,10 +138,6 @@
 
    * Store node: configure the MTA address
 
-   * Logger node: configure the MTA address
-
-   The **Logger node** requires a specific configuration and setup
-   that is described in section :ref:`logger_node_config`.
 
 At this point, the nodes have been configured and the installation has
 been completed.
@@ -188,10 +167,10 @@ setup |mesh|, which is explained below.
    The outcome of the previous command is a GPG key that you need to
    copy to **all other nodes**.
 
-   Assuming that you have nodes ``proxy``, ``mta``, ``store``, and
-   ``logger`` (see the Multi-Server :ref:`example installation
-   scenario <multiserver-installation>`, use the following commands,
-   provided you use the correct hostname or IP address of the nodes.
+   Assuming that you have nodes ``proxy``, ``mta``, and ``store`` (see
+   the Multi-Server :ref:`example installation scenario
+   <multiserver-installation>`, use the following commands, provided
+   you use the correct hostname or IP address of the nodes.
 
    .. code:: console
 
@@ -200,8 +179,6 @@ setup |mesh|, which is explained below.
       # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg mta:/etc/zextras/service-discover/cluster-credentials.tar.gpg
 
       # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg store:/etc/zextras/service-discover/cluster-credentials.tar.gpg
-
-      # scp /etc/zextras/service-discover/cluster-credentials.tar.gpg logger:/etc/zextras/service-discover/cluster-credentials.tar.gpg
 
    Finally, log in to each nodes and run the command, making sure to
    use the same password used in the first step.

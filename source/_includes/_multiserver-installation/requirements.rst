@@ -10,11 +10,6 @@ valid, but take into account the following advices:
   resources per node are needed. We recommend at least **4GB** of RAM on
   each node, though.
 
-* The node on which the Logger is installed acts as a log-concentrator
-  and therefore gathers log files from all the other nodes. Depending
-  on the logging level set on the nodes, the required disk space may
-  greatly vary, so it is not easy to provide a minimum or suggested value.
-
 
 Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~

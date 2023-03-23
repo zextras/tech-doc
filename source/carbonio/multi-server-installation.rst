@@ -145,14 +145,14 @@ SRV5: Advanced, AppServer, Files, and Docs
 
 .. _srv6-install:
 
-SRV6: Advanced, AppServer, Preview, and Logger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV6: Advanced, AppServer, and Preview
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6.rst
 
 .. include:: /_includes/_installation/complete.rst
              
-.. _logger_node_config:
+.. _centralised-logging:
 
 Centralised Logging Configuration
 ---------------------------------
