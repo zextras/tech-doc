@@ -67,6 +67,10 @@ Global settings concern the appearance of |product| and allow to
 customise various option that will influence how the |product| web
 interface appears to the web clients.
 
+.. note:: These setting are applied to all the domains configured; if
+   you want to customise the appearance, please change the settings
+   under :menuselection:`Domains --> Details --> Theme`.
+
 .. include:: /_includes/adminpanel/wl.rst
 
 .. _ap-domain-details:
@@ -214,8 +218,8 @@ Theme
 ~~~~~
 
 These setting are the same that appear in the :ref:`Global Theme
-<ap-theme>` section, but are domain-specific: if not defined, the
-global theme settings will be applied.
+<ap-theme>` section, but are domain-specific: if not defined at domain
+level, the global theme settings will be applied.
 
 .. _ap-manage-domains:
 
