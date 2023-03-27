@@ -19,7 +19,7 @@
 
       zxsuite powerstore doCheckBlobs start
 
-   and, in case any error is reported, run
+   and, in case any missing Blob is reported, run
 
 
    .. code:: console
