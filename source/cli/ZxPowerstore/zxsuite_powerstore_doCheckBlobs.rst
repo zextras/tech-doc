@@ -18,19 +18,19 @@
 +-----------------+-----------------+-----------------+-----------------+
 | mailbox_ids(O)  | Integer[,..]    | 2,9,27          |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| missing_blob    | Boolean         | true|false      | true            |
+| missing_blob\   | Boolean         | true|false      | true            |
 | s_crosscheck(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | traced(O)       | Boolean         | true|false      | false           |
 +-----------------+-----------------+-----------------+-----------------+
-| fix_i           | Boolean         | true|false      | false           |
-| ncorrect_compre |                 |                 |                 |
+| fix_inco\       | Boolean         | true|false      | false           |
+| rrect_compre\   |                 |                 |                 |
 | ssed_digests(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| missing_blob    | Boolean         | true|false      | false           |
+| missing_blob\   | Boolean         | true|false      | false           |
 | _delete_item(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
-| c               | Boolean         | true|false      | false           |
+| c\              | Boolean         | true|false      | false           |
 | heck_digests(O) |                 |                 |                 |
 +-----------------+-----------------+-----------------+-----------------+
 | items(O)        | String          | z               | all             |
