@@ -1,0 +1,39 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+
+.. uncomment for next release (3.17.0)
+
+   Zextras Suite Changelog - Release 3.16.0
+   ========================================
+
+      Release Date: Mar 13th, 2023
+
+                              
+.. warning:: If you have installed |suite| release **3.16.0** with HSM
+   policies active, you are advised to upgrade to release **3.16.1**
+   and execute command
+
+   .. code:: console
+
+      zxsuite powerstore doCheckBlobs start
+
+   and, in case any missing Blob is reported, run
+
+
+   .. code:: console
+
+      zxsuite backup doRestoreBlobs *volume_id*
+
+   Please refer to the documentation of the CLI commands:
+   :ref:`doCheckBlobs <zxsuite_powerstore_doCheckBlobs>` and
+   :ref:`doRestoreBlobs <zxsuite_backup_doRestoreBlobs>`.
+           
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-461
+
+* *Title:* HSM Bugfix 
+
+* *Description:* Fixed a bug that caused missing blobs in the store on applying the HSM policies.
