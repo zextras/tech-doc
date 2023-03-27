@@ -2,11 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv6 - AppServer - Advanced - Preview - Logger
+.. srv6 - AppServer - Advanced - Preview 
 
 
-On this node we install the Preview, the Logger, the User Management,
-and advanced services.
+On this node we install the Preview, the User Management, and advanced
+services.
 
 .. hint:: We suggest that *Preview* and the |docs|-related packages be
    installed on different physical nodes.
@@ -116,10 +116,3 @@ Execute the following tasks.
       zextras$ zmcontrol stop
       zextras$ zmcontrol start
 
-To configure the Logger, please refer to Section :ref:`logger_node_config`.
-
-.. card:: Values used in the next steps
-     
-   * |srv6h| this node's hostname, which can be retrieved using the
-     command :command:`su - zextras -c "carbonio prov gas
-     service-discover"`
