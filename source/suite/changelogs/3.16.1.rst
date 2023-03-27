@@ -36,5 +36,4 @@
 
 * *Title:* HSM Bugfix 
 
-* *Description:* Fixed a bug that caused missing blobs for items in the dumpster when HSM policy retention was less than the dumpster's one.
-
+* *Description:* Fixed a bug that caused missing blobs in the store on applying the HSM policies.
