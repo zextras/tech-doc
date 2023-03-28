@@ -265,8 +265,9 @@ Running a Restore on New Account
 To start a Restore on New Account via the CLI, use the
 :command:`doRestoreOnNewAccount` command.
 
-.. restore include or replace it with actual code
-   .. include:: /cli/ZxBackup/carbonio_backup_doRestoreOnNewAccount.rst
+.. card::
+   
+   .. include:: /carboniocli/carbonio_backup_doRestoreOnNewAccount.rst
 
 .. hint:: At the end of the operation, you can check that the
    configuration of the new mailbox is the same by running the
