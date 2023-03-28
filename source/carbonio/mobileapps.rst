@@ -58,10 +58,10 @@ Mobile APPs Download
 Mobile Clients Features
 -----------------------
 
-.. grid:: 1 1 2 3
+.. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: **Mail App**
+   .. grid-item-card:: Mail App
       :columns: 4
 
       |carbonio| Mail is |zx| official and free app for |carbonio| and |ce|
@@ -85,7 +85,7 @@ Mobile Clients Features
       * Dark theme
       * Tag e-mails
 
-   .. grid-item-card:: **Chats App**
+   .. grid-item-card:: Chats App
       :columns: 4
 
       The |team| App is |zx| official and free app for |product| users and
@@ -104,7 +104,7 @@ Mobile Clients Features
       * Enable or Disable Push Notifications
       * Dark mode supported
 
-   .. grid-item-card:: **Files App**
+   .. grid-item-card:: Files App
       :columns: 4
 
       The |file| App is |zx| official and free app for |product| users,
@@ -121,8 +121,39 @@ Mobile Clients Features
       * Manage trash folder
       * Manage links for sharing files and folders
       * UI support for tablets
-      * Preview of documental and multimedia files directly into the app
+      * Preview of multimedia files directly into the app
 
+.. _mobile-files-preview:
+
+Preview in Files App
+--------------------
+
+The following file types can be previewed on the Files
+App. Unsupported file types can be opened with an external
+application.
+
+.. grid:: 1 1 2 2
+   :gutter: 3
+
+   .. grid-item-card:: iOS
+      :columns: 6
+
+      * iWork
+      * Microsoft Office Documents
+      * RTF documents
+      * PDF
+      * Images / Video / Audio files
+      * TXT 
+      * OpenDocument (odt, ods, odp)
+      
+   .. grid-item-card:: Android
+      :columns: 6
+
+      * PDF
+      * Images / Video / Audio files
+      * TXT (coming soon)
+      * OpenDocument (coming soon)
+      
 .. _mobile-apps-conf:
 
 Mobile APPs Configuration
