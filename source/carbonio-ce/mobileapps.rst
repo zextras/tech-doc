@@ -198,11 +198,8 @@ server, which is encrypted, provided that the SSL certificate is
 Notifications
 ~~~~~~~~~~~~~
 
-Android devices manufacturers have strict default settings on which
-apps can display notifications, sometimes causing the |carbonio| Mail
-App not to be able to notify new messages.
-
-To make sure that your device can receive notifications, follow these steps:
+To make sure your Android or iOS device can receive notifications,
+follow these steps:
 
 #. Log out from the app
 
