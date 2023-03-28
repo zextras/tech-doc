@@ -202,7 +202,7 @@ Android devices manufacturers have strict default settings on which
 apps can display notifications, sometimes causing the |carbonio| Mail
 App not to be able to notify new messages.
 
-To make sure that your device allows all required notifications, follow these steps:
+To make sure that your device can receive notifications, follow these steps:
 
 #. Log out from the app
 
@@ -215,16 +215,9 @@ To make sure that your device allows all required notifications, follow these st
 
 #. Enable the notifications (first option on the top)
 
-#. Enable the banner notification on the **Appointment** and **E-mail**
-   subsections
+#. Enable the banner notification on the **Appointment** subsections
 
 #. Log back in
 
-Notifications should now work!
-
-.. warning:: For push notifications to work on the device, the
-   |product| server must be able to communicate with the
-   notifications.zextras.com service on port 443 (The exact URL to
-   which notifications are sent is:
-   https://notifications.zextras.com/firebase/ )
-
+Notifications should now work. Bear in mind that you will get notifications for new
+e-mails only if the app is running.
