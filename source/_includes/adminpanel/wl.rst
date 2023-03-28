@@ -2,6 +2,12 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+All the resources (logos, images, icons) mentioned in this section
+will be saved in the :file:`opt/zextras/web/login/assets/` directory
+and will be accessible at URL
+``https://<PROXY_IP>/static/login/assets/filename.ext``. You can also
+use any resource that has a public URL.
+
 .. grid:: 1 1 2 2
    :gutter: 3
 
@@ -24,22 +30,21 @@
 
       This is the *logo* that appears on the login mask of |product|
       at the top of the panel in the login page. There are different
-      *dimensions* for the Admin and End User logos.
+      *dimensions* and *ratios* for the Admin and End User logos.
      
       **Requirements**:
 		  
       Each login logo must adhere to the following **suggested**
       requirements.
 
-      * The preferred format is **SVG**, **PNG** is supported,
-        provided both the dimensions and ratio are satisfied
+      * The preferred format is **SVG**
       * The logo must have a **transparent background**
-      * The logo must be saved on a **public URL**, i.e., it must be
-        publicly accessible
-      * The dimensions must be:
+      * For a correct display of the logos, please respect the aspect
+        ratio indicated and (in the case of raster images) respect
+        dimensions as close as possible to the default ones
 
-        * Admin: **340x47** pixel, with ratio **7:1**
-        * End user: **340x85** pixel, with ratio **4:1**
+        * Admin: ratio **7:1**, default **340x47** pixel
+        * End user: ratio **4:1**, default **340x85** pixel
       
 
    .. grid-item-card:: Logo in the WebUiApp
@@ -47,23 +52,22 @@
 
       This is the *logo* that appears on the main page after a
       successful login and is displayed on the upper left
-      corner. There are different *dimensions* for the Admin and End
-      User logos.
+      corner. There are different *dimensions* and *ratios* for the
+      Admin and End User logos.
 
       **Requirements**:
 		  
       Each WebUiApp logo must adhere to the following **suggested**
       requirements.
 
-      * The preferred format is **SVG**, **PNG** is supported,
-        provided both the dimensions and ratio are satisfied
+      * The preferred format is **SVG**
       * The logo must have a **transparent background**
-      * The logo must be saved on a **public URL**, i.e., it must be
-        publicly accessible
-      * The dimension must be:
+      * For a correct display of the logos, please respect the aspect
+        ratio indicated and (in the case of raster images) respect
+        dimensions as close as possible to the default ones
 
-        * Admin: **150x30** pixel, with ratio **5:1**
-        * End user: **250x31** pixel, with ratio **8:1**
+        * Admin: ratio **5:1**, default **150x30** pixel
+        * End user: ratio **8:1**, default **250x31** pixel
       
    .. grid-item-card:: Favicon
       :columns: 6
@@ -75,10 +79,8 @@
       The *favicon* must adhere to the following **maximum** requirements.
 
       * The format must be **ICO**
-      * The dimension must be **64x64** pixel, with ratio **1:1**
+      * The dimensions must be **64x64** pixel, with ratio **1:1**
         (i.e., it must be square)
-      * The favicon must be saved on a **public URL**, i.e., it must be
-        publicly accessible
 
    .. grid-item-card:: Background for the Login Page
       :columns: 6
@@ -93,10 +95,9 @@
       **maximum** requirements.
 
       * The format must be **JPG**
-      * The dimension must be **1920x1050** pixel, with a ratio of **16:9**
+      * The dimensions must be at least **1920x1050** pixel, with
+        ratio **16:9**
       * The size must be **800** Kb
-      * The image must be saved on a **public URL**, i.e., it must be
-        publicly accessible
 
 All customisations can be removed at once by clicking the
 :bdg-danger-line:`RESET` button.
