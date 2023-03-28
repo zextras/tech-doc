@@ -219,5 +219,5 @@ To make sure that your device can receive notifications, follow these steps:
 
 #. Log back in
 
-Notifications should now work. Bear in mind that you will get notifications for new
-e-mails only if the app is running.
+Notifications should now work, but note that if the app is not
+running, you will only receive notifications for appointments.
