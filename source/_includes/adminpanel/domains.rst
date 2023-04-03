@@ -301,7 +301,10 @@ four tabs:
       The bottom part of the tab can be seen as either a *Simplified
       View* or and *Advances View* and allows to define permissions of
       the delegated people. There are small differences in the two
-      views, the most relevant is how to set the permission..
+      views, the most relevant is how to set the permission.
+
+      .. hint:: Details on the rights that can be granted can be found
+         :ref:`in the box <delegates-rights>` below.
 
       In the *Simplified View*, select a user or group, then the
       permission and click the :bdg-primary-line:`ADD THE ACCOUNT`
@@ -314,41 +317,47 @@ four tabs:
       guided procedures in the |adminui|, allows to review the
       settings before saving them.
 
-      .. card:: Available Delegate's Rights
+.. _delegates-rights:
 
-         The Simplified View permissions are granted using
-         checkboxes:
+.. card:: Available Delegate's Rights
 
-         * read, access with no permission to change
-         * read/write, full read and write permission
-         * send, the recipient will see as sender the selected user
-         * send on behalf, similar to the previous. the recipient will
-           see the the sender's e-mail preceded by the string *On
-           behalf of*
+   The Rights that can be granted to a user are basically to read,
+   write, and send emails, and to access e-mails folders. Rights can
+   be granted when :ref:`editing an account <ap-accounts>`, in the
+   dedicated :blue:`Delegates` tab. Rights can be granted using a
+   *Simplified* or an *Advanced* method.
 
-         In the Advanced View, rights are given in a slight different
-         way and can be defined in a more granular way. In the
-         :blue:`SET RIGHTS` step it is possible to grant the following
-         rights: **Send Mails only**, **Read Mails only**, **Send and
-         Read Mails**, **Manage** and **Send, Read, and Manage Mails
-         (all of the above)**. Depending on the choice, the bottom
-         part will show additional options, according to the following
-         table.
+   The *Simplified* method permissions are granted using checkboxes:
 
-         .. list-table::
+   * read, access with no permission to change
+   * read/write, full read and write permission
+   * send, the recipient will see as sender the selected user
+   * send on behalf, similar to the previous. the recipient will
+     see the the sender's e-mail preceded by the string *On
+     behalf of*
 
-            * - Option
-              - Additional options
-            * - Send Mails only
-              - Send, Send on Behalf of
-            * - Read Mails only
-              - folders to share
-            * - Send and Read Mails
-              - Send, Send on Behalf of; folders to share
-            * - Manage
-              - Folders to share
-            * - Send, Read, and Manage Mails
-              - Send, Send on Behalf of; folders to share
+   In the *Advanced* method, rights are given in a slight different
+   way and can be defined in a more granular way. In the :blue:`SET
+   RIGHTS` step it is possible to grant the following rights: **Send
+   Mails only**, **Read Mails only**, **Send and Read Mails**,
+   **Manage** and **Send, Read, and Manage Mails (all of the
+   above)**. Depending on the choice, the bottom part will show
+   additional options, according to the following table.
+
+   .. list-table::
+
+      * - Option
+        - Additional options
+      * - Send Mails only
+        - Send, Send on Behalf of
+      * - Read Mails only
+        - folders to share
+      * - Send and Read Mails
+        - Send, Send on Behalf of; folders to share
+      * - Manage
+        - Folders to share
+      * - Send, Read, and Manage Mails
+        - Send, Send on Behalf of; folders to share
 
 At the bottom of the panel, a list of the *active sessions* appears:
 for example, if a user has logged in from three different devices and
