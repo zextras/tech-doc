@@ -317,6 +317,10 @@ four tabs:
       guided procedures in the |adminui|, allows to review the
       settings before saving them.
 
+.. index::
+   single: Delegate Rights
+   see: User Permissions; Delegate Rights
+
 .. _delegates-rights:
 
 .. card:: Available Delegate's Rights
