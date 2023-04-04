@@ -287,6 +287,11 @@ four tabs:
       guided procedures in the |adminui|, allows to review the
       settings before saving them.
 
+      .. note:: The user who delegates and the user who is the
+         delegated can not share the same account; in other words, it
+         is not possible to add as a delegated user the same account
+         of the user who is delegating.
+
 .. index::
    single: Delegate Rights
    see: User Permissions; Delegate Rights
