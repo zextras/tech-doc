@@ -491,11 +491,18 @@ simply writing the e-mail addresses in the test field.
 .. hint:: E-mail addresses are auto-completed while typing.
 
 In the third tab, advanced settings can be configured, including to
-limit the members that are allowed to send e-mails to the list.
+limit the members that are allowed to send e-mails to the list, the
+policies  for subscription and unsubscription requests, and the owners
+of the mailing list,
 
 The last tab recaps the settings: now you can wither go back to any of
 the previous tabs and change some of the settings, or proceed to
 create the mailing list.
+
+Once a mailing list has been created, it can be further configured by
+adding aliases, which work like e-mail accounts, changing the members
+and owners, and granting selected users the permission to send e-mails
+to the mailing list.
 
 .. addressed at a later point
 
