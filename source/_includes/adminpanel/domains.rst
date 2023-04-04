@@ -317,6 +317,11 @@ four tabs:
       guided procedures in the |adminui|, allows to review the
       settings before saving them.
 
+      .. note:: The user who delegates and the user who is the
+         delegated can not share the same account; in other words, it
+         is not possible to add as a delegated user the same account
+         of the user who is delegating.
+
 .. index::
    single: Delegate Rights
    see: User Permissions; Delegate Rights
@@ -491,7 +496,6 @@ limit the members that are allowed to send e-mails to the list.
 The last tab recaps the settings: now you can wither go back to any of
 the previous tabs and change some of the settings, or proceed to
 create the mailing list.
-
 
 .. addressed at a later point
 
