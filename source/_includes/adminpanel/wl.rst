@@ -11,15 +11,22 @@ use any resource that has a public URL.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::       Light/Dark mode
+   .. grid-item-card:: Light/Dark mode
       :columns: 6
 
       The *light* mode features a white-based colour combination for
       the |product| login page and GUI, while the *dark* mode has a
       black-based colour combination.
 
-   .. grid-item-card:: Title & Copyrights Information 
+   .. grid-item-card:: Primary colours Light and Dark mode
       :columns: 6
+
+      Select the primary colour that will used in either Light or Dark
+      mode, using an HEX (HTML) value. The secondary colour will be
+      automatically computed.
+
+   .. grid-item-card:: Title & Copyrights Information
+      :columns: 12
 
       The *title* is the string that will appear on the client's tab,
       while the *copyrights information* will appear at the bottom of
@@ -72,7 +79,9 @@ use any resource that has a public URL.
    .. grid-item-card:: Favicon
       :columns: 6
 
-      The favicon will be displayed next to the tab's name.
+      The favicon will be displayed next to the tab's name and in
+      browser notifications, if they have been activated in your
+      browser.
       
       **Requirements**:
 		  
