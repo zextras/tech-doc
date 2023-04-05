@@ -128,4 +128,3 @@ Final Steps: Complete Setup and Activate License
 ----------------------------------------
 
 .. include:: /_includes/_installation/commands.rst
-(END)
