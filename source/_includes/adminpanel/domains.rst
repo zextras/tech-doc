@@ -154,7 +154,7 @@ We build on the domain created in :ref:`previous section
       :scale: 50
       :align: center
 
-At the bottom of the page, button :red:`REMOVE DOMAIN` allows to
+At the bottom of the page, button :red:`DELETE DOMAIN` allows to
 delete the domain. When clicked, a dialog will open, listing all items
 defined on the domain (Accounts, mailing lists, resources, and so on)
 and that will be deleted together with the domain. Two choices are
