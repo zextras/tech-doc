@@ -260,3 +260,28 @@ node hosting the **Proxy** Role.
    .. [3] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
+
+.. dropdown:: Ports Used by |monit|
+   :open:
+
+   The |monit| component requires the following ports to be accessible
+   by the server. Each port must be opened on the Node on which the
+   corresponding exporter is installed.
+
+   .. note:: If you plan to allow access to |monit| from external
+      networks, make sure that port **9090 TCP** on the |monit| server
+      is reachable.
+
+ 
+   .. csv-table::
+      :header: "Port", "Protocol", "Package/Exporter"
+      :widths: 10 20 70
+
+      "9115", "TCP", "carbonio-prometheus-blackbox-exporter"
+      "9107", "TCP", "carbonio-prometheus-consul-exporter"
+      "9104", "TCP", "carbonio-prometheus-mysqld-exporter"
+      "9113", "TCP", "carbonio-prometheus-nginx-exporter"
+      "9100", "TCP", "carbonio-prometheus-node-exporter"
+      "9330", "TCP", "carbonio-prometheus-openldap-exporter"
+      "9187", "TCP", "carbonio-prometheus-postgres-exporter"
+      "9256", "TCP", "carbonio-prometheus-process-exporter"

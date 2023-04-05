@@ -14,10 +14,11 @@ configure the various services needed.
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-appserver \
-           carbonio-storages-ce carbonio-user-management \
-           carbonio-files-ce carbonio-docs-connector-ce \
-           carbonio-docs-editor
+	 # apt install service-discover-agent carbonio-appserver \
+	   carbonio-storages-ce carbonio-user-management \
+	   carbonio-files-ce carbonio-docs-connector-ce \
+	   carbonio-docs-editor carbonio-prometheus-node-exporter \
+	   carbonio-prometheus-mysqld-exporter
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -26,10 +27,12 @@ configure the various services needed.
 
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-appserver
-         # dnf install carbonio-storages-ce carbonio-user-management
-         # dnf install carbonio-files-ce carbonio-docs-connector-ce
-         # dnf install carbonio-docs-editor
+	 # dnf install service-discover-agent carbonio-appserver
+	 # dnf install carbonio-storages-ce carbonio-user-management
+	 # dnf install carbonio-files-ce carbonio-docs-connector-ce
+	 # dnf install carbonio-docs-editor
+	 # yum install carbonio-prometheus-node-exporter \
+	   carbonio-prometheus-mysqld-exporter
 
 Execute the following tasks.
 
@@ -56,7 +59,7 @@ Execute the following tasks.
    Since this node is not the |mesh| Server, the
    :file:`cluster-credentials.tar.gpg` file will be automatically
    downloaded.
-   
+
 #. Complete |mesh| setup
 
    .. code:: console
@@ -66,3 +69,8 @@ Execute the following tasks.
    .. hint:: The **secret** needed to run the above command is stored
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
+
+#. Make sure the |monit| exporter's firewall ports (**9100** and
+   **9104**) are open on the internal network, to allow the correct
+   communication with the server, that will be installed on
+   :bdg-secondary-line:`SRV-6`.

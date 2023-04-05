@@ -168,7 +168,7 @@ node hosting the **Proxy** Role.
       "143", "external IMAP services"
       "443", "secure connection to the Carbonio web client"
       "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
-      "587", "Port for smtp autenticated relay, requires STARTTLS
+      "587", "Port for SMTP autenticated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "993", "external IMAP secure access"
       "995", "external POP3 secure access"
@@ -242,7 +242,6 @@ node hosting the **Proxy** Role.
       "21000-21255", "TCP range only", "Automatical Sidecar service
       registrations"
 
-
    .. [3] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
@@ -258,4 +257,29 @@ node hosting the **Proxy** Role.
 
       "8188", "TCP", "Internal connection"
       "20000-40000", "UDP", "Client connections for the audio and
-      video streams"
+      video streams" 
+
+.. dropdown:: Ports Used by |monit|
+   :open:
+
+   The |monit| component requires the following ports to be accessible
+   by the server. Each port must be opened on the Node on which the
+   corresponding exporter is installed.
+
+   .. note:: If you plan to allow access to |monit| from external
+      networks, make sure that port **9090 TCP** on the |monit| server
+      is reachable.
+
+ 
+   .. csv-table::
+      :header: "Port", "Protocol", "Package/Exporter"
+      :widths: 10 20 70
+
+      "9115", "TCP", "carbonio-prometheus-blackbox-exporter"
+      "9107", "TCP", "carbonio-prometheus-consul-exporter"
+      "9104", "TCP", "carbonio-prometheus-mysqld-exporter"
+      "9113", "TCP", "carbonio-prometheus-nginx-exporter"
+      "9100", "TCP", "carbonio-prometheus-node-exporter"
+      "9330", "TCP", "carbonio-prometheus-openldap-exporter"
+      "9187", "TCP", "carbonio-prometheus-postgres-exporter"
+      "9256", "TCP", "carbonio-prometheus-process-exporter"
