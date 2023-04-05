@@ -2,14 +2,17 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-In the Contacts component you can keep track of all the people with whom
-you exchange e-mails and group them in address books. Existing address
-books appear on the column on the right of the component's list.
-You can create new contact by using the |new| button and selecting
-`New Contact`; they will be stored under the `Contacts` section of the
-Contacts component. :ref:`mail-tags` can be added to any contacts.
-Addresses of people to whom you send an e-mail are automatically added
-to the `Emailed Contacts`.
+In the Contacts component you can keep track of all the people with
+whom you exchange e-mails and group them in address books. Existing
+address books appear on the column on the right of the component's
+list.  You can create new contact by using the |new| button and
+selecting `New Contact`; they will be stored under the `Contacts`
+section of the Contacts component. You can also choose under which
+address book the new contact is stored. Additionally, :ref:`mail-tags`
+can be added to any contacts.
+
+.. note:: Addresses of people to whom you send an e-mail are
+   automatically added to the `Emailed Contacts`.
 
 Deleted contacts land in the special `Trash` address book, which keeps
 them until you manually empty it. To do so, right-click the address
@@ -29,3 +32,8 @@ If any colleague has shared an address book, you can click the
 :bdg-primary-line:`FIND SHARES` button under `Shared Address Book` and
 provide the e-mail address. You will see all the address books shared
 by the user.
+
+You can search among contacts using the :ref:`search bar
+<global-search>`. You can then refine your search by clicking the
+:bdg-primary:`ADVANCED FILTER` button. Here you can also choose to
+include shared address books in the search.
