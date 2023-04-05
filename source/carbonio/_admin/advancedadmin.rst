@@ -25,8 +25,10 @@ functionalities, each Administrator, either Global or Delegated, can
 access with the personal account and be able to control and manage
 them, according to permissions granted.
 
-.. seealso:: More information about Roles and permission in Section
-   :ref:`delegated_admin_provisioning`.
+.. seealso:: More information about Roles and permission, along with
+   instructions to grant them to users, can be found in a
+   :ref:`dedicated box <delegates-rights>` in |adminui|'s Section
+   :ref:`ap-accounts`.
 
 
 Server-side Management of E-mails

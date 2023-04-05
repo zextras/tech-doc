@@ -15,10 +15,6 @@ setup.
 
 :ref:`manage-alias` explains how to add aliases to an e-mail address.
 
-:ref:`delegated_admin_provisioning` explains how to grant to a user
-the necessary privileges to administer a domain, including what can
-and what can not be done as a Delegated Administrator.
-
 :ref:`domain-limits` show how to change some global limit that will
 affect all users in the domain.
 
@@ -33,7 +29,6 @@ components are enabled for a user or a COS.
 
    _admin/auth
    _admin/managealias
-   _admin/delegatedadmin
    _admin/domainlimits
    _admin/advancedadmin
    _admin/setting-features
