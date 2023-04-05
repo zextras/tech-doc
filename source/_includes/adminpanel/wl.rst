@@ -57,9 +57,15 @@ use any resource that has a public URL.
    .. grid-item-card:: Logo in the WebUiApp
       :columns: 6
 
-      This is the *logo* that appears on the main page after a
-      successful login and is displayed on the upper left
-      corner. There are different *dimensions* and *ratios* for the
+      This *logo* appears:
+
+      #. on the main page after a successful login, is displayed on
+         the upper left corner.
+
+      #. in video calls: before starting and after terminating the
+         call and during the call, in the top right corner
+      
+      There are different *dimensions* and *ratios* for the
       Admin and End User logos.
 
       **Requirements**:
