@@ -20,8 +20,11 @@ First install all the necessary packages:
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-preview-ce 
+	 # apt install service-discover-agent carbonio-appserver \
+	   carbonio-user-management carbonio-preview-ce \
+	   carbonio-prometheus \
+	   carbonio-prometheus-blackbox-exporter \
+	   carbonio-prometheus-node-exporter
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -30,8 +33,11 @@ First install all the necessary packages:
 
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-appserver
-         # dnf install carbonio-user-management carbonio-preview-ce
+	 # dnf install service-discover-agent carbonio-appserver
+	 # dnf install carbonio-user-management carbonio-preview-ce
+	 # dnf install  carbonio-prometheus \
+	   carbonio-prometheus-blackbox-exporter \
+	   carbonio-prometheus-node-exporter
 
 Execute the following tasks.
 
@@ -67,6 +73,14 @@ Execute the following tasks.
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
 
+#. If you want that the |monit| be reachable from outside the
+   local network, allow access to port **9090** on this node.
+
+   .. this should not be necessary
+      #. Make sure the |monit| exporter's firewall ports (**9100** and
+      **9115**) are open on the internal network, to allow the correct
+      communication with the server
+
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for section
    **#Nginx Lookup servers**.
@@ -100,11 +114,3 @@ Execute the following tasks.
       zextras$ zmcontrol stop
       zextras$ zmcontrol start
 
-.. card::
-
-   Values used in the next steps
-   ^^^^
-     
-   * |srv6h| this node's hostname, which can be retrieved using the
-     command :command:`su - zextras -c "carbonio prov gas
-     service-discover"`
