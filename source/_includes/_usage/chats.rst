@@ -2,16 +2,16 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Chats is a component that provides corporate instant messaging features
-such as Spaces and Channels, chats, and videoconferencing.
+|team| is a component that provides corporate instant messaging
+features like text chats, 1-to-1 video calls, and videoconferencing.
 
 The UI of |team| is organised in three columns:
 
 * The left-hand side column holds the list of contacts with the
   history of the passed chats. Above it, you can |create| new chats
   and Groups, filter existing chat names and on the top, select
-  between Chats, Spaces and Channels, and Virtual Rooms (see further
-  on for more). Below it, buttons allow to manage virtual rooms.
+  between Chats and Virtual Rooms (see further on for more). Below it,
+  buttons allow to manage virtual rooms.
 
 * The central column holds the chat messages. Above the chat's
   top-right corner, click the phone icon to start a video call with
@@ -26,11 +26,11 @@ The UI of |team| is organised in three columns:
 Moderators in Rooms
 -------------------
 
-The user that creates a **room** (we call *virtual room* a
-Channel, a Space, a Group or a Virtual Room, see below) becomes
-automatically the **Room Moderator** and can manage the room’s textual
-and video conversations. In particular, the *Mute For All* and *Add
-new members* functionalities are reserved for Moderators only.
+The user that creates a **room** (we call *virtual room* a Group or a
+Virtual Room, see below) becomes automatically the **Room Moderator**
+and can manage the room’s textual and video conversations. In
+particular, the *Mute For All* and *Add new members* functionalities
+are reserved for Moderators only.
 
 A moderator can promote any user as moderator and can leave the
 virtual room only if either no other users are present in the room or
@@ -45,38 +45,6 @@ create a group inviting people, and any group member can invite more
 people in the same way. When all users leave a group, the group itself
 ceases to exist.
 
-Spaces
-------
-
-Spaces are a themed container that can hold any number of Channels.
-You can think of a Space as a community center where people gather to
-discuss different topics in dedicated areas (named Channels).
-
-Everyone can create a Space and becomes its `Administrator`, who can
-add Members and Channels, and grant the same rights to any other user
-by clicking on the crown icon in the appropriate entry of the
-participant list. Like for chats, each Space has a unique identifier,
-that can be copied by clicking the :bdg-primary-line:`COPY LINK`
-button and shared.
-
-Spaces are disabled by default, but can be enabled with the command
-
-.. code:: console
-
-   zextras$ carbonio config set global teamSpacesEnabled true
-
-.. _chats_channels:
-
-Channels
---------
-
-Channels are topic-defined areas inside of a Space and can contain any
-number of users. Differently from Groups, users can autonomously join
-any Channel in a Space of which they are members.
-
-Each new Space has a "General" channel automatically created within it,
-which defines the space’s properties (e.g., Title and Topic) and which
-all users automatically join when they join the Space.
 
 Virtual Rooms
 -------------
@@ -151,11 +119,11 @@ variable number of check symbols:
 
    - 2 grey checks: message delivered to the recipient user
      :octicon:`dash` to all users in case of chats with multiple
-     members, Spaces, or Virtual Rooms
+     members or Virtual Rooms
 
    - 2 blue checks: message viewed by the recipient user
      :octicon:`dash` to all users in case of chats with multiple
-     members, Spaces, or Virtual Rooms
+     members or Virtual Rooms 
 
 When sending a text message, if privacy is enabled, then only one *gray*
 check is shown, meaning that the server has received the message. No
@@ -166,8 +134,8 @@ acknowledgement will be sent back by the receiving user.
 Unread Messages
 ---------------
 
-The number of unread messages in any conversation (Group, Channel,
-space, instant meeting) appears on the right side of both the *Chats*,
-*Spaces*, *Instant Meetings* label from where the message originated,
-and in the list of conversions underneath, next to the actual chat
-generating the message.
+The number of unread messages in any conversation (Group and instant
+meeting) appears on the right side of both the *Chats* and *Instant
+Meetings* label from where the message originated, and in the list of
+conversions underneath, next to the actual chat generating the
+message.

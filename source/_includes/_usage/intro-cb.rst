@@ -63,8 +63,8 @@ Contacts
    Display all the information related to contacts and distribution lists.
 
 Chats
-   A tool dedicated to individual and group chats and to the creation
-   of corporate spaces and thematic channels (optional component).
+   A tool dedicated to individual and group chats, video calls and
+   video conferencing (optional component).
 
 Files
    Share documents with colleagues (optional component).
