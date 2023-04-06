@@ -58,7 +58,7 @@ Chats
 .. make sure to verify which are the ADV features that are not ported
    to CE!
    
-The |team| component, which includes also videoconferencing
+The |team| component, which includes also video conferencing
 functionalities, will soon be available.
 
 .. _files-comp:

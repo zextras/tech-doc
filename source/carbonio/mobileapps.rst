@@ -95,10 +95,8 @@ Mobile Clients Features
       The main features of the |carbonio| Chats app are:
 
       * Send and receive text messages and emoticons
-      * Manage, modify, and moderate 1-to-1 Chats, Group Chats, Spaces,
-        and Channels, including the possibility to invite or remove
-        attendees
-      * Edit name, topic, or pictures of Spaces and Channels
+      * Manage, modify, and moderate 1-to-1 Chats and Group Chats,
+        including the possibility to invite or remove attendees
       * Create or participate in virtual meetings
       * Share files in the chats
       * Enable or Disable Push Notifications
