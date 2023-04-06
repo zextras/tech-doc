@@ -25,10 +25,6 @@ applied to all defined domains) or :menuselection:`Domains --> Details
 --> Theme` (to change them only for one domain, overriding the global
 settings).
 
-Currently, |product| supports white labelling of the following graphic
-parts, that can be defined separately for the |adminui| and the End
-User.
-
 .. include:: /_includes/adminpanel/wl.rst
 
 .. |aphostname| image:: /img/adminpanel/ap-hostname.png

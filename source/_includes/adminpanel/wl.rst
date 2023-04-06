@@ -2,11 +2,23 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-All the resources (logos, images, icons) mentioned in this section
-will be saved in the :file:`opt/zextras/web/login/assets/` directory
-and will be accessible at URL
-``https://<PROXY_IP>/static/login/assets/filename.ext``. You can also
-use any resource that has a public URL.
+All the resources used for White Labelling must have a **valid URI**
+and must be reachable from |carbonio|.
+
+In case the resources are hosted on an server external to the
+|carbonio| infrastructure, make sure that server's SSL certificate is
+valid and has not expired, and its FQDN is valid and resolvable from
+|carbonio| (from the Proxy Node in case of a Multi-Server).
+
+You can safely use the |carbonio|'s Proxy Node to expose those
+resources, by uploading them into the :file:`/opt/zextras/web/assets/`
+directory and using the URL
+``https://<Carbonio_hostname>/static/assets/``, where
+``<Carbonio_hostname>`` is the FQDN of the Single-Server or of the
+Proxy Node in a Multi-Server.
+
+Moreover, in a Multi-Server featuring multiple Proxy Nodes, it is
+mandatory to keep in sync the resources on all the Proxies instances.
 
 .. grid:: 1 1 2 2
    :gutter: 3
