@@ -158,7 +158,7 @@ installed on any node, provided the dependencies are respected.
   logged out) and user attributes (e.g., on which AppServer a user is
   logged in).
 * **VideoServer**. It provides video communication capabilities and is
-  a necessary component for the proper use of videoconferencing
+  a necessary component for the proper use of video conferencing
   service.
 * **VideoServer Recording**. This modules adds recording abilities to
   the VideoServer.

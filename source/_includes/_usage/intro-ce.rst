@@ -59,12 +59,6 @@ Calendar
 Contacts
    Display all the information related to contacts and distribution lists.
 
-.. Chat and File are not confirmed to be part of initial release
-
-   Chat
-      A tool dedicated to individual and group chats and to the creation
-      of corporate spaces and thematic channels (optional component).
-
 Files
    Share documents with colleagues (optional component).
 
