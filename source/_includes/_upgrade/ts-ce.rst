@@ -9,12 +9,26 @@ Bootstrap Database
 
 Whenever a ``-db`` package is upgraded (currently they are
 ``carbonio-mailbox-db``, ``carbonio-files-db``, and
-``carbonio-docs-connector-db``), remember to bootstrap the
-corresponding Database, by running the command, respectively.
+``carbonio-docs-connector-db``), remember to bootstrap the database,
+by running the corresponding command
 
-.. code:: console
+* ``mailbox``
 
-   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   .. code:: console
+
+      # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+* ``files``
+
+   .. code:: console
+
+      # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+* ``docs-connector``
+
+   .. code:: console
+
+      # PGPASSWORD=DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
 In the above command, |dbadmpwd| is the the password of the
 ``carbonio_adm`` database role, that is, the one created during
@@ -44,7 +58,7 @@ If you are upgrading from a version previous to **22.10.0**, make sure
 to install also the packages for the brand new Administration
 console. In a Multi-Server, the commands must be executed on the
 **Proxy node**.
-      
+
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -73,8 +87,8 @@ similar to::
 
   Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
   400 (Bad request: Request decoding failed: 1 error occurred:
-  
-	* invalid config key "Websocket"
+
+   * invalid config key "Websocket"
 
 To avoid this error, make sure that the installed package
 ``service-discover-base`` is *at least* version **1.10.12**. You can
