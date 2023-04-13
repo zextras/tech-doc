@@ -12,12 +12,10 @@ versions** any version of |product| released before these two.
    .. grid-item-card:: Upgrade from |prev| to |version|
       :columns: 12 12 6 6
 
-      This upgrade impacts the following *Roles*, which require some
-      manual CLI commands to be run.
+      .. This upgrade impacts the following *Roles*, which require
+         some manual CLI commands to be run.
 
-      :octicon:`check-circle;1em;sd-text-success` the
-      ``carbonio-mailbox-db`` package will be upgraded, therefore
-      execute the steps in :ref:`bootstrap-db`.
+      This upgrade does not require any additional or manual step.
 
    .. grid-item-card:: Upgrade from older versions to |version|
       :columns: 12 12 6 6
