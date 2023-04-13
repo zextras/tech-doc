@@ -225,6 +225,9 @@ SAML IDP (IDentity Provider) using the SAML SP data. In our
 sample scenario, we want to add SAML authentication to our domain
 **example.com**, accessible at **SP_URL**.
 
+.. seealso:: The same tasks can be carried out from the |adminui|,
+   please refer to Section :ref:`domain_saml`.
+
 The SAML configuration is carried out at an IDP provider, then
 imported in |product| using a dedicated command.
 

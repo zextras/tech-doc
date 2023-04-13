@@ -231,6 +231,40 @@ These setting are the same that appear in the :ref:`Global Theme
 <ap-theme>` section, but are domain-specific: if not defined at domain
 level, the global theme settings will be applied.
 
+.. _domain-saml:
+
+SAML
+~~~~
+
+The management of SAML access to |product| is carried out from this
+page.
+
+.. seealso:: The same SAML configuration tasks can be carried out from
+   the CLI, please refer to Section :ref:`auth_set_up_saml`.
+
+At the top of the page, two buttons allow to copy the
+:bdg-primary-line:`ENTITY ID` and :bdg-primary-line:`SERVICE URL` of
+the current |product|, which are required to carry out the
+configuration on the SAML IDP provider's side: click each of them to
+paste the respective value and generate the configuration.
+
+Once the configuration has been carried out, it is possible to copy
+its URL and paste it in the textfield. Click the :guilabel:`Allow
+Unsecure` if the configuration URL uses *HTTP* and not *HTTPS*. Click
+:bdg-secondary-line:`IMPORT` to import the configuration.
+
+The three button below allow to generate the SP certificate to
+configure the logout from the IDP and to export or delete the current
+configuration.
+
+The procedure to follow for the complete logout from the IDP is
+described in detail in the CLI Section :ref:`auth-saml-logout`. You
+can accomplish the same goal from the |adminui| by writing in the two
+bottom textfields the variables mentioned in that section and their
+corresponding value, then clicking the :bdg-primary-line:`ADD`
+button. Remember also to add the SP certificate to the IDP's
+configuration.
+
 .. _ap-manage-domains:
 
 Manage Domains
