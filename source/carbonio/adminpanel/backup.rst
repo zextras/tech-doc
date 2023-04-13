@@ -3,4 +3,4 @@
 Backup
 ======
 
-.. include:: /_includes/adminpanel/backup.rst
+.. include:: /_includes/_adminpanel/backup.rst

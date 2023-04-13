@@ -71,7 +71,7 @@ interface appears to the web clients.
    you want to customise the appearance, please change the settings
    under :menuselection:`Domains --> Details --> Theme`.
 
-.. include:: /_includes/adminpanel/wl.rst
+.. include:: /_includes/_adminpanel/wl.rst
 
 .. _ap-domain-details:
 

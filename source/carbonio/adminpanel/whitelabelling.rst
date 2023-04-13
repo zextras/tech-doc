@@ -25,7 +25,7 @@ applied to all defined domains) or :menuselection:`Domains --> Details
 --> Theme` (to change them only for one domain, overriding the global
 settings).
 
-.. include:: /_includes/adminpanel/wl.rst
+.. include:: /_includes/_adminpanel/wl.rst
 
 .. |aphostname| image:: /img/adminpanel/ap-hostname.png
    :scale: 60%
