@@ -73,6 +73,11 @@ install |product|.
 
 #. valid DNS resolution for both the domain (``MX`` and ``A`` records) and the
    FQDN (``A`` record)
+
+   .. warning:: If any of these records is not correctly configured,
+      the installation will be temporarily suspended to allow the
+      change of the hostname
+
 #. Python 3, latest version available on the Operating System chosen
 #. Perl, latest version available on the Operating System chosen
 #. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
