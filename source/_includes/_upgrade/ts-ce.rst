@@ -7,28 +7,12 @@
 Bootstrap Database
 ~~~~~~~~~~~~~~~~~~
 
-Whenever a ``-db`` package is upgraded (currently they are
-``carbonio-mailbox-db``, ``carbonio-files-db``, and
-``carbonio-docs-connector-db``), remember to bootstrap the database,
-by running the corresponding command
+Whenever the ``carbonio-files-db`` package is upgraded, remember to
+bootstrap the Database, by running the command.
 
-* ``mailbox``
+.. code:: console
 
-   .. code:: console
-
-      # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-* ``files``
-
-   .. code:: console
-
-      # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-
-* ``docs-connector``
-
-   .. code:: console
-
-      # PGPASSWORD=DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 In the above command, |dbadmpwd| is the the password of the
 ``carbonio_adm`` database role, that is, the one created during
