@@ -29,6 +29,12 @@ front-end packages for |file| and |adminui|) will be installed here.
 	      carbonio-webui carbonio-files-ui \
 	      carbonio-admin-ui carbonio-admin-console-ui
 
+#. Restart the nginx exporter for |monit|
+
+   .. code:: console
+
+      # systemctl restart carbonio-prometheus-nginx-exporter.service
+
 #. Bootstrap |carbonio|
 
    .. code:: console
