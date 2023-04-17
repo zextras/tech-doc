@@ -7,8 +7,9 @@ The Domain page allows the management of domains and of related
 settings, including individual accounts, user quota and
 authentication, mailing lists, and more.
 
-The following sections are available in the page: :ref:`domain details
-<ap-domain-details>` and :ref:`domain management <ap-manage-domains>`.
+The following sections are available in the page: :ref:`global
+settings <ap-theme>`, :ref:`domain details <ap-domain-details>`, and
+:ref:`domain management <ap-manage-domains>`.
 
 .. _ap-domain-new:
 
@@ -51,6 +52,26 @@ To create a new domain, fill in the form that opens upon clicking the
 Further configuration option for the domain, including how to
 configure authentication and accounts in the domain, can be found in
 the :ref:`ap-domain-details` section.
+
+.. _ap-theme:
+
+Global
+------
+
+.. _global-theme:
+
+Theme
+~~~~~
+
+Global settings concern the appearance of |product| and allow to
+customise various option that will influence how the |product| web
+interface appears to the web clients.
+
+.. note:: These setting are applied to all the domains configured; if
+   you want to customise the appearance, please change the settings
+   under :menuselection:`Domains --> Details --> Theme`.
+
+.. include:: /_includes/_adminpanel/wl.rst
 
 .. _ap-domain-details:
 
@@ -133,6 +154,16 @@ We build on the domain created in :ref:`previous section
       :scale: 50
       :align: center
 
+At the bottom of the page, button :red:`DELETE DOMAIN` allows to
+delete the domain. When clicked, a dialog will open, listing all items
+defined on the domain (Accounts, mailing lists, resources, and so on)
+and that will be deleted together with the domain. Two choices are
+available: to **Close** the domain, keeping all items but preventing
+access, or **Remove** the domain and all its items.
+
+.. warning:: The removal of the domain is an operation that can not be
+   undone: all the items are gone forever.
+
 ..
    GAL
    ~~~
@@ -191,6 +222,49 @@ overridden on a per-user basis.
 To ease monitoring user's quota, the bottom of the page contains a
 list of accounts and of their used quota.
 
+.. _domain-theme:
+
+Theme
+~~~~~
+
+These setting are the same that appear in the :ref:`Global Theme
+<ap-theme>` section, but are domain-specific: if not defined at domain
+level, the global theme settings will be applied.
+
+.. _domain-saml:
+
+SAML
+~~~~
+
+The management of SAML access to |product| is carried out from this
+page.
+
+.. seealso:: The same SAML configuration tasks can be carried out from
+   the CLI, please refer to Section :ref:`auth_set_up_saml`.
+
+At the top of the page, two buttons allow to copy the
+:bdg-primary-line:`ENTITY ID` and :bdg-primary-line:`SERVICE URL` of
+the current |product|, which are required to carry out the
+configuration on the SAML IDP provider's side: click each of them to
+paste the respective value and generate the configuration.
+
+Once the configuration has been carried out, it is possible to copy
+its URL and paste it in the textfield. Click the :guilabel:`Allow
+Unsecure` if the configuration URL uses *HTTP* and not *HTTPS*. Click
+:bdg-secondary-line:`IMPORT` to import the configuration.
+
+The three button below allow to generate the SP certificate to
+configure the logout from the IDP and to export or delete the current
+configuration.
+
+The procedure to follow for the complete logout from the IDP is
+described in detail in the CLI Section :ref:`auth-saml-logout`. You
+can accomplish the same goal from the |adminui| by writing in the two
+bottom textfields the variables mentioned in that section and their
+corresponding value, then clicking the :bdg-primary-line:`ADD`
+button. Remember also to add the SP certificate to the IDP's
+configuration.
+
 .. _ap-manage-domains:
 
 Manage Domains
@@ -237,11 +311,11 @@ four tabs:
 
    .. tab-item:: Configuration
 
-      The options listed here allows to specify forwarding addresses
-      and to prevent e-mail messages to be saved locally, if these
-      operations are allowed by the administrator. Values for these
-      options can be set from the CLI: please refer to section
-      :ref:`cli-features` for more information.
+      The options listed here allows to specify forwarding addresses,
+      to prevent e-mail messages to be saved locally, and to enable
+      ActiveSync, if these operations are allowed by the
+      administrator. Values for these options can be set from the CLI:
+      please refer to section :ref:`cli-features` for more information.
 
    .. tab-item:: User Preferences
 
@@ -287,10 +361,15 @@ four tabs:
       guided procedures in the |adminui|, allows to review the
       settings before saving them.
 
+      .. note:: The user who delegates and the user who is the
+         delegated can not share the same account; in other words, it
+         is not possible to add as a delegated user the same account
+         of the user who is delegating.
+
 .. index::
    single: Delegate Rights
    see: User Permissions; Delegate Rights
-           
+
 .. _delegates-rights:
 
 .. card:: Available Delegate's Rights
@@ -456,12 +535,18 @@ simply writing the e-mail addresses in the test field.
 .. hint:: E-mail addresses are auto-completed while typing.
 
 In the third tab, advanced settings can be configured, including to
-limit the members that are allowed to send e-mails to the list.
+limit the members that are allowed to send e-mails to the list, the
+policies  for subscription and unsubscription requests, and the owners
+of the mailing list,
 
 The last tab recaps the settings: now you can wither go back to any of
 the previous tabs and change some of the settings, or proceed to
 create the mailing list.
 
+Once a mailing list has been created, it can be further configured by
+adding aliases, which work like e-mail accounts, changing the members
+and owners, and granting selected users the permission to send e-mails
+to the mailing list.
 
 .. addressed at a later point
 

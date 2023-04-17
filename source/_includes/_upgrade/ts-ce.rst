@@ -7,10 +7,8 @@
 Bootstrap Database
 ~~~~~~~~~~~~~~~~~~
 
-Whenever a ``-db`` package is upgraded (currently they are
-``carbonio-mailbox-db``, ``carbonio-files-db``, and
-``carbonio-docs-connector-db``), remember to bootstrap the
-corresponding Database, by running the command, respectively.
+Whenever the ``carbonio-files-db`` package is upgraded, remember to
+bootstrap the Database, by running the command.
 
 .. code:: console
 
@@ -44,7 +42,7 @@ If you are upgrading from a version previous to **22.10.0**, make sure
 to install also the packages for the brand new Administration
 console. In a Multi-Server, the commands must be executed on the
 **Proxy node**.
-      
+
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -73,8 +71,8 @@ similar to::
 
   Error writing config entry service-defaults/carbonio-docs-editor: Unexpected response code:
   400 (Bad request: Request decoding failed: 1 error occurred:
-  
-	* invalid config key "Websocket"
+
+   * invalid config key "Websocket"
 
 To avoid this error, make sure that the installed package
 ``service-discover-base`` is *at least* version **1.10.12**. You can

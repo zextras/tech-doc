@@ -17,8 +17,7 @@ configure the various services needed.
          # apt install service-discover-agent carbonio-appserver \
            carbonio-advanced carbonio-zal \
            carbonio-user-management \
-           carbonio-files carbonio-docs-connector \
-           carbonio-docs-editor
+           carbonio-files carbonio-docs-connector
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -67,6 +66,11 @@ Execute the following tasks.
    .. hint:: The **secret** needed to run the above command is stored
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
+
+#. Make sure the |monit| exporter's firewall ports (**9100** and
+   **9104**) are open on the internal network, to allow the correct
+   communication with the server, that will be installed on
+   :bdg-secondary-line:`SRV-6`. 
 
 #. Run as the ``zextras user`` the following command to configure the
    Video Recording, using |vsip|, |servletport| and |vspwd| configured

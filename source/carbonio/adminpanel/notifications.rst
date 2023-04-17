@@ -4,4 +4,4 @@
 Notifications
 =============
 
-.. include:: /_includes/adminpanel/notifications.rst
+.. include:: /_includes/_adminpanel/notifications.rst

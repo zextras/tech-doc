@@ -3,4 +3,4 @@
 Subscriptions
 =============
 
-.. include:: /_includes/adminpanel/subscriptions.rst
+.. include:: /_includes/_adminpanel/subscriptions.rst

@@ -3,7 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. srv1 - proxy and vs
-   
+
 This node featurs the Proxy, and all the ``*-ui`` files (i.e., the
 front-end packages for |file| and |adminui|) will be installed here.
 
@@ -12,22 +12,28 @@ front-end packages for |file| and |adminui|) will be installed here.
    .. tab-set::
 
       .. tab-item:: Ubuntu
-         :sync: ubuntu
+	 :sync: ubuntu
 
-         .. code:: console
+	 .. code:: console
 
-            # apt install service-discover-agent carbonio-proxy \ 
-              carbonio-webui carbonio-files-ui \
-              carbonio-admin-ui carbonio-admin-console-ui
+	    # apt install service-discover-agent carbonio-proxy \
+	      carbonio-webui carbonio-files-ui \
+	      carbonio-admin-ui carbonio-admin-console-ui
 
       .. tab-item:: RHEL
-         :sync: rhel
+	 :sync: rhel
 
-         .. code:: console
+	 .. code:: console
 
-            # dnf install service-discover-agent carbonio-proxy \
-              carbonio-webui carbonio-files-ui \
-              carbonio-admin-ui carbonio-admin-console-ui
+	    # dnf install service-discover-agent carbonio-proxy \
+	      carbonio-webui carbonio-files-ui \
+	      carbonio-admin-ui carbonio-admin-console-ui
+
+#. Restart the nginx exporter for |monit|
+
+   .. code:: console
+
+      # systemctl restart carbonio-prometheus-nginx-exporter.service
 
 #. Bootstrap |carbonio|
 
@@ -43,11 +49,11 @@ front-end packages for |file| and |adminui|) will be installed here.
    * ``Bind password for nginx ldap user``: |nginxpwd|
 
 #.  Run |mesh| setup using |meshsec|
-   
+
     .. code:: console
 
        # service-discover setup-wizard
-    
+
    Since this node is not the |mesh| Server, the
    :file:`cluster-credentials.tar.gpg` file will be automatically
    downloaded.
@@ -62,10 +68,16 @@ front-end packages for |file| and |adminui|) will be installed here.
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
 
+   #. Make sure the |monit| exporter's firewall ports (**9100** and
+      **9113**) are open on the internal network, to allow the correct
+      communication with the server, that will be installed on
+      :bdg-secondary-line:`SRV-6`.
+
+
 #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 
    .. code:: console
-             
+
       zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
       zextras$ zmmemcachedctl restart
       zextras$ zmproxyctl restart
@@ -75,9 +87,6 @@ front-end packages for |file| and |adminui|) will be installed here.
       from internal, trusted networks.
 
 
-.. card::
-
-   Values used in the next steps
-   ^^^^
+.. card:: Values used in the next steps
 
    * |srv4ip| the IP address of the node

@@ -145,8 +145,8 @@ SRV5: AppServer, Files and Docs
 
 .. _srv6-install:
 
-SRV6: AppServer, Preview and Logger
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV6: AppServer, Preview, and |monit|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6-ce.rst
 
