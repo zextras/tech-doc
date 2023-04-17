@@ -2,7 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv6 - AppServer - Advanced - Preview 
+.. srv6 - AppServer - Advanced - Preview - Monitoring
 
 
 On this node we install the Preview, the User Management, and advanced
@@ -22,9 +22,7 @@ First install all the necessary packages:
 
          # apt install service-discover-agent carbonio-appserver \
            carbonio-user-management carbonio-advanced carbonio-zal \
-           carbonio-preview carbonio-prometheus \
-           carbonio-prometheus-blackbox-exporter \
-	   carbonio-prometheus-node-exporter 
+           carbonio-preview carbonio-prometheus
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -35,9 +33,7 @@ First install all the necessary packages:
 
          # dnf install service-discover-agent carbonio-appserver
          # dnf install carbonio-user-management carbonio-advanced carbonio-zal
-         # dnf install carbonio-preview carbonio-prometheus \
-           carbonio-prometheus-blackbox-exporter \
-	   carbonio-prometheus-node-exporter 
+         # dnf install carbonio-preview carbonio-prometheus
 
 Execute the following tasks.
 

@@ -26,9 +26,7 @@ nodes.
 
                # apt install service-discover-agent carbonio-proxy \
                  carbonio-webui carbonio-files-ui carbonio-chats-ui \
-                 carbonio-admin-ui carbonio-admin-console-ui \
-		 carbonio-prometheus-node-exporter \
-		 carbonio-prometheus-nginx-exporter 
+                 carbonio-admin-ui carbonio-admin-console-ui
 
          .. tab-item:: RHEL
             :sync: rhel
@@ -37,9 +35,7 @@ nodes.
 
                # dnf install service-discover-agent carbonio-proxy \
                  carbonio-webui carbonio-files-ui carbonio-chats-ui \
-                 carbonio-admin-ui carbonio-admin-console-ui \
-		 carbonio-prometheus-node-exporter \
-		 carbonio-prometheus-nginx-exporter 
+                 carbonio-admin-ui carbonio-admin-console-ui
 
    #. Bootstrap |carbonio|
 
