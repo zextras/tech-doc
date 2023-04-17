@@ -17,8 +17,7 @@ configure the various services needed.
 	 # apt install service-discover-agent carbonio-appserver \
 	   carbonio-storages-ce carbonio-user-management \
 	   carbonio-files-ce carbonio-docs-connector-ce \
-	   carbonio-docs-editor carbonio-prometheus-node-exporter \
-	   carbonio-prometheus-mysqld-exporter
+	   carbonio-docs-editor
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -31,8 +30,6 @@ configure the various services needed.
 	 # dnf install carbonio-storages-ce carbonio-user-management
 	 # dnf install carbonio-files-ce carbonio-docs-connector-ce
 	 # dnf install carbonio-docs-editor
-	 # yum install carbonio-prometheus-node-exporter \
-	   carbonio-prometheus-mysqld-exporter
 
 Execute the following tasks.
 

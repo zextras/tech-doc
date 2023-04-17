@@ -2,7 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv6 - AppServer - Advanced - Preview 
+.. srv6 - AppServer - Advanced - Preview - Monitoring
 
 
 On this node we show how to install the Preview and the User
@@ -20,11 +20,9 @@ First install all the necessary packages:
 
       .. code:: console
 
-	 # apt install service-discover-agent carbonio-appserver \
-	   carbonio-user-management carbonio-preview-ce \
-	   carbonio-prometheus \
-	   carbonio-prometheus-blackbox-exporter \
-	   carbonio-prometheus-node-exporter
+         # apt install service-discover-agent carbonio-appserver \
+           carbonio-user-management carbonio-preview-ce \
+           carbonio-prometheus
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -33,11 +31,9 @@ First install all the necessary packages:
 
       .. code:: console
 
-	 # dnf install service-discover-agent carbonio-appserver
-	 # dnf install carbonio-user-management carbonio-preview-ce
-	 # dnf install  carbonio-prometheus \
-	   carbonio-prometheus-blackbox-exporter \
-	   carbonio-prometheus-node-exporter
+         # dnf install service-discover-agent carbonio-appserver
+         # dnf install carbonio-user-management carbonio-preview-ce
+         # dnf install carbonio-prometheus
 
 Execute the following tasks.
 
@@ -113,4 +109,3 @@ Execute the following tasks.
 
       zextras$ zmcontrol stop
       zextras$ zmcontrol start
-
