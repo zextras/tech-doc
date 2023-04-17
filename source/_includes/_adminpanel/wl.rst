@@ -2,24 +2,43 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-All the resources (logos, images, icons) mentioned in this section
-will be saved in the :file:`opt/zextras/web/login/assets/` directory
-and will be accessible at URL
-``https://<PROXY_IP>/static/login/assets/filename.ext``. You can also
-use any resource that has a public URL.
+All the resources used for White Labelling must have a **valid URI**
+and must be reachable from |carbonio|.
+
+In case the resources are hosted on an server external to the
+|carbonio| infrastructure, make sure that server's SSL certificate is
+valid and has not expired, and its FQDN is valid and resolvable from
+|carbonio| (from the Proxy Node in case of a Multi-Server).
+
+You can safely use the |carbonio|'s Proxy Node to expose those
+resources, by uploading them into a directory called for example
+:file:`/opt/zextras/web/custom/` (create it if does not exist yet) and
+using the URL ``https://<Carbonio_hostname>/static/custom/``, where
+``<Carbonio_hostname>`` is the FQDN of the Single-Server or of the
+Proxy Node in a Multi-Server.
+
+Moreover, in a Multi-Server featuring multiple Proxy Nodes, it is
+mandatory to keep in sync the resources on all the Proxies instances.
 
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::       Light/Dark mode
+   .. grid-item-card:: Light/Dark mode
       :columns: 6
 
       The *light* mode features a white-based colour combination for
       the |product| login page and GUI, while the *dark* mode has a
       black-based colour combination.
 
-   .. grid-item-card:: Title & Copyrights Information 
+   .. grid-item-card:: Primary colours Light and Dark mode
       :columns: 6
+
+      Select the primary colour that will used in either Light or Dark
+      mode, using an HEX (HTML) value. The secondary colour will be
+      automatically computed.
+
+   .. grid-item-card:: Title & Copyrights Information
+      :columns: 12
 
       The *title* is the string that will appear on the client's tab,
       while the *copyrights information* will appear at the bottom of
@@ -50,9 +69,15 @@ use any resource that has a public URL.
    .. grid-item-card:: Logo in the WebUiApp
       :columns: 6
 
-      This is the *logo* that appears on the main page after a
-      successful login and is displayed on the upper left
-      corner. There are different *dimensions* and *ratios* for the
+      This *logo* appears:
+
+      #. on the main page after a successful login, is displayed on
+         the upper left corner.
+
+      #. in video calls: before starting and after terminating the
+         call and during the call, in the top right corner
+      
+      There are different *dimensions* and *ratios* for the
       Admin and End User logos.
 
       **Requirements**:
@@ -72,7 +97,9 @@ use any resource that has a public URL.
    .. grid-item-card:: Favicon
       :columns: 6
 
-      The favicon will be displayed next to the tab's name.
+      The favicon will be displayed next to the tab's name and in
+      browser notifications, if they have been activated in your
+      browser.
       
       **Requirements**:
 		  

@@ -3,4 +3,4 @@
 Operations
 =============
 
-.. include:: /_includes/adminpanel/operations.rst
+.. include:: /_includes/_adminpanel/operations.rst

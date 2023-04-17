@@ -73,6 +73,11 @@ install |product|.
 
 #. valid DNS resolution for both the domain (``MX`` and ``A`` records) and the
    FQDN (``A`` record)
+
+   .. warning:: If any of these records is not correctly configured,
+      the installation will be temporarily suspended to allow the
+      change of the hostname
+
 #. Python 3, latest version available on the Operating System chosen
 #. Perl, latest version available on the Operating System chosen
 #. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
@@ -212,7 +217,6 @@ node hosting the **Proxy** Role.
       "6071", "secure access to the Admin Panel"
       "7025", "local mail exchange using the LMTP protocol"
       "7026", "bind address of the Milter service"
-      "7047", "used by the server to convert attachments"
       "7071", "Port for SOAP services communication"
       "7072", "NGINX discovery and authentication"
       "7073", "SASL discovery and authentication"
@@ -220,13 +224,12 @@ node hosting the **Proxy** Role.
       "7143", "internal IMAP services"
       "7171", "access Carbonio configuration daemon (zmconfigd)"
       "7306", "MySQL access"
-      "7780", "the spell checker service access"
       "7993", "internal IMAP secure access"
       "7995", "internal POP3 secure access"
       "8080", "internal HTTP services access"
-      "8443", "internal HTTPS services access"
       "8735", "Internal mailbox :octicon:`arrow-both` mailbox	communication"
-      "9071", "used only in one case [2]_"
+      "8742", "internal HTTP services"
+      "8743", "internal HTTPS services"
       "10024", "Amavis :octicon:`arrow-both` Postfix"
       "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
       "10026", "configuring Amavis policies"
@@ -236,10 +239,6 @@ node hosting the **Proxy** Role.
       "23232", "internal Amavis services access"
       "23233", "SNMP-responder access"
       "11211", "memcached access"
-
-   .. [2] When the NGINX support for Administration Console and the
-      ``mailboxd`` service run on the same host, this port can be used
-      to avoid overlaps between the two services
 
 .. dropdown:: Ports Used by |mesh|
    :open:
@@ -260,3 +259,28 @@ node hosting the **Proxy** Role.
    .. [3] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
+
+.. dropdown:: Ports Used by |monit|
+   :open:
+
+   The |monit| component requires the following ports to be accessible
+   by the server. Each port must be opened on the Node on which the
+   corresponding exporter is installed.
+
+   .. note:: If you plan to allow access to |monit| from external
+      networks, make sure that port **9090 TCP** on the |monit| server
+      is reachable.
+
+ 
+   .. csv-table::
+      :header: "Port", "Protocol", "Package/Exporter"
+      :widths: 10 20 70
+
+      "9115", "TCP", "carbonio-prometheus-blackbox-exporter"
+      "9107", "TCP", "carbonio-prometheus-consul-exporter"
+      "9104", "TCP", "carbonio-prometheus-mysqld-exporter"
+      "9113", "TCP", "carbonio-prometheus-nginx-exporter"
+      "9100", "TCP", "carbonio-prometheus-node-exporter"
+      "9330", "TCP", "carbonio-prometheus-openldap-exporter"
+      "9187", "TCP", "carbonio-prometheus-postgres-exporter"
+      "9256", "TCP", "carbonio-prometheus-process-exporter"

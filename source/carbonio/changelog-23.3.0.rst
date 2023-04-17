@@ -2,10 +2,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-:octicon:`arrow-right` Release 23.3.0
-=====================================
+Release 23.3.0
+==============
 
 Release Date: March 20th, 2023
+
 
 .. rubric:: Component: Admin Console & Login UI
 

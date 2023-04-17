@@ -19,20 +19,22 @@ PostgreSQL node using `Pgpool-II
    .. tab-set::
 
       .. tab-item:: Ubuntu
-         :sync: ubuntu
+	 :sync: ubuntu
 
-         .. code:: console
+	 .. code:: console
 
-            # apt install service-discover-server pgpool2 \
-              carbonio-directory-server carbonio-files-db
+	    # apt install service-discover-server pgpool2 \
+	      carbonio-directory-server carbonio-files-db \
+	      carbonio-mailbox-db carbonio-docs-connector-db
 
       .. tab-item:: RHEL
-         :sync: rhel
+	 :sync: rhel
 
-         .. code:: console
+	 .. code:: console
 
-            # dnf install service-discover-server pgpool2 \
-              carbonio-directory-server carbonio-files-db
+	    # dnf install service-discover-server pgpool2 \
+	      carbonio-directory-server carbonio-files-db \
+	      carbonio-mailbox-db carbonio-docs-connector-db
 
 #. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace |srv1ip| with the
@@ -41,9 +43,9 @@ PostgreSQL node using `Pgpool-II
    .. code:: console
 
       # echo "backend_clustering_mode = 'raw'
-        port = 5432
-        backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-        backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
+	port = 5432
+	backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
+	backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
 
 #. restart the service using this command.
 
@@ -73,10 +75,12 @@ PostgreSQL node using `Pgpool-II
 
       # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
-.. card::
+#. Make sure the |monit| exporter's firewall ports (**9100**,
+   **9107**, **9330**) are open on the internal network, to allow the
+   correct communication with the server, that will be installed on
+   :bdg-secondary-line:`SRV-6`.
 
-   Values used in the next steps
-   ^^^^
+.. card::    Values used in the next steps
 
    * |srv2h| this node's hostname, which can be retrieved using the
      command :command:`su - zextras -c "carbonio prov gas
@@ -89,28 +93,28 @@ PostgreSQL node using `Pgpool-II
 
      .. code:: console
 
-        # zmlocalconfig -s zimbra_ldap_password
+	# zmlocalconfig -s zimbra_ldap_password
 
    * |amavispwd| the password used by |carbonio| for the Amavis
      service, retrieved with command
 
      .. code:: console
 
-        # zmlocalconfig -s ldap_amavis_password
+	# zmlocalconfig -s ldap_amavis_password
 
    * |postfixpwd| the password used by |carbonio| for the Postfix
      service, retrieved with command
 
      .. code:: console
 
-        # zmlocalconfig -s ldap_postfix_password
+	# zmlocalconfig -s ldap_postfix_password
 
    * |nginxpwd| the password used by |carbonio| for the NGINX
      service, retrieved with command
 
      .. code:: console
 
-        # zmlocalconfig -s ldap_nginx_password
+	# zmlocalconfig -s ldap_nginx_password
 
    .. note:: By default, all the |ldappwd|, |amavispwd|, |postfixpwd|,
       and |nginxpwd| bind passwords have the same value.

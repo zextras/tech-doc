@@ -59,7 +59,15 @@ Step 3:  System Upgrade and Package Installation
 
 .. _installation-step4:
 
-Step 4: Bootstrap |product|
+Step 4: Configure Firewall
+--------------------------
+
+
+.. include:: /_includes/_installation/step-firewall.rst
+
+.. _installation-step5:
+
+Step 5: Bootstrap |product|
 ---------------------------
 
 .. include:: /_includes/_installation/step-bootstrap.rst
@@ -73,9 +81,9 @@ Step 4: Bootstrap |product|
 The next steps concern the configuration and setup of the various
 |product| components.
 
-.. _installation-step5:
+.. _installation-step6:
 
-Step 5: Setup |mesh|
+Step 6: Setup |mesh|
 --------------------
 
 .. include:: /_includes/_installation/step-conf-mesh.rst
@@ -83,16 +91,16 @@ Step 5: Setup |mesh|
 .. hint:: In case of errors related to |mesh| token, please refer to
    section :ref:`upgrade-ts-token`.
 
-.. _installation-step6:
+.. _installation-step7:
 
-Step 6: Create Main DB Role and Database for |product|
+Step 7: Create Main DB Role and Database for |product|
 ------------------------------------------------------
 
 .. include:: /_includes/_installation/step-conf-db.rst
 
-.. _installation-step7:
+.. _installation-step8:
 
-Step 7: Bootstrap |file| Databases
+Step 8: Bootstrap |file| Databases
 ----------------------------------
 
 .. include:: /_includes/_installation/step-conf-files-ce.rst
