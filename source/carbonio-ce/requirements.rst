@@ -217,7 +217,6 @@ node hosting the **Proxy** Role.
       "6071", "secure access to the Admin Panel"
       "7025", "local mail exchange using the LMTP protocol"
       "7026", "bind address of the Milter service"
-      "7047", "used by the server to convert attachments"
       "7071", "Port for SOAP services communication"
       "7072", "NGINX discovery and authentication"
       "7073", "SASL discovery and authentication"
@@ -225,13 +224,12 @@ node hosting the **Proxy** Role.
       "7143", "internal IMAP services"
       "7171", "access Carbonio configuration daemon (zmconfigd)"
       "7306", "MySQL access"
-      "7780", "the spell checker service access"
       "7993", "internal IMAP secure access"
       "7995", "internal POP3 secure access"
       "8080", "internal HTTP services access"
-      "8443", "internal HTTPS services access"
       "8735", "Internal mailbox :octicon:`arrow-both` mailbox	communication"
-      "9071", "used only in one case [2]_"
+      "8742", "internal HTTP services"
+      "8743", "internal HTTPS services"
       "10024", "Amavis :octicon:`arrow-both` Postfix"
       "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
       "10026", "configuring Amavis policies"
@@ -241,10 +239,6 @@ node hosting the **Proxy** Role.
       "23232", "internal Amavis services access"
       "23233", "SNMP-responder access"
       "11211", "memcached access"
-
-   .. [2] When the NGINX support for Administration Console and the
-      ``mailboxd`` service run on the same host, this port can be used
-      to avoid overlaps between the two services
 
 .. dropdown:: Ports Used by |mesh|
    :open:
