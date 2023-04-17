@@ -4,4 +4,4 @@
 Privacy
 =======
 
-.. include:: /_includes/adminpanel/privacy.rst
+.. include:: /_includes/_adminpanel/privacy.rst

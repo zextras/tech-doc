@@ -18,9 +18,7 @@ front-end packages for |file| and |adminui|) will be installed here.
 
 	    # apt install service-discover-agent carbonio-proxy \
 	      carbonio-webui carbonio-files-ui \
-	      carbonio-admin-ui carbonio-admin-console-ui \
-	      carbonio-prometheus-node-exporter \
-	      carbonio-prometheus-nginx-exporter
+	      carbonio-admin-ui carbonio-admin-console-ui
 
       .. tab-item:: RHEL
 	 :sync: rhel
@@ -29,9 +27,13 @@ front-end packages for |file| and |adminui|) will be installed here.
 
 	    # dnf install service-discover-agent carbonio-proxy \
 	      carbonio-webui carbonio-files-ui \
-	      carbonio-admin-ui carbonio-admin-console-ui \
-	      carbonio-prometheus-node-exporter \
-	      carbonio-prometheus-nginx-exporter
+	      carbonio-admin-ui carbonio-admin-console-ui
+
+#. Restart the nginx exporter for |monit|
+
+   .. code:: console
+
+      # systemctl restart carbonio-prometheus-nginx-exporter.service
 
 #. Bootstrap |carbonio|
 

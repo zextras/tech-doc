@@ -19,6 +19,15 @@ versions** any version of |product| released before these two.
       follow the directions that you find in Section
       :ref:`upgrade-vs` when upgrading the Node featuring the |vs|.
 
+      :octicon:`check-circle;1em;sd-text-success` the
+      ``carbonio-mailbox-db`` package will be upgraded, therefore
+      execute the steps in :ref:`bootstrap-db`.
+
+      :octicon:`check-circle;1em;sd-text-success` **RHEL 8 only**. If
+      you need to upgrade a RHEL 8 carbonio installation, please make
+      sure, after you reboot the node after the successful upgrade, to
+      follow the directions in section :ref:`rhel-post`.
+
    .. grid-item-card:: Upgrade from older versions to |version|
       :columns: 12 12 6 6
 

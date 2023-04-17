@@ -3,4 +3,4 @@
 Domains
 =======
 
-.. include:: /_includes/adminpanel/domains.rst
+.. include:: /_includes/_adminpanel/domains.rst

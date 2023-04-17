@@ -4,4 +4,4 @@
 Class of Services (COS)
 =======================
 
-.. include:: /_includes/adminpanel/cos.rst
+.. include:: /_includes/_adminpanel/cos.rst

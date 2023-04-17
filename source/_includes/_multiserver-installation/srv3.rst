@@ -14,18 +14,14 @@ sends and receives emails.
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-mta \
-	   carbonio-prometheus-node-exporter \
-	   carbonio-prometheus-mysqld-exporter 
+         # apt install service-discover-agent carbonio-mta
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-mta \
-	   carbonio-prometheus-node-exporter \
-	   carbonio-prometheus-mysqld-exporter 
+         # dnf install service-discover-agent carbonio-mta
 
 These following tasks must be executed to configure the MTA.
 

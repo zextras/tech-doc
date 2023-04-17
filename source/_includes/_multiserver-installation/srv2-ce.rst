@@ -25,10 +25,7 @@ PostgreSQL node using `Pgpool-II
 
 	    # apt install service-discover-server pgpool2 \
 	      carbonio-directory-server carbonio-files-db \
-	      carbonio-mailbox-db carbonio-docs-connector-db \
-	      carbonio-prometheus-node-exporter \
-	      carbonio-prometheus-consul-exporter \
-	      carbonio-prometheus-openldap-exporter
+	      carbonio-mailbox-db carbonio-docs-connector-db
 
       .. tab-item:: RHEL
 	 :sync: rhel
@@ -37,10 +34,7 @@ PostgreSQL node using `Pgpool-II
 
 	    # dnf install service-discover-server pgpool2 \
 	      carbonio-directory-server carbonio-files-db \
-	      carbonio-mailbox-db carbonio-docs-connector-db \
-	      carbonio-prometheus-node-exporter \
-	      carbonio-prometheus-consul-exporter \
-	      carbonio-prometheus-openldap-exporter
+	      carbonio-mailbox-db carbonio-docs-connector-db
 
 #. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace |srv1ip| with the

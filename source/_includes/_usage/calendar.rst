@@ -23,9 +23,15 @@ added by writing their e-mail address. In case the invitation was not
 sent or if something went wrong, the event will show up in the
 calendar, but marked with a red icon. The attendee can propose a new
 time. In this case, new e-mail will be generated and sent to the other
-participant to inform them of the change. 
+participant to inform them of the change.
 
-Additionally, :ref:`mail-tags` can be added to any calendar event.
+When right-clicking an event in the calendar, different actions can be
+carried out: open it and show all participants and details, edit, copy
+or move it, and its original, plain text version, can be shown.
+
+Additionally, :ref:`mail-tags` can be added to any calendar event and
+the event itself can be (tentatively) accepted or declined
+
 
 Searching for events is easy: insert a search string in the
 :ref:`quick search bar <create-new>` to retrieve a first batch of

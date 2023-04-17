@@ -17,9 +17,7 @@ configure the various services needed.
          # apt install service-discover-agent carbonio-appserver \
            carbonio-advanced carbonio-zal \
            carbonio-user-management \
-           carbonio-files carbonio-docs-connector \
-           carbonio-docs-editor carbonio-prometheus-node-exporter \ 
-	   carbonio-prometheus-mysqld-exporter
+           carbonio-files carbonio-docs-connector
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -32,8 +30,6 @@ configure the various services needed.
          # yum install carbonio-files
          # yum install carbonio-user-management carbonio-advanced carbonio-zal
          # yum install carbonio-docs-connector carbonio-docs-editor
-	 # yum install carbonio-prometheus-node-exporter \
-	   carbonio-prometheus-mysqld-exporter
 
 Execute the following tasks.
 

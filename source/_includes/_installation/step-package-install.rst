@@ -44,7 +44,8 @@ Next, we install all packages needed for |product|.
          carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-admin-ui carbonio-admin-console-ui \
-         carbonio-admin-login-ui postgresql-12
+         carbonio-admin-login-ui postgresql-12 \
+         carbonio-prometheus
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -70,4 +71,20 @@ Next, we install all packages needed for |product|.
          carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-admin-ui carbonio-admin-console-ui \
-         carbonio-admin-login-ui 
+         carbonio-admin-login-ui \
+         carbonio-prometheus 
+
+After the successful package installation, you can check that all
+|product| services are running, by using
+
+.. code:: console
+
+   # systemctl status carbonio-*
+
+If any service is in :red:`failed` status, restart it. Probably one of
+the |monit| exporters will not correctly start, so you will need to
+run
+
+.. code:: console
+
+   # systemctl restart carbonio-prometheus-nginx-exporter.service

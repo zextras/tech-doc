@@ -14,9 +14,7 @@ databases required by |product|.
 
       .. code:: console
 
-	 # apt install postgresql-12 \
-	   carbonio-prometheus-postgres-exporter \
-	   carbonio-prometheus-node-exporter
+	 # apt install postgresql-12
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -34,14 +32,6 @@ databases required by |product|.
 
 	 # dnf -qy module disable postgresql
 	 # dnf -y install postgresql12 postgresql12-server
-
-      Install |monit| exporter
-
-      .. code:: console
-
-	 # dnf -y install carbonio-prometheus-postgres-exporter \
-	   carbonio-prometheus-node-exporter
-
 
       Finally, initialise and enable Postgresql
 

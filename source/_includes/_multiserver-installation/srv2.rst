@@ -25,10 +25,7 @@ PostgreSQL node using `Pgpool-II
 
             # apt install service-discover-server \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db carbonio-docs-connector-db \
-	      carbonio-prometheus-node-exporter \
-	      carbonio-prometheus-consul-exporter \
-	      carbonio-prometheus-openldap-exporter
+              carbonio-mailbox-db carbonio-docs-connector-db
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -37,10 +34,7 @@ PostgreSQL node using `Pgpool-II
 
             # dnf install service-discover-server \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db carbonio-docs-connector-db \
-	      carbonio-prometheus-node-exporter \
-	      carbonio-prometheus-consul-exporter \
-	      carbonio-prometheus-openldap-exporter
+              carbonio-mailbox-db carbonio-docs-connector-db
 
 #. Install pgpool
 

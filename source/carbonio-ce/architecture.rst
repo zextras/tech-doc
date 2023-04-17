@@ -14,7 +14,7 @@ with all its components.
 
    .. _fig-ce-arch:
 
-   .. figure:: /img/carbonio/ce-architecture.png
+   .. figure:: /img/carbonio/architecture_CE.png
 
       Simplified architecture of |product|.
 

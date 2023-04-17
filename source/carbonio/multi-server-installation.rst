@@ -145,8 +145,8 @@ SRV5: Advanced, AppServer, Files, and Docs
 
 .. _srv6-install:
 
-SRV6: Advanced, AppServer, and Preview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV6: Advanced, AppServer, Preview, and |monit|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6.rst
 

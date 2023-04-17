@@ -14,7 +14,7 @@ with all its components.
 
    .. _fig-cb-arch:
 
-   .. figure:: /img/carbonio/carbonio-architecture.png
+   .. figure:: /img/carbonio/architecture_Carbonio.png
 
       Simplified architecture of |product|.
 
