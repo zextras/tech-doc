@@ -11,8 +11,10 @@
 This section contains guidelines to enforce security on a typical
 |product| installation.
 
-.. include:: /_includes/install_SSL_certificate.rst
+.. include:: /_includes/_security/install_SSL_certificate.rst
 
-.. include:: /_includes/dkim.rst
+.. include:: /_includes/_security/dkim.rst
 
-.. include:: /_includes/integratedservices.rst
+.. include:: /_includes/_security/integratedservices.rst
+
+.. include:: /_includes/_security/ldap.rst
