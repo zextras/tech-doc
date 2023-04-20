@@ -177,14 +177,15 @@ node hosting the **Proxy** Role.
       (or opportunistic SSL/TLS)"
       "993", "external IMAP secure access"
       "995", "external POP3 secure access"
+      "6071", "secure access to the Admin Panel"
       "8636", "access to LDAP address books"
 
    .. [1] This port is still used since in some cases it is
       considered safer than 587. It requires on-connection SSL.
 
-   .. warning:: SMTP, IMAP, and POP3 ports should be exposed only if
-      really needed, and preferably only accessible from a VPN tunnel,
-      if possible, to reduce the attack surface.
+   .. warning:: SMTP, IMAP, POP3, and 6071 ports should be exposed
+      only if really needed, and preferably only accessible from a VPN
+      tunnel, if possible, to reduce the attack surface.
 
 .. dropdown:: TCP Internal Connections
    :open:
