@@ -10,9 +10,9 @@ This page provides hardware and software requirements for |product|
 and directions for its installation. Please review carefully this
 whole page before attempting to install.
 
-
 .. toctree::
 
    requirements
    single-server-installation
    multi-server-installation
+   remove-logger
