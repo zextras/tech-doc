@@ -33,3 +33,8 @@ will still use SHA-512.
 The second step, indeed, is up to the users: the password of each user
 will be stored using Argon2 only as soon as they change it.
 
+.. hint:: The Administrator can force a user to change password from
+   the |adminui| by enabling option `This user must change password`,
+   that appears in tab `General` when editing a user under
+   :menuselection:`Domains --> Accounts`. See section
+   :ref:`ap-accounts` for details.
