@@ -17,7 +17,7 @@ configure the various services needed.
          # apt install service-discover-agent carbonio-appserver \
            carbonio-advanced carbonio-zal \
            carbonio-user-management \
-           carbonio-files carbonio-docs-connector
+           carbonio-files carbonio-docs-connector carbonio-docs-editor
 
    .. tab-item:: RHEL
       :sync: rhel

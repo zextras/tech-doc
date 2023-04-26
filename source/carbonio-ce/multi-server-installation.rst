@@ -152,7 +152,7 @@ SRV6: AppServer, Preview, and |monit|
 
 .. include:: /_includes/_installation/complete.rst
              
-.. _logger_node_config:
+.. _centralised-logging:
 
 Centralised Logging Configuration
 ---------------------------------
