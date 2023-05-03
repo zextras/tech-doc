@@ -53,7 +53,8 @@ PostgreSQL node using `Pgpool-II
          .. code:: console
 
             # dnf install https://www.pgpool.net/yum/rpms/4.3/redhat/rhel-8-x86_64/pgpool-II-release-4.3-1.noarch.rpm
-            
+            # dnf install pgpool-II
+
 #. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace |srv1ip| with the
    value saved in the previous task.
@@ -68,7 +69,7 @@ PostgreSQL node using `Pgpool-II
             # echo "backend_clustering_mode = 'raw'
             port = 5432
             backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-            backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
+            backend_port0 = 5433" > /etc/pgpool2/pgpool.conf
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -78,7 +79,7 @@ PostgreSQL node using `Pgpool-II
             # echo "backend_clustering_mode = 'raw'
             port = 5432
             backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-            backend_port0 = 5432" > /etc/pgpool-II/pgpool.conf
+            backend_port0 = 5433" > /etc/pgpool-II/pgpool.conf
 
 #. restart the service using this command.
 

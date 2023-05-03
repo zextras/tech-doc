@@ -19,33 +19,48 @@ PostgreSQL node using `Pgpool-II
    .. tab-set::
 
       .. tab-item:: Ubuntu
-	 :sync: ubuntu
+         :sync: ubuntu
 
-	 .. code:: console
+         .. code:: console
 
-	    # apt install service-discover-server pgpool2 \
-	      carbonio-directory-server carbonio-files-db \
-	      carbonio-mailbox-db carbonio-docs-connector-db
+            # apt install service-discover-server pgpool2 \
+              carbonio-directory-server carbonio-files-db \
+              carbonio-mailbox-db carbonio-docs-connector-db
 
       .. tab-item:: RHEL
-	 :sync: rhel
+         :sync: rhel
 
-	 .. code:: console
+         .. code:: console
 
-	    # dnf install service-discover-server pgpool2 \
-	      carbonio-directory-server carbonio-files-db \
-	      carbonio-mailbox-db carbonio-docs-connector-db
+            # dnf install service-discover-server pgpool-II \
+              carbonio-directory-server carbonio-files-db \
+              carbonio-mailbox-db carbonio-docs-connector-db
 
 #. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace |srv1ip| with the
    value saved in the previous task.
 
-   .. code:: console
+   .. tab-set::
 
-      # echo "backend_clustering_mode = 'raw'
-	port = 5432
-	backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-	backend_port0 = 5432" > /etc/pgpool2/pgpool.conf
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # echo "backend_clustering_mode = 'raw'
+            port = 5432
+            backend_hostname0 = 'SRV1_IP' # eg 172.16.0.1
+            backend_port0 = 5433" > /etc/pgpool2/pgpool.conf
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # echo "backend_clustering_mode = 'raw'
+            port = 5432
+            backend_hostname0 = 'SRV1_IP' # eg 172.16.0.1
+            backend_port0 = 5433" > /etc/pgpool-II/pgpool.conf
 
 #. restart the service using this command.
 

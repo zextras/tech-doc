@@ -58,7 +58,7 @@ stored on this node by running these four commands.
       .. code:: console
 
 	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5432';\""
+	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
 	 # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/12/main/pg_hba.conf
 	 # systemctl restart postgresql
 
@@ -68,13 +68,14 @@ stored on this node by running these four commands.
       .. code:: console
 
 	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5432';\""
+	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
 	 # echo "host    all             all             0.0.0.0/0            md5" >> /var/lib/pgsql/12/data/pg_hba.conf
 	 # systemctl restart postgresql-12
 
 
 .. hint:: You may replace the ``0.0.0.0/0`` network with the one
-   within the cluster is installed, to prevent unwanted accesses.
+   within the cluster is installed (**172.16.0.0**) to prevent
+   unwanted accesses.
 
 .. card:: Values used in the next steps
 
