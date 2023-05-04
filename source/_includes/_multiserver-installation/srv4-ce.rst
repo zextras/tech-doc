@@ -17,8 +17,7 @@ front-end packages for |file| and |adminui|) will be installed here.
 	 .. code:: console
 
 	    # apt install service-discover-agent carbonio-proxy \
-	      carbonio-webui carbonio-files-ui \
-	      carbonio-admin-ui carbonio-admin-console-ui
+	      carbonio-webui carbonio-files-ui
 
       .. tab-item:: RHEL
 	 :sync: rhel
@@ -26,8 +25,7 @@ front-end packages for |file| and |adminui|) will be installed here.
 	 .. code:: console
 
 	    # dnf install service-discover-agent carbonio-proxy \
-	      carbonio-webui carbonio-files-ui \
-	      carbonio-admin-ui carbonio-admin-console-ui
+	      carbonio-webui carbonio-files-ui
 
 #. Restart the nginx exporter for |monit|
 
@@ -48,11 +46,11 @@ front-end packages for |file| and |adminui|) will be installed here.
    * ``Ldap Admin password``: |ldappwd|
    * ``Bind password for nginx ldap user``: |nginxpwd|
 
-#.  Run |mesh| setup using |meshsec|
+#. Run |mesh| setup using |meshsec|
 
-    .. code:: console
+   .. code:: console
 
-       # service-discover setup-wizard
+      # service-discover setup-wizard
 
    Since this node is not the |mesh| Server, the
    :file:`cluster-credentials.tar.gpg` file will be automatically
