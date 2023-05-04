@@ -25,8 +25,7 @@ nodes.
             .. code:: console
 
                # apt install service-discover-agent carbonio-proxy \
-                 carbonio-webui carbonio-files-ui carbonio-chats-ui \
-                 carbonio-admin-ui carbonio-admin-console-ui
+                 carbonio-webui carbonio-files-ui carbonio-chats-ui
 
          .. tab-item:: RHEL
             :sync: rhel
@@ -34,8 +33,7 @@ nodes.
             .. code:: console
 
                # dnf install service-discover-agent carbonio-proxy \
-                 carbonio-webui carbonio-files-ui carbonio-chats-ui \
-                 carbonio-admin-ui carbonio-admin-console-ui
+                 carbonio-webui carbonio-files-ui carbonio-chats-ui
 
    #. Restart the nginx exporter for |monit|
 
@@ -82,6 +80,23 @@ nodes.
       communication with the server, that will be installed on
       :bdg-secondary-line:`SRV-6`.
 
+
+   #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
+
+      .. card::
+         :class-card: sd-border-2 sd-pt-3
+         
+
+         .. code:: console
+
+            zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
+            zextras$ zmmemcachedctl restart
+            zextras$ zmproxyctl restart
+
+      .. warning:: Since ``Memcached`` does not support authentication,
+         make sure that the Memcached port (**11211**) is accessible only
+         from internal, trusted networks.
+
 .. card:: |vs| and Video Recording
 
    It is possible to install the |vs| without the Video Recording
@@ -125,18 +140,6 @@ nodes.
 
          # systemctl enable videoserver.service
          # systemctl start  videoserver.service
-
-   #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
-
-      .. code:: console
-
-         zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
-         zextras$ zmmemcachedctl restart
-         zextras$ zmproxyctl restart
-
-      .. warning:: Since ``Memcached`` does not support authentication,
-         make sure that the Memcached port (**11211**) is accessible only
-         from internal, trusted networks.
 
    #. **[Video Recording]** To implement this feature, install package
 

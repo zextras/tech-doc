@@ -14,10 +14,9 @@ configure the various services needed.
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-appserver \
-           carbonio-advanced carbonio-zal \
-           carbonio-user-management \
-           carbonio-files carbonio-docs-connector carbonio-docs-editor
+         # apt install service-discover-agent carbonio-advanced \
+           carbonio-user-management carbonio-files \
+           carbonio-docs-connector carbonio-docs-editor
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -26,9 +25,9 @@ configure the various services needed.
 
       .. code:: console
 
-         # yum install service-discover-agent carbonio-appserver
+         # yum install service-discover-agent 
          # yum install carbonio-files
-         # yum install carbonio-user-management carbonio-advanced carbonio-zal
+         # yum install carbonio-user-management carbonio-advanced
          # yum install carbonio-docs-connector carbonio-docs-editor
 
 Execute the following tasks.

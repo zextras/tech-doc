@@ -20,8 +20,8 @@ First install all the necessary packages:
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-appserver \
-           carbonio-user-management carbonio-advanced carbonio-zal \
+         # apt install service-discover-agent \
+           carbonio-user-management carbonio-advanced \
            carbonio-preview carbonio-prometheus
 
    .. tab-item:: RHEL
@@ -31,8 +31,8 @@ First install all the necessary packages:
 
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-appserver
-         # dnf install carbonio-user-management carbonio-advanced carbonio-zal
+         # dnf install service-discover-agent
+         # dnf install carbonio-user-management carbonio-advanced
          # dnf install carbonio-preview carbonio-prometheus
 
 Execute the following tasks.
