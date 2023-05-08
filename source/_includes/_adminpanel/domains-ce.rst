@@ -238,10 +238,11 @@ four tabs:
 
    .. tab-item:: General
 
-      This tab contains all the options provided during the :ref:`account
-      creation <ap-new-account>` in the *Details* and *Create* steps,
-      plus other options, including the ability to prevent the user
-      from changing the password.
+      This tab contains all the options provided during the
+      :ref:`account creation <ap-new-account>` in the *Details* and
+      *Create* steps, plus other options, including the ability to
+      prevent the user from changing the password and remove the
+      user's password from LDAP.
 
       This tab also shown of which Mailing list the user is member.
 
