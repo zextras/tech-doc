@@ -263,12 +263,12 @@ four tabs:
    .. tab-item:: Security
       
       Options present here allow to manage the account security: OTP
-      and policies for password and failed login. New OTP tokens can
-      be created to allow the user to login by using a QR Code; a
-      policy can set to force the user to select a secure password and
-      the type of characters to be chosen. The Failed login policy
-      determines how the system behaves when a user fails too many
-      consecutive logins.
+      and policies for password and failed login. New application
+      passwords and OTP tokens can be created to allow the user to
+      login by using a QR Code; a policy can set to force the user to
+      select a secure password and the type of characters to be
+      chosen. The Failed login policy determines how the system
+      behaves when a user fails too many consecutive logins.
 
    .. tab-item:: Delegates
 
