@@ -43,9 +43,7 @@ Next, we install all packages needed for |product|.
          carbonio-storages-ce \
          carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         carbonio-admin-login-ui postgresql-12 \
-         carbonio-prometheus
+         postgresql-12 carbonio-prometheus
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -70,8 +68,6 @@ Next, we install all packages needed for |product|.
          carbonio-files-ce carbonio-files-db \
          carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         carbonio-admin-login-ui \
          carbonio-prometheus 
 
 After the successful package installation, you can check that all

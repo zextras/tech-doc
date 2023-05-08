@@ -38,15 +38,12 @@ Next, we install all packages needed for |product|.
          carbonio-webui carbonio-files-ui \
          carbonio-chats-ui \
          carbonio-mta \ carbonio-mailbox-db \
-         carbonio-appserver \
-         carbonio-advanced carbonio-zal \
+         carbonio-advanced \
          carbonio-user-management \
          carbonio-files carbonio-files-db \
          carbonio-preview carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         carbonio-admin-login-ui postgresql-12 \
-         carbonio-prometheus
+         postgresql-12 carbonio-prometheus
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -68,15 +65,11 @@ Next, we install all packages needed for |product|.
          carbonio-files-ui carbonio-files \
          carbonio-files-db \
          carbonio-mta \
-         carbonio-appserver \
          carbonio-mailbox-db \
-         carbonio-advanced carbonio-zal \
-         carbonio-chats-ui \
+         carbonio-advanced carbonio-chats-ui \
          carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
-         carbonio-admin-ui carbonio-admin-console-ui \
-         carbonio-admin-login-ui carbonio-preview \
-         carbonio-prometheus
+         carbonio-preview carbonio-prometheus
 
 After the successful package installation, you can check that all
 |product| services are running, by using
