@@ -36,25 +36,6 @@ Upgrade Nodes
 
 .. include:: /_includes/_upgrade/node.rst
 
-.. _rhel-post:
-
-RHEL-Only Post-install Tasks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In case you have a RHEL ( installation, after the reboot, you need to
-reinstall package ``carbonio-zal``
-
-.. code:: console
-
-   # dnf reinstall carbonio-zal
-
-Then restart the process as the ``zextras`` user
-
-
-.. code:: console
-
-   zextras$ zmmailboxdctl restart
-
 .. _upgrade-troubleshooting:
 
 Manual Steps and Troubleshooting
