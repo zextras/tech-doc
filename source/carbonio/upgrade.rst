@@ -71,7 +71,6 @@ be upgraded, you might need to run them or not.
 
 .. troubleshooting
 
-.. include:: /_includes/_upgrade/ts-ce.rst
 .. include:: /_includes/_upgrade/ts-cb.rst
 
 .. _upgrade-vs:

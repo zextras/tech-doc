@@ -38,7 +38,7 @@ In order to report a Zextras Suite issue, please follow this steps:
    in your report <required-info-ticket>` section of this page.
 
 -  File a case in the Zextras Support Portal at
-   https://support.zextras.com/, providing the most amount of
+   https://helpdesk.zextras.com/, providing the most amount of
    information possible.
 
 .. _issue-definition:
