@@ -324,6 +324,8 @@ four tabs:
       interacts with the e-mails (receive, sending, composing, adding
       a signature) and are mostly inherited from the COS.
 
+      .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+
    .. tab-item:: Security
       
       Options present here allow to manage the account security: OTP
@@ -554,12 +556,17 @@ to the mailing list.
    Dynamic Mode
    ++++++++++++
 
+.. _ap-resources:
+
 Resources
 ~~~~~~~~~
 
-A Resource is a generic object that can be assigned an e-mail
-address. A typical example of a Resource is a **meeting room**: to
-reserve the room, send an e-mail to the room's e-mail address.
+A Resource is a generic object that can be assigned an e-mail address,
+but, unlike other regular accounts, they do not need any signature, so
+you can not specify one. A typical example of a Resource is a
+**meeting room**: to reserve the room, send an e-mail to the room's
+e-mail address.
+
 
 A policy can be assigned to Resource, to determine how to react to the
 booking request, either a manual or automatic acceptance or rejection.
