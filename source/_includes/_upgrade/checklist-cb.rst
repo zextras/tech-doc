@@ -46,8 +46,8 @@ versions** any version of |product| released before these two.
       :ref:`upgrade-vs` when upgrading the Node featuring the |vs|.
 
       :octicon:`check-circle;1em;sd-text-success` In case any ``-db``
-      package is in the upgrade list, execute the steps in
-      :ref:`bootstrap-db`.
+      package is in the upgrade list, execute the corresponding step
+      in :ref:`bootstrap-db`.
 
       :octicon:`check-circle;1em;sd-text-success` If the upgrade of
       **Docs Editor** ends with errors, check section
