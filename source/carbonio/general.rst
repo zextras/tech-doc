@@ -40,3 +40,4 @@ Seeking Help on |product|
 =========================
 
 .. include:: /_includes/_general/community-help.rst
+.. include:: /_includes/_general/support.rst
