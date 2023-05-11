@@ -196,12 +196,6 @@ Bugfix List
 .. 
 
 
-**DOCS-179: None**
-   None
-   
-.. 
-
-
 **COR-905: Password change is functional**
    Users can now change their passwords. 
    
@@ -210,12 +204,6 @@ Bugfix List
 
 **COR-901: Domain admin not getting json error**
    Now Domain admin not getting json error when editing account
-   
-.. 
-
-
-**COR-891: None**
-   None
    
 .. 
 
