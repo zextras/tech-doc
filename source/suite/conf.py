@@ -30,7 +30,7 @@ copyright = '2022: ZEXTRAS, All rights reserved'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '3.16.1'
+release = '3.17.0'
 
 # -- General configuration ---------------------------------------------------
 
