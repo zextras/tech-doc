@@ -15,3 +15,7 @@ manual interaction during the procedure.
 you must choose to replace the old configuration file. Therefore,
 during the upgrade click :kbd:`Y` when asked to replace the
 configuration file.
+
+:octicon:`check-circle;1em;sd-text-success` the ``carbonio-docs-core``
+package. On **RHEL 8 only**, you might encounter a conflict between
+libraries. In this case, please refer to section :ref:`upgrade-ts`.
