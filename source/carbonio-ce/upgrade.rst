@@ -34,7 +34,7 @@ Preliminary Tasks
 Upgrade Nodes
 -------------
 
-.. include:: /_includes/_upgrade/node.rst
+.. include:: /_includes/_upgrade/node-ce.rst
              
 .. _upgrade-ts:
 
