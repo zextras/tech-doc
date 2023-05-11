@@ -7,7 +7,7 @@
    the version immediately before, i.e., |prev|, and as **older
    versions** any version of |product| released before these two.
 
-This upgrade impacts the following *Roles*, which require some
+This upgrade impacts the following *Roles* or packages, which require some
 manual interaction during the procedure.
 
 
