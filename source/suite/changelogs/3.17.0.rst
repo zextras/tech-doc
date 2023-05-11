@@ -1,0 +1,43 @@
+
+
+.. uncomment for next release (3.17.0)
+
+   Zextras Suite Changelog - Release 3.17.0
+   ========================================
+
+      Release Date: May 15th, 2023
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-406
+
+* *Title:* Appointments replies synchronization fixed for iOS
+
+* *Description:* Fixed a bug that caused iOS mobile devices to synchronize replies to calendar appointments multiple times.
+
+..
+
+* *Issue ID:* MOB-407
+
+* *Title:*   Attachment's name encoding via EAS fixed
+
+* *Description:* Fixed a bug that caused the attachment's names with non-ASCII characters to be wrongly encoded when synchronizing via EAS.
+
+.. rubric:: Powerstore
+
+* *Issue ID:* PS-459
+
+* *Title:* S3 bucket validation enhanced
+
+* *Description:* To improve the `testS3Connection` command, a file is now uploaded on the bucket, read and finally deleted to confirm that the bucket is properly working.
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-4053
+
+* *Title:* External attendees to instant meetings bugfix
+
+* *Description:* A bug that caused the external attendees to be unable to join an instant meeting has been fixed.
+
+
+
