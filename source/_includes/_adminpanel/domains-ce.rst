@@ -143,10 +143,28 @@ access, or **Remove** the domain and all its items.
 .. warning:: The removal of the domain is an operation that can not be
    undone: all the items are gone forever.
 
-..
-   GAL
-   ~~~
+.. _ap-gal:
 
+Global Access List
+~~~~~~~~~~~~~~~~~~
+
+A :abbr:`GAL (Global Access List)` is a special account (*"GALSync
+Account"*) that contains all e-mail accounts configured on the server
+and provides the ability to quickly search e-mail addresses, for
+example when composing an email or adding participants to an event in
+the Calendar. A GAL can be internal when configured on |product|,
+external (when configured on the LDAP used by |product|, or both.  In
+this page you see the email-address of the GALSync account, you can
+change it from external to internal, or vice versa, or both. you can
+also remove it, create it if missing, and change some of its options.
+
+
+The GALSync account is updated regularly, according to the interval
+specified in the **Settings** section of the page.
+
+
+
+..
    Authentication
    ~~~~~~~~~~~~~~
 
@@ -238,10 +256,11 @@ four tabs:
 
    .. tab-item:: General
 
-      This tab contains all the options provided during the :ref:`account
-      creation <ap-new-account>` in the *Details* and *Create* steps,
-      plus other options, including the ability to prevent the user
-      from changing the password.
+      This tab contains all the options provided during the
+      :ref:`account creation <ap-new-account>` in the *Details* and
+      *Create* steps, plus other options, including the ability to
+      prevent the user from changing the password and remove the
+      user's password from LDAP.
 
       This tab also shown of which Mailing list the user is member.
 
@@ -259,15 +278,17 @@ four tabs:
       interacts with the e-mails (receive, sending, composing, adding
       a signature) and are mostly inherited from the COS.
 
+      .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+
    .. tab-item:: Security
       
       Options present here allow to manage the account security: OTP
-      and policies for password and failed login. New OTP tokens can
-      be created to allow the user to login by using a QR Code; a
-      policy can set to force the user to select a secure password and
-      the type of characters to be chosen. The Failed login policy
-      determines how the system behaves when a user fails too many
-      consecutive logins.
+      and policies for password and failed login. New application
+      passwords and OTP tokens can be created to allow the user to
+      login by using a QR Code; a policy can set to force the user to
+      select a secure password and the type of characters to be
+      chosen. The Failed login policy determines how the system
+      behaves when a user fails too many consecutive logins.
 
    .. tab-item:: Delegates
 
@@ -489,12 +510,17 @@ to the mailing list.
    Dynamic Mode
    ++++++++++++
 
+.. _ap-resources:
+
 Resources
 ~~~~~~~~~
 
-A Resource is a generic object that can be assigned an e-mail
-address. A typical example of a Resource is a **meeting room**: to
-reserve the room, send an e-mail to the room's e-mail address.
+A Resource is a generic object that can be assigned an e-mail address,
+but, unlike other regular accounts, they do not need any signature, so
+you can not specify one. A typical example of a Resource is a
+**meeting room**: to reserve the room, send an e-mail to the room's
+e-mail address.
+
 
 A policy can be assigned to Resource, to determine how to react to the
 booking request, either a manual or automatic acceptance or rejection.
