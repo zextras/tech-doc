@@ -17,6 +17,6 @@ additional task.
 
 Moreover, incompatibilities may arise in case the upgrade includes
 third-party software, which may lead to some additional manual steps
-to be carried out. Section :ref:`upgrade-troubleshooting` below
+to be carried out. Section :ref:`upgrade-ts` below
 contains information to prevent or fix these issues.
 
