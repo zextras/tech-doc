@@ -86,7 +86,7 @@ New Features List
 
 
 **AC-380: Admin can manage galsync account**
-   Now the admin can create and delete GalSync accounts post domain creation from the admin BUGFIX.
+   Now the admin can create and delete GalSync accounts post domain creation from the admin console.
    
 .. 
 
