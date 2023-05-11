@@ -38,13 +38,10 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Changelogs:
+         :caption: Release:
 
-         changelog-23.4.0
-         changelog-23.3.0
-         changelog-23.2.0
-
-
+         changelog-23.5.0
+         upgrade
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -57,7 +54,6 @@ If you are looking for |ce|'s documentation, please refer to its
          general
          architecture
          installation
-         upgrade
          common/carbonio/web-access
          security
 
