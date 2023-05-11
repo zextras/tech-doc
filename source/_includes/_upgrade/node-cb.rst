@@ -79,7 +79,7 @@ installation.
    .. grid-item-card:: Step 6. Reboot
       :columns: 12 12 6 6 
 
-       Once the upgrade has completed successfully, run command:
+      Once the upgrade has completed successfully, run command:
 
       .. code:: console
 
