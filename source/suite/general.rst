@@ -54,7 +54,7 @@ Additional resources
 ====================
 
 Besides the individual modules, the Zextras ecosystem encompasses a
-`customer support portal <https://support.zextras.com/hc/en-us>`_, and
+`customer support portal <https://helpdesk.zextras.com/>`_, and
 two additional portals: *this technical documentation*, and the
 `Community <https://community.zextras.com/>`_.
 
