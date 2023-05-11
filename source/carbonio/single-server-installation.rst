@@ -95,9 +95,6 @@ Step 6: Setup |mesh|
 
 .. include:: /_includes/_installation/step-conf-mesh.rst
 
-.. hint:: In case of errors related to |mesh| token, please refer to
-   section :ref:`upgrade-ts-token`. 
-   
 .. _installation-step7:
 
 Step 7: Create Main DB Role and Database for |product|
