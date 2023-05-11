@@ -16,3 +16,5 @@ This section contains guidelines to enforce security on a typical
 .. include:: /_includes/_security/dkim.rst
 
 .. include:: /_includes/_security/ldap.rst
+
+.. include:: /_includes/_security/amavis.rst
