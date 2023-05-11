@@ -63,6 +63,8 @@ installation.
    .. grid-item-card:: Step 4. Bootstrap database
       :columns: 12 12 6 6
 
+      This step must be performed exclusively on the DB Connection node (SRV2 in our multi-node scenario)
+
       .. code:: console
 
          # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
