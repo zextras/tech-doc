@@ -93,6 +93,34 @@ Module.
 
 	 # carbonio prov ma user@example.com zimbraFeatureMobileSyncEnabled FALSE
 
+.. _mobile-sync:
+
+Disable Sync for an account and Device
+======================================
+
+In certain situation it can be useful to stop some of a user's
+devices from synchronisation with the server. In those cases it is
+possible to use the following command
+
+.. code:: console
+
+   zextras$ carbonio mobile doSuspendDeviceSync account-uuid id
+
+Here, ``account-uuid`` is the UUID of the user's account to which the
+device belongs, while  ``id`` is the identifier of the device.
+
+.. hint:: Both parameters are mandatory.
+
+To restore synchronisation, use the command
+
+.. code:: console
+
+   zextras$ carbonio mobile doResumeDeviceSync account-uuid device_id id
+
+If you specify ``device_id id``, only synchronisation to that device
+will be resumed, while if you omit it, all user's device will be
+restart synchronisation.
+          
 .. _mobile-password:
 
 The Mobile Password Feature
