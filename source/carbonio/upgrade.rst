@@ -34,49 +34,12 @@ Preliminary Tasks
 Upgrade Nodes
 -------------
 
-.. include:: /_includes/_upgrade/node.rst
+.. include:: /_includes/_upgrade/node-cb.rst
 
-.. _rhel-post:
+.. _upgrade-ts:
 
-RHEL-Only Post-install Tasks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Troubleshooting
+---------------
 
-In case you have a RHEL ( installation, after the reboot, you need to
-reinstall package ``carbonio-zal``
-
-.. code:: console
-
-   # dnf reinstall carbonio-zal
-
-Then restart the process as the ``zextras`` user
-
-
-.. code:: console
-
-   zextras$ zmmailboxdctl restart
-
-.. _upgrade-troubleshooting:
-
-Manual Steps and Troubleshooting
---------------------------------
-
-If you are upgrading from |prev| to |release|, you need to execute
-these steps only if they are mentioned in Sections
-:ref:`upgrade-checklist`.
-
-If you are upgrading from an older version (i.e., previous to |prev|),
-you need to verify in section :ref:`upgrade-checklist` if any of these
-steps is needed: in other words, depending on the packages that will
-be upgraded, you might need to run them or not.
-
-.. troubleshooting
-
-.. include:: /_includes/_upgrade/ts-cb.rst
-
-.. _upgrade-vs:
-
-Upgrade |vs| Node
-~~~~~~~~~~~~~~~~~
-
-.. include:: /_includes/_upgrade/vs.rst
+.. include:: /_includes/_upgrade/ts.rst
 

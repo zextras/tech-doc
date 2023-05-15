@@ -30,7 +30,7 @@ copyright = '2022: ZEXTRAS, All rights reserved'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '3.16.1'
+release = '3.17.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -81,7 +81,9 @@ html_context = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = [ 'css/suite.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css' ]
+html_css_files = [ 'css/suite.css', 'css/common.css',
+                   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css'
+                  ]
 html_logo = 'img/logos/suite-white.svg'
 
 html_theme_options= {

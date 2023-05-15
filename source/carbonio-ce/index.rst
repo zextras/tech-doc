@@ -40,10 +40,10 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Changelogs
+         :caption: Release:
 
          Changelog <changelog>
-
+         upgrade
 
 
    .. grid-item-card::
@@ -57,7 +57,6 @@ If you are looking for |carbonio|'s documentation, please refer to its
          general
          architecture
          installation
-         upgrade
          common/carbonio/web-access
          security
 

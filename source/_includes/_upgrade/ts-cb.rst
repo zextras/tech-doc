@@ -200,3 +200,22 @@ Finally, restart the mailbox service.
    zextras$ zmcontrol stop
    zextras$ zmcontrol start
 
+.. _rhel-post:
+
+``mailboxd`` Process not Running (RHEL-Only )
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In case you have a RHEL 8 installation and after the reboot you notice
+that the ``mailboxd`` process is not started, check that the
+``carbonio-zal`` package is installed (and in case it is not,
+reinstall it), then restart the process as the ``zextras`` user.
+
+These are the commands that you need to execute.
+
+.. code:: console
+
+   # dnf reinstall carbonio-zal
+
+.. code:: console
+
+   zextras$ zmmailboxdctl restart
