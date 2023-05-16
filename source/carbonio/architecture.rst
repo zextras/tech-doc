@@ -15,6 +15,7 @@ with all its components.
    .. _fig-cb-arch:
 
    .. figure:: /img/carbonio/architecture_Carbonio.png
+      :width: 100%
 
       Simplified architecture of |product|.
 
@@ -149,6 +150,10 @@ installed on any node, provided the dependencies are respected.
 * **Docs**. Consists of **docs-connection**, **docs-editor**, and
   **docs-core**; it provides the collaborative editing
   functionalities.
+
+  .. note:: In Multi-Server installation, there can be only one
+     instance of Docs.
+	    
 * **DB-connection**. Provided by packages **carbonio-files-db** and
   **carbonio-mailbox-db**, this role has the responsibility to allow
   communication between |product| and the database. The use of

@@ -278,6 +278,8 @@ You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the l
 
    .. figure:: /img/auth/saml-login.png
       :align: center
+      :width: 100%
+
 
       Login page with enabled SAML.
 
