@@ -205,15 +205,15 @@ In order to use |carbonio| Mail App, follow these steps:
    :gutter: 3
 
    .. grid-item::
-      :columns: 3
+      :columns: 2
 
    .. grid-item::
-      :columns: 2
+      :columns: 3
 
       .. _fig-carb-mail-login:
 
       .. figure:: /img/login.png
-         :scale: 30%
+         :width: 90%
 
          Login screen of |carbonio| Mail app.
 

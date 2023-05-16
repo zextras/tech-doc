@@ -15,6 +15,7 @@ with all its components.
    .. _fig-ce-arch:
 
    .. figure:: /img/carbonio/architecture_CE.png
+      :width: 100%
 
       Simplified architecture of |product|.
 
@@ -151,6 +152,10 @@ installed on any node, provided the dependencies are respected.
 * **Docs-CE**. Consists of **docs-connection-CE**, **docs-editor**,
   and **docs-core** and provides the collaborative editing
   functionalities
+
+  .. note:: In Multi-Server installation, there can be only one
+     instance of Docs-CE.
+     
 * **User Management**. It registers the user status (logged in or
   logged out) and user attributes (e.g., on which AppServer a user is
   logged in).

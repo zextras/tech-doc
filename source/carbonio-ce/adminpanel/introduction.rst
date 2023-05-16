@@ -38,6 +38,7 @@ The landing page is shown in :numref:`fig_ap-top` and
       .. _fig_ap-top:
 
       .. figure:: /img/adminpanel/AP-landing-top.png
+	 :width: 100%
 
          The upper part of Admin Panel's landing page
 
@@ -60,6 +61,7 @@ The landing page is shown in :numref:`fig_ap-top` and
       .. _fig_ap-bottom:
 
       .. figure:: /img/adminpanel/AP-landing-bottom.png
+	 :width: 100%
 
          The lower part of Admin Panel's landing page
 

@@ -5,6 +5,7 @@
 .. _fig_top_bar:
 
 .. figure:: /img/carbonio/Searchbar.png
+   :width: 100%
 
    The top bar of |product|, used to search for objects and to create
    new ones.
