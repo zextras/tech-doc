@@ -58,7 +58,6 @@
 .. |mtaip| replace:: :bdg-secondary-line:`MTA_IP`
 .. |vsip| replace:: :bdg-secondary-line:`VS_IP`
 .. |vspwd| replace:: :bdg-secondary-line:`VS_PWD`
-.. |servletport| replace:: :bdg-secondary-line:`SERVLET_PORT`
 .. |ldappwd| replace:: :bdg-secondary-line:`LDAP_PWD`
 .. |nginxpwd| replace:: :bdg-secondary-line:`NGINX_PWD`
 .. |postfixpwd| replace:: :bdg-secondary-line:`POSTFIX_PWD`
