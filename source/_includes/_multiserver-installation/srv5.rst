@@ -72,13 +72,12 @@ Execute the following tasks.
    :bdg-secondary-line:`SRV-6`. 
 
 #. Run as the ``zextras user`` the following command to configure the
-   Video Recording, using |vsip|, |servletport| and |vspwd| configured
-   on SRV4
+   Video Recording, using |vsip| and |vspwd| configured on SRV4
 
    .. code:: console
 
       zextras$ carbonio chats video-server add VS_IP port 8188 \
-        servlet_port SERVLET_PORT secret VS_PWD
+        servlet_port 8090 secret VS_PWD
 
 #. Enable |vs| at COS level, Video Recording, and the possibility for
    each user to record meetings.

@@ -56,7 +56,7 @@ Execute the following command to configure video recording.
    zextras$ carbonio chats video-server add VS_IP port 8188 servlet_port 8090 secret VIDEOSERVER_PWD
 
 Here, port **8188** is the default port used by |vs|, while **8090**
-for recording. Change these values according to your needs or
+for recording. You may change these values according to your needs or
 preferences, but take into account that the value of the
 ``servlet_port`` **must match** the one defined for |vs| in file
 :file:`/etc/carbonio/videoserver-recorder/recordingEnv`.
