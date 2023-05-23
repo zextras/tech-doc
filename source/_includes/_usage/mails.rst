@@ -82,20 +82,21 @@ above the list, then move them to another folder.
    checkmark above the list of e-mails.  
    
 On the top-right corner of each e-mail there are a few icons that
-allow to carry out a number of actions; click the three-dotted icon to
-access them and many more: mark e-mail as read/unread or as spam,
-print, delete, tag, or flag it. A flag is a simple indicator for an
-email that can be adapted to one's preference: to name a few, it has
-some importance compared to other, it needs some action, or it has
-been processed and can be archived or deleted.
+allow to carry out a number of actions; click the
+:material-regular:`more_vert` icon to access them and many more: mark
+e-mail as read/unread or as spam, print, delete, tag, or flag it. A
+flag is a simple indicator for an email that can be adapted to one's
+preference: to name a few, it has some importance compared to other,
+it needs some action, or it has been processed and can be archived or
+deleted.
 
 
 More actions are available and shown upon right-clicking an email.
 
 |product| has support for **e-mail receipts**: when composing an
-email, a click on the three-dotted icon on the right-hand side of the
-subject will add a request for a read receipt from the e-mail
-recipient.
+email, a click on the :material-regular:`more_vert` icon on the
+right-hand side of the subject will add a request for a read receipt
+from the e-mail recipient.
 
 When opening for the first time an email with a receipt request, a
 modal will appear and ask to send a read receipt to the author. Click
