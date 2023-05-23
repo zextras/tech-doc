@@ -18,4 +18,4 @@ replacing **TOKEN** with your licence token.
 
 .. code:: console
 
-   # carbonio core activate-license TOKEN
+   zextras$ carbonio core activate-license TOKEN
