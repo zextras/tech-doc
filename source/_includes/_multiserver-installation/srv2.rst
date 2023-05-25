@@ -69,7 +69,11 @@ PostgreSQL node using `Pgpool-II
             # echo "backend_clustering_mode = 'raw'
             port = 5432
             backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-            backend_port0 = 5433" > /etc/pgpool2/pgpool.conf
+            backend_port0 = 5433
+            backend_flag0 = 'DISALLOW_TO_FAILOVER'
+            num_init_children = 5
+            max_pool=5
+            reserved_connections=1" > /etc/pgpool2/pgpool.conf
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -79,7 +83,11 @@ PostgreSQL node using `Pgpool-II
             # echo "backend_clustering_mode = 'raw'
             port = 5432
             backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
-            backend_port0 = 5433" > /etc/pgpool-II/pgpool.conf
+            backend_port0 = 5433
+            backend_flag0 = 'DISALLOW_TO_FAILOVER'
+            num_init_children = 5
+            max_pool=5
+            reserved_connections=1" > /etc/pgpool-II/pgpool.conf
 
 #. restart the service using this command.
 
