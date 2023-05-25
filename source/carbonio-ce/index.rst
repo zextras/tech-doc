@@ -11,13 +11,13 @@
  Welcome to |ce| Documentation!
 ********************************
 
-This is the documentation of |ce| edition, a free and open-source
-collaboration software.
+This is the documentation of |ce| edition, the free and open source
+e-mail and collaboration software.
 
 The content is organised in multiple parts:
 
-* Changelogs. Contains links to all changelogs of |product|'s
-  components on GitHub repositories
+* Release. Contains links to all changelogs of |product|'s components
+  on GitHub repositories and directions to carry out the upgrade
 * Install. Information on |product| and its architecture, installation
   and upgrade instructions, security tips
 * Admin by GUI. |product| administration using the |adminui|
