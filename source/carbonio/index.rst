@@ -11,20 +11,21 @@
  Welcome to |carbonio| Documentation!
 ********************************************
 
-This is the documentation of |carbonio|, the full private e-mail and
-collaboration platform.
+This is the documentation of |carbonio|, the fully private digital
+workplace.
 
 The content is organised in four parts:
 
-* Changelogs. List of issues fixed in the current release of |product|
+* Release. List of issues fixed in the current release of |product|
+  and directions to carry out the upgrade
 * Install. Information on |product| and its architecture, installation
   and upgrade instructions, security tips
-* Admin by GUI: |product| administration using the |adminui|
+* Admin by GUI. |product| administration using the |adminui|
 * Admin by CLI. Administration of |product| from the command line:
   management tasks and some advanced usage for |mesh|
-* Use: everyday's usage of |product|, including its use on the
+* Use. Everyday's usage of |product|, including its use on the
   dedicated mobile Apps
-* Develop: links to API reference
+* Develop. Links to API reference
 
 If you are looking for |ce|'s documentation, please refer to its
 `dedicated page <../../carbonio-ce/html/index.html>`_.
