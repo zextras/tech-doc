@@ -3,8 +3,8 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 
-|zx| |product| is the fully private email and collaboration platform, which
-consists of:
+|zx| |product| is the fully private digital workplace, which consists
+of:
 
 - E-mail, Contacts and Calendar Essentials, all shareable across a domain
 - A complete mailserver, equipped with anti-spam and anti-virus
