@@ -9,5 +9,5 @@ to activate |product|.
 Additional data shown about |product| and the user are
 
 * The modules enabled by the license
-* The subsciption type, validity, and status
+* The subscription type, validity, and status
 * The company name and an e-mail contact
