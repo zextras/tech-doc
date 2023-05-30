@@ -411,7 +411,7 @@ the |vs| or not.
 
       .. code:: console
 
-         zextras$ carbonio chats video-server update-servlet example.com 8188 8090
+         zextras$ carbonio chats video-server update-servlet example.com:8188 8090
 
       Here, replace *example.com* with the domain name or IP on which
       the |vs| is installed, *8188* the |vs| port, and *8090* (which

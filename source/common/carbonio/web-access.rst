@@ -43,7 +43,7 @@ the *Proxy Node*, i.e., |srv4ip| in our scenario.
       ^^^^^
 
       The |adminui| is used for Administration access and is available at:
-      https://mail.example.com:6071/login.
+      https://mail.example.com:6071/
 
       Here, you can manage server, domains, accounts, and other
       configurations. Please refer to section :ref:`adminpanel` for

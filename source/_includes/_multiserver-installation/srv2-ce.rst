@@ -14,7 +14,7 @@ PostgreSQL node using `Pgpool-II
    service-discover service provided by |mesh|. Please refer to
    section :ref:`mesh-multiple` for details.
 
-#. Install the following packages.
+#. Install the following packages from main repository.
 
    .. tab-set::
 
@@ -23,7 +23,7 @@ PostgreSQL node using `Pgpool-II
 
          .. code:: console
 
-            # apt install service-discover-server pgpool2 \
+            # apt install service-discover-server \
               carbonio-directory-server carbonio-files-db \
               carbonio-mailbox-db carbonio-docs-connector-db
 
@@ -32,9 +32,28 @@ PostgreSQL node using `Pgpool-II
 
          .. code:: console
 
-            # dnf install service-discover-server pgpool-II \
+            # dnf install service-discover-server \
               carbonio-directory-server carbonio-files-db \
               carbonio-mailbox-db carbonio-docs-connector-db
+
+#. Install pgpool
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install pgpool2
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install https://www.pgpool.net/yum/rpms/4.4/redhat/rhel-8-x86_64/pgpool-II-pg12-4.4.3-1pgdg.rhel8.x86_64.rpm
+            # dnf install pgpool-II-pg12
 
 #. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace |srv1ip| with the
@@ -116,28 +135,28 @@ PostgreSQL node using `Pgpool-II
 
      .. code:: console
 
-	# zmlocalconfig -s zimbra_ldap_password
+   # zmlocalconfig -s zimbra_ldap_password
 
    * |amavispwd| the password used by |carbonio| for the Amavis
      service, retrieved with command
 
      .. code:: console
 
-	# zmlocalconfig -s ldap_amavis_password
+   # zmlocalconfig -s ldap_amavis_password
 
    * |postfixpwd| the password used by |carbonio| for the Postfix
      service, retrieved with command
 
      .. code:: console
 
-	# zmlocalconfig -s ldap_postfix_password
+   # zmlocalconfig -s ldap_postfix_password
 
    * |nginxpwd| the password used by |carbonio| for the NGINX
      service, retrieved with command
 
      .. code:: console
 
-	# zmlocalconfig -s ldap_nginx_password
+   # zmlocalconfig -s ldap_nginx_password
 
    .. note:: By default, all the |ldappwd|, |amavispwd|, |postfixpwd|,
       and |nginxpwd| bind passwords have the same value.
