@@ -69,44 +69,32 @@ Configuration
 
 Configuration of the Replica Directory server requires a few steps.
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 1: Activate replica
-   ^^^^^
+.. card:: Step 1: Activate replica
 
    On **SRV2** activate the replica by executing
 
    .. code:: console
 
-      $ /opt/zextras/libexec/zmldapenablereplica
+      # /opt/zextras/libexec/zmldapenablereplica
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 2: Retrieve passwords from **SRV2**
-   ^^^^^
+.. card:: Step 2: Retrieve passwords from **SRV2**
 
    Then, retrieve a few passwords that you will need on the Replica to
    configure the connection and access to **SRV2**
 
    .. code:: console
 
-      $ zmlocalconfig -s zimbra_ldap_password
-      $ zmlocalconfig -s ldap_replication_password
-      $ zmlocalconfig -s ldap_postfix_password
-      $ zmlocalconfig -s ldap_amavis_password
-      $ zmlocalconfig -s ldap_nginx_password
+      zextras$ zmlocalconfig -s zimbra_ldap_password
+      zextras$ zmlocalconfig -s ldap_replication_password
+      zextras$ zmlocalconfig -s ldap_postfix_password
+      zextras$ zmlocalconfig -s ldap_amavis_password
+      zextras$ zmlocalconfig -s ldap_nginx_password
 
    .. note:: By default, these password are the same and coincide with
       ``zimbra_ldap_password``. If you did not change them, use the same
       password in the next step.
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 3: Bootstrap |product| on Replica
-   ^^^^^
+.. card:: Step 3: Bootstrap |product| on Replica
 
    After the command completed successfully, log in to **SRV7** and
    bootstrap |product|. You will need to configure a number of options,
@@ -114,14 +102,10 @@ Configuration of the Replica Directory server requires a few steps.
 
    .. code:: console
 
-      $ carbonio-bootstrap
+      # carbonio-bootstrap
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 4: Configure Replica
-   ^^^^^
-
+.. card:: Step 4: Configure Replica
+  
    You will asked to properly configure a couple of options in the
    `Common configuration` and `Ldap configuration` menus. In the first
    menu, provide these values:
@@ -153,11 +137,7 @@ Configuration of the Replica Directory server requires a few steps.
    .. hint:: Remember to always use the ``zimbra_ldap_password`` in
       case you did not change the other passwords.
 
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 5: Complete the installation
-   ^^^^^
+.. card:: Step 5: Complete the installation
 
    You can now continue the bootstrap process and after a while the
    installation will be successfully completed and immediately after,
@@ -176,14 +156,14 @@ follows.
 
    .. code:: console
 
-      $ carbonio prov ca john.doe@example.com MySecretPassword
+      zextras$ carbonio prov ca john.doe@example.com MySecretPassword
 
 #. Log in to the replica and check that all account have been copied
    over from the Master:
 
    .. code:: console
 
-      $ carbonio prov -l gaa
+      zextras$ carbonio prov -l gaa
 
    Among the results, the `john.doe@example.com` must be present.
 
@@ -216,13 +196,13 @@ achieve this set up with a few commands on the **Master**.
 
    .. code:: console
 
-      $ zmcontrol stop
+      zextras$ zmcontrol stop
 
 #. Update the value of ``ldap_url``
 
    .. code:: console
 
-      $ zmlocalconfig -e \
+      zextras$ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV2_hostname"
 
    If you plan to install multiple Replica Directory Servers, you can
@@ -233,7 +213,7 @@ achieve this set up with a few commands on the **Master**.
 
    .. code:: console
 
-      $ zmlocalconfig -e \
+      zextras$ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
         ldap://SRV5_hostname ldap://SRV2_hostname"
 
@@ -250,7 +230,7 @@ To remove a Replica, you need to carry out two tasks:
 
    .. code:: console
 
-      $ zmlocalconfig -e ldap_url="ldap://SRV2_hostname"
+      zextras$ zmlocalconfig -e ldap_url="ldap://SRV2_hostname"
 
    In case you had configured multiple Replicas, the above command
    will redirect all queries to the Master. If you want to remove only
@@ -259,7 +239,7 @@ To remove a Replica, you need to carry out two tasks:
 
    .. code:: console
 
-      $ zmlocalconfig -e \
+      zextras$ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
         ldap://SRV2_hostname"
 
@@ -267,6 +247,6 @@ To remove a Replica, you need to carry out two tasks:
 
    .. code:: console
 
-      $ /opt/zextras/libexe/zmmtainit
+      # /opt/zextras/libexec/zmmtainit
 
    This command will update the configuration of postfix with new ``ldap_url``.
