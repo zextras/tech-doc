@@ -52,20 +52,13 @@ be added to the COS.
 Advanced
 --------
 
-The *Advanced* Option allow to configure the user quota, data sources,
-proxy settings, passwords, and more.
+The *Advanced* Option allow to configure the user quota, passwords,
+policies, and more.
 
 The **user quota**, is a set of options that limit how much space a
 user can occupy on the server, or how many contacts he can have. It
 also encompasses the option to send periodic notifications when the
 user space raises over a given threshold.
-
-The **Data sources**, also called *polling intervals*, allows to
-define of often to contact the |product| infrastructure to update
-e-mails and calendar. One option allows also to define the shortest
-interval for polling, that will be used if no other one is configured.
-
-**Proxy settings** are used to allow domains to be proxyed.
 
 The **Password** settings permit to tune the length, characters, and
 duration of the user passwords. It is also possible to reject common
@@ -80,3 +73,7 @@ The **Timeout Policy** concern the duration of the token's validity.
 
 The **Email Retention Policy** define how long e-mail will be stored
 before being automatically deleted.
+
+Finally, the **Free/Busy Interop** option allows to provide O and OU
+records to display the free/busy user schedule when using an Exchange
+server.
