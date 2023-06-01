@@ -105,14 +105,14 @@ PostgreSQL node using `Pgpool-II
 
          .. code:: console
 
-            # systemctl restart pgpool.service
+            # systemctl restart pgpool-II.service
 
 #. Bootstrap |carbonio|
 
    .. code:: console
 
       # carbonio-bootstrap
-   
+
    The bootstrap command will execute a number of tasks and will set
    up the node. At the end, you will be prompted with a menu and, if
    you already configured all, you only need to click
@@ -120,12 +120,12 @@ PostgreSQL node using `Pgpool-II
 
 
 #. Setup |mesh|
-   
+
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
 #. Bootstrap |carbonio| Databases, using the Postgres user created on
    SRV1 and the password defined in previous step.
-   
+
    * |carbonio| Advanced
 
      .. code:: console
@@ -147,10 +147,10 @@ PostgreSQL node using `Pgpool-II
 #. Make sure the |monit| exporter's firewall ports (**9100**,
    **9107**, **9330**) are open on the internal network, to allow the
    correct communication with the server, that will be installed on
-   :bdg-secondary-line:`SRV-6`. 
+   :bdg-secondary-line:`SRV-6`.
 
 .. card:: Values used in the next steps
-      
+
    * |srv2h| this node's hostname, which can be retrieved using the
      command :command:`su - zextras -c "carbonio prov gas
      service-discover"`
@@ -166,21 +166,21 @@ PostgreSQL node using `Pgpool-II
 
    * |amavispwd| the password used by |carbonio| for the Amavis
      service, retrieved with command
-     
+
      .. code:: console
 
         # zmlocalconfig -s ldap_amavis_password
 
    * |postfixpwd| the password used by |carbonio| for the Postfix
      service, retrieved with command
-     
+
      .. code:: console
 
         # zmlocalconfig -s ldap_postfix_password
 
    * |nginxpwd| the password used by |carbonio| for the NGINX
      service, retrieved with command
-     
+
      .. code:: console
 
         # zmlocalconfig -s ldap_nginx_password

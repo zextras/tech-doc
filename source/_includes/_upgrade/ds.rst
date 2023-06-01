@@ -13,7 +13,7 @@ on the node with the Directory Server Role installed, which is
 
    .. code:: console
 
-      zextras$ opt/zextras/libexec/zmslapcat /tmp
+      zextras$ /opt/zextras/libexec/zmslapcat /tmp
 
    .. note:: The dump will be saved in the :file:`/tmp/` directory, so
       make sure to copy it to a **safe** location.

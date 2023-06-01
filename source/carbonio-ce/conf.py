@@ -78,6 +78,7 @@ rst_prolog = """
 copybutton_prompt_text = r'\$\s|#\s'
 copybutton_prompt_is_regexp = True
 copybutton_line_continuation_character = "\\"
+copybutton_only_copy_prompt_lines = False
 
 numfig = True
 
