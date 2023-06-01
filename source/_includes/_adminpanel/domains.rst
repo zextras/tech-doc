@@ -592,6 +592,23 @@ to the mailing list.
    to notify the company's facility manager which meeting rooms are
    reserved and which are free.
 
+.. _ap-sync:
+
+ActiveSync
+~~~~~~~~~~
+
+This page gives information about all accounts connected using the
+ActiveSync protocol. For each connected device, some information is
+shown, including its unique Device ID and the time when it last
+connected. Clicking any of the connections will show additional
+information, including client data and the device's ABQ status (see
+:ref:`mobile_abq_allowblockquarantine_device_control`)
+
+The following actions can be carried out: :bdg-primary-line:`WIPE
+DEVICE` (bring the connected device back to factory settings), to
+:bdg-primary-line:`RESET DEVICE` (log out the device from the
+account), and :bdg-primary-line:`SUSPEND` the connection.
+
 .. _restore-account:
 
 Restore Account
