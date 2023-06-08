@@ -11,12 +11,12 @@ Global Servers
 --------------
 
 Server List
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 The lists of all configured server appears here.
 
 Bucket list
-^^^^^^^^^^^
+~~~~~~~~~~~
 
 A new bucket can be added to the list by clicking the
 :bdg-primary-line:`CREATE +` button. In the opening dialog, you can
