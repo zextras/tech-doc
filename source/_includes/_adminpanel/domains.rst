@@ -327,7 +327,11 @@ four tabs:
       prevent the user from changing the password and remove the
       user's password from LDAP.
 
-      This tab also shown of which Mailing list the user is member.
+      This tab also shows of which Mailing list the user is member.
+
+      .. note:: An Admin can not change the password of a user, only
+         wipe it, so the user is forced to change it on the next login
+         attempt. 
 
    .. tab-item:: Profile
 
