@@ -7,6 +7,12 @@
    the version immediately before, i.e., |prev|, and as **older
    versions** any version of |product| released before these two.
 
+.. warning:: Starting with version **23.6**, the Single-Server
+   installation of |product| is **not supported** anymore. If you have
+   a Single-Server Installation, you must add a few Nodes to your
+   installation and redistribute the Roles on them, to ensure you
+   continue to productively use |product|.
+
 This upgrade impacts the following *Roles* or packages, which require some
 manual interaction during the procedure.
 

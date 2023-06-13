@@ -77,8 +77,8 @@ you can proceed to recover the system in few steps:
 #. **Installation** of the base system: Operating System installation
    (not covered in this guide)
 
-#. **Installation and bootstrap** of |carbonio| (covered in sections
-   :ref:`single-server-install` and :ref:`multiserver-installation`
+#. **Installation and bootstrap** of |carbonio|, covered in section
+   :ref:`multiserver-installation`
 
 #. **Recovery** of data (reimporting the last available data to the
    |carbonio| server, including domain and user configurations, COS
