@@ -15,10 +15,9 @@ Like for every other component, it can be reached using a
 https://mail.example.com:6071/login, replacing `mail.example.com` with
 your domain.
 
-To access the |adminui|, the default user is
-``zextras@mail.example.com``, whose password should be changed after the
-first installation using the command shown in :ref:`Create System User
-<create-admin-user>`.
+To access the |adminui|, the default user is ``zextras@example.com``,
+whose password should be changed after the first installation using
+the command shown in Section :ref:`change-admin-pw`.
 
 |adminui| allows to manage the |product| domains, mailstores,
 accounts, |cos|, and privacy settings. The overall organisation of the

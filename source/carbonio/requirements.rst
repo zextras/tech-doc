@@ -7,6 +7,16 @@
 Requirements
 ------------
 
+|product| can be installed in **Multi-Server** only. Each Node must
+satisfy the :ref:`system-requirements` and
+:ref:`software-requirements` below. On the contrary, :ref:`fw-ports`
+must be opened only on the Node that hosts the corresponding
+service. For example, port **6071** (secure access to the Admin Panel)
+must be opened only on the Node featuring the |adminui|. If a service
+is not installed, the corresponding port can be shut down, to prevent
+unwanted accesses. For example, if POP3/POPS access is not allowed,
+access to ports **110** and **995** can be disallowed.
+
 .. _system-requirements:
 
 System Requirements
