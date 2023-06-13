@@ -3,12 +3,27 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 
-This section is used to configure the Global e-mail server. 
+This section is used to configure and manage the remote servers, buckets, and
+volumes used to store the items (e-mails and, documents, and so on)
+available in |product|.
 
 Global Servers
 --------------
 
-The lists of all configured server and buckets are shown here.
+Server List
+~~~~~~~~~~~
+
+The lists of all configured server appears here.
+
+Bucket list
+~~~~~~~~~~~
+
+A new bucket can be added to the list by clicking the
+:bdg-primary-line:`CREATE +` button. In the opening dialog, you can
+add all the necessary data needed to set up and test communication
+with the remote bucket, including URL and access credentials. You can
+then proceed to section :ref:`ap-data-volumes` below to create volumes
+in the bucket.
 
 Server Details
 --------------
@@ -16,6 +31,8 @@ Server Details
 In the Server Details section it is possible to select a server, check
 its currently used volumes and assign new ones, and finally configure
 HSM policies.
+
+.. _ap-data-volumes:
 
 Data Volumes
 ~~~~~~~~~~~~
@@ -29,14 +46,18 @@ in the first tab: The allocation type, name, and path.
 
 The second tab depends on the allocation:
 
-* **Local**: decide whether this is a primary, secondary, or index volume,
-  select a compression threshold if necessary, and finally if this
-  will become the new current volume.
+* **Local**: decide whether this is a primary, secondary, or index
+  volume and the path on which to mount it; then select a compression
+  threshold if necessary, and finally if this will become the new
+  current volume.
 
-* **External**, **Sproxy**, **Centralized**: primary, secondary, or
-  index volume, select the type of Object Storage and a prefix to
-  identify the volume. You can set this volume as *Centralized*, which
-  proves useful in case it will be shared by multiple servers.
+* **Object Storage**: primary, secondary, or index volume, select the
+  type of Object Storage and a prefix to identify the volume. You can
+  set this volume as *Centralized*, which proves useful in case it
+  will be shared by multiple servers.
+
+  .. hint:: You need to have already configured a bucket to create a
+     volume of type Object Storage.
 
 HSM Settings
 ~~~~~~~~~~~~
