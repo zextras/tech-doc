@@ -20,8 +20,7 @@ your domain.
 
 To access the |adminui|, the default user is ``zextras@example.com``,
 whose password should be changed after the first installation using
-the command shown in :ref:`Change Password for System User
-<create-admin-user>`.
+the command shown in Section :ref:`change-admin-pw`.
 
 |adminui| allows to manage the |product| domains, mailstores,
 accounts, |cos|, and privacy settings. The overall organisation of the

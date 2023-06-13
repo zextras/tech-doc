@@ -43,7 +43,7 @@ Preliminary Tasks
 
 .. include:: /_includes/_multiserver-installation/preliminary.rst
 
-.. _multi-rh-preliminary:
+.. _preliminary-rh:
 
 RHEL 8-only Preliminary Tasks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -158,6 +158,13 @@ Centralised Logging Configuration
 ---------------------------------
 
 .. include:: /_includes/_multiserver-installation/logger.rst
+
+.. _change-admin-pw:
+
+Change Password of System User
+------------------------------
+
+.. include:: /_includes/_installation/users.rst
 
 .. _replica-ds-install:
 
