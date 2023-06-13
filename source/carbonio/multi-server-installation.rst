@@ -4,12 +4,12 @@
 
 .. _multiserver-installation:
 
-Multi-Server Installation
-=========================
+Installation
+============
 
-This section describes a |product| `Multi-Server installation`, that
-is, a |carbonio| installation spread across multiple nodes, each
-playing one or more **Roles**. 
+This section describes the |product| installation, that is, a
+|carbonio| installation spread across multiple nodes (i.e., a
+**Multi-Server** installation), each playing one or more **Roles**.
 
 Rather than giving fixed installation instructions, with some
 functionality installed on any node, we present an installation
@@ -165,5 +165,4 @@ Install a Directory Server Replica
 ==================================
 
 .. include:: /_includes/_multiserver-installation/ds-replica.rst
-
 
