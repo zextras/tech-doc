@@ -43,6 +43,7 @@ If you are looking for |ce|'s documentation, please refer to its
 
          changelog-23.5.0
          upgrade
+         older-changelogs
 
    .. grid-item-card::
       :columns: 12 12 6 6
