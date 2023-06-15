@@ -78,6 +78,7 @@ If you are looking for |ce|'s documentation, please refer to its
          /adminpanel/backup
          /adminpanel/notifications
          /adminpanel/operations
+	 /adminpanel/mta
 
 
 

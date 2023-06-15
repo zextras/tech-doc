@@ -75,6 +75,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          /adminpanel/storage
          /adminpanel/privacy
          /adminpanel/notifications
+         /adminpanel/mta
 
    .. grid-item-card::
       :columns:  12 12 6 6
