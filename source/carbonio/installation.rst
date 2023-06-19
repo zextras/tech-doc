@@ -13,6 +13,5 @@ whole page before attempting to install.
 .. toctree::
 
    requirements
-   single-server-installation
    multi-server-installation
    remove-logger

@@ -151,14 +151,14 @@ In order to test whether the Replica works correctly after the
 installation was completed successfully, you can make a quick test as
 follows.
 
-#. Log in to the Master (**SRV2**) and create a test user with a
+#. Log in to the *Master* (**SRV2**) and create a test user with a
    password:
 
    .. code:: console
 
       zextras$ carbonio prov ca john.doe@example.com MySecretPassword
 
-#. Log in to the replica and check that all account have been copied
+#. Log in to the *Replica* and check that all account have been copied
    over from the Master:
 
    .. code:: console
@@ -171,6 +171,18 @@ follows.
       only the new account (or any given account): :command:`carbonio
       prov -l gaa | grep "john.doe@example.com"`
 
+#. On the *Replica*, execute command
+
+   .. code:: console
+
+      zextras$ /opt/zextras/libexec/zmreplchk
+
+   If everything is working correctly, the output of the command will
+   be similar to::
+
+     Replica: ldap://ds-replica.example.com:389 Code: 0 Status: In Sync CSNs:
+     20230607112059.968930Z#000000#000#000000
+   
 Set up Replica to Answer Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

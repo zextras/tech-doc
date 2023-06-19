@@ -97,6 +97,8 @@ nodes.
          make sure that the Memcached port (**11211**) is accessible only
          from internal, trusted networks.
 
+.. _vs_installation:
+
 .. card:: |vs| and Video Recording
 
    It is possible to install the |vs| without the Video Recording
