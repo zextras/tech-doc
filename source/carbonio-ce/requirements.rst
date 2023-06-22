@@ -170,118 +170,160 @@ Firewall Ports
 For |ce| to operate properly, it is necessary to allow network
 communication on specific ports. On a Single-Server installation, only
 ports in the *External Connections* must be opened, because all the
-remaining traffic does not leave the Server.
+remaining traffic does not leave the server.
 
 In Multi-Server installation, ports listed in the *Internal
-Connections* and *Carbonio Mesh* must be opened on **all** nodes,
-while those in the *External Connections* only on the node on which
-the service runs. For example, port 443 should be opened only on the
-node hosting the **Proxy** Role. 
+Connections* must be opened on **all** nodes, while those in the
+*External Connections* only on the node on which the corresponding
+Role is installed. For example, port 443 should be opened only on the
+node hosting the **Proxy** Role.
 
-.. dropdown:: TCP External Connections
-   :open:
+Furthermore, ports in Internal and External connections are grouped
+according to the Role that require them, so all ports listed in a
+table must be opened only on the Node on which the Role is installed.
+
+
+TCP External Connections
+++++++++++++++++++++++++
+
+.. card:: MTA Role
 
    .. csv-table::
-      :header: "Port", "Service"
-      :widths: 10 90
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
 
-      "25", "Postfix incoming mail"
-      "80", "unsecured connection to the Carbonio web client"
-      "110", "external POP3 services"
-      "143", "external IMAP services"
-      "443", "secure connection to the Carbonio web client"
-      "465", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
-      "587", "Port for smtp autenticated relay, requires STARTTLS
+      "25", "TCP", "Postfix incoming mail"
+      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
+      "587", "TCP", "Port for SMTP autenticated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
-      "993", "external IMAP secure access"
-      "995", "external POP3 secure access"
-      "6071", "secure access to the Admin Panel"
 
    .. [1] This port is still used since in some cases it is
       considered safer than 587. It requires on-connection SSL.
 
-   .. warning:: SMTP, IMAP, POP3, and 6071 ports should be exposed
-      only if really needed, and preferably only accessible from a VPN
-      tunnel, if possible, to reduce the attack surface.
+   .. warning:: These ports should be exposed only if really needed, and
+      preferably only accessible from a VPN tunnel, if possible, to
+      reduce the attack surface.
 
-.. dropdown:: TCP Internal Connections
-   :open:
+.. card:: Proxy Role
 
    .. csv-table::
       :header: "Port", "Service"
-      :widths: 10 90
+      :widths: 10 10 80
 
-      "22", "SSH access"
-      "389", "unsecure LDAP connection"
-      "636", "secure LDAP connection"
-      "3310", "ClamAV antivirus access"
-      "6071", "secure access to the Admin Panel"
-      "7025", "local mail exchange using the LMTP protocol"
-      "7026", "bind address of the Milter service"
-      "7071", "Port for SOAP services communication"
-      "7072", "NGINX discovery and authentication"
-      "7073", "SASL discovery and authentication"
-      "7110", "internal POP3 services"
-      "7143", "internal IMAP services"
-      "7171", "access Carbonio configuration daemon (zmconfigd)"
-      "7306", "MySQL access"
-      "7993", "internal IMAP secure access"
-      "7995", "internal POP3 secure access"
-      "8080", "internal HTTP services access"
-      "8735", "Internal mailbox :octicon:`arrow-both` mailbox	communication"
-      "8742", "internal HTTP services"
-      "8743", "internal HTTPS services"
-      "10024", "Amavis :octicon:`arrow-both` Postfix"
-      "10025", "Amavis :octicon:`arrow-both`  OpenDKIM"
-      "10026", "configuring Amavis policies"
-      "10028", "Amavis :octicon:`arrow-both` content filter"
-      "10029", "Postfix archives access"
-      "10032", "Amavis :octicon:`arrow-both` SpamAssassin"
-      "23232", "internal Amavis services access"
-      "23233", "SNMP-responder access"
-      "11211", "memcached access"
+      "80", "TCP", "unsecured connection to the Carbonio web client"
+      "110", "TCP", "external POP3 services"
+      "143", "TCP", "external IMAP services"
+      "443", "TCP", "secure connection to the Carbonio web client"
+      "993", "TCP", "external IMAP secure access"
+      "995", "TCP", "external POP3 secure access"
+      "5222", "TCP", "XMMP protocol"
+      "6071", "TCP", "secure access to the Admin Panel"
 
-.. dropdown:: Ports Used by |mesh|
-   :open:
+   .. warning:: The IMAP, POP3, and 6071 ports should be exposed
+      only if really needed, and preferably only accessible from a VPN
+      tunnel, if possible, to reduce the attack surface.
 
-   These ports are used by |mesh| internally.
+TCP Internal Connections
+++++++++++++++++++++++++
+
+.. card:: Every Node
 
    .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 20 70
+      :header: "Port", "Service"
+      :widths: 10 10 80
 
-      "8300", "TCP Only", "management of incoming requests from other agents"
-      "8301", "TCP and UDP", "management of gossip protocol [3]_ in the LAN"
-      "8600", "TCP and UDP", "DNS resolutions"
-      "8500", "TCP Only", "clients access to HTTP API"
-      "21000-21255", "TCP range only", "Automatical Sidecar service
-      registrations"
+      "22", "TCP", "SSH access"
+      "8301", "TCP and UDP", "management of Gossip protocol [2]_ in the LAN"
+      "9100", "TCP", "|monit| Node exporter"
+      "9256", "TCP", "|monit| Process exporter"
 
-   .. [3] The Gossip protocol is an encrypted communication protocol
+   .. [2] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
 
-.. dropdown:: Ports Used by |monit|
-   :open:
+.. card:: Postgres Role
 
-   The |monit| component requires the following ports to be accessible
-   by the server. Each port must be opened on the Node on which the
-   corresponding exporter is installed.
-
-   .. note:: If you plan to allow access to |monit| from external
-      networks, make sure that port **9090 TCP** on the |monit| server
-      is reachable.
-
- 
    .. csv-table::
-      :header: "Port", "Protocol", "Package/Exporter"
-      :widths: 10 20 70
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
 
-      "9115", "TCP", "carbonio-prometheus-blackbox-exporter"
-      "9107", "TCP", "carbonio-prometheus-consul-exporter"
-      "9104", "TCP", "carbonio-prometheus-mysqld-exporter"
-      "9113", "TCP", "carbonio-prometheus-nginx-exporter"
-      "9100", "TCP", "carbonio-prometheus-node-exporter"
-      "9330", "TCP", "carbonio-prometheus-openldap-exporter"
-      "9187", "TCP", "carbonio-prometheus-postgres-exporter"
-      "9256", "TCP", "carbonio-prometheus-process-exporter"
+      "5432", "TCP", "Postgres access"
+      "9187", "TCP", "Postgres data export to |monit|"
+
+.. card:: Directory Server Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "389", "TCP", "unsecure LDAP connection"
+      "636", "TCP", "secure LDAP connection"
+      "9330", "TCP", "LDAP data export to |monit|"
+
+.. card:: MTA Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "25", "TCP", "Postfix incoming mail"
+      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [3]_"
+      "587", "TCP", "Port for SMTP autenticated relay, requires STARTTLS
+      (or opportunistic SSL/TLS)"
+      "7026", "TCP", "bind address of the Milter service"
+
+   .. [3] This port is still used since in some cases it is considered
+      safer than 587. It requires on-connection SSL.
+
+.. card:: AppServer Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "7025", "TCP", "local mail exchange using the LMTP protocol"
+      "7071", "TCP", "Port for SOAP services communication"
+      "7072", "TCP", "NGINX discovery and authentication"
+      "7073", "TCP", "SASL discovery and authentication"
+      "7110", "TCP", "internal POP3 services"
+      "7143", "TCP", "internal IMAP services"
+      "7993", "TCP", "internal IMAP secure access"
+      "7995", "TCP", "internal POP3 secure access"
+      "8080", "TCP", "internal HTTP services access"
+      "8443", "TCP", "internal HTTPS services"
+      "8735", "TCP", "Internal mailbox :octicon:`arrow-both` mailbox communication"
+      "8742", "TCP", "internal HTTP services, advanced module"
+      "8743", "TCP", "internal HTTPS services, advanced module"
+
+.. card:: |vs| Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "8188", "TCP", "Internal connection"
+      "8090", "TCP", "Servlet communication"
+
+.. card:: Proxy Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "9113", "TCP", "nginx data export to |monit|"
+      "11211", "TCP", "memcached access"
+
+.. card:: |mesh| Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "8300", "TCP", "management of incoming requests from other
+      agents"
+      "8302", "TCP and UDP", "management of Gossip protocol [4]_ in the WAN"
+      "9107", "TCP", "|mesh| data export to |monit|"
+
+   .. [4] The Gossip protocol is an encrypted communication protocol
+      used by |mesh| for message broadcasting and membership
+      management.
