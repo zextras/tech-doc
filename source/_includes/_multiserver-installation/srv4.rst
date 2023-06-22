@@ -73,14 +73,7 @@ nodes.
       .. hint:: The **secret** needed to run the above command is stored
          in file :file:`/var/lib/service-discover/password` which is
          accessible only by the ``root`` user.
-
    
-   #. Make sure the |monit| exporter's firewall ports (**9100** and
-      **9113**) are open on the internal network, to allow the correct
-      communication with the server, that will be installed on
-      :bdg-secondary-line:`SRV-6`.
-
-
    #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
 
       .. card::

@@ -73,11 +73,6 @@ Execute the following tasks.
 #. If you want that the |monit| be reachable from outside the
    local network, allow access to port **9090** on this node.
 
-   .. this should not be necessary 
-      #. Make sure the |monit| exporter's firewall ports (**9100** and
-      **9115**) are open on the internal network, to allow the correct
-      communication with the server
-
 #. Let |pv| use Memcached. Edit file
    :file:`/etc/carbonio/preview/config.ini` and search for
    section **# Nginx Lookup servers**.
