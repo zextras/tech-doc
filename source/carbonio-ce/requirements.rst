@@ -170,13 +170,13 @@ Firewall Ports
 For |ce| to operate properly, it is necessary to allow network
 communication on specific ports. On a Single-Server installation, only
 ports in the *External Connections* must be opened, because all the
-remaining traffic does not leave the Server.
+remaining traffic does not leave the server.
 
 In Multi-Server installation, ports listed in the *Internal
-Connections* and *Carbonio Mesh* must be opened on **all** nodes,
-while those in the *External Connections* only on the node on which
-the service runs. For example, port 443 should be opened only on the
-node hosting the **Proxy** Role. 
+Connections* must be opened on **all** nodes, while those in the
+*External Connections* only on the node on which the corresponding
+Role is installed. For example, port 443 should be opened only on the
+node hosting the **Proxy** Role.
 
 Furthermore, ports in Internal and External connections are grouped
 according to the Role that require them, so all ports listed in a
