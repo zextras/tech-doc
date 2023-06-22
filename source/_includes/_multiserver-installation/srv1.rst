@@ -40,11 +40,6 @@ databases required by |product|.
 	 # /usr/pgsql-12/bin/postgresql-12-setup initdb
 	 # systemctl enable --now postgresql-12
 
-Make sure the |monit| exporter's firewall ports (**9100** and
-**9187**) are open on the internal network, to allow the correct
-communication with the server, that will be installed on
-:bdg-secondary-line:`SRV-6`.
-
 .. include:: /_includes/_installation/step-conf-db.rst
 
 Finally, allow the other nodes to access the databases that will be
