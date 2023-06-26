@@ -3,13 +3,8 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 Each node of a Multi-Server must satisfy the Single-Server's
-:ref:`software-requirements` and also :ref:`system-requirements` are
-valid, but take into account the following advices:
-
-* By dividing the services and therefore the load on more nodes, less
-  resources per node are needed. We recommend at least **4GB** of RAM on
-  each node, though.
-
+:ref:`software-requirements`; also :ref:`system-requirements` are
+valid.
 
 Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,3 +47,7 @@ Some more remarks:
   keep them at hand until the end of the installation. Example of
   values include: the IP address (public or private) of a node or the
   password of a database user.
+
+* Depending on the Roles installed on each Node, you need to open in
+  your firewall the ports listed in ref:`fw-ports` for all the
+  services you will offer.

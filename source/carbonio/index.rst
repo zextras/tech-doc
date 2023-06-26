@@ -41,8 +41,9 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Release:
 
-         changelog-23.5.0
+         changelog-23.6.0
          upgrade
+         older-changelogs
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -77,6 +78,7 @@ If you are looking for |ce|'s documentation, please refer to its
          /adminpanel/backup
          /adminpanel/notifications
          /adminpanel/operations
+	 /adminpanel/mta
 
 
 

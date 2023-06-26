@@ -144,8 +144,6 @@ We build on the domain created in :ref:`previous section
       DNS.
 
    #. The **Time Zone** is set to Hawaii's time
-   #. **Inbound SMTP Host Name**. Set to ``smtp.acme.example``,
-      its the URL of an SMTP server that is used for spam training.
 
    #. **Default Class of Service**. The |cos| used by the domain,
       which is left to the ``default`` one.
@@ -329,7 +327,17 @@ four tabs:
       prevent the user from changing the password and remove the
       user's password from LDAP.
 
-      This tab also shown of which Mailing list the user is member.
+      This tab also shows of which Mailing list the user is member.
+
+      .. note:: An Admin can not change the password of a user, only
+         wipe it, so the user is forced to change it on the next login
+         attempt. 
+
+   .. tab-item:: Profile
+
+      Data in this tab represent the user's phones, company, and
+      address. They can be managed by both the user and the
+      Administrators.
 
    .. tab-item:: Configuration
 
@@ -345,7 +353,8 @@ four tabs:
       interacts with the e-mails (receive, sending, composing, adding
       a signature) and are mostly inherited from the COS.
 
-      .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+      ..  resources are currently hidden from AP -- AC-622
+         .. note:: Signatures can not be assigned to :ref:`ap-resources`.
 
    .. tab-item:: Security
       
@@ -448,9 +457,9 @@ that session.
 Create New Account
 ~~~~~~~~~~~~~~~~~~
 
-In order to create a new account, click the :bdg-primary:`+`
-button. You will enter a three-step procedure that guides you in the
-initial account configuration.
+In order to create a new account, click the :bdg-primary:`+` button: a
+dialog window opens and allows you to set up the basic configuration
+of the new account.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -470,12 +479,15 @@ initial account configuration.
 
       * **Password** is the one used by John for the first login **only**
 
-      * **Must change password on the next login** requires that John,
+      * **User will change password on the next login** requires that John,
         after the first log in (and before accessing his mailbox) must
         change the password.
 
       We also explicitly configure the **Account Status** (see :ref:`the
-      list of possible values <ap-account-status>`).
+      list of possible values <ap-account-status>`), but do not change
+      the **Default COS**.
+      Click the :bdg-primary-line:`CREATE WITH THESE DATA` button to
+      create the account
       
    .. grid-item::
       :columns: 12 12 6 6
@@ -485,25 +497,12 @@ initial account configuration.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Step 2: Confirm Account *John Smith*
+   .. grid-item-card:: (Optional) Step 2: Send OTP to *John Smith*
       :columns: 12 12 6 6
 
-      This dialog window recaps the values entered in the previous
-      step. Go back to change
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
-
-      .. image:: /img/adminpanel/new-account-create.png
-
-.. grid:: 1 1 2 2
-   :gutter: 3
-
-   .. grid-item-card:: (Optional) Step 3: Send OTP to *John Smith*
-      :columns: 12 12 6 6
-
-      The last step is optional: here you can create an OTP code for John
-      Smith, that he can use to access his account.
+      Once the account has been created, you can optionally create an
+      OTP code for John Smith, that he can use to quickly access his
+      account.
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -577,24 +576,42 @@ to the mailing list.
    Dynamic Mode
    ++++++++++++
 
-.. _ap-resources:
+.. resources are currently hidden from AP -- AC-622
+   .. _ap-resources:
 
-Resources
-~~~~~~~~~
+   Resources
+   ~~~~~~~~~
 
-A Resource is a generic object that can be assigned an e-mail address,
-but, unlike other regular accounts, they do not need any signature, so
-you can not specify one. A typical example of a Resource is a
-**meeting room**: to reserve the room, send an e-mail to the room's
-e-mail address.
+   A Resource is a generic object that can be assigned an e-mail address,
+   but, unlike other regular accounts, they do not need any signature, so
+   you can not specify one. A typical example of a Resource is a
+   **meeting room**: to reserve the room, send an e-mail to the room's
+   e-mail address.
 
 
-A policy can be assigned to Resource, to determine how to react to the
-booking request, either a manual or automatic acceptance or rejection.
+   A policy can be assigned to Resource, to determine how to react to the
+   booking request, either a manual or automatic acceptance or rejection.
 
-Additional e-mail addresses can be added to the resource, for example
-to notify the company's facility manager which meeting rooms are
-reserved and which are free.
+   Additional e-mail addresses can be added to the resource, for example
+   to notify the company's facility manager which meeting rooms are
+   reserved and which are free.
+
+.. _ap-sync:
+
+ActiveSync
+~~~~~~~~~~
+
+This page gives information about all accounts connected using the
+ActiveSync protocol. For each connected device, some information is
+shown, including its unique Device ID and the time when it last
+connected. Clicking any of the connections will show additional
+information, including client data and the device's ABQ status (see
+:ref:`mobile_abq_allowblockquarantine_device_control`)
+
+The following actions can be carried out: :bdg-primary-line:`WIPE
+DEVICE` (bring the connected device back to factory settings), to
+:bdg-primary-line:`RESET DEVICE` (log out the device from the
+account), and :bdg-primary-line:`SUSPEND` the connection.
 
 .. _restore-account:
 

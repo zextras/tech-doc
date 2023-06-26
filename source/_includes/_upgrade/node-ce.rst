@@ -39,7 +39,6 @@ installation.
 
                # dnf clean all
 
-
    .. grid-item-card:: Step 3. Update package list and install
       upgrades
       :columns: 12 12 6 6
@@ -60,16 +59,25 @@ installation.
 
                # dnf upgrade
 
-   .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 4. Bootstrap |file| database
+      :columns: 12 12 6 6
+
+      On a Multi-Server, this step must be performed exclusively on
+      the DB Connection node (SRV2 in our scenario).
+
+      .. code:: console
+
+         # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+   .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
 
       .. code:: console
 
          # pending-setups -a
 
-
-   .. grid-item-card:: Step 5. Reboot
-      :columns: 12
+   .. grid-item-card:: Step 6. Reboot
+      :columns: 12 12 6 6
 
        Once the upgrade has completed successfully, run command:
 

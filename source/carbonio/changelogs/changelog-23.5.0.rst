@@ -3,10 +3,13 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 
-Changelog |release|
-===================
+.. _changelog-23.5.0:
 
-Release Date: May 15th, 2023
+================
+Changelog 23.5.0
+================
+
+This is the Changelog for |product| 23.5.0, released on May 15th, 2023.
 
 
 New Features List

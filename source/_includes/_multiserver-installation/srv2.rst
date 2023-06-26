@@ -71,8 +71,8 @@ PostgreSQL node using `Pgpool-II
             backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
             backend_port0 = 5433
             backend_flag0 = 'DISALLOW_TO_FAILOVER'
-            num_init_children = 5
-            max_pool=5
+            num_init_children = 32
+            max_pool=8
             reserved_connections=1" > /etc/pgpool2/pgpool.conf
 
       .. tab-item:: RHEL
@@ -85,8 +85,8 @@ PostgreSQL node using `Pgpool-II
             backend_hostname0 = 'SRV1_IP' # eg 192.168.1.100
             backend_port0 = 5433
             backend_flag0 = 'DISALLOW_TO_FAILOVER'
-            num_init_children = 5
-            max_pool=5
+            num_init_children = 32
+            max_pool=8
             reserved_connections=1" > /etc/pgpool-II/pgpool.conf
 
 #. restart the service using this command.
@@ -143,11 +143,6 @@ PostgreSQL node using `Pgpool-II
      .. code:: console
 
         # PGPASSWORD=DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
-
-#. Make sure the |monit| exporter's firewall ports (**9100**,
-   **9107**, **9330**) are open on the internal network, to allow the
-   correct communication with the server, that will be installed on
-   :bdg-secondary-line:`SRV-6`.
 
 .. card:: Values used in the next steps
 

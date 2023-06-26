@@ -66,10 +66,9 @@ and browse to the documentation.
 
 # Contribute
 
-The public repository contains the two most recent `release/` branches
-that are kept aligned with the current internal development. When a
-new `release/` branch is created, the oldest one is removed from the
-public repository.
+The public repository contains branches called `release/*` up to the
+**23.6**, that contain version-specific documentation. Starting from
+version 23.7, the development branch is called **devel**.
 
 We'll be happy to accept contributions, provided they meet the
 requirement and follow the guidelines.
@@ -82,8 +81,7 @@ versions of the Python packages required (upgrade them with `pip install
 --upgrade -r /requirements.txt` before building).
 
 You must fork the public repository, make the changes you need, and
-open a PR against the most recent `release/` branch, which is always
-marked as the *default* branch.
+open a PR against the `devel` branch.
 
 All accepted contributions will be subject to review and if
 successful, they will appear on the official documentation.

@@ -7,7 +7,7 @@
 |product| Upgrade
 =================
 
-.. include:: /_includes/_upgrade/intro.rst
+.. include:: /_includes/_upgrade/intro-ce.rst
 
 .. _upgrade-checklist:
 
