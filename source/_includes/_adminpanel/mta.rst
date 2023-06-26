@@ -62,6 +62,14 @@ username to the e-mail header and to require authentication to send
 e-mails; while on the other, to define a few parameters used by
 the ``MyNetworks`` section of the MTA's configuration.
 
+**Relay Host** allows to route all outgoing e-mail to a server different
+from |product|'s. **Fallback Relay Host** will be used in case the
+**Relay Host** is unreachable.
+
+.. note:: Setting a **Relay Host** impacts the whole |product|'s
+   infrastructure: all outgoing e-mails from all configured domains
+   will be forwarded to the **Relay Host**.
+
 .. rubric:: Instances
 
 The bottom part off the page shows information about the enabled

@@ -40,11 +40,6 @@ databases required by |product|.
 	 # /usr/pgsql-12/bin/postgresql-12-setup initdb
 	 # systemctl enable --now postgresql-12
 
-Make sure the |monit| exporter's firewall ports (**9100** and
-**9187**) are open on the internal network, to allow the correct
-communication with the server, that will be installed on
-:bdg-secondary-line:`SRV-6`.
-
 .. include:: /_includes/_installation/step-conf-db.rst
 
 Finally, allow the other nodes to access the databases that will be
@@ -57,20 +52,24 @@ stored on this node by running these four commands.
 
       .. code:: console
 
-	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
-	 # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/12/main/pg_hba.conf
-	 # systemctl restart postgresql
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
+         # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/12/main/pg_hba.conf
+         # systemctl restart postgresql
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-	 # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
-	 # echo "host    all             all             0.0.0.0/0            md5" >> /var/lib/pgsql/12/data/pg_hba.conf
-	 # systemctl restart postgresql-12
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
+         # echo "host    all             all             0.0.0.0/0            md5" >> /var/lib/pgsql/12/data/pg_hba.conf
+         # systemctl restart postgresql-12
 
 
 .. hint:: You may replace the ``0.0.0.0/0`` network with the one

@@ -66,11 +66,6 @@ Execute the following tasks.
       in file :file:`/var/lib/service-discover/password` which is
       accessible only by the ``root`` user.
 
-#. Make sure the |monit| exporter's firewall ports (**9100** and
-   **9104**) are open on the internal network, to allow the correct
-   communication with the server, that will be installed on
-   :bdg-secondary-line:`SRV-6`. 
-
 #. Run as the ``zextras user`` the following command to configure the
    Video Recording, using |vsip| and |vspwd| configured on SRV4
 
