@@ -207,9 +207,10 @@ TCP External Connections
       "443", "TCP", "secure connection to the Carbonio web client"
       "993", "TCP", "external IMAP secure access"
       "995", "TCP", "external POP3 secure access"
-      "5222", "TCP", "XMMP protocol"
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
+
+   .. to restore in 23.7.0 "5222", "TCP", "XMMP protocol"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
