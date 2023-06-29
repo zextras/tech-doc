@@ -131,26 +131,40 @@ domain.
 We build on the domain created in :ref:`previous section
 <ap-domain-new>` and attach some property.
 
-.. card:: Additional settings for ``acme.example``
+.. grid:: 1 2 2 4  
+   :gutter: 3
+   :outline:
+   :padding: 3
 
+   .. grid-item-card:: Public Service Protocol
+      :columns: 3
 
-   We assign now the following properties to our sample domain.
+      Force clients to connect only using ``https``.
+      
+   .. grid-item-card:: Public Service Hostname
+      :columns: 3
+                
+      It is the FQDN (``mail.acme.example``) used by clients to
+      connect to the domain. It must be defined as an ``A`` record in
+      the domain's DNS.
 
-   #. **Public Service Protocol**. Force clients to connect only using
-      ``https``.
-   #. **Public Service Hostname**. It is the FQDN
-      (``mail.acme.example``) used by clients to connect to the
-      domain. It must be defined as an ``A`` record in the domain's
-      DNS.
+   .. grid-item-card::  Time Zone
+      :columns: 3
 
-   #. The **Time Zone** is set to Hawaii's time
+       The timezone is set to Hawaii's time.
+       
+   .. grid-item-card:: Default Class of Service
+      :columns: 3
 
-   #. **Default Class of Service**. The |cos| used by the domain,
-      which is left to the ``default`` one.
+      The |cos| used by the domain, which is left to the ``default``
+      one.
 
-   .. image:: /img/adminpanel/domain-details.png
-      :scale: 50
-      :align: center
+   .. grid-item-card::
+      :columns: 12
+                
+      .. image:: /img/adminpanel/domain-details.png
+         :scale: 50
+         :align: center
 
 At the bottom of the page, button :red:`DELETE DOMAIN` allows to
 delete the domain. When clicked, a dialog will open, listing all items
