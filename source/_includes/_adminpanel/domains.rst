@@ -141,12 +141,14 @@ We build on the domain created in :ref:`previous section
 
       Force clients to connect only using ``https``.
       
-   .. grid-item-card:: Public Service Hostname
+   .. grid-item-card:: Public Service Host Name
       :columns: 3
                 
       It is the FQDN (``mail.acme.example``) used by clients to
-      connect to the domain. It must be defined as an ``A`` record in
-      the domain's DNS.
+      connect to the domain and must correspond to the DNS ``A``
+      record to be reachable publicly. If the ``A`` record is set to a
+      private IP address, to reach the WebGUI you need some mechanism,
+      like e.g., a VPN tunnel.
 
    .. grid-item-card::  Time Zone
       :columns: 3
