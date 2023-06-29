@@ -71,8 +71,11 @@ on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
 The following requirements must be satisfied before attempting to
 install |product|.
 
-#. valid DNS resolution for both the domain (``MX`` and ``A`` records) and the
-   FQDN (``A`` record)
+#. valid DNS resolution for both the domain (``MX`` and ``A`` records)
+   and the FQDN (``A`` record). If the FQDN corresponds to a private
+   IP address, to allow clients to access |product|, you need to set
+   up either some port-forwarding rules or provide client with e.g., a
+   VPN.
 
    .. warning:: If any of these records is not correctly configured,
       the installation will be temporarily suspended to allow the
