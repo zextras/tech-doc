@@ -39,7 +39,7 @@ To create a new domain, fill in the form that opens upon clicking the
      only **Internal**, it is possible to define the account used to
      synchronise GAL information, the mail server used, which must be
      on the same domain (or in a compatible one, i.e., in a valid
-     alias URL, see Virtual Hosts below).
+     alias URL, see section :ref:`ap-vhost` below).
 
    The image below shows how a sample domain is created.
 
