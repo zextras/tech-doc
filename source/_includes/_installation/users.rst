@@ -15,15 +15,19 @@ second you actually change the password.
 
 Make sure that ``newpassword`` meets good security criteria.
 
-.. rubric:: The ``zextras`` and ``zextras@mail.example.com`` users
+.. card:: The ``zextras`` and ``zextras@mail.example.com`` users
 
-There is a clear distinction between these two users, which are
-intended to execute different tasks:
+   There is a clear distinction between these two users, which are
+   intended to execute different tasks:
 
-``zextras``
-   This the **unix** account of the administrator and must be used to
-   carry out administrative tasks from the command line.
+   ``zextras``
+      This the **unix** account of the administrator and must be used to
+      carry out administrative tasks from the command line.
 
-``zextras@mail.example.com``
-   This is the default administrator user to be used to access the
-   Admin UI and manage |product| from the web interface.
+   ``zextras@mail.example.com``
+      This is the default administrator user to be used to access the
+      Admin UI and manage |product| from the web interface.
+
+
+A new Global Admin can be created from the |adminui|;  please refer to
+section :ref:`ap-new-admin` for directions.

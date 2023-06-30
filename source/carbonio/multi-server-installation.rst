@@ -159,17 +159,10 @@ Centralised Logging Configuration
 
 .. include:: /_includes/_multiserver-installation/logger.rst
 
-.. _change-admin-pw:
+.. _manage-admins:
 
-Change Password of System User
-------------------------------
+Manage Global Administrators
+============================
 
 .. include:: /_includes/_installation/users.rst
-
-.. _replica-ds-install:
-
-Install a Directory Server Replica
-==================================
-
-.. include:: /_includes/_multiserver-installation/ds-replica.rst
 

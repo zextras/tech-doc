@@ -197,13 +197,13 @@ legend {
 .command {
  font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace;
  font-size: 75%;
- font-weight: 400; 
+ font-weight: 400;
  padding: 2px 5px;
  border: 1px solid #e1e4e5;
 }
 
 /* magma color for all code, literal, and tt classes */
-                                       
+
 .tt, .command, .code, .rst-content code.literal {
     color: var(--zx-color-magma);
 }
@@ -214,7 +214,7 @@ legend {
 }
 
 .hublink {
-    color: white; 
+    color: white;
     line-height: 120%;
     margin: 0 auto;
     font-size: smaller
@@ -225,4 +225,16 @@ legend {
     align-items: center;
     justify-content: center;
     max-width: 300px
+}
+
+.sd-tab-set>label {
+    border: 1px solid;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.sd-tab-set {
+    border: 1px solid var(--zx-color-ice);
+    padding: 10px;
 }

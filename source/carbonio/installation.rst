@@ -14,4 +14,5 @@ whole page before attempting to install.
 
    requirements
    multi-server-installation
+   ds-replica
    remove-logger
