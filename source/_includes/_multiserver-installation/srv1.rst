@@ -53,9 +53,9 @@ stored on this node by running these four commands.
       .. code:: console
 
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
          # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/12/main/pg_hba.conf
          # systemctl restart postgresql
 

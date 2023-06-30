@@ -217,6 +217,9 @@ achieve this set up with a few commands on the **Master**.
       zextras$ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV2_hostname"
 
+   .. note:: If you changed the LDAP default port (*389*), you need to
+      add it to the URL, e.g., ``ldap://SRV2_hostname:<port>`
+
    If you plan to install multiple Replica Directory Servers, you can
    install all of them and then execute the above-mentioned command
    once for all Replicas, making sure that their hostnames precede the

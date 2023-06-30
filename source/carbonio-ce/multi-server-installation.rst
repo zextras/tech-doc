@@ -159,11 +159,10 @@ Centralised Logging Configuration
 
 .. include:: /_includes/_multiserver-installation/logger.rst
 
-.. _replica-ds-install:
+.. _manage-admins:
 
-Install a Directory Server Replica
-==================================
+Manage Global Administrators
+============================
 
-.. include:: /_includes/_multiserver-installation/ds-replica.rst
-
+.. include:: /_includes/_installation/users.rst
 

@@ -63,8 +63,11 @@ on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
 The following requirements must be satisfied before attempting to
 install |product|.
 
-#. valid DNS resolution for both the domain (``MX`` and ``A`` records) and the
-   FQDN (``A`` record)
+#. valid DNS resolution for both the domain (``MX`` and ``A`` records)
+   and the FQDN (``A`` record). If the FQDN corresponds to a private
+   IP address, to allow clients to access |product|, you need to set
+   up either some port-forwarding rules or provide client with e.g., a
+   VPN.
 
    .. warning:: If the FQDN is not correctly configured, the
       installation will be temporarily suspended to allow the change
@@ -204,9 +207,10 @@ TCP External Connections
       "443", "TCP", "secure connection to the Carbonio web client"
       "993", "TCP", "external IMAP secure access"
       "995", "TCP", "external POP3 secure access"
-      "5222", "TCP", "XMMP protocol"
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
+
+   .. to restore in 23.7.0 "5222", "TCP", "XMMP protocol"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
