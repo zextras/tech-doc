@@ -4,9 +4,9 @@
 
 .. srv6 - AppServer - Advanced - Preview - Monitoring
 
-
-On this node we install the Preview, the User Management, and advanced
-services.
+On this node we install the Preview, the User Management, and
+AppServer provided byt the ``carbonio--advanced`` package (see section
+:ref:`core-comp` for more information).
 
 .. hint:: We suggest that *Preview* and the |docs|-related packages be
    installed on different physical nodes.
