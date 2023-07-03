@@ -7,6 +7,10 @@
 On this node, first install all the required packages for |file|, then
 configure the various services needed.
 
+.. note:: The *AppServer* Role is provided by the
+   ``carbonio-advanced`` package; see section :ref:`core-comp` for
+   more information.
+
 .. tab-set::
 
    .. tab-item:: Ubuntu
