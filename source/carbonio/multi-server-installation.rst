@@ -138,15 +138,15 @@ SRV4: Proxy and |vs|
 
 .. _srv5-install:
 
-SRV5: Advanced, AppServer, Files, and Docs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV5: AppServer (Advanced), Files, and Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv5.rst
 
 .. _srv6-install:
 
-SRV6: Advanced, AppServer, Preview, and |monit|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV6: AppServer (Advanced), Preview, and |monit|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6.rst
 

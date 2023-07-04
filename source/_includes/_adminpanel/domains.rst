@@ -610,10 +610,25 @@ adding aliases, which work like e-mail accounts, changing the members
 and owners, and granting selected users the permission to send e-mails
 to the mailing list.
 
-.. addressed at a later point
+Dynamic Mode
+++++++++++++
 
-   Dynamic Mode
-   ++++++++++++
+Mailing list's *Dynamic Mode* allows the automatic management of
+members. Indeed, each Dynamic Mailing List is identified by a name and
+by a unique *Mailing List URL*, which is an LDAP query that
+automatically populates the members of the Mailing List.
+
+To create a Dynamic Mailing List, the procedure is similar to the
+normal Mailing Lists: click the :bdg-primary:`+` button and provide a
+**Displayed Name** name and **list Name**, then click the **Dynamyc
+Mode** switch to access more options, including the *Mailing List
+URL*, which is mandatory. You can also make the list **Hidden from
+GAL** and add owners to the list, who can manage the configuration of
+the list.
+
+Advanced options, like subscription and unsubscription options are
+available after the creation of the Dynamic Mailing List, when editing
+it.
 
 .. resources are currently hidden from AP -- AC-622
    .. _ap-resources:

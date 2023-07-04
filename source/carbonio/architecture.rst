@@ -1,4 +1,4 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+.. Spdx-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
@@ -19,16 +19,15 @@ with all its components.
 
       Simplified architecture of |product|.
 
-While in Single-Server all packages are installed on the same node, in
-a typical Multi-Server each of the services depicted by the red boxes
-(i.e., the :ref:`core-comp`) should be installed on a dedicated node,
-while all the other (i.e., the :ref:`opt-comp` in the blue boxes) can
-be combined and installed on any node, even on a dedicated one. For
-example, if |vs| is heavily used, it could be a good idea to install
-it on a dedicated node, while **User Management** can be installed on
-the AppServer node instead of on a dedicated node.  In the
-:ref:`multiserver-installation` scenario we use as example, we show
-how to set up a cluster of *six* nodes and combine the various
+In a typical Multi-Server each of the services depicted by the red
+boxes (i.e., the :ref:`core-comp`) should be installed on a dedicated
+node, while all the other (i.e., the :ref:`opt-comp` in the blue
+boxes) can be combined and installed on any node, even on a dedicated
+one. For example, if |vs| is heavily used, it could be a good idea to
+install it on a dedicated node, while **User Management** can be
+installed on the AppServer node instead of on a dedicated node.  In
+the :ref:`multiserver-installation` scenario we use as example, we
+show how to set up a cluster of *six* nodes and combine the various
 |product|'s roles. A **Role** is a functionality that is considered
 atomic and can be added to the |product| by installing one or more
 software packages.
@@ -87,7 +86,7 @@ receive e-mails and to manage their calendars and contacts. They are:
       email transfer and forwarding, filtering, and other services to
       keep email clean and secure.
 
-   .. grid-item-card:: AppServer
+   .. grid-item-card:: AppServer (|product| Advanced)
       :columns: 3
       :class-body: abyss
 
@@ -135,12 +134,10 @@ Optional Components
 
 With optional components we denote all those |carbonio| roles that add
 functionalities to the core components and are denoted by orange boxes
-in :numref:`fig-cb-arch`. In a Multi-Server installation they can be
-installed on any node, provided the dependencies are respected.
+in :numref:`fig-cb-arch`. Optional components can be installed on any
+node, provided the dependencies are respected.
 
-* **Chat**. Provides the chat and video call functionalities. It
-  includes **Chat-UI** and the **AppServer Advanced**, the
-  latter provided by the **carbonio-advanced** package.
+* **Chat-UI**. Provides the chat and video call functionalities.
 * **Files**. Allows users to store and share documents. This role also
   includes **Files-ui** and **Files-db**, that provide user interface
   files for Files and script to initialise the |file| database and
@@ -151,9 +148,9 @@ installed on any node, provided the dependencies are respected.
   **docs-core**; it provides the collaborative editing
   functionalities.
 
-  .. note:: In Multi-Server installation, there can be only one
-     instance of Docs.
-	    
+  .. note:: There must be a unique instance of Docs within a |product|
+     installation.
+
 * **DB-connection**. Provided by packages **carbonio-files-db** and
   **carbonio-mailbox-db**, this role has the responsibility to allow
   communication between |product| and the database. The use of
@@ -174,7 +171,7 @@ installed on any node, provided the dependencies are respected.
    collection of CSV files, has been deprecated. We are working to
    integrate in |product| a metrics-based monitoring system, based on
    the Prometheus technology.
-	  
+
 Supported Mail Protocols
 ========================
 
