@@ -52,8 +52,7 @@ PostgreSQL node using `Pgpool-II
 
          .. code:: console
 
-            # dnf install https://www.pgpool.net/yum/rpms/4.3/redhat/rhel-8-x86_64/pgpool-II-release-4.3-1.noarch.rpm
-            # dnf install pgpool-II
+            # dnf install https://www.pgpool.net/yum/rpms/4.4/redhat/rhel-8-x86_64/pgpool-II-pg12-4.4.3-1pgdg.rhel8.x86_64.rpm
 
 #. Configure Pgpool-II to work with the node on which PostgreSQL runs
    (SRV1), using the following command. Replace |srv1ip| with the

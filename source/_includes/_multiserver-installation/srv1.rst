@@ -23,7 +23,7 @@ databases required by |product|.
 
       .. code:: console
 
-	 # yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+	 # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
       Then, make sure that **Postresql 12** is installed, by running
       commands
