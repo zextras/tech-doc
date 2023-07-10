@@ -8,7 +8,7 @@ environment, composed by **four nodes** (that we will denote as *SRV1*,
 ..., *SRV4*) as follows:
 
 #. **SRV1** represents the core infrastructure of |product| and
-   features Directory Server, |mesh|, DB connection, and |monitor|
+   features Directory Server, |mesh|, DB connection, and |monit|
 #. **SRV2** is equipped with MTA, the mail server, Proxy, which allows
    web access to all components, and User Management
 #. **SRV3** hosts an AppServer and the |storage| instance

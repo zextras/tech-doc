@@ -34,7 +34,7 @@ Six Nodes Scenario
 Requirements
 ------------
 
-.. include:: /_includes/_multiserver-installation/requirements.rst
+.. include:: /_includes/_multiserver-installation/requirements-ce.rst
 
 .. _multi-server-preliminary:
 
