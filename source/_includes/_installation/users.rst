@@ -10,12 +10,11 @@ second you actually change the password.
 
 .. code:: console
 
-   # su - zextras
-   zextras$ carbonio prov setpassword zextras@mail.example.com newpassword
+   # su - zextras -c "carbonio prov setpassword zextras@mail.example.com mynewsecurepassword"
 
 Make sure that ``newpassword`` meets good security criteria.
 
-.. card:: The ``zextras`` and ``zextras@mail.example.com`` users
+.. card:: The ``zextras`` and ``zextras@example.com`` users
 
    There is a clear distinction between these two users, which are
    intended to execute different tasks:
@@ -24,7 +23,7 @@ Make sure that ``newpassword`` meets good security criteria.
       This the **unix** account of the administrator and must be used to
       carry out administrative tasks from the command line.
 
-   ``zextras@mail.example.com``
+   ``zextras@example.com``
       This is the default administrator user to be used to access the
       Admin UI and manage |product| from the web interface.
 
