@@ -174,17 +174,22 @@ SRV2: MTA, Proxy, and User Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The second node has IP Address 172.16.0.12, |fqdn|
-**srv1.example.com**, and is equipped with the mail server, provided
+**srv2.example.com**, and is equipped with the mail server, provided
 by the MTA Role, all web UI components, and the User Management.
 
 .. include:: /_includes/_multiserver-installation/srv2-ce.rst
 
 .. _srv3-install:
 
-SRV3: MTA
-~~~~~~~~~~~~~~
+SRV3: AppServer and |storage|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_multiserver-installation/srv3.rst
+
+The second node has IP Address 172.16.0.13, |fqdn|
+**srv3.example.com**, and features an AppServer and the |storage|
+instance which must be unique to the whole |product| infrastructure.
+
+.. include:: /_includes/_multiserver-installation/srv3-ce.rst
 
 .. _srv4-install:
 
