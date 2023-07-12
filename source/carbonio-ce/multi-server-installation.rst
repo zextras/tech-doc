@@ -120,7 +120,7 @@ Section :ref:`web-access`.
 SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first node has IP address **172.16.0.11** and features the core
+The first node has IP address **172.16.0.11**, |fqdn| **srv1.example.com**, and features the core
 infrastructure of |product|'\s backend: PostgreSQL,
 
 Installation and Configuration of PostgreSQL
@@ -145,6 +145,8 @@ Bootstrap |product|
 
 .. include:: /_includes/_multiserver-installation/bootstrap.rst
 
+.. _srv1-mesh:
+
 Set up |mesh|
 +++++++++++++
 
@@ -168,11 +170,14 @@ memory:
 
 .. _srv2-install:
 
-SRV2:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV2: MTA, Proxy, and User Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-..
-  .. include:: /_includes/_multiserver-installation/srv2-ce.rst
+The second node has IP Address 172.16.0.12, |fqdn|
+**srv1.example.com**, and is equipped with the mail server, provided
+by the MTA Role, all web UI components, and the User Management.
+
+.. include:: /_includes/_multiserver-installation/srv2-ce.rst
 
 .. _srv3-install:
 
