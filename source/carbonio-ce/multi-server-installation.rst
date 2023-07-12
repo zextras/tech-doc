@@ -184,8 +184,7 @@ by the MTA Role, all web UI components, and the User Management.
 SRV3: AppServer and |storage|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-The second node has IP Address 172.16.0.13, |fqdn|
+The third node has IP Address 172.16.0.13, |fqdn|
 **srv3.example.com**, and features an AppServer and the |storage|
 instance which must be unique to the whole |product| infrastructure.
 
@@ -193,8 +192,13 @@ instance which must be unique to the whole |product| infrastructure.
 
 .. _srv4-install:
 
-SRV4: Proxy
-~~~~~~~~~~~
+SRV4: |pv|, |file|, and |docs|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The fourth node has IP Address 172.16.0.14, |fqdn|
+**srv4.example.com**, and consists of |pv|, which allows to preview
+files stored in |file|, and to collaboratively edit documents using
+|docs|.
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
