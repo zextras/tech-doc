@@ -24,13 +24,13 @@ scenario we describe below can be modified at will by installing a
 
 .. _multi-server-scenario:
 
-Six Nodes Scenario
-------------------
+Four Nodes Scenario
+-------------------
 
 .. include:: /_includes/_multiserver-installation/scenario-ce.rst
 
 .. _multi-server-req:
-   
+
 Requirements
 ------------
 
@@ -66,7 +66,7 @@ systems, they concern the configuration of SELinux and the firewall.
 
          # sestatus
 
-   Firewall  
+   Firewall
       All the ports needed by |product| are open on the firewall or
       the firewall is **disabled**. To disable the firewall, issue the
       commands
@@ -81,28 +81,35 @@ Node Installation
 -----------------
 
 The installation procedure follows the suggested order of nodes as
-described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
+described in the :ref:`scenario <multi-server-scenario>`.
 
-* It is assumed that the Postgres node is not a "real" part of the
-  infrastructure, in the sense that it can also be an existent server
-  that is configured to communicate correctly with |product|
-  (configuration instruction are part of SRV1 installation).
+While the overall procedure is the same for both Ubuntu and RHEL 8,
+the actual commands and file paths may differ on the two operating
+system, so pay attention that you execute the correct command on the
+correct files and operating system. The commands that differ are
+separated as follows. Click the :blue:`Ubuntu` or :blue:`RHEL` tab
+according to the Operating System on which you are installing
+|product|.
 
-  .. note:: In our scenario, we install Postgres and configure it from
-     scratch (*SRV1*).
 
-* The first node to be installed is the one that will feature the
-  Directory Server role (*SRV2*)
+.. tab-set::
 
-* The next server to be installed is the MTA one (*SRV3*)
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
-* The other nodes can be installed in any order, you can skip
-  instructions for any node or role that you do not plan to install
+      .. code::
 
-* While the overall procedure is the same for both Ubuntu and RHEL 8,
-  the actual commands and file paths may differ on the two operating
-  system, so pay attention that you execute the correct command on the
-  correct file
+         # <command to be executed on Ubuntu systems>
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code::
+
+         #  <command to be executed on Red Hat systems>
+
+All the commands that are mentioned in this installation procedure
+**must be executed** as the ``root`` user.
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
@@ -110,17 +117,62 @@ Section :ref:`web-access`.
 
 .. _srv1-install:
 
-SRV1: Postgres
-~~~~~~~~~~~~~~
+SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_multiserver-installation/srv1.rst
+The first node has IP address **172.16.0.11** and features the core
+infrastructure of |product|'\s backend: PostgreSQL,
+
+Installation and Configuration of PostgreSQL
+++++++++++++++++++++++++++++++++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/pg-ce.rst
+
+Packages Installation
++++++++++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/pkgs1-ce.rst
+
+Install and configure pgpool
+++++++++++++++++++++++++++++
+
+Carry out the following tasks to set up pgpool.
+
+.. include:: /_includes/_multiserver-installation/pgpool.rst
+
+Bootstrap |product|
++++++++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/bootstrap.rst
+
+Set up |mesh|
++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/mesh.rst
+
+Bootstrap |file| Database
++++++++++++++++++++++++++
+
+.. code:: console
+
+   # $PGPASSWORD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+Installation of SRV1 has now completed. To prevent anyone else reading
+the password of PostgreSQL's administrator user, remove it from
+memory:
+
+.. code:: console
+
+   # unset $PGPASSWORD
+
 
 .. _srv2-install:
 
-SRV2: Directory Server, DB connection, and Carbonio Mesh Server
+SRV2:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_multiserver-installation/srv2-ce.rst
+..
+  .. include:: /_includes/_multiserver-installation/srv2-ce.rst
 
 .. _srv3-install:
 
@@ -151,7 +203,7 @@ SRV6: AppServer, Preview, and |monit|
 .. include:: /_includes/_multiserver-installation/srv6-ce.rst
 
 .. include:: /_includes/_installation/complete.rst
-             
+
 .. _centralised-logging:
 
 Centralised Logging Configuration
@@ -165,4 +217,3 @@ Manage Global Administrators
 ============================
 
 .. include:: /_includes/_installation/users.rst
-
