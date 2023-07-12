@@ -202,22 +202,6 @@ files stored in |file|, and to collaboratively edit documents using
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
-.. _srv5-install:
-
-SRV5: AppServer, Files and Docs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: /_includes/_multiserver-installation/srv5-ce.rst
-
-.. _srv6-install:
-
-SRV6: AppServer, Preview, and |monit|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: /_includes/_multiserver-installation/srv6-ce.rst
-
-.. include:: /_includes/_installation/complete.rst
-
 .. _centralised-logging:
 
 Centralised Logging Configuration
