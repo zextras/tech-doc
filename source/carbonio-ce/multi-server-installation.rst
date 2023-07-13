@@ -120,8 +120,33 @@ Section :ref:`web-access`.
 SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first node has IP address **172.16.0.11**, |fqdn| **srv1.example.com**, and features the core
-infrastructure of |product|'\s backend: PostgreSQL,
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "8Gb"
+         "Disk Space", "110Gb"
+         "IP Address", "172.16.0.11"
+         "FQDN", "srv1.example.com"
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * PostgreSQL
+      * DB connection, provided by pgpool
+      * Directory Server
+      * |mesh|
+      * |monit|
+
+To install the first Node, follow the order of Roles presented in the
+above panel: start with the installation and configuration of
+PostgreSQL and DB connection, then bootstrap |product|, set up |mesh|,
+and finally prepare the |file| database.
 
 Installation and Configuration of PostgreSQL
 ++++++++++++++++++++++++++++++++++++++++++++
@@ -173,9 +198,30 @@ memory:
 SRV2: MTA, Proxy, and User Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The second node has IP Address 172.16.0.12, |fqdn|
-**srv2.example.com**, and is equipped with the mail server, provided
-by the MTA Role, all web UI components, and the User Management.
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "10Gb"
+         "Disk Space", "30Gb"
+         "IP Address", "172.16.0.12"
+         "FQDN", "srv2.example.com"
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * MTA, the mail server
+      * Proxy
+      * User management
+
+Installation of Node 2 foresees the installation of MTA, Proxy, and
+user management Roles, the bootstrap of |product|, and the
+configuration of |mesh| and *Memcached*.
 
 .. include:: /_includes/_multiserver-installation/srv2-ce.rst
 
@@ -184,9 +230,32 @@ by the MTA Role, all web UI components, and the User Management.
 SRV3: AppServer and |storage|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The third node has IP Address 172.16.0.13, |fqdn|
-**srv3.example.com**, and features an AppServer and the |storage|
-instance which must be unique to the whole |product| infrastructure.
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "16Gb"
+         "Disk Space", "30Gb"
+         "IP Address", "172.16.0.13"
+         "FQDN", "srv3.example.com"
+
+      .. note:: Remember to allocate enough disk space for the user's
+         quota, which is around 750Gb for 150 users with 5Gb quota each.
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * AppServer
+      * |storage|
+        
+On the third node, the AppServer and the |storage| instance are
+installed, and, like in the previous node, the bootstrap of |product|,
+and the configuration of |mesh| and *Memcached* are carried out.
 
 .. include:: /_includes/_multiserver-installation/srv3-ce.rst
 
@@ -195,10 +264,32 @@ instance which must be unique to the whole |product| infrastructure.
 SRV4: |pv|, |file|, and |docs|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The fourth node has IP Address 172.16.0.14, |fqdn|
-**srv4.example.com**, and consists of |pv|, which allows to preview
-files stored in |file|, and to collaboratively edit documents using
-|docs|.
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "4Gb"
+         "Disk Space", "30Gb"
+         "IP Address", "172.16.0.14"
+         "FQDN", "srv4.example.com"
+
+      .. note:: Remember to allocate enough disk space for the user's
+         quota, which is around 750Gb for 150 users with 5Gb quota each.
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * |pv|
+      * |file|
+      * |docs|
+
+The fourth and last node requires the bootstrap of |product| and the
+configuration of |mesh| and *Memcached*.
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
