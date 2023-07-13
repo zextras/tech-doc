@@ -16,7 +16,8 @@ may vary considerably. The actual disk space. Bear in mind that
 requiring more disk space.
 
 Purely as an example, if you give a quota of 5Gb to each of the 150
-users, you need to assign **800Gb of disk space** to **SRV3**.
+users, you need to assign **780Gb of disk space** (30GB for the OS and
+at 750 for user's total quota) to **SRV3**.
 
 .. csv-table::
    :header: "Node", "CPUs", "RAM", "Disk Space (OS)"
