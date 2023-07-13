@@ -24,17 +24,17 @@ scenario we describe below can be modified at will by installing a
 
 .. _multi-server-scenario:
 
-Six Nodes Scenario
-------------------
+Four Nodes Scenario
+-------------------
 
 .. include:: /_includes/_multiserver-installation/scenario-ce.rst
 
 .. _multi-server-req:
-   
+
 Requirements
 ------------
 
-.. include:: /_includes/_multiserver-installation/requirements.rst
+.. include:: /_includes/_multiserver-installation/requirements-ce.rst
 
 .. _multi-server-preliminary:
 
@@ -66,7 +66,7 @@ systems, they concern the configuration of SELinux and the firewall.
 
          # sestatus
 
-   Firewall  
+   Firewall
       All the ports needed by |product| are open on the firewall or
       the firewall is **disabled**. To disable the firewall, issue the
       commands
@@ -81,28 +81,35 @@ Node Installation
 -----------------
 
 The installation procedure follows the suggested order of nodes as
-described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
+described in the :ref:`scenario <multi-server-scenario>`.
 
-* It is assumed that the Postgres node is not a "real" part of the
-  infrastructure, in the sense that it can also be an existent server
-  that is configured to communicate correctly with |product|
-  (configuration instruction are part of SRV1 installation).
+While the overall procedure is the same for both Ubuntu and RHEL 8,
+the actual commands and file paths may differ on the two operating
+system, so pay attention that you execute the correct command on the
+correct files and operating system. The commands that differ are
+separated as follows. Click the :blue:`Ubuntu` or :blue:`RHEL` tab
+according to the Operating System on which you are installing
+|product|.
 
-  .. note:: In our scenario, we install Postgres and configure it from
-     scratch (*SRV1*).
 
-* The first node to be installed is the one that will feature the
-  Directory Server role (*SRV2*)
+.. tab-set::
 
-* The next server to be installed is the MTA one (*SRV3*)
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
-* The other nodes can be installed in any order, you can skip
-  instructions for any node or role that you do not plan to install
+      .. code::
 
-* While the overall procedure is the same for both Ubuntu and RHEL 8,
-  the actual commands and file paths may differ on the two operating
-  system, so pay attention that you execute the correct command on the
-  correct file
+         # <command to be executed on Ubuntu systems>
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code::
+
+         #  <command to be executed on Red Hat systems>
+
+All the commands that are mentioned in this installation procedure
+**must be executed** as the ``root`` user.
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
@@ -110,48 +117,215 @@ Section :ref:`web-access`.
 
 .. _srv1-install:
 
-SRV1: Postgres
-~~~~~~~~~~~~~~
+SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_multiserver-installation/srv1.rst
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "8Gb"
+         "Disk Space", "110Gb"
+         "IP Address", "172.16.0.11"
+         "FQDN", "srv1.example.com"
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * PostgreSQL
+      * DB connection, provided by pgpool
+      * Directory Server
+      * |mesh|
+      * |monit|
+
+To install the first Node, follow the order of Roles presented in the
+above panel: start with the installation and configuration of
+PostgreSQL and DB connection, then bootstrap |product|, set up |mesh|,
+and finally prepare the |file| database.
+
+Installation and Configuration of PostgreSQL
+++++++++++++++++++++++++++++++++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/pg-ce.rst
+
+Packages Installation
++++++++++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/pkgs1-ce.rst
+
+Install and configure pgpool
+++++++++++++++++++++++++++++
+
+Carry out the following tasks to set up pgpool.
+
+.. include:: /_includes/_multiserver-installation/pgpool.rst
+
+Bootstrap |product|
++++++++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/bootstrap.rst
+
+.. _srv1-mesh:
+
+Set up |mesh|
++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/mesh.rst
+
+Bootstrap |file| Database
++++++++++++++++++++++++++
+
+.. code:: console
+
+   # $PGPASSWORD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+Installation of SRV1 has now completed. To prevent anyone else reading
+the password of PostgreSQL's administrator user, remove it from
+memory:
+
+.. code:: console
+
+   # unset $PGPASSWORD
+
 
 .. _srv2-install:
 
-SRV2: Directory Server, DB connection, and Carbonio Mesh Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV2: MTA, Proxy, and User Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "10Gb"
+         "Disk Space", "30Gb"
+         "IP Address", "172.16.0.12"
+         "FQDN", "srv2.example.com"
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * MTA, the mail server
+      * Proxy
+      * User management
+
+Installation of Node 2 foresees the installation of MTA, Proxy, and
+user management Roles, the bootstrap of |product|, and the
+configuration of |mesh| and *Memcached*.
 
 .. include:: /_includes/_multiserver-installation/srv2-ce.rst
 
 .. _srv3-install:
 
-SRV3: MTA
-~~~~~~~~~~~~~~
+SRV3: AppServer and |storage|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_multiserver-installation/srv3.rst
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "16Gb"
+         "Disk Space", "30Gb"
+         "IP Address", "172.16.0.13"
+         "FQDN", "srv3.example.com"
+
+      .. note:: Remember to allocate enough disk space for the user's
+         quota, which is around 750Gb for 150 users with 5Gb quota each.
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * AppServer
+      * |storage|
+        
+On the third node, the AppServer and the |storage| instance are
+installed, and, like in the previous node, the bootstrap of |product|,
+and the configuration of |mesh| and *Memcached* are carried out.
+
+.. include:: /_includes/_multiserver-installation/srv3-ce.rst
 
 .. _srv4-install:
 
-SRV4: Proxy
-~~~~~~~~~~~
+SRV4: |pv|, |file|, and |docs|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+
+         "CPU", "4vCPU"
+         "RAM", "4Gb"
+         "Disk Space", "30Gb"
+         "IP Address", "172.16.0.14"
+         "FQDN", "srv4.example.com"
+
+      .. note:: Remember to allocate enough disk space for the user's
+         quota, which is around 750Gb for 150 users with 5Gb quota each.
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * |pv|
+      * |file|
+      * |docs|
+
+The fourth and last node requires the bootstrap of |product| and the
+configuration of |mesh| and *Memcached*.
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
-.. _srv5-install:
+*****
 
-SRV5: AppServer, Files and Docs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+At this point the installation is complete. Before you can start using
+|product|, make sure to carry out all the tasks listed in section
+:ref:`multi-post-install`.
 
-.. include:: /_includes/_multiserver-installation/srv5-ce.rst
+.. _multi-post-install:
 
-.. _srv6-install:
+Post-Installation Tasks
+-----------------------
 
-SRV6: AppServer, Preview, and |monit|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The first task to carry out is to change the password of the
+``zextras`` user. This is a very important task, because this user has
+full powers over all |product| functionalities, therefore its password
+must be robust. More details and the command to change the password
+can be found in section :ref:`manage-admins`.
 
-.. include:: /_includes/_multiserver-installation/srv6-ce.rst
+After you change the password, log in to the |adminui|, using the
+Proxy Node's IP or hostname, at https\://srv2.example.com:6071/, with
+user ``zextras@example.com`` and password the one you just changed.
 
-.. include:: /_includes/_installation/complete.rst
-             
+If the login is successful, go to **Domains**, select the domain
+example.com, and, under the **General Settings** and define:
+
+* The **Public Server Host Name**, setting it as
+  *https://mail.example.com*
+
+* The **Public Service Port**, setting it as *443*.
+
+These two values combined represent the URL that users need
+to access to use the features of |product|.
+   
+
 .. _centralised-logging:
 
 Centralised Logging Configuration
@@ -165,4 +339,3 @@ Manage Global Administrators
 ============================
 
 .. include:: /_includes/_installation/users.rst
-

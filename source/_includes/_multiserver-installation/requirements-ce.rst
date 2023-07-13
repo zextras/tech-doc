@@ -1,0 +1,82 @@
+
+The Multi-Server scenario depicted in the previous section is recommended
+for a |product| environment that serve around **150 users**.
+
+.. _multi-server-hw-requirements:
+
+Hardware Requirements
+~~~~~~~~~~~~~~~~~~~~~
+
+For each node, these are the hardware requirements to comply with. The
+**Disk space** mentioned in the table refers only to the Operating
+System and not the data (e-mail quota and e-mail traffic, number of
+documents stored, and so on), because space requirements for the data
+may vary considerably. The actual disk space. Bear in mind that
+**SRV3**, which hosts |storage| and therefore the emails, is the node
+requiring more disk space.
+
+Purely as an example, if you give a quota of 5Gb to each of the 150
+users, you need to assign **780Gb of disk space** (30GB for the OS and
+at 750 for user's total quota) to **SRV3**.
+
+.. csv-table::
+   :header: "Node", "CPUs", "RAM", "Disk Space (OS)"
+
+   "SRV1", "4vCPU", "8Gb", "110 Gb"
+   "SRV2", "4vCPU", "10Gb", "30 Gb"
+   "SRV3", "4vCPU", "16Gb", "30 Gb"
+   "SRV4", "4vCPU", "4Gb", "30 Gb"
+
+Additional Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The following is a list of requirements that are required for
+|product| to operate flawlessly.
+
+* The whole |product| infrastructure must have at least **one public
+  IP address**. The IP address must have a domain name associated,
+  that coincides with the **A record** in the DNS (e.g., ``A
+  mail.example.com``)
+
+  .. hint:: You can check a domain's A record using the CLI utility
+     ``host``:
+
+     .. code:: console
+
+        # host -t A example.com
+
+* To allow the mail server to receive mail, it will be necessary to
+  set up an **MX record**, which must correspond to the A record
+  (e.g. MX: example.com = mail.example.com )
+
+  .. hint:: You can check a domain's MX record using the CLI utility
+     ``host``:
+
+     .. code:: console
+
+        # host -t MX example.com
+
+* For improved security of sending emails, you should also define TXT
+  records for SPF, DKIM and DMARC
+
+* If none of the four nodes is exposed to the Internet, you need to
+  forward two ports from the public IP: port **25/smtp** to the Node
+  featuring MTA (SRV2) to be able to receive mail, and port
+  **443/https** to the node installing the Proxy (SRV2) to allow users
+  to access their webmail from a remote location
+
+* If you plan to enable other protocols (e.g., POP, IMAP) you should
+  forward also these ports accordingly. You can refer to section
+  :ref:`fw-ports` for a list. Do not open these ports if you do not
+  need these protocols!
+
+* Also, for security reasons, port 6071, to access the |adminui|
+  should never be exposed on the Internet, but reachable only from a
+  VPN tunnel or similar mechanisms
+
+* The same applies for SSH access to the Nodes: it should only be
+  enabled from internal/management networks, while any remote access
+  must be done via VPN tunnel or equivalent mechanism
+
+* The hostname of each Node must be a |FQDN| that can be internally
+  resolved to each other via DNS
