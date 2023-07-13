@@ -26,9 +26,9 @@ the nodes are the same.
 
 We also assume that the IP address of each node is ``172.16.0.1X``,
 with ``X`` the *n-th* node. In other words, IPs will be in the range
-``172.16.0.11`` (SRV1) :octicon:`dash` ``172.16.0.14``. These values
-will be used in configuration files that need to be manually modified
-during the installation or upgrade procedures.
+``172.16.0.11`` (SRV1) :octicon:`dash` ``172.16.0.14`` (SRV4). These
+values will be used in configuration files that need to be manually
+modified during the installation or upgrade procedures.
 
 In most Multi-Server scenarios, it proves useful to install a
 **Replica Directory Server** in a Master/Slave setup for improved

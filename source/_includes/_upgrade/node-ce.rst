@@ -3,7 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 If you are on a Multi-Server, remember to start from the node
-featuring the Directory Server (:bdg-secondary-line:`SRV2` in our
+featuring the Directory Server (|dsnode| in our
 :ref:`multi-server-scenario`), then all the other in the same order of
 installation.
 
@@ -63,11 +63,14 @@ installation.
       :columns: 12 12 6 6
 
       On a Multi-Server, this step must be performed exclusively on
-      the DB Connection node (SRV2 in our scenario).
+      the DB Connection node (|dsnode| in our scenario).
 
       .. code:: console
 
          # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+      .. hint:: ``DB_ADM_PWD`` is the password of PostgreSQL's
+         administrative user, created during |product|'s installation.
 
    .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
