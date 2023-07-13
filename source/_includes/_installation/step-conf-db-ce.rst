@@ -13,10 +13,10 @@ administrative user.
 
 .. code:: console
    
-   # read -s -p "Password:" PGPASSWORD
+   # read -s -p "Password:" DB_ADM_PWD
 
 Provide a password of your choice, which will be stored in a variable
-called ``PGPASSWORD`` and reusable throughout the whole procedure. It
+called ``DB_ADM_PWD`` and reusable throughout the whole procedure. It
 is important to notice that the password is accessible to the user
 (``root``) **in the current terminal only**. No one else can access it,
 it will be deleted upon logging out. You can also manually delete it
@@ -31,7 +31,7 @@ associated password.
 
 .. code:: console
 
-   # su - postgres -c "psql --command=\"CREATE ROLE carbonio_adm WITH LOGIN SUPERUSER encrypted password $PGPASSWORD;\""
+   # su - postgres -c "psql --command=\"CREATE ROLE carbonio_adm WITH LOGIN SUPERUSER encrypted password DB_ADM_PWD;\""
 
 
 The final step is to create the database.
