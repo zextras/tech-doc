@@ -10,9 +10,10 @@ Folders and Shares
 ------------------
 
 E-mail are arranged in folders, which by default are **Inbox**,
-**Junk**, **Sent**, **Drafts**, and **Trash**. New folders can be
-created by right-clicking on any item in the folder list and placed in
-a hierarchy. 
+**Junk**, **Sent**, **Drafts**, and **Trash**. These folders are also
+called *System folders* and can not be renamed or deleted. New folders
+can be created by right-clicking on any item in the folder list and
+placed in a hierarchy.
 
 .. note:: Initially, there's no folder hierarchy, because all the
    default folders are at the same level.
