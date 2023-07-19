@@ -38,7 +38,6 @@ accessed, it is possible to mark each of them manually. This option is
 particularly useful in case of shared account, to make sure that
 everybody who has access to the e-mail has read it.
 
-
 .. _mail-tags:
 
 Tags
@@ -90,7 +89,6 @@ preference: to name a few, it has some importance compared to other,
 it needs some action, or it has been processed and can be archived or
 deleted.
 
-
 More actions are available and shown upon right-clicking an email.
 
 |product| has support for **e-mail receipts**: when composing an
@@ -112,6 +110,20 @@ When you have multiple aliases or access to shared accounts, you can
 add a different signature whenever you create, forward, or reply to an
 e-mail: refer to section *Using Signatures* in the :ref:`Mails
 settings <settings-mails>`.
+
+.. _mail-write:
+
+Writing e-mails
+---------------
+
+To create a new mail, click the |new| button on the |product|'s top
+bar. A panel containing the editor will appear, that allows to write
+an e-mail. This panel can be moved anywhere within the browser's tab
+and can be resized. Moreover, this panel is shared by the other
+modules, therefore you can start multiple tasks (e.g., write or reply
+an e-mail, edit a contact, create a new calendar event) and they will
+be all shown in the same panel, which will organised with tabs that
+appear on top of the panel.
 
 .. _mail-attachments:
 
