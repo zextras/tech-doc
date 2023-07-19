@@ -68,19 +68,31 @@ when sent. These landing folders can be changed via the :ref:`Mails
 settings <settings-mails>` page, by setting up **filters** and move
 automatically any email to a given folder.
 
-E-mails are arranged in *Conversations*, meaning that an e-mail with
-all the replies it receives is packed in one single element in the
-list. Conversations (but not single messages) can be drag-and-dropped
-to any folder: you can select one conversation in the list by clicking
-on the *Avatar* on the left of the e-mail (i.e., the circle with the
-initials of the e-mail's sender). You will enter the so-called
-*Selection Mode*: you can select additional conversations by clicking
-them, or select all of them by clicking the :blue:`SELECT ALL` button
-above the list, then move them to another folder.
+E-mails are arranged in *Conversations* by default, meaning that an
+e-mail with all the replies it receives is packed in one single
+element in the list. In this case, a small number shows how many
+e-mails are in the conversation.
+
+It is possible to switch to show each e-mail as a single item in the
+list, but replies to the e-mails would not show up near the original
+e-mail.
+
+Conversations (or single messages, when showing e-mails by message)
+can be drag-and-dropped to any folder: you can select one conversation
+in the list by clicking on the *Avatar* on the left of the e-mail
+(i.e., the circle with the initials of the e-mail's sender). You will
+enter the so-called *Selection Mode*: you can select additional
+conversations by clicking them, or select all of them by clicking the
+:blue:`SELECT ALL` button above the list, then move them to another
+folder.
 
 .. hint:: You can select immediately all conversations by clicking the
-   checkmark above the list of e-mails.  
-   
+   checkmark above the list of e-mails.
+
+When deleting a Conversation, they are placed in the **Trash** folder,
+so you have the option to search for messages inside the conversation
+before permanently deleting the entire conversation.
+
 On the top-right corner of each e-mail there are a few icons that
 allow to carry out a number of actions; click the
 :material-regular:`more_vert` icon to access them and many more: mark
