@@ -58,6 +58,7 @@ If you are looking for |ce|'s documentation, please refer to its
          installation
          common/carbonio/web-access
          security
+         migration
 
    .. grid-item-card::
       :columns: 12 12 6 6
