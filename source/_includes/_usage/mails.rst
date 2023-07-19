@@ -25,14 +25,18 @@ meaning there are at least 99 emails to read.
 A right-click also allows to carry out other actions on the selected
 folder: *move*, *wipe* (i.e., remove all e-mails in the folder),
 *edit*, *delete*, and *share* (with internal colleagues or even make
-it freely readable).
+it freely readable). 
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
 To find shares, click on the :bdg-primary-line:`FIND SHARES`
 underneath the `Share Folders`. In the dialog, enter the e-mail
-address of the colleague of which you want to find the shares. If the
-colleague has shared some folder, you'll be presented with a list.
+address of the colleague of which you want to find the shares: If the
+colleague has shared some folder, they are shown as a list.
+
+When working with shared folders, it is possible to move messages or
+conversations (depending on the visualisation chosen) from the shared
+folders to a local, non-shared folder, and vice-versa.
 
 While e-mails by default are marked as *read* when they are first
 accessed, it is possible to mark each of them manually. This option is
