@@ -59,6 +59,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          installation
          common/carbonio/web-access
          security
+         migration
 
    .. grid-item-card::
       :columns:  12 12 6 6
