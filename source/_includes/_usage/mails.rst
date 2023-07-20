@@ -174,7 +174,8 @@ actions are available
       When receiving an e-mail with attachments, the user has the
       option to either download the file to a local directory on the
       workstation, or to save it in the user's personal's storage on
-      |file|.
+      |file|, even if the attachment comes from a mail in a shared
+      account.
       
 
 .. _mail-trash-folder:
