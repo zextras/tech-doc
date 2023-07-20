@@ -73,6 +73,20 @@ interface appears to the web clients.
 
 .. include:: /_includes/_adminpanel/wl.rst
 
+.. _global-2fa:
+
+2-Factor-Autentication
+~~~~~~~~~~~~~~~~~~~~~~
+
+In this page it is possible to configure 2FA globally (i.e., for all
+domains configured) for the various services offered by |product|. To
+modify settings for a single domain, refer to :ref:`domain-2fa`.
+
+.. note:: The global values configured are inherited by all domains,
+   unless they are overridden in the domain.
+
+.. include:: /_includes/_adminpanel/2fa.rst
+
 .. _ap-domain-details:
 
 Domain Details
@@ -266,6 +280,17 @@ These setting are the same that appear in the :ref:`Global Theme
 <ap-theme>` section, but are domain-specific: if not defined at domain
 level, the global theme settings will be applied.
 
+.. _domain-2fa:
+
+2-Factor-Autentication
+~~~~~~~~~~~~~~~~~~~~~~
+
+In this page it is possible to configure 2FA for the various services
+offered by |product|, only for the selected domain.  To modify
+settings for all domains, refer to :ref:`global-2fa`.
+
+.. include:: /_includes/_adminpanel/2fa.rst
+     
 .. _domain-saml:
 
 SAML
