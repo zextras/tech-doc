@@ -331,7 +331,13 @@ user, and also to redirect to the user's mailbox.
 
 When editing a user's account, most of the option are the same that
 can be found in the :ref:`ap-new-account` section and are organised in
-four tabs:
+tabs. Options defined in the user's COS are inherited, but can be
+modified for any individual user.
+
+.. note:: The values that have been modified are accompanied by a
+   circular arrow icon. If you hover on that icon, you will see the
+   inherited value, while if you click on it you will restore the COS
+   value.
 
 .. tab-set::
 
@@ -504,6 +510,10 @@ of the new account.
       the **Default COS**.
       Click the :bdg-primary-line:`CREATE WITH THESE DATA` button to
       create the account
+
+      .. note:: When assigning a COS to a user, all the values defined
+         in that COS will be inherited by the user. They can be later
+         changed on a user basis later, when editing the account.
       
    .. grid-item::
       :columns: 12 12 6 6
