@@ -177,10 +177,11 @@ In the following command, that must be executed on the Node hosting
 **ALL_CAPS** with corresponding values, suitable for your
 infrastructure.
 
-.. seealso:: The command uses imapsync's docker images, for
-   alternative approaches (e.g., if you want to install and use
-   imasync) and documentation, please refer to `imapsyncs's official
-   documentation <https://imapsync.lamiral.info/#doc>`_.
+.. seealso:: The command uses the official imapsync’s docker images;
+   to download it or to learn on alternative approaches (e.g., if you
+   want to install and use imasync) and documentation, please refer to
+   `imapsyncs's official documentation
+   <https://imapsync.lamiral.info/#doc>`_.
 
 .. code:: console
 
