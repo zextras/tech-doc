@@ -277,12 +277,18 @@ modified for any individual user.
    .. tab-item:: General
 
       This tab contains all the options provided during the
-      :ref:`account creation <ap-new-account>` in the *Details* and
-      *Create* steps, plus other options, including the ability to
-      prevent the user from changing the password and remove the
-      user's password from LDAP.
+      :ref:`account creation <ap-new-account>`, plus other options,
+      including:
+                 
+      * The ability to prevent the user from changing the
+        password
 
-      This tab also shows of which Mailing list the user is member.
+      * To remove the user's password from LDAP
+
+      * The Mailing list memberships
+
+      * To move a user to another domain, which must be defined on the
+        same server, by writing the new one in the **Domain Name**
 
       .. note:: An Admin can not change the password of a user, only
          wipe it, so the user is forced to change it on the next login
