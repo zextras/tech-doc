@@ -203,19 +203,31 @@ procedure that requires only a few steps.
    can be carried out from the CLI only: check out section
    :ref:`install-SSL-cert` if you need to use either of them.
 
-Select the virtual host, then click :blue:`LOAD AND VERIFY
-CERTIFICATE`.  In the dialog, you can choose whether to enter the
-three files of the authorisation chain (i.e., the *Domain
-Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
-the first or copy the content of the individual files in the
-appropriate fields. Click :bdg-primary:`VERIFY` to verify the
-certificates: if everything is correct, notification :bdg-success:`The
-certificate is valid` will appear. To use the certificate, click the
-:bdg-primary-line:`I WANT TO USE THIS CERTIFICATE` button to upload
-and use the certificate. Again, a notification will be shown
-(:bdg-success:`The certificates have been saved`). To complete the
-procedure: if you are on a Single-Node, restart it otherwise you need
-to restart the node on which the **Proxy** is installed;
+Select the virtual host, then click :blue:`UPLOAD AND VERIFY
+CERTIFICATE`. In the dialog, you can choose to use:
+
+* A Let's Encrypt *longChain* Certificate, i.e., including an
+  intermediate certificate: click the :bdg-primary:`GENERATE
+  CERTIFICATE` button and wait for the certificate to become available
+
+* A Let's Encrypt *shortChain* Certificate, without intermediate
+  certificate: like the previous case, click the
+  :bdg-primary:`GENERATE CERTIFICATE` button and wait for the
+  certificate to become available
+  
+* A custom certificate. In this case, you need to provide by yourself
+  the three files of the authorisation chain (i.e., the *Domain
+  Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
+  the first or copy the content of the individual files in the
+  appropriate fields. Click :bdg-primary:`VERIFY` to verify the
+  certificates: if everything is correct, notification
+  :bdg-success:`The certificate is valid` will appear. To use the
+  certificate, click the :bdg-primary-line:`I WANT TO USE THIS
+  CERTIFICATE` button to upload and use the certificate. Again, a
+  notification will be shown (:bdg-success:`The certificates have been
+  saved`). To complete the procedure: if you are on a Single-Node,
+  restart it otherwise you need to restart the node on which the
+  **Proxy** is installed;
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
