@@ -10,9 +10,10 @@ Folders and Shares
 ------------------
 
 E-mail are arranged in folders, which by default are **Inbox**,
-**Junk**, **Sent**, **Drafts**, and **Trash**. New folders can be
-created by right-clicking on any item in the folder list and placed in
-a hierarchy. 
+**Junk**, **Sent**, **Drafts**, and **Trash**. These folders are also
+called *System folders* and can not be renamed or deleted. New folders
+can be created by right-clicking on any item in the folder list and
+placed in a hierarchy.
 
 .. note:: Initially, there's no folder hierarchy, because all the
    default folders are at the same level.
@@ -24,20 +25,23 @@ meaning there are at least 99 emails to read.
 A right-click also allows to carry out other actions on the selected
 folder: *move*, *wipe* (i.e., remove all e-mails in the folder),
 *edit*, *delete*, and *share* (with internal colleagues or even make
-it freely readable).
+it freely readable). 
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
 To find shares, click on the :bdg-primary-line:`FIND SHARES`
 underneath the `Share Folders`. In the dialog, enter the e-mail
-address of the colleague of which you want to find the shares. If the
-colleague has shared some folder, you'll be presented with a list.
+address of the colleague of which you want to find the shares: If the
+colleague has shared some folder, they are shown as a list.
+
+When working with shared folders, it is possible to move messages or
+conversations (depending on the visualisation chosen) from the shared
+folders to a local, non-shared folder, and vice-versa.
 
 While e-mails by default are marked as *read* when they are first
 accessed, it is possible to mark each of them manually. This option is
 particularly useful in case of shared account, to make sure that
 everybody who has access to the e-mail has read it.
-
 
 .. _mail-tags:
 
@@ -68,19 +72,31 @@ when sent. These landing folders can be changed via the :ref:`Mails
 settings <settings-mails>` page, by setting up **filters** and move
 automatically any email to a given folder.
 
-E-mails are arranged in *Conversations*, meaning that an e-mail with
-all the replies it receives is packed in one single element in the
-list. Conversations (but not single messages) can be drag-and-dropped
-to any folder: you can select one conversation in the list by clicking
-on the *Avatar* on the left of the e-mail (i.e., the circle with the
-initials of the e-mail's sender). You will enter the so-called
-*Selection Mode*: you can select additional conversations by clicking
-them, or select all of them by clicking the :blue:`SELECT ALL` button
-above the list, then move them to another folder.
+E-mails are arranged in *Conversations* by default, meaning that an
+e-mail with all the replies it receives is packed in one single
+element in the list. In this case, a small number shows how many
+e-mails are in the conversation.
+
+It is possible to switch to show each e-mail as a single item in the
+list, but replies to the e-mails would not show up near the original
+e-mail.
+
+Conversations (or single messages, when showing e-mails by message)
+can be drag-and-dropped to any folder: you can select one conversation
+in the list by clicking on the *Avatar* on the left of the e-mail
+(i.e., the circle with the initials of the e-mail's sender). You will
+enter the so-called *Selection Mode*: you can select additional
+conversations by clicking them, or select all of them by clicking the
+:blue:`SELECT ALL` button above the list, then move them to another
+folder.
 
 .. hint:: You can select immediately all conversations by clicking the
-   checkmark above the list of e-mails.  
-   
+   checkmark above the list of e-mails.
+
+When deleting a Conversation, they are placed in the **Trash** folder,
+so you have the option to search for messages inside the conversation
+before permanently deleting the entire conversation.
+
 On the top-right corner of each e-mail there are a few icons that
 allow to carry out a number of actions; click the
 :material-regular:`more_vert` icon to access them and many more: mark
@@ -89,7 +105,6 @@ flag is a simple indicator for an email that can be adapted to one's
 preference: to name a few, it has some importance compared to other,
 it needs some action, or it has been processed and can be archived or
 deleted.
-
 
 More actions are available and shown upon right-clicking an email.
 
@@ -112,6 +127,20 @@ When you have multiple aliases or access to shared accounts, you can
 add a different signature whenever you create, forward, or reply to an
 e-mail: refer to section *Using Signatures* in the :ref:`Mails
 settings <settings-mails>`.
+
+.. _mail-write:
+
+Writing e-mails
+---------------
+
+To create a new mail, click the |new| button on the |product|'s top
+bar. A panel containing the editor will appear, that allows to write
+an e-mail. This panel can be moved anywhere within the browser's tab
+and can be resized. Moreover, this panel is shared by the other
+modules, therefore you can start multiple tasks (e.g., write or reply
+an e-mail, edit a contact, create a new calendar event) and they will
+be all shown in the same panel, which will organised with tabs that
+appear on top of the panel.
 
 .. _mail-attachments:
 
@@ -145,7 +174,8 @@ actions are available
       When receiving an e-mail with attachments, the user has the
       option to either download the file to a local directory on the
       workstation, or to save it in the user's personal's storage on
-      |file|.
+      |file|, even if the attachment comes from a mail in a shared
+      account.
       
 
 .. _mail-trash-folder:

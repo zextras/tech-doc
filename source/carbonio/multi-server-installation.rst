@@ -150,6 +150,11 @@ SRV6: AppServer (Advanced), Preview, and |monit|
 
 .. include:: /_includes/_multiserver-installation/srv6.rst
 
+Activate license
+----------------
+
+.. include:: /_includes/_multiserver-installation/license.rst
+
 .. include:: /_includes/_installation/complete.rst
              
 .. _centralised-logging:
