@@ -18,10 +18,13 @@ administrative user.
 Provide a password of your choice, which will be stored in a variable
 called ``DB_ADM_PWD`` and reusable throughout the whole procedure. It
 is important to notice that the password is accessible to the user
-(``root``) **in the current terminal only**. No one else can access it,
-it will be deleted upon logging out. You can also manually delete it
-with the appropriate command, shown at the end of the current
-procedure.
+(``root``) **in the current terminal only**. No one else can access it
+and it will be deleted upon logging out. You can also manually delete
+it with the appropriate command:
+
+.. code:: console
+
+   # unset $DB_ADM_PWD
 
 Remember to store this password in a safe place (preferably using a
 password manager), as you might need it in the future. 

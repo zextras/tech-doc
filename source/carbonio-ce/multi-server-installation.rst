@@ -190,7 +190,7 @@ memory:
 
 .. code:: console
 
-   # unset $PGPASSWORD
+   # unset $DB_ADM_PWD
 
 
 .. _srv2-install:
