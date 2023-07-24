@@ -73,6 +73,20 @@ interface appears to the web clients.
 
 .. include:: /_includes/_adminpanel/wl.rst
 
+.. _global-2fa:
+
+2-Factor-Autentication
+~~~~~~~~~~~~~~~~~~~~~~
+
+In this page it is possible to configure 2FA globally (i.e., for all
+domains configured) for the various services offered by |product|. To
+modify settings for a single domain, refer to :ref:`domain-2fa`.
+
+.. note:: The global values configured are inherited by all domains,
+   unless they are overridden in the domain.
+
+.. include:: /_includes/_adminpanel/2fa.rst
+
 .. _ap-domain-details:
 
 Domain Details
@@ -227,19 +241,31 @@ procedure that requires only a few steps.
    can be carried out from the CLI only: check out section
    :ref:`install-SSL-cert` if you need to use either of them.
 
-Select the virtual host, then click :blue:`LOAD AND VERIFY
-CERTIFICATE`.  In the dialog, you can choose whether to enter the
-three files of the authorisation chain (i.e., the *Domain
-Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
-the first or copy the content of the individual files in the
-appropriate fields. Click :bdg-primary:`VERIFY` to verify the
-certificates: if everything is correct, notification :bdg-success:`The
-certificate is valid` will appear. To use the certificate, click the
-:bdg-primary-line:`I WANT TO USE THIS CERTIFICATE` button to upload
-and use the certificate. Again, a notification will be shown
-(:bdg-success:`The certificates have been saved`). To complete the
-procedure: if you are on a Single-Node, restart it otherwise you need
-to restart the node on which the **Proxy** is installed;
+Select the virtual host, then click :blue:`UPLOAD AND VERIFY
+CERTIFICATE`. In the dialog, you can choose to use:
+
+* A Let's Encrypt *longChain* Certificate, i.e., including an
+  intermediate certificate: click the :bdg-primary:`GENERATE
+  CERTIFICATE` button and wait for the certificate to become available
+
+* A Let's Encrypt *shortChain* Certificate, without intermediate
+  certificate: like the previous case, click the
+  :bdg-primary:`GENERATE CERTIFICATE` button and wait for the
+  certificate to become available
+  
+* A custom certificate. In this case, you need to provide by yourself
+  three files of the authorisation chain (i.e., the *Domain
+  Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
+  the first or copy the content of the individual files in the
+  appropriate fields. Click :bdg-primary:`VERIFY` to verify the
+  certificates: if everything is correct, notification
+  :bdg-success:`The certificate is valid` will appear. To use the
+  certificate, click the :bdg-primary-line:`I WANT TO USE THIS
+  CERTIFICATE` button to upload and use the certificate. Again, a
+  notification will be shown (:bdg-success:`The certificates have been
+  saved`). To complete the procedure: if you are on a Single-Node,
+  restart it otherwise you need to restart the node on which the
+  **Proxy** is installed;
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
@@ -266,6 +292,17 @@ These setting are the same that appear in the :ref:`Global Theme
 <ap-theme>` section, but are domain-specific: if not defined at domain
 level, the global theme settings will be applied.
 
+.. _domain-2fa:
+
+2-Factor-Autentication
+~~~~~~~~~~~~~~~~~~~~~~
+
+In this page it is possible to configure 2FA for the various services
+offered by |product|, only for the selected domain.  To modify
+settings for all domains, refer to :ref:`global-2fa`.
+
+.. include:: /_includes/_adminpanel/2fa.rst
+     
 .. _domain-saml:
 
 SAML
@@ -331,20 +368,32 @@ user, and also to redirect to the user's mailbox.
 
 When editing a user's account, most of the option are the same that
 can be found in the :ref:`ap-new-account` section and are organised in
-four tabs:
+tabs. Options defined in the user's COS are inherited, but can be
+modified for any individual user.
+
+.. note:: The values that have been modified are accompanied by a
+   circular arrow icon. If you hover on that icon, you will see the
+   inherited value, while if you click on it you will restore the COS
+   value.
 
 .. tab-set::
 
    .. tab-item:: General
 
       This tab contains all the options provided during the
-      :ref:`account creation <ap-new-account>` in the *Details* and
-      *Create* steps, plus other options, including the ability to
-      prevent the user from changing the password and remove the
-      user's password from LDAP.
+      :ref:`account creation <ap-new-account>`, plus other options,
+      including:
+      
+      * The ability to prevent the user from changing the
+        password
 
-      This tab also shows of which Mailing list the user is member.
+      * To remove the user's password from LDAP
 
+      * The Mailing list memberships
+
+      * To move a user to another domain, which must be defined on the
+        same server, by writing the new one in the **Domain Name**
+      
       .. note:: An Admin can not change the password of a user, only
          wipe it, so the user is forced to change it on the next login
          attempt. 
@@ -504,6 +553,10 @@ of the new account.
       the **Default COS**.
       Click the :bdg-primary-line:`CREATE WITH THESE DATA` button to
       create the account
+
+      .. note:: When assigning a COS to a user, all the values defined
+         in that COS will be inherited by the user. They can be later
+         changed on a user basis later, when editing the account.
       
    .. grid-item::
       :columns: 12 12 6 6

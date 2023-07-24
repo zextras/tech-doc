@@ -41,5 +41,7 @@ Upgrade Nodes
 Troubleshooting
 ---------------
 
-.. include:: /_includes/_upgrade/ts.rst
+In this section you find solutions for some possible error during the
+upgrade procedure.
 
+.. include:: /_includes/_upgrade/ts.rst

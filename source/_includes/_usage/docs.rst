@@ -49,6 +49,9 @@ The most used key features of |docs| are:
 
 * Support to export documents as PDF files
 
+* Preview and thumbnail generation for most images format (PNG, GIF,
+  JPEG, and more)
+
 * Preview of PDF files
 
 * Limited |gui| for read-only documents, full |gui| to support

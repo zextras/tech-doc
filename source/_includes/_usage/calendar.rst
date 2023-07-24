@@ -19,11 +19,16 @@ details. This option is useful if you have to schedule recurrent
 events without a fixed schedule.
 
 Attendees, whose presence is either mandatory or optional, can be
-added by writing their e-mail address. In case the invitation was not
-sent or if something went wrong, the event will show up in the
-calendar, but marked with a red icon. The attendee can propose a new
-time. In this case, new e-mail will be generated and sent to the other
-participant to inform them of the change.
+added by writing their e-mail address. If the attendee already is not
+available or has some overlapping appointment, its e-mail address will
+be coloured and a message will be shown. This improves and makes
+easier the creation of events.
+
+In case the invitation was not sent or if something went wrong, the
+event will show up in the calendar, but marked with a red icon. The
+attendee can propose a new time. In this case, new e-mail will be
+generated and sent to the other participant to inform them of the
+change.
 
 When right-clicking an event in the calendar, different actions can be
 carried out: open it and show all participants and details, edit, copy
