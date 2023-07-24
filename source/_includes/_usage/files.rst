@@ -20,23 +20,19 @@ Working with Files
 The following panels summarise the most common activities that can be
 done on files and folders
 
-.. card::
-
-   File Upload and Download
-   ^^^^
+.. card:: File Upload and Download
 
    * To upload a file to |File|, either click the
      :bdg-primary-line:`Upload` button on the top bar, or drag and
      drop a file from a file browser to |file|
 
    * To download a file from |File|, right-click on it and select
-     :bdg-primary-line:`Download`:
+     :bdg-primary-line:`Download`
 
+   While uploading new files, a badge shows the completed and total
+   number of documents being uploaded.
 
-.. card::
-
-   Create new Folder and Files
-   ^^^^
+.. card:: Create new Folder and Files
 
    To create a new item in |File|, use the right mouse button in the
    file list (central area) to create new folders, documents,
@@ -48,10 +44,7 @@ done on files and folders
       ``?`` :octicon:`dash` Plus sign ``+`` :octicon:`dash` Asterisk
       ``*`` :octicon:`dash` Percent sign ``%``
 
-.. card::
-
-   Sharing
-   ^^^^
+.. card:: Sharing
 
    When clicking once on a file or folder, an informative box appears on
    the right-hand side, which contains multiple tabs:

@@ -98,9 +98,15 @@ Additional Requirements
   commands must be executed as the ``zextras`` user (these commands
   will feature a ``zextras$`` prompt), while all other commands must
   be issued as the ``root`` user, unless stated otherwise.
+  
+  .. note:: The ``zextras`` user is created during the |product|
+     installation process, it is not necessary to create it
+     beforehand.
+     
 * Commands or groups of commands may be different between Ubuntu and
   RHEL 8. This is shown by blue tabs: click on the tab of your choice
   to find the correct command.
+
 * When no such tabs are given, the commands to run are the same on
   Ubuntu and RHEL 8.
 
