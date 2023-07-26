@@ -1,7 +1,7 @@
 Failed Installation of carbonio-docs-editor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When installing ``carbonio-docs-editor`` on RHEL 8- based
+When installing ``carbonio-docs-editor`` on RHEL 8-based
 distributions you may encounter this error::
 
   Error:  Problem: package carbonio-docs-core-22.05.12-1.el8.x86_64 requires harfbuzz-icu,
@@ -25,7 +25,7 @@ After the package has been installed, you can resume the upgrade.
 Missing carbonio-docs-editor user
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-On Multi-Server installations only, you may find the following error
+On RHEL 8-based Multi-Server installations only, you may find the following error
 in all AppServers that *do not have** the ``carbonio-docs-editor``
 package installed.
 
