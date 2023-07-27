@@ -336,7 +336,7 @@ to access to use the features of |product|.
 Centralised Logging Configuration
 ---------------------------------
 
-.. include:: /_includes/_multiserver-installation/logger.rst
+.. include:: /_includes/_multiserver-installation/logger-ce.rst
 
 .. _manage-admins:
 
