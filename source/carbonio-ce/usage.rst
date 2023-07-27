@@ -17,7 +17,7 @@
 Quick Search And Create New Objects Functionalities
 ===================================================
 
-.. include:: /_includes/_usage/quick-search.rst	     
+.. include:: /_includes/_usage/quick-search.rst
 
 .. _file-preview:
 
@@ -38,8 +38,8 @@ Mails
 
 .. _calendar-comp:
 
-Calendar
-========
+Calendars
+=========
 
 .. include:: /_includes/_usage/calendar.rst
 
@@ -49,7 +49,7 @@ Contacts
 ========
 
 .. include:: /_includes/_usage/contacts.rst
-	     
+
 .. _chats-comp:
 
 Chats
@@ -57,7 +57,7 @@ Chats
 
 .. make sure to verify which are the ADV features that are not ported
    to CE!
-   
+
 The |team| component, which includes also video conferencing
 functionalities, will soon be available.
 
@@ -67,7 +67,21 @@ Files
 =====
 
 .. include:: /_includes/_usage/files.rst
-     
+
+.. _docs-comp:
+
+Docs
+====
+
+.. include:: /_includes/_usage/docs.rst
+
+.. _mobile_shared_folders:
+
+Shared Folders
+==============
+
+.. include:: /_includes/_usage/sharedfolders.rst
+
 .. _search-comp:
 
 Search
