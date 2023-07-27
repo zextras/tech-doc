@@ -46,3 +46,10 @@ Add an Index to MariaDB
 =======================
 
 .. include:: /_includes/mariadb.rst
+
+.. _install-fonts:
+
+Custom Fonts for |docs|
+=======================
+
+.. include:: /_includes/custom-fonts.rst

@@ -21,11 +21,6 @@ downtime in the services, during the upgrade you must choose to keep
 the old version of the configuration file: to do so, click :kbd:`N`
 when asked to replace the configuration file.
 
-:octicon:`check-circle;1em;sd-text-success` the |pv|. In this case,
-you must choose to replace the old configuration file. Therefore,
-during the upgrade click :kbd:`Y` when asked to replace the
-configuration file.
-
 :octicon:`check-circle;1em;sd-text-success` the ``carbonio-docs-core``
-package. On **RHEL 8 only**, you might encounter a conflict between
-libraries. In this case, please refer to section :ref:`upgrade-ts`.
+package. On **RHEL 8 only**, you might encounter some minor problem,
+whose solution can be found in section :ref:`upgrade-ts`.

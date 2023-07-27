@@ -182,7 +182,7 @@ Bootstrap |file| Database
 
 .. code:: console
 
-   # $PGPASSWORD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 Installation of SRV1 has now completed. To prevent anyone else reading
 the password of PostgreSQL's administrator user, remove it from
@@ -293,6 +293,11 @@ configuration of |mesh| and *Memcached*.
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
+|product| Management and Troubleshooting
+----------------------------------------
+
+.. include:: /_includes/_installation/commands.rst
+       
 *****
 
 At this point the installation is complete. Before you can start using
@@ -331,7 +336,7 @@ to access to use the features of |product|.
 Centralised Logging Configuration
 ---------------------------------
 
-.. include:: /_includes/_multiserver-installation/logger.rst
+.. include:: /_includes/_multiserver-installation/logger-ce.rst
 
 .. _manage-admins:
 
