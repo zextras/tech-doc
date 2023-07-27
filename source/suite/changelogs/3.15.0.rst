@@ -17,6 +17,7 @@ Zextras Suite Changelog - Release 3.15.0
 * *Description:* ExternalRestore follows the order of the accounts
   provided in the accounts or input_file parameter
 
+..
 
 * *Issue ID:* BCK-618
 
