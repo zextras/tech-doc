@@ -293,6 +293,11 @@ configuration of |mesh| and *Memcached*.
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
 
+|product| Management and Troubleshooting
+----------------------------------------
+
+.. include:: /_includes/_installation/commands.rst
+       
 *****
 
 At this point the installation is complete. Before you can start using
