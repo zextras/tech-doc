@@ -12,12 +12,17 @@ but can be installed after upgrading to that version, see
 
 Like for every other component, it can be reached using a
 :ref:`supported browser <browser_compatibility>` and point it to
-https://mail.example.com:6071/login, replacing `mail.example.com` with
+https://acme.example:6071/login, replacing `acme.example` with
 your domain.
 
-To access the |adminui|, the default user is ``zextras@example.com``,
-whose password should be changed after the first installation using
-the command shown in Section :ref:`change-admin-pw`.
+To access the |adminui|, you need an account that is marked as
+**Global Administrator**. The default Global Admin is
+``zextras@acme.example``; at the first login it will be prompted to
+change the password. You can do this from the CLI using the command
+shown in Section :ref:`manage-admins`.
+
+.. hint:: More Global Admins can be added from the |adminui|; please
+   refer to section :ref:`ap-new-admin` for directions.
 
 |adminui| allows to manage the |product| domains, mailstores,
 accounts, |cos|, and privacy settings. The overall organisation of the
@@ -72,4 +77,3 @@ The landing page is shown in :numref:`fig_ap-top` and
       |carbonio| infrastructure. The button `GO TO MAILSTORES SERVERS
       LIST` allows to open the :menuselection:`Storage --> Global
       Servers --> Server List` page (see :ref:`ap-storage`).
-      

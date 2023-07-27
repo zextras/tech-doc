@@ -49,44 +49,10 @@ The most used key features of |docs| are:
 
 * Support to export documents as PDF files
 
+* Preview and thumbnail generation for most images format (PNG, GIF,
+  JPEG, and more)
+
 * Preview of PDF files
 
 * Limited |gui| for read-only documents, full |gui| to support
   all read and write  documents
-
-.. _install-fonts:
-
-Custom Fonts for |docs|
------------------------
-
-|docs| can pick up any font that is installed in standard system
-directory fonts, like :file:`/usr/share/fonts`. Hence, to install a
-font family, simply use the package manager. For example, to install
-the Roboto fonts, use the command:
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt-get install fonts-roboto
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install fonts-roboto
-
-
-Once done, restart |docs|.
-
-.. code:: console
-
-   # systemctl restart carbonio-docs-editor.service
-
-The fonts will now be available for use in |docs|.
-
-

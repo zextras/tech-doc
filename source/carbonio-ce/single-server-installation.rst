@@ -104,13 +104,6 @@ Step 8: Bootstrap |file| Databases
 
 .. include:: /_includes/_installation/complete.rst
 
-.. _change-admin-pw:
-
-Change Password of System User
-------------------------------
-
-.. include:: /_includes/_installation/users.rst
-
 |product| Management and Troubleshooting
 ----------------------------------------
 

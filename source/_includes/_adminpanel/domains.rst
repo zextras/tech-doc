@@ -40,7 +40,7 @@ To create a new domain, fill in the form that opens upon clicking the
      only **Internal**, it is possible to define the account used to
      synchronise GAL information, the mail server used, which must be
      on the same domain (or in a compatible one, i.e., in a valid
-     alias URL, see Virtual Hosts below).
+     alias URL, see section :ref:`ap-vhost` below).
 
    The image below shows how a sample domain is created.
 
@@ -72,6 +72,20 @@ interface appears to the web clients.
    under :menuselection:`Domains --> Details --> Theme`.
 
 .. include:: /_includes/_adminpanel/wl.rst
+
+.. _global-2fa:
+
+2-Factor-Autentication
+~~~~~~~~~~~~~~~~~~~~~~
+
+In this page it is possible to configure 2FA globally (i.e., for all
+domains configured) for the various services offered by |product|. To
+modify settings for a single domain, refer to :ref:`domain-2fa`.
+
+.. note:: The global values configured are inherited by all domains,
+   unless they are overridden in the domain.
+
+.. include:: /_includes/_adminpanel/2fa.rst
 
 .. _ap-domain-details:
 
@@ -131,26 +145,42 @@ domain.
 We build on the domain created in :ref:`previous section
 <ap-domain-new>` and attach some property.
 
-.. card:: Additional settings for ``acme.example``
+.. grid:: 1 2 2 4  
+   :gutter: 3
+   :outline:
+   :padding: 3
 
+   .. grid-item-card:: Public Service Protocol
+      :columns: 3
 
-   We assign now the following properties to our sample domain.
+      Force clients to connect only using ``https``.
+      
+   .. grid-item-card:: Public Service Host Name
+      :columns: 3
+                
+      It is the FQDN (``mail.acme.example``) used by clients to
+      connect to the domain and must correspond to the DNS ``A``
+      record to be reachable publicly. If the ``A`` record is set to a
+      private IP address, to reach the WebGUI you need some mechanism,
+      like e.g., a VPN tunnel.
 
-   #. **Public Service Protocol**. Force clients to connect only using
-      ``https``.
-   #. **Public Service Hostname**. It is the FQDN
-      (``mail.acme.example``) used by clients to connect to the
-      domain. It must be defined as an ``A`` record in the domain's
-      DNS.
+   .. grid-item-card::  Time Zone
+      :columns: 3
 
-   #. The **Time Zone** is set to Hawaii's time
+       The timezone is set to Hawaii's time.
+       
+   .. grid-item-card:: Default Class of Service
+      :columns: 3
 
-   #. **Default Class of Service**. The |cos| used by the domain,
-      which is left to the ``default`` one.
+      The |cos| used by the domain, which is left to the ``default``
+      one.
 
-   .. image:: /img/adminpanel/domain-details.png
-      :scale: 50
-      :align: center
+   .. grid-item-card::
+      :columns: 12
+                
+      .. image:: /img/adminpanel/domain-details.png
+         :scale: 50
+         :align: center
 
 At the bottom of the page, button :red:`DELETE DOMAIN` allows to
 delete the domain. When clicked, a dialog will open, listing all items
@@ -211,19 +241,31 @@ procedure that requires only a few steps.
    can be carried out from the CLI only: check out section
    :ref:`install-SSL-cert` if you need to use either of them.
 
-Select the virtual host, then click :blue:`LOAD AND VERIFY
-CERTIFICATE`.  In the dialog, you can choose whether to enter the
-three files of the authorisation chain (i.e., the *Domain
-Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
-the first or copy the content of the individual files in the
-appropriate fields. Click :bdg-primary:`VERIFY` to verify the
-certificates: if everything is correct, notification :bdg-success:`The
-certificate is valid` will appear. To use the certificate, click the
-:bdg-primary-line:`I WANT TO USE THIS CERTIFICATE` button to upload
-and use the certificate. Again, a notification will be shown
-(:bdg-success:`The certificates have been saved`). To complete the
-procedure: if you are on a Single-Node, restart it otherwise you need
-to restart the node on which the **Proxy** is installed;
+Select the virtual host, then click :blue:`UPLOAD AND VERIFY
+CERTIFICATE`. In the dialog, you can choose to use:
+
+* A Let's Encrypt *longChain* Certificate, i.e., including an
+  intermediate certificate: click the :bdg-primary:`GENERATE
+  CERTIFICATE` button and wait for the certificate to become available
+
+* A Let's Encrypt *shortChain* Certificate, without intermediate
+  certificate: like the previous case, click the
+  :bdg-primary:`GENERATE CERTIFICATE` button and wait for the
+  certificate to become available
+  
+* A custom certificate. In this case, you need to provide by yourself
+  three files of the authorisation chain (i.e., the *Domain
+  Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
+  the first or copy the content of the individual files in the
+  appropriate fields. Click :bdg-primary:`VERIFY` to verify the
+  certificates: if everything is correct, notification
+  :bdg-success:`The certificate is valid` will appear. To use the
+  certificate, click the :bdg-primary-line:`I WANT TO USE THIS
+  CERTIFICATE` button to upload and use the certificate. Again, a
+  notification will be shown (:bdg-success:`The certificates have been
+  saved`). To complete the procedure: if you are on a Single-Node,
+  restart it otherwise you need to restart the node on which the
+  **Proxy** is installed;
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
@@ -250,6 +292,17 @@ These setting are the same that appear in the :ref:`Global Theme
 <ap-theme>` section, but are domain-specific: if not defined at domain
 level, the global theme settings will be applied.
 
+.. _domain-2fa:
+
+2-Factor-Autentication
+~~~~~~~~~~~~~~~~~~~~~~
+
+In this page it is possible to configure 2FA for the various services
+offered by |product|, only for the selected domain.  To modify
+settings for all domains, refer to :ref:`global-2fa`.
+
+.. include:: /_includes/_adminpanel/2fa.rst
+     
 .. _domain-saml:
 
 SAML
@@ -315,20 +368,32 @@ user, and also to redirect to the user's mailbox.
 
 When editing a user's account, most of the option are the same that
 can be found in the :ref:`ap-new-account` section and are organised in
-four tabs:
+tabs. Options defined in the user's COS are inherited, but can be
+modified for any individual user.
+
+.. note:: The values that have been modified are accompanied by a
+   circular arrow icon. If you hover on that icon, you will see the
+   inherited value, while if you click on it you will restore the COS
+   value.
 
 .. tab-set::
 
    .. tab-item:: General
 
       This tab contains all the options provided during the
-      :ref:`account creation <ap-new-account>` in the *Details* and
-      *Create* steps, plus other options, including the ability to
-      prevent the user from changing the password and remove the
-      user's password from LDAP.
+      :ref:`account creation <ap-new-account>`, plus other options,
+      including:
+      
+      * The ability to prevent the user from changing the
+        password
 
-      This tab also shows of which Mailing list the user is member.
+      * To remove the user's password from LDAP
 
+      * The Mailing list memberships
+
+      * To move a user to another domain, which must be defined on the
+        same server, by writing the new one in the **Domain Name**
+      
       .. note:: An Admin can not change the password of a user, only
          wipe it, so the user is forced to change it on the next login
          attempt. 
@@ -488,6 +553,10 @@ of the new account.
       the **Default COS**.
       Click the :bdg-primary-line:`CREATE WITH THESE DATA` button to
       create the account
+
+      .. note:: When assigning a COS to a user, all the values defined
+         in that COS will be inherited by the user. They can be later
+         changed on a user basis later, when editing the account.
       
    .. grid-item::
       :columns: 12 12 6 6
@@ -544,6 +613,29 @@ of the new account.
       .. hint:: Both the number of failed attempts and the lockout
          period can be configured.
 
+.. _ap-new-admin:
+
+Create New Global Admin
+~~~~~~~~~~~~~~~~~~~~~~~
+
+To create a new Admin, you need first to create the account, as
+explained in the :ref:`previous section <ap-new-account>`. We give
+this account the *acme_admin* name. 
+
+Then, from the account list, select the new account, then click the
+pencil icon to edit it. 
+
+.. _fig-create-admin:
+.. figure:: /img/adminpanel/create-global-admin.png
+   :width: 50%
+
+   Create a new Global Admin.
+
+To make *acme_admin* a Global Admin, in the :blue:`General` tab go to
+**Settings** and click the switch with label **This is a Global
+Administrator**, then save. The *acme_admin* user is now able to
+access the |adminui|. 
+
 Mailing List
 ~~~~~~~~~~~~
 
@@ -571,10 +663,25 @@ adding aliases, which work like e-mail accounts, changing the members
 and owners, and granting selected users the permission to send e-mails
 to the mailing list.
 
-.. addressed at a later point
+Dynamic Mode
+++++++++++++
 
-   Dynamic Mode
-   ++++++++++++
+Mailing list's *Dynamic Mode* allows the automatic management of
+members. Indeed, each Dynamic Mailing List is identified by a name and
+by a unique *Mailing List URL*, which is an LDAP query that
+automatically populates the members of the Mailing List.
+
+To create a Dynamic Mailing List, the procedure is similar to the
+normal Mailing Lists: click the :bdg-primary:`+` button and provide a
+**Displayed Name** name and **list Name**, then click the **Dynamyc
+Mode** switch to access more options, including the *Mailing List
+URL*, which is mandatory. You can also make the list **Hidden from
+GAL** and add owners to the list, who can manage the configuration of
+the list.
+
+Advanced options, like subscription and unsubscription options are
+available after the creation of the Dynamic Mailing List, when editing
+it.
 
 .. resources are currently hidden from AP -- AC-622
    .. _ap-resources:

@@ -27,7 +27,7 @@ Upgrade Checklist
 Preliminary Tasks
 -----------------
 
-.. include:: /_includes/_upgrade/ds.rst
+.. include:: /_includes/_upgrade/ds-ce.rst
 
 .. _upgrade-nodes:
 
@@ -40,5 +40,8 @@ Upgrade Nodes
 
 Troubleshooting
 ---------------
+
+In this section you find solutions for some possible error during the
+upgrade procedure.
 
 .. include:: /_includes/_upgrade/ts.rst

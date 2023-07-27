@@ -138,17 +138,27 @@ SRV4: Proxy and |vs|
 
 .. _srv5-install:
 
-SRV5: Advanced, AppServer, Files, and Docs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV5: AppServer (Advanced), Files, and Docs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv5.rst
 
 .. _srv6-install:
 
-SRV6: Advanced, AppServer, Preview, and |monit|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV6: AppServer (Advanced), Preview, and |monit|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_multiserver-installation/srv6.rst
+
+|product| Management and Troubleshooting
+----------------------------------------
+
+.. include:: /_includes/_installation/commands.rst
+
+Activate license
+----------------
+
+.. include:: /_includes/_multiserver-installation/license.rst
 
 .. include:: /_includes/_installation/complete.rst
              
@@ -159,17 +169,10 @@ Centralised Logging Configuration
 
 .. include:: /_includes/_multiserver-installation/logger.rst
 
-.. _change-admin-pw:
+.. _manage-admins:
 
-Change Password of System User
-------------------------------
+Manage Global Administrators
+============================
 
 .. include:: /_includes/_installation/users.rst
-
-.. _replica-ds-install:
-
-Install a Directory Server Replica
-==================================
-
-.. include:: /_includes/_multiserver-installation/ds-replica.rst
 

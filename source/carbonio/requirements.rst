@@ -63,8 +63,11 @@ on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
 The following requirements must be satisfied before attempting to
 install |product|.
 
-#. valid DNS resolution for both the domain (``MX`` and ``A`` records) and the
-   FQDN (``A`` record)
+#. valid DNS resolution for both the domain (``MX`` and ``A`` records)
+   and the FQDN (``A`` record). If the FQDN corresponds to a private
+   IP address, to allow clients to access |product|, you need to set
+   up either some port-forwarding rules or provide client with e.g., a
+   VPN.
 
    .. warning:: If the FQDN is not correctly configured, the
       installation will be temporarily suspended to allow the change
@@ -87,11 +90,28 @@ Additional Requirements
   commands must be executed as the ``zextras`` user (these commands
   will feature a ``zextras$`` prompt), while all other commands must
   be issued as the ``root`` user, unless stated otherwise.
+
+  .. note:: The ``zextras`` user is created during the |product|
+     installation process, it is not necessary to create it
+     beforehand.
+     
 * Commands or groups of commands may be different between Ubuntu and
   RHEL 8. This is shown by blue tabs: click on the tab of your choice
   to find the correct command.
 * When no such tabs are given, the commands to run are the same on
   Ubuntu and RHEL 8.
+
+* Give meaningful names to the nodes. For example, call them
+  `proxy.example.com`, `mta.example.com`, and so on. Replace
+  ``example.com`` with your domain name.
+
+* During the installation procedure, you will need to write down some
+  configuration options and their value, because they will be needed
+  in the setup of the next nodes. These information are summarised at
+  the end of each node's installation: copy them to a safe place and
+  keep them at hand until the end of the installation. Example of
+  values include: the IP address (public or private) of a node or the
+  password of a database user.
 
 .. _config-dns:
 
@@ -204,9 +224,10 @@ TCP External Connections
       "443", "TCP", "secure connection to the Carbonio web client"
       "993", "TCP", "external IMAP secure access"
       "995", "TCP", "external POP3 secure access"
-      "5222", "TCP", "XMMP protocol"
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
+
+   .. to restore in 23.7.0 "5222", "TCP", "XMMP protocol"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN

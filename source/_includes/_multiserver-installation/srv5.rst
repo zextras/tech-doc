@@ -4,8 +4,12 @@
 
 .. srv5 - Advanced, AppServer, Files, and Docs
 
-On this node, first install all the required packages for |file|, then
-configure the various services needed.
+On this Node, we are going to install the AppServer and the backend
+services for |file| and |docs|.
+
+.. note:: The *AppServer* Role is provided by the
+   ``carbonio-advanced`` package; see section :ref:`core-comp` for
+   more information.
 
 .. tab-set::
 
@@ -25,10 +29,10 @@ configure the various services needed.
 
       .. code:: console
 
-         # yum install service-discover-agent 
-         # yum install carbonio-files
-         # yum install carbonio-user-management carbonio-advanced
-         # yum install carbonio-docs-connector carbonio-docs-editor
+         # dnf install service-discover-agent 
+         # dnf install carbonio-files
+         # dnf install carbonio-user-management carbonio-advanced
+         # dnf install carbonio-docs-connector carbonio-docs-editor
 
 Execute the following tasks.
 
