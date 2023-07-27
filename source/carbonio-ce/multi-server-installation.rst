@@ -182,7 +182,7 @@ Bootstrap |file| Database
 
 .. code:: console
 
-   # $PGPASSWORD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 Installation of SRV1 has now completed. To prevent anyone else reading
 the password of PostgreSQL's administrator user, remove it from
