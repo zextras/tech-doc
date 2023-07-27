@@ -74,6 +74,8 @@ pipeline {
             path: 'carbonio/')
           s3Delete(bucket: PRODUCTION_BUCKET_NAME,
             path: 'carbonio-ce/')
+          s3Delete(bucket: PRODUCTION_BUCKET_NAME,
+            path: 'zextras-suite-documentation/')
           s3Upload(bucket: PRODUCTION_BUCKET_NAME,
             includePathPattern: '**',
             workingDir: 'build'
