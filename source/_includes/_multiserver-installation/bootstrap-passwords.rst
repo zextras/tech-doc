@@ -4,18 +4,18 @@
 
   .. code:: console
 
-     # sudo -c zextras -c "zmlocalconfig -s zimbra_ldap_password"
+     # su - zextras -c "zmlocalconfig -s zimbra_ldap_password"
 
 * ``Bind password for postfix ldap user`` is obtained from SRV1
   using the command
 
   .. code:: console
 
-     # sudo -c zextras -c "zmlocalconfig -s zimbra_postfix_password"
+     # su - zextras -c "zmlocalconfig -s zimbra_postfix_password"
 
 * ``Bind password for amavis ldap user`` is obtained from SRV1
   using the command
 
   .. code:: console
 
-     # sudo -c zextras -c "zmlocalconfig -s zimbra_amavis_password"
+     # su - zextras -c "zmlocalconfig -s zimbra_amavis_password"
