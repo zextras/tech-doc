@@ -50,7 +50,7 @@ To enable Memcached access, use these commands.
 
 .. code:: console
 
-   su - zextras -c "carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)"
+   su - zextras -c 'carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)'
    su - zextras -c "zmmemcachedctl restart"
    su - zextras -c "zmproxyctl restart"
 
