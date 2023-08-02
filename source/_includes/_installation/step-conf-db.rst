@@ -4,12 +4,11 @@
 
 |product| relies on a number of databases to store and keep track of
 all the objects it needs to manage. The main database can be
-configured in two steps, but if you are running |product| on RHEL 8,
-please first configure Postgres according to the :ref:`guidelines
-<preliminary-rh>`.
+configured in few steps.
 
-The first step is to create a role with administrative rights and an
-associated password.
+.. note:: If you are running |product| on RHEL 8, make sure you
+   installed and configured PostgreSQL 12 according to the instruction
+   in section :ref:`rhel-pg`.
 
 We start by defining a *robust password* for PostgreSQL's
 administrative user.

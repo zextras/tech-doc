@@ -17,12 +17,12 @@ When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
 Section :ref:`web-access`.
 
-.. _preliminary-rh:
+.. _rhel-pg:
 
-RHEL 8-only Preliminary Tasks
------------------------------
+RHEL 8 PostgreSQL installation
+------------------------------
 
-.. include:: /_includes/_installation/preliminary-rh.rst
+.. include:: /_includes/_installation/rhel-pg.rst
 
 .. _installation-step1:
 
@@ -48,6 +48,7 @@ Step 2: Setting Hostname
 
 Step 3:  System Upgrade and Package Installation
 ------------------------------------------------
+
 
 .. include:: /_includes/_installation/step-package-install.rst
 
