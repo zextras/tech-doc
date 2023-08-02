@@ -3,102 +3,40 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 
-.. card::
+On a RHEL 8 installation, you need to install **PostgreSQL 12**
+directly from the PostgreSQL repository, so install the repository
+information:
 
-   A few task are required for the installation of |product| on RHEL 8
-   systems, they concern the configuration of SELinux, the firewall, and
-   the installation and configuration of Postgres 12. Indeed, The version
-   of Postgres shipped by RHEL 8 is older than required by |product|.
+     # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
-   .. grid:: 1 2 2 2
-      :gutter: 2
+To make sure that Postresql 12 is installed, run commands
 
-      .. grid-item-card::
-         :columns: 12
-         :class-header: sd-font-weight-bold sd-fs-5
-         :shadow: lg
+.. code:: console
 
-	 Repositories
-	 ^^^^^
+   # dnf -qy module disable postgresql
+   # dnf -y install postgresql12 postgresql12-server
 
-         An active subscription (you must be able to fetch from
-         **BaseOS** and the other main repositories)::
+Once installed, initialise and enable the database
 
-	   # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+.. code:: console
 
-         The **CodeReady** repository enabled::
+   # /usr/pgsql-12/bin/postgresql-12-setup initdb
+   # systemctl enable --now postgresql-12
 
-           # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+To complete the setup, edit file
+:file:`/var/lib/pgsql/12/data/pg_hba.conf`, find the line::
 
-         The dedicated postgresql repository::
-
-	   # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-
-      .. grid-item-card::
-         :columns: 12
-         :class-header: sd-font-weight-bold sd-fs-5
-         :shadow: lg
-
-         SELinux and Firewall
-         ^^^^
-
-         SELinux
-            Must be set to **disabled** or **permissive** in file
-            :file:`/etc/selinux/config`. You can check the current profile
-            using the command
-
-            .. code:: console
-
-               # sestatus
-
-         Firewall  
-            All the ports needed by |product| are open on the firewall or
-            the firewall is **disabled**. To disable the firewall, issue the
-            commands
-
-            .. code:: console
-
-               # systemctl stop firewalld.service
-               # systemctl disable firewalld.service
+  # IPv4 local connections:
+  host    all             all             127.0.0.1/32            ident
 
 
-      .. grid-item-card::
-         :columns: 12
-         :class-header: sd-font-weight-bold sd-fs-5
-         :shadow: lg
+remove the ``#`` before ``host`` (if present) and change it as follows::
 
-         Postgres
-         ^^^^
+  # IPv4 local connections:
+  host    all             all             127.0.0.1/32            md5
 
-         We need to make sure that **Postresql 12** is installed, by running
-         commands
+To make sure the changes are picked up by Postgres, reload it.
 
-         .. code:: console
+.. code:: console
 
-            # dnf -qy module disable postgresql
-            # dnf -y install postgresql12 postgresql12-server
-
-         Then, initialise and enable it.
-
-         .. code:: console
-
-            # /usr/pgsql-12/bin/postgresql-12-setup initdb
-            # systemctl enable --now postgresql-12
-
-         To complete the setup, edit file
-         :file:`/var/lib/pgsql/12/data/pg_hba.conf`, find the line::
-
-           # IPv4 local connections:
-           host    all             all             127.0.0.1/32            ident
-
-
-         remove the ``#`` before ``host`` if present and change it as follows::
-
-           # IPv4 local connections:
-           host    all             all             127.0.0.1/32            md5
-
-         To make sure the changes are picked up by Postgres, reload it.
-
-         .. code:: console
-
-            # systemctl reload postgresql-12
+   # systemctl reload postgresql-12
