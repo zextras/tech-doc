@@ -8,12 +8,17 @@ Hardware Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
 For each node, these are the hardware requirements to comply with. The
-**Disk space** mentioned in the table refers only to the Operating
+**Disk Space** mentioned in the table refers only to the Operating
 System and not the data (e-mail quota and e-mail traffic, number of
 documents stored, and so on), because space requirements for the data
-may vary considerably. The actual disk space. Bear in mind that
-**SRV3**, which hosts |storage| and therefore the emails, is the node
-requiring more disk space.
+may vary considerably.
+
+Moreover, you must take into account the following:
+
+* The Node that hosts |storage| (**SRV3**) and therefore the emails,
+  is the node requiring more disk space.
+* The |file| service requires **4Gb** of RAM to start, so make sure
+  that the node hosting it (**SRV4**) has at least **6Gb** of RAM
 
 Purely as an example, if you give a quota of 5Gb to each of the 150
 users, you need to assign **780Gb of disk space** (30GB for the OS and
@@ -22,42 +27,22 @@ at 750 for user's total quota) to **SRV3**.
 .. csv-table::
    :header: "Node", "CPUs", "RAM", "Disk Space (OS)"
 
-   "SRV1", "4vCPU", "8Gb", "110 Gb"
-   "SRV2", "4vCPU", "10Gb", "30 Gb"
-   "SRV3", "4vCPU", "16Gb", "30 Gb"
-   "SRV4", "4vCPU", "4Gb", "30 Gb"
+   "SRV1", "4vCPU", "8Gb", "120 Gb"
+   "SRV2", "4vCPU", "10Gb", "50 Gb"
+   "SRV3", "4vCPU", "16Gb", "50 Gb"
+   "SRV4", "4vCPU", "8Gb", "50 Gb"
 
 Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Each Node in a Multi-Server installation must satisfy the
+:ref:`software-requirements` and the :ref:`more-requirements`.
+
+If you install on RHEL 8, make sure that each node satisfies the
+:ref:`rhel-requirements`,
+     
 The following is a list of requirements that are required for
 |product| to operate flawlessly.
-
-* The whole |product| infrastructure must have at least **one public
-  IP address**. The IP address must have a domain name associated,
-  that coincides with the **A record** in the DNS (e.g., ``A
-  mail.example.com``)
-
-  .. hint:: You can check a domain's A record using the CLI utility
-     ``host``:
-
-     .. code:: console
-
-        # host -t A example.com
-
-* To allow the mail server to receive mail, it will be necessary to
-  set up an **MX record**, which must correspond to the A record
-  (e.g. MX: example.com = mail.example.com )
-
-  .. hint:: You can check a domain's MX record using the CLI utility
-     ``host``:
-
-     .. code:: console
-
-        # host -t MX example.com
-
-* For improved security of sending emails, you should also define TXT
-  records for SPF, DKIM and DMARC
 
 * If none of the four nodes is exposed to the Internet, you need to
   forward two ports from the public IP: port **25/smtp** to the Node
