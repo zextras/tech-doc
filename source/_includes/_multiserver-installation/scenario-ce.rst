@@ -7,14 +7,18 @@ In the suggested scenario we will set up a |product| Multi-Server
 environment, composed by **four nodes** (that we will denote as *SRV1*,
 ..., *SRV4*) as follows:
 
-#. **SRV1** represents the core infrastructure of |product| and
-   features Directory Server, |mesh|, DB connection, and |monit|
-#. **SRV2** is equipped with MTA, the mail server, Proxy, which allows
-   web access to all components, and User Management
-#. **SRV3** hosts an AppServer and the |storage| instance
-#. **SRV4** installs |file| & |docs|, that provide sharing and
-   collaborative editing of documents, and |pv|, |carbonio|\'s ability
-   to preview snippets or thumbnails of a document
+#. :ref:`SRV1 <srv1-install>` represents the core infrastructure of
+   |product| and features Directory Server, |mesh|, DB connection, and
+   |monit|
+#. :ref:`SRV2 <srv2-install>` is equipped with MTA, the mail server,
+   Proxy, which allows web access to all components, and User
+   Management
+#. :ref:`SRV3 <srv3-install>` hosts an AppServer and the |storage|
+   instance
+#. :ref:`SRV4 <srv4-install>` installs |file| & |docs|, that provide
+   sharing and collaborative editing of documents, and |pv|,
+   |carbonio|\'s ability to preview snippets or thumbnails of a
+   document
 
 The |storage| Roles must be unique within a |product|
 infrastructure. 
