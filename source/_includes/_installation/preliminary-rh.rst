@@ -1,42 +1,38 @@
 .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+             
+If you plan to install |product| on RHEL 8, these tasks are required
+before attempting the installation.
 
+.. card:: Repositories
 
-On a RHEL 8 installation, you need to install **PostgreSQL 12**
-directly from the PostgreSQL repository, so install the repository
-information:
+   A subscription to the follow repositories must be active (you must
+   be able to fetch from **BaseOS** and the other main repositories)::
 
-     # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+     # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
 
-To make sure that Postresql 12 is installed, run commands
+   The **CodeReady** repository enabled::
 
-.. code:: console
+     # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
-   # dnf -qy module disable postgresql
-   # dnf -y install postgresql12 postgresql12-server
+.. card:: SELinux and Firewall
 
-Once installed, initialise and enable the database
+   SELinux
+      Must be set to **disabled** or **permissive** in file
+      :file:`/etc/selinux/config`. You can check the current profile
+      using the command
 
-.. code:: console
+      .. code:: console
 
-   # /usr/pgsql-12/bin/postgresql-12-setup initdb
-   # systemctl enable --now postgresql-12
+         # sestatus
 
-To complete the setup, edit file
-:file:`/var/lib/pgsql/12/data/pg_hba.conf`, find the line::
+   Firewall  
+      All the ports needed by |product| are open on the firewall or
+      the firewall is **disabled**. To disable the firewall, issue the
+      commands
 
-  # IPv4 local connections:
-  host    all             all             127.0.0.1/32            ident
+      .. code:: console
 
-
-remove the ``#`` before ``host`` (if present) and change it as follows::
-
-  # IPv4 local connections:
-  host    all             all             127.0.0.1/32            md5
-
-To make sure the changes are picked up by Postgres, reload it.
-
-.. code:: console
-
-   # systemctl reload postgresql-12
+         # systemctl stop firewalld.service
+         # systemctl disable firewalld.service

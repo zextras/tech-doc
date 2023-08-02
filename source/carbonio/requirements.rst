@@ -4,6 +4,8 @@
 
 .. _carbonio-requirements:
 
+.. _multi-server-req:
+
 Requirements
 ------------
 
@@ -19,8 +21,8 @@ access to ports **110** and **995** can be disallowed.
 
 .. _system-requirements:
 
-System Requirements
-~~~~~~~~~~~~~~~~~~~
+System Requirements for a Node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. grid:: 1 1 1 2
@@ -33,12 +35,15 @@ System Requirements
 
          "CPU", "Intel/AMD 64-bit 4 cores min./8+ cores vCPU"
          "RAM", "16 GB min., 32+ GB recommended"
-         "Disk space (Operating system and Carbonio)", "40 GB"
+         "Disk space (operating system and |product|)", "50 GB"
 
-      These requirements are valid for each Node in a |Carbonio|
-      Installation and may vary depending on the size on the
-      infrastructure, which includes the number of mailboxes and the
-      services running on each node.
+      These requirements are valid for each Node in a |product|
+      Installation and may vary depending on the size of the
+      infrastructure, which includes the services running on each node
+      and the number and size of each mailbox. This means that if for
+      example you plan to assign a *10Gb* quota to each of your *20
+      users*, you must increase the Disk space requirements
+      accordingly, i.e., to around 250Gb total.
 
    .. grid-item-card:: Supported Virtualization Platforms
       :columns: 4
@@ -53,8 +58,8 @@ System Requirements
 
 .. _software-requirements:
 
-Software Requirements
-~~~~~~~~~~~~~~~~~~~~~
+Software Requirements for a Node
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
@@ -63,55 +68,42 @@ on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
 The following requirements must be satisfied before attempting to
 install |product|.
 
-#. valid DNS resolution for both the domain (``MX`` and ``A`` records)
-   and the FQDN (``A`` record). If the FQDN corresponds to a private
-   IP address, to allow clients to access |product|, you need to set
-   up either some port-forwarding rules or provide client with e.g., a
-   VPN.
+#. The whole |product| infrastructure must have at least **one public
+   IP address**. The IP address must have a domain name associated,
+   that coincides with the **A record** in the DNS (e.g., ``A
+   mail.example.com``)
 
-   .. warning:: If the FQDN is not correctly configured, the
-      installation will be temporarily suspended to allow the change
-      of the hostname
+   .. hint:: You can check a domain's A record using the CLI utility
+      ``host``:
+
+      .. code:: console
+
+         # host -t A example.com
+
+#. To allow the mail server to receive mail, it will be necessary to
+   set up an **MX record**, which must correspond to the A record
+   (e.g. MX: example.com = mail.example.com )
+
+   .. hint:: You can check a domain's MX record using the CLI utility
+      ``host``:
+
+      .. code:: console
+
+         # host -t MX example.com
+
+   If either of the ``A`` or ``MX`` records is not correctly
+   configured, the installation will be temporarily suspended to allow
+   the change of the hostname.
+   
+   See :ref:`the dedicated box below <config-dns>` for details and examples.
+
+#. For improved security of sending emails, you should also define TXT
+   records for SPF, DKIM and DMARC
 
 #. Python 3, latest version available on the Operating System chosen
 #. Perl, latest version available on the Operating System chosen
 #. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
    does not contain any IPv6 entries.
-
-See :ref:`the dedicated box below <config-dns>` for details and examples.
-
-Support for other distributions will be announced in due course
-when it becomes available.
-
-Additional Requirements
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* Acquaintance with the use of CLI is necessary.  All ``carbonio``
-  commands must be executed as the ``zextras`` user (these commands
-  will feature a ``zextras$`` prompt), while all other commands must
-  be issued as the ``root`` user, unless stated otherwise.
-
-  .. note:: The ``zextras`` user is created during the |product|
-     installation process, it is not necessary to create it
-     beforehand.
-     
-* Commands or groups of commands may be different between Ubuntu and
-  RHEL 8. This is shown by blue tabs: click on the tab of your choice
-  to find the correct command.
-* When no such tabs are given, the commands to run are the same on
-  Ubuntu and RHEL 8.
-
-* Give meaningful names to the nodes. For example, call them
-  `proxy.example.com`, `mta.example.com`, and so on. Replace
-  ``example.com`` with your domain name.
-
-* During the installation procedure, you will need to write down some
-  configuration options and their value, because they will be needed
-  in the setup of the next nodes. These information are summarised at
-  the end of each node's installation: copy them to a safe place and
-  keep them at hand until the end of the installation. Example of
-  values include: the IP address (public or private) of a node or the
-  password of a database user.
 
 .. _config-dns:
 
@@ -173,6 +165,51 @@ Additional Requirements
       .. code:: console
 
          # systemctl restart dnsmasq
+
+Support for other distributions will be announced in due course
+when it becomes available.
+
+.. _rhel-requirements:
+
+RHEL 8 Specific Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: _includes/_installation/preliminary-rh.rst
+
+Additional Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* Acquaintance with the use of CLI is necessary.  All ``carbonio``
+  commands must be executed as the ``zextras`` user (these commands
+  will feature a ``zextras$`` prompt), while all other commands must
+  be issued as the ``root`` user, unless stated otherwise.
+
+  .. note:: The ``zextras`` user is created during the |product|
+     installation process, it is not necessary to create it
+     beforehand.
+     
+* Commands or groups of commands may be different between Ubuntu and
+  RHEL 8. This is shown by blue tabs: click on the tab of your choice
+  to find the correct command.
+  
+* When no such tabs are given, the commands to run are the same on
+  Ubuntu and RHEL 8.
+
+* Give meaningful names to the nodes. For example, call them
+  `proxy.example.com`, `mta.example.com`, and so on. Replace
+  ``example.com`` with your domain name.
+
+* During the installation procedure, you will need to write down some
+  configuration options and their value, because they will be needed
+  in the setup of the next nodes. These information are summarised at
+  the end of each node's installation: copy them to a safe place and
+  keep them at hand until the end of the installation. Example of
+  values include: the IP address (public or private) of a node or the
+  password of a database user.
+
+* Depending on the Roles installed on each Node, you need to open in
+  your firewall the ports listed in ref:`fw-ports` for all the
+  services you will offer.
 
 .. _fw-ports:
 
