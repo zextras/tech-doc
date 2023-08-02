@@ -37,7 +37,7 @@ System Requirements for a Node
          "RAM", "16 GB min., 32+ GB recommended"
          "Disk space (operating system and |product|)", "50 GB"
 
-      These requirements are valid for each Node in a |Carbonio|
+      These requirements are valid for each Node in a |product|
       Installation and may vary depending on the size of the
       infrastructure, which includes the services running on each node
       and the number and size of each mailbox. This means that if for
