@@ -55,19 +55,41 @@ done on files and folders
       a description of the file or folder can be added at the bottom.
 
    Sharing
-      Lists the owner of the file or folder and who has access to it. Add
-      a collaborator by writing its e-mail address, then click
-      :bdg-primary:`SHARE` or use the :bdg-primary-line:`ADD LINK` button
-      to generate a link to allow access to everyone.  Optionally, add a
-      description and expiration date (defaults to the end of the current
-      day) to the link.
+      Lists the owner of the file or folder and who has access to
+      it. It is possible to allow access to internal collaborators or
+      external user, with different modalities
 
-      The :bdg-primary:`SHARE` button is clickable only for internal
+      * Internal collaborators: you can add a a collaborator to a
+        single file or an entire directory by writing the e-mail
+        address, then click :bdg-primary:`SHARE`; otherwise, in the
+        *Collaboraion Links* section click :bdg-primary-line:`GENERATE
+        LINK` to create a link that will allow anyone with the link to
+        give either *Read and Share* or *Write and Share* permission
+        on the file
+
+      * External users. Sharing with external users is **limited to
+        files only**, no directories is allowed.  In the bottom
+        *Public Links* section use the :bdg-primary-line:`ADD LINK`
+        button to generate a link to allow access to everyone.
+        Optionally, add a description and expiration date (defaults to
+        the end of the current day) to the link, then click
+        :bdg-primary-line:`GENERATE LINK`. Anyone who receives this
+        link will be able to download the file until is expires.
+
+      .. note:: Any links generated for internal collaborators or
+         external user can be revoked at anytime by clicking the
+         corresponding :bdg-danger-line:`REVOKE` button.
+
+      The :bdg-primary:`SHARE` button is clickable for internal
       collaborators and only if the e-mail address is correct.
 
       .. hint:: Sharing a folder implies that permissions are inherited
          by the whole hierarchy underneath, so all files and directories
          contained there will have the same access permissions.
+
+      Sharing with external users is limited to files only: no
+      directory can be shared. To allow an external user to access a
+      file, 
 
    Versioning (files only)
       The history of each file is preserved in case the file is edited or
