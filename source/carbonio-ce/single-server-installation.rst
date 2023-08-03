@@ -19,10 +19,31 @@ Section :ref:`web-access`.
 
 .. _rhel-pg:
 
-RHEL 8 PostgreSQL installation
-------------------------------
+Preliminary Task
+-----------------------
 
-.. include:: /_includes/_installation/rhel-pg.rst
+Before starting the |product| installation, we need to install and
+configure the PostgreSQL database.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      First, install PostgreSQL:
+      
+      .. code:: console
+
+         # apt install postgresql-12
+
+      .. include:: /_includes/_installation/ubuntu-pg-conf.rst
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. include:: /_includes/_installation/rhel-pg.rst
+      .. include:: /_includes/_installation/rhel-pg-conf.rst
+
 
 .. _installation-step1:
 

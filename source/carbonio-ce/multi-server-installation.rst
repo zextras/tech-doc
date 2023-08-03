@@ -114,50 +114,7 @@ above panel: start with the installation and configuration of
 PostgreSQL and DB connection, then bootstrap |product|, set up |mesh|,
 and finally prepare the |file| database.
 
-Installation and Configuration of PostgreSQL
-++++++++++++++++++++++++++++++++++++++++++++
-
-.. include:: /_includes/_multiserver-installation/pg-ce.rst
-
-Packages Installation
-+++++++++++++++++++++
-
-.. include:: /_includes/_multiserver-installation/pkgs1-ce.rst
-
-Install and configure pgpool
-++++++++++++++++++++++++++++
-
-Carry out the following tasks to set up pgpool.
-
-.. include:: /_includes/_multiserver-installation/pgpool.rst
-
-Bootstrap |product|
-+++++++++++++++++++
-
-.. include:: /_includes/_multiserver-installation/bootstrap.rst
-
-.. _srv1-mesh:
-
-Set up |mesh|
-+++++++++++++
-
-.. include:: /_includes/_multiserver-installation/mesh.rst
-
-Bootstrap |file| Database
-+++++++++++++++++++++++++
-
-.. code:: console
-
-   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-
-Installation of SRV1 has now completed. To prevent anyone else reading
-the password of PostgreSQL's administrator user, remove it from
-memory:
-
-.. code:: console
-
-   # unset $DB_ADM_PWD
-
+.. include:: /_includes/_multiserver-installation/srv1-ce.rst
 
 .. _srv2-install:
 
