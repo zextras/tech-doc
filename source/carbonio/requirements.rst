@@ -34,16 +34,13 @@ System Requirements for a Node
       .. csv-table::
 
          "CPU", "Intel/AMD 64-bit 4 cores min./8+ cores vCPU"
-         "RAM", "16 GB min., 32+ GB recommended"
-         "Disk space (operating system and |product|)", "50 GB"
+         "RAM", "16GB min., 32+GB recommended"
+         "Disk space (operating system and |product|)", "50GB"
 
       These requirements are valid for each Node in a |product|
       Installation and may vary depending on the size of the
       infrastructure, which includes the services running on each node
-      and the number and size of each mailbox. This means that if for
-      example you plan to assign a *10Gb* quota to each of your *20
-      users*, you must increase the Disk space requirements
-      accordingly, i.e., to around 250Gb total.
+      and the number and size of each mailbox.
 
    .. grid-item-card:: Supported Virtualization Platforms
       :columns: 4
@@ -55,6 +52,10 @@ System Requirements for a Node
          XenServer
          KVM
          Virtualbox (testing purposes only)
+
+You must also take into account that The |file| service requires
+**4GB** of RAM to start, so make sure that the node hosting it
+(**SRV5**) has at least **6GB** of RAM
 
 .. _software-requirements:
 
