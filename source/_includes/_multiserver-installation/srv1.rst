@@ -24,7 +24,7 @@ databases required by |product|.
 .. include:: /_includes/_installation/step-conf-db.rst
 
 Finally, allow the other nodes to access the databases that will be
-stored on this node by running these four commands.
+stored on this node by running these commands.
 
 .. tab-set::
 
