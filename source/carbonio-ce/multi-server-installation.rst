@@ -95,8 +95,8 @@ SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "8Gb"
-         "Disk Space", "110Gb"
+         "RAM", "8GB"
+         "Disk Space", "110GB"
          "IP Address", "172.16.0.11"
          "FQDN", "srv1.example.com"
 
@@ -173,8 +173,8 @@ SRV2: MTA, Proxy, and User Management
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "10Gb"
-         "Disk Space", "30Gb"
+         "RAM", "10GB"
+         "Disk Space", "30GB"
          "IP Address", "172.16.0.12"
          "FQDN", "srv2.example.com"
 
@@ -205,13 +205,13 @@ SRV3: AppServer and |storage|
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "16Gb"
-         "Disk Space", "30Gb"
+         "RAM", "16GB"
+         "Disk Space", "30GB"
          "IP Address", "172.16.0.13"
          "FQDN", "srv3.example.com"
 
       .. note:: Remember to allocate enough disk space for the user's
-         quota, which is around 750Gb for 150 users with 5Gb quota each.
+         quota, which is around 750GB for 150 users with 5GB quota each.
 
    .. grid-item-card:: Roles
       :columns: 6
@@ -239,13 +239,10 @@ SRV4: |pv|, |file|, and |docs|
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "4Gb"
-         "Disk Space", "30Gb"
+         "RAM", "4GB"
+         "Disk Space", "30GB"
          "IP Address", "172.16.0.14"
          "FQDN", "srv4.example.com"
-
-      .. note:: Remember to allocate enough disk space for the user's
-         quota, which is around 750Gb for 150 users with 5Gb quota each.
 
    .. grid-item-card:: Roles
       :columns: 6
