@@ -17,20 +17,20 @@ Moreover, you must take into account the following:
 
 * The Node that hosts |storage| (**SRV3**) and therefore the emails,
   is the node requiring more disk space.
-* The |file| service requires **4Gb** of RAM to start, so make sure
-  that the node hosting it (**SRV4**) has at least **6Gb** of RAM
+* The |file| service requires **4GB** of RAM to start, so make sure
+  that the node hosting it (**SRV4**) has at least **6GB** of RAM
 
-Purely as an example, if you give a quota of 5Gb to each of the 150
-users, you need to assign **780Gb of disk space** (30GB for the OS and
+Purely as an example, if you give a quota of 5GB to each of the 150
+users, you need to assign **780GB of disk space** (30GB for the OS and
 at 750 for user's total quota) to **SRV3**.
 
 .. csv-table::
    :header: "Node", "CPUs", "RAM", "Disk Space (OS)"
 
-   "SRV1", "4vCPU", "8Gb", "120 Gb"
-   "SRV2", "4vCPU", "10Gb", "50 Gb"
-   "SRV3", "4vCPU", "16Gb", "50 Gb"
-   "SRV4", "4vCPU", "8Gb", "50 Gb"
+   "SRV1", "4vCPU", "8GB", "120 GB"
+   "SRV2", "4vCPU", "10GB", "50 GB"
+   "SRV3", "4vCPU", "16GB", "50 GB"
+   "SRV4", "4vCPU", "8GB", "50 GB"
 
 Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~

@@ -41,9 +41,9 @@ System Requirements for a Node
       Installation and may vary depending on the size of the
       infrastructure, which includes the services running on each node
       and the number and size of each mailbox. This means that if for
-      example you plan to assign a *10Gb* quota to each of your *20
+      example you plan to assign a *10GB* quota to each of your *20
       users*, you must increase the Disk space requirements
-      accordingly, i.e., to around 250Gb total.
+      accordingly, i.e., to around 250GB total.
 
    .. grid-item-card:: Supported Virtualization Platforms
       :columns: 4
