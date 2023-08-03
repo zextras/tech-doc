@@ -43,40 +43,6 @@ Preliminary Tasks
 
 .. include:: /_includes/_multiserver-installation/preliminary-ce.rst
 
-.. _multi-rh-preliminary:
-
-RHEL 8-only Preliminary Tasks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A few task are required for the installation of |product| on RHEL 8
-systems, they concern the configuration of SELinux and the firewall.
-
-.. card::
-   :class-header: sd-font-weight-bold sd-fs-5
-
-   SELinux and Firewall
-   ^^^^
-
-   SELinux
-      Must be set to **disabled** or **permissive** in file
-      :file:`/etc/selinux/config`. You can check the current profile
-      using the command
-
-      .. code:: console
-
-         # sestatus
-
-   Firewall
-      All the ports needed by |product| are open on the firewall or
-      the firewall is **disabled**. To disable the firewall, issue the
-      commands
-
-      .. code:: console
-
-         # systemctl stop firewalld.service
-         # systemctl disable firewalld.service
-
-
 Node Installation
 -----------------
 
@@ -129,8 +95,8 @@ SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "8Gb"
-         "Disk Space", "110Gb"
+         "RAM", "8GB"
+         "Disk Space", "110GB"
          "IP Address", "172.16.0.11"
          "FQDN", "srv1.example.com"
 
@@ -148,50 +114,7 @@ above panel: start with the installation and configuration of
 PostgreSQL and DB connection, then bootstrap |product|, set up |mesh|,
 and finally prepare the |file| database.
 
-Installation and Configuration of PostgreSQL
-++++++++++++++++++++++++++++++++++++++++++++
-
-.. include:: /_includes/_multiserver-installation/pg-ce.rst
-
-Packages Installation
-+++++++++++++++++++++
-
-.. include:: /_includes/_multiserver-installation/pkgs1-ce.rst
-
-Install and configure pgpool
-++++++++++++++++++++++++++++
-
-Carry out the following tasks to set up pgpool.
-
-.. include:: /_includes/_multiserver-installation/pgpool.rst
-
-Bootstrap |product|
-+++++++++++++++++++
-
-.. include:: /_includes/_multiserver-installation/bootstrap.rst
-
-.. _srv1-mesh:
-
-Set up |mesh|
-+++++++++++++
-
-.. include:: /_includes/_multiserver-installation/mesh.rst
-
-Bootstrap |file| Database
-+++++++++++++++++++++++++
-
-.. code:: console
-
-   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-
-Installation of SRV1 has now completed. To prevent anyone else reading
-the password of PostgreSQL's administrator user, remove it from
-memory:
-
-.. code:: console
-
-   # unset $DB_ADM_PWD
-
+.. include:: /_includes/_multiserver-installation/srv1-ce.rst
 
 .. _srv2-install:
 
@@ -207,8 +130,8 @@ SRV2: MTA, Proxy, and User Management
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "10Gb"
-         "Disk Space", "30Gb"
+         "RAM", "10GB"
+         "Disk Space", "30GB"
          "IP Address", "172.16.0.12"
          "FQDN", "srv2.example.com"
 
@@ -239,13 +162,13 @@ SRV3: AppServer and |storage|
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "16Gb"
-         "Disk Space", "30Gb"
+         "RAM", "16GB"
+         "Disk Space", "30GB"
          "IP Address", "172.16.0.13"
          "FQDN", "srv3.example.com"
 
       .. note:: Remember to allocate enough disk space for the user's
-         quota, which is around 750Gb for 150 users with 5Gb quota each.
+         quota, which is around 750GB for 150 users with 5GB quota each.
 
    .. grid-item-card:: Roles
       :columns: 6
@@ -273,13 +196,10 @@ SRV4: |pv|, |file|, and |docs|
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "4Gb"
-         "Disk Space", "30Gb"
+         "RAM", "4GB"
+         "Disk Space", "30GB"
          "IP Address", "172.16.0.14"
          "FQDN", "srv4.example.com"
-
-      .. note:: Remember to allocate enough disk space for the user's
-         quota, which is around 750Gb for 150 users with 5Gb quota each.
 
    .. grid-item-card:: Roles
       :columns: 6

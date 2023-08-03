@@ -19,31 +19,12 @@ databases required by |product|.
    .. tab-item:: RHEL
       :sync: rhel
 
-      First step is to add the dedicated Postgresql repository
-
-      .. code:: console
-
-	 # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-
-      Then, make sure that **Postresql 12** is installed, by running
-      commands
-
-      .. code:: console
-
-	 # dnf -qy module disable postgresql
-	 # dnf -y install postgresql12 postgresql12-server
-
-      Finally, initialise and enable Postgresql
-
-      .. code:: console
-
-	 # /usr/pgsql-12/bin/postgresql-12-setup initdb
-	 # systemctl enable --now postgresql-12
+      .. include:: _includes/_installation/rhel-pg.rst
 
 .. include:: /_includes/_installation/step-conf-db.rst
 
 Finally, allow the other nodes to access the databases that will be
-stored on this node by running these four commands.
+stored on this node by running these commands.
 
 .. tab-set::
 
