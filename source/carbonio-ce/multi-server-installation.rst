@@ -114,8 +114,8 @@ above panel: start with the installation and configuration of
 PostgreSQL and DB connection, then bootstrap |product|, set up |mesh|,
 and finally prepare the |file| database.
 
-Installation and Configuration of PostgreSQL
-++++++++++++++++++++++++++++++++++++++++++++
+Installation of PostgreSQL
+++++++++++++++++++++++++++
 
 .. include:: /_includes/_multiserver-installation/pg-ce.rst
 
