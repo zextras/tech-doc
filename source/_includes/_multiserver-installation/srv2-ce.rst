@@ -46,13 +46,14 @@ Set up |mesh|
 Enable ``Memcached``
 ++++++++++++++++++++
 
-To enable Memcached access, use these commands.
+To enable Memcached access, use these commands as the ``zextras`` user:
+.
 
 .. code:: console
 
-   su - zextras -c 'carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)'
-   su - zextras -c "zmmemcachedctl restart"
-   su - zextras -c "zmproxyctl restart"
+   zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
+   zextras$ zmmemcachedctl restart
+   zextras$ zmproxyctl restart
 
 .. warning:: Since ``Memcached`` does not support authentication,
    make sure that the Memcached port (**11211**) is accessible only
