@@ -43,7 +43,7 @@ Next, we install all packages needed for |product|.
          carbonio-files carbonio-files-db \
          carbonio-preview carbonio-docs-editor \
          carbonio-docs-connector carbonio-docs-connector-db \
-         postgresql-12 carbonio-prometheus
+         carbonio-prometheus
 
    .. tab-item:: RHEL
       :sync: rhel
