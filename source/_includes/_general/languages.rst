@@ -21,7 +21,6 @@ languages
       * Japanese
       * Portoguese (PT, BR)
       * Russian
-      * Simplified Chinese
       * Spanish
       * Thai
 
