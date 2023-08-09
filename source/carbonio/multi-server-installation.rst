@@ -31,10 +31,17 @@ Five Nodes Scenario
 
 .. _multi-server-preliminary:
 
+.. _rhel-pg:
+
 Preliminary Tasks
 -----------------
 
 .. include:: /_includes/_multiserver-installation/preliminary.rst
+
+.. card:: Task 3. Installation and Configuration of PostreSQL
+
+   .. include:: /_includes/_installation/rhel-pg.rst
+   .. include:: /_includes/_installation/rhel-pg-conf.rst
 
 
 Node Installation
@@ -77,10 +84,36 @@ Section :ref:`web-access`.
 
 .. _srv1-install:
 
-.. _rhel-pg:
+SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-SRV1: Postgres
-~~~~~~~~~~~~~~
+.. grid::
+   :gutter: 3
+            
+   .. grid-item-card:: System requirements
+      :columns: 6
+
+      .. csv-table::
+         
+         "CPU", "4vCPU"
+         "RAM", "8GB"
+         "Disk Space", "110GB"
+         "IP Address", "172.16.0.11"
+         "FQDN", "srv1.example.com"
+
+   .. grid-item-card:: Roles
+      :columns: 6
+
+      * PostgreSQL
+      * DB connection, provided by pgpool
+      * Directory Server
+      * |mesh|
+      * |monit|
+
+To install the first Node, follow the order of Roles presented in the
+above panel: start with the installation and configuration of
+PostgreSQL and DB connection, then bootstrap |product|, set up |mesh|,
+and finally prepare the |file| database.
 
 .. include:: /_includes/_multiserver-installation/srv1.rst
 
