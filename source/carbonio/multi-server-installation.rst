@@ -7,9 +7,9 @@
 Installation
 ============
 
-This section describes the |product| installation, that is, a
-|carbonio| installation spread across multiple nodes (i.e., a
-**Multi-Server** installation), each playing one or more **Roles**.
+This section describes the |product| installation, which consists of
+several, connected Nodes (i.e., a **Multi-Server** installation), each
+playing one or more **Roles**.
 
 Rather than giving fixed installation instructions, with some
 functionality installed on any node, we present an installation
@@ -24,8 +24,8 @@ scenario we describe below can be modified at will by installing a
 
 .. _multi-server-scenario:
 
-Six Nodes Scenario
-------------------
+Five Nodes Scenario
+-------------------
 
 .. include:: /_includes/_multiserver-installation/scenario.rst
 
@@ -43,26 +43,33 @@ Node Installation
 The installation procedure follows the suggested order of nodes as
 described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 
-* It is assumed that the Postgres node is not a "real" part of the
-  infrastructure, in the sense that it can also be an existent server
-  that is configured to communicate correctly with |product|
-  (configuration instruction are part of SRV1 installation).
+While the overall procedure is the same for both Ubuntu and RHEL 8,
+the actual commands and file paths may differ on the two operating
+system, so pay attention that you execute the correct command on the
+correct files and operating system. The commands that differ are
+separated as follows. Click the :blue:`Ubuntu` or :blue:`RHEL` tab
+according to the Operating System on which you are installing
+|product|.
 
-  .. note:: In our scenario, we install Postgres and configure it from
-     scratch (*SRV1*).
 
-* The first node to be installed is the one that will feature the
-  Directory Server role (*SRV2*)
+.. tab-set::
 
-* The next server to be installed is the MTA one (*SRV3*)
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
-* The other nodes can be installed in any order, you can skip
-  instructions for any node or role that you do not plan to install
+      .. code::
 
-* While the overall procedure is the same for both Ubuntu and RHEL 8,
-  the actual commands and file paths may differ on the two operating
-  system, so pay attention that you execute the correct command on the
-  correct file
+         # <command to be executed on Ubuntu systems>
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code::
+
+         #  <command to be executed on Red Hat systems>
+
+All the commands that are mentioned in this installation procedure
+**must be executed** as the ``root`` user.
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
