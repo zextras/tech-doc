@@ -12,7 +12,6 @@ whole page before attempting to install.
 
 .. toctree::
 
-   requirements
    multi-server-installation
    ds-replica
    remove-logger

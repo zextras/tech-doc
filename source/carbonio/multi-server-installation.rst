@@ -29,6 +29,14 @@ Five Nodes Scenario
 
 .. include:: /_includes/_multiserver-installation/scenario.rst
 
+
+.. _multi-server-req:
+
+Requirements
+------------
+
+.. include:: /_includes/_multiserver-installation/requirements.rst
+
 .. _multi-server-preliminary:
 
 .. _rhel-pg:
@@ -37,12 +45,6 @@ Preliminary Tasks
 -----------------
 
 .. include:: /_includes/_multiserver-installation/preliminary.rst
-
-.. card:: Task 3. Installation and Configuration of PostreSQL
-
-   .. include:: /_includes/_installation/rhel-pg.rst
-   .. include:: /_includes/_installation/rhel-pg-conf.rst
-
 
 Node Installation
 -----------------
@@ -254,6 +256,38 @@ Activate license
 
 .. include:: /_includes/_installation/complete.rst
 
+*****
+
+At this point the installation is complete. Before you can start using
+|product|, make sure to carry out all the tasks listed in section
+:ref:`multi-post-install`.
+
+.. _multi-post-install:
+
+Post-Installation Tasks
+-----------------------
+
+The first task to carry out is to change the password of the
+``zextras`` user. This is a very important task, because this user has
+full powers over all |product| functionalities, therefore its password
+must be robust. More details and the command to change the password
+can be found in section :ref:`manage-admins`.
+
+After you change the password, log in to the |adminui|, using the
+Proxy Node's IP or hostname, at https\://srv2.example.com:6071/, with
+user ``zextras@example.com`` and password the one you just changed.
+
+If the login is successful, go to **Domains**, select the domain
+example.com, and, under the **General Settings** and define:
+
+* The **Public Server Host Name**, setting it as
+  *https://mail.example.com*
+
+* The **Public Service Port**, setting it as *443*.
+
+These two values combined represent the URL that users need
+to access to use the features of |product|.
+   
 .. _centralised-logging:
 
 Centralised Logging Configuration
