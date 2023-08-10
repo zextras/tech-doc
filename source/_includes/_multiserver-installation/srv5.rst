@@ -2,14 +2,16 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv5 - Advanced, AppServer, Files, and Docs
+.. _vs_installation:
 
-On this Node, we are going to install the AppServer and the backend
-services for |file| and |docs|.
+Installation of |vs|
+++++++++++++++++++++
 
-.. note:: The *AppServer* Role is provided by the
-   ``carbonio-advanced`` package; see section :ref:`core-comp` for
-   more information.
+It is possible to install the |vs| without the Video Recording
+feature. If you wish to do so, follow the procedure below, but *skip
+the last step*, labelled **[Video Recording]**.
+
+First, install |vs| package
 
 .. tab-set::
 
@@ -18,82 +20,64 @@ services for |file| and |docs|.
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-advanced \
-           carbonio-user-management carbonio-files \
-           carbonio-docs-connector carbonio-docs-editor
+         # apt install carbonio-videoserver
 
    .. tab-item:: RHEL
       :sync: rhel
 
-      Make sure to respect the order of installation.
+      Before starting the procedure, install Fedora's epel-repository.
 
       .. code:: console
 
-         # dnf install service-discover-agent 
-         # dnf install carbonio-files
-         # dnf install carbonio-user-management carbonio-advanced
-         # dnf install carbonio-docs-connector carbonio-docs-editor
+         # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
-Execute the following tasks.
+      Then, install the packages.
 
-#. Bootstrap |carbonio|
+      .. code:: console
 
-   .. code:: console
+         # dnf install carbonio-videoserver
 
-      # carbonio-bootstrap
+After the installation, make sure that the |vs| `public` IP address
+(i.e., the one that will accept incoming connections to the |vs|) is
+present in the configuration file :file:`/etc/janus/janus.jcfg` and
+add it if missing.
 
-   In the bootstrap menu, use |srv2h|, |ldappwd|, and
-   |nginxpwd| in the following items to complete successfully the
-   bootstrap.
+Finally, enable and start the service with the commands
 
-   * ``Ldap master host``: |srv2h|
-   * ``Ldap Admin password``: |ldappwd|
-   * ``Bind password for nginx ldap user``: |nginxpwd|
+.. code:: console
 
-#. Run |mesh| setup using |meshsec|
+   # systemctl enable videoserver.service
+   # systemctl start  videoserver.service
 
-   .. code:: console
+Installation of Video Recording
++++++++++++++++++++++++++++++++
 
-      # service-discover setup-wizard
+To implement this feature, install package
 
-   Since this node is not the |mesh| Server, the
-   :file:`cluster-credentials.tar.gpg` file will be automatically
-   downloaded.
+.. tab-set::
 
-#. Complete |mesh| setup
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
-   .. code:: console
+      .. code:: console
 
-      # pending-setups -a
+         # apt install carbonio-videoserver-recorder
 
-   .. hint:: The **secret** needed to run the above command is stored
-      in file :file:`/var/lib/service-discover/password` which is
-      accessible only by the ``root`` user.
+   .. tab-item:: RHEL
+      :sync: rhel
 
-#. Run as the ``zextras user`` the following command to configure the
-   Video Recording, using |vsip| and |vspwd| configured on SRV4
+      .. code:: console
 
-   .. code:: console
+         # dnf install carbonio-videoserver-recorder
 
-      zextras$ carbonio chats video-server add VS_IP port 8188 \
-        servlet_port 8090 secret VS_PWD
 
-#. Enable |vs| at COS level, Video Recording, and the possibility for
-   each user to record meetings.
+The video-recording feature is enabled by default, and does not
+require configuration on this node, but in the next one. Indeed,
+it requires a node which installs the ``carbonio-appserver``
+packages. The recorded sessions will be stored on that node, in
+directory :file:`/var/lib/videorecorder/`. Make sure that the
+directory has sufficient free space, otherwise recorded videos
+can not be stored.
 
-   .. code:: console
-
-      zextras$ carbonio config set cos default teamChatEnabled true
-      zextras$ carbonio config set global teamVideoServerRecordingEnabled true
-      zextras$ carbonio config set global teamMeetingRecordingEnabled true
-
-   .. note:: In the commands above, the policy allows every user to
-      record a meeting. It is however possible to enforce this policy
-      at user or COS level, to allow only selected users or members of
-      a COS to record meetings.
-
-#. (optional) Activate the license as the ``zextras user``
-
-   .. code:: console
-
-      zextras$ carbonio core activate-license TOKEN
+.. hint:: You can mount on that location a dedicated disk or
+   partition and keep it monitored for space usage.
