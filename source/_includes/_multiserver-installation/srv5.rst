@@ -9,7 +9,7 @@ Installation of |vs|
 
 It is possible to install the |vs| without the Video Recording
 feature. If you wish to do so, follow the procedure below, but *skip
-the last step*, labelled **[Video Recording]**.
+the last step*, :ref:`video-rec-installation`.
 
 First, install |vs| package
 
@@ -49,6 +49,8 @@ Finally, enable and start the service with the commands
    # systemctl enable videoserver.service
    # systemctl start  videoserver.service
 
+.. _video-rec-installation:
+
 Installation of Video Recording
 +++++++++++++++++++++++++++++++
 
@@ -73,8 +75,8 @@ To implement this feature, install package
 
 The video-recording feature is enabled by default, and does not
 require configuration on this node, but in the next one. Indeed,
-it requires a node which installs the ``carbonio-appserver``
-packages. The recorded sessions will be stored on that node, in
+it requires a node which installs the ``carbonio-advanced``
+package. The recorded sessions will be stored on that node, in
 directory :file:`/var/lib/videorecorder/`. Make sure that the
 directory has sufficient free space, otherwise recorded videos
 can not be stored.

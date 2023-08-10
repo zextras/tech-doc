@@ -89,12 +89,12 @@ SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
 
 .. grid::
    :gutter: 3
-            
+
    .. grid-item-card:: System requirements
       :columns: 6
 
       .. csv-table::
-         
+
          "CPU", "4vCPU"
          "RAM", "8GB"
          "Disk Space", "110GB"
@@ -124,7 +124,7 @@ SRV2: MTA, Proxy, and User Management
 
 .. grid::
    :gutter: 3
-            
+
    .. grid-item-card:: System requirements
       :columns: 6
 
@@ -151,12 +151,12 @@ configuration of |mesh| and *Memcached*.
 
 .. _srv3-install:
 
-SRV3: AppServer and |storage|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV3: |storage| (AppServer)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. grid::
    :gutter: 3
-            
+
    .. grid-item-card:: System requirements
       :columns: 6
 
@@ -174,9 +174,8 @@ SRV3: AppServer and |storage|
    .. grid-item-card:: Roles
       :columns: 6
 
-      * AppServer
-      * |storage|
-        
+      * |storage| (AppServer)
+
 On the third node, the AppServer and the |storage| instance are
 installed, and, like in the previous node, the bootstrap of |product|,
 and the configuration of |mesh| and *Memcached* are carried out.
@@ -190,7 +189,7 @@ SRV4: |pv|, |file|, and |docs|
 
 .. grid::
    :gutter: 3
-            
+
    .. grid-item-card:: System requirements
       :columns: 6
 
@@ -217,21 +216,21 @@ configuration of |mesh| and *Memcached*.
 .. _srv5-install:
 
 SRV5: |vs| and Video Recording
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. grid::
    :gutter: 3
-            
+
    .. grid-item-card:: System requirements
       :columns: 6
 
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "4GB"
+         "RAM", "8GB"
          "Disk Space", "30GB"
-         "IP Address", "172.16.0.14"
-         "FQDN", "srv4.example.com"
+         "IP Address", "172.16.0.15"
+         "FQDN", "srv5.example.com"
 
    .. grid-item-card:: Roles
       :columns: 6
@@ -239,6 +238,7 @@ SRV5: |vs| and Video Recording
       * |pv|
       * |file|
       * |docs|
+
 .. include:: /_includes/_multiserver-installation/srv5.rst
 
 
@@ -253,7 +253,7 @@ Activate license
 .. include:: /_includes/_multiserver-installation/license.rst
 
 .. include:: /_includes/_installation/complete.rst
-             
+
 .. _centralised-logging:
 
 Centralised Logging Configuration
@@ -267,4 +267,3 @@ Manage Global Administrators
 ============================
 
 .. include:: /_includes/_installation/users.rst
-
