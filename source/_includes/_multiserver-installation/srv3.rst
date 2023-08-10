@@ -1,11 +1,5 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
-.. srv3 - MTA - mailsystem
-   
-On this node we install the MTA, which is the actual software which
-sends and receives emails.
+Install Packages
+++++++++++++++++
 
 .. tab-set::
 
@@ -14,52 +8,33 @@ sends and receives emails.
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-mta
- 
+         # apt install service-discover-agent carbonio-advanced
+
    .. tab-item:: RHEL
       :sync: rhel
 
+      Make sure to respect the order of installation.
+
       .. code:: console
 
-         # dnf install service-discover-agent carbonio-mta
+         # dnf install service-discover-agent
+         # dnf install carbonio-advanced
 
-These following tasks must be executed to configure the MTA.
+Bootstrap |carbonio|.
++++++++++++++++++++++
 
-#. Bootstrap |carbonio|
+Launch the |carbonio| bootstrap process
 
    .. code:: console
 
       # carbonio-bootstrap
 
-   In the bootstrap menu, use |srv2h|, |ldappwd|,
-   |postfixpwd|, and |amavispwd| in the following items to
-   complete successfully the bootstrap.
+During the process, you need to provide these values, which you can
+retrieve from SRV1.
 
-   * ``Ldap master host``: |srv2h|
-   * ``Ldap Admin password``: |ldappwd|
-   * ``Bind password for postfix ldap user``: |postfixpwd|
-   * ``Bind password for amavis ldap user``: |amavispwd|
+.. include:: /_includes/_multiserver-installation/bootstrap-passwords.rst
 
-#. Run |mesh| setup using |meshsec|
+Set up |mesh|
++++++++++++++
 
-   .. code:: console
-
-      # service-discover setup-wizard
-
-   Since this node is not the |mesh| Server, the
-   :file:`cluster-credentials.tar.gpg` file will be automatically
-   downloaded.
-
-#. Complete |mesh| setup
-
-   .. code:: console
-
-      # pending-setups -a
-
-   .. hint:: The **secret** needed to run the above command is stored
-      in file :file:`/var/lib/service-discover/password` which is
-      accessible only by the ``root`` user.
-
-.. card:: Values used in the next steps 
-
-   * |mtaip| the IP address of this node
+.. include:: /_includes/_multiserver-installation/mesh-agent.rst

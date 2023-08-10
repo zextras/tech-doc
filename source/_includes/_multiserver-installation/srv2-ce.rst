@@ -47,7 +47,6 @@ Enable ``Memcached``
 ++++++++++++++++++++
 
 To enable Memcached access, use these commands as the ``zextras`` user:
-.
 
 .. code:: console
 

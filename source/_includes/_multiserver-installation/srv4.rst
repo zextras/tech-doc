@@ -2,174 +2,70 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv4 - proxy and vs
 
-This node featurs the proxy, the ``*-ui`` files (i.e., the front-end
-packages for |team|, |adminui|, and |file|), then the packages related to
-|vs|. Since Proxy and |vs| are different roles, we separate their
-installation and setup, so they can easily be installed on different
-nodes.
+Package installation
+++++++++++++++++++++
 
-.. card:: Proxy Installation and Node Setup
+.. tab-set::
 
-   The proxy functionality requires no configuration, so we can just
-   install the packages and configure the node only.
-
-   #. Install packages
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt install service-discover-agent carbonio-proxy \
-                 carbonio-webui carbonio-files-ui carbonio-chats-ui
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf install service-discover-agent carbonio-proxy \
-                 carbonio-webui carbonio-files-ui carbonio-chats-ui
-
-   #. Restart the nginx exporter for |monit|
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
       .. code:: console
 
-         # systemctl restart carbonio-prometheus-nginx-exporter.service
+         # apt install service-discover-agent carbonio-preview \
+         carbonio-files carbonio-docs-connector \
+         carbonio-docs-editor
 
-   #. Bootstrap |carbonio|
-
-      .. code:: console
-
-         # carbonio-bootstrap
-
-      In the bootstrap menu, use |srv2h|, AND |ldappwd| in
-      the following items to complete successfully the bootstrap.
-
-      * ``Ldap master host``: |srv2h|
-      * ``Ldap Admin password``: |ldappwd|
-      * ``Bind password for nginx ldap user``: |nginxpwd|
-
-   #. Run |mesh| setup using |meshsec|
+   .. tab-item:: RHEL
+      :sync: rhel
 
       .. code:: console
 
-         # service-discover setup-wizard
-
-      Since this node is not the |mesh| Server, the
-      :file:`cluster-credentials.tar.gpg` file will be automatically
-      downloaded.
-
-   #. Complete |mesh| setup
-
-      .. code:: console
-
-         # pending-setups -a
-
-      .. hint:: The **secret** needed to run the above command is stored
-         in file :file:`/var/lib/service-discover/password` which is
-         accessible only by the ``root`` user.
-   
-   #. Enable ``Memcached`` access using the commands as the ``zextras`` user:
-
-      .. card::
-         :class-card: sd-border-2 sd-pt-3
-         
-
-         .. code:: console
-
-            zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
-            zextras$ zmmemcachedctl restart
-            zextras$ zmproxyctl restart
-
-      .. warning:: Since ``Memcached`` does not support authentication,
-         make sure that the Memcached port (**11211**) is accessible only
-         from internal, trusted networks.
-
-.. _vs_installation:
-
-.. card:: |vs| and Video Recording
-
-   It is possible to install the |vs| without the Video Recording
-   feature. If you wish to do so, follow the procedure below, but
-   *skip the last step*, labelled **[Video Recording]**.
-
-   #. Install |vs| package
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt install carbonio-videoserver
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            Before starting the procedure, install Fedora's epel-repository.
-
-            .. code:: console
-
-               # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-
-            Then, install the packages.
-
-            .. code:: console
-
-               # dnf install carbonio-videoserver
-
-      After the installation, make sure that the |vs| `public` IP address
-      (i.e., the one that will accept incoming connections to the |vs|)
-      is present in the configuration file :file:`/etc/janus/janus.jcfg`
-      and add it if missing.
-
-   #. Enable and start the service with the commands
-
-      .. code:: console
-
-         # systemctl enable videoserver.service
-         # systemctl start  videoserver.service
-
-   #. **[Video Recording]** To implement this feature, install package
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt install carbonio-videoserver-recorder
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf install carbonio-videoserver-recorder
+         # dnf install service-discover-agent carbonio-preview \
+         carbonio-files carbonio-docs-connector \
+         carbonio-docs-editor
 
 
-      The video-recording feature is enabled by default, and does not
-      require configuration on this node, but in the next one. Indeed,
-      it requires a node which installs the ``carbonio-appserver``
-      packages. The recorded sessions will be stored on that node, in
-      directory :file:`/var/lib/videorecorder/`. Make sure that the
-      directory has sufficient free space, otherwise recorded videos
-      can not be stored.
+Bootstrap |carbonio|.
++++++++++++++++++++++
 
-      .. hint:: You can mount on that location a dedicated disk or
-         partition and keep it monitored for space usage.
+Launch the |carbonio| bootstrap process
 
-.. card:: Values used in the next steps
+   .. code:: console
 
-   * |vsip| the local IP address of this node
+      # carbonio-bootstrap
 
-   * |vspwd| the password of the |vs|, that can be retrieved by
-     running as the ``root`` user the command :command:`grep -i -e
-     nat_1_1 -e api_secret /etc/janus/janus.jcfg`
+During the process, you need to provide these values, which you can
+retrieve from SRV1.
+
+.. include:: /_includes/_multiserver-installation/bootstrap-passwords.rst
+
+
+Set up |mesh|
++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/mesh-agent.rst
+
+Configure Memcached
++++++++++++++++++++
+
+To allow |pv| to operate correctly, you need to edit file
+:file:`/etc/carbonio/preview/config.ini` and search for variables
+**nginx_lookup_servers_full_path_urls** and
+**memcached_server_full_path_urls**, which are one after the other,
+towards the end of the file.
+
+   .. code-block:: ini
+      :linenos:
+
+      nginx_lookup_server_full_path_urls = https://172.16.0.13:7072
+      memcached_server_full_path_urls = 172.16.0.12:11211
+
+   Make sure that:
+
+   * in line 1, protocol is **https** and the IP address is the address
+     of the AppServer, which is SRV3's *172.16.0.13*
+   * in line 1, make also sure to specify the port used by Preview, **7072**
+   * in line 2, SRV2's IP (*172.16.0.12*) is written, to allow access
+     to Memcached, which is installed on the *Proxy Node*

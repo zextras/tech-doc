@@ -53,7 +53,7 @@ Configure Memcached
 TO allow |pv| to operate correctly, you need to edit file
 :file:`/etc/carbonio/preview/config.ini` and search for variables
 **nginx_lookup_servers_full_path_urls** and
-**memcached_server_full_path_urls**, which are oine after the other,
+**memcached_server_full_path_urls**, which are one after the other,
 towards the end of the file.
 
    .. code-block:: ini

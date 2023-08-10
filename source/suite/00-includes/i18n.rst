@@ -30,7 +30,7 @@ are also included:
    "**Spanish**", "**Portuguese** (PT, BR)", "German"
    "Dutch", "Turkish", "Russian"
    "Thai", "Hindi", "Indonesian" 
-   "Japanese", "Simplified Chinese", ""
+   "Japanese", "", ""
 
 
 This includes both the Client components (Drive, Team and Docs Zimlets,
