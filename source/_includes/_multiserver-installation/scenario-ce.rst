@@ -39,7 +39,7 @@ In most Multi-Server scenarios, it proves useful to install a
 reliability and load-balancing. We describe in a :ref:`dedicated
 section <replica-ds-install>` the procedure to install the Replica on
 a dedicated node, denoted as **SRV7** (which must be equipped with the
-same OS as the other four).
+same OS as the other Nodes).
 
 However, you can install the Replica on any node other
 than **SRV1**, following the same procedure.

@@ -2,63 +2,66 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. srv1 - postgres
+.. srv1 - Postgres, Directory Server, Carbonio Mesh Server, DB connection, and
+   Prometheus Server
 
-The first node is dedicated to PostgreSQL and will host all the
-databases required by |product|.
+Installation of PostgreSQL
+++++++++++++++++++++++++++
 
-.. tab-set::
+.. include:: /_includes/_multiserver-installation/pg-ce.rst
 
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
+Packages Installation
++++++++++++++++++++++
 
-      .. code:: console
+.. include:: /_includes/_multiserver-installation/pkgs1-ce.rst
 
-	 # apt install postgresql-12
+Install and configure pgpool
+++++++++++++++++++++++++++++
 
-   .. tab-item:: RHEL
-      :sync: rhel
+Carry out the following tasks to set up pgpool.
 
-      .. include:: _includes/_installation/rhel-pg.rst
+.. include:: /_includes/_multiserver-installation/pgpool.rst
 
-.. include:: /_includes/_installation/step-conf-db.rst
+Bootstrap |product|
++++++++++++++++++++
 
-Finally, allow the other nodes to access the databases that will be
-stored on this node by running these commands.
+.. include:: /_includes/_multiserver-installation/bootstrap.rst
 
-.. tab-set::
+.. _srv1-mesh:
 
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
+Set up |mesh|
++++++++++++++
 
-      .. code:: console
+.. include:: /_includes/_multiserver-installation/mesh.rst
 
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
-         # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/12/main/pg_hba.conf
-         # systemctl restart postgresql
+Bootstrap |carbonio| Databases
+++++++++++++++++++++++++++++++
 
-   .. tab-item:: RHEL
-      :sync: rhel
+You need to use the Postgres user created on SRV1 and the password
+defined in previous steps.
 
-      .. code:: console
+   * |carbonio| Advanced
 
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
-         # echo "host    all             all             0.0.0.0/0            md5" >> /var/lib/pgsql/12/data/pg_hba.conf
-         # systemctl restart postgresql-12
+     .. code:: console
 
+        # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-.. hint:: You may replace the ``0.0.0.0/0`` network with the one
-   within the cluster is installed (**172.16.0.0**) to prevent
-   unwanted accesses.
+   * |file|
 
-.. card:: Values used in the next steps
+     .. code:: console
 
-   * |dbadmpwd| the password of the ``carbonio_adm`` database role
+        # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
-   * |srv1ip| the IP address of the node
+   * |docs|
+
+     .. code:: console
+
+        # PGPASSWORD=DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+
+Installation of SRV1 has now completed. To prevent anyone else reading
+the password of PostgreSQL's administrator user, remove it from
+memory:
+
+.. code:: console
+
+   # unset $DB_ADM_PWD
