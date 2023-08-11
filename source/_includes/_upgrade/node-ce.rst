@@ -69,7 +69,7 @@ installation.
 
          # read -s -p "Insert Password of DB Admin:" DB_ADM_PWD
 
-         # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap
+         # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap
          carbonio_adm 127.0.0.1        
 
       .. hint:: ``DB_ADM_PWD`` is the password of PostgreSQL's

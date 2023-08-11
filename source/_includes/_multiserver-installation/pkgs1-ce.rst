@@ -14,7 +14,8 @@
 
             # apt install service-discover-server \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db carbonio-docs-connector-db
+              carbonio-mailbox-db carbonio-docs-connector-db \
+              carbonio-prometheus
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -23,7 +24,8 @@
 
             # dnf install service-discover-server \
               carbonio-directory-server carbonio-files-db \
-              carbonio-mailbox-db carbonio-docs-connector-db
+              carbonio-mailbox-db carbonio-docs-connector-db \
+              carbonio-prometheus
 
    .. note:: It is possible to install multiple instances of the
       service-discover service provided by |mesh|. Please refer to
