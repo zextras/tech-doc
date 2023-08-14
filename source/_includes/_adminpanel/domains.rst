@@ -252,7 +252,29 @@ CERTIFICATE`. In the dialog, you can choose to use:
   certificate: like the previous case, click the
   :bdg-primary:`GENERATE CERTIFICATE` button and wait for the
   certificate to become available
-  
+
+  .. card:: Let's Encrypt's Short and Long Chain certificates.
+
+     Without going into much details, the difference between the two
+     types of certificates issued by Let's Encrypt (*"ISRG Root X1"*)
+     is the compatibility with older Android clients and SSL
+     libraries.
+
+     More technically, the difference is that the Short Chain contains
+     two certificates: Let's Encrypt's Root certificate and the one
+     issued to your website, signed by the former; while the Long
+     Chain three: the same of the Short Chain and an intermediate
+     certificate. The *ISRG Root X1* indeed, was issued quite recently
+     and may not be known to some browsers, devices, or clients,
+     therefore it was decided to add as intermediate certificate
+     another root certificate that is well known to clients, to expand
+     compatibility.
+
+     .. seealso:: More details and technicalities about the Short
+        vs. Long Chain certificates can be found in article `Long
+        (default) and Short (alternate) Certificate Chains Explained
+        <https://community.letsencrypt.org/t/long-default-and-short-alternate-certificate-chains-explained/>`_.
+
 * A custom certificate. In this case, you need to provide by yourself
   three files of the authorisation chain (i.e., the *Domain
   Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
@@ -269,7 +291,9 @@ CERTIFICATE`. In the dialog, you can choose to use:
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
-                  
+
+
+
 Mailbox Quota
 ~~~~~~~~~~~~~
 
