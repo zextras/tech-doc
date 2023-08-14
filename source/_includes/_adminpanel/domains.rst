@@ -245,13 +245,16 @@ Select the virtual host, then click :blue:`UPLOAD AND VERIFY
 CERTIFICATE`. In the dialog, you can choose to use:
 
 * A Let's Encrypt *longChain* Certificate, i.e., including an
-  intermediate certificate: click the :bdg-primary:`GENERATE
-  CERTIFICATE` button and wait for the certificate to become available
+  intermediate certificate. Make sure to :ref:`satisfy the
+  requirements <le-procedure>` before clicking the
+  :bdg-primary:`GENERATE CERTIFICATE` button. Complete the procedure
+  according to the directions :ref:`below <le-procedure>`.
 
 * A Let's Encrypt *shortChain* Certificate, without intermediate
-  certificate: like the previous case, click the
-  :bdg-primary:`GENERATE CERTIFICATE` button and wait for the
-  certificate to become available
+  certificate: like the previous case, make sure to :ref:`satisfy the
+  requirements <le-procedure>` before clicking the
+  :bdg-primary:`GENERATE CERTIFICATE` button. Complete the procedure
+  according to the directions :ref:`below <le-procedure>`.
 
   .. card:: Let's Encrypt's Short and Long Chain certificates.
 
@@ -276,7 +279,7 @@ CERTIFICATE`. In the dialog, you can choose to use:
         <https://community.letsencrypt.org/t/long-default-and-short-alternate-certificate-chains-explained/>`_.
 
 * A custom certificate. In this case, you need to provide by yourself
-  three files of the authorisation chain (i.e., the *Domain
+  the three files of the authorisation chain (i.e., the *Domain
   Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
   the first or copy the content of the individual files in the
   appropriate fields. Click :bdg-primary:`VERIFY` to verify the
@@ -287,12 +290,92 @@ CERTIFICATE`. In the dialog, you can choose to use:
   notification will be shown (:bdg-success:`The certificates have been
   saved`). To complete the procedure: if you are on a Single-Node,
   restart it otherwise you need to restart the node on which the
-  **Proxy** is installed;
+  **Proxy** is installed.
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
 
+.. _le-procedure:
 
+Procedure to install a Let's Encrypt certificate
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. card:: Let's Encrypt Requirements
+
+   Before attempting to ask for a Let's Encrypt certificate, make sure
+   that:
+
+   #. **Public Service Protocol** and **Public Service Host Name** are
+      correctly set in the |adminui|'s :menuselection:`Domain -->
+      General Settings`
+
+   #. There is a Virtual Host correctly configured for the domain you
+      want the certificate
+
+   #. **A**, **AAAA**, and **NXDOMAIN** record in the domain's DNS
+      configuration
+
+   #. The domain has a valid |fqdn| that can be resolved from anywhere
+      (i.e., the domain must be publicly accessible)
+
+   #. The domain (i.e., the Node which installs the Proxy) is
+      reachable from the Internet. In case the proxy is behind a
+      firewall or other routing devices and can not be reached
+      directly, add some forwarding rule on the firewall or device.
+
+To correctly issue a Let's Encrypt certificate for your |product|
+installation, you should carry out the following steps.
+
+The starting point is to generate the certificate using the |adminui|
+button, as shown in the :ref:`previous section <ap-vhost>`. besides
+the message on the bottom right corner, you will receive in a few
+minutes an e-mail stating the success or failure of the certificate's
+generation.
+
+.. hint:: You can follow the process by checking the log file
+   :file:`/var/log/carbonio/letsencrypt/letsencrypt.log`, using the
+   :command:`tail -f` command from the CLI.
+
+In case of failure, the e-mail will report the errors encountered that
+you need to fix before attempting again. Take into account that if you
+continuously ask for a certificate without success, you can be
+temporarily be prevented to ask again.
+
+The message *Successfully received certificate* appears in the e-mail
+when the issue is successful, together with other information,
+including the expiry date, followed by a second confirmatory e-mail.
+
+At this point you can deploy the certificate on your
+infrastructure. Log in to the CLI and issue, as the ``zextras user``, the
+commands
+
+.. code:: console
+
+   zextras$ /opt/zextras/libexec/zmproxyconfgen
+   zextras$ /opt/zextras/bin/zmproxyctl reload
+
+You can now setup the automatic renewal of the certificate by adding a
+line in the system's crontab :file:`/etc/crontab`. Run the following
+command
+
+.. hint:: Make a copy of the crontab before proceeding, so you can
+   recover it in case of troubles.
+
+   .. code:: console
+
+      # cp /etc/crontab /etc/crontab.original
+
+.. code:: console
+
+   zextras$ SLEEPTIME=$(awk 'BEGIN{srand(); print  \
+   int(rand()*(3600+1))}'); echo "0 0,12 * * * root sleep $SLEEPTIME \
+   && certbot renew -q" | sudo tee -a /etc/crontab > /dev/null
+
+This command will add a line similar to ``0 0,12 * * * root sleep 3018
+&& certbot renew -q`` to the crontab.
+
+or simply add the line yourself, making sure to use a random value
+after ``sleep``.
 
 Mailbox Quota
 ~~~~~~~~~~~~~
