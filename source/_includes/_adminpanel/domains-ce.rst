@@ -280,10 +280,9 @@ Procedure to install a Let's Encrypt certificate
    #. The domain has a valid |fqdn| that can be resolved from anywhere
       (i.e., the domain must be publicly accessible)
 
-   #. The |fqdn| (i.e., the Node which installs the Proxy) is
-      reachable from the Internet on port **80 (http)**. In case the
-      proxy can not be directly reached, you must add some forwarding
-      rules.
+   #. The Proxy Node is reachable from the Internet on port **80
+      (http)**. In case the proxy can not be directly reached, you
+      must add some forwarding rules.
 
    #. (Optional) To receive e-mail responses from Let's Encrypt,
       |carbonio| attributes ``carbonioNotificationRecipients`` and
