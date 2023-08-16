@@ -312,29 +312,33 @@ Procedure to install a Let's Encrypt certificate
    #. There is a Virtual Host correctly configured for the domain you
       want the certificate
 
-   #. **A**, **AAAA**, and **NXDOMAIN** record in the domain's DNS
+   #. **A**, **AAAA**, and **CNAME** record in the domain's DNS
       configuration
 
    #. The domain has a valid |fqdn| that can be resolved from anywhere
       (i.e., the domain must be publicly accessible)
 
-   #. The domain (i.e., the Node which installs the Proxy) is
-      reachable from the Internet. In case the proxy is behind a
-      firewall or other routing devices and can not be reached
-      directly, add some forwarding rule on the firewall or device.
+   #. The |fqdn| (i.e., the Node which installs the Proxy) is
+      reachable from the Internet on port **80 (http)**. In case the
+      proxy can not be directly reached, you must add some forwarding
+      rules.
 
+   #. (Optional) To receive e-mail responses from Let's Encrypt,
+      |carbonio| attributes ``carbonioNotificationRecipients`` and
+      ``carbonioNotificationFrom`` are defined at global level.
+      
 To correctly issue a Let's Encrypt certificate for your |product|
 installation, you should carry out the following steps.
 
 The starting point is to generate the certificate using the |adminui|
 button, as shown in the :ref:`previous section <ap-vhost>`. besides
 the message on the bottom right corner, you will receive in a few
-minutes an e-mail stating the success or failure of the certificate's
-generation.
+minutes an e-mail, provided you set |carbonio| attributes, see list
+above, stating the success or failure of the certificate's generation.
 
 .. hint:: You can follow the process by checking the log file
-   :file:`/var/log/carbonio/letsencrypt/letsencrypt.log`, using the
-   :command:`tail -f` command from the CLI.
+   :file:`/var/log/carbonio/letsencrypt/letsencrypt.log` on the Proxy
+   Node, using the :command:`tail -f` command from the CLI.
 
 In case of failure, the e-mail will report the errors encountered that
 you need to fix before attempting again. Take into account that if you
@@ -354,28 +358,11 @@ commands
    zextras$ /opt/zextras/libexec/zmproxyconfgen
    zextras$ /opt/zextras/bin/zmproxyctl reload
 
-You can now setup the automatic renewal of the certificate by adding a
-line in the system's crontab :file:`/etc/crontab`. Run the following
-command
-
-.. hint:: Make a copy of the crontab before proceeding, so you can
-   recover it in case of troubles.
-
-   .. code:: console
-
-      # cp /etc/crontab /etc/crontab.original
-
-.. code:: console
-
-   zextras$ SLEEPTIME=$(awk 'BEGIN{srand(); print  \
-   int(rand()*(3600+1))}'); echo "0 0,12 * * * root sleep $SLEEPTIME \
-   && certbot renew -q" | sudo tee -a /etc/crontab > /dev/null
-
-This command will add a line similar to ``0 0,12 * * * root sleep 3018
-&& certbot renew -q`` to the crontab.
-
-or simply add the line yourself, making sure to use a random value
-after ``sleep``.
+The certificate needs to be renewed every **60 days**, according to
+`Let's Encrypt recommendations
+<https://letsencrypt.org/docs/integration-guide/#when-to-renew>`_,
+manually using :command:`certbot renew` from the CLI or, if you are
+confident, routinely from the crontab.
 
 Mailbox Quota
 ~~~~~~~~~~~~~
