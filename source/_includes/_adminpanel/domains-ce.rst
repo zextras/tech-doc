@@ -322,7 +322,7 @@ commands
 The certificate expires after **90 days**, and, according to `Let's
 Encrypt recommendations
 <https://letsencrypt.org/docs/integration-guide/#when-to-renew>`_
-should to be renewed **30 days** before expiration. You can do so
+it should be renewed **30 days** before expiration. You can do so
 manually using :command:`certbot renew` from the CLI or, if you are
 confident, routinely from the crontab.
 
