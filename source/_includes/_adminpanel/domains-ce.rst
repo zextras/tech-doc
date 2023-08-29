@@ -207,14 +207,39 @@ Select the virtual host, then click :blue:`UPLOAD AND VERIFY
 CERTIFICATE`. In the dialog, you can choose to use:
 
 * A Let's Encrypt *longChain* Certificate, i.e., including an
-  intermediate certificate: click the :bdg-primary:`GENERATE
-  CERTIFICATE` button and wait for the certificate to become available
+  intermediate certificate. Make sure to :ref:`satisfy the
+  requirements <le-procedure>` before clicking the
+  :bdg-primary:`GENERATE CERTIFICATE` button. Complete the procedure
+  according to the directions :ref:`below <le-procedure>`.
 
 * A Let's Encrypt *shortChain* Certificate, without intermediate
-  certificate: like the previous case, click the
-  :bdg-primary:`GENERATE CERTIFICATE` button and wait for the
-  certificate to become available
-  
+  certificate: like the previous case, make sure to :ref:`satisfy the
+  requirements <le-procedure>` before clicking the
+  :bdg-primary:`GENERATE CERTIFICATE` button. Complete the procedure
+  according to the directions :ref:`below <le-procedure>`.
+
+  .. card:: Let's Encrypt's Short and Long Chain certificates.
+
+     Without going into much details, the difference between the two
+     types of certificates issued by Let's Encrypt (*"ISRG Root X1"*)
+     is the compatibility with older Android clients and SSL
+     libraries.
+
+     More technically, the difference is that the Short Chain contains
+     two certificates: Let's Encrypt's Root certificate and the one
+     issued to your website, signed by the former; while the Long
+     Chain three: the same of the Short Chain and an intermediate
+     certificate. The *ISRG Root X1* indeed, was issued quite recently
+     and may not be known to some browsers, devices, or clients,
+     therefore it was decided to add as intermediate certificate
+     another root certificate that is well known to clients, to expand
+     compatibility.
+
+     .. seealso:: More details and technicalities about the Short
+        vs. Long Chain certificates can be found in article `Long
+        (default) and Short (alternate) Certificate Chains Explained
+        <https://community.letsencrypt.org/t/long-default-and-short-alternate-certificate-chains-explained/>`_.
+
 * A custom certificate. In this case, you need to provide by yourself
   the three files of the authorisation chain (i.e., the *Domain
   Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
@@ -227,11 +252,87 @@ CERTIFICATE`. In the dialog, you can choose to use:
   notification will be shown (:bdg-success:`The certificates have been
   saved`). To complete the procedure: if you are on a Single-Node,
   restart it otherwise you need to restart the node on which the
-  **Proxy** is installed;
+  **Proxy** is installed.
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
-                  
+
+.. _le-procedure:
+
+Procedure to install a Let's Encrypt certificate
+++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. card:: Let's Encrypt Requirements
+
+   Before attempting to ask for a Let's Encrypt certificate, make sure
+   that:
+
+   #. **Public Service Protocol** and **Public Service Host Name** are
+      correctly set in the |adminui|'s :menuselection:`Domain -->
+      General Settings`
+
+   #. There is a Virtual Host correctly configured for the domain you
+      want the certificate
+
+   #. **A**, **AAAA**, and **CNAME** record in the domain's DNS
+      configuration
+
+   #. The domain has a valid |fqdn| that can be resolved from anywhere
+      (i.e., the domain must be publicly accessible)
+
+   #. The Proxy Node is reachable from the Internet on port **80
+      (http)**. In case the proxy can not be directly reached, you
+      must add some forwarding rules.
+
+   #. (Optional) To receive e-mail responses from Let's Encrypt,
+      |carbonio| attributes ``carbonioNotificationRecipients`` and
+      ``carbonioNotificationFrom`` are defined at global level.
+      
+To correctly issue a Let's Encrypt certificate for your |product|
+installation, you should carry out the following steps.
+
+The starting point is to generate the certificate using the |adminui|
+button, as shown in the :ref:`previous section <ap-vhost>`. besides
+the message on the bottom right corner, you will receive in a few
+minutes an e-mail, provided you set |carbonio| attributes, see list
+above, stating the success or failure of the certificate's generation.
+
+.. hint:: You can follow the process by checking the log file
+   :file:`/var/log/carbonio/letsencrypt/letsencrypt.log` on the Proxy
+   Node, using the :command:`tail -f` command from the CLI.
+
+In case of failure, the e-mail will report the errors encountered that
+you need to fix before attempting again. Take into account that if you
+continuously ask for a certificate without success, you can be
+temporarily be prevented to ask again.
+
+The message *Successfully received certificate* appears in the e-mail
+when the issue is successful, together with other information,
+including the expiry date, followed by a second confirmatory e-mail.
+
+At this point you can deploy the certificate on your
+infrastructure. Log in to the CLI and issue, as the ``zextras user``, the
+commands
+
+.. code:: console
+
+   zextras$ /opt/zextras/libexec/zmproxyconfgen
+   zextras$ /opt/zextras/bin/zmproxyctl reload
+
+The certificate expires after **90 days**, and, according to `Let's
+Encrypt recommendations
+<https://letsencrypt.org/docs/integration-guide/#when-to-renew>`_
+it should be renewed **30 days** before expiration. You can do so
+manually using :command:`certbot renew` from the CLI or, if you are
+confident, routinely from the crontab.
+
+Once done, run again the two deployment commands
+
+.. code:: console
+
+   zextras$ /opt/zextras/libexec/zmproxyconfgen
+   zextras$ /opt/zextras/bin/zmproxyctl reload
+
 Mailbox Quota
 ~~~~~~~~~~~~~
 
