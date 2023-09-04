@@ -8,7 +8,7 @@
  |suite| Changelog - Release |release|
 ===============================================
 
-Release Date of |suite| |release|: Aug 17th, 2023
+Release Date of |suite| |release|: Sep 4th, 2023
 
 .. include:: /changelogs/3.18.0.rst
 
