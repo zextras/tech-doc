@@ -4,7 +4,7 @@
    Zextras Suite Changelog - Release 3.18.0
    ========================================
 
-      Release Date: Aug 17th, 2023
+      Release Date: Sep 4th, 2023
 
 .. rubric:: Auth
 
