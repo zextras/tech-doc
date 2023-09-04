@@ -32,7 +32,12 @@ Launch the |carbonio| bootstrap process
 During the process, you need to provide these values, which you can
 retrieve from SRV1.
 
-.. include:: /_includes/_multiserver-installation/bootstrap-passwords.rst
+* ``Ldap master host`` is the FQDN of SRV1, srv1.example.com
+* ``Ldap Admin password`` is obtained from SRV1 using the command
+
+  .. code:: console
+
+     # su - zextras -c "zmlocalconfig -s zimbra_ldap_password"
 
 Set up |mesh|
 +++++++++++++
