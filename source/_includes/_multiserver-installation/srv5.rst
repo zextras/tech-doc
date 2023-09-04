@@ -20,7 +20,7 @@ First, install |vs| package
 
       .. code:: console
 
-         # apt install carbonio-videoserver
+         # apt install service-discover-agent carbonio-videoserver
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -35,7 +35,7 @@ First, install |vs| package
 
       .. code:: console
 
-         # dnf install carbonio-videoserver
+         # dnf install service-discover-agent carbonio-videoserver
 
 After the installation, make sure that the |vs| `public` IP address
 (i.e., the one that will accept incoming connections to the |vs|) is
@@ -83,3 +83,28 @@ can not be stored.
 
 .. hint:: You can mount on that location a dedicated disk or
    partition and keep it monitored for space usage.
+
+Bootstrap |carbonio|.
++++++++++++++++++++++
+
+Launch the |carbonio| bootstrap process
+
+   .. code:: console
+
+      # carbonio-bootstrap
+
+During the process, you need to provide these values, which you can
+retrieve from SRV1.
+
+* ``Ldap master host`` is the FQDN of SRV1, srv1.example.com
+* ``Ldap Admin password`` is obtained from SRV1 using the command
+
+  .. code:: console
+
+     # su - zextras -c "zmlocalconfig -s zimbra_ldap_password"
+
+Set up |mesh|
++++++++++++++
+
+.. include:: /_includes/_multiserver-installation/mesh-agent.rst
+
