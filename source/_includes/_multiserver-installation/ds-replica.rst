@@ -71,16 +71,16 @@ Configuration of the Replica Directory server requires a few steps.
 
 .. card:: Step 1: Activate replica
 
-   On **SRV2** activate the replica by executing
+   On **SRV1** activate the replica by executing
 
    .. code:: console
 
       # /opt/zextras/libexec/zmldapenablereplica
 
-.. card:: Step 2: Retrieve passwords from **SRV2**
+.. card:: Step 2: Retrieve passwords from **SRV1**
 
    Then, retrieve a few passwords that you will need on the Replica to
-   configure the connection and access to **SRV2**
+   configure the connection and access to **SRV1**
 
    .. code:: console
 
@@ -115,7 +115,7 @@ Configuration of the Replica Directory server requires a few steps.
       Ldap configuration
 
          1) Hostname: The hostname of the Director Server *Replica*.
-         2) Ldap master host: The hostname of **SRV2**
+         2) Ldap master host: The hostname of **SRV1**
          3) Ldap port: 389
          4) Ldap Admin password: The ``zimbra_ldap_password``
 
@@ -141,7 +141,7 @@ Configuration of the Replica Directory server requires a few steps.
 
    You can now continue the bootstrap process and after a while the
    installation will be successfully completed and immediately after,
-   the copy of the Directory Server on **SRV2** will be copied over to
+   the copy of the Directory Server on **SRV1** will be copied over to
    the Replica on **SRV7**.
 
 Testing
@@ -151,7 +151,7 @@ In order to test whether the Replica works correctly after the
 installation was completed successfully, you can make a quick test as
 follows.
 
-#. Log in to the *Master* (**SRV2**) and create a test user with a
+#. Log in to the *Master* (**SRV1**) and create a test user with a
    password:
 
    .. code:: console
@@ -195,7 +195,7 @@ achieve this set up with a few commands on the **Master**.
 
    You need to keep at hand the following data
 
-   * ``SRV2_hostname``: the hostname on which the Directory Server
+   * ``SRV1_hostname``: the hostname on which the Directory Server
      Master is installed
 
    * ``SRV7_hostname``: the hostname on which the Directory Server
@@ -215,7 +215,7 @@ achieve this set up with a few commands on the **Master**.
    .. code:: console
 
       zextras$ zmlocalconfig -e \
-        ldap_url="ldap://SRV7_hostname ldap://SRV2_hostname"
+        ldap_url="ldap://SRV7_hostname ldap://SRV1_hostname"
 
    If you plan to install multiple Replica Directory Servers, you can
    install all of them and then execute the above-mentioned command
@@ -227,7 +227,7 @@ achieve this set up with a few commands on the **Master**.
 
       zextras$ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
-        ldap://SRV5_hostname ldap://SRV2_hostname"
+        ldap://SRV5_hostname ldap://SRV1_hostname"
 
    The Replica instance to query first is the first listed in the
    command.
@@ -242,7 +242,7 @@ To remove a Replica, you need to carry out two tasks:
 
    .. code:: console
 
-      zextras$ zmlocalconfig -e ldap_url="ldap://SRV2_hostname"
+      zextras$ zmlocalconfig -e ldap_url="ldap://SRV1_hostname"
 
    In case you had configured multiple Replicas, the above command
    will redirect all queries to the Master. If you want to remove only
@@ -253,7 +253,7 @@ To remove a Replica, you need to carry out two tasks:
 
       zextras$ zmlocalconfig -e \
         ldap_url="ldap://SRV7_hostname ldap://SRV4_hostname \
-        ldap://SRV2_hostname"
+        ldap://SRV1_hostname"
 
 #. Execute, **only on the MTA node** the command
 
