@@ -20,7 +20,7 @@ First, install |vs| package
 
       .. code:: console
 
-         # apt install carbonio-videoserver
+         # apt install service-discover-agent carbonio-videoserver
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -35,7 +35,7 @@ First, install |vs| package
 
       .. code:: console
 
-         # dnf install carbonio-videoserver
+         # dnf install service-discover-agent carbonio-videoserver
 
 After the installation, make sure that the |vs| `public` IP address
 (i.e., the one that will accept incoming connections to the |vs|) is
