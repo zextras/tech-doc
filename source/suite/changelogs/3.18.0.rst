@@ -1,0 +1,24 @@
+
+.. uncomment for next release (3.19.0)
+
+   Zextras Suite Changelog - Release 3.18.0
+   ========================================
+
+      Release Date: Sep 4th, 2023
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-535
+
+* *Title:* ZxAuth supports PasswordLockoutMaxFailures
+
+* *Description:* `PasswordLockoutMaxFailures` now works on ZxAuth; after entering incorrect passwords, accounts are locked on the custom login page.
+
+.. rubric:: Team
+
+* *Issue ID:* TEAMS-3396
+
+* *Title:* XSS vulnerability fixed in Team instant meetings
+
+* *Description:* Fixed a possible Cross-site scripting vulnerability bug that affected Team's instant meetings.
+
