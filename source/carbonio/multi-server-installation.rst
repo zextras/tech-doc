@@ -237,9 +237,8 @@ SRV5: |vs| and Video Recording
    .. grid-item-card:: Roles
       :columns: 6
 
-      * |pv|
-      * |file|
-      * |docs|
+      * |vs|
+      * |vs| Recording
 
 .. include:: /_includes/_multiserver-installation/srv5.rst
 
