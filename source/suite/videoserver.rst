@@ -58,11 +58,8 @@ and has the following requirements:
 .. grid::
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: System
       :columns: 4
-                
-      System
-      ^^^^^
 
       -  Minimum 4 CPU cores, suggested at least 8 to handle more than 100
          users at the same time
@@ -74,11 +71,8 @@ and has the following requirements:
          The Zextras Video Server mainly scales on the CPU, so more CPU cores
          and power means more connected users.
 
-   .. grid-item-card::
+   .. grid-item-card:: Network
       :columns: 4
-                
-      Network
-      ^^^^^
 
       -  A public IP
 
@@ -89,11 +83,8 @@ and has the following requirements:
 
       -  WebSockets
 
-   .. grid-item-card::
+   .. grid-item-card:: Ports
       :columns: 4
-
-      Ports
-      ^^^^
 
       - The mailbox server will establish a WebSocket on port 8188
         (TCP) to communicate with the Video Server
