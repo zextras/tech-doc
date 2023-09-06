@@ -99,7 +99,7 @@ and has the following requirements:
         (TCP) to communicate with the Video Server
 
       - Connecting browsers will use a random UDP port between 20000
-        and 40000 on the public IP of the |vs|
+        and 40000 on the public IP of the |zx| Video Server
 
 .. warning::
 
