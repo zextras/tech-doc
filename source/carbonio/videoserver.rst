@@ -420,3 +420,46 @@ Finally, allow all users to start a recording.
    meeting. It is however possible to enforce this policy at user or
    COS level, to allow only selected users or members of a COS to
    record meetings.
+
+Modify or Move a |vs| Installation
+----------------------------------
+
+To reconfigure an existing |vs| instance, simply use the various
+commands previously mentioned in this Section, then restart the
+|vs| service.
+
+If you prefer to move the |vs| to a different Node, or need to do so
+because for example the current Node must be decommissioned, you first
+need to remove the |vs| instance: as the ``zextras`` user run
+
+.. code:: console
+
+   zextras$ carbonio chats videoserver remove video.example.com 
+
+Here, *video.example.com* is the name of the |vs| instance, that you
+can retrieve as the ``hostname`` in the output of
+
+.. code:: console
+
+   zextras$ carbonio chats clusterstatus 
+
+Once done, remove the package
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt remove service-discover-agent carbonio-videoserver
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf remove service-discover-agent carbonio-videoserver
+
+Now the |vs| is completely removed from the node and you can install
+it on a different Node, using the :ref:`installation procedure <srv5-install>`.
