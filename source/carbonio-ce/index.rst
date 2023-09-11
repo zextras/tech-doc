@@ -89,6 +89,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
          management
          mesh
+         troubleshooting
 
    .. grid-item-card::
       :columns: 12 12 6 6
