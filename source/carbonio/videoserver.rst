@@ -46,62 +46,6 @@ A properly set up |vs| will supersede the need of a TURN server,
 provided that all clients can reach the |vs|’s public IP and
 that UDP traffic is not filtered.
 
-.. _vs-requirements:
-
-Requirements
-------------
-
-The |vs| must be installed on a **dedicated server** and has the
-following requirements:
-
-.. grid:: 1 1 2 3
-   :gutter: 3
-
-   .. grid-item-card:: System
-      :columns: 12 12 6 4
-
-      -  Minimum 4 CPU cores, suggested at least 8 to handle more than 100
-         users at the same time
-
-      -  1024mb of ram + 1mb of ram for each connected user
-
-      .. hint::
-
-         The |vs| mainly scales on the CPU, so more CPU cores
-         and power means more connected users.
-
-   .. grid-item-card:: Network
-      :columns: 12 12 6 4
-
-      - A public IP address. This is either the IP address of |vs|, if
-        it is directly accessible from remote clients on the Internet,
-        or—​if there is a NAT-ting device in front of it (e.g., a
-        firewall or router)--the IP address with which the |vs| is
-        reachable.
-
-      -  A publicly resolvable FQDN
-
-      -  With the default settings, 200kb/s (0.2 mb/s) bandwidth for each
-         connected user
-
-      -  WebSockets
-
-   .. grid-item-card:: Ports
-      :columns: 12 12 6 4
-
-      - The mailbox server will establish a WebSocket on port 8188
-        (TCP) to communicate with the |vs|
-
-      - Connecting browsers will use a random UDP port between 20000
-        and 40000 on the public IP of the |vs|
-
-
-.. warning:: The |vs| installer requires the fully qualified hostname
-   to be correctly configured in :file:`/etc/hosts` and
-   :file:`/etc/hostname`.  Failing to comply will likely cause the
-   sample commands provided at the end of the installation to be
-   incorrect.
-
 .. _vs-installation:
 
 |vs| Installation
@@ -390,16 +334,16 @@ package must be installed on each node on which
 
    .. tab-item:: RHEL
       :sync: rhel
-
       
       .. code:: console
 
          # yum install carbonio-videoserver-recorder
 
 The package installs a service that needs to be associated with the
-|vs| instance, a task that needs to be executed from the CLI, using a
-command that differ depending if you already installed and configured
-the |vs| or not.
+|vs| instance, a task that needs to be executed from the CLI **on a
+Node which installs the** ``carbonio-advanced`` **package** (which is
+**SRV3** in our Scenario), using a command that differ depending if
+you already installed and configured the |vs| or not.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -407,7 +351,7 @@ the |vs| or not.
    .. grid-item-card:: |vs| already installed
       :columns: 12 12 6 6
 
-      If you already installed |vs|, execute this command:
+      If you already installed |vs|, execute this command **on SRV3**:
 
       .. code:: console
 
@@ -415,17 +359,19 @@ the |vs| or not.
 
       Here, replace *example.com* with the domain name or IP on which
       the |vs| is installed, *8188* the |vs| port, and *8090* (which
-      is the default value) with the port that will be used only for
-      recording. The value of the servlet port **must** match the one
-      defined in file
-      :file:`/etc/carbonio/videoserver-recorder/recordingEnv`.
+      is the default value) with the servlet port that will be used
+      only for recording.
+
+      .. warning:: The value of the servlet port (*8090*) **must**
+         match the one defined in file
+         :file:`/etc/carbonio/videoserver-recorder/recordingEnv` on **SRV5**.
 
    .. grid-item-card:: |vs| not yet installed
       :columns: 12 12 6 6
 
       If you did not yet install |vs|, you can execute the following
-      command, which configures at the same time both the |vs| and the
-      recording servlet.
+      command **on SRV3**, which configures at the same time both the
+      |vs| and the recording servlet.
 
       .. code:: console
 
@@ -433,16 +379,26 @@ the |vs| or not.
 
       Replace *example.com* with the actual domain name or IP, *8188*
       and *8090* with the ports associated with the |vs| and the
-      recorder, respectively, and *A_SECRET_PASSWORD* with a robust
-      password.
+      recorder, respectively, and *A_SECRET_PASSWORD* with the value
+      of the variable ``api_secret`` in file
+      :file:`/etc/janus/janus.jcfg` on **SRV5**, for example::
+              
+              api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
 
+   .. grid-item-card:: In both cases
+      :columns: 12
+
+      In both cases, edit the file :file:`/etc/janus/janus.jcfg`, find
+      the variable ``nat_1_1_mapping`` and write the **public IP
+      address** of |carbonio| as the value for that variable, for
+      example: ``nat_1_1_mapping = "93.184.216.34"``.
 
 Configure |vs| Recording
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To complete the setup, you need to execute a few commands as the
-``zextras`` user. First, make sure that the functionality is enabled
-on the infrastructure at COS level.
+``zextras`` user on **SRV3**. First, make sure that the functionality
+is enabled on the infrastructure at COS level.
 
 .. code:: console
 
@@ -464,3 +420,46 @@ Finally, allow all users to start a recording.
    meeting. It is however possible to enforce this policy at user or
    COS level, to allow only selected users or members of a COS to
    record meetings.
+
+Modify or Move a |vs| Installation
+----------------------------------
+
+To reconfigure an existing |vs| instance, simply use the various
+commands previously mentioned in this Section, then restart the
+|vs| service.
+
+If you prefer to move the |vs| to a different Node, or need to do so
+because for example the current Node must be decommissioned, you first
+need to remove the |vs| instance: as the ``zextras`` user run
+
+.. code:: console
+
+   zextras$ carbonio chats videoserver remove video.example.com 
+
+Here, *video.example.com* is the name of the |vs| instance, that you
+can retrieve as the ``hostname`` in the output of
+
+.. code:: console
+
+   zextras$ carbonio chats clusterstatus 
+
+Once done, remove the package
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt remove service-discover-agent carbonio-videoserver
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf remove service-discover-agent carbonio-videoserver
+
+Now the |vs| is completely removed from the node and you can install
+it on a different Node, using the :ref:`installation procedure <srv5-install>`.
