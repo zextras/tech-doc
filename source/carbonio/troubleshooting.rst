@@ -12,3 +12,11 @@ Verify ``nginx`` Configuration
 ==============================
 
 .. include:: /_includes/_ts/nginx.rst
+
+.. _ts-db:
+
+PostgreSQL Database Issues
+==========================
+
+.. include:: /_includes/_ts/db.rst
+
