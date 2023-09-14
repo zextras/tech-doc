@@ -18,6 +18,10 @@ without the necessity to create a new one and fill in all the
 details. This option is useful if you have to schedule recurrent
 events without a fixed schedule.
 
+When an account is configured with multiple identities, it is possible
+to choose from which one to send the invitations: the e-mail's sender
+will then be automatically filled according the identity chosen.
+
 Attendees, whose presence is either mandatory or optional, can be
 added by writing their e-mail address. If the attendee already is not
 available or has some overlapping appointment, its e-mail address will
