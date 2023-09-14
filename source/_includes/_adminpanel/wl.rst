@@ -128,3 +128,15 @@ mandatory to keep in sync the resources on all the Proxies instances.
 
 All customisations can be removed at once by clicking the
 :bdg-danger-line:`RESET` button.
+
+.. card:: URL for Logout
+
+   This URL is shown whenever a user logs out from |product| by
+   clicking on the *Logout* item in the menu appearing when clicking
+   on the account icon on the top-right corner.
+
+   It can currently be configured from the CLI only, using command
+
+   .. code:: console
+
+      zextras$ carbonio prov mcf zimbraWebClientLogoutURL "https://example.com/"
