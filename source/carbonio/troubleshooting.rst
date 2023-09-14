@@ -20,3 +20,7 @@ PostgreSQL Database Issues
 
 .. include:: /_includes/_ts/db.rst
 
+|mesh|
+======
+
+Troubleshooting for |mesh| can be found in the dedicated page :ref:`ts-mesh`.
