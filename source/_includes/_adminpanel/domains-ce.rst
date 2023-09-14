@@ -172,11 +172,10 @@ this page you see the email-address of the GALSync account, you can
 change it from external to internal, or vice versa, or both. you can
 also remove it, create it if missing, and change some of its options.
 
-
 The GALSync account is updated regularly, according to the interval
-specified in the **Settings** section of the page.
-
-
+specified in the **Settings** section of the page. Administrators can
+force a resynchronisation of all GALs defined on a domain by clicking
+the :bdg-primary-line:`RE-SYNC` button.
 
 ..
    Authentication
