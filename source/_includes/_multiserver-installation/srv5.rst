@@ -9,7 +9,8 @@ Installation of |vs|
 
 It is possible to install the |vs| without the Video Recording
 feature. If you wish to do so, follow the procedure below, but *skip
-the last step*, :ref:`video-rec-installation`.
+the last step*, :ref:`video-rec-installation`. You can always install
+it at a later point by following the procedure in
 
 First, install |vs| package
 
@@ -40,7 +41,8 @@ First, install |vs| package
 After the installation, make sure that the |vs| `public` IP address
 (i.e., the one that will accept incoming connections to the |vs|) is
 present in the configuration file :file:`/etc/janus/janus.jcfg` and
-add it if missing.
+add it if missing: find the variable ``nat_1_1_mapping`` and add it,
+for example: ``nat_1_1_mapping = "93.184.216.34"``
 
 Finally, enable and start the service with the commands
 
@@ -72,14 +74,18 @@ To implement this feature, install package
 
          # dnf install carbonio-videoserver-recorder
 
-
 The video-recording feature is enabled by default, and does not
-require configuration on this node, but in the next one. Indeed,
-it requires a node which installs the ``carbonio-advanced``
-package. The recorded sessions will be stored on that node, in
-directory :file:`/var/lib/videorecorder/`. Make sure that the
-directory has sufficient free space, otherwise recorded videos
-can not be stored.
+require configuration if installed together with the |vs|.  It does
+however require some manual command if installed at a later
+point. Please refer to Section :ref:`vs-record-meeting` for
+directions.
+
+The recorded sessions will be stored in directory
+:file:`/var/lib/videorecorder/` on **SRV3**, because the ability to
+record requires a Node which features the AppServer (i.e., on which
+the ``carbonio-advanced`` package is installed). Make sure that the
+directory has sufficient free space, otherwise recorded videos can not
+be stored.
 
 .. hint:: You can mount on that location a dedicated disk or
    partition and keep it monitored for space usage.
