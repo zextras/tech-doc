@@ -46,7 +46,7 @@ at 750 for user's total quota) to **SRV3**.
    "SRV2", "4vCPU", "10GB", "30GB"
    "SRV3", "4vCPU", "16GB", "30GB"
    "SRV4", "4vCPU", "8GB", "30GB"
-   "SRV4", "4vCPU", "8GB", "30GB"
+   "SRV5", "4vCPU", "8GB", "30GB"
 
 .. _software-requirements:
 
