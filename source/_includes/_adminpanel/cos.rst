@@ -38,11 +38,14 @@ COS, which includes also the locale. The remaining options concern
 
 * the default values or behaviour of the features: for example whether
   new e-mail contacts are added automatically to Contacts or how
-  often to check for new e-mails.
+  often to check for new e-mails
 
 * which features are available to the user: for example, whether the
   user is allowed to forward e-mails or create a filter to forward
-  specific e-mails.
+  specific e-mails
+
+* The default behaviour for sending the read receipt to the e-mail
+  sender: to always send it or not, or asking each time
 
 .. _cos-pool:
 
