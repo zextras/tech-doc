@@ -5,12 +5,10 @@
 Carbonio Changelog - Release 23.9.0
 ===================================
 
-Release Date: September 18th, 2023
-
+Release Date: September 22th, 2023
 
 New Features List
 -----------------
-
 
 **TEAMS-4100: Enhanced Room input behavior on appointment board**
    This update encompasses numerous improvements on the Appointment board, specifically targeting the behavior of inputting rooms. The enhancements aim to refine user interaction and streamline the process of selecting and managing rooms.
@@ -162,9 +160,6 @@ New Features List
 .. 
 
 
-.. 
-
-
 **AC-755: COS - Server Pools behaviour improved**
    COS - Server Pools behaviour improved now the admin can disable the sever pool
 
@@ -207,22 +202,28 @@ New Features List
 .. 
 
 
-**AC-651: Global Admin can enable an domain for delegated administration**
-   The Global Admin may now enable a domain for delegated administration and manage the delegated  admin.
-
-.. 
-
-
 **AC-630: Admin can manage custom HSM policy**
    Now, the admin can define custom HSM policies and run them at the specified time in the scheduler. They can also create for the future or bypass the creation process entirely.
 
 .. 
 
+
+**AC-571: External LDAP/AD Warning Enhancement**
+   A warning has been introduced when working with user credentials within domains that use external LDAP/AD, especially when local fallback is disabled, ensuring the admins do not attempt configurations that won't be effective.
+
+.. 
+
+
+**AC-570: domain/delegated admin cannot remove system accounts**
+   now delegated admin cannot delete system account like galsync etc. while accounts shown in list and global admin can delete system account but it's showing primary warning message before delete.
+
+.. 
+
 *****
+
 
 Bugfix List
 -----------
-
 
 **SHELL-152: Primary bar module display**
    A race condition issue has been identified and resolved in the loading process of modules
@@ -266,8 +267,8 @@ Bugfix List
 .. 
 
 
-**IRIS-4702: None**
-   None
+**IRIS-4702: Flexible inline image placement in email Compose**
+   composing new emails allows for the seamless insertion of images anywhere within the email body, be it the first line, last line, or anywhere in between.
 
 .. 
 
@@ -290,13 +291,13 @@ Bugfix List
 .. 
 
 
-**IRIS-4679: None**
-   None
+**IRIS-4679: Persona address selection enables send action**
+   Upon selecting a persona address for mail delivery, the system now accurately displays the complete name associated with the persona and enables the send option appropriately.
 
 .. 
 
 
-**IRIS-4678: Save message botton work when continue to write mail message**
+**IRIS-4678: Seamless message saving while composing email**
    While We're writing new messages in the mail editor, writing some text, and saving them I am not getting any deletation of previous text while using the save button again.
 
 .. 
@@ -530,14 +531,14 @@ Bugfix List
 .. 
 
 
-**COR-990: None**
-   None
+**COR-990: `getServer` API fixed**
+   A bug has been fixed, and now `getServer` API replies correctly to the requests.
 
 .. 
 
 
-**CO-839: None**
-   None
+**CO-839: Appointment modification fixed in CalDAV**
+   Fixed a bug that caused an error while creating, modifying or deleting an appointment from the calendar via CalDAV. Now the appointments can be created, modified and deleted successfully.
 
 .. 
 
@@ -616,4 +617,4 @@ Bugfix List
 
 *****
 
-End of Changelog
+End of of changelog
