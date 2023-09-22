@@ -133,7 +133,7 @@ settings <settings-mails>`.
 Writing e-mails
 ---------------
 
-To create a new mail, click the |new| button on the |product|'s top
+To create a new e-mail, click the |new| button on the |product|'s top
 bar. A panel containing the editor will appear, that allows to write
 an e-mail. This panel can be moved anywhere within the browser's tab
 and can be resized. Moreover, this panel is shared by the other
@@ -141,6 +141,13 @@ modules, therefore you can start multiple tasks (e.g., write or reply
 an e-mail, edit a contact, create a new calendar event) and they will
 be all shown in the same panel, which will organised with tabs that
 appear on top of the panel.
+
+While writing an e-mail, a draft is saved; when closing the panel, you
+will be asked to save it, to allow you to resume writing at a later
+time. In case any error arises that interrupts communication with the
+server (e.g., a network failure), an error message will be
+displayed. In particular, if you added a document and the upload
+fails, you need to remove it and attach it again.
 
 .. _mail-attachments:
 
