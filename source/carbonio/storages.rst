@@ -406,6 +406,8 @@ The parameters required by these commands may differ depending on the
 Hierarchical Storage Management
 ===============================
 
+.. note:: The HSM feature requires a separate license, therefore it
+   may not be available on your |carbonio| installation.
 
 .. is this still valid for carbonio?
 
@@ -430,6 +432,7 @@ based on the following premises:
 The advantages of the HSM technique are clear: Lowering the overall
 storage cost since only a small part of your data needs to be on costly
 storage, and improving the overall user experience.
+
 
 .. _pws_stores_volumes_and_policies:
 

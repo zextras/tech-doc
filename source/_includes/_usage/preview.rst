@@ -16,3 +16,9 @@ buttons (``PgUp``, ``PgDown``, ``Home``, ``End``)
 On |file|, to open a file for editing, it is necessary to right-click
 the file name, then selecting **Open Document** from the drop-down
 menu.
+
+Once a document is opened in preview mode, different actions can be
+carried out: to share, download, or print it.
+
+Depending on the browser used and its settings, the print action may
+start immediately or a print dialog will be shown.

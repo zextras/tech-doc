@@ -41,7 +41,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Release:
 
-         changelog-23.7.0
+         changelog-23.9.0
          upgrade
          older-changelogs
 
@@ -79,9 +79,7 @@ If you are looking for |ce|'s documentation, please refer to its
          /adminpanel/backup
          /adminpanel/notifications
          /adminpanel/operations
-	 /adminpanel/mta
-
-
+         /adminpanel/mta
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -102,6 +100,7 @@ If you are looking for |ce|'s documentation, please refer to its
          videoserver
          custom
          mesh
+         troubleshooting
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -113,7 +112,6 @@ If you are looking for |ce|'s documentation, please refer to its
 
          usage
          mobileapps
-
 
    .. grid-item-card::
       :columns: 12 12 6 6

@@ -18,6 +18,10 @@ without the necessity to create a new one and fill in all the
 details. This option is useful if you have to schedule recurrent
 events without a fixed schedule.
 
+When an account is configured with multiple identities, it is possible
+to choose from which one to send the invitations: the e-mail's sender
+will then be automatically filled according the identity chosen.
+
 Attendees, whose presence is either mandatory or optional, can be
 added by writing their e-mail address. If the attendee already is not
 available or has some overlapping appointment, its e-mail address will
@@ -60,3 +64,54 @@ The calendar will appear in the list of calendars, and all the
 appointments are shown; toggle their visibility clicking the
 :octicon:`tasklist;1em;sd-text-primary` checkbox.
 
+Configure a CalDAV CLient
+-------------------------
+
+Adding a |product| calendar to your favourite CalDAV client is
+straightforward and require only a few steps. The procedure is almost
+identical on any client; in the box at the end of this section we
+provide he difference.
+
+In this scenario, the user *john.smith@example.com*, and wants to
+configure in Mozilla's Thunderbird a calendar called *Calendar* on
+the domain *mail.example.com*. In the remainder, replace these values with
+suitable ones.
+
+.. card:: Step 1.  New Calendar
+
+   On your client, go to the Calendar and select **New
+   Calendar...**. Choose **On the Netxork**
+
+   .. image:: /img/usage/new-calendar.png
+      :align: center
+      :width: 40%
+
+.. card:: Step 2.
+
+   Provide the **Username** and the **Location**, which has format
+   ``https://<domain>/dav/username``, so
+   *https://mail.example.com/dav/john.smith@example.com*
+
+
+   .. image:: /img/usage/calendar-settings.png
+      :align: center
+      :width: 40%
+
+.. card:: Step 3.
+
+   You will be then presented a list, from which to choose *Calendar*.
+
+   You are now done! the calendar will show up in the list of your client.
+
+   .. image:: /img/usage/find-calendar.png
+      :align: center
+      :width: 40%
+
+.. card:: Other clients
+
+   CalDAV is a standard protocol and therefore the data required to
+   set up a client are a username, an URL, and the name of a
+   calendar. The only difference is that some client requires that the
+   calendar's name be part of the URL, so you might need to provide
+   *https://mail.example.com/dav/john.smith@example.com/Calendar* as
+   the URL.

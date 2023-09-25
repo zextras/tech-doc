@@ -9,12 +9,12 @@ Server"*), that is appropriately configured to receive log files,
 which is particularly useful in a Multi-Server installation.
 
 In the instructions below, we elect the Log Server to be
-:bdg-secondary-line:`SRV-6`.
+:bdg-secondary-line:`SRV1`.
 
 
 .. card:: Centralised Logging Setup
    
-   On :bdg-secondary-line:`SRV-6`, open file
+   On :bdg-secondary-line:`SRV1`, open file
    :file:`/etc/rsyslog.conf`, find the following lines, and uncomment
    them (i.e., remove the ``#`` character at the beginning of the
    line).
@@ -33,12 +33,12 @@ In the instructions below, we elect the Log Server to be
 
       # systemctl restart rsyslog
 
-   Finally, specify the host server that will receive logs. Since is
-   the :bdg-secondary-line:`SRV-6` node, we need |srv6h|.
+   Finally, specify the host server that will receive logs. Since this
+   is the :bdg-secondary-line:`SRV1` node, we need its hostname.
 
    .. code:: console
 
-      zextras$ carbonio prov mcf zimbraLogHostname SRV6_hostname
+      zextras$ carbonio prov mcf zimbraLogHostname srv1_hostname
 
    .. note:: Since ``zimbraLogHostname`` is a global attribute, this
       command must be run only once on one node.

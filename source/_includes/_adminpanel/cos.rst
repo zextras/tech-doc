@@ -30,12 +30,22 @@ Preferences
 (Mails, Calendar, Contacts).
 
 The first is the default language to be used by the members of the
-COS, which includes also the locale, The remaining options concern the
-appearance of |product| in web clients (for example, if e-mails are
-displayed as conversations, or the calendar shows a month or a work
-week) and governs the behaviour of some tasks carried out by the user,
-whether new e-mail contacts are added automatically to Contacts, or
-how often to check for new e-mails.
+COS, which includes also the locale. The remaining options concern
+
+* the default appearance of |product| in web clients: for example, if
+  e-mails are displayed as conversations, or the calendar shows a
+  month or a work week
+
+* the default values or behaviour of the features: for example whether
+  new e-mail contacts are added automatically to Contacts or how
+  often to check for new e-mails
+
+* which features are available to the user: for example, whether the
+  user is allowed to forward e-mails or create a filter to forward
+  specific e-mails
+
+* The default behaviour for sending the read receipt to the e-mail
+  sender: to always send it or not, or asking each time
 
 .. _cos-pool:
 
