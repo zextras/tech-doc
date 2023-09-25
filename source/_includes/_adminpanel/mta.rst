@@ -94,8 +94,8 @@ The two options on the left-hand side control when the email should be
 simply marked as spam or deleted immediately. The values for both
 options (*Low*, *Medium*, and *High*) are relative to the spam score
 assigned by SpamAssassin: a score of *20* represents *100%*. The
-**Spam to Junk tolerance** tolerance is by default (i.e., the *Medium*
-value) *33%*, while the **Block Spam tolerance** is *75%*. This means
+**Tolerance for Spam Delivery** tolerance is by default (i.e., the *Medium*
+value) *33%*, while the **Tolerance for Spam Blocking** is *75%*. This means
 that a e-mail with a spam score of ~6.6 will be marked as spam email,
 while with spam score 15 will be immediately be deleted. Changing the
 value to *Low* or *High* will reduce or raise the threshold to mark or
