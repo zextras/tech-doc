@@ -5,7 +5,7 @@
 Carbonio Changelog - Release 23.9.0
 ===================================
 
-Release Date: September 22th, 2023
+Release Date: September 25th, 2023
 
 New Features List
 -----------------
