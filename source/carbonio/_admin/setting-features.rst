@@ -11,7 +11,7 @@ the CLI, and therefore is the counterpart of |adminui| sections
 Edit <ap-accounts>`.
 
 The following attributes are available, that control if the feature is
-available to a user or COS. 
+available to a user or COS.
 
 .. list-table::
 
@@ -30,6 +30,8 @@ available to a user or COS.
    * - carbonioFeatureChatsAppEnabled: ``TRUE``
      - The |team| component is available on :ref:`mobile apps
        <mobile_apps>`.
+   * - zimbraFeatureOptionsEnabled: ``FALSE``
+     - The Settings module is available to a user.
 
 In order to modify these values, you can use or adapt the following commands
 
@@ -56,3 +58,12 @@ In order to modify these values, you can use or adapt the following commands
 
         zextras$ carbonio prov modifyCos noChat carbonioFeaturChatsEnabled FALSE
 
+   * The Settings module is available by default to all users; to hide
+     it and prevent a user to access it, use the command
+
+     .. code:: console
+
+        zextras$ carbonio prov ma user@example.com zimbraFeatureOptionsEnabled FALSE
+
+     To show it again to the user, replace **FALSE** with **TRUE** in
+     the command.
