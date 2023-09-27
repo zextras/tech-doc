@@ -20,8 +20,8 @@ Install Packages
          # dnf install service-discover-agent
          # dnf install carbonio-advanced
 
-Bootstrap |carbonio|.
-+++++++++++++++++++++
+Bootstrap |carbonio|
+++++++++++++++++++++
 
 Launch the |carbonio| bootstrap process
 
