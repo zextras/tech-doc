@@ -58,7 +58,8 @@
             max_pool=8
             reserved_connections=1" > /etc/pgpool-II/pgpool.conf
 
-#. restart the service using this command.
+#. Make sure the service is enabled and restart it using these
+   commands
 
    .. tab-set::
 
@@ -67,6 +68,7 @@
 
          .. code:: console
 
+            # systemctl enable --now pgpool2
             # systemctl restart pgpool2.service
 
       .. tab-item:: RHEL
@@ -74,4 +76,7 @@
 
          .. code:: console
 
-            # systemctl restart pgpool-II.service
+            # systemctl enable --now pgpool
+            # systemctl restart pgpool.service
+
+   
