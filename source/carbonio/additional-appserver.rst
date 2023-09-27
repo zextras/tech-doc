@@ -15,7 +15,7 @@ Before attempting to install a new AppServer, please read carefully
 the whole procedure in this page and make sure the following
 requirements are satisfied.
 
-* A Multi-Server |product| is already operating correctly
+* A |product| infrastructure is already operating correctly
 
 * A new node is available, on which to install the AppServer, which
   satisfies the :ref:`Multi Server Requirements <multi-server-req>`
