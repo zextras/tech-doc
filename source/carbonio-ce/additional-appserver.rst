@@ -22,7 +22,7 @@ requirements are satisfied.
   and on which the :ref:`multi-server-preliminary` have already been
   executed. We will call this node **SRV11**.
 
-* All commands **must be executed** as the ``zextras`` user
+* All commands **must be executed** as the ``root`` user
 
 * Give the new node a meaningful name/FQDN. We will use
   `new-appserver.example.com` whenever necessary. 
