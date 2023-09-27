@@ -1,7 +1,7 @@
 .. _add-appserver:
 
 =================================
- Install an Extra AppServer Node
+ Add an Additional AppServer Node
 =================================
 
 This section explains how to add an AppServer Node to an existing
