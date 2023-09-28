@@ -98,6 +98,7 @@ html_show_sourcelink = False
 html_static_path = ['_static']
 html_css_files = [ 'css/community.css',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' ]
+html_js_files = [ 'js/matomo.js' ]
 html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
