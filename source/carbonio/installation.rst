@@ -34,5 +34,5 @@ attempting to install.
 
    multi-server-installation
    ds-replica
-   additional-appserver
+   add-appserver
    remove-logger
