@@ -15,5 +15,6 @@ whole page before attempting to install.
    requirements
    single-server-installation
    multi-server-installation
+   add-appserver
    ds-replica
    remove-logger

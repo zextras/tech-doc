@@ -89,10 +89,10 @@ receive e-mails and to manage their calendars and contacts. They are:
       :class-body: card-magma
 
       The Application Server provides the application login to manage
-      the accounts data, e.g., emails, contacts, and calendar
-      appointments. In small environments there can be one or two
-      AppServer nodes, but more can be added to a large or growing
-      infrastructure.
+      and store the accounts data, e.g., emails, contacts, and
+      calendar appointments. In small environments there can be one or
+      two AppServer nodes, but more can be added to a large or growing
+      infrastructure.      
 
    .. grid-item-card:: |mesh|
       :columns: 12
