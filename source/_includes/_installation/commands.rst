@@ -7,25 +7,36 @@ tools like :command:`systemctl` and :command:`journalctl`, therefore
 allowing quicker analysis of the situation and check for any problem
 should arise.
 
-The syntax is the standard used by :command:`systemctl`, hence you
-can use
+The syntax is the standard used by :command:`systemctl`, hence you can
+use this command to start or stop all the ``carbonio`` units
 
 .. code:: console
 
-   # systemctl start|stop|status carbonio*
+   # systemctl start | stop carbonio*
 
-to start, stop or verify the status of all the ``carbonio`` units and
+To verify the status of all the ``carbonio`` services run command
+
+
+.. code:: console
+
+   # systemctl list-unit-files "carbonio*"
+
+More information about each unit you can run
+
+.. code:: console
+   
+   # systemctl list-units "carbonio*"
+
+
+If any service is in :red:`failed` status, restart it. For example, if
+the nginx |monit| exporter has not started you will need to run
+
+.. code:: console
+
+   # systemctl restart carbonio-prometheus-nginx-exporter.service
 
 .. code:: console
 
    # journalctl -u carbonio*
 
 to access the logs produced by all the units.
-
-To check, start, or stop  a single ``carbonio`` unit, you can receive
-a list of all |carbonio|\-related units (and their status) with the
-command below, then use only the unit that you would like to access.
-
-.. code:: console
-   
-   # systemctl list-units "carbonio*"

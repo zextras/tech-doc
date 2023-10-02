@@ -62,6 +62,10 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 *  All the commands that are mentioned in this installation procedure
    **must be executed** as the ``root`` user.
 
+* In case you experience some issues during the installation, please
+  refer to Section :ref:`cli-ts`, in which you can find helpful
+  commands.
+
 *  When the installation process has successfully finished, you can
    access |product|\'s GUI using a browser: directions can be found in
    Section :ref:`web-access`.
@@ -265,36 +269,10 @@ Activate license
 
 *****
 
-At this point the installation is complete. Before you can start using
-|product|, make sure to carry out all the tasks listed in section
-:ref:`multi-post-install`.
+At this point the installation is complete. You can access the
+|adminui| with the ``zextras`` users, provided you have followed all
+directions in Section ref:`web-access`.
 
-.. _multi-post-install:
-
-Post-Installation Tasks
-=======================
-
-The first task to carry out is to change the password of the
-``zextras`` user. This is a very important task, because this user has
-full powers over all |product| functionalities, therefore its password
-must be robust. More details and the command to change the password
-can be found in section :ref:`manage-admins`.
-
-After you change the password, log in to the |adminui|, using the
-Proxy Node's IP or hostname, at https\://srv2.example.com:6071/, with
-user ``zextras@example.com`` and password the one you just changed.
-
-If the login is successful, go to **Domains**, select the domain
-example.com, and, under the **General Settings** and define:
-
-* The **Public Server Host Name**, setting it as
-  *https://mail.example.com*
-
-* The **Public Service Port**, setting it as *443*.
-
-These two values combined represent the URL that users need
-to access to use the features of |product|.
-   
 .. _centralised-logging:
 
 Centralised Logging Configuration
