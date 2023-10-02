@@ -93,7 +93,7 @@ for the latter, the requests to the |carbonio| server must be on the path::
 
   /services/files/download/
 
-.. hint:: Use :file:`/services/files/download/{node_id}/{version} to
+.. hint:: Use :file:`/services/files/download/{node_id}/{version}` to
    download a given revision of a file.
 
 Full reference documentation is available at https://docs.zextras.com/apidoc/files_blob/.
