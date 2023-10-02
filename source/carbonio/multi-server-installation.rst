@@ -62,6 +62,10 @@ described in the :ref:`scenario <multi-server-scenario>`. A few remarks:
 *  All the commands that are mentioned in this installation procedure
    **must be executed** as the ``root`` user.
 
+* In case you experience some issues during the installation, please
+  refer to Section :ref:`cli-ts`, in which you can find helpful
+  commands.
+
 *  When the installation process has successfully finished, you can
    access |product|\'s GUI using a browser: directions can be found in
    Section :ref:`web-access`.
@@ -268,7 +272,7 @@ Activate license
 At this point the installation is complete. You can access the
 |adminui| with the ``zextras`` users, provided you have followed all
 directions in Section ref:`web-access`.
-   
+
 .. _centralised-logging:
 
 Centralised Logging Configuration
