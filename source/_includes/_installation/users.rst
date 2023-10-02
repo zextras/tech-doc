@@ -2,11 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-In order to change the password used by the
-``zextras@example.com`` user for the Web access, log in to a
-shell terminal as the ``zextras`` user and execute these two
-commands. The first allows to switch to the ``zextras`` user, with the
-second you actually change the password.
+In order to change the password used by the ``zextras@example.com``
+user for the Web access, log in to a shell terminal as the ``zextras``
+user and execute the command
 
 .. code:: console
 
