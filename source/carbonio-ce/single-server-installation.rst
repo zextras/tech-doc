@@ -67,9 +67,8 @@ Step 2: Setting Hostname
 
 .. _installation-step3:
 
-Step 3:  System Upgrade and Package Installation
+Step 3: System Upgrade and Package Installation
 ------------------------------------------------
-
 
 .. include:: /_includes/_installation/step-package-install.rst
 
