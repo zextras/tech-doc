@@ -77,6 +77,10 @@ according to the Operating System on which you are installing
 All the commands that are mentioned in this installation procedure
 **must be executed** as the ``root`` user.
 
+In case you experience some issues during the installation, please
+refer to Section :ref:`cli-ts`, in which you can find helpful
+commands.
+
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
 Section :ref:`web-access`.
@@ -212,12 +216,7 @@ The fourth and last node requires the bootstrap of |product| and the
 configuration of |mesh| and *Memcached*.
 
 .. include:: /_includes/_multiserver-installation/srv4-ce.rst
-
-|product| Management and Troubleshooting
-----------------------------------------
-
-.. include:: /_includes/_installation/commands.rst
-       
+      
 *****
 
 At this point the installation is complete. You can access the

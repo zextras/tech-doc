@@ -24,3 +24,8 @@ PostgreSQL Database Issues
 ======
 
 Troubleshooting for |mesh| can be found in the dedicated page :ref:`ts-mesh`.
+
+.. _cli-ts:
+
+System Troubleshooting
+======================

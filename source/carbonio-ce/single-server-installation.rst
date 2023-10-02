@@ -17,6 +17,10 @@ When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
 Section :ref:`web-access`.
 
+In case you experience some issues during the installation, please
+refer to Section :ref:`cli-ts`, in which you can find helpful
+commands.
+
 .. _rhel-pg:
 
 Preliminary Task
@@ -124,8 +128,3 @@ Step 8: Bootstrap |file| Databases
 .. include:: /_includes/_installation/step-conf-files-ce.rst
 
 .. include:: /_includes/_installation/complete.rst
-
-|product| Management and Troubleshooting
-----------------------------------------
-
-.. include:: /_includes/_installation/commands.rst
