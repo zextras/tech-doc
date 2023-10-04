@@ -32,7 +32,7 @@ must be ent to the server through the `Cookie` header::
 
   Content-Type: application/json; charset=utf-8
   Cookie: ZM_AUTH_TOKEN=0_65fe52ea9ff1793c7...3719888
-  
+
 API Requests Structure
 ======================
 
@@ -42,11 +42,149 @@ POST** requests to the |carbonio| server on the path::
 
   /services/files/graphql
 
-The body of the request is a JSON-encoded object containing a GraphQL
-query, the variables, and the operation name. The reference
-documentation for the Files GraphQL API is available at
+The body of the request is a JSON-encoded object containing the
+operation name, the variables involved and some limitations on them,
+and a GraphQL query. A few examples requests are shown below; details
+about the elements follow in the next section, while the reference
+documentation for the |file| GraphQL API is available at
 https://docs.zextras.com/apidoc/files_meta/.
 
+.. card:: Example 1: List all root nodes
+
+   This is one of the simplest examples: we use the ``getRootsList``
+   method to retrieve the root nodes, with no variables:
+
+   .. code-block::
+
+      {
+        "operationName": "getRootsList",
+        "variables":
+          {},
+        "query": $query
+      }
+
+   Here, *$query* is a string:
+
+   .. code-block::
+
+      query getRootsList {
+         getRootsList { id name }
+      }
+
+   The output of this Request is similar to the following
+
+   .. code::
+
+      {
+        "data": {
+          "getRootsList": [
+            {
+              "id": "LOCAL_ROOT",
+              "name": "ROOT"
+            },
+            {
+              "id": "TRASH_ROOT",
+              "name": "TRASH"
+            }
+          ]
+        }
+      }
+
+.. card:: Example 2: List a node and its children
+
+   This example gets a node and in case it is a folder, also all its
+   children. We choose **LOCAL_ROOT** as ``node_id`` and limit the
+   output to the first **100** results. We also want the output to
+   contain a few information about the returned files: extension,
+   mime_type, size, and version.
+
+   .. code-block::
+
+      {
+        "operationName": "getNodeAndChildren",
+        "variables": {
+          "limit": 100,
+           "node_id": "LOCAL_ROOT",
+           "sort": "NAME_ASC"
+        },
+        "query": $query
+      }
+
+   In this case, *$query* is a complex string (split in four snippets
+   for simplicity)
+
+   .. code-block::
+
+      query getNodeAndChildren($node_id: ID!, $limit: Int!, $sort: NodeSort!) {
+          getNode(node_id: $node_id) {
+              id
+              name
+              type
+              ...Children
+          }
+      }
+
+   .. code-block::
+
+      fragment Child on Node {
+          id
+          name
+          type
+          ...FileAttributes
+      }
+
+   .. code-block::
+
+      fragment Children on Folder {
+          children(limit: $limit, sort: $sort) {
+              nodes {
+                  ...Child
+              }
+          }
+      }
+
+   .. code-block::
+
+      fragment FileAttributes on File {
+          extension
+          mime_type
+          size
+          version
+      }
+
+   The output of this request is similar to the following one (output
+   shortened for simpicity)
+
+   .. code-block::
+
+      {
+        "data": {
+          "getNode": {
+            "id": "LOCAL_ROOT",
+            "name": "ROOT",
+            "type": "ROOT",
+            "children": {
+              "nodes": [
+                {
+                  "id": "f8b3b0ae-2673-444a-9da0-642fac651f96",
+                  "name": "Carbonio_tutorials",
+                  "type": "FOLDER"
+                },
+                {
+                  "id": "650825c3-9c75-44db-a8df-d4fc9177d08d",
+                  "name": "carbonio_commands.txt",
+                  "type": "TEXT",
+                  "extension": "txt",
+                  "mime_type": "text/plain",
+                  "size": 40.0,
+                  "version": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+      
 Queries
 -------
 
