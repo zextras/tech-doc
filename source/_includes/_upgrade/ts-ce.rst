@@ -12,7 +12,7 @@ bootstrap the Database, by running the command.
 
 .. code:: console
 
-   # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 In the above command, |dbadmpwd| is the the password of the
 ``carbonio_adm`` database role, that is, the one created during
