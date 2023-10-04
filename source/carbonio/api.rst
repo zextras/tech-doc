@@ -17,6 +17,8 @@ documentation, follow the URLS:
 * `Carbonio Files blob <../../apidoc/files_blob/index.html>`_, for
   managing the uploading, downloading of BLOB files and links to them
 
+  .. hint:: An How-to for the |file| API is available :ref:`api-files-howto`.
+
 * `Carbonio Files metadata <../../apidoc/files_meta/index.html>`_
   metadata API
 
