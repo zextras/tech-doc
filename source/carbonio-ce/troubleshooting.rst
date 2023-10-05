@@ -29,3 +29,5 @@ Troubleshooting for |mesh| can be found in the dedicated page :ref:`ts-mesh`.
 
 System Troubleshooting
 ======================
+
+.. include:: /_includes/_installation/commands.rst
