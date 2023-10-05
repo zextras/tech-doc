@@ -1153,10 +1153,11 @@ address and either their password or a dedicated Mobile Password.)
 To allow seamless connection to the service, it is necessary to make
 sure that incoming request to port **8636** to the domain (e.g.,
 *mail.example.com*) are correctly forwarded to the Proxy node. In
-other words, assuming that mail.example.com is the Node exposed to the
-Internet and proxy.example.com the Proxy Node, then all incoming
+other words, assuming that mail.example.com is the Public Service
+Hostname and the Proxy Node is the one in our five Nodes installation
+Scenario (i.e., :ref:`SRV2 <srv2-install>`) , then all incoming
 connections to *mail.example.com:8636* must be forwarded to
-*proxy.example.com:8636*.
+*srv2.example.com:8636*.
 
 .. _contacts_and_address_books:
 
