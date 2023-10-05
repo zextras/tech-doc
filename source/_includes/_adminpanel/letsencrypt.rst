@@ -34,11 +34,11 @@
 
          zextras$ carbonio prov mcf zimbraReverseProxyMailMode redirect
 
-   #. Temporarily unset the attribute on the Proxy Nodes
+   #. Unset the attribute on the Proxy Nodes
       
       .. code:: console
 
-         zextras$ carbonio prov ms zimbraReverseProxyMailMode ""
+         zextras$ carbonio prov ms $(zmhostname) zimbraReverseProxyMailMode ""
 
    #. (Optional) To receive e-mail responses from Let's Encrypt,
       |carbonio| attributes ``carbonioNotificationRecipients`` and

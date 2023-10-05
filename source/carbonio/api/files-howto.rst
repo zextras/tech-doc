@@ -27,8 +27,8 @@ This call returns an ``AuthResponse`` containing the token::
     <authToken>0_65fe52ea9ff1793c7...3719888</authToken>
   </AuthResponse>
 
-The token must be used on every REST request as a *cookie*, ie., it
-must be ent to the server through the `Cookie` header::
+The token must be used on every REST request as a *cookie*, i.e., it
+must be sent to the server through the `Cookie` header::
 
   Content-Type: application/json; charset=utf-8
   Cookie: ZM_AUTH_TOKEN=0_65fe52ea9ff1793c7...3719888
