@@ -8,7 +8,7 @@ we configure the database of |file|. First, we bootstrap the database.
 
 .. code:: console
 
-     # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 Then restart the main mailbox process as the ``zextras`` user.
 
