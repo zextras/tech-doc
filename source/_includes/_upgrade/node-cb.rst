@@ -69,19 +69,19 @@ installation.
 
         .. code:: console
 
-           # PGPASSWORD=DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+           # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
       * |file|
 
         .. code:: console
 
-           # PGPASSWORD=DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+           # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
       * |docs|
 
         .. code:: console
 
-           # PGPASSWORD=DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+           # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
    .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
