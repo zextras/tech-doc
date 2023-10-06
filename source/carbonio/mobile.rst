@@ -1136,7 +1136,7 @@ the Administrator.
 This service is the core of the LDAP Address Book feature, as it
 provides the endpoint to which the Outlook clients connect.
 
-The service is exposed on port **8636** of all mailbox services and uses the
+The service is exposed on port **8636** and uses the
 **SSL encryption protocol**.
 
 This endpoint is read-only, to improve the system’s security.
