@@ -1147,31 +1147,17 @@ Accessing the LDAP Address Book
 -------------------------------
 
 The LDAP Address Book can be only accessed by Outlook clients through
-the same credentials used for Exchange ActiveSync connection (email
+the same credentials used for Exchange ActiveSync connection (e-mail
 address and either their password or a dedicated Mobile Password.)
 
-Clients can reach the service by contacting port **8636** of the
-mailbox server hosting their mailbox.
-
-.. warning:: Since it is not possible to route requests through the
-   NGINX web server installed on |product|, the connection must be
-   established to the exact server and not the system’s general FQDN.
-
-Another options would be to define custom firewall rules to forward
-port 8636 from the proxy to the AppServer, as explained in the
-procedure below, which requires to modify some system files and
-assumes the mailbox server is located at the local IP **10.129.67.1**.
-
-1. Enable **IPv4 IP forwarding**
-
-2. Add these firewall rules to the iptables script of your proxy:
-
-   .. code:: bash
-
-      -t nat -A PREROUTING -p tcp --dport 8636 -j DNAT --to-destination 10.129.67.1:8636
-      -A FORWARD -p tcp --dport 8636 -m state --state -NEW,ESTABLISHED,RELATED -j ACCEPT
-
-   .. note:: The second rule is only needed if your default is rejected.
+To allow seamless connection to the service, it is necessary to make
+sure that incoming request to port **8636** to the domain (e.g.,
+*mail.example.com*) are correctly forwarded to the Proxy node. In
+other words, assuming that mail.example.com is the Public Service
+Hostname and the Proxy Node is the one in our five Nodes installation
+Scenario (i.e., :ref:`SRV2 <srv2-install>`) , then all incoming
+connections to *mail.example.com:8636* must be forwarded to
+*srv2.example.com:8636*.
 
 .. _contacts_and_address_books:
 
