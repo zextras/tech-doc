@@ -3,7 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 Remember to start the upgrade from the node featuring the Directory
-Server (:bdg-secondary-line:`SRV2` in our
+Server (:bdg-secondary-line:`SRV1` in our
 :ref:`multi-server-scenario`), then all the other in the same order of
 installation.
 
