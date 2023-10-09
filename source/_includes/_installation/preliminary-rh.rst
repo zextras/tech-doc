@@ -16,23 +16,12 @@ before attempting the installation.
 
      # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
-.. card:: SELinux and Firewall
+.. card:: SELinux 
 
-   SELinux
-      Must be set to **disabled** or **permissive** in file
-      :file:`/etc/selinux/config`. You can check the current profile
-      using the command
+   SELinux Must be set to **disabled** or **permissive** in file
+   :file:`/etc/selinux/config`. You can check the current profile
+   using the command
 
-      .. code:: console
+   .. code:: console
 
-         # sestatus
-
-   Firewall  
-      All the ports needed by |product| are open on the firewall or
-      the firewall is **disabled**. To disable the firewall, issue the
-      commands
-
-      .. code:: console
-
-         # systemctl stop firewalld.service
-         # systemctl disable firewalld.service
+      # sestatus

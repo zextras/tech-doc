@@ -43,3 +43,9 @@ Set up |mesh|
 +++++++++++++
 
 .. include:: /_includes/_multiserver-installation/mesh-agent.rst
+
+Finally, restart service
+
+.. code:: console
+
+   # su - zextras -c "zmcontrol restart"

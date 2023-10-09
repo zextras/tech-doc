@@ -50,6 +50,10 @@ The following is a list of requirements that are required for
   **443/https** to the node installing the Proxy (SRV2) to allow users
   to access their webmail from a remote location
 
+* In case there are problems in the internal network communication,
+  try to disable the firewall and try again: if it works, there was
+  probably some firewall rule preventing communication.
+
 * If you plan to enable other protocols (e.g., POP, IMAP) you should
   forward also these ports accordingly. You can refer to section
   :ref:`fw-ports` for a list. Do not open these ports if you do not
