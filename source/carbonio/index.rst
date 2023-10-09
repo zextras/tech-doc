@@ -41,7 +41,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Release:
 
-         changelog-23.9.0
+         changelog-latest
          upgrade
          older-changelogs
 
