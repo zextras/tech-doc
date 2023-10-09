@@ -18,11 +18,10 @@ before attempting the installation.
 
 .. card:: SELinux 
 
-   SELinux
-      Must be set to **disabled** or **permissive** in file
-      :file:`/etc/selinux/config`. You can check the current profile
-      using the command
+   SELinux Must be set to **disabled** or **permissive** in file
+   :file:`/etc/selinux/config`. You can check the current profile
+   using the command
 
-      .. code:: console
+   .. code:: console
 
-         # sestatus
+      # sestatus
