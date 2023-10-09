@@ -194,7 +194,10 @@ Additional Requirements
 
 * Depending on the Roles installed on each Node, you need to open in
   your firewall the ports listed in ref:`fw-ports` for all the
-  services you will offer.
+  services you will offer. In case there are problems in the internal
+  network communication, try to disable the firewall and try again: if
+  it works, there was probably some firewall rule preventing
+  communication.
 
 * If none of the nodes is exposed to the Internet, you need to forward
   two ports from the public IP: port **25/smtp** to the Node featuring

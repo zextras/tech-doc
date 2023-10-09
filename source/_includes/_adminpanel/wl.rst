@@ -122,9 +122,9 @@ mandatory to keep in sync the resources on all the Proxies instances.
       **maximum** requirements.
 
       * The format must be **JPG**
-      * The dimensions must be at least **1920x1050** pixel, with
+      * The dimensions must be at least **1920x1080** pixel, with
         ratio **16:9**
-      * The size must be **800** Kb
+      * The suggested size is **800** Kb
 
 All customisations can be removed at once by clicking the
 :bdg-danger-line:`RESET` button.
