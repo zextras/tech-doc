@@ -68,19 +68,19 @@ Configure a CalDAV CLient
 -------------------------
 
 Adding a |product| calendar to your favourite CalDAV client is
-straightforward and require only a few steps. The procedure is almost
+straightforward and requires only a few steps. The procedure is almost
 identical on any client; in the box at the end of this section we
-provide he difference.
+mention which are the differences.
 
-In this scenario, the user *john.smith@example.com*, and wants to
-configure in Mozilla's Thunderbird a calendar called *Calendar* on
-the domain *mail.example.com*. In the remainder, replace these values with
+In this scenario, the user *john.smith@example.com* wants to configure
+in Mozilla's Thunderbird a calendar called *Calendar* on the domain
+*mail.example.com*. In the remainder, replace these values with
 suitable ones.
 
 .. card:: Step 1.  New Calendar
 
    On your client, go to the Calendar and select **New
-   Calendar...**. Choose **On the Netxork**
+   Calendar...**. Choose **On the Network**
 
    .. image:: /img/usage/new-calendar.png
       :align: center
