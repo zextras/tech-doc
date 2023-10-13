@@ -37,3 +37,51 @@ You can search among contacts using the :ref:`search bar
 <global-search>`. You can then refine your search by clicking the
 :bdg-primary:`ADVANCED FILTER` button. Here you can also choose to
 include shared address books in the search.
+
+Configure a CardDav Client
+--------------------------
+
+Adding a |product| address book to your favourite CardDAV client is
+straightforward and requires only a few steps.
+
+In this scenario, the user *john.smith@example.com* wants to import
+in Mozilla's Thunderbird an address book from on the domain
+*mail.example.com*. In the remainder, replace these values with
+suitable ones.
+
+.. card:: Step 1. New Address book
+
+   On your client, go to the Calendar and select **New Address Book**,
+   providing the **Username** and the **Location**, which has format
+   ``https://<domain>/dav/username``, so
+   *https://mail.example.com/dav/john.smith@example.com*
+ 
+   .. image:: /img/usage/new-addressbook.png
+      :align: center
+      :width: 40%
+
+.. card:: Step 2. Insert credentials
+
+   Authenticate co |product| by inserting the username and password
+   to access the address book.
+   
+   .. image:: /img/usage/credential-addressbook.png
+      :align: center
+      :width: 40%
+
+.. card:: Step 3. Select Address Books
+
+   You will be then presented a list, from which to choose the address
+   books to import in the client.
+
+   .. image:: /img/usage/choose-addressbook.png
+      :align: center
+      :width: 40%
+
+.. card:: Other clients
+
+   You are now done! The imported address books will show up in the list of your client.
+
+   .. image:: /img/usage/addressbook-client.png
+      :align: center
+      :width: 40%
