@@ -20,7 +20,12 @@ Features
 most used components of |product|, both via browser and :ref:`mobile
 apps <mobile_apps>`. The Administrator can prevent users to even
 access the `Settings` module, meaning that the user can not customise
-anything in the web mail's :ref:`settings-comp`.
+anything in the web mail's :ref:`settings-comp`. This proves useful in
+some scenarios: for example, an organisation wants that all the
+communication of its employees has the same branding (including also Out Of
+Office replies, the visible name of the sender, and other); another
+needs that the e-mails be encrypted and does not want users to send
+plain-text e-mails, and so on.
 
 .. hint:: Some of them can be enabled or disabled via CLI: please
    refer to section :ref:`cli-features` for more information.
