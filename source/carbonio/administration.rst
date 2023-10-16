@@ -24,6 +24,9 @@ administration of a |product| server.
 :ref:`cli-features` explains how to set or check if Mails and Files
 components are enabled for a user or a COS.
 
+:ref:`cli-billing-data` shows how to retrieve or delete billing data
+on the domains configured on |product|. 
+
 .. toctree::
    :hidden:
 
@@ -32,3 +35,4 @@ components are enabled for a user or a COS.
    _admin/domainlimits
    _admin/advancedadmin
    _admin/setting-features
+   _admin/billing-data
