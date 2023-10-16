@@ -18,8 +18,13 @@ Features
 
 *Features* are settings that allow or forbid the user to access the
 most used components of |product|, both via browser and :ref:`mobile
-apps <mobile_apps>`. Some of them can be enabled or disabled via CLI:
-please refer to section :ref:`cli-features` for more information.
+apps <mobile_apps>`. The Administrator can prevent users to even
+access the `Settings` module, meaning that the user can not customise
+anything in the web mail's :ref:`settings-comp`.
+
+.. hint:: Some of them can be enabled or disabled via CLI: please
+   refer to section :ref:`cli-features` for more information.
+
 
 .. _cos-prefs:
 
