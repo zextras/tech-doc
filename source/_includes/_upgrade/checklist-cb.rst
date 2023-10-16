@@ -24,3 +24,7 @@ when asked to replace the configuration file.
 :octicon:`check-circle;1em;sd-text-success` the ``carbonio-docs-core``
 package. On **RHEL 8 only**, you might encounter some minor problem,
 whose solution can be found in section :ref:`upgrade-ts`.
+
+:octivon:`check-circle;1em;sd-text-success` logging out from
+|product|, as either the admin and the user, in now managed by the
+same endpoint, ``/logout``, i.e., `https://mail.example.com/logout`.
