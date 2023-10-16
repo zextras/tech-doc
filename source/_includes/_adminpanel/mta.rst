@@ -129,3 +129,14 @@ button.
 
 Frequency of signatures update from the mirror can be defined next, and
 tuned from a few seconds to several weeks.
+
+.. _ap-mta-stats:
+
+Stats
+-----
+
+This page lists statistics about the messages managed by the MTA
+system, according to their status. The timestamp of the last update
+appears, as well as two button that allow to
+:bdg-primary-line:`RESTART SCAN` or to manually
+:bdg-primary-line:`FLUSH QUEUES`.
