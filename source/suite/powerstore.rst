@@ -1510,7 +1510,7 @@ the same Zimbra infrastructure.
 
 .. dropdown:: ``zxsuite powerstore doMailboxMove``
    
-   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doCheckBlobs.rst
+   .. include:: /cli/ZxPowerstore/zxsuite_powerstore_doMailboxMove.rst
 
 When the command is executed, it will carry out a number of task:
 

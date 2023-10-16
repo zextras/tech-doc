@@ -772,10 +772,11 @@ restored items will be created in the current primary store unless the
 To start the procedure, type an e-mail address in the text-field or
 select an account from the list.
 
-Then, click on the `CONFIG` tab and select the options to apply for
+Then, click on the :blue:`CONFIG` tab and select the options to apply for
 the Restore:
 
 * To which date and time to restore the account
+* On which domain the account should be restored
 * Whether to use the last available status of the account
 * If External Data Sources should be restored
 * Select an e-mail to which send a notification of the successful
