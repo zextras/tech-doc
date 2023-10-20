@@ -24,6 +24,11 @@ requirements are satisfied.
 
 * All commands **must be executed** as the ``root`` user
 
+Installation Scenarios
+----------------------
+
+.. include:: _includes/_multiserver-installation/scenario-proxy.rst
+
 Install Packages
 ----------------
 
@@ -112,10 +117,13 @@ The output should include the new node, for example::
    srv1.example.com
    srv2.example.com
    ...
-   srv11.example.com
+   srv12.example.com
 
 To check whether all the services are running, use command
 
 .. code:: console
 
    # su - zextras -c "zmcontrol status"
+
+
+
