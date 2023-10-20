@@ -24,6 +24,11 @@ requirements are satisfied.
 
 * All commands **must be executed** as the ``root`` user
 
+Installation Scenarios
+----------------------
+
+.. include:: _includes/_multiserver-installation/scenario-proxy.rst
+
 Install Packages
 ----------------
 
