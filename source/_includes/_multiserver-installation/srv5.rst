@@ -90,7 +90,7 @@ be stored.
 .. hint:: You can mount on that location a dedicated disk or
    partition and keep it monitored for space usage.
 
-Bootstrap |carbonio|.
+Bootstrap |carbonio|
 +++++++++++++++++++++
 
 Launch the |carbonio| bootstrap process

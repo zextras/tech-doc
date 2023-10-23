@@ -16,5 +16,6 @@ whole page before attempting to install.
    single-server-installation
    multi-server-installation
    add-appserver
+   add-proxy
    ds-replica
    remove-logger
