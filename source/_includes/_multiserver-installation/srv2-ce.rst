@@ -21,7 +21,7 @@
 
 The following tasks must be executed to configure the MTA.
 
-Bootstrap |carbonio|.
+Bootstrap |carbonio|
 +++++++++++++++++++++
 
 Launch the |carbonio| bootstrap process

@@ -27,7 +27,7 @@ Package installation
          carbonio-docs-editor
 
 
-Bootstrap |carbonio|.
+Bootstrap |carbonio|
 +++++++++++++++++++++
 
 Launch the |carbonio| bootstrap process
