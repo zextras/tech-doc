@@ -4,4 +4,4 @@
 Storage
 =======
 
-.. include:: /_includes/_adminpanel/storage.rst
+.. include:: /_includes/_adminpanel/storage-ce.rst
