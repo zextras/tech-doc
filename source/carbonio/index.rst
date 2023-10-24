@@ -97,8 +97,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 2
          :caption: Use:
 
-         usage
-         mobileapps
+         usage/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
