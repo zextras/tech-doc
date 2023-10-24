@@ -14,7 +14,7 @@
 This is the documentation of |carbonio|, the fully private digital
 workplace.
 
-The content is organised in four parts:
+The content is organised in multiple parts:
 
 * Release. List of issues fixed in the current release of |product|
   and directions to carry out the upgrade
@@ -41,9 +41,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Release:
 
-         changelog-latest
-         upgrade
-         older-changelogs
+         release/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
