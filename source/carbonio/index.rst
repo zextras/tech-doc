@@ -119,5 +119,4 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Develop:
 
-         api
-         api/files-howto.rst
+         develop/toc
