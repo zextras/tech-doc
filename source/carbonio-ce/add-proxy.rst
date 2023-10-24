@@ -11,7 +11,7 @@ grows and you need to scale up your infrastructure.
 Preliminaries
 -------------
 
-Before attempting to install a new AppServer, please read carefully
+Before attempting to install a new Proxy Node, please read carefully
 the whole procedure in this page and make sure the following
 requirements are satisfied.
 
