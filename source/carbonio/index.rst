@@ -77,17 +77,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :includehidden:
          :caption: Admin by CLI:
 
-         shell
-         administration
-         backup
-         restorestrategies
-         advancedbackup
-         mobile
-         storages
-         videoserver
-         custom
-         mesh
-         troubleshooting
+         admincli/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6

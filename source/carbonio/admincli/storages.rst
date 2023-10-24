@@ -1069,7 +1069,7 @@ Running a Volume Deduplication
       To run a volume deduplication through the CLI, use the :command:`carbonio
       powerstore doDeduplicate` command.
 
-      .. include:: carboniocli/carbonio_powerstore_doDeduplicate.rst
+      .. include:: /_includes/_carboniocli/carbonio_powerstore_doDeduplicate.rst
 
 To list all available volumes, you can use the :command:`carbonio
 getAllVolumes` command.
@@ -1169,7 +1169,7 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: carboniocli/carbonio_powerstore_doCheckBlobs.rst
+         .. include:: /_includes/_carboniocli/carbonio_powerstore_doCheckBlobs.rst
 
       .. rubric:: Description and Tips
 
@@ -1206,7 +1206,7 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: carboniocli/carbonio_powerstore_doDeduplicate.rst
+         .. include:: /_includes/_carboniocli/carbonio_powerstore_doDeduplicate.rst
 
    .. grid-item-card::
       :columns: 6
@@ -1217,7 +1217,7 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: carboniocli/carbonio_powerstore_doVolumeToVolumeMove.rst
+         .. include:: /_includes/_carboniocli/carbonio_powerstore_doVolumeToVolumeMove.rst
 
       .. rubric:: **Description and Tips**
 
@@ -1247,7 +1247,7 @@ of thereby contained items/blobs.
 
       .. dropdown:: CLI full reference
 
-         .. include:: carboniocli/carbonio_powerstore_getVolumeStats.rst
+         .. include:: /_includes/_carboniocli/carbonio_powerstore_getVolumeStats.rst
 
       .. rubric:: **Description and Tips**
 

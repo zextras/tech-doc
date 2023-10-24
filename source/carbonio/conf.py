@@ -66,7 +66,8 @@ templates_path = ['_templates']
 exclude_patterns = [ '_includes', 'cli', 'glossary.rst',
                      'common/carbonio/adminpanel',
                      'common/carbonio/usage',
-                     '_admin/delegatedadmin.rst' ]
+                     'common/carbonio/mesh',
+                     'admincli/administration/delegatedadmin.rst' ]
 
 rst_prolog = """
 

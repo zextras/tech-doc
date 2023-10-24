@@ -23,7 +23,7 @@ the ``zextras`` user and are summarised below.
 
       .. card::
 
-         .. include:: /carboniocli/admin/carbonio_admin_doAddDelegationSettings.rst
+         .. include:: /_includes/_carboniocli/carbonio_admin_doAddDelegationSettings.rst
 
    .. grid-item:: **Edit Rights**
       :columns: 12 12 12 6
@@ -33,7 +33,7 @@ the ``zextras`` user and are summarised below.
 
       .. card::
 
-         .. include:: /carboniocli/admin/carbonio_admin_doEditDelegationSettings.rst
+         .. include:: /_includes/_carboniocli/carbonio_admin_doEditDelegationSettings.rst
 
    .. grid-item:: **Revoke Rights**
       :columns: 12 12 12 12 
@@ -43,7 +43,7 @@ the ``zextras`` user and are summarised below.
 
       .. card::
 
-         .. include:: /carboniocli/admin/carbonio_admin_doRemoveDelegationSettings.rst
+         .. include:: /_includes/_carboniocli/carbonio_admin_doRemoveDelegationSettings.rst
 
 |carbonio| Administration as a Delegated Admin
 ----------------------------------------------
