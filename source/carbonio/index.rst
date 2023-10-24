@@ -38,7 +38,7 @@ If you are looking for |ce|'s documentation, please refer to its
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
          :caption: Release:
 
          release/toc
@@ -64,20 +64,9 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :includehidden:
          :caption: Admin by GUI:
 
-         /adminpanel/introduction
-         /adminpanel/whitelabelling
-         /adminpanel/domains
-         /adminpanel/cos
-         /adminpanel/storage
-         /adminpanel/subscriptions
-         /adminpanel/privacy
-         /adminpanel/backup
-         /adminpanel/notifications
-         /adminpanel/operations
-         /adminpanel/mta
+         adminpanel/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
