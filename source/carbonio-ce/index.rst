@@ -73,7 +73,6 @@ If you are looking for |carbonio|'s documentation, please refer to its
          /adminpanel/introduction
          /adminpanel/domains
          /adminpanel/cos
-         /adminpanel/storage
          /adminpanel/privacy
          /adminpanel/notifications
          /adminpanel/mta
