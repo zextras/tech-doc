@@ -30,3 +30,4 @@ languages
 
       * Polish
       * Turkish
+      * Hungarian
