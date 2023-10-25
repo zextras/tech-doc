@@ -33,6 +33,17 @@ If you are looking for |ce|'s documentation, please refer to its
 .. grid:: 1 2 2 3
    :gutter: 3
 
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+         :caption: Introduction:
+
+         basics/general
+
    .. grid-item-card::
       :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
@@ -51,7 +62,6 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 2
          :caption: Install:
 
-         general
          architecture
          installation
          common/carbonio/web-access
