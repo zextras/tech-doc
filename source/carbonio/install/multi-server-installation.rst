@@ -2,6 +2,8 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _multi-server-introduction:
+
 ==========================
  |product| Installation
 ==========================
@@ -30,10 +32,15 @@ attempting to install.
    scenario we describe below can be modified at will by installing a
    *Role* on a different node (or even on a dedicated node).
 
-.. toctree::
 
-   multi-server-installation
-   ds-replica
-   add-appserver
-   add-proxy
-   remove-logger
+.. toctree::
+   :maxdepth: 1
+
+   multi/scenario
+   multi/requirements
+   multi/preliminary
+   multi/nodes
+   multi/management
+   multi/license
+   multi/logging
+   multi/administrators

@@ -67,6 +67,7 @@ exclude_patterns = [ '_includes', 'cli', 'glossary.rst',
                      'common/carbonio/adminpanel',
                      'common/carbonio/usage',
                      'common/carbonio/mesh',
+                     'common/carbonio/web-access.rst',
                      'admincli/administration/delegatedadmin.rst' ]
 
 rst_prolog = """
