@@ -5,8 +5,7 @@
 ==================
 
 This section explains how to add a Proxy Node to an existing
-|product| installation. This is useful when the number of mailboxes
-grows and you need to scale up your infrastructure.
+|product| installation. 
 
 Preliminaries
 -------------
@@ -117,7 +116,7 @@ The output should include the new node, for example::
    srv1.example.com
    srv2.example.com
    ...
-   srv11.example.com
+   srv12.example.com
 
 To check whether all the services are running, use command
 
