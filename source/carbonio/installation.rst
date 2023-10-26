@@ -35,4 +35,5 @@ attempting to install.
    multi-server-installation
    ds-replica
    add-appserver
+   add-proxy
    remove-logger

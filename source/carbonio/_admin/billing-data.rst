@@ -24,8 +24,7 @@ active in the month of September 2023
 
 .. code:: console
           
-   zextras$ carbonio admin getUsageData date_start '2023-09-01'
-   date_end '2023-10-01' data_format JSON
+   zextras$ carbonio admin getUsageData date_start '2023-09-01' date_end '2023-10-01' data_format JSON
 
 An excerpt of the output is::
   
@@ -62,5 +61,4 @@ The following command deletes all the data of the month of September 2023
 
 .. code:: console
           
-   zextras$ carbonio admin deleteUsageData date_start '2023-09-01'
-   date_end '2023-10-01'
+   zextras$ carbonio admin deleteUsageData date_start '2023-09-01' date_end '2023-10-01'
