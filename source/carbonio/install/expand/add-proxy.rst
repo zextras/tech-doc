@@ -11,7 +11,7 @@ grows and you need to scale up your infrastructure.
 Preliminaries
 -------------
 
-Before attempting to install a new Proxy Node, please read carefully
+Before attempting to install a new AppServer, please read carefully
 the whole procedure in this page and make sure the following
 requirements are satisfied.
 
@@ -27,7 +27,7 @@ requirements are satisfied.
 Installation Scenarios
 ----------------------
 
-.. include:: _includes/_multiserver-installation/scenario-proxy.rst
+.. include:: /_includes/_multiserver-installation/scenario-proxy.rst
 
 Install Packages
 ----------------

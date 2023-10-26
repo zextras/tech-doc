@@ -47,7 +47,7 @@ following commands can be used.
 
       .. card::
 
-         .. include:: /carboniocli/carbonio_admin_setDomainSettings.rst
+         .. include:: /_includes/_carboniocli/carbonio_admin_setDomainSettings.rst
 
    .. grid-item-card::
       :columns: 6
@@ -62,4 +62,4 @@ following commands can be used.
 
       .. card::
 
-         .. include:: /carboniocli/carbonio_admin_resetDomainSettings.rst
+         .. include:: /_includes/_carboniocli/carbonio_admin_resetDomainSettings.rst

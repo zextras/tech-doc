@@ -8,7 +8,7 @@ configured in few steps.
 
 .. note:: If you are running |product| on RHEL 8, make sure you
    installed and configured PostgreSQL 12 according to the instruction
-   in section :ref:`rhel-pg`.
+   in section :ref:`multi-server-preliminary`.
 
 We start by defining a *robust password* for PostgreSQL's
 administrative user.

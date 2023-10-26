@@ -30,9 +30,9 @@ on the domains configured on |product|.
 .. toctree::
    :hidden:
 
-   _admin/auth
-   _admin/managealias
-   _admin/domainlimits
-   _admin/advancedadmin
-   _admin/setting-features
-   _admin/billing-data
+   administration/auth
+   administration/managealias
+   administration/domainlimits
+   administration/advancedadmin
+   administration/setting-features
+   administration/billing-data

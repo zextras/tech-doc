@@ -11,7 +11,7 @@
    .. tab-item:: RHEL
       :sync: rhel
 
-      .. include:: _includes/_installation/rhel-pg.rst
+      .. include:: /_includes/_installation/rhel-pg.rst
 
 .. include:: /_includes/_installation/step-conf-db.rst
 

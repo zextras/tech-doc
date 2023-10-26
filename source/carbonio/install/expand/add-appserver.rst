@@ -27,7 +27,7 @@ requirements are satisfied.
 The procedure to follow is straightforward and identical to the
 :ref:`srv3-install` Node.
 
-.. include:: _includes/_multiserver-installation/srv3.rst
+.. include:: /_includes/_multiserver-installation/srv3.rst
 
 Complete Installation
 ---------------------
