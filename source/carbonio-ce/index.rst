@@ -42,9 +42,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Release:
 
-         Changelog <changelog>
-         upgrade
-
+         release/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
