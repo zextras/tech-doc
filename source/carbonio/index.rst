@@ -14,7 +14,7 @@
 This is the documentation of |carbonio|, the fully private digital
 workplace.
 
-The content is organised in four parts:
+The content is organised in multiple parts:
 
 * Release. List of issues fixed in the current release of |product|
   and directions to carry out the upgrade
@@ -33,17 +33,26 @@ If you are looking for |ce|'s documentation, please refer to its
 .. grid:: 1 2 2 3
    :gutter: 3
 
+
    .. grid-item-card::
       :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
       .. toctree::
-         :maxdepth: 1
+         :maxdepth: 2
+         :caption: Introduction:
+
+         basics/general
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
          :caption: Release:
 
-         changelog-latest
-         upgrade
-         older-changelogs
+         release/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -53,12 +62,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 2
          :caption: Install:
 
-         general
-         architecture
-         installation
-         common/carbonio/web-access
-         security
-         migration
+         install/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -66,20 +70,9 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :includehidden:
          :caption: Admin by GUI:
 
-         /adminpanel/introduction
-         /adminpanel/whitelabelling
-         /adminpanel/domains
-         /adminpanel/cos
-         /adminpanel/storage
-         /adminpanel/subscriptions
-         /adminpanel/privacy
-         /adminpanel/backup
-         /adminpanel/notifications
-         /adminpanel/operations
-         /adminpanel/mta
+         adminpanel/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -90,17 +83,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :includehidden:
          :caption: Admin by CLI:
 
-         shell
-         administration
-         backup
-         restorestrategies
-         advancedbackup
-         mobile
-         storages
-         videoserver
-         custom
-         mesh
-         troubleshooting
+         admincli/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -110,8 +93,7 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 2
          :caption: Use:
 
-         usage
-         mobileapps
+         usage/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -121,5 +103,4 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Develop:
 
-         api
-         api/files-howto.rst
+         develop/toc
