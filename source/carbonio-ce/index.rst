@@ -96,8 +96,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          :maxdepth: 2
          :caption: Use:
 
-         usage
-         mobileapps
+         usage/toc
 
 
    .. grid-item-card::
@@ -108,5 +107,4 @@ If you are looking for |carbonio|'s documentation, please refer to its
          :maxdepth: 1
          :caption: Develop:
 
-         api
-	 api/files-howto.rst
+         develop/toc
