@@ -1,8 +1,7 @@
 .. _adminpanel:
 
-=========
-|adminui|
-=========
+|adminui| Overview
+==================
 
 |adminui| is the component that allows access to the administration
 functionalities of |carbonio| and is installed by default from
@@ -76,4 +75,4 @@ The landing page is shown in :numref:`fig_ap-top` and
       |carbonio| Core for all the servers defined within the
       |carbonio| infrastructure. The button `GO TO MAILSTORES SERVERS
       LIST` allows to open the :menuselection:`Storage --> Global
-      Servers --> Server List` page (see :ref:`ap-storage`).
+      Servers --> Server List` page.
