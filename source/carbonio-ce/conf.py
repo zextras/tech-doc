@@ -66,6 +66,7 @@ templates_path = ['_templates']
 exclude_patterns = ['_includes', 'common/cli', 'glossary.rst',
                     'common/carbonio/adminpanel',
                     'common/carbonio/usage',
+                    'common/carbonio/web-access.rst',
                     'common/carbonio/mesh'
                     ]
 
