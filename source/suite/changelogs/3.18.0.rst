@@ -1,10 +1,9 @@
 
-.. uncomment for next release (3.19.0)
 
-   Zextras Suite Changelog - Release 3.18.0
-   ========================================
+Zextras Suite Changelog - Release 3.18.0
+========================================
 
-      Release Date: Sep 4th, 2023
+   Release Date: Sep 4th, 2023
 
 .. rubric:: Auth
 
