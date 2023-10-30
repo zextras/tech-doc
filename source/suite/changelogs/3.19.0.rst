@@ -1,0 +1,15 @@
+.. uncomment for next release (3.20.0)
+
+   Zextras Suite Changelog - Release 3.19.0
+   ========================================
+
+      Release Date: Oct 30, 2023
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-419
+
+ *Title:* EAS Calendar invitation reply bugfix
+
+* *Description:* Fixed a bug that caused the organizer of an appointment to receive a new appointment request when an attendee replies to his invitation via ActiveSync. Now the proper reply message is sent.
+
