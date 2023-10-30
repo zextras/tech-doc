@@ -51,9 +51,6 @@ The landing page is shown in :numref:`fig_ap-top` and
       In the upper part, clicking on either of the boxes will open the
       |adminui| page for the Accounts and mailing list, respectively.
 
-      The list of Notifications follows: click the `GO TO
-      NOTIFICATION` button to open the :ref:`dedicated page
-      <ap-notifications>`.      
 
 .. grid:: 1 1 2 2
    :gutter: 3
