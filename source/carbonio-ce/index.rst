@@ -84,9 +84,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          :includehidden:
          :caption: Admin by CLI:
 
-         management
-         mesh
-         troubleshooting
+         admincli/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
