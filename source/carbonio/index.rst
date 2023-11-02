@@ -40,7 +40,6 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :caption: Introduction:
 
          basics/general
 
@@ -50,7 +49,6 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :caption: Release:
 
          release/toc
 
@@ -60,7 +58,6 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :caption: Install:
 
          install/toc
 
@@ -70,7 +67,6 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :caption: Admin by GUI:
 
          adminpanel/toc
 
@@ -81,7 +77,6 @@ If you are looking for |ce|'s documentation, please refer to its
       .. toctree::
          :maxdepth: 2
          :includehidden:
-         :caption: Admin by CLI:
 
          admincli/toc
 
@@ -91,7 +86,6 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :caption: Use:
 
          usage/toc
 
@@ -101,6 +95,5 @@ If you are looking for |ce|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Develop:
 
          develop/toc
