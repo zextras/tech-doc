@@ -113,7 +113,7 @@ html_theme_options = {
     }
 }
 html_sidebars = { "**": [ 'navbar-logo.html', 'version.html',
-                          'sbt-sidebar-nav.html' ] }
+                          'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = { 'hubhome' : '%s' %hubhome }
 

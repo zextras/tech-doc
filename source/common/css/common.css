@@ -77,13 +77,13 @@
 }
 
 /* Simple class to display Zextras logo */
-.zxlogo {
-    background-image: url("logo_zextras.png");
-    display: inline-block;
-    height: 30px;
-    width: 170px;
-    margin-bottom: 0px
-}
+/* .zxlogo { */
+/*     background-image: url("logo_zextras.png"); */
+/*     display: inline-block; */
+/*     height: 30px; */
+/*     width: 170px; */
+/*     margin-bottom: 0px */
+/* } */
 
 /* Force Lato fonts on all document */
 .rst-content .toctree-wrapper>p.caption,
@@ -109,19 +109,24 @@ legend {
  font-size:100%
 }
 
-/* link color */
-.std-ref, .std-numref, .doc, .reference.external {
+/* link colors */
+.a, .std-ref, .std-numref, .doc, .reference.external {
+    color: var(--zx-color-abyss)
+}
+
+.a:hover, .std-ref:hover, .std-numref:hover, .doc:hover, .reference.external:hover {
+    text-decoration: underline;
+    color: var(--zx-color-flame)    
+}
+
+a:visited, .std-ref:visited, .std-numref:visited, .doc:visited, .reference.external:visited  {
     color: var(--zx-color-magma)
 }
 
 
-.std-ref:hover, .std-numref:hover, .doc:hover, .reference.external:hover {
-    text-decoration: underline;
-}
-
-.icon, .icon:visited {
-    color: white;
-}
+/* .icon, .icon:visited { */
+/*     color: white; */
+/* } */
 
 .irisfont {
     font-family: "Roboto", Arial, sans-serif
@@ -168,14 +173,9 @@ legend {
 }
 
 /* zx branded buttons  */
-.zx-button {
-    background-color:  var(--zx-color-magma)
-}
-.btn:hover, .zx-button:hover {
-    background-color: white;
-    border: 1px solid  var(--zx-color-magma);
-    color: var(--zx-color-magma)
-}
+/* .zx-button { */
+/*     background-color:  var(--zx-color-magma) */
+/* } */
 
 /* make toctree expand button brighter */
 
@@ -213,12 +213,12 @@ legend {
     max-width: 1024px
 }
 
-.hublink {
-    color: white;
-    line-height: 120%;
-    margin: 0 auto;
-    font-size: smaller
-}
+/* .hublink { */
+/*     color: inherit; */
+/*     line-height: 120%; */
+/*     margin: 0 auto; */
+/*     font-size: smaller */
+/* } */
 
 .centered {
     display: flex;
