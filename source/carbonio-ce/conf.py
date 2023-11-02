@@ -106,13 +106,14 @@ html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
 templates_path = [ 'common/templates' ]
 html_theme_options = {
+    'use_download_button': False,
     'logo': {
         'image_light': 'img/logos/carbonio-black.svg',
         'image_dark': 'img/logos/carbonio-white.svg'
     }
 }
 html_sidebars = { "**": [ 'navbar-logo.html', 'version.html',
-                          'sbt-sidebar-nav.html' ] }
+                          'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = { 'hubhome' : '%s' %hubhome }
 
