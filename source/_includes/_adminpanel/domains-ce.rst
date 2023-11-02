@@ -370,22 +370,6 @@ modified for any individual user.
       chosen. The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
-   .. tab-item:: Delegates
-
-      In this tab it is possible to define for which other accounts or
-      groups this account is responsible and which permissions
-      ("Rights") are granted.  The first setting allow to define
-      whether to save or not a copy of the sent messages and where:
-      only in delegated account's folder or also in the delegate's
-      folder.
-
-      The bottom part of the tab can be seen as either a *Simplified
-      View* or and *Advances View* and allows to define permissions of
-      the delegated people. There are small differences in the two
-      views, the most relevant is how to set the permission.
-
-      .. hint:: Details on the rights that can be granted can be found
-         :ref:`in the box <delegates-rights>` below.
 
       In the *Simplified View*, select a user or group, then the
       permission and click the :bdg-primary-line:`ADD THE ACCOUNT`
@@ -402,52 +386,6 @@ modified for any individual user.
          delegated can not share the same account; in other words, it
          is not possible to add as a delegated user the same account
          of the user who is delegating.
-
-.. index::
-   single: Delegate Rights
-   see: User Permissions; Delegate Rights
-
-.. _delegates-rights:
-
-.. card:: Available Delegate's Rights
-
-   The Rights that can be granted to a user are basically to read,
-   write, and send emails, and to access e-mails folders. Rights can
-   be granted when :ref:`editing an account <ap-accounts>`, in the
-   dedicated :blue:`Delegates` tab. Rights can be granted using a
-   *Simplified* or an *Advanced* method.
-
-   The *Simplified* method permissions are granted using checkboxes:
-
-   * read, access with no permission to change
-   * read/write, full read and write permission
-   * send, the recipient will see as sender the selected user
-   * send on behalf, similar to the previous. the recipient will
-     see the the sender's e-mail preceded by the string *On
-     behalf of*
-
-   In the *Advanced* method, rights are given in a slight different
-   way and can be defined in a more granular way. In the :blue:`SET
-   RIGHTS` step it is possible to grant the following rights: **Send
-   Mails only**, **Read Mails only**, **Send and Read Mails**,
-   **Manage** and **Send, Read, and Manage Mails (all of the
-   above)**. Depending on the choice, the bottom part will show
-   additional options, according to the following table.
-
-   .. list-table::
-
-      * - Option
-        - Additional options
-      * - Send Mails only
-        - Send, Send on Behalf of
-      * - Read Mails only
-        - folders to share
-      * - Send and Read Mails
-        - Send, Send on Behalf of; folders to share
-      * - Manage
-        - Folders to share
-      * - Send, Read, and Manage Mails
-        - Send, Send on Behalf of; folders to share
 
 At the bottom of the panel, a list of the *active sessions* appears:
 for example, if a user has logged in from three different devices and
