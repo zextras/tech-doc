@@ -238,3 +238,9 @@ legend {
     border: 1px solid var(--zx-color-ice);
     padding: 10px;
 }
+
+.version {
+    text-align: center;
+    font-weight: 700;
+    font-size: 120%
+}
