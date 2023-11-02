@@ -26,7 +26,7 @@ requirements are satisfied.
 Installation Scenarios
 ----------------------
 
-.. include:: _includes/_multiserver-installation/scenario-proxy.rst
+.. include:: /_includes/_multiserver-installation/scenario-proxy.rst
 
 Install Packages
 ----------------
