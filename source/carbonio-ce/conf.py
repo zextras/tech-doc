@@ -17,7 +17,6 @@
 import os
 import sys
 # sys.path.insert(0, os.path.abspath('.'))
-import sphinx_rtd_theme
 import time
 
 # This approach does not currently work with Docker/Jenkins, so we set only the main doc hub for now
@@ -63,7 +62,12 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_includes', 'common/cli', 'glossary.rst', 'common/carbonio/adminpanel']
+exclude_patterns = ['_includes', 'common/cli', 'glossary.rst',
+                    'common/carbonio/adminpanel',
+                    'common/carbonio/usage',
+                    'common/carbonio/web-access.rst',
+                    'common/carbonio/mesh'
+                    ]
 
 rst_prolog = """
 
@@ -89,7 +93,7 @@ email_automode = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_book_theme'
 html_show_sourcelink = False
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -98,14 +102,20 @@ html_show_sourcelink = False
 html_static_path = ['_static']
 html_css_files = [ 'css/community.css' ] 
 html_js_files = [ 'js/matomo.js' ]
-html_logo = 'img/logos/carbonio-white.svg'
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
-html_theme_options = {
-    'collapse_navigation': False
-}
-html_context = { 'hubhome' : '%s' %hubhome }
 templates_path = [ 'common/templates' ]
+html_theme_options = {
+    'use_download_button': False,
+    'logo': {
+        'image_light': 'img/logos/carbonio-black.svg',
+        'image_dark': 'img/logos/carbonio-white.svg'
+    }
+}
+html_sidebars = { "**": [ 'navbar-logo.html', 'version.html',
+                          'sbt-sidebar-nav.html', 'home.html' ] }
+
+html_context = { 'hubhome' : '%s' %hubhome }
 
 # -- Options for linkcheck output --------------------------------------------
 

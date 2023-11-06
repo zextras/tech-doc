@@ -17,7 +17,7 @@
     --zx-color-abyss: #00506D;;
     --zx-color-card-footer: #E8E8E8;
     --zx-color-card-header: #E8E8E8;
-
+    --pst-color-link-hover: var(--pst-color-link)
 }
 
 /* Custom roles */
@@ -39,23 +39,6 @@
    color: #2B73D2;
 }
 
-/* Width of the text content */
-.wy-nav-content {
-    max-width: inherit;
-}
-
-/* Width of logo on the upper left corner */
-.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
-    width:300px
-}
-
-/* topic:: directive */
-.rst-content .topic-title {
- font-weight:bold;
- margin-bottom:12px;
- left-border: 2px solid
-}
-
 .topic {
     width: 75%;
     min-width: 200px;
@@ -67,23 +50,6 @@
                         var(--zx-color-flame)) 1;
 }
 
-
-/* search box with ZX radius*/
-.wy-side-nav-search input[type="text"] {
- width:100%;
- border-radius: 0.3rem;
- padding:6px 12px;
- border-color:#2472a4
-}
-
-/* Simple class to display Zextras logo */
-.zxlogo {
-    background-image: url("logo_zextras.png");
-    display: inline-block;
-    height: 30px;
-    width: 170px;
-    margin-bottom: 0px
-}
 
 /* Force Lato fonts on all document */
 .rst-content .toctree-wrapper>p.caption,
@@ -99,98 +65,36 @@ legend {
     font-family:Lato,proxima-nova,Helvetica Neue,Arial,sans-serif
 }
 
-.rst-content .sidebar .sidebar-title {
- display:block;
- font-family:Lato,proxima-nova,Helvetica Neue,Arial,sans-serif
- font-weight:700;
- background:#e1e4e5;
- padding:6px 12px;
- margin:-24px -24px 24px;
- font-size:100%
+/* Remove underlines from hyperlinks */
+a, std-ref, std-numref, doc, reference.external, reference.internal {
+    text-decoration: none;
 }
 
-/* link color */
-.std-ref, .std-numref, .doc, .reference.external {
-    color: var(--zx-color-magma)
-}
-
-
-.std-ref:hover, .std-numref:hover, .doc:hover, .reference.external:hover {
+/* Force underline and keep same color on hover */
+a:hover, std-ref:hover, std-numref:hover, doc:hover, reference.external:hover, reference.internal:hover {
+    color: var(--pst-color-link);
     text-decoration: underline;
 }
 
-.icon, .icon:visited {
-    color: white;
+a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:visited, reference.internal:visited {
+    color: var(--pst-color-link);
+    /* This doesn't seem to work - to be checked further */
+    /* text-decoration: underline; */
 }
 
 .irisfont {
     font-family: "Roboto", Arial, sans-serif
 }
 
-/* Custom colors for admonitions -- taken from Carbonio's UI colors
-   using _active_ for title and _disabled_ for title */
-
-/* success UI --> hint */
-.rst-content .hint {
-    background-color: #cee6b2
-}
-.rst-content .hint .admonition-title {
-    background-color: #639030
+/* Colors of "Back to top" button */
+#pst-back-to-top {
+    background-color: var(--zx-color-abyss);
+    color: var(--zx-color-pebble);
 }
 
-/* info UI --> note */
-.rst-content .note {
-    background-color: #a7d7f1
-}
-.rst-content .note .admonition-title {
-    background-color: #176691
-}
-
-/* warning UI --> seealso */
-.rst-content .seealso {
-    background-color: #ffe699
-}
-.rst-content .seealso .admonition-title {
-    background-color: #ba8b00
-}
-
-/* error UI --> warning */
-.rst-content .warning {
-    background-color: #edaeab
-}
-.rst-content .warning .admonition-title {
-    background-color: #a92a24
-}
-
-/* background color of LHS menu  */
-.wy-menu-vertical li.current ul {
-    background-color: var(--zx-color-pebble)
-}
-
-/* zx branded buttons  */
-.zx-button {
-    background-color:  var(--zx-color-magma)
-}
-.btn:hover, .zx-button:hover {
-    background-color: white;
-    border: 1px solid  var(--zx-color-magma);
-    color: var(--zx-color-magma)
-}
-
-/* make toctree expand button brighter */
-
-.wy-menu-vertical li button.toctree-expand {
-    color: var(--zx-color-ice)
-}
 
 .sd-badge {
    font-size: .80em;
-}
-
-/*class for emphasise card headers */
-.card-abyss {
-    background-color: var(--zx-color-abyss);
-    color: white;
 }
 
 /* inline commands */
@@ -202,23 +106,6 @@ legend {
  border: 1px solid #e1e4e5;
 }
 
-/* magma color for all code, literal, and tt classes */
-
-.tt, .command, .code, .rst-content code.literal {
-    color: var(--zx-color-magma);
-}
-
-/* limit text width to 1024 pixels */
-.rst-content {
-    max-width: 1024px
-}
-
-.hublink {
-    color: white;
-    line-height: 120%;
-    margin: 0 auto;
-    font-size: smaller
-}
 
 .centered {
     display: flex;
@@ -237,4 +124,10 @@ legend {
 .sd-tab-set {
     border: 1px solid var(--zx-color-ice);
     padding: 10px;
+}
+
+.version {
+    text-align: center;
+    font-weight: 700;
+    font-size: 120%
 }

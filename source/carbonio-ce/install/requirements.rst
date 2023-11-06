@@ -192,7 +192,7 @@ when it becomes available.
 RHEL 8 Specific Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: _includes/_installation/preliminary-rh.rst
+.. include:: /_includes/_installation/preliminary-rh.rst
 
 .. _more-requirements:
    

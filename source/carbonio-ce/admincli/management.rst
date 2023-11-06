@@ -23,7 +23,7 @@ components are enabled for a user or a COS.
 .. toctree::
    :hidden: 
 
-   _management/managealias
-   _management/sshkeys
-   _management/custom
-   _management/setting-features
+   management/managealias
+   management/sshkeys
+   management/custom
+   management/setting-features
