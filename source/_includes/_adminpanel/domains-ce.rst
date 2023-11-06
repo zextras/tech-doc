@@ -160,7 +160,7 @@ access, or **Remove** the domain and all its items.
 .. _ap-gal:
 
 Global Address List
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 A :abbr:`GAL (Global Address List)` is a special account (*"GALSync
 Account"*) that contains all e-mail accounts configured on the server
