@@ -17,7 +17,7 @@
     --zx-color-abyss: #00506D;;
     --zx-color-card-footer: #E8E8E8;
     --zx-color-card-header: #E8E8E8;
-
+    --pst-color-link-hover: var(--pst-color-link)
 }
 
 /* Custom roles */
@@ -109,27 +109,31 @@ legend {
  font-size:100%
 }
 
-/* link colors */
-.a, .std-ref, .std-numref, .doc, .reference.external {
-    color: var(--zx-color-abyss)
+/* Remove underlines from hyperlinks */
+a, std-ref, std-numref, doc, reference.external, reference.internal {
+    text-decoration: none;
 }
 
-.a:hover, .std-ref:hover, .std-numref:hover, .doc:hover, .reference.external:hover {
+/* Force underline and keep same color on hover */
+a:hover, std-ref:hover, std-numref:hover, doc:hover, reference.external:hover, reference.internal:hover {
+    color: var(--pst-color-link);
     text-decoration: underline;
-    color: var(--zx-color-flame)    
 }
 
-a:visited, .std-ref:visited, .std-numref:visited, .doc:visited, .reference.external:visited  {
-    color: var(--zx-color-magma)
+a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:visited, reference.internal:visited {
+    color: var(--pst-color-link);
+    /* This doesn't seem to work - to be checked further */
+    /* text-decoration: underline; */
 }
-
-
-/* .icon, .icon:visited { */
-/*     color: white; */
-/* } */
 
 .irisfont {
     font-family: "Roboto", Arial, sans-serif
+}
+
+/* Colors of "Back to top" button */
+#pst-back-to-top {
+    background-color: var(--zx-color-abyss);
+    color: var(--zx-color-pebble);
 }
 
 /* Custom colors for admonitions -- taken from Carbonio's UI colors
