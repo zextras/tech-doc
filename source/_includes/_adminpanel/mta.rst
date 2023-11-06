@@ -130,9 +130,9 @@ button.
 Frequency of signatures update from the mirror can be defined next, and
 tuned from a few seconds to several weeks.
 
-.. _ap-mta-stats:
+.. _ap-mta-queue:
 
-Stats
+Queue
 -----
 
 This page lists statistics about the messages managed by the MTA

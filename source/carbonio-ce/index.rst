@@ -33,6 +33,14 @@ If you are looking for |carbonio|'s documentation, please refer to its
 .. grid:: 1 2 2 3
    :gutter: 2
 
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+
+         basics/general
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -40,11 +48,8 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Release:
 
-         Changelog <changelog>
-         upgrade
-
+         release/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -52,14 +57,8 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :caption: Install:
 
-         general
-         architecture
-         installation
-         common/carbonio/web-access
-         security
-         migration
+         install/toc
 
    .. grid-item-card::
       :columns:  12 12 6 6
@@ -68,14 +67,8 @@ If you are looking for |carbonio|'s documentation, please refer to its
       .. toctree::
          :maxdepth: 2
          :includehidden:
-         :caption: Admin by GUI:
 
-         /adminpanel/introduction
-         /adminpanel/domains
-         /adminpanel/cos
-         /adminpanel/privacy
-         /adminpanel/notifications
-         /adminpanel/mta
+         /adminpanel/toc
 
    .. grid-item-card::
       :columns:  12 12 6 6
@@ -84,11 +77,8 @@ If you are looking for |carbonio|'s documentation, please refer to its
       .. toctree::
          :maxdepth: 2
          :includehidden:
-         :caption: Admin by CLI:
 
-         management
-         mesh
-         troubleshooting
+         admincli/toc
 
    .. grid-item-card::
       :columns: 12 12 6 6
@@ -96,10 +86,8 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 2
-         :caption: Use:
 
-         usage
-         mobileapps
+         usage/toc
 
 
    .. grid-item-card::
@@ -108,7 +96,5 @@ If you are looking for |carbonio|'s documentation, please refer to its
 
       .. toctree::
          :maxdepth: 1
-         :caption: Develop:
 
-         api
-	 api/files-howto.rst
+         develop/toc
