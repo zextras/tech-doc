@@ -9,7 +9,16 @@
 
 * *Issue ID:* MOB-419
 
- *Title:* EAS Calendar invitation reply bugfix
+* *Title:* EAS Calendar invitation reply bugfix
 
 * *Description:* Fixed a bug that caused the organizer of an appointment to receive a new appointment request when an attendee replies to his invitation via ActiveSync. Now the proper reply message is sent.
 
+..
+
+* *Issue ID:* MOB-415
+
+* *Title:* Cyrillic attachments encoding bugfix
+
+* *Description:* Fixed a bug that caused the encoding of a Cyrillic attachment
+  filename to be corrupted during EAS synchronization. Now the filenames are
+  displayed properly.
