@@ -14,7 +14,7 @@ SRV3: AppServer and |storage|
 
          "CPU", "4vCPU"
          "RAM", "16GB"
-         "Disk Space", "30GB"
+         "Disk Space", "50GB"
          "IP Address", "172.16.0.13"
          "FQDN", "srv3.example.com"
 

@@ -9,7 +9,7 @@ Full Changelog for |product|
 ============================
 
 This section contains a link to the Changelog of each |product|
-component within their respective :fa:`github` GitHub repository.
+component within their respective GitHub repository.
 
 * :bdg-link-danger-line:`Carbonio Shell UI
   <https://github.com/Zextras/carbonio-shell-ui/blob/devel/CHANGELOG.md>` Web Client interface

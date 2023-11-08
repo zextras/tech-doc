@@ -2,33 +2,25 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-In the Contacts component you can keep track of all the people with whom
-you exchange e-mails and group them in address books. Existing address
-books appear on the column on the right of the component's list.
+The Search module vastly improves the search capabilities of the
+:ref:`quick search <global-search>` top bar. Click the
+:bdg-primary-line:`ADVANCED FILTER` button to open a dialog that will
+help you refine the search criteria on all your e-mails.
 
-You can create new contact by using the |new| button and selecting
-`New Contact`; they will be stored under the `Contacts` section of the
-Contacts component.
+You can combine multiple search criteria, some of which are inclusive
+or exclusive (i.e., you can search for e-mails with or without
+attachments, that are flagged or not, and that are read or unread),
+while other allow to provide values for almost any other property of
+an e-mail, including  sender or recipient, subject or keywords, type of
+attachment, and limit the search according to a period of time or to a
+size interval.
 
-Addresses of people to whom you send an e-mail are automatically added
-to the `Emailed Contacts`.
+Moreover, you can search on tags given to the e-mail and limit the
+search to specific folders. When all criteria have been entered, click
+|search| to start the search, while clicking |reset| will clear the
+dialog.
 
-Deleted contacts land in the special `Trash` address book, which keeps
-them until you manually empty it. To do so, right-click the address
-book and select `Empty trash`.
-
-A right-click on the address book allows to carry out a few action on
-it and its content: edit, share, empty, or delete it. Moreover, new
-address books can be created.
-
-For each contact, icons allow to carry out different actions: delete,
-move, or write an e-mail to the contact.
-
-.. hint:: To move the contacts from one address book to another, you
-   can also drag the contact and drop it on the destination address
-   book.
-
-If any colleague has shared an address book, you can click the
-:bdg-primary-line:`FIND SHARES` button under `Shared Address Book` and
-provide the e-mail address. You will see all the address books shared
-by the user.
+In the resulting list of result, click any e-mail to open it. To
+further refine the search, click the blue bar above the list of
+e-mails. The dialog will reopen, with the same criteria entered
+before: here you can add more constraints or change some of them.

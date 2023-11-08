@@ -31,7 +31,7 @@ Mobile APPs Download
 
 .. tab-set::
 
-   .. tab-item:: Android :fa:`android`
+   .. tab-item:: Android
 
       Click on the links to access the App page on Google Play Store:
 
@@ -42,7 +42,7 @@ Mobile APPs Download
       It is required that the Android version be equal to or higher
       than **5.0**
 
-   .. tab-item:: iOS :fa:`apple`
+   .. tab-item:: iOS
 
       Click on the links to access the App page on Apple App Store:
 

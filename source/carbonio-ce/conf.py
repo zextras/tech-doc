@@ -107,6 +107,10 @@ html_title = project + ' Documentation'
 templates_path = [ 'common/templates' ]
 html_theme_options = {
     'use_download_button': False,
+    'repository_url': 'https://github.com/zextras/tech-doc/',
+    'repository_branch': 'master',
+    'use_repository_button': True,
+    'use_issues_button': True,
     'logo': {
         'image_light': 'img/logos/carbonio-black.svg',
         'image_dark': 'img/logos/carbonio-white.svg'
