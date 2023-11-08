@@ -21,6 +21,9 @@
       (http)**. In case the proxy can not be directly reached, you
       must add some forwarding rules.
 
+   #. Make sure that you run  all command in this section as the
+      ``zextras`` user
+      
    #. The ``zimbraReverseProxyMailMode`` attribute is set to *redirect*
       at global level. You can verify if this is the case with command
    
@@ -90,8 +93,9 @@ The certificate expires after **90 days**, and, according to `Let's
 Encrypt recommendations
 <https://letsencrypt.org/docs/integration-guide/#when-to-renew>`_
 should to be renewed **30 days** before expiration. You can do so
-manually using :command:`certbot renew` from the CLI or, if you are
-confident, routinely from the crontab.
+manually running, as the ``zextras`` user the :command:`certbot renew`
+command from the CLI or, if you are confident, routinely from the
+crontab.
 
 Once done, run again the two deployment commands
 
