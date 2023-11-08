@@ -4,7 +4,7 @@
 
 The source code of |product|\ 's documentation is now available in a
 `public repository <https://github.com/Zextras/tech-doc>`_ hosted on
-:fa:`github` Github.
+Github.
 
 We are happy to accept any kind of documentation, written according to
 the guidelines, in form of a pull request. In case you have an idea

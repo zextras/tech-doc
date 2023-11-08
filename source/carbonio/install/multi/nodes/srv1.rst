@@ -14,7 +14,7 @@ SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
 
          "CPU", "4vCPU"
          "RAM", "8GB"
-         "Disk Space", "110GB"
+         "Disk Space", "120GB"
          "IP Address", "172.16.0.11"
          "FQDN", "srv1.example.com"
 

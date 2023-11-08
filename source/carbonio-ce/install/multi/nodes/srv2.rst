@@ -14,7 +14,7 @@ SRV2: MTA, Proxy, and User Management
 
          "CPU", "4vCPU"
          "RAM", "10GB"
-         "Disk Space", "30GB"
+         "Disk Space", "50GB"
          "IP Address", "172.16.0.12"
          "FQDN", "srv2.example.com"
 
