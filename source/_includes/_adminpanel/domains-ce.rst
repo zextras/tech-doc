@@ -35,7 +35,7 @@ To create a new domain, fill in the form that opens upon clicking the
 
    * GAL settings
 
-     Except for the :abbr:`GAL (Global Access List )` mode, currently
+     Except for the :abbr:`GAL (Global Address List)` mode, currently
      only **Internal**, it is possible to define the account used to
      synchronise GAL information, the mail server used, which must be
      on the same domain (or in a compatible one, i.e., in a valid
@@ -159,10 +159,10 @@ access, or **Remove** the domain and all its items.
 
 .. _ap-gal:
 
-Global Access List
-~~~~~~~~~~~~~~~~~~
+Global Address List
+~~~~~~~~~~~~~~~~~~~
 
-A :abbr:`GAL (Global Access List)` is a special account (*"GALSync
+A :abbr:`GAL (Global Address List)` is a special account (*"GALSync
 Account"*) that contains all e-mail accounts configured on the server
 and provides the ability to quickly search e-mail addresses, for
 example when composing an email or adding participants to an event in

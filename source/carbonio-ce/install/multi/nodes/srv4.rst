@@ -14,8 +14,8 @@ SRV4: |pv|, |file|, and |docs|
       .. csv-table::
 
          "CPU", "4vCPU"
-         "RAM", "4GB"
-         "Disk Space", "30GB"
+         "RAM", "8GB"
+         "Disk Space", "50GB"
          "IP Address", "172.16.0.14"
          "FQDN", "srv4.example.com"
 
