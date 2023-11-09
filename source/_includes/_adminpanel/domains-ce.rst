@@ -530,19 +530,18 @@ simply writing the e-mail addresses in the test field.
 
 .. hint:: E-mail addresses are auto-completed while typing.
 
-In the third tab, advanced settings can be configured, including to
-limit the members that are allowed to send e-mails to the list, the
-policies  for subscription and unsubscription requests, and the owners
-of the mailing list,
+In the third tab, advanced settings can be configured, including the
+option to send notification to new members and the presence of the
+mailing list in the GAL.
 
-The last tab recaps the settings: now you can wither go back to any of
+The last tab recaps the settings: now you can either go back to any of
 the previous tabs and change some of the settings, or proceed to
 create the mailing list.
 
 Once a mailing list has been created, it can be further configured by
-adding aliases, which work like e-mail accounts, changing the members
-and owners, and granting selected users the permission to send e-mails
-to the mailing list.
+adding aliases, which work like e-mail accounts, changing the members,
+and granting selected users the permission to send e-mails to the
+mailing list.
 
 Dynamic Mode
 ++++++++++++
