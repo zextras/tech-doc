@@ -8,7 +8,8 @@ Install Packages
 
       .. code:: console
 
-         # apt install service-discover-agent carbonio-advanced
+         # apt install service-discover-agent \
+           carbonio-advanced carbonio-tasks
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -19,6 +20,7 @@ Install Packages
 
          # dnf install service-discover-agent
          # dnf install carbonio-advanced
+         # dnf install carbonio-tasks
 
 Bootstrap |carbonio|
 ++++++++++++++++++++

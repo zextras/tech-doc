@@ -1,8 +1,8 @@
 
 .. _srv3-install:
 
-SRV3: AppServer and |storage|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+SRV3: AppServer, |storage|, and |task| Backend
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. grid::
    :gutter: 3
@@ -26,6 +26,7 @@ SRV3: AppServer and |storage|
 
       * AppServer
       * |storage|
+      * |task| backend
 
 On the third node, the AppServer and the |storage| instance are
 installed, and, like in the previous node, the bootstrap of |product|,
