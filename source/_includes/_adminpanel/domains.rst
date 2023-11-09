@@ -447,8 +447,7 @@ modified for any individual user.
       interacts with the e-mails (receive, sending, composing, adding
       a signature) and are mostly inherited from the COS.
 
-      ..  resources are currently hidden from AP -- AC-622
-         .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+      .. note:: Signatures can not be assigned to :ref:`ap-resources`.
 
    .. tab-item:: Security
       
@@ -749,6 +748,21 @@ DEVICE` (bring the connected device back to factory settings), to
 :bdg-primary-line:`RESET DEVICE` (log out the device from the
 account), and :bdg-primary-line:`SUSPEND` the connection.
 
+.. _ap-resources:
+
+Resources
+~~~~~~~~~
+
+A Resource is a generic object that can be assigned an e-mail
+address. A typical example of a Resource is a **meeting room**: to
+reserve the room, send an e-mail to the room's e-mail address.
+
+A policy can be assigned to Resource, to determine how to react to the
+booking request, either a manual or automatic acceptance or rejection.
+
+Additional e-mail addresses can be added to the resource, for example
+to notify the company's facility manager which meeting rooms are
+reserved and which are free.
 .. _restore-account:
 
 Restore Account
