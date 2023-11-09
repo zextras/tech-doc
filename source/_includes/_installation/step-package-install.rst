@@ -40,6 +40,8 @@ Next, we install all packages needed for |product|.
          carbonio-appserver \
          carbonio-user-management \
          carbonio-files-ce carbonio-files-db \
+         carbonio-tasks-db carbonio-tasks-db \
+         carbonio-tasks-ui \
          carbonio-storages-ce \
          carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
