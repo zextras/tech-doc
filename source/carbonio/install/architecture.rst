@@ -26,11 +26,11 @@ boxes) can be combined and installed on any node, even on a dedicated
 one. For example, if |vs| is heavily used, it could be a good idea to
 install it on a dedicated node, while **User Management** can be
 installed on the AppServer node instead of on a dedicated node.  In
-the :ref:`multiserver-installation` scenario we use as example, we
-show how to set up a cluster of *six* nodes and combine the various
-|product|'s roles. A **Role** is a functionality that is considered
-atomic and can be added to the |product| by installing one or more
-software packages.
+the :ref:`installation scenario <multiserver-installation>` we use as
+example, we show how to set up a cluster of *six* nodes and combine
+the various |product|'s roles. A **Role** is a functionality that is
+considered atomic and can be added to the |product| by installing one
+or more software packages.
 
 In :numref:`fig-cb-arch`, *dependencies* are denoted by the boxes piled
 on top of the bottom one. In other words, all the ``*-UI`` packages,
@@ -166,6 +166,9 @@ node, provided the dependencies are respected.
   the VideoServer.
 * **Admin Panel**. The core administration centre in which to manage
   the configuration options of |product|
+* **Tasks**. Define simple tasks and reminders. This components
+  consists of **carbonio-tasks-db** (database), **carbonio-tasks-ui**
+  (frontend), and **carbonio-tasks-ce** (backend).
 
 .. note:: The **Logger** component, which is based on a cron-based
    collection of CSV files, has been deprecated. We are working to

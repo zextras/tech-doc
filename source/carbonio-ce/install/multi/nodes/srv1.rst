@@ -22,6 +22,7 @@ SRV1: Postgres, Directory Server, DB connection, |mesh|, and |monit|
       :columns: 6
 
       * PostgreSQL
+      * Database components of |product| (|file|, |task|)
       * DB connection, provided by pgpool
       * Directory Server
       * |mesh|

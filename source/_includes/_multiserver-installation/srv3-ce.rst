@@ -10,7 +10,7 @@ Install Packages
       .. code:: console
 
          # apt install service-discover-agent carbonio-appserver \
-           carbonio-storages-ce
+           carbonio-storages-ce carbonio-tasks-ce
            
    .. tab-item:: RHEL
       :sync: rhel
@@ -22,6 +22,7 @@ Install Packages
          # dnf install service-discover-agent 
          # dnf install carbonio-appserver
          # dnf install carbonio-storages-ce
+         # dnf install carbonio-tasks-ce
 
 Bootstrap |carbonio|
 ++++++++++++++++++++
