@@ -97,6 +97,14 @@ When deleting a Conversation, they are placed in the **Trash** folder,
 so you have the option to search for messages inside the conversation
 before permanently deleting the entire conversation.
 
+The recipient list of an e-mail shows the name of the sender, if it is
+already included in the contacts, the e-mail address otherwise; the
+list can be expanded by clicking the small chevron
+:octicon:`chevron-down`, to show the full name and e-mail of the
+recipient. Near each recipient two little icons allow to write
+immediately to the recipient or to copy the e-mail address, for
+example to add it to the :ref:`contacts-comp`.
+
 On the top-right corner of each e-mail there are a few icons that
 allow to carry out a number of actions; click the
 :material-regular:`more_vert` icon to access them and many more: mark
@@ -119,7 +127,8 @@ modal will appear and ask to send a read receipt to the author. Click
 be sent.
 
 In |product|, to prevent sending an incomplete e-mail, an automatic
-delay of three seconds takes places, and a message appears on the
+delay of a few seconds takes places (see option **Set send time**
+option in :ref:`settings-comp`), and a message appears on the
 bottom right corner: click :bdg-info:`UNDO` to stop the sending and
 continue editing the e-mail.
 
