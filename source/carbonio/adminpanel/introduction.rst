@@ -21,11 +21,13 @@ your domain.
 To access the |adminui|, you need an account that is marked as
 **Global Administrator**. The default Global Admin is
 ``zextras@acme.example``; at the first login it will be prompted to
-change the password. You can do this from the CLI using the command
-shown in Section :ref:`manage-admins`.
+change the password. This can be done from the CLI using the command
+shown in Section :ref:`manage-admins`. When a password expires and the
+Admin tries to login, a dialog will be show, which informs of the
+expired password and allows to change it.
 
-.. hint:: More Global Admins can be added from the |adminui|; please
-   refer to section :ref:`ap-new-admin` for directions.
+Once logged in, more Global Admins can be added from the |adminui|;
+please refer to section :ref:`ap-new-admin` for directions.
 
 |adminui| allows to manage the |product| domains, mailstores,
 accounts, |cos|, and privacy settings. The overall organisation of the
