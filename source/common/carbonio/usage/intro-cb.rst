@@ -18,7 +18,9 @@ and best practices:
 * :ref:`contacts-comp`, to collect and organise your e-mail addresses
 * :ref:`chats-comp`: textual and visual conversations, shared spaces,
   virtual rooms to communicate in real-time with users
-* :ref:`files-comp` is used to create, share, and collaborate on documents
+* :ref:`files-comp` is used to create, share, and collaborate on
+  documents
+* :ref:`tasks-comp`: define simple activities and reminders
 * :ref:`search-comp` completes the `Quick Search` functionality
 * :ref:`settings-comp` is the place where to customise all |product| options
 
