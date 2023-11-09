@@ -16,6 +16,7 @@ and best practices:
   colleagues
 * :ref:`contacts-comp`, to collect and organise your e-mail addresses
 * :ref:`files-comp` is used to create, share, and collaborate on documents
+* :ref:`tasks-comp`: define simple activities and reminders
 * :ref:`search-comp` completes the `Quick Search` functionality
 * :ref:`settings-comp` is the place where to customise all |product| options
   

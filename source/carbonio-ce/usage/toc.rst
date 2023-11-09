@@ -21,6 +21,7 @@
    contacts
    files
    docs
+   tasks
    shared-folders
    search
    settings
