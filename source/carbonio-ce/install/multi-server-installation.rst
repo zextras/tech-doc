@@ -2,6 +2,8 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _multi-server-install:
+
 .. _multiserver-introduction:
 
 Multi-Server Installation
