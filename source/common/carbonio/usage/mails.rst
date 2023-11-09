@@ -158,6 +158,9 @@ server (e.g., a network failure), an error message will be
 displayed. In particular, if you added a document and the upload
 fails, you need to remove it and attach it again.
 
+When multiple addresses are present in the **TO**, **CC**, or **BCC**
+fields, they can be drag-and-dropped from one field to the other.
+
 .. _mail-attachments:
 
 Attachments Management
