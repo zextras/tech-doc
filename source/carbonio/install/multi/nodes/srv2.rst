@@ -22,7 +22,7 @@ SRV2: MTA, Proxy, and User Management
       :columns: 6
 
       * MTA, the mail server
-      * Proxy
+      * Proxy and frontend packages
       * User management
 
 Installation of Node 2 foresees the installation of MTA, Proxy, and

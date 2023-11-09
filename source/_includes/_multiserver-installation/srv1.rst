@@ -37,26 +37,32 @@ Set up |mesh|
 Bootstrap |carbonio| Databases
 ++++++++++++++++++++++++++++++
 
-You need to use the Postgres user created on SRV1 and the password
+You need to use the password of the Postgres user ``carbonio_adm``
 defined in previous steps.
 
-   * |carbonio| Advanced
+* |carbonio| Advanced
 
-     .. code:: console
+  .. code:: console
 
-        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-   * |file|
+* |docs|
 
-     .. code:: console
+  .. code:: console
 
-        # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
-   * |docs|
+* |file|
 
-     .. code:: console
+  .. code:: console
 
-        # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+* |task|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
 
 Installation of SRV1 has now completed. To prevent anyone else reading
 the password of PostgreSQL's administrator user, remove it from
