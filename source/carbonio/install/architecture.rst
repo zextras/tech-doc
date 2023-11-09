@@ -168,7 +168,7 @@ node, provided the dependencies are respected.
   the configuration options of |product|
 * **Tasks**. Define simple tasks and reminders. This components
   consists of **carbonio-tasks-db** (database), **carbonio-tasks-ui**
-  (frontend), and **carbonio-tasks-ce** (backend).
+  (frontend), and **carbonio-tasks** (backend).
 
 .. note:: The **Logger** component, which is based on a cron-based
    collection of CSV files, has been deprecated. We are working to
