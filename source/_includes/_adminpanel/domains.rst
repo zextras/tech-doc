@@ -768,6 +768,7 @@ booking request, either a manual or automatic acceptance or rejection.
 Additional e-mail addresses can be added to the resource, for example
 to notify the company's facility manager which meeting rooms are
 reserved and which are free.
+
 .. _restore-account:
 
 Restore Account
