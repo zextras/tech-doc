@@ -114,7 +114,8 @@ html_theme_options = {
     'logo': {
         'image_light': 'img/logos/carbonio-black.svg',
         'image_dark': 'img/logos/carbonio-white.svg'
-    }
+    },
+    'footer_content_items': [ 'zx-copyright.html' ],
 }
 html_sidebars = { "**": [ 'navbar-logo.html', 'version.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
