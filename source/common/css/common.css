@@ -65,6 +65,13 @@ legend {
     font-family:Lato,proxima-nova,Helvetica Neue,Arial,sans-serif
 }
 
+button {
+  background-color: var(--zx-color-magma);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: white;
+}
+
 /* Remove underlines from hyperlinks */
 a, std-ref, std-numref, doc, reference.external, reference.internal {
     text-decoration: none;
@@ -88,10 +95,16 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
 
 /* Colors of "Back to top" button */
 #pst-back-to-top {
-    background-color: var(--zx-color-abyss);
+    background-color: var(--zx-color-magma);
     color: var(--zx-color-pebble);
 }
 
+#pst-back-to-top:hover {
+    background-color: #fff;
+    border: 1px solid var(--zx-color-magma);
+    border-radius: 5px;
+    color: var(--zx-color-magma)
+}
 
 .sd-badge {
    font-size: .80em;
@@ -130,4 +143,8 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
     text-align: center;
     font-weight: 700;
     font-size: 120%
+}
+
+.rounded-pill {
+	border-radius: 0px !important;
 }
