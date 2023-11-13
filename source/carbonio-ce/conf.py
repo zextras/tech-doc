@@ -112,13 +112,14 @@ html_theme_options = {
     'use_repository_button': True,
     'use_issues_button': True,
     'logo': {
-        'image_light': 'img/logos/carbonio-black.svg',
-        'image_dark': 'img/logos/carbonio-white.svg'
+        'image_light': 'carbonio-black.svg',
+        'image_dark': 'carbonio-white.svg',
+        'text': '%s' %release,
     },
     'footer_content_items': [ 'zx-copyright.html' ],
 }
-html_sidebars = { "**": [ 'navbar-logo.html', 'version.html',
-                          'sbt-sidebar-nav.html', 'home.html' ] }
+html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
+                          'home.html' ] }
 
 html_context = { 'hubhome' : '%s' %hubhome }
 
