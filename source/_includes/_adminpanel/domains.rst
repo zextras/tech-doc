@@ -13,7 +13,7 @@ the list or start typing its name in the text box below the **Domain**
 label.
 
 The following sections are available in the page: :ref:`global
-settings <ap-theme>`, :ref:`domain details <ap-domain-details>`, and
+settings <ap-global>`, :ref:`domain details <ap-domain-details>`, and
 :ref:`domain management <ap-manage-domains>`.
 
 .. _ap-domain-new:
@@ -58,15 +58,15 @@ Further configuration option for the domain, including how to
 configure authentication and accounts in the domain, can be found in
 the :ref:`ap-domain-details` section.
 
-.. _ap-theme:
+.. _ap-global:
 
 Global
 ------
 
-.. _global-theme:
+.. _global-wl:
 
-Theme
-~~~~~
+Whitelabel Settings
+~~~~~~~~~~~~~~~~~~~
 
 Global settings concern the appearance of |product| and allow to
 customise various option that will influence how the |product| web
@@ -74,7 +74,7 @@ interface appears to the web clients.
 
 .. note:: These setting are applied to all the domains configured; if
    you want to customise the appearance, please change the settings
-   under :menuselection:`Domains --> Details --> Theme`.
+   under :menuselection:`Domains --> Details --> Whitelabel Settings`.
 
 .. include:: /_includes/_adminpanel/wl.rst
 
@@ -317,14 +317,14 @@ overridden on a per-user basis.
 To ease monitoring user's quota, the bottom of the page contains a
 list of accounts and of their used quota.
 
-.. _domain-theme:
+.. _domain-wl:
 
 Theme
 ~~~~~
 
-These setting are the same that appear in the :ref:`Global Theme
-<ap-theme>` section, but are domain-specific: if not defined at domain
-level, the global theme settings will be applied.
+These setting are the same that appear in Global's :ref:`global-wl`
+section, but are domain-specific: if not defined at domain level, the
+global theme settings will be applied.
 
 .. _domain-2fa:
 
