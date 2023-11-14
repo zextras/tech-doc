@@ -20,6 +20,7 @@
 .. |pv| replace:: |carbonio| Preview
 .. |adminui| replace:: |carbonio| Admin Panel
 .. |monit| replace:: |carbonio| Monitoring
+.. |task| replace:: |carbonio| Tasks
 
 .. common replacements for all products
 

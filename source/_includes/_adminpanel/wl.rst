@@ -121,7 +121,7 @@ mandatory to keep in sync the resources on all the Proxies instances.
       The images used for the background must adhere to the following
       **maximum** requirements.
 
-      * The format must be **JPG**
+      * The format must be **JPG** or **PNG**
       * The dimensions must be at least **1920x1080** pixel, with
         ratio **16:9**
       * The suggested size is **800** Kb

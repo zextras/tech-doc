@@ -7,8 +7,8 @@
       .. code:: console
 
          # apt install service-discover-agent carbonio-mta \
-         carbonio-proxy carbonio-webui carbonio-files-ui \
-         carbonio-user-management
+           carbonio-proxy carbonio-webui carbonio-files-ui \
+           carbonio-tasks-ui carbonio-user-management
  
    .. tab-item:: RHEL
       :sync: rhel
@@ -16,8 +16,8 @@
       .. code:: console
 
          # dnf install service-discover-agent carbonio-mta \
-         carbonio-proxy carbonio-webui carbonio-files-ui \
-         carbonio-user-management
+           carbonio-proxy carbonio-webui carbonio-files-ui \
+           carbonio-tasks-ui carbonio-user-management
 
 The following tasks must be executed to configure the MTA.
 

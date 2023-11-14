@@ -7,6 +7,11 @@ The Domain page allows the management of domains and of related
 settings, including individual accounts, user quota and
 authentication, mailing lists, and more.
 
+When opening this page, the list of all configured domain
+presented. To choose a domain an show its configuration, click it on
+the list or start typing its name in the text box below the **Domain**
+label.
+
 The following sections are available in the page: :ref:`domain details
 <ap-domain-details>` and :ref:`domain management <ap-manage-domains>`.
 
@@ -357,8 +362,7 @@ modified for any individual user.
       interacts with the e-mails (receive, sending, composing, adding
       a signature) and are mostly inherited from the COS.
 
-      ..  resources are currently hidden from AP -- AC-622
-         .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+      .. note:: Signatures can not be assigned to :ref:`ap-resources`.
 
    .. tab-item:: Security
       
@@ -526,19 +530,18 @@ simply writing the e-mail addresses in the test field.
 
 .. hint:: E-mail addresses are auto-completed while typing.
 
-In the third tab, advanced settings can be configured, including to
-limit the members that are allowed to send e-mails to the list, the
-policies  for subscription and unsubscription requests, and the owners
-of the mailing list,
+In the third tab, advanced settings can be configured, including the
+option to send notification to new members and the presence of the
+mailing list in the GAL.
 
-The last tab recaps the settings: now you can wither go back to any of
+The last tab recaps the settings: now you can either go back to any of
 the previous tabs and change some of the settings, or proceed to
 create the mailing list.
 
 Once a mailing list has been created, it can be further configured by
-adding aliases, which work like e-mail accounts, changing the members
-and owners, and granting selected users the permission to send e-mails
-to the mailing list.
+adding aliases, which work like e-mail accounts, changing the members,
+and granting selected users the permission to send e-mails to the
+mailing list.
 
 Dynamic Mode
 ++++++++++++
@@ -560,22 +563,21 @@ Advanced options, like subscription and unsubscription options are
 available after the creation of the Dynamic Mailing List, when editing
 it.
 
-.. resources are currently hidden from AP -- AC-622
-   .. _ap-resources:
+.. _ap-resources:
 
-   Resources
-   ~~~~~~~~~
+Resources
+~~~~~~~~~
 
-   A Resource is a generic object that can be assigned an e-mail address,
-   but, unlike other regular accounts, they do not need any signature, so
-   you can not specify one. A typical example of a Resource is a
-   **meeting room**: to reserve the room, send an e-mail to the room's
-   e-mail address.
+A Resource is a generic object that can be assigned an e-mail address,
+but, unlike other regular accounts, they do not need any signature, so
+you can not specify one. A typical example of a Resource is a
+**meeting room**: to reserve the room, send an e-mail to the room's
+e-mail address.
 
 
-   A policy can be assigned to Resource, to determine how to react to the
-   booking request, either a manual or automatic acceptance or rejection.
+A policy can be assigned to Resource, to determine how to react to the
+booking request, either a manual or automatic acceptance or rejection.
 
-   Additional e-mail addresses can be added to the resource, for example
-   to notify the company's facility manager which meeting rooms are
-   reserved and which are free.
+Additional e-mail addresses can be added to the resource, for example
+to notify the company's facility manager which meeting rooms are
+reserved and which are free.

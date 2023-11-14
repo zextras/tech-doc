@@ -44,9 +44,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '23.10.0'
+release = '23.11.0'
 version = release
-prev = '23.9.0'
+prev = '23.10.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -112,12 +112,14 @@ html_theme_options = {
     'use_repository_button': True,
     'use_issues_button': True,
     'logo': {
-        'image_light': 'img/logos/carbonio-black.svg',
-        'image_dark': 'img/logos/carbonio-white.svg'
-    }
+        'image_light': 'carbonio-black.svg',
+        'image_dark': 'carbonio-white.svg',
+        'text': '%s' %release,
+    },
+    'footer_content_items': [ 'zx-copyright.html' ],
 }
-html_sidebars = { "**": [ 'navbar-logo.html', 'version.html',
-                          'sbt-sidebar-nav.html', 'home.html' ] }
+html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
+                          'home.html' ] }
 
 html_context = { 'hubhome' : '%s' %hubhome }
 

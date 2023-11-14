@@ -28,3 +28,17 @@ whose solution can be found in section :ref:`upgrade-ts`.
 :octicon:`check-circle;1em;sd-text-success` logging out from
 |product|, as either the admin and the user, in now managed by the
 same endpoint, ``/logout``, i.e., `https://mail.example.com/logout`.
+
+.. card:: The new |task| Component
+
+   |product| 23.11 introduces the |task|, a simple task management
+   application. |task| must be manually installed and consists of
+   three packages: ``carbonio-tasks-db`` (database component),
+   ``carbonio-tasks-ui`` (frontend), and ``carbonio-tasks-ce``
+   (backend). In the Multi-Server scenario, we suggest that these
+   packages be installed on SRV1, SRV2, and SRV3 respectively.
+
+   .. seealso::
+
+      * :ref:`Installation instructions <multi-server-install>`
+      * :ref:`User Documentation <tasks-comp>` 

@@ -16,11 +16,9 @@ Upgrade Checklist
               
 .. include:: /_includes/_upgrade/checklist-cb.rst
 
-.. card:: Backup Node(s)
-
-   For improved security, to prevent any data loss, it is suggested to
-   make a backup or take a snapshot (if you are using an hypervisor)
-   of each Node.
+.. hint:: For improved security, to prevent any data loss, it is
+   suggested to **make a backup** or **take a snapshot** (if you are
+   using an hypervisor) of each Node before upgrading.
              
 .. _pre-upgrade:
    

@@ -8,13 +8,13 @@ environment, composed by **four nodes** (that we will denote as *SRV1*,
 ..., *SRV4*) as follows:
 
 #. :ref:`SRV1 <srv1-install>` represents the core infrastructure of
-   |product| and features Directory Server, |mesh|, DB connection, and
-   |monit|
+   |product| and features Directory Server, |mesh|, DB connection,
+   |monit| and the databases required by |product|
 #. :ref:`SRV2 <srv2-install>` is equipped with MTA, the mail server,
-   Proxy, which allows web access to all components, and User
-   Management
-#. :ref:`SRV3 <srv3-install>` hosts an AppServer and the |storage|
-   instance
+   Proxy, which allows web access to all components, User
+   Management, and the frontend component of |task|
+#. :ref:`SRV3 <srv3-install>` hosts an AppServer, the |storage|
+   instance, and the backend component of |task|
 #. :ref:`SRV4 <srv4-install>` installs |file| & |docs|, that provide
    sharing and collaborative editing of documents, and |pv|,
    |carbonio|\'s ability to preview snippets or thumbnails of a
