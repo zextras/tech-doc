@@ -71,7 +71,7 @@ The public repository contains branches called `release/*` up to the
 version 23.7, the development branch is called **devel**.
 
 We'll be happy to accept contributions, provided they meet the
-requirement and follow the guidelines.
+requirements and follow the guidelines.
 
 ## Requirements
 
