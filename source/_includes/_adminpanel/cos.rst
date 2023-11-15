@@ -11,6 +11,16 @@ To create a COS, click the :bdg-primary-line:`CREATE NEW COS` button
 and enter a name. You can then configure all the options from the
 left-hand side menu.
 
+.. _cos_info:
+
+General Information
+-------------------
+
+This section present some (unchangeable) information about the chosen
+COS: name, ID, and creation date together with some calculated value:
+which accounts and domains use the COS. These values are expanded
+below, with the complete list of handled accounts and domains.
+
 .. _cos-features:
 
 Features

@@ -50,7 +50,6 @@ shown. To broaden or restrict the search, click the
 dates using the date pickers. Optionally, also add more keywords to
 search.
 
-
 Shared Calendars
 ----------------
 
@@ -63,6 +62,20 @@ finally click :bdg-primary:`ADD`.
 The calendar will appear in the list of calendars, and all the
 appointments are shown; toggle their visibility clicking the
 :octicon:`tasklist;1em;sd-text-primary` checkbox.
+
+You can also share your calendar with your colleagues (internal users,
+within the organisation) or with external persons: right-click the
+calendar you want to share, select *share calendar* and configure how
+you want to share it. By default, only events you marked as public
+will be shared; private events will never share their content, besides
+their status, *Free* or *Busy*. If you want to show all of a private's
+event details, tick the checkbox. Then, choose the role, i.e., whether
+the person can only *view* your events, *edit* them (add, modify,
+delete), of fully *manage* them (accept and re-share invitations and
+appointments on your behalf).
+
+To finalise the share, you can choose to send a notification to the user with whom you want to
+share the calendar or to add a custom message.
 
 Configure a CalDAV CLient
 -------------------------

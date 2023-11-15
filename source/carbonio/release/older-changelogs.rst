@@ -4,5 +4,6 @@
 
 .. toctree::
    :glob:
+   :reversed:
 
    changelogs/*

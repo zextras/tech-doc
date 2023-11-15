@@ -140,3 +140,14 @@ system, according to their status. The timestamp of the last update
 appears, as well as two button that allow to
 :bdg-primary-line:`RESTART SCAN` or to manually
 :bdg-primary-line:`FLUSH QUEUES`.
+
+When clicking a server, a dialog opens, containing the content of the
+queue, that is, all the messages grouped by their status (Queued,
+Corrupted, Deferred, Incoming, and On Hold). Also here you can
+:bdg-primary-line:`FLUSH QUEUES`.
+
+Clicking either of the status, a detailed vision of the queued
+messages appears. Selecting a messages allows to carry out some
+actions: put it on :bdg-primary-line:`HOLD`;
+:bdg-primary-line:`RELEASE`, :bdg-primary-line:`REQUEUE`, or
+:bdg-primary-line:`DELETE` it.

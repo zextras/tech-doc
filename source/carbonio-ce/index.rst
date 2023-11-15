@@ -16,16 +16,30 @@ e-mail and collaboration software.
 
 The content is organised in multiple parts:
 
-* Release. Contains links to all changelogs of |product|'s components
-  on GitHub repositories and directions to carry out the upgrade
-* Install. Information on |product| and its architecture, installation
-  and upgrade instructions, security tips
-* Admin by GUI. |product| administration using the |adminui|
-* Admin by CLI. Administration of |product| from the command line:
-  management tasks and some advanced usage for |mesh|
-* Use. everyday's usage of |product|, including its use on the
-  dedicated mobile Apps
-* Develop. Links to API reference
+Introduction
+  Useful and generic information about |product|.
+  
+Release
+  Contains links to all changelogs of |product|'s components on GitHub
+  repositories and directions to carry out the upgrade
+  
+Install
+  Information on |product| and its architecture, installation and
+  upgrade instructions, security tips
+  
+Admin by GUI
+  |product| administration using the |adminui|
+  
+Admin by CLI
+  Administration of |product| from the command line: management tasks
+  and some advanced usage for |mesh|
+
+User Guides
+  Everyday's usage of |product|, including its use on the dedicated
+  mobile Apps
+  
+Develop
+  Links to API reference
 
 If you are looking for |carbonio|'s documentation, please refer to its
 `dedicated page <../../carbonio/html/index.html>`_.

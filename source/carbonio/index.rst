@@ -16,16 +16,30 @@ workplace.
 
 The content is organised in multiple parts:
 
-* Release. List of issues fixed in the current release of |product|
-  and directions to carry out the upgrade
-* Install. Information on |product| and its architecture, installation
-  and upgrade instructions, security tips
-* Admin by GUI. |product| administration using the |adminui|
-* Admin by CLI. Administration of |product| from the command line:
-  management tasks and some advanced usage for |mesh|
-* Use. Everyday's usage of |product|, including its use on the
-  dedicated mobile Apps
-* Develop. Links to API reference
+Introduction
+  Useful and generic information about |product|.
+  
+Release
+  List of issues fixed in the current release of |product| and
+  directions to carry out the upgrade
+
+Install
+  Information on |product| and its architecture, installation and
+  upgrade instructions, security tips
+  
+Admin by GUI
+  |product| administration using the |adminui|
+  
+Admin by CLI
+  Administration of |product| from the command line: management tasks
+  and some advanced usage for |mesh|
+  
+User Guides
+  Everyday's usage of |product|, including its use on the dedicated
+  mobile Apps
+  
+Develop
+   Links to API reference
 
 If you are looking for |ce|'s documentation, please refer to its
 `dedicated page <../../carbonio-ce/html/index.html>`_.
