@@ -123,6 +123,9 @@ html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
 
 html_context = { 'hubhome' : '%s' %hubhome }
 
+# workaround for ZTD-581
+html_extra_path = ['changelog.html', 'upgrade.html']
+
 # -- Options for linkcheck output --------------------------------------------
 
 # list of URLs to ignore
