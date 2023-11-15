@@ -49,7 +49,7 @@ In order to modify these values, you can use or adapt the following commands
 
         zextras$ carbonio prov getCos default carbonioFeatureFilesEnabled
 
-        # name default
+        #name default
         carbonioFeatureFilesEnabled: TRUE
 
    * Disable the |team| Component in COS called `noChat`

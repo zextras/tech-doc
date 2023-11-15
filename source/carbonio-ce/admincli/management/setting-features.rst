@@ -44,7 +44,7 @@ In order to modify these values, you can use or adapt the following commands
 
         zextras$ carbonio prov getCos default carbonioFeatureFilesEnabled
 
-        # name default
+        #name default
         carbonioFeatureFilesEnabled: TRUE
 
    * The Settings module is available by default to all users; to hide
