@@ -8,11 +8,10 @@ software, which consists of
 - E-mail, Contacts and Calendar Essentials, all shareable across a domain
 - A complete mailserver, equipped with anti-spam and anti-virus
   software
-- Chat (upcoming)
 - File Management System including collaborative editing and document
   sharing
-
-
+- Tasks
+- Chat (upcoming)
 
 Strong points of |ce| include:
 
