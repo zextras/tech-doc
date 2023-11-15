@@ -12,7 +12,7 @@ of:
 - Chat and Videochats
 - File Management System including collaborative editing and document
   sharing
-
+- Tasks
 
 Strong points of |product| include:
 
