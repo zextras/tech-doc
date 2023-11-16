@@ -40,7 +40,7 @@ Next, we install all packages needed for |product|.
          carbonio-appserver \
          carbonio-user-management \
          carbonio-files-ce carbonio-files-db \
-         carbonio-tasks-db carbonio-tasks-db \
+         carbonio-tasks-ce carbonio-tasks-db \
          carbonio-tasks-ui \
          carbonio-storages-ce \
          carbonio-preview-ce \
@@ -68,6 +68,8 @@ Next, we install all packages needed for |product|.
          carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-db \
+         carbonio-tasks-ce carbonio-tasks-db \
+         carbonio-tasks-ui \
          carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-prometheus 
