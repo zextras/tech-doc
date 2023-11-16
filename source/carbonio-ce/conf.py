@@ -79,10 +79,10 @@ rst_prolog = """
 # -- Configuration of extensions ---------------------------------------------
 
 # copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
-copybutton_prompt_text = r'\$\s|#\s'
+copybutton_prompt_text = r'\$\s|#\s|carbonio>\s|zextras\$\s'
 copybutton_prompt_is_regexp = True
 copybutton_line_continuation_character = "\\"
-copybutton_only_copy_prompt_lines = False
+copybutton_only_copy_prompt_lines = True
 
 numfig = True
 
@@ -122,6 +122,9 @@ html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
                           'home.html' ] }
 
 html_context = { 'hubhome' : '%s' %hubhome }
+
+# workaround for ZTD-581
+html_extra_path = ['changelog.html', 'upgrade.html']
 
 # -- Options for linkcheck output --------------------------------------------
 
