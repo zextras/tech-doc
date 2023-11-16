@@ -117,11 +117,27 @@ html_theme_options = {
         'text': '%s' %release,
     },
     'footer_content_items': [ 'zx-copyright.html' ],
+
+    # Add button for surveys at the bottom of the right-hand side menu
+    # (local ToC)
+    #'secondary_sidebar_items': ['page-toc', 'survey'],
+
+    # Add button for surveys at the bottom of the right-hand side menu
+    # (global ToC)
+    'primary_sidebar_end': ['survey'],
 }
 html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
                           'home.html' ] }
 
-html_context = { 'hubhome' : '%s' %hubhome }
+html_context = {
+    'hubhome' : '%s' %hubhome,
+    #change label and links - example values
+    'surveylink': 'https://community.zextras.com/' ,
+    'surveylabel': 'community portal',
+}
+
+# workaround for ZTD-581
+html_extra_path = ['changelog.html', 'upgrade.html']
 
 # -- Options for linkcheck output --------------------------------------------
 
