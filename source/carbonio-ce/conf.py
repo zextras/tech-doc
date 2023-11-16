@@ -100,7 +100,7 @@ html_show_sourcelink = False
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = [ 'css/community.css' ] 
+html_css_files = [ 'css/community.css' ]
 html_js_files = [ 'js/matomo.js' ]
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
@@ -117,11 +117,25 @@ html_theme_options = {
         'text': '%s' %release,
     },
     'footer_content_items': [ 'zx-copyright.html' ],
-}
-html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
-                          'home.html' ] }
 
-html_context = { 'hubhome' : '%s' %hubhome }
+    # Add button for surveys at the bottom of the right-hand side menu
+    # (local ToC)
+    #'secondary_sidebar_items': ['page-toc', 'survey'],
+
+    # Add button for surveys at the bottom of the right-hand side menu
+    # (global ToC)
+    'primary_sidebar_end': ['survey'],
+}
+
+html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
+                          'home.html' ], }
+
+html_context = {
+    'hubhome' : '%s' %hubhome,
+    #change label and links - example values
+    'surveylink': 'https://community.zextras.com/' ,
+    'surveylabel': 'community portal',
+}
 
 # workaround for ZTD-581
 html_extra_path = ['changelog.html', 'upgrade.html']
