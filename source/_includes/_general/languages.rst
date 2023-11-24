@@ -19,7 +19,7 @@ languages
       * Indonesian
       * Italian
       * Japanese
-      * Portoguese (PT, BR)
+      * Portuguese (PT, BR)
       * Russian
       * Spanish
       * Thai
