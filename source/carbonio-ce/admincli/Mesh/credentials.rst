@@ -1,1 +1,7 @@
-../../../carbonio/admincli/Mesh/credentials.rst
+
+.. _mesh-credentials:
+
+|mesh| Credentials
+==================
+
+.. include:: /_includes/_admincli/mesh-credentials.rst
