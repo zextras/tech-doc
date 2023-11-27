@@ -21,11 +21,11 @@
       (http)**. In case the proxy can not be directly reached, you
       must add some forwarding rules.
 
-   #. Make sure that you run  all command in this section as the
-      ``zextras`` user
+   #. You run all command in this section as the ``zextras`` user
       
-   #. The ``zimbraReverseProxyMailMode`` attribute is set to *redirect*
-      at global level. You can verify if this is the case with command
+   #. The ``zimbraReverseProxyMailMode`` attribute has been set to
+      *redirect* at global level. You can verify if this is the case
+      with command
    
       .. code:: console
 
@@ -37,7 +37,7 @@
 
          zextras$ carbonio prov mcf zimbraReverseProxyMailMode redirect
 
-   #. Unset the attribute on the Proxy Nodes
+   #. you have unset the same attribute on the Proxy Nodes
       
       .. code:: console
 
