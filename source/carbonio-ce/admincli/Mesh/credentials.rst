@@ -49,11 +49,46 @@ remainder, you can find step-by-step directions for
 Reset |mesh| Credentials on Single-Server
 -----------------------------------------
 
-.. include:: /_includes/_admincli/mesh-credentials-single.rst
+.. include:: /_includes/_admincli/mesh/credentials-single.rst
+           
+Wipe Old Credentials
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_admincli/mesh/wipecredentials.rst
+
+Generate New Credentials
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_admincli/mesh/generatecredentials.rst
 
 .. _mesh-reset-multi:
 
 Reset |mesh| Credentials on Multi-Server
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_admincli/mesh-credentials-multi.rst
+On a Multi-Server, before starting the procedure it is necessary to
+identify the **Leader Node**, on which to carry out some preliminary
+tasks, then wipe the old secret, generate the new one, and finally set
+up the other nodes by copying the credentials on the remaining nodes
+and restart the service.
+
+Find Leader Node's IP Address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+.. include:: /_includes/_admincli/mesh/leaderip.rst
+          
+Wipe Old Credentials
+~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_admincli/mesh/wipecredentials.rst
+
+Generate New Credentials
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_admincli/mesh/generatecredentials.rst
+
+             
+Set up Other Nodes
+~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_admincli/mesh/othernodes.rst
