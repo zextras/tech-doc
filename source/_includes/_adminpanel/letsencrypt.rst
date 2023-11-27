@@ -23,7 +23,7 @@
 
    #. You run all command in this section as the ``zextras`` user
       
-   #. The ``zimbraReverseProxyMailMode`` attribute is to be set to
+   #. The ``zimbraReverseProxyMailMode`` attribute has been set to
       *redirect* at global level. You can verify if this is the case
       with command
    
@@ -37,7 +37,7 @@
 
          zextras$ carbonio prov mcf zimbraReverseProxyMailMode redirect
 
-   #. The same attribute is unset on the Proxy Nodes
+   #. you have unset the same attribute on the Proxy Nodes
       
       .. code:: console
 
