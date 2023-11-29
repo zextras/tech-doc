@@ -4,7 +4,7 @@
 
 
 Before starting with the actual installation, carry out the following
-two tasks *on* **each** *of the six nodes*.
+two tasks *on* **each** node.
 
 .. card:: Task 1. Configure repositories
                      

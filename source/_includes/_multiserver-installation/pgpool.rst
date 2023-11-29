@@ -25,7 +25,7 @@
       different node or you want to use an existing PostgreSQL
       installation, replace the value *localhost* with the correct IP
       address or hostname, provided the hostname is resolvable by
-      SRV1.
+      the node that hosts the Database connector role.
 
 
    .. tab-set::
