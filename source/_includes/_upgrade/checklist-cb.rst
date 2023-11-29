@@ -35,8 +35,7 @@ same endpoint, ``/logout``, i.e., `https://mail.example.com/logout`.
    application. |task| must be manually installed and consists of
    three packages: ``carbonio-tasks-db`` (database component),
    ``carbonio-tasks-ui`` (frontend), and ``carbonio-tasks``
-   (backend). In the Multi-Server scenario, we suggest that these
-   packages be installed on SRV1, SRV2, and SRV3 respectively.
+   (backend).
 
    .. seealso::
 
