@@ -23,7 +23,8 @@ This command will:
   .. include:: /_includes/hint-pwd.rst
 
   In case the password is lost or the credential file becomes
-  corrupted and unusable, you can :ref:`mesh-reset`.
+  corrupted and unusable, you can reset them using the procedure
+  detailed in section :ref:`mesh-reset-single`.
 
 * store the setup in file
   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`

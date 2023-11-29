@@ -193,9 +193,7 @@ Virtual Hosts & Certificate
 
 A **Virtual Host** is an alternative name given to a *domain* that can
 be used to access the same domain. To be able to use the virtual host,
-the name must be registered on the domain's DNS with an ``A``
-record. Users can then log in to the domain using only their
-usernames, without the domain.
+the name must be registered on the domain's DNS with an ``A`` record.
 
 To each virtual host you can associate an **SSL certificate**.
 |product| supports the upload of multiple SSL *domain certificates*
