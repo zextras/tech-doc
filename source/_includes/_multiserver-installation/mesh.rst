@@ -24,7 +24,7 @@ This command will:
 
   In case the password is lost or the credential file becomes
   corrupted and unusable, you can reset them using the procedure
-  detailed in section :ref:`mesh-reset-multi`.
+  detailed in section :ref:`mesh-credentials`.
 
 * store the setup in file
   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
