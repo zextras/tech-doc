@@ -3,9 +3,23 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 The last task to complete before the installation is complete, is to
-activate |product| license: as the ``zextras`` user, issue the
-following command, replacing **TOKEN** with your licence token.
+activate |product| license.  You can activate the license from the
+command line or from the graphical administrator interface.
 
-.. code:: console
+.. grid::
+   :gutter: 3
 
-   zextras$ carbonio core activate-license TOKEN
+   .. grid-item-card:: Activate from CLI
+      :columns: 6
+
+      As the ``zextras`` user, issue the following command, replacing
+      **TOKEN** with your licence token.
+
+      .. code:: console
+
+         zextras$ carbonio core activate-license TOKEN
+
+   .. grid-item-card:: Activate from |adminui|
+      :columns: 6
+
+      Refer to section :ref:`ap-subscriptions` for directions.
