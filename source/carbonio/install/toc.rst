@@ -14,8 +14,6 @@ section.
 
    architecture
    multi-server-installation
-   expand
-   remove-logger
    web-access
    security
    migration
