@@ -111,3 +111,12 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
 
          develop/toc
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+
+      .. toctree::
+         :maxdepth: 1
+
+         glossary
+      

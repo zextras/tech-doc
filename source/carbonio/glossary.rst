@@ -1,1 +1,6 @@
-../common/carbonio/glossary.rst
+==========
+ Glossary
+==========
+
+
+.. include:: /common/carbonio/glossary.rst
