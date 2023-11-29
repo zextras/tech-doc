@@ -119,12 +119,12 @@ mandatory to keep in sync the resources on all the Proxies instances.
       **Requirements**:
 		  
       The images used for the background must adhere to the following
-      **maximum** requirements.
+      requirements.
 
       * The format must be **JPG** or **PNG**
-      * The dimensions must be at least **1920x1080** pixel, with
-        ratio **16:9**
-      * The suggested size is **800** Kb
+      * The dimensions must be between **1280x720** and **1920x1080**
+        pixels, with ratio **16:9**
+      * The size should be **less than 800** Kb
 
 All customisations can be removed at once by clicking the
 :bdg-danger-line:`RESET` button.
