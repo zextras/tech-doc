@@ -5,8 +5,8 @@
 
       .. code:: console
 
-         # apt install carbonio-files-db carbonio-mailbox-db carbonio-docs-connector-db \
-           carbonio-tasks-db carbonio-message-dispatcher-db carbonio-ws-collaboration-db
+         # apt install carbonio-files-db carbonio-mailbox-db \
+           carbonio-docs-connector-db carbonio-tasks-db
 
  
    .. tab-item:: RHEL
@@ -14,6 +14,6 @@
 
       .. code:: console
 
-         # dnf install carbonio-files-db carbonio-mailbox-db carbonio-docs-connector-db \
-           carbonio-tasks-db carbonio-message-dispatcher-db carbonio-ws-collaboration-db  
+         # dnf install carbonio-files-db carbonio-mailbox-db \
+           carbonio-docs-connector-db carbonio-tasks-db
 
