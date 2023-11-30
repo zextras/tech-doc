@@ -39,5 +39,5 @@ same endpoint, ``/logout``, i.e., `https://mail.example.com/logout`.
 
    .. seealso::
 
-      * :ref:`Installation instructions <multi-server-install>`
+      * :ref:`Installation instructions <roles-installation>`
       * :ref:`User Documentation <tasks-comp>` 

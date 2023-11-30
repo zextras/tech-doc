@@ -4,10 +4,11 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+.. _roles-installation:
 
-=================================
-Role description and Installation
-=================================
+==================================
+Roles Description and Installation
+==================================
 
 Multi-Server is the **only** supported method of
 installation in a production environment.

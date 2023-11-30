@@ -18,8 +18,8 @@ Requirements
 
 In order to setup additional |mesh| servers, you need:
 
-* having installed and configured package ``service-discover-server``
-  on one node (see Section :ref:`srv2-install`)
+* to have already installed and configured package
+  ``service-discover-server`` (i.e., first |mesh| server) on one node
 
 * the
   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
