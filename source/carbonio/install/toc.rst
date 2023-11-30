@@ -13,7 +13,15 @@ section.
    :maxdepth: 1
 
    architecture
-   multi-server-installation
-   web-access
+   requirements
+   preliminary
+   roles
+   logging
+   license
+   sslcert
    security
+   web-access
+   management
    migration
+   disable-amavis
+   
