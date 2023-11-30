@@ -23,3 +23,11 @@ command line or from the graphical administrator interface.
       :columns: 6
 
       Refer to section :ref:`ap-subscriptions` for directions.
+
+   .. grid-item-card::
+      :columns: 12
+
+      .. figure:: /img/adminpanel/ap-subscriptions.png
+         :width: 99%
+
+         Sample subscription page with enables services.

@@ -37,30 +37,34 @@ Bootstrap |carbonio| Databases
 ------------------------------
 
 You can use the password of the Postgres user ``carbonio_adm`` that
-you defined when installing the 'Database' role or any other
+you defined when installing the *Database* role or any other
 administrator user created previously.
 
-You can start with this command (mandatory for all installation
-scenarios) and then continue depending on the components installed:
+The only mandatory command is the one for the **mailbox database**,
+which is necessary in all installation scenarios, while the other are
+needed only if the other Roles are installed.
 
-  .. code:: console
+.. card:: Mailbox
+   :class-card: sd-border-2
+   
+   .. code:: console
 
-     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-* |docs|
+.. card:: |docs|
+            
+   .. code:: console
 
-  .. code:: console
+      # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
-     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+.. card:: |file|
 
-* |file|
+   .. code:: console
+ 
+      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
-  .. code:: console
+.. card:: |task|
 
-     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   .. code:: console
 
-* |task|
-
-  .. code:: console
-
-     # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1

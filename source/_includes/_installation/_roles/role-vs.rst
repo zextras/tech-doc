@@ -69,11 +69,11 @@ otherwise you can install *Video Server* without *Video Recording*.
    directions.
 
    The recorded sessions will be stored in directory
-   :file:`/var/lib/videorecorder/`, because the ability to
-   record requires a Node which features the AppServer (i.e., on which
-   the ``carbonio-advanced`` package is installed). Make sure that the
-   directory has sufficient free space, otherwise recorded videos can not
-   be stored.
+   :file:`/var/lib/videorecorder/` on the Node which features the
+   Mailstore and Provisioning Role, because the ability to record
+   requires a Node which features that Role. Make sure that the
+   directory has sufficient free space, otherwise recorded videos can
+   not be stored.
 
    .. hint:: You can mount on that location a dedicated disk or
       partition and keep it monitored for space usage.

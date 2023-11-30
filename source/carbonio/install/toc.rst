@@ -16,12 +16,4 @@ section.
    requirements
    preliminary
    roles
-   logging
-   license
-   sslcert
-   security
-   web-access
-   management
-   migration
-   disable-amavis
    

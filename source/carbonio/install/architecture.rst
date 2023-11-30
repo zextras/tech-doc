@@ -1,6 +1,3 @@
-.. Spdx-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ===========================
  Architecture of |product|
@@ -159,7 +156,7 @@ VideoServer
   component for the proper use of video conferencing service.
   
 VideoServer Recording
-This modules adds recording abilities to the VideoServer.
+  This modules adds recording abilities to the VideoServer.
   
 Tasks
   Define simple tasks and reminders.

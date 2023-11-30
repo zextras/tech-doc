@@ -11,11 +11,7 @@ Install Packages
 Bootstrap |carbonio|
 --------------------
 
-Launch the |carbonio| bootstrap process
-
-   .. code:: console
-
-      # carbonio-bootstrap
+.. include:: /_includes/_multiserver-installation/bootstrap.rst
 
 During the process, you need to provide these values, which you can
 retrieve from the first Mesh and Directory node.
