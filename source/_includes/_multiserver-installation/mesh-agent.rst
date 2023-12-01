@@ -11,7 +11,7 @@ This command will:
 * ask for the IP address and netmask of the current Node
 
 * ask for the |mesh| :ref:`secret <mesh-credentials>`, which is stored
-  in file :file:`/var/lib/service-discover/password` on SRV1
+  in file :file:`/var/lib/service-discover/password` on the Directory Leader node.
 
 After the configuration has completed successfully, run the following
 command, again using the *secret*.

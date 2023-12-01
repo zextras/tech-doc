@@ -1,14 +1,13 @@
 
 
-|product| can be installed in **Multi-Server** only. Each Node must
-satisfy the :ref:`hw-requirements` and :ref:`software-requirements`
-below. On the contrary, :ref:`fw-ports` must be opened only on the
-Node that hosts the corresponding service. For example, port **6071**
-(secure access to the Admin Panel) must be opened only on the Node
+Each Node must satisfy the :ref:`hw-requirements` and :ref:`software-requirements` below.
+
+On the contrary, :ref:`fw-ports` must be opened only on the
+Node that hosts the corresponding service.
+
+For example, port **6071** (secure access to the Admin Panel) must be opened only on the Node
 featuring the |adminui|. If a service is not installed, the
-corresponding port can be shut down, to prevent unwanted accesses. For
-example, if POP3/POPS access is not allowed, access to ports **110**
-and **995** can be disallowed.
+corresponding port can be closed, to prevent unwanted accesses.
 
 .. _hw-requirements:
 
@@ -23,10 +22,10 @@ may vary considerably.
 
 Moreover, you must take into account the following:
 
-* The Node that hosts |storage| (**SRV3**) and therefore the emails,
+* The Node that hosts |storage| and therefore the emails,
   is the node requiring more disk space.
 * The |file| service requires **4GB** of RAM to start, so make sure
-  that the node hosting it (**SRV4**) has at least **6GB** of RAM
+  that the node hosting it has at least **6GB** of RAM
 * The Video Recording feature requires additional storage, which is
   difficult to estimate in advance. Indeed, it depends on a number of
   factors, including: Number of participants and number of webcam
@@ -37,16 +36,7 @@ Moreover, you must take into account the following:
 
 Purely as an example, if you give a quota of 5GB to each of the 150
 users, you need to assign **780GB of disk space** (30GB for the OS and
-at 750 for user's total quota) to **SRV3**.
-
-.. csv-table::
-   :header: "Node", "CPUs", "RAM", "Disk Space (OS)"
-
-   "SRV1", "4vCPU", "8GB", "120GB"
-   "SRV2", "4vCPU", "10GB", "30GB"
-   "SRV3", "4vCPU", "16GB", "30GB"
-   "SRV4", "4vCPU", "8GB", "30GB"
-   "SRV5", "4vCPU", "8GB", "30GB"
+at 750 for user's total quota) to the node.
 
 .. _software-requirements:
 

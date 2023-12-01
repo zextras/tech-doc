@@ -1154,10 +1154,10 @@ To allow seamless connection to the service, it is necessary to make
 sure that incoming request to port **8636** to the domain (e.g.,
 *mail.example.com*) are correctly forwarded to the Proxy node. In
 other words, assuming that mail.example.com is the Public Service
-Hostname and the Proxy Node is the one in our five Nodes installation
-Scenario (i.e., :ref:`SRV2 <srv2-install>`) , then all incoming
-connections to *mail.example.com:8636* must be forwarded to
-*srv2.example.com:8636*.
+Hostname and the Proxy Node is installed on *proxy.example.com*, then
+all incoming connections to *mail.example.com:8636* must be forwarded
+to *proxy.example.com:8636*.
+
 
 .. _contacts_and_address_books:
 
