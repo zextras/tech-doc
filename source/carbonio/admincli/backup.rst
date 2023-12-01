@@ -1165,7 +1165,7 @@ one.
       In a Multi-Server installation, consider a scenario in which the same NAS
       located on 192.168.72.16 is involved, which exposes via NFS the share as
       :file:`/media/externalStorage`. We want to store our multiservers backups on
-      this NAS.
+      this NAS: the backup of each Node on a separate directory. backup in 
 
       To do so, on **each server** you need to add one entry similar to the
       following to the :file:`/etc/fstab` file:
@@ -1174,10 +1174,9 @@ one.
 
          192.168.72.16:/externalStorage/SRV1 /mnt/backup nfs rw,hard,intr 0 0
 
-      In our sample :ref:`multi-server-scenario`, on each node you
-      need to add the entry above using **SRV1**, ..., **SRV6** on the
-      corresponding node, while on the NAS there will be six
-      directories, one for each node.
+      .. note:: You need to add an entry like the one above on each
+         node replacing **SRV1** with the corresponding directory on
+         the NAS on which the backup will be store.
 
 .. _external_objectstorage:
 

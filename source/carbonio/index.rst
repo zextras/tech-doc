@@ -82,6 +82,15 @@ If you are looking for |ce|'s documentation, please refer to its
       .. toctree::
          :maxdepth: 2
 
+         postinstall/toc
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+
          adminpanel/toc
 
    .. grid-item-card::
@@ -111,3 +120,12 @@ If you are looking for |ce|'s documentation, please refer to its
          :maxdepth: 1
 
          develop/toc
+
+   .. grid-item-card::
+      :columns: 12 12 6 6
+
+      .. toctree::
+         :maxdepth: 1
+
+         glossary
+      

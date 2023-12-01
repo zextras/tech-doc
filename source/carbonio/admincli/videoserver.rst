@@ -51,9 +51,8 @@ that UDP traffic is not filtered.
 |vs| Installation
 -----------------
 
-The installation process of |vs| has been moved as part of the main
-installation, please refer to the :ref:`corresponding Step
-<vs_installation>`.
+The installation of the |vs| :term:`Role` has been moved to a
+:ref:`dedicated section <role-vs-install>`.
 
 .. _vs-architecture:
 
@@ -462,4 +461,4 @@ Once done, remove the package
          # dnf remove service-discover-agent carbonio-videoserver
 
 Now the |vs| is completely removed from the node and you can install
-it on a different Node, using the :ref:`installation procedure <srv5-install>`.
+it on a different Node, using the corresponding :term:`Role` :ref:`installation procedure <role-vs-install>`.
