@@ -189,8 +189,8 @@ Additional Requirements
 
 * If none of the nodes is exposed to the Internet, you need to forward
   two ports from the public IP: port **25/smtp** to the Node featuring
-  MTA (SRV2) to be able to receive mail, and port **443/https** to the
-  node installing the Proxy (SRV2) to allow users to access their
+  the MTA Role to be able to receive mail, and port **443/https** to
+  the node installing the Proxy Role to allow users to access their
   webmail from a remote location
 
 * If you plan to enable other protocols (e.g., POP, IMAP) you should
