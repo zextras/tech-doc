@@ -19,12 +19,12 @@ with all its components.
 A typical |product| installation consists of various :term:`Components
 <Component>` installed on multiple :term:`Nodes <node>`. Each of the
 component depicted by the red boxes (i.e., the :ref:`core-comp`)
-should be installed on one node, while all the others (i.e., the
-:ref:`service-comp` in the blue boxes) can be combined and installed
-on one or more Nodes. For example, if |vs| is heavily used, it could
-be a good idea to install it on a dedicated node, while
-**Provisioning** can be installed on the AppServer node instead of on
-a dedicated node.
+should be installed on a different Node, while all the others (i.e.,
+the :ref:`service-comp` in the blue boxes) can be combined and
+installed on one or more Nodes. For example, if |vs| is heavily used,
+it could be a good idea to install it on a dedicated node, while on
+the other hand **Provisioning** can be installed on the *Mailstore &
+Provisioning* (AppServer) Node instead of on a dedicated node.
 
 In :numref:`fig-cb-arch`, *dependencies* are denoted by the boxes piled
 on top of the bottom one. In other words, all the ``*-UI`` packages,
@@ -71,9 +71,9 @@ receive e-mails and to manage their calendars and contacts. They are:
 
       The Proxy is indeed a reverse proxy that acts as the central
       access point to the Email accounts. It also prevents a public,
-      direct access to the AppServers and other backend services. This
-      node is the only one on which the ``-UI`` packages can be
-      installed.
+      direct access to the Mailstore & Provisioning (AppServer) and
+      other backend services. This node is the only one on which the
+      ``-UI`` packages can be installed.
 
    .. grid-item-card:: MTA AV/AS
       :columns: 3
@@ -83,15 +83,15 @@ receive e-mails and to manage their calendars and contacts. They are:
       email transfer and forwarding, filtering, and other services to
       keep email clean and secure.
 
-   .. grid-item-card:: AppServer
+   .. grid-item-card:: Mailstore & Provisioning
       :columns: 3
       :class-body: abyss
 
-      The Application Server provides the application login to manage
-      and store the accounts data, e.g., emails, contacts, and
+      Mailstore & Provisioning features the application login to
+      manage and store the accounts data, e.g., emails, contacts, and
       calendar appointments. In small environments there can be one or
-      two AppServer roles, but more can be added to a large or growing
-      infrastructure.
+      two such roles, but more can be added to a large infrastructure
+      or when growing an existent one.
 
    .. grid-item-card:: |mesh|
       :columns: 12
@@ -149,7 +149,8 @@ Docs
     
 User Management
   It registers the user status (logged in or logged out) and user
-  attributes (e.g., on which AppServer a user is logged in).
+  attributes (e.g., on which Node user is logged
+  in). 
 
 VideoServer
   It provides video communication capabilities and is a necessary
