@@ -1,13 +1,11 @@
 
 
-Each Node must satisfy the :ref:`hw-requirements` and :ref:`software-requirements` below.
-
-On the contrary, :ref:`fw-ports` must be opened only on the
-Node that hosts the corresponding service.
-
-For example, port **6071** (secure access to the Admin Panel) must be opened only on the Node
-featuring the |adminui|. If a service is not installed, the
-corresponding port can be closed, to prevent unwanted accesses.
+Each Node must satisfy the :ref:`hw-requirements` and
+:ref:`software-requirements` below, while on the contrary,
+:ref:`fw-ports` must be opened only on the Node that hosts the
+corresponding service. For example, port **6071** (secure access to
+the Admin Panel) must be opened only on the Node featuring the
+|adminui|.
 
 .. _hw-requirements:
 
@@ -216,11 +214,13 @@ Additional Requirements
 Firewall Ports
 ~~~~~~~~~~~~~~
 
-For |carbonio| to operate properly, it is necessary to allow network
-communication on specific ports.
+|product| employs SSL/TLS for the communication, and to operate
+properly, it is necessary to allow network communication on specific
+ports.
 
 The ports listed in the *Internal Connections* must be opened on
-**all** nodes, while those in the *External Connections* only on the
+**all** nodes, possibly in a dedicated network connecting the Nodes,
+while those in the *External Connections* should be opened only on the
 node on which the corresponding Role is installed. For example, port
 443 should be opened only on the node hosting the **Proxy** Role.
 
@@ -230,6 +230,8 @@ table must be opened only on the Node on which the Role is installed.
 
 TCP External Connections
 ++++++++++++++++++++++++
+
+These ports must be opened to allow communication with the Internet.
 
 .. card:: MTA Role
 
@@ -282,6 +284,9 @@ TCP External Connections
 TCP Internal Connections
 ++++++++++++++++++++++++
 
+These ports must be opened to allow the Nodes to communicate properly
+and be able to access |product|'s internal services.
+
 .. card:: Every Node
 
    .. csv-table::
@@ -331,7 +336,7 @@ TCP Internal Connections
    .. [3] This port is still used since in some cases it is considered
       safer than 587. It requires on-connection SSL.
 
-.. card:: Advanced Role (AppServer)
+.. card:: Mailstore & Provisioning (AppServer)
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
