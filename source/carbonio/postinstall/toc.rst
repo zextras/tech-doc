@@ -16,6 +16,5 @@ migration to |product|, and accessing the web interface.
    web-access
    management
    migration
-   clamav-updater
-   disable-amavis
+   clamav-management.rst
    

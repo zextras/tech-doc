@@ -10,27 +10,33 @@
 Roles Description and Installation
 ==================================
 
-Multi-Server is the **only** supported method of
-installation in a production environment.
+Multi-Server is the **only** supported method of installation in a
+production environment.
 
-Please review carefully this sections before
-attempting to install.
+Please review carefully this sections before attempting to install.
 
 
 |product| is made of 'Roles'
 ============================
 
-A Carbonio infrastructure is created with the installation of some **Roles**.
+A Carbonio infrastructure is created with the installation of some
+**Roles**.
 
-A **Role** is a |product| functionality that is considered atomic and consists of one or more packages.
+A **Role** is a |product| functionality that is considered atomic and
+consists of one or more packages.
 
 .. card:: The modular nature of Carbonio
           
-   As we will see, it's possible to install a single role on a dedicated node or group multiple roles according to affinity rules.
+   As we will see, it's possible to install a single role on a
+   dedicated node or group multiple roles according to affinity rules.
 
-   Although this is not a suggested or supported scenario, it would be technically possible to install almost all Carbonio roles on a single virtual machine.
+   Although this is not a suggested or supported scenario, it would be
+   technically possible to install almost all Carbonio roles on a
+   single virtual machine.
 
-   The possibility of installation by roles allows you to design architectures that precisely correspond to the requirements and purposes of your infrastructure.
+   The possibility of installation by roles allows you to design
+   architectures that precisely correspond to the requirements and
+   purposes of your infrastructure.
 
 The roles of |product|
 ======================
@@ -45,82 +51,155 @@ We can group the Carbonio roles into 3 macro categories:
 
 This is the list of roles that make up a Carbonio installation.
 
-The third column indicates the packages that make up each role.
+.. grid:: 1 1 2 2
+   :gutter: 3
+   
+   .. grid-item-card:: Database
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * python3-psycopg2
+      * postgresql-12
+      * patroni
+      * watchdog
+      * python3-consul
+      * python3-pysyncobj
 
 
-.. list-table:: Carbonio Roles
-   :widths: 25 25 40
-   :header-rows: 1
+   .. grid-item-card:: Mesh and Directory
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
 
-   * - Role
-     - Type
-     - Packages
-   * - **Database**
-     - Infrastructure role
-     - * python3-psycopg2
-       * postgresql-12
-       * patroni
-       * watchdog
-       * python3-consul
-       * python3-pysyncobj
-   * - **Mesh and directory**
-     - Infrastructure role
-     - * service-discover-server
-       * carbonio-directory-server
-   * - **Database Connector**
-     - Infrastructure role
-     - * carbonio-files-db
-       * carbonio-mailbox-db
-       * carbonio-docs-connector-db
-       * carbonio-tasks-db
-       * carbonio-message-dispatcher-db
-       * carbonio-ws-collaboration-db
-   * - **Proxy**
-     - Infrastructure role
-     - * carbonio-proxy
-       * carbonio-webui
-       * carbonio-files-ui
-       * carbonio-chats-ui
-       * carbonio-user-management
-       * carbonio-tasks-ui
-       * carbonio-ws-collaboration-ui
-       * carbonio-avdb-updater
-   * - **MTA AV/AS**
-     - Infrastructure role
-     - carbonio-mta
-   * - **Mailstore & Provisioning**
-     - Service role
-     - carbonio-advanced
-   * - **Files**
-     - Service role
-     - carbonio-files
-   * - **Docs & Editor**
-     - Service role
-     - * carbonio-docs-connector
-       * carbonio-docs-editor
-   * - **Preview**
-     - Service role
-     - carbonio-preview
-   * - **Tasks**
-     - Service role
-     - carbonio-tasks
-   * - **Workstream Collaboration**
-     - Service role
-     - * carbonio-message-broker
-       * carbonio-message-dispatcher
-       * carbonio-ws-collaboration 
-   * - **Video Server**
-     - Service role
-     - * carbonio-videoserver
-       * carbonio-videoserver-recorder
-   * - **Monitoring**
-     - Service role
-     - carbonio-prometheus
-   * - **Event Streaming**
-     - Advanced role
-     - * carbonio-kafka
-       * carbonio-zookeeper
+      Type of Role: Infrastructure
 
+      Packages:
+      
+      * service-discover-server
+      * carbonio-directory-server
+
+
+   .. grid-item-card:: Database Connector
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * carbonio-files-db
+      * carbonio-mailbox-db
+      * carbonio-docs-connector-db
+      * carbonio-tasks-db
+      * carbonio-message-dispatcher-db
+      * carbonio-ws-collaboration-db
+
+
+   .. grid-item-card:: Proxy
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * carbonio-proxy
+      * carbonio-webui
+      * carbonio-files-ui
+      * carbonio-chats-ui
+      * carbonio-user-management
+      * carbonio-tasks-ui
+      * carbonio-ws-collaboration-ui
+      * carbonio-avdb-updater
+
+   .. grid-item-card:: MTA AV/AS
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * carbonio-mta
+
+   .. grid-item-card:: Mailstore & Provisioning
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-advanced
+
+   .. grid-item-card:: Files
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-files
+
+   .. grid-item-card:: Docs & Editor
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-docs-connector
+      * carbonio-docs-editor
+
+
+   .. grid-item-card:: Preview
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages: 
+
+      * carbonio-preview
+
+      
+
+   .. grid-item-card:: Tasks
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-tasks
+
+   .. grid-item-card:: Video Server
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-videoserver
+      * carbonio-videoserver-recorder
+
+   .. grid-item-card:: Monitoring
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages:
+      
+      * carbonio-prometheus
+      * grafana
 
 .. _multiserver-installation:
 
@@ -166,6 +245,7 @@ Some important remarks:
    Section :ref:`web-access`.
 
 .. toctree::
+   :hidden:
    
    roles/role-db
    roles/role-mesh-ds

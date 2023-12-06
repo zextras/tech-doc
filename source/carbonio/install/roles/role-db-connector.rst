@@ -1,4 +1,4 @@
-.. _role3-install:
+.. _role-db-conn-install:
 
 Database Connector
 ==================
