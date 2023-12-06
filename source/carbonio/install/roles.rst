@@ -199,6 +199,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
       
       * carbonio-prometheus
+      * grafana
 
 .. _multiserver-installation:
 
@@ -244,6 +245,7 @@ Some important remarks:
    Section :ref:`web-access`.
 
 .. toctree::
+   :hidden:
    
    roles/role-db
    roles/role-mesh-ds
