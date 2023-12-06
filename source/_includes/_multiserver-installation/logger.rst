@@ -8,16 +8,15 @@ The log system in |product| is ``rsyslog``, which supports a
 Server"*), that is appropriately configured to receive log files,
 which is particularly useful in a Multi-Server installation.
 
-In the instructions below, we elect the Log Server to be
-:bdg-secondary-line:`SRV1`.
+In the instructions below, we give the Log Server the FQDN
+``logsrv.example.com``.
 
 
 .. card:: Centralised Logging Setup
    
-   On :bdg-secondary-line:`SRV1`, open file
-   :file:`/etc/rsyslog.conf`, find the following lines, and uncomment
-   them (i.e., remove the ``#`` character at the beginning of the
-   line).
+   On ``logsrv.example.com``, open file :file:`/etc/rsyslog.conf`,
+   find the following lines, and uncomment them (i.e., remove the
+   ``#`` character at the beginning of the line).
 
    .. code::
 
@@ -33,12 +32,12 @@ In the instructions below, we elect the Log Server to be
 
       # systemctl restart rsyslog
 
-   Finally, specify the host server that will receive logs. Since this
-   is the :bdg-secondary-line:`SRV1` node, we need its hostname.
+   Finally, specify the host server that will receive logs: we already
+   called it ``logsrv.example.com``, so use this hostname. 
 
    .. code:: console
 
-      zextras$ carbonio prov mcf zimbraLogHostname srv1_hostname
+      zextras$ carbonio prov mcf zimbraLogHostname logsrv.example.com
 
    .. note:: Since ``zimbraLogHostname`` is a global attribute, this
       command must be run only once on one node.

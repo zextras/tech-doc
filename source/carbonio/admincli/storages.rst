@@ -112,7 +112,7 @@ Setting up Centralized Storage
 In order to set up a bucket for centralized storage, a few steps are
 necessary. The procedure is described below and guides you from the
 creation of the bucket up to the association of the new Storage to
-multiple AppServers.
+multiple Mailstore & Provisioning Roles.
 
 The procedure is the same for all types of supported buckets, although
 depending on the type of the bucket, either the syntax, or some of the
@@ -160,7 +160,7 @@ bucket simply use the appropriate command for it.
    If the command is successful you will see the message ``connection
    ok``.
 
-#. On the first AppServer, create a volume associated to the bucket:
+#. On the first Mailstore & Provisioning Node, create a volume associated to the bucket:
 
    .. code:: console
 
@@ -177,7 +177,7 @@ bucket simply use the appropriate command for it.
    * **volume_prefix Main_Volume**: a label assigned to the volume, used for
      quick searches (e.g., *main_vol*)
    * **centralized true**: the volume is centralized and can be used by
-     multiple AppServers
+     multiple Mailstore & Provisioning
 
 #.  Set the volume to *current*, to let it receive data immediately,
     using command:
@@ -196,7 +196,7 @@ bucket simply use the appropriate command for it.
 #. Once the Centralized Volume has been created, you need to copy the
    Centralized Volume's configuration from the first server to all
    mailbox servers and add it to the volume list. To do so, on **all
-   other AppServer** that run the following commands:
+   other Mailstore & Provisioning** that run the following commands:
 
    .. code:: console
 

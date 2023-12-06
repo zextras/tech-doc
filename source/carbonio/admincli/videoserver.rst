@@ -339,10 +339,10 @@ package must be installed on each node on which
          # yum install carbonio-videoserver-recorder
 
 The package installs a service that needs to be associated with the
-|vs| instance, a task that needs to be executed from the CLI **on a
-Node which installs the** ``carbonio-advanced`` **package** (which is
-**SRV3** in our Scenario), using a command that differ depending if
-you already installed and configured the |vs| or not.
+|vs| instance, a task that needs to be executed from the CLI on a
+Node which installs the *Mailstore & Provisioning Role*, using a
+command that differ depending if you already installed and configured
+the |vs| or not.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -350,7 +350,8 @@ you already installed and configured the |vs| or not.
    .. grid-item-card:: |vs| already installed
       :columns: 12 12 6 6
 
-      If you already installed |vs|, execute this command **on SRV3**:
+      If you already installed |vs|, execute this command on the Node
+      featuring the Mailstore & Provisioning Role
 
       .. code:: console
 
@@ -363,14 +364,16 @@ you already installed and configured the |vs| or not.
 
       .. warning:: The value of the servlet port (*8090*) **must**
          match the one defined in file
-         :file:`/etc/carbonio/videoserver-recorder/recordingEnv` on **SRV5**.
+         :file:`/etc/carbonio/videoserver-recorder/recordingEnv` on
+         the Node installing the Video Server Role.
 
    .. grid-item-card:: |vs| not yet installed
       :columns: 12 12 6 6
 
       If you did not yet install |vs|, you can execute the following
-      command **on SRV3**, which configures at the same time both the
-      |vs| and the recording servlet.
+      command on the Node installing the Mailstore & Provisioning
+      Role, which configures at the same time both the |vs| and the
+      recording servlet.
 
       .. code:: console
 
@@ -380,9 +383,10 @@ you already installed and configured the |vs| or not.
       and *8090* with the ports associated with the |vs| and the
       recorder, respectively, and *A_SECRET_PASSWORD* with the value
       of the variable ``api_secret`` in file
-      :file:`/etc/janus/janus.jcfg` on **SRV5**, for example::
-              
-              api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
+      :file:`/etc/janus/janus.jcfg` on the Node installing the Video
+      Server Role, for example::
+
+        api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
 
    .. grid-item-card:: In both cases
       :columns: 12
@@ -396,8 +400,9 @@ Configure |vs| Recording
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 To complete the setup, you need to execute a few commands as the
-``zextras`` user on **SRV3**. First, make sure that the functionality
-is enabled on the infrastructure at COS level.
+``zextras`` user on the node with the Mailstore & Provisioning
+Role. First, make sure that the functionality is enabled on the
+infrastructure at COS level.
 
 .. code:: console
 

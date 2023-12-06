@@ -35,6 +35,22 @@ otherwise you can install *Video Server* without *Video Recording*.
    add it if missing: find the variable ``nat_1_1_mapping`` and add it,
    for example: ``nat_1_1_mapping = "93.184.216.34"``
 
+   Configure the |vs|
+      
+   .. code:: console
+
+      zextras$ carbonio chats video-server add example.com port 8188 \
+      servlet_port 8090 secret A_SECRET_PASSWORD
+
+
+   Replace *example.com* with the actual domain name or IP, *8188* and
+   *8090* with the ports associated with the |vs| and the recorder,
+   respectively, and *A_SECRET_PASSWORD* with the value of the
+   variable ``api_secret`` in file :file:`/etc/janus/janus.jcfg` on
+   the Node installing the Video Server Role, for example::
+
+        api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
+         
    Finally, enable and start the service with the commands
 
    .. code:: console

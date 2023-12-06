@@ -3,6 +3,10 @@
 Monitoring
 ==========
 
+The Monitoring Role is composed by the Prometheus and Grafana
+software. Grafana provides dashboards and some manual configuration of
+the repository requires a
+
 Install Packages
 ----------------
 
@@ -25,3 +29,18 @@ Join |mesh|
 -----------
 
 .. include:: /_includes/_multiserver-installation/mesh-agent.rst
+
+To complete the installation, restart prometheus service with:
+
+.. code:: console
+
+   # systemctl restart carbonio-prometheus
+
+Grafana Installation and Configration
+-------------------------------------
+
+As mentioned above, Grafana requires some manual interaction before
+and after the installation to install also some necessary plugin and
+to configure the data sources and import them from |product|.
+
+.. include:: /_includes/_installation/_roles/role-grafana.rst
