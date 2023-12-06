@@ -228,6 +228,8 @@ Furthermore, ports in Internal and External connections are grouped
 according to the Role that require them, so all ports listed in a
 table must be opened only on the Node on which the Role is installed.
 
+.. _fw-external:
+
 TCP External Connections
 ++++++++++++++++++++++++
 
@@ -280,6 +282,8 @@ These ports must be opened to allow communication with the Internet.
 
       "20000-40000", "UDP", "Client connections for the audio and
       video streams"
+
+.. _fw-internal:
 
 TCP Internal Connections
 ++++++++++++++++++++++++
