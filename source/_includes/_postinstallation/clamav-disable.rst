@@ -1,5 +1,3 @@
-Disable Amavis Anti-Virus
-=========================
 
 There are scenarios in which an Administrator wants to or needs to
 disable |product|'s internal anti-virus engine, ``amavis``, for
