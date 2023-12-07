@@ -75,6 +75,15 @@ If you are looking for |carbonio|'s documentation, please refer to its
          install/toc
 
    .. grid-item-card::
+      :columns: 12 12 6 6
+      :class-header: sd-font-weight-bold sd-fs-5
+
+      .. toctree::
+         :maxdepth: 2
+
+         postinstall/toc
+
+   .. grid-item-card::
       :columns:  12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
 
@@ -82,7 +91,7 @@ If you are looking for |carbonio|'s documentation, please refer to its
          :maxdepth: 2
          :includehidden:
 
-         /adminpanel/toc
+         adminpanel/toc
 
    .. grid-item-card::
       :columns:  12 12 6 6

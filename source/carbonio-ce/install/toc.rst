@@ -16,7 +16,3 @@ section.
    requirements
    preliminary
    roles
-   remove-logger
-   web-access
-   security
-   migration
