@@ -3,4 +3,4 @@
 ==========
 
 
-.. include:: /common/carbonio/glossary.rst
+.. include:: /_includes/glossary.rst
