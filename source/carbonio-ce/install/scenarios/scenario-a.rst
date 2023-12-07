@@ -78,6 +78,7 @@ Roles Installation
 
       Roles installed:
               
+      * :ref:`role-wsc-install`
       * :ref:`role-vs-install`
 
 
