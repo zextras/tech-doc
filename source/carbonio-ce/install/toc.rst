@@ -16,3 +16,4 @@ section.
    requirements
    preliminary
    roles
+   scenarios

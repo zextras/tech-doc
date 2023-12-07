@@ -233,6 +233,7 @@ Furthermore, ports in Internal and External connections are grouped
 according to the Role that require them, so all ports listed in a
 table must be opened only on the Node on which the Role is installed.
 
+.. _fw-external:
 
 TCP External Connections
 ++++++++++++++++++++++++
@@ -275,6 +276,7 @@ TCP External Connections
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
 
+.. _fw-internal:
 
 TCP Internal Connections
 ++++++++++++++++++++++++
