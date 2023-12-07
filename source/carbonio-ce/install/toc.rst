@@ -15,8 +15,7 @@ section.
    architecture
    requirements
    preliminary
-   single-server-installation
-   multi-server-installation
+   roles
    expand
    remove-logger
    web-access
