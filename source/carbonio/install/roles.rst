@@ -62,12 +62,14 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
-      * python3-psycopg2
       * postgresql-12
-      * patroni
-      * watchdog
-      * python3-consul
-      * python3-pysyncobj
+
+      ..
+         * python3-psycopg2
+         * patroni
+         * watchdog
+         * python3-consul
+         * python3-pysyncobj
 
 
    .. grid-item-card:: Mesh and Directory
