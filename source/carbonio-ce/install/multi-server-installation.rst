@@ -29,7 +29,6 @@ scenario we describe below can be modified at will by installing a
 
    multi/scenario
    multi/requirements
-   multi/preliminary
    multi/nodes
    multi/management
    multi/logging
