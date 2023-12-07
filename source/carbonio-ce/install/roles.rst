@@ -10,14 +10,14 @@
 Roles Description and Installation
 ==================================
 
-Multi-Server is the **only** supported method of installation in a
-production environment.
+|product| can be installed as a Single-Server, with all Roles on a
+same Node, or as a Multi-Server, with Roles installed on multiple Nodes.
 
 Please review carefully this sections before attempting to install.
 
 
-|product| is made of 'Roles'
-============================
+|product| is made of Roles
+==========================
 
 A Carbonio infrastructure is created with the installation of some
 **Roles**.
@@ -64,13 +64,12 @@ This is the list of roles that make up a Carbonio installation.
 
       * postgresql-12
 
-      ..
+      .. 24.1
          * python3-psycopg2
          * patroni
          * watchdog
          * python3-consul
          * python3-pysyncobj
-
 
    .. grid-item-card:: Mesh and Directory
       :columns: 6
@@ -92,6 +91,7 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
+      * pgpool2
       * carbonio-files-db
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
@@ -111,11 +111,11 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-proxy
       * carbonio-webui
       * carbonio-files-ui
-      * carbonio-chats-ui
       * carbonio-user-management
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
+      * carbonio-files-public-folder-ui
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -135,7 +135,8 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
-      * carbonio-advanced
+      * carbonio-appserver
+      * carbonio-storages-ce
 
    .. grid-item-card:: Files
       :columns: 6
@@ -145,7 +146,7 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
-      * carbonio-files
+      * carbonio-files-ce
 
    .. grid-item-card:: Docs & Editor
       :columns: 6
@@ -155,7 +156,7 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
-      * carbonio-docs-connector
+      * carbonio-docs-connector-ce
       * carbonio-docs-editor
 
 
@@ -167,7 +168,7 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages: 
 
-      * carbonio-preview
+      * carbonio-preview-ce
 
       
 
@@ -179,7 +180,19 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
-      * carbonio-tasks
+      * carbonio-tasks-ce
+
+   .. grid-item-card:: Workstream Collaboration
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-message-broker
+      * carbonio-message-dispatcher
+      * carbonio-ws-collaboration-ce
 
    .. grid-item-card:: Video Server
       :columns: 6
@@ -189,8 +202,7 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
-      * carbonio-videoserver
-      * carbonio-videoserver-recorder
+      * carbonio-videoserver-ce
 
    .. grid-item-card:: Monitoring
       :columns: 6
@@ -259,5 +271,6 @@ Some important remarks:
    roles/role-docs
    roles/role-preview
    roles/role-tasks
+   roles/role-wsc
    roles/role-vs
    roles/role-monit

@@ -6,11 +6,13 @@
 
       .. code:: console
 
-         # apt install carbonio-prometheus grafana
+         # apt install carbonio-preview-ce
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-prometheus grafana
+         # dnf install carbonio-preview-ce
+
+
