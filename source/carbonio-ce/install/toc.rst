@@ -16,7 +16,6 @@ section.
    requirements
    preliminary
    roles
-   expand
    remove-logger
    web-access
    security
