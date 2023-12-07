@@ -3,8 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 If you are on a Multi-Server, remember to start from the node
-featuring the Directory Server (|dsnode| in our
-:ref:`multi-server-scenario`), then all the other in the same order of
+featuring the Directory Server Role, then all the other in the same order of
 installation.
 
 .. grid:: 1 1 1 2

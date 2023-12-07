@@ -25,6 +25,4 @@ whose solution can be found in section :ref:`upgrade-ts`.
 
    .. seealso::
 
-      * :ref:`Single-Server installation <single-server-install>`
-      * :ref:`Multi-Server installation <multi-server-install>`
       * :ref:`User Documentation <tasks-comp>`
