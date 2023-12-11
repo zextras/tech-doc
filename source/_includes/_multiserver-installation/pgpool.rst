@@ -53,7 +53,7 @@
          Copy the following lines and paste them in file
          :file:`/etc/pgpool-II/pgpool.conf`.
 
-         .. code:: none
+         .. code:: console
 
             backend_clustering_mode = 'raw'
             port = 5432
