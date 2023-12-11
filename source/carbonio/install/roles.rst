@@ -1,9 +1,3 @@
-
-
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _roles-installation:
 
 ==================================
@@ -15,18 +9,17 @@ production environment.
 
 Please review carefully this sections before attempting to install.
 
+|product| is made of Roles
+==========================
 
-|product| is made of 'Roles'
-============================
-
-A Carbonio infrastructure is created with the installation of some
+A |product| infrastructure is created with the installation of some
 **Roles**.
 
 A **Role** is a |product| functionality that is considered atomic and
 consists of one or more packages.
 
-.. card:: The modular nature of Carbonio
-          
+.. card:: The modular nature of |product|
+
    As we will see, it's possible to install a single role on a
    dedicated node or group multiple roles according to affinity rules.
 
@@ -41,19 +34,21 @@ consists of one or more packages.
 The roles of |product|
 ======================
 
-We can group the Carbonio roles into 3 macro categories:
+We can group the available |product| Roles into 3 macro categories:
 
-* Infrastructure roles
+* Infrastructure roles, which are mandatory in any |product| installation
 
-* Service roles
+* Service roles broaden the basic functionality provided by |product|
 
-* Advanced roles
+* Advanced roles are not yet available, but will provide robustness to
+  |product|
+
 
 This is the list of roles that make up a Carbonio installation.
 
 .. grid:: 1 1 2 2
    :gutter: 3
-   
+
    .. grid-item-card:: Database
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -64,14 +59,6 @@ This is the list of roles that make up a Carbonio installation.
 
       * postgresql-12
 
-      ..
-         * python3-psycopg2
-         * patroni
-         * watchdog
-         * python3-consul
-         * python3-pysyncobj
-
-
    .. grid-item-card:: Mesh and Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -79,10 +66,9 @@ This is the list of roles that make up a Carbonio installation.
       Type of Role: Infrastructure
 
       Packages:
-      
+
       * service-discover-server
       * carbonio-directory-server
-
 
    .. grid-item-card:: Database Connector
       :columns: 6
@@ -92,13 +78,11 @@ This is the list of roles that make up a Carbonio installation.
 
       Packages:
 
+      * pgpool2
       * carbonio-files-db
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-tasks-db
-      * carbonio-message-dispatcher-db
-      * carbonio-ws-collaboration-db
-
 
    .. grid-item-card:: Proxy
       :columns: 6
@@ -114,7 +98,6 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-chats-ui
       * carbonio-user-management
       * carbonio-tasks-ui
-      * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
 
    .. grid-item-card:: MTA AV/AS
@@ -165,11 +148,9 @@ This is the list of roles that make up a Carbonio installation.
 
       Type of Role: Service role
 
-      Packages: 
+      Packages:
 
       * carbonio-preview
-
-      
 
    .. grid-item-card:: Tasks
       :columns: 6
@@ -199,7 +180,7 @@ This is the list of roles that make up a Carbonio installation.
       Type of Role: Service role
 
       Packages:
-      
+
       * carbonio-prometheus
       * grafana
 
@@ -208,7 +189,8 @@ This is the list of roles that make up a Carbonio installation.
 How to install Roles
 ====================
 
-Some important remarks:
+Before presenting each Role and the tasks necessary for their correct
+installation, please review these important remarks:
 
 *  While the overall procedure is the same for both Ubuntu and RHEL 8,
    the actual commands and file paths may differ on the two operating
@@ -217,7 +199,6 @@ Some important remarks:
    separated as follows. Click the :blue:`Ubuntu` or :blue:`RHEL` tab
    according to the Operating System on which you are installing
    |product|.
-
 
    .. tab-set::
 
@@ -246,9 +227,15 @@ Some important remarks:
    access |product|\'s GUI using a browser: directions can be found in
    Section :ref:`web-access`.
 
+* You **must** start with the installation of the the
+  :ref:`role-db-install` Role, followed by the
+  :ref:`role-mesh-ds-install` Role. Then you can proceed with the
+  other infrastructure Roles and finally with any other Role you need
+  in your installation.
+
 .. toctree::
    :hidden:
-   
+
    roles/role-db
    roles/role-mesh-ds
    roles/role-db-connector
