@@ -5,8 +5,9 @@
 
       .. code:: console
 
-         # apt install carbonio-message-broker \
-           carbonio-message-dispatcher carbonio-ws-collaboration-ce
+         # apt install postgres-client carbonio-message-broker \
+           carbonio-message-dispatcher carbonio-ws-collaboration-ce \
+           
  
    .. tab-item:: RHEL
       :sync: rhel
@@ -15,3 +16,15 @@
 
          # dnf install carbonio-message-broker \
            carbonio-message-dispatcher carbonio-ws-collaboration-ce
+
+      Install PostgreSQL repository
+      
+      .. code:: console
+                
+         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+      Install PostgreSQL client
+      
+      .. code:: console
+                
+         # dnf -y install postgresql12
