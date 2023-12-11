@@ -64,14 +64,6 @@ This is the list of roles that make up a Carbonio installation.
 
       * postgresql-12
 
-      ..
-         * python3-psycopg2
-         * patroni
-         * watchdog
-         * python3-consul
-         * python3-pysyncobj
-
-
    .. grid-item-card:: Mesh and Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -96,8 +88,6 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-tasks-db
-      * carbonio-message-dispatcher-db
-      * carbonio-ws-collaboration-db
 
 
    .. grid-item-card:: Proxy
@@ -114,7 +104,6 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-chats-ui
       * carbonio-user-management
       * carbonio-tasks-ui
-      * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
 
    .. grid-item-card:: MTA AV/AS
