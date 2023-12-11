@@ -27,10 +27,6 @@ privileged access and are mostly carried out from the CLI, and
 :ref:`everyday’s task <auth-user>`, which can be carried out
 from the Web GUI by both administrators and users.
 
-..
-   respectively. Finally, the :ref:`list of all CLI commands
-   <auth_zxauth-cli>` is given as a reference, with link to each command.
-
 .. _auth_supported_authentication_methods:
 
 Supported Authentication Methods
@@ -55,11 +51,8 @@ Supported Authentication Methods
 .. grid:: 1 1 2 3
    :gutter: 1
 
-   .. grid-item-card::
-      :columns: 12 12 6 4
-
-      Self Service Credentials Management
-      ^^^^^
+   .. grid-item-card:: Self Service Credentials Management
+      :columns: 12 12 6 6
 
       Self-service credential management allows every user to create new
       passwords and QR codes for third-parties—​for example team members,
@@ -72,11 +65,31 @@ Supported Authentication Methods
       More information and step by step guidelines can be found in Section
       :ref:`auth-user`.
 
-   .. grid-item-card::
-      :columns: 12 12 6 4
+   .. grid-item-card:: Two Factor Authentication
+      :columns: 12 12 6 6
 
-      SAML
-      ^^^^
+      Two Factor Authentication (usually spelled as **2FA**) adds a security
+      layer to the login phase, making unwanted accesses less likely to take
+      place. In |product|, this additional layer is given by an One Time
+      Password (OTP), which can be read as a QR code on mobile devices.
+
+      2FA applies only to those protocols or apps supporting it, for example
+      HTTP and HTTPS but not to IMAP and SMTP, and can be configured at either
+      device, IP, or IP range level, by means of the ``trusted_device`` or
+      ``trusted_ip`` parameter. When an IP or IP range is trusted, 2FA will be
+      successful for any login originating from there, while the
+      ``trusted_device`` requires that the same browser or app be used,
+      otherwise it will fail: if a 2FA login is carried out on Chrome,
+      accessing the same page with Firefox will require a new login.
+
+      In order to use the OTP, a domain must be configured (see
+      Section :ref:`auth_requirements`) by the site admin, while users
+      can configure it from their :ref:`Auth settings
+      <auth_zimlet-create-otp>`.
+
+
+   .. grid-item-card:: SAML
+      :columns: 12
 
       The Security Assertion Markup Language (**SAML**) is an XML-based open
       standard data format for exchanging authentication information. It
@@ -115,40 +128,6 @@ Supported Authentication Methods
       Directions on how to configure SAML and integrate other applications
       in |product| is described in Section :ref:`auth_set_up_saml`.
 
-   .. grid-item-card::
-      :columns: 12 12 6 4
-
-      Two Factor Authentication
-      ^^^^^
-
-      Two Factor Authentication (usually spelled as **2FA**) adds a security
-      layer to the login phase, making unwanted accesses less likely to take
-      place. In |product|, this additional layer is given by an One Time
-      Password (OTP), which can be read as a QR code on mobile devices.
-
-      2FA applies only to those protocols or apps supporting it, for example
-      HTTP and HTTPS but not to IMAP and SMTP, and can be configured at either
-      device, IP, or IP range level, by means of the ``trusted_device`` or
-      ``trusted_ip`` parameter. When an IP or IP range is trusted, 2FA will be
-      successful for any login originating from there, while the
-      ``trusted_device`` requires that the same browser or app be used,
-      otherwise it will fail: if a 2FA login is carried out on Chrome,
-      accessing the same page with Firefox will require a new login.
-
-      In order to use the OTP, a domain must be configured (see
-      Section :ref:`auth_requirements`) by the site admin, while users
-      can configure it from their :ref:`Auth settings
-      <auth_zimlet-create-otp>`.
-
-..
-   .. seealso:: Community Article
-
-      https://community.zextras.com/improve-the-security-using-zextras-2fa/
-
-      This article showcases a few deployment scenarios of 2FA in Zextras
-      and describes how Administrators can take advantage of such
-      architecture.
-
 .. _auth_zxauth-admins:
 
 |auth| for Admins
@@ -173,11 +152,8 @@ In order to enable the authentication strategies available in
 .. grid:: 1 1 2 4
    :gutter: 1
 
-   .. grid-item-card::
+   .. grid-item-card:: QR Code Requirements
       :columns: 12 12 6 4
-
-      QR Code Requirements
-      ^^^^
 
       The QR Code Application Password feature requires the following
       properties to be set at domain level in order to be functional:
@@ -192,11 +168,8 @@ In order to enable the authentication strategies available in
       delivered to the Admin reporting the affected domains and their missing
       properties.
 
-   .. grid-item-card::
+   .. grid-item-card:: 2FA Requirements
       :columns: 12 12 6 4
-
-      2FA Requirements
-      ^^^^
 
       To enable 2FA it is necessary, **for all services**:
 
@@ -207,13 +180,172 @@ In order to enable the authentication strategies available in
       .. note:: 2FA is not compatible with other mechanisms such as
          LDAP, AD, or kerberos5
 
-   .. grid-item-card::
+   .. grid-item-card:: SAML Requirements
       :columns: 12 12 6 4
 
-      SAML Requirements
-      ^^^^
       There is no special requirement to enable SAML, besides
       having a SAML IDP Provider.
+
+.. _policy-management-2fa:
+
+Setting up Policy Management for 2FA
+------------------------------------
+
+|auth| introduced the `second factor` as part of the service
+authentication strategy. At domain or at global level, each service
+can either:
+
+* be enabled or disabled for the 2FA
+* have its own Trusted Networks    
+
+When enabled, the connection can be established only if the **source
+is trusted**, which means that the connection originates either from a
+**trusted network**, manually configured by the admin for the service,
+or from a previously trusted IP or device, depending on the **2FA
+policy configured for the service**.
+
+If none of the above conditions holds, the service must ask for the
+OTP, used as the second factor. If the service does not support the
+second factor, or is not able to interact with the user for it, the
+authentication process **fails**. For example, IMAP is a service not
+supporting OTP and therefore 2FA can not be used with it.  Otherwise,
+when the user provides a valid OTP, the current user’s device and IP
+are stored in the Trusted Device table
+
+Moreover, depending on the service policy, the connection should be
+valid even if the IP has been trusted by another service.
+
+2FA Policy Management is a rather advanced technique which avoids the
+use of OTP in all cases when an authentication request is received
+from a device that is already in the Trusted Networks or Trusted
+Devices tables.
+
+To set up and manage 2FA Policies, several CLI commands are available.
+
+.. grid::
+   :gutter: 3
+
+   .. grid-item-card:: Display policies
+      :columns: 12
+
+      The command :command:`carbonio auth policy list` returns the list of 2FA
+      by domain, with option to filter specific services.
+
+      |ex|
+
+      .. code:: console
+
+         zextras$ carbonio auth policy list domain example.com service EAS
+
+      Shows 2FA setting for domain **example.com** and for service
+      **EAS**.
+
+      |ex|
+      
+      .. code:: console
+
+         zextras$ carbonio auth policy list global
+
+      Display for which services 2FA can be enabled. As a bonus, the
+      output contains a lists of **all** supporter services, which
+      fall in:
+
+      * standard protocols or technologies (CLI, |dav|, |eas|, |imap|,
+        |pop|, and |smtp|)
+      * related to |carbonio| components (MobileApp, WebAdminUI,
+        WebUI).
+         
+   .. grid-item-card:: Manage policies
+      :columns: 12
+      
+      The command :command:`carbonio auth policy set` enables or
+      disables a service and accepts the following three optional
+      parameters:
+
+      ``ip_can_change``                     
+         This attribute allows the server to deny connection requests
+         coming from an IP other than the one used during the
+         authentication. As an example, suppose that authentication
+         was successfully carried out from a device with IP
+         192.168.1.72 and for any reason the IP of the device changes
+         (e.g., a laptop moved to a different subnet). If
+         ``ip_can_change`` is set to **true**, then the device is
+         still authenticated and connections are allowed, otherwise,
+         if ``ip_can_change`` is set to **false**, authentication is
+         invalidated and no connection is allowed for the device until
+         a new authentication.
+
+      ``trusted_ip_range``
+         It defines the **Trusted Networks**, a set of IP ranges
+         configured for each service (like e.g., DAV, EAS, SMTP, and
+         more). If a connection comes from an IP in the Trusted
+         Networks, the authentication will not require the second
+         factor validation, independently from the policy specified,
+         but users will be authenticated with username and password.
+
+      ``2fa_policy``
+         This parameter determines how 2FA policies are enforced for
+         each service and takes one of these three integer values:
+
+         * **0** (no_2fa): 2FA authentication is disabled for the
+           service
+
+         * **1** (ip_2fa): Trust the **IP** from which the connection
+           starts. All the subsequent logins from the same IP will not
+           require the second factor.
+
+         * **2** (device_2fa): Trust the **device** from which the
+           connection starts. All the subsequent logins from the same
+           device (that is, same browser or Mobile App) will not
+           require the second factor.
+
+      These parameters are supported by all services.
+      
+   .. grid-item-card:: Manage expiration time
+      :columns: 12
+
+      Two commands help to check and define the expiration time of
+      trusted devices.
+
+      .. card:: ``getExpiration``
+         
+         Check the current policy for expiration time, i.e., for how
+         long a device will be considered as trusted. The number of
+         **days** is returned. The command acts at domain and global
+         level.
+
+         .. rubric:: Example
+
+         .. code:: console
+
+            zextras$ carbonio auth policy trustedDevice getExpiration domain example.com
+
+         Show how many days is the expiration time for `example.com`.
+         
+         .. rubric:: Example
+
+         .. code:: console
+
+            zextras$ carbonio auth policy trustedDevice getExpiration global
+
+         Show how many days is the expiration time for the whole
+         infrastructure.
+         
+      .. card:: ``setExpiration``
+         
+         Define the current policy for expiration time, i.e., for how
+         long a device will be considered as trusted. The number of
+         **days** is required. The command acts at domain and global
+         level.
+
+         .. rubric:: Example
+
+         .. code:: console
+
+            zextras$ carbonio auth policy trustedDevice setExpiration domain example.com 20
+
+         Defines the expiration time for domain example.com to **20 days**.
+
 
 .. _auth_set_up_saml:
 
@@ -297,11 +429,8 @@ default SAML settings, modify them, then save and import them back.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 1. Export the default SAML settings
       :columns: 12 12 12 6
-
-      Step 1. Export the default SAML settings
-      ^^^^^
 
       In order to export the default SAML setting, use
 
@@ -309,11 +438,8 @@ default SAML settings, modify them, then save and import them back.
 
          zextras$ carbonio auth saml get example.com export_to /tmp/saml.json
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 2. Modify :file:`/tmp/saml.json`
       :columns: 12 12 12 6
-
-      Step 2. Modify :file:`/tmp/saml.json`
-      ^^^^^
 
       Open the resulting file :file:`/tmp/saml.json` in any editor and modify
       the requested attributes:
@@ -325,11 +451,8 @@ default SAML settings, modify them, then save and import them back.
 
       - ``nameidformat``
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 3. Check modified :file:`/tmp/saml.json`
       :columns: 12 12 12 6
-
-      Step 3. Check modified  :file:`/tmp/saml.json`
-      ^^^^^
 
       The :file:`/tmp/saml.json`` file should look similar to this
       one:
@@ -375,11 +498,8 @@ default SAML settings, modify them, then save and import them back.
       example in the previous section. Certificates must be valid,
       they are omitted for clarity.
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 4. Save the changes
       :columns: 12 12 12 6
-
-      Step 4. Save the changes
-      ^^^^^^
 
       The final step is to save the changes made to the file and import
       it into |product| using the command:
