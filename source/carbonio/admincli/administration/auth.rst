@@ -215,6 +215,167 @@ In order to enable the authentication strategies available in
       There is no special requirement to enable SAML, besides
       having a SAML IDP Provider.
 
+.. _policy-management-2fa:
+
+Setting up Policy Management for 2FA
+------------------------------------
+
+|auth| introduced the `second factor` as part of the service
+authentication strategy. At domain or at global level, each service
+can either:
+
+* be enabled or disabled for the 2FA
+* have its own Trusted Networks    
+
+When enabled, the connection can be established only if the **source
+is trusted**, which means that the connection originates either from a
+**trusted network**, manually configured by the admin for the service,
+or from a previously trusted IP or device, depending on the **2FA
+policy configured for the service**.
+
+If none of the above conditions holds, the service must ask for the
+OTP, used as the second factor. If the service does not support the
+second factor, or is not able to interact with the user for it, the
+authentication process **fails**. For example, IMAP is a service not
+supporting OTP and therefore 2FA can not be used with it.  Otherwise,
+when the user provides a valid OTP, the current user’s device and IP
+are stored in the Trusted Device table
+
+Moreover, depending on the service policy, the connection should be
+valid even if the IP has been trusted by another service.
+
+2FA Policy Management is a rather advanced technique which avoids the
+use of OTP in all cases when an authentication request is received
+from a device that is already in the Trusted Networks or Trusted
+Devices tables.
+
+To set up and manage 2FA Policies, several CLI commands are available.
+
+.. grid::
+   :gutter: 3
+
+   .. grid-item-card:: Display policies
+      :columns: 12
+
+      The command :command:`carbonio auth policy list` returns the list of 2FA
+      by domain, with option to filter specific services.
+
+      |ex|
+
+      .. code:: console
+
+         zextras$ carbonio auth policy list domain example.com service EAS
+
+      Shows 2FA setting for domain **example.com** and for service
+      **EAS**.
+
+      |ex|
+      
+      .. code:: console
+
+         zextras$ carbonio auth policy list global
+
+      Display for which services 2FA can be enabled. As a bonus, the
+      output contains a lists of **all** supporter services, which
+      fall in:
+
+      * standard protocols or technologies (CLI, |dav|, |eas|, |imap|,
+        |pop|, and |smtp|)
+      * related to |carbonio| components (MobileApp, WebAdminUI,
+        WebUI).
+         
+   .. grid-item-card:: Manage policies
+      :columns: 12
+      
+      The command :command:`carbonio auth policy set` enables or
+      disables a service and accepts the following three optional
+      parameters:
+
+      ``ip_can_change``                     
+         This attribute allows the server to deny connection requests
+         coming from an IP other than the one used during the
+         authentication. As an example, suppose that authentication
+         was successfully carried out from a device with IP
+         192.168.1.72 and for any reason the IP of the device changes
+         (e.g., a laptop moved to a different subnet). If
+         ``ip_can_change`` is set to **true**, then the device is
+         still authenticated and connections are allowed, otherwise,
+         if ``ip_can_change`` is set to **false**, authentication is
+         invalidated and no connection is allowed for the device until
+         a new authentication.
+
+      ``trusted_ip_range``
+         It defines the **Trusted Networks**, a set of IP ranges
+         configured for each service (like e.g., DAV, EAS, SMTP, and
+         more). If a connection comes from an IP in the Trusted
+         Networks, the authentication will not require the second
+         factor validation, independently from the policy specified,
+         but users will be authenticated with username and password.
+
+      ``2fa_policy``
+         This parameter determines how 2FA policies are enforced for
+         each service and takes one of these three integer values:
+
+         * **0** (no_2fa): 2FA authentication is disabled for the
+           service
+
+         * **1** (ip_2fa): Trust the **IP** from which the connection
+           starts. All the subsequent logins from the same IP will not
+           require the second factor.
+
+         * **2** (device_2fa): Trust the **device** from which the
+           connection starts. All the subsequent logins from the same
+           device (that is, same browser or Mobile App) will not
+           require the second factor.
+
+      These parameters are supported by all services.
+      
+   .. grid-item-card:: Manage expiration time
+      :columns: 12
+
+      Two commands help to check and define the expiration time of
+      trusted devices.
+
+      .. card:: ``getExpiration``
+         
+         Check the current policy for expiration time, i.e., for how
+         long a device will be considered as trusted. The number of
+         **days** is returned. The command acts at domain and global
+         level.
+
+         .. rubric:: Example
+
+         .. code:: console
+
+            zextras$ carbonio auth policy trustedDevice getExpiration domain example.com
+
+         Show how many days is the expiration time for `example.com`.
+         
+         .. rubric:: Example
+
+         .. code:: console
+
+            zextras$ carbonio auth policy trustedDevice getExpiration global
+
+         Show how many days is the expiration time for the whole
+         infrastructure.
+         
+      .. card:: ``setExpiration``
+         
+         Define the current policy for expiration time, i.e., for how
+         long a device will be considered as trusted. The number of
+         **days** is required. The command acts at domain and global
+         level.
+
+         .. rubric:: Example
+
+         .. code:: console
+
+            zextras$ carbonio auth policy trustedDevice setExpiration domain example.com 20
+
+         Defines the expiration time for domain example.com to **20 days**.
+
+
 .. _auth_set_up_saml:
 
 Setting up SAML Configuration
