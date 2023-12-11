@@ -13,6 +13,13 @@ Install Packages
 .. include:: /_includes/_installation/_roles/role-wsc-ce.rst
 
 
+Migrate dispatcher
+-------------------
+
+.. code:: console
+
+   # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration carbonio_adm 127.78.0.10
+
 Bootstrap |product|
 -------------------
 
