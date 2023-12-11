@@ -1,7 +1,11 @@
 .. _role-wsc-install:
 
-Workstream Collaboration
-========================
+Workstream Collaboration  :bdg-danger:`BETA`
+============================================
+
+The WSC Role adds the chat functionality to |product|. It is currently
+in :bdg-danger:`BETA` version, hence it may still lack some
+functionalities and may not work 100% properly.
 
 Install Packages
 ----------------

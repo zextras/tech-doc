@@ -182,7 +182,7 @@ This is the list of roles that make up a Carbonio installation.
 
       * carbonio-tasks-ce
 
-   .. grid-item-card:: Workstream Collaboration
+   .. grid-item-card:: Workstream Collaboration :bdg-danger:`BETA`
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
 
