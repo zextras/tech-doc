@@ -27,10 +27,6 @@ privileged access and are mostly carried out from the CLI, and
 :ref:`everyday’s task <auth-user>`, which can be carried out
 from the Web GUI by both administrators and users.
 
-..
-   respectively. Finally, the :ref:`list of all CLI commands
-   <auth_zxauth-cli>` is given as a reference, with link to each command.
-
 .. _auth_supported_authentication_methods:
 
 Supported Authentication Methods
@@ -55,11 +51,8 @@ Supported Authentication Methods
 .. grid:: 1 1 2 3
    :gutter: 1
 
-   .. grid-item-card::
-      :columns: 12 12 6 4
-
-      Self Service Credentials Management
-      ^^^^^
+   .. grid-item-card:: Self Service Credentials Management
+      :columns: 12 12 6 6
 
       Self-service credential management allows every user to create new
       passwords and QR codes for third-parties—​for example team members,
@@ -72,11 +65,31 @@ Supported Authentication Methods
       More information and step by step guidelines can be found in Section
       :ref:`auth-user`.
 
-   .. grid-item-card::
-      :columns: 12 12 6 4
+   .. grid-item-card:: Two Factor Authentication
+      :columns: 12 12 6 6
 
-      SAML
-      ^^^^
+      Two Factor Authentication (usually spelled as **2FA**) adds a security
+      layer to the login phase, making unwanted accesses less likely to take
+      place. In |product|, this additional layer is given by an One Time
+      Password (OTP), which can be read as a QR code on mobile devices.
+
+      2FA applies only to those protocols or apps supporting it, for example
+      HTTP and HTTPS but not to IMAP and SMTP, and can be configured at either
+      device, IP, or IP range level, by means of the ``trusted_device`` or
+      ``trusted_ip`` parameter. When an IP or IP range is trusted, 2FA will be
+      successful for any login originating from there, while the
+      ``trusted_device`` requires that the same browser or app be used,
+      otherwise it will fail: if a 2FA login is carried out on Chrome,
+      accessing the same page with Firefox will require a new login.
+
+      In order to use the OTP, a domain must be configured (see
+      Section :ref:`auth_requirements`) by the site admin, while users
+      can configure it from their :ref:`Auth settings
+      <auth_zimlet-create-otp>`.
+
+
+   .. grid-item-card:: SAML
+      :columns: 12
 
       The Security Assertion Markup Language (**SAML**) is an XML-based open
       standard data format for exchanging authentication information. It
@@ -115,40 +128,6 @@ Supported Authentication Methods
       Directions on how to configure SAML and integrate other applications
       in |product| is described in Section :ref:`auth_set_up_saml`.
 
-   .. grid-item-card::
-      :columns: 12 12 6 4
-
-      Two Factor Authentication
-      ^^^^^
-
-      Two Factor Authentication (usually spelled as **2FA**) adds a security
-      layer to the login phase, making unwanted accesses less likely to take
-      place. In |product|, this additional layer is given by an One Time
-      Password (OTP), which can be read as a QR code on mobile devices.
-
-      2FA applies only to those protocols or apps supporting it, for example
-      HTTP and HTTPS but not to IMAP and SMTP, and can be configured at either
-      device, IP, or IP range level, by means of the ``trusted_device`` or
-      ``trusted_ip`` parameter. When an IP or IP range is trusted, 2FA will be
-      successful for any login originating from there, while the
-      ``trusted_device`` requires that the same browser or app be used,
-      otherwise it will fail: if a 2FA login is carried out on Chrome,
-      accessing the same page with Firefox will require a new login.
-
-      In order to use the OTP, a domain must be configured (see
-      Section :ref:`auth_requirements`) by the site admin, while users
-      can configure it from their :ref:`Auth settings
-      <auth_zimlet-create-otp>`.
-
-..
-   .. seealso:: Community Article
-
-      https://community.zextras.com/improve-the-security-using-zextras-2fa/
-
-      This article showcases a few deployment scenarios of 2FA in Zextras
-      and describes how Administrators can take advantage of such
-      architecture.
-
 .. _auth_zxauth-admins:
 
 |auth| for Admins
@@ -173,11 +152,8 @@ In order to enable the authentication strategies available in
 .. grid:: 1 1 2 4
    :gutter: 1
 
-   .. grid-item-card::
+   .. grid-item-card:: QR Code Requirements
       :columns: 12 12 6 4
-
-      QR Code Requirements
-      ^^^^
 
       The QR Code Application Password feature requires the following
       properties to be set at domain level in order to be functional:
@@ -192,11 +168,8 @@ In order to enable the authentication strategies available in
       delivered to the Admin reporting the affected domains and their missing
       properties.
 
-   .. grid-item-card::
+   .. grid-item-card:: 2FA Requirements
       :columns: 12 12 6 4
-
-      2FA Requirements
-      ^^^^
 
       To enable 2FA it is necessary, **for all services**:
 
@@ -207,11 +180,9 @@ In order to enable the authentication strategies available in
       .. note:: 2FA is not compatible with other mechanisms such as
          LDAP, AD, or kerberos5
 
-   .. grid-item-card::
+   .. grid-item-card:: SAML Requirements
       :columns: 12 12 6 4
 
-      SAML Requirements
-      ^^^^
       There is no special requirement to enable SAML, besides
       having a SAML IDP Provider.
 
@@ -458,11 +429,8 @@ default SAML settings, modify them, then save and import them back.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 1. Export the default SAML settings
       :columns: 12 12 12 6
-
-      Step 1. Export the default SAML settings
-      ^^^^^
 
       In order to export the default SAML setting, use
 
@@ -470,11 +438,8 @@ default SAML settings, modify them, then save and import them back.
 
          zextras$ carbonio auth saml get example.com export_to /tmp/saml.json
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 2. Modify :file:`/tmp/saml.json`
       :columns: 12 12 12 6
-
-      Step 2. Modify :file:`/tmp/saml.json`
-      ^^^^^
 
       Open the resulting file :file:`/tmp/saml.json` in any editor and modify
       the requested attributes:
@@ -486,11 +451,8 @@ default SAML settings, modify them, then save and import them back.
 
       - ``nameidformat``
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 3. Check modified :file:`/tmp/saml.json`
       :columns: 12 12 12 6
-
-      Step 3. Check modified  :file:`/tmp/saml.json`
-      ^^^^^
 
       The :file:`/tmp/saml.json`` file should look similar to this
       one:
@@ -536,11 +498,8 @@ default SAML settings, modify them, then save and import them back.
       example in the previous section. Certificates must be valid,
       they are omitted for clarity.
 
-   .. grid-item-card::
+   .. grid-item-card:: Step 4. Save the changes
       :columns: 12 12 12 6
-
-      Step 4. Save the changes
-      ^^^^^^
 
       The final step is to save the changes made to the file and import
       it into |product| using the command:
