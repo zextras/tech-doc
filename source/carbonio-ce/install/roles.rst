@@ -249,7 +249,7 @@ installation, please review these important remarks:
 
 * You **must** start with the installation of the the
   :ref:`role-db-install` Role, followed by the
-  :ref:`role-mesh-ds-install` Role. Then you can proceed with the
+  :ref:`role-mesh-install` Role. Then you can proceed with the
   other infrastructure Roles and finally with any other Role you need
   in your installation.
 
