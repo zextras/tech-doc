@@ -40,22 +40,8 @@ You can use the password of the Postgres user ``carbonio_adm`` that
 you defined when installing the *Database* role or any other
 administrator user created previously.
 
-The only mandatory command is the one for the **mailbox database**,
-which is necessary in all installation scenarios, while the other are
-needed only if the other Roles are installed.
-
-.. card:: Mailbox
-   :class-card: sd-border-2
-   
-   .. code:: console
-
-      # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-.. card:: |docs|
-            
-   .. code:: console
-
-      # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+You need to run the commands only if the corresponding Role is
+installed.
 
 .. card:: |file|
 
