@@ -11,6 +11,13 @@ the CLI using command
 
    zextras$ carbonio prov mcf carbonioAmavisDisableVirusCheck TRUE
 
+Restart the service to make sure the new value is picked up by the
+system
+
+.. code:: console
+
+   zextras$ zmamavisdctl restart
+
 You can check at any time the status of the variable and of the
 service with
 
