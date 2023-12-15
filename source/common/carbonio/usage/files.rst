@@ -67,18 +67,21 @@ done on files and folders
         give either *Read and Share* or *Write and Share* permission
         on the file
 
-      * External users. Sharing with external users is **limited to
-        files only**, no directories is allowed.  In the bottom
-        *Public Links* section use the :bdg-primary-line:`ADD LINK`
-        button to generate a link to allow access to everyone.
-        Optionally, add a description and expiration date (defaults to
-        the end of the current day) to the link, then click
+      * External users. It is possible to share single files or
+        folders with external, anonymous users. In the bottom *Public
+        Links* section use the :bdg-primary-line:`ADD LINK` button to
+        generate a link to allow access to everyone.  Optionally, add
+        a description and expiration date (defaults to the end of the
+        current day) to the link, then click
         :bdg-primary-line:`GENERATE LINK`. Anyone who receives this
-        link will be able to download the file until is expires.
+        link will be able to download the file or to browse the
+        directory until the link expires or is revoked.
 
-      .. note:: Any links generated for internal collaborators or
-         external user can be revoked at anytime by clicking the
-         corresponding :bdg-danger-line:`REVOKE` button.
+        In case of a shared directory, any change in it (e.g., a new
+        file or subfolder has been added or removed) will be
+        automatically reflected in the link. Moreover, being a public
+        link, files can be individually downloaded, but a bulk
+        download of the whole content is not possible.
 
       The :bdg-primary:`SHARE` button is clickable for internal
       collaborators and only if the e-mail address is correct.

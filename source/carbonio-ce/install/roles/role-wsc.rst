@@ -37,3 +37,28 @@ Join |mesh|
 -----------
 
 .. include:: /_includes/_multiserver-installation/mesh.rst
+
+
+Enable the Workstream Collaboration UI
+--------------------------------------
+
+The |wsc| role is disabled by default, you can enable it  either from
+the |adminui| or from the command line by running as the ``zextras`` user the
+command
+
+.. code:: console
+
+   zextras$ carbonio prov mc default mc carbonioFeatureChatsEnabled TRUE
+
+You can also enable it at COS level, allowing only certain users to
+access it.
+
+.. card:: Check status of |wsc|
+
+
+   After the installation, you can check the status of and all its
+   dependencies by running command
+
+   .. code:: console
+
+      # curl -v http://127.78.0.4:10000/health | jq

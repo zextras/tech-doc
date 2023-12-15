@@ -33,19 +33,15 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # apt install service-discover-server \
-         carbonio-directory-server \
-         carbonio-proxy \
-         carbonio-webui carbonio-files-ui \
-         carbonio-mta \
-         carbonio-appserver \
-         carbonio-user-management \
-         carbonio-files-ce carbonio-files-db \
-         carbonio-tasks-ce carbonio-tasks-db \
-         carbonio-tasks-ui \
-         carbonio-storages-ce \
-         carbonio-preview-ce \
+         carbonio-directory-server carbonio-proxy carbonio-webui \
+         carbonio-files-ui carbonio-mta carbonio-appserver \
+         carbonio-user-management carbonio-files-ce \
+         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
+         carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-prometheus
+         carbonio-prometheus carbonio-message-broker \
+         carbonio-message-dispatcher carbonio-ws-collaboration-ce \
+         carbonio-videoserver-ce
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -61,18 +57,15 @@ Next, we install all packages needed for |product|.
 
       .. code:: console
 
-         # dnf install carbonio-directory-server \
-         carbonio-proxy \
-         carbonio-webui carbonio-files-ui \
-         carbonio-mta  \
-         carbonio-appserver \
-         carbonio-user-management carbonio-preview-ce \
-         carbonio-files-ce carbonio-files-db \
-         carbonio-tasks-ce carbonio-tasks-db \
-         carbonio-tasks-ui \
-         carbonio-storages-ce \
-         carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-prometheus 
+         # dnf install carbonio-directory-server carbonio-proxy \
+         carbonio-webui carbonio-files-ui carbonio-mta \
+         carbonio-appserver carbonio-user-management \
+         carbonio-preview-ce carbonio-files-ce carbonio-files-db \
+         carbonio-tasks-ce carbonio-tasks-db q carbonio-tasks-ui \
+         carbonio-storages-ce carbonio-docs-connector-ce \
+         carbonio-docs-editor carbonio-prometheus \
+         carbonio-message-broker carbonio-message-dispatcher \
+         carbonio-ws-collaboration-ce carbonio-videoserver-ce
 
 After the successful package installation, you can check that all
 |product| services are running, by using
@@ -81,9 +74,15 @@ After the successful package installation, you can check that all
 
    # systemctl status carbonio-*
 
-If any service is in :red:`failed` status, restart it. Probably one of
-the |monit| exporters will not correctly start, so you will need to
-run
+If any service is in :red:`failed` status, restart it. Some of he
+|monit| exporters may not correctly start, because the bootstrap of
+the databases (:ref:`Step 8 <installation-step8>`) must be executed in
+advance. After that step, if any of the services is not in ``running``
+state, you will need to manually start it by running a command like
+the following, replacing
+``carbonio-prometheus-nginx-exporter.service`` with the service that
+is not running.
+
 
 .. code:: console
 

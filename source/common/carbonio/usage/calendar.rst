@@ -2,8 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The calendar component allows to keep track of the appointments, meetings,
-and events you need to attend to and share them with your colleagues.
+The calendar component allows to keep track of the :term:`appointments
+<appointment>`, meetings, and events you need to attend to and share
+them with your colleagues.
 
 Beside using |new|, a new appointment can be created in other
 ways. The first one is with a click of the mouse on the desired date
@@ -22,11 +23,24 @@ When an account is configured with multiple identities, it is possible
 to choose from which one to send the invitations: the e-mail's sender
 will then be automatically filled according the identity chosen.
 
-Attendees, whose presence is either mandatory or optional, can be
-added by writing their e-mail address. If the attendee already is not
-available or has some overlapping appointment, its e-mail address will
-be coloured and a message will be shown. This improves and makes
-easier the creation of events.
+:term:`Attendees <attendee>`, whose presence is either mandatory or
+optional, can be added by writing their e-mail address. If the
+attendee already is not available or has some overlapping appointment,
+its e-mail address will be coloured and a message will be shown. This
+improves and makes easier the creation of events.
+
+Besides inviting attendees (internal colleagues or external people),
+many more information can be added to an appointment:
+
+* The *Location* where the meeting takes place (usually the town or
+  city)
+
+* One or more *Meeting Room*\ s and  *Equipment*\ s, if configured by the
+  administrator, can be selected from a drop-down menu
+
+* Whether the appointment is *private* or not. If yes, no details is
+  visible to other colleagues who have access to the calendar of the
+  attendees.
 
 In case the invitation was not sent or if something went wrong, the
 event will show up in the calendar, but marked with a red icon. The
@@ -40,7 +54,6 @@ or move it, and its original, plain text version, can be shown.
 
 Additionally, :ref:`mail-tags` can be added to any calendar event and
 the event itself can be (tentatively) accepted or declined
-
 
 Searching for events is easy: insert a search string in the
 :ref:`quick search bar <create-new>` to retrieve a first batch of
