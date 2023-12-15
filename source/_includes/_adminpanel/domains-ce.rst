@@ -63,7 +63,35 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
+.. _global-global:
+
+Global
+~~~~~~
+
+The only setting in this page is the e-mail address that appears as
+the sender of the system notifications, which must be unique, and the
+recipients that will receive them.
+
+.. _global-delegate:
+
+Global Delegates
+~~~~~~~~~~~~~~~~
+
+This page is an excerpts of the :ref:`Accounts <ap-accounts>`
+(:menuselection:`Admin Panel --> Domains --> Manage --> Accounts`)
+table, showing all the Global Delegates.
+
+.. _global-domains:
+
+Domains
+~~~~~~~
+
+This table lists all the domains configured on |product|. Check section
+:ref:`ap-domain-new` to add a new domain.
+
+
 .. _global-quarantine:
+
 
 Quarantine
 ~~~~~~~~~~
