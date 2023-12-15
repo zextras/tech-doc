@@ -28,6 +28,19 @@ available or has some overlapping appointment, its e-mail address will
 be coloured and a message will be shown. This improves and makes
 easier the creation of events.
 
+Besides inviting attendees (internal colleagues or external people),
+many more information can be added to an appointment:
+
+* The *Location* where the meeting takes place (usually the town or
+  city)
+
+* One or more *Meeting Room*\ s and  *Equipment*\ s, if configured by the
+  administrator, can be selected from a drop-down menu
+
+* Whether the appointment is *private* or not. If yes, no details is
+  visible to other colleagues who have access to the calendar of the
+  attendees.
+
 In case the invitation was not sent or if something went wrong, the
 event will show up in the calendar, but marked with a red icon. The
 attendee can propose a new time. In this case, new e-mail will be
@@ -40,7 +53,6 @@ or move it, and its original, plain text version, can be shown.
 
 Additionally, :ref:`mail-tags` can be added to any calendar event and
 the event itself can be (tentatively) accepted or declined
-
 
 Searching for events is easy: insert a search string in the
 :ref:`quick search bar <create-new>` to retrieve a first batch of
