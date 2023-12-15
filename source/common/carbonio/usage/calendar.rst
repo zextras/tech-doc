@@ -2,8 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The calendar component allows to keep track of the appointments, meetings,
-and events you need to attend to and share them with your colleagues.
+The calendar component allows to keep track of the :term:`appointments
+<appointment>`, meetings, and events you need to attend to and share
+them with your colleagues.
 
 Beside using |new|, a new appointment can be created in other
 ways. The first one is with a click of the mouse on the desired date
@@ -22,11 +23,11 @@ When an account is configured with multiple identities, it is possible
 to choose from which one to send the invitations: the e-mail's sender
 will then be automatically filled according the identity chosen.
 
-Attendees, whose presence is either mandatory or optional, can be
-added by writing their e-mail address. If the attendee already is not
-available or has some overlapping appointment, its e-mail address will
-be coloured and a message will be shown. This improves and makes
-easier the creation of events.
+:term:`Attendees <attendee>`, whose presence is either mandatory or
+optional, can be added by writing their e-mail address. If the
+attendee already is not available or has some overlapping appointment,
+its e-mail address will be coloured and a message will be shown. This
+improves and makes easier the creation of events.
 
 Besides inviting attendees (internal colleagues or external people),
 many more information can be added to an appointment:
