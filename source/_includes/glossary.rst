@@ -17,3 +17,10 @@
      a high-level description of a functionality. A more technical
      description of the functionality, including the software packages
      required is provided by :term:`Role`.
+
+
+   .. user
+   
+   Shared Account
+   Functional Account
+     A Shared Account is an account that can be accessed by multiple users.
