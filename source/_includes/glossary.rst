@@ -22,5 +22,7 @@
    .. user
    
    Shared Account
-   Functional Account
      A Shared Account is an account that can be accessed by multiple users.
+
+
+   
