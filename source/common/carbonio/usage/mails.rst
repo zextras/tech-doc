@@ -6,8 +6,8 @@ The Mails module is where you store, create, and arrange new e-mails.
 
 .. _mail-folders:
 
-Folders and Shares
-------------------
+Folders and Shared Folders
+--------------------------
 
 E-mail are arranged in folders, which by default are **Inbox**,
 **Junk**, **Sent**, **Drafts**, and **Trash**. These folders are also
