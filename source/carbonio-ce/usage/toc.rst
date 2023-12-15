@@ -23,7 +23,6 @@
    docs
    tasks
    shared-folders
-   shared-accounts
    search
    settings
    mobileapps
