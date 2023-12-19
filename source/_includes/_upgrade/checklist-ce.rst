@@ -7,22 +7,18 @@
    the version immediately before, i.e., |prev|, and as **older
    versions** any version of |product| released before these two.
 
-This upgrade impacts the following *Roles* or packages, which require some
-manual interaction during the procedure.
+   This upgrade impacts the following *Roles* or packages, which
+   require some manual interaction during the procedure.
 
-:octicon:`check-circle;1em;sd-text-success` the ``carbonio-docs-core``
-package. On **RHEL 8 only**, you might encounter some minor problem,
-whose solution can be found in section :ref:`upgrade-ts`.
+There is a **breaking change** in this release, which requires some
+attention during the upgrade.
 
-.. card:: The new |task| Component
+Some files have been moved from one package to another one. Since
+package managers forbid a file to belong to multiple packages, an
+error will be shown during the upgrade. You need to make sure that the
+package is installed, therefore these braking change leads to a slight
+different upgrade procedure, in Step 3. You can choose between two
+alternative procedures, either with automatic or manual conflict
+resolution. They are equivalent and will ensure that all the packages
+are correctly installed.
 
-   |product| 23.11 introduces the |task|, a simple task management
-   application. |task| must be manually installed and consists of
-   three packages: ``carbonio-tasks-db`` (database component),
-   ``carbonio-tasks-ui`` (frontend), and ``carbonio-tasks-ce``
-   (backend). In the Multi-Server scenario, we suggest that these
-   packages be installed on SRV1, SRV2, and SRV3 respectively.
-
-   .. seealso::
-
-      * :ref:`User Documentation <tasks-comp>`
