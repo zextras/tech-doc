@@ -25,4 +25,5 @@
    shared-folders
    search
    settings
+   wsc
    mobileapps
