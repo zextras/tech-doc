@@ -45,7 +45,7 @@ actions.
 
       In a chat, the sidebar is split in two:
 
-      * The *Info* box shows the e-mail of the two participants and
+      * The *Info* box shows the e-mail of the two members and
         the avatar of the other member
 
       * The (collapsible) *Action* box allows to mute notifications
@@ -94,3 +94,66 @@ actions.
 Meeting features
 ----------------
 
+A :term:`Meeting` is a video call or video conference consisting of
+two or more :term:`Participanta <Participant>`.
+
+To take part to a meeting, use the button on the top right of the chat
+window: if you are starting the meeting, the button is called
+:bdg-light:`START MEETING`, while if the meeting has already
+started (in the case of a video conference), the button becomes
+:bdg-light:`JOIN MEETING`.
+               
+If someone is trying to call you directly, a dialog allows you to
+accept the call and enter the meeting or to refuse the call and write
+a short message that will be sent to the caller. Upon entering the
+meeting, you have the chance to choose the microphone and webcam
+(i.e., the devices) to use and to test the microphone. You can also
+enter the call with both devices deactivated.
+
+After the meeting has started, on the left-hand side three collapsible
+panels appear: the *Actions* and *Participant* boxes, which are the
+same as the corresponding *Actions* and *Members* box in the textual
+chat, and the *Chat* on the bottom. On the bottom, the *Action Bar*
+allows to change or disable the devices, to share the screen, to
+change the mode of the call (see next section), or to leave the call.
+
+Meeting modes
+~~~~~~~~~~~~~
+
+The right-hand side sidebar depends on the mode used during the
+meeting which can be one of:
+
+* Face to face mode. This is available only for a video call (i.e.,
+  between two participants) and the only interaction is to hide your
+  video and show only the other participant.
+
+* Cinema mode, available for video conferences. The sidebar shows a
+  miniature of the participants. Only a few are shown in a vertical
+  carousel, depending on the size of the browser's window, but you can
+  scroll the carousel. By default, the main area shows the participant
+  that is talking, but it is possible to force one participant to
+  stick in the main area by pinning it (i.e., clicking the
+  corresponding icon on the miniature).
+
+* Grid mode, available for video conferences. All the participants
+  will be shown in the main area. When the number of participant is
+  large and they can not be fit in a single window, it will be
+  possible to scroll the grid.
+
+  It is also possible to pin one of the participants: in this case,
+  the mode will be automatically switched to Cinema.
+
+  .. hint:: To toggle between the Cinema and Grid modes use the button
+     between the share and leave buttons in the Action Bar.
+
+Screen sharing
+~~~~~~~~~~~~~~
+
+It is possible to share an entire screen or single windows. Depending
+on the browser used, it might be even possible to share only a tab of
+the browser.
+
+In video conferences, if someone (Alice) starts sharing the screen
+while someone else (Bob) is already sharing, the screen of Alice will
+replace Bob's. Bob's screen will remain shared, but other participants
+need to pin it to see it again.
