@@ -25,15 +25,10 @@ performing will manage older data.
 The remainder of this section describes volumes and their management,
 policies, HSM, and various advanced techniques.
 
-.. _pws_|carbonio|_stores:
-
-|Carbonio| Stores
-=================
-
 .. _pws_the_basics_types_of_stores_and_their_uses:
 
 The Basics: Types of Stores and Their Uses
-------------------------------------------
+==========================================
 
 |Carbonio| allows for **two** different types of stores:
 
@@ -52,7 +47,7 @@ Primary Data Store and one Secondary Data Store can be set as *Current*
 .. _pws_primary_and_secondary_data_stores:
 
 Primary and Secondary Data Stores
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 A data store in |Carbonio| can be either a Primary Data Store or a Secondary
 Data Store.
@@ -63,7 +58,7 @@ Secondary Data Store according to a defined policy.
 .. _volumes:
 
 Volumes
-~~~~~~~
+-------
 
 Three types of volumes are defined by |Carbonio|:
 
