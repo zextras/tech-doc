@@ -277,7 +277,7 @@ Volume Management
 Both primary and secondary volumes can be created on either local
 storage or on supported third-party storage solutions.
 
-.. _pws_|carbonio|_volumes:
+.. _pws_carbonio_volumes:
 
 |carbonio| Volumes
 ------------------
@@ -944,7 +944,7 @@ copy only once.
 This might seem like a minor improvement. However, in practical use, it
 makes a significant difference.
 
-.. _pws_item_deduplication_in_|carbonio|:
+.. _pws_item_deduplication_in_carbonio:
 
 Item Deduplication in |Carbonio|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
