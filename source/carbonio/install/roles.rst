@@ -184,6 +184,17 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-prometheus
       * grafana
 
+   .. grid-item-card:: Event Streaming
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Advanced role
+
+      Packages:
+
+      * ZooKeeper
+      * Apache Kafka
+
 .. _multiserver-installation:
 
 How to install Roles
@@ -248,3 +259,4 @@ installation, please review these important remarks:
    roles/role-tasks
    roles/role-vs
    roles/role-monit
+   roles/role-es
