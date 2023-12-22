@@ -69,7 +69,7 @@ exclude_patterns = [ '_includes', 'cli',
 rst_prolog = """
 
 .. |product| replace:: Carbonio
-.. |storage| replace:: Carbonio Advanced
+.. |storage| replace:: Carbonio Storage
 .. |prev| replace:: %s
 """ %prev + open("replace.txt").read()
 
