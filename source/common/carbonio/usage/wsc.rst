@@ -67,13 +67,13 @@ slight different functionalities).
         member
 
       * The (collapsible) *Action* box allows to mute notifications
-        (visual notification, if active, will still be shown) or to
-        clear the chat's history.
+        (see what this implies in the :ref:`box below <wsc_muted>`) or
+        to clear the chat's history.
 
         .. note:: The deletion of the chat history requires a
            confirmation; it is irreversible and personal, meaning that
            the other users will still be able to see it.
-        
+           
    .. grid-item-card:: Group Sidebar for Members
       :columns: 6
 
@@ -84,7 +84,7 @@ slight different functionalities).
         group, along with the number of members
 
       * The (collapsible) *Action* box allows to mute notifications
-        (desktop notifications, if active, will still be shown), to
+        (see what this implies in the :ref:`box below <wsc_muted>`) to
         clear the chat's history or to leave the group.
 
         .. note:: The deletion of the chat history requires a
@@ -115,14 +115,39 @@ slight different functionalities).
       .. note:: If you are the only moderator, you **can not** leave
          the group.
 
+.. _wsc_muted:
+
+.. card:: Muted notifications
+
+   When the notifications for a Chat or a Group are muted, the following
+   changes take effect:
+
+   * The avatar of the User or of the Group is replaced by a
+     crossed-out bell
+
+   * Desktop notifications, if configured, are suppressed
+
+   * Notification sounds are also suppressed
+
+   * The unread messages badge will be shown in grey and not in blue
+
 .. _wsc-meeting:
 
 Meeting features
 ----------------
 
-A :term:`Meeting` is a video call or video conference consisting of
-two or more :term:`Participants <Participant>`.
+A :term:`Meeting` is a video call between two :term:`Participants
+<Participant>`, while a Group Meeting is a meeting between three or
+more Participants.
 
+.. card:: Members vs. Participants
+
+   A Group is composed by three of more users, which are the *members*
+   of the Group: all members receive the text messages written in the
+   chat. Whenever a Group Meeting is started, while all the members
+   can join that Group Meeting, only those who indeed take part are
+   called *participants*.
+   
 To take part to a meeting, use the button on the top right of the chat
 window: if you are starting the meeting, the button is called
 :bdg-light:`START MEETING`, while if the meeting has already
