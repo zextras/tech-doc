@@ -15,7 +15,9 @@ In the remainder, you find the installation and configuration
 instructions for both software on a node dedicated in the same
 infrastructure that hosts the other |product| Nodes.
 
-It is possible to install multiple Event Streaming 
+It is possible to install multiple Event Streaming Roles in a
+|product| infrastructure: in this case, you need to make sure that the
+ZooKeeper's configuration is replicated on every Event Streaming Node.
 
 Installation of Apache ZooKeeper
 --------------------------------
@@ -101,14 +103,20 @@ installed and add it to the file
    # ZOOKEEPER_ID=10
    # echo $ZOOKEEPER_ID > /var/lib/queue/zookeeper/myid
 
-You have then to append at the end of the configuration file
-:file:`/opt/zookeeper/conf/zoo.cfg` one entry for every zookeeper node,
-using the format ``server.[ZOOKEEPER_ID]=[NODE_IP]:2888:3888``
+If you install a second and even a third Event Streaming Role, you
+have then to append at the end of the configuration file
+:file:`/opt/zookeeper/conf/zoo.cfg` one entry for every zookeeper
+node, using the format ``server.[ZOOKEEPER_ID]=[NODE_IP]:2888:3888``
 
-For example, if you assigned ``ZOOKEEPER_ID=1O`` to node IP
-``10.0.10.11``, ``ZOOKEEPER_ID=2O`` to node IP ``10.0.10.12`` and
-``ZOOKEEPER_ID=3O`` to node IP ``10.0.10.13`` the block **to add to
-every** node will be:
+For example, suppose you want to install a three-nodes Event
+Streaming. You have already you assigned ``ZOOKEEPER_ID=1O`` to node
+IP ``10.0.10.11`` and you add
+
+* ID ``ZOOKEEPER_ID=2O`` to node IP ``10.0.10.12``
+* ID ``ZOOKEEPER_ID=3O`` to node IP ``10.0.10.13``
+
+You need to make sure that three entries are added to file
+:file:`/opt/zookeeper/conf/zoo.cfg` **on every Node**:
 
 .. code:: console
 
