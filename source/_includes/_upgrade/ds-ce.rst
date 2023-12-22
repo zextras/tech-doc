@@ -4,8 +4,7 @@
 
 As a preliminary task, we backup the LDAP data of the Directory
 Server. On a Multi-Server installation, execute the following commands
-on the node with the Directory Server Role installed, which is
-|dsnode| in our scenario.
+on the node with the Directory Server Role installed.
 
 #. Make a dump of the LDAP Database, especially if the if the upgrade
    includes the Directory Server. This can be done using the command
