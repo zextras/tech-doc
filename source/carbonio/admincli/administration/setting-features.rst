@@ -56,7 +56,7 @@ In order to modify these values, you can use or adapt the following commands
 
      .. code:: console
 
-        zextras$ carbonio prov modifyCos noChat carbonioFeaturChatsEnabled FALSE
+        zextras$ carbonio prov modifyCos noChat carbonioFeatureTeamEnabled FALSE
 
    * The Settings module is available by default to all users; to hide
      it and prevent a user to access it, use the command
