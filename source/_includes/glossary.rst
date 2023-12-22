@@ -30,6 +30,6 @@
      (location, meeting rooms).
 
    Attendee
-     An **Attendee** is a user (external or internal that is part of
+     An **Attendee** is a user (external or internal) that is part of
      an appointment.
    
