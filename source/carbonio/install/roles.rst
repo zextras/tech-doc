@@ -24,7 +24,7 @@ consists of one or more packages.
    dedicated node or group multiple roles according to affinity rules.
 
    Although this is not a suggested or supported scenario, it would be
-   technically possible to install almost all Carbonio roles on a
+   technically possible to install almost all |product| Roles on a
    single virtual machine.
 
    The possibility of installation by roles allows you to design
@@ -36,12 +36,11 @@ The roles of |product|
 
 We can group the available |product| Roles into 3 macro categories:
 
-* Infrastructure roles, which are mandatory in any |product| installation
+* **Infrastructure Roles**, which are mandatory in any |product| installation
 
-* Service roles broaden the basic functionality provided by |product|
+* **Service Roles** broaden the basic functionality provided by |product|
 
-* Advanced roles are not yet available, but will provide robustness to
-  |product|
+* **Advanced Roles** provide robustness and redundancy to |product|
 
 
 This is the list of roles that make up a Carbonio installation.
@@ -184,6 +183,17 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-prometheus
       * grafana
 
+   .. grid-item-card:: Event Streaming
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Advanced role
+
+      Packages:
+
+      * ZooKeeper
+      * Apache Kafka
+
 .. _multiserver-installation:
 
 How to install Roles
@@ -248,3 +258,4 @@ installation, please review these important remarks:
    roles/role-tasks
    roles/role-vs
    roles/role-monit
+   roles/role-es
