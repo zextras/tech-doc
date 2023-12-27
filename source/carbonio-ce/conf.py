@@ -124,16 +124,15 @@ html_theme_options = {
 
     # Add button for surveys at the bottom of the right-hand side menu
     # (global ToC)
-    'primary_sidebar_end': ['survey'],
+    #'primary_sidebar_end': ['survey'],
 }
-html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
-                          'home.html' ] }
+html_sidebars = { "**": [ 'navbar-logo.html', 'survey',
+                          'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = {
     'hubhome' : '%s' %hubhome,
-    #change label and links - example values
-    'surveylink': 'https://community.zextras.com/' ,
-    'surveylabel': 'community portal',
+    'surveylink': 'https://app.useberry.com/t/jvNFeRHKKOxYSU/' ,
+    'surveylabel': 'Participate to our Documentation survey!',
 }
 
 # workaround for ZTD-581
