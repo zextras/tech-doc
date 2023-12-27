@@ -16,9 +16,7 @@ Requirements are divided into groups: :ref:`system-requirements`,
 
 To make requirements easier to understand, we provide software
 requirements for a **Node**, which is either the only server used in
-a Single-Server or each server in a Multi-Server infrastructure. In
-the :ref:`multi-server-scenario` that we present later, we give
-specific requirements for each Node.
+a Single-Server or each server in a Multi-Server infrastructure.
 
 .. _system-requirements:
 
@@ -235,6 +233,7 @@ Furthermore, ports in Internal and External connections are grouped
 according to the Role that require them, so all ports listed in a
 table must be opened only on the Node on which the Role is installed.
 
+.. _fw-external:
 
 TCP External Connections
 ++++++++++++++++++++++++
@@ -247,7 +246,7 @@ TCP External Connections
 
       "25", "TCP", "Postfix incoming mail"
       "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
-      "587", "TCP", "Port for SMTP autenticated relay, requires STARTTLS
+      "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
 
    .. [1] This port is still used since in some cases it is
@@ -277,6 +276,7 @@ TCP External Connections
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
 
+.. _fw-internal:
 
 TCP Internal Connections
 ++++++++++++++++++++++++
@@ -323,7 +323,7 @@ TCP Internal Connections
 
       "25", "TCP", "Postfix incoming mail"
       "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [3]_"
-      "587", "TCP", "Port for SMTP autenticated relay, requires STARTTLS
+      "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
 

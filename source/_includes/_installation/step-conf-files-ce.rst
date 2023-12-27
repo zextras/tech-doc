@@ -4,13 +4,41 @@
 
 The password |dbadmpwd| created in the previous step for the
 ``carbonio_adm`` role in database is required in this step, in which
-we configure the database of |file|. First, we bootstrap the database.
+we configure the database required by |product|, by running the
+following commands.
 
-.. code:: console
+.. card:: |file|
 
-     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+   .. code:: console
 
-Then restart the main mailbox process as the ``zextras`` user.
+      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |task|
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |wsc|
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap carbonio_adm 127.0.0.1
+
+..  card:: |wsc| Dispatcher
+
+    .. code:: console
+
+       # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |wsc| migration
+          
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration carbonio_adm 127.78.0.10
+
+When you're done, restart the main mailbox process as the ``zextras``
+user.
 
 .. code:: console
 

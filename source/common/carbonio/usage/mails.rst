@@ -6,8 +6,8 @@ The Mails module is where you store, create, and arrange new e-mails.
 
 .. _mail-folders:
 
-Folders and Shares
-------------------
+Folders and Shared Folders
+--------------------------
 
 E-mail are arranged in folders, which by default are **Inbox**,
 **Junk**, **Sent**, **Drafts**, and **Trash**. These folders are also
@@ -160,6 +160,12 @@ fails, you need to remove it and attach it again.
 
 When multiple addresses are present in the **TO**, **CC**, or **BCC**
 fields, they can be drag-and-dropped from one field to the other.
+
+If one of the recipients (**TO**, **CC**, or **BCC**) of a mail you
+are writing is a distribution list, you can click the small
+:octicon:`chevron-down` chevron icon to see a list of all the members
+of the list. By clicking the blue button on top of the list, you can
+even replace the list with all the individual e-mail addresses.
 
 .. _mail-attachments:
 

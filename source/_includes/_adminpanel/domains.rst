@@ -63,6 +63,25 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
+.. _global-global:
+
+Global
+~~~~~~
+
+The only setting in this page is the e-mail address that appears as
+the sender of the system notifications, which must be unique, and the
+recipients that will receive them.
+
+.. _global-delegate:
+
+Global Delegates
+~~~~~~~~~~~~~~~~
+
+This page is an excerpts of the :ref:`Accounts <ap-accounts>`
+(:menuselection:`Admin Panel --> Domains --> Manage --> Accounts`)
+table, showing all the Global Delegates.
+
+
 .. _global-wl:
 
 Whitelabel Settings
@@ -78,6 +97,14 @@ interface appears to the web clients.
 
 .. include:: /_includes/_adminpanel/wl.rst
 
+.. _global-domains:
+
+Domains
+~~~~~~~
+
+This table lists all the domains configured on |product|. Check section
+:ref:`ap-domain-new` to add a new domain.
+
 .. _global-2fa:
 
 2-Factor-Autentication
@@ -91,6 +118,24 @@ modify settings for a single domain, refer to :ref:`domain-2fa`.
    unless they are overridden in the domain.
 
 .. include:: /_includes/_adminpanel/2fa.rst
+
+.. _global-quarantine:
+
+Quarantine
+~~~~~~~~~~
+
+In this page appears the configuration of the special *quarantine*
+e-mail account, which holds all the messages either marked as Spam or
+containing viruses. The available setting is the duration of the
+retention time, i.e., how long these messages are kept before being
+deleted forever. The account, including all the e-mail messages it
+contains, can be deleted and recreated by clicking the
+:bdg-danger-line:`DELETE AND RE-CREATE` button. At the bottom of the
+page the list of quarantined messages is shown. Being a system
+account, to view the messages you can go to :menuselection:`Admin
+Panel --> Domains --> Manage --> Accounts`, click the quarantine
+account, then the :bdg-primary-line:`VIEW MAI` button to see the
+quarantined e-mails.
 
 .. _ap-domain-details:
 
@@ -229,9 +274,7 @@ Virtual Hosts & Certificate
 
 A **Virtual Host** is an alternative name given to a *domain* that can
 be used to access the same domain. To be able to use the virtual host,
-the name must be registered on the domain's DNS with an ``A``
-record. Users can then log in to the domain using only their
-usernames, without the domain.
+the name must be registered on the domain's DNS with an ``A`` record.
 
 To each virtual host you can associate an **SSL certificate**.
 |product| supports the upload of multiple SSL *domain certificates*

@@ -25,15 +25,10 @@ performing will manage older data.
 The remainder of this section describes volumes and their management,
 policies, HSM, and various advanced techniques.
 
-.. _pws_|carbonio|_stores:
-
-|Carbonio| Stores
-=================
-
 .. _pws_the_basics_types_of_stores_and_their_uses:
 
 The Basics: Types of Stores and Their Uses
-------------------------------------------
+==========================================
 
 |Carbonio| allows for **two** different types of stores:
 
@@ -52,7 +47,7 @@ Primary Data Store and one Secondary Data Store can be set as *Current*
 .. _pws_primary_and_secondary_data_stores:
 
 Primary and Secondary Data Stores
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 A data store in |Carbonio| can be either a Primary Data Store or a Secondary
 Data Store.
@@ -63,7 +58,7 @@ Secondary Data Store according to a defined policy.
 .. _volumes:
 
 Volumes
-~~~~~~~
+-------
 
 Three types of volumes are defined by |Carbonio|:
 
@@ -112,7 +107,7 @@ Setting up Centralized Storage
 In order to set up a bucket for centralized storage, a few steps are
 necessary. The procedure is described below and guides you from the
 creation of the bucket up to the association of the new Storage to
-multiple AppServers.
+multiple Mailstore & Provisioning Roles.
 
 The procedure is the same for all types of supported buckets, although
 depending on the type of the bucket, either the syntax, or some of the
@@ -160,7 +155,7 @@ bucket simply use the appropriate command for it.
    If the command is successful you will see the message ``connection
    ok``.
 
-#. On the first AppServer, create a volume associated to the bucket:
+#. On the first Mailstore & Provisioning Node, create a volume associated to the bucket:
 
    .. code:: console
 
@@ -177,7 +172,7 @@ bucket simply use the appropriate command for it.
    * **volume_prefix Main_Volume**: a label assigned to the volume, used for
      quick searches (e.g., *main_vol*)
    * **centralized true**: the volume is centralized and can be used by
-     multiple AppServers
+     multiple Mailstore & Provisioning
 
 #.  Set the volume to *current*, to let it receive data immediately,
     using command:
@@ -196,7 +191,7 @@ bucket simply use the appropriate command for it.
 #. Once the Centralized Volume has been created, you need to copy the
    Centralized Volume's configuration from the first server to all
    mailbox servers and add it to the volume list. To do so, on **all
-   other AppServer** that run the following commands:
+   other Mailstore & Provisioning** that run the following commands:
 
    .. code:: console
 
@@ -282,7 +277,7 @@ Volume Management
 Both primary and secondary volumes can be created on either local
 storage or on supported third-party storage solutions.
 
-.. _pws_|carbonio|_volumes:
+.. _pws_carbonio_volumes:
 
 |carbonio| Volumes
 ------------------
@@ -949,7 +944,7 @@ copy only once.
 This might seem like a minor improvement. However, in practical use, it
 makes a significant difference.
 
-.. _pws_item_deduplication_in_|carbonio|:
+.. _pws_item_deduplication_in_carbonio:
 
 Item Deduplication in |Carbonio|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

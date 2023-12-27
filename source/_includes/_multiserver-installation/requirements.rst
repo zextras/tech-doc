@@ -1,14 +1,11 @@
 
 
-|product| can be installed in **Multi-Server** only. Each Node must
-satisfy the :ref:`hw-requirements` and :ref:`software-requirements`
-below. On the contrary, :ref:`fw-ports` must be opened only on the
-Node that hosts the corresponding service. For example, port **6071**
-(secure access to the Admin Panel) must be opened only on the Node
-featuring the |adminui|. If a service is not installed, the
-corresponding port can be shut down, to prevent unwanted accesses. For
-example, if POP3/POPS access is not allowed, access to ports **110**
-and **995** can be disallowed.
+Each Node must satisfy the :ref:`hw-requirements` and
+:ref:`software-requirements` below, while on the contrary,
+:ref:`fw-ports` must be opened only on the Node that hosts the
+corresponding service. For example, port **6071** (secure access to
+the Admin Panel) must be opened only on the Node featuring the
+|adminui|.
 
 .. _hw-requirements:
 
@@ -23,10 +20,10 @@ may vary considerably.
 
 Moreover, you must take into account the following:
 
-* The Node that hosts |storage| (**SRV3**) and therefore the emails,
+* The Node that hosts |storage| and therefore the emails,
   is the node requiring more disk space.
 * The |file| service requires **4GB** of RAM to start, so make sure
-  that the node hosting it (**SRV4**) has at least **6GB** of RAM
+  that the node hosting it has at least **6GB** of RAM
 * The Video Recording feature requires additional storage, which is
   difficult to estimate in advance. Indeed, it depends on a number of
   factors, including: Number of participants and number of webcam
@@ -37,16 +34,7 @@ Moreover, you must take into account the following:
 
 Purely as an example, if you give a quota of 5GB to each of the 150
 users, you need to assign **780GB of disk space** (30GB for the OS and
-at 750 for user's total quota) to **SRV3**.
-
-.. csv-table::
-   :header: "Node", "CPUs", "RAM", "Disk Space (OS)"
-
-   "SRV1", "4vCPU", "8GB", "120GB"
-   "SRV2", "4vCPU", "10GB", "30GB"
-   "SRV3", "4vCPU", "16GB", "30GB"
-   "SRV4", "4vCPU", "8GB", "30GB"
-   "SRV5", "4vCPU", "8GB", "30GB"
+at 750 for user's total quota) to the node.
 
 .. _software-requirements:
 
@@ -201,8 +189,8 @@ Additional Requirements
 
 * If none of the nodes is exposed to the Internet, you need to forward
   two ports from the public IP: port **25/smtp** to the Node featuring
-  MTA (SRV2) to be able to receive mail, and port **443/https** to the
-  node installing the Proxy (SRV2) to allow users to access their
+  the MTA Role to be able to receive mail, and port **443/https** to
+  the node installing the Proxy Role to allow users to access their
   webmail from a remote location
 
 * If you plan to enable other protocols (e.g., POP, IMAP) you should
@@ -226,11 +214,13 @@ Additional Requirements
 Firewall Ports
 ~~~~~~~~~~~~~~
 
-For |carbonio| to operate properly, it is necessary to allow network
-communication on specific ports.
+|product| employs SSL/TLS for the communication, and to operate
+properly, it is necessary to allow network communication on specific
+ports.
 
 The ports listed in the *Internal Connections* must be opened on
-**all** nodes, while those in the *External Connections* only on the
+**all** nodes, possibly in a dedicated network connecting the Nodes,
+while those in the *External Connections* should be opened only on the
 node on which the corresponding Role is installed. For example, port
 443 should be opened only on the node hosting the **Proxy** Role.
 
@@ -238,8 +228,12 @@ Furthermore, ports in Internal and External connections are grouped
 according to the Role that require them, so all ports listed in a
 table must be opened only on the Node on which the Role is installed.
 
+.. _fw-external:
+
 TCP External Connections
 ++++++++++++++++++++++++
+
+These ports must be opened to allow communication with the Internet.
 
 .. card:: MTA Role
 
@@ -249,7 +243,7 @@ TCP External Connections
 
       "25", "TCP", "Postfix incoming mail"
       "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
-      "587", "TCP", "Port for SMTP autenticated relay, requires STARTTLS
+      "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
 
    .. [1] This port is still used since in some cases it is
@@ -289,8 +283,13 @@ TCP External Connections
       "20000-40000", "UDP", "Client connections for the audio and
       video streams"
 
+.. _fw-internal:
+
 TCP Internal Connections
 ++++++++++++++++++++++++
+
+These ports must be opened to allow the Nodes to communicate properly
+and be able to access |product|'s internal services.
 
 .. card:: Every Node
 
@@ -334,14 +333,14 @@ TCP Internal Connections
 
       "25", "TCP", "Postfix incoming mail"
       "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [3]_"
-      "587", "TCP", "Port for SMTP autenticated relay, requires STARTTLS
+      "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
 
    .. [3] This port is still used since in some cases it is considered
       safer than 587. It requires on-connection SSL.
 
-.. card:: Advanced Role (AppServer)
+.. card:: Mailstore & Provisioning (AppServer)
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
