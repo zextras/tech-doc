@@ -106,7 +106,7 @@ mandatory to keep in sync the resources on all the Proxies instances.
       The *favicon* must adhere to the following **maximum** requirements.
 
       * The format must be **ICO**
-      * The dimensions must be **64x64** pixel, with ratio **1:1**
+      * The dimensions must be **32x32** pixel, with ratio **1:1**
         (i.e., it must be square)
 
    .. grid-item-card:: Background for the Login Page

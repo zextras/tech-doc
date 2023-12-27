@@ -15,19 +15,13 @@ administrative user.
 
 .. code:: console
 
-   # read -s -p "Password:" DB_ADM_PWD
+   # read -s -p "Insert Password:" DB_ADM_PWD
 
-Provide a password of your choice, which will be stored in a variable
-denoted ``$DB_ADM_PWD`` and reusable throughout the whole procedure. It
-is important to notice that the password is accessible to the user
-(``root``) **in the current terminal only**. No one else can access it
-and it will be deleted upon logging out. You can also manually delete
-it with the appropriate command, but remember that you need it in
-the next step.
-
-.. code:: console
-
-   # unset DB_ADM_PWD
+When prompted, enter a password of your choice: it will be stored
+in a variable denoted ``$DB_ADM_PWD`` that can be used throughout the
+whole procedure. It is important to notice that the password is
+accessible to the user (``root``) **in the current terminal only**. No
+one else can access it and it will be deleted upon logging out.
 
 .. code:: console
 
@@ -44,3 +38,11 @@ The second step is to create the database.
 .. code:: console
 
    # su - postgres -c "psql --command=\"CREATE DATABASE carbonio_adm owner carbonio_adm;\""
+
+You can manually delete the variable--and the password it stores-- at
+any moment with the command below, but remember that you need it in
+the next step.
+
+.. code:: console
+
+   # unset DB_ADM_PWD

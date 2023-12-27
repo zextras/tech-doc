@@ -6,13 +6,14 @@ you need it in the future.
 
 .. code:: console
 
-   # read -s -p "Password:" MESH_SECRET
+   # read -s -p "Insert Mesh Password:" MESH_SECRET
 
 .. note:: The password is accessible to the user (``root``) **in
    the current terminal only**. No one else can access it and it
    will be deleted upon logging out.
 
-Run the setup as a *first instance*.
+When prompted, enter a password of your choice, then run the setup as
+a *first instance*.
 
 .. code:: console
 

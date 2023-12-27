@@ -26,12 +26,12 @@ you choose the favourite way to execute them.
 
 Documentation of the Backup is therefore split in four main parts:
 
-#. :ref:`Backup (of an AppServer) <backup-mod>` is the current page,
+#. :ref:`Backup (of a Mailstore) <backup-mod>` is the current page,
    which includes: the architecture of the backup modules and a
    glossary of most relevant terms; the most common operations related
    to the backup and how to execute them from the CLI
 #. :ref:`Restore Strategies <backup_restore-strategies>` for the
-   Backup: how to restore items, accounts, or whole AppServers from
+   Backup: how to restore items, accounts, or whole Mailstores from
    the CLI
 
 #. :ref:`Advanced Backup Techniques <backup_advanced_techniques>`,
@@ -234,9 +234,10 @@ an item to any past transaction. See more in :ref:`Restore Strategies
 SmartScan and Realtime Scanner
 ------------------------------
 
-The initial structure of the backup is built during the *Initial Scan*,
-performed by the **SmartScan**: the actual content of a AppServer is read
-and used to populate the backup. The SmartScan is then executed at every
+The initial structure of the backup is built during the *Initial
+Scan*, performed by the **SmartScan**: the actual content of a Node
+featuring the Mailstore & Provisioning Role (AppServer) is read and
+used to populate the backup. The SmartScan is then executed at every
 start of the |backup| and on a daily basis if the **Scan Operation
 Scheduling** is enabled in the |adminui|.
 
@@ -309,8 +310,9 @@ important files and directories are present:
    filename the unique ID of the server.
 
 -  ``accounts`` is a directory under which information of all accounts
-   defined in the AppServer are present. In particular, the following
-   important files and directories can be found there:
+   defined in the Mailstore & Provisioning Role are present. In
+   particular, the following important files and directories can be
+   found there:
 
    -  ``account_info`` is a file that stores all metadata of the
       account, including password, signature, preferences
@@ -337,8 +339,9 @@ important files and directories are present:
 
 -  ``items`` is a directory containing up to 4096 additional folders,
    whose name consists of two hexadecimal (uppercae and lowercase)
-   characters. **Items** in the AppServer will be stored in the directory
-   whose name has the last two characters of their ID.
+   characters. **Items** in the Mailstore & Provisioning Role will be
+   stored in the directory whose name has the last two characters of
+   their ID.
 
 -  ``id_mapper.log`` is a user object ID mapping and contains a map
    between the original object and the restored object. It is located at
@@ -491,8 +494,8 @@ therefore it can work with different OS architecture and |product|
 versions.
 
 |backup| allows administrators to create an atomic backup of every
-item in the AppServer account and restore different objects on different
-accounts or even on different servers.
+item in the Mailstore & Provisioning (AppServer) account and restore
+different objects on different accounts or even on different servers.
 
 By default, the default |backup| setting is to save all backup
 files in the **local directory** :file:`/opt/zextras/backup/zextras/`. In
@@ -505,12 +508,12 @@ order to be eligible to be used as the Backup Path, a directory must:
 .. hint:: You can modify the default setting by using either technique
    shown in section :ref:`setting-backup-path`.
 
-When first started, |backup| launches a SmartScan, to fetch from
-the AppServer all data and create the initial backup structure, in which
-every item is saved along with all its metadata as a JSON array on a
-case sensitive filesystem. After the first start, either the Real Time
-Scanner, the SmartScan, or both can be employed to keep the backup
-updated and synchronised with the account.
+When first started, |backup| launches a SmartScan, to fetch from the
+Mailstore & Provisioning Role all data and create the initial backup
+structure, in which every item is saved along with all its metadata as
+a JSON array on a case sensitive filesystem. After the first start,
+either the Real Time Scanner, the SmartScan, or both can be employed
+to keep the backup updated and synchronised with the account.
 
 .. _structure_of_an_item:
 
@@ -629,19 +632,19 @@ Smartscan can be run manually from the CLI or configured from the
 Realtime Scanner
 ================
 
-The Realtime Scanner is an engine tightly connected to the AppServer,
-which intercepts all the transactions that take place on each user
-mailbox and records them with the purpose of maintaining the whole
-history of an item for its entire lifetime.
+The Realtime Scanner is an engine tightly connected to the Mailstore &
+Provisioning (AppServer), which intercepts all the transactions that
+take place on each user mailbox and records them with the purpose of
+maintaining the whole history of an item for its entire lifetime.
 
 Thanks to the Realtime Scanner, it is possible to recover any item at
 any point in time.
 
-The Realtime Scanner reads all the events of the AppServer in almost
-real-time, then it replicates the same operations on its own data
-structure, creating items or updating their metadata. No information
-is ever overwritten in the backup, so every item has its own complete
-history.
+The Realtime Scanner reads all the events of the Mailstore &
+Provisioning in almost real-time, then it replicates the same
+operations on its own data structure, creating items or updating their
+metadata. No information is ever overwritten in the backup, so every
+item has its own complete history.
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -842,9 +845,10 @@ discuss those cases here.
    be included in the backup.
 
 .. note:: The last two cases do not apply when using a browser to
-   connect to the AppServer. In this case is it the AppServer that
-   contacts the SMTP server to send the email and automatically passes
-   the email to :command:`mailboxd`.
+   connect to the Node hosting the Mailstore & Provisioning Role. In
+   this case is it the Mailstore that contacts the SMTP server to send
+   the email and automatically passes the email to
+   :command:`mailboxd`.
 
 ..
    .. _troubleshooting_ldap_backup:
@@ -1165,7 +1169,7 @@ one.
       In a Multi-Server installation, consider a scenario in which the same NAS
       located on 192.168.72.16 is involved, which exposes via NFS the share as
       :file:`/media/externalStorage`. We want to store our multiservers backups on
-      this NAS.
+      this NAS: the backup of each Node on a separate directory. backup in 
 
       To do so, on **each server** you need to add one entry similar to the
       following to the :file:`/etc/fstab` file:
@@ -1174,10 +1178,9 @@ one.
 
          192.168.72.16:/externalStorage/SRV1 /mnt/backup nfs rw,hard,intr 0 0
 
-      In our sample :ref:`multi-server-scenario`, on each node you
-      need to add the entry above using **SRV1**, ..., **SRV6** on the
-      corresponding node, while on the NAS there will be six
-      directories, one for each node.
+      .. note:: You need to add an entry like the one above on each
+         node replacing **SRV1** with the corresponding directory on
+         the NAS on which the backup will be store.
 
 .. _external_objectstorage:
 

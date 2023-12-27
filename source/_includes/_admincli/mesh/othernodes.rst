@@ -34,9 +34,9 @@ defined on the leader node and put it in a variable
 
 .. code:: console
 
-   # read -s -p "Password:" MESH_SECRET
+   # read -s -p "Insert Mesh Password:" MESH_SECRET
 
-Run the setup
+When prompted, enter a password of your choice, then run the setup
 
 .. code:: console
 

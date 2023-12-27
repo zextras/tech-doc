@@ -44,9 +44,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '23.11.0'
+release = '23.12.0'
 version = release
-prev = '23.10.0'
+prev = '23.11.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -62,11 +62,8 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [ '_includes', 'cli', 'glossary.rst',
-                     'common/carbonio/adminpanel',
-                     'common/carbonio/usage',
-                     'common/carbonio/mesh',
-                     'common/carbonio/web-access.rst',
+exclude_patterns = [ '_includes', 'cli',
+                     'common/carbonio',
                      'admincli/administration/delegatedadmin.rst' ]
 
 rst_prolog = """
@@ -117,11 +114,27 @@ html_theme_options = {
         'text': '%s' %release,
     },
     'footer_content_items': [ 'zx-copyright.html' ],
-}
-html_sidebars = { "**": [ 'navbar-logo.html', 'sbt-sidebar-nav.html',
-                          'home.html' ] }
 
-html_context = { 'hubhome' : '%s' %hubhome }
+    # Add button for surveys at the bottom of the right-hand side menu
+    # (local ToC)
+    #'secondary_sidebar_items': ['page-toc', 'survey'],
+
+    # Add button for surveys at the bottom of the right-hand side menu
+    # (global ToC)
+    #'primary_sidebar_end': ['survey'],
+}
+html_sidebars = { "**": [ 'navbar-logo.html', 'survey',
+                          'sbt-sidebar-nav.html', 'home.html' ] }
+
+html_context = {
+    'hubhome' : '%s' %hubhome,
+    #change label and links - example values
+    'surveylink': 'https://app.useberry.com/t/jvNFeRHKKOxYSU/' ,
+    'surveylabel': 'Participate to our Documentation survey!',
+}
+
+# workaround for ZTD-581
+html_extra_path = ['changelog.html', 'upgrade.html']
 
 # -- Options for linkcheck output --------------------------------------------
 
