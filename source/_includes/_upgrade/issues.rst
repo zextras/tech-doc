@@ -11,14 +11,17 @@ following these steps.
    check background information and mitigation:
    https://www.postfix.org/smtp-smuggling.html
 
-#. login to your |product| as the ``root`` user
-#. go to directory :file:`/opt/zextras/common/conf`
+In |product|, a modified version of Postfix 3.8.3 is used, so you do
+need to change only one of the two variables, ``smtpd_discard_ehlo_keywords``.
+
+#. Login to your |product| as the ``root`` user
+#. Go to directory :file:`/opt/zextras/common/conf`
 
    .. code:: console
 
       # cd /opt/zextras/common/conf
 
-#. open file :file:`main.cf` and search for variable
+#. Open file :file:`main.cf` and search for variable
    ``smtpd_discard_ehlo_keywords=``
 
    there should be no value provided (i.e., there's nothing after the
