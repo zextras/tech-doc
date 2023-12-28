@@ -19,6 +19,7 @@ mandatory.
    advancedbackup
    mobile
    storages
+   activereplica
    videoserver
    custom
    mesh

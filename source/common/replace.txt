@@ -43,7 +43,8 @@
 .. |mta| replace:: :abbr:`MTA (Message Transfer Agent)`
 .. |gui| replace:: :abbr:`GUI (Graphic User Interface)`
 .. |cos| replace:: :abbr:`COS (Class of Service)`
-.. |fqdn| replace:: :abbr:`FQDN (Fully Qualified Domain Name)` 
+.. |fqdn| replace:: :abbr:`FQDN (Fully Qualified Domain Name)`
+.. |ha| replace:: :abbr:`HA (High availability)`
 
 .. additional roles for adding inline styles
 
