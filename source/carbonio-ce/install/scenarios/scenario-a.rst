@@ -2,8 +2,27 @@
  Scenario A: 5 Nodes
 =====================
 
-This 5 nodes scenario involes the presence of a single tenant and
-does not use of the backup functionality.
+This five nodes scenario (depicted in :numref:`fig-5-nodes` involves
+the presence of a single tenant and does not use of the backup
+functionality.
+
+Some suggestions:
+
+* Always start with the installation of :ref:`role-mesh-install` Roles
+
+* When installing multiple roles on a Node, the *Bootstrap Carbonio*
+  and *Join Carbonio Mesh* steps can be made only once, after all
+  packages of the roles have been installed
+
+* you can skip the installation of Nodes 4 and 5 if you do not need
+  Docs Editor, Files, Chats, and Video Calls
+
+.. _fig-5-nodes:
+
+.. figure:: /img/carbonio/scenario-5-nodes-CE.png
+   :width: 90%
+
+   The architecture of the 5 Nodes Scenario,
 
 Roles Installation
 ==================
