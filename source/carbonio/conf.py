@@ -69,7 +69,7 @@ exclude_patterns = [ '_includes', 'cli',
 rst_prolog = """
 
 .. |product| replace:: Carbonio
-.. |storage| replace:: Carbonio Advanced
+.. |storage| replace:: Carbonio Storage
 .. |prev| replace:: %s
 """ %prev + open("replace.txt").read()
 
@@ -123,7 +123,7 @@ html_theme_options = {
     # (global ToC)
     #'primary_sidebar_end': ['survey'],
 }
-html_sidebars = { "**": [ 'navbar-logo.html', 'survey',
+html_sidebars = { "**": [ 'navbar-logo.html', 'survey', 'search-button-field.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = {

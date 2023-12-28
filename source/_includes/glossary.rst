@@ -22,14 +22,14 @@
    .. user
    
    Shared Account
-     A Shared Account is an account that can be accessed by multiple users.
+     A **Shared Account** is an account that can be accessed by multiple users.
 
    Appointment   
-     An *appointment* is a private or public event defined on a
+     An **Appointment** is a private or public event defined on a
      calendar, possibly including other users and information
      (location, meeting rooms).
 
    Attendee
-     An **Attendee** is a user (external or internal that is part of
+     An **Attendee** is a user (external or internal) that is part of
      an appointment.
    
