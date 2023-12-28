@@ -126,7 +126,7 @@ html_theme_options = {
     # (global ToC)
     #'primary_sidebar_end': ['survey'],
 }
-html_sidebars = { "**": [ 'navbar-logo.html', 'survey',
+html_sidebars = { "**": [ 'navbar-logo.html', 'survey', 'search-button-field.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = {
