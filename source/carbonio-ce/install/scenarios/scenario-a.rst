@@ -2,7 +2,7 @@
  Scenario A: 5 Nodes
 =====================
 
-This five nodes scenario (depicted in :numref:`fig-5-nodes` involves
+This five nodes scenario (depicted in :numref:`fig-5-nodes`) involves
 the presence of a single tenant and does not use of the backup
 functionality.
 
