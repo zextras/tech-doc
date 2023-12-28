@@ -1,6 +1,6 @@
-=====
- API
-=====
+=======
+Develop
+=======
 
 This section is dedicated to developers who want to interact with
 |product| using the APIs.

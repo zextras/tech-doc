@@ -3,13 +3,13 @@
 Event Streaming
 ===============
 
-This Role is required to enable the |carbonio| Active Replica feature,
-the foundation of High Availability on |product|, and is based on
-Apache's *Kafka* and *ZooKeeper*, which must be installed together on
-the same Node. For better performances, it is strongly suggested to
-install both the services on a dedicated Node, otherwise you can opt
-to directly access a Kafka + ZooKeeper service provided as a Saas
-solution.
+This Role is required to enable the |carbonio| :ref:`Active Replica
+<activereplica>` feature, the foundation of High Availability on
+|product|, and is based on Apache's *Kafka* and *ZooKeeper*, which
+must be installed together on the same Node. For better performances,
+it is strongly suggested to install both the services on a dedicated
+Node, otherwise you can opt to directly access a Kafka + ZooKeeper
+service provided as a Saas solution.
 
 In the remainder, you find the installation and configuration
 instructions for both software on a node dedicated in the same
