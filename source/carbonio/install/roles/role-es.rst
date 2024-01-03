@@ -52,12 +52,6 @@ Moreover, to setup ZooKeeper, you need:
             
      # mkdir /var/lib/queue/zookeeper/
 
-* a ZooKeeper binary directory: :file:`/opt/zookeeper/`
-
-  .. code:: console
-            
-     # mkdir /opt/zookeeper/
-
 
 Installation
 ~~~~~~~~~~~~
@@ -182,12 +176,6 @@ Moreover, to setup ZooKeeper, you need:
   .. code:: console
 
      # mkdir -p /var/lib/queue/kafka/logs 
-
-* Kafka binary directory: :file:`/opt/kafka/`
-
-  .. code:: console
-
-     # mkdir -p /opt/kafka/
 
 Installation
 ~~~~~~~~~~~~
