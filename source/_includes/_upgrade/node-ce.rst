@@ -54,7 +54,7 @@ installation.
 
             .. code:: console
 
-               # apt update && apt upgrade --full-upgrade
+               # apt update && apt full-upgrade
 
          .. tab-item:: RHEL
             :sync: rhel
