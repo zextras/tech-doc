@@ -128,3 +128,19 @@ Step 8: Bootstrap |file| Databases
 .. include:: /_includes/_installation/step-conf-files-ce.rst
 
 .. include:: /_includes/_installation/complete.rst
+
+.. _installation-step9:
+
+Step 9: Enable Workstream Collaboration UI :bdg-danger:`BETA`
+-------------------------------------------------------------
+
+The |wsc| role is disabled by default, you can enable it either from
+the |adminui| or from the command line by running as the ``zextras``
+user the command
+
+.. code:: console
+
+   zextras$ carbonio prov mc default mc carbonioFeatureChatsEnabled TRUE
+
+You can also enable it at COS level, allowing only certain users to
+access it.

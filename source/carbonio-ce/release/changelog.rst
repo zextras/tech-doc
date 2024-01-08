@@ -28,9 +28,6 @@ component within their respective GitHub repository.
 * :bdg-link-danger-line:`Carbonio Calendars UI
   <https://github.com/Zextras/carbonio-calendars-ui/blob/devel/CHANGELOG.md>`
   Calendars module
-* :bdg-link-danger-line:`Carbonio Error Reporter UI
-  <https://github.com/Zextras/carbonio-error-reporter-ui/blob/devel/CHANGELOG.md>`
-  module to report errors and feedback of the |carbonio| Web Client
 * :bdg-link-danger-line:`Carbonio Login UI
   <https://github.com/Zextras/carbonio-login-ui/blob/devel/CHANGELOG.md>`
   Web Login module
