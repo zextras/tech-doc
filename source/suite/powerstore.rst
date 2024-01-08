@@ -117,11 +117,13 @@ to use CLI commands.
 
 #. Create an S3 bucket using the ZxCore command ``doCreateBucket``::
 
-     zxsuite core doCreateBucket S3 _Amazon_AWS_bucket_ _Service_username_ _Service_password_ [param VALUE[,VALUE]]
+     zxsuite core doCreateBucket S3 MyBucketName MyBucketUser \
+     MyBucketPassword ALabelForMyBucket url http://s3nas.example.com:9000
 
    For example::
 
-     zxsuite core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket
+     zxsuite core doCreateBucket S3 BucketName X58Y54E5687R543 \
+     abCderT577eDfjhf My_New_Bucket url http://s3nas.example.com:9000
 
    In this example, we use the following values:
 
