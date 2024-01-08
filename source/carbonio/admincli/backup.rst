@@ -698,55 +698,56 @@ Scanner, a Smartscan on the given account is triggered *before* the
 restore: this operation fixes any misaligned data and sanitizes the
 backed up metadata.
 
-Blobless Backup Mode
-====================
+..
+   Blobless Backup Mode
+   ====================
 
-|product|\'s Blobless Backup Mode is a feature that avoids backing up
-item blobs while still safeguarding all other item-related
-information.
+   |product|\'s Blobless Backup Mode is a feature that avoids backing up
+   item blobs while still safeguarding all other item-related
+   information.
 
-This mode is designed to take advantage of advanced storage
-capabilities of the storage solution such as built-in backup or data
-replication optimizing both the backup module’s disk space usage and
-restore speed.
+   This mode is designed to take advantage of advanced storage
+   capabilities of the storage solution such as built-in backup or data
+   replication optimizing both the backup module’s disk space usage and
+   restore speed.
 
-There is only one requirements to enable Blobless Backup Mode
+   There is only one requirements to enable Blobless Backup Mode
 
-#. No independent third-party volumes must exist: Blobless Backup
-   Mode is only compatible with local volumes and centralised
-   third-party volumes.
+   #. No independent third-party volumes must exist: Blobless Backup
+      Mode is only compatible with local volumes and centralised
+      third-party volumes.
 
-Blobless Backup Mode is storage-agnostic and can be enabled on any
-server or infrastructure that meets the requirements above regardless
-of the specific storage vendor.
+   Blobless Backup Mode is storage-agnostic and can be enabled on any
+   server or infrastructure that meets the requirements above regardless
+   of the specific storage vendor.
 
-Blobless Backup Mode works exactly as its default counterpart: the
-RealTime Scanner takes care of backing up item changes while the
-SmartScan manages domain/COS/account consistency, the only difference
-between the two is that in Blobless Backup Mode the backup contains no
-items of kind ``blob`` while still saving all metadata and transaction
-history.
+   Blobless Backup Mode works exactly as its default counterpart: the
+   RealTime Scanner takes care of backing up item changes while the
+   SmartScan manages domain/COS/account consistency, the only difference
+   between the two is that in Blobless Backup Mode the backup contains no
+   items of kind ``blob`` while still saving all metadata and transaction
+   history.
 
-It is essential to consider that once enabled, Blobless Backup Mode
-affects the entire server and no blobs get backed up regardless of the
-target volume and HSM policies.
+   It is essential to consider that once enabled, Blobless Backup Mode
+   affects the entire server and no blobs get backed up regardless of the
+   target volume and HSM policies.
 
-.. warning:: When the backup is set to Blobless Mode, BLOBs will not
-   be deleted until those are out of the retention period.
+   .. warning:: When the backup is set to Blobless Mode, BLOBs will not
+      be deleted until those are out of the retention period.
 
-Blobless Backup Mode is a CLI-only feature and can be enabled or
-disabled through the ``backupBloblessMode`` configuration attribute at
-global and server level, for example to enable it globally:
+   Blobless Backup Mode is a CLI-only feature and can be enabled or
+   disabled through the ``backupBloblessMode`` configuration attribute at
+   global and server level, for example to enable it globally:
 
-.. code:: console
+   .. code:: console
 
-   zextras$ carbonio config global set attribute backupBloblessMode value true
+      zextras$ carbonio config global set attribute backupBloblessMode value true
 
-Or to enable it only for domain mail.example.com:
+   Or to enable it only for domain mail.example.com:
 
-.. code:: console
+   .. code:: console
 
-   zextras$ carbonio config server set mail.example.com attribute backupBloblessMode value true
+      zextras$ carbonio config server set mail.example.com attribute backupBloblessMode value true
 
 .. _backup_purge_2:
 

@@ -5,7 +5,7 @@
 
       .. code:: console
 
-         # apt install postgres-client carbonio-message-broker \
+         # apt install postgresql-client carbonio-message-broker \
            carbonio-message-dispatcher carbonio-ws-collaboration-ce \
            
  
