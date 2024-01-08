@@ -11,7 +11,9 @@ nodes**, which is suitable for small infrastructure.
 More scenarios will be added in the future, to cover infrastructures
 of different size.
 
-.. toctree::
-   :hidden:
+.. include:: /_includes/_installation/multinode-suggestions.rst
 
+.. toctree::
+   :maxdepth: 1
+              
    scenarios/scenario-a
