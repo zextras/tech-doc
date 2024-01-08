@@ -11,31 +11,36 @@ following commands.
 
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap
+        carbonio_adm 127.0.0.1
 
 .. card:: |task|
 
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap
+        carbonio_adm 127.0.0.1
 
 .. card:: |wsc|
 
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap
+        carbonio_adm 127.0.0.1
 
-..  card:: |wsc| Dispatcher
+.. card:: |wsc| Dispatcher
 
-    .. code:: console
-
-       # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
-
-.. card:: |wsc| migration
-          
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration carbonio_adm 127.78.0.10
+      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap \
+        carbonio_adm 127.0.0.1
+
+.. card:: |wsc| migration
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
+        carbonio_adm 127.78.0.10 20000
 
 When you're done, restart the main mailbox process as the ``zextras``
 user.
