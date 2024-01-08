@@ -122,7 +122,9 @@ bucket simply use the appropriate command for it.
 
    .. code:: console
 
-      zextras$ carbonio core doCreateBucket S3 BucketName X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket
+      zextras$ carbonio core doCreateBucket S3 MyBucketName \
+      MyBucketUser MyBucketPassword ALabelForMyBucket url \
+      http://s3nas.example.com:9000
 
    In this example, we use the following values:
 
