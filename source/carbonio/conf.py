@@ -44,7 +44,7 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.01.0'
+release = '24.1.0'
 version = release
 prev = '23.12.0'
 
