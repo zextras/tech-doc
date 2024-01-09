@@ -33,5 +33,5 @@ Finally, enable and start the service with the commands
 
 .. code:: console
 
-   # systemctl enable videoserver.service
-   # systemctl start  videoserver.service
+   # systemctl enable carbonio-videoserver.service
+   # systemctl start  carbonio-videoserver.service

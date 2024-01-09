@@ -19,6 +19,8 @@ pipeline {
     STAGING_BRANCH = "pre_release"
     PRODUCTION_BUCKET_NAME = "docs.zextras.com"
     STAGING_BUCKET_NAME = "zextrasdoc"
+    DEVEL_BRANCH = "devel"
+    DEVEL_BUCKET_NAME = "zextrasdoc-devel"
     PRODUCTION_CREDENTIALS = "docs.zextras.com-s3-key"
     STAGING_CREDENTIALS = "doc-zextras-area51-s3-key"
     REGION = 'eu-west-1'
@@ -30,6 +32,7 @@ pipeline {
         anyOf {
           branch 'master'
           branch 'pre_release'
+          branch 'devel'
         }
       }
       steps {
@@ -42,6 +45,30 @@ pipeline {
       }
     }
 
+    
+
+    stage('Upload to DEVEL') {
+      when {
+        branch 'devel'
+      }
+      steps {
+        unstash "build_done"
+        withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
+          s3Delete(bucket: DEVEL_BUCKET_NAME,
+            path: 'carbonio/')
+          s3Delete(bucket: DEVEL_BUCKET_NAME,
+            path: 'carbonio-ce/')
+          s3Upload(bucket: DEVEL_BUCKET_NAME,
+            includePathPattern: '**',
+            workingDir: 'build'
+          )
+        }
+        script {
+          DESTINATION = "$DEVEL_BUCKET_NAME"
+        }
+      }
+    }
+    
     stage('Upload to STAGING') {
       when {
         branch 'pre_release'

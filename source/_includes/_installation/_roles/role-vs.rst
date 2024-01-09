@@ -55,8 +55,8 @@ otherwise you can install *Video Server* without *Video Recording*.
 
    .. code:: console
 
-      # systemctl enable videoserver.service
-      # systemctl start  videoserver.service
+      # systemctl enable carbonio-videoserver.service
+      # systemctl start  carbonio-videoserver.service
 
 
 .. card:: Video Recording
