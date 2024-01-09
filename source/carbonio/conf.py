@@ -134,7 +134,7 @@ html_context = {
 }
 
 # workaround for ZTD-581
-html_extra_path = ['changelog.html', 'upgrade.html']
+#html_extra_path = ['changelog.html', 'upgrade.html']
 
 # -- Options for linkcheck output --------------------------------------------
 
