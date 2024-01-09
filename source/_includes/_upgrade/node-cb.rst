@@ -38,15 +38,11 @@ installation.
 
                # dnf clean all
 
-   .. grid-item-card:: Step 3. (Automatic) update package list and
+   .. grid-item-card:: Step 3. Update package list and
       install upgrades
       :columns: 12 12 12 12
       :class-card: sd-border-2
 
-      This is the procedure that automatically fixes the conflicts and
-      dependencies. If you choose to run this procedure, skip the
-      manual procedure and go to Step 4. below.
-      
       .. tab-set::
 
          .. tab-item:: Ubuntu
@@ -54,23 +50,21 @@ installation.
 
             .. code:: console
 
-               # apt update && apt full-upgrade
+               # apt update && apt upgrade
 
          .. tab-item:: RHEL
             :sync: rhel
 
             .. code:: console
 
-               # dnf upgrade --allowerasing
+               # dnf upgrade
 
-   .. grid-item-card:: Step 3. (Manual) Update package list and
+   .. grid-item-card:: Step 3. (Pre 23.12.0 release) Update package list and
       install upgrades
       :columns: 12 12 12 12
       :class-card: sd-border-2
 
-      This procedure manually fixes the conflicts and dependencies. If
-      you have already run the *automatic procedure*, skip this manual
-      procedure and to next Step 4. below.
+      This procedure (suitable for those upgrading from versions older than 23.12.0) fixes the conflicts and dependencies.    
 
       .. tab-set::
 
@@ -101,18 +95,6 @@ installation.
         .. code:: console
 
            # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-      * |file|
-
-        .. code:: console
-
-           # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-
-      * |docs|
-
-        .. code:: console
-
-           # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
 
    .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
       :columns: 12 12 6 6

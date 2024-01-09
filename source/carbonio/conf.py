@@ -44,9 +44,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '23.12.0'
+release = '24.01.0'
 version = release
-prev = '23.11.0'
+prev = '23.12.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -134,7 +134,7 @@ html_context = {
 }
 
 # workaround for ZTD-581
-html_extra_path = ['changelog.html', 'upgrade.html']
+#html_extra_path = ['changelog.html', 'upgrade.html']
 
 # -- Options for linkcheck output --------------------------------------------
 
