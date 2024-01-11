@@ -36,10 +36,14 @@ pipeline {
         }
       }
       steps {
-        sh 'pip3 install -r requirements.txt'
-        sh 'python3 -m sphinx source/suite build/suite/html'
-        sh 'python3 -m sphinx source/carbonio build/carbonio/html'
-        sh 'python3 -m sphinx source/carbonio-ce build/carbonio-ce/html'
+        sh '''
+python3 -m venv .
+source bin/activate
+pip3 install -r requirements.txt
+python3 -m sphinx source/suite build/suite/html
+python3 -m sphinx source/carbonio build/carbonio/html
+python3 -m sphinx source/carbonio-ce build/carbonio-ce/html
+'''
 
         stash name: 'build_done', includes: 'build/**'
       }
