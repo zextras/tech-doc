@@ -13,22 +13,6 @@ Install Packages
 .. include:: /_includes/_installation/_roles/role-wsc-ce.rst
 
 
-Migrate dispatcher
--------------------
-
-Initialise the message dispatcher
-
-.. code:: console
-
-   # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
-     carbonio_adm 127.78.0.10 20000
-
-Restart the service
-
-.. code:: console
-
-   # systemctl restart carbonio-message-dispatcher
-
 Bootstrap |product|
 -------------------
 
@@ -48,6 +32,23 @@ Join |mesh|
 .. include:: /_includes/_multiserver-installation/mesh.rst
 
 
+Migrate dispatcher
+-------------------
+
+Initialise the message dispatcher
+
+.. code:: console
+
+   # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
+     carbonio_adm 127.78.0.10 20000
+
+Restart the service
+
+.. code:: console
+
+   # systemctl restart carbonio-message-dispatcher
+
+
 Enable the Workstream Collaboration UI
 --------------------------------------
 
@@ -57,7 +58,7 @@ command
 
 .. code:: console
 
-   zextras$ carbonio prov mc default mc carbonioFeatureChatsEnabled TRUE
+   zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
 
 You can also enable it at COS level, allowing only certain users to
 access it.
@@ -71,3 +72,9 @@ access it.
    .. code:: console
 
       # curl -v http://127.78.0.4:10000/health | jq
+
+Restart the service
+
+.. code:: console
+
+   # systemctl restart carbonio-ws-collaboration
