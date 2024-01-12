@@ -16,6 +16,14 @@
 # Compiled Python bytecode
 *.py[cod]
 
+# Build dir
+build
+build/*
+
+# virtual env
+env
+env/*
+
 # Log files
 *.log
 
