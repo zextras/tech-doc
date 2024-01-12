@@ -38,7 +38,7 @@ installation.
 
                # dnf clean all
 
-   .. grid-item-card:: Step 3. (Automatic) update package list and
+   .. grid-item-card:: Step 3. Update package list and
       install upgrades
       :columns: 12 12 12 12
       :class-card: sd-border-2
@@ -62,33 +62,6 @@ installation.
             .. code:: console
 
                # dnf upgrade --allowerasing
-
-   .. grid-item-card:: Step 3. (Manual) Update package list and
-      install upgrades
-      :columns: 12 12 12 12
-      :class-card: sd-border-2
-
-      This procedure manually fixes the conflicts and dependencies. If
-      you have already run the *automatic procedure*, skip this manual
-      procedure and to next Step 4. below.
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt update && apt upgrade --fix-broken
-               # apt autoremove
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # rpm -e --nodeps carbonio-common-appserver-db
-               # dnf upgrade
 
    .. grid-item-card:: Step 4. Bootstrap |file| database
       :columns: 12 12 6 6
