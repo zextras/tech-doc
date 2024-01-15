@@ -140,7 +140,23 @@ user the command
 
 .. code:: console
 
-   zextras$ carbonio prov mc default mc carbonioFeatureChatsEnabled TRUE
+   zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
 
-You can also enable it at COS level, allowing only certain users to
-access it.
+This command enables the chat for the ``default`` COS, but you can
+enable it only on selected COSes.
+
+Restart the service
+
+.. code:: console
+
+   # systemctl restart carbonio-ws-collaboration
+
+.. card:: Check status of |wsc|
+
+   After the installation, you can check the status of and all its
+   dependencies by running command
+
+   .. code:: console
+
+      # curl -v http://127.78.0.4:10000/health | jq
+
