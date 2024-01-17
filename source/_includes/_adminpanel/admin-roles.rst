@@ -167,7 +167,7 @@ the objects of the domain and has the following rights:
 .. _ap-delegated-admins:
 
 Delegated (Domain) Administrators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 Delegated (Domain) Administrators has full access to all the settings
 of a domain, except for infrastructure settings, which are reserved to
@@ -185,7 +185,7 @@ Admin
 .. _ap-user-admins:
 
 User Management (Domain) Administrators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 A User Management Admin has control on lifecycle of the users in the
 domain. These rights are reserved to a User Management Admin
@@ -214,7 +214,7 @@ domain. These rights are reserved to a User Management Admin
 .. _ap-group-admins:
 
 Group Management (Domain) Administrator
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------
 
 A Group Management Admin has control on lifecycle of the mailing list
 of the domain and possesses these rights
@@ -232,7 +232,7 @@ of the domain and possesses these rights
 .. _ap-helpdesk-admins:
 
 Help Desk (Domain) Administrators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------
 
 Help Desk (Domain) Admins can reset passwords within the domain,
 including all users but administrators, and manage some user
