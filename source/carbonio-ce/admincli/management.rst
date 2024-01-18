@@ -27,3 +27,4 @@ components are enabled for a user or a COS.
    management/sshkeys
    management/custom
    management/setting-features
+   management/letsencrypt
