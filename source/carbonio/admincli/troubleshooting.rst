@@ -25,6 +25,13 @@ PostgreSQL Database Issues
 
 Troubleshooting for |mesh| can be found in the dedicated page :ref:`ts-mesh`.
 
+.. _le-ts:
+
+Let's Encrypt useful Commands
+=============================
+
+.. include:: /_includes/_ts/le.rst
+
 .. _cli-ts:
 
 System Troubleshooting
