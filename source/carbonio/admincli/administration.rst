@@ -27,6 +27,9 @@ components are enabled for a user or a COS.
 :ref:`cli-billing-data` shows how to retrieve or delete billing data
 on the domains configured on |product|. 
 
+:ref:`le-renew` shows how to renew a Let's Encrypt-generated
+certificate, either manually or automatically.
+
 .. toctree::
    :hidden:
 
@@ -36,3 +39,4 @@ on the domains configured on |product|.
    administration/advancedadmin
    administration/setting-features
    administration/billing-data
+   administration/letsencrypt
