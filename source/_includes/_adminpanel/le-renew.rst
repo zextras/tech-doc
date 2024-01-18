@@ -7,95 +7,108 @@ using the standard ``certbot`` interface or :ref:`automatically
 
 .. _le-manual-renew:
 
-.. card:: Manual renewal
+Manual renewal
+--------------
 
-   .. hint:: Commands for the manual renew must be issued as the
-      ``zextras`` user.
+.. hint:: Commands for the manual renew must be issued as the
+   ``zextras`` user.
 
-   The manual renew amounts to launch command :command:`certbot renew`
-   on the Node installing the Proxy Role.
+The manual renew amounts to launch command :command:`certbot renew`
+on the Node installing the Proxy Role.
 
-   In case your |product| infrastructure has multiple Proxy Nodes,
-   first find the one which is responsible for the certificate
-   management, using command
+In case your |product| infrastructure has multiple Proxy Nodes,
+first find the one which is responsible for the certificate
+management, using command
 
-   .. code:: console
+.. code:: console
 
-      zextras$ certbot certificates
+   zextras$ certbot certificates
 
-   If the output contains something like the following, you are on the right
-   Node::
+If the output contains something like the following, you are on the right
+Node::
 
-     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-     Found the following certs:
-     Certificate Name: example.com
-     Serial Number: serial number
-     Key Type: ECDSA
-     Domains: demo.zextras.io
-     Expiry Date: 2024-01-31 12:50:33+00:00 (VALID: 14 days)
-     Certificate Path: certificate path /fullchain.pem
-     Private Key Path: private key path /privkey.pem
-     - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Found the following certs:
+  Certificate Name: example.com
+  Serial Number: serial number
+  Key Type: ECDSA
+  Domains: demo.zextras.io
+  Expiry Date: 2024-01-31 12:50:33+00:00 (VALID: 14 days)
+  Certificate Path: certificate path /fullchain.pem
+  Private Key Path: private key path /privkey.pem
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-   To renew the Let's Encrypt certificate, issue command
+To renew the Let's Encrypt certificate, issue command
 
-   .. code:: console
+.. code:: console
 
-      zextras$ certbot renew
+   zextras$ certbot renew
 
-   This command attempts to renew any previously-obtained certificates
-   that expire in less than 30 days.
-
+This command attempts to renew any previously-obtained certificates
+that expire in less than 30 days.
 
 .. _le-auto-renew:
 
-.. card:: Automatic renewal
+Automatic renewal
+-----------------
 
-   .. hint:: Commands for the manual renew must be issued as the
-      ``root`` user.
+.. hint:: Commands for the manual renew must be issued as the
+   ``root`` user.
 
-   In order to automatically renew the Let's Encrypt certificate,
-   |product| makes available two facilities:
-   ``carbonio-certbot.timer``, disabled by default, and
-   ``carbonio-certbot.service``.
+In order to automatically renew the Let's Encrypt certificate,
+|product| makes available two facilities:
+``carbonio-certbot.timer``, disabled by default, and
+``carbonio-certbot.service``.
 
-   .. index:: certbot; timer
-              
-   To check the status of the timer, launch command
+.. index:: certbot; timer
 
-   .. code:: console
+To check the status of the timer, launch command
 
-      # systemctl status carbonio-certbot.timer
+.. code:: console
 
-   If the output is like the following, the timer is disabled::
+   # systemctl status carbonio-certbot.timer
 
-     ● carbonio-certbot.timer - Run Carbonio Certbot twice daily
-         Loaded: loaded (/lib/systemd/system/carbonio-certbot.timer; disabled; vendor preset: enabled)
-         Active: inactive (dead)
-        Trigger: n/a
-       Triggers: ● carbonio-certbot.service
+If the output is like the following, the timer is disabled::
 
-   To enable the timer, issue command
+  ● carbonio-certbot.timer - Run Carbonio Certbot twice daily
+      Loaded: loaded (/lib/systemd/system/carbonio-certbot.timer; disabled; vendor preset: enabled)
+      Active: inactive (dead)
+     Trigger: n/a
+    Triggers: ● carbonio-certbot.service
 
-   .. code:: console
+To enable the timer, issue command
 
-      # systemctl enable --now carbonio-certbot.timer
+.. code:: console
 
-   The command :command:`systemctl status carbonio-certbot.timer`
-   should now appear as **active** in its output, for example::
+   # systemctl enable --now carbonio-certbot.timer
 
-     Active: active (waiting) since Wed 2024-01-17 10:28:34 UTC; 3min 30s ago
+The command :command:`systemctl status carbonio-certbot.timer`
+should now appear as **active** in its output, for example::
 
-   If you now list all the timers, you will see when the certbot last
-   run and when it will run next
+  Active: active (waiting) since Wed 2024-01-17 10:28:34 UTC; 3min 30s ago
 
-   .. code:: console
+If you now list all the timers, you will see when the certbot last
+run and when it will run next
 
-      # systemctl list-timers --all 
+.. code:: console
 
-   You will see in the output::
+   # systemctl list-timers --all 
 
-     NEXT                        LEFT          LAST                        PASSED       UNIT                         ACTIVATES                     
-     Wed 2024-01-17 20:37:58 UTC 3h 34min left Wed 2024-01-17 06:21:59 UTC 10h ago      carbonio-certbot.timer       carbonio-certbot.service  
+You will see in the output::
 
-   
+  NEXT                        LEFT          LAST                        PASSED       UNIT                         ACTIVATES                     
+  Wed 2024-01-17 20:37:58 UTC 3h 34min left Wed 2024-01-17 06:21:59 UTC 10h ago      carbonio-certbot.timer       carbonio-certbot.service  
+
+Finalise Renewal
+----------------
+
+Once the certificate has been renewed, run the two deployment commands
+
+.. code:: console
+
+   zextras$ /opt/zextras/libexec/zmproxyconfgen
+   zextras$ /opt/zextras/bin/zmproxyctl reload
+
+
+In case you have multiple Proxy Nodes, run the two commands on all
+Proxy Nodes.
