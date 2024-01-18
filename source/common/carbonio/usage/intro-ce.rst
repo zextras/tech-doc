@@ -36,8 +36,6 @@ credentials:
 
 * Username: your e-mail address
 * Password: the same password associated with your **username**
-* Version: The choice is either **Iris**, |product|'s native GUI or
-  **Classic**
 
 .. note:: We use the URL https://mail.example.com/ to denote our
    fictitious domain and mailbox. Whenever you find it, remember to
