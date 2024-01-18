@@ -995,7 +995,7 @@ In this section we present a few examples
       see a user’s password
 
 #. Create a password for jane\@example.com, that can be used only for Web
-   Access (both ClassicUI and Zextras Login Page)
+   Access (Zextras Login Page)
 
    .. code:: console
 
