@@ -6,7 +6,7 @@
 
       .. code:: console
 
-         # apt install carbonio-videoserver-ce
+         # apt install carbonio-videoserver-ce service-discover-agent
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -21,7 +21,7 @@
 
       .. code:: console
 
-         # dnf install carbonio-videoserver-ce
+         # dnf install carbonio-videoserver-ce service-discover-agent
 
 After the installation, make sure that the |vs| `public` IP address
 (i.e., the one that will accept incoming connections to the |vs|) is
