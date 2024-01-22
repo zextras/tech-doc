@@ -7,14 +7,14 @@
 
       .. code:: console
 
-         # apt install carbonio-mta
+         # apt install carbonio-mta service-discover-agent
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-mta
+         # dnf install carbonio-mta service-discover-agent
 
 
 

@@ -6,7 +6,9 @@
       .. code:: console
 
          # apt install carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db carbonio-tasks-db
+           carbonio-docs-connector-db carbonio-tasks-db \
+           service-discover-agent
+
 
  
    .. tab-item:: RHEL
@@ -15,5 +17,5 @@
       .. code:: console
 
          # dnf install carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db carbonio-tasks-db
-
+           carbonio-docs-connector-db carbonio-tasks-db \
+           service-discover-agent

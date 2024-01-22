@@ -6,7 +6,8 @@
 
       .. code:: console
 
-         # apt install carbonio-docs-editor carbonio-docs-connector-ce
+         # apt install carbonio-docs-editor carbonio-docs-connector-ce \
+           service-discover-agent
 
  
    .. tab-item:: RHEL
@@ -14,4 +15,5 @@
 
       .. code:: console
 
-         # dnf install carbonio-docs-editor carbonio-docs-connector-ce
+         # dnf install carbonio-docs-editor carbonio-docs-connector-ce \
+           service-discover-agent
