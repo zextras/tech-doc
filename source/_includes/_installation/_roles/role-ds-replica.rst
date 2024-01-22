@@ -1,4 +1,3 @@
-
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -6,11 +5,11 @@
 
       .. code:: console
 
-         # apt install carbonio-tasks-ce service-discover-agent
- 
+         # apt install carbonio-directory-server
+
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-tasks-ce service-discover-agent
+         # dnf install carbonio-directory-server

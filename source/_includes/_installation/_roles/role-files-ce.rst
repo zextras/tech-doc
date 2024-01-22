@@ -6,11 +6,11 @@
 
       .. code:: console
 
-         # apt install carbonio-files-ce
+         # apt install carbonio-files-ce service-discover-agent
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-files-ce
+         # dnf install carbonio-files-ce service-discover-agent

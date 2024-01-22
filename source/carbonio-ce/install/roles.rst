@@ -91,6 +91,7 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-tasks-db
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db
+      * service-discover-agent
 
    .. grid-item-card:: Proxy
       :columns: 6
@@ -107,6 +108,7 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
       * carbonio-files-public-folder-ui
+      * service-discover-agent
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -117,6 +119,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-mta
+      * service-discover-agent
 
    .. grid-item-card:: Mailstore & Provisioning
       :columns: 6
@@ -128,6 +131,7 @@ This is the list of roles that make up a Carbonio installation.
 
       * carbonio-appserver
       * carbonio-storages-ce
+      * service-discover-agent
 
    .. grid-item-card:: Files
       :columns: 6
@@ -138,6 +142,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-files-ce
+      * service-discover-agent
 
    .. grid-item-card:: Docs & Editor
       :columns: 6
@@ -149,7 +154,7 @@ This is the list of roles that make up a Carbonio installation.
 
       * carbonio-docs-connector-ce
       * carbonio-docs-editor
-
+      * service-discover-agent
 
    .. grid-item-card:: Preview
       :columns: 6
@@ -160,6 +165,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-preview-ce
+      * service-discover-agent
 
    .. grid-item-card:: Tasks
       :columns: 6
@@ -170,6 +176,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-tasks-ce
+      * service-discover-agent
 
    .. grid-item-card:: Workstream Collaboration :bdg-danger:`BETA`
       :columns: 6
@@ -182,6 +189,7 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-message-broker
       * carbonio-message-dispatcher
       * carbonio-ws-collaboration-ce
+      * service-discover-agent
 
    .. grid-item-card:: Video Server
       :columns: 6
@@ -192,6 +200,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-videoserver-ce
+      * service-discover-agent
 
    .. grid-item-card:: Monitoring
       :columns: 6
@@ -203,6 +212,7 @@ This is the list of roles that make up a Carbonio installation.
 
       * carbonio-prometheus
       * grafana
+      * service-discover-agent
 
 .. _multiserver-installation:
 

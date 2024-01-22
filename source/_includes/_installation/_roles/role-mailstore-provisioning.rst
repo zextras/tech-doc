@@ -6,12 +6,11 @@
 
       .. code:: console
 
-         # apt install carbonio-advanced
+         # apt install carbonio-advanced service-discover-agent
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-advanced
-
+         # dnf install carbonio-advanced service-discover-agent

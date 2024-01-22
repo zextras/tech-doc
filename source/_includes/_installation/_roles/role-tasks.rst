@@ -6,11 +6,11 @@
 
       .. code:: console
 
-         # apt install carbonio-tasks
- 
+         # apt install carbonio-tasks service-discover-agent
+
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-tasks
+         # dnf install carbonio-tasks service-discover-agent
