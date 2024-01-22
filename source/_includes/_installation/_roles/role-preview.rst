@@ -6,13 +6,11 @@
 
       .. code:: console
 
-         # apt install carbonio-preview
+         # apt install carbonio-preview service-discover-agent
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-preview
-
-
+         # dnf install carbonio-preview service-discover-agent

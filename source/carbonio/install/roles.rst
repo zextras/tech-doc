@@ -82,6 +82,7 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-tasks-db
+      * service-discover-agent
 
    .. grid-item-card:: Proxy
       :columns: 6
@@ -98,6 +99,7 @@ This is the list of roles that make up a Carbonio installation.
       * carbonio-user-management
       * carbonio-tasks-ui
       * carbonio-avdb-updater
+      * service-discover-agent
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -108,6 +110,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-mta
+      * service-discover-agent
 
    .. grid-item-card:: Mailstore & Provisioning
       :columns: 6
@@ -118,6 +121,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-advanced
+      * service-discover-agent
 
    .. grid-item-card:: Files
       :columns: 6
@@ -128,6 +132,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-files
+      * service-discover-agent
 
    .. grid-item-card:: Docs & Editor
       :columns: 6
@@ -139,7 +144,7 @@ This is the list of roles that make up a Carbonio installation.
 
       * carbonio-docs-connector
       * carbonio-docs-editor
-
+      * service-discover-agent
 
    .. grid-item-card:: Preview
       :columns: 6
@@ -150,6 +155,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-preview
+      * service-discover-agent
 
    .. grid-item-card:: Tasks
       :columns: 6
@@ -160,6 +166,7 @@ This is the list of roles that make up a Carbonio installation.
       Packages:
 
       * carbonio-tasks
+      * service-discover-agent
 
    .. grid-item-card:: Video Server
       :columns: 6
@@ -171,6 +178,7 @@ This is the list of roles that make up a Carbonio installation.
 
       * carbonio-videoserver
       * carbonio-videoserver-recorder
+      * service-discover-agent
 
    .. grid-item-card:: Monitoring
       :columns: 6
@@ -182,6 +190,7 @@ This is the list of roles that make up a Carbonio installation.
 
       * carbonio-prometheus
       * grafana
+      * service-discover-agent
 
    .. grid-item-card:: Event Streaming
       :columns: 6
