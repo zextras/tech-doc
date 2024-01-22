@@ -6,11 +6,13 @@
 
       .. code:: console
 
-         # apt install carbonio-prometheus grafana
+         # apt install carbonio-prometheus grafana \
+         service-discover-agent 
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-prometheus grafana
+         # dnf install carbonio-prometheus grafana \
+         service-discover-agent 

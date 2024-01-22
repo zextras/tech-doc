@@ -6,7 +6,7 @@
 
       .. code:: console
 
-         # apt install postgresql-12
+         # apt install postgresql-12 service-discover-agent
 
    .. tab-item:: RHEL
       :sync: rhel
