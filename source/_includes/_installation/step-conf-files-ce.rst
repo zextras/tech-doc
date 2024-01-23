@@ -40,7 +40,7 @@ following commands.
    .. code:: console
 
       # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
-        carbonio_adm 127.78.0.10 20000Initialise the message dispatcher
+        carbonio_adm 127.78.0.10 20000
 
    In this case you need to restart the service:
 
