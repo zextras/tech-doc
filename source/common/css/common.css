@@ -148,3 +148,11 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
 .rounded-pill {
 	border-radius: 0px !important;
 }
+
+.survey {
+    text-align: center;
+}
+
+.survey a {
+    margin-top: 5pt;
+}
