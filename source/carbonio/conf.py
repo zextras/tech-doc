@@ -129,8 +129,9 @@ html_sidebars = { "**": [ 'navbar-logo.html', 'survey', 'search-button-field.htm
 html_context = {
     'hubhome' : '%s' %hubhome,
     #change label and links - example values
-    'surveylink': 'https://app.useberry.com/t/jvNFeRHKKOxYSU/' ,
-    'surveylabel': 'Participate to our Documentation survey!',
+    'surveytext': 'What do you think about our new Documentation Layout?',
+    'surveylink': 'https://app.useberry.com/t/yXJRVr37I7Hmdu/?ver=24.1',
+    'surveylabel': 'Take the survey',
 }
 
 # workaround for ZTD-581
