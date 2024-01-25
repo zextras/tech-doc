@@ -145,12 +145,33 @@ user the command
 This command enables the chat for the ``default`` COS, but you can
 enable it only on selected COSes.
 
-Restart the service
+Restart the following services in the given order
 
-.. code:: console
+#. Message broker
 
-   # systemctl restart carbonio-ws-collaboration
+   .. code:: console
+   
+      # systemctl restart carbonio-message-broker
 
+#. Message dispatcher
+   
+   .. code:: console
+
+      # systemctl restart carbonio-message-dispatcher
+
+#. |wsc| 
+
+   .. code:: console
+
+      # systemctl restart carbonio-ws-collaboration
+
+#. In case you also installed |vs|
+
+   .. code:: console
+
+      # systemctl restart carbonio-videoserver
+
+   
 .. card:: Check status of |wsc|
 
    After the installation, you can check the status of and all its
