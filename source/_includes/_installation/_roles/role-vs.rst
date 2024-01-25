@@ -12,7 +12,7 @@ otherwise you can install *Video Server* without *Video Recording*.
 
          .. code:: console
 
-            # apt install carbonio-videoserver
+            # apt install carbonio-videoserver service-discover-agent
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -27,7 +27,7 @@ otherwise you can install *Video Server* without *Video Recording*.
 
          .. code:: console
 
-            # dnf install carbonio-videoserver
+            # dnf install carbonio-videoserver service-discover-agent
 
    After the installation, make sure that the |vs| `public` IP address
    (i.e., the one that will accept incoming connections to the |vs|) is
