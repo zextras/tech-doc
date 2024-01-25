@@ -55,7 +55,7 @@ the users; also links to technical resources are also provided.
 How to Activate |backup|
 ------------------------
 
-Once you have finished your server setup, you need a few more steps to
+Once you have finished your |carbonio| setup, you need a few more steps to
 configure the Backup component and have all your data automatically backed
 up.
 
@@ -184,7 +184,7 @@ There are also objects that are **not** items, and as such will never be
 scanned for changes by the Realtime Scanner and will never be part of a
 restore:
 
--  Server settings, i.e., the configuration of each server
+-  Node settings, i.e., the configuration of each Node
 
 -  Global settings of |product| product
 
@@ -278,7 +278,7 @@ of the SmartScan or Realtime Scanner might (or should) be disabled, even
 temporarily. For example:
 
 -  You have a high number of trasactions every day (or you often work
-   with |file| documents) and notice a high load in the server’s resource
+   with |file| documents) and notice a high load in the Node’s resource
    consumption. In this case you can temporarily disable the Real Time
    Scan.
 
@@ -299,15 +299,15 @@ Backup Path
 -----------
 
 The backup path is the place on a filesystem where all the information
-about the backup and archives is stored. Each server has exactly one
-backup path; different servers can not share the same backup path. It is
+about the backup and archives is stored. Each Node has exactly one
+backup path; different Nodes can not share the same backup path. It is
 structured as a hierarchy of folders, the topmost of which is by default
-``/opt/zextras/backup/zextras/``. Under this directory, the following
+:file:`/opt/zextras/backup/zextras/`. Under this directory, the following
 important files and directories are present:
 
 -  ``map_[server_ID]`` are so-called **map files**, that show if the
    Backup has been imported from an external backup and contain in the
-   filename the unique ID of the server.
+   filename the unique ID of the Node.
 
 -  ``accounts`` is a directory under which information of all accounts
    defined in the Mailstore & Provisioning Role are present. In
@@ -333,9 +333,9 @@ important files and directories are present:
       name is composed of two digits, in which items are stored
       according to their ID’s last two digits
 
--  ``servers`` is a directory that contains archives of the server
+-  ``servers`` is a directory that contains archives of the Node
    configuration and customisations, |product| configuration and of the
-   chat, one per day up to the configured server retention time.
+   chat, one per day up to the configured Node retention time.
 
 -  ``items`` is a directory containing up to 4096 additional folders,
    whose name consists of two hexadecimal (uppercae and lowercase)
@@ -345,7 +345,7 @@ important files and directories are present:
 
 -  ``id_mapper.log`` is a user object ID mapping and contains a map
    between the original object and the restored object. It is located at
-   ``/backup/zextras/accounts/xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/id_mapper.log``.
+   :file:`/backup/zextras/accounts/xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/id_mapper.log`.
    This file is present only in case of an external restore.
 
 .. seealso:: Community Article
@@ -360,9 +360,9 @@ Setting the Backup Path
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 A **Backup Path** is a location in which all items and metadata are
-saved. Each server must define one Backup path, which is unique to
+saved. Each Node must define one Backup path, which is unique to
 that server and not reusable. In other words, trying to use a Backup
-Path on a different server and setting it there as the current Backup
+Path on a different Node and setting it there as the current Backup
 Path will return an error. Trying to force this situation in any way
 by tampering with the backup file will cause corruption of both old
 and new backup data.
@@ -383,8 +383,8 @@ command
                 modules
                         ZxBackup
 
-To change the Backup Path, use the ``set`` sub-command instead of
-``get`` and append the new path,
+To change the Backup Path, use the :command:`set` sub-command instead of
+:command:`get` and append the new path,
 
 .. code:: console
 
@@ -1109,61 +1109,32 @@ this section.
 NFS/Fuse External Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before using the NFS/Fuse share, it is necessary to configure the **new
-volume(s)** that will store the backup, because *no existent volume can
-be reused*. Depending on what approach you choose, the steps to carry
-out are different. We describe here only the easier and most reliable
-one.
+Before using the NFS/Fuse share, it is necessary to configure the
+**new volume(s)** that will store the backup, because *no existent
+volume can be reused*. Depending on what approach you choose, the
+steps to carry out are different. We describe here only the easier and
+most reliable one.
 
-.. grid:: 1 1 1 2
-   :gutter: 3
+The Administrator must ensure that each Node writes **on its own
+directory**, and the destination volume **must** be readable and
+writable by the ``zextras`` user.
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
+Consider a scenario in which the same NAS located on 192.168.72.16 is
+involved, which exposes the NFS share as
+:file:`/media/externalStorage`. We want to store our multi-servers
+backups on this NAS with the backup of each Node on a separate
+directory.
 
-      Single-Server installation
-      ^^^^^
+To do so, on **each Node** you need to add one entry similar to the
+following to the :file:`/etc/fstab` file:
 
-      When NFS shares are used, you need to make them visible and
-      accessible to both the Operating System and |carbonio|, a task
-      that only requires to add a row in file :file:`/etc/fstab` with the
-      necessary information to mount the volume, for example, to mount
-      volume :file:`/media/mailserver/backup/` from a NAS located at
-      192.168.72.16 you can add to the bottom of ``/etc/fstab`` a line
-      similar to:
+.. code::
 
-      .. code::
+   192.168.72.16:/externalStorage/SRV1 /mnt/backup nfs rw,hard,intr 0 0
 
-         192.168.72.16:/media/mailserver/backup/  /media/external/ nfs rw,hard,intr, 0,0
-
-      You will now be able to mount the external storage by simply using
-      :command:`mount /media/external/` on the server.
-
-   .. grid-item-card::
-      :columns: 12 12 12 6
-
-      Multi-Server installation
-      ^^^^^
-
-      In the case of a Multi-Server installation, the admin must ensure that
-      each server writes **on its own directory**, and the destination volume
-      **must** be readable and writable by the ``zextras`` user.
-
-      In a Multi-Server installation, consider a scenario in which the same NAS
-      located on 192.168.72.16 is involved, which exposes via NFS the share as
-      :file:`/media/externalStorage`. We want to store our multiservers backups on
-      this NAS: the backup of each Node on a separate directory. backup in 
-
-      To do so, on **each server** you need to add one entry similar to the
-      following to the :file:`/etc/fstab` file:
-
-      .. code::
-
-         192.168.72.16:/externalStorage/SRV1 /mnt/backup nfs rw,hard,intr 0 0
-
-      .. note:: You need to add an entry like the one above on each
-         node replacing **SRV1** with the corresponding directory on
-         the NAS on which the backup will be store.
+.. note:: You need to add an entry like the one above on each
+   node replacing **SRV1** with the corresponding directory on
+   the NAS on which the backup will be stores.
 
 .. _external_objectstorage:
 
@@ -1218,17 +1189,12 @@ single ObjectStorage bucket.
 In other words, on the same *S3 Bucket*, you could define
 several |carbonio| Buckets, to be used both for HSM and Backup.
 
-.. _objectstorage_backup_in_a_multi_Server_environment:
-
-ObjectStorage Backup in a Multi-Server environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In Multi-Server environments, it is not necessary to create multiple
-buckets: You only enter the bucket configuration information when
-enabling the remote backup on the first server. The
-``bucket_configuration_id`` and ``prefix`` parameters can then be used
-to store other server’s data on a separate directory on the same
-storage.
+.. note:: Even if |carbonio| can be only as a Multi-Server, it is not
+   necessary to create multiple buckets: You only enter the bucket
+   configuration information when enabling the remote backup on the
+   first Node. The ``bucket_configuration_id`` and ``prefix``
+   parameters can then be used to store other Node’s data on a
+   separate directory on the same storage.
 
 .. _activate_backup_on_external_storage:
 
