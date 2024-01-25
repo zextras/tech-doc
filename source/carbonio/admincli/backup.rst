@@ -1030,6 +1030,90 @@ is also ensured that the backup works, even in case the remote storage
 ongoing maintenance tasks), granting a better reliability and backup
 resilience.
 
+.. _activate_backup_on_external_storage:
+
+Activate Backup on External Storage
+-----------------------------------
+
+Once that external storage has been set up, it is necessary to let
+|carbonio| use the external storage. The procedure is slight
+different, depending if the new storage needs to be accessed from a
+newly installed server or if existing local backups must be migrated
+to the external storage.
+
+.. note:: External Storage is a CLI-only feature.
+
+.. grid:: 1 1 1 2
+   :gutter: 3
+
+   .. grid-item-card:: Configure on newly installed or uninitialized server
+      :columns: 12 12 12 6
+
+      If there the backup has not been initialized on the server, an
+      Administrator can configure the external storage by running
+
+      .. code:: console
+
+         zextras$ carbonio backup setBackupVolume type bucket_configuration_id VALUE [param VALUE[,VALUE]].
+
+      For example
+
+      .. code:: console
+
+         zextras$ carbonio backup setBackupVolume S3 123e4567-e89b-12d3-a456-556642440000
+
+      Once the backup will be initialized, it will use the external storage.
+
+      Therefore, check for any missing blobs with doCheckBlobs in the mounted
+      volumes to avoid integrity errors.
+
+   .. grid-item-card:: Migrate existing backups
+      :columns: 12 12 12 6
+
+      Before actually carrying out the migration, please perform the following
+      important maintenance task. This procedure will minimise the risk of
+      errors:
+
+      1. Double-check the permissions on the active backup path
+
+      2. Make sure that the |carbonio| cache folder is accessible by the
+         ``zextras`` user (typically under :file:`/opt/zextras/cache`)
+
+      3. Check for table errors in the myslow.log and in the MariaDb integrity
+         check report. If any error is found, consider running the
+         ``mysqlcheck`` command to verify the database integrity.
+
+      4. Check for any missing blobs in the mounted |carbonio| volumes
+         with `carbonio powerstore doCheckBlobs`
+
+      5. Check for any missing digest in the backup with
+         `doSmartScan deep=true`
+
+      6. Check for any orphaned digest or metadata in the Backup with
+         `carbonio backup doCoherencyCheck`
+
+      7. Optionally run a `carbonio backup doPurge` to remove
+         expired data from the Backup
+
+      You can now proceed to migrate the existing backup using the
+      appropriate ``carbonio backup migrateBackupVolume`` [[ ``Default`` \|
+      ``Local`` \| ``S3`` ]] command.
+
+      .. restore after CLI has been reintroduced
+
+         You can now proceed to migrate the existing backup using the appropriate
+         ``carbonio backup migrateBackupVolume`` [[
+         `Default <carbonio_backup_migrateBackupVolume_Default>` \|
+         `Local <carbonio_backup_migrateBackupVolume_Local>` \|
+         `S3 <carbonio_backup_migrateBackupVolume_S3>` ]] command.
+
+      Finally, once the migration has been completed you can run this final
+      task:
+
+      -  Manually remove the old backup data. Indeed, the migration only
+         **copies** the files of the backup to the new external storage and
+         leaves them in the place.
+
 .. _goals_and_benefits:
 
 Goals and Benefits
@@ -1196,89 +1280,6 @@ several |carbonio| Buckets, to be used both for HSM and Backup.
    parameters can then be used to store other Node’s data on a
    separate directory on the same storage.
 
-.. _activate_backup_on_external_storage:
-
-Activate Backup on External Storage
------------------------------------
-
-Once that external storage has been set up, it is necessary to let
-|carbonio| use the external storage. The procedure is slight
-different, depending if the new storage needs to be accessed from a
-newly installed server or if existing local backups must be migrated
-to the external storage.
-
-.. note:: External Storage is a CLI-only feature.
-
-.. grid:: 1 1 1 2
-   :gutter: 3
-
-   .. grid-item-card:: Configure on newly installed or uninitialized server
-      :columns: 12 12 12 6
-
-      If there the backup has not been initialized on the server, an
-      Administrator can configure the external storage by running
-
-      .. code:: console
-
-         zextras$ carbonio backup setBackupVolume type bucket_configuration_id VALUE [param VALUE[,VALUE]].
-
-      For example
-
-      .. code:: console
-
-         zextras$ carbonio backup setBackupVolume S3 123e4567-e89b-12d3-a456-556642440000
-
-      Once the backup will be initialized, it will use the external storage.
-
-      Therefore, check for any missing blobs with doCheckBlobs in the mounted
-      volumes to avoid integrity errors.
-
-   .. grid-item-card:: Migrate existing backups
-      :columns: 12 12 12 6
-
-      Before actually carrying out the migration, please perform the following
-      important maintenance task. This procedure will minimise the risk of
-      errors:
-
-      1. Double-check the permissions on the active backup path
-
-      2. Make sure that the |carbonio| cache folder is accessible by the
-         ``zextras`` user (typically under :file:`/opt/zextras/cache`)
-
-      3. Check for table errors in the myslow.log and in the MariaDb integrity
-         check report. If any error is found, consider running the
-         ``mysqlcheck`` command to verify the database integrity.
-
-      4. Check for any missing blobs in the mounted |carbonio| volumes
-         with `carbonio powerstore doCheckBlobs`
-
-      5. Check for any missing digest in the backup with
-         `doSmartScan deep=true`
-
-      6. Check for any orphaned digest or metadata in the Backup with
-         `carbonio backup doCoherencyCheck`
-
-      7. Optionally run a `carbonio backup doPurge` to remove
-         expired data from the Backup
-
-      You can now proceed to migrate the existing backup using the
-      appropriate ``carbonio backup migrateBackupVolume`` [[ ``Default`` \|
-      ``Local`` \| ``S3`` ]] command.
-
-      .. restore after CLI has been reintroduced
-
-         You can now proceed to migrate the existing backup using the appropriate
-         ``carbonio backup migrateBackupVolume`` [[
-         `Default <carbonio_backup_migrateBackupVolume_Default>` \|
-         `Local <carbonio_backup_migrateBackupVolume_Local>` \|
-         `S3 <carbonio_backup_migrateBackupVolume_S3>` ]] command.
-
-      Finally, once the migration has been completed you can run this final
-      task:
-
-      -  Manually remove the old backup data. Indeed, the migration only
-         **copies** the files of the backup to the new external storage and
-         leaves them in the place.
 
 .. _backup-troubleshoot-object-storage:
 
