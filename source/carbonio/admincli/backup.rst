@@ -63,8 +63,8 @@ up.
    :file:`/opt/zextras/backup/zextras` throughout this section; remember to
    replace it with the path you chose.
 
-.. warning:: The size of the device should be at least 80% of
-   primary + secondary volume size.
+   .. warning:: The size of the device should be at least 80% of
+      primary + secondary volume size.
 
 -  Set the correct permission on the backup path: :command:`chown zextras:zextras
    /opt/zextras/backup/zextras`
@@ -1275,7 +1275,13 @@ to the external storage.
 
       .. code:: console
 
-         zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id VALUE [param VALUE[,VALUE]].
+         zextras$ carbonio backup setBackupVolume type bucket_configuration_id VALUE [param VALUE[,VALUE]].
+
+      For example
+
+      .. code:: console
+
+         zextras$ carbonio backup setBackupVolume S3 123e4567-e89b-12d3-a456-556642440000
 
       Once the backup will be initialized, it will use the external storage.
 
@@ -1369,7 +1375,7 @@ are two alternatives:
 
    .. code:: console
 
-      zextras$ carbonio backup setBackupVolume S3 bucket_configuration_id 58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup
+      zextras$ carbonio backup setBackupVolume S3  58fa4ca2-31dd-4209-aa23-48b33b116090 volume_prefix new_backup
 
 In both cases, at this point you can proceed to remove the volume that
 is no longer functional.
