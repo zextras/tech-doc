@@ -118,6 +118,24 @@ are straightforward:
    - ``local_meetings_hosted`` reports the number of meetings hosted
      on the *current mailbox*.
 
+.. _vs-background:
+
+|vs| Backgrounds
+----------------
+
+It is possible to allow users to add a custom background to prevent
+showing the real background behind them, to protect their
+privacy. This features currently works only with the Chrome
+browser. To enable the feature, execute the following command
+
+.. code:: console
+          
+   zextras$ carbonio config set global teamVirtualBackgroundEnabled true
+
+
+Users will see a new button at the bottom of the call that allows them
+to modify the current background.
+   
 .. _vs-scaling:
 
 |vs| Scaling
