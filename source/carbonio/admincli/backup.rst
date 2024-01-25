@@ -595,11 +595,8 @@ Smartscan can be run manually from the CLI or configured from the
 .. grid:: 1 1 1 2
    :gutter: 1
 
-   .. grid-item-card::
+   .. grid-item-card:: Running a SmartScan
       :columns: 12 12 12 6
-
-      Running a SmartScan
-      ^^^^^
 
       To start a SmartScan via the CLI, use the command:
 
@@ -607,11 +604,8 @@ Smartscan can be run manually from the CLI or configured from the
 
          zextras$ carbonio backup doSmartScan *start* [param VALUE[,VALUE]]
 
-   .. grid-item-card::
+   .. grid-item-card:: Checking the Status of a Running Scan
       :columns: 12 12 12 6
-
-      Checking the Status of a Running Scan
-      ^^^^^
 
       Before actually carrying out this check, it is suggested to verify how
       many operations are running, to find the correct UUID. you can do this
@@ -649,11 +643,8 @@ item has its own complete history.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Enable the Realtime Scanner
       :columns: 12 12 12 6
-
-      Enable the Realtime Scanner
-      ^^^^^
 
       Set the ``ZxBackup_RealTimeScanner`` property to ``TRUE``.
 
@@ -661,11 +652,8 @@ item has its own complete history.
 
          zextras$ carbonio config set server $(zmhostname) ZxBackup_RealTimeScanner TRUE
 
-   .. grid-item-card::
+   .. grid-item-card:: Disable the Realtime Scanner
       :columns: 12 12 12 6
-
-      Disable the Realtime Scanner
-      ^^^^^
 
       Set the ``ZxBackup_RealTimeScanner`` property to ``FALSE``.
 
@@ -785,11 +773,8 @@ time.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Run a Backup Purge
       :columns: 12 12 12 6
-
-      Run a Backup Purge
-      ^^^^^
 
       To start a Backup Purge run the command
 
@@ -797,11 +782,8 @@ time.
 
          zextras$ carbonio backup doPurge [param VALUE[,VALUE]]
 
-   .. grid-item-card::
+   .. grid-item-card:: Check the Status of a Running Backup Purge
       :columns: 12 12 12 6
-
-      Check the Status of a Running Backup Purge
-      ^^^^^
 
       To check the status of a running Purge run the
       command
@@ -1202,7 +1184,7 @@ vice-versa.
 
    .. code:: console
 
-      zextras$  `carbonio core listBuckets`
+      zextras$  carbonio core listBuckets
 
    The output will look similar to::
      
@@ -1264,11 +1246,8 @@ to the external storage.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Configure on newly installed or uninitialized server
       :columns: 12 12 12 6
-                
-      Configure on newly installed / uninitialized server
-      ^^^^^
 
       If there the backup has not been initialized on the server, an
       Administrator can configure the external storage by running
@@ -1288,11 +1267,8 @@ to the external storage.
       Therefore, check for any missing blobs with doCheckBlobs in the mounted
       volumes to avoid integrity errors.
 
-   .. grid-item-card::
+   .. grid-item-card:: Migrate existing backups
       :columns: 12 12 12 6
-
-      Migrate existing backups
-      ^^^^^
 
       Before actually carrying out the migration, please perform the following
       important maintenance task. This procedure will minimise the risk of
