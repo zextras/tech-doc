@@ -388,6 +388,8 @@ and be able to access |product|'s internal services.
       agents"
       "8302", "TCP and UDP", "management of Gossip protocol [4]_ in the WAN"
       "9107", "TCP", "|mesh| data export to |monit|"
+      "21000-21255", "TCP", "range for registrations ports for sidecar
+      services (automatically assigned)"
 
    .. [4] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
