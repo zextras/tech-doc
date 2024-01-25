@@ -106,7 +106,7 @@ contains, can be deleted and recreated by clicking the
 page the list of quarantined messages is shown. Being a system
 account, to view the messages you can go to :menuselection:`Admin
 Panel --> Domains --> Manage --> Accounts`, click the quarantine
-account, then the :bdg-primary-line:`VIEW MAI` button to see the
+account, then the :bdg-primary-line:`VIEW MAIL` button to see the
 quarantined e-mails.
 
 .. _ap-domain-details:
