@@ -469,6 +469,14 @@ of the new account.
       * **Name**, **Middle Name Initials**, and **Surname** will be used
         to define the user name. We use only Name (John) and Surname
         (Smith), which result in the JohnSmith **username**.
+        
+        If the name or surname contain non-ASCII characters, an
+        automatic mapping will be enforced: for example, ``ä``, ``à``
+        will become ``a``. When there is no mapping available, message
+        :red:`Auto fill user is disabled` will be displayed: in this
+        case, the username must be filled manually. This is the case
+        for example, for letters using diacritics, cedillas or
+        German's ``ß``.
 
         .. hint:: You can change the automatically generated username at
            will, for example to match company policies.
