@@ -51,7 +51,8 @@ The landing page is shown in :numref:`fig_ap-top` and
       :columns: 6
 
       In the upper part, clicking on either of the boxes will open the
-      |adminui| page for the Accounts and mailing list, respectively.
+      |adminui| page for the Accounts and Distribution lists,
+      respectively.
 
 
 .. grid:: 1 1 2 2

@@ -128,7 +128,7 @@ quantified in advance.
      zextras$ carbonio backup doExternalRestore /path/to/the/old/store
 
 The External Restore operation will immediately create the domains,
-accounts and mailing lists, so as soon as the first part of the
+accounts and distribution lists, so as soon as the first part of the
 Restore is completed (check your |product| Notifications), the system
 will be ready for your users. E-mails and other mailbox items will be
 restored right after.

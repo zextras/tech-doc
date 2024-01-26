@@ -5,7 +5,7 @@
 
 The Domain page allows the management of domains and of related
 settings, including individual accounts, user quota and
-authentication, mailing lists, and more.
+authentication, distribution lists, and more.
 
 When opening this page, the list of all configured domain
 presented. To choose a domain an show its configuration, click it on
@@ -208,8 +208,8 @@ We build on the domain created in :ref:`previous section
 
 At the bottom of the page, button :red:`DELETE DOMAIN` allows to
 delete the domain. When clicked, a dialog will open, listing all items
-defined on the domain (Accounts, mailing lists, resources, and so on)
-and that will be deleted together with the domain. Two choices are
+defined on the domain (Accounts, Distribution Lists, Resources, and so
+on) and that will be deleted together with the domain. Two choices are
 available: to **Close** the domain, keeping all items but preventing
 access, or **Remove** the domain and all its items.
 
@@ -393,7 +393,7 @@ modified for any individual user.
 
       * To remove the user's password from LDAP
 
-      * The Mailing list memberships
+      * The Distribution List memberships
 
       * To move a user to another domain, which must be defined on the
         same server, by writing the new one in the **Domain Name**
@@ -592,51 +592,51 @@ To make *acme_admin* a Global Admin, in the :blue:`General` tab go to
 Administrator**, then save. The *acme_admin* user is now able to
 access the |adminui|. 
 
-Mailing List
-~~~~~~~~~~~~
+Distribution List
+~~~~~~~~~~~~~~~~~
 
-Mailing list can be simply created by clicking the :bdg-primary:`+`
-button to open a tabbed modal dialog in which to configure the
-mailing list.
+Distribution lists can be simply created by clicking the
+:bdg-primary:`+` button to open a tabbed modal dialog in which to
+configure it.
 
-In the first tab you can give a name, an address, and
-a description to the mailing list; in the second add *Members* by
-simply writing the e-mail addresses in the test field.
+In the first tab you can give a name, an address, and a description to
+the distribution list; in the second add *Members* by simply writing
+the e-mail addresses in the test field.
 
 .. hint:: E-mail addresses are auto-completed while typing.
 
 In the third tab, advanced settings can be configured, including the
 option to send notification to new members and the presence of the
-mailing list in the GAL.
+distribution list in the GAL.
 
 The last tab recaps the settings: now you can either go back to any of
 the previous tabs and change some of the settings, or proceed to
-create the mailing list.
+create the distribution list.
 
-Once a mailing list has been created, it can be further configured by
-adding aliases, which work like e-mail accounts, changing the members,
-and granting selected users the permission to send e-mails to the
-mailing list.
+Once a distribution list has been created, it can be further
+configured by adding aliases, which work like e-mail accounts,
+changing the members, and granting selected users the permission to
+send e-mails to the distribution list.
 
 Dynamic Mode
 ++++++++++++
 
-Mailing list's *Dynamic Mode* allows the automatic management of
-members. Indeed, each Dynamic Mailing List is identified by a name and
-by a unique *Mailing List URL*, which is an LDAP query that
-automatically populates the members of the Mailing List.
+Distribution list's *Dynamic Mode* allows the automatic management of
+members. Indeed, each Dynamic Distribution List is identified by a
+name and by a unique *Distribution List URL*, which is an LDAP query
+that automatically populates the members of the Distribution List.
 
-To create a Dynamic Mailing List, the procedure is similar to the
-normal Mailing Lists: click the :bdg-primary:`+` button and provide a
-**Displayed Name** name and **list Name**, then click the **Dynamyc
-Mode** switch to access more options, including the *Mailing List
-URL*, which is mandatory. You can also make the list **Hidden from
-GAL** and add owners to the list, who can manage the configuration of
-the list.
+To create a Dynamic Distribution List, the procedure is similar to the
+normal Distribution Lists: click the :bdg-primary:`+` button and
+provide a **Displayed Name** name and **list Name**, then click the
+**Dynamyc Mode** switch to access more options, including the
+*Distribution List URL*, which is mandatory. You can also make the
+list **Hidden from GAL** and add owners to the list, who can manage
+the configuration of the list.
 
 Advanced options, like subscription and unsubscription options are
-available after the creation of the Dynamic Mailing List, when editing
-it.
+available after the creation of the Dynamic Distribution List, when
+editing it.
 
 .. _ap-resources:
 
