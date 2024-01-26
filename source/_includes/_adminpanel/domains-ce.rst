@@ -16,6 +16,8 @@ The following sections are available in the page: :ref:`global
 settings <ap-global>`, :ref:`domain details <ap-domain-details>`, and
 :ref:`domain management <ap-manage-domains>`.
 
+.. index:: Domain; new, Domain; create new
+
 .. _ap-domain-new:
 
 Create New Domain
@@ -89,9 +91,9 @@ Domains
 This table lists all the domains configured on |product|. Check section
 :ref:`ap-domain-new` to add a new domain.
 
-
+.. index:: quarantine
+   
 .. _global-quarantine:
-
 
 Quarantine
 ~~~~~~~~~~
@@ -214,6 +216,8 @@ access, or **Remove** the domain and all its items.
 .. warning:: The removal of the domain is an operation that can not be
    undone: all the items are gone forever.
 
+.. index:: GAL, Global Access List
+
 .. _ap-gal:
 
 Global Address List
@@ -237,6 +241,8 @@ the :bdg-primary-line:`RE-SYNC` button.
 ..
    Authentication
    ~~~~~~~~~~~~~~
+
+.. index:: Certificates, Virtual host
 
 .. _ap-vhost:
 
@@ -311,12 +317,16 @@ CERTIFICATE`. In the dialog, you can choose to use:
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
 
+.. index:: Certificates; Let's Encrypt
+           
 .. _le-procedure:
 
 Procedure to install a Let's Encrypt certificate
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. include:: /_includes/_adminpanel/letsencrypt.rst
+
+.. index:: Mailbox quota
 
 Mailbox Quota
 ~~~~~~~~~~~~~
@@ -447,6 +457,7 @@ never logged out, three sessions will appear. When selecting one of
 them, clicking the :bdg-danger-line:`END SESSION` button will close
 that session.
 
+.. index:: Account; new, Account; create new
 
 .. _ap-new-account:
 
@@ -552,6 +563,8 @@ of the new account.
       .. hint:: Both the number of failed attempts and the lockout
          period can be configured.
 
+.. index:: Global Admin; new, Global Admin; create new
+
 .. _ap-new-admin:
 
 Create New Global Admin
@@ -565,6 +578,7 @@ Then, from the account list, select the new account, then click the
 pencil icon to edit it. 
 
 .. _fig-create-admin:
+
 .. figure:: /img/adminpanel/create-global-admin.png
    :width: 50%
 
