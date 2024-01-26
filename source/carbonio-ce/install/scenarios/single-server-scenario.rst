@@ -92,7 +92,27 @@ Step 4: Configure Firewall
 
 .. _installation-step5:
 
-Step 5: Bootstrap |product|
+Step 5: Configure |vs|
+----------------------
+
+After the package installation, make sure that the |vs| `public` IP
+address (i.e., the one that will accept incoming connections to the
+|vs|) is present in the configuration file
+:file:`/etc/janus/janus.jcfg` and add it if missing: find the variable
+``nat_1_1_mapping`` and add it, for example::
+
+  ``nat_1_1_mapping = "93.184.216.34"``
+
+Finally, enable and start the service with the commands
+
+.. code:: console
+
+   # systemctl enable carbonio-videoserver.service
+   # systemctl start  carbonio-videoserver.service
+
+.. _installation-step6:
+
+Step 6: Bootstrap |product|
 ---------------------------
 
 .. include:: /_includes/_installation/step-bootstrap.rst
@@ -106,32 +126,32 @@ Step 5: Bootstrap |product|
 The next steps concern the configuration and setup of the various
 |product| components.
 
-.. _installation-step6:
+.. _installation-step7:
 
-Step 6: Setup |mesh|
+Step 7: Setup |mesh|
 --------------------
 
 .. include:: /_includes/_installation/step-conf-mesh.rst
 
-.. _installation-step7:
+.. _installation-step8:
 
-Step 7: Create Main DB Role and Database for |product|
+Step 8: Create Main DB Role and Database for |product|
 ------------------------------------------------------
 
 .. include:: /_includes/_installation/step-conf-db.rst
 
-.. _installation-step8:
+.. _installation-step9:
 
-Step 8: Bootstrap |file| Databases
+Step 9: Bootstrap |file| Databases
 ----------------------------------
 
 .. include:: /_includes/_installation/step-conf-files-ce.rst
 
 .. include:: /_includes/_installation/complete.rst
 
-.. _installation-step9:
+.. _installation-step10:
 
-Step 9: Enable Workstream Collaboration UI :bdg-danger:`BETA`
+Step 10: Enable Workstream Collaboration UI :bdg-danger:`BETA`
 -------------------------------------------------------------
 
 The |wsc| role is disabled by default, you can enable it either from
