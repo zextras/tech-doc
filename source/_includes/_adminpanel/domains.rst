@@ -514,7 +514,10 @@ modified for any individual user.
       passwords and OTP tokens can be created to allow the user to
       login by using a QR Code; a policy can set to force the user to
       select a secure password and the type of characters to be
-      chosen. The Failed login policy determines how the system
+      chosen. Forgotten password, if enabled, allows a user to receive
+      a token to temporarily access the webmail, by sending a token to
+      the recovery address specified in the textfield next to the
+      option. The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
    .. tab-item:: Delegates
