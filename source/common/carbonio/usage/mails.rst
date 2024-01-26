@@ -137,6 +137,18 @@ add a different signature whenever you create, forward, or reply to an
 e-mail: refer to section *Using Signatures* in the :ref:`Mails
 settings <settings-mails>`.
 
+.. _sort-emails:
+
+Sorting emails
+~~~~~~~~~~~~~~
+
+Changing the displayed order of the list of email is possible by
+clicking the small icon on the top-right corner above the list of
+e-mails. In the drow-down menu, click the first item (*Ascending
+order* / *Descending order*) to toggle between the order. You can then
+select which is the ordering criteria: *Unread*, *Important*,
+*Flagged*, *Attachment*, *From*, *Date*, or *Subject*
+
 .. _mail-write:
 
 Writing e-mails
