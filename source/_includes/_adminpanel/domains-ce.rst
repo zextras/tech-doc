@@ -615,8 +615,8 @@ create the distribution list.
 
 Once a distribution list has been created, it can be further
 configured by adding aliases, which work like e-mail accounts,
-changing the members, and granting selected users the permission to
-send e-mails to the distribution list.
+changing the description, notes, and members, and granting selected
+users the permission to send e-mails to the distribution list.
 
 Dynamic Mode
 ++++++++++++
