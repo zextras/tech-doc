@@ -16,8 +16,8 @@ bootstrap the Database, by running the command.
 
 In the above command, |dbadmpwd| is the the password of the
 ``carbonio_adm`` database role, that is, the one created during
-:ref:`Step 6 <installation-step6>` of the Single-Server installation or the
-installation of :ref:`srv1-install` in the Multi-Server installation
+:ref:`Step 7 <installation-step7>` of the Single-Server scenario or the
+installation of :ref:`srv1-install` in the 5 Nodes Scenario.
 
 Finally, since new version of |product| packages may include new
 services, it is strongly suggested to execute the command

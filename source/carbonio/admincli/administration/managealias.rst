@@ -17,8 +17,8 @@
 
    Aliases prove useful in a number of cases, including:
 
-   * To subscribe to mailing lists or newsletters without using your
-     real e-mail address for privacy reasons
+   * To subscribe to distribution lists or newsletters without using
+     your real e-mail address for privacy reasons
 
    * To make the management of incoming mail easier by defining
      suitable filters

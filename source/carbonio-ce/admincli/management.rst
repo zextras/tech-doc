@@ -22,7 +22,10 @@ components are enabled for a user or a COS.
 
 :ref:`le-renew` shows how to renew a Let's Encrypt-generated
 certificate, either manually or automatically.
-     
+
+:ref:`mailboxmove` shows how to move an account from one server to
+another one.
+
 .. toctree::
    :hidden: 
 
@@ -31,3 +34,4 @@ certificate, either manually or automatically.
    management/custom
    management/setting-features
    management/letsencrypt
+   management/move-account

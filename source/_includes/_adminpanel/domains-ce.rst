@@ -5,7 +5,7 @@
 
 The Domain page allows the management of domains and of related
 settings, including individual accounts, user quota and
-authentication, mailing lists, and more.
+authentication, distribution lists, and more.
 
 When opening this page, the list of all configured domain
 presented. To choose a domain an show its configuration, click it on
@@ -15,6 +15,8 @@ label.
 The following sections are available in the page: :ref:`global
 settings <ap-global>`, :ref:`domain details <ap-domain-details>`, and
 :ref:`domain management <ap-manage-domains>`.
+
+.. index:: Domain; new, Domain; create new
 
 .. _ap-domain-new:
 
@@ -89,9 +91,9 @@ Domains
 This table lists all the domains configured on |product|. Check section
 :ref:`ap-domain-new` to add a new domain.
 
-
+.. index:: quarantine
+   
 .. _global-quarantine:
-
 
 Quarantine
 ~~~~~~~~~~
@@ -106,7 +108,7 @@ contains, can be deleted and recreated by clicking the
 page the list of quarantined messages is shown. Being a system
 account, to view the messages you can go to :menuselection:`Admin
 Panel --> Domains --> Manage --> Accounts`, click the quarantine
-account, then the :bdg-primary-line:`VIEW MAI` button to see the
+account, then the :bdg-primary-line:`VIEW MAIL` button to see the
 quarantined e-mails.
 
 .. _ap-domain-details:
@@ -206,13 +208,15 @@ We build on the domain created in :ref:`previous section
 
 At the bottom of the page, button :red:`DELETE DOMAIN` allows to
 delete the domain. When clicked, a dialog will open, listing all items
-defined on the domain (Accounts, mailing lists, resources, and so on)
-and that will be deleted together with the domain. Two choices are
+defined on the domain (Accounts, Distribution Lists, Resources, and so
+on) and that will be deleted together with the domain. Two choices are
 available: to **Close** the domain, keeping all items but preventing
 access, or **Remove** the domain and all its items.
 
 .. warning:: The removal of the domain is an operation that can not be
    undone: all the items are gone forever.
+
+.. index:: GAL, Global Access List
 
 .. _ap-gal:
 
@@ -237,6 +241,8 @@ the :bdg-primary-line:`RE-SYNC` button.
 ..
    Authentication
    ~~~~~~~~~~~~~~
+
+.. index:: Certificates, Virtual host
 
 .. _ap-vhost:
 
@@ -311,12 +317,16 @@ CERTIFICATE`. In the dialog, you can choose to use:
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates
 by clicking the appropriate button above the certificates themselves.
 
+.. index:: Certificates; Let's Encrypt
+           
 .. _le-procedure:
 
 Procedure to install a Let's Encrypt certificate
 ++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. include:: /_includes/_adminpanel/letsencrypt.rst
+
+.. index:: Mailbox quota
 
 Mailbox Quota
 ~~~~~~~~~~~~~
@@ -383,7 +393,7 @@ modified for any individual user.
 
       * To remove the user's password from LDAP
 
-      * The Mailing list memberships
+      * The Distribution List memberships
 
       * To move a user to another domain, which must be defined on the
         same server, by writing the new one in the **Domain Name**
@@ -421,7 +431,10 @@ modified for any individual user.
       passwords and OTP tokens can be created to allow the user to
       login by using a QR Code; a policy can set to force the user to
       select a secure password and the type of characters to be
-      chosen. The Failed login policy determines how the system
+      chosen. Forgotten password, if enabled, allows a user to receive
+      a token to temporarily access the webmail, by sending a token to
+      the recovery address specified in the textfield next to the
+      option. The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
 
@@ -447,6 +460,7 @@ never logged out, three sessions will appear. When selecting one of
 them, clicking the :bdg-danger-line:`END SESSION` button will close
 that session.
 
+.. index:: Account; new, Account; create new
 
 .. _ap-new-account:
 
@@ -469,6 +483,14 @@ of the new account.
       * **Name**, **Middle Name Initials**, and **Surname** will be used
         to define the user name. We use only Name (John) and Surname
         (Smith), which result in the JohnSmith **username**.
+        
+        If the name or surname contain non-ASCII characters, an
+        automatic mapping will be enforced: for example, ``ä``, ``à``
+        will become ``a``. When there is no mapping available, message
+        :red:`Auto fill user is disabled` will be displayed: in this
+        case, the username must be filled manually. This is the case
+        for example, for letters using diacritics, cedillas or
+        German's ``ß``.
 
         .. hint:: You can change the automatically generated username at
            will, for example to match company policies.
@@ -544,6 +566,8 @@ of the new account.
       .. hint:: Both the number of failed attempts and the lockout
          period can be configured.
 
+.. index:: Global Admin; new, Global Admin; create new
+
 .. _ap-new-admin:
 
 Create New Global Admin
@@ -557,6 +581,7 @@ Then, from the account list, select the new account, then click the
 pencil icon to edit it. 
 
 .. _fig-create-admin:
+
 .. figure:: /img/adminpanel/create-global-admin.png
    :width: 50%
 
@@ -567,51 +592,51 @@ To make *acme_admin* a Global Admin, in the :blue:`General` tab go to
 Administrator**, then save. The *acme_admin* user is now able to
 access the |adminui|. 
 
-Mailing List
-~~~~~~~~~~~~
+Distribution List
+~~~~~~~~~~~~~~~~~
 
-Mailing list can be simply created by clicking the :bdg-primary:`+`
-button to open a tabbed modal dialog in which to configure the
-mailing list.
+Distribution lists can be simply created by clicking the
+:bdg-primary:`+` button to open a tabbed modal dialog in which to
+configure it.
 
-In the first tab you can give a name, an address, and
-a description to the mailing list; in the second add *Members* by
-simply writing the e-mail addresses in the test field.
+In the first tab you can give a name, an address, and a description to
+the distribution list; in the second add *Members* by simply writing
+the e-mail addresses in the test field.
 
 .. hint:: E-mail addresses are auto-completed while typing.
 
 In the third tab, advanced settings can be configured, including the
 option to send notification to new members and the presence of the
-mailing list in the GAL.
+distribution list in the GAL.
 
 The last tab recaps the settings: now you can either go back to any of
 the previous tabs and change some of the settings, or proceed to
-create the mailing list.
+create the distribution list.
 
-Once a mailing list has been created, it can be further configured by
-adding aliases, which work like e-mail accounts, changing the members,
-and granting selected users the permission to send e-mails to the
-mailing list.
+Once a distribution list has been created, it can be further
+configured by adding aliases, which work like e-mail accounts,
+changing the description, notes, and members, and granting selected
+users the permission to send e-mails to the distribution list.
 
 Dynamic Mode
 ++++++++++++
 
-Mailing list's *Dynamic Mode* allows the automatic management of
-members. Indeed, each Dynamic Mailing List is identified by a name and
-by a unique *Mailing List URL*, which is an LDAP query that
-automatically populates the members of the Mailing List.
+Distribution list's *Dynamic Mode* allows the automatic management of
+members. Indeed, each Dynamic Distribution List is identified by a
+name and by a unique *Distribution List URL*, which is an LDAP query
+that automatically populates the members of the Distribution List.
 
-To create a Dynamic Mailing List, the procedure is similar to the
-normal Mailing Lists: click the :bdg-primary:`+` button and provide a
-**Displayed Name** name and **list Name**, then click the **Dynamyc
-Mode** switch to access more options, including the *Mailing List
-URL*, which is mandatory. You can also make the list **Hidden from
-GAL** and add owners to the list, who can manage the configuration of
-the list.
+To create a Dynamic Distribution List, the procedure is similar to the
+normal Distribution Lists: click the :bdg-primary:`+` button and
+provide a **Displayed Name** name and **list Name**, then click the
+**Dynamyc Mode** switch to access more options, including the
+*Distribution List URL*, which is mandatory. You can also make the
+list **Hidden from GAL** and add owners to the list, who can manage
+the configuration of the list.
 
 Advanced options, like subscription and unsubscription options are
-available after the creation of the Dynamic Mailing List, when editing
-it.
+available after the creation of the Dynamic Distribution List, when
+editing it.
 
 .. _ap-resources:
 

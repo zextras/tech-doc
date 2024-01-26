@@ -62,7 +62,7 @@ done on files and folders
       * Internal collaborators: you can add a a collaborator to a
         single file or an entire directory by writing the e-mail
         address, then click :bdg-primary:`SHARE`; otherwise, in the
-        *Collaboraion Links* section click :bdg-primary-line:`GENERATE
+        *Collaboration Links* section click :bdg-primary-line:`GENERATE
         LINK` to create a link that will allow anyone with the link to
         give either *Read and Share* or *Write and Share* permission
         on the file

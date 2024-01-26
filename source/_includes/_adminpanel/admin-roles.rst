@@ -216,15 +216,15 @@ domain. These rights are reserved to a User Management Admin
 Group Management (Domain) Administrator
 ---------------------------------------
 
-A Group Management Admin has control on lifecycle of the mailing list
-of the domain and possesses these rights
+A Group Management Admin has control on lifecycle of the distribution
+list of the domain and possesses these rights
 
 .. hlist::
    :columns: 2
 
    * View Domain attributes
-   * Create, modify and delete mailing list, except for Dynamic
-     Mailing Lists
+   * Create, modify and delete distribution list, except for Dynamic
+     Distribution Lists
    * Manage DL Aliases
 
 .. index:: Administrator; Help Desk

@@ -170,13 +170,13 @@ backup, for example:
 
 -  an account (including its settings)
 
--  a mailing list
+-  a distribution list
 
 -  a domain
 
 -  a class of services (COS)
 
-.. note:: The last three items (mailing lists, domains, classes
+.. note:: The last three items (distribution lists, domains, classes
    of services) are subject to the SmartScan **only**, i.e., the Real
    Time Scan will **not** record any change of their state.
 

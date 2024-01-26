@@ -137,6 +137,18 @@ add a different signature whenever you create, forward, or reply to an
 e-mail: refer to section *Using Signatures* in the :ref:`Mails
 settings <settings-mails>`.
 
+.. _sort-emails:
+
+Sorting emails
+~~~~~~~~~~~~~~
+
+Changing the displayed order of the list of email is possible by
+clicking the small icon on the top-right corner above the list of
+e-mails. In the drow-down menu, click the first item (*Ascending
+order* / *Descending order*) to toggle between the order. You can then
+select which is the ordering criteria: *Unread*, *Important*,
+*Flagged*, *Attachment*, *From*, *Date*, or *Subject*
+
 .. _mail-write:
 
 Writing e-mails
@@ -166,6 +178,8 @@ are writing is a distribution list, you can click the small
 :octicon:`chevron-down` chevron icon to see a list of all the members
 of the list. By clicking the blue button on top of the list, you can
 even replace the list with all the individual e-mail addresses.
+Moreover, in case you are the owner of the distribution list, you can
+edit its members by clicking the small gear icon.
 
 .. _mail-attachments:
 
