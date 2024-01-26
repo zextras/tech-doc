@@ -178,6 +178,8 @@ are writing is a distribution list, you can click the small
 :octicon:`chevron-down` chevron icon to see a list of all the members
 of the list. By clicking the blue button on top of the list, you can
 even replace the list with all the individual e-mail addresses.
+Moreover, in case you are the owner of the distribution list, you can
+edit its members by clicking the small gear icon.
 
 .. _mail-attachments:
 
