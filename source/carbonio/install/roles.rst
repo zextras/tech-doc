@@ -203,6 +203,16 @@ This is the list of roles that make up a Carbonio installation.
       * ZooKeeper
       * Apache Kafka
 
+   .. grid-item-card:: Directory Replica
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Advanced role
+
+      Packages:
+
+      * carbonio-directory-server
+
 .. _multiserver-installation:
 
 How to install Roles
@@ -268,3 +278,4 @@ installation, please review these important remarks:
    roles/role-vs
    roles/role-monit
    roles/role-es
+   roles/role-ds-replica
