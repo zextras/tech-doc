@@ -36,12 +36,11 @@ The roles of |product|
 
 We can group the available |product| Roles into 3 macro categories:
 
-* Infrastructure roles, which are mandatory in any |product| installation
+* **Infrastructure roles**, which are mandatory in any |product| installation
 
-* Service roles broaden the basic functionality provided by |product|
+* **Service roles** broaden the basic functionality provided by |product|
 
-* Advanced roles are not yet available, but will provide robustness to
-  |product|
+* **Advanced roles** provide robustness to |product| 
 
 This is the list of roles that make up a Carbonio installation.
 
@@ -214,6 +213,17 @@ This is the list of roles that make up a Carbonio installation.
       * grafana
       * service-discover-agent
 
+   .. grid-item-card:: Directory Replica
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Advanced role
+
+      Packages:
+
+      * carbonio-directory-server
+
+
 .. _multiserver-installation:
 
 How to install Roles
@@ -279,3 +289,4 @@ installation, please review these important remarks:
    roles/role-wsc
    roles/role-vs
    roles/role-monit
+   roles/role-ds-replica
