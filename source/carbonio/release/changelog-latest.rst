@@ -2,434 +2,151 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Carbonio Changelog - Release 23.12.0
-====================================
+Carbonio Changelog - Release 24.1.0
+===================================
 
-Release Date: December 27th, 2023
+Release Date: January 30th, 2024
 
-NEW FEATURES LIST
+New Features List
 -----------------
 
-**AC-317: Done Operations Display in Carbonio Admin**
-   The Carbonio Web Admin interface now features enhanced functionality for querying and managing completed operations within the Carbonio Advanced Module through the Operations Done. This update ensures administrators have a comprehensive view of all completed tasks.
+**AC-533: Admin can manage domain disclaimer**
+   Now the admin can manage a Domain Disclaimer, the option to have different disclaimers for internal and external recipients.
 
-.. 
+**AC-795: Revealed Distribution List Owner Settings in Admin UI**
+   Now the mailing list owner setting is visible in the Distribution List field within the admin panel.
 
+**AC-809: Admin can customize items per page**
+   Administrators now have the capability to specify the number of "items per page" they wish to display.
 
-**AC-508: Improved visibility for failed bucket check message**
-   The visibility and content of failure messages during bucket creation have been enhanced in the Carbonio Admin Panel. Admins will now receive clearer and more informative messages about the reasons behind the failure and actionable steps to address the issues.
+**AC-851: Enhanced whitelabel settings for background image ratios**
+   The white-label settings now honour the background image ratio. Administrators can find the specifications in the Background for the Login Page section: “The image must possess a minimum resolution of 1280x1080, a 16:9 ratio, and a size less than 800KB"
 
-.. 
+**AC-854: Fixed Invalid username creation from name field special characters**
+   The Email ID creation process has been enhanced to disable automatic email creation when the combination of the first name and last name includes any special character. This improvement addresses the issue of special characters in the Surname and Name fields, preventing the automatic generation of an email username with invalid characters not accepted by Carbonio during submission.
 
+**AC-855: Enhanced mailbox quota table with color-coded assignments**
+   The Mailbox quota table is now easier to identify with color-coded distinctions. Accounts exceeding >70% of Mail Quota are displayed in Yellow, while those exceeding =>90% are highlighted in Red.
 
-**AC-695: Quarantine management feature in admin UI**
-   This is a new improvement in the Carbonio admin panel where the global admin can see a new feature of quarantine in the global menu of domains tab where the global admin can create a quarantine global quarantine account and their retention period of holding infected emails with the virus and the global admin can see the list of infected emails/messages as well as open such infected email and do the activity related to the particular message like remove the message, deliver a message, remove the attachment, show original and many more
+**AC-876: User can request token for forget password web UI**
+   This update empowers users to autonomously request a token for webmail access in the event of a forgotten password. The admin now has the capability to globally or selectively disable this feature, either for the entire system or specific domains. Notably, the forgotten password feature is designed to update the LOCAL (LDAP) password and is not intended for external LDAP/AD or application credentials. Users can leverage this by configuring the OTP (One-Time Password).
 
-.. 
+**AC-879: Update interface label to "User"**
+   The General tab now displays "User" instead of "Username" improving clarity and user experience.
 
+**AC-892: MTA Queues usability improved**
+   Enhances the usability of the MTA queue interface by removing redundant details and improving flow.
 
-**AC-733: Domain specific login/logout url Input field**
-   Experience heightened control with our latest update! We've added a crucial input field to the admin interface, empowering users to customize login and logout experiences for a specific domain. This improvement seamlessly integrates with our white label feature, users can now define a redirect URL login/logout, enhancing the overall user and admin experience
+**AC-897: Enhanced mail queue supports bulk actions**
+   The Mail Queue feature has been significantly improved, allowing administrators to effortlessly select and perform bulk actions on multiple messages across various queue spools. Whether it's deleting, re-queuing, holding, releasing, or flushing, this upgrade empowers administrators with a robust and efficient tool for managing their mail queue on MTA Servers.
 
-.. 
+**AC-903: Reorganization of Admin panel backup settings menu**
+   The Servers List in the Backup Settings menu of the  Admin Panel has been relocated to the top of the Global Server Settings list for improved organization.
 
+**AC-906: Enhanced virtualHost validation for FQDN**
+   The virtualHost validation has been improved to allow only Fully Qualified Domain Names (FQDN). An FQDN, such as MAIL.DOMAIN.TLD is now required for virtualHost, ensuring more accurate domain identification.
 
-**AC-771: Quarantine management feature update in admin panel**
-   Explore the latest enhancement in the Carbonio admin panel, empowering global admins to efficiently manage quarantine accounts and activities. This update enables the creation of global quarantine accounts, setting retention periods for infected emails, and performing various actions on affected messages, offering enhanced control and security.
-   
-.. 
+**AC-909: DomainAdmin can configure recovery address**
+   DomainAdmins can now manage user recovery email, set recovery email, and control its verification status in the "Security" tab.
 
+**CO-802: "Keep" policy removed from folder retention**
+   The "keep" policy is now removed, ensuring efficient item removal with the enhanced "purge" policy. Improved user experience and system clarity.
 
-**AC-819: Error prevention dialog for unsaved account delegates**
-   The Account Advanced Edit now triggers an error prevention dialog when attempting to exit without saving changes made to Account Delegates.
-   
-.. 
+**CO-865: Set Default zimbraHttpDebugHandlerEnabled to False**
+   The default parameter for zimbraHttpDebugHandlerEnabled is now set to false. The boolean parameter has been updated from true to false.
 
+**CO-893: File upload quota validation enhanced**
+   Now the file upload API has been enhanced to validate whether the user's current quota is reached. user now allows successful uploads within the specified quota limits while rejecting uploads that surpass the user's maximum quota.
 
-**AC-836: Mailbox quota table enhanced**
-   An enhancement has been made to the Mailbox Quota table under the 'Mails' section. A new column (MB) has been added to provide improved visibility and management capabilities.
-   
-.. 
+**CO-922: Refine forgot password Email Message**
+   Update the Forgotten Password email message to clearly indicate a request for a temporary authentication code, not a password reset.
 
+**CO-923: Health endpoint implemented in Mailbox**
+   The health endpoint is added to the Mailbox service, enhancing health checks and providing better control over its liveliness and readiness.
 
-**AC-837: Enhanced CSV mailbox quota with flexible decimal rounding**
-   Experience improved control over mailbox quotas in CSV format. Now, easily round to one digit or no digit after the decimal point in the Mails column for greater flexibility.
-   
-.. 
+**CO-929: Milter startup logging error fix**
+   Resolves the issue where the milter startup logs report an error about being unable to locate the appender "MILTER" for the logger config "root" in /opt/zextras/log/milter.out.
 
+**CO-930: YUICompressor Library removed from mailbox**
+   Optimized Logging: mailbox.log no longer contains unnecessary entries from the unused YUICompressor library, enhancing efficiency.
 
-**AC-838: Enhanced mailbox quota table per domain selection**
-   The mailbox quota table has been refined to display only the selected domain's content. Other domain mailboxes are no longer shown in the table, ensuring a more focused and accurate representation.
-   
-.. 
+**CO-931: Db-java - Cleanup Unused Methods and Classes**
+   The proposed change involves cleaning up unused methods and classes in the Db-java module, specifically targeting the DbPool class. This cleanup enhances code clarity and simplifies the implementation of the Healthcheck feature.
 
+**COR-1020:  Enhanced notification access for delegated admin**
+   Delegated admins now have comprehensive access to notifications through both email and the Admin UI, addressing and resolving the issue where notifications were previously limited to email only. This improvement enhances the overall delegated admin experience on the platform.
 
-**AC-839: Enhanced input validation for Domain General Settings COS**
-   In the Domain's General Settings COS section, input validation has been improved to allow only numbers and '-' (hyphen), ensuring a more reliable and accurate configuration.
-   
-.. 
+**IRIS-4513: Distribution List owner can manage DL**
+   The owner of the Distribution List can now control the DL directly from the ContactInput chip using the TO field.
 
+**IRIS-4765: Meeting Room availability visibility enhancement**
+   Users can now easily identify the availability of Meeting Rooms from the dropdown menu. Unavailable Meeting Rooms display an alert icon and a warning message, allowing users to make informed selections.
 
-**AC-840: Enhanced COS list visibility in COS tab**
-   The COS lists in the COS tab are now visible. previously, the list was not displayed.
-   
-.. 
+**IRIS-4768: Equipment availability display improved**
+   The update enables users to identify Equipment availability in the dropdown, with a visual indicator (alert icon) and a warning under the input. Users can still select unavailable Equipment. The display is validated across various scenarios, including the appointment displayer and edit mode.
 
+**IRIS-4887: Folder sorting and filtering improved**
+   Users now have the ability to customize email sorting by Subject, Size, Date, Attachment, Flag, and Important, and view Unread messages, providing a tailored approach to email management. Additionally, users can filter only unread emails within the current folder, streamlining their workflow.
 
-**AC-842: COS selection in domain creation**
-   Administrators now have the option to select a Class of Service (COS) in the Domain creation panel. This enhancement enables direct assignment of COS during the creation of new domains, streamlining the setup process.
-   
-.. 
-
-
-**AC-843: Default setting: Disabled 'User will change password'**
-   Now, during new user creation, the 'User will change password on next login' feature is disabled by default for streamlined domain and account management.
-   
-.. 
-
-
-**AC-849: Improved security for Carbonio admin console**
-   Enhanced security features in the admin console now safeguard local browser cookies, ensuring secure handling of closed and reopened tabs with Gobel details, and preventing unauthorized access to URL details in the backend.
-   
-.. 
-
-
-**AC-850: Enhanced control for adding new extensions in MTA**
-   Improved the control for administrators to add blocked extensions in the Postfix (MTA) Inbound Flow & Security. The system now rejects incorrect inputs, such as punctuation marks (!@#$%^&*), ensuring a more secure configuration.
-   
-.. 
-
-
-**AC-874: Visual enhancement for exceeded quota indicator**
-   The Mailbox Quota table in Admin UI has undergone enhancements to visually highlight mailboxes that exceed their quota limits. This improvement includes displaying the quota percentage in red for easy identification when a mailbox surpasses the set limit.
-   
-.. 
-
-
-**AC-877: Mailing Lists renamed to Distribution Lists**
-   In the Carbonio Web Admin interface, the term 'Mailing Lists' under the Domain Management section has been changed to 'Distribution Lists', reflecting a more accurate description of its functionality.
-   
-.. 
-
-
-**AC-884: Accurate Compression Status in Centralized Volume**
-   Experience improved accuracy as the Centralized Volume in AdminUI now displays the correct compression status. Stay informed and efficiently manage your data with this enhancement.
-   
-.. 
-
-
-**AC-891: MTA DNS Blacklist Threshold Enhancement**
-   Improve MTA settings by transforming 'DNS Blacklist Threshold' from a selector to an input field for enhanced customization.
-   
-.. 
-
-
-**AC-898: Minor adjustments in whitelabel settings**
-   Customize login page background and favicon with image URLs. Login page image: JPG/PNG, min 1280x720, 16:9, <800KB. Favicon: ICO, 32x32 pixels.
-   
-.. 
-
-
-**CO-851: Improved address management for functional accounts**
-   Users can now save functional account addresses in the 'Emailed Contacts' book, with Autocomplete seamlessly incorporating local and shared contacts when 'Include Address in Shared Contacts' is selected.
-   
-.. 
-
-
-**CO-870: Auth healthcheck API implementation**
-   The Carbonio now features an enhanced Auth Healthcheck API, streamlining response times and eliminating the need for consensus checks on other nodes, This enhancement aims to reduce response times, particularly in scenarios where one or more nodes are down, and eliminates the necessity to increase timeout values
-   
-.. 
-
-
-**CO-873: New consul token for carbonio-advanced**
-   The software now deploys a new Consul token during the installation of Carbonio Advanced. This token is located at `/etc/carbonio/mailbox/service-discover/token` and used by the application.
-   
-.. 
-
-
-**FILES-729: Creating public access links for folders**
-   This feature allows the creation of public access links for folders. The functionality is designed to align with its intended purpose. For instance, the link is accessible when active but becomes invalid upon expiration or revocation. Additionally, only users with edit access have the capability to create the link, restricting this action for others.
-   
-.. 
-
-
-**FILES-733: Public folder link access**
-   In this version, a new feature has been introduced to facilitate access to public folders via links. Enabling the public folder link allows anyone with the link to access the folder's content. An error message will be displayed if the link expires, is revoked, or does not exist.
-   
-.. 
-
-
-**FILES-736: Public folder view and interaction**
-   Public folder view and interaction now seamlessly adhere to authorized permission policies. The current public folder link policy ensures that anyone with the public link can effortlessly view and download the folder's content. By default, a read-only permission policy is set, preventing any upload, edit, delete, or modification of the folder's content by individuals other than the folder owner
-   
-.. 
-
-
-**IRIS-3508: Enhanced Calendar header button position**
-   The calendar's header button positioning has been improved, ensuring adequate space between buttons. The Week's selection and Today's buttons no longer overlap, providing a better visual experience.
-   
-.. 
-
-
-**IRIS-4450: Exploding distribution lists in email composition**
-   Users can now recognize and expand distribution lists while composing emails, providing the ability to review and modify recipients before sending for improved clarity and control.
-   
-.. 
-
-
-**IRIS-4537: Recognize and explode distribution lists in Calendar**
-   Users now have the ability to seamlessly recognize and explode distribution lists within the calendars module, improving efficiency and user experience.
-   
-.. 
-
-
-**IRIS-4763: User can select equipment in appointments**
-   Users can now select equipment during appointment creation, ensuring proper display in the summary view, displayer, and editor during edit actions.
-   
-.. 
-
-
-**IRIS-4766: Equipment selection in appointments**
-   Users can now select equipment during appointment creation, ensuring proper display in summary view, displayer, and editor during edit actions.
-   
-.. 
-
-
-**IRIS-4842: Run Filter on existing Email Folders**
-   Users now have the ability to apply filters to emails within existing folders, providing enhanced control and organization of their mailbox content.
-   
-.. 
-
-
-**IRIS-4889: Enhanced editor performance optimization**
-   Now the editor's performance has improved by utilizing useMemo in editor hooks and reorganizing logic into sub-components. These changes minimize re-rendering, resulting in improved efficiency for the editor.
- 
-   
-.. 
-
-
-**IRIS-4894: Enhanced contact search in shared account address books**
-   Experience enhanced contact search capabilities within shared account address books. In the mail editor, selecting a sender identity linked to a shared account now enables auto-complete in the to/cc/bcc fields, considering contacts within that shared account's address books.
-   
-.. 
+**IRIS-4975:  Change "Edit distribution list" action icon on contactInput chip**
+   Two unique icons have been introduced for "Edit email" and "Edit DL" actions on the ContactInput chip, exclusively visible to the DL owner. This change addresses prior confusion and enhances the user experience.
 
 *****
 
-BUGFIX LIST
+Bugfix List
 -----------
 
+**AC-882: Improved alias management with uniqueness check in admin panel**
+   Experience the latest enhancement in the Admin Panel, featuring a uniqueness check that prevents the assignment of the same alias to two different mailnames. This improvement ensures data integrity and avoids conflicts by returning an error when attempting duplicate alias assignments.
 
-**AC-762: Admin console backup progress notifications**
-   Upon initiating a backup using the Admin console backup button, the progress of the backup should now be displayed through both the dashboard notifications section and emails.
-   
-.. 
+**CO-948: Resolve ISP license renewal end date issue**
+   The ISP License is now fixed and the ISP license end date is properly populated into the Carbonio system.
 
+**CO-953: Fixed NullPointerException in doUndelete operation**
+   Previously, the doUndelete operation encountered a NullPointerException and hung when carbonioNotificationRecipients at the domain level configuration was empty. The proposed solution focuses on managing this exception, allowing the operation to proceed even with an empty value. This ensures that the doUndelete command works seamlessly.
 
-**AC-826: Dashboard notification table enhancement**
-   The dashboard notification table now displays notifications for all servers in a multi-server environment, addressing the previous limitation of showing only the latest added server notifications.
-   
-.. 
+**COR-820: MySQLcheck error fix in zmdbintegrityreport**
+   The update addresses a MySQLcheck error in zmdbintegrityreport by performing necessary clean-ups in the MySQL datadir, specifically removing empty directories. Validate the zmdbintegrityreport script after the update to ensure it runs without MySQLcheck errors and successfully removes empty directories.
 
+**COR-979: Frequency of trusted IP logging reduced**
+   The mailbox log has been optimized to eliminate redundant reporting of 'trusted IP' entries every five seconds. This enhancement ensures efficient logging by capturing trusted IP entries only during mailbox reload, reducing unnecessary log entries.
 
-**AC-830: Session management in account details**
-   The account details section now supports filtering and ending of individual user sessions. This enhancement empowers administrators to more effectively manage user sessions by providing the ability to filter through sessions and end them as needed.
-   
-.. 
+**COR-992: Refactor ISP license management**
+   Now the refactored code to manage ISP licenses correctly as ISP, ensuring they are distinct from purchased licenses in Carbonio.
 
+**IN-644: Keytool execution failure fix in carbonio-core post install phase**
+   Resolves the keytool execution failure issue during the carbonio-core post-install scriptlets, ensuring the proper functioning of the product. The fix addresses a misaligned syntax causing the Illegal option error in the keytool -list command.
 
-**AC-832: COS name visibility in Domain Settings**
-   the Class of Service (COS) name is now visible in the Domain General Settings. 
-   
-.. 
+**IRIS-4258: Unified options naming for Calendar editing**
+   Now 'Edit calendar properties' is selected for unified calendar editing option names.
 
+**IRIS-4534: Enhanced 'Delete All' UI Functionality**
+    Improvements made to the UI behavior when selecting and deleting/moving all first mail elements. The system now properly loads the next 100 elements without leaving the column blank, provided there are still mail elements in the folder. Additionally, a notification is triggered when clicking the 'Select All' button, indicating that all visible items have been selected.
 
-**AC-856: Whitelabel settings  background image ratio enhanced**
-   The white-label settings now honour the background image ratio.  Administrators can find the specifications in the Background for the Login Page section: "The image must possess a minimum resolution of 1280x720, a 16:9 ratio, and a size less than 800KB.
-   
-.. 
+**IRIS-4593: Cancellation email for shared calendar improved**
+   The shared calendar now supports proper deletion of individual instances within a recurring appointment. This enhancement includes seamless handling of cancellation messages and modifications to calendar events on the recipient's side.
 
+**IRIS-4721: "Mark as Important" Option in Carbonio Mail Composing enhanced**
+   Now the user can mark it as important, Upon sending mail, this action triggers the email to be received on the other end with an added priority designation. High-priority mail received with "RED up Arrow" in the inbox of the recipient.
 
-**AC-859: MTA Outbound flow configuration in admin UI**
-   Admins gain enhanced control as text fields in the 'Outbound Flow' section are now editable, enabling easy customization of global settings, including the relay host.
-   
-.. 
+**IRIS-4760: Fixed Incorrect Signature Issue on Reply/Forward**
+   The issue of incorrect signatures during Reply and Forward actions is now resolved. Previously, users encountered a problem where the default account signature was incorrectly applied despite having specific signatures configured for aliases. The diligent efforts of the team have successfully addressed this issue
 
+**IRIS-4880: User allowed multiple Calendar shares**
+   Users can now add and retain multiple share recipients for calendars. Previously, users were limited to keeping only the latest share recipients.
 
-**AC-871: Subdomain validation for distribution lists**
-   The software has been updated to allow proper validation of subdomains containing dashes (-) when adding members to distribution lists. Admins can now enter members with subdomains in the format "subdomain.example-com.com" without encountering validation errors.
-   
-.. 
+**IRIS-4918: Public sharing of a calendar function**
+   The public sharing of a calendar now  works
 
+**IRIS-4992:  Improved scrolling in conversation mode for long emails**
+   Previously, scrolling through long emails in conversation mode caused unexpected jumps to the top. Now, scrolling behaves as expected, and emails stay in place during navigation.
 
-**AC-885: Corrected attribute update for antivirus**
-   This fix ensures that adding, changing, and removing MTA 'Antivirus & Spam' configurations in the Carbonio Web Admin interface correctly updates the attributes. It addresses the previous issue where some updates were handled improperly.
-   
-.. 
+**IRIS-5009: Maintain sorting order upon folder change**
+   The previous issue, where emails appeared unsorted after changing folders and returning to the original folder in Carbonio Web Mail, has been successfully addressed. Users can now expect messages to consistently retain their sorting order, particularly when changing the viewing mode and sorting by date.
 
-
-**AC-894: Admin can add multiple virtualHosts**
-   Admins can now easily add multiple VirtualHosts to the domain using the admin console for increased customization and flexibility.
-   
-.. 
-
-
-**BCK-695: setBackupVolume cache fixed**
-   Fixed a bug that caused the `setBackupVolume` command not to clean its cache causing a copy of the blobs to be still saved in the metadata path. Now the blobs are only saved in the proper volume.
-   
-.. 
-
-
-**CO-860: Calendar Free/Busy fixed for MacOS**
-   
-esolved a bug that previously prevented the Free/Busy feature from working in the MacOS Calendar. Availability is now correctly shown when adding attendees to an appointment.
-   
-.. 
-
-
-**CO-899: Upgrade Issue Fixed from Version 23.11 to 23.12**
-   The upgrade error from version 23.11 to 23.12 has been fixed. The issue stemmed from a conflict between the carbonio-common-appserver-db and carbonio-appserver-db packages, requiring the removal of the former before installing the latter. Developers opted for the use of 'apt full-upgrade' and 'dnf distro-sync' for the upgrade process.
-   
-.. 
-
-
-**CO-901: Enhanced virtual host response headers configuration**
-   Improved the handling of virtual host response headers by updating the Proxy Generator "libexec/zmproxyconfgen" to fetch information from the Domain configuration instead of the Global configuration.
-   
-.. 
-
-
-**CO-913: AppServer upgrade dependency error fixed**
-   Resolved conflict between carbonio-common-appserver-db and carbonio-appserver-db during the upgrade from 23.11 to 23.12. Developers used apt full-upgrade and dnf distro-sync for a seamless resolution.
-   
-.. 
-
-
-**CO-932: Backup on external storaged fixed**
-   Added the `volumeRootPath` attribute in the server configuration which was missing. Now the backup on external storage works properly.
-   
-.. 
-
-
-**COR-972: Delegated admin fine-tune the Public service settings**
-   Delegated admins now have the authority to modify PublicServiceHostname, protocol, and port configurations.
-   
-.. 
-
-
-**COR-1012: Enhanced max manageable accounts for a domain**
-    fixed for the "Max Manageable Accounts for a Domain" setting, now allowing zero "0" for unlimited accounts.
-   
-.. 
-
-
-**COR-1019: Corrected scope for notification sending**
-   Previously, the notification emails were sent to the Global Admin instead of the Delegated Domain Admin when carbonioNotificationRecipients is set to delegate admin. This issue is now resolved, and notifications are correctly sent to the delegated admin as intended.
-   
-.. 
-
-
-**IRIS-3420: Improved folder selection after interrupted drag**
-   Users now can click on the target folder after cancelling a drag-and-drop operation with the ESC key.
-   
-.. 
-
-
-**IRIS-3728: Calendar appointment description display fixed**
-   This update ensures accurate display of all details for received appointments in the Calendar event
-   
-.. 
-
-
-**IRIS-3733: Enhancement for 'Reply All' in shared accounts**
-   The 'Reply All' function in a shared account has been updated to automatically populate the recipient list in the editor with the original email's sender and recipients, excluding the sender's own address. In the previous version, the 'Reply All' function did include the sender in the recipient list.
-   
-.. 
-
-
-**IRIS-4682: Flexible signature editing in settings**
-   This enhancement allows users to conveniently modify their email signatures from the 'Signatures' section in Settings. Users can now update existing signatures, add new ones, and easily revert back to previous signatures, providing a flexible and user-friendly experience.
-   
-.. 
-
-
-**IRIS-4706: Fixed Radio component in custom modal**
-   The Calendar's radio component in the Custom modal now correctly selects options, addressing the previous problem of erratic behaviour where selecting one radio affected another
-   
-.. 
-
-
-**IRIS-4753: Improved custom recurring appointments checks**
-   Enhanced Calendar radio component in Custom modal for smoother user experience.
-   
-.. 
-
-
-**IRIS-4802: Mail editor format selection fixed**
-   Previously, the mail editor was disregarding the selected text format and consistently used rich text. This issue has been fixed, and now the mail editor correctly adheres to the chosen text format.
-   
-.. 
-
-
-**IRIS-4836: Enhanced Reply/Forward for undefined subject**
-   This enhancement improves the system's behaviour, allowing users to reply to or forward emails even when the subject field is undefined or missing. The system will automatically assign a blank subject to such emails, preventing errors during these actions.
-   
-.. 
-
-
-**IRIS-4838:  Modify appointments displays accurate dates**
-    The modification of appointments now accurately displays start and end dates, particularly in the case of series with all-day events lasting more than one day. The editor correctly reflects the intended dates, addressing the previous issue where it erroneously showed the current time
-   
-.. 
-
-
-**IRIS-4851: Email scrolling regression bug fixed**
-   This update addresses an issue wherein scrolling through lengthy emails in the Mail module for about a minute would unexpectedly reset the view to the top, disrupting seamless and continuous reading.
-   
-.. 
-
-
-**IRIS-4857: Improved folder selector includes Trash**
-   The folder selector for the 'Move into folder' action in filters now includes the Trash folder. Easily choose the Trash folder.
-   
-.. 
-
-
-**IRIS-4891: Ensuring event organizer configuration**
-   Event organizer now configured accurately, enabling successful creation and editing of new appointments in both shared and personal calendars.
-   
-.. 
-
-
-**IRIS-4927: Automatic removal of appointments for broken Calendars**
-   Broken calendars, upon removal from the UI, trigger the automatic removal of all associated appointments. This ensures a seamless and accurate user experience in managing calendar data
-   
-.. 
-
-
-**PS-467: HSM policy scheduling enhancement**
-   HSM policies now function seamlessly according to the configured scheduler in Linux. Messages are successfully moving from one store to another store as per the scheduled cron job 'carbonio powerstore doMoveBlobs start'.
-   
-.. 
-
-
-**PS-472: Unset Powerstore move scheduler improved**
-   The powerstoreMoveScheduler has now been enhanced at the server level, and it reverts to the default value upon being unset.
-   
-.. 
-
-
-**SHELL-173: Localized unsaved changes modal**
-   The unsaved changes modal, including its title, buttons, and tooltip, now correctly translates based on the user's selected language in the UI settings.
-   
-.. 
-
-
-**TEAMS-4124:  Recording functionality restored**
-   The group meeting recording problem is now resolved by reinstalling the latest carbonio-videoserver and recorder packages. Now, recordings work seamlessly, saving correctly in Files.
-   
-.. 
+**MOB-422: Calendar invite reply template fixed on IOS**
+    Resolve issues related to the template used for replying to calendar invites in Carbonio iOS. This fix aims to improve the accuracy and functionality of calendar invite replies, ensuring a more seamless and reliable user experience on the iOS platform.
 
 *****
 
-End of of changelog
+End of changelog
