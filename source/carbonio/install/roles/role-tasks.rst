@@ -1,15 +1,17 @@
 .. _role-tasks-install:
 
-Tasks
-=====
+=======
+ Tasks
+=======
 
 Install Packages
-----------------
+================
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_roles/role-tasks.rst
 
 Bootstrap |carbonio|
---------------------
+====================
 
 .. include:: /_includes/_multiserver-installation/bootstrap.rst
 
@@ -22,6 +24,6 @@ retrieve from the first Mesh and Directory node.
   Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
 
 Join |mesh|
------------
+===========
 
 .. include:: /_includes/_multiserver-installation/mesh-agent.rst

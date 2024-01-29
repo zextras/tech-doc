@@ -10,6 +10,7 @@ functionalities and may not work 100% properly.
 Install Packages
 ----------------
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_roles/role-wsc-ce.rst
 
 
