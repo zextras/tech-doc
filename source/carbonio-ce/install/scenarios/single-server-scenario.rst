@@ -152,7 +152,7 @@ Step 9: Bootstrap |file| Databases
 .. _installation-step10:
 
 Step 10: Enable Workstream Collaboration UI :bdg-danger:`BETA`
--------------------------------------------------------------
+--------------------------------------------------------------
 
 The |wsc| role is disabled by default, you can enable it either from
 the |adminui| or from the command line by running as the ``zextras``

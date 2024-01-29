@@ -6,6 +6,7 @@ Mailstore & Provisioning
 Install Packages
 ----------------
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_roles/role-mailstore-provisioning-ce.rst
 
 Bootstrap |carbonio|
