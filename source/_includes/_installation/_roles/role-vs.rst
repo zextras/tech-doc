@@ -3,6 +3,8 @@ This Role consists of *Video Server* and *Video Recording*. You need
 to install the latter only if you plan to record video meetings,
 otherwise you can install *Video Server* without *Video Recording*.
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+
 .. card:: Video Server
           
    .. tab-set::
