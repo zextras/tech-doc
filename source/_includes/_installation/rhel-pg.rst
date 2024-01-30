@@ -15,7 +15,7 @@ To make sure that Postresql 12 is installed, run commands
 .. code:: console
 
    # dnf -qy module disable postgresql
-   # dnf -y install postgresql12 postgresql12-server
+   # dnf -y install postgresql12 postgresql12-server service-discover-agent
 
 Once installed, initialise and enable the database
 

@@ -1,4 +1,6 @@
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -6,7 +8,7 @@
 
       .. code:: console
 
-         # apt install postgresql-12
+         # apt install postgresql-12 service-discover-agent
 
    .. tab-item:: RHEL
       :sync: rhel

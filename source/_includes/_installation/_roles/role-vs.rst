@@ -3,6 +3,8 @@ This Role consists of *Video Server* and *Video Recording*. You need
 to install the latter only if you plan to record video meetings,
 otherwise you can install *Video Server* without *Video Recording*.
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+
 .. card:: Video Server
           
    .. tab-set::
@@ -12,7 +14,7 @@ otherwise you can install *Video Server* without *Video Recording*.
 
          .. code:: console
 
-            # apt install carbonio-videoserver
+            # apt install carbonio-videoserver service-discover-agent
 
       .. tab-item:: RHEL
          :sync: rhel
@@ -27,7 +29,7 @@ otherwise you can install *Video Server* without *Video Recording*.
 
          .. code:: console
 
-            # dnf install carbonio-videoserver
+            # dnf install carbonio-videoserver service-discover-agent
 
    After the installation, make sure that the |vs| `public` IP address
    (i.e., the one that will accept incoming connections to the |vs|) is

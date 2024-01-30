@@ -1247,7 +1247,7 @@ To access the LDAP Address Book from Outlook simply follow these steps:
 
       First two steps of the procedure
 
-#. Enter the direct URL of the mailbox server, then tick the **This
+#. Enter the direct URL of the *Public Service Host name*, then tick the **This
    server requires me to log in** checkbox and enter your email
    address and password (or Mobile Password if existing)
 

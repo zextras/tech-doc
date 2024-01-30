@@ -31,9 +31,8 @@ the command
      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
 In the above command, |dbadmpwd| is the the password of the
-``carbonio_adm`` database role, that is, the one created during
-:ref:`Step 6 <installation-step6>` of the Single-Server installation or the
-installation of :ref:`srv1-install` in the Multi-Server installation
+``carbonio_adm`` database role, that is, the one created during the
+installation of :ref:`srv1-install` in the 5 Nodes Scenario.
 
 Finally, since new version of |product| packages may include new
 services, it is strongly suggested to execute the command

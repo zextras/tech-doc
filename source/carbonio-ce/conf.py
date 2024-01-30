@@ -44,9 +44,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '23.12.0'
+release = '24.1.0'
 version = release
-prev = '23.11.0'
+prev = '23.12.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -104,6 +104,7 @@ html_css_files = [ 'css/community.css' ]
 html_js_files = [ 'js/matomo.js' ]
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
+html_last_updated_fmt = ''
 templates_path = [ 'common/templates' ]
 html_theme_options = {
     'use_download_button': False,
@@ -116,7 +117,6 @@ html_theme_options = {
         'image_dark': 'carbonio-white.svg',
         'text': '%s' %release,
     },
-    'footer_content_items': [ 'zx-copyright.html' ],
 
     # Add button for surveys at the bottom of the right-hand side menu
     # (local ToC)
@@ -131,8 +131,9 @@ html_sidebars = { "**": [ 'navbar-logo.html', 'survey', 'search-button-field.htm
 
 html_context = {
     'hubhome' : '%s' %hubhome,
-    'surveylink': 'https://app.useberry.com/t/jvNFeRHKKOxYSU/' ,
-    'surveylabel': 'Participate to our Documentation survey!',
+    'surveytext': 'What do you think about our new Documentation Layout?',
+    'surveylink': 'https://app.useberry.com/t/yXJRVr37I7Hmdu/?ver=24.1',
+    'surveylabel': 'Take the survey',
 }
 
 # workaround for ZTD-581

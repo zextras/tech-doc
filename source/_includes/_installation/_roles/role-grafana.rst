@@ -15,7 +15,7 @@ Install Grafana
 .. code:: console
 
    # apt update
-   # apt install grafana
+   # apt install grafana 
 
 Start Grafana service and check Grafana status. If everything is work
 correctly, you can enable the service to automatically start Grafana

@@ -20,3 +20,4 @@ Administrators need during their daily activities.
    notifications
    operations
    mta
+   adminroles
