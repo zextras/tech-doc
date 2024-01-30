@@ -126,17 +126,36 @@ mandatory to keep in sync the resources on all the Proxies instances.
         pixels, with ratio **16:9**
       * The size should be **less than 800** Kb
 
+   .. grid-item-card::  Logo URL destination
+      :columns: 12
+
+      This is the URL on which the user will land when clicking the
+      logo.
+
+   .. grid-item-card:: Login URL
+      :columns: 6
+
+      The URL on which the user will land upon a successful login
+
+   .. grid-item-card:: Logout URL
+      :columns: 6
+
+      The URL shown whenever a user logs out from |product| by
+      clicking on the *Logout* item in the menu appearing when clicking
+      on the account icon on the top-right corner.
+
+
+   .. grid-item-card:: WebApp end user
+      :columns: 6
+
+      The title shown on the browser's tab when a user logs in and the
+      copyright notice shown on the user's login page
+
+   .. grid-item-card:: Admin Panel
+      :columns: 6
+
+      The title shown on the browser's tab of the Administrators and
+      the copyright notice shown on the |adminui| login page
+
 All customisations can be removed at once by clicking the
 :bdg-danger-line:`RESET` button.
-
-.. card:: URL for Logout
-
-   This URL is shown whenever a user logs out from |product| by
-   clicking on the *Logout* item in the menu appearing when clicking
-   on the account icon on the top-right corner.
-
-   It can currently be configured from the CLI only, using command
-
-   .. code:: console
-
-      zextras$ carbonio prov mcf zimbraWebClientLogoutURL "https://example.com/"

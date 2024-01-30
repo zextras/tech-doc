@@ -40,13 +40,7 @@ following commands.
    .. code:: console
 
       # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
-        carbonio_adm 127.78.0.10 20000Initialise the message dispatcher
-
-   In this case you need to restart the service:
-
-   .. code:: console
-
-      # systemctl restart carbonio-message-dispatcher
+        carbonio_adm 127.78.0.10 20000
 
 When you're done, restart the main mailbox process as the ``zextras``
 user.

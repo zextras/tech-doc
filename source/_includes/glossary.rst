@@ -18,6 +18,9 @@
      description of the functionality, including the software packages
      required is provided by :term:`Role`.
 
+   Rights
+     A **Right** is a privilege granted to an account, which allows to
+     manage other users.
 
    .. user
    

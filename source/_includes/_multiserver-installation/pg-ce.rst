@@ -1,4 +1,6 @@
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+
 .. tab-set::
 
    .. tab-item:: Ubuntu

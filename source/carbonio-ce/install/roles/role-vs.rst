@@ -10,6 +10,7 @@ required by the |vs|.
 Install Packages
 ----------------
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_roles/role-vs-ce.rst
 
 

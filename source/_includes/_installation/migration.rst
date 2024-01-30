@@ -26,7 +26,7 @@ We divide the import procedure into two main areas:
       :columns: 6
       :class-header: sd-font-weight-bold
 
-      * Import of domains, user accounts, and mailing lists
+      * Import of domains, user accounts, and distribution lists
       * (optional) Import of Classes of Services
 
    .. grid-item-card:: Data
@@ -67,8 +67,8 @@ Procedure
 
 Provisioning
   **Provisioning** refers to the set of all data and metadata about
-  the Domains, accounts, COSes, and mailing lists that are present on
-  the Source before the start of the Procedure.
+  the Domains, accounts, COSes, and distribution lists that are
+  present on the Source before the start of the Procedure.
 
 Data
   **Data** refers to the set of all the e-mails that are present on

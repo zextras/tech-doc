@@ -7,6 +7,7 @@ Docs and Editor
 Install Packages
 ----------------
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_roles/role-docs-ce.rst
 
 Bootstrap |carbonio|

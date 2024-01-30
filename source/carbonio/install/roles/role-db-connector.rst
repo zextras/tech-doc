@@ -6,6 +6,7 @@ Database Connector
 Install Packages
 ----------------
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_roles/role-db-connector.rst
 
 Bootstrap |product|

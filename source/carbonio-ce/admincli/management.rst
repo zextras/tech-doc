@@ -20,6 +20,12 @@ the nodes of a Multi-Server installation.
 :ref:`cli-features` explains how to set or check if Mails and Files
 components are enabled for a user or a COS.
 
+:ref:`le-renew` shows how to renew a Let's Encrypt-generated
+certificate, either manually or automatically.
+
+:ref:`mailboxmove` shows how to move an account from one server to
+another one.
+
 .. toctree::
    :hidden: 
 
@@ -27,3 +33,5 @@ components are enabled for a user or a COS.
    management/sshkeys
    management/custom
    management/setting-features
+   management/letsencrypt
+   management/move-account

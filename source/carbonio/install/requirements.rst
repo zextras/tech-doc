@@ -1,5 +1,5 @@
 
-.. _multi-server-req:
+.. _carbonio-requirements:
 
 Requirements
 ============
