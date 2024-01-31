@@ -129,3 +129,51 @@ If you are looking for |ce|'s documentation, please refer to its
 
          glossary
       
+Feedback Form
+-------------
+
+If you would like to help us improve our technical documentation, please fill out this form and share a suggestion on how we could improve this article.
+
+.. raw:: html
+
+   <style type="text/css">
+   form.advertising {
+        margin: 1.5em 0em;
+        padding: 1.5em 0em;
+        border-top: 1px solid rgba(0,0,0,.1);
+    }
+   form.advertising input {
+        display: block;
+        margin: 1em 0em;
+    }
+   </style>
+
+   <div>
+    <form action="https://example.com/project.html" method="POST" class="advertising">
+  
+     <!--using the select tag--> 
+     <label for="answer">Was this page helpful?</label>
+     <select name= "answer" id="answer">
+     <option value="answer" selected>Yes</option>
+     <option value="answer">No</option>
+
+     <input type="text" name="comment" size="50" placeholder="How can we improve it?" required>
+
+     <p id="urlParams"></p>
+
+     <script>
+           // Get URL parameters
+         const currentUrl = window.location.href;
+         console.log(currentUrl);
+         document.write("The URL is: " + currentUrl)
+     </script>
+
+     <!--send feedback-->
+     <div>
+     <button class="btn" type="submit">Submit</button>
+     <button class="btn" type="reset">Reset</button>
+     </div>
+
+    <!--close form tag-->
+    </form>
+   </div>
