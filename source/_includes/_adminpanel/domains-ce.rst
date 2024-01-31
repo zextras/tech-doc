@@ -65,14 +65,30 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
-.. _global-global:
+.. _ap-global-global:
 
 Global
 ~~~~~~
 
-The only setting in this page is the e-mail address that appears as
-the sender of the system notifications, which must be unique, and the
-recipients that will receive them.
+The settings in this page allow to configure both system
+notifications and domain disclaimers.
+
+.. card:: System Notifications
+
+   To configure notifications, provide the e-mail address that appears
+   as the sender of the system notifications, which must be unique,
+   and the recipients that will receive them.
+
+.. card:: Domain Disclaimer
+
+   The first options is to activate the domain disclaimer as a
+   mandatory option for all domains configured. By default, the
+   disclaimer, whose text can be configured in Section
+   :menuselection:`Domains --> Details --> Disclaimer` (see
+   :ref:`ap-disclaimer`), is added at the end of each incoming and
+   outgoing message, unless the second option, *Only allow outbound
+   disclaimers*, is enabled: in that case, the disclaimer is added
+   only to outgoing messages
 
 .. _global-delegate:
 
@@ -340,6 +356,19 @@ overridden on a per-user basis.
 
 To ease monitoring user's quota, the bottom of the page contains a
 list of accounts and of their used quota.
+
+.. _ap-disclaimer:
+
+Disclaimer
+~~~~~~~~~~
+
+A disclaimer can be added to e-mails using either textfield present in
+the page (depending if you want to use a plain text of rich
+text). Please check the |product|'s :ref:`global settings
+<ap-global-global>` for further configuration.
+
+.. hint:: The text can contain for example a legal, confidentiality,
+   or copyright notice.
 
 .. _ap-manage-domains:
 
