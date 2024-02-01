@@ -12,4 +12,4 @@ This section contains advanced topics about |mesh|.
    :maxdepth: 1
    :glob:
 
-   Mesh/*
+   mesh/*
