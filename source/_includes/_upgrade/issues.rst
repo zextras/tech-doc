@@ -2,6 +2,11 @@
 SMTP Smuggling
 ==============
 
+.. card:: Fixed in version 24.1.0
+
+   Apply these changes if you are running |product| version **23.12.0
+   or older**!
+
 This issue is a spoofing attack concerning Postfix and was
 discovered recently. Their developers are working to provide a fix for
 the issue, but you can prevent your |product| to be affected by
@@ -11,8 +16,8 @@ following these steps.
    check background information and mitigation:
    https://www.postfix.org/smtp-smuggling.html
 
-In |product|, a modified version of Postfix 3.8.3 is used, so you do
-need to change only one of the two variables, ``smtpd_discard_ehlo_keywords``.
+In |product|, a modified version of Postfix is used, so you do need to
+change only one of the two variables, ``smtpd_discard_ehlo_keywords``.
 
 #. Login to your |product| as the ``root`` user
 #. Go to directory :file:`/opt/zextras/common/conf`
