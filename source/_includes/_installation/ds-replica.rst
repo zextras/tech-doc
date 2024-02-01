@@ -213,6 +213,7 @@ To remove a Directory Replica, you need to carry out two tasks:
 
 #. On **each node** of the installation, execute the following
    command
+
    .. code:: console
 
       zextras$ zmlocalconfig -e ldap_url="ldap://srv1.example.com:389"

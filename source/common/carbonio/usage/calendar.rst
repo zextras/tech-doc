@@ -35,8 +35,11 @@ many more information can be added to an appointment:
 * The *Location* where the meeting takes place (usually the town or
   city)
 
-* One or more *Meeting Room*\ s and  *Equipment*\ s, if configured by the
-  administrator, can be selected from a drop-down menu
+* One or more *Meeting Room*\ s and *Equipment*\ s, if configured by
+  the administrator, can be selected from a drop-down menu, if they
+  are available, otherwise they are marked by an icon. In case either
+  of them is already booked, it will be shown in the drop-down menu as
+  well, although it can be selected even if it is booked. 
 
 * Whether the appointment is *private* or not. If yes, no details is
   visible to other colleagues who have access to the calendar of the
