@@ -39,7 +39,11 @@ many more information can be added to an appointment:
   the administrator, can be selected from a drop-down menu, if they
   are available, otherwise they are marked by an icon. In case either
   of them is already booked, it will be shown in the drop-down menu as
-  well, although it can be selected even if it is booked. 
+  well, although it can be selected even if it is booked.
+
+  .. warning:: You need to :bdg-primary:`SEND` an appointment to make
+     sure that the resource is correctly booked, because otherwise the
+     e-mail associated with the Resource is not notified.
 
 * Whether the appointment is *private* or not. If yes, no details is
   visible to other colleagues who have access to the calendar of the
