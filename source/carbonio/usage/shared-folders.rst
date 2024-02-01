@@ -3,4 +3,4 @@
 Shared Folders
 ==============
 
-.. include:: /common/carbonio/usage/sharedfolders.rst
+.. include:: /_includes/_usage/sharedfolders.rst

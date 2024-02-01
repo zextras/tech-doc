@@ -4,4 +4,4 @@
 Settings
 ========
 
-.. include:: /common/carbonio/usage/usage-settings.rst
+.. include:: /_includes/_usage/usage-settings.rst

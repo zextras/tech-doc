@@ -4,4 +4,4 @@
 Shared Account
 ==============
 
-.. include:: /common/carbonio/usage/accounts.rst
+.. include:: /_includes/_usage/accounts.rst
