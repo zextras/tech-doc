@@ -34,8 +34,6 @@ Supported Authentication Methods
 
 |auth| supports the following backends:
 
-- Temporary Auth link
-
 - Self service credentials management
 
   - Mobile password management
@@ -755,34 +753,6 @@ configure |product| to use the Azure portal as SAML provider.
    * ``security.logoutresponse_signed`` ,
      ``security.logoutrequest_signed``, and
      ``security.authnrequest_signed`` must all be set to **true**
-
-.. _temp_auth_link:
-
-Temporary Auth Link
--------------------
-
-A typical user-management task that an administrator needs to carry
-out is to allow the first access to the company's infrastructure to a
-new colleague or employee.
-
-When 2FA is enabled on the mailstore, a new user can not login
-immediately, therefore the solution is to provide a temporary link
-(*auth link*) that allows the user to access and configure 2FA.
-
-Administrators can generate a auth link easily from the
-Administration GUI:
-
-#. In the user's **General Information** section, in box called
-   *Temporary link*, click the :bdg:`Create a temporary link` button
-
-#. A URL link will be shown in an overlay window and can be copied by
-   clicking on the accompanying button
-
-#. The link can then be sent to the new user
-
-#. The user must access the mailbox within 12 hours before the link
-   expires
-
 
 Corner Cases of 2FA
 -------------------
