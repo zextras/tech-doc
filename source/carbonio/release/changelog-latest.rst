@@ -86,7 +86,7 @@ New Features List
    The update enables users to identify Equipment availability in the dropdown, with a visual indicator (alert icon) and a warning under the input. Users can still select unavailable Equipment. The display is validated across various scenarios, including the appointment displayer and edit mode.
 
 **IRIS-4887: Folder sorting and filtering improved**
-   Users now have the ability to customize email sorting by Subject, Size, Date, Attachment, Flag, and Important, and view Unread messages, providing a tailored approach to email management. Additionally, users can filter only unread emails within the current folder, streamlining their workflow.
+   Users now have the ability to customize email sorting, providing a tailored approach to email management.
 
 **IRIS-4975:  Change "Edit distribution list" action icon on contactInput chip**
    Two unique icons have been introduced for "Edit email" and "Edit DL" actions on the ContactInput chip, exclusively visible to the DL owner. This change addresses prior confusion and enhances the user experience.
