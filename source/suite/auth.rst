@@ -922,7 +922,7 @@ Administration GUI:
 
 #. The link can then be sent to the new user
 
-#. The user must access the mailbox within 12 hours before the link
+#. The user must access the mailbox within 5 minutes before the link
    expires
 
 .. _auth_zxauth-zimlet:
