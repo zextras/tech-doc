@@ -11,12 +11,12 @@ Install Packages
 Bootstrap |product|
 -------------------
 
-.. include:: /_includes/_multiserver-installation/bootstrap.rst
+.. include:: /_includes/_installation/bootstrap.rst
 
 Set up |mesh|
 -------------
 
-.. include:: /_includes/_multiserver-installation/mesh.rst
+.. include:: /_includes/_installation/mesh.rst
 
 .. _get-ldap-password:
 
