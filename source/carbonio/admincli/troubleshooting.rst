@@ -37,4 +37,4 @@ Let's Encrypt useful Commands
 System Troubleshooting
 ======================
 
-.. include:: /_includes/_installation/commands.rst
+.. include:: /_includes/commands.rst

@@ -64,4 +64,4 @@ to access to use the features of |product|.
 Manage Global Administrators
 ============================
 
-.. include:: /_includes/_installation/users.rst
+.. include:: /_includes/_postinstallation/users.rst
