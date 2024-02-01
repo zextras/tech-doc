@@ -145,7 +145,7 @@ Step 8: Create Main DB Role and Database for |product|
 Step 9: Bootstrap |file| Databases
 ----------------------------------
 
-.. include:: /_includes/_installation/step-conf-files-ce.rst
+.. include:: /_includes/_installation/step-bootstrap-db.rst
 
 .. include:: /_includes/_installation/complete.rst
 

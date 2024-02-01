@@ -4,4 +4,4 @@
 |wsc| :bdg-danger:`BETA`
 ========================
 
-.. include:: /common/carbonio/usage/wsc.rst
+.. include:: /_includes/_usage/wsc.rst

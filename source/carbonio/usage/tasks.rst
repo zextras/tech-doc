@@ -3,4 +3,4 @@
 Tasks
 =====
 
-.. include:: /common/carbonio/usage/tasks.rst
+.. include:: /_includes/_usage/tasks.rst

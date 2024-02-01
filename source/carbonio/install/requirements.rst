@@ -4,4 +4,4 @@
 Requirements
 ============
 
-.. include:: /_includes/_multiserver-installation/requirements.rst
+.. include:: /_includes/_installation/requirements.rst

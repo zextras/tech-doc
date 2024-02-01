@@ -3,4 +3,4 @@
 Docs
 ====
 
-.. include:: /common/carbonio/usage/docs.rst
+.. include:: /_includes/_usage/docs.rst
