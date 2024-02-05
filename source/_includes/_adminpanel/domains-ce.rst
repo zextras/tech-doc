@@ -65,10 +65,10 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
-.. _ap-global-global:
+.. _global-settings:
 
-Global
-~~~~~~
+Settings
+~~~~~~~~
 
 The settings in this page allow to configure both system
 notifications and domain disclaimers.
