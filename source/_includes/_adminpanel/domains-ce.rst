@@ -90,6 +90,13 @@ notifications and domain disclaimers.
    disclaimers*, is enabled: in that case, the disclaimer is added
    only to outgoing messages
 
+Once you change any of the options, restart amavis as the ``zextras``
+user:
+
+.. code:: console
+
+   zextras$ zmamavisdctl restart && zmconfigdctl restart
+
 .. _global-delegate:
 
 Global Delegates
@@ -370,6 +377,14 @@ text). Please check the |product|'s :ref:`global settings
 .. hint:: The text can contain for example a legal, confidentiality,
    or copyright notice.
 
+Every time you enable or disable the disclaimer or change the text,
+you need to issue the command as the ``zextras`` user on every Node
+featuring the :ref:`MTA role <role-mta-install>` 
+
+.. code:: console
+
+   zextras$ /opt/zextras/libexec/zmaltermimeconfig
+          
 .. _ap-manage-domains:
 
 Manage Domains
