@@ -86,7 +86,8 @@ notifications and domain disclaimers.
    disclaimer, whose text can be configured in Section
    :menuselection:`Domains --> Details --> Disclaimer` (see
    :ref:`ap-disclaimer`), is added at the end of each incoming and
-   outgoing message, unless the second option, *Only allow outbound
+   outgoing message (i.e., messages with a recipient external to the
+   domain), unless the second option, *Only allow outbound
    disclaimers*, is enabled: in that case, the disclaimer is added
    only to outgoing messages
 
