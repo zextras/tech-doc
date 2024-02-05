@@ -65,10 +65,10 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
-.. _ap-global-global:
+.. _global-settings:
 
-Global
-~~~~~~
+Settings
+~~~~~~~~
 
 The settings in this page allow to configure both system
 notifications and domain disclaimers.
@@ -459,7 +459,7 @@ the text written in the right-hand side is for user using the
 rich-text editor.
 
 Please check the |product|'s :ref:`global settings
-<ap-global-global>` for further configuration.
+<global-settings>` for further configuration.
 
 .. hint:: The text can contain for example a legal, confidentiality,
    or copyright notice.
