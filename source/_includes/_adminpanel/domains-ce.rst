@@ -91,7 +91,7 @@ notifications and domain disclaimers.
    only to outgoing messages
 
 Once you change any of the options, restart amavis as the ``zextras``
-user:
+user on every Node featuring the :ref:`MTA role <role-mta-install>`
 
 .. code:: console
 
