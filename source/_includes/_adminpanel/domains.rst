@@ -91,7 +91,7 @@ notifications and domain disclaimers.
    only to outgoing messages
 
 Once you change any of the options, restart amavis as the ``zextras``
-user:
+user on every Node featuring the :ref:`MTA role <role-mta-install>`
 
 .. code:: console
 
@@ -452,9 +452,13 @@ configuration.
 Disclaimer
 ~~~~~~~~~~
 
-A disclaimer can be added to e-mails using either textfield present in
-the page (depending if you want to use a plain text of rich
-text). Please check the |product|'s :ref:`global settings
+To add a disclaimer to e-mails, use either textfield present in the
+page. The text written in the left-hand side will be appended to
+e-mails of users that have the mail editor set for plain-text, while
+the text written in the right-hand side is for user using the
+rich-text editor.
+
+Please check the |product|'s :ref:`global settings
 <ap-global-global>` for further configuration.
 
 .. hint:: The text can contain for example a legal, confidentiality,
