@@ -2,14 +2,13 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-A |cos| determines which items can be accessed by a web client and
-how, setting default for a number of options. A users that belongs to
-that COS may later change some of these options from the
-:ref:`settings-comp` page on the web client.
+A |cos| determines which features and options can be accessed by a
+user, how to access them, and sets the default values for a number of
+them.
 
-To create a COS, click the :bdg-primary-line:`CREATE NEW COS` button
-and enter a name. You can then configure all the options from the
-left-hand side menu.
+To create a COS, click the :bdg-primary:`CREATE NEW COS` button
+and enter a name. You can then configure all the options by entering
+the left-hand side *Features* menu.
 
 .. _cos_info:
 
@@ -27,19 +26,18 @@ Features
 --------
 
 *Features* are settings that allow or forbid the user to access the
-most used components of |product|, both via browser and :ref:`mobile
-apps <mobile_apps>`. The Administrator can prevent users to even
-access the `Settings` module, meaning that the user can not customise
-anything in the web mail's :ref:`settings-comp`. This proves useful in
-some scenarios: for example, an organisation wants that all the
-communication of its employees has the same branding (including also Out Of
-Office replies, the visible name of the sender, and other); another
-needs that the e-mails be encrypted and does not want users to send
-plain-text e-mails, and so on.
+most used Modules of |product|, both via browser and :ref:`mobile apps
+<mobile_apps>`. The Administrator can prevent users to even access the
+`Settings` module, meaning that the user can not customise anything in
+the web mail's :ref:`settings-comp`. This proves useful in some
+scenarios: for example, an organisation wants that all the
+communication of its employees has the same branding (including also
+Out Of Office replies, the visible name of the sender, and other);
+another needs that the e-mails be encrypted and does not want users to
+send plain-text e-mails, and so on.
 
 .. hint:: Some of them can be enabled or disabled via CLI: please
    refer to section :ref:`cli-features` for more information.
-
 
 .. _cos-prefs:
 
@@ -47,7 +45,8 @@ Preferences
 -----------
 
 *Preferences* consist of generic options for the various components
-(Mails, Calendar, Contacts).
+(Mails, Calendar, Contacts). Most of these options can be overridden
+by users in their :ref:`settings-comp` page.
 
 The first is the default language to be used by the members of the
 COS, which includes also the locale. The remaining options concern
@@ -60,7 +59,7 @@ COS, which includes also the locale. The remaining options concern
   new e-mail contacts are added automatically to Contacts or how
   often to check for new e-mails
 
-* which features are available to the user: for example, whether the
+* which options are available to the user: for example, whether the
   user is allowed to forward e-mails or create a filter to forward
   specific e-mails
 
