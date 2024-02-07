@@ -519,7 +519,7 @@ modified for any individual user.
       This tab contains all the options provided during the
       :ref:`account creation <ap-new-account>`, plus other options,
       including:
-      
+
       * The ability to prevent the user from changing the
         password
 
@@ -529,10 +529,10 @@ modified for any individual user.
 
       * To move a user to another domain, which must be defined on the
         same server, by writing the new one in the **Domain Name**
-      
+
       .. note:: An Admin can not change the password of a user, only
          wipe it, so the user is forced to change it on the next login
-         attempt. 
+         attempt.
 
    .. tab-item:: Profile
 
@@ -557,7 +557,7 @@ modified for any individual user.
       .. note:: Signatures can not be assigned to :ref:`ap-resources`.
 
    .. tab-item:: Security
-      
+
       Options present here allow to manage the account security: OTP
       and policies for password and failed login. New application
       passwords and OTP tokens can be created to allow the user to
@@ -571,88 +571,57 @@ modified for any individual user.
 
    .. tab-item:: Delegates
 
-      In this tab it is possible to define for which other accounts or
-      groups this account is responsible and which permissions
-      ("Rights") are granted.  The first setting allow to define
+      In this tab it is possible to define which other accounts or
+      groups have access to the account and which permissions
+      (**"Rights"**) are granted.  The first setting allow to define
       whether to save or not a copy of the sent messages and where:
       only in delegated account's folder or also in the delegate's
       folder.
 
-      The bottom part of the tab can be seen as either a *Simplified
-      View* or and *Advances View* and allows to define permissions of
-      the delegated people. There are small differences in the two
-      views, the most relevant is how to set the permission.
-
-      .. hint:: Details on the rights that can be granted can be found
-         :ref:`in the box <delegates-rights>` below.
-
-      In the *Simplified View*, select a user or group, then the
-      permission and click the :bdg-primary-line:`ADD THE ACCOUNT`
-      button to add it as a delegate. The delegated accounts will
-      appear at the bottom of the tab.
-
-      In the *Advanced View*, a three steps procedure (:blue:`SELECT
-      MODE`, :blue:`SET RIGHTS`, and :blue:`ADD`) guides you to
-      complete the same task. The last step, similarly to the other
-      guided procedures in the |adminui|, allows to review the
-      settings before saving them.
-
-      .. note:: The user who delegates and the user who is the
-         delegated can not share the same account; in other words, it
-         is not possible to add as a delegated user the same account
-         of the user who is delegating.
-
-.. index::
-   single: Delegate Rights
-   see: User Permissions; Delegate Rights
-
-.. _delegates-rights:
-
-.. card:: Available Delegate's Rights
-
-   The Rights that can be granted to a user are basically to read,
-   write, and send emails, and to access e-mails folders. Rights can
-   be granted when :ref:`editing an account <ap-accounts>`, in the
-   dedicated :blue:`Delegates` tab. Rights can be granted using a
-   *Simplified* or an *Advanced* method.
-
-   The *Simplified* method permissions are granted using checkboxes:
-
-   * read, access with no permission to change
-   * read/write, full read and write permission
-   * send, the recipient will see as sender the selected user
-   * send on behalf, similar to the previous. the recipient will
-     see the the sender's e-mail preceded by the string *On
-     behalf of*
-
-   In the *Advanced* method, rights are given in a slight different
-   way and can be defined in a more granular way. In the :blue:`SET
-   RIGHTS` step it is possible to grant the following rights: **Send
-   Mails only**, **Read Mails only**, **Send and Read Mails**,
-   **Manage** and **Send, Read, and Manage Mails (all of the
-   above)**. Depending on the choice, the bottom part will show
-   additional options, according to the following table.
-
-   .. list-table::
-
-      * - Option
-        - Additional options
-      * - Send Mails only
-        - Send, Send on Behalf of
-      * - Read Mails only
-        - folders to share
-      * - Send and Read Mails
-        - Send, Send on Behalf of; folders to share
-      * - Manage
-        - Folders to share
-      * - Send, Read, and Manage Mails
-        - Send, Send on Behalf of; folders to share
+      To add delegation Rights to an account, please refer to the
+      dedicated section, :ref:`ap-shared-account`.
 
 At the bottom of the panel, a list of the *active sessions* appears:
 for example, if a user has logged in from three different devices and
 never logged out, three sessions will appear. When selecting one of
 them, clicking the :bdg-danger-line:`END SESSION` button will close
 that session.
+
+.. index:: ! Account status, Account; status
+
+.. _ap-account-status:
+
+.. card:: Account statuses
+
+   A user account can be in one of the following statuses.
+
+   #. **Active**. The account is enabled and ready for everyday
+      operations: the user can log in and send and receive e-mails.
+
+   #. **Under Maintenance**. This state occurs during maintenance operations
+      on the domain or account: backup, import, export, restore. The
+      user can not login, e-mails are queued on the MTA.
+
+   #. **Locked**. The account can not be accessed by the user, but
+      incoming e-mails are still delivered. This status can be set for
+      example if the user violates the terms of service or if the
+      account has been cracked
+
+   #. **Closed**. The user is not allowed to log in, incoming e-mails
+      are rejected.
+
+   #. **Pending**. This status is usually seen during the account
+      creation, when it is not yet active. User can not log in,
+      incoming e-mails are rejected.
+
+   #. **LockOut**. This is the only status that can not be set. It is
+      applied automatically when the log in attempts fail for a given
+      number of times. It is a preventive measure to avoid
+      unauthorised access of brute force attacks. The account will not
+      be accessible for a given interval (*"lockout period"*)
+
+      .. hint:: Both the number of failed attempts and the lockout
+         period can be configured.
 
 .. index:: Account; new, Account; create new
 
@@ -704,7 +673,7 @@ of the new account.
       .. note:: When assigning a COS to a user, all the values defined
          in that COS will be inherited by the user. They can be later
          changed on a user basis later, when editing the account.
-      
+
    .. grid-item::
       :columns: 12 12 6 6
 
@@ -726,39 +695,94 @@ of the new account.
       .. image:: /img/adminpanel/new-account-otp.png
          :scale: 50 %
 
-.. _ap-account-status:
+.. index:: ! Shared Account, Account; Shared, Shared Account; new
 
-.. card:: Account statuses
+.. _ap-shared-account:
 
-   A user account can be in one of the following statuses.
+Create New Shared Account
++++++++++++++++++++++++++
 
-   #. **Active**. The account is enabled and ready for everyday
-      operations: the user can log in and send and receive e-mails.
+In order to create a new Shared Account, first :ref:`create a new
+account <ap-new-account>`, then select the account and click the
+:bdg-primary-line:`EDIT` button. In the :blue:`DELEGATES` tab you can
+configure who has access to the account and assigned rights in two
+ways: a *Simplified* and an *Advanced* View.  There are small
+differences in the two views, the most relevant is how to set the
+permission.
 
-   #. **Under Maintenance**. This state occurs during maintenance operations
-      on the domain or account: backup, import, export, restore. The
-      user can not login, e-mails are queued on the MTA.
+.. hint:: Details on the rights that can be granted can be found
+   :ref:`in the box <delegates-rights>`.
 
-   #. **Locked**. The account can not be accessed by the user, but
-      incoming e-mails are still delivered. This status can be set for
-      example if the user violates the terms of service or if the
-      account has been cracked
+.. grid:: 1 1 2 2
+   :gutter: 3
 
-   #. **Closed**. The user is not allowed to log in, incoming e-mails
-      are rejected.
+   .. grid-item-card:: Simplified View
+      :columns: 12 12 6 6
 
-   #. **Pending**. This status is usually seen during the account
-      creation, when it is not yet active. User can not log in,
-      incoming e-mails are rejected.
+      In the *Simplified View*, select a user or group, then the
+      permission and click the :bdg-primary-line:`ADD THE ACCOUNT`
+      button to add it as a delegate. The delegated accounts will
+      appear at the bottom of the tab.
 
-   #. **LockOut**. This is the only status that can not be set. It is
-      applied automatically when the log in attempts fail for a given
-      number of times. It is a preventive measure to avoid
-      unauthorised access of brute force attacks. The account will not
-      be accessible for a given interval (*"lockout period"*)
+   .. grid-item-card:: Advanced View
+      :columns: 12 12 6 6
 
-      .. hint:: Both the number of failed attempts and the lockout
-         period can be configured.
+      In the *Advanced View*, click :bdg-primary-line:`ADD NEW +`, then
+      select an existing user or group (Distribution List). Proceed to
+      the next tab (:bdg-primary-line:`SET RIGHTS)` and select the
+      right to be assigned to the user or group from the drop-down
+      menu.
+
+.. note:: The user who delegates and the user who is the delegated can
+   not share the same account; in other words, it is not possible to
+   add as a delegated user the same account of the user who is
+   delegating.
+
+.. index::
+   single: Delegate Rights
+   see: User Permissions; Delegate Rights
+
+.. _delegates-rights:
+
+.. card:: Available Delegate's Rights
+
+   The Rights that can be granted to a user are basically to read,
+   write, and send emails, and to access e-mails folders. Rights can
+   be granted when :ref:`editing an account <ap-accounts>`, in the
+   dedicated :blue:`Delegates` tab. Rights can be granted using a
+   *Simplified* or an *Advanced* method.
+
+   The *Simplified* method permissions are granted using checkboxes:
+
+   * read, access with no permission to change
+   * read/write, full read and write permission
+   * send, the recipient will see as sender the selected user
+   * send on behalf, similar to the previous. the recipient will
+     see the the sender's e-mail preceded by the string *On
+     behalf of*
+
+   In the *Advanced* method, rights are given in a slight different
+   way and can be defined in a more granular way. In the :blue:`SET
+   RIGHTS` step it is possible to grant the following rights: **Send
+   Mails only**, **Read Mails only**, **Send and Read Mails**,
+   **Manage** and **Send, Read, and Manage Mails (all of the
+   above)**. Depending on the choice, the bottom part will show
+   additional options, according to the following table.
+
+   .. list-table::
+
+      * - Option
+        - Additional options
+      * - Send Mails only
+        - Send, Send on Behalf of
+      * - Read Mails only
+        - folders to share
+      * - Send and Read Mails
+        - Send, Send on Behalf of; folders to share
+      * - Manage
+        - Folders to share
+      * - Send, Read, and Manage Mails
+        - Send, Send on Behalf of; folders to share
 
 .. index:: Global Admin; new, Global Admin; create new
 
@@ -769,10 +793,10 @@ Create New Global Admin
 
 To create a new Admin, you need first to create the account, as
 explained in the :ref:`previous section <ap-new-account>`. We give
-this account the *acme_admin* name. 
+this account the *acme_admin* name.
 
 Then, from the account list, select the new account, then click the
-pencil icon to edit it. 
+pencil icon to edit it.
 
 .. _fig-create-admin:
 
@@ -784,7 +808,7 @@ pencil icon to edit it.
 To make *acme_admin* a Global Admin, in the :blue:`General` tab go to
 **Settings** and click the switch with label **This is a Global
 Administrator**, then save. The *acme_admin* user is now able to
-access the |adminui|. 
+access the |adminui|.
 
 Distribution List
 ~~~~~~~~~~~~~~~~~
