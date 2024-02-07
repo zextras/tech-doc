@@ -65,10 +65,10 @@ the :ref:`ap-domain-details` section.
 Global
 ------
 
-.. _ap-global-global:
+.. _global-settings:
 
-Global
-~~~~~~
+Settings
+~~~~~~~~
 
 The settings in this page allow to configure both system
 notifications and domain disclaimers.
@@ -86,7 +86,8 @@ notifications and domain disclaimers.
    disclaimer, whose text can be configured in Section
    :menuselection:`Domains --> Details --> Disclaimer` (see
    :ref:`ap-disclaimer`), is added at the end of each incoming and
-   outgoing message, unless the second option, *Only allow outbound
+   outgoing message (i.e., messages with a recipient external to the
+   domain), unless the second option, *Only allow outbound
    disclaimers*, is enabled: in that case, the disclaimer is added
    only to outgoing messages
 
@@ -459,7 +460,7 @@ the text written in the right-hand side is for user using the
 rich-text editor.
 
 Please check the |product|'s :ref:`global settings
-<ap-global-global>` for further configuration.
+<global-settings>` for further configuration.
 
 .. hint:: The text can contain for example a legal, confidentiality,
    or copyright notice.
