@@ -12,7 +12,8 @@ This section contains a link to the Changelog of each |product|
 component within their respective GitHub repository.
 
 * :bdg-link-danger-line:`Carbonio Shell UI
-  <https://github.com/Zextras/carbonio-shell-ui/blob/devel/CHANGELOG.md>` Web Client interface
+  <https://github.com/Zextras/carbonio-shell-ui/blob/devel/CHANGELOG.md>`
+  Web Client interface
 * :bdg-link-danger-line:`Carbonio Mails UI
   <https://github.com/Zextras/carbonio-mails-ui/blob/devel/CHANGELOG.md>`
   Mails module
@@ -52,5 +53,6 @@ component within their respective GitHub repository.
 * :bdg-link-danger-line:`Consul Client
   <https://github.com/Zextras/consul-client/blob/master/CHANGELOG.md>`
   Consul client
-
-  
+* :bdg-link-danger-line:`Carbonio Admin UI
+  <https://github.com/zextras/carbonio-admin-ui/blob/devel/CHANGELOG.md>`
+  The Admin Panel 
