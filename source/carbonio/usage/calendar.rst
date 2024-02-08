@@ -4,4 +4,4 @@
 Calendars
 =========
 
-.. include:: /common/carbonio/usage/calendar.rst
+.. include:: /_includes/_usage/calendar.rst

@@ -1,1 +1,1 @@
-../_includes/_installation/migration.rst
+../../common/carbonio/migration.rst

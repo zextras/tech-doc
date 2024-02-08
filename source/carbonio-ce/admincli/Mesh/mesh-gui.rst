@@ -1,1 +1,0 @@
-../../../carbonio/admincli/Mesh/mesh-gui.rst

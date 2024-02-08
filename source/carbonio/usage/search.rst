@@ -4,4 +4,4 @@
 Search
 ======
 
-.. include:: /common/carbonio/usage/search.rst
+.. include:: /_includes/_usage/search.rst

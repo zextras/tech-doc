@@ -5,4 +5,4 @@
 Centralised Logging Configuration
 =================================
 
-.. include:: /_includes/_multiserver-installation/logger.rst
+.. include:: /_includes/_postinstallation/logger.rst

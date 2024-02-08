@@ -1,1 +1,0 @@
-../../../carbonio/admincli/Mesh/mesh-cluster.rst

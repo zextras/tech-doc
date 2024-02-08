@@ -3,4 +3,4 @@
 Files
 =====
 
-.. include:: /common/carbonio/usage/files.rst
+.. include:: /_includes/_usage/files.rst

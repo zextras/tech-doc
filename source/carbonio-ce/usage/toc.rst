@@ -8,7 +8,7 @@
  |carbonio| User Guides
 ========================
 
-.. include:: /common/carbonio/usage/intro-ce.rst
+.. include:: /_includes/_usage/intro-ce.rst
 
 .. toctree::
    :maxdepth: 1

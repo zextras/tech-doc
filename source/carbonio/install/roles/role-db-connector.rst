@@ -12,7 +12,7 @@ Install Packages
 Bootstrap |product|
 -------------------
 
-.. include:: /_includes/_multiserver-installation/bootstrap.rst
+.. include:: /_includes/_installation/bootstrap.rst
 
 During the process, you need to provide these values, which you can
 retrieve from the first Mesh and Directory node.
@@ -25,14 +25,14 @@ retrieve from the first Mesh and Directory node.
 Join |mesh|
 -----------
 
-.. include:: /_includes/_multiserver-installation/mesh.rst
+.. include:: /_includes/_installation/mesh.rst
 
 Install and Configure pgpool
 ----------------------------
 
 Carry out the following tasks to set up pgpool.
 
-.. include:: /_includes/_multiserver-installation/pgpool.rst
+.. include:: /_includes/_installation/pgpool.rst
 
 Bootstrap |carbonio| Databases
 ------------------------------

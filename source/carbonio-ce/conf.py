@@ -62,12 +62,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_includes', 'common/cli',
-                    'common/carbonio/adminpanel',
-                    'common/carbonio/usage',
-                    'common/carbonio/web-access.rst',
-                    'common/carbonio/mesh'
-                    ]
+exclude_patterns = ['_includes', 'common/cli', 'common/carbonio' ]
 
 rst_prolog = """
 
