@@ -19,7 +19,7 @@ commands.
 
       zextras$ zmamavisdctl restart && zmconfigdctl restart
 
-.. card:: Add a *plain text* disclaimer
+.. card:: Add a *plain text* Disclaimer
 
    .. code:: console
 
