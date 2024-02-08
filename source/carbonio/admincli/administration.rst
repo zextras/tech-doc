@@ -33,6 +33,8 @@ certificate, either manually or automatically.
 :ref:`mailboxmove` shows how to move an account from one server to
 another one.
 
+:ref:`disclaimer-cli` contains useful commands to manage domain disclaimers
+     
 .. toctree::
    :hidden:
 
@@ -44,3 +46,4 @@ another one.
    administration/billing-data
    administration/letsencrypt
    administration/move-account
+   administration/domaindisclaimer
