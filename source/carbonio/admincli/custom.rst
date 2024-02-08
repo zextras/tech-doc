@@ -38,14 +38,14 @@ install :ref:`install-fonts` has been moved to the
 NGINX Templates
 ===============
 
-.. include:: /_includes/nginx.rst
+.. include:: /_includes/_admincli/nginx.rst
 
 .. _mariadb-index:
 
 Add an Index to MariaDB
 =======================
 
-.. include:: /_includes/mariadb.rst
+.. include:: /_includes/_admincli/mariadb.rst
 
 .. _install-fonts:
 

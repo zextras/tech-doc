@@ -3,4 +3,4 @@
 Mails
 =====
 
-.. include:: /common/carbonio/usage/mails.rst
+.. include:: /_includes/_usage/mails.rst

@@ -4,4 +4,4 @@
 Contacts
 ========
 
-.. include:: /common/carbonio/usage/contacts.rst
+.. include:: /_includes/_usage/contacts.rst

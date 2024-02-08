@@ -3,4 +3,4 @@
 |auth| for users
 ================
 
-.. include:: /common/carbonio/usage/auth-user.rst
+.. include:: /_includes/_usage/auth-user.rst

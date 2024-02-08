@@ -15,7 +15,7 @@ This section lists some customisations for |product|.
 NGINX templates
 ===============
 
-.. include:: /_includes/nginx.rst
+.. include:: /_includes/_admincli/nginx.rst
 
 .. _install-fonts:
 

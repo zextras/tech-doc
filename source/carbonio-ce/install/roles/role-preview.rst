@@ -29,7 +29,7 @@ retrieve from  the first Mesh and Directory node.
 Join |mesh|
 -----------
 
-.. include:: /_includes/_multiserver-installation/mesh-agent.rst
+.. include:: /_includes/_installation/mesh-agent.rst
 
 Configure Memcached
 -------------------

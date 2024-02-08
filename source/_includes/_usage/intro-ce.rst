@@ -16,6 +16,7 @@ and best practices:
   colleagues
 * :ref:`contacts-comp`, to collect and organise your e-mail addresses
 * :ref:`files-comp` is used to create, share, and collaborate on documents
+* :ref:`tasks-comp`: define simple activities and reminders
 * :ref:`search-comp` completes the `Quick Search` functionality
 * :ref:`settings-comp` is the place where to customise all |product| options
   
@@ -40,6 +41,30 @@ credentials:
    fictitious domain and mailbox. Whenever you find it, remember to
    replace it with the URL of your mailbox.
 
+.. index:: password recovery
+
+.. card:: Lost password, what to do?
+   :class-card: sd-border-2 sd-rounded-2 sd-outline-danger
+
+   In case you lose your password, there is a method to gain temporary
+   access to the webmail, provided the Administrator has activated the
+   functionality. On the login page, click the *Forget Password?* link
+   and enter your username. You will then be asked whether you still
+   have access to the configured recovery account: if so, click the
+   :bdg-primary:`SEND RECOVERY CODE` button and in a few minutes you
+   will receive a temporary token that allows you to access the
+   webmail. If the recovery address is not correct, or if you found
+   the password in the meantime, you can return to the login page.
+
+   .. note:: This procedure works for at most **ten** times, so do not
+      use it too much!
+      
+   This functionality does not yet allow you to supply a new password,
+   but you can contact the Administrator once you access the webmail
+   and ask the Administrator to change it for you: afterwards, you can
+   :ref:`Change the password <auth_change_pass>` by yourself in the
+   Settings module.
+   
 Once logged in, the user will be on the Home screen from which he can
 access all the features of his mailbox.
 

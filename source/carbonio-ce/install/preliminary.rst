@@ -4,4 +4,4 @@
 Preliminary Tasks
 =================
 
-.. include:: /_includes/_multiserver-installation/preliminary-ce.rst
+.. include:: /_includes/_installation/preliminary-ce.rst
