@@ -10,10 +10,10 @@ using the standard ``certbot`` interface or :ref:`automatically
 Manual renewal
 --------------
 
-.. hint:: Commands for the manual renew must be issued as the
+.. hint:: Commands for the manual renewal must be issued as the
    ``zextras`` user.
 
-The manual renew amounts to launch command :command:`certbot renew`
+The manual renewal amounts to launch command :command:`certbot renew`
 on the Node installing the Proxy Role.
 
 In case your |product| infrastructure has multiple Proxy Nodes,
@@ -52,7 +52,7 @@ that expire in less than 30 days.
 Automatic renewal
 -----------------
 
-.. hint:: Commands for the manual renew must be issued as the
+.. hint:: Commands for the automatic renewal must be issued as the
    ``root`` user.
 
 In order to automatically renew the Let's Encrypt certificate,
