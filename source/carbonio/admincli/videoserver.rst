@@ -118,78 +118,18 @@ are straightforward:
    - ``local_meetings_hosted`` reports the number of meetings hosted
      on the *current mailbox*.
 
-.. _vs-background:
-
-|vs| Backgrounds
-----------------
-
-It is possible to allow users to add a custom background to prevent
-showing the real background behind them, to protect their
-privacy. This features currently works only with the Chrome
-browser. To enable the feature, execute the following command
-
-.. code:: console
-          
-   zextras$ carbonio config set global teamVirtualBackgroundEnabled true
-
-
-Users will see a new button at the bottom of the call that allows them
-to modify the current background.
-   
-.. _vs-scaling:
-
-|vs| Scaling
---------------------
-
-Multiple |vs| can be run on the same infrastructure.
-
-To add a new |vs| to the configuration, run the |vs| installer on a
-new server and follow the instructions - the installer will provide
-the required commands (``carbonio chats video-server add`` with the
-appropriate parameters) needed to add the server to the infrastructure
-once packages are installed.
-
-To remove a |vs| from the configuration, use the ``carbonio chats
-video-server remove`` command from any mailbox server - this will
-remove the appropriate entries from the Zextras Config (manual package
-removal on the video server is required).
-
-.. once beta is over?
-   
-.. warning:: When using multiple video servers, meetings are instanced
-   on any of the available instances.
-
-.. card:: CLI Commands
-
-    The CLI command to manage |vs| installations is :command`carbonio
-    team` with the sub-command ``video-server`` and the parameters
-    `add` and `remove`.
-
-   ..
-      The CLI command to manage |vs| installations is ``carbonio
-      team`` with the parameter ``video-server`` and the parameters
-      `video-server add <carbonio_team_video-server_add>` and
-      `video-server remove <carbonio_team_video-server_remove>`
-      respectively.
-
-   Quick reference:
-
-   .. code:: console
-
-      zextras$ carbonio chats video-server add *videoserver.example.com* [param VALUE[,VALUE]]
-
-      zextras$ carbonio chats video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
-
 .. _vs-bandwidth-and-codecs:
 
 Bandwidth and Codecs
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
+.. note:: All the commands must be run as the ``zextras`` user.
+	  
 .. grid:: 1 1 2 4
    :gutter: 2
 
    .. grid-item-card:: Video Bandwidth
-      :columns: 12 12 6 4
+      :columns: 12 12 6 6
 
       The administrator can set the webcam stream quality and the screenshare
       stream quality specifing the relative bitrate *in Kbps*. The values must
@@ -197,19 +137,19 @@ Bandwidth and Codecs
 
       Higher values mean more quality but more used bandwidth.
 
-      -  ``carbonio config global set attribute teamChatWebcamBitrateCap value 200``:
-         is the command for the webcam stream quality/bandwidth
+      - :command:`carbonio config global set attribute
+        teamChatWebcamBitrateCap value 200` is the command for the
+        webcam stream quality/bandwidth
 
-      -  ``carbonio config global set attribute teamChatScreenBitrateCap value 200``:
-         is the command for the screenshare stream qualitybandwidth
+      - :command:`carbonio config global set attribute
+        teamChatScreenBitrateCap value 200` is the command for the
+        screenshare stream qualitybandwidth
 
-      .. tip::
-
-         By default both the webcam bandwidth and the screen sharing bandwidth
-         are set to 200 Kbps.
+      .. hint:: By default both the webcam bandwidth and the screen
+         sharing bandwidth are set to 200 Kbps.
 
    .. grid-item-card:: Video Codecs
-      :columns: 12 12 6 4
+      :columns: 12 12 6 6
 
       By default, the VP8 video codec is used. This is to ensure the best
       compatibility, as this codec is available in all supported browsers, but
@@ -235,16 +175,18 @@ Bandwidth and Codecs
       one in the list above but substituting ``value true`` with
       ``value false``.
 
-      .. container:: informalexample
+      .. card::
 
          E.g. to enable the H264 codec run:
 
-         :command:`carbonio config global set attribute teamChatVideoCodecVP8 value false`
+         * :command:`carbonio config global set attribute
+           teamChatVideoCodecVP8 value false`
 
-         :command:`carbonio config global set attribute teamChatVideoCodecH264 value true`
+         * :command:`carbonio config global set attribute
+           teamChatVideoCodecH264 value true`
 
    .. grid-item-card:: Audio Codec
-      :columns: 12 12 6 4
+      :columns: 12 12 12 12
 
       The audio codec used by the |vs| is Opus. No other codecs are
       supported, as Opus is currently the only reliable one available across
@@ -255,10 +197,32 @@ Bandwidth and Codecs
          `Wikipedia page on Opus
          <https://en.wikipedia.org/wiki/Opus_(audio_format)#Bandwidth_and_sampling_rate>`_
 
-.. _vs-advanced-settings:
+.. _vs-config:
 
-Advanced Settings
------------------
+|vs| configuration
+------------------
+
+.. _vs-background:
+
+Virtual Backgrounds
+~~~~~~~~~~~~~~~~~~~
+
+It is possible to allow users to add a custom background to prevent
+showing the real background behind them, to protect their
+privacy. This features currently works only with the Chrome
+browser. To enable the feature, execute the following command
+
+.. code:: console
+          
+   zextras$ carbonio config set global teamVirtualBackgroundEnabled true
+
+Users will see a new button at the bottom of the call that allows them
+to modify the current background.
+   
+.. _vs-audio-settings:
+
+Audio Settings
+~~~~~~~~~~~~~~
 
 The following settings influence the audio experience.
 
@@ -289,11 +253,11 @@ The following settings influence the audio experience.
       The administrator can optimize the audio sensitivity with these two
       commands:
 
-      .. code:: console
+      * :command:`carbonio config global set attribute
+        teamChatAudioLevelSensitivity value 55`
 
-         zextras$ carbonio config global set attribute teamChatAudioLevelSensitivity value 55
-
-         zextras$ carbonio config global set attribute teamChatAudioSamplingSensitivityInterval value 10
+      * :command:`carbonio config global set attribute
+        teamChatAudioSamplingSensitivityInterval value 10`
 
       The audio level sensitivity defines how much the audio should be
       normalized between all the audio sources. The value has a range
@@ -311,7 +275,27 @@ The following settings influence the audio experience.
 
       The value should be at least **0**, but it should be set to
       **10** seconds to provide the best performances.
-   
+
+.. _vs-legacy-chat:
+
+Enable Legacy Chat
+~~~~~~~~~~~~~~~~~~
+
+The legacy Chat (|carbonio| Team) is disabled by default and can be
+enabled using two commands, to be executed as the ``zextras``
+user. The first is use to enable the Chat functionality on the
+|product| infrastructure
+
+.. code:: console
+
+   zextras$ carbonio prov mc default carbonioFeatureTeamEnabled TRUE
+
+The second is used to enable the Chat for given COS, domains, or
+accounts, so adapt the following command used for the *default COS*
+
+.. code:: console
+
+   zextras$ carbonio config set cos default teamChatEnabled true
 
 .. _vs-record-meeting:
 
@@ -424,7 +408,7 @@ infrastructure at COS level.
 
 .. code:: console
 
-   zextras$ carbonio config set cos attribute teamChatEnabled value true
+   zextras$ carbonio config set cos attribute teamChatEnabled true
 
 You need then to enable the actual recording on the rooms.
 
@@ -442,6 +426,41 @@ Finally, allow all users to start a recording.
    meeting. It is however possible to enforce this policy at user or
    COS level, to allow only selected users or members of a COS to
    record meetings.
+
+.. _vs-scaling:
+
+|vs| Scaling
+------------
+
+Multiple |vs| can be run on the same infrastructure.
+
+To add a new |vs| to the configuration, run the |vs| installer on a
+new server and follow the instructions - the installer will provide
+the required commands (``carbonio chats video-server add`` with the
+appropriate parameters) needed to add the server to the infrastructure
+once packages are installed.
+
+To remove a |vs| from the configuration, use the ``carbonio chats
+video-server remove`` command from any mailbox server - this will
+remove the appropriate entries from the Zextras Config (manual package
+removal on the video server is required).
+   
+.. warning:: When using multiple video servers, meetings are instanced
+   on any of the available instances.
+
+.. card:: CLI Commands
+
+    The CLI command to manage |vs| installations is :command`carbonio
+    team` with the sub-command ``video-server`` and the parameters
+    `add` and `remove`.
+
+   Quick reference:
+
+   .. code:: console
+
+      zextras$ carbonio chats video-server add *videoserver.example.com* [param VALUE[,VALUE]]
+
+      zextras$ carbonio chats video-server remove *videoserver.example.com* [param VALUE[,VALUE]]
 
 Modify or Move a |vs| Installation
 ----------------------------------
