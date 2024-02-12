@@ -282,7 +282,7 @@ Enable Chats
 ~~~~~~~~~~~~
 
 |carbonio| Chats is disabled by default and can be enabled using two
-commands, to be executed as the ``zextras`` user. The first is use to
+commands, to be executed as the ``zextras`` user. The first is used to
 enable the functionality on the |product| infrastructure
 
 .. code:: console
