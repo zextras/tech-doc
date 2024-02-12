@@ -289,8 +289,7 @@ enable the functionality on the |product| infrastructure
 
    zextras$ carbonio prov mc default carbonioFeatureTeamEnabled TRUE
 
-The second is used to enable Chats for given COS, domains, or
-accounts, so adapt the following command used for the *default COS*
+The second is used to enable Chats for a given COS
 
 .. code:: console
 
