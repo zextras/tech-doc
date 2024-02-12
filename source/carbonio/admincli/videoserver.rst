@@ -276,10 +276,10 @@ The following settings influence the audio experience.
       The value should be at least **0**, but it should be set to
       **10** seconds to provide the best performances.
 
-.. _vs-legacy-chat:
+.. _vs-enable-chats:
 
 Enable Chats
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 |carbonio| Chat is disabled by default and can be enabled using two
 commands, to be executed as the ``zextras`` user. The first is use to

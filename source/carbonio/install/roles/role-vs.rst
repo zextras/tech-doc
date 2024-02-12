@@ -22,3 +22,18 @@ Join |mesh|
 -----------
 
 .. include:: /_includes/_installation/mesh.rst
+
+
+Advanced Configuration
+----------------------
+
+You can configure some advanced settings of the |vs|, including
+codecs, audio settings, and more from the CLI: please refer to section
+:ref:`videoserver`.
+
+Enable Chats
+~~~~~~~~~~~~
+
+The (textual) Chats is disabled by default, you can enable it by
+running a few CLI commands that you can find in section
+:ref:`vs-enable-chats`.
