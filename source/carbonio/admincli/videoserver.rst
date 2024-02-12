@@ -138,11 +138,11 @@ Bandwidth and Codecs
       Higher values mean more quality but more used bandwidth.
 
       - :command:`carbonio config global set attribute
-        teamChatWebcamBitrateCap value 200` is the command for the
+        teamChatWebcamBitrateCap 200` is the command for the
         webcam stream quality/bandwidth
 
       - :command:`carbonio config global set attribute
-        teamChatScreenBitrateCap value 200` is the command for the
+        teamChatScreenBitrateCap 200` is the command for the
         screenshare stream qualitybandwidth
 
       .. hint:: By default both the webcam bandwidth and the screen
@@ -156,34 +156,34 @@ Bandwidth and Codecs
       other codecs can be enabled:
 
       -  AV1:
-         :command:`carbonio config global set attribute teamChatVideoCodecAV1 value true`
+         :command:`carbonio config global set attribute teamChatVideoCodecAV1 true`
 
       -  H264:
-         :command:`carbonio config global set attribute teamChatVideoCodecH264 value true`
+         :command:`carbonio config global set attribute teamChatVideoCodecH264 true`
 
       -  H265:
-         :command:`carbonio config global set attribute teamChatVideoCodecH265 value true`
+         :command:`carbonio config global set attribute teamChatVideoCodecH265 true`
 
       -  VP8:
-         :command:`carbonio config global set attribute teamChatVideoCodecVP8 value true`
+         :command:`carbonio config global set attribute teamChatVideoCodecVP8 true`
 
       -  VP9:
-         :command:`carbonio config global set attribute teamChatVideoCodecVP9 value true`
+         :command:`carbonio config global set attribute teamChatVideoCodecVP9 true`
 
       Only one codec can be enabled at the time, so before enabling a new
       codec remember to disable the previous one using the same command as the
-      one in the list above but substituting ``value true`` with
-      ``value false``.
+      one in the list above but substituting ``true`` with
+      ``false``.
 
-      .. card::
+      .. card:: Example
 
-         E.g. to enable the H264 codec run:
-
-         * :command:`carbonio config global set attribute
-           teamChatVideoCodecVP8 value false`
+         To enable the H264 codec run:
 
          * :command:`carbonio config global set attribute
-           teamChatVideoCodecH264 value true`
+           teamChatVideoCodecVP8 false`
+
+         * :command:`carbonio config global set attribute
+           teamChatVideoCodecH264  true`
 
    .. grid-item-card:: Audio Codec
       :columns: 12 12 12 12
@@ -254,10 +254,10 @@ The following settings influence the audio experience.
       commands:
 
       * :command:`carbonio config global set attribute
-        teamChatAudioLevelSensitivity value 55`
+        teamChatAudioLevelSensitivity 55`
 
       * :command:`carbonio config global set attribute
-        teamChatAudioSamplingSensitivityInterval value 10`
+        teamChatAudioSamplingSensitivityInterval 10`
 
       The audio level sensitivity defines how much the audio should be
       normalized between all the audio sources. The value has a range
@@ -276,15 +276,14 @@ The following settings influence the audio experience.
       The value should be at least **0**, but it should be set to
       **10** seconds to provide the best performances.
 
-.. _vs-legacy-chat:
+.. _vs-enable-chats:
 
-Enable Legacy Chat
-~~~~~~~~~~~~~~~~~~
+Enable Chats
+~~~~~~~~~~~~
 
-The legacy Chat (|carbonio| Team) is disabled by default and can be
-enabled using two commands, to be executed as the ``zextras``
-user. The first is use to enable the Chat functionality on the
-|product| infrastructure
+|carbonio| Chat is disabled by default and can be enabled using two
+commands, to be executed as the ``zextras`` user. The first is use to
+enable the Chat functionality on the |product| infrastructure
 
 .. code:: console
 
