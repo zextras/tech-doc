@@ -34,6 +34,5 @@ codecs, audio settings, and more from the CLI: please refer to section
 Enable Chats
 ~~~~~~~~~~~~
 
-The (textual) Chats is disabled by default, you can enable it by
-running a few CLI commands that you can find in section
-:ref:`vs-enable-chats`.
+Chats is disabled by default, you can enable it by running a few CLI
+commands that you can find in section :ref:`vs-enable-chats`.
