@@ -281,15 +281,15 @@ The following settings influence the audio experience.
 Enable Chats
 ~~~~~~~~~~~~
 
-|carbonio| Chat is disabled by default and can be enabled using two
+|carbonio| Chats is disabled by default and can be enabled using two
 commands, to be executed as the ``zextras`` user. The first is use to
-enable the Chat functionality on the |product| infrastructure
+enable the functionality on the |product| infrastructure
 
 .. code:: console
 
    zextras$ carbonio prov mc default carbonioFeatureTeamEnabled TRUE
 
-The second is used to enable the Chat for given COS, domains, or
+The second is used to enable Chats for given COS, domains, or
 accounts, so adapt the following command used for the *default COS*
 
 .. code:: console
