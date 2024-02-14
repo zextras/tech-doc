@@ -5,8 +5,12 @@
  Installation Scenario
 ========================
 
-This section features a basic installation scenarios using **Five
-nodes**, which is suitable for small infrastructure.
+This section features instructions to install |product| using ansible
+and a basic installation scenarios using **Five nodes**, which is
+suitable for small infrastructure. The scenario can be installed
+manually, following instruction provided in Section
+:ref:`roles-installation`, or using the Ansible playbook and the
+installation template adapted to the scenario.
 
 More scenarios will be added in the future, to cover infrastructures
 of different size.
@@ -19,5 +23,6 @@ reliability of the *Mesh and Directory* Role.
 
 .. toctree::
    :maxdepth: 1
-              
+
+   scenarios/ansible
    scenarios/scenario-a
