@@ -1,4 +1,4 @@
-.. _ ansible:
+.. _ansible:
 
 ======================================
  |product| Installation Using Ansible
@@ -10,7 +10,7 @@ installation.
 
 To make the installation process easier and faster, this section
 introduces an alternative installation method by running an `Ansible
-<https://www.ansible.com/>`_ playbook.
+playbook <https://www.ansible.com/>`_.
 
 .. note:: Ansible is free software that allows you to automate the
    configuration and management procedures on Unix-like and Windows
