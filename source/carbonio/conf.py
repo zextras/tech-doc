@@ -62,9 +62,9 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [ '_includes', 'cli',
-                     'common/carbonio',
-                     'admincli/administration/delegatedadmin.rst' ]
+exclude_patterns = [ '_includes', 'cli', 'playbook',
+                     'admincli/administration/delegatedadmin.rst',
+                     'common/carbonio' ]
 
 rst_prolog = """
 

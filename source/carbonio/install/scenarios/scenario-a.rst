@@ -18,6 +18,9 @@ functionality.
 
    The architecture of the 5 Nodes Scenario,
 
+For your convenience, at the end of this section you find :ref:`an
+Ansible playbook <scenarioa-playbook>` to ease the installation.
+
 Roles Installation
 ==================
 
@@ -92,8 +95,6 @@ Roles Installation
       Roles installed:
               
       * :ref:`role-vs-install`
-
-
         
 Network configuration
 =====================
@@ -118,4 +119,14 @@ The following ports must be opened on the :ref:`external network
    |                   |   Streaming              |                  |
    +-------------------+--------------------------+------------------+
 
+.. _scenarioa-playbook:
 
+Ansible Playbook
+================
+
+This 5 Nodes scenario can be installed using Ansible: you need to
+setup a workstation to run Ansible playbooks (please refer to section
+:ref:`ansible-req` for directions), then download :download:`the Ansible
+playbook </playbook/carbonio-inventory-5nodes>`, replace the FQDN and
+values present in the file according to your planned |product|
+infrastructure.
