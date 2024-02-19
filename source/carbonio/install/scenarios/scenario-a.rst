@@ -2,9 +2,12 @@
  Scenario A: 5 Nodes
 =====================
 
-This scenario (depicted in :numref:`fig-5-nodes`) involves
-the presence of a single tenant and does not use the backup
-functionality.
+This scenario (depicted in :numref:`fig-5-nodes`) involves the
+presence of a single tenant and does not use the backup
+functionality. The scenario can be deployed either using an
+:ref:`scenarioa-playbook` or :ref:`manually <scenarioa-manual>`, Node
+by Node. in both cases, make sure you :ref:`configure the internal
+network <scenarioa-manual>`.
 
 .. _scenarioa-playbook:
 
@@ -12,15 +15,20 @@ Ansible Playbook
 ================
     
 This 5 Nodes scenario can be installed using Ansible\
-:far:`registered` [#f1]_: you need to setup a workstation to run Ansible
-playbooks (please refer to section :ref:`ansible-req` for directions
-and following), then download :download:`the Ansible playbook
+:far:`registered` [#f1]_: you need to setup a workstation to run
+Ansible playbooks (please refer to section :ref:`install-with-ansible`
+and following for directions on setting up the workstation), then
+download :download:`the Ansible inventory
 </playbook/carbonio-inventory-5nodes>`, replace the FQDN and values
-present in the file according to your planned |product|
-infrastructure.
+present in the file according to your planned |product| infrastructure
+(please refer to Section :ref:`ansible-env`). Once edited the
+inventory, you can :ref:`ansible-run`.
 
 .. dropdown:: Expand to see the whole template
 
+   :download:`Dowload the inventory
+   </playbook/carbonio-inventory-5nodes>`
+   
    .. literalinclude:: /playbook/carbonio-inventory-5nodes
 
 
@@ -31,8 +39,9 @@ infrastructure.
 
    The architecture of the 5 Nodes Scenario,
 
+.. _scenarioa-network:
 
-Network configuration
+Network Configuration
 =====================
 
 The following ports must be opened on the :ref:`external network
@@ -54,6 +63,8 @@ The following ports must be opened on the :ref:`external network
    | mail.example.com  | * UDP 20000/40000 Video  | srv5.example.com |
    |                   |   Streaming              |                  |
    +-------------------+--------------------------+------------------+
+
+.. _scenarioa-manual:
 
 Roles Installation
 ==================

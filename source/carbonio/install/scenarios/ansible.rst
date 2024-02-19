@@ -1,4 +1,4 @@
-.. _ansible:
+.. _install-with-ansible:
 
 ======================================
  |product| Installation Using Ansible
@@ -7,8 +7,6 @@
 Section :ref:`roles-installation` reviews all the roles that make up
 |product| and the tasks required to successfully complete the
 installation. 
-
-.. link a docs - open in new tab copyright x ansible
 
 To make the installation process easier and faster, this section
 introduces an alternative installation method based on Ansible\
@@ -178,6 +176,8 @@ The idea is that you keep the repository clean, so you can simply
 :file:`data` to keep all the information about the |carbonio|
 infrastructure(s) that you manage.
 
+.. _ansible-env:
+
 Prepare the Working Environment
 -------------------------------
 
@@ -248,8 +248,9 @@ achieve as follows::
   [defaults]
   log_path=/var/log/carbonio-ansible.log
 
+.. _ansible-run:
 
-Run the playbook
+Run the Playbook
 ----------------
 
 In order to run the script, from the

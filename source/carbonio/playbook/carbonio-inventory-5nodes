@@ -22,7 +22,7 @@ srv2.example.com
 webmailHostname=YourWebmailPublicHostname
 
 [applicationServers]
-srv3.example.com 	
+srv3.example.com
 
 [filesServers]
 srv4.example.com
@@ -44,14 +44,3 @@ srv1.example.com
 
 [syslogServer]
 srv1.example.com
-
-
-
-
-
-
-
-
-
-
-
