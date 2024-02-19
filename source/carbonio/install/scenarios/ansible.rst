@@ -6,12 +6,15 @@
 
 Section :ref:`roles-installation` reviews all the roles that make up
 |product| and the tasks required to successfully complete the
-installation.
+installation. 
+
+.. link a docs - open in new tab copyright x ansible
 
 To make the installation process easier and faster, this section
-introduces an alternative installation method by running an `Ansible
-playbook <https://www.ansible.com/>`_.
-
+introduces an alternative installation method based on Ansible\
+:far:`registered` [#f1]_ and an `Ansible playbook
+<https://docs.ansible.com/ansible/latest/index.html>`_ to be run.
+ 
 .. note:: Ansible is free software that allows you to automate the
    configuration and management procedures on Unix-like and Windows
    systems.
@@ -40,12 +43,14 @@ Linux, macOS, or BSD, satisfying the following requirements
    #. The workstation has a working installation of Ansible (see
       Section :ref:`ansible-setup` for directions)
 
-   #. The ability to launch Ansible as the ``root`` user, or as a user
-      with ``sudo`` privileges (i.e., the user must be in the
-      ``sudoers`` file)
+   #. The workstation has SSH access as the ``root`` user to all the
+      Nodes on which |product| must be installed. This is necessary
+      because Ansible needs to install packaged and carry out various
+      tasks which require high privileges.
 
-   #. The workstation has SSH access to all the Nodes on which |product|
-      must be installed
+      .. hint:: You can temporarily copy the SSH key of the user on
+         the workstation to the :file:`.ssh/authorized_keys` file of
+         the Nodes' ``root`` user
 
 .. card:: Nodes requirements
 
@@ -222,7 +227,7 @@ value for a proper configuration. Currently, these sections are
 
     [videoServers]
     #hostname public_ip_address=x.y.z.t
-
+    
   In this case, supposing that the Role is installed on
   ``srv5.example.com`` and the public IP address of the |vs| is
   172.16.12.5, this entry should look like::
@@ -230,6 +235,8 @@ value for a proper configuration. Currently, these sections are
     [videoServers]
     srv5.example.com public_ip_address=172.16.12.5
 
+  .. note:: 172.16.12.5 is a private IP, remember to replace it with
+     an actual public IP!
 
 Configure Ansible
 -----------------
@@ -271,3 +278,7 @@ your new |product| installation and execute the first necessary tasks,
 see Section :ref:`web-access`. You can then proceed to carry out further
 administration tasks, see :ref:`post-install`. In particular, if you plan
 to migrate to |product|, refer to section  :ref:`migration`.
+
+.. rubric:: Footnotes
+
+..  [#f1] Ansible is a trademark of Red Hat, Inc. in the United States and other countries.
