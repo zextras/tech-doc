@@ -450,6 +450,7 @@ modified for any individual user.
 .. tab-set::
 
    .. tab-item:: General
+      :class-label: sd-px-3
 
       This tab contains all the options provided during the
       :ref:`account creation <ap-new-account>`, plus other options,
@@ -470,12 +471,14 @@ modified for any individual user.
          attempt. 
 
    .. tab-item:: Profile
+      :class-label: sd-px-3
 
       Data in this tab represent the user's phones, company, and
       address. They can be managed by both the user and the
       Administrators.
 
    .. tab-item:: Configuration
+      :class-label: sd-px-3
 
       The options listed here allows to specify forwarding addresses
       and to prevent e-mail messages to be saved locally, if these
@@ -484,6 +487,7 @@ modified for any individual user.
       :ref:`cli-features` for more information.
 
    .. tab-item:: User Preferences
+      :class-label: sd-px-3
 
       The preferences in this tab concern how a user sees or
       interacts with the e-mails (receive, sending, composing, adding
@@ -492,6 +496,7 @@ modified for any individual user.
       .. note:: Signatures can not be assigned to :ref:`ap-resources`.
 
    .. tab-item:: Security
+      :class-label: sd-px-3
       
       Options present here allow to manage the account security: OTP
       and policies for password and failed login. New application
@@ -504,17 +509,24 @@ modified for any individual user.
       option. The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
-   .. tab-item:: Delegates
-      
-      In this tab it is possible to define which other accounts or
-      groups have access to the account and which permissions
-      (**"Rights"**) are granted.  The first setting allow to define
-      whether to save or not a copy of the sent messages and where:
-      only in delegated account's folder or also in the delegate's
-      folder.
+   .. tab-item:: Administration
+      :class-label: sd-px-3
 
-      To add delegation Rights to an account, please refer to the
-      dedicated section, :ref:`ap-shared-account`.
+      By toggling the *Global Administration* switch you can promote
+      or demote the user to Global Administrator or vice versa.
+      
+..
+      .. tab-item:: Delegates
+
+         In this tab it is possible to define which other accounts or
+         groups have access to the account and which permissions
+         (**"Rights"**) are granted.  The first setting allow to define
+         whether to save or not a copy of the sent messages and where:
+         only in delegated account's folder or also in the delegate's
+         folder.
+
+         To add delegation Rights to an account, please refer to the
+         dedicated section, :ref:`ap-shared-account`.
 
 At the bottom of the panel, a list of the *active sessions* appears:
 for example, if a user has logged in from three different devices and
@@ -569,155 +581,137 @@ In order to create a new account, click the :bdg-primary:`+` button: a
 dialog window opens and allows you to set up the basic configuration
 of the new account.
 
-.. grid:: 1 1 2 2
-   :gutter: 3
-
-   .. grid-item-card:: Step 1: Create New Account *John Smith*
-      :columns: 12 12 6 6
-
-      We create the first account for the CEO of ACME Corporation and
-      provide the following data.
-
-      * **Name**, **Middle Name Initials**, and **Surname** will be used
-        to define the user name. We use only Name (John) and Surname
-        (Smith), which result in the JohnSmith **username**.
-        
-        If the name or surname contain non-ASCII characters, an
-        automatic mapping will be enforced: for example, ``ä``, ``à``
-        will become ``a``. When there is no mapping available, message
-        :red:`Auto fill user is disabled` will be displayed: in this
-        case, the username must be filled manually. This is the case
-        for example, for letters using diacritics, cedillas or
-        German's ``ß``.
-
-        .. hint:: You can change the automatically generated username at
-           will, for example to match company policies.
-
-      * **Password** is the one used by John for the first login **only**
-
-      * **User will change password on the next login** requires that John,
-        after the first log in (and before accessing his mailbox) must
-        change the password.
-
-      We also explicitly configure the **Account Status** (see :ref:`the
-      list of possible values <ap-account-status>`), but do not change
-      the **Default COS**.
-      Click the :bdg-primary-line:`CREATE WITH THESE DATA` button to
-      create the account
-
-      .. note:: When assigning a COS to a user, all the values defined
-         in that COS will be inherited by the user. They can be later
-         changed on a user basis later, when editing the account.
+.. card:: Create New Account *John Smith*
       
-   .. grid-item::
-      :columns: 12 12 6 6
+   .. figure:: /img/adminpanel/new-account-details.png
+      :align: right
+      :scale: 50%
 
-      .. image:: /img/adminpanel/new-account-details.png
+      Account creation interface
+      
+   We create the first account for the CEO of ACME Corporation and
+   provide the following data.
 
-.. grid:: 1 1 2 2
-   :gutter: 3
+   * **Name**, **Middle Name Initials**, and **Surname** will be used
+     to define the user name. We use only Name (John) and Surname
+     (Smith), which result in the JohnSmith **username**.
 
-   .. grid-item-card:: (Optional) Step 2: Send OTP to *John Smith*
-      :columns: 12 12 6 6
+     If the name or surname contain non-ASCII characters, an
+     automatic mapping will be enforced: for example, ``ä``, ``à``
+     will become ``a``. When there is no mapping available, message
+     :red:`Auto fill user is disabled` will be displayed: in this
+     case, the username must be filled manually. This is the case
+     for example, for letters using diacritics, cedillas or
+     German's ``ß``.
 
-      Once the account has been created, you can optionally create an
-      OTP code for John Smith, that he can use to quickly access his
-      account.
+     .. hint:: You can change the automatically generated username at
+        will, for example to match company policies.
 
-   .. grid-item-card::
-      :columns: 12 12 6 6
+   * **Password** is the one used by John for the first login **only**
 
-      .. image:: /img/adminpanel/new-account-otp.png
-         :scale: 50 %
+   * **User will change password on the next login** requires that John,
+     after the first log in (and before accessing his mailbox) must
+     change the password.
 
-.. index:: ! Shared Account, Account; Shared, Shared Account; new
+   We also explicitly configure the **Account Status** (see :ref:`the
+   list of possible values <ap-account-status>`), but do not change
+   the **Default COS**.
+   Click the :bdg-primary-line:`CREATE WITH THESE DATA` button to
+   create the account
 
-.. _ap-shared-account:
+   .. note:: When assigning a COS to a user, all the values defined
+      in that COS will be inherited by the user. They can be later
+      changed on a user basis later, when editing the account.
 
-Create New Shared Account
-+++++++++++++++++++++++++
+..
+   .. index:: ! Shared Account, Account; Shared, Shared Account; new
 
-In order to create a new Shared Account, first :ref:`create a new
-account <ap-new-account>`, then select the account and click the
-:bdg-primary-line:`EDIT` button. In the :blue:`DELEGATES` tab you can
-configure who has access to the account and assigned rights in two
-ways: a *Simplified* and an *Advanced* View.  There are small
-differences in the two views, the most relevant is how to set the
-permission.
+   .. _ap-shared-account:
 
-.. hint:: Details on the rights that can be granted can be found
-   :ref:`in the box <delegates-rights>`.
+   Create New Shared Account
+   +++++++++++++++++++++++++
 
-.. grid:: 1 1 2 2
-   :gutter: 3
+   In order to create a new Shared Account, first :ref:`create a new
+   account <ap-new-account>`, then select the account and click the
+   :bdg-primary-line:`EDIT` button. In the :blue:`DELEGATES` tab you can
+   configure who has access to the account and assigned rights in two
+   ways: a *Simplified* and an *Advanced* View.  There are small
+   differences in the two views, the most relevant is how to set the
+   permission.
 
-   .. grid-item-card:: Simplified View
-      :columns: 12 12 6 6
+   .. hint:: Details on the rights that can be granted can be found
+      :ref:`in the box <delegates-rights>`.
 
-      In the *Simplified View*, select a user or group, then the
-      permission and click the :bdg-primary-line:`ADD THE ACCOUNT`
-      button to add it as a delegate. The delegated accounts will
-      appear at the bottom of the tab.
+   .. grid:: 1 1 2 2
+      :gutter: 3
 
-   .. grid-item-card:: Advanced View
-      :columns: 12 12 6 6
+      .. grid-item-card:: Simplified View
+         :columns: 12 12 6 6
 
-      In the Advanced view, click :bdg-primary-line:`ADD NEW +`, then
-      select an existing user or group (Distribution List). Proceed to
-      the next tab (:bdg-primary-line:`SET RIGHTS)` and select the
-      right to be assigned to the user or group from the drop-down
-      menu.
+         In the *Simplified View*, select a user or group, then the
+         permission and click the :bdg-primary-line:`ADD THE ACCOUNT`
+         button to add it as a delegate. The delegated accounts will
+         appear at the bottom of the tab.
 
-.. note:: The user who delegates and the user who is the delegated can
-   not share the same account; in other words, it is not possible to
-   add as a delegated user the same account of the user who is
-   delegating.
+      .. grid-item-card:: Advanced View
+         :columns: 12 12 6 6
 
-.. index::
-   single: Delegate Rights
-   see: User Permissions; Delegate Rights
+         In the Advanced view, click :bdg-primary-line:`ADD NEW +`, then
+         select an existing user or group (Distribution List). Proceed to
+         the next tab (:bdg-primary-line:`SET RIGHTS)` and select the
+         right to be assigned to the user or group from the drop-down
+         menu.
 
-.. _delegates-rights:
+   .. note:: The user who delegates and the user who is the delegated can
+      not share the same account; in other words, it is not possible to
+      add as a delegated user the same account of the user who is
+      delegating.
 
-.. card:: Available Delegate's Rights
+   .. index::
+      single: Delegate Rights
+      see: User Permissions; Delegate Rights
 
-   The Rights that can be granted to a user are basically to read,
-   write, and send emails, and to access e-mails folders. Rights can
-   be granted when :ref:`editing an account <ap-accounts>`, in the
-   dedicated :blue:`Delegates` tab. Rights can be granted using a
-   *Simplified* or an *Advanced* method.
+   .. _delegates-rights:
 
-   The *Simplified* method permissions are granted using checkboxes:
+   .. card:: Available Delegate's Rights
 
-   * read, access with no permission to change
-   * read/write, full read and write permission
-   * send, the recipient will see as sender the selected user
-   * send on behalf, similar to the previous. the recipient will
-     see the the sender's e-mail preceded by the string *On
-     behalf of*
+      The Rights that can be granted to a user are basically to read,
+      write, and send emails, and to access e-mails folders. Rights can
+      be granted when :ref:`editing an account <ap-accounts>`, in the
+      dedicated :blue:`Delegates` tab. Rights can be granted using a
+      *Simplified* or an *Advanced* method.
 
-   In the *Advanced* method, rights are given in a slight different
-   way and can be defined in a more granular way. In the :blue:`SET
-   RIGHTS` step it is possible to grant the following rights: **Send
-   Mails only**, **Read Mails only**, **Send and Read Mails**,
-   **Manage** and **Send, Read, and Manage Mails (all of the
-   above)**. Depending on the choice, the bottom part will show
-   additional options, according to the following table.
+      The *Simplified* method permissions are granted using checkboxes:
 
-   .. list-table::
+      * read, access with no permission to change
+      * read/write, full read and write permission
+      * send, the recipient will see as sender the selected user
+      * send on behalf, similar to the previous. the recipient will
+        see the the sender's e-mail preceded by the string *On
+        behalf of*
 
-      * - Option
-        - Additional options
-      * - Send Mails only
-        - Send, Send on Behalf of
-      * - Read Mails only
-        - folders to share
-      * - Send and Read Mails
-        - Send, Send on Behalf of; folders to share
-      * - Manage
-        - Folders to share
-      * - Send, Read, and Manage Mails
-        - Send, Send on Behalf of; folders to share
+      In the *Advanced* method, rights are given in a slight different
+      way and can be defined in a more granular way. In the :blue:`SET
+      RIGHTS` step it is possible to grant the following rights: **Send
+      Mails only**, **Read Mails only**, **Send and Read Mails**,
+      **Manage** and **Send, Read, and Manage Mails (all of the
+      above)**. Depending on the choice, the bottom part will show
+      additional options, according to the following table.
+
+      .. list-table::
+
+         * - Option
+           - Additional options
+         * - Send Mails only
+           - Send, Send on Behalf of
+         * - Read Mails only
+           - folders to share
+         * - Send and Read Mails
+           - Send, Send on Behalf of; folders to share
+         * - Manage
+           - Folders to share
+         * - Send, Read, and Manage Mails
+           - Send, Send on Behalf of; folders to share
 
 .. index:: Global Admin; new, Global Admin; create new
 
