@@ -14,4 +14,3 @@ Administrators need during their daily activities.
    cos
    privacy
    mta
-   adminroles
