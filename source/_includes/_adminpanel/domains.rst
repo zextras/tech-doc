@@ -692,26 +692,12 @@ of the new account.
          in that COS will be inherited by the user. They can be later
          changed on a user basis later, when editing the account.
 
-   .. grid-item::
-      :columns: 12 12 6 6
-
-      .. image:: /img/adminpanel/new-account-details.png
-
-.. grid:: 1 1 2 2
-   :gutter: 3
-
    .. grid-item-card:: (Optional) Step 2: Send OTP to *John Smith*
       :columns: 12 12 6 6
 
       Once the account has been created, you can optionally create an
       OTP code for John Smith, that he can use to quickly access his
       account.
-
-   .. grid-item-card::
-      :columns: 12 12 6 6
-
-      .. image:: /img/adminpanel/new-account-otp.png
-         :scale: 50 %
 
 .. index:: ! Shared Account, Account; Shared, Shared Account; new
 
@@ -816,17 +802,9 @@ this account the *acme_admin* name.
 Then, from the account list, select the new account, then click the
 pencil icon to edit it.
 
-.. _fig-create-admin:
-
-.. figure:: /img/adminpanel/create-global-admin.png
-   :width: 50%
-
-   Create a new Global Admin.
-
-To make *acme_admin* a Global Admin, in the :blue:`General` tab go to
-**Settings** and click the switch with label **This is a Global
-Administrator**, then save. The *acme_admin* user is now able to
-access the |adminui|.
+To make *acme_admin* a Global Admin, in the :blue:`Adminstration` tab
+click the switch labelled **Global Administration**, then save. The
+*acme_admin* user is now able to access the |adminui|.
 
 Distribution List
 ~~~~~~~~~~~~~~~~~

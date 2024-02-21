@@ -583,12 +583,6 @@ of the new account.
 
 .. card:: Create New Account *John Smith*
       
-   .. figure:: /img/adminpanel/new-account-details.png
-      :align: right
-      :scale: 50%
-
-      Account creation interface
-      
    We create the first account for the CEO of ACME Corporation and
    provide the following data.
 
@@ -727,17 +721,9 @@ this account the *acme_admin* name.
 Then, from the account list, select the new account, then click the
 pencil icon to edit it. 
 
-.. _fig-create-admin:
-
-.. figure:: /img/adminpanel/create-global-admin.png
-   :width: 50%
-
-   Create a new Global Admin.
-
-To make *acme_admin* a Global Admin, in the :blue:`General` tab go to
-**Settings** and click the switch with label **This is a Global
-Administrator**, then save. The *acme_admin* user is now able to
-access the |adminui|. 
+To make *acme_admin* a Global Admin, in the :blue:`Adminstration` tab
+click the switch labelled **Global Administration**, then save. The
+*acme_admin* user is now able to access the |adminui|.
 
 Distribution List
 ~~~~~~~~~~~~~~~~~
