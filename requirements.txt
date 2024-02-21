@@ -4,6 +4,7 @@
 
 Sphinx
 sphinx-design
+sphinx_rtd_theme
 sphinx-book-theme
 sphinx_copybutton
 sphinxcontrib-email
