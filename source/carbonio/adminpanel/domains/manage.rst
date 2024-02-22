@@ -350,6 +350,15 @@ To make *acme_admin* a Global Admin, in the :blue:`Admnistration` tab
 and click the switch with label **Global administration**, then
 save. The *acme_admin* user is now able to access the |adminui|.
 
+.. _ap-dd-admins:
+
+Delegated Domain Admins
+=======================
+
+This page shows all the accounts with some administration rights on
+the domain. To enable delegations on the domain, click the
+:bdg-primary:`INIT DOMAIN` button.
+
 .. _ap-dls:
 
 Distribution List
