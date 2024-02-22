@@ -97,8 +97,8 @@ We build on the domain created in :ref:`previous section
 
 At the bottom of the page, button :red:`DELETE DOMAIN` allows to
 delete the domain. When clicked, a dialog will open, listing all items
-defined on the domain (Accounts, distribution lists, resources, and so on)
-and that will be deleted together with the domain. Two choices are
+defined on the domain (Accounts, Distribution Lists, Resources, and so
+on) and that will be deleted together with the domain. Two choices are
 available: to **Close** the domain, keeping all items but preventing
 access, or **Remove** the domain and all its items.
 
@@ -130,7 +130,7 @@ the :bdg-primary-line:`RE-SYNC` button.
 ..
    Authentication
    ==============
-   
+
 .. index:: Certificates, Virtual host
 
 .. _ap-vhost:

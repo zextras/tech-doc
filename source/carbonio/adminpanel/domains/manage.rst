@@ -41,6 +41,7 @@ modified for any individual user.
 .. tab-set::
 
    .. tab-item:: General
+      :class-label: sd-px-3
 
       This tab contains all the options provided during the
       :ref:`account creation <ap-new-account>`, plus other options,
@@ -51,7 +52,7 @@ modified for any individual user.
 
       * To remove the user's password from LDAP
 
-      * The distribution list memberships
+      * The Distribution List memberships
 
       * To move a user to another domain, which must be defined on the
         same server, by writing the new one in the **Domain Name**
@@ -61,12 +62,14 @@ modified for any individual user.
          attempt.
 
    .. tab-item:: Profile
+      :class-label: sd-px-1
 
       Data in this tab represent the user's phones, company, and
       address. They can be managed by both the user and the
       Administrators.
 
    .. tab-item:: Configuration
+      :class-label: sd-px-1
 
       The options listed here allows to specify forwarding addresses,
       to prevent e-mail messages to be saved locally, and to enable
@@ -75,6 +78,7 @@ modified for any individual user.
       please refer to section :ref:`cli-features` for more information.
 
    .. tab-item:: User Preferences
+      :class-label: sd-px-1
 
       The preferences in this tab concern how a user sees or
       interacts with the e-mails (receive, sending, composing, adding
@@ -83,6 +87,7 @@ modified for any individual user.
       .. note:: Signatures can not be assigned to :ref:`ap-resources`.
 
    .. tab-item:: Security
+      :class-label: sd-px-1
 
       Options present here allow to manage the account security: OTP
       and policies for password and failed login. New application
@@ -96,6 +101,7 @@ modified for any individual user.
       behaves when a user fails too many consecutive logins.
 
    .. tab-item:: Delegates
+      :class-label: sd-px-1
 
       In this tab it is possible to define which other accounts or
       groups have access to the account and which permissions
@@ -109,6 +115,7 @@ modified for any individual user.
 
 
    .. tab-item:: Administration
+      :class-label: sd-px-1
 
       By toggling the *Global Administration* switch you can promote
       or demote the user to Global Administrator or vice versa.
