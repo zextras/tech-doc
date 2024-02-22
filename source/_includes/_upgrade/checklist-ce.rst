@@ -2,23 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-..
-   We define as **current version** |version|, as **previous version**
-   the version immediately before, i.e., |prev|, and as **older
-   versions** any version of |product| released before these two.
+This upgrade impacts the following *Roles* or packages, which require
+some manual interaction during the procedure.
 
-   This upgrade impacts the following *Roles* or packages, which
-   require some manual interaction during the procedure.
+|product| |version| can be installed on **Ubuntu 22.04** and **RHEL
+9**, so you can proceed with the upgrade from *Ubuntu 22.04* or *RHEL
+9* following the usual upgrade procedures: please refer to the
+respective upstream documentation: `Ubuntu
+<https://ubuntu.com/server/docs/upgrade-introduction>`_ | `RHEL
+<https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/upgrading_from_rhel_8_to_rhel_9/assembly_preparing-for-the-upgrade_upgrading-from-rhel-8-to-rhel-9>`_.
 
-There is a **breaking change** in this release, which requires some
-attention during the upgrade.
-
-Some files have been moved from one package to another one. Since
-package managers forbid a file to belong to multiple packages, an
-error will be shown during the upgrade. You need to make sure that the
-package is installed, therefore these braking change leads to a slight
-different upgrade procedure, in Step 3. You can choose between two
-alternative procedures, either with automatic or manual conflict
-resolution. They are equivalent and will ensure that all the packages
-are correctly installed.
-
+If you plan to upgrade to RHEL 9, make sure to satisfy the
+:ref:`specific requirements <rhel9-req>`.
