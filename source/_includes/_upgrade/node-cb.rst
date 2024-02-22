@@ -41,7 +41,6 @@ installation.
    .. grid-item-card:: Step 3. Update package list and
       install upgrades
       :columns: 12 12 12 12
-      :class-card: sd-border-2
 
       .. tab-set::
 
@@ -57,31 +56,6 @@ installation.
 
             .. code:: console
 
-               # dnf upgrade
-
-   .. grid-item-card:: Step 3. (Pre 23.12.0 release) Update package list and
-      install upgrades
-      :columns: 12 12 12 12
-      :class-card: sd-border-2
-
-      This procedure (suitable for those upgrading from versions older than 23.12.0) fixes the conflicts and dependencies.    
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt update && apt upgrade --fix-broken
-               # apt autoremove
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # rpm -e --nodeps carbonio-common-appserver-db
                # dnf upgrade
 
    .. grid-item-card:: Step 4. Bootstrap databases
