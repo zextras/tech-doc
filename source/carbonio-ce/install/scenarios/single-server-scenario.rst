@@ -4,14 +4,59 @@
 
 .. _single-server-install:
 
-Single-Server Installation
-==========================
+============================
+ Single-Server Installation
+============================
 
-The installation on Ubuntu 20.04 or RHEL 8 is organised in steps, some
-of which are preliminary configuration tasks, and some is optional.
-During the installation and configuration of |product|, it is
-necessary to execute commands from the command line, so make sure you
-have access to it.
+.. _single-install-auto:
+
+Automatic Script-based Installation
+===================================
+
+The installation on supported Ubuntu (**22.04** and 20.04), or RHEL
+(**9** or 8) distributions can be carried out by downloading, editing,
+and running a dedicated **bash script** on the Server on which you
+want to install |product|.
+
+The script will recognise the version of the OS and execute the steps
+that are described in :ref:`single-install-manual`.
+
+To correctly run the script, please follow these advices
+
+* Review the script and the tasks it performs before you run it
+* Run the script as the ``root`` user on the server on which you want
+  to install |product|
+* When the script successfully completes, it will print on the screen
+  the password of the |mesh| and PostgreSQL services that you will
+  need some important Administration task. Make sure that you store
+  them in a safe place!
+* For RHEL, the :ref:`rhel-requirements` are automatically satisfied
+  by the script
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      Script for Ubuntu 22.04 and 20.04
+      :download:`/scripts/install_carbonio_ce_singleserver_ubuntu.sh`
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      Script for RHEL 8 and 9
+      :download:`/scripts/install_carbonio_ce_singleserver_rhel.sh`
+
+.. _single-install-manual:
+
+Manual Installation
+===================
+
+The manual installation is organised in steps, some of which are
+preliminary configuration tasks, and some is optional.  During the
+installation and configuration of |product|, it is necessary to
+execute commands from the command line, so make sure you have access
+to it.
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser: directions can be found in
@@ -24,7 +69,7 @@ commands.
 .. _rhel-pg:
 
 Preliminary Task
------------------------
+----------------
 
 Before starting the |product| installation, we need to install and
 configure the PostgreSQL database.
