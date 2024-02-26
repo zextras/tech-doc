@@ -25,6 +25,7 @@ Directory* Role.
    :maxdepth: 1
 
    scenarios/ansible
+   scenarios/ansible-install
    scenarios/scenario-a
 
 .. rubric:: Footnotes
