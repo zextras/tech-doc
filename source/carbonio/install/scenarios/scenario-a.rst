@@ -1,3 +1,5 @@
+.. _scenario-a:
+
 =====================
  Scenario A: 5 Nodes
 =====================
@@ -18,10 +20,11 @@ This 5 Nodes scenario can be installed using Ansible\
 :far:`registered` [#f1]_: you need to setup a workstation to run
 Ansible playbooks (please refer to section :ref:`install-with-ansible`
 and following for directions on setting up the workstation), then
-download the Ansible inventory (see below this paragraph), replace the FQDN and values
-present in the file according to your planned |product| infrastructure
-(please refer to Section :ref:`ansible-env`). Once edited the
-inventory, you can :ref:`ansible-run`.
+download the Ansible inventory (see below this paragraph), replace the
+FQDN and values present in the file according to your planned
+|product| infrastructure (please refer to Section
+:ref:`ansible-inventory`). Once edited the inventory, you can
+:ref:`ansible-run`.
 
 .. dropdown:: Inventory - 5 Nodes Scenario
    :open:
@@ -78,8 +81,8 @@ Manual Roles Installation
 =========================
 
 In case you do not want to install |product| on this scenario using
-Ansible, you can proceed with the manual installation of the Roles on
-the Nodes according to the following guidelines..
+Ansible, you can proceed with the manual installation of the various
+Roles on the Nodes, according to the following guidelines. 
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
    

@@ -1,8 +1,8 @@
 .. _install-with-ansible:
 
-======================================
- |product| Installation Using Ansible
-======================================
+=================================
+ Prepare the Ansible Environment
+=================================
 
 Section :ref:`roles-installation` reviews all the roles that make up
 |product| and the tasks required to successfully complete the
@@ -19,8 +19,12 @@ introduces an alternative installation method based on Ansible\
 
 Ansible will read an `inventory file` containing the Nodes on which to
 install the various Roles and automatically execute on the selected
-Nodes all the necessary task. You only need to edit the inventory file
-and run the playbook.
+Nodes all the necessary task.
+
+Once the Control Node (see Section :ref:`ansible-setup` below) has
+been properly set up according the directions in the remainder, the
+ansible installation only requires to edit the inventory file and run
+**one CLI command** to execute the playbook.
 
 .. _ansible-req:
 
@@ -59,41 +63,20 @@ Linux, macOS, or BSD, satisfying the following requirements
 
    #. must be able to reach one another via SSH
 
-.. _ansible-download:
-
-Playbook Download and Information
-=================================
-
-The ansible playbook is publicly available on the read-only GitHub
-repository https://github.com/zextras/carbonio-install-ansible.
-
-You can clone it or better fork it. The repository will be updated
-either when new features will be made  available or other improvements
-will be implemented.
-
-Strong points of the playbook are:
-
-* It will be updated by the |zx| team
-
-* It automatically recognises the OS on the Nodes, therefore it chooses
-  the appropriate packages for your operating system, and execute only
-  those commands necessary for installation for that environment
-
-* only require to fill in a template and launch the playbook
-
 .. _ansible-setup:
 
-Setting up Ansible
-==================
+Ansible Setup
+=============
 
 This section guides you in the set up of a workstation featuring
-Ansible (the `control node`) and the |carbonio| Ansible playbook, with
-the purpose to install |product| on an existing infrastructure.
+Ansible (the **Control Node**) and the |carbonio| Ansible playbook,
+with the purpose to install |product| on an existing infrastructure.
 
 The control node should run on any Linux, macOS, or BSD box. Windows
 is supported but needs some work, therefore it is not mentioned
 here.
 
+.. _ansible-inst-linux:
 
 Install Ansible - Linux
 -----------------------
@@ -118,6 +101,8 @@ on the control node
 
    $ ansible --version
 
+.. _ansible-inst-mac:
+
 Install Ansible - macOS, BSD
 ----------------------------
 
@@ -125,6 +110,8 @@ The best installation option on these platforms is to use
 ``homebrew``, provided a **python3** interpreter is installed on the
 system. You can follow these `directions
 <https://medium.com/javarevisited/how-to-install-ansible-on-mac-2baf00d42466>`_.
+
+.. _ansible-inst-playbook:
 
 Install Playbook
 ----------------
@@ -176,10 +163,34 @@ The idea is that you keep the repository clean, so you can simply
 :file:`data` to keep all the information about the |carbonio|
 infrastructure(s) that you manage.
 
-.. _ansible-env:
+.. _ansible-playbook-info:
 
-Prepare the Working Environment
--------------------------------
+Playbook Information
+~~~~~~~~~~~~~~~~~~~~
+
+The ansible playbook is publicly available on the read-only GitHub
+repository https://github.com/zextras/carbonio-install-ansible.
+
+The repository will be updated either when new features will be made
+available or other improvements will be implemented.
+
+Strong points of the playbook are:
+
+* It will be updated by the |zx| team
+
+* It automatically recognises the OS on the Nodes, therefore it chooses
+  the appropriate packages for your operating system, and execute only
+  those commands necessary for installation for that environment
+
+* only require to fill in a template and launch the playbook using a single
+  CLI command
+
+* When more scenarios will be added, suitable inventory files will be added
+
+.. _ansible-inventory:
+
+Prepare Inventory
+-----------------
 
 The forked repository contains file :file:`inventoryname`, which you
 need to copy to the :file:`data` directory, giving it a meaningful
@@ -190,6 +201,10 @@ infrastructures)
 
    $ cd carbonio-install-ansible/
    $ cp inventoryname ../data/carbonio_inventory
+
+.. note:: If you plan to install the :ref:`5 Nodes scenario
+   <scenario-a>`, download the corresponding inventory from there an
+   save it under the :file:`data` directory.
 
 The :file:`carbonio_inventory` file contains various sections, one for
 each of the available Roles. You need to edit the file and provide the
@@ -238,6 +253,8 @@ value for a proper configuration. Currently, these sections are
   .. note:: 172.16.12.5 is a private IP, remember to replace it with
      an actual public IP!
 
+.. _ansible-conf:
+
 Configure Ansible
 -----------------
 
@@ -248,37 +265,6 @@ achieve as follows::
   [defaults]
   log_path=/var/log/carbonio-ansible.log
 
-.. _ansible-run:
-
-Run the Playbook
-----------------
-
-In order to run the script, from the
-:file:`carbonio-ansible/carbonio-install-ansible` directory, execute
-as the ``root`` user the command
-
-.. code:: console
-
-   # ansible-playbook -i ../../data/inventoryname carbonio-install.yml
-
-The playbook will execute all the tasks necessary and print the result
-on the screen. When finished, a summary of the results is
-displayed. Moreover, the passwords created during the installation are
-saved in the :file:`data` directory, along with the
-:file:`carbonio_inventory` file, so make sure
-
-* to allow only trusted persons to access to the directory
-
-* to make a backup of the directory
-
-Closing Remarks
----------------
-
-Once the script has successfully completed, you can immediately access
-your new |product| installation and execute the first necessary tasks,
-see Section :ref:`web-access`. You can then proceed to carry out further
-administration tasks, see :ref:`post-install`. In particular, if you plan
-to migrate to |product|, refer to section  :ref:`migration`.
 
 .. rubric:: Footnotes
 
