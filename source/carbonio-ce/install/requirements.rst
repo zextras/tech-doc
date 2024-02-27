@@ -15,8 +15,8 @@ Requirements are divided into groups: :ref:`system-requirements`,
 :ref:`more-requirements`.
 
 To make requirements easier to understand, we provide software
-requirements for a **Node**, which is either the only server used in
-a Single-Server or each server in a Multi-Server infrastructure.
+requirements for a **Node**, which is either the only server used in a
+Single-Server or each server in a Multi-Server infrastructure.
 
 .. _system-requirements:
 
@@ -194,12 +194,18 @@ when it becomes available.
 RHEL Specific Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. note:: If you plan to install |product| automatically on a
+   *Single-Server* using the downloadable script (see Section
+   :ref:`single-install-auto`), these requirements are checked and
+   automatically enabled if missing.
+
 .. include:: /_includes/_installation/preliminary-rh.rst
 
 .. _more-requirements:
    
-Additional Requirements
-~~~~~~~~~~~~~~~~~~~~~~~
+Additional Requirements (Manual Installation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
   commands must be executed as the ``zextras`` user (these commands
