@@ -19,13 +19,20 @@ Upgrade Checklist
 .. hint:: For improved security, to prevent any data loss, it is
    suggested to **make a backup** or **take a snapshot** (if you are
    using an hypervisor) of each Node before upgrading.
-             
+
 .. _pre-upgrade:
    
 Preliminary Tasks
 -----------------
 
 .. include:: /_includes/_upgrade/ds.rst
+
+.. _pg-upgrade:
+
+Upgrade to PostgreSQL 16
+------------------------
+
+.. include:: /_includes/_upgrade/pg.rst
 
 .. _upgrade-nodes:
 
