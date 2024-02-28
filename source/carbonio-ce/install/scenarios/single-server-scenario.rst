@@ -13,16 +13,18 @@
 Automatic Script-based Installation
 ===================================
 
-The installation on supported Ubuntu (**22.04** and 20.04), or RHEL
-(**9** or 8) distributions can be carried out by downloading, editing,
-and running a dedicated **bash script** on the Server on which you
-want to install |product|.
+The installation on supported Ubuntu (**22.04** and 20.04), or RHEL 8
+distributions can be carried out by downloading, editing, and running
+a dedicated **bash script** on the Server on which you want to install
+|product|.
 
 The script will recognise the version of the OS and execute the steps
 that are described in :ref:`single-install-manual`.
 
 To correctly run the script, please follow these advices
 
+* Make sure you have already run the script you received after
+  registering |product|, which sets up the |product| repositories
 * Review the script and the tasks it performs before you run it
 * Run the script as the ``root`` user on the server on which you want
   to install |product|
@@ -44,7 +46,7 @@ To correctly run the script, please follow these advices
    .. tab-item:: RHEL
       :sync: rhel
 
-      Script for RHEL 8 and 9
+      Script for and 9
       :download:`/scripts/install_carbonio_ce_singleserver_rhel.sh`
 
 .. _single-install-manual:
