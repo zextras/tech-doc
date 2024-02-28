@@ -27,6 +27,13 @@ Preliminary Tasks
 
 .. include:: /_includes/_upgrade/ds-ce.rst
 
+.. _pg-upgrade:
+
+Upgrade to PostgreSQL 16
+------------------------
+
+.. include:: /_includes/_upgrade/pg.rst
+
 .. _upgrade-nodes:
 
 Upgrade Nodes
