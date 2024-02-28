@@ -65,16 +65,14 @@ on top of any of these vanilla distributions:
 * **Ubuntu 20.04 LTS Server Edition**
 * **Ubuntu 22.04 LTS Server Edition**
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
-* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`)
 
 .. card:: Installation on Other Linux Distributions
 
-   While they are **not officially supported**, Linux
-   distributions compatible with Ubuntu 20.04 (e.g., Debian) and RHEL
-   8 (e.g., AlmaLinux, Rocky Linux) *may be used* as base OS for
-   |product|, provided all dependencies can be satisfied. This may
-   include adding third-party repositories or manually installing
-   software packages.
+   While they are **not officially supported**, Linux distributions
+   compatible with Ubuntu (e.g., Debian) and RHEL (e.g., AlmaLinux,
+   Rocky Linux) *may be used* as base OS for |product|, provided all
+   dependencies can be satisfied. This may include adding third-party
+   repositories or manually installing software packages.
 
    Moreover, even if |product| can be installed on an unsupported
    distribution, it may require some additional effort to have all
