@@ -1,5 +1,5 @@
 
-.. _ap-admin.roles:
+.. _ap-admin-roles:
 
 Administrative Roles Explained
 ==============================

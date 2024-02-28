@@ -221,12 +221,19 @@ of the new account.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: (Optional) Step 2: Send OTP to *John Smith*
+   .. grid-item-card:: (Optional) Step 2: Send OTP or grant rights to
+      *John Smith*
       :columns: 12 12 6 6
 
       Once the account has been created, you can optionally create an
       OTP code for John Smith, that he can use to quickly access his
       account.
+
+      You can also give the account administrative rights, that you
+      can customise. In this case, the account creation procedure
+      continues and allow to grant Global Administration Rights (see
+      Section :ref:`ap-new-admin`) or Delegated rights (see Section
+      :ref:`ap-admin-roles`.
 
    .. grid-item-card::
       :columns: 12 12 6 6
