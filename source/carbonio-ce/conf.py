@@ -146,3 +146,27 @@ linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
 # there are more options, but at the moment we don't need them. They
 # can be found at
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
+
+###
+# This custom code is required as a workaround for a build error
+# caused by extension sphinx-new-tab-link
+###
+
+from sphinx.writers.html import HTMLTranslator
+class PatchedHTMLTranslator(HTMLTranslator):
+    def starttag(self, node, tagname, *args, **attrs):
+        if (
+            tagname == "a"
+            and "target" not in attrs
+            and (
+                "external" in attrs.get("class", "")
+                or "external" in attrs.get("classes", [])
+            )
+        ):
+            attrs["target"] = "_blank"
+            attrs["ref"] = "noopener noreferrer"
+        return super().starttag(node, tagname, *args, **attrs)
+
+
+def setup(app):
+    app.set_translator("html", PatchedHTMLTranslator)
