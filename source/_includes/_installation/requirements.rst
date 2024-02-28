@@ -47,7 +47,6 @@ on top of any of these vanilla distributions:
 * **Ubuntu 20.04 LTS Server Edition**
 * **Ubuntu 22.04 LTS Server Edition**
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
-* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`)
 
 The following requirements must be satisfied before attempting to
 install |product|.
