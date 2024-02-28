@@ -25,3 +25,30 @@ which require some manual interaction during the procedure.
    *Ubuntu 20.04* to **Ubuntu 20.04**, because version 12 is no longer
    available on Ubuntu 22.04. Please follow the instructions in
    section :ref:`pg-upgrade`.
+
+.. card:: Package conflict
+
+   Due to a new package installed, you will see a conflict between the
+   installed package ``config-generator`` and the new
+   ``service-discover-template`` package on both RHEL and Ubuntu. To
+   fix this conflict, before upgrading, you need to remove the
+   existing package and install the new one. You can do this with the
+   following commands
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install service-discover-template
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # rpm -e --nodeps config-generator
+
+   Right after the command completes, proceed with the upgrade.
