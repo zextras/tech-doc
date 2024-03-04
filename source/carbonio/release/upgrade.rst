@@ -41,6 +41,18 @@ Upgrade Nodes
 
 .. include:: /_includes/_upgrade/node-cb.rst
 
+
+.. _upgrade-manual:
+
+Manual Steps
+------------
+
+
+In this release, you need to initialise again the domain(s) for
+Delegation: for each domain that has active Delegations, in the
+|adminui| go to :menuselection:`Domains --> Manage --> Delegated
+Domain Admins` and click the :bdg-primary:`INIT DOMAIN` button.
+
 .. _upgrade-ts:
 
 Troubleshooting
