@@ -2,12 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. warning:: Starting with version **23.6**, the Single-Server
-   installation of |product| is **not supported** anymore. If you have
-   a Single-Server Installation, you must add a few Nodes to your
-   installation and redistribute the Roles on them, to ensure you
-   continue to productively use |product|.
-
 The upgrade to |version| impacts the following *Roles* or packages,
 which require some manual interaction during the procedure. 
 
