@@ -184,7 +184,7 @@ Additional Requirements
   password of a database user.
 
 * Depending on the Roles installed on each Node, you need to open in
-  your firewall the ports listed in ref:`fw-ports` for all the
+  your firewall the ports listed in :ref:`fw-ports` for all the
   services you will offer. In case there are problems in the internal
   network communication, try to disable the firewall and try again: if
   it works, there was probably some firewall rule preventing
