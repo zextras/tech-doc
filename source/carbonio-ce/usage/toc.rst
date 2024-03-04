@@ -19,6 +19,7 @@
    mails
    calendar
    contacts
+   contact-groups
    files
    docs
    tasks
