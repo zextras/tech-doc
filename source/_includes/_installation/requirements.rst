@@ -245,12 +245,9 @@ These ports must be opened to allow communication with the Internet.
       :widths: 10 10 80
 
       "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
+      "465", "TCP", "Message Submission over TLS protocol "
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
-
-   .. [1] This port is still used since in some cases it is
-      considered safer than 587. It requires on-connection SSL.
 
    .. warning:: These ports should be exposed only if really needed, and
       preferably only accessible from a VPN tunnel, if possible, to
@@ -335,13 +332,10 @@ and be able to access |product|'s internal services.
       :widths: 10 10 80
 
       "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [3]_"
+      "465", "TCP", "Message Submission over TLS protocol"
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
-
-   .. [3] This port is still used since in some cases it is considered
-      safer than 587. It requires on-connection SSL.
 
 .. card:: Mailstore & Provisioning (AppServer)
 
