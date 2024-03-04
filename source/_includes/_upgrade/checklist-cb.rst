@@ -16,7 +16,7 @@ which require some manual interaction during the procedure.
 
    PostgreSQL can be upgrade from version **12** to version
    **16**. This step is **mandatory** if you also plan to upgrade from
-   *Ubuntu 20.04* to **Ubuntu 20.04**, because version 12 is no longer
+   *Ubuntu 20.04* to **Ubuntu 22.04**, because version 12 is no longer
    available on Ubuntu 22.04. Please follow the instructions in
    section :ref:`pg-upgrade`.
 
