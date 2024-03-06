@@ -14,7 +14,6 @@
    :maxdepth: 1
 
    quick-search
-   auth-user
    preview
    mails
    calendar
