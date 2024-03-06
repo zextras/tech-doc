@@ -3,14 +3,20 @@ Distribution lists can be simply created by clicking the
 configure it.
 
 In the first tab you can give a name, an address, and a description to
-the distribution list; in the second add *Members* by simply writing
-the e-mail addresses in the test field.
+the distribution list; if you want a dynamic mode, that automatically
+populates the list's members, refer to section :ref:`ap-dl-dyn`.
+
+In the second add *Members* by simply writing the e-mail addresses in
+the test field.
 
 .. hint:: E-mail addresses are auto-completed while typing.
 
 In the third tab, advanced settings can be configured, including the
-option to send notification to new members and the presence of the
-distribution list in the GAL.
+option to notify new members that they have been added to the list and
+the presence of the distribution list in the GAL. Owners can be added
+to the list: they will see the lists of which they are owners in a
+dedicated menu item, where they can edit some details and the members
+(see Section :ref:`usage-dls`).
 
 The last tab recaps the settings: now you can either go back to any of
 the previous tabs and change some of the settings, or proceed to
@@ -19,7 +25,10 @@ create the distribution list.
 Once a distribution list has been created, it can be further
 configured by adding aliases, which work like e-mail accounts,
 changing the description, notes, and members, and granting selected
-users the permission to send e-mails to the distribution list.
+users the permission to send e-mails to the distribution list or
+making them Owners
+
+.. _ap-dl-dyn:
 
 Dynamic Mode
 ------------

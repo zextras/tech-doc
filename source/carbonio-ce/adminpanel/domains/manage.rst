@@ -329,6 +329,9 @@ To make *acme_admin* a Global Admin, in the :blue:`Admnistration` tab
 and click the switch with label **Global administration**, then
 save. The *acme_admin* user is now able to access the |adminui|.
 
+
+.. index:: distribution lists; admin
+   
 .. _ap-dls:
 
 Distribution List
