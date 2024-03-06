@@ -64,7 +64,7 @@ Generate New Credentials
 .. _mesh-reset-multi:
 
 Reset |mesh| Credentials on Multi-Server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------------------
 
 On a Multi-Server, before starting the procedure it is necessary to
 identify the **Leader Node**, on which to carry out some preliminary
