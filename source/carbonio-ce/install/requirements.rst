@@ -66,6 +66,9 @@ on top of any of these vanilla distributions:
 * **Ubuntu 22.04 LTS Server Edition**
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
 
+Support for other distributions will be announced in due course
+when it becomes available.
+
 .. card:: Installation on Other Linux Distributions
 
    While they are **not officially supported**, Linux distributions
@@ -87,9 +90,8 @@ The following requirements must be satisfied before attempting to
 install |product|.
 
 #. The whole |product| infrastructure must have at least **one public
-   IP address**. The IP address must have a domain name associated,
-   that coincides with the **A record** in the DNS (e.g., ``A
-   mail.example.com``)
+   IP address**. You need to create a DNS **A record** that resolves
+   to the public IP (e.g., ``A mail.example.com``)
 
    .. hint:: You can check a domain's A record using the CLI utility
       ``host``:
@@ -113,79 +115,18 @@ install |product|.
    configured, the installation will be temporarily suspended to allow
    the change of the hostname.
    
-   See :ref:`the dedicated box below <config-dns>` for details and examples.
+#. Each Node must be able to carry out DNS resolution autonomously and
+   be able to resolve all other Nodes
 
 #. For improved security of sending emails, you should also define TXT
    records for SPF, DKIM and DMARC
 
-#. Python 3, latest version available on the Operating System chosen
-#. Perl, latest version available on the Operating System chosen
+#. Python 3, latest version available on the chosen Operating System
+
+#. Perl, latest version available on the chosen Operating System
+
 #. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
    does not contain any IPv6 entries.
-
-.. _config-dns:
-
-.. topic:: Configuring DNS resolution
-
-   To make sure that the DNS is correctly configured for both **A** and
-   **MX** records: to do so, you can use any DNS resolution server,
-   including `dnsmasq`, `systemd-resolved`, and `bind`.
-
-   We show as an example, only suitable for **demo** or **testing
-   purposes**, how to install and configure ``dnsmasq`` for DNS
-   resolution.
-
-   .. dropdown:: Example: Set up of dnsmasq for demo or test environment
-
-      Follow these simple steps to set up ``dnsmasq``. These
-      instructions are suitable for a demo or testing environment
-      only.
-
-      .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
-	      may raise a port conflict over port **53 UDP** with the
-	      default `systemd-resolved` service, so make sure to disable
-	      the latter before continuing with the next steps.
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt install dnsmasq
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf install dnsmasq
-
-      To configure it, add the following lines to file
-      :file:`/etc/dnsmasq.conf`::
-
-	           server=1.1.1.1
-	           mx-host=example.com,mail.example.com,50
-	           host-record=example.com,172.16.0.10
-	           host-record=mail.example.com,172.16.0.10
-
-      Remember to replace the **172.16.0.10** IP address with the one
-      of your server. Then, make sure that the :file:`etc/resolv.conf`
-      contains the line::
-
-        nameserver 127.0.0.1
-
-      This will ensure that the local running :command:`dnsmasq` is
-      used for DNS resolution. Finally, restart the **dnsmasq**
-      service
-
-      .. code:: console
-
-	      # systemctl restart dnsmasq
-
-Support for other distributions will be announced in due course
-when it becomes available.
 
 .. _rhel-requirements:
 
