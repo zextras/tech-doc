@@ -26,9 +26,34 @@ Global Address List
 
 .. include:: /_includes/_adminpanel/_domains/gal.rst
              
-..
-   Authentication
-   ==============
+.. _ap-auth:
+
+Authentication
+==============
+
+Options in this page control how a user can log in to |product|. The
+supported methods are *Default*, |product|'s local authentication
+backend, a *Local LDAP*, an *External LDAP*, or an *External Active
+Directory* server.
+
+If the method is different from *Default*, you need to provide the
+various parameters and check it the connection is successful.
+
+Below the methods, a few additional options are available:
+
+Show "Forget password" link in the login page
+   With this option enabled, a user can proceed to recover a lost
+   password, by sending an email address to the configured recovery
+   address (see tab **Security** in |adminui|'s :ref:`ap-accounts`
+   Section).
+
+Try local password management in case of failure with other methods
+   This option enables user to login with the *Default* auth method in
+   case other backends are not available.
+
+Enable Secure Connection
+   By disabling this option, users can login using an unencrypted HTTP
+   connection. 
 
 .. index:: Certificates, Virtual host
 
