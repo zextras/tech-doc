@@ -11,6 +11,11 @@ After you change the password, point a :ref:`supported browser
 with user ``zextras@example.com`` and password the one you just
 changed.
 
+When multiple domains are defined on |product|, you will see in the
+*username* field, the default domain: to log in to that domain, you
+can use only the username. To login to another domain, you need to
+write the whole e-mail address: username and domain.
+
 If the login is successful, go to **Domains**, select the domain
 example.com, and, under the **General Settings** and define:
 
