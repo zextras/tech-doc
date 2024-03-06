@@ -33,36 +33,34 @@
       .. tab-item:: Ubuntu
          :sync: ubuntu
 
-         Copy the following lines and paste them in file
-         :file:`/etc/pgpool2/pgpool.conf`.
+         In file :file:`/etc/pgpool2/pgpool.conf`, search for the
+         following attributes and replace the existent values with the
+         following::
 
-         .. code:: console
-
-            backend_clustering_mode = 'raw'
-            port = 5432
-            backend_hostname0 = 'localhost'
-            backend_port0 = 5433
-            backend_flag0 = 'DISALLOW_TO_FAILOVER'
-            num_init_children = 32
-            max_pool=8
-            reserved_connections=1
+           backend_clustering_mode = 'raw'
+           port = 5432
+           backend_hostname0 = 'localhost'
+           backend_port0 = 5433
+           backend_flag0 = 'DISALLOW_TO_FAILOVER'
+           num_init_children = 32
+           max_pool=8
+           reserved_connections=1
 
       .. tab-item:: RHEL
          :sync: rhel
 
-         Copy the following lines and paste them in file
-         :file:`/etc/pgpool-II/pgpool.conf`.
+         In file :file:`/etc/pgpool2/pgpool.conf`, search for the
+         following attributes and replace the existent values with the
+         following::
 
-         .. code:: console
-
-            backend_clustering_mode = 'raw'
-            port = 5432
-            backend_hostname0 = 'localhost'
-            backend_port0 = 5433
-            backend_flag0 = 'DISALLOW_TO_FAILOVER'
-            num_init_children = 32
-            max_pool=8
-            reserved_connections=1
+           backend_clustering_mode = 'raw'
+           port = 5432
+           backend_hostname0 = 'localhost'
+           backend_port0 = 5433
+           backend_flag0 = 'DISALLOW_TO_FAILOVER'
+           num_init_children = 32
+           max_pool=8
+           reserved_connections=1
 
 #. Make sure the service is enabled and restart it using these
    commands
