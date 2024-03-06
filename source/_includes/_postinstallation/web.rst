@@ -11,11 +11,6 @@ After you change the password, point a :ref:`supported browser
 with user ``zextras@example.com`` and password the one you just
 changed.
 
-When multiple domains are defined on |product|, you will see in the
-*username* field, the default domain: to log in to that domain, you
-can use only the username. To login to another domain, you need to
-write the whole e-mail address: username and domain.
-
 If the login is successful, go to **Domains**, select the domain
 example.com, and, under the **General Settings** and define:
 
@@ -57,3 +52,22 @@ to access to use the features of |product|.
       Here, you can manage server, domains, accounts, and other
       configurations. Please refer to section :ref:`adminpanel` for
       more information.
+
+
+Multiple Configured Domains
+===========================
+
+When multiple domains are defined on |product|, you will see in the
+*username* field, the default domain: to log in to that domain, you
+can use only the username. To login to another domain, you need to
+write the whole e-mail address: username and domain.
+
+.. index:: Lost password, password recovery
+
+Lost Password
+=============
+
+If the Administrator has enabled the option, you can see a link
+underneath the credential's text-fields, that allows you to recover
+the password. Before you use it, however, you need to ask the
+Administrator to set up a recovery account.
