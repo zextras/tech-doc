@@ -29,11 +29,8 @@ each user.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Enable |mobile| at COS-level
       :columns: 6
-
-      Enable |mobile| at COS-level
-      ^^^^^
 
       To enable |mobile| for all users in a COS from the CLI, run the
       command:
@@ -42,11 +39,8 @@ each user.
 
 	 # carbonio prov mc COSName zimbraFeatureMobileSyncEnabled TRUE
 
-   .. grid-item-card::
+   .. grid-item-card:: Disable |mobile| at COS-level
       :columns: 6
-
-      Disable |mobile| at COS-level
-      ^^^^^
 
       To disable |mobile| for all users in a COS from the CLI, run the
       command:
@@ -67,11 +61,9 @@ Module.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
-      :columns: 6
+   .. grid-item-card:: Enable |mobile|
 
-      Enable |mobile|
-      ^^^^^
+      :columns: 6
 
       To enable |mobile| for a given user (e.g., `user@example.com`) in a COS
       from the CLI, run the command:
@@ -80,11 +72,8 @@ Module.
 
 	 # carbonio prov ma user@example.com zimbraFeatureMobileSyncEnabled TRUE
 
-   .. grid-item-card::
+   .. grid-item-card:: Enable |mobile|
       :columns: 6
-
-      Disable |mobile|
-      ^^^^^
 
       To disable |mobile| for a given user john@example.com in a COS
       from the CLI, run the command:
@@ -353,14 +342,11 @@ Managing the SyncStates
 To manage the SyncStates of synchronised mobile devices
 use any of the following commands from the CLI:
 
-.. grid:: 1 1 2 3
+.. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
-      :columns: 4
-
-      The ``doRemoveDevice`` command
-      ^^^^^
+   .. grid-item-card:: The ``doRemoveDevice`` command
+      :columns: 6
 
       Syntax::
 
@@ -372,35 +358,29 @@ use any of the following commands from the CLI:
 
       Removes John's Appl79032X2WA4S device SyncState
 
-   .. grid-item-card::
-      :columns: 4
-
-      The ``doResetDevice`` command
-      ^^^^^
+   .. grid-item-card:: The ``doResetDevice`` command
+      :columns: 6
 
       Syntax::
 
-	carbonio mobile doResetDevice {account} [attr1 value1 [attr2 value2...
+        carbonio mobile doResetDevice {account} [attr1 value1 [attr2 value2...
 
-      Usage example:
+      Usage example::
 
-      ``carbonio mobile doResetDevice john@example.com Appl79032X2WA4S``
+        carbonio mobile doResetDevice john@example.com Appl79032X2WA4S
 
       Resets John's Appl79032X2WA4S device SyncState
 
-   .. grid-item-card::
-      :columns: 4
-
-      The ``doResetAccount`` command
-      ^^^^^^
+   .. grid-item-card:: The ``doResetAccount`` command
+      :columns: 6
 
       Syntax::
 
-	carbonio mobile doResetAccount {account}
+        carbonio mobile doResetAccount {account}
 
-      Usage example:
+      Usage example::
 
-      ``carbonio mobile doResetAccount john@example.com``
+        carbonio mobile doResetAccount john@example.com
 
       Resets all the device states for John's account
 
@@ -481,34 +461,25 @@ and added to server notifications.
 |mobile| provides three useful options to fine-tune |mobile|
 according to system performance.
 
-.. grid:: 1 1 2 3
+.. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
-      :columns: 4
-
-      Notifications Latency
-      ^^^^
+   .. grid-item-card:: Notifications Latency
+      :columns: 12
 
       ``ZxMobile_NotificationsLatency`` represents the seconds of
       delay between an event on the server and its notification to the
       mobile device.
 
-   .. grid-item-card::
-      :columns: 4
-
-      Use Instant Notifications
-      ^^^^
+   .. grid-item-card:: Use Instant Notifications
+      :columns: 12
 
       ``ZxMobile_UseInstantNotficiations`` enables or disables instant
       notifications. If **true**, it also overrides ``Notifications
       Latency``.
 
-   .. grid-item-card::
-      :columns: 4
-
-      Max Ping Heartbeat
-      ^^^^
+   .. grid-item-card:: Max Ping Heartbeat
+      :columns: 12
 
       ``ZxMobile_MaxPingHeartbeat`` defines the maximum interval
       between :command:`ping` commands.
@@ -591,51 +562,45 @@ dedicated commands.
 .. grid:: 1 1 2 2
    :gutter: 2
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
-
-      getAllEASFilters
-      ^^^^
+   .. grid-item-card:: ``getAllEASFilters``
+      :columns: 12 
 
       This command lists all existing filters.
 
       Sample Output::
 
-	filters
+         filters
 
-		 ID                                                          0
-		 mode                                                        fixed
-		 rule                                                        [type = or; rules = [[type = contains; rule = outlook/] OR [type = contains; rule = microsoft.outlook]]
-		 easversions                                                 14.0
-		 blocking                                                    true
+             ID                                                          0
+             mode                                                        fixed
+             rule                                                        [type = or; rules = [[type = contains; rule = outlook/] OR [type = contains; rule = microsoft.outlook]]
+             easversions                                                 14.0
+             blocking                                                    true
 
-		 ID                                                          1
-		 mode                                                        limit
-		 rule                                                        [type = contains; rule = samsung]
-		 easversions                                                 2.5
-		 blocking                                                    false
+             ID                                                          1
+             mode                                                        limit
+             rule                                                        [type = contains; rule = samsung]
+             easversions                                                 2.5
+             blocking                                                    false
 
-		 ID                                                          2
-		 mode                                                        limit
-		 rule                                                        [type = always]
-		 easversions                                                 14.1
-		 blocking                                                    false
+             ID                                                          2
+             mode                                                        limit
+             rule                                                        [type = always]
+             easversions                                                 14.1
+             blocking                                                    false
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
+   .. grid-item-card:: ``doAddEASFilter``
+      :columns: 12
+   
+      This command adds a new EAS filter.
 
-      doAddEASFilter
-      ^^^^
+      Syntax::
 
-      This command adds a new EAS filter::
-
-	Syntax:
-
-	carbonio mobile doAddEASFilter {and|or|regex|contains|account} {text|user@example.com|account=otheruser@example.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
+        carbonio mobile doAddEASFilter {and|or|regex|contains|account} {text|user@example.com|account=otheruser@example.com,contains=android} {add|subtract|fixed|limit} {easversions} [attr1 value1 [attr2 value2...]]
 
       Usage example::
 
-	  carbonio mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
+        carbonio mobile doAddEASFilter contains android fixed 2.5,12.0,14.1
 
       Adds a protocol filter that will restrict the pool of available
       EAS versions to 2.5, 12.0 and 14.1 if the user agent name
@@ -643,47 +608,41 @@ dedicated commands.
 
       ::
 
-	   carbonio mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
+         carbonio mobile doAddEASFilter and account=user@example.com,contains=android fixed 14.1 blocking true
 
       Adds a protocol filter that will restrict the pool of available
       EAS versions to 14.1 if the user agent name contains the string
       'android' only for user@example.com. No more EAS filters will be
       evaluated after this one due to the 'blocking' directive.
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
-
-      doDeleteEASFilter
-      ^^^^
+   .. grid-item-card:: ``doDeleteEASFilter``
+      :columns: 12
 
       This command deletes an existing EAS Filter.
 
       Syntax::
 
-	carbonio mobile doDeleteEASFilter _id_
+        carbonio mobile doDeleteEASFilter _id_
 
       Usage example::
 
-	carbonio mobile doDeleteEASFilter 2
+        carbonio mobile doDeleteEASFilter 2
 
       Removes the filter with id = 2.
 
-   .. grid-item-card::
-      :columns: 12 12 12 6
-
-      doMoveEASFilter
-      ^^^^
+   .. grid-item-card:: ``doMoveEASFilter``
+      :columns: 12
 
       This command is used to move EAS filters to a different position in the
       filter queue.
 
       Syntax::
 
-	carbonio mobile doMoveEASFilter {from} {to}
+        carbonio mobile doMoveEASFilter {from} {to}
 
       Usage example::
 
-	carbonio mobile doMoveEASFilter 0 5
+        carbonio mobile doMoveEASFilter 0 5
 
       Moves the filter with id = 0 to the position 5.
 
@@ -724,54 +683,44 @@ commands:
 .. grid::
    :gutter: 3
 
-   .. grid-item-card::
-      :columns: 4
-
-      doAddAccountLogger
-      ^^^^
+   .. grid-item-card:: ``doAddAccountLogger``
+      :columns: 12
 
       Syntax::
 
-	carbonio mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
+        carbonio mobile doAddAccountLogger {account} {debug|info|warn|err|crit} {log_file} [attr1 value1 [attr2 value2...]]
 
       Usage example::
 
-	carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger
+        carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger
 
       Creates an info account logger for john's account to file /tmp/john_logger
 
       ::
 
-	 carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
+	      carbonio mobile doaddaccountlogger john@example.com info /tmp/john_logger window_size 1
 
       Creates an info account logger for john's account to file /tmp/john_logger with window size set to 1.
 
-   .. grid-item-card::
-      :columns: 4
-
-      doRemoveLogger
-      ^^^^
-
+   .. grid-item-card:: ``doRemoveLogger``
+      :columns: 12
 
       Syntax::
 
-	carbonio mobile doRemoveLogger {logger_id|"all_loggers"}
+        carbonio mobile doRemoveLogger {logger_id|"all_loggers"}
 
       Usage example::
 
-	carbonio mobile doremovelogger 5
+        carbonio mobile doremovelogger 5
 
       Removes the account logger with ID = 5
 
-   .. grid-item-card::
-      :columns: 4
-
-      getAccountLoggers
-      ^^^^
+   .. grid-item-card:: ``getAccountLoggers``
+      :columns: 12
 
       Sample output::
 
-	carbonio mobile getAccountLoggers
+        carbonio mobile getAccountLoggers
 
 	      loggers
 
@@ -822,14 +771,11 @@ The ABQ feature is composed of three main logical components:
 
 - a set of CLI tools
 
-.. grid::
-   :gutter: 2
+.. grid:: 1 1 2 2
+   :gutter: 3
 
-   .. grid-item-card::
-      :columns: 4
-
-      Device Control List
-      ^^^^
+   .. grid-item-card:: Device Control List
+      :columns: 12
 
       The Device Control List, also known as the "ABQ List", holds the
       information about allowed devices within the config engine. Devices can
@@ -839,15 +785,12 @@ The ABQ feature is composed of three main logical components:
       It is also possible to further limit access by limiting the accounts
       that can synchronise with the server on a specific device.
 
-      .. note:: On module startup, if the Device Control List is empty all
-	 mobile devices previously recognized by the |carbonio| server will be
-	 imported as **Allowed**.
+      .. note:: On module startup, if the Device Control List is empty
+	      all mobile devices previously recognized by the |carbonio|
+	      server will be imported as **Allowed**.
 
-   .. grid-item-card::
-      :columns: 4
-
-      Authorization Engine
-      ^^^^^
+   .. grid-item-card:: Authorization Engine
+      :columns: 12
 
       The Authorization Engine takes care of checking devices against the
       Device Control List and setting their ABQ status to the appropriate
@@ -857,11 +800,8 @@ The ABQ feature is composed of three main logical components:
       device id. It applies to a specific account connecting using that device
       if it has the format device_id/account_id or device_id/accountName
 
-   .. grid-item-card::
-      :columns: 4
-
-      CLI Toolset.
-      ^^^^^
+   .. grid-item-card:: CLI Toolset
+      :columns: 12
 
       The CLI Toolset allows administrators to interact with the device
       control list and with the synchronization status of a device,
@@ -898,47 +838,46 @@ Global for all the cluster.
    :gutter: 1
 
    .. grid-item-card:: Interactive
-      :columns: 4
+      :columns: 6
 
       After authenticating the user and checking their account status
       for safety reasons, the Device Control system will check the
       "Device ID" sent by the device against the list of allowed
       devices:
 
-      -  if the device/user couple is in the "allowed" list the
-	 synchronization will continue.
+      - if the device/user couple is in the "allowed" list the
+	     synchronization will continue.
 
-      -  if the device/user couple is not in the device list but device is in
-	 the "allowed" list the synchronization will continue.
+      - if the device/user couple is not in the device list but device
+        is in the "allowed" list the synchronization will continue.
 
-      -  if the device is not in the “allowed” list the synchronization will
-	 be paused, a dummy email notifying the user of its "Quarantine"
-	 status will be sent and the connection will be set to "Quarantine"
-	 status.
+      - if the device is not in the “allowed” list the synchronization
+	     will be paused, a dummy email notifying the user of its
+	     "Quarantine" status will be sent and the connection will be
+	     set to "Quarantine" status.
 
       Administrators can be notified at regular intervals, and every
       notification email will only include new Quarantined devices. They will
       then be able to allow or deny the synchronization for each device using
       the appropriate CLI tools.
 
-
    .. grid-item-card:: Strict
-      :columns: 4
+      :columns: 6
 
       After authenticating the user and checking their account status for
       safety reasons, the Device Control system will check the "Device ID"
       sent by the device against the list of allowed devices:
 
       - if the device/user couple or the device by itself is in the
-	"allowed" list the synchronization will continue.
+        "allowed" list the synchronization will continue.
 
       - if the device is not in the “allowed” list the synchronization
-	will be put in "Blocked" state, no data will be synchronized and
-	a dummy email notifying the user of the device’s "Blocked" status
-	will be sent.
+        will be put in "Blocked" state, no data will be synchronised
+        and a dummy email notifying the user of the device’s "Blocked"
+        status will be sent.
 
    .. grid-item-card::  Permissive
-      :columns: 4
+      :columns: 6
 
       The Authorization Engine is not active, so after authenticating
       the user and checking their account status for safety reasons,
@@ -948,7 +887,7 @@ Global for all the cluster.
 
 
    .. grid-item-card:: Disabled
-      :columns: 12
+      :columns: 6
 
       ABQ is disabled, no checks are triggered and no policies are
       enforced.

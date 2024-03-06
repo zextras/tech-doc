@@ -58,26 +58,14 @@ installation.
 
                # dnf upgrade
 
-   .. grid-item-card:: Step 4. Bootstrap databases
-      :columns: 12 12 6 6
-
-      This step must be performed exclusively on the DB Connection
-      node.
-
-      * |carbonio| Advanced
-
-        .. code:: console
-
-           # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-   .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 6. Reboot
+   .. grid-item-card:: Step 5. Reboot
       :columns: 12 12 6 6
 
       Once the upgrade has completed successfully, run command:

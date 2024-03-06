@@ -19,6 +19,7 @@
    mails
    calendar
    contacts
+   contact-groups
    chats
    files
    docs

@@ -7,6 +7,8 @@ the current release, and their resolution or mitigation. We will
 advise promptly when the issues listed here have a definite solution.
 
 
-.. include:: /_includes/_upgrade/issues.rst
+*****
 
+.. div:: sd-font-weight-bold sd-fs-5
 
+   This release has no known issues.
