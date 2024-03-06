@@ -50,6 +50,10 @@ modified for any individual user.
       * The ability to prevent the user from changing the
         password
 
+        .. note:: An Admin can not change the password of a user, only
+           wipe it, so the user is forced to change it on the next
+           login attempt.
+
       * To remove the user's password from LDAP
 
       * The Distribution List memberships
@@ -57,10 +61,16 @@ modified for any individual user.
       * To move a user to another domain, which must be defined on the
         same server, by writing the new one in the **Domain Name**
 
-      .. note:: An Admin can not change the password of a user, only
-         wipe it, so the user is forced to change it on the next login
-         attempt.
+      * The ABQ status: Strict, Permissive, Interactive, or Disabled
+        (see :ref:`mobile_abq_modes` for details)
 
+      * How many OTP devices the user has.
+      
+      At the bottom, it is possible to see all the user's open
+      sessiona, which can be terminated by selecting one and clicking
+      :bdg-danger-line:`END SESSION` button on the top right of the
+      list.
+       
    .. tab-item:: Profile
       :class-label: sd-px-1
 
