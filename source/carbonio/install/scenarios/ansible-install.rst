@@ -36,7 +36,7 @@ install on 5 nodes, whose FQDNs are ``srv1.example.com`` to
   [dbsConnectorServers]
   srv1.example.com
 
-If you do want to install a Role, simply leave the corresponding
+If you do not want to install a Role, simply leave the corresponding
 section empty.
 
 For some of the Roles you need to provide some additional
@@ -70,24 +70,34 @@ value for a proper configuration. Currently, these sections are
 
 In order to run the script, from the
 :file:`carbonio-ansible/carbonio-install-ansible` directory, execute
-as the ``root`` user the command
+the command
 
 .. code:: console
 
-   # ansible-playbook -i ../../data/inventoryname carbonio-install.yml
+   $ ansible-playbook -u root -i ../../data/carbonio_inventory carbonio-install.yml
 
-Make sure to replace :file:`inventoryname` with the proper name of the
+Make sure to replace :file:`carbonio_inventory` with the proper name of the
 inventory you want to install.
 
 The playbook will execute all the tasks necessary and print the result
 on the screen. When finished, a summary of the results is
 displayed. Moreover, the passwords created during the installation are
-saved in the :file:`data` directory, along with the
-:file:`carbonio_inventory` file, so make sure
+saved in the :file:`carbonio-ansible/data` directory, along with the
+:file:`carbonio_inventory` file, so you have them always at your
+disposal when you need them, for example during upgrades or routine
+tasks. To protect them, make sure:
 
-* to allow only trusted persons to access to the directory
+* to allow only trusted persons the access to the directory
 
 * to make a backup of the directory
+
+.. card:: Failed inventory installation
+
+   If for any reason the installation fails, you can check the log
+   file (to set it up, see Section :ref:`ansible-conf`) to see what
+   happened, fix it, then execute again the inventory. Ansible will
+   recognise the steps already successfully carried out and run only
+   those that failed.
 
 Closing Remarks
 ===============
