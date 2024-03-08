@@ -34,9 +34,9 @@ Requirements
 You can run the Ansible playbook form any workstation, which runs
 Linux, macOS, or BSD, satisfying the following requirements
 
-.. note:: Using Ansible from a Windows workstation is not
-   straightforward: If you want to use the Ansible playbook from a
-   Windows workstation, please read `the official Windows FAQ
+.. note:: Using Ansible from a Windows workstation is not immediate:
+   If you want to use the Ansible playbook from a Windows workstation,
+   please read `the official Windows FAQ
    <https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html#windows-faq-ansible>`_
    for setting it up.
 
@@ -47,8 +47,8 @@ Linux, macOS, or BSD, satisfying the following requirements
 
    #. The workstation has SSH access as the ``root`` user to all the
       Nodes on which |product| must be installed. This is necessary
-      because Ansible needs to install packages and carry out various
-      tasks which require root privileges.
+      because Ansible needs to install packaged and carry out various
+      tasks which require high privileges.
 
       .. hint:: You can temporarily copy the SSH key of the user on
          the workstation to the :file:`.ssh/authorized_keys` file of
