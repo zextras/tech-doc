@@ -47,11 +47,44 @@ Upgrade Nodes
 Manual Steps
 ------------
 
+.. _upgrade-monit:
 
+|monit|
+~~~~~~~
+
+While upgrading the ``carbonio-prometheus`` package, you will be
+prompted with the following text::
+  
+  Configuration file '/etc/carbonio/carbonio-prometheus/prometheus.yml'
+  ==> Modified (by you or by a script) since installation.
+  ==> Package distributor has shipped an updated version.
+  What would you like to do about it ?  Your options are:
+  Y or I  : install the package maintainer's version
+  N or O  : keep your currently-installed version
+
+You must replace the existing file **with the new one**, therefore
+answer :kbd:`Y` or :kbd:`I`.
+
+.. _upgrade-delegated:
+
+Delegated Administrators
+~~~~~~~~~~~~~~~~~~~~~~~~
+          
 In this release, you need to initialise again the domain(s) for
 Delegation: for each domain that has active Delegations, in the
 |adminui| go to :menuselection:`Domains --> Manage --> Delegated
 Domain Admins` and click the :bdg-primary:`INIT DOMAIN` button.
+
+.. _update-backup:
+
+Backup
+~~~~~~
+
+If the Global Administrator receives an e-mail notification about some
+accounts not migrated to use the new ``backupEnabled`` attribute, run
+the following command to fix the issue.
+
+
 
 ..
    .. _upgrade-ts:

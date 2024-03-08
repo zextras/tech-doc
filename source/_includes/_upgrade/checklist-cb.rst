@@ -2,8 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The upgrade to |version| impacts the following *Roles* or packages,
-which require some manual interaction during the procedure. 
+
+The upgrade to |version| impacts the following *Roles*, packages, or
+software, which require some manual interaction during the procedure.
 
 .. card:: Ubuntu Release 22.04
           
@@ -46,3 +47,28 @@ which require some manual interaction during the procedure.
             # rpm -e --nodeps config-generator
 
    Right after the command completes, proceed with the upgrade.
+
+.. card:: |monit|
+
+   During the upgrade of Prometheus, you will be notified of a
+   conflict in a file and asked for a solution. Please refer to
+   Section :ref:`upgrade-monit` below for directions.
+
+.. card:: Delegated Administrators
+
+   If you have any Delegated administrators in your |product|
+   infrastructure, you need to carry out a task after the upgrade has
+   successfully been completed. Please refer to Section
+   :ref:`upgrade-delegated` below for directions.
+
+
+.. card:: Backup
+
+   Starting from |product| 24.3, the Backup uses an *Account*
+   attribute, inherited from the CoS, to define if the account must be
+   included on the backup or not. The upgrade procedure takes care of
+   migrating the accounts and apply the attribute.
+
+   However, if some problem happens, the global administrator may
+   receive an e-mail notification. If this happens, please refer to
+   Section :ref:`upgrade-backup` below for directions.
