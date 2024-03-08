@@ -3,8 +3,7 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 Remember to start the upgrade from the node featuring the Directory
-Server, then all the other in the same order of
-installation.
+Server, then all the other in the same order of installation.
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -56,7 +55,7 @@ installation.
 
             .. code:: console
 
-               # dnf upgrade
+               # dnf upgrade --best --allowerasing 
 
    .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
