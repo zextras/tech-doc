@@ -53,12 +53,13 @@ Delegation: for each domain that has active Delegations, in the
 |adminui| go to :menuselection:`Domains --> Manage --> Delegated
 Domain Admins` and click the :bdg-primary:`INIT DOMAIN` button.
 
-.. _upgrade-ts:
+..
+   .. _upgrade-ts:
 
-Troubleshooting
----------------
+   Troubleshooting
+   ---------------
 
-In this section you find solutions for some possible error during the
-upgrade procedure.
+   In this section you find solutions for some possible error during the
+   upgrade procedure.
 
-.. include:: /_includes/_upgrade/ts.rst
+   .. include:: /_includes/_upgrade/ts.rst
