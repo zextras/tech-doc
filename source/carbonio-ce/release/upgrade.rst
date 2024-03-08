@@ -40,13 +40,23 @@ Upgrade Nodes
 -------------
 
 .. include:: /_includes/_upgrade/node-ce.rst
-             
-.. _upgrade-ts:
 
-Troubleshooting
----------------
 
-In this section you find solutions for some possible error during the
-upgrade procedure.
+.. _upgrade-manual:
 
-.. include:: /_includes/_upgrade/ts.rst
+Manual Steps
+------------
+
+
+
+
+..
+   .. _upgrade-ts:
+
+   Troubleshooting
+   ---------------
+
+   In this section you find solutions for some possible error during the
+   upgrade procedure.
+
+   .. include:: /_includes/_upgrade/ts.rst

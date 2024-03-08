@@ -21,9 +21,8 @@ see if you need to carry out some additional task.
    upgrade. If you install from an older version, you may need to
    execute further tasks to ensure proper functioning  of |product|.
    
-
-Moreover, incompatibilities may arise in case the upgrade includes
-third-party software, which may lead to some additional manual steps
-to be carried out. Section :ref:`upgrade-ts` below
+Moreover, in some cases, incompatibilities may seldom arise in the
+upgrade of third-party software, which may lead to some additional
+manual steps to be carried out. Section :ref:`upgrade-manual` below
 contains information to prevent or fix these issues.
 
