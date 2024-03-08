@@ -3,8 +3,8 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 If you are on a Multi-Server, remember to start from the node
-featuring the Directory Server Role, then all the other in the same order of
-installation.
+featuring the Directory Server Role, then all the other in the same
+order of installation.
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -56,7 +56,7 @@ installation.
 
             .. code:: console
 
-               # dnf upgrade
+               # dnf upgrade --best --allowerasing 
 
    .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
