@@ -37,8 +37,8 @@ Admin by CLI
 User Guides
   Everyday's usage of |product|, including its use on the dedicated
   mobile Apps
-  
-Develop
+
+API
    Links to API reference
 
 If you are looking for |ce|'s documentation, please refer to its
