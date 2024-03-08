@@ -151,12 +151,12 @@ pull the code
    and fork or download the repository.
 
 This command creates a directory called
-:file:`carbonio-install-ansible`, so you have created this structure::
+:file:`carbonio-install-ansible`, so you have created this structure
+within carbonio-ansible::
 
-  $ tree
-  .
-  ├── carbonio-install-ansible
-  └── data
+  $ ls -1
+  carbonio-install-ansible
+  data
 
 The idea is that you keep the repository clean, so you can simply
 :command:`git pull` whenever there is some update and use the
@@ -194,8 +194,9 @@ Configure Ansible
 -----------------
 
 You can configure Ansible using the :file:`ansible.cfg` in the cloned
-repository. We suggest to define at least a log file, which you can do
-achieve as follows::
+repository (i.e., in directory :file:`carbonio-install-ansible`). We
+suggest to define at least a log file, which you can do achieve as
+follows::
 
   [defaults]
   log_path=/var/log/carbonio-ansible.log
