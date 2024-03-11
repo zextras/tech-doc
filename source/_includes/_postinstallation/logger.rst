@@ -8,17 +8,19 @@ The log system in |product| is ``rsyslog``, which supports a
 Server"*), that is appropriately configured to receive log files,
 which is particularly useful in a Multi-Server installation.
 
-In the instructions below, we give the Log Server the FQDN
-``logsrv.example.com``.
+The Log Server can be one of the Nodes on which |product| is
+installed, or a dedicated Node, either within the |product|
+infrastructure or an existing, company-wide server that already
+exists.
 
+In this scenario, we configure a log Server on **Node 1** within the
+|product| infrastructure, and we use ``srv1.example.com`` as FQDN.
 
 .. card:: Centralised Logging Setup
-   
-   On ``logsrv.example.com``, open file :file:`/etc/rsyslog.conf`,
+             
+   On ``srv1.example.com``, open file :file:`/etc/rsyslog.conf`,
    find the following lines, and uncomment them (i.e., remove the
-   ``#`` character at the beginning of the line).
-
-   .. code::
+   ``#`` character at the beginning of the line)::
 
       $ModLoad imudp
       $UDPServerRun 514
@@ -33,11 +35,11 @@ In the instructions below, we give the Log Server the FQDN
       # systemctl restart rsyslog
 
    Finally, specify the host server that will receive logs: we already
-   called it ``logsrv.example.com``, so use this hostname. 
+   called it ``srv1.example.com``, so use this hostname. 
 
    .. code:: console
 
-      zextras$ carbonio prov mcf zimbraLogHostname logsrv.example.com
+      zextras$ carbonio prov mcf zimbraLogHostname srv1.example.com
 
    .. note:: Since ``zimbraLogHostname`` is a global attribute, this
       command must be run only once on one node.

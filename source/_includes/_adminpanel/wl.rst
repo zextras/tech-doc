@@ -14,8 +14,7 @@ You can safely use the |carbonio|'s Proxy Node to expose those
 resources, by uploading them into a directory called for example
 :file:`/opt/zextras/web/custom/` (create it if does not exist yet) and
 using the URL ``https://<Carbonio_hostname>/static/custom/``, where
-``<Carbonio_hostname>`` is the FQDN of the Single-Server or of the
-Proxy Node in a Multi-Server.
+``<Carbonio_hostname>`` is the FQDN of the node that hosts the Proxy Node role.
 
 Moreover, in a Multi-Server featuring multiple Proxy Nodes, it is
 mandatory to keep in sync the resources on all the Proxies instances.

@@ -3,8 +3,8 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 If you are on a Multi-Server, remember to start from the node
-featuring the Directory Server Role, then all the other in the same order of
-installation.
+featuring the Directory Server Role, then all the other in the same
+order of installation.
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -41,8 +41,7 @@ installation.
    .. grid-item-card:: Step 3. Update package list and
       install upgrades
       :columns: 12 12 12 12
-      :class-card: sd-border-2
-      
+
       .. tab-set::
 
          .. tab-item:: Ubuntu
@@ -57,32 +56,7 @@ installation.
 
             .. code:: console
 
-               # dnf upgrade
-
-   .. grid-item-card:: Step 3. (Pre 23.12.0 release) Update package list and
-      install upgrades
-      :columns: 12 12 12 12
-      :class-card: sd-border-2
-
-      This procedure (suitable for those upgrading from versions older than 23.12.0) fixes the conflicts and dependencies.
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt update && apt upgrade --fix-broken
-               # apt autoremove
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # rpm -e --nodeps carbonio-common-appserver-db
-               # dnf upgrade
+               # dnf upgrade --best --allowerasing 
 
    .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
       :columns: 12 12 6 6

@@ -28,4 +28,4 @@
       
       .. code:: console
                 
-         # dnf -y install postgresql12
+         # dnf -y install postgresql16

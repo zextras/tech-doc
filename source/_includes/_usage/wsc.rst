@@ -44,8 +44,12 @@ downloaded.
 When you create a new Chat or Group for the first time, the list on
 the left-hand side will be populated; the most recent Chats or Groups
 will always appear at the top of the list. You can then filter the
-list if you search a particular Chat or Group, while for every item it
-is shown whether there is an ongoing meeting (a camera icon will
+list if you search a particular Chat or Group.
+
+If you search and filter by user name, beside the single chat with him, 
+you will find all the groups you are in, with that specific contact.
+
+For every item it is shown whether there is an ongoing meeting (a camera icon will
 replace the small avatar icon), the Chat or Group is muted (a barred
 bell icon will appear), of if you have written a draft message.
 

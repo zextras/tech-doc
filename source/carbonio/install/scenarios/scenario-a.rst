@@ -1,16 +1,46 @@
+.. _scenario-a:
+
 =====================
  Scenario A: 5 Nodes
 =====================
 
-This five nodes scenario (depicted in :numref:`fig-5-nodes`) involves
-the presence of a single tenant and does not use of the backup
-functionality.
+This scenario (depicted in :numref:`fig-5-nodes`) involves the
+presence of a single tenant and does not use the backup
+functionality. The scenario can be deployed either using an
+:ref:`scenarioa-playbook` or :ref:`manually <scenarioa-manual>`, Node
+by Node. in both cases, make sure you :ref:`configure the internal
+network <scenarioa-manual>`.
 
-.. include:: /_includes/_installation/multinode-suggestions.rst
+.. _scenarioa-playbook:
+
+Ansible Playbook
+================
+    
+This 5 Nodes scenario can be installed using Ansible\
+:far:`registered` [#f1]_: you need to setup a workstation to run
+Ansible playbooks (please refer to section :ref:`install-with-ansible`
+and following for directions on setting up the workstation), then
+download the Ansible inventory (see below this paragraph), replace the
+FQDN and values present in the file according to your planned
+|product| infrastructure (please refer to Section
+:ref:`ansible-inventory`). Once edited the inventory, you can
+:ref:`ansible-run`.
+
+.. dropdown:: Inventory - 5 Nodes Scenario
+   :open:
+
+   :download:`Dowload the inventory
+   </playbook/carbonio-inventory-5nodes>`
    
-.. note:: You can skip the installation of Nodes 4 and 5 if you do not
-   need Docs Editor, Files, Chats, and Video Calls.
+   .. literalinclude:: /playbook/carbonio-inventory-5nodes
 
+Once edited the inventory, you can launch |product| installation by
+issuing from the workstation, the command (as the ``root`` user)
+
+.. code:: console
+
+   # ansible-playbook -i ../../data/inventoryname carbonio-install.yml
+   
 .. _fig-5-nodes:
 
 .. figure:: /img/carbonio/scenario-5-nodes.png
@@ -18,8 +48,46 @@ functionality.
 
    The architecture of the 5 Nodes Scenario,
 
-Roles Installation
-==================
+.. _scenarioa-network:
+
+Network Configuration
+=====================
+
+The following ports must be opened on the :ref:`external network
+<fw-external>`, i.e., they are required for proper access to
+|product| from the Internet.
+
+.. table:: Opened ports in Scenario A.
+   
+   +-------------------+--------------------------+------------------+
+   | Public hostname   | Ports & Service          | Mapping          |
+   +===================+==========================+==================+
+   | mail.example.com  | * TCP 25/465/587  SMTP/S | srv2.example.com |
+   |                   | * TCP 80/443      HTTP/S |                  |
+   |                   | * TCP 143/993     IMAP/S |                  |
+   |                   | * TCP 110/995     POP/S  |                  |
+   |                   | * TCP 8636        LDAP   |                  |
+   |                   |   Addresbook             |                  |
+   +-------------------+--------------------------+------------------+
+   | mail.example.com  | * UDP 20000/40000 Video  | srv5.example.com |
+   |                   |   Streaming              |                  |
+   +-------------------+--------------------------+------------------+
+
+*****
+
+.. _scenarioa-manual:
+
+Manual Roles Installation
+=========================
+
+In case you do not want to install |product| on this scenario using
+Ansible, you can proceed with the manual installation of the various
+Roles on the Nodes, according to the following guidelines. 
+
+.. include:: /_includes/_installation/multinode-suggestions.rst
+   
+.. note:: You can skip the installation of Nodes 4 and 5 if you do not
+   need Docs Editor, Files, Chats, and Video Calls.
 
 .. grid:: 1 1 2 2
    :gutter: 2
@@ -92,30 +160,8 @@ Roles Installation
       Roles installed:
               
       * :ref:`role-vs-install`
-
-
         
-Network configuration
-=====================
 
-The following ports must be opened on the :ref:`external network
-<fw-external>`, i.e., they are required for proper access to
-|product| from the Internet.
+.. rubric:: Footnotes
 
-.. table:: Opened ports in Scenario A.
-   
-   +-------------------+--------------------------+------------------+
-   | Public hostname   | Ports & Service          | Mapping          |
-   +===================+==========================+==================+
-   | mail.example.com  | * TCP 25/465/587  SMTP/S | srv2.example.com |
-   |                   | * TCP 80/443      HTTP/S |                  |
-   |                   | * TCP 143/993     IMAP/S |                  |
-   |                   | * TCP 110/995     POP/S  |                  |
-   |                   | * TCP 8636        LDAP   |                  |
-   |                   |   Addresbook             |                  |
-   +-------------------+--------------------------+------------------+
-   | mail.example.com  | * UDP 20000/40000 Video  | srv5.example.com |
-   |                   |   Streaming              |                  |
-   +-------------------+--------------------------+------------------+
-
-
+..  [#f1] Ansible is a trademark of Red Hat, Inc. in the United States and other countries.

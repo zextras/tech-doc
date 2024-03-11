@@ -2,19 +2,30 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
              
-If you plan to install |product| on RHEL 8, these tasks are required
-before attempting the installation.
+You need to satisfy these requirements for RHEL.
+
+.. _rhel8-req:
+
+RHEL 8
+++++++
 
 .. card:: Repositories
 
-   A subscription to the follow repositories must be active (you must
-   be able to fetch from **BaseOS** and the other main repositories)::
+   If you plan to install |product| on RHEL 8, you need an active
+   subscription to the following repositories, i.e., you must be able
+   to fetch packages from them
 
-     # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+   * **BaseOS** and the other main repositories::
 
-   The **CodeReady** repository enabled::
+       # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
 
-     # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+   * **Appstream**::
+
+       # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+
+   * **CodeReady**::
+
+       # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
 
 .. card:: SELinux 
 
@@ -25,3 +36,4 @@ before attempting the installation.
    .. code:: console
 
       # sestatus
+

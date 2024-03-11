@@ -1,5 +1,4 @@
 
-
 Each Node must satisfy the :ref:`hw-requirements` and
 :ref:`software-requirements` below, while on the contrary,
 :ref:`fw-ports` must be opened only on the Node that hosts the
@@ -42,16 +41,21 @@ Software Requirements
 ~~~~~~~~~~~~~~~~~~~~~
 
 |product| is available for **64-bit** CPUs only and can be installed
-on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
-8** installation.
+on top of any of these vanilla distributions:
+
+* **Ubuntu 20.04 LTS Server Edition**
+* **Ubuntu 22.04 LTS Server Edition**
+* **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
+
+Support for other distributions will be announced in due course
+when it becomes available.
 
 The following requirements must be satisfied before attempting to
 install |product|.
 
 #. The whole |product| infrastructure must have at least **one public
-   IP address**. The IP address must have a domain name associated,
-   that coincides with the **A record** in the DNS (e.g., ``A
-   mail.example.com``)
+   IP address**. You need to create a DNS **A record** that resolves
+   to the public IP (e.g., ``A mail.example.com``)
 
    .. hint:: You can check a domain's A record using the CLI utility
       ``host``:
@@ -74,85 +78,24 @@ install |product|.
    If either of the ``A`` or ``MX`` records is not correctly
    configured, the installation will be temporarily suspended to allow
    the change of the hostname.
-   
-   See :ref:`the dedicated box below <config-dns>` for details and examples.
+
+#. Each Node must be able to carry out DNS resolution autonomously and
+   be able to resolve all other Nodes
 
 #. For improved security of sending emails, you should also define TXT
    records for SPF, DKIM and DMARC
 
 #. Python 3, latest version available on the Operating System chosen
+
 #. Perl, latest version available on the Operating System chosen
+
 #. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
    does not contain any IPv6 entries.
 
-.. _config-dns:
-
-.. topic:: Configuring DNS resolution
-
-   To make sure that the DNS is correctly configured for both **A** and
-   **MX** records: to do so, you can use any DNS resolution server,
-   including `dnsmasq`, `systemd-resolved`, and `bind`.
-
-   We show as an example, only suitable for **demo** or **testing
-   purposes**, how to install and configure ``dnsmasq`` for DNS
-   resolution.
-
-   .. dropdown:: Example: Set up of dnsmasq for demo or test environment
-
-      Follow these simple steps to set up ``dnsmasq``. These
-      instructions are suitable for a demo or testing environment
-      only.
-
-      .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
-         may raise a port conflict over port **53 UDP** with the
-         default `systemd-resolved` service, so make sure to disable
-         the latter before continuing with the next steps.
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt install dnsmasq
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf install dnsmasq
-
-      To configure it, add the following lines to file
-      :file:`/etc/dnsmasq.conf`::
-
-            server=1.1.1.1
-            mx-host=example.com,mail.example.com,50
-            host-record=example.com,172.16.0.10
-            host-record=mail.example.com,172.16.0.10
-
-      Remember to replace the **172.16.0.10** IP address with the one
-      of your server. Then, make sure that the :file:`etc/resolv.conf`
-      contains the line::
-
-        nameserver 127.0.0.1
-
-      This will ensure that the local running :command:`dnsmasq` is
-      used for DNS resolution. Finally, restart the **dnsmasq**
-      service
-
-      .. code:: console
-
-         # systemctl restart dnsmasq
-
-Support for other distributions will be announced in due course
-when it becomes available.
-
 .. _rhel-requirements:
 
-RHEL 8 Specific Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RHEL Specific Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_installation/preliminary-rh.rst
 
@@ -172,7 +115,7 @@ Additional Requirements
   `proxy.example.com`, `mta.example.com`, and so on. Replace
   ``example.com`` with your domain name.
 
-* During the installation procedure, you will need to write down some
+* During the installation procedure, you will have to write down some
   configuration options and their value, because they will be needed
   in the setup of the next nodes. These information are summarised at
   the end of each node's installation: copy them to a safe place and
@@ -181,7 +124,7 @@ Additional Requirements
   password of a database user.
 
 * Depending on the Roles installed on each Node, you need to open in
-  your firewall the ports listed in ref:`fw-ports` for all the
+  your firewall the ports listed in :ref:`fw-ports` for all the
   services you will offer. In case there are problems in the internal
   network communication, try to disable the firewall and try again: if
   it works, there was probably some firewall rule preventing
@@ -206,8 +149,9 @@ Additional Requirements
   enabled from internal/management networks, while any remote access
   must be done via VPN tunnel or equivalent mechanism
 
-* The hostname of each Node must be a |FQDN| that can be internally
-  resolved to each other via DNS
+* The hostname of each Node must be a |FQDN|.
+
+* Every Node must be able to resolve all other host names
 
 .. _fw-ports:
 
@@ -218,22 +162,23 @@ Firewall Ports
 properly, it is necessary to allow network communication on specific
 ports.
 
-The ports listed in the *Internal Connections* must be opened on
-**all** nodes, possibly in a dedicated network connecting the Nodes,
-while those in the *External Connections* should be opened only on the
-node on which the corresponding Role is installed. For example, port
-443 should be opened only on the node hosting the **Proxy** Role.
+The Nodes should be able to communicate with the other Nodes through a
+dedicated network. The ports listed in the *Internal Connections* must
+be forwarded on **all** nodes, while those in the *External
+Connections* should be forwarded only on the node on which the
+corresponding Role is installed. For example, port 443 should be
+forwarded only on the node hosting the **Proxy** Role.
 
 Furthermore, ports in Internal and External connections are grouped
 according to the Role that require them, so all ports listed in a
-table must be opened only on the Node on which the Role is installed.
+table must be forwarded only on the Node on which the Role is installed.
 
 .. _fw-external:
 
 TCP External Connections
 ++++++++++++++++++++++++
 
-These ports must be opened to allow communication with the Internet.
+These ports must be forwarded to allow communication with the Internet.
 
 .. card:: MTA Role
 
@@ -242,12 +187,9 @@ These ports must be opened to allow communication with the Internet.
       :widths: 10 10 80
 
       "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
+      "465", "TCP", "Message Submission over TLS protocol "
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
-
-   .. [1] This port is still used since in some cases it is
-      considered safer than 587. It requires on-connection SSL.
 
    .. warning:: These ports should be exposed only if really needed, and
       preferably only accessible from a VPN tunnel, if possible, to
@@ -288,7 +230,7 @@ These ports must be opened to allow communication with the Internet.
 TCP Internal Connections
 ++++++++++++++++++++++++
 
-These ports must be opened to allow the Nodes to communicate properly
+These ports must be forwarded to allow the Nodes to communicate properly
 and be able to access |product|'s internal services.
 
 .. card:: Every Node
@@ -332,13 +274,10 @@ and be able to access |product|'s internal services.
       :widths: 10 10 80
 
       "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [3]_"
+      "465", "TCP", "Message Submission over TLS protocol"
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
-
-   .. [3] This port is still used since in some cases it is considered
-      safer than 587. It requires on-connection SSL.
 
 .. card:: Mailstore & Provisioning (AppServer)
 

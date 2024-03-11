@@ -184,7 +184,7 @@ with a few commands on the **Mesh and Directory**.
 
       zextras$ zmlocalconfig -e \
         ldap_url="ldap://ds-replica.example.com:389 \
-        ldap://srv1.example.com:389
+        ldap://srv1.example.com:389"
 
    .. note:: `srv1.example.com` is the FQDN of the node which installs
       the *Mesh and Directory* Role

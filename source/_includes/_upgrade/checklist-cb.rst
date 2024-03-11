@@ -2,29 +2,72 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-..
-   We define as **current version** |version|, as **previous version**
-   the version immediately before, i.e., |prev|, and as **older
-   versions** any version of |product| released before these two.
+The upgrade to |version| impacts the following *Roles*, packages, or
+software, which require some manual interaction before, during, or
+after the procedure.
 
-.. warning:: Starting with version **23.6**, the Single-Server
-   installation of |product| is **not supported** anymore. If you have
-   a Single-Server Installation, you must add a few Nodes to your
-   installation and redistribute the Roles on them, to ensure you
-   continue to productively use |product|.
+.. card:: Ubuntu Release 22.04
+          
+   |product| |version| supports also **Ubuntu 22.04**, so you can
+   proceed with the upgrade from *Ubuntu 20.04*, according to the
+   procedure described in section :ref:`upgrade-ubuntu-22`.
+   
+.. card:: PostgreSQL 16 support
 
-This upgrade impacts the following *Roles* or packages, which require some
-manual interaction during the procedure.
+   PostgreSQL can be upgraded from version **12** to version
+   **16**. This step is **mandatory** if you also plan to upgrade from
+   *Ubuntu 20.04* to **Ubuntu 22.04**, because version 12 is no longer
+   available on Ubuntu 22.04. Please follow the instructions in
+   section :ref:`pg-upgrade`.
 
-There is a **breaking change** in this release, which requires some
-attention during the upgrade.
+.. card:: Package conflict
 
-Some files have been moved from one package to another one. Since
-package managers forbid a file to belong to multiple packages, an
-error will be shown during the upgrade. You need to make sure that the
-package is installed, therefore these braking change leads to a slight
-different upgrade procedure, in Step 3. You can choose between two
-alternative procedures, either with automatic or manual conflict
-resolution. They are equivalent and will ensure that all the packages
-are correctly installed.
+   Due to a new package installed, you will see a conflict between the
+   installed package ``config-generator`` and the new
+   ``service-discover-template`` package on both RHEL and Ubuntu. To
+   fix this conflict, before upgrading, you need to remove the
+   existing package and install the new one. You can do this with the
+   following commands
 
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install service-discover-template
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # rpm -e --nodeps config-generator
+
+   Right after the command completes, proceed with the upgrade.
+
+.. card:: |monit|
+
+   During the upgrade of Prometheus, you will be notified of a
+   conflict in a file and asked for a solution. Please refer to
+   Section :ref:`upgrade-monit` below for directions.
+
+.. card:: Delegated Administrators
+
+   If you have any Delegated administrators in your |product|
+   infrastructure, you need to carry out a task after the upgrade has
+   successfully been completed. Please refer to Section
+   :ref:`upgrade-delegated` below for directions.
+
+
+.. card:: Backup
+
+   Starting from |product| |release|, the Backup uses an *Account*
+   attribute, inherited from the CoS, to define if the account must be
+   included on the backup or not. The upgrade procedure takes care of
+   migrating the accounts and apply the attribute.
+
+   However, if some problem happens, the global administrator may
+   receive an e-mail notification. If this happens, please refer to
+   Section :ref:`upgrade-backup` below for directions.

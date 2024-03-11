@@ -146,7 +146,7 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
 }
 
 .rounded-pill {
-	border-radius: 0px !important;
+   border-radius: 0px !important;
 }
 
 .survey {
@@ -155,4 +155,16 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
 
 .survey a {
     margin-top: 5pt;
+}
+
+/* Add icon before external links */
+.rst-content.style-external-links, a.reference.external:before {
+    content:"\f35d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    color:#b3b3b3;
+    font-size:60%;
+    vertical-align:super;
+    margin:0 .2em
 }

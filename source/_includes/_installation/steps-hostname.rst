@@ -23,8 +23,6 @@ You can also simply get the current IP and hostname and save them:
 
    # echo "$(hostname -I) $(hostname -f)"
 
-
-.. hint:: Replace **172.16.0.10** with the actual management IP to
-   be assigned to the server.
+.. hint:: Replace **172.16.0.10** with the local IP of the Node.
 
          
