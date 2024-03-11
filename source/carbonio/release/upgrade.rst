@@ -4,8 +4,8 @@
 
 .. _carbonio-upgrade:
 
-|product| Upgrade
-=================
+|product| Upgrade from 24.1 to 24.3
+===================================
 
 .. include:: /_includes/_upgrade/intro-cb.rst
 
@@ -75,7 +75,7 @@ Delegation: for each domain that has active Delegations, in the
 |adminui| go to :menuselection:`Domains --> Manage --> Delegated
 Domain Admins` and click the :bdg-primary:`INIT DOMAIN` button.
 
-.. _update-backup:
+.. _upgrade-backup:
 
 Backup
 ~~~~~~
@@ -83,7 +83,6 @@ Backup
 If the Global Administrator receives an e-mail notification about some
 accounts not migrated to use the new ``backupEnabled`` attribute, run
 the following command to fix the issue.
-
 
 
 ..
