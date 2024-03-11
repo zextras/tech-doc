@@ -2,7 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-
 The upgrade to |version| impacts the following *Roles*, packages, or
 software, which require some manual interaction before, during, or
 after the procedure.
@@ -64,7 +63,7 @@ after the procedure.
 
 .. card:: Backup
 
-   Starting from |product| 24.3, the Backup uses an *Account*
+   Starting from |product| |release|, the Backup uses an *Account*
    attribute, inherited from the CoS, to define if the account must be
    included on the backup or not. The upgrade procedure takes care of
    migrating the accounts and apply the attribute.

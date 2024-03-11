@@ -1,6 +1,5 @@
-
 In order to upgrade from a |product| 24.1 on Ubuntu 20.04 to |product|
-24.3 on Ubuntu 22.04 you need to follow the procedure in this
+|release| on Ubuntu 22.04 you need to follow the procedure in this
 section. Please read carefully the whole page before starting the
 upgrade.
 
@@ -10,8 +9,8 @@ downtime of the |product| infrastructure must be planned.
 The procedure is divided into four phases:
 
 #. upgrade PostgreSQL from 12 to 16
-   
-#. upgrade |product| to 24.3
+
+#. upgrade |product| to |release|
 
 #. upgrade Ubuntu LTS from 20.04 to 22.04 (Jammy Jellifish)
 
@@ -24,7 +23,7 @@ Upgrade to PostgreSQL 16 **is mandatory**, because Ubuntu 22.04 does
 not support the current PostgreSQL 12 installed on
 |product|. Directions to upgrade PostgreSQL can be found in Section
 :ref:`pg-upgrade`.
-   
+
 Phase 2
 -------
 
@@ -46,15 +45,13 @@ proceed to update the |product| packages to match the
 distribution. This phase requires some manual command to be executed.
 
 During the Ubuntu upgrade, the file
-:file:`/etc/apt/sources.list.d/zextras.list` will be overwritten and
-renamed.  You need to restore it and make sure it contains only the
-line::
+:file:`/etc/apt/sources.list.d/zextras.list` will be modified. You
+need to make sure that it contains only the correct repository, that
+is, the line defining the repository
 
-  deb https://zextras.jfrog.io/artifactory/ubuntu-rc jammy main
+#. contains the word **jammy**
 
-.. hint:: If you see a file called
-   :file:`/etc/apt/sources.list.d/zextras.list.distUpgrade`, you can
-   safely remove it.
+#. is not commented, i.e., it does not start with a ``#`` sign
 
 
 Now you can update the package list and the packages itself, with the
@@ -67,5 +64,3 @@ command
 
 Once done, you will end up with a fully upgrade |product| version
 **23.4**  on Ubuntu **22.04**!
-
-
