@@ -84,7 +84,19 @@ Backup
 
 If the Global Administrator receives an e-mail notification about some
 accounts not migrated to use the new ``backupEnabled`` attribute, run
-the following command to fix the issue.
+the following commands as the ``zextras`` user to fix the issue.
+
+First, stop the backup migration service
+
+.. code:: console
+
+   zextras$ backup dostopservice migrate-backup-enabled-setting
+
+Then, start the service again to trigger the migration
+
+.. code:: console
+
+   zextras$ backup dostartservice migrate-backup-enabled-setting
 
 
 ..
