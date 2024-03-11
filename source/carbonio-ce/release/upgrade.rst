@@ -4,8 +4,8 @@
 
 .. _carbonio-upgrade:
 
-|product| Upgrade from 24.1 to 24.3
-===================================
+|product| Upgrade from 24.1 to |release|
+========================================
 
 .. include:: /_includes/_upgrade/intro-ce.rst
 
@@ -47,7 +47,7 @@ Upgrade Nodes
 Manual Steps
 ------------
 
-In the upgrade to 24.3, the following manual steps are required.
+In the upgrade to |release|, the following manual steps are required.
 
 .. _upgrade-monit:
 
