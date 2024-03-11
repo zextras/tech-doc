@@ -1,3 +1,4 @@
+.. _upgrade-ubuntu-22:
 
 Upgrade |product| and Ubuntu
 ============================

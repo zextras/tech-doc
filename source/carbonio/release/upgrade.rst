@@ -47,6 +47,8 @@ Upgrade Nodes
 Manual Steps
 ------------
 
+In the upgrade to 24.3, the following manual steps are required.
+
 .. _upgrade-monit:
 
 |monit|
