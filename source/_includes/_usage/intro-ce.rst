@@ -62,8 +62,7 @@ credentials:
    This functionality does not yet allow you to supply a new password,
    but you can contact the Administrator once you access the webmail
    and ask the Administrator to change it for you: afterwards, you can
-   :ref:`Change the password <auth_change_pass>` by yourself in the
-   Settings module.
+   by yourself in the Settings module.
    
 Once logged in, the user will be on the Home screen from which he can
 access all the features of his mailbox.

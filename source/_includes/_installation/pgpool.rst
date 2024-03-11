@@ -15,8 +15,7 @@
 
          .. code:: console
 
-            # dnf install https://www.pgpool.net/yum/rpms/4.4/redhat/rhel-8-x86_64/pgpool-II-pg12-4.4.3-1pgdg.rhel8.x86_64.rpm
-            
+            # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-8-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel8.x86_64.rpm
 
 #. Configure Pgpool-II using the following command.
 
