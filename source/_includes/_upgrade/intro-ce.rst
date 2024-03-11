@@ -19,10 +19,24 @@ see if you need to carry out some additional task.
 
 .. note:: Only the **three previous versions** are supported for
    upgrade. If you install from an older version, you may need to
-   execute further tasks to ensure proper functioning  of |product|.
-   
+   execute further tasks to ensure proper functioning of |product|.
+
 Moreover, in some cases, incompatibilities may seldom arise in the
 upgrade of third-party software, which may lead to some additional
 manual steps to be carried out. Section :ref:`upgrade-manual` below
 contains information to prevent or fix these issues.
 
+Release 24.3 of |product| introduces two major milestones:
+
+* support for PostgreSQL, version **16**. Upgrade to this version is
+  suggested if you plan to keep Ubuntu *20.04*, but it is
+  **mandatory** if you plan to upgrade to Ubuntu *22.04* (see next
+  point).
+
+* support for **Ubuntu 22.04** (Jammy Jellyfish), to which you can
+  upgrade together with |product| 24.3. If you wand to upgrade only
+  |product|, continue reading this page, other wise. to upgrade
+  **both** |product| and Ubuntu, please refer to section
+  :ref:`upgrade-ubuntu-22`. In both cases, make sure to read Section
+  :ref:`upgrade-checklist` to see if there are tasks that you need to
+  execute besides the upgrade procedure.

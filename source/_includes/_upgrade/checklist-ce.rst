@@ -9,10 +9,9 @@ after the procedure.
 .. card:: Ubuntu Release 22.04
           
    |product| |version| supports also **Ubuntu 22.04**, so you can
-   proceed with the upgrade from *Ubuntu 20.04* following the usual
-   upgrade procedures: please refer to the upstream documentation for
-   `Ubuntu <https://ubuntu.com/server/docs/upgrade-introduction>`_.
-
+   proceed with the upgrade from *Ubuntu 20.04*, according to the
+   procedure described in section :ref:`upgrade-ubuntu-22`.
+   
 .. card:: PostgreSQL 16 support
 
    PostgreSQL can be upgrade from version **12** to version
