@@ -32,7 +32,7 @@ Release |release| of |product| introduces two major milestones:
 
 * support for **Ubuntu 22.04** (Jammy Jellyfish), to which you can
   upgrade together with |product| |release|. If you want to upgrade
-  only |product|, continue reading this page, other wise. to upgrade
+  only |product|, continue reading this page; otherwise, to upgrade
   **both** |product| and Ubuntu, please refer to section
   :ref:`upgrade-ubuntu-22`. In both cases, make sure to read Section
   :ref:`upgrade-checklist` to see if there are tasks that you need to
