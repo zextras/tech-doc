@@ -46,7 +46,7 @@ To correctly run the script, please follow these advices
    .. tab-item:: RHEL
       :sync: rhel
 
-      Script for and 9
+      Script for RHEL 8
       :download:`/scripts/install_carbonio_ce_singleserver_rhel.sh`
 
 .. _single-install-manual:
@@ -85,7 +85,7 @@ configure the PostgreSQL database.
       
       .. code:: console
 
-         # apt install postgresql-12
+         # apt install postgresql-16
 
       .. include:: /_includes/_installation/ubuntu-pg-conf.rst
 
