@@ -14,7 +14,7 @@ after the procedure.
    
 .. card:: PostgreSQL 16 support
 
-   PostgreSQL can be upgrade from version **12** to version
+   PostgreSQL can be upgraded from version **12** to version
    **16**. This step is **mandatory** if you also plan to upgrade from
    *Ubuntu 20.04* to **Ubuntu 22.04**, because version 12 is no longer
    available on Ubuntu 22.04. Please follow the instructions in
