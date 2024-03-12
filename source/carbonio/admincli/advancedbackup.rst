@@ -1059,11 +1059,12 @@ When Backup is disabled, the following happens in the COS:
 Disable Backup for an Account
 -----------------------------
 
-
 As in the case of COS, enabling and disabling the backup functionality for individual accounts
 is currently only available via command line:
 
-:command:`carbonio config set account <ACCOUNT_NAME> backupEnabled true/false`
+.. code:: console
+
+   zextras$ carbonio config set account <ACCOUNT_NAME> backupEnabled true/false`
 
 For example to remove the backup for an account called john@example.com, use
 
