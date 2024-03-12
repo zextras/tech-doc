@@ -1,28 +1,26 @@
-.. _scenario-a:
+.. _scenario-fullsmall:
 
 =====================
- Scenario A: 5 Nodes
+ Scenario Full Small
 =====================
 
-This scenario (depicted in :numref:`fig-5-nodes`) involves the
-presence of a single tenant and does not use the backup
-functionality. The scenario can be deployed either using an
-:ref:`scenarioa-playbook` or :ref:`manually <scenarioa-manual>`, Node
-by Node. in both cases, make sure you :ref:`configure the internal
-network <scenarioa-manual>`.
+This scenario involves the presence of a single tenant and does not
+use the backup functionality. The scenario can be deployed either
+using an :ref:`scenarioa-playbook` or :ref:`manually
+<scenarioa-manual>`, Node by Node. in both cases, make sure you
+:ref:`configure the internal network <scenarioa-manual>`.
 
 .. _scenarioa-playbook:
 
 Ansible Playbook
 ================
     
-This 5 Nodes scenario can be installed using Ansible\
-:far:`registered` [#f1]_: you need to setup a workstation to run
-Ansible playbooks (please refer to section :ref:`install-with-ansible`
-and following for directions on setting up the workstation), then
-download the Ansible inventory (see below this paragraph), replace the
-FQDN and values present in the file according to your planned
-|product| infrastructure (please refer to Section
+This 5 Nodes scenario can be installed using Ansible: you need to
+setup a workstation to run Ansible playbooks (please refer to section
+:ref:`install-with-ansible` and following for directions on setting up
+the workstation), then download the Ansible inventory (see below this
+paragraph), replace the FQDN and values present in the file according
+to your planned |product| infrastructure (please refer to Section
 :ref:`ansible-inventory`). Once edited the inventory, you can
 :ref:`ansible-run`.
 
@@ -30,9 +28,9 @@ FQDN and values present in the file according to your planned
    :open:
 
    :download:`Dowload the inventory
-   </playbook/carbonio-inventory-5nodes>`
+   </playbook/carbonio-inventory-fullsmall>`
    
-   .. literalinclude:: /playbook/carbonio-inventory-5nodes
+   .. literalinclude:: /playbook/carbonio-inventory-fullsmall
 
 Once edited the inventory, you can launch |product| installation by
 issuing from the workstation, the command (as the ``root`` user)
@@ -41,12 +39,6 @@ issuing from the workstation, the command (as the ``root`` user)
 
    # ansible-playbook -i ../../data/inventoryname carbonio-install.yml
    
-.. _fig-5-nodes:
-
-.. figure:: /img/carbonio/scenario-5-nodes.png
-   :width: 90%
-
-   The architecture of the 5 Nodes Scenario,
 
 .. _scenarioa-network:
 
@@ -163,5 +155,3 @@ Roles on the Nodes, according to the following guidelines.
         
 
 .. rubric:: Footnotes
-
-..  [#f1] Ansible is a trademark of Red Hat, Inc. in the United States and other countries.

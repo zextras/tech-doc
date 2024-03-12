@@ -26,7 +26,7 @@ Directory* Role.
 
    scenarios/ansible
    scenarios/ansible-install
-   scenarios/scenario-a
+   scenarios/scenario-fullsmall
 
 .. rubric:: Footnotes
 
