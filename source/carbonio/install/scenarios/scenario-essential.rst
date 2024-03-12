@@ -1,54 +1,47 @@
-.. _scenario-a:
+.. _scenario-essential:
 
 =====================
- Scenario A: 5 Nodes
+ Scenario Essential
 =====================
 
-This scenario (depicted in :numref:`fig-5-nodes`) involves the
-presence of a single tenant and does not use the backup
-functionality. The scenario can be deployed either using an
-:ref:`scenarioa-playbook` or :ref:`manually <scenarioa-manual>`, Node
-by Node. in both cases, make sure you :ref:`configure the internal
-network <scenarioa-manual>`.
+This scenario involves the presence of a single tenant and it is
+suitable for small infrastructures up to thousands of accounts that do
+not need the full spectrum of |product| features.  The scenario can be
+deployed either using the :ref:`scenario-es-playbook`, or
+:ref:`manually <scenario-es-manual>`, Node by Node. In both cases,
+make sure you :ref:`configure the internal network
+<scenario-es-manual>`.
 
-.. _scenarioa-playbook:
+.. _scenario-es-playbook:
 
 Ansible Playbook
 ================
     
-This 5 Nodes scenario can be installed using Ansible\
-:far:`registered` [#f1]_: you need to setup a workstation to run
-Ansible playbooks (please refer to section :ref:`install-with-ansible`
-and following for directions on setting up the workstation), then
-download the Ansible inventory (see below this paragraph), replace the
-FQDN and values present in the file according to your planned
-|product| infrastructure (please refer to Section
+This 5 Nodes scenario can be installed using Ansible: you need to
+setup a workstation to run Ansible playbooks (please refer to section
+:ref:`install-with-ansible` and following for directions on setting up
+the workstation), then download the Ansible inventory (see below this
+paragraph), replace the FQDN and values present in the file according
+to your planned |product| infrastructure (please refer to Section
 :ref:`ansible-inventory`). Once edited the inventory, you can
 :ref:`ansible-run`.
 
-.. dropdown:: Inventory - 5 Nodes Scenario
+.. dropdown:: Inventory - "Essential" Scenario
    :open:
 
    :download:`Dowload the inventory
-   </playbook/carbonio-inventory-5nodes>`
+   </playbook/carbonio-inventory-essential>`
    
-   .. literalinclude:: /playbook/carbonio-inventory-5nodes
+   .. literalinclude:: /playbook/carbonio-inventory-essential
 
 Once edited the inventory, you can launch |product| installation by
 issuing from the workstation, the command (as the ``root`` user)
 
 .. code:: console
 
-   # ansible-playbook -i ../../data/inventoryname carbonio-install.yml
-   
-.. _fig-5-nodes:
+   # ansible-playbook -i ../../data/carbonio-inventory-essential carbonio-install.yml
 
-.. figure:: /img/carbonio/scenario-5-nodes.png
-   :width: 90%
-
-   The architecture of the 5 Nodes Scenario,
-
-.. _scenarioa-network:
+.. _scenario-es-network:
 
 Network Configuration
 =====================
@@ -57,7 +50,7 @@ The following ports must be opened on the :ref:`external network
 <fw-external>`, i.e., they are required for proper access to
 |product| from the Internet.
 
-.. table:: Opened ports in Scenario A.
+.. table:: Opened ports in Scenario *Essential*.
    
    +-------------------+--------------------------+------------------+
    | Public hostname   | Ports & Service          | Mapping          |
@@ -69,13 +62,10 @@ The following ports must be opened on the :ref:`external network
    |                   | * TCP 8636        LDAP   |                  |
    |                   |   Addresbook             |                  |
    +-------------------+--------------------------+------------------+
-   | mail.example.com  | * UDP 20000/40000 Video  | srv5.example.com |
-   |                   |   Streaming              |                  |
-   +-------------------+--------------------------+------------------+
 
 *****
 
-.. _scenarioa-manual:
+.. _scenario-es-manual:
 
 Manual Roles Installation
 =========================
@@ -135,33 +125,3 @@ Roles on the Nodes, according to the following guidelines.
               
       * :ref:`role-tasks-install`
 
-   .. grid-item-card:: Node 4
-      :columns: 12
-
-      Node Name/FQDN: srv4.example.com
-
-      Type of services: Files, Preview, and Editing
-
-      Roles installed:
-
-      * :ref:`role-files-install`
-              
-      * :ref:`role-docs-install`
-        
-      * :ref:`role-preview-install`
-
-   .. grid-item-card:: Node 5
-      :columns: 12
-
-      Node Name/FQDN: srv5.example.com
-
-      Type of services: Video and Meeting
-
-      Roles installed:
-              
-      * :ref:`role-vs-install`
-        
-
-.. rubric:: Footnotes
-
-..  [#f1] Ansible is a trademark of Red Hat, Inc. in the United States and other countries.
