@@ -22,5 +22,6 @@ scenario, or manually by following instruction provided in Section
    scenarios/scenario-essential
    scenarios/scenario-fullsmall
    scenarios/scenario-fullstandard
+   scenarios/scenario-fullredundant
 
 .. rubric:: Footnotes
