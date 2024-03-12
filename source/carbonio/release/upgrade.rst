@@ -90,13 +90,13 @@ First, stop the backup migration service
 
 .. code:: console
 
-   zextras$ backup dostopservice migrate-backup-enabled-setting
+   zextras$ carbonio backup dostopservice migrate-backup-enabled-setting
 
 Then, start the service again to trigger the migration
 
 .. code:: console
 
-   zextras$ backup dostartservice migrate-backup-enabled-setting
+   zextras$ carbonio backup dostartservice migrate-backup-enabled-setting
 
 
 ..

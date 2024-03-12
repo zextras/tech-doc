@@ -28,11 +28,9 @@ New Features List
 
 
 **AC-889: Admin can manage  "mynetwork" attribute in MTA outbound flow**
-   Introduce a powerful new feature in our MTA (Mail Transfer Agent) Outbound Flow system: the ability for administrators to manage the "mynetwork" attribute at the global level. This enhancement provides administrators with greater flexibility and control over their email delivery infrastructure
 
 
-**AC-890: Admin can update zimbraMtaSmtpdSenderLoginMaps**
-   Admin can now update zimbraMtaSmtpdSenderLoginMaps from admin console
+**AC-890: Admin can update MtaSmtpdSenderLoginMaps**
 
 
 **AC-893: Admin control over "Forgot Password" link visibility**
@@ -135,18 +133,6 @@ New Features List
    The primary bar icon for Distribution Lists and Contacts Groups has been updated to offer users a clear visual distinction from the Contacts module. This modification is intended to enhance user clarity and avoid any potential misunderstandings.
 
 
-**WSC-1192: Chat filter should include also group**
-   When I filter a contact, I would like to see among the results also the group I have with the contact.
-   Reason: Sometimes I already have a group with  people, but I don't remember the group name. Looking for it just scrolling is time consuming and I usually give up because I'm not sure it is there. Being able to filter by participant would be very helpful. (this is the behaviour the current chat has and I find it very useful)
-
-
-**WSC-1227: Moderator mute confirmation modal**
-   None
-
-
-**WSC-1229: Display known user profile pictures in modals**
-   This update ensures that in the Creation modal and Add new participant modal, when selecting users from the list with whom the user already has an existing one-to-one or group conversation, the avatar will now display the profile picture of the known user for a more personalized user experience.
-
 *****
 
 Bugfix List
@@ -157,7 +143,7 @@ Bugfix List
 
 
 **AC-888:  Admin rights table refinement**
-    The Admin Rights table will now exclusively display ACL groups and omit any distribution lists that the admin is part of. This change enhances the clarity and focus of the displayed information.
+    The Admin Rights table will now exclusively display security groups. This change enhances the clarity and focus of the displayed information.
 
 
 **AC-919:  Domain admin can change user COS**
@@ -168,8 +154,7 @@ Bugfix List
    Improves the Fully Qualified Domain Name (FQDN) validation in virtual hosts. Validations now align with expected behaviour for various scenarios, ensuring accuracy.
 
 
-**CO-856: Renameing account name are working from carbonio prov**
-   The latest update introduces improved flexibility in managing Carbonio accounts, enabling admin to effortlessly rename accounts within the same domain or across different domains. Leveraging the powerful "carbonio prove" command in the Command Line Interface (CLI), administrators can efficiently execute account renaming operations, ensuring consistency and ease of administration.
+**CO-856: Renaming account name from carbonio prov**
 
 
 **CO-955: Improved backup scheduling error handling**
@@ -288,25 +273,6 @@ Bugfix List
 **TEAMS-4128: Custom backgrounds upgrade for video chat**
    Now users can select and apply background images of their choice during video calls, adding a touch of creativity and individuality to their conversations.
 
-
-**WSC-960: Bubble contextual dropdown menu has wrong z-index**
-   When opening the dropdown menu of a message, the menu remained visible and overlapped with the conversation header upon scrolling.
-
-
-**WSC-1154: None**
-   None
-
-
-**WSC-1223: Unused timezone and locale from zimbraPrefs**
-   User want messages and users' last seen dates to be formatted based on the timezone and locale they have set in the Carbonio general settings
-
-
-**WSC-1266: Enhance chat header responsiveness**
-   This update focuses on improving the responsiveness of the chat header. Specifically, when the window size is reduced, ensure that the "Start meeting" button and the information button align horizontally instead of vertically for an enhanced user experience.
-
-
-**WSC-1269: Fix webcam stream release issue**
-    This update resolves the issue where, upon entering a meeting with video on and subsequently turning the video off, the webcam stream isn't released, and the webcam light fails to turn off as expected.
 
 *****
 
