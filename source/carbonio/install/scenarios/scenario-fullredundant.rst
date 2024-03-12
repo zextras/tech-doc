@@ -18,7 +18,7 @@ internal network <scenario-rd-manual>`.
 Ansible Playbook
 ================
 
-This 7 Nodes scenario can be installed using Ansible: you need to
+This 11 Nodes scenario can be installed using Ansible: you need to
 setup a workstation to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible` and following for directions on setting up
 the workstation), then download the Ansible inventory (see below this
@@ -51,7 +51,7 @@ The following ports must be opened on the :ref:`external network
 <fw-external>`, i.e., they are required for proper access to
 |product| from the Internet.
 
-.. table:: Opened ports in Scenario A.
+.. table:: Opened ports in Scenario "Full Redundant".
 
    +-------------------+--------------------------+-------------------+
    | Public hostname   | Ports & Service          | Mapping           |

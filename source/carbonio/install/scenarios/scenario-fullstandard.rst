@@ -5,9 +5,9 @@
 ========================
 
 This scenario involves the presence of a single tenant. It builds on
-the :ref:`previous scenario <scenario-fullsmall>` by decoupling a few
-services and prepare the |product| infrastructure for a future growth
-and scalability. This scenario is therefore intended for
+the :ref:`Full Small Scenario <scenario-fullsmall>` by decoupling a
+few services and prepare the |product| infrastructure for a future
+growth and scalability . This scenario is therefore intended for
 infrastructures including hundreds of accounts and are ready to scale
 up to tens of thousands of accounts.
 
@@ -20,7 +20,7 @@ either using the :ref:`scenario-st-playbook`, or :ref:`manually
 
 Ansible Playbook
 ================
-    
+
 This 7 Nodes scenario can be installed using Ansible: you need to
 setup a workstation to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible` and following for directions on setting up
@@ -30,12 +30,12 @@ to your planned |product| infrastructure (please refer to Section
 :ref:`ansible-inventory`). Once edited the inventory, you can
 :ref:`ansible-run`.
 
-.. dropdown:: Inventory - "Full Standard" Scenario 
+.. dropdown:: Inventory - "Full Standard" Scenario
    :open:
 
    :download:`Dowload the inventory
    </playbook/carbonio-inventory-fullstandard>`
-   
+
    .. literalinclude:: /playbook/carbonio-inventory-fullstandard
 
 Once edited the inventory, you can launch |product| installation by
@@ -54,8 +54,8 @@ The following ports must be opened on the :ref:`external network
 <fw-external>`, i.e., they are required for proper access to
 |product| from the Internet.
 
-.. table:: Opened ports in Scenario A.
-   
+.. table:: Opened ports in Scenario *Full Standard*
+
    +-------------------+--------------------------+------------------+
    | Public hostname   | Ports & Service          | Mapping          |
    +===================+==========================+==================+
@@ -80,12 +80,9 @@ Manual Roles Installation
 
 In case you do not want to install |product| on this scenario using
 Ansible, you can proceed with the manual installation of the various
-Roles on the Nodes, according to the following guidelines. 
+Roles on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
-   
-.. note:: You can skip the installation of Nodes 4 and 5 if you do not
-   need Docs Editor, Files, Chats, and Video Calls.
 
 .. grid:: 1 1 2 2
    :gutter: 2
@@ -100,11 +97,11 @@ Roles on the Nodes, according to the following guidelines.
       Roles installed:
 
       * :ref:`role-mesh-install`
-              
+
       * :ref:`role-db-install`
-        
+
       * :ref:`role-db-conn-install`
-        
+
       * :ref:`role-monit-install`
 
    .. grid-item-card:: Node 2
@@ -112,7 +109,7 @@ Roles on the Nodes, according to the following guidelines.
 
       Node Name/FQDN: srv2.example.com
 
-      Type of services: MTA 
+      Type of services: MTA
 
       Roles installed:
 
@@ -126,7 +123,7 @@ Roles on the Nodes, according to the following guidelines.
       Type of services: Proxy
 
       Roles installed:
-                    
+
       * :ref:`role-proxy-install`
 
 
@@ -140,9 +137,9 @@ Roles on the Nodes, according to the following guidelines.
       Roles installed:
 
       * :ref:`role-prov-install`
-              
+
       * :ref:`role-tasks-install`
-        
+
 
    .. grid-item-card:: Node 5
       :columns: 12
@@ -152,7 +149,7 @@ Roles on the Nodes, according to the following guidelines.
       Type of services: Files
 
       Roles installed:
-              
+
       * :ref:`role-files-install`
 
    .. grid-item-card:: Node 6
@@ -163,7 +160,7 @@ Roles on the Nodes, according to the following guidelines.
       Type of services: Video and Meeting
 
       Roles installed:
-              
+
       * :ref:`role-vs-install`
 
    .. grid-item-card:: Node 7
@@ -171,11 +168,11 @@ Roles on the Nodes, according to the following guidelines.
 
       Node Name/FQDN: srv7.example.com
 
-      Type of services: 
+      Type of services:
 
       Roles installed: Preview and Editing
 
-              
+
       * :ref:`role-docs-install`
-        
+
       * :ref:`role-preview-install`

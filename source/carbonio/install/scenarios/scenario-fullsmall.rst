@@ -4,8 +4,9 @@
  Scenario Full Small
 =====================
 
-This scenario involves the presence of a single tenant and does not
-use the backup functionality. The scenario can be deployed either
+This scenario involves the presence of a single tenant and is suitable
+for small infrastructure up to thousands of accounts, with complete
+set of |product| functionalities. The scenario can be deployed either
 using the :ref:`scenario-sm-playbook`, or :ref:`manually
 <scenarioa-manual>`, Node by Node. In both cases, make sure you
 :ref:`configure the internal network <scenarioa-manual>`.
@@ -48,7 +49,7 @@ The following ports must be opened on the :ref:`external network
 <fw-external>`, i.e., they are required for proper access to
 |product| from the Internet.
 
-.. table:: Opened ports in Scenario A.
+.. table:: Opened ports in Scenario *Full Small*.
    
    +-------------------+--------------------------+------------------+
    | Public hostname   | Ports & Service          | Mapping          |

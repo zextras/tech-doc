@@ -50,7 +50,7 @@ The following ports must be opened on the :ref:`external network
 <fw-external>`, i.e., they are required for proper access to
 |product| from the Internet.
 
-.. table:: Opened ports in Scenario A.
+.. table:: Opened ports in Scenario *Essential*.
    
    +-------------------+--------------------------+------------------+
    | Public hostname   | Ports & Service          | Mapping          |
