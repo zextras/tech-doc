@@ -6,11 +6,11 @@
 
 This scenario involves the presence of a single tenant and does not
 use the backup functionality. The scenario can be deployed either
-using the :ref:`scenarioa-playbook`, or :ref:`manually
+using the :ref:`scenario-sm-playbook`, or :ref:`manually
 <scenarioa-manual>`, Node by Node. In both cases, make sure you
 :ref:`configure the internal network <scenarioa-manual>`.
 
-.. _scenarioa-playbook:
+.. _scenario-sm-playbook:
 
 Ansible Playbook
 ================
