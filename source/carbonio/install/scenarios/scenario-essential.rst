@@ -1,16 +1,18 @@
-.. _scenario-fullsmall:
+.. _scenario-essential:
 
 =====================
- Scenario Full Small
+ Scenario Essential
 =====================
 
-This scenario involves the presence of a single tenant and does not
-use the backup functionality. The scenario can be deployed either
-using the :ref:`scenarioa-playbook`, or :ref:`manually
-<scenarioa-manual>`, Node by Node. In both cases, make sure you
-:ref:`configure the internal network <scenarioa-manual>`.
+This scenario involves the presence of a single tenant and it is
+suitable for small infrastructures up to thousands of accounts that do
+not need the full spectrum of |product| features.  The scenario can be
+deployed either using the :ref:`scenario-es-playbook`, or
+:ref:`manually <scenario-es-manual>`, Node by Node. In both cases,
+make sure you :ref:`configure the internal network
+<scenario-es-manual>`.
 
-.. _scenarioa-playbook:
+.. _scenario-es-playbook:
 
 Ansible Playbook
 ================
@@ -24,22 +26,22 @@ to your planned |product| infrastructure (please refer to Section
 :ref:`ansible-inventory`). Once edited the inventory, you can
 :ref:`ansible-run`.
 
-.. dropdown:: Inventory - "Full Small" Scenario 
+.. dropdown:: Inventory - "Essential" Scenario
    :open:
 
    :download:`Dowload the inventory
-   </playbook/carbonio-inventory-fullsmall>`
+   </playbook/carbonio-inventory-essential>`
    
-   .. literalinclude:: /playbook/carbonio-inventory-fullsmall
+   .. literalinclude:: /playbook/carbonio-inventory-essential
 
 Once edited the inventory, you can launch |product| installation by
 issuing from the workstation, the command (as the ``root`` user)
 
 .. code:: console
 
-   # ansible-playbook -i ../../data/carbonio-inventory-fullsmall carbonio-install.yml
+   # ansible-playbook -i ../../data/carbonio-inventory-essential carbonio-install.yml
 
-.. _scenarioa-network:
+.. _scenario-es-network:
 
 Network Configuration
 =====================
@@ -60,13 +62,10 @@ The following ports must be opened on the :ref:`external network
    |                   | * TCP 8636        LDAP   |                  |
    |                   |   Addresbook             |                  |
    +-------------------+--------------------------+------------------+
-   | mail.example.com  | * UDP 20000/40000 Video  | srv5.example.com |
-   |                   |   Streaming              |                  |
-   +-------------------+--------------------------+------------------+
 
 *****
 
-.. _scenarioa-manual:
+.. _scenario-es-manual:
 
 Manual Roles Installation
 =========================
@@ -126,31 +125,3 @@ Roles on the Nodes, according to the following guidelines.
               
       * :ref:`role-tasks-install`
 
-   .. grid-item-card:: Node 4
-      :columns: 12
-
-      Node Name/FQDN: srv4.example.com
-
-      Type of services: Files, Preview, and Editing
-
-      Roles installed:
-
-      * :ref:`role-files-install`
-              
-      * :ref:`role-docs-install`
-        
-      * :ref:`role-preview-install`
-
-   .. grid-item-card:: Node 5
-      :columns: 12
-
-      Node Name/FQDN: srv5.example.com
-
-      Type of services: Video and Meeting
-
-      Roles installed:
-              
-      * :ref:`role-vs-install`
-        
-
-.. rubric:: Footnotes

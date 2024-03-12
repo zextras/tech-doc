@@ -19,6 +19,7 @@ scenario, or manually by following instruction provided in Section
 
    scenarios/ansible
    scenarios/ansible-install
+   scenarios/scenario-essential
    scenarios/scenario-fullsmall
 
 .. rubric:: Footnotes
