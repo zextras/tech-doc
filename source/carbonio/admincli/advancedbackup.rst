@@ -1041,7 +1041,7 @@ for example for a COS called EXTERNAL_COLLABORATORS, use
 
 .. code:: console
 
-   zextras$ carbonio get cos EXTERNAL_COLLABORATORS backupEnabled
+   zextras$ carbonio config get cos EXTERNAL_COLLABORATORS backupEnabled
 
 
 When Backup is disabled, the following happens in the COS:
@@ -1056,3 +1056,31 @@ When Backup is disabled, the following happens in the COS:
   backup for a Class of Service will reset this behaviour to the
   default one and mark accounts as **Active**.
 
+Disable Backup for an Account
+-----------------------------
+
+As in the case of COS, enabling and disabling the backup functionality for individual accounts
+is currently only available via command line:
+
+.. code:: console
+
+   zextras$ carbonio config set account <ACCOUNT_NAME> backupEnabled true/false`
+
+For example to remove the backup for an account called john@example.com, use
+
+.. code:: console
+
+   zextras$ carbonio config set account john@example.com backupEnabled false
+
+To enable again the backup, run the command:
+
+.. code:: console
+
+   zextras$ carbonio config set account john@example.com backupEnabled true
+
+You can also check the backup status for an account,
+for example for an account called john@example.com, use
+
+.. code:: console
+
+   zextras$ carbonio config get account john@example.com backupEnabled
