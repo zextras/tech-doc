@@ -59,14 +59,15 @@ The following ports must be opened on the :ref:`external network
    +-------------------+--------------------------+------------------+
    | Public hostname   | Ports & Service          | Mapping          |
    +===================+==========================+==================+
-   | mail.example.com  | * TCP 25/465/587  SMTP/S | srv2.example.com |
-   |                   | * TCP 80/443      HTTP/S |                  |
+   | mail.example.com  | * TCP 80/443      HTTP/S | srv3.example.com |
    |                   | * TCP 143/993     IMAP/S |                  |
    |                   | * TCP 110/995     POP/S  |                  |
    |                   | * TCP 8636        LDAP   |                  |
    |                   |   Addresbook             |                  |
    +-------------------+--------------------------+------------------+
-   | mail.example.com  | * UDP 20000/40000 Video  | srv5.example.com |
+   | mx.example.com    | * TCP 25/465/587  SMTP/S | srv2.example.com |
+   +-------------------+--------------------------+------------------+
+   | mail.example.com  | * UDP 20000/40000 Video  | srv6.example.com |
    |                   |   Streaming              |                  |
    +-------------------+--------------------------+------------------+
 
