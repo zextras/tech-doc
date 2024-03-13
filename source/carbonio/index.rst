@@ -137,43 +137,85 @@ If you would like to help us improve our technical documentation, please fill ou
 .. raw:: html
 
    <style type="text/css">
-   form.advertising {
-        margin: 1.5em 0em;
-        padding: 1.5em 0em;
-        border-top: 1px solid rgba(0,0,0,.1);
-    }
-   form.advertising input {
-        display: block;
-        margin: 1em 0em;
-    }
+      .ratings {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      direction: rtl;
+      text-align: left;
+      }
+
+      .star {
+      position: relative;
+      line-height: 60px;
+      display: inline-block;
+      transition: color 0.2s ease;
+      color: #ebebeb;
+      }
+
+      .star:before {
+      content: '\2605';
+      width: 60px;
+      height: 60px;
+      font-size: 60px;
+      }
+
+      .star:hover,
+      .star.selected,
+      .star:hover ~ .star,
+      .star.selected ~ .star{
+      transition: color 0.8s ease;
+      color: black;
+      }
    </style>
 
    <div>
-    <form action="https://example.com/project.html" method="POST" class="advertising">
-  
-     <!--using the select tag--> 
-     <label for="answer">Was this page helpful?</label>
-     <select name= "answer" id="answer">
-     <option value="answer" selected>Yes</option>
-     <option value="answer">No</option>
+       <ul class="ratings">
+         <li id="icon5" class="star"></li>
+         <li id="icon4" class="star"></li>
+         <li id="icon3" class="star"></li>
+         <li id="icon2" class="star"></li>
+         <li id="icon1" class="star"></li>
+      </ul>
 
-     <input type="text" name="comment" size="50" placeholder="How can we improve it?" required>
+      <script>
+      function getPageName(url) {
+         var index = url.lastIndexOf("/") + 1;
+         var filenameWithExtension = url.substr(index);
+         var filename = filenameWithExtension.split(".")[0]; // <-- added this line
+         return filename;                                    // <-- added this line
+      }
 
-     <p id="urlParams"></p>
+      const icons = document.querySelectorAll('.star');
+      const iconURL = window.location.href; // Get the last digit of the ID (icon#)
+      const iconPageName = getPageName(iconURL);
+      icons.forEach(icon => {
+         icon.addEventListener('click', () => {
+            const iconId = icon.id.slice(-1); // Get the last digit of the ID (icon#)
+            
+            const url = `https://analytics.zextras.tools/matomo.php?idsite=4&rec=1&url=${iconURL}&e_c=vote&e_n=${iconPageName}&e_v=${iconId}`;
+            fetch(url)
+            .then(response => response.text())
+            .then(data => {
+               console.log("GET request to", url, "successful. Response:", data);
+               // You can further process the response data here (optional)
+            })
+            .catch(error => console.error("GET request failed:", error));
+         });
+      });
+      $(function (){
+         var star = '.star',
+               selected = '.selected';
+         
+         $(star).on('click', function(){
+            $(selected).each(function(){
+               $(this).removeClass('selected');
+            });
+            $(this).addClass('selected');
+         });
+         
+         });
+      </script>
 
-     <script>
-           // Get URL parameters
-         const currentUrl = window.location.href;
-         console.log(currentUrl);
-         document.write("The URL is: " + currentUrl)
-     </script>
-
-     <!--send feedback-->
-     <div>
-     <button class="btn" type="submit">Submit</button>
-     <button class="btn" type="reset">Reset</button>
-     </div>
-
-    <!--close form tag-->
-    </form>
    </div>
