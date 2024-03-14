@@ -32,7 +32,7 @@
       .. tab-item:: Ubuntu
          :sync: ubuntu
 
-         In file :file:`/etc/pgpool-II/pgpool.conf`, search for the
+         In file :file:`/etc/pgpool2/pgpool.conf`, search for the
          following attributes and replace the existent values with the
          following::
 
