@@ -17,7 +17,7 @@ make sure you :ref:`configure the internal network
 Ansible Playbook
 ================
     
-This 5 Nodes scenario can be installed using Ansible: you need to
+This 3 Nodes scenario can be installed using Ansible: you need to
 setup a workstation to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible` and following for directions on setting up
 the workstation), then download the Ansible inventory (see below this
