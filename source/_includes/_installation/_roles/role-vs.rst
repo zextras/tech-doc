@@ -3,6 +3,10 @@ This Role consists of *Video Server* and *Video Recording*. You need
 to install the latter only if you plan to record video meetings,
 otherwise you can install *Video Server* without *Video Recording*.
 
+The Video Server Role requires that the :ref:`role-prov-install` be
+already installed, because you need to execute a command on the Node
+hosting that Role to configure the Video Server.
+
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
 
 .. card:: Video Server
@@ -31,25 +35,32 @@ otherwise you can install *Video Server* without *Video Recording*.
 
             # dnf install carbonio-videoserver service-discover-agent
 
-   After the installation, make sure that the |vs| `public` IP address
-   (i.e., the one that will accept incoming connections to the |vs|) is
-   present in the configuration file :file:`/etc/janus/janus.jcfg` and
-   add it if missing: find the variable ``nat_1_1_mapping`` and add it,
-   for example: ``nat_1_1_mapping = "93.184.216.34"``
+   During the installation of the packages, you need to insert the IP
+   `public` address (i.e., the one that will accept incoming
+   connections to the |vs|) on which the |vs| is installed.
+   
+   After the installation, make sure that the IP address is present in
+   the configuration file :file:`/etc/janus/janus.jcfg` and add it if
+   missing: find the variable ``nat_1_1_mapping`` and add it, for
+   example: ``nat_1_1_mapping = "93.184.216.34"``
 
-   Configure the |vs|
-      
+   .. rubric:: Configure the |vs|
+
+   During the installation, a command similar to the one below is
+   displayed. Copy it and execute on the Node on which the
+   :ref:`role-prov-install` is installed.
+   
    .. code:: console
 
-      zextras$ carbonio chats video-server add example.com port 8188 \
-      servlet_port 8090 secret A_SECRET_PASSWORD
+      zextras$ carbonio chats video-server add videoserver.example.com port 8188 \
+      secret A_SECRET_PASSWORD
 
 
-   Replace *example.com* with the actual domain name or IP, *8188* and
-   *8090* with the ports associated with the |vs| and the recorder,
-   respectively, and *A_SECRET_PASSWORD* with the value of the
-   variable ``api_secret`` in file :file:`/etc/janus/janus.jcfg` on
-   the Node installing the Video Server Role, for example::
+   Replace *example.com* with the actual domain name or IP, *8188* the
+   port associated with the |vs|, respectively, and
+   *A_SECRET_PASSWORD* with the value of the variable ``api_secret``
+   in file :file:`/etc/janus/janus.jcfg` on the Node installing the
+   Video Server Role, for example::
 
         api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
          
@@ -81,14 +92,22 @@ otherwise you can install *Video Server* without *Video Recording*.
 
 
    The video-recording feature is enabled by default, and does not
-   require configuration if installed together with the |vs|.  It does
-   however require some manual command if installed at a later
-   point. Please refer to Section :ref:`vs-record-meeting` for
-   directions.
+   require configuration if installed together with the |vs|. However,
+   the following manual command is required if installed at a later
+   point. Make sure to use the same FQDN (videoserver.example.com) and
+   secret (A_SECRET_PASSWORD) used to configure the |vs|.
 
+   .. hint:: *A_SECRET_PASSWORD* is saved as the value of
+      ``api_secret`` in file :file:`/etc/janus/janus.jcfg` (e.g.,
+      example ``api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ")``.
+            
+   .. code:: console
+
+      zextras$ carbonio chats video-server update-servlet videoserver.example.com:8188 8090
+   
    The recorded sessions will be stored in directory
    :file:`/var/lib/videorecorder/` on the Node which features the
-   Mailstore and Provisioning Role, because the ability to record
+   :ref:`role-prov-install` Role, because the ability to record
    requires a Node which features that Role. Make sure that the
    directory has sufficient free space, otherwise recorded videos can
    not be stored.
