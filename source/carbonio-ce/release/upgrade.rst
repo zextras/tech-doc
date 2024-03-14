@@ -37,7 +37,7 @@ Upgrade to PostgreSQL 16
 .. rubric:: Update pgpool-II
 
 If you run |product| in Multi-Nodes, you need to update also the
-``pgpool`` package so it matches PostgresQL's correct version, 16.
+``pgpool-II`` package so it matches PostgresQL's correct version, 16.
 
 #. First, remove the installed package (and repository definition if
    installed)
