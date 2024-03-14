@@ -5,17 +5,17 @@
 
       .. code:: console
 
-         # apt install pgpool2 carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db carbonio-tasks-db \
-           carbonio-message-dispatcher-db carbonio-ws-collaboration-db \
-           service-discover-agent
+         # apt install carbonio-files-db carbonio-mailbox-db \
+           service-discover-agent carbonio-docs-connector-db \
+           carbonio-tasks-db carbonio-message-dispatcher-db \
+           carbonio-ws-collaboration-db
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install pgpool2 carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db carbonio-tasks-db \
-           carbonio-message-dispatcher-db carbonio-ws-collaboration-db \
-           service-discover-agent
+         # dnf install carbonio-files-db carbonio-mailbox-db \
+           service-discover-agent carbonio-docs-connector-db \
+           carbonio-tasks-db carbonio-message-dispatcher-db \
+           carbonio-ws-collaboration-db
