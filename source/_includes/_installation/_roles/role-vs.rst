@@ -103,8 +103,7 @@ hosting that Role to configure the Video Server.
             
    .. code:: console
 
-      zextras$ carbonio chats video-server add videoserver.example.com \
-      port 8188 servlet_port 8090 secret A_SECRET_PASSWORD
+      zextras$ carbonio chats video-server update-servlet videoserver.example.com:8188 8090
    
    The recorded sessions will be stored in directory
    :file:`/var/lib/videorecorder/` on the Node which features the
