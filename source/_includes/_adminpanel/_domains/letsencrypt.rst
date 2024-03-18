@@ -1,4 +1,3 @@
-
 .. card:: Let's Encrypt Requirements
 
    Before attempting to ask for a Let's Encrypt certificate, make sure
@@ -22,15 +21,15 @@
       must add some forwarding rules.
 
    #. You run all command in this section as the ``zextras`` user
-      
+
    #. The ``zimbraReverseProxyMailMode`` attribute has been set to
       *redirect* at global level. You can verify if this is the case
       with command
-   
+
       .. code:: console
 
          zextras$ carbonio prov gacf zimbraReverseProxyMailMode
-         
+
       If the output is not *redirect*, you can set it with
 
       .. code:: console
@@ -38,7 +37,7 @@
          zextras$ carbonio prov mcf zimbraReverseProxyMailMode redirect
 
    #. you have unset the same attribute on the Proxy Nodes
-      
+
       .. code:: console
 
          zextras$ carbonio prov ms $(zmhostname) zimbraReverseProxyMailMode ""
@@ -54,7 +53,7 @@
    the Proxy Node
 
    .. code:: console
-   
+
       zextras$ /opt/zextras/libexec/zmproxyconfgen
       zextras$ zmproxyctl restart
 

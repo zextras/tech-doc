@@ -1,3 +1,5 @@
+.. _post-install:
+
 ============
 Post-Install
 ============

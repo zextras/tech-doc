@@ -11,5 +11,6 @@ if there are any in the current release.
 
    changelog-latest
    upgrade
+   upgrade-ubuntu
    older-changelogs
    issues

@@ -1,6 +1,6 @@
 
 To configure PostgreSQL, edit file
-:file:`/etc/postgresql/12/main/pg_hba.conf`, find the line::
+:file:`/etc/postgresql/16/main/pg_hba.conf`, find the line::
 
   #IPv4 local connections:
   host    all             all             127.0.0.1/32            ident

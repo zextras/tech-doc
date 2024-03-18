@@ -1012,33 +1012,37 @@ Disable Backup for a COS
 ------------------------
 
 
-Disabling the backup for a Class of Service will add the following
-marker to the Class of Service’s `Notes` field:
-``${ZxBackup_Disabled}``.
+Since it's currently only possible to manage the enabling and disabling of this feature on a COS by command line,
+to disable the backup for a given COS use command:
 
-While the Notes field remains fully editable and usable, changing or
-deleting this marker will re-enable the backup for the COS.
+:command:`carbonio config set cos <COS_NAME> backupEnabled false`
 
-Since this feature is CLI-only, to disable the backup for a given
-COS, use command :command:`carbonio backup  doEnableDisableCOS`,
-for example to remove backup from COS called EXTERNAL_COLLABORATORS, use
+For example to remove backup from COS called EXTERNAL_COLLABORATORS, use
 
 .. code:: console
 
-   zextras$ carbonio backup doEnableDisableCOS EXTERNAL_COLLABORATORS disable
+   zextras$ carbonio set cos EXTERNAL_COLLABORATORS backupEnabled false
 
-To enable again the backup, run the same command, but replace
-``disable`` with ``enable``.
-
-You can also check the backup status for all COS, use command
+To enable again the backup, run the `unset` command:
 
 .. code:: console
 
-   zextras$ carbonio backup getCOSBackupStatus
+   zextras$ carbonio unset cos EXTERNAL_COLLABORATORS backupEnabled
 
-     cosList                                 
-         default                                                 Enabled
-         EXTERNAL_COLLABORATORS                                  Disabled
+Or, in alternative, explicitly set to `true`:
+
+.. code:: console
+
+   zextras$ carbonio set cos EXTERNAL_COLLABORATORS backupEnabled true
+
+
+You can also check the backup status for a COS,
+for example for a COS called EXTERNAL_COLLABORATORS, use
+
+.. code:: console
+
+   zextras$ carbonio config get cos EXTERNAL_COLLABORATORS backupEnabled
+
 
 When Backup is disabled, the following happens in the COS:
 
@@ -1052,3 +1056,31 @@ When Backup is disabled, the following happens in the COS:
   backup for a Class of Service will reset this behaviour to the
   default one and mark accounts as **Active**.
 
+Disable Backup for an Account
+-----------------------------
+
+As in the case of COS, enabling and disabling the backup functionality for individual accounts
+is currently only available via command line:
+
+.. code:: console
+
+   zextras$ carbonio config set account <ACCOUNT_NAME> backupEnabled true/false`
+
+For example to remove the backup for an account called john@example.com, use
+
+.. code:: console
+
+   zextras$ carbonio config set account john@example.com backupEnabled false
+
+To enable again the backup, run the command:
+
+.. code:: console
+
+   zextras$ carbonio config set account john@example.com backupEnabled true
+
+You can also check the backup status for an account,
+for example for an account called john@example.com, use
+
+.. code:: console
+
+   zextras$ carbonio config get account john@example.com backupEnabled

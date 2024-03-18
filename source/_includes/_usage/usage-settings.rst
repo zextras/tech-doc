@@ -149,8 +149,8 @@ Calendar
    :class-header: sd-font-weight-bold irisfont
 
    You may select on which calendar events and appointments are
-   created by default and if the default time zone is used or can be
-   chosen when creating new appointments.
+   created by default and if the time zone is shown when creating new
+   appointments.
 
 .. card:: Apple iCal
    :class-header: sd-font-weight-bold irisfont

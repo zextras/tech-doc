@@ -18,25 +18,33 @@ Deleted contacts land in the special `Trash` address book, which keeps
 them until you manually empty it. To do so, right-click the address
 book and select `Empty trash`.
 
-A right-click on the address book allows to carry out a few action on
-it and its content: edit, share, empty, or delete it. Moreover, new
-address books can be created.
-For each contact, icons allow to carry out different actions: delete,
-move, or write an e-mail to the contact.
+Addressbook management
+----------------------
 
+A right-click on any address book allows to carry out a few action on
+it and its content:
+
+* create a new addressbook
+* move an addressbook, for example to create a hierarchy.
+* share, empty, edit, or delete an addressbook
+* Import and export all the contacts in the addressbook in CSV format.
+  
 .. hint:: To move the contacts from one address book to another, you
    can also drag the contact and drop it on the destination address
    book.
 
-If any colleague has shared an address book, you can click the
-:bdg-primary-line:`FIND SHARES` button under `Shared Address Book` and
-provide the e-mail address. You will see all the address books shared
-by the user.
+You can create groups of contacts to ease their management, for
+example if there is a groups of people that you contact frequently:
+refer to Section :ref:`contact-groups-comp`. If any colleague has
+shared an address book, you can click the :bdg-primary-line:`FIND
+SHARES` button under `Shared Address Book` and provide the e-mail
+address. You will see all the address books shared by the user.
 
 You can search among contacts using the :ref:`search bar
 <global-search>`. You can then refine your search by clicking the
 :bdg-primary:`ADVANCED FILTER` button. Here you can also choose to
 include shared address books in the search.
+
 
 Configure a CardDav Client
 --------------------------

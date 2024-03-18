@@ -4,10 +4,11 @@
 
 
 Before starting with the actual installation, carry out the following
-two tasks *on* **each** node.
+two tasks on **each** Node.
 
 .. card:: Task 1. Configure repositories
                      
+   .. include:: /_includes/_installation/step-repo-conf-cb.rst
    .. include:: /_includes/_installation/repo-info.rst
 
 .. card:: Task 2. Setting Hostname
