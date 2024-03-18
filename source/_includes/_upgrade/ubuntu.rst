@@ -53,14 +53,18 @@ is, the line defining the repository
 
 #. is not commented, i.e., it does not start with a ``#`` sign
 
-
-Now you can update the package list and the packages itself, with the
-command
+Now you can stop the services, update the package list and the packages itself, with these
+commands
 
 .. code:: console
 
+   # su - zextras -c "zmcontrol stop"
    # apt update && apt upgrade
 
 
-Once done, you will end up with a fully upgrade |product| version
-**23.4**  on Ubuntu **22.04**!
+At the end of the upgrade you need to fix the permissions and start the services
+
+.. code:: console
+
+   # /opt/zextras/libexec/zmfixperms
+   # su - zextras -c "zmcontrol start"
