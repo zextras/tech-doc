@@ -49,5 +49,5 @@ Supported Mail Protocols
 |product| supports the following protocols:
 
 * POP3 and POP3S
-* SMTP and its secure protocols SSMTP and SPTMS (SMTP over TLS/SSL)
+* SMTP and its secure protocol SMTPS (SMTP over TLS/SSL)
 * IMAP and its secure protocol IMAPS (IMAP over SSL)

@@ -15,8 +15,8 @@ Requirements are divided into groups: :ref:`system-requirements`,
 :ref:`more-requirements`.
 
 To make requirements easier to understand, we provide software
-requirements for a **Node**, which is either the only server used in
-a Single-Server or each server in a Multi-Server infrastructure.
+requirements for a **Node**, which is either the only server used in a
+Single-Server or each server in a Multi-Server infrastructure.
 
 .. _system-requirements:
 
@@ -60,17 +60,22 @@ Software Requirements for a Node
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 |product| is available for **64-bit** CPUs only and can be installed
-on top of any vanilla **Ubuntu 20.04 LTS Server Edition** or **RHEL
-8** installation.
+on top of any of these vanilla distributions:
+
+* **Ubuntu 20.04 LTS Server Edition**
+* **Ubuntu 22.04 LTS Server Edition**
+* **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
+
+Support for other distributions will be announced in due course
+when it becomes available.
 
 .. card:: Installation on Other Linux Distributions
 
-   While they are **not officially supported**, Linux
-   distributions compatible with Ubuntu 20.04 (e.g., Debian) and RHEL
-   8 (e.g., AlmaLinux, Rocky Linux) *may be used* as base OS for
-   |product|, provided all dependencies can be satisfied. This may
-   include adding third-party repositories or manually installing
-   software packages.
+   While they are **not officially supported**, Linux distributions
+   compatible with Ubuntu (e.g., Debian) and RHEL (e.g., AlmaLinux,
+   Rocky Linux) *may be used* as base OS for |product|, provided all
+   dependencies can be satisfied. This may include adding third-party
+   repositories or manually installing software packages.
 
    Moreover, even if |product| can be installed on an unsupported
    distribution, it may require some additional effort to have all
@@ -85,9 +90,8 @@ The following requirements must be satisfied before attempting to
 install |product|.
 
 #. The whole |product| infrastructure must have at least **one public
-   IP address**. The IP address must have a domain name associated,
-   that coincides with the **A record** in the DNS (e.g., ``A
-   mail.example.com``)
+   IP address**. You need to create a DNS **A record** that resolves
+   to the public IP (e.g., ``A mail.example.com``)
 
    .. hint:: You can check a domain's A record using the CLI utility
       ``host``:
@@ -111,91 +115,36 @@ install |product|.
    configured, the installation will be temporarily suspended to allow
    the change of the hostname.
    
-   See :ref:`the dedicated box below <config-dns>` for details and examples.
+#. Each Node must be able to carry out DNS resolution autonomously and
+   be able to resolve all other Nodes
 
 #. For improved security of sending emails, you should also define TXT
    records for SPF, DKIM and DMARC
 
-#. Python 3, latest version available on the Operating System chosen
-#. Perl, latest version available on the Operating System chosen
+#. Python 3, latest version available on the chosen Operating System
+
+#. Perl, latest version available on the chosen Operating System
+
 #. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
    does not contain any IPv6 entries.
 
-.. _config-dns:
-
-.. topic:: Configuring DNS resolution
-
-   To make sure that the DNS is correctly configured for both **A** and
-   **MX** records: to do so, you can use any DNS resolution server,
-   including `dnsmasq`, `systemd-resolved`, and `bind`.
-
-   We show as an example, only suitable for **demo** or **testing
-   purposes**, how to install and configure ``dnsmasq`` for DNS
-   resolution.
-
-   .. dropdown:: Example: Set up of dnsmasq for demo or test environment
-
-      Follow these simple steps to set up ``dnsmasq``. These
-      instructions are suitable for a demo or testing environment
-      only.
-
-      .. warning:: On Ubuntu **20.04**, installing and running dnsmasq
-	      may raise a port conflict over port **53 UDP** with the
-	      default `systemd-resolved` service, so make sure to disable
-	      the latter before continuing with the next steps.
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               # apt install dnsmasq
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               # dnf install dnsmasq
-
-      To configure it, add the following lines to file
-      :file:`/etc/dnsmasq.conf`::
-
-	           server=1.1.1.1
-	           mx-host=example.com,mail.example.com,50
-	           host-record=example.com,172.16.0.10
-	           host-record=mail.example.com,172.16.0.10
-
-      Remember to replace the **172.16.0.10** IP address with the one
-      of your server. Then, make sure that the :file:`etc/resolv.conf`
-      contains the line::
-
-        nameserver 127.0.0.1
-
-      This will ensure that the local running :command:`dnsmasq` is
-      used for DNS resolution. Finally, restart the **dnsmasq**
-      service
-
-      .. code:: console
-
-	      # systemctl restart dnsmasq
-
-Support for other distributions will be announced in due course
-when it becomes available.
-
 .. _rhel-requirements:
 
-RHEL 8 Specific Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RHEL Specific Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note:: If you plan to install |product| automatically on a
+   *Single-Server* using the downloadable script (see Section
+   :ref:`single-install-auto`), these requirements are checked and
+   automatically enabled if missing.
 
 .. include:: /_includes/_installation/preliminary-rh.rst
 
 .. _more-requirements:
    
-Additional Requirements
-~~~~~~~~~~~~~~~~~~~~~~~
+Additional Requirements (Manual Installation)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
   commands must be executed as the ``zextras`` user (these commands
@@ -245,12 +194,9 @@ TCP External Connections
       :widths: 10 10 80
 
       "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [1]_"
+      "465", "TCP", "Message Submission over TLS protocol"
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
-
-   .. [1] This port is still used since in some cases it is
-      considered safer than 587. It requires on-connection SSL.
 
    .. warning:: These ports should be exposed only if really needed, and
       preferably only accessible from a VPN tunnel, if possible, to
@@ -322,13 +268,10 @@ TCP Internal Connections
       :widths: 10 10 80
 
       "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", ":bdg-danger:`deprecated` SMTP authentication relay [3]_"
+      "465", "TCP", "Message Submission over TLS protocol"
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
-
-   .. [3] This port is still used since in some cases it is considered
-      safer than 587. It requires on-connection SSL.
 
 .. card:: AppServer Role
 

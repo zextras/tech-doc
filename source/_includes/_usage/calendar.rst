@@ -49,6 +49,12 @@ many more information can be added to an appointment:
   visible to other colleagues who have access to the calendar of the
   attendees.
 
+* The time zone, if different from the default one.
+
+  .. hint:: You need to enable this option in the
+     :ref:`settings-calendar` module's *Creating Appointment* Section.
+          
+
 In case the invitation was not sent or if something went wrong, the
 event will show up in the calendar, but marked with a red icon. The
 attendee can propose a new time. In this case, new e-mail will be

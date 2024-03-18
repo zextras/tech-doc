@@ -38,12 +38,13 @@ We can group the available |product| Roles into 3 macro categories:
 
 * **Infrastructure Roles**, which are mandatory in any |product| installation
 
-* **Service Roles** broaden the basic functionality provided by |product|
-
-* **Advanced Roles** provide robustness and redundancy to |product|
-
+* **Service Roles** broaden the functionality provided by |product|
 
 This is the list of roles that make up a |product| installation.
+
+.. note:: Postgres, Pgpool, Grafana, Zookeper, and  Kafka are
+   third-party software that are installed from their respective
+   official repositories.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -56,7 +57,7 @@ This is the list of roles that make up a |product| installation.
 
       Packages:
 
-      * postgresql-12
+      * postgresql
 
       .. 24.1
          * python3-psycopg2
@@ -218,7 +219,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
 
-      Type of Role: Advanced role
+      Type of Role: Service role
 
       Packages:
 

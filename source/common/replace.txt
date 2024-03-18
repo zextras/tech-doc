@@ -70,3 +70,7 @@
 .. |leaderip| replace:: :bdg-secondary-line:`LEADER_IP`
 .. |srv6h| replace:: :bdg-secondary-line:`SRV6_hostname`
 .. |dsnode| replace:: :bdg-secondary-line:`SRV1`
+
+.. misc
+
+.. _ansible: https://www.ansible.com/

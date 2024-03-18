@@ -4,22 +4,16 @@
 
 
 Before starting with the actual installation, carry out the following
-tasks *on* **each** *of the six nodes*.
+tasks on **each of the nodes**.
 
-.. card::
+.. card:: Task 1: Configure repositories
    :class-header: sd-font-weight-bold sd-fs-5
-
-   Task 1: Configure repositories
-   ^^^^^
 
    .. include:: /_includes/_installation/step-repo-conf-ce.rst
    .. include:: /_includes/_installation/repo-info.rst
 
-.. card::
+.. card:: Task 2: Setting Hostname
    :class-header: sd-font-weight-bold sd-fs-5
-
-   Task 2: Setting Hostname
-   ^^^^^
    
    .. include:: /_includes/_installation/steps-hostname.rst
 

@@ -15,7 +15,7 @@
      available as soon as they are built by |zx| development and
      tested by the QA team. While they are stable, they **are not
      suitable for a use in a production environment**, because they
-     might still contain some bug, new functionalities that have not
+     might still contain some bugs, new functionalities that have not
      yet reached a production-level quality, or some broken
      dependencies might be introduced.
 
@@ -29,7 +29,7 @@
      and suitable for a production environment.
 
    .. hint:: When reporting a problem or opening a ticket, remember to
-      always add the channel if you are using, as this helps us to
+      always add the channel you are using, as this helps us to
       analyse the problem quickly.
 
 
@@ -44,12 +44,12 @@
 
       :octicon:`chevron-right` *RELEASE* channel.
 
-   #. How will we be informed about new RC packages?
+   #. How will I be informed about new RC packages?
       
       :octicon:`chevron-right` There will be no notification, because
       RC channel is updated continuously.
 
-   #. How will we be informed about a potential new release incoming?
+   #. How will I be informed about a potential new release incoming?
 
       :octicon:`chevron-right` A red message on the homepage of the
       documentation site will notify you of the release of a new

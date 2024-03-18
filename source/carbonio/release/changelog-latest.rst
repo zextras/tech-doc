@@ -1,151 +1,278 @@
-.. SPDX-FileCopyrightText: 2023 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Carbonio Changelog - Release 24.1.0
+Carbonio Changelog - Release 24.3.0
 ===================================
 
-Release Date: January 30th, 2024
+Release Date: March 13th, 2024
 
 New Features List
 -----------------
 
-**AC-533: Admin can manage domain disclaimer**
-   Now the admin can manage a Domain Disclaimer, the option to have different disclaimers for internal and external recipients.
+**AC-419: Enable sorting and filtering for account, resources, mailing list**
+   Introduce sorting and filtering options for key columns like Email, Name, and Address in Account, Resources, and Mailing List views.
 
-**AC-795: Revealed Distribution List Owner Settings in Admin UI**
-   Now the mailing list owner setting is visible in the Distribution List field within the admin panel.
 
-**AC-809: Admin can customize items per page**
-   Administrators now have the capability to specify the number of "items per page" they wish to display.
+**AC-806: Streamlined Management of Inherited Values for Whitelabel Settings**
+   This update enhances the management of Whitelabel settings by introducing the capability for administrators to seamlessly inherit values from global settings to specific domains. 
 
-**AC-851: Enhanced whitelabel settings for background image ratios**
-   The white-label settings now honour the background image ratio. Administrators can find the specifications in the Background for the Login Page section: “The image must possess a minimum resolution of 1280x1080, a 16:9 ratio, and a size less than 800KB"
 
-**AC-854: Fixed Invalid username creation from name field special characters**
-   The Email ID creation process has been enhanced to disable automatic email creation when the combination of the first name and last name includes any special character. This improvement addresses the issue of special characters in the Surname and Name fields, preventing the automatic generation of an email username with invalid characters not accepted by Carbonio during submission.
+**AC-861: Human readable quota sizes**
+    Admins can now specify quota sizes in gigabytes instead of bytes, providing a more human-readable and convenient experience for setting storage limits.
 
-**AC-855: Enhanced mailbox quota table with color-coded assignments**
-   The Mailbox quota table is now easier to identify with color-coded distinctions. Accounts exceeding >70% of Mail Quota are displayed in Yellow, while those exceeding =>90% are highlighted in Red.
 
-**AC-876: User can request token for forget password web UI**
-   This update empowers users to autonomously request a token for webmail access in the event of a forgotten password. The admin now has the capability to globally or selectively disable this feature, either for the entire system or specific domains. Notably, the forgotten password feature is designed to update the LOCAL (LDAP) password and is not intended for external LDAP/AD or application credentials. Users can leverage this by configuring the OTP (One-Time Password).
+**AC-873: Enhance adminUI for subscription interactions**
+   Improve Admin interactions by allowing manual renewal of subscriptions, aligning Admin UI data with subscription information, and reorganizing subscription details per design mockup.
 
-**AC-879: Update interface label to "User"**
-   The General tab now displays "User" instead of "Username" improving clarity and user experience.
 
-**AC-892: MTA Queues usability improved**
-   Enhances the usability of the MTA queue interface by removing redundant details and improving flow.
+**AC-883: Improved Quarantine Management**
+   Improved score visibility, flexible retention settings, and enhanced delivery controls provide administrators with comprehensive control and insights. Admins can now assess threat severity more accurately, and the message detail view offers deeper insights with score and reason values.
 
-**AC-897: Enhanced mail queue supports bulk actions**
-   The Mail Queue feature has been significantly improved, allowing administrators to effortlessly select and perform bulk actions on multiple messages across various queue spools. Whether it's deleting, re-queuing, holding, releasing, or flushing, this upgrade empowers administrators with a robust and efficient tool for managing their mail queue on MTA Servers.
 
-**AC-903: Reorganization of Admin panel backup settings menu**
-   The Servers List in the Backup Settings menu of the  Admin Panel has been relocated to the top of the Global Server Settings list for improved organization.
+**AC-889: Admin can manage  "mynetwork" attribute in MTA outbound flow**
 
-**AC-906: Enhanced virtualHost validation for FQDN**
-   The virtualHost validation has been improved to allow only Fully Qualified Domain Names (FQDN). An FQDN, such as MAIL.DOMAIN.TLD is now required for virtualHost, ensuring more accurate domain identification.
 
-**AC-909: DomainAdmin can configure recovery address**
-   DomainAdmins can now manage user recovery email, set recovery email, and control its verification status in the "Security" tab.
+**AC-890: Admin can update MtaSmtpdSenderLoginMaps**
 
-**CO-802: "Keep" policy removed from folder retention**
-   The "keep" policy is now removed, ensuring efficient item removal with the enhanced "purge" policy. Improved user experience and system clarity.
 
-**CO-865: Set Default zimbraHttpDebugHandlerEnabled to False**
-   The default parameter for zimbraHttpDebugHandlerEnabled is now set to false. The boolean parameter has been updated from true to false.
+**AC-893: Admin control over "Forgot Password" link visibility**
+   Implemented the ability for administrators to control the visibility of the "Forgot Password" link on the login page. Admins can choose to either enable or disable this feature, giving them control over users' autonomous password resets.
 
-**CO-893: File upload quota validation enhanced**
-   Now the file upload API has been enhanced to validate whether the user's current quota is reached. user now allows successful uploads within the specified quota limits while rejecting uploads that surpass the user's maximum quota.
 
-**CO-922: Refine forgot password Email Message**
-   Update the Forgotten Password email message to clearly indicate a request for a temporary authentication code, not a password reset.
+**AC-895: Enhanced default domain recognition**
+   The latest Carbonio webmail update streamlines login by requiring only the username, eliminating the need for entering the full email address. Administrators can configure domain-specific virtual host names, enhancing user experience and simplifying access management across multiple domains.
 
-**CO-923: Health endpoint implemented in Mailbox**
-   The health endpoint is added to the Mailbox service, enhancing health checks and providing better control over its liveliness and readiness.
 
-**CO-929: Milter startup logging error fix**
-   Resolves the issue where the milter startup logs report an error about being unable to locate the appender "MILTER" for the logger config "root" in /opt/zextras/log/milter.out.
+**AC-920: Improved default domain handling for seamless logins**
+   Enhances user experience by allowing login without typing the full email address. The update ensures users can seamlessly log in with just their username and password, providing clarity on the default domain associated with the FQDN. This improvement supports Carbonio, offering a simplified login process.
 
-**CO-930: YUICompressor Library removed from mailbox**
-   Optimized Logging: mailbox.log no longer contains unnecessary entries from the unused YUICompressor library, enhancing efficiency.
 
-**CO-931: Db-java - Cleanup Unused Methods and Classes**
-   The proposed change involves cleaning up unused methods and classes in the Db-java module, specifically targeting the DbPool class. This cleanup enhances code clarity and simplifies the implementation of the Healthcheck feature.
+**AC-929: Enhanced Account update Attribute  for Admins**
+   Enhancement removes the EDIT button, providing direct attribute updates for admins. Simplifies the administrative process, allowing seamless modification without extra navigation. Monitoring admins have viewing-only access, while administrators retain full editing capabilities. Additionally, the ABQ attribute is introduced.
 
-**COR-1020:  Enhanced notification access for delegated admin**
-   Delegated admins now have comprehensive access to notifications through both email and the Admin UI, addressing and resolving the issue where notifications were previously limited to email only. This improvement enhances the overall delegated admin experience on the platform.
 
-**IRIS-4513: Distribution List owner can manage DL**
-   The owner of the Distribution List can now control the DL directly from the ContactInput chip using the TO field.
+**AC-930: UI and functionality update for account details**
+   This update includes various UI changes, such as replacing the edit icon with an outline, adjusting the spacing for the end session button and between two dropdowns, ensuring the password change is displayed in one line, setting the default language selection, and introducing the display of OTP device count.
 
-**IRIS-4765: Meeting Room availability visibility enhancement**
-   Users can now easily identify the availability of Meeting Rooms from the dropdown menu. Unavailable Meeting Rooms display an alert icon and a warning message, allowing users to make informed selections.
 
-**IRIS-4768: Equipment availability display improved**
-   The update enables users to identify Equipment availability in the dropdown, with a visual indicator (alert icon) and a warning under the input. Users can still select unavailable Equipment. The display is validated across various scenarios, including the appointment displayer and edit mode.
+**AC-931: Enhanced account update attribute  for admins**
+   Enhancement removes the EDIT button, providing direct attribute updates for admins. Simplifies the process, allowing seamless modifications without additional navigation. Monitoring admins have viewing-only access, ensuring editing is limited to administrators with the SAVE button appropriately grayed out for them.
 
-**IRIS-4887: Folder sorting and filtering improved**
-   Users now have the ability to customize email sorting, providing a tailored approach to email management.
 
-**IRIS-4975:  Change "Edit distribution list" action icon on contactInput chip**
-   Two unique icons have been introduced for "Edit email" and "Edit DL" actions on the ContactInput chip, exclusively visible to the DL owner. This change addresses prior confusion and enhances the user experience.
+**AC-944: Toggle to display 'Forgot Password' link in domains authentication**
+   The 'Forgot Password' link toggle is now accessible in the Domain's Authentication settings within the admin UI. Admins can use this toggle to decide whether users can view or hide the 'Forgot Password' link based on their preferences.
+
+
+**CO-902: Enhance backup management for admin CLI**
+   Implemented attribute-based backup feature management, replacing the previous COS note method. Added the capability to enable/disable backup at the account level through the CLI.
+
+
+**CO-945: Removed "carbonio auth enforce2FA" command**
+   Now the "carbonio auth enforce2FA" command and related code is removed due to its non-functional nature in Carbonio.
+
+
+**IRIS-4360: Flexible time proposals in calendar App**
+   Users can now suggest new times directly in the Calendar app, responding seamlessly to invitations from both email and calendar appointments. Access this feature conveniently from the mail invite, calendar displayer, context menu, or summary view for efficient and hassle-free responses.
+
+
+**IRIS-4553: User can see Contacts Group and Distribution List**
+    Webmail platform with the introduction of new features for "Contacts Group and Distribution List"  management by the user itself. With these enhancements, users can experience streamlined group organization, improved communication efficiency, and enhanced user control.
+
+
+**IRIS-4555: User can edit contact group**
+   Enhanced contact group editing includes efficient confirmation modals, character limit adherence, and seamless deletion with corresponding snackbar updates. Discarding resets the board, and adding/removing addresses promptly updates the displayer list
+
+
+**IRIS-4764: User can search the meeting room by typing on the input**
+   Users can now seamlessly input and filter Meeting Room options through input feature. The selection transforms into chips, with validation ensuring only valid options are visible upon saving an appointment. The dropdown auto-selects on hitting enter, and availability information is displayed in the chip.
+
+
+**IRIS-4767: User can search the equipment by typing on the input**
+   Users can now seamlessly input and filter Equipment options through input feature. The selection transforms into chips, with validation ensuring only valid options are visible upon saving an appointment. The dropdown auto-selects on hitting enter, and availability information is displayed in the chip.
+
+
+**IRIS-4774: Improved 'Send Later' in Webmail**
+   The latest Webmail update enhances the 'Send Later' feature, giving users more control over email scheduling. Now, users can schedule emails and even cancel or close the 'Send Later' modal as needed.
+
+
+**IRIS-4854: Distribution list management improved in Webmail**
+   Now, users can easily view the distribution lists of which they are members or managers directly from the 'Contacts Group and Distribution List' primary bar. The distribution list members are displayed solely as email addresses for streamlined viewing.
+
+
+**IRIS-4902: User can Choose timezones in appointment creation**
+   Now, when creating appointments, users can easily pick their preferred timezone, allowing flexible scheduling across different locations. This update makes managing appointments more intuitive, adapting to diverse scheduling needs for enhanced productivity and user experience.
+
+
+**IRIS-4911: User can delete contact group**
+   Users have the capability to delete contact groups, with features such as displaying confirmation modals during deletion, effective error handling, successful removal from the list, and closure of associated displayers.
+
+
+**IRIS-4935: Enhanced mail composs borad with html formatting**
+   Enhanced the mail compose board with header patterns, page borders, dividers, and priority indicators, allowing users to personalize their email writing experience.
+
+
+**IRIS-4950: Empowered DL management in webmail**
+   The enhanced feature allows Distribution List (DL) owners to efficiently manage members, names, and descriptions directly from the web interface, providing greater control and flexibility.
+
+
+**IRIS-4993:  Update distribution list display on manager edit**
+   Enhance display accuracy for distribution lists edited by managers. Ensure real-time updates in list, displayer, and board, including changes in display name, owners, and members.
+
+
+**IRIS-4994: Handle contact groups caching for new or edited groups**
+   This update ensures proper handling of contact group caching in different scenarios. When a new contact group (CG) is created, it will be inserted into the sorted position, displayed as active, and auto-scrolled to the bottom when on the /groups/contact-groups page. Additionally, when a new CG is created elsewhere, the contact group cache will be reset, addressing scenarios such as uncached items, modified CG names, unordered deletions, and complete cache emptiness.
+
+
+**IRIS-5013: New CSV Import/Export feature in  Webmail**
+   Effortlessly import and export contact lists using CSV files. This enhancement enables seamless transfer of contact information between Carbonio, both internally and with external applications.
+
+
+**IRIS-5022: Contacts export enhancement**
+   Users can now export mail contacts conveniently with the "Export" option in the right-click menu. The feature handles errors during CSV file import and excludes contacts in sub-address books. It also restricts the action in the Trash and shared address books, showing a snackbar for unsupported extensions
+
+
+**IRIS-5040:  Icon updated for contacts group and distribution lists**
+   The primary bar icon for Distribution Lists and Contacts Groups has been updated to offer users a clear visual distinction from the Contacts module. This modification is intended to enhance user clarity and avoid any potential misunderstandings.
+
 
 *****
 
 Bugfix List
 -----------
 
-**AC-882: Improved alias management with uniqueness check in admin panel**
-   Experience the latest enhancement in the Admin Panel, featuring a uniqueness check that prevents the assignment of the same alias to two different mailnames. This improvement ensures data integrity and avoids conflicts by returning an error when attempting duplicate alias assignments.
+**AC-887: Enhanced Name validation in  Antivirus mirrors spaces Prohibited**
+   Improve name validation in  the anti-virus mirror of Carbonio now mirror  not accept any spacing in name, his enhancement ensures that mirror names adhere to standardized naming conventions, promoting consistency and clarity across the platform
 
-**CO-948: Resolve ISP license renewal end date issue**
-   The ISP License is now fixed and the ISP license end date is properly populated into the Carbonio system.
 
-**CO-953: Fixed NullPointerException in doUndelete operation**
-   Previously, the doUndelete operation encountered a NullPointerException and hung when carbonioNotificationRecipients at the domain level configuration was empty. The proposed solution focuses on managing this exception, allowing the operation to proceed even with an empty value. This ensures that the doUndelete command works seamlessly.
+**AC-888:  Admin rights table refinement**
+    The Admin Rights table will now exclusively display security groups. This change enhances the clarity and focus of the displayed information.
 
-**COR-820: MySQLcheck error fix in zmdbintegrityreport**
-   The update addresses a MySQLcheck error in zmdbintegrityreport by performing necessary clean-ups in the MySQL datadir, specifically removing empty directories. Validate the zmdbintegrityreport script after the update to ensure it runs without MySQLcheck errors and successfully removes empty directories.
 
-**COR-979: Frequency of trusted IP logging reduced**
-   The mailbox log has been optimized to eliminate redundant reporting of 'trusted IP' entries every five seconds. This enhancement ensures efficient logging by capturing trusted IP entries only during mailbox reload, reducing unnecessary log entries.
+**AC-919:  Domain admin can change user COS**
+   Now the domain admin can modify a user's Class of Service (COS) using the Carbonio Web Admin panel.
 
-**COR-992: Refactor ISP license management**
-   Now the refactored code to manage ISP licenses correctly as ISP, ensuring they are distinct from purchased licenses in Carbonio.
 
-**IN-644: Keytool execution failure fix in carbonio-core post install phase**
-   Resolves the keytool execution failure issue during the carbonio-core post-install scriptlets, ensuring the proper functioning of the product. The fix addresses a misaligned syntax causing the Illegal option error in the keytool -list command.
+**AC-923: FQDN Validation Enhancement**
+   Improves the Fully Qualified Domain Name (FQDN) validation in virtual hosts. Validations now align with expected behaviour for various scenarios, ensuring accuracy.
 
-**IRIS-4258: Unified options naming for Calendar editing**
-   Now 'Edit calendar properties' is selected for unified calendar editing option names.
 
-**IRIS-4534: Enhanced 'Delete All' UI Functionality**
-    Improvements made to the UI behavior when selecting and deleting/moving all first mail elements. The system now properly loads the next 100 elements without leaving the column blank, provided there are still mail elements in the folder. Additionally, a notification is triggered when clicking the 'Select All' button, indicating that all visible items have been selected.
+**CO-856: Renaming account name from carbonio prov**
 
-**IRIS-4593: Cancellation email for shared calendar improved**
-   The shared calendar now supports proper deletion of individual instances within a recurring appointment. This enhancement includes seamless handling of cancellation messages and modifications to calendar events on the recipient's side.
 
-**IRIS-4721: "Mark as Important" Option in Carbonio Mail Composing enhanced**
-   Now the user can mark it as important, Upon sending mail, this action triggers the email to be received on the other end with an added priority designation. High-priority mail received with "RED up Arrow" in the inbox of the recipient.
+**CO-955: Improved backup scheduling error handling**
+   Error handling for empty CarbonioNotificationRecipients during backup scheduling has been optimized in Carbonio, preventing disruptions and ensuring smoother backup activities.
 
-**IRIS-4760: Fixed Incorrect Signature Issue on Reply/Forward**
-   The issue of incorrect signatures during Reply and Forward actions is now resolved. Previously, users encountered a problem where the default account signature was incorrectly applied despite having specific signatures configured for aliases. The diligent efforts of the team have successfully addressed this issue
 
-**IRIS-4880: User allowed multiple Calendar shares**
-   Users can now add and retain multiple share recipients for calendars. Previously, users were limited to keeping only the latest share recipients.
+**CO-1005: File upload issue in chats module fixed**
+   The issue related to the disappearance of thumbnails during file uploads in the Chats module has been investigated and fixed. This solution addresses the bug that affected the uploading and display of images or files in conversations.
 
-**IRIS-4918: Public sharing of a calendar function**
-   The public sharing of a calendar now  works
 
-**IRIS-4992:  Improved scrolling in conversation mode for long emails**
-   Previously, scrolling through long emails in conversation mode caused unexpected jumps to the top. Now, scrolling behaves as expected, and emails stay in place during navigation.
+**COR-1022: Enhanced delegated admin permissions**
+   Delegated admin accounts now include missing grants for modifying the zimbraMailTransport attribute. This update in ensures delegated administrators have the necessary privileges to efficiently manage email transport settings for user accounts.
 
-**IRIS-5009: Maintain sorting order upon folder change**
-   The previous issue, where emails appeared unsorted after changing folders and returning to the original folder in Carbonio Web Mail, has been successfully addressed. Users can now expect messages to consistently retain their sorting order, particularly when changing the viewing mode and sorting by date.
 
-**MOB-422: Calendar invite reply template fixed on IOS**
-    Resolve issues related to the template used for replying to calendar invites in Carbonio iOS. This fix aims to improve the accuracy and functionality of calendar invite replies, ensuring a more seamless and reliable user experience on the iOS platform.
+**COR-1024: Granted missing rights for delegated admins**
+   The essential permissions granted to the __helpdesk_admins@ group empower delegated/helpdesk admins to utilize features that allow DomainAdmins to configure recovery addresses and manage forgotten password features for users. This resolution addresses the issue where delegated/admins faced access challenges due to insufficient rights.
+
+
+**IN-668: Restore Nginx Worker Processes Owner**
+   Ensure that the Nginx worker processes owner is restored to the zextras user to address the files download issue in /opt/zextras/data/tmp/nginx/proxy. This change maintains consistency with the current carbonio configuration.
+
+
+**IRIS-3469: Email conversation threads ordered**
+   The email conversation threads are now ordered with the most current email at the top.
+
+
+**IRIS-3578: Contact sharing and Global address list fixed**
+   Addresses the issue in which shared contacts did not appear in the contacts section, blocking contact sharing on Carbonio. Furthermore, the global address list was unreachable in the contacts, limiting the capacity to find and manage contacts. now the users can share contacts and a global address list is accessible.
+
+
+**IRIS-4292: Calendar description stability proposed time acceptance**
+   This fix addresses an issue where the original description in a calendar appointment is lost after accepting a proposed new time. The proposed solution ensures that the description remains intact even after accepting a new time proposal in the calendar.
+
+
+**IRIS-4635: Calendar color alignment across web and mobile**
+   The calendar colours are now synced throughout the web and mobile platforms. The system uses the same color for calendars, whether they are modified on the web or on mobile. This assures the consistency and alignment of color representations.
+
+
+**IRIS-4656: Improved attachment management in appointments**
+   Now users can remove attachments from existing appointments, this update addresses the issue where attachments couldn't be successfully removed during appointment creation or editing. enhancing the overall appointment management experience.
+  
+
+
+**IRIS-4686: Rename subscribed folder reflects changes on local mount-point**
+   Renaming a subscribed folder now has no impact on the original name only rename the mount point's name.
+
+
+**IRIS-4729: Corrected label on search chip for "To" criteria**
+   The webmail advanced search modal is improved, now featuring accurate search patterns tailored specifically for the "To" and "From" fields. With this update, users can conduct searches with greater precision.
+
+
+**IRIS-4884: Appointments under 30 minutes display end time**
+   The end time for appointments lasting less than 30 minutes is now correctly displayed along with the title.
+
+
+**IRIS-4915: Folder control improved for shared account invitations**
+   Shared accounts can now only choose folders with the right permissions for calendar events, ensuring invitations are saved in approved folders and maintaining folder management integrity in shared accounts.
+
+
+**IRIS-4917: Enhanced quick action "Send Email"  functionality**
+   Sending emails just got smoother in Webmail! Now, when you use the 'Send Email' option in a chip from a past email, the 'To' field shows the right recipient in both the sent email and the list. We've tested it thoroughly, even with Cc and Bcc addresses,
+
+
+**IRIS-4920: Enhanced fixed layout for printing long subjects in webmail**
+   This enhancement of long subject lines maintains readability and professionalism when printed. By implementing a fixed layout approach, knowing that the subject line is fully displayed and aligned appropriately. This improvement enhances the overall user experience within Carbonio Webmail.
+
+
+**IRIS-4937: Edit contact in shared address book**
+   The enhanced functionality enables users to seamlessly modify contacts within a shared address book, positively impacting the essential process of editing contacts in the shared address book.
+
+
+**IRIS-4938: Mail search date pattern populated correctly in advanced search calender inputs**
+   The date pattern for mail search within the advanced filter fields now populates accurately in the calendar inputs. Users can expect enhanced functionality and convenience when specifying date ranges for their searches. This improvement ensures that the calendar inputs correctly reflect the selected date pattern,
+
+
+**IRIS-4940: Signature creation process improved**
+   The signature creation process has been enhanced to prevent users from entering signature details before clicking "ADD SIGNATURE." This improvement ensures that users must click the button to enable input fields and the editor for adding signature details.
+
+
+**IRIS-4944: Improved account name visibility in shared address book**
+   Improvement of the experience Carbonio Webmail in the sharing of an Address Book, Now the owner can view the shared account names fully within the Webmail interface.
+
+
+**IRIS-4976:  Calendar editor permission display fixed**
+    The display issue with the chip for a person with editor permissions on the "edit calendar properties" modal has been resolved. The fix ensures that the chip length does not break the layout and is fully visible on small screens.
+
+
+**IRIS-4986: Trusted addresses settings enhanced**
+   Resolved the bug affecting the trusted addresses settings, The issue, causing unexpected behaviour such as the transformation of the previous address/domain into 'undefined' and prompts to save unsaved changes, has been successfully fixed.
+
+
+**IRIS-5004:  Calendar invitation date display fixed**
+   Resolves the issue where the calendar invitation incorrectly displays today's date instead of the actual appointment date. The fix ensures that the displayed date aligns with the correct day of the appointment.
+
+
+**IRIS-5029: Enhanced 'Load More' in webmail search**
+   Experience smoother and more accurate loading of search results with the improved 'Load More' feature in the Carbonio Webmail search module.
+
+
+**IRIS-5039: Selective event reply in Calendar**
+   Users can now reply to individual instances within recurring events, offering increased flexibility with options like decline, tentative, or accept.
+
+
+**IRIS-5059: Restore message order in conversations**
+   Now, the user-defined message order, set from old to new, is functioning as intended, ensuring accuracy and consistency. This prevents unintentional reversals of message sequences, delivering users a reliable and expected display in conversations.
+
+
+**TEAMS-3988: Enhanced video chat virtual Background Functionality**
+   Improved Video Chat: Resolved background image path issues for seamless use of virtual backgrounds without disruptions.
+
+
+**TEAMS-4118: Real-time settings update**
+   Settings now instantly update upon user interaction, eliminating the need for a page refresh, enhancing the overall user experience.
+
+
+**TEAMS-4128: Custom backgrounds upgrade for video chat**
+   Now users can select and apply background images of their choice during video calls, adding a touch of creativity and individuality to their conversations.
+
 
 *****
 

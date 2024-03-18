@@ -44,9 +44,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.1.0'
+release = '24.3.0'
 version = release
-prev = '23.12.0'
+prev = '24.1.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -62,9 +62,9 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [ '_includes', 'cli',
-                     'common/carbonio',
-                     'admincli/administration/delegatedadmin.rst' ]
+exclude_patterns = [ '_includes', 'cli', 'playbook',
+                     'admincli/administration/delegatedadmin.rst',
+                     'common/carbonio' ]
 
 rst_prolog = """
 
@@ -149,3 +149,27 @@ linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
 # there are more options, but at the moment we don't need them. They
 # can be found at
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
+
+###
+# This custom code is required as a workaround for a build error
+# caused by extension sphinx-new-tab-link
+###
+
+from sphinx.writers.html import HTMLTranslator
+class PatchedHTMLTranslator(HTMLTranslator):
+    def starttag(self, node, tagname, *args, **attrs):
+        if (
+            tagname == "a"
+            and "target" not in attrs
+            and (
+                "external" in attrs.get("class", "")
+                or "external" in attrs.get("classes", [])
+            )
+        ):
+            attrs["target"] = "_blank"
+            attrs["ref"] = "noopener noreferrer"
+        return super().starttag(node, tagname, *args, **attrs)
+
+
+def setup(app):
+    app.set_translator("html", PatchedHTMLTranslator)
