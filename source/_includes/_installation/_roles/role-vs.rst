@@ -90,12 +90,10 @@ hosting that Role to configure the Video Server.
 
             # dnf install carbonio-videoserver-recorder
 
-
-   The video-recording feature is enabled by default, and does not
-   require configuration if installed together with the |vs|. However,
-   the following manual command is required if installed at a later
-   point. Make sure to use the same FQDN (videoserver.example.com) and
-   secret (A_SECRET_PASSWORD) used to configure the |vs|.
+   The following manual command is required if the Video Recorder is
+   installed at a later point. Make sure to use the same FQDN
+   (videoserver.example.com) and secret (A_SECRET_PASSWORD) used to
+   configure the |vs|.
 
    .. hint:: *A_SECRET_PASSWORD* is saved as the value of
       ``api_secret`` in file :file:`/etc/janus/janus.jcfg` (e.g.,
@@ -105,13 +103,17 @@ hosting that Role to configure the Video Server.
 
       zextras$ carbonio chats video-server update-servlet videoserver.example.com:8188 8090
    
+   You can then enable the Video Recorder on a user, COS, or global
+   level, please refer to section :ref:`vs-recorder-conf` for
+   directions.
+   
    The recorded sessions will be stored in directory
    :file:`/var/lib/videorecorder/` on the Node which features the
    :ref:`role-prov-install` Role, because the ability to record
    requires a Node which features that Role. Make sure that the
    directory has sufficient free space, otherwise recorded videos can
    not be stored.
-
+ 
    .. hint:: You can mount on that location a dedicated disk or
       partition and keep it monitored for space usage.
 

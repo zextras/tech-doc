@@ -396,6 +396,8 @@ the |vs| or not.
       address** of |carbonio| as the value for that variable, for
       example: ``nat_1_1_mapping = "93.184.216.34"``.
 
+.. _vs-recorder-conf:
+
 Configure |vs| Recording
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -420,10 +422,13 @@ Finally, allow all users to start a recording.
           
    zextras$ carbonio config set global teamMeetingRecordingEnabled true
 
-.. note:: In this command, the policy allows every user to record a
-   meeting. It is however possible to enforce this policy at user or
-   COS level, to allow only selected users or members of a COS to
-   record meetings.
+In this command, the policy allows every user to record a meeting. It
+is however possible to enforce this policy at user or COS level, to
+allow only selected users or members of a COS to record meetings.
+
+You can revoke the ability for a user, a COS, or even globally, to
+record a meeting by replacing ``true`` with ``false``
+
 
 .. _vs-scaling:
 
