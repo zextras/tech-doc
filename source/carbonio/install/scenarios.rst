@@ -24,9 +24,9 @@ following:
 * Customise the domain and FQDN in the *inventory files* provided with
   each scenario
 
-* None of the scenario features the **Backup** functionality: this is
-  intended, since the Backup is a core functionality and requires a
-  dedicated storage, for example a NAS device
+* All scenarios features the **Backup** functionality, which can be
+  either local (e.g., a mounted local disk or partition), a dedicated
+  NAS device, or a remote (cloud) storage.
 
 * In order to use Ansible_, set up a *control node* according to
   directions in section :ref:`install-with-ansible`
