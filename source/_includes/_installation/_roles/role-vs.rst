@@ -90,12 +90,10 @@ hosting that Role to configure the Video Server.
 
             # dnf install carbonio-videoserver-recorder
 
-
-   The video-recording feature is enabled by default, and does not
-   require configuration if installed together with the |vs|. However,
-   the following manual command is required if installed at a later
-   point. Make sure to use the same FQDN (videoserver.example.com) and
-   secret (A_SECRET_PASSWORD) used to configure the |vs|.
+   The following manual command is required if the Video Recorder is
+   installed at a later point. Make sure to use the same FQDN
+   (videoserver.example.com) and secret (A_SECRET_PASSWORD) used to
+   configure the |vs|.
 
    .. hint:: *A_SECRET_PASSWORD* is saved as the value of
       ``api_secret`` in file :file:`/etc/janus/janus.jcfg` (e.g.,
