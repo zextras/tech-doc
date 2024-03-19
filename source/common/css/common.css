@@ -168,3 +168,13 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
     vertical-align:super;
     margin:0 .2em
 }
+
+/* article's text width on large screens */
+@media (min-width:1600px) {
+    .bd-main .bd-content{
+        min-width:calc(100% + var(--pst-sidebar-secondary))
+    }
+    .bd-article-container {
+        min-width:calc(100%)
+    }
+}
