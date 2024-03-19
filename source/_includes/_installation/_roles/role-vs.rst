@@ -103,13 +103,17 @@ hosting that Role to configure the Video Server.
 
       zextras$ carbonio chats video-server update-servlet videoserver.example.com:8188 8090
    
+   You can then enable the Video Recorder on a user, COS, or global
+   level, please refer to section :ref:`vs-recorder-conf` for
+   directions.
+   
    The recorded sessions will be stored in directory
    :file:`/var/lib/videorecorder/` on the Node which features the
    :ref:`role-prov-install` Role, because the ability to record
    requires a Node which features that Role. Make sure that the
    directory has sufficient free space, otherwise recorded videos can
    not be stored.
-
+ 
    .. hint:: You can mount on that location a dedicated disk or
       partition and keep it monitored for space usage.
 
