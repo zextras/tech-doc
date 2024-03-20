@@ -15,7 +15,7 @@ private key match:
 
   .. code:: console
 
-     zextras$ cd /opt/zextras/ssl/carbonio/commercial
+     zextras$ cd /tmp
 
 * verify the certificates
 
