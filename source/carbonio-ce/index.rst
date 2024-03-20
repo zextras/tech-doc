@@ -16,116 +16,128 @@ e-mail and collaboration software.
 
 The content is organised in multiple parts:
 
-Introduction
-  Useful and generic information about |product|.
-  
-Release
-  Contains links to all changelogs of |product|'s components on GitHub
-  repositories and directions to carry out the upgrade
-  
-Install
-  Information on |product| and its architecture, installation and
-  upgrade instructions, security tips
-  
-Admin by GUI
-  |product| administration using the |adminui|
-  
-Admin by CLI
-  Administration of |product| from the command line: management tasks
-  and some advanced usage for |mesh|
-
-User Guides
-  Everyday's usage of |product|, including its use on the dedicated
-  mobile Apps
-  
-API
-  Links to API reference
-
-If you are looking for |carbonio|'s documentation, please refer to its
-`dedicated page <../../carbonio/html/index.html>`_.
-
 .. grid:: 1 2 2 3
-   :gutter: 2
+   :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Introduction
       :columns: 12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: basics/general
+
+      Useful information about |product|
 
       .. toctree::
-         :maxdepth: 2
+         :hidden:
 
          basics/general
 
-   .. grid-item-card::
+   .. grid-item-card:: Release
       :columns: 12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: release/toc
+
+      Links to all changelogs of |product|'s components on GitHub
+      repositories and directions to carry out the upgrade
 
       .. toctree::
-         :maxdepth: 1
+         :hidden:
 
          release/toc
 
-   .. grid-item-card::
+   .. grid-item-card:: Install
       :columns: 12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: install/toc
+
+      Information on |product| and its architecture, installation and
+      upgrade instructions, security tips
 
       .. toctree::
-         :maxdepth: 2
+         :hidden:
 
          install/toc
 
-   .. grid-item-card::
+   .. grid-item-card:: Post-Install
       :columns: 12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: post-install
+
+      Tasks to carry out after the installation of |product|,
+      including migration from other systems
 
       .. toctree::
-         :maxdepth: 2
+         :hidden:
 
          postinstall/toc
 
-   .. grid-item-card::
-      :columns:  12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+   .. grid-item-card:: Admin by GUI
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: adminpanel/toc
+
+      |product| administration using the |adminui|
 
       .. toctree::
-         :maxdepth: 2
-         :includehidden:
+         :hidden:
 
          adminpanel/toc
 
-   .. grid-item-card::
-      :columns:  12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+   .. grid-item-card:: Admin by CLI
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: admincli/toc
+
+      Administration of |product| from the command line: management
+      tasks and some advanced usage for |mesh|
 
       .. toctree::
-         :maxdepth: 2
-         :includehidden:
+         :hidden:
 
          admincli/toc
 
-   .. grid-item-card::
+   .. grid-item-card:: |carbonio| User Guides
       :columns: 12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: usage/toc
+
+      Everyday's usage of |product|, including its use on the
+      dedicated mobile Apps
 
       .. toctree::
-         :maxdepth: 2
+         :hidden:
 
          usage/toc
 
-
-   .. grid-item-card::
+   .. grid-item-card:: API
       :columns: 12 12 6 6
-      :class-header: sd-font-weight-bold sd-fs-5
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: develop/toc
+
+      Links to API reference
 
       .. toctree::
-         :maxdepth: 1
+         :hidden:
 
          develop/toc
 
-   .. grid-item-card::
+   .. grid-item-card:: Glossary
       :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :margin: 3 0 auto auto
+      :link-type: doc
+      :link: glossary
+
+      Glossary of relevant terms
 
       .. toctree::
-         :maxdepth: 1
+         :hidden:
 
          glossary
