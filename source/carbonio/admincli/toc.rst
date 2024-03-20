@@ -9,18 +9,20 @@ Interface)`.
 Access to the |product|'s command line via SSH or serial terminal is
 mandatory.
 
-.. toctree::
-   :maxdepth: 1
-   
-   shell
-   administration
-   backup
-   restorestrategies
-   advancedbackup
-   mobile
-   storages
-   activereplica
-   videoserver
-   custom
-   mesh
-   troubleshooting
+.. card:: Table of Contents
+
+   .. toctree::
+      :maxdepth: 1
+
+      shell
+      administration
+      backup
+      restorestrategies
+      advancedbackup
+      mobile
+      storages
+      activereplica
+      videoserver
+      custom
+      mesh
+      troubleshooting

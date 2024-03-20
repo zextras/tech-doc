@@ -81,9 +81,6 @@ Roles on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
-.. note:: You can skip the installation of Nodes 4 and 5 if you do not
-   need Docs Editor, Files, Chats, and Video Calls.
-
 .. grid:: 1 1 2 2
    :gutter: 2
 

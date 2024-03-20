@@ -11,17 +11,14 @@ private key match:
 
      # su - zextras
 
-* go to the directory where the certificates are stored:
-
-  .. code:: console
-
-     zextras$ cd /opt/zextras/ssl/carbonio/commercial
+* upload the certificates received from the Authority to the :file:`/tmp` directory
 
 * verify the certificates
 
   .. code:: console
 
-     zextras$ zmcertmgr verifycrt comm commercial.key commercial.crt commercial_ca.crt
+     zextras$ cd /tmp
+     zextras$ zmcertmgr verifycrt comm /opt/zextras/ssl/carbonio/commercial/commercial.key commercial.crt commercial_ca.crt
 
 
 If the verification is successful, you can deploy the SSL certificate.
