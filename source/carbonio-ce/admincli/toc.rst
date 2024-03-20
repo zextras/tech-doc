@@ -9,9 +9,11 @@ Interface)`.
 Access to the |product|'s command line via SSH or serial terminal is
 mandatory.
 
-.. toctree::
-   :maxdepth: 1
+.. card:: Table of Contents
 
-   management
-   mesh
-   troubleshooting
+   .. toctree::
+      :maxdepth: 1
+
+      management
+      mesh
+      troubleshooting
