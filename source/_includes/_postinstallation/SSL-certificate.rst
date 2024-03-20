@@ -82,12 +82,12 @@ Once the command is executed these files will be generated:
 
 To complete this step successfully, you need to submit the CSR to the
 SSL provider and get a commercial certificate in **PEM format** and
-save it as :file:`/opt/zextras/ssl/carbonio/commercial/commercial.crt`.
+save it as :file:`commercial.crt`.
 
 Moreover, SSL providers supply also the **intermediate certificate**
 and the so-called **Root CA** in a bundled certificate file (*"Full
 Chain CA"*), that must be saved as
-:file:`/opt/zextras/ssl/carbonio/commercial/commercial_ca.crt`.
+:file:`commercial_ca.crt`.
 
 .. topic:: How to create a Full Chain CA
 
