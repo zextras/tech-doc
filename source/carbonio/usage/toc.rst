@@ -10,24 +10,22 @@
 
 .. include:: /_includes/_usage/intro-cb.rst
 
-.. card:: Table of Contents
+.. toctree::
+   :hidden:
 
-   .. toctree::
-      :maxdepth: 1
-
-      quick-search
-      auth-user
-      preview
-      mails
-      calendar
-      contacts
-      contact-groups
-      chats
-      files
-      docs
-      tasks
-      shared-folders
-      shared-accounts
-      search
-      settings
-      mobileapps
+   quick-search
+   auth-user
+   preview
+   mails
+   calendar
+   contacts
+   contact-groups
+   chats
+   files
+   docs
+   tasks
+   shared-folders
+   shared-accounts
+   search
+   settings
+   mobileapps
