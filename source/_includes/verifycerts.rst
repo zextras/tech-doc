@@ -11,11 +11,12 @@ private key match:
 
      # su - zextras
 
-* go to the directory where the certificates are stored:
+* copy all the certificates to the :file:`/tmp` directory
 
   .. code:: console
 
      zextras$ cd /tmp
+     zextras$ cp /opt/zextras/ssl/carbonio/commercial/commercial* /tmp
 
 * verify the certificates
 
