@@ -43,7 +43,7 @@ the |product| server.
 
 .. rubric:: Step 1. Certificate Signing Request generation
 
-If you do not have a certificate, but need to request a new one, you
+If you do not have a certificate, and you have to request a new one, you
 need to generate a :abbr:`CSR (Certificate Signing Request)`:
 
 .. code:: console
