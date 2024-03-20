@@ -6,7 +6,7 @@ upgrade.
 The procedure will require to reboot the nodes and therefore a
 downtime of the |product| infrastructure must be planned.
 
-The procedure is divided into four phases:
+The procedure is divided into phases:
 
 #. upgrade PostgreSQL from 12 to 16
 
@@ -16,6 +16,8 @@ The procedure is divided into four phases:
 
 #. upgrade |product|\'s packages to match the correct repository
 
+#. complete the upgrade procedure
+   
 Phase 1
 -------
 
@@ -53,14 +55,16 @@ is, the line defining the repository
 
 #. is not commented, i.e., it does not start with a ``#`` sign
 
-Now you can stop the services, update the package list and the packages itself, with these
-commands
+You can now stop the |product| services, update the package list, and
+the packages itself with these commands
 
 .. code:: console
 
    # su - zextras -c "zmcontrol stop"
    # apt update && apt upgrade
 
+Phase 5
+-------
 
 At the end of the upgrade you need to fix the permissions and start the services
 

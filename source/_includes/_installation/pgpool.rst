@@ -60,6 +60,9 @@
            num_init_children = 32
            max_pool=8
            reserved_connections=1
+           enable_pool_hba = off
+           allow_clear_text_frontend_auth = on
+           pool_passwd = ''
 
 #. Make sure the service is enabled and restart it using these
    commands

@@ -11,7 +11,7 @@
 .. include:: /_includes/_usage/intro-ce.rst
 
 .. toctree::
-   :maxdepth: 1
+   :hidden: 
 
    quick-search
    preview

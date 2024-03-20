@@ -74,3 +74,5 @@
 .. misc
 
 .. _ansible: https://www.ansible.com/
+.. |supp| replace::  :octicon:`check-circle;1em;sd-text-success`
+.. |unsup| replace:: :octicon:`x;1em;sd-text-danger` 

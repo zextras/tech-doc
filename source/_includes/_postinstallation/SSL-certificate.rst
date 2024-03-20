@@ -8,9 +8,7 @@ Deploy an SSL Certificate
 =========================
 
 In this section we explain how to add an SSL/TLS certificate to a
-|product| installation, both a :ref:`single server
-<single-cert-installation>` and a :ref:`wildcard certificate
-<wildcard-cert-installation>`.  |product| supports the installation
+|product| installation.  |product| supports the installation
 and management of *Let's Encrypt* certificates: you can find
 directions for that in a `dedicated article
 <https://community.zextras.com/free-ssl-certificates-for-carbonio-community-edition-using-lets-encrypt-and-certbot/>`_
@@ -45,7 +43,8 @@ the |product| server.
 
 .. rubric:: Step 1. Certificate Signing Request generation
 
-We start by generating a :abbr:`CSR (Certificate Signing Request)`:
+If you do not have a certificate, and you have to request a new one, you
+need to generate a :abbr:`CSR (Certificate Signing Request)`:
 
 .. code:: console
 
@@ -83,12 +82,12 @@ Once the command is executed these files will be generated:
 
 To complete this step successfully, you need to submit the CSR to the
 SSL provider and get a commercial certificate in **PEM format** and
-save it as :file:`/opt/zextras/ssl/carbonio/commercial/commercial.crt`.
+save it as :file:`commercial.crt`.
 
 Moreover, SSL providers supply also the **intermediate certificate**
 and the so-called **Root CA** in a bundled certificate file (*"Full
 Chain CA"*), that must be saved as
-:file:`/opt/zextras/ssl/carbonio/commercial/commercial_ca.crt`.
+:file:`commercial_ca.crt`.
 
 .. topic:: How to create a Full Chain CA
 
@@ -105,39 +104,8 @@ Chain CA"*), that must be saved as
    .. code:: console
 
       # cat /tmp/ca_intermediary.crt /tmp/ca_root.crt > \
-      /opt/zextras/ssl/carbonio/commercial/commercial_ca.crt
+      /tmp/commercial_ca.crt
 
 .. rubric:: Step 3. Verification and deploy
-
-.. include:: /_includes/verifycerts.rst
-
-.. _wildcard-cert-installation:
-
-Wildcard Certificate Installation
----------------------------------
-
-To describe this procedure, we use the same server with FQDN
-`mail.example.com`, but in this case there is already a wildcard SSL
-certificate for domain ***.example.com**, that was generated on a
-server other than |product|\'s.
-
-Therefore, you have all the necessary certificates and the procedure
-in this case is simpler
-
-.. rubric:: Step 1. Set up of certificates
-
-The existing PEM certificate and its private key must be save as
-:file:`/opt/zextras/ssl/carbonio/commercial/commercial.crt` and
-:file:`/opt/zextras/ssl/carbonio/commercial/commercial.key`
-respectively.
-
-Now, go to :file:`/opt/zextras/ssl/carbonio/commercial/` and merge the
-two certificates into a single one:
-
-.. code:: console
-
-   # cat commercial.crt commercial.key > commercial_ca.crt
-
-.. rubric:: Step 2. Verification and deploy
 
 .. include:: /_includes/verifycerts.rst

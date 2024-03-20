@@ -9,11 +9,13 @@ to accessing the graphic interface and all the services. Some task
 related to the installation and how to secure it complete the
 section.
 
-.. toctree::
-   :maxdepth: 1
+.. card:: Table of Contents
 
-   architecture
-   requirements
-   preliminary
-   roles
-   scenarios
+   .. toctree::
+      :maxdepth: 1
+
+      architecture
+      requirements
+      preliminary
+      roles
+      scenarios
