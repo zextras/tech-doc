@@ -94,8 +94,6 @@ Roles on the Nodes, according to the following guidelines.
               
       * :ref:`role-db-install`
         
-      * :ref:`role-db-conn-install`
-        
       * :ref:`role-monit-install`
 
    .. grid-item-card:: Node 2
@@ -116,12 +114,14 @@ Roles on the Nodes, according to the following guidelines.
 
       Node Name/FQDN: srv3.example.com
 
-      Type of services: Mails, Calendars, and Contacts 
+      Type of services: Mails, Calendars, Contacts, and Task
 
       Roles installed:
 
       * :ref:`role-prov-install`
               
+      * :ref:`role-db-conn-install`
+
       * :ref:`role-tasks-install`
 
    .. grid-item-card:: Node 4
