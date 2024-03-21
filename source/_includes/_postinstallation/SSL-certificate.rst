@@ -81,7 +81,7 @@ Once the command is executed these files will be generated:
 .. rubric:: Step 2. Get the certificates from your SSL provider
 
 To complete this step successfully, you need to submit the CSR to the
-SSL provider and get a commercial certificate in **PEM format** and
+SSL provider, get a commercial certificate in **PEM format**, and
 save it as :file:`commercial.crt`.
 
 Moreover, SSL providers supply also the **intermediate certificate**
