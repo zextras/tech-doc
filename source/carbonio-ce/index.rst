@@ -14,6 +14,9 @@
 This is the documentation of |ce| edition, the free and open source
 e-mail and collaboration software.
 
+If you are looking for |carbonio|'s documentation, please refer to its
+`dedicated page <../../carbonio/html/index.html>`_.
+
 The content is organised in multiple parts:
 
 .. grid:: 1 2 2 3
