@@ -45,6 +45,13 @@
            max_pool=8
            reserved_connections=1
 
+         Then, add the following lines at the end of the file::
+
+           enable_pool_hba = off
+           allow_clear_text_frontend_auth = on
+           pool_passwd = ''
+
+
       .. tab-item:: RHEL
          :sync: rhel
 
