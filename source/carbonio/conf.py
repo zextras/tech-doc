@@ -128,9 +128,8 @@ html_sidebars = { "**": [ 'navbar-logo.html', 'survey', 'search-button-field.htm
 
 html_context = {
     'hubhome' : '%s' %hubhome,
-    #change label and links - example values
     'surveytext': 'What do you think about our new Documentation Layout?',
-    'surveylink': 'https://app.useberry.com/t/yXJRVr37I7Hmdu/?ver=24.1',
+    'surveylink': 'https://app.useberry.com/t/jmHPX8uvzq1WOH/?v=24.3 ',
     'surveylabel': 'Take the survey',
 }
 
