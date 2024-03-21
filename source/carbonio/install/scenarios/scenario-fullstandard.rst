@@ -134,7 +134,7 @@ Roles on the Nodes, according to the following guidelines.
 
       Roles installed:
 
-      * :ref:`role-prov-install
+      * :ref:`role-prov-install`
 
       * :ref:`role-db-conn-install`
 
