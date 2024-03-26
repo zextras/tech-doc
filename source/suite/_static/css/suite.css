@@ -4,12 +4,76 @@
  * SPDX-License-Identifier: CC-BY-NC-SA-4.0
  */
 
-@import url("common.css");
+/*@import url("common.css");*/
+:root {
+    --zx-color-magma: #E51A1A;
+    --zx-color-carbon: #182126;
+    --zx-color-flame: #FD830B;
+    --zx-color-spark: #F4C64C;
+    --zx-color-ice: #CBDDE4;
+    --zx-color-pebble: #F5F5F5;
+    --zx-color-snow: #FFFFFF;
+    --zx-color-abyss: #00506D;;
+    --zx-color-card-footer: #E8E8E8;
+    --zx-color-card-header: #E8E8E8;
+}
 
-
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+    background: var(--zx-color-magma);
+}
 /* Sidebar */
 .wy-nav-side {
     background: var(--zx-color-abyss);
+}
+/* Width of the text content */
+.wy-nav-content {
+    max-width: inherit;
+}
+
+/* Width of logo on the upper left corner */
+.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo {
+    width:300px
+}
+
+/* topic:: directive */
+.rst-content .topic-title {
+ font-weight:bold;
+ margin-bottom:12px;
+ left-border: 2px solid
+}
+
+
+/* search box with ZX radius*/
+.wy-side-nav-search input[type="text"] {
+ width:100%;
+ border-radius: 0.3rem;
+ padding:6px 12px;
+ border-color:#2472a4
+}
+
+
+Simple class to display Zextras logo
+.zxlogo {
+    background-image: url("logo_zextras.png");
+    display: inline-block;
+    height: 30px;
+    width: 170px;
+    margin-bottom: 0px
+}
+
+body {
+    font-family: Lato,proxima-nova,Helvetica Neue,Arial,sans-serif;
+}
+ 
+.rst-content .sidebar .sidebar-title {
+    display:block;
+    font-family:Lato,proxima-nova,Helvetica Neue,Arial,sans-serif;
+    font-weight:700;
+    background:#e1e4e5;
+    padding:6px 12px;
+    margin:-24px -24px 24px;
+    font-size:100%
 }
 
 /* indent "subtopics" */ 
@@ -27,4 +91,79 @@
 .document {
     margin-top: 10px;
 }
+ 
+/* Custom colors for admonitions -- taken from Carbonio's UI colors
+   using _active_ for title and _disabled_ for title */
 
+/* success UI --> hint */
+.rst-content .hint {
+    background-color: #cee6b2
+}
+.rst-content .hint .admonition-title {
+    background-color: #639030
+}
+
+/* info UI --> note */
+.rst-content .note {
+    background-color: #a7d7f1
+}
+.rst-content .note .admonition-title {
+    background-color: #176691
+}
+
+/* warning UI --> seealso */
+.rst-content .seealso {
+    background-color: #ffe699
+}
+.rst-content .seealso .admonition-title {
+    background-color: #ba8b00
+}
+
+/* error UI --> warning */
+.rst-content .warning {
+    background-color: #edaeab
+}
+.rst-content .warning .admonition-title {
+    background-color: #a92a24
+}
+
+/* background color of LHS menu  */
+.wy-menu-vertical li.current ul {
+    background-color: var(--zx-color-pebble)
+}
+
+/* zx branded buttons  */
+/* .zx-button { */
+/*     background-color:  var(--zx-color-magma) */
+/* } */
+
+/* make toctree expand button brighter */
+
+.wy-menu-vertical li button.toctree-expand {
+    color: var(--zx-color-ice)
+}
+ 
+ 
+/*class for emphasise card headers */
+.card-abyss {
+    background-color: var(--zx-color-abyss);
+    color: white;
+}
+
+/* magma color for all code, literal, and tt classes */
+
+.tt, .command, .code, .rst-content code.literal {
+    color: var(--zx-color-magma);
+}
+
+/* limit text width to 1024 pixels */
+.rst-content {
+    max-width: 1024px
+}
+
+/* .hublink { */
+/*     color: inherit; */
+/*     line-height: 120%; */
+/*     margin: 0 auto; */
+/*     font-size: smaller */
+/* } */
