@@ -179,7 +179,7 @@ If you are looking for |ce|'s documentation, please refer to its
             <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"></i>
           </div>
           <!-- Thumbs down -->
-          <div id="icon2" class="dislike grow">
+          <div id="icon0" class="dislike grow">
             <i class="fa fa-thumbs-down fa-3x" aria-hidden="true"></i>
           </div>
 
@@ -191,7 +191,7 @@ If you are looking for |ce|'s documentation, please refer to its
               return filename;                                    // <-- added this line
            }
 
-           const icons = document.querySelectorAll('.like');
+           const icons = document.querySelectorAll('.like,.dislike');
            const iconURL = window.location.href; // Get the last digit of the ID (icon#)
            const iconPageName = getPageName(iconURL);
            icons.forEach(icon => {
