@@ -129,93 +129,97 @@ If you are looking for |ce|'s documentation, please refer to its
 
          glossary
       
-Feedback Form
--------------
-
-If you would like to help us improve our technical documentation, please fill out this form and share a suggestion on how we could improve this article.
-
 .. raw:: html
 
-   <style type="text/css">
-      .ratings {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      direction: rtl;
-      text-align: left;
-      }
+        <section id="feedback-form">
+        <h4>Was this page helpul?<a class="headerlink" href="#feedback-form" title="Permalink to this heading">#</a>
+        </h4>
+        <style type="text/css">
+           .ratings {
+             display: inline-block;
+             width: 100%;
+             margin-top: 40px;
+             padding-top: 40px;
+             text-align: center;
+           }
+           .like {
+             display: inline-block;
+             color: rgb(87, 154, 202);
+             cursor: pointer;
+             margin: 10px;
+           }
+        
+           .dislike {
+             display: inline-block;
+             color: rgb(87, 154, 202);
+             cursor: pointer;
+             margin: 10px;
+           }
 
-      .star {
-      position: relative;
-      line-height: 60px;
-      display: inline-block;
-      transition: color 0.2s ease;
-      color: #ebebeb;
-      }
+           .dislike:hover,
+           .like:hover {
+             color: black;
+             transition: all .2s ease-in-out;
+             transform: scale(1.1);
+           }
 
-      .star:before {
-      content: '\2605';
-      width: 60px;
-      height: 60px;
-      font-size: 60px;
-      }
+           .dislike:active,
+           .like:active {
+             display: inline-block;
+             color: rgb(87, 154, 202);
+             transition: all .2s ease-in-out;
+             transform: scale(2.1);
+           }
 
-      .star:hover,
-      .star.selected,
-      .star:hover ~ .star,
-      .star.selected ~ .star{
-      transition: color 0.8s ease;
-      color: black;
-      }
-   </style>
+        </style>
 
-   <div>
-       <ul class="ratings">
-         <li id="icon5" class="star"></li>
-         <li id="icon4" class="star"></li>
-         <li id="icon3" class="star"></li>
-         <li id="icon2" class="star"></li>
-         <li id="icon1" class="star"></li>
-      </ul>
+        <div class="rating">
+          <!-- Thumbs up -->
+          <div id="icon1" class="like grow">
+            <i class="fa fa-thumbs-up fa-3x" aria-hidden="true"></i>
+          </div>
+          <!-- Thumbs down -->
+          <div id="icon2" class="dislike grow">
+            <i class="fa fa-thumbs-down fa-3x" aria-hidden="true"></i>
+          </div>
 
-      <script>
-      function getPageName(url) {
-         var index = url.lastIndexOf("/") + 1;
-         var filenameWithExtension = url.substr(index);
-         var filename = filenameWithExtension.split(".")[0]; // <-- added this line
-         return filename;                                    // <-- added this line
-      }
+           <script>
+           function getPageName(url) {
+              var index = url.lastIndexOf("/") + 1;
+              var filenameWithExtension = url.substr(index);
+              var filename = filenameWithExtension.split(".")[0]; // <-- added this line
+              return filename;                                    // <-- added this line
+           }
 
-      const icons = document.querySelectorAll('.star');
-      const iconURL = window.location.href; // Get the last digit of the ID (icon#)
-      const iconPageName = getPageName(iconURL);
-      icons.forEach(icon => {
-         icon.addEventListener('click', () => {
-            const iconId = icon.id.slice(-1); // Get the last digit of the ID (icon#)
-            
-            const url = `https://analytics.zextras.tools/matomo.php?idsite=4&rec=1&url=${iconURL}&e_c=vote&e_n=${iconPageName}&e_v=${iconId}`;
-            fetch(url)
-            .then(response => response.text())
-            .then(data => {
-               console.log("GET request to", url, "successful. Response:", data);
-               // You can further process the response data here (optional)
-            })
-            .catch(error => console.error("GET request failed:", error));
-         });
-      });
-      $(function (){
-         var star = '.star',
-               selected = '.selected';
-         
-         $(star).on('click', function(){
-            $(selected).each(function(){
-               $(this).removeClass('selected');
-            });
-            $(this).addClass('selected');
-         });
-         
-         });
-      </script>
+           const icons = document.querySelectorAll('.like');
+           const iconURL = window.location.href; // Get the last digit of the ID (icon#)
+           const iconPageName = getPageName(iconURL);
+           icons.forEach(icon => {
+              icon.addEventListener('click', () => {
+                 const iconId = icon.id.slice(-1); // Get the last digit of the ID (icon#)
 
-   </div>
+                 const url = `https://analytics.zextras.tools/matomo.php?idsite=4&rec=1&url=${iconURL}&e_c=vote&e_n=${iconPageName}&e_v=${iconId}`;
+                 fetch(url)
+                 .then(response => response.text())
+                 .then(data => {
+                    console.log("GET request to", url, "successful. Response:", data);
+                    // You can further process the response data here (optional)
+                 })
+                 .catch(error => console.error("GET request failed:", error));
+              });
+           });
+           $(function (){
+              var like = '.like',
+                    selected = '.active';
+
+              $(like).on('click', function(){
+                 $(selected).each(function(){
+                    $(this).removeClass('active');
+                 });
+                 $(this).addClass('active');
+              });
+
+              });
+           </script>
+
+        </div>
