@@ -44,12 +44,11 @@ on which you plan to install the Directory Replica Role.
 Configuration
 ~~~~~~~~~~~~~
 
-Configuring the Directory Replica server requires a few steps.
+Configuring the Directory Replica server requires a few steps. Make
+sure to execute the commands on the Master or Replica, as shown in each
+step description.
 
-On the Node on which the *Mesh and Directory* Role is installed
-execute the first two steps.
-
-.. card:: Step 1: Activate replica
+.. card:: Step 1: Activate replica on Master
 
    Activate the replica by executing as the  ``root`` user
 
@@ -57,7 +56,7 @@ execute the first two steps.
 
       # /opt/zextras/libexec/zmldapenablereplica
 
-.. card:: Step 2: Retrieve passwords 
+.. card:: Step 2: Retrieve passwords on Master
 
    Retrieve the passwords that you will need on the Directory Replica,
    using the ``zextras`` user
@@ -71,8 +70,6 @@ execute the first two steps.
       also the following passwords, using :command:`zmlocalconfig`:
       ``ldap_replication_password``, ``ldap_postfix_password``
       `ldap_amavis_password``, ``ldap_nginx_password``.
-
-Now, log in to the Directory Replica to complete the configuration.
 
 .. card:: Step 3: Bootstrap |product| on Directory Replica
 
