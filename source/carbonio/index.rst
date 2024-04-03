@@ -198,7 +198,7 @@ If you are looking for |ce|'s documentation, please refer to its
               icon.addEventListener('click', () => {
                  const iconId = icon.id.slice(-1); // Get the last digit of the ID (icon#)
 
-                 const url = `https://analytics.zextras.tools/matomo.php?idsite=4&rec=1&url=${iconURL}&e_c=vote&e_n=${iconPageName}&e_v=${iconId}`;
+                 const url = `https://analytics.zextras.tools/matomo.php?idsite=4&rec=1&url=${iconURL}&e_c=vote&e_n=${iconPageName}&e_v=${iconId}&e_a=survey`;
                  fetch(url)
                  .then(response => response.text())
                  .then(data => {
