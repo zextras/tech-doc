@@ -3,6 +3,12 @@
 Database Connector
 ==================
 
+The Database Connector Role can not be installed on the same node on
+which the :ref:`role-db-install` is installed. If you are installing
+using the :ref:`ansible-run` and try to install both Roles on the same
+node, Ansible_ will detect it and will skip the installation of the
+Database Connector Role.
+
 Install Packages
 ----------------
 
