@@ -9,8 +9,8 @@ Section :ref:`roles-installation` reviews all the roles that make up
 installation. 
 
 To make the installation process easier and faster, this section
-introduces an alternative installation method based on Ansible\
-:far:`registered` [#f1]_ and an `Ansible playbook
+introduces an alternative installation method based on Ansible and an
+`Ansible playbook
 <https://docs.ansible.com/ansible/latest/index.html>`_ to be run.
  
 .. note:: Ansible is free software that allows you to automate the
@@ -200,8 +200,3 @@ follows::
 
   [defaults]
   log_path=/var/log/carbonio-ansible.log
-
-
-.. rubric:: Footnotes
-
-..  [#f1] Ansible is a trademark of Red Hat, Inc. in the United States and other countries.

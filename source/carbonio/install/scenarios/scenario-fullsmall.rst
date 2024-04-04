@@ -150,5 +150,3 @@ Roles on the Nodes, according to the following guidelines.
               
       * :ref:`role-vs-install`
         
-
-.. rubric:: Footnotes
