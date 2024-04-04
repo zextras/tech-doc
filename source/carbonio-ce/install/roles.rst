@@ -77,23 +77,6 @@ This is the list of roles that make up a |product| installation.
       * service-discover-server
       * carbonio-directory-server
 
-   .. grid-item-card:: Database Connector
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * pgpool2
-      * carbonio-files-db
-      * carbonio-mailbox-db
-      * carbonio-docs-connector-db
-      * carbonio-tasks-db
-      * carbonio-message-dispatcher-db
-      * carbonio-ws-collaboration-db
-      * service-discover-agent
-
    .. grid-item-card:: Proxy
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -280,7 +263,6 @@ installation, please review these important remarks:
 
    roles/role-db
    roles/role-mesh-ds
-   roles/role-db-connector
    roles/role-proxy
    roles/role-mta
    roles/role-mailstore-provisioning
