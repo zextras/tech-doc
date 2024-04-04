@@ -19,7 +19,7 @@ Bucket list
 ~~~~~~~~~~~
 
 A new bucket can be added to the list by clicking the
-:bdg-primary-line:`CREATE +` button. In the opening dialog, you can
+:bdg-primary-line:`CREATE +` button.  In the opening dialog, you can
 add all the necessary data needed to set up and test communication
 with the remote bucket, including URL and access credentials. You can
 then proceed to section :ref:`ap-data-volumes` below to create volumes
@@ -70,25 +70,34 @@ and days; after this operation, deduplication can be enabled to save
 space in case of duplicated items, by keeping only one copy of an
 item.
 
+New policies can be added using the :bdg-primary-line:`NEW` button
+(see section below, :ref:`create-hsm-policy`), while all existent
+policies can be run at once by clicking the :bdg-primary-line:`RUN
+ALL` button. To remove an existent policy, select it and click the
+:bdg-danger-line:`DELETE` button.
+
+.. _create-hsm-policy:
 
 Create a New Policy
 ~~~~~~~~~~~~~~~~~~~
 
-The dialog that opens after clicking the :bdg-primary-line:`NEW
-VOLUME` button allows to create a new HSM policy in a few steps.
+The dialog that opens after clicking the :bdg-primary-line:`NEW`
+button allows to create a new HSM policy in a few steps.
 
-.. card:: Step 1. Policy settings
-   
-   In this step, first select to which items the policy will be
-   applied.
+A new policy will be the first in the list: when policies are run,
+either manually or via schedule, they are processed in the order
+shown, from top to bottom.
+
+.. card:: Step 1. Define policy 
+  
+   In the upper part of the dialog, select to which items the policy
+   will be applied.
 
    .. hint:: A click on the :octicon:`square;2em;sd-text-primary`
       **All** checkbox toggles all items at once.
 
-   The policy can be applied on the size of the items or on a time
-   interval. in our example, we remove all messages older than 7
-   days whose size is larger than 20Mb.
-
+   In our example, we remove all items older than 20 days: if today is
+   March 21st, this means all items whose date is before March 1st.
 
    .. image:: /img/adminpanel/new-hsm-settings.png
       :scale: 50
@@ -96,20 +105,30 @@ VOLUME` button allows to create a new HSM policy in a few steps.
 
 .. card:: Step 2. Select Volumes
 
+   In the lower part of the dialog, chose the source and destination
+   volumes to which the policy is applied. By default, **all the
+   primary volumes** are selected as source, while the destination is
+   always the **current secondary volume**. While it is possible to
+   manually specify the volumes from the list, we do not change
+   this.
 
-   We now chose the volumes to which the policy is applied. By
-   default, **all the primary volumes** are selected. While it is
-   possible to manually specify the volumes from the list, we do not
-   change this.
+   .. hint:: You can select multiple source volumes, but only one
+      destination volume.
 
    .. image:: /img/adminpanel/new-hsm-volumes.png
       :scale: 50
       :align: center
               
-.. card:: Step 3. Create Policy
+.. card:: Step 3. Complete procedure.
 
-   The last stop shows the settings for review. You can go back to
-   change any options or create the policy.
+   The last step shows the settings for review. You can use the
+   buttons at the bottom to:
+
+   * :bdg-secondary-line:`CANCEL` exit the policy creation and close the
+     dialog
+   * :bdg-secondary:`BACK` go back to change any options
+   * :bdg-primary:`RUN ONLY` run the policy once and exit
+   * :bdg-primary:`CREATE` create the policy
 
    .. image:: /img/adminpanel/new-hsm-create.png
       :scale: 50
