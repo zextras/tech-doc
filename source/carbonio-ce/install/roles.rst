@@ -289,7 +289,6 @@ installation, please review these important remarks:
 
    roles/role-db
    roles/role-mesh-ds
-   roles/role-db-connector
    roles/role-proxy
    roles/role-mta
    roles/role-mailstore-provisioning
