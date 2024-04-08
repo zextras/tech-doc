@@ -59,6 +59,8 @@ The second tab depends on the allocation:
   .. hint:: You need to have already configured a bucket to create a
      volume of type Object Storage.
 
+.. _ap-hsm-settings:
+
 HSM Settings
 ~~~~~~~~~~~~
 
@@ -70,6 +72,30 @@ and days; after this operation, deduplication can be enabled to save
 space in case of duplicated items, by keeping only one copy of an
 item.
 
+.. card:: Syntax of Scheduling
+          
+   The syntax of the policies' scheduling is the same used in the
+   *crontab*: you need to provide a value for each of the 5 fields:
+
+   .. csv-table::
+      :header: "Field", "Allowed values"
+
+      "minute", "0–59"
+      "hour", "0–23"
+      "day of month", "1–31"
+      "month", "1–12 (or names: jan. feb, and so on)"
+      "day of week", "0–7 (or names: sun, mon, and so on.)
+      Depending on the system locale, 0 can be Sunday or Monday"
+
+   You can use an asterisk instead of a value, to mean all the values
+   for that field. For example, **52 6 1 * *** means that the policies
+   will be run at 6:52 AM on every first day of the month; while **47
+   4 * * sun** run at 4:47 every Sunday.
+
+   .. seealso:: For more information about the syntax, and for more
+      complex examples, please refer to the crontab's manpage: frm
+      CLI, run :command:`man 5 crontab`.
+   
 New policies can be added using the :bdg-primary-line:`NEW` button
 (see section below, :ref:`create-hsm-policy`), while all existent
 policies can be run at once by clicking the :bdg-primary-line:`RUN
