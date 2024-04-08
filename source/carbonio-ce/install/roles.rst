@@ -42,9 +42,9 @@ We can group the available |product| Roles into 3 macro categories:
 
 This is the list of roles that make up a |product| installation.
 
-.. note:: Postgres, Pgpool, Grafana, Zookeper, and  Kafka are
-   third-party software that are installed from their respective
-   official repositories.
+.. note:: Postgres, Grafana, Zookeper, and Kafka are third-party
+   software that are installed from their respective official
+   repositories.
 
 .. grid:: 1 1 2 2
    :gutter: 3
