@@ -8,6 +8,7 @@ srv1.example.com
 srv2.example.com
 
 [serviceDiscoverServers]
+srv1.example.com
 srv2.example.com
 srv3.example.com
 
