@@ -58,6 +58,15 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * postgresql
+      * carbonio-files-db
+      * carbonio-mailbox-db
+      * carbonio-docs-connector-db
+      * carbonio-tasks-db
+      * carbonio-message-dispatcher-db
+      * carbonio-ws-collaboration-db
+      * service-discover-agent
+
+      
 
       .. 24.1
          * python3-psycopg2
