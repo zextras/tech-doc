@@ -49,7 +49,7 @@ This is the list of roles that make up a |product| installation.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Database
+   .. grid-item-card:: Mesh and Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
@@ -59,9 +59,10 @@ This is the list of roles that make up a |product| installation.
 
       Packages:
 
-      * postgresql
+      * service-discover-server
+      * carbonio-directory-server
 
-   .. grid-item-card:: Mesh and Directory
+   .. grid-item-card:: Database
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
@@ -71,8 +72,7 @@ This is the list of roles that make up a |product| installation.
 
       Packages:
 
-      * service-discover-server
-      * carbonio-directory-server
+      * postgresql
 
    .. grid-item-card:: Database Connector
       :columns: 6
