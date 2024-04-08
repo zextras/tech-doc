@@ -16,6 +16,7 @@ mandatory.
 
       shell
       administration
+      ldap
       backup
       restorestrategies
       advancedbackup
