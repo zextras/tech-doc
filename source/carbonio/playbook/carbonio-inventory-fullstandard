@@ -13,10 +13,10 @@ srv1.example.com
 srv4.example.com
 
 [mtaServers]
-srv3.example.com
+srv2.example.com
 
 [proxyServers]
-srv2.example.com
+srv3.example.com
 
 [proxyServers:vars]
 webmailHostname=YourWebmailPublicHostname
