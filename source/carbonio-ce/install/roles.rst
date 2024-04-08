@@ -49,23 +49,6 @@ This is the list of roles that make up a |product| installation.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Database
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * postgresql
-
-      .. 24.1
-         * python3-psycopg2
-         * patroni
-         * watchdog
-         * python3-consul
-         * python3-pysyncobj
-
    .. grid-item-card:: Mesh and Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -76,6 +59,23 @@ This is the list of roles that make up a |product| installation.
 
       * service-discover-server
       * carbonio-directory-server
+
+   .. grid-item-card:: Database
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * postgresql
+      * carbonio-files-db
+      * carbonio-mailbox-db
+      * carbonio-docs-connector-db
+      * carbonio-tasks-db
+      * carbonio-message-dispatcher-db
+      * carbonio-ws-collaboration-db
+      * service-discover-agent
 
    .. grid-item-card:: Proxy
       :columns: 6
