@@ -4,8 +4,10 @@
 
       This release has no known issues.
 
-Postgresql Upgrade
-==================
+.. _pg-upgrade-issue:
+
+Postgresql Upgrade Issue
+========================
 
 During the upgrade of PostgreSQL, an error might be raised in case the
 existent databases have been created with older version of **libc**::
