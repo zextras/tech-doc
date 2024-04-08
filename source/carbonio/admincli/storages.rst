@@ -27,33 +27,33 @@ policies, HSM, and various advanced techniques.
 
 .. _pws_the_basics_types_of_stores_and_their_uses:
 
-The Basics: Types of Stores and Their Uses
+The Basics: Types of Volumes and Their Uses
 ==========================================
 
-|Carbonio| allows for **two** different types of stores:
+|Carbonio| allows for **two** different types of Volumes:
 
-**Index Store**
+**Index Volume**
    A store that contains information about your data that is used by
    Apache Lucene to provide indexing and search functions.
 
-**Data Store**
+**Data Volume**
    A store that contains all your |Carbonio| data organized in a MySql
    database.
 
-You can have multiple stores of each type, but only one Index Store, one
-Primary Data Store and one Secondary Data Store can be set as *Current*
+You can have multiple stores of each type, but only one Index Volume, one
+Primary Data Volume and one Secondary Data Volume can be set as *Current*
 (meaning that is currently used by |Carbonio|).
 
 .. _pws_primary_and_secondary_data_stores:
 
-Primary and Secondary Data Stores
----------------------------------
+Primary and Secondary Data Volumes
+----------------------------------
 
-A data store in |Carbonio| can be either a Primary Data Store or a Secondary
-Data Store.
+A data store in |Carbonio| can be either a Primary Data Volume or a Secondary
+Data Volume.
 
-Data is moved between the *current* Primary Data Store and the *current*
-Secondary Data Store according to a defined policy.
+Data is moved between the *current* Primary Data Volume and the *current*
+Secondary Data Volume according to a defined policy.
 
 .. _volumes:
 
@@ -403,267 +403,217 @@ The parameters required by these commands may differ depending on the
 Hierarchical Storage Management
 ===============================
 
-.. note:: The HSM feature requires a separate license, therefore it
-   may not be available on your |carbonio| installation.
+The HSM feature requires a separate license (called **Storages HSM**
+in the |adminui|\' s *Subscriptions* section , therefore it may not be
+available on your |carbonio| installation.
 
-.. is this still valid for carbonio?
+:term:`HSM` is a data storage technique that moves data between
+different stores according to a defined policy.
 
-.. _pws_the_hierarchical_storage_management_technique:
-
-The Hierarchical Storage Management Technique
----------------------------------------------
-
-HSM is a data storage technique that moves data between different stores
-according to a defined policy.
-
-The most common use of the HSM technique is the move of *older* data
-from a faster-but-expensive storage device to a slower-but-cheaper one
+The most common use of the HSM technique is the move of *old* data
+from a *faster-but-expensive* storage device (the :term:`Primary
+Volume`) to a *slower-but-cheaper* one (the :term:`Secondary Volume`)
 based on the following premises:
 
--  Fast storage costs more.
-
--  Slow storage costs less.
-
--  *Old* data will be accessed much less frequently than *new* data.
-
-The advantages of the HSM technique are clear: Lowering the overall
-storage cost since only a small part of your data needs to be on costly
-storage, and improving the overall user experience.
-
-
-.. _pws_stores_volumes_and_policies:
-
-Stores, Volumes, and Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Using HSM requires a clear understanding of some related terms:
-
--  Primary Store: The *fast-but-expensive* store where all your data is
-   initially placed.
-
--  Secondary Store: The *slow-but-cheap* store where *older* data will
-   be moved to.
-
-.. _pws_zextras_powerstore_moving_items_between_stores:
-
-Moving Items between Stores
----------------------------
-
-The main feature of the |storage| module is the ability to
-apply defined HSM policies.
-
-The move can be triggered by starting the ``doMoveBlobs`` operation
-through the CLI.
-
-.. check these in the new UI
-   -  Click :bdg-dark-line:`Apply Policy` button in the Administration Zimlet.
-
-   -  Enable Policy Application Scheduling in the Administration Zimlet and
-      wait for it to start automatically.
-
-Once the move is started, the following operations are performed:
-
--  |storage| scans through the Primary Store to see which items
-   comply with the defined policy.
-
--  All the Blobs of the items found in the first step are copied to the
-   Secondary Store.
-
--  The database entries related to the copied items are updated to
-   reflect the move.
-
--  If the second and the third steps are completed successfully (and
-   only in this case), the old Blobs are deleted from the Primary Store.
-
-The Move operation is *stateful* - each step is executed only if the
-previous step has been completed successfully - so the risk of data loss
-during a Move operation is nonexistent.
-
-.. _pws_domoveblobs:
-
-doMoveBlobs
------------
-
-.. _pws_the_domoveblobs_operation_of_zextras_powerstore:
-
-The doMoveBlobs Operation of |storage|
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The doMoveBlobs is the heart of |storage|.
-
-It moves items between the Current Primary Store and the Current
-Secondary Store according to the proper HSM policy.
-
-The move is performed by a transactional algorithm. Should an error
-occur during one of the steps of the operation, a rollback takes place
-and no change will be made to the data.
-
-Once |storage| identifies the items to be moved, the following
-steps are performed:
-
--  A copy of the Blob to the Current Secondary Store is created.
-
--  The |Carbonio| Database is updated to notify |Carbonio| of the item’s new
-   position.
-
--  The original Blob is deleted from the Current Primary Store.
-
-.. _pws_what_is_moved:
-
-What is Moved?
-^^^^^^^^^^^^^^
-
-Every item that complies with the specified HSM policy is moved.
-
-.. card:: Example
-
-   The following policy::
-
-     message,document:before:-20day
-     message:before:-10day has:attachment
-
-   will move all emails and documents older than 20 days along with all
-   emails older than 10 days that contain an attachment.
-
-.. warning:: By default, results from the Trash folder do not appear
-   in any search--and this includes the HSM Policy. In order to ensure
-   that all items are moved, add "is:anywhere" to your policy.
-
-.. _pws_policy_order:
-
-Policy Order
-^^^^^^^^^^^^
-
-All conditions for a policy are executed in the exact order they are
-specified. |storage| will loop on all items in the Current
-Primary Store and apply each separate condition before starting the next
-one.
-
-This means that the following policies
-
-::
-
-   message,document:before:-20day
-   message:before:-10day has:attachment
-
-::
-
-   message:before:-10day has:attachment
-   message,document:before:-20day
-
-applied daily on a sample server that sends/receives a total of 1000
-emails per day, 100 of which contain one or more attachments, will have
-the same final result. However, the execution time of the second policy
-will probably be slightly higher (or much higher, depending on the
-number and size of the emails on the server).
-
-This is because in the first policy, the first condition
-(``message,document:before:-20day``) will loop on all items and move
-many of them to the Current Secondary Store, leaving fewer items for
-the second condition to loop on.
-
-Likewise, having the ``message:before:-10day has:attachment`` as the
-first condition will leave more items for the second condition to loop
-on.
-
-This is just an example and does not apply to all cases, but gives an
-idea of the need to carefully plan your HSM policy.
-
-.. _pws_executing_the_domoveblobs_operation_a_k_a_applying_the_hsm_policy:
-
-Executing the doMoveBlobs Operation (a.k.a. Applying the HSM Policy)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Applying a policy* means running the ``doMoveBlobs`` operation in order
-to move items between the Primary and Secondary store according to the
-defined policy.
-
-|storage| gives you two different options:
-
-- Via the CLI
-
-- Through Scheduling
-
-.. warning:: Items in **Trash** or dumpster folders are not moved to
-   the secondary store by the HSM module. Currently, there is no
-   option to define a policy for **Trash** and dumpster.
-
-To apply the HSM Policy via the CLI, run the following command as the
-``zextras`` user
-
-.. code:: console
-
-   zextras$ carbonio powerstore doMoveBlobs
-
-.. this must be checked on new UI
-   .. _pws_domoveblobs_stats_and_info:
-
-   doMoveBlobs Stats and Info
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Information about disk space savings, operation performances and more
-   are available by clicking the *Stats* button under the ``Secondary
-   Volumes`` list in the |storage| tab of the Administration
-   Zimlet.
-
-.. _pws_policy_management:
-
-Policy Management
-=================
-
-.. _pws_what_is_a_policy:
-
-What is a Policy?
+- Fast storage is more expensive than slow storage
+   
+- *Old* data are on average much less frequently accessed than *new*
+  data
+
+Therefore, storing old data on slower storage devices is acceptable,
+as users can afford to wait more time to retrieve a (very) old item
+(e.g., a mail or a document stored in Files), while they want that
+recent items be always available quickly. The advantages of HSM are
+clear: on the one side, lowering the overall storage cost since only a
+small part of your data needs to be on costly storage, and on the
+other side improving the overall user experience.
+
+.. _pws-policies:
+
+Defining Policies
 -----------------
 
-An HSM policy is a set of rules that define what items will be moved
-from the Primary Store to the Secondary Store when the ``doMoveBlobs``
-operation of |storage| is triggered, either manually or by
-scheduling.
+An HSM policy is a string that describes what should be moved, for
+example::
+
+  all:before:-20days
+
+When this policy is applied, all the messages arrived **before** 20
+day ago are moved: if today is March 21st, this means all items whose
+date is before March 1st will be moved.
+
 
 A policy can consist of a single rule that is valid for all item types
 (*Simple* policy) or multiple rules valid for one or more item types
 (*Composite* policy).
 
-.. _pws_policy_examples:
+.. rubric:: Accounts and Domains
+            
+Contrary to the policies that can be defined in the |adminui| (see
+section :ref:`create-hsm-policy`, from the CLI you can create a policy that is
+applied only on given accounts or domain, for example the policy::
 
-Policy Examples
-~~~~~~~~~~~~~~~
+  all:before:-10days domain:example.com
 
-Here are some policy examples. To see how to create the policies in the
-|storage| module, see below.
+will move all items older than *10* days that are in the domain
+*example.com*; policy::
 
-- "Move all items older than 30 days"
+  all:before:-30days account:john.doe@example.com
 
-- "Move emails older than 15 days and items of all other kinds older
-  than 30 days"
+will move all items older than *30* days that belong to the account
+*john.doe@example.com*.
 
-- "Move calendar items older than 15 days, |file| items older than 20
-  days and all emails in the *Archive* folder"
+.. rubric:: Source and Destination Volumes
 
-.. _pws_defining_a_policy:
+It is possible to choose the source volume(s) and the destination
+volume for a policy. By default, if neither of them is specified in a
+policy, items are moved from the Primary Volume to the Current
+Secondary Volume.  
 
-Defining a Policy
------------------
+.. note:: In a policy can appear multiple comma-separated Source Volumes but
+   only **one** Destination Volume.
+
+If you define only Source Volume(s), the items will be moved to the
+*Current Secondary Volume*, while if you specify only the Destination
+Volume, all the items from the **Primary Volume. In the policy you
+need to used the **ID** of the volume, that you can retrieve using
+command :command:`carbonio powerstore getallvolumes`. Here are some
+examples::
+
+  all:before:-10 source:1,2 destination:3
+  
+All items older than **10 days** from **Volumes 1 and 2** will be moved to
+**Volume 3**.
+
+::
+
+  all:before:-10 source:1
+  
+All items older than **10 days** from **Volume 1** will be moved to
+the **Current Secondary Volume**, regardless of its id.
+
+::
+
+  all:before:-10 destination:3
+  
+All items older than **10 days** from the **Primary Volume** will be
+moved to **Volume 3**.
+
+.. _pws-manage-policy:
+   
+Policies Management
+-------------------
+
+|carbonio| defines three CLI commands for the management of policies:
+
+#. :command:`carbonio powerstore getHsmPolicy`
+
+   This command takes no parameter and lists all the policies defined.
+
+#. :command:`carbonio powerstore setHsmPolicy`
+
+   This command takes one parameter, which is the string containing
+   the policy and **replaces** the new policies to **all the
+   existent** policies, so use it with care!
+
+#. :command:`carbonio powerstore +setHsmPolicy`
+
+   This command takes one parameter, which is the string containing
+   the policy and **adds it** after all the other existent policies,
+   if any.
+
+The policies are evaluated in the order in which they are
+displayed. For example, suppose you have one Primary Volume (with id
+**1**), two Destination Volumes (with id **3** and **5**), and a few
+domains, one of which with high traffic (**example.com**). If you
+define the following policies::
+
+  all:before:-10days domain:example.com destination:3
+  all:before:-30days destination:5
+
+The result is that all items older that 10 days from the high-traffic
+domain will be moved to Destination Volume 3, and all the other items
+older than 30 will be moved to the other Destination Volume, 5.
+
+.. _pws-run-policy:
+
+Running Policies
+----------------
+
+From the CLI, you can manually run the policies using command
+:command:`doMoveBlobs`.
+
+.. hint:: Policies can be scheduled to run periodically from the
+   |adminui|, see :ref:`ap-hsm-settings`.
+
+Once the move is started, the following operations are performed:
+
+- |storage| scans through the Primary Volume to see which items comply
+  with the defined policy
+
+- All the Blobs of the items found in the first step are copied to the
+  Secondary Volume
+
+- The database entries related to the copied items are updated to
+  reflect the move
+
+- If the second and the third steps are completed successfully (and
+  only in this case), the old Blobs are deleted from the Primary
+  Volume
+
+The Move operation is *stateful* - each step is executed only if the
+previous step has been completed successfully - so there is no risk of
+data loss during a :command:`doMoveBlobs` operation. The syntax of the
+command is
+
+.. code:: console
+
+   zextras$ carbonio powerstore doMoveBlobs start
+
+Optionally, you can add a policy on the command line to run it only
+once, for example
+
 
 ..
-   Policies can be defined both from the |storage| tab of the |adminui|
-   and from the CLI. You can specify a |Carbonio| Search in both cases.
+   .. _pws_policy_order:
 
-Policies can be defined from the CLI using one of the two policy
-management commands available.
+   Policy Order
+   ^^^^^^^^^^^^
 
-.. code:: console
+   All conditions for a policy are executed in the exact order they are
+   specified. |storage| will loop on all items in the Current
+   Primary Store and apply each separate condition before starting the next
+   one.
 
-   zextras$ carbonio powerstore setHSMPolicy hsm_policy
+   This means that the following policies
 
-.. code:: console
+   ::
 
-   zextras$ carbonio powerstore +setHsmPolicy hsm_policy
+      message,document:before:-20day
+      message:before:-10day has:attachment
 
-These command share the same syntax; the difference is that
-``setHSMPolicy`` creates **new** policies, *replacing* existing one,
-while ``+setHSMPolicy`` *adds* policies to existing ones.
+   ::
+
+      message:before:-10day has:attachment
+      message,document:before:-20day
+
+   applied daily on a sample server that sends/receives a total of 1000
+   emails per day, 100 of which contain one or more attachments, will have
+   the same final result. However, the execution time of the second policy
+   will probably be slightly higher (or much higher, depending on the
+   number and size of the emails on the server).
+
+   This is because in the first policy, the first condition
+   (``message,document:before:-20day``) will loop on all items and move
+   many of them to the Current Secondary Store, leaving fewer items for
+   the second condition to loop on.
+
+   Likewise, having the ``message:before:-10day has:attachment`` as the
+   first condition will leave more items for the second condition to loop
+   on.
+
+   This is just an example and does not apply to all cases, but gives an
+   idea of the need to carefully plan your HSM policy.
 
 .. _pws_zextras_powerstore_and_s3_buckets:
 
@@ -704,9 +654,9 @@ officially supported platforms:
 Primary Volumes and the "Incoming" Directory
 --------------------------------------------
 
-In order to create a remote *Primary Store* on a mailbox server a
+In order to create a remote *Primary Volume* on a mailbox server a
 local "Incoming" directory must exist on that server. The default
-directory is :file:`/opt/|carbonio|/incoming`; you can check or modify
+directory is :file:`/opt/zextras/incoming`; you can check or modify
 the current value using these commands:
 
 .. code:: console
@@ -1282,66 +1232,3 @@ following data to the output:
    "show_blob_num", "blobNumber", "Number of BLOB files"
 
 
-..
-   .. _zextras_powerstore_cli:
-
-   |storage| CLI
-   ======================
-
-   This section contains the index of all ``carbonio powerstore``
-   commands. Full reference can be found in the dedicated section
-   :ref:`zextras_powerstore_full_cli`.
-
-   :ref:`testS3Connection <carbonio_core_testS3Connection>`
-   :octicon:`dash` :ref:`Indexing content-extraction-tool add <carbonio_powerstore_Indexing_content-extraction-tool_add>`
-   :octicon:`dash` :ref:`Indexing content-extraction-tool list <carbonio_powerstore_Indexing_content-extraction-tool_list>`
-   :octicon:`dash` :ref:`Indexing content-extraction-tool remove <carbonio_powerstore_Indexing_content-extraction-tool_remove>`
-   :octicon:`dash` :ref:`doCheckBlobs <carbonio_powerstore_doCheckBlobs>`
-   :octicon:`dash` :ref:`doCreateVolume Alibaba <carbonio_powerstore_doCreateVolume_Alibaba>`
-   :octicon:`dash` :ref:`doCreateVolume Centralized <carbonio_powerstore_doCreateVolume_Centralized>`
-   :octicon:`dash` :ref:`doCreateVolume Ceph <carbonio_powerstore_doCreateVolume_Ceph>`
-   :octicon:`dash` :ref:`doCreateVolume Cloudian <carbonio_powerstore_doCreateVolume_Cloudian>`
-   :octicon:`dash` :ref:`doCreateVolume CustomS3 <carbonio_powerstore_doCreateVolume_CustomS3>`
-   :octicon:`dash` :ref:`doCreateVolume EMC <carbonio_powerstore_doCreateVolume_EMC>`
-   :octicon:`dash` :ref:`doCreateVolume FileBlob <carbonio_powerstore_doCreateVolume_FileBlob>`
-   :octicon:`dash` :ref:`doCreateVolume OpenIO <carbonio_powerstore_doCreateVolume_OpenIO>`
-   :octicon:`dash` :ref:`doCreateVolume S3 <carbonio_powerstore_doCreateVolume_S3>`
-   :octicon:`dash` :ref:`doCreateVolume ScalityS3 <carbonio_powerstore_doCreateVolume_ScalityS3>`
-   :octicon:`dash` :ref:`doCreateVolume Swift <carbonio_powerstore_doCreateVolume_Swift>`
-   :octicon:`dash` :ref:`doDeduplicate <carbonio_powerstore_doDeduplicate>`
-   :octicon:`dash` :ref:`doDeleteDrivePreviews <carbonio_powerstore_doDeleteDrivePreviews>`
-   :octicon:`dash` :ref:`doDeleteVolume <carbonio_powerstore_doDeleteVolume>`
-   :octicon:`dash` :ref:`doMailboxMove <carbonio_powerstore_doMailboxMove>`
-   :octicon:`dash` :ref:`doMoveBlobs <carbonio_powerstore_doMoveBlobs>`
-   :octicon:`dash` :ref:`doPurgeMailboxes <carbonio_powerstore_doPurgeMailboxes>`
-   :octicon:`dash` :ref:`doRemoveHsmPolicy <carbonio_powerstore_doRemoveHsmPolicy>`
-   :octicon:`dash` :ref:`doRemoveOrphanedBlobs <carbonio_powerstore_doRemoveOrphanedBlobs>`
-   :octicon:`dash` :ref:`doRestartService <carbonio_powerstore_doRestartService>`
-   :octicon:`dash` :ref:`doStartService <carbonio_powerstore_doStartService>`
-   :octicon:`dash` :ref:`doStopAllOperations <carbonio_powerstore_doStopAllOperations>`
-   :octicon:`dash` :ref:`doStopOperation <carbonio_powerstore_doStopOperation>`
-   :octicon:`dash` :ref:`doStopService <carbonio_powerstore_doStopService>`
-   :octicon:`dash` :ref:`doUpdateVolume Alibaba <carbonio_powerstore_doUpdateVolume_Alibaba>`
-   :octicon:`dash` :ref:`doUpdateVolume Ceph <carbonio_powerstore_doUpdateVolume_Ceph>`
-   :octicon:`dash` :ref:`doUpdateVolume Cloudian <carbonio_powerstore_doUpdateVolume_Cloudian>`
-   :octicon:`dash` :ref:`doUpdateVolume CustomS3 <carbonio_powerstore_doUpdateVolume_CustomS3>`
-   :octicon:`dash` :ref:`doUpdateVolume EMC <carbonio_powerstore_doUpdateVolume_EMC>`
-   :octicon:`dash` :ref:`doUpdateVolume FileBlob <carbonio_powerstore_doUpdateVolume_FileBlob>`
-   :octicon:`dash` :ref:`doUpdateVolume OpenIO <carbonio_powerstore_doUpdateVolume_OpenIO>`
-   :octicon:`dash` :ref:`doUpdateVolume S3 <carbonio_powerstore_doUpdateVolume_S3>`
-   :octicon:`dash` :ref:`doUpdateVolume ScalityS3 <carbonio_powerstore_doUpdateVolume_ScalityS3>`
-   :octicon:`dash` :ref:`doUpdateVolume Swift <carbonio_powerstore_doUpdateVolume_Swift>`
-   :octicon:`dash` :ref:`doVolumeToVolumeMove <carbonio_powerstore_doVolumeToVolumeMove>`
-   :octicon:`dash` :ref:`getAllOperations <carbonio_powerstore_getAllOperations>`
-   :octicon:`dash` :ref:`getAllVolumes <carbonio_powerstore_getAllVolumes>`
-   :octicon:`dash` :ref:`getHsmPolicy <carbonio_powerstore_getHsmPolicy>`
-   :octicon:`dash` :ref:`getMovedMailboxes <carbonio_powerstore_getMovedMailboxes>`
-   :octicon:`dash` :ref:`getNonLocalMailboxes <carbonio_powerstore_getNonLocalMailboxes>`
-   :octicon:`dash` :ref:`getProperty <carbonio_powerstore_getProperty>`
-   :octicon:`dash` :ref:`getServices <carbonio_powerstore_getServices>`
-   :octicon:`dash` :ref:`getVolumeStats <carbonio_powerstore_getVolumeStats>`
-   :octicon:`dash` :ref:`monitor <carbonio_powerstore_monitor>`
-   :octicon:`dash` :ref:`runBulkDelete <carbonio_powerstore_runBulkDelete>`
-   :octicon:`dash` :ref:`setHSMPolicy <carbonio_powerstore_setHSMPolicy>`
-   :octicon:`dash` :ref:`setProperty <carbonio_powerstore_setProperty>`
-   :octicon:`dash` :ref:`+setHsmPolicy <carbonio_powerstore_+setHsmPolicy>`
