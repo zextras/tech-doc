@@ -34,24 +34,6 @@ Upgrade to PostgreSQL 16
 
 .. include:: /_includes/_upgrade/pg.rst
 
-.. rubric:: Update pgpool-II
-
-If you run |product| in Multi-Nodes, you need to update also the
-``pgpool-II`` package so it matches PostgresQL's correct version, 16.
-
-#. First, remove the installed package (and repository definition if
-   installed)
-
-   .. code:: console
-
-      # dnf remove pgpool-II pgdg-redhat-repo
-
-#. Install the correct pgpool version
-
-   .. code:: console
-
-      # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-8-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel8.x86_64.rpm
-
 .. _upgrade-nodes:
 
 Upgrade Nodes

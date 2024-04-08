@@ -42,31 +42,12 @@ We can group the available |product| Roles into 3 macro categories:
 
 This is the list of roles that make up a |product| installation.
 
-.. note:: Postgres, Pgpool, Grafana, Zookeper, and  Kafka are
-   third-party software that are installed from their respective
-   official repositories.
+.. note:: Postgres, Grafana, Zookeper, and Kafka are third-party
+   software that are installed from their respective official
+   repositories.
 
 .. grid:: 1 1 2 2
    :gutter: 3
-
-   .. grid-item-card:: Database
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-      :link-type: ref
-      :link: role-db-install
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * postgresql
-
-      .. 24.1
-         * python3-psycopg2
-         * patroni
-         * watchdog
-         * python3-consul
-         * python3-pysyncobj
 
    .. grid-item-card:: Mesh and Directory
       :columns: 6
@@ -81,17 +62,17 @@ This is the list of roles that make up a |product| installation.
       * service-discover-server
       * carbonio-directory-server
 
-   .. grid-item-card:: Database Connector
+   .. grid-item-card:: Database
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-db-conn-install
+      :link: role-db-install
 
       Type of Role: Infrastructure
 
       Packages:
 
-      * pgpool2
+      * postgresql
       * carbonio-files-db
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
@@ -308,7 +289,6 @@ installation, please review these important remarks:
 
    roles/role-db
    roles/role-mesh-ds
-   roles/role-db-connector
    roles/role-proxy
    roles/role-mta
    roles/role-mailstore-provisioning
