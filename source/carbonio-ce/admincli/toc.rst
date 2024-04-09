@@ -14,6 +14,7 @@ mandatory.
    .. toctree::
       :maxdepth: 1
 
+      ldap
       management
       mesh
       troubleshooting

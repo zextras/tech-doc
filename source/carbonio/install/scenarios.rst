@@ -4,8 +4,6 @@
  Installation Scenarios
 ========================
 
-.. invertire ordine ansible/manuale
-
 This section features instructions to install |product| in different
 scenarios, which can be installed either by using the :ref:`Ansible
 playbook <ansible-run>` and the inventory template provided with each

@@ -36,8 +36,6 @@ Roles Installation
               
       * :ref:`role-db-install`
         
-      * :ref:`role-db-conn-install`
-        
       * :ref:`role-monit-install`
 
    .. grid-item-card:: Node 2

@@ -68,7 +68,6 @@ stored on this node by running these commands.
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
          # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/16/main/pg_hba.conf
          # systemctl restart postgresql
 
@@ -80,7 +79,6 @@ stored on this node by running these commands.
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
          # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/16/main/pg_hba.conf
          # systemctl restart postgresql
 
@@ -92,7 +90,6 @@ stored on this node by running these commands.
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
          # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET port TO '5433';\""
          # echo "host    all             all             0.0.0.0/0            md5" >> /var/lib/pgsql/16/data/pg_hba.conf
          # systemctl restart postgresql-16
 

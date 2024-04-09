@@ -42,33 +42,18 @@ We can group the available |product| Roles into 3 macro categories:
 
 This is the list of roles that make up a |product| installation.
 
-.. note:: Postgres, Pgpool, Grafana, Zookeper, and  Kafka are
-   third-party software that are installed from their respective
-   official repositories.
+.. note:: Postgres, Grafana, Zookeper, and Kafka are third-party
+   software that are installed from their respective official
+   repositories.
 
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Database
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * postgresql
-
-      .. 24.1
-         * python3-psycopg2
-         * patroni
-         * watchdog
-         * python3-consul
-         * python3-pysyncobj
-
    .. grid-item-card:: Mesh and Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-mesh-install
 
       Type of Role: Infrastructure
 
@@ -77,15 +62,17 @@ This is the list of roles that make up a |product| installation.
       * service-discover-server
       * carbonio-directory-server
 
-   .. grid-item-card:: Database Connector
+   .. grid-item-card:: Database
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-db-install
 
       Type of Role: Infrastructure
 
       Packages:
 
-      * pgpool2
+      * postgresql
       * carbonio-files-db
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
@@ -97,6 +84,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Proxy
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-proxy-install
 
       Type of Role: Infrastructure
 
@@ -114,6 +103,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: MTA AV/AS
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-mta-install
 
       Type of Role: Infrastructure
 
@@ -125,6 +116,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Mailstore & Provisioning
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-prov-install
 
       Type of Role: Service role
 
@@ -137,6 +130,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Files
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-files-install
 
       Type of Role: Service role
 
@@ -148,6 +143,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Docs & Editor
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-docs-install
 
       Type of Role: Service role
 
@@ -160,6 +157,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Preview
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-preview-install
 
       Type of Role: Service role
 
@@ -171,6 +170,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Tasks
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-tasks-install
 
       Type of Role: Service role
 
@@ -182,6 +183,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Workstream Collaboration :bdg-danger:`BETA`
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-wsc-install
 
       Type of Role: Service role
 
@@ -195,6 +198,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Video Server
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-vs-install
 
       Type of Role: Service role
 
@@ -206,6 +211,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Monitoring
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-monit-install
 
       Type of Role: Service role
 
@@ -218,6 +225,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Directory Replica
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-ds-replica-install
 
       Type of Role: Service role
 
@@ -280,7 +289,6 @@ installation, please review these important remarks:
 
    roles/role-db
    roles/role-mesh-ds
-   roles/role-db-connector
    roles/role-proxy
    roles/role-mta
    roles/role-mailstore-provisioning

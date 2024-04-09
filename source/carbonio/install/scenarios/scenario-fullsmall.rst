@@ -28,7 +28,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Full Small" Scenario 
    :open:
 
-   :download:`Dowload the inventory
+   :download:`Download the inventory
    </playbook/carbonio-inventory-fullsmall>`
    
    .. literalinclude:: /playbook/carbonio-inventory-fullsmall
@@ -150,5 +150,3 @@ Roles on the Nodes, according to the following guidelines.
               
       * :ref:`role-vs-install`
         
-
-.. rubric:: Footnotes

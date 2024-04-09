@@ -29,7 +29,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Essential" Scenario
    :open:
 
-   :download:`Dowload the inventory
+   :download:`Download the inventory
    </playbook/carbonio-inventory-essential>`
    
    .. literalinclude:: /playbook/carbonio-inventory-essential

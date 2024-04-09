@@ -49,19 +49,11 @@ This is the list of roles that make up a |product| installation.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Database
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * postgresql
-
    .. grid-item-card:: Mesh and Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-db-install
 
       Type of Role: Infrastructure
 
@@ -70,9 +62,23 @@ This is the list of roles that make up a |product| installation.
       * service-discover-server
       * carbonio-directory-server
 
+   .. grid-item-card:: Database
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-mesh-install
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * postgresql
+
    .. grid-item-card:: Database Connector
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-db-conn-install
 
       Type of Role: Infrastructure
 
@@ -88,6 +94,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Proxy
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-proxy-install
 
       Type of Role: Infrastructure
 
@@ -105,6 +113,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: MTA AV/AS
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-mta-install
 
       Type of Role: Infrastructure
 
@@ -116,6 +126,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Mailstore & Provisioning
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-prov-install
 
       Type of Role: Service role
 
@@ -127,6 +139,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Files
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-files-install
 
       Type of Role: Service role
 
@@ -138,6 +152,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Docs & Editor
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-docs-install
 
       Type of Role: Service role
 
@@ -150,6 +166,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Preview
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-preview-install
 
       Type of Role: Service role
 
@@ -161,6 +179,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Tasks
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-tasks-install
 
       Type of Role: Service role
 
@@ -172,6 +192,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Video Server
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-vs-install
 
       Type of Role: Service role
 
@@ -184,6 +206,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Monitoring
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-monit-install
 
       Type of Role: Service role
 
@@ -196,6 +220,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Event Streaming
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-es-install
 
       Type of Role: Service role
 
@@ -207,6 +233,8 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Directory Replica
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-ds-replica-install
 
       Type of Role: Service role
 
