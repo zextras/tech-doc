@@ -37,6 +37,37 @@ rights.
 #. User eligible to become Administrators must have the attribute
    ``zimbraIsDelegationAdminAccount`` set to **True**
 
+.. index:: Domain Initialisation; Error
+
+.. card:: Errors during domain initialisation
+
+   If during the initialisation you see a red pop up in the |adminui|
+   or the following error message if you issue the command from the
+   CLI::
+
+     Admin Auth Token is missing or empty
+
+   You can fix this problem by deploying again the CA, issuing the
+   following command as the ``zextras`` user
+
+   .. code:: console
+
+      zextras$ zmcertmgr deployca
+
+   Then, initialise again the domain
+
+   .. code:: console
+
+      zextras$ carbonio admin initDomainForDelegation example.com
+
+   .. note:: you can also check whether in the log file
+      :file:`opt/zextras/mailbox.log` you find the message::
+
+        ERROR [ZxLink Handler Thread] [] extensions -
+        javax.net.ssl.SSLHandshakeException: PKIX path building failed:
+        sun.security.provider.certpath.SunCertPathBuilderException:
+        unable to find valid certification path to requested target
+
 How to Create an Administrator
 ------------------------------
 

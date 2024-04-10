@@ -16,6 +16,14 @@ the installation of the repository), while in RHEL 8 it is quite
 different. For this reason, we separate the directions of RHEL from
 Ubuntu.
 
+In case after the upgrade you find in Postgres' log files some error
+messages like the following one, please refer to Section
+:ref:`pg-upgrade-issue`::
+  
+  2024-03-19 12:28:14.209 UTC [909825] HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE activesync REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
+  2024-03-19 12:28:19.669 UTC [909915] WARNING:  database "abq" has a collation version mismatch
+
+
 Ubuntu 20.04 and 22.04
 ~~~~~~~~~~~~~~~~~~~~~~
 
