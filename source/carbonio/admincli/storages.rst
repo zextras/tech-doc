@@ -28,7 +28,7 @@ policies, HSM, and various advanced techniques.
 .. _pws_the_basics_types_of_stores_and_their_uses:
 
 The Basics: Types of Volumes and Their Uses
-==========================================
+===========================================
 
 |Carbonio| allows for **two** different types of Volumes:
 
