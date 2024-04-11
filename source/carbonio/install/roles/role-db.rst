@@ -8,4 +8,4 @@ Database
 Installation of PostgreSQL
 --------------------------
 
-.. include:: /_includes/_installation/pg-ce.rst
+.. include:: /_includes/_installation/pg.rst
