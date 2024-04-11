@@ -39,6 +39,7 @@
 
       .. code:: console
 
+         # apt update
          # apt install postgresql-16 service-discover-agent
 
    .. tab-item:: Ubuntu 22.04
@@ -46,6 +47,7 @@
 
       .. code:: console
 
+         # apt update
          # apt install postgresql-16 service-discover-agent
 
    .. tab-item:: RHEL
