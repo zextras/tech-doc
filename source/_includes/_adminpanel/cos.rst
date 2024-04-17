@@ -6,9 +6,10 @@ A |cos| determines which features and options can be accessed by a
 user, how to access them, and sets the default values for a number of
 them.
 
-To create a COS, click the :bdg-primary:`CREATE NEW COS` button
-and enter a name. You can then configure all the options by entering
-the left-hand side *Features* menu.
+To create a COS, click the :bdg-primary:`CREATE NEW COS` button, enter
+a name, and optionally a description and some notes. You can then
+configure all the options by entering the left-hand side *Details*
+menu.
 
 .. _cos_info:
 
@@ -36,8 +37,8 @@ Out Of Office replies, the visible name of the sender, and other);
 another needs that the e-mails be encrypted and does not want users to
 send plain-text e-mails, and so on.
 
-.. hint:: Some of them can be enabled or disabled via CLI: please
-   refer to section :ref:`cli-features` for more information.
+.. hint:: Some of these options can be enabled or disabled via CLI:
+   please refer to section :ref:`cli-features` for more information.
 
 .. _cos-prefs:
 
@@ -66,6 +67,14 @@ COS, which includes also the locale. The remaining options concern
 * The default behaviour for sending the read receipt to the e-mail
   sender: to always send it or not, or asking each time
 
+* Whether new contacts from which we receive an e-mail are
+  automatically added to the user's Contacts and if GAL should be used
+  to auto-fill addresses of outgoing e-mails
+
+* A number of default options for the Calendar: time zone, how the
+  calendar is displayed, and additional option for appointments and
+  events.
+
 .. _cos-pool:
 
 Server Pools
@@ -81,28 +90,42 @@ be added to the COS.
 Advanced
 --------
 
-The *Advanced* Option allow to configure the user quota, passwords,
-policies, and more.
+Multiple *Advanced* options can be  configured here, divided into
+multiple groups
 
-The **user quota**, is a set of options that limit how much space a
-user can occupy on the server, or how many contacts he can have. It
-also encompasses the option to send periodic notifications when the
-user space raises over a given threshold.
+Forwarding
+  Two options govern how to forward messages: how long an e-mail
+  address can be and the maximum number of recipients allowed.
 
-The **Password** settings permit to tune the length, characters, and
-duration of the user passwords. It is also possible to reject common
-passwords.
+Quotas
+  A set of options that limit how much space a user can occupy on the
+  server, or how many contacts he can have. It also encompasses the
+  options to send periodic notifications when the user space raises
+  over a given threshold and a template for the notifications.
 
-The **Failed Login Policy** allows to define the behaviour of
-|product| when a user fails a log in. A typical policy can lock out
-the user for *one hour* when *three* consecutive login attempts fail
-within *30 minutes*.
+Password
+  Settings for password policies: length, characters, and duration of
+  the user passwords. It is also possible to reject common passwords.
 
-The **Timeout Policy** concern the duration of the token's validity.
+  .. hint:: These settings are disregarded if authentication relies on
+     an external server.
 
-The **Email Retention Policy** define how long e-mail will be stored
-before being automatically deleted.
+Failed Login Policy
+  Define the behaviour of |product| when a user fails a log in.
 
-Finally, the **Free/Busy Interop** option allows to provide O and OU
-records to display the free/busy user schedule when using an Exchange
-server.
+  .. hint:: A typical policy can lock out the user for *one hour* when
+     *three* consecutive login attempts fail within *30 minutes*.
+
+Timeout Policy
+  Configure the duration of the token's validity, i.e., how long a
+  user or Administrator will be able to keep the Web-mail open without
+  interaction.
+
+Email Retention Policy
+  Define how long e-mail will be stored before being automatically
+  deleted from the Inbox (and its sub-folders), Trash, and Spam
+  folders.
+
+Free/Busy Interop
+  This option allows to provide **O** and **OU** records to display
+  the free/busy user schedule when using an Exchange server.
