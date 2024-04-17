@@ -22,11 +22,13 @@ In this scenario, we configure a log Server on **Node 1** within the
    find the following lines, and uncomment them (i.e., remove the
    ``#`` character at the beginning of the line)::
 
-      $ModLoad imudp
-      $UDPServerRun 514
+     # Provides UDP syslog reception
+     module(load="imudp")
+     input(type="imudp" port="514")
 
-      $ModLoad imtcp
-      $TCPServerRun 514
+     # Provides TCP syslog reception
+     module(load="imtcp")
+     input(type="imtcp" port="514")
 
    Then, restart the ``rsyslog`` service.
 
