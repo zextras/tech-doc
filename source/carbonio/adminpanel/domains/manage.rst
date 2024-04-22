@@ -46,7 +46,9 @@ modified for any individual user.
       This tab contains all the options provided during the
       :ref:`account creation <ap-new-account>`, plus other options,
       including:
-
+        
+      * Whether this account is included in the Backup
+        
       * The ability to prevent the user from changing the
         password
 
