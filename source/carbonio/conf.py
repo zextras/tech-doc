@@ -44,9 +44,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.3.0'
+release = '24.5.0'
 version = release
-prev = '24.1.0'
+prev = '24.3.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -109,6 +109,7 @@ html_theme_options = {
     'repository_branch': 'master',
     'use_repository_button': True,
     'use_issues_button': True,
+    'navigation_with_keys': False,
     'logo': {
         'image_light': 'carbonio-black.svg',
         'image_dark': 'carbonio-white.svg',
