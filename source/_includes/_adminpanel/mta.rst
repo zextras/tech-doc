@@ -47,13 +47,117 @@ SMTP protocol used by the MTA can be enabled, including for the IP and
 domain of a client, the presence of a |fqdn| in the address, and HELO
 greetings upon a connection is established.
 
+.. _apt-mta-postscreen:
+
+
+Postscreen Tuning
+-----------------
+
+This section allows to tweak some MTA parameters using *postscreen*, a
+Postfix's feature to enhance performances by filtering out unwanted incoming
+connections to the STMP server.
+
+.. card:: The available *Actions*
+
+   In the Postscreen Tuning section an **Action** is an operation made
+   on an incoming e-mail whenever a test reaches a given
+   threshold. That is, for example, when the incoming e-mail is marked
+   as coming from a blacklisted source or contains some unwanted
+   features.
+
+   There are three values that the various *Action*\s listed in this
+   section (*Blacklist Action*, *DNS Blacklist Action*, *Bare Newline
+   Action*, *NonSMTP Command Action*, and *Pipelining Action*) can
+   assume:
+
+   * **Ignore**. This is the default action: simply ignore the result
+     of the test, but allow other tests to be carried out on the
+     e-mail. Tests will be executed again in case the client connects
+     again in the future
+
+     .. hint:: This option is useful for testing and collecting
+        statistics without blocking mail.
+
+   * **Enforce**. The e-mail is rejected (with an SMTP 550 reply) and
+     some of the e-mail's data (helo, sender, and recipient) are
+     logged. Other tests will be carried out on the e-mail, and tests
+     will be executed again in case the client connects again in the
+     future
+
+   * **Drop**. The incoming connection is immediately dropped (with an
+     SMTP 521 reply). Tests will be executed again in case the client
+     connects again in the future.
+
+.. rubric:: Blacklisting
+
+The two settings allow to define a range of IP addresses and the
+policy to apply to them. The default is to **Ignore** addresses in the
+``permit_mynetworks`` range (which is the one defined in Postfix
+configuration). This means that only these IP addresses are allowed.
+
+.. rubric:: DNS Blacklisting
+
+Settings in this section allow to implement on the |product|
+infrastructure *Realtime BlackLists* (RBLs) to help reducing
+unsolicited e-mails (i.e., e-mails containing spam, phishing, viruses,
+and other malware) from remote servers that are known to send this
+kind of e-mail. These options are available:
+
+DNS Blacklist Sites
+  Takes an URL that provides blacklists
+
+  .. hint:: Multiple URLs can be provided as a comma-separated list or
+     URLs, for example
+     ``zen.spamhaus.org,dnsbl.sorbs.net,b.barracudacentral.org``.
+
+The other options determine how the blacklist treats the scanned
+e-mails and how often the RBLs are updated. In particular:
+
+DNS Blacklist Threshold
+  The lower score that will fire the Action on the e-mail.
+
+DNS Blacklist Whitelist Threshold
+  This option allows an incoming connection to skip some tests related
+  to the protocol if its IP address is not included in one the
+  configured blacklists.
+
+DNS Blacklist Min TTL, DNS Blacklist Max TTL, DNS Blacklist TTL
+   The *Time To Live* values allow to define for how long an incoming
+   client, which is not present in any blacklist, is allowed to skip
+   the tests.
+
+.. rubric:: Tuning
+
+This part contains some advanced options. For each of them you can
+also specify the action to be carried out and the TTL.
+
+Bare Newline
+  A *Bare New Line* is a line from an e-mail that ends with an
+  ``<LF>`` sequence, instead of the standard ``<CR><LF>``. While this
+  is not a problem or a threat, it may enable SMTP smuggling (see
+  https://www.postfix.org/smtp-smuggling.html for more information).
+
+NonSMTP Command
+  Define what to do when the client sends commands that violate the
+  standard SMTP protocol.
+
+Pipelining
+  *Pipelining* is formally defined in :rfc:`2920` and refers to the
+  ability of an SMTP server to process multiple commands send by a
+  connecting client, as opposed as the standard process in which the
+  client must wait for a reply or answer from the server before being
+  allowed to send another command. Enabling this option is
+  resource-consuming, because a client that passes this test is
+  required to disconnect and reconnect to be able to communicate with
+  the SMTP server.
+
 .. _ap-mta-out:
 
 Outbound Flow
 -------------
 
 The Outbound Flow page controls which options are applied to the
-messages sent from the local domain. 
+messages sent from the local domain.
 
 .. rubric:: General
 
@@ -129,6 +233,26 @@ button.
 
 Frequency of signatures update from the mirror can be defined next, and
 tuned from a few seconds to several weeks.
+
+.. _ap-mta-adv:
+
+Advanced
+--------
+
+In this section you can configure logging and some advanced options.
+
+.. rubric:: Logging
+
+Options in the *logging* section allow to define the verbosity (log
+level) for Amavis and TLS activity of SMTP and LMTP clients. For the
+*SAS Log level for Amavis*, choose either to log only informative
+(INFO) messages or all messages, while for the other the lower the
+value, the less messages will be saved.
+
+.. rubric:: Tuning
+
+These options concern the threads used by antivirus, LMTP, and MILTER
+processes, and the maximum size of an e-mail message.
 
 .. _ap-mta-queue:
 

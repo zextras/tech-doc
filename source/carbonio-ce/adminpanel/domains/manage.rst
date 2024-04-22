@@ -62,7 +62,7 @@ modified for any individual user.
         same server, by writing the new one in the **Domain Name**
       
       At the bottom, it is possible to see all the user's open
-      sessiona, which can be terminated by selecting one and clicking
+      sessions, which can be terminated by selecting one and clicking
       :bdg-danger-line:`END SESSION` button on the top right of the
       list.
        
@@ -110,25 +110,6 @@ modified for any individual user.
 
       By toggling the *Global Administration* switch you can promote
       or demote the user to Global Administrator or vice versa.
-      
-..
-      .. tab-item:: Delegates
-
-         In this tab it is possible to define which other accounts or
-         groups have access to the account and which permissions
-         (**"Rights"**) are granted.  The first setting allow to define
-         whether to save or not a copy of the sent messages and where:
-         only in delegated account's folder or also in the delegate's
-         folder.
-
-         To add delegation Rights to an account, please refer to the
-         dedicated section, :ref:`ap-shared-account`.
-
-At the bottom of the panel, a list of the *active sessions* appears:
-for example, if a user has logged in from three different devices and
-never logged out, three sessions will appear. When selecting one of
-them, clicking the :bdg-danger-line:`END SESSION` button will close
-that session.
 
 .. index:: ! Account status, Account; status
 

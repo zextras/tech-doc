@@ -41,7 +41,9 @@ interface appears to the web clients.
 Domains
 =======
 
-This table lists all the domains configured on |product|. Check section
+This table lists all the domains configured on |product|. A click on
+any domain opens the *General settings* (:menuselection:`Domains -->
+Details --> General Settings`) of that domain. Check section
 :ref:`ap-domain-new` to add a new domain.
 
 .. _global-2fa:
@@ -54,7 +56,7 @@ domains configured) for the various services offered by |product|. To
 modify settings for a single domain, refer to :ref:`domain-2fa`.
 
 .. note:: The global values configured are inherited by all domains,
-   unless they are overridden in the domain.
+   but they can be overridden by domain-specific settings.
 
 .. include:: /_includes/_adminpanel/2fa.rst
 

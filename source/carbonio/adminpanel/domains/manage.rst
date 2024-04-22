@@ -67,7 +67,7 @@ modified for any individual user.
       * How many OTP devices the user has.
       
       At the bottom, it is possible to see all the user's open
-      sessiona, which can be terminated by selecting one and clicking
+      sessions, which can be terminated by selecting one and clicking
       :bdg-danger-line:`END SESSION` button on the top right of the
       list.
        
@@ -110,6 +110,12 @@ modified for any individual user.
       option. The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
+   .. tab-item:: Administration
+      :class-label: sd-px-1
+
+      By toggling the *Global Administration* switch you can promote
+      or demote the user to Global Administrator or vice versa.
+
    .. tab-item:: Delegates
       :class-label: sd-px-1
 
@@ -122,19 +128,6 @@ modified for any individual user.
 
       To add delegation Rights to an account, please refer to the
       dedicated section, :ref:`ap-shared-account`.
-
-
-   .. tab-item:: Administration
-      :class-label: sd-px-1
-
-      By toggling the *Global Administration* switch you can promote
-      or demote the user to Global Administrator or vice versa.
-
-At the bottom of the panel, a list of the *active sessions* appears:
-for example, if a user has logged in from three different devices and
-never logged out, three sessions will appear. When selecting one of
-them, clicking the :bdg-danger-line:`END SESSION` button will close
-that session.
 
 .. index:: ! Account status, Account; status
 
@@ -383,11 +376,18 @@ Distribution List
 
 .. include:: /_includes/_adminpanel/_domains/dls.rst
 
-.. Security Groups still missing
-   .. _ap-security-groups:
+.. _ap-security-groups:
 
-   Security Groups
-   ===============
+Security Groups
+===============
+
+This page show the pre-built Security Groups, which are special lists
+whose members are regular users promoted to an Administration
+Role. Belonging to any of these Groups allow a regular user to gain
+some rights and manage specific parts of the |product| infrastructure.
+
+.. seealso:: To learn more about the rights of the different types of
+   Administrators, please refer to Section :ref:`ap-admin-roles`.
 
 .. _ap-resources:
 
