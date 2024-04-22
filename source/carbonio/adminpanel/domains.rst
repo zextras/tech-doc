@@ -14,8 +14,8 @@ label.
 
 For the sake of clarity, the *Domains*\'s documentation has been split
 in multiple pages: :ref:`Create New Domain <ap-domain-new>`,
-:ref:`Global <ap-global>`, :ref:`Details <ap-domain-details>`, and
-:ref:`Manage <ap-manage-domains>`.
+:ref:`Global <ap-global>`, :ref:`Manage <ap-manage-domains>`, and
+:ref:`Details <ap-domain-details>`.
 
 
 .. toctree::
@@ -23,5 +23,5 @@ in multiple pages: :ref:`Create New Domain <ap-domain-new>`,
 
    domains/newdomain
    domains/global
-   domains/details
    domains/manage
+   domains/details
