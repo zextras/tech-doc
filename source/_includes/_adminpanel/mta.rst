@@ -234,6 +234,26 @@ button.
 Frequency of signatures update from the mirror can be defined next, and
 tuned from a few seconds to several weeks.
 
+.. _ap-mta-adv:
+
+Advanced
+--------
+
+In this section you can configure logging and some advanced options.
+
+.. rubric:: Logging
+
+Options in the *logging* section allow to define the verbosity (log
+level) for Amavis and TLS activity of SMTP and LMTP clients. For the
+*SAS Log level for Amavis*, choose either to log only informative
+(INFO) messages or all messages, while for the other the lower the
+value, the less messages will be saved.
+
+.. rubric:: Tuning
+
+These options concern the threads used by antivirus, LMTP, and MILTER
+processes, and the maximum size of an e-mail message.
+
 .. _ap-mta-queue:
 
 Queue
