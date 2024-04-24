@@ -390,33 +390,18 @@ use any of the following commands from the CLI:
 Advanced Settings
 =================
 
-.. _carbonio_mobile_dos_filter:
+.. _mobile_dos_filter:
 
-|mobile| DoS Filter
--------------------
+|mobile| DoS Filter Configuration
+---------------------------------
 
-|mobile| includes a dedicated DoS Filter component to improve both
-security and stability. The filter will kick in whenever a device
-exceeds the chosen connection rate over time and will "jail" the device
-for a set period of time, refusing any connections from it.
+This section allows to manage the |dos| protection for mobile devices
+that connect to the |product| infrastructure.
 
-This improves both security, helping to prevent Denial of Service
-attacks, and stability by blocking clients that are performing too many
-requests due to bugs or malfunctioning saving resources for all other
-clients.
-
-.. warning:: The Mobile DoS filter is disabled by default, and can be
-   enabled as needed via CLI.
-
-.. _mobile_configuration:
-
-Configuration
-~~~~~~~~~~~~~
-
-The Mobile DoS Filter is entirely configured at global level via CLI,
-with command :command:`carbonio config global set|get|clear`. Specific
-info for each property can be obtained via :command:`carbonio config
-info attribute [name]`, where `[name]` is one of the following:
+The Mobile DoS Filter is configured at global level via CLI with
+command :command:`carbonio config global set|get|clear`. Specific
+information for each property can be obtained via :command:`carbonio
+config info attribute [name]`, where `[name]` is one of the following:
 
 -  ``mobileAntiDosServiceEnabled``: enable the Mobile DoS Filter
    service. Default ``false``;
@@ -433,11 +418,6 @@ info attribute [name]`, where `[name]` is one of the following:
    received within ``mobileAntiDosServiceTimeWindow`` milliseconds).
    Default **150**;
 
-.. _how_mobile_dos_filter_works:
-
-How Mobile DoS Filter works
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 When the anti-dos service is running and ``mobileAntiDosMaxRequests`` is
 greater than 0, the system stores in memory the timestamp of the last
 ``mobileAntiDosMaxRequests`` requests. If the maximum number of request
@@ -451,7 +431,9 @@ and added to server notifications.
 .. note:: Issuing the command :command:`carbonio mobile
    doRestartService anti-dos` will reset all jails and counters.
 
-.. _carbonio_autodiscover:
+.. seealso:: You can configure the DoS Filter from the |adminui|
+   (:menuselection:`Domains --> Global --> ActiveSync`. Please refer
+   to Section :ref:`global-as`.
 
 .. _carbonio_mobile_performance_tuning:
 

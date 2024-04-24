@@ -68,3 +68,10 @@ Quarantine
 ==========
 
 .. include:: /_includes/_adminpanel/_domains/quarantine.rst
+
+.. _global-as:
+
+ActiveSync
+==========
+
+.. include:: /_includes/_adminpanel/_domains/activesync.rst
