@@ -1,67 +1,4 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
-.. _backup-mod:
-
-==========
- |backup|
-==========
-
-This chapter describes |backup|, the component that is responsible to
-back up all the data. The chapter is divided into several sections: at
-the beginning, an overview of the most common task is given along with
-pointers to more technical references.
-
-Next, the architecture of |backup| is described, which includes
-also important concepts to know beforehand; the concepts will be
-detailed in the remainder of the chapter.
-
-Finally, the possibilities to backup :ref:`items <item>` and accounts,
-are detailed, accompanied by the corresponding CLI commands. Tasks
-that can be carried out from the GUI can be found in :ref:`Admin
-Panel's Backup <ap-backup>`, while those that can be carried out on
-both CLI and GUI are cross-referenced between the two sections, to let
-you choose the favourite way to execute them.
-
-Documentation of the Backup is therefore split in four main parts:
-
-#. :ref:`Backup (of a Mailstore) <backup-mod>` is the current page,
-   which includes: the architecture of the backup modules and a
-   glossary of most relevant terms; the most common operations related
-   to the backup and how to execute them from the CLI
-#. :ref:`Restore Strategies <backup_restore-strategies>` for the
-   Backup: how to restore items, accounts, or whole Mailstores from
-   the CLI
-
-#. :ref:`Advanced Backup Techniques <backup_advanced_techniques>`,
-   including Disaster Recovery, a collection of last-resort recovery
-   possibilities after hardware or software errors (not related to
-   |product|)
-
-#. :ref:`Admin Panel's Backup <ap-backup>`, which contains all tasks
-   that can be carried out from the GUI only.
-
-.. _carbonio_backup_common_tasks:
-
-|backup| Common Tasks
-=====================
-
-This section contains guidelines for the most common task required by
-the users; also links to technical resources are also provided.
-
-.. _init-carbonio-backup:
-
-How to Activate |backup|
-------------------------
-
-
-Once you have finished your |carbonio| setup, you need a few more steps to
-configure the Backup component and have all your data automatically backed
-up.
-
-|backup| can be configured only on the nodes equipped with the
-:ref:`role-prov-install` role.
+ role.
 
 -  Mount a storage device at your target location. We use the default
    :file:`/opt/zextras/backup/zextras` throughout this section; remember to
@@ -489,8 +426,8 @@ therefore it can work with different OS architecture and |product|
 versions.
 
 |backup| allows administrators to create an atomic backup of every
-item in the Mailstore & Provisioning (AppServer) account and restore
-different objects on different accounts or even on different servers.
+item in the Mailstore & Provisioning account and restore different
+objects on different accounts or even on different servers.
 
 By default, the default |backup| setting is to save all backup
 files in the **local directory** :file:`/opt/zextras/backup/zextras/`. In
@@ -622,7 +559,7 @@ Realtime Scanner
 ================
 
 The Realtime Scanner is an engine tightly connected to the Mailstore &
-Provisioning (AppServer), which intercepts all the transactions that
+Provisioning, which intercepts all the transactions that
 take place on each user mailbox and records them with the purpose of
 maintaining the whole history of an item for its entire lifetime.
 

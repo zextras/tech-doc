@@ -279,7 +279,7 @@ and be able to access |product|'s internal services.
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
 
-.. card:: Mailstore & Provisioning (AppServer)
+.. card:: Mailstore & Provisioning
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
