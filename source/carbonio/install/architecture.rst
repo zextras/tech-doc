@@ -23,7 +23,7 @@ Node, while all the others can be combined and installed on one or
 more Nodes. For example, if |vs| is heavily used, it could be a good
 idea to install it on a dedicated node, while on the other hand
 **Provisioning** can be installed on the *Mailstore & Provisioning*
-(AppServer) Node instead of on a dedicated node.
+Node instead of on a dedicated node.
 
 In :numref:`fig-cb-arch`, *dependencies* are denoted by the boxes piled
 on top of the bottom one. In other words, all the ``*-UI`` packages,
