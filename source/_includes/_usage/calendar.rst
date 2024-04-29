@@ -19,6 +19,7 @@ without the necessity to create a new one and fill in all the
 details. This option is useful if you have to schedule recurrent
 events without a fixed schedule.
 
+
 When an account is configured with multiple identities, it is possible
 to choose from which one to send the invitations: the e-mail's sender
 will then be automatically filled according the identity chosen.
@@ -63,7 +64,14 @@ change.
 
 When right-clicking an event in the calendar, different actions can be
 carried out: open it and show all participants and details, edit, copy
-or move it, and its original, plain text version, can be shown.
+or move it, and its original, plain text version, can be shown. In
+case you only need to modify the time allocated for an event (for
+example you need to move it to a different time slot or change either
+its start or end time), you can simply move it via drag&drop to the
+new time or use the tiny icons at the top or bottom of the event and
+move them to the new start or end times. If there are other
+participants in the event, a new e-mail notification, that you can
+even modify, will automatically be sent to them.
 
 Additionally, :ref:`mail-tags` can be added to any calendar event and
 the event itself can be (tentatively) accepted or declined
@@ -75,6 +83,8 @@ shown. To broaden or restrict the search, click the
 :bdg-primary:`ADVANCED FILTER` bar and select the new start and end
 dates using the date pickers. Optionally, also add more keywords to
 search.
+
+
 
 Shared Calendars
 ----------------
