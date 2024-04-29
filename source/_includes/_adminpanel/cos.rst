@@ -50,7 +50,9 @@ Preferences
 by users in their :ref:`settings-comp` page.
 
 The first is the default language to be used by the members of the
-COS, which includes also the locale. The remaining options concern
+COS, which includes also the locale The list of supported languages
+can be found in section :ref:`supported-languages`. The remaining
+options concern
 
 * the default appearance of |product| in web clients: for example, if
   e-mails are displayed as conversations, or the calendar shows a
