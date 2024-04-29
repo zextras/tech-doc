@@ -13,6 +13,11 @@ shortcut as icons: *Home*, *Shared with me*, *Trash*, *Filters*, and
 recent files and folders accessed by the user is also available, to
 allow to quickly resume work on these documents.
 
+At the bottom of the leftmost column you see the used quota, i.e. the
+total sum of the files you create or upload to |file|. The quota is
+updated with a little delay after a file is added or deleted, but you
+can force an update by clicking the icon on the right-hand side of the
+quota.
 
 Working with Files
 ------------------
@@ -57,15 +62,15 @@ done on files and folders
    Sharing
       Lists the owner of the file or folder and who has access to
       it. It is possible to allow access to internal collaborators or
-      external user, with different modalities
+      external user, with different modalities.
 
       * Internal collaborators: you can add a a collaborator to a
         single file or an entire directory by writing the e-mail
-        address, then click :bdg-primary:`SHARE`; otherwise, in the
-        *Collaboration Links* section click :bdg-primary-line:`GENERATE
-        LINK` to create a link that will allow anyone with the link to
-        give either *Read and Share* or *Write and Share* permission
-        on the file
+        address, then click the :bdg-primary:`SHARE`
+        button. Otherwise, in the *Collaboration Links* section click
+        :bdg-primary-line:`GENERATE LINK` to create a link that will
+        allow anyone with the link to give either *Read and Share* or
+        *Write and Share* permission on the file
 
       * External users. It is possible to share single files or
         folders with external, anonymous users. In the bottom *Public
