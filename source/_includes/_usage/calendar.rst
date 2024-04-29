@@ -19,7 +19,6 @@ without the necessity to create a new one and fill in all the
 details. This option is useful if you have to schedule recurrent
 events without a fixed schedule.
 
-
 When an account is configured with multiple identities, it is possible
 to choose from which one to send the invitations: the e-mail's sender
 will then be automatically filled according the identity chosen.
@@ -55,7 +54,6 @@ many more information can be added to an appointment:
   .. hint:: You need to enable this option in the
      :ref:`settings-calendar` module's *Creating Appointment* Section.
           
-
 In case the invitation was not sent or if something went wrong, the
 event will show up in the calendar, but marked with a red icon. The
 attendee can propose a new time. In this case, new e-mail will be
@@ -84,8 +82,23 @@ shown. To broaden or restrict the search, click the
 dates using the date pickers. Optionally, also add more keywords to
 search.
 
+Manage Invitations
+------------------
+
+When you receive an e-mail invitation to an event and open it, it
+will be always accompanied by a green or yellow icon:
+
+* green: you are available for the full duration of the event.
+* yellow: some other appointments overlap with this and you should
+  check your schedule
+
+This happens only on the calendars associated to the account that
+received the e-mail (shared calendars or other accounts are not taken
+into account) and if in the calendar properties the option *Exclude
+this calendar when reporting the free/busy/time* is **not** ticked.
 
 
+  
 Shared Calendars
 ----------------
 
