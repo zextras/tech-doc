@@ -100,10 +100,32 @@ the person can only *view* your events, *edit* them (add, modify,
 delete), of fully *manage* them (accept and re-share invitations and
 appointments on your behalf).
 
-To finalise the share, you can choose to send a notification to the user with whom you want to
-share the calendar or to add a custom message.
+To finalise the share, you can choose to send a notification to the
+user with whom you want to share the calendar or to add a custom
+message.
 
-Configure a CalDAV CLient
+Calendar Export and Import
+--------------------------
+
+Right click one of your calendars to download (in ICS format) all the
+appointments that are included in the calendar. The file will be saved
+in the default browser's *Downloads* folder, with name composed by the
+calendar name and the date of download. For example, a calendar called
+*Office Meetings* exported on first of May 2024 will be called
+:file:`office meetings-2024-05-01.ics`.
+
+If you save a single or a recurrent event, it will be saved with the
+name of the event, for example an event called *Team Meetings* will be
+saved as :file:`team meetings.ics`, regardless if it is a single event
+or a series of events
+
+.. hint:: It is not possible to save a single instance of a recurrent
+   event.
+
+Calendar can be imported if they have been exported in **ics** format:
+right click one of your calendars to add any event to it. 
+   
+Configure a CalDAV Client
 -------------------------
 
 Adding a |product| calendar to your favourite CalDAV client is
