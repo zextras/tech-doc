@@ -18,6 +18,8 @@
 
       .. code:: console
 
+         # sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
          # wget -O- "https://www.postgresql.org/media/keys/ACCC4CF8.asc" | \
          gpg --dearmor | sudo tee /usr/share/keyrings/postgres.gpg > \
          /dev/null
