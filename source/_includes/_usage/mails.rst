@@ -22,10 +22,10 @@ Whenever a folder contains unread e-mails, a blue icon with the number
 will be displayed on the right of the folder name, with **99+**
 meaning there are at least 99 emails to read.
 
-A right-click also allows to carry out other actions on the selected
-folder: *move*, *wipe* (i.e., remove all e-mails in the folder),
-*edit*, *delete*, and *share* (with internal colleagues or even make
-it freely readable). 
+A right-click on the e-mail allows to carry out other actions on the
+selected folder: *move*, *wipe* (i.e., remove all e-mails in the
+folder), *edit*, *delete*, and *share* (with internal colleagues or
+even make it freely readable).
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
@@ -108,11 +108,13 @@ example to add it to the :ref:`contacts-comp`.
 On the top-right corner of each e-mail there are a few icons that
 allow to carry out a number of actions; click the
 :material-regular:`more_vert` icon to access them and many more: mark
-e-mail as read/unread or as spam, print, delete, tag, or flag it. A
-flag is a simple indicator for an email that can be adapted to one's
-preference: to name a few, it has some importance compared to other,
-it needs some action, or it has been processed and can be archived or
-deleted.
+e-mail as read/unread or as spam, print, delete, download it in
+``eml`` format, tag, or flag it.
+
+.. note:: A flag is a simple indicator for an email that can be
+   adapted to one's preference: to name a few, it has some importance
+   compared to other, it needs some action, or it has been processed
+   and can be archived or deleted.
 
 More actions are available and shown upon right-clicking an email.
 
