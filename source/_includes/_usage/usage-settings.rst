@@ -12,10 +12,17 @@ categories: :ref:`settings-general`, :ref:`settings-mails`,
 General
 -------
 
-.. card:: Theme Options
+.. card:: Appearance
    :class-header: sd-font-weight-bold irisfont
 
-   Choose whether the `Dark Mode` is enabled or not.
+   Choose the size of the fonts and whether the `Dark Mode` is enabled or not.
+   
+.. card:: Out Time Zone and Language
+   :class-header: sd-font-weight-bold irisfont
+
+   Select the language of the interface and the time zone used by
+   |product|.  If you change the language, you will be asked to reload
+   the interface.
 
 .. card:: Out of Office Settings
    :class-header: sd-font-weight-bold irisfont
@@ -37,10 +44,27 @@ General
    Informative panel reporting the versions of |product|'s
    components.
 
+.. card:: User's quota
+   :class-header: sd-font-weight-bold irisfont
+
+   Informative panel reporting how much of the assigned quota is used.
+
 .. card:: Account
    :class-header: sd-font-weight-bold irisfont
 
    Click :bdg-primary:`LOGOUT` to exit the current session.
+
+.. _settings-accounts:
+
+Accounts
+--------
+
+In this section you can add and configure other *personas* to the
+account, change some settings for the *sent messages*, and decide how
+to save messages in shared accounts.
+
+.. hint:: The primary persona can not be deleted.
+
 
 .. _settings-mails:
 
@@ -85,7 +109,7 @@ Mails
    signature, assign a name to them and add to the library by clicking
    the :bdg-primary-line:`ADD SIGNATURE` button.
 
-.. card:: Using Signatures
+.. card:: Signatures Usage
    :class-header: sd-font-weight-bold irisfont
 
    If, besides your primary e-mail addresses, you have aliases or can
@@ -116,10 +140,15 @@ Mails
    (execute a Filter), and :bdg-danger-line:`DELETE` (remove a
    filter).
 
+.. card:: Trusted Addresses
+   :class-header: sd-font-weight-bold irisfont
+
+   Here you add e-mail addresses that will always be displayed.
+   
 .. _settings-calendar:
 
-Calendar
---------
+Calendars
+---------
 
 .. card:: General
    :class-header: sd-font-weight-bold irisfont
@@ -183,3 +212,15 @@ Contacts
    while typing a ``,`` can be used as a shortcut to confirm the
    currently highlighted suggestion.
 
+
+.. _settings-auth:
+
+Auth
+----
+
+In this module you can change your current password and add one
+recovery address, that will be used for the password recovery.
+
+To add a recovery address, you need to provide a valid e-mail address,
+to which a validation code will be sent. You need to enter this code
+before the recovery e-mail address is verified and can be used.
