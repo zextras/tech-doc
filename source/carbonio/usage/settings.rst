@@ -16,7 +16,7 @@ Auth
    To change your  password, write in the first box the old one and
    then type twice the new one.
 
-   .. include:: _includes/hint-pwd.rst
+   .. include:: /_includes/hint-pwd.rst
 
 
 .. card:: Recovery Address
