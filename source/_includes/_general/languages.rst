@@ -5,7 +5,7 @@
 |product|\'s main language is English; the Web GUI is available in these
 languages
 
-.. grid:: 1 1 2 2 
+.. grid:: 1 1 2 2
    :gutter: 3
 
    .. grid-item-card:: Officially included languages
@@ -19,15 +19,15 @@ languages
       * Indonesian
       * Italian
       * Japanese
-      * Portuguese (PT, BR)
+      * Brazilian Portuguese (BR)
       * Russian
       * Spanish
       * Thai
 
-
    .. grid-item-card:: Community supported languages
-      :columns: 6 
+      :columns: 6
 
       * Polish
       * Turkish
       * Hungarian
+      * Vietnamese
