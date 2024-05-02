@@ -60,7 +60,7 @@ done on files and folders
       a description of the file or folder can be added at the bottom.
 
    Sharing
-      Lists the owner of the file or folder and who has access to
+      Lists the owner of the files or folders and who has access to
       it. It is possible to allow access to internal collaborators or
       external user, with different modalities.
 
