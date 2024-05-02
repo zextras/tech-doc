@@ -27,7 +27,11 @@ will then be automatically filled according the identity chosen.
 optional, can be added by writing their e-mail address. If the
 attendee already is not available or has some overlapping appointment,
 its e-mail address will be coloured and a message will be shown. This
-improves and makes easier the creation of events.
+improves and makes easier the creation of events. Moreover, if the
+attendee is a distribution list, a small chevron next to the list name
+can be clicked to show all the members. Click the :bdg-primary:`SELECT
+ALL ADDRESSES` button to replace the distribution list with the e-mail
+addresses of each member.
 
 Besides inviting attendees (internal colleagues or external people),
 many more information can be added to an appointment:
