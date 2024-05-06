@@ -56,9 +56,6 @@ prev = '24.3.0'
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
                'sphinxcontrib.email' ]
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
@@ -122,14 +119,15 @@ html_theme_options = {
     # (global ToC)
     #'primary_sidebar_end': ['survey'],
 }
-html_sidebars = { "**": [ 'navbar-logo.html', 'survey', 'search-button-field.html',
+html_sidebars = { "**": [ 'navbar-logo.html',
+                          'search-button-field.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = {
     'hubhome' : '%s' %hubhome,
-    'surveytext': 'What do you think about our new Documentation Layout?',
-    'surveylink': 'https://app.useberry.com/t/jmHPX8uvzq1WOH/?v=24.3 ',
-    'surveylabel': 'Take the survey',
+    # 'surveytext': 'What do you think about our new Documentation Layout?',
+    # 'surveylink': 'https://app.useberry.com/t/jmHPX8uvzq1WOH/?v=24.3 ',
+    # 'surveylabel': 'Take the survey',
 }
 
 # workaround for ZTD-581
