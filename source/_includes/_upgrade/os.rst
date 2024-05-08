@@ -46,7 +46,7 @@ Phase 3
 This phase requires to upgrade the Ubuntu 20.04 distribution to 22.04:
 please refer to the `Ubuntu
 <https://ubuntu.com/server/docs/upgrade-introduction>`_ and `Red Hat
-<https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/upgrading_from_rhel_8_to_rhel_9/performing-the-upgrade_upgrading-from-rhel-8-to-rhel-9`_
+<https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/upgrading_from_rhel_8_to_rhel_9/performing-the-upgrade_upgrading-from-rhel-8-to-rhel-9>`_
 upstream documentations.
 
 Phase 4
@@ -59,6 +59,7 @@ distribution. This phase requires some manual command to be executed.
 .. tab-set::
 
    .. tab-item:: Ubuntu
+      :sync: ubuntu
 
       During the Ubuntu upgrade, the file
       :file:`/etc/apt/sources.list.d/zextras.list` will be
@@ -70,6 +71,7 @@ distribution. This phase requires some manual command to be executed.
       #. is not commented, i.e., it does not start with a ``#`` sign
 
    .. tab-item:: RHEL
+      :sync: rhel
 
       During the RHAL upgrade, the file
       :file:`/etc/yum.repos.d/zextras.repo` will be
@@ -90,10 +92,12 @@ commands
 .. tab-set::
 
    .. tab-item:: Ubuntu
+      :sync: ubuntu
 
       # apt update && apt upgrade
 
    .. tab-item:: RHEL
+      :sync: rhel
 
       # dnf upgrade --best --allowerasing
 
