@@ -239,7 +239,7 @@ module. These commands are: :command:`getServices`,
 :command:`doRestartService`.
 
 Their usage is quite simple and follows the general syntax (see
-:ref:`sh_syntax`): :command:`carbonio <module> <command>
+:ref:`sh-syntax`): :command:`carbonio <module> <command>
 {service_name}`, for example::
 
   zextras$ carbonio mobile getServices
