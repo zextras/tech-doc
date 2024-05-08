@@ -95,7 +95,7 @@ html_show_sourcelink = False
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 html_css_files = [ 'css/carbonio.css' ]
-html_js_files = [ 'js/matomo.js','js/posthog.js' ]
+html_js_files = [ 'js/posthog.js' ]
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
 html_last_updated_fmt = ''
