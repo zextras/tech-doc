@@ -19,7 +19,7 @@ after the procedure.
    :ref:`specific requirements <rhel9-req>`.  |product| |version|
    supports also **Ubuntu 22.04**, so you can proceed with the upgrade
    from *Ubuntu 20.04*, according to the procedure described in
-   section :ref:`upgrade-ubuntu-22`.
+   section :ref:`upgrade-os`.
    
 .. card:: PostgreSQL 16 support
 

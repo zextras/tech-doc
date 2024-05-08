@@ -15,7 +15,7 @@ after the procedure.
    :ref:`specific requirements <rhel9-req>`.
 
    To upgrade to *Ubuntu 22.04* or *RHEL 9*, follow the procedure
-   described in section :ref:`upgrade-ubuntu-22`.
+   described in section :ref:`upgrade-os`.
    
 .. card:: PostgreSQL 16 support
 
