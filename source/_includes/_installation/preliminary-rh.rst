@@ -26,7 +26,11 @@ RHEL 8
 
    * **CodeReady**::
 
-       # subscription-manager repos --enable codeready-builder-for-rhel-8-x86_64-rpms
+       # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+
+   * **EPEL**::
+
+       # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 .. card:: SELinux 
 
@@ -60,6 +64,10 @@ RHEL 9 |beta|
    * **CodeReady**::
 
        # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+
+   * **EPEL**::
+
+       # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 
 .. card:: SELinux 
 
