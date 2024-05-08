@@ -57,11 +57,15 @@ Linux, macOS, or BSD, satisfying the following requirements
 .. card:: Nodes requirements
 
    Besides the :ref:`carbonio-requirements` that every Node must
-   satisfy, the Nodes
+   satisfy, each Nodes must
 
-   #. must be equipped with the same **supported OS**
+   #. be equipped with the same **supported OS** (see section
+      :ref:`software-requirements`)
 
-   #. must be able to reach one another via SSH
+   #. be able to reach one another via SSH
+
+   #. have the |product| repository configured (see section
+      :ref:`multi-server-preliminary` for directions)
 
 .. _ansible-setup:
 
