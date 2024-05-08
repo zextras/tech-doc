@@ -48,9 +48,11 @@ At this point, to launch a :command:`carbonio` command you can either
    * To keep the history: commands will be available for future
      reference and to check the operations done so far
    * You will be able to use :kbd:`tab` for auto-completion of commands
-   
-Composition of a command
-========================
+
+.. _sh-syntax:
+
+Syntax of a Command
+===================
 
 A typical |carbonio| command is composed by several parts, some of
 which is required for the command to work properly, for example
@@ -172,7 +174,7 @@ omit its name.
 
 .. _sh-help:
 
-Seeking help
+Seeking Help
 ============
 
 ``carbonio`` comes with a contextual help that can be used at
@@ -224,3 +226,64 @@ This proves useful, for example, when finding a procedure that
 requires to execute a set of :command:`carbonio` commands: copy tand paste
 them into a file and run all of them sequentially without the need to
 copy and paste each single command.
+
+.. _sh-shared-commands:
+
+Shared Commands
+===============
+
+There are a few commands that can be used within every module and
+allow to manage the status of the services provided by each
+module. These commands are: :command:`getServices`,
+:command:`doStartService`, :command:`doStopService`, and
+:command:`doRestartService`.
+
+Their usage is quite simple and follows the general syntax (see
+:ref:`sh_syntax`): :command:`carbonio <module> <command>
+{service_name}`, for example::
+
+  zextras$ carbonio mobile getServices
+
+The output will be similar to the following one::
+
+          services                                
+            module                                  
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            activesync-services                     
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            autodiscover                            
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            abq-services                            
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            ldap-address-book                       
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            anti-dos                                
+                could_not_start_because                                     anti-dos disabled
+                could_start                                                 false
+                could_stop                                                  false
+                running                                                     false
+
+Along each available service appears its current status and whether it
+can started or stopped. In some cases, additional information is also
+shown, for example the **anti-dos** service can not be started because
+it is not enabled.
+
+You can manually start, restart, or stop a service using the other
+commands; unlike :command:`getServices`, these require a parameter,
+which is the service name, for example::
+
+  zextras$ carbonio mobile doStopService activesync-services
+
+This command outputs a status message, which is *"service stopped"* if
+it was successful. Similar messages are generated after using the
+:command:`doStartService` and :command:`doRestartService` commands.
