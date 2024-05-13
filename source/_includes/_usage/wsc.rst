@@ -36,10 +36,16 @@ than one address, you will create a one-to-many chat (also called
 and an optional topic. You also become a :term:`moderator` of the
 group.
 
-When you create a new Chat or Group for the first time, the list on
-the left-hand side will be populated; the most recent Chats or Groups
-will always appear at the top of the list. You can then filter the
-list if you search a particular Chat or Group.
+When you create a new Chat or Group for the first time and send a
+message to it, the list on the left-hand side will be populated.
+
+.. note:: If you create a one-to-one Chat but send no message to it,
+   the Chat will be removed from the list at the next login or when
+   refreshing the page.
+
+The most recent Chats or Groups will always appear at the top of the
+list. You can then filter the list if you search a particular Chat or
+Group.
 
 If you search and filter by user name, beside the single chat with
 him, you will find all the groups you are in, with that specific
