@@ -68,13 +68,18 @@ value for a proper configuration. Currently, these sections are
   .. note:: 172.16.12.5 is a private IP, remember to replace it with
      an actual public IP!
 
-In order to run the script, from the
-:file:`carbonio-ansible/carbonio-install-ansible` directory, execute
-the command
+In order to run the script, first go to the repository's
+:file:`carbonio-ansible/carbonio-install-ansible/playbooks` directory
 
 .. code:: console
 
-   $ ansible-playbook -u root -i ../../data/carbonio_inventory carbonio-install.yml
+   $ cd playbooks
+      
+then execute the comman
+
+.. code:: console
+
+   $ ansible-playbook -u root -i ../../data/carbonio_inventory carbonio_install.yml
 
 Make sure to replace :file:`carbonio_inventory` with the proper name of the
 inventory you want to install.
