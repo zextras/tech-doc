@@ -13,6 +13,6 @@ if there are any in the current release.
 
       changelog-latest
       upgrade
-      upgrade-ubuntu
+      upgrade-os
       older-changelogs
       issues

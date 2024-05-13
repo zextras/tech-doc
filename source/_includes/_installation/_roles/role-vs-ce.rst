@@ -11,12 +11,6 @@
    .. tab-item:: RHEL
       :sync: rhel
 
-      Before starting the procedure, install Fedora's epel-repository.
-
-      .. code:: console
-
-         # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-
       Then, install the packages.
 
       .. code:: console

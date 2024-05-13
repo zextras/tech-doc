@@ -132,14 +132,29 @@ remove the unused Databases.
 
       #pg_dropcluster 16 main_pristine --stop
 
-RHEL
-~~~~
+RHEL 8 and 9
+~~~~~~~~~~~~
 
 .. rubric:: Repository Configuration
 
-.. code:: console
+The PostgreSQL repositories are different in RHEL 8 and RHEL9; the
+rest of the procedure is exactly the same.
 
-   # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+.. tab-set::
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      .. code:: console
+
+         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 .. rubric:: Package installation and checks
 

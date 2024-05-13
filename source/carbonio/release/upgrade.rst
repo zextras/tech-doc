@@ -48,9 +48,21 @@ PostgresQL's correct version, 16.
 
 #. Install the correct pgpool version
 
-   .. code:: console
+   .. tab-set::
+      
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
-      # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-8-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel8.x86_64.rpm
+         .. code:: console
+
+            # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-8-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel8.x86_64.rpm
+
+      .. tab-item:: RHEL 9
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-9-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel8.x86_64.rpm
 
 .. _upgrade-nodes:
 

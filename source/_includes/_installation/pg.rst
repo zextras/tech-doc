@@ -27,12 +27,19 @@
          # chmod 644 /usr/share/keyrings/postgres.gpg
          # sed -i 's/deb/deb [signed-by=\/usr\/share\/keyrings\/postgres.gpg] /' /etc/apt/sources.list.d/pgdg.list
 
-   .. tab-item:: RHEL
-      :sync: rhel
+   .. tab-item:: RHEL 8
+      :sync: rhel8
 
       .. code:: console
 
          # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      .. code:: console
+
+         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
 .. tab-set::
 
@@ -52,8 +59,13 @@
          # apt update
          # apt install postgresql-16 service-discover-agent
 
-   .. tab-item:: RHEL
-      :sync: rhel
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. include:: /_includes/_installation/rhel-pg.rst
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
 
       .. include:: /_includes/_installation/rhel-pg.rst
 
