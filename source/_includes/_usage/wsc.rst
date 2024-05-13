@@ -41,6 +41,35 @@ the other :term:`members <member>` of the Chat. With the |pv|
 installed, the attachments can be previewed before being
 downloaded.
 
+You can also forward one or multiple messages from one chat to another
+chat. By entering the contextual menu (click the :octicon:`chevron-up`
+that appears upon hovering on a message) and selecting *Forward*, you
+enter the **selection mode**. The line of the selected message will be
+highlighted and you will be able to select other messages.
+
+.. hint:: There is a limit to the number of messages that can
+   forwarded at once.
+
+The bottom line, i.e., the one on which you write the chat messages,
+will be replaced by two buttons: clicking the one on the left-hand
+side you can exit the selection mode and go back to chatting, while
+clicking the right-hand side button opens a dialog to select the
+colleague(s) to whom to forward the messages.
+
+.. note:: You can forward messages only to one-to-one chats, not to
+   group chats.
+
+When a user receives a forwarded message, the message will have
+additional information that the original messages:
+
+* A string that clarifies that the message has been forwarded
+* The name of the original author of the message
+* The original sending date and time
+* A *forwarded-multiple-times* icon in case the message was forwarded
+  two or more times
+
+
+
 When you create a new Chat or Group for the first time, the list on
 the left-hand side will be populated; the most recent Chats or Groups
 will always appear at the top of the list. You can then filter the
