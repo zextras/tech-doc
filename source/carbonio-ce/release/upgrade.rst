@@ -4,8 +4,8 @@
 
 .. _carbonio-upgrade:
 
-|product| Upgrade from 24.1 to |release|
-========================================
+|product| Upgrade from |prev| to |release|
+==========================================
 
 .. include:: /_includes/_upgrade/intro-ce.rst
 
