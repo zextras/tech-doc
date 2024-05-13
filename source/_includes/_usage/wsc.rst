@@ -172,7 +172,12 @@ chat, and the *Chat* on the bottom.
 
 On the bottom of the main area, the *Action Bar* allows to change or
 disable the devices, to share the screen, to change the mode of the
-call (see next section), or to leave the Meeting.
+call (see next section), or to leave the Meeting. Next to the red
+:bdg-warning:`leave meeting` button appears the duration of the
+meeting.
+
+.. note:: Leaving a meeting requires a confirmation click on the
+   button.
 
 Meeting modes
 ~~~~~~~~~~~~~
