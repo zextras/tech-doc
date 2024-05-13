@@ -209,11 +209,16 @@ panels appear: the *Actions* and *Participant* boxes, which are the
 same as the corresponding *Actions* and *Members* box in the textual
 chat, and the *Chat* on the bottom.
 
-On the bottom of the main area, the *Action Bar* allows to change or
-disable the devices, to share the screen, to change the mode of the
-call (see next section), or to leave the Meeting. Next to the red
-:bdg-warning:`leave meeting` button appears the duration of the
-meeting.
+A user who is trying to enter a Group Meeting will enter the *waiting
+room*; here, the user remains until a Moderator grants the access;
+if the Meeting ends before entering, the user is notified that the
+meeting has ended.
+
+On the bottom of the
+main area, the *Action Bar* allows to change or disable the devices,
+to share the screen, to change the mode of the call (see next
+section), or to leave the Meeting. Next to the red :bdg-warning:`leave
+meeting` button appears the duration of the meeting.
 
 .. note:: Leaving a meeting requires a confirmation click on the
    button.
