@@ -36,12 +36,34 @@ than one address, you will create a one-to-many chat (also called
 and an optional topic. You also become a :term:`moderator` of the
 group.
 
+When you create a new Chat or Group for the first time, the list on
+the left-hand side will be populated; the most recent Chats or Groups
+will always appear at the top of the list. You can then filter the
+list if you search a particular Chat or Group.
+
+If you search and filter by user name, beside the single chat with
+him, you will find all the groups you are in, with that specific
+contact.
+
+For every item it is shown whether there is an ongoing meeting (a
+camera icon will replace the small avatar icon), the Chat or Group is
+muted (a barred bell icon will appear), of if you have written a draft
+message.
+
+In both Chats and Groups there is a sidebar on the right-hand side,
+which carries a number of information and allows to carry out some
+actions. There are three different sidebars: one for Chats, and two
+for Groups (one for participants and one for users, which have slight
+different functionalities).
+
 While chatting, you can send attachments, possibly with a caption, to
 the other :term:`members <member>` of the Chat. With the |pv|
 installed, the attachments can be previewed before being
-downloaded.
+downloaded. You can share a link to a document that is stored in the
+|file| module. If you revoke the link from the |file| Module, the
+document will not be accessible with that link.
 
-You can also forward one or multiple messages from one chat to another
+You can forward one or multiple messages from one chat to another
 chat. By entering the contextual menu (click the :octicon:`chevron-up`
 that appears upon hovering on a message) and selecting *Forward*, you
 enter the **selection mode**. The line of the selected message will be
@@ -67,26 +89,6 @@ additional information that the original messages:
 * The original sending date and time
 * A *forwarded-multiple-times* icon in case the message was forwarded
   two or more times
-
-
-
-When you create a new Chat or Group for the first time, the list on
-the left-hand side will be populated; the most recent Chats or Groups
-will always appear at the top of the list. You can then filter the
-list if you search a particular Chat or Group.
-
-If you search and filter by user name, beside the single chat with him, 
-you will find all the groups you are in, with that specific contact.
-
-For every item it is shown whether there is an ongoing meeting (a camera icon will
-replace the small avatar icon), the Chat or Group is muted (a barred
-bell icon will appear), of if you have written a draft message.
-
-In both Chats and Groups there is a sidebar on the right-hand side,
-which carries a number of information and allows to carry out some
-actions. There are three different sidebars: one for Chats, and two
-for Groups (one for participants and one for users, which have
-slight different functionalities).
 
 .. grid:: 1 1 2 2
    :gutter: 2
