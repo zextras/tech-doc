@@ -36,28 +36,65 @@ than one address, you will create a one-to-many chat (also called
 and an optional topic. You also become a :term:`moderator` of the
 group.
 
-While chatting, you can send attachments, possibly with a caption, to
-the other :term:`members <member>` of the Chat. With the |pv|
-installed, the attachments can be previewed before being
-downloaded.
+When you create a new Chat or Group for the first time and send a
+message to it, the list on the left-hand side will be populated.
 
-When you create a new Chat or Group for the first time, the list on
-the left-hand side will be populated; the most recent Chats or Groups
-will always appear at the top of the list. You can then filter the
-list if you search a particular Chat or Group.
+.. note:: If you create a one-to-one Chat but send no message to it,
+   the Chat will be removed from the list at the next login or when
+   refreshing the page.
 
-If you search and filter by user name, beside the single chat with him, 
-you will find all the groups you are in, with that specific contact.
+The most recent Chats or Groups will always appear at the top of the
+list. You can then filter the list if you search a particular Chat or
+Group.
 
-For every item it is shown whether there is an ongoing meeting (a camera icon will
-replace the small avatar icon), the Chat or Group is muted (a barred
-bell icon will appear), of if you have written a draft message.
+If you search and filter by user name, beside the single chat with
+him, you will find all the groups you are in, with that specific
+contact.
+
+For every item it is shown whether there is an ongoing meeting (a
+camera icon will replace the small avatar icon), the Chat or Group is
+muted (a barred bell icon will appear), of if you have written a draft
+message.
 
 In both Chats and Groups there is a sidebar on the right-hand side,
 which carries a number of information and allows to carry out some
 actions. There are three different sidebars: one for Chats, and two
-for Groups (one for participants and one for users, which have
-slight different functionalities).
+for Groups (one for participants and one for users, which have slight
+different functionalities).
+
+While chatting, you can send attachments, possibly with a caption, to
+the other :term:`members <member>` of the Chat. With the |pv|
+installed, the attachments can be previewed before being
+downloaded. You can share a link to a document that is stored in the
+|file| module. If you revoke the link from the |file| Module, the
+document will not be accessible with that link.
+
+You can forward one or multiple messages from one chat to another
+chat. By entering the contextual menu (click the :octicon:`chevron-up`
+that appears upon hovering on a message) and selecting *Forward*, you
+enter the **selection mode**. The line of the selected message will be
+highlighted and you will be able to select other messages.
+
+.. hint:: There is a limit to the number of messages that can
+   forwarded at once.
+
+The bottom line, i.e., the one on which you write the chat messages,
+will be replaced by two buttons: clicking the one on the left-hand
+side you can exit the selection mode and go back to chatting, while
+clicking the right-hand side button opens a dialog to select the
+colleague(s) to whom to forward the messages.
+
+.. note:: You can forward messages only to one-to-one chats, not to
+   group chats.
+
+When a user receives a forwarded message, the message will have
+additional information that the original messages:
+
+* A string that clarifies that the message has been forwarded
+* The name of the original author of the message
+* The original sending date and time
+* A *forwarded-multiple-times* icon in case the message was forwarded
+  two or more times
 
 .. grid:: 1 1 2 2
    :gutter: 2
@@ -162,17 +199,29 @@ If someone is trying to call you directly, a dialog allows you to
 accept the call and enter the meeting or to refuse the call and write
 a short message that will be sent to the caller. Upon entering the
 meeting, you have the chance to choose the microphone and webcam
-(i.e., the devices) to use and to test the microphone. You can also
-enter the call with both devices deactivated.
+(i.e., the *devices*) to use and to test the microphone. The selected
+devices are always shown, to make clear which are the one used when
+entering the call. You can also start a call with both devices
+deactivated and enable them during the call, and even change them.
 
 After the meeting has started, on the left-hand side three collapsible
 panels appear: the *Actions* and *Participant* boxes, which are the
 same as the corresponding *Actions* and *Members* box in the textual
 chat, and the *Chat* on the bottom.
 
-On the bottom of the main area, the *Action Bar* allows to change or
-disable the devices, to share the screen, to change the mode of the
-call (see next section), or to leave the Meeting.
+A user who is trying to enter a Group Meeting will enter the *waiting
+room*; here, the user remains until a Moderator grants the access;
+if the Meeting ends before entering, the user is notified that the
+meeting has ended.
+
+On the bottom of the
+main area, the *Action Bar* allows to change or disable the devices,
+to share the screen, to change the mode of the call (see next
+section), or to leave the Meeting. Next to the red :bdg-warning:`leave
+meeting` button appears the duration of the meeting.
+
+.. note:: Leaving a meeting requires a confirmation click on the
+   button.
 
 Meeting modes
 ~~~~~~~~~~~~~
