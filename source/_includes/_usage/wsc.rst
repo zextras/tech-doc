@@ -199,8 +199,10 @@ If someone is trying to call you directly, a dialog allows you to
 accept the call and enter the meeting or to refuse the call and write
 a short message that will be sent to the caller. Upon entering the
 meeting, you have the chance to choose the microphone and webcam
-(i.e., the devices) to use and to test the microphone. You can also
-enter the call with both devices deactivated.
+(i.e., the *devices*) to use and to test the microphone. The selected
+devices are always shown, to make clear which are the one used when
+entering the call. You can also start a call with both devices
+deactivated and enable them during the call, and even change them.
 
 After the meeting has started, on the left-hand side three collapsible
 panels appear: the *Actions* and *Participant* boxes, which are the
