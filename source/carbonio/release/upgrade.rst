@@ -79,6 +79,30 @@ Manual Steps
 
 In the upgrade to |release|, the following manual steps are required.
 
+.. upgrade-storages:
+
+New Package Installation
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+A new package must be installed on the Node featuring the Mailstore & Provisioning
+Role. Log in to that node and execute command
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt install carbonio-storages
+
+   .. tab-item:: RHEL 
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf install carbonio-storages
+
 .. _upgrade-monit:
 
 |monit|
