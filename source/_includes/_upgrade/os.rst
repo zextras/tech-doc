@@ -43,11 +43,16 @@ This phase is the same as a normal upgrade, so please refer to Section
 Phase 3
 -------
 
-This phase requires to upgrade the Ubuntu 20.04 distribution to 22.04:
+This phase requires to upgrade the Ubuntu 20.04 distribution to 22.04
+or the RHEL 8 to RHEL 9
 please refer to the `Ubuntu
 <https://ubuntu.com/server/docs/upgrade-introduction>`_ and `Red Hat
 <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/upgrading_from_rhel_8_to_rhel_9/performing-the-upgrade_upgrading-from-rhel-8-to-rhel-9>`_
 upstream documentations.
+
+.. note:: If you upgrade to Ubuntu 22 and use the |monit| role, please
+   make sure to change the Grafana repository. Please refer to Section
+   :ref:`manual-grafana` for directions.
 
 Phase 4
 -------

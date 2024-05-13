@@ -79,13 +79,47 @@ Manual Steps
 
 In the upgrade to |release|, the following manual steps are required.
 
-.. upgrade-storages:
+.. _manual-grafana:
+
+GPG Key of Grafana in Ubuntu 22.04
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you migrate from Ubuntu 20.04 to 22.04 and use Monitoring Role's
+Grafana, you need to update the location on which its GPG key is
+stored to prevent warning during upgrades. Log in to the Node on which
+the |monit| Role is installed and execute the following commands.
+
+* Remove existent repository
+
+  .. code:: console
+
+     # add-apt-repository -r "deb https://packages.grafana.com/oss/deb
+     stable main"
+
+* Retrieve GPG key
+
+  .. code:: console
+
+     # wget -q -O - https://packages.grafana.com/gpg.key | \
+     gpg --dearmor | sudo tee /usr/share/keyrings/grafana.gpg > \
+     /dev/null
+
+* Add repository
+
+  .. code:: console
+
+     # echo "deb [signed-by=/usr/share/keyrings/grafana.gpg] \
+     https://packages.grafana.com/oss/deb stable main" | sudo tee -a \
+     /etc/apt/sources.list.d/grafana.list
+
+
+.. _upgrade-storages:
 
 New Package Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A new package must be installed on the Node featuring the Mailstore & Provisioning
-Role. Log in to that node and execute command
+A new package must be installed on the Node featuring the Mailstore &
+Provisioning Role. Log in to that node and execute command
 
 .. tab-set::
 
