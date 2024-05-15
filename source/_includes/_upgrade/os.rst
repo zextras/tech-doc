@@ -99,7 +99,7 @@ commands
    .. tab-item:: Ubuntu
       :sync: ubuntu
 
-      # apt update && apt upgrade
+      # apt update && apt dist-upgrade
 
    .. tab-item:: RHEL
       :sync: rhel
