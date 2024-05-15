@@ -82,31 +82,6 @@ the |monit| Role is installed and execute the following commands.
      https://packages.grafana.com/oss/deb stable main" | sudo tee -a \
      /etc/apt/sources.list.d/grafana.list
 
-
-.. _upgrade-storages:
-
-New Package Installation
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-A new package must be installed on the Node featuring the Mailstore &
-Provisioning Role. Log in to that node and execute command
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt install carbonio-storages
-
-   .. tab-item:: RHEL 
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install carbonio-storages
-
 .. _upgrade-monit:
 
 |monit|
