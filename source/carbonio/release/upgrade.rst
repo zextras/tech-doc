@@ -118,8 +118,8 @@ the |monit| Role is installed and execute the following commands.
 New Package Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-A new package must be installed on the Node featuring the Mailstore &
-Provisioning Role. Log in to that node and execute command
+A new package must be installed on the Node featuring the **Database
+Connector** Role. Log in to that Node and execute command
 
 .. tab-set::
 
