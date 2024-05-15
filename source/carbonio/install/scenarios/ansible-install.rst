@@ -75,7 +75,7 @@ In order to run the script, first go to the repository's
 
    $ cd playbooks
       
-then execute the comman
+then execute the command
 
 .. code:: console
 
