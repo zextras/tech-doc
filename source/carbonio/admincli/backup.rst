@@ -227,19 +227,21 @@ SmartScan and Realtime Scanner
 
 The initial structure of the backup is built during the *Initial
 Scan*, performed by the **SmartScan**: the actual content of a Node
-featuring the Mailstore & Provisioning Role is read and used to
+featuring the Mailstore & Provisioning Role is processed and used to
 populate the backup. The SmartScan is then executed at every start of
 the |backup| and on a daily basis if the **Scan Operation Scheduling**
 is enabled in the |adminui|.
 
-.. important:: SmartScan runs at a fixed time—​that can be
-   configured—​on a daily basis and is not deferred. This implies that,
-   if for any reason (like e.g., the server is turned off, or |carbonio|
-   is not running), SmartScan does **not run**, it will **not run**
-   until the next day. You may however configure the Backup to run the
-   SmartScan every time |carbonio| is restarted (although this is
-   discouraged), or you may manually run SmartScan to compensate for
-   the missing run.
+.. warning:: If none of the two Scan Operations is active, no backup
+   is created!
+
+SmartScan runs at a fixed time—​that can be configured—​on a daily basis
+and is not deferred. This implies that, if for any reason (like e.g.,
+the server is turned off, or |carbonio| is not running), SmartScan
+does **not run**, it will **not run** until the next day. You may
+however configure the Backup to run the SmartScan every time
+|carbonio| is restarted (although this is discouraged), or you may
+manually run SmartScan to compensate for the missing run.
 
 SmartScan’s main purpose is to check for items modified since its
 previous run and to update the database with any new information.
@@ -277,9 +279,6 @@ previous run and to update the database with any new information.
       metadata is updated and not the entire item, drastically reducing
       resource usage (CPU, IO, bandwidth).
 
-.. warning:: If none of the two Scan Operations is active, no backup
-   is created.
-
 .. _backup_disable_scans:
 
 When to Disable Scan Operations
@@ -305,6 +304,7 @@ temporarily. For example:
    otherwise all transactions will be backed up **only** by the
    SmartScan, which might not be able to complete in a reasonable time,
    due to the resources required for the I/O operations.
+
 
 .. _backup_path:
 
@@ -681,24 +681,9 @@ item has its own complete history.
    re-enable the Realtime Scanner and perform a SmartScan when
    prompted.
 
-.. _limitations_and_safety_scan:
 
-Limitations and Safety Scan
----------------------------
+.. currently not available
 
-.. to be verified!
-
-The main limitation when restoring data acquired via the Realtime
-Scanner is when a user uses the ``Empty Folder`` button in the
-right-click context menu.
-
-In this case, and any time |backup| cannot determine the status of an
-item in an account by reading the metadata saved by the Realtime
-Scanner, a Smartscan on the given account is triggered *before* the
-restore: this operation fixes any misaligned data and sanitizes the
-backed up metadata.
-
-..
    Blobless Backup Mode
    ====================
 
