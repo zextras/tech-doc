@@ -244,17 +244,38 @@ is enabled in the |adminui|.
 SmartScan’s main purpose is to check for items modified since its
 previous run and to update the database with any new information.
 
-The **Realtime Scanner** records live every event that takes place on
-the system, allowing for a possible recovery with a split-second
-precision. The Realtime Scanner does not overwrite any data in the
-backup, so every item has an own complete history. Moreover, it has
-the ability to detect if there are more changes that relate to the
-same item in the same moment and record all them as a single metadata
-change.
+.. grid:: 1 1 2 2
+   :gutter: 2
 
-Both SmartScan and Realtime Scanner are enabled by default. While both can
-be (independently) stopped, it is suggested to leave them running, as
-they are intended to complement each other.
+   .. grid-item-card:: **SmartScan**
+      :columns: 6
+
+      The SmartScan is the scheduled component that keeps the backup
+      aligned against production data for all those situations when
+      the Real Time Scan is unable to operate, such as account data
+      changes or situations when the backup service is suspended or
+      inactive. To always have consistency, the smart scan is run
+      automatically once a day. This process also takes care of
+      performing metadata storage on the remote backup volume, in case
+      the remote backup volume has been configured.  Both SmartScan
+      and Realtime Scanner are enabled by default. While both can be
+      (independently) stopped, it is suggested to leave them running,
+      as they are intended to complement each other.
+            
+   .. grid-item-card:: **Realtime Scanner**
+      :columns: 6
+
+      The Realtime Scanner is the technology that allows changes to Mails
+      and Calendar Module's items or Contacts to be intercepted in real
+      time, just after the application server has actually executed
+      them. This allows the backup to record and archive them in
+      virtually real time, reducing the RPO (the time distance between
+      what is in the backup and what is in the live system) to 0. In
+      addition, thanks to the separation of the backup into metadata and
+      raw data, when changes affect only the metadata of an object (e.g.,
+      changing the state or the folder that contains it), only the
+      metadata is updated and not the entire item, drastically reducing
+      resource usage (CPU, IO, bandwidth).
 
 .. warning:: If none of the two Scan Operations is active, no backup
    is created.
