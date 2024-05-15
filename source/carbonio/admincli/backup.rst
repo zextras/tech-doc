@@ -263,7 +263,7 @@ previous run and to update the database with any new information.
       and Realtime Scanner are enabled by default. While both can be
       (independently) stopped, it is suggested to leave them running,
       as they are intended to complement each other.
-            
+
    .. grid-item-card:: **Realtime Scanner**
       :columns: 6
 
@@ -305,6 +305,60 @@ temporarily. For example:
    SmartScan, which might not be able to complete in a reasonable time,
    due to the resources required for the I/O operations.
 
+.. _backup-scans-scenarios:
+
+Example Scenarios of Interaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The interaction between SmartScan and Realtime Scanner is designed to
+have an always up-to-date backup, provided that both of them run. This
+section shows what can happen in some scenario that may (partially)
+prevent the update of the Backup.
+
+.. rubric:: Scenario 0: Stopped RealTime Scanner
+
+When the RealTime Scanner is stopped, only the daily (or differently
+scheduled) SmartScan updates the Backup. However, in case the system
+experiences some problem or some item is deleted, the corresponding
+blob is not updated, therefore it can not be recoverable from the
+Backup.
+
+.. rubric:: Scenario 1: The backup is stopped for one hour (or for any
+   period)
+
+In this case, there will be a one-hour "hole" in the backups that can
+be filled only by a SmartScan run, which will by default be run at the
+start of the |backup| service.
+
+.. rubric:: Scenario 2: Changes in LDAP
+
+Since the Realtime Scanner operates on the Mailstore & Provisioning
+level, changes made at the LDAP level are not automatically picked up
+up by |backup|.
+
+In this case, running (manually) the SmartScan allows to include those
+changes and update the Backup copies.
+
+.. rubric:: Scenario 3: Multiple Mailstore & Provisioning Nodes.
+
+There is a corner case in which the Realtime Scanner may fail. Suppose
+you have two Mailstore & Provisioning nodes (we call them ``srv-mail``
+and ``srv-alternate`` for simplicity). Now, if ``srv-mail`` is offline for
+any reason and you log in to ``srv-alternate`` and make some changes
+to ``srv-mail``, the Realtime Scanner will not be able to record these
+changes in the Backup. Also in this case, running the SmartScan will
+bring the changes in the Backup.
+
+.. rubric:: Scenario 4: Other Cases
+
+In general, the Realtime Scanner does not record any changes in those
+parts of the |product| that do not have any handler for the Realtime
+Scanner. For example, Scenario 2 above is caused by the Realtime
+Scanner inability to interact with LDAP. Other examples include:
+
+* changes in a COS
+* changes in a domain
+* the membership of a user in Distribution Lists.
 
 .. _backup_path:
 
@@ -821,7 +875,7 @@ comma-separated list of accounts ID.
       This command outputs all the accounts, their ID, and status. For
       example::
 
-        john.doe@example.com 924e1cf6-eaba-4aff-a10d-1f8e94fa85e4 unset 
+        john.doe@example.com 924e1cf6-eaba-4aff-a10d-1f8e94fa85e4 unset
         jane.doe@example.com a1701296-7caa-4366-8886-f33bfb44267e unset
 
    #. Put accounts jane.doe\@example and john.doe\@example.com in legal hold status::
@@ -836,7 +890,7 @@ comma-separated list of accounts ID.
    #. Remove account john.doe\@example.com from legal hold status::
 
         zextras$ carbonio backup legalhold unset 924e1cf6-eaba-4aff-a10d-1f8e94fa85e4
-             
+
 .. _limitations_and_corner_cases_of_the_backup:
 
 Limitations and Corner Cases of the Backup
@@ -1287,7 +1341,7 @@ vice-versa.
       zextras$  carbonio core listBuckets
 
    The output will look similar to::
-     
+
       bucketName                                                  hsm
       protocol                                                    HTTPS
       storeType                                                   S3
