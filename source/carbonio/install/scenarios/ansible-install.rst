@@ -127,7 +127,7 @@ When the playbook does not terminate successfully, the best choice is
 to run it again. Even though Ansible can be invoked to run only
 selected tasks, due to the nature of |product| installation, manually
 running only those tasks may not suffice to successfully complete the
-installation, so the best rather
+installation.
 
 Moreover, since Ansible features an internal mechanism that, during a
 playbook run, keeps track of the tasks that were completed, failed, or
