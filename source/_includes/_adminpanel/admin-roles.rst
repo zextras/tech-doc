@@ -136,6 +136,7 @@ whole.
 
      * Theme and Whitelabel setting
      * Default Domain
+     * ActiveSync
 
    * Manage MTA configuration
 

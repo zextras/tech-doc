@@ -60,3 +60,21 @@ you can copy & paste all the following commands::
    psql -d template1 -c "REINDEX DATABASE template1"
    psql -d template1 -c "ALTER DATABASE template1 REFRESH COLLATION VERSION;"
 
+
+.. _rhel_netcat:
+
+RHEL 9 Netcat Issue
+===================
+
+In systems which feature **RHEL 9**, you might find in
+``journalctl``'s log an error about a missing library for ``netcat``::
+
+  May 02 09:20:02 demo.example.com systemd[1]: Started Session 3 of User zextras.
+  May 02 09:20:02 demo.example.com bash[3910]: netcat: error while loading shared libraries: libbsd.so.0: cannot open shared object file: No such file or directory
+  May 02 09:20:02 demo.example.com systemd[1]: Started Session 4 of User zextras.
+  May 02 09:20:02 demo.example.com bash[3912]: netcat: error while loading shared libraries: libbsd.so.0: cannot open shared object file: No such file or directory
+
+
+The solution is to install the libbsd package::
+
+  # dnf install libbsd

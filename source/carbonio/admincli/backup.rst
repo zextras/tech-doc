@@ -104,8 +104,8 @@ up.
         zextras$ carbonio config set server $(zmhostname) ZxBackup_DestPath /opt/carbonio-backup
 
      After defining the Backup Path, it must be initialised: simply
-     simply :ref:`start SmartScan <smartscan>`, either from
-     the admin console or the command line.
+     :ref:`start SmartScan <smartscan>`, either from the admin console
+     or the command line.
 
    .. verify this on new interface
       - Backup Zimbra customisations. With this option, configuration and
@@ -129,7 +129,10 @@ This section introduces the main concepts needed to understand the
 architecture of |backup| and outlines their interaction; each
 concept is then detailed in a dedicated section.
 
-Before entering in the architecture of |backup|, we recall two
+Foremost, |backup| can be configured only on the nodes equipped with
+the Mailstore & Provisioning role.
+
+Then, before entering in the architecture of |backup|, we recall two
 general approaches that are taken into account when defining a backup
 strategy: **RPO** and **RTO**.
 
@@ -147,6 +150,7 @@ change, while the SmartScan copies all items that have been modified,
 hence the possible loss of data is minimised and usually limited to
 those items that have changed between two consecutive run on SmartScan.
 
+
 .. _item:
 
 Item
@@ -157,23 +161,12 @@ The whole architecture of |backup| revolves around the concept of
 backup, for example:
 
 -  an email message
-
 -  a contact or a group of contacts
-
 -  a folder
-
 -  an appointment
-
--  a task
-
--  a |file| document
-
 -  an account (including its settings)
-
 -  a distribution list
-
 -  a domain
-
 -  a class of services (COS)
 
 .. note:: The last three items (distribution lists, domains, classes
@@ -185,9 +178,7 @@ scanned for changes by the Realtime Scanner and will never be part of a
 restore:
 
 -  Node settings, i.e., the configuration of each Node
-
 -  Global settings of |product| product
-
 -  Any customizations made to the software (Postfix, Jetty, etc…​)
 
 For every item managed by |product|, every variation in its
@@ -236,36 +227,57 @@ SmartScan and Realtime Scanner
 
 The initial structure of the backup is built during the *Initial
 Scan*, performed by the **SmartScan**: the actual content of a Node
-featuring the Mailstore & Provisioning Role (AppServer) is read and
-used to populate the backup. The SmartScan is then executed at every
-start of the |backup| and on a daily basis if the **Scan Operation
-Scheduling** is enabled in the |adminui|.
+featuring the Mailstore & Provisioning Role is processed and used to
+populate the backup. The SmartScan is then executed at every start of
+the |backup| and on a daily basis if the **Scan Operation Scheduling**
+is enabled in the |adminui|.
 
-.. important:: SmartScan runs at a fixed time—​that can be
-   configured—​on a daily basis and is not deferred. This implies that,
-   if for any reason (like e.g., the server is turned off, or |carbonio|
-   is not running), SmartScan does **not run**, it will **not run**
-   until the next day. You may however configure the Backup to run the
-   SmartScan every time |carbonio| is restarted (although this is
-   discouraged), or you may manually run SmartScan to compensate for
-   the missing run.
+.. warning:: If none of the two Scan Operations is active, no backup
+   is created!
+
+SmartScan runs at a fixed time—​that can be configured—​on a daily basis
+and is not deferred. This implies that, if for any reason (like e.g.,
+the server is turned off, or |carbonio| is not running), SmartScan
+does **not run**, it will **not run** until the next day. You may
+however configure the Backup to run the SmartScan every time
+|carbonio| is restarted (although this is discouraged), or you may
+manually run SmartScan to compensate for the missing run.
 
 SmartScan’s main purpose is to check for items modified since its
 previous run and to update the database with any new information.
 
-The **Realtime Scanner** records live every event that takes place on the
-system, allowing for a possible recovery with a split-second precision.
-The Realtime Scanner does not overwrite any data in the backup, so
-every item has an own complete history. Moreover, it has the ability to
-detect there are more changes that relate to the same item in the same
-moment and record all them as a single metadata change.
+.. grid:: 1 1 2 2
+   :gutter: 2
 
-Both SmartScan and Realtime Scanner are enabled by default. While both can
-be (independently) stopped, it is suggested to leave them running, as
-they are intended to complement each other.
+   .. grid-item-card:: **SmartScan**
+      :columns: 6
 
-.. warning:: If none of the two Scan Operations is active, no backup
-   is created.
+      The SmartScan is the scheduled component that keeps the backup
+      aligned against production data for all those situations when
+      the Real Time Scan is unable to operate, such as account data
+      changes or situations when the backup service is suspended or
+      inactive. To always have consistency, the smart scan is run
+      automatically once a day. This process also takes care of
+      performing metadata storage on the remote backup volume, in case
+      the remote backup volume has been configured.  Both SmartScan
+      and Realtime Scanner are enabled by default. While both can be
+      (independently) stopped, it is suggested to leave them running,
+      as they are intended to complement each other.
+
+   .. grid-item-card:: **Realtime Scanner**
+      :columns: 6
+
+      The Realtime Scanner is the technology that allows changes to Mails
+      and Calendar Module's items or Contacts to be intercepted in real
+      time, just after the application server has actually executed
+      them. This allows the backup to record and archive them in
+      virtually real time, reducing the RPO (the time distance between
+      what is in the backup and what is in the live system) to 0. In
+      addition, thanks to the separation of the backup into metadata and
+      raw data, when changes affect only the metadata of an object (e.g.,
+      changing the state or the folder that contains it), only the
+      metadata is updated and not the entire item, drastically reducing
+      resource usage (CPU, IO, bandwidth).
 
 .. _backup_disable_scans:
 
@@ -293,6 +305,61 @@ temporarily. For example:
    SmartScan, which might not be able to complete in a reasonable time,
    due to the resources required for the I/O operations.
 
+.. _backup-scans-scenarios:
+
+Example Scenarios of Interaction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The interaction between SmartScan and Realtime Scanner is designed to
+have an always up-to-date backup, provided that both of them run. This
+section shows what can happen in some scenario that may (partially)
+prevent the update of the Backup.
+
+.. rubric:: Scenario 0: Stopped RealTime Scanner
+
+When the RealTime Scanner is stopped, only the daily (or differently
+scheduled) SmartScan updates the Backup. However, in case the system
+experiences some problem or some item is deleted, the corresponding
+blob is not updated, therefore it can not be recoverable from the
+Backup.
+
+.. rubric:: Scenario 1: The backup is stopped for one hour (or for any
+   period)
+
+In this case, there will be a one-hour "hole" in the backups that can
+be filled only by a SmartScan run, which will by default be run at the
+start of the |backup| service.
+
+.. rubric:: Scenario 2: Changes in LDAP
+
+Since the Realtime Scanner operates on the Mailstore & Provisioning
+level, changes made at the LDAP level are not automatically picked up
+up by |backup|.
+
+In this case, running (manually) the SmartScan allows to include those
+changes and update the Backup copies.
+
+.. rubric:: Scenario 3: Multiple Mailstore & Provisioning Nodes.
+
+There is a corner case in which the Realtime Scanner may fail. Suppose
+you have two Mailstore & Provisioning nodes (we call them ``srv-mail``
+and ``srv-alternate`` for simplicity). Now, if ``srv-mail`` is offline for
+any reason and you log in to ``srv-alternate`` and make some changes
+to ``srv-mail``, the Realtime Scanner will not be able to record these
+changes in the Backup. Also in this case, running the SmartScan will
+bring the changes in the Backup.
+
+.. rubric:: Scenario 4: Other Cases
+
+In general, the Realtime Scanner does not record any changes in those
+parts of the |product| that do not have any handler for the Realtime
+Scanner. For example, Scenario 2 above is caused by the Realtime
+Scanner inability to interact with LDAP. Other examples include:
+
+* changes in a COS
+* changes in a domain
+* the membership of a user in Distribution Lists.
+
 .. _backup_path:
 
 Backup Path
@@ -309,10 +376,9 @@ important files and directories are present:
    Backup has been imported from an external backup and contain in the
    filename the unique ID of the Node.
 
--  ``accounts`` is a directory under which information of all accounts
-   defined in the Mailstore & Provisioning Role are present. In
-   particular, the following important files and directories can be
-   found there:
+- ``accounts`` is a directory under which information of all accounts
+  is defined. In particular, the following important files and
+  directories can be found there:
 
    -  ``account_info`` is a file that stores all metadata of the
       account, including password, signature, preferences
@@ -494,8 +560,8 @@ therefore it can work with different OS architecture and |product|
 versions.
 
 |backup| allows administrators to create an atomic backup of every
-item in the Mailstore & Provisioning (AppServer) account and restore
-different objects on different accounts or even on different servers.
+item in the Mailstore & Provisioning account and restore different
+objects on different accounts or even on different servers.
 
 By default, the default |backup| setting is to save all backup
 files in the **local directory** :file:`/opt/zextras/backup/zextras/`. In
@@ -627,7 +693,7 @@ Realtime Scanner
 ================
 
 The Realtime Scanner is an engine tightly connected to the Mailstore &
-Provisioning (AppServer), which intercepts all the transactions that
+Provisioning, which intercepts all the transactions that
 take place on each user mailbox and records them with the purpose of
 maintaining the whole history of an item for its entire lifetime.
 
@@ -669,24 +735,9 @@ item has its own complete history.
    re-enable the Realtime Scanner and perform a SmartScan when
    prompted.
 
-.. _limitations_and_safety_scan:
 
-Limitations and Safety Scan
----------------------------
+.. currently not available
 
-.. to be verified!
-
-The main limitation when restoring data acquired via the Realtime
-Scanner is when a user uses the ``Empty Folder`` button in the
-right-click context menu.
-
-In this case, and any time |backup| cannot determine the status of an
-item in an account by reading the metadata saved by the Realtime
-Scanner, a Smartscan on the given account is triggered *before* the
-restore: this operation fixes any misaligned data and sanitizes the
-backed up metadata.
-
-..
    Blobless Backup Mode
    ====================
 
@@ -791,6 +842,54 @@ time.
       .. code:: console
 
          zextras$ carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
+
+.. _backup-legal-hold:
+
+Legal Hold
+==========
+
+A *legal hold* is a functionality that allows to preserve and protect
+electronic data (for example e-mails and documents) for potential use
+in legal proceedings or investigations.
+
+In the context of |product|, the legal hold is a mechanism that allows
+to preserve an existent account in a state that can not be
+modified. This means that, as soon as an account is put in a legal
+hold state, nobody can access it and no change can be made to any
+items, folders, documents, or metadata. Moreover, an infinite
+retention time is set on the account that will override any other
+retention time defined and a *Restore on New Account* can be carried
+out by the Administrator for any need.
+
+|product| makes available a set of CLI commands to manage the legal
+host status of the accounts: :command:`carbonio backup legalHold {get
+| set | unset` which accept as argument either ``all`` or a
+comma-separated list of accounts ID.
+
+.. card:: Examples
+
+   #. Get the legal hold status of all accounts::
+
+        zextras$ carbonio backup legalhold get all
+
+      This command outputs all the accounts, their ID, and status. For
+      example::
+
+        john.doe@example.com 924e1cf6-eaba-4aff-a10d-1f8e94fa85e4 unset
+        jane.doe@example.com a1701296-7caa-4366-8886-f33bfb44267e unset
+
+   #. Put accounts jane.doe\@example and john.doe\@example.com in legal hold status::
+
+        zextras$ carbonio backup legalhold set a1701296-7caa-4366-8886-f33bfb44267e,924e1cf6-eaba-4aff-a10d-1f8e94fa85e4
+
+      This command accepts e-mail addresses or account IDs (you can
+      find them either using the command in the previous point or from
+      the |adminui| (:menuselection:`Domains --> Manage --> Accounts`,
+      then on the account's *General* details).
+
+   #. Remove account john.doe\@example.com from legal hold status::
+
+        zextras$ carbonio backup legalhold unset 924e1cf6-eaba-4aff-a10d-1f8e94fa85e4
 
 .. _limitations_and_corner_cases_of_the_backup:
 
@@ -1049,7 +1148,7 @@ to the external storage.
    .. grid-item-card:: Configure on newly installed or uninitialized server
       :columns: 12 12 12 6
 
-      If there the backup has not been initialized on the server, an
+      If the backup has not been initialized on the server, an
       Administrator can configure the external storage by running
 
       .. code:: console
@@ -1242,7 +1341,7 @@ vice-versa.
       zextras$  carbonio core listBuckets
 
    The output will look similar to::
-     
+
       bucketName                                                  hsm
       protocol                                                    HTTPS
       storeType                                                   S3

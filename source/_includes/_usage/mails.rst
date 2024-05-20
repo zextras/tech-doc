@@ -22,10 +22,10 @@ Whenever a folder contains unread e-mails, a blue icon with the number
 will be displayed on the right of the folder name, with **99+**
 meaning there are at least 99 emails to read.
 
-A right-click also allows to carry out other actions on the selected
-folder: *move*, *wipe* (i.e., remove all e-mails in the folder),
-*edit*, *delete*, and *share* (with internal colleagues or even make
-it freely readable). 
+A right-click on the e-mail allows to carry out other actions on the
+selected folder: *move*, *wipe* (i.e., remove all e-mails in the
+folder), *edit*, *delete*, and *share* (with internal colleagues or
+even make it freely readable).
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
@@ -106,16 +106,26 @@ immediately to the recipient or to copy the e-mail address, for
 example to add it to the :ref:`contacts-comp`.
 
 On the top-right corner of each e-mail there are a few icons that
-allow to carry out a number of actions; click the
-:material-regular:`more_vert` icon to access them and many more: mark
-e-mail as read/unread or as spam, print, delete, tag, or flag it. A
-flag is a simple indicator for an email that can be adapted to one's
-preference: to name a few, it has some importance compared to other,
-it needs some action, or it has been processed and can be archived or
-deleted.
+allow to carry out a number of actions on the e-mail; the most used
+(reply, reply to all, forward, and delete) are show, the other are
+shown by clicking the :material-regular:`more_vert` icon:
 
-More actions are available and shown upon right-clicking an email.
+* Mark e-mail as read/unread or as spam
+* Print or show the original e-mail source code, including the headers
+* Flag or add a tag
 
+  .. note:: A flag is a simple indicator for an email that can be
+     adapted to one's preference: to name a few, it has some
+     importance compared to other, it needs some action, or it has
+     been processed and can be archived or deleted.
+
+* Download  in ``eml`` format
+* Create an appointment from the e-mail. A new calendar dialog window
+  will be opened, that contains as *Attendees* the users who either
+  sent the e-mail or appear as **To:** recipients, while people in
+  **Cc:** will be optional attendees. The title of the e-mail will
+  serve as title of the event as well.
+   
 |product| has support for **e-mail receipts**: when composing an
 email, a click on the :material-regular:`more_vert` icon on the
 right-hand side of the subject will add a request for a read receipt
@@ -136,6 +146,8 @@ When you have multiple aliases or access to shared accounts, you can
 add a different signature whenever you create, forward, or reply to an
 e-mail: refer to section *Using Signatures* in the :ref:`Mails
 settings <settings-mails>`.
+
+
 
 .. _sort-emails:
 

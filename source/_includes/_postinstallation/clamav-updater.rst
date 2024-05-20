@@ -29,18 +29,6 @@ updater
 
    # apt-get update && apt-get install carbonio-avdb-updater
 
-The service should start automatically, you can check its status with
-
-.. code:: console
-
-   # systemctl status carbonio-avdb-updater.service
-
-If the service is not running, start it manually
-
-.. code:: console
-
-   # systemctl start carbonio-avdb-updater.service
-
 Verify Signature Status
 ~~~~~~~~~~~~~~~~~~~~~~~
 

@@ -27,6 +27,13 @@ Available Languages
 
 .. include:: /_includes/_general/languages.rst
 
+.. _volunteer_translators:
+
+Volunteer Translators
+---------------------
+
+.. include:: /_includes/_general/translation.rst
+
 .. _contribute-doc:
 
 Contribution to the Documentation

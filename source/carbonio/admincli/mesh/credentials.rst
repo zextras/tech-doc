@@ -57,6 +57,14 @@ and restart the service.
 Wipe Old Credentials
 ~~~~~~~~~~~~~~~~~~~~
 
+Please take into account that the |mesh| service will be **offline**
+for the whole duration of the procedure.
+
+Before starting the procedure, we need to know important
+information. Log in to Leader Node and execute command
+
+.. include:: /_includes/_admincli/mesh-credentials-index.rst
+
 .. include:: /_includes/_admincli/mesh/wipecredentials.rst
 
 Generate New Credentials

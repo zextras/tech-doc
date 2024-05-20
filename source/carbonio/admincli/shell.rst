@@ -1,8 +1,6 @@
 .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
-
  
 .. _carbonio-shell:
 
@@ -12,9 +10,9 @@
 
 
 The |sh|, also known as *Carbonio Shell*, is an interactive shell that
-allows to execute |carbonio|'s commands. All :command:`carbonio` commands
-must be run as the ``zextras`` user. This can be achieved by running
-as the ``root`` user
+allows to execute |carbonio|'s commands. All :command:`carbonio`
+commands must be run as the ``zextras`` user: to do so, run as the
+``root`` user
 
 .. code:: console
 
@@ -28,7 +26,7 @@ At this point, to launch a :command:`carbonio` command you can either
 
    .. code:: console
 
-      zextras$  carbonio backup doSmartScan start
+      zextras$ carbonio backup doSmartScan start
 
 #. enter the |csh|
   
@@ -36,37 +34,90 @@ At this point, to launch a :command:`carbonio` command you can either
 
       zextras$ carbonio
 
-   The prompt will change into ``carbonio>`` and you will be able to
-   use :kbd:`tab` for auto-completion.  In the shell, use only the
-   sub-command and parameters, removing the initial :command:`carbonio`. For
-   example, command
-
-   .. code:: console
-
-      # carbonio backup doSmartScan start
-      
-   can be run in |sh| as
+   The prompt will change into ``carbonio>`` .  In the |sh|, you can run the
+   previous command as
 
    .. code:: console
 
       carbonio> backup doSmartScan start
 
-   The |csh| is useful if you need to execute multiple commands to
-   carry out some advanced task and to keep the history: they will be
-   available for future reference and to check  the operations done so
-   far. 
+   The |csh| is useful in multiple ways:
 
-Composition of a command
-========================
+   * If you need to execute multiple commands, for example to carry
+     out some advanced task
+   * To keep the history: commands will be available for future
+     reference and to check the operations done so far
+   * You will be able to use :kbd:`tab` for auto-completion of commands
+
+.. _sh-syntax:
+
+Syntax of a Command
+===================
 
 A typical |carbonio| command is composed by several parts, some of
-which is required for the command to work properly.
+which is required for the command to work properly, for example
+
+.. code:: console
+
+   zextras$ carbonio --progress backup doSmartScan start
+
+Besides :command:`carbonio`, which is used to invoke the commands, the
+following parts compose a typical :command:`carbonio` command: the
+module name, the command, and the parameters.
+
+.. _sh_options:
+
+Command Line Options
+--------------------
+
+Adding options to any commands is also possible; for example, you can
+run
+
+.. code:: console
+
+   carbonio> --progress backup doSmartScan start
+
+The available command line options are:
+
+
+--host      Specify a target host (both IP or hostname are accepted)
+            on which the command will be executed. Use ``all_servers``
+            to broadcast the command to all servers. To run a command
+            only on the server on which you are logged in, simply do
+            not use the option.
+
+--json      The output of the command will be presented in JSON format
+            and is useful for scripting. 
+
+--progress  Prints the operation's feedback directly to
+            ``STDOUT``. Press :kbd:`Ctrl+C` to interrupt the
+            output: the operation itself will not be interrupted. 
+
+--sync      Runs the command in synchronous mode, waiting for the
+            operation's execution to end and returning an exit code:
+
+            * 0 - Successful
+            * 1 - Failed
+            * 2 - Stopped
+            * 3 - Removed
+            * 4 - Interrupted
+
+.. _sh-module:
 
 Module
 ------
+
 The |sh| supports all |carbonio| **modules**: *auth*, *admin*, and
-more, including provisioning (i.e., :command:`carbonio prov`). These
-are called also *subcommands*.
+more, including provisioning (i.e., :command:`carbonio prov`).
+
+.. _sh-command:
+
+Command
+-------
+
+Most of the commands are module-dependent
+
+.. _sh-param:
 
 Parameters
 ----------
@@ -121,44 +172,9 @@ There are two parameters in this command: ``<domain> <acme.example>``
 and ``<account_limit> <1000>``, but since **domain** is mandatory, we
 omit its name.
 
-.. _shell_options:
+.. _sh-help:
 
-Command Line Options
-====================
-
-Adding options to any commands is also possible; for example, you can
-run
-
-.. code:: console
-
-   carbonio> --progress backup doSmartScan start
-
-The available command line options are:
-
-
---host      Specify a target host (both IP or hostname are accepted)
-            on which the command will be executed. Use ``all_servers``
-            to broadcast the command to all servers. To run a command
-            only on the server on which you are logged in, simply do
-            not use the option.
-
---json      The output of the command will be presented in JSON format
-            and is useful for scripting. 
-
---progress  Prints the operation's feedback directly to
-            ``STDOUT``. Press :kbd:`Ctrl+C` to interrupt the
-            output: the operation itself will not be interrupted. 
-
---sync      Runs the command in synchronous mode, waiting for the
-            operation's execution to end and returning an exit code:
-
-            * 0 - Successful
-            * 1 - Failed
-            * 2 - Stopped
-            * 3 - Removed
-            * 4 - Interrupted
-
-Seeking help
+Seeking Help
 ============
 
 ``carbonio`` comes with a contextual help that can be used at
@@ -169,7 +185,7 @@ general use is
 
    zextras$ carbonio help
 
-This lists all options (see :ref:`previous section <shell_options>`)
+This lists all options (see :ref:`previous section <sh_options>`)
 and all modules available to carbonio. The ``help`` keyword can be
 used also to list all command in a module (for example,
 :command:`carbonio help config`), or the help page of each command (for example,
@@ -177,6 +193,8 @@ used also to list all command in a module (for example,
 
 .. hint:: The help page of the command is shown also if there is some
    syntax error in the command issued.
+
+.. _sh-script:
 
 Scripting Commands
 ==================
@@ -208,3 +226,64 @@ This proves useful, for example, when finding a procedure that
 requires to execute a set of :command:`carbonio` commands: copy tand paste
 them into a file and run all of them sequentially without the need to
 copy and paste each single command.
+
+.. _sh-shared-commands:
+
+Shared Commands
+===============
+
+There are a few commands that can be used within every module and
+allow to manage the status of the services provided by each
+module. These commands are: :command:`getServices`,
+:command:`doStartService`, :command:`doStopService`, and
+:command:`doRestartService`.
+
+Their usage is quite simple and follows the general syntax (see
+:ref:`sh-syntax`): :command:`carbonio <module> <command>
+{service_name}`, for example::
+
+  zextras$ carbonio mobile getServices
+
+The output will be similar to the following one::
+
+          services                                
+            module                                  
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            activesync-services                     
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            autodiscover                            
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            abq-services                            
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            ldap-address-book                       
+                could_start                                                 false
+                could_stop                                                  true
+                running                                                     true
+            anti-dos                                
+                could_not_start_because                                     anti-dos disabled
+                could_start                                                 false
+                could_stop                                                  false
+                running                                                     false
+
+Along each available service appears its current status and whether it
+can started or stopped. In some cases, additional information is also
+shown, for example the **anti-dos** service can not be started because
+it is not enabled.
+
+You can manually start, restart, or stop a service using the other
+commands; unlike :command:`getServices`, these require a parameter,
+which is the service name, for example::
+
+  zextras$ carbonio mobile doStopService activesync-services
+
+This command outputs a status message, which is *"service stopped"* if
+it was successful. Similar messages are generated after using the
+:command:`doStartService` and :command:`doRestartService` commands.

@@ -15,7 +15,7 @@ Installation of |product| databases
 
 
 
-.. include:: /_includes/_installation/_roles/role-db-connector.rst
+.. include:: /_includes/_installation/_roles/role-db-connector-ce.rst
 
 Bootstrap |product|
 -------------------

@@ -13,5 +13,5 @@ if there are any in the current release.
 
       changelog
       upgrade
-      upgrade-ubuntu
+      upgrade-os
       issues

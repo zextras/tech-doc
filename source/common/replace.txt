@@ -45,6 +45,7 @@
 .. |cos| replace:: :abbr:`COS (Class of Service)`
 .. |fqdn| replace:: :abbr:`FQDN (Fully Qualified Domain Name)`
 .. |ha| replace:: :abbr:`HA (High availability)`
+.. |dos| replace:: :abbr:`DoS (Denial of Service)`
 
 .. additional roles for adding inline styles
 
@@ -70,6 +71,7 @@
 .. |leaderip| replace:: :bdg-secondary-line:`LEADER_IP`
 .. |srv6h| replace:: :bdg-secondary-line:`SRV6_hostname`
 .. |dsnode| replace:: :bdg-secondary-line:`SRV1`
+.. |beta| replace:: :bdg-danger:`BETA`
 
 .. misc
 

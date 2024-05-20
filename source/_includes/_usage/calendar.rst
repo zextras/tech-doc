@@ -27,7 +27,11 @@ will then be automatically filled according the identity chosen.
 optional, can be added by writing their e-mail address. If the
 attendee already is not available or has some overlapping appointment,
 its e-mail address will be coloured and a message will be shown. This
-improves and makes easier the creation of events.
+improves and makes easier the creation of events. Moreover, if the
+attendee is a distribution list, a small chevron next to the list name
+can be clicked to show all the members. Click the :bdg-primary:`SELECT
+ALL ADDRESSES` button to replace the distribution list with the e-mail
+addresses of each member.
 
 Besides inviting attendees (internal colleagues or external people),
 many more information can be added to an appointment:
@@ -54,7 +58,6 @@ many more information can be added to an appointment:
   .. hint:: You need to enable this option in the
      :ref:`settings-calendar` module's *Creating Appointment* Section.
           
-
 In case the invitation was not sent or if something went wrong, the
 event will show up in the calendar, but marked with a red icon. The
 attendee can propose a new time. In this case, new e-mail will be
@@ -63,7 +66,14 @@ change.
 
 When right-clicking an event in the calendar, different actions can be
 carried out: open it and show all participants and details, edit, copy
-or move it, and its original, plain text version, can be shown.
+or move it, and its original, plain text version, can be shown. In
+case you only need to modify the time allocated for an event (for
+example you need to move it to a different time slot or change either
+its start or end time), you can simply move it via drag&drop to the
+new time or use the tiny icons at the top or bottom of the event and
+move them to the new start or end times. If there are other
+participants in the event, a new e-mail notification, that you can
+even modify, will automatically be sent to them.
 
 Additionally, :ref:`mail-tags` can be added to any calendar event and
 the event itself can be (tentatively) accepted or declined
@@ -76,6 +86,23 @@ shown. To broaden or restrict the search, click the
 dates using the date pickers. Optionally, also add more keywords to
 search.
 
+Manage Invitations
+------------------
+
+When you receive an e-mail invitation to an event and open it, it
+will be always accompanied by a green or yellow icon:
+
+* green: you are available for the full duration of the event.
+* yellow: some other appointments overlap with this and you should
+  check your schedule
+
+This happens only on the calendars associated to the account that
+received the e-mail (shared calendars or other accounts are not taken
+into account) and if in the calendar properties the option *Exclude
+this calendar when reporting the free/busy/time* is **not** ticked.
+
+
+  
 Shared Calendars
 ----------------
 
@@ -100,10 +127,32 @@ the person can only *view* your events, *edit* them (add, modify,
 delete), of fully *manage* them (accept and re-share invitations and
 appointments on your behalf).
 
-To finalise the share, you can choose to send a notification to the user with whom you want to
-share the calendar or to add a custom message.
+To finalise the share, you can choose to send a notification to the
+user with whom you want to share the calendar or to add a custom
+message.
 
-Configure a CalDAV CLient
+Calendar Export and Import
+--------------------------
+
+Right click one of your calendars to download (in ICS format) all the
+appointments that are included in the calendar. The file will be saved
+in the default browser's *Downloads* folder, with name composed by the
+calendar name and the date of download. For example, a calendar called
+*Office Meetings* exported on first of May 2024 will be called
+:file:`office meetings-2024-05-01.ics`.
+
+If you save a single or a recurrent event, it will be saved with the
+name of the event, for example an event called *Team Meetings* will be
+saved as :file:`team meetings.ics`, regardless if it is a single event
+or a series of events
+
+.. hint:: It is not possible to save a single instance of a recurrent
+   event.
+
+Calendar can be imported if they have been exported in **ics** format:
+right click one of your calendars to add any event to it. 
+   
+Configure a CalDAV Client
 -------------------------
 
 Adding a |product| calendar to your favourite CalDAV client is

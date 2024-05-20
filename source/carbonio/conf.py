@@ -44,9 +44,9 @@ copyright = '2023: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.3.0'
+release = '24.5.0'
 version = release
-prev = '24.1.0'
+prev = '24.3.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -55,9 +55,6 @@ prev = '24.1.0'
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
                'sphinxcontrib.email' ]
-
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -109,6 +106,7 @@ html_theme_options = {
     'repository_branch': 'master',
     'use_repository_button': True,
     'use_issues_button': True,
+    'navigation_with_keys': False,
     'logo': {
         'image_light': 'carbonio-black.svg',
         'image_dark': 'carbonio-white.svg',
@@ -123,14 +121,15 @@ html_theme_options = {
     # (global ToC)
     #'primary_sidebar_end': ['survey'],
 }
-html_sidebars = { "**": [ 'navbar-logo.html', 'survey', 'search-button-field.html',
+html_sidebars = { "**": [ 'navbar-logo.html',
+                          'search-button-field.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = {
     'hubhome' : '%s' %hubhome,
-    'surveytext': 'What do you think about our new Documentation Layout?',
-    'surveylink': 'https://app.useberry.com/t/jmHPX8uvzq1WOH/?v=24.3 ',
-    'surveylabel': 'Take the survey',
+    # 'surveytext': 'What do you think about our new Documentation Layout?',
+    # 'surveylink': 'https://app.useberry.com/t/jmHPX8uvzq1WOH/?v=24.3 ',
+    # 'surveylabel': 'Take the survey',
 }
 
 # workaround for ZTD-581
