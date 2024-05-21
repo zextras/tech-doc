@@ -2,8 +2,8 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The last task to complete before the installation is complete, is to
-activate |product| license.  You can activate the license from the
+The last task to complete before finishing installation, is to
+activate |product| license. You can activate the license from the
 command line or from the graphical administrator interface.
 
 .. grid::
