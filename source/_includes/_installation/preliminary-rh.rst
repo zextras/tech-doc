@@ -79,3 +79,30 @@ RHEL 9 |beta|
 
       # sestatus
 
+.. card:: Restart of |product| services
+
+   By installing |product| on RHEL 9 you will no longer be able to
+   manage |carbonio| services with the legacy :command:`zmcontrol
+   start`, :command:`zmcontrol restart`, and :command:`zmcontrol stop`
+   commands. Interaction with services should be done exclusively
+   through systemd commands.
+
+   +++++
+   
+   **Example**
+
+   You can check the status of the |task| service with:
+
+   .. code:: console
+
+      # systemctl status carbonio-tasks.service
+
+   To manage its start, stop, and restart, replace ``status`` in the
+   above command with: ``start``, ``stop``, and ``restart``
+   respectively.
+
+   To get the list of all |carbonio| services, use command
+
+   .. code:: console
+
+      # systemctl list-unit-files
