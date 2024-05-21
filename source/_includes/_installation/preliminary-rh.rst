@@ -1,7 +1,7 @@
 .. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-             
+
 You need to satisfy these requirements, depending on the RHEL version
 you want to install:
 
@@ -32,7 +32,7 @@ RHEL 8
 
        # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
-.. card:: SELinux 
+.. card:: SELinux
 
    SELinux Must be set to **disabled** or **permissive** in file
    :file:`/etc/selinux/config`. You can check the current profile
@@ -69,7 +69,7 @@ RHEL 9 |beta|
 
        # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 
-.. card:: SELinux 
+.. card:: SELinux
 
    SELinux Must be set to **disabled** or **permissive** in file
    :file:`/etc/selinux/config`. You can check the current profile
@@ -79,16 +79,23 @@ RHEL 9 |beta|
 
       # sestatus
 
-.. card:: Restart of |product| services
+.. card:: New ``systemd`` units to replace ``zmcontrol``
 
    By installing |product| on RHEL 9 you will no longer be able to
    manage |carbonio| services with the legacy :command:`zmcontrol
-   start`, :command:`zmcontrol restart`, and :command:`zmcontrol stop`
-   commands. Interaction with services should be done exclusively
-   through systemd commands.
+   start <service>`, :command:`zmcontrol restart <service>`, and
+   :command:`zmcontrol stop <service>` commands. Interaction with
+   services should be done exclusively through systemd commands.
 
-   +++++
-   
+   .. note:: The :command:`zmcontrol -v` command, used to retrieve
+      |product|'s configuration, will continue working as usual.
+
+   To get the list of all |carbonio| services, use command
+
+   .. code:: console
+
+      # systemctl list-unit-files
+
    **Example**
 
    You can check the status of the |task| service with:
@@ -101,8 +108,13 @@ RHEL 9 |beta|
    above command with: ``start``, ``stop``, and ``restart``
    respectively.
 
-   To get the list of all |carbonio| services, use command
+   It will also not possible to use :command:`zmcontrol start | stop |
+   restart` as a convenience to restart all |carbonio| services at
+   once. This command will be replaced by Role-specific ``systemd``
+   commands, to be executed on the Node on which they are installed.
 
    .. code:: console
 
-      # systemctl list-unit-files
+      # systemctl start directory-server.service
+      # systemctl start mta.service
+      # systemctl start proxy.service
