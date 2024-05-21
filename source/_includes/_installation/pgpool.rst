@@ -74,7 +74,16 @@
            max_pool=8
            reserved_connections=1
 
-         Then, add the following lines at the end of the file::
+         Then find and comment out the following lines (i.e., make
+         sure that the first character is a ``#``::
+
+           #unix_socket_directories = '/var/run/postgresql'
+           #pcp_socket_dir = '/var/run/postgresql'
+           #pid_file_name = '/var/run/pgpool/pgpool.pid'
+           #wd_ipc_socket_dir = '/var/run/postgresql'
+         
+
+         Finally, add the following lines at the end of the file::
 
            enable_pool_hba = off
            allow_clear_text_frontend_auth = on
