@@ -43,7 +43,7 @@ Virtual Hosts & Certificate
            
 .. _le-procedure:
 
-install a Let's Encrypt certificate
+Install a Let's Encrypt certificate
 -----------------------------------
 
 .. include:: /_includes/_adminpanel/_domains/letsencrypt.rst
