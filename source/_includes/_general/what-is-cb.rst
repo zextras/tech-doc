@@ -13,6 +13,8 @@ of:
 - File Management System including collaborative editing and document
   sharing
 - Tasks
+- Chat
+- Video meeting
 
 Strong points of |product| include:
 
