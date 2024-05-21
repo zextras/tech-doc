@@ -122,6 +122,7 @@ html_theme_options = {
     #'primary_sidebar_end': ['survey'],
 }
 html_sidebars = { "**": [ 'navbar-logo.html',
+			  'zxbrand',
                           'search-button-field.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
 
