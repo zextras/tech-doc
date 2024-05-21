@@ -24,16 +24,13 @@ upgrade of third-party software, which may lead to some additional
 manual steps to be carried out. Section :ref:`upgrade-manual` below
 contains information to prevent or fix these issues.
 
-Release |release| of |product| introduces two major milestones:
+.. card:: Upgrade to PostgreSQL 16 and Ubuntu 22.04
 
-* support for PostgreSQL, version **16**. Upgrade to this version is
-  **strongly suggested** on Ubuntu *20.04*, but it is **mandatory** if
-  you plan to upgrade to Ubuntu *22.04* (see next point).
+   Release 24.3.0 of |product| was a major milestones that introduced:
 
-* support for **Ubuntu 22.04** (Jammy Jellyfish), to which you can
-  upgrade together with |product| |release|. If you want to upgrade
-  only |product|, continue reading this page; otherwise, to upgrade
-  **both** |product| and Ubuntu, please refer to section
-  :ref:`upgrade-os`. In both cases, make sure to read Section
-  :ref:`upgrade-checklist` to see if there are tasks that you need to
-  execute besides the upgrade procedure.
+   * support for PostgreSQL, version **16**. If you did not yet upgraded,
+     we **strongly suggest** to do so. Moreover, if you plan to upgrade
+     to Ubuntu *22.04* (see next point), it is **mandatory** to upgrade
+     to PostgreSQL 16.
+
+   * support for **Ubuntu 22.04** (Jammy Jellyfish).

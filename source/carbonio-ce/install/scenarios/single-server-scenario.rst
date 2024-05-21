@@ -49,6 +49,8 @@ To correctly run the script, please follow these advices
       Script for RHEL 8
       :download:`/scripts/install_carbonio_ce_singleserver_rhel.sh`
 
+      .. warning:: This script does not yet support RHEL 9 |beta| installations.
+
 .. _single-install-manual:
 
 Manual Installation

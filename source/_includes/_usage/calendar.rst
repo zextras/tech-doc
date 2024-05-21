@@ -150,8 +150,14 @@ or a series of events
    event.
 
 Calendar can be imported if they have been exported in **ics** format:
-right click one of your calendars to add any event to it. 
-   
+right click one of your calendars to add any event to it.
+
+.. warning:: If you export one of your calendars (*source calendar*)
+   and import it into one of your other calendars (*destination
+   calendar*), all the existing appointments in the *destination
+   calendar* will be updated, but the **source calendar will be
+   emptied**.
+
 Configure a CalDAV Client
 -------------------------
 

@@ -26,7 +26,15 @@ Once a distribution list has been created, it can be further
 configured by adding aliases, which work like e-mail accounts,
 changing the description, notes, and members, and granting selected
 users the permission to send e-mails to the distribution list or
-making them Owners
+making them Owners.
+
+Whenever new members are added to a Distribution List, it is necessary
+to refresh (or restart) the ``milter`` service. From the CLI, as the
+``zextras`` user, execute this command
+
+.. code:: console
+
+   zextras$ zmmilterctl refresh
 
 .. _ap-dl-dyn:
 

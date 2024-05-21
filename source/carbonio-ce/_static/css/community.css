@@ -30,3 +30,10 @@
     border:  1px solid var(--zx-color-magma);
     background-color: #ff9c9c;
 }
+
+.zxbrand {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(229,26,26,1)), color-stop(26%, rgba(230,32,25,1)), color-stop(64%, rgba(253,131,11,1)), to(rgba(253,131,11,1)));
+    background: linear-gradient(90deg, rgba(229,26,26,1) 0%, rgba(230,32,25,1) 26%, rgba(253,131,11,1) 64%, rgba(253,131,11,1) 100%); 
+    height: 8px;
+    margin: 0;
+}
