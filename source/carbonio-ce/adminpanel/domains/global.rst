@@ -25,7 +25,9 @@ table, showing all the Global Delegates.
 Domains
 =======
 
-This table lists all the domains configured on |product|. Check section
+This table lists all the domains configured on |product|. A click on
+any domain opens the *General settings* (:menuselection:`Domains -->
+Details --> General Settings`) of that domain. Check section
 :ref:`ap-domain-new` to add a new domain.
 
 .. index:: quarantine

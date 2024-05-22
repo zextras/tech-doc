@@ -4,8 +4,9 @@ Monitoring
 ==========
 
 The Monitoring Role is composed by the Prometheus and Grafana
-software. Grafana provides dashboards and some manual configuration of
-the repository requires a
+software. Prometheus extracts data from metrics and log files, that
+are then used by Grafana, which provides dashboards to monitor the
+|product| status.
 
 Install Packages
 ----------------

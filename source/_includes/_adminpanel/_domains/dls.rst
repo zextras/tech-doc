@@ -26,7 +26,15 @@ Once a distribution list has been created, it can be further
 configured by adding aliases, which work like e-mail accounts,
 changing the description, notes, and members, and granting selected
 users the permission to send e-mails to the distribution list or
-making them Owners
+making them Owners.
+
+Whenever new members are added to a Distribution List, it is necessary
+to refresh (or restart) the ``milter`` service. From the CLI, as the
+``zextras`` user, execute this command
+
+.. code:: console
+
+   zextras$ zmmilterctl refresh
 
 .. _ap-dl-dyn:
 
@@ -42,9 +50,13 @@ To create a Dynamic Distribution List, the procedure is similar to the
 normal Distribution Lists: click the :bdg-primary:`+` button and
 provide a **Displayed Name** name and **list Name**, then click the
 **Dynamyc Mode** switch to access more options, including the
-*Distribution List URL*, which is mandatory. You can also make the
-list **Hidden from GAL** and add owners to the list, who can manage
-the configuration of the list.
+*Distribution List URL*, which is mandatory.
+
+.. hint:: The *Distribution List URL* already includes the
+   ``ldap:///`` prefix, so you do not need to add it.
+
+You can also make the list **Hidden from GAL** and add owners to the
+list, who can manage the configuration of the list.
 
 Advanced options, like subscription and unsubscription options are
 available after the creation of the Dynamic Distribution List, when

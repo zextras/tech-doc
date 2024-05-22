@@ -399,7 +399,7 @@ import the configuration using the command:
 
 .. code:: console
 
-   zextras$ carbonio auth saml import example.com url https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
+   zextras$ carbonio auth saml import example.com URL https://localidp.local.loc/app/xxxxxxxxxxxxxxx/sso/saml/metadata allow_unsecure true
 
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
@@ -504,7 +504,7 @@ default SAML settings, modify them, then save and import them back.
 
       .. code:: console
 
-         zextras$ carbonio auth saml import example.com /tmp/saml.json
+         zextras$ carbonio auth saml import example.com file /tmp/saml.json
 
       .. hint:: It is also possible to view or edit single attributes
          by using the ``carbonio auth saml get`` and ``carbonio auth saml

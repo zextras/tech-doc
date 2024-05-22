@@ -68,13 +68,18 @@ value for a proper configuration. Currently, these sections are
   .. note:: 172.16.12.5 is a private IP, remember to replace it with
      an actual public IP!
 
-In order to run the script, from the
-:file:`carbonio-ansible/carbonio-install-ansible` directory, execute
-the command
+In order to run the script, first go to the repository's
+:file:`carbonio-ansible/carbonio-install-ansible/playbooks` directory
 
 .. code:: console
 
-   $ ansible-playbook -u root -i ../../data/carbonio_inventory carbonio-install.yml
+   $ cd playbooks
+      
+then execute the command
+
+.. code:: console
+
+   $ ansible-playbook -u root -i ../../data/carbonio_inventory carbonio_install.yml
 
 Make sure to replace :file:`carbonio_inventory` with the proper name of the
 inventory you want to install.
@@ -107,3 +112,25 @@ your new |product| installation and execute the first necessary tasks,
 see Section :ref:`web-access`. You can then proceed to carry out further
 administration tasks, see :ref:`post-install`. In particular, if you plan
 to migrate to |product|, refer to section  :ref:`migration`.
+
+.. _ansible-ts:
+
+Troubleshooting Ansible Installation
+====================================
+
+While most of the times the |product| installation using Ansible is
+flawless, there are a few cases in which a playbook run is not
+successful. This can happen for example when communication between the
+Control Node, the Nodes, and the repositories fails.
+
+When the playbook does not terminate successfully, the best choice is
+to run it again. Even though Ansible can be invoked to run only
+selected tasks, due to the nature of |product| installation, manually
+running only those tasks may not suffice to successfully complete the
+installation.
+
+Moreover, since Ansible features an internal mechanism that, during a
+playbook run, keeps track of the tasks that were completed, failed, or
+not executed, the best solution is to run the playbook another
+time. Indeed, during this second run, only the tasks that failed or
+were not executed during the first run are carried out.

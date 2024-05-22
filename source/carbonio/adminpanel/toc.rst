@@ -15,11 +15,11 @@ Administrators need during their daily activities.
       whitelabelling
       domains
       cos
+      mta
       storage
       subscriptions
       privacy
       backup
       notifications
       operations
-      mta
       adminroles

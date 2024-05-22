@@ -10,6 +10,11 @@ out only from the CLI. The only exception is for the
 :menuselection:`Admin Panel --> Domains --> Manage --> Restore
 Account`.
 
+.. seealso:: To learn more about |product| Backup components and how
+   they work, please refer to Section :ref:`backup-architecture`. In
+   particular, you may want to check especially :ref:`Item <item>`,
+   :ref:`smartscan_and_real_time_scan`, and :ref:`backup_path`.
+
 Setting are grouped in two main section, the *Global Server Settings*,
 which apply to all :ref:`defined storages <ap-storage>`, and the
 *Server Specifics*, which allows to define different backup policies
@@ -20,9 +25,20 @@ to different servers, in case more than one server has been created.
 Global Server Settings
 ----------------------
 
-The main configuration options are split in two more sections: *Server
-Config*, *Advanced*, with *Server Lists* providing an overview of the
-current status of the backup on the defined servers.
+The main configuration options are split in multiple sections: *Server
+Lists*, *Server Config*, and *Advanced*.
+.. _ap-bk-server-list:
+
+Server Lists
+~~~~~~~~~~~~
+
+This section shows a number of information about the current status of
+the backup on the defined servers: active options (**Backup at
+startup**, **Realtime Status**, **Smartscan**, **Purge** interval),
+whether the backup is local or remote, a description and how much
+space do **Metadata** and the **Backup** occupy.
+
+To change the configuration, go to the next section.
 
 .. _ap-bk-server-conf:
 
@@ -42,7 +58,6 @@ Smartscan at the startup**).
    situations, running SmartScan at every |backup| restart can become
    a performance bottleneck, as it has been discussed in section
    :ref:`backup_disable_scans`.
-
 
 Options about the :ref:`backup_path` follow: set the directory where
 backups will be stored, which defaults to
@@ -64,14 +79,14 @@ i.e., *at 4:00 AM on Saturdays*), and the :ref:`retention_policy` for
 items and account, whose default value is *30* days.
 
 .. hint:: Setting either retention policy to 0 will disable the Backup
-   Purge and never remove items or accounts from the backup. 
+   Purge and never remove items or accounts from the backup.
 
 .. _ap-bk-adv:
 
 Advanced
 ~~~~~~~~
 
-In this section appear options to include in the backups some data 
+In this section appear options to include in the backups some data
 that are by default not included in the backups.
 
 .. what are "latency high/low threshold"?
@@ -89,14 +104,14 @@ that they are updated every time the backup is saved (**Flash metadata
 in the disk at every save**) and that the user's metadata are included
 in the remote backup (**Archive user metadata folder in the remote
 backup**)..
-   
-.. _ap-bk-server-list:
 
-Server Lists
-~~~~~~~~~~~~
+.. _ap-bk-specific:
 
-This section shows a number of information about the current status of
-the backup on the defined servers: active options (**Backup at
-startup**, **Realtime Status**, **Smartscan**, **Purge** interval),
-whether the backup is local or remote, a description and how much
-space do **Metadata** and the **Backup** occupy.
+Server Specific
+---------------
+
+The global configuration is inherited by each of the servers defined
+in the |product| infrastructure. In this section it is possible to
+override these setting with custom values (please refer to sections
+:ref:`ap-bk-server-conf` and :ref:`ap-bk-adv` above), stop or enable
+the service, and manually run some tasks in case scheduling is disabled.

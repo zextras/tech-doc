@@ -14,5 +14,7 @@ Administrators need during their daily activities.
       introduction
       domains
       cos
-      privacy
       mta
+      storage
+      privacy
+

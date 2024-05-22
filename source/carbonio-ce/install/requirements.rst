@@ -65,6 +65,7 @@ on top of any of these vanilla distributions:
 * **Ubuntu 20.04 LTS Server Edition**
 * **Ubuntu 22.04 LTS Server Edition**
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
+* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`) |beta|
 
 Support for other distributions will be announced in due course
 when it becomes available.
@@ -142,14 +143,17 @@ RHEL Specific Requirements
 
 .. _more-requirements:
    
-Additional Requirements (Manual Installation)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Additional Requirements
+~~~~~~~~~~~~~~~~~~~~~~~
 
+When you do not use the :ref:`script-based installation
+<single-install-auto>`, i.e., Single-Server manual installation or
+Multi-Server installation.
 
-* Acquaintance with the use of CLI is necessary.  All ``carbonio``
-  commands must be executed as the ``zextras`` user (these commands
-  will feature a ``zextras$`` prompt), while all other commands must
-  be issued as the ``root`` user, unless stated otherwise.
+* All ``carbonio`` commands must be executed as the ``zextras`` user
+  (these commands will feature a ``zextras$`` prompt), while all other
+  commands must be issued as the ``root`` user, unless stated
+  otherwise.
   
   .. note:: The ``zextras`` user is created during the |product|
      installation process, it is not necessary to create it

@@ -134,6 +134,7 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * carbonio-advanced
+      * carbonio-storages
       * service-discover-agent
 
    .. grid-item-card:: Files

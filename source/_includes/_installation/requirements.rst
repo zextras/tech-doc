@@ -46,16 +46,15 @@ on top of any of these vanilla distributions:
 * **Ubuntu 20.04 LTS Server Edition**
 * **Ubuntu 22.04 LTS Server Edition**
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
-
-Support for other distributions will be announced in due course
-when it becomes available.
+* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`) |beta|
 
 The following requirements must be satisfied before attempting to
 install |product|.
 
 #. The whole |product| infrastructure must have at least **one public
-   IP address**. You need to create a DNS **A record** that resolves
-   to the public IP (e.g., ``A mail.example.com``)
+   IP address**. The IP address must have a domain name associated,
+   that coincides with the **A record** in the DNS (e.g., ``A
+   mail.example.com``)
 
    .. hint:: You can check a domain's A record using the CLI utility
       ``host``:
@@ -115,7 +114,7 @@ Additional Requirements
   `proxy.example.com`, `mta.example.com`, and so on. Replace
   ``example.com`` with your domain name.
 
-* During the installation procedure, you will have to write down some
+* During the installation procedure, you will need to write down some
   configuration options and their value, because they will be needed
   in the setup of the next nodes. These information are summarised at
   the end of each node's installation: copy them to a safe place and
@@ -279,7 +278,7 @@ and be able to access |product|'s internal services.
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
 
-.. card:: Mailstore & Provisioning (AppServer)
+.. card:: Mailstore & Provisioning
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"

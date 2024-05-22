@@ -1,3 +1,4 @@
+
 Whenever a problems arise while using a software, resolving them and
 going back to the normal daily activities as quick as possible is
 always the first goal.
@@ -24,7 +25,7 @@ activities:
   modules involved, and so on.
        
 Before You Open a Ticket
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Before you open a Support Ticket, you should gather some information
 and configuration values from |product| and its Components, to collect
@@ -53,7 +54,7 @@ line. Please note that, **unless stated otherwise**:
    form you can find at https://www.zextras.com/contact-us
 
 General And Common Information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------
 
 The general and common information are needed in every case:
 this kind of data allows to understand the scenario in which the
@@ -124,7 +125,7 @@ Once done, the log files to attach are:
   the Proxy Node
 
 Mobile And Mobile Apps
-~~~~~~~~~~~~~~~~~~~~~~
+----------------------
 
 Follow these steps on an e-mail account and a mobile device, then
 attach the log files that will be produced during the procedure.
@@ -166,7 +167,7 @@ attach the log files that will be produced during the procedure.
            zextras$ carbonio mobile getDeviceInfo JACK.SMITH@ACME.EXAMPLE DEVICEID
         
 |team|
-~~~~~~
+------
 
 In you experience problems with |team|, collect the output of the
 following commands. Replace `JACK.SMITH@ACME.EXAMPLE` with one
@@ -230,7 +231,7 @@ Also attach to the ticket the following files.
   `nginx.access.log` files relative to the last two days
 
 |file|
-~~~~~~
+------
 
 In case of issues with |file|, provide the output of this script
 
@@ -245,7 +246,7 @@ Also provide the :file:`/var/log/carbonio/files/files.log` and
 :file:`/var/log/carbonio/docs-connector/docs-connector.log` files
 
 |storage|
-~~~~~~~~~
+---------
 
 In the case of |storage|, you need to provide also some information
 about the storage infrastructure (volumes, disks) of |product|
@@ -285,7 +286,7 @@ Then, collect information about the configuration of |storage|
    zextras$ carbonio config dump server $(zmhostname)
 
 |Backup|
-~~~~~~~~
+--------
 
 Like for |storage|, first get a few environmental information
 
@@ -308,7 +309,7 @@ Then find the Backup Path and other configuration:
    zextras$ carbonio backup getBackupInfo
 
 Client-side issues
-~~~~~~~~~~~~~~~~~~
+------------------
 
 In case you experience a client-side issue, follow this procedure to
 collect the relevant information:

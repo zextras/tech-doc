@@ -5,17 +5,77 @@ Before installing Grafana, download the Grafana GPG key, add it to
 your APT installation's list of trusted keys and put the Grafana
 repository to your APT sources
 
-.. code:: console
+.. tab-set::
 
-   # wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-   # add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+   .. tab-item:: Ubuntu 20.04
+      :sync: ubu20
+             
+      .. code:: console
 
+         # wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+         # add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+             
+      .. code:: console
+
+         # wget -q -O - https://packages.grafana.com/gpg.key | \
+         gpg --dearmor | sudo tee /usr/share/keyrings/grafana.gpg > \
+         /dev/null
+
+         # echo "deb [signed-by=/usr/share/keyrings/grafana.gpg] \
+         https://packages.grafana.com/oss/deb stable main" | sudo \
+         tee -a /etc/apt/sources.list.d/grafana.list
+
+   .. tab-item:: RHEL 
+      :sync: rhel
+
+      .. code:: console
+                
+         # wget -q -O gpg.key https://rpm.grafana.com/gpg.key
+         # rpm --import gpg.key
+
+      Create file :file:`/etc/yum.repos.d/grafana.repo` with the
+      following content::
+
+        [grafana]
+        name=grafana
+        baseurl=https://rpm.grafana.com
+        repo_gpgcheck=1
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://rpm.grafana.com/gpg.key
+        sslverify=1
+        sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+             
 Install Grafana
 
-.. code:: console
+.. tab-set::
 
-   # apt update
-   # apt install grafana 
+   .. tab-item:: Ubuntu 20.04
+      :sync: ubu20            
+
+      .. code:: console
+
+         # apt update
+         # apt install grafana 
+       
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22            
+
+      .. code:: console
+
+         # apt update
+         # apt install grafana 
+      
+   .. tab-item:: RHEL 
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf install grafana 
 
 Start Grafana service and check Grafana status. If everything is work
 correctly, you can enable the service to automatically start Grafana
