@@ -8,11 +8,10 @@ Deploy an SSL Certificate
 =========================
 
 In this section we explain how to add an SSL/TLS certificate to a
-|product| installation.  |product| supports the installation
-and management of *Let's Encrypt* certificates: you can find
-directions for that in a `dedicated article
-<https://community.zextras.com/free-ssl-certificates-for-carbonio-community-edition-using-lets-encrypt-and-certbot/>`_
-on |zx| Community portal.
+|product| installation. |product| supports the installation and
+management of *Let's Encrypt* certificates: you install it from the
+configure can find directions for that in |adminui|: please refer to
+the :ref:`dedicated article <le-procedure>`.
 
 
 This setup is mandatory if |product| is used in conjunction with

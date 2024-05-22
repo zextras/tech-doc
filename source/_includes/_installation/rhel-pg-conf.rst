@@ -3,7 +3,7 @@ To configure PostgreSQL, edit file
 :file:`/var/lib/pgsql/16/data/pg_hba.conf`, find the line::
 
   #IPv4 local connections:
-  host    all             all             127.0.0.1/32            ident
+  host    all             all             127.0.0.1/32            scram-sha-256
 
 
 remove the ``#`` before ``host`` (if present) and change it as follows::
