@@ -10,7 +10,7 @@
 SPHINXOPTS    ?= -W
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
-BUILDDIR      = ../../build/carbonio
+BUILDDIR      ?= ../../build/carbonio
 
 # Put it first so that "make" without argument is like "make help".
 help:
