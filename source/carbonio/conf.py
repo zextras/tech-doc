@@ -145,6 +145,10 @@ linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
                      r'https://mycompany.okta.com/.*',
                      r'../../.*' ]
 
+# localization options
+locale_dirs = ['locales/']
+gettext_compact = "carbonio"
+
 # there are more options, but at the moment we don't need them. They
 # can be found at
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
