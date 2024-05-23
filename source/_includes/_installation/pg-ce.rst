@@ -1,4 +1,3 @@
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
 
 .. rubric:: Repository Setup
 

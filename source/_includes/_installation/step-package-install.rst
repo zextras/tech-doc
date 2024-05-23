@@ -84,7 +84,7 @@ After the successful package installation, you can check that all
 
 If any service is in :red:`failed` status, restart it. Some of he
 |monit| exporters may not correctly start, because the bootstrap of
-the databases (:ref:`Step 9 <installation-step9>`) must be executed in
+the databases (see section :ref:`rhel-pg`) must be executed in
 advance. After that step, if any of the services is not in ``running``
 state, you will need to manually start it by running a command like
 the following, replacing

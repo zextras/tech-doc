@@ -78,25 +78,7 @@ Preliminary Task
 Before starting the |product| installation, we need to install and
 configure the PostgreSQL database.
 
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      First, install PostgreSQL:
-      
-      .. code:: console
-
-         # apt install postgresql-16
-
-      .. include:: /_includes/_installation/ubuntu-pg-conf.rst
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. include:: /_includes/_installation/rhel-pg.rst
-      .. include:: /_includes/_installation/rhel-pg-conf.rst
-
+.. include:: /_includes/_installation/pg-ce.rst
 
 .. _installation-step1:
 
@@ -184,23 +166,16 @@ Step 7: Setup |mesh|
 
 .. _installation-step8:
 
-Step 8: Create Main DB Role and Database for |product|
-------------------------------------------------------
-
-.. include:: /_includes/_installation/step-conf-db.rst
-
-.. _installation-step9:
-
-Step 9: Bootstrap |file| Databases
+Step 8: Bootstrap |file| Databases
 ----------------------------------
 
 .. include:: /_includes/_installation/step-bootstrap-db.rst
 
 .. include:: /_includes/_installation/complete.rst
 
-.. _installation-step10:
+.. _installation-step9:
 
-Step 10: Enable Workstream Collaboration UI :bdg-danger:`BETA`
+Step 9: Enable Workstream Collaboration UI :bdg-danger:`BETA`
 --------------------------------------------------------------
 
 The |wsc| role is disabled by default, you can enable it either from
