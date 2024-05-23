@@ -10,7 +10,7 @@
 SPHINXOPTS    ?= -W
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
-BUILDDIR      = ../../build/suite
+BUILDDIR      ?= ../../build/suite
 
 # Put it first so that "make" without argument is like "make help".
 help:

@@ -62,7 +62,10 @@ Thumbs.db
 Dockerfile
 Jenkinsfile
 sphinx.po
+sphinx.pot
 bin/
 lib/
+.doctrees/
 pyvenv.cfg
 *.mo
+_sphinx_design_static/
