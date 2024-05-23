@@ -25,3 +25,10 @@
     border:  1px solid var(--zx-color-abyss);
     background-color: #a5c9d9;
 }
+.zxbrand {
+  background: rgb(0,80,109);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0,80,109,1)), color-stop(37%, rgba(0,80,109,1)), color-stop(78%, rgba(108,154,171,1)), to(rgba(255,255,255,1)));
+  background: linear-gradient(90deg, rgba(0,80,109,1) 0%, rgba(0,80,109,1) 37%, rgba(108,154,171,1) 78%, rgba(255,255,255,1) 100%); 
+  height: 8px;
+  margin: 0; 
+}

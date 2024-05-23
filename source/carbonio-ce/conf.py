@@ -40,7 +40,7 @@ current_year = time.strftime('%Y')
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Carbonio CE'
-copyright = '2023: ZEXTRAS'
+copyright = '2024: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
@@ -120,6 +120,7 @@ html_theme_options = {
     #'primary_sidebar_end': ['survey'],
 }
 html_sidebars = { "**": [ 'navbar-logo.html',
+                          'zxbrand',
                           'search-button-field.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
 

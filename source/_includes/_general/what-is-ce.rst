@@ -11,7 +11,7 @@ software, which consists of
 - File Management System including collaborative editing and document
   sharing
 - Tasks
-- Chat (upcoming)
+- Chat and Video Meeting
 
 Strong points of |ce| include:
 

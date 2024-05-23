@@ -2,10 +2,9 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The password |dbadmpwd| created in the previous step for the
-``carbonio_adm`` role in database is required in this step, in which
-we configure the database required by |product|, by running the
-following commands.
+The password |dbadmpwd| created for the ``carbonio_adm`` role is
+required in this step, in which we configure the databases required by
+|product|, by running the following commands.
 
 .. card:: |file|
 

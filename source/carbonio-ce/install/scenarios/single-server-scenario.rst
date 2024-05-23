@@ -13,10 +13,10 @@
 Automatic Script-based Installation
 ===================================
 
-The installation on supported Ubuntu (**22.04** and 20.04), or RHEL 8
-distributions can be carried out by downloading, editing, and running
-a dedicated **bash script** on the Server on which you want to install
-|product|.
+The installation on supported Ubuntu (**22.04** and **20.04**), or
+**RHEL 8** distributions (support for **RHEL 9** is still in |beta|)
+can be carried out by downloading, editing, and running a dedicated
+**bash script** on the Server on which you want to install |product|.
 
 The script will recognise the version of the OS and execute the steps
 that are described in :ref:`single-install-manual`.
@@ -37,17 +37,30 @@ To correctly run the script, please follow these advices
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
+   .. tab-item:: Ubuntu 20.04
+      :sync: ubu20
+
+      Script for Ubuntu 20.04 and 22.04
+      :download:`/scripts/install_carbonio_ce_singleserver_ubuntu.sh`
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       Script for Ubuntu 22.04 and 20.04
       :download:`/scripts/install_carbonio_ce_singleserver_ubuntu.sh`
 
-   .. tab-item:: RHEL
-      :sync: rhel
+   .. tab-item:: RHEL 8
+      :sync: rhel8
 
       Script for RHEL 8
       :download:`/scripts/install_carbonio_ce_singleserver_rhel.sh`
+
+   .. tab-item:: RHEL 9 |beta|
+      :sync: rhel9
+
+      .. warning:: The script does not yet support RHEL 9 |beta|
+         installations, you need to install manually, see next Section
+         (:ref:`single-install-manual`).
 
 .. _single-install-manual:
 
@@ -74,27 +87,9 @@ Preliminary Task
 ----------------
 
 Before starting the |product| installation, we need to install and
-configure the PostgreSQL database.
+configure the PostgreSQL 16 database.
 
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      First, install PostgreSQL:
-      
-      .. code:: console
-
-         # apt install postgresql-16
-
-      .. include:: /_includes/_installation/ubuntu-pg-conf.rst
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. include:: /_includes/_installation/rhel-pg.rst
-      .. include:: /_includes/_installation/rhel-pg-conf.rst
-
+.. include:: /_includes/_installation/pg-ce.rst
 
 .. _installation-step1:
 
@@ -148,7 +143,7 @@ address (i.e., the one that will accept incoming connections to the
 :file:`/etc/janus/janus.jcfg` and add it if missing: find the variable
 ``nat_1_1_mapping`` and add it, for example::
 
-  ``nat_1_1_mapping = "93.184.216.34"``
+  nat_1_1_mapping = "93.184.216.34"
 
 Finally, enable and start the service with the commands
 
@@ -182,23 +177,16 @@ Step 7: Setup |mesh|
 
 .. _installation-step8:
 
-Step 8: Create Main DB Role and Database for |product|
-------------------------------------------------------
-
-.. include:: /_includes/_installation/step-conf-db.rst
-
-.. _installation-step9:
-
-Step 9: Bootstrap |file| Databases
+Step 8: Bootstrap |file| Databases
 ----------------------------------
 
 .. include:: /_includes/_installation/step-bootstrap-db.rst
 
 .. include:: /_includes/_installation/complete.rst
 
-.. _installation-step10:
+.. _installation-step9:
 
-Step 10: Enable Workstream Collaboration UI :bdg-danger:`BETA`
+Step 9: Enable Workstream Collaboration UI :bdg-danger:`BETA`
 --------------------------------------------------------------
 
 The |wsc| role is disabled by default, you can enable it either from
