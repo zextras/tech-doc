@@ -84,15 +84,16 @@ configure the PostgreSQL database.
       :sync: ubuntu
 
       First, install PostgreSQL:
+
+Note: Postgresql-16 is the latest LTS version of postgresql. Ubuntu 20.04LTS or Ubuntu 22.04LTS does not ship postgresql-16 as the default version. Therefore, to install 
+postgresql-16 we need to add postgres repository in to the system. Before sharing the postgresql repository adding steps, for your information, Ubuntu 22 ships postgresql-14 by default.
       
-      .. code:: console::
+      .. code:: console
+
          # sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
          # wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
          # apt update
          # apt install postgresql-16
-
-Note: Postgresql-16 is the latest LTS version of postgresql. Ubuntu 20.04LTS or Ubuntu 22.04LTS does not ship postgresql-16 as the default version. Therefore, to install 
-postgresql-16 we need to add postgres repository in to the system. Before sharing the postgresql repository adding steps, for your information, Ubuntu 22 ships postgresql-14 by default.
 
       .. include:: /_includes/_installation/ubuntu-pg-conf.rst
 
