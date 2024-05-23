@@ -61,3 +61,8 @@ Thumbs.db
 
 Dockerfile
 Jenkinsfile
+sphinx.po
+bin/
+lib/
+pyvenv.cfg
+*.mo
