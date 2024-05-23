@@ -124,6 +124,7 @@ html_theme_options = {
 html_sidebars = { "**": [ 'navbar-logo.html',
 			  'zxbrand',
                           'search-button-field.html',
+                          'locales.html',
                           'sbt-sidebar-nav.html', 'home.html' ] }
 
 html_context = {
@@ -140,8 +141,8 @@ html_context = {
 
 # list of URLs to ignore
 linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
-                     'https:\/\/my-saml-provider\.org\/',
-                     'https:\/\/notifications.zextras.com\/firebase\/',
+                     'https://my-saml-provider.org',
+                     'https://notifications.zextras.com/firebase',
                      r'https://mycompany.okta.com/.*',
                      r'../../.*' ]
 
