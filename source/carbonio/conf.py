@@ -129,6 +129,8 @@ html_sidebars = { "**": [ 'navbar-logo.html',
 
 html_context = {
     'hubhome' : '%s' %hubhome,
+    'current_language': 'en',
+    'languages': [["en", "../../en/html"], ["de", "../../de/html"]]
     # 'surveytext': 'What do you think about our new Documentation Layout?',
     # 'surveylink': 'https://app.useberry.com/t/jmHPX8uvzq1WOH/?v=24.3 ',
     # 'surveylabel': 'Take the survey',

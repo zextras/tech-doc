@@ -1,0 +1,12 @@
+<div class="rst-other-versions">
+    {% if languages|length >= 1 %}
+    <dl>
+        <dt>{{ _('Languages') }}</dt>
+        {% for the_language, url in languages %}
+        <dd><a href="{{ url }}/index.html">{{ the_language }}</a></dd>
+        {% endfor %}
+    </dl>
+    {% endif %}
+    <br>
+    </dl>
+</div>
