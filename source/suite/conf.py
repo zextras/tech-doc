@@ -95,8 +95,8 @@ html_context = { 'hubhome' : '%s' %hubhome }
 
 # list of URLs to ignore
 linkcheck_ignore = [ r'.*.example.com(:\d+)?.*',
-                     'https:\/\/my-saml-provider\.org\/',
-                     'https:\/\/notifications.zextras.com\/firebase\/',
+                     'https://my-saml-provider.org',
+                     'https://notifications.zextras.com/firebase',
                      r'https://support.zextras.com/',
                      r'https://mycompany.okta.com/.*',
                      r'../../.*' ]

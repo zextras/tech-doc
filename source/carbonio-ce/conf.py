@@ -138,8 +138,8 @@ html_extra_path = ['changelog.html', 'upgrade.html']
 
 # list of URLs to ignore
 linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
-                     'https:\/\/my-saml-provider\.org\/',
-                     'https:\/\/notifications.zextras.com\/firebase\/',
+                     'https://my-saml-provider.org',
+                     'https://notifications.zextras.com/firebase',
                      r'https://mycompany.okta.com/.*',
                      r'../../.*' ]
 
