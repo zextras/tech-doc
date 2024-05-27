@@ -55,3 +55,11 @@ The following meta-labels are available for discovered targets:
 * ``__meta_consul_tagpresent_<tagname>:`` "true" for every tag of the target
       
 * ``__meta_consul_tags:`` the list of tags of the target joined by the tag_separator
+
+.. seealso::
+
+   To connect to the  |mesh| graphic interface, follow the directions
+   in Section :ref:`mesh-gui`.
+
+   Relevant Consul commands that can be used to manage |mesh|,
+   discover services, and more, refer to Section :ref:`ts-mesh`.
