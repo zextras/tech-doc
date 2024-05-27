@@ -28,3 +28,25 @@ following
 
    Logs created by log4j are rotated at 00:00 and compressed by a
    scheduled task.
+
+In table :numref:`tab-logs`, some of the most relevant log files are
+shown, along with their content and the service that creates them.
+
+.. _tab-logs:
+
+.. csv-table:: List of Relevant Log Files
+   :widths: 40 40 20
+   :header: "Log File", "Service", "Content"
+            
+   ":file:`/var/log/carbonio.log`", "syslog", "MTA, LDAP, System"
+   ":file:`/opt/zextras/log/audit.log`", "log4j User and Admins authentication"
+   ":file:`/opt/zextras/log/clamd.log`", "ClamAV", "ClamAV antivirus messages"
+   ":file:`/opt/zextras/log/freshclam.log`", "Freshclam", "Freshclam
+   (ClamAV signature updater) messages" 
+   ":file:`/opt/zextras/log/mailbox.log`", "log4j", "All mailbox activities"
+   ":file:`/opt/zextras/log/nginx.access.log`", "Nginx", "Nginx access logs"
+   ":file:`/opt/zextras/log/zmmailboxd.out`", "Jetty", "``mailboxd`` daemon output"
+   ":file:`/var/log/carbonio/files`", "|file|", "Messages from |file|"
+   ":file:`/var/log/carbonio/docs`", "|docs|", "Messages from |docs|"
+   ":file:`/var/log/carbonio/docs-db-connector`", "|docs|-connector", "Messages from |docs|-connector"
+   ":file:`/var/log/carbonio/preview`", "|pv|", "Messages from |pv|"
