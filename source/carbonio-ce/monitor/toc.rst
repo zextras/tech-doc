@@ -22,4 +22,3 @@ Introduction
       mta
       prometheus
       mesh
-      grafana

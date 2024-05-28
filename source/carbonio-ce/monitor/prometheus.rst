@@ -8,4 +8,5 @@ Prometheus
 .. _tab-prometheus-exporters:
 
 .. include:: /_includes/_monitor/prometheus-exporters-ce.rst
-   
+
+.. include:: /_includes/_monitor/grafana.rst
