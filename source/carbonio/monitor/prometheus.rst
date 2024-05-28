@@ -9,4 +9,5 @@ Prometheus
 
 .. include:: /_includes/_monitor/prometheus-exporters.rst
 
+.. include:: /_includes/_monitor/grafana.rst
 
