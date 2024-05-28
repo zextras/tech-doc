@@ -118,6 +118,19 @@ The content is organised in multiple parts:
 
          usage/toc
 
+   .. grid-item-card:: Monitoring
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: monitor/toc
+
+      |product| monitoring and related  resources
+
+      .. toctree::
+         :hidden:
+
+         monitor/toc
+                  
    .. grid-item-card:: API
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
