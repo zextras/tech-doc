@@ -206,21 +206,30 @@ actions are available
    :gutter: 3
 
    .. grid-item-card:: Composing an e-mail
-      :columns: 4
+      :columns: 6
 
       While composing an e-mail, any file can be added as an
       attachment for either a local directory on the workstation or on
       the user's personal storage on |file|.
    
    .. grid-item-card:: Inline Attachments
-      :columns: 4
+      :columns: 6
 		
       Images on the local workstation can be included as inline
       attachments in the body of the e-mails, using the button in the
       bar above the editor to select them.
+   
+   .. grid-item-card:: Large Attachments
+      :columns: 6
+
+      When attaching large attachments to an e-mail, that may not be
+      delivered due to an MTA mail server limitations, it is possible
+      to convert them in *Smart Links*. Instead of sending the
+      attachment, it will be replaced by a generated URL. The receiver
+      will be able to retrieve the attachment by clicking the URL.
       
    .. grid-item-card:: Receiving an e-mail
-      :columns: 4
+      :columns: 6
 
       When receiving an e-mail with attachments, the user has the
       option to either download the file to a local directory on the
