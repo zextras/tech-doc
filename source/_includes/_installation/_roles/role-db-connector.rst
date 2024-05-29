@@ -7,7 +7,7 @@
 
          # apt install carbonio-files-db carbonio-mailbox-db \
            carbonio-docs-connector-db carbonio-tasks-db \
-           service-discover-agent
+           carbonio-storages service-discover-agent
 
 
  
@@ -18,4 +18,4 @@
 
          # dnf install carbonio-files-db carbonio-mailbox-db \
            carbonio-docs-connector-db carbonio-tasks-db \
-           service-discover-agent
+           carbonio-storages service-discover-agent
