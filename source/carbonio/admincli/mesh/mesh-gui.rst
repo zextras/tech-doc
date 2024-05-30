@@ -22,13 +22,12 @@ Requirements
 
 In order to successfully complete two tasks described below, you will
 need the **cluster credential password** that was defined during the
-|mesh| installation.
+|mesh| installation and that is stored in file
+:file:`/var/lib/service-discover/password`, which is accessible only
+by the ``root`` user.
 
-.. card::
+.. card:: Create Token
    :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 2. Create Token
-   ^^^^^
 
    You need to create a **bootstrap token** that will be used to
    create any additional token.
@@ -44,12 +43,8 @@ need the **cluster credential password** that was defined during the
       block of |mesh| and should only be used to create other tokens:
       if lost, **all tokens must be regenerated**, so keep it safe!
 
-
-.. card::
+.. card:: Create tunnel
    :class-header: sd-font-weight-bold sd-fs-5
-
-   Step 3. Create tunnel
-   ^^^^^
 
    .. code:: console
 
