@@ -19,11 +19,25 @@ few actions on it:
   the e-mail was marked as spam
 
 * Remove infected attachments from the e-mail and deliver the e-mail
-  to the recipient
+  to the recipient (see box below).
 
   .. note:: If the e-mail still has infected attachments, it will not
      be delivered.
+ 
 
 * Download the message and share it with the recipient
 
 * Delete the e-mail
+
+.. card:: Removing attachments from infected e-mails
+   
+   To remove one or more attachments from an infected e--mail, hover
+   on the name of the attachment and click the thrash bin icon
+
+   .. image:: /img/adminpanel/ap-quarantine.png
+      :scale: 80%
+      :align: center
+
+   Once all the infected attachments have been removed, click the
+   :bdg-primary-line:`DELIVER` button to complete the delivery of the
+   e-mail to the intended recipient.
