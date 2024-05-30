@@ -3,13 +3,13 @@ Grafana Installation
 
 Before installing Grafana, download the Grafana GPG key, add it to
 your APT installation's list of trusted keys and put the Grafana
-repository to your APT sources
+repository to your APT sources.
 
 .. tab-set::
 
    .. tab-item:: Ubuntu 20.04
       :sync: ubu20
-             
+
       .. code:: console
 
          # wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
@@ -18,7 +18,7 @@ repository to your APT sources
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
-             
+
       .. code:: console
 
          # wget -q -O - https://packages.grafana.com/gpg.key | \
@@ -29,11 +29,11 @@ repository to your APT sources
          https://packages.grafana.com/oss/deb stable main" | sudo \
          tee -a /etc/apt/sources.list.d/grafana.list
 
-   .. tab-item:: RHEL 
+   .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
-                
+
          # wget -q -O gpg.key https://rpm.grafana.com/gpg.key
          # rpm --import gpg.key
 
@@ -49,37 +49,37 @@ repository to your APT sources
         gpgkey=https://rpm.grafana.com/gpg.key
         sslverify=1
         sslcacert=/etc/pki/tls/certs/ca-bundle.crt
-             
-Install Grafana
+
+Install Grafana packages.
 
 .. tab-set::
 
    .. tab-item:: Ubuntu 20.04
-      :sync: ubu20            
+      :sync: ubu20
 
       .. code:: console
 
          # apt update
-         # apt install grafana 
-       
+         # apt install grafana
+
    .. tab-item:: Ubuntu 22.04
-      :sync: ubu22            
+      :sync: ubu22
 
       .. code:: console
 
          # apt update
-         # apt install grafana 
-      
-   .. tab-item:: RHEL 
+         # apt install grafana
+
+   .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install grafana 
+         # dnf install grafana
 
 Start Grafana service and check Grafana status. If everything is work
 correctly, you can enable the service to automatically start Grafana
-on boot
+on boot.
 
 .. code:: console
 
@@ -149,20 +149,25 @@ Grafana datasource config
    connection was configured correctly. If the connection is
    successful, save the data source.
 
-Import Carbonio dashboards
-++++++++++++++++++++++++++
+.. index:: Grafana Dashboards
+
+.. _grafana-dashboard-import:
+
+Import Dashboards
++++++++++++++++++
 
 A dashboard in Grafana is a visual representation of data designed to
 provide a comprehensive and real-time overview of various metrics and
 information.  Dashboards are customizable and can contain panels that
 display graphs, tables, heatmaps, and other visualizations based on
-the data queried from connected data sources. |zx| created some 
-specific dashboards necessary for comfortable monitoring, they can be
-easily imported from the Grafana marketplace as follows
+the data queried from connected data sources. The |zx| Team has
+prepares some specific dashboards necessary for comfortable
+monitoring, that can be easily imported from the Grafana marketplace
+as follows.
 
 #. Access the Grafana web interface
 
-#. In the left sidebar, select “Dashboards" 
+#. In the left sidebar, select “Dashboards"
 
 #. Click  "New" → “Import“ to open the import page.
 
@@ -183,7 +188,7 @@ These steps will allow you to quickly import a dashboard into Grafana using its 
 
 .. card:: List of Grafana dashboards and IDs
 
-   .. list-table:: 
+   .. list-table::
       :widths: 25 25 40
       :header-rows: 1
 
@@ -197,7 +202,7 @@ These steps will allow you to quickly import a dashboard into Grafana using its 
         - Information about MTA queues: statuses, size
         - 20029
       * - **Carbonio Mailbox**
-        - Information about the  mailbox like load, protocols, counters and db 
+        - Information about the  mailbox like load, protocols, counters and db
         - 20027
       * - **NGINX exporter**
         - Standard dashboard from Grafana

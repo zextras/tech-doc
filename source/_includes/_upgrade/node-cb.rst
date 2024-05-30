@@ -48,7 +48,7 @@ Server, then all the other in the same order of installation.
 
             .. code:: console
 
-               # apt update && apt upgrade
+               # apt update && apt dist-upgrade
 
          .. tab-item:: RHEL
             :sync: rhel

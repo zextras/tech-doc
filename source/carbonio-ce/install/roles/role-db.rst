@@ -8,6 +8,8 @@ Database
 Installation of PostgreSQL
 --------------------------
 
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+
 .. include:: /_includes/_installation/pg-ce.rst
 
 Installation of |product| databases

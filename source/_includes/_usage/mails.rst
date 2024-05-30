@@ -200,34 +200,44 @@ Attachments Management
 
 |product| supports e-mail attachments; depending whether the e-mail is
 written before it is sent or it has been received, the following
-actions are available
+actions are available.
+
+.. index:: ! Smart Link
 
 .. grid:: 1 1 2 2
    :gutter: 3
 
    .. grid-item-card:: Composing an e-mail
-      :columns: 4
+      :columns: 6
 
       While composing an e-mail, any file can be added as an
       attachment for either a local directory on the workstation or on
       the user's personal storage on |file|.
    
    .. grid-item-card:: Inline Attachments
-      :columns: 4
+      :columns: 6
 		
       Images on the local workstation can be included as inline
       attachments in the body of the e-mails, using the button in the
       bar above the editor to select them.
-      
+   
+   .. grid-item-card:: Large Attachments
+      :columns: 6
+
+      When attaching large attachments to an e-mail, that may not be
+      delivered due to an MTA mail server limitations, it is possible
+      to convert them in :term:`Smart Links <Smart Link>` by clicking
+      on the small icon :octicon:`link` that appears when hovering on
+      the attachment.
+
    .. grid-item-card:: Receiving an e-mail
-      :columns: 4
+      :columns: 6
 
       When receiving an e-mail with attachments, the user has the
       option to either download the file to a local directory on the
       workstation, or to save it in the user's personal's storage on
       |file|, even if the attachment comes from a mail in a shared
       account.
-      
 
 .. _mail-trash-folder:
 

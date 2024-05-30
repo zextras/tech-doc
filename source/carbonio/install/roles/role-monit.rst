@@ -38,8 +38,12 @@ To complete the installation, restart prometheus service with:
 
    # systemctl restart carbonio-prometheus
 
-Grafana Installation and Configration
--------------------------------------
+.. _grafana-install:
+
+.. _grafana-conf:
+
+Grafana Installation and Configuration
+--------------------------------------
 
 As mentioned above, Grafana requires some manual interaction before
 and after the installation to install also some necessary plugin and
