@@ -36,3 +36,8 @@
      An **Attendee** is a user (external or internal) that is part of
      an appointment.
    
+   Smart Link
+     A **Smart Link** is a generated URL that, while composing an
+     e-mail, replaces an attachment that exceeds the maximum allowed
+     size on either the sender or receiver side.  The receiver will be
+     able to retrieve the attachment by clicking the URL.
