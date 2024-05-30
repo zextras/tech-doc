@@ -200,7 +200,9 @@ Attachments Management
 
 |product| supports e-mail attachments; depending whether the e-mail is
 written before it is sent or it has been received, the following
-actions are available
+actions are available.
+
+.. index:: ! Smart Link
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -224,10 +226,10 @@ actions are available
 
       When attaching large attachments to an e-mail, that may not be
       delivered due to an MTA mail server limitations, it is possible
-      to convert them in *Smart Links*. Instead of sending the
-      attachment, it will be replaced by a generated URL. The receiver
-      will be able to retrieve the attachment by clicking the URL.
-      
+      to convert them in :term:`Smart Links <Smart Link>` by clicking
+      on the small icon :octicon:`link` that appears when hovering on
+      the attachment.
+
    .. grid-item-card:: Receiving an e-mail
       :columns: 6
 
@@ -236,7 +238,6 @@ actions are available
       workstation, or to save it in the user's personal's storage on
       |file|, even if the attachment comes from a mail in a shared
       account.
-      
 
 .. _mail-trash-folder:
 
