@@ -1,5 +1,5 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. _backup_restore-strategies:
@@ -626,3 +626,121 @@ Running a volume-wide deduplication with the Zextras Powerstore component
 is highly recommended after an External Restore, since the native
 deduplication system might be ineffective when sequentially importing
 accounts.
+
+.. _ext-restore-s3:
+
+External Restore from an S3 Bucket
+==================================
+
+In this scenario, there is an existing |product| infrastructure,
+**Carbonio A**, which uses as **S3** bucket for its backups. Since
+Carbonio A is being decommissioned, it is necessary to move all e-mail
+and :ref:`items <item>` to the new infrastructure, **Carbonio B**. To
+accomplish this goal, we use |product|'s *External Restore*
+functionality. The remainder of this section provides detailed
+guidelines to complete this procedure.
+
+.. card:: Preliminaries
+
+   * Please review carefully this whole section before you actually
+     start executing the commands
+
+   * All the :command:`carbonio` commands must be executed as the
+     zextras user
+
+   * You can add the ``--progress`` option to all :command:`carbonio`
+     commands to follow the progress of the commands: this is most
+     useful with the last two commands, which actually restore the backup
+
+   * All commands mentioned in this procedure must be executed on the
+     **Carbonio B** infrastructure, and precisely on the Node on which
+     the :ref:`role-prov-install` Role is installed
+
+Create Directories
+------------------
+
+First, start from the creation of the directories that will be used
+for the restore, as the ``root`` user
+
+.. code:: console
+          
+   # mkdir /opt/zextras/restore
+   # mkdir /opt/zextras/cache
+
+Then assign them the correct permissions
+
+.. code:: console
+          
+   # chown zextras:zextras /opt/zextras/restore
+   # chown zextras:zextras /opt/zextras/cache
+
+Configure S3 Bucket
+-------------------
+
+Use the Bucket data from the *Carbonio A* infrastructure to configure
+the bucket on the *Carbonio B* infrastructure.
+
+.. code:: console
+
+   zextras$ carbonio core doCreateBucket S3 MyBucketName \
+   X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket url \
+   https://example_bucket_provider.com
+
+The following values are used in the example above.
+
+* S3 as the type of bucket
+
+* BucketName as the name of the bucket, which must coincide with
+  the name on the remote provider, otherwise the command will fail
+
+* X58Y54E5687R543 as the remote username (access_key)
+
+* abCderT577eDfjhf as the remote password (bucket_name)
+
+* My_New_Bucket is a label given to the bucket
+
+* https\://example_bucket_provider.com is the endpoint to which
+  Carbonio Storage connects to the bucket
+
+Test that the connection works:
+
+.. code:: console
+   
+   zextras$ carbonio core testS3Connection BucketVolumeID
+
+Initialise Backup
+-----------------
+
+The Backup Module must be initialised, so run the following command
+to make sure it is running.
+
+.. code:: console
+          
+   zextras$ carbonio backup doSmartScan start
+
+.. hint:: Whenever you must create manually a backup or carry out any
+   restore, always run this command, to make sure that the SmartScan
+   is running.
+
+Restore Backup
+--------------
+
+The actual restore takes place in two steps. Start from restoring the
+backup's metadata
+
+.. code:: console
+
+   zextras$ carbonio backup retrieveMetadataFromArchive S3 \
+   /opt/zextras/restore/ bucket_configuration_id <BUCKET_VOLUME_ID>
+      
+Finally, start the restore
+
+.. code:: console
+
+   zextras$ carbonio backup doExternalRestore /opt/zextras/restore/ \
+   blobs_archive <BUCKET_VOLUME_ID>
+
+You can follow how the restore advances by adding the ``--progress``
+option. As soon as the restore ends, the Global Administrator will
+receive a notification with all the process details.
+
