@@ -118,6 +118,10 @@ up.
 
    - Enable the :ref:`smartscan` and its scheduling
 
+     .. note:: Make sure that SmartScan is always running whenever you
+        want to make any backup or restore operations, otherwise they
+        will not be successful!
+
    - Change the :ref:`retention_policy`
 
 .. _backup-architecture:
@@ -129,8 +133,15 @@ This section introduces the main concepts needed to understand the
 architecture of |backup| and outlines their interaction; each
 concept is then detailed in a dedicated section.
 
-Foremost, |backup| can be configured only on the nodes equipped with
-the Mailstore & Provisioning role.
+Foremost, |backup| can be configured, and is executed, only on the
+Nodes equipped with the **Mailstore & Provisioning Role**. In case
+multiple Mailstore & Provisioning Roles are installed, a |backup| must
+be configured for each Node: they will be completely separated and
+independent from each other, therefore you need to configure them to
+use different buckets or storage devices.
+You can however centralise the backup on the same NAS: create
+different partitions on it, then add the appropriate Backup Path to
+each Backups.
 
 Then, before entering in the architecture of |backup|, we recall two
 general approaches that are taken into account when defining a backup
@@ -235,13 +246,21 @@ is enabled in the |adminui|.
 .. warning:: If none of the two Scan Operations is active, no backup
    is created!
 
+     .. note:: Make sure that SmartScan is always running whenever you
+        want to make any backup or restore operations, otherwise they
+        will not be successful!
+
 SmartScan runs at a fixed time—​that can be configured—​on a daily basis
 and is not deferred. This implies that, if for any reason (like e.g.,
 the server is turned off, or |carbonio| is not running), SmartScan
 does **not run**, it will **not run** until the next day. You may
 however configure the Backup to run the SmartScan every time
 |carbonio| is restarted (although this is discouraged), or you may
-manually run SmartScan to compensate for the missing run.
+manually run SmartScan to compensate for the missing run. 
+
+.. note:: Make sure that SmartScan is always running whenever you want
+   to make any backup or restore operations, otherwise they will not
+   be successful!
 
 SmartScan’s main purpose is to check for items modified since its
 previous run and to update the database with any new information.
@@ -619,7 +638,11 @@ SmartScan
 
 The SmartScan operates only on accounts that have been modified since
 the previous SmartScan, hence it can improve the system’s performances
-and decrease the scan time exponentially.
+and decrease the scan time exponentially. 
+
+Therefore, SmartScan must be running whenever you want to make any
+backup or restore operations, because otherwise they will not be
+successful.
 
 By default, a SmartScan is scheduled to be executed each night (if
 ``Scan Operation Scheduling`` is enabled in the |backup| section of
@@ -647,7 +670,7 @@ restore a broken configuration.
    ignore to back up the Directory Server configuration, but will
    nonetheless save a backup of all the remaining configuration
 
-When the  External Restore functionality is active, SmartScan
+When the External Restore functionality is active, SmartScan
 creates one (daily) archive for each account which include all the
 account’s metadata and stores it on the external volume. More
 information in section :ref:`backup_on_external_storage`.
