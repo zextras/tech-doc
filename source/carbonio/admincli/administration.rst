@@ -30,9 +30,6 @@ on the domains configured on |product|.
 :ref:`le-renew` shows how to renew a Let's Encrypt-generated
 certificate, either manually or automatically.
 
-:ref:`mailboxmove` shows how to move an account from one server to
-another one.
-
 :ref:`disclaimer-cli` contains useful commands to manage domain disclaimers
      
 .. toctree::
@@ -45,5 +42,4 @@ another one.
    administration/setting-features
    administration/billing-data
    administration/letsencrypt
-   administration/move-account
    administration/domaindisclaimer
