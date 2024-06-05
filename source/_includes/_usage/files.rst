@@ -37,6 +37,20 @@ done on files and folders
    While uploading new files, a badge shows the completed and total
    number of documents being uploaded.
 
+   Failed uploads will be denoted by a red icon
+   :material-outlined:`error;1.5em;sd-text-danger` along the badge. If
+   you click it, the full list of failed uploads will be
+   displayed. You can retry the upload by clicking the item in the
+   list.
+
+   In case the upload quota is exceeded while uploading one or more
+   files, a red banner will appear on the top of the window; to
+   successfully complete the uploads, you either need to delete
+   existent files or ask for more storage to the admin.
+
+   .. note:: The red banner can not be closed and will disappear on ly
+      when there is enough space to complete the upload.
+
 .. card:: Create new Folder and Files
 
    To create a new item in |File|, use the right mouse button in the
