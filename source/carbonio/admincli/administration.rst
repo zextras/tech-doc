@@ -43,3 +43,4 @@ certificate, either manually or automatically.
    administration/billing-data
    administration/letsencrypt
    administration/domaindisclaimer
+   administration/analytics
