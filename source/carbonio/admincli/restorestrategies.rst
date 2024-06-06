@@ -695,7 +695,7 @@ The following values are used in the example above.
 
 * X58Y54E5687R543 as the remote username (access_key)
 
-* abCderT577eDfjhf as the remote password (bucket_name)
+* abCderT577eDfjhf as the remote password (secret_key)
 
 * My_New_Bucket is a label given to the bucket
 
