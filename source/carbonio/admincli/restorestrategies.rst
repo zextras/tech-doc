@@ -633,7 +633,7 @@ External Restore from an S3 Bucket
 ==================================
 
 In this scenario, there is an existing |product| infrastructure,
-**Carbonio A**, which uses as **S3** bucket for its backups. Since
+**Carbonio A**, which uses an **S3** bucket for its backups. Since
 Carbonio A is being decommissioned, it is necessary to move all e-mail
 and :ref:`items <item>` to the new infrastructure, **Carbonio B**. To
 accomplish this goal, we use |product|'s *External Restore*
@@ -690,7 +690,7 @@ The following values are used in the example above.
 
 * S3 as the type of bucket
 
-* BucketName as the name of the bucket, which must coincide with
+* MyBucketName as the name of the bucket, which must coincide with
   the name on the remote provider, otherwise the command will fail
 
 * X58Y54E5687R543 as the remote username (access_key)
@@ -701,6 +701,9 @@ The following values are used in the example above.
 
 * https\://example_bucket_provider.com is the endpoint to which
   Carbonio Storage connects to the bucket
+
+.. note:: In case you are using an **Amazon S3** bucket, you need to
+   add also the *Region* to the above command.
 
 Test that the connection works:
 
