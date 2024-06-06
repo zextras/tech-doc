@@ -62,7 +62,7 @@ PostgresQL's correct version, 16.
 
          .. code:: console
 
-            # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-9-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel8.x86_64.rpm
+            # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-9-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel9.x86_64.rpm
 
 .. _upgrade-nodes:
 

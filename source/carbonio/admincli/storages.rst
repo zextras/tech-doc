@@ -914,11 +914,8 @@ attributes.
 .. grid::
    :gutter: 2
 
-   .. grid-item-card::
+   .. grid-item-card:: **zimbrarefDedupeMessagesSentToSelf**
       :columns: 3
-
-      **zimbrarefDedupeMessagesSentToSelf**
-      ^^^^^
 
       Used to set the deduplication behavior for sent-to-self
       messages::
@@ -929,11 +926,8 @@ attributes.
            <desc>dedupeNone|secondCopyIfOnToOrCC|moveSentMessageToInbox|dedupeAll</desc>
          </attr>
 
-   .. grid-item-card::
+   .. grid-item-card:: **zimbraMessageIdDedupeCacheSize**
       :columns: 3
-
-      **zimbraMessageIdDedupeCacheSize**
-      ^^^^
 
       Number of cached Message IDs::
 
@@ -946,11 +940,8 @@ attributes.
            </desc>
          </attr>
 
-   .. grid-item-card::
+   .. grid-item-card:: **zimbraPrefMessageIdDedupingEnabled**
       :columns: 3
-
-      **zimbraPrefMessageIdDedupingEnabled**
-      ^^^^
 
       Manage deduplication at account or COS-level::
 
@@ -963,11 +954,8 @@ attributes.
            </desc>
          </attr>
 
-   .. grid-item-card::
+   .. grid-item-card:: **zimbraMessageIdDedupeCacheTimeout**
       :columns: 3
-
-      **zimbraMessageIdDedupeCacheTimeout**
-      ^^^^
 
       Timeout for each entry in the dedupe cache::
 
@@ -1108,11 +1096,8 @@ of thereby contained items/blobs.
 .. grid::
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: doCheckBlobs
       :columns: 6
-
-      doCheckBlobs
-      ^^^^
 
       .. dropdown:: CLI full reference
 
@@ -1145,22 +1130,15 @@ of thereby contained items/blobs.
          replaced by ``carbonio powerstore doCheckBlobs`` on all
          infrastructures using |storage| module.
 
-   .. grid-item-card::
+   .. grid-item-card:: doDeduplicate
       :columns: 6
-
-      doDeduplicate
-      ^^^^
 
       .. dropdown:: CLI full reference
 
          .. include:: /_includes/_carboniocli/carbonio_powerstore_doDeduplicate.rst
 
-   .. grid-item-card::
+   .. grid-item-card:: doVolumeToVolumeMove
       :columns: 6
-
-
-      doVolumeToVolumeMove
-      ^^^^
 
       .. dropdown:: CLI full reference
 
@@ -1185,12 +1163,8 @@ of thereby contained items/blobs.
       .. hint:: Starting from version 3.0.10, |storage| can also
          move "Index" volumes.
 
-   .. grid-item-card::
+   .. grid-item-card:: getVolumeStats
       :columns: 6
-
-
-      getVolumeStats
-      ^^^^^^^^^^^^
 
       .. dropdown:: CLI full reference
 
@@ -1231,4 +1205,29 @@ following data to the output:
    "show_volume_size", "totSize", "Total disk space used"
    "show_blob_num", "blobNumber", "Number of BLOB files"
 
+   
+.. index:: Move account
 
+.. _mailboxmove:
+
+Moving an Account Across Servers
+================================
+
+Moving an account from one server to another within the same |product|
+infrastructure can be done using command :command:`carbonio powerstore
+mailboxMove` from the CLI interface. The command will take care of
+moving the account including everything associated to it: e-mails,
+contacts, calendars, and Chats blobs.
+
+The syntax of the command is
+
+.. code:: console
+
+   zextras$ carbonio powerstore *destination server* accounts *account name*
+
+To move account ``alice@example.com`` to server ``example.net``
+including all its blobs, the command is
+
+.. code:: console
+
+   zextras$ carbonio powerstore example.net accounts alice@example.com

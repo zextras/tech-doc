@@ -13,9 +13,11 @@ development teams improve the product. These options are available:
   configuration and log files that will help developers to better
   identify the problem
 
-* *Allow data analytics*. Usage data are collected and sent to the
-  |zx| developers to help them understand which are the most used
-  |product| features and improve them.
+* *Allow data analytics*. Amomymous usage data are collected and sent
+  to the |zx| developers to help them understand which are the most
+  used |product| features and improve them. This option can be
+  modified from the CLI, please refer to Section :ref:`cli-analytics`
+  for more information.
 
 * *Allow surveys for feedback*. When active, the user is invited to
   participate to surveys that will help |zx| understand which are the
