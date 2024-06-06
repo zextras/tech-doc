@@ -1,8 +1,10 @@
 A Resource is a generic object that can be assigned an e-mail address,
 but, unlike other regular accounts, they do not need any signature, so
-you can not specify one. A typical example of a Resource is a
-**meeting room**: to reserve the room, send an e-mail to the room's
-e-mail address.
+you can not specify one.
+
+A Resource can be either of type **Meeting Room** or **Equipment**:
+to reserve either of them, send an e-mail to the assigned e-mail
+address.
 
 A policy can be assigned to Resource, to determine how to react to the
 booking request, either a manual or automatic acceptance or rejection.

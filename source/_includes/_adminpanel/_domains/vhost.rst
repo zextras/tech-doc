@@ -12,8 +12,8 @@ procedure that requires only a few steps.
    can be carried out from the CLI only: check out section
    :ref:`install-SSL-cert` if you need to use either of them.
 
-Select the virtual host, then click :blue:`UPLOAD AND VERIFY
-CERTIFICATE`. In the dialog, you can choose to use:
+Select the virtual host, then click :blue:`VERIFY CERTIFICATE`. In the
+dialog, you can choose to use:
 
 * A Let's Encrypt *longChain* Certificate, i.e., including an
   intermediate certificate. Make sure to :ref:`satisfy the

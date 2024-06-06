@@ -1,3 +1,7 @@
+
+Mail Transfer Agent
+===================
+
 An |mta| is a software application with the purpose to send e-mail
 messages from a server to another one. This section of the |adminui|
 allows to configure how |product| manages and interacts with the
@@ -275,3 +279,36 @@ messages appears. Selecting a messages allows to carry out some
 actions: put it on :bdg-primary-line:`HOLD`;
 :bdg-primary-line:`RELEASE`, :bdg-primary-line:`REQUEUE`, or
 :bdg-primary-line:`DELETE` it.
+
+.. _ap-mta-single:
+
+Single Server
+=============
+
+Options in this section are configured on each server separately.
+
+General
+-------
+
+The first option is to enable authentication for the MTA server. It
+should always be active, because otherwise anyone can access it and
+use it to send email, without the need for an account.
+
+The **My Network** option is the same used by postfix: Clients
+connecting from from the subnets that are specified in this option
+will be allowed to send e-mails skipping some checks (antivirus and
+Antispam). Clients connecting from outside these subnets will be
+allowed to send e-mail using this server only after passing these
+checks.
+
+It is then possible to provide a **Relay Host**: |product| will then
+forward all the e-mails to this server, which will then take care of
+all checks and of the actual delivery of the e-mail to the recipients.
+
+In case the server does not deliver e-mails to other remote servers on
+the Internet (i.e., it is used only for local e-mail delivery), junk
+and Spam levels can be reduced, while some checks can be disabled: the
+outbound messages, DKIM status and Antivirus.
+
+The **Logging** option are the same that are defined in
+:menuselection:`MTA --> Advanced` (See :ref:`ap-mta-adv`).
