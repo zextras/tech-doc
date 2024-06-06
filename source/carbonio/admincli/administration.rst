@@ -30,8 +30,10 @@ on the domains configured on |product|.
 :ref:`le-renew` shows how to renew a Let's Encrypt-generated
 certificate, either manually or automatically.
 
-:ref:`disclaimer-cli` contains useful commands to manage domain disclaimers
-     
+:ref:`disclaimer-cli` contains useful commands to manage domain disclaimers.
+
+:ref:`cli-analytics` explains how to enable or disable analytics.
+
 .. toctree::
    :hidden:
 
