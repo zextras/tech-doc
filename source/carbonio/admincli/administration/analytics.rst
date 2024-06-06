@@ -13,42 +13,46 @@ and both are **disabled** by default, meaning that no usage data is
 collected and sent to |zx| without the explicit consent of the
 |product| Administrators.
 
-The first attribute is called ``carbonioSendAnalytics``, which is
-available only to :ref:`ap-global-admins` and is part of the global
-configuration, i.e., it is valid for the whole |product|
-infrastructure.
+.. card:: carbonioSendAnalytics
 
-To get its current value, use command
+   The first attribute is called ``carbonioSendAnalytics``, which is
+   available only to :ref:`ap-global-admins` and is part of the global
+   configuration, i.e., it is valid for the whole |product|
+   infrastructure.
 
-.. code:: console
+   To get its current value, use command
 
-   zextras$ carbonio prov gcf carbonioSendAnalytics
+   .. code:: console
 
-To enable the analytics, use command
+      zextras$ carbonio prov gcf carbonioSendAnalytics
 
-.. code:: console
+   To enable the analytics, use command
 
-   zextras$ carbonio prov mcf carbonioSendAnalytics TRUE
+   .. code:: console
 
-To disable, replace :command:`TRUE` with ``FALSE``.
- 
-The other attribute is available at COS and Account level and is
-available to the :ref:`ap-domain-admins`.
+      zextras$ carbonio prov mcf carbonioSendAnalytics TRUE
 
-To get its current value for the COS named *default*, use command
+   To disable, replace ``TRUE`` with ``FALSE``.
 
-This attribute can also be modified from the |adminui| by using the
-*Allow data analytics* switch under :menuselection:`Admin Panel -->
-Privacy` (see Section :ref:`ap-privacy`).
+   This attribute can also be modified from the |adminui| by using the
+   *Allow data analytics* switch under :menuselection:`Admin Panel -->
+   Privacy` (see Section :ref:`ap-privacy`).
 
-.. code:: console
+.. card:: carbonioPrefSendAnalytics
+   
+   The other attribute is called ``carbonioPrefSendAnalytics``, and can
+   be modified by the :ref:`ap-domain-admins` at COS and Account level.
 
-   zextras$ carbonio prov gc default carbonioPrefSendAnalytics
+   To get its current value for the COS named *default*, use command
 
-To enable the analytics in the same COS, use command
+   .. code:: console
 
-.. code:: console
+      zextras$ carbonio prov gc default carbonioPrefSendAnalytics
 
-   zextras$ carbonio prov mc default carbonioPrefSendAnalytics FALSE
+   To enable the analytics in the same COS, use command
 
-To disable, replace :command:`TRUE` with ``FALSE``.
+   .. code:: console
+
+      zextras$ carbonio prov mc default carbonioPrefSendAnalytics FALSE
+
+   To disable, replace ``TRUE`` with ``FALSE``.
