@@ -25,6 +25,8 @@ certificate, either manually or automatically.
 
 :ref:`disclaimer-cli` contains useful commands to manage domain disclaimers
      
+:ref:`cli-analytics` explains how to enable or disable analytics.
+
 .. toctree::
    :hidden: 
 
@@ -34,3 +36,4 @@ certificate, either manually or automatically.
    management/setting-features
    management/letsencrypt
    management/domaindisclaimer
+   management/analytics
