@@ -19,14 +19,12 @@ Previous Releases
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card::
+   .. grid-item-card:: Release series 3.X.0
       :columns: 6
-
-      Release series 3.X.0
-      ^^^^^
       
       .. toctree::
 
+         Release 3.19.0 </changelogs/3.19.0.rst>
          Release 3.18.0 </changelogs/3.18.0.rst>
          Release 3.17.0 </changelogs/3.17.0.rst>
          Release 3.16.1 </changelogs/3.16.1.rst>
@@ -46,11 +44,8 @@ Previous Releases
          Release 3.3.0 </changelogs/3.3.0.rst>
          Release 3.2.0 </changelogs/3.2.0.rst>
 
-   .. grid-item-card::
+   .. grid-item-card:: Release series 3.1.X
       :columns: 6
-
-      Release series 3.1.X
-      ^^^^^
       
       .. toctree::
 
