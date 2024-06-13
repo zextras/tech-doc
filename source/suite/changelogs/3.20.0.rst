@@ -1,0 +1,49 @@
+.. uncomment for next release (3.21.0)
+
+   Zextras Suite Changelog - Release 3.20.0
+   ========================================
+
+      Release Date: Jun 17, 2024
+
+== Solved Issues
+
+.. rubric:: Auth
+
+* *Issue ID:* AUTH-525
+
+* *Title:* Invalid password logging enhancement for custom auth
+
+* *Description:* The system now logs invalid password attempts with originating IP when custom:zx authentication is configured.
+
+..
+
+* *Issue ID:* AUTH-534
+
+* *Title:* Temporary auth link expiration correction
+
+* *Description:* The description for the expiration time of Temporary Auth Links has been corrected to reflect the actual validity period of 5 minutes instead of 12 hours.
+
+.. rubric:: Core
+
+* *Issue ID:* CO-973
+
+* *Title:* Jgroup synchronization improved
+
+* *Description:* Improved how Jgroup synchronizes the configuration between the nodes in large environments.
+
+..
+
+* *Issue ID:* CO-1050
+
+* *Title:* Integrate domain-based custom login page
+
+* *Description:* Now the admin can configure the domain-based custom authentication login page to allow for tailored authentication experiences based on specific domains.
+
+.. rubric:: Mobile
+
+* *Issue ID:* MOB-423
+
+* *Title:* Calendar invite acceptance on iOS
+
+* *Description:* The system now correctly handles the acceptance and rejection of calendar invites via mobile devices using EAS on iOS.
+
