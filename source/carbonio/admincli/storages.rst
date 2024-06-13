@@ -116,46 +116,9 @@ represents the API endpoint of the Object Storage and needs to be written
 in a format understandable by the Object Storage itself.
 
 In our example, we use an S3 Bucket; to set up a different type of
-bucket simply use the appropriate command for it.
-
-#. Create an S3 bucket using the command :command:`doCreateBucket`
-
-   .. code:: console
-
-      zextras$ carbonio core doCreateBucket S3 MyBucketName \
-      MyBucketUser MyBucketPassword ALabelForMyBucket url \
-      http://s3nas.example.com:9000
-
-   In this example, we use the following values:
-
-   * **S3** as the type of bucket
-   * **BucketName** as the name of the bucket, which *must coincide*
-     with the name on the remote provider, otherwise the command will
-     fail
-   * **X58Y54E5687R543** as the remote username
-   * **abCderT577eDfjhf** as the remote password
-   * **My_New_Bucket** is a label given to the bucket
-   * **https://example_bucket_provider.com** is the endpoint to which
-     |storage| connects to the bucket
-
-     .. note:: Pay attention to the format of the URL, because some
-        provider might require that also the port be specified as part
-        of the URL or that the IP address be used instead of the URL.
-
-   When successful, the command outputs the *bucket UUID*, that is, a
-   string the uniquely identifies the bucket, for example
-   **60b8139c-d56f-4012-a928-4b6182756301**. Take note of it because
-   it is required in the remainder of the procedure.
-
-#. Test the connection using the bucket ID received in the previous
-   step (**60b8139c-d56f-4012-a928-4b6182756301**):
-
-   .. code:: console
-
-     zextras$ carbonio core testS3Connection 60b8139c-d56f-4012-a928-4b6182756301
-
-   If the command is successful you will see the message ``connection
-   ok``.
+bucket simply use the appropriate command for it. To create a bucket,
+please refer to section :ref:`create-bucket`. Remember to write down
+the **Bucket ID**, because it is necessary in this procedure.
 
 #. On the first Mailstore & Provisioning Node, create a volume associated to the bucket:
 
@@ -170,7 +133,8 @@ bucket simply use the appropriate command for it.
    * **Store_01**: the volume name as defined on the server on which the
      command is executed
    * **secondary**: the type of the volume
-   * **60b8139c-d56f-4012-a928-4b6182756301**: the bucket ID as received in step 1
+   * **60b8139c-d56f-4012-a928-4b6182756301**: the bucket ID as
+     received during the Bucket creation
    * **volume_prefix Main_Volume**: a label assigned to the volume, used for
      quick searches (e.g., *main_vol*)
    * **centralized true**: the volume is centralized and can be used by
@@ -378,24 +342,14 @@ The parameters required by these commands may differ depending on the
 `[type]` of volume to be defined, which is one of the following.
 
 -  FileBlob (Local)
-
 -  Alibaba
-
 -  Ceph
-
--  OpenIO
-
 -  Swift
-
 -  Cloudian (S3 compatible object storage)
-
 -  S3 (Amazon and any S3-compatible solution not explicitly
    supported)
-
 -  Scality (S3 compatible object storage)
-
 -  EMC (S3 compatible object storage)
-
 -  Custom S3
 
 .. _pws_hsm:
@@ -634,19 +588,11 @@ out of the box with |storage|, listed here are the only
 officially supported platforms:
 
 -  FileBlob (standard local volume)
-
 -  Amazon S3
-
 -  EMC
-
--  OpenIO
-
 -  Swift
-
 -  Scality S3
-
 -  Cloudian
-
 -  Custom S3 (any unsupported S3-compliant solution)
 
 .. _pws_primary_volumes_and_the_incoming_directory:
@@ -727,8 +673,9 @@ Any bucket added to the system will be available when creating a new
 volume of the following type: Amazon S3, Ceph, Cloudian, EMC, Scality
 S3, Custom S3, Yandex, Alibaba.
 
-It’s also possible to create new buckets via the CLI using the
-:command:`carbonio core doCreateBucket` commands.
+It is also possible to create new buckets via the CLI using the
+:command:`carbonio core doCreateBucket` commands. Please refer to
+Section :ref:`manage-bucket` for details and procedure.
 
 .. _pws_bucket_paths_and_naming:
 

@@ -677,39 +677,7 @@ Then assign them the correct permissions
 Configure S3 Bucket
 -------------------
 
-Use the Bucket data from the *Carbonio A* infrastructure to configure
-the bucket on the *Carbonio B* infrastructure.
-
-.. code:: console
-
-   zextras$ carbonio core doCreateBucket S3 MyBucketName \
-   X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket url \
-   https://example_bucket_provider.com
-
-The following values are used in the example above.
-
-* S3 as the type of bucket
-
-* MyBucketName as the name of the bucket, which must coincide with
-  the name on the remote provider, otherwise the command will fail
-
-* X58Y54E5687R543 as the remote username (access_key)
-
-* abCderT577eDfjhf as the remote password (secret_key)
-
-* My_New_Bucket is a label given to the bucket
-
-* https\://example_bucket_provider.com is the endpoint to which
-  Carbonio Storage connects to the bucket
-
-.. note:: In case you are using an **Amazon S3** bucket, you need to
-   add also the *Region* to the above command.
-
-Test that the connection works:
-
-.. code:: console
-   
-   zextras$ carbonio core testS3Connection BucketVolumeID
+To create and configure an S3 bucket, please refer to Section :ref:`manage-bucket`.
 
 Initialise Backup
 -----------------
