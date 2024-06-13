@@ -3,7 +3,7 @@
    Zextras Suite Changelog - Release 3.20.0
    ========================================
 
-      Release Date: Oct 30, 2023
+      Release Date: Jun 17, 2024
 
 == Solved Issues
 
