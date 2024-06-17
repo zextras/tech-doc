@@ -5,8 +5,6 @@
 
       Release Date: Jun 17, 2024
 
-== Solved Issues
-
 .. rubric:: Auth
 
 * *Issue ID:* AUTH-525
