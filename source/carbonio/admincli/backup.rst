@@ -246,10 +246,6 @@ is enabled in the |adminui|.
 .. warning:: If none of the two Scan Operations is active, no backup
    is created!
 
-     .. note:: Make sure that SmartScan is always running whenever you
-        want to make any backup or restore operations, otherwise they
-        will not be successful!
-
 SmartScan runs at a fixed time—​that can be configured—​on a daily basis
 and is not deferred. This implies that, if for any reason (like e.g.,
 the server is turned off, or |carbonio| is not running), SmartScan
@@ -303,10 +299,10 @@ previous run and to update the database with any new information.
 When to Disable Scan Operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Backups are written on disk, therefore the Scan operations result in I/O
-disk access. Therefore, there are a number of scenarios in which either
-of the SmartScan or Realtime Scanner might (or should) be disabled, even
-temporarily. For example:
+Backups are written on disk, therefore the Scan operations result in
+I/O disk access. For this reason, there are a number of scenarios in
+which either of the SmartScan or Realtime Scanner might (or should) be
+disabled, even temporarily. For example:
 
 -  You have a high number of trasactions every day (or you often work
    with |file| documents) and notice a high load in the Node’s resource
@@ -641,7 +637,7 @@ the previous SmartScan, hence it can improve the system’s performances
 and decrease the scan time exponentially. 
 
 The SmartScan is a resource intensive process and it should never be
-run during peak hours or during regular working time , but only when
+run during peak hours or during regular working time, but only when
 the load on |product| infrastructure is low, to prevent reductions in
 the |product| performance.
    
