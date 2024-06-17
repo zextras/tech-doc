@@ -63,10 +63,10 @@ you can copy & paste all the following commands::
 
 .. _rhel_netcat:
 
-RHEL 9 Netcat Issue
-===================
+RHEL Netcat Issue
+=================
 
-In systems which feature **RHEL 9**, you might find in
+In systems which feature **RHEL 8** or **RHEL 9**, you might find in
 ``journalctl``'s log an error about a missing library for ``netcat``::
 
   May 02 09:20:02 demo.example.com systemd[1]: Started Session 3 of User zextras.

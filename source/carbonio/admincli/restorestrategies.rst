@@ -1,5 +1,5 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 ..
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. _backup_restore-strategies:
@@ -571,8 +571,7 @@ Running an External Restore
          :columns: 12 12 12 6
 
 To start an External Restore operation, use the
-`doExternalRestore <carbonio_backup_doExternalRestore>`
-command::
+:command:`doExternalRestore` command::
 
    zextras$ carbonio backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
@@ -626,3 +625,154 @@ Running a volume-wide deduplication with the Zextras Powerstore component
 is highly recommended after an External Restore, since the native
 deduplication system might be ineffective when sequentially importing
 accounts.
+
+.. _ext-restore-s3:
+
+External Restore from an S3 Bucket
+==================================
+
+The External Restore procedure from an S3 bucket proves useful in two
+scenarios: when decommissioning a Mailstore & Provisioning Node or
+when that node becomes completely unaccessible, for example because
+the hardware fails, or the filesystem becomes corrupted and the
+original data can not be retrieved anymore.
+
+.. note:: The latter case is a particular case of a Disaster Recovery,
+   in which only one Node of a |product| infrastructure becomes
+   unavailable. For a full Disaster Recovery, please refer to Section
+   :ref:`disaster_recovery`.
+
+The recovery procedure in the two cases is basically the same, only
+one step differs between the decommissioning. 
+
+.. card:: Fixing missing metadata in Backup
+
+   Suppose that you start the Backup at some time during the day, for
+   example at 11:00 AM. The blobs are immediately copied to the
+   Backup, while the corresponding metadata will be added to the
+   Backup only on the next day at **4:00 AM**, when the SmartScan
+   runs. What happens if the Mailstore & Provisioning Node has any
+   major problem **before** SmartScan run and you need to restore the
+   Backup?
+
+   This case is similar to the scenarios presented above: the backup
+   will not contain all the metadata (since the were not yet
+   synchronised) and would be inconsistent. However, if you still have
+   access to the Node and to its Backup Path, this case is akin to the
+   decommissioning there scenario and you can follow the procedure
+   for this scenario
+   
+In both scenarios, there is an existing |product| infrastructure,
+**Carbonio A**, which uses an **S3** bucket for its backups. The
+remainder of this section is organised in two parts: Section
+:ref:`restore-s3-pre` guides you in the preparation of the bucket and
+of the Backup, while Section :ref:`restore-from-s3` is the one that
+recovers the data.
+
+.. _restore-s3-pre:
+
+Preliminaries
+-------------
+
+* Please review carefully this whole section before you actually
+  start executing the commands
+
+* All the :command:`carbonio` commands must be executed as the
+  zextras user
+
+* You can add the ``--progress`` option to all :command:`carbonio`
+  commands to follow the progress of the commands: this is most
+  useful with the last two commands, which actually restore the backup
+
+* All commands mentioned in this procedure must be executed on the
+  **Carbonio B** infrastructure, and precisely on the Node on which
+  the :ref:`role-prov-install` Role is installed
+
+Step 1: Create Directories
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+First, start from the creation of the directories that will be used
+for the restore, as the ``root`` user
+
+.. code:: console
+          
+   # mkdir /opt/zextras/restore
+   # mkdir /opt/zextras/cache
+
+Then assign them the correct permissions
+
+.. code:: console
+          
+   # chown zextras:zextras /opt/zextras/restore
+   # chown zextras:zextras /opt/zextras/cache
+
+Step 3: Configure S3 Bucket
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To create and configure an S3 bucket, please refer to Section :ref:`manage-bucket`.
+
+Step 4: Initialise Backup
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Backup Module must be initialised, so run the following command
+to make sure it is running.
+
+.. code:: console
+
+   zextras$ carbonio backup doSmartScan start
+
+.. hint:: Whenever you must create manually a backup or carry out any
+   restore, always run this command, to make sure that the SmartScan
+   is running.
+
+.. _restore-from-s3:
+
+Restore Backup
+--------------
+
+The actual restore takes place in two steps. The first is the one that
+differs between the two, the second is the same.
+                   
+.. rubric:: Step 1: Restore the backup's metadata.
+
+.. grid:: 1 1 2 2
+   :gutter: 1
+            
+   .. grid-item-card:: Scenario: Decommissioning a Node
+      :columns: 6
+
+      In this case, it is assumed that the Backup Path is still
+      accessible, so there is a simple solution: you need to
+      manually copy the Backup Path to the directory
+      :file:`/opt/zextras/restore`.
+
+      .. hint:: This is the  preferred alternative if the Backup
+         Path is accessible.
+
+   .. grid-item-card:: Scenario: Unavailable Node 
+      :columns: 6
+
+      In this case, the Backup Path is no longer accessible,
+      because the Node is completely broken, so you need to restore
+      the metadata from the archive.
+
+      .. warning:: This command may lead to loss of data, because
+         the metadata stored in the Backup may not be actualised to
+         the latest items present in the |product| infrastructure
+         when it broke.
+
+      .. code:: console
+
+         zextras$ carbonio backup retrieveMetadataFromArchive S3 \
+         /opt/zextras/restore/ bucket_configuration_id <BUCKET_VOLUME_ID>
+                   
+.. rubric:: Step 2: Restore the blobs.
+
+.. code:: console
+
+   zextras$ carbonio backup doExternalRestore /opt/zextras/restore/ \
+   blobs_archive <BUCKET_VOLUME_ID>
+
+You can follow how the restore advances by adding the ``--progress``
+option. As soon as the restore ends, the Global Administrator will
+receive a notification with all the process details.

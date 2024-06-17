@@ -118,6 +118,10 @@ up.
 
    - Enable the :ref:`smartscan` and its scheduling
 
+     .. note:: Make sure that SmartScan is always running whenever you
+        want to make any backup or restore operations, otherwise they
+        will not be successful!
+
    - Change the :ref:`retention_policy`
 
 .. _backup-architecture:
@@ -129,8 +133,15 @@ This section introduces the main concepts needed to understand the
 architecture of |backup| and outlines their interaction; each
 concept is then detailed in a dedicated section.
 
-Foremost, |backup| can be configured only on the nodes equipped with
-the Mailstore & Provisioning role.
+Foremost, |backup| can be configured, and is executed, only on the
+Nodes equipped with the **Mailstore & Provisioning Role**. In case
+multiple Mailstore & Provisioning Roles are installed, a |backup| must
+be configured for each Node: they will be completely separated and
+independent from each other, therefore you need to configure them to
+use different buckets or storage devices.
+You can however centralise the backup on the same NAS: create
+different partitions on it, then add the appropriate Backup Path to
+each Backups.
 
 Then, before entering in the architecture of |backup|, we recall two
 general approaches that are taken into account when defining a backup
@@ -241,7 +252,11 @@ the server is turned off, or |carbonio| is not running), SmartScan
 does **not run**, it will **not run** until the next day. You may
 however configure the Backup to run the SmartScan every time
 |carbonio| is restarted (although this is discouraged), or you may
-manually run SmartScan to compensate for the missing run.
+manually run SmartScan to compensate for the missing run. 
+
+.. note:: Make sure that SmartScan is always running whenever you want
+   to make any backup or restore operations, otherwise they will not
+   be successful!
 
 SmartScan’s main purpose is to check for items modified since its
 previous run and to update the database with any new information.
@@ -284,10 +299,10 @@ previous run and to update the database with any new information.
 When to Disable Scan Operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Backups are written on disk, therefore the Scan operations result in I/O
-disk access. Therefore, there are a number of scenarios in which either
-of the SmartScan or Realtime Scanner might (or should) be disabled, even
-temporarily. For example:
+Backups are written on disk, therefore the Scan operations result in
+I/O disk access. For this reason, there are a number of scenarios in
+which either of the SmartScan or Realtime Scanner might (or should) be
+disabled, even temporarily. For example:
 
 -  You have a high number of trasactions every day (or you often work
    with |file| documents) and notice a high load in the Node’s resource
@@ -619,14 +634,19 @@ SmartScan
 
 The SmartScan operates only on accounts that have been modified since
 the previous SmartScan, hence it can improve the system’s performances
-and decrease the scan time exponentially.
+and decrease the scan time exponentially. 
 
-By default, a SmartScan is scheduled to be executed each night (if
-``Scan Operation Scheduling`` is enabled in the |backup| section of
-the |adminui|). Once a week, on a day set by the user, a Purge is
-executed together with the SmartScan to clear the volume on which the
-|backup| is saved from any deleted item that exceeded the retention
-period.
+The SmartScan is a resource intensive process and it should never be
+run during peak hours or during regular working time, but only when
+the load on |product| infrastructure is low, to prevent reductions in
+the |product| performance.
+   
+By default, a SmartScan is scheduled to be executed each night at
+**4:00 AM** (if ``Scan Operation Scheduling`` is enabled in the
+|backup| section of the |adminui|). Once a week, on a day set by the
+user, a Purge is executed together with the SmartScan to clear the
+volume on which the |backup| is saved from any deleted item that
+exceeded the retention period.
 
 The |backup| engine scans all the items on the |carbonio| mailbox,
 looking for items modified after the last SmartScan. It updates any
@@ -647,7 +667,7 @@ restore a broken configuration.
    ignore to back up the Directory Server configuration, but will
    nonetheless save a backup of all the remaining configuration
 
-When the  External Restore functionality is active, SmartScan
+When the External Restore functionality is active, SmartScan
 creates one (daily) archive for each account which include all the
 account’s metadata and stores it on the external volume. More
 information in section :ref:`backup_on_external_storage`.
@@ -1140,7 +1160,6 @@ different, depending if the new storage needs to be accessed from a
 newly installed server or if existing local backups must be migrated
 to the external storage.
 
-.. note:: External Storage is a CLI-only feature.
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -1282,10 +1301,11 @@ remote storage to the Backup Path.
 Types of External Storage
 -------------------------
 
-Supported external volumes, i.e. shared volumes mounted either at the OS
-level, or object storage entirely managed by |carbonio|, are of two types:
-NFS or Fuse external volumes, which are described in the remainder of
-this section.
+Supported external volumes, i.e. shared volumes mounted either at the
+OS level, or object storage entirely managed by |carbonio|, are of two
+types: *NFS or Fuse external volumes*, which are described in the
+remainder of this section, and *External ObjectStorage*, described in
+details in Section :ref:`manage-bucket`.
 
 .. _nfsfuse_external_storage:
 
@@ -1319,71 +1339,20 @@ following to the :file:`/etc/fstab` file:
    node replacing **SRV1** with the corresponding directory on
    the NAS on which the backup will be stores.
 
-.. _external_objectstorage:
+.. _external-objectstorage:
 
 External ObjectStorage
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Before using an ObjectStorage, a dedicated |carbonio| bucket must be
-created.
-
-Indeed, while similar in concept, |backup| and |storage| buckets are
-not compatible with each other. If |storage| data is stored in a
-bucket it is not possible to store Backup data on the same bucket and
-vice-versa.
-
-.. topic:: How to check a bucket's usage.
-
-   Use the following command to report the bucket usage.
-
-   .. code:: console
-
-      zextras$  carbonio core listBuckets
-
-   The output will look similar to::
-
-      bucketName                                                  hsm
-      protocol                                                    HTTPS
-      storeType                                                   S3
-      accessKey                                                   xxxxx
-      region                                                      EU_WEST_1
-      uuid                                                        58fa4ca2-31dd-4209-aa23-48b33b116090
-      usage in powerstore volumes
-                      server: srv1                                      volume: centralized-s3
-                      server: srv2                                      volume: centralized-s3
-      usage in external backup                                    unused
-
-      bucketName                                                  backup
-      protocol                                                    HTTPS
-      storeType                                                   S3
-      accessKey                                                   xxxxxxx
-      region                                                      EU_WEST_1
-      destinationPath                                             server2
-      uuid                                                        5d32b50d-79fc-4591-86da-35bedca95de7
-      usage in powerstore volumes                                 unused
-      usage in external backup
-                      server: srv2
-
-Since each |carbonio| bucket is identified by a prefix, you can use
-the combination of bucket credentials and |carbonio| bucket prefix to
-uniquely identify and store multiple |carbonio| buckets within a
-single ObjectStorage bucket.
-
-In other words, on the same *S3 Bucket*, you could define
-several |carbonio| Buckets, to be used both for HSM and Backup.
-
-.. note:: Even if |carbonio| can be only as a Multi-Server, it is not
-   necessary to create multiple buckets: You only enter the bucket
-   configuration information when enabling the remote backup on the
-   first Node. The ``bucket_configuration_id`` and ``prefix``
-   parameters can then be used to store other Node’s data on a
-   separate directory on the same storage.
-
+An external ObjectStorage is a Bucket created on either a remote
+provider or on a local infrastructure and used. Please refer to the
+:ref:`dedicated section <manage-bucket>` for more information and
+directions to create one.
 
 .. _backup-troubleshoot-object-storage:
 
 Troubleshooting Backups on Defective ObjectStorage
---------------------------------------------------
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 There are unfortunate cases in which a remote ObjectStorage holding a
 Backup becomes completely unavailable, for example because of an

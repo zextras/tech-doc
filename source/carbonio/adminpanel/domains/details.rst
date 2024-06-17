@@ -78,7 +78,7 @@ Install a Let's Encrypt certificate
 Mailbox Quota
 =============
 
-These settings allow to define a maximum limit (in bytes, with **0**
+These settings allow to define a maximum limit (in gigabytes, with **0**
 meaning no limit) for the space used by each account and by the entire
 domain. It is also possible to set a value that, when reached, will
 send a warning by e-mail to a given address. The values configured
