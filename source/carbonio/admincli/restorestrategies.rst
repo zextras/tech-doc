@@ -571,8 +571,7 @@ Running an External Restore
          :columns: 12 12 12 6
 
 To start an External Restore operation, use the
-`doExternalRestore <carbonio_backup_doExternalRestore>`
-command::
+:command:`doExternalRestore` command::
 
    zextras$ carbonio backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
@@ -686,25 +685,32 @@ The Backup Module must be initialised, so run the following command
 to make sure it is running.
 
 .. code:: console
-          
+
    zextras$ carbonio backup doSmartScan start
 
 .. hint:: Whenever you must create manually a backup or carry out any
    restore, always run this command, to make sure that the SmartScan
    is running.
 
+.. _restore-from-s3:
+
 Restore Backup
 --------------
 
-The actual restore takes place in two steps. Start from restoring the
-backup's metadata
+The actual restore takes place in two steps.
+
+.. rubric:: Step 1
+
+Restore the backup's metadata.
 
 .. code:: console
 
    zextras$ carbonio backup retrieveMetadataFromArchive S3 \
    /opt/zextras/restore/ bucket_configuration_id <BUCKET_VOLUME_ID>
-      
-Finally, start the restore
+
+.. rubric:: Step 2
+
+Restore the blobs.
 
 .. code:: console
 
@@ -715,3 +721,22 @@ You can follow how the restore advances by adding the ``--progress``
 option. As soon as the restore ends, the Global Administrator will
 receive a notification with all the process details.
 
+A Disaster Recovery Scenario
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Suppose that you start the Backup for the first time at some time
+during the day, for example at 11:00 AM. The blobs are immediately
+copied to the Backup, while the corresponding metadata will be added
+to the Backup only on the next day at **4:00 AM**, when the SmartScan
+runs. What happens if the Mailstore Node has any major problem
+**before** SmartScan run and you need to restore the Backup?
+
+In this case, the backup will not contain all the metadata (since the
+were not yet synchronised) and would be inconsistent. However, if you
+still have access to the Node and to its Backup Path, there is a
+simple solution: you need to manually copy the Backup Path in the
+directory :file:`/opt/zextras/restore`. This operation is equivalent
+to *Step 1* in the procedure presented in the previous section
+(:ref:`restore-from-s3`). Once the manual copy of the metadata is
+finished, you can execute *Step 2* of the procedure to complete the
+Restore.
