@@ -23,11 +23,10 @@ components are enabled for a user or a COS.
 :ref:`le-renew` shows how to renew a Let's Encrypt-generated
 certificate, either manually or automatically.
 
-:ref:`mailboxmove` shows how to move an account from one server to
-another one.
-
 :ref:`disclaimer-cli` contains useful commands to manage domain disclaimers
      
+:ref:`cli-analytics` explains how to enable or disable analytics.
+
 .. toctree::
    :hidden: 
 
@@ -36,5 +35,5 @@ another one.
    management/custom
    management/setting-features
    management/letsencrypt
-   management/move-account   
    management/domaindisclaimer
+   management/analytics

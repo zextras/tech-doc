@@ -2,7 +2,6 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-
 This section is used to configure and manage the remote servers, buckets, and
 volumes used to store the items (e-mails and, documents, and so on)
 available in |product|.
@@ -14,6 +13,8 @@ Server List
 ~~~~~~~~~~~
 
 The lists of all configured server appears here.
+
+.. _ap-st-bucket-list:
 
 Bucket list
 ~~~~~~~~~~~
