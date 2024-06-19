@@ -20,15 +20,10 @@ If you plan to install and use the :ref:`role-vs-install`, you should
 consider deploying the *5 Nodes* scenario, because the |vs| requires a
 considerable amount of resources.
 
-If you installed |product| on multiple Nodes, you can add a
-:ref:`Directory Replica <role-ds-replica-install>` to increase
-reliability of the *Mesh and Directory* Role.
-
-
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
 .. toctree::
    :maxdepth: 1
-              
+
    scenarios/single-server-scenario
    scenarios/scenario-a
