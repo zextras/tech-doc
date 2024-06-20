@@ -48,6 +48,8 @@ modified for any individual user.
       including:
         
       * Whether this account is included in the Backup
+
+      * The quota used and available for the e-mails and the |file| module
         
       * The ability to prevent the user from changing the
         password
