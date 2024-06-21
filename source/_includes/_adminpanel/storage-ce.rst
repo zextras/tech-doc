@@ -26,8 +26,9 @@ Data Volumes
 ~~~~~~~~~~~~
 
 After you selected the server, the volumes it currently uses are
-shown, along with a few configured options. To add a new Volume, click
-on the :bdg-primary-line:`NEW VOLUME` button.
+shown, along with the values provided to the configured options. To
+add a new Volume, click on the :bdg-primary-line:`NEW VOLUME` button.
 
 In the dialog window, provide the basic information of the new volume:
-the type, name, and path.
+the type (Primary or Index), name, and path. You can also configure
+the volume to save space by using compression and enable it as current.
