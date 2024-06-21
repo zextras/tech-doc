@@ -5,7 +5,7 @@
 There are two equivalent methods to upgrade a |product|
 infrastructure: automatically using Ansible, or manually, node by
 node. While we suggest to use the former procedure, the latter allows
-you to follow closely, Node by Node, the upgrade process.
+you to follow closely, node by node, the upgrade process.
 
 .. _upgrade-ansible:
 
