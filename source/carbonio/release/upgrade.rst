@@ -72,10 +72,10 @@ Upgrade Nodes
 .. include:: /_includes/_upgrade/node-cb.rst
 
 
-.. _upgrade-manual:
+.. _upgrade-additional:
 
-Manual Steps
-------------
+Additional Manual Steps
+-----------------------
 
 In the upgrade to |release|, the following manual steps are required.
 
