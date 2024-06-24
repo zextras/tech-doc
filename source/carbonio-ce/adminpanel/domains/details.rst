@@ -34,8 +34,8 @@ Global Address List
 
 .. _ap-vhost:
 
-Virtual Hosts & Certificate
-===========================
+Virtual Hosts & Domain Certificates
+===================================
 
 .. include:: /_includes/_adminpanel/_domains/vhost.rst
 
