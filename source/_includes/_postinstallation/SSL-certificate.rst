@@ -4,8 +4,8 @@
 
 .. _install-SSL-cert:
 
-Deploy an SSL Certificate
-=========================
+Deploy a Commercial SSL Certificate
+===================================
 
 In this section we explain how to add an SSL/TLS certificate to a
 |product| installation. |product| supports the installation and
@@ -19,8 +19,8 @@ mobile apps; it is also suggested for any installation in order to
 avoid the client browser's warning about an invalid certificate upon
 connection.
 
-.. seealso:: You can manage SSL *domain certificates* from the |adminui|: check
-   out :ref:`ap-vhost`.
+.. seealso:: You can manage SSL **domain** certificates from the
+   |adminui|: check out Section :ref:`ap-vhost`.
                   
 
 .. _single-cert-installation:
