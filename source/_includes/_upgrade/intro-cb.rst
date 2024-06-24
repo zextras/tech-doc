@@ -21,7 +21,7 @@ see if you need to carry out some additional task.
 
 Moreover, in some cases, incompatibilities may seldom arise in the
 upgrade of third-party software, which may lead to some additional
-manual steps to be carried out. Section :ref:`upgrade-manual` below
+manual steps to be carried out. Section :ref:`upgrade-additional` below
 contains information to prevent or fix these issues.
 
 .. card:: Upgrade to PostgreSQL 16 and Ubuntu 22.04

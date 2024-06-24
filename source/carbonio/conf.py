@@ -107,6 +107,7 @@ html_theme_options = {
     'use_repository_button': True,
     'use_issues_button': True,
     'navigation_with_keys': False,
+    'extra_footer': '<a href="https://docs.zextras.com/landing/privacy-legal.html" target="_blank">Privacy &amp; Legal</a> ',
     'logo': {
         'image_light': 'carbonio-black.svg',
         'image_dark': 'carbonio-white.svg',
