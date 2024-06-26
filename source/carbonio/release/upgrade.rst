@@ -25,6 +25,12 @@ Upgrade Checklist
 Preliminary Tasks
 -----------------
 
+.. note:: You do not need to execute the following tasks if you
+   upgrade using :ref:`the Ansible procedure
+   <upgrade-ansible>`. Indeed, in that case, the :command:`zmslapcat`
+   command is run by Ansible, which will save the LDAP dump in the
+   :file:`/bck` directory.
+          
 .. include:: /_includes/_upgrade/ds.rst
 
 .. _pg-upgrade:
@@ -72,10 +78,10 @@ Upgrade Nodes
 .. include:: /_includes/_upgrade/node-cb.rst
 
 
-.. _upgrade-manual:
+.. _upgrade-additional:
 
-Manual Steps
-------------
+Additional Manual Steps
+-----------------------
 
 In the upgrade to |release|, the following manual steps are required.
 
