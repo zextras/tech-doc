@@ -1,16 +1,40 @@
 A **Virtual Host** is an alternative name given to a *domain* that can
 be used to access the same domain. To be able to use the virtual host,
-the name must be registered on the domain's DNS with an ``A`` or ``CNAME`` record.
+the name must be registered on the domain's DNS with an ``A`` or
+``CNAME`` record.
 
 To each virtual host you can associate an **SSL certificate**.
 |product| supports the upload of multiple SSL *domain certificates*
 from the |adminui| and associate them to different domains, a
 procedure that requires only a few steps.
 
-.. note:: The generation of server-side certificates directly on
-   |product| and the management of wildcard certificate are tasks that
-   can be carried out from the CLI only: check out section
-   :ref:`install-SSL-cert` if you need to use either of them.
+.. card:: Infrastructure, wildcard, and domain certificates
+
+   During the |product| installation, a self-signed SSL certificate is
+   created to allow basic access and configuration. However, before
+   you put |product| in a production environment, you should install
+   an **infrastructure certificate**.
+
+   The server-side generation of an *infrastructure certificate* or
+   even a *wildcard certificate* is a task that can be carried out
+   from the CLI only: check out section :ref:`install-SSL-cert` for
+   directions.
+
+   If you do not plan to have additional domains configured on
+   |product|, you're all done: no additional certificate is needed.
+
+   If you need to configure multiple domains on the same |product|
+   infrastructure, you can do it directly from the |adminui|, by
+   generating a new certificate or uploading a commercial one that you
+   have purchased. Let's Encrypt certificates are also supported and
+   can be generated from the |adminui|, see :ref:`the procedure
+   <le-procedure>`.
+
+   If you plan to allow IMAP or POP clients to connect to |product|,
+   you need to always configure them using the FQDN of the |carbonio
+   infrastructure, for example *mail.example.com*, independent of the
+   number (and names) of the domains present on the |product|
+   infrastructure.
 
 Select the virtual host, then click :blue:`VERIFY CERTIFICATE`. In the
 dialog, you can choose to use:
