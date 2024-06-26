@@ -31,7 +31,7 @@ procedure that requires only a few steps.
    <le-procedure>`.
 
    If you plan to allow IMAP or POP clients to connect to |product|,
-   you need to always configure them using the FQDN of the |carbonio
+   you need to always configure them using the FQDN of the |product|
    infrastructure, for example *mail.example.com*, independent of the
    number (and names) of the domains present on the |product|
    infrastructure.
