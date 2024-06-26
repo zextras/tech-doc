@@ -4,24 +4,27 @@
 
 .. _install-SSL-cert:
 
-Deploy an SSL Certificate
-=========================
+Deploy a Commercial SSL Certificate
+===================================
 
 In this section we explain how to add an SSL/TLS certificate to a
 |product| installation. |product| supports the installation and
-management of *Let's Encrypt* certificates: you install it from the
-configure can find directions for that in |adminui|: please refer to
-the :ref:`dedicated article <le-procedure>`.
-
+management of *Let's Encrypt* certificates: you can find directions
+for that in |adminui|, please refer to the :ref:`dedicated article
+<le-procedure>`.
 
 This setup is mandatory if |product| is used in conjunction with
 mobile apps; it is also suggested for any installation in order to
 avoid the client browser's warning about an invalid certificate upon
 connection.
 
-.. seealso:: You can manage SSL *domain certificates* from the |adminui|: check
-   out :ref:`ap-vhost`.
-                  
+To learn more about infrastructure, wildcard, and domain certificates
+and understand which one you need, please refer to Section
+:ref:`ap-vhost`.
+
+.. seealso:: You can manage SSL **domain** certificates from the
+   |adminui|: check out Section :ref:`ap-vhost`.
+
 
 .. _single-cert-installation:
 
@@ -33,42 +36,67 @@ scenario:
 
 * The server FQDN is `mail.example.com`
 
-* No SSL certificate is available for the domain.
+* No SSL certificate is available for the domain (no existing and
+  usable wildcard-type certificate)
 
 In the remainder, replace `mail.example.com` with your actual server FQDN.
 
 The procedure consists of a few steps and requires console access to
 the |product| server.
 
+.. note:: If you already have the certificate, you can skip
+   Steps 1. and 2. and go immediately to :ref:`Step 3
+   <deploy-certificate>` below.
+
 .. rubric:: Step 1. Certificate Signing Request generation
 
-If you do not have a certificate, and you have to request a new one, you
-need to generate a :abbr:`CSR (Certificate Signing Request)`:
+If you do not have a certificate yet, and you have to request a new
+one, you need to generate a :abbr:`CSR (Certificate Signing Request)`.
+You need first to decide whether you need a normal or :term:`wildcard
+certificate`, then use either of these commands, providing suitable
+values according to your organisation.
 
-.. code:: console
+.. grid:: 1 1 2 2
+   :gutter: 2
 
-   # /opt/zextras/bin/zmcertmgr createcsr comm -new -subject \
-   "/C=IT/ST=VR/L=Yourtown/O=YourCompany/OU=SampleDepartment/CN=mail.example.com" \
-   -subjectAltNames mail.example.com
+   .. grid-item-card:: Normal certificate
+      :columns: 6
 
-Where the various elements in the subject are the standard fields of
-an SSL certificate:
+      .. code:: console
 
-* **C**: the 2-digit country code
+         # /opt/zextras/bin/zmcertmgr createcsr comm -new -subject \
+         "/C=IT/ST=VR/L=Yourtown/O=YourCompany/OU=SampleDepartment/CN=mail.example.com" \
+         -subjectAltNames mail.example.com
 
-* **ST**: State or Province
+      .. note:: You can optionally include more than one (alternative) name
+         by simply adding to the end of the command one ore more
+         ``-subjectAltNames`` options, followed by the name to add.
 
-* **L**: City
+   .. grid-item-card:: Wildcard certificate
+      :columns: 6
 
-* **O**: Organization Name
+      .. code:: console
 
-* **OU**: Organization Unit (Department)
+         # /opt/zextras/bin/zmcertmgr createcsr comm -new -subject \
+         "/C=IT/ST=VR/L=Yourtown/O=YourCompany/OU=SampleDepartment/CN=*.example.com"
 
-* **CN**: Common Name
+   .. grid-item-card::
+      :columns: 12
 
-.. note:: You can optionally include more than one (alternative) name
-   by simply adding to the end of the command one ore more
-   ``-subjectAltNames`` options, followed by the name to add.
+      In the above commands, the various elements in the ``-subject``
+      are the standard fields of an SSL certificate:
+
+      * **C**: the 2-digit country code
+
+      * **ST**: State or Province
+
+      * **L**: City
+
+      * **O**: Organization Name
+
+      * **OU**: Organization Unit (Department)
+
+      * **CN**: Common Name
 
 Once the command is executed these files will be generated:
 
@@ -104,6 +132,8 @@ Chain CA"*), that must be saved as
 
       # cat /tmp/ca_intermediary.crt /tmp/ca_root.crt > \
       /tmp/commercial_ca.crt
+
+.. _deploy-certificate:
 
 .. rubric:: Step 3. Verification and deploy
 
