@@ -89,9 +89,16 @@ send a warning by e-mail to a given address. The values configured
 here are inherited by all accounts that will be created, but can be
 overridden on a per-user basis.
 
-To ease monitoring user's quota, the bottom of the page contains a
-list of accounts and of the quota, both total quota and percentage
-used. The list can be sorted by either quota.
+To ease monitoring quota available to users for Mails and |files|, the
+bottom of the page contains a list of accounts and their respective
+quotas (total quota and percentage of quota used) for both
+services. The accounts can be sorted by the total quota or percentage
+quota of Mails or |files|.
+
+Additionally, click the :blue:`DOWNLOAD QUOTA REPORT` button to
+download a CSV file containing the current status of the used
+quota. 
+
 
 .. _domain-wl:
 
