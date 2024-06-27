@@ -123,7 +123,7 @@ quantified in advance.
 - Begin an External Restore on the new server using the following CLI
   command (please also refer to Sections :ref:`external_restore` and
   :ref:`ext-restore-s3`) for details, especially if you use an
-       external Bucket.
+  external Bucket.
 
   .. code:: console
 
