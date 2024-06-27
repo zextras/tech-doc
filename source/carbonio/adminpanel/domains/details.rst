@@ -32,12 +32,16 @@ Authentication
 ==============
 
 Options in this page control how a user can log in to |product|. The
-supported methods are *Default*, |product|'s local authentication
+supported methods are *Carbonio*, |product|'s local authentication
 backend, a *Local LDAP*, an *External LDAP*, or an *External Active
 Directory* server.
 
-If the method is different from *Default*, you need to provide the
-various parameters and check it the connection is successful.
+If the method is different from *Carbonio*, on the one side you need
+to provide the various parameters and check it the connection is
+successful, while on the other side, the use of :ref:`2FA
+<domain-2fa>` will not be allowed, as it is not possible to enforce
+2FA with authentication methods other than *Carbonio*.
+
 
 Below the methods, a few additional options are available:
 
@@ -106,6 +110,10 @@ global theme settings will be applied.
 In this page it is possible to configure 2FA for the various services
 offered by |product|, only for the selected domain.  To modify
 settings for all domains, refer to :ref:`global-2fa`.
+
+These settings are available only if the authentication method (under
+:menuselection:`Domains --> Details --> Authentication`, see
+:ref:`ap-auth`) for the *current domain* is set to **Carbonio**.
 
 .. include:: /_includes/_adminpanel/2fa.rst
      
