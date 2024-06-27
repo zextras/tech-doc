@@ -92,8 +92,18 @@ be added to the COS.
 Advanced
 --------
 
-Multiple *Advanced* options can be  configured here, divided into
+Multiple *Advanced* options can be configured here, divided into
 multiple groups
+
+General Options
+  The option in this group allows users of the COS to access the
+  *Undelete E-mail* feature, which allows each user to retrieve an
+  e-mail from the |backup| if it was deleted within the last **seven**
+  days.
+
+  .. note:: This option can be configured on the CLI at both COS and
+     Account level, please refer to Section :ref:`cli-features` for
+     details.
 
 Forwarding
   Two options govern how to forward messages: how long an e-mail
