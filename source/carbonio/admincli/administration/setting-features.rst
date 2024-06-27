@@ -21,24 +21,28 @@ available to a user or COS.
    * - ``carbonioFeatureMailsAppEnabled``
      - ``TRUE``
      - The Mails component is available on :ref:`mobile apps
-       <mobile_apps>`.
+       <mobile_apps>`
    * - ``carbonioFeatureFilesEnabled``
      - ``TRUE``
-     - The |file| component is available.
+     - The |file| component is available
    * - ``carbonioFeatureFilesAppEnabled``
      - ``TRUE``
      - The |file| component is available on :ref:`mobile apps
-       <mobile_apps>`.
+       <mobile_apps>`
    * - ``carbonioFeatureChatsEnabled``
      - ``TRUE``
      - The |team| component is enabled
    * - ``carbonioFeatureChatsAppEnabled``
      - ``TRUE``
      - The |team| component is available on :ref:`mobile apps
-       <mobile_apps>`.
+       <mobile_apps>`
    * - ``zimbraFeatureOptionsEnabled``
      - ``FALSE``
-     - The Settings module is available to a user.
+     - The Settings module is available to a user
+   * - ``backupSelfUndeleteAllowed``
+     - ``FALSE``
+     - The User/COS can restore single items from |backup| if they
+       were deleted at most 7 days before
 
 In order to modify these values, you can use or adapt the following commands
 
