@@ -1,3 +1,9 @@
+
+.. note:: These settings are available only if the disclaimer is
+   active in the global configuration (:menuselection:`Domains -->
+   Global --> Settings`).
+
+
 To add a disclaimer to e-mails, use either textfield present in the
 page. The text written in the left-hand side will be appended to
 e-mails of users that have the mail editor set for plain-text, while
