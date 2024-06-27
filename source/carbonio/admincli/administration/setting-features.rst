@@ -15,22 +15,29 @@ available to a user or COS.
 
 .. list-table::
 
-   * - **Attribute and defaults values**
-     - **Feature**
-   * - carbonioFeatureMailsAppEnabled, ``TRUE``
+   * - **Attribute**
+     - **Default**
+     - **Feature Description**
+   * - ``carbonioFeatureMailsAppEnabled``
+     - ``TRUE``
      - The Mails component is available on :ref:`mobile apps
        <mobile_apps>`.
-   * - carbonioFeatureFilesEnabled: ``TRUE``
+   * - ``carbonioFeatureFilesEnabled``
+     - ``TRUE``
      - The |file| component is available.
-   * - carbonioFeatureFilesAppEnabled: ``TRUE``
+   * - ``carbonioFeatureFilesAppEnabled``
+     - ``TRUE``
      - The |file| component is available on :ref:`mobile apps
        <mobile_apps>`.
-   * - carbonioFeatureChatsEnabled: ``TRUE``
+   * - ``carbonioFeatureChatsEnabled``
+     - ``TRUE``
      - The |team| component is enabled
-   * - carbonioFeatureChatsAppEnabled: ``TRUE``
+   * - ``carbonioFeatureChatsAppEnabled``
+     - ``TRUE``
      - The |team| component is available on :ref:`mobile apps
        <mobile_apps>`.
-   * - zimbraFeatureOptionsEnabled: ``FALSE``
+   * - ``zimbraFeatureOptionsEnabled``
+     - ``FALSE``
      - The Settings module is available to a user.
 
 In order to modify these values, you can use or adapt the following commands
