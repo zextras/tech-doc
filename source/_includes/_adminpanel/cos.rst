@@ -110,10 +110,12 @@ Forwarding
   address can be and the maximum number of recipients allowed.
 
 Quotas
-  A set of options that limit how much space a user can occupy on the
-  server, or how many contacts he can have. It also encompasses the
-  options to send periodic notifications when the user space raises
-  over a given threshold and a template for the notifications.
+  A set of options that show how much space a user can occupy on the
+  server for Mails and |file|, or how many contacts he can have. These
+  quotas are inherited from the COS the user belongs to and may be
+  changed for the current user. It also encompasses the options to
+  send periodic notifications when the user space raises over a given
+  threshold and a template for the notifications.
 
 Password
   Settings for password policies: length, characters, and duration of
