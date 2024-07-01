@@ -49,11 +49,14 @@ The landing page is shown in :numref:`fig_ap-top` and
 
    .. grid-item::
       :columns: 6
-
-      In the upper part, clicking on either of the boxes will open the
-      |adminui| page for the Accounts and Distribution lists,
+  
+      The upper part contains information about the logged in
+      administrator, the version of |product| and, on the top.right
+      corner. the date and time of the last login.
+      
+      Moreover, clicking on either of the boxes will open the
+      |adminui| page for the Accounts and distribution list,
       respectively.
-
 
 .. grid:: 1 1 2 2
    :gutter: 3
