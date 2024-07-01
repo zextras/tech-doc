@@ -49,7 +49,9 @@ modified for any individual user.
         
       * Whether this account is included in the Backup
 
-      * The quota used and available for the e-mails and the |file| module
+      * The quota used and available for the e-mails and the |file|
+        module. It is possible to insert up to **three** decimal
+        digits for each quota.
         
       * The ability to prevent the user from changing the
         password
