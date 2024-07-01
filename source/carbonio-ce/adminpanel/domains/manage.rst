@@ -54,6 +54,10 @@ modified for any individual user.
            wipe it, so the user is forced to change it on the next
            login attempt.
 
+      * The quota used and available for the e-mails and the |file|
+        module. It is possible to insert up to **three** decimal
+        digits for each quota.
+
       * To remove the user's password from LDAP
 
       * The Distribution List memberships
