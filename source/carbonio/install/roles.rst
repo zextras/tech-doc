@@ -53,7 +53,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-db-install
+      :link: role-mesh-install
 
       Type of Role: Infrastructure
 
@@ -66,7 +66,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-mesh-install
+      :link: role-db-install
 
       Type of Role: Infrastructure
 
