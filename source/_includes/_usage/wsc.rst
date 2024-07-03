@@ -65,12 +65,15 @@ actions. There are three different sidebars: one for Chats, and two
 for Groups (one for participants and one for users, which have slight
 different functionalities).
 
-While chatting, you can send attachments, possibly with a caption, to
-the other :term:`members <member>` of the Chat. With the |pv|
-installed, the attachments can be previewed before being
-downloaded. You can share a link to a document that is stored in the
-|file| module. If you revoke the link from the |file| Module, the
-document will not be accessible with that link.
+While chatting, you can send attachments to the other :term:`members
+<member>` of the Chat. With the |pv| installed, the attachments can be
+previewed before being downloaded. You can share a link to a document
+that is stored in the |file| module. If you revoke the link from the
+|file| Module, the document will not be accessible with that link.
+
+You can add a caption to each attachment you send, provided it is no
+longer than **4096** characters. If the caption exceeds that number, a
+dialogue will appear to inform that the caption will be truncated.
 
 You can forward one or multiple messages from one chat to another
 chat. By entering the contextual menu (click the :octicon:`chevron-up`
