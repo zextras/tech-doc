@@ -24,8 +24,8 @@ meaning there are at least 99 emails to read.
 
 A right-click on the e-mail allows to carry out other actions on the
 selected folder: *move*, *wipe* (i.e., remove all e-mails in the
-folder), *edit*, *delete*, and *share* (with internal colleagues or
-even make it freely readable).
+folder), *edit* (including *share* with internal or external
+colleagues), and *delete*.
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
