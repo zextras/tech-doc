@@ -229,7 +229,11 @@ meeting, you have the chance to choose the microphone and webcam
 (i.e., the *devices*) to use and to test the microphone. The selected
 devices are always shown, to make clear which are the one used when
 entering the call. You can also start a call with both devices
-deactivated and enable them during the call, and even change them.
+deactivated and enable them during the call, and even change them. If
+you start the meeting without granting to the browser the permission
+to access the Webcam and microphone, whenever you want to enable
+either of them, you will be prompted by a message that asks to grant
+the permission to use the device.
 
 After the meeting has started, on the left-hand side three collapsible
 panels appear: the *Actions* and *Participant* boxes, which are the
