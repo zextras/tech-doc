@@ -24,10 +24,11 @@ Addressbook management
 A right-click on any address book allows to carry out a few action on
 it and its content:
 
-* create a new addressbook
-* move an addressbook, for example to create a hierarchy.
-* share, empty, edit, or delete an addressbook
-* Import and export all the contacts in the addressbook in CSV format.
+* to create a new addressbook
+* to move an addressbook, for example to create a hierarchy
+* to edit (and share), empty, or delete an addressbook
+* to import and export all the contacts in the addressbook in CSV
+  format
   
 .. hint:: To move the contacts from one address book to another, you
    can also drag the contact and drop it on the destination address
