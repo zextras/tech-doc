@@ -237,7 +237,8 @@ actions are available.
       option to either download the file to a local directory on the
       workstation, or to save it in the user's personal's storage on
       |file|, even if the attachment comes from a mail in a shared
-      account.
+      account. If among the attachments there are vCards, they will be
+      imported in the user's personal *Contacts*.
 
 .. _mail-trash-folder:
 

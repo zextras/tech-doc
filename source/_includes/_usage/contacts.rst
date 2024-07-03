@@ -29,6 +29,8 @@ it and its content:
 * to edit (and share), empty, or delete an addressbook
 * to import and export all the contacts in the addressbook in CSV
   format
+* to import contacts directly from a vCard received as an e-mail
+  attachment into the personal *Contacts*
   
 .. hint:: To move the contacts from one address book to another, you
    can also drag the contact and drop it on the destination address
