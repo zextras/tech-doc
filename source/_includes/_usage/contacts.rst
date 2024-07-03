@@ -13,7 +13,9 @@ can be added to any contacts.
 
 Moreover, a contact can directly be imported from a vCard received as
 an e-mail attachment into the personal *Contacts*, then you can move
-it to other addressbooks, if needed
+it to other addressbooks, if needed. Similarly, a contact can be
+exported as vCard, saved on the local workstation, then sent by
+e-mail. chats or other means.
 
 .. note:: Addresses of people to whom you send an e-mail are
    automatically added to the `Emailed Contacts`.
