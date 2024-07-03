@@ -127,10 +127,16 @@ modified for any individual user.
       passwords and OTP tokens can be created to allow the user to
       login by using a QR Code; a policy can set to force the user to
       select a secure password and the type of characters required for
-      the password. Forgotten password, if enabled, allows a user to receive
-      a token to temporarily access the webmail, by sending a token to
-      the recovery address specified in the textfield next to the
-      option. The Failed login policy determines how the system
+      the password.
+
+      The Forgotten password feature, if enabled, allows a user to
+      receive a token, to temporarily access the webmail, to the
+      recovery address specified in the textfield next to the
+      option. It also provides the user a new option in the
+      :menuselection:`Settings --> Auth`, namely the ability to change
+      the recovery address.
+
+      The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
    .. tab-item:: Administration
