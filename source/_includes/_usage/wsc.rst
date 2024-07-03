@@ -201,6 +201,27 @@ window: if you are starting the meeting, the button is called
 started (in the case of a video conference), the button becomes
 :bdg-light:`JOIN MEETING`.
                
+
+.. card:: External and Unauthenticated Users
+
+   While users authenticated to the |product| infrastructure can join
+   directly a (Group) Meeting, the journey of external users (i.e.,
+   users that do not have an account on |product|) and internal but
+   unauthenticated users (e.g., a |product| user that wants to join
+   from a private tab of the browser) is a bit longer.
+
+   * An **external user** receives a link to the meeting room, clicks
+     on it and lands on a *Welcome page* where to insert a name. After
+     clicking the *Join meeting* button, the user will be redirect to
+     the *Waiting room* and, after clicking *Ready to participate*, he
+     will join the meeting as soon as the moderator will accept the
+     request.
+   * The **internal unauthenticated user** has a procedure similar to
+     the external user, differing only in the *Welcome page*. Here,
+     instead of providing a name, the user will be redirected to the
+     login page. After a successful login, the user can join the
+     *Waiting room*.
+          
 If someone is trying to call you directly, a dialog allows you to
 accept the call and enter the meeting or to refuse the call and write
 a short message that will be sent to the caller. Upon entering the
@@ -220,11 +241,11 @@ room*; here, the user remains until a Moderator grants the access;
 if the Meeting ends before entering, the user is notified that the
 meeting has ended.
 
-On the bottom of the
-main area, the *Action Bar* allows to change or disable the devices,
-to share the screen, to change the mode of the call (see next
-section), or to leave the Meeting. Next to the red :bdg-warning:`leave
-meeting` button appears the duration of the meeting.
+On the bottom of the main area, the *Action Bar* allows to change or
+disable the devices, to share the screen, to change the mode of the
+call (see next section), or to leave the Meeting. Next to the red
+:bdg-warning:`leave meeting` button appears the duration of the
+meeting.
 
 .. note:: Leaving a meeting requires a confirmation click on the
    button.
