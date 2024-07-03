@@ -61,13 +61,3 @@ When multiple domains are defined on |product|, you will see in the
 *username* field, the default domain: to log in to that domain, you
 can use only the username. To login to another domain, you need to
 write the whole e-mail address: username and domain.
-
-.. index:: Lost password, password recovery
-
-Lost Password
-=============
-
-If the Administrator has enabled the option, you can see a link
-underneath the credential's text-fields, that allows you to recover
-the password. Before you use it, however, you need to ask the
-Administrator to set up a recovery account.

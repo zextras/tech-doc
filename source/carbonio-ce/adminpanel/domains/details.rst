@@ -61,7 +61,8 @@ here are inherited by all accounts that will be created, but can be
 overridden on a per-user basis.
 
 To ease monitoring user's quota, the bottom of the page contains a
-list of accounts and of their used quota.
+list of accounts and of the quota, both total quota and percentage
+used. The list can be sorted by either quota.
 
 .. _ap-disclaimer:
 

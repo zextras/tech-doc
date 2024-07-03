@@ -14,19 +14,24 @@ The following attributes are available, that control if the feature is
 available to a user or COS.
 
 .. list-table::
-
-   * - **Attribute and defaults values**
-     - **Feature**
-   * - carbonioFeatureMailsAppEnabled, ``TRUE``
+   
+   * - **Attribute**
+     - **Default**
+     - **Feature Description**
+   * - ``carbonioFeatureMailsAppEnabled``
+     - ``TRUE``
      - The Mails component is available on :ref:`mobile apps
-       <mobile_apps>`.
-   * - carbonioFeatureFilesEnabled: ``TRUE``
-     - The |file| component is available.
-   * - carbonioFeatureFilesAppEnabled: ``TRUE``
+       <mobile_apps>`
+   * - ``carbonioFeatureFilesEnabled``
+     - ``TRUE``
+     - The |file| component is available
+   * - ``carbonioFeatureFilesAppEnabled``
+     - ``TRUE``
      - The |file| component is available on :ref:`mobile apps
-       <mobile_apps>`.
-   * - zimbraFeatureOptionsEnabled: ``FALSE``
-     - The Settings module is available to a user.
+       <mobile_apps>`
+   * - ``zimbraFeatureOptionsEnabled``
+     - ``FALSE``
+     - The Settings module is available to a user
 
 In order to modify these values, you can use or adapt the following commands
 

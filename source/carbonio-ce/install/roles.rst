@@ -222,18 +222,6 @@ This is the list of roles that make up a |product| installation.
       * grafana
       * service-discover-agent
 
-   .. grid-item-card:: Directory Replica
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-      :link-type: ref
-      :link: role-ds-replica-install
-
-      Type of Role: Service role
-
-      Packages:
-
-      * carbonio-directory-server
-
 
 .. _multiserver-installation:
 
@@ -254,18 +242,18 @@ installation, please review these important remarks:
    .. tab-set::
 
       .. tab-item:: Ubuntu
-         :sync: ubuntu
+	 :sync: ubuntu
 
-         .. code::
+	 .. code::
 
-            # <command to be executed on Ubuntu systems>
+	    # <command to be executed on Ubuntu systems>
 
       .. tab-item:: RHEL
-         :sync: rhel
+	 :sync: rhel
 
-         .. code::
+	 .. code::
 
-            #  <command to be executed on Red Hat systems>
+	    #  <command to be executed on Red Hat systems>
 
 *  All the commands that are mentioned in this installation procedure
    **must be executed** as the ``root`` user.
@@ -299,4 +287,3 @@ installation, please review these important remarks:
    roles/role-wsc
    roles/role-vs
    roles/role-monit
-   roles/role-ds-replica

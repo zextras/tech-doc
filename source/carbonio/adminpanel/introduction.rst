@@ -8,15 +8,10 @@
 ==================
 
 |adminui| is the component that allows access to the administration
-functionalities of |carbonio| and is installed by default from
-|product| 22.11.0 onwards. It is not available for previous versions,
-but can be installed after upgrading to that version, see
-:ref:`carbonio-upgrade`.
-
-Like for every other component, it can be reached using a
-:ref:`supported browser <browser_compatibility>` and point it to
-https://acme.example:6071/login, replacing `acme.example` with
-your domain.
+functionalities of |carbonio|.  Like for every other component, it can
+be reached using a :ref:`supported browser <browser_compatibility>`
+and point it to https\://acme.example:6071/, replacing `acme.example`
+with your domain.
 
 To access the |adminui|, you need an account that is marked as
 **Global Administrator**. The default Global Admin is
@@ -46,15 +41,19 @@ The landing page is shown in :numref:`fig_ap-top` and
       
       .. _fig_ap-top:
 
-      .. figure:: /img/adminpanel/AP-landing-top.png
-	 :width: 100%
+      .. figure:: /img/adminpanel/AP-landing-top-cb.png
+         :width: 100%
 
          The upper part of Admin Panel's landing page
 
    .. grid-item::
       :columns: 6
 
-      In the upper part, clicking on either of the boxes will open the
+      The upper part contains information about the logged in
+      administrator, the version of |product| and, on the top.right
+      corner. the date and time of the last login.
+      
+      Moreover, clicking on either of the boxes will open the
       |adminui| page for the Accounts and distribution list,
       respectively.
 

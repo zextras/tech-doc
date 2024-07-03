@@ -41,6 +41,12 @@
      size on either the sender or receiver side.  The receiver will be
      able to retrieve the attachment by clicking the URL.
 
+   Regular User
+     **Regular User**\ s can access all the modules of |product|, but
+     not the |adminui|. Hence, they can read mail, create and share
+     documents, plan meetings and event, share and manage e-mail
+     addresses and address books, and much more.
+
    .. certificates
 
    Wildcard Certificate

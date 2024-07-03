@@ -6,7 +6,9 @@
 =============================
 
 .. include:: /_includes/_postinstallation/web.rst
+.. include:: /_includes/_postinstallation/lostpwd.rst
 
+   
 .. _manage-admins:
 
 Manage Global Administrators

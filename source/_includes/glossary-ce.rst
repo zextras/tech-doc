@@ -19,3 +19,7 @@
      the creator of the group. Moderators can add users to the group,
      promote other members and carry out some administrative tasks on
      the chat.
+
+   Administrator
+     An **Administrator** is any :term:`regular user` that can access
+     the |adminui| and manage the whole |product| infrastructure.
