@@ -48,8 +48,11 @@ list. You can then filter the list if you search a particular Chat or
 Group.
 
 If you search and filter by user name, beside the single chat with
-him, you will find all the groups you are in, with that specific
-contact.
+that user, you will find all the groups you are in, with that specific
+contact. Moreover, if there is are users that match the search, but
+with whom you never exchanged a chat, they will appear with the
+message *Create new chat with* to allow quicker creation of a new
+chat.
 
 For every item it is shown whether there is an ongoing meeting (a
 camera icon will replace the small avatar icon), the Chat or Group is
