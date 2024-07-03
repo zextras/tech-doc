@@ -4,15 +4,10 @@
 ==================
 
 |adminui| is the component that allows access to the administration
-functionalities of |carbonio| and is installed by default from
-|product| 22.11.0 onwards. It is not available for previous versions,
-but can be installed after upgrading to that version, see
-:ref:`carbonio-upgrade`.
-
-Like for every other component, it can be reached using a
-:ref:`supported browser <browser_compatibility>` and point it to
-https://acme.example:6071/login, replacing `acme.example` with
-your domain.
+functionalities of |carbonio|.  Like for every other component, it can
+be reached using a :ref:`supported browser <browser_compatibility>`
+and point it to https://acme.example:6071/login, replacing
+`acme.example` with your domain.
 
 To access the |adminui|, you need an account that is marked as
 **Global Administrator**. The default Global Admin is
