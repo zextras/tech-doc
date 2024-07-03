@@ -1,8 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
-.. intro for Carbonio Advanced usage
 
 This section contains general advices about the most common tasks and
 functionalities of the various |product| components. The following
@@ -79,7 +74,7 @@ default web interface. At a glance, they are:
 Mails
    Manage your inbox and e-mails; add filter and sub-folders.
 
-Calendar
+Calendars
    Plan your activities and appointments, share them with colleagues
    and find their shared calendars.
 
@@ -100,9 +95,14 @@ Settings
    Define your preferences to customise the appearance of your mailbox
    and its daily operating functionalities.
 
+.. note:: Modules Mails, Calendars, Contacts, and Files have a
+   separated and independent *trash bin*: you can empty one of them
+   without touching the other.
+
 Additionally, all the functionalities to search for objects in the
 mailbox and to create new objects in the various modules have been
-unified.
+unified in the bar that sits on top of the |product| graphic
+interface.
 
 The remainder of this section contains usage instructions for the most
 common tasks that can be carried out from |product|'s GUI.
