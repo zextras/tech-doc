@@ -11,6 +11,12 @@ section of the Contacts component. You can also choose under which
 address book the new contact is stored. Additionally, :ref:`mail-tags`
 can be added to any contacts.
 
+Moreover, a contact can directly be imported from a vCard received as
+an e-mail attachment into the personal *Contacts*, then you can move
+it to other addressbooks, if needed. Similarly, a contact can be
+exported as vCard, saved on the local workstation, then sent by
+e-mail. chats or other means.
+
 .. note:: Addresses of people to whom you send an e-mail are
    automatically added to the `Emailed Contacts`.
 
@@ -24,14 +30,16 @@ Addressbook management
 A right-click on any address book allows to carry out a few action on
 it and its content:
 
-* create a new addressbook
-* move an addressbook, for example to create a hierarchy.
-* share, empty, edit, or delete an addressbook
-* Import and export all the contacts in the addressbook in CSV format.
+* to create a new addressbook
+* to move an addressbook, for example to create a hierarchy
+* to edit (and share), empty, or delete an addressbook
+* to import and export all the contacts in the addressbook in CSV
+  format
   
 .. hint:: To move the contacts from one address book to another, you
    can also drag the contact and drop it on the destination address
    book.
+
 
 You can create groups of contacts to ease their management, for
 example if there is a groups of people that you contact frequently:

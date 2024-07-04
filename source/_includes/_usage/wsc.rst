@@ -48,8 +48,11 @@ list. You can then filter the list if you search a particular Chat or
 Group.
 
 If you search and filter by user name, beside the single chat with
-him, you will find all the groups you are in, with that specific
-contact.
+that user, you will find all the groups you are in, with that specific
+contact. Moreover, if there is are users that match the search, but
+with whom you never exchanged a chat, they will appear with the
+message *Create new chat with* to allow quicker creation of a new
+chat.
 
 For every item it is shown whether there is an ongoing meeting (a
 camera icon will replace the small avatar icon), the Chat or Group is
@@ -62,12 +65,15 @@ actions. There are three different sidebars: one for Chats, and two
 for Groups (one for participants and one for users, which have slight
 different functionalities).
 
-While chatting, you can send attachments, possibly with a caption, to
-the other :term:`members <member>` of the Chat. With the |pv|
-installed, the attachments can be previewed before being
-downloaded. You can share a link to a document that is stored in the
-|file| module. If you revoke the link from the |file| Module, the
-document will not be accessible with that link.
+While chatting, you can send attachments to the other :term:`members
+<member>` of the Chat. With the |pv| installed, the attachments can be
+previewed before being downloaded. You can share a link to a document
+that is stored in the |file| module. If you revoke the link from the
+|file| Module, the document will not be accessible with that link.
+
+You can add a caption to each attachment you send, provided it is no
+longer than **4096** characters. If the caption exceeds that number, a
+dialogue will appear to inform that the caption will be truncated.
 
 You can forward one or multiple messages from one chat to another
 chat. By entering the contextual menu (click the :octicon:`chevron-up`
@@ -195,6 +201,27 @@ window: if you are starting the meeting, the button is called
 started (in the case of a video conference), the button becomes
 :bdg-light:`JOIN MEETING`.
                
+
+.. card:: External and Unauthenticated Users
+
+   While users authenticated to the |product| infrastructure can join
+   directly a (Group) Meeting, the journey of external users (i.e.,
+   users that do not have an account on |product|) and internal but
+   unauthenticated users (e.g., a |product| user that wants to join
+   from a private tab of the browser) is a bit longer.
+
+   * An **external user** receives a link to the meeting room, clicks
+     on it and lands on a *Welcome page* where to insert a name. After
+     clicking the *Join meeting* button, the user will be redirect to
+     the *Waiting room* and, after clicking *Ready to participate*, he
+     will join the meeting as soon as the moderator will accept the
+     request.
+   * The **internal unauthenticated user** has a procedure similar to
+     the external user, differing only in the *Welcome page*. Here,
+     instead of providing a name, the user will be redirected to the
+     login page. After a successful login, the user can join the
+     *Waiting room*.
+          
 If someone is trying to call you directly, a dialog allows you to
 accept the call and enter the meeting or to refuse the call and write
 a short message that will be sent to the caller. Upon entering the
@@ -202,7 +229,11 @@ meeting, you have the chance to choose the microphone and webcam
 (i.e., the *devices*) to use and to test the microphone. The selected
 devices are always shown, to make clear which are the one used when
 entering the call. You can also start a call with both devices
-deactivated and enable them during the call, and even change them.
+deactivated and enable them during the call, and even change them. If
+you start the meeting without granting to the browser the permission
+to access the Webcam and microphone, whenever you want to enable
+either of them, you will be prompted by a message that asks to grant
+the permission to use the device.
 
 After the meeting has started, on the left-hand side three collapsible
 panels appear: the *Actions* and *Participant* boxes, which are the
@@ -214,11 +245,11 @@ room*; here, the user remains until a Moderator grants the access;
 if the Meeting ends before entering, the user is notified that the
 meeting has ended.
 
-On the bottom of the
-main area, the *Action Bar* allows to change or disable the devices,
-to share the screen, to change the mode of the call (see next
-section), or to leave the Meeting. Next to the red :bdg-warning:`leave
-meeting` button appears the duration of the meeting.
+On the bottom of the main area, the *Action Bar* allows to change or
+disable the devices, to share the screen, to change the mode of the
+call (see next section), or to leave the Meeting. Next to the red
+:bdg-warning:`leave meeting` button appears the duration of the
+meeting.
 
 .. note:: Leaving a meeting requires a confirmation click on the
    button.

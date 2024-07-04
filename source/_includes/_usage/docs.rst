@@ -21,6 +21,14 @@ Every document can be shown in either a read-only mode, with a
 simplified |gui| limited to the viewing functionalities, or in edit
 (read/write) mode with a full |gui|.
 
+When user Charles exceeds the quota for |file|, documents will be
+opened in *read-only mode*: this will also be enforced by a label that
+appears on the bottom of the opened document. This behaviour holds
+also for shared documents: if the document is open by user Julia who
+has write access on Charles's document, she will also see the
+*Read-only* label on the bottom of the document and will not be able
+to save changes made to the document.
+
 Key Features
 ------------
 

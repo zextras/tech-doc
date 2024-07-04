@@ -4,7 +4,10 @@ Settings
 ========
 
 .. include:: /_includes/_usage/usage-settings.rst
-
+.. include:: /_includes/_usage/settings-mails.rst
+.. include:: /_includes/_usage/settings-calendars.rst
+.. include:: /_includes/_usage/settings-contacts.rst
+             
 .. _settings-auth:
 
 Auth
@@ -26,6 +29,10 @@ Auth
    address, to which a validation code will be sent. You need to enter
    this code before the recovery e-mail address is verified and can be
    used.
+   
+   You can modify the recovery address at anytime:
+   :bdg-danger-line:`REMOVE` the current address, then follow the same
+   procedure described in the previous paragraph.
 
 .. card:: Exchange ActiveSync
    :class-header: sd-font-weight-bold irisfont
