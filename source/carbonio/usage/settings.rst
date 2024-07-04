@@ -4,7 +4,10 @@ Settings
 ========
 
 .. include:: /_includes/_usage/usage-settings.rst
-
+.. include:: /_includes/_usage/settings-mails.rst
+.. include:: /_includes/_usage/settings-calendars.rst
+.. include:: /_includes/_usage/settings-contacts.rst
+             
 .. _settings-auth:
 
 Auth
