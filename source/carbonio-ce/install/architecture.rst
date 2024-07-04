@@ -23,7 +23,7 @@ While in Single-Server all packages are installed on the same node, in
 a typical Multi-Server each of the services depicted by the red boxes
 should be installed on a dedicated node, while all the others can be
 combined and installed on any node, even on dedicated one. For
-example, **User Management** can be installed on the AppServer node
+example, **User Management** can be installed on the Proxy node
 instead of on a dedicated node.  In the :ref:`Example scenario
 <multiserver-installation>` we use as example, we show how to set up a
 cluster of *five* :term:`Nodes <node>` and combine the various |product|'s
