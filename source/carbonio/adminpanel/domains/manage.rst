@@ -131,6 +131,10 @@ modified for any individual user.
       support HTML e-mails or prevents inline images to be shown)), a
       text equivalent version of the QR Code will be shown (the
       **Secret Code**), allowing the user to use it.
+
+      In the Backup section, a switch allows to toggle the user
+      ability to recover e-mail that have already been deleted from
+      the Trash Bin.
       
       A policy can set to force the user to select a secure password
       and the type of characters required for the password.
