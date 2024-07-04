@@ -146,6 +146,9 @@ modified for any individual user.
       :menuselection:`Settings --> Auth`, namely the ability to change
       the recovery address.
 
+      .. seealso:: The Password recovery procedure is described in
+         section :ref:`password-recovery`.
+
       The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
