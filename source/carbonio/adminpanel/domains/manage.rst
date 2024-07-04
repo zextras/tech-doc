@@ -122,12 +122,18 @@ modified for any individual user.
    .. tab-item:: Security
       :class-label: sd-px-1
 
-      Options present here allow to manage the account security: OTP
-      and policies for password and failed login. New application
-      passwords and OTP tokens can be created to allow the user to
-      login by using a QR Code; a policy can set to force the user to
-      select a secure password and the type of characters required for
-      the password.
+      Options present here allow to manage the account security.
+
+      New application passwords and OTP tokens can be created to allow
+      the user to login by using a QR Code. The code can then be sent
+      by e-mail to the user who requested it. If the recipient can not
+      see the QR Code (for example because the provider does not
+      support HTML e-mails or prevents inline images to be shown)), a
+      text equivalent version of the QR Code will be shown (the
+      **Secret Code**), allowing the user to use it.
+      
+      A policy can set to force the user to select a secure password
+      and the type of characters required for the password.
 
       The Forgotten password feature, if enabled, allows a user to
       receive a token, to temporarily access the webmail, to the
