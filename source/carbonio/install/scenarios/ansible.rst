@@ -145,27 +145,51 @@ Now create a directory called :file:`data`
    $ mkdir data
 
 Then clone the repository, which is read-only, meaning you can only
-pull the code
+pull the code.
 
-.. code:: console
+.. note:: The repository is different for the Single-Server, pick up
+   the correct one.
 
-   $ git clone https://github.com/zextras/carbonio-install-ansible
+.. grid:: 1 1 2 2
+   :gutter: 2
 
-.. note:: Alternatively, you can also point your browser to that link
-   and fork or download the repository.
+   .. grid-item-card:: Repository for Single-Server Scenario
+      :columns: 6
+                
+      .. code:: console
 
-This command creates a directory called
-:file:`carbonio-install-ansible`, so you have created this structure
-within carbonio-ansible::
+         $ git clone git@github.com:zextras/carbonio-ansible-ssconfig.git
 
-  $ ls -1
-  carbonio-install-ansible
-  data
 
-The idea is that you keep the repository clean, so you can simply
-:command:`git pull` whenever there is some update and use the
-:file:`data` to keep all the information about the |carbonio|
-infrastructure(s) that you manage.
+      This command creates a directory called
+      :file:`carbonio-install-single`, so you have created this
+      structure within :file:`carbonio-ansible`::
+
+        $ ls -1
+        carbonio-install-single
+        data
+
+   .. grid-item-card:: Repository for all other Scenarios
+      :columns: 6
+                
+      .. code:: console
+
+         $ git clone https://github.com/zextras/carbonio-install-ansible
+
+
+      This command creates a directory called
+      :file:`carbonio-install-ansible`, so you have created this structure
+      within :file:`carbonio-ansible`::
+
+        $ ls -1
+        carbonio-install-ansible
+        data
+
+The idea behind keeping separate directories for the repository and
+for the inventory files (:file:`data`) is to keep the repository
+clean, so you can simply :command:`git pull` in the repository
+whenever there is some update and use the :file:`data` to keep all the
+information about the |carbonio| infrastructure(s) that you manage.
 
 .. _ansible-playbook-info:
 
