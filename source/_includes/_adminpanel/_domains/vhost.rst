@@ -83,8 +83,7 @@ dialog, you can choose to use:
   certificate, click the :bdg-primary-line:`I WANT TO USE THIS
   CERTIFICATE` button to upload and use the certificate. Again, a
   notification will be shown (:bdg-success:`The certificates have been
-  saved`). To complete the procedure: if you are on a Single-Node,
-  restart it otherwise you need to restart the node on which the
+  saved`). To complete the procedure, restart the Node on which the
   **Proxy** is installed.
 
 You can :red:`REMOVE` or :blue:`DOWNLOAD` the certificates

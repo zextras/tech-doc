@@ -1,7 +1,3 @@
-.. _carbonio-requirements:
-
-Requirements
-============
 
 Each Node must satisfy the :ref:`hw-requirements` and
 :ref:`software-requirements` below, while on the contrary,
@@ -101,8 +97,6 @@ RHEL Specific Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_installation/preliminary-rh.rst
-
-.. _inst-additional-req:
 
 Additional Requirements
 ~~~~~~~~~~~~~~~~~~~~~~~

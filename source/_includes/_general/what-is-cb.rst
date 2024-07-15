@@ -21,5 +21,4 @@ Strong points of |product| include:
   box
 - comprehensive set of enterprise-level collaboration and
   communication features
-- scalability: set up a single-server, then easily add nodes as
-  company's infrastructure and needs grow
+- scalability: easily add nodes as company's infrastructure grows

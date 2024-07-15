@@ -3,12 +3,11 @@
 =========
 
 This section contains all information necessary to install |product|
-within your infrastructure. Starting from the architecture, we
-introduce then the requirements of |product| and the notion of
-:term:`Role`. This Section finally describes the installation
-scenarios: the basic installation on a Single-Server, followed by more
-complex Multi-Node scenarios from 5 to 11 Nodes. All Scenarios can be
-installed using Ansible.
+within your infrastructure. From the requirements, to the architecture
+of |product|, to a sample installation scenario on a 5-Nodes set up,
+to accessing the graphic interface and all the services. Some task
+related to the installation and how to secure it complete the
+section.
 
 .. card:: Table of Contents
 
