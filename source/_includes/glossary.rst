@@ -7,9 +7,7 @@
 
    Node
      A **Node** is one server or VM on which one or more Roles are
-     installed.  A |product| installation consists of one Node
-     (*Carbonio Single-Server*) or two or more Nodes (*Carbonio
-     Multi-Server*)
+     installed.
 
    Component
      A **Component** is one of the basic elements of |product|; it is

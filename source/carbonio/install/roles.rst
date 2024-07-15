@@ -4,8 +4,10 @@
 Roles Description and Installation
 ==================================
 
-Please review carefully this sections before attempting to install
-|carbonio| on a Single-Server or on a Multi-Node infrastructure.
+Multi-Server is the **only** supported method of installation in a
+production environment.
+
+Please review carefully this sections before attempting to install.
 
 |product| is made of Roles
 ==========================
