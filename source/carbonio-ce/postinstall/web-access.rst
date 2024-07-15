@@ -6,6 +6,7 @@
 =============================
 
 .. include:: /_includes/_postinstallation/web.rst
+.. include:: /_includes/_postinstallation/lostpwd-ce.rst
 
 .. _manage-admins:
 

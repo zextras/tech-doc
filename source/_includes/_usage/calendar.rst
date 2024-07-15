@@ -53,7 +53,12 @@ many more information can be added to an appointment:
   visible to other colleagues who have access to the calendar of the
   attendees.
 
-* The time zone, if different from the default one.
+* The *repeat* recurrence of the appointment, that is, if it is a
+  single appointment or it repeats. You can use any of the pre-defined
+  recurrences (every day, week, month, or year) or define a custom
+  one, that may end after a date or a number of occurrences.
+
+* The time zone, if different from the default one
 
   .. hint:: You need to enable this option in the
      :ref:`settings-calendar` module's *Creating Appointment* Section.
@@ -101,7 +106,35 @@ received the e-mail (shared calendars or other accounts are not taken
 into account) and if in the calendar properties the option *Exclude
 this calendar when reporting the free/busy/time* is **not** ticked.
 
+Additionally, public events that you can access may include a few
+icons that visually provide additional information. Their location is
+different if you see the event in the calendar or you open it to show
+its details.
 
+.. list-table::
+   :widths: 55 25 20
+   :header-rows: 1 
+
+   * - Icon description
+     - Position on calendar entry
+     - Position on open entry
+       
+   * - A blue icon which requires to take an action (confirm or not your
+       presence)
+     - Left-hand side
+     - Top right-hand side
+
+   * - Whether it is a private appointment
+     - Left-hand side
+     - Top 
+
+   * - Any tags associated with the event
+     - Right-hand side
+     - Bottom
+
+   * - If the event is recurrent
+     - Left-hand side
+     - Top right-hand side
   
 Shared Calendars
 ----------------

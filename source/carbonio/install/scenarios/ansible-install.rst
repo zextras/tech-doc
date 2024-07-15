@@ -7,19 +7,13 @@
 
 .. _ansible-inventory:
 
-
 Prepare Inventory
 =================
 
-The forked repository contains file :file:`inventoryname`, which you
-need to copy to the :file:`data` directory, giving it a meaningful
-name (especially in the case you manage multiple, separate
-infrastructures)
-
-.. code:: console
-
-   $ cd carbonio-install-ansible/
-   $ cp inventoryname ../data/carbonio_inventory
+Download the inventory file corresponding to the scenario that you
+want to install (you can find it in the various *Scenarios* page that
+follow this one) and place it under the :file:`/root/data/`
+directory. Remember to give the inventory file a meaningful name.
 
 The :file:`carbonio_inventory` file contains various sections, one for
 each of the available Roles. You need to edit the file and provide the
@@ -68,27 +62,30 @@ value for a proper configuration. Currently, these sections are
   .. note:: 172.16.12.5 is a private IP, remember to replace it with
      an actual public IP!
 
-In order to run the script, first go to the repository's
-:file:`carbonio-ansible/carbonio-install-ansible/playbooks` directory
+In order to run the script, first go to the Inventory's directory
+
 
 .. code:: console
 
-   $ cd playbooks
-      
+   $ cd /root/data/
+   
 then execute the command
 
 .. code:: console
 
-   $ ansible-playbook -u root -i ../../data/carbonio_inventory carbonio_install.yml
+   $ ansible-playbook  zxbot.carbonio_install.carbonio_install \
+   -u root -i carbonio-inventory
 
-Make sure to replace :file:`carbonio_inventory` with the proper name of the
+          
+
+Make sure to replace :file:`carbonio-inventory` with the proper name of the
 inventory you want to install.
 
 The playbook will execute all the tasks necessary and print the result
 on the screen. When finished, a summary of the results is
 displayed. Moreover, the passwords created during the installation are
-saved in the :file:`carbonio-ansible/data` directory, along with the
-:file:`carbonio_inventory` file, so you have them always at your
+saved in the :file:`/root/data` directory, along with the
+:file:`carbonio-inventory` file, so you have them always at your
 disposal when you need them, for example during upgrades or routine
 tasks. To protect them, make sure:
 

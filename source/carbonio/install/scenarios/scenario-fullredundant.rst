@@ -30,7 +30,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Full Redundant" Scenario
    :open:
 
-   :download:`Download the inventory
+   :download:`Download_inventory
    </playbook/carbonio-inventory-fullredundant>`
 
    .. literalinclude:: /playbook/carbonio-inventory-fullredundant

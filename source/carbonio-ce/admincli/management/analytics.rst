@@ -39,8 +39,8 @@ collected and sent to |zx| without the explicit consent of the
 
 .. card:: carbonioPrefSendAnalytics
    
-   The other attribute is called ``carbonioPrefSendAnalytics``, and can
-   be modified by the :ref:`ap-domain-admins` at COS and Account level.
+   The other attribute is called ``carbonioPrefSendAnalytics``, and
+   can be modified at COS and Account level.
 
    To get its current value for the COS named *default*, use command
 

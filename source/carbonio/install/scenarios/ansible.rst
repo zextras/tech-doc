@@ -9,9 +9,10 @@ Section :ref:`roles-installation` reviews all the roles that make up
 installation. 
 
 To make the installation process easier and faster, this section
-introduces an alternative installation method based on Ansible and an
-`Ansible playbook
-<https://docs.ansible.com/ansible/latest/index.html>`_ to be run.
+introduces an alternative installation method based on Ansible Galaxy,
+an `Ansible playbook
+<https://docs.ansible.com/ansible/latest/index.html>`_, and an Ansible
+*inventory file* .
  
 .. note:: Ansible is free software that allows you to automate the
    configuration and management procedures on Unix-like and Windows
@@ -98,6 +99,7 @@ refer to the `Installing Ansible
 section of the official documentation, which includes also
 installation requirements.
 
+
 To verify that installation was successful, run the following command
 on the control node
 
@@ -115,83 +117,23 @@ The best installation option on these platforms is to use
 system. You can follow these `directions
 <https://medium.com/javarevisited/how-to-install-ansible-on-mac-2baf00d42466>`_.
 
-.. _ansible-inst-playbook:
+Install Carbonio Task
+=====================
 
-Install Playbook
-----------------
-
-While you can simply clone (or better, fork) the repository on the
-control node and use it to keep everything therein, we suggest a
-slight different approach.
-
-First, create a top-level directory in a location of your choice, for
-example in the home directory of the user that will run the playbook
-(preferably not the ``root`` user),
+|product| is available from Ansible Galaxy, therefore you need to
+download and install from there:
 
 .. code:: console
 
-   $ mkdir carbonio-ansible
+   # ansible-galaxy collection install zxbot.carbonio_install
 
-Enter the directory
-
-.. code:: console
-
-   $ cd carbonio-ansible
-
-Now create a directory called :file:`data`
-
-.. code:: console
-
-   $ mkdir data
-
-Then clone the repository, which is read-only, meaning you can only
-pull the code
-
-.. code:: console
-
-   $ git clone https://github.com/zextras/carbonio-install-ansible
-
-.. note:: Alternatively, you can also point your browser to that link
-   and fork or download the repository.
-
-This command creates a directory called
-:file:`carbonio-install-ansible`, so you have created this structure
-within carbonio-ansible::
-
-  $ ls -1
-  carbonio-install-ansible
-  data
-
-The idea is that you keep the repository clean, so you can simply
-:command:`git pull` whenever there is some update and use the
-:file:`data` to keep all the information about the |carbonio|
-infrastructure(s) that you manage.
-
-.. _ansible-playbook-info:
-
-Playbook Information
-~~~~~~~~~~~~~~~~~~~~
-
-The ansible playbook is publicly available on the read-only GitHub
-repository https://github.com/zextras/carbonio-install-ansible.
-
-The repository will be updated either when new features will be made
-available or other improvements will be implemented.
-
-Strong points of the playbook are:
-
-* It will be updated by the |zx| team
-
-* It automatically recognises the OS on the Nodes, therefore it chooses
-  the appropriate packages for your operating system, and execute only
-  those commands necessary for installation for that environment
-
-* only require to fill in a template and launch the playbook using a single
-  CLI command
-
-* When more scenarios will be added, suitable inventory files will be added
-
-
+.. hint:: If you plan to install multiple instances of |carbonio| on
+   different environments, we suggest that you create directory (we
+   call it :file:`data` and place is under the :file:`/root/`
+   directory to store the various inventories required for the
+   different setups. We will always refer to files in the directory
+   :file:`/root/data/` during the installation procedure.
+      
 .. _ansible-conf:
 
 Configure Ansible

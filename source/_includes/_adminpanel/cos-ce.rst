@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 A |cos| determines which features and options can be accessed by a
 user, how to access them, and sets the default values for a number of
@@ -92,30 +89,18 @@ be added to the COS.
 Advanced
 --------
 
-Multiple *Advanced* options can be configured here, divided into
+Multiple *Advanced* options can be  configured here, divided into
 multiple groups
-
-General Options
-  The option in this group allows users of the COS to access the
-  *Undelete E-mail* feature, which allows each user to retrieve an
-  e-mail from the |backup| if it was deleted within the last **seven**
-  days.
-
-  .. note:: This option can be configured on the CLI at both COS and
-     Account level, please refer to Section :ref:`cli-features` for
-     details.
 
 Forwarding
   Two options govern how to forward messages: how long an e-mail
   address can be and the maximum number of recipients allowed.
 
 Quotas
-  A set of options that show how much space a user can occupy on the
-  server for Mails and |file|, or how many contacts he can have. These
-  quotas are inherited from the COS the user belongs to and may be
-  changed for the current user. It also encompasses the options to
-  send periodic notifications when the user space raises over a given
-  threshold and a template for the notifications.
+  A set of options that limit how much space a user can occupy on the
+  server, or how many contacts he can have. It also encompasses the
+  options to send periodic notifications when the user space raises
+  over a given threshold and a template for the notifications.
 
 Password
   Settings for password policies: length, characters, and duration of

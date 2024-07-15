@@ -33,7 +33,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Full Standard" Scenario
    :open:
 
-   :download:`Download the inventory
+   :download:`Download_inventory
    </playbook/carbonio-inventory-fullstandard>`
 
    .. literalinclude:: /playbook/carbonio-inventory-fullstandard

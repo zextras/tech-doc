@@ -7,7 +7,7 @@ can be found in section :ref:`manage-admins`.
 
 After you change the password, point a :ref:`supported browser
 <browser_compatibility>` to the Proxy Node's IP or hostname and port
-*6071* (e.g., https://172.16.0.12:6071/) and log in to the |adminui| ,
+*6071* (e.g., https://172.16.0.12:6071/) and log in to the |adminui|,
 with user ``zextras@example.com`` and password the one you just
 changed.
 
@@ -25,7 +25,7 @@ to access to use the features of |product|.
 .. note:: Since |product| uses SSL, it is strongly suggested to
    install an SSL certificate. Please refer to Section
    :ref:`install-SSL-cert` (CLI) or :ref:`ap-vhost` |adminui| for
-   directions. you can even install a :ref:`Let's Encrypt certificate
+   directions. You can even install a :ref:`Let's Encrypt certificate
    <le-procedure>`.
 
 .. grid:: 1 1 2 2
@@ -34,13 +34,13 @@ to access to use the features of |product|.
    .. grid-item-card:: Web Client
       :columns: 6
       
-      The web client is used for regular access to the e-mail account
-      and can be used also to access other functionalities (|file|,
-      |docs| if installed), as well as other client protocols such as
-      IMAP or POP, and is available at
-      https://mail.example.com/. In :ref:`carbonio-usage` you can
-      find directions that guide you in your first steps with
-      |product| and introduction to the most common tasks
+      The web client is used by :term:`regular users <Regular User>` to access to the
+      e-mail account and can be used also to access other
+      functionalities (|file|, |docs| if installed), as well as other
+      client protocols such as IMAP or POP, and is available at
+      https://mail.example.com/. In :ref:`carbonio-usage` you can find
+      directions that guide you in your first steps with |product| and
+      introduction to the most common tasks
 
 
    .. grid-item-card:: |adminui|
@@ -53,6 +53,11 @@ to access to use the features of |product|.
       configurations. Please refer to section :ref:`adminpanel` for
       more information.
 
+Regardless of the language configured on |product|, the locale set on
+the browser takes precedence: This means that dates, currency, and
+other locale-related values will be displayed according to the
+language of the browser, which is usually inherited by the locale set
+for the operating system.
 
 Multiple Configured Domains
 ===========================
@@ -61,13 +66,3 @@ When multiple domains are defined on |product|, you will see in the
 *username* field, the default domain: to log in to that domain, you
 can use only the username. To login to another domain, you need to
 write the whole e-mail address: username and domain.
-
-.. index:: Lost password, password recovery
-
-Lost Password
-=============
-
-If the Administrator has enabled the option, you can see a link
-underneath the credential's text-fields, that allows you to recover
-the password. Before you use it, however, you need to ask the
-Administrator to set up a recovery account.

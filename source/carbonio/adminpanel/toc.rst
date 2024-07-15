@@ -20,6 +20,7 @@ Administrators need during their daily activities.
       subscriptions
       privacy
       backup
+      legalhold
       notifications
       operations
       adminroles

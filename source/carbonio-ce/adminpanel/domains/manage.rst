@@ -47,25 +47,46 @@ modified for any individual user.
       :ref:`account creation <ap-new-account>`, plus other options,
       including:
 
-      * The ability to prevent the user from changing the
-        password
+      * The number of aliases of the account
+
+      * The type of the account, which is one of
+        
+        * *Normal*: a :term:`Regular user`
+        * *DelegatedAdmin*: a Delegated (Domain) Administrator
+        * *Admin*: a Global Administrator
+        * *System*: special accounts used by |product|, i.e.,
+          GALsync, spam and ham training, and virus quarantine
+        * *External*: an account that does not use |product| for
+          authentication
+
+        Upon clicking the arrow on the right-hand side of the option,
+        the **Administration** tab will open, to allow changing the
+        user's Role.
+
+      * To force the user to change password at the next login
 
         .. note:: An Admin can not change the password of a user, only
            wipe it, so the user is forced to change it on the next
            login attempt.
 
+      * The quota used and available for the e-mails and the |file|
+        module. It is possible to insert up to **three** decimal
+        digits for each quota.
+
       * To remove the user's password from LDAP
+
+      * The COS the user belongs to
 
       * The Distribution List memberships
 
       * To move a user to another domain, which must be defined on the
         same server, by writing the new one in the **Domain Name**
-      
+
       At the bottom, it is possible to see all the user's open
       sessions, which can be terminated by selecting one and clicking
       :bdg-danger-line:`END SESSION` button on the top right of the
       list.
-       
+
    .. tab-item:: Profile
       :class-label: sd-px-3
 
@@ -99,10 +120,19 @@ modified for any individual user.
       passwords and OTP tokens can be created to allow the user to
       login by using a QR Code; a policy can set to force the user to
       select a secure password and the type of characters to be
-      chosen. Forgotten password, if enabled, allows a user to receive
-      a token to temporarily access the webmail, by sending a token to
-      the recovery address specified in the textfield next to the
-      option. The Failed login policy determines how the system
+      chosen.
+
+      The Forgotten password feature, if enabled, allows a user to
+      receive a token, to temporarily access the webmail, to the
+      recovery address specified in the textfield next to the
+      option. It also provides the user a new option in the
+      :menuselection:`Settings --> Auth`, namely the ability to change
+      the recovery address.
+
+      .. seealso:: The password recovery procedure is described in
+         section :ref:`password-recovery`.
+
+      The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
    .. tab-item:: Administration
@@ -159,13 +189,13 @@ dialog window opens and allows you to set up the basic configuration
 of the new account.
 
 .. card:: Create New Account *John Smith*
-      
+
    .. figure:: /img/adminpanel/new-account-details.png
       :align: right
       :scale: 50%
 
       Account creation interface
-      
+
    We create the first account for the CEO of ACME Corporation and
    provide the following data.
 

@@ -16,6 +16,11 @@ independently for each domain defined in the |product| infrastructure.
    infrastructure, using a username and password existing in the
    external database.
 
+   .. warning:: If you use an External LDAP and forgot to activate the
+      *Fallback* (i.e., option called *try local password
+      management*), in case the external LDAP server is unreachable by
+      |product|, **no user will be able to log in** to |product|!
+
 #. External Active Directory The external Active Directory
    authentication method involves the use of Microsoft Active
    Directory services for authentication and |Product|'s Directory

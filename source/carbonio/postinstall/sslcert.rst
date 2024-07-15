@@ -1,9 +1,9 @@
 
 .. _carbonio-ssl-cert:
 
-==============================
-Infrastructure SSL certificate
-==============================
+=====================================
+Infrastructure Domain SSL certificate
+=====================================
 
 This section contains guidelines to enforce security on a typical
 |product| installation.

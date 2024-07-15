@@ -24,8 +24,8 @@ meaning there are at least 99 emails to read.
 
 A right-click on the e-mail allows to carry out other actions on the
 selected folder: *move*, *wipe* (i.e., remove all e-mails in the
-folder), *edit*, *delete*, and *share* (with internal colleagues or
-even make it freely readable).
+folder), *edit* (including *share* with internal or external
+colleagues), and *delete*.
 
 .. hint:: An e-mail can be placed in exactly one folder.
           
@@ -237,7 +237,8 @@ actions are available.
       option to either download the file to a local directory on the
       workstation, or to save it in the user's personal's storage on
       |file|, even if the attachment comes from a mail in a shared
-      account.
+      account. If among the attachments there are vCards, they will be
+      imported in the user's personal *Contacts*.
 
 .. _mail-trash-folder:
 
