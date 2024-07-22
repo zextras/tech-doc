@@ -36,8 +36,8 @@ apt install -y $PACKAGES
 
 carbonio-bootstrap -c ./config.conf
 
-CONSUL_SECRET="$(openssl rand -base64 14)"
-POSTGRES_SECRET="$(openssl rand -base64 14)"
+CONSUL_SECRET="$(openssl rand -base64 14 | tr -dc '[:alnum:]\n\r')"
+POSTGRES_SECRET="$(openssl rand -base64 14 | tr -dc '[:alnum:]\n\r')"
 
 service-discover setup $(hostname -i) --password=$CONSUL_SECRET 
 
