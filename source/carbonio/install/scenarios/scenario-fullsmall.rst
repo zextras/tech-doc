@@ -37,7 +37,7 @@ issuing from the workstation, the command (as the ``root`` user)
 
 .. code:: console
 
-   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullsmall carbonio-install.yml
+   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullsmall carbonio_install.yml
 
 .. _scenarioa-network:
 
