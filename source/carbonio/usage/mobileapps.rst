@@ -276,8 +276,8 @@ To make sure that your device allows all required notifications, follow these st
 
 Notifications should now work!
 
-.. warning:: For push notifications to work on the device, the
-   |product| server must be able to communicate with the
+.. warning:: (For Admins) For push notifications to work on the
+   device, the |product| server must be able to communicate with the
    notifications.zextras.com service on port 443 (The exact URL to
    which notifications are sent is:
-   https://notifications.zextras.com/firebase/ )
+   https://notifications.zextras.com/firebase/).
