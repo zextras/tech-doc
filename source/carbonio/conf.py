@@ -141,9 +141,9 @@ html_context = {
 
 # list of URLs to ignore
 linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
-                     'https:\/\/my-saml-provider\.org\/',
-                     'https:\/\/notifications.zextras.com\/firebase\/',
-                     r'https://mycompany.okta.com/.*',
+                     r'https:\/\/my-saml-provider\.org\/',
+                     r'https:\/\/notifications.zextras.com\/firebase\/',
+                     r'https:\/\/mycompany.okta.com/.*',
                      r'../../.*' ]
 
 # there are more options, but at the moment we don't need them. They

@@ -39,8 +39,8 @@ dnf install -y $PACKAGES
 
 carbonio-bootstrap -c ./config.conf
 
-CONSUL_SECRET="$(openssl rand -base64 14)"
-POSTGRES_SECRET="$(openssl rand -base64 14)"
+CONSUL_SECRET="$(openssl rand -base64 14 | tr -dc '[:alnum:]\n\r')"
+POSTGRES_SECRET="$(openssl rand -base64 14 | tr -dc '[:alnum:]\n\r')"
 
 service-discover setup $(hostname -i) --password=$CONSUL_SECRET 
 
@@ -69,7 +69,7 @@ PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-db-bootstrap carbonio_ad
 
 PACKAGES="carbonio-message-dispatcher"
 dnf install -y $PACKAGES
-PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-migration carbonio_adm 127.0.0.1
+PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-migration carbonio_adm 127.0.0.1 20000
 
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
