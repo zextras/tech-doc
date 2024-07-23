@@ -30,7 +30,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Full Redundant" Scenario
    :open:
 
-   :download:`Download the inventory
+   :download:`Download_inventory
    </playbook/carbonio-inventory-fullredundant>`
 
    .. literalinclude:: /playbook/carbonio-inventory-fullredundant
@@ -40,7 +40,7 @@ issuing from the workstation, the command (as the ``root`` user)
 
 .. code:: console
 
-   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullredundant carbonio-install.yml
+   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullredundant carbonio_install.yml
 
 .. _scenario-rd-network:
 

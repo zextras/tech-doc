@@ -911,6 +911,10 @@ comma-separated list of accounts ID.
 
         zextras$ carbonio backup legalhold unset 924e1cf6-eaba-4aff-a10d-1f8e94fa85e4
 
+
+.. seealso:: The legal hold status can be managed from the |adminui|
+   as well, please refer to Section ref:`ap-lh`.
+
 .. _limitations_and_corner_cases_of_the_backup:
 
 Limitations and Corner Cases of the Backup

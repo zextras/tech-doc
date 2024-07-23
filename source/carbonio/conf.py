@@ -44,9 +44,9 @@ copyright = '2024: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.5.0'
+release = '24.7.0'
 version = release
-prev = '24.3.0'
+prev = '24.5.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -141,9 +141,9 @@ html_context = {
 
 # list of URLs to ignore
 linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
-                     'https:\/\/my-saml-provider\.org\/',
-                     'https:\/\/notifications.zextras.com\/firebase\/',
-                     r'https://mycompany.okta.com/.*',
+                     r'https:\/\/my-saml-provider\.org\/',
+                     r'https:\/\/notifications.zextras.com\/firebase\/',
+                     r'https:\/\/mycompany.okta.com/.*',
                      r'../../.*' ]
 
 # there are more options, but at the moment we don't need them. They

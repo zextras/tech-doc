@@ -50,7 +50,7 @@ step description.
 
 .. card:: Step 1: Activate replica on Master
 
-   Activate the replica by executing as the  ``root`` user
+   Activate the replica by executing as the  ``zextras`` user
 
    .. code:: console
 

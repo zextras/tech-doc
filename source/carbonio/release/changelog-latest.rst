@@ -1,393 +1,414 @@
 
-Carbonio Changelog - Release 24.5.0
+Carbonio Changelog - Release 24.7.0
 ===================================
 
-Release Date: May 22nd, 2024
+Release Date: July 22nd, 2024
 
 New Features List
 -----------------
 
-**AC-785: Enhanced Content Visibility to Carbonio Webmail's Responsive Window Support**
-   Experience improved content visibility on smaller screens with the latest update to Carbonio webmail. Our enhanced code now supports responsive windows, ensuring seamless readability and navigation across devices of all sizes
+**AC-937: Active directory authentication port hint updated**
+   The AdminUI will now display a hint for AD authentication that suggests using port 3268 instead of 389, which aligns with the correct port used for authenticating against the Global Catalog in AD.
 
 
-**AC-899: Introducing the Carbonio Mobile App popup generate in login screen**
-   Now Carbonio webmail shows a popup of a modal on the login screen on the mobile device about mobile (Android/iOS) applications.
+**AC-950: Dashboard now display admin last Login timestamp and carbonio version**
+   The Carbonio Admin panel Dashboard will now include the Carbonio version and the admin's last login timestamp, providing administrators with key information immediately upon logging in.
 
 
-**AC-900: Manage global active-sync settings**
-   Global Admins can now enable/disable the DoS filter and purge the Active Sync table. This allows for better management of Active Sync settings at a global level.
+**AC-962: Account details updated for files space**
+   The Files Space Limit field will now highlight in color (#D5E3F6) for 3 seconds when clicked, and the display will scroll to this field. Additionally, a warning for "Maximum 3 digits allowed after the decimal point" will only appear if the user exceeds this limit.
 
 
-**AC-904: Admin update MTA server attributes**
-   Admins can now manage specific MTA attributes for each server, allowing for specialization.
+**AC-969: The "INIT DOMAIN" enhanced**
+   Admins can now view the status of domain initialization. For first-time domain initialization, they will see an "INIT" button. For subsequent initializations, a "RE-INIT" button will be displayed. This allows admins to decide whether to initiate or apply additional changes based on the current status.
 
 
-**AC-913: Auto cache flush on Global admin domain updates**
-   The system now automatically flushes the cache following domain updates by the Global Admin, ensuring smooth transitions to the latest version.
+**AC-1005: Update translations to use i18next JSON format v4**
+   Update i18next provider to use JSON format v4 for improved translation management and compatibility.
 
 
-**AC-914: Introduced autometically cache flushing system of mailbox objects**
-   Introduced a game-changing feature an automatic cache flush system that ensures administrators see immediate reflections of updated values in their browsers. This innovative system seamlessly integrates with Carbonio's attribute update mechanism, enhancing the user experience and streamlining workflow efficiency
+**AC-1006: LegalHold account status management in AdminUI**
+   Admins can now toggle to view only legal-hold accounts or all accounts, search for accounts by domain or input field, and set accounts as legal hold through the AdminUI.
 
 
-**AC-922: Browser Compatibility Detection in Carbonio to enhancing User Experience**
-   The latest update to Carbonio introduces a powerful functionality to the ability to detect and distinguish between full and limited browser support during user and admin login sessions. This enhancement ensures a smoother user experience by providing tailored interactions based on browser capabilities
+**AC-1009: OTP requirement in forgot password flow**
+   Users with 2FA enabled on Carbonio will now required to enter an OTP code in addition to the recovery token when using the "Forgot Password" feature from an untrusted IP address.
 
 
-**AC-925: Update server MTA attributes management**
-   Admins can now manage specific attributes related to the MTA for each server, enabling specialization.
+**AC-1011: Delegated admin panel error handling enhanced**
+   The AdminUI will now display an informative message to the delegated admin if there is a lack of rights-related API calls, such as `getEffectiveRights`. This will help the admin understand why they may not be able to perform certain tasks and guide them on potential actions to resolve the issue.
 
 
-**AC-935: Removed password option in resource creation**
-   While creating a resource account now "Password" option no longer be displayed, aligning with the intended behaviour of resource accounts. This ensures clarity that resource accounts are not standard accounts with passwords by default.
+**AC-1014: The domain disclaimer control by global config**
+   The Domain Disclaimer feature is now controlled by the Global Config setting, allowing administrators to enable or disable the disclaimer option for all domains from a central location.
 
 
-**AC-940: Streamlined Notification Preferences for New Mail in Carbonio Admin**
-   This update simplifies notification settings within Carbonio admin user preferences by removing the redundant double enable notification for new mail. Now, users have a single notification option available in their preferences, enhancing user experience and reducing confusion
+**AC-1015: Enhanced domain auth LDAP support**
+   The Domain Auth LDAP feature has been improved to securely store search bind credentials, allowing for easier and more secure authentication with external LDAP directories.
 
 
-**AC-941: Implemented LDAP:// as static non-editable value**
-   This update ensures that LDAP:// is added as a static non-editable value in the Distribution Lists URL field. Users will be prevented from typing LDAP, triggering an error prompt, while the full string, including LDAP:///, will be utilized for SOAP calls during connection checks or saves.
+**AC-1020: Global Delegates label change**
+   The label "Global Delegates" has been changed to "Administrators" across the platform. This update standardizes the terminology used to refer to administrative roles, improving clarity and consistency within the user interface.
 
 
-**AC-942: Updateed label from "Hide in GAL" to "Hidden in GAL"**
-   The label for account details will be changed from "Hide in GAL" to "Hidden in GAL" to match the distribution list label.
+**AC-1023: Secondary volumes removed from CE storages**
+    The Storages section no longer supports or references Secondary Volumes, simplifying volume management and removing unnecessary features.
 
 
-**AC-943: Updated Terminology in Carbonio Admin Panel for Resource Management**
-   The latest update to the Carbonio admin panel introduces revised terminology for resource management. The "Devices" label has been replaced with "Equipment," while "Location" now appears as "Meeting Room" within the interface.
+**AC-1030: Files quota information added to quota panel**
+   The Carbonio Quota panel now reports file quota usage and limit, providing administrators with detailed insights into file storage and mail storage usage.
 
 
-**AC-951: Domain Menus: Interchanged "Details" and "Manage" Positions**
-   In the domain menus of our system, we have interchanged the positions of "Details" and "Manage" options. Previously, "Manage" was situated below, but now it has been moved up, while "Details" has been shifted downwards. This adjustment aims to enhance user accessibility and streamline navigation
+**AC-1031: Files account quota added to COS advanced**
+   The COS - Advanced settings now include the Files Account quota, allowing administrators to manage file storage limits for users.
 
 
-**AC-952: Reposition MTA below COS on primary toolbar**
-   Now the MTA is repositioned below COS on the primary toolbar.
+**AC-1032: Disable 2FA for incorrect AuthMech**
+   If the domain's Authmech is set to external LDAP, external AD, or “zimbra”, the 2FA menu will be disabled or a clear warning will inform the admin that 2FA settings are not enforced with the chosen Auth Method.
 
 
-**AC-953: Enhanced LoginUI for Carbonio Webmail to Implementing Common Password Rules for First-time Users**
-   Enhance the Carbonio Webmail LoginUI to accommodate common password rules for users prompted to change their password during their initial login. This feature ensures secure access by guiding users to create strong passwords while adhering to established security standards. Improve user experience and bolster system security with streamlined password management.
+**AC-1035: The Indonesian language options introduced**
+   Added Indonesian language option to the language selector for improved accessibility and personalization.
 
 
-**AC-960: Improved Padding for Carbonio Admin Panel MTA Section Using CSS"**
-   Enhance layout padding issues within the MTA (Mail Transfer Agent) section of the Carbonio admin panel by tuning  CSS (Cascading Style Sheets) modifications. By adjusting the padding settings
+**AC-1036: Remove chinese language option**
+   The Chinese language option has been removed from all language selectors on the admin console. Now the users will no longer see Chinese as an available language choice.
 
 
-**AC-961: Update "Included in backup" field**
-   The "Included in backup" field in account details has been modified to improve usability and clarity.
+**AC-1043: Mailbox and Files quota visualization**
+   Admins can now view the used and available quota for Mailbox and Files directly from the Account panel. When a user clicks on the mailbox quota usage, the system focuses on and highlights the account quota input field, enhancing the user experience.
 
 
-**AC-965: Hide "Global Admin" flag for Non-Global admins**
-   The "Global Admin" flag should be hidden from user details if the user is not a Global Admin. This change ensures a cleaner interface and prevents confusion for delegated users.
+**AC-1060: The example for hex code for colors in the admin UI updated**
+   The admin UI now shows a valid hex color code example to prevent errors caused by invalid hex color codes.
 
 
-**AC-966: Rectification of Duplicate Label Name "What's a GAL" in Carbonio Admin Panel**
-   In the Carbonio admin panel, a recent update addressed an issue where the label name "What's a GAL" was found to be duplicated while creating a domain. This rectification ensures smoother navigation and clarity within the admin interface
+**AUTH-543: Removal of desktop app option from webmail auth**
+   The desktop application option from our webmail auth module in Carbonio is removed due to low usage. Users will no longer see this option.
 
 
-**AC-967: Enhanced quota sizes and threshold label**
-   Now the admin can set mailbox quota sizes and threshold label
+**AUTH-549: Enabled communication between Carbonio Files and auth**
+   Communication between carbonio-files and carbonio-auth is now established by adding the required intentions, enabling the token validation endpoint to function correctly.
 
 
-**AC-970: Label updatedof  Button for Certificate Verification in Virtual Host Configuration**
-   In the Virtual Host configuration settings of the Carbonio Admin Panel, the "upload and verify certificate" button has been replaced with a new "Verify Certificate" option.
+**CO-904: RecoverAccount API sendRecoveryLink operation removal**
+   The sendRecoveryLink operation has been removed from the RecoverAccount API. The UI now correctly uses the getRecoveryAccount operation for the "Forgot Password" feature.
 
 
-**AC-972: Enhancement in disabling "Create COS or Domain" Option for Delegated Domain Admins in Carbonio Admin Panel**
-   In the Carbonio admin panel, a security enhancement has been implemented to disable the "Create COS or Domain" option for delegated domain administrators
+**CO-977: Enhanced subscription: display end user name in admin UI and CLI**
+   The subscription feature now shows the end user's name in both the Admin panel and CLI, enhancing user management and visibility for administrators.
 
 
-**AC-976: Delegated account toggle behavior update**
-    The behaviour of the global admin toggle in delegated admin accounts has been updated to reflect the specified scenarios. This includes visibility and functionality adjustments for different account types.
+**CO-992: Expose prometheus metrics for Carbonio storages service**
+   Carbonio storages service now exposes prometheus metrics, including JVM info, node metrics, and HTTP traffic data. This enables better monitoring and observability.
 
 
-**AC-1002: Enhancement to Update Label from 'Who’s in this list' to 'This list is included in**
-   This enhancement updates the label within the DL of the admin interface from "Who’s in this list" to "This list is included in." This change aims to provide clearer and more intuitive navigation for users, 
+**CO-1023: Module-Specific trash emptying enhanced**
+   Each module's trash can now be emptied independently, ensuring only the selected module's items are deleted.
 
 
-**AUTH-542: User can specify and confirm a recovery addres**
-   Now user can specify and confirm the recovery address.
+**CO-1024: Admin can control message undelete feature**
+    Global administrators can now define which COS and users can restore deleted messages. Users will only see the restore option if they have permission.
 
 
-**CO-319: Enhanced cleanup of residual files by service-discover**
-   Improved removal of residual files generated by service-discover during service package uninstallation in Carbonio-ce, ensuring smoother system reconfiguration and reinstallation processes.
+**CO-1032: New endpoint for guest account creation**
+   Successful implementation of an API endpoint for creating guest accounts in Carbonio. Post API with any guest name and API provide zxToken and tokenId
 
 
-**CO-921: Enhanced Service Health Check for Carbonio-Storage**
-   Improvements to Carbonio service health check feature in Carbonio-Storage, aimed at ensuring a more reliable and seamless experience for Monitoring admin. The enhanced service health check will provide real-time monitoring and diagnostics to promptly identify and address any potential issues affecting the performance or availability of Carbonio-Storage. 
+**CO-1039: Prohibit copy on over quota**
+   The carbonio-storage now prevents copy operations when a user exceeds their storage quota, ensuring no further data can be added beyond the allocated limit.
 
 
-**CO-954: Enhance account quota information considering CoS->Account hierarchy**
-   APIs now handle CoS->Account hierarchy for accurate quota retrieval.
+**CO-1040: Account status accessible via GetAccountInfo API**
+   The GetAccountInfo API now returns the account status, allowing sysadmins to determine if an account is in maintenance, closed, etc.
 
 
-**CO-981: Ensuring Unaffected Carbonio File Uploads Despite Consul DNS Removal from PowerStoreClient**
-   Important update regarding our file upload functionality and the recent removal of Consul DNS resolve from PowerStoreClient. Despite this change, we want to assure you that file uploads on Carbonio remain unaffected
+**CO-1045: Improved LDAP external auth: Concurrent socket factory usage**
+   The recent LDAP external auth update with AllowConcurrentSocketFactoryUse enhances performance and reliability by enabling multiple connections to efficiently share the same socket factory.
 
 
-**CO-982: Improved autocomplete ordering**
-   Autocomplete now prioritizes matches from preferred source accounts, sorts matches from other accounts based on ranking and alphabetically, and gracefully handles failures during retrieval from remote accounts.
+**CO-1058: The domain filtering supports to GetAllDevices API**
+   Enhancement to the GetAllDevices API allowing administrators to filter mobile devices by specific domains.
 
 
-**CO-994: Infinite Retention Backup Feature for Legal Data Recovery in Carbonio"**
-   Implementing a new feature in Carbonio to enable infinite retention backup for user accounts. With this feature, administrators gain the ability to securely store user data indefinitely, facilitating legal data recovery processes when necessary. Configurable settings to designate specific user accounts for infinite retention backup
+**CO-1061: Contact groups ordering in autocomplete**
+   Contact groups are now included in the alphabetical order of the autocomplete suggestions based on their display name.
 
 
-**CO-1008: Update Content-Security-Policy to include mediapipe NPM package**
-   This update modifies the default Content-Security-Policy (CSP) of Carbonio to allow loading the Mediapipe NPM package from cdn.jsdelivr.net. This change is necessary for enabling Virtual Background functionality.
+**CO-1063:  Simplify MDM Feature Configuration**
+   Remove ZxMobile_DeviceManagementEnabled attribute requirement and ensure zimbraFeatureMobilePolicyEnabled alone enables MDM features across accounts.
 
 
-**CO-1011: Video Call Recording in Carbonio Webmail Unaffected by Removal of Consul DNS Resolve from AppToken SDK**
-   Ensuring the continued integrity and functionality of video call recording within Carbonio webmail, even in scenarios where Consul DNS resolution is removed from the AppToken SDK. The goal is to develop a robust recording mechanism that remains unaffected by changes or updates to underlying DNS resolution protocols
+**CO-1070: OTP email template icon fixed**
+   The icons in the static OTP notification email template no longer overlap, ensuring a clear and professional appearance.
 
 
-**CO-1014: Implement analytics tracking Opt-out for admin and user**
-   This update enables Carbonio to collect analytics on user interactions. Admins will have the option to opt-out of data collection at the account level, with the potential for future enhancements allowing users to opt-out as well.
+**CO-1120: Quota sorting capability added**
+   Added sorting functionality to API to sort mail quotas by percentUsed, totalUsed, quotaLimit, using this API functionality users can sort mail quotas by percentUsed, totalUsed, and quotaLimit in ascending or descending order.
 
 
-**CO-1017: Remove delegation settings versioning**
-   The Delegation Settings versioning mechanism, previously tracked by the AdminUpgradeService component, is no longer necessary due to the introduction of the initDomainForDelegation command, which deprecated and removed the old DelegationSettings functionality. Therefore, the related code is being removed to streamline the system and eliminate deprecated components
+**CO-1146: Improved hyperlink edit box visibility**
+   The hyperlink edit box has been enlarged to display the entire URL, improving user experience and ease of editing web links.
 
 
-**CO-1035: Automatic start of carbonio-avdb-updater.service**
-   The service "carbonio-avdb-updater.service" will now start automatically after installation, ensuring seamless integration with Ansible scenarios. This change ensures that the service is available without the need for manual intervention.
+**CO-1160: User can select items for restore**
+   Users can now see and select specific mail items to restore from a backup, with options to view item details such as Date, Subject, From, and To.
 
 
-**CO-1041: Removed unused Log4j 1.2.x dependency**
-   The unused Log4j 1.2.x dependency now removed from the project pom file resolves a security alert and ensures the project's dependencies are up-to-date.
+**CO-1169: New secondary bar with common components**
+   A new secondary bar with common components is enhanced, which fixed sharing and icon size inconsistencies. The “ADD SHARES” button is now disabled for viewers.
 
 
-**CO-1047: FullAutoComplete API Response Enhanced**
-    FullAutoComplete API now delivers JSON responses with auto-completed ranking based on recently used contacts. For delegated accounts, the current user's contacts are prioritized at the top during composition, followed by others in later ranks.
+**CO-1172: Seamless Contact Creation and Search with Enhanced UI Integration**
+   The UI now seamlessly integrates address book information, ensuring smooth contact creation and error-free search functionalities.
 
 
-**FILES-761: Quota info on Files module**
-   Now the user can see the quota information on the Files module.
+**CO-1174: Folder actions and modals implementation**
+   Added functionality to handle delegated account's folder actions and related modals in the Contacts module, ensuring proper context menu actions and modal displays.
 
 
-**FILES-767:  Quota failure handling in files upload**
-   Users will be notified of upload failures due to quota constraints with a specific error code (422 Unprocessable Content) and a banner displayed within the upload view. The banner will disappear when no uploads fail due to quota. Additionally, error indicators will be present in other views and modules. The banner will not be manually closable.
+**CO-1175: User can download single contact vCard**
+   Users can now download a vCard for any contact in their address book, allowing them to share contact details easily via email or chat.
 
 
-**FILES-769: Enable quota update in Files**
-   Users can now manually update the quota information displayed in the Files module to reflect changes made when adding or removing files, providing them with accurate storage data.
+**CO-1176: Enhanced Icon for recurrent appointments**
+   Recurrent appointments now feature a new icon on their cards for easy identification. Users can quickly recognize recurrent appointments and hover over the icon to view a tooltip saying "Recurrent appointment," improving usability and appointment management.
 
 
-**IN-557: Carbonio Startup Service optimization**
-   Implement "systemd" and ".target "in place of ".services" to manage Carbonio service loaded into the server in a proper order in  all service-dependency manner with the help of that, we can eliminate "zmcontrol scripts"
+**CO-1177: Enhanced local password reset with recovery code**
+   Users in Carbonio CE can now reset their password locally using a recovery code, activated by admins through the zimbraFeatureResetPasswordStatus setting. Ensure a recovery email is added in settings; upon requesting a reset, a code is sent to this email for authentication and password reset.
 
 
-**IN-667: Improved JVM security and launch Carbonio**
-   Enhance security and JVM settings in carbonio-launcher. Upon installing Carbonio, Now it starts correctly.
+**CO-1193: vCard Import from mail attachment**
+   Users can now import vCards directly from mail attachments into their address book by clicking an icon in the AttachmentBlock component.
 
 
-**IN-678: Perl module updates**
-   Updated Perl modules to latest versions.
+**CO-1195: Users can import vCard from attachment**
+   Now the users can import contacts directly from attached vCard files.
 
 
-**IRIS-4474: Enhanced Availability Check Feature in Carbonio Webmail Invitation**
-   Carbonio webmail now includes a convenient "Check Your Availability" button within appointment invitation emails. This feature allows users to verify their availability before confirming an appointment. Users can propose alternative meeting times by sending a revised email to the initiator, streamlining the scheduling process and improving communication efficiency
+**COR-916: Proxy Configuration for Internet Access**
+   Carbonio can now be configured to connect to the internet using both authenticated and unauthenticated proxy settings. This allows for data downloads and metrics collection through proxies.
 
 
-**IRIS-4773: Create Appointment from Email option added**
-   Users will now have the ability to create an appointment from an email using the contextual menu. This feature will prefill the "Description" field with the content of the email.
+**DOCS-202: Quota check for document edit access**
+   The Docs now check the document owner's quota before allowing write access. If the owner is over quota, the document is opened in read-only mode.
 
 
-**IRIS-4822: Expand event duration by stretching event tile**
-   Users can now expand event durations by stretching event tiles in the calendar view, enabling quick adjustments directly within the interface. Confirmation modals prompt users when stretching events sent to attendees or recurrent events, ensuring proper handling and user control.
+**DOCS-210: Health check APIs for carbonio-docs-connector**
+   The carbonio-docs-connector now has three new APIs to check its health status. These APIs allow for monitoring the health of the service and its dependencies.
 
 
-**IRIS-4983: EML message download feature**
-   Users can now download email messages in EML format directly from their inbox, enhancing email management efficiency.
+**FILES-287: Improved "Update View" Button in Carbonio File Module**
+   Pressing the “update view” button now correctly updates the Files view, ensuring that the cache is reset and the displayer remains open when the response arrives.
 
 
-**IRIS-5016:  Include full Name and address in expanded Sender/Receiver header**
-   The sender/receiver chips in the expanded header now display both the full name and email address of the user. This enhancement provides additional context for recipients and improves user understanding of known contacts, domain users, and external contacts.
+**FILES-770: Localize date and time display**
+   Instead of using the account settings' timezone, the system will now display dates and times based on the browser's timezone and locale settings. This change ensures that users see dates and times in a format that is familiar and standard for their region.
 
 
-**IRIS-5017: Improved sorting functionality in Webmail**
-   This update improves sorting in webmail, ensuring proper functionality for options like "unread," "important," "flagged," and "attachment" with ascending or descending orders. Users will experience smoother email organization.
+**FILES-771:  Hide docs and preview features when services not available**
+   The Files UI will hide all Docs and Preview related features if the corresponding services (carbonio-docs-connector and carbonio-preview) are not live.
 
 
-**IRIS-5043: Calendar export feature**
-   This feature enables Carbonio users, both Admin and EndUser, to import arbitrary ICS files into calendars they have write access to. Additionally, users can export single appointments or entire calendars they have read access to into a single ICS file.
+**IN-681: Update to carbonio-openssl 3.0 LTS**
+   The Carbonio OpenSSL library has been updated to the 3.0.x LTS series, with adjusted compilation flags and FIPS enabled at build time.
 
 
-**IRIS-5044: Single appointment export enhancement**
-   Users can now export single events they have read access to into a single ICS file, facilitating data portability and backup.
+**IN-691: Carbonio pidfiles moved to /run/carbonio**
+   Carbonio processes will now store their pidfiles in /run/carbonio instead of /opt/zextras/log, adhering to UNIX best practices and ensuring consistency across reboots.
 
 
-**SHELL-192: Removed Carbonio logo from email loader**
-   The Carbonio logo and associated references are now removed from the email loader to prevent conflicts with the Whitelabel feature.
-
-
-**TSK-69: Tasks module icon update**
-   The icon for the Tasks module in the primary bar has been updated to "checkmark-circle-2-outline," enhancing user clarity and recognition of the feature.
-
-
-**TSK-73: Update database existence check in tasks-db-bootstrap**
-   This update modifies the database existence check in the carbonio-tasks-db-bootstrap file and implements a real health check using a script to verify if the database exists. 
-
+**IN-702: Add systemd tmpfiles support and checks for /run/carbonio**
+    The system now supports tmpfiles configuration for systemd and includes checks for the /run/carbonio directory in various zm*ctl scripts to ensure proper functionality after a reboot.
 
 *****
 
 Bugfix List
 -----------
 
-**AC-896:  Disable login API call when using SAML option**
-   When the SAML option is selected on the login page, the UI must not call the login API. Users should ensure that the username and password fields are filled before clicking the SAML button.
+**AC-932: Display message enhanced for missing OTP images**
+   When sending OTP codes to Gmail, images and the QR code were not visible. The update provides alternative text for these images, ensuring that users receive clear instructions even if the images fail to load.
 
 
-**AC-948: Activate "As New Email Arrives" option in Admin UI**
-   Currently, the 'As New Email Arrives' option within the Admin UI has been updated to be active and selectable. This adjustment ensures consistency with the functionality observed in the User UI. By making this change, users will experience improved consistency and usability across both interfaces, enhancing their overall experience with the application.
+**AC-981: FQDN validation Improved**
+   Improves the Fully Qualified Domain Name (FQDN) validation in virtual hosts. Validations now align with expected behaviour for various scenarios, ensuring accuracy.
 
 
-**AC-963: Carbonio Storage Volume Modification work Seamless Functionality Across Languages**
-   Improvement in the modifying Carbonio Storage Volume operates flawlessly across various languages without encountering any errors. Whether you're adjusting storage volume settings in English, Spanish, Mandarin, or any other language, the functionality remains consistent and reliable
+**AC-982: HSM policy creation and editing enhanced**
+   Carbonio allows users to create and edit HSM policies without issues, ensuring correct functionality.
 
 
-**AC-977: Enhanced COS Management by Selecting and Deselecting Domains and User Accounts**
-   Significant improvements have been made to COS (Class of Service) management within the administrative functions. Admins can now conveniently select or deselect domains and user accounts, streamlining the process of assigning COS preferences. Additionally, users will find improved clarity as the handled domains and accounts are now prominently displayed under the selected COS in the General Information section
+**AC-983: CoS selection and saving at account level fixed**
+   The admin now correctly disables the CoS selector if the account is set to use the default (domain) CoS. If a specific CoS is selected, it will be saved properly and updated correctly when the account is reopened.
 
 
-**AC-978: Incorrect value for zimbraAuthMech during domain creation fixed**
-    The issue with incorrect zimbraAuthMech values during domain creation via the Admin UI has been fixed. This problem affected all users creating domains through the admin interface. The fix ensures correct authentication for services.
+**AC-1013: Enforce external auth improvements**
+   The AdminUI now clearly informs the admin about the implications of setting "allow local fallback" to FALSE without an LDAP URL. Warnings and confirmations are added for better clarity.
 
 
-**AC-980: User UI OTP reflects admin UI status**
-   Fix the discrepancy where OTP status is displayed as "Disabled" in the Admin UI while it's actually enabled for users. This ensures consistency between user and admin views.
+**AC-1017: Domain based ActiveSync account filtering**
+   The ActiveSync account management system now allows Global Admins to view and manage accounts specific to the selected domain, enhancing account management efficiency and organization.
 
 
-**AC-997: View mail button visibility fixed**
-   Domain Admin and Delegated Admin users can now see the VIEW MAIL button in the user interface. This resolves the issue where the button was not visible to these user roles.
+**AC-1018: Inherited value option in MTA My Network**
+   The My Network section in MTA Server General settings now includes an option to inherit values, providing administrators with the ability to use inherited network settings.
 
 
-**AC-1012: ACL rights display improvement**
-   Update ACL rights display in the Administration panel to correctly show the list name instead of the local_part.
+**AC-1033: Manage parts scrolling issue fixed**
+   The scrolling behaviour in various management sections such as Accounts, Delegated Domain Admin, Distribution list, Security Groups, Resources, Cos List, and Domain List has been improved to provide a smoother user experience. Additionally, the Chevron and text colour have been synchronized to secondary regular, and the icon and text now have an 8px space.
 
 
-**AC-1027: Mobile popup display fixed**
-   The software behavior has been updated to ensure that the app info popup only appears on mobile devices where app installation is feasible. This resolves the issue where the popup incorrectly appeared on web browsers with small screens or when resizing windows.
+**AC-1040: Enhanced HSM scheduler enable/disable feature**
+   Improved HSM scheduler now allows enabling or disabling features. The powerstoreMoveScheduler policy executes based on the scheduler's enabled status from the admin UI.
 
 
-**CO-986: Optimizing PostgreSQL Connection Management: Ensuring Max_pool Multiplication Limits**
-   To address PostgreSQL connection issues, especially related to connection pooling, it's crucial to implement a formula that optimizes the usage of database connections within the specified limits. The goal is to ensure that the product of max_pool (maximum pool size) and num_init_children (number of initial children processes)
+**AC-1041: Correct HSM Policy Display in Admin UI**
+   The Admin UI now correctly displays the HSM policy as per the zimbraHsmPolicy attribute, reflecting any changes made at the server level.
 
-if Single mailbox db instance
-max_pool*num_init_children <= (max_connections - superuser_reserved_connections)
 
-If N mailbox db instance
-max_pool*num_init_children * mailbox instnace<= (max_connections - superuser_reserved_connections)
+**AC-1042: Enhanced admin UI for large domains**
+   The Carbonio admin UI has been optimized to efficiently manage domains with over 5000 accounts, improving performance and usability in large-scale environments.
 
 
-**CO-1012: Efficient Large File Downloads with Blob Storage on Cloud Buckets**
-   Enhance the download process of large files by leveraging cloud storage buckets for efficient blob handling. By storing file blobs on cloud buckets like Amazon S3 or Google Cloud Storage, the download process becomes scalable, reliable, and optimized.
+**AC-1058: Remove device button enables upon account selection**
+   The remove device button functionality has been updated. It now activates correctly when any account is selected, enabling users to remove the selected account efficiently. This improvement enhances user experience by ensuring that the button remains inactive until an account is chosen, preventing accidental deletions and streamlining the account management process
 
 
-**CO-1048: Fixed mail recipient dropdown selection**
-    When creating a new mail, the recipient dropdown is not functional, preventing users from selecting recipients.
+**AC-1059: Enhanced service passphrase management in admin account security**
+   Improvements have been made to accurately manage multiple service passphrases in Carbonio admin accounts, aligning them with specific protocols. This enhancement ensures precise management and enhances the administrative experience.
 
 
-**CO-1049: Fixed Carbonio version reporting on CLI**
-   The issue with Carbonio 24.5.0 RC incorrectly reporting the Carbonio version on the CLI "zmcontrol -v" command output as 24.3.0 has been resolved
+**AC-1061: Improved passphrase protocol in account security services**
+   The account security services now ensure an accurate display of passphrases. This enhancement improves user experience by simplifying the management of service passphrases with precision and efficiency.
 
 
-**CO-1062: CLI GetAllDevices command fix**
-   This fix ensures that the GetAllDevices command now displays results. It resolves the issue where the CLI command GetAllDevices failed to show any devices.
+**AC-1063: Uniform distribution list naming**
+   The terminology for Distribution Lists is now consistent throughout the Carbonio Web Admin interface, replacing all instances of "Mailing List" with "Distribution List".
 
 
-**CO-1065: carbonio service module Restart Error Fixed**
-   The "carbonio [service] doRestartService" module previously raised errors during restarts. This fix addresses this issue.
+**AC-1081: Whitelabel help URL update fixed**
+   The help documentation URL in whitelabel settings now correctly updates to the domain level URL instead of the global URL when modified.
 
 
-**CO-1068: SAML authentication compatibility fix**
-   This fix addresses the issue where SAML authentication fails specifically when using Firefox or Safari browsers.
+**CO-959: Enhanced Bulk Message filler compatibility with "Request Read Receipt"**
+   We've improved the Bulk message filler feature in UI to operate smoothly alongside the "Request Read Receipt" functionality. This enhancement ensures that sending bulk messages does not interfere with tracking email reads, ensuring effective communication and monitoring.
 
 
-**FILES-603: Dropzone overlay alignment issue resolved**
-   The dropzone overlay in list items was misaligned, appearing at the top of the container instead of being centered. After the fix, the dropzone overlay is now correctly centered within the dropzone container, ensuring proper alignment.
+**CO-985: OTP enforced with forgottenPassword token**
+   Users must now provide OTP along with the ForgottenPassword token if 2FA is enabled, ensuring a more secure password reset process.
 
 
-**FILES-669: Preservation of Cyrillic File Names in Email Attachments**
-   In this feature update, we ensure that when sending emails with attachments containing Cyrillic characters in their file names, the file names remain unchanged and intact. This enhancement aims to eliminate any potential loss of information or confusion that may arise from file name alterations during the email transmission process.
+**CO-1021: Fixed query string handling in SAMLRequest**
+   The SAML authentication process now correctly handles query strings in the sp.entityid field, allowing for successful authentication with Identity Providers that use query strings, such as Google Custom SAML apps.
 
 
-**IRIS-3230: Enhanced Appointment Calendar selection**
-   Users can now select the calendar in which to add new appointments directly from Mail, ensuring appointments are organized according to user preference.
+**CO-1053: Upload Cancellation Deletes Partial Data**
+   When a user cancels an upload, the system now ensures that any partially uploaded data is automatically deleted, preventing unnecessary data storage.
 
 
-**IRIS-3768: Display missing contact information in Contact details**
-   The issue regarding missing contact information such as website, address, work type, street, city, postal code, country, and state in the Contact Details section has been resolved. All relevant contact information is now visible in the Contact Details section as expected
+**CO-1060: TrustedDevice handler fixed**
+   The trustedDevice handler is now properly registered, allowing the CLI commands for listing and deleting trusted devices to function correctly.
 
 
-**IRIS-4205: "Send via Mail" in File enhanced**
-   Users now can send emails using the "Send via Mail" option within the File Module.
+**CO-1064: getHsmPolicy document retrieval fix**
+   The getHsmPolicy function now correctly returns the document, resolving the issue where it previously did not.
 
 
-**IRIS-4803: Fixed reminder settings issue**
-   Users can now set the reminder period to "Never" in calendar settings, This fix addresses the issue where setting the reminder time-span to "Never" in calendar settings does not correctly apply to new appointments.
+**CO-1147: Improved message subject visibility on hover**
+   Enhances user experience in Carbonio by displaying full message subjects in a tooltip when hovering over messages with long subjects, improving readability.
 
 
-**IRIS-4819: Attachment issue with Files section fixed**
-   This issue addresses the problem where attachments selected from the "Files" section in webmail do not visually appear as attached and do not send with the message as expected.
+**CO-1155: Email Printing Enhancement**
+   Enhanced email printing functionality to ensure complete printouts, including all content and images, regardless of how images are inserted into the email body.
 
 
-**IRIS-4863:  Improved mail search settings behavior**
-   The mail search functionality has been enhanced to honor the settings configured in the General settings section. Users can now conduct searches within their email accounts with the ability to include or exclude specific folders such as Spam, Trash, and Shared folders, resulting in a more efficient and accurate search experience.
+**CO-1161: Correct date in cancellation message**
+    The cancellation message now correctly displays the date of the deleted instance or series, providing clear information to the participants about which occurrence has been deleted.
 
 
-**IRIS-4868: Draft deletion undo behavior enhancement**
-   Improved user experience by ensuring that when a draft is deleted and then undone, the letter is returned to the Drafts folder instead of being sent to the Trash.
+**CO-1162: Fixed mail editor UI freeze due to update loop**
+   The mail editor component has been refactored to eliminate an infinite update loop that caused UI freeze when creating new emails.
 
 
-**IRIS-4881:  Improve visibility of event duration**
-   Users can now be able to clearly see the full duration of events within email invitations, especially for multi-day non-all-day events, ensuring improved usability and understanding.
+**CO-1163: Fixed "Open in new window" issue**
+   When a user opens an email in a new window and navigates back to the original tab to access other modules like Calendar, Address Book, Chat, or Files, the email content in the new window remains visible. This update ensures the message content does not disappear when switching between modules.
 
 
-**IRIS-4888: Contact field deletion issue fix**
-   The fix addresses an issue where users are unable to delete certain contact fields. The solution involves fixing the EditView and/or CustomMultivalueField components and implementing tests to ensure the correct update of the editor store after field deletion. TSX conversion will not be implemented in this fix.
+**CO-1164: Contact editor crash enhanced**
+   The contact editor no longer crashes when editing an existing contact in the Contacts module.
 
 
-**IRIS-5011: Improved "Advanced Search" button behavior**
-   Enhance logic in the useDisabled hook to accurately enable the search button in the "Advanced Search" modal. Additionally, refactor and add unit tests for useSecondaryDisabled, which determines the status of the reset button.
+**CO-1165: User no longer save big signature**
+   Users will now receive an error message if they attempt to save a signature that is too large. Only signatures within the allowed size will be saved.
 
 
-**IRIS-5127: Fix error when selecting contacts in search tab**
-   Resolves an issue where selecting contacts in the search tab triggers an error.
+**CO-1166: Remove delegation buttons from user settings**
+    The delegation buttons (Add Delegate, Edit Permissions, Remove) have been removed from the user settings in Carbonio Webmail to ensure delegation can only be set by an Admin in the Carbonio Web Admin console.
 
 
-**IRIS-5132: Appointment search functionality enhanced**
-   This addresses the issue where appointments cannot be found using the search tab, even after creating them in the calendars tab.
+**CO-1205: Avoid survey popup in Carbonio**
+   The survey popup will only appear if `CarbonioAllowFeedback` is TRUE and the instance is CarbonioCE. This prevents the survey from showing up on Carbonio instances.
 
 
-**IRIS-5146: Appointment timezone display correction**
-   This fix corrects the display of appointment timezones, ensuring that the timezone displayed reflects the actual timezone of the event rather than the organizer's timezone.
+**CO-1239: Attendee notification fixed for shared calendar**
+   Attendees will now receive notifications when an account with manager rights modifies an appointment on a shared calendar. This ensures that all participants are informed of any changes made to the meeting details.
 
 
-**PS-473: doVolumeToVolumeMove excludes files blobs from other servers**
-   The 'doVolumeToVolumeMove' operation now correctly moves data between volumes without attempting to migrate Files blobs from other mailbox servers. Metadata_files table reflects accurate server and volume information.
+**CO-1243: Appointment reminder Issue fixed**
+   The appointment reminder value will no longer increase significantly after modifying, dragging & dropping, or copying the appointment.
 
 
-**SHELL-184: Quota display adjustment**
-   The quota display now correctly shows "0 of N" when a quota is configured for an account and the used quota is 0, providing users with accurate information about their storage usage.
+**CO-1244: Updated GetAccountInfo and GetInfo error code  for non-existent guest accounts**
+   The GetAccountInfo and GetInfo operations now return a 422 Unprocessable Content status code instead of a 500 error when a guest account does not exist.
 
 
-**SHELL-188: Application version label correction**
-   The label display issue in the Application Versions section has been resolved. The correct label 'Chats' now appears, addressing the inconsistency in the settings interface.
+**CO-1246: Permanent delete button text restored**
+   The 'DELETE PERMANENTLY' button text is now correctly displayed when permanently deleting a contact, fixing the issue where it was previously missing.
 
 
-**SHELL-196: Whitelabel color reset functionality enhancement**
-   After resetting the Whitelabel colour from the admin panel to the default, the user interface now accurately displays the default colour instead of retaining the previously customized colour.
+**CO-1248: Fix mailboxMove for S3 centralized volumes**
+   Mailbox move now correctly updates volume IDs for chats and files when moving between mailstores with the same S3 centralized volumes.
 
 
-**TSK-52: Reminder notifications restricted to within 48 hours**
-   Adjusted behavior to prevent immediate notification of reminders set for dates more than 25 days from the current date. Reminders set beyond this threshold will not trigger notifications until they are within 48 hours of the set date.
+**CO-1249:  Fix FullAutoComplete API for non-expandable GALGroup**
+   FullAutoComplete API now handles non-expandable distribution lists without causing failures and allows users to autocomplete, save drafts.
 
 
-**TSK-63: Tasks service auto-start enhancement**
-   Now the carbonio-tasks service automatically starts after installation, addressing the issue where it remains inactive due to sidecar service dependency.eliminating the need for manual intervention.
+**CO-1250: Fixed Missing Translations for Calendar and Mail**
+   Translations for calendar and mail functions have been improved, ensuring consistency, especially for French users. The previously missing translations have been corrected, providing uniformity across these sections.
+
+
+**CO-1251: Hide backup legal hold options**
+   The Backup legal hold options are now hidden in the Admin Panel for the CE  to avoid confusion among CE users, as these features are exclusive to the premium version of Carbonio.
+
+
+**CO-1252: Filter selection modal fix**
+   The modal for selecting folders within the Filters settings now functions correctly, allowing users to select folders without encountering errors.
+
+
+**CO-1254: Disappearing email recipients fixed**
+   Fixed a bug that caused wrong mail addresses to be shown as recipients in sent emails in some corner cases.
+
+
+**CO-1358: migrated slapd PID file location**
+   Migrated the slapd PID file location from /opt/zextras/data/ldap/state/run/slapd.pid to /run/carbonio/slapd.pid. This change ensures consistent and secure management of process IDs within the LDAP configuration.
+
+
+**FILES-274: Coherent file size sorting**
+   The sorting of files by size is now coherent, ensuring files with size 0 are correctly placed in the list.
+
+
+**FILES-619: Rename file on restore conflict**
+   When a file is restored from the trash and a file with the same name already exists in the folder, the restored file is renamed to avoid conflicts.
+
+
+**FILES-811: Fixed recording upload issue on Files**
+   Recordings can now be successfully uploaded to Files as the JWT token validation between videoserver-recorder and Files is resolved.
+
+
+**IN-706: zmdomaincertmgr is enhanced**
+   Admins are now able to save and deploy domain certificates correctly. The `zmdomaincertmgr deploycrts` command now deploys the correct certificates.
 
 *****
 

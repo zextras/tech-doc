@@ -29,7 +29,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Essential" Scenario
    :open:
 
-   :download:`Download the inventory
+   :download:`Download_inventory
    </playbook/carbonio-inventory-essential>`
    
    .. literalinclude:: /playbook/carbonio-inventory-essential
@@ -39,7 +39,7 @@ issuing from the workstation, the command (as the ``root`` user)
 
 .. code:: console
 
-   # ansible-playbook -u root -i ../../data/carbonio-inventory-essential carbonio-install.yml
+   # ansible-playbook -u root -i ../../data/carbonio-inventory-essential carbonio_install.yml
 
 .. _scenario-es-network:
 

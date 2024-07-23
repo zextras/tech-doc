@@ -46,17 +46,38 @@ modified for any individual user.
       This tab contains all the options provided during the
       :ref:`account creation <ap-new-account>`, plus other options,
       including:
-        
+
       * Whether this account is included in the Backup
-        
-      * The ability to prevent the user from changing the
-        password
+
+      * The number of aliases of the account
+
+      * The type of the account, which is one of
+
+        * *Normal*: a :term:`Regular user`
+        * *DelegatedAdmin*: a Delegated (Domain) Administrator
+        * *Admin*: a Global Administrator
+        * *System*: special accounts used by |product|, i.e., GALsync,
+          spam and ham training, and virus quarantine
+        * *External*: an account that does not use |product| for
+          authentication
+
+        Upon clicking the arrow on the right-hand side of the option,
+        the **Administration** tab will open, to allow changing the
+        user's Role.
+
+      * The quota used and available for the e-mails and the |file|
+        module. It is possible to insert up to **three** decimal
+        digits for each quota.
+
+      * To force the user to change password at the next login
 
         .. note:: An Admin can not change the password of a user, only
            wipe it, so the user is forced to change it on the next
            login attempt.
 
       * To remove the user's password from LDAP
+
+      * The COS the user belongs to
 
       * The Distribution List memberships
 
@@ -67,12 +88,12 @@ modified for any individual user.
         (see :ref:`mobile_abq_modes` for details)
 
       * How many OTP devices the user has.
-      
+
       At the bottom, it is possible to see all the user's open
       sessions, which can be terminated by selecting one and clicking
       :bdg-danger-line:`END SESSION` button on the top right of the
       list.
-       
+
    .. tab-item:: Profile
       :class-label: sd-px-1
 
@@ -101,22 +122,53 @@ modified for any individual user.
    .. tab-item:: Security
       :class-label: sd-px-1
 
-      Options present here allow to manage the account security: OTP
-      and policies for password and failed login. New application
-      passwords and OTP tokens can be created to allow the user to
-      login by using a QR Code; a policy can set to force the user to
-      select a secure password and the type of characters to be
-      chosen. Forgotten password, if enabled, allows a user to receive
-      a token to temporarily access the webmail, by sending a token to
-      the recovery address specified in the textfield next to the
-      option. The Failed login policy determines how the system
+      Options present here allow to manage the account security.
+
+      New application passwords and OTP tokens can be created to allow
+      the user to login by using a QR Code. The code can then be sent
+      by e-mail to the user who requested it. If the recipient can not
+      see the QR Code (for example because the provider does not
+      support HTML e-mails or prevents inline images to be shown)), a
+      text equivalent version of the QR Code will be shown (the
+      **Secret Code**), allowing the user to use it.
+
+      In the Backup section, a switch allows to toggle the user
+      ability to recover e-mail that have already been deleted from
+      the Trash Bin.
+      
+      A policy can set to force the user to select a secure password
+      and the type of characters required for the password.
+
+      The Forgotten password feature, if enabled, allows a user to
+      receive a token, to temporarily access the webmail, to the
+      recovery address specified in the textfield next to the
+      option. It also provides the user a new option in the
+      :menuselection:`Settings --> Auth`, namely the ability to change
+      the recovery address.
+
+      .. seealso:: The Password recovery procedure is described in
+         section :ref:`password-recovery`.
+
+      The Failed login policy determines how the system
       behaves when a user fails too many consecutive logins.
 
    .. tab-item:: Administration
       :class-label: sd-px-1
 
+      You can choose if the user can play one or more Administration
+      Roles in |product|.
+
       By toggling the *Global Administration* switch you can promote
-      or demote the user to Global Administrator or vice versa.
+      or demote the user to Global Administrator or vice versa. In
+      this case, the *Delegated Administration* switch will disappear,
+      because the Global Administrator already has all the Rights.
+
+      If you toggle the *Delegated Administration* switch. you can
+      then select one domain and assign to the user one of the
+      available Roles from the drop downs. Multiple Roles can be
+      assigned, even on the same domain: for example, a user can be a
+      :ref:`HelpDesk Administrator <ap-helpdesk-admins>` and a
+      :ref:`Group Administrator <ap-group-admins>`.
 
    .. tab-item:: Delegates
       :class-label: sd-px-1
@@ -369,7 +421,11 @@ Delegated Domain Admins
 
 This page shows all the accounts with some administration rights on
 the domain. To enable delegations on the domain, click the
-:bdg-primary:`INIT DOMAIN` button.
+:bdg-primary:`INIT DOMAIN` button. If the domain was already
+initialised and you changed Roles to any Administrator, or created a
+new Administrator, you need to click on the button once more to allow
+the permission to be effective. In that case the button will be
+labelled :bdg-primary:`RE-INIT DOMAIN`.
 
 .. _ap-dls:
 

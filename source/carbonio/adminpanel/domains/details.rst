@@ -32,12 +32,16 @@ Authentication
 ==============
 
 Options in this page control how a user can log in to |product|. The
-supported methods are *Default*, |product|'s local authentication
+supported methods are *Carbonio*, |product|'s local authentication
 backend, a *Local LDAP*, an *External LDAP*, or an *External Active
 Directory* server.
 
-If the method is different from *Default*, you need to provide the
-various parameters and check it the connection is successful.
+If the method is different from *Carbonio*, on the one side you need
+to provide the various parameters and check it the connection is
+successful, while on the other side, the use of :ref:`2FA
+<domain-2fa>` will not be allowed, as it is not possible to enforce
+2FA with authentication methods other than *Carbonio*.
+
 
 Below the methods, a few additional options are available:
 
@@ -59,8 +63,8 @@ Enable Secure Connection
 
 .. _ap-vhost:
 
-Virtual Hosts & Certificate
-===========================
+Virtual Hosts & Domain Certificates
+===================================
 
 .. include:: /_includes/_adminpanel/_domains/vhost.rst
 
@@ -85,8 +89,16 @@ send a warning by e-mail to a given address. The values configured
 here are inherited by all accounts that will be created, but can be
 overridden on a per-user basis.
 
-To ease monitoring user's quota, the bottom of the page contains a
-list of accounts and of their used quota.
+To ease monitoring quota available to users for Mails and |file|, the
+bottom of the page contains a list of accounts and their respective
+quotas (total quota and percentage of quota used) for both
+services. The accounts can be sorted by the total quota or percentage
+quota of Mails or |file|.
+
+Additionally, click the :blue:`DOWNLOAD QUOTA REPORT` button to
+download a CSV file containing the current status of the used
+quota. 
+
 
 .. _domain-wl:
 
@@ -105,6 +117,10 @@ global theme settings will be applied.
 In this page it is possible to configure 2FA for the various services
 offered by |product|, only for the selected domain.  To modify
 settings for all domains, refer to :ref:`global-2fa`.
+
+These settings are available only if the authentication method (under
+:menuselection:`Domains --> Details --> Authentication`, see
+:ref:`ap-auth`) for the *current domain* is set to **Carbonio**.
 
 .. include:: /_includes/_adminpanel/2fa.rst
      

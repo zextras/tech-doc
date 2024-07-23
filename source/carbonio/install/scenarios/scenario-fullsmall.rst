@@ -28,8 +28,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Full Small" Scenario 
    :open:
 
-   :download:`Download the inventory
-   </playbook/carbonio-inventory-fullsmall>`
+   :download:`Download_inventory </playbook/carbonio-inventory-fullsmall>`
    
    .. literalinclude:: /playbook/carbonio-inventory-fullsmall
 
@@ -38,7 +37,7 @@ issuing from the workstation, the command (as the ``root`` user)
 
 .. code:: console
 
-   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullsmall carbonio-install.yml
+   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullsmall carbonio_install.yml
 
 .. _scenarioa-network:
 

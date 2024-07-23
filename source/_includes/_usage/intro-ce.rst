@@ -1,8 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
-.. intro for Carbonio CE usage
 
 This section contains general advices about the most common tasks and
 functionalities of the various |product| components. The following
@@ -93,7 +88,8 @@ Settings
 
 Additionally, all the functionalities to search for objects in the
 mailbox and to create new objects in the various modules have been
-unified.
+unified in the bar that sits on top of the |product| graphic
+interface.
 
 The remainder of this section contains usage instructions for the most
 common tasks that can be carried out from |product|'s GUI.

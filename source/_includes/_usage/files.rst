@@ -19,11 +19,12 @@ updated with a little delay after a file is added or deleted, but you
 can force an update by clicking the icon on the right-hand side of the
 quota.
 
+
 Working with Files
 ------------------
 
 The following panels summarise the most common activities that can be
-done on files and folders
+done on files and folders.
 
 .. card:: File Upload and Download
 
@@ -48,7 +49,7 @@ done on files and folders
    successfully complete the uploads, you either need to delete
    existent files or ask for more storage to the admin.
 
-   .. note:: The red banner can not be closed and will disappear on ly
+   .. note:: The red banner can not be closed and will disappear only
       when there is enough space to complete the upload.
 
 .. card:: Create new Folder and Files
@@ -122,3 +123,16 @@ done on files and folders
       a file that has reached this limit is prevented, with an error
       message informing of the reached limit.  This limit can be
       customised and even removed, by configuring it to **-1**.
+
+
+.. card:: Using multiple |product| windows
+
+   When using two or more open browser's tabs or windows to access
+   |file|, some of the operations you carry out on one of the windows
+   is not immediately reflected in the other. To make sure that all
+   the windows are synchronised, you need to click the account icon
+   (rightmost icon on the top right corner of the GUI) to open the
+   menu, then click *Update view*. In this way, you force the browser
+   to reload and update its cache to include the latest changes on
+   |file|.
+   

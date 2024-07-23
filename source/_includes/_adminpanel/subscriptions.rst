@@ -2,10 +2,14 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-An informative page, containing the current status of the license. If
-the system is not yet registered, an activation token can be entered
-to activate |product|, while if registered it can be deactivated or
-the information displayed can be refreshed.
+An informative page, containing the current status of the license and
+a number of information is shown, including license token, the name of
+the company registering |product|, the validity, and the number of
+accounts (created and available)
+
+If the system is not yet registered, an activation token can be
+entered to activate |product|, while if registered it can be
+deactivated or the information displayed can be refreshed.
 
 Additional data shown about the installed |product| include
 

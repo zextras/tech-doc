@@ -33,7 +33,7 @@ to your planned |product| infrastructure (please refer to Section
 .. dropdown:: Inventory - "Full Standard" Scenario
    :open:
 
-   :download:`Download the inventory
+   :download:`Download_inventory
    </playbook/carbonio-inventory-fullstandard>`
 
    .. literalinclude:: /playbook/carbonio-inventory-fullstandard
@@ -43,7 +43,7 @@ issuing from the workstation, the command (as the ``root`` user)
 
 .. code:: console
 
-   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullstandard carbonio-install.yml
+   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullstandard carbonio_install.yml
 
 .. _scenario-st-network:
 
