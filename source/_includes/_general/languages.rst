@@ -12,13 +12,10 @@ languages
       :columns: 6
 
       * English (GB, US, AU)
-      * Dutch
       * French
-      * German
       * Hindi
       * Indonesian
       * Italian
-      * Japanese
       * Brazilian Portuguese (BR)
       * Russian
       * Spanish
@@ -27,6 +24,9 @@ languages
    .. grid-item-card:: Community supported languages
       :columns: 6
 
+      * Dutch
+      * German
+      * Japanese
       * Polish
       * Turkish
       * Hungarian
