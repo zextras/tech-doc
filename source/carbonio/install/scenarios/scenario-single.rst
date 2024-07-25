@@ -15,16 +15,26 @@ Set up and Limitations
 ======================
 
 The setup of |product| Single-Server consists of a **Single Node**
-including only the basic features, without |task|, |docs|, and
-|pv|. It does not include any service redundancy, |ha| services,
-while these features are limited:
+including only the basic features, without |task|, |docs|, and |vs|
+(*"Optional Roles"*). It does not include any service redundancy, |ha|
+services, while these features are limited:
 
 * HSM is available only on local disks
 * |backup| does not include any |file| item.
 
-The Roles that are not part of the Single-Server setup can be
-installed on separate, additional Nodes. However, this part is not
-covered in this section.
+The Optional Roles mentioned in the previous paragraph can be
+installed on separate, additional Nodes (up to three in total), to
+prevent the Node to be overloaded. To do so, uncomment the respective
+lines in the inventory file before executing the playbook.
+
+Please also note that these Roles and functionalities are not
+supported and therefore can not be installed in Single-Server:
+
+* Monitoring Directory
+* Replica Roles 
+* A syslog server
+
+If you need some of them, please consider setting up another scenario.
 
 Requirements
 ============
