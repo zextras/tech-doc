@@ -117,8 +117,8 @@ The best installation option on these platforms is to use
 system. You can follow these `directions
 <https://medium.com/javarevisited/how-to-install-ansible-on-mac-2baf00d42466>`_.
 
-Install Carbonio Task
-=====================
+Install Carbonio Playbook
+=========================
 
 |product| is available from Ansible Galaxy, therefore you need to
 download and install from there:
