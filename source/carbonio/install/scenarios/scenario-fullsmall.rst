@@ -33,11 +33,12 @@ to your planned |product| infrastructure (please refer to Section
    .. literalinclude:: /playbook/carbonio-inventory-fullsmall
 
 Once edited the inventory, you can launch |product| installation by
-issuing from the workstation, the command (as the ``root`` user)
+issuing from the workstation, the command
 
 .. code:: console
 
-   # ansible-playbook -u root -i ../../data/carbonio-inventory-fullsmall carbonio_install.yml
+   $ ansible-playbook zxbot.carbonio_install.carbonio_install \
+   -u root -i carbonio-inventory
 
 .. _scenarioa-network:
 

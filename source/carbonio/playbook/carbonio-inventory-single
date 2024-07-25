@@ -1,0 +1,47 @@
+[postgresServers]
+srv1.example.com
+
+[masterDirectoryServers]
+srv1.example.com
+
+[serviceDiscoverServers]
+srv1.example.com
+
+[dbsConnectorServers]
+srv1.example.com
+
+[mtaServers]
+srv1.example.com
+
+[proxyServers]
+srv1.example.com
+
+[proxyServers:vars]
+webmailHostname=srv1.example.com
+
+[applicationServers]
+srv1.example.com
+
+[previewServers]
+srv1.example.com
+
+[filesServers]
+srv1.example.com
+
+[antivirusServers]
+srv1.example.com
+
+############ Optional Roles - to be installed on a different target ############
+[taskServers]
+#srv2.example.com
+[docsServers]
+#srv2.example.com
+[videoServers]
+#srv3.example.com
+
+############ These Roles are not supported in Single-Server scenario ###########
+############ They are required for the proper Ansible installation #############
+
+[replicaDirectoryServers]
+[prometheusServers]
+[syslogServer]
