@@ -17,14 +17,15 @@ Before attempting to install a scenario, take into account the
 following:
 
 * In all scenarios, each Node should fulfil the
-  :ref:`carbonio-requirements`
+  :ref:`carbonio-requirements`, except for the Single-Server, whose
+  *hardware requirements* slightly differ 
 
-* Customise the domain and FQDN in the *inventory files* provided with
-  each scenario
+* You need Customise the domain and FQDN in the *inventory files*
+  provided with each scenario
 
-* All scenarios features the **Backup** functionality, which can be
-  either local (e.g., a mounted local disk or partition), a dedicated
-  NAS device, or a remote (cloud) storage.
+* All scenarios, except for the Single-Server, feature the **Backup**
+  functionality, which can be either local (e.g., a mounted local disk
+  or partition), a dedicated NAS device, or a remote (cloud) storage.
 
 * In order to use Ansible_, set up a *control node* according to
   directions in section :ref:`install-with-ansible`
@@ -35,6 +36,7 @@ following:
 
    scenarios/ansible
    scenarios/ansible-install
+   scenarios/scenario-single
    scenarios/scenario-essential
    scenarios/scenario-fullsmall
    scenarios/scenario-fullstandard
@@ -45,9 +47,39 @@ Scenarios
 
 .. grid:: 1 2 2 3
    :gutter: 1
+            
+   .. grid-item-card:: Scenario *Single*
+      :columns: 12 12 12 12 
+      :class-header: sd-font-weight-bold sd-fs-5
+      :link: scenario-single
+      :link-type: ref
 
+      A scenario suitable for :abbr:`SME (Small to Medium-sized
+      Enterprises)`, educational institutions, Municipalities, or
+      local Governments.
+      
+      +++++
+
+      **Nodes: 1**
+
+      |supp| Mail/calendar/contacts
+
+      |supp| Files
+
+      |unsup| docs/preview
+
+      |unsup| Videochat
+
+      |supp| Backup
+
+      |unsup| High Avaliability ready
+
+      |unsup| Cluster, Files and Docs service redundancy
+
+      |unsup| LDAP master-slave replica
+            
    .. grid-item-card:: Scenario *Essential*
-      :columns: 12 6 3 3
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
       :link: scenario-essential
       :link-type: ref
@@ -74,7 +106,7 @@ Scenarios
       |unsup| LDAP master-slave replica
 
    .. grid-item-card:: Scenario *Full Small*
-      :columns: 12 6 3 3
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
       :link: scenario-fullsmall
       :link-type: ref
@@ -101,7 +133,7 @@ Scenarios
       |unsup| LDAP master-slave replica
 
    .. grid-item-card:: Scenario *Full Standard*
-      :columns: 12 6 3 3
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
       :link: scenario-fullstandard
       :link-type: ref
@@ -128,7 +160,7 @@ Scenarios
       |supp| LDAP master-slave replica
 
    .. grid-item-card:: Scenario *Full Redundant*
-      :columns: 12 6 3 3
+      :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
       :link: scenario-fullredundant
       :link-type: ref
