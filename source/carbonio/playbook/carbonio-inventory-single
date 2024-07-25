@@ -31,12 +31,17 @@ srv1.example.com
 [antivirusServers]
 srv1.example.com
 
-############# Optional Roles - to be installed on a different target #############
-############# These are required for the proper Ansible installation #############
+############ Optional Roles - to be installed on a different target ############
+[taskServers]
+#srv2.example.com
+[docsServers]
+#srv2.example.com
+[videoServers]
+#srv3.example.com
+
+############ These Roles are not supported in Single-Server scenario ###########
+############ They are required for the proper Ansible installation #############
 
 [replicaDirectoryServers]
-[taskServers]
-[docsServers]
-[videoServers]
 [prometheusServers]
 [syslogServer]
