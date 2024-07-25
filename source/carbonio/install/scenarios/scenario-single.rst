@@ -71,17 +71,14 @@ to your planned |product| infrastructure.
    
    .. literalinclude:: /playbook/carbonio-inventory-single
 
-..
-  domande
-  1. dove si posiziona l'ansible executor
-  2. come incastrare i vari roles per la scalabilita'
 
-Once you edited the inventory, save it in directory :file:`data` as
-:file:`carbonio-inventory-single`.  Now, you can run the script: from
-the :file:`carbonio-ansible/carbonio-ansible-ssconfig/` directory
-execute the command
+Once you edited the inventory, save it in directory
+:file:`/opt/carbonio-installation` as
+:file:`carbonio-inventory-single`. Now, you can run the script: from
+the directory execute the command
 
 .. code:: console
 
-   $ ansible-playbook -i ../data/carbonio-inventory-single carbonio-ssreconfig.yml \
-     --extra-vars "install_path=zxbot.carbonio_install.carbonio_install"
+   $ ansible-playbook zxbot.carbonio_ssinstall.carbonio_ssinstall \
+   -u root -i carbonio-inventory-single \
+   --extra-vars "install_path=zxbot.carbonio_install.carbonio_install"
