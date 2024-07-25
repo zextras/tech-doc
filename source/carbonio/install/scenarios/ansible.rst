@@ -6,21 +6,21 @@
 
 Section :ref:`roles-installation` reviews all the roles that make up
 |product| and the tasks required to successfully complete the
-installation. 
+installation.
 
 To make the installation process easier and faster, this section
 introduces an alternative installation method based on Ansible Galaxy,
 an `Ansible playbook
 <https://docs.ansible.com/ansible/latest/index.html>`_, and an Ansible
 *inventory file* .
- 
+
 .. note:: Ansible is free software that allows you to automate the
    configuration and management procedures on Unix-like and Windows
    systems.
 
-Ansible will read an `inventory file` containing the Nodes on which to
-install the various Roles and automatically execute on the selected
-Nodes all the necessary task.
+Ansible will read an `inventory file` containing a list of the Nodes
+on which to install the various Roles and automatically execute on the
+proper Node all the necessary tasks.
 
 Once the Control Node (see Section :ref:`ansible-setup` below) has
 been properly set up according the directions in the remainder, the
@@ -117,23 +117,25 @@ The best installation option on these platforms is to use
 system. You can follow these `directions
 <https://medium.com/javarevisited/how-to-install-ansible-on-mac-2baf00d42466>`_.
 
-Install Carbonio Playbook
-=========================
+Install |carbonio| Playbook
+===========================
 
-|product| is available from Ansible Galaxy, therefore you need to
-download and install from there:
+|product| Playbook is available from Ansible Galaxy in two variants:
+one for Single-Server Scenario and one for all other scenarios. You
+need to simply run a command to install either of them.
 
-.. code:: console
+.. card:: Playbook for Single-Server Scenario
 
-   # ansible-galaxy collection install zxbot.carbonio_install
+   .. code:: console
 
-.. hint:: If you plan to install multiple instances of |carbonio| on
-   different environments, we suggest that you create directory (we
-   call it :file:`data` and place is under the :file:`/root/`
-   directory to store the various inventories required for the
-   different setups. We will always refer to files in the directory
-   :file:`/root/data/` during the installation procedure.
-      
+      # ansible-galaxy collection install zxbot.carbonio_ssinstall
+
+.. card:: Playbook for all other Scenarios
+
+   .. code:: console
+
+      # ansible-galaxy collection install zxbot.carbonio_install
+
 .. _ansible-conf:
 
 Configure Ansible
@@ -146,3 +148,15 @@ follows::
 
   [defaults]
   log_path=/var/log/carbonio-ansible.log
+
+.. _ansible-multi-inventories:
+
+Multiple Inventories
+====================
+
+If you plan to install multiple instances of |carbonio| on different
+environments, we suggest that you create a dedicated directory to
+store the various inventories required for the different setups. We
+will call this directory :file:`/opt/carbonio-installations/`. During
+the installation procedure, we assume that the inventory file is saved
+in this directory.

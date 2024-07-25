@@ -1,4 +1,3 @@
-
 .. _ansible-run:
 
 =================================
@@ -12,8 +11,9 @@ Prepare Inventory
 
 Download the inventory file corresponding to the scenario that you
 want to install (you can find it in the various *Scenarios* page that
-follow this one) and place it under the :file:`/root/data/`
-directory. Remember to give the inventory file a meaningful name.
+follow this one) and place it under the
+:file:`/opt/carbonio-installation/` directory. Remember to give the
+inventory file a meaningful name.
 
 The :file:`carbonio_inventory` file contains various sections, one for
 each of the available Roles. You need to edit the file and provide the
@@ -51,7 +51,7 @@ value for a proper configuration. Currently, these sections are
 
     [videoServers]
     #hostname public_ip_address=x.y.z.t
-    
+
   In this case, supposing that the Role is installed on
   ``srv5.example.com`` and the public IP address of the |vs| is
   172.16.12.5, this entry should look like::
@@ -67,16 +67,24 @@ In order to run the script, first go to the Inventory's directory
 
 .. code:: console
 
-   $ cd /root/data/
-   
-then execute the command
+   $ cd /opt/carbonio-installation/
 
-.. code:: console
+then execute either command, depending on the Scenario.
 
-   $ ansible-playbook  zxbot.carbonio_install.carbonio_install \
-   -u root -i carbonio-inventory
+.. card:: Single-Server Scenario
 
-          
+   .. code:: console
+
+      $ ansible-playbook zxbot.carbonio_ssinstall.carbonio_ssinstall \
+      -u root -i carbonio-inventory \
+      --extra-vars "install_path=zxbot.carbonio_install.carbonio_install"
+
+.. card:: All other Scenarios
+
+   .. code:: console
+
+      $ ansible-playbook  zxbot.carbonio_install.carbonio_install \
+      -u root -i carbonio-inventory
 
 Make sure to replace :file:`carbonio-inventory` with the proper name of the
 inventory you want to install.
@@ -84,7 +92,7 @@ inventory you want to install.
 The playbook will execute all the tasks necessary and print the result
 on the screen. When finished, a summary of the results is
 displayed. Moreover, the passwords created during the installation are
-saved in the :file:`/root/data` directory, along with the
+saved in the :file:`/opt/carbonio-installation` directory, along with the
 :file:`carbonio-inventory` file, so you have them always at your
 disposal when you need them, for example during upgrades or routine
 tasks. To protect them, make sure:
