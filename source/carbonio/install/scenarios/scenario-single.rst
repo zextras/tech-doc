@@ -51,9 +51,12 @@ in a |product| Multi-Node setup:
   quota of 5GB, you need to have at least **800GB of disk space**,
   50GB for the OS and at 750 for user's total quota.
 
-Software requirements, including the operating system can be are the
-same as for any other |product| setup (see
-:ref:`software-requirements`) and so are the :ref:`inst-additional-req`.
+.. note:: Installation of this scenario is supported only on the following
+   Linux distributions: **Ubuntu 22.04.4 LTS** and **RHEL 8**.
+
+Other software requirements are common to the other installation scenarios
+and can be found in the following section:
+:ref:`inst-additional-req`.
 
 Finally, the Single-Server does not require any :ref:`internal port
 <fw-internal>` to be opened, but make sure that ports for the MTA and
