@@ -20,22 +20,19 @@ available to a user or COS.
      - **Feature Description**
    * - ``carbonioFeatureMailsAppEnabled``
      - ``TRUE``
-     - The Mails component is available on :ref:`mobile apps
-       <mobile_apps>`
+     - The Mails component is available on mobile apps
    * - ``carbonioFeatureFilesEnabled``
      - ``TRUE``
      - The |file| component is available
    * - ``carbonioFeatureFilesAppEnabled``
      - ``TRUE``
-     - The |file| component is available on :ref:`mobile apps
-       <mobile_apps>`
+     - The |file| component is available mobile apps
    * - ``carbonioFeatureChatsEnabled``
      - ``TRUE``
      - The |team| component is enabled
    * - ``carbonioFeatureChatsAppEnabled``
      - ``TRUE``
-     - The |team| component is available on :ref:`mobile apps
-       <mobile_apps>`
+     - The |team| component is available on mobile apps
    * - ``zimbraFeatureOptionsEnabled``
      - ``FALSE``
      - The Settings module is available to a user

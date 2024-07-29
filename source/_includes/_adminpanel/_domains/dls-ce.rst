@@ -15,7 +15,8 @@ In the third tab, advanced settings can be configured, including the
 option to notify new members that they have been added to the list and
 the presence of the distribution list in the GAL. Owners can be added
 to the list: they will see the lists of which they are owners in a
-dedicated menu item, where they can edit some details and the members.
+dedicated menu item, where they can edit some details and the members
+(see Section :ref:`usage-dls`).
 
 The last tab recaps the settings: now you can either go back to any of
 the previous tabs and change some of the settings, or proceed to
