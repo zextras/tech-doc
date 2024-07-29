@@ -41,7 +41,7 @@ with the actual domain name.
 
    .. code:: console
 
-      # /opt/zextras/libexec/zmdkimkeyutil -a -d example.com
+      $ /opt/zextras/libexec/zmdkimkeyutil -a -d example.com
 
    The output will be similar to the following::
 
@@ -53,6 +53,12 @@ with the actual domain name.
      5p1o4NBq3SDn8fks9r6""CJ7dAZQ3LazNmAgenMldkWC7tv+/25CStiz3QQ4GqCn4tp0VW3hWOQm6tRSe1yHEG10XT2cSieFM1w0GzB
      XZZEedCK1POmFoOKwgqraxJtqiPdM7i+mjUOy7w1uqJa4fyxjbVp0QIDAQAB" ) ; ----- DKIM key D43CB080-8FE0-11EC-88D
      F-9958FFC5EFF5 for example.com
+
+   To view the keys in a more structured ways (anytime), use following example::
+    
+   .. code:: console
+
+      $ /opt/zextras/libexec/zmdkimkeyutil -q -d example.com
 
 
 .. card::
@@ -117,7 +123,7 @@ sign the outgoing e-mails.
 
    .. code:: console
 
-      # carbonio prov gs $(zmhostname)|grep -i service
+      $ carbonio prov gs $(zmhostname)|grep -i service
 
    must contain the line::
 
