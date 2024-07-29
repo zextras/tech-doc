@@ -7,7 +7,7 @@ can be found in section :ref:`manage-admins`.
 
 After you change the password, point a :ref:`supported browser
 <browser_compatibility>` to the Proxy Node's IP or hostname and port
-*6071* (e.g., https://172.16.0.12:6071/) and log in to the |adminui|,
+*6071* (e.g., https\://172.16.0.12:6071/) and log in to the |adminui|,
 with user ``zextras@example.com`` and password the one you just
 changed.
 
