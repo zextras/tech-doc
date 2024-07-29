@@ -64,7 +64,7 @@ values according to your organisation.
 
       .. code:: console
 
-         # /opt/zextras/bin/zmcertmgr createcsr comm -new -subject \
+         $ /opt/zextras/bin/zmcertmgr createcsr comm -new -subject \
          "/C=IT/ST=VR/L=Yourtown/O=YourCompany/OU=SampleDepartment/CN=mail.example.com" \
          -subjectAltNames mail.example.com
 
@@ -77,7 +77,7 @@ values according to your organisation.
 
       .. code:: console
 
-         # /opt/zextras/bin/zmcertmgr createcsr comm -new -subject \
+         $ /opt/zextras/bin/zmcertmgr createcsr comm -new -subject \
          "/C=IT/ST=VR/L=Yourtown/O=YourCompany/OU=SampleDepartment/CN=*.example.com"
 
    .. grid-item-card::
