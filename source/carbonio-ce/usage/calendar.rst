@@ -1,1 +1,7 @@
-../../carbonio/usage/calendar.rst
+
+.. _calendar-comp:
+
+Calendars
+=========
+
+.. include:: /_includes/_usage/calendar.rst
