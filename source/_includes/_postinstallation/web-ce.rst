@@ -34,14 +34,13 @@ to access to use the features of |product|.
    .. grid-item-card:: Web Client
       :columns: 6
       
-      The web client is used by :term:`regular users <Regular User>`
-      to access to the e-mail account and can be used also to access
-      other functionalities (|file|, |docs| if installed), as well as
-      other client protocols such as IMAP or POP, and is available at
-      https://mail.example.com/. In the `User Guide
-      <https://docs.zextras.com/user-guides/carbonio/en/html>`_ you
-      can find directions that guide you in your first steps with
-      |product| and introduction to the most common tasks
+      The web client is used by :term:`regular users <Regular User>` to access to the
+      e-mail account and can be used also to access other
+      functionalities (|file|, |docs| if installed), as well as other
+      client protocols such as IMAP or POP, and is available at
+      https://mail.example.com/. In :ref:`carbonio-usage` you can find
+      directions that guide you in your first steps with |product| and
+      introduction to the most common tasks
 
 
    .. grid-item-card:: |adminui|
