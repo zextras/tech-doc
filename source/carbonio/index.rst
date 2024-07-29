@@ -107,16 +107,10 @@ The content is organised in multiple parts:
    .. grid-item-card:: |carbonio| User Guides
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: usage/toc
+      :link: https://docs.zextras.com/user-guides/carbonio/en/html
 
       Everyday's usage of |product|, including its use on the
       dedicated mobile Apps
-
-      .. toctree::
-         :hidden:
-
-         usage/toc
 
    .. grid-item-card:: Monitoring
       :columns: 12 12 6 6
