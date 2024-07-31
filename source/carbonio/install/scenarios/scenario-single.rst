@@ -11,21 +11,28 @@ do not use all |product| features and, while it supports extensions to
 the infrastructure by adding Roles on other Nodes, it is not meant to
 be scalable.
 
-Set up and Limitations
+Limitations and Set Up
 ======================
 
-The setup of |product| Single-Server consists of a **Single Node**
-including only the basic features, without |task|, |docs|, and |vs|
-(*"Optional Roles"*). It does not include any service redundancy, |ha|
-services, while these features are limited:
+This Scenario has been designed to serve a precise use case and
+therefore has the following architectural limitations:
 
-* HSM is available only on local disks
-* |backup| does not include any |file| item.
+* It is available for installation **using Ansible only**: it can not
+  be installed manually Role by Role, due to configuration tweakings
+  done by Ansible
+
+* It supports up to **500 accounts**: adding accounts beyond this
+  limit will severly hinder the efficiency of |product| and it is not
+  supported
+
+The deployment of |product| Single-Server requires a **Single Node**
+and includes only the basic features, without |task|, |docs|, Carbonio
+Chats, and |vs| (*"Optional Roles"*). It does not include any service
+redundancy, |ha| services.
 
 The Optional Roles mentioned in the previous paragraph can be
 installed on separate, additional Nodes (up to three in total), to
-prevent the Node to be overloaded. To do so, uncomment the respective
-lines in the inventory file before executing the playbook.
+prevent the Node to be overloaded.
 
 Please also note that these Roles and functionalities are not
 supported and therefore can not be installed in Single-Server:

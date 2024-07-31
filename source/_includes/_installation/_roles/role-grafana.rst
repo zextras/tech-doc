@@ -127,7 +127,7 @@ Grafana datasource config
 +++++++++++++++++++++++++
 
 
-#. Open the Grafana web interface athttp\://srvmon.example.com:3000/
+#. Open the Grafana web interface at http\://srvmon.example.com:3000/
 
 #. Log in to Grafana using your credentials
 
@@ -143,7 +143,7 @@ Grafana datasource config
 
 #. Configure Prometheus connection. Fill in the required fields for
    Prometheus, including the URL for your Prometheus server (e.g.,
-   http://localhost:9090).
+   http\://localhost:9090).
 
 #. Click the "Save & Test" button to verify that the Prometheus
    connection was configured correctly. If the connection is

@@ -1,1 +1,6 @@
-../../carbonio/usage/mails.rst
+.. _mails-comp:
+
+Mails
+=====
+
+.. include:: /_includes/_usage/mails.rst

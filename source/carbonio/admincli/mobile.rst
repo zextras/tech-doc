@@ -138,8 +138,9 @@ How to Set a Mobile Password for a Mailbox
 ------------------------------------------
 
 Mobile Passwords are handled by the |auth| module, so please refer to
-section :ref:`auth_create_new_credentials_qr_code` for more
-information.
+the `User Guides
+<https://docs.zextras.com/user-guides/carbonio/en/html/index.html>`_ for
+more information.
 
 .. commenting out according to requests.
 

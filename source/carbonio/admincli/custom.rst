@@ -8,9 +8,7 @@
  Customisations
 ================
 
-This section lists some customisations for |product|. Directions to
-install :ref:`install-fonts` has been moved to the
-:ref:`carbonio-usage` section.
+This section lists some customisations for |product|. 
 
 ..
    Logo

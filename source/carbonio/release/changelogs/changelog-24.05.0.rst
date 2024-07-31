@@ -47,8 +47,8 @@ New Features List
    This update simplifies notification settings within Carbonio admin user preferences by removing the redundant double enable notification for new mail. Now, users have a single notification option available in their preferences, enhancing user experience and reducing confusion
 
 
-**AC-941: Implemented LDAP:// as static non-editable value**
-   This update ensures that LDAP:// is added as a static non-editable value in the Distribution Lists URL field. Users will be prevented from typing LDAP, triggering an error prompt, while the full string, including LDAP:///, will be utilized for SOAP calls during connection checks or saves.
+**AC-941: Implemented LDAP\:// as static non-editable value**
+   This update ensures that LDAP\:// is added as a static non-editable value in the Distribution Lists URL field. Users will be prevented from typing LDAP, triggering an error prompt, while the full string, including LDAP\:///, will be utilized for SOAP calls during connection checks or saves.
 
 
 **AC-942: Updateed label from "Hide in GAL" to "Hidden in GAL"**
