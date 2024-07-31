@@ -1,1 +1,6 @@
-../../carbonio/usage/shared-folders.rst
+.. _mobile_shared_folders:
+
+Shared Folders
+==============
+
+.. include:: /_includes/_usage/sharedfolders.rst

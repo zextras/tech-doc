@@ -6,8 +6,8 @@
 |adminui| is the component that allows access to the administration
 functionalities of |carbonio|.  Like for every other component, it can
 be reached using a :ref:`supported browser <browser_compatibility>`
-and point it to https://acme.example:6071/login, replacing
-`acme.example` with your domain.
+and point it to https\://acme.example:6071/, replacing `acme.example`
+with your domain.
 
 To access the |adminui|, you need an account that is marked as
 **Global Administrator**. The default Global Admin is

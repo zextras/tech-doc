@@ -12,8 +12,7 @@
 accessing a |product| instance from the Login Page onwards, including
 the access modality. Depending on the authentication backends
 configured, the access mask changes, to allow user to provide their
-credentials using any of the backends. This also is reflected in the
-:ref:`auth-user`.
+credentials using any of the backends.
 
 |auth| allows to manage all the Authentication Strategies
 (user/pwd, SAML, 2FA, MobilePwd, QrCode) and Service Authorizations
@@ -24,8 +23,7 @@ Immediately below, you can find the description of all supported
 authentication methods; the next two sections are dedicated to
 :ref:`administration tasks <auth_zxauth-admins>`, which require
 privileged access and are mostly carried out from the CLI, and
-:ref:`everyday’s task <auth-user>`, which can be carried out
-from the Web GUI by both administrators and users.
+:ref:`auth-credential`.
 
 .. _auth_supported_authentication_methods:
 
@@ -60,9 +58,6 @@ Supported Authentication Methods
       QR Codes in particular can be used to access Mobile Apps, currently
       |team| and |file|.
 
-      More information and step by step guidelines can be found in Section
-      :ref:`auth-user`.
-
    .. grid-item-card:: Two Factor Authentication
       :columns: 12 12 6 6
 
@@ -81,9 +76,7 @@ Supported Authentication Methods
       accessing the same page with Firefox will require a new login.
 
       In order to use the OTP, a domain must be configured (see
-      Section :ref:`auth_requirements`) by the site admin, while users
-      can configure it from their :ref:`Auth settings
-      <auth_zimlet-create-otp>`.
+      Section :ref:`auth_requirements`) by the site Administrator.
 
 
    .. grid-item-card:: SAML

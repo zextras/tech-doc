@@ -5,7 +5,7 @@
  Access to the Web Interface
 =============================
 
-.. include:: /_includes/_postinstallation/web.rst
+.. include:: /_includes/_postinstallation/web-ce.rst
 .. include:: /_includes/_postinstallation/lostpwd-ce.rst
 
 .. _manage-admins:
