@@ -10,7 +10,7 @@ Add a DKIM Record to |product| Installation
 This section provides directions to add a DKIM record to the DNS of
 the domain managed by a |product| installation.
 
-.. topic:: DKIM in a nutshell
+.. card:: DKIM in a nutshell
 	   
    The **D**\omain\ **K**\eys **I**\ dentified **M**\ ail (**DKIM**)
    is a method to verify that an e-mail was sent from a legitimate mail
@@ -31,10 +31,7 @@ In order to create a new DKIM record, two steps are necessary. As
 usual, we are using `example.com` in our scenario as the domain name: replace it
 with the actual domain name.
 
-.. card:: 
-
-   Step 1: Generate DKIM record
-   ^^^^^
+.. card:: Step 1: Generate DKIM record
 
    Execute the following command to generate a new DKIM record for the
    domain.
@@ -54,17 +51,9 @@ with the actual domain name.
      XZZEedCK1POmFoOKwgqraxJtqiPdM7i+mjUOy7w1uqJa4fyxjbVp0QIDAQAB" ) ; ----- DKIM key D43CB080-8FE0-11EC-88D
      F-9958FFC5EFF5 for example.com
 
-   To view the keys in a more structured ways (anytime), use following example::
-    
-   .. code:: console
 
-      $ /opt/zextras/libexec/zmdkimkeyutil -q -d example.com
+.. card:: Step 2: Add DKIM record to DNS settings
 
-
-.. card::
-
-   Step 2: Add DKIM record to DNS settings 
-   ^^^^^
    Edit the DNS settings of the domain and create a new record as
    follows, using the output of the previous command.
 
@@ -91,10 +80,7 @@ There are several tests that can be carried out to verify that the
 DKIM has been added correctly to the domain DNS and works correctly to
 sign the outgoing e-mails.
 
-.. card::
-
-   TXT record test
-   ^^^^
+.. card:: TXT record test
 
    To check that the TXT record has been added to the DNS, issue the
    following command from any Linux box.
@@ -112,10 +98,7 @@ sign the outgoing e-mails.
    retrieving it, you will not see the string **v=DKIM1** in the
    output.
    
-.. card::
-
-   DKIM service enabled
-   ^^^^
+.. card:: DKIM service enabled
 
    The ``openDkim`` service must be running on the |product|
    installation for the outgoing e-mails to be correctly signed. This
@@ -129,10 +112,7 @@ sign the outgoing e-mails.
 
      zimbraServiceEnabled: opendkim
 
-.. card::
-
-   E-mail signature test
-   ^^^^
+.. card:: E-mail signature test
 
    To verify that an outgoing e-mail has been correctly signed, the
    easiest way is to send an e-mail from the domain to a third-party
