@@ -29,5 +29,4 @@ languages
       * Japanese
       * Polish
       * Turkish
-      * Hungarian
       * Vietnamese
