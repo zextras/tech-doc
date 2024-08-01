@@ -17,7 +17,7 @@ infrastructure!
 .. code:: console
           
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthMech ad
-   zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBase DC=external,DC=com
+   zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBase DC=external_ad,DC=com
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchFilter '(|(userprincipalname=%u@external_ad.com)(samaccountname=%u))'
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapURL ldap://172.24.0.100:3268
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBindDn service.ad@external_ad.com
@@ -43,3 +43,6 @@ Finally, we also create 3 accounts on |product|
 If all the steps have been performed correctly, any of the three
 accounts can login to |Product| using the passwords defined on the
 respective users of the external AD server.
+
+.. seealso:: You can carry out the same procedure from the |adminui|,
+   please refer to Section :ref:`ap-ext-ad`.

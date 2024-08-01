@@ -83,6 +83,48 @@ Verify Auth
 .. seealso:: You can carry out the same procedure from the CLI,
    please refer to Section :ref:`auth-ext-ldap`.
 
+.. _ap-ext-ad:
+
+External AD
+-----------
+
+A typical connection is shown in :numref:`fig-ext-ad`, the
+following scenario describes the parameters to be used.
+
+.. include:: /_includes/_admincli/ext-ad.rst
+
+URL
+  The hostname or IP address where the AD is located, which should
+  include the port (default is **3268**). In our scenario it is
+  172.24.0.100:3268. 
+
+Filter
+  Represents the attribute that identifies the user in the external
+  AD ``(|(userprincipalname=%u@external_ad.com)(samaccountname=%u))``. 
+
+Basic Search
+  The query that is used to filter the users. It contains the
+  domain defined on the AD server (**dc=external_ad,dc=com**). 
+
+Search Bind user & Search Bind Password
+  The user password used to execute the query (user
+  **service.ad@external_ad.com** with password **very_strong_pass!**).
+
+Verify Auth
+  These two fields allow to test whether an AD user, identified by
+  username and password, can successfully authenticate.
+  
+.. _fig-ext-ad:
+
+.. figure:: /img/adminpanel/ap-ext-ad.png
+   :width: 99%
+
+   An example connection to an external AD.
+
+.. seealso:: You can carry out the same procedure from the CLI,
+   please refer to Section :ref:`auth-ext-ad`.
+
+   
 Other options
 -------------
 
