@@ -7,24 +7,8 @@ External Active Directory
 To illustrate how an Active Directory source works in |product|, we
 build on the following scenario.
 
-.. card:: Scenario
-          
-   * Define on |product| the domain ``ad-auth.example.com``
-
-   * On an **external** AD server, located at ``172.24.0.100`` a
-     domain called ``external_ad.com`` exists
-
-     .. note:: This external source can also be another |product|.
-
-   * On the **external** AD server a dedicated user exists, that
-     will be used for the AD connection
-     (for example ``service.ad@external_ad.com`` with password
-     ``very_strong_pass!``)
-
-   Our goal is to have the ``ad-auth.example.com`` domain users
-   authenticate with the passwords of the domain accounts
-   ``external_ad.com`` defined on the external ldap server
-
+.. include:: /_includes/_admincli/ext-ad.rst
+             
 On |product|, set up the ``ad-auth.example.com`` domain for
 authentication on the external LDAP using the command below. Remember
 to change the values in the scenario with the actual values of your
