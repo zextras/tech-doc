@@ -42,3 +42,6 @@ Finally, we also create 3 accounts on |product|
 If all the steps have been performed correctly, any of the three
 accounts can login to |Product| using the passwords defined on the
 respective users of the external AD server.
+
+.. seealso:: You can carry out the same procedure from the |adminui|,
+   please refer to Section :ref:`ap-ext-ad`.
