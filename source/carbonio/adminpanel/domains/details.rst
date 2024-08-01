@@ -83,7 +83,7 @@ Verify Auth
 
    An example connection to an external LDAP.
 
-.. seealso:: You can carry out the same procedure from the |adminui|,
+.. seealso:: You can carry out the same procedure from the CLI,
    please refer to Section :ref:`auth-ext-ldap`.
 
 Other options
