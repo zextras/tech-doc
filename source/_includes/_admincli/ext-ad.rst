@@ -2,7 +2,7 @@
 .. card:: Scenario
 
    This scenario defines a few values that are used for the connection
-   to an *external LDAP server*. Adapt them according to your needs! 
+   to an *external AD server*. Adapt them according to your needs! 
 
    * Define on |product| the domain ``ad-auth.example.com``
 
