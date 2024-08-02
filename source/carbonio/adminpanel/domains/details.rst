@@ -34,7 +34,8 @@ Authentication
 Options in this page control how a user can log in to |product|. The
 supported methods are *Carbonio*, |product|'s local authentication
 backend, a *Local LDAP*, an *External LDAP*, or an *External Active
-Directory* server.
+Directory* server. You can refer to Section :ref:`auth-ldap` for more
+information about these backends
 
 If the method is different from *Carbonio*, on the one side you need
 to provide the various parameters and check it the connection is
@@ -42,8 +43,96 @@ successful, while on the other side, the use of :ref:`2FA
 <domain-2fa>` will not be allowed, as it is not possible to enforce
 2FA with authentication methods other than *Carbonio*.
 
+.. _ap-ext-ldap:
 
-Below the methods, a few additional options are available:
+External LDAP
+-------------
+
+A typical connection is shown in :numref:`fig-ext-ldap`, the
+following scenario describes the parameters to be used.
+
+.. include:: /_includes/_admincli/ext-ldap.rst
+
+URL
+  The hostname or IP address where the LDAP is located, which should
+  include the port (default is **389**). In our scenario it is
+  172.24.0.155:389. 
+
+Filter
+  Represents the attribute that identifies the user in the external
+  LDAP (**uid=%u**). 
+
+Basic Search
+  The LDAP query that is used to filter the users. It contains the
+  domain defined on the LDAP server (**dc=ldapexternal,dc=local**) and
+  the organisation (or, in a broader sense, the LDAP class) to which
+  the *filter* above belongs. 
+
+Search Bind user & Search Bind Password
+  The user password used to execute the query (user
+  **service.ldap@ldapexternal.local** with password **astrongpwd**).
+
+Verify Auth
+  This two fields allow to test whether an LDAP user, identified by
+  username and password, can successfully authenticate.
+  
+.. _fig-ext-ldap:
+
+.. figure:: /img/adminpanel/ap-ext-ldap.png
+   :width: 99%
+
+   An example connection to an external LDAP.
+
+.. seealso:: You can carry out the same procedure from the CLI,
+   please refer to Section :ref:`auth-ext-ldap`.
+
+.. _ap-ext-ad:
+
+External AD
+-----------
+
+A typical connection is shown in :numref:`fig-ext-ad`, the
+following scenario describes the parameters to be used.
+
+.. include:: /_includes/_admincli/ext-ad.rst
+
+URL
+  The hostname or IP address where the AD is located, which should
+  include the port (default is **3268**). In our scenario it is
+  172.24.0.100:3268. 
+
+Filter
+  Represents the attribute that identifies the user in the external
+  AD ``(|(userprincipalname=%u@external_ad.com)(samaccountname=%u))``. 
+
+Basic Search
+  The query that is used to filter the users. It contains the
+  domain defined on the AD server (**dc=external_ad,dc=com**). 
+
+Search Bind user & Search Bind Password
+  The user password used to execute the query (user
+  **service.ad@external_ad.com** with password **very_strong_pass!**).
+
+Verify Auth
+  These two fields allow to test whether an AD user, identified by
+  username and password, can successfully authenticate.
+  
+.. _fig-ext-ad:
+
+.. figure:: /img/adminpanel/ap-ext-ad.png
+   :width: 99%
+
+   An example connection to an external AD.
+
+.. seealso:: You can carry out the same procedure from the CLI,
+   please refer to Section :ref:`auth-ext-ad`.
+
+   
+Other options
+-------------
+
+Once the selected authentication backend has been configured, a few
+additional options are available:
 
 Show "Forget password" link in the login page
    With this option enabled, a user can proceed to recover a lost
@@ -51,10 +140,7 @@ Show "Forget password" link in the login page
    address (see tab **Security** in |adminui|'s :ref:`ap-accounts`
    Section).
 
-Try local password management in case of failure with other methods
-   This option enables user to login with the *Default* auth method in
-   case other backends are not available.
-
+  
 Enable Secure Connection
    By disabling this option, users can login using an unencrypted HTTP
    connection. 
