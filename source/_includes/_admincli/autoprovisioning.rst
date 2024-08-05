@@ -19,7 +19,7 @@ Scenario
 The scenario we present here consists of an Active Directory Server
 with the following configuration.
 
-* Network IP address is **172.24.0.50**.
+* Network IP address is **128.24.0.50**.
 
 * The users that will be able to login to |product| belong to the
   **test247** group.
@@ -30,7 +30,7 @@ with the following configuration.
 
   * *AdminBindDn*: **CN=Auto Provisioning,CN=Users,DC=zextraslab,DC=ad**
 
-  * *BindPassword*: **thePassword@23**
+  * *BindPassword*: **a_very_stron_pass!**
 
 Moreover, for the set up, we need also the following configuration
 option.
@@ -87,7 +87,7 @@ provided in the :ref:`ad-auto-scenario` above.
 
    zextras$ carbonio prov md test.auth zimbraAutoProvLdapAdminBindDn \
    "CN=Auto Provisioning,CN=Users,DC=zextraslab,DC=ad"
-   zextras$ carbonio prov md test.auth zimbraAutoProvLdapAdminBindPassword 'thePassword@23'
+   zextras$ carbonio prov md test.auth zimbraAutoProvLdapAdminBindPassword 'a_very_stron_pass!'
    zextras$ carbonio prov md test.auth zimbraAutoProvLdapBindDn auto provisioning@zextraslab.ad
    zextras$ carbonio prov md test.auth zimbraAutoProvLdapSearchBase DC=zextraslab,DC=ad
 
@@ -104,7 +104,7 @@ Enter the IP address or hostname of the ad server.
 .. code:: console
 
    zextras$ carbonio prov md test.auth zimbraAutoProvLdapURL \
-   ldap://172.24.0.50:3268
+   ldap://128.24.0.50:3268
 
 Set the operation mode to **EAGER**.
 
