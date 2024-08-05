@@ -1,4 +1,4 @@
-.. index:: AD autoprovisioning; autoprovisioning
+.. index:: AD autoprovisioning, autoprovisioning
 
 .. _ad-auto:
 
