@@ -171,10 +171,8 @@ Login via |carbonio| Mail
 
 In order to use |carbonio| Mail App, follow these steps:
 
-#. Download the application (see the :ref:`app-download`
+#. Download and install the application (see the :ref:`app-download`
    section)
-
-#. Activate  (see the :ref:`carb-mail-notifications`  section)
 
 #. Login via app
 
