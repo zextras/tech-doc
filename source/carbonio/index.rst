@@ -28,7 +28,7 @@ The content is organised in multiple parts:
 .. grid:: 1 2 2 3
    :gutter: 3
 
-   .. grid-item-card:: Introduction
+   .. grid-item-card::
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
 
