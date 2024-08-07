@@ -51,23 +51,7 @@ External LDAP
 To illustrate how an external LDAP source works in |product|, we build
 on the following scenario.
 
-.. card:: Scenario
-          
-   * Define on |product| the domain ``authentication.example.com``
-
-   * On an **external** LDAP server, located at ``172.24.0.10`` a
-     domain called ``external_ldap.com`` exists
-
-     .. note:: This external source can also be another |product|.
-
-   * On the **external** LDAP server a dedicated user exists, that
-     will be used for the LDAP connection
-     (for example ``service.ldap@external_ldap.com`` with password
-     ``a_strong_pwd!``)
-
-   Our goal is to have the ``authentication.example.com`` domain users
-   authenticate with the passwords of the domain accounts
-   ``external_ldap.com`` defined on the external ldap server
+.. include:: /_includes/_admincli/ext-ldap.rst
 
 On |product|, set up the ``authentication.example.com`` domain for
 authentication on the external LDAP using the command below. Remember
@@ -77,19 +61,19 @@ infrastructure!
 .. code:: bash
 
    zextras$ carbonio prov md authentication.example.com \
-   zimbraAuthLdapSearchBase "ou=people,dc=external_ldap,dc=com" \
+   zimbraAuthLdapSearchBase "ou=people,dc=ldapexternal,dc=local" \
    zimbraAuthLdapSearchBindDn \
-   "uid=service.ldap,ou=people,dc=external_ldap,dc=com" \
-   zimbraAuthLdapSearchBindPassword "a_strong_pwd!" \
+   "uid=service.ldap,ou=people,dc=ldapexternal,dc=local" \
+   zimbraAuthLdapSearchBindPassword "astrongpwd" \
    zimbraAuthLdapSearchFilter "uid=%u" zimbraAuthLdapURL \
    "ldap://172.24.0.10:389"
 
 Create three test accounts on the **external** LDAP domain with username
 and password::
 
-  user1@external_ldap.com password1
-  user2@external_ldap.com password2
-  user3@external_ldap.com password3
+  user1@ldapexternal.local password1
+  user2@ldapexternal.local password2
+  user3@ldapexternal.local password3
 
 Finally, we also create 3 accounts on |Product|
 
@@ -104,3 +88,6 @@ Finally, we also create 3 accounts on |Product|
 If all the steps have been performed correctly, any of the three
 accounts can login to |Product| using the passwords defined on the
 respective users of the external LDAP server.
+
+.. seealso:: You can carry out the same procedure from the |adminui|,
+   please refer to Admin Panel's Section :ref:`ap-ext-ldap`.
