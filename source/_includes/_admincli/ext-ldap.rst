@@ -11,10 +11,9 @@
 
      .. note:: This external source can also be another |product|.
 
-   * On the **external** LDAP server a dedicated user exists, that
-     will be used for the LDAP connection
-     (for example ``service.ldap@ldapexternal.local`` with password
-     ``astrongpwd``)
+   * On the **external** LDAP server a dedicated **admin** user
+     exists, that will be used for the LDAP connection (for example
+     ``service.ldap@ldapexternal.local`` with password ``astrongpwd``)
      
    * The LDAP class that stores the users and their password is called ``uid``
 

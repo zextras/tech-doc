@@ -26,9 +26,9 @@ infrastructure!
 Create three test accounts on the **external** AD domain with username
 and password::
 
-  user1@external_ldap.com password1
-  user2@external_ldap.com password2
-  user3@external_ldap.com password3
+  user1@external_ad.com password1
+  user2@external_ad.com password2
+  user3@external_ad.com password3
 
 Finally, we also create 3 accounts on |product|
 

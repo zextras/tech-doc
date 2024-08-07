@@ -63,7 +63,7 @@ infrastructure!
    zextras$ carbonio prov md authentication.example.com \
    zimbraAuthLdapSearchBase "ou=people,dc=ldapexternal,dc=local" \
    zimbraAuthLdapSearchBindDn \
-   "uid=service.ldap,ou=people,dc=ldapexternal,dc=local \
+   "uid=service.ldap,ou=people,dc=ldapexternal,dc=local" \
    zimbraAuthLdapSearchBindPassword "astrongpwd" \
    zimbraAuthLdapSearchFilter "uid=%u" zimbraAuthLdapURL \
    "ldap://172.24.0.10:389"
@@ -71,9 +71,9 @@ infrastructure!
 Create three test accounts on the **external** LDAP domain with username
 and password::
 
-  user1@external_ldap.com password1
-  user2@external_ldap.com password2
-  user3@external_ldap.com password3
+  user1@ldapexternal.local password1
+  user2@ldapexternal.local password2
+  user3@ldapexternal.local password3
 
 Finally, we also create 3 accounts on |Product|
 
