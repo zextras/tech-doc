@@ -16,7 +16,7 @@ infrastructure!
 
 .. code:: console
           
-   zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBase DC=external,DC=com
+   zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBase DC=external_ad,DC=com
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchFilter '(|(userprincipalname=%u@external_ad.com)(samaccountname=%u))'
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapURL ldap://172.24.0.100:3268
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBindDn service.ad@external_ad.com
@@ -25,9 +25,9 @@ infrastructure!
 Create three test accounts on the **external** AD domain with username
 and password::
 
-  user1@external_ldap.com password1
-  user2@external_ldap.com password2
-  user3@external_ldap.com password3
+  user1@external_ad.com password1
+  user2@external_ad.com password2
+  user3@external_ad.com password3
 
 Finally, we also create 3 accounts on |product|
 
