@@ -224,37 +224,3 @@ privacy to the information transferred between the client and the
 server, which is encrypted, provided that the SSL certificate is
 **active and not expired**.
 
-.. _carb-mail-notifications:
-
-Notifications
-~~~~~~~~~~~~~
-
-Android devices manufacturers have strict default settings on which
-apps can display notifications, sometimes causing the |carbonio| Mail
-App not to be able to notify new messages.
-
-To make sure that your device allows all required notifications, follow these steps:
-
-#. Log out from the app
-
-#. Access the device’s Settings, then enter the **Apps &
-   Notifications** menu
-
-#. Select the |carbonio| Mail app from the list of all installed apps
-
-#. Enter the **Notifications** section
-
-#. Enable the notifications (first option on the top)
-
-#. Enable the banner notification on the **Appointment** and **E-mail**
-   subsections
-
-#. Log back in
-
-Notifications should now work!
-
-.. warning:: (For Admins) For push notifications to work on the
-   device, the |product| server must be able to communicate with the
-   notifications.zextras.com service on port 443 (The exact URL to
-   which notifications are sent is:
-   https://notifications.zextras.com/firebase/).
