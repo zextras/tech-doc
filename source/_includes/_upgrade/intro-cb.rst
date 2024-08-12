@@ -5,32 +5,28 @@ for installation along with the other system updates. Therefore, the
 upgrade procedure is usually a very quick activity, carried out 
 by means of a few commands to be executed on each **Node**.
 
-The upgrade procedure consists of a preliminary task, followed by the
-proper upgrade, which is the same for each **Node**. Regardless of the
+.. card:: Supported Versions
+   :class-card: sd-border-2 
+
+   Only the **three previous versions** (so, in case of |version|, all
+   from |last_upg| included) are supported by this upgrade
+   procedure. If you try to upgrade from older version, you might be
+   required to run some tasks manually, including for example, edit
+   configuration files, manually remove packages or resolve package
+   conflicts, and so on and so forth.
+   
+The upgrade procedure varies, depending from the version currently
+installed. If the version of your *current* |product| installation is
+|prev|,  please refer to section :ref:`upgrade-prev`; if you install
+any older version, refer to section :ref:`upgrade-older` . Regardless of the
 version currently installed, the successful upgrade will always bring
 |product| to the latest version available, currently |version|.
 
-Depending on the packages upgraded, and the version from which you are
-upgrading, some manual step may be required. Please read carefully
-section :ref:`upgrade-checklist` **before starting the upgrade**, to
-see if you need to carry out some additional task.
-
-.. note:: Only the **three previous versions** are supported for
-   upgrade. If you install from an older version, you may need to
-   execute further tasks to ensure proper functioning of |product|.
+Please read carefully section :ref:`upgrade-checklist` **before
+starting the upgrade**, to see if you need to carry out some
+additional task.
 
 Moreover, in some cases, incompatibilities may seldom arise in the
 upgrade of third-party software, which may lead to some additional
-manual steps to be carried out. Section :ref:`upgrade-additional` below
+manual steps to be carried out. Section :ref:`upgrade-additional` 
 contains information to prevent or fix these issues.
-
-.. card:: Upgrade to PostgreSQL 16 and Ubuntu 22.04
-
-   Release 24.3.0 of |product| was a major milestones that introduced:
-
-   * support for PostgreSQL, version **16**. If you did not yet upgraded,
-     we **strongly suggest** to do so. Moreover, if you plan to upgrade
-     to Ubuntu *22.04* (see next point), it is **mandatory** to upgrade
-     to PostgreSQL 16.
-
-   * support for **Ubuntu 22.04** (Jammy Jellyfish).

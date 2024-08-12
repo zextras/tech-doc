@@ -4,202 +4,101 @@
 
 .. _carbonio-upgrade:
 
-|product| Upgrade from |prev| to |release|
-==========================================
+Upgrade to |product| |release|
+==============================
 
 .. include:: /_includes/_upgrade/intro-cb.rst
-
-.. _upgrade-checklist:
-
-Upgrade Checklist
------------------
-              
-.. include:: /_includes/_upgrade/checklist-cb.rst
 
 .. hint:: For improved security, to prevent any data loss, it is
    suggested to **make a backup** or **take a snapshot** (if you are
    using an hypervisor) of each Node before upgrading.
 
-.. _pre-upgrade:
+.. _upgrade-prev:
+
+Upgrade from |prev|
+-------------------
+
+When you are upgrading from the previous version, you should use
+Ansible Galaxy, which will take care of all the tasks.  Before
+starting the procedure, make sure that you satisfy the
+:ref:`up-prev-req` and check the :ref:`up-prev-issues`.
+
+.. include:: /_includes/_upgrade/ansible.rst
+
+.. _up-prev-req:
    
-Preliminary Tasks
------------------
+Requirements & Preliminaries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: You do not need to execute the following tasks if you
-   upgrade using :ref:`the Ansible procedure
-   <upgrade-ansible>`. Indeed, in that case, the :command:`zmslapcat`
-   command is run by Ansible, which will save the LDAP dump in the
-   :file:`/bck` directory.
-          
-.. include:: /_includes/_upgrade/ds.rst
+This upgrade procedure requires that **PostgreSQL 16** be
+installed. If you did not yet upgrade it, please refer to Section
+:ref:`pg-upgrade`.
 
-.. _pg-upgrade:
+.. No specific requirement is required to upgrade to  |product|
+   |version|.
 
-Upgrade to PostgreSQL 16
-------------------------
+The upgrade procedure is otherwise the same, regardless the underlying
+:ref:`supported operating system <software-requirements>`.
 
-.. include:: /_includes/_upgrade/pg.rst
+.. _up-prev-issues:
 
-.. rubric:: Update pgpool-II
+Known Issues
+~~~~~~~~~~~~
 
-You need to update also the ``pgpool-II`` package so it matches
-PostgresQL's correct version, 16.
+There is no know issue that impacts either the upgrade process to
+|product| |version| or the |product| operations afterwards.
 
-#. First, remove the installed package (and repository definition if
-   installed)
+.. _upgrade-older:
 
-   .. code:: console
+Upgrade from Older Supported Versions
+-------------------------------------
 
-      # dnf remove pgpool-II pgdg-redhat-repo
+If you plan to upgrade from a version more recent than |last_upg|
+included, you may encounter issues or need to carry out tasks or
+command that are reported in Section :ref:`up-older-issues`.
 
-#. Install the correct pgpool version
+There are two equivalent methods to upgrade a |product|
+infrastructure: automatically using Ansible, or manually, Node by
+Node. The Ansible procedure (see section :ref:`upgrade-prev`) should
+work even if you did not install |product| using the Ansible
+procedure, but may require some additional task to be executed
+manually, while the latter allows you to follow closely, Node by Node,
+the upgrade process and interact when needed and is described here.
 
-   .. tab-set::
-      
-      .. tab-item:: RHEL 8
-         :sync: rhel8
+.. _pre-upgrade:
 
-         .. code:: console
+.. card:: Preliminary Tasks
 
-            # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-8-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel8.x86_64.rpm
+   .. include:: /_includes/_upgrade/ds.rst
 
-      .. tab-item:: RHEL 9
-         :sync: rhel9
+.. include:: /_includes/_upgrade/manual.rst
 
-         .. code:: console
+.. _up-older-req:
 
-            # dnf install https://www.pgpool.net/yum/rpms/4.5/redhat/rhel-9-x86_64/pgpool-II-pg16-4.5.1-1pgdg.rhel9.x86_64.rpm
-
-.. _upgrade-nodes:
-
-Upgrade Nodes
--------------
-
-.. include:: /_includes/_upgrade/node-cb.rst
+Requirements & Preliminaries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              
+.. include:: /_includes/_upgrade/checklist-cb.rst
 
 
-.. _upgrade-additional:
+.. _up-older-issues:
 
-Additional Manual Steps
------------------------
+Known Issue (Older Releases)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the upgrade to |release|, the following manual steps are required.
+During the upgrade from an older version, you may encounter one or
+more of the following issues that require a manual intervention.
 
-.. _manual-grafana:
-
-GPG Key of Grafana in Ubuntu 22.04
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you migrate from Ubuntu 20.04 to 22.04 and use Monitoring Role's
-Grafana, you need to update the location on which its GPG key is
-stored to prevent warning during upgrades. Log in to the Node on which
-the |monit| Role is installed and execute the following commands.
-
-* Remove existent repository
-
-  .. code:: console
-
-     # add-apt-repository -r "deb https://packages.grafana.com/oss/deb
-     stable main"
-
-* Retrieve GPG key
-
-  .. code:: console
-
-     # wget -q -O - https://packages.grafana.com/gpg.key | \
-     gpg --dearmor | sudo tee /usr/share/keyrings/grafana.gpg > \
-     /dev/null
-
-* Add repository
-
-  .. code:: console
-
-     # echo "deb [signed-by=/usr/share/keyrings/grafana.gpg] \
-     https://packages.grafana.com/oss/deb stable main" | sudo tee -a \
-     /etc/apt/sources.list.d/grafana.list
-
-
-.. _upgrade-storages:
-
-New Package Installation
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-A new package must be installed on the Node featuring the **Database
-Connector** Role. Log in to that Node and execute command
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt install carbonio-storages
-
-   .. tab-item:: RHEL 
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install carbonio-storages
-
-.. _upgrade-monit:
-
-|monit|
-~~~~~~~
-
-While upgrading the ``carbonio-prometheus`` package, you will be
-prompted with the following text::
+* New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
+* The new package :ref:`carbonio-storages <upgrade-storages>` must be
+  installed
+* Monitoring: a new configuration file for :ref:`carbonio-prometheus
+  <upgrade-monit>` package must be installed
+* Initialise domains for :ref:`Delegated Administrators <upgrade-delegated>`
+* Some accounts are :ref:`not migrated during upgrade
+  <upgrade-backup>`
+* :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
+* A missing library causes a :ref:`RHEL Netcat Issue <rhel_netcat>`
+* :ref:`Domain Initialisation <init-domain-issue>` fails with an error
   
-  Configuration file '/etc/carbonio/carbonio-prometheus/prometheus.yml'
-  ==> Modified (by you or by a script) since installation.
-  ==> Package distributor has shipped an updated version.
-  What would you like to do about it ?  Your options are:
-  Y or I  : install the package maintainer's version
-  N or O  : keep your currently-installed version
-
-You must replace the existing file **with the new one**, therefore
-answer :kbd:`Y` or :kbd:`I`.
-
-.. _upgrade-delegated:
-
-Delegated Administrators
-~~~~~~~~~~~~~~~~~~~~~~~~
-          
-In this release, you need to initialise again the domain(s) for
-Delegation: for each domain that has active Delegations, in the
-|adminui| go to :menuselection:`Domains --> Manage --> Delegated
-Domain Admins` and click the :bdg-primary:`INIT DOMAIN` button.
-
-.. _upgrade-backup:
-
-Backup
-~~~~~~
-
-If the Global Administrator receives an e-mail notification about some
-accounts not migrated to use the new ``backupEnabled`` attribute, run
-the following commands as the ``zextras`` user to fix the issue.
-
-First, stop the backup migration service
-
-.. code:: console
-
-   zextras$ carbonio backup dostopservice migrate-backup-enabled-setting
-
-Then, start the service again to trigger the migration
-
-.. code:: console
-
-   zextras$ carbonio backup dostartservice migrate-backup-enabled-setting
-
-
-..
-   .. _upgrade-ts:
-
-   Troubleshooting
-   ---------------
-
-   In this section you find solutions for some possible error during the
-   upgrade procedure.
-
-   .. include:: /_includes/_upgrade/ts.rst
+.. include:: /_includes/_upgrade/issues.rst 
