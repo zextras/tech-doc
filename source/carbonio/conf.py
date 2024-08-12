@@ -46,7 +46,11 @@ author = 'The Zextras Team'
 # The full version, including alpha/beta/rc tags
 release = '24.7.1'
 version = release
+
+# The previous and the last supported versions for upgrade - as of
+# 20240812 we support the three latest versions
 prev = '24.5.0'
+last_upg = '24.1.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -68,7 +72,8 @@ rst_prolog = """
 .. |product| replace:: Carbonio
 .. |storage| replace:: Carbonio Storage
 .. |prev| replace:: %s
-""" %prev + open("replace.txt").read()
+.. |last_upg| replace:: %s
+""" %(prev, last_upg) + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
 
