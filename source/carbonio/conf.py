@@ -134,9 +134,6 @@ html_sidebars = { "**": [ 'navbar-logo.html',
 
 html_context = {
     'hubhome' : '%s' %hubhome,
-    # 'surveytext': 'What do you think about our new Documentation Layout?',
-    # 'surveylink': 'https://app.useberry.com/t/jmHPX8uvzq1WOH/?v=24.3 ',
-    # 'surveylabel': 'Take the survey',
 }
 
 # workaround for ZTD-581
