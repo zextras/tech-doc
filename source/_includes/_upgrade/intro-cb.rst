@@ -17,16 +17,15 @@ by means of a few commands to be executed on each **Node**.
    
 The upgrade procedure varies, depending from the version currently
 installed. If the version of your *current* |product| installation is
-|prev|,  please refer to section :ref:`upgrade-prev`; if you install
-any older version, refer to section :ref:`upgrade-older` . Regardless of the
-version currently installed, the successful upgrade will always bring
-|product| to the latest version available, currently |version|.
+|prev|, please refer to section :ref:`upgrade-prev`; if you install
+any older version, refer to section :ref:`upgrade-older`. Regardless
+of the version currently installed, the successful upgrade will always
+bring |product| **to the latest version available**, currently
+|version|.
 
-Please read carefully section :ref:`upgrade-checklist` **before
-starting the upgrade**, to see if you need to carry out some
-additional task.
 
 Moreover, in some cases, incompatibilities may seldom arise in the
 upgrade of third-party software, which may lead to some additional
-manual steps to be carried out. Section :ref:`upgrade-additional` 
-contains information to prevent or fix these issues.
+manual steps to be carried out. This is true especially in the case of
+upgrading from older versions, so please check Section
+:ref:`up-older-issues` before starting the upgrade.

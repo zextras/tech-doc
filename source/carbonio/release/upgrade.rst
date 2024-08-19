@@ -98,7 +98,7 @@ more of the following issues that require a manual intervention.
 * Some accounts are :ref:`not migrated during upgrade
   <upgrade-backup>`
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
-* A missing library causes a :ref:`RHEL Netcat Issue <rhel_netcat>`
+* A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
   
 .. include:: /_includes/_upgrade/issues.rst 
