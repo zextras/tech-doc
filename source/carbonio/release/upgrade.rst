@@ -45,8 +45,13 @@ The upgrade procedure is otherwise the same, regardless the underlying
 Known Issues
 ~~~~~~~~~~~~
 
-There is no know issue that impacts either the upgrade process to
-|product| |version| or the |product| operations afterwards.
+After the upgrade to |release|, the |adminui| will still report the
+version of |product| to be **24.7.0**. However, the CLI
+:command:`zmcontrol -v` will report the correct version (|release|).
+
+..
+   There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
 
 .. _upgrade-older:
 
@@ -100,5 +105,9 @@ more of the following issues that require a manual intervention.
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
-  
+
+Additionally, after the upgrade to |release|, the |adminui| will still
+report the version of |product| to be **24.7.0**. However, the CLI
+:command:`zmcontrol -v` will report the correct version (|release|).
+
 .. include:: /_includes/_upgrade/issues.rst 
