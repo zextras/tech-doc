@@ -173,7 +173,7 @@
 
    The solution is to install the libbsd package::
 
-     # dnf install lobbed
+     # dnf install libbsd
 
 .. _init-domain-issue:
 
