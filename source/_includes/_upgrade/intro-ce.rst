@@ -7,32 +7,23 @@ by means of a few commands to be executed on each **Node**, be it the
 (single) Node in a Single-Server installation, or all the Nodes in a
 Multi-Server installation.
 
-The upgrade procedure consists of a preliminary task, followed by the
-proper upgrade, which is the same for each **Node**. Regardless of the
-version currently installed, the successful upgrade will always bring
-|product| to the latest version available, currently |version|.
+.. card:: Supported Versions
+   :class-card: sd-border-2 
 
-Depending on the packages upgraded, and the version from which you are
-upgrading, some manual step may be required. Please read carefully
-section :ref:`upgrade-checklist` **before starting the upgrade**, to
-see if you need to carry out some additional task.
+   Only the **three previous versions** (so, in case of |version|, all
+   from |last_upg| included) are supported by this upgrade
+   procedure. If you try to upgrade from older version, you might be
+   required to run some tasks manually, including for example, edit
+   configuration files, manually remove packages or resolve package
+   conflicts, and so on and so forth.
 
-.. note:: Only the **three previous versions** are supported for
-   upgrade. If you install from an older version, you may need to
-   execute further tasks to ensure proper functioning of |product|.
+The upgrade procedure is the same, regardless of the currently
+installed version of |product|. The difference is that if you upgrade
+from |prev|, you usually do not need to carry out any other task
+manually, while if you upgrade from any *older supported version*, you
+will probably need to run some task before, during, or after the
+upgrade procedure.
 
-Moreover, in some cases, incompatibilities may seldom arise in the
-upgrade of third-party software, which may lead to some additional
-manual steps to be carried out. Section :ref:`upgrade-manual` below
-contains information to prevent or fix these issues.
-
-.. card:: Upgrade to PostgreSQL 16 and Ubuntu 22.04
-
-   Release 24.3.0 of |product| was a major milestones that introduced:
-
-   * support for PostgreSQL, version **16**. If you did not yet upgraded,
-     we **strongly suggest** to do so. Moreover, if you plan to upgrade
-     to Ubuntu *22.04* (see next point), it is **mandatory** to upgrade
-     to PostgreSQL 16.
-
-   * support for **Ubuntu 22.04** (Jammy Jellyfish).
+Before proceeding to the upgrade, if you upgrade from |prev|, please
+read carefully section :ref:`upgrade-prev`; otherwise, please read
+section :ref:`upgrade-older`.
