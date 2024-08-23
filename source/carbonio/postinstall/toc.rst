@@ -19,6 +19,5 @@ migration to |product|, and accessing the web interface.
       security
       web-access
       management
-      migration
       clamav-management.rst
    
