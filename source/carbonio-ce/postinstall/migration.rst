@@ -162,37 +162,12 @@ Import of E-mails
 Import of ICS Calendars
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-We assume that the Calendar files of all users has been exported and
-placed into |carbonio| Mails & Calendar Node's
-:file:`/opt/zextras/backup/` directory, in ICS Format, e.g.,
-:file:`/opt/zextras/backup/user1@example.com.ics`,
-:file:`/opt/zextras/backup/user1@acme.corp.ics`, and so on.
-
-They can be imported into |product| using the following command:
-
-.. code:: console
-
-   zextras$ for account in $(carbonio prov -l gaa SOURCE_DOMAIN); do \
-   echo "prov sa $account postRestURL '/Calendar?fmt=ics' /opt/zextras/backup/${account}.ics"; \
-   done | carbonio
+.. include:: /_includes/_migration/calendars.rst
 
 Import of CSV Contacts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-We assume that the Calendar files of all users has been exported and
-placed into |carbonio| Mails & Calendar Node's
-:file:`/opt/zextras/backup/` directory, in CSV Format, e.g.,
-:file:`/opt/zextras/backup/user1@example.com.csv`,
-:file:`/opt/zextras/backup/user1@acme.corp.csv`, and so on.
-
-They can be imported into carbonio using the following command:
-
-.. code:: console
-
-   zextras$ for account in $(carbonio prov -l gaa SOURCE_DOMAIN); do \
-   echo "prov sa $account postRestURL '/Contacts?fmt=csv&csvfmt=thunderbird-csv' /opt/zextras/backup/${account}.csv"; \
-   done | carbonio
-
+.. include:: /_includes/_migration/contacts.rst
 
 Limitations of the Procedure
 ----------------------------
