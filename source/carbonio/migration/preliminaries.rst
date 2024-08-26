@@ -88,10 +88,12 @@ The four phases are shown in different colours in
 various procedures, which are grouped in two groups: from a
 |zx|-compatible platform or from a third-party system.
 
+.. note:: The figure does not show the preliminary phase: checking the
+   requirements and limitations of the procedure, and exporting the backup.
+
 .. _fig-migration:
 
 .. figure:: /img/migration.png
    :width: 99%
 
    Overview of the migration to |product| procedure.
-
