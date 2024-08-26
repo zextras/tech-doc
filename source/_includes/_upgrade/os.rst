@@ -51,8 +51,7 @@ please refer to the `Ubuntu
 upstream documentations.
 
 .. note:: If you upgrade to Ubuntu 22 and use the |monit| role, please
-   make sure to change the Grafana repository. Please refer to Section
-   :ref:`manual-grafana` for directions.
+   make sure to :ref:`change the Grafana repository <manual-grafana>`.
 
 Phase 4
 -------

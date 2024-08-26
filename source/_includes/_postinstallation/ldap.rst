@@ -14,12 +14,18 @@ possible to allow the the new algorithm by means of a simple procedure
 in two steps.
 
 Before starting the procedure, however, it is suggested to make a dump
-of the LDAP database, using the directions and commands that can be
-found in Upgrade's section :ref:`pre-upgrade`.
+of the LDAP database, using the command (as the ``zextras`` user)
+
+.. code:: console
+
+   zextras$ /opt/zextras/libexec/zmslapcat /tmp
+
+.. note:: The dump will be saved in the :file:`/tmp/` directory, so
+   make sure to copy it to a **safe** location.
 
 The first step of the procedure is up to the administrator and
 requires to run as the ``zextras`` user the following script, which
-takes care to enable the new Argon2 algorithm
+enables the new Argon2 algorithm
 
 .. code:: console
 
