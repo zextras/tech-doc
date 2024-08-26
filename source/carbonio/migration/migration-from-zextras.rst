@@ -4,17 +4,28 @@
  From |zx| Suite Compatible Platform
 =====================================
 
-This procedure is valid only for systems equipped with:
+The two procedures described here are valid only for systems equipped with:
 
 * Zimbra OSE 8.8.15 + |suite| (latest release)
 * Zimbra (zextras) 9 + |suite| (latest release)
 * Zimbra + NG modules
 
-It will migrate **a whole Carbonio infrastructure** (including all
-domains, accounts, CoSes, DLs) from the **Source** to the
-**Destination** and will use the Backup module on both the **Source**
-and **Destination** infrastructure to complete Phases 1, 2 and 3 at
-once.
+The first procedure is the one that should be always used; described
+in the next sections, will migrate **a whole Carbonio infrastructure**
+(including all domains, accounts, CoSes, DLs) from the **Source** to
+the **Destination** and will use the Backup module on both the
+**Source** and **Destination** infrastructure to complete Phases 1, 2
+and 3 at once.
+
+The second procedure only migrates provisioning (**Phase 1**) using
+the Backup module and all remaining items using data exported from the
+**Source** and manually imported in the **Destination**. This
+procedure **should be only used** in a scenario which features a
+backup that contains corrupted blobs, but whose metadata are still
+intact. This scenario is described in dedicated page
+:ref:`mig-zx-prov`.
+
+.. _mig-zx-req:
 
 Requirements and Limitations
 ============================
@@ -72,6 +83,8 @@ also the list of all operations that are carried out.
 
 Remember to replace ``example.com`` with the domain from which you
 want to import the Briefcases.
+
+.. _mig-create-backup:
 
 Create Backup
 -------------
@@ -174,3 +187,4 @@ In this command you should use the following values for the options:
 -m
    is the map file that contains the account mapping on the
    **Source** and on the **Destination**
+

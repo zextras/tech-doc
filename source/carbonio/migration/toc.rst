@@ -19,4 +19,5 @@ away. Before attempting a migration, please read Section
 
       preliminaries
       migration-from-zextras.rst 
+      migration-from-zextras-prov-only
       migration-from-other.rst   
