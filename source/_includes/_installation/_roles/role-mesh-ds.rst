@@ -6,14 +6,14 @@
 
       .. code:: console
 
-         # apt install service-discover-server carbonio-directory-server
+         # apt install service-discover-server carbonio-directory-server carbonio-catalog-service
  
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install service-discover-server carbonio-directory-server
+         # dnf install service-discover-server carbonio-directory-server carbonio-catalog-service
 
 .. note:: Unlike other client-server software (like e.g., PostgreSQL),
    the ``service-discover`` software on which |product| is based does

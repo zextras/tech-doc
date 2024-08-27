@@ -61,6 +61,7 @@ This is the list of roles that make up a |product| installation.
 
       * service-discover-server
       * carbonio-directory-server
+      * carbonio-catalog-service
 
    .. grid-item-card:: Database
       :columns: 6
