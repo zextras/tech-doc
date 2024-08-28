@@ -41,6 +41,8 @@ This step can be automatically done when using :ref:`AD Auto
 provisioning <ad-auto>`: please refer to that section to set it up,
 then skip to :ref:`Phase 2 <mig-other-2>`.
 
+.. note:: Auto provisioning using LDAP instead of AD is supported. The
+   procedure is analogous to the AD one.
 
 If you prefer to proceed manually, you need first to create on
 |carbonio| the **domain** that will be imported and its **default
