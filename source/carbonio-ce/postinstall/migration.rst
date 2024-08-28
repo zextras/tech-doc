@@ -112,16 +112,8 @@ The following is the list of requirements that need to be satisfied:
       :columns: 4
       :class-header: sd-font-weight-bold
 
-      * |product| must be up & running during the whole procedure
-      * In order to avoid LDAP conflicts, |product| must be configured
-        with a “local” domain, that is different from any domain that
-        is going to be imported. For example, if you want to migrate
-        *example.com* and *acme.corp*, configure |product| to use a domain
-        like *carbonio.local* or anything else.
-      * All the files to be imported must be stored under
-        directory :file:`/opt/zextras/backup/` in the appropriate
-        Node; please refer to the corresponding section below
-
+      .. include:: /_includes/_migration/carbonio-req.rst
+      
 The actual tools to be used to obtain these files may vary, depending
 on the Source.
 
