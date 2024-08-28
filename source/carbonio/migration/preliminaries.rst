@@ -28,6 +28,8 @@ Destination
   The **Destination infrastructure** (Destination) is the |product|
   installation to which you want to move your existing mail server.
 
+  .. note:: The *Destination** has its :ref:`own requirements <mig-dest-reqs>`.
+
 Procedure
   The **Procedure** is a set of tasks that guide you in the import of
   all your data to the Destination. It requires access to the CLI of

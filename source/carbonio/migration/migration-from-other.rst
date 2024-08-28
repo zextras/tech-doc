@@ -198,8 +198,9 @@ input.
 
 Alternatively, you can create manually each Distribution List as
 follows. Taking the first list from the :file:`dl_provisioning.csv`
-file above as example, as the ``zextras user``, enter the |carbonio| shell with command
-:command:`carbonio`, then issue the following commands.
+file above as example, as the ``zextras user``, enter the |carbonio|
+shell with command :command:`carbonio`, then issue the following
+commands.
 
 .. code:: console
 

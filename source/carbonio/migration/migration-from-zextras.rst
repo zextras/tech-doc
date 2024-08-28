@@ -45,6 +45,16 @@ Requirements and Limitations
    require to be processed with scripts before being included in the
    backup
 
+.. _mig-dest-reqs:
+
+|product| Requirements
+----------------------
+
+The following requirements **must always be satisfied** on the
+**Destination**, regardless of the **Source**.
+
+.. include:: /_includes/_migration/carbonio-req.rst
+
 .. _mig-briefcase:
 
 Migrate Zimbra Briefcases
@@ -104,6 +114,11 @@ Then generate the backup and store it in that directory.
 This command also checks and validates the export: any error, warning,
 or inconsistency will be reported, so you can take appropriate steps
 to fix potential issues.
+
+In our scenario, we create a full backup that includes all domains,
+CoSes users, e-mails. It is however possible to migrate one domain at
+a time, especially if they are quite large, with a lot of accounts and
+e-mails.
 
 Phase 1, Provisioning
 =====================
@@ -174,7 +189,7 @@ that can be executed as root as follows.
 
    # carbonio-drive-migration -b /tmp/export  \
    -t https://mail.example.com/ \
-   -m /opt/zextras/backup/zextras/maps_[uuid]
+   -m /tmp/backup/zextras/maps_[uuid]
 
 In this command you should use the following values for the options:
 
