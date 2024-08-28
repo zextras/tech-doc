@@ -12,5 +12,4 @@ upgrade procedure, and, if any, known issues and security advises.
 
       upgrade
       other-upgrades
-      changelog-latest
-      older-changelogs
+      changelogs
