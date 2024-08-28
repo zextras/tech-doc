@@ -135,16 +135,16 @@ Domains and Accounts Provisioning
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We assume that domain files are stored in files
-:file:`/opt/zextras/backup/example.com.ldif` (domain and accounts
+:file:`/tmp/backup/example.com.ldif` (domain and accounts
 structure for example.com) and
-:file:`/opt/zextras/backup/acme.corp.ldif` (domain and accounts
+:file:`/tmp/backup/acme.corp.ldif` (domain and accounts
 structure for acme.corp) on the LDAP Node. They can be imported using
 the :command:`slapadd` command:
 
 .. code:: console
 
-   # /opt/zextras/common/sbin/slapadd -F /opt/zextras/data/ldap/config/ -v -l /opt/zextras/backup/example.com.ldif
-   # /opt/zextras/common/sbin/slapadd -F /opt/zextras/data/ldap/config/ -v -l /opt/zextras/backup/acme.corp.ldif
+   # /opt/zextras/common/sbin/slapadd -F /opt/zextras/data/ldap/config/ -v -l /tmp/backup/example.com.ldif
+   # /opt/zextras/common/sbin/slapadd -F /opt/zextras/data/ldap/config/ -v -l /tmp/backup/acme.corp.ldif
 
 Import of E-mails
 ~~~~~~~~~~~~~~~~~
