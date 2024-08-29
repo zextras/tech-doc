@@ -17,6 +17,8 @@ into details, but only provide an overview of the workflow.
    is when a backup contains corrupted blobs, while the metadata still
    maintain their integrity.
 
+Please read carefully the whole section to make sure you understand
+the requirement and the overall procedure.
 
 Requirements and Limitations
 ============================
@@ -94,11 +96,11 @@ Step 2-3, Calendars
 Phase 3, Shares
 ===============
 
-Public shares migration is not supported in this scenario.
+Public Shares migration is not supported in this scenario.
 
 Phase 4, Files
 ==============
 
 Migration of |file| items is not supported in this scenario. Users
-need to download they file from the **Source** and manually upload
+need to download the files from the **Source** and manually upload
 them to the **Destination**.

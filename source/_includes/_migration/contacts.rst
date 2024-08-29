@@ -5,7 +5,7 @@ placed into |carbonio| Mails & Calendar Node's
 :file:`/tmp/backup/user1@example.com.csv`,
 :file:`/tmp/backup/user1@acme.corp.csv`, and so on.
 
-They can be imported into carbonio using the following command:
+They can be imported into |product| using the following command:
 
 .. code:: console
 
