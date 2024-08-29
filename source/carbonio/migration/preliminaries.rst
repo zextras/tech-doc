@@ -4,7 +4,7 @@
  Preliminaries
 ===============
 
-This page contains the definition of some important term used
+This page contains the definition of some important terms used
 throughout the various migration procedures, an overview of the
 procedures' workflow, a list of task to be carried out before the
 actual migration, and finally the list and links to the various
@@ -28,7 +28,8 @@ Destination
   The **Destination infrastructure** (Destination) is the |product|
   installation to which you want to move your existing mail server.
 
-  .. note:: The *Destination** has its :ref:`own requirements <mig-dest-reqs>`.
+  .. note:: The **Destination** has its :ref:`own requirements
+     <mig-dest-reqs>`.
 
 Procedure
   The **Procedure** is a set of tasks that guide you in the import of
@@ -45,12 +46,14 @@ Data
   **Data** refers to the set of all the e-mails that are present on
   the Source before the start of the Procedure.
 
-Procedure Overview
-==================
+Procedures Overview
+===================
 
-The procedure is roughly divided into **four** phases, which may
-consist of multiple steps. The actual tasks required to complete each
-step and phase may vary, depending on the *source infrastructure*.
+The migration procedure is roughly divided into **four** phases, which
+may consist of multiple steps and must be executed in order. The
+actual tasks required to complete each step and phase may vary,
+depending on the **Source**. Moreover, some phase may not be possible
+at all depending on the procedure.
 
 .. grid:: 1 1 2 2
    :gutter: 2
@@ -59,11 +62,11 @@ step and phase may vary, depending on the *source infrastructure*.
       :columns: 6
 
       In this phase, we deal with tasks that create the domains,
-      users, and CoS.
+      users, and |cos|\es.
       
-      * Import of domains and user accounts
-      * Import of distribution lists
-      * Import of Classes of Services (optional) 
+      * Import of Domains and User Accounts
+      * Import of |DL|\s
+      * Import of |cos|\es (optional) 
 
    .. grid-item-card:: Phase 2, Data
       :columns: 6
@@ -71,14 +74,15 @@ step and phase may vary, depending on the *source infrastructure*.
       After the provisioning has been completed, we process the actual
       data:
       
-      * Import of e-mails
+      * Import of E-mails
       * Import of Calendars
       * Import of Contacts
     
    .. grid-item-card:: Phase 3, Shares
       :columns: 6
 
-      After Provisioning and Data, our attention goes to Shared items.
+      After Provisioning and Data, our attention goes to the Shared
+      items.
       
    .. grid-item-card:: Phase 4, |file|
       :columns: 6
@@ -88,7 +92,7 @@ step and phase may vary, depending on the *source infrastructure*.
 The four phases are shown in different colours in
 :numref:`fig-migration`. The figure also gives an overview of the
 various procedures, which are grouped in two groups: from a
-|zx|-compatible platform or from a third-party system.
+|zx| compatible platform or from a third-party system. 
 
 .. note:: The figure does not show the preliminary phase: checking the
    requirements and limitations of the procedure, and exporting the backup.
@@ -99,3 +103,49 @@ various procedures, which are grouped in two groups: from a
    :width: 99%
 
    Overview of the migration to |product| procedure.
+
+Available Procedures
+--------------------
+
+There are three available procedures: two of them can be used when the
+**Source** is a |suite| compatible platform, the third one when  the
+**Source** is a generic, third-party system.
+
+.. _zx-compatible:
+
+.. card:: Definition of |suite| compatible platform
+
+   In the context of the migration procedure, we define
+   **Zextras Suite compatible platform** a **Source** system equipped with
+   any of this software combination:
+   
+   * Zimbra OSE 8.8.15 + |suite| (latest release)
+   * Zimbra OSE 9.0 (built by |zx|) + |suite| (latest release)
+   * Zimbra Network Edition 8.8.15  (with NG modules)
+   * Zimbra Network Edition 9.0  (with NG modules)
+
+Procedure 1, from |suite| Compatible Platform
+   This procedure is the one that should be always used when migrating
+   from a |suite| :ref:`compatible platform <zx-compatible>` and is
+   presented in section :ref:`migration-zx`, it will migrate **a whole
+   Carbonio infrastructure** (including all domains, accounts, CoSes,
+   DLs) from the **Source** to the **Destination** and will use the
+   |suite|\'s Backup Module on the **Source** and |backup| on the
+   **Destination** infrastructure to complete Phases 1, 2, and 3 at
+   once.
+
+Procedure 2, from |suite| Compatible Platform - Provisioning only
+   This procedure only migrates accounts and |cos|\es, (provisioning)
+   using the Backup module, while all remaining items are migrated
+   using data exported from the **Source** and manually imported in
+   the **Destination**. This procedure **should be only used** in a
+   scenario which features a backup that contains corrupted blobs, but
+   whose metadata are still intact. This scenario is described in
+   dedicated page :ref:`mig-zx-prov`.
+
+Procedure 3, From Generic E-mail Systems
+   When the source is no |suite| :ref:`compatible platform
+   <zx-compatible>`, the only possibility is to export all the
+   necessary items from the **Source** and importing them on the
+   **Destination** using suitable scripts, that are included in the
+   dedicated section :ref:`migration-other`.

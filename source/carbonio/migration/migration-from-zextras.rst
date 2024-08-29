@@ -4,26 +4,20 @@
  From |zx| Suite Compatible Platform
 =====================================
 
-The two procedures described here are valid only for systems equipped with:
+This page describes the migration of a **Source** equipped with any of
+the following software:
 
-* Zimbra OSE 8.8.15 + |suite| (latest release)
-* Zimbra (zextras) 9 + |suite| (latest release)
-* Zimbra + NG modules
+* Zimbra OSE 8.8.15 + Zextras Suite (latest release)
+* Zimbra OSE 9.0 (built by Zextras) + Zextras Suite (latest release)
+* Zimbra Network Edition 8.8.15  (with NG modules)
+* Zimbra Network Edition 9.0  (with NG modules)
 
-The first procedure is the one that should be always used; described
-in the next sections, will migrate **a whole Carbonio infrastructure**
-(including all domains, accounts, CoSes, DLs) from the **Source** to
-the **Destination** and will use the Backup module on both the
-**Source** and **Destination** infrastructure to complete Phases 1, 2
-and 3 at once.
+The procedure will use the |suite| Backup Module on the **Source** and
+|backup| on the **Destination** infrastructure to complete the
+migration.
 
-The second procedure only migrates provisioning (**Phase 1**) using
-the Backup module and all remaining items using data exported from the
-**Source** and manually imported in the **Destination**. This
-procedure **should be only used** in a scenario which features a
-backup that contains corrupted blobs, but whose metadata are still
-intact. This scenario is described in dedicated page
-:ref:`mig-zx-prov`.
+Please read carefully the whole section to make sure you understand
+the requirement and the overall procedure.
 
 .. _mig-zx-req:
 
@@ -36,7 +30,7 @@ Requirements and Limitations
 #. |suite| must include the license for the **Backup** module
 
 #. (optional) |suite| should include the license for the **Drive**
-   module if you want to migrate items in the Drive module
+   module, if you want to migrate items in the Drive module
 
 #. **Zimbra Briefcases** migration has its own limitations and
    procedure, see the :ref:`dedicated section below <mig-briefcase>`
@@ -57,8 +51,8 @@ The following requirements **must always be satisfied** on the
 
 .. _mig-briefcase:
 
-Migrate Zimbra Briefcases
--------------------------
+Migration of Zimbra Briefcases
+------------------------------
 
 Zimbra Briefcases migrated to |product|, but you should execute a few
 preparatory tasks before doing so. In short, Zimbra Briefcases are
@@ -83,33 +77,41 @@ In any case, during the import from Briefcases to Drive, the log
 file will show a warning whenever a file is being overwritten, so you
 can later fix all these cases.
 
-In order to import Zimbra Briefcases, run the following command **for
-every domain**. Besides the warnings, the generated log will contain
-also the list of all operations that are carried out.
+In order to import Zimbra Briefcases, run the following command as the
+``zimbra`` user **for every domain**. Besides the warnings, the
+generated log messages (that are stored in file
+:file:`/opt/zextras/log/mailbox.log`) will contain also the list of
+all operations that are carried out.
 
 .. code:: console
 
-   zextras$ zxsuite drive doImportBriefcase example.com
+   $ zxsuite drive doImportBriefcase example.com
 
 Remember to replace ``example.com`` with the domain from which you
 want to import the Briefcases.
 
+.. hint:: When you launch the command, you will receive the
+   ``operationid``, that can be used to follow output by using the
+   :command:`carbonio admin monitor <operationid>`.
+   
 .. _mig-create-backup:
 
 Create Backup
 -------------
 
-On the **Source**, create a directory in which to store the backup.
+On the **Source**, as the ``zimbra`` user, create a directory in which
+to store the backup.
 
 .. code:: console
 
-   # mkdir /tmp/backup/
+   $ mkdir /tmp/backup/
 
-Then generate the backup and store it in that directory.
+Then generate, again as the ``zimbra`` user, the backup and store it
+in that directory.
 
 .. code:: console
 
-   # zxsuite backup doExport /tmp/export
+   $ zxsuite backup doExport /tmp/export
 
 This command also checks and validates the export: any error, warning,
 or inconsistency will be reported, so you can take appropriate steps
@@ -176,7 +178,8 @@ Phase 4, Files
 
 Zimbra Drive items can be exported and imported in |file| using the
 exported Backup and installing a dedicated package on the
-**Destination**.
+**Destination** (both commands mentioned below must be run as the
+``root`` user).
 
 .. code:: console
 

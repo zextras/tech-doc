@@ -1,6 +1,6 @@
 
 The most functional and standard way to read from the Source and write
-into the Destination is the use the IMAP protocol. For this reason, we
+into the Destination is to use the IMAP protocol. For this reason, we
 suggest `imapsync <https://imapsync.lamiral.info/>`_ as the tool to
 perform IMAP migration.
 

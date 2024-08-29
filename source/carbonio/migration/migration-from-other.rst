@@ -6,6 +6,15 @@
  From Generic E-mail Systems
 =============================
 
+
+:fa:`magnifying-glass`
+
+:fa:`lg`
+
+:fas:`magnifying-glass`
+
+:fas:`lg`
+
 The migration to |product| from a generic e-mail system requires a
 number of manual steps to be carried out on both the **Source** and
 **Destination** systems to be able to migrate correctly
@@ -15,42 +24,50 @@ There are two different ways to proceed, depending on whether the User
 Account provisioning can be done automatically or not, that influence
 the *Phase 1* of the migration process.
 
-Since this is quite a long procedure, please read carefully
+Since this is quite a long procedure, please read carefully the
+reminder of this section before attempting the migration, to
+understand which data, files and their format are needed.
 
 Requirements and Limitations
 ============================
 
-.. intro to be fixed
-
 There are theoretically no limitations when migrating from a generic
-e-mail system, provided you can export suitable text files when required.
+e-mail system, provided you can export suitable text files when
+required.
 
+These files are CSV or ICS files with a precise format: they will be
+then processed using the scripts that we provide to import Users,
+Calendars, Contact, E-mails in the **Destination**. Make sure that the
+format of the files reflect the examples, to prevent any possible
+error while processing the files.
 
 Phase 1, Provisioning
 =====================
 
 This phases is divided into two steps, as shown in
-:numref:`fig-migration`: Accounts provisioning and Distribution Lists
-Provisioning, while the CoS Provisioning is an empty step, as generic
-e-mail systems do not have CoS.
+:numref:`fig-migration`: Accounts provisioning and |dl| provisioning,
+while the |CoS| provisioning is an empty step, as generic e-mail systems
+do not have CoS.
 
 Step 1-1, Domains and Accounts
 ------------------------------
 
-This step can be automatically done when using :ref:`AD Auto
+This step can be automatically done when using :ref:`Auto
 provisioning <ad-auto>`: please refer to that section to set it up,
 then skip to :ref:`Phase 2 <mig-other-2>`.
 
-.. note:: Auto provisioning using LDAP instead of AD is supported. The
-   procedure is analogous to the AD one.
+.. note:: The linked Auto provisioning article describes the use of AD
+   for provisioning, but also any generic LDAP is supported: The procedure is
+   analogous to the AD, with appropriate changes to the search
+   filters, bind domains, and the port.
 
 If you prefer to proceed manually, you need first to create on
-|carbonio| the **domain** that will be imported and its **default
-COS**, that will be applied to all users in the domain. You can refer
-to section :ref:`ap-domain-new` and :ref:`ap_cos`, respectively, for
-directions.
+|carbonio| the **domain** that will be imported and modify, according
+to your preferences its **default COS**, that will be applied to all
+users in the domain. You can refer to section :ref:`ap-domain-new` and
+:ref:`ap_cos`, respectively, for directions.
 
-.. note:: Make sure that all the desired settings for both the domain
+.. hint:: Make sure that all the desired settings for both the domain
    and the default COS have correct values.
 
 Then, you need to export manually the accounts from the **Source** and
@@ -166,7 +183,7 @@ input.
 Step 1-2, Distribution Lists
 ----------------------------
 
-To import Distribution lists, you need to export them in a CSV file,
+To import |dl|\s, you need to export them in a CSV file,
 called :file:`dl_provisioning.csv`, that has this format::
   
   distibution_list1@example.io,Description1,Name1,email_1@example.io,email_2@example.io,
@@ -174,14 +191,14 @@ called :file:`dl_provisioning.csv`, that has this format::
   distibution_list3@example.io,Description3,Name3,email_3@example.io,email_6@example.io,email_7@example.io,email_8@example.io
 
 The first three fields are parsed as the Distribution List's address,
-Description, and name, respectively, and they are reflected in the
+Description, and Name, respectively, and they are reflected in the
 |adminui|. All remaining fields, whose number may vary, are the e-mail
 addresses that are member of the Distribution List.
 
 As the ``zextras`` user, execute the following script, which will
 create a command file that will be fed to :command:`carbonio` later:
 
-.. dropdown:: Distribution Lists Migration Script
+.. dropdown:: |dl|\s Migration Script
    :open:
          
    :download:`/scripts/dl.sh`
@@ -198,7 +215,7 @@ input.
 
 Alternatively, you can create manually each Distribution List as
 follows. Taking the first list from the :file:`dl_provisioning.csv`
-file above as example, as the ``zextras user``, enter the |carbonio|
+file above as example, as the ``zextras`` user, enter the |carbonio|
 shell with command :command:`carbonio`, then issue the following
 commands.
 
