@@ -6,15 +6,6 @@
  From Generic E-mail Systems
 =============================
 
-
-:fa:`magnifying-glass`
-
-:fa:`lg`
-
-:fas:`magnifying-glass`
-
-:fas:`lg`
-
 The migration to |product| from a generic e-mail system requires a
 number of manual steps to be carried out on both the **Source** and
 **Destination** systems to be able to migrate correctly
