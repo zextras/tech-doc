@@ -35,8 +35,8 @@ error while processing the files.
 Phase 1, Provisioning
 =====================
 
-This phases is divided into two steps, as shown in
-:numref:`fig-migration`: Accounts provisioning and |dl| provisioning,
+This phases is divided into two steps
+Accounts provisioning and |dl| provisioning,
 while the |CoS| provisioning is an empty step, as generic e-mail systems
 do not have CoS.
 

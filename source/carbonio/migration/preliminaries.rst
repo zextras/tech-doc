@@ -1,8 +1,5 @@
-.. _migration-pre:
-
-===============
- Preliminaries
-===============
+Preliminaries
+=============
 
 This page contains the definition of some important terms used
 throughout the various migration procedures, an overview of the
@@ -20,16 +17,13 @@ Source
   The **Source infrastructure** (Source) is the mail server from which
   to move away and that, at the beginning of the procedure, contains
   everything. It is important to stress the facts that we do not make
-  any assumption on the Source (which can be any software), and that
-  the Source is only needed to extract data, therefore is not touched
-  in any way by the procedure.
+  any assumption on the Source (which can be any software).
 
 Destination
   The **Destination infrastructure** (Destination) is the |product|
   installation to which you want to move your existing mail server.
 
-  .. note:: The **Destination** has its :ref:`own requirements
-     <mig-dest-reqs>`.
+  .. note:: The **Destination** has its :ref:`Requirements <carbonio-requirements>`  
 
 Procedure
   The **Procedure** is a set of tasks that guide you in the import of
@@ -38,8 +32,8 @@ Procedure
   have been already exported when you start the Procedure.
 
 Provisioning
-  **Provisioning** refers to the set of all data and metadata about
-  the Domains, accounts, COSes, and distribution lists that are
+  **Provisioning** refers to the process of creating and setting up the
+  Domains, Accounts, Class Of Services, and Distribution Lists that are
   present on the Source before the start of the Procedure.
 
 Data
@@ -65,8 +59,8 @@ at all depending on the procedure.
       users, and |cos|\es.
       
       * Import of Domains and User Accounts
-      * Import of |DL|\s
-      * Import of |cos|\es (optional) 
+      * Import of Distribution Lists
+      * Import of Classes Of Services (optional) 
 
    .. grid-item-card:: Phase 2, Data
       :columns: 6
@@ -75,7 +69,7 @@ at all depending on the procedure.
       data:
       
       * Import of E-mails
-      * Import of Calendars
+      * Import of Appointments
       * Import of Contacts
     
    .. grid-item-card:: Phase 3, Shares
@@ -87,17 +81,14 @@ at all depending on the procedure.
    .. grid-item-card:: Phase 4, |file|
       :columns: 6
 
-      In the last phase, we import items into |file|.
+      In the last phase, we import Zextras Drive items into |file|.
 
-The four phases are shown in different colours in
-:numref:`fig-migration`. The figure also gives an overview of the
+The figure gives an overview of the
 various procedures, which are grouped in two groups: from a
 |zx| compatible platform or from a third-party system. 
 
 .. note:: The figure does not show the preliminary phase: checking the
    requirements and limitations of the procedure, and exporting the backup.
-
-.. _fig-migration:
 
 .. figure:: /img/migration.png
    :width: 99%
