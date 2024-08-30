@@ -1,7 +1,7 @@
 
 * |product| must be up&running during the whole procedure
 
-* To prevent any LDAP conflicts, |product| must be configured with a
+* To prevent any LDAP conflicts, we suggest to configure |product| with a
   *local* domain, different from any domain that is going to be
   imported. You can use, for example, a domain like ``carbonio.local``
 

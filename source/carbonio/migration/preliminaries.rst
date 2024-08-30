@@ -33,7 +33,7 @@ Procedure
 
 Provisioning
   **Provisioning** refers to the process of creating and setting up the
-  Domains, Accounts, Class Of Services, and Distribution Lists that are
+  Domains, Accounts, Class of Services, and Distribution Lists that are
   present on the Source before the start of the Procedure.
 
 Data
@@ -60,7 +60,7 @@ at all depending on the procedure.
       
       * Import of Domains and User Accounts
       * Import of Distribution Lists
-      * Import of Classes Of Services (optional) 
+      * Import of Classes of Services (optional) 
 
    .. grid-item-card:: Phase 2, Data
       :columns: 6
@@ -115,7 +115,7 @@ There are three available procedures: two of them can be used when the
    * Zimbra Network Edition 8.8.15  (with NG modules)
    * Zimbra Network Edition 9.0  (with NG modules)
 
-Procedure 1, from |suite| Compatible Platform
+Procedure 1, from |suite| Compatible Platform - using Zextras Backup
    This procedure is the one that should be always used when migrating
    from a |suite| :ref:`compatible platform <zx-compatible>` and is
    presented in section :ref:`migration-zx`, it will migrate **a whole
@@ -125,16 +125,23 @@ Procedure 1, from |suite| Compatible Platform
    **Destination** infrastructure to complete Phases 1, 2, and 3 at
    once.
 
-Procedure 2, from |suite| Compatible Platform - Provisioning only
+Procedure 2, from |suite| Compatible Platform - Provisioning only + IMAPSync
    This procedure only migrates accounts and |cos|\es, (provisioning)
    using the Backup module, while all remaining items are migrated
    using data exported from the **Source** and manually imported in
    the **Destination**. This procedure **should be only used** in a
    scenario which features a backup that contains corrupted blobs, but
-   whose metadata are still intact. This scenario is described in
-   dedicated page :ref:`mig-zx-prov`.
+   whose metadata are still intact or when you are exporting a large amount of data.
+   This scenario is described in dedicated page :ref:`mig-zx-prov`.
 
-Procedure 3, From Generic E-mail Systems
+Procedure 3, from Generic E-mail Systems based on compatible AD or Openldap + IMAPSync
+   This procedure performs provisioning by connecting to an external LDAP database
+   (whether Active Directory or OpenLDAP).
+   Once the provisioning phase is completed, the data will then be synchronized with
+   the IMAPSync tool.
+   The steps related to this procedure can be found here :ref:`mig-zx-ldap`.
+
+Procedure 4, from Generic E-mail Systems + IMAPSync
    When the source is no |suite| :ref:`compatible platform
    <zx-compatible>`, the only possibility is to export all the
    necessary items from the **Source** and importing them on the
