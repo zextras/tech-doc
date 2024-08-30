@@ -54,24 +54,19 @@ The following requirements **must always be satisfied** on the
 Migration of Zimbra Briefcases
 ------------------------------
 
-Zimbra Briefcases migrated to |product|, but you should execute a few
+Zimbra Briefcases can be migrated to |product|, but you should execute a few
 preparatory tasks before doing so. In short, Zimbra Briefcases are
 imported as Drive items and then migrated to |product| in phase 4.
 
-There are **two limitations** concerning users with multiple
+There is **one limitation** concerning users with multiple
 Briefcases.
 
-#. If there are two (or more) folders with the same name, they **will
-   be merged together** in one single folder when imported to Drive.
-
-   To prevent such situations, and users want to keep these folder
-   separate, it is suggested to rename folders that share the same
-   name.
-
-#. If those folders contain files with the same name, they **will be
-   overwritten**.
-
-   To avoid these problems, users should rename their files.
+* If there are two (or more) folders with the same name, they **will
+  be merged together** in one single folder when imported to Drive.
+  To prevent such situations, and users want to keep these folder
+  separate, it is suggested to rename folders that share the same
+  name. If those folders contain files with the same name, they **will be
+  overwritten**. To avoid this problem, users should rename their files.
 
 In any case, during the import from Briefcases to Drive, the log
 file will show a warning whenever a file is being overwritten, so you
@@ -96,8 +91,11 @@ want to import the Briefcases.
    
 .. _mig-create-backup:
 
-Create Backup
+Export Backup
 -------------
+Detailed information on this part of the procedure can be obtained directly
+from the appropriate section of the **Zextras Suite** technical documentation:
+`External Restore <../../../suite/html/restorestrategies.html#external-restore>`_.
 
 On the **Source**, as the ``zimbra`` user, create a directory in which
 to store the backup.
@@ -122,16 +120,16 @@ CoSes users, e-mails. It is however possible to migrate one domain at
 a time, especially if they are quite large, with a lot of accounts and
 e-mails.
 
-Phase 1, Provisioning
-=====================
+Phase 1, Import backup
+======================
 
-First, copy the backup from the **Source** to the **Destination** or
+First, stop the MTA to temporarily interrupt the e-mails flow.
+Then copy the backup from the **Source** to the **Destination** or
 make sure the **Destination** can access the backup. This can be
 achieved with different methods: using an USB key, a network share, or
 a direct command like :command:`rsync` or :command:`scp`.
 
-On the **Destination**, activate the Backup module, stop the MTA to
-temporarily interrupt the e-mails flow, and execute a
+On the **Destination**, activate the Backup module executing a
 :ref:`smartscan`.
 
 .. code:: console
@@ -159,21 +157,14 @@ be ineffective when sequentially importing accounts.
 
    zextras$ carbonio powerstore doDeduplicate yourPrimaryVolume
 
-Phase 2, Data
-=============
-
-This Phase is included in Phase 1.
-
-.. missing nested Calendars and Address Books
-
-Phase 3, Shares
+Phase 2, Shares
 ===============
 
-This Phase is included in Phase 1.
+[Public shares importing script is coming ...]
 
 .. missing public shares.
 
-Phase 4, Files
+Phase 3, Files
 ==============
 
 Zimbra Drive items can be exported and imported in |file| using the
@@ -192,7 +183,7 @@ that can be executed as root as follows.
 
    # carbonio-drive-migration -b /tmp/export  \
    -t https://mail.example.com/ \
-   -m /tmp/backup/zextras/maps_[uuid]
+   -m /opt/zextras/backup/zextras/maps_[uuid]
 
 In this command you should use the following values for the options:
 
@@ -206,3 +197,7 @@ In this command you should use the following values for the options:
    is the map file that contains the account mapping on the
    **Source** and on the **Destination**
 
+.. hint:: The ``carbonio-drive-migration`` command should be run only after
+   importing the backup.
+   
+.. warning:: The current version of this tool does not migrate public and internal shares.
