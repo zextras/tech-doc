@@ -28,7 +28,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: basics/general
 
-      Useful  information about |product|
+      Useful information about |product|
 
       .. toctree::
          :hidden:
@@ -62,6 +62,21 @@ The content is organised in multiple parts:
          :hidden:
 
          install/toc
+
+
+   .. grid-item-card:: Migration to |product|
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: migration/toc
+
+      How to migrate from an existing e-mail system, based on a |zx|
+      compatible platform or from a generic existent system.
+
+      .. toctree::
+         :hidden:
+
+         migration/toc
 
    .. grid-item-card:: Post-Install
       :columns: 12 12 6 6

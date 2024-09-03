@@ -10,8 +10,6 @@ upgrade procedure, and, if any, known issues and security advises.
    .. toctree::
       :maxdepth: 1
 
-      changelog-latest
       upgrade
-      upgrade-os
-      older-changelogs
-      issues
+      other-upgrades
+      changelogs

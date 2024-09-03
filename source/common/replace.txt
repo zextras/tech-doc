@@ -46,6 +46,8 @@
 .. |fqdn| replace:: :abbr:`FQDN (Fully Qualified Domain Name)`
 .. |ha| replace:: :abbr:`HA (High availability)`
 .. |dos| replace:: :abbr:`DoS (Denial of Service)`
+.. |dl| replace:: :abbr:`DL (Distribution List)`
+
 
 .. additional roles for adding inline styles
 

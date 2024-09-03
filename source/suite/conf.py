@@ -94,11 +94,11 @@ html_context = { 'hubhome' : '%s' %hubhome }
 # -- Options for linkcheck output --------------------------------------------
 
 # list of URLs to ignore
-linkcheck_ignore = [ r'.*.example.com(:\d+)?.*',
-                     'https:\/\/my-saml-provider\.org\/',
-                     'https:\/\/notifications.zextras.com\/firebase\/',
-                     r'https://support.zextras.com/',
-                     r'https://mycompany.okta.com/.*',
+linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
+                     r'https:\/\/my-saml-provider\.org\/',
+                     r'https:\/\/notifications.zextras.com\/firebase\/',
+                     r'https:\/\/support.zextras.com/',
+                     r'https:\/\/mycompany.okta.com/.*',
                      r'../../.*' ]
 
 # cli commands contain quite a lot of broken urls for several reasons
