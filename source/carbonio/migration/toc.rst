@@ -11,15 +11,3 @@ dismissed. This section contains several procedures to migrate to
 |product|, depending on the system from which you want to migrate
 away. Before attempting a migration, please read Section *Preliminares*.
 
-
-.. card:: Table of Contents
-          
-   .. toctree::
-      :maxdepth: 1
-
-      migration-from-zextras.rst 
-      migration-from-zextras-prov-only
-      migration-ldap.rst
-      migration-from-other.rst
-
-.. include:: preliminaries.rst   
