@@ -1,5 +1,5 @@
 .. |userp| replace:: :file:`user_provisioning.csv`
-                      
+
 .. _migration-other:
 
 =============================
@@ -10,10 +10,6 @@ The migration to |product| from a generic e-mail system requires a
 number of manual steps to be carried out on both the **Source** and
 **Destination** systems to be able to migrate correctly
 everything.
-
-There are two different ways to proceed, depending on whether the User
-Account provisioning can be done automatically or not, that influence
-the *Phase 1* of the migration process.
 
 Since this is quite a long procedure, please read carefully the
 reminder of this section before attempting the migration, to
@@ -35,28 +31,18 @@ error while processing the files.
 Phase 1, Provisioning
 =====================
 
-This phases is divided into two steps, as shown in
-:numref:`fig-migration`: Accounts provisioning and |dl| provisioning,
-while the |CoS| provisioning is an empty step, as generic e-mail systems
-do not have CoS.
+This phase is divided into two steps, Accounts provisioning and |dl|
+provisioning, while the |CoS| provisioning is an empty step, as
+generic e-mail systems do not have CoS.
 
 Step 1-1, Domains and Accounts
 ------------------------------
 
-This step can be automatically done when using :ref:`Auto
-provisioning <ad-auto>`: please refer to that section to set it up,
-then skip to :ref:`Phase 2 <mig-other-2>`.
-
-.. note:: The linked Auto provisioning article describes the use of AD
-   for provisioning, but also any generic LDAP is supported: The procedure is
-   analogous to the AD, with appropriate changes to the search
-   filters, bind domains, and the port.
-
-If you prefer to proceed manually, you need first to create on
-|carbonio| the **domain** that will be imported and modify, according
-to your preferences its **default COS**, that will be applied to all
-users in the domain. You can refer to section :ref:`ap-domain-new` and
-:ref:`ap_cos`, respectively, for directions.
+You need first to create on |carbonio| the **domain** that will be
+imported and modify, its **default COS** according to your
+preferences, that will be applied to all users in the domain. You can
+refer to section :ref:`ap-domain-new` and :ref:`ap_cos`, respectively,
+for directions.
 
 .. hint:: Make sure that all the desired settings for both the domain
    and the default COS have correct values.
@@ -96,7 +82,7 @@ create a command file that will be fed to :command:`carbonio` later:
 
 .. dropdown:: User Account Migration Script - Option 1
    :open:
-         
+
    :download:`/scripts/option1.sh`
 
    .. literalinclude:: /scripts/option1.sh
@@ -113,8 +99,8 @@ Option 2
 ~~~~~~~~
 
 An empty password is created for all users, which are enabled for
-password recovery. A recovery address e-mail must be set up for each
-user.
+password recovery. Password recovery and a recovery address e-mail
+must be set up for each user.
 
 The CSV file must have the following structure::
 
@@ -127,7 +113,7 @@ create a command file that will be fed to :command:`carbonio` later:
 
 .. dropdown:: User Account Migration Script - Option 2
    :open:
-         
+
    :download:`/scripts/option2.sh`
 
    .. literalinclude:: /scripts/option2.sh
@@ -156,7 +142,7 @@ create a command file that will be fed to :command:`carbonio` later:
 
 .. dropdown:: User Account Migration Script - Option 3
    :open:
-         
+
    :download:`/scripts/option3.sh`
 
    .. literalinclude:: /scripts/option3.sh
@@ -174,49 +160,8 @@ input.
 Step 1-2, Distribution Lists
 ----------------------------
 
-To import |dl|\s, you need to export them in a CSV file,
-called :file:`dl_provisioning.csv`, that has this format::
-  
-  distibution_list1@example.io,Description1,Name1,email_1@example.io,email_2@example.io,
-  distibution_list2@example.io,Description2,Name2,email_2@example.io,email_4@example.io,email_5@example.io
-  distibution_list3@example.io,Description3,Name3,email_3@example.io,email_6@example.io,email_7@example.io,email_8@example.io
+.. include:: /_includes/_migration/dl.rst
 
-The first three fields are parsed as the Distribution List's address,
-Description, and Name, respectively, and they are reflected in the
-|adminui|. All remaining fields, whose number may vary, are the e-mail
-addresses that are member of the Distribution List.
-
-As the ``zextras`` user, execute the following script, which will
-create a command file that will be fed to :command:`carbonio` later:
-
-.. dropdown:: |dl|\s Migration Script
-   :open:
-         
-   :download:`/scripts/dl.sh`
-
-   .. literalinclude:: /scripts/dl.sh
-
-Once the script has been successfully executed, it will output file
-:file:`user_provisioning.cmd`, which can be given to :command:`carbonio` as
-input.
-
-.. code:: console
-
-   zextras$ carbonio prov -f dl_provisioning.cmd
-
-Alternatively, you can create manually each Distribution List as
-follows. Taking the first list from the :file:`dl_provisioning.csv`
-file above as example, as the ``zextras`` user, enter the |carbonio|
-shell with command :command:`carbonio`, then issue the following
-commands.
-
-.. code:: console
-
-   carbonio> prov cdl distibution_list1@example.io displayName Name1 \
-   description Description1
-   carbonio> prov adlm email_1@example.io
-   carbonio> prov adlm email_2@example.io
-   
 Phase 2, Data
 =============
 
@@ -233,20 +178,19 @@ Step 2-2, Calendars
 
 .. include:: /_includes/_migration/calendars.rst
 
-Step 2-3, Calendars
--------------------
+Step 2-3, Contacts
+------------------
 
 .. include:: /_includes/_migration/contacts.rst
-             
+
 Phase 3, Shares
 ===============
 
-Public shares migration is not supported when the **Source** is no
+Shares migration is not supported when the **Source** is no
 Zextras-compatible platform.
 
 Phase 4, Files
 ==============
 
 Migration of |file| items is not supported when the **Source** is no
-Zextras-compatible platform. Users need to download they file from the
-**Source** and manually upload them to the **Destination**.
+Zextras-compatible platform.
