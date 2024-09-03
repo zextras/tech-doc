@@ -24,9 +24,16 @@ the requirement and the overall procedure.
 Requirements and Limitations
 ============================
 
+
+Source Requirements
+-------------------
+
 * The **Source** system must be equipped with the latest |suite|
   version
 
+* The scripts written on this page are executed on the
+  **Source**, must be executed
+  as the ``zimbra`` user
 * |suite| must include the license for the **Backup** module
 
 * (optional) |suite| should include the license for the **Drive**
@@ -43,13 +50,16 @@ Requirements and Limitations
 
 .. _mig-dest-reqs:
 
-|product| Requirements
-----------------------
+|product| (Destination) Requirements
+------------------------------------
 
 The following requirements **must always be satisfied** on the
 **Destination**, regardless of the **Source**.
 
 .. include:: /_includes/_migration/carbonio-req.rst
+
+Preliminary Phase
+=================
 
 .. _mig-briefcase:
 
@@ -138,7 +148,7 @@ Check of Incompatible Address Book's Groups
 ruling out all address books which contain as members, for example,
 references to  other items.
 
-This script list all the grouops that are not compatible with |product|.
+This script list all the groups that are not compatible with |product|.
 
 .. dropdown:: Check user groups script
    :open:
@@ -187,6 +197,9 @@ Detailed information on this part of the procedure can be obtained directly
 from the appropriate section of the **Zextras Suite** technical documentation:
 `External Restore <../../../suite/html/restorestrategies.html#external-restore>`_.
 
+First, consider stopping the MTA on the **Source** to temporarily
+interrupt the e-mails flow and to avoid inconsistent data.
+
 On the **Source**, as the ``zimbra`` user, create a directory in which
 to store the backup.
 
@@ -213,10 +226,8 @@ e-mails.
 Phase 1, Import backup
 ======================
 
-First, consider stopping the MTA on the **Source** to temporarily
-interrupt the e-mails flow and to avoid inconsistent data. Then copy
-the backup from the **Source** to the **Destination** or make sure the
-**Destination** can access the backup.
+Copy the backup from the **Source** to the **Destination** or make
+sure the **Destination** can access the backup.
 
 On the **Destination**, activate the Backup module executing a
 :ref:`smartscan`.
@@ -273,7 +284,7 @@ respectively.
      zmsoap -z -m janet@demo.zextras.io FolderActionRequest/action @op=rename @id=146 @name=cal-2_146
 
      zmsoap -z -m john@demo.zextras.io FolderActionRequest/action @op=move @id=145 @l=1
-     zmsoap -z -m janet@demo.zextras.io FolderActionRequest/action @op=move @id146 @l=1
+     zmsoap -z -m janet@demo.zextras.io FolderActionRequest/action @op=move @id=146 @l=1
 
    .. note:: You need to actually execute each of this command to
       correctly export the nested Calendars.
@@ -307,7 +318,7 @@ To fix the shares, execute the following command.
 
 .. code:: console
 
-   zextras$ carbonio backup doFixShares
+   zextras$ carbonio backup doFixShares /opt/zextras/backup/zextras/maps_[uuid] 
 
 Phase 3, Files
 ==============
@@ -332,13 +343,12 @@ Limitations of the Tool
 
 * The current version of the tool does not migrate public and internal shares
 
-* The tool should be run only after importing the backup on the **destination**
+* The tool should be run only after importing the backup on the **Destination**
 
 Installation and Execution
 --------------------------
 
-(both commands mentioned below must be run as the
-``root`` user).
+Both commands mentioned below must be run as the ``root`` user.
 
 .. code:: console
 

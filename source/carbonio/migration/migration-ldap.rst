@@ -1,7 +1,7 @@
 .. _mig-zx-ldap:
 
 ================================================================
- From Generic E-mail Systems Based on Compatible AD or Openldap
+ From Generic E-mail Systems Based on Compatible AD or OpenLDAP
 ================================================================
 
 This procedure is quite similar to :ref:`migration-other`. The only
@@ -74,12 +74,11 @@ Step 2-3, Contacts
 Phase 3, Shares
 ===============
 
-Public shares migration is not supported when the **Source** is no
+Shares migration is not supported when the **Source** is no
 Zextras-compatible platform.
 
 Phase 4, Files
 ==============
 
 Migration of |file| items is not supported when the **Source** is no
-Zextras-compatible platform. Users need to download they file from the
-**Source** and manually upload them to the **Destination**.
+Zextras-compatible platform.

@@ -22,7 +22,7 @@ create a command file that will be fed to :command:`carbonio` later:
    .. literalinclude:: /scripts/dl.sh
 
 Once the script has been successfully executed, it will output file
-:file:`user_provisioning.cmd`, which can be given to :command:`carbonio` as
+:file:`dl_provisioning.cmd`, which can be given to :command:`carbonio` as
 input.
 
 .. code:: console

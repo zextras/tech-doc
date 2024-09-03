@@ -38,11 +38,11 @@ generic e-mail systems do not have CoS.
 Step 1-1, Domains and Accounts
 ------------------------------
 
-If you prefer to proceed manually, you need first to create on
-|carbonio| the **domain** that will be imported and modify, according
-to your preferences its **default COS**, that will be applied to all
-users in the domain. You can refer to section :ref:`ap-domain-new` and
-:ref:`ap_cos`, respectively, for directions.
+You need first to create on |carbonio| the **domain** that will be
+imported and modify, its **default COS** according to your
+preferences, that will be applied to all users in the domain. You can
+refer to section :ref:`ap-domain-new` and :ref:`ap_cos`, respectively,
+for directions.
 
 .. hint:: Make sure that all the desired settings for both the domain
    and the default COS have correct values.
@@ -99,8 +99,8 @@ Option 2
 ~~~~~~~~
 
 An empty password is created for all users, which are enabled for
-password recovery. A recovery address e-mail must be set up for each
-user.
+password recovery. Password recovery and a recovery address e-mail
+must be set up for each user.
 
 The CSV file must have the following structure::
 
@@ -186,12 +186,11 @@ Step 2-3, Contacts
 Phase 3, Shares
 ===============
 
-Public shares migration is not supported when the **Source** is no
+Shares migration is not supported when the **Source** is no
 Zextras-compatible platform.
 
 Phase 4, Files
 ==============
 
 Migration of |file| items is not supported when the **Source** is no
-Zextras-compatible platform. Users need to download they file from the
-**Source** and manually upload them to the **Destination**.
+Zextras-compatible platform.

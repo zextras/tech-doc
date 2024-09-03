@@ -56,24 +56,10 @@ and the provisioning data, by executing the following command.
    zextras$ carbonio --progress backup doExternalRestore /tmp/export \
    domains example.com provisioning_only true
 
-.. hint:: You can add option ``concurrent_accounts`` with a suitable
-   value (e.g., **5** or **10**) to speed up the process.
-
-.. is this still valid in this scenario?
-
-As soon as the import is completed, it is suggested to execute a
-volume-wide deduplication, since the native deduplication system might
-be ineffective when sequentially importing accounts.
-
-.. code:: console
-
-   zextras$ carbonio powerstore doDeduplicate yourPrimaryVolume
-
 Phase 2, Data
 =============
 
-To complete successfully this phase, execute the same steps as in the
-migration :ref:`migration-other`.
+To successfully complete this Phase, execute the following Steps.
 
 Step 2-1, Emails
 ----------------
@@ -98,6 +84,4 @@ Shares migration is not supported in this scenario.
 Phase 4, Files
 ==============
 
-Migration of |file| items is not supported in this scenario. Users
-need to download the files from the **Source** and manually upload
-them to the **Destination**.
+Migration of |file| items is not supported in this scenario.
