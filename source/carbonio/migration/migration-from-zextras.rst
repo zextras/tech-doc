@@ -19,12 +19,6 @@ migration.
 Please read carefully the whole section to make sure you understand
 the requirement and the overall procedure.
 
-.. figure:: /img/migration-import-backup.png
-   :width: 99%
-
-   Overview of the migration to |product| procedure using |backup|.
-
-
 .. _mig-zx-req:
 
 Requirements and Limitations
@@ -82,26 +76,26 @@ can later fix all these cases.
    Briefcases::
 
      Root
-     \Briefcase1
+     \Briefcase
      |-Folder1
-     | |-Item1.txt
-     | |-Item2.txt
+       |-Item1.txt
+       |-Item2.txt
      |-FolderA
-     |-Item2.txt
+       |-Item2.txt
      \Briefcase2
      |-Folder1
-     | |-Item2.txt
-     | |-Item3.txt 
+       |-Item2.txt
+       |-Item3.txt
      |-FolderB
-     |-Item2.txt
+       |-Item2.txt
 
    These will be migrated as::
 
      FilesRoot
      |-Folder1
-     | |-Item1.txt 
-     | |-Item2.txt *** (Item2.txt from Briefcase1 has been overwritten)
-     | |-Item3.txt *** (Item3.txt from Briefcase2 has been merged in Folder1 from Briefcase)
+       |-Item1.txt
+       |-Item2.txt *** (Item2.txt from Briefcase1 has been overwritten)
+       |-Item3.txt *** (Item3.txt from Briefcase2 has been merged in Folder1 from Briefcase)
      |-FolderA
        |-Item2.txt
      |-FolderB
@@ -110,14 +104,13 @@ can later fix all these cases.
    To verify whether there are multiple briefcases, run this script,
    which checks the Briefcases and produces the commands needed to
    mass-move the briefcases.
-     
+
    .. dropdown:: Extract Briefcases script
       :open:
 
       :download:`/scripts/extract-briefcases.sh`
 
       .. literalinclude:: /scripts/extract-briefcases.sh
-
 
    The script will only display the commands. In order to effectively
    move the Briefcase, add the pipe to :command:`carbonio prov` CLI.
@@ -129,11 +122,10 @@ can later fix all these cases.
       sm berhanu@demo.zextras.io renameFolder Briefcase3 /Briefcase/Briefcase3
 
    This will only print the commands.
-   
 
    .. code:: console
 
-      $ bash /tmp/move_additional_briefcases.sh | carbonio prov 
+      $ bash /tmp/move_additional_briefcases.sh | carbonio prov
       prov> sm berhanu@demo.zextras.io renameFolder Briefcase2 /Briefcase/Briefcase2
       prov> sm berhanu@demo.zextras.io renameFolder Briefcase3 /Briefcase/Briefcase3
 
@@ -147,17 +139,17 @@ ruling out all address books which contain as members, for example,
 references to  other items.
 
 This script list all the grouops that are not compatible with |product|.
-     
-.. dropdown:: Extract Briefcases script
+
+.. dropdown:: Check user groups script
    :open:
 
-   :download:`/scripts/extract-briefcases.sh`
+   :download:`/scripts/check-user-groups.sh`
 
-   .. literalinclude:: /scripts/extract-briefcases.sh
+   .. literalinclude:: /scripts/check-user-groups.sh
 
-The output will be formatted as::
+   The output will be formatted as::
 
-  User - Address Book folder - GroupName
+     User - Address Book folder - GroupName
 
 .. note:: The Address Book folder refers to the one that contains the
    incompatible group, but this could be nested.
@@ -165,7 +157,6 @@ The output will be formatted as::
 In order to make those groups available in the destination, the user
 need to extract them as CSV from the **Source** and import them in the
 **Destination**.
-
 
 Import Briefcases into Drive
 ----------------------------
@@ -186,7 +177,7 @@ want to import the Briefcases.
 .. hint:: When you launch the command, you will receive the
    ``operationid``, that can be used to follow output by using the
    :command:`carbonio admin monitor <operationid>`.
-   
+
 .. _mig-create-backup:
 
 Export Backup
@@ -255,8 +246,8 @@ be ineffective when sequentially importing accounts.
 
    zextras$ carbonio powerstore doDeduplicate yourPrimaryVolume
 
-Phase 2, Mail, Calendars, and Contacts Shares
-=============================================
+Nested Calendars, Contacts, and User Groups
+-------------------------------------------
 
 The following scripts search for nested Calendars, nested Address
 Books, and for user groups outside the main Contacts Address Book, and
@@ -277,12 +268,12 @@ respectively.
       .. literalinclude:: /scripts/extract-nested-calendars.sh
 
    Example output::
-     
-     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=rename @id=394 @name=sub-1_394
-     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=rename @id=395 @name=sub-2_395
 
-     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=move @id=394 @l=1
-     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=move @id=395 @l=1
+     zmsoap -z -m john@demo.zextras.io FolderActionRequest/action @op=rename @id=145 @name=cal-1_145
+     zmsoap -z -m janet@demo.zextras.io FolderActionRequest/action @op=rename @id=146 @name=cal-2_146
+
+     zmsoap -z -m john@demo.zextras.io FolderActionRequest/action @op=move @id=145 @l=1
+     zmsoap -z -m janet@demo.zextras.io FolderActionRequest/action @op=move @id146 @l=1
 
    .. note:: You need to actually execute each of this command to
       correctly export the nested Calendars.
@@ -296,35 +287,57 @@ respectively.
 
       .. literalinclude:: /scripts/extract-nested-addressbooks.sh
 
-
-.. card:: User Groups outside the main Contacts Address Book
- 
-   .. dropdown:: User Groups script
-      :open:
-
-      :download:`/scripts/extract-user-groups.sh`
-
-      .. literalinclude:: /scripts/extract-user-groups.sh
+   .. to modify
 
    Example output::
 
-     zmsoap -z -m berhanu@demo.zextras.io ContactActionRequest/action @op=move @l=7 @id=404
- 
+     zmsoap -z -m bruce@demo.zextras.io FolderActionRequest/action @op=rename @id=736 @name=adb-3_736
+     zmsoap -z -m barbara@demo.zextras.io FolderActionRequest/action @op=rename @id=737 @name=adb-2_337
+
+     zmsoap -z -m bruce@demo.zextras.io FolderActionRequest/action @op=move @id=736 @l=1
+     zmsoap -z -m barbara@demo.zextras.io FolderActionRequest/action @op=move @id=737 @l=1
+
    .. note:: You need to actually execute each of this command to
       correctly export the nested Calendars.
 
-Finally, to fix the shares, execute the following command.
+Phase 2, Shares
+===============
+
+To fix the shares, execute the following command.
 
 .. code:: console
 
    zextras$ carbonio backup doFixShares
-   
+
 Phase 3, Files
 ==============
 
 Zimbra Drive items can be exported and imported in |file| using the
-exported Backup and installing a dedicated package on the
-**Destination** (both commands mentioned below must be run as the
+exported Backup and installing the :command:`carbonio-drive-migration`
+on the **Destination**.
+
+Limitations of the Tool
+-----------------------
+
+* A |zx| Drive item that has a number of revisions (versions), which
+  is higher than the configured number of revisions on |product|
+  (i.e., the **Destination**), will be migrated to |product| as a
+  **read-only** item. To fix this problem, either remove some of the
+  versions in the Drive item, or, to keep all the item's version,
+  raise the version's limit in |product|.
+
+  For example, if a Drive item has 100 revisions and the limit of
+  versions on |product| is 20, only the 20 **most recents** version
+  will be kept.
+
+* The current version of the tool does not migrate public and internal shares
+
+* The tool should be run only after importing the backup on the **destination**
+
+Installation and Execution
+--------------------------
+
+(both commands mentioned below must be run as the
 ``root`` user).
 
 .. code:: console
@@ -342,7 +355,7 @@ that can be executed as root as follows.
 
 In this command you should use the following values for the options:
 
--b   
+-b
    is the path where the backup is stored
 
 -t
@@ -351,8 +364,3 @@ In this command you should use the following values for the options:
 -m
    is the map file that contains the account mapping on the
    **Source** and on the **Destination**
-
-.. hint:: The ``carbonio-drive-migration`` command should be run only after
-   importing the backup.
-   
-.. warning:: The current version of this tool does not migrate public and internal shares.

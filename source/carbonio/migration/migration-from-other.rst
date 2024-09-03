@@ -1,5 +1,5 @@
 .. |userp| replace:: :file:`user_provisioning.csv`
-                      
+
 .. _migration-other:
 
 =============================
@@ -31,21 +31,12 @@ error while processing the files.
 Phase 1, Provisioning
 =====================
 
-This phases is divided into two steps, Accounts provisioning and |dl|
+This phase is divided into two steps, Accounts provisioning and |dl|
 provisioning, while the |CoS| provisioning is an empty step, as
 generic e-mail systems do not have CoS.
 
 Step 1-1, Domains and Accounts
 ------------------------------
-
-This step can be automatically done when using :ref:`Auto
-provisioning <ad-auto>`: please refer to that section to set it up,
-then skip to :ref:`Phase 2 <mig-other-2>`.
-
-.. note:: The linked Auto provisioning article describes the use of AD
-   for provisioning, but also any generic LDAP is supported: The procedure is
-   analogous to the AD, with appropriate changes to the search
-   filters, bind domains, and the port.
 
 If you prefer to proceed manually, you need first to create on
 |carbonio| the **domain** that will be imported and modify, according
@@ -91,7 +82,7 @@ create a command file that will be fed to :command:`carbonio` later:
 
 .. dropdown:: User Account Migration Script - Option 1
    :open:
-         
+
    :download:`/scripts/option1.sh`
 
    .. literalinclude:: /scripts/option1.sh
@@ -122,7 +113,7 @@ create a command file that will be fed to :command:`carbonio` later:
 
 .. dropdown:: User Account Migration Script - Option 2
    :open:
-         
+
    :download:`/scripts/option2.sh`
 
    .. literalinclude:: /scripts/option2.sh
@@ -151,7 +142,7 @@ create a command file that will be fed to :command:`carbonio` later:
 
 .. dropdown:: User Account Migration Script - Option 3
    :open:
-         
+
    :download:`/scripts/option3.sh`
 
    .. literalinclude:: /scripts/option3.sh
@@ -170,7 +161,7 @@ Step 1-2, Distribution Lists
 ----------------------------
 
 .. include:: /_includes/_migration/dl.rst
-   
+
 Phase 2, Data
 =============
 
@@ -191,7 +182,7 @@ Step 2-3, Contacts
 ------------------
 
 .. include:: /_includes/_migration/contacts.rst
-             
+
 Phase 3, Shares
 ===============
 

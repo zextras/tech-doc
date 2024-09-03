@@ -52,7 +52,7 @@ Data
   the Source before the start of the Procedure.
 
 .. _zx-compatible:
-  
+
 |suite| compatible platform
    In the context of the migration procedure, we define
    **Zextras Suite compatible platform** a **Source** system equipped with
@@ -67,10 +67,14 @@ Procedures Overview
 -------------------
 
 The migration procedure is roughly divided into **four** phases, which
-may consist of multiple steps and must be executed in order. The
-actual tasks required to complete each step and phase may vary,
-depending on the **Source**. Moreover, some phase may not be possible
-at all depending on the procedure.
+may consist of multiple steps. Phases and Steps must be executed in
+the order given. The actual tasks required to complete each Phase and
+Step may vary, depending on the **Source**. Moreover, some phase may
+not be required, or even unsupported, depending on the procedure.
+
+There is also a *Preliminary Phase*, consisting of checking the
+requirements and limitations of the procedure, exporting the backup,
+preparing the data to be exported and manually imported.
 
 .. grid:: 1 1 2 2
    :gutter: 2
@@ -107,8 +111,7 @@ at all depending on the procedure.
       In the last phase, we import Zextras Drive items into |file|.
 
 The figure gives an overview of the various procedures, but does not
-show the preliminary phase: checking the requirements and limitations
-of the procedure, and exporting the backup.
+show the preliminary phase.
 
 .. figure:: /img/migration.png
    :width: 99%
