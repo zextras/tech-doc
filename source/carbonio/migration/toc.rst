@@ -118,8 +118,8 @@ The figures gives an overview of the various procedures.
 Available Procedures
 ~~~~~~~~~~~~~~~~~~~~
 
-There are three available procedures: two of them can be used when the
-**Source** is a |suite| compatible platform, the third one when  the
+There are four available procedures: two of them can be used when the
+**Source** is a |suite| compatible platform, the third one when the
 **Source** is a generic, third-party system.
 
 .. _zx-compatible:
@@ -149,30 +149,31 @@ Procedure 2, from |suite| Compatible Platform - Provisioning only + IMAPSync
    This procedure only migrates accounts and |cos|\es, (provisioning)
    using the Backup module, while all remaining items are migrated
    using data exported from the **Source** and manually imported in
-   the **Destination**. This procedure **should be only used** in a
-   scenario which features a backup that contains corrupted blobs, but
-   whose metadata are still intact or when you are exporting a large amount of data.
+   the **Destination**. This procedure may be used in a
+   scenario which features a huge amount on data and an incremental
+   migration using a tool like imapsync is preferred
    This scenario is described in dedicated page :ref:`mig-zx-prov`.
 
 Procedure 3, from Generic E-mail Systems based on compatible AD or Openldap + IMAPSync
-   This procedure performs provisioning by connecting to an external LDAP database
-   (whether Active Directory or OpenLDAP).
-   Once the provisioning phase is completed, the data will then be synchronized with
-   the IMAPSync tool.
-   The steps related to this procedure can be found here :ref:`mig-zx-ldap`.
+   This procedure performs provisioning by connecting to an external
+   LDAP database (either Active Directory or OpenLDAP). It migrates
+   Domains, Accounts, and CoSes.  Once the provisioning phase is
+   completed, the data will then be synchronised with the IMAPSync
+   tool.  This procedure can be found on the page :ref:`mig-zx-ldap`.
 
 Procedure 4, from Generic E-mail Systems + IMAPSync
    When the source is no |suite| :ref:`compatible platform
-   <zx-compatible>`, the only possibility is to export all the
-   necessary items from the **Source** and importing them on the
-   **Destination** using suitable scripts, that are included in the
-   dedicated section :ref:`migration-other`.
+   <zx-compatible>`, provisioning must be carried out by exporting
+   from the **Source** suitable text files and importing them on the
+   **Destination**. Once the provisioning is complete, the data will
+   then be synchronized with the IMAPSync tool. This procedure is
+   available on page :ref:`migration-other`.
 
- .. toctree::
-    :maxdepth: 1
-    :hidden:
+.. toctree::
+   :maxdepth: 1
+   :hidden:
 
-    migration-from-zextras.rst 
-    migration-from-zextras-prov-only
-    migration-ldap.rst
-    migration-from-other.rst
+   migration-from-zextras.rst 
+   migration-from-zextras-prov-only
+   migration-ldap.rst
+   migration-from-other.rst
