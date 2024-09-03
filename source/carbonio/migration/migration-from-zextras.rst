@@ -19,25 +19,33 @@ migration.
 Please read carefully the whole section to make sure you understand
 the requirement and the overall procedure.
 
+.. figure:: /img/migration-import-backup.png
+   :width: 99%
+
+   Overview of the migration to |product| procedure using |backup|.
+
+
 .. _mig-zx-req:
 
 Requirements and Limitations
 ============================
 
-#. The **Source** system must be equipped with the latest |suite|
-   version
+* The **Source** system must be equipped with the latest |suite|
+  version
 
-#. |suite| must include the license for the **Backup** module
+* |suite| must include the license for the **Backup** module
 
-#. (optional) |suite| should include the license for the **Drive**
-   module, if you want to migrate items in the Drive module
+* (optional) |suite| should include the license for the **Drive**
+  module, if you want to migrate items in the Drive module
 
-#. **Zimbra Briefcases** migration has its own limitations and
-   procedure, see the :ref:`dedicated section below <mig-briefcase>`
+* **Briefcases** migration requires to convert their elements in |zx|
+  Drives items, a process which has its own limitations and procedure
+  (see the :ref:`dedicated section below <mig-briefcase>`), then
+  migrate them to |product|
 
-#. *Nested Calendars*, *nested Address Books*, and *Public Shares*
-   require to be processed with scripts before being included in the
-   backup
+* *Nested Calendars*, *nested Address Books*, and *Public Shares*
+  require to be processed with scripts before being included in the
+  backup
 
 .. _mig-dest-reqs:
 
@@ -51,28 +59,118 @@ The following requirements **must always be satisfied** on the
 
 .. _mig-briefcase:
 
-Migration of Zimbra Briefcases
-------------------------------
-
-Zimbra Briefcases can be migrated to |product|, but you should execute a few
-preparatory tasks before doing so. In short, Zimbra Briefcases are
-imported as Drive items and then migrated to |product| in phase 4.
+Convert Briefcases into Drive Elements
+--------------------------------------
 
 There is **one limitation** concerning users with multiple
 Briefcases.
 
-* If there are two (or more) folders with the same name, they **will
-  be merged together** in one single folder when imported to Drive.
-  To prevent such situations, and users want to keep these folder
-  separate, it is suggested to rename folders that share the same
-  name. If those folders contain files with the same name, they **will be
-  overwritten**. To avoid this problem, users should rename their files.
+If there are two (or more) folders with the same name, they **will be
+merged together** in one single folder when imported to Drive.  To
+prevent such situations, and users want to keep these folder separate,
+it is suggested to rename folders that share the same name. If those
+folders contain files with the same name, they **will be
+overwritten**. To avoid this problem, users should rename their files.
 
 In any case, during the import from Briefcases to Drive, the log
 file will show a warning whenever a file is being overwritten, so you
 can later fix all these cases.
 
-In order to import Zimbra Briefcases, run the following command as the
+.. card:: Example Scenario
+
+   Suppose you have the following structure, composed of two
+   Briefcases::
+
+     Root
+     \Briefcase1
+     |-Folder1
+     | |-Item1.txt
+     | |-Item2.txt
+     |-FolderA
+     |-Item2.txt
+     \Briefcase2
+     |-Folder1
+     | |-Item2.txt
+     | |-Item3.txt 
+     |-FolderB
+     |-Item2.txt
+
+   These will be migrated as::
+
+     FilesRoot
+     |-Folder1
+     | |-Item1.txt 
+     | |-Item2.txt *** (Item2.txt from Briefcase1 has been overwritten)
+     | |-Item3.txt *** (Item3.txt from Briefcase2 has been merged in Folder1 from Briefcase)
+     |-FolderA
+       |-Item2.txt
+     |-FolderB
+       |-Item2.txt
+
+   To verify whether there are multiple briefcases, run this script,
+   which checks the Briefcases and produces the commands needed to
+   mass-move the briefcases.
+     
+   .. dropdown:: Extract Briefcases script
+      :open:
+
+      :download:`/scripts/extract-briefcases.sh`
+
+      .. literalinclude:: /scripts/extract-briefcases.sh
+
+
+   The script will only display the commands. In order to effectively
+   move the Briefcase, add the pipe to :command:`carbonio prov` CLI.
+
+   .. code:: console
+
+      $ bash /tmp/move_additional_briefcases.sh
+      sm berhanu@demo.zextras.io renameFolder Briefcase2 /Briefcase/Briefcase2
+      sm berhanu@demo.zextras.io renameFolder Briefcase3 /Briefcase/Briefcase3
+
+   This will only print the commands.
+   
+
+   .. code:: console
+
+      $ bash /tmp/move_additional_briefcases.sh | carbonio prov 
+      prov> sm berhanu@demo.zextras.io renameFolder Briefcase2 /Briefcase/Briefcase2
+      prov> sm berhanu@demo.zextras.io renameFolder Briefcase3 /Briefcase/Briefcase3
+
+   This will execute the commands on the current mailbox.
+
+Check of Incompatible Address Book's Groups
+-------------------------------------------
+
+|product| only supports groups that are composed by e-mail addresses,
+ruling out all address books which contain as members, for example,
+references to  other items.
+
+This script list all the grouops that are not compatible with |product|.
+     
+.. dropdown:: Extract Briefcases script
+   :open:
+
+   :download:`/scripts/extract-briefcases.sh`
+
+   .. literalinclude:: /scripts/extract-briefcases.sh
+
+The output will be formatted as::
+
+  User - Address Book folder - GroupName
+
+.. note:: The Address Book folder refers to the one that contains the
+   incompatible group, but this could be nested.
+
+In order to make those groups available in the destination, the user
+need to extract them as CSV from the **Source** and import them in the
+**Destination**.
+
+
+Import Briefcases into Drive
+----------------------------
+
+In order to import Briefcases, run the following command as the
 ``zimbra`` user **for every domain**. Besides the warnings, the
 generated log messages (that are stored in file
 :file:`/opt/zextras/log/mailbox.log`) will contain also the list of
@@ -92,7 +190,8 @@ want to import the Briefcases.
 .. _mig-create-backup:
 
 Export Backup
--------------
+=============
+
 Detailed information on this part of the procedure can be obtained directly
 from the appropriate section of the **Zextras Suite** technical documentation:
 `External Restore <../../../suite/html/restorestrategies.html#external-restore>`_.
@@ -123,11 +222,10 @@ e-mails.
 Phase 1, Import backup
 ======================
 
-First, stop the MTA to temporarily interrupt the e-mails flow.
-Then copy the backup from the **Source** to the **Destination** or
-make sure the **Destination** can access the backup. This can be
-achieved with different methods: using an USB key, a network share, or
-a direct command like :command:`rsync` or :command:`scp`.
+First, consider stopping the MTA on the **Source** to temporarily
+interrupt the e-mails flow and to avoid inconsistent data. Then copy
+the backup from the **Source** to the **Destination** or make sure the
+**Destination** can access the backup.
 
 On the **Destination**, activate the Backup module executing a
 :ref:`smartscan`.
@@ -157,13 +255,70 @@ be ineffective when sequentially importing accounts.
 
    zextras$ carbonio powerstore doDeduplicate yourPrimaryVolume
 
-Phase 2, Shares
-===============
+Phase 2, Mail, Calendars, and Contacts Shares
+=============================================
 
-[Public shares importing script is coming ...]
+The following scripts search for nested Calendars, nested Address
+Books, and for user groups outside the main Contacts Address Book, and
+generate the SOAP required to move them under Calendars and Contacts,
+respectively.
 
-.. missing public shares.
+.. note:: Sub-calendars  and sub-address-books are not supported by
+   |product| and need to be converted in main calendars before
+   attempting to migrate them.
 
+.. card:: Nested Calendars
+
+   .. dropdown:: Nested calendars script
+      :open:
+
+      :download:`/scripts/extract-nested-calendars.sh`
+
+      .. literalinclude:: /scripts/extract-nested-calendars.sh
+
+   Example output::
+     
+     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=rename @id=394 @name=sub-1_394
+     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=rename @id=395 @name=sub-2_395
+
+     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=move @id=394 @l=1
+     zmsoap -z -m kissaket@demo.zextras.io FolderActionRequest/action @op=move @id=395 @l=1
+
+   .. note:: You need to actually execute each of this command to
+      correctly export the nested Calendars.
+
+.. card:: Nested Address Books
+
+   .. dropdown:: Nested Address Books script
+      :open:
+
+      :download:`/scripts/extract-nested-addressbooks.sh`
+
+      .. literalinclude:: /scripts/extract-nested-addressbooks.sh
+
+
+.. card:: User Groups outside the main Contacts Address Book
+ 
+   .. dropdown:: User Groups script
+      :open:
+
+      :download:`/scripts/extract-user-groups.sh`
+
+      .. literalinclude:: /scripts/extract-user-groups.sh
+
+   Example output::
+
+     zmsoap -z -m berhanu@demo.zextras.io ContactActionRequest/action @op=move @l=7 @id=404
+ 
+   .. note:: You need to actually execute each of this command to
+      correctly export the nested Calendars.
+
+Finally, to fix the shares, execute the following command.
+
+.. code:: console
+
+   zextras$ carbonio backup doFixShares
+   
 Phase 3, Files
 ==============
 
