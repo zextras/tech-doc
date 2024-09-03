@@ -36,8 +36,6 @@ Destination
   The **Destination infrastructure** (Destination) is the |product|
   installation to which you want to move your existing mail server.
 
-  .. note:: The **Destination** has its :ref:`Requirements <carbonio-requirements>`  
-
 Procedure
   The **Procedure** is a set of tasks that guide you in the import of
   all your data to the Destination. It requires access to the CLI of
@@ -52,6 +50,18 @@ Provisioning
 Data
   **Data** refers to the set of all the e-mails that are present on
   the Source before the start of the Procedure.
+
+.. _zx-compatible:
+  
+|suite| compatible platform
+   In the context of the migration procedure, we define
+   **Zextras Suite compatible platform** a **Source** system equipped with
+   any of this software combination:
+
+   * Zimbra OSE 8.8.15 + |suite| (latest release)
+   * Zimbra OSE 9.0 (built by |zx|) + |suite| (latest release)
+   * Zimbra Network Edition 8.8.15  (with NG modules)
+   * Zimbra Network Edition 9.0  (with NG modules)
 
 Procedures Overview
 -------------------
@@ -70,110 +80,100 @@ at all depending on the procedure.
 
       In this phase, we deal with tasks that create the domains,
       users, and |cos|\es.
-      
+
       * Import of Domains and User Accounts
       * Import of Distribution Lists
-      * Import of Classes of Services (optional) 
+      * Import of Classes of Services (optional)
 
    .. grid-item-card:: Phase 2, Data
       :columns: 6
 
       After the provisioning has been completed, we process the actual
       data:
-      
+
       * Import of E-mails
       * Import of Appointments
       * Import of Contacts
-    
+
    .. grid-item-card:: Phase 3, Shares
       :columns: 6
 
       After Provisioning and Data, our attention goes to the Shared
       items.
-      
+
    .. grid-item-card:: Phase 4, |file|
       :columns: 6
 
       In the last phase, we import Zextras Drive items into |file|.
 
-.. note:: In the :ref:`migration-zx` procedure, phases 1 and 2 are
-   merged.
-      
-The figures gives an overview of the various procedures.
+The figure gives an overview of the various procedures, but does not
+show the preliminary phase: checking the requirements and limitations
+of the procedure, and exporting the backup.
 
-.. note:: The figure does not show the preliminary phase: checking the
-   requirements and limitations of the procedure, and exporting the backup.
-
-.. figure:: /img/migration-import-backup.png
+.. figure:: /img/migration.png
    :width: 99%
 
-   Overview of the migration to |product| procedure using |backup|.
-
-.. figure:: /img/migration-other-procedures.png
-   :width: 99%
-
-   Overview of the other migration to |product| procedures.
-
+   Overview of the migration to |product| procedures.
 
 Available Procedures
 ~~~~~~~~~~~~~~~~~~~~
 
 There are four available procedures: two of them can be used when the
-**Source** is a |suite| compatible platform, the third one when the
+**Source** is a |suite| compatible platform, the other when the
 **Source** is a generic, third-party system.
 
-.. _zx-compatible:
+.. grid:: 1 1 2 2
+   :gutter: 2
 
-.. card:: Definition of |suite| compatible platform
+   .. grid-item-card:: Procedure 1, from |suite| Compatible Platform - using Zextras Backup
+      :columns: 6
 
-   In the context of the migration procedure, we define
-   **Zextras Suite compatible platform** a **Source** system equipped with
-   any of this software combination:
-   
-   * Zimbra OSE 8.8.15 + |suite| (latest release)
-   * Zimbra OSE 9.0 (built by |zx|) + |suite| (latest release)
-   * Zimbra Network Edition 8.8.15  (with NG modules)
-   * Zimbra Network Edition 9.0  (with NG modules)
+      This procedure is the one that should be always used when
+      migrating from a |suite| :ref:`compatible platform
+      <zx-compatible>` and is presented in section
+      :ref:`migration-zx`, it will migrate **a whole Carbonio
+      infrastructure** (including all domains, accounts, CoSes, DLs)
+      from the **Source** to the **Destination** and will use the
+      |suite|\'s Backup Module on the **Source** and |backup| on the
+      **Destination** infrastructure to complete most of the procedure
+      (Phases 1 and 2) at once.
 
-Procedure 1, from |suite| Compatible Platform - using Zextras Backup
-   This procedure is the one that should be always used when migrating
-   from a |suite| :ref:`compatible platform <zx-compatible>` and is
-   presented in section :ref:`migration-zx`, it will migrate **a whole
-   Carbonio infrastructure** (including all domains, accounts, CoSes,
-   DLs) from the **Source** to the **Destination** and will use the
-   |suite|\'s Backup Module on the **Source** and |backup| on the
-   **Destination** infrastructure to complete Phases 1, 2, and 3 at
-   once.
+   .. grid-item-card:: Procedure 2, from |suite| Compatible Platform - Provisioning only + IMAPSync
+      :columns: 6
 
-Procedure 2, from |suite| Compatible Platform - Provisioning only + IMAPSync
-   This procedure only migrates accounts and |cos|\es, (provisioning)
-   using the Backup module, while all remaining items are migrated
-   using data exported from the **Source** and manually imported in
-   the **Destination**. This procedure may be used in a
-   scenario which features a huge amount on data and an incremental
-   migration using a tool like imapsync is preferred
-   This scenario is described in dedicated page :ref:`mig-zx-prov`.
+      This procedure only migrates accounts and |cos|\es, (provisioning)
+      using the Backup module, while all remaining items are migrated
+      using data exported from the **Source** and manually imported in
+      the **Destination**. This procedure may be used in a
+      scenario which features a huge amount on data and an incremental
+      migration using a tool like imapsync is preferred.
+      This scenario is described in dedicated page :ref:`mig-zx-prov`.
 
-Procedure 3, from Generic E-mail Systems based on compatible AD or Openldap + IMAPSync
-   This procedure performs provisioning by connecting to an external
-   LDAP database (either Active Directory or OpenLDAP). It migrates
-   Domains, Accounts, and CoSes.  Once the provisioning phase is
-   completed, the data will then be synchronised with the IMAPSync
-   tool.  This procedure can be found on the page :ref:`mig-zx-ldap`.
+   .. grid-item-card:: Procedure 3, from Generic E-mail Systems with Auto provisioning
+      :columns: 6
 
-Procedure 4, from Generic E-mail Systems + IMAPSync
-   When the source is no |suite| :ref:`compatible platform
-   <zx-compatible>`, provisioning must be carried out by exporting
-   from the **Source** suitable text files and importing them on the
-   **Destination**. Once the provisioning is complete, the data will
-   then be synchronized with the IMAPSync tool. This procedure is
-   available on page :ref:`migration-other`.
+      This procedure uses a compatible AD or Openldap + IMAPSync for
+      provisioning by connecting to an external LDAP database (either
+      Active Directory or OpenLDAP). It migrates Domains, Accounts,
+      and CoSes.  Once the provisioning phase is completed, the data
+      will then be synchronised with the IMAPSync tool.  This
+      procedure can be found on the page :ref:`mig-zx-ldap`.
+
+   .. grid-item-card:: Procedure 4, from Generic E-mail Systems + IMAPSync
+      :columns: 6
+
+      When the source is no |suite| :ref:`compatible platform
+      <zx-compatible>`, provisioning must be carried out by exporting
+      from the **Source** suitable text files and importing them on the
+      **Destination**. Once the provisioning is complete, the data will
+      then be synchronized with the IMAPSync tool. This procedure is
+      available on page :ref:`migration-other`.
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   migration-from-zextras.rst 
+   migration-from-zextras.rst
    migration-from-zextras-prov-only
    migration-ldap.rst
    migration-from-other.rst
