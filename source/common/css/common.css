@@ -191,3 +191,8 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
 .sd-bg-secondary {
     background-color:  #6c757d !important;
 }
+
+button.copybtn {
+   opacity: 1;
+   color: var(--zx-color-carbon) !important;
+}
