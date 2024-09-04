@@ -33,10 +33,18 @@ The upgrade procedure is otherwise the same, regardless the underlying
 Known Issues
 ============
 
-After the upgrade to |release|, the |adminui| will still report the
-version of |product| to be **24.7.0**. However, the CLI
-:command:`zmcontrol -v` will report the correct version (|release|).
-
 ..
    There is no know issue that impacts either the upgrade process to
    |product| |version| or the |product| operations afterwards.
+
+This is a list of known issues that impact |product| after the upgrade
+to |version|.
+
+.. card:: Version mismatch on CLI and |adminui|
+
+   After the upgrade to |release|, the |adminui| will still report the
+   version of |product| to be **24.7.0**. However, the CLI
+   :command:`zmcontrol -v` will report the correct version
+   (|release|).
+
+.. include:: /_includes/_upgrade/issues-pg-adv-modules.rst
