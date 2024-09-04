@@ -29,6 +29,8 @@ consists of one or more packages.
    architectures that precisely correspond to the requirements and
    purposes of your infrastructure.
 
+.. _cb-roles:
+
 The roles of |product|
 ======================
 

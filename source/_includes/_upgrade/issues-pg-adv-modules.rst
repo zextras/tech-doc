@@ -3,7 +3,7 @@
 .. card:: Advanced modules not starting
 
    There are a few corner cases that prevent the advanced modules,
-   provided by the Service Roles, to be accessible to users. The
+   provided by the :ref:`Service Roles <cb-roles>`, to be running. The
    problem is that the Node featuring the Mailstore & Provisioning
    Role can not communicate with the Database (PostgreSQL) or DB
    Connector (pgpool), depending on your setup. You can check if this
@@ -25,10 +25,8 @@
 
      Caused by: java.net.ConnectException: Connection refused
 
-   In order to fix the problem, you need to make sure that PostgreSQL
-   or pgpool are running. If not, restart them.
-
-   Finally, make sure to restart the mailbox
+   In order to fix the problem, ensure that PostgreSQL is reachable
+   and then restart the mailbox.
 
    .. code:: console
 
