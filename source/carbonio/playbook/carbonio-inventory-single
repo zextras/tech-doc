@@ -37,7 +37,7 @@ srv1.example.com
 [docsServers]
 #srv2.example.com
 [videoServers]
-#srv.example.com public_ip_address=x.y.z.t
+#srv3.example.com public_ip_address=x.y.z.t
 
 ############ These Roles are not supported in Single-Server scenario ###########
 ############ They are required for the proper Ansible installation #############
