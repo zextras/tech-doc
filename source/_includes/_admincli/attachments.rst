@@ -28,8 +28,8 @@ for handling attachments of an e-mail message.
 
    The total size of the message can be set for each MTA server
    directly on the |adminui|, in the **Tuning** section under
-   :menuselection:`Admin Panel --> MTA --> Advanced`, see
-   :ref:`ap-mta-adv`.
+   :menuselection:`Admin Panel --> MTA --> Advanced` (see
+   :ref:`documentation <ap-mta-adv>`).
 
    The maximum size of each attachment can be set by the CLI for each
    user, CoS, or domain issuing as the ``zextras`` user
