@@ -17,6 +17,9 @@ the nodes of a Multi-Server installation.
 :ref:`carb-customisations` guides you in the customisation of 
 |product|.
 
+:ref:`cli-attachments` shows how to manage the attachments the users
+can send.
+
 :ref:`cli-features` explains how to set or check if Mails and Files
 components are enabled for a user or a COS.
 
@@ -33,6 +36,7 @@ certificate, either manually or automatically.
    management/managealias
    management/sshkeys
    management/custom
+   management/attachments
    management/setting-features
    management/letsencrypt
    management/domaindisclaimer
