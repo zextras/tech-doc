@@ -44,13 +44,13 @@ copyright = '2024: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.7.1'
+release = '24.9.0'
 version = release
 
 # The previous and the last supported versions for upgrade - as of
 # 20240812 we support the three latest versions
-prev = '24.5.0'
-last_upg = '24.1.0'
+prev = '24.7.1'
+last_upg = '24.3.0'
 
 # -- General configuration ---------------------------------------------------
 

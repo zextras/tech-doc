@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 A |cos| determines which features and options can be accessed by a
 user, how to access them, and sets the default values for a number of
@@ -37,8 +34,15 @@ the visible name of the sender, and other); another needs that the
 e-mails be encrypted and does not want users to send plain-text
 e-mails, and so on.
 
-.. hint:: Some of these options can be enabled or disabled via CLI:
-   please refer to section :ref:`cli-features` for more information.
+An important option in this page is the `One Time Password
+Management`. Members of a COS with this options enabled are allowed to
+access from untrusted networks (see :ref:`global-2fa`) using an OTP
+code; while if the option disabled, they are not allowed. In the
+latter case, users in this COS do not have the option to create OTP in
+the *Auth* section of their `Settings` module.
+
+Some of these options can be enabled or disabled via CLI: please refer
+to section :ref:`cli-features` for more information.
 
 .. _cos-prefs:
 
