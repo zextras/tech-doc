@@ -123,7 +123,7 @@ can later fix all these cases.
       .. literalinclude:: /scripts/extract-briefcases.sh
 
    The script will only display the commands. In order to effectively
-   move the Briefcase, add the pipe to :command:`carbonio prov` CLI.
+   move the Briefcase, add the pipe to :command:`zmprov` CLI.
 
    .. code:: console
 
@@ -135,7 +135,7 @@ can later fix all these cases.
 
    .. code:: console
 
-      $ bash /tmp/move_additional_briefcases.sh | carbonio prov
+      $ bash /tmp/move_additional_briefcases.sh | zmprov
       prov> sm berhanu@demo.zextras.io renameFolder Briefcase2 /Briefcase/Briefcase2
       prov> sm berhanu@demo.zextras.io renameFolder Briefcase3 /Briefcase/Briefcase3
 
@@ -193,9 +193,10 @@ want to import the Briefcases.
 Export Backup
 =============
 
-Detailed information on this part of the procedure can be obtained directly
-from the appropriate section of the **Zextras Suite** technical documentation:
-`External Restore <../../../suite/html/restorestrategies.html#external-restore>`_.
+Detailed information on this part of the procedure can be obtained
+directly from the `External Restore
+<../../../suite/html/restorestrategies.html#external-restore>`_
+Section of the **Zextras Suite** technical documentation.
 
 First, consider stopping the MTA on the **Source** to temporarily
 interrupt the e-mails flow and to avoid inconsistent data.
