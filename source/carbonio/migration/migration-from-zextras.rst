@@ -135,7 +135,7 @@ can later fix all these cases.
 
    .. code:: console
 
-      $ bash /tmp/move_additional_briefcases.sh | carbonio prov
+      $ bash /tmp/move_additional_briefcases.sh | zmprov
       prov> sm berhanu@demo.zextras.io renameFolder Briefcase2 /Briefcase/Briefcase2
       prov> sm berhanu@demo.zextras.io renameFolder Briefcase3 /Briefcase/Briefcase3
 
