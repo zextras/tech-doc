@@ -132,6 +132,18 @@ modified for any individual user.
       text equivalent version of the QR Code will be shown (the
       **Secret Code**), allowing the user to use it.
 
+      It is also possible to completely disable OTP for a user by
+      using the **One Time Password Management** switch. In this case,
+      the user can neither access their account from trusted networks
+      (see :ref:`global-2fa`), nor they have the ability to create OTP
+      codes in the *Auth* section of their `Settings` module.
+
+      .. note:: If a user has already created OTPs and at a later
+         point the Admin has disabled OTP for that user, the user can
+         still use the existing OTPs. To prevent this behaviour
+         (and forbid the user to use the old OTPs), the user's
+         OTP codes must be removed from the |adminui|.
+
       In the Backup section, a switch allows to toggle the user
       ability to recover e-mail that have already been deleted from
       the Trash Bin.
