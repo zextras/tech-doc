@@ -1073,9 +1073,6 @@ of thereby contained items/blobs.
          whether the BLOB file’s size is coherent with the expected size
          (stored in the DB).
 
-      .. important:: The old ``zmblobchk`` command is deprecated and
-         replaced by ``carbonio powerstore doCheckBlobs`` on all
-         infrastructures using |storage| module.
 
    .. grid-item-card:: doDeduplicate
       :columns: 6

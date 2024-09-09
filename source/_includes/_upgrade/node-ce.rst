@@ -58,17 +58,39 @@ order of installation.
 
                # dnf upgrade --best --allowerasing 
 
-   .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 4. (Optional) Remove unused packages
+      :columns: 12 12 12 12
+
+      After the latest packages have been installed, make sure that
+      you do not have unused packages still installed on your system.
+
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt autoremove
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf autoremove
+
+   .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 5. Reboot
+   .. grid-item-card:: Step 6. Reboot
       :columns: 12 12 6 6
 
-       Once the upgrade has completed successfully, run command:
+      Once the upgrade has completed successfully, run command:
 
       .. code:: console
 
