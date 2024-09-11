@@ -89,6 +89,9 @@ This is the list of roles that make up a |product| installation.
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-tasks-db
+      * carbonio-notification-push-db
+      * carbonio-message-dispatcher-db
+      * carbonio-ws-collaboration-db
       * service-discover-agent
 
    .. grid-item-card:: Proxy
@@ -107,6 +110,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-chats-ui
       * carbonio-user-management
       * carbonio-tasks-ui
+      * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
       * service-discover-agent
 
@@ -247,6 +251,26 @@ This is the list of roles that make up a |product| installation.
 
       * carbonio-directory-server
 
+   .. grid-item-card:: Workstream Collaboration
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-wsc-install
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-message-dispatcher
+      * carbonio-message-broker
+      * carbonio-ws-collaboration
+      * carbonio-ws-collaboration-ui
+      * carbonio-videoserver-advanced
+      * carbonio-videorecorder
+      * carbonio-notification-push
+      * carbonio-push-connector
+
+
 .. _multiserver-installation:
 
 How to install Roles
@@ -313,3 +337,4 @@ installation, please review these important remarks:
    roles/role-monit
    roles/role-es
    roles/role-ds-replica
+   roles/role-wsc
