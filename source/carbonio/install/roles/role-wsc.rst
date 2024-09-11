@@ -104,11 +104,11 @@ services, please refer to next Section :ref:`wsc-optimise`
    This service requires that two files be downloaded and copied in two
    directories:
 
-   *  file :download:`/wscassets/service-account-file.json` must be saved
-      under directory :file:`/etc/carbonio/notification-push/android`
+   * file `service-account-file.json` must be saved under directory
+     :file:`/etc/carbonio/notification-push/android`
 
-   * file :download:`/wscassets/auth-key.p8` must be saved under
-     directory :file:`/etc/carbonio/notification-push/ios`
+   * file `wscassets/auth-key.p8` must be saved under directory
+     :file:`/etc/carbonio/notification-push/ios`
 
    Next, configure them using the following commands
 
