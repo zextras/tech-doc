@@ -10,21 +10,21 @@ required in this step, in which we configure the databases required by
 
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap
+      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap \
         carbonio_adm 127.0.0.1
 
 .. card:: |task|
 
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap
+      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap \
         carbonio_adm 127.0.0.1
 
 .. card:: |wsc|
 
    .. code:: console
 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap
+      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap \
         carbonio_adm 127.0.0.1
 
 .. card:: |wsc| Dispatcher
