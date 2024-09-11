@@ -27,21 +27,19 @@ installing it:
 * All commands and all file editing activities must be executed as the
   ``root`` user, unless noted differently
 
-* The **PostgreSQL client** must be installed on the Node
-
 * The ``carbonio-user-management`` package must be installed in the
   |product| infrastructure (it is part on the
   :ref:`role-proxy-install` Role)
 
-* Some ports must be forwarded to the Node on which |wsc| is
-  installed, for |wsc| to work correctly. They are listed in
+* |wsc| requires that some be forwarded on this and on the Proxy Nodes. They are listed in
   :ref:`fw-ports` as well.
 
 .. csv-table::
-   :header: "Port", "Protocol", "Service"
-   :widths: 10 10 80
+   :header: "Port", "Protocol", "Node" "Service"
+   :widths: 10 10 10 70
 
-   "5222", "TCP", "Message Dispatcher"
+   "5222", "TCP", "|wsc|", "Message Dispatcher"
+   "20000-40000", "UDP", "Proxy", "Audio & video streaming"
 
 Install Packages
 ----------------
