@@ -1,4 +1,3 @@
-.. |epg| replace:: :bdg-info:`External PostgreSQL`
 
 .. _role-wsc-install:
 
@@ -31,8 +30,8 @@ installing it:
   |product| infrastructure (it is part on the
   :ref:`role-proxy-install` Role)
 
-* |cwsc| requires that some be forwarded on this and on the Proxy Nodes. They are listed in
-  :ref:`fw-ports` as well.
+* |cwsc| requires that some ports be forwarded on this and on the
+  Proxy Nodes. They are listed in :ref:`fw-ports` as well.
 
 .. csv-table::
    :header: "Port", "Protocol", "Node" "Service"
@@ -130,7 +129,7 @@ Optimisations
 
 .. card:: Configure Push Connector
 
-   The following values, can be modified via the |mesh| interface (see
+   The following values can be modified via the |mesh| interface (see
    Section :ref:`mesh-gui`) or via the CLI, using the commands that
    follow the table.
 
@@ -167,10 +166,9 @@ Optimisations
 
 .. card:: Configure Push Notifications Database
 
-
-   The following values, can be modified via the |mesh| interface (see
-   Section :ref:`mesh-gui`) or via the CLI, using the commands that
-   follow the table.
+   The following values can be modified via the |mesh| interface (see
+   Section :ref:`mesh-gui`) or via the CLI, using the commands
+   presented above.
 
    .. csv-table::
       :header: "Key name", "Default value"
@@ -180,6 +178,21 @@ Optimisations
       "carbonio-notification-push/hikari/max-pool-size", "10"
       "carbonio-notification-push/hikari/idle-timeout", "10000"
       "carbonio-notification-push/hikari/leak-detection-threshold", "5000"
+
+.. card:: Configure |wsc| Database
+
+   The following values can be modified via the |mesh| interface (see
+   Section :ref:`mesh-gui`) or via the CLI, using the commands
+   presented above.
+
+   .. csv-table::
+      :header: "Key name", "Default value"
+      :widths: 70, 30
+
+      "carbonio-ws-collaboration/hikari/min-idle-connections", "10"
+      "carbonio-ws-collaboration/hikari/max-pool-size", "10"
+      "carbonio-ws-collaboration/hikari/idle-timeout", "10000"
+      "carbonio-ws-collaboration/hikari/leak-detection-threshold", "5000"
 
 .. card:: Configure Connection Pool
 
@@ -212,9 +225,6 @@ the ``zextras`` user.
 Troubleshooting & Checks
 ------------------------
 
-This section presents a commands useful to check and verify the status
-of of |wsc|.
-
 WSC Status Check
 ~~~~~~~~~~~~~~~~
 
@@ -224,13 +234,3 @@ all its dependencies.
 .. code:: console
 
    # curl -v http://127.78.0.4:10000/health | jq
-
-Broker & videoserver Check
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To make sure that videoserver and message broker are connected
-successfully, check that in the carbonio-videoserver logs
-(:command:`journalctl -u carbonio-videoserver`) you find the line::
-
-  RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
-  handler completed
