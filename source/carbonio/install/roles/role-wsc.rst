@@ -2,10 +2,10 @@
 
 .. _role-wsc-install:
 
-Workstream Collaboration
-========================
+|wsc|
+=====
 
-The |WSC| Role is a multi-layered software that adds the video meeting and
+|cwsc| Role is a multi-layered software that adds the video meeting and
 recording functionalities to |product|.
 
 |wsc| depends on two mandatory services: *Carbonio Message
@@ -31,7 +31,7 @@ installing it:
   |product| infrastructure (it is part on the
   :ref:`role-proxy-install` Role)
 
-* |wsc| requires that some be forwarded on this and on the Proxy Nodes. They are listed in
+* |cwsc| requires that some be forwarded on this and on the Proxy Nodes. They are listed in
   :ref:`fw-ports` as well.
 
 .. csv-table::

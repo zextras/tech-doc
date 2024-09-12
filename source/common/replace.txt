@@ -21,7 +21,8 @@
 .. |adminui| replace:: |carbonio| Admin Panel
 .. |monit| replace:: |carbonio| Monitoring
 .. |task| replace:: |carbonio| Tasks
-.. |wsc| replace:: |carbonio| Workstream Collaboration
+.. |cwsc| replace:: |carbonio| Work Stream Collaboration (Chats)
+.. |wsc| replace:: Work Stream Collaboration (Chats)
 
 .. common replacements for all products
 
