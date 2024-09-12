@@ -157,3 +157,12 @@ The content is organised in multiple parts:
          :hidden:
 
          glossary
+
+   .. grid-item-card:: Index
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :margin: 3 0 auto auto
+      :link-type: ref
+      :link: genindex
+
+      List of relevant topics
