@@ -96,11 +96,15 @@ Forwarding
   Two options govern how to forward messages: how long an e-mail
   address can be and the maximum number of recipients allowed.
 
+.. index:: Quota; by COS
+
 Quotas
   A set of options that limit how much space a user can occupy on the
   server, or how many contacts he can have. It also encompasses the
   options to send periodic notifications when the user space raises
   over a given threshold and a template for the notifications.
+
+.. index:: Password policies; by COS
 
 Password
   Settings for password policies: length, characters, and duration of

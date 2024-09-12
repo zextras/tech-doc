@@ -4,14 +4,13 @@
  Setting Features from CLI
 ===========================
 
-In this section we describe a few commands to query of modify the
-availability of some |product| component at COS or account level via
-the CLI, and therefore is the counterpart of |adminui| sections
+In this section we describe the syntax of commands to query of modify
+the availability of some |product| component at COS or account level
+via the CLI, and therefore is the counterpart of |adminui| sections
 :ref:`COS / features <cos-features>` and :ref:`Domains / Accounts /
 Edit <ap-accounts>`.
 
-The following attributes are available, that control if the feature is
-available to a user or COS.
+We use a few available attributes:
 
 .. list-table::
 
@@ -27,51 +26,20 @@ available to a user or COS.
    * - ``carbonioFeatureFilesAppEnabled``
      - ``TRUE``
      - The |file| component is available mobile apps
-   * - ``carbonioFeatureChatsEnabled``
-     - ``TRUE``
-     - The |team| component is enabled
-   * - ``carbonioFeatureChatsAppEnabled``
-     - ``TRUE``
-     - The |team| component is available on mobile apps
-   * - ``zimbraFeatureOptionsEnabled``
-     - ``FALSE``
-     - The Settings module is available to a user
-   * - ``backupSelfUndeleteAllowed``
-     - ``FALSE``
-     - The User/COS can restore single items from |backup| if they
-       were deleted at most 7 days before
 
 In order to modify these values, you can use or adapt the following commands
 
-.. card::
+* Check whether the |file| component is enabled in COS `default`.
 
-   * Disable the Mails App for account johnsmith\@acme.example.
+  .. code:: console
 
-     .. code:: console
+     zextras$ carbonio prov getCos default carbonioFeatureFilesEnabled
 
-        zextras$ carbonio prov modifyAccount johnsmith@acme.example carbonioFeatureMailsAppEnabled FALSE
+     #name default
+     carbonioFeatureFilesEnabled: TRUE
 
-   * Check whether the |file| component is enabled in COS `default`.
+* Disable the Mails App for account johnsmith\@acme.example.
 
-     .. code:: console
+  .. code:: console
 
-        zextras$ carbonio prov getCos default carbonioFeatureFilesEnabled
-
-        #name default
-        carbonioFeatureFilesEnabled: TRUE
-
-   * Disable the |team| Component in COS called `noChat`
-
-     .. code:: console
-
-        zextras$ carbonio prov modifyCos noChat carbonioFeatureTeamEnabled FALSE
-
-   * The Settings module is available by default to all users; to hide
-     it and prevent a user to access it, use the command
-
-     .. code:: console
-
-        zextras$ carbonio prov ma user@example.com zimbraFeatureOptionsEnabled FALSE
-
-     To show it again to the user, replace **FALSE** with **TRUE** in
-     the command.
+     zextras$ carbonio prov modifyAccount johnsmith@acme.example carbonioFeatureMailsAppEnabled FALSE
