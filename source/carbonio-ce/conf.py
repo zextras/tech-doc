@@ -128,7 +128,7 @@ html_theme_options = {
 html_sidebars = { "**": [ 'navbar-logo.html',
                           'zxbrand',
                           'search-button-field.html',
-                          'sbt-sidebar-nav.html', 'home.html' ] }
+                          'sbt-sidebar-nav.html', 'index.html', 'home.html' ] }
 
 html_context = {
     'hubhome' : '%s' %hubhome,
