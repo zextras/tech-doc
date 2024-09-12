@@ -24,3 +24,16 @@ Join |mesh|
 -----------
 
 .. include:: /_includes/_installation/mesh.rst
+
+Troubleshooting
+---------------
+
+Broker & Videoserver Check
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To make sure that videoserver and message broker are connected
+successfully, check that in the carbonio-videoserver logs
+(:command:`journalctl -u carbonio-videoserver`) you find the line::
+
+  RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
+  handler completed
