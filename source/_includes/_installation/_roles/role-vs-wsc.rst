@@ -1,12 +1,7 @@
-This Role consists of *Video Server* and *Video Recording*. You need
+This Role consists of *Video Server (WSC)* and *Video Recording*. You need
 to install the latter only if you plan to record video meetings,
 otherwise you can install *Video Server* without *Video
-Recording*. For this reason we split this Role's installation in two
-parts.
-
-The Video Server Role requires that the :ref:`role-prov-install` be
-already installed, because you need to execute a command on the Node
-hosting that Role to configure the Video Server.
+Recording*. For this reason we split this Role's installation in two parts.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
 
@@ -19,14 +14,14 @@ hosting that Role to configure the Video Server.
 
          .. code:: console
 
-            # apt install carbonio-videoserver service-discover-agent
+            # apt install carbonio-videoserver-advanced service-discover-agent
 
       .. tab-item:: RHEL
          :sync: rhel
 
          .. code:: console
 
-            # dnf install carbonio-videoserver service-discover-agent
+            # dnf install carbonio-videoserver-advanced service-discover-agent
 
    During the installation of the packages, you need to insert the IP
    `public` address (i.e., the one that will accept incoming
@@ -36,34 +31,6 @@ hosting that Role to configure the Video Server.
    the configuration file :file:`/etc/janus/janus.jcfg` and add it if
    missing: find the variable ``nat_1_1_mapping`` and add it, for
    example: ``nat_1_1_mapping = "93.184.216.34"``
-
-   .. rubric:: Configure the |vs|
-
-   During the installation, a command similar to the one below is
-   displayed. Copy it and execute on the Node on which the
-   :ref:`role-prov-install` is installed.
-
-   .. code:: console
-
-      zextras$ carbonio chats video-server add videoserver.example.com port 8188 \
-      secret A_SECRET_PASSWORD
-
-
-   Replace *example.com* with the actual domain name or IP, *8188* the
-   port associated with the |vs|, respectively, and
-   *A_SECRET_PASSWORD* with the value of the variable ``api_secret``
-   in file :file:`/etc/janus/janus.jcfg` on the Node installing the
-   Video Server Role, for example::
-
-        api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
-
-   Finally, enable and start the service with the commands
-
-   .. code:: console
-
-      # systemctl enable videoserver.service
-      # systemctl start  videoserver.service
-
 
 .. card:: Video Recording
 

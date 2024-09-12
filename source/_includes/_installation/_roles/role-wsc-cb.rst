@@ -7,7 +7,6 @@
 
          # apt install postgresql-client carbonio-message-broker \
            carbonio-message-dispatcher carbonio-ws-collaboration \
-           carbonio-videoserver-advanced carbonio-videorecorder \
            carbonio-notification-push carbonio-push-connector \
            service-discover-agent
 
@@ -18,7 +17,6 @@
 
          # dnf install carbonio-message-broker \
            carbonio-message-dispatcher carbonio-ws-collaboration \
-           carbonio-videoserver-advanced carbonio-videorecorder \
            carbonio-notification-push carbonio-push-connector \
            service-discover-agent
 
@@ -70,4 +68,4 @@ Then, restart the service
 
 .. code:: console
 
-   # systemctl restart  carbonio-videoserver.service
+   # systemctl restart

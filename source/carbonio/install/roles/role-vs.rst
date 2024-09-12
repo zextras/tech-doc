@@ -4,8 +4,11 @@ Video Server & Video Recording
 ================================
 
 Before installing this Role on the |product| infrastructure, make sure
-that you installed the :ref:`role-prov-install`, because this role is
-required by the |vs|.
+that you installed the :ref:`role-prov-install`, which is a
+requirement for this Role.
+
+.. note:: This Role can not be installed on the same Node as
+   :ref:`role-vs-wsc-install`.
 
 Install Packages
 ----------------
