@@ -223,7 +223,7 @@ These ports must be forwarded to allow communication with the Internet.
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
       "5222", "TCP", "XMMP protocol"
-      "20000-40000", "UDP", "Audio & video streaming"
+      "20000-40000", "UDP", "Audio & video streaming for |wsc|"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN

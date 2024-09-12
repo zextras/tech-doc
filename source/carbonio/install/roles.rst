@@ -264,7 +264,6 @@ This is the list of roles that make up a |product| installation.
       * carbonio-message-dispatcher
       * carbonio-message-broker
       * carbonio-ws-collaboration
-      * carbonio-ws-collaboration-ui
       * carbonio-videoserver-advanced
       * carbonio-videorecorder
       * carbonio-notification-push
