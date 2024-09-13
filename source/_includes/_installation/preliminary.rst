@@ -15,7 +15,21 @@ two tasks on **each** Node.
    
    .. include:: /_includes/_installation/steps-hostname.rst
 
-   It is mandatory to configure the hostname, especially on the
-   Directory-Server node, otherwise the services will not be able to
-   bind to the correct address, leading to a disruption in
-   |product|\'s functionality.
+   Care will need to be taken in properly configuring the ``hosts`` file otherwise the services will not be able to bind to the correct address, leading to a disruption in |product|\'s functionality.
+
+.. card:: Naming convention
+   
+   When naming nodes (in case of a multiserver installation) we suggest looking for a match between the node name and the role(s) it performs, example:
+
+   * **proxy1.example.com** (for a Proxy node)
+   * **mta1.example.com** (for an MTA node)
+
+   And so on ...
+
+   This way if you have multiple nodes performing the same role you just need to increase the sequence number:
+
+   * **proxy2.example.com** (for a second Proxy node)
+   * **mta2.example.com** (for a second MTA node)
+
+   And so on ...
+

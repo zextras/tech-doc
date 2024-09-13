@@ -8,13 +8,13 @@ commands. First, set the hostname
 
 .. code:: console
 
-   # hostnamectl set-hostname mail.example.com
+   # hostnamectl set-hostname mta1.example.com
 
 then update :file:`/etc/hosts` with IP and hostname
 
 .. code:: console
 
-   # echo "172.16.0.10 mail.example.com mail" >> /etc/hosts
+   # echo -e "127.0.0.1 localhost\n172.16.0.10 mta1.example.com mta1" > /etc/hosts
 
 You can also simply get the current IP and hostname and save them:
 
@@ -25,4 +25,16 @@ You can also simply get the current IP and hostname and save them:
 
 .. hint:: Replace **172.16.0.10** with the local IP of the Node.
 
+It is important to check that in the IPv6 section of ``/etc/hosts`` file
+there is NO reference to localhost:
+
+      .. code:: console
+
+         # This must be avoided
+         # ::1     ip6-localhost ip6-loopback localhost
+
+      .. code:: console
+         
+         # This is correct
+         ::1     ip6-localhost ip6-loopback
          
