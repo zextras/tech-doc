@@ -265,7 +265,9 @@ Nested Calendars, Contacts, and User Groups
 The following scripts search for nested Calendars, nested Address
 Books, and for user groups outside the main Contacts Address Book, and
 generate the SOAP required to move them under Calendars and Contacts,
-respectively. User group, on the contrary, are immediately imported
+respectively. User groups, on the contrary, are immediately
+imported. All the scripts and commands must be executed on the
+**Destination** after the backup has been  imported.
 
 .. note:: Sub-calendars and sub-address-books are not supported by
    |product| and need to be converted in main calendars before
