@@ -28,9 +28,6 @@ srv1.example.com
 [filesServers]
 srv1.example.com
 
-[antivirusServers]
-srv1.example.com
-
 ############ Optional Roles - to be installed on a different target ############
 [taskServers]
 #srv2.example.com
