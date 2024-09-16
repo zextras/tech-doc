@@ -3,8 +3,14 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 |product| needs a valid FQDN as hostname and a valid entry in the
-:file:`/etc/hosts` file. To configure them, execute these two
-commands. First, set the hostname
+:file:`/etc/hosts` file. Therefore, it is necessary to take care of
+properly configuring the :file:`/etc/hosts` file, otherwise the services
+will not be able to bind to the correct address, leading to a
+disruption in |product|\'s functionality.
+
+
+To configure them, execute these two commands. First, set the
+hostname
 
 .. code:: console
 
