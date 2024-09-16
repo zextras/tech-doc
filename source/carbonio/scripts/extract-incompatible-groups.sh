@@ -1,2 +1,0 @@
-for i in $(mysql -e "show databases like 'mboxgroup%'" -N -B);
-     do echo "select mailbox.comment, folder.name, SUBSTRING_INDEX(SUBSTRING_INDEX(mi.metadata, 'fullName', 1),':',-2)  from $i.mail_item as mi, $i.mail_item as folder, zimbra.mailbox as mailbox where mi.mailbox_id=mailbox.id and folder.mailbox_id=mailbox.id and  folder.id=mi.folder_id and  mi.metadata like 'd3:fldd6:fileA%' and (mi.metadata like '%d1:t1:C%' or mi.metadata like '%d1:t1:G%');"; done | mysql -B -N 
