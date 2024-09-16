@@ -2,22 +2,40 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
+In this section, we list some naming conventions we use in the
+documentation and present some tasks you need to carry out on **each
+of the Nodes** before starting with the actual installation.
 
-Before starting with the actual installation, carry out the following
-tasks on **each of the nodes**.
+Naming conventions
+------------------
 
-.. card:: Task 1: Configure repositories
-   :class-header: sd-font-weight-bold sd-fs-5
+When deciding the names of the Nodes, we suggest to match the Node
+name and the Role installed on it (or the main Role in case a Node
+features multiple Roles), for example:
 
-   .. include:: /_includes/_installation/step-repo-conf-ce.rst
-   .. include:: /_includes/_installation/repo-info.rst
+* **proxy1.example.com** is the (first) Proxy Node
+* **mta1.example.com** is the (first) MTA Node
+* similarly for other Nodes
 
-.. card:: Task 2: Setting Hostname
-   :class-header: sd-font-weight-bold sd-fs-5
-   
-   .. include:: /_includes/_installation/steps-hostname.rst
+By naming Nodes in this way, in case you have you have multiple nodes
+featuring the same Role, or you want to expand your infrastructure,
+you only need to increase the sequence number:
 
-   It is mandatory to configure the hostname, especially on the
-   Directory-Server node, otherwise the services will not be able to
-   bind to the correct address, leading to a disruption in
-   |product|\'s functionality.
+* **proxy2.example.com** becomes the second Proxy Node
+* **mta2.example.com** becomes the second MTA Node
+* similarly for other Nodes
+
+Additionally, throughout this documentation, we will use **Proxy
+Node(s)** to denote the Node(s) on which the Proxy Role is (are)
+installed; **MTA Node** the Node featuring the MTA, and so on.
+
+Configure repositories
+----------------------
+
+.. include:: /_includes/_installation/step-repo-conf-ce.rst
+.. include:: /_includes/_installation/repo-info.rst
+
+Setting Hostname
+----------------
+
+.. include:: /_includes/_installation/steps-hostname.rst
