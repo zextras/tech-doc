@@ -39,8 +39,8 @@ file :file:`/etc/hosts/`:
 
      ::1     ip6-localhost ip6-loopback
 
-   .. warning:: The above line **must not contain** the keyword
-      **localhost**, because this would lead to disruptions.
+   .. warning:: The above line **must not contain** references to
+      **localhost**, as this would result in disruptions.
 
       .. parsed-literal::
 
