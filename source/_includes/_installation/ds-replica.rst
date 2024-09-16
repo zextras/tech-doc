@@ -14,7 +14,7 @@ following requirements are satisfied.
 
 * A new Node is available, on which to install the Replica, which
   satisfies the :ref:`carbonio-requirements` and on which the
-  :ref:`multi-server-preliminary` have already been executed
+  :ref:`preliminary` have already been executed
   
   .. note:: You can also install the Replica on an existent Node, but
      not on the same Node which features the Primary Directory Role.
