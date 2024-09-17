@@ -69,6 +69,23 @@ Join |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
+Migrate dispatcher
+-------------------
+
+Initialise the message dispatcher
+
+.. code:: console
+
+   # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
+     carbonio_adm 127.78.0.10 20000
+
+Restart the service
+
+.. code:: console
+
+   # systemctl restart carbonio-message-dispatcher
+
+
 Configuration
 -------------
 
@@ -215,12 +232,11 @@ Optimisations
 Enable |wsc|
 ------------
 
-In order to enable WSC, execute the following command from the CLI as
-the ``zextras`` user.
+To use the feature, enable it from the Admin panel for each user or (alternatively) from command line with the following command:
 
 .. code:: console
 
-   zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
+   zextras$ carbonio prov ma john.doe@example.com carbonioFeatureChatsEnabled TRUE
 
 Troubleshooting & Checks
 ------------------------
