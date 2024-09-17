@@ -44,9 +44,9 @@ Source Requirements
   (see the :ref:`dedicated section below <mig-briefcase>`), then
   migrate them to |product|
 
-* *Nested Calendars*, *nested Address Books*, and *Public Shares*
-  require to be processed with scripts before being included in the
-  backup
+* *Nested Calendars*, *nested Address Books*, *Nested User Groups*,
+  and *Shares* require to be processed with scripts on the
+  **Destination**, after importing the backup
 
 .. _mig-dest-reqs:
 
@@ -148,21 +148,22 @@ Check of Incompatible Address Book's Groups
 ruling out all address books which contain as members, for example,
 references to  other items.
 
-This script list all the groups that are not compatible with |product|.
+This script lists all the user groups in the address books that are
+not compatible with |product|.
 
-.. dropdown:: Check user groups script
+.. dropdown:: List user groups script
    :open:
 
-   :download:`/scripts/check-user-groups.sh`
+   :download:`/scripts/list-incompatible-groups.sh`
 
-   .. literalinclude:: /scripts/check-user-groups.sh
+   .. literalinclude:: /scripts/list-incompatible-groups.sh
 
-   The output will be formatted as::
+The output will be formatted as::
 
-     User - Address Book folder - GroupName
+  User - Address Book folder - GroupName
 
-.. note:: The Address Book folder refers to the one that contains the
-   incompatible group, but this could be nested.
+.. note:: The *Address Book folder* refers to the one that contains the
+   incompatible group, but this could be nested within another folder.
 
 In order to make those groups available in the destination, the user
 need to extract them as CSV from the **Source** and import them in the
@@ -264,9 +265,11 @@ Nested Calendars, Contacts, and User Groups
 The following scripts search for nested Calendars, nested Address
 Books, and for user groups outside the main Contacts Address Book, and
 generate the SOAP required to move them under Calendars and Contacts,
-respectively.
+respectively. User groups, on the contrary, are immediately
+imported. All the scripts and commands must be executed on the
+**Destination** after the backup has been  imported.
 
-.. note:: Sub-calendars  and sub-address-books are not supported by
+.. note:: Sub-calendars and sub-address-books are not supported by
    |product| and need to be converted in main calendars before
    attempting to migrate them.
 
@@ -287,7 +290,7 @@ respectively.
      zmsoap -z -m john@demo.zextras.io FolderActionRequest/action @op=move @id=145 @l=1
      zmsoap -z -m janet@demo.zextras.io FolderActionRequest/action @op=move @id=146 @l=1
 
-   .. note:: You need to actually execute each of this command to
+   .. note:: You need to actually execute each of these commands to
       correctly export the nested Calendars.
 
 .. card:: Nested Address Books
@@ -309,8 +312,20 @@ respectively.
      zmsoap -z -m bruce@demo.zextras.io FolderActionRequest/action @op=move @id=736 @l=1
      zmsoap -z -m barbara@demo.zextras.io FolderActionRequest/action @op=move @id=737 @l=1
 
-   .. note:: You need to actually execute each of this command to
+   .. note:: You need to actually execute each of these commands to
       correctly export the nested Calendars.
+
+.. card:: Nested User Groups
+
+   .. dropdown:: Nested User Groups script
+      :open:
+
+      :download:`/scripts/move_nested_user_groups.sh`
+
+      .. literalinclude:: /scripts/move_nested_user_groups.sh
+
+   .. note:: This script moves immediately the user groups, so there
+      is no need to execute additional commands.
 
 Phase 2, Shares
 ===============
@@ -319,14 +334,14 @@ To fix the shares, execute the following command.
 
 .. code:: console
 
-   zextras$ carbonio backup doFixShares /opt/zextras/backup/zextras/maps_[uuid] 
+   zextras$ carbonio backup doFixShares /opt/zextras/backup/zextras/maps_[uuid]
 
 Phase 3, Files
 ==============
 
 Zimbra Drive items can be exported and imported in |file| using the
 exported Backup and installing the :command:`carbonio-drive-migration`
-on the **Destination**.
+package on the **Destination**.
 
 Limitations of the Tool
 -----------------------
