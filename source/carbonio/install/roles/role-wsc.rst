@@ -23,7 +23,7 @@ the installation of the |wsc| Role
 
 * It must be installed manually, there is no Ansible support for the
   installation
-* It can not be installed on the same node as |vs|
+* It can not be installed on the same Node as |vs|
 * Data from the legacy Chats module can not be exported to new |wsc|
   Role
 
@@ -125,9 +125,9 @@ During the process, you need to provide these values, which you can
 retrieve from the first Mesh and Directory node.
 
 * ``Ldap master host`` is the FQDN of the first Mesh and Directory
-  node, (example: ldap-mstr.example.com)
+  Node, (example: ldap-mstr.example.com)
 * ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+  Directory Node (:ref:`ldap-admin-password <get-ldap-password>`)
 
 .. _role-wsc-mesh:
 

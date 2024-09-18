@@ -7,7 +7,7 @@
 
          # apt install postgresql-client carbonio-message-dispatcher \
            carbonio-ws-collaboration carbonio-notification-push \
-           carbonio-push-connector service-discover-agent \
+           carbonio-push-connector service-discover-agent
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -16,7 +16,7 @@
 
          # dnf install carbonio-message-dispatcher \
            carbonio-ws-collaboration carbonio-notification-push \
-           carbonio-push-connector service-discover-agent \
+           carbonio-push-connector service-discover-agent
 
       Install PostgreSQL repository
 
