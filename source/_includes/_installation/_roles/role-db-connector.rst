@@ -5,11 +5,9 @@
 
       .. code:: console
 
-         # apt install carbonio-notification-push-db \
-           carbonio-docs-connector-db carbonio-tasks-db \
-           carbonio-ws-collaboration-db carbonio-files-db \
-           carbonio-mailbox-db carbonio-message-dispatcher-db \
-           carbonio-storages service-discover-agent
+         # apt install carbonio-docs-connector-db carbonio-tasks-db \
+           carbonio-files-db carbonio-mailbox-db carbonio-storages \
+           service-discover-agent
 
 
  
@@ -18,8 +16,6 @@
 
       .. code:: console
 
-         # dnf install carbonio-notification-push-db \
-           carbonio-docs-connector-db carbonio-tasks-db \
-           carbonio-ws-collaboration-db carbonio-files-db \
-           carbonio-mailbox-db carbonio-message-dispatcher-db \
-           carbonio-storages service-discover-agent
+         # dnf install carbonio-docs-connector-db carbonio-tasks-db \
+           carbonio-files-db carbonio-mailbox-db carbonio-storages \
+           service-discover-agent
