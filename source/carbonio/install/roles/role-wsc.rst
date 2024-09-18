@@ -309,6 +309,12 @@ replacing the e-mail address with the one of the user.
 
    zextras$ carbonio prov ma john@example.com default carbonioFeatureChatsEnabled TRUE
 
+To let |product| pick up the change, restartg the service
+
+.. code:: console
+
+   # systemctl restart carbonio-ws-collaboration
+
 Troubleshooting & Checks
 ------------------------
 
