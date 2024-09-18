@@ -10,6 +10,8 @@ Installation of PostgreSQL
 
 .. include:: /_includes/_installation/pg.rst
 
+.. _role-wsc-db-install:
+
 Installation of |cwsc|
 ----------------------
 
