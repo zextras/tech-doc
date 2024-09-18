@@ -290,7 +290,7 @@ Optimisations
      [outgoing_pools.rdbms.default]
        scope = "global"
        strategy = "best_worker"
-       workers = 1 # db connection pool numbers
+       workers = 10 # db connection pool numbers
 
    Then, restart the service.
 
