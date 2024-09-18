@@ -32,7 +32,7 @@ dnf -y install postgresql16 postgresql16-server;
 /usr/pgsql-16/bin/postgresql-16-setup initdb;
 systemctl enable --now postgresql-16;
 
-PACKAGES="service-discover-server carbonio-directory-server carbonio-proxy carbonio-webui carbonio-files-ui carbonio-mta carbonio-mailbox-db carbonio-appserver carbonio-user-management carbonio-files-ce carbonio-files-public-folder-ui carbonio-files-db carbonio-tasks-ce carbonio-tasks-db carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce carbonio-docs-connector-ce carbonio-docs-connector-db carbonio-docs-editor carbonio-prometheus carbonio-message-broker  carbonio-ws-collaboration-ce carbonio-ws-collaboration-db carbonio-ws-collaboration-ui"
+PACKAGES="service-discover-server carbonio-directory-server carbonio-catalog-service carbonio-proxy carbonio-webui carbonio-files-ui carbonio-mta carbonio-mailbox-db carbonio-appserver carbonio-user-management carbonio-files-ce carbonio-files-public-folder-ui carbonio-files-db carbonio-tasks-ce carbonio-tasks-db carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce carbonio-docs-connector-ce carbonio-docs-connector-db carbonio-docs-editor carbonio-prometheus carbonio-message-broker  carbonio-ws-collaboration-ce carbonio-ws-collaboration-db carbonio-ws-collaboration-ui"
 
 echo '' > config.conf
 dnf install -y $PACKAGES 
