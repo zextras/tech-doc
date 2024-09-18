@@ -100,8 +100,9 @@ services, please refer to next Section :ref:`wsc-optimise`
 
 .. card:: Configure Push Notifications
 
-   This service requires that two files be downloaded and copied in two
-   directories:
+   This service requires two files that will be provided by the |zx|
+   Sales representative. They must be saved on the |wsc| Node as
+   follows:
 
    * file `service-account-file.json` must be saved under directory
      :file:`/etc/carbonio/notification-push/android`

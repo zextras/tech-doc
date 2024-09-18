@@ -44,11 +44,11 @@ Restart the service
 Complete installation
 ---------------------
 
-After the :command:`pending-setups` command  has completed, you need
-to carry out these tasks.
+After the :command:`pending-setups` command has completed, you need to
+carry out these tasks.
 
-#. Execute, as the ``root`` user the script that enables the correct routing to the
-   |vs|. You need to provide the |mesh| credentials
+#. Execute, as the ``root`` user the script that enables the correct
+   routing to the |vs|. You need to provide the |mesh| credentials
 
    .. code:: console
 
