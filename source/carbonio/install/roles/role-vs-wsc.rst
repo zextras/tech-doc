@@ -25,11 +25,51 @@ Join |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
+Migrate dispatcher
+-------------------
+
+Initialise the message dispatcher
+
+.. code:: console
+
+   # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
+     carbonio_adm 127.78.0.10 20000
+
+Restart the service
+
+.. code:: console
+
+   # systemctl restart carbonio-message-dispatcher
+
+Complete installation
+---------------------
+
+After the :command:`pending-setups` command  has completed, you need
+to carry out these tasks.
+
+#. Execute, as the ``root`` user the script that enables the correct routing to the
+   |vs|. You need to provide the |mesh| credentials
+
+   .. code:: console
+
+      # carbonio-videoserver-routing
+
+#. make sure that the Video Server's IP address is present in the
+   configuration file :file:`/etc/janus/janus.jcfg` and add it if
+   missing: find the variable ``nat_1_1_mapping`` and add it, for
+   example: ``nat_1_1_mapping = "93.184.216.34"``
+
+#. restart the service
+
+   .. code:: console
+
+      # systemctl restart carbonio-videoserver
+
 Troubleshooting
 ---------------
 
-Broker & Videoserver Check
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Broker & Video Server Check
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To make sure that videoserver and message broker are connected
 successfully, check that in the carbonio-videoserver logs
