@@ -4,15 +4,28 @@
 |wsc|
 =====
 
-|cwsc| Role is a multi-layered software that adds the video meeting and
-recording functionalities to |product|.
+|cwsc| Role is a multi-layered software that adds the video meeting
+and recording functionalities to |product|.
 
-|wsc| depends on two mandatory services: *Carbonio Message
-Dispatcher*, which includes a database component, and *Carbonio
-Message Broker*. Additional software provide optional services, like
-push notifications and video recording.
+This Role can currently be installed only manually, so please read
+Sections :ref:`role-wsc-limits` and :ref:`role-wsc-req` below.
 
-.. note:: This Role can not be installed on the same node as |vs|.
+If you plan to install this Role in an existing |product|
+infrastructure, please read carefully Section :ref:`wsc-install`.
+
+.. _role-wsc-limits:
+
+Limitations
+-----------
+
+In the current release |release|, the following limitation apply to
+the installation of the |wsc| Role
+
+* It must be installed manually, there is no Ansible support for the
+  installation
+* It can not be installed on the same Node as |vs|
+* Data from the legacy Chats module can not be exported to new |wsc|
+  Role
 
 .. _role-wsc-req:
 
@@ -30,6 +43,9 @@ installing it:
   |product| infrastructure (it is part on the
   :ref:`role-proxy-install` Role)
 
+* The :ref:`role-files-install` Role must be installed in the
+  |product| infrastructure
+
 * |cwsc| requires that some ports be forwarded on this and on the
   Proxy Nodes. They are listed in :ref:`fw-ports` as well.
 
@@ -39,6 +55,53 @@ installing it:
 
    "5222", "TCP", "|wsc|", "Message Dispatcher"
    "20000-40000", "UDP", "Proxy", "Audio & video streaming"
+
+.. _wsc-install:
+
+Installation
+------------
+
+The directions in the reminder of this page apply to a new installation
+of |product|. If you already have an existing |product|
+infrastructure, the procedure is very similar, but you have to take
+into account the following points:
+
+* The |vs| or Chats modules may be already installed within the
+  infrastructure, but you can keep them: the |wsc| does not share any
+  component with them
+
+* There is a *Database preparation* step to carry out on the **Database
+  Node** before starting the |wsc| installation: please follow the
+  instructions to Section :ref:`role-wsc-db-install`
+
+Now, depending on how you plan to install |wsc|, the procedure
+slightly changes.
+
+If you plan to install |wsc| on a dedicated Node, make sure that you
+install :ref:`role-vs-wsc-install` on another dedicated Node, then
+follow the installation procedure as it described below, starting from
+the next section, :ref:`role-wsc-packages`.
+
+If you plan to install |wsc| on an existing Node, the following
+adjustments apply to the procedure.
+
+#. In Section :ref:`role-wsc-packages`, remove package
+   :file:`service-discover-agent` from the list of packages to be
+   installed
+
+#. Skip Sections :ref:`role-wsc-bootstrap` and :ref:`role-wsc-mesh`
+
+#. Install package :file:`carbonio-ws-collaboration-ui` on the
+   :ref:`role-proxy-install` Node
+
+#. Install package :file:`carbonio-broker` on the
+   :ref:`role-mesh-install` Node
+
+#. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node or
+   in any Node that does not feature :ref:`role-vs-install`, because
+   they are not compatible
+
+.. _role-wsc-packages:
 
 Install Packages
 ----------------
@@ -51,6 +114,8 @@ package installation.
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_roles/role-wsc-cb.rst
 
+.. _role-wsc-bootstrap:
+
 Bootstrap |product|
 -------------------
 
@@ -60,9 +125,11 @@ During the process, you need to provide these values, which you can
 retrieve from the first Mesh and Directory node.
 
 * ``Ldap master host`` is the FQDN of the first Mesh and Directory
-  node, (example: ldap-mstr.example.com)
+  Node, (example: ldap-mstr.example.com)
 * ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+  Directory Node (:ref:`ldap-admin-password <get-ldap-password>`)
+
+.. _role-wsc-mesh:
 
 Join |mesh|
 -----------
@@ -221,7 +288,7 @@ Optimisations
      [outgoing_pools.rdbms.default]
        scope = "global"
        strategy = "best_worker"
-       workers = 1 # db connection pool numbers
+       workers = 10 # db connection pool numbers
 
    Then, restart the service.
 
@@ -239,6 +306,12 @@ replacing the e-mail address with the one of the user.
 .. code:: console
 
    zextras$ carbonio prov ma john@example.com default carbonioFeatureChatsEnabled TRUE
+
+To let |product| pick up the change, restartg the service
+
+.. code:: console
+
+   # systemctl restart carbonio-ws-collaboration
 
 Troubleshooting & Checks
 ------------------------

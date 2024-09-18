@@ -61,6 +61,7 @@ This is the list of roles that make up a |product| installation.
 
       * service-discover-server
       * carbonio-directory-server
+      * carbonio-message-broker
 
    .. grid-item-card:: Database
       :columns: 6
@@ -73,6 +74,10 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * postgresql
+      * carbonio-notification-push-db
+      * carbonio-message-dispatcher-db
+      * carbonio-ws-collaboration-db
+
 
    .. grid-item-card:: Database Connector
       :columns: 6
@@ -89,9 +94,6 @@ This is the list of roles that make up a |product| installation.
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-tasks-db
-      * carbonio-notification-push-db
-      * carbonio-message-dispatcher-db
-      * carbonio-ws-collaboration-db
       * service-discover-agent
 
    .. grid-item-card:: Proxy
@@ -263,7 +265,6 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * carbonio-message-dispatcher
-      * carbonio-message-broker
       * carbonio-ws-collaboration
       * carbonio-notification-push
       * carbonio-push-connector

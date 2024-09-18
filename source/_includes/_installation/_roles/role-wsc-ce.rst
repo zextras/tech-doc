@@ -5,18 +5,16 @@
 
       .. code:: console
 
-         # apt install postgresql-client carbonio-message-broker \
-           carbonio-message-dispatcher carbonio-ws-collaboration-ce \
-           service-discover-agent
+         # apt install postgresql-client carbonio-message-dispatcher \
+           carbonio-ws-collaboration-ce service-discover-agent
  
    .. tab-item:: RHEL 8
       :sync: rhel8
 
       .. code:: console
 
-         # dnf install carbonio-message-broker \
-           carbonio-message-dispatcher carbonio-ws-collaboration-ce \
-           service-discover-agent
+         # dnf install carbonio-message-dispatcher \
+           carbonio-ws-collaboration-ce service-discover-agent
 
       Install PostgreSQL repository
       
