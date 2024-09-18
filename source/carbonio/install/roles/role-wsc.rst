@@ -85,10 +85,6 @@ the next section, :ref:`role-wsc-packages`.
 If you plan to install |wsc| on an existing Node, the following
 adjustments apply to the procedure.
 
-#. In Section :ref:`role-wsc-packages`, remove package
-   :file:`service-discover-agent` from the list of packages to be
-   installed
-
 #. Skip Sections :ref:`role-wsc-bootstrap` and :ref:`role-wsc-mesh`
 
 #. Install package :file:`carbonio-ws-collaboration-ui` on the
