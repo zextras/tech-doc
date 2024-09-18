@@ -185,7 +185,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-tasks-ce
       * service-discover-agent
 
-   .. grid-item-card:: |wsc| :bdg-danger:`BETA`
+   .. grid-item-card:: |wsc|
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref

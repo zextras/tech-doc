@@ -1,7 +1,7 @@
 
 .. _wsc-comp:
 
-|wsc| :bdg-danger:`BETA`
-========================
+|wsc|
+=====
 
 .. include:: /_includes/_usage/wsc.rst

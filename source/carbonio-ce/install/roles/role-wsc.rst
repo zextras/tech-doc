@@ -1,11 +1,9 @@
 .. _role-wsc-install:
 
-|wsc|  :bdg-danger:`BETA`
-============================================
+|wsc|
+=====
 
-The |wsc| Role adds the chat functionality to |product|. It is currently
-in :bdg-danger:`BETA` version, hence it may still lack some
-functionalities and may not work 100% properly.
+The |wsc| Role adds the chat functionality to |product|.
 
 Install Packages
 ----------------
