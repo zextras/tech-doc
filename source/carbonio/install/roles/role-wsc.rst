@@ -13,11 +13,6 @@ Sections :ref:`role-wsc-limits` and :ref:`role-wsc-req` below.
 If you plan to install this Role in an existing |product|
 infrastructure, please read carefully Section :ref:`wsc-install`.
 
-|wsc| depends on two mandatory services: *Carbonio Message
-Dispatcher*, which includes a database component, and *Carbonio
-Message Broker*. Additional software provide optional services, like
-push notifications and video recording.
-
 .. _role-wsc-limits:
 
 Limitations
@@ -98,6 +93,9 @@ adjustments apply to the procedure.
 
 #. Install package :file:`carbonio-ws-collaboration-ui` on the
    :ref:`role-proxy-install` Node
+
+#. Install package :file:`carbonio-broker` on the
+   :ref:`role-mesh-install` Node
 
 #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node or
    in any Node that does not feature :ref:`role-vs-install`, because
