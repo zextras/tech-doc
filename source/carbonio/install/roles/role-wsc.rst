@@ -61,8 +61,8 @@ installing it:
 Installation
 ------------
 
-The directions in the reminder of this page apply to a new installation
-of |product|. If you already have an existing |product|
+The directions in the reminder of this page apply to a new
+installation of |product|. If you already have an existing |product|
 infrastructure, the procedure is very similar, but you have to take
 into account the following points:
 
@@ -70,9 +70,21 @@ into account the following points:
   infrastructure, but you can keep them: the |wsc| does not share any
   component with them
 
-* There is a *Database preparation* step to carry out on the **Database
-  Node** before starting the |wsc| installation: please follow the
-  instructions to Section :ref:`role-wsc-db-install`
+* There is a *Preparation* phase that requires to install some package
+  on other Nodes before starting the |wsc| installation.
+
+  #.  Install the database components on the **Database Node**: please
+      follow the instructions to Section :ref:`role-wsc-db-install`
+
+   #. Install package :file:`carbonio-ws-collaboration-ui` on the
+      :ref:`role-proxy-install` Node
+
+   #. Install package :file:`carbonio-broker` on the
+      :ref:`role-mesh-install` Node
+
+   #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node or
+      in any Node that does not feature :ref:`role-vs-install`, because
+      they are not compatible
 
 Now, depending on how you plan to install |wsc|, the procedure
 slightly changes.
@@ -82,20 +94,8 @@ install :ref:`role-vs-wsc-install` on another dedicated Node, then
 follow the installation procedure as it described below, starting from
 the next section, :ref:`role-wsc-packages`.
 
-If you plan to install |wsc| on an existing Node, the following
-adjustments apply to the procedure.
-
-#. Skip Sections :ref:`role-wsc-bootstrap` and :ref:`role-wsc-mesh`
-
-#. Install package :file:`carbonio-ws-collaboration-ui` on the
-   :ref:`role-proxy-install` Node
-
-#. Install package :file:`carbonio-broker` on the
-   :ref:`role-mesh-install` Node
-
-#. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node or
-   in any Node that does not feature :ref:`role-vs-install`, because
-   they are not compatible
+If you plan to install |wsc| on an existing Node, then skip Sections
+:ref:`role-wsc-bootstrap` and :ref:`role-wsc-mesh`.
 
 .. _role-wsc-packages:
 
