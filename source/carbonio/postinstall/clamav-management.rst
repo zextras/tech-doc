@@ -1,4 +1,5 @@
 
+.. _clamav-manage:
 
 ClamAV Management
 =================
