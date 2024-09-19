@@ -1,4 +1,3 @@
-
 A |cos| determines which features and options can be accessed by a
 user, how to access them, and sets the default values for a number of
 them.
@@ -24,15 +23,15 @@ Features
 --------
 
 *Features* are settings that allow or forbid the user to access the
-most used Modules of |product|, both via browser and :ref:`mobile apps
-<mobile_apps>`. The Administrator can prevent users to even access the
-`Settings` module, meaning that the user can not customise anything in
-the web mail's :ref:`settings-comp`. This proves useful in some
-scenarios: for example, an organisation wants that all the
-communication of its employees has the same branding (including also
-Out Of Office replies, the visible name of the sender, and other);
-another needs that the e-mails be encrypted and does not want users to
-send plain-text e-mails, and so on.
+most used Modules of |product|, both via browser and mobile apps. The
+Administrator can prevent users to even access the `Settings` Module,
+meaning that the user can not customise anything in the web mail's
+Settings Module. This proves useful in some scenarios: for
+example, an organisation wants that all the communication of its
+employees has the same branding (including also Out Of Office replies,
+the visible name of the sender, and other); another needs that the
+e-mails be encrypted and does not want users to send plain-text
+e-mails, and so on.
 
 .. hint:: Some of these options can be enabled or disabled via CLI:
    please refer to section :ref:`cli-features` for more information.
@@ -44,7 +43,7 @@ Preferences
 
 *Preferences* consist of generic options for the various components
 (Mails, Calendar, Contacts). Most of these options can be overridden
-by users in their :ref:`settings-comp` page.
+by users in their Settings Module.
 
 The first is the default language to be used by the members of the
 COS, which includes also the locale The list of supported languages

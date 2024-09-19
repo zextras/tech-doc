@@ -360,7 +360,7 @@ save. The *acme_admin* user is now able to access the |adminui|.
 Distribution List
 =================
 
-.. include:: /_includes/_adminpanel/_domains/dls-ce.rst
+.. include:: /_includes/_adminpanel/_domains/dls.rst
 
 .. _ap-resources:
 
