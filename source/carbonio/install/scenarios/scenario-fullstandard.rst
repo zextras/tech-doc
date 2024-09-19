@@ -158,11 +158,13 @@ Roles on the Nodes, according to the following guidelines.
 
       Node Name/FQDN: srv6.example.com
 
-      Type of services: Video and Meeting
+      Type of services: Preview and Editing
 
       Roles installed:
 
-      * :ref:`role-vs-install`
+      * :ref:`role-docs-install`
+
+      * :ref:`role-preview-install`
 
    .. grid-item-card:: Node 7
       :columns: 12
@@ -171,9 +173,7 @@ Roles on the Nodes, according to the following guidelines.
 
       Type of services:
 
-      Roles installed: Preview and Editing
+      Roles installed:  Video and Meeting
 
 
-      * :ref:`role-docs-install`
-
-      * :ref:`role-preview-install`
+      * :ref:`role-vs-install`
