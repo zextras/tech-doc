@@ -143,8 +143,7 @@ Configuration
 
 If you want to enable mobile notification, you need to configure
 mobile notifications and Push Notifications according
-to the directions given below. In order to optimise the various
-services, please refer to next Section :ref:`wsc-optimise`
+to the directions given below.
 
 .. card:: Configure mobile notifications
 
@@ -192,96 +191,6 @@ services, please refer to next Section :ref:`wsc-optimise`
       # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" \
       "carbonio-notification-push/apns/topic" "com.zextras.chats"
 
-.. _wsc-optimise:
-
-Optimisations
--------------
-
-.. card:: Configure Push Connector
-
-   The following values can be modified via the |mesh| interface (see
-   Section :ref:`mesh-gui`) or via the CLI, using the commands that
-   follow the table.
-
-   .. csv-table::
-      :header: "Key name", "Default value"
-      :widths: 70, 30
-
-      "carbonio-push-connector/hikari/min-idle-connections", "10"
-      "carbonio-push-connector/hikari/max-pool-size", "10"
-      "carbonio-push-connector/hikari/idle-timeout", "10000"
-      "carbonio-push-connector/hikari/leak-detection-threshold", "5000"
-
-   To verify the current value of any key, use command
-
-   .. code:: console
-
-      # consul kv get -token-file="$CONSUL_TOKEN_PATH" "$KEY"
-
-   To modify one of the values reported in the above table, use command
-
-   .. code:: console
-
-      # consul kv put -token-file="$CONSUL_TOKEN_PATH" "$KEY" "$VALUE"
-
-   In both cases, ``$CONSUL_TOKEN_PATH`` is the |mesh| secret stored in
-   file :file:`/var/lib/service-discover/password`, while ``$KEY`` and
-   ``$VALUE`` are the key name and the new value, respectively.
-
-   To apply the configuration changes, restart the service.
-
-   .. code:: console
-
-      # systemctl restart carbonio-push-connector
-
-.. card:: Configure Push Notifications Database
-
-   The following values can be modified via the |mesh| interface (see
-   Section :ref:`mesh-gui`) or via the CLI, using the commands
-   presented above.
-
-   .. csv-table::
-      :header: "Key name", "Default value"
-      :widths: 70, 30
-
-      "carbonio-notification-push/hikari/min-idle-connections", "10"
-      "carbonio-notification-push/hikari/max-pool-size", "10"
-      "carbonio-notification-push/hikari/idle-timeout", "10000"
-      "carbonio-notification-push/hikari/leak-detection-threshold", "5000"
-
-.. card:: Configure |wsc| Database
-
-   The following values can be modified via the |mesh| interface (see
-   Section :ref:`mesh-gui`) or via the CLI, using the commands
-   presented above.
-
-   .. csv-table::
-      :header: "Key name", "Default value"
-      :widths: 70, 30
-
-      "carbonio-ws-collaboration/hikari/min-idle-connections", "10"
-      "carbonio-ws-collaboration/hikari/max-pool-size", "10"
-      "carbonio-ws-collaboration/hikari/idle-timeout", "10000"
-      "carbonio-ws-collaboration/hikari/leak-detection-threshold", "5000"
-
-.. card:: Configure Connection Pool
-
-   To modify the number of connection pool for this database, change the
-   related property ``workers`` in section
-   ``[outgoing_pools.rdbms.default]`` of file
-   :file:`/etc/carbonio/message-dispatcher/mongooseim.toml`::
-
-     [outgoing_pools.rdbms.default]
-       scope = "global"
-       strategy = "best_worker"
-       workers = 10 # db connection pool numbers
-
-   Then, restart the service.
-
-   .. code:: console
-
-      # systemctl restart carbonio-message-dispatcher
-
 Enable |wsc|
 ------------
 
@@ -298,6 +207,10 @@ To let |product| pick up the change, restartg the service
 .. code:: console
 
    # systemctl restart carbonio-ws-collaboration
+
+.. hint:: If the |wsc| installation is successful, you can optimise
+   some values according to the guidelines that you can find in
+   section :ref:`wsc-optimise`.
 
 Troubleshooting & Checks
 ------------------------
