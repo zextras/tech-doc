@@ -39,7 +39,7 @@ current_year = time.strftime('%Y')
 
 # -- Project information -----------------------------------------------------
 
-project = 'Zextras Carbonio CE'
+project = 'Carbonio CE Admin'
 copyright = '2024: ZEXTRAS'
 author = 'The Zextras Team'
 
