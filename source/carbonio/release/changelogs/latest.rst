@@ -2,7 +2,7 @@
 Release 24.9.0
 ==============
 
-Release Date: July 16th, 2024
+Release Date: September 23rd, 2024
 
 New Features List
 -----------------
