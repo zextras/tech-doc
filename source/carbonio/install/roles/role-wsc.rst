@@ -122,8 +122,8 @@ Join |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
-Migrate dispatcher
--------------------
+Dispatcher DB Migration
+-----------------------
 
 Initialise the message dispatcher
 
