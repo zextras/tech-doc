@@ -52,7 +52,6 @@ which is necessary in all installation scenarios, while the other are
 needed only if the other Roles are installed.
 
 .. card:: Mailbox
-   :class-card: sd-border-2
    
    .. code:: console
 

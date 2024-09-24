@@ -39,18 +39,18 @@ current_year = time.strftime('%Y')
 
 # -- Project information -----------------------------------------------------
 
-project = 'Zextras Carbonio CE'
+project = 'Carbonio CE Admin'
 copyright = '2024: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.7.1'
+release = '24.9.0'
 version = release
 
 # The previous and the last supported versions for upgrade - as of
 # 20240812 we support the three latest versions
-prev = '24.5.0'
-last_upg = '24.1.0'
+prev = '24.7.1'
+last_upg = '24.3.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -128,7 +128,7 @@ html_theme_options = {
 html_sidebars = { "**": [ 'navbar-logo.html',
                           'zxbrand',
                           'search-button-field.html',
-                          'sbt-sidebar-nav.html', 'home.html' ] }
+                          'sbt-sidebar-nav.html', 'index.html', 'home.html' ] }
 
 html_context = {
     'hubhome' : '%s' %hubhome,

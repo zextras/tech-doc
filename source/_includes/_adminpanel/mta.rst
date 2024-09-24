@@ -256,7 +256,9 @@ value, the less messages will be saved.
 .. rubric:: Tuning
 
 These options concern the threads used by antivirus, LMTP, and MILTER
-processes, and the maximum size of an e-mail message.
+processes, and the maximum size of an e-mail message. When a user adds
+an attachment that exceeds the maximum size, a pop up will ask to
+convert the attachment into a :term:`Smart Link`.
 
 .. _ap-mta-queue:
 

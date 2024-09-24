@@ -5,9 +5,9 @@
 
       .. code:: console
 
-         # apt install carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db carbonio-tasks-db \
-           carbonio-storages service-discover-agent
+         # apt install carbonio-docs-connector-db carbonio-tasks-db \
+           carbonio-files-db carbonio-mailbox-db carbonio-storages \
+           service-discover-agent
 
 
  
@@ -16,6 +16,6 @@
 
       .. code:: console
 
-         # dnf install carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db carbonio-tasks-db \
-           carbonio-storages service-discover-agent
+         # dnf install carbonio-docs-connector-db carbonio-tasks-db \
+           carbonio-files-db carbonio-mailbox-db carbonio-storages \
+           service-discover-agent

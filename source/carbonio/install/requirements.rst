@@ -188,8 +188,8 @@ table must be forwarded only on the Node on which the Role is installed.
 
 .. _fw-external:
 
-TCP External Connections
-++++++++++++++++++++++++
+External Connections
+++++++++++++++++++++
 
 These ports must be forwarded to allow communication with the Internet.
 
@@ -211,7 +211,7 @@ These ports must be forwarded to allow communication with the Internet.
 .. card:: Proxy Role
 
    .. csv-table::
-      :header: "Port", "Service"
+      :header: "Port", "Protocol", "Service"
       :widths: 10 10 80
 
       "80", "TCP", "unsecured connection to the Carbonio web client"
@@ -223,11 +223,11 @@ These ports must be forwarded to allow communication with the Internet.
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
       "5222", "TCP", "XMMP protocol"
+      "20000-40000", "UDP", "Audio & video streaming for |wsc|"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
-
 
 .. card:: |vs| Role
 
@@ -238,10 +238,18 @@ These ports must be forwarded to allow communication with the Internet.
       "20000-40000", "UDP", "Client connections for the audio and
       video streams"
 
+.. card:: |wsc| Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+               
+      "5222", "TCP", "Message Dispatcher"
+
 .. _fw-internal:
 
-TCP Internal Connections
-++++++++++++++++++++++++
+Internal Connections
+++++++++++++++++++++
 
 These ports must be forwarded to allow the Nodes to communicate properly
 and be able to access |product|'s internal services.
@@ -249,7 +257,7 @@ and be able to access |product|'s internal services.
 .. card:: Every Node
 
    .. csv-table::
-      :header: "Port", "Service"
+      :header: "Port", "Protocol", "Service"
       :widths: 10 10 80
 
       "22", "TCP", "SSH access"
@@ -292,7 +300,7 @@ and be able to access |product|'s internal services.
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
 
-.. card:: Mailstore & Provisioning
+.. card:: Mailstore & Provisioning Role
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"

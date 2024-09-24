@@ -65,6 +65,8 @@ modified for any individual user.
         the **Administration** tab will open, to allow changing the
         user's Role.
 
+      .. index:: Quota; by Account
+
       * The quota used and available for the e-mails and the |file|
         module. It is possible to insert up to **three** decimal
         digits for each quota.
@@ -124,6 +126,8 @@ modified for any individual user.
 
       Options present here allow to manage the account security.
 
+      .. index:: OTP; by Account
+
       New application passwords and OTP tokens can be created to allow
       the user to login by using a QR Code. The code can then be sent
       by e-mail to the user who requested it. If the recipient can not
@@ -132,10 +136,30 @@ modified for any individual user.
       text equivalent version of the QR Code will be shown (the
       **Secret Code**), allowing the user to use it.
 
-      In the Backup section, a switch allows to toggle the user
-      ability to recover e-mail that have already been deleted from
-      the Trash Bin.
-      
+      It is also possible to completely disable OTP for a user by
+      using the **One Time Password Management** switch. In this case,
+      the user can neither access their account from trusted networks
+      (see :ref:`global-2fa`), nor they have the ability to create OTP
+      codes in the *Auth* section of their `Settings` module.
+
+      .. note:: If a user has already created OTPs and at a later
+         point the Admin has disabled OTP for that user, the user can
+         still use the existing OTPs. To prevent this behaviour
+         (and forbid the user to use the old OTPs), the user's
+         OTP codes must be removed from the |adminui|.
+
+      .. index:: Undelete mail; by Account
+
+      **Backup**
+
+      A switch allows to toggle the user's ability to recover e-mail
+      that have already been deleted from the Trash Bin, but are still
+      present in the Backup
+
+      .. index:: Password policies; by Account
+
+      **Password**
+
       A policy can set to force the user to select a secure password
       and the type of characters required for the password.
 

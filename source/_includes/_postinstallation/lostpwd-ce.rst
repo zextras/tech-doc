@@ -21,7 +21,7 @@ temporary *validation code*, that expires in a few minutes, will be
 sent to the recovery e-mail address. Copy it and insert it, then click
 the :bdg-primary:`VALIDATE CODE` button.
 
-IF the code is validated, you can :bdg-primary-line:`CONTINUE WITH
+If the code is validated, you can :bdg-primary-line:`CONTINUE WITH
 YOUR SESSION`, access your mailbox and then add a new password in the
-Settings's :ref:`settings-auth` module, where you can also change the
+User Settings' Authentication module, where you can also change the
 recovery address.

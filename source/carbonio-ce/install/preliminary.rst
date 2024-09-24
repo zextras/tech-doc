@@ -1,7 +1,7 @@
 
-.. _multi-server-preliminary:
+.. _preliminary:
 
-Preliminary Tasks
-=================
+Preliminaries
+=============
 
 .. include:: /_includes/_installation/preliminary-ce.rst

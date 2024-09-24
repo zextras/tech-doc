@@ -61,6 +61,7 @@ This is the list of roles that make up a |product| installation.
 
       * service-discover-server
       * carbonio-directory-server
+      * carbonio-message-broker
 
    .. grid-item-card:: Database
       :columns: 6
@@ -73,6 +74,10 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * postgresql
+      * carbonio-notification-push-db
+      * carbonio-message-dispatcher-db
+      * carbonio-ws-collaboration-db
+
 
    .. grid-item-card:: Database Connector
       :columns: 6
@@ -107,6 +112,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-chats-ui
       * carbonio-user-management
       * carbonio-tasks-ui
+      * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
       * service-discover-agent
 
@@ -194,7 +200,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-tasks
       * service-discover-agent
 
-   .. grid-item-card:: Video Server
+   .. grid-item-card:: Video Server & Video Recording
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
@@ -247,6 +253,38 @@ This is the list of roles that make up a |product| installation.
 
       * carbonio-directory-server
 
+   .. grid-item-card:: |wsc|
+      :columns: 6
+      :margin: 5 auto auto auto
+      :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-wsc-install
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-message-dispatcher
+      * carbonio-ws-collaboration
+      * carbonio-notification-push
+      * carbonio-push-connector
+      * service-discover-agent
+
+   .. grid-item-card:: Video Server & Video Recording (WSC)
+      :columns: 6
+      :margin: 5 auto auto auto
+      :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-vs-wsc-install
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-videoserver-advanced
+      * carbonio-videorecorder
+      * service-discover-agent
+
 .. _multiserver-installation:
 
 How to install Roles
@@ -290,11 +328,11 @@ installation, please review these important remarks:
    access |product|\'s GUI using a browser: directions can be found in
    Section :ref:`web-access`.
 
-* You **must** start with the installation of the the
+* You **must** start with the installation of the
   :ref:`role-db-install` Role, followed by the
-  :ref:`role-mesh-install` Role. Then you can proceed with the
-  other infrastructure Roles and finally with any other Role you need
-  in your installation.
+  :ref:`role-mesh-install` and :ref:`role-db-conn-install`. Then you
+  can proceed with the other infrastructure Roles and finally with all
+  other Roles.
 
 .. toctree::
    :hidden:
@@ -313,3 +351,5 @@ installation, please review these important remarks:
    roles/role-monit
    roles/role-es
    roles/role-ds-replica
+   roles/role-wsc
+   roles/role-vs-wsc

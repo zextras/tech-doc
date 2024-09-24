@@ -1013,7 +1013,6 @@ allows to lower storage usage.
 Disable Backup for a COS
 ------------------------
 
-
 Since it's currently only possible to manage the enabling and disabling of this feature on a COS by command line,
 to disable the backup for a given COS use command:
 
@@ -1023,19 +1022,19 @@ For example to remove backup from COS called EXTERNAL_COLLABORATORS, use
 
 .. code:: console
 
-   zextras$ carbonio set cos EXTERNAL_COLLABORATORS backupEnabled false
+   zextras$ carbonio config set cos EXTERNAL_COLLABORATORS backupEnabled false
 
 To enable again the backup, run the `unset` command:
 
 .. code:: console
 
-   zextras$ carbonio unset cos EXTERNAL_COLLABORATORS backupEnabled
+   zextras$ carbonio config unset cos EXTERNAL_COLLABORATORS backupEnabled
 
 Or, in alternative, explicitly set to `true`:
 
 .. code:: console
 
-   zextras$ carbonio set cos EXTERNAL_COLLABORATORS backupEnabled true
+   zextras$ carbonio config set cos EXTERNAL_COLLABORATORS backupEnabled true
 
 
 You can also check the backup status for a COS,

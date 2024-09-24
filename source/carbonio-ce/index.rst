@@ -1,18 +1,14 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. Zextras Carbonio documentation master file, created by
    sphinx-quickstart on Thu Aug 26 11:06:34 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-********************************
- Welcome to |ce| Documentation!
-********************************
+**************************
+ |ce| Admin Documentation
+**************************
 
-This is the documentation of |ce| edition, the free and open source
-e-mail and collaboration software.
+Welcome to the documentation of |ce|, the free and open source e-mail
+and collaboration software.
 
 If you are looking for |carbonio|'s documentation, please refer to its
 `dedicated page <../../carbonio/html/index.html>`_.
@@ -107,16 +103,10 @@ The content is organised in multiple parts:
    .. grid-item-card:: |carbonio| User Guides
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: usage/toc
+      :link: https://docs.zextras.com/user-guides/carbonio/en/html
 
       Everyday's usage of |product|, including its use on the
       dedicated mobile Apps
-
-      .. toctree::
-         :hidden:
-
-         usage/toc
 
    .. grid-item-card:: Monitoring
       :columns: 12 12 6 6
@@ -157,3 +147,12 @@ The content is organised in multiple parts:
          :hidden:
 
          glossary
+
+   .. grid-item-card:: Index
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :margin: 3 0 auto auto
+      :link-type: ref
+      :link: genindex
+
+      List of relevant topics

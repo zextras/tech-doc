@@ -1,11 +1,9 @@
 .. _role-wsc-install:
 
-Workstream Collaboration  :bdg-danger:`BETA`
-============================================
+|wsc|
+=====
 
-The WSC Role adds the chat functionality to |product|. It is currently
-in :bdg-danger:`BETA` version, hence it may still lack some
-functionalities and may not work 100% properly.
+The |wsc| Role adds the chat functionality to |product|.
 
 Install Packages
 ----------------
@@ -50,8 +48,8 @@ Restart the service
    # systemctl restart carbonio-message-dispatcher
 
 
-Enable the Workstream Collaboration UI
---------------------------------------
+Enable the |wsc| UI
+-------------------
 
 The |wsc| role is disabled by default, you can enable it either from
 the |adminui| or from the command line by running as the ``zextras``
