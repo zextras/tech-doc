@@ -137,6 +137,10 @@ whole.
 
    * Manage Domains
    * Manage Class Of Service
+
+     * Modify COS and Accounts: Enable or disable OTP Management Feature
+     * Manage OTPs for Users: Create, delete, and list OTPs
+
    * Manage Admins and their roles.
    * Manage Global Configuration
 
@@ -238,6 +242,8 @@ domain. These rights are reserved to a User Management Admin
 
      * Mailstore used for the account
 
+   * Modify Accounts: Enable or disable OTP Management Feature
+   * Manage OTPs for Users: Create, delete, and list OTPs
    * Manage user Aliases
    * Manage User password policy settings
    * Create, modify and delete normal resources except for

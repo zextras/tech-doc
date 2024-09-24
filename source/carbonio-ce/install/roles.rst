@@ -61,6 +61,7 @@ This is the list of roles that make up a |product| installation.
 
       * service-discover-server
       * carbonio-directory-server
+      * carbonio-message-broker
 
    .. grid-item-card:: Database
       :columns: 6
@@ -184,7 +185,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-tasks-ce
       * service-discover-agent
 
-   .. grid-item-card:: Workstream Collaboration :bdg-danger:`BETA`
+   .. grid-item-card:: |wsc|
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
@@ -194,7 +195,6 @@ This is the list of roles that make up a |product| installation.
 
       Packages:
 
-      * carbonio-message-broker
       * carbonio-message-dispatcher
       * carbonio-ws-collaboration-ce
       * service-discover-agent

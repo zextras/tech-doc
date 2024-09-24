@@ -69,6 +69,8 @@ modified for any individual user.
            wipe it, so the user is forced to change it on the next
            login attempt.
 
+      .. index:: Quota; by Account
+
       * The quota used and available for the e-mails and the |file|
         module. It is possible to insert up to **three** decimal
         digits for each quota.
@@ -115,13 +117,18 @@ modified for any individual user.
    .. tab-item:: Security
       :class-label: sd-px-3
 
-      Options present here allow to manage the account security: OTP
-      and policies for password and failed login. New application
-      passwords and OTP tokens can be created to allow the user to
-      login by using a QR Code; a policy can set to force the user to
+      Options present here allow to manage the account security:
+      policies for password and failed login. New application
+      passwords can be created; a policy can set to force the user to
       select a secure password and the type of characters to be
       chosen.
 
+      .. index:: Password policies; by Account
+
+      **Password**
+
+      A policy can set to force the user to select a secure password
+      and the type of characters required for the password.
       The Forgotten password feature, if enabled, allows a user to
       receive a token, to temporarily access the webmail, to the
       recovery address specified in the textfield next to the
@@ -353,7 +360,7 @@ save. The *acme_admin* user is now able to access the |adminui|.
 Distribution List
 =================
 
-.. include:: /_includes/_adminpanel/_domains/dls-ce.rst
+.. include:: /_includes/_adminpanel/_domains/dls.rst
 
 .. _ap-resources:
 

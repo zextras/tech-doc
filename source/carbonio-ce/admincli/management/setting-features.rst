@@ -4,34 +4,28 @@
  Setting Features from CLI
 ===========================
 
-In this section we describe a few commands to query of modify the
-availability of some |product| component at COS or account level via
-the CLI, and therefore is the counterpart of |adminui| sections
+In this section we describe the syntax of commands to query of modify
+the availability of some |product| component at COS or account level
+via the CLI, and therefore is the counterpart of |adminui| sections
 :ref:`COS / features <cos-features>` and :ref:`Domains / Accounts /
 Edit <ap-accounts>`.
 
-The following attributes are available, that control if the feature is
-available to a user or COS.
+We use a few available attributes:
 
 .. list-table::
-   
+
    * - **Attribute**
      - **Default**
      - **Feature Description**
    * - ``carbonioFeatureMailsAppEnabled``
      - ``TRUE``
-     - The Mails component is available on :ref:`mobile apps
-       <mobile_apps>`
+     - The Mails component is available on mobile apps
    * - ``carbonioFeatureFilesEnabled``
      - ``TRUE``
      - The |file| component is available
    * - ``carbonioFeatureFilesAppEnabled``
      - ``TRUE``
-     - The |file| component is available on :ref:`mobile apps
-       <mobile_apps>`
-   * - ``zimbraFeatureOptionsEnabled``
-     - ``FALSE``
-     - The Settings module is available to a user
+     - The |file| component is available mobile apps
 
 In order to modify these values, you can use or adapt the following commands
 

@@ -66,7 +66,7 @@ Linux, macOS, or BSD, satisfying the following requirements
    #. be able to reach one another via SSH
 
    #. have the |product| repository configured (see section
-      :ref:`multi-server-preliminary` for directions)
+      :ref:`preliminary` for directions)
 
 .. _ansible-setup:
 

@@ -27,6 +27,7 @@ Global Server Settings
 
 The main configuration options are split in multiple sections: *Server
 Lists*, *Server Config*, and *Advanced*.
+
 .. _ap-bk-server-list:
 
 Server Lists

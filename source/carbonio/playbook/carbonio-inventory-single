@@ -22,17 +22,21 @@ webmailHostname=srv1.example.com
 [applicationServers]
 srv1.example.com
 
+############ Optional Roles ############
+
 [previewServers]
 srv1.example.com
 
 [filesServers]
 srv1.example.com
 
-############ Optional Roles - to be installed on a different target ############
+############ Optional Roles - to be installed on a different VM ############
 [taskServers]
 #srv2.example.com
+
 [docsServers]
 #srv2.example.com
+
 [videoServers]
 #srv3.example.com public_ip_address=x.y.z.t
 
@@ -40,5 +44,7 @@ srv1.example.com
 ############ They are required for the proper Ansible installation #############
 
 [replicaDirectoryServers]
+
 [prometheusServers]
+
 [syslogServer]

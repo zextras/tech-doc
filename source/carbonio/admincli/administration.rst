@@ -15,9 +15,6 @@ setup.
 
 :ref:`manage-alias` explains how to add aliases to an e-mail address.
 
-:ref:`domain-limits` show how to change some global limit that will
-affect all users in the domain.
-
 :ref:`adv-admin` introduces some advanced topic about the
 administration of a |product| server.
      
@@ -39,7 +36,6 @@ certificate, either manually or automatically.
 
    administration/auth
    administration/managealias
-   administration/domainlimits
    administration/advancedadmin
    administration/setting-features
    administration/billing-data

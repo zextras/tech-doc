@@ -113,13 +113,11 @@ Roles on the Nodes, according to the following guidelines.
 
       Node Name/FQDN: srv3.example.com
 
-      Type of services: Mails, Calendars, Contacts, and Tasks 
+      Type of services: Mails, Calendars, and Contacts
 
       Roles installed:
 
       * :ref:`role-prov-install`
         
       * :ref:`role-db-conn-install`
-      
-      * :ref:`role-tasks-install`
 
