@@ -119,7 +119,7 @@ New Features List
    The latest update to Carbonio File introduces a grid view layout, allowing users to browse files as thumbnails. This enhancement provides a more visually intuitive way to view documents, images, videos, and other file formats.
 
 
-**FILES-762: None**
+**FILES-762: File copy failure handling**
    The system now properly handles copy operations when the storage quota is reached. A permanent snackbar message informs the user: “Copy action failed. You have reached your storage limit. Delete some items to free up storage space and try again.” 
 
 
@@ -207,6 +207,10 @@ New Features List
 
 **SHELL-237: Remove "Application Version" from User Settings**
    The "Application Version" section has been removed from the user settings as it caused potential confusion and frustration for users. The version information is better managed by the admin through package version checks (apt/dnf), making it unnecessary in the user interface.
+
+
+**UM-33: Move carbonio-user-management JAR to /usr/share**
+   The Carbonio user management JAR file will now be installed in the /usr/share/carbonio/ directory to comply with the FHS standard. A bash script is introduced to execute the JAR, allowing sysadmins to update Java parameters and log levels without needing to run systemctl daemon-reload.
 
 *****
 
@@ -369,6 +373,10 @@ Bugfix List
    The issue with the "Clone as current" feature, where selecting an older version to restore as the current one results in duplicating the most recent version instead, has been resolved. Now, the correct version is restored as expected.
 
 
+**FILES-843: Carbonio Files filenames escape fixed**
+   Filenames are now properly escaped in Files.
+
+
 **IN-758: Improved LDAP startup robustness**
    LDAP service startup is now more robust with improved handling of process checks, preventing unintended terminations during startup.
 
@@ -385,6 +393,9 @@ Bugfix List
    The MIME type for .mjs files is now correctly configured, allowing PDF previews to work in production without triggering MIME errors in the browser.
 
 
+**SHELL-239: Fix for Polling Interval Issue in Carbonio Webmail**
+   This update fixes an issue in Carbonio Webmail where the waitDisallowed field was misread, causing unnecessary polling loops. The fix ensures the field is correctly handled, adjusting the polling interval properly to reduce server load and improve performance.
+
 
 **SHELL-241: Hide privacy and remove account tab**
    In Carbonio Advanced, the "Privacy" section is now hidden inside the general settings on the secondary bar. Additionally, the "Account" section has been removed from the general settings in both CE and Advanced versions.
@@ -392,6 +403,14 @@ Bugfix List
 
 **SHELL-242: Board icon color restoration**
    When a board is opened, its icon on the primary bar now appears with the correct colors, showing the blue icon on a transparent background instead of turning entirely blue.
+
+
+**TEAMS-4145: Fixed virtual rooms**
+   Resolved an issue where users were unable to enter virtual rooms in development builds due to a missing parameter in the build:dev scripts.
+
+
+**TEAMS-4146: Space deletion functionality in chats improved**
+   The space deletion functionality within the Chats tab now works correctly without any errors.
 
 *****
 
