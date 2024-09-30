@@ -5,13 +5,18 @@ placed into |carbonio| Mails & Calendar Node's
 :file:`/tmp/backup/user1@example.com.csv`,
 :file:`/tmp/backup/user1@acme.corp.csv`, and so on.
 
-The files to be imported must have the following format::
+The files to be imported must have the following format.
 
-  "company","email","firstName","jobTitle","lastName","middleName","mobilePhone","namePrefix","nickname","workCity","workCountry","workPostalCode","workState","workStreet","workURL"
-  "ACME","j.doe@example.com","john","CEO","doe","","","","Boss",“Vicenza”,“IT”,“36100”,"","","www.example.com"
-  "ACME","m.jane@example.com","mary","CFO","jane","","+39 000000000","","MJ",“Vicenza”,“IT”,“36100”,"","","www.example.com"
-  "ACME","p.sullivan@example.com","Peter","Head of HR","Sullivan","Raymond","","mr","Ray",“Vicenza”,“IT”,“36100”,"","","www.example.com"
-  "ACME","d.smith@example.com","Donald","CTO","Smith",“”,"","","Don",“Vicenza”,“IT”,“36100”,“”,“”,"www.example.com"
+.. dropdown:: Example CSV file
+   :open:
+
+   ::
+
+      "company","email","firstName","jobTitle","lastName","middleName","mobilePhone","namePrefix","nickname","workCity","workCountry","workPostalCode","workState","workStreet","workURL"
+      "ACME","j.doe@example.com","john","CEO","doe","","","","Boss",“Vicenza”,“IT”,“36100”,"","","www.example.com"
+      "ACME","m.jane@example.com","mary","CFO","jane","","+39 000000000","","MJ",“Vicenza”,“IT”,“36100”,"","","www.example.com"
+      "ACME","p.sullivan@example.com","Peter","Head of HR","Sullivan","Raymond","","mr","Ray",“Vicenza”,“IT”,“36100”,"","","www.example.com"
+      "ACME","d.smith@example.com","Donald","CTO","Smith",“”,"","","Don",“Vicenza”,“IT”,“36100”,“”,“”,"www.example.com"
 
 They can be imported into |product| using the following command:
 

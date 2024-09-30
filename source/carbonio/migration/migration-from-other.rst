@@ -71,11 +71,16 @@ Option 1
 All users will receive the same password and they will need to provide
 a new password on the first login.
 
-The CSV file must have the following structure::
+The CSV file must have the following structure.
 
-  email_1@example.io,givenName,Surname,DisplayName
-  email_2@example.io,givenName,Surname,DisplayName
-  email_3@example.io,givenName,Surname,DisplayName
+.. dropdown:: Example |dl| file
+   :open:
+
+   ::
+
+      email_1@example.io,givenName,Surname,DisplayName
+      email_2@example.io,givenName,Surname,DisplayName
+      email_3@example.io,givenName,Surname,DisplayName
 
 As the ``zextras`` user, execute the following script, which will
 create a command file that will be fed to :command:`carbonio` later:
@@ -102,11 +107,16 @@ An empty password is created for all users, which are enabled for
 password recovery. Password recovery and a recovery address e-mail
 must be set up for each user.
 
-The CSV file must have the following structure::
+The CSV file must have the following structure
 
-  email_1@example.io,givenName,Surname,DisplayName,recovery_address1@domain.com
-  email_2@example.io,givenName,Surname,DisplayName,recovery_address2@domain.com
-  email_3@example.io,givenName,Surname,DisplayName,recovery_address3@domain.com
+.. dropdown:: Example |dl| file
+   :open:
+
+   ::
+
+      email_1@example.io,givenName,Surname,DisplayName,recovery_address1@domain.com
+      email_2@example.io,givenName,Surname,DisplayName,recovery_address2@domain.com
+      email_3@example.io,givenName,Surname,DisplayName,recovery_address3@domain.com
 
 As the ``zextras`` user, execute the following script, which will
 create a command file that will be fed to :command:`carbonio` later:
@@ -131,11 +141,16 @@ Option 3
 
 The actual password of each user is set in the CSV file.
 
-The CSV file must have the following structure::
+The CSV file must have the following structure.
 
-  email_1@example.io,password1,givenName,Surname,DisplayName
-  email_1@example.io,password2,givenName,Surname,DisplayName
-  email_1@example.io,password3,givenName,Surname,DisplayName
+.. dropdown:: Example |dl| file
+   :open:
+
+   ::
+
+      email_1@example.io,password1,givenName,Surname,DisplayName
+      email_1@example.io,password2,givenName,Surname,DisplayName
+      email_1@example.io,password3,givenName,Surname,DisplayName
 
 As the ``zextras`` user, execute the following script, which will
 create a command file that will be fed to :command:`carbonio` later:
