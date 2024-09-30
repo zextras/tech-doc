@@ -23,5 +23,5 @@ They can be imported into |product| using the following command:
 
 CSV files can be also be imported manually by each user according to
 the direction presented in the `Working with Contacts
-<http://localhost:8020/user-guides/carbonio/en/html/contacts/toc.html#import-a-csv-file-as-an-address-book>`_
+<https://docs.zextras.com/user-guides/carbonio/en/html/contacts/toc.html#import-a-csv-file-as-an-address-book>`_
 section of the User Guides.
