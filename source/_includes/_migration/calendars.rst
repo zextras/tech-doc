@@ -114,5 +114,5 @@ They can be imported into |product| using the following command:
 
 ICS files can be also be imported manually by each user according to
 the direction presented in the `Working with Calendars
-<http://localhost:8020/user-guides/carbonio/en/html/calendars/toc.html#import-an-ics-file-as-new-calendar>`_
+<https://docs.zextras.com/user-guides/carbonio/en/html/calendars/toc.html#import-an-ics-file-as-new-calendar>`_
 section of the User Guides.
