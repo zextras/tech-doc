@@ -1,10 +1,15 @@
 
 To import |dl|\s, you need to export them in a CSV file,
-called :file:`dl_provisioning.csv`, that has this format::
-  
-  distibution_list1@example.io,Description1,Name1,email_1@example.io,email_2@example.io,
-  distibution_list2@example.io,Description2,Name2,email_2@example.io,email_4@example.io,email_5@example.io
-  distibution_list3@example.io,Description3,Name3,email_3@example.io,email_6@example.io,email_7@example.io,email_8@example.io
+called :file:`dl_provisioning.csv`, that has this format.
+
+.. dropdown:: Example |dl| file
+   :open:
+
+   ::
+
+      distibution_list1@example.io,Description1,Name1,email_1@example.io,email_2@example.io,
+      distibution_list2@example.io,Description2,Name2,email_2@example.io,email_4@example.io,email_5@example.io
+      distibution_list3@example.io,Description3,Name3,email_3@example.io,email_6@example.io,email_7@example.io,email_8@example.io
 
 The first three fields are parsed as the Distribution List's address,
 Description, and Name, respectively, and they are reflected in the

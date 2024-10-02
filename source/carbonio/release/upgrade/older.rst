@@ -2,12 +2,12 @@
 .. _upgrade-older:
 
 =======================================
- Upgrade from Older Supported Versions
+ Upgrade from Older Versions
 =======================================
 
-If you plan to upgrade from a version more recent than |last_upg|
-included, you may encounter issues or need to carry out tasks or
-command that are reported in Section :ref:`up-older-issues`.
+If you plan to upgrade from a version older than |prev|, you **may**
+encounter issues or need to carry out tasks or commands that are
+reported in Section :ref:`up-older-issues`.
 
 There are two equivalent methods to upgrade a |product|
 infrastructure: automatically using Ansible, or manually, Node by
@@ -38,8 +38,9 @@ Requirements & Preliminaries
 Known Issue (Older Releases)
 ============================
 
-During the upgrade from an older version, you may encounter one or
-more of the following issues that require a manual intervention.
+During the upgrade from an older |product| version, you **may** encounter
+one or more of the following issues that require a manual
+intervention.
 
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
 * The new package :ref:`carbonio-storages <upgrade-storages>` must be
@@ -54,10 +55,6 @@ more of the following issues that require a manual intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * The :ref:`advanced modules do not start <upgrade_pg-adv-mod>` due to
   miscommunication with the Database or Database Connector Roles
-
-Additionally, after the upgrade to |release|, the |adminui| will still
-report the version of |product| to be **24.7.0**. However, the CLI
-:command:`zmcontrol -v` will report the correct version (|release|).
 
 .. include:: /_includes/_upgrade/issues.rst 
 .. include:: /_includes/_upgrade/issues-pg-adv-modules.rst

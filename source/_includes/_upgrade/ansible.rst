@@ -15,8 +15,17 @@ command.
 The above command will install the necessary infrastructure to use for
 the |product| upgrade. Next, you need to move to the directory where
 you have the **inventory file** of your installation (it is called
-:file:`data` in the :ref:`ansible-setup`, then issue the following
-command.
+:file:`data` in the :ref:`ansible-setup` Section), then issue the
+command below. Before running it, please note that:
+
+* The command will automatically remove all unused dependencies
+  installed on your system. To prevent this behaviour, add to the
+  command line the option :command:`--extra-vars slip_autoremove=1`
+
+
+  * Packages that were manually installed and are no longer used will
+    **not** be removed from your system: you need to remove them
+    manually
 
 .. code:: console
 
