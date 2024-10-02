@@ -17,17 +17,10 @@ starting the procedure, make sure that you satisfy the
 Requirements & Preliminaries
 ============================
 
-Before attempting to upgrade |product|, make sure that the *Ansible
-playbook* is updated.
-
-.. code:: console
-
-   $ ansible-galaxy collection install -U zxbot.carbonio_upgrade
-
-The Ansible playbook will update all the packages installed on he system, from
-any active configured repository, not only |product|\'s. To avoid this
-behaviour, comment out any repositories from which you do not want to
-upgrade packages.
+The *Ansible playbook* will update all the packages installed on he
+system, from any active configured repository, not only
+|product|\'s. To avoid this behaviour, comment out any repositories
+from which you do not want to upgrade packages.
 
 This upgrade procedure requires that **PostgreSQL 16** be
 installed. If you did not yet upgrade it, please refer to Section
