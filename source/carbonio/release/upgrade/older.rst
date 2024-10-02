@@ -55,9 +55,5 @@ more of the following issues that require a manual intervention.
 * The :ref:`advanced modules do not start <upgrade_pg-adv-mod>` due to
   miscommunication with the Database or Database Connector Roles
 
-Additionally, after the upgrade to |release|, the |adminui| will still
-report the version of |product| to be **24.7.0**. However, the CLI
-:command:`zmcontrol -v` will report the correct version (|release|).
-
 .. include:: /_includes/_upgrade/issues.rst 
 .. include:: /_includes/_upgrade/issues-pg-adv-modules.rst
