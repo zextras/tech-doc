@@ -22,9 +22,10 @@ command below. Before running it, please note that:
   installed on your system. To prevent this behaviour, add to the
   command line the option :command:`--extra-vars slip_autoremove=1`
 
-* Packages that were manually installed and are no longer used will
-  **not** be removed from your system: you need to remove them
-  *manually
+
+  * Packages that were manually installed and are no longer used will
+    **not** be removed from your system: you need to remove them
+    manually
 
 .. code:: console
 

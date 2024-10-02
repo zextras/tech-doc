@@ -47,13 +47,8 @@ installed. If you did not yet upgrade it, please refer to Section
 Known Issues
 ~~~~~~~~~~~~
 
-After the upgrade to |release|, the |adminui| will still report the
-version of |product| to be **24.7.0**. However, the CLI
-:command:`zmcontrol -v` will report the correct version (|release|).
-
-..
-   There is no know issue that impacts either the upgrade process to
-   |product| |version| or the |product| operations afterwards.
+There is no know issue that impacts either the upgrade process to
+|product| |version| or the |product| operations afterwards.
 
 .. _upgrade-older:
 
@@ -92,10 +87,6 @@ more of the following issues that require a manual intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
-
-Additionally, after the upgrade to |release|, the |adminui| will still
-report the version of |product| to be **24.7.0**. However, the CLI
-:command:`zmcontrol -v` will report the correct version (|release|).
 
 .. _manual-grafana:
 

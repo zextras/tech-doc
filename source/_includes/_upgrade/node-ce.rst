@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 If you are on a Multi-Server, remember to start from the node
 featuring the Directory Server Role, then all the other in the same
 order of installation.
@@ -9,18 +5,10 @@ order of installation.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 1. Stop services
+   .. grid-item-card:: Step 1. Clean package list
       :columns: 12 12 6 6
 
-      As the ``zextras`` user, run:
-
-      .. code:: console
-
-         zextras$ zmcontrol stop
-
-   .. grid-item-card:: Step 2. Clean cached package list and
-      information
-      :columns: 12 12 6 6
+      Clean cached package list, metadata, and information.
 
       .. tab-set::
 
@@ -38,9 +26,10 @@ order of installation.
 
                # dnf clean all
 
-   .. grid-item-card:: Step 3. Update package list and
-      install upgrades
-      :columns: 12 12 12 12
+   .. grid-item-card:: Step 2. Upgrade Node
+      :columns: 12 12 6 6
+
+      Update package list and install upgrades.
 
       .. tab-set::
 
@@ -56,13 +45,14 @@ order of installation.
 
             .. code:: console
 
-               # dnf upgrade --best --allowerasing 
+               # dnf upgrade --best --allowerasing
 
-   .. grid-item-card:: Step 4. (Optional) Remove unused packages
-      :columns: 12 12 12 12
+   .. grid-item-card:: Step 3. (Optional) Remove unused packages
+      :columns: 12 12 6 6
 
-      After the latest packages have been installed, make sure that
-      you do not have unused packages still installed on your system.
+      After the latest packages have been installed, you can remove
+      unused packages still installed on your system. If unsure, skip
+      this step.
 
       .. tab-set::
 
@@ -80,15 +70,15 @@ order of installation.
 
                # dnf autoremove
 
-   .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
 
       .. code:: console
 
          # pending-setups -a
-
-   .. grid-item-card:: Step 6. Reboot
-      :columns: 12 12 6 6
+         
+   .. grid-item-card:: Step 5. Reboot
+      :columns: 12 12 12 12
 
       Once the upgrade has completed successfully, run command:
 
