@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. _carbonio-upgrade:
 
@@ -52,12 +49,12 @@ There is no know issue that impacts either the upgrade process to
 
 .. _upgrade-older:
 
-Upgrade from Older Supported Versions
--------------------------------------
+Upgrade from Older Versions
+---------------------------
 
-If you plan to upgrade from a version more recent than |last_upg|
-included, you may encounter issues or need to carry out tasks or
-command that are reported in Section :ref:`up-older-issues`.
+If you plan to upgrade from a version older than |prev|, you **may
+encounter** issues or need to carry out tasks or command that are
+reported in Section :ref:`up-older-issues`.
 
 .. _up-older-req:
 
