@@ -1,12 +1,8 @@
-.. SPDX-FileCopyrightText: 2023 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 As a preliminary task, we backup the LDAP data of the Directory
 Server. On a Multi-Server installation, execute the following commands
 on the Node with the Directory Server Role installed.
 
-#. Make a dump of the LDAP Database, especially if the if the upgrade
+#. Make a dump of the LDAP Database, especially if the upgrade
    includes the Directory Server. This can be done using the command
    (as the ``zextras`` user)
 
