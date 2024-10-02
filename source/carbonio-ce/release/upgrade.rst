@@ -18,7 +18,7 @@ Upgrade Nodes
 
 .. card:: Preliminary Tasks
 
-   .. include:: /_includes/_upgrade/ds-ce.rst
+   .. include:: /_includes/_upgrade/ds.rst
 
 .. include:: /_includes/_upgrade/node-ce.rst
 

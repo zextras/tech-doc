@@ -1,5 +1,5 @@
-If you are on a Multi-Server, remember to start from the node
-featuring the Directory Server Role, then all the other in the same
+If you are on a Multi-Server, remember to start from the Node
+featuring the Directory Server Role, then all the other Nodes in the same
 order of installation.
 
 .. grid:: 1 1 1 2

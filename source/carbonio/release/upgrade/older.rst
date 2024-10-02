@@ -5,9 +5,9 @@
  Upgrade from Older Versions
 =======================================
 
-If you plan to upgrade from a version older than |prev| included, you
-**may** encounter issues or need to carry out tasks or commands that
-are reported in Section :ref:`up-older-issues`.
+If you plan to upgrade from a version older than |prev|, you **may**
+encounter issues or need to carry out tasks or commands that are
+reported in Section :ref:`up-older-issues`.
 
 There are two equivalent methods to upgrade a |product|
 infrastructure: automatically using Ansible, or manually, Node by
