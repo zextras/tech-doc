@@ -44,11 +44,4 @@ Known Issues
 This is a list of known issues that impact |product| after the upgrade
 to |version|.
 
-.. card:: Version mismatch on CLI and |adminui|
-
-   After the upgrade to |release|, the |adminui| will still report the
-   version of |product| to be **24.7.0**. However, the CLI
-   :command:`zmcontrol -v` will report the correct version
-   (|release|).
-
 .. include:: /_includes/_upgrade/issues-pg-adv-modules.rst
