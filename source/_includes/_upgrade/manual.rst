@@ -1,5 +1,5 @@
-Remember to start the upgrade from the node featuring the Directory
-Server, then all the other in the same order of installation.
+Remember to start the upgrade from the Node featuring the Directory
+Server, then all the other Nodes in the same order of installation.
 
 .. grid:: 1 1 1 2
    :gutter: 3
