@@ -38,115 +38,226 @@ modified for any individual user.
    inherited value, while if you click on it you will restore the COS
    value.
 
-.. tab-set::
+.. card:: Account Options
+   :class-title: sd-fs-4 sd-text-center
 
-   .. tab-item:: General
-      :class-label: sd-px-3
+   The configuration options available for each account are grouped in
+   several categories. Click on each button to go to the respective
+   category.
 
-      This tab contains all the options provided during the
-      :ref:`account creation <ap-new-account>`, plus other options,
-      including:
+   .. grid::
+      :gutter: 3
 
-      * The number of aliases of the account
+      .. grid-item-card::
+         :columns: 4
+         :class-body: sd-text-center
 
-      * The type of the account, which is one of
-        
-        * *Normal*: a :term:`Regular user`
-        * *DelegatedAdmin*: a Delegated (Domain) Administrator
-        * *Admin*: a Global Administrator
-        * *System*: special accounts used by |product|, i.e.,
-          GALsync, spam and ham training, and virus quarantine
-        * *External*: an account that does not use |product| for
-          authentication
+         .. button-ref:: act-gen
+            :color: primary
+            :class: sd-fs-5
+            :click-parent:
+            :expand:
 
-        Upon clicking the arrow on the right-hand side of the option,
-        the **Administration** tab will open, to allow changing the
-        user's Role.
+            General
 
-      * To force the user to change password at the next login
+         General configuration options of the account
 
-        .. note:: An Admin can not change the password of a user, only
-           wipe it, so the user is forced to change it on the next
-           login attempt.
+      .. grid-item-card::
+         :columns: 4
+         :class-body: sd-text-center
 
-      .. index:: Quota; by Account
+         .. button-ref:: act-prof
+            :color: primary
+            :class: sd-fs-5
+            :click-parent:
+            :expand:
 
-      * The quota used and available for the e-mails and the |file|
-        module. It is possible to insert up to **three** decimal
-        digits for each quota.
+            Profile
 
-      * To remove the user's password from LDAP
+         Personal information about the user and its role
 
-      * The COS the user belongs to
+      .. grid-item-card::
+         :columns: 4
+         :class-body: sd-text-center
 
-      * The Distribution List memberships
+         .. button-ref:: act-conf
+            :color: primary
+            :class: sd-fs-5
+            :click-parent:
+            :expand:
 
-      * To move a user to another domain, which must be defined on the
-        same server, by writing the new one in the **Domain Name**
+            Configuration
 
-      At the bottom, it is possible to see all the user's open
-      sessions, which can be terminated by selecting one and clicking
-      :bdg-danger-line:`END SESSION` button on the top right of the
-      list.
+         Options about e-mail management and features available to users
 
-   .. tab-item:: Profile
-      :class-label: sd-px-3
+      .. grid-item-card::
+         :columns: 4
+         :class-body: sd-text-center
 
-      Data in this tab represent the user's phones, company, and
-      address. They can be managed by both the user and the
-      Administrators.
+         .. button-ref:: act-prefs
+            :color: primary
+            :class: sd-fs-5
+            :click-parent:
+            :expand:
 
-   .. tab-item:: Configuration
-      :class-label: sd-px-3
+            User Preferences
 
-      The options listed here allows to specify forwarding addresses
-      and to prevent e-mail messages to be saved locally, if these
-      operations are allowed by the administrator. Values for these
-      options can be set from the CLI: please refer to section
-      :ref:`cli-features` for more information.
+         Default values for preferences that can be overridden by the user
 
-   .. tab-item:: User Preferences
-      :class-label: sd-px-3
+      .. grid-item-card::
+         :columns: 4
+         :class-body: sd-text-center
 
-      The preferences in this tab concern how a user sees or
-      interacts with the e-mails (receive, sending, composing, adding
-      a signature) and are mostly inherited from the COS.
+         .. button-ref:: act-sec
+            :color: primary
+            :class: sd-fs-5
+            :click-parent:
+            :expand:
 
-      .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+             Security
 
-   .. tab-item:: Security
-      :class-label: sd-px-3
+         Password policies, OTP, backup and other security-related
+         options
 
-      Options present here allow to manage the account security:
-      policies for password and failed login. New application
-      passwords can be created; a policy can set to force the user to
-      select a secure password and the type of characters to be
-      chosen.
+      .. grid-item-card::
+         :columns: 4
+         :class-body: sd-text-center
 
-      .. index:: Password policies; by Account
+         .. button-ref:: act-gen
+            :color: primary
+            :class: sd-fs-5
+            :click-parent:
+            :expand:
 
-      **Password**
+            Administration
 
-      A policy can set to force the user to select a secure password
-      and the type of characters required for the password.
-      The Forgotten password feature, if enabled, allows a user to
-      receive a token, to temporarily access the webmail, to the
-      recovery address specified in the textfield next to the
-      option. It also provides the user a new option in the
-      :menuselection:`Settings --> Auth`, namely the ability to change
-      the recovery address.
+         Additional Domain Administration roles
 
-      .. seealso:: The password recovery procedure is described in
-         section :ref:`password-recovery`.
+.. _act-gen:
 
-      The Failed login policy determines how the system
-      behaves when a user fails too many consecutive logins.
+.. dropdown:: General
+   :open:
+   :class-title: sd-text-primary
 
-   .. tab-item:: Administration
-      :class-label: sd-px-3
+   This tab contains all the options provided during the
+   :ref:`account creation <ap-new-account>`, plus other options,
+   including:
 
-      By toggling the *Global Administration* switch you can promote
-      or demote the user to Global Administrator or vice versa.
+   * The number of aliases of the account
+
+   * The type of the account, which is one of
+
+     * *Normal*: a :term:`Regular user`
+     * *DelegatedAdmin*: a Delegated (Domain) Administrator
+     * *Admin*: a Global Administrator
+     * *System*: special accounts used by |product|, i.e.,
+       GALsync, spam and ham training, and virus quarantine
+     * *External*: an account that does not use |product| for
+       authentication
+
+     Upon clicking the arrow on the right-hand side of the option,
+     the **Administration** tab will open, to allow changing the
+     user's Role.
+
+   * To force the user to change password at the next login
+
+     .. note:: An Admin can not change the password of a user, only
+        wipe it, so the user is forced to change it on the next
+        login attempt.
+
+   .. index:: Quota; by Account
+
+   * The quota used and available for the e-mails and the |file|
+     module. It is possible to insert up to **three** decimal
+     digits for each quota.
+
+   * To remove the user's password from LDAP
+
+   * The COS the user belongs to
+
+   * The Distribution List memberships
+
+   * To move a user to another domain, which must be defined on the
+     same server, by writing the new one in the **Domain Name**
+
+   At the bottom, it is possible to see all the user's open
+   sessions, which can be terminated by selecting one and clicking
+   :bdg-danger-line:`END SESSION` button on the top right of the
+   list.
+
+.. _act-prof:
+
+.. dropdown:: Profile
+   :open:
+   :class-title: sd-text-primary
+
+   Data in this tab represent the user's phones, company, and
+   address. They can be managed by both the user and the
+   Administrators.
+
+.. _act-conf:
+
+.. dropdown:: Configuration
+   :open:
+   :class-title: sd-text-primary
+
+   The options listed here allows to specify forwarding addresses
+   and to prevent e-mail messages to be saved locally, if these
+   operations are allowed by the administrator. Values for these
+   options can be set from the CLI: please refer to section
+   :ref:`cli-features` for more information.
+
+.. _act-prefs:
+
+.. dropdown:: User Preferences
+   :open:
+   :class-title: sd-text-primary
+
+   The preferences in this tab concern how a user sees or
+   interacts with the e-mails (receive, sending, composing, adding
+   a signature) and are mostly inherited from the COS.
+
+   .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+
+.. _act-sec:
+
+.. dropdown:: Security
+   :open:
+   :class-title: sd-text-primary
+
+   Options present here allow to manage the account security:
+   policies for password and failed login. New application
+   passwords can be created; a policy can set to force the user to
+   select a secure password and the type of characters to be
+   chosen.
+
+   .. index:: Password policies; by Account
+
+   **Password**
+
+   A policy can set to force the user to select a secure password
+   and the type of characters required for the password.
+   The Forgotten password feature, if enabled, allows a user to
+   receive a token, to temporarily access the webmail, to the
+   recovery address specified in the textfield next to the
+   option. It also provides the user a new option in the
+   :menuselection:`Settings --> Auth`, namely the ability to change
+   the recovery address.
+
+   .. seealso:: The password recovery procedure is described in
+      section :ref:`password-recovery`.
+
+   The Failed login policy determines how the system
+   behaves when a user fails too many consecutive logins.
+
+.. _act-adm:
+
+.. dropdown:: Administration
+   :open:
+   :class-title: sd-text-primary
+
+   By toggling the *Global Administration* switch you can promote
+   or demote the user to Global Administrator or vice versa.
 
 .. index:: ! Account status, Account; status
 
