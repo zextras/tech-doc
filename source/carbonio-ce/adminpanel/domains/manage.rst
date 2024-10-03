@@ -18,25 +18,19 @@ information on their type and status.
 The list can be filtered using the text field above the list, while
 a new account can be created using the :bdg-primary:`+` button.
 
-A click on any account will open a new panel that contains a number of
-information and options, including the name and aliases, if present,
-its status (see below), and creation date. The aliases can be easily
-managed by clicking the :bdg-primary-line:`MANAGE ALIAS` button: in
-the opening dialog window, select a domain and a new alias, then click
-:bdg-primary-line:`+` to add the alias to the user.
-
 On the panel's top right corner, buttons allow to edit or delete the
 user, and also to redirect to the user's mailbox.
 
-When editing a user's account, most of the option are the same that
-can be found in the :ref:`ap-new-account` section and are organised in
-tabs. Options defined in the user's COS are inherited, but can be
-modified for any individual user.
+A click on any account will open a new panel that contains a number of
+information and options that can be modified. When editing a user's
+account, most of the option are the same that can be found in the
+:ref:`ap-new-account` section and are organised in tabs.
 
-.. note:: The values that have been modified are accompanied by a
-   circular arrow icon. If you hover on that icon, you will see the
-   inherited value, while if you click on it you will restore the COS
-   value.
+Options defined in the user's COS are inherited, but can be modified
+for any individual user. The values that have been modified are
+accompanied by a circular arrow icon. If you hover on that icon, you
+will see the inherited value, while if you click on it you will
+restore the COS value.
 
 .. card:: Account Options
    :class-title: sd-fs-4 sd-text-center
@@ -259,41 +253,61 @@ modified for any individual user.
    By toggling the *Global Administration* switch you can promote
    or demote the user to Global Administrator or vice versa.
 
-.. index:: ! Account status, Account; status
+.. index:: Account status, Account; status
 
 .. _ap-account-status:
 
-.. card:: Account statuses
+Account statuses
+----------------
 
-   A user account can be in one of the following statuses.
+A user account can be in one of the following statuses.
 
-   #. **Active**. The account is enabled and ready for everyday
-      operations: the user can log in and send and receive e-mails.
+#. **Active**. The account is enabled and ready for everyday
+   operations: the user can log in and send and receive e-mails.
 
-   #. **Under Maintenance**. This state occurs during maintenance operations
-      on the domain or account: backup, import, export, restore. The
-      user can not login, e-mails are queued on the MTA.
+#. **Under Maintenance**. This state occurs during maintenance operations
+   on the domain or account: backup, import, export, restore. The
+   user can not login, e-mails are queued on the MTA.
 
-   #. **Locked**. The account can not be accessed by the user, but
-      incoming e-mails are still delivered. This status can be set for
-      example if the user violates the terms of service or if the
-      account has been cracked
+#. **Locked**. The account can not be accessed by the user, but
+   incoming e-mails are still delivered. This status can be set for
+   example if the user violates the terms of service or if the
+   account has been cracked
 
-   #. **Closed**. The user is not allowed to log in, incoming e-mails
-      are rejected.
+#. **Closed**. The user is not allowed to log in, incoming e-mails
+   are rejected.
 
-   #. **Pending**. This status is usually seen during the account
-      creation, when it is not yet active. User can not log in,
-      incoming e-mails are rejected.
+#. **Pending**. This status is usually seen during the account
+   creation, when it is not yet active. User can not log in,
+   incoming e-mails are rejected.
 
-   #. **LockOut**. This is the only status that can not be set. It is
-      applied automatically when the log in attempts fail for a given
-      number of times. It is a preventive measure to avoid
-      unauthorised access of brute force attacks. The account will not
-      be accessible for a given interval (*"lockout period"*)
+#. **LockOut**. This is the only status that can not be set. It is
+   applied automatically when the log in attempts fail for a given
+   number of times. It is a preventive measure to avoid
+   unauthorised access of brute force attacks. The account will not
+   be accessible for a given interval (*"lockout period"*)
 
-      .. hint:: Both the number of failed attempts and the lockout
-         period can be configured.
+   .. hint:: Both the number of failed attempts and the lockout
+      period can be configured.
+
+.. index:: ! Alias, Account; alias
+
+.. _ap-acc-alias:
+
+Account Aliases
+---------------
+
+An alias is a new e-mail address that can be associated with an
+existent account. It works exactly like any other account except that
+you can not login with it. All e-mails sent to the alias will land in
+the Account's mailbox.
+
+The aliases can be easily managed from the :ref:`General <act-gen>`
+tab of the user's option. Click the pencil icon right below the
+account's username: in the opening dialog window, provide a new alias
+and the domain then click :bdg-primary-line:`+` to add the alias to
+the user. Existent aliases can be modified or deleted using the small
+icons next to the e-mail in the *Your Available Aliases* field.
 
 .. index:: Account; new, Account; create new
 
