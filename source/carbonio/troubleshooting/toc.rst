@@ -67,7 +67,20 @@ of them.
 
          proxy
 
-   .. grid-item-card:: System 
+   .. grid-item-card:: Backup
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-backup
+
+      Problems with |backup|
+
+      .. toctree::
+         :hidden:
+
+         backup
+
+   .. grid-item-card:: System
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: ref
@@ -79,4 +92,3 @@ of them.
          :hidden:
 
          general
-
