@@ -41,7 +41,7 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * The :ref:`advanced modules do not start <upgrade_pg-adv-mod>` due to
   miscommunication with the Database or Database Connector Roles
-* Foleds with ref:`Cyrillic characters <upgrade-cyrillic>` can not be
+* Folders with ref:`Cyrillic characters <upgrade-cyrillic>` can not be
   subscribed using IMAP
 
 .. include:: /_includes/_upgrade/issues.rst 
