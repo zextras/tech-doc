@@ -4,13 +4,13 @@
  Troubleshooting |product|
 ===========================
 
+This section collect various commands and advices for problems that can
+arise during everyday use of |product| and are related to any of the
+third-party software installed.
 
-This sections contains commands, activities, and insights to help in
-all situations when |product| does not behave correctly and guide you
-to resolve these problems.
-
-For every |product| module, there is a dedicated section, that you can
-access by clicking on each of them.
+For every |product| module for which we have troubleshooting activity,
+there is a dedicated section, that you can access by clicking on each
+of them.
 
 .. grid:: 1 1 2 2
    :gutter: 2

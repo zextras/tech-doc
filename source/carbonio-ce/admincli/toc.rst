@@ -17,4 +17,3 @@ mandatory.
       ldap
       management
       mesh
-      troubleshooting
