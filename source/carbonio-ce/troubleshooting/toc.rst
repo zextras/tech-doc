@@ -27,3 +27,18 @@ access by clicking on each of them.
          :hidden:
 
          upgrade
+
+
+   .. grid-item-card:: Proxy Role
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: ts-proxy
+
+      Issue related to the Proxy Role
+
+      .. toctree::
+         :hidden:
+
+         proxy
+
