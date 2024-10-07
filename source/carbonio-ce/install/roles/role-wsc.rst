@@ -68,12 +68,13 @@ Restart the service
 
    # systemctl restart carbonio-ws-collaboration
 
-.. card:: Check status of |wsc|
+Status Check
+------------
 
-   After the installation, you can check the status of and all its
-   dependencies by running command
+After the installation, you can check the status of |wsc| and all its
+dependencies by running command
 
-   .. code:: console
+.. code:: console
 
-      # curl -v http://127.78.0.4:10000/health | jq
+   # curl -v http://127.78.0.4:10000/health | jq
 

@@ -27,4 +27,3 @@ mandatory.
       videoserver
       custom
       mesh
-      troubleshooting

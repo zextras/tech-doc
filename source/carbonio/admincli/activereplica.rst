@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _activereplica:
 
 ==============
@@ -261,29 +257,4 @@ of the following parameters:
 * ``accounts``, also multiple (comma separated) accounts or an input
   file (with multiple accounts, one per line), to specify which
   account metadata must be deleted
-
-.. _ar-ts:
-
-Active Replica Troubleshooting
-==============================
-
-The following commands can prove useful to verify the status of the service.
-
-.. rubric:: Verify Configuration
-
-.. code:: console
-
-   zextras$ carbonio config get global brokers
-
-.. rubric:: Verify Endpoint Availability
-
-.. code:: console
-
-   zextras$ carbonio ha test 10.0.10.11:9092,10.0.10.12:9092,10.0.10.13:9092
-
-.. rubric:: Restart the HA service
-
-.. code:: console
-
-   zextras$ carbonio ha doRestartService module
 

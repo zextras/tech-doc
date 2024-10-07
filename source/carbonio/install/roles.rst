@@ -321,7 +321,7 @@ installation, please review these important remarks:
    **must be executed** as the ``root`` user.
 
 * In case you experience some issues during the installation, please
-  refer to Section :ref:`cli-ts`, in which you can find helpful
+  refer to Section :ref:`ts-cli`, in which you can find helpful
   commands.
 
 *  When the installation process has successfully finished, you can
