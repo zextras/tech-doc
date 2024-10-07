@@ -1,1 +1,8 @@
-../../carbonio/troubleshooting/mesh.rst
+
+.. _ts-mesh:
+
+========================
+ Troubleshooting |mesh|
+========================
+
+.. include:: /_includes/_ts/mesh.rst
