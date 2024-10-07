@@ -18,8 +18,8 @@ access by clicking on each of them.
    .. grid-item-card:: Upgrade
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: upgrade
+      :link-type: ref
+      :link: ts-upgrade
 
       Known Issues that may impact the upgrade procedure
 
@@ -31,7 +31,7 @@ access by clicking on each of them.
    .. grid-item-card:: Proxy Role
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
+      :link-type: ref
       :link: ts-proxy
 
       Issue related to the Proxy Role
