@@ -21,7 +21,7 @@ access by clicking on each of them.
       :link-type: doc
       :link: upgrade
 
-      |product| monitoring and related  resources
+      Known Issues that may impact the upgrade procedure
 
       .. toctree::
          :hidden:
