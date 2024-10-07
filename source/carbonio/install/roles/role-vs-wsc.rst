@@ -49,11 +49,8 @@ carry out these tasks.
 
       # systemctl restart carbonio-videoserver
 
-Troubleshooting
----------------
-
-Broker & Video Server Check
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check Video Server & Broker
+---------------------------
 
 To make sure that videoserver and message broker are connected
 successfully, check that in the carbonio-videoserver logs
