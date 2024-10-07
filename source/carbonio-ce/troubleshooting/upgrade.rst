@@ -17,6 +17,7 @@ There is no know issue that impacts either the upgrade process to
 |product| |version| or the |product| operations afterwards.
 
 .. include:: /_includes/_upgrade/issues-languages.rst
+.. include:: /_includes/_upgrade/issues-logging.rst
 
 .. _ts-up-older:
 
