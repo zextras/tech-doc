@@ -17,14 +17,15 @@ This is a list of known issues that impact |product| after the upgrade
 to |version|.
 
 .. include:: /_includes/_upgrade/issues-pg-adv-modules.rst
+.. include:: /_includes/_upgrade/issues-languages.rst
 
 .. _ts-up-older:
 
 Known Issue (Older Releases)
 ============================
 
-During the upgrade from an older |product| version, you **may** encounter
-one or more of the following issues that require a manual
+During the upgrade from an older |product| version, you **may**
+encounter one or more of the following issues that require a manual
 intervention.
 
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
@@ -40,5 +41,7 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * The :ref:`advanced modules do not start <upgrade_pg-adv-mod>` due to
   miscommunication with the Database or Database Connector Roles
+* Foleds with ref:`Cyrillic characters <upgrade-cyrillic>` can not be
+  subscribed using IMAP
 
 .. include:: /_includes/_upgrade/issues.rst 
