@@ -28,6 +28,18 @@ access by clicking on each of them.
 
          upgrade
 
+   .. grid-item-card:: |mesh| and Directory Server
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-mesh
+
+      |mesh| and Directory Server problems
+
+      .. toctree::
+         :hidden:
+
+         mesh
 
    .. grid-item-card:: Database
       :columns: 12 12 6 6
@@ -61,7 +73,7 @@ access by clicking on each of them.
       :link-type: ref
       :link: ts-general
 
-      A few commands to inspect the system on which |product| is installed. 
+      A few commands to inspect the system on which |product| is installed
 
       .. toctree::
          :hidden:
