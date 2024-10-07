@@ -18,6 +18,7 @@ to |version|.
 
 .. include:: /_includes/_upgrade/issues-pg-adv-modules.rst
 .. include:: /_includes/_upgrade/issues-languages.rst
+.. include:: /_includes/_upgrade/issues-logging.rst
 
 .. _ts-up-older:
 
