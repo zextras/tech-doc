@@ -18,6 +18,5 @@ migration to |product|, and accessing the web interface.
       sslcert
       security
       web-access
-      management
       clamav-management
       wsc-optimise

@@ -28,7 +28,6 @@ access by clicking on each of them.
 
          upgrade
 
-
    .. grid-item-card:: Proxy Role
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -41,4 +40,17 @@ access by clicking on each of them.
          :hidden:
 
          proxy
+
+   .. grid-item-card:: System 
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-general
+
+      A few commands to inspect the system on which |product| is installed. 
+
+      .. toctree::
+         :hidden:
+
+         general
 
