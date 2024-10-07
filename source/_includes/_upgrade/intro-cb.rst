@@ -17,4 +17,4 @@ In some cases, incompatibilities may seldom arise in the
 upgrade of third-party software, which may lead to some additional
 manual steps to be carried out. This is true especially in the case of
 upgrading from older versions, so please check Section
-:ref:`up-older-issues` before starting the upgrade.
+:ref:`ts-up-older` before starting the upgrade.
