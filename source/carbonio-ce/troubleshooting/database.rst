@@ -1,7 +1,7 @@
 .. _ts-db:
 
 ===============================
- Database Role Troubleshooting
+ Database Role
 ===============================
 
 .. include:: /_includes/_ts/db.rst

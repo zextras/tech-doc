@@ -2,7 +2,7 @@
 .. _ts-mesh:
 
 ========================
- Troubleshooting |mesh|
+ |mesh|
 ========================
 
 .. include:: /_includes/_ts/mesh.rst

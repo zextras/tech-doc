@@ -1,7 +1,7 @@
 .. _ts-proxy:
 
 ============================
- Proxy Role Troubleshooting
+ Proxy Role
 ============================
 
 .. _ts-nginx:
