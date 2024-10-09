@@ -1,1 +1,0 @@
-../../../carbonio/admincli/mesh/mesh-troubleshooting.rst

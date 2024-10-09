@@ -6,9 +6,15 @@
 =====================
 
 When you are upgrading from the previous version, you should use
-Ansible Galaxy, which will take care of all the tasks.  Before
-starting the procedure, make sure that you satisfy the
-:ref:`up-prev-req` and check the :ref:`up-prev-issues`.
+Ansible Galaxy, which will take care of all the tasks. Before starting
+the procedure, make sure that you satisfy the :ref:`up-prev-req`.
+
+..
+   There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+Please also check Section :ref:`ts-up-prev` for known
+issues impacting the upgrade process.
 
 .. include:: /_includes/_upgrade/ansible.rst
 
@@ -31,17 +37,3 @@ installed. If you did not yet upgrade it, please refer to Section
 
 The upgrade procedure is otherwise the same, regardless the underlying
 :ref:`supported operating system <software-requirements>`.
-
-.. _up-prev-issues:
-
-Known Issues
-============
-
-..
-   There is no know issue that impacts either the upgrade process to
-   |product| |version| or the |product| operations afterwards.
-
-This is a list of known issues that impact |product| after the upgrade
-to |version|.
-
-.. include:: /_includes/_upgrade/issues-pg-adv-modules.rst

@@ -17,3 +17,6 @@ the upgrade procedure.
 Before proceeding to the upgrade, if you upgrade from |prev|, please
 read carefully section :ref:`upgrade-prev`; otherwise, please read
 section :ref:`upgrade-older`.
+
+Moreover, check Sections :ref:`ts-up-prev` and  :ref:`ts-up-older` to
+check for possible issue that you may encounter during the upgrade.
