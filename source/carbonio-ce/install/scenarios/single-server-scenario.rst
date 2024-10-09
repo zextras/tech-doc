@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _single-server-install:
 
 ============================
@@ -78,7 +74,7 @@ access |product|\'s GUI using a browser: directions can be found in
 Section :ref:`web-access`.
 
 In case you experience some issues during the installation, please
-refer to Section :ref:`cli-ts`, in which you can find helpful
+refer to Section :ref:`ts-cli`, in which you can find helpful
 commands.
 
 .. _rhel-pg:

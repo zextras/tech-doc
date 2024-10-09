@@ -1,10 +1,4 @@
 
-.. _ts-mesh:
-
-========================
- Troubleshooting |mesh|
-========================
-
 |mesh| is one of the main components of |product|, and is based on
 HashiCorp's `Consul <https://developer.hashicorp.com/consul>`_. This
 page is meant to provide some of the most used CLI commands to inspect

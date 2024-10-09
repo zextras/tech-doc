@@ -212,11 +212,8 @@ To let |product| pick up the change, restartg the service
    some values according to the guidelines that you can find in
    section :ref:`wsc-optimise`.
 
-Troubleshooting & Checks
-------------------------
-
-WSC Status Check
-~~~~~~~~~~~~~~~~
+Status Check
+============
 
 The following command will output a detailed status of |wsc| and of
 all its dependencies.

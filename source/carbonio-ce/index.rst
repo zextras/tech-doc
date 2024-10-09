@@ -108,6 +108,7 @@ The content is organised in multiple parts:
       Everyday's usage of |product|, including its use on the
       dedicated mobile Apps
 
+
    .. grid-item-card:: Monitoring
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -120,6 +121,19 @@ The content is organised in multiple parts:
          :hidden:
 
          monitor/toc
+
+   .. grid-item-card:: Troubleshooting
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: troubleshooting/toc
+
+      Resources that help in resolving |product| issues
+
+      .. toctree::
+         :hidden:
+
+         troubleshooting/toc
                   
    .. grid-item-card:: API
       :columns: 12 12 6 6
