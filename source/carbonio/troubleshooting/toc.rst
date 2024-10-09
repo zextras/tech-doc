@@ -80,7 +80,7 @@ of them.
 
          backup
 
-   .. grid-item-card:: System
+   .. grid-item-card:: Services Status
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: ref

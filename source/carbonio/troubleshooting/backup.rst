@@ -1,7 +1,7 @@
 .. _ts-backup:
 
 =========================
- Backups Troubleshooting
+ Backups
 =========================
 
 This sections presents strategies to overcome issues that arise with

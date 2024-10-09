@@ -1,7 +1,7 @@
 .. _ts-general:
 
-System Troubleshooting
-======================
+Services Status
+===============
 
 This section contains currently a few CLI commands to help in
 debugging and finding issues.

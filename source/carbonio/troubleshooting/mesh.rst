@@ -2,14 +2,14 @@
 .. _ts-mesh:
 
 ========================
- Troubleshooting |mesh|
+ |mesh|
 ========================
 
 .. include:: /_includes/_ts/mesh.rst
 
 .. _ar-ts:
 
-Active Replica Troubleshooting
+Active Replica
 ==============================
 
 When you set up :ref:`activereplica`, the following commands can prove
