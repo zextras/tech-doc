@@ -47,7 +47,7 @@ Server, then all the other Nodes in the same order of installation.
                # dnf upgrade --best --allowerasing
 
    .. grid-item-card:: Step 3. (Optional) Remove unused packages
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       After the latest packages have been installed, make sure that
       you do not have unused packages still installed on your system.
@@ -68,11 +68,44 @@ Server, then all the other Nodes in the same order of installation.
 
                # dnf autoremove
 
-      After upgrading to the current |release| release, make sure the
-      following packages are not installed anymore::
+   .. grid-item-card:: Step 4. Verify correct installation of Directory Server package
+      :columns: 12 12 12 12
 
-        carbonio-appserver-store-libs
-        carbonio-appserver-war
+      If you are upgrading the :ref:`role-mesh-install` Node, make
+      sure that the :file:`carbonio-message-broker` package is
+      installed.
+
+      This situation arises because that package was initially
+      required by the :ref:`role-wsc-install` (WSC) Role, but now is
+      used by the whole |product|. So, if you never installed WSC,
+      make sure you have this package on the correct Mesh and
+      Directory Node.
+
+      .. code:: console
+
+         # dpkg -l carbonio-message-broker
+
+      The output should be::
+
+        ii  carbonio-message-broker 0.2.0-1jammy amd64   Carbonio message broker
+
+      If it is not installed, install it manually
+
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install carbonio-message-broker
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install carbonio-message-broker
 
    .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
@@ -82,7 +115,7 @@ Server, then all the other Nodes in the same order of installation.
          # pending-setups -a
 
    .. grid-item-card:: Step 5. Reboot
-      :columns: 12 12 12 12
+      :columns: 12 12 6 6
 
       Once the upgrade has completed successfully, run command:
 
