@@ -203,8 +203,8 @@ with a few commands on the **Mesh and Directory**.
    The Directory Replica instance to query first is the first listed
    in the command.
 
-Uninstall a Directory Replica
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Deactivate a Directory Replica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To remove a Directory Replica, you need to carry out two tasks:
 

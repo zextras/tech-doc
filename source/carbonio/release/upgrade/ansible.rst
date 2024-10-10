@@ -1,13 +1,16 @@
 
-.. _upgrade-prev:
+.. _upgrade-ansible:
 
-=====================
- Upgrade from |prev|
-=====================
+===============
+ Using Ansible
+===============
 
-When you are upgrading from the previous version, you should use
-Ansible Galaxy, which will take care of all the tasks. Before starting
-the procedure, make sure that you satisfy the :ref:`up-prev-req`.
+The upgrade procedure with Ansible Galaxy is strongly suggested when
+you are upgrading from the previous version, which will take care of
+all the tasks required. Before starting the procedure, make sure that
+you satisfy the :ref:`up-prev-req`.
+
+This procedure should work even if you had installed |product| manually.
 
 ..
    There is no know issue that impacts either the upgrade process to
