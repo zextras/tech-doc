@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _carbonio-upgrade:
 
 Upgrade to |product| |release|
@@ -16,5 +12,5 @@ Upgrade to |product| |release|
 .. toctree::
    :hidden:
 
-   upgrade/previous
-   upgrade/older
+   upgrade/ansible
+   upgrade/manual
