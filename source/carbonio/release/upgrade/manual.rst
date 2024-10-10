@@ -5,17 +5,12 @@
  Manual Upgrade
 ================
 
-If you plan to upgrade from a version older than |prev|, you **may**
-encounter issues or need to carry out tasks or commands that are
-reported in Sections :ref:`ts-up-prev` and :ref:`ts-up-older`.
-
-There are two equivalent methods to upgrade a |product|
-infrastructure: automatically using Ansible, or manually, Node by
-Node. The Ansible procedure (see section :ref:`upgrade-prev`) should
-work even if you did not install |product| using the Ansible
-procedure, but may require some additional task to be executed
-manually, while the latter allows you to follow closely, Node by Node,
-the upgrade process and interact when needed and is described here.
+The manual upgrade procedures requires that you log in to each node of
+your |product| infrastructure and execute some command, rebooting the
+Node as soon as you have successfully completed the procedure. Because
+you need to follow the output of the commands and make sure everything
+proceeds flawlessly, this procedure is suggested only if you want to
+have the control of all the steps.
 
 .. _pre-upgrade:
 
