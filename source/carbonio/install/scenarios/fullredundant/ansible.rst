@@ -9,8 +9,9 @@ setup a workstation to run Ansible playbooks (please refer to section
 the workstation), then download the Ansible inventory (see below this
 paragraph), replace the FQDN and values present in the file according
 to your planned |product| infrastructure (please refer to Section
-:ref:`ansible-inventory`). Once edited the inventory, you can
-:ref:`ansible-run`.
+:ref:`ansible-inventory`).
+
+.. include:: /_includes/_installation/read-req-pre.rst
 
 .. dropdown:: Inventory - "Full Redundant" Scenario
    :open:
