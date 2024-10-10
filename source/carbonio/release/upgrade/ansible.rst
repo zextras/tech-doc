@@ -1,9 +1,9 @@
 
-.. _upgrade-prev:
+.. _upgrade-ansible:
 
-=====================
- Upgrade from |prev|
-=====================
+===============
+ Using Ansible
+===============
 
 When you are upgrading from the previous version, you should use
 Ansible Galaxy, which will take care of all the tasks. Before starting

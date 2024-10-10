@@ -1,9 +1,9 @@
 
-.. _upgrade-older:
+.. _upgrade-manual:
 
-=======================================
- Upgrade from Older Versions
-=======================================
+================
+ Manual Upgrade
+================
 
 If you plan to upgrade from a version older than |prev|, you **may**
 encounter issues or need to carry out tasks or commands that are
