@@ -122,7 +122,11 @@ Install |carbonio| Playbook
 
 |product| Playbook is available from Ansible Galaxy in two variants:
 one for Single-Server Scenario and one for all other scenarios. You
-need to simply run a command to install either of them.
+need to simply run a command to install either of them. The playbooks
+are **version-dependant**: to install |product| you will need to use
+the corresponding playbook version. Please ensure that you always
+have installed the latest playbook to be able to install the most
+recent |product| release.
 
 .. card:: Playbook for Single-Server Scenario
 
