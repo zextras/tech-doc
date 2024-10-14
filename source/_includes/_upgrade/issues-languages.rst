@@ -1,8 +1,8 @@
-.. _upgrade-cyrillic:
+.. _upgrade-lang:
 
-.. card:: IMAP folders with Cyrillic characters
+.. card:: IMAP folders with UTF-8 characters
 
-   If you subscribe to an IMAP folder whose name contains Cyrillic
+   If you subscribe to an IMAP folder whose name contains UTF-8
    characters, chances are that you fail, even if you already
    subscribed to that folder. The reason is a missing jar, that you
    need to :download:`download
