@@ -72,14 +72,14 @@ to the underlying operating system.
 
       .. code:: console
 
-         # apt install carbonio-videoserver-recorder
+         # apt install carbonio-videorecorder
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-videoserver-recorder
+         # dnf install carbonio-videorecorder
 
 You can then enable the Video Recorder on a user, COS, or global
 level: please refer to section :ref:`vs-recorder-conf` for
