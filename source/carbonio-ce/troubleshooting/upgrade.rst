@@ -38,7 +38,7 @@ more of the following issues that require a manual intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
-* Folders with :ref:`Cyrillic characters <upgrade-cyrillic>` can not be
+* Folders with :ref:`UTF-8 characters <upgrade-lang>` can not be
   subscribed using IMAP
 * There are :ref:`warning messages about SLF4J <upgrade-logging>` in
   the log files
