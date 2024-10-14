@@ -15,7 +15,7 @@
 
       #  sha256sum zm-charset-22.5.0.jar
 
-   The output of the command includes the SAH256 checksum of the file,
+   The output of the command includes the SHA256 checksum of the file,
    which **must** be::
 
      13ce2d47274df3016ed8ec5d32439fc6a0c03d1dff04bd92e374bcc0ef049548
