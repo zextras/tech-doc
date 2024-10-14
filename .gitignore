@@ -27,8 +27,8 @@ env/*
 # Log files
 *.log
 
-# Package files
-*.jar
+# Package files - commented as we need to add a jar file, see #811
+#*.jar
 
 # Maven
 target/
