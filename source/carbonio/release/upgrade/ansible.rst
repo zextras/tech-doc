@@ -24,6 +24,25 @@ playbook* is updated.
 
    $ ansible-galaxy collection install -U zxbot.carbonio_upgrade
 
+.. card:: Check current Playbook version
+
+   To verify the currently installed version of the playbook, execute
+   command
+
+   .. code:: console
+
+      $ ansible-galaxy collection list zxbot.carbonio_upgrade
+
+   The output will be similar to::
+
+     # /home/ansible/.ansible/collections/ansible_collections
+     Collection             Version
+     ---------------------- -------
+     zxbot.carbonio_upgrade 24.9.1
+
+   This version of the playbook can be used to install version **24.9**
+   of |product|.
+
 The Ansible playbook will update all the packages installed on he system, from
 any active configured repository, not only |product|\'s. To avoid this
 behaviour, comment out any repositories from which you do not want to
