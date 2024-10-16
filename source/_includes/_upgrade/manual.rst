@@ -81,15 +81,32 @@ Server, then all the other Nodes in the same order of installation.
       make sure you have this package on the correct Mesh and
       Directory Node.
 
-      .. code:: console
 
-         # dpkg -l carbonio-message-broker
+      .. tab-set::
 
-      The output should be::
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
 
-        ii  carbonio-message-broker 0.2.0-1jammy amd64   Carbonio message broker
+            .. code:: console
 
-      If it is not installed, install it manually
+               # dpkg -l carbonio-message-broker
+
+            The output should be (version may vary)::
+
+              ii  carbonio-message-broker 0.2.0-1jammy amd64   Carbonio message broker
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # rpm -q carbonio-message-broker
+
+            The output should be (version may vary)::
+
+              carbonio-message-broker-0.2.0-1.el8.x86_64
+
+      If it is not installed, install it manually:
 
       .. tab-set::
 
