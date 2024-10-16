@@ -12,15 +12,6 @@ you satisfy the :ref:`up-prev-req`.
 
 This procedure should work even if you had installed |product| manually.
 
-..
-   There is no know issue that impacts either the upgrade process to
-   |product| |version| or the |product| operations afterwards.
-
-Please also check Section :ref:`ts-up-prev` for known
-issues impacting the upgrade process.
-
-.. include:: /_includes/_upgrade/ansible.rst
-
 .. _up-prev-req:
    
 Requirements & Preliminaries
@@ -47,3 +38,17 @@ installed. If you did not yet upgrade it, please refer to Section
 
 The upgrade procedure is otherwise the same, regardless the underlying
 :ref:`supported operating system <software-requirements>`.
+
+.. _up-ansible-steps:
+
+Upgrade Steps
+=============
+
+..
+   There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+Please also check Section :ref:`ts-up-prev` for known
+issues impacting the upgrade process.
+
+.. include:: /_includes/_upgrade/ansible.rst
