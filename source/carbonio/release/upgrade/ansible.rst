@@ -12,26 +12,41 @@ you satisfy the :ref:`up-prev-req`.
 
 This procedure should work even if you had installed |product| manually.
 
-..
-   There is no know issue that impacts either the upgrade process to
-   |product| |version| or the |product| operations afterwards.
-
-Please also check Section :ref:`ts-up-prev` for known
-issues impacting the upgrade process.
-
-.. include:: /_includes/_upgrade/ansible.rst
-
 .. _up-prev-req:
    
 Requirements & Preliminaries
 ============================
 
 Before attempting to upgrade |product|, make sure that the *Ansible
-playbook* is updated.
+playbook* is updated. The playbook is indeed version-dependant: to
+upgrade |product| to version |version|, you need to have the **same
+main version** of the playbook. For example, to upgrade to version
+**24.9.0**, the playbook version must be **24.9.X**, regardless of the
+last number. To install the latest version of the playbook, execute
+the following command.
 
 .. code:: console
 
    $ ansible-galaxy collection install -U zxbot.carbonio_upgrade
+
+.. card:: Check current Playbook version
+
+   To verify the currently installed version of the playbook, execute
+   command
+
+   .. code:: console
+
+      $ ansible-galaxy collection list zxbot.carbonio_upgrade
+
+   The output will be similar to::
+
+     # /home/ansible/.ansible/collections/ansible_collections
+     Collection             Version
+     ---------------------- -------
+     zxbot.carbonio_upgrade 24.9.1
+
+   This version of the playbook can be used to install version **24.9**
+   of |product|.
 
 The Ansible playbook will update all the packages installed on he system, from
 any active configured repository, not only |product|\'s. To avoid this
@@ -47,3 +62,17 @@ installed. If you did not yet upgrade it, please refer to Section
 
 The upgrade procedure is otherwise the same, regardless the underlying
 :ref:`supported operating system <software-requirements>`.
+
+.. _up-ansible-steps:
+
+Upgrade Steps
+=============
+
+..
+   There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+Please also check Section :ref:`ts-up-prev` for known
+issues impacting the upgrade process.
+
+.. include:: /_includes/_upgrade/ansible.rst
