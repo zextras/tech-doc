@@ -18,7 +18,12 @@ Requirements & Preliminaries
 ============================
 
 Before attempting to upgrade |product|, make sure that the *Ansible
-playbook* is updated.
+playbook* is updated. The playbook is indeed version-dependant: to
+upgrade |product| to version |version|, you need to have the **same
+main version** of the playbook. For example, to upgrade to version
+**24.9.0**, the playbook version must be **24.9.X**, regardless of the
+last number. To install the latest version of the playbook, execute
+the following command.
 
 .. code:: console
 
