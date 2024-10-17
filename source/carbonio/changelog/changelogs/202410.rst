@@ -1,0 +1,170 @@
+Changelog 2024-10
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202410-812 Move Requirements Before Ansible Upgrade
+
+* Clarify that the upgrade procedure using Ansible requires that the playbook be updated to the correct version.
+* Move Section  :ref:`up-prev-req` before the start of the upgrade procedure
+* Add command to check the  version of the Playobook installed on the control node
+
+  See :ref:`upgrade-ansible` for the documentation, https://github.com/zextras/tech-doc/pull/739 for the source code
+
+
+.. rubric:: 202410-811 Provide a jar File to fix encoding issues
+
+A downloadable jar file that fixes a few encoding issues has been
+:ref:`added to the documentation <upgrade-lang>`
+
+See :pr:`734` and :pr:`735` for the source code.
+
+
+.. rubric:: 202410-809 Implement Documentation Changelog
+
+We added a new section :ref:`chlog-doc` that lists all changes made to the |product| documentation.
+
+See :pr:`741` and :pr:`743` for the source code
+
+
+.. rubric:: 202410-807 Additional Changes in 24.9.0
+
+In this issue, a few changes for the **24.9.0** release were
+implemented:
+
+* Rename *Uninstall a Directory Replica* to :ref:`ds-replica-stop`
+* Rename *Update from 24.7.1* to :ref:`upgrade-ansible`
+* Rename *Update from previous versions* to
+  :ref:`upgrade-manual`. Introductory text has also been changed.
+* Added a note in Step 4. of the :ref:`upgrade-manual` to make sure
+  that the :file:`carbonio-message-broker` is installed on the
+  :ref:`role-mesh-install` Node after the upgrade
+* Clarified on which Node to execute the CLI command to :doc:`activate
+  Carbonio </postinstall/license>`
+
+
+See :pr:`729` for the source code.
+
+
+.. rubric:: 202410-806 Split Carbonio Installation Instructions
+
+The :ref:`installation instructions <scenarios>` have been split and renamed to improve clarity and prevent misunderstandings.
+
+See :pr:`727` and :pr:`728` for the source code.
+
+
+.. rubric:: 202410-803 Improve search within tabs
+
+When a search result is in a tab which is not currently open, the
+result is not shown. We replaced the most complex occurrence in the
+docs.
+
+See :ref:`ap-accounts` for the documentation, :pr:`717` for the source
+code.
+
+
+
+.. rubric:: 202410-802 Give more emphasis to the creation and management of e-mail aliases
+
+The creation of *e-mail Aliases* is an important part of |product|
+operations: for this reason a new section has been added
+
+See :ref:`ap-acc-alias` for the documentation, :pr:`802` for the
+source code.
+
+
+.. rubric:: 202410-801 Remove concept of supported versions
+
+The concept of `Supported version` for |product| may be misleading, so it has been removed.
+
+
+.. rubric:: 202410-800 Upgrade Ansible playbook
+
+The directions for the |product| upgrade with Ansible have been rewritten to mention that the playbook itself must be upgraded.
+
+See :ref:`carbonio-upgrade` for the documentation, :pr:`725` and
+:pr:`726` for the source code.
+
+
+.. rubric:: 202410-799 Changes to upgrade procedure
+
+The :ref:`upgrade using Ansible <upgrade-ansible>` procedure had been
+amended by mentioning to update the Ansible playbook before starting
+the |product| upgrade.
+
+Also the :ref:`Manual upgrade <upgrade-manual>` was modified by
+removing the :command:`zmcontrol stop` step.
+
+See :ref:`carbonio-upgrade` for the documentation, :pr:`711` and
+:pr:`725` for the source code.
+
+
+.. rubric:: 202410-795 Add 24.9.0 changelog
+
+Changelog for the latest |product| release has been added.
+
+See :ref:`carbonio-changelog` for the documentation, :pr:`704` and
+:pr:`707` for the source code.
+
+
+.. rubric:: 202410-558 Provide ICS and CSV example files for migration to Carbonio
+
+Example files in :file:`ics` and :file:`csv` format have been added
+to the documentation as example files to be imported for Calendar
+events and Contacts, respectively. For improved readability, they have
+been enclosed in drop-downs.
+
+See :ref:`migration` for the documentation, :pr:`709` and
+:pr:`710` for the source code.
+
+
+.. rubric:: 202410-469 New Section Troubleshooting
+
+A new section :ref:`ts` has been added, collecting various content
+from other parts of the documentation. The user has now all
+troubleshooting options in one place, separated by module or topic.
+
+See :ref:`ts` for the documentation, :pr:`720` and
+:pr:`722` for the source code.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202410-819 Replace UTF-8 with UTF-7
+
+A mistake was done and fixed, where *UTF-8* was written instead of **UTF-7**.
+
+See :ref:`the known issue <upgrade-lang>` for the documentation, :pr:`744` for the source code.
+
+
+.. rubric:: 202410-814 Added rpm -q command in manual upgrade
+
+Added RHEL verification command for :file:`carbonio-message-broker` package installation in Step 4. of the Upgrade procedure
+
+See :ref:`upgrade-manual` for the documentation, :pr:`740` for the source code
+
+
+.. rubric:: 202410-810 Package name change for video recording feature (WSC)
+
+The package that enables video recording in WSC is called :file:`carbonio-videorecorder`.
+
+In addition, there is no longer a need for cluster addition tasks to
+be performed with the :command:`carbonio` commands.
+
+See :ref:`role-vs-wsc-install` for the documentation, :pr:`733` for
+the source code.
+
+
+.. rubric:: 202410-777 Conditions to run Ansible playbooks for upgrade
+
+Added the default running conditions of the :command:`zxbot.carbonio_upgrade` playbook
+
+See :ref:`up-ansible-steps` for the documentation, :pr:`708` for the source code
+
+*****
+
+End of changelog
