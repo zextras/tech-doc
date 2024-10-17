@@ -16,13 +16,16 @@ Changelogs are divided in two sections:
   scratch
 
 * **Bugfix List** are errors or mistakes introduced in the
-  documentation and that have been corrected. Foir example, because we
+  documentation and that have been corrected. For example, because we
   wrote a wrong command.
 
-Each entry in the changelog has a title, which includes a unique id
-(e.g., **202410-812**) consisting of date (year and month), and a
-number, and a description with links to the documentation and the PRs
-that introduced the changes.
+Each entry in the changelog consists of
+
+* a unique id (e.g., *202410-812*) consisting of a date (year and
+  month), and a number (an internal reference to the task)
+* a title (e.g., *Move Requirements Before Ansible Upgrade*)
+* a description with links to the documentation and the PRs that
+  introduced the changes
 
 .. _contribute-doc:
 
