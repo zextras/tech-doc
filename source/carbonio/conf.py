@@ -21,16 +21,6 @@ import time
 
 # This approach does not currently work with Docker/Jenkins, so we set only the main doc hub for now
 
-# import git
-
-# # -- Get current branch and set hub's home page accordingly ------------------
-# repo = git.Repo(search_parent_directories=True)
-# branch = repo.active_branch
-
-# if branch.name == 'pre_release' :
-#     hubhome = 'http://zextrasdoc.s3-website-eu-west-1.amazonaws.com/landing/zextras_documentation.html'
-# else :
-#     hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
 
 hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
 
@@ -54,7 +44,7 @@ prev = '24.7.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
-               'sphinxcontrib.email' ]
+               'sphinxcontrib.email', 'sphinx.ext.extlinks' ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -81,6 +71,9 @@ copybutton_only_copy_prompt_lines = True
 numfig = True
 
 email_automode = True
+
+extlinks = {'pr': ('https://github.com/zextras/tech-doc/pull/%s',
+                   'PR #%s') }
 
 # -- Options for HTML output -------------------------------------------------
 

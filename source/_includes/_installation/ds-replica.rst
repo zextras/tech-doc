@@ -203,6 +203,8 @@ with a few commands on the **Mesh and Directory**.
    The Directory Replica instance to query first is the first listed
    in the command.
 
+.. _ds-replica-stop:
+
 Deactivate a Directory Replica
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

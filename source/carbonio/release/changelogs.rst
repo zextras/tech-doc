@@ -1,3 +1,5 @@
+.. _carbonio-changelog:
+
 ======================
  |product| Changelogs
 ======================
