@@ -1,0 +1,44 @@
+
+Changelog 2024-10
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202410-812 Move Requirements Before Ansible Upgrade
+
+* Clarify that the upgrade procedure using Ansible requires that the playbook be updated to the correct version. 
+* Move Section  :ref:`up-prev-req` before the start of the upgrade procedure
+* Add command to check the  version of the Playobook installed on the control node
+
+See :ref:`upgrade-ansible` for the documentation, https://github.com/zextras/tech-doc/pull/739 for the source code
+
+
+.. rubric:: 202410-806 Split Carbonio Installation Instructions
+
+The :ref:`installation instructions <scenarios>` have been split and renamed to improve clarity and prevent misunderstandings
+
+
+.. rubric:: 202410-800 Upgrade Ansible playbook
+
+The directions for the |product| upgrade with Ansible have been rewritten to mention that the playbook itself must be upgraded.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202410-814 Added rpm -q command in manual upgrade
+
+Added RHEL verification command for carbonio-message-broker package installation
+
+
+.. rubric:: 202410-810 Package name change for video recording feature (WSC)
+
+The package that enables video recording in WSC is called carbonio-videorecorder
+In addition, there is no longer a need for cluster addition tasks to be performed with the :command:`carbonio` commands
+
+*****
+
+End of changelog
