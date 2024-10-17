@@ -7,7 +7,7 @@ New and Updated Content
 
 .. rubric:: 202410-812 Move Requirements Before Ansible Upgrade
 
-* Clarify that the upgrade procedure using Ansible requires that the playbook be updated to the correct version.
+* Clarify that the upgrade procedure using Ansible requires upgrading the playbook to the correct version.
 * Move Section  :ref:`up-prev-req` before the start of the upgrade procedure
 * Add command to check the  version of the Playobook installed on the control node
 
