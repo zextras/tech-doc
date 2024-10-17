@@ -1,12 +1,7 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ==============
  Introduction
 ==============
-
-.. replace what-is and licensing with Carbonio.-specific files!
 
 What is |product|?
 ==================
@@ -33,13 +28,6 @@ Volunteer Translators
 ---------------------
 
 .. include:: /_includes/_general/translation.rst
-
-.. _contribute-doc:
-
-Contribution to the Documentation
-=================================
-
-.. include:: /_includes/_general/contribute.rst
 
 .. _community-help:
 
