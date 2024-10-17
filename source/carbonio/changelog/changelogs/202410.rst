@@ -22,6 +22,13 @@ A downloadable jar file that fixes a few encoding issues has been
 See :pr:`734` and :pr:`735` for the source code.
 
 
+.. rubric:: 202410-809 Implement Documentation Changelog
+
+We added a new section :ref:`chlog-doc` that lists all changes made to the |product| documentation.
+
+See :pr:`741` and :pr:`743` for the source code
+
+
 .. rubric:: 202410-807 Additional Changes in 24.9.0
 
 In this issue, a few changes for the **24.9.0** release were
@@ -126,6 +133,13 @@ See :ref:`ts` for the documentation, :pr:`720` and
 
 Bugfix List
 -----------
+
+.. rubric:: 202410-819 Replace UTF-8 with UTF-7
+
+A mistake was done and fixed, where *UTF-8* was written instead of **UTF-7**.
+
+See :ref:`the known issue <upgrade-lang>` for the documentation, :pr:`744` for the source code.
+
 
 .. rubric:: 202410-814 Added rpm -q command in manual upgrade
 
