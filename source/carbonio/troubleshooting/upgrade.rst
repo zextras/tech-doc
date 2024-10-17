@@ -42,7 +42,7 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * The :ref:`advanced modules do not start <upgrade_pg-adv-mod>` due to
   miscommunication with the Database or Database Connector Roles
-* Folders with :ref:`UTF-8 characters <upgrade-lang>` can not be
+* Folders with :ref:`Cyrillic (UTF-7) characters <upgrade-lang>` can not be
   subscribed using IMAP
 * There are :ref:`warning messages about SLF4J <upgrade-logging>` in
   the log files
