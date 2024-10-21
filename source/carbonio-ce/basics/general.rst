@@ -40,13 +40,6 @@ Volunteer Translators
 
 .. include:: /_includes/_general/translation.rst
 
-.. _contribute-doc:
-
-Contribution to the Documentation
-=================================
-
-.. include:: /_includes/_general/contribute.rst
-
 .. _community-help:
 
 Seeking Help on |product|
