@@ -1,21 +1,20 @@
-=====================
- Scenario A: 5 Nodes
-=====================
+=======================
+ Multi-Server Scenario
+=======================
 
-This five nodes scenario (depicted in :numref:`fig-5-nodes`) involves
-the presence of a single tenant.
+This Multi-Server scenario (depicted in :numref:`fig-5-nodes`)
+consists of **Five Nodes**. However, you can skip the installation of
+Nodes 4 and 5 if you do not need Docs Editor, Files, Chats, and Video
+Calls.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
-   
-.. note:: You can skip the installation of Nodes 4 and 5 if you do not
-   need Docs Editor, Files, Chats, and Video Calls.
 
 .. _fig-5-nodes:
 
 .. figure:: /img/carbonio/scenario-5-nodes-CE.png
    :width: 90%
 
-   The architecture of the 5 Nodes Scenario.
+   The architecture of the Multi-Server Scenario.
 
 Roles Installation
 ==================
