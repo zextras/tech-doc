@@ -187,7 +187,7 @@ want to import the Briefcases.
 
 .. hint:: When you launch the command, you will receive the
    ``operationid``, that can be used to follow output by using the
-   :command:`carbonio admin monitor <operationid>`.
+   :command:`zxsuite admin monitor <operationid>`.
 
 .. _mig-create-backup:
 
@@ -207,7 +207,7 @@ to store the backup.
 
 .. code:: console
 
-   $ mkdir /tmp/backup/
+   $ mkdir /tmp/export/
 
 Then generate, again as the ``zimbra`` user, the backup and store it
 in that directory.
