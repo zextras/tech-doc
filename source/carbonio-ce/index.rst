@@ -10,9 +10,10 @@
 Welcome to the Administrator documentation of |ce|, the free and open
 source e-mail and collaboration software.
 
-If you are looking for |carbonio|'s documentation, please refer to its
-`dedicated page <../../carbonio/html/index.html>`_. If you are
-searching for the User Documentation, please refer to its `home page
+If you are looking for |carbonio|'s Administrator documentation,
+please refer to its `dedicated page
+<../../carbonio/html/index.html>`_. If you are searching for the User
+Documentation, please refer to its `home page
 <https://docs.zextras.com/user-guides/carbonio/en/html>`_.
 
 The content is organised in multiple parts:
