@@ -7,5 +7,3 @@
 "*Google Chrome*", "Others", "*Windows/Linux/OSX*", ":fa:`check-circle;sd-text-warning` Limited"
 "*Safari*", "**Latest**", "*OSX*",  ":fa:`check-circle;sd-text-warning` Limited"
 "*Safari*", "Others", "*OSX*", ":fa:`check-circle;sd-text-warning` Limited "
-"*Microsoft Edge (EdgeHTML)*", "Any", "*Windows*", ":fa:`times-circle;sd-text-danger` No"
-"*Internet Explorer*", "Any", "*Windows*", ":fa:`times-circle;sd-text-danger` No"
