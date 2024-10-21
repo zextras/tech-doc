@@ -22,4 +22,4 @@ requires a considerable amount of resources.
    :maxdepth: 1
 
    scenarios/single-server-scenario
-   scenarios/scenario-a
+   scenarios/multi-server-scenario
