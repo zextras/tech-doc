@@ -11,5 +11,6 @@ upgrade procedure, and, if any, known issues and security advises.
       :maxdepth: 1
 
       upgrade
-      other-upgrades
+      upgrade245.rst
+      upgrade243.rst
       changelogs
