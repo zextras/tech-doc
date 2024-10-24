@@ -46,5 +46,7 @@ intervention.
   subscribed using IMAP
 * There are :ref:`warning messages about SLF4J <upgrade-logging>` in
   the log files
+* Older version included a package that has been replaced, but it can
+  :ref:`cause conflicts <package-conflict>` during upgrades
 
 .. include:: /_includes/_upgrade/issues.rst 

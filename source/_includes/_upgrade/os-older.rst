@@ -1,17 +1,15 @@
-
 The procedure must be carried out on each Node, starting from the one
 on which the Directory Server Role is installed, and it will require
 to reboot the Node and therefore a downtime of the |product|
 infrastructure must be planned. Please read carefully the whole
 section before starting the upgrade.
 
-
 The procedure is divided into phases:
 
 #. upgrade PostgreSQL from 12 to 16 (you can skip it if you already
    upgraded)
 
-#. upgrade |product| to |release|
+#. manual upgrade |product| to |release|
 
 #. upgrade Ubuntu LTS from 20.04 to 22.04 (Jammy Jellifish) or RHEL 8
    to RHEL 9
@@ -19,7 +17,7 @@ The procedure is divided into phases:
 #. upgrade |product|\'s packages to match the correct repository
 
 #. complete the upgrade procedure
-   
+
 Phase 1
 -------
 
@@ -36,7 +34,7 @@ Phase 2
 -------
 
 This phase is the same as a normal upgrade, so please refer to Section
-:ref:`carbonio-upgrade`.
+:ref:`upgrade-manual`.
 
 Phase 3
 -------
@@ -80,15 +78,9 @@ distribution. This phase requires some manual command to be executed.
       to make sure that it contains only the correct repository, that
       is, the line defining the repository is::
 
-        baseurl=https://repo.zextras.io/release/rhel9 
-      
-You can now stop the |product| services
+        baseurl=https://repo.zextras.io/release/rhel9
 
-.. code:: console
-
-   # su - zextras -c "zmcontrol stop"
-
-Finally update the package list, and the packages itself with these
+Then update the package list, and the packages themselves with these
 commands
 
 .. tab-set::
@@ -103,12 +95,9 @@ commands
 
       # dnf upgrade --best --allowerasing
 
-Phase 5
--------
+Finally, reboot the Node.
 
-At the end of the upgrade you need to fix the permissions and start the services
 
 .. code:: console
 
-   # /opt/zextras/libexec/zmfixperms
-   # su - zextras -c "zmcontrol start"
+   # reboot
