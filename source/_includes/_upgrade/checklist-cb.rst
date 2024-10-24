@@ -11,7 +11,7 @@ during, or after the procedure.
    |product| can be installed on **Ubuntu 22.04** and **RHEL 9**
    (|beta| support) since version **24.5.0**.  If you plan to upgrade
    both the OS and |product|, please refer to Section
-   :ref:`upgrade-os`.
+   :ref:`os-upgrade`.
       
 .. card:: PostgreSQL 16 support
 
