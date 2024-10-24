@@ -23,4 +23,6 @@ a snapshot of the Nodes and a backup of the data.
       upgrade
       upgrade245.rst
       upgrade243.rst
+      pg
+      os
       changelogs

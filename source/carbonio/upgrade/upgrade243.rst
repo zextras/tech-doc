@@ -56,9 +56,3 @@ you might need to carry out different tasks.
    or RHEL 9. This is the most time-consuming resource, because you
    need to carry out multiple tasks. Please refer to Section
    :ref:`os-upgrade` for directions.
-
-.. toctree::
-   :hidden:
-
-   upgrade/pg
-   upgrade/os
