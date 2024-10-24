@@ -2,8 +2,11 @@
  Release
 =========
 
-This section contains the changelogs of recent and older releases, the
-upgrade procedure, and, if any, known issues and security advises.
+This section contains the upgrade procedures to the latest |carbonio|
+release from the latest and the most recent previous releases
+(:ref:`24.7.X <carbonio-upgrade>`, :ref:`24.3.X <up-243>`, and
+:ref:`24.5.X <up-245>` ), the changelogs of recent and older releases,
+and security advises if any.
 
 .. card:: Table of Contents
           
