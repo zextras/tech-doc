@@ -75,10 +75,10 @@ distribution. This phase requires some manual command to be executed.
    .. tab-item:: RHEL
       :sync: rhel
 
-      During the RHAL upgrade, the file
-      :file:`/etc/yum.repos.d/zextras.repo` will be
-      modified. You need to make sure that it contains only the
-      correct repository, that is, the line defining the repository is::
+      During the RHEL upgrade, the file
+      :file:`/etc/yum.repos.d/zextras.repo` will be modified. You need
+      to make sure that it contains only the correct repository, that
+      is, the line defining the repository is::
 
         baseurl=https://repo.zextras.io/release/rhel9 
       
