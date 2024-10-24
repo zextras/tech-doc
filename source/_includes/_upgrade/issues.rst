@@ -210,3 +210,32 @@
    After executing the suggested commands, you can then carry out the
    INIT DOMAIN operation, from either the |adminui| or the CLI.
 
+.. _package-conflict:
+
+.. card:: Package conflict
+
+   If you upgrade from a release older than **24.5.0**, you may run
+   into a conflict between the installed package ``config-generator``
+   and the new ``service-discover-template`` package on both RHEL and
+   Ubuntu. To fix this conflict, before upgrading, you need to remove
+   the existing package and install the new one. You can do this with
+   the following commands
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install service-discover-template
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # rpm -e --nodeps config-generator
+
+   Right after the command completes, proceed with the upgrade.
+

@@ -33,19 +33,19 @@ The content is organised in multiple parts:
 
          basics/general
 
-   .. grid-item-card:: Release
+   .. grid-item-card:: Upgrade
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: doc
-      :link: release/toc
+      :link: upgrade/toc
 
-      List of issues fixed in the current release of |product| and
-      directions to carry out the upgrade
+      Upgrade procedures and list of issues fixed in the current
+      release
 
       .. toctree::
          :hidden:
 
-         release/toc
+         upgrade/toc
 
    .. grid-item-card:: Install
       :columns: 12 12 6 6
@@ -150,7 +150,7 @@ The content is organised in multiple parts:
          :hidden:
 
          troubleshooting/toc
-                  
+
    .. grid-item-card:: API
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -177,7 +177,7 @@ The content is organised in multiple parts:
 
          glossary
 
-   .. grid-item-card:: About the Documentation 
+   .. grid-item-card:: About the Documentation
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: doc
