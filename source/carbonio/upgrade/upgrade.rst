@@ -1,8 +1,7 @@
 .. _carbonio-upgrade:
 
-=============================
-Upgrade From |product| |prev|
-=============================
+Upgrade From 24.7
+=================
 
 .. include:: /_includes/_upgrade/intro-cb.rst
 

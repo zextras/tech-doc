@@ -1,11 +1,12 @@
 .. _up-243:
 
-Upgrade From |product| 24.3.0
-=============================
+Upgrade From 24.3
+=================
 
-This section guides you in the upgrade from |product| **24.3.0** to
-the latest available version, |release|, which contains a number of
-technical and performance improvements, bug fixes, and security fixes.
+This section guides you in the upgrade from |product| **24.3**,
+regardless of any specific patch numbers, e.g. *24.3.1*, to the latest
+available version, |release|, which contains a number of technical and
+performance improvements, bug fixes, and security fixes.
 
 Requirements and Limitations
 ----------------------------
