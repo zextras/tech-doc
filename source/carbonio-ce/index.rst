@@ -34,11 +34,11 @@ The content is organised in multiple parts:
 
          basics/general
 
-   .. grid-item-card:: Release
+   .. grid-item-card:: Upgrade
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: doc
-      :link: release/toc
+      :link: upgrade/toc
 
       Links to all changelogs of |product|'s components on GitHub
       repositories and directions to carry out the upgrade
@@ -46,7 +46,7 @@ The content is organised in multiple parts:
       .. toctree::
          :hidden:
 
-         release/toc
+         upgrade/toc
 
    .. grid-item-card:: Install
       :columns: 12 12 6 6

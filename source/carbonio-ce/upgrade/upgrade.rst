@@ -1,6 +1,6 @@
-.. _carbonio-upgrade:
+.. _upgrade-manual:
 
-Upgrade to |product| |release|
+Upgrade From |prev| or 24.9.0
 ==============================
 
 .. include:: /_includes/_upgrade/intro-ce.rst
