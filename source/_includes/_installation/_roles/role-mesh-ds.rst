@@ -14,8 +14,8 @@
 
       .. code:: console
 
-         # dnf install service-discover-server
-         carbonio-directory-server carbonio-message-broker \
+         # dnf install service-discover-server \
+         carbonio-directory-server carbonio-message-broker
 
 Please note:
 

@@ -22,3 +22,13 @@ documentation, follow the URLS:
 * `Carbonio Files metadata <../../../apidoc/files_meta/index.html>`_
   metadata API
 
+* `Carbonio Preview
+  <../../../apidoc/carbonio-preview-ce/rest-api.html>`_, to access
+  thumbnails and previews of items stored in |product|
+
+* Carbonio WSC API allow to access the `Chats API
+  <../../../apidoc/carbonio-ws-collaboration-ce/chats-api.html>`_ and the
+  `Meeting API
+  <../../../apidoc/carbonio-ws-collaboration-ce/meeting-api.html>`_, used
+  for the Chat and WSC meetings
+
