@@ -1,7 +1,7 @@
 .. _upgrade-manual:
 
-Upgrade From |prev| or 24.9.0
-==============================
+Upgrade From 24.7 or 24.9
+=========================
 
 .. include:: /_includes/_upgrade/intro-ce.rst
 
