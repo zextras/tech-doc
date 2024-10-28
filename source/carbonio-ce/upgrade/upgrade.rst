@@ -1,4 +1,4 @@
-.. _carbonio-upgrade:
+.. _upgrade-manual:
 
 Upgrade to |product| |release|
 ==============================
