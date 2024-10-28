@@ -9,8 +9,8 @@ Multi-Server installation.
 
 The upgrade procedure is the same, regardless of the currently
 installed version of |product|. The difference is that if you upgrade
-from |prev|, you usually do not need to carry out any other task
-manually, while if you upgrade from any *older version*, you will
+from |prev| or 24.9.0, you usually do not need to carry out any other
+task manually, while if you upgrade from any *older version*, you will
 probably need to run some tasks or commands before, during, or after
 the upgrade procedure.
 

@@ -20,7 +20,8 @@ the upgrade:
 * Since the **24.3.0** release, two major improvements have become
   available for |product|:
 
-  #. support for new Operating Systems (OS): **Ubuntu 22.04** and **RHEL 9**
+  #. support for new Operating Systems (OS): **Ubuntu 22.04** and
+     **RHEL 9**
   #. support for **PostgreSQL 16**
 
 * You need to carry out the procedure on **each Node**, starting with
