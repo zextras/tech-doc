@@ -1,6 +1,6 @@
 .. _os-upgrade:
 
-OS upgrade
+OS Upgrade
 ==========
 
 .. include:: /_includes/_upgrade/os-older.rst
