@@ -45,8 +45,8 @@ the following command.
      ---------------------- -------
      zxbot.carbonio_upgrade 24.9.1
 
-   This version of the playbook can be used to install version **24.9**
-   of |product|.
+   This version of the playbook can be used to install the most recent
+   version in the **24.9** series of |product| (e.g., *24.9.0 or 24.9.1*).
 
 The Ansible playbook will update all the packages installed on he system, from
 any active configured repository, not only |product|\'s. To avoid this
