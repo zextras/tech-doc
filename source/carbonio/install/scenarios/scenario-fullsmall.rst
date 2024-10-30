@@ -9,7 +9,7 @@ for small infrastructure up to thousands of accounts, with complete
 set of |product| functionalities. The scenario can be deployed either
 using the :ref:`scenario-sm-playbook`, or :ref:`manually
 <scenarioa-manual>`, Node by Node. In both cases, make sure you
-:ref:`configure the internal network <scenarioa-manual>`.
+:ref:`configure the internal network <scenarioa-network>`.
 
 The Roles installed on the *5 Nodes* are:
 

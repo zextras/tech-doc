@@ -11,13 +11,13 @@ is ready for High Availability.
 The scenario can be deployed either using the
 :ref:`scenario-rd-playbook`, or :ref:`manually <scenario-rd-manual>`,
 Node by Node. In both cases, make sure you :ref:`configure the
-internal network <scenario-rd-manual>`.
+internal network <scenario-rd-network>`.
 
 The Roles installed on the *11 Nodes* are:
 
 * Node 1: Mesh and Directory, Database
-* Node 2: Mesh and Directory, Database Connector, Directory Replica
-* Node 3: Mesh and Directory, Database Connector, Monitoring
+* Node 2: Mesh, Database Connector, Directory Replica
+* Node 3: Mesh, Database Connector, Monitoring
 * Node 4: MTA AV/AS
 * Node 5: Proxy
 * Node 6: Mailstore & Provisioning, Tasks

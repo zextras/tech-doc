@@ -14,7 +14,7 @@ up to tens of thousands of accounts.
 The scenario can be deployed
 either using the :ref:`scenario-st-playbook`, or :ref:`manually
 <scenario-st-manual>`, Node by Node. In both cases, make sure you
-:ref:`configure the internal network <scenario-st-manual>`.
+:ref:`configure the internal network <scenario-st-network>`.
 
 The Roles installed on the *7 Nodes* are:
 

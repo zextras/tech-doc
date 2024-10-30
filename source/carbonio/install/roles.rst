@@ -63,6 +63,19 @@ This is the list of roles that make up a |product| installation.
       * carbonio-directory-server
       * carbonio-message-broker
 
+
+   .. grid-item-card:: Mesh
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-mesh-only-install
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * service-discover-server
+
    .. grid-item-card:: Database
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -339,6 +352,7 @@ installation, please review these important remarks:
 
    roles/role-db
    roles/role-mesh-ds
+   roles/role-mesh
    roles/role-db-connector
    roles/role-proxy
    roles/role-mta
