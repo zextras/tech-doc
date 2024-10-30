@@ -11,6 +11,14 @@ using the :ref:`scenario-sm-playbook`, or :ref:`manually
 <scenarioa-manual>`, Node by Node. In both cases, make sure you
 :ref:`configure the internal network <scenarioa-manual>`.
 
+The Roles installed on the *5 Nodes* are:
+
+* Node 1: Mesh and Directory, Database, Monitoring
+* Node 2: MTA AV/AS and Proxy
+* Node 3: Mailstore & Provisioning, Database Connector, and Tasks
+* Node 4: Files, Docs and Editor, and Preview
+* Node 5: Video Server & Video Recording
+
 .. _scenarioa-network:
 
 Network Configuration
