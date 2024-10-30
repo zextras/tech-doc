@@ -13,6 +13,20 @@ The scenario can be deployed either using the
 Node by Node. In both cases, make sure you :ref:`configure the
 internal network <scenario-rd-manual>`.
 
+The Roles installed on the *11 Nodes* are:
+
+* Node 1: Mesh and Directory, Database
+* Node 2: Mesh and Directory, Database Connector, Directory Replica
+* Node 3: Mesh and Directory, Database Connector, Monitoring
+* Node 4: MTA AV/AS
+* Node 5: Proxy
+* Node 6: Mailstore & Provisioning, Tasks
+* Node 7: Files
+* Node 8: Files
+* Node 9: Docs and Editor, Preview
+* Node 10: Docs and Editor, Preview
+* Node 11: Video Server & Video Recording
+
 .. _scenario-rd-network:
 
 Network Configuration
