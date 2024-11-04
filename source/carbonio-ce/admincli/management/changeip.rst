@@ -22,6 +22,10 @@ Before starting, make sure that all |product| services are in running
 state, that is, when you execute as the ``zextras user`` the command
 :command:`zmcontrol status`, all services are shown as ``Running``.
 
+.. note:: If you are on **RHEL 9**, replace with :command:`zmcontrol
+   status` with the commands reported in the dedicated :ref:`systemd
+   box <rhel-systemd>`.
+
 When you physically change the IP address (e.g., you change the
 configuration of the router or switch to serve a new IP to
 |product|), you will see that almost all |carbonio| services are
