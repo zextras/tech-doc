@@ -76,8 +76,14 @@ dialog, you can choose to use:
 * A custom certificate. In this case, you need to provide by yourself
   the three files of the authorisation chain (i.e., the *Domain
   Certificate*, the *Certificate CA Chain*, and the *Private Key*) in
-  the first or copy the content of the individual files in the
-  appropriate fields. Click :bdg-primary:`VERIFY` to verify the
+  the first textfield or copy the content of the individual files in the
+  appropriate fields.
+
+  .. note:: Remember to add a carriage return (CR) at the end of the
+     pasted certificate (i.e., after the ``-----END CERTIFICATE-----``
+     line), or the upload will fail.
+
+  Click :bdg-primary:`VERIFY` to verify the
   certificates: if everything is correct, notification
   :bdg-success:`The certificate is valid` will appear. To use the
   certificate, click the :bdg-primary-line:`I WANT TO USE THIS
