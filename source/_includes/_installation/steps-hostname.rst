@@ -15,11 +15,11 @@ commands. First, set the hostname
 
    # hostnamectl set-hostname mta1.example.com
 
-then update :file:`/etc/hosts` with IP and hostname
+then replace the content of the :file:`/etc/hosts`  file with IP and hostname.
 
 .. code:: console
 
-   # echo -e  "127.0.0.1 localhost\n172.16.0.10 mta1.example.com mta1" >> /etc/hosts
+   # echo -e  "127.0.0.1 localhost\n172.16.0.10 mta1.example.com mta1" > /etc/hosts
 
 .. hint:: Replace **172.16.0.10** with the local IP of the Node.
 
