@@ -79,6 +79,10 @@ RHEL 9 |beta|
 
       # sestatus
 
+.. index:: Systemd commands; on RHEL9
+
+.. _rhel-systemd:
+
 .. card:: New ``systemd`` units to replace ``zmcontrol``
 
    By installing |product| on RHEL 9 you will no longer be able to
