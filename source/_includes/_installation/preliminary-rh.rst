@@ -90,32 +90,36 @@ RHEL 9 |beta|
    .. note:: The :command:`zmcontrol -v` command, used to retrieve
       |product|'s configuration, will continue working as usual.
 
-   To get the list of all |carbonio| services, use command
+   The following are useful commands that can be used to manage the
+   new ``systemd`` units and find the replacement of the
+   :command:`zmcontrol` commands.
 
-   .. code:: console
+   #. Get the list of all |carbonio| services
 
-      # systemctl list-unit-files
+      .. code:: console
 
-   **Example**
+         # systemctl list-unit-files
 
-   You can check the status of the |task| service with:
 
-   .. code:: console
+   #. Check the status of a service, for example |task|
 
-      # systemctl status carbonio-tasks.service
+      .. code:: console
 
-   To manage its start, stop, and restart, replace ``status`` in the
-   above command with: ``start``, ``stop``, and ``restart``
-   respectively.
+         # systemctl status carbonio-tasks.service
 
-   It will also not possible to use :command:`zmcontrol start | stop |
-   restart` as a convenience to restart all |carbonio| services at
-   once. This command will be replaced by Role-specific ``systemd``
-   commands, to be executed on the Node on which they are installed.
+   #. To manage a service's start, stop, and restart, replace ``status`` in the
+      above command with: ``start``, ``stop``, and ``restart``
+      respectively.
 
-   .. code:: console
+   #. :command:`zmcontrol start | stop | restart` is no longer
+      available and can not be used as a convenience to restart all
+      |carbonio| services at once. This command has been replaced by
+      the following **four** Role-specific ``systemd`` commands, which
+      must be executed on the Node on which the Role is installed.
 
-      # systemctl start/stop/restart carbonio-directory-server.target
-      # systemctl start/stop/restart carbonio-appserver.target
-      # systemctl start/stop/restart carbonio-mta.target
-      # systemctl start/stop/restart carbonio-proxy.target
+      .. code:: console
+
+         # systemctl start/stop/restart carbonio-directory-server.target
+         # systemctl start/stop/restart carbonio-appserver.target
+         # systemctl start/stop/restart carbonio-mta.target
+         # systemctl start/stop/restart carbonio-proxy.target
