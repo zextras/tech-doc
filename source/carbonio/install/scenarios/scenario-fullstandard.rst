@@ -14,7 +14,17 @@ up to tens of thousands of accounts.
 The scenario can be deployed
 either using the :ref:`scenario-st-playbook`, or :ref:`manually
 <scenario-st-manual>`, Node by Node. In both cases, make sure you
-:ref:`configure the internal network <scenario-st-manual>`.
+:ref:`configure the internal network <scenario-st-network>`.
+
+The Roles installed on the *7 Nodes* are:
+
+* Node 1: Mesh and Directory, Database, Monitoring
+* Node 2: MTA AV/AS
+* Node 3: Proxy
+* Node 4: Mailstore & Provisioning, Database Connector, Tasks
+* Node 5: Files
+* Node 6: Docs and Editor,Preview
+* Node 7: Video Server & Video Recording
 
 .. _scenario-st-network:
 
