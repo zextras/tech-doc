@@ -137,11 +137,6 @@ See :ref:`carbonio-changelog` for the documentation, :pr:`704` and
 :pr:`707` for the source code.
 
 
-.. rubric:: 202411-714 None
-
-None
-
-
 .. rubric:: 202411-558 Provide ICS and CSV example files for migration to Carbonio
 
 Example files in :file:`ics` and :file:`csv` format have been added
