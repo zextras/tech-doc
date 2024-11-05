@@ -52,9 +52,9 @@ The first step is to edit, as the ``root`` user, the
 
 .. parsed-literal::
    
-   10.0.0.50 carbonio-01.example.com cb-01 :bdg-danger:`OLD IP`
+   10.0.0.50 crb-01.example.com crb-01 :bdg-danger:`OLD IP`
 
-   192.168.10.50 carbonio-01.example.com cb-01 :bdg-success:`NEW IP`
+   192.168.10.50 crb-01.example.com crb-01 :bdg-success:`NEW IP`
 
 Next, restart all |product| services. As the ``zextras user`` execute
 
