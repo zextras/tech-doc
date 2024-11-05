@@ -23,14 +23,14 @@ Upgrade Nodes
 
 .. _upgrade-prev:
 
-Upgrade from |prev|
+Upgrade from 24.9.0
 -------------------
 
-If you upgrade from |prev|, there is no know issue that impacts either
+If you upgrade from 24.9.0, there is no know issue that impacts either
 the upgrade process to |product| |version| or the |product| operations
 afterwards.
 
-..  If you upgrade from |prev|, please also check Section
+..  If you upgrade from 24.9.0, please also check Section
    :ref:`ts-up-prev` for known issues impacting the upgrade process.
 
 .. _up-prev-req:
@@ -50,7 +50,7 @@ installed. If you did not yet upgrade it, please refer to Section
 Upgrade from Older Versions
 ---------------------------
 
-If you plan to upgrade from a version older than |prev|, you **may
+If you plan to upgrade from a version older than 24.9.0, you **may
 encounter** issues or need to carry out tasks or command that are
 reported in Section :ref:`ts-up-older`.
 

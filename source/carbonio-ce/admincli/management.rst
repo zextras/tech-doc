@@ -30,6 +30,9 @@ certificate, either manually or automatically.
      
 :ref:`cli-analytics` explains how to enable or disable analytics.
 
+:ref:`change-ip` features direction to modify the IP address of
+|product| Single-Server
+
 .. toctree::
    :hidden: 
 
@@ -41,3 +44,4 @@ certificate, either manually or automatically.
    management/letsencrypt
    management/domaindisclaimer
    management/analytics
+   management/changeip

@@ -10,7 +10,13 @@ not need the full spectrum of |product| features.  The scenario can be
 deployed either using the :ref:`scenario-es-playbook`, or
 :ref:`manually <scenario-es-manual>`, Node by Node. In both cases,
 make sure you :ref:`configure the internal network
-<scenario-es-manual>`.
+<scenario-es-network>`.
+
+The Roles installed on the *3 Nodes* are:
+
+* Node 1: Mesh and Directory, Database, Monitoring
+* Node 2: MTA AV/AS, Proxy
+* Node 3: Mailstore & Provisioning, Database Connector
 
 .. _scenario-es-network:
 

@@ -1,0 +1,16 @@
+Changelog 2024-11
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202411-781 Add Carbonio APIs
+
+We added to the documentation all the available API to allow programmatic access
+to |product|.
+
+See :ref:`carbonio-api` for the documentation and :pr:`761` for the source code.
+
+
+End of changelog

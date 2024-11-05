@@ -9,14 +9,14 @@ Multi-Server installation.
 
 The upgrade procedure is the same, regardless of the currently
 installed version of |product|. The difference is that if you upgrade
-from |prev| or 24.9.0, you usually do not need to carry out any other
+from 24.7.1 or 24.9.0, you usually do not need to carry out any other
 task manually, while if you upgrade from any *older version*, you will
 probably need to run some tasks or commands before, during, or after
 the upgrade procedure.
 
-Before proceeding to the upgrade, if you upgrade from |prev|, please
-read carefully section :ref:`upgrade-prev`; otherwise, please read
-section :ref:`upgrade-older`.
+Before proceeding to the upgrade, if you upgrade from 24.7.1 or
+24.9.0, please read carefully section :ref:`upgrade-prev`; otherwise,
+please read section :ref:`upgrade-older`.
 
 Moreover, check Sections :ref:`ts-up-prev` and  :ref:`ts-up-older` to
 check for possible issue that you may encounter during the upgrade.

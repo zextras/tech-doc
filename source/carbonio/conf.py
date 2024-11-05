@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-#
-# SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 # Configuration file for the Sphinx documentation builder.
 #
@@ -36,7 +33,6 @@ author = 'The Zextras Team'
 # The full version, including alpha/beta/rc tags
 release = '24.9.1'
 version = release
-prev = '24.7.1'
 
 # -- General configuration ---------------------------------------------------
 
@@ -57,8 +53,8 @@ rst_prolog = """
 
 .. |product| replace:: Carbonio
 .. |storage| replace:: Carbonio Storage
-.. |prev| replace:: %s
-""" %prev + open("replace.txt").read()
+
+""" + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
 
