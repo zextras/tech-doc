@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _backup-mod:
 
 ==========
@@ -404,11 +400,6 @@ important files and directories are present:
 
    -  ``backupstat`` is a file that maintains generic statistics about
       the backup, including the timestamp of the first run
-
-   -  ``drive_items`` is a directory containing up to 256 subfolders
-      (whose name is composed of two hexadecimal lowercase letters),
-      under which are stored |file| items, according to the last two
-      letters of their UUID
 
    -  ``items`` is a directory containing up to 100 subfolders (whose
       name is composed of two digits, in which items are stored
