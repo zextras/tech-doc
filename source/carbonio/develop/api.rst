@@ -37,7 +37,7 @@ corresponding URLS:
   <../../../apidoc/carbonio-notification-push/api.html>`_ are used to
   interact with notifications sent by |product|
 
-* `Carbonio Storages <../../../apidoc/files_blob/index.html>`_ permit
+* `Carbonio Storages <../../../apidoc/carbonio-storages/storages-api.html>`_ permit
   to upload, download, and delete items from |storage|
 
 * Carbonio WSC API allow to access the `Chats API
