@@ -164,12 +164,12 @@ In order to enable the authentication strategies available in
 
       To enable 2FA it is necessary, **for all services**:
 
-      - to define a ``trusted ip range``
+      - To define a ``trusted ip range``
 
-      - to set the ``ip_can_change`` on ``true`` and ``2fa_policy`` to 1
+      - To set the ``ip_can_change`` on ``true`` and ``2fa_policy`` to 1
 
-      .. note:: 2FA is not compatible with other mechanisms such as
-         LDAP, AD, or kerberos5
+      - To use ``Carbonio`` as the Authentication method: any other
+        method (``local``, ``LDAP``, or ``AD``) will not suffice
 
    .. grid-item-card:: SAML Requirements
       :columns: 12 12 6 4
