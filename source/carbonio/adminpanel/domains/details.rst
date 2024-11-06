@@ -25,7 +25,10 @@ Global Address List
 ===================
 
 .. include:: /_includes/_adminpanel/_domains/gal.rst
-             
+
+.. index:: Authentication by GUI, Carbonio Authentication; by GUI
+  Authentication by GUI; local, local Authentication; by GUI,
+
 .. _ap-auth:
 
 Authentication
@@ -42,6 +45,8 @@ to provide the various parameters and check it the connection is
 successful, while on the other side, the use of :ref:`2FA
 <domain-2fa>` will not be allowed, as it is not possible to enforce
 2FA with authentication methods other than *Carbonio*.
+
+.. index:: Authentication by GUI; LDAP, LDAP Authentication; by GUI,
 
 .. _ap-ext-ldap:
 
@@ -85,6 +90,8 @@ Verify Auth
 
 .. seealso:: You can carry out the same procedure from the CLI,
    please refer to Section :ref:`auth-ext-ldap`.
+
+.. index:: AD Authentication; by GUI, Authentication by GUI; AD,
 
 .. _ap-ext-ad:
 

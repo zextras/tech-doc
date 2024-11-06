@@ -1,3 +1,5 @@
+.. index:: Authentication by CLI, Authentication by CLI; local, local
+           Authentication; by CLI, Carbonio Authentication; by CLI
 
 .. _auth-cli:
 
@@ -42,7 +44,11 @@ the attribute ``zimbraAuthFallbackToLocal`` to **FALSE**: as the
 
    zextras$ carbonio prov md example.com zimbraAuthFallbackToLocal FALSE
 
+.. index:: Authentication by CLI; LDAP, LDAP Authentication; by CLI,
+
 .. include:: /_includes/_admincli/ldap.rst
+
+.. index:: AD Authentication; by CLI, Authentication by CLI; AD,
 
 .. include:: /_includes/_admincli/ad.rst
 
