@@ -1,5 +1,5 @@
 
-.. _auth-ldap:
+.. _auth-cli:
 
 Authentication
 ==============
