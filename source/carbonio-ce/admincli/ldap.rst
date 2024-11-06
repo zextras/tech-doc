@@ -1,9 +1,8 @@
 
 .. _auth-ldap:
 
-===========
- LDAP & AD
-===========
+Authentication
+==============
 
 The :ref:`role-mesh-install` Role, which installs an *OpenLDAP
 service*, is used by |product| for user authentication and account
