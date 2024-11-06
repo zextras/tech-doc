@@ -192,7 +192,6 @@ Additionally, click the :blue:`DOWNLOAD QUOTA REPORT` button to
 download a CSV file containing the current status of the used
 quota. 
 
-
 .. _domain-wl:
 
 Whitelabel Settings
@@ -201,6 +200,9 @@ Whitelabel Settings
 These setting are the same that appear in Global's :ref:`global-wl`
 section, but are domain-specific: if not defined at domain level, the
 global theme settings will be applied.
+
+.. index:: Authentication by GUI; 2FA (domain)
+.. index:: 2FA Authentication; by GUI (domain)
 
 .. _domain-2fa:
 
@@ -216,6 +218,9 @@ These settings are available only if the authentication method (under
 :ref:`ap-auth`) for the *current domain* is set to **Carbonio**.
 
 .. include:: /_includes/_adminpanel/2fa.rst
+
+.. index:: Authentication by GUI; SAML
+.. index:: SAML Authentication; by GUI
      
 .. _domain-saml:
 

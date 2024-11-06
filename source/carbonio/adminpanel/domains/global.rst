@@ -46,6 +46,10 @@ any domain opens the *General settings* (:menuselection:`Domains -->
 Details --> General Settings`) of that domain. Check section
 :ref:`ap-domain-new` to add a new domain.
 
+.. index:: Authentication by GUI; 2FA (global)
+
+.. index:: 2FA Authentication; by GUI (global)
+
 .. _global-2fa:
 
 2-Factor-Autenthication

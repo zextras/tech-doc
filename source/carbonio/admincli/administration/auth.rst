@@ -177,6 +177,8 @@ In order to enable the authentication strategies available in
       There is no special requirement to enable SAML, besides
       having a SAML IDP Provider.
 
+.. index:: Authentication by CLI; 2FA, 2FA Authentication; by CLI
+
 .. _policy-management-2fa:
 
 Setting up Policy Management for 2FA
@@ -337,6 +339,7 @@ To set up and manage 2FA Policies, several CLI commands are available.
 
          Defines the expiration time for domain example.com to **20 days**.
 
+.. index:: Authentication by CLI; SAML, SAML Authentication; by CLI
 
 .. _auth_set_up_saml:
 
