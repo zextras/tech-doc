@@ -1,5 +1,6 @@
-.. index:: Authentication by CLI, Authentication by CLI; local, local
-           Authentication; by CLI, Carbonio Authentication; by CLI
+.. index:: Authentication by CLI, Authentication by CLI; local
+.. index:: local Authentication; by CLI
+.. index:: Carbonio Authentication; by CLI
 
 .. _auth-cli:
 
