@@ -25,7 +25,10 @@ Global Address List
 ===================
 
 .. include:: /_includes/_adminpanel/_domains/gal.rst
-             
+
+.. index:: Authentication by GUI, Carbonio Authentication; by GUI
+  Authentication by GUI; local, local Authentication; by GUI,
+
 .. _ap-auth:
 
 Authentication
@@ -35,10 +38,12 @@ Options in this page control how a user can log in to |product|. The
 supported methods are *Carbonio*, |product|'s local authentication
 backend, a *Local LDAP*, an *External LDAP*, or an *External Active
 Directory* server. You can refer to Section :ref:`auth-cli` for more
-information about these backends
+information about these backends.
 
 If the method is different from *Carbonio*, you need to provide the
 various parameters and check it the connection is successful.
+
+.. index:: Authentication by GUI; LDAP, LDAP Authentication; by GUI,
 
 .. _ap-ext-ldap:
 
@@ -82,6 +87,8 @@ Verify Auth
 
 .. seealso:: You can carry out the same procedure from the CLI,
    please refer to Section :ref:`auth-ext-ldap`.
+
+.. index:: AD Authentication; by GUI, Authentication by GUI; AD,
 
 .. _ap-ext-ad:
 

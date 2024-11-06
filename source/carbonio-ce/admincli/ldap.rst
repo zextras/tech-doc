@@ -1,3 +1,5 @@
+.. index:: Authentication by CLI, Authentication by CLI; local, local
+           Authentication; by CLI, Carbonio Authentication; by CLI
 
 .. _auth-cli:
 
@@ -34,7 +36,12 @@ Whenever an external authentication mechanisms is active, the
 |product| local authentication will not work: user login will not be
 allowed in case the external authentication is not reachable.
 
+
+.. index:: Authentication by CLI; LDAP, LDAP Authentication; by CLI,
+
 .. include:: /_includes/_admincli/ldap.rst
+
+.. index:: AD Authentication; by CLI, Authentication by CLI; AD,
 
 .. include:: /_includes/_admincli/ad-ce.rst
 
