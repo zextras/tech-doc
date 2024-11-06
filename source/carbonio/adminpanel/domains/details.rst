@@ -204,8 +204,8 @@ global theme settings will be applied.
 
 .. _domain-2fa:
 
-2-Factor-Autentication
-======================
+2-Factor-Autenthication
+=======================
 
 In this page it is possible to configure 2FA for the various services
 offered by |product|, only for the selected domain.  To modify

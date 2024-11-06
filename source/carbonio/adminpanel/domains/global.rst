@@ -48,8 +48,8 @@ Details --> General Settings`) of that domain. Check section
 
 .. _global-2fa:
 
-2-Factor-Autentication
-======================
+2-Factor-Autenthication
+=======================
 
 In this page it is possible to configure 2FA globally (i.e., for all
 domains configured) for the various services offered by |product|. To
