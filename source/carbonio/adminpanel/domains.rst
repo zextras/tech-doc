@@ -23,6 +23,7 @@ in multiple pages: :ref:`Create New Domain <ap-domain-new>`,
 
    domains/newdomain
    domains/newauthentication
+   domains/newuser
    domains/global
    domains/manage
    domains/details
