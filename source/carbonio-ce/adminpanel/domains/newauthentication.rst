@@ -7,11 +7,11 @@ The :ref:`role-mesh-install` Role, which installs an *OpenLDAP
 service*, is employed by |product| for user authentication and account
 management.
 
-|Product| the ability to use multiple authentication mechanisms. The
-authentication type can be set independently for each domain defined
-in the |product| infrastructure.  Each of them can be managed from CLI
-or |adminui|: please follow the cross references given to configure
-each of the methods.
+|Product| has the ability to use multiple authentication
+mechanisms. The authentication type can be set independently for each
+domain defined in the |product| infrastructure.  Each of them can be
+managed from CLI or |adminui|: please follow the cross references
+given to configure each of the methods.
 
 #. **Carbonio**. This is the default authentication method, which is
    equivalent to the *Local LDAP*.
