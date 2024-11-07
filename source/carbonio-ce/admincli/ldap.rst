@@ -7,13 +7,11 @@
 Authentication
 ==============
 
-The :ref:`role-mesh-install` Role, which installs an *OpenLDAP
-service*, is used by |product| for user authentication and account
-management.
-
-The OpenLDAP features the ability to use three authentication
-mechanisms provided by |Product|. The authentication type can be set
-independently for each domain defined in the |product| infrastructure.
+This section guides you in the configuration of an authentication
+mechanism from CLI. To see which are the available alternatives, check
+Section :ref:`create-auth`, where you can also find references to the
+corresponding |adminui| procedures to configure authentication
+mechanisms.
 
 .. _ldap-cli:
 
