@@ -37,7 +37,7 @@ Authentication
 Options in this page control how a user can log in to |product|. The
 supported methods are *Carbonio*, |product|'s local authentication
 backend, a *Local LDAP*, an *External LDAP*, or an *External Active
-Directory* server. You can refer to Section :ref:`auth-cli` for more
+Directory* server. You can refer to Section :ref:`create-auth` for more
 information about these backends.
 
 If the method is different from *Carbonio*, on the one side you need
