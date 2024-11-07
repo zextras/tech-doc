@@ -22,6 +22,7 @@ in multiple pages: :ref:`Create New Domain <ap-domain-new>`,
    :hidden:
 
    domains/newdomain
+   domains/newauthentication
    domains/global
    domains/manage
    domains/details

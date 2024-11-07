@@ -38,13 +38,21 @@ Options in this page control how a user can log in to |product|. The
 supported methods are *Carbonio*, |product|'s local authentication
 backend, a *Local LDAP*, an *External LDAP*, or an *External Active
 Directory* server. You can refer to Section :ref:`auth-cli` for more
-information about these backends
+information about these backends.
 
 If the method is different from *Carbonio*, on the one side you need
 to provide the various parameters and check it the connection is
 successful, while on the other side, the use of :ref:`2FA
 <domain-2fa>` will not be allowed, as it is not possible to enforce
 2FA with authentication methods other than *Carbonio*.
+
+.. _localauth-cli:
+
+Local LDAP
+----------
+
+The local LDAP authentication  allows to define new users directly on
+|product|.
 
 .. index:: Authentication by GUI; LDAP, LDAP Authentication; by GUI,
 
