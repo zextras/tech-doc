@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 ====================
 Administration Tasks
 ====================
@@ -17,12 +13,12 @@ setup.
 
 :ref:`adv-admin` introduces some advanced topic about the
 administration of a |product| server.
-     
+
 :ref:`cli-features` explains how to set or check if Mails and Files
 components are enabled for a user or a COS.
 
 :ref:`cli-billing-data` shows how to retrieve or delete billing data
-on the domains configured on |product|. 
+on the domains configured on |product|.
 
 :ref:`le-renew` shows how to renew a Let's Encrypt-generated
 certificate, either manually or automatically.
@@ -30,6 +26,9 @@ certificate, either manually or automatically.
 :ref:`disclaimer-cli` contains useful commands to manage domain disclaimers.
 
 :ref:`cli-analytics` explains how to enable or disable analytics.
+
+:ref:`change-ip` features direction to modify the IP address of
+|product| Single-Server
 
 .. toctree::
    :hidden:
@@ -42,3 +41,4 @@ certificate, either manually or automatically.
    administration/letsencrypt
    administration/domaindisclaimer
    administration/analytics
+   administration/changeip

@@ -67,6 +67,20 @@ of them.
 
          proxy
 
+
+   .. grid-item-card:: |wsc|
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-wsc
+
+      Resolving problems that may arise when using |wsc|
+
+      .. toctree::
+         :hidden:
+
+         wsc
+
    .. grid-item-card:: System 
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -79,4 +93,3 @@ of them.
          :hidden:
 
          general
-

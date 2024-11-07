@@ -74,6 +74,10 @@ rights.
         sun.security.provider.certpath.SunCertPathBuilderException:
         unable to find valid certification path to requested target
 
+.. index:: Global Admin; new, Global Admin; create new
+
+.. _ap-new-admin:
+
 How to Create an Administrator
 ------------------------------
 

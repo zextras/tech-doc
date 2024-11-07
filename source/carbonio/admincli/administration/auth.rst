@@ -164,18 +164,20 @@ In order to enable the authentication strategies available in
 
       To enable 2FA it is necessary, **for all services**:
 
-      - to define a ``trusted ip range``
+      - To define a ``trusted ip range``
 
-      - to set the ``ip_can_change`` on ``true`` and ``2fa_policy`` to 1
+      - To set the ``ip_can_change`` on ``true`` and ``2fa_policy`` to 1
 
-      .. note:: 2FA is not compatible with other mechanisms such as
-         LDAP, AD, or kerberos5
+      - To use ``Carbonio`` as the Authentication method: any other
+        method (``local``, ``LDAP``, or ``AD``) will not suffice
 
    .. grid-item-card:: SAML Requirements
       :columns: 12 12 6 4
 
       There is no special requirement to enable SAML, besides
       having a SAML IDP Provider.
+
+.. index:: Authentication by CLI; 2FA, 2FA Authentication; by CLI
 
 .. _policy-management-2fa:
 
@@ -337,6 +339,7 @@ To set up and manage 2FA Policies, several CLI commands are available.
 
          Defines the expiration time for domain example.com to **20 days**.
 
+.. index:: Authentication by CLI; SAML, SAML Authentication; by CLI
 
 .. _auth_set_up_saml:
 
