@@ -46,7 +46,7 @@ successful, while on the other side, the use of :ref:`2FA
 <domain-2fa>` will not be allowed, as it is not possible to enforce
 2FA with authentication methods other than *Carbonio*.
 
-.. _localauth-cli:
+.. _ap-localauth:
 
 Local LDAP
 ----------
