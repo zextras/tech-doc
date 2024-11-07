@@ -80,6 +80,19 @@ of them.
 
          backup
 
+   .. grid-item-card:: |wsc|
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-wsc
+
+      Resolving issues that may arise when using |wsc|.
+
+      .. toctree::
+         :hidden:
+
+         wsc
+
    .. grid-item-card:: Services Status
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
