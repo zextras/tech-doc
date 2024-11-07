@@ -43,6 +43,14 @@ information about these backends.
 If the method is different from *Carbonio*, you need to provide the
 various parameters and check it the connection is successful.
 
+.. _ap-localauth:
+
+Local LDAP
+----------
+
+The local LDAP authentication  allows to define new users directly on
+|product|.
+
 .. index:: Authentication by GUI; LDAP, LDAP Authentication; by GUI,
 
 .. _ap-ext-ldap:
