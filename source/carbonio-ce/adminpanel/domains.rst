@@ -13,15 +13,18 @@ the list or start typing its name in the text box below the **Domain**
 label.
 
 For the sake of clarity, the *Domains*\'s documentation has been split
-in multiple pages: :ref:`Create New Domain <ap-domain-new>`,
-:ref:`Global <ap-global>`, :ref:`Manage <ap-manage-domains>`, and
-:ref:`Details <ap-domain-details>`.
-
+in multiple pages: :ref:`Global <ap-global>`, :ref:`Manage
+<ap-manage-domains>`, and :ref:`Details <ap-domain-details>` follow
+the |adminui| organisations, while :ref:`ap-domain-new`,
+:ref:`create-auth`, and :ref:`ap-create-user` provide quick access
+to the most common tasks related to the domain administration.
 
 .. toctree::
    :hidden:
 
    domains/newdomain
+   domains/newauthentication
+   domains/newuser
    domains/global
    domains/manage
    domains/details
