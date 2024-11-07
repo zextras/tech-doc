@@ -5,7 +5,10 @@
 =================
 
 In this section we provide directions to create a new account or
-shared account, by configuring the most common options.
+shared account, by configuring the most common options. You can then
+further configure the user features and data: have a look at the full
+list of options for a new account can be found in section
+:ref:`ap-accounts`.
 
 If you want to create a *Global Admin* or *Delegated (Domain) Admin*,
 please create a new account, then refer to section
