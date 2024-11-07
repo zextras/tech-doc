@@ -69,7 +69,7 @@ into account the following points:
    #. Install package :file:`carbonio-ws-collaboration-ui` on the
       :ref:`role-proxy-install` Node
 
-   #. Install package :file:`carbonio-broker` on the
+   #. Install package :file:`carbonio-message-broker` on the
       :ref:`role-mesh-install` Node
 
    #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node or
@@ -175,7 +175,7 @@ to the directions given below.
    * file `service-account-file.json` must be saved under directory
      :file:`/etc/carbonio/notification-push/android`
 
-   * file `wscassets/auth-key.p8` must be saved under directory
+   * file `auth-key.p8` must be saved under directory
      :file:`/etc/carbonio/notification-push/ios`
 
    Next, configure them using the following commands
