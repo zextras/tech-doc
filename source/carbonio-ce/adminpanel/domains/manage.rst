@@ -257,7 +257,7 @@ restore the COS value.
 
 .. _ap-account-status:
 
-Account statuses
+Account Statuses
 ----------------
 
 A user account can be in one of the following statuses.
@@ -289,6 +289,11 @@ A user account can be in one of the following statuses.
 
    .. hint:: Both the number of failed attempts and the lockout
       period can be configured.
+
+The status of an account also influences the items stored in that
+user's |file|: Whenever an account is in *Closed* status, the item
+shared by that user are no longer visible to the users who could
+access it.
 
 .. index:: ! Alias, Account; alias
 
