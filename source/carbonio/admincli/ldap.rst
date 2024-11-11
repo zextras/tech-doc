@@ -4,8 +4,9 @@
 
 .. _auth-cli:
 
-Authentication
-==============
+================
+ Authentication
+================
 
 This section guides you in the configuration of an authentication
 mechanism from CLI. To see which are the available alternatives, check
