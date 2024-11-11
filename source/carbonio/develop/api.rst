@@ -46,9 +46,8 @@ corresponding URLS:
   <../../../apidoc/carbonio-ws-collaboration/meeting-api.html>`_, used
   for the Chat and WSC meetings
 
-
 Third-party API
-===============
+---------------
 
 Most of the software integrated in |product| exposes its own API to
 allow for programmatic access to their functionalities. This is the
