@@ -1,7 +1,8 @@
 .. _monitor-prometheus:
 
-Prometheus
-==========
+============
+ Prometheus
+============
 
 .. include:: /_includes/_monitor/prometheus.rst
 
