@@ -52,7 +52,8 @@ options concern
 
 * the default appearance of |product| in web clients: for example, if
   e-mails are displayed as conversations, or the calendar shows a
-  month or a work week
+  month or a work week. The maximum size for attachments sent by
+  e-mail is also configurable here.
 
 * the default values or behaviour of the features: for example whether
   new e-mail contacts are added automatically to Contacts or how
