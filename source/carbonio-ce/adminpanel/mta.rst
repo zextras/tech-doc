@@ -1,6 +1,7 @@
 .. _ap_mta:
 
-MTA
-===
+=====
+ MTA
+=====
 
 .. include:: /_includes/_adminpanel/mta.rst

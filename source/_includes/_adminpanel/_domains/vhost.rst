@@ -82,7 +82,11 @@ dialog, you can choose to use:
 
   .. note:: If you paste the certificate, remember to add a carriage
      return (CR) at the end of the certificate (i.e., after the
-     ``-----END CERTIFICATE-----`` line).
+     ``-----END CERTIFICATE-----`` line), like in the following
+     screenshot.
+
+     .. image:: /img/adminpanel/ap-cert.png
+        :width: 50%
 
   Click :bdg-primary:`VERIFY` to verify the
   certificates: if everything is correct, notification

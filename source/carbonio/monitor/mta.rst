@@ -1,6 +1,7 @@
 .. _monitor-mta:
 
-MTA Role
-========
+==========
+ MTA Role
+==========
 
 .. include:: /_includes/_monitor/mta.rst
