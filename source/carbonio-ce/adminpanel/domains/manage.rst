@@ -18,13 +18,17 @@ information on their type and status.
 The list can be filtered using the text field above the list, while
 a new account can be created using the :bdg-primary:`+` button.
 
-On the panel's top right corner, buttons allow to edit or delete the
-user, and also to redirect to the user's mailbox.
-
 A click on any account will open a new panel that contains a number of
 information and options that can be modified. When editing a user's
 account, most of the option are the same that can be found in the
 :ref:`ap-new-account` section and are organised in tabs.
+
+On the panel's top right corner, buttons allow to
+:bdg-primary-line:`VIEW MAIL` of the user, that is, to access the
+user's mailbox and to :bdg-warning-line:`DELETE` the user. Upon
+deletion, all the e-mails, contacts, calendars, and files owned by the
+user will be deleted: in other words, all user's blobs and associated
+metadata will be removed from |product|.
 
 Options defined in the user's COS are inherited, but can be modified
 for any individual user. The values that have been modified are
@@ -257,7 +261,7 @@ restore the COS value.
 
 .. _ap-account-status:
 
-Account statuses
+Account Statuses
 ----------------
 
 A user account can be in one of the following statuses.
@@ -289,6 +293,11 @@ A user account can be in one of the following statuses.
 
    .. hint:: Both the number of failed attempts and the lockout
       period can be configured.
+
+The status of an account also influences the items stored in that
+user's |file|: Whenever an account is in *Closed* status, the item
+shared by that user are no longer visible to the users who could
+access it.
 
 .. index:: ! Alias, Account; alias
 

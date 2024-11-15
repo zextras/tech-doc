@@ -1,6 +1,5 @@
-The settings in this page allow to configure system
-notifications, domain disclaimers, and how users can search for other
-users.
+The settings in this page allow to configure system notifications,
+domain disclaimers, and how users can search for other users.
 
 .. card:: System Notifications
 
@@ -40,8 +39,3 @@ user on every Node featuring the :ref:`MTA role <role-mta-install>`
    be able to find user Jane *jane@acme.example* (which is on a
    different domain) only if this switch is *active*, otherwise Jane
    will not show up in the results.
-
-   If the option is **not active**, it will be possible to define in
-   :menuselection:`Domains --> Details --> General Settings` (See
-   :ref:`ap-domain-settings`) the domains on which users will be able
-   to search users of other domains.

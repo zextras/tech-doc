@@ -113,11 +113,14 @@ a:visited, std-ref:visited, std-numref:visited, doc:visited, reference.external:
 
 /* inline commands */
 .command {
- font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace;
- font-size: 75%;
- font-weight: 400;
- padding: 2px 5px;
- border: 1px solid #e1e4e5;
+    background-color: var(--pst-color-surface);
+    font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,Courier,monospace;
+    font-size: 0.875em;
+    color: var(--pst-color-inline-code);
+    font-weight: 400;
+    padding: 2px 5px;
+    border: 1px solid #e1e4e5;
+    border-radius: 0.25rem;
 }
 
 
