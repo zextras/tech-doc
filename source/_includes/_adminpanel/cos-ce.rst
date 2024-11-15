@@ -2,36 +2,51 @@ A |cos| determines which features and options can be accessed by a
 user, how to access them, and sets the default values for a number of
 them.
 
-To create a COS, click the :bdg-primary:`CREATE NEW COS` button, enter
-a name, and optionally a description and some notes. You can then
-configure all the options by entering the left-hand side *Details*
-menu.
+To create a COS, click the :bdg-primary:`CREATE` button, on the top
+left corner, then enter a name and optionally a description and some
+notes. You can then configure all the options for the COS by entering
+the left-hand side *Details* menu.
+
+General
+-------
+
+COS List
+~~~~~~~~
+
+Initially the page presents the list of the COSes defined on |product|
+and their status. Click any of them to see its options and configure them.
+
+Details
+-------
 
 .. _cos_info:
 
 General Information
--------------------
+~~~~~~~~~~~~~~~~~~~
 
-This section present some (unchangeable) information about the chosen
-COS: name, ID, and creation date together with some calculated value:
-which accounts and domains use the COS. These values are expanded
-below, with the complete list of handled accounts and domains.
+This section shows information about the chosen COS: name (which can
+be changed), ID, and creation date together with some calculated
+value: which accounts and domains use the COS. These values are
+expanded below, with the complete list of handled accounts and
+domains.
 
 .. _cos-features:
 
 Features
---------
+~~~~~~~~
 
 *Features* are settings that allow or forbid the user to access the
 most used Modules of |product|, both via browser and mobile apps. The
 Administrator can prevent users to even access the `Settings` Module,
 meaning that the user can not customise anything in the web mail's
-Settings Module. This proves useful in some scenarios: for
-example, an organisation wants that all the communication of its
-employees has the same branding (including also Out Of Office replies,
-the visible name of the sender, and other); another needs that the
-e-mails be encrypted and does not want users to send plain-text
-e-mails, and so on.
+Settings Module. This proves useful in some scenarios, like for
+example:
+
+* an organisation wants that all the communication of its employees
+  has the same branding (including also Out Of Office replies, the
+  visible name of the sender, and other)
+* another organisation needs that the e-mails be encrypted and does
+  not want users to send plain-text e-mails
 
 .. hint:: Some of these options can be enabled or disabled via CLI:
    please refer to section :ref:`cli-features` for more information.
@@ -39,7 +54,7 @@ e-mails, and so on.
 .. _cos-prefs:
 
 Preferences
------------
+~~~~~~~~~~~
 
 *Preferences* consist of generic options for the various components
 (Mails, Calendar, Contacts). Most of these options can be overridden
@@ -48,7 +63,7 @@ by users in their Settings Module.
 The first is the default language to be used by the members of the
 COS, which includes also the locale The list of supported languages
 can be found in section :ref:`supported-languages`. The remaining
-options concern
+options concern:
 
 * the default appearance of |product| in web clients: for example, if
   e-mails are displayed as conversations, or the calendar shows a
@@ -77,7 +92,7 @@ options concern
 .. _cos-pool:
 
 Server Pools
-------------
+~~~~~~~~~~~~
 
 In this page it is possible to select on which servers new users can
 be added to the COS.
@@ -89,7 +104,7 @@ be added to the COS.
 Advanced
 --------
 
-Multiple *Advanced* options can be  configured here, divided into
+Multiple *Advanced* options can be configured here, divided into
 multiple groups
 
 Forwarding
