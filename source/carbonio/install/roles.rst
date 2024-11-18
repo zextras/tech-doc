@@ -91,24 +91,6 @@ This is the list of roles that make up a |product| installation.
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db
 
-
-   .. grid-item-card:: Database Connector
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-      :link-type: ref
-      :link: role-db-conn-install
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * pgpool2
-      * carbonio-files-db
-      * carbonio-mailbox-db
-      * carbonio-docs-connector-db
-      * carbonio-tasks-db
-      * service-discover-agent
-
    .. grid-item-card:: Proxy
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -343,9 +325,8 @@ installation, please review these important remarks:
 
 * You **must** start with the installation of the
   :ref:`role-db-install` Role, followed by the
-  :ref:`role-mesh-install` and :ref:`role-db-conn-install`. Then you
-  can proceed with the other infrastructure Roles and finally with all
-  other Roles.
+  :ref:`role-mesh-install`. Then you can proceed with the other
+  infrastructure Roles and finally with all other Roles.
 
 .. toctree::
    :hidden:
@@ -353,7 +334,6 @@ installation, please review these important remarks:
    roles/role-db
    roles/role-mesh-ds
    roles/role-mesh
-   roles/role-db-connector
    roles/role-proxy
    roles/role-mta
    roles/role-mailstore-provisioning
