@@ -19,6 +19,7 @@ to |version|.
 .. include:: /_includes/_upgrade/issues-pg-adv-modules.rst
 .. include:: /_includes/_upgrade/issues-languages.rst
 .. include:: /_includes/_upgrade/issues-logging.rst
+.. include:: /_includes/_upgrade/issue-version.rst
 
 .. _ts-up-older:
 
@@ -49,4 +50,5 @@ intervention.
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
 
-.. include:: /_includes/_upgrade/issues.rst 
+.. include:: /_includes/_upgrade/issues.rst
+             
