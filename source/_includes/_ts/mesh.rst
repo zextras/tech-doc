@@ -20,6 +20,8 @@ it, for example this command show all services running on node with
    an icon: :octicon:`alert-fill;1em;sd-text-danger` Use them with
    care!
 
+.. _ts-token:
+
 Retrieve Token
 ==============
 
