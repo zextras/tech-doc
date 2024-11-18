@@ -90,6 +90,10 @@ This is the list of roles that make up a |product| installation.
       * carbonio-notification-push-db
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db
+      * carbonio-files-db
+      * carbonio-mailbox-db
+      * carbonio-docs-connector-db
+
 
    .. grid-item-card:: Proxy
       :columns: 6
