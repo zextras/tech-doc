@@ -7,7 +7,7 @@ Once the :ref:`role-docs-install` is operational, some tweaking can be
 applied to its configuration to improve performances.
 
 The remainder of this page contains a few tables that list the *Key
-names* and the *default values* of some |WSC| configuration values
+names* and the *default values* of some |docs| configuration values
 that you can modify. You can take these tables into account in case you
 want to revert some values to their default after some unsatisfactory
 change.
