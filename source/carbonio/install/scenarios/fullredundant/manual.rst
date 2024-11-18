@@ -38,8 +38,6 @@ Roles on the Nodes, according to the following guidelines.
 
       * :ref:`role-ds-replica-install`
 
-      * :ref:`role-db-conn-install`
-
    .. grid-item-card:: Node 3
       :columns: 12
 
@@ -50,8 +48,6 @@ Roles on the Nodes, according to the following guidelines.
       Roles installed:
 
       * :ref:`role-mesh-install`
-
-      * :ref:`role-db-conn-install`
 
       * :ref:`role-monit-install`
 

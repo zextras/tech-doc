@@ -51,8 +51,6 @@ Roles on the Nodes, according to the following guidelines.
 
       * :ref:`role-prov-install`
 
-      * :ref:`role-db-conn-install`
-
       * :ref:`role-tasks-install`
 
    .. grid-item-card:: Node 4
