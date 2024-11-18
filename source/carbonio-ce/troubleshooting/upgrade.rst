@@ -19,6 +19,26 @@ There is no know issue that impacts either the upgrade process to
 .. include:: /_includes/_upgrade/issues-languages.rst
 .. include:: /_includes/_upgrade/issues-logging.rst
 
+.. card:: Carbonio version mismatch
+
+   It can sometimes happen, especially after installing hotfixes, that
+   there is a mismatch between the version of |product| shown in the
+   |adminui| and in the output of the :command:`zmcontrol -v` CLI
+   command.
+
+   To understand which is the actual |product| version installed, you
+   need to execute, as the ``zextras`` user, the command
+
+   .. code:: console
+
+      zextras$ zmcontrol -v
+
+   The output will report the actual version, for example::
+
+     zextras@example:~$ zmcontrol -v
+     Carbonio Release 24.9.0
+
+
 .. _ts-up-older:
 
 Known Issues (Older Releases)
@@ -135,15 +155,15 @@ more of the following issues that require a manual intervention.
    .. code:: console
 
       $ psql -d abq -c "REINDEX DATABASE abq"
-      $ psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;" 
+      $ psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;"
 
    These commands should probably be given for each of the databases, so
    you can copy & paste all the following commands::
 
       psql -d abq -c "REINDEX DATABASE abq"
-      psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;" 
+      psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;"
       psql -d powerstore -c "REINDEX DATABASE powerstore"
-      psql -d powerstore -c "ALTER DATABASE powerstore REFRESH COLLATION VERSION;" 
+      psql -d powerstore -c "ALTER DATABASE powerstore REFRESH COLLATION VERSION;"
       psql -d activesync -c "REINDEX DATABASE activesync"
       psql -d activesync -c "ALTER DATABASE activesync REFRESH COLLATION VERSION;"
       psql -d auth -c "REINDEX DATABASE auth"
