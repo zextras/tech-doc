@@ -31,16 +31,6 @@ which contain the files necessary to show the Module to the users,
 .. hint:: ``-UI`` packages provide the front-end files to access the
    service from a browser or mobile app.
 
-A special case is represented by the Postgres/DB-Connection
-component. While |product| can be installed to communicate directly
-with a Postgres database, it is suggested to install the **PgPool-II**
-middleware in all Multi-Node scenarios, in order to be independent of
-the underlying database(s) and be able to scale without the need to
-configure multiple Postgres instances or even a Postgres cluster.
-
-The use of **Pgpool-II** would therefore improve flexibility and
-scalability in the management of the DB instance(s).
-
 Supported Mail Protocols
 ========================
 
