@@ -41,7 +41,7 @@ the *new value*, respectively, as written in the tables.
 Configuration tables
 --------------------
 
-The following table are available to optimise |wsc|: :ref:`Push
+The following tables are available to optimise |wsc|: :ref:`Push
 Connector <wsc-pool-opt>`, :ref:`Push Notifications Database
 <wsc-push-opt>`, and :ref:`the WSC databases <wsc-db-opt>`.
 
