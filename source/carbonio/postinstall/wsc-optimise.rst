@@ -33,10 +33,13 @@ the CLI.
 
      # consul kv put -token-file="$CONSUL_TOKEN_PATH" "$KEY" "$VALUE"
 
-In the commands, ``$CONSUL_TOKEN_PATH`` is the |mesh| secret stored in
-file :file:`/var/lib/service-discover/password` on the **Directory
-Service server**, while ``$KEY`` and ``$VALUE`` are the *key name* and
-the *new value*, respectively, as written in the tables.
+In the commands, ``$CONSUL_TOKEN_PATH`` is the |mesh| secret stored on
+the **Directory Service server**, while ``$KEY`` and ``$VALUE`` are
+the *key name* and the *new value*, respectively, as written in the
+tables.
+
+.. hint:: The |mesh| token can be retrieved using the procedure
+   described in section :ref:`ts-token`.
 
 Configuration tables
 --------------------
