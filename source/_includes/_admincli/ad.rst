@@ -33,9 +33,9 @@ Finally, we also create 3 accounts on |product|
 
 .. code:: bash
 
-   zextras$ carbonio prov ca user1@authentication.example.com ""
-   zextras$ carbonio prov ca user2@authentication.example.com ""
-   zextras$ carbonio prov ca user3@authentication.example.com ""
+   zextras$ carbonio prov ca user1@ad-auth.example.com ""
+   zextras$ carbonio prov ca user2@ad-auth.example.com ""
+   zextras$ carbonio prov ca user3@ad-auth.example.com ""
 
 .. warning:: Do not provide any passwords in these commands!
              
