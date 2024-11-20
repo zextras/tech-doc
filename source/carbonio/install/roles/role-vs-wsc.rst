@@ -86,7 +86,7 @@ level: please refer to section :ref:`vs-recorder-conf` for
 directions.
 
 The recorded sessions will be stored in directory
-:file:`/var/lib/videorecorder/` on the Node which features the
+:file:`/var/lib/videoserver/` on the Node which features the
 :ref:`role-prov-install` Role, because the ability to record
 requires a Node which features that Role. Make sure that the
 directory has sufficient free space, otherwise recorded videos can
