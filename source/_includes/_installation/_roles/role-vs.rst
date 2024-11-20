@@ -100,12 +100,12 @@ hosting that Role to configure the Video Server.
    level, please refer to section :ref:`vs-recorder-conf` for
    directions.
 
-   The recorded sessions will be stored in directory
-   :file:`/var/lib/videoserver/` on the Node which features the
-   :ref:`role-prov-install` Role, because the ability to record
-   requires a Node which features that Role. Make sure that the
-   directory has sufficient free space, otherwise recorded videos can
-   not be stored.
+   A recorded session is temporary stored in directory
+   :file:`/var/lib/videoserver/` on the Node featuring the |vs| Role:
+   make sure that this directory has sufficient free space, otherwise
+   recorded videos can not be stored. As soon as the recording session
+   terminates, the file will be processed and moved to the Node
+   featuring the :ref:`role-prov-install`.
 
    .. hint:: You can mount on that location a dedicated disk or
       partition and keep it monitored for space usage.
