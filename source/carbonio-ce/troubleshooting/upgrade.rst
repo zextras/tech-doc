@@ -16,7 +16,6 @@ Known Issues (Current Release)
 There is no know issue that impacts either the upgrade process to
 |product| |version| or the |product| operations afterwards.
 
-.. include:: /_includes/_upgrade/issues-languages.rst
 .. include:: /_includes/_upgrade/issues-logging.rst
 .. include:: /_includes/_upgrade/issue-janus.rst
 
@@ -60,8 +59,6 @@ more of the following issues that require a manual intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
-* Folders with :ref:`Cyrillic (UTF-7) characters <upgrade-lang>` can not be
-  subscribed using IMAP
 * There are :ref:`warning messages about SLF4J <upgrade-logging>` in
   the log files
 
