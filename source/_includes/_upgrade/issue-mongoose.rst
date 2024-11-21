@@ -1,6 +1,6 @@
 .. _upgrade-mongoose:
 
-.. card:: Mongooseconfiguration file
+.. card:: Mongoose configuration file
 
 
    During the |product| upgrade procedure, you will be asked whether or
