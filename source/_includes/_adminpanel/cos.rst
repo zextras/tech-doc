@@ -36,11 +36,13 @@ Features
 ~~~~~~~~
 
 *Features* are settings that allow or forbid the user to access the
-most used Modules of |product|, both via browser and mobile apps. The
-Administrator can prevent users to even access the `Settings` Module,
-meaning that the user can not customise anything in the web mail's
-Settings Module. This proves useful in some scenarios, like for
-example:
+various features related to the everyday use of |product|, like for
+example ActiveSync, |wsc|, web and mobile access.
+
+The Administrator can enforce authentication by requiring 2FA, and
+even prevent users to even access the `Settings` Module, meaning that
+the user can not customise anything in the web mail's Settings
+Module. This proves useful in some scenarios, like for example:
 
 * an organisation wants that all the communication of its employees
   has the same branding (including also Out Of Office replies, the
