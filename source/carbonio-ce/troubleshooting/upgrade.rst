@@ -18,6 +18,8 @@ There is no know issue that impacts either the upgrade process to
 
 .. include:: /_includes/_upgrade/issues-languages.rst
 .. include:: /_includes/_upgrade/issues-logging.rst
+.. include:: /_includes/_upgrade/issue-janus.rst
+
 
 .. card:: Carbonio version mismatch
 
