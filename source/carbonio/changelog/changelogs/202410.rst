@@ -119,10 +119,13 @@ We added a new section :ref:`chlog-doc` that lists all changes made to the |prod
 See :pr:`741` and :pr:`743` for the source code
 
 
-.. rubric:: 202410-811 Provide a jar File to fix encoding issues
+.. rubric:: 202410-811 Provide a jar file to fix encoding issues
 
 A downloadable jar file that fixes a few encoding issues has been
-:ref:`added to the documentation <upgrade-lang>`
+added to the documentation.
+
+.. note:: The issue has since been resolved and no longer requires a
+   manual task to be fixed.
     
 See :pr:`734` and :pr:`735` for the source code.
 
@@ -191,7 +194,9 @@ See :ref:`upgrade-manual` for the documentation, :pr:`740` for the source code
 
 A mistake was done and fixed, where *UTF-8* was written instead of **UTF-7**.
 
-See :ref:`the issue description <upgrade-lang>` for the documentation, :pr:`744` for the source code.
+.. note:: The documentation was part of issue 202410-811, which was removed.
+
+See :pr:`744` for the source code.
 
 
 .. rubric:: 202410-840 Corrections applied to the migration section
