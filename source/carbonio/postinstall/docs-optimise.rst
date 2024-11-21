@@ -12,6 +12,8 @@ that you can modify. You can take these tables into account in case you
 want to revert some values to their default after some unsatisfactory
 change.
 
+.. _modify-kv:
+
 How to Modify Values
 --------------------
 
@@ -51,8 +53,8 @@ documents that |docs| can manage and open.
 .. card:: File sizes
 
    The following values can be modified via the |mesh| interface (see
-   Section :ref:`mesh-gui`) or via the CLI, using the commands that
-   follow the table.
+   Section :ref:`mesh-gui`) or via the CLI, using the commands
+   presented in the :ref:`previous section <modify-kv>`.
 
    .. csv-table::
       :header: "Key name", "Default value"
@@ -61,3 +63,6 @@ documents that |docs| can manage and open.
       "carbonio-docs-connector/max-file-size-in-mb/document", "50"
       "carbonio-docs-connector/max-file-size-in-mb/presentation", "100"
       "carbonio-docs-connector/max-file-size-in-mb/spreadsheet", "10"
+
+   When changing any of this values, they are immediately picked up by
+   the system, without the need to restart any services.
