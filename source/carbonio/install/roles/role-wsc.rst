@@ -43,8 +43,16 @@ installing it:
   |product| infrastructure (it is part on the
   :ref:`role-proxy-install` Role)
 
-* |cwsc| requires that some ports, which are listed in
-  :ref:`fw-ports`, be forwarded on this and on the Proxy Nodes
+* |cwsc| requires that some ports be forwarded from the Internet to
+  the |vs| and Proxy Nodes, according to the following table:
+
+  .. csv-table::
+     :header: "Port", "Protocol", "To Node", "Service"
+     :widths: 10 10 20 80
+
+     "20000-40000", "UDP", "|vs|", "Client connections for the audio and
+     video streams"
+     "5222", "TCP", "Proxy", "Message Dispatcher"
 
 .. _wsc-install:
 
