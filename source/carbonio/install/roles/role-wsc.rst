@@ -202,19 +202,9 @@ to the directions given below.
 Enable |wsc|
 ------------
 
-You need to allow each user to use |wsc|,  either from the |adminui|
-or running from the CLI the following command as the ``zextras`` user,
-replacing the e-mail address with the one of the user.
-
-.. code:: console
-
-   zextras$ carbonio prov ma john@example.com default carbonioFeatureChatsEnabled TRUE
-
-To let |product| pick up the change, restartg the service
-
-.. code:: console
-
-   # systemctl restart carbonio-ws-collaboration
+|wsc| can be enabled from the |adminui| at account or COS level:
+please refer to Sections :ref:`Account / Configuration <act-conf>` and
+:ref:`cos-features`, respectively.
 
 .. hint:: If the |wsc| installation is successful, you can optimise
    some values according to the guidelines that you can find in
