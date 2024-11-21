@@ -20,6 +20,8 @@ to |version|.
 .. include:: /_includes/_upgrade/issues-languages.rst
 .. include:: /_includes/_upgrade/issues-logging.rst
 .. include:: /_includes/_upgrade/issue-version.rst
+.. include:: /_includes/_upgrade/issue-janus.rst
+.. include:: /_includes/_upgrade/issue-mongoose.rst
 
 .. _ts-up-older:
 
