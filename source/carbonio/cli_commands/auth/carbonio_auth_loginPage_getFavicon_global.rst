@@ -1,0 +1,24 @@
+.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
+..
+.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+
+.. _carbonio_auth_loginPage_getFavicon_global:
+
+************
+global
+************
+
+::
+
+   carbonio auth loginPage getFavicon global 
+
+
+.. rubric:: Usage example
+
+
+::
+
+   carbonio auth loginPage getFavicon global
+
+
+
