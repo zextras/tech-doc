@@ -2,7 +2,7 @@
 Carbonio Admin
 ==============
 
-This section contains useful resources for ..
+Commands regarding Admin module
 
 .. card:: Table of Contents
 

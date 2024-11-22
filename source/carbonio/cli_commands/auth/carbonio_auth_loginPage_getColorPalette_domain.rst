@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_getColorPalette_domain:
 
-************
-domain
-************
+********************************
+loginPage getColorPalette domain
+********************************
 
 ::
 

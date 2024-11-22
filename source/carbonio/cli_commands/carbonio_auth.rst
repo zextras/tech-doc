@@ -2,7 +2,7 @@
 Carbonio Auth
 =============
 
-This section contains useful resources for ..
+Commands regarding Carbonio Auth module
 
 .. card:: Table of Contents
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_getColorPalette_global:
 
-************
-global
-************
+********************************
+loginPage getColorPalette global
+********************************
 
 ::
 

@@ -2,7 +2,7 @@
 Carbonio Backup
 ===============
 
-This section contain ...
+Commands regarding Backup module
 
 .. card:: Table of
 
