@@ -203,7 +203,7 @@ The content is organised in multiple parts:
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: doc
-      :link: admincli/toc
+      :link: cli_commands/toc
 
       CLI Commands Reference Table
 
