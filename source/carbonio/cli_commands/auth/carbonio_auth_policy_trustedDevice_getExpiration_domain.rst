@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_trustedDevice_getExpiration_domain:
 
-************
-domain
-************
+**********************************************
+auth policy trustedDevice getExpiration domain
+**********************************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_credential_delete:
 
-************
-delete
-************
+*****************
+credential delete
+*****************
 
 ::
 

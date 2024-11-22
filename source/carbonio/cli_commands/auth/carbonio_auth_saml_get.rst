@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_saml_get:
 
-******
-get
-******
+********
+saml get
+********
 
 ::
 

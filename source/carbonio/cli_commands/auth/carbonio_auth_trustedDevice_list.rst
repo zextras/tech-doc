@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_trustedDevice_list:
 
-********
-list
-********
+******************
+trustedDevice list
+******************
 
 ::
 

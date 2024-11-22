@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_MobileApp_global:
 
-************
-global
-************
+***************************
+policy set MobileApp global
+***************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_MobileApp_domain:
 
-************
-domain
-************
+***************************
+policy set MobileApp domain
+***************************
 
 ::
 

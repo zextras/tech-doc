@@ -5,7 +5,7 @@
 .. _carbonio_auth_totp_delete:
 
 ************
-delete
+totp delete
 ************
 
 ::

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_Cli_domain:
 
-************
-domain
-************
+*********************
+policy set Cli domain
+*********************
 
 ::
 

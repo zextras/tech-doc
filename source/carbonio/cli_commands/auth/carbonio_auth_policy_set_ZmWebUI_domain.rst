@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_ZmWebUI_domain:
 
-************
-domain
-************
+*************************
+policy set ZmWebUI domain
+*************************
 
 ::
 

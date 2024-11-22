@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_setSkinLogoAppBanner_domain:
 
-************
-domain
-************
+*************************************
+loginPage setSkinLogoAppBanner domain
+*************************************
 
 ::
 

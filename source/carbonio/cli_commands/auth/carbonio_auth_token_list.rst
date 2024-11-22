@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_token_list:
 
-********
-list
-********
+**********
+token list
+**********
 
 ::
 

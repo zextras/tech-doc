@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_WebUI_global:
 
-************
-global
-************
+***********************
+policy set WebUI global
+***********************
 
 ::
 

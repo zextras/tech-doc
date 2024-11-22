@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_getConfig_global:
 
-************
-global
-************
+**************************
+loginPage getConfig global
+**************************
 
 ::
 

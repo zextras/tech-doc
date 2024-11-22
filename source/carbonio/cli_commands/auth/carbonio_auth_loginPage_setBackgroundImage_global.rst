@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_setBackgroundImage_global:
 
-************
-global
-************
+***********************************
+loginPage setBackgroundImage global
+***********************************
 
 ::
 

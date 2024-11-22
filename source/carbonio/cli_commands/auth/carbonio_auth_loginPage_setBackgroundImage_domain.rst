@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_setBackgroundImage_domain:
 
-************
-domain
-************
+***********************************
+loginPage setBackgroundImage domain
+***********************************
 
 ::
 

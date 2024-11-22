@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_getFavicon_domain:
 
-************
-domain
-************
+***************************
+loginPage getFavicon domain
+***************************
 
 ::
 

@@ -5,7 +5,7 @@
 .. _carbonio_auth_token_invalidate:
 
 ********************
-invalidate
+token invalidate
 ********************
 
 ::

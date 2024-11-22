@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_trustedDevice_delete:
 
-************
-delete
-************
+********************
+trustedDevice delete
+********************
 
 ::
 

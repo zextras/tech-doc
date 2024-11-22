@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_EAS_domain:
 
-************
-domain
-************
+*********************
+policy set EAS domain
+*********************
 
 ::
 

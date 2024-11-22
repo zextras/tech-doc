@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_Smtp_global:
 
-************
-global
-************
+**********************
+policy set Smtp global
+**********************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_saml_delete:
 
-************
-delete
-************
+***********
+saml delete
+***********
 
 ::
 

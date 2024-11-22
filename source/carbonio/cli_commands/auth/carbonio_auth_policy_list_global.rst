@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_list_global:
 
-************
-global
-************
+******************
+policy list global
+******************
 
 ::
 

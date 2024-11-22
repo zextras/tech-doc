@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_setFavicon_global:
 
-************
-global
-************
+***************************
+loginPage setFavicon global
+***************************
 
 ::
 

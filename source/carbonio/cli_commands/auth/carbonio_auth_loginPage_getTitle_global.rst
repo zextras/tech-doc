@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_getTitle_global:
 
-************
-global
-************
+*************************
+loginPage getTitle global
+*************************
 
 ::
 

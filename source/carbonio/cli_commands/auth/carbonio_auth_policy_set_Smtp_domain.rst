@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_Smtp_domain:
 
-************
-domain
-************
+**********************
+policy set Smtp domain
+**********************
 
 ::
 

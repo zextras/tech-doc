@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_trustedDevice_getExpiration_global:
 
-************
-global
-************
+**********************************************
+auth policy trustedDevice getExpiration global
+**********************************************
 
 ::
 

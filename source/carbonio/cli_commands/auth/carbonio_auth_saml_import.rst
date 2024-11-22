@@ -5,7 +5,7 @@
 .. _carbonio_auth_saml_import:
 
 ************
-import
+saml import
 ************
 
 ::

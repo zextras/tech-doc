@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_Dav_global:
 
-************
-global
-************
+*********************
+policy set Dav global
+*********************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_setSkinLogoAppBanner_global:
 
-************
-global
-************
+*************************************
+loginPage setSkinLogoAppBanner global
+*************************************
 
 ::
 

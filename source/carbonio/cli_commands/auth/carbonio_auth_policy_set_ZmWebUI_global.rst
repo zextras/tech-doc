@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_ZmWebUI_global:
 
-************
-global
-************
+*************************
+policy set ZmWebUI global
+*************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_WebAdminUI_domain:
 
-************
-domain
-************
+****************************
+policy set WebAdminUI domain
+****************************
 
 ::
 

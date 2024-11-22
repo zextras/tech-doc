@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_loginPage_setTitle_domain:
 
-************
-domain
-************
+*************************
+loginPage setTitle domain
+*************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_EAS_global:
 
-************
-global
-************
+*********************
+policy set EAS global
+*********************
 
 ::
 

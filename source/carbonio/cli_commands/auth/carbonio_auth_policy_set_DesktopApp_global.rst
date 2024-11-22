@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_DesktopApp_global:
 
-************
-global
-************
+****************************
+policy set DesktopApp domain
+****************************
 
 ::
 

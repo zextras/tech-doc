@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_Pop3_domain:
 
-************
-domain
-************
+**********************
+policy set Pop3 domain
+**********************
 
 ::
 

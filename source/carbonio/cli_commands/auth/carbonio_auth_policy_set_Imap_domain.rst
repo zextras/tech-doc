@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_Imap_domain:
 
-************
-domain
-************
+**********************
+policy set Imap domain
+**********************
 
 ::
 

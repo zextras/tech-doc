@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_totp_list:
 
-********
-list
-********
+*********
+totp list
+*********
 
 ::
 

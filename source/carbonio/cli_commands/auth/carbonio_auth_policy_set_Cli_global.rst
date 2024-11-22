@@ -4,9 +4,9 @@
 
 .. _carbonio_auth_policy_set_Cli_global:
 
-************
-global
-************
+*********************
+policy set Cli global
+*********************
 
 ::
 
