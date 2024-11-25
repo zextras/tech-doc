@@ -5,17 +5,12 @@ for installation along with the other system updates. Therefore, the
 upgrade procedure is usually a very quick activity, carried out 
 by means of a few commands to be executed.
 
-There are two alternatives to carry out an upgrade: :ref:`by using
-Ansible <upgrade-ansible>` and :ref:`manually <upgrade-manual>`.
+In this release, only the :ref:`manual upgrade procedure
+<upgrade-manual>` is supported. The upgrade using Ansible can not be
+used.
 
-The **procedure using Ansible** is fully automatised and can be
-executed unattended, without even logging to the Nodes (please refer
-to Section :ref:`install-with-ansible`): you start the upgrade and
-check back for the outcome at a later point.
-
-The **manual procedure** requires to login to each Node and issue
-commands there. You also need to follow the procedure in case there
-are errors.
+The *manual procedure* requires to login to each Node and issue
+commands there.
 
 We can not provide any estimate on the time required by the upgrade,
 because various factors may impact the duration, including the number
