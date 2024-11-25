@@ -21,6 +21,7 @@ a snapshot of the Nodes and a backup of the data.
       :maxdepth: 1
 
       upgrade
+      upgrade247.rst
       upgrade245.rst
       upgrade243.rst
       pg
