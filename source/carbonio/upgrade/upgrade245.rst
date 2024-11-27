@@ -17,9 +17,6 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* The only supported method of upgrade from older versions is the
-  *manual procedure*.
-
 * Since the **24.3.0** release, two major improvements have become
   available for |product|:
 
