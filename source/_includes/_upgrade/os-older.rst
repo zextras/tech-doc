@@ -34,7 +34,7 @@ Phase 2
 -------
 
 This phase is the same as a normal upgrade, so please refer to Section
-:ref:`upgrade-manual`.
+:ref:`carbonio-upgrade`.
 
 Phase 3
 -------
