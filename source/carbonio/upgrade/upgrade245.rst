@@ -17,9 +17,6 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* The only supported method of upgrade from older versions is the
-  *manual procedure*.
-
 * Since the **24.3.0** release, two major improvements have become
   available for |product|:
 
@@ -46,7 +43,7 @@ Depending on the |carbonio| and operating system starting versions,
 you might need to carry out different tasks.
 
 #. If you only want to upgrade |product|, you simply upgrade using the
-   standard procedure: please refer to section :ref:`upgrade-manual`
+   standard procedure: please refer to section :ref:`carbonio-upgrade`
 
 #. If you want to upgrade PostgreSQL, but not the OS, you need to
    follow directions in :ref:`pg-upgrade` before upgrading |product|

@@ -4,7 +4,7 @@
 
 This section contains the upgrade procedures to the latest |carbonio|
 release from the latest and the most recent previous releases
-(:ref:`24.9 <carbonio-upgrade>`, :ref:`24.7 <up-247>`), and :ref:`24.5
+(:ref:`24.9 <carbonio-upgrade>`, :ref:`24.7 <up-247>`, and :ref:`24.5
 <up-245>`), the changelogs of recent and older releases, and any
 security advice, if present.
 
