@@ -30,6 +30,9 @@ certificate, either manually or automatically.
 :ref:`change-ip` features direction to modify the IP address of
 |product| Single-Server
 
+:ref:`cli-remove-node` guides you in the decommissioning of a Node
+from a |product| infrastructure
+
 .. toctree::
    :hidden:
 
