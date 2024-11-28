@@ -17,8 +17,8 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* In this release, the **DB connector Role** needs to be removed,
-  therefore before starting the upgrade procedure please read
+* In this release 24.12.0, the **DB connector Role** needs to be
+  removed, therefore before starting the upgrade procedure please read
   carefully section :ref:`remove-pgpool` and execute the procedure
   described there.
 

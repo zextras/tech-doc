@@ -4,19 +4,8 @@
  Upgrade From 24.9
 ===================
 
-.. include:: /_includes/_upgrade/intro-cb.rst
-
-.. important:: In this release, the **DB connector Role** needs to be
-   removed, therefore before starting the upgrade procedure please
-   read carefully section :ref:`remove-pgpool` and execute the
-   procedure described there.
-
-.. include former separated file
-   .. _upgrade-manual:
-
-   ================
-    Manual Upgrade
-   ================
+This section guides you in the upgrade from |product| **24.9**,
+regardless of any specific patch numbers, e.g. *24.9.1*.
 
 The upgrade procedures requires that you log in to each node of
 your |product| infrastructure and execute some command, then rebooting
@@ -28,6 +17,17 @@ only if you want to have the control of all the steps.
 .. hint:: For improved security, to prevent any data loss, it is
    suggested to **make a backup** or **take a snapshot** (if you are
    using an hypervisor) of each Node before upgrading.
+
+We can not provide any estimate on the time required by the upgrade,
+because various factors may impact the duration, including the number
+of Nodes, their load, the speed of network connection, and so on.
+
+In some cases, incompatibilities may seldom arise in the upgrade of
+third-party software, which may lead to some additional manual steps
+to be carried out, so please check Section :ref:`ts-up-prev` under
+:doc:`/troubleshooting/toc` before starting the upgrade. Check also
+Section :ref:`up-older-req` for a list of major upgrades that impact
+Roles and third-party software.
 
 .. _pre-upgrade:
 
