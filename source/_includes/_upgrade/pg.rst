@@ -224,12 +224,12 @@ remove the unused Databases.
 
 #. Check the new Database
 
-    .. code:: console
+   .. code:: console
 
-       # su - postgres -c '/usr/pgsql-16/bin/vacuumdb --all --analyze-in-stages'
+      # su - postgres -c '/usr/pgsql-16/bin/vacuumdb --all --analyze-in-stages'
 
 #. Delete the old cluster's data files
 
-    .. code:: console
+   .. code:: console
 
-       # /var/lib/pgsql/delete_old_cluster.sh
+      # /var/lib/pgsql/delete_old_cluster.sh
