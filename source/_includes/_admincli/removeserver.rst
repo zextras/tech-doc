@@ -55,7 +55,7 @@ remove more than one Node, execute the following steps for each Node.
 
       # consul leave
 
-.. card:: Step 2, Remove the Node from the |product| infrastructure
+.. card:: Step 2, remove the Node from the |product| infrastructure
 
    Log in to the Node on which the Mailstore & Provisioning Role is
    installed and remove the server from the infrastructure. As the
