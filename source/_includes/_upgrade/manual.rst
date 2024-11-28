@@ -4,6 +4,34 @@ Server, then all the other Nodes in the same order of installation.
 .. grid:: 1 1 1 2
    :gutter: 3
 
+   .. grid-item-card:: Step 0. Ensure all |product| services are running
+      :columns: 12 12 6 6
+
+      It is necessary that all services, especially OpenLDAP are
+      running during the whole procedure
+
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               zextras$ zmcontrol status
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               zextras$ zmcontrol status
+
+            .. hint:: On RHEL 9, use the new systemd commands that
+               replace the :command:`zmcontrol` command (see the
+               :ref:`dedicated box <rhel-systemd>`).
+
+      If in the output some service appears as not running, start it.
+
    .. grid-item-card:: Step 1. Clean package list
       :columns: 12 12 6 6
 
