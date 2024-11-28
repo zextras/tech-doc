@@ -114,6 +114,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
       * service-discover-agent
+      * carbonio-catalog
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -139,7 +140,6 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * carbonio-advanced
-      * carbonio-storages
       * service-discover-agent
 
    .. grid-item-card:: Files
