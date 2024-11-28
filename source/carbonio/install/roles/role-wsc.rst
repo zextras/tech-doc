@@ -43,8 +43,16 @@ installing it:
   |product| infrastructure (it is part on the
   :ref:`role-proxy-install` Role)
 
-* |cwsc| requires that some ports, which are listed in
-  :ref:`fw-ports`, be forwarded on this and on the Proxy Nodes
+* |cwsc| requires that some ports be forwarded from the Internet to
+  the |vs| and Proxy Nodes, according to the following table:
+
+  .. csv-table::
+     :header: "Port", "Protocol", "To Node", "Service"
+     :widths: 10 10 20 80
+
+     "20000-40000", "UDP", "|vs|", "Client connections for the audio and
+     video streams"
+     "5222", "TCP", "Proxy", "Message Dispatcher"
 
 .. _wsc-install:
 
@@ -194,19 +202,9 @@ to the directions given below.
 Enable |wsc|
 ------------
 
-You need to allow each user to use |wsc|,  either from the |adminui|
-or running from the CLI the following command as the ``zextras`` user,
-replacing the e-mail address with the one of the user.
-
-.. code:: console
-
-   zextras$ carbonio prov ma john@example.com default carbonioFeatureChatsEnabled TRUE
-
-To let |product| pick up the change, restartg the service
-
-.. code:: console
-
-   # systemctl restart carbonio-ws-collaboration
+|wsc| can be enabled from the |adminui| at account or COS level:
+please refer to Sections :ref:`Account / Configuration <act-conf>` and
+:ref:`cos-features`, respectively.
 
 .. hint:: If the |wsc| installation is successful, you can optimise
    some values according to the guidelines that you can find in
