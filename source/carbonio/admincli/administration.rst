@@ -42,3 +42,4 @@ certificate, either manually or automatically.
    administration/domaindisclaimer
    administration/analytics
    administration/changeip
+   administration/removeserver
