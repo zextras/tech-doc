@@ -62,7 +62,7 @@ This is the list of roles that make up a |product| installation.
       * service-discover-server
       * carbonio-directory-server
       * carbonio-message-broker
-
+      * carbonio-storages
 
    .. grid-item-card:: Mesh
       :columns: 6
