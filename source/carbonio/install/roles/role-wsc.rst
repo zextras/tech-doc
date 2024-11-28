@@ -74,15 +74,15 @@ into account the following points:
   #.  Install the database components on the **Database Node**: please
       follow the instructions to Section :ref:`role-wsc-db-install`
 
-   #. Install package :file:`carbonio-ws-collaboration-ui` on the
-      :ref:`role-proxy-install` Node
+  #. Install package :file:`carbonio-ws-collaboration-ui` on the
+     :ref:`role-proxy-install` Node
 
-   #. Install package :file:`carbonio-message-broker` on the
-      :ref:`role-mesh-install` Node
+  #. Install package :file:`carbonio-message-broker` on the
+     :ref:`role-mesh-install` Node
 
-   #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node or
-      in any Node that does not feature :ref:`role-vs-install`, because
-      they are not compatible
+  #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node
+     or in any Node that does not feature :ref:`role-vs-install`,
+     because they are not compatible
 
 Now, depending on how you plan to install |wsc|, the procedure
 slightly changes.
