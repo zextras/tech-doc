@@ -17,6 +17,11 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
+* In this release 24.12.0, the **DB connector Role** needs to be
+  removed, therefore before starting the upgrade procedure please read
+  carefully section :ref:`remove-pgpool` and execute the procedure
+  described there.
+
 * Since the **24.3.0** release, two major improvements have become
   available for |product|:
 
