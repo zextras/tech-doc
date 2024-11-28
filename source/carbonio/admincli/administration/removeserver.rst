@@ -1,4 +1,5 @@
-.. index:: remove Node; remove server
+.. index:: remove Node,
+.. index:: see: remove server; remove Node
 
 .. _cli-remove-node:
 
