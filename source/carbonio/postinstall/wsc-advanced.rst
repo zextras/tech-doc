@@ -40,7 +40,7 @@ To allow users to search other users only on their domain, use
 Set Legacy Chat Read Only
 -------------------------
 
-If you enabled |WSC|, to prevent user using the old textual Chats, you
+If you enabled |WSC|, to prevent user using the old Chats, you
 can set it in *read-only* mode. By doing so, users will still able to
 access the textual *Chats*, the *Spaces*, and the *Rooms*, but it
 will not be possible to message users or create new Spaces and
