@@ -35,6 +35,24 @@ To allow users to search other users only on their domain, use
    :ref:`dedicated box <wsc-user-search>` in the Domain's global
    settings.
 
+.. _wsc-chats-ro:
+
+Set Legacy Chat Read Only
+-------------------------
+
+If you enabled |WSC|, to prevent user using the old textual Chats, you
+can set it in *read-only* mode. By doing so, users will still able to
+access the textual *Chats*, the *Spaces*, and the *Rooms*, but it
+will not be possible to message users or create new Spaces and
+Rooms. Additionally, the input bar at the bottom will be replaced by a
+string *The application is in Read Only mode*.
+
+To set the legacy Chats read-only,, use the CLI command
+
+.. code:: console
+
+   zextras$ carbonio config set cos default teamReadOnlyEnabled true
+
 .. _wsc-optimise:
 
 WSC Optimisations
