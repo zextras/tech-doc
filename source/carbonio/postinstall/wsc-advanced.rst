@@ -1,3 +1,11 @@
+
+==============
+ WSC Advanced
+==============
+
+This section contains advanced |wsc| configuration and suggestions to
+improve performances and optimise the Module.
+
 .. _wsc-optimise:
 
 WSC Optimisations
