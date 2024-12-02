@@ -29,6 +29,10 @@ user on every Node featuring the :ref:`MTA role <role-mta-install>`
 
    zextras$ zmamavisdctl restart && zmconfigdctl restart
 
+.. index:: WSC; user search by GUI
+
+.. _wsc-user-search:
+
 .. card:: User search
 
    The switch labelled **Allow searching users' information in all
