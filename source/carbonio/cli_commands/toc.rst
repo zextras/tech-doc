@@ -13,7 +13,6 @@ You can use the command line interface in place of the Carbonio Admin Panel.
       carbonio_admin
       carbonio_auth
       carbonio_backup
-      carbonio_chats
       carbonio_config
       carbonio_core
       carbonio_mobile

@@ -13,40 +13,7 @@ Commands regarding Carbonio Auth module
       auth/carbonio_auth_credential_delete.rst
       auth/carbonio_auth_credential_list.rst
       auth/carbonio_auth_credential_update.rst
-      auth/carbonio_auth_doRestartService.rst
-      auth/carbonio_auth_doStartService.rst
-      auth/carbonio_auth_doStopService.rst
       auth/carbonio_auth_getServices.rst
-      auth/carbonio_auth_loginPage_getBackgroundImage_domain.rst
-      auth/carbonio_auth_loginPage_getBackgroundImage_global.rst
-      auth/carbonio_auth_loginPage_getColorPalette_domain.rst
-      auth/carbonio_auth_loginPage_getColorPalette_global.rst
-      auth/carbonio_auth_loginPage_getConfig_domain.rst
-      auth/carbonio_auth_loginPage_getConfig_global.rst
-      auth/carbonio_auth_loginPage_getFavicon_domain.rst
-      auth/carbonio_auth_loginPage_getFavicon_global.rst
-      auth/carbonio_auth_loginPage_getLogo_domain.rst
-      auth/carbonio_auth_loginPage_getLogo_global.rst
-      auth/carbonio_auth_loginPage_getSkinLogoAppBanner_domain.rst
-      auth/carbonio_auth_loginPage_getSkinLogoAppBanner_global.rst
-      auth/carbonio_auth_loginPage_getSkinLogoURL_domain.rst
-      auth/carbonio_auth_loginPage_getSkinLogoURL_global.rst
-      auth/carbonio_auth_loginPage_getTitle_domain.rst
-      auth/carbonio_auth_loginPage_getTitle_global.rst
-      auth/carbonio_auth_loginPage_setBackgroundImage_domain.rst
-      auth/carbonio_auth_loginPage_setBackgroundImage_global.rst
-      auth/carbonio_auth_loginPage_setColorPalette_domain.rst
-      auth/carbonio_auth_loginPage_setColorPalette_global.rst
-      auth/carbonio_auth_loginPage_setFavicon_domain.rst
-      auth/carbonio_auth_loginPage_setFavicon_global.rst
-      auth/carbonio_auth_loginPage_setLogo_domain.rst
-      auth/carbonio_auth_loginPage_setLogo_global.rst
-      auth/carbonio_auth_loginPage_setSkinLogoAppBanner_domain.rst
-      auth/carbonio_auth_loginPage_setSkinLogoAppBanner_global.rst
-      auth/carbonio_auth_loginPage_setSkinLogoURL_domain.rst
-      auth/carbonio_auth_loginPage_setSkinLogoURL_global.rst
-      auth/carbonio_auth_loginPage_setTitle_domain.rst
-      auth/carbonio_auth_loginPage_setTitle_global.rst
       auth/carbonio_auth_policy_list_domain.rst
       auth/carbonio_auth_policy_list_global.rst
       auth/carbonio_auth_policy_set_Cli_domain.rst
