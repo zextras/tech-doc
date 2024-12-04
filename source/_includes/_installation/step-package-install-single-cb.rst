@@ -49,7 +49,7 @@ Next, we install all packages needed for |product|.
          carbonio-zal carbonio-user-management carbonio-storages \
          carbonio-message-broker carbonio-files-ui carbonio-files \
          carbonio-files-public-folder-ui carbonio-files-db \
-         carbonio-preview postgresql-16
+         carbonio-preview carbonio-catalog postgresql-16
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -62,7 +62,7 @@ Next, we install all packages needed for |product|.
          carbonio-zal carbonio-user-management carbonio-storages \
          carbonio-message-broker carbonio-files-ui carbonio-files \
          carbonio-files-public-folder-ui carbonio-files-db \
-         carbonio-preview postgresql-16
+         carbonio-preview carbonio-catalog postgresql-16
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -84,20 +84,13 @@ Next, we install all packages needed for |product|.
 
       .. code:: console
 
-         # dnf install carbonio-directory-server carbonio-proxy \
-         carbonio-webui carbonio-files-ui carbonio-mta \
-         carbonio-mailbox-db carbonio-appserver \
-         carbonio-user-management carbonio-preview-ce \
-         carbonio-files-ce carbonio-files-public-folder-ui \
-         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db
-         carbonio-tasks-ui carbonio-storages-ce \
-         carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-docs-connector-db carbonio-prometheus \
-         carbonio-message-broker carbonio-message-dispatcher \
-         carbonio-docs-connector-dbcarbonio-message-dispatcher-db \
-         carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-ws-collaboration-ce carbonio-videoserver-ce \
-         postgresql-16 postgresql16-server
+         # dnf install service-discover-server \
+         carbonio-directory-server carbonio-proxy carbonio-webui \
+         carbonio-mta carbonio-mailbox-db carbonio-advanced \
+         carbonio-zal carbonio-user-management carbonio-storages \
+         carbonio-message-broker carbonio-files-ui carbonio-files \
+         carbonio-files-public-folder-ui carbonio-files-db \
+         carbonio-preview carbonio-catalog postgresql-16
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
@@ -119,21 +112,13 @@ Next, we install all packages needed for |product|.
 
       .. code:: console
 
-         # dnf install carbonio-directory-server carbonio-proxy \
-         carbonio-webui carbonio-files-ui carbonio-mta \
-         carbonio-mailbox-db carbonio-appserver \
-         carbonio-user-management carbonio-preview-ce \
-         carbonio-files-ce carbonio-files-public-folder-ui \
-         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db
-         carbonio-tasks-ui carbonio-storages-ce \
-         carbonio-docs-connector-ce carbonio-docs-editor \
-         carbonio-docs-connector-db carbonio-prometheus \
-         carbonio-message-broker carbonio-message-dispatcher \
-         carbonio-docs-connector-dbcarbonio-message-dispatcher-db \
-         carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-ws-collaboration-ce carbonio-videoserver-ce \
-         postgresql-16 postgresql16-server
-
+         # dnf install  service-discover-server \
+         carbonio-directory-server carbonio-proxy carbonio-webui \
+         carbonio-mta carbonio-mailbox-db carbonio-advanced \
+         carbonio-zal carbonio-user-management carbonio-storages \
+         carbonio-message-broker carbonio-files-ui carbonio-files \
+         carbonio-files-public-folder-ui carbonio-files-db \
+         carbonio-preview carbonio-catalog postgresql-16
 ..
    After the successful package installation, you can check that all
    |product| services are running, by using
