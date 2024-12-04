@@ -215,9 +215,6 @@ Node*. Click on the drop-downs to expand them.
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         The installation on RHEL is divided in few steps: install the
-         |mesh| service
-
          .. code:: console
 
             # dnf install carbonio-message-dispatcher \
