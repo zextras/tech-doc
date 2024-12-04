@@ -40,7 +40,8 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
-               'sphinxcontrib.email', 'sphinx.ext.extlinks' ]
+               'sphinx.ext.graphviz', 'sphinxcontrib.email',
+               'sphinx.ext.extlinks' ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -70,6 +71,8 @@ email_automode = True
 
 extlinks = {'pr': ('https://github.com/zextras/tech-doc/pull/%s',
                    'PR #%s') }
+
+graphviz_output_format = 'png'
 
 # -- Options for HTML output -------------------------------------------------
 

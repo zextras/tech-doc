@@ -50,7 +50,7 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
-               'sphinxcontrib.email' ]
+               'sphinx.ext.graphviz', 'sphinxcontrib.email' ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -74,6 +74,8 @@ copybutton_only_copy_prompt_lines = True
 numfig = True
 
 email_automode = True
+
+graphviz_output_format = 'png'
 
 # -- Options for HTML output -------------------------------------------------
 

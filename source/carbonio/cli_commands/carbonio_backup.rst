@@ -11,7 +11,6 @@ Commands regarding Backup module
 
       backup/carbonio_backup_check-ldap-dump.rst
       backup/carbonio_backup_doAccountScan.rst
-      backup/carbonio_backup_doBackupChat.rst
       backup/carbonio_backup_doBackupCluster.rst
       backup/carbonio_backup_doBackupLDAP.rst
       backup/carbonio_backup_doBackupServerCustomizations.rst
