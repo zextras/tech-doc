@@ -12,7 +12,7 @@ digraph NetworkWithPortForwarding {
         label = ""; // Remove default cluster label
         color = none; // Remove box boundary
 
-        "RolesNode1" [label="Database, Mesh and Directory,\nMTA AV/AS, Proxy,\nMailstore & Provisioning", 
+        "RolesNode1" [label="Database, Mesh and Directory,\nMTA AV/AS, Proxy,\nMailstore & Provisioning, Files", 
                       shape=ellipse, style=filled, color=lightgoldenrod, fontname="Arial", fontsize=10];
     }
 
