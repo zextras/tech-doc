@@ -29,6 +29,16 @@ therefore has the following architectural limitations:
   this limit will severly hinder the efficiency of |product| and it is
   not supported
 
+Architecture
+------------
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. graphviz:: /install/scenarios/single/single-server.dot
+   :align: center
+   :caption: Sample diagram of the Single-Server scenario.
+   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
 Unsupported features
 --------------------
 
