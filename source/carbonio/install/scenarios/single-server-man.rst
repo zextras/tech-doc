@@ -5,30 +5,29 @@
 ==================================
 
 The manual installation is organised in steps, some of which are
-preliminary configuration tasks.
-During the installation and configuration of |product|, it is necessary to
-execute commands from the command line, so make sure you have access
-to it.
+preliminary configuration tasks.  During the installation and
+configuration of |product|, it is necessary to execute commands from
+the command line, so make sure you have access to it.
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser.
 
-.. _rhel-pg:
-
-Preliminary Task
-----------------
-
-Before starting the |product| installation, we need to install and
-configure the PostgreSQL 16 database.
-
-.. include:: /_includes/_installation/pg-ss.rst
 
 .. _installation-step1:
 
-Step 1: Repository Configuration
---------------------------------
+Step 1: Configuration of Repositories
+-------------------------------------
+
+The installation procedure start with the configuration of the
+repositories. 
+
+.. rubric:: |product|
 
 .. include:: /_includes/_installation/step-repo-conf-ce.rst
+
+.. rubric:: PostgreSQL and other (RHEL only)
+
+.. include:: /_includes/_installation/repo-single-cb.rst
 
 .. _installation-step2:
 
@@ -42,11 +41,18 @@ Step 2: Setting Hostname
 Step 3: System Upgrade and Package Installation
 ------------------------------------------------
 
-.. include:: /_includes/_installation/step-package-install-ssadv.rst
+.. include:: /_includes/_installation/step-package-install-single-cb.rst
 
 .. _installation-step4:
 
-Step 4: Bootstrap |product|
+Step 4: Configure PostgreSQL
+----------------------------
+
+.. include:: /_includes/_installation/step-conf-db.rst
+
+.. _installation-step5:
+
+Step 5: Bootstrap |product|
 ---------------------------
 
 .. include:: /_includes/_installation/step-bootstrap.rst 
@@ -54,16 +60,16 @@ Step 4: Bootstrap |product|
 The next steps concern the configuration and setup of the various
 |product| components.
 
-.. _installation-step5:
+.. _installation-step6:
 
-Step 5: Setup |mesh|
+Step 6: Setup |mesh|
 --------------------
 
 .. include:: /_includes/_installation/step-conf-mesh.rst
 
-.. _installation-step6:
+.. _installation-step7:
 
-Step 6: Mailbox DB Bootstrap
+Step 7: Mailbox DB Bootstrap
 ----------------------------
 
 Now you have to bootstrap some DBs with the password set in the Preliminary Tasks
@@ -80,8 +86,7 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
 
      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
-
-Step 7: Complete
+Step 8: Complete
 ----------------
 
 .. include:: /_includes/_installation/complete.rst
