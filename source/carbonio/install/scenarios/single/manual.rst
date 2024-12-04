@@ -93,7 +93,7 @@ Collaboration Node
 ==================
 
 This section contains directions to set up the additional
-*Collaboration* Node. Most of the steps are the same as the *Core
+*Collaboration* Node. Most of the steps are the same as in the *Core
 Node*. Click on the drop-downs to expand them.
 
 .. dropdown:: Step 1: Configuration of Repositories
@@ -279,3 +279,134 @@ Node*. Click on the drop-downs to expand them.
       zextras$ zmcontrol stop
       zextras$ zmcontrol start
 
+
+Video Server Node
+=================
+
+This section contains directions to set up the additional *Video
+Server* Node. Most of the steps are the same as in the *Core* and
+*Collaboration* Nodes. Click on the drop-downs to expand them.
+
+.. dropdown:: Step 1: Configuration of Repositories
+
+   .. rubric:: |product|
+
+   .. include:: /_includes/_installation/step-repo-conf-ce.rst
+
+   .. rubric:: RHEL Only
+
+   .. tab-set::
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+
+.. dropdown:: Step 2: Setting Hostname
+
+   .. include:: /_includes/_installation/steps-hostname.rst
+
+.. dropdown:: Step 3: System Upgrade and Package Installation
+
+   After configuring the repositories, the installation of |product|
+   requires to run a few commands.
+
+   We start by updating and upgrading the system.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf upgrade
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf upgrade
+
+   Next, we install all packages needed for |product|.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt install carbonio-videoserver \
+            carbonio-videoserver-recorder service-discover-agent
+            
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt install  carbonio-videoserver \
+            carbonio-videoserver-recorder service-discover-agent
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf install  carbonio-videoserver \
+            carbonio-videoserver-recorder service-discover-agent
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf install carbonio-videoserver \
+            carbonio-videoserver-recorder service-discover-agent
+
+
+.. dropdown:: Step 4: Bootstrap |product|
+
+   .. include:: /_includes/_installation/step-bootstrap.rst
+
+.. dropdown:: Step 5: Setup |mesh|
+
+   .. include:: /_includes/_installation/step-conf-mesh.rst
