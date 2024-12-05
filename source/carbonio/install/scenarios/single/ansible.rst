@@ -6,7 +6,11 @@ setup a workstation to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible` and following the directions on setting up
 the workstation), then download the Ansible inventory (see below this
 paragraph), replace the FQDN and values present in the file according
-to your planned |product| infrastructure. 
+to your planned |product| infrastructure.
+
+.. note:: This installation procedure does not support |wsc|: If you
+   plan to install it, you need to follow the
+   :ref:`single-server-install`.
 
 .. dropdown:: Inventory - "Single-Server" Scenario
    :open:

@@ -55,26 +55,65 @@ Requirements
 
 Since there is only one Node on which to install |product|, the
 Hardware Requirements are more demanding compared to each single Node
-in a |product| Multi-Node setup:
+in a |product| Multi-Node setup.
 
-* 8 vCPU
+.. card:: Core Node
 
-* 24 GB memory
+   * 8 vCPU
 
-* 50 GB disk space for the OS
+   * 24 GB memory
 
-* Additional disk space for the users e-mails, taking into account the
-  quota. Purely as an example, if you have 150 users, each with a
-  quota of 5GB, you need to have at least **800GB of disk space**,
-  50GB for the OS and at 750 for user's total quota.
+   * 50 GB disk space for the OS
 
-* At least the following ports TCP must be forwarded to the *Core
-  Node*: 25, 443, 5222, 6071. Other ports can be opened, please
-  refer to Section :ref:`fw-external` for the full list.
+   * Additional disk space for the users e-mails, taking into account
+     the quota. Purely as an example, if you have 150 users, each with
+     a quota of 5GB, you need to have at least **800GB of disk
+     space**, 50GB for the OS and at 750 for user's total quota.
+
+.. card:: Collaboration Node
+
+   * 8 vCPU
+   * 16 GB memory
+   * 50 GB disk space
+
+.. card:: Video Server Node
+
+   * 8 vCPU
+   * 16 GB memory
+   * 50 GB disk space
+   * at least 100 gb of space for video recordings temporary files
+
+Other software requirements are common to the other installation
+scenarios and can be found in Section :ref:`inst-additional-req`
+
+.. _scenario-single-network:
+
+Network Configuration
+=====================
+
+The following ports must be forwarded from the :ref:`external network
+<fw-external>`, i.e., they are required for proper access to |product|
+from the Internet.
+
+.. table:: Opened ports in Scenario *Single Server*.
+
+   +-------------------+--------------------------+------------------+
+   | Public hostname   | Ports & Service          | Mapping          |
+   +===================+==========================+==================+
+   | mail.example.com  | * TCP 25/465/587  SMTP/S | srv1.example.com |
+   |                   | * TCP 80/443      HTTP/S |                  |
+   |                   | * TCP 143/993     IMAP/S |                  |
+   |                   | * TCP 110/995     POP/S  |                  |
+   |                   | * TCP 8636        LDAP   |                  |
+   |                   |   Addresbook             |                  |
+   +-------------------+--------------------------+------------------+
+   | mail.example.com  | * UDP 20000/40000 Video  | srv3.example.com |
+   |                   |   Streaming              |                  |
+   +-------------------+--------------------------+------------------+
+
+.. note:: Ports for the video streaming are only required if you plan
+          to install the Video Server Node. 
   
-* Other software requirements are common to the other installation
-  scenarios and can be found in Section :ref:`inst-additional-req`
-
 .. toctree::
    :hidden:
    :glob:
