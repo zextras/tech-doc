@@ -21,9 +21,10 @@ therefore has the following architectural limitations:
   equipped with only the basic Roles: Database, Mesh and Directory,
   MTA AV/AS, Proxy, Mailstore & Provisioning, and Files Roles
 
-* The scenario can be easily expanded, with a second Node installing
-  the Docs and Editor, Tasks, and |wsc| Roles (*"Collaboration Node"*)
-  and by a third Node (*"Video Server Node"*)
+* The scenario is also meant to be installed on three Nodes: building
+  on the *Core Node*, the second Node features the Docs and Editor,
+  Tasks, and |wsc| Roles (*"Collaboration Node"*) and the third the
+  |vs| Role (*"Video Server Node"*)
 
 * The scenario supports up to **500 accounts**: adding accounts beyond
   this limit will severly hinder the efficiency of |product| and it is

@@ -397,32 +397,32 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
          .. code:: console
 
-            # apt install carbonio-videoserver \
-            carbonio-videoserver-recorder service-discover-agent
+            # apt install carbonio-videoserver-advanced \
+            carbonio-videorecorder service-discover-agent
             
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          .. code:: console
 
-            # apt install  carbonio-videoserver \
-            carbonio-videoserver-recorder service-discover-agent
+            # apt install  carbonio-videoserver-advanced \
+            carbonio-videorecorder service-discover-agent
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
          .. code:: console
 
-            # dnf install  carbonio-videoserver \
-            carbonio-videoserver-recorder service-discover-agent
+            # dnf install  carbonio-videoserver-advanced \
+            carbonio-videorecorder service-discover-agent
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
          .. code:: console
 
-            # dnf install carbonio-videoserver \
-            carbonio-videoserver-recorder service-discover-agent
+            # dnf install carbonio-videoserver-advanced \
+            carbonio-videorecorder service-discover-agent
 
 
 .. dropdown:: Step 4: Bootstrap |product|
@@ -433,3 +433,33 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
+.. dropdown:: Step 6: Configure |vs|
+
+   .. rubric:: Routing & mapping
+
+   #. Execute, as the ``root`` user the script that enables the correct
+      routing to the |vs|. You need to provide the |mesh| credentials
+
+      .. code:: console
+
+         # carbonio-videoserver-routing
+
+   #. make sure that the Video Server's IP address is present in the
+      configuration file :file:`/etc/janus/janus.jcfg` and add it if
+      missing: find the variable ``nat_1_1_mapping`` and add it, for
+      example: ``nat_1_1_mapping = "93.184.216.34"``
+
+   #. restart the service
+
+      .. code:: console
+
+         # systemctl restart carbonio-videoserver
+
+   .. rubric:: Check Video Server & Broker
+
+   To make sure that videoserver and message broker are connected
+   successfully, check that in the carbonio-videoserver logs
+   (:command:`journalctl -u carbonio-videoserver`) you find the line::
+
+     RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
+     handler completed
