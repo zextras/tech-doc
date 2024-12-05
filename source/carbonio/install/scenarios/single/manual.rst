@@ -40,13 +40,14 @@ Step 3: System Upgrade and Package Installation
 ===============================================
 
 .. include:: /_includes/_installation/step-package-install-single-cb.rst
+.. include:: /_includes/_installation/step-package-install-single-collaboration-node-cb.rst
 
 .. _installation-step4:
 
 Step 4: Configure PostgreSQL
 ============================
 
-.. include:: /_includes/_installation/step-conf-db.rst
+.. include:: /_includes/_installation/step-conf-db-single-cb.rst
 
 .. _installation-step5:
 
@@ -67,8 +68,8 @@ Step 6: Setup |mesh|
 
 .. _installation-step7:
 
-Step 7: Mailbox DB Bootstrap
-============================
+Step 7: Databases Bootstrap
+===========================
 
 Now you have to bootstrap some DBs with the password set in the Preliminary Tasks
 
@@ -83,6 +84,40 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
   .. code:: console
 
      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+If you plan to install also the Collaboration Node, you need to
+bootstrap also the following databases
+
+.. card:: |docs|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |task|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: Message Dispatcher
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |wsc|
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
+
+.. card:: Carbonio Notification Push
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap carbonio_adm 127.0.0.1
+
 
 Step 8: Complete
 ================
@@ -233,53 +268,36 @@ Node*. Click on the drop-downs to expand them.
    .. include:: /_includes/_installation/step-conf-mesh.rst
 
 
-.. dropdown:: Step 6: DB Bootstrap
+.. dropdown:: Step 6: Configure |WSC|
 
-   In this step you need the password |dbadmpwd| created for the
-   ``carbonio_adm`` role on the *Core Node*, which is necessary to
-   configure the databases required by the Roles installed on this
-   Node.
+   .. rubric:: Initialise the message dispatcher
 
-   You need to replace ``$DB_ADM_PWD`` in the following commands with
-   that password.
+   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
 
-   .. card:: |task|
+   .. rubric:: Configure notifications
 
-      .. code:: console
+   .. include:: /_includes/_installation/_roles/wsc-conf-cb.rst
 
-         # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap \
-           carbonio_adm 127.0.0.1
+   .. rubric:: Enable |wsc|
 
-   .. card:: |wsc|
+   |wsc| can be enabled from the |adminui| at account or COS level:
+   please refer to Sections :ref:`Account / Configuration <act-conf>` and
+   :ref:`cos-features`, respectively.
 
-      .. code:: console
+   .. hint:: If the |wsc| installation is successful, you can optimise
+      some values according to the guidelines that you can find in
+      section :ref:`wsc-optimise`.
 
-         # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap \
-           carbonio_adm 127.0.0.1
+   .. rubric:: Status Check
 
-   .. card:: |wsc| Dispatcher
-
-      .. code:: console
-
-         # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap \
-           carbonio_adm 127.0.0.1
-
-   .. card:: |wsc| migration
-
-      .. code:: console
-
-         # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
-           carbonio_adm 127.78.0.10 20000
-
-   When you're done, restart the main mailbox process as the ``zextras``
-   user.
+   The following command will output a detailed status of |wsc| and of
+   all its dependencies.
 
    .. code:: console
 
-      zextras$ zmcontrol stop
-      zextras$ zmcontrol start
+      # curl -v http://127.78.0.4:10000/health | jq   
 
-
+              
 Video Server Node
 =================
 
@@ -410,3 +428,4 @@ Server* Node. Most of the steps are the same as in the *Core* and
 .. dropdown:: Step 5: Setup |mesh|
 
    .. include:: /_includes/_installation/step-conf-mesh.rst
+
