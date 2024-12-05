@@ -18,12 +18,12 @@ either using the :ref:`scenario-st-playbook`, or :ref:`manually
 
 The Roles installed on the *7 Nodes* are:
 
-* Node 1: Mesh and Directory, Database, Monitoring
+* Node 1: Mesh and Directory, Database, and Monitoring
 * Node 2: MTA AV/AS
 * Node 3: Proxy
-* Node 4: Mailstore & Provisioning, Database Connector, Tasks
+* Node 4: Mailstore & Provisioning, and Tasks
 * Node 5: Files
-* Node 6: Docs and Editor,Preview
+* Node 6: Docs and Editor, Preview
 * Node 7: Video Server & Video Recording
 
 .. _scenario-st-network:

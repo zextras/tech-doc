@@ -16,7 +16,7 @@ The Roles installed on the *3 Nodes* are:
 
 * Node 1: Mesh and Directory, Database, Monitoring
 * Node 2: MTA AV/AS, Proxy
-* Node 3: Mailstore & Provisioning, Database Connector
+* Node 3: Mailstore & Provisioning
 
 .. _scenario-es-network:
 
