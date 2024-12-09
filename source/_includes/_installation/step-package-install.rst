@@ -98,7 +98,7 @@ Next, we install all packages needed for |product|.
          carbonio-mailbox-db carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \
-         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db
+         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
          carbonio-tasks-ui carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-docs-connector-db carbonio-prometheus \
@@ -126,7 +126,7 @@ Next, we install all packages needed for |product|.
          carbonio-mailbox-db carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \
-         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db
+         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
          carbonio-tasks-ui carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-docs-connector-db carbonio-prometheus \
