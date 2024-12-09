@@ -265,6 +265,14 @@ Node*. Click on the drop-downs to expand them.
 
 .. dropdown:: Step 4: Bootstrap |product|
 
+   Before executing this step, you need to retrieve the LDAP password
+   that will be required in the menu. As the ``root`` user, execute
+   the command
+
+   .. code:: console
+
+      # su - zextras -c "zmlocalconfig -s ldap_root_password"
+
    .. include:: /_includes/_installation/step-bootstrap.rst
 
 .. dropdown:: Step 5: Setup |mesh|
@@ -299,9 +307,8 @@ Node*. Click on the drop-downs to expand them.
 
    .. code:: console
 
-      # curl -v http://127.78.0.4:10000/health | jq   
+      # curl -v http://127.78.0.4:10000/health | jq
 
-              
 Video Server Node
 =================
 
@@ -399,7 +406,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
             # apt install carbonio-videoserver-advanced \
             carbonio-videorecorder service-discover-agent
-            
+
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
@@ -426,6 +433,14 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
 
 .. dropdown:: Step 4: Bootstrap |product|
+
+   Before executing this step, you need to retrieve the LDAP password
+   that will be required in the menu. As the ``root`` user, execute
+   the command
+
+   .. code:: console
+
+      # su - zextras -c "zmlocalconfig -s ldap_root_password"
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
