@@ -51,15 +51,6 @@ Next, we install all packages needed for |product|.
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
 
-      After the successful package installation, you can check that all
-      |product| services are running, by using
-
-      .. code:: console
-
-         zextras$ zmcontrol status
-
-      If any service is in :red:`failed` status, restart it.
-
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
 
@@ -73,15 +64,6 @@ Next, we install all packages needed for |product|.
          carbonio-files-public-folder-ui \
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
-
-      After the successful package installation, you can check that all
-      |product| services are running, by using
-
-      .. code:: console
-
-         zextras$ zmcontrol status
-
-      If any service is in :red:`failed` status, restart it.
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -112,14 +94,6 @@ Next, we install all packages needed for |product|.
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
 
-      After the successful package installation, you can check that all
-      |product| services are running, by using
-
-      .. code:: console
-
-         zextras$ zmcontrol status
-
-      If any service is in :red:`failed` status, restart it.
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
@@ -149,8 +123,3 @@ Next, we install all packages needed for |product|.
          carbonio-files-public-folder-ui \
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
-
-      After the successful package installation, you can check that all
-      |product| services are running, by running commands
-
-      .. include:: /_includes/_installation/rhel-systemd.rst
