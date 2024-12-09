@@ -3,6 +3,11 @@
 Ansible Playbook
 ================
 
+.. note:: On RHEL 8 and RHEL 9 systems, |product| version 24.12.0 can
+   not be installed using Ansible, so if you plan to use either of
+   these two Operating Systems, please :ref:`install manually
+   <scenario-st-manual>`.
+
 This 7 Nodes scenario can be installed using Ansible: you need to
 setup a workstation to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible` and following for directions on setting up

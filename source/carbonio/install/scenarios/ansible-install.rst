@@ -4,6 +4,10 @@
  Install |product| Using Ansible
 =================================
 
+.. note:: On RHEL 8 and RHEL 9 systems, |product| version 24.12.0 can
+   not be installed using Ansible, so if you plan to use either of
+   these two Operating Systems, please install manually.
+
 .. _ansible-inventory:
 
 Prepare Inventory
