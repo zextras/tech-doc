@@ -1,4 +1,3 @@
-
 After configuring the repositories, the installation of |product|
 requires to run a few commands.
 
@@ -35,7 +34,7 @@ We start by updating and upgrading the system.
          # dnf upgrade
 
 Next, we install all packages needed for |product|.
-          
+
 .. tab-set::
 
    .. tab-item:: Ubuntu 20.04
@@ -44,12 +43,22 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # apt install service-discover-server \
-         carbonio-directory-server carbonio-proxy carbonio-webui \
-         carbonio-mta carbonio-mailbox-db carbonio-advanced \
-         carbonio-zal carbonio-user-management carbonio-storages \
-         carbonio-message-broker carbonio-files-ui carbonio-files \
-         carbonio-files-public-folder-ui carbonio-files-db \
-         carbonio-preview carbonio-catalog postgresql-16
+         carbonio-directory-server carbonio-proxy carbonio-mta \
+         carbonio-advanced carbonio-zal carbonio-user-management \
+         carbonio-storages carbonio-message-broker carbonio-files \
+         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-files-public-folder-ui \
+         carbonio-ws-collaboration-ui carbonio-files-ui \
+         carbonio-mailbox-db carbonio-files-db postgresql-16
+
+      After the successful package installation, you can check that all
+      |product| services are running, by using
+
+      .. code:: console
+
+         zextras$ zmcontrol status
+
+      If any service is in :red:`failed` status, restart it.
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -57,12 +66,22 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # apt install service-discover-server \
-         carbonio-directory-server carbonio-proxy carbonio-webui \
-         carbonio-mta carbonio-mailbox-db carbonio-advanced \
-         carbonio-zal carbonio-user-management carbonio-storages \
-         carbonio-message-broker carbonio-files-ui carbonio-files \
-         carbonio-files-public-folder-ui carbonio-files-db \
-         carbonio-preview carbonio-catalog postgresql-16
+         carbonio-directory-server carbonio-proxy carbonio-mta \
+         carbonio-advanced carbonio-zal carbonio-user-management \
+         carbonio-storages carbonio-message-broker carbonio-files \
+         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-files-public-folder-ui \
+         carbonio-ws-collaboration-ui carbonio-files-ui \
+         carbonio-mailbox-db carbonio-files-db postgresql-16
+
+      After the successful package installation, you can check that all
+      |product| services are running, by using
+
+      .. code:: console
+
+         zextras$ zmcontrol status
+
+      If any service is in :red:`failed` status, restart it.
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -75,22 +94,32 @@ Next, we install all packages needed for |product|.
          # dnf install service-discover-server
 
       Disable PostgreSQL 12
-      
+
       .. code:: console
 
          # dnf -qy module disable postgresql
-                
+
       Install all other packages
 
       .. code:: console
 
          # dnf install service-discover-server \
-         carbonio-directory-server carbonio-proxy carbonio-webui \
-         carbonio-mta carbonio-mailbox-db carbonio-advanced \
-         carbonio-zal carbonio-user-management carbonio-storages \
-         carbonio-message-broker carbonio-files-ui carbonio-files \
-         carbonio-files-public-folder-ui carbonio-files-db \
-         carbonio-preview carbonio-catalog postgresql-16
+         carbonio-directory-server carbonio-proxy carbonio-mta \
+         carbonio-advanced carbonio-zal carbonio-user-management \
+         carbonio-storages carbonio-message-broker carbonio-files \
+         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-files-public-folder-ui \
+         carbonio-ws-collaboration-ui carbonio-files-ui \
+         carbonio-mailbox-db carbonio-files-db postgresql-16
+
+      After the successful package installation, you can check that all
+      |product| services are running, by using
+
+      .. code:: console
+
+         zextras$ zmcontrol status
+
+      If any service is in :red:`failed` status, restart it.
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
@@ -107,24 +136,21 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # dnf -qy module disable postgresql
-                
+
       Install all other packages
 
       .. code:: console
 
-         # dnf install  service-discover-server \
-         carbonio-directory-server carbonio-proxy carbonio-webui \
-         carbonio-mta carbonio-mailbox-db carbonio-advanced \
-         carbonio-zal carbonio-user-management carbonio-storages \
-         carbonio-message-broker carbonio-files-ui carbonio-files \
-         carbonio-files-public-folder-ui carbonio-files-db \
-         carbonio-preview carbonio-catalog postgresql-16
-..
-   After the successful package installation, you can check that all
-   |product| services are running, by using
+         # dnf install service-discover-server \
+         carbonio-directory-server carbonio-proxy carbonio-mta \
+         carbonio-advanced carbonio-zal carbonio-user-management \
+         carbonio-storages carbonio-message-broker carbonio-files \
+         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-files-public-folder-ui \
+         carbonio-ws-collaboration-ui carbonio-files-ui \
+         carbonio-mailbox-db carbonio-files-db postgresql-16
 
-   .. code:: console
+      After the successful package installation, you can check that all
+      |product| services are running, by running commands
 
-      # systemctl status carbonio-*
-
-   If any service is in :red:`failed` status, restart it.
+      .. include:: /_includes/_installation/rhel-systemd.rst

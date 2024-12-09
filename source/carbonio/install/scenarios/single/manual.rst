@@ -265,6 +265,14 @@ Node*. Click on the drop-downs to expand them.
 
 .. dropdown:: Step 4: Bootstrap |product|
 
+   Before executing this step, you need to retrieve the LDAP password
+   that will be required in the menu. As the ``root`` user, execute
+   the command
+
+   .. code:: console
+
+      # su - zextras -c "zmlocalconfig -s ldap_root_password"
+
    .. include:: /_includes/_installation/step-bootstrap.rst
 
 .. dropdown:: Step 5: Setup |mesh|
@@ -299,9 +307,8 @@ Node*. Click on the drop-downs to expand them.
 
    .. code:: console
 
-      # curl -v http://127.78.0.4:10000/health | jq   
+      # curl -v http://127.78.0.4:10000/health | jq
 
-              
 Video Server Node
 =================
 
@@ -398,15 +405,15 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # apt install carbonio-videoserver-advanced \
-            carbonio-videorecorder service-discover-agent
-            
+            service-discover-agent
+
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          .. code:: console
 
             # apt install  carbonio-videoserver-advanced \
-            carbonio-videorecorder service-discover-agent
+            service-discover-agent
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -414,7 +421,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # dnf install  carbonio-videoserver-advanced \
-            carbonio-videorecorder service-discover-agent
+            service-discover-agent
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -422,10 +429,18 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # dnf install carbonio-videoserver-advanced \
-            carbonio-videorecorder service-discover-agent
+            service-discover-agent
 
 
 .. dropdown:: Step 4: Bootstrap |product|
+
+   Before executing this step, you need to retrieve the LDAP password
+   that will be required in the menu. As the ``root`` user, execute
+   the command
+
+   .. code:: console
+
+      # su - zextras -c "zmlocalconfig -s ldap_root_password"
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
@@ -463,3 +478,38 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
      RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
      handler completed
+
+.. dropdown:: Step 7: Install Video Recording
+
+   To install the video recording functionality, install the following
+   package. No configuration is required.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt install carbonio-videorecorder
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt install carbonio-videorecorder
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf install carbonio-videorecorder
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf install carbonio-videorecorder
