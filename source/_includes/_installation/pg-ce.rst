@@ -48,7 +48,7 @@
       .. code:: console
 
          # apt update
-         # apt install postgresql-16 service-discover-agent
+         # apt install postgresql-16
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -56,7 +56,7 @@
       .. code:: console
 
          # apt update
-         # apt install postgresql-16 service-discover-agent
+         # apt install postgresql-16
 
    .. tab-item:: RHEL 8
       :sync: rhel8
