@@ -54,7 +54,7 @@ proper working of |product|
       .. code:: console
 
          # apt install carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db
+           carbonio-docs-connector-db carbonio-tasks-db
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -62,7 +62,7 @@ proper working of |product|
       .. code:: console
 
          # dnf install carbonio-files-db carbonio-mailbox-db \
-           carbonio-docs-connector-db
+           carbonio-docs-connector-db carbonio-tasks-db
 
 
 Bootstrap Databases
