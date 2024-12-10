@@ -174,26 +174,32 @@ If you chose to install only Node, installation has
 completed. Otherwise, if you plan to use collaboration features,
 please continue with the installation of the other Nodes.
 
-In the latter case, you need to retrieve **three** passwords that will
-be needed during the installation of the *Collaboration* and *Video
-Server* Nodes.
+.. warning::
 
-#. The **LDAP password** for bootstrapping |product|, that you can
+   In the latter case, it is necessary to retrieve **three** passwords from the first Node.
+   Keep these credentials handy as they will be needed during the installation of
+   Node 2 (*Collaboration*) and Node 3 (*Video Server*).
+
+.. card:: The **LDAP password** for bootstrapping |product|, that you can
    retrieve with command
 
    .. code:: console
 
       # su - zextras -c "zmlocalconfig -s ldap_root_password"
 
-#. the **database bootstrap** ``DB_ADM_PWD``, that you can show using
-   command
+.. card:: The **Postgres user carbonio_adm password**, which can be displayed
+   using the command
 
    .. code:: console
 
       # echo $DB_ADM_PWD
 
-#. the |mesh| **secret**, that is stored in file
-   :file:`/var/lib/service-discover/password`
+.. card:: The |mesh| **secret**, that you can retrieve with command
+
+   .. code:: console
+
+      # cat  /var/lib/service-discover/password
+
               
 Collaboration Node
 ==================
@@ -563,12 +569,6 @@ Server* Node. Most of the steps are the same as in the *Core* and
       missing: find the variable ``nat_1_1_mapping`` and add it, for
       example: ``nat_1_1_mapping = "93.184.216.34"``
 
-   #. restart the service
-
-      .. code:: console
-
-         # systemctl restart carbonio-videoserver
-
    .. rubric:: Check Video Server & Broker
 
    To make sure that videoserver and message broker are connected
@@ -612,3 +612,14 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # dnf install carbonio-videorecorder
+
+   .. rubric:: Routing & mapping
+
+   #. Execute, as the ``root`` user the script that enables the
+      correct routing to the Videorecorder. To carry out this step, you need
+      the |mesh| **secret** generated during the installation of the
+      Core Node (see the :ref:`installation-step8` Step).
+
+      .. code:: console
+
+         # carbonio-videorecorder-routing
