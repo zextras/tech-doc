@@ -11,7 +11,7 @@ key used for signing the packages and verify them.
       .. tab-item:: Ubuntu 20.04
          :sync: ubu20
 
-         You need to create file :file:`/etc/yum.repos.d/zextras.list`
+         You need to create file :file:`/etc/apt/sources.list.d/zextras.list`
          and add the following content to it:
 
          .. code:: text
@@ -24,7 +24,7 @@ key used for signing the packages and verify them.
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         You need to create file :file:`/etc/yum.repos.d/zextras.list`
+         You need to create file :file:`/etc/apt/sources.list.d/zextras.list`
          and add the following content to it:
 
          .. code:: text
