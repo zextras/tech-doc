@@ -92,7 +92,7 @@ configure the PostgreSQL 16 database.
 Step 1: Repository Configuration
 --------------------------------
 
-.. include:: /_includes/_installation/step-repo-conf-ce.rst
+.. include:: /_includes/_installation/step-repo-conf.rst
 .. include:: /_includes/_installation/repo-info.rst
 
 .. _installation-step2:

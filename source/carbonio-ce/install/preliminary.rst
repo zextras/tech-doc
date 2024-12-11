@@ -4,4 +4,4 @@
 Preliminaries
 =============
 
-.. include:: /_includes/_installation/preliminary-ce.rst
+.. include:: /_includes/_installation/preliminary.rst

@@ -25,7 +25,7 @@ repositories.
 
 .. rubric:: |product|
 
-.. include:: /_includes/_installation/step-repo-conf-ce.rst
+.. include:: /_includes/_installation/step-repo-conf.rst
 
 .. rubric:: PostgreSQL and other (RHEL only)
 
@@ -195,7 +195,7 @@ Node*. Click on the drop-downs to expand them.
 
    .. rubric:: |product|
 
-   .. include:: /_includes/_installation/step-repo-conf-ce.rst
+   .. include:: /_includes/_installation/step-repo-conf.rst
 
    .. rubric:: RHEL Only
 
@@ -395,7 +395,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
    .. rubric:: |product|
 
-   .. include:: /_includes/_installation/step-repo-conf-ce.rst
+   .. include:: /_includes/_installation/step-repo-conf.rst
 
    .. rubric:: RHEL Only
 
