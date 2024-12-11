@@ -179,8 +179,8 @@ to the installation of the other Nodes.
 Step 9: Data Required for Additional Nodes
 ==========================================
 
-The following data will be needed during the installation of the
-*Collaboration* and *Video Server* Nodes.
+The following data from this Node will be needed during the
+installation of the *Collaboration* and *Video Server* Nodes.
 
 .. include:: /_includes/_installation/data-for-next-nodes.rst
               
@@ -321,9 +321,9 @@ Node*. Click on the drop-downs to expand them.
 
 .. dropdown:: Step 4: Bootstrap |product|
 
-   To carry out this step, you need the **LDAP password** that you
-   have retrieved at Step 9 of the Core Node (see
-   :ref:`installation-step9`).
+   To carry out this step, you need the **LDAP password** and the
+   **Node hostname** that you have retrieved at Step 9 of the Core
+   Node (see :ref:`installation-step9`).
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
@@ -509,9 +509,9 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
 .. dropdown:: Step 4: Bootstrap |product|
 
-   To carry out this step, you need the **LDAP password** that you
-   have retrieved at Step 9 of the Core Node
-   (see :ref:`installation-step9`).
+   To carry out this step, you need the **LDAP password** and the
+   **Node hostname** that you have retrieved at Step 9 of the Core
+   Node (see :ref:`installation-step9`).
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
