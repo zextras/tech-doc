@@ -1,10 +1,7 @@
 Single-Server Installation with Ansible
 =======================================
 
-.. note:: On RHEL 8 and RHEL 9 systems, |product| version 24.12.0 can
-   not be installed using Ansible, so if you plan to use either of
-   these two Operating Systems, please :ref:`install manually
-   <single-server-install>`.
+.. include:: /_includes/_installation/rhel-info.rst
 
 This Single Node scenario can be installed using Ansible : you need to
 setup a workstation to run Ansible playbooks (please refer to section

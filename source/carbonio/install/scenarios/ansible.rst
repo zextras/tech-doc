@@ -4,9 +4,7 @@
  Prepare the Ansible Environment
 =================================
 
-.. note:: On RHEL 8 and RHEL 9 systems, |product| version 24.12.0 can
-   not be installed using Ansible, so if you plan to use either of
-   these two Operating Systems, please install manually.
+.. include:: /_includes/_installation/rhel-info.rst
 
 Section :ref:`roles-installation` reviews all the roles that make up
 |product| and the tasks required to successfully complete the
