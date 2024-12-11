@@ -32,7 +32,7 @@ installed; **MTA Node** the Node featuring the MTA, and so on.
 Configure repositories
 ----------------------
 
-.. include:: /_includes/_installation/step-repo-conf-cb.rst
+.. include:: /_includes/_installation/step-repo-conf.rst
 .. include:: /_includes/_installation/repo-info.rst
 
 Setting Hostname
