@@ -44,7 +44,7 @@ key used for signing the packages and verify them.
 
             [zextras]
             name=zextras
-            baseurl=https://repo.zextras.io/release/rhel9
+            baseurl=https://repo.zextras.io/release/rhel8
             enabled=1
             repo_gpgcheck=1
             gpgcheck=0
