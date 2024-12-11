@@ -43,12 +43,6 @@ carry out these tasks.
    missing: find the variable ``nat_1_1_mapping`` and add it, for
    example: ``nat_1_1_mapping = "93.184.216.34"``
 
-#. restart the service
-
-   .. code:: console
-
-      # systemctl restart carbonio-videoserver
-
 Check Video Server & Broker
 ---------------------------
 
@@ -80,6 +74,15 @@ to the underlying operating system.
       .. code:: console
 
          # dnf install carbonio-videorecorder
+
+Execute, as the ``root`` user the script that enables the correct
+routing to the Video Recorder. To carry out this step, you need the
+|mesh| **secret** generated during the installation of the Core Node
+(see the :ref:`installation-step8` Step).
+
+.. code:: console
+
+   # carbonio-videorecorder-routing
 
 You can then enable the Video Recorder on a user, COS, or global
 level: please refer to section :ref:`vs-recorder-conf` for
