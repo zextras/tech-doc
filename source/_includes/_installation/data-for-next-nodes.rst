@@ -1,4 +1,4 @@
-#. The hostname of this Node
+#. The **Node hostname**
 
    .. code:: console
 
