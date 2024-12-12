@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_doCreateVolume_CustomS3:
 
-****************
-CustomS3
-****************
+************************
+doCreateVolume CustomS3
+************************
 
 ::
 

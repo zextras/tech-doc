@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_doUpdateVolume_Alibaba:
 
-**************
-Alibaba
-**************
+*************************
+doUpdateVolume Alibaba
+*************************
 
 ::
 

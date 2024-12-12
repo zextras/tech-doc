@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_doUpdateVolume_ScalityS3:
 
-******************
-ScalityS3
-******************
+*******************************
+doUpdateVolume ScalityS3
+*******************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_doUpdateVolume_FileBlob:
 
-****************
-FileBlob
-****************
+******************************
+doUpdateVolume FileBlob
+******************************
 
 ::
 
