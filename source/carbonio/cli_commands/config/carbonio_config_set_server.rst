@@ -5,7 +5,7 @@
 .. _carbonio_config_set_server:
 
 ************
-server
+set server
 ************
 
 ::

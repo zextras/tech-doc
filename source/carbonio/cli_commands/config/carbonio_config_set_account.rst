@@ -5,7 +5,7 @@
 .. _carbonio_config_set_account:
 
 **************
-account
+set account
 **************
 
 ::

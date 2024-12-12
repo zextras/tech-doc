@@ -5,7 +5,7 @@
 .. _carbonio_config_dump_global:
 
 ************
-global
+dump global
 ************
 
 ::

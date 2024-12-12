@@ -4,9 +4,9 @@
 
 .. _carbonio_config_get_cos:
 
-******
-cos
-******
+********
+get cos
+********
 
 ::
 

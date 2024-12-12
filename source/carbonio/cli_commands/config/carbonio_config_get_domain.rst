@@ -5,7 +5,7 @@
 .. _carbonio_config_get_domain:
 
 ************
-domain
+get domain
 ************
 
 ::

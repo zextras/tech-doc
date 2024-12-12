@@ -4,9 +4,9 @@
 
 .. _carbonio_config_dump_cos:
 
-******
-cos
-******
+***********
+dump cos
+***********
 
 ::
 

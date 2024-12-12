@@ -5,7 +5,7 @@
 .. _carbonio_config_get_account:
 
 **************
-account
+get account
 **************
 
 ::
