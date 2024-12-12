@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_addressBook_remove_domain:
 
-************
-domain
-************
+*********************************
+mobile addressBook remove domain
+*********************************
 
 ::
 

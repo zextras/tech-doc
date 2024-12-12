@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_ABQ_block:
 
-**********
-block
-**********
+****************
+ABQ block
+****************
 
 ::
 

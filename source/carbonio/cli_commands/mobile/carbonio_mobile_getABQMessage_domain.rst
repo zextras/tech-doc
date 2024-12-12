@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_getABQMessage_domain:
 
-************
-domain
-************
+***********************
+getABQMessage domain
+***********************
 
 ::
 

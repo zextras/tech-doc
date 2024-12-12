@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_ABQ_allow:
 
-**********
-allow
-**********
+****************
+ABQ allow
+****************
 
 ::
 

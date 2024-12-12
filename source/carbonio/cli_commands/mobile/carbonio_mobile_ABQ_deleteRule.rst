@@ -5,7 +5,7 @@
 .. _carbonio_mobile_ABQ_deleteRule:
 
 ********************
-deleteRule
+ABQ deleteRule
 ********************
 
 ::
