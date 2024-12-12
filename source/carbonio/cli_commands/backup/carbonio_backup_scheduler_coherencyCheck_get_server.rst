@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_scheduler_coherencyCheck_get_server:
 
-************
-server
-************
+***********************************
+scheduler coherencyCheck get server
+***********************************
 
 ::
 

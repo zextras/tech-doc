@@ -4,9 +4,9 @@
 
 .. _carbonio_metrics_set_graphite:
 
-****************
-graphite
-****************
+********************
+metrics set graphite
+********************
 
 ::
 

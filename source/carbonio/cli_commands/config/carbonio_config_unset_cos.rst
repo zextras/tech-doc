@@ -4,9 +4,9 @@
 
 .. _carbonio_config_unset_cos:
 
-******
-cos
-******
+**************
+unset cos
+**************
 
 ::
 

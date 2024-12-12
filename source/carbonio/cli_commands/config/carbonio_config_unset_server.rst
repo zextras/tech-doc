@@ -5,7 +5,7 @@
 .. _carbonio_config_unset_server:
 
 ************
-server
+unset server
 ************
 
 ::

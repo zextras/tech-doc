@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_addressBook_add_global:
 
-************
-global
-************
+************************
+addressBook add global
+************************
 
 ::
 

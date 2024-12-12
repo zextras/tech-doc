@@ -5,7 +5,7 @@
 .. _carbonio_mobile_ABQ_setRule:
 
 **************
-setRule
+ABQ setRule
 **************
 
 ::

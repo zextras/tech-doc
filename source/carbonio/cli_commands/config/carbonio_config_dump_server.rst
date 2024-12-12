@@ -5,7 +5,7 @@
 .. _carbonio_config_dump_server:
 
 ************
-server
+dump server
 ************
 
 ::

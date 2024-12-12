@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_scheduler_purge_set_server:
 
-************
-server
-************
+**************************
+scheduler purge set server
+**************************
 
 ::
 

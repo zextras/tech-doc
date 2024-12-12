@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_duplicateABQMessage_domain:
 
-************
-domain
-************
+********************************
+duplicateABQMessage domain
+********************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_doUpdateVolume_S3:
 
-****
-S3
-****
+*******************
+doUpdateVolume S3
+*******************
 
 ::
 

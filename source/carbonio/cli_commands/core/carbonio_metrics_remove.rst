@@ -4,9 +4,9 @@
 
 .. _carbonio_metrics_remove:
 
-************
-remove
-************
+**************
+metrics remove
+**************
 
 ::
 

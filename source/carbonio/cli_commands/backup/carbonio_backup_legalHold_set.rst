@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_legalHold_set:
 
-******
-set
-******
+*************
+legalHold set
+*************
 
 ::
 

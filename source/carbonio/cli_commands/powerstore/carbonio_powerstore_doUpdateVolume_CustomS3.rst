@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_doUpdateVolume_CustomS3:
 
-****************
-CustomS3
-****************
+********************************
+doUpdateVolume CustomS3
+********************************
 
 ::
 

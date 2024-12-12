@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_updateBackupVolume_S3:
 
-****
-S3
-****
+*********************
+updateBackupVolume S3
+*********************
 
 ::
 

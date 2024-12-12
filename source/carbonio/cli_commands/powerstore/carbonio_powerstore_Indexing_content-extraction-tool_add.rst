@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_Indexing_content-extraction-tool_add:
 
-******
-add
-******
+******************************************
+Indexing content-extraction-tool add
+******************************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_retrieveMetadataFromArchive_Local:
 
-**********
-Local
-**********
+*********************************
+retrieveMetadataFromArchive Local
+*********************************
 
 ::
 

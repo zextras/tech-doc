@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_addressBook_remove_global:
 
-************
-global
-************
+*******************************
+addressBook remove global
+*******************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_setBackupVolume_CustomS3:
 
-****************
-CustomS3
-****************
+************************
+setBackupVolume CustomS3
+************************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_migrateBackupVolume_CustomS3:
 
-****************
-CustomS3
-****************
+****************************
+migrateBackupVolume CustomS3
+****************************
 
 ::
 

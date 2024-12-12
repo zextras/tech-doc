@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_Indexing_content-extraction-tool_remove:
 
-************
-remove
-************
+**********************************************
+Indexing content-extraction-tool remove
+**********************************************
 
 ::
 

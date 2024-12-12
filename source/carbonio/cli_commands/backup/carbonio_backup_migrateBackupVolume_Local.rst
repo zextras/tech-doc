@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_migrateBackupVolume_Local:
 
-**********
-Local
-**********
+*************************
+migrateBackupVolume Local
+*************************
 
 ::
 

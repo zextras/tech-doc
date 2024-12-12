@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_scheduler_SmartScan_set_server:
 
-************
-server
-************
+******************************
+scheduler SmartScan set server
+******************************
 
 ::
 

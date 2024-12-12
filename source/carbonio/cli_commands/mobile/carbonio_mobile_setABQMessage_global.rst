@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_setABQMessage_global:
 
-************
-global
-************
+**********************
+setABQMessage global
+**********************
 
 ::
 

@@ -4,9 +4,9 @@
 
 .. _carbonio_metrics_percentiles:
 
-**********************
-percentiles
-**********************
+*******************
+metrics percentiles
+*******************
 
 ::
 

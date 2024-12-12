@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_duplicateABQMessage_global:
 
-************
-global
-************
+*******************************
+duplicateABQMessage global
+*******************************
 
 ::
 

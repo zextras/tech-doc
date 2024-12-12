@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_scheduler_purge_get_global:
 
-************
-global
-************
+**************************
+scheduler purge get global
+**************************
 
 ::
 

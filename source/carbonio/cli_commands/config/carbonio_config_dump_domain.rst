@@ -5,7 +5,7 @@
 .. _carbonio_config_dump_domain:
 
 ************
-domain
+dump domain
 ************
 
 ::

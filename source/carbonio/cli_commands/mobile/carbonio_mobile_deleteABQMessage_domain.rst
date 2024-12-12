@@ -4,9 +4,9 @@
 
 .. _carbonio_mobile_deleteABQMessage_domain:
 
-************
-domain
-************
+*************************
+deleteABQMessage domain
+*************************
 
 ::
 

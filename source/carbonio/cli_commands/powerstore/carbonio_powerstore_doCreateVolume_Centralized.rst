@@ -4,9 +4,9 @@
 
 .. _carbonio_powerstore_doCreateVolume_Centralized:
 
-**********************
-Centralized
-**********************
+******************************
+doCreateVolume Centralized
+******************************
 
 ::
 

@@ -5,7 +5,7 @@
 .. _carbonio_config_dump_account:
 
 **************
-account
+dump account
 **************
 
 ::
