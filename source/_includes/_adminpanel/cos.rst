@@ -163,7 +163,3 @@ Email Retention Policy
   Define how long e-mail will be stored before being automatically
   deleted from the Inbox (and its sub-folders), Trash, and Spam
   folders.
-
-Free/Busy Interop
-  This option allows to provide **O** and **OU** records to display
-  the free/busy user schedule when using an Exchange server.
