@@ -366,9 +366,21 @@ Installation and Execution
 
 Both commands mentioned below must be run as the ``root`` user.
 
-.. code:: console
+.. tab-set::
 
-   # apt install carbonio-drive-migration
+   .. tab-item:: Ubuntu
+      :sync: ubu
+
+      .. code:: console
+
+         # apt install carbonio-drive-migration
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf install carbonio-drive-migration
 
 This package provides the command :command:`carbonio-drive-migration`,
 that can be executed as root as follows.
