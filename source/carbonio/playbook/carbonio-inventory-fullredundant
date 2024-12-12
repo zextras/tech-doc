@@ -12,7 +12,7 @@ srv1.example.com
 srv2.example.com
 srv3.example.com
 
-# This Role is no longer required in Carbonio 24.12.0
+### This Role is no longer required in Carbonio 24.12.0
 #[dbsConnectorServers]
 
 [mtaServers]
