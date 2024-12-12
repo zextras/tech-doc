@@ -4,9 +4,9 @@
 
 .. _carbonio_metrics_status:
 
-************
-status
-************
+**************
+metrics status
+**************
 
 ::
 

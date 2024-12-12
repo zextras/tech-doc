@@ -5,7 +5,7 @@
 .. _carbonio_metrics_interval:
 
 ****************
-interval
+metrics interval
 ****************
 
 ::
