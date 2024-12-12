@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_setBackupVolume_Cloudian:
 
-****************
-Cloudian
-****************
+************************
+setBackupVolume Cloudian
+************************
 
 ::
 

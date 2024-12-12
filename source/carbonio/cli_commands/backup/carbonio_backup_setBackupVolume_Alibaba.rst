@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_setBackupVolume_Alibaba:
 
-**************
-Alibaba
-**************
+***********************
+setBackupVolume Alibaba
+***********************
 
 ::
 

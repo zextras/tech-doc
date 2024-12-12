@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_migrateBackupVolume_Ceph:
 
-********
-Ceph
-********
+************************
+migrateBackupVolume Ceph
+************************
 
 ::
 

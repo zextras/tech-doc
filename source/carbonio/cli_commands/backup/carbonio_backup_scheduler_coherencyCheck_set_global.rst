@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_scheduler_coherencyCheck_set_global:
 
-************
-global
-************
+***********************************
+scheduler coherencyCheck set global
+***********************************
 
 ::
 

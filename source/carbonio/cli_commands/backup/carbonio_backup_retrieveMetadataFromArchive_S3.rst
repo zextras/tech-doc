@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_retrieveMetadataFromArchive_S3:
 
-****
-S3
-****
+********************************
+S3retrieveMetadataFromArchive S3
+********************************
 
 ::
 

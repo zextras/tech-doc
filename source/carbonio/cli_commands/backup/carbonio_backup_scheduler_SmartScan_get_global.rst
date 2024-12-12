@@ -4,9 +4,9 @@
 
 .. _carbonio_backup_scheduler_SmartScan_get_global:
 
-************
-global
-************
+******************************
+scheduler SmartScan get global
+******************************
 
 ::
 
