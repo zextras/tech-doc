@@ -148,13 +148,11 @@ recent |product| release.
 Configure Ansible
 -----------------
 
-You can configure Ansible using the :file:`ansible.cfg` in the cloned
-repository (i.e., in directory :file:`carbonio-install-ansible`). We
-suggest to define at least a log file, which you can do achieve as
-follows::
+You can configure Ansible using the :file:`ansible.cfg` file.  Please
+refer to the `official documentation
+<https://docs.ansible.com/ansible/latest/installation_guide/intro_configuration.html>`_
+for directions.
 
-  [defaults]
-  log_path=/var/log/carbonio-ansible.log
 
 .. _ansible-multi-inventories:
 
