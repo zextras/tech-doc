@@ -1,8 +1,6 @@
 Single-Server Installation with Ansible
 =======================================
 
-.. include:: /_includes/_installation/rhel-info.rst
-
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible`, then follow the directions on setting up

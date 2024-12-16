@@ -3,8 +3,6 @@
 Ansible Playbook
 ================
 
-.. include:: /_includes/_installation/rhel-info.rst
-
 This 3 Nodes scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible`, then follow the directions on setting up
