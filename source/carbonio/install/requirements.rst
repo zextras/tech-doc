@@ -92,8 +92,8 @@ install |product|.
 
 #. Perl, latest version available on the Operating System chosen
 
-#. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
-   does not contain any IPv6 entries.
+#. Make sure that the :file:`/etc/hosts` does not contain any IPv6
+   entries
 
 .. _rhel-requirements:
 
