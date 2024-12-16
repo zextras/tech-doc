@@ -13,9 +13,8 @@ Prepare Inventory
 
 Download the inventory file corresponding to the scenario that you
 want to install (you can find it in the various *Scenarios* page that
-follow this one) and place it under the
-:file:`/opt/carbonio-installation/` directory. Remember to give the
-inventory file a meaningful name.
+follow this one) and place it under a directory of your
+choice. Remember to give the inventory file a meaningful name.
 
 The :file:`carbonio_inventory` file contains various sections, one for
 each of the available Roles. You need to edit the file and provide the
@@ -64,14 +63,9 @@ value for a proper configuration. Currently, these sections are
   .. note:: 172.16.12.5 is a private IP, remember to replace it with
      an actual public IP!
 
-In order to run the script, first go to the Inventory's directory
-
-
-.. code:: console
-
-   $ cd /opt/carbonio-installation/
-
-then execute either command, depending on the Scenario.
+In order to run the script, first go to the directory in which you
+saved the Inventory, then execute either command, depending on the
+Scenario.
 
 .. card:: Single-Server Scenario
 
@@ -94,8 +88,8 @@ inventory you want to install.
 The playbook will execute all the tasks necessary and print the result
 on the screen. When finished, a summary of the results is
 displayed. Moreover, the passwords created during the installation are
-saved in the :file:`/opt/carbonio-installation` directory, along with the
-:file:`carbonio-inventory` file, so you have them always at your
+saved in the directory from which the command was launched, along with
+the :file:`carbonio-inventory` file, so you have them always at your
 disposal when you need them, for example during upgrades or routine
 tasks. To protect them, make sure:
 

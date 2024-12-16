@@ -65,7 +65,7 @@ install |product|.
 
       .. code:: console
 
-         # host -t A example.com
+         # host -t A mail.example.com
 
 #. To allow the mail server to receive mail, it will be necessary to
    set up an **MX record**, which must correspond to the A record
@@ -92,8 +92,8 @@ install |product|.
 
 #. Perl, latest version available on the Operating System chosen
 
-#. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
-   does not contain any IPv6 entries.
+#. Make sure that the :file:`/etc/hosts` does not contain any IPv6
+   entries
 
 .. _rhel-requirements:
 
