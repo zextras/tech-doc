@@ -3,12 +3,31 @@ Single-Server Installation with Ansible
 
 .. include:: /_includes/_installation/rhel-info.rst
 
-This Single Node scenario can be installed using Ansible : you need to
+This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
-:ref:`install-with-ansible` and following the directions on setting up
-the control node), then download the Ansible inventory (see below this
-paragraph), replace the FQDN and values present in the file according
-to your planned |product| infrastructure.
+:ref:`install-with-ansible`, then follow the directions on setting up
+the control node). To access the control node, execute the following
+command to log in (replace ``mail.example.com`` with the name or IP of
+the control node)
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+
+      .. code:: console
+
+         $ ssh root@mail.example.com
+
+   .. tab-item:: RHEL
+
+      .. code:: console
+
+         $ ssh -A root@mail.example.com
+
+After you have logged in to the control node, download the Ansible
+inventory (see below this paragraph), replace the FQDN and values
+present in the file according to your planned |product|
+infrastructure.
 
 .. note:: This installation procedure does not support |wsc|: If you
    plan to install it, you need to follow the
@@ -28,7 +47,7 @@ to your planned |product| infrastructure.
 
 Once you edited the inventory, save it in a directory of your choice
 as :file:`carbonio-inventory-single`. Now, you can run the script:
-from the directory execute the command
+from that directory execute the command
 
 .. code:: console
 
