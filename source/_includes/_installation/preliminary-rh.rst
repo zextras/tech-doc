@@ -49,7 +49,7 @@ RHEL 8
    * Latest Ansible version (**2.6.9**)
 
    Moreover, to connect to the Control Node you must use the
-   :command:`ssh` command with the ``-A` option, e.g.:
+   :command:`ssh` command with the ``-A`` option, e.g.:
 
    .. code:: console
 
@@ -107,7 +107,7 @@ RHEL 9 |beta|
    * Latest Ansible version (**2.6.9**)
 
    Moreover, to connect to the Control Node you must use the
-   :command:`ssh` command with the ``-A` option, e.g.:
+   :command:`ssh` command with the ``-A`` option, e.g.:
 
    .. code:: console
 
