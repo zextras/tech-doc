@@ -65,7 +65,7 @@ install |product|.
 
       .. code:: console
 
-         # host -t A example.com
+         # host -t A mail.example.com
 
 #. To allow the mail server to receive mail, it will be necessary to
    set up an **MX record**, which must correspond to the A record
