@@ -35,3 +35,18 @@ Setting Hostname
 ----------------
 
 .. include:: /_includes/_installation/steps-hostname.rst
+
+Newsletter Subscription
+-----------------------
+
+We invite you to subscribe to our newsletter to gain early access to
+dedicated content for Carbonio CE admins, including:
+
+- Release notes and upcoming updates
+
+- The latest news and announcements
+
+- Expert technical guides for |product|
+
+Please fill in the form at
+https://zextras.com/carbonio-community-edition#discoverproduct
