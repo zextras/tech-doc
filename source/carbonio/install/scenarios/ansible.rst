@@ -162,7 +162,4 @@ Multiple Inventories
 
 If you plan to install multiple instances of |carbonio| on different
 environments, we suggest that you create a dedicated directory to
-store the various inventories required for the different setups. We
-will call this directory :file:`/opt/carbonio-installations/`. During
-the installation procedure, we assume that the inventory file is saved
-in this directory.
+store the various inventories required for the different setups.

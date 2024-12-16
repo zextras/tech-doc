@@ -26,10 +26,9 @@ to your planned |product| infrastructure.
    the comment (#) indicating the correct name of the server on which
    to install the Role, based on the directions provided.
 
-Once you edited the inventory, save it in directory
-:file:`/opt/carbonio-installation` as
-:file:`carbonio-inventory-single`. Now, you can run the script: from
-the directory execute the command
+Once you edited the inventory, save it in a directory of your choice
+as :file:`carbonio-inventory-single`. Now, you can run the script:
+from the directory execute the command
 
 .. code:: console
 
