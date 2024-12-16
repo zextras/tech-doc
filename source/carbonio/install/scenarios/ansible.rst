@@ -24,37 +24,38 @@ Ansible will read an `inventory file` containing a list of the Nodes
 on which to install the various Roles and automatically execute on the
 proper Node all the necessary tasks.
 
-Once the Control Node (see Section :ref:`ansible-setup` below) has
-been properly set up according the directions in the remainder, the
-ansible installation only requires to edit the inventory file and run
-**one CLI command** to execute the playbook.
+Once the **Control Node** (i.e., a workstation with Ansible installed
+and from which to launch |product| installations, see Section
+:ref:`ansible-setup` below) has been properly set up according the
+directions below, the ansible installation only requires to edit the
+inventory file and run **one CLI command** to execute the playbook.
 
 .. _ansible-req:
 
 Requirements
 ============
 
-You can run the Ansible playbook form any workstation, which runs
+You can run the Ansible playbook form any control node, which runs
 Linux, macOS, or BSD, satisfying the following requirements
 
-.. note:: Using Ansible from a Windows workstation is not
+.. note:: Using Ansible from a Windows control node is not
    straightforward: If you want to use the Ansible playbook from a
-   Windows workstation, please read `the official Windows FAQ
+   Windows control node, please read `the official Windows FAQ
    <https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html#windows-faq-ansible>`_
    for setting it up.
 
-.. card:: Workstation requirements
+.. card:: Control Node requirements
 
-   #. The workstation has a working installation of Ansible (see
+   #. The control node has a working installation of Ansible (see
       Section :ref:`ansible-setup` for directions)
 
-   #. The workstation has SSH access as the ``root`` user to all the
+   #. The control node has SSH access as the ``root`` user to all the
       Nodes on which |product| must be installed. This is necessary
       because Ansible needs to install packages and carry out various
       tasks which require root privileges.
 
       .. hint:: You can temporarily copy the SSH key of the user on
-         the workstation to the :file:`.ssh/authorized_keys` file of
+         the control node to the :file:`.ssh/authorized_keys` file of
          the Nodes' ``root`` user
 
 .. card:: Nodes requirements
@@ -75,7 +76,7 @@ Linux, macOS, or BSD, satisfying the following requirements
 Ansible Setup
 =============
 
-This section guides you in the set up of a workstation featuring
+This section guides you in the set up of a control node featuring
 Ansible (the **Control Node**) and the |carbonio| Ansible playbook,
 with the purpose to install |product| on an existing infrastructure.
 

@@ -4,9 +4,9 @@ Single-Server Installation with Ansible
 .. include:: /_includes/_installation/rhel-info.rst
 
 This Single Node scenario can be installed using Ansible : you need to
-setup a workstation to run Ansible playbooks (please refer to section
+setup a control node to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible` and following the directions on setting up
-the workstation), then download the Ansible inventory (see below this
+the control node), then download the Ansible inventory (see below this
 paragraph), replace the FQDN and values present in the file according
 to your planned |product| infrastructure.
 
