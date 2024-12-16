@@ -26,9 +26,8 @@ to the directions given below.
 
 .. card:: Configure Push Notifications
 
-   This service requires two files that will be provided by the |zx|
-   Sales representative. They must be saved on the |wsc| Node as
-   follows:
+   This service requires two files and some Consul K/V that will be provided by the |zx|
+   Sales representative. Files must be saved on the |wsc| Node.
 
    * file `service-account-file.json` must be saved under directory
      :file:`/etc/carbonio/notification-push/android`
@@ -36,15 +35,9 @@ to the directions given below.
    * file `auth-key.p8` must be saved under directory
      :file:`/etc/carbonio/notification-push/ios`
 
-   Next, configure them using the following commands
+   Consul K/V must be updated as follow:
 
    .. code:: console
 
-      # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" \
-      "carbonio-notification-push/apns/team-id" "X95YE8AZMB"
-
-      # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" \
-      "carbonio-notification-push/apns/key-id" "DN8BH5LMKG"
-
-      # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" \
-      "carbonio-notification-push/apns/topic" "com.zextras.chats"
+      # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" <KEY> <VALUE>
+      
