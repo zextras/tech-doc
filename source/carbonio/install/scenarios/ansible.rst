@@ -4,8 +4,6 @@
  Prepare the Ansible Environment
 =================================
 
-.. include:: /_includes/_installation/rhel-info.rst
-
 Section :ref:`roles-installation` reviews all the roles that make up
 |product| and the tasks required to successfully complete the
 installation.
