@@ -9,7 +9,7 @@
 Settings
 ========
 
-.. include:: /_includes/_adminpanel/_domains/globalsettings.rst
+.. include:: /_includes/_adminpanel/_domains/globalsettings-ce.rst
 
 .. _global-delegate:
 

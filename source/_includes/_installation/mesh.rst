@@ -29,6 +29,9 @@ This command will:
 * store the setup in file
   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
 
+Pending setups
+--------------
+
 To complete |mesh| installation, run
 
 .. code:: console

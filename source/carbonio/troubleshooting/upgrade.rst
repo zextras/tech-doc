@@ -17,8 +17,10 @@ This is a list of known issues that impact |product| after the upgrade
 to |version|.
 
 .. include:: /_includes/_upgrade/issues-pg-adv-modules.rst
-.. include:: /_includes/_upgrade/issues-languages.rst
 .. include:: /_includes/_upgrade/issues-logging.rst
+.. include:: /_includes/_upgrade/issue-version.rst
+.. include:: /_includes/_upgrade/issue-janus.rst
+.. include:: /_includes/_upgrade/issue-mongoose.rst
 
 .. _ts-up-older:
 
@@ -42,11 +44,10 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * The :ref:`advanced modules do not start <upgrade_pg-adv-mod>` due to
   miscommunication with the Database or Database Connector Roles
-* Folders with :ref:`Cyrillic (UTF-7) characters <upgrade-lang>` can not be
-  subscribed using IMAP
 * There are :ref:`warning messages about SLF4J <upgrade-logging>` in
   the log files
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
 
-.. include:: /_includes/_upgrade/issues.rst 
+.. include:: /_includes/_upgrade/issues.rst
+             

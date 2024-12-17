@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 =====================
  Carbonio Management
@@ -33,6 +30,9 @@ certificate, either manually or automatically.
 :ref:`change-ip` features direction to modify the IP address of
 |product| Single-Server
 
+:ref:`cli-remove-node` guides you in the decommissioning of a Node
+from a |product| infrastructure
+
 .. toctree::
    :hidden: 
 
@@ -45,3 +45,4 @@ certificate, either manually or automatically.
    management/domaindisclaimer
    management/analytics
    management/changeip
+   management/removeserver

@@ -43,8 +43,16 @@ installing it:
   |product| infrastructure (it is part on the
   :ref:`role-proxy-install` Role)
 
-* |cwsc| requires that some ports, which are listed in
-  :ref:`fw-ports`, be forwarded on this and on the Proxy Nodes
+* |cwsc| requires that some ports be forwarded from the Internet to
+  the |vs| and Proxy Nodes, according to the following table:
+
+  .. csv-table::
+     :header: "Port", "Protocol", "To Node", "Service"
+     :widths: 10 10 20 80
+
+     "20000-40000", "UDP", "|vs|", "Client connections for the audio and
+     video streams"
+     "5222", "TCP", "Proxy", "Message Dispatcher"
 
 .. _wsc-install:
 
@@ -65,16 +73,17 @@ into account the following points:
 
   #.  Install the database components on the **Database Node**: please
       follow the instructions to Section :ref:`role-wsc-db-install`
+      remembering to bootstrap the Message Dispatcher and the |wsc| databases
 
-   #. Install package :file:`carbonio-ws-collaboration-ui` on the
-      :ref:`role-proxy-install` Node
+  #. Install package :file:`carbonio-ws-collaboration-ui` on the
+     :ref:`role-proxy-install` Node
 
-   #. Install package :file:`carbonio-message-broker` on the
-      :ref:`role-mesh-install` Node
+  #. Install package :file:`carbonio-message-broker` on the
+     :ref:`role-mesh-install` Node
 
-   #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node or
-      in any Node that does not feature :ref:`role-vs-install`, because
-      they are not compatible
+  #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node
+     or in any Node that does not feature :ref:`role-vs-install`,
+     because they are not compatible
 
 Now, depending on how you plan to install |wsc|, the procedure
 slightly changes.
@@ -127,86 +136,14 @@ Dispatcher DB Migration
 
 Initialise the message dispatcher
 
-.. code:: console
-
-   # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
-     carbonio_adm 127.78.0.10 20000
-
-Restart the service
-
-.. code:: console
-
-   # systemctl restart carbonio-message-dispatcher
-
-Configuration
--------------
-
-If you want to enable mobile notification, you need to configure
-mobile notifications and Push Notifications according
-to the directions given below.
-
-.. card:: Configure mobile notifications
-
-   The following lines must be added to file
-   :file:`/etc/carbonio/message-dispatcher/mongooseim.toml` to properly
-   allow notication push::
-
-     [outgoing_pools.http.http_pool.connection]
-       host = "http://127.78.0.10:20001"
-       request_timeout = 5000
-
-     [modules.mod_event_pusher.http]
-       [[modules.mod_event_pusher.http.handlers]]
-         pool_name = "http_pool"
-         path = "/notifications"
-
-   Then, restart the service.
-
-   .. code:: console
-
-      # systemctl restart carbonio-message-dispatcher
-
-.. card:: Configure Push Notifications
-
-   This service requires two files that will be provided by the |zx|
-   Sales representative. They must be saved on the |wsc| Node as
-   follows:
-
-   * file `service-account-file.json` must be saved under directory
-     :file:`/etc/carbonio/notification-push/android`
-
-   * file `auth-key.p8` must be saved under directory
-     :file:`/etc/carbonio/notification-push/ios`
-
-   Next, configure them using the following commands
-
-   .. code:: console
-
-      # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" \
-      "carbonio-notification-push/apns/team-id" "X95YE8AZMB"
-
-      # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" \
-      "carbonio-notification-push/apns/key-id" "DN8BH5LMKG"
-
-      # consul kv put -token-file="/etc/carbonio/notification-push/service-discover/token" \
-      "carbonio-notification-push/apns/topic" "com.zextras.chats"
+.. include:: /_includes/_installation/_roles/dispatcher-migration.rst
 
 Enable |wsc|
 ------------
 
-You need to allow each user to use |wsc|,  either from the |adminui|
-or running from the CLI the following command as the ``zextras`` user,
-replacing the e-mail address with the one of the user.
-
-.. code:: console
-
-   zextras$ carbonio prov ma john@example.com default carbonioFeatureChatsEnabled TRUE
-
-To let |product| pick up the change, restartg the service
-
-.. code:: console
-
-   # systemctl restart carbonio-ws-collaboration
+|wsc| can be enabled from the |adminui| at account or COS level:
+please refer to Sections :ref:`Account / Configuration <act-conf>` and
+:ref:`cos-features`, respectively.
 
 .. hint:: If the |wsc| installation is successful, you can optimise
    some values according to the guidelines that you can find in

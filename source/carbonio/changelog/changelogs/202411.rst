@@ -1,16 +1,112 @@
 Changelog 2024-11
 =================
 
-
 New and Updated Content
 -----------------------
 
+.. rubric:: 202411-903 Invalid Carbonio Mesh token to access rabbitmq
+
+We found the workaround for an issue involving |wsc| and rabbitmq, which were not able to communicate due to an invalid (|mesh|) token.
+
+Changes in the documentation can be found in Section
+:ref:`rabbitmq`, those in the source code in :pr:`795`.
+
+
+.. rubric:: 202411-902 Change IP address on Carbonio CE Single-Server
+
+We added directions to guide in the change of the private IP address of a |product| Single-Server.
+
+See :ref:`change-ip` for the documentation and :pr:`794` for the source code.
+
+
+.. rubric:: 202411-898 New Sections in Admin Panel documentation
+
+We reorganised the information about |product| authentication
+methods, adding a new sections (:ref:`create-auth`) that acts as
+an introduction and provides the references to configure them
+either from CLI or the |adminui|.
+
+We also added a new section, :ref:`ap-create-user`, to make the
+three most common domain-related tasks more prominent in the
+Admin's technical documentation.
+
+Changes in the source code can be found in in :pr:`789`.
+
+
+.. rubric:: 202411-891  Documentation Changelog October 2024
+
+The technical documentation's changelog has been published
+
+Changes in the documentation can be found in Section
+:doc:`/changelog/changelogs/202410`, those in the source code
+in :pr:`779` and :pr:`787`.
+
+
+.. rubric:: 202411-884 New  Role Mesh 
+
+When deploying a scenario with multiple |mesh| servers, only in the first Directory Server should be installed. 
+The introduction of this *Mesh-only* Role allows also to decouple the installation of multiple Directory Servers along multiple |Mesh| servers. 
+
+See :ref:`role-mesh-only-install` for the documentation and :pr:`773` for the source code.
+
+
+.. rubric:: 202411-881 Add the list of Roles to Scenario description 
+
+We added to each installation scenario the list of Roles that will be installed on each Node that is part of the scenario.
+
+See each scenario description in :ref:`scenarios` for the documentation and :pr:`772` for the source code.
+
+
+.. rubric:: 202411-839 Change IP address on Carbonio CE Single-Server
+
+We added directions to guide in the change of the private IP address of a Carbonio CE Simgle-Server.
+
+See :ref:`change-ip` for the documentation and :pr:`775` for the source code.
+
+
 .. rubric:: 202411-781 Add Carbonio APIs
 
-We added to the documentation all the available API to allow programmatic access
-to |product|.
+We added to the documentation all the available API to allow programmatic access to |product|.
 
 See :ref:`carbonio-api` for the documentation and :pr:`761` for the source code.
 
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202411-920 Fix Configuration of External Active Directory
+
+There was an error in the name of the local domain (Carbonio) on which accounts are to be created. It has been changed to the correct name.
+
+
+.. rubric:: 202411-900 Typos on wsc page
+
+We fixed two typos in the :ref:`role-wsc-install` that could lead to misunderstandings.
+
+Changes in the source code can be found in  in :pr:`790`.
+
+
+.. rubric:: 202411-897 Wronk link to storages API
+
+The wrong hyperlink to the |storage| API has been fixed.
+
+Changes in the documentation can be found in Section
+:ref:`carbonio-api`, those in the source code in :pr:`788`.
+
+
+.. rubric:: 202411-892 Prevent Virtualhost Certificate failure
+
+We added a note to make sure that after each pasted Certificate for a Virtual host, the Administrator adds a CR (Carriage Return) to prevent the failure of the Certificate upload. 
+
+See :ref:`ap-vhost` for the documentation; :pr:`778` :pr:`791` for the source code.
+
+
+.. rubric:: 202411-890 Typo in installation instructions
+
+A wrong redirect operator was used in the command to setup the FQDN for |product|.
+
+Changes in the documentation can be found in Section
+:ref:`preliminary`, those in the source code in :pr:`777`.
 
 End of changelog

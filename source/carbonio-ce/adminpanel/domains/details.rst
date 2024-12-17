@@ -15,6 +15,12 @@ domain, are inherited from the main domain defined.
 General Settings
 ================
 
+General setting influence the basic domain configuration; most of them
+appear during :ref:`the creation of the domain
+<ap-domain-new>`. Additional options allow to define the time zone,
+the use of ``HTTP`` or ``HTTPS`` protocol (we suggest using always the
+latter), and a mail server used for spam-relay purposes.
+
 .. include:: /_includes/_adminpanel/_domains/detailsettings.rst
              
 .. index:: GAL, Global Access List

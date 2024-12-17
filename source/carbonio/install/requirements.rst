@@ -65,7 +65,7 @@ install |product|.
 
       .. code:: console
 
-         # host -t A example.com
+         # host -t A mail.example.com
 
 #. To allow the mail server to receive mail, it will be necessary to
    set up an **MX record**, which must correspond to the A record
@@ -92,8 +92,8 @@ install |product|.
 
 #. Perl, latest version available on the Operating System chosen
 
-#. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
-   does not contain any IPv6 entries.
+#. Make sure that the :file:`/etc/hosts` does not contain any IPv6
+   entries
 
 .. _rhel-requirements:
 
@@ -191,7 +191,8 @@ table must be forwarded only on the Node on which the Role is installed.
 External Connections
 ++++++++++++++++++++
 
-These ports must be forwarded to allow communication with the Internet.
+These ports must be forwarded to the Node installing each Role, to
+allow communication with remote services on the Internet.
 
 .. card:: MTA Role
 
@@ -200,7 +201,7 @@ These ports must be forwarded to allow communication with the Internet.
       :widths: 10 10 80
 
       "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", "Message Submission over TLS protocol "
+      "465", "TCP", "Message Submission over TLS protocol"
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
 
@@ -222,8 +223,7 @@ These ports must be forwarded to allow communication with the Internet.
       "995", "TCP", "external POP3 secure access"
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
-      "5222", "TCP", "XMMP protocol"
-      "20000-40000", "UDP", "Audio & video streaming for |wsc|"
+      "5222", "TCP", "Message Dispatcher, required by the |wsc| Role"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
@@ -238,21 +238,14 @@ These ports must be forwarded to allow communication with the Internet.
       "20000-40000", "UDP", "Client connections for the audio and
       video streams"
 
-.. card:: |wsc| Role
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-               
-      "5222", "TCP", "Message Dispatcher"
-
 .. _fw-internal:
 
 Internal Connections
 ++++++++++++++++++++
 
-These ports must be forwarded to allow the Nodes to communicate properly
-and be able to access |product|'s internal services.
+Traffic to these ports must be allowed on the Nodes where the
+corresponding Role is installed, for a proper communication among
+|product|'s internal services.
 
 .. card:: Every Node
 

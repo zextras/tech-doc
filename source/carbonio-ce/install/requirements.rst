@@ -99,7 +99,7 @@ install |product|.
 
       .. code:: console
 
-         # host -t A example.com
+         # host -t A mail.example.com
 
 #. To allow the mail server to receive mail, it will be necessary to
    set up an **MX record**, which must correspond to the A record
@@ -126,8 +126,8 @@ install |product|.
 
 #. Perl, latest version available on the chosen Operating System
 
-#. IPv6 must be disabled. Make also sure that the :file:`/etc/hosts`
-   does not contain any IPv6 entries.
+#. Make sure that the :file:`/etc/hosts` does not contain any IPv6
+   entries
 
 .. _rhel-requirements:
 
@@ -139,7 +139,7 @@ RHEL Specific Requirements
    :ref:`single-install-auto`), these requirements are checked and
    automatically enabled if missing.
 
-.. include:: /_includes/_installation/preliminary-rh.rst
+.. include:: /_includes/_installation/preliminary-rh-ce.rst
 
 .. _more-requirements:
    
@@ -196,8 +196,11 @@ table must be opened only on the Node on which the Role is installed.
 
 .. _fw-external:
 
-TCP External Connections
-++++++++++++++++++++++++
+External Connections
+++++++++++++++++++++
+
+These ports must be forwarded to the Node installing each Role, to
+allow communication with remote services on the Internet.
 
 .. card:: MTA Role
 
@@ -217,7 +220,7 @@ TCP External Connections
 .. card:: Proxy Role
 
    .. csv-table::
-      :header: "Port", "Service"
+      :header: "Port", "Protocol", "Service"
       :widths: 10 10 80
 
       "80", "TCP", "unsecured connection to the Carbonio web client"
@@ -227,22 +230,34 @@ TCP External Connections
       "993", "TCP", "external IMAP secure access"
       "995", "TCP", "external POP3 secure access"
       "6071", "TCP", "secure access to the Admin Panel"
-
-   .. to restore in 23.7.0 "5222", "TCP", "XMMP protocol"
+      "5222", "TCP", "Message Dispatcher, required by the |wsc| Role"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
 
+.. card:: |vs| Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "20000-40000", "UDP", "Client connections for the audio and
+      video streams"
+
 .. _fw-internal:
 
-TCP Internal Connections
-++++++++++++++++++++++++
+Internal Connections
+++++++++++++++++++++
+
+Traffic to these ports must be allowed on the Nodes where the
+corresponding Role is installed, for a proper communication among
+|product|'s internal services.
 
 .. card:: Every Node
 
    .. csv-table::
-      :header: "Port", "Service"
+      :header: "Port", "Protocol", "Service"
       :widths: 10 10 80
 
       "22", "TCP", "SSH access"
@@ -285,7 +300,7 @@ TCP Internal Connections
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
 
-.. card:: AppServer Role
+.. card:: Mailstore & Provisioning Role
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"

@@ -8,8 +8,9 @@
          # apt install carbonio-proxy carbonio-webui \
            carbonio-files-ui carbonio-user-management \
            carbonio-tasks-ui carbonio-ws-collaboration-ui \
-           carbonio-files-public-folder-ui service-discover-agent
- 
+           carbonio-files-public-folder-ui service-discover-agent \
+           carbonio-catalog
+
    .. tab-item:: RHEL
       :sync: rhel
 
@@ -18,5 +19,5 @@
          # dnf install carbonio-proxy carbonio-webui \
            carbonio-files-ui carbonio-user-management \
            carbonio-tasks-ui carbonio-ws-collaboration-ui \
-           carbonio-files-public-folder-ui service-discover-agent
-
+           carbonio-files-public-folder-ui service-discover-agent \
+           carbonio-catalog

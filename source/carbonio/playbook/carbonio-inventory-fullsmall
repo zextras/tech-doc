@@ -9,8 +9,8 @@ srv1.example.com
 [serviceDiscoverServers]
 srv1.example.com
 
+### This Role is no longer required since Carbonio 24.12.0
 [dbsConnectorServers]
-srv3.example.com
 
 [mtaServers]
 srv2.example.com
