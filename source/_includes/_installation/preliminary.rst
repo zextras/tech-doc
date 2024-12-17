@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 In this section, we list some naming conventions we use in the
 documentation and present some tasks you need to carry out on **each
 of the Nodes** before starting with the actual installation.
@@ -32,7 +28,7 @@ installed; **MTA Node** the Node featuring the MTA, and so on.
 Configure repositories
 ----------------------
 
-.. include:: /_includes/_installation/step-repo-conf-cb.rst
+.. include:: /_includes/_installation/step-repo-conf.rst
 .. include:: /_includes/_installation/repo-info.rst
 
 Setting Hostname

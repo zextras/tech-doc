@@ -7,7 +7,8 @@
       .. code:: console
 
          # apt install service-discover-server \
-         carbonio-directory-server carbonio-message-broker
+         carbonio-directory-server carbonio-message-broker \
+         carbonio-storages
  
    .. tab-item:: RHEL
       :sync: rhel
@@ -15,7 +16,8 @@
       .. code:: console
 
          # dnf install service-discover-server \
-         carbonio-directory-server carbonio-message-broker
+         carbonio-directory-server carbonio-message-broker \
+         carbonio-storages
 
 Please note:
 

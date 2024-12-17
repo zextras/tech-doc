@@ -19,4 +19,5 @@ migration to |product|, and accessing the web interface.
       security
       web-access
       clamav-management
-      wsc-optimise
+      wsc-advanced
+      docs-optimise

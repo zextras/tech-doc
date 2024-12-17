@@ -5,9 +5,8 @@
    There are a few corner cases that prevent the advanced modules,
    provided by the :ref:`Service Roles <cb-roles>`, to be running. The
    problem is that the Node featuring the Mailstore & Provisioning
-   Role can not communicate with the Database (PostgreSQL) or DB
-   Connector (pgpool), depending on your setup. You can check if this
-   is the case if you find in log file
+   Role can not communicate with the Database (PostgreSQL). You can
+   check if this is the case if you find in log file
    :file:`/opt/zextras/log/mailbox.log` error messages like::
 
      2024-07-29 10:13:58,575 ERROR [main] [] extensions -

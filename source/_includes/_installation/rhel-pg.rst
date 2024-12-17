@@ -7,7 +7,7 @@ To make sure that Postgresql **16** is installed, run commands
 .. code:: console
 
    # dnf -qy module disable postgresql
-   # dnf -y install postgresql16 postgresql16-server service-discover-agent
+   # dnf -y install postgresql16 postgresql16-server
 
 Once installed, initialise and enable the database
 

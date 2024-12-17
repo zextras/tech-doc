@@ -1,12 +1,8 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
- 
 .. _carbonio-shell:
 
-=================
-  |sh| Overview
-=================
+===============
+ |sh| Overview
+===============
 
 
 The |sh|, also known as *Carbonio Shell*, is an interactive shell that
@@ -29,7 +25,7 @@ At this point, to launch a :command:`carbonio` command you can either
       zextras$ carbonio backup doSmartScan start
 
 #. enter the |csh|
-  
+
    .. code:: console
 
       zextras$ carbonio
@@ -87,11 +83,11 @@ The available command line options are:
             not use the option.
 
 --json      The output of the command will be presented in JSON format
-            and is useful for scripting. 
+            and is useful for scripting.
 
 --progress  Prints the operation's feedback directly to
             ``STDOUT``. Press :kbd:`Ctrl+C` to interrupt the
-            output: the operation itself will not be interrupted. 
+            output: the operation itself will not be interrupted.
 
 --sync      Runs the command in synchronous mode, waiting for the
             operation's execution to end and returning an exit code:
@@ -246,28 +242,28 @@ Their usage is quite simple and follows the general syntax (see
 
 The output will be similar to the following one::
 
-          services                                
-            module                                  
+          services
+            module
                 could_start                                                 false
                 could_stop                                                  true
                 running                                                     true
-            activesync-services                     
+            activesync-services
                 could_start                                                 false
                 could_stop                                                  true
                 running                                                     true
-            autodiscover                            
+            autodiscover
                 could_start                                                 false
                 could_stop                                                  true
                 running                                                     true
-            abq-services                            
+            abq-services
                 could_start                                                 false
                 could_stop                                                  true
                 running                                                     true
-            ldap-address-book                       
+            ldap-address-book
                 could_start                                                 false
                 could_stop                                                  true
                 running                                                     true
-            anti-dos                                
+            anti-dos
                 could_not_start_because                                     anti-dos disabled
                 could_start                                                 false
                 could_stop                                                  false
@@ -287,3 +283,94 @@ which is the service name, for example::
 This command outputs a status message, which is *"service stopped"* if
 it was successful. Similar messages are generated after using the
 :command:`doStartService` and :command:`doRestartService` commands.
+
+.. index:: zmcontrol
+
+.. _zmcontrol:
+
+Control the Status of |product| services
+========================================
+
+Besides the :command:`carbonio` command, another useful command is
+:command:`zmcontrol`, which must be run as the ``zextras`` user as
+well, is used to check and verify the status of the services available
+on |product| and start or stop them.
+
+.. note:: On RHEL 9, :command:`zmcontrol` has a limited usage and is
+   mostly integrated with the ``systemd`` service: check the
+   :ref:`dedicated box <rhel-systemd>` for more information.
+
+The ``status`` sub-command is used to verify which services and
+modules are running. A sample output of the command is::
+
+  zextras$ zmcontrol status
+  Host mail.example.com
+      amavis                  Running
+      antispam                Running
+      directory-server        Running
+      mailbox                 Running
+       --Carbonio Advanced installed.
+       --Checking advanced modules status.
+       --Config is running
+       --Core is running
+       --Auth is running
+       --Mobile is running
+       --Chats is running
+       --Admin is running
+       --HA is NOT running
+       --Backup is running
+       --Powerstore is running
+       --Drive is NOT running
+       --SproxyD is running
+      memcached               Running
+      mta                     Running
+      opendkim                Running
+      proxy                   Running
+      service webapp          Running
+      service-discover        Running
+      stats                   Running
+      config service          Running
+
+The services (those in the main column, like *amavis*, *antispam* and
+so on) can be controlled using the sub-commands ``start``,
+``restart``, and ``stop``.
+
+.. note:: If you do not provide a service name to the sub-commands,
+   **all the services** will started, restarted, or stopped.
+
+The modules (whose name is prefixed by ``--``) require, as a general
+rule, that the corresponding :command:`carbonio` command be used.
+
+The :command:`zmcontrol` comes also with an important option: ``-v``,
+which outputs the current version of |product| and a few more
+information about the CLI and server's versions. As an example, this
+is the output on an upcoming 24.12.0 version.
+
+.. code-block:: console
+   :emphasize-lines: 2
+
+   zextras$ zmcontrol -v
+   Carbonio Release 24.12.0
+   Advanced module version:
+
+   CLI versions:
+
+           zextras_version                                     24.12.0-SNAPSHOT
+           zextras_commit                                      5a19e9dc7b27aec0ec3d94ae829eff1239993d2b
+           zal_version                                         24.12.0-SNAPSHOT
+           zal_commit                                          a4adc73297941a406384b391728266e4eb2e8ce4
+
+
+   Server versions:
+
+           version                                             24.12.0-SNAPSHOT
+           commit                                              fcd5553231cbd46f004163f77b2d00171b9fcc58
+           commit_dirty                                        true
+           system_type                                         carbonio
+           product                                             Carbonio
+           zal_version                                         24.12.0-SNAPSHOT
+           zal_commit                                          a4adc73297941a406384b391728266e4eb2e8ce4
+
+The important bit here is the first line of the output; while the
+various ``commit`` refer lines refer to the source code from which the
+software was built.

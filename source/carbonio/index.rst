@@ -198,3 +198,16 @@ The content is organised in multiple parts:
       :link: genindex
 
       List of relevant topics
+
+   .. grid-item-card:: CLI Commands
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: cli_commands/toc
+
+      CLI Commands Reference Table
+
+      .. toctree::
+         :hidden:
+
+         cli_commands/toc

@@ -1,8 +1,3 @@
-General setting influence the basic domain configuration; most of them
-appear during :ref:`the creation of the domain
-<ap-domain-new>`. Additional options allow to define the time zone,
-the use of ``HTTP`` or ``HTTPS`` protocol (we suggest using always the
-latter), and a mail server used for spam-relay purposes.
 
 Moreover, a default |cos| and its status can be attached to the
 domain.

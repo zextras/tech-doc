@@ -40,12 +40,72 @@ that Role, then follow the instructions to complete its installation
            carbonio-ws-collaboration-db \
            carbonio-message-dispatcher-db
 
+Installation of other DB Components
+-----------------------------------
+
+The following database components need to be installed to ensure
+proper working of |product|
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt install carbonio-files-db carbonio-mailbox-db \
+           carbonio-docs-connector-db carbonio-tasks-db
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf install carbonio-files-db carbonio-mailbox-db \
+           carbonio-docs-connector-db carbonio-tasks-db
+
+Pending setups
+--------------
+
+To complete the installation of the database components run this command
+
+.. code:: console
+
+   # pending-setups -a
+
+The command will ask for the password stored in the :file:`/var/lib/service-discover/password`
+on the Directory Leader node.
+
 Bootstrap Databases
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 You can use the password of the Postgres user ``carbonio_adm`` that
-you defined when installing the *Database* role or any other
+you defined during the  *Database* role or any other
 administrator user created previously.
+
+.. card:: Mailbox
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |docs|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |file|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |task|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
 
 .. card:: Message Dispatcher
 

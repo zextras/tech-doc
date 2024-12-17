@@ -42,9 +42,9 @@ We can group the available |product| Roles into 3 macro categories:
 
 This is the list of roles that make up a |product| installation.
 
-.. note:: Postgres, Pgpool, Grafana, Zookeper, and  Kafka are
-   third-party software that are installed from their respective
-   official repositories.
+.. note:: Postgres, Grafana, Zookeper, and Kafka are third-party
+   software that are installed from their respective official
+   repositories.
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -62,7 +62,7 @@ This is the list of roles that make up a |product| installation.
       * service-discover-server
       * carbonio-directory-server
       * carbonio-message-broker
-
+      * carbonio-storages
 
    .. grid-item-card:: Mesh
       :columns: 6
@@ -90,24 +90,10 @@ This is the list of roles that make up a |product| installation.
       * carbonio-notification-push-db
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db
-
-
-   .. grid-item-card:: Database Connector
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-      :link-type: ref
-      :link: role-db-conn-install
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * pgpool2
       * carbonio-files-db
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
-      * carbonio-tasks-db
-      * service-discover-agent
+
 
    .. grid-item-card:: Proxy
       :columns: 6
@@ -128,6 +114,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
       * service-discover-agent
+      * carbonio-catalog
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -153,7 +140,6 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * carbonio-advanced
-      * carbonio-storages
       * service-discover-agent
 
    .. grid-item-card:: Files
@@ -343,9 +329,8 @@ installation, please review these important remarks:
 
 * You **must** start with the installation of the
   :ref:`role-db-install` Role, followed by the
-  :ref:`role-mesh-install` and :ref:`role-db-conn-install`. Then you
-  can proceed with the other infrastructure Roles and finally with all
-  other Roles.
+  :ref:`role-mesh-install`. Then you can proceed with the other
+  infrastructure Roles and finally with all other Roles.
 
 .. toctree::
    :hidden:
@@ -353,7 +338,6 @@ installation, please review these important remarks:
    roles/role-db
    roles/role-mesh-ds
    roles/role-mesh
-   roles/role-db-connector
    roles/role-proxy
    roles/role-mta
    roles/role-mailstore-provisioning

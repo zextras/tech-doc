@@ -1,0 +1,607 @@
+.. _single-server-install:
+
+==================================
+ Single-Server Manual Installation
+==================================
+
+The manual installation is organised in steps and requires to execute
+commands from the command line, so make sure you have access to it.
+
+Please note that you may skip some steps, if you plan to install only
+the *Core Node*, namely the DB components of WSC and their
+corresponding Database bootstraps.
+
+When the installation process has successfully finished, you can
+access |product|\'s GUI using a browser, see Section
+:ref:`web-access`.
+
+.. _installation-step1:
+
+Step 1: Configuration of Repositories
+=====================================
+
+The installation procedure start with the configuration of the
+repositories.
+
+.. rubric:: |product|
+
+.. include:: /_includes/_installation/step-repo-conf.rst
+
+.. rubric:: PostgreSQL and other (RHEL only)
+
+.. include:: /_includes/_installation/repo-single-cb.rst
+
+.. _installation-step2:
+
+Step 2: Setting Hostname
+========================
+
+.. include:: /_includes/_installation/steps-hostname.rst
+
+.. _installation-step3:
+
+Step 3: System Upgrade and Package Installation
+===============================================
+
+.. include:: /_includes/_installation/step-package-install-single-cb.rst
+.. include:: /_includes/_installation/step-package-install-single-collaboration-node-cb.rst
+
+.. _installation-step4:
+
+Step 4: Configure PostgreSQL
+============================
+
+.. include:: /_includes/_installation/step-conf-db-single-cb.rst
+
+.. _installation-step5:
+
+Step 5: Bootstrap |product|
+===========================
+
+.. include:: /_includes/_installation/step-bootstrap.rst
+
+The next steps concern the configuration and setup of the various
+|product| components.
+
+.. _installation-step6:
+
+Step 6: Setup |mesh|
+====================
+
+.. include:: /_includes/_installation/step-conf-mesh.rst
+
+.. _installation-step7:
+
+Step 7: Databases Bootstrap
+===========================
+
+Now you have to bootstrap some DBs with the password set in the Preliminary Tasks
+
+.. card:: Mailbox DB Bootstrap
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: Files DB Bootstrap
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+
+If you plan to install also the Collaboration Node, you need to
+bootstrap also the following databases
+
+.. card:: |docs|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |task|
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: Message Dispatcher
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: |wsc|
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
+
+.. card:: Carbonio Notification Push
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap carbonio_adm 127.0.0.1
+
+.. _installation-step8:
+
+Step 8: Complete Installation
+=============================
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu 20.04
+      :sync: ubu20
+
+      After the successful package installation, start all |product|
+      services by using
+
+      .. code:: console
+
+         zextras$ zmcontrol start
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      After the successful package installation, start all |product|
+      services by using
+
+      .. code:: console
+
+         zextras$ zmcontrol start
+
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+
+      After the successful package installation, start all |product|
+      services by using
+
+      .. code:: console
+
+         zextras$ zmcontrol start
+
+   .. tab-item:: RHEL 9 |beta|
+      :sync: rhel9
+
+      After the successful package installation, start all |product|
+      services by using
+
+      .. include:: /_includes/_installation/rhel-systemd.rst
+
+If you chose to install only Node, installation has
+completed. Otherwise, if you plan to use collaboration features,
+please read next Section :ref:`installation-step9` before proceeding
+to the installation of the other Nodes.
+
+.. _installation-step9:
+
+Step 9: Data Required for Additional Nodes
+==========================================
+
+The following data from this Node will be needed during the
+installation of the *Collaboration* and *Video Server* Nodes.
+
+.. include:: /_includes/_installation/data-for-next-nodes.rst
+              
+Collaboration Node
+==================
+
+This section contains directions to set up the additional
+*Collaboration* Node. Most of the steps are the same as in the *Core
+Node*. Click on the drop-downs to expand them.
+
+.. dropdown:: Step 1: Configuration of Repositories
+
+   .. rubric:: |product|
+
+   .. include:: /_includes/_installation/step-repo-conf.rst
+
+   .. rubric:: RHEL Only
+
+   .. tab-set::
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+
+.. dropdown:: Step 2: Setting Hostname
+
+   .. include:: /_includes/_installation/steps-hostname.rst
+
+.. dropdown:: Step 3: System Upgrade and Package Installation
+
+   After configuring the repositories, the installation of |product|
+   requires to run a few commands.
+
+   We start by updating and upgrading the system.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf upgrade
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf upgrade
+
+   Next, we install all packages needed for |product|.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt install carbonio-message-dispatcher \
+            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-push-connector service-discover-agent \
+            carbonio-tasks carbonio-docs-editor \
+            carbonio-docs-connector postgresql-client
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt install carbonio-message-dispatcher \
+            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-push-connector service-discover-agent \
+            carbonio-tasks carbonio-docs-editor \
+            carbonio-docs-connector postgresql-client
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf install carbonio-message-dispatcher \
+            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-push-connector service-discover-agent \
+            carbonio-tasks carbonio-docs-editor \
+            carbonio-docs-connector postgresql16
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf install carbonio-message-dispatcher \
+            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-push-connector service-discover-agent \
+            carbonio-tasks carbonio-docs-editor \
+            carbonio-docs-connector postgresql16
+
+
+.. dropdown:: Step 4: Bootstrap |product|
+
+   To carry out this step, you need the **LDAP password** and the
+   **Node hostname** that you have retrieved at Step 9 of the Core
+   Node (see :ref:`installation-step9`).
+
+   .. include:: /_includes/_installation/step-bootstrap.rst
+
+.. dropdown:: Step 5: Setup |mesh|
+
+   To carry out this step, you need the |mesh| **secret** generated
+   during the installation of the Core Node (see the
+   :ref:`installation-step9` Step).
+   
+   The |mesh| configuration is interactively generated by command
+
+   .. code:: console
+
+      # service-discover setup-wizard
+
+   To complete |mesh| installation, run
+
+   .. code:: console
+
+      # pending-setups -a
+
+.. dropdown:: Step 6: Configure |WSC|
+
+   .. rubric:: Initialise the message dispatcher
+
+   To carry out this step, you need the **PostgreSQL bootstrap**
+   password that you defined during the installation of the Core Node
+   (see in Step :ref:`installation-step9` how to retrieve it).
+
+   .. code:: console
+
+      # read -s -p "Insert Password:" DB_ADM_PWD
+
+   Now, run command
+   
+   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+
+   .. rubric:: Configure notifications
+
+   .. include:: /_includes/_installation/_roles/wsc-conf-cb.rst
+
+   .. rubric:: Enable |wsc|
+
+   |wsc| can be enabled from the |adminui| at account or COS level:
+   please refer to Sections :ref:`Account / Configuration <act-conf>` and
+   :ref:`cos-features`, respectively.
+
+   .. hint:: If the |wsc| installation is successful, you can optimise
+      some values according to the guidelines that you can find in
+      section :ref:`wsc-optimise`.
+
+   .. rubric:: Status Check
+
+   The following command will output a detailed status of |wsc| and of
+   all its dependencies.
+
+   .. code:: console
+
+      # curl -v http://127.78.0.4:10000/health | jq
+
+Video Server Node
+=================
+
+This section contains directions to set up the additional *Video
+Server* Node. Most of the steps are the same as in the *Core* and
+*Collaboration* Nodes. Click on the drop-downs to expand them.
+
+.. dropdown:: Step 1: Configuration of Repositories
+
+   .. rubric:: |product|
+
+   .. include:: /_includes/_installation/step-repo-conf.rst
+
+   .. rubric:: RHEL Only
+
+   .. tab-set::
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+
+.. dropdown:: Step 2: Setting Hostname
+
+   .. include:: /_includes/_installation/steps-hostname.rst
+
+.. dropdown:: Step 3: System Upgrade and Package Installation
+
+   After configuring the repositories, the installation of |product|
+   requires to run a few commands.
+
+   We start by updating and upgrading the system.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf upgrade
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf upgrade
+
+   Next, we install all packages needed for |product|.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt install carbonio-videoserver-advanced \
+            service-discover-agent
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt install  carbonio-videoserver-advanced \
+            service-discover-agent
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf install  carbonio-videoserver-advanced \
+            service-discover-agent
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf install carbonio-videoserver-advanced \
+            service-discover-agent
+
+
+.. dropdown:: Step 4: Bootstrap |product|
+
+   To carry out this step, you need the **LDAP password** and the
+   **Node hostname** that you have retrieved at Step 9 of the Core
+   Node (see :ref:`installation-step9`).
+
+   .. include:: /_includes/_installation/step-bootstrap.rst
+
+.. dropdown:: Step 5: Setup |mesh|
+
+   To carry out this step, you need the |mesh| **secret** generated
+   during the installation of the Core Node (see the
+   :ref:`installation-step8` Step).
+   
+   The |mesh| configuration is interactively generated by command
+
+   .. code:: console
+
+      # service-discover setup-wizard
+
+   To complete |mesh| installation, run
+
+   .. code:: console
+
+      # pending-setups -a
+
+.. dropdown:: Step 6: Configure |vs|
+
+   .. rubric:: Routing & mapping
+
+   #. Execute, as the ``root`` user the script that enables the
+      correct routing to the |vs|. To carry out this step, you need
+      the |mesh| **secret** generated during the installation of the
+      Core Node (see the :ref:`installation-step8` Step).
+
+      .. code:: console
+
+         # carbonio-videoserver-routing
+
+   #. make sure that the Video Server's IP address is present in the
+      configuration file :file:`/etc/janus/janus.jcfg` and add it if
+      missing: find the variable ``nat_1_1_mapping`` and add it, for
+      example: ``nat_1_1_mapping = "93.184.216.34"``
+
+   .. rubric:: Check Video Server & Broker
+
+   To make sure that videoserver and message broker are connected
+   successfully, check that in the carbonio-videoserver logs
+   (:command:`journalctl -u carbonio-videoserver`) you find the line::
+
+     RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
+     handler completed
+
+.. dropdown:: Step 7: Install Video Recording
+
+   To install the video recording functionality, install the following
+   package. No configuration is required.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt install carbonio-videorecorder
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt install carbonio-videorecorder
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf install carbonio-videorecorder
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf install carbonio-videorecorder
+
+   .. rubric:: Routing & mapping
+
+   #. Execute, as the ``root`` user the script that enables the
+      correct routing to the Video Recorder. To carry out this step,
+      you need the |mesh| **secret** generated during the installation
+      of the Core Node (see the :ref:`installation-step8` Step).
+
+      .. code:: console
+
+         # carbonio-videorecorder-routing

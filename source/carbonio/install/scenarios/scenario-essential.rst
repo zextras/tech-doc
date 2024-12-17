@@ -12,11 +12,18 @@ deployed either using the :ref:`scenario-es-playbook`, or
 make sure you :ref:`configure the internal network
 <scenario-es-network>`.
 
-The Roles installed on the *3 Nodes* are:
+The Roles installed on the *3 Nodes*, depicted below, are:
 
 * Node 1: Mesh and Directory, Database, Monitoring
 * Node 2: MTA AV/AS, Proxy
-* Node 3: Mailstore & Provisioning, Database Connector
+* Node 3: Mailstore & Provisioning
+
+.. _fig-essential:
+
+.. graphviz:: /install/scenarios/essential/essential.dot
+   :align: center
+   :caption: Sample diagram of the Essential scenario.
+   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
 
 .. _scenario-es-network:
 

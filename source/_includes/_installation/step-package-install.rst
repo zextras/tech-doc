@@ -58,7 +58,7 @@ Next, we install all packages needed for |product|.
          carbonio-message-broker carbonio-message-dispatcher \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-videoserver-ce
+         carbonio-videoserver-ce carbonio-catalog
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -77,7 +77,7 @@ Next, we install all packages needed for |product|.
          carbonio-message-broker carbonio-message-dispatcher \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-videoserver-ce
+         carbonio-videoserver-ce carbonio-catalog
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -98,14 +98,15 @@ Next, we install all packages needed for |product|.
          carbonio-mailbox-db carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \
-         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db
+         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
          carbonio-tasks-ui carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-docs-connector-db carbonio-prometheus \
          carbonio-message-broker carbonio-message-dispatcher \
-         carbonio-docs-connector-dbcarbonio-message-dispatcher-db \
+         carbonio-docs-connector-db carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-ws-collaboration-ce carbonio-videoserver-ce
+         carbonio-ws-collaboration-ce carbonio-videoserver-ce \
+         carbonio-catalog
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
@@ -126,14 +127,15 @@ Next, we install all packages needed for |product|.
          carbonio-mailbox-db carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \
-         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db
+         carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
          carbonio-tasks-ui carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-docs-connector-db carbonio-prometheus \
          carbonio-message-broker carbonio-message-dispatcher \
-         carbonio-docs-connector-dbcarbonio-message-dispatcher-db \
+         carbonio-docs-connector-db carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-ws-collaboration-ce carbonio-videoserver-ce
+         carbonio-ws-collaboration-ce carbonio-videoserver-ce \
+         carbonio-catalog
 
 After the successful package installation, you can check that all
 |product| services are running, by using
