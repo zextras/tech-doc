@@ -137,11 +137,6 @@ Initialise the message dispatcher
 
 .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
 
-Configuration
--------------
-
-.. include:: /_includes/_installation/_roles/wsc-conf-cb.rst
-
 Enable |wsc|
 ------------
 
