@@ -4,8 +4,6 @@
  Install |product| Using Ansible
 =================================
 
-.. include:: /_includes/_installation/rhel-info.rst
-
 .. _ansible-inventory:
 
 Prepare Inventory
