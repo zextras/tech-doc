@@ -64,6 +64,14 @@ proper working of |product|
          # dnf install carbonio-files-db carbonio-mailbox-db \
            carbonio-docs-connector-db carbonio-tasks-db
 
+Pending setups
+--------------
+
+To complete the installation of the database components run
+
+.. code:: console
+
+   # pending-setups -a
 
 Bootstrap Databases
 -------------------
