@@ -223,7 +223,7 @@ To carry out this step, you need the |mesh| **secret** generated
 during the installation of the Node 1 (see the
 :ref:`es1-step9` Step).
 
-.. include:: /_includes/_installation/step-conf-mesh.rst
+.. include:: /_includes/_installation/mesh.rst
 
 .. _es1-step7:
     
@@ -482,7 +482,7 @@ To carry out this step, you need the |mesh| **secret** generated
 during the installation of the Node 1 (see the
 :ref:`es1-step9` Step).
 
-.. include:: /_includes/_installation/step-conf-mesh.rst
+.. include:: /_includes/_installation/mesh.rst
              
 .. _es2-step7:
  
@@ -679,7 +679,7 @@ The next steps concern the configuration and setup of the various
 Step 6: Setup |mesh|
 --------------------
 
-.. include:: /_includes/_installation/step-conf-mesh.rst
+.. include:: /_includes/_installation/mesh.rst
              
 .. _es3-step7:
  

@@ -317,26 +317,26 @@ installation, please review these important remarks:
             #  <command to be executed on Red Hat systems>
 
 *  All the commands that are mentioned in this installation procedure
-   **must be executed** as the ``root`` user.
+   **must be executed** as the ``root`` user
 
 * In case you experience some issues during the installation, please
   refer to Section :ref:`ts-cli`, in which you can find helpful
-  commands.
+  commands
 
 *  When the installation process has successfully finished, you can
    access |product|\'s GUI using a browser: directions can be found in
-   Section :ref:`web-access`.
+   Section :ref:`web-access`
 
 * You **must** start with the installation of the
-  :ref:`role-db-install` Role, followed by the
-  :ref:`role-mesh-install`. Then you can proceed with the other
+  :ref:`role-mesh-install` Role, followed by the
+  :ref:`role-db-install` Role. Then you can proceed with the other
   infrastructure Roles and finally with all other Roles.
 
 .. toctree::
    :hidden:
 
-   roles/role-db
    roles/role-mesh-ds
+   roles/role-db
    roles/role-mesh
    roles/role-proxy
    roles/role-mta

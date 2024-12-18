@@ -21,4 +21,10 @@ Bootstrap |product|
 Set up |mesh|
 -------------
 
-.. include:: /_includes/_installation/mesh.rst
+.. include:: /_includes/_installation/mesh-agent.rst
+
+
+Pending setups
+--------------
+
+.. include:: /_includes/_installation/pset.rst
