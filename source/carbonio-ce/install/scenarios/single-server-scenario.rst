@@ -169,7 +169,7 @@ The next steps concern the configuration and setup of the various
 Step 7: Setup |mesh|
 --------------------
 
-.. include:: /_includes/_installation/step-conf-mesh.rst
+.. include:: /_includes/_installation/mesh.rst
 
 .. _installation-step8:
 
