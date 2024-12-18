@@ -38,6 +38,11 @@ Join |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
+Pending setups
+--------------
+
+.. include:: /_includes/_installation/pset.rst
+
 Bootstrap |carbonio| Databases
 ------------------------------
 

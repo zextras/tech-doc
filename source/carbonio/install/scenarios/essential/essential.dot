@@ -6,7 +6,7 @@ digraph NetworkWithPortForwarding {
     "Firewall" [label="Firewall\n[webmail.example.com]", shape=ellipse, style=filled, color=lightgrey];
 
     // First Node: Hosting Database, Mesh and Directory, etc.
-    "Node1 (Server)" [label="Node1 \n[srv1.example.com]", shape=box, style=filled, color=lightgoldenrod];
+    "Node1 (Server)" [label="Node1 (Core) \n[srv1.example.com]", shape=box, style=filled, color=lightgoldenrod];
 
     subgraph cluster_roles_node1 {
         label = ""; // Remove default cluster label
@@ -17,7 +17,7 @@ digraph NetworkWithPortForwarding {
     }
 
     // Second Node: Hosting WSC, Docs, and Tasks
-    "Node2 (Server)" [label="Node2 \n[srv2.example.com]", shape=box, style=filled, color=lightcoral];
+    "Node2 (Server)" [label="Node2 (MTA/proxy) \n[srv2.example.com]", shape=box, style=filled, color=lightcoral];
 
     subgraph cluster_roles_node2 {
         label = ""; // Remove default cluster label
@@ -28,7 +28,7 @@ digraph NetworkWithPortForwarding {
     }
 
     // Third Node: Hosting Videoserver
-    "Node3 (Server)" [label="Node3 \n[srv3.example.com]", shape=box, style=filled, color=lightgreen];
+    "Node3 (Server)" [label="Node3 (Mailstore) \n[srv3.example.com]", shape=box, style=filled, color=lightgreen];
 
     subgraph cluster_roles_node3 {
         label = ""; // Remove default cluster label

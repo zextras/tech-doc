@@ -25,6 +25,31 @@ The Roles installed on the *3 Nodes*, depicted below, are:
    :caption: Sample diagram of the Essential scenario.
    :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
 
+.. _scenario-es-req:
+
+Requirements
+============
+
+The Hardware Requirements for each of the three Nodes are the
+following
+
+.. card:: Node Requirements
+
+   * 8 vCPU
+   * 24 GB memory
+   * 50 GB disk space for the OS
+
+.. card:: MTA/Proxy
+
+   Besides the requirement above, you need to calculate additional
+   disk space for the users e-mails, taking into account the
+   quota. Purely as an example, if you have 150 users, each with a
+   quota of 5GB, you need to have at least **800GB of disk space**,
+   50GB for the OS and at 750 for user's total quota.
+
+Other software requirements are common to the other installation
+scenarios and can be found in Section :ref:`inst-additional-req`
+
 .. _scenario-es-network:
 
 Network Configuration

@@ -272,16 +272,16 @@ installation, please review these important remarks:
    Section :ref:`web-access`.
 
 * You **must** start with the installation of the the
-  :ref:`role-db-install` Role, followed by the
-  :ref:`role-mesh-install` Role. Then you can proceed with the
+  :ref:`role-mesh-install` Role, followed by the
+  :ref:`role-db-install` Role. Then you can proceed with the
   other infrastructure Roles and finally with any other Role you need
   in your installation.
 
 .. toctree::
    :hidden:
 
-   roles/role-db
    roles/role-mesh-ds
+   roles/role-db
    roles/role-proxy
    roles/role-mta
    roles/role-mailstore-provisioning
