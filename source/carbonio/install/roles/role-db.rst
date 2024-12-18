@@ -67,14 +67,7 @@ proper working of |product|
 Pending setups
 --------------
 
-To complete the installation of the database components run this command
-
-.. code:: console
-
-   # pending-setups -a
-
-The command will ask for the password stored in the :file:`/var/lib/service-discover/password`
-on the Directory Leader node.
+.. include:: /_includes/_installation/pset.rst
 
 Bootstrap Databases
 -------------------
