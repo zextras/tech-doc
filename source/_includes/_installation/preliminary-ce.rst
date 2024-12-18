@@ -2,6 +2,18 @@ In this section, we list some naming conventions we use in the
 documentation and present some tasks you need to carry out on **each
 of the Nodes** before starting with the actual installation.
 
+.. hint:: We invite you to subscribe to our newsletter to gain early
+   access to dedicated content for Carbonio CE admins, including:
+
+   - Release notes and upcoming updates
+
+   - The latest news and announcements
+
+   - Expert technical guides for |product|
+
+   Please fill in the form at
+   https://zextras.com/carbonio-community-edition#discoverproduct
+
 Naming conventions
 ------------------
 
@@ -35,18 +47,3 @@ Setting Hostname
 ----------------
 
 .. include:: /_includes/_installation/steps-hostname.rst
-
-Newsletter Subscription
------------------------
-
-We invite you to subscribe to our newsletter to gain early access to
-dedicated content for Carbonio CE admins, including:
-
-- Release notes and upcoming updates
-
-- The latest news and announcements
-
-- Expert technical guides for |product|
-
-Please fill in the form at
-https://zextras.com/carbonio-community-edition#discoverproduct
