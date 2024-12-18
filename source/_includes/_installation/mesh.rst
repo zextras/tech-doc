@@ -29,18 +29,3 @@ This command will:
 * store the setup in file
   :file:`/etc/zextras/service-discover/cluster-credentials.tar.gpg`
 
-Pending setups
---------------
-
-To complete |mesh| installation, run
-
-.. code:: console
-
-   # pending-setups -a
-
-.. hint:: The **secret** is stored in file
-   :file:`/var/lib/service-discover/password`, which is accessible
-   only by the ``root`` user.
-
-
-
