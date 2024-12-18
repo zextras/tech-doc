@@ -139,7 +139,7 @@ RHEL Specific Requirements
    :ref:`single-install-auto`), these requirements are checked and
    automatically enabled if missing.
 
-.. include:: /_includes/_installation/preliminary-rh.rst
+.. include:: /_includes/_installation/preliminary-rh-ce.rst
 
 .. _more-requirements:
    

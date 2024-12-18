@@ -64,6 +64,17 @@ proper working of |product|
          # dnf install carbonio-files-db carbonio-mailbox-db \
            carbonio-docs-connector-db carbonio-tasks-db
 
+Pending setups
+--------------
+
+To complete the installation of the database components run this command
+
+.. code:: console
+
+   # pending-setups -a
+
+The command will ask for the password stored in the :file:`/var/lib/service-discover/password`
+on the Directory Leader node.
 
 Bootstrap Databases
 -------------------

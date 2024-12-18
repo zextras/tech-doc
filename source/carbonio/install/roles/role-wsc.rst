@@ -73,6 +73,7 @@ into account the following points:
 
   #.  Install the database components on the **Database Node**: please
       follow the instructions to Section :ref:`role-wsc-db-install`
+      remembering to bootstrap the Message Dispatcher and the |wsc| databases
 
   #. Install package :file:`carbonio-ws-collaboration-ui` on the
      :ref:`role-proxy-install` Node
@@ -136,11 +137,6 @@ Dispatcher DB Migration
 Initialise the message dispatcher
 
 .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
-
-Configuration
--------------
-
-.. include:: /_includes/_installation/_roles/wsc-conf-cb.rst
 
 Enable |wsc|
 ------------
