@@ -28,7 +28,12 @@ retrieve from the first Mesh and Directory node.
 Join |mesh|
 -----------
 
-.. include:: /_includes/_installation/mesh.rst
+.. include:: /_includes/_installation/mesh-agent.rst
+
+Pending setups
+--------------
+
+.. include:: /_includes/_installation/pset.rst
 
 
 Dispatcher DB Migration

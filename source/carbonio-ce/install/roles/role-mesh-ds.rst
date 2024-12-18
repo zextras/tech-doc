@@ -18,6 +18,11 @@ Set up |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
+Pending setups
+--------------
+
+.. include:: /_includes/_installation/pset.rst
+
 .. _get-ldap-password:
 
 Retrieve the LDAP Admin Password

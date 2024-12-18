@@ -31,6 +31,11 @@ Join |mesh|
 
 .. include:: /_includes/_installation/mesh-agent.rst
 
+Pending setups
+--------------
+
+.. include:: /_includes/_installation/pset.rst
+
 Configure Memcached
 -------------------
 
