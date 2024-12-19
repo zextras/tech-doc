@@ -27,8 +27,7 @@ that Role, then follow the instructions to complete its installation
 
       .. code:: console
 
-         # apt install carbonio-notification-push-db \
-           carbonio-ws-collaboration-db \
+         # apt install carbonio-ws-collaboration-db \
            carbonio-message-dispatcher-db
 
    .. tab-item:: RHEL
@@ -36,8 +35,7 @@ that Role, then follow the instructions to complete its installation
 
       .. code:: console
 
-         # dnf install carbonio-notification-push-db \
-           carbonio-ws-collaboration-db \
+         # dnf install carbonio-ws-collaboration-db \
            carbonio-message-dispatcher-db
 
 Installation of other DB Components
