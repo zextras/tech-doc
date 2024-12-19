@@ -15,7 +15,7 @@ infrastructure, this scenario is designed to be deployed by using the
 Remember to :ref:`configure the internal network
 <scenario-rd-network>` before starting the deployment.
 
-The Roles installed on the *11 Nodes* are:
+The Roles installed on the *14 Nodes* are:
 
 * Node 1: Mesh and Directory, Database
 * Node 2: Mesh, Directory Replica
@@ -31,6 +31,11 @@ The Roles installed on the *11 Nodes* are:
 * Node 12: Docs and Editor, Preview
 * Node 13: Video Server & Video Recording
 * Node 14: Video Server & Video Recording
+
+.. hint:: To reduce the number of the VMs or IP addresses required by
+   this scenario, you can use the same VM for example for one of the
+   proxies and one of the |vs|, provided that the resources assigned
+   to that VM suffices to accommodate both services.
 
 .. _scenario-rd-network:
 
