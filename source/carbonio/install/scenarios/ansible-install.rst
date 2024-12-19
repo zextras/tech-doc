@@ -4,6 +4,16 @@
  Install |product| Using Ansible
 =================================
 
+|product| can be installed automatically by using the *inventory
+files*, provided with each installation scenario, with the Ansible
+software. The components of a sample |product| installation and their
+interaction is depicted in the diagram below.
+
+.. graphviz:: /install/scenarios//ansible_inst.dot
+   :align: center
+   :caption: Sample Ansible installation on a three Nodes setup
+   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
 .. _ansible-inventory:
 
 Prepare Inventory

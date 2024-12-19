@@ -1,0 +1,27 @@
+digraph CarbonioDeployment {
+    rankdir=LR;
+    node [shape=box, style=filled, color=lightblue];
+
+    subgraph cluster_control_node {
+        label="Control Node";
+        style=dashed;
+        Ansible [label="Ansible Installed"];
+        Inventory [label="Inventory File"];
+        Playbook [label="Carbonio Playbook"];
+    }
+
+    subgraph cluster_nodes {
+        label="Target Nodes";
+        style=dashed;
+        Node1 [label="Node 1\n(Roles: e.g., Mesh and Directory, Database)"];
+        Node2 [label="Node 2\n(Roles: e.g., MTA AV/AS, Proxy)"];
+        Node3 [label="Node 3\n(Roles: e.g., Mailstore & Provisioning)"];
+        // Add more nodes as needed
+    }
+
+    Playbook -> Node1 [label="SSH\n(ansible-playbook)"];
+    Playbook -> Node2 [label="SSH\n(ansible-playbook)"];
+    Playbook -> Node3 [label="SSH\n(ansible-playbook)"];
+    // Add more connections as needed
+}
+
