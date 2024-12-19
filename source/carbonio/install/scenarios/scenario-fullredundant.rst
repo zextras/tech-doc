@@ -8,10 +8,12 @@ This scenario features all |product| functionalities and its intended
 use is any infrastructure that requires scalability and redundancy and
 is ready for High Availability.
 
-The scenario can be deployed either using the
-:ref:`scenario-rd-playbook`, or :ref:`manually <scenario-rd-manual>`,
-Node by Node. In both cases, make sure you :ref:`configure the
-internal network <scenario-rd-network>`.
+Due to the large number of Nodes (14) that compose the |product|
+infrastructure, this scenario is designed to be deployed by using the
+:ref:`scenario-rd-playbook`.
+
+Remember to :ref:`configure the internal network
+<scenario-rd-network>` before starting the deployment.
 
 The Roles installed on the *11 Nodes* are:
 
@@ -53,8 +55,8 @@ The following ports must be opened on the :ref:`external network
    |                   |   Addresbook             |                   |
    +-------------------+--------------------------+-------------------+
    | mail.example.com  | * UDP 20000/40000 Video  | srv14.example.com |
-   |                   |   Streaming              | srv15.example.com |
-   |                   |                          |                   |
+   |                   |   Streaming              |                   |
+   |                   |                          | srv15.example.com |
    |                   |   [read next section]    |                   |
    +-------------------+--------------------------+-------------------+
 
