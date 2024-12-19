@@ -17,36 +17,43 @@ srv3.example.com
 
 [mtaServers]
 srv4.example.com
+srv5.example.com
 
 [proxyServers]
-srv5.example.com
+srv6.example.com
+srv7.example.com
 
 [proxyServers:vars]
 webmailHostname=YourWebmailPublicHostname
 
 [applicationServers]
-srv6.example.com
-
-[filesServers]
-srv7.example.com
 srv8.example.com
 
-[docsServers]
+[filesServers]
 srv9.example.com
 srv10.example.com
+
+[docsServers]
+srv11.example.com
+srv12.example.com
 
 [taskServers]
-srv6.example.com
-
-[previewServers]
 srv9.example.com
 srv10.example.com
 
+[previewServers]
+srv11.example.com
+srv12.example.com
+
+### The IP address(es) might be the same, see section UDP Video
+### Streaming
+
 [videoServers]
-srv11.example.com public_ip_address=x.y.z.t
+srv13.example.com public_ip_address=x.y.z.t
+srv14.example.com public_ip_address=w.u.v.s
 
 [prometheusServers]
 srv3.example.com
 
 [syslogServer]
-srv1.example.com
+srv3.example.com
