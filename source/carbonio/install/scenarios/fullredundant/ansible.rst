@@ -3,7 +3,7 @@
 Ansible Playbook
 ================
 
-This 11 Nodes scenario can be installed using Ansible: you need to
+This 15 Nodes scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible`, then follow the directions on setting up
 the control node). To access the control node, execute the following

@@ -26,6 +26,16 @@ The Roles installed on the *7 Nodes* are:
 * Node 6: Docs and Editor, Preview
 * Node 7: Video Server & Video Recording
 
+Architecture
+------------
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. graphviz:: /install/scenarios/fullstandard/fullstandard.dot
+   :align: center
+   :caption: Sample diagram of the Full Standard scenario.
+   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
 .. _scenario-st-network:
 
 Network Configuration
