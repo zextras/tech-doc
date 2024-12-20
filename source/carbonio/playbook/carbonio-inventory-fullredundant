@@ -28,29 +28,30 @@ webmailHostname=YourWebmailPublicHostname
 
 [applicationServers]
 srv8.example.com
+srv9.example.com
 
 [filesServers]
-srv9.example.com
 srv10.example.com
+srv11.example.com
 
 [docsServers]
-srv11.example.com
 srv12.example.com
+srv13.example.com
 
 [taskServers]
-srv9.example.com
 srv10.example.com
+srv11.example.com
 
 [previewServers]
-srv11.example.com
 srv12.example.com
+srv13.example.com
 
 ### The IP address(es) might be the same, see section UDP Video
 ### Streaming
 
 [videoServers]
-srv13.example.com public_ip_address=x.y.z.t
-srv14.example.com public_ip_address=w.u.v.s
+srv14.example.com public_ip_address=x.y.z.t
+srv15.example.com public_ip_address=w.u.v.s
 
 [prometheusServers]
 srv3.example.com

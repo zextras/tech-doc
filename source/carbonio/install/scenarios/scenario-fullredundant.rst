@@ -5,17 +5,16 @@
 ========================
 
 This scenario features all |product| functionalities and its intended
-use is any infrastructure that requires scalability and redundancy and
-is ready for High Availability.
+use is any infrastructure that requires scalability and redundancy.
 
-Due to the large number of Nodes (14) that compose the |product|
+Due to the large number of Nodes (15) that compose the |product|
 infrastructure, this scenario is designed to be deployed by using the
 :ref:`scenario-rd-playbook`.
 
 Remember to :ref:`configure the internal network
 <scenario-rd-network>` before starting the deployment.
 
-The Roles installed on the *14 Nodes* are:
+The Roles installed on the *15 Nodes* are:
 
 * Node 1: Mesh and Directory, Database
 * Node 2: Mesh, Directory Replica
@@ -25,12 +24,13 @@ The Roles installed on the *14 Nodes* are:
 * Node 6: Proxy
 * Node 7: Proxy
 * Node 8: Mailstore & Provisioning
-* Node 9: Files, Tasks
+* Node 9: Mailstore & Provisioning
 * Node 10: Files, Tasks
-* Node 11: Docs and Editor, Preview
+* Node 11: Files, Tasks
 * Node 12: Docs and Editor, Preview
-* Node 13: Video Server & Video Recording
+* Node 13: Docs and Editor, Preview
 * Node 14: Video Server & Video Recording
+* Node 15: Video Server & Video Recording
 
 .. hint:: To reduce the number of the VMs or IP addresses required by
    this scenario, you can use the same VM for example for one of the
@@ -49,19 +49,20 @@ The following ports must be opened on the :ref:`external network
 .. table:: Forwarded ports in Scenario "Full Redundant".
 
    +-------------------+--------------------------+-------------------+
-   | Public hostname   | Ports & Service          | Mapping to        |
+   | Public hostname   | Ports & Service          | Balanced to       |
    +===================+==========================+===================+
    | mx.example.com    | * TCP 25/465/587  SMTP/S | srv4.example.com  |
+   |                   |                          | srv5.example.com  |
    +-------------------+--------------------------+-------------------+
    | mail.example.com  | * TCP 80/443      HTTP/S | srv6.example.com  |
-   |                   | * TCP 143/993     IMAP/S |                   |
+   |                   | * TCP 143/993     IMAP/S | srv7.example.com  |
    |                   | * TCP 110/995     POP/S  |                   |
    |                   | * TCP 8636        LDAP   |                   |
    |                   |   Addresbook             |                   |
    +-------------------+--------------------------+-------------------+
-   | mail.example.com  | * UDP 20000/40000 Video  | srv14.example.com |
-   |                   |   Streaming              |                   |
-   |                   |                          | srv15.example.com |
+   | video.example.com | * UDP 20000/40000 Video  | srv14.example.com |
+   |                   |   Streaming              | srv15.example.com |
+   |                   |                          |                   |
    |                   |   [read next section]    |                   |
    +-------------------+--------------------------+-------------------+
 
