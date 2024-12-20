@@ -33,7 +33,7 @@ The architecture of this scenario is depicted in the following diagram.
 
 .. graphviz:: /install/scenarios/fullstandard/fullstandard.dot
    :align: center
-   :caption: Sample diagram of the Single-Server scenario.
+   :caption: Sample diagram of the Full Standard scenario.
    :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
 
 .. _scenario-st-network:
