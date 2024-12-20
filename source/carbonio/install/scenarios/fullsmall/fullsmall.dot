@@ -62,8 +62,8 @@ digraph NetworkWithPortForwarding {
     { rank=same; "Node1 (Server)"; "Node2 (Server)"; "Node3 (Server)"; "Node4 (Server)"; "Node5 (Server)";}
 
     // Port forwarding arrows
-    "Firewall" -> "Node2 (Server)" [color=blue, taillabel="TCP Ports 25, 443", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
-    "Firewall" -> "Node5 (Server)" [color=blue, taillabel="UDP Ports 20000/40000", labeldistance=2, labelangle=-15, fontname="Arial", fontsize=9];
+    "Firewall" -> "Node2 (Server)" [color=blue, taillabel="TCP Ports", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
+    "Firewall" -> "Node5 (Server)" [color=blue, taillabel="UDP Ports", labeldistance=2, labelangle=-15, fontname="Arial", fontsize=9];
 
 
     // Connect nodes to their respective roles with visible edges

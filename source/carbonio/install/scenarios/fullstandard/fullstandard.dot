@@ -55,7 +55,7 @@ digraph NetworkWithPortForwarding {
                       shape=ellipse, style=filled, color=lightgreen, fontname="Arial", fontsize=10];
     }
 
-    "Node6 (Server)" [label="Node6 \n[srv5.example.com]", shape=box, style=filled, color=lightgreen];
+    "Node6 (Server)" [label="Node6 \n[srv6.example.com]", shape=box, style=filled, color=lightgreen];
 
     subgraph cluster_roles_node6 {
         label = ""; // Remove default cluster label
@@ -65,7 +65,7 @@ digraph NetworkWithPortForwarding {
                       shape=ellipse, style=filled, color=lightgreen, fontname="Arial", fontsize=10];
     }
 
-    "Node7 (Server)" [label="Node7 \n[srv5.example.com]", shape=box, style=filled, color=lightgreen];
+    "Node7 (Server)" [label="Node7 \n[srv7.example.com]", shape=box, style=filled, color=lightgreen];
 
     subgraph cluster_roles_node7 {
         label = ""; // Remove default cluster label
@@ -80,9 +80,9 @@ digraph NetworkWithPortForwarding {
     { rank=same; "Node1 (Server)"; "Node2 (Server)"; "Node3 (Server)"; "Node4 (Server)"; "Node5 (Server)"; "Node6 (Server)"; "Node7 (Server)";}
 
     // Port forwarding arrows
-    "Firewall" -> "Node2 (Server)" [color=blue, taillabel="TCP Ports 25", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
-    "Firewall" -> "Node3 (Server)" [color=blue, taillabel="TCP Ports 443", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
-    "Firewall" -> "Node7 (Server)" [color=blue, taillabel="UDP Ports 20000/40000", labeldistance=3, labelangle=-15, fontname="Arial", fontsize=9];
+    "Firewall" -> "Node2 (Server)" [color=blue, taillabel="TCP Ports", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
+    "Firewall" -> "Node3 (Server)" [color=blue, taillabel="TCP Ports", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
+    "Firewall" -> "Node7 (Server)" [color=blue, taillabel="UDP Ports", labeldistance=3, labelangle=-15, fontname="Arial", fontsize=9];
 
 
     // Connect nodes to their respective roles with visible edges
