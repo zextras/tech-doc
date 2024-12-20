@@ -75,19 +75,19 @@ the following commands to a text file.
 
 .. code:: console
 
-   zextras$ zmprov gas
+   zextras$ carbonio prov gas
 
 .. code:: console
 
-   zextras$ zmprov gas mailbox
+   zextras$ carbonio prov gas mailbox
 
 .. code:: console
 
-   zextras$ systemctl status carbonio-*
+   root$ systemctl status carbonio-*
 
 .. code:: console
 
-   zextras$ journalctl
+   root$ journalctl
 
 
 .. hint:: To save the output of to a text file, you use the

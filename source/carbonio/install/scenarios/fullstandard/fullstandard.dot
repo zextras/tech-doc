@@ -1,0 +1,128 @@
+digraph NetworkWithPortForwarding {
+    rankdir=TB;
+    node [shape=box, style=filled, fontname="Arial", fontsize=10];
+
+    // Firewall node
+    "Firewall" [label="Firewall\n[webmail.example.com]", shape=ellipse, style=filled, color=lightgrey];
+
+    "Node1 (Server)" [label="Node1 \n[srv1.example.com]", shape=box, style=filled, color=lightgoldenrod];
+
+    subgraph cluster_roles_node1 {
+        label = ""; // Remove default cluster label
+        color = none; // Remove box boundary
+
+        "RolesNode1" [label="Database, Mesh and Directory,\nMonitoring", 
+                      shape=ellipse, style=filled, color=lightgoldenrod, fontname="Arial", fontsize=10];
+    }
+
+    "Node2 (Server)" [label="Node2 \n[srv2.example.com]", shape=box, style=filled, color=lightcoral];
+
+    subgraph cluster_roles_node2 {
+        label = ""; // Remove default cluster label
+        color = none; // Remove box boundary
+
+        "RolesNode2" [label="MTA AV/AS", 
+                      shape=ellipse, style=filled, color=lightcoral, fontname="Arial", fontsize=10];
+    }
+
+    "Node3 (Server)" [label="Node3 \n[srv3.example.com]", shape=box, style=filled, color=lightgreen];
+
+    subgraph cluster_roles_node3 {
+        label = ""; // Remove default cluster label
+        color = none; // Remove box boundary
+
+        "RolesNode3" [label="Proxy", 
+                      shape=ellipse, style=filled, color=lightgreen, fontname="Arial", fontsize=10];
+    }
+
+   "Node4 (Server)" [label="Node4 \n[srv4.example.com]", shape=box, style=filled, color=lightgreen];
+
+    subgraph cluster_roles_node4 {
+        label = ""; // Remove default cluster label
+        color = none; // Remove box boundary
+
+        "RolesNode4" [label="Mailstore & Provisioning, and Tasks", 
+                      shape=ellipse, style=filled, color=lightgreen, fontname="Arial", fontsize=10];
+    }
+
+   "Node5 (Server)" [label="Node5 \n[srv5.example.com]", shape=box, style=filled, color=lightgreen];
+
+    subgraph cluster_roles_node5 {
+        label = ""; // Remove default cluster label
+        color = none; // Remove box boundary
+
+        "RolesNode5" [label="Files", 
+                      shape=ellipse, style=filled, color=lightgreen, fontname="Arial", fontsize=10];
+    }
+
+    "Node6 (Server)" [label="Node6 \n[srv6.example.com]", shape=box, style=filled, color=lightgreen];
+
+    subgraph cluster_roles_node6 {
+        label = ""; // Remove default cluster label
+        color = none; // Remove box boundary
+
+        "RolesNode6" [label=" Docs and Editor, Preview", 
+                      shape=ellipse, style=filled, color=lightgreen, fontname="Arial", fontsize=10];
+    }
+
+    "Node7 (Server)" [label="Node7 \n[srv7.example.com]", shape=box, style=filled, color=lightgreen];
+
+    subgraph cluster_roles_node7 {
+        label = ""; // Remove default cluster label
+        color = none; // Remove box boundary
+
+        "RolesNode7" [label="Video Server & Video Recording", 
+                      shape=ellipse, style=filled, color=lightgreen, fontname="Arial", fontsize=10];
+    }
+
+    // Rank constraints to place Firewall above other nodes
+    { rank=min; "Firewall"; }
+    { rank=same; "Node1 (Server)"; "Node2 (Server)"; "Node3 (Server)"; "Node4 (Server)"; "Node5 (Server)"; "Node6 (Server)"; "Node7 (Server)";}
+
+    // Port forwarding arrows
+    "Firewall" -> "Node2 (Server)" [color=blue, taillabel="TCP Ports", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
+    "Firewall" -> "Node3 (Server)" [color=blue, taillabel="TCP Ports", labeldistance=1, labelangle=-15, fontname="Arial", fontsize=9];
+    "Firewall" -> "Node7 (Server)" [color=blue, taillabel="UDP Ports", labeldistance=3, labelangle=-15, fontname="Arial", fontsize=9];
+
+
+    // Connect nodes to their respective roles with visible edges
+    "Node1 (Server)" -> "RolesNode1" [label="Roles", color=black, fontname="Arial", fontsize=9];
+    "Node2 (Server)" -> "RolesNode2" [label="Roles", color=black, fontname="Arial", fontsize=9];
+    "Node3 (Server)" -> "RolesNode3" [label="Roles", color=black, fontname="Arial", fontsize=9];
+    "Node4 (Server)" -> "RolesNode4" [label="Roles", color=black, fontname="Arial", fontsize=9];
+    "Node5 (Server)" -> "RolesNode5" [label="Roles", color=black, fontname="Arial", fontsize=9];
+    "Node6 (Server)" -> "RolesNode6" [label="Roles", color=black, fontname="Arial", fontsize=9];
+    "Node7 (Server)" -> "RolesNode7" [label="Roles", color=black, fontname="Arial", fontsize=9];
+
+
+    // Network-like connections between nodes using dashed lines (corrected to directed edges)
+    "Node2 (Server)" -> "Node3 (Server)" [style=dotted, color=lightgrey];
+    "Node3 (Server)" -> "Node2 (Server)" [style=dotted, color=lightgrey];
+
+    "Node3 (Server)" -> "Node7 (Server)" [style=dotted, color=lightgrey];
+    "Node7 (Server)" -> "Node3 (Server)" [style=dotted, color=lightgrey];
+
+    "Node7 (Server)" -> "Node1 (Server)" [style=dotted, color=lightgrey];
+    "Node1 (Server)" -> "Node7 (Server)" [style=dotted, color=lightgrey];
+
+    "Node1 (Server)" -> "Node5 (Server)" [style=dotted, color=lightgrey];
+    "Node5 (Server)" -> "Node1 (Server)" [style=dotted, color=lightgrey];
+
+    "Node5 (Server)" -> "Node4 (Server)" [style=dotted, color=lightgrey];
+    "Node4 (Server)" -> "Node5 (Server)" [style=dotted, color=lightgrey];
+
+    "Node4 (Server)" -> "Node6 (Server)" [style=dotted, color=lightgrey];
+    "Node6 (Server)" -> "Node4 (Server)" [style=dotted, color=lightgrey];
+
+
+    // Connect nodes to their respective roles (invisible links for structure)
+    "Node1 (Server)" -> "RolesNode1" [style=invis];
+    "Node2 (Server)" -> "RolesNode2" [style=invis];
+    "Node3 (Server)" -> "RolesNode3" [style=invis];
+    "Node4 (Server)" -> "RolesNode4" [style=invis];
+    "Node5 (Server)" -> "RolesNode5" [style=invis];
+    "Node6 (Server)" -> "RolesNode6" [style=invis];
+    "Node7 (Server)" -> "RolesNode7" [style=invis];
+
+
+}

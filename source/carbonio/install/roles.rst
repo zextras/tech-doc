@@ -87,7 +87,6 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * postgresql
-      * carbonio-notification-push-db
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db
       * carbonio-files-db
@@ -265,8 +264,6 @@ This is the list of roles that make up a |product| installation.
 
       * carbonio-message-dispatcher
       * carbonio-ws-collaboration
-      * carbonio-notification-push
-      * carbonio-push-connector
       * service-discover-agent
 
    .. grid-item-card:: Video Server & Video Recording (WSC)

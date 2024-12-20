@@ -19,6 +19,16 @@ The Roles installed on the *5 Nodes* are:
 * Node 4: Files, Docs and Editor, and Preview
 * Node 5: Video Server & Video Recording
 
+Architecture
+------------
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. graphviz:: /install/scenarios/fullsmall/fullsmall.dot
+   :align: center
+   :caption: Sample diagram of the Full Small scenario.
+   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
 .. _scenarioa-network:
 
 Network Configuration
