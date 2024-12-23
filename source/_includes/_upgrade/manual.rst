@@ -47,7 +47,7 @@ Server, then all the other Nodes in the same order of installation.
                # dnf upgrade --best --allowerasing
 
    .. grid-item-card:: Step 3. (Optional) Remove unused packages
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       After the latest packages have been installed, make sure that
       you do not have unused packages still installed on your system.
