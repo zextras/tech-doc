@@ -46,7 +46,7 @@ alternatives to install |product|:
   vast number of tasks.
 
   To use this mode you will need to download a playbook and fill out
-  an inventory file with the list of target :term:`Nodes` on which you
+  an inventory file with the list of target :term:`Nodes <Node>` on which you
   install |product|.
 
   The playbook will take care of the installation steps, controlling
