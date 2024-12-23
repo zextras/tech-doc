@@ -30,6 +30,10 @@ during, or after the procedure.
    2024 <https://www.postgresql.org/support/versioning/>`_ end of the
    year. Check section :ref:`pg-upgrade` for directions.
 
+.. _up-proc:
+
+Upgrade Procedure
+=================
 
 The upgrade procedures requires that you log in to each node of
 your |product| infrastructure and execute some command, then rebooting
