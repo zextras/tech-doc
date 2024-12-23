@@ -36,6 +36,11 @@ during, or after the procedure.
    move some of the packages to the Database Role. The procedure to
    carry out this task can be found in Section :ref:`remove-pgpool`.
 
+.. _up-proc:
+
+Upgrade Procedure
+=================
+
 The upgrade procedures requires that you log in to each node of
 your |product| infrastructure and execute some command, then rebooting
 the Node as soon as you have successfully completed the
