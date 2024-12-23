@@ -7,6 +7,30 @@
 This section guides you in the upgrade from |product| **24.9**,
 regardless of any specific patch numbers, e.g. *24.9.1*.
 
+.. _up-prev-req:
+
+Requirements & Preliminaries
+============================
+
+The upgrade to |version| impacts the following *Roles*, packages, or
+third-party software, which require some manual interaction before,
+during, or after the procedure.
+
+.. card:: Operating system
+
+   |product| can be installed on **Ubuntu 22.04** and **RHEL 9**
+   (|beta| support) since version **24.5.0**.  If you plan to upgrade
+   both the OS and |product|, please refer to Section
+   :ref:`os-upgrade`.
+
+.. card:: PostgreSQL 16 support
+
+   PostgreSQL must be upgraded from version **12** to version **16**,
+   because version 12 has reached the End Of Life on `14th November
+   2024 <https://www.postgresql.org/support/versioning/>`_ end of the
+   year. Check section :ref:`pg-upgrade` for directions.
+
+
 The upgrade procedures requires that you log in to each node of
 your |product| infrastructure and execute some command, then rebooting
 the Node as soon as you have successfully completed the
@@ -39,27 +63,3 @@ Upgrade Nodes
    .. include:: /_includes/_upgrade/ds.rst
 
 .. include:: /_includes/_upgrade/node-ce.rst
-
-.. _up-prev-req:
-
-Requirements & Preliminaries
-============================
-
-The upgrade to |version| impacts the following *Roles*, packages, or
-third-party software, which require some manual interaction before,
-during, or after the procedure.
-
-.. card:: Operating system
-
-   |product| can be installed on **Ubuntu 22.04** and **RHEL 9**
-   (|beta| support) since version **24.5.0**.  If you plan to upgrade
-   both the OS and |product|, please refer to Section
-   :ref:`os-upgrade`.
-
-.. card:: PostgreSQL 16 support
-
-   PostgreSQL must be upgraded from version **12** to version **16**,
-   because version 12 has reached the End Of Life on `14th November
-   2024 <https://www.postgresql.org/support/versioning/>`_ end of the
-   year. Check section :ref:`pg-upgrade` for directions.
-
