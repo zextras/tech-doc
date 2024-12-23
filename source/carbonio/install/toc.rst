@@ -2,8 +2,8 @@
  Install
 =========
 
-This section contains all information necessary to install Carbonio
-within your infrastructure, starting from the requirements.
+This section contains the steps necessary to install Carbonio within
+your infrastructure, starting from the requirements.
 
 The core of this section is the description of the installation
 scenarios we envisioned and their deployment: the basic installation
@@ -57,8 +57,6 @@ alternatives to install |product|:
    .. toctree::
       :maxdepth: 1
 
-      architecture
       requirements
       preliminary
-      roles
       scenarios
