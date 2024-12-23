@@ -152,6 +152,7 @@ class PatchedHTMLTranslator(HTMLTranslator):
             and "target" not in attrs
             and (
                 "external" in attrs.get("class", "")
+                or "image-reference" in attrs.get("class", "")
                 or "external" in attrs.get("classes", [])
             )
         ):
