@@ -9,10 +9,14 @@ files*, provided with each installation scenario, with the Ansible
 software. The components of a sample |product| installation and their
 interaction is depicted in the diagram below.
 
-.. graphviz:: /install/scenarios//ansible_inst.dot
+.. _fig-ansible:
+
+.. figure:: /img/carbonio/ansible-install.png
+   :width: 100%
    :align: center
-   :caption: Sample Ansible installation on a three Nodes setup
-   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
+   Sample Ansible installation on a three Nodes setup
+
 
 .. _ansible-inventory:
 
