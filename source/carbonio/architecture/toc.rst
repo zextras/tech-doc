@@ -3,18 +3,19 @@
  Architecture of |product|
 ===========================
 
-:numref:`fig-cb-arch` shows the internal architecture of |product|
+This section contains a description of |product| architecture and  of
+the Roles along with the features they provide and how to manually
+install them within a |product| infrastructure.
+
+:numref:`fig-arch` shows the internal architecture of |product|
 with all its components.
 
-.. card::
-   :width: 75%
+.. _fig-arch:
 
-   .. _fig-cb-arch:
+.. figure:: /img/carbonio/architecture_Carbonio.png
+   :width: 100%
 
-   .. figure:: /img/carbonio/architecture_Carbonio.png
-      :width: 100%
-
-      Simplified architecture of |product|.
+   Simplified architecture of |product|.
 
 A typical |product| installation consists of various :term:`Components
 <Component>` installed on one or multiple :term:`Nodes <node>`. Each
@@ -23,7 +24,7 @@ different Node, while all the others can be combined and installed on
 one or more Nodes. For example, if |vs| is heavily used, it could be a
 good idea to install it on a dedicated node.
 
-In :numref:`fig-cb-arch`, *dependencies* are denoted by the boxes piled
+In :numref:`fig-arch`, *dependencies* are denoted by the boxes piled
 on top of the bottom one. In other words, all the ``*-UI`` packages,
 which contain the files necessary to show the Module to the users,
 **must be** installed on the Proxy Node.
@@ -39,3 +40,8 @@ Supported Mail Protocols
 * POP3 and POP3S
 * SMTP and its secure protocol SMTPS (SMTP over TLS/SSL)
 * IMAP and its secure protocol IMAPS (IMAP over SSL)
+
+.. toctree::
+   :hidden:
+
+   roles

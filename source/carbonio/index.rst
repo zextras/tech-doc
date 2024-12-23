@@ -47,6 +47,19 @@ The content is organised in multiple parts:
 
          upgrade/toc
 
+   .. grid-item-card:: Architecture
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: architecture/toc
+
+      Architecture of |product| and Roles description and installation
+
+      .. toctree::
+         :hidden:
+
+         architecture/toc
+
    .. grid-item-card:: Install
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -150,6 +163,19 @@ The content is organised in multiple parts:
          :hidden:
 
          troubleshooting/toc
+
+   .. grid-item-card:: Support
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: report/toc
+
+      Reporting problem and opening tickets
+
+      .. toctree::
+         :hidden:
+
+         report/toc
 
    .. grid-item-card:: API
       :columns: 12 12 6 6

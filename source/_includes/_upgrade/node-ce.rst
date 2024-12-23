@@ -5,34 +5,6 @@ order of installation.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 0. Ensure all |product| services are running
-      :columns: 12 12 6 6
-
-      It is necessary that all services, especially OpenLDAP are
-      running during the whole procedure
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
-
-            .. code:: console
-
-               zextras$ zmcontrol status
-
-         .. tab-item:: RHEL
-            :sync: rhel
-
-            .. code:: console
-
-               zextras$ zmcontrol status
-
-            .. hint:: On RHEL 9, use the new systemd commands that
-               replace the :command:`zmcontrol` command (see the
-               :ref:`dedicated box <rhel-systemd>`).
-
-      If in the output some service appears as not running, start it.
-
    .. grid-item-card:: Step 1. Clean package list
       :columns: 12 12 6 6
 
@@ -76,7 +48,7 @@ order of installation.
                # dnf upgrade --best --allowerasing
 
    .. grid-item-card:: Step 3. (Optional) Remove unused packages
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       After the latest packages have been installed, you can remove
       unused packages still installed on your system. If unsure, skip

@@ -20,10 +20,11 @@ The Roles installed on the *3 Nodes*, depicted below, are:
 
 .. _fig-essential:
 
-.. graphviz:: /install/scenarios/essential/essential.dot
+.. figure:: /img/carbonio/scenario-essential.png
+   :width: 100%
    :align: center
-   :caption: Sample diagram of the Essential scenario.
-   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
+   Sample diagram of the Essential scenario.
 
 .. _scenario-es-req:
 

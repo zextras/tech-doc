@@ -16,3 +16,29 @@ on the Node with the Directory Server Role installed.
 #. Make a backup copy of file
    :file:`/opt/zextras/conf/localconfig.xml` and **store it in a
    safe place**
+
+
+#. It is necessary that all services, especially OpenLDAP, be running
+   during the whole procedure
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            zextras$ zmcontrol status
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            zextras$ zmcontrol status
+
+         .. hint:: On RHEL 9, use the new systemd commands that
+            replace the :command:`zmcontrol` command (see the
+            :ref:`dedicated box <rhel-systemd>`).
+
+   If in the output some service appears as not running, start it.
