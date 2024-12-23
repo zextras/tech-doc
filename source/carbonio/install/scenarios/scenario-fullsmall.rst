@@ -24,10 +24,13 @@ Architecture
 
 The architecture of this scenario is depicted in the following diagram.
 
-.. graphviz:: /install/scenarios/fullsmall/fullsmall.dot
+.. _fig-fullsmall:
+
+.. figure:: /img/carbonio/scenario-fullsmall.png
+   :width: 100%
    :align: center
-   :caption: Sample diagram of the Full Small scenario.
-   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
+   Sample diagram of the Full Small scenario.
 
 .. _scenarioa-network:
 
