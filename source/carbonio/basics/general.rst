@@ -37,10 +37,3 @@ Seeking Help on |product|
 .. include:: /_includes/_general/community-help.rst
 .. include:: /_includes/_general/support.rst
 
-
-.. _report-issue:
-
-How to report an issue
-======================
-
-.. include:: /_includes/_general/report-issue.rst
