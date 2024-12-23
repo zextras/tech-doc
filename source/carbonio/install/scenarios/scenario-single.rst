@@ -35,10 +35,13 @@ Architecture
 
 The architecture of this scenario is depicted in the following diagram.
 
-.. graphviz:: /install/scenarios/single/single-server.dot
+.. _fig-single:
+
+.. figure:: /img/carbonio/scenario-single.png
+   :width: 99%
    :align: center
-   :caption: Sample diagram of the Single-Server scenario.
-   :class: sd-d-flex-inline sd-rounded-3 sd-shadow-lg sd-pr-3 sd-pt-3
+
+   Sample diagram of the Single Server scenario.
 
 Unsupported features
 --------------------
