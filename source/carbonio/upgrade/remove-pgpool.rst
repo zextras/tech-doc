@@ -65,24 +65,6 @@ Install Database Components
 .. note:: Skip this step if PostgreSQL and Pgpool are installed on the
    same Node.
 
-On the Node with the *Database Connector* Role, identify all the
-database components.
-
-.. code:: console
-
-   # dpkg -l "carbonio*-db"
-
-The output will be a list similar to::
-
-  ii  carbonio-appserver-db          4.18.0-1focal                   amd64        Carbonio Appserver DB Files
-
-  ii  carbonio-docs-connector-db     0.0.3-1726047543+0a782506ubuntu amd64        Carbonio Docs Connector DB sidecar
-  ii  carbonio-files-db              0.1.7-1726047878+0df299e3ubuntu amd64        Carbonio Files DB sidecar
-  ii  carbonio-mailbox-db            0.1.9-20240905181425ubuntu      amd64        Carbonio Mailbox DB sidecar
-  ii  carbonio-message-dispatcher-db 0.2.2-1ubuntu                   amd64        Carbonio Message Dispatcher DB sidecar
-  ii  carbonio-notification-push-db  0.1.2-1ubuntu                   amd64        Carbonio Notification Push DB sidecar
-  ii  carbonio-ws-collaboration-db   0.2.3-1ubuntu                   amd64        Carbonio Workstream Collaboration DB sidecar
-
 On the Node with the **Database** Role, install all the packages
 listed.
 
@@ -93,8 +75,7 @@ listed.
 
       .. code:: console
 
-         # apt install carbonio-appserver-db \
-         carbonio-common-appserver-db carbonio-docs-connector-db \
+         # apt install carbonio-docs-connector-db \
          carbonio-files-db carbonio-mailbox-db \
          carbonio-message-dispatcher-db \
          carbonio-notification-push-db carbonio-ws-collaboration-db
@@ -104,8 +85,7 @@ listed.
 
       .. code:: console
 
-         # dnf install carbonio-appserver-db \
-         carbonio-common-appserver-db carbonio-docs-connector-db \
+         # dnf install carbonio-docs-connector-db \
          carbonio-files-db carbonio-mailbox-db \
          carbonio-message-dispatcher-db \
          carbonio-notification-push-db carbonio-ws-collaboration-db
@@ -155,8 +135,7 @@ packages that are not needed anymore.
 
       .. code:: console
 
-         # apt remove pgpool carbonio-appserver-db \
-         carbonio-common-appserver-db carbonio-docs-connector-db \
+         # apt remove pgpool carbonio-docs-connector-db \
          carbonio-files-db carbonio-mailbox-db \
          carbonio-message-dispatcher-db \
          carbonio-notification-push-db carbonio-ws-collaboration-db \
@@ -167,8 +146,7 @@ packages that are not needed anymore.
 
       .. code:: console
 
-         # dnf remove pgpool-II carbonio-appserver-db \
-         carbonio-common-appserver-db carbonio-docs-connector-db \
+         # dnf remove pgpool-II carbonio-docs-connector-db \
          carbonio-files-db carbonio-mailbox-db \
          carbonio-message-dispatcher-db \
          carbonio-notification-push-db carbonio-ws-collaboration-db \
