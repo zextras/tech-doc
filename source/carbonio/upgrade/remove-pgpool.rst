@@ -78,7 +78,7 @@ listed.
          # apt install carbonio-docs-connector-db \
          carbonio-files-db carbonio-mailbox-db \
          carbonio-message-dispatcher-db \
-         carbonio-notification-push-db carbonio-ws-collaboration-db
+         carbonio-ws-collaboration-db
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -88,7 +88,7 @@ listed.
          # dnf install carbonio-docs-connector-db \
          carbonio-files-db carbonio-mailbox-db \
          carbonio-message-dispatcher-db \
-         carbonio-notification-push-db carbonio-ws-collaboration-db
+         carbonio-ws-collaboration-db
 
 Add the services provided by these packages to |mesh|.
 
