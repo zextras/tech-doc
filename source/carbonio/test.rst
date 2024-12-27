@@ -9,4 +9,5 @@ Page used for test purposes.
 sphinx.ext.graphviz
 ===================
 
-.. graphviz:: /_includes/_tests/single-server.dot
+.. 
+  graphviz:: /_includes/_tests/single-server.dot
