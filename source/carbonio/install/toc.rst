@@ -27,11 +27,9 @@ alternatives to install |product|:
 
   #. Bootstrap Carbonio
 
-  #. Setup Carbonio Mesh
+  #. Setup Carbonio Mesh & Run Pending setups
 
   #. Database boostrap (only on Database node)
-
-  #. Run Pending setups
 
   #. Verify that installed services are up & running
 

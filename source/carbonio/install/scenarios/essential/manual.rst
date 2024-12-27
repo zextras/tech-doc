@@ -225,9 +225,6 @@ during the installation of the Node 1 (see the
 
 .. include:: /_includes/_installation/mesh.rst
 
-Pending setups
---------------
-
 .. include:: /_includes/_installation/pset.rst
 
 .. _es1-step7:
