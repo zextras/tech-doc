@@ -225,6 +225,8 @@ during the installation of the Node 1 (see the
 
 .. include:: /_includes/_installation/mesh.rst
 
+.. include:: /_includes/_installation/pset.rst
+
 .. _es1-step7:
     
 Step 7: Databases Bootstrap
@@ -483,6 +485,8 @@ during the installation of the Node 1 (see the
 :ref:`es1-step9` Step).
 
 .. include:: /_includes/_installation/mesh.rst
+
+.. include:: /_includes/_installation/pset.rst
              
 .. _es2-step7:
  
@@ -680,6 +684,8 @@ Step 6: Setup |mesh|
 --------------------
 
 .. include:: /_includes/_installation/mesh.rst
+
+.. include:: /_includes/_installation/pset.rst
              
 .. _es3-step7:
  
