@@ -118,12 +118,6 @@ bootstrap also the following databases
 
       # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
 
-.. card:: Carbonio Notification Push
-
-   .. code:: console
-
-      # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap carbonio_adm 127.0.0.1
-
 .. _installation-step8:
 
 Step 8: Complete Installation
@@ -363,10 +357,6 @@ Node*. Click on the drop-downs to expand them.
    
    .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
 
-   .. rubric:: Configure notifications
-
-   .. include:: /_includes/_installation/_roles/wsc-conf-cb.rst
-
    .. rubric:: Enable |wsc|
 
    |wsc| can be enabled from the |adminui| at account or COS level:
@@ -539,19 +529,10 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
    .. rubric:: Routing & mapping
 
-   #. Execute, as the ``root`` user the script that enables the
-      correct routing to the |vs|. To carry out this step, you need
-      the |mesh| **secret** generated during the installation of the
-      Core Node (see the :ref:`installation-step8` Step).
-
-      .. code:: console
-
-         # carbonio-videoserver-routing
-
-   #. make sure that the Video Server's IP address is present in the
-      configuration file :file:`/etc/janus/janus.jcfg` and add it if
-      missing: find the variable ``nat_1_1_mapping`` and add it, for
-      example: ``nat_1_1_mapping = "93.184.216.34"``
+   Make sure that the Video Server's IP address is present in the
+   configuration file :file:`/etc/janus/janus.jcfg` and add it if
+   missing: find the variable ``nat_1_1_mapping`` and add it, for
+   example: ``nat_1_1_mapping = "93.184.216.34"``
 
    .. rubric:: Check Video Server & Broker
 
@@ -596,14 +577,3 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # dnf install carbonio-videorecorder
-
-   .. rubric:: Routing & mapping
-
-   #. Execute, as the ``root`` user the script that enables the
-      correct routing to the Video Recorder. To carry out this step,
-      you need the |mesh| **secret** generated during the installation
-      of the Core Node (see the :ref:`installation-step8` Step).
-
-      .. code:: console
-
-         # carbonio-videorecorder-routing
