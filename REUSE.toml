@@ -1,0 +1,59 @@
+version = 1
+SPDX-PackageName = "Zextras Documentation Hub"
+SPDX-PackageSupplier = "Zextras <https://www.zextras.com/>"
+
+# source files
+[[annotations]]
+path = ["**.rst"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# configuration file
+[[annotations]]
+path = ["source/**/conf.py"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# images
+[[annotations]]
+path = ["source/img/**", "**.svg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# CI files
+[[annotations]]
+path = ["Dockerfile", "Jenkinsfile"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# text files
+[[annotations]]
+path = ["**.csv", "**.txt", "**.dot"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# playbook files and scripts
+[[annotations]]
+path = ["source/carbonio/playbook/**", "**.sh"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# HTML templates
+[[annotations]]
+path = ["**.html"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# other files
+[[annotations]]
+path = ["source/common/js/posthog.js"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2024 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
