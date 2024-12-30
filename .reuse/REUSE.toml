@@ -1,0 +1,21 @@
+version = 1
+SPDX-PackageName = "Zextras Documentation Hub"
+SPDX-PackageSupplier = "Zextras <https://www.zextras.com/>"
+
+[[annotations]]
+path = ["source/img/**", "**.csv", "**.txt"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2023 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+[[annotations]]
+path = ["Dockerfile", "Jenkinsfile"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2023 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+[[annotations]]
+path = "**.rst"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2022 - 2023 Zextras <https://www.zextras.com/>"
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
