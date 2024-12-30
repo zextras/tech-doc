@@ -134,42 +134,47 @@ Step 8: Complete Installation
    .. tab-item:: Ubuntu 20.04
       :sync: ubu20
 
-      After the successful package installation, start all |product|
+      After the successful package installation, restart all |product|
       services by using
 
       .. code:: console
 
-         zextras$ zmcontrol start
+         zextras$ zmcontrol restart
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
 
-      After the successful package installation, start all |product|
+      After the successful package installation, restart all |product|
       services by using
 
       .. code:: console
 
-         zextras$ zmcontrol start
+         zextras$ zmcontrol restart
 
 
    .. tab-item:: RHEL 8
       :sync: rhel8
 
 
-      After the successful package installation, start all |product|
+      After the successful package installation, restart all |product|
       services by using
 
       .. code:: console
 
-         zextras$ zmcontrol start
+         zextras$ zmcontrol restart
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
 
-      After the successful package installation, start all |product|
+      After the successful package installation, restart all |product|
       services by using
 
-      .. include:: /_includes/_installation/rhel-systemd.rst
+      .. code:: console
+
+         # systemctl restart carbonio-directory-server.target
+         # systemctl restart carbonio-appserver.target
+         # systemctl restart carbonio-mta.target
+         # systemctl restart carbonio-proxy.target
 
 If you chose to install only Node, installation has
 completed. Otherwise, if you plan to use collaboration features,
