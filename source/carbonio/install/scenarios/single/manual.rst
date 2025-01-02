@@ -201,14 +201,14 @@ following command and verify that in the output they are appear as
 
       .. code:: console
 
-         zextras$ zmcontrol restart
+         zextras$ zmcontrol status
 
    .. tab-item:: RHEL 8
       :sync: rhel8
 
       .. code:: console
 
-         zextras$ zmcontrol restart
+         zextras$ zmcontrol status
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
@@ -216,7 +216,7 @@ following command and verify that in the output they are appear as
 
       .. code:: console
 
-         zextras$ zmcontrol restart
+         zextras$ zmcontrol status
 
 In case some of the services is not running, please refer to Section
 :ref:`ts-cli` (if you are running Ubuntu or RHEL 8) or to the
