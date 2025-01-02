@@ -1,0 +1,290 @@
+Changelog 2024-12
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202412-986 Promote Architecture of Carbonio section
+
+The *Architecture of Carbonio* section has been promoted as a
+top-level section which also includes the Roles' manual installation.
+
+Changes in the source code can be found in :pr:`878`. and :pr:`876`.
+
+
+.. rubric:: 202412-985 Let images open in new tab
+
+We modified the code that opens links to external resources in a new
+tab to let also images always open in new tabs.
+
+Changes in the source code can be found in :pr:`877`.
+
+
+.. rubric:: 202412-984 Review Install section
+
+
+The documentation's *Install* section has been improved to include a
+description of the *Ansible* and *Manual* installation procedures,
+including a schematic workflow of the manual installation
+
+Changes in the source code can be found in :pr:`875`.
+
+
+.. rubric:: 202412-982 Review Introduction section
+
+The documentation's introduction has been improved:
+
+* Section *How to report an issue* has been promoted as top-level
+  entry
+
+* There, a link to the *Monitoring Carbonio* section has been added,
+  to help users in the data collection when they open tickets
+
+* Slight fixes to text have been introduced to fix some inaccuracy
+
+Changes in the source code can be found in :pr:`873` and :pr:`876`.
+
+
+.. rubric:: 202412-980 Full Redundant Scenario improvements
+
+The description of the Full Redundant Scenario has been improved.
+
+Changes in the source code can be found in :pr:`869`.
+
+
+.. rubric:: 202412-977 New diagram for Full Standard scenario
+
+A graphviz-based diagram has been added to the Full Standard
+Scenario's documentation.
+
+Changes in the source code can be found in :pr:`866`.
+
+
+.. rubric:: 202412-971 Remove |wsc| notification and |vs| routing
+
+Notifications for the |wsc| Role and routing for the |VS| Role have
+been removed from the documentation.
+
+Changes in the source code can be found in :pr:`850`, :pr:`851`, and
+:pr:`852`.
+
+
+.. rubric:: 202412-965 Improvements to the |product| installation on
+            RHEL systems
+
+The installation of |product| on RHEL systems has been actualised and
+improved; this had some impact also on the installation requirements
+for both Ansible and Ubuntu.
+
+Changes in the source code can be found in :pr:`844` and :pr:`848`.
+
+
+.. rubric:: 202412-963 Fix titles in CLI reference
+
+The titles of some commands were renamed to be clearer and coherent
+with the command itself.
+
+Changes in the source code can be found in :pr:`842`.
+
+
+.. rubric:: 202412-952 Implement sphinx-ext-graphviz extension
+
+We added the ``sphinx-ext-graphviz`` extension to the build
+configuration to allow the generation of scenario diagrams in PNG
+format from graphviz source code that we can extract automatically.
+
+Changes in the source code can be found in :pr:`824`.
+
+
+.. rubric:: 202412-950 Clean up CLI reference
+
+The CLI reference was amended to remove deprecated and obsolete
+commands.
+
+Changes in the source code can be found in :pr:`823`.
+
+
+.. rubric:: 202412-943 Rewrite manual installation for Scenario
+            Essential
+
+The Manual installation of the *Single-Server* Scenario was rewritten
+using stepwise directions to improve clarity and support an easier
+workflow for the whole process.
+
+Changes in the source code can be found in :pr:`825`, :pr:`828`,
+:pr:`831`, :pr:`833`, and :pr:`835`.
+
+
+.. rubric:: 202412-941 Remove DB Connector node from Ansible
+            installation
+
+The DB Connector Role is no longer part of |product| infrastructure,
+so we commented it out in the Ansible inventory files.
+
+Changes in the source code can be found in :pr:`822`.
+
+
+.. rubric:: 202412-938 Rewrite Scenario Essential
+
+The Manual installation of the *Essential* Scenario was rewritten in a
+step-by-step way to improve clarity and support an easier workflow for
+the whole process.
+
+Changes in the source code can be found in :pr:`855`.
+
+
+.. rubric:: 202412-935 Add |product| repository configuration
+
+We added instructions to allow Administrators to configure
+autonomously the |product| repository.
+
+Changes in the source code can be found in :pr:`834` and :pr:`846`
+(fix for Repository path on Ubuntu).
+
+
+.. rubric:: 202412-926 Review list of |wsc| ports
+
+We reviewed the list of ports used by |wsc|, added them to the Role to
+improve their visibility, and made some miro improvement to the
+overall wording.
+
+Changes in the source code can be found in :pr:`812`.
+
+
+.. rubric:: 202412-921 Upgrade Procedure to 24.12.0
+
+This issue introduces in teh documentation all changes in the upgrade
+procedure to 24.12.0, including:
+
+* Drop Section *Upgrade from 24.3*, replaced by *Upgrade from 24.7*
+
+* Updated list of known issues
+
+* Removal of the upgrade procedure using Ansible and of Pgpool
+
+* The procedure flow has been reorganised, with improved text to make
+  description more fluid
+
+* There is an explicit mention that all |product| services must be
+  running during upgrade
+
+* The upgrade to PostgreSQL 16 has been marked as mandatory, because
+  PostgreSQL 12 has reached its EOL
+
+Changes in the source code can be found in :pr:`814`, :pr:`816`, and
+:pr:`818`.
+
+
+.. rubric:: 202412-916 Read-only mode for Legacy Chats
+
+With the introduction of the new |wsc| module, administrators can
+force its use by setting the previous Chats module in read-only mode.
+
+Changes in the source code can be found in :pr:`821`.
+
+
+.. rubric:: 202412-913 How to remove a Node from a |product|
+            infrastructure
+
+We introduced a guided procedure to remove a Node from a |product|
+infrastructure.
+
+Changes in the source code can be found in :pr:`817`.
+
+
+.. rubric:: 202412-907 New |adminui| features for 24.12.0
+
+We reviewed the list of ports used by |wsc|, added them to the Role to
+improve their visibility, and made some minor improvement to the
+overall wording.
+
+In this issue we collected the documentation for the |adminui| for the
+new features introduced in 24.12.0, including:
+
+* what happens to blob and metadata and to shared files after an
+  account is closed
+
+* When multiple domains are configured, how can a user search for
+  users in other domains
+
+* A new sections explains how to optimise the DOCS and Editor
+  configuration
+
+* New packages have been added to the Roles installation
+
+Changes in the source code can be found in :pr:`802`, :pr:`803`, and
+:pr:`819`.
+
+
+.. rubric:: 202412-841 Add MIssing RHEL command for Drive migration
+
+We added the installation instructions for package
+:file:`carbonio-drive-migration`, needed in the migration from Zextras
+Suite compatible platform, which were missing for RHEL systems.
+
+Changes in the source code can be found in :pr:`839`.
+
+
+.. rubric:: 202412-837 User search across domains
+
+When multiple domains are configured, we introduced explanation for
+how can a user search for users in other domains from the CLI.
+
+Changes in the source code can be found in :pr:`820`
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202412-981 Slight corrections in the introduction
+
+A few commands were amended to be more correct.
+
+Changes in the source code can be found in :pr:`870`.
+
+.. rubric:: 202412-973 Remove notification packages
+
+The packages that provide notifications for |wsc| have been removed
+from the Roles installation.
+
+Changes in the source code can be found in :pr:`862`.
+
+.. rubric:: 202412-962 Failing copy & paste of Ansible Inventory files
+
+We fixed a little mistake that prevented to copy & paste Ansible's
+inventory files for |product| installation (although downloading the
+inventory still worked).
+
+Changes in the source code can be found in :pr:`840`.
+
+.. rubric:: 202412-961 Wrong Ansible inventory for full-redundant
+            scenario
+
+The Ansible inventory file for the *Full Redundant* Scenario has been
+fixed: the number of Nodes has been increased to 14, and in the
+documentation two alternatives have been described to forward the UDP
+stream for video calls.
+
+Changes in the source code can be found in :pr:`863`.
+
+.. rubric:: 202412-923 |wsc| recording
+
+We clarified how the files produced by recorded meetings are processed
+and where they are stored.
+
+Changes in the source code can be found in :pr:`810`.
+
+.. rubric:: 202412-871 Remove Role DB Connector
+
+The DB connector Role, based on the Pgpool sotware, has been removed
+from the 24.12.0 release.
+
+Changes in the source code can be found in :pr:`807`.
+
+*****
+
+End of changelog
+
