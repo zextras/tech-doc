@@ -61,6 +61,30 @@ Scenario's documentation.
 Changes in the source code can be found in :pr:`866`.
 
 
+.. rubric:: 202412-976 New diagram for Full Standard scenario
+
+A graphviz-based diagram has been added to the Full Small Scenario's
+documentation.
+
+Changes in the source code can be found in :pr:`865`.
+
+
+.. rubric:: 202412-975 Add a graph to Ansible installation
+
+A diagram was added to explain the |product| installation with
+Ansible.
+
+Changes in the source code can be found in :pr:`864`.
+
+
+.. rubric:: 202412-972 Factorise pending-setups instructions
+
+Instrutions for running the :command:`pending-setups` command have
+been put in a dedicated file to be included where necessary.
+
+Changes in the source code can be found in :pr:`858`.
+
+
 .. rubric:: 202412-971 Remove |wsc| notification and |vs| routing
 
 Notifications for the |wsc| Role and routing for the |VS| Role have
@@ -68,6 +92,14 @@ been removed from the documentation.
 
 Changes in the source code can be found in :pr:`850`, :pr:`851`, and
 :pr:`852`.
+
+
+.. rubric:: 202412-968 Carbonio 24.12.0 product changelog
+
+The |product| Product Changelog including all changes in the software
+has been added to the 24.12.0 documentation.
+
+Changes in the source code can be found in :pr:`846` and :pr:`856`.
 
 
 .. rubric:: 202412-965 Improvements to the |product| installation on
