@@ -29,6 +29,5 @@ a snapshot of the Nodes and a backup of the data.
       upgrade
       upgrade247
       upgrade245
-      pg
       os
       changelog
