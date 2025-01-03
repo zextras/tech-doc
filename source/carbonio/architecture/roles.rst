@@ -154,10 +154,6 @@ This is the list of roles that make up a |product| installation.
       * carbonio-files
       * service-discover-agent
 
-      .. note:: The Files Role can be installed without the
-         :ref:`role-docs-install` and :ref:`role-preview-install`
-         Roles.
-
    .. grid-item-card:: Docs & Editor
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
