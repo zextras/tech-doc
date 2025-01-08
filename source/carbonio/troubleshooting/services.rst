@@ -1,4 +1,4 @@
-.. _ts-general:
+.. _ts-services:
 
 Services Status
 ===============
