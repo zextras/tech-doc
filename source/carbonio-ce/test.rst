@@ -4,7 +4,7 @@
  test page
 ===========
 
-Page used for test purposes
+Page used for test purposes.
 
 sphinx.ext.graphviz
 ===================
