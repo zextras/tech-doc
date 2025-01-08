@@ -27,6 +27,7 @@ a snapshot of the Nodes and a backup of the data.
       :maxdepth: 1
 
       upgrade
+      upgrade249
       upgrade247
       upgrade245
       os
