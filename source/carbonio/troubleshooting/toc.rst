@@ -86,7 +86,7 @@ of them.
       :link-type: ref
       :link: ts-wsc
 
-      Resolving issues that may arise when using |wsc|.
+      Resolving issues that may arise when using |wsc|
 
       .. toctree::
          :hidden:
