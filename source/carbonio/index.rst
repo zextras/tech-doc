@@ -74,6 +74,19 @@ The content is organised in multiple parts:
 
          install/toc
 
+   .. grid-item-card:: Post-Install
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: post-install
+
+      Tasks to carry out after the installation of |product|,
+      including migration from other systems
+
+      .. toctree::
+         :hidden:
+
+         postinstall/toc
 
    .. grid-item-card:: Migration to |product|
       :columns: 12 12 6 6
@@ -88,20 +101,6 @@ The content is organised in multiple parts:
          :hidden:
 
          migration/toc
-
-   .. grid-item-card:: Post-Install
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: ref
-      :link: post-install
-
-      Tasks to carry out after the installation of |product|,
-      including migration from other systems
-
-      .. toctree::
-         :hidden:
-
-         postinstall/toc
 
    .. grid-item-card:: Admin by GUI
       :columns: 12 12 6 6
