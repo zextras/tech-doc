@@ -105,3 +105,16 @@ of them.
          :hidden:
 
          services
+
+   .. grid-item-card:: Common Issues
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-generic
+
+      Issues which do not fit in any other category
+
+      .. toctree::
+         :hidden:
+
+         generic
