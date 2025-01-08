@@ -86,7 +86,7 @@ of them.
       :link-type: ref
       :link: ts-wsc
 
-      Resolving issues that may arise when using |wsc|.
+      Resolving issues that may arise when using |wsc|
 
       .. toctree::
          :hidden:
@@ -97,11 +97,24 @@ of them.
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: ref
-      :link: ts-general
+      :link: ts-services
 
       A few commands to inspect the system on which |product| is installed
 
       .. toctree::
          :hidden:
 
-         general
+         services
+
+   .. grid-item-card:: Common Issues
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-generic
+
+      Issues which do not fit in any other category
+
+      .. toctree::
+         :hidden:
+
+         generic
