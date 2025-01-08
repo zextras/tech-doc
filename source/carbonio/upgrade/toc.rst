@@ -4,9 +4,9 @@
 
 This section contains the upgrade procedures to the latest |carbonio|
 release from the latest and the most recent previous releases
-(:ref:`24.9 <carbonio-upgrade>`, :ref:`24.7 <up-247>`, and :ref:`24.5
-<up-245>`), the changelogs of recent and older releases, and any
-security advice, if present.
+(:ref:`24.12 <carbonio-upgrade>`, :ref:`24.9 <up-249>`, :ref:`24.7
+<up-247>`, and :ref:`24.5 <up-245>`), the changelogs of recent and
+older releases, and any security advice, if present.
 
 |product| does not have any installer: whenever new versions are
 released, the |zx| repositories are updated and packages are available
@@ -27,6 +27,7 @@ a snapshot of the Nodes and a backup of the data.
       :maxdepth: 1
 
       upgrade
+      upgrade249
       upgrade247
       upgrade245
       os
