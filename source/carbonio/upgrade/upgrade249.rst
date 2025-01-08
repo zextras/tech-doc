@@ -7,7 +7,7 @@
 This section guides you in the upgrade from |product| **24.9**,
 regardless of any specific patch numbers, e.g. *24.9.1*.
 
-.. _up-older-req:
+.. _up249-req:
 
 Requirements & Preliminaries
 ============================
@@ -58,7 +58,7 @@ In some cases, incompatibilities may seldom arise in the upgrade of
 third-party software, which may lead to some additional manual steps
 to be carried out, so please check Section :ref:`ts-up-prev` under
 :doc:`/troubleshooting/toc` before starting the upgrade. Check also
-Section :ref:`up-older-req` for a list of major upgrades that impact
+Section :ref:`up249-req` for a list of major upgrades that impact
 Roles and third-party software.
 
 .. _pre-upgrade:
