@@ -1,11 +1,11 @@
 .. _carbonio-upgrade:
 
-===================
- Upgrade From 24.9
-===================
+====================
+ Upgrade From 24.12
+====================
 
-This section guides you in the upgrade from |product| **24.9**,
-regardless of any specific patch numbers, e.g. *24.9.1*.
+This section guides you in the upgrade from |product| **24.12** to the
+latest **24.12.0**.
 
 .. _up-prev-req:
 
