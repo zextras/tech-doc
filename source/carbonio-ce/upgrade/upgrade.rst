@@ -5,7 +5,7 @@
 ====================
 
 This section guides you in the upgrade from |product| **24.12** to the
-latest **24.12.0**.
+latest **24.12.1**.
 
 .. _up-prev-req:
 
