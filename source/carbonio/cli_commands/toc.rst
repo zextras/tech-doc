@@ -1,6 +1,6 @@
-=====================
-Carbonio CLI Commands
-=====================
+========================
+ Command Line Reference
+========================
 
 This appendix provides instructions for using the Command Line Interface.
 You can use the command line interface in place of the Carbonio Admin Panel.
@@ -18,4 +18,3 @@ You can use the command line interface in place of the Carbonio Admin Panel.
       carbonio_mobile
       carbonio_powerstore
       carbonio_ha
-      
