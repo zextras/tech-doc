@@ -1,6 +1,6 @@
-============
-Admin by CLI
-============
+=====================
+Admin by Command Line
+=====================
 
 This section contains useful resources for all Administrative tasks
 that can be carried out using the :abbr:`CLI (Command Line
@@ -27,4 +27,3 @@ mandatory.
       videoserver
       custom
       mesh
-      
