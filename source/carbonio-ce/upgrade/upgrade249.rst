@@ -57,9 +57,6 @@ to be carried out, so please check Section :ref:`ts-up-prev` under
 Section :ref:`up249-req` for a list of major upgrades that impact
 Roles and third-party software.
 
-After the upgrade has successfully completed, we strongly suggest to
-:ref:`change Directory Server credentials <ts-ds-credentials>`.
-
 .. _upgrade-nodes:
 
 Upgrade Nodes
@@ -70,3 +67,8 @@ Upgrade Nodes
    .. include:: /_includes/_upgrade/ds.rst
 
 .. include:: /_includes/_upgrade/node-ce249.rst
+
+.. note:: After the upgrade has successfully completed, we strongly
+   suggest to :ref:`change Directory Server credentials
+   <ts-ds-credentials>`.
+ 

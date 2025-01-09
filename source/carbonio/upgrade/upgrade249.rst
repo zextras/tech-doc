@@ -61,11 +61,6 @@ to be carried out, so please check Section :ref:`ts-up-prev` under
 Section :ref:`up249-req` for a list of major upgrades that impact
 Roles and third-party software.
 
-After the upgrade has successfully completed, we strongly suggest to
-carry out the tasks described in Troubleshooting sections:
-:ref:`change Directory Server credentials <ts-ds-credentials>` and
-:ref:`regenerate the pre-auth keys <ts-auth-keys>`.
-
 .. _pre-upgrade:
 
 .. card:: Preliminary Tasks
@@ -73,3 +68,9 @@ carry out the tasks described in Troubleshooting sections:
    .. include:: /_includes/_upgrade/ds.rst
 
 .. include:: /_includes/_upgrade/manual249.rst
+
+.. note:: After the upgrade has successfully completed, we strongly
+   suggest to carry out the tasks described in Troubleshooting
+   sections: :ref:`change Directory Server credentials
+   <ts-ds-credentials>` and :ref:`regenerate the pre-auth keys
+   <ts-auth-keys>`.
