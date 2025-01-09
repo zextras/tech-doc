@@ -7,24 +7,27 @@
 This sections contains procedures to deal with troubles on everyday
 activities with the Authentication module.
 
-.. _ts-auth-keys:
+Pre- Authentication Keys
+------------------------
 
-Renew Pre-Authentication Keys
-=============================
+In some cases it may be necessary to delete the pre-auth keys generated for access to Carbonio.
+Below are the steps required to execute this task
 
-The renewal process of the pre-auth keys is a two-step procedure.
+List pre-auth keys
+------------------
 
-The first is to check whether keys have already been generated, by
-using, as the |zu| user, the piped commands:
+Pre-auth keys are defined at the domain level. The following command searches all domains to see if pre-auth keys have been defined.
 
-.. code:: console
+.. code:: cosole
 
    zextras$ carbonio prov -l gad | while read d; do echo gd $d zimbraPreAuthKey; done | carbonio prov -l
 
-In case you receive some output, use the following command, again as
-the |zu| user, to regenerate the keys.
 
+Empty pre-auth keys
+-------------------
 
-.. code:: console
+The following command empties the pre-auth keys for each domain.
+
+.. code:: cosole
 
    zextras$ carbonio prov -l gad | while read d; do echo md $d zimbraPreAuthKey \"\"; done | carbonio prov -l

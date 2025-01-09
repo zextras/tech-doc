@@ -12,13 +12,17 @@ issues arising from the Directory Server.
 Update Credentials
 ==================
 
+
 In all cases when it is advisable to change the password of the
 Directory Server, follow the steps in the procedure described here.
 
 .. note:: The procedure requires CLI access; all the commands must be
    executed as the |zu|.
 
-On the Directory Server Node, define a robust password:
+Update Password on Master Directory Server
+------------------------------------------
+
+We start by defining a robust password
 
 .. code:: console
 
@@ -48,50 +52,12 @@ Finally, remove the saved password:
 
    zextras$ unset newLdapPsw
 
-The procedure requires to operate also on all other Nodes as follows.
-
-.. note:: If you have Node featuring a Directory Replica Role, skip it
-   and execute on that Node the commands in Section
-   :ref:`ts-ds-replica`.
-
-Define the password, which must be the same as the one on the
-Master Directory Server:
-
-.. code:: console
-
-   zextras$ export newLdapPsw="aGoodPassword"
-
-Then change all the Directory Server passwords.
-
-.. code:: console
-
-   zextras$ zmlocalconfig -f -e ldap_amavis_password=$newLdapPsw
-   zextras$ zmlocalconfig -f -e ldap_bes_searcher_password=$newLdapPsw
-   zextras$ zmlocalconfig -f -e ldap_nginx_password=$newLdapPsw
-   zextras$ zmlocalconfig -f -e ldap_postfix_password=$newLdapPsw
-   zextras$ zmlocalconfig -f -e ldap_replication_password=$newLdapPsw
-   zextras$ zmlocalconfig -f -e zimbra_ldap_password=$newLdapPsw
-
-Restart the services.
-
-.. code:: console
-
-   zextras$ zmcontrol restart
-
-Finally, remove the saved password:
-
-.. code:: console
-
-   zextras$ unset newLdapPsw
-
-.. _ts-ds-replica:
-
-Replica Passwords
------------------
+Update Directory Replica Credentials
+------------------------------------
 
 In case the |product| infrastructure includes the
-:ref:`role-ds-replica-install` Role, also execute the following
-commands on each Node featuring the Role.
+:ref:`role-ds-replica-install` Role, execute the following commands on
+each Node featuring the Role.
 
 Define the password, which must be the same as the one on the
 Master Directory Server:
@@ -130,3 +96,36 @@ As a final check, ensure the LDAP replica is working:
 .. code:: console
 
    zextras$ /opt/zextras/libexec/zmreplchk
+
+Align all Other Nodes
+---------------------
+
+Define the password, which must be the same as the one on the
+Master Directory Server:
+
+.. code:: console
+
+   zextras$ export newLdapPsw="aGoodPassword"
+
+Then change all the Directory Server passwords.
+
+.. code:: console
+
+   zextras$ zmlocalconfig -f -e ldap_amavis_password=$newLdapPsw
+   zextras$ zmlocalconfig -f -e ldap_bes_searcher_password=$newLdapPsw
+   zextras$ zmlocalconfig -f -e ldap_nginx_password=$newLdapPsw
+   zextras$ zmlocalconfig -f -e ldap_postfix_password=$newLdapPsw
+   zextras$ zmlocalconfig -f -e ldap_replication_password=$newLdapPsw
+   zextras$ zmlocalconfig -f -e zimbra_ldap_password=$newLdapPsw
+
+Restart the services.
+
+.. code:: console
+
+   zextras$ zmcontrol restart
+
+Finally, remove the saved password:
+
+.. code:: console
+
+   zextras$ unset newLdapPsw

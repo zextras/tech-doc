@@ -18,8 +18,10 @@ Directory Server, follow the steps in the procedure described here.
 .. note:: The procedure requires CLI access; all the commands must be
    executed as the |zu|.
 
-On the Directory Server Node, define a robust password:
+Update Password on Master Directory Server
+------------------------------------------
 
+We start by defining a robust password
 .. code:: console
 
    zextras$ export newLdapPsw="aGoodPassword"
@@ -48,7 +50,8 @@ Finally, remove the saved password:
 
    zextras$ unset newLdapPsw
 
-The procedure requires to operate also on all other Nodes as follows.
+Align all Other Nodes
+---------------------
 
 Define the password, which must be the same as the one on the
 Master Directory Server:
