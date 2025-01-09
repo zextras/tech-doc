@@ -28,18 +28,31 @@ of them.
 
          upgrade
 
-   .. grid-item-card:: |mesh| and Directory Server
+   .. grid-item-card:: |mesh|
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: ref
       :link: ts-mesh
 
-      |mesh| and Directory Server problems
+      |mesh| problems
 
       .. toctree::
          :hidden:
 
          mesh
+
+   .. grid-item-card:: Directory Server
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-ds
+
+      Issues on the Directory Server
+
+      .. toctree::
+         :hidden:
+
+         ldap
 
    .. grid-item-card:: Database
       :columns: 12 12 6 6
@@ -47,12 +60,25 @@ of them.
       :link-type: ref
       :link: ts-db
 
-      Problems you may find when Working with the PostgreSQL Database
+      Problems you may find when working with the PostgreSQL Database
 
       .. toctree::
          :hidden:
 
          database
+
+   .. grid-item-card:: Authentication
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-auth
+
+      Solving issues with the Authentication
+
+      .. toctree::
+         :hidden:
+
+         auth
 
    .. grid-item-card:: Proxy Role
       :columns: 12 12 6 6
