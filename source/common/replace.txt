@@ -31,8 +31,8 @@
 .. |search| replace:: :bdg-primary:`SEARCH`
 .. |reset| replace:: :bdg-primary-line:`RESET`
 .. |ex| replace:: :bdg-info-line:`Example`
-.. |zu| replace:: ``zextras user``
-.. |ru| replace:: ``root user``
+.. |zu| replace:: ``zextras`` user
+.. |ru| replace:: ``root`` user
 
 .. various acronyms
 
