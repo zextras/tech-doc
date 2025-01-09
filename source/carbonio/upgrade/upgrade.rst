@@ -1,11 +1,11 @@
 .. _carbonio-upgrade:
 
-===================
- Upgrade From 24.9
-===================
+======================
+ Upgrade From 24.12.0
+======================
 
-This section guides you in the upgrade from |product| **24.9**,
-regardless of any specific patch numbers, e.g. *24.9.1*.
+This section guides you in the upgrade from |product| **24.12.0** to the latest
+**24.12.1**.
 
 .. _up-older-req:
 
@@ -70,3 +70,9 @@ Roles and third-party software.
    .. include:: /_includes/_upgrade/ds.rst
 
 .. include:: /_includes/_upgrade/manual.rst
+
+.. note:: After the upgrade has successfully completed, we strongly
+   suggest to carry out the tasks described in Troubleshooting
+   sections: :ref:`change Directory Server credentials
+   <ts-ds-credentials>` and :ref:`empty the pre-auth keys
+   <ts-auth-keys>`.
