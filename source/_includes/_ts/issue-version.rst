@@ -1,3 +1,5 @@
+.. _ts-version:
+
 .. card:: Carbonio version mismatch
 
    It can sometimes happen, especially after installing hotfixes, that

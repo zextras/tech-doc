@@ -76,7 +76,7 @@ The content is organised in multiple parts:
 
          postinstall/toc
 
-   .. grid-item-card:: Admin by GUI
+   .. grid-item-card:: Admin by Graphical User Interface
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: doc
@@ -89,7 +89,7 @@ The content is organised in multiple parts:
 
          adminpanel/toc
 
-   .. grid-item-card:: Admin by CLI
+   .. grid-item-card:: Admin by Command Line Interface
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: doc
@@ -110,7 +110,6 @@ The content is organised in multiple parts:
 
       Everyday's usage of |product|, including its use on the
       dedicated mobile Apps
-
 
    .. grid-item-card:: Monitoring
       :columns: 12 12 6 6

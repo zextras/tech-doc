@@ -1,13 +1,13 @@
-.. _carbonio-upgrade:
+.. _up-249:
 
-======================
- Upgrade From 24.12.0
-======================
+===================
+ Upgrade From 24.9
+===================
 
-This section guides you in the upgrade from |product| **24.12.0** to the
-latest **24.12.1**.
+This section guides you in the upgrade from |product| **24.9**,
+regardless of any specific patch numbers, e.g. *24.9.1*.
 
-.. _up-prev-req:
+.. _up249-req:
 
 Requirements & Preliminaries
 ============================
@@ -54,7 +54,7 @@ In some cases, incompatibilities may seldom arise in the upgrade of
 third-party software, which may lead to some additional manual steps
 to be carried out, so please check Section :ref:`ts-up-prev` under
 :doc:`/troubleshooting/toc` before starting the upgrade. Check also
-Section :ref:`up-prev-req` for a list of major upgrades that impact
+Section :ref:`up249-req` for a list of major upgrades that impact
 Roles and third-party software.
 
 .. _upgrade-nodes:
@@ -66,8 +66,9 @@ Upgrade Nodes
 
    .. include:: /_includes/_upgrade/ds.rst
 
-.. include:: /_includes/_upgrade/node-ce.rst
+.. include:: /_includes/_upgrade/node-ce249.rst
 
 .. note:: After the upgrade has successfully completed, we strongly
    suggest to :ref:`change Directory Server credentials
    <ts-ds-credentials>`.
+ 

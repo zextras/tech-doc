@@ -1,6 +1,6 @@
-==============
- Admin by GUI
-==============
+==============================
+ Admin by Graphical Interface
+==============================
 
 This section describes the |adminui|, its functionalities, and
 directions and some how-to for the most common tasks that
