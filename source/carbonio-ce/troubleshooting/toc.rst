@@ -60,7 +60,7 @@ of them.
       :link-type: ref
       :link: ts-db
 
-      Problems you may find when Working with the PostgreSQL Database
+      Problems you may find when working with the PostgreSQL Database
 
       .. toctree::
          :hidden:
