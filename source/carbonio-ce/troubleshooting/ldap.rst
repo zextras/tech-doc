@@ -22,6 +22,7 @@ Update Password on Master Directory Server
 ------------------------------------------
 
 We start by defining a robust password
+
 .. code:: console
 
    zextras$ export newLdapPsw="aGoodPassword"
