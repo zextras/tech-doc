@@ -1,10 +1,10 @@
 .. _carbonio-upgrade:
 
-====================
- Upgrade From 24.12
-====================
+======================
+ Upgrade From 24.12.0
+======================
 
-This section guides you in the upgrade from |product| **24.12** to the latest
+This section guides you in the upgrade from |product| **24.12.0** to the latest
 **24.12.1**.
 
 .. _up-older-req:
