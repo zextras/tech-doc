@@ -30,8 +30,6 @@ during, or after the procedure.
    2024 <https://www.postgresql.org/support/versioning/>`_ end of the
    year. Check section :ref:`pg-upgrade` for directions.
 
-.. _up-proc:
-
 Upgrade Procedure
 =================
 
@@ -57,8 +55,6 @@ to be carried out, so please check Section :ref:`ts-up-prev` under
 Section :ref:`up249-req` for a list of major upgrades that impact
 Roles and third-party software.
 
-.. _upgrade-nodes:
-
 Upgrade Nodes
 -------------
 
@@ -70,5 +66,6 @@ Upgrade Nodes
 
 .. note:: After the upgrade has successfully completed, we strongly
    suggest to :ref:`change Directory Server credentials
-   <ts-ds-credentials>`.
+   <ts-ds-credentials>` and :ref:`empty the pre-auth keys
+   <ts-auth-keys>`.
  

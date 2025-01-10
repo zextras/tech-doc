@@ -70,4 +70,5 @@ Upgrade Nodes
 
 .. note:: After the upgrade has successfully completed, we strongly
    suggest to :ref:`change Directory Server credentials
-   <ts-ds-credentials>`.
+   <ts-ds-credentials>` and :ref:`empty the pre-auth keys
+   <ts-auth-keys>`.
