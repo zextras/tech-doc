@@ -66,6 +66,19 @@ of them.
          :hidden:
 
          database
+   
+   .. grid-item-card:: Authentication
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-auth
+
+      Solving issues with the Authentication
+
+      .. toctree::
+         :hidden:
+
+         auth
 
    .. grid-item-card:: Proxy Role
       :columns: 12 12 6 6
