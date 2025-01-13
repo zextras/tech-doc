@@ -75,20 +75,18 @@ listed.
 
       .. code:: console
 
-         # apt install carbonio-docs-connector-db \
-         carbonio-files-db carbonio-mailbox-db \
-         carbonio-message-dispatcher-db \
-         carbonio-ws-collaboration-db
+         # apt install carbonio-docs-connector-db carbonio-files-db \
+         carbonio-mailbox-db carbonio-message-dispatcher-db \
+         carbonio-ws-collaboration-db carbonio-tasks-db
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-docs-connector-db \
-         carbonio-files-db carbonio-mailbox-db \
-         carbonio-message-dispatcher-db \
-         carbonio-ws-collaboration-db
+         # dnf install carbonio-docs-connector-db carbonio-files-db \
+         carbonio-mailbox-db carbonio-message-dispatcher-db \
+         carbonio-ws-collaboration-db carbonio-tasks-db
 
 Add the services provided by these packages to |mesh|.
 
