@@ -1,10 +1,15 @@
 .. glossary::
    :sorted:
 
-   HSM   
+   HSM
       The **Hierarchical Storage Management** allows to move data
       between different stores according to policies defined by the
       Administrator.
+
+   HSM policy
+      An **HSM policy** is a rule that describes how to process an
+      item in |product|. A common use is bulk moving items between a
+      primary and secondary Volume.
 
    Primary Volume
       The **Primary store** is the main storage device of
@@ -18,10 +23,22 @@
      |product|. Its purpose is to store older items and data, which
      are seldomly accessed. It is a slow storage device
 
-   Administrator
-     An **Administrator** is any :term:`regular user` that can access
-     the |adminui|. Depending on the permission they have, they can
-     play different Roles and can carry out different activities, for
-     example a Domain Administrator can manage all domain-related
-     tasks, while a Global Administrator can effectively manage the
-     whole |product| infrastructure.
+   Delegated Admin
+   Delegated Administrator
+     A **Delegated Administrator** is a user with specific
+     administrative permissions assigned to them, allowing them to
+     manage certain aspects of Carbonio without granting them full
+     permissions.
+
+     Example scenarios in which *delegated administrators* prove
+     useful include: A University that allows allow each department
+     head to manage email accounts for the department's staff and
+     students; an enterprise sets up for each subsidiary a delegated
+     administrator to handle user creation and resource management.
+
+   Object Storage
+     The **Object Storage** is a storage technique that manages data
+     as blocks (the "object") instead of using a traditional file
+     system. This approach allows to store binary data that are
+     written once but read often and is used when dealing with large
+     collections of unstructured data.
