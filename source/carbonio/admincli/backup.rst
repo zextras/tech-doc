@@ -139,6 +139,10 @@ You can however centralise the backup on the same NAS: create
 different partitions on it, then add the appropriate Backup Path to
 each Backups.
 
+.. index:: Recovery Point Objective (RPO)
+
+.. index:: Recovery Time Objective (RTO)
+
 Then, before entering in the architecture of |backup|, we recall two
 general approaches that are taken into account when defining a backup
 strategy: **RPO** and **RTO**.
@@ -157,6 +161,7 @@ change, while the SmartScan copies all items that have been modified,
 hence the possible loss of data is minimised and usually limited to
 those items that have changed between two consecutive run on SmartScan.
 
+.. index:: Item
 
 .. _item:
 
@@ -226,6 +231,9 @@ photography of the metadata in a moment in time. Each transaction is
 uniquely identified by a **Transaction ID**. It is possible to restore
 an item to any past transaction. See more in :ref:`Restore Strategies
 <backup_restore-strategies>`.
+
+.. index:: SmartScan
+.. index:: Realtime Scanner
 
 .. _smartscan_and_real_time_scan:
 
@@ -371,6 +379,8 @@ Scanner inability to interact with LDAP. Other examples include:
 * changes in a domain
 * the membership of a user in Distribution Lists.
 
+.. index:: Bakcup Path
+
 .. _backup_path:
 
 Backup Path
@@ -469,6 +479,8 @@ The successful operation will display the **ok** message.
    :ref:`ap-bk-server-conf` (:menuselection:`Admin Panel --> Global
    Server Settings --> Server Config`).
 
+.. index:: Retention Policy
+
 .. _retention_policy:
 
 Retention Policy
@@ -520,6 +532,8 @@ the information required to restore the item.
    :ref:`ap-bk-server-conf` (:menuselection:`Admin Panel --> Global
    Server Settings --> Server Config`).
 
+.. index:: Backup Purge
+
 .. _backup_purge:
 
 Backup Purge
@@ -528,6 +542,8 @@ Backup Purge
 The Backup Purge is a cleanup operation that removes from the Backup
 Path any deleted item that exceeded the retention time defined by the
 **Data Retention Policy** and **Account retention policy**.
+
+.. index:: Coherency Check
 
 .. _coherency_check:
 
@@ -1107,9 +1123,11 @@ However, S3 buckets, NFS shares, and other storage mounted using Fuse
 can be very slow and might not be suited as storage mounted on the
 Backup Path.
 
+.. index:: External Storage
+
 Because the most important part of backups is the metadata, the idea
 behind **Backup on External Storage** is to use two different storage:
-one local (and typically fast) for metadata and cache and one external
+one *local* (and typically fast) for metadata and cache and one *external*
 (local network or cloud) for the blobs and a copy of metadata.
 
 If the external storage is remote, multiple changes will be bundled and
