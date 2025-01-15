@@ -46,3 +46,4 @@ from a |product| infrastructure
    administration/analytics
    administration/changeip
    administration/removeserver
+   administration/s3bench
