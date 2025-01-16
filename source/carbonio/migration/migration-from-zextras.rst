@@ -175,7 +175,7 @@ Import Briefcases into Drive
 In order to import Briefcases, run the following command as the
 ``zimbra`` user **for every domain**. Besides the warnings, the
 generated log messages (that are stored in file
-:file:`/opt/zextras/log/mailbox.log`) will contain also the list of
+:file:`/opt/zimbra/log/mailbox.log`) will contain also the list of
 all operations that are carried out.
 
 .. code:: console
