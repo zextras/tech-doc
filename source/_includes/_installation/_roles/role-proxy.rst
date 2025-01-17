@@ -9,7 +9,7 @@
            carbonio-webui carbonio-files-ui carbonio-tasks-ui \
            carbonio-chats-ui carbonio-files-public-folder-ui \
            carbonio-ws-collaboration-ui service-discover-agent \
-           carbonio-catalog
+           carbonio-avdb-updater carbonio-catalog
  
    .. tab-item:: RHEL
       :sync: rhel
@@ -20,5 +20,5 @@
            carbonio-webui carbonio-files-ui carbonio-tasks-ui \
            carbonio-chats-ui carbonio-files-public-folder-ui \
            carbonio-ws-collaboration-ui service-discover-agent \
-           carbonio-catalog
+           carbonio-avdb-updater carbonio-catalog
 

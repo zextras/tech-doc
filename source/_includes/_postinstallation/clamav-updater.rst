@@ -21,13 +21,35 @@ reduce the risk of false positives. In order to keep the signatures
 updated, |product| implements a system service,
 ``carbonio-avdb-updater``.
 
-To install it, login to the **Proxy Node**, then update the list of
-packages to make sure the latest version is picked up, and install the
-updater
+To install it (in case it is not already present), login to the **Proxy Node**
+then update the list of packages to make sure the latest version is picked up
+and install the updater
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt install carbonio-avdb-updater
+ 
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf install carbonio-avdb-updater
+
+To complete the installation, run
 
 .. code:: console
 
-   # apt-get update && apt-get install carbonio-avdb-updater
+   # pending-setups -a
+
+The command will ask for the password stored in the
+:file:`/var/lib/service-discover/password` on the *Directory Leader*
+Node (i.e., the node on which the Mesh server is installed).
 
 Verify Signature Status
 ~~~~~~~~~~~~~~~~~~~~~~~
