@@ -146,7 +146,7 @@ Check of Incompatible Address Book's Groups
 
 |product| only supports groups that are composed by e-mail addresses,
 ruling out all address books which contain as members, for example,
-references to  other items.
+references to other items.
 
 This script lists all the user groups in the address books that are
 not compatible with |product|.
@@ -160,7 +160,13 @@ not compatible with |product|.
 
 The output will be formatted as::
 
-  User - Address Book folder - GroupName
+  <User> <Address Book folder> <Incompatible Group Name>
+
+Example output::
+
+  john.doe@example.com folder1 acmeGroup
+  jane.doe@example.com new_folder new_Group
+  july.doe@example.com MyCommits backendDevels
 
 .. note:: The *Address Book folder* refers to the one that contains the
    incompatible group, but this could be nested within another folder.
@@ -175,7 +181,7 @@ Import Briefcases into Drive
 In order to import Briefcases, run the following command as the
 ``zimbra`` user **for every domain**. Besides the warnings, the
 generated log messages (that are stored in file
-:file:`/opt/zextras/log/mailbox.log`) will contain also the list of
+:file:`/opt/zimbra/log/mailbox.log`) will contain also the list of
 all operations that are carried out.
 
 .. code:: console

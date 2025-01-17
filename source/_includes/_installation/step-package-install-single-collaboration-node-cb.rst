@@ -8,8 +8,8 @@ following packages
 
       .. code:: console
 
-         # apt install carbonio-notification-push-db \
-         carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
+         # apt install carbonio-ws-collaboration-db \
+         carbonio-message-dispatcher-db \
          carbonio-docs-connector-db carbonio-tasks-db
 
    .. tab-item:: Ubuntu 22.04
@@ -17,8 +17,8 @@ following packages
 
       .. code:: console
 
-         # apt install carbonio-notification-push-db \
-         carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
+         # apt install carbonio-ws-collaboration-db \
+         carbonio-message-dispatcher-db \
          carbonio-docs-connector-db carbonio-tasks-db
 
    .. tab-item:: RHEL 8
@@ -26,8 +26,8 @@ following packages
 
       .. code:: console
 
-         # dnf install carbonio-notification-push-db \
-         carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
+         # dnf install carbonio-ws-collaboration-db \
+         carbonio-message-dispatcher-db \
          carbonio-docs-connector-db carbonio-tasks-db
 
    .. tab-item:: RHEL 9 |beta|
@@ -35,6 +35,6 @@ following packages
 
       .. code:: console
 
-         # dnf install carbonio-notification-push-db \
-         carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
+         # dnf install carbonio-ws-collaboration-db \
+         carbonio-message-dispatcher-db \
          carbonio-docs-connector-db carbonio-tasks-db

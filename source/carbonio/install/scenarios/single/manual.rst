@@ -322,7 +322,7 @@ Node*. Click on the drop-downs to expand them.
          .. code:: console
 
             # apt install carbonio-message-dispatcher \
-            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql-client
@@ -333,7 +333,7 @@ Node*. Click on the drop-downs to expand them.
          .. code:: console
 
             # apt install carbonio-message-dispatcher \
-            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql-client
@@ -344,7 +344,7 @@ Node*. Click on the drop-downs to expand them.
          .. code:: console
 
             # dnf install carbonio-message-dispatcher \
-            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql16
@@ -355,7 +355,7 @@ Node*. Click on the drop-downs to expand them.
          .. code:: console
 
             # dnf install carbonio-message-dispatcher \
-            carbonio-ws-collaboration carbonio-notification-push \
+            carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql16
