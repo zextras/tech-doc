@@ -80,3 +80,4 @@ at a later point with the following command:
 .. code:: console
 
    # carbonio prov modifyCos {name} [attribute value ...]
+
