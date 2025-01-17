@@ -17,9 +17,9 @@ with all its components.
 
    Simplified architecture of |product|.
 
-A typical |product| installation consists of various :term:`Components
-<Component>` installed on one or multiple :term:`Nodes <node>`. Each
-of the component depicted by the red boxes should be installed on a
+A typical |product| installation consists of various components
+installed on one or multiple :term:`Nodes <node>`.
+Each of the component depicted by the red boxes should be installed on a
 different Node, while all the others can be combined and installed on
 one or more Nodes. For example, if |vs| is heavily used, it could be a
 good idea to install it on a dedicated node.
