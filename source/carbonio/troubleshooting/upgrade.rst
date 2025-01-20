@@ -18,6 +18,7 @@ to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
 .. include:: /_includes/_upgrade/issue-mongoose.rst
+.. include:: /_includes/_upgrade/issue-catalog.rst
 
 .. _ts-up-older:
 
@@ -29,8 +30,8 @@ encounter one or more of the following issues that require a manual
 intervention.
 
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
-* The new package :ref:`carbonio-storages <upgrade-storages>` must be
-  installed
+* The :ref:`new packages <upgrade-packages>` ``carbonio-storages`` and
+  ``carbonio-catalog`` must be installed
 * Monitoring: a new configuration file for :ref:`carbonio-prometheus
   <upgrade-monit>` package must be installed
 * Initialise domains for :ref:`Delegated Administrators <upgrade-delegated>`
