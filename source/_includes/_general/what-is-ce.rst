@@ -1,21 +1,19 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+Carbonio Community Edition (|product|) is an open-source digital
+communication and collaboration platform designed to empower
+organisations, particularly small and medium-sized businesses, with a
+user-friendly and seamless experience for their essential
+communication and collaboration needs, while prioritising *data
+sovereignty*. Built upon a robust and secure architecture, |product|
+provides core collaborative tools, including *enterprise-grade email*,
+*contacts and calendars management*, integrated with modern features
+such as *real-time chat*, *video meetings*, and *document editing*.
 
-|zx| |ce| is the free and open-source e-mail and collaboration
-software, which consists of
-
-- E-mail, Contacts and Calendar Essentials, all shareable across a domain
-- A complete mailserver, equipped with anti-spam and anti-virus
-  software
-- File Management System including collaborative editing and document
-  sharing
-- Tasks
-- Chat and Video Meeting
-
-Strong points of |ce| include:
-
-* focus on Data Sovereignty and Privacy
-* simplicity to install as Linux packages and ready to use out of the
-  box
-* flexibility to cover the needs of today's collaborative workplaces
+As an open-source solution, |product| grants organisations complete
+control over their data and infrastructure, ensuring privacy and
+enhanced security. This control, combined with flexible deployment
+options :octicon:`dash` whether in the cloud, on-premises, or
+integrated with existing infrastructure :octicon:`dash` and an
+intuitive interface focused on core collaborative functionalities,
+makes |product| a practical and powerful choice for organisations
+seeking a cost-effective and controllable communication and
+collaboration solution.
