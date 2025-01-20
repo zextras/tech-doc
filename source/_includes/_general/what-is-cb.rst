@@ -1,24 +1,27 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
+|product| is a comprehensive digital workplace platform designed to
+empower organisations with digital sovereignty through a *secure*,
+*scalable*, and *fully managed* on-premises solution. It provides a
+rich suite of collaborative tools, seamlessly combining
+enterprise-grade email, contacts, and calendars with modern
+collaboration features such as real-time chat, video meetings, and
+document editing, representing a reliable solution for enterprise
+business communication.
 
+Built on an open-core architecture, |product| offers complete control
+over data and infrastructure, enhanced security, and smooth
+integration with existing systems. Its enterprise-ready features,
+including *robust backup*, *archiving*, *legal-hold* capabilities, and tools
+for *regulatory compliance*, ensure effective data management and
+sovereignty.
 
-|zx| |product| is the fully private digital workplace, which consists
-of:
+By leveraging the dynamic |product| Mesh technology, administrators can
+easily adapt the platform to meet both user and organisational needs,
+while also enabling horizontal and vertical scaling to accommodate
+growing resource demands. High availability and disaster recovery are
+ensured through full redundancy and active replication, complemented
+by robust security features including SAML and two-factor
+authentication (2FA).
 
-- E-mail, Contacts and Calendar Essentials, all shareable across a domain
-- A complete mailserver, equipped with anti-spam and anti-virus
-  software
-- Chat and Videochats
-- File Management System including collaborative editing and document
-  sharing
-- Tasks
-
-Strong points of |product| include:
-
-- focus on Data Sovereignty and Privacy
-- simplicity to install as Linux packages and ready to use out of the
-  box
-- comprehensive set of enterprise-level collaboration and
-  communication features
-- scalability: easily add nodes as company's infrastructure grows
+|product|'s user-friendly interface and comprehensive administration
+dashboard simplify management and facilitate deployment in both public
+cloud and private data center environments.
