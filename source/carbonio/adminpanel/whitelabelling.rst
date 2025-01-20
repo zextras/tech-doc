@@ -1,4 +1,9 @@
 
+.. index:: ! White-Label
+.. index:: see: White-Labelling; White-Label
+.. index:: see: White Labelling; White-Label
+.. index:: see: White Label; White-Label
+
 .. _wl:
 
 |wl|
