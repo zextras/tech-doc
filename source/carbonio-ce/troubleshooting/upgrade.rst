@@ -17,6 +17,8 @@ There is no know issue that impacts either the upgrade process to
 |product| |version| or the |product| operations afterwards.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
+.. include:: /_includes/_upgrade/issue-catalog.rst
+
 
 .. _ts-up-older:
 
@@ -37,6 +39,7 @@ more of the following issues that require a manual intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
+* A :ref:`new package <upgrade-catalog>` must be installed
 
 .. _manual-grafana:
 
@@ -176,3 +179,7 @@ more of the following issues that require a manual intervention.
    The solution is to install the libbsd package::
 
      # dnf install libbsd
+
+.. _upgrade-catalog:
+
+.. include:: /_includes/_upgrade/issue-catalog.rst
