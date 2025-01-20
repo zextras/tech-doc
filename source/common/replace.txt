@@ -23,6 +23,7 @@
 .. |task| replace:: |carbonio| Tasks
 .. |cwsc| replace:: |carbonio| Work Stream Collaboration (Chats)
 .. |wsc| replace:: Work Stream Collaboration (Chats)
+.. |wl| replace:: White-label
 
 .. common replacements for all products
 
