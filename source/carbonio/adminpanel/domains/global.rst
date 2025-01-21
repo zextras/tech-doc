@@ -20,10 +20,9 @@ This page is an excerpts of the :ref:`Accounts <ap-accounts>`
 (:menuselection:`Admin Panel --> Domains --> Manage --> Accounts`)
 table, showing all the Global Delegates.
 
-
 .. _global-wl:
 
-Whitelabel Settings
+|wl| Settings
 ===================
 
 Global settings concern the appearance of |product| and allow to
@@ -31,10 +30,12 @@ customise various option that will influence how the |product| web
 interface appears to the web clients.
 
 .. note:: These setting are applied to all the domains configured; if
-   you want to customise the appearance, please change the settings
-   under :menuselection:`Domains --> Details --> Whitelabel Settings`.
+   you want to customise the appearance of a single domain, please
+   change the settings under :menuselection:`Domains --> Details -->
+   White-label Settings`.
 
-.. include:: /_includes/_adminpanel/wl.rst
+The description of the available options can be found in the
+:ref:`dedicated section <wl>`.
 
 .. _global-domains:
 

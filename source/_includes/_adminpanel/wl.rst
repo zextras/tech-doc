@@ -1,9 +1,6 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-All the resources used for White Labelling must have a **valid URI**
-and must be reachable from |carbonio|.
+All the resources used for |wl| must have a **valid URI** and must be
+reachable from |carbonio|.
 
 In case the resources are hosted on an server external to the
 |carbonio| infrastructure, make sure that server's SSL certificate is
