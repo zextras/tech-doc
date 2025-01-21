@@ -214,12 +214,14 @@ quota.
 
 .. _domain-wl:
 
-Whitelabel Settings
-===================
+|Wl| Settings
+=============
 
-These setting are the same that appear in Global's :ref:`global-wl`
-section, but are domain-specific: if not defined at domain level, the
-global theme settings will be applied.
+These setting are the same that appear in Global's section
+(:menuselection:`Domains --> Global --> White-label`), but are
+domain-specific: if not defined at domain level, the global theme
+settings will be applied. The description of the available options can
+be found in the :ref:`dedicated section <wl>`.
 
 .. index:: Authentication by GUI; 2FA (domain)
 .. index:: 2FA Authentication; by GUI (domain)

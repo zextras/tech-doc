@@ -1,5 +1,3 @@
-
-
 .. _manual-grafana:
 
 .. card:: GPG Key of Grafana in Ubuntu 22.04
@@ -32,12 +30,14 @@
         https://packages.grafana.com/oss/deb stable main" | sudo tee -a \
         /etc/apt/sources.list.d/grafana.list
 
-.. _upgrade-storages:
+.. _upgrade-packages:
 
-.. card:: New Package Installation
+.. card:: New Packages Installation
 
-   A new package must be installed on the Node featuring the **Database
-   Connector** Role. Log in to that Node and execute command
+   New packages must be installed upon upgrading to 24.12.
+
+   On the Node featuring the **Mesh & Directory** Role, install
+   package ``carbonio-storages`` by executing command
 
    .. tab-set::
 
@@ -48,12 +48,31 @@
 
             # apt install carbonio-storages
 
-      .. tab-item:: RHEL 
+      .. tab-item:: RHEL
          :sync: rhel
 
          .. code:: console
 
             # dnf install carbonio-storages
+
+   On the Node featuring the **Proxy** Role, install package
+   ``carbonio-catalog`` by executing command
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu
+         :sync: ubuntu
+
+         .. code:: console
+
+            # apt install carbonio-catalog
+
+      .. tab-item:: RHEL
+         :sync: rhel
+
+         .. code:: console
+
+            # dnf install carbonio-catalog
 
 .. _upgrade-monit:
 
@@ -127,15 +146,15 @@
    .. code:: console
 
       $ psql -d abq -c "REINDEX DATABASE abq"
-      $ psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;" 
+      $ psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;"
 
    These commands should probably be given for each of the databases, so
    you can copy & paste all the following commands::
 
       psql -d abq -c "REINDEX DATABASE abq"
-      psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;" 
+      psql -d abq -c "ALTER DATABASE abq REFRESH COLLATION VERSION;"
       psql -d powerstore -c "REINDEX DATABASE powerstore"
-      psql -d powerstore -c "ALTER DATABASE powerstore REFRESH COLLATION VERSION;" 
+      psql -d powerstore -c "ALTER DATABASE powerstore REFRESH COLLATION VERSION;"
       psql -d activesync -c "REINDEX DATABASE activesync"
       psql -d activesync -c "ALTER DATABASE activesync REFRESH COLLATION VERSION;"
       psql -d auth -c "REINDEX DATABASE auth"
@@ -180,10 +199,10 @@
 .. card:: initDomainForDelegation fails
 
    After performing the INIT DOMAIN operation (required for creating
-   delegated administrators), the following error may occur. 
+   delegated administrators), the following error may occur.
 
    .. code:: console
-             
+
       zextras@:~$ carbonio admin initDomainForDelegation local.loc
 
       Unknown Exception com.zextras.lib.http.HTTPClientException:
@@ -238,4 +257,3 @@
             # rpm -e --nodeps config-generator
 
    Right after the command completes, proceed with the upgrade.
-

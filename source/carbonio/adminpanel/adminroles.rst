@@ -148,7 +148,7 @@ whole.
    * Manage Admins and their roles.
    * Manage Global Configuration
 
-     * Theme and Whitelabel setting
+     * Theme and |wl| setting
      * Default Domain
      * ActiveSync
      * Analytics
