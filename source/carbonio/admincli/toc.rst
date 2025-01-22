@@ -16,8 +16,11 @@ mandatory.
 
       shell
       administration
+      advancedadmin
       ldap
-      bucket-management
+      carboniocore
+      carbonioadmin
+      carbonioauth
       backup
       restorestrategies
       advancedbackup
