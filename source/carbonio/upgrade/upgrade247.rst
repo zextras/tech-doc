@@ -3,8 +3,8 @@
 Upgrade From 24.7
 =================
 
-This section guides you in the upgrade from |product| **24.5**,
-regardless of any specific patch numbers, e.g. *24.5.1*, to the latest
+This section guides you in the upgrade from |product| **24.7**,
+regardless of any specific patch numbers, e.g. *24.7.1*, to the latest
 available version, |release|, which contains a number of technical and
 performance improvements, bug fixes, and security fixes.
 
