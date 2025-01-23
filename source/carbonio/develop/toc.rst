@@ -10,7 +10,7 @@ interact with |product| using the available APIs.
 .. grid:: 1 2 2 3
    :gutter: 3
 
-   .. grid-item-card:: |product| SOAP API
+   .. grid-item-card:: |product| Account, Admin, and Mail API
       :columns: 12 12 12 12
       :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
       :link: ../../../apidoc/api-reference/index.html
@@ -30,15 +30,15 @@ interact with |product| using the available APIs.
             :class-title: sd-font-weight-bold sd-fs-4
             :link: ../../../apidoc/carbonio-auth/login-page-api.html
 
-            API to interact with the login process to |product| and
-            customise the appearance of the login page
+            Interact with |product| login process and customise the
+            appearance of the login page
 
          .. grid-item-card:: SAML configuration
             :columns: 6 6 6 6
             :class-title: sd-font-weight-bold sd-fs-4
             :link: ../../../apidoc/carbonio-auth/saml-auth-config-api.html
 
-            API to modify the SAML configuration
+            Modify the SAML configuration
 
    .. grid-item-card:: |file|
       :columns: 12 12 12 12
@@ -52,7 +52,7 @@ interact with |product| using the available APIs.
             :class-title: sd-font-weight-bold sd-fs-4
             :link: ../../../apidoc/files_blob/index.html
 
-            Managing the upload and download of BLOB files and links
+            Manage the upload and download of BLOB files and links
             to them
 
          .. grid-item-card:: |file| metadata
@@ -77,14 +77,14 @@ interact with |product| using the available APIs.
             :class-title: sd-font-weight-bold sd-fs-4
             :link: ../../../apidoc/carbonio-ws-collaboration/chats-api.html
 
-            Access the Chats API
+            Interact with the Chats API
 
          .. grid-item-card:: Meeting
             :columns: 6 6 6 6
             :class-title: sd-font-weight-bold sd-fs-4
             :link: ../../../apidoc/carbonio-ws-collaboration/meeting-api.html
 
-            Access the Meeting API
+            Create and modify meetings and  related features
 
    .. grid-item-card:: Storages
       :columns: 12 12 6 6
@@ -98,7 +98,7 @@ interact with |product| using the available APIs.
       :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
       :link: ../../../apidoc/carbonio-backup/backup-api.html
 
-      API to undelete blobs
+      Undelete blobs from |backup|
 
    .. grid-item-card:: Third-party API
       :columns: 12 12 12 12
