@@ -89,7 +89,7 @@ This section is dedicated to developers who want to interact with
    .. grid-item-card:: Storages
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
-      :link: ../../../apidoc/carbonio-backup/backup-api.html
+      :link: ../../../apidoc/carbonio-storages/storages-api.html
 
       Manage the upload, download, and deletion operations of items in |file|
 
