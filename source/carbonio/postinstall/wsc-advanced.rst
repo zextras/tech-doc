@@ -96,48 +96,10 @@ tables.
 .. hint:: The |mesh| token can be retrieved using the procedure
    described in section :ref:`ts-token`.
 
-Configuration tables
---------------------
+Configuration table
+-------------------
 
-The following tables are available to optimise |wsc|: :ref:`Push
-Connector <wsc-pool-opt>`, :ref:`Push Notifications Database
-<wsc-push-opt>`, and :ref:`the WSC databases <wsc-db-opt>`.
-
-.. _wsc-pool-opt:
-
-.. card:: Push Connector 
-
-   The following values can be modified via the |mesh| interface (see
-   Section :ref:`mesh-gui`) or via the CLI, using the commands that
-   follow the table.
-
-   .. csv-table::
-      :header: "Key name", "Default value"
-      :widths: 70, 30
-
-      "carbonio-push-connector/hikari/min-idle-connections", "10"
-      "carbonio-push-connector/hikari/max-pool-size", "10"
-      "carbonio-push-connector/hikari/idle-timeout", "10000"
-      "carbonio-push-connector/hikari/leak-detection-threshold", "5000"
-
-   Once you modify any of these changes, restart the service.
-
-   .. code:: console
-
-      # systemctl restart carbonio-push-connector
-
-.. _wsc-push-opt:
-
-.. card:: Configure Push Notifications Database
-
-   .. csv-table::
-      :header: "Key name", "Default value"
-      :widths: 70, 30
-
-      "carbonio-notification-push/hikari/min-idle-connections", "10"
-      "carbonio-notification-push/hikari/max-pool-size", "10"
-      "carbonio-notification-push/hikari/idle-timeout", "10000"
-      "carbonio-notification-push/hikari/leak-detection-threshold", "5000"
+The following table shows the values available to modify the WSC database.
 
 .. _wsc-db-opt:
       
