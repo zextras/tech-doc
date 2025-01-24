@@ -6,10 +6,6 @@
 all the objects it needs to manage. The main database can be
 configured in few steps.
 
-.. note:: If you are running |product| on RHEL 8, make sure you
-   installed and configured PostgreSQL 16 according to the instruction
-   in section :ref:`preliminary`.
-
 We start by defining a *robust password* for PostgreSQL's
 administrative user.
 

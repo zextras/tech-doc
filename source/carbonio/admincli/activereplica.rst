@@ -1,8 +1,8 @@
 .. _activereplica:
 
-==============
-Active Replica
-==============
+===============
+ |carbonio| HA
+===============
 
 The |product| architecture is mostly based on services that make nodes
 *stateless*, redundant, and clustered *by design*.  The only
