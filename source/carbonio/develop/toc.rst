@@ -4,8 +4,8 @@
  API
 =====
 
-This section is dedicated to developers who want to programmatically
-interact with |product| using the available APIs.
+This section is dedicated to developers who want to interact with
+|product| using the available APIs.
 
 .. grid:: 1 2 2 3
    :gutter: 3
@@ -89,7 +89,7 @@ interact with |product| using the available APIs.
    .. grid-item-card:: Storages
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
-      :link: ../../../apidoc/carbonio-backup/backup-api.html
+      :link: ../../../apidoc/carbonio-storages/storages-api.html
 
       Manage the upload, download, and deletion operations of items in |file|
 

@@ -2,8 +2,8 @@
  API
 =====
 
-This section is dedicated to developers who want to programmatically
-interact with |product| using the available APIs.
+This section is dedicated to developers who want to interact with
+|product| using the available APIs.
 
 .. grid:: 1 2 2 3
    :gutter: 3
