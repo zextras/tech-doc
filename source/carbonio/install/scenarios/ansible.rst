@@ -93,14 +93,6 @@ manager. Please refer to the `official installation guide
 <https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html>`_.
 This procedure pulls all the necessary dependencies, including **python3**.
 
-If you prefer alternative installation methods, like using manual
-python package installation, containers, or from source code, please
-refer to the `Installing Ansible
-<https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html>`_
-section of the official documentation, which includes also
-installation requirements.
-
-
 To verify that installation was successful, run the following command
 on the control node
 
