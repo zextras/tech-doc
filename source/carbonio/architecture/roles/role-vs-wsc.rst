@@ -72,6 +72,11 @@ to the underlying operating system.
 
          # dnf install carbonio-videorecorder
 
+Pending setups
+--------------
+
+.. include:: /_includes/_installation/pset.rst
+
 You can then enable the Video Recorder on a user, COS, or global
 level: please refer to section :ref:`vs-recorder-conf` for
 directions.
