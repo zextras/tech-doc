@@ -3,7 +3,35 @@
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 The last task to complete before finishing installation, is to
-activate |product| license. You can activate the license from the
+activate the |product| license.
+
+
+How to obtain a |product| License
+---------------------------------
+
+#. Fill the `Form <https://zextras.com/carbonio#contactsales>`_ with:
+
+   - First name
+   - Last name
+   - Company
+   - Email
+   - Phone (optional)
+
+#. Add the comments you might have on the **Additional notes** textarea
+
+#. Select a country from the drop-down menu
+
+#. Accept |zx| terms and conditions
+
+#. Click the **Submit** button to proceed
+
+A Sales representative will get back to you shortly.
+
+
+How to activate a |product| License 
+-----------------------------------
+
+You can activate the license from the
 command line or from the graphical administrator interface.
 
 .. grid::
