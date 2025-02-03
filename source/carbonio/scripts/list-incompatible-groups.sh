@@ -1,6 +1,25 @@
 echo -e "User\tAddressBook folder\tGroupName\n"
 for i in $(mysql -e "show databases like 'mboxgroup%'" -N -B);
-     do echo "select mailbox.comment, folder.name, TRIM(TRAILING ':' from (SUBSTRING_INDEX(SUBSTRING_INDEX(mi.metadata, 'fullName', 1),':',-2)))  from $i.mail_item as mi, $i.mail_item as folder, zimbra.mailbox as mailbox where mi.mailbox_id=mailbox.id and folder.mailbox_id=mailbox.id and  folder.id=mi.folder_id and  mi.metadata like 'd3:fldd6:fileA%' and (mi.metadata like '%d1:t1:C%' or mi.metadata like '%d1:t1:G%');"; done | mysql -B -N 
+do
+  echo "
+  SELECT 
+    mailbox.comment, 
+    folder.name, 
+    TRIM(TRAILING ':' FROM 
+        CASE
+            WHEN RIGHT(TRIM(TRAILING ':' FROM SUBSTRING_INDEX(SUBSTRING_INDEX(mi.metadata, 'fullName', 1), ':', -2)), 1) = '8'
+            THEN LEFT(TRIM(TRAILING ':' FROM SUBSTRING_INDEX(SUBSTRING_INDEX(mi.metadata, 'fullName', 1), ':', -2)), LENGTH(TRIM(TRAILING ':' FROM SUBSTRING_INDEX(SUBSTRING_INDEX(mi.metadata, 'fullName', 1), ':', -2))) - 1)
+            ELSE TRIM(TRAILING ':' FROM SUBSTRING_INDEX(SUBSTRING_INDEX(mi.metadata, 'fullName', 1), ':', -2))
+        END
+    ) AS group_name
+  FROM $i.mail_item AS mi
+  JOIN $i.mail_item AS folder ON folder.id = mi.folder_id
+  JOIN zimbra.mailbox AS mailbox ON mi.mailbox_id = mailbox.id AND folder.mailbox_id = mailbox.id
+  WHERE mi.metadata LIKE 'd3:fldd6:fileA%' 
+    AND (mi.metadata LIKE '%d1:t1:C%' OR mi.metadata LIKE '%d1:t1:G%');
+  ";
+done | mysql -B -N
+
 
 echo """
 NB: the folder refers the one that contains the incompatible group, but this could be nested
