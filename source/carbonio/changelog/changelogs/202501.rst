@@ -1,0 +1,275 @@
+Changelog 2025-01
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202501-1042 Removed notification packages in Single-Scenario
+
+These two packages were removed from the single-server scenario: carbonio-notification-push-db
+and carbonio-notification-push
+
+
+.. rubric:: 202501-1038 New package in 24.12 release
+
+A new package ``carbonio-catalog`` is required in release **24.12** and must be installed manually upon upgrading.
+
+Changes in the source code can be found in :pr:`930`.
+
+
+.. rubric:: 202501-1032 Add example to script output
+
+We added an example output to a script that extracts incompatible groups from Zextras-compatible platform during the migration procedure.
+
+Changes in the source code can be found in :pr:`921`.
+
+
+.. rubric:: 202501-1029 New layout for API index
+
+The index pages of the API has been renewed and improved, to allow for a quicker search and access to the relevant APIs.
+
+Changes in the source code can be found in :pr:`937` and :pr:`939`.
+
+
+.. rubric:: 202501-1027 Add Auth section in Troubleshooting
+
+Changes in the source code can be found in :pr:`912`.
+
+
+.. rubric:: 202501-1026 Improve Troubleshooting section
+
+The *Troubleshooting Carbonio* Section has now two more subsections: the new *Authentication* and *Directory Server*, split from the existent *Mesh and Directory Server*.
+
+Changes in the Changes in the source code can be found in :pr:`904`, :pr:`905`,:pr:`907`, and :pr:`909`. 
+
+
+.. rubric:: 202501-1024 Documentation for 24.12.1
+
+Documentation for |product| version **24.12.1** has been published.
+
+Changes in the Changes in the source code can be found in :pr:`902` and :pr:`903`. 
+
+
+.. rubric:: 202501-1017 New terms in glossary
+
+New terms have been added to the glossary, to improve visibility of
+several words and concepts important for |product|. For the same
+reason, also a number of new items have been added to the index. 
+
+Changes in the source code can be found in :pr:`916`.
+
+
+.. rubric:: 202501-1007 Rewrite Introduction
+
+We rewrote the introduction to provide a more up-to-date description of |product| and of its functionalities.
+
+Changes in the source code can be found in :pr:`927`.
+
+
+.. rubric:: 202501-1001 Separate upgrade-related troubleshooting issues
+
+Section *Troubleshooting Carbonio* has been populated with a new subsection *Common Issues*, that collects issues not directly related with the upgrade procedure.
+
+Changes in the source code can be found in :pr:`900`. 
+
+
+.. rubric:: 202501-1000 Rename Sections
+
+Sections *Admin by CLI* and *Admin by GUI* have renamed for clarity in *Admin by Command Line* and *Admin by Graphical Interface*, respectively.
+
+Changes in the source code can be found in :pr:`899`. 
+
+
+.. rubric:: 202501-999 Move Migration to Carbonio section
+
+Section *Migration to Carbonio* has been switched place with *Post-Install*.
+
+Changes in the source code can be found in :pr:`898`.
+
+
+.. rubric:: 202501-998 Removed note for Files
+
+An obsolete note has been removed from the list of Roles.
+
+Changes in the source code can be found in :pr:`895`.
+
+
+.. rubric:: 202501-995  Documentation Changelog December 2024
+
+The technical documentation's changelog has been published
+
+Changes in the source code can be found in :pr:`827`.
+
+
+.. rubric:: 202501-986 Promote Architecture of Carbonio section
+
+The *Architecture of Carbonio* section has been promoted as a top-level section which also includes the Roles' manual installation.
+
+Changes in the source code can be found in :pr:`878`. and :pr:`876`.
+
+
+.. rubric:: 202501-985 Let images open in new tab
+
+We modified the code that opens links to external resources in a new tab to let also images always open in new tabs.
+
+Changes in the source code can be found in :pr:`877`.
+
+
+.. rubric:: 202501-984 Review Install section
+
+
+The documentation's *Install* section has been improved to include a description of the *Ansible* and *Manual* installation procedures, including a schematic workflow of the manual installation
+
+Changes in the source code can be found in :pr:`875`.
+
+
+.. rubric:: 202501-983 Review Upgrade Section
+
+To simplify the structure of the *Upgrade* Section, we moved some content (specifically, PostgreSQL upgrade and connections to the Database) to Section *Troubleshooting*.
+
+Changes in the source code can be found in :pr:`874` and :pr:`889`.
+
+
+.. rubric:: 202501-982 Review Introduction section
+
+The documentation's introduction has been improved:
+
+* Section *How to report an issue* has been promoted as top-level entry
+
+* There, a link to the *Monitoring Carbonio* section has been added, to help users in the data collection when they open tickets
+
+* Slight fixes to text have been introduced to fix some inaccuracy
+
+Changes in the source code can be found in :pr:`873` and :pr:`876`.
+
+
+.. rubric:: 202501-977 New diagram for Full Standard scenario
+
+A graphviz-based diagram has been added to the Full Standard Scenario's documentation.
+
+Changes in the source code can be found in :pr:`866`.
+
+
+.. rubric:: 202501-976 New diagram for Full Standard scenario
+
+A graphviz-based diagram has been added to the Full Small Scenario's documentation.
+
+Changes in the source code can be found in :pr:`865`.
+
+
+.. rubric:: 202501-975 Add a graph to Ansible installation
+
+A diagram was added to explain the |product| installation with Ansible.
+
+Changes in the source code can be found in :pr:`864`.
+
+
+.. rubric:: 202501-972 Factorise pending-setups instructions
+
+Instrutions for running the :command:`pending-setups` command have been put in a dedicated file to be included where necessary.
+
+Changes in the source code can be found in :pr:`858`.
+
+
+.. rubric:: 202501-968 Carbonio 24.12.0 product changelog
+
+The |product| Product Changelog including all changes in the software has been added to the 24.12.0 documentation.
+
+Changes in the source code can be found in :pr:`846` and :pr:`856`.
+
+
+.. rubric:: 202501-965 Improvements to the |product| installation on RHEL systems
+
+The installation of |product| on RHEL systems has been actualised and improved; this had some impact also on the installation requirements for both Ansible and Ubuntu.
+
+Changes in the source code can be found in :pr:`844` and :pr:`848`.
+
+
+.. rubric:: 202501-964 Review browser compatibility table
+
+We updated the list of browser supported by |product|.
+
+Changes in the source code can be found in :pr:`859`.
+
+
+.. rubric:: 202501-938 Rewrite Scenario Essential
+
+The Manual installation of the *Essential* Scenario was rewritten in a step-by-step way to improve clarity and support an easier workflow for the whole process.
+
+Changes in the source code can be found in :pr:`855`. 
+
+
+.. rubric:: 202501-804 Restore REUSE compatibility
+
+The compatibility of the documentation with the REUSE framework has been restored.
+
+Changes in the source code can be found in :pr:`892`.
+
+
+.. rubric:: 202501-746 Testing and benchmarking an S3 bucket
+
+We added a new piece of documentation that guide a user in checking
+the availability and connection to an S3 bucket and in testing the
+bucket's performances.
+
+Changes in the source code can be found in :pr:`920`.
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202501-1044 Uniform usage of White-label
+
+We made sure that the |wl| term, which was used with different syntax, is now been used consistently with the same spelling everywhere.
+
+Changes in the source code can be found in :pr:`932`.
+
+.. rubric:: 202501-1036 Fixed avdb updater service
+
+A step necessary for its installation and the command for Red Hat have been added.
+The package has been added to the Proxy role
+
+.. rubric:: 202501-1031 Wrong path of mailbox.log file
+
+In the `Migration to Carbonio - From Zextras Suite Compatible
+Platform` Section, we fixed the path of the :file:`mailbox.log` file.
+
+Changes in the source code can be found in :pr:`920`.
+
+.. rubric:: 202501-1005 Package missing in Database Connector Role removal
+
+After the removal of the *Database Connector* Role, the ``carbonio-task-db`` was not in the list of those to install on the *Database* Role.
+
+Changes in the source code can be found in :pr:`915`.
+
+.. rubric:: 202501-994 Carbonio services check
+
+We fixed the command to restart services after the installation and added a new section with directions to check whether services are running or not.
+
+Changes in the source code can be found in :pr:`891`.
+
+.. rubric:: 202501-981 Slight corrections in the introduction
+
+A few commands were amended to be more correct.
+
+Changes in the source code can be found in :pr:`870`.
+
+.. rubric:: 202501-973 Remove notification packages
+
+The packages that provide notifications for |wsc| have been removed from the Roles installation.
+
+Changes in the source code can be found in :pr:`862`.
+
+.. rubric:: 202501-961 Wrong Ansible inventory for full-redundant scenario
+
+The Ansible inventory file for the *Full Redundant* Scenario has been fixed: the number of Nodes has been increased to 14, and in the documentation two alternatives have been described to forward the UDP stream for video calls.
+
+Changes in the source code can be found in :pr:`863`.
+
+*****
+
+End of changelog
+
