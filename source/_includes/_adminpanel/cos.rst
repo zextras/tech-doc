@@ -116,14 +116,16 @@ Advanced
 ~~~~~~~~
 
 Multiple *Advanced* options can be configured here, divided into
-multiple groups
+groups.
 
 .. index:: Undelete mail; by COS
 
 General Options
-  The option in this group allows users of the COS to access the
-  *Undelete E-mail* feature, which allows each user to retrieve an
-  e-mail from the |backup|.
+  The options in this group allow users of the COS to access the
+  *Undelete E-mail* feature, so each user can autonomously retrieve an
+  e-mail from the |backup|. Global Administrators have also the
+  ability to enable or disable the Backup feature for all users in the
+  |cos|.
 
 Forwarding
   Two options govern how to forward messages: how long an e-mail
