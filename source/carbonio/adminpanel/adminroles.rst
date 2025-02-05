@@ -144,6 +144,7 @@ whole.
 
      * Modify COS and Accounts: Enable or disable OTP Management Feature
      * Manage OTPs for Users: Create, delete, and list OTPs
+     * Enable and disable |backup| at |cos| level
 
    * Manage Admins and their roles.
    * Manage Global Configuration

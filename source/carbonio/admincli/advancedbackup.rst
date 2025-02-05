@@ -1010,13 +1010,18 @@ COS-level Backup Management allows the administrator to disable
 words, all members of the COS will never be part of a backup: this
 allows to lower storage usage.
 
+.. _bck-adv-bck-cos:
+
 Disable Backup for a COS
 ------------------------
 
-Since it's currently only possible to manage the enabling and disabling of this feature on a COS by command line,
-to disable the backup for a given COS use command:
+|backup| can be enabled or disabled at |cos| level using command
+:command:`carbonio config set cos <COS_NAME> backupEnabled false`.
 
-:command:`carbonio config set cos <COS_NAME> backupEnabled false`
+.. seealso:: This functionality can be managed from the |adminui|,
+   please refer to Section :ref:`cos-adv` for details. There you can
+   also find an explanation of what happens to accounts that are not
+   included in the backup.
 
 For example to remove backup from COS called EXTERNAL_COLLABORATORS, use
 
@@ -1024,38 +1029,24 @@ For example to remove backup from COS called EXTERNAL_COLLABORATORS, use
 
    zextras$ carbonio config set cos EXTERNAL_COLLABORATORS backupEnabled false
 
-To enable again the backup, run the `unset` command:
+To enable again the backup, either run the `unset` command
 
 .. code:: console
 
    zextras$ carbonio config unset cos EXTERNAL_COLLABORATORS backupEnabled
 
-Or, in alternative, explicitly set to `true`:
+Alternatively, explicitly set the attribute to `true`:
 
 .. code:: console
 
    zextras$ carbonio config set cos EXTERNAL_COLLABORATORS backupEnabled true
 
-
-You can also check the backup status for a COS,
-for example for a COS called EXTERNAL_COLLABORATORS, use
+You can also check the backup status for a COS, for example for a COS
+called EXTERNAL_COLLABORATORS, use
 
 .. code:: console
 
    zextras$ carbonio config get cos EXTERNAL_COLLABORATORS backupEnabled
-
-
-When Backup is disabled, the following happens in the COS:
-
-- The RealTime Scanner will ignore all accounts
-  
-- The Export Backup function **will not export** the accounts
-
-- Accounts will be treated as **Deleted** by the backup system. This
-  means that after the data retention period expires, all data for
-  such accounts will be purged from the backup store. Re-enabling the
-  backup for a Class of Service will reset this behaviour to the
-  default one and mark accounts as **Active**.
 
 Disable Backup for an Account
 -----------------------------

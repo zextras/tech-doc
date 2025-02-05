@@ -116,14 +116,34 @@ Advanced
 ~~~~~~~~
 
 Multiple *Advanced* options can be configured here, divided into
-multiple groups
+groups.
 
 .. index:: Undelete mail; by COS
 
 General Options
-  The option in this group allows users of the COS to access the
-  *Undelete E-mail* feature, which allows each user to retrieve an
-  e-mail from the |backup|.
+  The options in this group allow users of the COS to access the
+  *Undelete E-mail* feature, so each user can autonomously retrieve an
+  e-mail from the |backup|. Global Administrators have also the
+  ability to enable or disable the Backup feature for all users in the
+  |cos|.
+
+  .. seealso:: The backup can be enabled or disabled by CLI as well,
+     please refer to Section :ref:`bck-adv-bck-cos` for example
+     commands.
+
+.. card:: Accounts not in Backup
+
+   When Backup is disabled, the following happens in the COS:
+
+   - The RealTime Scanner will ignore all accounts
+
+   - The Export Backup function **will not export** the accounts
+
+   - Accounts in the COS will be ignored by the backup system. This means
+     that after the data retention period expires, all data for such
+     accounts will be purged from the backup store. Re-enabling the
+     backup for a Class of Service will reset this behaviour to the
+     default one and mark accounts as **Active**.
 
 Forwarding
   Two options govern how to forward messages: how long an e-mail
