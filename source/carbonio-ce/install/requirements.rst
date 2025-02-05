@@ -315,7 +315,6 @@ corresponding Role is installed, for a proper communication among
       "7993", "TCP", "internal IMAP secure access"
       "7995", "TCP", "internal POP3 secure access"
       "8080", "TCP", "internal HTTP services access"
-      "8443", "TCP", "internal HTTPS services"
       "8735", "TCP", "Internal mailbox :octicon:`arrow-both` mailbox communication"
       "8742", "TCP", "internal HTTP services, advanced module"
       "8743", "TCP", "internal HTTPS services, advanced module"
