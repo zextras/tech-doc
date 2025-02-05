@@ -94,6 +94,12 @@ Next, we install all packages needed for |product|.
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql16-server
 
+      Initialise and enable the database
+
+      .. code:: console
+
+         # /usr/pgsql-16/bin/postgresql-16-setup initdb
+         # systemctl enable --now postgresql-16
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
@@ -123,3 +129,10 @@ Next, we install all packages needed for |product|.
          carbonio-files-public-folder-ui \
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql16-server
+
+      Initialise and enable the database
+
+      .. code:: console
+
+         # /usr/pgsql-16/bin/postgresql-16-setup initdb
+         # systemctl enable --now postgresql-16
