@@ -127,6 +127,24 @@ General Options
   ability to enable or disable the Backup feature for all users in the
   |cos|.
 
+  .. seealso:: The backup can be enabled or disabled by CLI as well,
+     please refer to Section :ref:`bck-adv-bck-cos` for example
+     commands.
+
+.. card:: Accounts not in Backup
+
+   When Backup is disabled, the following happens in the COS:
+
+   - The RealTime Scanner will ignore all accounts
+
+   - The Export Backup function **will not export** the accounts
+
+   - Accounts in the COS will be ignored by the backup system. This means
+     that after the data retention period expires, all data for such
+     accounts will be purged from the backup store. Re-enabling the
+     backup for a Class of Service will reset this behaviour to the
+     default one and mark accounts as **Active**.
+
 Forwarding
   Two options govern how to forward messages: how long an e-mail
   address can be and the maximum number of recipients allowed.
