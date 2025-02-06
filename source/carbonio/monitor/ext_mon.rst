@@ -1,8 +1,8 @@
-Monitoring Carbonio with external system
-========================================
+Ports and paths useful for monitoring
+=====================================
 
 This document describes the roles and the endpoints to which an external
-monitoring system (Zabbix, Nagios, …) should check to monitor tservices
+monitoring system (Zabbix, Nagios, …) should check to monitor services
 on a Carbonio infrastructure.
 
 Roles
