@@ -18,7 +18,6 @@ to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
 .. include:: /_includes/_upgrade/issue-mongoose.rst
-.. include:: /_includes/_upgrade/issue-catalog.rst
 
 .. _ts-up-older:
 
@@ -42,6 +41,19 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
+* Package :file:`carbonio-message-broker` needs to be installed on the
+  :ref:`Mesh and Directory <broker-pkg>` Node
+* You might be asked to keep or replace the :ref:`Janus
+  <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
+  configuration files
 
 .. include:: /_includes/_upgrade/issues.rst
-             
+.. include:: /_includes/_ts/broker.rst
+
+.. _upgrade-janus:
+
+.. include:: /_includes/_upgrade/issue-janus.rst
+
+.. _upgrade-mongoose:
+
+.. include:: /_includes/_upgrade/issue-mongoose.rst
