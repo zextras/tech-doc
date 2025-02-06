@@ -21,8 +21,8 @@ to |version|.
 
 .. _ts-up-older:
 
-Known Issue (Older Releases)
-============================
+Known Issues (Older Releases)
+=============================
 
 During the upgrade from an older |product| version, you **may**
 encounter one or more of the following issues that require a manual
