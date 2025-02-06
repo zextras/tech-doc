@@ -5,11 +5,9 @@ This document describes the roles and the endpoints to which an external
 monitoring system (Zabbix, Nagios, …) should check to monitor services
 on a Carbonio infrastructure.
 
-Roles
-=====
 
-MTA
----
+Role: MTA
+---------
 
 SMTP
 ~~~~
@@ -54,8 +52,8 @@ the following port from the external monitoring system.
 
 Port 8465
 
-Proxy
------
+Role: Proxy
+-----------
 
 IMAP/IMAPS
 ~~~~~~~~~~
@@ -81,8 +79,8 @@ port from the external monitoring system.
 
 Port 80/443
 
-Mailstore
----------
+Role: Mailstore
+---------------
 
 To monitor the LMTP service we are going to connect locally to the
 following ports from the external monitoring system.
@@ -105,8 +103,8 @@ the presence of the socket related to its process.
 
 Location of the socket file: ``/run/carbonio/mysql.sock``
 
-Cluster Service
----------------
+Role: Mesh and Directory
+------------------------
 
 PostgreSQL
 ~~~~~~~~~~
@@ -134,7 +132,8 @@ directly from Consul.
 
 Ports 8300 8500
 
---------------
+Role: Event streaming and other HA services
+-------------------------------------------
 
 With Activa Replica feature enabled the following are also necessary
 
@@ -162,8 +161,8 @@ the following port from the external monitoring system.
 
 Port 8008
 
-All VMs
--------
+All Nodes
+---------
 
 SSH
 ~~~
