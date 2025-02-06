@@ -36,6 +36,8 @@ Pending setups
 
 .. include:: /_includes/_installation/pset.rst
 
+.. _conf-memcached:
+
 Configure Memcached
 -------------------
 
