@@ -1,20 +1,22 @@
 .. _carbonio-upgrade:
 
-======================
- Upgrade From 24.12.0
-======================
+====================
+ Upgrade From 24.12
+====================
 
-This section guides you in the upgrade from |product| **24.12.0** to the
-latest **24.12.1**.
+This section guides you in the upgrade from |product| **24.12**,
+regardless of any specific patch numbers, to the latest **25.3.0**.
 
 .. _up-prev-req:
 
 Requirements & Preliminaries
 ============================
 
-The upgrade to |version| impacts the following *Roles*, packages, or
-third-party software, which require some manual interaction before,
-during, or after the procedure.
+The upgrade to |version| may include some additional procedure that
+impacts the following *Roles*, packages, or third-party software,
+which require some manual interaction before, during, or after the
+procedure. If you already have implemented them, please skip to the
+next section.
 
 .. card:: Operating system
 
@@ -30,6 +32,12 @@ during, or after the procedure.
    2024 <https://www.postgresql.org/support/versioning/>`_ end of the
    year. Check section :ref:`pg-upgrade` for directions.
 
+Additionally, please check Section :ref:`ts-up-prev` under
+:doc:`/troubleshooting/toc` before starting the upgrade. There you
+find a list of manual activities that might be required *during* or
+*after* the completion of the upgrade procedure that impact
+third-party software or new packages.
+
 .. _up-proc:
 
 Upgrade Procedure
@@ -38,9 +46,7 @@ Upgrade Procedure
 The upgrade procedures requires that you log in to each node of
 your |product| infrastructure and execute some command, then rebooting
 the Node as soon as you have successfully completed the
-procedure. Because you need to follow the output of the commands and
-make sure everything proceeds flawlessly, this procedure is suggested
-only if you want to have the control of all the steps.
+procedure. 
 
 .. hint:: For improved security, to prevent any data loss, it is
    suggested to **make a backup** or **take a snapshot** (if you are
@@ -50,12 +56,6 @@ We can not provide any estimate on the time required by the upgrade,
 because various factors may impact the duration, including the number
 of Nodes, their load, the speed of network connection, and so on.
 
-In some cases, incompatibilities may seldom arise in the upgrade of
-third-party software, which may lead to some additional manual steps
-to be carried out, so please check Section :ref:`ts-up-prev` under
-:doc:`/troubleshooting/toc` before starting the upgrade. Check also
-Section :ref:`up-prev-req` for a list of major upgrades that impact
-Roles and third-party software.
 
 .. _upgrade-nodes:
 
