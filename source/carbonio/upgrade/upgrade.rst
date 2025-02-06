@@ -7,7 +7,7 @@
 This section guides you in the upgrade from |product| **24.12**,
 regardless of any specific patch numbers, to the latest **25.3.0**.
 
-.. _up-older-req:
+.. _up-prev-req:
 
 Requirements & Preliminaries
 ============================
