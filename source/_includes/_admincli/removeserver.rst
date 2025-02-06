@@ -1,4 +1,3 @@
-
 There are a number of scenarios in which an existing |product| Node
 must be removed from a |product| infrastructure within an
 organisation, for example:
@@ -34,9 +33,16 @@ section, you need to:
 #. Install these Roles on other Nodes
 
 #. Take note of the FQDN of the Node to be removed, because it will
-   be needed. It will be denoted as ``serverHostname`` in the procedure.
+   be needed. It will be denoted as ``serverHostname`` in the procedure
 
-At this point you can start the removal procedure. If you plan to
+#. in case you remove a Proxy Role, check that the Preview Role is
+   correctly configured. See Section :ref:`memcached` below for
+   directions.
+
+Node Removal
+============
+
+You can now start the removal procedure. If you plan to
 remove more than one Node, execute the following steps for each Node.
 
 .. card:: Step 1, leave |mesh|
@@ -65,7 +71,6 @@ remove more than one Node, execute the following steps for each Node.
 
       zextras$ carbonio prov ds serverHostname
 
-
 ..  card:: Step 3, verify removal
 
     Log in to the Node equipped with the Directory Server Role and
@@ -89,3 +94,55 @@ remove more than one Node, execute the following steps for each Node.
     The output of the command should be empty, meaning that the old
     Node is not part of the |product| infrastructure anymore. You can
     now power off the Node and decommission it.
+
+.. _memcached:
+
+Fixing the Preview Role Configuration
+=====================================
+
+In case you are removing from the infrastructure a Node which installs
+a Proxy, you need to adjust a configuration file on the Preview Node.
+
+This is required by the **memcached** configuration that supports the
+Preview Role and consists of replacing a configuration value with the
+IP address of the new Proxy Role.
+
+The procedure is slight different if you if you replace an
+existent Proxy with a new one or simply decommission one Proxy
+but keep an existing one (or more that one).
+
+.. card:: Replace a Proxy Node
+
+   Supposing that the IP of the decommissioned Proxy Node is
+   **172.16.0.12**, and the new one is **172.16.0.73**, you need to
+   change in file :file:`/etc/carbonio/preview/config.ini` the line
+
+   .. code-block:: ini
+
+      memcached_server_full_path_urls = 172.16.0.12:11211
+
+   into
+
+   .. code-block:: ini
+
+      memcached_server_full_path_urls = 172.16.0.73:11211
+
+.. card:: Do not replace a Proxy Node
+
+   In case you decommission a Proxy Node without replacing it, you
+   still need to edit file :file:`/etc/carbonio/preview/config.ini`,
+   but you need to delete the IP of the decommissioned Proxy Node, for
+   example
+
+   .. code-block:: ini
+
+      memcached_server_full_path_urls = 172.16.0.12:11211,172.16.0.22:11211
+
+   becomes
+
+   .. code-block:: ini
+
+      memcached_server_full_path_urls = 172.16.0.22:11211
+
+Please refer to Section :ref:`conf-memcached` in Preview Role's
+installation for details.
