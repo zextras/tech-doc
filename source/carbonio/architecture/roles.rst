@@ -111,6 +111,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-user-management
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
+      * carbonio-search-ui
       * carbonio-avdb-updater
       * service-discover-agent
       * carbonio-catalog

@@ -99,6 +99,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
       * carbonio-files-public-folder-ui
+      * carbonio-search-ui
       * service-discover-agent
       * carbonio-catalog
 
