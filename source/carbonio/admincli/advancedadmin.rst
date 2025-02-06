@@ -81,3 +81,19 @@ at a later point with the following command:
 
    # carbonio prov modifyCos {name} [attribute value ...]
 
+.. _enable-smime:
+
+S/MIME support
+--------------
+
+S/MIME support for all users can be enabled using command
+
+.. code:: console
+
+   zextras$ carbonio config set global enableSmimeEncryption TRUE
+
+Users will then be able to upload certificates to be used for S/MIME
+signing; setting it to ``false`` will prevent users from using the
+feature.
+
+
