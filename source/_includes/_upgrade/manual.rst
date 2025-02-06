@@ -47,7 +47,7 @@ Server, then all the other Nodes in the same order of installation.
                # dnf upgrade --best --allowerasing
 
    .. grid-item-card:: Step 3. (Optional) Remove unused packages
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       After the latest packages have been installed, make sure that
       you do not have unused packages still installed on your system.
@@ -68,15 +68,37 @@ Server, then all the other Nodes in the same order of installation.
 
                # dnf autoremove
 
-   .. grid-item-card:: Step 4. Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 4. Install new package
+      :columns: 12 12 12 12
+
+      The new package :file:`carbonio-search-ui` is available and
+      needs to be installed on the **Proxy** Node.
+
+      .. tab-set::
+
+         .. tab-item:: Ubuntu
+            :sync: ubuntu
+
+            .. code:: console
+
+               # apt install carbonio-search-ui
+
+         .. tab-item:: RHEL
+            :sync: rhel
+
+            .. code:: console
+
+               # dnf install carbonio-search-ui
+
+   .. grid-item-card:: Step 5. Register upgraded packages to |mesh|
       :columns: 12 12 6 6
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 5. Reboot
-      :columns: 12 12 12 12
+   .. grid-item-card:: Step 6. Reboot
+      :columns: 12 12 6 6
 
       Once the upgrade has completed successfully, run command:
 

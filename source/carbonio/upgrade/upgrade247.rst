@@ -17,10 +17,10 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* In this release 24.12.0, the **DB connector Role** needs to be
-  removed, therefore before starting the upgrade procedure please read
-  carefully section :ref:`remove-pgpool` and execute the procedure
-  described there.
+* From release 24.12.0, the **DB connector Role** is no longer
+  supported and needs to be removed, therefore before starting the
+  upgrade procedure please read carefully section :ref:`remove-pgpool`
+  and execute the procedure described there.
 
 * Since the **24.3.0** release, two major improvements have become
   available for |product|:
@@ -29,18 +29,21 @@ the upgrade:
   #. support for **PostgreSQL 16**. Make sure to upgrade it, because
      **PostgreSQL 12** went in :abbr:`EOL` on **14th November 2024**.
 
+  .. hint:: While you can choose to upgrade only |product|, we
+     encourage you to introduce both the improvements into your
+     infrastructure.
+
 * You need to carry out the procedure on **each Node**, starting with
   the one featuring the :ref:`role-mesh-install`.
 
 * During the upgrade of |product|, you might need to carry out manual
   tasks, for example because you need to modify some configuration
-  file or you some error or warning is shown. In this case, please
-  refer to the :ref:`upgrade troubleshooting <ts-upgrade>` section.
+  file or some error or warning is shown. Please refer to Section
+  :ref:`ts-up-older` in :doc:`Upgrade Troubleshooting
+  </troubleshooting/upgrade>` for directions on how to tackle and fix
+  them.
 
-While you can choose to upgrade only |product|, we encourage you to
-introduce both the improvements into your infrastructure.
-
-Upgrade paths
+Upgrade Paths
 -------------
 
 Depending on the |carbonio| and operating system starting versions,

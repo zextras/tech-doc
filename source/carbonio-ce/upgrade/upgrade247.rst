@@ -24,18 +24,21 @@ the upgrade:
   #. support for **PostgreSQL 16**. Make sure to upgrade it, because
      **PostgreSQL 12** went in :abbr:`EOL` on **14th November 2024**.
 
+  .. hint:: While you can choose to upgrade only |product|, we
+     encourage you to introduce both the improvements into your
+     infrastructure.
+
 * You need to carry out the procedure on **each Node**, starting with
   the one featuring the :ref:`role-mesh-install`.
 
 * During the upgrade of |product|, you might need to carry out manual
   tasks, for example because you need to modify some configuration
-  file or you some error or warning is shown. In this case, please
-  refer to the :ref:`upgrade troubleshooting <ts-upgrade>` section.
+  file or some error or warning is shown. Please refer to Section
+  :ref:`ts-up-older` in :doc:`Upgrade Troubleshooting
+  </troubleshooting/upgrade>` for directions on how to tackle and fix
+  them.
 
-While you can choose to upgrade only |product|, we encourage you to
-introduce both the improvements into your infrastructure.
-
-Upgrade paths
+Upgrade Paths
 -------------
 
 Depending on the |carbonio| and operating system starting versions,

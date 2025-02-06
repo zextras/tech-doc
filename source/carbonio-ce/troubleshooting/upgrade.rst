@@ -13,11 +13,13 @@ old releases.
 Known Issues (Current Release)
 ==============================
 
-There is no know issue that impacts either the upgrade process to
-|product| |version| or the |product| operations afterwards.
+.. There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+This is a list of known issues that impact |product| after the upgrade
+to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
-.. include:: /_includes/_upgrade/issue-catalog.rst
 
 
 .. _ts-up-older:
@@ -39,7 +41,12 @@ more of the following issues that require a manual intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
-* A :ref:`new package <upgrade-catalog>` must be installed
+* The :ref:`new package <upgrade-catalog>` ``carbonio-catalog`` must
+  be installed
+* Package :file:`carbonio-message-broker` needs to be installed on the
+  :ref:`Mesh and Directory <broker-pkg>` Node
+* You might be asked to keep or replace the :ref:`Janus
+  <upgrade-janus>` configuration files
 
 .. _manual-grafana:
 
@@ -183,3 +190,9 @@ more of the following issues that require a manual intervention.
 .. _upgrade-catalog:
 
 .. include:: /_includes/_upgrade/issue-catalog.rst
+.. include:: /_includes/_ts/broker.rst
+
+.. _upgrade-janus:
+
+.. include:: /_includes/_upgrade/issue-janus.rst
+

@@ -1,5 +1,3 @@
-.. _upgrade-mongoose:
-
 .. card:: Mongoose configuration file
 
 

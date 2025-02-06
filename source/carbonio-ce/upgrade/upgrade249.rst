@@ -4,68 +4,55 @@
  Upgrade From 24.9
 ===================
 
-This section guides you in the upgrade from |product| **24.9**,
-regardless of any specific patch numbers, e.g. *24.9.1*.
+This section guides you in the upgrade from |product| **24.7**,
+regardless of any specific patch numbers, e.g. *24.7.1*, to the latest
+available version, |release|, which contains a number of technical and
+performance improvements, bug fixes, and security fixes.
 
-.. _up249-req:
+Requirements and Limitations
+----------------------------
 
-Requirements & Preliminaries
-============================
+Before proceeding with the upgrade, please read carefully this whole
+section.
 
-The upgrade to |version| impacts the following *Roles*, packages, or
-third-party software, which require some manual interaction before,
-during, or after the procedure.
+The following rules apply to any of the paths you decide to choose for
+the upgrade:
 
-.. card:: Operating system
+* Since the **24.3.0** release, two major improvements have become
+  available for |product|:
 
-   |product| can be installed on **Ubuntu 22.04** and **RHEL 9**
-   (|beta| support) since version **24.5.0**.  If you plan to upgrade
-   both the OS and |product|, please refer to Section
-   :ref:`os-upgrade`.
+  #. support for new Operating Systems (OS): **Ubuntu 22.04** and **RHEL 9**
+  #. support for **PostgreSQL 16**. Make sure to upgrade it, because
+     **PostgreSQL 12** went in :abbr:`EOL` on **14th November 2024**.
 
-.. card:: PostgreSQL 16 support
+  .. hint:: While you can choose to upgrade only |product|, we
+     encourage you to introduce both the improvements into your
+     infrastructure.
 
-   PostgreSQL must be upgraded from version **12** to version **16**,
-   because version 12 has reached the End Of Life on `14th November
-   2024 <https://www.postgresql.org/support/versioning/>`_ end of the
-   year. Check section :ref:`pg-upgrade` for directions.
+* You need to carry out the procedure on **each Node**, starting with
+  the one featuring the :ref:`role-mesh-install`.
 
-Upgrade Procedure
-=================
+* During the upgrade of |product|, you might need to carry out manual
+  tasks, for example because you need to modify some configuration
+  file or some error or warning is shown. Please refer to Section
+  :ref:`ts-up-older` in :doc:`Upgrade Troubleshooting
+  </troubleshooting/upgrade>` for directions on how to tackle and fix
+  them.
 
-The upgrade procedures requires that you log in to each node of
-your |product| infrastructure and execute some command, then rebooting
-the Node as soon as you have successfully completed the
-procedure. Because you need to follow the output of the commands and
-make sure everything proceeds flawlessly, this procedure is suggested
-only if you want to have the control of all the steps.
-
-.. hint:: For improved security, to prevent any data loss, it is
-   suggested to **make a backup** or **take a snapshot** (if you are
-   using an hypervisor) of each Node before upgrading.
-
-We can not provide any estimate on the time required by the upgrade,
-because various factors may impact the duration, including the number
-of Nodes, their load, the speed of network connection, and so on.
-
-In some cases, incompatibilities may seldom arise in the upgrade of
-third-party software, which may lead to some additional manual steps
-to be carried out, so please check Section :ref:`ts-up-prev` under
-:doc:`/troubleshooting/toc` before starting the upgrade. Check also
-Section :ref:`up249-req` for a list of major upgrades that impact
-Roles and third-party software.
-
-Upgrade Nodes
+Upgrade Paths
 -------------
 
-.. card:: Preliminary Tasks
+Depending on the |carbonio| and operating system starting versions,
+you might need to carry out different tasks.
 
-   .. include:: /_includes/_upgrade/ds.rst
+#. If you only want to upgrade |product|, you simply upgrade using the
+   standard procedure: please refer to section :ref:`carbonio-upgrade`
 
-.. include:: /_includes/_upgrade/node-ce249.rst
+#. If you want to upgrade PostgreSQL, but not the OS, you need to
+   follow directions in :ref:`pg-upgrade` before upgrading |product|
 
-.. note:: After the upgrade has successfully completed, we strongly
-   suggest to :ref:`change Directory Server credentials
-   <ts-ds-credentials>` and :ref:`empty the pre-auth keys
-   <ts-auth-keys>`.
- 
+#. If you want to upgrade the OS, you **must** upgrade PostgreSQL as
+   well, since PostgreSQL 12 is not supported in either Ubuntu 22.04
+   or RHEL 9. This is the most time-consuming resource, because you
+   need to carry out multiple tasks. Please refer to Section
+   :ref:`os-upgrade` for directions.

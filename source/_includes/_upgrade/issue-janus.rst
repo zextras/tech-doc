@@ -1,5 +1,3 @@
-.. _upgrade-janus:
-
 .. card:: Janus configuration file
 
 
