@@ -20,6 +20,11 @@ Bugfix List
 **SHELL-270: Fix the behaviour about UM of Polling Interval**
    The value of LongPolling is now handled correctly 
 
+**WSC-1826: Updated videoserver-advanced packages**
+   Updated ``carbonio-videoserver-advanced`` and ``carbonio-videorecorder``
+   packages in order to use ``/etc/zextras/service-discover/templates/``
+   as consul templates directory.
+
 *****
 
 End of changelog
