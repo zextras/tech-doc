@@ -20,7 +20,6 @@ This is a list of known issues that impact |product| after the upgrade
 to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
-.. include:: /_includes/_upgrade/issue-catalog.rst
 
 
 .. _ts-up-older:
@@ -42,12 +41,12 @@ more of the following issues that require a manual intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
-* A :ref:`new package <upgrade-catalog>` must be installed
+* The :ref:`new package <upgrade-catalog>` ``carbonio-catalog`` must
+  be installed
 * Package :file:`carbonio-message-broker` needs to be installed on the
   :ref:`Mesh and Directory <broker-pkg>` Node
 * You might be asked to keep or replace the :ref:`Janus
-  <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
-  configuration files
+  <upgrade-janus>` configuration files
 
 .. _manual-grafana:
 
@@ -197,6 +196,3 @@ more of the following issues that require a manual intervention.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
 
-.. _upgrade-mongoose:
-
-.. include:: /_includes/_upgrade/issue-mongoose.rst
