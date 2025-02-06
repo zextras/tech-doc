@@ -421,7 +421,7 @@ Next, we install all packages needed for |product|.
          # apt install carbonio-mta carbonio-proxy \
          carbonio-user-management carbonio-webui carbonio-files-ui \
          carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-catalog \
          service-discover-agent
 
@@ -433,7 +433,7 @@ Next, we install all packages needed for |product|.
          # apt install carbonio-mta carbonio-proxy \
          carbonio-user-management carbonio-webui carbonio-files-ui \
          carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-catalog \
          service-discover-agent
 
@@ -445,7 +445,7 @@ Next, we install all packages needed for |product|.
          # dnf install carbonio-mta carbonio-proxy \
          carbonio-user-management carbonio-webui carbonio-files-ui \
          carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-catalog \
          service-discover-agent
 
@@ -457,7 +457,7 @@ Next, we install all packages needed for |product|.
          # dnf install carbonio-mta carbonio-proxy \
          carbonio-user-management carbonio-webui carbonio-files-ui \
          carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-catalog \
          service-discover-agent
 

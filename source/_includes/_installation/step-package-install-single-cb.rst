@@ -47,7 +47,7 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
 
@@ -61,7 +61,7 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
 
@@ -90,7 +90,7 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql16-server
 
@@ -126,7 +126,7 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui \
+         carbonio-files-public-folder-ui carbonio-search-ui \
          carbonio-ws-collaboration-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql16-server
 
