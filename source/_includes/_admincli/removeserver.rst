@@ -35,8 +35,9 @@ section, you need to:
 #. Take note of the FQDN of the Node to be removed, because it will
    be needed. It will be denoted as ``serverHostname`` in the procedure
 
-#. in case you remove a Proxy Role, check that the Preview Role is
-   correctly configured. See Section :ref:`memcached` below for
+#. in case you remove a Proxy Role or A Mailstore & Provisioning Role,
+   check that the Preview Role is correctly configured. See Section
+   :ref:`memcached-proxy` and :ref:`memcached-mp`, respectively, for
    directions.
 
 Node Removal
@@ -95,10 +96,10 @@ remove more than one Node, execute the following steps for each Node.
     Node is not part of the |product| infrastructure anymore. You can
     now power off the Node and decommission it.
 
-.. _memcached:
+.. _memcached-proxy:
 
-Fixing the Preview Role Configuration
-=====================================
+Configuration Fix for Proxy Removal
+===================================
 
 In case you are removing from the infrastructure a Node which installs
 a Proxy, you need to adjust a configuration file on the Preview Node.
@@ -132,7 +133,7 @@ but keep an existing one (or more that one).
    In case you decommission a Proxy Node without replacing it, you
    still need to edit file :file:`/etc/carbonio/preview/config.ini`,
    but you need to delete the IP of the decommissioned Proxy Node, for
-   example
+   example (assuming you are decommissioning **172.16.0.12**)
 
    .. code-block:: ini
 
@@ -143,6 +144,62 @@ but keep an existing one (or more that one).
    .. code-block:: ini
 
       memcached_server_full_path_urls = 172.16.0.22:11211
+
+Please refer to Section :ref:`conf-memcached` in Preview Role's
+installation for details.
+
+.. _memcached-mp:
+
+Configuration Fix for Mailstore & Provisioning Removal
+======================================================
+
+In case you are removing from the infrastructure a Node which installs
+a Mailstore & Provisioning, you need to adjust a configuration file on
+the Preview Node.
+
+This is required by the **memcached** configuration that supports the
+Mailstore & Provisioning Role and consists of replacing a
+configuration value with the IP address of the new Mailstore &
+Provisioning Role.
+
+The procedure is slight different if you if you replace an existent
+Mailstore & Provisioning with a new one or simply decommission one
+Mailstore & Provisioning but keep an existing one (or more that one).
+
+.. card:: Replace a Mailstore & Provisioning Node
+
+   Supposing that the IP of the decommissioned Mailstore &
+   Provisioning Node is **172.16.0.13**, and the new one is
+   **172.16.0.58**, you need to change in file
+   :file:`/etc/carbonio/preview/config.ini` the line
+
+   .. code-block:: ini
+
+      nginx_lookup_server_full_path_urls = https://172.16.0.13:7072
+
+   into
+
+   .. code-block:: ini
+
+      nginx_lookup_server_full_path_urls = https://172.16.0.58:7072
+
+.. card:: Do not replace a Mailstore & Provisioning Node
+
+   In case you decommission a Mailstore & Provisioning Node without
+   replacing it, you still need to edit file
+   :file:`/etc/carbonio/preview/config.ini`, but you need to delete
+   the IP of the decommissioned Mailstore & Provisioning Node, for
+   example (assuming you are decommissioning **172.16.0.13**)
+
+   .. code-block:: ini
+
+      nginx_lookup_server_full_path_urls = https://172.16.0.13:7072,https://172.16.0.23:7072
+
+   becomes
+
+   .. code-block:: ini
+
+      nginx_lookup_server_full_path_urls = https://172.16.0.23:7072
 
 Please refer to Section :ref:`conf-memcached` in Preview Role's
 installation for details.
