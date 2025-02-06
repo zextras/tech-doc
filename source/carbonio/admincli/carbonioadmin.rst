@@ -1,8 +1,16 @@
+.. _admin-module:
+
+==============
+Carbonio Admin
+==============
+
+This sections contains example of CLI activities that can be carried
+out by the |carbonio| Admin Module.
+
 .. _cli-billing-data:
 
-=========================
- Billing Data Management
-=========================
+Billing Data Management
+=======================
 
 An Administrator can retrieve or delete billing data about
 subscriptions activated for each domain using dedicated CLI commands:
