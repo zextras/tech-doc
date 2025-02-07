@@ -18,12 +18,10 @@ mandatory.
       administration
       advancedadmin
       ldap
-      carboniocore
       carbonioadmin
       carbonioauth
-      backup
-      restorestrategies
-      advancedbackup
+      carboniocore
+      carboniobackup
       mobile
       storages
       activereplica
