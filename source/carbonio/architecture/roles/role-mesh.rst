@@ -11,7 +11,7 @@ Mesh and Directory role should be used on the first Node on which a
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_roles/role-mesh.rst
+.. include:: /_includes/_installation/_packages/role-mesh.rst
 
 Bootstrap |product|
 -------------------

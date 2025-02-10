@@ -107,7 +107,7 @@ read section :ref:`role-wsc-req` above before starting the actual
 package installation.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_roles/role-wsc-cb.rst
+.. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 
 .. _role-wsc-bootstrap:
 

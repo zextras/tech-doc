@@ -37,9 +37,8 @@ Installation
 The installation requires to execute install this package on the Node
 on which you plan to install the Directory Replica Role.
 
-.. code:: console
 
-   # apt install carbonio-directory-server 
+.. include:: /_includes/_installation/_packages/role-ds-replica.rst
 
 Configuration
 ~~~~~~~~~~~~~
