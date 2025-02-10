@@ -7,7 +7,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_roles/role-mailstore-provisioning.rst
+.. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
 
 Bootstrap |carbonio|
 --------------------

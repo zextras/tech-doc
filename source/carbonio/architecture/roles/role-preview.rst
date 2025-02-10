@@ -7,7 +7,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_roles/role-preview.rst
+.. include:: /_includes/_installation/_packages/role-preview.rst
 
 Bootstrap |carbonio|
 --------------------

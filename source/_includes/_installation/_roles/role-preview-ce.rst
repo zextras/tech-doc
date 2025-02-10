@@ -1,4 +1,3 @@
-
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -6,13 +5,11 @@
 
       .. code:: console
 
-         # apt install carbonio-preview-ce service-discover-agent
- 
+         # apt install carbonio-preview-ce
+
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-preview-ce service-discover-agent
-
-
+         # dnf install carbonio-preview-ce

@@ -29,8 +29,29 @@ repository to your APT sources.
          https://packages.grafana.com/oss/deb stable main" | sudo \
          tee -a /etc/apt/sources.list.d/grafana.list
 
-   .. tab-item:: RHEL
-      :sync: rhel
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # wget -q -O gpg.key https://rpm.grafana.com/gpg.key
+         # rpm --import gpg.key
+
+      Create file :file:`/etc/yum.repos.d/grafana.repo` with the
+      following content::
+
+        [grafana]
+        name=grafana
+        baseurl=https://rpm.grafana.com
+        repo_gpgcheck=1
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://rpm.grafana.com/gpg.key
+        sslverify=1
+        sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
 
       .. code:: console
 
@@ -70,8 +91,15 @@ Install Grafana packages.
          # apt update
          # apt install grafana
 
-   .. tab-item:: RHEL
-      :sync: rhel
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # dnf install grafana
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
 
       .. code:: console
 

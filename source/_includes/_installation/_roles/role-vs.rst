@@ -12,21 +12,7 @@ hosting that Role to configure the Video Server.
 
 .. card:: Video Server
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt install carbonio-videoserver service-discover-agent
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf install carbonio-videoserver service-discover-agent
+   .. include:: /_includes/_installation/_packages/role-vs.rst
 
    During the installation of the packages, you need to insert the IP
    `public` address (i.e., the one that will accept incoming
@@ -67,21 +53,7 @@ hosting that Role to configure the Video Server.
 
 .. card:: Video Recording
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt install carbonio-videoserver-recorder
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf install carbonio-videoserver-recorder
+   .. include:: /_includes/_installation/_packages/role-vr.rst
 
    The following manual command is required if the Video Recorder is
    installed at a later point. Make sure to use the same FQDN

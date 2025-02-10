@@ -7,13 +7,20 @@ Before installing this Role on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a
 requirement for this Role.
 
-.. note:: This Role can not be installed on the same Node as
-   :ref:`role-vs-install`.
+.. note:: If you already have installed on your infrastructure the
+   legacy :ref:`role-vs-install`, make sure this Role is installed on
+   a different Node.
 
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_roles/role-vs-wsc.rst
+This Role consists of *Video Server (WSC)* and *Video Recording*. You need
+to install the latter only if you plan to record video meetings,
+otherwise you can install *Video Server* without *Video
+Recording*. For this reason we split this Role's installation in two parts.
+
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+.. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
 Bootstrap |product|
 -------------------
@@ -56,21 +63,7 @@ Video Recording
 To install the Video Recording packages, execute the command according
 to the underlying operating system.
 
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt install carbonio-videorecorder
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install carbonio-videorecorder
+.. include:: /_includes/_installation/_packages/role-vr.rst
 
 Pending setups
 --------------
