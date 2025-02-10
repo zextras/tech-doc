@@ -7,8 +7,9 @@ Before installing this Role on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a
 requirement for this Role.
 
-.. note:: This Role can not be installed on the same Node as
-   :ref:`role-vs-install`.
+.. note:: If you already have installed on your infrastructure the
+   legacy :ref:`role-vs-install`, make sure this Role is installed on
+   a different Node.
 
 Install Packages
 ----------------
