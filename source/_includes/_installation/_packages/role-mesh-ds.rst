@@ -1,8 +1,17 @@
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
+   .. tab-item:: Ubuntu 20.04
+      :sync: ubu20
+
+      .. code:: console
+
+         # apt install service-discover-server \
+         carbonio-directory-server carbonio-message-broker \
+         carbonio-storages
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
@@ -10,8 +19,17 @@
          carbonio-directory-server carbonio-message-broker \
          carbonio-storages
  
-   .. tab-item:: RHEL
-      :sync: rhel
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # dnf install service-discover-server \
+         carbonio-directory-server carbonio-message-broker \
+         carbonio-storages
+ 
+   .. tab-item:: RHEL 9
+      :sync: rhel9
 
       .. code:: console
 
