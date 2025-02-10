@@ -9,7 +9,7 @@
            carbonio-files-ui carbonio-user-management \
            carbonio-tasks-ui carbonio-ws-collaboration-ui \
            carbonio-files-public-folder-ui carbonio-search-ui \
-           carbonio-catalog service-discover-agent
+           carbonio-catalog
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -20,4 +20,4 @@
            carbonio-files-ui carbonio-user-management \
            carbonio-tasks-ui carbonio-ws-collaboration-ui \
            carbonio-files-public-folder-ui carbonio-search-ui \
-           carbonio-catalog service-discover-agent
+           carbonio-catalog
