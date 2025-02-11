@@ -25,14 +25,14 @@ the CLI.
 
   .. code:: console
 
-     # consul kv get -token-file="$CONSUL_TOKEN_PATH" "$KEY"
+     # consul kv get -token="$CONSUL_TOKEN_PATH" "$KEY"
 
 * To modify one of the values reported in the tables below, use
   command
 
   .. code:: console
 
-     # consul kv put -token-file="$CONSUL_TOKEN_PATH" "$KEY" "$VALUE"
+     # consul kv put -token="$CONSUL_TOKEN_PATH" "$KEY" "$VALUE"
 
 In the commands, ``$CONSUL_TOKEN_PATH`` is the |mesh| secret stored on
 the **Directory Service server**, while ``$KEY`` and ``$VALUE`` are
