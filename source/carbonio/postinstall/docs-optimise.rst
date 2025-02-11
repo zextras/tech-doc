@@ -45,11 +45,14 @@ tables.
 .. hint:: The |mesh| token can be retrieved using the procedure
    described in section :ref:`ts-token`.
 
-Configuration tables
---------------------
+.. _docs-opt:
 
-The following table is available to configure the maximum file size of
-documents that |docs| can manage and open.
+Docs Configuration tables
+-------------------------
+
+The following table shows the keys and their default values to
+configure the maximum file size of documents that |docs| can manage
+and open.
 
 .. _docs-sizeopt:
 
@@ -75,11 +78,9 @@ Files Configuration
 The following table shows how to modify the maximum number of versions
 for each document stored in |file|.
 
-
 .. _files-max-versions:
 
 .. card:: Maximum number of versions
-
 
    Using the |mesh| :ref:`kv interface <modify-kv>`, it is possible
    to change the maximum number of versions stored for each supported
