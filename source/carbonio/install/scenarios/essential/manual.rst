@@ -10,53 +10,6 @@ Roles on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
-Scenario Overview
-=================
-
-This are the roles installed on each Node.
-
-.. grid:: 1 1 2 2
-   :gutter: 2
-
-   .. grid-item-card:: Node 1
-      :columns: 12
-
-      Node Name/FQDN: srv1.example.com
-
-      Type of services: Clustered services
-
-      Roles installed:
-
-      * :ref:`role-mesh-install`
-
-      * :ref:`role-db-install`
-
-      * :ref:`role-monit-install`
-
-   .. grid-item-card:: Node 2
-      :columns: 12
-
-      Node Name/FQDN: srv2.example.com
-
-      Type of services: Proxy and MTA
-
-      Roles installed:
-
-      * :ref:`role-mta-install`
-
-      * :ref:`role-proxy-install`
-
-   .. grid-item-card:: Node 3
-      :columns: 12
-
-      Node Name/FQDN: srv3.example.com
-
-      Type of services: Mails, Calendars, and Contacts
-
-      Roles installed:
-
-      * :ref:`role-prov-install`
-
 Core Node
 =========
 
