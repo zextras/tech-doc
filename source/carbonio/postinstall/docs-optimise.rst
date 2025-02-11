@@ -1,7 +1,7 @@
-.. _docs-optimise:
+.. _docs-file-optimise:
 
-DOCS Optimisations
-==================
+|docs| and Files Optimisations
+==============================
 
 Once the :ref:`role-docs-install` is operational, some tweaking can be
 applied to its configuration to improve performances.
