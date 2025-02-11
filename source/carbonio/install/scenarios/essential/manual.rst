@@ -120,75 +120,21 @@ Core Node
 
             # dnf upgrade
 
-   Next, we install all packages needed for |product|.
+   Next, we install all packages needed for |product|. We divide them
+   by Role, but you can combine all packages and run the install
+   command once.
 
-   .. tab-set::
+   .. rubric:: Role Mesh and Directory
 
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
+   .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
 
-         .. code:: console
+   .. rubric:: Role Database
 
-            # apt install service-discover-server \
-            carbonio-directory-server carbonio-message-broker \
-            carbonio-storages postgresql-16 carbonio-prometheus
+   .. include:: /_includes/_installation/_packages/role-db.rst
 
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
+   .. rubric:: Role Monitoring
 
-         .. code:: console
-
-            # apt install service-discover-server \
-            carbonio-directory-server carbonio-message-broker \
-            carbonio-storages postgresql-16 carbonio-prometheus
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         The installation on RHEL is divided in few steps: install
-         the |mesh| service
-
-         .. code:: console
-
-            # dnf install service-discover-server
-
-         Disable PostgreSQL 12
-
-         .. code:: console
-
-            # dnf -qy module disable postgresql
-
-         Install all other packages
-
-         .. code:: console
-
-            # dnf install service-discover-server \
-            carbonio-directory-server carbonio-message-broker \
-            carbonio-storages postgresql-16 carbonio-prometheus
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         The installation on RHEL is divided in few steps: install the
-         |mesh| service
-
-         .. code:: console
-
-            # dnf install service-discover-server
-
-         Disable PostgreSQL 12
-
-         .. code:: console
-
-            # dnf -qy module disable postgresql
-
-         Install all other packages
-
-         .. code:: console
-
-            # dnf install service-discover-server \
-            carbonio-directory-server carbonio-message-broker \
-            carbonio-storages postgresql-16 carbonio-prometheus
+   .. include:: /_includes/_installation/_packages/role-monit.rst
 
 .. _es1-step4:
 
@@ -206,7 +152,7 @@ Core Node
    |product| components.
 
 .. _es1-step6:
-                
+
 .. dropdown:: Step 6: Setup |mesh|
 
    .. include:: /_includes/_installation/mesh.rst
@@ -390,57 +336,17 @@ MTA/Proxy Node
 
             # dnf upgrade
 
-   Next, we install all packages needed for |product|.
+   Next, we install all packages needed for |product|. We divide them
+   by Role, but you can combine all packages and run the install
+   command once.
 
-   .. tab-set::
+   .. rubric:: Role MTA AV/AS
 
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
+   .. include:: /_includes/_installation/_packages/role-mta.rst
 
-         .. code:: console
+   .. rubric:: Role Proxy
 
-            # apt install carbonio-mta carbonio-proxy \
-            carbonio-user-management carbonio-webui carbonio-files-ui \
-            carbonio-tasks-ui carbonio-chats-ui \
-            carbonio-files-public-folder-ui carbonio-search-ui \
-            carbonio-ws-collaboration-ui carbonio-catalog \
-            service-discover-agent
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt install carbonio-mta carbonio-proxy \
-            carbonio-user-management carbonio-webui carbonio-files-ui \
-            carbonio-tasks-ui carbonio-chats-ui \
-            carbonio-files-public-folder-ui carbonio-search-ui \
-            carbonio-ws-collaboration-ui carbonio-catalog \
-            service-discover-agent
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf install carbonio-mta carbonio-proxy \
-            carbonio-user-management carbonio-webui carbonio-files-ui \
-            carbonio-tasks-ui carbonio-chats-ui \
-            carbonio-files-public-folder-ui carbonio-search-ui \
-            carbonio-ws-collaboration-ui carbonio-catalog \
-            service-discover-agent
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf install carbonio-mta carbonio-proxy \
-            carbonio-user-management carbonio-webui carbonio-files-ui \
-            carbonio-tasks-ui carbonio-chats-ui \
-            carbonio-files-public-folder-ui carbonio-search-ui \
-            carbonio-ws-collaboration-ui carbonio-catalog \
-            service-discover-agent
+   .. include:: /_includes/_installation/_packages/role-proxy.rst
 
 .. _es2-step4:
 
@@ -608,41 +514,13 @@ Mailstore Node
 
             # dnf upgrade
 
-   Next, we install all packages needed for |product|.
+   Next, we install all packages needed for |product|. We divide them
+   by Role, but you can combine all packages and run the install
+   command once.
 
-   .. tab-set::
+   .. rubric:: Role Mailstore & Provisioning
 
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt install carbonio-advanced carbonio-zal \
-            service-discover-agent
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt install carbonio-advanced carbonio-zal \
-            service-discover-agent
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf install carbonio-advanced carbonio-zal \
-            service-discover-agent
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf install carbonio-advanced carbonio-zal \
-            service-discover-agent
+   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
 
 .. _es3-step4:
 
