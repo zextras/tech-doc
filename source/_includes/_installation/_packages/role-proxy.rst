@@ -7,9 +7,9 @@
 
          # apt install carbonio-proxy carbonio-user-management \
            carbonio-webui carbonio-files-ui carbonio-tasks-ui \
-           carbonio-chats-ui carbonio-files-public-folder-ui \
-           carbonio-search-ui carbonio-ws-collaboration-ui \
-           carbonio-avdb-updater carbonio-catalog
+           carbonio-files-public-folder-ui carbonio-search-ui \
+           carbonio-ws-collaboration-ui carbonio-avdb-updater \
+           carbonio-catalog
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -18,9 +18,9 @@
 
          # apt install carbonio-proxy carbonio-user-management \
            carbonio-webui carbonio-files-ui carbonio-tasks-ui \
-           carbonio-chats-ui carbonio-files-public-folder-ui \
-           carbonio-search-ui carbonio-ws-collaboration-ui \
-           carbonio-avdb-updater carbonio-catalog
+           carbonio-files-public-folder-ui carbonio-search-ui \
+           carbonio-ws-collaboration-ui carbonio-avdb-updater \
+           carbonio-catalog
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -29,9 +29,9 @@
 
          # dnf install carbonio-proxy carbonio-user-management \
            carbonio-webui carbonio-files-ui carbonio-tasks-ui \
-           carbonio-chats-ui carbonio-files-public-folder-ui \
-           carbonio-search-ui carbonio-ws-collaboration-ui \
-           carbonio-avdb-updater carbonio-catalog
+           carbonio-files-public-folder-ui carbonio-search-ui \
+           carbonio-ws-collaboration-ui carbonio-avdb-updater \
+           carbonio-catalog
 
    .. tab-item:: RHEL 9
       :sync: rhel9
@@ -40,6 +40,10 @@
 
          # dnf install carbonio-proxy carbonio-user-management \
            carbonio-webui carbonio-files-ui carbonio-tasks-ui \
-           carbonio-chats-ui carbonio-files-public-folder-ui \
-           carbonio-search-ui carbonio-ws-collaboration-ui \
-           carbonio-avdb-updater carbonio-catalog
+           carbonio-files-public-folder-ui carbonio-search-ui \
+           carbonio-ws-collaboration-ui carbonio-avdb-updater \
+           carbonio-catalog
+
+.. note:: The |legacy| :file:`carbonio-chats-ui` package is no longer
+   needed, as the legacy Chats module has been superseded bye the new
+   :ref:`role-wsc-install` Role.
