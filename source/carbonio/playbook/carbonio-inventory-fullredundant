@@ -58,3 +58,8 @@ srv3.example.com
 
 [syslogServer]
 srv3.example.com
+
+
+[workStreamServers]
+srv10.example.com
+srv11.example.com
