@@ -78,6 +78,7 @@
 .. |srv6h| replace:: :bdg-secondary-line:`SRV6_hostname`
 .. |dsnode| replace:: :bdg-secondary-line:`SRV1`
 .. |beta| replace:: :bdg-danger:`BETA`
+.. |legacy| replace:: :bdg-warning:`Legacy`
 
 .. misc
 
