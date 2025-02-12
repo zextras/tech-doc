@@ -8,10 +8,11 @@ valid and has not expired, and its FQDN is valid and resolvable from
 |carbonio| (from the Proxy Node in case of a Multi-Server).
 
 You can safely use the |carbonio|'s Proxy Node to expose those
-resources, by uploading them into a directory called for example
-:file:`/opt/zextras/web/custom/` (create it if does not exist yet) and
-using the URL ``https://<Carbonio_hostname>/static/custom/``, where
-``<Carbonio_hostname>`` is the FQDN of the node that hosts the Proxy Node role.
+resources, by uploading them into, as the |ru|, a directory called for
+example :file:`/opt/zextras/web/custom/` (create it if does not exist
+yet) and using the URL ``https://<Carbonio_hostname>/static/custom/``,
+where ``<Carbonio_hostname>`` is the FQDN of the node that hosts the
+Proxy Node role.
 
 Moreover, in a Multi-Server featuring multiple Proxy Nodes, it is
 mandatory to keep in sync the resources on all the Proxies instances.
