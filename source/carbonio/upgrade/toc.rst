@@ -26,6 +26,7 @@ a snapshot of the Nodes and a backup of the data.
    .. toctree::
       :maxdepth: 1
 
+      ansible
       upgrade
       upgrade249
       upgrade247

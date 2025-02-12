@@ -46,8 +46,8 @@ extensions = [ 'sphinx_design', 'sphinx_copybutton',
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [ '_includes', 'cli', 'playbook',
-                     'admincli/administration/delegatedadmin.rst',
-                     'common/carbonio', 'upgrade/upgrade/ansible.rst' ]
+                     'admincli/administration/delegatedadmin.rst', 'cli_commands',
+                     'common/carbonio' ]
 
 rst_prolog = """
 
