@@ -44,3 +44,6 @@ srv1.example.com
 
 [syslogServer]
 srv1.example.com
+
+[workStreamServers]
+srv4.example.com

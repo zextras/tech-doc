@@ -7,9 +7,6 @@
 |cwsc| Role is a multi-layered software that adds the video meeting
 and recording functionalities to |product|.
 
-This Role can currently be installed only manually, so please read
-Sections :ref:`role-wsc-limits` and :ref:`role-wsc-req` below.
-
 If you plan to install this Role in an existing |product|
 infrastructure, please read carefully Section :ref:`wsc-install`.
 
@@ -21,8 +18,6 @@ Limitations
 In the current release |release|, the following limitation apply to
 the installation of the |wsc| Role
 
-* It must be installed manually, there is no Ansible support for the
-  installation
 * It can not be installed on the same Node as |vs|
 * Data from the legacy Chats module can not be exported to new |wsc|
   Role
@@ -66,7 +61,8 @@ into account the following points:
 
 * The |vs| or Chats modules may be already installed within the
   infrastructure, but you can keep them: the |wsc| does not share any
-  component with them
+  component with them. However, note that they are marked as |legacy|
+  and will soon be dismissed.
 
 * There is a *Preparation* phase that requires to install some package
   on other Nodes before starting the |wsc| installation.
