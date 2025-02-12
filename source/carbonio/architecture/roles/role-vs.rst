@@ -1,7 +1,11 @@
 .. _role-vs-install:
 
 Video Server & Video Recording
-================================
+==============================
+
+.. warning:: This Role has entered |legacy| status and will be removed
+   in the near future. If you want to provide chats and video calls to
+   your users, please install the new :ref:`role-vs-wsc-install` Role.
 
 Before installing this Role on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a
