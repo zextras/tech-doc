@@ -21,6 +21,7 @@ mandatory.
       carbonioadmin
       carbonioauth
       carboniocore
+      carboniodocs
       carboniobackup
       mobile
       storages
