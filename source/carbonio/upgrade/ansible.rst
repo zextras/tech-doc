@@ -42,6 +42,14 @@ upgrade procedure with Ansible.
 * The upgrade procedure does not depend on the underlying
   :ref:`supported operating system <software-requirements>`
 
+* This upgrade procedure works even if you installed |product|
+  manually
+
+* The version of |product| that you want to upgrade is not important:
+  you can start from any version (24.12, 24.9, or older) and you will
+  always end up with the latest version (|release| at the time of
+  writing)
+
 * The Ansible playbook will update all the packages installed on he
   system, from any active configured repository, not only
   |product|\'s. To avoid this behaviour, comment out any repositories
