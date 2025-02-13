@@ -14,9 +14,20 @@ for installation along with the other system updates. Therefore, the
 upgrade procedure is usually a very quick activity, carried out by
 means of a few commands to be executed.
 
-.. hint:: The upgrade procedure are independent of any specific patch
-   numbers: i.e., to upgrade from *24.7.0* and *24.7.1*, you need to
-   follow the same procedure.
+The upgrade procedure can be carried out manually or ref:`using
+Ansible <upgrade-ansible>`. The latter procedure works even if you
+installed |product| manually.
+
+In both cases, the procedure will upgrade any version of |product| to
+the latest available at the moment you start the procedure. In other
+words, the starting version is not important: upgrading from *24.12*,
+*24.9* or *24.7* will bring |product| to the latest version of
+|product| (at the time of writing, |release|).
+
+.. note:: Upgrading from versions *24.5* or older should work, but may
+   require a lot of manual tasks to be carried out before, during, and
+   after the procedure, and might become an extremely long and
+   error-prone process.
 
 Before starting an upgrade procedure, it is strongly suggested to make
 a snapshot of the Nodes and a backup of the data.
