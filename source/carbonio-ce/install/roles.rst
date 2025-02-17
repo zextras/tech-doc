@@ -61,6 +61,7 @@ This is the list of roles that make up a |product| installation.
 
       * service-discover-server
       * carbonio-directory-server
+      * carbonio-user-management
       * carbonio-message-broker
 
    .. grid-item-card:: Database
@@ -95,7 +96,6 @@ This is the list of roles that make up a |product| installation.
       * carbonio-proxy
       * carbonio-webui
       * carbonio-files-ui
-      * carbonio-user-management
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
       * carbonio-files-public-folder-ui

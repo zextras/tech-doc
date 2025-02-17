@@ -20,6 +20,7 @@ This is a list of known issues that impact |product| after the upgrade
 to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
+.. include:: /_includes/_upgrade/issue-um.rst
 
 
 .. _ts-up-older:
@@ -44,7 +45,9 @@ more of the following issues that require a manual intervention.
 * The :ref:`new package <upgrade-catalog>` ``carbonio-catalog`` must
   be installed
 * Package :file:`carbonio-message-broker` needs to be installed on the
-  :ref:`Mesh and Directory <broker-pkg>` Node
+  :ref:`Mesh and Directory Node <broker-pkg>`
+* Package :file:`carbonio-user-management` needs to be installed on
+  the :ref:`Mesh and Directory Node <upgrade-um>`
 * You might be asked to keep or replace the :ref:`Janus
   <upgrade-janus>` configuration files
 
@@ -196,3 +199,6 @@ more of the following issues that require a manual intervention.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
 
+.. _upgrade-um:
+
+.. include:: /_includes/_upgrade/issue-um.rst

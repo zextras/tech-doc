@@ -6,10 +6,9 @@
       .. code:: console
 
          # apt install carbonio-proxy carbonio-webui \
-           carbonio-files-ui carbonio-user-management \
-           carbonio-tasks-ui carbonio-ws-collaboration-ui \
-           carbonio-files-public-folder-ui carbonio-search-ui \
-           carbonio-catalog
+           carbonio-files-ui carbonio-tasks-ui \
+           carbonio-ws-collaboration-ui carbonio-search-ui \
+           carbonio-files-public-folder-ui carbonio-catalog
 
    .. tab-item:: RHEL
       :sync: rhel
@@ -17,7 +16,6 @@
       .. code:: console
 
          # dnf install carbonio-proxy carbonio-webui \
-           carbonio-files-ui carbonio-user-management \
-           carbonio-tasks-ui carbonio-ws-collaboration-ui \
-           carbonio-files-public-folder-ui carbonio-search-ui \
-           carbonio-catalog
+           carbonio-files-ui carbonio-tasks-ui \
+           carbonio-ws-collaboration-ui carbonio-search-ui \
+           carbonio-files-public-folder-ui carbonio-catalog
