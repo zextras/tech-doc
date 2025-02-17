@@ -11,12 +11,12 @@ older releases, and any security advice, if present.
 |product| does not have any installer: whenever new versions are
 released, the |zx| repositories are updated and packages are available
 for installation along with the other system updates. Therefore, the
-upgrade procedure is usually a very quick activity, carried out by
-means of a few commands to be executed.
+|product| upgrade procedure is carried out along with the system
+upgrade.
 
-The upgrade procedure can be carried out manually or ref:`using
+The upgrade procedure can be carried out manually or :ref:`using
 Ansible <upgrade-ansible>`. The latter procedure works even if you
-installed |product| manually.
+installed |product| manually, provided you fill in the inventory file.
 
 In both cases, the procedure will upgrade any version of |product| to
 the latest available at the moment you start the procedure. In other

@@ -6,8 +6,7 @@
 
 The upgrade procedure with Ansible Galaxy is strongly suggested when
 you are upgrading from the previous version, which will take care of
-all the tasks required. This procedure should work even if you had
-installed |product| manually.
+all the tasks required.
 
 Before starting the procedure, make sure that you satisfy the
 :ref:`up-ansible-req`, then choose one of the supported
@@ -32,7 +31,7 @@ upgrade procedure with Ansible.
 * If you do not have yet a working Ansible environment, please follow
   the instructions in section :ref:`install-with-ansible`
 
-* You need to have install the latest ``carbonio_upgrade`` :ref:`Ansible
+* You need to install the latest ``carbonio_upgrade`` :ref:`Ansible
   playbook installed <ans-pb-install>`
 
   * If you already have installed it, make sure that it :ref:`is updated
@@ -43,14 +42,14 @@ upgrade procedure with Ansible.
   :ref:`supported operating system <software-requirements>`
 
 * This upgrade procedure works even if you installed |product|
-  manually
+  manually: see Section :ref:`up-ansible-paths` for details
 
 * The version of |product| that you want to upgrade is not important:
   you can start from any version (24.12, 24.9, or older) and you will
   always end up with the latest version (|release| at the time of
   writing)
 
-* The Ansible playbook will update all the packages installed on he
+* The Ansible playbook will update all the packages installed on the
   system, from any active configured repository, not only
   |product|\'s. To avoid this behaviour, comment out any repositories
   from which you do not want to upgrade packages.
@@ -59,13 +58,6 @@ upgrade procedure with Ansible.
   upgrade it manually, please refer to Section :ref:`pg-upgrade`
 
 * Ansible will remove the deprecated **DB Connector Role**
-
-* The Ansible inventory file must accurately reflect the |product|
-  infrastructure. This is particularly important if you installed
-  |product| manually and are now upgrading with Ansible. You can use
-  an inventory file from one of the :ref:`scenarios` and adapt it to
-  your |carbonio| infrastructure. See section :ref:`ansible-inventory`
-  for directions.
 
 * The upgrade procedure using Ansible is slightly different depending
   if you already installed |wsc| or not. Choose the right
@@ -134,16 +126,39 @@ upgrade procedure with Ansible.
 Upgrade Paths
 =============
 
+To upgrade with Ansible, the inventory file must accurately reflect
+the |product| infrastructure. This is particularly important if you
+installed |product| manually and are now upgrading with Ansible. You
+can use an inventory file from one of the :ref:`scenarios` and adapt
+it to your |carbonio| infrastructure. See section
+:ref:`ansible-inventory` for directions.
+
 These are the alternatives to upgrade an existent |product|
 infrastructure.
 
-#. The infrastructure was installed with Ansible and has no |WSC| Role
+#. The infrastructure was installed with Ansible and has **no** |WSC| Role
    installed. In this case, simply proceed to Section
+   :ref:`up-ansible-run`.
+
+#. The infrastructure was installed manually and has **no** |WSC| Role
+   installed. After you compiled the inventory file, proceed to Section
+   :ref:`up-ansible-run`.
+
+#. The infrastructure was installed with Ansible and the |WSC| Role
+   was manually installed. In this case, edit the inventory file and
+   add this block at the end of the file::
+
+     [workStreamServers]
+     wsc.example.com
+
+   Replace the ``wsc.example.com`` string with the actual FQDN of the
+   Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
 
 #. The infrastructure was installed manually and has the |WSC| Role
-   installed. In this case, edit the inventory file and add this
-   block at the end of the file::
+   installed. Compile the inventory file and then, like in the
+   previous case, edit the inventory file and add this block at the
+   end of the file::
 
      [workStreamServers]
      wsc.example.com
