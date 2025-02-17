@@ -1,4 +1,3 @@
-
 .. tab-set::
 
    .. tab-item:: Ubuntu 20.04
@@ -8,7 +7,7 @@
 
          # apt install service-discover-server \
          carbonio-directory-server carbonio-message-broker \
-         carbonio-storages
+         carbonio-storages carbonio-user-management
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -17,8 +16,8 @@
 
          # apt install service-discover-server \
          carbonio-directory-server carbonio-message-broker \
-         carbonio-storages
- 
+         carbonio-storages carbonio-user-management
+
    .. tab-item:: RHEL 8
       :sync: rhel8
 
@@ -26,8 +25,8 @@
 
          # dnf install service-discover-server \
          carbonio-directory-server carbonio-message-broker \
-         carbonio-storages
- 
+         carbonio-storages carbonio-user-management
+
    .. tab-item:: RHEL 9
       :sync: rhel9
 
@@ -35,7 +34,7 @@
 
          # dnf install service-discover-server \
          carbonio-directory-server carbonio-message-broker \
-         carbonio-storages
+         carbonio-storages carbonio-user-management
 
 Please note:
 
