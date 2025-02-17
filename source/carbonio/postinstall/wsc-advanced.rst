@@ -35,6 +35,8 @@ To allow users to search other users only on their domain, use
    :ref:`dedicated box <wsc-user-search>` in the Domain's global
    settings.
 
+.. index:: Chats; set read only
+
 .. _wsc-chats-ro:
 
 Set Legacy Chats Read Only
@@ -52,6 +54,8 @@ To set the legacy Chats read-only, use the CLI command
 .. code:: console
 
    zextras$ carbonio config set cos default teamReadOnlyEnabled true
+
+.. index:: Chats; disable
 
 .. _wsc-chats-dis:
 
@@ -113,14 +117,14 @@ as the |ru|:
 
    .. tab-item:: Ubuntu
       :sync: ubu
-             
+
       .. code:: console
 
          # apt remove carbonio-chats-ui
 
    .. tab-item:: RHEL
       :sync: rhel
-             
+
       .. code:: console
 
          # dnf remove carbonio-chats-ui
@@ -174,7 +178,7 @@ Configuration table
 The following table shows the values available to modify the WSC database.
 
 .. _wsc-db-opt:
-      
+
 .. card:: Configure |wsc| Database
 
    .. csv-table::
