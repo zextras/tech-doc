@@ -1,4 +1,4 @@
-.. _scenarioa-manual:
+.. _scenario-fsm-manual:
 
 Manual Roles Installation
 =========================
@@ -9,6 +9,7 @@ Roles on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
+.. _fsm-core:
 
 Core Node
 =========
@@ -198,6 +199,8 @@ Core Node
 
          # cat /var/lib/service-discover/password
 
+.. _fsm-mta:
+
 MTA/Proxy Node
 ==============
 
@@ -376,8 +379,10 @@ MTA/Proxy Node
             # systemctl start/stop/restart carbonio-mta.target
             # systemctl start/stop/restart carbonio-proxy.target
 
-Mailstore and Tasks Node
-========================
+.. _fsm-msp:
+
+Mailstore & Provisioning and Tasks Node
+=======================================
 
 .. _fsm3-step1:
 
@@ -543,6 +548,8 @@ Mailstore and Tasks Node
          .. code:: console
 
             # systemctl start/stop/restart carbonio-appserver.target
+
+.. _fsm-collab:
 
 Collaboration Node
 ==================
@@ -716,6 +723,8 @@ Collaboration Node
          .. code:: console
 
             # systemctl start/stop/restart carbonio-appserver.target
+
+.. _fsm-vs:
 
 Video Server Node
 =================
