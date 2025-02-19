@@ -717,6 +717,174 @@ Collaboration Node
 
             # systemctl start/stop/restart carbonio-appserver.target
 
+Video Server Node
+=================
+
+.. _fsm5-step1:
+
+.. dropdown:: Step 1: Configuration of Repositories
+
+   The installation procedure start with the configuration of the
+   repositories.
+
+   .. rubric:: |product|
+
+   .. include:: /_includes/_installation/step-repo-conf.rst
+
+   .. rubric:: RHEL Only
+
+   .. tab-set::
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         You need to add the PostgreSQL and EPEL repositories and
+         enable the BaseOS, Appstream, and CodeReady repositories.
+
+         .. code:: console
+
+            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+
+.. _fsm5-step2:
+
+.. dropdown:: Step 2: Setting Hostname
+
+   .. include:: /_includes/_installation/steps-hostname.rst
+
+.. _fsm5-step3:
+
+.. dropdown:: Step 3: System Upgrade and Package Installation
+
+   After configuring the repositories, the installation of |product|
+   requires to run a few commands.
+
+   We start by updating and upgrading the system.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt update && apt upgrade
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # dnf upgrade
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         .. code:: console
+
+            # dnf upgrade
+
+   Next, we install all packages needed for |product|. We divide them
+   by Role, but you can combine all packages and run the install
+   command once.
+
+   .. rubric:: |vs| (WSC)
+
+   .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
+
+   .. rubric:: |wsc|
+
+   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+
+.. _fsm5-step4:
+
+.. dropdown:: Step 4: Bootstrap |product|
+
+   .. include:: /_includes/_installation/step-bootstrap.rst
+
+   The next steps concern the configuration and setup of the various
+   |product| components.
+
+.. _fsm5-step5:
+
+.. dropdown:: Step 5: Setup |mesh|
+
+   .. include:: /_includes/_installation/mesh.rst
+
+   .. include:: /_includes/_installation/pset.rst
+
+.. _fsm5-step6:
+
+.. dropdown:: Step 6: Complete Installation
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
+
+         After the successful package installation, start all |product|
+         services by using
+
+         .. code:: console
+
+            zextras$ zmcontrol start
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         After the successful package installation, start all |product|
+         services by using
+
+         .. code:: console
+
+            zextras$ zmcontrol start
+
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+
+         After the successful package installation, start all |product|
+         services by using
+
+         .. code:: console
+
+            zextras$ zmcontrol start
+
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         After the successful package installation, start all |product|
+         services by using
+
+         .. code:: console
+
+            # systemctl start/stop/restart carbonio-appserver.target
+
 .. grid:: 1 1 2 2
    :gutter: 2
 
