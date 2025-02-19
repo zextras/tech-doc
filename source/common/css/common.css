@@ -26,7 +26,7 @@
 .red {
     color: red;
 }
-#
+
 .green {
     color: green;
 }
@@ -38,6 +38,33 @@
 
 .blue {
    color: #2B73D2;
+}
+
+.released {
+    padding-bottom: 3px;
+    margin:auto;
+    border-bottom: 5px solid var(--zx-color-abyss);
+    text-width:auto;
+    font-size: 2em;
+    text-align:justify;
+}
+
+.soon {
+    padding-bottom: 3px;
+    margin:auto;
+    border-bottom: 5px solid var(--zx-color-spark);
+    text-width:auto;
+    font-size: 2em;
+    text-align:justify;
+}
+
+.planned {
+    padding-bottom: 3px;
+    margin:auto;
+    border-bottom: 5px solid var(--zx-color-secondary);
+    text-width:auto;
+    font-size: 2em;
+    text-align:justify;
 }
 
 .topic {
