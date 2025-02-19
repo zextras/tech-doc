@@ -1719,7 +1719,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
 
    .. rubric:: Role |wsc|
 
-   .. include:: /_includes/_installation/_packages/role-wsc.rst
+   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 
    .. rubric:: Role Tasks
 
@@ -1896,7 +1896,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
 
    .. rubric:: Role |wsc|
 
-   .. include:: /_includes/_installation/_packages/role-wsc.rst
+   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 
    .. rubric:: Role Tasks
 
