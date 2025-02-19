@@ -2421,10 +2421,6 @@ This Node features the *Video Server & Video Recording* Role.
 
    .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
-   .. rubric:: |wsc|
-
-   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
-
 .. _fr14-step4:
 
 .. dropdown:: Step 4: Bootstrap |product|
@@ -2593,10 +2589,6 @@ Role.
    .. rubric:: |vs| (WSC)
 
    .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
-
-   .. rubric:: |wsc|
-
-   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 
 .. _fr15-step4:
 
