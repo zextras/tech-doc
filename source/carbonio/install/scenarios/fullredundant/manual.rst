@@ -758,7 +758,7 @@ Node Five
 
 This Node features the (replicated) *MTA AV/AS* Role.
 
-.. _st2-step1:
+.. _fr5-step1:
 
 .. dropdown:: Step 1: Configuration of Repositories
 
@@ -801,13 +801,13 @@ This Node features the (replicated) *MTA AV/AS* Role.
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
             # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
-.. _st2-step2:
+.. _fr5-step2:
 
 .. dropdown:: Step 2: Setting Hostname
 
    .. include:: /_includes/_installation/steps-hostname.rst
 
-.. _st2-step3:
+.. _fr5-step3:
 
 .. dropdown:: Step 3: System Upgrade and Package Installation
 
@@ -854,7 +854,7 @@ This Node features the (replicated) *MTA AV/AS* Role.
 
    .. include:: /_includes/_installation/_packages/role-mta.rst
 
-.. _st2-step4:
+.. _fr5-step4:
 
 .. dropdown:: Step 4: Bootstrap |product|
 
@@ -868,7 +868,7 @@ This Node features the (replicated) *MTA AV/AS* Role.
    The next steps concern the configuration and setup of the various
    |product| components.
 
-.. _st2-step5:
+.. _fr5-step5:
 
 .. dropdown:: Step 5: Setup |mesh|
 
@@ -880,7 +880,7 @@ This Node features the (replicated) *MTA AV/AS* Role.
 
    .. include:: /_includes/_installation/pset.rst
 
-.. _st2-step6:
+.. _fr5-step6:
 
 .. dropdown:: Step 6: Complete Installation
 
