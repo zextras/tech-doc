@@ -10,7 +10,7 @@ Roles on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
-.. _fsm-core:
+.. _st-core:
 
 Core Node
 =========
@@ -200,12 +200,12 @@ Core Node
 
          # cat /var/lib/service-discover/password
 
-.. _fsm-mta:
+.. _st-mta:
 
 MTA Node
 ========
 
-.. _fsm2-step1:
+.. _st2-step1:
 
 .. dropdown:: Step 1: Configuration of Repositories
 
@@ -248,13 +248,13 @@ MTA Node
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
             # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
-.. _fsm2-step2:
+.. _st2-step2:
 
 .. dropdown:: Step 2: Setting Hostname
 
    .. include:: /_includes/_installation/steps-hostname.rst
 
-.. _fsm2-step3:
+.. _st2-step3:
 
 .. dropdown:: Step 3: System Upgrade and Package Installation
 
@@ -301,7 +301,7 @@ MTA Node
 
    .. include:: /_includes/_installation/_packages/role-mta.rst
 
-.. _fsm2-step4:
+.. _st2-step4:
 
 .. dropdown:: Step 4: Bootstrap |product|
 
@@ -315,7 +315,7 @@ MTA Node
    The next steps concern the configuration and setup of the various
    |product| components.
 
-.. _fsm2-step5:
+.. _st2-step5:
 
 .. dropdown:: Step 5: Setup |mesh|
 
@@ -327,7 +327,7 @@ MTA Node
 
    .. include:: /_includes/_installation/pset.rst
 
-.. _fsm2-step6:
+.. _st2-step6:
 
 .. dropdown:: Step 6: Complete Installation
 
