@@ -2323,7 +2323,7 @@ Roles.
 Node Fourteen
 =============
 
-This Node features the *Video Server & Video Recording* Roles.
+This Node features the *Video Server & Video Recording* Role.
 
 .. _fr14-step1:
 
@@ -2496,7 +2496,7 @@ Node Fifteen
 ============
 
 This Node features the (replicated) *Video Server & Video Recording*
-Roles.
+Role.
 
 .. _fr15-step1:
 
