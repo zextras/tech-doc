@@ -9,7 +9,7 @@ By proactively monitoring these services, administrators can ensure seamless ope
 quickly detect issues, and optimize system performance.
 
 The document is structured by role, detailing the required endpoints for each service
-including MTA, Proxy, Mailstore & Provisioning, Mesh and Directory, Event Streaming, and general system health checks.
+including MTA, Proxy, Mailstore & Provisioning, Mesh & Directory, Event Streaming, and general system health checks.
 It also covers critical services such as SMTP, IMAP, HTTP, databases (MariaDB, PostgreSQL), and high-availability
 components like Kafka and Zookeeper.
 Additionally, fundamental system health indicators, such as disk usage, CPU load, and network availability, are included
@@ -78,7 +78,7 @@ to provide a comprehensive monitoring strategy.
 
     Location of the socket file: ``/run/carbonio/mysql.sock``
 
-.. topic:: Role: Mesh and Directory
+.. topic:: Role: Mesh & Directory
 
     **PostgreSQL**
 

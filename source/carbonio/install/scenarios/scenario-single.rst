@@ -18,7 +18,7 @@ This Scenario has been designed to serve a precise use case and
 therefore has the following architectural limitations:
 
 * The scenario is limited to a **single Node** (*"Core Node"*)
-  equipped with only the basic Roles: Database, Mesh and Directory,
+  equipped with only the basic Roles: Database, Mesh & Directory,
   MTA AV/AS, Proxy, Mailstore & Provisioning, and Files Roles
 
 * The scenario is also meant to be installed on three Nodes: building

@@ -1,8 +1,8 @@
 .. card:: Package ``carbonio-user-management``
 
    In release 25.3.0, this package must be installed as part of the
-   **Mesh and Directory** Role, instead of the **Proxy** Role. To
-   intall it on the *Mesh and Directory* Node, execute as the |ru|
+   **Mesh & Directory** Role, instead of the **Proxy** Role. To
+   intall it on the *Mesh & Directory* Node, execute as the |ru|
 
    .. tab-set::
 

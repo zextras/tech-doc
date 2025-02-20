@@ -49,7 +49,7 @@ This is the list of roles that make up a |product| installation.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Mesh and Directory
+   .. grid-item-card:: Mesh & Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref

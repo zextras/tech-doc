@@ -43,9 +43,9 @@ intervention.
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
 * Package :file:`carbonio-message-broker` needs to be installed on the
-  :ref:`Mesh and Directory Node <broker-pkg>`
+  :ref:`Mesh & Directory Node <broker-pkg>`
 * Package :file:`carbonio-user-management` needs to be installed on
-  the :ref:`Mesh and Directory Node <upgrade-um>`
+  the :ref:`Mesh & Directory Node <upgrade-um>`
 * You might be asked to keep or replace the :ref:`Janus
   <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
   configuration files

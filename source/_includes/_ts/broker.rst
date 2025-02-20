@@ -12,13 +12,13 @@
 
       In case you already installed |WSC|, remove the
       :file:`carbonio-message-broker` from the |wsc| Node, then
-      install it on the **Mesh and Directory Node**.
+      install it on the **Mesh & Directory Node**.
 
       If you never installed WSC, make sure you install this package
-      on the **Mesh and Directory Node**.
+      on the **Mesh & Directory Node**.
 
       To verify if the package is installed, execute the following
-      command on the |wsc| (if installed) and the Mesh and Directory
+      command on the |wsc| (if installed) and the Mesh & Directory
       Node.
 
       .. tab-set::
@@ -64,7 +64,7 @@
 
                # dnf remove carbonio-message-broker
 
-      If the package is **not** installed on the Mesh and Directory
+      If the package is **not** installed on the Mesh & Directory
       Node, install it manually:
 
       .. tab-set::

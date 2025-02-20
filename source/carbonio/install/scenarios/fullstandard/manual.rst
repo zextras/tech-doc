@@ -79,7 +79,7 @@ Core Node
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: Role Mesh and Directory
+   .. rubric:: Role Mesh & Directory
 
    .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
 

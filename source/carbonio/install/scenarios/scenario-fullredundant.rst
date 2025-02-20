@@ -16,7 +16,7 @@ Remember to :ref:`configure the internal network
 
 The Roles installed on the *15 Nodes* are:
 
-* Node 1: Mesh and Directory, Database
+* Node 1: Mesh & Directory, Database
 * Node 2: Mesh, Directory Replica
 * Node 3: Mesh, Monitoring
 * Node 4: MTA AV/AS

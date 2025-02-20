@@ -15,7 +15,7 @@ Roles on the Nodes, according to the following guidelines.
 Node One
 ========
 
-This Node features the *Mesh and Directory* and *Database* Roles.
+This Node features the *Mesh & Directory* and *Database* Roles.
 
 .. _fr1-step1:
 
@@ -81,7 +81,7 @@ This Node features the *Mesh and Directory* and *Database* Roles.
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: Role Mesh and Directory
+   .. rubric:: Role Mesh & Directory
 
    .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
 
