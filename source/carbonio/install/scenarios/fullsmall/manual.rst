@@ -487,7 +487,7 @@ Mailstore & Provisioning and Tasks Node
 
    .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
 
-   .. rubric:: Role |task|
+   .. rubric:: Role Tasks
 
    .. include:: /_includes/_installation/_packages/role-tasks.rst
 
@@ -653,15 +653,15 @@ Collaboration Node
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: |file|
+   .. rubric:: Role Files
 
    .. include:: /_includes/_installation/_packages/role-files.rst
 
-   .. rubric:: |docs|
+   .. rubric:: Role Docs & Editor
 
    .. include:: /_includes/_installation/_packages/role-docs.rst
 
-   .. rubric:: |pv|
+   .. rubric:: Role Preview
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
 
@@ -828,11 +828,11 @@ Video Server Node
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: |vs| (WSC)
+   .. rubric:: Role Video Server & Video Recording (WSC)
 
    .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
-   .. rubric:: |wsc|
+   .. rubric:: Role |wsc|
 
    .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 

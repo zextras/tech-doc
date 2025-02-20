@@ -2076,14 +2076,13 @@ This Node features the *Docs & Editor* and *Preview* Roles.
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: |docs|
+   .. rubric:: Role Docs & Editor
 
    .. include:: /_includes/_installation/_packages/role-docs.rst
 
-   .. rubric:: |pv|
+   .. rubric:: Role Preview
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
-
 
 .. _fr12-step4:
 
@@ -2250,14 +2249,13 @@ Roles.
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: |docs|
+   .. rubric:: Role Docs & Editor
 
    .. include:: /_includes/_installation/_packages/role-docs.rst
 
-   .. rubric:: |pv|
+   .. rubric:: Role Preview
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
-
 
 .. _fr13-step4:
 
@@ -2423,7 +2421,7 @@ This Node features the *Video Server & Video Recording* Role.
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: |vs| (WSC)
+   .. rubric:: Role Video Server & Video Recording (WSC)
 
    .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
@@ -2592,7 +2590,7 @@ Role.
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: |vs| (WSC)
+   .. rubric:: Role Video Server & Video Recording (WSC)
 
    .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
