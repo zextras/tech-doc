@@ -129,11 +129,9 @@ Core Node
    Now you have to bootstrap the DB with the password set in
    :ref:`Step 4 of Core Node installation <st1-step4>`.
 
-   .. card:: Mailbox DB Bootstrap
+   .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   .. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst
 
 .. _st1-step8:
 

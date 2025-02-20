@@ -88,7 +88,7 @@ Core Node
 
    .. rubric:: Role Monitoring
 
-   .. include:: /_includes/_installation/_packages/role-monit.rs
+   .. include:: /_includes/_installation/_packages/role-monit.rst
 
    .. rubric:: DB Components
 
@@ -128,11 +128,9 @@ Core Node
    Now you have to bootstrap the DB with the password set in
    :ref:`Step 4 of Core Node installation <fsm1-step4>`.
 
-   .. card:: Mailbox DB Bootstrap
+   .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   .. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst
 
 .. _fsm1-step8:
 
