@@ -179,7 +179,7 @@ Core Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-directory-server.target
+            # systemctl restart carbonio-directory-server.target
 
 .. _st1-step9:
 
@@ -378,7 +378,7 @@ MTA Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-mta.target
+            # systemctl restart carbonio-mta.target
 
 .. _st-proxy:
 
@@ -553,7 +553,7 @@ Proxy Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-proxy.target
+            # systemctl restart carbonio-proxy.target
 
 .. _st-msp:
 
@@ -723,7 +723,7 @@ Mailstore & Provisioning and Tasks Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 
 .. _st-collab:
@@ -890,7 +890,7 @@ Files Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 
 .. _st-docs:
@@ -1062,7 +1062,7 @@ Docs and Preview Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _st-vs:
 
@@ -1232,4 +1232,4 @@ Video Server Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target

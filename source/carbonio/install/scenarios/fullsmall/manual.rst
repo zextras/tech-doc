@@ -178,7 +178,7 @@ Core Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-directory-server.target
+            # systemctl restart carbonio-directory-server.target
 
 .. _fsm1-step9:
 
@@ -382,8 +382,8 @@ MTA/Proxy Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-mta.target
-            # systemctl start/stop/restart carbonio-proxy.target
+            # systemctl restart carbonio-mta.target
+            # systemctl restart carbonio-proxy.target
 
 .. _fsm-msp:
 
@@ -553,7 +553,7 @@ Mailstore & Provisioning and Tasks Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fsm-collab:
 
@@ -728,7 +728,7 @@ Collaboration Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fsm-vs:
 
@@ -898,4 +898,4 @@ Video Server Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target

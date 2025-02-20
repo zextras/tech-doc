@@ -177,7 +177,7 @@ This Node features the *Mesh & Directory* and *Database* Roles.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-directory-server.target
+            # systemctl restart carbonio-directory-server.target
 
 .. _fr1-step9:
 
@@ -366,7 +366,7 @@ This Node features the *Mesh* and *Directory Replica*  Roles.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-directory-server.target
+            # systemctl restart carbonio-directory-server.target
 
 .. _fr2-step9:
 
@@ -554,7 +554,7 @@ This Node features the *Mesh* and *Monitoring*  Roles.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-directory-server.target
+            # systemctl restart carbonio-directory-server.target
 
 .. _fr3-step9:
 
@@ -755,7 +755,7 @@ This Node features the *MTA AV/AS* Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-mta.target
+            # systemctl restart carbonio-mta.target
 
 .. _fr5:
 
@@ -931,7 +931,7 @@ This Node features the (replicated) *MTA AV/AS* Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-mta.target
+            # systemctl restart carbonio-mta.target
 
 .. _fr6:
 
@@ -1108,7 +1108,7 @@ This Node features the *Proxy* Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-proxy.target
+            # systemctl restart carbonio-proxy.target
 
 .. _fr7:
 
@@ -1285,7 +1285,7 @@ This Node features the (replicated) *Proxy* Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-proxy.target
+            # systemctl restart carbonio-proxy.target
 
 .. _fr8:
 
@@ -1453,7 +1453,7 @@ This Node features the *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fr9:
 
@@ -1621,7 +1621,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fr10:
 
@@ -1798,7 +1798,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fr11:
 
@@ -1975,7 +1975,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fr-12:
 
@@ -2148,7 +2148,7 @@ This Node features the *Docs & Editor* and *Preview* Roles.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fr-13:
 
@@ -2322,7 +2322,7 @@ Roles.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fr14:
 
@@ -2490,7 +2490,7 @@ This Node features the *Video Server & Video Recording* Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
 
 .. _fr15:
 
@@ -2659,4 +2659,4 @@ Role.
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target

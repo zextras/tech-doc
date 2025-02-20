@@ -171,7 +171,7 @@ Core Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-directory-server.target
+            # systemctl restart carbonio-directory-server.target
 
 .. _es1-step9:
 
@@ -373,8 +373,8 @@ MTA/Proxy Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-mta.target
-            # systemctl start/stop/restart carbonio-proxy.target
+            # systemctl restart carbonio-mta.target
+            # systemctl restart carbonio-proxy.target
 
 Mailstore Node
 ==============
@@ -538,4 +538,4 @@ Mailstore Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
