@@ -76,8 +76,8 @@ Core Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role Mesh & Directory
 
@@ -300,12 +300,16 @@ MTA Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role MTA AV/AS
 
    .. include:: /_includes/_installation/_packages/role-mta.rst
+
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _st2-step4:
 
@@ -473,13 +477,18 @@ Proxy Node
 
             # dnf upgrade
 
+
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role Proxy
 
    .. include:: /_includes/_installation/_packages/role-proxy.rst
+
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _st3-step4:
 
@@ -648,9 +657,10 @@ Mailstore & Provisioning and Tasks Node
 
             # dnf upgrade
 
+ 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role Mailstore & Provisioning
 
@@ -659,6 +669,10 @@ Mailstore & Provisioning and Tasks Node
    .. rubric:: Role Tasks
 
    .. include:: /_includes/_installation/_packages/role-tasks.rst
+
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _st4-step4:
 
@@ -820,12 +834,16 @@ Files Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role Files
 
    .. include:: /_includes/_installation/_packages/role-files.rst
+
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _st5-step4:
 
@@ -987,8 +1005,8 @@ Docs and Preview Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role Docs & Editor
 
@@ -998,6 +1016,9 @@ Docs and Preview Node
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _st6-step4:
 
@@ -1158,8 +1179,8 @@ Video Server Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role Video Server & Video Recording (WSC)
 
@@ -1168,6 +1189,10 @@ Video Server Node
    .. rubric:: Role |wsc|
 
    .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _st7-step4:
 
