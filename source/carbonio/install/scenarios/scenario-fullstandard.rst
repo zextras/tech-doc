@@ -23,7 +23,7 @@ The Roles installed on the *7 Nodes* are:
 * Node 3: Proxy
 * Node 4: Mailstore & Provisioning, and Tasks
 * Node 5: WSC, Files
-* Node 6: Docs and Editor, Preview
+* Node 6: Docs & Editor, Preview
 * Node 7: Video Server & Video Recording
 
 Architecture

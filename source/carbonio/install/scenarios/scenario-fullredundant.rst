@@ -27,8 +27,8 @@ The Roles installed on the *15 Nodes* are:
 * Node 9: Mailstore & Provisioning
 * Node 10: WSC, Files, Tasks
 * Node 11: WSC, Files, Tasks
-* Node 12: Docs and Editor, Preview
-* Node 13: Docs and Editor, Preview
+* Node 12: Docs & Editor, Preview
+* Node 13: Docs & Editor, Preview
 * Node 14: Video Server & Video Recording
 * Node 15: Video Server & Video Recording
 

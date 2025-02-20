@@ -1982,7 +1982,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
 Node Twelve
 ===========
 
-This Node features the *Docs and Editor* and *Preview* Roles.
+This Node features the *Docs & Editor* and *Preview* Roles.
 
 .. _fr12-step1:
 
@@ -2155,7 +2155,7 @@ This Node features the *Docs and Editor* and *Preview* Roles.
 Node Thirteen
 =============
 
-This Node features the (replicated) *Docs and Editor* and *Preview*
+This Node features the (replicated) *Docs & Editor* and *Preview*
 Roles.
 
 .. _fr13-step1:

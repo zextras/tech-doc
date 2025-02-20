@@ -1,7 +1,7 @@
 
 .. _role-docs-install:
 
-Docs and Editor
+Docs & Editor
 ===============
 
 Install Packages

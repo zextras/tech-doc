@@ -22,7 +22,7 @@ therefore has the following architectural limitations:
   MTA AV/AS, Proxy, Mailstore & Provisioning, and Files Roles
 
 * The scenario is also meant to be installed on three Nodes: building
-  on the *Core Node*, the second Node features the Docs and Editor,
+  on the *Core Node*, the second Node features the Docs & Editor,
   Tasks, and |wsc| Roles (*"Collaboration Node"*) and the third the
   |vs| Role (*"Video Server Node"*)
 
