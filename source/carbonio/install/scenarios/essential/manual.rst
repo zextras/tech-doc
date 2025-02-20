@@ -139,7 +139,7 @@ Core Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -149,7 +149,7 @@ Core Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -161,7 +161,7 @@ Core Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -341,7 +341,7 @@ MTA/Proxy Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -351,7 +351,7 @@ MTA/Proxy Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -363,7 +363,7 @@ MTA/Proxy Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -506,7 +506,7 @@ Mailstore Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -516,7 +516,7 @@ Mailstore Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -528,7 +528,7 @@ Mailstore Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9

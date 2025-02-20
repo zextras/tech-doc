@@ -145,7 +145,7 @@ This Node features the *Mesh & Directory* and *Database* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -155,7 +155,7 @@ This Node features the *Mesh & Directory* and *Database* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -167,7 +167,7 @@ This Node features the *Mesh & Directory* and *Database* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -334,7 +334,7 @@ This Node features the *Mesh* and *Directory Replica*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -344,7 +344,7 @@ This Node features the *Mesh* and *Directory Replica*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -356,7 +356,7 @@ This Node features the *Mesh* and *Directory Replica*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -522,7 +522,7 @@ This Node features the *Mesh* and *Monitoring*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -532,7 +532,7 @@ This Node features the *Mesh* and *Monitoring*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -544,7 +544,7 @@ This Node features the *Mesh* and *Monitoring*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -724,7 +724,7 @@ This Node features the *MTA AV/AS* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -734,7 +734,7 @@ This Node features the *MTA AV/AS* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -745,7 +745,7 @@ This Node features the *MTA AV/AS* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -900,7 +900,7 @@ This Node features the (replicated) *MTA AV/AS* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -910,7 +910,7 @@ This Node features the (replicated) *MTA AV/AS* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -921,7 +921,7 @@ This Node features the (replicated) *MTA AV/AS* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -1076,7 +1076,7 @@ This Node features the *Proxy* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -1086,7 +1086,7 @@ This Node features the *Proxy* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -1098,7 +1098,7 @@ This Node features the *Proxy* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -1253,7 +1253,7 @@ This Node features the (replicated) *Proxy* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -1263,7 +1263,7 @@ This Node features the (replicated) *Proxy* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -1275,7 +1275,7 @@ This Node features the (replicated) *Proxy* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -1421,7 +1421,7 @@ This Node features the *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -1431,7 +1431,7 @@ This Node features the *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -1443,7 +1443,7 @@ This Node features the *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -1589,7 +1589,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -1599,7 +1599,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -1611,7 +1611,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -1766,7 +1766,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -1776,7 +1776,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -1788,7 +1788,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -1943,7 +1943,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -1953,7 +1953,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -1965,7 +1965,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -2116,7 +2116,7 @@ This Node features the *Docs & Editor* and *Preview* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -2126,7 +2126,7 @@ This Node features the *Docs & Editor* and *Preview* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -2138,7 +2138,7 @@ This Node features the *Docs & Editor* and *Preview* Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -2290,7 +2290,7 @@ Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -2300,7 +2300,7 @@ Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -2312,7 +2312,7 @@ Roles.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -2458,7 +2458,7 @@ This Node features the *Video Server & Video Recording* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -2468,7 +2468,7 @@ This Node features the *Video Server & Video Recording* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -2480,7 +2480,7 @@ This Node features the *Video Server & Video Recording* Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -2627,7 +2627,7 @@ Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -2637,7 +2637,7 @@ Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -2649,7 +2649,7 @@ Role.
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
