@@ -89,6 +89,14 @@ This Node features the *Mesh and Directory* and *Database* Roles.
 
    .. include:: /_includes/_installation/_packages/role-db.rst
 
+   .. rubric:: DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-comp.rst
+
+   .. rubric:: WSC DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-wsc.rst
+
 .. _fr1-step4:
 
 .. dropdown:: Step 4: Configure PostgreSQL

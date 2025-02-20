@@ -91,6 +91,14 @@ Core Node
 
    .. include:: /_includes/_installation/_packages/role-monit.rst
 
+   .. rubric:: DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-comp.rst
+
+   .. rubric:: WSC DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-wsc.rst
+
 .. _st1-step4:
 
 .. dropdown:: Step 4: Configure PostgreSQL

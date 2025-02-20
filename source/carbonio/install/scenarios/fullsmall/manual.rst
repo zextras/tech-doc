@@ -88,7 +88,15 @@ Core Node
 
    .. rubric:: Role Monitoring
 
-   .. include:: /_includes/_installation/_packages/role-monit.rst
+   .. include:: /_includes/_installation/_packages/role-monit.rs
+
+   .. rubric:: DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-comp.rst
+
+   .. rubric:: WSC DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-wsc.rst
 
 .. _fsm1-step4:
 
