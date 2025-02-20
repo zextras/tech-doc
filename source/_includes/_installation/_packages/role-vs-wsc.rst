@@ -5,21 +5,24 @@
 
       .. code:: console
 
-         # apt install carbonio-videoserver-advanced
+         # apt install carbonio-videoserver-advanced \
+         carbonio-videoserver-recorder
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
 
       .. code:: console
 
-         # apt install carbonio-videoserver-advanced
+         # apt install carbonio-videoserver-advanced \
+         carbonio-videoserver-recorder
 
    .. tab-item:: RHEL 8
       :sync: rhel8
 
       .. code:: console
 
-         # dnf install carbonio-videoserver-advanced
+         # dnf install carbonio-videoserver-advanced \
+         carbonio-videoserver-recorder
 
 
    .. tab-item:: RHEL 9
@@ -27,4 +30,5 @@
 
       .. code:: console
 
-         # dnf install carbonio-videoserver-advanced
+         # dnf install carbonio-videoserver-advanced \
+         carbonio-videoserver-recorder
