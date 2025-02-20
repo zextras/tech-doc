@@ -89,6 +89,14 @@ This Node features the *Mesh and Directory* and *Database* Roles.
 
    .. include:: /_includes/_installation/_packages/role-db.rst
 
+   .. rubric:: DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-comp.rst
+
+   .. rubric:: WSC DB Components
+
+   .. include:: /_includes/_installation/_packages/role-db-wsc.rst
+
 .. _fr1-step4:
 
 .. dropdown:: Step 4: Configure PostgreSQL
@@ -119,11 +127,9 @@ This Node features the *Mesh and Directory* and *Database* Roles.
    Now you have to bootstrap the DB with the password set in
    :ref:`Step 4 of Core Node installation <fr1-step4>`.
 
-   .. card:: Mailbox DB Bootstrap
+   .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   .. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst
 
 .. _fr1-step8:
 
