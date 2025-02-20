@@ -229,12 +229,11 @@ MTA Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
@@ -243,12 +242,11 @@ MTA Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
             # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
@@ -407,12 +405,11 @@ Proxy Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
@@ -421,12 +418,11 @@ Proxy Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
             # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
@@ -587,12 +583,11 @@ Mailstore & Provisioning and Tasks Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
@@ -601,12 +596,11 @@ Mailstore & Provisioning and Tasks Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
             # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
@@ -763,12 +757,11 @@ Files Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
@@ -777,12 +770,11 @@ Files Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
             # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
@@ -934,12 +926,11 @@ Docs and Preview Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
@@ -948,12 +939,11 @@ Docs and Preview Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
             # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
@@ -1108,8 +1098,8 @@ Video Server Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the PostgreSQL and EPEL repository and enable
+         the BaseOS, Appstream, and CodeReady repositories.
 
          .. code:: console
 
@@ -1122,8 +1112,8 @@ Video Server Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the PostgreSQL and EPEL repository and enable
+         the BaseOS, Appstream, and CodeReady repositories.
 
          .. code:: console
 
