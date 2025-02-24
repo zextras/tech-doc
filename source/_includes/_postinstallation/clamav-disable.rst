@@ -57,7 +57,7 @@ e-mails). Both tasks must be executed from the CLI.
       zextras$ carbonio prov ms $(zmhostname) \
       -zimbraServiceEnabled amavis
 
-You can also disable the other related services.
+   You can also disable the other related services.
 
    .. code:: console
 
