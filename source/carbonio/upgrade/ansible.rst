@@ -113,11 +113,10 @@ upgrade procedure with Ansible.
      # /home/ansible/.ansible/collections/ansible_collections
      Collection             Version
      ---------------------- -------
-     zxbot.carbonio_upgrade 24.9.1
+     zxbot.carbonio_upgrade 25.3.0
 
    This version of the collection can be used to upgrade |product| to
-   the most recent version in the **24.9** series of |product| (e.g.,
-   *24.9.0 or 24.9.1*).
+   the most recent version in the **25.3** series of |product|.
 
 .. No specific requirement is required to upgrade to  |product|
    |version|.
@@ -136,7 +135,7 @@ section :ref:`ansible-inventory` for directions.
 
 These are the alternatives to upgrade an existent |product|
 infrastructure, depending if you have installed the latest **24.12**
-version or a previous one
+version or an older one.
 
 .. hint:: If you are unsure, :ref:`check the command <ts-version>` to
    retrieve the correct version number.
