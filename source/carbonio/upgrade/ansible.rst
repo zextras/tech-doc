@@ -54,8 +54,10 @@ upgrade procedure with Ansible.
   |product|\'s. To avoid this behaviour, comment out any repositories
   from which you do not want to upgrade packages.
 
-* Ansible will upgrade **PostgreSQL to version 16**: if you prefer to
-  upgrade it manually, please refer to Section :ref:`pg-upgrade`
+* Ansible will **not** upgrade **PostgreSQL to version 16**, you need
+  to upgrade it manually: please refer to Section
+  :ref:`pg-upgrade`. Note that Since PostgreSQL 12 went in |eol| on
+  14th November 2024, make sure to upgrade it.
 
 * Ansible will remove the deprecated **DB Connector Role**
 
@@ -115,8 +117,9 @@ upgrade procedure with Ansible.
      ---------------------- -------
      zxbot.carbonio_upgrade 24.9.1
 
-   This version of the collection can be used to install the most recent
-   version in the **24.9** series of |product| (e.g., *24.9.0 or 24.9.1*).
+   This version of the collection can be used to upgrade |product| to
+   the most recent version in the **24.9** series of |product| (e.g.,
+   *24.9.0 or 24.9.1*).
 
 .. No specific requirement is required to upgrade to  |product|
    |version|.
@@ -189,10 +192,10 @@ and **24.12.1**):
    updates to the packages providing these Roles, so they will keep
    the same version.
 
-Upgrade From |product| 24.09
+Upgrade From |product| 24.9
 ----------------------------
 
-If you are upgrading from the **24.09** series version, you need to
+If you are upgrading from the **24.9** series version, you need to
 make sure that you inventory file still contains the **DB Connector**
 Role::
 
