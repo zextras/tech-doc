@@ -59,8 +59,6 @@ upgrade procedure with Ansible.
   :ref:`pg-upgrade`. Note that Since PostgreSQL 12 went in |eol| on
   14th November 2024, make sure to upgrade it.
 
-* Ansible will remove the deprecated **DB Connector Role**
-
 * The upgrade procedure using Ansible is slightly different depending
   if you already installed |wsc| or not. Choose the right
   :ref:`upgrade path <up-ansible-paths>` according to your setup.
