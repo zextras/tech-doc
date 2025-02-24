@@ -91,7 +91,7 @@ step description.
       Ldap configuration
 
          1) Hostname: The hostname of the *Director Replica* Node.
-         2) Ldap master host: The hostname of the *Mesh and Directory* Node
+         2) Ldap master host: The hostname of the *Mesh & Directory* Node
          3) Ldap port: 389
          4) Ldap Admin password: The ``zimbra_ldap_password``
 
@@ -110,7 +110,7 @@ step description.
          7) Ldap amavis password: The ``zimbra_ldap_password``
          8) Ldap nginx password: The ``zimbra_ldap_password``
 
-   .. hint:: If on the Mesh and Directory Node you configured
+   .. hint:: If on the Mesh & Directory Node you configured
       different password than ``zimbra_ldap_password`` for 5), 6), 7),
       and 8), make sure you provide the correct passwords.
 
@@ -118,7 +118,7 @@ step description.
 
    You can now continue the bootstrap process and after a while the
    installation will be successfully completed and immediately after,
-   the Mesh and Directory's data will be copied over to the Directory
+   the Mesh & Directory's data will be copied over to the Directory
    Replica on the new Node.
 
 Testing
@@ -128,7 +128,7 @@ In order to test whether the Directory Replica works correctly after the
 installation was completed successfully, you can make a quick test as
 follows.
 
-#. Log in to the *Mesh and Directory* Node and create a test user with
+#. Log in to the *Mesh & Directory* Node and create a test user with
    a password
 
    .. code:: console
@@ -136,7 +136,7 @@ follows.
       zextras$ carbonio prov ca john.doe@example.com MySecretPassword
 
 #. Log in to the *Directory Replica* and check that all accounts have
-   been copied over from the Mesh and Directory:
+   been copied over from the Mesh & Directory:
 
    .. code:: console
 
@@ -166,7 +166,7 @@ Set up Directory Replica to Answer Queries
 It is now time to configure the Directory Replica to answer queries:
 this requires to reconfigure the value of the ``ldap_url`` parameter
 and let it point to the Directory Replica. You can achieve this set up
-with a few commands on the **Mesh and Directory**.
+with a few commands on the **Mesh & Directory**.
 
 #. Stop all |product| services
 
@@ -183,7 +183,7 @@ with a few commands on the **Mesh and Directory**.
         ldap://srv1.example.com:389"
 
    .. note:: `srv1.example.com` is the FQDN of the node which installs
-      the *Mesh and Directory* Role
+      the *Mesh & Directory* Role
 
    If you plan to install multiple Directory Replicas, you can install
    all of them and then execute the above-mentioned command once for
@@ -217,7 +217,7 @@ To remove a Directory Replica, you need to carry out two tasks:
       zextras$ zmlocalconfig -e ldap_url="ldap://srv1.example.com:389"
 
    In case you had configured multiple Directory Replicas, the above
-   command will redirect all queries to the Mesh and Directory
+   command will redirect all queries to the Mesh & Directory
    Node. If you want to remove only some of the Directory Replicas,
    list all hostnames except the one you want to remove. For example,
    to remove ldap://ds2-replica.example.com, use the command

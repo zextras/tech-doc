@@ -3,8 +3,8 @@
    :widths: 45 45 10
    :header: "Exporter", "Role", "Port"
 
-   "carbonio-prometheus-consul-exporter", "Mesh and Directory", "9107"
-   "carbonio-prometheus-openldap-exporter", "Mesh and Directory", "9330"
+   "carbonio-prometheus-consul-exporter", "Mesh & Directory", "9107"
+   "carbonio-prometheus-openldap-exporter", "Mesh & Directory", "9330"
    "carbonio-prometheus-mysqld-exporter", "Mailstore & Provisioning", "9104"
    "carbonio-prometheus-nginx-exporter", "Proxy", "9113"
    "carbonio-prometheus-node-exporter", "Every |product| node", "9100"

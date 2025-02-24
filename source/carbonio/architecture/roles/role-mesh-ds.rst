@@ -1,7 +1,7 @@
 .. _role-mesh-install:
 
-Mesh and Directory
-====================
+Mesh & Directory
+================
 
 Install Packages
 ----------------

@@ -77,7 +77,7 @@ Core Node
    by Role, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: Role Mesh and Directory
+   .. rubric:: Role Mesh & Directory
 
    .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
 
@@ -139,7 +139,7 @@ Core Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -149,7 +149,7 @@ Core Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -161,7 +161,7 @@ Core Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -171,7 +171,7 @@ Core Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-directory-server.target
+            # systemctl restart carbonio-directory-server.target
 
 .. _es1-step9:
 
@@ -219,12 +219,11 @@ MTA/Proxy Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
@@ -233,12 +232,11 @@ MTA/Proxy Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
             # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
@@ -290,8 +288,8 @@ MTA/Proxy Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role MTA AV/AS
 
@@ -300,6 +298,10 @@ MTA/Proxy Node
    .. rubric:: Role Proxy
 
    .. include:: /_includes/_installation/_packages/role-proxy.rst
+
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _es2-step4:
 
@@ -341,7 +343,7 @@ MTA/Proxy Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -351,7 +353,7 @@ MTA/Proxy Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -363,7 +365,7 @@ MTA/Proxy Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -373,8 +375,8 @@ MTA/Proxy Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-mta.target
-            # systemctl start/stop/restart carbonio-proxy.target
+            # systemctl restart carbonio-mta.target
+            # systemctl restart carbonio-proxy.target
 
 Mailstore Node
 ==============
@@ -397,12 +399,11 @@ Mailstore Node
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
             # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
@@ -411,12 +412,11 @@ Mailstore Node
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
 
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
          .. code:: console
 
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
             # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
             # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
             # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
@@ -468,12 +468,16 @@ Mailstore Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
-   command once.
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
    .. rubric:: Role Mailstore & Provisioning
 
    .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
+
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _es3-step4:
 
@@ -506,7 +510,7 @@ Mailstore Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -516,7 +520,7 @@ Mailstore Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
       .. tab-item:: RHEL 8
@@ -528,7 +532,7 @@ Mailstore Node
 
          .. code:: console
 
-            zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -538,4 +542,4 @@ Mailstore Node
 
          .. code:: console
 
-            # systemctl start/stop/restart carbonio-appserver.target
+            # systemctl restart carbonio-appserver.target
