@@ -189,10 +189,10 @@ and **24.12.1**):
    updates to the packages providing these Roles, so they will keep
    the same version.
 
-Upgrade From |product| 24.9
-----------------------------
+Upgrade From |product| 24.9 or Older
+------------------------------------
 
-If you are upgrading from the **24.9** series version, you need to
+If you are upgrading from the **24.9** version or older, you need to
 make sure that you inventory file still contains the **DB Connector**
 Role::
 
@@ -203,11 +203,16 @@ Replace the ``srv3.example.com`` string with the actual FQDN of the
 Node on which the Role is installed.
 
 While the Role was removed, its presence is necessary to allow Ansible
-to properly deal with the packages providing the Role and move them to
-the Node where the Database Role is installed.
+to properly deal with the packages providing the Role: :file:`pgpool`
+will be removed, while the :file:`*-db` packages will be moved to the Node
+where the Database Role is installed.
 
-After the successful upgrade, the Role can be removed from the
-inventory file.
+After the successful upgrade, the Role can be emptied and a comment
+can be added to the inventory file, for example::
+
+  ### Keep this Role empty and uncommented
+  [dbsConnectorServers]
+
 
 .. _up-ansible-run:
 
