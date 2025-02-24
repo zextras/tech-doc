@@ -146,9 +146,21 @@ Enable |wsc|
 please refer to Sections :ref:`Account / Configuration <act-conf>` and
 :ref:`cos-features`, respectively.
 
-.. hint:: If the |wsc| installation is successful, you can optimise
-   some values according to the guidelines that you can find in
-   section :ref:`wsc-optimise`.
+You can enable it also from the command line by running as the
+``zextras`` user the command
+
+.. code:: console
+
+   zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
+
+This command enables the chat for the ``default`` COS, but you can
+enable it on selected COSes and accounts.
+
+Restart the service
+
+.. code:: console
+
+   # systemctl restart carbonio-ws-collaboration
 
 Status Check
 ============
