@@ -177,6 +177,38 @@ and **24.12.1**):
    Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
 
+#. If both the |WSC| Role and the legacy Chats and Video Server
+   Roles are installed, you need to edit the inventory file like
+   above::
+
+     [workStreamServers]
+     wsc.example.com
+
+   Ansible will take care of upgrading all Nodes, including those
+   installing the legacy Roles. Note, however, that there are no
+   updates to the packages providing these Roles, so they will keep
+   the same version.
+
+Upgrade From |product| 24.09
+----------------------------
+
+If you are upgrading from the **24.09** series version, you need to
+make sure that you inventory file still contains the **DB Connector**
+Role::
+
+  [dbsConnectorServers]
+  srv3.example.com
+
+Replace the ``srv3.example.com`` string with the actual FQDN of the
+Node on which the Role is installed.
+
+While the Role was removed, its presence is necessary to allow Ansible
+to properly deal with the packages providing the Role and move them to
+the Node where the Database Role is installed.
+
+After the successful upgrade, the Role can be removed from the
+inventory file.
+
 .. _up-ansible-run:
 
 Run the Upgrade
