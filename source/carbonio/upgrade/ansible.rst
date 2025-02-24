@@ -31,8 +31,8 @@ upgrade procedure with Ansible.
 * If you do not have yet a working Ansible environment, please follow
   the instructions in section :ref:`install-with-ansible`
 
-* You need to install the latest ``carbonio_upgrade`` :ref:`Ansible
-  playbook installed <ans-pb-install>`
+* You need to install the latest ``carbonio_upgrade`` :ref:`Ansible Galaxy
+  collection installed <ans-pb-install>`
 
   * If you already have installed it, make sure that it :ref:`is updated
     <ans-pb-up>`, see how to :ref:`check the current version
@@ -49,7 +49,7 @@ upgrade procedure with Ansible.
   always end up with the latest version (|release| at the time of
   writing)
 
-* The Ansible playbook will update all the packages installed on the
+* The Ansible Galaxy collection will update all the packages installed on the
   system, from any active configured repository, not only
   |product|\'s. To avoid this behaviour, comment out any repositories
   from which you do not want to upgrade packages.
@@ -72,9 +72,9 @@ upgrade procedure with Ansible.
 
 .. _ans-pb-install:
 
-.. card::  Install ``carbonio_upgrade`` playbook
+.. card::  Install ``carbonio_upgrade`` collection
 
-   To install the latest ``carbonio_upgrade`` playbook, issue the
+   To install the latest ``carbonio_upgrade`` collection, issue the
    following command, which will install the necessary infrastructure to
    use for the |product| upgrade.
 
@@ -84,13 +84,13 @@ upgrade procedure with Ansible.
 
 .. _ans-pb-up:
 
-.. card:: Update Ansible playbook
+.. card:: Update Ansible Galaxy collection
 
-  The playbook is version-dependant: to upgrade |product| to version
+  The collection is version-dependant: to upgrade |product| to version
   |version|, you need to have the **same main version** of the
-  playbook. For example, to upgrade to version **25.3.0**, the
-  playbook version must be **25.3.X**, regardless of the last
-  number. To install the latest version of the playbook, execute the
+  collection. For example, to upgrade to version **25.3.0**, the
+  collection version must be **25.3.X**, regardless of the last
+  number. To install the latest version of the collection, execute the
   following command.
 
   .. code:: console
@@ -99,9 +99,9 @@ upgrade procedure with Ansible.
 
 .. _ans-pb-check:
 
-.. card:: Check current Playbook version
+.. card:: Check current Collection version
 
-   To verify the currently installed version of the playbook, execute
+   To verify the currently installed version of the collection, execute
    command
 
    .. code:: console
@@ -115,7 +115,7 @@ upgrade procedure with Ansible.
      ---------------------- -------
      zxbot.carbonio_upgrade 24.9.1
 
-   This version of the playbook can be used to install the most recent
+   This version of the collection can be used to install the most recent
    version in the **24.9** series of |product| (e.g., *24.9.0 or 24.9.1*).
 
 .. No specific requirement is required to upgrade to  |product|
@@ -128,13 +128,23 @@ Upgrade Paths
 
 To upgrade with Ansible, the inventory file must accurately reflect
 the |product| infrastructure. This is particularly important if you
-installed |product| manually and are now upgrading with Ansible. You
-can use an inventory file from one of the :ref:`scenarios` and adapt
-it to your |carbonio| infrastructure. See section
-:ref:`ansible-inventory` for directions.
+installed |product| manually and are now upgrading with Ansible. In
+this case, you can use an inventory file from one of the
+:ref:`scenarios` and adapt it to your |carbonio| infrastructure. See
+section :ref:`ansible-inventory` for directions.
 
 These are the alternatives to upgrade an existent |product|
-infrastructure.
+infrastructure, depending if you have installed the latest **24.12**
+version or a previous one
+
+.. hint:: If you are unsure, :ref:`check the command <ts-version>` to
+   retrieve the correct version number.
+
+Upgrade From |product| 24.12
+----------------------------
+
+If you are upgrading from the **24.12** series version (**24.12.0**
+and **24.12.1**):
 
 #. The infrastructure was installed with Ansible and has **no** |WSC| Role
    installed. In this case, simply proceed to Section
