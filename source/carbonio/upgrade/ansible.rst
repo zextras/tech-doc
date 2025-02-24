@@ -31,8 +31,8 @@ upgrade procedure with Ansible.
 * If you do not have yet a working Ansible environment, please follow
   the instructions in section :ref:`install-with-ansible`
 
-* You need to install the latest ``carbonio_upgrade`` :ref:`Ansible
-  playbook installed <ans-pb-install>`
+* You need to install the latest ``carbonio_upgrade`` :ref:`Ansible Galaxy
+  collection installed <ans-pb-install>`
 
   * If you already have installed it, make sure that it :ref:`is updated
     <ans-pb-up>`, see how to :ref:`check the current version
@@ -49,15 +49,15 @@ upgrade procedure with Ansible.
   always end up with the latest version (|release| at the time of
   writing)
 
-* The Ansible playbook will update all the packages installed on the
+* The Ansible Galaxy collection will update all the packages installed on the
   system, from any active configured repository, not only
   |product|\'s. To avoid this behaviour, comment out any repositories
   from which you do not want to upgrade packages.
 
-* Ansible will upgrade **PostgreSQL to version 16**: if you prefer to
-  upgrade it manually, please refer to Section :ref:`pg-upgrade`
-
-* Ansible will remove the deprecated **DB Connector Role**
+* Ansible will **not** upgrade **PostgreSQL to version 16**, you need
+  to upgrade it manually: please refer to Section
+  :ref:`pg-upgrade`. Note that Since PostgreSQL 12 went in End Of Life
+  on 14th November 2024, you should really consider to upgrade it.
 
 * The upgrade procedure using Ansible is slightly different depending
   if you already installed |wsc| or not. Choose the right
@@ -72,9 +72,9 @@ upgrade procedure with Ansible.
 
 .. _ans-pb-install:
 
-.. card::  Install ``carbonio_upgrade`` playbook
+.. card::  Install ``carbonio_upgrade`` collection
 
-   To install the latest ``carbonio_upgrade`` playbook, issue the
+   To install the latest ``carbonio_upgrade`` collection, issue the
    following command, which will install the necessary infrastructure to
    use for the |product| upgrade.
 
@@ -84,13 +84,13 @@ upgrade procedure with Ansible.
 
 .. _ans-pb-up:
 
-.. card:: Update Ansible playbook
+.. card:: Update Ansible Galaxy collection
 
-  The playbook is version-dependant: to upgrade |product| to version
+  The collection is version-dependant: to upgrade |product| to version
   |version|, you need to have the **same main version** of the
-  playbook. For example, to upgrade to version **25.3.0**, the
-  playbook version must be **25.3.X**, regardless of the last
-  number. To install the latest version of the playbook, execute the
+  collection. For example, to upgrade to version **25.3.0**, the
+  collection version must be **25.3.X**, regardless of the last
+  number. To install the latest version of the collection, execute the
   following command.
 
   .. code:: console
@@ -99,9 +99,9 @@ upgrade procedure with Ansible.
 
 .. _ans-pb-check:
 
-.. card:: Check current Playbook version
+.. card:: Check current Collection version
 
-   To verify the currently installed version of the playbook, execute
+   To verify the currently installed version of the collection, execute
    command
 
    .. code:: console
@@ -113,10 +113,10 @@ upgrade procedure with Ansible.
      # /home/ansible/.ansible/collections/ansible_collections
      Collection             Version
      ---------------------- -------
-     zxbot.carbonio_upgrade 24.9.1
+     zxbot.carbonio_upgrade 25.3.0
 
-   This version of the playbook can be used to install the most recent
-   version in the **24.9** series of |product| (e.g., *24.9.0 or 24.9.1*).
+   This version of the collection can be used to upgrade |product| to
+   the most recent version in the **25.3** series of |product|.
 
 .. No specific requirement is required to upgrade to  |product|
    |version|.
@@ -128,13 +128,23 @@ Upgrade Paths
 
 To upgrade with Ansible, the inventory file must accurately reflect
 the |product| infrastructure. This is particularly important if you
-installed |product| manually and are now upgrading with Ansible. You
-can use an inventory file from one of the :ref:`scenarios` and adapt
-it to your |carbonio| infrastructure. See section
-:ref:`ansible-inventory` for directions.
+installed |product| manually and are now upgrading with Ansible. In
+this case, you can use an inventory file from one of the
+:ref:`scenarios` and adapt it to your |carbonio| infrastructure. See
+section :ref:`ansible-inventory` for directions.
 
 These are the alternatives to upgrade an existent |product|
-infrastructure.
+infrastructure, depending if you have installed the latest **24.12**
+version or an older one.
+
+.. hint:: If you are unsure, :ref:`check the command <ts-version>` to
+   retrieve the correct version number.
+
+Upgrade From |product| 24.12
+----------------------------
+
+If you are upgrading from the **24.12** series version (**24.12.0**
+and **24.12.1**):
 
 #. The infrastructure was installed with Ansible and has **no** |WSC| Role
    installed. In this case, simply proceed to Section
@@ -166,6 +176,38 @@ infrastructure.
    Replace the ``wsc.example.com`` string with the actual FQDN of the
    Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
+
+#. If both the |WSC| Role and the legacy Chats and Video Server
+   Roles are installed, you need to edit the inventory file like
+   above::
+
+     [workStreamServers]
+     wsc.example.com
+
+   Ansible will take care of upgrading all Nodes, including those
+   installing the legacy Roles. Note, however, that there are no
+   updates to the packages providing these Roles, so they will keep
+   the same version.
+
+Upgrade From |product| 24.9
+----------------------------
+
+If you are upgrading from the **24.9** series version, you need to
+make sure that you inventory file still contains the **DB Connector**
+Role::
+
+  [dbsConnectorServers]
+  srv3.example.com
+
+Replace the ``srv3.example.com`` string with the actual FQDN of the
+Node on which the Role is installed.
+
+While the Role was removed, its presence is necessary to allow Ansible
+to properly deal with the packages providing the Role and move them to
+the Node where the Database Role is installed.
+
+After the successful upgrade, the Role can be removed from the
+inventory file.
 
 .. _up-ansible-run:
 
