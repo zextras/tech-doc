@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 After configuring the repositories, the installation of |product|
 requires to run a few commands.
 
@@ -58,7 +54,7 @@ Next, we install all packages needed for |product|.
          carbonio-message-broker carbonio-message-dispatcher \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-videoserver-ce carbonio-catalog carbonio-search-ui
+         carbonio-videoserver-ce carbonio-catalog
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -77,7 +73,7 @@ Next, we install all packages needed for |product|.
          carbonio-message-broker carbonio-message-dispatcher \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-videoserver-ce carbonio-catalog carbonio-search-ui
+         carbonio-videoserver-ce carbonio-catalog
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -106,7 +102,7 @@ Next, we install all packages needed for |product|.
          carbonio-docs-connector-db carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
-         carbonio-catalog carbonio-search-ui
+         carbonio-catalog
 
    .. tab-item:: RHEL 9 |beta|
       :sync: rhel9
@@ -135,7 +131,7 @@ Next, we install all packages needed for |product|.
          carbonio-docs-connector-db carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
-         carbonio-catalog carbonio-search-ui
+         carbonio-catalog
 
 After the successful package installation, you can check that all
 |product| services are running, by using
