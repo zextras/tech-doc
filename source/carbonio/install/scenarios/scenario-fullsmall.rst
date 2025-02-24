@@ -13,10 +13,10 @@ using the :ref:`scenario-sm-playbook`, or :ref:`manually
 
 The Roles installed on the *5 Nodes* are:
 
-* Node 1: Mesh and Directory, Database, and Monitoring
+* Node 1: Mesh & Directory, Database, and Monitoring
 * Node 2: MTA AV/AS and Proxy
 * Node 3: Mailstore & Provisioning, and Tasks
-* Node 4: WSC, Files, Docs and Editor, and Preview
+* Node 4: WSC, Files, Docs & Editor, and Preview
 * Node 5: Video Server & Video Recording
 
 Architecture

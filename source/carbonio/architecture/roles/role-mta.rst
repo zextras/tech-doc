@@ -15,15 +15,15 @@ Bootstrap |carbonio|
 .. include:: /_includes/_installation/bootstrap.rst
 
 During the process, you need to provide these values, which you can
-retrieve from the first Mesh and Directory node.
+retrieve from the first Mesh & Directory node.
 
-* ``Ldap master host`` is the FQDN of the first Mesh and Directory
+* ``Ldap master host`` is the FQDN of the first Mesh & Directory
   node, (example: ldap-mstr.example.com)
 * ``Ldap Admin password`` is obtained from the first Mesh and
   Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
 
 * ``Bind password for postfix ldap user`` and ``Bind password for
-  amavis ldap user`` are obtained from the first Mesh and Directory
+  amavis ldap user`` are obtained from the first Mesh & Directory
   node and unless they have been changed they will match the ``Ldap
   Admin password``
 
