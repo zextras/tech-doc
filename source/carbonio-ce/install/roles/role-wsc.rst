@@ -48,15 +48,16 @@ Enable the |wsc| UI
 -------------------
 
 The |wsc| role is disabled by default, you can enable it either from
-the |adminui| or from the command line by running as the ``zextras``
-user the command
+the |adminui| at COS level (please refer to Section
+:ref:`cos-features`), or from the CLI at both COS and Account level by
+running as the ``zextras`` user the command
 
 .. code:: console
 
    zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
 
 This command enables the chat for the ``default`` COS, but you can
-enable it only on selected COSes.
+enable it on selected COSes and Accounts.
 
 Restart the service
 
