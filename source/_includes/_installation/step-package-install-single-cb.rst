@@ -47,9 +47,9 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui carbonio-search-ui \
-         carbonio-ws-collaboration-ui carbonio-files-ui \
-         carbonio-mailbox-db carbonio-files-db postgresql-16
+         carbonio-files-public-folder-ui carbonio-files-ui \
+         carbonio-ws-collaboration-ui carbonio-mailbox-db \
+         carbonio-files-db postgresql-16
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -61,9 +61,9 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui carbonio-search-ui \
-         carbonio-ws-collaboration-ui carbonio-files-ui \
-         carbonio-mailbox-db carbonio-files-db postgresql-16
+         carbonio-files-public-folder-ui carbonio-files-ui \
+         carbonio-ws-collaboration-ui carbonio-mailbox-db \
+         carbonio-files-db postgresql-16
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -90,9 +90,9 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui carbonio-search-ui \
-         carbonio-ws-collaboration-ui carbonio-files-ui \
-         carbonio-mailbox-db carbonio-files-db postgresql16-server
+         carbonio-files-public-folder-ui carbonio-files-ui \
+         carbonio-ws-collaboration-ui carbonio-mailbox-db \
+         carbonio-files-db postgresql16-server
 
       Initialise and enable the database
 
@@ -126,9 +126,9 @@ Next, we install all packages needed for |product|.
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
-         carbonio-files-public-folder-ui carbonio-search-ui \
-         carbonio-ws-collaboration-ui carbonio-files-ui \
-         carbonio-mailbox-db carbonio-files-db postgresql16-server
+         carbonio-files-public-folder-ui carbonio-files-ui \
+         carbonio-ws-collaboration-ui  carbonio-mailbox-db \
+         carbonio-files-db postgresql16-server
 
       Initialise and enable the database
 
