@@ -103,6 +103,8 @@ verify the S/MIME signature.
 
    zextras$ carbonio prov mcf carbonioSMIMESignatureVerificationEnabled true
 
+.. index:: Password policies; S/MIME
+
 The access the S/MIME *Certificate Store* from within their Settings
 page, users need to supply a password, which is different from the
 S/MIME certificate's password. You can set various parameters of this
