@@ -32,7 +32,7 @@ pipeline {
         container('python-312') {
           sh '''
 python3 -m venv .
-source bin/activate
+. bin/activate
 pip3 install -r requirements.txt
 python3 -m sphinx source/suite build/suite/html
 python3 -m sphinx source/carbonio build/carbonio/html
