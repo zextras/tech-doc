@@ -50,7 +50,7 @@ successfully, check that in the carbonio-videoserver logs
 Video Recording Notes
 ---------------------
 
-You can enable the Video Recorder on at user, COS, or global
+You can enable the Video Recorder at user, COS, or global
 level: please refer to section :ref:`vs-recorder-conf` for
 directions.
 
