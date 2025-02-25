@@ -64,15 +64,15 @@ Finally, enable and start the service with the commands
 
 .. code:: console
 
-   # systemctl enable videoserver.service
-   # systemctl start  videoserver.service
+   # systemctl enable carbonio-videoserver.service
+   # systemctl start  carbonio-videoserver.service
 
 Check Video Server & Broker
 ---------------------------
 
 To make sure that videoserver and message broker are connected
 successfully, check that in the carbonio-videoserver logs
-(:command:`journalctl -u videoserver`) you find the line::
+(:command:`journalctl -u carbonio-videoserver`) you find the line::
 
   RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
   handler completed
