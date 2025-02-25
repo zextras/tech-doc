@@ -14,7 +14,7 @@ requirement for this Role.
 Install Packages
 ----------------
 
-This Role consists of *Video Server (WSC)* and *Video Recording*. You need
+This Role consists of *Video Server (WSC)* and *Video Recording (WSC)*. You need
 to install the latter only if you plan to record video meetings,
 otherwise you can install *Video Server* without *Video
 Recording*. For this reason we split this Role's installation in two parts.
@@ -64,15 +64,15 @@ Finally, enable and start the service with the commands
 
 .. code:: console
 
-   # systemctl enable carbonio-videoserver.service
-   # systemctl start  carbonio-videoserver.service
+   # systemctl enable videoserver.service
+   # systemctl start  videoserver.service
 
 Check Video Server & Broker
 ---------------------------
 
 To make sure that videoserver and message broker are connected
 successfully, check that in the carbonio-videoserver logs
-(:command:`journalctl -u carbonio-videoserver`) you find the line::
+(:command:`journalctl -u videoserver`) you find the line::
 
   RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
   handler completed
