@@ -6,7 +6,7 @@
       .. code:: console
 
          # apt install carbonio-videoserver-advanced \
-         carbonio-videoserver-recorder
+         carbonio-videorecorder
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -14,7 +14,7 @@
       .. code:: console
 
          # apt install carbonio-videoserver-advanced \
-         carbonio-videoserver-recorder
+         carbonio-videorecorder
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -22,7 +22,7 @@
       .. code:: console
 
          # dnf install carbonio-videoserver-advanced \
-         carbonio-videoserver-recorder
+         carbonio-videorecorder
 
 
    .. tab-item:: RHEL 9
@@ -31,7 +31,7 @@
       .. code:: console
 
          # dnf install carbonio-videoserver-advanced \
-         carbonio-videoserver-recorder
+         carbonio-videorecorder
 
 Starting from **25.3** release, the :file:`/etc/janus/janus.jcfg`
 configuration file will be updated automatically to include the |vs|
