@@ -83,7 +83,7 @@ Video Recording
 To install the Video Recording packages, execute the command according
 to the underlying operating system.
 
-.. include:: /_includes/_installation/_packages/role-vr.rst
+.. include:: /_includes/_installation/_packages/role-vr-wsc.rst
 
 Pending setups
 --------------
