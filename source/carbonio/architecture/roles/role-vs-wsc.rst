@@ -77,18 +77,8 @@ successfully, check that in the carbonio-videoserver logs
   RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
   handler completed
 
-Video Recording
----------------
-
-To install the Video Recording packages, execute the command according
-to the underlying operating system.
-
-.. include:: /_includes/_installation/_packages/role-vr-wsc.rst
-
-Pending setups
---------------
-
-.. include:: /_includes/_installation/pset.rst
+Video Recording Notes
+---------------------
 
 You can then enable the Video Recorder on a user, COS, or global
 level: please refer to section :ref:`vs-recorder-conf` for
