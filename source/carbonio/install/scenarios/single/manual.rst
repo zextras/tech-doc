@@ -23,7 +23,7 @@ repositories.
 
 .. _n1-s1:
 
-.. dropdown:: Step1: Configuration of Repositories
+.. dropdown:: Step 1: Configuration of Repositories
 
    .. rubric:: |product|
 
@@ -35,26 +35,26 @@ repositories.
 
 .. _n1-s2:
 
-.. dropdown:: Step2: Setting Hostname
+.. dropdown:: Step 2: Setting Hostname
 
    .. include:: /_includes/_installation/steps-hostname.rst
 
 .. _n1-s3:
 
-.. dropdown:: Step3: System Upgrade and Package Installation
+.. dropdown:: Step 3: System Upgrade and Package Installation
 
    .. include:: /_includes/_installation/step-package-install-single-cb.rst
    .. include:: /_includes/_installation/step-package-install-single-collaboration-node-cb.rst
 
 .. _n1-s4:
 
-.. dropdown:: Step4: Configure PostgreSQL
+.. dropdown:: Step 4: Configure PostgreSQL
 
    .. include:: /_includes/_installation/step-conf-db-single-cb.rst
 
 .. _n1-s5:
 
-.. dropdown:: Step5: Bootstrap |product|
+.. dropdown:: Step 5: Bootstrap |product|
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
@@ -63,7 +63,7 @@ The next steps concern the configuration and setup of the various
 
 .. _n1-s6:
 
-.. dropdown:: Step6: Setup |mesh|
+.. dropdown:: Step 6: Setup |mesh|
 
    .. include:: /_includes/_installation/mesh.rst
 
@@ -74,7 +74,7 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
 
 .. _n1-s7:
 
-.. dropdown:: Step7: Databases Bootstrap
+.. dropdown:: Step 7: Databases Bootstrap
 
    .. card:: Mailbox DB Bootstrap
 
@@ -117,7 +117,7 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
 
 .. _n1-s8:
 
-.. dropdown:: Step8: Complete Installation
+.. dropdown:: Step 8: Complete Installation
 
    .. tab-set::
 
@@ -172,7 +172,7 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
 
 .. _n1-s9:
 
-.. dropdown:: Step9: Data Required for Additional Nodes
+.. dropdown:: Step 9: Data Required for Additional Nodes
 
    The following data from this Node will be needed during the
    installation of the *Collaboration* and *Video Server* Nodes.
