@@ -115,6 +115,12 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
 
          # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
 
+   .. card:: |wsc| Push Notifications
+
+      .. code:: console
+
+         # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap  carbonio_adm 127.0.0.1
+
 .. _n1-s8:
 
 .. dropdown:: Step 8: Complete Installation
