@@ -16,4 +16,5 @@ mandatory.
 
       ldap
       management
+      advancedadmin
       mesh
