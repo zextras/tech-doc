@@ -320,7 +320,8 @@ Node*. Click on the drop-downs to expand them.
             carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
-            carbonio-docs-connector postgresql-client
+            carbonio-docs-connector postgresql-client \
+            carbonio-push-connector carbonio-notification-push 
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -331,7 +332,8 @@ Node*. Click on the drop-downs to expand them.
             carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
-            carbonio-docs-connector postgresql-client
+            carbonio-docs-connector postgresql-client \
+            carbonio-push-connector carbonio-notification-push 
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -342,7 +344,8 @@ Node*. Click on the drop-downs to expand them.
             carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
-            carbonio-docs-connector postgresql16
+            carbonio-docs-connector postgresql16 \
+            carbonio-push-connector carbonio-notification-push 
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -353,8 +356,8 @@ Node*. Click on the drop-downs to expand them.
             carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
-            carbonio-docs-connector postgresql16
-
+            carbonio-docs-connector postgresql16 \
+            carbonio-push-connector carbonio-notification-push 
 
 .. dropdown:: Step 4: Bootstrap |product|
 
