@@ -7,7 +7,7 @@
 
          # apt install carbonio-proxy carbonio-catalog \
           carbonio-files-public-folder-ui carbonio-webui \
-          carbonio-tasks-ui \ carbonio-files-ui \
+          carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
 
@@ -18,7 +18,7 @@
 
          # apt install carbonio-proxy carbonio-catalog \
           carbonio-files-public-folder-ui carbonio-webui \
-          carbonio-tasks-ui \ carbonio-files-ui \
+          carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
 
@@ -29,7 +29,7 @@
 
          # dnf install carbonio-proxy carbonio-catalog \
           carbonio-files-public-folder-ui carbonio-webui \
-          carbonio-tasks-ui \ carbonio-files-ui \
+          carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
    .. tab-item:: RHEL 9
@@ -39,7 +39,7 @@
 
          # dnf install carbonio-proxy carbonio-catalog \
           carbonio-files-public-folder-ui carbonio-webui \
-          carbonio-tasks-ui \ carbonio-files-ui \
+          carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
 .. note:: The |legacy| :file:`carbonio-chats-ui` package is no longer
