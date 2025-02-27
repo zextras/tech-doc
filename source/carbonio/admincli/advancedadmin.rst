@@ -97,7 +97,7 @@ verify the S/MIME signature.
 
 .. code:: console
 
-   zextras$ carbonio prov mcf carbonioSMIMESignatureVerificationEnabled true
+   zextras$ carbonio prov mcf carbonioSMIMESignatureVerificationEnabled TRUE
 
 .. index:: Password policies; S/MIME
 
