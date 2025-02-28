@@ -41,6 +41,7 @@ following:
    scenarios/scenario-fullsmall
    scenarios/scenario-fullstandard
    scenarios/scenario-fullredundant
+   scenarios/scenario-ha
 
 Scenarios
 =========
