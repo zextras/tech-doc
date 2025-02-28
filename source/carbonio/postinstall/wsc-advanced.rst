@@ -173,7 +173,7 @@ tables.
    described in section :ref:`ts-token`.
 
 Configuration tables
--------------------
+.-------------------
 
 The following tables are available to optimise |wsc|: :ref:`Push
 Connector <wsc-pool-opt>`, :ref:`Push Notifications Database

@@ -21,6 +21,14 @@
    .. tab-item:: RHEL 8
       :sync: rhel8
 
+      Add PostgreSQL repository
+
+      .. code:: console
+
+         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+      Install packages
+
       .. code:: console
 
          # dnf install carbonio-message-dispatcher \
@@ -30,8 +38,16 @@
    .. tab-item:: RHEL 9
       :sync: rhel9
 
+      Add PostgreSQL repository
+
+      .. code:: console
+
+         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+      Install packages
+      
       .. code:: console
 
          # dnf install carbonio-message-dispatcher \
-         carbonio-ws-collaboration postgresql16 \
-         carbonio-push-connector carbonio-notification-push
+           carbonio-ws-collaboration postgresql16 \
+           carbonio-push-connector carbonio-notification-push
