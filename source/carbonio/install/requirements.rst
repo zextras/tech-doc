@@ -113,8 +113,7 @@ Additional Requirements
   be issued as the ``root`` user, unless stated otherwise.
 
   .. note:: The ``zextras`` user is created during the |product|
-     installation process, it is not necessary to create it
-     beforehand.
+     installation process, it must not be created beforehand.
 
 * Give meaningful names to the nodes. For example, call them
   `proxy.example.com`, `mta.example.com`, and so on. Replace
