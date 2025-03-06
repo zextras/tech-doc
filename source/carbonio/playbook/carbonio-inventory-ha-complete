@@ -1,0 +1,71 @@
+
+[kafka]
+svc1.example.com broker_id=1
+svc2.example.com broker_id=2
+svc3.example.com broker_id=3
+
+[zookeeper_servers]
+svc1.example.com zookeeper_id=1
+svc2.example.com zookeeper_id=2
+svc3.example.com zookeeper_id=3
+
+[postgresServers]
+svc1.example.com postgres_version=16 patroni_role=primary
+svc2.example.com postgres_version=16 patroni_role=secondary
+
+[masterDirectoryServers]
+svc1.example.com ldap_role=master
+svc2.example.com ldap_role=mmr
+
+[replicaDirectoryServers]
+
+[serviceDiscoverServers]
+svc1.example.com
+svc2.example.com
+svc3.example.com
+
+[dbsConnectorServers]
+mbox1.example.com
+mbox2.example.com
+
+[mtaServers]
+mta1.example.com
+mta2.example.com
+
+[proxyServers]
+proxy1.example.com
+proxy2.example.con
+
+[proxyServers:vars]
+#webmailHostname=webmailPublicHostname
+
+[applicationServers]
+mbox1.example.com
+mbox2.example.com
+
+[filesServers]
+filesdocs1.example.com
+filesdocs2.example.com
+
+[docsServers]
+filesdocs1.example.com
+filesdocs2.example.com
+
+[taskServers]
+filesdocs1.example.com
+filesdocs2.example.com
+
+[previewServers]
+filesdocs1.example.com
+filesdocs2.example.com
+
+[videoServers]
+#hostname public_ip_address=x.y.z.t
+video1.example.com public_ip_address=1.2.3.4
+video2.example.com public_ip_address=1.2.3.4
+
+[prometheusServers]
+svc3.example.com
+
+[syslogServer]
+svc3.example.com
