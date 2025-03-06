@@ -3,30 +3,33 @@
 Carbonio HA Configuration
 =========================
 
-After completing the standard installation of essential services, use
-the following ansible collections to set up High Availability (HA) for
-Carbonio.
+The main part of the installation is the set up of the HA
+infrastructure, which will be built on the scenario described in the
+:ref:`previous section <ha-install>`.
 
-Please download necessary ansible collections from Galaxy:
+In order to complete the HA configuration, you need access to the
+Ansible's Control Node and of the following items:
 
-.. code:: console
+#. The inventory file you used in previous section, which you must
+   edit according to the directions you will find in the reainder of
+   this page
 
-   ansible-galaxy collection install zxbot.carbonio_kafka
-   ansible-galaxy collection install zxbot.carbonio_patroni
-   ansible-galaxy collection install zxbot.carbonio_ldap
+#. the following Ansible Galaxy Collections: ``carbonio_kafka``,
+   ``carbonio_patroni``, and ``carbonio_ldap`` that you can install
+   with command
 
-.. _requirements-1:
+   .. code:: console
 
-Requirements
-------------
-
--  S3 is mandatory for enabling the Carbonio HA feature.
+      # ansible-galaxy collection install zxbot.carbonio_kafka
+      # ansible-galaxy collection install zxbot.carbonio_patroni 
+      # ansible-galaxy collection install zxbot.carbonio_ldap
 
 Prepare inventory
 -----------------
 
-After **standard** Carbonio installation you should have the following
-inventory files:
+After the **standard** |product| installation has completed
+successfully, you should have the following inventory files: (are they
+all necessary in this step?)
 
 -  inventory
 
@@ -36,15 +39,42 @@ inventory files:
 
 -  inventory_consulpassword
 
--  inventory_videoserver(only if video server was installed)
+-  inventory_videoserver (only if video server was installed)
 
 To configure the inventory for HA installation, you will need to add
-specific variables to the inventory file and create two new groups:
+new groups and add specific variables to the :file:`inventory`
+file. Please read the following advises if you plan to add the HA
+infrastructure to different Node than the one we will use in the
+remainder of the scenario. 
 
-#. ``kafka`` group with ``broker_id`` variables - will point to the
-   servers where kafka will be installed
+.. card:: Guidelines for Roles in HA Configuration
 
-   .. code:: console
+   The initial Roles assigned during the standard installation (i.e.,
+   as **master** for LDAP or **primary** for PostgreSQL) should remain
+   on the servers that were configured in the standard
+   installation. Some services and configurations have already been
+   initialised based on this setup, so:
+
+   - Do not assign the **master** role (for LDAP) or the **primary**
+     role (for PostgreSQL) to any additional servers being configured
+     as extra masters.
+
+   - If you plan to add extra master servers, configure them with
+     roles **mmr** for Directory Server and **secondary** for
+     PostgreSQL in the HA inventory file.
+
+   This approach ensures that the pre-existing configurations and
+   initializations remain stable and compatible with the HA
+   deployment.
+
+The two new groups to add at the bottom of the file are:
+     
+#. ``kafka`` group, which will point to the Nodes where
+   :command:`kafka` will be installed: these are the three Cluster
+   Nodes. To each Node, add the ``broker_id`` variable with a
+   different value: 
+
+   .. code:: text
 
       #kafka group
       [kafka]
@@ -52,10 +82,12 @@ specific variables to the inventory file and create two new groups:
       svc2.example.com broker_id=2
       svc3.example.com broker_id=3
 
-#. ``zookeeper_servers`` group with ``zookeeper_id`` variables - will
-   point to the servers where zookeper will be installed
+#. ``zookeeper_servers`` group, which will point to the Nodes where
+   :command:`zookeper` will be installed: these are the three Cluster
+   Nodes.  To each Node, add the ``zookeeper_id`` variable with a
+   different value:
 
-   .. code:: console
+   .. code:: text
 
       #zookeeper_servers group
       [zookeeper_servers]
@@ -63,21 +95,23 @@ specific variables to the inventory file and create two new groups:
       svc2.example.com zookeeper_id=2
       svc3.example.com zookeeper_id=3
 
-#. ``postgres_version`` for ``postgresServers`` group - will point to
-   the postgres version used for Postgres HA and ``patroni_role`` for
-   ``postgresServers`` group - will point to the Patroni role. Can be
-   ``primary`` for initial master or ``secondary`` for new extra master
+You need also to add variable to existing groups.
 
-   .. code:: console
+#. To the ``postgresServers`` group you need to add two variables:
+   ``postgres_version`` is the PostgreSQL version (16), and
+   ``patroni_role`` can be set to ``primary`` for initial master or
+   ``secondary`` for new extra master:
+
+   .. code:: text
 
       #postgresServers group
       [postgresServers]
       svc1.example.com postgres_version=16 patroni_role=primary
       svc2.example.com postgres_version=16 patroni_role=secondary
 
-#. ``ldap_role`` for ``masterDirectoryServers`` group - will point to
-   the LDAP role. Can be ``master`` for initial master or ``mmr`` for
-   new extra master
+#. The variable ``ldap_role`` must be added to the
+   ``masterDirectoryServers`` group, and can assume the values
+   ``master`` for initial master or ``mmr`` for new extra master
 
    .. code:: console
 
@@ -86,9 +120,10 @@ specific variables to the inventory file and create two new groups:
       svc1.example.com ldap_role=master
       svc2.example.com ldap_role=mmr
 
-#. ``dbsConnectorServers`` group should be filled out, DB Connectors
+#. The ``dbsConnectorServers`` group must be filled out. DB Connectors
    will be moved from Postgres server to servers in
-   ``[dbsConnectorServers]`` for HA.
+   ``[dbsConnectorServers]`` for HA. In our scenario we move them to
+   the Node hosting the MTA Role:
 
    .. code:: console
 
@@ -97,99 +132,15 @@ specific variables to the inventory file and create two new groups:
       mbox1.example.com
       mbox2.example.com
 
-**Important Note on Initial Roles for HA Configuration**
+The complete inventory file, filled according to the directions above,
+can be seen and downloaded here.
 
-| The initial roles assigned during the standard installation (such as
-  **master** for LDAP or **primary** for PostgreSQL) should remain on
-  the servers that were configured in the standard environment setup.
-| Some services and configurations are already initialized based on this
-  setup, so:
+.. dropdown:: Inventory - "HA" Scenario
+   :open:
 
--  Do not assign the **master** role (for LDAP) or the **primary** role
-   (for PostgreSQL) to any additional servers being configured as extra
-   masters.
+   :download:`Download_inventory </playbook/carbonio-inventory-ha-complete>`
 
--  Extra master servers should be configured with roles such as **mmr**
-   for LDAP or **secondary** for PostgreSQL in the HA inventory.
-
-This approach ensures that the pre-existing configurations and
-initializations remain stable and compatible with the HA deployment.
-
-Full view of the inventory. As you can notice only staff described above
-was modified.
-
-.. code:: console
-
-   [kafka]
-   svc1.example.com broker_id=1
-   svc2.example.com broker_id=2
-   svc3.example.com broker_id=3
-
-   [zookeeper_servers]
-   svc1.example.com zookeeper_id=1
-   svc2.example.com zookeeper_id=2
-   svc3.example.com zookeeper_id=3
-
-   [postgresServers]
-   svc1.example.com postgres_version=16 patroni_role=primary
-   svc2.example.com postgres_version=16 patroni_role=secondary
-
-   [masterDirectoryServers]
-   svc1.example.com ldap_role=master
-   svc2.example.com ldap_role=mmr
-
-   [replicaDirectoryServers]
-
-   [serviceDiscoverServers]
-   svc1.example.com
-   svc2.example.com
-   svc3.example.com
-
-   [dbsConnectorServers]
-   mbox1.example.com
-   mbox2.example.com
-
-   [mtaServers]
-   mta1.example.com
-   mta2.example.com
-
-   [proxyServers]
-   proxy1.example.com
-   proxy2.example.con
-
-   [proxyServers:vars]
-   #webmailHostname=webmailPublicHostname
-
-   [applicationServers]
-   mbox1.example.com
-   mbox2.example.com
-
-   [filesServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [docsServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [taskServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [previewServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [videoServers]
-   #hostname public_ip_address=x.y.z.t
-   video1.example.com public_ip_address=1.2.3.4
-   video2.example.com public_ip_address=1.2.3.4
-
-   [prometheusServers]
-   svc3.example.com
-
-   [syslogServer]
-   svc3.example.com
+   .. literalinclude:: /playbook/carbonio-inventory-ha-complete
 
 Install Zookeper and Kafka
 --------------------------
@@ -199,44 +150,51 @@ To install Zookeper and Kafka, use the necessary playbook from
 
 .. code:: console
 
-   ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_zookeper_install
-   ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_kafka_install
+   # ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_zookeper_install
+   # ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_kafka_install
 
-Install Postgres HA
--------------------
+Install PostgreSQL HA
+---------------------
 
-The HAProxy installation has been automated with Ansible. This role was
-included in the ``carbonio_patroni`` playbook. When installing HAProxy,
-you will need to confirm the type of your HA installation so that
-haproxy is installed only on the necessary servers.
-
-.. code:: console
-
-   ansible-playbook -i inventor zxbot.carbonio_patroni.carbonio_replica_postgres_install
-   ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_patroni_install
-
-During the execution of the Patroni playbook, you will be prompted with
-the following question:
+PostgreSQL uses HAProxy to add load balancing, health checks, and
+more.  The HAProxy installation has been automated with Ansible and is
+included in the ``carbonio_patroni`` playbook. First, install the
+PstgreSQL replica
 
 .. code:: console
 
-   Is this a full HA installation? (yes/no)
+   # ansible-playbook -i inventor zxbot.carbonio_patroni.carbonio_replica_postgres_install
+
+Before starting the HAProxy installation, note that during the
+installation you will be prompted with the following question::
+
+  Is this a full HA installation? (yes/no)
    
-   - If you answer `yes`, HAProxy will be installed on all servers except the LDAP servers.
-   - If you answer `no`, HAProxy will only be installed on the `dbconnectors`.
+  - If you answer `yes`, HAProxy will be installed on all servers except the LDAP servers.
+  - If you answer `no`, HAProxy will only be installed on the `dbconnectors`.
 
-``carbonio_patroni_install`` also includes role to move DB Connectors
-from postgres server to db connector servers. It allows db connectors to
-connect to an available postgres node managed by Patroni.
+TO install HAProxy, execute command
 
-Install Multi master LDAP
+.. code:: console
+
+   # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_patroni_install
+
+This task also move DB Connectors from the PostgreSQL Node to db
+connector Nodes, as defined on the inventory file. This setup allows
+Db Connectors to connect to an available PostgreSQL node managed by
+Patroni.
+
+Install Multi Master LDAP
 -------------------------
+
+To install the Multi-Master LDAP server, use the appropriate
+collection:
 
 .. code:: console
 
    ansible-playbook -i inventory zxbot.carbonio_ldap.carbonio_install_mmr
 
-Promote Multi master LDAP
+Promote Multi Master LDAP
 -------------------------
 
 It is needed only if replica is installed
