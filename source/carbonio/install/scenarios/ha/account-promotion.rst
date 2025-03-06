@@ -1,3 +1,4 @@
+.. _ha_promotion:
 
 HA Script for Account Promotion
 ===============================

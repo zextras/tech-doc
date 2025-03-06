@@ -1,3 +1,4 @@
+.. _ha-conf:
 
 Carbonio HA Configuration
 =========================

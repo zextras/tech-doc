@@ -1,3 +1,4 @@
+.. _ha-replica:
 
 Auto activate replica using perl
 ================================

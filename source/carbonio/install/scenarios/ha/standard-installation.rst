@@ -1,3 +1,5 @@
+.. _ha-install:
+
 Standard Carbonio Installation
 ==============================
 

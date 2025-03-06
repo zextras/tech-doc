@@ -1,3 +1,4 @@
+.. _ha-checks:
 
 Check CARBONIO HA service status
 ================================
