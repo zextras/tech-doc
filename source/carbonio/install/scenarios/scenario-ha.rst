@@ -74,7 +74,9 @@ centralised S3 storage.
 The following table summarises the Node distribution and redundancy
 requirements for each Carbonio service in a 5-node HA setup:
 
-.. csv-table::
+.. _tab-ha-nodes:
+
+.. csv-table:: The Node distribution in the HA scenario described here.
    :header: "**Service/Role**", "**Primary Nodes**", "**HA Nodes**", "**Total Nodes**"
    :widths: 52, 16, 16, 16
 

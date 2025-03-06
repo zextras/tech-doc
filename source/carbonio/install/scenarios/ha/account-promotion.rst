@@ -1,62 +1,92 @@
 .. _ha_promotion:
 
-HA Script for Account Promotion
-===============================
+HA Account Promotion
+====================
 
-Our HA tool, named **habeat**, is developed in Python to ensure seamless
-account promotion with high availability.
+The Active Replica mechanism underlying |product| HA is described in
+Section :ref:`activereplica`. In particular, :ref:`ar-promo` shows how
+to manually activate a Directory Server Replica. To automatise this
+process, the **habeat** Python tool has been developed to ensure
+seamless account promotion with high availability.
 
-Build
------
+The :command:`habeat` tool can be downloaded from the
+https://github.com/zextras/sps-habeat repository. You will need also a
+number of other files from that repository, so you might want to clone
+it.
 
-Download HA Beat tool from here: --- WAITING URL ---
+All the commands in this section must be executed as the |ru| **for
+every HA Node**, i.e. for every Node listed in the column **HA Nodes**
+in :numref:`tab-ha-nodes`. Taking into account our inventory file,
+this means you must install and configure the utility on these Nodes:
 
-.. intanto ti dico come risolveremo uno dei 2 WAINTING dell'HA ...
-   mi ha chiesto Lorenzo di integrare quei prechecks con gli attuali requirements
-   quindi una volta fatto basterà mettere un link ai requirements ... e quello è sistemato
+.. _tab-ha-fqdn:
 
-
+.. csv-table:: Nodes and FQDN
+   :header: "HA Node", "FQDN"
+            
+   "MTA", "mta2.example.com"
+   "Proxy", "proxy2.example.com"
+   "Mailstore & Provisioning", "mbox2.example.com"
+   "Collaboration", "filesdocs2.example.com"
+   "Video Server", "video2.example.com"
+       
 Deploy
 ------
 
-To deploy habeat you can use preferable utility. For example ``scp``:
+To copy :command:`habeat` you can use preferable utility, for example
+:command:`scp`. Remember to replace ``node`` with the actual Node FQDN
+as shown in :numref:`tab-ha-fqdn` or with equivalent FQDN according to
+your infrastructure.
+
+First, copy the script and its configuration file.
+
+.. hint:: Before copying the configuration file, you might want to
+   edit it to adapt it to your infrastructure. Please refer to Section
+   :ref:`habeat-conf-file` below.
 
 .. code:: console
 
-   scp habeat root@deploy_server:/usr/local/sbin/habeat
-   ssh root@deplot_server "mkdir -p /etc/hamon"
-   scp config/habeat.yml root@deplot_server:/etc/hamon
+   # scp habeat.py root@node:/usr/local/sbin/habeat.py
+   # ssh root@node "mkdir -p /etc/hamon"
+   # scp config/habeat.yml root@node:/etc/hamon
 
 To configure habeat you need to add 2 units to systemd service:
 
--  habeat.service - service that should perform call of script
+- ``habeat.service`` -- the service that should perform call of script
+- ``habeat.timer`` -- the timer for define how often to run the script
 
--  habeat.timer - timer for define how often to run the script
-
-.. code:: console
-
-   scp config/habeat.service root@deplot_server:/etc/systemd/system/
-   scp config/habeat.timer root@deplot_server:/etc/systemd/system/
-   ssh root@deplot_server "systemctl daemon-reload"
-
-In the habeat.timer we can define condition of excecution:
+Copy them to each Node.
 
 .. code:: console
+
+   # scp config/habeat.service root@node:/etc/systemd/system/
+   # scp config/habeat.timer root@node:/etc/systemd/system/
+   # ssh root@node "systemctl daemon-reload"
+
+In the ``habeat.timer`` unit we can define the condition of execution,
+i.e., the interval between each script execution.
+
+.. code:: text
 
    OnCalendar=\*:0/5 # Run script every 5 minutes
 
-In the habeat.service we define we script is placed, where to store the log and where placed configuration file:
+In the ``habeat.service`` unit we define the location of the script,
+log file, and configuration file.
 
-.. code:: console
+.. code:: text
 
    ExecStart=/usr/local/sbin/habeat --config /etc/hamon/habeat.yml --log /var/log/habeat.log
+
+.. _habeat-conf-file:
 
 Configure
 ---------
 
-The example of file:
+The configuration file, which you can find also in the repository, is
+similar to the following: as usual, remember to fill the options with
+values suitable to your infrastructure.
 
-.. code:: console
+.. code:: verbatim
 
    local:
      whoami: "secondary" # marker on which dc script is running
@@ -108,9 +138,3 @@ The example of file:
      port: 8500
      token:
 
-Currently supported providers for acquire data about VM status: Carbonio
-Service Discover
-
-Currently supported modes:
-
--  appserver
