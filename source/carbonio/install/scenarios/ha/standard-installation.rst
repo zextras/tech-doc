@@ -6,87 +6,34 @@ Standard Carbonio Installation
 Before proceeding with the High Availability (HA) setup for Carbonio,
 it is essential to complete a standard installation of all core services.
 This initial setup provides the stable foundation required to create HA
+infrastructure that will be built upon it. The scenario
+
+This scenario can be installed **only** using Ansible: you need to
+setup a control node to run Ansible playbooks (please refer to section
+:ref:`install-with-ansible`, then follow the directions on setting up
+the control node). To access the control node, execute the following
+command to log in (replace ``mail.example.com`` with the name or IP of
+the control node)
+
+
+After you have logged in to the control node, download the Ansible
+inventory (see below this paragraph), replace the FQDN and values
+present in the file according to your planned |product|
 infrastructure.
 
-Follow the steps below to perform the standard installation:
+.. include:: /_includes/_installation/read-req-pre.rst
 
-Install the official Ansible version for your distro
-https://docs.ansible.com/ansible/latest/installation_guide/index.html
+.. dropdown:: Inventory - "HA" Scenario
+   :open:
 
-.. code:: console
+   :download:`Download_inventory </playbook/carbonio-inventory-ha>`
 
-   # Install the Carbonio Ansible collection
-   ansible-galaxy collection install zxbot.carbonio_install
+   .. literalinclude:: /playbook/carbonio-inventory-ha
 
-Prepare the inventory file with server roles
-
-.. code:: console
-
-   #inventory file example
-
-   [postgresServers]
-   svc1.example.com
-
-   [masterDirectoryServers]
-   svc1.example.com
-
-   [replicaDirectoryServers]
-
-   [serviceDiscoverServers]
-   svc1.example.com
-   svc2.example.com
-   svc3.example.com
-
-   [dbsConnectorServers]
-   #Keep this group empty for a standard installation
-
-   [mtaServers]
-   mta1.example.com
-   mta2.example.com
-
-   [proxyServers]
-   proxy1.example.com
-   proxy2.example.com
-
-   [proxyServers:vars]
-   #webmailHostname=webmailPublicHostname
-
-   [applicationServers]
-   mbox1.example.com
-   mbox2.example.com
-
-   [filesServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [docsServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [taskServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [previewServers]
-   filesdocs1.example.com
-   filesdocs2.example.com
-
-   [videoServers]
-   #hostname public_ip_address=x.y.z.t
-   video1.example.com public_ip_address=1.2.3.4
-   video2.example.com public_ip_address=1.2.3.4
-
-   [prometheusServers]
-   svc3.example.com
-
-   [syslogServer]
-   svc3.example.com
-
-Execute the playbook using the inventory file:
+Once you edited the inventory, save it in a directory of your choice
+as :file:`carbonio-inventory`. Now, you can run the script:
+from that directory execute the command
 
 .. code:: console
 
    ansible-playbook -i inventory zxbot.carbonio_install.carbonio_install
-
-
-
