@@ -41,7 +41,10 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`ha_promotion` introduces **habeat**, |product|'s python tool
    to ensure automatic promotion of a Mesh Service in case the master
    becomes unavailable
-   
+
+#. :ref:`ha-storage` guides you in the creation of a centralised MinIO
+   or S3 bucket
+
 #. :ref:`ha-replica` provides a scripts to activate a Directory
    Replica
 
@@ -195,6 +198,7 @@ a High Availability Carbonio installation:
 
    ha/standard-installation.rst
    ha/ha-configuration.rst
+   ha/object-storage.rst
    ha/account-promotion.rst
    ha/activate-replica.rst
    ha/checks-status.rst
