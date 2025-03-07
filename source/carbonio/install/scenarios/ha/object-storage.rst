@@ -4,9 +4,9 @@ Object Storage Configuration
 ============================
 
 
-In the HA scenario, each MTA Role should use a centralised volume, so
-in this section we recall the commands needed to create a MinIO or S3
-Bucket, configure it, and set it as centralised volume. Note that you
+A centralized volume is a mandatory requirement to configure an HA scenario.
+This section explains the commands required to configure a MinIO or S3 bucket
+in Carbonio and set it up as a centralized volume. Note that you
 should already have a MinIO or S3 service at your disposal, either
 within your infrastructure or purchased from a third-party, before
 configuring the bucket: the commands here will only connect to the
