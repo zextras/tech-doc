@@ -5,7 +5,7 @@ HA Account Promotion
 
 The Active Replica mechanism underlying |product| HA is described in
 Section :ref:`activereplica`. In particular, :ref:`ar-promo` shows how
-to manually activate a Directory Server Replica. To automatise this
+to manually activate a Replica. To automatise this
 process, the **habeat** Python tool has been developed to ensure
 seamless account promotion with high availability.
 

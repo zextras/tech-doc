@@ -5,13 +5,13 @@
 =============
 
 This section describes a |product| infrastructure which includes Roles
-redundancy and |ha|. The number of Nodes required, the steps required,
+redundancy and |ha|. The number of required Nodes, the necessary steps,
 and the overall complexity involved require to pay attention to each
-tasks that needs to be carried out.
+task that needs to be carried out.
 
 The installation of this scenario can be carried out **using Ansible
-only**, so please refer to Section :ref:`ansible-setup` if you do not
-have yet it installed: there you will find directions for its setup.
+only**, so if you do not have it installed yet please refer to
+Section :ref:`ansible-setup`: there you will find directions for its setup.
 
 This section covers the required components to set up the scenario,
 including load balancers, a Kafka cluster, a PostgreSQL cluster, an
@@ -114,7 +114,7 @@ Requirements
 
 - An object storage like MinIO or S3
 
-- A multimaster carbonio-directory (carbonio directory server?)
+- An additional carbonio-directory-server node configured in multimaster mode (mmr)
 
 Detailed Node Specifications
 ----------------------------
