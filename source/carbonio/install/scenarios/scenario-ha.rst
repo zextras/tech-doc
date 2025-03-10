@@ -149,7 +149,7 @@ recommended specifications:
      - Mailstore
      - 2 (1 primary + 1 HA)
      - Responsible for mailbox storage and retrieval, utilising
-       centralized S3 storage to ensure data availability
+       centralised S3 storage to ensure data availability
      - Both nodes share S3 storage, ensuring real-time data
        redundancy, so customer data is always accessible
    * - Cluster

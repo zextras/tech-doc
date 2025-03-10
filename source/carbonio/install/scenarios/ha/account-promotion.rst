@@ -23,13 +23,13 @@ this means you must install and configure the utility on these Nodes:
 
 .. csv-table:: Nodes and FQDN
    :header: "HA Node", "FQDN"
-            
+
    "MTA", "mta2.example.com"
    "Proxy", "proxy2.example.com"
    "Mailstore & Provisioning", "mbox2.example.com"
    "Collaboration", "filesdocs2.example.com"
    "Video Server", "video2.example.com"
-       
+
 Deploy
 ------
 
@@ -86,55 +86,57 @@ The configuration file, which you can find also in the repository, is
 similar to the following: as usual, remember to fill the options with
 values suitable to your infrastructure.
 
-.. code:: verbatim
+.. dropdown:: Habeat configuration file
+   :open:
 
-   local:
-     whoami: "secondary" # marker on which dc script is running
-     dc_check: "primary" # marker which dc script should check
-     role: "appserver" # supported roles: appserver or consulserver or proxyserver
-     checkDownFile: "/var/tmp/appserverdown-habeat" # template for lock file related with down state
-     checkPromotionFile: "/var/tmp/appserverprom-habeat" # template for lock file related with promotion state
-     checkRestartReplicaFile: "/var/tmp/appserverrstopha" #only app server lock file for restart replica lock file
-     provider: consul # provider for external witness: hetrix or vcenter
-     threads: 5 # carbonio ha promotion number of threads
-     proxy_switch: "bgp" # proxy switch tool: bgp
-     proxy_enable_activate: false # enable run proxy switch
-     proxy_enable_deactivate: false # enable run proxy reverse switch
-     disable_ha_module: false # define if another app server down stop ha module of Carbonio
-     flush_cache: false # define if we need flush cache for accounts after promotion
-     flush_arguments_a: false # define if we need run flush cache for all application services. Used with flush_cache: true
-     restart_replica: false # run ha restartReplicas accounts
-   
-   primary:
-     proxy_ip: # this value used for check availability of proxy in primary dc
-     appserver_ip: delete # this value used for check availability of application in primary dc
-     directorysrv_ip:
-     consul_ips: #this values used for check availability of consul servers in primary dc
-     -
-     -
-     consul_vmnames: # this values used for check consul servers in monitoring server in primary dc
-     - svc1.example.com
-     - svc3.example.com
-     appserver_vmname: mbox1.example.com # this value used for check application server in monitoring server in primary dc
-     proxyserver_vmname: proxy1.example.com # this value used for check proxy server in monitoring server in primary dc
+   ::
      
-   secondary:
-     proxy_ip: # this value used for check availability of proxy in secondary dc
-     appserver_ip: # this value used for check availability of application in secondary dc
-     directorysrv_ip:
-     consul_ips: # this values used for check availability of consul servers in secondary dc
-     -
-     consul_vmnames: # this values used for check consul servers in monitoring server in secondary dc
-     - svc2.example.com
-     appserver_vmname: mbox2.example.com # this value used for check application server in monitoring server in secondary dc
-     proxyserver_vmname: proxy2.example.com # this value used for check proxy server in monitoring server in secondary dc
-     proxy_switch:
-       bgp: # this value used for choose proxy switch
-         activate: # list of command to activate proxy switch
-         deativate: # list of command to deactivate proxy switch
-   
-   consul: # consul provider config
-     hostname: 127.0.0.1
-     port: 8500
-     token:
+      local:
+        whoami: "secondary" # marker on which dc script is running
+        dc_check: "primary" # marker which dc script should check
+        role: "appserver" # supported roles: appserver or consulserver or proxyserver
+        checkDownFile: "/var/tmp/appserverdown-habeat" # template for lock file related with down state
+        checkPromotionFile: "/var/tmp/appserverprom-habeat" # template for lock file related with promotion state
+        checkRestartReplicaFile: "/var/tmp/appserverrstopha" #only app server lock file for restart replica lock file
+        provider: consul # provider for external witness: hetrix or vcenter
+        threads: 5 # carbonio ha promotion number of threads
+        proxy_switch: "bgp" # proxy switch tool: bgp
+        proxy_enable_activate: false # enable run proxy switch
+        proxy_enable_deactivate: false # enable run proxy reverse switch
+        disable_ha_module: false # define if another app server down stop ha module of Carbonio
+        flush_cache: false # define if we need flush cache for accounts after promotion
+        flush_arguments_a: false # define if we need run flush cache for all application services. Used with flush_cache: true
+        restart_replica: false # run ha restartReplicas accounts
 
+      primary:
+        proxy_ip: # this value used for check availability of proxy in primary dc
+        appserver_ip: delete # this value used for check availability of application in primary dc
+        directorysrv_ip:
+        consul_ips: #this values used for check availability of consul servers in primary dc
+        -
+        -
+        consul_vmnames: # this values used for check consul servers in monitoring server in primary dc
+        - svc1.example.com
+        - svc3.example.com
+        appserver_vmname: mbox1.example.com # this value used for check application server in monitoring server in primary dc
+        proxyserver_vmname: proxy1.example.com # this value used for check proxy server in monitoring server in primary dc
+
+      secondary:
+        proxy_ip: # this value used for check availability of proxy in secondary dc
+        appserver_ip: # this value used for check availability of application in secondary dc
+        directorysrv_ip:
+        consul_ips: # this values used for check availability of consul servers in secondary dc
+        -
+        consul_vmnames: # this values used for check consul servers in monitoring server in secondary dc
+        - svc2.example.com
+        appserver_vmname: mbox2.example.com # this value used for check application server in monitoring server in secondary dc
+        proxyserver_vmname: proxy2.example.com # this value used for check proxy server in monitoring server in secondary dc
+        proxy_switch:
+          bgp: # this value used for choose proxy switch
+            activate: # list of command to activate proxy switch
+            deativate: # list of command to deactivate proxy switch
+
+      consul: # consul provider config
+        hostname: 127.0.0.1
+        port: 8500
+        token:
