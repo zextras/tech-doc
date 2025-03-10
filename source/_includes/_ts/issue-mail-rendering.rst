@@ -1,5 +1,5 @@
 .. card:: E-mail rendering issues
-   
+
    In some occasions, e-mails shown in the |product| webmail are not
    displayed correctly or are not shown at all. This is generally due to
    the *OWASP HTML Sanitiser*, which must be disabled. To do so, log in to the
