@@ -39,7 +39,11 @@ upgrade procedure with Ansible.
     <ans-pb-check>`
 
 * The upgrade procedure does not depend on the underlying
-  :ref:`supported operating system <software-requirements>`
+  :ref:`supported operating system <software-requirements>`. However,
+  note that this release, **25.03**, is the last version supporting
+  **Ubuntu 20.04 LTS**, which goes EOL in May 2025, so you are
+  strongly recommended to :ref:`upgrade to Ubuntu 22.04 LTS
+  <os-upgrade>`.
 
 * This upgrade procedure works even if you installed |product|
   manually: see Section :ref:`up-ansible-paths` for details
