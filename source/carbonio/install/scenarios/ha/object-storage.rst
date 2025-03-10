@@ -6,7 +6,7 @@ Object Storage Configuration
 
 A centralised volume is a mandatory requirement to configure an HA scenario.
 This section explains the commands required to configure a MinIO or S3 bucket
-in Carbonio and set it up as a centralized volume. Note that you
+in Carbonio and set it up as a centralised volume. Note that you
 should already have a MinIO or S3 service at your disposal, either
 within your infrastructure or purchased from a third-party, before
 configuring the bucket: the commands here will only connect to the
