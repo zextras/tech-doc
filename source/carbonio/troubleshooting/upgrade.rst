@@ -13,20 +13,28 @@ old releases.
 Known Issues (Current Release)
 ==============================
 
-This is a list of known issues that impact |product| after the upgrade
-to |version|.
+.. There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+This is a list of known issues that impact |product| during or after
+the upgrade to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
 .. include:: /_includes/_upgrade/issue-mongoose.rst
 .. include:: /_includes/_upgrade/issue-um.rst
+.. include:: /_includes/_ts/issue-mail-rendering.rst
 
 .. _ts-up-older:
 
 Known Issues (Older Releases)
 =============================
 
-During the upgrade from an older |product| version, you **may**
-encounter one or more of the following issues that require a manual
+..
+   There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+During or after the upgrade from an older version, you may encounter
+one or more of the following issues that require a manual
 intervention.
 
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
@@ -49,6 +57,8 @@ intervention.
 * You might be asked to keep or replace the :ref:`Janus
   <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
   configuration files
+* E-mails' body are not displayed or their rendering is wrong, due to
+  :ref:`the value a variable <email-rendering>`
 
 .. include:: /_includes/_upgrade/issues.rst
 .. include:: /_includes/_ts/broker.rst
@@ -64,3 +74,7 @@ intervention.
 .. _upgrade-um:
 
 .. include:: /_includes/_upgrade/issue-um.rst
+
+.. _email-rendering:
+
+.. include:: /_includes/_ts/issue-mail-rendering.rst
