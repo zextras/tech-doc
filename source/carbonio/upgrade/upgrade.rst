@@ -25,6 +25,8 @@ next section.
    both the OS and |product|, please refer to Section
    :ref:`os-upgrade`.
 
+   .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
+
 .. card:: PostgreSQL 16 support
 
    PostgreSQL must be upgraded from version **12** to version **16**,

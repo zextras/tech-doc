@@ -12,7 +12,9 @@ The procedure is divided into phases:
 #. manual upgrade |product| to |release|
 
 #. upgrade Ubuntu LTS from 20.04 to 22.04 (Jammy Jellifish) or RHEL 8
-   to RHEL 9
+   to RHEL 9. Note that this release, **25.03**, is the last version
+   supporting **Ubuntu 20.04 LTS**, which goes EOL in May 2025, so you
+   are strongly recommended to **upgrade to Ubuntu 22.04 LTS**.
 
 #. upgrade |product|\'s packages to match the correct repository
 
