@@ -1,71 +1,82 @@
 .. _ha-checks:
 
-Check CARBONIO HA service status
-================================
+Check HA Services Status
+========================
 
-**Connect consul to check all CARBONIO service status**
+This section is a collection of commands that can be used to verify
+the status of |product|\'s HA and related services.
 
-.. code:: console
+Depending on the type of check, commands should be executed as either
+the |ru| or |zu|. All commands should be issued on the Node where the
+corresponding service is installed.
 
-   ssh root@mob-ha-svcs1.demo.zextras.io -L8550:127.0.0.1:8500
+These are the commands to be issued as the |ru|.
 
-**Check zookeeper service status**
+#. Connect consul to check all CARBONIO service status
 
-.. code:: console
+   .. code:: console
 
-   systemctl status carbonio-zookeeper.service
+      # ssh root@mob-ha-svcs1.demo.zextras.io -L8550:127.0.0.1:8500
 
-**Check Kafka services status**
+#. Check zookeeper service status
 
-.. code:: console
+   .. code:: console
 
-   systemctl status carbonio-kafka.service
+      # systemctl status carbonio-zookeeper.service
 
-**Check Kafka Topics**
+#. Check Kafka services status
 
-.. code:: console
+   .. code:: console
 
-   /opt/kafka/bin/kafka-topics.sh --bootstrap-server 127.0.0.1:9092 --list
+      # systemctl status carbonio-kafka.service
+      
+#. Check Kafka Topics
 
-**Get Global Broker info(run on mailbox node)**
+   .. code:: console
 
-.. code:: console
+      # /opt/kafka/bin/kafka-topics.sh --bootstrap-server 127.0.0.1:9092 --list
 
-   carbonio config get global brokers
+These are the commands to be issued as the |zu|.
 
-**Check Carbonio HA services status**
+#. Get Global Broker info
 
-.. code:: console
+   .. code:: console
 
-   carbonio ha getServices
+      zextras$ carbonio config get global brokers
 
-**Check LDAP Multi Master status check**
+#. Check Carbonio HA services status
 
-.. code:: console
+   .. code:: console
 
-   /opt/zextras/libexec/zmreplchk
+      zextras$ carbonio ha getServices
 
-**List all Buckets**
+#. Check LDAP Multi Master status check
 
-.. code:: console
+   .. code:: console
 
-   carbonio core listBuckets all
+      zextras$ /opt/zextras/libexec/zmreplchk
 
-**Test S3 connection**
+#. List all Buckets
 
-.. code:: console
+   .. code:: console
 
-   carbonio core testS3Connection S3UUID
+      zextras$ carbonio core listBuckets all
 
-**Consul Token get**
+#. Test S3 connection
 
-.. code:: console
+   .. code:: console
 
-   export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gpg | tar xOf - consul-acl-secret.json | jq .SecretID -r)
+      zextras$ carbonio core testS3Connection S3UUID
 
-**Verify that the Consul server is configured as a service discovery
-tool and installed as a service**
+#. Consul Token get
 
-.. code:: console
+   .. code:: console
 
-   zmprov gs $(zmhostname) \| grep -i servicezmprov -l ms $(zmhostname) +zimbraServiceInstalled service-discover +zimbraServiceEnabled service-discover
+      zextras$ export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gpg | tar xOf - consul-acl-secret.json | jq .SecretID -r)
+
+#. Verify that the Consul server is configured as a service discovery
+   tool and installed as a service
+
+   .. code:: console
+
+      zextras$ carbonio prov gs $(zmhostname) \| grep -i servicezmprov -l ms $(zmhostname) +zimbraServiceInstalled service-discover +zimbraServiceEnabled service-discover
