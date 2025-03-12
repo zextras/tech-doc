@@ -155,8 +155,12 @@ and **24.12.1**):
    :ref:`up-ansible-run`.
 
 #. The infrastructure was installed manually and has **no** |WSC| Role
-   installed. After you compiled the inventory file, proceed to Section
-   :ref:`up-ansible-run`.
+   installed. You need to compile the inventory file, then add an this
+   (empty) block at the end of the file::
+
+     [workStreamServers]
+
+   You can now proceed to Section :ref:`up-ansible-run` below.
 
 #. The infrastructure was installed with Ansible and the |WSC| Role
    was manually installed. In this case, edit the inventory file and
