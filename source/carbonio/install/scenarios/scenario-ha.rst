@@ -20,6 +20,8 @@ Directory Server. A step-by-step approach to setting up VMs,
 configuring centralised storage, and deploying HA, will guide you in
 the procedure.
 
+.. _ha-procedure:
+
 Procedure Overview
 ==================
 
@@ -57,6 +59,8 @@ procedure and use the |product| infrastructure. In more details:
 
 We strongly suggest to look through the whole procedure to become
 acquainted with the procedure.
+
+.. _ha-scenario:
 
 Scenario Overview
 =================
@@ -97,6 +101,8 @@ information, respectively. The configuration of the Cluster service
 includes three nodes to maintain quorum and prevent split-brain
 scenarios, ensuring stability in an HA environment.
 
+.. _ha-req:
+
 Requirements
 ============
 
@@ -115,6 +121,8 @@ Requirements
 - An object storage like MinIO or S3
 
 - An additional carbonio-directory-server node configured in multimaster mode (mmr)
+
+.. _ha-node-spec:
 
 Detailed Node Specifications
 ----------------------------
@@ -173,6 +181,7 @@ recommended specifications:
      - Both nodes are identically configured, allowing seamless
        failover and continuous video service availability
 
+.. _ha-storage-req:
 
 Centralised S3 Storage Requirements
 -----------------------------------
