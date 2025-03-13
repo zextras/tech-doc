@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _adv-admin:
 
 
@@ -152,3 +148,9 @@ The attribute is available only at global level, meaning this password
 policy is the same for all configured domains, CoS, and user on the
 system.
 
+.. _upstream-proxy:
+
+|product| And HTTP Proxy
+------------------------
+
+.. include:: /_includes/_admincli/http-proxy.rst
