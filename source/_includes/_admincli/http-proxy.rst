@@ -13,7 +13,7 @@ In a scenario like this, configuring an HTTP proxy is mandatory for
 .. note:: All commands in this section must be executed as the |zu|
    user.
 
-First, login to the Node installing the Proxy Role and check the
+First, login to the any Node installing the Proxy and check the
 current configuration of the attribute.
 
 .. code:: console
