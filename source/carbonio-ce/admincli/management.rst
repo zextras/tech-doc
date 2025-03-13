@@ -39,6 +39,8 @@ Internet through an HTTP Proxy
 :ref:`freshclam-proxy` shows how to allow :command:`freshclam` to connect to the
 Internet through an HTTP Proxy for downloading the antivirus signatures.
 
+:ref:`locale-settings` contains a procedure  to modify the locale configuration
+
 .. toctree::
    :hidden: 
 
@@ -54,3 +56,4 @@ Internet through an HTTP Proxy for downloading the antivirus signatures.
    management/removeserver
    management/http-proxy
    management/freshclam-proxy
+   management/locale
