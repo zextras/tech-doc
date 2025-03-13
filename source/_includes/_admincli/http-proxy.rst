@@ -81,7 +81,3 @@ Finally, restart the service.
       .. code:: console
 
          # systemctl start/stop/restart carbonio-proxy.target
-
-.. code:: console
-
-   zextras$

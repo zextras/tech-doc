@@ -154,3 +154,10 @@ system.
 ------------------------
 
 .. include:: /_includes/_admincli/http-proxy.rst
+
+.. _freshclam-proxy:
+
+Freshclam And HTTP Proxy
+------------------------
+
+.. include:: /_includes/_admincli/freshclam-proxy.rst
