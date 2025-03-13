@@ -39,6 +39,8 @@ the upgrade:
   </troubleshooting/upgrade>` for directions on how to tackle and fix
   them.
 
+.. include:: /_includes/_upgrade/ubuntu-deprecation.rst
+
 Upgrade Paths
 -------------
 

@@ -94,6 +94,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-files-db
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
+      * carbonio-notification-push-db
 
 
    .. grid-item-card:: Proxy
@@ -263,6 +264,8 @@ This is the list of roles that make up a |product| installation.
       * carbonio-message-dispatcher
       * carbonio-ws-collaboration
       * service-discover-agent
+      * carbonio-push-connector
+      * carbonio-notification-push
 
    .. grid-item-card:: Video Server & Video Recording (WSC)
       :columns: 6

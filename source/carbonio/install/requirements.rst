@@ -47,8 +47,10 @@ Software Requirements
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any of these vanilla distributions:
 
-* **Ubuntu 20.04 LTS Server Edition**
-* **Ubuntu 22.04 LTS Server Edition**
+* **Ubuntu 20.04 LTS Server Edition**: choose *Ubuntu Server*, not
+  *Ubuntu Server (minimized)*
+* **Ubuntu 22.04 LTS Server Edition**: choose *Ubuntu Server*, not
+  *Ubuntu Server (minimized)*
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
 * **RHEL 9** (see :ref:`specific requirements <rhel9-req>`) |beta|
 
@@ -113,8 +115,7 @@ Additional Requirements
   be issued as the ``root`` user, unless stated otherwise.
 
   .. note:: The ``zextras`` user is created during the |product|
-     installation process, it is not necessary to create it
-     beforehand.
+     installation process, it must not be created beforehand.
 
 * Give meaningful names to the nodes. For example, call them
   `proxy.example.com`, `mta.example.com`, and so on. Replace

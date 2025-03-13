@@ -97,7 +97,7 @@ verify the S/MIME signature.
 
 .. code:: console
 
-   zextras$ carbonio prov mcf carbonioSMIMESignatureVerificationEnabled true
+   zextras$ carbonio prov mcf carbonioSMIMESignatureVerificationEnabled TRUE
 
 .. index:: Password policies; S/MIME
 
@@ -147,6 +147,13 @@ The output of the above command is::
 The attribute is available only at global level, meaning this password
 policy is the same for all configured domains, CoS, and user on the
 system.
+
+.. _advcli-pset:
+
+Pending-setups
+--------------
+
+.. include:: /_includes/_admincli/pendingsetups.rst
 
 .. _upstream-proxy:
 

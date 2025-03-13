@@ -39,7 +39,11 @@ upgrade procedure with Ansible.
     <ans-pb-check>`
 
 * The upgrade procedure does not depend on the underlying
-  :ref:`supported operating system <software-requirements>`
+  :ref:`supported operating system <software-requirements>`. However,
+  note that this release, **25.03**, is the last version supporting
+  **Ubuntu 20.04 LTS**, which goes EOL in May 2025, so you are
+  strongly recommended to :ref:`upgrade to Ubuntu 22.04 LTS
+  <os-upgrade>`.
 
 * This upgrade procedure works even if you installed |product|
   manually: see Section :ref:`up-ansible-paths` for details
@@ -151,8 +155,12 @@ and **24.12.1**):
    :ref:`up-ansible-run`.
 
 #. The infrastructure was installed manually and has **no** |WSC| Role
-   installed. After you compiled the inventory file, proceed to Section
-   :ref:`up-ansible-run`.
+   installed. You need to compile the inventory file, then add an this
+   (empty) block at the end of the file::
+
+     [workStreamServers]
+
+   You can now proceed to Section :ref:`up-ansible-run` below.
 
 #. The infrastructure was installed with Ansible and the |WSC| Role
    was manually installed. In this case, edit the inventory file and
