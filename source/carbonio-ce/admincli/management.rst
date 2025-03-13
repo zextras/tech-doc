@@ -33,6 +33,9 @@ certificate, either manually or automatically.
 :ref:`cli-remove-node` guides you in the decommissioning of a Node
 from a |product| infrastructure
 
+:ref:`upstream-proxy` shows how to allow |product| to connect to the
+Internet through an HTTP Proxy
+
 .. toctree::
    :hidden: 
 
@@ -46,3 +49,4 @@ from a |product| infrastructure
    management/analytics
    management/changeip
    management/removeserver
+   management/http-proxy
