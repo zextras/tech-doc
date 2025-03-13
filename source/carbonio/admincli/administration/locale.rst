@@ -1,3 +1,6 @@
+
+.. index:: locale; settings
+
 .. _locale-settings:
 
 =======================
