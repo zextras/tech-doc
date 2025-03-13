@@ -150,14 +150,14 @@ system.
 
 .. _upstream-proxy:
 
-|product| And HTTP Proxy
+|product| and HTTP Proxy
 ------------------------
 
 .. include:: /_includes/_admincli/http-proxy.rst
 
 .. _freshclam-proxy:
 
-Freshclam And HTTP Proxy
+Freshclam and HTTP Proxy
 ------------------------
 
 .. include:: /_includes/_admincli/freshclam-proxy.rst

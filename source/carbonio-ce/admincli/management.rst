@@ -36,6 +36,9 @@ from a |product| infrastructure
 :ref:`upstream-proxy` shows how to allow |product| to connect to the
 Internet through an HTTP Proxy
 
+:ref:`freshclam-proxy` shows how to allow :command:`freshclam` to connect to the
+Internet through an HTTP Proxy for downloading the antivirus signatures.
+
 .. toctree::
    :hidden: 
 
@@ -50,3 +53,4 @@ Internet through an HTTP Proxy
    management/changeip
    management/removeserver
    management/http-proxy
+   management/freshclam-proxy
