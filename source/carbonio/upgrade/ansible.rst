@@ -148,23 +148,21 @@ Upgrade From |product| 24.12
 ----------------------------
 
 If you are upgrading from the **24.12** series version (**24.12.0**
-and **24.12.1**):
+and **24.12.1**), there are two different paths, depending on whether
+you previously installed with Ansible or not.
 
-#. The infrastructure was installed with Ansible and has **no** |WSC| Role
-   installed. In this case, simply proceed to Section
-   :ref:`up-ansible-run`.
+|product| was Installed with Ansible
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. The infrastructure was installed manually and has **no** |WSC| Role
-   installed. You need to compile the inventory file, then add an this
-   (empty) block at the end of the file::
+#. The infrastructure has **no** |WSC| Role installed. In this case,
+   add an this (empty) block at the end of the file::
 
      [workStreamServers]
 
    You can now proceed to Section :ref:`up-ansible-run` below.
 
-#. The infrastructure was installed with Ansible and the |WSC| Role
-   was manually installed. In this case, edit the inventory file and
-   add this block at the end of the file::
+#. The |WSC| Role was manually installed. In this case, edit the
+   inventory file and add this block at the end of the file::
 
      [workStreamServers]
      wsc.example.com
@@ -173,10 +171,16 @@ and **24.12.1**):
    Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
 
-#. The infrastructure was installed manually and has the |WSC| Role
-   installed. Compile the inventory file and then, like in the
-   previous case, edit the inventory file and add this block at the
-   end of the file::
+|product| was Manually Installed
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+
+#. The infrastructure has **no** |WSC| Role installed. You need to
+   compile the inventory file, then you can proceed to Section
+   :ref:`up-ansible-run` below.
+
+#. The infrastructure has the |WSC| Role installed. Compile the
+   inventory file and then, like in the previous case, edit the
+   inventory file and add this block at the end of the file::
 
      [workStreamServers]
      wsc.example.com
@@ -185,9 +189,11 @@ and **24.12.1**):
    Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
 
-#. If both the |WSC| Role and the legacy Chats and Video Server
-   Roles are installed, you need to edit the inventory file like
-   above::
+.. card:: |product| has both  |wsc| and Legacy Chats installed
+
+   Regardless if you installed manually or with Ansible, if both the
+   |WSC| Role and the legacy Chats and Video Server Roles are
+   installed, you need to edit the inventory file like above::
 
      [workStreamServers]
      wsc.example.com
@@ -196,6 +202,28 @@ and **24.12.1**):
    installing the legacy Roles. Note, however, that there are no
    updates to the packages providing these Roles, so they will keep
    the same version.
+
+In both cases, you need to save the inventory file in the :file:`data`
+directory (see Section :ref:`up-ansible-run` below`). You must also
+save in that directory these additional files, which contain access
+passwords for various services. You should have saved these password
+during the installation process.
+
+#. :file:`inventory_postgrespassword` must contain the password of PostgreSQL’s
+   administrative user, called ``DB_ADM` in the text
+
+#. :file:`inventory_ldap_password` must contain the password that you
+   can retrieve with the command, executed as the |zu|
+
+   .. code:: console:
+
+      zextras$ zmlocalconfig -s | grep ldap_password"
+
+#. :file:`inventory_consulpassword` must contain the password stored in
+   file :file:`/var/lib/service-discover/password`
+
+#. :file:`inventory_videoserver_password`
+
 
 Upgrade From |product| 24.9 or Older
 ------------------------------------
