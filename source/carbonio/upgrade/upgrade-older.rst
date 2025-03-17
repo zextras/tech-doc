@@ -1,10 +1,10 @@
-.. _up-247:
+.. _up-249:
 
-Upgrade From 24.7
-=================
+Manual From Older Versions
+==========================
 
-This section guides you in the upgrade from |product| **24.7**,
-regardless of any specific patch numbers, e.g. *24.7.1*, to the latest
+This section guides you in the upgrade from |product| **24.9**,
+regardless of any specific patch numbers, e.g. *24.9.1*, to the latest
 available version, |release|, which contains a number of technical and
 performance improvements, bug fixes, and security fixes.
 
@@ -27,7 +27,7 @@ the upgrade:
 
   #. support for new Operating Systems (OS): **Ubuntu 22.04** and **RHEL 9**
   #. support for **PostgreSQL 16**. Make sure to upgrade it, because
-     **PostgreSQL 12** went in :abbr:`EOL` on **14th November 2024**.
+     **PostgreSQL 12** went in End Of Life on **14th November 2024**.
 
   .. hint:: While you can choose to upgrade only |product|, we
      encourage you to introduce both the improvements into your
