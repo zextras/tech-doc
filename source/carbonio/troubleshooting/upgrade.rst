@@ -21,7 +21,6 @@ the upgrade to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
 .. include:: /_includes/_upgrade/issue-mongoose.rst
-.. include:: /_includes/_upgrade/issue-um.rst
 .. include:: /_includes/_ts/issue-mail-rendering.rst
 
 .. _ts-up-older:
@@ -38,8 +37,6 @@ one or more of the following issues that require a manual
 intervention.
 
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
-* The :ref:`new packages <upgrade-packages>` ``carbonio-storages`` and
-  ``carbonio-catalog`` must be installed
 * Monitoring: a new configuration file for :ref:`carbonio-prometheus
   <upgrade-monit>` package must be installed
 * Initialise domains for :ref:`Delegated Administrators <upgrade-delegated>`
@@ -50,10 +47,6 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
-* Package :file:`carbonio-message-broker` needs to be installed on the
-  :ref:`Mesh & Directory Node <broker-pkg>`
-* Package :file:`carbonio-user-management` needs to be installed on
-  the :ref:`Mesh & Directory Node <upgrade-um>`
 * You might be asked to keep or replace the :ref:`Janus
   <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
   configuration files
@@ -61,7 +54,6 @@ intervention.
   :ref:`the value a variable <email-rendering>`
 
 .. include:: /_includes/_upgrade/issues.rst
-.. include:: /_includes/_ts/broker.rst
 
 .. _upgrade-janus:
 
@@ -70,10 +62,6 @@ intervention.
 .. _upgrade-mongoose:
 
 .. include:: /_includes/_upgrade/issue-mongoose.rst
-
-.. _upgrade-um:
-
-.. include:: /_includes/_upgrade/issue-um.rst
 
 .. _email-rendering:
 

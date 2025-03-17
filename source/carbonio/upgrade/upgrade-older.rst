@@ -50,10 +50,55 @@ the upgrade:
 
 .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
+Checklist
+---------
+
+The new packages or packages that should be moved on different nodes,
+should be installed or moved during the upgrade procedure:
+
+#. carbonio-user-management
+#. carbonio-storages
+#. carbonio-catalog
+#. carbonio-message-broker
+
 Upgrade |product|
 -----------------
 
-.. include:: /_includes/_upgrade/manual.rst
+.. card:: Preliminary Tasks
+
+   .. include:: /_includes/_upgrade/ds.rst
+
+.. include:: /_includes/_upgrade/first-part-cb.rst
+
+.. grid:: 1 1 1 2
+   :gutter: 3
+
+   .. grid-item-card:: Step 3. Install or move packages
+      :columns: 12 12 12 12
+
+      The following packages needs to be moved or installed on the node
+
+      .. dropdown:: ``carbonio-user-management``
+         :open:
+
+         .. include:: /_includes/_upgrade/package-um.rst
+
+      .. dropdown:: ``carbonio-user-storages``
+         :open:
+
+         .. include:: /_includes/_upgrade/package-storages.rst
+
+      .. dropdown:: ``carbonio-catalog``
+         :open:
+
+         .. include:: /_includes/_upgrade/package-catalog.rst
+
+      .. dropdown:: ``carbonio-message-broker``
+         :open:
+
+         .. include:: /_includes/_upgrade/package-broker.rst
+
+.. include:: /_includes/_upgrade/second-part-cb.rst
 
 Other Upgrades
 --------------

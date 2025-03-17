@@ -40,11 +40,13 @@ next section.
    move some of the packages to the Database Role. The procedure to
    carry out this task can be found in Section :ref:`remove-pgpool`.
 
-Additionally, please check Section :ref:`ts-up-prev` under
-:doc:`/troubleshooting/toc` before starting the upgrade. There you
-find a list of manual activities that might be required *during* or
-*after* the completion of the upgrade procedure that impact
-third-party software or new packages.
+Checklist
+---------
+
+The new packages or packages that should be moved on different nodes,
+should be installed or moved during the upgrade procedure:
+
+#. carbonio-user-management
 
 .. _up-proc:
 
@@ -72,7 +74,19 @@ of Nodes, their load, the speed of network connection, and so on.
 
    .. include:: /_includes/_upgrade/ds.rst
 
-.. include:: /_includes/_upgrade/manual.rst
+
+.. include:: /_includes/_upgrade/first-part-cb.rst
+
+.. card:: Step 3. Install or move packages
+
+   The following packages needs to be moved or installed on the node
+
+   .. dropdown:: ``carbonio-user-management``
+      :open:
+
+      .. include:: /_includes/_upgrade/package-um.rst
+
+.. include:: /_includes/_upgrade/second-part-cb.rst
 
 .. note:: After the upgrade has successfully completed, we strongly
    suggest to carry out the tasks described in Troubleshooting
