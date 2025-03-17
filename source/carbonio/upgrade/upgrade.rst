@@ -77,14 +77,18 @@ of Nodes, their load, the speed of network connection, and so on.
 
 .. include:: /_includes/_upgrade/first-part-cb.rst
 
-.. card:: Step 3. Install or move packages
+.. grid:: 1 1 1 2
+   :gutter: 3
 
-   The following packages needs to be moved or installed on the node
+   .. grid-item-card:: Step 3. Install or move packages
 
-   .. dropdown:: ``carbonio-user-management``
-      :open:
+      The following packages needs to be moved from one Node to
+      another or installed on the given Node.
 
-      .. include:: /_includes/_upgrade/package-um.rst
+      .. dropdown:: ``carbonio-user-management``
+         :open:
+
+         .. include:: /_includes/_upgrade/package-um.rst
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
 

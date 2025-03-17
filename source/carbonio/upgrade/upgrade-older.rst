@@ -76,14 +76,15 @@ Upgrade |product|
    .. grid-item-card:: Step 3. Install or move packages
       :columns: 12 12 12 12
 
-      The following packages needs to be moved or installed on the node
+      The following packages needs to be moved from one Node to
+      another or installed on the given Node.
 
       .. dropdown:: ``carbonio-user-management``
          :open:
 
          .. include:: /_includes/_upgrade/package-um.rst
 
-      .. dropdown:: ``carbonio-user-storages``
+      .. dropdown:: ``carbonio-storages``
          :open:
 
          .. include:: /_includes/_upgrade/package-storages.rst
