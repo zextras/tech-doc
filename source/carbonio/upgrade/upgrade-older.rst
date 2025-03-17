@@ -1,12 +1,18 @@
-.. _up-249:
+.. _up-old:
 
 Manual From Older Versions
 ==========================
 
-This section guides you in the upgrade from |product| **24.9**,
-regardless of any specific patch numbers, e.g. *24.9.1*, to the latest
-available version, |release|, which contains a number of technical and
-performance improvements, bug fixes, and security fixes.
+This section guides you in the upgrade from a |product| version older
+than **24.12** to the latest available version, |release|, which
+contains a number of technical and performance improvements, bug
+fixes, and security fixes.
+
+.. note:: Upgrading from very old versions should work, but may
+   require a lot of manual tasks to be carried out before, during, and
+   after the procedure, and might become an extremely long and
+   error-prone process.
+
 
 Requirements and Limitations
 ----------------------------

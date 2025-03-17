@@ -2,10 +2,9 @@
  Upgrade to |product| |release|
 ================================
 
-This section contains the upgrade procedures to the latest |carbonio|
-release from the latest and the most recent previous releases
-(:ref:`24.12 <carbonio-upgrade>`, :ref:`24.9 <up-249>`, and :ref:`24.7
-<up-247>`), the changelogs of recent and
+This section contains the manual upgrade procedures to the latest
+|carbonio| release, from the :ref:`latest 24.12 <carbonio-upgrade>`
+and from :ref:`oldest <up-old>` versions, the changelogs of recent and
 older releases, and any security advice, if present.
 
 |product| does not have any installer: whenever new versions are
@@ -23,11 +22,6 @@ the latest available at the moment you start the procedure. In other
 words, the starting version is not important: upgrading from *24.12*,
 *24.9* or *24.7* will bring |product| to the latest version of
 |product| (at the time of writing, |release|).
-
-.. note:: Upgrading from versions *24.5* or older should work, but may
-   require a lot of manual tasks to be carried out before, during, and
-   after the procedure, and might become an extremely long and
-   error-prone process.
 
 Before starting an upgrade procedure, it is strongly suggested to make
 a snapshot of the Nodes and a backup of the data.
