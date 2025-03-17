@@ -172,7 +172,7 @@ you previously installed with Ansible or not.
    :ref:`up-ansible-run` below.
 
 |product| was Manually Installed
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. The infrastructure has **no** |WSC| Role installed. You need to
    compile the inventory file, then you can proceed to Section
@@ -210,10 +210,11 @@ passwords for various services. You should have saved these password
 during the installation process.
 
 #. :file:`inventory_postgrespassword` must contain the password of PostgreSQL’s
-   administrative user, called ``DB_ADM` in the text
+   administrative user, called ``DB_ADM` in the documentation.
 
 #. :file:`inventory_ldap_password` must contain the password that you
-   can retrieve with the command, executed as the |zu|
+   can retrieve with the command, executed as the |zu| on the node
+   featuring the Mesh & Directory Role
 
    .. code:: console:
 
@@ -222,8 +223,13 @@ during the installation process.
 #. :file:`inventory_consulpassword` must contain the password stored in
    file :file:`/var/lib/service-discover/password`
 
-#. :file:`inventory_videoserver_password`
+#. :file:`inventory_videoserver_password` must contain the password
+   used by the |vs|, that you can retrieve with the command, executed
+   as the |ru| on the Node installing the |vs|:
 
+   .. code:: console:
+
+      # grep api_secret /etc/janus/janus.jcfg
 
 Upgrade From |product| 24.9 or Older
 ------------------------------------
