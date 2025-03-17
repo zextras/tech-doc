@@ -13,7 +13,6 @@ fixes, and security fixes.
    after the procedure, and might become an extremely long and
    error-prone process.
 
-
 Requirements and Limitations
 ----------------------------
 
@@ -51,14 +50,13 @@ the upgrade:
 
 .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
-Upgrade Paths
--------------
+Upgrade |product|
+-----------------
 
-Depending on the |carbonio| and operating system starting versions,
-you might need to carry out different tasks.
+.. include:: /_includes/_upgrade/manual.rst
 
-#. If you only want to upgrade |product|, you simply upgrade using the
-   standard procedure: please refer to section :ref:`carbonio-upgrade`
+Other Upgrades
+--------------
 
 #. If you want to upgrade PostgreSQL, but not the OS, you need to
    follow directions in :ref:`pg-upgrade` before upgrading |product|

@@ -1,8 +1,8 @@
 .. _carbonio-upgrade:
 
-====================
- Upgrade From 24.12
-====================
+=======================
+ From Previous Version
+=======================
 
 This section guides you in the upgrade from |product| **24.12**,
 regardless of any specific patch numbers, to the latest **25.3.0**.
