@@ -40,6 +40,14 @@ find a list of manual activities that might be required *during* or
 *after* the completion of the upgrade procedure that impact
 third-party software or new packages.
 
+Checklist
+---------
+
+The new packages or packages that should be moved on different nodes,
+should be installed or moved during the upgrade procedure:
+
+#. carbonio-user-management
+
 .. _up-proc:
 
 Upgrade Procedure
@@ -68,7 +76,23 @@ Upgrade Nodes
 
    .. include:: /_includes/_upgrade/ds.rst
 
-.. include:: /_includes/_upgrade/node-ce.rst
+
+.. include:: /_includes/_upgrade/first-part-cb.rst
+
+.. grid:: 1 1 1 2
+   :gutter: 3
+
+   .. grid-item-card:: Step 3. Install or move packages
+
+      The following packages needs to be moved from one Node to another
+      or installed on the given Node.
+
+      .. dropdown:: ``carbonio-user-management``
+         :open:
+
+         .. include:: /_includes/_upgrade/package-um.rst
+
+.. include:: /_includes/_upgrade/second-part-cb.rst
 
 .. note:: After the upgrade has successfully completed, we strongly
    suggest to :ref:`change Directory Server credentials
