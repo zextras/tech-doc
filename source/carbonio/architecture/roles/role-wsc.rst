@@ -7,9 +7,6 @@
 |cwsc| Role is a multi-layered software that adds the video meeting
 and recording functionalities to |product|.
 
-This Role can currently be installed only manually, so please read
-Sections :ref:`role-wsc-limits` and :ref:`role-wsc-req` below.
-
 If you plan to install this Role in an existing |product|
 infrastructure, please read carefully Section :ref:`wsc-install`.
 
@@ -21,8 +18,6 @@ Limitations
 In the current release |release|, the following limitation apply to
 the installation of the |wsc| Role
 
-* It must be installed manually, there is no Ansible support for the
-  installation
 * It can not be installed on the same Node as |vs|
 * Data from the legacy Chats module can not be exported to new |wsc|
   Role
@@ -66,7 +61,8 @@ into account the following points:
 
 * The |vs| or Chats modules may be already installed within the
   infrastructure, but you can keep them: the |wsc| does not share any
-  component with them
+  component with them. However, note that they are marked as |legacy|
+  and will soon be dismissed.
 
 * There is a *Preparation* phase that requires to install some package
   on other Nodes before starting the |wsc| installation.
@@ -107,7 +103,7 @@ read section :ref:`role-wsc-req` above before starting the actual
 package installation.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_roles/role-wsc-cb.rst
+.. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 
 .. _role-wsc-bootstrap:
 
@@ -117,9 +113,9 @@ Bootstrap |product|
 .. include:: /_includes/_installation/bootstrap.rst
 
 During the process, you need to provide these values, which you can
-retrieve from the first Mesh and Directory node.
+retrieve from the first Mesh & Directory node.
 
-* ``Ldap master host`` is the FQDN of the first Mesh and Directory
+* ``Ldap master host`` is the FQDN of the first Mesh & Directory
   Node, (example: ldap-mstr.example.com)
 * ``Ldap Admin password`` is obtained from the first Mesh and
   Directory Node (:ref:`ldap-admin-password <get-ldap-password>`)
@@ -150,9 +146,21 @@ Enable |wsc|
 please refer to Sections :ref:`Account / Configuration <act-conf>` and
 :ref:`cos-features`, respectively.
 
-.. hint:: If the |wsc| installation is successful, you can optimise
-   some values according to the guidelines that you can find in
-   section :ref:`wsc-optimise`.
+You can enable it also from the command line by running as the
+``zextras`` user the command
+
+.. code:: console
+
+   zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
+
+This command enables the chat for the ``default`` COS, but you can
+enable it on selected COSes and accounts.
+
+Restart the service
+
+.. code:: console
+
+   # systemctl restart carbonio-ws-collaboration
 
 Status Check
 ============

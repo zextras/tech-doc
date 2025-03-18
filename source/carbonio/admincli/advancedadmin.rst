@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _adv-admin:
 
 
@@ -81,3 +77,94 @@ at a later point with the following command:
 
    # carbonio prov modifyCos {name} [attribute value ...]
 
+.. _enable-smime:
+
+S/MIME support
+--------------
+
+S/MIME support for all users can be enabled using command
+
+.. code:: console
+
+   zextras$ carbonio config set global enableSmimeEncryption TRUE
+
+Users will then be able to upload certificates to be used for S/MIME
+signing; setting it to ``false`` will prevent users from using the
+feature.
+
+Additionally, the command below enables the ability of the user to
+verify the S/MIME signature.
+
+.. code:: console
+
+   zextras$ carbonio prov mcf carbonioSMIMESignatureVerificationEnabled TRUE
+
+.. index:: Password policies; S/MIME
+
+The access the S/MIME *Certificate Store* from within their Settings
+page, users need to supply a password, which is different from the
+S/MIME certificate's password. You can set various parameters of this
+password from the CLI, by using the following command as the |zu|
+user.
+
+.. code:: console
+
+   zextras$ carbonio config set global \
+   encryptionPasswordPolicyAttribute <attribute> <value>
+
+The list of all available attributes that can be customised can be
+retrieved using command
+
+.. code:: console
+
+   zextras$ carbonio config get global \
+   encryptionPasswordPolicyAttribute
+
+The output of the above command is::
+
+  global
+        values
+
+                attribute                                                   encryptionPasswordPolicyAttribute
+                inheritedValue
+                    minLength                                                       8
+                    maxLength                                                       100
+                    minUpperCase                                                    1
+                    minLowerCase                                                    1
+                    minDigits                                                       1
+                    minPunctuation                                                  0
+                    minAlphaChars                                                   0
+                    minPunctuationOrDigitChars                                      0
+                    requireAlphanumeric                                             true
+                    allowedChars
+                    allowedPunctuation
+                    denyList
+                inheritedFrom                                               default
+                isInherited                                                 true
+                modules
+                        ZxCore
+
+The attribute is available only at global level, meaning this password
+policy is the same for all configured domains, CoS, and user on the
+system.
+
+.. _advcli-pset:
+
+Pending-setups
+--------------
+
+.. include:: /_includes/_admincli/pendingsetups.rst
+
+.. _upstream-proxy:
+
+|product| and HTTP Proxy
+------------------------
+
+.. include:: /_includes/_admincli/http-proxy.rst
+
+.. _freshclam-proxy:
+
+Freshclam and HTTP Proxy
+------------------------
+
+.. include:: /_includes/_admincli/freshclam-proxy.rst

@@ -8,15 +8,15 @@ This scenario involves the presence of a single tenant and is suitable
 for small infrastructure up to thousands of accounts, with complete
 set of |product| functionalities. The scenario can be deployed either
 using the :ref:`scenario-sm-playbook`, or :ref:`manually
-<scenarioa-manual>`, Node by Node. In both cases, make sure you
-:ref:`configure the internal network <scenarioa-network>`.
+<scenario-fsm-manual>`, Node by Node. In both cases, make sure you
+:ref:`configure the internal network <scenario-fsm-network>`.
 
 The Roles installed on the *5 Nodes* are:
 
-* Node 1: Mesh and Directory, Database, and Monitoring
+* Node 1: Mesh & Directory, Database, and Monitoring
 * Node 2: MTA AV/AS and Proxy
 * Node 3: Mailstore & Provisioning, and Tasks
-* Node 4: Files, Docs and Editor, and Preview
+* Node 4: WSC, Files, Docs & Editor, and Preview
 * Node 5: Video Server & Video Recording
 
 Architecture
@@ -32,7 +32,7 @@ The architecture of this scenario is depicted in the following diagram.
 
    Sample diagram of the Full Small scenario.
 
-.. _scenarioa-network:
+.. _scenario-fsm-network:
 
 Network Configuration
 =====================

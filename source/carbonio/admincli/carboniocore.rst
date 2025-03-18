@@ -1,8 +1,16 @@
+.. _core-module:
+
+===============
+ Carbonio Core
+===============
+
+This sections contains example of CLI activities that can be carried
+out by the |carbonio| Core Module.
+
 .. _manage-bucket:
 
-===================
- Bucket Management
-===================
+Bucket Management
+=================
 
 This section describes how to create new **buckets** and how to manage
 them in |product|. This functionality is available on the |adminui| as
@@ -38,7 +46,7 @@ well, under :menuselection:`Admin Panel --> Storage --> Bucket list`
 .. _create-bucket:
 
 Bucket Creation
-===============
+---------------
 
 In this section, we will show the creation and management of an S3
 bucket; to create buckets on other providers replace *S3* with the
@@ -85,7 +93,7 @@ command shown in the next section.
 .. _check-bucket:
 
 Checking a Bucket
-=================
+-----------------
 
 There are two commands that you can use to verify that a bucket is
 correctly accessible to |product|.

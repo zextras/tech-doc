@@ -7,7 +7,7 @@ srv1.example.com
 [serviceDiscoverServers]
 srv1.example.com
 
-### This Role is no longer required since Carbonio 24.12.0
+### Keep this Role empty and uncommented
 [dbsConnectorServers]
 
 [mtaServers]
@@ -39,6 +39,9 @@ srv1.example.com
 
 [videoServers]
 #srv3.example.com public_ip_address=x.y.z.t
+
+[workStreamServers]
+#srv2.example.com
 
 ############ These Roles are not supported in Single-Server scenario ###########
 ############ They are required for the proper Ansible installation #############

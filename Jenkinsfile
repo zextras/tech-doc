@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'python3-agent-v1'
+      label 'python-v1'
     }
   }
   options {
@@ -28,28 +28,22 @@ pipeline {
 
   stages {
     stage('Build doc static') {
-      when {
-        anyOf {
-          branch 'master'
-          branch 'pre_release'
-          branch 'devel'
-        }
-      }
       steps {
-        sh '''
+        container('python-312') {
+          sh '''
 python3 -m venv .
-source bin/activate
+. bin/activate
 pip3 install -r requirements.txt
 python3 -m sphinx source/suite build/suite/html
 python3 -m sphinx source/carbonio build/carbonio/html
 python3 -m sphinx source/carbonio-ce build/carbonio-ce/html
 '''
-
+        }
         stash name: 'build_done', includes: 'build/**'
       }
     }
 
-    
+
 
     stage('Upload to DEVEL') {
       when {
@@ -72,7 +66,7 @@ python3 -m sphinx source/carbonio-ce build/carbonio-ce/html
         }
       }
     }
-    
+
     stage('Upload to STAGING') {
       when {
         branch 'pre_release'

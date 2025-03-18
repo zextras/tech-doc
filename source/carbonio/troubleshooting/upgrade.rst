@@ -13,25 +13,30 @@ old releases.
 Known Issues (Current Release)
 ==============================
 
-This is a list of known issues that impact |product| after the upgrade
-to |version|.
+.. There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+This is a list of known issues that impact |product| during or after
+the upgrade to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
 .. include:: /_includes/_upgrade/issue-mongoose.rst
-.. include:: /_includes/_upgrade/issue-catalog.rst
+.. include:: /_includes/_ts/issue-mail-rendering.rst
 
 .. _ts-up-older:
 
-Known Issue (Older Releases)
-============================
+Known Issues (Older Releases)
+=============================
 
-During the upgrade from an older |product| version, you **may**
-encounter one or more of the following issues that require a manual
+..
+   There is no know issue that impacts either the upgrade process to
+   |product| |version| or the |product| operations afterwards.
+
+During or after the upgrade from an older version, you may encounter
+one or more of the following issues that require a manual
 intervention.
 
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
-* The :ref:`new packages <upgrade-packages>` ``carbonio-storages`` and
-  ``carbonio-catalog`` must be installed
 * Monitoring: a new configuration file for :ref:`carbonio-prometheus
   <upgrade-monit>` package must be installed
 * Initialise domains for :ref:`Delegated Administrators <upgrade-delegated>`
@@ -42,6 +47,22 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
+* You might be asked to keep or replace the :ref:`Janus
+  <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
+  configuration files
+* E-mails' body are not displayed or their rendering is wrong, due to
+  :ref:`the value a variable <email-rendering>`
 
 .. include:: /_includes/_upgrade/issues.rst
-             
+
+.. _upgrade-janus:
+
+.. include:: /_includes/_upgrade/issue-janus.rst
+
+.. _upgrade-mongoose:
+
+.. include:: /_includes/_upgrade/issue-mongoose.rst
+
+.. _email-rendering:
+
+.. include:: /_includes/_ts/issue-mail-rendering.rst

@@ -12,7 +12,7 @@ srv1.example.com
 srv2.example.com
 srv3.example.com
 
-### This Role is no longer required since Carbonio 24.12.0
+### Keep this Role empty and uncommented
 [dbsConnectorServers]
 
 [mtaServers]
@@ -58,3 +58,8 @@ srv3.example.com
 
 [syslogServer]
 srv3.example.com
+
+
+[workStreamServers]
+srv10.example.com
+srv11.example.com

@@ -1,4 +1,3 @@
-
 .. tab-set::
 
    .. tab-item:: Ubuntu
@@ -6,14 +5,11 @@
 
       .. code:: console
 
-         # apt install carbonio-appserver carbonio-storages-ce \
-         service-discover-agent
+         # apt install carbonio-appserver carbonio-storages-ce
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. code:: console
 
-         # dnf install carbonio-appserver carbonio-storages-ce \
-         service-discover-agent
-
+         # dnf install carbonio-appserver carbonio-storages-ce

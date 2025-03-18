@@ -7,7 +7,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_roles/role-preview.rst
+.. include:: /_includes/_installation/_packages/role-preview.rst
 
 Bootstrap |carbonio|
 --------------------
@@ -19,9 +19,9 @@ Launch the |carbonio| bootstrap process
    # carbonio-bootstrap
 
 During the process, you need to provide these values, which you can
-retrieve from  the first Mesh and Directory node.
+retrieve from  the first Mesh & Directory node.
 
-* ``Ldap master host`` is the FQDN of the first Mesh and Directory
+* ``Ldap master host`` is the FQDN of the first Mesh & Directory
   node, (example: ldap-mstr.example.com)
 * ``Ldap Admin password`` is obtained from the first Mesh and
   Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
@@ -35,6 +35,8 @@ Pending setups
 --------------
 
 .. include:: /_includes/_installation/pset.rst
+
+.. _conf-memcached:
 
 Configure Memcached
 -------------------

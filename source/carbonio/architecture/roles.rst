@@ -49,7 +49,7 @@ This is the list of roles that make up a |product| installation.
 .. grid:: 1 1 2 2
    :gutter: 3
 
-   .. grid-item-card:: Mesh and Directory
+   .. grid-item-card:: Mesh & Directory
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
@@ -61,6 +61,7 @@ This is the list of roles that make up a |product| installation.
 
       * service-discover-server
       * carbonio-directory-server
+      * carbonio-user-management
       * carbonio-message-broker
       * carbonio-storages
 
@@ -75,6 +76,7 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * service-discover-server
+      * carbonio-user-management
 
    .. grid-item-card:: Database
       :columns: 6
@@ -92,6 +94,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-files-db
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
+      * carbonio-notification-push-db
 
 
    .. grid-item-card:: Proxy
@@ -107,13 +110,13 @@ This is the list of roles that make up a |product| installation.
       * carbonio-proxy
       * carbonio-webui
       * carbonio-files-ui
-      * carbonio-chats-ui
-      * carbonio-user-management
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
+      * carbonio-search-ui
       * carbonio-avdb-updater
       * service-discover-agent
       * carbonio-catalog
+      * carbonio-chats-ui |legacy|
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -194,7 +197,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-tasks
       * service-discover-agent
 
-   .. grid-item-card:: Video Server & Video Recording
+   .. grid-item-card:: Video Server & Video Recording |legacy|
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
@@ -261,6 +264,8 @@ This is the list of roles that make up a |product| installation.
       * carbonio-message-dispatcher
       * carbonio-ws-collaboration
       * service-discover-agent
+      * carbonio-push-connector
+      * carbonio-notification-push
 
    .. grid-item-card:: Video Server & Video Recording (WSC)
       :columns: 6
