@@ -7,7 +7,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_roles/role-proxy.rst
+.. include:: /_includes/_installation/_packages/role-proxy.rst
 
 Bootstrap |carbonio|
 --------------------
@@ -15,9 +15,9 @@ Bootstrap |carbonio|
 .. include:: /_includes/_installation/bootstrap.rst
 
 During the process, you need to provide these values, which you can
-retrieve from the first Mesh and Directory node.
+retrieve from the first Mesh & Directory node.
 
-* ``Ldap master host`` is the FQDN of the first Mesh and Directory
+* ``Ldap master host`` is the FQDN of the first Mesh & Directory
   node, (example: ldap-mstr.example.com)
 * ``Ldap Admin password`` is obtained from the first Mesh and
   Directory node (:ref:`ldap-admin-password <get-ldap-password>`)

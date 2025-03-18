@@ -12,30 +12,28 @@ hosting that Role to configure the Video Server.
 
 .. card:: Video Server
 
-   .. tab-set::
+   .. include:: /_includes/_installation/_packages/role-vs.rst
 
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
 
-         .. code:: console
+   Starting from **25.3** release, the :file:`/etc/janus/janus.jcfg`
+   configuration file will be updated automatically to include the |vs|
+   `public` IP address (i.e., the one that will accept incoming
+   connections to the |vs|) using a :command:`curl` call.
 
-            # apt install carbonio-videoserver service-discover-agent
+   However, this may be not true in case the Node setup has a different
+   IP address for incoming and outgoing traffic, for example if the
+   incoming traffic is routed to the |vs| node using IP address
+   203.0.113.102 and the outgoing traffic from the Node to the Internet
+   is routed through IP address 203.0.113.105, the :command:`curl` call
+   would return the latter IP (105), but the actual IP in the
+   configuration file should be the former (102).
 
-      .. tab-item:: RHEL
-         :sync: rhel
 
-         .. code:: console
+   Therefore, after the installation, make sure that the correct `public`
+   IP address is present in the file: the line containing the
+   ``nat_1_1_mapping`` variable should be::
 
-            # dnf install carbonio-videoserver service-discover-agent
-
-   During the installation of the packages, you need to insert the IP
-   `public` address (i.e., the one that will accept incoming
-   connections to the |vs|) on which the |vs| is installed.
-
-   After the installation, make sure that the IP address is present in
-   the configuration file :file:`/etc/janus/janus.jcfg` and add it if
-   missing: find the variable ``nat_1_1_mapping`` and add it, for
-   example: ``nat_1_1_mapping = "93.184.216.34"``
+     nat_1_1_mapping = "203.0.113.102"
 
    .. rubric:: Configure the |vs|
 
@@ -67,21 +65,7 @@ hosting that Role to configure the Video Server.
 
 .. card:: Video Recording
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt install carbonio-videoserver-recorder
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf install carbonio-videoserver-recorder
+   .. include:: /_includes/_installation/_packages/role-vr.rst
 
    The following manual command is required if the Video Recorder is
    installed at a later point. Make sure to use the same FQDN

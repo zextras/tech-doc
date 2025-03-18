@@ -23,6 +23,8 @@ certificate, either manually or automatically.
 :ref:`cli-remove-node` guides you in the decommissioning of a Node
 from a |product| infrastructure
 
+:ref:`locale-settings` contains a procedure  to modify the locale configuration
+
 .. toctree::
    :hidden:
 
@@ -34,3 +36,4 @@ from a |product| infrastructure
    administration/changeip
    administration/removeserver
    administration/s3bench
+   administration/locale

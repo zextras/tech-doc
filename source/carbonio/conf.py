@@ -31,7 +31,7 @@ copyright = '2024: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '24.12.1'
+release = '25.3.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
@@ -47,7 +47,7 @@ extensions = [ 'sphinx_design', 'sphinx_copybutton',
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [ '_includes', 'cli', 'playbook',
                      'admincli/administration/delegatedadmin.rst',
-                     'common/carbonio', 'upgrade/upgrade/ansible.rst' ]
+                     'common/carbonio' ]
 
 rst_prolog = """
 

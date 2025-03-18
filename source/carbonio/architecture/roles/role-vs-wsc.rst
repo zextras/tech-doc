@@ -7,13 +7,20 @@ Before installing this Role on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a
 requirement for this Role.
 
-.. note:: This Role can not be installed on the same Node as
-   :ref:`role-vs-install`.
+.. note:: If you already have installed on your infrastructure the
+   legacy :ref:`role-vs-install`, make sure this Role is installed on
+   a different Node.
 
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_roles/role-vs-wsc.rst
+This Role consists of *Video Server (WSC)* and *Video Recording (WSC)*. You need
+to install the latter only if you plan to record video meetings,
+otherwise you can install *Video Server* without *Video
+Recording*.
+
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+.. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
 Bootstrap |product|
 -------------------
@@ -30,16 +37,6 @@ Pending setups
 
 .. include:: /_includes/_installation/pset.rst
 
-Complete |vs| installation
---------------------------
-
-After the :command:`pending-setups` command has completed, make sure
-that the Video Server's IP address is present in the configuration
-file :file:`/etc/janus/janus.jcfg` and add it if missing: find the
-variable ``nat_1_1_mapping`` and add it, for example:
-
-``nat_1_1_mapping = "93.184.216.34"``
-
 Check Video Server & Broker
 ---------------------------
 
@@ -50,34 +47,10 @@ successfully, check that in the carbonio-videoserver logs
   RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
   handler completed
 
-Video Recording
----------------
+Video Recording Notes
+---------------------
 
-To install the Video Recording packages, execute the command according
-to the underlying operating system.
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt install carbonio-videorecorder
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install carbonio-videorecorder
-
-Pending setups
---------------
-
-.. include:: /_includes/_installation/pset.rst
-
-You can then enable the Video Recorder on a user, COS, or global
+You can enable the Video Recorder at user, COS, or global
 level: please refer to section :ref:`vs-recorder-conf` for
 directions.
 

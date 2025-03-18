@@ -10,728 +10,536 @@ Roles on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
-Scenario Overview
-=================
-
-This are the roles installed on each Node.
-
-.. grid:: 1 1 2 2
-   :gutter: 2
-
-   .. grid-item-card:: Node 1
-      :columns: 12
-
-      Node Name/FQDN: srv1.example.com
-
-      Type of services: Clustered services
-
-      Roles installed:
-
-      * :ref:`role-mesh-install`
-
-      * :ref:`role-db-install`
-
-      * :ref:`role-monit-install`
-
-   .. grid-item-card:: Node 2
-      :columns: 12
-
-      Node Name/FQDN: srv2.example.com
-
-      Type of services: Proxy and MTA
-
-      Roles installed:
-
-      * :ref:`role-mta-install`
-
-      * :ref:`role-proxy-install`
-
-   .. grid-item-card:: Node 3
-      :columns: 12
-
-      Node Name/FQDN: srv3.example.com
-
-      Type of services: Mails, Calendars, and Contacts
-
-      Roles installed:
-
-      * :ref:`role-prov-install`
-
 Core Node
 =========
 
 .. _es1-step1:
 
-Step 1: Configuration of Repositories
--------------------------------------
+.. dropdown:: Step 1: Configuration of Repositories
 
-The installation procedure start with the configuration of the
-repositories.
+   The installation procedure start with the configuration of the
+   repositories.
 
-.. rubric:: |product|
+   .. rubric:: |product|
 
-.. include:: /_includes/_installation/step-repo-conf.rst
+   .. include:: /_includes/_installation/step-repo-conf.rst
 
-.. rubric:: PostgreSQL and other (RHEL only)
+   .. rubric:: PostgreSQL and other (RHEL only)
 
-.. include:: /_includes/_installation/repo-single-cb.rst
+   .. include:: /_includes/_installation/repo-single-cb.rst
 
 .. _es1-step2:
 
-Step 2: Setting Hostname
-------------------------
+.. dropdown:: Step 2: Setting Hostname
 
-.. include:: /_includes/_installation/steps-hostname.rst
+   .. include:: /_includes/_installation/steps-hostname.rst
 
 .. _es1-step3:
 
-Step 3: System Upgrade and Package Installation
------------------------------------------------
+.. dropdown:: Step 3: System Upgrade and Package Installation
 
-After configuring the repositories, the installation of |product|
-requires to run a few commands.
+   After configuring the repositories, the installation of |product|
+   requires to run a few commands.
 
-We start by updating and upgrading the system.
+   We start by updating and upgrading the system.
 
-.. tab-set::
+   .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
 
-      .. code:: console
+         .. code:: console
 
-         # apt update && apt upgrade
+            # apt update && apt upgrade
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
 
-      .. code:: console
+         .. code:: console
 
-         # apt update && apt upgrade
+            # apt update && apt upgrade
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
-      .. code:: console
+         .. code:: console
 
-         # dnf upgrade
+            # dnf upgrade
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
 
-      .. code:: console
+         .. code:: console
 
-         # dnf upgrade
+            # dnf upgrade
 
-Next, we install all packages needed for |product|.
+   Next, we install all packages needed for |product|. We divide them
+   by Role, but you can combine all packages and run the install
+   command once.
 
-.. tab-set::
+   .. rubric:: Role Mesh & Directory
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
 
-      .. code:: console
+   .. rubric:: Role Database
 
-         # apt install service-discover-server \
-         carbonio-directory-server carbonio-message-broker \
-         carbonio-storages postgresql-16 carbonio-prometheus
+   .. include:: /_includes/_installation/_packages/role-db.rst
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. rubric:: Role Monitoring
 
-      .. code:: console
+   .. include:: /_includes/_installation/_packages/role-monit.rst
 
-         # apt install service-discover-server \
-         carbonio-directory-server carbonio-message-broker \
-         carbonio-storages postgresql-16 carbonio-prometheus
+   .. rubric:: DB Components
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
-
-      The installation on RHEL is divided in few steps: install
-      the |mesh| service
-
-      .. code:: console
-
-         # dnf install service-discover-server
-
-      Disable PostgreSQL 12
-
-      .. code:: console
-
-         # dnf -qy module disable postgresql
-
-      Install all other packages
-
-      .. code:: console
-
-         # dnf install service-discover-server \
-         carbonio-directory-server carbonio-message-broker \
-         carbonio-storages postgresql-16 carbonio-prometheus
-
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
-
-      The installation on RHEL is divided in few steps: install the
-      |mesh| service
-
-      .. code:: console
-
-         # dnf install service-discover-server
-
-      Disable PostgreSQL 12
-
-      .. code:: console
-
-         # dnf -qy module disable postgresql
-
-      Install all other packages
-
-      .. code:: console
-
-         # dnf install service-discover-server \
-         carbonio-directory-server carbonio-message-broker \
-         carbonio-storages postgresql-16 carbonio-prometheus
+   .. include:: /_includes/_installation/_packages/role-db-comp.rst
 
 .. _es1-step4:
 
-Step 4: Configure PostgreSQL
-----------------------------
+.. dropdown:: Step 4: Configure PostgreSQL
 
-.. include:: /_includes/_installation/step-conf-db-single-cb.rst
+   .. include:: /_includes/_installation/step-conf-db-single-cb.rst
 
 .. _es1-step5:
 
-Step 5: Bootstrap |product|
----------------------------
+.. dropdown:: Step 5: Bootstrap |product|
 
-To carry out this step, you need the **LDAP password** and the **Node
-hostname** that you have retrieved at Step 9 of Node 1's installation
-(see :ref:`es1-step9`).
+   .. include:: /_includes/_installation/step-bootstrap.rst
 
-.. include:: /_includes/_installation/step-bootstrap.rst
-
-The next steps concern the configuration and setup of the various
-|product| components.
+   The next steps concern the configuration and setup of the various
+   |product| components.
 
 .. _es1-step6:
 
-Step 6: Setup |mesh|
---------------------
+.. dropdown:: Step 6: Setup |mesh|
 
-To carry out this step, you need the |mesh| **secret** generated
-during the installation of the Node 1 (see the
-:ref:`es1-step9` Step).
+   .. include:: /_includes/_installation/mesh.rst
 
-.. include:: /_includes/_installation/mesh.rst
-
-.. include:: /_includes/_installation/pset.rst
+   .. include:: /_includes/_installation/pset.rst
 
 .. _es1-step7:
-    
-Step 7: Databases Bootstrap
----------------------------
 
-Now you have to bootstrap the DB with the password set in :ref:`es1-step4`
+.. dropdown:: Step 7: Databases Bootstrap
 
-.. card:: Mailbox DB Bootstrap
+   Now you have to bootstrap the DB with the password set in
+   :ref:`Step 4 of Core Node installation <es1-step4>`.
 
-  .. code:: console
-
-     # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+   .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
 .. _es1-step8:
- 
-Step 8: Complete Installation
------------------------------
 
-.. tab-set::
+.. dropdown:: Step 8: Complete Installation
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-set::
 
-      After the successful package installation, start all |product|
-      services by using
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
 
-      .. code:: console
+         After the successful package installation, start all |product|
+         services by using
 
-         zextras$ zmcontrol start
+         .. code:: console
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+            zextras$ zmcontrol restart
 
-      After the successful package installation, start all |product|
-      services by using
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
 
-      .. code:: console
+         After the successful package installation, start all |product|
+         services by using
 
-         zextras$ zmcontrol start
+         .. code:: console
 
-
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+            zextras$ zmcontrol restart
 
 
-      After the successful package installation, start all |product|
-      services by using
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
-      .. code:: console
 
-         zextras$ zmcontrol start
+         After the successful package installation, start all |product|
+         services by using
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+         .. code:: console
 
-      After the successful package installation, start all |product|
-      services by using
-      
-      .. code:: console
+            zextras$ zmcontrol restart
 
-         # systemctl start/stop/restart carbonio-directory-server.target
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
+
+         After the successful package installation, start all |product|
+         services by using
+
+         .. code:: console
+
+            # systemctl restart carbonio-directory-server.target
 
 .. _es1-step9:
 
-Step 9: Data Required for Additional Nodes
-------------------------------------------
+.. dropdown:: Step 9: Data Required for Additional Nodes
 
-The following data from this Node will be needed during the
-installation of the next two Nodes.
+   The following data from this Node will be needed during the
+   installation of the next two Nodes.
 
-#. The **Node hostname**
+   #. The **Core Node hostname**
 
-   .. code:: console
+      .. code:: console
 
-      # hostname -f
+         # hostname -f
 
-#. The **LDAP password** for bootstrapping |product|
+   #. The **LDAP password** for bootstrapping |product|
 
-   .. code:: console
+      .. code:: console
 
-      # su - zextras -c "zmlocalconfig -s ldap_root_password"
+         # su - zextras -c "zmlocalconfig -s ldap_root_password"
 
-#. the |mesh| **secret**, that you can retrieve with command
+   #. the |mesh| **secret**, that you can retrieve with command
 
-   .. code:: console
+      .. code:: console
 
-      # cat /var/lib/service-discover/password
+         # cat /var/lib/service-discover/password
 
 MTA/Proxy Node
 ==============
 
 .. _es2-step1:
 
-Step 1: Configuration of Repositories
--------------------------------------
+.. dropdown:: Step 1: Configuration of Repositories
 
-The installation procedure start with the configuration of the
-repositories.
+   The installation procedure start with the configuration of the
+   repositories.
 
-.. rubric:: |product|
+   .. rubric:: |product|
 
-.. include:: /_includes/_installation/step-repo-conf.rst
-             
-.. rubric:: RHEL Only
+   .. include:: /_includes/_installation/step-repo-conf.rst
 
-.. tab-set::
+   .. rubric:: RHEL Only
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+   .. tab-set::
 
-      You need to add the PostgreSQL and EPEL repositories and
-      enable the BaseOS, Appstream, and CodeReady repositories.
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
-      .. code:: console
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
-         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-         # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-         # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-         # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-         # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+         .. code:: console
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
 
-      You need to add the PostgreSQL and EPEL repositories and
-      enable the BaseOS, Appstream, and CodeReady repositories.
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
 
-      .. code:: console
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
-         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-         # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-         # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-         # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-         # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+         .. code:: console
+
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
 .. _es2-step2:
 
-Step 2: Setting Hostname
-------------------------
+.. dropdown:: Step 2: Setting Hostname
 
-.. include:: /_includes/_installation/steps-hostname.rst
+   .. include:: /_includes/_installation/steps-hostname.rst
 
 .. _es2-step3:
 
-Step 3: System Upgrade and Package Installation
------------------------------------------------
+.. dropdown:: Step 3: System Upgrade and Package Installation
 
-After configuring the repositories, the installation of |product|
-requires to run a few commands.
+   After configuring the repositories, the installation of |product|
+   requires to run a few commands.
 
-We start by updating and upgrading the system.
+   We start by updating and upgrading the system.
 
-.. tab-set::
+   .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
 
-      .. code:: console
+         .. code:: console
 
-         # apt update && apt upgrade
+            # apt update && apt upgrade
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
 
-      .. code:: console
+         .. code:: console
 
-         # apt update && apt upgrade
+            # apt update && apt upgrade
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
-      .. code:: console
+         .. code:: console
 
-         # dnf upgrade
+            # dnf upgrade
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
 
-      .. code:: console
+         .. code:: console
 
-         # dnf upgrade
+            # dnf upgrade
 
-Next, we install all packages needed for |product|.
+   Next, we install all packages needed for |product|. We divide them
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
-.. tab-set::
+   .. rubric:: Role MTA AV/AS
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. include:: /_includes/_installation/_packages/role-mta.rst
 
-      .. code:: console
+   .. rubric:: Role Proxy
 
-         # apt install carbonio-mta carbonio-proxy \
-         carbonio-user-management carbonio-webui carbonio-files-ui \
-         carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
-         carbonio-ws-collaboration-ui carbonio-catalog \
-         service-discover-agent
+   .. include:: /_includes/_installation/_packages/role-proxy.rst
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. rubric:: Mesh agent
 
-      .. code:: console
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-         # apt install carbonio-mta carbonio-proxy \
-         carbonio-user-management carbonio-webui carbonio-files-ui \
-         carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
-         carbonio-ws-collaboration-ui carbonio-catalog \
-         service-discover-agent
+.. _es2-step4:
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+.. dropdown:: Step 4: Bootstrap |product|
 
-      .. code:: console
+   To carry out this step, you need the **LDAP password** and the
+   **Core Node hostname**. Check in :ref:`Step 9 of Core Node
+   installation <es1-step9>` the command to retrieve it.
 
-         # dnf install carbonio-mta carbonio-proxy \
-         carbonio-user-management carbonio-webui carbonio-files-ui \
-         carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
-         carbonio-ws-collaboration-ui carbonio-catalog \
-         service-discover-agent
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+   .. include:: /_includes/_installation/step-bootstrap.rst
 
-      .. code:: console
-
-         # dnf install carbonio-mta carbonio-proxy \
-         carbonio-user-management carbonio-webui carbonio-files-ui \
-         carbonio-tasks-ui carbonio-chats-ui \
-         carbonio-files-public-folder-ui \
-         carbonio-ws-collaboration-ui carbonio-catalog \
-         service-discover-agent
+   The next steps concern the configuration and setup of the various
+   |product| components.
 
 .. _es2-step5:
 
-Step 5: Bootstrap |product|
----------------------------
+.. dropdown:: Step 5: Setup |mesh|
 
-To carry out this step, you need the **LDAP password** and the **Node
-hostname** that you have retrieved at Step 9 of Node 1's installation
-(see :ref:`es1-step9`).
+   To carry out this step, you need the |mesh| **secret** generated
+   during the installation of the Core Node. Check in :ref:`Step 9 of
+   Core Node installation <es1-step9>` the command to retrieve it.
 
-.. include:: /_includes/_installation/step-bootstrap.rst
+   .. include:: /_includes/_installation/mesh.rst
 
-The next steps concern the configuration and setup of the various
-|product| components.
+   .. include:: /_includes/_installation/pset.rst
 
 .. _es2-step6:
 
-Step 6: Setup |mesh|
---------------------
+.. dropdown:: Step 6: Complete Installation
 
-To carry out this step, you need the |mesh| **secret** generated
-during the installation of the Node 1 (see the
-:ref:`es1-step9` Step).
+   .. tab-set::
 
-.. include:: /_includes/_installation/mesh.rst
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
 
-.. include:: /_includes/_installation/pset.rst
-             
-.. _es2-step7:
- 
-Step 7: Complete Installation
------------------------------
+         After the successful package installation, start all |product|
+         services by using
 
-.. tab-set::
+         .. code:: console
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+            zextras$ zmcontrol restart
 
-      After the successful package installation, start all |product|
-      services by using
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
 
-      .. code:: console
+         After the successful package installation, start all |product|
+         services by using
 
-         zextras$ zmcontrol start
+         .. code:: console
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
-
-      After the successful package installation, start all |product|
-      services by using
-
-      .. code:: console
-
-         zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
 
-      After the successful package installation, start all |product|
-      services by using
+         After the successful package installation, start all |product|
+         services by using
 
-      .. code:: console
+         .. code:: console
 
-         zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
 
-      After the successful package installation, start all |product|
-      services by using
-      
-      .. code:: console
+         After the successful package installation, start all |product|
+         services by using
 
-         # systemctl start/stop/restart carbonio-mta.target
-         # systemctl start/stop/restart carbonio-proxy.target
+         .. code:: console
+
+            # systemctl restart carbonio-mta.target
+            # systemctl restart carbonio-proxy.target
 
 Mailstore Node
 ==============
 
 .. _es3-step1:
 
-Step 1: Configuration of Repositories
--------------------------------------
+.. dropdown:: Step 1: Configuration of Repositories
 
-The installation procedure start with the configuration of the
-repositories.
+   The installation procedure start with the configuration of the
+   repositories.
 
-.. rubric:: |product|
+   .. rubric:: |product|
 
-.. include:: /_includes/_installation/step-repo-conf.rst
+   .. include:: /_includes/_installation/step-repo-conf.rst
 
-.. rubric:: RHEL Only
+   .. rubric:: RHEL Only
 
-.. tab-set::
+   .. tab-set::
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
-      You need to add the PostgreSQL and EPEL repositories and
-      enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
-      .. code:: console
+         .. code:: console
 
-         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-         # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-         # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-         # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-         # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
 
-      You need to add the PostgreSQL and EPEL repositories and
-      enable the BaseOS, Appstream, and CodeReady repositories.
+         You need to add the EPEL repository and enable the BaseOS,
+         Appstream, and CodeReady repositories.
 
-      .. code:: console
+         .. code:: console
 
-         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-         # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-         # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-         # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-         # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
+            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
+            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
 .. _es3-step2:
 
-Step 2: Setting Hostname
-------------------------
+.. dropdown:: Step 2: Setting Hostname
 
-.. include:: /_includes/_installation/steps-hostname.rst
+   .. include:: /_includes/_installation/steps-hostname.rst
 
 .. _es3-step3:
 
-Step 3: System Upgrade and Package Installation
------------------------------------------------
+.. dropdown:: Step 3: System Upgrade and Package Installation
 
-After configuring the repositories, the installation of |product|
-requires to run a few commands.
+   After configuring the repositories, the installation of |product|
+   requires to run a few commands.
 
-We start by updating and upgrading the system.
+   We start by updating and upgrading the system.
 
-.. tab-set::
+   .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
 
-      .. code:: console
+         .. code:: console
 
-         # apt update && apt upgrade
+            # apt update && apt upgrade
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
 
-      .. code:: console
+         .. code:: console
 
-         # apt update && apt upgrade
+            # apt update && apt upgrade
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
-      .. code:: console
+         .. code:: console
 
-         # dnf upgrade
+            # dnf upgrade
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
 
-      .. code:: console
+         .. code:: console
 
-         # dnf upgrade
+            # dnf upgrade
 
-Next, we install all packages needed for |product|.
+   Next, we install all packages needed for |product|. We divide them
+   by Role and functionality, but you can combine all packages and run
+   the install command once.
 
-.. tab-set::
+   .. rubric:: Role Mailstore & Provisioning
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
 
-      .. code:: console
+   .. rubric:: Mesh agent
 
-         # apt install carbonio-advanced carbonio-zal \
-         service-discover-agent
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+.. _es3-step4:
 
-      .. code:: console
+.. dropdown:: Step 4: Bootstrap |product|
 
-         # apt install carbonio-advanced carbonio-zal \
-         service-discover-agent
+   .. include:: /_includes/_installation/step-bootstrap.rst
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
-
-      .. code:: console
-
-         # dnf install carbonio-advanced carbonio-zal \
-         service-discover-agent
-
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
-
-      .. code:: console
-
-         # dnf install carbonio-advanced carbonio-zal \
-         service-discover-agent
+   The next steps concern the configuration and setup of the various
+   |product| components.
 
 .. _es3-step5:
 
-Step 5: Bootstrap |product|
----------------------------
+.. dropdown:: Step 5: Setup |mesh|
 
-.. include:: /_includes/_installation/step-bootstrap.rst
+   .. include:: /_includes/_installation/mesh.rst
 
-The next steps concern the configuration and setup of the various
-|product| components.
+   .. include:: /_includes/_installation/pset.rst
 
 .. _es3-step6:
 
-Step 6: Setup |mesh|
---------------------
+.. dropdown:: Step 6: Complete Installation
 
-.. include:: /_includes/_installation/mesh.rst
+   .. tab-set::
 
-.. include:: /_includes/_installation/pset.rst
-             
-.. _es3-step7:
- 
-Step 7: Complete Installation
------------------------------
+      .. tab-item:: Ubuntu 20.04
+         :sync: ubu20
 
-.. tab-set::
+         After the successful package installation, start all |product|
+         services by using
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+         .. code:: console
 
-      After the successful package installation, start all |product|
-      services by using
+            zextras$ zmcontrol restart
 
-      .. code:: console
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
 
-         zextras$ zmcontrol start
+         After the successful package installation, start all |product|
+         services by using
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+         .. code:: console
 
-      After the successful package installation, start all |product|
-      services by using
-
-      .. code:: console
-
-         zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
 
-   .. tab-item:: RHEL 8
-      :sync: rhel8
+      .. tab-item:: RHEL 8
+         :sync: rhel8
 
 
-      After the successful package installation, start all |product|
-      services by using
+         After the successful package installation, start all |product|
+         services by using
 
-      .. code:: console
+         .. code:: console
 
-         zextras$ zmcontrol start
+            zextras$ zmcontrol restart
 
-   .. tab-item:: RHEL 9 |beta|
-      :sync: rhel9
+      .. tab-item:: RHEL 9 |beta|
+         :sync: rhel9
 
-      After the successful package installation, start all |product|
-      services by using
-      
-      .. code:: console
+         After the successful package installation, start all |product|
+         services by using
 
-         # systemctl start/stop/restart carbonio-appserver.target
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target

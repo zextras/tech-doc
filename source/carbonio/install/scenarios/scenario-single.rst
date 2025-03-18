@@ -18,11 +18,11 @@ This Scenario has been designed to serve a precise use case and
 therefore has the following architectural limitations:
 
 * The scenario is limited to a **single Node** (*"Core Node"*)
-  equipped with only the basic Roles: Database, Mesh and Directory,
+  equipped with only the basic Roles: Database, Mesh & Directory,
   MTA AV/AS, Proxy, Mailstore & Provisioning, and Files Roles
 
 * The scenario is also meant to be installed on three Nodes: building
-  on the *Core Node*, the second Node features the Docs and Editor,
+  on the *Core Node*, the second Node features the Docs & Editor,
   Tasks, and |wsc| Roles (*"Collaboration Node"*) and the third the
   |vs| Role (*"Video Server Node"*)
 

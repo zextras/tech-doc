@@ -1,4 +1,3 @@
-
 There are scenarios in which an Administrator wants to or needs to
 disable |product|'s internal anti-virus engine, **ClamAV**, for
 example when using an external, company-wide anti-virus engine or for
@@ -35,32 +34,44 @@ e-mails). Both tasks must be executed from the CLI.
 
    To disable ClamAV, execute the following commands as the ``root``
    user to *mask* the service
-   
+
    .. code:: console
 
-      # systemctl mask carbonio-clamav-sidecar.service
+      # systemctl disable carbonio-clamav-sidecar.service
 
    Since the ``systemd`` unit is masked, it will not be restarted
    during future upgrades. You need to explicitly ``unmask`` it before
    enabling it again.
 
    Now, restart system-discovery to let it pick up the change
-   
+
    .. code:: console
-      
+
       # systemctl restart service-discover
 
-   Finally, as the ``zextras`` user, let |product| make sure that the
+   Finally, as the |zu|, let |product| make sure that the
    antivirus service is disabled.
 
    .. code:: console
-      
-      zextras$ zmprov ms $(zmhostname) -zimbraServiceEnabled antivirus
+
+      zextras$ carbonio prov ms $(zmhostname) \
+      -zimbraServiceEnabled amavis
+
+   You can also disable the other related services.
+
+   .. code:: console
+
+      zextras$ carbonio prov ms $(zmhostname) \
+      -zimbraServiceEnabled amavis \
+      -zimbraServiceEnabled antivirus \
+      -zimbraServiceEnabled antispam \
+      -zimbraServiceEnabled opendkim \
+      carbonioAmavisDisableVirusCheck TRUE
 
    Optionally, you can also remove the ClamAV definition file for
    service-discover (this will be restored during future ClamAV
    upgrades, though)
-   
+
    .. code:: console
-             
+
       # rm /etc/zextras/service-discover/carbonio-clamav.hcl

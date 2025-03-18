@@ -35,10 +35,12 @@ To allow users to search other users only on their domain, use
    :ref:`dedicated box <wsc-user-search>` in the Domain's global
    settings.
 
+.. index:: Chats; set read only
+
 .. _wsc-chats-ro:
 
-Set Legacy Chat Read Only
--------------------------
+Set Legacy Chats Read Only
+--------------------------
 
 If you enabled |WSC|, to prevent user using the old Chats, you
 can set it in *read-only* mode. By doing so, users will still able to
@@ -47,11 +49,85 @@ will not be possible to message users or create new Spaces and
 Rooms. Additionally, the input bar at the bottom will be replaced by a
 string *The application is in Read Only mode*.
 
-To set the legacy Chats read-only,, use the CLI command
+To set the legacy Chats read-only, use the CLI command
 
 .. code:: console
 
    zextras$ carbonio config set cos default teamReadOnlyEnabled true
+
+.. index:: Chats; disable
+
+.. _wsc-chats-dis:
+
+Disable Legacy Chats
+--------------------
+
+To completely disable the legacy Chats, both textual and video, you
+need to carry out tasks at different levels: global, COS, account, and
+application.
+
+.. hint:: All commands in this section, except where explicitly
+   stated, must be executed as the |zu|.
+
+We start by disabling the functionality on the whole infrastructure.
+
+.. code:: console
+
+   zextras$ carbonio config set global teamChatEnabled  false
+   zextras$ carbonio config set global videoChatEnabled false
+
+Then, disable the functionality on all CoSes in which it is
+enabled with the following two one-liners.
+
+.. code:: console
+
+   zextras$ carbonio prov gac | while read cos; do echo "config set cos \"$cos\" teamChatEnabled false"; echo "config set cos \"$cos\" videoChatEnabled false";  done  | carbonio
+
+.. code:: console
+
+   zextras$ carbonio prov gac | while read cos; do echo "mc \"$cos\" carbonioFeatureChatsEnabled FALSE"; done  | carbonio prov
+
+Disable the functionality on all accounts in which it is enabled with
+the following two one-liners.
+
+.. code:: console
+
+   zextras$ carbonio prov -l gaa | while read account; do echo "config set account \"$account\" teamChatEnabled false"; echo "config set account \"$account\" videoChatEnabled false";  done  | carbonio
+
+.. code:: console
+
+   zextras$ carbonio prov -l gaa | while read account; do echo "ma \"$account\" carbonioFeatureChatsEnabled \"\""; done  | carbonio prov
+
+On the node hosting the *Mailstore & Provisioning* Role, disable the
+Chat's automatic start, then stop the service.
+
+.. code:: console
+
+   zextras$ carbonio config set global ZxChat_ModuleEnabledAtStartup false
+
+.. code:: console
+
+   zextras$ carbonio chats dostopservice module
+
+At this point the Chats functionality is completely disabled. You can
+now log in to the *Proxy* Node and remove the package providing Chats
+as the |ru|:
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubu
+
+      .. code:: console
+
+         # apt remove carbonio-chats-ui
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf remove carbonio-chats-ui
 
 .. _wsc-optimise:
 
@@ -96,13 +172,53 @@ tables.
 .. hint:: The |mesh| token can be retrieved using the procedure
    described in section :ref:`ts-token`.
 
-Configuration table
--------------------
+Configuration tables
+.-------------------
 
-The following table shows the values available to modify the WSC database.
+The following tables are available to optimise |wsc|: :ref:`Push
+Connector <wsc-pool-opt>`, :ref:`Push Notifications Database
+<wsc-push-opt>`, and :ref:`the WSC databases <wsc-db-opt>`.
+
+.. _wsc-pool-opt:
+
+.. card:: Push Connector
+
+   .. csv-table::
+      :header: "Key name", "Default value"
+      :widths: 70, 30
+
+      "carbonio-push-connector/hikari/min-idle-connections", "10"
+      "carbonio-push-connector/hikari/max-pool-size", "10"
+      "carbonio-push-connector/hikari/idle-timeout", "10000"
+      "carbonio-push-connector/hikari/leak-detection-threshold", "5000"
+
+   Once you modify any of these changes, restart the service.
+
+   .. code:: console
+
+      # systemctl restart carbonio-push-connector
+
+.. _wsc-push-opt:
+
+.. card:: Configure Notifications Push Database
+
+   .. csv-table::
+      :header: "Key name", "Default value"
+      :widths: 70, 30
+
+      "carbonio-notification-push/hikari/min-idle-connections", "10"
+      "carbonio-notification-push/hikari/max-pool-size", "10"
+      "carbonio-notification-push/hikari/idle-timeout", "10000"
+      "carbonio-notification-push/hikari/leak-detection-threshold", "5000"
+
+   Once you modify any of these changes, restart the service.
+
+   .. code:: console
+
+      # systemctl restart carbonio-notification-push
 
 .. _wsc-db-opt:
-      
+
 .. card:: Configure |wsc| Database
 
    .. csv-table::

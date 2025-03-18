@@ -182,6 +182,27 @@ restore the COS value.
      module. It is possible to insert up to **three** decimal
      digits for each quota.
 
+     .. rubric:: Over quota management
+
+     Users are allowed to modify their documents stored in the |file|
+     module until they reach the assigned quota. The values of the
+     quota for the user are updated almost in real time, and sometimes
+     it may happen that the content added by a user to a document
+     during an editing session exceeds the quota limit.
+
+     For example, suppose user Bob is 10Kb short of his quota and
+     edits a document, adding a 20KB image and 20KB of text,
+     overflowing his quota by 30KB. When this happens, at the next
+     save attempt, Bob will be shown an error message, telling him
+     that he needs to free up some space before being able to save the
+     document.
+
+     Bob will experience the same behaviour if he tries to create a
+     new document adding the same 40KB content: upon saving, he will
+     be informed that his quota has been exceeded and he needs to free
+     some space in his |file| before being able to save the new
+     document.
+
    * To force the user to change password at the next login
 
      .. note:: An Admin can not change the password of a user, only

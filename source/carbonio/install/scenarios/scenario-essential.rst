@@ -14,7 +14,7 @@ make sure you :ref:`configure the internal network
 
 The Roles installed on the *3 Nodes*, depicted below, are:
 
-* Node 1: Mesh and Directory, Database, Monitoring
+* Node 1: Mesh & Directory, Database, Monitoring
 * Node 2: MTA AV/AS, Proxy
 * Node 3: Mailstore & Provisioning
 

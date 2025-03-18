@@ -1,12 +1,12 @@
 .. _role-mesh-install:
 
-Mesh and Directory
-====================
+Mesh & Directory
+================
 
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_roles/role-mesh-ds.rst
+.. include:: /_includes/_installation/_packages/role-mesh-ds.rst
 
 Bootstrap |product|
 -------------------
