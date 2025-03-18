@@ -209,14 +209,14 @@ save in that directory these additional files, which contain access
 passwords for various services. You should have saved these password
 during the installation process.
 
-#. :file:`inventory_postgrespassword` must contain the password of PostgreSQL’s
-   administrative user, called ``DB_ADM` in the documentation.
+#. :file:`inventory_postgrespassword` must contain the password of PostgreSQL
+   administrative user, called ``DB_ADM`` in the documentation.
 
 #. :file:`inventory_ldap_password` must contain the password that you
    can retrieve with the command, executed as the |zu| on the node
    featuring the Mesh & Directory Role
 
-   .. code:: console:
+   .. code:: console
 
       zextras$ zmlocalconfig -s | grep ldap_password"
 
@@ -227,7 +227,7 @@ during the installation process.
    used by the |vs|, that you can retrieve with the command, executed
    as the |ru| on the Node installing the |vs|:
 
-   .. code:: console:
+   .. code:: console
 
       # grep api_secret /etc/janus/janus.jcfg
 
