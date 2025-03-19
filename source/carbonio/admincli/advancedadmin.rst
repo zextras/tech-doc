@@ -154,3 +154,17 @@ Pending-setups
 --------------
 
 .. include:: /_includes/_admincli/pendingsetups.rst
+
+.. _upstream-proxy:
+
+|product| and HTTP Proxy
+------------------------
+
+.. include:: /_includes/_admincli/http-proxy.rst
+
+.. _freshclam-proxy:
+
+Freshclam and HTTP Proxy
+------------------------
+
+.. include:: /_includes/_admincli/freshclam-proxy.rst

@@ -20,7 +20,6 @@ This is a list of known issues that impact |product| during or after
 the upgrade to |version|.
 
 .. include:: /_includes/_upgrade/issue-janus.rst
-.. include:: /_includes/_upgrade/issue-um.rst
 .. include:: /_includes/_ts/issue-mail-rendering.rst
 
 .. _ts-up-older:
@@ -43,12 +42,6 @@ intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
-* The :ref:`new package <upgrade-catalog>` ``carbonio-catalog`` must
-  be installed
-* Package :file:`carbonio-message-broker` needs to be installed on the
-  :ref:`Mesh and Directory Node <broker-pkg>`
-* Package :file:`carbonio-user-management` needs to be installed on
-  the :ref:`Mesh and Directory Node <upgrade-um>`
 * You might be asked to keep or replace the :ref:`Janus
   <upgrade-janus>` configuration files
 * E-mails' body are not displayed or their rendering is wrong, due to
@@ -193,18 +186,9 @@ intervention.
 
      # dnf install libbsd
 
-.. _upgrade-catalog:
-
-.. include:: /_includes/_upgrade/issue-catalog.rst
-.. include:: /_includes/_ts/broker.rst
-
 .. _upgrade-janus:
 
 .. include:: /_includes/_upgrade/issue-janus.rst
-
-.. _upgrade-um:
-
-.. include:: /_includes/_upgrade/issue-um.rst
 
 .. _email-rendering:
 

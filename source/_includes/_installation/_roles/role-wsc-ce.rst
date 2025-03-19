@@ -33,9 +33,8 @@
 
       .. code:: console
 
-         # dnf install carbonio-message-broker \
-           carbonio-message-dispatcher carbonio-ws-collaboration-ce \
-           service-discover-agent
+         # dnf install carbonio-message-dispatcher \
+           carbonio-ws-collaboration-ce 
 
       Install PostgreSQL repository
       

@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _carbonio-requirements:
 
 Requirements
@@ -130,6 +126,12 @@ install |product|.
 
 #. Make sure that the :file:`/etc/hosts` does not contain any IPv6
    entries
+
+#. Locale settings: |product| requires strictly ``en_US.UTF-8`` as the
+   default system locale; a different locale may lead to unexpected
+   issues and services not working correctly. Please follow the
+   procedure described in Section :ref:`locale-settings` to modify the
+   configuration.
 
 .. _rhel-requirements:
 

@@ -30,50 +30,6 @@
         https://packages.grafana.com/oss/deb stable main" | sudo tee -a \
         /etc/apt/sources.list.d/grafana.list
 
-.. _upgrade-packages:
-
-.. card:: New Packages Installation
-
-   New packages must be installed upon upgrading to 24.12.
-
-   On the Node featuring the **Mesh & Directory** Role, install
-   package ``carbonio-storages`` by executing command
-
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt install carbonio-storages
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf install carbonio-storages
-
-   On the Node featuring the **Proxy** Role, install package
-   ``carbonio-catalog`` by executing command
-
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code:: console
-
-            # apt install carbonio-catalog
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code:: console
-
-            # dnf install carbonio-catalog
-
 .. _upgrade-monit:
 
 .. card:: |monit|

@@ -1,4 +1,3 @@
-
 .. _auth-ext-ad:
 
 External Active Directory
@@ -8,16 +7,41 @@ To illustrate how an Active Directory source works in |product|, we
 build on the following scenario.
 
 .. include:: /_includes/_admincli/ext-ad.rst
-             
+
 On |product|, set up the ``ad-auth.example.com`` domain for
-authentication on the external LDAP using the command below. Remember
+authentication on the external LDAP using the commands below. Remember
 to change the values in the scenario with the actual values of your
 infrastructure!
 
+
+The first command is to define the search base
+
+
 .. code:: console
-          
+
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBase DC=external_ad,DC=com
-   zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchFilter '(|(userprincipalname=%u@external_ad.com)(samaccountname=%u))'
+
+Then choose how you prefer to allow users to login. There are two
+alternatives:
+
+#. To allow users login with their **full e-mail address**, e.g.,
+   ``alice.smith@example.com`` execute
+
+   .. code:: console
+
+      zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchFilter '(mail=%n)'
+
+#. To allow users login with their username, e.g., ``alice.smith``
+   execute
+
+   .. code:: console
+
+      zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchFilter '(|(userprincipalname=%u@external_ad.com)(samaccountname=%u))'
+
+Complete the setup with these commands
+
+.. code:: console
+
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapURL ldap://172.24.0.100:3268
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBindDn service.ad@external_ad.com
    zextras$ carbonio prov md ad-auth.example.com zimbraAuthLdapSearchBindPassword 'very_strong_pass!'
@@ -38,7 +62,7 @@ Finally, we also create 3 accounts on |product|
    zextras$ carbonio prov ca user3@ad-auth.example.com ""
 
 .. warning:: Do not provide any passwords in these commands!
-             
+
 If all the steps have been performed correctly, any of the three
 accounts can login to |Product| using the passwords defined on the
 respective users of the external AD server.
