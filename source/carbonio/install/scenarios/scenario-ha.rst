@@ -20,6 +20,8 @@ Directory Server. A step-by-step approach to setting up VMs,
 configuring centralised storage, and deploying HA, will guide you in
 the procedure.
 
+.. _ha-procedure:
+
 Procedure Overview
 ==================
 
@@ -57,6 +59,8 @@ procedure and use the |product| infrastructure. In more details:
 
 We strongly suggest to look through the whole procedure to become
 acquainted with the procedure.
+
+.. _ha-scenario:
 
 Scenario Overview
 =================
@@ -97,6 +101,8 @@ information, respectively. The configuration of the Cluster service
 includes three nodes to maintain quorum and prevent split-brain
 scenarios, ensuring stability in an HA environment.
 
+.. _ha-req:
+
 Requirements
 ============
 
@@ -115,6 +121,8 @@ Requirements
 - An object storage like MinIO or S3
 
 - An additional carbonio-directory-server node configured in multimaster mode (mmr)
+
+.. _ha-node-spec:
 
 Detailed Node Specifications
 ----------------------------
@@ -173,6 +181,7 @@ recommended specifications:
      - Both nodes are identically configured, allowing seamless
        failover and continuous video service availability
 
+.. _ha-storage-req:
 
 Centralised S3 Storage Requirements
 -----------------------------------
@@ -187,12 +196,135 @@ Centralised S3 Storage Requirements
    Mailstore nodes, facilitating redundancy in data storage and
    minimizing potential data loss in the event of a node failure.
 
+.. _ha-checks:
+
 Pre-installation checks
 =======================
 
-Please follow the steps outlined in the link below for essential
-pre-installation checks to ensure your setup is properly configured for
-a High Availability Carbonio installation:
+
+The following is a list of essential pre-installation checks that you
+should carry out to ensure your setup is properly configured for a
+|product| |ha| installation:
+
+After all the software and hardware requirements are satisfied, here
+are some tasks to carry out before attempting the installation and a
+couple of checks to verify you are ready to install |product|.
+
+For the sake of simplicity, we consider a three Nodes scenario:
+``core.example.com``, ``mbox.example.com``, and ``video.example.com``
+with IP addresses 10.176.134.101, 10.176.134.102, and 10.176.134.103,
+respectively. These will be used in the remainder of this section.
+
+.. note:: Some of the CLI commands presented here, even if they should
+   be installed by default on your system, may not be available, but
+   equivalent alternatives are given. You can always install them or
+   ever use other commands that you feel more confident with.
+
+
+.. card:: Each Node must have a FQDN
+
+   You need to put the FQDN and IP address of each Node in the
+   infrastructure in file :file:`/etc/hosts`. For example, on
+   ``core.example.com``, :file:`/etc/hosts` must contain a line like::
+
+     core.example.com   10.176.134.101
+
+   Similarly for the other Nodes.
+
+.. card:: SSL certificates
+
+   If you plan to install commercial SSL certificates, make sure you
+   receive them in **PEM** format. Instruction on the procedure to
+   request a certificate and deploy it on |product| after the
+   installation can be found in Section :ref:`install-SSL-cert`.
+
+.. card:: DNS resolution of Nodes
+
+   All Nodes must be able to communicate with one another. In case
+   some Node can not reach one of the other ones, here are a few
+   commands that help in troubleshooting the network and find the
+   problem.
+
+
+   Supposing ``core.example.com`` can not reach ``video.example.com``,
+   you can use on ``core.example.com`` any of the following commands:
+
+   * :command:`ping 10.176.134.103` to check whether the other Node
+     answers to connections.
+
+   * Similar to the previous command, either of :command:`tracepath
+     10.176.134.103`, :command:`mtr 10.176.134.103` commands will show
+     if packets can reach the other Node
+
+   * To verify the DNS resolution works, execute either
+     :command:`dig +short video.example.com` or :command:`nslookup
+     video.example.com`. An empty answer (in the case of
+     :command:`dig`) or a string similar to ``** server can't find
+     video.example.com``) will imply there is a DNS resolution
+     problem.
+
+.. card:: Check system time and timezone
+
+   System clocks on |product| needs to be synchronised, otherwise some
+   services (for example external LDAP or AD authentication) may not
+   work correctly. The operating systems themselves take usually
+   charge of this, but you can manually verify that systems time are
+   synchronised and that the timezone is correct by using command
+   :command:`timedatectl`, which will output a number of useful data
+   about the current time::
+
+                  Local time: Wed 2025-03-12 14:06:30 UTC
+           Universal time: Wed 2025-03-12 14:06:30 UTC
+                 RTC time: Wed 2025-03-12 14:06:30
+                Time zone: Etc/UTC (UTC, +0000)
+           System clock synchronized: yes
+              NTP service: active
+              RTC in local TZ: no
+
+
+.. card:: Volumes and disk space
+
+   There are a few points to highlight about volumes and disk space:
+
+   * The Nodes hosting the *Mailstore & Provisioning* Role must have
+     the Primary storage mounted on :file:`/opt/`
+
+   ..
+      * Cluster service (see :ref:`ha-scenario`) must have the root
+        partition :file:`/` of the size specified in the sizing document
+        shared with partner or customer::
+
+   * Command :command:`df -h` will output the size, usage, and other
+     information about each of the mounted partitions on the system.
+
+.. card:: S3 Buckets
+
+   In case you use S3 buckets, check that they can be reached from the
+   *Mailstore & Provisioning* Node using command :command:`carbonio
+   core testS3Connection c6d71d55-9497-44e6-bf46-046d5598d940` as the
+   |zu|, where the string is the bucket's UUID.
+
+   If you think that the S3 bucket underperforms or is not efficient,
+   you can use the :ref:`s3-bench-main` to verify its status and
+   performances.
+
+
+.. card:: Repository configuration and Ansible
+
+   |product| repository configuration in stored in files
+   :file:`/etc/apt/sources.list.d/zextras.list` (Ubuntu) and
+   :file:`/etc/yum.repos.d/zextras.repo` (RHEL) and you can choose
+   between two channels from which to install and upgrade |product|
+   packages: **RC** and **RELEASE** (see Section :ref:`repo-conf` for
+   details).
+
+   When using Ansible to install or upgrade |product|, it will look
+   for that file and use the channel found there. However, if that
+   file does not exist, can not be read, or for any reason is
+   unavailable to Ansible, a new file will be installed using the
+   **RELEASE** channel. If you use the **RC** channel, make sure that
+   the file is present and readable, because otherwise Ansible will
+   install or upgrade |product| using the *RELEASE* channel.
 
 .. toctree::
    :hidden:
