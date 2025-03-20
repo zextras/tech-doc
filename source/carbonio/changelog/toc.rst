@@ -34,8 +34,10 @@ Contribution to the Documentation
 
 .. include:: /_includes/_general/contribute.rst
 
-.. toctree::
-   :glob:
-   :maxdepth: 1
+.. card:: Available changelogs
 
-   changelogs/*
+   .. toctree::
+      :glob:
+      :maxdepth: 1
+
+      changelogs/*
