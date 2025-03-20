@@ -6,7 +6,7 @@ Standard Carbonio Installation
 Before proceeding with the High Availability (HA) setup for Carbonio,
 it is essential to complete a standard installation of all core services.
 This initial setup provides the stable foundation required to create HA
-infrastructure that will be built upon it. The scenario
+infrastructure that will be built upon it.
 
 This scenario can be installed **only** using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
