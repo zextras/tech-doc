@@ -114,13 +114,13 @@ Requirements
   be used, with the requirement that it must support per-port TCP balancing.
 
 - A working Kafka cluster is needed to transfer metadata between
-  mailbox, to simplify the cluster installation (is this part of HA configuration?)
+  mailbox, to simplify the cluster installation
 
 - A Postgres cluster setup
 
 - An object storage like MinIO or S3
 
-- An additional carbonio-directory-server node configured in multimaster mode (mmr)
+- An additional carbonio-directory-server node configured in *MultiMaster* mode (**mmr**)
 
 .. _ha-node-spec:
 

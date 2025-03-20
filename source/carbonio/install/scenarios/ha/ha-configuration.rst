@@ -14,7 +14,7 @@ Ansible's Control Node and of the following items:
    edit according to the directions you will find in the reainder of
    this page
 
-#. the following Ansible Galaxy Collections: ``carbonio_kafka``,
+#. The following Ansible Galaxy Collections: ``carbonio_kafka``,
    ``carbonio_patroni``, and ``carbonio_ldap`` that you can install
    with command
 
@@ -28,8 +28,7 @@ Prepare inventory
 -----------------
 
 After the **standard** |product| installation has completed
-successfully, you should have the following inventory files: (are they
-all necessary in this step?)
+successfully, you should have the following inventory files:
 
 -  inventory
 
@@ -163,7 +162,7 @@ PstgreSQL replica
 
 .. code:: console
 
-   # ansible-playbook -i inventor zxbot.carbonio_patroni.carbonio_replica_postgres_install
+   # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
 Before starting the HAProxy installation, note that during the
 installation you will be prompted with the following question::
@@ -173,7 +172,7 @@ installation you will be prompted with the following question::
   - If you answer `yes`, HAProxy will be installed on all servers except the LDAP servers.
   - If you answer `no`, HAProxy will only be installed on the `dbconnectors`.
 
-TO install HAProxy, execute command
+To install HAProxy, execute command
 
 .. code:: console
 
