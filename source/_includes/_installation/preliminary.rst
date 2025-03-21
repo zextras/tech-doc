@@ -2,6 +2,8 @@ In this section, we list some naming conventions we use in the
 documentation and present some tasks you need to carry out on **each
 of the Nodes** before starting with the actual installation.
 
+.. _naming-conv:
+
 Naming conventions
 ------------------
 
@@ -25,11 +27,15 @@ Additionally, throughout this documentation, we will use **Proxy
 Node(s)** to denote the Node(s) on which the Proxy Role is (are)
 installed; **MTA Node** the Node featuring the MTA, and so on.
 
+.. _repo-conf:
+
 Configure repositories
 ----------------------
 
 .. include:: /_includes/_installation/step-repo-conf.rst
 .. include:: /_includes/_installation/repo-info.rst
+
+.. _set-hostname:
 
 Setting Hostname
 ----------------

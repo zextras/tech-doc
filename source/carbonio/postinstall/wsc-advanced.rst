@@ -85,7 +85,7 @@ enabled with the following two one-liners.
 
 .. code:: console
 
-   zextras$ carbonio prov gac | while read cos; do echo "mc \"$cos\" carbonioFeatureChatsEnabled FALSE"; done  | carbonio prov
+   zextras$ carbonio prov gac | while read cos; do echo "mc \"$cos\" carbonioFeatureWscEnabled FALSE"; done  | carbonio prov
 
 Disable the functionality on all accounts in which it is enabled with
 the following two one-liners.
@@ -96,7 +96,7 @@ the following two one-liners.
 
 .. code:: console
 
-   zextras$ carbonio prov -l gaa | while read account; do echo "ma \"$account\" carbonioFeatureChatsEnabled \"\""; done  | carbonio prov
+   zextras$ carbonio prov -l gaa | while read account; do echo "ma \"$account\" carbonioFeatureWscEnabled \"\""; done  | carbonio prov
 
 On the node hosting the *Mailstore & Provisioning* Role, disable the
 Chat's automatic start, then stop the service.
