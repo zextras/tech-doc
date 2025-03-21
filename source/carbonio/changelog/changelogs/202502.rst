@@ -1,0 +1,57 @@
+Changelog 2025-02
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202502-1060  Documentation Changelog January 2025
+
+The technical documentation's changelog has been published
+
+Changes in the source code can be found in :pr:`827`.
+
+
+.. rubric:: 202502-1053 New Monitoring for RabbitMQ
+
+A new exporter for RabbitMQ data and a corresponding Monitoring dashboard have been added to the |monit| Role.
+
+Changes in the source code can be found in :pr:`952`.
+
+
+.. rubric:: 202502-949 List of ports useful for monitoring
+
+We added a list of ports used by |product|, that can be used to feed
+monitoring tools.
+
+Changes in the source code can be found in :pr:`971`.
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202502-1058 Fix migration script
+
+We replaced the script used to extract a list of groups that are incompatible with the migration process
+
+Changes in the source code can be found in :pr:`951`.
+
+.. rubric:: 202502-1041 Missing DB initialization in RHEL Single-Server installation
+
+A missing initialisation step for the PostgreSQL Database prevented a successful installation of |product| in the Single-Server scenario.
+
+Changes in the source code can be found in :pr:`959`
+
+.. rubric:: 202502-1040 Wrong name of package
+
+We fixed the name of the postgresql16-server package in the Single-Server installation and removed an
+outdated note.
+
+Changes in the source code can be found in :pr:`936`.
+
+*****
+
+End of changelog
+
