@@ -203,7 +203,7 @@ user the command
 
 .. code:: console
 
-   zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
+   zextras$ carbonio prov mc default carbonioFeatureWscEnabled TRUE
 
 This command enables the chat for the ``default`` COS, but you can
 enable it only on selected COSes.

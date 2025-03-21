@@ -151,7 +151,7 @@ You can enable it also from the command line by running as the
 
 .. code:: console
 
-   zextras$ carbonio prov mc default carbonioFeatureChatsEnabled TRUE
+   zextras$ carbonio prov mc default carbonioFeatureWscEnabled TRUE
 
 This command enables the chat for the ``default`` COS, but you can
 enable it on selected COSes and accounts.
