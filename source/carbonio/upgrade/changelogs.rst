@@ -16,7 +16,7 @@ that you can find here:
 * :bdg-link-danger-line:`Installation
   <https://github.com/zextras/carbonio-install-ansible/blob/main/CHANGELOG.md>`
 
-* :bdg-link-danger-line:`Single-Servee Installation
+* :bdg-link-danger-line:`Single-Server Installation
   <https://github.com/zextras/carbonio-ansible-ssinstall/blob/main/CHANGELOG.md>`
 
 * :bdg-link-danger-line:`Upgrade
