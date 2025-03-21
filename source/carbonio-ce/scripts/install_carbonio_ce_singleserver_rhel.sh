@@ -81,7 +81,7 @@ pending-setups --execute-all
 sudo -iu zextras -- bash <<EOF
 	carbonio prov mcf zimbraDefaultDomainName \$(hostname -d)
 	carbonio prov md  \$(hostname -d) zimbraVirtualHostname \$(hostname -d)
-	carbonio prov mc default carbonioFeatureChatsEnabled TRUE
+	carbonio prov mc default carbonioFeatureWscEnabled TRUE
 EOF
 
 
