@@ -50,7 +50,7 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`ha-replica` provides a scripts to activate a Directory
    Replica
 
-#. :ref:`ha-checks` contains a number of commands to check the status
+#. :ref:`ha-checks-scenario` contains a number of commands to check the status
    of HA and related services.
 
 .. note:: The parts must be executed in their entirety and in the
@@ -196,7 +196,7 @@ Centralised S3 Storage Requirements
    Mailstore nodes, facilitating redundancy in data storage and
    minimizing potential data loss in the event of a node failure.
 
-.. _ha-checks:
+.. _ha-checks-scenario:
 
 Pre-installation checks
 =======================
