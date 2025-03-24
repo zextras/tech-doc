@@ -20,6 +20,9 @@ certificate, either manually or automatically.
 :ref:`change-ip` features direction to modify the IP address of
 |product| Single-Server
 
+:ref:`change-hostname` shows the procedures that you need to change
+the hostname(s) of a |product| infrastructure
+
 :ref:`cli-remove-node` guides you in the decommissioning of a Node
 from a |product| infrastructure
 
@@ -34,6 +37,7 @@ from a |product| infrastructure
    administration/domaindisclaimer
    administration/analytics
    administration/changeip
+   administration/changehostname
    administration/removeserver
    administration/s3bench
    administration/locale
