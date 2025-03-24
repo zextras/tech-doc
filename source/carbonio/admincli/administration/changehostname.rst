@@ -160,8 +160,6 @@ the commands to execute slightly differ.
 
 In both cases, when you executed the commands, restart all services
 
-.. include:: /_includes/_admincli/hostname-replica.rst
-
 .. card:: Attributes ``zimbraLdapMasterURL`` and ``zimbraLdapURL``
 
    * ``zimbraLdapMasterURL`` ensures that write operations are
