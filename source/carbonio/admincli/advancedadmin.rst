@@ -169,6 +169,9 @@ Freshclam and HTTP Proxy
 
 .. include:: /_includes/_admincli/freshclam-proxy.rst
 
+.. index:: Mobile devices; clean sync status
+.. index:: see: Sync status, Mobile; Mobile devices; clean sync status
+
 .. _pg-activesync:
 
 Clean Activesync Status
