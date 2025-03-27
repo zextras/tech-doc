@@ -769,11 +769,11 @@ that can be used by the application to operate correctly.
 
 .. _auth-credential:
 
-Credential Management
-=====================
+Service Credential Management
+=============================
 
-Within |product|, a **credential** is something that allows access to
-one of its services or modules.
+Within |product|, a **service credential** is something that allows
+access to a service running on |product|.
 
 |product| Auth’s Credential Management system allows to create
 dedicated passwords to access different services such as |EAS| devices,
