@@ -272,21 +272,40 @@ restore the COS value.
 
    Options present here allow to manage the account security.
 
+   **Services Passphrase**
+
+   A *Service passphrase* allows users to connect to |product| without
+   the need to provide their own credentials. Please refer to Sections
+   :ref:`auth-credential` to learn more details and
+   :ref:`services_supported` for a list of supported services and
+   example scenarios where passphrases prove useful.
+
+   To create a new passphrase, define add a label, then choose a
+   service. A dialog will open, that contains a password. It is
+   important to know that the password will be shown **only once**, so
+   make sure to store it in a safe place or give them only to trusted
+   people. Moreover, with this password, it will be possible to bypass
+   2FA authentication even from untrusted servers.
+
+   Upon closing the dialog, you will be able to either |del| the
+   passphrase or to |create| a new one.
+
    .. index:: OTP; by Account
 
-   New application passwords and OTP tokens can be created to allow
-   the user to login by using a QR Code. The code can then be sent
-   by e-mail to the user who requested it. If the recipient can not
-   see the QR Code (for example because the provider does not
-   support HTML e-mails or prevents inline images to be shown)), a
-   text equivalent version of the QR Code will be shown (the
-   **Secret Code**), allowing the user to use it.
+   **Second Factor Authentication**
 
-   It is also possible to completely disable OTP for a user by
-   using the **One Time Password Management** switch. In this case,
-   the user can neither access their account from trusted networks
-   (see :ref:`global-2fa`), nor they have the ability to create OTP
-   codes in the *Auth* section of their `Settings` module.
+   New OTP tokens can be created to allow the user to login by using a
+   QR Code. The code can then be sent by e-mail to the user who
+   requested it. If the recipient can not see the QR Code (for example
+   because the provider does not support HTML e-mails or prevents
+   inline images to be shown), a text equivalent version of the QR
+   Code will be shown (the **Secret Code**), allowing the user to use
+   it.
+
+   It is also possible to completely disable OTP for a user by using
+   the **One Time Password Management** switch. In this case, the user
+   can not create OTP codes in the *Auth* section of their `Settings`
+   module.
 
    .. note:: If a user has already created OTPs and at a later
       point the Admin has disabled OTP for that user, the user can
