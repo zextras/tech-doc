@@ -764,6 +764,9 @@ protocol not supporting 2FA (like, e.g., the above mentioned SMTP or
 SOAP), on |product|, an Administrator can create suitable credentials
 that can be used by the application to operate correctly.
 
+.. index:: Service credentials; by CLI
+
+
 .. _auth-credential:
 
 Service Credential Management
