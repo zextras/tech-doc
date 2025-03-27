@@ -122,7 +122,7 @@ You need also to add variable to existing groups.
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
    will be moved from Postgres server to servers in
    ``[dbsConnectorServers]`` for HA. In our scenario we move them to
-   the Node hosting the MTA Role:
+   the Node hosting the Mailstore & Provisioning Role:
 
    .. code:: console
 
