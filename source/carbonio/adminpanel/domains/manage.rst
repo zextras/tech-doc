@@ -272,6 +272,10 @@ restore the COS value.
 
    Options present here allow to manage the account security.
 
+   .. index:: Service credentials; by GUI
+
+   .. index:: see: Services passphrases, Service credentials; by GUI
+
    **Services Passphrase**
 
    A *Service passphrase* allows users to connect to |product| without
