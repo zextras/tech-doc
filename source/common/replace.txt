@@ -31,6 +31,7 @@
 .. |create| replace:: :bdg-primary:`CREATE`
 .. |search| replace:: :bdg-primary:`SEARCH`
 .. |reset| replace:: :bdg-primary-line:`RESET`
+.. |del| replace:: :bdg-danger-line:`DELETE`
 .. |ex| replace:: :bdg-info-line:`Example`
 .. |zu| replace:: ``zextras`` user
 .. |ru| replace:: ``root`` user
