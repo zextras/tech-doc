@@ -1,10 +1,11 @@
 
-The communication between the nodes, including the exchange of data,
-uses SSH and requires **SSH keys** to be set up for automatic,
-non-interactive logins. Therefore, it is necessary that the keys are
-always up-to-date and synchronised. In order to update the keys, this
-command must ebe executed *on all nodes*:
+In a Multi-Server environment, the communication between the Nodes,
+including the exchange of data, uses SSH and requires **SSH keys
+exchange** to be set up for automatic, non-interactive
+logins. Therefore, it is necessary to keep the keys always up-to-date
+and synchronised, a task that can be accomplished by executing this
+command *on all Nodes* as the |zu|
 
 .. code:: console
 
-   # su - zextras -c "/opt/zextras/bin/zmupdateauthkeys"
+   zextras$ /opt/zextras/bin/zmupdateauthkeys
