@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. _carbonio_auth:
 
@@ -789,6 +786,10 @@ authentication means to revoke the access.
 This also implies, as an additional advantage, that users are able to
 decide who can have access to the same services they use, providing a
 high level of granularity also at user level.
+
+Whenever a user employs a *Service credential* to access a |product|
+service, **2fa** will not be enforced, meaning that |product| can be
+accessed even from **untrusted networks**.
 
 In the remainder of this section, we show a few common and relevant
 tasks that an administrator can carry out, followed by a couple of
