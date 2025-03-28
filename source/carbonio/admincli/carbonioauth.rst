@@ -792,7 +792,8 @@ high level of granularity also at user level.
 
 Whenever a user employs a *Service credential* to access a |product|
 service, **2fa** will not be enforced, meaning that |product| can be
-accessed even from **untrusted networks**.
+accessed even from **untrusted networks** without the need to provide
+a second authentication factor.
 
 In the remainder of this section, we show a few common and relevant
 tasks that an administrator can carry out, followed by a couple of
