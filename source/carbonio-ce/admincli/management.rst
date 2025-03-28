@@ -8,9 +8,6 @@ advanced |carbonio| features. Currently, the available topics are:
 
 :ref:`manage-alias` explains how to add aliases to an e-mail address.
 
-:ref:`update_ssh_keys`, which allows to keep SSH keys updated across
-the nodes of a Multi-Server installation.
-
 :ref:`carb-customisations` guides you in the customisation of 
 |product|.
 
@@ -30,6 +27,9 @@ certificate, either manually or automatically.
 :ref:`change-ip` features direction to modify the IP address of
 |product| Single-Server
 
+:ref:`change-hostname` shows the procedures that you need to change
+the hostname(s) of a |product| infrastructure
+
 :ref:`cli-remove-node` guides you in the decommissioning of a Node
 from a |product| infrastructure
 
@@ -45,7 +45,6 @@ Internet through an HTTP Proxy for downloading the antivirus signatures.
    :hidden: 
 
    management/managealias
-   management/sshkeys
    management/custom
    management/attachments
    management/setting-features
@@ -53,6 +52,7 @@ Internet through an HTTP Proxy for downloading the antivirus signatures.
    management/domaindisclaimer
    management/analytics
    management/changeip
+   management/changehostname
    management/removeserver
    management/http-proxy
    management/freshclam-proxy

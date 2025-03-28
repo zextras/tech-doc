@@ -59,7 +59,7 @@ rst_prolog = """
 # -- Configuration of extensions ---------------------------------------------
 
 # copybutton, see https://sphinx-copybutton.readthedocs.io/en/latest/
-copybutton_prompt_text = r'\$\s|#\s|carbonio>\s|zextras\$\s'
+copybutton_prompt_text = r'\$\s|#\s|carbonio>\s|zextras\$\s|postgres=#\s'
 copybutton_prompt_is_regexp = True
 copybutton_line_continuation_character = "\\"
 copybutton_only_copy_prompt_lines = True

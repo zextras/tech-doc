@@ -15,6 +15,7 @@ migration to |product|, and accessing the web interface.
 
       logging
       license
+      sshkeys
       sslcert
       security
       web-access
