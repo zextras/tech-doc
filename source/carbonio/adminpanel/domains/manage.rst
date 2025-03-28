@@ -289,7 +289,7 @@ restore the COS value.
    important to know that the password will be shown **only once**, so
    make sure to store it in a safe place or give them only to trusted
    people. Moreover, with this password, it will be possible to bypass
-   2FA authentication even from untrusted servers.
+   2FA authentication even from untrusted networks.
 
    Upon closing the dialog, you will be able to either |del| the
    passphrase or to |create| a new one.
