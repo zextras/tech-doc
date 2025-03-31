@@ -10,12 +10,12 @@ languages
       .. csv-table::
          :header: "Language", "code"
 
-         "English (GB, US, AU)", "en_GB, en_US, en_AU"
+         "English", "en"
          "French","fr"
          "Hindi","hi"
          "Indonesian","id"
          "Italian","it"
-         "Brazilian Portuguese (BR)","pt_BR"
+         "Brazilian Portuguese (BR)","pt"
          "Russian","ru"
          "Spanish","es"
          "Thai","th"
