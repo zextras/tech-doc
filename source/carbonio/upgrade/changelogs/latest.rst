@@ -102,6 +102,9 @@ CO-1337: Enhanced email encryption with S/MIME
 **IN-845: Updated carbonio docs editor to latest version**
    The Carbonio-docs-editor has been updated to the latest version, 23.05.17, ensuring users have access to the most recent features and improvements.
 
+IN-859: Fix postfix resource permissions
+   This update corrects incorrect permissions on postfix-related
+   resources, ensuring proper access and functionality.
 
 **SHELL-274: Portuguese Language Option Consolidation**
    The language selector now only displays Portuguese (pt), and translations will be provided in Brazilian Portuguese, consolidating the language options while maintaining accurate translations.
