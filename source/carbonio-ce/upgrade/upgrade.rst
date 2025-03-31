@@ -29,10 +29,9 @@ next section.
 
 .. card:: PostgreSQL 16 support
 
-   PostgreSQL must be upgraded from version **12** to version **16**,
-   because version 12 has reached the End Of Life on `14th November
-   2024 <https://www.postgresql.org/support/versioning/>`_ end of the
-   year. Check section :ref:`pg-upgrade` for directions.
+   |product| :red:`no longer supports` PostgreSQL **12**, which must be
+   upgraded to version **16** before upgrading |product| to
+   |version|. Check section :ref:`pg-upgrade` for directions.
 
 Additionally, please check Section :ref:`ts-up-prev` under
 :doc:`/troubleshooting/toc` before starting the upgrade. There you
