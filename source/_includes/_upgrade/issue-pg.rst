@@ -37,6 +37,8 @@ you can copy & paste all the following commands::
    psql -d "carbonio-docs-connector-db" -c "ALTER DATABASE \"carbonio-docs-connector-db\" REFRESH COLLATION VERSION;"
    psql -d "carbonio-files-db" -c "REINDEX DATABASE \"carbonio-files-db\""
    psql -d "carbonio-files-db" -c "ALTER DATABASE \"carbonio-files-db\" REFRESH COLLATION VERSION;"
+   psql -d "carbonio-tasks-db" -c "REINDEX DATABASE \"carbonio-tasks-db\""
+   psql -d "carbonio-tasks-db" -c "ALTER DATABASE \"carbonio-tasks-db\" REFRESH COLLATION VERSION;"
    psql -d carbonio_adm -c "REINDEX DATABASE carbonio_adm"
    psql -d carbonio_adm -c "ALTER DATABASE carbonio_adm REFRESH COLLATION VERSION;"
    psql -d core -c "REINDEX DATABASE core"
