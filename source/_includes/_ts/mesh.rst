@@ -1,4 +1,3 @@
-
 |mesh| is one of the main components of |product|, and is based on
 HashiCorp's `Consul <https://developer.hashicorp.com/consul>`_. This
 page is meant to provide some of the most used CLI commands to inspect
@@ -169,6 +168,18 @@ Other Commands
 
       .. hint:: To follow log files in real time while they are emitted, add
          the ``-f`` option at the end of the command.
+
+   .. grid-item-card:: List consul intentions
+      :columns: 12
+
+      Generally speaking, an **intention** is a mechanism that allow to control
+      communication between objects managed by consul. The list of
+      available intentions in |product| can be see issuing the
+      following command as the |ru|.
+
+      .. code:: console
+
+         # consul intention list
 
 .. seealso:: Full CLI reference for Consul is available on the
    `official documentation
