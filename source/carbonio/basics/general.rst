@@ -28,13 +28,6 @@ Setting Languages From CLI
 
 .. include:: /_includes/_general/set-languages.rst
 
-.. _set-languages:
-
-Setting Languages From CLI
---------------------------
-
-.. include:: /_includes/_general/set-languages.rst
-
 .. _volunteer_translators:
 
 Volunteer Translators
