@@ -59,9 +59,10 @@ upgrade procedure with Ansible.
   from which you do not want to upgrade packages.
 
 * Ansible will **not** upgrade **PostgreSQL to version 16**, you need
-  to upgrade it manually: please refer to Section
-  :ref:`pg-upgrade`. Note that Since PostgreSQL 12 went in End Of Life
-  on 14th November 2024, you should really consider to upgrade it.
+  to upgrade it manually: please refer to Section :ref:`pg-upgrade`.
+  |product| :red:`no longer supports` PostgreSQL **12**, which must be
+  upgraded to version **16** before upgrading |product| to
+  |version|. Check section :ref:`pg-upgrade` for directions.
 
 * The upgrade procedure using Ansible is slightly different depending
   if you already installed |wsc| or not. Choose the right

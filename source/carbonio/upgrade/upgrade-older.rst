@@ -31,12 +31,10 @@ the upgrade:
   available for |product|:
 
   #. support for new Operating Systems (OS): **Ubuntu 22.04** and **RHEL 9**
-  #. support for **PostgreSQL 16**. Make sure to upgrade it, because
-     **PostgreSQL 12** went in End Of Life on **14th November 2024**.
-
-  .. hint:: While you can choose to upgrade only |product|, we
-     encourage you to introduce both the improvements into your
-     infrastructure.
+  #. support for **PostgreSQL 16**. |product| :red:`no longer
+     supports` PostgreSQL **12**, which must be upgraded to version
+     **16** before upgrading |product| to |version|. Check section
+     :ref:`pg-upgrade` for directions.
 
 * You need to carry out the procedure on **each Node**, starting with
   the one featuring the :ref:`role-mesh-install`.

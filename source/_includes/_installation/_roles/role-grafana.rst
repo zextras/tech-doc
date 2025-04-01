@@ -248,7 +248,7 @@ These steps will allow you to quickly import a dashboard into Grafana using its 
       * - **Carbonio MariaDB**
         - MariaDB Overview Innodb, I/O, Waits, Connections and so on
         - 20061
-      * - **RabbitMQ-Overview** :bdg-danger:`New: users can monitor RabbitMQ`
+      * - **RabbitMQ-Overview**
         - The RabbitMQ-Overview dashboard uses the prometheus data
           source to create a Grafana dashboard with the graph and
           singlestat panels. This is a standard Grafana Labs solution.
