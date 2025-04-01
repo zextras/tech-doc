@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 ==============
  Introduction
 ==============
@@ -32,6 +28,13 @@ Available Languages
 ===================
 
 .. include:: /_includes/_general/languages.rst
+
+.. _set-languages:
+
+Setting Languages From CLI
+--------------------------
+
+.. include:: /_includes/_general/set-languages.rst
 
 .. _volunteer_translators:
 

@@ -1,4 +1,3 @@
-
 ==============
  Introduction
 ==============
@@ -21,6 +20,13 @@ Available Languages
 ===================
 
 .. include:: /_includes/_general/languages.rst
+
+.. _set-languages:
+
+Setting Languages From CLI
+--------------------------
+
+.. include:: /_includes/_general/set-languages.rst
 
 .. _volunteer_translators:
 

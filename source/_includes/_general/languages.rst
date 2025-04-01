@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 |product|\'s main language is English; the Web GUI is available in these
 languages
 
@@ -11,22 +7,35 @@ languages
    .. grid-item-card:: Officially included languages
       :columns: 6
 
-      * English (GB, US, AU)
-      * French
-      * Hindi
-      * Indonesian
-      * Italian
-      * Brazilian Portuguese (BR)
-      * Russian
-      * Spanish
-      * Thai
+      .. csv-table::
+         :header: "Language", "code"
+
+         "English", "en"
+         "French","fr"
+         "Hindi","hi"
+         "Indonesian","id"
+         "Italian","it"
+         "Brazilian Portuguese (BR)","pt"
+         "Russian","ru"
+         "Spanish","es"
+         "Thai","th"
 
    .. grid-item-card:: Community supported languages
       :columns: 6
 
-      * Dutch
-      * German
-      * Japanese
-      * Polish
-      * Turkish
-      * Vietnamese
+      .. csv-table::
+         :header: "Language", "code"
+
+         "Dutch","nl"
+         "German","de"
+         "Japanese","ja"
+         "Kyrgyz","ky"
+         "Polish","pl"
+         "Turkish","tr"
+         "Vietnamese","vi"
+
+
+.. note:: The Kyrgyz language can currently be set only from
+   the CLI. From the next release, it will be featured as an option
+   from the |adminui| as well. If you set it from the CLI, the
+   corresponding field in the |adminui| will be shown as empty.
