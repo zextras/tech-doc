@@ -28,6 +28,7 @@ languages
 
          "Dutch","nl"
          "German","de"
+         "Hungarian", "hu"
          "Japanese","ja"
          "Kyrgyz","ky"
          "Polish","pl"
