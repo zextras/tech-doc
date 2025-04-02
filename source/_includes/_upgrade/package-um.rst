@@ -19,8 +19,8 @@ intall it on the *Mesh & Directory* Node, execute as the |ru|
          # dnf install carbonio-user-management
 
 While the user management features works even if the package is
-installed installed with both Roles, we suggest that you remove it
-from the Node featuring the Proxy Role:
+installed with both Roles, we suggest that you remove it from the Node
+featuring the Proxy Role:
 
 .. tab-set::
 
