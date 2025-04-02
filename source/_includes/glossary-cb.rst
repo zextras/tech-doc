@@ -42,3 +42,12 @@
      system. This approach allows to store binary data that are
      written once but read often and is used when dealing with large
      collections of unstructured data.
+
+   Trusted Network
+     A **Trusted Network** is used in conjunction with 2FA to define
+     some networks or IP ranges to allow users to connect using
+     username and password, but without requiring the second factor.
+
+   Trusted Device
+     A **trusted device** refers to the browser used for login or to the
+     device used with mobile app
