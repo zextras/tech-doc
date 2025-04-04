@@ -179,7 +179,12 @@ recommended specifications:
      - 2 (1 primary + 1 HA)
      - Supports video functionality for user communication
      - Both nodes are identically configured, allowing seamless
-       failover and continuous video service availability
+   * - WSC
+     - Work Stream Collaboration
+     - 2 (1 primary + 1 HA)
+     - Supports chat functionality for user communication
+     - Both nodes are identically configured
+   
 
 .. _ha-storage-req:
 
