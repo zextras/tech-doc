@@ -522,7 +522,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # apt install carbonio-videoserver-advanced \
-            carbonio-videoserver-recorder service-discover-agent
+           carbonio-videorecorder service-discover-agent
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -530,7 +530,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # apt install carbonio-videoserver-advanced \
-            carbonio-videoserver-recorder service-discover-agent
+           carbonio-videorecorder service-discover-agent
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -538,7 +538,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # dnf install carbonio-videoserver-advanced \
-            carbonio-videoserver-recorder service-discover-agent
+           carbonio-videorecorder service-discover-agent
 
       .. tab-item:: RHEL 9 |beta|
          :sync: rhel9
@@ -546,7 +546,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
          .. code:: console
 
             # dnf install carbonio-videoserver-advanced \
-            carbonio-videoserver-recorder service-discover-agent
+           carbonio-videorecorder service-discover-agent
 
 
 .. dropdown:: Step 4: Bootstrap |product|
