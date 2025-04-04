@@ -39,3 +39,6 @@ srv1.example.com
 
 [syslogServer]
 srv1.example.com
+
+### Keep this Role empty and uncommented
+[workStreamServers]
