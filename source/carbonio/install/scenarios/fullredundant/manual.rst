@@ -678,13 +678,13 @@ This Node features the *MTA AV/AS* Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role MTA AV/AS
-
-   .. include:: /_includes/_installation/_packages/role-mta.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role MTA AV/AS
+
+   .. include:: /_includes/_installation/_packages/role-mta.rst
 
 .. _fr4-step4:
 
@@ -856,13 +856,13 @@ This Node features the (replicated) *MTA AV/AS* Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role MTA AV/AS
-
-   .. include:: /_includes/_installation/_packages/role-mta.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role MTA AV/AS
+
+   .. include:: /_includes/_installation/_packages/role-mta.rst
 
 .. _fr5-step4:
 
@@ -1034,13 +1034,13 @@ This Node features the *Proxy* Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Proxy
-
-   .. include:: /_includes/_installation/_packages/role-proxy.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role Proxy
+
+   .. include:: /_includes/_installation/_packages/role-proxy.rst
 
 .. _fr6-step4:
 
@@ -1213,13 +1213,13 @@ This Node features the (replicated) *Proxy* Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Proxy
-
-   .. include:: /_includes/_installation/_packages/role-proxy.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role Proxy
+
+   .. include:: /_includes/_installation/_packages/role-proxy.rst
 
 .. _fr7-step4:
 
@@ -1392,13 +1392,13 @@ This Node features the *Mailstore & Provisioning* Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Mailstore & Provisioning
-
-   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role Mailstore & Provisioning
+
+   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
 
 .. _fr8-step4:
 
@@ -1562,13 +1562,13 @@ This Node features the (replicated) *Mailstore & Provisioning* Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Mailstore & Provisioning
-
-   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role Mailstore & Provisioning
+
+   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
 
 .. _fr9-step4:
 
@@ -1734,6 +1734,10 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role |wsc|
 
    .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
@@ -1745,10 +1749,6 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
    .. rubric:: Role Files
 
    .. include:: /_includes/_installation/_packages/role-files.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fr10-step4:
 
@@ -1914,6 +1914,10 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role |wsc|
 
    .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
@@ -1925,10 +1929,6 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
    .. rubric:: Role Files
 
    .. include:: /_includes/_installation/_packages/role-files.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fr11-step4:
 
@@ -2092,6 +2092,10 @@ This Node features the *Docs & Editor* and *Preview* Roles.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role Docs & Editor
 
    .. include:: /_includes/_installation/_packages/role-docs.rst
@@ -2099,10 +2103,6 @@ This Node features the *Docs & Editor* and *Preview* Roles.
    .. rubric:: Role Preview
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fr12-step4:
 
@@ -2267,6 +2267,10 @@ Roles.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role Docs & Editor
 
    .. include:: /_includes/_installation/_packages/role-docs.rst
@@ -2274,10 +2278,6 @@ Roles.
    .. rubric:: Role Preview
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fr13-step4:
 
@@ -2441,13 +2441,13 @@ This Node features the *Video Server & Video Recording* Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Video Server & Video Recording (WSC)
-
-   .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role Video Server & Video Recording (WSC)
+
+   .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
 .. _fr14-step4:
 
@@ -2612,13 +2612,13 @@ Role.
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Video Server & Video Recording (WSC)
-
-   .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
-
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
+   .. rubric:: Role Video Server & Video Recording (WSC)
+
+   .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
 .. _fr15-step4:
 

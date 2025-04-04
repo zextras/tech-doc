@@ -302,6 +302,10 @@ MTA/Proxy Node
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role MTA AV/AS
 
    .. include:: /_includes/_installation/_packages/role-mta.rst
@@ -309,10 +313,6 @@ MTA/Proxy Node
    .. rubric:: Role Proxy
 
    .. include:: /_includes/_installation/_packages/role-proxy.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fsm2-step4:
 
@@ -484,6 +484,10 @@ Mailstore & Provisioning and Tasks Node
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role Mailstore & Provisioning
 
    .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
@@ -491,10 +495,6 @@ Mailstore & Provisioning and Tasks Node
    .. rubric:: Role Tasks
 
    .. include:: /_includes/_installation/_packages/role-tasks.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fsm3-step4:
 
@@ -656,6 +656,10 @@ Collaboration Node
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role Files
 
    .. include:: /_includes/_installation/_packages/role-files.rst
@@ -667,10 +671,6 @@ Collaboration Node
    .. rubric:: Role Preview
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fsm4-step4:
 
@@ -834,6 +834,10 @@ Video Server Node
    by Role and functionality, but you can combine all packages and run
    the install command once.
 
+   .. rubric:: Mesh agent
+
+   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+
    .. rubric:: Role Video Server & Video Recording (WSC)
 
    .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
@@ -841,10 +845,6 @@ Video Server Node
    .. rubric:: Role |wsc|
 
    .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
-
-   .. rubric:: Mesh agent
-
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
 .. _fsm5-step4:
 
