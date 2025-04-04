@@ -8,6 +8,9 @@
          # apt install carbonio-videoserver-advanced \
          carbonio-videorecorder
 
+      .. note:: You need to install package ``carbonio-videorecorder``
+	 only if you plan to record video meetings.
+
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
 
@@ -15,6 +18,9 @@
 
          # apt install carbonio-videoserver-advanced \
          carbonio-videorecorder
+
+      .. note:: You need to install package ``carbonio-videorecorder``
+	 only if you plan to record video meetings.
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -24,6 +30,8 @@
          # dnf install carbonio-videoserver-advanced \
          carbonio-videorecorder
 
+      .. note:: You need to install package ``carbonio-videorecorder``
+	 only if you plan to record video meetings.
 
    .. tab-item:: RHEL 9
       :sync: rhel9
@@ -32,6 +40,9 @@
 
          # dnf install carbonio-videoserver-advanced \
          carbonio-videorecorder
+
+      .. note:: You need to install package ``carbonio-videorecorder``
+	 only if you plan to record video meetings.
 
 Starting from **25.3** release, the :file:`/etc/janus/janus.jcfg`
 configuration file will be updated automatically to include the |vs|

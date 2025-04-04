@@ -34,9 +34,8 @@ following requirements are satisfied.
 Installation
 ~~~~~~~~~~~~
 
-The installation requires to execute install this package on the Node
-on which you plan to install the Directory Replica Role.
-
+The installation requires to execute install these packages on the
+Node on which you plan to install the Directory Replica Role.
 
 .. include:: /_includes/_installation/_packages/role-ds-replica.rst
 
