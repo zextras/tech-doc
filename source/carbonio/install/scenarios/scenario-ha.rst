@@ -178,8 +178,16 @@ recommended specifications:
      - Video Services
      - 2 (1 primary + 1 HA)
      - Supports video functionality for user communication
-     - Both nodes are identically configured, allowing seamless
-       failover and continuous video service availability
+     - Both nodes are identically configured, allowing seamless failover
+       and continuous video service availability
+   * - WSC
+     - Work Stream Collaboration
+     - 2 (1 primary + 1 HA)
+     - Supports chat functionality for user communication
+     - Both nodes are identically configured
+   
+.. warning:: Currently, the carbonio-message-broker and carbonio-message-dispatcher services
+             are not yet able to run in High Availability mode.
 
 .. _ha-storage-req:
 
