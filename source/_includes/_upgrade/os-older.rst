@@ -102,13 +102,13 @@ repositories with the new version.
 
 * Before changing anything, back up your current APT sources:
 
-  .. code:: console::
+  .. code:: console
             
      zextras$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 
 * Update sources.list entries from focal to jammy, Open with your text editor:
 
-  .. code:: console::
+  .. code:: console
             
      zextras$ sudo nano /etc/apt/sources.list
 
