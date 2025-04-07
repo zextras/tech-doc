@@ -23,14 +23,9 @@ The procedure is divided into phases:
 Phase 1
 -------
 
-Upgrade to PostgreSQL 16 **is mandatory**, because Ubuntu 22.04 does
-not support the current PostgreSQL 12 installed on |product|.
-Directions to upgrade PostgreSQL can be found in Section
-:ref:`pg-upgrade`.
-
-.. hint:: PostgreSQL 12 will be supported only until **24 November
-   2024**, so if you did not already upgrade to 16, you should do so
-   as soon as possible.
+If you have not yet upgraded to Postgres 16, do so before upgrading
+the operating system. Directions to upgrade PostgreSQL can be found
+in Section :ref:`pg-upgrade`.
 
 Phase 2
 -------
@@ -97,8 +92,42 @@ commands
 
       # dnf upgrade --best --allowerasing
 
-Finally, reboot the Node.
 
+
+Phase 5
+-------
+
+After completing the installation you need to update also the ubuntu
+repositories with the new version.
+
+* Before changing anything, back up your current APT sources:
+
+  .. code:: console::
+            
+     zextras$ sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+
+* Update sources.list entries from focal to jammy, Open with your text editor:
+
+  .. code:: console::
+            
+     zextras$ sudo nano /etc/apt/sources.list
+
+* Then replace all instances of:
+
+  ``focal``
+
+  with
+  
+  ``jammy``
+  
+
+* If you have third-party PPAs, you may also want to check files under
+  file:`/etc/apt/sources.list.d/`
+
+Some of them may not yet support Jammy — they may need to be disabled
+temporarily or updated manually.
+
+Finally, reboot the Node.
 
 .. code:: console
 
