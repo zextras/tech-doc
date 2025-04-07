@@ -14,10 +14,8 @@ requirement for this Role.
 Install Packages
 ----------------
 
-This Role consists of *Video Server (WSC)* and *Video Recording (WSC)*. You need
-to install the latter only if you plan to record video meetings,
-otherwise you can install *Video Server* without *Video
-Recording*.
+This Role consists of *Video Server (WSC)* and *Video Recording
+(WSC)*.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
