@@ -9,13 +9,13 @@ These are the main limitations for adding 2FA to the login procedure.
 * The |adminui| does not support second authentication factor and will
   stop working once 2FA is activated, except for Trusted Network
   scenario (described later) or Service Credentials (see section
-  :ref:`auth-credential`
+  :ref:`auth-credential`)
 
 * Selecting **Trust the Device** implies that users must use the same
-  browser or app, otherwise they will be required to log in again: if
-  a 2FA login is carried out on Chrome, accessing the same page with
-  Firefox will fail. More on this in the :ref:`dedicated box
-  <trust-ip-dev>` below.
+  browser, otherwise they will be required to log in again: if a 2FA
+  login is carried out on Chrome, accessing the same page with Firefox
+  will fail. More on this in the :ref:`dedicated box <trust-ip-dev>`
+  below.
 
 
 There are 3 main application scenarios for 2FA:
@@ -45,11 +45,12 @@ There are 3 main application scenarios for 2FA:
 
 .. card:: 2FA is enabled except for Trusted Networks
 
-   In this case, user must provide different credentials. If they
-   connect from outside the trusted networks, they need **username**,
-   **password**, and the **second factor (OTP)**. If they are
-   initiating the connection from a :term:`trusted network`, it
-   depends on which alternative you choose to configure the options:
+   In this case, depending from where the users connect, different
+   mechanisms apply. If they connect from outside the trusted
+   networks, they need **username**, **password**, and the **second
+   factor (OTP)**. If they are initiating the connection from a
+   :term:`trusted network`, it depends on which alternative you choose
+   to configure the options:
 
    .. rubric:: Trusted Networks for all protocols
 
