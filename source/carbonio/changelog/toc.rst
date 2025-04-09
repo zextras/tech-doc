@@ -39,5 +39,6 @@ Contribution to the Documentation
    .. toctree::
       :glob:
       :maxdepth: 1
+      :reversed:
 
       changelogs/*
