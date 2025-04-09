@@ -1,0 +1,358 @@
+Changelog 2025-03
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202503-1139 Change WSC attribute name
+
+Attribute ``carbonioFeatureChatsEnabled`` has been renamed to "carbonioFeatureWscEnabled".
+
+Changes in the source code can be found in :pr:`1041`.
+
+
+.. rubric:: 202503-1137  Documentation Changelog February 2025
+
+The technical documentation's changelog has been published
+
+Changes in the source code can be found in :pr:`1038`.
+
+
+.. rubric:: 202503-1129 Add 25.3.0 changelog
+
+
+Changelog for the latest |product| release has been added.
+
+Changes in the source code can be found in :pr:`1031`.
+
+
+.. rubric:: 202503-1125 Add locale requirement
+
+We introduced an explicit requirement for the default ``locale``
+required by |product|.
+
+Changes in the source code can be found in :pr:`1027`.
+
+
+.. rubric:: 202503-1124 Simplified manual upgrade procedures
+
+The manual upgrade procedure pages have been simplified and the
+additional tasks to be done during the manual procedure have been
+brought back from the *Troubleshooting* section.
+
+Changes in the source code can be found in :pr:`1030`.
+
+
+.. rubric:: 202503-1121 Web login procedure alternatives
+
+We added to the documentation some CLI commands to configure how users
+can log in to the Web mail, either by using their full e-mail address
+or simply their username.
+
+Changes in the source code can be found in :pr:`1024`.
+
+
+.. rubric:: 202503-1117 Clarification about Ubuntu installation method
+
+Version causes some issues due to missing software on this kind of
+installation. Therefore, we clarified that the (full) Ubuntu Server is
+required.
+
+Changes in the source code can be found in :pr:`1023`.
+
+
+.. rubric:: 202503-1115 Pre-installation checks for Scenario HA
+
+We added a number of checks to the preliminary phase of Scenario HA's installation, to help in the initial steps of the installation process.
+
+Changes in the source code can be found in :pr:`1037`.
+
+
+.. rubric:: 202503-1114 Instructions to fix e-mails rendering problems
+
+We added, as a known issue, the solution for a problem in the rendering of the e-mails in |product| webmail.
+
+Changes in the source code can be found in :pr:`1021`.
+
+
+.. rubric:: 202503-1113 Ubuntu 20.04 deprecation notice
+
+*Ubuntu 20.04 LTS* goes EOL in May 2025, so we added a deprecation
+notice and suggestion to upgrade to *Ubuntu 22.04 LTS*.
+
+Changes in the source code can be found in :pr:`1020`.
+
+
+.. rubric:: 202503-1112 Introduce new Scenario HA
+
+A new Scenario, called *Scenario HA* has been introduced to complete
+the offering of pre-cooked installations. This scenario features
+redundancy and High Availability for |product| Roles and services.
+
+Changes in the source code can be found in :pr:`1013`, :pr:`1015`,
+and :pr:`1019`.
+
+
+.. rubric:: 202503-1105 Carbonio Push Connector and Notification Push packages
+
+We added to the Role description and installation procedures the
+packages related to |product|'s Push Connector and Notification Push
+services, including DB boostrap commands where required.
+
+Changes in the source code can be found in :pr:`1008` and :pr:`1014`.
+
+
+.. rubric:: 202503-1097 Ansible upgrade improvements
+
+The Ansible upgrade procedure has been changed according to the new
+features introduced in |zx| ``zxbot.carbonio_upgrade`` tool.
+
+Changes in the source code can be found in :pr:`992`
+and:pr:`997` .
+
+
+.. rubric:: 202503-1096 New S/MIME CLI commands
+
+We added new CLI commands to manage S/MIME certificates and password policies.
+
+Changes in the source code can be found in :pr:`994`.
+
+
+.. rubric:: 202503-1095 Changes to ClamAV management
+
+|product|'s antivirus engine, *ClamAV*, has more detailed instructions
+to disable it and related services, like antispam, DKIM, and amavis.
+
+Changes in the source code can be found in :pr:`993`.
+
+
+.. rubric:: 202503-1094 Package ``carbonio-search-ui`` is now a dependency
+
+The package ``carbonio-search-ui`` has now become a  dependency of package ``carbonio-web-ui`` and does not require to be explicitly installed.
+
+Changes in the source code can be found in :pr:`995`.
+
+
+.. rubric:: 202503-1092 Improvements to scenarios installation
+
+We introduced a number of improvements to the Scenario-based
+installation to simplify the text: some Role Names have been renamed
+for consistency and splitting package ``service-discovery-agent``
+installation command from the package installation commands.
+
+Changes in the source code can be found in :pr:`990`.
+
+
+.. rubric:: 202503-1091 Clarify janus configuration procedure
+
+We clarified how to configure the |vs| *public IP address* for those
+scenarios in which the incoming and outgoing IPs addresses do not
+coincide.
+
+Changes in the source code can be found in :pr:`999`.
+
+
+.. rubric:: 202503-1088 Procedure to disable legacy |team|
+
+The procedure to completely disable the legacy |team| module has been
+added to the documentation.
+
+Changes in the source code can be found in :pr:`983`. 
+
+
+.. rubric:: 202503-1087 Package carbonio-user-management Installed on *Mesh & Directory* Node
+
+The ``carbonio-user-management`` package is now installed as part of
+the *Mesh & Directory* instead of the *Proxy* Role.
+
+Changes in the source code can be found in :pr:`984`.
+
+
+.. rubric:: 202503-1079 |team| marked as legacy
+
+|team| has been marked as legacy and will be removed in future
+versions. Its replacements, the new |wsc| is already available and
+installable on every |product| infrastructure.
+
+Changes in the source code can be found in :pr:`978`.
+
+
+.. rubric:: 202503-1078 Improved  Ansible upgrade procedure
+
+The upgrade procedure using Ansible has been reinstated and improved
+with the latest requirements, more clear text, and the paths to follow
+depending on how |product| was installed.
+
+Changes in the source code can be found in :pr:`980`, :pr:`981`, and:pr:`982` .
+
+
+.. rubric:: 202503-1076 Improve Section *Carbonio Docs and Files*
+
+We renamed and moved section *Carbonio Docs and Files* and added the
+subsection *Files Configuration* to include a new configuration value
+
+Changes in the source code can be found in :pr:`977`.
+
+
+.. rubric:: 202503-1075 Ansible playbooks
+
+Changelog for all the Ansible playbook used to install and upgrade |product| are now part of the technical documentation.
+
+Changes in the source code can be found in :pr:`1040`.
+
+
+.. rubric:: 202503-1072 Step by step instructions for Full Redundant Scenario
+
+The manual installation procedure in the Full Redundant Scenario has been
+rewritten and expanded to include step-by-step instructions for each
+of the Nodes.
+
+Changes in the source code can be found in :pr:`988`.
+
+
+.. rubric:: 202503-1071 Step by step instructions for Essential Scenario
+
+The manual installation procedure in the Essential Scenario has been
+rewritten and expanded to include step-by-step instructions for each
+of the Nodes.
+
+Changes in the source code can be found in :pr:`974`.
+
+
+.. rubric:: 202503-1070 Add Role-based package installation
+
+We improved the Roles installation instructions by separating the
+installation commands from the surrounding text into dedicated files,
+to allow for their inclusion in the installation scenarios.
+
+Changes in the source code can be found in :pr:`972`.
+
+
+.. rubric:: 202503-1069 Reorganise Single Server Scenario
+
+To the page more readable, in the Single-Server Scenario we added
+dropdowns to wrap installation instructions to compact the page and
+make all step self-contained and collapsible when completed or not
+needed.
+
+Changes in the source code can be found in :pr:`973`.
+
+
+.. rubric:: 202503-1068 New *Admin by Command Line* structure
+
+Section *Admin by Command Line* has been restructured for more clarity
+and information access. Now, most of its subsections have the name
+corresponding to a |product| Role. Moreover, the |backup|
+documentation has been put into an own level.
+
+Changes in the source code can be found in :pr:`970`.
+
+
+.. rubric:: 202503-1065 Configuration change in case of Proxy Node removal
+
+In case a **Proxy Node** is removed from a |product| infrastructure, the configuration of the Memcached software on the |pv| Role must be changed, to allow the Role to correctly operate.
+
+Changes in the source code can be found in :pr:`967`.
+
+
+.. rubric:: 202503-1062 None
+
+This issue introduces in the documentation all changes in the upgrade procedure to 25.3
+
+Changes in the source code can be found in :pr:`966`.
+
+
+.. rubric:: 202503-1061 New |adminui| features for 25.3.0
+
+This issue adds documentation for the new |adminui| features introduced in |product| version 25.3.0.
+
+Changes in the source code can be found in :pr:`962` and :pr:969`.
+
+
+.. rubric:: 202503-1056 Add pending-setup
+
+In this new section, we explain the tasks executed by the :command:`pending-setups` when invoked.
+
+Changes in the source code can be found in :pr:`1007`. and:pr:`986` .
+
+
+.. rubric:: 202503-1034 Review structure of section Admin by CLI
+
+The structure of Section *Admin by Command Line* has been modified,
+with a couple of pages promoted one level and other that have been
+slightly renamed.
+
+Changes in the source code can be found in :pr:`935`.
+
+
+.. rubric:: 202503-990 Step by step instructions for Full Standard Scenario
+
+The manual installation procedure in the Full Standard Scenario has been
+rewritten and expanded to include step-by-step instructions for each
+of the Nodes.
+
+Changes in the source code can be found in :pr:`987`.
+
+
+.. rubric:: 202503-989 Step by step instructions for Full Small Scenario
+
+The manual installation procedure in the Full Small Scenario has been
+rewritten and expanded to include step-by-step instructions for each
+of the Nodes.
+
+Changes in the source code can be found in :pr:`985` and:pr:`986` .
+
+
+.. rubric:: 202503-978 New package carbonio-search-ui
+
+We added instructions to install the new package :file:`carbonio-search-ui` in the Proxy Role and in all scenarios.
+
+Changes in the source code can be found in :pr:`968`.
+
+
+.. rubric:: 202503-944 Connect |product| through an HTTP proxy
+
+
+In this issue, we added a procedure to allow |product| to connect to
+the Internet, even when it is placed behind an HTTP proxy, allowing
+|product| to operate flawlessly and download antivirus signatures as
+well.
+
+Changes in the source code can be found in :pr:`1026`.
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202503-1128 Review upgrade  with Ansible
+
+We further clarified the various options when upgrading with Ansible.
+
+Changes in the source code can be found in :pr:`1032`.
+
+.. rubric:: 202503-1104 Restored CLI reference
+
+The CLI reference has been restored after a wrong previous commit removed it from the build.
+
+Changes in the source code can be found in :pr:`1006`.
+
+.. rubric:: 202503-1090 Missing packages in database Role Installation
+
+Installation instructions of the Database Role were missing all the
+Database Components packages, which were restored and also added to all Scenarios.
+
+Changes in the source code can be found in :pr:`989`.
+
+.. rubric:: 202503-1077 Fix consul commands
+
+We fixed the command syntax to retrieve and set values using the :command:`consul` interface.
+
+Changes in the source code can be found in :pr:`975`.
+
+*****
+
+End of changelog
+
