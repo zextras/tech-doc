@@ -344,8 +344,8 @@ installation, please review these important remarks:
    roles/role-preview
    roles/role-tasks
    roles/role-vs
+   roles/role-wsc
    roles/role-monit
    roles/role-es
    roles/role-ds-replica
-   roles/role-wsc
    roles/role-vs-deprecated
