@@ -8,8 +8,8 @@ that you installed the :ref:`role-prov-install`, which is a
 requirement for this Role.
 
 .. note:: If you already have installed on your infrastructure the
-   legacy :ref:`role-vs-install`, make sure this Role is installed on
-   a different Node.
+   deprecated :ref:`Video Server <role-vs-install>` Role, make sure
+   this Role is installed on a different Node.
 
 Install Packages
 ----------------

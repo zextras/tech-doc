@@ -3,15 +3,10 @@
 *[Video Server]* |dprc|
 =======================
 
-.. warning:: This Role is now in |dprc| status and will be removed
-   in the near future. If you want to provide chats and video calls to
-   your users, please install the new :ref:`role-vs-wsc-install` Role.
-
-   You need the instructions below only if you need to reinstall the
-   Role in an existent |product| infrastructure.
-
-   These instructions do not apply to the new
-   :ref:`role-vs-wsc-install`, which requires no configuration.
+.. warning:: This Role is now in |dprc| status and will be removed in
+   the near future. If you want to provide chats and video calls to
+   your users, please install the new :ref:`role-vs-wsc-install` and
+   :ref:`role-wsc-install` Roles.
 
 Before installing this Role on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a
