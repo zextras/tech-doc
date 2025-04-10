@@ -1,7 +1,7 @@
 .. _role-vs-install:
 
-Video Server & Video Recording
-==============================
+*[Video Server]* :bdg-danger:`DEPRECATED`
+=========================================
 
 .. warning:: This Role has entered |legacy| status and will be removed
    in the near future. If you want to provide chats and video calls to
