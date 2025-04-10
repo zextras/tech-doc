@@ -61,7 +61,7 @@ into account the following points:
 
 * The |vs| or Chats modules may be already installed within the
   infrastructure, but you can keep them: the |wsc| does not share any
-  component with them. However, note that they are marked as |legacy|
+  component with them. However, note that they are marked as |dprc|
   and will soon be dismissed.
 
 * There is a *Preparation* phase that requires to install some package
