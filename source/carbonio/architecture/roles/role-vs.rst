@@ -1,23 +1,24 @@
-.. _role-vs-install:
+.. _role-vs-wsc-install:
 
-Video Server & Video Recording
-==============================
-
-.. warning:: This Role has entered |legacy| status and will be removed
-   in the near future. If you want to provide chats and video calls to
-   your users, please install the new :ref:`role-vs-wsc-install` Role.
+Video Server & Video Recording (WSC)
+====================================
 
 Before installing this Role on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a
 requirement for this Role.
 
-.. note:: This Role can not be installed on the same Node as
-   :ref:`role-vs-wsc-install`.
+.. note:: If you already have installed on your infrastructure the
+   legacy :ref:`role-vs-install`, make sure this Role is installed on
+   a different Node.
 
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_roles/role-vs.rst
+This Role consists of *Video Server (WSC)* and *Video Recording
+(WSC)*.
+
+.. include:: /_includes/_installation/warningservicediscoveragent.rst
+.. include:: /_includes/_installation/_packages/role-vs-wsc.rst
 
 Bootstrap |product|
 -------------------
@@ -34,15 +35,30 @@ Pending setups
 
 .. include:: /_includes/_installation/pset.rst
 
-Advanced Configuration
-----------------------
+Check Video Server & Broker
+---------------------------
 
-You can configure some advanced settings of the |vs|, including
-codecs, audio settings, and more from the CLI: please refer to section
-:ref:`videoserver`.
+To make sure that videoserver and message broker are connected
+successfully, check that in the carbonio-videoserver logs
+(:command:`journalctl -u carbonio-videoserver`) you find the line::
 
-Enable Chats
-~~~~~~~~~~~~
+  RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
+  handler completed
 
-Chats is disabled by default, you can enable it by running a few CLI
-commands that you can find in section :ref:`vs-enable-chats`.
+Video Recording Notes
+---------------------
+
+You can enable the Video Recorder at user, COS, or global
+level: please refer to section :ref:`vs-recorder-conf` for
+directions.
+
+A recorded session is temporary stored in directory
+:file:`/var/lib/videoserver/` on the Node featuring the |vs| Role:
+make sure that this directory has sufficient free space, otherwise
+recorded videos can not be stored. As soon as the recording session
+terminates, the file will be processed and moved to the Node featuring
+the :ref:`role-prov-install`.
+
+.. hint:: You can mount on that location a dedicated disk or
+   partition and keep it monitored for space usage.
+

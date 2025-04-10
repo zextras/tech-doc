@@ -348,4 +348,4 @@ installation, please review these important remarks:
    roles/role-es
    roles/role-ds-replica
    roles/role-wsc
-   roles/role-vs-wsc
+   roles/role-vs-deprecated
