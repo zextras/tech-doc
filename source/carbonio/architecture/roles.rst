@@ -272,8 +272,6 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Video Server |dprc|
       :columns: 8
       :margin: 5 auto auto auto
-      :link-type: ref
-      :link: role-vs-install
 
       Type of Role: Service role
 
