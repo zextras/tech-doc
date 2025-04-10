@@ -4,8 +4,15 @@
 
 .. _videoserver:
 
-|vs|
-====
+|vs| |dprc|
+===========
+
+.. warning:: You need the instructions below only if you need to
+   reinstall the deprecated |vs| Role in an existent |product|
+   infrastructure.
+
+   These instructions do not apply to the new
+   :ref:`role-vs-wsc-install`, which requires no configuration.
 
 The |vs| is a WebRTC stream aggregator that improves |team|\ 's
 performance by merging and decoding/re-encoding all streams in a
