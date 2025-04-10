@@ -1,9 +1,9 @@
 .. _role-vs-install:
 
-*[Video Server]* :bdg-danger:`DEPRECATED`
-=========================================
+*[Video Server]* |dprc|
+=======================
 
-.. warning:: This Role has entered |legacy| status and will be removed
+.. warning:: This Role has entered |dprc| status and will be removed
    in the near future. If you want to provide chats and video calls to
    your users, please install the new :ref:`role-vs-wsc-install` Role.
 

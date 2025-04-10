@@ -1,7 +1,7 @@
 .. _role-vs-wsc-install:
 
-Video Server & Video Recording (WSC)
-====================================
+Video Server & Video Recording
+==============================
 
 Before installing this Role on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a

@@ -42,6 +42,7 @@
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
-.. note:: The |legacy| :file:`carbonio-chats-ui` package is no longer
-   needed, as the legacy Chats module has been superseded bye the new
-   :ref:`role-wsc-install` Role.
+.. note:: The :file:`carbonio-chats-ui` package is needed by the
+   |dprc| Chats Role, which has been superseded by the new
+   :ref:`role-wsc-install` Role. Hence, it is only needed to keep the
+   old Chats working.

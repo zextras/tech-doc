@@ -116,7 +116,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-avdb-updater
       * service-discover-agent
       * carbonio-catalog
-      * carbonio-chats-ui |legacy|
+      * carbonio-chats-ui |dprc|
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -197,7 +197,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-tasks
       * service-discover-agent
 
-   .. grid-item-card:: Video Server & Video Recording |legacy|
+   .. grid-item-card:: Video Server |dprc|
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
@@ -267,7 +267,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-push-connector
       * carbonio-notification-push
 
-   .. grid-item-card:: Video Server & Video Recording (WSC)
+   .. grid-item-card:: Video Server & Video Recording
       :columns: 6
       :margin: 5 auto auto auto
       :class-title: sd-font-weight-bold sd-fs-5
