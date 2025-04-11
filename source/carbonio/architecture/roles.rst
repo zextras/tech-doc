@@ -65,19 +65,6 @@ This is the list of roles that make up a |product| installation.
       * carbonio-message-broker
       * carbonio-storages
 
-   .. grid-item-card:: Mesh
-      :columns: 6
-      :class-title: sd-font-weight-bold sd-fs-5
-      :link-type: ref
-      :link: role-mesh-only-install
-
-      Type of Role: Infrastructure
-
-      Packages:
-
-      * service-discover-server
-      * carbonio-user-management
-
    .. grid-item-card:: Database
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
@@ -96,6 +83,18 @@ This is the list of roles that make up a |product| installation.
       * carbonio-docs-connector-db
       * carbonio-notification-push-db
 
+   .. grid-item-card:: Mesh
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-mesh-only-install
+
+      Type of Role: Infrastructure
+
+      Packages:
+
+      * service-discover-server
+      * carbonio-user-management
 
    .. grid-item-card:: Proxy
       :columns: 6
@@ -116,7 +115,7 @@ This is the list of roles that make up a |product| installation.
       * carbonio-avdb-updater
       * service-discover-agent
       * carbonio-catalog
-      * carbonio-chats-ui |legacy|
+      * carbonio-chats-ui |dprc|
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -197,18 +196,34 @@ This is the list of roles that make up a |product| installation.
       * carbonio-tasks
       * service-discover-agent
 
-   .. grid-item-card:: Video Server & Video Recording |legacy|
+   .. grid-item-card:: |wsc|
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-vs-install
+      :link: role-wsc-install
 
       Type of Role: Service role
 
       Packages:
 
-      * carbonio-videoserver
-      * carbonio-videoserver-recorder
+      * carbonio-message-dispatcher
+      * carbonio-ws-collaboration
+      * service-discover-agent
+      * carbonio-push-connector
+      * carbonio-notification-push
+
+   .. grid-item-card:: Video Server & Video Recording
+      :columns: 6
+      :class-title: sd-font-weight-bold sd-fs-5
+      :link-type: ref
+      :link: role-vs-wsc-install
+
+      Type of Role: Service role
+
+      Packages:
+
+      * carbonio-videoserver-advanced
+      * carbonio-videorecorder
       * service-discover-agent
 
    .. grid-item-card:: Monitoring
@@ -239,7 +254,7 @@ This is the list of roles that make up a |product| installation.
       * Apache Kafka
 
    .. grid-item-card:: Directory Replica
-      :columns: 6
+      :columns: 12
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: role-ds-replica-install
@@ -249,37 +264,21 @@ This is the list of roles that make up a |product| installation.
       Packages:
 
       * carbonio-directory-server
-
-   .. grid-item-card:: |wsc|
-      :columns: 6
-      :margin: 5 auto auto auto
-      :class-title: sd-font-weight-bold sd-fs-5
-      :link-type: ref
-      :link: role-wsc-install
-
-      Type of Role: Service role
-
-      Packages:
-
-      * carbonio-message-dispatcher
-      * carbonio-ws-collaboration
       * service-discover-agent
-      * carbonio-push-connector
-      * carbonio-notification-push
-
-   .. grid-item-card:: Video Server & Video Recording (WSC)
-      :columns: 6
+                
+   .. grid-item::
+      :columns: 1
+                
+   .. grid-item-card:: Video Server |dprc|
+      :columns: 8
       :margin: 5 auto auto auto
-      :class-title: sd-font-weight-bold sd-fs-5
-      :link-type: ref
-      :link: role-vs-wsc-install
 
       Type of Role: Service role
 
       Packages:
 
-      * carbonio-videoserver-advanced
-      * carbonio-videorecorder
+      * carbonio-videoserver
+      * carbonio-videoserver-recorder
       * service-discover-agent
 
 .. _multiserver-installation:
@@ -343,9 +342,9 @@ installation, please review these important remarks:
    roles/role-docs
    roles/role-preview
    roles/role-tasks
+   roles/role-wsc
    roles/role-vs
    roles/role-monit
    roles/role-es
    roles/role-ds-replica
-   roles/role-wsc
-   roles/role-vs-wsc
+   roles/role-vs-deprecated

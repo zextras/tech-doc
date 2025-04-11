@@ -4,8 +4,16 @@
 
 .. _videoserver:
 
-|vs|
-====
+Legacy Videoserver    
+==================
+*DEPRECATED*
+
+.. warning:: You need the instructions below only if you need to
+   reinstall the deprecated ``carbonio-videoserver`` and ``carbonio-videoserver-recorder``
+   packages in an existent |product| infrastructure.
+
+   These instructions do not apply to the new
+   :ref:`role-vs-wsc-install`, which requires no configuration.
 
 The |vs| is a WebRTC stream aggregator that improves |team|\ 's
 performance by merging and decoding/re-encoding all streams in a
@@ -45,157 +53,6 @@ bandwidth for both.
 A properly set up |vs| will supersede the need of a TURN server,
 provided that all clients can reach the |vs|’s public IP and
 that UDP traffic is not filtered.
-
-.. _vs-installation:
-
-|vs| Installation
------------------
-
-The installation of the |vs| :term:`Role` has been moved to a
-:ref:`dedicated section <role-vs-install>`.
-
-.. _vs-architecture:
-
-Architecture and Service Control
---------------------------------
-
-A |team| meeting is hosted **on one mailbox**, which also keeps the state
-of the meeting. It is a responsibility of that mailbox to communicate
-with a videoserver instance to start a meeting and controlling it.
-
-Therefore, each mailbox has its own connection pool, which can be
-controlled via the Carbonio CLI. The commands to control the service
-are straightforward:
-
--  Start the connection pool
-
-   .. code:: console
-
-      zextras$ carbonio chats doStartService chats-video-server-connection-pool
-
--  Shutdown the connection pool
-
-   .. code:: console
-
-      zextras$ carbonio chats doStopService chats-video-server-connection-pool
-
--  Check a connection pool status. This command reports information
-   about the node *on which it is executed*.
-
-   .. code:: console
-
-      zextras$ carbonio chats clusterstatus
-
-	   isFullySynced                                       true
-	   servers
-	    <ip_server>
-		online                                          true
-		min_api_version                                 1
-		max_api_version                                 22
-	   meeting_servers
-	       <ip_videoserver>:8188
-		   id                                           123
-		   hostname                                     <ip_videoserver>:8188
-		   status                                       online
-		   servlet_port                                 8090
-		   last_failure
-		   local_meetings_hosted                        2
-
-   The output of this command contains this information:
-
-   - Should the remote |vs| be offline or unreachable, the
-     status will be **offline** instead of **online**.
-
-   - The API versions supported by the server (``min_api_version`` and
-     ``min_api_version``)
-
-   - ``last failure`` shows an error message (e.g., *Unauthorized
-     request (wrong or missing secret/token)* or a generic *Runtime
-     Exception*) if the last connection attempt to the videoserver was
-     unsuccessful. The message is cleared when the connection is
-     successful.
-
-   - ``local_meetings_hosted`` reports the number of meetings hosted
-     on the *current mailbox*.
-
-.. _vs-bandwidth-and-codecs:
-
-Bandwidth and Codecs
-~~~~~~~~~~~~~~~~~~~~
-
-.. note:: All the commands must be run as the ``zextras`` user.
-	  
-.. grid:: 1 1 2 4
-   :gutter: 2
-
-   .. grid-item-card:: Video Bandwidth
-      :columns: 12 12 6 6
-
-      The administrator can set the webcam stream quality and the screenshare
-      stream quality specifing the relative bitrate *in Kbps*. The values must
-      be at least 100 Kbps and can be increased as desired.
-
-      Higher values mean more quality but more used bandwidth.
-
-      - :command:`carbonio config global set attribute
-        teamChatWebcamBitrateCap 200` is the command for the
-        webcam stream quality/bandwidth
-
-      - :command:`carbonio config global set attribute
-        teamChatScreenBitrateCap 200` is the command for the
-        screenshare stream qualitybandwidth
-
-      .. hint:: By default both the webcam bandwidth and the screen
-         sharing bandwidth are set to 200 Kbps.
-
-   .. grid-item-card:: Video Codecs
-      :columns: 12 12 6 6
-
-      By default, the VP8 video codec is used. This is to ensure the best
-      compatibility, as this codec is available in all supported browsers, but
-      other codecs can be enabled:
-
-      -  AV1:
-         :command:`carbonio config global set attribute teamChatVideoCodecAV1 true`
-
-      -  H264:
-         :command:`carbonio config global set attribute teamChatVideoCodecH264 true`
-
-      -  H265:
-         :command:`carbonio config global set attribute teamChatVideoCodecH265 true`
-
-      -  VP8:
-         :command:`carbonio config global set attribute teamChatVideoCodecVP8 true`
-
-      -  VP9:
-         :command:`carbonio config global set attribute teamChatVideoCodecVP9 true`
-
-      Only one codec can be enabled at the time, so before enabling a new
-      codec remember to disable the previous one using the same command as the
-      one in the list above but substituting ``true`` with
-      ``false``.
-
-      .. card:: Example
-
-         To enable the H264 codec run:
-
-         * :command:`carbonio config global set attribute
-           teamChatVideoCodecVP8 false`
-
-         * :command:`carbonio config global set attribute
-           teamChatVideoCodecH264  true`
-
-   .. grid-item-card:: Audio Codec
-      :columns: 12 12 12 12
-
-      The audio codec used by the |vs| is Opus. No other codecs are
-      supported, as Opus is currently the only reliable one available across
-      all supported browsers.
-
-      .. seealso::
-
-         `Wikipedia page on Opus
-         <https://en.wikipedia.org/wiki/Opus_(audio_format)#Bandwidth_and_sampling_rate>`_
 
 .. _vs-config:
 
@@ -275,25 +132,6 @@ The following settings influence the audio experience.
 
       The value should be at least **0**, but it should be set to
       **10** seconds to provide the best performances.
-
-.. _vs-enable-chats:
-
-Enable Chats
-~~~~~~~~~~~~
-
-|carbonio| Chats is disabled by default and can be enabled using two
-commands, to be executed as the ``zextras`` user. The first is used to
-enable the functionality on the |product| infrastructure
-
-.. code:: console
-
-   zextras$ carbonio prov mc default carbonioFeatureTeamEnabled TRUE
-
-The second is used to enable Chats for a given COS
-
-.. code:: console
-
-   zextras$ carbonio config set cos default teamChatEnabled true
 
 .. _vs-record-meeting:
 
