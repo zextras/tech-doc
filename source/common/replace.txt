@@ -80,6 +80,7 @@
 .. |dsnode| replace:: :bdg-secondary-line:`SRV1`
 .. |beta| replace:: :bdg-danger:`BETA`
 .. |legacy| replace:: :bdg-warning:`Legacy`
+.. |dprc| replace:: :bdg-danger:`DEPRECATED`
 
 .. misc
 
