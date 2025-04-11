@@ -1,19 +1,19 @@
 .. _role-vs-install:
 
-*[Video Server]* |dprc|
-=======================
+Legacy Videoserver |dprc|   
+=========================
 
-.. warning:: This Role is now in |dprc| status and will be removed in
-   the near future. If you want to provide chats and video calls to
-   your users, please install the new :ref:`role-vs-wsc-install` and
-   :ref:`role-wsc-install` Roles.
+.. warning:: ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
+   are now in |dprc| status and will be removed in the near future.
+   If you want to provide chats and video calls to your users, please install
+   the new :ref:`role-vs-wsc-install` and :ref:`role-wsc-install` Roles.
 
-Before installing this Role on the |product| infrastructure, make sure
-that you installed the :ref:`role-prov-install`, which is a
-requirement for this Role.
+Before installing ``carbonio-videoserver`` and ``carbonio-videoserver-recorder``
+on the |product| infrastructure, make sure that you installed
+the :ref:`role-prov-install`, which is a requirement for this Role.
 
-.. note:: This Role can not be installed on the same Node as
-   :ref:`role-vs-wsc-install`.
+.. note:: ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
+   cannot be installed on the same Node as :ref:`role-vs-wsc-install`.
 
 Install Packages
 ----------------
@@ -41,9 +41,3 @@ Advanced Configuration
 You can configure some advanced settings of the |vs|, including
 codecs, audio settings, and more from the CLI: please refer to section
 :ref:`videoserver`.
-
-Enable Chats
-~~~~~~~~~~~~
-
-Chats is disabled by default, you can enable it by running a few CLI
-commands that you can find in section :ref:`vs-enable-chats`.
