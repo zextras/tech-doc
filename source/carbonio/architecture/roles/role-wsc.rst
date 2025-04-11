@@ -59,10 +59,10 @@ installation of |product|. If you already have an existing |product|
 infrastructure, the procedure is very similar, but you have to take
 into account the following points:
 
-* The |vs| or Chats modules may be already installed within the
-  infrastructure, but you can keep them: the |wsc| does not share any
-  component with them. However, note that they are marked as |dprc|
-  and will soon be dismissed.
+* The ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
+  may be already installed within the infrastructure, but you can keep them:
+  the |wsc| does not share any component with them. However, note that they
+  are marked as |dprc| and will soon be dismissed.
 
 * There is a *Preparation* phase that requires to install some package
   on other Nodes before starting the |wsc| installation.

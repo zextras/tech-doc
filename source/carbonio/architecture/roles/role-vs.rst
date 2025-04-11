@@ -8,8 +8,8 @@ that you installed the :ref:`role-prov-install`, which is a
 requirement for this Role.
 
 .. note:: If you already have installed on your infrastructure the
-   deprecated :ref:`Video Server <role-vs-install>` Role, make sure
-   this Role is installed on a different Node.
+   deprecated ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
+   make sure this Role is installed on a different Node.
 
 Install Packages
 ----------------
