@@ -4,9 +4,8 @@
 
 .. _videoserver:
 
-Legacy Videoserver    
-==================
-*DEPRECATED*
+Legacy Videoserver |dprc|   
+=========================
 
 .. warning:: You need the instructions below only if you need to
    reinstall the deprecated ``carbonio-videoserver`` and ``carbonio-videoserver-recorder``
