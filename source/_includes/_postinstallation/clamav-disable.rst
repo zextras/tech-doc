@@ -43,12 +43,48 @@ e-mails). Both tasks must be executed from the CLI.
    during future upgrades. You need to explicitly ``unmask`` it before
    enabling it again.
 
-   Now, restart system-discovery to let it pick up the change
+   Restart the following services to let ``systemd`` pick up the
+   changes
 
-   .. code:: console
+   * |mesh|
 
-      # systemctl restart service-discover
+     .. code:: console
 
+        # systemctl restart service-discover
+
+   * The services on the MTA Node
+
+     .. tab-set::
+
+        .. tab-item:: Ubuntu 20.04
+           :sync: ubu20
+
+           .. code:: console
+
+              zextras$ zmcontrol restart
+
+        .. tab-item:: Ubuntu 22.04
+           :sync: ubu22
+
+           .. code:: console
+
+              zextras$ zmcontrol restart
+
+        .. tab-item:: RHEL 8
+           :sync: rhel8
+
+           .. code:: console
+
+              zextras$ zmcontrol restart
+
+        .. tab-item:: RHEL 9 |beta|
+           :sync: rhel9
+
+           .. code:: console
+
+              # systemctl start/stop/restart carbonio-mta.target
+
+  
    Finally, as the |zu|, let |product| make sure that the
    antivirus service is disabled.
 
