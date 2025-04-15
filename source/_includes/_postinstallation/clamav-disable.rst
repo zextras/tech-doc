@@ -93,7 +93,7 @@ e-mails). Both tasks must be executed from the CLI.
       zextras$ carbonio prov ms $(zmhostname) \
       -zimbraServiceEnabled amavis
 
-   You can also disable the other related services.
+   Additionally, you can also disable the other related services.
 
    .. code:: console
 
@@ -104,9 +104,12 @@ e-mails). Both tasks must be executed from the CLI.
       -zimbraServiceEnabled opendkim \
       carbonioAmavisDisableVirusCheck TRUE
 
-   Optionally, you can also remove the ClamAV definition file for
-   service-discover (this will be restored during future ClamAV
-   upgrades, though)
+   As final task, you need to remove the ClamAV definition file for
+   service-discover.
+
+   .. note:: This file will be restored during future upgrades of
+      ClamAV or |product|, so make sure to remove it each time you
+      upgrade.
 
    .. code:: console
 
