@@ -14,52 +14,29 @@ needed to carry out the migration.
 The procedure differs slightly between Ubuntu 20.04, Ubuntu 22.04 (in
 the installation of the repository), while in RHEL 8 it is quite
 different. For this reason, we separate the directions of RHEL from
-Ubuntu.
+Ubuntu. The repository configuration is however given as a preliminary
+task and is presented in the next section.
 
-In case after the upgrade you find in Postgres' log files some error
+In case *after the upgrade* you find in Postgres' log files some error
 messages like the following one, please :ref:`check the directions
 <pg-upgrade-issue>` for a fix::
-  
+
   2024-03-19 12:28:14.209 UTC [909825] HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE activesync REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
   2024-03-19 12:28:19.669 UTC [909915] WARNING:  database "abq" has a collation version mismatch
 
+Repository configuration
+========================
+
+The first task to carry out is to configure the repositories to
+install the PostgreSQL 16 version.
+
+.. include:: /_includes/_installation/repo-pg-conf.rst
+
 Ubuntu 20.04 and 22.04
-~~~~~~~~~~~~~~~~~~~~~~
+======================
 
-The commands in this section must be executed as the ``root`` user
-and, except for the *Repository Configuration*, are the same on both
-versions of Ubuntu.
-
-.. rubric:: Repository Configuration
-
-The following two commands work on both versions of Ubuntu, but the
-second one is deprecated in Ubuntu 22.04 and will raise a
-warning. Hence, to make sure the process is flawless, refer to the
-Ubuntu 22.04 tab for the command if you are installing on that version.
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-
-      .. code:: console
-
-         # sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-
-         # wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-
-   .. tab-item:: Ubuntu 22.04
-
-      .. code:: console
-
-
-         # sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-
-         # wget -O- "https://www.postgresql.org/media/keys/ACCC4CF8.asc" | \
-         gpg --dearmor | sudo tee /usr/share/keyrings/postgres.gpg > \
-         /dev/null
-
-         # chmod 644 /usr/share/keyrings/postgres.gpg
-         # sed -i 's/deb/deb [signed-by=\/usr\/share\/keyrings\/postgres.gpg] /' /etc/apt/sources.list.d/pgdg.list
+The commands in this section must be executed as the ``root`` user and
+are the same on both versions of Ubuntu.
 
 .. rubric:: Install Packages
 
@@ -132,28 +109,7 @@ remove the unused Databases.
       #pg_dropcluster 16 main_pristine --stop
 
 RHEL 8 and 9
-~~~~~~~~~~~~
-
-.. rubric:: Repository Configuration
-
-The PostgreSQL repositories are different in RHEL 8 and RHEL9; the
-rest of the procedure is exactly the same.
-
-.. tab-set::
-
-   .. tab-item:: RHEL 8
-      :sync: rhel8
-
-      .. code:: console
-
-         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-
-   .. tab-item:: RHEL 9
-      :sync: rhel9
-
-      .. code:: console
-
-         # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+============
 
 .. rubric:: Package installation and checks
 

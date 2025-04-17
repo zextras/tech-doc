@@ -1,10 +1,10 @@
-In order to configure |product|'s repository, you need to add one file
+In order to configure |product|'s repository, you need to some files
 with the necessary information.
 
 It you install |product| on Ubuntu, you also need to import the GPG
 key used for signing the packages and verify them.
 
-.. card:: Configure Repository
+.. card:: Configure |product| Repository
 
    .. tab-set::
 
@@ -111,3 +111,7 @@ key used for signing the packages and verify them.
          :sync: rhel9
 
          This step is not needed.
+
+.. card:: Configure PostgreSQL Repository
+
+   .. include:: /_includes/_installation/repo-pg-conf.rst
