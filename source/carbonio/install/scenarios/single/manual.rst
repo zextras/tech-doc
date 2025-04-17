@@ -29,9 +29,9 @@ repositories.
 
    .. include:: /_includes/_installation/step-repo-conf.rst
 
-   .. rubric:: PostgreSQL and other (RHEL only)
+   .. rubric:: Configure PostgreSQL Repository
 
-   .. include:: /_includes/_installation/repo-single-cb.rst
+   .. include:: /_includes/_installation/_repo/pg.rst
 
 .. _n1-s2:
 
@@ -240,37 +240,9 @@ Node*. Click on the drop-downs to expand them.
 
    .. include:: /_includes/_installation/step-repo-conf.rst
 
-   .. rubric:: RHEL Only
+   .. rubric:: PostgreSQL
 
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+   .. include:: /_includes/_installation/_repo/pg.rst
 
 .. dropdown:: Step 2: Setting Hostname
 
@@ -326,7 +298,7 @@ Node*. Click on the drop-downs to expand them.
             carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
-            carbonio-docs-connector postgresql-client \
+            carbonio-docs-connector postgresql-client-16 \
             carbonio-push-connector carbonio-notification-push 
 
       .. tab-item:: Ubuntu 22.04
@@ -338,7 +310,7 @@ Node*. Click on the drop-downs to expand them.
             carbonio-ws-collaboration \
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
-            carbonio-docs-connector postgresql-client \
+            carbonio-docs-connector postgresql-client-16 \
             carbonio-push-connector carbonio-notification-push 
 
       .. tab-item:: RHEL 8
@@ -438,38 +410,6 @@ Server* Node. Most of the steps are the same as in the *Core* and
    .. rubric:: |product|
 
    .. include:: /_includes/_installation/step-repo-conf.rst
-
-   .. rubric:: RHEL Only
-
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the PostgreSQL and EPEL repositories and
-         enable the BaseOS, Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
 .. dropdown:: Step 2: Setting Hostname
 
