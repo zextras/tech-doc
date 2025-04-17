@@ -17,7 +17,3 @@ key used for signing the packages and verify them.
 .. card:: Configure RHEL-only Repositories
 
    .. include:: /_includes/_installation/_repo/rhel.rst
-
-.. card:: Configure PostgreSQL Repository
-
-   .. include:: /_includes/_installation/_repo/pg.rst

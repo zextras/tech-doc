@@ -24,9 +24,9 @@ Core Node
 
    .. include:: /_includes/_installation/step-repo-conf.rst
 
-   .. rubric:: PostgreSQL and other (RHEL only)
+   .. rubric:: PostgreSQL
 
-   .. include:: /_includes/_installation/_repo/rhel.rst
+   .. include:: /_includes/_installation/_repo/pg.rst
 
 .. _es1-step2:
 
