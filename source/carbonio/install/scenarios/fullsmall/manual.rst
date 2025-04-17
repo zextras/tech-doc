@@ -672,6 +672,10 @@ Collaboration Node
 
    .. include:: /_includes/_installation/_packages/role-preview.rst
 
+   .. rubric:: Role |wsc|
+
+   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+
 .. _fsm4-step4:
 
 .. dropdown:: Step 4: Bootstrap |product|

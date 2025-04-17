@@ -721,6 +721,11 @@ Files and |WSC| Node
 
    .. include:: /_includes/_installation/_packages/role-files.rst
 
+   .. rubric:: Role |wsc|
+
+   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+
+
 .. _st5-step4:
 
 .. dropdown:: Step 4: Bootstrap |product|
