@@ -4,7 +4,11 @@
 
 .. include:: /_includes/_installation/_repo/pg.rst
 
-.. rubric:: Package installation
+.. rubric:: Update Package List
+
+.. include:: _includes/_installation/update-packages.rst
+
+.. rubric:: Package Installation
 
 .. include:: /_includes/_installation/_packages/role-db.rst
 .. include:: /_includes/_installation/step-conf-db.rst
