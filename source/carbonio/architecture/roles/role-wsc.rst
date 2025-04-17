@@ -1,4 +1,3 @@
-
 .. _role-wsc-install:
 
 |wsc|
@@ -102,7 +101,46 @@ packages and the Node on which to install them. Please remember to
 read section :ref:`role-wsc-req` above before starting the actual
 package installation.
 
+First, we install PostgreSQL repository.
+
+.. include:: /_includes/_installation/_repo/pg.rst
+
+Then, we update the list of packages.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu 20.04
+      :sync: ubu20
+
+      .. code:: console
+
+         # apt update
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      .. code:: console
+
+         # apt update
+
+   .. tab-item:: RHEL
+      :sync: rhel8
+
+      .. code:: console
+
+         # dnf check-update
+
+   .. tab-item:: RHEL 9 |beta|
+      :sync: rhel9
+
+      .. code:: console
+
+         # dnf check-update
+
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
+
+We are now ready to install all packages.
+
 .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 
 .. _role-wsc-bootstrap:

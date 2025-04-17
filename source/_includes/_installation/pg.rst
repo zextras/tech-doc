@@ -2,7 +2,7 @@
 
 .. rubric:: Repository Setup
 
-.. include:: /_includes/_installation/repo-pg-conf.rst
+.. include:: /_includes/_installation/_repo/pg.rst
 
 .. rubric:: Package installation
 

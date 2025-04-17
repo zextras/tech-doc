@@ -28,7 +28,7 @@ Core Node
 
    .. rubric:: PostgreSQL and other (RHEL only)
 
-   .. include:: /_includes/_installation/repo-single-cb.rst
+   .. include:: /_includes/_installation/_repo/rhel.rst
 
 .. _st1-step2:
 

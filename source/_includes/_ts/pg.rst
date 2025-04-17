@@ -30,7 +30,7 @@ Repository configuration
 The first task to carry out is to configure the repositories to
 install the PostgreSQL 16 version.
 
-.. include:: /_includes/_installation/repo-pg-conf.rst
+.. include:: /_includes/_installation/_repo/pg.rst
 
 Ubuntu 20.04 and 22.04
 ======================

@@ -30,7 +30,7 @@ This Node features the *Mesh & Directory* and *Database* Roles.
 
    .. rubric:: PostgreSQL and other (RHEL only)
 
-   .. include:: /_includes/_installation/repo-single-cb.rst
+   .. include:: /_includes/_installation/_repo/rhel.rst
 
 .. _fr1-step2:
 
@@ -224,7 +224,7 @@ This Node features the *Mesh* and *Directory Replica*  Roles.
 
    .. rubric:: PostgreSQL and other (RHEL only)
 
-   .. include:: /_includes/_installation/repo-single-cb.rst
+   .. include:: /_includes/_installation/_repo/rhel.rst
 
 .. _fr2-step2:
 
@@ -413,7 +413,7 @@ This Node features the *Mesh* and *Monitoring*  Roles.
 
    .. rubric:: PostgreSQL and other (RHEL only)
 
-   .. include:: /_includes/_installation/repo-single-cb.rst
+   .. include:: /_includes/_installation/_repo/rhel.rst
 
 .. _fr3-step2:
 
