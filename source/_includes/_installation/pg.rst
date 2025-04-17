@@ -6,7 +6,7 @@
 
 .. rubric:: Update Package List
 
-.. include:: _includes/_installation/update-packages.rst
+.. include:: /_includes/_installation/update-packages.rst
 
 .. rubric:: Package Installation
 

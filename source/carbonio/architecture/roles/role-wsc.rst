@@ -107,7 +107,7 @@ First, we install PostgreSQL repository.
 
 Then, we update the list of packages.
 
-.. include:: _includes/_installation/update-packages.rst
+.. include:: /_includes/_installation/update-packages.rst
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
 
