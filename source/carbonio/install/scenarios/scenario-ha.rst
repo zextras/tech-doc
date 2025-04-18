@@ -81,15 +81,16 @@ requirements for each Carbonio service in a 5-node HA setup:
 .. _tab-ha-nodes:
 
 .. csv-table:: The Node distribution in the HA scenario described here.
-   :header: "**Service/Role**", "**Primary Nodes**", "**HA Nodes**", "**Total Nodes**"
-   :widths: 52, 16, 16, 16
+   :header: "**Service/Role**", **Primary Nodes**", "**Secondary** (Not full HA) **Nodes**", "**HA Nodes**", "**Total Nodes**"
+   :widths: 36, 16, 16, 16, 16
 
-   "**MTA**", "1", "1", "2"
-   "**Proxy**", "1", "1", "2"
-   "**Mailstore & Provisioning**", "1", "1", "2"
-   "**Cluster**", "3", "N/A", "3"
-   "**Collaboration (Files, Preview, and Docs)**", "1", "1", "2"
-   "**Video Server**", "1", "1", "2"
+   "**MTA**", "1", "", "1", "2"
+   "**Proxy**", "1", "", "1", "2"
+   "**Mailstore & Provisioning**", "1", "", "1", "2"
+   "**Cluster**", "3", "", "N/A", "3"
+   "**Files, Preview, and Docs**", "1", "", "1", "2"
+   "**Video**", "1", "1", "N/A", "2"
+   "**WSC**", "1", "1", "N/A", "2"
 
 Each service, except for the Cluster service, has a mirrored HA node,
 creating a reliable failover configuration. The **(Core) Cluster
@@ -176,15 +177,14 @@ recommended specifications:
        available, minimizing any impact from node failure
    * - Video
      - Video Services
-     - 2 (1 primary + 1 HA)
+     - 2 (1 primary + 1 secondary)
      - Supports video functionality for user communication
-     - Both nodes are identically configured, allowing seamless failover
-       and continuous video service availability
+     - Both nodes provide redundancy of video services
    * - WSC
      - Work Stream Collaboration
-     - 2 (1 primary + 1 HA)
+     - 2 (1 primary + 1 secondary)
      - Supports chat functionality for user communication
-     - Both nodes are identically configured
+     - Both nodes provide redundancy of chat services
    
 .. warning:: Currently, the carbonio-message-broker and carbonio-message-dispatcher services
              are not yet able to run in High Availability mode.
