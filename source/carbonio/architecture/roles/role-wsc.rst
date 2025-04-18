@@ -1,4 +1,3 @@
-
 .. _role-wsc-install:
 
 |wsc|
@@ -102,7 +101,18 @@ packages and the Node on which to install them. Please remember to
 read section :ref:`role-wsc-req` above before starting the actual
 package installation.
 
+First, we install PostgreSQL repository.
+
+.. include:: /_includes/_installation/_repo/pg.rst
+
+Then, we update the list of packages.
+
+.. include:: /_includes/_installation/update-packages.rst
+
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
+
+We are now ready to install all packages.
+
 .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
 
 .. _role-wsc-bootstrap:
