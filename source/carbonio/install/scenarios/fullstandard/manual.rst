@@ -26,9 +26,9 @@ Core Node
 
    .. include:: /_includes/_installation/step-repo-conf.rst
 
-   .. rubric:: PostgreSQL and other (RHEL only)
+   .. rubric:: PostgreSQL
 
-   .. include:: /_includes/_installation/repo-single-cb.rst
+   .. include:: /_includes/_installation/_repo/pg.rst
 
 .. _st1-step2:
 
@@ -222,36 +222,6 @@ MTA Node
 
    .. include:: /_includes/_installation/step-repo-conf.rst
 
-   .. rubric:: RHEL Only
-
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
-
 .. _st2-step2:
 
 .. dropdown:: Step 2: Setting Hostname
@@ -397,36 +367,6 @@ Proxy Node
    .. rubric:: |product|
 
    .. include:: /_includes/_installation/step-repo-conf.rst
-
-   .. rubric:: RHEL Only
-
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
 .. _st3-step2:
 
@@ -576,36 +516,6 @@ Mailstore & Provisioning and Tasks Node
 
    .. include:: /_includes/_installation/step-repo-conf.rst
 
-   .. rubric:: RHEL Only
-
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
-
 .. _st4-step2:
 
 .. dropdown:: Step 2: Setting Hostname
@@ -736,8 +646,8 @@ Mailstore & Provisioning and Tasks Node
 
 .. _st-collab:
 
-Files Node
-==========
+Files and |WSC| Node
+====================
 
 .. _st5-step1:
 
@@ -750,35 +660,9 @@ Files Node
 
    .. include:: /_includes/_installation/step-repo-conf.rst
 
-   .. rubric:: RHEL Only
+   .. rubric:: Configure PostgreSQL Repository
 
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
+   .. include:: /_includes/_installation/_repo/pg.rst
 
 .. _st5-step2:
 
@@ -836,6 +720,11 @@ Files Node
    .. rubric:: Role Files
 
    .. include:: /_includes/_installation/_packages/role-files.rst
+
+   .. rubric:: Role |wsc|
+
+   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+
 
 .. _st5-step4:
 
@@ -918,36 +807,6 @@ Docs and Preview Node
    .. rubric:: |product|
 
    .. include:: /_includes/_installation/step-repo-conf.rst
-
-   .. rubric:: RHEL Only
-
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the EPEL repository and enable the BaseOS,
-         Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
 .. _st6-step2:
 
@@ -1090,38 +949,6 @@ Video Server Node
    .. rubric:: |product|
 
    .. include:: /_includes/_installation/step-repo-conf.rst
-
-   .. rubric:: RHEL Only
-
-   .. tab-set::
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         You need to add the PostgreSQL and EPEL repository and enable
-         the BaseOS, Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-            # subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         You need to add the PostgreSQL and EPEL repository and enable
-         the BaseOS, Appstream, and CodeReady repositories.
-
-         .. code:: console
-
-            # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-            # dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
-            # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
-            # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
-            # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
 .. _st7-step2:
 
