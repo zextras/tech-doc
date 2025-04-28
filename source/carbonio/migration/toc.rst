@@ -151,6 +151,13 @@ There are four available procedures: two of them can be used when the
       **Destination** infrastructure to complete most of the procedure
       (Phases 1 and 2) at once.
 
+      It will migrate to Carbonio all those items managed by Zextras
+      Suite Backup (including all domains, accounts, CoSes, DLs).  To
+      achieve this, the procedure will use the Zextras Suite's Backup
+      Module on the Source and Carbonio Backup on the Destination
+      infrastructure to complete most of the procedure (Phases 1
+      and 2) at once.
+
    .. grid-item-card:: Procedure 2, from |suite| Compatible Platform - Provisioning only + IMAPSync
       :columns: 6
 
