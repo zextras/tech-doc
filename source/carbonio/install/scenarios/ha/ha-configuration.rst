@@ -38,8 +38,6 @@ successfully, you should have the following inventory files:
 
 -  inventory_consulpassword
 
--  inventory_videoserver (only if video server was installed)
-
 To configure the inventory for HA installation, you will need to add
 new groups and add specific variables to the :file:`inventory`
 file. Please read the following advises if you plan to add the HA
