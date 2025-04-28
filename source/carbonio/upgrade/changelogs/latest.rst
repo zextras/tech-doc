@@ -19,8 +19,8 @@ Bugfix List
 -----------
 
 WSC-1928: Incomplete video recordings
-   Solved an issue that prevented correct the correct storage of a
-   recorded video meeting, which sometimes lacked part of the whole
+   Solved an issue that prevented the correct storage of a recorded
+   video meeting, which sometimes lacked part of the whole
    registration and sometimes did not synchronise the video and audio
    streams.
 
