@@ -388,7 +388,7 @@ import the configuration using the command:
    zextras$ carbonio auth saml import example.com URL  https://my-saml-provider.org/simplesaml/saml/idp/metadata.php
 
 .. note:: The URL supplied by the SAML IDP for an unsecured connection
-   may be slight different from the previous one, like in our example.
+   may be slightly different from the previous one, like in our example.
 
 .. code:: console
 
