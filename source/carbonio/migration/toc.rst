@@ -144,7 +144,7 @@ There are four available procedures: two of them can be used when the
       This procedure is the one that should be always used when
       migrating from a |suite| :ref:`compatible platform
       <zx-compatible>` and is presented in section
-      :ref:`migration-zx`, it will migrate **a whole Carbonio
+      :ref:`migration-zx`, it will migrate **a Carbonio
       infrastructure** (including all domains, accounts, CoSes, DLs)
       from the **Source** to the **Destination** and will use the
       |suite|\'s Backup Module on the **Source** and |backup| on the
