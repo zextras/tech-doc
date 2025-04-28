@@ -103,6 +103,13 @@ install |product|.
    procedure described in Section :ref:`locale-settings` to modify the
    configuration.
 
+.. note:: Only |product| Roles should be installed on a |product|
+   Node. Installing additional software is unsupported and may cause
+   conflicts that could compromise |product|’s correct
+   functioning. For example, software like Webmin, Cockpit, or Postfix
+   may be using the same ports as |product|, therefore interfering
+   with its everyday use.
+
 .. _rhel-requirements:
 
 RHEL Specific Requirements

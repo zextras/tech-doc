@@ -144,12 +144,19 @@ There are four available procedures: two of them can be used when the
       This procedure is the one that should be always used when
       migrating from a |suite| :ref:`compatible platform
       <zx-compatible>` and is presented in section
-      :ref:`migration-zx`, it will migrate **a whole Carbonio
+      :ref:`migration-zx`, it will migrate **a Carbonio
       infrastructure** (including all domains, accounts, CoSes, DLs)
       from the **Source** to the **Destination** and will use the
       |suite|\'s Backup Module on the **Source** and |backup| on the
       **Destination** infrastructure to complete most of the procedure
       (Phases 1 and 2) at once.
+
+      It will migrate to Carbonio all those items managed by Zextras
+      Suite Backup (including all domains, accounts, CoSes, DLs).  To
+      achieve this, the procedure will use the Zextras Suite's Backup
+      Module on the Source and Carbonio Backup on the Destination
+      infrastructure to complete most of the procedure (Phases 1
+      and 2) at once.
 
    .. grid-item-card:: Procedure 2, from |suite| Compatible Platform - Provisioning only + IMAPSync
       :columns: 6
