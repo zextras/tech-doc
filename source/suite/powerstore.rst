@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ==================
 Zextras Powerstore
@@ -208,7 +205,7 @@ to use CLI commands.
 
    .. code:: console
 
-      zxsuite powerstore doCreateVolume Centralized mbox-02.example.com Store_01
+      zxsuite powerstore doCreateVolume Centralized mbox-01.example.com Store_01
 
    The second command that needs to be run is the one reported in the
    previous step:
