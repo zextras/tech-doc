@@ -26,7 +26,7 @@ hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
 # -- Project information -----------------------------------------------------
 
 project = 'Zextras Suite'
-copyright = '2024: ZEXTRAS'
+copyright = '2025: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
