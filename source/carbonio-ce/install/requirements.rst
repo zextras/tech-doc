@@ -365,3 +365,13 @@ corresponding Role is installed, for a proper communication among
    .. [4] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
+
+.. card:: |monit| Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "prometheus", "TCP", "9090"
+      "prometheus SSH", "TCP", "9090"
+
