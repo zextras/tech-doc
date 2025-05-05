@@ -609,7 +609,16 @@ Collaboration Node
 
 .. _fsm4-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Dispatcher DB migration
+
+   Initialise the message dispatcher
+
+   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+
+
+.. _fsm4-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    .. tab-set::
 
