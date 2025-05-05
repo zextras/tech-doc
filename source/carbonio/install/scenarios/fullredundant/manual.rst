@@ -1553,7 +1553,18 @@ This Node features the *WSC*, *Files*, and *Tasks*  Roles.
 
 .. _fr10-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Dispatcher DB migration
+
+   .. note:: You need to run the following commands only on one of the
+      Nodes featuring thr |wsc| Role.
+
+   Initialise the message dispatcher
+
+   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+
+.. _fr10-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    .. tab-set::
 
@@ -1705,7 +1716,19 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Roles.
 
 .. _fr11-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Dispatcher DB migration
+
+   .. note:: You need to run the following commands only on one of the
+      Nodes featuring thr |wsc| Role. If you already run them on Node
+      10, skip them safely.
+
+   Initialise the message dispatcher
+
+   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+
+.. _fr11-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    .. tab-set::
 
