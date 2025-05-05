@@ -170,7 +170,11 @@ Step 7: Setup |mesh|
 Step 8: Bootstrap |file| Databases
 ----------------------------------
 
-.. include:: /_includes/_installation/step-bootstrap-db.rst
+.. include:: /_includes/_installation/_steps/db-bootstrap.rst
+
+.. include:: /_includes/_installation/_steps/db-bootstrap-wsc-ce.rst
+
+.. include:: /_includes/_installation/_steps/wsc-migration.rst
 
 .. include:: /_includes/_installation/complete.rst
 
