@@ -306,6 +306,7 @@ corresponding Role is installed, for a proper communication among
       "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
       (or opportunistic SSL/TLS)"
       "7026", "TCP", "bind address of the Milter service"
+      "9810", "TCP", "MTA data export to |monit|"
 
 .. card:: Mailstore & Provisioning Role
 
@@ -325,6 +326,7 @@ corresponding Role is installed, for a proper communication among
       "8735", "TCP", "Internal mailbox :octicon:`arrow-both` mailbox communication"
       "8742", "TCP", "internal HTTP services, advanced module"
       "8743", "TCP", "internal HTTPS services, advanced module"
+      "9330", "TCP", "MySQL data export to |monit|"
 
 .. card:: |vs| Role
 
@@ -354,9 +356,20 @@ corresponding Role is installed, for a proper communication among
       agents"
       "8302", "TCP and UDP", "management of Gossip protocol [4]_ in the WAN"
       "9107", "TCP", "|mesh| data export to |monit|"
-      "21000-21255", "TCP", "range for registrations ports for sidecar
+      "15692", "TCP", "RabbitMQ data export to |monit|"
+      "20000-21255", "TCP", "range for registrations ports for sidecar
       services (automatically assigned)"
 
    .. [4] The Gossip protocol is an encrypted communication protocol
       used by |mesh| for message broadcasting and membership
       management.
+
+.. card:: |monit| Role
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "prometheus", "TCP", "9090"
+      "prometheus SSH", "TCP", "9090"
+

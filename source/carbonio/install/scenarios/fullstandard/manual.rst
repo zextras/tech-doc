@@ -745,7 +745,16 @@ Files and |WSC| Node
 
 .. _st5-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Dispatcher DB migration
+
+   Initialise the message dispatcher
+
+   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+
+
+.. _st5-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    .. tab-set::
 
