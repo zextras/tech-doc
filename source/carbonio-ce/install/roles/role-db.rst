@@ -53,28 +53,10 @@ administrator user created previously.
 You need to run the commands only if the corresponding Role is
 installed.
 
-.. card:: |file|
+.. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-   .. code:: console
- 
-      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+.. include:: /_includes/_installation/_steps/db-bootstrap-wsc-ce.rst
 
-.. card:: |task|
-
-   .. code:: console
-
-      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
-
-.. card:: |wsc|
-
-   .. code:: console
-
-      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap carbonio_adm 127.0.0.1
-
-.. card:: |wsc| Dispatcher
-
-   .. code:: console
-
-      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
+.. include:: /_includes/_installation/_steps/wsc-migration.rst
 
 
