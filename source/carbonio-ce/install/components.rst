@@ -277,15 +277,15 @@ installation, please review these important remarks:
 .. toctree::
    :hidden:
 
-   roles/role-mesh-ds
-   roles/role-db
-   roles/role-proxy
-   roles/role-mta
-   roles/role-mailstore-provisioning
-   roles/role-files
-   roles/role-docs
-   roles/role-preview
-   roles/role-tasks
-   roles/role-wsc
-   roles/role-vs
-   roles/role-monit
+   components/component-mesh-ds
+   components/component-db
+   components/component-proxy
+   components/component-mta
+   components/component-mailstore-provisioning
+   components/component-files
+   components/component-docs
+   components/component-preview
+   components/component-tasks
+   components/component-wsc
+   components/component-vs
+   components/component-monit

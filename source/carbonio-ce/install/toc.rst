@@ -17,5 +17,5 @@ section.
       architecture
       requirements
       preliminary
-      roles
+      components
       scenarios
