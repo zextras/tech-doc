@@ -377,7 +377,7 @@ Node*. Click on the drop-downs to expand them.
 
    Now, run command
    
-   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
    .. rubric:: Enable |wsc|
 

@@ -11,7 +11,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_roles/role-vs-ce.rst
+.. include:: /_includes/_installation/_components/component-vs-ce.rst
 
 
 Bootstrap |product|

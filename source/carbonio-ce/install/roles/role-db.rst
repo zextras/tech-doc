@@ -3,7 +3,7 @@
 Database
 ========
 
-.. include:: /_includes/_installation/_roles/role-db.rst
+.. include:: /_includes/_installation/_components/component-db.rst
 
 Installation of PostgreSQL
 --------------------------
@@ -17,7 +17,7 @@ Installation of |product| databases
 
 
 
-.. include:: /_includes/_installation/_roles/role-db-connector-ce.rst
+.. include:: /_includes/_installation/_components/component-db-connector-ce.rst
 
 Bootstrap |product|
 -------------------

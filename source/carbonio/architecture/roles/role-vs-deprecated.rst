@@ -18,7 +18,7 @@ the :ref:`role-prov-install`, which is a requirement for this Component.
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_roles/role-vs.rst
+.. include:: /_includes/_installation/_components/component-vs.rst
 
 Bootstrap |product|
 -------------------

@@ -3,7 +3,7 @@
 Database
 ========
 
-.. include:: /_includes/_installation/_roles/role-db.rst
+.. include:: /_includes/_installation/_components/component-db.rst
 
 Installation of PostgreSQL
 --------------------------

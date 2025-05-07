@@ -749,7 +749,7 @@ Files and |WSC| Node
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
 
 .. _st5-step7:

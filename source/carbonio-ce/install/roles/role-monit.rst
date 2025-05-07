@@ -54,4 +54,4 @@ As mentioned above, Grafana requires some manual interaction before
 and after the installation to install also some necessary plugin and
 to configure the data sources and import them from |product|.
 
-.. include:: /_includes/_installation/_roles/role-grafana.rst
+.. include:: /_includes/_installation/_components/component-grafana.rst

@@ -1560,7 +1560,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Components.
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
 .. _fr10-step7:
 
@@ -1724,7 +1724,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Components.
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
 .. _fr11-step7:
 
