@@ -44,4 +44,4 @@ Supported Mail Protocols
 .. toctree::
    :hidden:
 
-   roles
+   components

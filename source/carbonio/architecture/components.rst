@@ -332,19 +332,19 @@ installation, please review these important remarks:
 .. toctree::
    :hidden:
 
-   roles/role-mesh-ds
-   roles/role-db
-   roles/role-mesh
-   roles/role-proxy
-   roles/role-mta
-   roles/role-mailstore-provisioning
-   roles/role-files
-   roles/role-docs
-   roles/role-preview
-   roles/role-tasks
-   roles/role-wsc
-   roles/role-vs
-   roles/role-monit
-   roles/role-es
-   roles/role-ds-replica
-   roles/role-vs-deprecated
+   components/component-mesh-ds
+   components/component-db
+   components/component-mesh
+   components/component-proxy
+   components/component-mta
+   components/component-mailstore-provisioning
+   components/component-files
+   components/component-docs
+   components/component-preview
+   components/component-tasks
+   components/component-wsc
+   components/component-vs
+   components/component-monit
+   components/component-es
+   components/component-ds-replica
+   components/component-vs-deprecated
