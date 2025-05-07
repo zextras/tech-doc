@@ -19,7 +19,7 @@ an `Ansible playbook
    systems.
 
 Ansible will read an `inventory file` containing a list of the Nodes
-on which to install the various Roles and automatically execute on the
+on which to install the various Components and automatically execute on the
 proper Node all the necessary tasks.
 
 Once the **Control Node** (i.e., a workstation with Ansible installed

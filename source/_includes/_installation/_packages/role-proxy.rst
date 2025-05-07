@@ -43,6 +43,6 @@
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
 .. note:: The :file:`carbonio-chats-ui` package is needed by the
-   |dprc| Chats Role, which has been superseded by the new
-   :ref:`role-wsc-install` Role. Hence, it is only needed to keep the
+   |dprc| Chats Component, which has been superseded by the new
+   :ref:`role-wsc-install` Component. Hence, it is only needed to keep the
    old Chats working.

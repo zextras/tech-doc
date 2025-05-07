@@ -7,8 +7,8 @@ Advanced Administration Tasks
 In this section we describe and outline a few advanced tasks,
 providing quick directions to carry them out.
 
-Role-based Access Control
--------------------------
+Component-based Access Control
+------------------------------
 
 |product| uses a delegation mechanism to allow the principal
 administrator to assign roles and permission to other users with the

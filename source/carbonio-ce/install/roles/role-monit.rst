@@ -3,7 +3,7 @@
 Monitoring
 ==========
 
-The Monitoring Role is composed by the Prometheus and Grafana
+The Monitoring Component is composed by the Prometheus and Grafana
 software. Prometheus extracts data from metrics and log files, that
 are then used by Grafana, which provides dashboards to monitor the
 |product| status.

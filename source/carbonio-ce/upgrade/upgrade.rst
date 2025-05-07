@@ -13,7 +13,7 @@ Requirements & Preliminaries
 ============================
 
 The upgrade to |version| may include some additional procedure that
-impacts the following *Roles*, packages, or third-party software,
+impacts the following *Components*, packages, or third-party software,
 which require some manual interaction before, during, or after the
 procedure. If you already have implemented them, please skip to the
 next section.

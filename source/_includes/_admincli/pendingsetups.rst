@@ -100,8 +100,8 @@ After restoring from a backup or migrating to a new server
    new server, some configurations might need to be re-applied to
    match the new environment
 
-When adding a new |product| Role
-   If you install a new |Product| Role (e.g., Files, Chats), running
+When adding a new |product| Component
+   If you install a new |Product| Component (e.g., Files, Chats), running
    :command:`pending-setups` ensures that the new component is
    properly integrated into the system
 

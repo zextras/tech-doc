@@ -98,7 +98,7 @@ the following two one-liners.
 
    zextras$ carbonio prov -l gaa | while read account; do echo "ma \"$account\" carbonioFeatureWscEnabled \"\""; done  | carbonio prov
 
-On the node hosting the *Mailstore & Provisioning* Role, disable the
+On the node hosting the *Mailstore & Provisioning* Component, disable the
 Chat's automatic start, then stop the service.
 
 .. code:: console

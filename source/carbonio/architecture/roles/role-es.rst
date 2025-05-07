@@ -3,7 +3,7 @@
 Event Streaming
 ===============
 
-This Role is required to enable the |carbonio| :ref:`Active Replica
+This Component is required to enable the |carbonio| :ref:`Active Replica
 <activereplica>` feature, the foundation of High Availability on
 |product|, and is based on Apache's *Kafka* and *ZooKeeper*, which
 must be installed together on the same Node. For better performances,
@@ -15,7 +15,7 @@ In the remainder, you find the installation and configuration
 instructions for both software on a node dedicated in the same
 infrastructure that hosts the other |product| Nodes.
 
-It is possible to install multiple Event Streaming Roles in a
+It is possible to install multiple Event Streaming Components in a
 |product| infrastructure: in this case, you need to make sure that the
 ZooKeeper's configuration is replicated on every Event Streaming Node.
 
@@ -97,7 +97,7 @@ installed and add it to the file
    # ZOOKEEPER_ID=10
    # echo $ZOOKEEPER_ID > /var/lib/queue/zookeeper/myid
 
-If you install a second and even a third Event Streaming Role, you
+If you install a second and even a third Event Streaming Component, you
 have then to append at the end of the configuration file
 :file:`/opt/zookeeper/conf/zoo.cfg` one entry for every zookeeper
 node, using the format ``server.[ZOOKEEPER_ID]=[NODE_IP]:2888:3888``

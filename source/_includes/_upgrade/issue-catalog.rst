@@ -2,7 +2,7 @@
 
    Regardless of the version from which you are upgrading, the
    **24.12.X** requires that the package ``carbonio-catalog`` be
-   installed on the Node installing the **Proxy Role**.
+   installed on the Node installing the **Proxy Component**.
 
    To install it, execute the following command.
 

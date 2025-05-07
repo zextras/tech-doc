@@ -37,7 +37,7 @@ infrastructure.
 
 .. note:: To add any of the roles listed as optional, simply remove
    the comment (#) indicating the correct name of the server on which
-   to install the Role, based on the directions provided.
+   to install the Component, based on the directions provided.
 
 Once you edited the inventory, save it in a directory of your choice
 as :file:`carbonio-inventory-single`. Now, you can run the script:

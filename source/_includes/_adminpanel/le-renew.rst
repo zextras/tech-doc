@@ -14,7 +14,7 @@ Manual renewal
    ``zextras`` user.
 
 The manual renewal amounts to launch command :command:`certbot renew`
-on the Node installing the Proxy Role.
+on the Node installing the Proxy Component.
 
 In case your |product| infrastructure has multiple Proxy Nodes,
 first find the one which is responsible for the certificate

@@ -3,9 +3,9 @@
 .. card:: Advanced modules not starting
 
    There are a few corner cases that prevent the advanced modules,
-   provided by the :ref:`Service Roles <cb-roles>`, to be running. The
+   provided by the :ref:`Service Components <cb-roles>`, to be running. The
    problem is that the Node featuring the Mailstore & Provisioning
-   Role can not communicate with the Database (PostgreSQL). You can
+   Component can not communicate with the Database (PostgreSQL). You can
    check if this is the case if you find in log file
    :file:`/opt/zextras/log/mailbox.log` error messages like::
 

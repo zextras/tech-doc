@@ -1,19 +1,19 @@
 .. _roles-installation:
 
-==================================
-Roles Description and Installation
-==================================
+=======================================
+Components Description and Installation
+=======================================
 
 Please review carefully this sections before attempting to install
 |carbonio| on a Single-Server or on a Multi-Node infrastructure.
 
-|product| is made of Roles
-==========================
+|product| is made of Components
+===============================
 
 A |product| infrastructure is created with the installation of some
-**Roles**.
+**Components**.
 
-A **Role** is a |product| functionality that is considered atomic and
+A **Component** is a |product| functionality that is considered atomic and
 consists of one or more packages.
 
 .. card:: The modular nature of |product|
@@ -22,7 +22,7 @@ consists of one or more packages.
    dedicated node or group multiple roles according to affinity rules.
 
    Although this is not a suggested or supported scenario, it would be
-   technically possible to install almost all |product| Roles on a
+   technically possible to install almost all |product| Components on a
    single virtual machine.
 
    The possibility of installation by roles allows you to design
@@ -31,14 +31,14 @@ consists of one or more packages.
 
 .. _cb-roles:
 
-The roles of |product|
-======================
+The Components of |product|
+===========================
 
-We can group the available |product| Roles into 3 macro categories:
+We can group the available |product| Components into 3 macro categories:
 
-* **Infrastructure Roles**, which are mandatory in any |product| installation
+* **Infrastructure Components**, which are mandatory in any |product| installation
 
-* **Service Roles** broaden the functionality provided by |product|
+* **Service Components** broaden the functionality provided by |product|
 
 This is the list of roles that make up a |product| installation.
 
@@ -55,7 +55,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-mesh-install
 
-      Type of Role: Infrastructure
+      Type of Component: Infrastructure
 
       Packages:
 
@@ -71,7 +71,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-db-install
 
-      Type of Role: Infrastructure
+      Type of Component: Infrastructure
 
       Packages:
 
@@ -89,7 +89,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-mesh-only-install
 
-      Type of Role: Infrastructure
+      Type of Component: Infrastructure
 
       Packages:
 
@@ -102,7 +102,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-proxy-install
 
-      Type of Role: Infrastructure
+      Type of Component: Infrastructure
 
       Packages:
 
@@ -123,7 +123,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-mta-install
 
-      Type of Role: Infrastructure
+      Type of Component: Infrastructure
 
       Packages:
 
@@ -136,7 +136,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-prov-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -149,7 +149,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-files-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -162,7 +162,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-docs-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -176,7 +176,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-preview-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -189,7 +189,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-tasks-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -202,7 +202,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-wsc-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -218,7 +218,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-vs-wsc-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -232,7 +232,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-monit-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -246,7 +246,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-es-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -259,7 +259,7 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: role-ds-replica-install
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -273,7 +273,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 8
       :margin: 5 auto auto auto
 
-      Type of Role: Service role
+      Type of Component: Service role
 
       Packages:
 
@@ -283,10 +283,10 @@ This is the list of roles that make up a |product| installation.
 
 .. _multiserver-installation:
 
-How to install Roles
-====================
+How to install Components
+=========================
 
-Before presenting each Role and the tasks necessary for their correct
+Before presenting each Component and the tasks necessary for their correct
 installation, please review these important remarks:
 
 *  While the overall procedure is the same for both Ubuntu and RHEL 8,
@@ -325,9 +325,9 @@ installation, please review these important remarks:
    Section :ref:`web-access`
 
 * You **must** start with the installation of the
-  :ref:`role-mesh-install` Role, followed by the
-  :ref:`role-db-install` Role. Then you can proceed with the other
-  infrastructure Roles and finally with all other Roles.
+  :ref:`role-mesh-install` Component, followed by the
+  :ref:`role-db-install` Component. Then you can proceed with the other
+  infrastructure Components and finally with all other Components.
 
 .. toctree::
    :hidden:

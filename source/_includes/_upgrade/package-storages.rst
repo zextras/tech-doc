@@ -1,4 +1,4 @@
-On the Node featuring the **Mesh & Directory** Role, install
+On the Node featuring the **Mesh & Directory** Component, install
 package ``carbonio-storages`` by executing command
 
 .. tab-set::

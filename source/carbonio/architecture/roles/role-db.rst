@@ -15,9 +15,9 @@ Installation of PostgreSQL
 Database Components of |wsc|
 ----------------------------
 
-If you plan to install the :ref:`role-wsc-install` Role, you need to
+If you plan to install the :ref:`role-wsc-install` Component, you need to
 install the following packages, which constitute the DB portion of
-that Role, then follow the instructions to complete its installation
+that Component, then follow the instructions to complete its installation
 
 .. tab-set::
 

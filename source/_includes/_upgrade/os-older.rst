@@ -1,5 +1,5 @@
 The procedure must be carried out on each Node, starting from the one
-on which the Directory Server Role is installed, and it will require
+on which the Directory Server Component is installed, and it will require
 to reboot the Node and therefore a downtime of the |product|
 infrastructure must be planned. Please read carefully the whole
 section before starting the upgrade.

@@ -107,7 +107,7 @@ Setting up Centralized Storage
 In order to set up a bucket for centralized storage, a few steps are
 necessary. The procedure is described below and guides you from the
 creation of the bucket up to the association of the new Storage to
-multiple Mailstore & Provisioning Roles.
+multiple Mailstore & Provisioning Components.
 
 The procedure is the same for all types of supported buckets, although
 depending on the type of the bucket, either the syntax, or some of the

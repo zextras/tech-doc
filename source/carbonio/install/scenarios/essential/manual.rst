@@ -1,12 +1,12 @@
 .. _scenario-es-manual:
 
-===========================
- Manual Roles Installation
-===========================
+================================
+ Manual Components Installation
+================================
 
 In case you do not want to install |product| on this scenario using
 Ansible, you can proceed with the manual installation of the various
-Roles on the Nodes, according to the following guidelines.
+Components on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
@@ -74,18 +74,18 @@ Core Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role, but you can combine all packages and run the install
+   by Component, but you can combine all packages and run the install
    command once.
 
-   .. rubric:: Role Mesh & Directory
+   .. rubric:: Component Mesh & Directory
 
    .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
 
-   .. rubric:: Role Database
+   .. rubric:: Component Database
 
    .. include:: /_includes/_installation/_packages/role-db.rst
 
-   .. rubric:: Role Monitoring
+   .. rubric:: Component Monitoring
 
    .. include:: /_includes/_installation/_packages/role-monit.rst
 
@@ -288,14 +288,14 @@ MTA/Proxy Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role MTA AV/AS
+   .. rubric:: Component MTA AV/AS
 
    .. include:: /_includes/_installation/_packages/role-mta.rst
 
-   .. rubric:: Role Proxy
+   .. rubric:: Component Proxy
 
    .. include:: /_includes/_installation/_packages/role-proxy.rst
 
@@ -468,10 +468,10 @@ Mailstore Node
             # dnf upgrade
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Mailstore & Provisioning
+   .. rubric:: Component Mailstore & Provisioning
 
    .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
 

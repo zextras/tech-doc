@@ -119,7 +119,7 @@ Log in to Grafana
 +++++++++++++++++
 
 The Grafana portal can be reached on port 3000 of the node on which
-you installed the Monitoring Role, we assume it is called
+you installed the Monitoring Component, we assume it is called
 http\://srvmon.example.com:3000/.
 
 You can log in for the first time with these credentials: **user** =

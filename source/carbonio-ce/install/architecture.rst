@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 ===========================
  Architecture of |product|
@@ -27,7 +24,7 @@ example, **User Management** can be installed on the Proxy node
 instead of on a dedicated node.  In the :ref:`Example scenario
 <multiserver-installation>` we use as example, we show how to set up a
 cluster of *five* :term:`Nodes <node>` and combine the various |product|'s
-roles. A :term:`role` is a functionality that is considered atomic and
+roles. A :term:`component` is a functionality that is considered atomic and
 can be added to the |product| by installing one or more software
 packages.
 

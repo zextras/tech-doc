@@ -3,10 +3,10 @@
 |wsc|
 =====
 
-|cwsc| Role is a multi-layered software that adds the video meeting
+|cwsc| Component is a multi-layered software that adds the video meeting
 and recording functionalities to |product|.
 
-If you plan to install this Role in an existing |product|
+If you plan to install this Component in an existing |product|
 infrastructure, please read carefully Section :ref:`wsc-install`.
 
 .. _role-wsc-limits:
@@ -15,18 +15,18 @@ Limitations
 -----------
 
 In the current release |release|, the following limitation apply to
-the installation of the |wsc| Role
+the installation of the |wsc| Component
 
 * It can not be installed on the same Node as |vs|
 * Data from the legacy Chats module can not be exported to new |wsc|
-  Role
+  Component
 
 .. _role-wsc-req:
 
 Requirements
 ------------
 
-The |wsc| Role is quite complex in terms of both internal architecture
+The |wsc| Component is quite complex in terms of both internal architecture
 and installation, therefore it requires to pay some attention while
 installing it:
 
@@ -35,7 +35,7 @@ installing it:
 
 * The ``carbonio-user-management`` package must be installed in the
   |product| infrastructure (it is part on the
-  :ref:`role-proxy-install` Role)
+  :ref:`role-proxy-install` Component)
 
 * |cwsc| requires that some ports be forwarded from the Internet to
   the |vs| and Proxy Nodes, according to the following table:
@@ -76,7 +76,7 @@ into account the following points:
   #. Install package :file:`carbonio-message-broker` on the
      :ref:`role-mesh-install` Node
 
-  #. Install the :ref:`role-vs-wsc-install` Role on a dedicated Node
+  #. Install the :ref:`role-vs-wsc-install` Component on a dedicated Node
      or in any Node that does not feature :ref:`role-vs-install`,
      because they are not compatible
 

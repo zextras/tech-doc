@@ -7,7 +7,7 @@
       the :ref:`role-mesh-install` Node.
 
       This situation was previously required by the
-      :ref:`role-wsc-install` (WSC) Role, where it was installed, but
+      :ref:`role-wsc-install` (WSC) Component, where it was installed, but
       now is used by the whole |product|.
 
       In case you already installed |WSC|, remove the

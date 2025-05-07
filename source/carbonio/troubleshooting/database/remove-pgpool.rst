@@ -4,14 +4,14 @@
  Pgpool Removal
 ================
 
-In version 24.12.0, the **Database Connector** Role does not exist
+In version 24.12.0, the **Database Connector** Component does not exist
 anymore, therefore the Pgpool software must be removed and |product|'s
 ``*-db`` packages must be moved away from the node that features the
-Database Connector Role. This section presents all the tasks you need
+Database Connector Component. This section presents all the tasks you need
 to carry out to accomplish the goal.
 
 The procedure is organised in 3 main parts and requires to log in to
-the Nodes where the *Database* and *Database Connector* Roles are
+the Nodes where the *Database* and *Database Connector* Components are
 installed and execute commands as the ``root`` user. The commands are
 the same on Ubuntu and RHEL operating systems, unless explicitly
 stated.
@@ -33,7 +33,7 @@ Before starting the procedure make sure that:
   overview of the procedure and understand all the steps to be carried
   out
 
-The *Database* and *Database Connector* Roles are usually installed on
+The *Database* and *Database Connector* Components are usually installed on
 different Nodes, but if they are installed on the same Node, you only
 need to carry out these two tasks: :ref:`pg-disable` and
 :ref:`pg_restart`.
@@ -43,7 +43,7 @@ need to carry out these two tasks: :ref:`pg-disable` and
 Disable Pgpool
 ==============
 
-On the Node with the *Database Connector* Role, execute the following
+On the Node with the *Database Connector* Component, execute the following
 commands to disable pgpool and the corresponding Prometheus exporter.
 
 .. code:: console
@@ -65,7 +65,7 @@ Install Database Components
 .. note:: Skip this step if PostgreSQL and Pgpool are installed on the
    same Node.
 
-On the Node with the **Database** Role, install all the packages
+On the Node with the **Database** Component, install all the packages
 listed.
 
 .. tab-set::
@@ -99,7 +99,7 @@ Add the services provided by these packages to |mesh|.
 Disable Services
 ================
 
-On the Node with the *Database Connector* Role, disable all services.
+On the Node with the *Database Connector* Component, disable all services.
 
 .. code:: console
 
@@ -118,7 +118,7 @@ On the Node with the *Database Connector* Role, disable all services.
 Remove Packages
 ===============
 
-On the Node with the *Database Connector* Role, remove all the
+On the Node with the *Database Connector* Component, remove all the
 packages that are not needed anymore.
 
 .. warning:: Pay attention to the actual packages that are removed by

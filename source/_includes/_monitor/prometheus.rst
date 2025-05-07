@@ -31,9 +31,9 @@ The Node Exporter component is automatically installed with the
 ``carbonio-core`` package.
     
 To make sure that the correct Exporter in installed along the service
-from which it fetches data, when a Role in installed, the
+from which it fetches data, when a Component in installed, the
 corresponding Prometheus Exporter is installed. For example, when the
-:ref:`Proxy Role <role-proxy-install>` is installed, the
+:ref:`Proxy Component <role-proxy-install>` is installed, the
 ``carbonio-prometheus-nginx-exporter`` package is installed as well:
 no additional installation activity is therefore necessary.
 

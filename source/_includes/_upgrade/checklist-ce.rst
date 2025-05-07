@@ -2,7 +2,7 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-The upgrade to |version| impacts the following *Roles*, packages, or
+The upgrade to |version| impacts the following *Components*, packages, or
 software, which require some manual interaction before, during, or
 after the procedure.
 

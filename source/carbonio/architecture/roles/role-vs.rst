@@ -3,18 +3,18 @@
 Video Server & Video Recording
 ==============================
 
-Before installing this Role on the |product| infrastructure, make sure
+Before installing this Component on the |product| infrastructure, make sure
 that you installed the :ref:`role-prov-install`, which is a
-requirement for this Role.
+requirement for this Component.
 
 .. note:: If you already have installed on your infrastructure the
    deprecated ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
-   make sure this Role is installed on a different Node.
+   make sure this Component is installed on a different Node.
 
 Install Packages
 ----------------
 
-This Role consists of *Video Server (WSC)* and *Video Recording
+This Component consists of *Video Server (WSC)* and *Video Recording
 (WSC)*.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
@@ -53,7 +53,7 @@ level: please refer to section :ref:`vs-recorder-conf` for
 directions.
 
 A recorded session is temporary stored in directory
-:file:`/var/lib/videoserver/` on the Node featuring the |vs| Role:
+:file:`/var/lib/videoserver/` on the Node featuring the |vs| Component:
 make sure that this directory has sufficient free space, otherwise
 recorded videos can not be stored. As soon as the recording session
 terminates, the file will be processed and moved to the Node featuring

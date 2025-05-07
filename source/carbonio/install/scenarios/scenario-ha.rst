@@ -4,7 +4,7 @@
  Scenario HA
 =============
 
-This section describes a |product| infrastructure which includes Roles
+This section describes a |product| infrastructure which includes Components
 redundancy and |ha|. The number of required Nodes, the necessary steps,
 and the overall complexity involved require to pay attention to each
 task that needs to be carried out.
@@ -68,7 +68,7 @@ Scenario Overview
 To install a |ha| |carbonio| infrastructure, you need to ensure
 redundancy for all critical services.
 
-In a Carbonio HA setup, each Role except Monitoring is deployed
+In a Carbonio HA setup, each Component except Monitoring is deployed
 redundantly across multiple nodes. This setup guarantees continuous
 service availability, even in the event of individual node
 failures. Below is the recommended Node distribution and configuration
@@ -81,7 +81,7 @@ requirements for each Carbonio service in a 5-node HA setup:
 .. _tab-ha-nodes:
 
 .. csv-table:: The Node distribution in the HA scenario described here.
-   :header: "**Service/Role**", **Primary Nodes**", "**Secondary** (Not full HA) **Nodes**", "**HA Nodes**", "**Total Nodes**"
+   :header: "**Service/Component**", **Primary Nodes**", "**Secondary** (Not full HA) **Nodes**", "**HA Nodes**", "**Total Nodes**"
    :widths: 36, 16, 16, 16, 16
 
    "**MTA**", "1", "", "1", "2"
@@ -136,7 +136,7 @@ recommended specifications:
    :widths: 15 25 10 30 40
 
    * - Nodes
-     - Role
+     - Component
      - VM Count
      - Purpose
      - Configuration
@@ -294,7 +294,7 @@ respectively. These will be used in the remainder of this section.
 
    There are a few points to highlight about volumes and disk space:
 
-   * The Nodes hosting the *Mailstore & Provisioning* Role must have
+   * The Nodes hosting the *Mailstore & Provisioning* Component must have
      the Primary storage mounted on :file:`/opt/`
 
    ..

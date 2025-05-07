@@ -14,7 +14,7 @@ Changes in the source code can be found in :pr:`869`.
 
 .. rubric:: 202412-971 Remove |wsc| notification and |vs| routing
 
-Notifications for the |wsc| Role and routing for the |VS| Role have been removed from the documentation.
+Notifications for the |wsc| Component and routing for the |VS| Component have been removed from the documentation.
 
 Changes in the source code can be found in :pr:`850`, :pr:`851`, and :pr:`852`.
 
@@ -56,7 +56,7 @@ Changes in the source code can be found in :pr:`825`, :pr:`828`, :pr:`831`, :pr:
 
 .. rubric:: 202412-941 Remove DB Connector node from Ansible installation
 
-The DB Connector Role is no longer part of |product| infrastructure, so we commented it out in the Ansible inventory files.
+The DB Connector Component is no longer part of |product| infrastructure, so we commented it out in the Ansible inventory files.
 
 Changes in the source code can be found in :pr:`822`.
 
@@ -77,7 +77,7 @@ Changes in the source code can be found in :pr:`813`.
 
 .. rubric:: 202412-926 Review list of |wsc| ports
 
-We reviewed the list of ports used by |wsc|, added them to the Role to improve their visibility, and made some miro improvement to the overall wording.
+We reviewed the list of ports used by |wsc|, added them to the Component to improve their visibility, and made some minor improvements to the overall wording.
 
 Changes in the source code can be found in :pr:`812`.
 
@@ -124,7 +124,7 @@ Changes in the source code can be found in :pr:`798`.
 
 .. rubric:: 202412-907 New |adminui| features for 24.12.0
 
-We reviewed the list of ports used by |wsc|, added them to the Role to improve their visibility, and made some minor improvement to the overall wording.
+We reviewed the list of ports used by |wsc|, added them to the Component to improve their visibility, and made some minor improvement to the overall wording.
 
 In this issue we collected the documentation for the |adminui| for the new features introduced in 24.12.0, including:
 
@@ -132,14 +132,14 @@ In this issue we collected the documentation for the |adminui| for the new featu
 
 * When multiple domains are configured, how can a user search for users in other domains
 
-* A new sections explains how to optimise the DOCS and Editor configuration
+* A new section explains how to optimise the DOCS and Editor configuration
 
-* New packages have been added to the Roles installation 
+* New packages have been added to the Components installation 
 
 Changes in the source code can be found in :pr:`802`, :pr:`803`, and :pr:`819`.
 
 
-.. rubric:: 202412-841 Add MIssing RHEL command for Drive migration 
+.. rubric:: 202412-841 Add Missing RHEL command for Drive migration 
 
 We added the installation instructions for package :file:`carbonio-drive-migration`, needed in the migration from Zextras Suite compatible platform, which were missing for RHEL systems.
 
@@ -178,9 +178,9 @@ Some section heading was incorrectly set and it showed up in the local table of 
 
 Changes in the source code can be found in :pr:`799`.
 
-.. rubric:: 202412-871 Remove Role DB Connector
+.. rubric:: 202412-871 Remove Component DB Connector
 
-The DB connector Role, based on the Pgpool sotware, has been removed from the 24.12.0 release.
+The DB connector Component, based on the Pgpool software, has been removed from the 24.12.0 release.
 
 Changes in the source code can be found in :pr:`807`.
 

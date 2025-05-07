@@ -1,5 +1,5 @@
 In release 25.3.0, this package must be installed as part of the
-**Mesh & Directory** Role, instead of the **Proxy** Role. To
+**Mesh & Directory** Component, instead of the **Proxy** Component. To
 intall it on the *Mesh & Directory* Node, execute as the |ru|
 
 .. tab-set::
@@ -19,8 +19,8 @@ intall it on the *Mesh & Directory* Node, execute as the |ru|
          # dnf install carbonio-user-management
 
 While the user management features works even if the package is
-installed with both Roles, we suggest that you remove it from the Node
-featuring the Proxy Role:
+installed with both Components, we suggest that you remove it from the Node
+featuring the Proxy Component:
 
 .. tab-set::
 

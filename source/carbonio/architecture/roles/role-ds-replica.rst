@@ -6,7 +6,7 @@ Directory Replica
 Preliminaries
 -------------
 
-Before attempting to install the Directory Replica Role, please read
+Before attempting to install the Directory Replica Component, please read
 carefully the whole procedure in this page and make sure **all** the
 following requirements are satisfied.
 
@@ -17,7 +17,7 @@ following requirements are satisfied.
   :ref:`preliminary` have already been executed
 
   .. note:: You can also install the Replica on an existent Node, but
-     not on the same Node which features the Primary Directory Role.
+     not on the same Node which features the Primary Directory Component.
 
 * Pay attention that some commands **must be executed** as the
   ``zextras`` user, while other as the ``root`` user
@@ -35,7 +35,7 @@ Installation
 ~~~~~~~~~~~~
 
 The installation requires to execute install these packages on the
-Node on which you plan to install the Directory Replica Role.
+Node on which you plan to install the Directory Replica Component.
 
 .. include:: /_includes/_installation/_packages/role-ds-replica.rst
 
@@ -182,7 +182,7 @@ with a few commands on the **Mesh & Directory**.
         ldap://srv1.example.com:389"
 
    .. note:: `srv1.example.com` is the FQDN of the node which installs
-      the *Mesh & Directory* Role
+      the *Mesh & Directory* Component
 
    If you plan to install multiple Directory Replicas, you can install
    all of them and then execute the above-mentioned command once for

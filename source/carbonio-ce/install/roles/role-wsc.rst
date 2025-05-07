@@ -3,7 +3,7 @@
 |wsc|
 =====
 
-The |wsc| Role adds the chat functionality to |product|.
+The |wsc| Component adds the chat functionality to |product|.
 
 Install Packages
 ----------------

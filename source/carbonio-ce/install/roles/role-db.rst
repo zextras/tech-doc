@@ -50,7 +50,7 @@ You can use the password of the Postgres user ``carbonio_adm`` that
 you defined when installing the *Database* role or any other
 administrator user created previously.
 
-You need to run the commands only if the corresponding Role is
+You need to run the commands only if the corresponding Component is
 installed.
 
 .. include:: /_includes/_installation/_steps/db-bootstrap.rst

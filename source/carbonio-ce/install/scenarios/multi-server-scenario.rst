@@ -16,8 +16,8 @@ Calls.
 
    The architecture of the Multi-Server Scenario.
 
-Roles Installation
-==================
+Components Installation
+=======================
 
 .. grid:: 1 1 2 2
    :gutter: 2
@@ -29,7 +29,7 @@ Roles Installation
 
       Type of services: Clustered services
 
-      Roles installed:
+      Components installed:
 
       * :ref:`role-mesh-install`
               
@@ -44,7 +44,7 @@ Roles Installation
 
       Type of services: Proxy and MTA 
 
-      Roles installed:
+      Components installed:
 
       * :ref:`role-mta-install`
               
@@ -57,7 +57,7 @@ Roles Installation
 
       Type of services: Mails, Calendars, and Contacts 
 
-      Roles installed:
+      Components installed:
 
       * :ref:`role-prov-install`
               
@@ -70,7 +70,7 @@ Roles Installation
 
       Type of services: Files, Preview, and Editing
 
-      Roles installed:
+      Components installed:
 
       * :ref:`role-files-install`
               
@@ -85,7 +85,7 @@ Roles Installation
 
       Type of services: Video and Meeting
 
-      Roles installed:
+      Components installed:
               
       * :ref:`role-wsc-install`
       * :ref:`role-vs-install`

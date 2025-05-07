@@ -1,12 +1,12 @@
-This Role consists of *Video Server* and *Video Recording*. You need
+This Component consists of *Video Server* and *Video Recording*. You need
 to install the latter only if you plan to record video meetings,
 otherwise you can install *Video Server* without *Video
-Recording*. For this reason we split this Role's installation in two
+Recording*. For this reason we split this Component's installation in two
 parts.
 
-The Video Server Role requires that the :ref:`role-prov-install` be
+The Video Server Component requires that the :ref:`role-prov-install` be
 already installed, because you need to execute a command on the Node
-hosting that Role to configure the Video Server.
+hosting that Component to configure the Video Server.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
 
@@ -32,7 +32,7 @@ hosting that Role to configure the Video Server.
    port associated with the |vs|, respectively, and
    *A_SECRET_PASSWORD* with the value of the variable ``api_secret``
    in file :file:`/etc/janus/janus.jcfg` on the Node installing the
-   Video Server Role, for example::
+   Video Server Component, for example::
 
         api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
 
@@ -66,7 +66,7 @@ hosting that Role to configure the Video Server.
    directions.
 
    A recorded session is temporary stored in directory
-   :file:`/var/lib/videoserver/` on the Node featuring the |vs| Role:
+   :file:`/var/lib/videoserver/` on the Node featuring the |vs| Component:
    make sure that this directory has sufficient free space, otherwise
    recorded videos can not be stored. As soon as the recording session
    terminates, the file will be processed and moved to the Node

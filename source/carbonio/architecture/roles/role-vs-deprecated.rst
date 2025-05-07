@@ -6,11 +6,11 @@ Legacy Videoserver |dprc|
 .. warning:: ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
    are now in |dprc| status and will be removed in the near future.
    If you want to provide chats and video calls to your users, please install
-   the new :ref:`role-vs-wsc-install` and :ref:`role-wsc-install` Roles.
+   the new :ref:`role-vs-wsc-install` and :ref:`role-wsc-install` Components.
 
 Before installing ``carbonio-videoserver`` and ``carbonio-videoserver-recorder``
 on the |product| infrastructure, make sure that you installed
-the :ref:`role-prov-install`, which is a requirement for this Role.
+the :ref:`role-prov-install`, which is a requirement for this Component.
 
 .. note:: ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
    cannot be installed on the same Node as :ref:`role-vs-wsc-install`.
