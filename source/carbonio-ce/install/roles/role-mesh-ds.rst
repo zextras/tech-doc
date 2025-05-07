@@ -6,7 +6,7 @@ Mesh and Directory
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_packages/role-mesh-ds-ce.rst
+.. include:: /_includes/_installation/_packages/component-mesh-ds-ce.rst
 
 Bootstrap |product|
 -------------------

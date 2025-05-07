@@ -113,7 +113,7 @@ Then, we update the list of packages.
 
 We are now ready to install all packages.
 
-.. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+.. include:: /_includes/_installation/_packages/component-wsc-cb.rst
 
 .. _role-wsc-bootstrap:
 

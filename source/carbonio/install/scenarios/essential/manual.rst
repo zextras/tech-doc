@@ -79,19 +79,19 @@ Core Node
 
    .. rubric:: Component Mesh & Directory
 
-   .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
+   .. include:: /_includes/_installation/_packages/component-mesh-ds.rst
 
    .. rubric:: Component Database
 
-   .. include:: /_includes/_installation/_packages/role-db.rst
+   .. include:: /_includes/_installation/_packages/component-db.rst
 
    .. rubric:: Component Monitoring
 
-   .. include:: /_includes/_installation/_packages/role-monit.rst
+   .. include:: /_includes/_installation/_packages/component-monit.rst
 
    .. rubric:: DB Components
 
-   .. include:: /_includes/_installation/_packages/role-db-comp.rst
+   .. include:: /_includes/_installation/_packages/component-db-comp.rst
 
 .. _es1-step4:
 
@@ -293,11 +293,11 @@ MTA/Proxy Node
 
    .. rubric:: Component MTA AV/AS
 
-   .. include:: /_includes/_installation/_packages/role-mta.rst
+   .. include:: /_includes/_installation/_packages/component-mta.rst
 
    .. rubric:: Component Proxy
 
-   .. include:: /_includes/_installation/_packages/role-proxy.rst
+   .. include:: /_includes/_installation/_packages/component-proxy.rst
 
    .. rubric:: Mesh agent
 
@@ -473,7 +473,7 @@ Mailstore Node
 
    .. rubric:: Component Mailstore & Provisioning
 
-   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
+   .. include:: /_includes/_installation/_packages/component-mailstore-provisioning.rst
 
    .. rubric:: Mesh agent
 

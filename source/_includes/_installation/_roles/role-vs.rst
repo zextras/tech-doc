@@ -12,7 +12,7 @@ hosting that Component to configure the Video Server.
 
 .. card:: Video Server
 
-   .. include:: /_includes/_installation/_packages/role-vs.rst
+   .. include:: /_includes/_installation/_packages/component-vs.rst
 
    .. include:: /_includes/_installation/note-janus.rst
 
@@ -46,7 +46,7 @@ hosting that Component to configure the Video Server.
 
 .. card:: Video Recording
 
-   .. include:: /_includes/_installation/_packages/role-vr.rst
+   .. include:: /_includes/_installation/_packages/component-vr.rst
 
    The following manual command is required if the Video Recorder is
    installed at a later point. Make sure to use the same FQDN

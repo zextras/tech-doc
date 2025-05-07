@@ -82,23 +82,23 @@ Core Node
 
    .. rubric:: Component Mesh & Directory
 
-   .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
+   .. include:: /_includes/_installation/_packages/component-mesh-ds.rst
 
    .. rubric:: Component Database
 
-   .. include:: /_includes/_installation/_packages/role-db.rst
+   .. include:: /_includes/_installation/_packages/component-db.rst
 
    .. rubric:: Component Monitoring
 
-   .. include:: /_includes/_installation/_packages/role-monit.rst
+   .. include:: /_includes/_installation/_packages/component-monit.rst
 
    .. rubric:: DB Components
 
-   .. include:: /_includes/_installation/_packages/role-db-comp.rst
+   .. include:: /_includes/_installation/_packages/component-db-comp.rst
 
    .. rubric:: WSC DB Components
 
-   .. include:: /_includes/_installation/_packages/role-db-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-db-wsc.rst
 
 .. _fsm1-step4:
 
@@ -278,11 +278,11 @@ MTA/Proxy Node
 
    .. rubric:: Component MTA AV/AS
 
-   .. include:: /_includes/_installation/_packages/role-mta.rst
+   .. include:: /_includes/_installation/_packages/component-mta.rst
 
    .. rubric:: Component Proxy
 
-   .. include:: /_includes/_installation/_packages/role-proxy.rst
+   .. include:: /_includes/_installation/_packages/component-proxy.rst
 
 .. _fsm2-step4:
 
@@ -430,11 +430,11 @@ Mailstore & Provisioning and Tasks Node
 
    .. rubric:: Component Mailstore & Provisioning
 
-   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
+   .. include:: /_includes/_installation/_packages/component-mailstore-provisioning.rst
 
    .. rubric:: Component Tasks
 
-   .. include:: /_includes/_installation/_packages/role-tasks.rst
+   .. include:: /_includes/_installation/_packages/component-tasks.rst
 
 .. _fsm3-step4:
 
@@ -576,19 +576,19 @@ Collaboration Node
 
    .. rubric:: Component Files
 
-   .. include:: /_includes/_installation/_packages/role-files.rst
+   .. include:: /_includes/_installation/_packages/component-files.rst
 
    .. rubric:: Component Docs & Editor
 
-   .. include:: /_includes/_installation/_packages/role-docs.rst
+   .. include:: /_includes/_installation/_packages/component-docs.rst
 
    .. rubric:: Component Preview
 
-   .. include:: /_includes/_installation/_packages/role-preview.rst
+   .. include:: /_includes/_installation/_packages/component-preview.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
 
 .. _fsm4-step4:
 
@@ -735,11 +735,11 @@ Video Server Node
 
    .. rubric:: Component Video Server & Video Recording (WSC)
 
-   .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-vs-wsc.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
 
 .. _fsm5-step4:
 
