@@ -19,8 +19,8 @@ that are described in :ref:`single-install-manual`.
 
 To correctly run the script, please follow these advices
 
-* Make sure you have already run the script you received after
-  registering |product|, which sets up the |product| repositories
+* Make sure you have read and completed tasks mentioned in
+  :ref:`carbonio-requirements` and :ref:`preliminary`
 * Review the script and the tasks it performs before you run it
 * Run the script as the ``root`` user on the server on which you want
   to install |product|
