@@ -1,4 +1,4 @@
-.. _roles-installation:
+.. _components-installation:
 
 =======================================
 Components Description and Installation

@@ -1,4 +1,4 @@
-.. _roles-installation:
+.. _components-installation:
 
 =======================================
 Components Description and Installation
@@ -29,16 +29,10 @@ consists of one or more packages.
    architectures that precisely correspond to the requirements and
    purposes of your infrastructure.
 
-.. _cb-roles:
+.. _cb-components:
 
 The Components of |product|
 ===========================
-
-We can group the available |product| Components into 3 macro categories:
-
-* **Infrastructure Components**, which are mandatory in any |product| installation
-
-* **Service Components** broaden the functionality provided by |product|
 
 This is the list of roles that make up a |product| installation.
 
