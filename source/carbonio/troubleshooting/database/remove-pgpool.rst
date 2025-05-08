@@ -200,6 +200,6 @@ Final Checks
 ============
 
 To make sure that |mesh| was correctly updated and notified that the
-DB components have been moved to a different node, you can check from
+DB Connectors have been moved to a different node, you can check from
 the :ref:`mesh-gui` whether the services are reportedly running on the
 correct node.

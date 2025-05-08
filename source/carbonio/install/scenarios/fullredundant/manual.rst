@@ -89,11 +89,11 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
    .. include:: /_includes/_installation/_packages/component-db.rst
 
-   .. rubric:: DB Components
+   .. rubric:: DB Connectors
 
    .. include:: /_includes/_installation/_packages/component-db-comp.rst
 
-   .. rubric:: WSC DB Components
+   .. rubric:: WSC DB Connectors
 
    .. include:: /_includes/_installation/_packages/component-db-wsc.rst
 

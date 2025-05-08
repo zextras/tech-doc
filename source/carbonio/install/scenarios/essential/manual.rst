@@ -89,7 +89,7 @@ Core Node
 
    .. include:: /_includes/_installation/_packages/component-monit.rst
 
-   .. rubric:: DB Components
+   .. rubric:: DB Connectors
 
    .. include:: /_includes/_installation/_packages/component-db-comp.rst
 

@@ -10,33 +10,6 @@ Installation of PostgreSQL
 
 .. include:: /_includes/_installation/pg.rst
 
-.. _component-wsc-db-install:
-
-Database Components of |wsc|
-----------------------------
-
-If you plan to install the :ref:`component-wsc-install` Component, you need to
-install the following packages, which constitute the DB portion of
-that Component, then follow the instructions to complete its installation
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      .. code:: console
-
-         # apt install carbonio-ws-collaboration-db \
-           carbonio-message-dispatcher-db carbonio-notification-push-db 
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      .. code:: console
-
-         # dnf install carbonio-ws-collaboration-db \
-           carbonio-message-dispatcher-db carbonio-notification-push-db 
-
 Installation of other DB Components
 -----------------------------------
 
@@ -60,6 +33,33 @@ proper working of |product|
 
          # dnf install carbonio-files-db carbonio-mailbox-db \
            carbonio-docs-connector-db carbonio-tasks-db
+
+.. _connectors-wsc-db-install:
+
+Database Components of |wsc|
+----------------------------
+
+If you plan to install the :ref:`component-wsc-install` Component, you need to
+install the following packages, which constitute the DB portion of
+that Component, then follow the instructions to complete its installation
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. code:: console
+
+         # apt install carbonio-ws-collaboration-db \
+           carbonio-message-dispatcher-db carbonio-notification-push-db
+
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. code:: console
+
+         # dnf install carbonio-ws-collaboration-db \
+           carbonio-message-dispatcher-db carbonio-notification-push-db
 
 Pending setups
 --------------
