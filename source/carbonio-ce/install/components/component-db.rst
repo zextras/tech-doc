@@ -12,10 +12,8 @@ Installation of PostgreSQL
 
 .. include:: /_includes/_installation/pg-ce.rst
 
-Installation of |product| databases
------------------------------------
-
-
+Installation of |product| DB Connectors
+---------------------------------------
 
 .. include:: /_includes/_installation/_components/component-db-connector-ce.rst
 
@@ -38,7 +36,7 @@ Join |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
-Pending setups
+Pending Setups
 --------------
 
 .. include:: /_includes/_installation/pset.rst
