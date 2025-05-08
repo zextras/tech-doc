@@ -4,7 +4,7 @@ otherwise you can install *Video Server* without *Video
 Recording*. For this reason we split this Component's installation in two
 parts.
 
-The Video Server Component requires that the :ref:`role-prov-install` be
+The Video Server Component requires that the :ref:`component-prov-install` be
 already installed, because you need to execute a command on the Node
 hosting that Component to configure the Video Server.
 
@@ -20,7 +20,7 @@ hosting that Component to configure the Video Server.
 
    During the installation, a command similar to the one below is
    displayed. Copy it and execute on the Node on which the
-   :ref:`role-prov-install` is installed.
+   :ref:`component-prov-install` is installed.
 
    .. code:: console
 
@@ -70,7 +70,7 @@ hosting that Component to configure the Video Server.
    make sure that this directory has sufficient free space, otherwise
    recorded videos can not be stored. As soon as the recording session
    terminates, the file will be processed and moved to the Node
-   featuring the :ref:`role-prov-install`.
+   featuring the :ref:`component-prov-install`.
 
    .. hint:: You can mount on that location a dedicated disk or
       partition and keep it monitored for space usage.

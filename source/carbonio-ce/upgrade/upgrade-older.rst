@@ -33,7 +33,7 @@ the upgrade:
      :ref:`pg-upgrade` for directions.
 
 * You need to carry out the procedure on **each Node**, starting with
-  the one featuring the :ref:`role-mesh-install`.
+  the one featuring the :ref:`component-mesh-install`.
 
 * During the upgrade of |product|, you might need to carry out manual
   tasks, for example because you need to modify some configuration

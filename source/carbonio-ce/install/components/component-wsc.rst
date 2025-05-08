@@ -1,4 +1,4 @@
-.. _role-wsc-install:
+.. _component-wsc-install:
 
 |wsc|
 =====

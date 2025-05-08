@@ -1,4 +1,4 @@
-.. _role-db-install:
+.. _component-db-install:
 
 Database
 ========
@@ -10,12 +10,12 @@ Installation of PostgreSQL
 
 .. include:: /_includes/_installation/pg.rst
 
-.. _role-wsc-db-install:
+.. _component-wsc-db-install:
 
 Database Components of |wsc|
 ----------------------------
 
-If you plan to install the :ref:`role-wsc-install` Component, you need to
+If you plan to install the :ref:`component-wsc-install` Component, you need to
 install the following packages, which constitute the DB portion of
 that Component, then follow the instructions to complete its installation
 
@@ -75,7 +75,7 @@ administrator user created previously.
 
 .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-If you plan to install also the :ref:`role-wsc-install`, execute also
+If you plan to install also the :ref:`component-wsc-install`, execute also
 the following commands.
 
 .. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst

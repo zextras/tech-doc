@@ -3,7 +3,7 @@
 Authentication Methods
 ======================
 
-The :ref:`role-mesh-install` Component, which installs an *OpenLDAP
+The :ref:`component-mesh-install` Component, which installs an *OpenLDAP
 service*, is employed by |product| for user authentication and account
 management.
 

@@ -53,7 +53,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-mesh-install
+      :link: component-mesh-install
 
       Type of Component: Infrastructure
 
@@ -69,7 +69,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-db-install
+      :link: component-db-install
 
       Type of Component: Infrastructure
 
@@ -87,7 +87,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-mesh-only-install
+      :link: component-mesh-only-install
 
       Type of Component: Infrastructure
 
@@ -100,7 +100,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-proxy-install
+      :link: component-proxy-install
 
       Type of Component: Infrastructure
 
@@ -121,7 +121,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-mta-install
+      :link: component-mta-install
 
       Type of Component: Infrastructure
 
@@ -134,7 +134,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-prov-install
+      :link: component-prov-install
 
       Type of Component: Service role
 
@@ -147,7 +147,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-files-install
+      :link: component-files-install
 
       Type of Component: Service role
 
@@ -160,7 +160,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-docs-install
+      :link: component-docs-install
 
       Type of Component: Service role
 
@@ -174,7 +174,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-preview-install
+      :link: component-preview-install
 
       Type of Component: Service role
 
@@ -187,7 +187,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-tasks-install
+      :link: component-tasks-install
 
       Type of Component: Service role
 
@@ -200,7 +200,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-wsc-install
+      :link: component-wsc-install
 
       Type of Component: Service role
 
@@ -216,7 +216,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-vs-wsc-install
+      :link: component-vs-wsc-install
 
       Type of Component: Service role
 
@@ -230,7 +230,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-monit-install
+      :link: component-monit-install
 
       Type of Component: Service role
 
@@ -244,7 +244,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 6
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-es-install
+      :link: component-es-install
 
       Type of Component: Service role
 
@@ -257,7 +257,7 @@ This is the list of roles that make up a |product| installation.
       :columns: 12
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
-      :link: role-ds-replica-install
+      :link: component-ds-replica-install
 
       Type of Component: Service role
 
@@ -325,8 +325,8 @@ installation, please review these important remarks:
    Section :ref:`web-access`
 
 * You **must** start with the installation of the
-  :ref:`role-mesh-install` Component, followed by the
-  :ref:`role-db-install` Component. Then you can proceed with the other
+  :ref:`component-mesh-install` Component, followed by the
+  :ref:`component-db-install` Component. Then you can proceed with the other
   infrastructure Components and finally with all other Components.
 
 .. toctree::

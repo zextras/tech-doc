@@ -1,4 +1,4 @@
-.. _role-wsc-install:
+.. _component-wsc-install:
 
 |wsc|
 =====
@@ -9,7 +9,7 @@ and recording functionalities to |product|.
 If you plan to install this Component in an existing |product|
 infrastructure, please read carefully Section :ref:`wsc-install`.
 
-.. _role-wsc-limits:
+.. _component-wsc-limits:
 
 Limitations
 -----------
@@ -21,7 +21,7 @@ the installation of the |wsc| Component
 * Data from the legacy Chats module can not be exported to new |wsc|
   Component
 
-.. _role-wsc-req:
+.. _component-wsc-req:
 
 Requirements
 ------------
@@ -35,7 +35,7 @@ installing it:
 
 * The ``carbonio-user-management`` package must be installed in the
   |product| infrastructure (it is part on the
-  :ref:`role-proxy-install` Component)
+  :ref:`component-proxy-install` Component)
 
 * |cwsc| requires that some ports be forwarded from the Internet to
   the |vs| and Proxy Nodes, according to the following table:
@@ -67,38 +67,38 @@ into account the following points:
   on other Nodes before starting the |wsc| installation.
 
   #.  Install the database components on the **Database Node**: please
-      follow the instructions to Section :ref:`role-wsc-db-install`
+      follow the instructions to Section :ref:`component-wsc-db-install`
       remembering to bootstrap the Message Dispatcher and the |wsc| databases
 
   #. Install package :file:`carbonio-ws-collaboration-ui` on the
-     :ref:`role-proxy-install` Node
+     :ref:`component-proxy-install` Node
 
   #. Install package :file:`carbonio-message-broker` on the
-     :ref:`role-mesh-install` Node
+     :ref:`component-mesh-install` Node
 
-  #. Install the :ref:`role-vs-wsc-install` Component on a dedicated Node
-     or in any Node that does not feature :ref:`role-vs-install`,
+  #. Install the :ref:`component-vs-wsc-install` Component on a dedicated Node
+     or in any Node that does not feature :ref:`component-vs-install`,
      because they are not compatible
 
 Now, depending on how you plan to install |wsc|, the procedure
 slightly changes.
 
 If you plan to install |wsc| on a dedicated Node, make sure that you
-install :ref:`role-vs-wsc-install` on another dedicated Node, then
+install :ref:`component-vs-wsc-install` on another dedicated Node, then
 follow the installation procedure as it described below, starting from
-the next section, :ref:`role-wsc-packages`.
+the next section, :ref:`component-wsc-packages`.
 
 If you plan to install |wsc| on an existing Node, then skip Sections
-:ref:`role-wsc-bootstrap` and :ref:`role-wsc-mesh`.
+:ref:`component-wsc-bootstrap` and :ref:`component-wsc-mesh`.
 
-.. _role-wsc-packages:
+.. _component-wsc-packages:
 
 Install Packages
 ----------------
 
 This section presents the procedure to install and configure all the
 packages and the Node on which to install them. Please remember to
-read section :ref:`role-wsc-req` above before starting the actual
+read section :ref:`component-wsc-req` above before starting the actual
 package installation.
 
 First, we install PostgreSQL repository.
@@ -115,7 +115,7 @@ We are now ready to install all packages.
 
 .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
 
-.. _role-wsc-bootstrap:
+.. _component-wsc-bootstrap:
 
 Bootstrap |product|
 -------------------
@@ -130,7 +130,7 @@ retrieve from the first Mesh & Directory node.
 * ``Ldap Admin password`` is obtained from the first Mesh and
   Directory Node (:ref:`ldap-admin-password <get-ldap-password>`)
 
-.. _role-wsc-mesh:
+.. _component-wsc-mesh:
 
 Join |mesh|
 -----------

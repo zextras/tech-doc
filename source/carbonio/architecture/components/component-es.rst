@@ -1,4 +1,4 @@
-.. _role-es-install:
+.. _component-es-install:
 
 Event Streaming
 ===============

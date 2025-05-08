@@ -1,10 +1,10 @@
-.. _role-vs-wsc-install:
+.. _component-vs-wsc-install:
 
 Video Server & Video Recording
 ==============================
 
 Before installing this Component on the |product| infrastructure, make sure
-that you installed the :ref:`role-prov-install`, which is a
+that you installed the :ref:`component-prov-install`, which is a
 requirement for this Component.
 
 .. note:: If you already have installed on your infrastructure the
@@ -57,7 +57,7 @@ A recorded session is temporary stored in directory
 make sure that this directory has sufficient free space, otherwise
 recorded videos can not be stored. As soon as the recording session
 terminates, the file will be processed and moved to the Node featuring
-the :ref:`role-prov-install`.
+the :ref:`component-prov-install`.
 
 .. hint:: You can mount on that location a dedicated disk or
    partition and keep it monitored for space usage.

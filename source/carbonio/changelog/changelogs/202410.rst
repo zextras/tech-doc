@@ -102,7 +102,7 @@ implemented:
   `Manual Upgrade`. Introductory text has also been changed.
 * Added a note in Step 4. of the `Manual Upgrade` to make sure
   that the :file:`carbonio-message-broker` is installed on the
-  :ref:`role-mesh-install` Node after the upgrade
+  :ref:`component-mesh-install` Node after the upgrade
 * Clarified on which Node to execute the CLI command to :doc:`activate
   Carbonio </postinstall/license>`
 
@@ -178,7 +178,7 @@ The package that enables video recording in WSC is called :file:`carbonio-videor
 In addition, there is no longer a need for cluster addition tasks to
 be performed with the :command:`carbonio` commands.
 
-See :ref:`role-vs-wsc-install` for the documentation, :pr:`733` for
+See :ref:`component-vs-wsc-install` for the documentation, :pr:`733` for
 the source code.
 
 
@@ -207,7 +207,7 @@ A command in the backup export task was changed and the export path was fixed
 
 There was a typo in the RHEL installation command that prevented copying the whole command.
 
-See :ref:`role-mesh-install` for the documentation, :pr:`760` for the source code.
+See :ref:`component-mesh-install` for the documentation, :pr:`760` for the source code.
 
 *****
 

@@ -6,7 +6,7 @@ Local LDAP
 
 The default authentication method is local LDAP. This method does not
 require any specific configuration other than the installation of the
-:ref:`role-mesh-install` Component according to the procedure described in
+:ref:`component-mesh-install` Component according to the procedure described in
 the documentation.
 
 .. _auth-ext-ldap:

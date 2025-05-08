@@ -1,4 +1,4 @@
-.. _role-files-install:
+.. _component-files-install:
 
 Files
 =====

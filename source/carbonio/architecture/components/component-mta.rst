@@ -1,4 +1,4 @@
-.. _role-mta-install:
+.. _component-mta-install:
 
 MTA AV/AS
 =========

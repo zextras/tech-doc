@@ -56,7 +56,7 @@ Update Directory Replica Credentials
 ------------------------------------
 
 In case the |product| infrastructure includes the
-:ref:`role-ds-replica-install` Component, execute the following commands on
+:ref:`component-ds-replica-install` Component, execute the following commands on
 each Node featuring the Component.
 
 Define the password, which must be the same as the one on the

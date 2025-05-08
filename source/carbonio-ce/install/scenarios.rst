@@ -12,7 +12,7 @@ This section currently features two installation scenarios: a
 Scenario's description, while in the *Multi-Server*, each Component must be
 installed manually.
 
-If you plan to install and use the :ref:`role-vs-install`, you should
+If you plan to install and use the :ref:`component-vs-install`, you should
 consider deploying the *Multi-Server* scenario, because the |vs|
 requires a considerable amount of resources.
 

@@ -12,7 +12,7 @@ Legacy Videoserver |dprc|
    packages in an existent |product| infrastructure.
 
    These instructions do not apply to the new
-   :ref:`role-vs-wsc-install`, which requires no configuration.
+   :ref:`component-vs-wsc-install`, which requires no configuration.
 
 The |vs| is a WebRTC stream aggregator that improves |team|\ 's
 performance by merging and decoding/re-encoding all streams in a
@@ -343,4 +343,4 @@ Once done, remove the package
          # dnf remove service-discover-agent carbonio-videoserver
 
 Now the |vs| is completely removed from the node and you can install
-it on a different Node, using the corresponding :term:`Component` :ref:`installation procedure <role-vs-install>`.
+it on a different Node, using the corresponding :term:`Component` :ref:`installation procedure <component-vs-install>`.

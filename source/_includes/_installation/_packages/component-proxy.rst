@@ -44,5 +44,5 @@
 
 .. note:: The :file:`carbonio-chats-ui` package is needed by the
    |dprc| Chats Component, which has been superseded by the new
-   :ref:`role-wsc-install` Component. Hence, it is only needed to keep the
+   :ref:`component-wsc-install` Component. Hence, it is only needed to keep the
    old Chats working.

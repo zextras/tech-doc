@@ -1,4 +1,4 @@
-.. _role-proxy-install:
+.. _component-proxy-install:
 
 Proxy
 =====

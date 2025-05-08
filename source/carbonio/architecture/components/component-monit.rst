@@ -1,4 +1,4 @@
-.. _role-monit-install:
+.. _component-monit-install:
 
 Monitoring
 ==========

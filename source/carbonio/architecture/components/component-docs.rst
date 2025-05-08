@@ -1,5 +1,5 @@
 
-.. _role-docs-install:
+.. _component-docs-install:
 
 Docs & Editor
 ===============

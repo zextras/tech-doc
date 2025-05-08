@@ -686,7 +686,7 @@ Preliminaries
 
 * All commands mentioned in this procedure must be executed on the
   **Carbonio B** infrastructure, and precisely on the Node on which
-  the :ref:`role-prov-install` Component is installed
+  the :ref:`component-prov-install` Component is installed
 
 Step 1: Create Directories
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

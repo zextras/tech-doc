@@ -1,4 +1,4 @@
-.. _role-tasks-install:
+.. _component-tasks-install:
 
 =======
  Tasks

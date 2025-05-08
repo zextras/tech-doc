@@ -1,4 +1,4 @@
-.. _role-mesh-install:
+.. _component-mesh-install:
 
 Mesh & Directory
 ================

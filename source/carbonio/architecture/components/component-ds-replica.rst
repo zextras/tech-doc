@@ -1,4 +1,4 @@
-.. _role-ds-replica-install:
+.. _component-ds-replica-install:
 
 Directory Replica
 =================

@@ -1,4 +1,4 @@
-.. _role-prov-install:
+.. _component-prov-install:
 
 Mailstore & Provisioning
 ========================

@@ -31,11 +31,11 @@ Components Installation
 
       Components installed:
 
-      * :ref:`role-mesh-install`
+      * :ref:`component-mesh-install`
               
-      * :ref:`role-db-install`
+      * :ref:`component-db-install`
         
-      * :ref:`role-monit-install`
+      * :ref:`component-monit-install`
 
    .. grid-item-card:: Node 2
       :columns: 12
@@ -46,9 +46,9 @@ Components Installation
 
       Components installed:
 
-      * :ref:`role-mta-install`
+      * :ref:`component-mta-install`
               
-      * :ref:`role-proxy-install`
+      * :ref:`component-proxy-install`
 
    .. grid-item-card:: Node 3
       :columns: 12
@@ -59,9 +59,9 @@ Components Installation
 
       Components installed:
 
-      * :ref:`role-prov-install`
+      * :ref:`component-prov-install`
               
-      * :ref:`role-tasks-install`
+      * :ref:`component-tasks-install`
 
    .. grid-item-card:: Node 4
       :columns: 12
@@ -72,11 +72,11 @@ Components Installation
 
       Components installed:
 
-      * :ref:`role-files-install`
+      * :ref:`component-files-install`
               
-      * :ref:`role-docs-install`
+      * :ref:`component-docs-install`
         
-      * :ref:`role-preview-install`
+      * :ref:`component-preview-install`
 
    .. grid-item-card:: Node 5
       :columns: 12
@@ -87,8 +87,8 @@ Components Installation
 
       Components installed:
               
-      * :ref:`role-wsc-install`
-      * :ref:`role-vs-install`
+      * :ref:`component-wsc-install`
+      * :ref:`component-vs-install`
 
 
         

@@ -134,7 +134,7 @@ as the |ru|:
 WSC Optimisations
 =================
 
-Once the :ref:`role-wsc-install` is operational, some tweaking can be
+Once the :ref:`component-wsc-install` is operational, some tweaking can be
 applied to its configuration to improve performances.
 
 The remainder of this page contains a few tables that list the *Key

@@ -1,4 +1,4 @@
-.. _role-db-install:
+.. _component-db-install:
 
 Database
 ========

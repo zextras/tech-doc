@@ -1,4 +1,4 @@
-.. _role-mesh-only-install:
+.. _component-mesh-only-install:
 
 Mesh
 ====

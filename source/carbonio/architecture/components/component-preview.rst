@@ -1,4 +1,4 @@
-.. _role-preview-install:
+.. _component-preview-install:
 
 Preview
 =======

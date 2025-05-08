@@ -24,7 +24,7 @@ users.
       please refer to Section :ref:`disclaimer-cli`.
 
 Once you change any of the options, restart amavis as the ``zextras``
-user on every Node featuring the :ref:`MTA role <role-mta-install>`
+user on every Node featuring the :ref:`MTA role <component-mta-install>`
 
 .. code:: console
 

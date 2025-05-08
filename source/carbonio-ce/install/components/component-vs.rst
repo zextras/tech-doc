@@ -1,10 +1,10 @@
-.. _role-vs-install:
+.. _component-vs-install:
 
 Video Server
 ============
 
 Before installing this Component on the |product| infrastructure, make sure
-that you installed the :ref:`role-prov-install`, because this role is
+that you installed the :ref:`component-prov-install`, because this role is
 required by the |vs|.
 
 Install Packages
