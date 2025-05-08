@@ -49,8 +49,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-mesh-install
 
-      Type of Component: Infrastructure
-
       Packages:
 
       * service-discover-server
@@ -64,8 +62,6 @@ This is the list of roles that make up a |product| installation.
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: component-db-install
-
-      Type of Component: Infrastructure
 
       Packages:
 
@@ -83,8 +79,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-mesh-only-install
 
-      Type of Component: Infrastructure
-
       Packages:
 
       * service-discover-server
@@ -95,8 +89,6 @@ This is the list of roles that make up a |product| installation.
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: component-proxy-install
-
-      Type of Component: Infrastructure
 
       Packages:
 
@@ -117,8 +109,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-mta-install
 
-      Type of Component: Infrastructure
-
       Packages:
 
       * carbonio-mta
@@ -129,8 +119,6 @@ This is the list of roles that make up a |product| installation.
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: component-prov-install
-
-      Type of Component: Service role
 
       Packages:
 
@@ -143,8 +131,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-files-install
 
-      Type of Component: Service role
-
       Packages:
 
       * carbonio-files
@@ -155,8 +141,6 @@ This is the list of roles that make up a |product| installation.
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: component-docs-install
-
-      Type of Component: Service role
 
       Packages:
 
@@ -170,8 +154,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-preview-install
 
-      Type of Component: Service role
-
       Packages:
 
       * carbonio-preview
@@ -183,8 +165,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-tasks-install
 
-      Type of Component: Service role
-
       Packages:
 
       * carbonio-tasks
@@ -195,8 +175,6 @@ This is the list of roles that make up a |product| installation.
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: component-wsc-install
-
-      Type of Component: Service role
 
       Packages:
 
@@ -212,8 +190,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-vs-wsc-install
 
-      Type of Component: Service role
-
       Packages:
 
       * carbonio-videoserver-advanced
@@ -225,8 +201,6 @@ This is the list of roles that make up a |product| installation.
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: component-monit-install
-
-      Type of Component: Service role
 
       Packages:
 
@@ -240,8 +214,6 @@ This is the list of roles that make up a |product| installation.
       :link-type: ref
       :link: component-es-install
 
-      Type of Component: Service role
-
       Packages:
 
       * ZooKeeper
@@ -252,8 +224,6 @@ This is the list of roles that make up a |product| installation.
       :class-title: sd-font-weight-bold sd-fs-5
       :link-type: ref
       :link: component-ds-replica-install
-
-      Type of Component: Service role
 
       Packages:
 
@@ -266,8 +236,6 @@ This is the list of roles that make up a |product| installation.
    .. grid-item-card:: Video Server |dprc|
       :columns: 8
       :margin: 5 auto auto auto
-
-      Type of Component: Service role
 
       Packages:
 
