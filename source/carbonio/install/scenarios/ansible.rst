@@ -4,8 +4,8 @@
  Prepare the Ansible Environment
 =================================
 
-Section :ref:`components-installation` reviews all the roles that make up
-|product| and the tasks required to successfully complete the
+Section :ref:`components-installation` reviews all the Components that
+make up |product| and the tasks required to successfully complete the
 installation.
 
 To make the installation process easier and faster, this section

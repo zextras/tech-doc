@@ -230,7 +230,7 @@ Changes in the source code can be found in :pr:`932`.
 .. rubric:: 202501-1036 Fixed avdb updater service
 
 A step necessary for its installation and the command for Red Hat have been added.
-The package has been added to the Proxy role
+The package has been added to the Proxy Component
 
 .. rubric:: 202501-1031 Wrong path of mailbox.log file
 
