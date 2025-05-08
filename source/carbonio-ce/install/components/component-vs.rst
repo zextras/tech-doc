@@ -4,7 +4,7 @@ Video Server
 ============
 
 Before installing this Component on the |product| infrastructure, make sure
-that you installed the :ref:`component-prov-install`, because this role is
+that you installed the :ref:`component-prov-install`, because this Component is
 required by the |vs|.
 
 Install Packages

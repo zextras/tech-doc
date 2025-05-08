@@ -28,11 +28,11 @@ Pending setups
 Retrieve the LDAP Admin Password
 --------------------------------
 
-Once the installation of this role is complete, you will be able to
+Once the installation of this Component is complete, you will be able to
 obtain the password by running the following command:
 
 .. code:: console
 
    # su - zextras -c "zmlocalconfig -s | grep ldap_password"
 
-The password thus obtained will be necessary to install all other roles.
+The password thus obtained will be necessary to install all other Components.

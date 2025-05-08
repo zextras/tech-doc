@@ -20,19 +20,19 @@ consists of one or more packages.
 
 .. card:: The modular nature of |product|
 
-   As we will see, it's possible to install a single role on a
-   dedicated node or group multiple roles according to affinity rules.
+   As we will see, it's possible to install a single Component on a
+   dedicated node or group multiple Components according to affinity rules.
 
    Although this is not a suggested or supported scenario, it would be
-   technically possible to install almost all |product| roles on a
+   technically possible to install almost all |product| Components on a
    single virtual machine.
 
-   The possibility of installation by roles allows you to design
+   The possibility of installation by Components allows you to design
    architectures that precisely correspond to the requirements and
    purposes of your infrastructure.
 
-The roles of |product|
-======================
+The Components of |product|
+===========================
 
 We can group the available |product| Components into 3 macro categories:
 
@@ -40,7 +40,7 @@ We can group the available |product| Components into 3 macro categories:
 
 * **Service Components** broaden the functionality provided by |product|
 
-This is the list of roles that make up a |product| installation.
+This is the list of Components that make up a |product| installation.
 
 .. note:: Postgres, Grafana, Zookeper, and Kafka are third-party
    software that are installed from their respective official

@@ -45,7 +45,7 @@ Bootstrap |carbonio| Databases
 ------------------------------
 
 You can use the password of the Postgres user ``carbonio_adm`` that
-you defined when installing the *Database* role or any other
+you defined when installing the *Database* Component or any other
 administrator user created previously.
 
 You need to run the commands only if the corresponding Component is

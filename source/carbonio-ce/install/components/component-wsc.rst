@@ -47,7 +47,7 @@ Initialise the message dispatcher
 Enable the |wsc| UI
 -------------------
 
-The |wsc| role is disabled by default, you can enable it either from
+The |wsc| Component is disabled by default, you can enable it either from
 the |adminui| at COS level (please refer to Section
 :ref:`cos-features`), or from the CLI at both COS and Account level by
 running as the ``zextras`` user the command

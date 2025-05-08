@@ -183,7 +183,7 @@ Step 8: Bootstrap |file| Databases
 Step 9: Enable |wsc| UI
 -----------------------
 
-The |wsc| role is disabled by default, you can enable it either from
+The |wsc| Component is disabled by default, you can enable it either from
 the |adminui| or from the command line by running as the ``zextras``
 user the command
 
