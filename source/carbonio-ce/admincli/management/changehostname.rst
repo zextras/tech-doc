@@ -83,13 +83,6 @@ on each Node.
    :ref:`hostname-no-change` on Nodes 3 and 4, and procedure
    :ref:`hostname-other` on Nodes 2 and 5.
 
-.. card:: Example D, setup with *Directory Replica* Component
-
-   If one or more *Directory Replica* Components are installed within your
-   infrastructure, there are slight changes to the procedures
-   described below. Please refer to Section :ref:`hostname-replica`
-   for more information.
-
 .. _hostname-ds:
 
 Change Hostname to Mesh & Directory Node
@@ -128,49 +121,3 @@ Node) has changed hostname. This can be achieved by executing the
 following commands, as the |zu|.
 
 .. include:: /_includes/_admincli/keep-hostname.rst
-
-.. _hostname-replica:
-
-Tasks for the Directory Replica Component
-------------------------------------
-
-If your infrastructure features a **Directory Replica**, you need to
-carry out these tasks **on all Nodes**. Depending if you change
-hostname on the *Mesh & Directory* Node only or also on the Replica,
-the commands to execute slightly differ.
-
-#. If you change hostname  **only the Mesh & Directory**, execute
-
-   .. code:: console
-
-      zextras$ carbonio prov ms <hostname> zimbraLdapMasterURL ldap://node1.example.com:389
-
-   Replace ``<hostname>`` with the actual hostname of the Node on
-   which you are executing the command.
-
-#. If you change also the hostname of the **Directory Replica**,
-   assuming its new hostname is ``replica1.example.com`` execute also
-
-   .. code:: console
-
-      zextras$ carbonio prov ms <hostname> zimbraLdapURL ldap://replica1.example.com:389
-
-   Replace ``<hostname>`` with the actual hostname of the Node on
-   which you are executing the command.
-
-In both cases, when you executed the commands, restart all services
-
-.. card:: Attributes ``zimbraLdapMasterURL`` and ``zimbraLdapURL``
-
-   * ``zimbraLdapMasterURL`` ensures that write operations are
-     consistently directed to the correct Directory Server, preserving
-     data integrity
-
-   * ``zimbraLdapURL`` ensures that the system can still authenticate
-     users and access LDAP data even if one of the replicas is down.
-
-     
-   In a Single-Server |product| setup, these values are typically the
-   same. In a Multi-Server setup with LDAP replication, they will
-   differ, with ``zimbraLdapURL`` listing all replicas and
-   ``zimbraLdapMasterURL`` pointing only to the master.
