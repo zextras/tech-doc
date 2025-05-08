@@ -30,7 +30,7 @@ choice. Remember to give the inventory file a meaningful name.
 
 The :file:`carbonio_inventory` file contains various sections, one for
 each of the available Components. You need to edit the file and provide the
-FQDN of the Node on which the role will be installed. Suppose that you
+FQDN of the Node on which the Component will be installed. Suppose that you
 install on 5 nodes, whose FQDNs are ``srv1.example.com`` to
 ``srv5.example.com``, an excerpt of the file might look like::
 

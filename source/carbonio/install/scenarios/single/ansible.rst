@@ -35,7 +35,7 @@ infrastructure.
    
    .. literalinclude:: /playbook/carbonio-inventory-single
 
-.. note:: To add any of the roles listed as optional, simply remove
+.. note:: To add any of the Components listed as optional, simply remove
    the comment (#) indicating the correct name of the server on which
    to install the Component, based on the directions provided.
 

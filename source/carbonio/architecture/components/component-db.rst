@@ -70,8 +70,8 @@ Bootstrap Databases
 -------------------
 
 You can use the password of the Postgres user ``carbonio_adm`` that
-you defined during the  *Database* role or any other
-administrator user created previously.
+you defined during the *Database* Component's installation, or of any
+other administrator user created previously.
 
 .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 

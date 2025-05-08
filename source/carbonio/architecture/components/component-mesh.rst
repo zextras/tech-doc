@@ -5,7 +5,7 @@ Mesh
 
 This Component should be used only when deploying multiple |Mesh| servers
 in the |product| infrastructure and *only* for additional Nodes (the
-Mesh & Directory role should be used on the first Node on which a
+Mesh & Directory Component should be used on the first Node on which a
 |Mesh| server is deployed).
 
 Install Packages
