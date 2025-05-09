@@ -103,7 +103,7 @@ install |product|.
    procedure described in Section :ref:`locale-settings` to modify the
    configuration.
 
-.. note:: Only |product| Roles should be installed on a |product|
+.. note:: Only |product| Components should be installed on a |product|
    Node. Installing additional software is unsupported and may cause
    conflicts that could compromise |product|’s correct
    functioning. For example, software like Webmin, Cockpit, or Postfix
@@ -142,7 +142,7 @@ Additional Requirements
   values include: the IP address (public or private) of a node or the
   password of a database user.
 
-* Depending on the Roles installed on each Node, you need to open in
+* Depending on the Components installed on each Node, you need to open in
   your firewall the ports listed in :ref:`fw-ports` for all the
   services you will offer. In case there are problems in the internal
   network communication, try to disable the firewall and try again: if
@@ -151,8 +151,8 @@ Additional Requirements
 
 * If none of the nodes is exposed to the Internet, you need to forward
   two ports from the public IP: port **25/smtp** to the Node featuring
-  the MTA Role to be able to receive mail, and port **443/https** to
-  the node installing the Proxy Role to allow users to access their
+  the MTA Component to be able to receive mail, and port **443/https** to
+  the node installing the Proxy Component to allow users to access their
   webmail from a remote location
 
 * If you plan to enable other protocols (e.g., POP, IMAP) you should
@@ -185,19 +185,19 @@ The Nodes should be able to communicate with the other Nodes through a
 dedicated network. The ports listed in the *Internal Connections* must
 be forwarded on **all** nodes, while those in the *External
 Connections* should be forwarded only on the node on which the
-corresponding Role is installed. For example, port 443 should be
-forwarded only on the node hosting the **Proxy** Role.
+corresponding Component is installed. For example, port 443 should be
+forwarded only on the node hosting the **Proxy** Component.
 
 Furthermore, ports in Internal and External connections are grouped
-according to the Role that require them, so all ports listed in a
-table must be forwarded only on the Node on which the Role is installed.
+according to the Component that require them, so all ports listed in a
+table must be forwarded only on the Node on which the Component is installed.
 
 .. card:: Outgoing Traffic
 
    Carbonio requires no specific ports to communicate with the
    Internet (outgoing traffic), unless you want push notifications to
    be sent to mobile devices. In this case, the Node installing the
-   Mailstore & Provisioning Role must be able to communicate with the
+   Mailstore & Provisioning Component must be able to communicate with the
    URL **https://notifications.zextras.com/firebase/** on port **443**.
 
 .. _fw-external:
@@ -205,10 +205,10 @@ table must be forwarded only on the Node on which the Role is installed.
 External Connections
 ++++++++++++++++++++
 
-These ports must be forwarded to the Node installing each Role, to
+These ports must be forwarded to the Node installing each Component, to
 allow communication with remote services on the Internet.
 
-.. card:: MTA Role
+.. card:: MTA Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -223,7 +223,7 @@ allow communication with remote services on the Internet.
       preferably only accessible from a VPN tunnel, if possible, to
       reduce the attack surface.
 
-.. card:: Proxy Role
+.. card:: Proxy Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -237,13 +237,13 @@ allow communication with remote services on the Internet.
       "995", "TCP", "external POP3 secure access"
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
-      "5222", "TCP", "Message Dispatcher, required by the |wsc| Role"
+      "5222", "TCP", "Message Dispatcher, required by the |wsc| Component"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
 
-.. card:: |vs| Role
+.. card:: |vs| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -258,7 +258,7 @@ Internal Connections
 ++++++++++++++++++++
 
 Traffic to these ports must be allowed on the Nodes where the
-corresponding Role is installed, for a proper communication among
+corresponding Component is installed, for a proper communication among
 |product|'s internal services.
 
 .. card:: Every Node
@@ -276,7 +276,7 @@ corresponding Role is installed, for a proper communication among
       used by |mesh| for message broadcasting and membership
       management.
 
-.. card:: Postgres Role
+.. card:: Postgres Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -285,7 +285,7 @@ corresponding Role is installed, for a proper communication among
       "5432", "TCP", "Postgres access"
       "9187", "TCP", "Postgres data export to |monit|"
 
-.. card:: Directory Server Role
+.. card:: Directory Server Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -295,7 +295,7 @@ corresponding Role is installed, for a proper communication among
       "636", "TCP", "secure LDAP connection"
       "9330", "TCP", "LDAP data export to |monit|"
 
-.. card:: MTA Role
+.. card:: MTA Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -308,7 +308,7 @@ corresponding Role is installed, for a proper communication among
       "7026", "TCP", "bind address of the Milter service"
       "9810", "TCP", "MTA data export to |monit|"
 
-.. card:: Mailstore & Provisioning Role
+.. card:: Mailstore & Provisioning Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -328,7 +328,7 @@ corresponding Role is installed, for a proper communication among
       "8743", "TCP", "internal HTTPS services, advanced module"
       "9330", "TCP", "MySQL data export to |monit|"
 
-.. card:: |vs| Role
+.. card:: |vs| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -337,7 +337,7 @@ corresponding Role is installed, for a proper communication among
       "8188", "TCP", "Internal connection"
       "8090", "TCP", "Servlet communication"
 
-.. card:: Proxy Role
+.. card:: Proxy Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -346,7 +346,7 @@ corresponding Role is installed, for a proper communication among
       "9113", "TCP", "nginx data export to |monit|"
       "11211", "TCP", "memcached access"
 
-.. card:: |mesh| Role
+.. card:: |mesh| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -364,7 +364,7 @@ corresponding Role is installed, for a proper communication among
       used by |mesh| for message broadcasting and membership
       management.
 
-.. card:: |monit| Role
+.. card:: |monit| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"

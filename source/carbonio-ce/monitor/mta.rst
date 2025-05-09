@@ -1,7 +1,7 @@
 .. _monitor-mta:
 
-==========
- MTA Role
-==========
+===============
+ MTA Component
+===============
 
 .. include:: /_includes/_monitor/mta.rst

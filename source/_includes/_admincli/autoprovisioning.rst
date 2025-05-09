@@ -56,7 +56,7 @@ Procedure
 To configure auto provisioning, follow the procedure in this section;
 to complete it successfully, remember that all the commands below must
 be run as the ``zextras`` user on a Node featuring the **Mailstore &
-Provisioning** Role.
+Provisioning** Component.
 
 ..  hint:: Make sure that all relevant information are enclosed in
     quotes, to prevent any issue with non-escaped characters.

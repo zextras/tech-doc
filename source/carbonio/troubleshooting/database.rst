@@ -1,8 +1,8 @@
 .. _ts-db:
 
-===============
- Database Role
-===============
+====================
+ Database Component
+====================
 
 In this section you find guidelines to tackle some issues that can
 impact the proper operations of |product|.

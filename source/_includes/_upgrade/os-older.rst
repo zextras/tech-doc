@@ -1,5 +1,5 @@
 The procedure must be carried out on each Node, starting from the one
-on which the Directory Server Role is installed, and it will require
+on which the Directory Server Component is installed, and it will require
 to reboot the Node and therefore a downtime of the |product|
 infrastructure must be planned. Please read carefully the whole
 section before starting the upgrade.
@@ -43,8 +43,9 @@ please refer to the `Ubuntu
 <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/upgrading_from_rhel_8_to_rhel_9/performing-the-upgrade_upgrading-from-rhel-8-to-rhel-9>`_
 upstream documentations.
 
-.. note:: If you upgrade to Ubuntu 22 and use the |monit| role, please
-   make sure to :ref:`change the Grafana repository <manual-grafana>`.
+.. note:: If you upgrade to Ubuntu 22 and use the |monit| Component,
+   please make sure to :ref:`change the Grafana repository
+   <manual-grafana>`.
 
 Phase 4
 -------

@@ -88,7 +88,7 @@ Changes in the source code can be found in :pr:`1020`.
 
 A new Scenario, called *Scenario HA* has been introduced to complete
 the offering of pre-cooked installations. This scenario features
-redundancy and High Availability for |product| Roles and services.
+redundancy and High Availability for |product| Components and services.
 
 Changes in the source code can be found in :pr:`1013`, :pr:`1015`,
 and :pr:`1019`.
@@ -96,9 +96,9 @@ and :pr:`1019`.
 
 .. rubric:: 202503-1105 Carbonio Push Connector and Notification Push packages
 
-We added to the Role description and installation procedures the
+We added to the Component description and installation procedures the
 packages related to |product|'s Push Connector and Notification Push
-services, including DB boostrap commands where required.
+services, including DB bootstrap commands where required.
 
 Changes in the source code can be found in :pr:`1008` and :pr:`1014`.
 
@@ -137,7 +137,7 @@ Changes in the source code can be found in :pr:`995`.
 .. rubric:: 202503-1092 Improvements to scenarios installation
 
 We introduced a number of improvements to the Scenario-based
-installation to simplify the text: some Role Names have been renamed
+installation to simplify the text: some Component Names have been renamed
 for consistency and splitting package ``service-discovery-agent``
 installation command from the package installation commands.
 
@@ -164,7 +164,7 @@ Changes in the source code can be found in :pr:`983`.
 .. rubric:: 202503-1087 Package carbonio-user-management Installed on *Mesh & Directory* Node
 
 The ``carbonio-user-management`` package is now installed as part of
-the *Mesh & Directory* instead of the *Proxy* Role.
+the *Mesh & Directory* instead of the *Proxy* Component.
 
 Changes in the source code can be found in :pr:`984`.
 
@@ -220,9 +220,9 @@ of the Nodes.
 Changes in the source code can be found in :pr:`974`.
 
 
-.. rubric:: 202503-1070 Add Role-based package installation
+.. rubric:: 202503-1070 Add Component-based package installation
 
-We improved the Roles installation instructions by separating the
+We improved the Components installation instructions by separating the
 installation commands from the surrounding text into dedicated files,
 to allow for their inclusion in the installation scenarios.
 
@@ -243,7 +243,7 @@ Changes in the source code can be found in :pr:`973`.
 
 Section *Admin by Command Line* has been restructured for more clarity
 and information access. Now, most of its subsections have the name
-corresponding to a |product| Role. Moreover, the |backup|
+corresponding to a |product| Component. Moreover, the |backup|
 documentation has been put into an own level.
 
 Changes in the source code can be found in :pr:`970`.
@@ -251,7 +251,7 @@ Changes in the source code can be found in :pr:`970`.
 
 .. rubric:: 202503-1065 Configuration change in case of Proxy Node removal
 
-In case a **Proxy Node** is removed from a |product| infrastructure, the configuration of the Memcached software on the |pv| Role must be changed, to allow the Role to correctly operate.
+In case a **Proxy Node** is removed from a |product| infrastructure, the configuration of the Memcached software on the |pv| Component must be changed, to allow the Component to correctly operate.
 
 Changes in the source code can be found in :pr:`967`.
 
@@ -306,7 +306,7 @@ Changes in the source code can be found in :pr:`985` and:pr:`986` .
 
 .. rubric:: 202503-978 New package carbonio-search-ui
 
-We added instructions to install the new package :file:`carbonio-search-ui` in the Proxy Role and in all scenarios.
+We added instructions to install the new package :file:`carbonio-search-ui` in the Proxy Component and in all scenarios.
 
 Changes in the source code can be found in :pr:`968`.
 
@@ -339,9 +339,9 @@ The CLI reference has been restored after a wrong previous commit removed it fro
 
 Changes in the source code can be found in :pr:`1006`.
 
-.. rubric:: 202503-1090 Missing packages in database Role Installation
+.. rubric:: 202503-1090 Missing packages in database Component Installation
 
-Installation instructions of the Database Role were missing all the
+Installation instructions of the Database Component were missing all the
 Database Components packages, which were restored and also added to all Scenarios.
 
 Changes in the source code can be found in :pr:`989`.

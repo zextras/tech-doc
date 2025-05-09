@@ -22,7 +22,7 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* From release 24.12.0, the **DB connector Role** is no longer
+* From release 24.12.0, the **DB connector Component** is no longer
   supported and needs to be removed, therefore before starting the
   upgrade procedure please read carefully section :ref:`remove-pgpool`
   and execute the procedure described there.
@@ -37,7 +37,7 @@ the upgrade:
      :ref:`pg-upgrade` for directions.
 
 * You need to carry out the procedure on **each Node**, starting with
-  the one featuring the :ref:`role-mesh-install`.
+  the one featuring the :ref:`component-mesh-install`.
 
 * During the upgrade of |product|, you might need to carry out manual
   tasks, for example because you need to modify some configuration

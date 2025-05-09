@@ -12,7 +12,7 @@ srv1.example.com
 srv2.example.com
 srv3.example.com
 
-### Keep this Role empty and uncommented
+### Keep this Component empty and uncommented
 [dbsConnectorServers]
 
 [mtaServers]

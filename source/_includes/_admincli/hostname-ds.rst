@@ -116,6 +116,6 @@
 
    #. Verify the e-mail flow by sending test emails
 
-   #. If the Node features also the **Proxy** Role, check on the
+   #. If the Node features also the **Proxy** Component, check on the
       |adminui| on port 6071 (see :ref:`web-access`) that the new
       hostname is reported correctly

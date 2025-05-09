@@ -174,7 +174,7 @@ restore the COS value.
 
      Upon clicking the arrow on the right-hand side of the option,
      the **Administration** tab will open, to allow changing the
-     user's Role.
+     user's Component.
 
    .. index:: Quota; by Account
 
@@ -268,7 +268,7 @@ restore the COS value.
    .. rubric:: Features
 
    It is possible to prevent the user to access some of the |product|
-   features by using the switches for the various Roles. For example,
+   features by using the switches for the various Components. For example,
    `Web feature` means access to the web interface, `Mobile App`
    allows access via cell phone or tablet, `ActiveSync remote access`
    enables the ActiveSync access.
@@ -373,7 +373,7 @@ restore the COS value.
    :class-title: sd-text-primary
 
    You can choose if the user can play one or more Administration
-   Roles in |product|.
+   Components in |product|.
 
    By toggling the *Global Administration* switch you can promote
    or demote the user to Global Administrator or vice versa. In
@@ -382,7 +382,7 @@ restore the COS value.
 
    If you toggle the *Delegated Administration* switch. you can
    then select one domain and assign to the user one of the
-   available Roles from the drop downs. Multiple Roles can be
+   available Components from the drop downs. Multiple Components can be
    assigned, even on the same domain: for example, a user can be a
    :ref:`HelpDesk Administrator <ap-helpdesk-admins>` and a
    :ref:`Group Administrator <ap-group-admins>`.
@@ -472,7 +472,7 @@ Delegated Domain Admins
 This page shows all the accounts with some administration rights on
 the domain. To enable delegations on the domain, click the
 :bdg-primary:`INIT DOMAIN` button. If the domain was already
-initialised and you changed Roles to any Administrator, or created a
+initialised and you changed Components to any Administrator, or created a
 new Administrator, you need to click on the button once more to allow
 the permission to be effective. In that case the button will be
 labelled :bdg-primary:`RE-INIT DOMAIN`.
@@ -491,11 +491,11 @@ Security Groups
 
 This page show the pre-built Security Groups, which are special lists
 whose members are regular users promoted to an Administration
-Role. Belonging to any of these Groups allow a regular user to gain
+Component. Belonging to any of these Groups allow a regular user to gain
 some rights and manage specific parts of the |product| infrastructure.
 
 .. seealso:: To learn more about the rights of the different types of
-   Administrators, please refer to Section :ref:`ap-admin-roles`.
+   Administrators, please refer to Section :ref:`ap-admin-components`.
 
 .. _ap-resources:
 
