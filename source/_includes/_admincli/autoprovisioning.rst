@@ -39,9 +39,7 @@ option.
 
 * A domain on which to bind in the form of SearchBase: **DC=zextraslab, DC=ad**
 
-* A correct search filter:
-  **CN=test247,CN=Users,DC=zextraslab,DC=ad**. By using this filter,
-  all user in AD's grou
+* A correct search filter: **CN=test247,CN=Users,DC=zextraslab,DC=ad**
 
 Additionally, on |product| we will use domain **test.auth** for the
 purpose of authenticating users and we will set a time interval of 1
