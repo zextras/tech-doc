@@ -211,9 +211,11 @@ restore the COS value.
    :open:
    :class-title: sd-text-primary
 
-   The preferences in this tab concern how a user sees or
-   interacts with the e-mails (receive, sending, composing, adding
-   a signature) and are mostly inherited from the COS.
+
+   The preferences in this tab concern how a user sees or interacts
+   with the e-mails, including polling interval, auto-replies, adding
+   a signature, other sending and receive options, and are mostly
+   inherited from the COS.
 
    .. note:: Signatures can not be assigned to :ref:`ap-resources`.
 
