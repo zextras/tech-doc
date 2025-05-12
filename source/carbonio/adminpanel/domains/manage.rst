@@ -265,6 +265,12 @@ restore the COS value.
    This advanced option proves useful only in split-domain or
    migration scenarios.
 
+   .. rubric:: Chat
+
+   Options here allow to configure the |wsc|\'s Chat
+
+   .. include:: /_includes/_adminpanel/wsc.rst
+
    .. rubric:: Features
 
    It is possible to prevent the user to access some of the |product|
