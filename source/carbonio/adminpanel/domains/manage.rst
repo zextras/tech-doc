@@ -265,6 +265,8 @@ restore the COS value.
    This advanced option proves useful only in split-domain or
    migration scenarios.
 
+   .. index:: Chat preferences; by Account
+
    .. rubric:: Chat
 
    Options here allow to configure the |wsc|\'s Chat

@@ -62,6 +62,8 @@ the *Auth* section of their `Settings` module.
 Some of these options can be enabled or disabled via CLI: please refer
 to section :ref:`cli-features` for more information.
 
+.. index:: Chat preferences; by COS
+
 .. _cos-chat:
 
 Chat
