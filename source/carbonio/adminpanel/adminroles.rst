@@ -208,8 +208,8 @@ the objects of the domain and has the following rights:
    * Manage GALSync users and configuration
    * Manage Domain Authentication settings
    * Manage Domain VirtualHost and Certificate
-   * In addition, all the rights of a Delegated (Domain) Admin
    * Manage Analytics at COS and Account level
+   * In addition, all the rights of a Delegated (Domain) Admin
 
 .. index:: Administrator; Delegated Domain
 
@@ -228,6 +228,7 @@ Admin
 
    * View Domain attributes
    * In addition, all the rights of a User Management (Domain) Admin
+   * Configure |wsc|
 
 .. index:: Administrator; User
 
