@@ -91,8 +91,8 @@ architecture of |backup| and outlines their interaction; each
 concept is then detailed in a dedicated section.
 
 Foremost, |backup| can be configured, and is executed, only on the
-Nodes equipped with the **Mailstore & Provisioning Role**. In case
-multiple Mailstore & Provisioning Roles are installed, a |backup| must
+Nodes equipped with the **Mailstore & Provisioning Component**. In case
+multiple Mailstore & Provisioning Components are installed, a |backup| must
 be configured for each Node: they will be completely separated and
 independent from each other, therefore you need to configure them to
 use different buckets or storage devices.
@@ -203,7 +203,7 @@ SmartScan and Realtime Scanner
 
 The initial structure of the backup is built during the *Initial
 Scan*, performed by the **SmartScan**: the actual content of a Node
-featuring the Mailstore & Provisioning Role is processed and used to
+featuring the Mailstore & Provisioning Component is processed and used to
 populate the backup. The SmartScan is then executed at every start of
 the |backup| and on a daily basis if the **Scan Operation Scheduling**
 is enabled in the |adminui|.
@@ -382,7 +382,7 @@ important files and directories are present:
 
 -  ``items`` is a directory containing up to 4096 additional folders,
    whose name consists of two hexadecimal (uppercae and lowercase)
-   characters. **Items** in the Mailstore & Provisioning Role will be
+   characters. **Items** in the Mailstore & Provisioning Component will be
    stored in the directory whose name has the last two characters of
    their ID.
 
@@ -558,7 +558,7 @@ order to be eligible to be used as the Backup Path, a directory must:
    shown in section :ref:`setting-backup-path`.
 
 When first started, |backup| launches a SmartScan, to fetch from the
-Mailstore & Provisioning Role all data and create the initial backup
+Mailstore & Provisioning Component all data and create the initial backup
 structure, in which every item is saved along with all its metadata as
 a JSON array on a case sensitive filesystem. After the first start,
 either the Real Time Scanner, the SmartScan, or both can be employed
@@ -919,7 +919,7 @@ discuss those cases here.
    be included in the backup.
 
 .. note:: The last two cases do not apply when using a browser to
-   connect to the Node hosting the Mailstore & Provisioning Role. In
+   connect to the Node hosting the Mailstore & Provisioning Component. In
    this case is it the Mailstore that contacts the SMTP server to send
    the email and automatically passes the email to
    :command:`mailboxd`.

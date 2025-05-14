@@ -8,7 +8,7 @@ Single-Server is the simplest scenario deployment of |product|. It is
 suited for :abbr:`SME (Small to Medium-sized Enterprises)`,
 educational institutions, Municipalities, or local Governments, which
 do not use all |product| features and, while it supports extensions to
-the infrastructure by adding Roles on other Nodes, it is not meant to
+the infrastructure by adding Components on other Nodes, it is not meant to
 be scalable.
 
 Limitations and Set Up
@@ -18,13 +18,13 @@ This Scenario has been designed to serve a precise use case and
 therefore has the following architectural limitations:
 
 * The scenario is limited to a **single Node** (*"Core Node"*)
-  equipped with only the basic Roles: Database, Mesh & Directory,
-  MTA AV/AS, Proxy, Mailstore & Provisioning, and Files Roles
+  equipped with only the basic Components: Database, Mesh & Directory,
+  MTA AV/AS, Proxy, Mailstore & Provisioning, and Files Components
 
 * The scenario is also meant to be installed on three Nodes: building
   on the *Core Node*, the second Node features the Docs & Editor,
-  Tasks, and |wsc| Roles (*"Collaboration Node"*) and the third the
-  |vs| Role (*"Video Server Node"*)
+  Tasks, and |wsc| Components (*"Collaboration Node"*) and the third the
+  |vs| Component (*"Video Server Node"*)
 
 * The scenario supports up to **500 accounts**: adding accounts beyond
   this limit will severly hinder the efficiency of |product| and it is
@@ -51,7 +51,7 @@ need some of them, please consider setting up another scenario.
 
 * Service redundancy
 * |ha| services
-* The Monitoring and Directory Replica Roles 
+* The Monitoring and Directory Replica Components 
 * A syslog server
 
 Requirements

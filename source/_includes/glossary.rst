@@ -3,12 +3,12 @@
 
    .. architecture
 
-   Role
-     In |product|, a **Role** is a functionality that is considered
+   Component
+     In |product|, a **Component** is a functionality that is considered
      atomic and consists of one or more packages.
 
    Node
-     A **Node** is a physical server or VM on which one or more Roles
+     A **Node** is a physical server or VM on which one or more Components
      are installed.
 
    .. Carbonio-related terminology
@@ -111,7 +111,7 @@
 
    User Management
      **User Management** is a core component of |product|, whose
-     purpose is allow all Roles and services (like for example |task|
+     purpose is allow all Components and services (like for example |task|
      and |file|) to access all the data of a connected user
      (including, but not limited to, name, e-mail address, rights) and
      the data of the other users with whom the user can interact.
@@ -139,7 +139,7 @@
    Administrator
      An **Administrator** is any :term:`regular user` that can access
      the |adminui|. Depending on the permission they have, they can
-     play different Roles and can carry out different activities, for
+     play different roles and can carry out different activities, for
      example a Domain Administrator can manage all domain-related
      tasks, while a Global Administrator can effectively manage the
      whole |product| infrastructure.

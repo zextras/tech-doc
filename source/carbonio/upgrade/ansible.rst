@@ -155,14 +155,14 @@ you previously installed with Ansible or not.
 |product| was Installed with Ansible
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. The infrastructure has **no** |WSC| Role installed. In this case,
+#. The infrastructure has **no** |WSC| Component installed. In this case,
    add an this (empty) block at the end of the file::
 
      [workStreamServers]
 
    You can now proceed to Section :ref:`up-ansible-run` below.
 
-#. The |WSC| Role was manually installed. In this case, edit the
+#. The |WSC| Component was manually installed. In this case, edit the
    inventory file and add this block at the end of the file::
 
      [workStreamServers]
@@ -175,11 +175,11 @@ you previously installed with Ansible or not.
 |product| was Manually Installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. The infrastructure has **no** |WSC| Role installed. You need to
+#. The infrastructure has **no** |WSC| Component installed. You need to
    compile the inventory file, then you can proceed to Section
    :ref:`up-ansible-run` below.
 
-#. The infrastructure has the |WSC| Role installed. Compile the
+#. The infrastructure has the |WSC| Component installed. Compile the
    inventory file and then, like in the previous case, edit the
    inventory file and add this block at the end of the file::
 
@@ -193,15 +193,15 @@ you previously installed with Ansible or not.
 .. card:: |product| has both  |wsc| and Legacy Chats installed
 
    Regardless if you installed manually or with Ansible, if both the
-   |WSC| Role and the legacy Chats and Video Server Roles are
+   |WSC| Component and the legacy Chats and Video Server Components are
    installed, you need to edit the inventory file like above::
 
      [workStreamServers]
      wsc.example.com
 
    Ansible will take care of upgrading all Nodes, including those
-   installing the legacy Roles. Note, however, that there are no
-   updates to the packages providing these Roles, so they will keep
+   installing the legacy Components. Note, however, that there are no
+   updates to the packages providing these Components, so they will keep
    the same version.
 
 In both cases, you need to save the inventory file in the :file:`data`
@@ -215,7 +215,7 @@ during the installation process.
 
 #. :file:`inventory_ldap_password` must contain the password that you
    can retrieve with the command, executed as the |zu| on the node
-   featuring the Mesh & Directory Role
+   featuring the Mesh & Directory Component
 
    .. code:: console
 
@@ -237,23 +237,23 @@ Upgrade From |product| 24.9 or Older
 
 If you are upgrading from the **24.9** version or older, you need to
 make sure that you inventory file still contains the **DB Connector**
-Role::
+Component::
 
   [dbsConnectorServers]
   srv3.example.com
 
 Replace the ``srv3.example.com`` string with the actual FQDN of the
-Node on which the Role is installed.
+Node on which the Component is installed.
 
-While the Role was removed, its presence is necessary to allow Ansible
-to properly deal with the packages providing the Role: :file:`pgpool`
+While the Component was removed, its presence is necessary to allow Ansible
+to properly deal with the packages providing the Component: :file:`pgpool`
 will be removed, while the :file:`*-db` packages will be moved to the Node
-where the Database Role is installed.
+where the Database Component is installed.
 
-After the successful upgrade, the Role can be emptied and a comment
+After the successful upgrade, the Component can be emptied and a comment
 can be added to the inventory file, for example::
 
-  ### Keep this Role empty and uncommented
+  ### Keep this Component empty and uncommented
   [dbsConnectorServers]
 
 

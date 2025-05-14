@@ -25,18 +25,18 @@ Before starting the procedure described in the remainder of this
 section, you need to:
 
 #. Have CLI access to the new Node and to the Nodes featuring the
-   Directory Server and the Mailstore & Provisioning Roles
+   Directory Server and the Mailstore & Provisioning Components
 
 #. Identify which Node (or Nodes) should be removed or replaced and
-   which Roles they are equipped with
+   which Components they are equipped with
 
-#. Install these Roles on other Nodes
+#. Install these Components on other Nodes
 
 #. Take note of the FQDN of the Node to be removed, because it will
    be needed. It will be denoted as ``serverHostname`` in the procedure
 
-#. in case you remove a Proxy Role or A Mailstore & Provisioning Role,
-   check that the Preview Role is correctly configured. See Section
+#. in case you remove a Proxy Component or a Mailstore & Provisioning Component,
+   check that the Preview Component is correctly configured. See Section
    :ref:`memcached-proxy` and :ref:`memcached-mp`, respectively, for
    directions.
 
@@ -64,7 +64,7 @@ remove more than one Node, execute the following steps for each Node.
 
 .. card:: Step 2, remove the Node from the |product| infrastructure
 
-   Log in to the Node on which the Mailstore & Provisioning Role is
+   Log in to the Node on which the Mailstore & Provisioning Component is
    installed and remove the server from the infrastructure. As the
    ``zextras`` user, execute the command
 
@@ -74,7 +74,7 @@ remove more than one Node, execute the following steps for each Node.
 
 ..  card:: Step 3, verify removal
 
-    Log in to the Node equipped with the Directory Server Role and
+    Log in to the Node equipped with the Directory Server Component and
     dump the LDAP main database: as the ``zextras`` user, execute the
     command
 
@@ -105,8 +105,8 @@ In case you are removing from the infrastructure a Node which installs
 a Proxy, you need to adjust a configuration file on the Preview Node.
 
 This is required by the **memcached** configuration that supports the
-Preview Role and consists of replacing a configuration value with the
-IP address of the new Proxy Role.
+Preview Component and consists of replacing a configuration value with the
+IP address of the new Proxy Component.
 
 The procedure is slight different if you if you replace an
 existent Proxy with a new one or simply decommission one Proxy
@@ -145,7 +145,7 @@ but keep an existing one (or more that one).
 
       memcached_server_full_path_urls = 172.16.0.22:11211
 
-Please refer to Section :ref:`conf-memcached` in Preview Role's
+Please refer to Section :ref:`conf-memcached` in Preview Component's
 installation for details.
 
 .. _memcached-mp:
@@ -158,9 +158,9 @@ a Mailstore & Provisioning, you need to adjust a configuration file on
 the Preview Node.
 
 This is required by the **memcached** configuration that supports the
-Mailstore & Provisioning Role and consists of replacing a
+Mailstore & Provisioning Component and consists of replacing a
 configuration value with the IP address of the new Mailstore &
-Provisioning Role.
+Provisioning Component.
 
 The procedure is slight different if you if you replace an existent
 Mailstore & Provisioning with a new one or simply decommission one
@@ -201,5 +201,5 @@ Mailstore & Provisioning but keep an existing one (or more that one).
 
       nginx_lookup_server_full_path_urls = https://172.16.0.23:7072
 
-Please refer to Section :ref:`conf-memcached` in Preview Role's
+Please refer to Section :ref:`conf-memcached` in Preview Component's
 installation for details.

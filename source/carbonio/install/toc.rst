@@ -33,7 +33,7 @@ alternatives to install |product|:
 
   #. Verify that installed services are up & running
 
-  Some roles may require additional installation steps or specific checks.
+  Some Components may require additional installation steps or specific checks.
 
 * By using a deployment tool (**Ansible**) that can be installed on
   your workstation or on a dedicated one (called *control node*),

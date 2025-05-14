@@ -8,7 +8,7 @@ The manual installation is organised in steps and requires to execute
 commands from the command line, so make sure you have access to it.
 
 Please note that you may skip some steps, if you plan to install only
-the *Core Node*, namely the DB components of WSC and their
+the *Core Node*, namely the DB Connectors of WSC and their
 corresponding Database bootstraps.
 
 When the installation process has successfully finished, you can
@@ -377,7 +377,7 @@ Node*. Click on the drop-downs to expand them.
 
    Now, run command
    
-   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
    .. rubric:: Enable |wsc|
 

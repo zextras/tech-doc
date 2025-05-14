@@ -4,7 +4,7 @@
 ===========================
 
 This section contains a description of |product| architecture and  of
-the Roles along with the features they provide and how to manually
+the Components along with the features they provide and how to manually
 install them within a |product| infrastructure.
 
 :numref:`fig-arch` shows the internal architecture of |product|
@@ -44,4 +44,4 @@ Supported Mail Protocols
 .. toctree::
    :hidden:
 
-   roles
+   components

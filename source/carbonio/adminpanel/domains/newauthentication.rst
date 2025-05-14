@@ -3,7 +3,7 @@
 Authentication Methods
 ======================
 
-The :ref:`role-mesh-install` Role, which installs an *OpenLDAP
+The :ref:`component-mesh-install` Component, which installs an *OpenLDAP
 service*, is employed by |product| for user authentication and account
 management.
 
@@ -24,7 +24,7 @@ given to configure each of the methods.
 
 #. **Local LDAP**. The internal authentication method assumes that the
    LDAP scheme is running on the |product| server where the *Directory
-   Server* Role is installed.
+   Server* Component is installed.
 
 #. **External LDAP**. The external LDAP authentication method allows
    to connect to an LDAP server, possibly external to the |product|

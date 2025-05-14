@@ -13,7 +13,7 @@ Requirements & Preliminaries
 ============================
 
 The upgrade to |version| may include some additional procedure that
-impacts the following *Roles*, packages, or third-party software,
+impacts the following *Components*, packages, or third-party software,
 which require some manual interaction before, during, or after the
 procedure. If you already have implemented them, please skip to the
 next section.
@@ -33,10 +33,10 @@ next section.
    upgraded to version **16** before upgrading |product| to
    |version|. Check section :ref:`pg-upgrade` for directions.
 
-.. card:: DB Connector Role
+.. card:: DB Connector Component
 
-   The DB Connector Role is no longer available, therefore you need to
-   move some of the packages to the Database Role. The procedure to
+   The DB Connector Component is no longer available, therefore you need to
+   move some of the packages to the Database Component. The procedure to
    carry out this task can be found in Section :ref:`remove-pgpool`.
 
 Checklist

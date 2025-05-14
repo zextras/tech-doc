@@ -87,7 +87,7 @@ of the new account.
       can customise. In this case, the account creation procedure
       continues and allow to grant Global Administration Rights (see
       Section :ref:`ap-new-admin`) or Delegated rights (see Section
-      :ref:`ap-admin-roles`.
+      :ref:`ap-admin-components`.
 
    .. grid-item-card::
       :columns: 12 12 6 6

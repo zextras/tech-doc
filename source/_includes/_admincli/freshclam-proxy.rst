@@ -4,7 +4,7 @@ Similarly to the scenario described in Section :ref:`upstream-proxy`,
 information in the :command:`freshclam` *configuration template*,
 which is :file:`/opt/zextras/conf/freshclam.conf.in`.
 
-Log in to the Node where the **MTA AV/AS** Role is installed and edit
+Log in to the Node where the **MTA AV/AS** Component is installed and edit
 the file, by adding at the bottom the lines::
 
   HTTPProxyServer  proxy.example.com

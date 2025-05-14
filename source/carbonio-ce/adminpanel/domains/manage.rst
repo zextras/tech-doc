@@ -155,7 +155,7 @@ restore the COS value.
 
      Upon clicking the arrow on the right-hand side of the option,
      the **Administration** tab will open, to allow changing the
-     user's Role.
+     user's Component.
 
    * To force the user to change password at the next login
 

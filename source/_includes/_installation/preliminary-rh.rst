@@ -155,8 +155,8 @@ RHEL 9 |beta|
    #. :command:`zmcontrol start | stop | restart` is no longer
       available and can not be used as a convenience to restart all
       |carbonio| services at once. This command has been replaced by
-      the following **four** Role-specific ``systemd`` commands, which
-      must be executed on the Node on which the Role is installed.
+      the following **four** Component-specific ``systemd`` commands, which
+      must be executed on the Node on which the Component is installed.
 
       .. code:: console
 

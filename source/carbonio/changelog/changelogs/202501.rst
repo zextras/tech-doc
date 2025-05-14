@@ -90,7 +90,7 @@ Changes in the source code can be found in :pr:`898`.
 
 .. rubric:: 202501-998 Removed note for Files
 
-An obsolete note has been removed from the list of Roles.
+An obsolete note has been removed from the list of Components.
 
 Changes in the source code can be found in :pr:`895`.
 
@@ -104,7 +104,7 @@ Changes in the source code can be found in :pr:`827`.
 
 .. rubric:: 202501-986 Promote Architecture of Carbonio section
 
-The *Architecture of Carbonio* section has been promoted as a top-level section which also includes the Roles' manual installation.
+The *Architecture of Carbonio* section has been promoted as a top-level section which also includes the Components' manual installation.
 
 Changes in the source code can be found in :pr:`878`. and :pr:`876`.
 
@@ -230,7 +230,7 @@ Changes in the source code can be found in :pr:`932`.
 .. rubric:: 202501-1036 Fixed avdb updater service
 
 A step necessary for its installation and the command for Red Hat have been added.
-The package has been added to the Proxy role
+The package has been added to the Proxy Component
 
 .. rubric:: 202501-1031 Wrong path of mailbox.log file
 
@@ -239,9 +239,9 @@ Platform` Section, we fixed the path of the :file:`mailbox.log` file.
 
 Changes in the source code can be found in :pr:`920`.
 
-.. rubric:: 202501-1005 Package missing in Database Connector Role removal
+.. rubric:: 202501-1005 Package missing in Database Connector Component removal
 
-After the removal of the *Database Connector* Role, the ``carbonio-task-db`` was not in the list of those to install on the *Database* Role.
+After the removal of the *Database Connector* Component, the ``carbonio-task-db`` was not in the list of those to install on the *Database* Component.
 
 Changes in the source code can be found in :pr:`915`.
 
@@ -259,7 +259,7 @@ Changes in the source code can be found in :pr:`870`.
 
 .. rubric:: 202501-973 Remove notification packages
 
-The packages that provide notifications for |wsc| have been removed from the Roles installation.
+The packages that provide notifications for |wsc| have been removed from the Components installation.
 
 Changes in the source code can be found in :pr:`862`.
 
