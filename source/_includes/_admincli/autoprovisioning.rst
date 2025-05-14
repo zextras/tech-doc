@@ -108,7 +108,8 @@ Enter the IP address or hostname of the ad server.
 
 .. note:: The zimbraAutoProvLdapBindDn parameter accepts both a DN of
    type “CN=Auto Provisioning,CN=Users,DC=zextraslab,DC=ad” and the
-   userPrincipalName “autoprovisioning@zextraslab.ad”
+   userPrincipalName “autoprovisioning@zextraslab.ad”, according to
+   the setting of your Active Directory.
 
 Set the operation mode to **EAGER**.
 
