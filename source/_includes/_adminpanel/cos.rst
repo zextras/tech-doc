@@ -62,6 +62,17 @@ the *Auth* section of their `Settings` module.
 Some of these options can be enabled or disabled via CLI: please refer
 to section :ref:`cli-features` for more information.
 
+.. index:: Chat preferences; by COS
+
+.. _cos-chat:
+
+Chat
+~~~~
+
+Options in this section allow to customise some of the |wsc| features.
+
+.. include:: /_includes/_adminpanel/wsc.rst
+
 .. _cos-prefs:
 
 Preferences
