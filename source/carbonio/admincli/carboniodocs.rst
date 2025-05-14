@@ -90,5 +90,5 @@ for each document stored in |file|.
 
       "carbonio-files/max-number-of-versions", "30"
 
-   You can raise the default **3** number, but keep in mind that this
+   You can raise the default **30** number, but keep in mind that this
    implies that you need more storage to keep all versions.
