@@ -4,9 +4,9 @@ Administrative Roles Explained
 ==============================
 
 User Accounts created on the Directory Server can be granted some
-:term:`rights` to become an **Administrative** account, so they can
-manage the rights assigned to other accounts, the settings of a
-domain, or a combination of them.
+:term:`rights` (**Permissions**) to become an **Administrative**
+account, so they can manage the permissions assigned to other
+accounts, the settings of a domain, or a combination of them.
 
 Carbonio employs a hierarchical role-based access control system,
 offering six predefined administrative roles. Each role inherits the
@@ -26,11 +26,12 @@ In this page we describe the main pre-built roles
 (:ref:`ap-global-admins`, :ref:`ap-domain-admins`,
 :ref:`ap-delegated-admins`, :ref:`ap-user-admins`,
 :ref:`ap-group-admins`, :ref:`ap-helpdesk-admins`) and their
-associated rights. Users that belong to these groups automatically
-inherit the rights of the group. Pre-built roles are hierarchical,
-meaning that every role has some peculiar right plus all the rights of
-the roles below: for example, a Delegated Domain Admin also possesses
-all rights of User, Group, and Help Desk Administrators.
+associated permissions. Users that belong to these groups
+automatically inherit the permissions of the group. Pre-built roles
+are hierarchical, meaning that every role has some peculiar permission
+plus all the permissions of the roles below: for example, a Delegated
+Domain Admin also possesses all permissions of User, Group, and Help
+Desk Administrators.
 
 Except for the :ref:`ap-global-admins`, who has access to all domains
 and setting defined in the |adminui|, all other pre-built roles
@@ -98,9 +99,9 @@ Requirements
 ------------
 
 These requirements must be satisfied before being able to manage
-rights.
+permissions.
 
-#. To be able to use right, a domain must be first initialised from
+#. To be able to use permission, a domain must be first initialised from
    :menuselection:`Domains --> Manage --> Delegated Domain Admins`.
 
    Alternatively, you can initialise a domain from the CLI:
@@ -173,10 +174,10 @@ Global Admins and administrators.
    :menuselection:`Domains --> Domain --> Accounts`, select the
    account to promote, and on the `Administration` tab click the
    `Delegated Administration` switch, then select the corresponding
-   right:
+   permission:
 
    .. csv-table::
-      :header: "Role", "Right"
+      :header: "Role", "Permission"
 
       "Domain Admin", "``__domain_admins@example.com``"
       "Delegated Admin", "``__delegated_admins@example.com``"
@@ -222,7 +223,7 @@ features in the |adminui| and API, and can manage every aspect of the
 
 .. dropdown:: Detailed list of Permissions
 
-   This is a list of right that are reserved to the Global administrator
+   This is a list of permission that are reserved to the Global administrator
    **only**. These are related to the |product| infrastructure in its
    whole.
 
@@ -302,7 +303,7 @@ domain. They have no access to :ref:`infra-settings`.
 
       * Create, modify, and delete other domain administrators
 
-      * Assign rights to other domain administrators
+      * Assign permissions to other domain administrators
 
       * Manage analytics at COS and account levels.
 
@@ -326,12 +327,12 @@ domain. They have no access to :ref:`infra-settings`.
 
       * Manage Domain Theme
       * Create, modify and delete other Domain Admin
-      * Assing rights to other Domain Admin
+      * Assing permissions to other Domain Admin
       * Manage GALSync users and configuration
       * Manage Domain Authentication settings
       * Manage Domain VirtualHost and Certificate
       * Manage Analytics at COS and Account level
-      * In addition, all the rights of a Delegated (Domain) Admin
+      * In addition, all the permissions of a Delegated (Domain) Admin
 
 .. index:: Administrator; Delegated Domain
 
@@ -368,14 +369,14 @@ as virtual hosts, authentication methods or themes but they can manage
 
 .. dropdown:: Detailed list of permissions
 
-   In detail, these are the rights of a Delegated Administrator.
+   In detail, these are the permissions of a Delegated Administrator.
 
    .. hlist::
       :columns: 2
 
       * View Domain attributes
       * Configure |wsc|
-      * In addition, all the rights of a User Management (Domain) Admin
+      * In addition, all the permissions of a User Management (Domain) Admin
 
 .. index:: Administrator; User
 
@@ -414,7 +415,7 @@ domain. They are suited for HR or Help Desk teams managing users.
 
 .. dropdown:: Detailed list of permissions
 
-    These rights are reserved to a User Management Administrator.
+    These permissions are reserved to a User Management Administrator.
 
    .. hlist::
       :columns: 2
@@ -434,8 +435,8 @@ domain. They are suited for HR or Help Desk teams managing users.
 
       * Login as other users he can manage
       * Restore Accounts from Backup
-      * In addition, all the rights of a Help Desk (Domain) Admin
-      * In addition, all the rights of a Group Management (Domain) Admin
+      * In addition, all the permissions of a Help Desk (Domain) Admin
+      * In addition, all the permissions of a Group Management (Domain) Admin
 
 .. index:: Administrator; Group
 
@@ -472,7 +473,7 @@ for managing group email structures.
 
 .. dropdown:: Detailed list of permissions
 
-   These rights are reserved to a Group Management Administrator.
+   These permissions are reserved to a Group Management Administrator.
 
    .. hlist::
       :columns: 2
@@ -523,7 +524,7 @@ Administrator is suited for **user-level** support.
 
 .. dropdown:: Detailed list of permissions
 
-   These rights are reserved to a Help Desk Administrator.
+   These permissions are reserved to a Help Desk Administrator.
 
    .. hlist::
       :columns: 2
