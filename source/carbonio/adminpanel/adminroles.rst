@@ -1,5 +1,4 @@
-
-.. _ap-admin-components:
+.. _ap-admin-roles:
 
 Administrative Roles Explained
 ==============================
@@ -8,6 +7,20 @@ User Accounts created on the Directory Server can be granted some
 :term:`rights` to become an **Administrative** account, so they can
 manage the rights assigned to other accounts, the settings of a
 domain, or a combination of them.
+
+Carbonio employs a hierarchical role-based access control system,
+offering six predefined administrative roles. Each role inherits the
+permissions of the roles beneath it, allowing for flexible and
+granular delegation of administrative responsibilities.
+
+.. code:: console
+
+   1 - Global Administrator
+   └── 2 - Domain Administrator
+       └── 3 - Delegated Domain Administrator
+           └── 4 - User Management Domain Administrator
+               ├── 5 - Group Management Domain Administrator
+               └── 6 - Help Desk Domain Administrator
 
 In this page we describe the main pre-built roles
 (:ref:`ap-global-admins`, :ref:`ap-domain-admins`,
@@ -22,6 +35,64 @@ all rights of User, Group, and Help Desk Administrators.
 Except for the :ref:`ap-global-admins`, who has access to all domains
 and setting defined in the |adminui|, all other pre-built roles
 allow to manage the settings of one domain or a subset of a domain.
+
+.. card:: Legend
+
+   To facilitate the presentation of the information of each
+   Administrator, we organise them as follows:
+
+   .. tab-set::
+
+      .. tab-item:: Scope
+         :sync: s
+
+         On which parts of the |product| infrastructure the Admin can operate.
+
+      .. tab-item:: Main Permissions
+         :sync: p
+
+         A summary of the permissions granted to the Administrator
+
+      .. tab-item::  Limitations
+         :sync: l
+
+         What the Administrator can not do, compared to the type of
+         Administrator that is immediately above in the hierarchy.
+
+   .. dropdown:: Detailed list of permissions
+      :open:
+
+      The full list of permissions granted to the administrator.
+
+      .. note:: The list is initially collapsed, click it to expand it.
+
+   Additionally, comparison tables show differences in the permissions
+   of Administrator types.
+
+.. _infra-settings:
+
+Infrastructure Settings
+-----------------------
+
+The concept of **infrastructure settings** is central within |product|
+and typically refers to system-wide or service-level configurations
+that go beyond the scope of a single domain. Here are some examples of
+infrastructure settings:
+
+.. csv-table::
+   :header: "Infrastructure Setting Type", "Examples"
+
+   "Server/Service Configuration", "Mailstore assignment, LDAP settings,
+   server roles"
+   "Global COS (Class of Service) definitions", "Creating/editing COS
+   that apply across domains"
+   "Resource Allocation", "Quota limits, backup policies, system
+   resource usage"
+   "Security Policies", "Global password policies, two-factor auth
+   configuration"
+   "Monitoring & Analytics", "System-wide reports and logs"
+   "Themes & Branding (Global)", "Login page customization, global UI
+   elements"
 
 Requirements
 ------------
@@ -116,8 +187,6 @@ Global Admins and administrators.
    .. figure:: /img/adminpanel/ap-domain-admins.png
       :width: 99%
 
-*****
-
 .. index:: Administrator; Global, Administrator; Infrastructure
 
 .. _ap-global-admins:
@@ -127,61 +196,82 @@ Global Administrators
 
 Also called *Infrastrucure Administrators*, they have access to all
 features in the |adminui| and API, and can manage every aspect of the
-Carbonio Infrastructure.
+|product| Infrastructure.
 
 .. warning:: At least **one user** in your infrastructure needs to be
    a Global Administrator, but we recommend having at least *two*.
 
-This is a list of right that are reserved to the Global administrator
-**only**. These are related to the |product| infrastructure in its
-whole.
+.. tab-set::
 
-.. hlist::
-   :columns: 2
+   .. tab-item:: Scope
+      :sync: s
 
-   * Manage Domains
-   * Manage Class Of Service
+      Entire infrastructure.
 
-     * Modify COS and Accounts: Enable or disable OTP Management Feature
-     * Manage OTPs for Users: Create, delete, and list OTPs
-     * Enable and disable |backup| at |cos| level
+   .. tab-item:: Main Permissions
+      :sync: p
 
-   * Manage Admins and their roles.
-   * Manage Global Configuration
+      * Full access to all domains, settings, and configurations.
 
-     * Theme and |wl| setting
-     * Default Domain
-     * ActiveSync
-     * Analytics
+      * Manage users, domains, servers, and global settings.
 
-   * Manage MTA configuration
+   .. tab-item:: Limitations
+      :sync: l
 
-     * Blocked extension
-     * Enable / Disable Authentication for each node
-     * Relay for external delivery
-     * Trusted Network
-     * Max Size
-     * MTA restiction and RBL (smtpd_recipient_restrictions)
+      None
 
-   * AS/AV Configuration
+.. dropdown:: Detailed list of Permissions
 
-     * Kill/Tag score
-     * Subject Prefix
-     * Update frequency
-     * AV archives
-     * AV notification setting
+   This is a list of right that are reserved to the Global administrator
+   **only**. These are related to the |product| infrastructure in its
+   whole.
 
-   * Proxy Configuration
-   * Manage other users, including admins, change their passwords,
-     authenticated as then, manage users shares and settings.
-   * Manage infrastrucutre license and Subscription
-   * Manage Storage configuration
+   .. hlist::
+      :columns: 2
 
-     * S3 Bucket
-     * Server Volumes (primary, secondary, index)
-     * HSM policy and settings
+      * Manage Domains
+      * Manage Class Of Service
 
-   * Manage Backup Configuration
+        * Modify COS and Accounts: Enable or disable OTP Management Feature
+        * Manage OTPs for Users: Create, delete, and list OTPs
+        * Enable and disable |backup| at |cos| level
+
+      * Manage Admins and their roles.
+      * Manage Global Configuration
+
+        * Theme and |wl| setting
+        * Default Domain
+        * ActiveSync
+        * Analytics
+
+      * Manage MTA configuration
+
+        * Blocked extension
+        * Enable / Disable Authentication for each node
+        * Relay for external delivery
+        * Trusted Network
+        * Max Size
+        * MTA restiction and RBL (smtpd_recipient_restrictions)
+
+      * AS/AV Configuration
+
+        * Kill/Tag score
+        * Subject Prefix
+        * Update frequency
+        * AV archives
+        * AV notification setting
+
+      * Proxy Configuration
+      * Manage other users, including admins, change their passwords,
+        authenticated as then, manage users shares and settings.
+      * Manage infrastrucutre license and Subscription
+      * Manage Storage configuration
+
+        * S3 Bucket
+        * Server Volumes (primary, secondary, index)
+        * HSM policy and settings
+
+      * Manage Backup Configuration
 
 .. index:: Administrator; Domain
 
@@ -190,26 +280,58 @@ whole.
 Domain Administrators
 ---------------------
 
-A Domain Admin has full control on the domain and on the lifecycle of
-the objects of the domain and has the following rights:
+The **Domain Administrators** have a broad control, but **strictly
+limited to one domain** and the lifecycle of the objects within the
+domain. They have no access to :ref:`infra-settings`.
 
-.. hlist::
-   :columns: 2
+.. tab-set::
 
-   * View and modify Domain attributes except for
+   .. tab-item:: Scope
+      :sync: s
 
-     * Assigned Class Of Service
-     * Max Account Number
-     * Quota (max account quota, aggregate quota)
+      A specific domain
 
-   * Manage Domain Theme
-   * Create, modify and delete other Domain Admin
-   * Assing rights to other Domain Admin
-   * Manage GALSync users and configuration
-   * Manage Domain Authentication settings
-   * Manage Domain VirtualHost and Certificate
-   * Manage Analytics at COS and Account level
-   * In addition, all the rights of a Delegated (Domain) Admin
+   .. tab-item:: Main Permissions
+      :sync: p
+
+      * Manage domain attributes (excluding Assigned Class Of Service,
+        Max Account Number, and Quota)
+
+      * Control domain themes, GALSync users, authentication settings,
+        virtual hosts, and certificates
+
+      * Create, modify, and delete other domain administrators
+
+      * Assign rights to other domain administrators
+
+      * Manage analytics at COS and account levels.
+
+
+   .. tab-item:: Limitations
+      :sync: l
+
+      They can not modify Assigned Class Of Service, Max Account
+      Number, and Quota
+
+.. dropdown:: Detailed list of permissions
+
+   .. hlist::
+      :columns: 2
+
+      * View and modify Domain attributes except for
+
+        * Assigned Class Of Service
+        * Max Account Number
+        * Quota (max account quota, aggregate quota)
+
+      * Manage Domain Theme
+      * Create, modify and delete other Domain Admin
+      * Assing rights to other Domain Admin
+      * Manage GALSync users and configuration
+      * Manage Domain Authentication settings
+      * Manage Domain VirtualHost and Certificate
+      * Manage Analytics at COS and Account level
+      * In addition, all the rights of a Delegated (Domain) Admin
 
 .. index:: Administrator; Delegated Domain
 
@@ -218,17 +340,42 @@ the objects of the domain and has the following rights:
 Delegated (Domain) Administrators
 ---------------------------------
 
-Delegated (Domain) Administrators has full access to all the settings
-of a domain, except for infrastructure settings, which are reserved to
-the Domain Admin. In detail, these are the rights of a Delegated
-Admin
+The **Delegated (Domain) Administrators** are limited to
+**account-level** and **basic domain settings** :octicon:`dash`. They
+can not assign or change admin roles or modify domain parameters such
+as virtual hosts, authentication methods or themes but they can manage
+**distribution lists**.
 
-.. hlist::
-   :columns: 2
+.. tab-set::
 
-   * View Domain attributes
-   * In addition, all the rights of a User Management (Domain) Admin
-   * Configure |wsc|
+   .. tab-item:: Scope
+      :sync: s
+
+      Specific domain
+
+   .. tab-item:: Main Permissions
+      :sync: p
+
+      * Full access to domain settings (excluding infrastructure
+        settings)
+
+      * View domain attributes
+
+   .. tab-item:: Limitations
+      :sync: l
+
+      Cannot access infrastructure settings.
+
+.. dropdown:: Detailed list of permissions
+
+   In detail, these are the rights of a Delegated Administrator.
+
+   .. hlist::
+      :columns: 2
+
+      * View Domain attributes
+      * Configure |wsc|
+      * In addition, all the rights of a User Management (Domain) Admin
 
 .. index:: Administrator; User
 
@@ -237,29 +384,58 @@ Admin
 User Management (Domain) Administrators
 ---------------------------------------
 
-A User Management Admin has control on lifecycle of the users in the
-domain. These rights are reserved to a User Management Admin
+**User Management Administrators** are focused purely on user account
+operations and have control on lifecycle of the users in the
+domain. They are suited for HR or Help Desk teams managing users.
 
-.. hlist::
-   :columns: 2
+.. tab-set::
 
-   * View Domain attributes
-   * Create, modify and delete normal accounts except for
+   .. tab-item:: Scope
+      :sync: s
 
-     * Mailstore used for the account
+      User accounts within a domain.
 
-   * Modify Accounts: Enable or disable OTP Management Feature
-   * Manage OTPs for Users: Create, delete, and list OTPs
-   * Manage user Aliases
-   * Manage User password policy settings
-   * Create, modify and delete normal resources except for
+   .. tab-item:: Main Permissions
+      :sync: p
 
-     * Mailstore used for the account
+      * View domain attributes
 
-   * Login as other users he can manage
-   * Restore Accounts from Backup
-   * In addition, all the rights of a Help Desk (Domain) Admin
-   * In addition, all the rights of a Group Management (Domain) Admin
+      * Create, modify, and delete user accounts (excluding mailstore
+        assignments)
+
+      * Manage OTPs, aliases, password policies, and account restorations
+
+      * Login as other users they manage
+
+   .. tab-item:: Limitations
+      :sync: l
+
+      Can not assign accounts to a specific mailstores.
+
+.. dropdown:: Detailed list of permissions
+
+    These rights are reserved to a User Management Administrator.
+
+   .. hlist::
+      :columns: 2
+
+      * View Domain attributes
+      * Create, modify and delete normal accounts except for
+
+        * Mailstore used for the account
+
+      * Modify Accounts: Enable or disable OTP Management Feature
+      * Manage OTPs for Users: Create, delete, and list OTPs
+      * Manage user Aliases
+      * Manage User password policy settings
+      * Create, modify and delete normal resources except for
+
+        * Mailstore used for the account
+
+      * Login as other users he can manage
+      * Restore Accounts from Backup
+      * In addition, all the rights of a Help Desk (Domain) Admin
+      * In addition, all the rights of a Group Management (Domain) Admin
 
 .. index:: Administrator; Group
 
@@ -268,16 +444,43 @@ domain. These rights are reserved to a User Management Admin
 Group Management (Domain) Administrator
 ---------------------------------------
 
-A Group Management Admin has control on lifecycle of the distribution
-list of the domain and possesses these rights
+A **Group Management Administrator** has control on lifecycle of a
+domain's distribution lists and their aliases and is an ideal choice
+for managing group email structures.
 
-.. hlist::
-   :columns: 2
+.. tab-set::
 
-   * View Domain attributes
-   * Create, modify and delete distribution list, except for Dynamic
-     Distribution Lists
-   * Manage DL Aliases
+   .. tab-item:: Scope
+      :sync: s
+
+      Distribution lists within a domain.
+
+   .. tab-item:: Main Permissions
+      :sync: p
+
+      * View domain attributes
+
+      * Create, modify, and delete distribution lists (excluding
+        dynamic lists)
+
+      * Manage distribution list aliases
+
+   .. tab-item:: Limitations
+      :sync: l
+
+      Cannot manage dynamic distribution lists.
+
+.. dropdown:: Detailed list of permissions
+
+   These rights are reserved to a Group Management Administrator.
+
+   .. hlist::
+      :columns: 2
+
+      * View Domain attributes
+      * Create, modify and delete distribution list, except for Dynamic
+        Distribution Lists
+      * Manage DL Aliases
 
 .. index:: Administrator; Help Desk
 
@@ -286,24 +489,54 @@ list of the domain and possesses these rights
 Help Desk (Domain) Administrators
 ---------------------------------
 
-Help Desk (Domain) Admins can reset passwords within the domain,
-including all users but administrators, and manage some user
-information, both in the |adminui| and via API. In particular, they
-have these rights
+**Help Desk (Domain) Administrators** can reset passwords within the
+domain, including all users but administrators, and manage some user
+information, both in the |adminui| and via API. An Help Desk
+Administrator is suited for **user-level** support.
 
+.. tab-set::
 
-.. hlist::
-   :columns: 2
+   .. tab-item:: Scope
+      :sync: s
 
-   * View Domain attributes
-   * Modify user information such as:
+      User support within a domain.
 
-     * personal data
-     * user preferences
-     * enable or disable activesync access
+   .. tab-item:: Main Permissions
+      :sync: p
 
-   * Reset and Assign User Passwords, application credentials, and OTP
-     codes
-   * Suspend and Reset ActiveSync sessions
-   * Suspend and Reset HTTP/IMAP sessions
-   * Undelete emails, calendars, and contacts
+      * View domain attributes
+
+      * Modify user information (personal data, preferences,
+        ActiveSync access)
+
+      * Reset and assign user passwords, application credentials, and
+        OTP codes
+
+      * Suspend and reset ActiveSync, HTTP, and IMAP sessions
+
+      * Undelete emails, calendars, and contacts
+
+   .. tab-item:: Limitations
+      :sync: l
+
+      Cannot reset passwords for other administrators.
+
+.. dropdown:: Detailed list of permissions
+
+   These rights are reserved to a Help Desk Administrator.
+
+   .. hlist::
+      :columns: 2
+
+      * View Domain attributes
+      * Modify user information such as:
+
+        * personal data
+        * user preferences
+        * enable or disable activesync access
+
+      * Reset and Assign User Passwords, application credentials, and OTP
+        codes
+      * Suspend and Reset ActiveSync sessions
+      * Suspend and Reset HTTP/IMAP sessions
+      * Undelete emails, calendars, and contacts
