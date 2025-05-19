@@ -68,7 +68,7 @@ Core Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -171,7 +171,7 @@ Core Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -260,7 +260,7 @@ MTA Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -342,7 +342,7 @@ MTA Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -406,7 +406,7 @@ Proxy Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -490,7 +490,7 @@ Proxy Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -554,7 +554,7 @@ Mailstore & Provisioning and Tasks Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -633,7 +633,7 @@ Mailstore & Provisioning and Tasks Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -702,7 +702,7 @@ Files and |WSC| Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -790,7 +790,7 @@ Files and |WSC| Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -855,7 +855,7 @@ Docs and Preview Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -933,7 +933,7 @@ Docs and Preview Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -997,7 +997,7 @@ Video Server Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1075,7 +1075,7 @@ Video Server Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|

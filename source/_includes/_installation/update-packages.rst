@@ -21,7 +21,7 @@
 
          # dnf check-update
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       .. code:: console

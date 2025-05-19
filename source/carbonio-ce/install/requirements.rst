@@ -63,7 +63,7 @@ on top of any of these vanilla distributions:
 * **Ubuntu 22.04 LTS Server Edition**: choose *Ubuntu Server*, not
   *Ubuntu Server (minimized)*
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
-* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`) |beta|
+* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`)
 
 Support for other distributions will be announced in due course
 when it becomes available.

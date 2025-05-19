@@ -68,7 +68,7 @@ Core Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -172,7 +172,7 @@ Core Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -261,7 +261,7 @@ MTA/Proxy Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -348,7 +348,7 @@ MTA/Proxy Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -413,7 +413,7 @@ Mailstore & Provisioning and Tasks Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -491,7 +491,7 @@ Mailstore & Provisioning and Tasks Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -559,7 +559,7 @@ Collaboration Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -654,7 +654,7 @@ Collaboration Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -718,7 +718,7 @@ Video Server Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -796,7 +796,7 @@ Video Server Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|

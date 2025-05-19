@@ -33,7 +33,7 @@
            carbonio-ws-collaboration postgresql16 \
            carbonio-push-connector carbonio-notification-push
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       Install packages

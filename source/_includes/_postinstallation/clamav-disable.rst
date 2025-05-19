@@ -77,7 +77,7 @@ e-mails). Both tasks must be executed from the CLI.
 
               zextras$ zmcontrol restart
 
-        .. tab-item:: RHEL 9 |beta|
+        .. tab-item:: RHEL 9
            :sync: rhel9
 
            .. code:: console

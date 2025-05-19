@@ -26,7 +26,7 @@ We start by updating and upgrading the system.
 
          # dnf upgrade
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       .. code:: console
@@ -104,7 +104,7 @@ Next, we install all packages needed for |product|.
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
          carbonio-catalog
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       The installation on RHEL is divided in two steps. First, install

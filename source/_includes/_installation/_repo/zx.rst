@@ -43,7 +43,7 @@
          gpgcheck=0
          gpgkey=https://repo.zextras.io/repomd.xml.key
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       You need to create file :file:`/etc/yum.repos.d/zextras.repo`

@@ -66,7 +66,7 @@ Core Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -163,7 +163,7 @@ Core Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -229,7 +229,7 @@ MTA/Proxy Node
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
             # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          You need to add the EPEL repository and enable the BaseOS,
@@ -280,7 +280,7 @@ MTA/Proxy Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -367,7 +367,7 @@ MTA/Proxy Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -409,7 +409,7 @@ Mailstore Node
             # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
             # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          You need to add the EPEL repository and enable the BaseOS,
@@ -460,7 +460,7 @@ Mailstore Node
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -534,7 +534,7 @@ Mailstore Node
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|

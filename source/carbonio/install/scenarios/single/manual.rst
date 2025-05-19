@@ -158,7 +158,7 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, restart all |product|
@@ -215,7 +215,7 @@ following command and verify that in the output they are appear as
 
          zextras$ zmcontrol status
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
 
@@ -278,7 +278,7 @@ Node*. Click on the drop-downs to expand them.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -325,7 +325,7 @@ Node*. Click on the drop-downs to expand them.
             carbonio-docs-connector postgresql16 \
             carbonio-push-connector carbonio-notification-push 
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -445,7 +445,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -480,7 +480,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
             # dnf install service-discover-agent \
             carbonio-videoserver-advanced carbonio-videorecorder
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console

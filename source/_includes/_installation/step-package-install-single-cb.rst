@@ -26,7 +26,7 @@ We start by updating and upgrading the system.
 
          # dnf upgrade
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       .. code:: console
@@ -101,7 +101,7 @@ Next, we install all packages needed for |product|.
          # /usr/pgsql-16/bin/postgresql-16-setup initdb
          # systemctl enable --now postgresql-16
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       The installation on RHEL is divided in few steps: install the

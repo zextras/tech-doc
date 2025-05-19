@@ -23,7 +23,7 @@
          # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
          # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       You need to add the EPEL repository and enable the BaseOS,

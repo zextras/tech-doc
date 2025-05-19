@@ -73,7 +73,7 @@ Finally, restart the service.
 
          zextras$ zmcontrol restart
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       Execute, as the |ru|

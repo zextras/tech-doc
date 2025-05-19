@@ -26,7 +26,7 @@
 
       .. include:: /_includes/_installation/rhel-pg.rst
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       .. include:: /_includes/_installation/rhel-pg.rst
@@ -71,7 +71,7 @@ stored on this node by running these commands.
          # echo "host    all             all             0.0.0.0/0            md5" >> /var/lib/pgsql/16/data/pg_hba.conf
          # systemctl restart postgresql-16
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       .. code:: console

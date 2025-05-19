@@ -33,7 +33,7 @@ following packages
          carbonio-message-dispatcher-db \
          carbonio-notification-push-db
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       .. code:: console

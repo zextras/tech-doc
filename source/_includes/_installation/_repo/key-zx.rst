@@ -36,7 +36,7 @@
 
       This step is not needed.
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       This step is not needed.

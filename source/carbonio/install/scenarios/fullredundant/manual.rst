@@ -70,7 +70,7 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -169,7 +169,7 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -260,7 +260,7 @@ This Node features the *Mesh* and *Directory Replica*  Components.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -354,7 +354,7 @@ This Node features the *Mesh* and *Directory Replica*  Components.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -445,7 +445,7 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -538,7 +538,7 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -629,7 +629,7 @@ This Node features the *MTA AV/AS* Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -711,7 +711,7 @@ This Node features the *MTA AV/AS* Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -777,7 +777,7 @@ This Node features the (replicated) *MTA AV/AS* Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -859,7 +859,7 @@ This Node features the (replicated) *MTA AV/AS* Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -925,7 +925,7 @@ This Node features the *Proxy* Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1008,7 +1008,7 @@ This Node features the *Proxy* Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -1074,7 +1074,7 @@ This Node features the (replicated) *Proxy* Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1157,7 +1157,7 @@ This Node features the (replicated) *Proxy* Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -1223,7 +1223,7 @@ This Node features the *Mailstore & Provisioning* Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1297,7 +1297,7 @@ This Node features the *Mailstore & Provisioning* Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -1363,7 +1363,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1437,7 +1437,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -1507,7 +1507,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Components.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1600,7 +1600,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Components.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -1670,7 +1670,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Components.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1764,7 +1764,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Components.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -1830,7 +1830,7 @@ This Node features the *Docs & Editor* and *Preview* Components.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -1908,7 +1908,7 @@ This Node features the *Docs & Editor* and *Preview* Components.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -1975,7 +1975,7 @@ Components.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -2053,7 +2053,7 @@ Components.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -2119,7 +2119,7 @@ This Node features the *Video Server & Video Recording* Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -2193,7 +2193,7 @@ This Node features the *Video Server & Video Recording* Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
@@ -2260,7 +2260,7 @@ Component.
 
             # dnf upgrade
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -2334,7 +2334,7 @@ Component.
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          After the successful package installation, start all |product|
