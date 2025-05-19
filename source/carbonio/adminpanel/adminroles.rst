@@ -334,6 +334,25 @@ domain. They have no access to :ref:`infra-settings`.
       * Manage Analytics at COS and Account level
       * In addition, all the permissions of a Delegated (Domain) Admin
 
+.. csv-table:: Comparison with Global Administrator
+   :header: "Feature / Permission", "Global Administrator", "Domain Administrator"
+
+   "Scope", "Single domain", "Entire Carbonio infrastructure"
+   "Can manage multiple domains", "|n|", "|y|"
+   "Access to global settings (infrastructure, COS, services, etc.)", "|n|", "|y|"
+   "Manage users within assigned domain", "|y|", "|y| (for all
+   domains)"
+   "Create/edit/delete other domain admins", "|y| (within the
+   domain)", "|y| (for all domains)"
+   "Assign rights and roles", "|y| (within the domain)", "|y| (Full
+   rights and role delegation)"
+   "Manage themes, GALSync, authentication", "|y| (domain-specific)", "|y| (globally and domain-specific)"
+   "Manage COS (Class of Service)", "|n|", "|y|"
+   "Modify Assigned COS, Max Account Number, Quota", "|n|", "|y|"
+   "Access server/infrastructure settings", "|n|", "|y|"
+   "View analytics", "|y| (for domain/COS/account level)", "|y| (Full
+   analytics access)"
+
 .. index:: Administrator; Delegated Domain
 
 .. _ap-delegated-admins:
@@ -377,6 +396,23 @@ as virtual hosts, authentication methods or themes but they can manage
       * View Domain attributes
       * Configure |wsc|
       * In addition, all the permissions of a User Management (Domain) Admin
+
+.. csv-table:: Comparison with Domain Administrator
+   :header: "Feature / Permission", "Delegated Domain Administrator", "Domain Administrator"
+
+   "Scope", "Single domain", "Single domain"
+   "Manage domain settings (general)", "|y|", "|y|"
+   "Manage infrastructure settings (COS, quota, etc.)", "|n|", "|n|
+   (restricted to Global Administrators)"
+   "View domain attributes", "|y|", "|y|"
+   "Create/edit/delete user accounts", "|y|", "|y|"
+   "Assign or change admin roles", "|n|", "|y| (within a domain)"
+   "Manage GALSync, virtual hosts, certificates", "|n|", "|y|"
+   "Manage authentication methods", "|n|", "|y|"
+   "Manage domain themes", "|n|", "|y|"
+   "Login as managed users", "|y|", "|y|"
+   "View analytics (domain-level)", "|n|", "|y|"
+   "Modify or view infrastructure settings", "|n|", "|n|"
 
 .. index:: Administrator; User
 
@@ -438,6 +474,24 @@ domain. They are suited for HR or Help Desk teams managing users.
       * In addition, all the permissions of a Help Desk (Domain) Admin
       * In addition, all the permissions of a Group Management (Domain) Admin
 
+.. csv-table:: Comparison with Delegated Domain Administrator
+   :header: "Feature / Permission", "User Management Administrator", "Delegated
+            Administrator"
+
+   "Scope", "User accounts within a domain", "Full domain-level
+   (excluding infrastructure)"
+   "Create/edit/delete user accounts", "|y|", "|y|"
+   "Assign mailstores to accounts", "|n|", "|n|"
+   "Login as users", "|y|", "|y|"
+   "Reset passwords, OTPs, aliases, credentials", "|y|", "|y|"
+   "Manage account restoration and undelete", "|y|", "|y|"
+   "Manage distribution lists", "|n|", "|y|"
+   "Manage GALSync, virtual hosts, certificates", "|n|", "|n|"
+   "Manage domain settings", "|n|", "|y|"
+   "Assign or manage other admins", "|n|", "|n|"
+   "View domain attributes", "|y|", "|y|"
+   "Access analytics", "|n|", "|n|"
+
 .. index:: Administrator; Group
 
 .. _ap-group-admins:
@@ -482,6 +536,25 @@ for managing group email structures.
       * Create, modify and delete distribution list, except for Dynamic
         Distribution Lists
       * Manage DL Aliases
+
+.. csv-table:: Comparison with User Management Domain Administrator
+   :header: "Feature / Permission", "Group Management Administrator", "User
+            Management Administrator"
+
+   "Scope", "Distribution lists within a domain", "User accounts within a
+   domain"
+   "Create/edit/delete distribution lists", "|y|", "|n|"
+   "Manage dynamic distribution lists", "|n|", "|n|"
+   "Manage distribution list aliases", "|y|", "|n|"
+   "Create/edit/delete user accounts", "|n|", "|y| (excluding
+   mailstore assignment)"
+   "Login as users", "|n|", "|y|"
+   "Reset passwords, OTPs, credentials", "|n|", "|y|"
+   "Restore accounts or undelete data", "|n|", "|y|"
+   "View domain attributes", "|y|", "|y|"
+   "Manage OTP, password policies", "|n|", "|y|"
+   "Assign roles or manage other admins", "|n|", "|n|"
+   "Access analytics", "|n|", "|n|"
 
 .. index:: Administrator; Help Desk
 
@@ -541,3 +614,22 @@ Administrator is suited for **user-level** support.
       * Suspend and Reset ActiveSync sessions
       * Suspend and Reset HTTP/IMAP sessions
       * Undelete emails, calendars, and contacts
+
+.. csv-table:: Comparison with Group Management Domain Administrator
+   :header: "Feature / Permission", "Help Desk Administrator", "Group Management
+            Administrator"
+
+   "Scope", "User support within a domain", "Distribution lists within a
+   domain"
+   "View domain attributes", "|y|", "|y|"
+   "Modify user personal info and preferences", "|y|", "|n|"
+   "Reset passwords, OTPs, and credentials", "|y|", "|n|"
+   "Login as users", "|y|", "|n|"
+   "Suspend/reset ActiveSync, HTTP, IMAP sessions", "|y|", "|n|"
+   "Restore deleted emails, calendars, contacts", "|y|", "|n|"
+   "Create/edit/delete user accounts", "|n|", "|n|"
+   "Create/edit/delete distribution lists", "|n|", "|y|"
+   "Manage distribution list aliases", "|n|", "|y|"
+   "Manage dynamic distribution lists", "|n|", "|n|"
+   "Assign roles or manage admins", "|n|", "|n|"
+   "Access analytics", "|n|", "|n|"
