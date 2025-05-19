@@ -35,6 +35,8 @@
 .. |ex| replace:: :bdg-info-line:`Example`
 .. |zu| replace:: ``zextras`` user
 .. |ru| replace:: ``root`` user
+.. |y| replace:: :octicon:`check-circle-fill;1em;sd-text-success` Yes
+.. |n| replace:: :octicon:`x-circle-fill;1em;sd-text-danger` No
 
 .. various acronyms
 

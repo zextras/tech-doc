@@ -94,6 +94,7 @@
     CoS, or Account level.
 
    Rights
+   Permissions
      A **Right** is a privilege granted to an account, which allows to
      manage other users.
 

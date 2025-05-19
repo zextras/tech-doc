@@ -504,7 +504,7 @@ Component. Belonging to any of these Groups allow a regular user to gain
 some rights and manage specific parts of the |product| infrastructure.
 
 .. seealso:: To learn more about the rights of the different types of
-   Administrators, please refer to Section :ref:`ap-admin-components`.
+   Administrators, please refer to Section :ref:`ap-admin-roles`.
 
 .. _ap-resources:
 
