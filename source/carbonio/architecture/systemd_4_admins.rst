@@ -27,6 +27,9 @@ Below are the most common use cases:
 .. code-block:: bash
 
    systemctl status carbonio-proxy.target
+   
+.. code-block:: bash
+  
    journalctl -u carbonio-nginx.service
 
 **Enable Target at Boot**
