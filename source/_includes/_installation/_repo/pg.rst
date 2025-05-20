@@ -1,7 +1,7 @@
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
@@ -9,8 +9,8 @@
 
          # wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 

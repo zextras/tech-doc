@@ -3,42 +3,14 @@ requires to run a few commands.
 
 We start by updating and upgrading the system.
 
-.. tab-set::
-
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
-
-      .. code:: console
-
-         # apt update && apt upgrade
-
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
-
-      .. code:: console
-
-         # apt update && apt upgrade
-
-   .. tab-item:: RHEL 8
-      :sync: rhel8
-
-      .. code:: console
-
-         # dnf upgrade
-
-   .. tab-item:: RHEL 9
-      :sync: rhel9
-
-      .. code:: console
-
-         # dnf upgrade
+.. include:: /_includes/_installation/pkg-upgrade.rst
 
 Next, we install all packages needed for |product|.
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
@@ -51,8 +23,8 @@ Next, we install all packages needed for |product|.
          carbonio-ws-collaboration-ui carbonio-mailbox-db \
          carbonio-files-db postgresql-16
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 

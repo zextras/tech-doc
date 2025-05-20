@@ -3,8 +3,8 @@ following packages
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
@@ -13,8 +13,8 @@ following packages
          carbonio-message-dispatcher-db \
          carbonio-notification-push-db
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 

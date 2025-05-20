@@ -33,16 +33,16 @@ To correctly run the script, please follow these advices
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
-
-      Script for Ubuntu 20.04 and 22.04
-      :download:`/scripts/install_carbonio_ce_singleserver_ubuntu.sh`
-
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
 
-      Script for Ubuntu 22.04 and 20.04
+      Script for Ubuntu 22.04
+      :download:`/scripts/install_carbonio_ce_singleserver_ubuntu.sh`
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      Script for Ubuntu 24.04
       :download:`/scripts/install_carbonio_ce_singleserver_ubuntu.sh`
 
    .. tab-item:: RHEL 8

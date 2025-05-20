@@ -5,16 +5,16 @@
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
          # apt update
          # apt install postgresql-16
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 
@@ -38,8 +38,8 @@ stored on this node by running these commands.
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
@@ -49,8 +49,8 @@ stored on this node by running these commands.
          # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/16/main/pg_hba.conf
          # systemctl restart postgresql
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 

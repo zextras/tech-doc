@@ -43,35 +43,7 @@ Core Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component, but you can combine all packages and run the install
@@ -129,35 +101,34 @@ Core Node
 
 .. dropdown:: Step 8: Complete Installation
 
+
+   After the successful package installation, start all |product|
+   services by using
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-directory-server.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
@@ -166,8 +137,7 @@ Core Node
       .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -257,35 +227,7 @@ MTA/Proxy Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
@@ -333,35 +275,34 @@ MTA/Proxy Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by using
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-mta.target
+            # systemctl restart carbonio-proxy.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
@@ -370,8 +311,7 @@ MTA/Proxy Node
       .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -437,35 +377,7 @@ Mailstore Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
@@ -500,35 +412,33 @@ Mailstore Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by using
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
@@ -537,9 +447,9 @@ Mailstore Node
       .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
+
 
             # systemctl restart carbonio-appserver.target
