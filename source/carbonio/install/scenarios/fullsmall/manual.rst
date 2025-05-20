@@ -45,36 +45,7 @@ Core Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
-
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
@@ -138,49 +109,47 @@ Core Node
 
 .. dropdown:: Step 8: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
 
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
             # systemctl restart carbonio-directory-server.target
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         As the |zu|
+
+         .. code:: console
+
+            zextras$ zmcontrol restart
+
+      .. tab-item:: RHEL 9
+         :sync: rhel9
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-directory-server.target
+
 
 .. _fsm1-step9:
 
@@ -238,35 +207,7 @@ MTA/Proxy Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
@@ -314,45 +255,43 @@ MTA/Proxy Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-mta.target
+            # systemctl restart carbonio-proxy.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -390,35 +329,7 @@ Mailstore & Provisioning and Tasks Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
@@ -457,45 +368,42 @@ Mailstore & Provisioning and Tasks Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -536,35 +444,7 @@ Collaboration Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
@@ -620,45 +500,42 @@ Collaboration Node
 
 .. dropdown:: Step 7: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -695,35 +572,7 @@ Video Server Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
@@ -762,45 +611,42 @@ Video Server Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 

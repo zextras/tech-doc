@@ -1,15 +1,12 @@
-.. SPDX-FileCopyrightText: 2023 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 The upgrade to |version| impacts the following *Components*, packages, or
 software, which require some manual interaction before, during, or
 after the procedure.
 
-.. card:: Ubuntu Release 22.04 and RHEL 9 |beta|
+.. card:: Ubuntu Release 22.04 and RHEL 9
 
    |product| |version| can be installed on **Ubuntu 22.04** and **RHEL
-   9** (|beta| support).
+   9**.
 
    If you plan to upgrade to RHEL 9, make sure to satisfy the
    :ref:`specific requirements <rhel9-req>`.

@@ -125,44 +125,45 @@ Now you have to bootstrap some DBs with the password set in the Preliminary Task
 
 .. dropdown:: Step 8: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by using
+
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, restart all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, restart all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
+
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-directory-server.target
+            # systemctl restart carbonio-appserver.target
+            # systemctl restart carbonio-mta.target
+            # systemctl restart carbonio-proxy.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, restart all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, restart all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -194,8 +195,8 @@ following command and verify that in the output they are appear as
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 
@@ -215,7 +216,7 @@ following command and verify that in the output they are appear as
 
          zextras$ zmcontrol status
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
 
@@ -226,7 +227,7 @@ following command and verify that in the output they are appear as
 In case some of the services is not running, please refer to Section
 :ref:`ts-cli` (if you are running Ubuntu or RHEL 8) or to the
 dedicated :ref:`RHEL 9 box <rhel-systemd>`.
-              
+
 Collaboration Node
 ==================
 
@@ -255,52 +256,12 @@ Node*. Click on the drop-downs to expand them.
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|.
 
    .. tab-set::
 
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt install carbonio-message-dispatcher \
-            carbonio-ws-collaboration \
-            carbonio-push-connector service-discover-agent \
-            carbonio-tasks carbonio-docs-editor \
-            carbonio-docs-connector postgresql-client-16 \
-            carbonio-push-connector carbonio-notification-push 
-
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
@@ -311,7 +272,19 @@ Node*. Click on the drop-downs to expand them.
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql-client-16 \
-            carbonio-push-connector carbonio-notification-push 
+            carbonio-push-connector carbonio-notification-push
+
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         .. code:: console
+
+            # apt install carbonio-message-dispatcher \
+            carbonio-ws-collaboration \
+            carbonio-push-connector service-discover-agent \
+            carbonio-tasks carbonio-docs-editor \
+            carbonio-docs-connector postgresql-client-16 \
+            carbonio-push-connector carbonio-notification-push
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -323,9 +296,9 @@ Node*. Click on the drop-downs to expand them.
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql16 \
-            carbonio-push-connector carbonio-notification-push 
+            carbonio-push-connector carbonio-notification-push
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -335,7 +308,7 @@ Node*. Click on the drop-downs to expand them.
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql16 \
-            carbonio-push-connector carbonio-notification-push 
+            carbonio-push-connector carbonio-notification-push
 
 .. dropdown:: Step 4: Bootstrap |product|
 
@@ -350,7 +323,7 @@ Node*. Click on the drop-downs to expand them.
    To carry out this step, you need the |mesh| **secret** generated
    during the installation of the Core Node (see :ref:`Step 9
    <n1-s9>`).
-   
+
    The |mesh| configuration is interactively generated by command
 
    .. code:: console
@@ -376,7 +349,7 @@ Node*. Click on the drop-downs to expand them.
       # read -s -p "Insert Password:" DB_ADM_PWD
 
    Now, run command
-   
+
    .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
    .. rubric:: Enable |wsc|
@@ -422,47 +395,11 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|.
 
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt install service-discover-agent \
-            carbonio-videoserver-advanced  carbonio-videorecorder
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
@@ -471,6 +408,14 @@ Server* Node. Most of the steps are the same as in the *Core* and
 
             # apt install service-discover-agent \
             carbonio-videoserver-advanced carbonio-videorecorder
+
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         .. code:: console
+
+            # apt install service-discover-agent \
+            carbonio-videoserver-advanced  carbonio-videorecorder
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -480,7 +425,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
             # dnf install service-discover-agent \
             carbonio-videoserver-advanced carbonio-videorecorder
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
          .. code:: console
@@ -502,7 +447,7 @@ Server* Node. Most of the steps are the same as in the *Core* and
    To carry out this step, you need the |mesh| **secret** generated
    during the installation of the Core Node (see the
    :ref:`Step 8 <n1-s8>` Step).
-   
+
    The |mesh| configuration is interactively generated by command
 
    .. code:: console

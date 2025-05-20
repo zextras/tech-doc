@@ -7,17 +7,21 @@ repository to your APT sources.
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
-         # wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-         # add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+         # wget -q -O - https://packages.grafana.com/gpg.key | \
+         gpg --dearmor | sudo tee /usr/share/keyrings/grafana.gpg > \
+         /dev/null
 
+         # echo "deb [signed-by=/usr/share/keyrings/grafana.gpg] \
+         https://packages.grafana.com/oss/deb stable main" | sudo \
+         tee -a /etc/apt/sources.list.d/grafana.list
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 
@@ -75,16 +79,16 @@ Install Grafana packages.
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
          # apt update
          # apt install grafana
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 

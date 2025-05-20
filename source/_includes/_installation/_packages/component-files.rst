@@ -1,13 +1,13 @@
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
          # apt install carbonio-files
 
-   .. tab-item:: Ubuntu 22.04
+   .. tab-item:: Ubuntu 24.04
       :sync: ubuntu22
 
       .. code:: console

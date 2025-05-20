@@ -47,7 +47,7 @@ To enable Memcached access, use these two commands
    
    .. tab-set::
 
-      .. tab-item:: Ubuntu 20.04
+      .. tab-item:: Ubuntu 22.04
 
          As the ``zextras`` user
 
@@ -55,7 +55,7 @@ To enable Memcached access, use these two commands
 
             zextras$ zmmemcachedctl restart
 
-      .. tab-item:: Ubuntu 22.04
+      .. tab-item:: Ubuntu 24.04
 
          As the ``zextras`` user
 

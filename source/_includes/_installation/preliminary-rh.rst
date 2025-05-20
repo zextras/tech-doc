@@ -61,7 +61,7 @@ RHEL 8
 
 .. _rhel9-req:
 
-RHEL 9 |beta|
+RHEL 9
 +++++++++++++
 
 .. card:: Repositories

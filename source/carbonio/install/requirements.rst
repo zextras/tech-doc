@@ -47,12 +47,12 @@ Software Requirements
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any of these vanilla distributions:
 
-* **Ubuntu 20.04 LTS Server Edition**: choose *Ubuntu Server*, not
-  *Ubuntu Server (minimized)*
 * **Ubuntu 22.04 LTS Server Edition**: choose *Ubuntu Server*, not
   *Ubuntu Server (minimized)*
+* **Ubuntu 24.04 LTS Server Edition**: choose *Ubuntu Server*, not
+  *Ubuntu Server (minimized)*
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
-* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`) |beta|
+* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`)
 
 The following requirements must be satisfied before attempting to
 install |product|.
