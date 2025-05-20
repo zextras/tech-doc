@@ -46,15 +46,6 @@ Finally, restart the service.
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
-
-      Execute, as the |zu|
-
-      .. code:: console
-
-         zextras$ zmcontrol restart
-
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
 
@@ -63,6 +54,15 @@ Finally, restart the service.
       .. code:: console
 
          zextras$ zmcontrol restart
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      Execute, as the |ru|
+
+      .. code:: console
+
+         # systemctl start/stop/restart carbonio-proxy.target
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -73,7 +73,7 @@ Finally, restart the service.
 
          zextras$ zmcontrol restart
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       Execute, as the |ru|
