@@ -51,4 +51,3 @@ Carbonio remains aligned with modern Linux standards.
 
       systemd_targets
       systemd_4_admins
-      systemd_notes
