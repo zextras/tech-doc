@@ -3,9 +3,9 @@
  Architecture of |product|
 ===========================
 
-This section contains a description of |product| architecture and  of
-the Components along with the features they provide and how to manually
-install them within a |product| infrastructure.
+This section contains a description of |product| architecture and of
+the Components along with the features they provide and how to
+manually install them within a |product| infrastructure.
 
 :numref:`fig-arch` shows the internal architecture of |product|
 with all its components.
@@ -45,4 +45,4 @@ Supported Mail Protocols
    :hidden:
 
    components
-   intro_systemd
+   intro-systemd
