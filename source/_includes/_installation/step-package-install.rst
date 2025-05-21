@@ -23,7 +23,7 @@ Next, we install all packages needed for |product|.
          carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-connector-db \
          carbonio-docs-editor carbonio-prometheus \
-         carbonio-message-broker carbonio-message-dispatcher \
+         carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-videoserver-ce carbonio-catalog
@@ -42,7 +42,7 @@ Next, we install all packages needed for |product|.
          carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce \
          carbonio-docs-connector-ce carbonio-docs-connector-db \
          carbonio-docs-editor carbonio-prometheus \
-         carbonio-message-broker carbonio-message-dispatcher \
+         carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-videoserver-ce carbonio-catalog
@@ -70,7 +70,7 @@ Next, we install all packages needed for |product|.
          carbonio-tasks-ui carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-docs-connector-db carbonio-prometheus \
-         carbonio-message-broker carbonio-message-dispatcher \
+         carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-docs-connector-db carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
@@ -99,7 +99,7 @@ Next, we install all packages needed for |product|.
          carbonio-tasks-ui carbonio-storages-ce \
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-docs-connector-db carbonio-prometheus \
-         carbonio-message-broker carbonio-message-dispatcher \
+         carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-docs-connector-db carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \

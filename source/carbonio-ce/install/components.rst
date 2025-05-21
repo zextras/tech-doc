@@ -183,7 +183,7 @@ This is the list of Components that make up a |product| installation.
 
       Packages:
 
-      * carbonio-message-dispatcher
+      * carbonio-message-dispatcher-ce
       * carbonio-ws-collaboration-ce
       * service-discover-agent
 
