@@ -1,9 +1,20 @@
-There are scenarios in which an Administrator wants to or needs to
-disable |product|'s internal anti-virus engine, **ClamAV**, for
-example when using an external, company-wide anti-virus engine or for
-troubleshooting some MTA's issue in a test environment. To disable
-ClamAV, first disable **amavis** (which is invoked by ClamAV to check
-e-mails). Both tasks must be executed from the CLI.
+Guidance on Disabling Antivirus and Antispam Services
+
+Disabling Carbonio's internal Antivirus (AV) and Antispam (AS)
+services should only be performed if your infrastructure is protected
+by an external mail filtering system (e.g., an email security gateway,
+cloud-based filtering service, or upstream MTA with integrated AV/AS
+capabilities).
+
+These services play a critical role in scanning inbound and outbound
+mail for malware and unsolicited content. If no equivalent protection
+is enforced externally, disabling them may expose your mail system to
+threats and significantly reduce the overall security posture of your
+environment.
+
+Recommendation: Keep AS/AV services enabled by default unless
+explicitly offloaded to an external system that ensures equivalent or
+stronger protections.
 
 .. card:: Disable Amavis virus check
 
