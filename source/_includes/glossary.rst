@@ -135,6 +135,10 @@
      unique domain. You need one domain certificate only if you host
      multiple domains in the same |product| infrastructure.
 
+   Public Service Hostname
+     A configuration option to correctly serve the Webmail. Together
+     with other connected options allow to configure login behaviour.
+
    .. admins
 
    Administrator
