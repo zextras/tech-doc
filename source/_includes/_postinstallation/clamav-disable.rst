@@ -26,8 +26,8 @@ stronger protections.
       zextras$ carbonio prov mcf carbonioAmavisDisableVirusCheck TRUE
       zextras$ zmlocalconfig -e zmtrainsa_cleanup_host=false
 
-   Restart the service to make sure the new value is picked up by the
-   system
+   Restart the service on every MTA Node to make sure the new value is
+   picked up by the system
 
    .. code:: console
 
@@ -51,8 +51,8 @@ stronger protections.
 
       # systemctl disable carbonio-clamav-sidecar.service
 
-   Restart the following service to let ``systemd`` pick up the
-   changes
+   Restart the following service as the |ru| to let ``systemd`` pick
+   up the changes
 
    * |mesh|
 
@@ -105,14 +105,15 @@ stronger protections.
    and modifies any outgoing email to append the disclaimer.
    
    If you *do not need* a disclaimer and you want to disable Amavis,
-   run the following command
+   run the following command on every MTA Node
 
    .. code:: console
 
       zextras$ carbonio prov ms $(zmhostname) \
       -zimbraServiceEnabled amavis
 
-   Additionally, you can also disable the other related services.
+   Additionally, you can also disable the other related services, by
+   executing on every MTA Node the command
 
    .. code:: console
 
