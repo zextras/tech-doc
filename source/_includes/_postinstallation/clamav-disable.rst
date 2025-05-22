@@ -5,13 +5,15 @@ troubleshooting some MTA's issue in a test environment. To disable
 ClamAV, first disable **amavis** (which is invoked by ClamAV to check
 e-mails). Both tasks must be executed from the CLI.
 
-.. card:: Disable amavis
+.. card:: Disable Amavis virus check
 
-   Execute the following commands as the ``zextras`` user to disable amavis from the CLI
+   Execute the following commands as the |zu| to disable Amavis from
+   the CLI
 
    .. code:: console
 
       zextras$ carbonio prov mcf carbonioAmavisDisableVirusCheck TRUE
+      zextras$ zmlocalconfig -e zmtrainsa_cleanup_host=false
 
    Restart the service to make sure the new value is picked up by the
    system
@@ -32,18 +34,13 @@ e-mails). Both tasks must be executed from the CLI.
 
 .. card:: Disable ClamAV
 
-   To disable ClamAV, execute the following commands as the ``root``
-   user to *mask* the service
+   To disable ClamAV, execute the following commands as the |ru|
 
    .. code:: console
 
       # systemctl disable carbonio-clamav-sidecar.service
 
-   Since the ``systemd`` unit is masked, it will not be restarted
-   during future upgrades. You need to explicitly ``unmask`` it before
-   enabling it again.
-
-   Restart the following services to let ``systemd`` pick up the
+   Restart the following service to let ``systemd`` pick up the
    changes
 
    * |mesh|
@@ -92,9 +89,12 @@ e-mails). Both tasks must be executed from the CLI.
 
               # systemctl restart carbonio-mta.target
 
-  
-   Finally, as the |zu|, let |product| make sure that the
-   antivirus service is disabled.
+   **Amavis** is required if you want to use an :ref:`e-mail
+   disclaimer <ap-disclaimer>` in |product|, because Amavis processes
+   and modifies any outgoing email to append the disclaimer.
+   
+   If you *do not need* a disclaimer and you want to disable Amavis,
+   run the following command
 
    .. code:: console
 
@@ -106,16 +106,75 @@ e-mails). Both tasks must be executed from the CLI.
    .. code:: console
 
       zextras$ carbonio prov ms $(zmhostname) \
-      -zimbraServiceEnabled amavis \
       -zimbraServiceEnabled antivirus \
-      -zimbraServiceEnabled antispam \
-      -zimbraServiceEnabled opendkim \
-      carbonioAmavisDisableVirusCheck TRUE
+      -zimbraServiceEnabled antispam
 
-   As final task, you need to remove the ClamAV definition file for
-   service-discover.
+.. card:: Disable OpenDKIM
 
-   .. note:: This file will be restored during future upgrades of
+   If your emails are sent through an *external MTA relay* that
+   *already adds an OpenDKIM signature*, you **must disable** the
+   OpenDKIM service on |product| to prevent signature conflicts.
+
+   To disable OpenDKIM, execute the following commands.
+
+   First, as the |zu| execute
+
+   .. code:: console
+      
+      zextras$ zextras$ carbonio prov ms \
+      $(zmhostname) -zimbraServiceEnabled opendkim
+
+   Then, depending on the OS you installed
+          
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         As the |zu| execute
+
+         .. code:: console
+
+            zextras$ zmcontrol restart
+
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru| execute
+
+         .. code:: console
+
+            # systemctl restart carbonio-mta.target
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         As the |zu| execute
+
+         .. code:: console
+
+            zextras$ zmcontrol restart
+
+      .. tab-item:: RHEL 9
+         :sync: rhel9
+
+         As the |ru| execute
+
+         .. code:: console
+
+            # systemctl restart carbonio-mta.target
+
+   .. note:: Disabling OpenDKIM means Carbonio will no longer sign
+      outgoing emails with DKIM. Ensure your external MTA is handling
+      DKIM signing correctly.
+
+.. card:: Completely remove ClamAV
+
+   To prevent |mesh| from reporting a service that is not running,
+   remove from the MTAs the ClamAV definition file for
+   :command:`service-discover`:
+
+   .. warning:: This file will be restored during future upgrades of
       ClamAV or |product|, so make sure to remove it each time you
       upgrade.
 
