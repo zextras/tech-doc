@@ -18,15 +18,19 @@ certificate, either manually or automatically.
 :ref:`cli-analytics` explains how to enable or disable analytics.
 
 :ref:`change-ip` features direction to modify the IP address of
-|product| Single-Server
+|product| Single-Server.
 
 :ref:`change-hostname` shows the procedures that you need to change
-the hostname(s) of a |product| infrastructure
+the hostname(s) of a |product| infrastructure.
 
 :ref:`cli-remove-node` guides you in the decommissioning of a Node
-from a |product| infrastructure
+from a |product| infrastructure.
 
-:ref:`locale-settings` contains a procedure  to modify the locale configuration
+:ref:`locale-settings` contains a procedure to modify the locale
+configuration.
+
+:ref:`domain-params` describes the parameters that influence how the
+Webmail is served
 
 .. toctree::
    :hidden:
@@ -41,3 +45,4 @@ from a |product| infrastructure
    administration/removeserver
    administration/s3bench
    administration/locale
+   administration/domain-parameters
