@@ -1,3 +1,7 @@
+
+.. index:: ! Public Service Hostname; by CLI
+.. index:: ! PublicServiceHostname; by CLI
+
 .. card:: ``zimbraPublicServiceHostname``
 
    The LDAP attribute ``zimbraPublicServiceHostname`` is used to

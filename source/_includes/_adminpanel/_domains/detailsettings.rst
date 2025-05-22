@@ -36,6 +36,9 @@ domain.
 We build on the domain created in :ref:`previous section
 <ap-domain-new>` and attach some property.
 
+.. index:: ! Public Service Hostname; by GUI
+.. index:: ! PublicServiceHostname; by GUI
+
 .. grid:: 1 2 2 4
    :gutter: 1
    :outline:
