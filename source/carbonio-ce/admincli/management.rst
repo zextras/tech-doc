@@ -41,6 +41,9 @@ Internet through an HTTP Proxy for downloading the antivirus signatures.
 
 :ref:`locale-settings` contains a procedure  to modify the locale configuration
 
+:ref:`domain-params` describes the parameters that influence how the
+Webmail is served
+
 .. toctree::
    :hidden: 
 
@@ -57,3 +60,4 @@ Internet through an HTTP Proxy for downloading the antivirus signatures.
    management/http-proxy
    management/freshclam-proxy
    management/locale
+   management/domain-parameters
