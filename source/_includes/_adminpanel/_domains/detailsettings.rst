@@ -76,6 +76,8 @@ We build on the domain created in :ref:`previous section
             private IP address, to reach the WebGUI you need some mechanism,
             like e.g., a VPN tunnel.
 
+            More details about this parameter in Section :ref:`domain-params`.
+
    .. grid-item-card::
       :columns: 12
 
