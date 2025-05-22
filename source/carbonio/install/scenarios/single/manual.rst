@@ -73,50 +73,21 @@ repositories.
 
    Now you have to bootstrap some DBs with the password set in the Preliminary Tasks.
 
-   .. card:: Mailbox DB Bootstrap
+   .. code:: console
 
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-   .. card:: Files DB Bootstrap
-
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
    If you plan to install also the Collaboration Node, you need to
    bootstrap also the following databases
 
-   .. card:: |docs|
+   .. code:: console
 
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
-
-   .. card:: |task|
-
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
-
-   .. card:: Message Dispatcher
-
-      .. code:: console
-
-         # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
-
-   .. card:: |wsc|
-
-      .. code:: console
-
-         # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
-
-   .. card:: |wsc| Push Notifications
-
-      .. code:: console
-
-         # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap  carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap  carbonio_adm 127.0.0.1
 
 .. _n1-s8:
 
