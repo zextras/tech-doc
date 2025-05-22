@@ -1,8 +1,8 @@
 
-.. _disable-clamav:
+.. _clamav-manage:
 
-Disable ClamAV
-==============
+Antivirus & Antispam Management
+===============================
 
 .. include:: /_includes/_postinstallation/clamav-disable.rst
 
