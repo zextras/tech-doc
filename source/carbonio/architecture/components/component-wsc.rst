@@ -154,7 +154,7 @@ Enable |wsc|
 
 |wsc| can be enabled from the |adminui| at account or COS level:
 please refer to Sections :ref:`Account / Configuration <act-conf>` and
-:ref:`cos-features`, respectively.
+:ref:`cos-chat`, respectively.
 
 You can enable it also from the command line by running as the
 ``zextras`` user the command

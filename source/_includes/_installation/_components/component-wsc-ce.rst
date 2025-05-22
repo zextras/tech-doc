@@ -15,7 +15,7 @@ Finally, we install packages.
 
       .. code:: console
 
-         # apt install postgresql-client-16 carbonio-message-dispatcher \
+         # apt install postgresql-client-16 carbonio-message-dispatcher-ce \
            carbonio-ws-collaboration-ce
 
    .. tab-item:: Ubuntu 24.04
@@ -24,14 +24,14 @@ Finally, we install packages.
       .. code:: console
 
          # apt install postgresql-client-16 \
-           carbonio-message-dispatcher carbonio-ws-collaboration-ce
+           carbonio-message-dispatcher-ce carbonio-ws-collaboration-ce
 
    .. tab-item:: RHEL 8
       :sync: rhel8
 
       .. code:: console
 
-         # dnf install carbonio-message-dispatcher \
+         # dnf install carbonio-message-dispatcher-ce \
            carbonio-ws-collaboration-ce postgresql16
 
    .. tab-item:: RHEL 9
@@ -39,5 +39,5 @@ Finally, we install packages.
 
       .. code:: console
 
-         # dnf install carbonio-message-dispatcher \
+         # dnf install carbonio-message-dispatcher-ce \
            carbonio-ws-collaboration-ce postgresql16
