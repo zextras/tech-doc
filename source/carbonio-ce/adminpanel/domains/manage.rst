@@ -199,11 +199,34 @@ restore the COS value.
    :open:
    :class-title: sd-text-primary
 
-   The options listed here allows to specify forwarding addresses
-   and to prevent e-mail messages to be saved locally, if these
-   operations are allowed by the administrator. Values for these
-   options can be set from the CLI: please refer to section
-   :ref:`cli-features` for more information.
+   The options listed here allows to specify e-mail forwarding and to
+   enable various features related to the everyday use of |product|.
+
+   .. rubric:: Forwarding
+
+   These options allow to forward all the e-mail sent to the user to a
+   different address.
+
+   **User can specify mail forwarding filter**  this option is needed
+   by users to allow them to create e-mail filter to forward e-mails
+   to a different address.
+
+   **Forwarding address specified by the user** is useful if, for
+   example, you as a rule don't allow users to forward e-mails, but
+   want or need to make an exception.
+
+   .. rubric:: Mail Transport
+
+   This advanced option proves useful only in split-domain or
+   migration scenarios.
+
+   .. index:: Chat preferences; by Account
+
+   .. rubric:: Chat
+
+   Options here allow to configure the |wsc|\'s Chat
+
+   .. include:: /_includes/_adminpanel/wsc.rst
 
 .. _act-prefs:
 
