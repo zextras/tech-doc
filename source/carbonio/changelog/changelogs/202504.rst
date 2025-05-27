@@ -1,0 +1,141 @@
+Changelog 2025-04
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202504-1169 Improved ClamAV documentation
+
+We added a missing :command:`zmcontrol restart` to Section *Disable ClamAV*, modified a note, and added directions to remove the antivirus updater.
+
+Changes in the source code can be found in :pr:`1089`.
+
+
+.. rubric:: 202504-1167 Deprecation of legacy Chats and Video Server
+
+The Legacy Chats and the old |vs| Roles have been deprecated and will be removed in next release.
+
+Changes in the source code can be found in :pr:`1079` and :pr:`1080`.
+
+
+.. rubric:: 202504-1165  Documentation Changelog March 2025
+
+The technical documentation's changelog has been published
+
+Changes in the source code can be found in :pr:`1075`.
+
+
+.. rubric:: 202504-1163 Mandatory upgrade to PostgreSQL 16
+
+PostgreSQL version 12 is no longer supported by carbonio, therefore upgrade to version 16 has become a mandatory step in the upgrade procedure.
+
+Changes in the source code can be found in :pr:`1074`.
+
+
+.. rubric:: 202504-1162 PostgreSQL client version 
+
+We added directions to install the correct version **16** of PostgreSQL client on all supported platforms, whenever it is required, i.e., in all the scenarios that require its installation to communicate with the database.
+
+Changes in the source code can be found in :pr:`1090`.
+
+
+.. rubric:: 202504-1161 Installation of Mesh agent package 
+
+We moved the ``service-discover-agent`` package as the first to be installed as part of the Roles that are not installed together with the `Mesh` or `Mesh & Directory` Roles. We also amended the Installation scenarios and the `Video Server & Video Recording (WSC)` and `DS Replica` Roles.
+
+Changes in the source code can be found in :pr:`1065`.
+
+
+.. rubric:: 202504-1160 Specific configuration of Carbonio Video Server
+
+We improved visibility of a specific |vs| configuration (i.e., different IP addresses for inbound and outbound traffic) that requires manual editing of file  :file:`/etc/janus/janus.jcfg` 
+
+Changes in the source code can be found in :pr:`1078`.
+
+
+.. rubric:: 202504-1156 WSC group missing in Essential scenario
+
+The [workStreamServers] section was added to Essential scenario's inventory file
+
+Changes in the source code can be found in :pr:`1065`.
+
+
+.. rubric:: 202504-1155 Add Hungarian as Community supported language
+
+The Hungarian language is now Community supported and has been added to the available |product| languages.
+
+Changes in the source code can be found in :pr:`1064`.
+
+
+.. rubric:: 202504-1153 2FA  management by Admin Panel
+
+|adminui| Documentation has been improved with a case-by-case analysis of the various configuration alternatives.
+
+Changes in the source code can be found in :pr:`1073`.
+
+
+.. rubric:: 202504-1152 Change warning for PostgreSQL upgrade
+
+We made clear that PostgreSQL must be updated to version **12**.
+
+Changes in the source code can be found in :pr:`1058`.
+
+
+.. rubric:: 202504-1149 Add Mesh troubleshooting command
+
+The :command:`consul intention list` command has been added to the troubleshooting section.
+
+Changes in the source code can be found in :pr:`1055`.
+
+
+.. rubric:: 202504-1146 Add Kyrgyz as Community supported language
+
+The Kyrgyz language is now Community supported and has been added to the available |product| languages.
+
+Changes in the source code can be found in :pr:`1055`.
+
+
+.. rubric:: 202504-1144 Changes to Credential Management section
+
+Section `Credential Management` was renamed to `Service Credential Management` and its content rewritten for mode clarity. Also the corresponding section in the |adminui|'s `Accounts` section was updated.
+
+Changes in the source code can be found in :pr:`1050`.
+
+
+.. rubric:: 202504-974 Missing reindex command
+
+A missing command for ``carbonio-tasks-db`` reindexing within PostgreSQL has been added to the documentation.
+
+Changes in the source code can be found in :pr:`1061`.
+
+
+.. rubric:: 202504-914 How to change hostname on |product|
+
+Step-by-step procedure to change of hostname on a |product| infrastructure,
+
+Changes in the source code can be found in :pr:`1047`
+
+
+.. rubric:: 202504-901 Clean ActiveSync table
+
+We added directions to help Adminitrators to manually clean the PostgreSQL's ``active_sync`` table when it grows far too large for an automatic clean.
+
+Changes in the source code can be found in :pr:`1048`.
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202504-1119 Exchange command for SSH keys is missing
+
+Documentation for the ``zmupdateauthkeys`` has been added to the |carbonio| post installation tasks.
+
+Changes in the source code can be found in :pr:`1049`.
+
+*****
+
+End of changelog
+
