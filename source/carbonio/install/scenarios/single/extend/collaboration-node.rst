@@ -6,6 +6,9 @@ This section contains directions to set up the additional
 *Collaboration* Node. Most of the steps are the same as in the *Core
 Node*. Click on the drop-downs to expand them.
 
+.. warning:: Please pay attention to **Step 4**: the installation
+   command needs to be executed on the **Core Node**.
+
 .. dropdown:: Step 1: Configuration of Repositories
 
    .. rubric:: |product|
@@ -81,7 +84,47 @@ Node*. Click on the drop-downs to expand them.
             carbonio-docs-connector postgresql16 \
             carbonio-push-connector carbonio-notification-push
 
-.. dropdown:: Step 4: Bootstrap |product|
+.. dropdown:: Step 4: Package installation on **Core Node**
+   :color: danger
+   :class-title: sd-bg-danger
+
+   Login to the *Core Node* and install the following packages.
+
+   .. tab-set::
+
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         .. code:: console
+
+            # apt install carbonio-ws-collaboration-ui \
+            carbonio-tasks-ui
+
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         .. code:: console
+
+            # apt install carbonio-ws-collaboration-ui \
+            carbonio-tasks-ui
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         .. code:: console
+
+            # apt install carbonio-ws-collaboration-ui \
+            carbonio-tasks-ui
+
+      .. tab-item:: RHEL 9
+         :sync: rhel9
+
+         .. code:: console
+
+            # apt install carbonio-ws-collaboration-ui \
+            carbonio-tasks-ui
+
+.. dropdown:: Step 5: Bootstrap |product|
 
    To carry out this step, you need the **LDAP password** and the
    **Node hostname** that you have retrieved at Step 9 of the Core
