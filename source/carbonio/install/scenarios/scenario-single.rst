@@ -119,7 +119,7 @@ from the Internet.
           to install the Video Server Node. 
   
 .. toctree::
-   :hidden:
    :glob:
 
    single/*
+   single/extend/*
