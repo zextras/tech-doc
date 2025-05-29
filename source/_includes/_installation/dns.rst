@@ -1,4 +1,3 @@
-
 This section collects all DNS-related settings, which are crucial in
 the setup of |product|, the activities to correctly implement them.
 
@@ -35,3 +34,6 @@ the setup of |product|, the activities to correctly implement them.
 
 #. For improved security of sending emails, you should also define TXT
    records for SPF, DKIM and DMARC
+
+
+.. include:: /_includes/_installation/dkim.rst
