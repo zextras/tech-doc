@@ -1,18 +1,10 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
-.. _dkim-record:
-
-Add a DKIM Record to |product| Installation
-===========================================
 
 This section provides directions to add a DKIM record to the DNS of
 the domain managed by a |product| installation.
 
 .. card:: DKIM in a nutshell
 	   
-   The **D**\omain\ **K**\eys **I**\ dentified **M**\ ail (**DKIM**)
+   The **D**\omain **K**\eys **I**\dentified **M**\ail (**DKIM**)
    is a method to verify that an e-mail was sent from a legitimate mail
    server. Each e-mail is marked with a digital signature that can be
    verified by the receiver.
@@ -25,7 +17,7 @@ the domain managed by a |product| installation.
 
 
 Create a DKIM Record
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 In order to create a new DKIM record, two steps are necessary. As
 usual, we are using `example.com` in our scenario as the domain name: replace it
@@ -62,19 +54,23 @@ with the actual domain name.
 
    * As value of the new record, copy and paste the string within the
      ``(`` braces ``)`` and make sure that the value does not contain
-     any newline (that is, the value is written on one line)::
+     any newline, that is, the value is written on one line. For the
+     sake of readability, we intentionally break it on multiple
+     lines::
        
-       v=DKIM1; k=rsa; ""p=MIIBIjANBgkqhkiG9w0BAQEFA
-       AOCAQ8AMIIBCgKCAQEA6fn7z208Gj/UVAL29CeKxhyHrRnals/qs4kWxnWuPK+ogDQjZoD0aUIv6QkUX6Y/KSYUd9qHEy1I7pSNIlyS
-       ecqeq/YsP5zXzoKD7WmLfE0PGIx0CEtsn4h4MJucm+LNVKziSPVzkVZ0rku15BaBO1bpFd7bvkXMffei3cc2zwrFmFSDVB5P84k1na+
-       5p1o4NBq3SDn8fks9r6""CJ7dAZQ3LazNmAgenMldkWC7tv+/25CStiz3QQ4GqCn4tp0VW3hWOQm6tRSe1yHEG10XT2cSieFM1w0GzB
-       XZZEedCK1POmFoOKwgqraxJtqiPdM7i+mjUOy7w1uqJa4fyxjbVp0QIDAQAB"
+       v=DKIM1; k=rsa; ""p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ
+       EA6fn7z208Gj/UVAL29CeKxhyHrRnals/qs4kWxnWuPK+ogDQjZoD0aUIv6QkU
+       X6Y/KSYUd9qHEy1I7pSNIlySecqeq/YsP5zXzoKD7WmLfE0PGIx0CEtsn4h4MJ
+       ucm+LNVKziSPVzkVZ0rku15BaBO1bpFd7bvkXMffei3cc2zwrFmFSDVB5P84k1
+       na+5p1o4NBq3SDn8fks9r6""CJ7dAZQ3LazNmAgenMldkWC7tv+/25CStiz3QQ
+       4GqCn4tp0VW3hWOQm6tRSe1yHEG10XT2cSieFM1w0GzBXZZEedCK1POmFoOKwg
+       qraxJtqiPdM7i+mjUOy7w1uqJa4fyxjbVp0QIDAQAB"
 
-     .. warning:: Depending on the DNS, it is possible that you need
+     .. warning:: Depending on the DNS administration panel, it is possible that you need
         to remove the double quotes, the white spaces, or both!
 
 Test and Verify
----------------
+~~~~~~~~~~~~~~~
 
 There are several tests that can be carried out to verify that the
 DKIM has been added correctly to the domain DNS and works correctly to
