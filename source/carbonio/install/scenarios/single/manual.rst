@@ -7,11 +7,12 @@
 The manual installation is organised in steps and requires to execute
 commands from the command line, so make sure you have access to it.
 
-The scenario features the Mail, Calendar, Contacts, Backup, and Files
-functionalities on the :ref:`single-core-inst` and is designed to be
-extended to two or three Nodes, adding :ref:`collaboration features
-<single-collab-inst>` (Docs, |WSC|, and Tasks) and :ref:`video
-streaming <single-vs-inst>` (Video Server) features, respectively.
+The scenario features the Mail, Calendar, Contacts, Backup, Files, and
+Preview functionalities on the :ref:`single-core-inst` and is designed
+to be extended to two or three Nodes, adding :ref:`collaboration
+features <single-collab-inst>` (Docs, |WSC|, and Tasks) and
+:ref:`video streaming <single-vs-inst>` (Video Server) features,
+respectively.
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser, see Section

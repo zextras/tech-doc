@@ -19,12 +19,13 @@ therefore has the following architectural limitations:
 
 * The scenario is limited to a **single Node** (*"Core Node"*)
   equipped with only the basic Components: Database, Mesh & Directory,
-  MTA AV/AS, Proxy, Mailstore & Provisioning, and Files Components
+  MTA AV/AS, Proxy, Mailstore & Provisioning, Files, and Preview
+  Components
 
-* The scenario is also meant to be installed on three Nodes: building
-  on the *Core Node*, the second Node features the Docs & Editor,
-  Tasks, and |wsc| Components (*"Collaboration Node"*) and the third the
-  |vs| Component (*"Video Server Node"*)
+* The scenario is also meant to be expanded up to three Nodes:
+  building on the *Core Node*, the second Node would feature the Docs
+  & Editor, Tasks, and |wsc| Components (*"Collaboration Node"*) and
+  the third the |vs| Component (*"Video Server Node"*)
 
 * The scenario supports up to **500 accounts**: adding accounts beyond
   this limit will severly hinder the efficiency of |product| and it is
@@ -38,7 +39,7 @@ therefore has the following architectural limitations:
    scenario depicted in section :ref:`single-arch` below, while the
    manual installation is designed to install only the first Node
    (i.e., the *Core Node*) and provide only Mail, Calendar, Contacts,
-   Backup, and Files functionalities.
+   Backup, Files, and Preview functionalities.
 
    When installing manually, however, it is possible to expand the
    Single-Server to a two or three Nodes setup to add more
