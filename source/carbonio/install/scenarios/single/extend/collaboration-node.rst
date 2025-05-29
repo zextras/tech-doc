@@ -1,3 +1,4 @@
+.. _single-collab-inst:
 
 Collaboration Node
 ==================

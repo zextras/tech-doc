@@ -30,6 +30,26 @@ therefore has the following architectural limitations:
   this limit will severly hinder the efficiency of |product| and it is
   not supported
 
+.. card:: Differences between manual and Ansible installation
+
+   Unlike the other scenarios, the outcome of the manual and Ansible
+   installation procedures may differ. Indeed, the Ansible
+   installation includes all the Components and will set the full
+   scenario depicted in section :ref:`single-arch` below, while the
+   manual installation is designed to install only the first Node
+   (i.e., the *Core Node*) and provide only Mail, Calendar, Contacts,
+   Backup, and Files functionalities.
+
+   When installing manually, however, it is possible to expand the
+   Single-Server to a two or three Nodes setup to add more
+   features. While this approach is sensible for testing and verifying
+   |product| basic features and then the most advanced, please note
+   that the installation process may prove more complex, because while
+   installing the **Collaboration Node** you need to install some
+   packages also on the *Core Node*.
+
+.. _single-arch:
+
 Architecture
 ------------
 
@@ -99,7 +119,7 @@ The following ports must be forwarded from the :ref:`external network
 <fw-external>`, i.e., they are required for proper access to |product|
 from the Internet.
 
-.. table:: Opened ports in Scenario *Single Server*.
+.. table:: Forwarded ports in Scenario *Single Server*.
 
    +-------------------+--------------------------+------------------+
    | Public hostname   | Ports & Service          | Mapping          |
@@ -116,9 +136,10 @@ from the Internet.
    +-------------------+--------------------------+------------------+
 
 .. note:: Ports for the video streaming are only required if you plan
-          to install the Video Server Node. 
+   to install the Video Server Node.
   
 .. toctree::
+   :hidden:
    :glob:
 
    single/*

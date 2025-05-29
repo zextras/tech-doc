@@ -1,3 +1,5 @@
+.. _single-vs-inst:
+
 Video Server Node
 =================
 
