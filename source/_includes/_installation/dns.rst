@@ -29,11 +29,24 @@ the setup of |product|, the activities to correctly implement them.
    configured, the installation will be temporarily suspended to allow
    the change of the hostname.
 
+#. To allow remote mail server to verify the IP address of your
+   |product| infrastructure, which is important for spam filtering,
+   you should also configure your PTS record.
+
+   .. hint:: You can check a domain's MX record using either CLI utility
+      :command:`dig -x` or :command:`nslookup`:
+
+      .. code:: console
+
+         # nslookup MX 203.0.113.124
+
+      Assuming the your public IP address is **203.0.113.124**, the
+      output of the command must contain ``mail.example.com``.
+
 #. Each Node must be able to carry out DNS resolution autonomously and
    be able to resolve all other Nodes
 
 #. For improved security of sending emails, you should also define TXT
    records for SPF, DKIM and DMARC
-
 
 .. include:: /_includes/_installation/dkim.rst
