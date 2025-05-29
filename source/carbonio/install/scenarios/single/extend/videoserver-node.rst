@@ -3,9 +3,55 @@
 Video Server Node
 =================
 
-This section contains directions to set up the additional *Video
-Server* Node. Most of the steps are the same as in the *Core* and
-*Collaboration* Nodes. Click on the drop-downs to expand them.
+This section contains the architectural diagram, requirements, network
+configuration, and directions to set up the additional *Video
+Server* Node.
+
+Architecture
+============
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. _fig-single-vs:
+
+.. figure:: /img/carbonio/scenario-single-vs.png
+   :width: 59%
+   :align: center
+
+   Sample diagram of Video Server Node within the Single Server
+   scenario.
+
+Requirements
+============
+
+Hardware Requirements for the Video Server Node are:
+
+* 8 vCPU
+* 16 GB memory
+* 50 GB disk space
+* at least 100 gb of space for video recordings temporary files
+
+Network Configuration
+=====================
+
+The following ports must be forwarded from the :ref:`external network
+<fw-external>`, i.e., they are required for proper access to |product|
+from the Internet.
+
+.. table:: Forwarded ports in Scenario *Single Server*.
+
+   +-------------------+--------------------------+------------------+
+   | Public hostname   | Ports & Service          | Mapping          |
+   +===================+==========================+==================+
+   | mail.example.com  | * UDP 20000/40000 Video  | srv3.example.com |
+   |                   |   Streaming              |                  |
+   +-------------------+--------------------------+------------------+
+
+Video Server Node Installation
+==============================
+
+Directions are separated in steps, organised in drop-downs. Click each
+of them to expand the content.
 
 .. dropdown:: Step 1: Configuration of Repositories
 

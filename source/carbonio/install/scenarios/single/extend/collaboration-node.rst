@@ -1,11 +1,47 @@
 .. _single-collab-inst:
 
-Collaboration Node
-==================
+====================
+ Collaboration Node
+====================
 
-This section contains directions to set up the additional
-*Collaboration* Node. Most of the steps are the same as in the *Core
-Node*. Click on the drop-downs to expand them.
+This section contains the architectural diagram, requirements, network
+configuration, and directions to set up the additional *Collaboration
+Server* Node.
+
+Architecture
+============
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. _fig-single-collab:
+
+.. figure:: /img/carbonio/scenario-single-collaboration.png
+   :width: 70%
+   :align: center
+
+   Sample diagram of the Collaboration Node within the Single Server
+   scenario.
+
+Requirements
+============
+
+Hardware Requirements for the Video Server Node are.
+
+* 8 vCPU
+* 16 GB memory
+* 50 GB disk space
+
+Network Configuration
+=====================
+
+No ports should be forwarded from the Internet to the Collaboration
+Node.
+
+Collaboration Node Installation
+===============================
+
+Directions are separated in steps, organised in drop-downs. Click each
+of them to expand the content.
 
 .. warning:: Please pay attention to **Step 4**: the installation
    command needs to be executed on the **Core Node**.

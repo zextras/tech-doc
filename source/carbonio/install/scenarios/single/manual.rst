@@ -17,10 +17,61 @@ When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser, see Section
 :ref:`web-access`.
 
+.. _single-arch:
+
+Architecture
+============
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. _fig-single-core:
+
+.. figure:: /img/carbonio/scenario-single-core.png
+   :width: 45%
+   :align: center
+
+   Sample diagram of the Single Server Node.
+
+Requirements
+============
+
+Hardware Requirements for the Core Node are more demanding compared to
+each single Node in a |product| Multi-Node setup.
+
+* 8 vCPU
+* 24 GB memory
+* 50 GB disk space for the OS
+* Additional disk space for the users e-mails, taking into account the
+  quota. Purely as an example, if you have 150 users, each with a
+  quota of 5GB, you need to have at least **800GB of disk space**,
+  50GB for the OS and at 750 for user's total quota.
+
+.. _scenario-single-network:
+
+Network Configuration
+=====================
+
+The following ports must be forwarded from the :ref:`external network
+<fw-external>`, i.e., they are required for proper access to |product|
+from the Internet.
+
+.. table:: Forwarded ports in Scenario *Single Server*.
+
+   +-------------------+--------------------------+------------------+
+   | Public hostname   | Ports & Service          | Mapping          |
+   +===================+==========================+==================+
+   | mail.example.com  | * TCP 25/465/587  SMTP/S | srv1.example.com |
+   |                   | * TCP 80/443      HTTP/S |                  |
+   |                   | * TCP 143/993     IMAP/S |                  |
+   |                   | * TCP 110/995     POP/S  |                  |
+   |                   | * TCP 8636        LDAP   |                  |
+   |                   |   Addresbook             |                  |
+   +-------------------+--------------------------+------------------+
+
 .. _single-core-inst:
 
-Core Node
-=========
+Core Node Installation
+======================
 
 The installation procedure start with the configuration of the
 repositories.
