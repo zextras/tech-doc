@@ -15,7 +15,7 @@ The architecture of this scenario is depicted in the following diagram.
 .. _fig-single-vs:
 
 .. figure:: /img/carbonio/scenario-single-vs.png
-   :width: 59%
+   :width: 79%
    :align: center
 
    Sample diagram of Video Server Node within the Single Server
