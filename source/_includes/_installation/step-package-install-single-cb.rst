@@ -5,7 +5,7 @@ We start by updating and upgrading the system.
 
 .. include:: /_includes/_installation/pkg-upgrade.rst
 
-Next, we install all packages needed for |product|.
+Next, we install the base packages needed for |product|.
 
 .. tab-set::
 
@@ -20,8 +20,7 @@ Next, we install all packages needed for |product|.
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
          carbonio-files-public-folder-ui carbonio-files-ui \
-         carbonio-ws-collaboration-ui carbonio-mailbox-db \
-         carbonio-files-db postgresql-16
+         carbonio-mailbox-db carbonio-files-db postgresql-16
 
    .. tab-item:: Ubuntu 24.04
       :sync: ubu24
@@ -34,8 +33,7 @@ Next, we install all packages needed for |product|.
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
          carbonio-files-public-folder-ui carbonio-files-ui \
-         carbonio-ws-collaboration-ui carbonio-mailbox-db \
-         carbonio-files-db postgresql-16
+         carbonio-mailbox-db carbonio-files-db postgresql-16
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -63,8 +61,7 @@ Next, we install all packages needed for |product|.
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
          carbonio-files-public-folder-ui carbonio-files-ui \
-         carbonio-ws-collaboration-ui carbonio-mailbox-db \
-         carbonio-files-db postgresql16-server
+         carbonio-mailbox-db carbonio-files-db postgresql16-server
 
       Initialise and enable the database
 
@@ -99,8 +96,7 @@ Next, we install all packages needed for |product|.
          carbonio-storages carbonio-message-broker carbonio-files \
          carbonio-preview carbonio-catalog carbonio-webui \
          carbonio-files-public-folder-ui carbonio-files-ui \
-         carbonio-ws-collaboration-ui  carbonio-mailbox-db \
-         carbonio-files-db postgresql16-server
+         carbonio-mailbox-db carbonio-files-db postgresql16-server
 
       Initialise and enable the database
 

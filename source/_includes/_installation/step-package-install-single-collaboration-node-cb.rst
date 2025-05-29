@@ -1,5 +1,4 @@
-If you plan to install also the Collaboration Node, install the
-following packages
+Now, install the DB-related packages
 
 .. tab-set::
 

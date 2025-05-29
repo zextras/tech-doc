@@ -1,6 +1,21 @@
 Single-Server Installation with Ansible
 =======================================
 
+
+Architecture
+------------
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. _fig-single-core-ansible:
+
+.. figure:: /img/carbonio/scenario-single.png
+   :width: 70%
+   :align: center
+
+   Sample diagram of the Single Server Node installed using Ansible.
+
+
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible`, then follow the directions on setting up
