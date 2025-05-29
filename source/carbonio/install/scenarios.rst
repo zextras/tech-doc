@@ -67,9 +67,9 @@ Scenarios
 
       |supp| Files
 
-      |unsup| docs/preview
+      |supp| docs/preview
 
-      |unsup| Videochat
+      |supp| Videochat
 
       |supp| Backup
 
@@ -78,6 +78,9 @@ Scenarios
       |unsup| Cluster, Files and Docs service redundancy
 
       |unsup| LDAP master-slave replica
+
+      .. note:: Availability of some features might require additional
+         Nodes setup.
             
    .. grid-item-card:: Scenario *Essential*
       :columns: 12 12 6 6
