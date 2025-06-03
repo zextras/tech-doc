@@ -1,24 +1,3 @@
-
-This section provides directions to add a DKIM record to the DNS of
-the domain managed by a |product| installation.
-
-.. card:: DKIM in a nutshell
-	   
-   The **D**\omain **K**\eys **I**\dentified **M**\ail (**DKIM**)
-   is a method to verify that an e-mail was sent from a legitimate mail
-   server. Each e-mail is marked with a digital signature that can be
-   verified by the receiver.
-
-   Technically, a **TXT record** that identifies the SMTP server must
-   be added to the domain's DNS configuration.
-
-   .. seealso:: DKIM is an Internet Standard first defined in
-      :rfc:`6376`, later updated in :rfc:`8301` and :rfc:`8463`.
-
-
-Create a DKIM Record
-~~~~~~~~~~~~~~~~~~~~
-
 In order to create a new DKIM record, two steps are necessary. As
 usual, we are using `example.com` in our scenario as the domain name: replace it
 with the actual domain name.
@@ -57,7 +36,7 @@ with the actual domain name.
      any newline, that is, the value is written on one line. For the
      sake of readability, we intentionally break it on multiple
      lines::
-       
+
        v=DKIM1; k=rsa; ""p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ
        EA6fn7z208Gj/UVAL29CeKxhyHrRnals/qs4kWxnWuPK+ogDQjZoD0aUIv6QkU
        X6Y/KSYUd9qHEy1I7pSNIlySecqeq/YsP5zXzoKD7WmLfE0PGIx0CEtsn4h4MJ
@@ -70,7 +49,7 @@ with the actual domain name.
         to remove the double quotes, the white spaces, or both!
 
 Test and Verify
-~~~~~~~~~~~~~~~
+---------------
 
 There are several tests that can be carried out to verify that the
 DKIM has been added correctly to the domain DNS and works correctly to
@@ -93,7 +72,7 @@ sign the outgoing e-mails.
    record has not been set correctly, or if there was some issue in
    retrieving it, you will not see the string **v=DKIM1** in the
    output.
-   
+
 .. card:: DKIM service enabled
 
    The ``openDkim`` service must be running on the |product|
@@ -124,6 +103,3 @@ sign the outgoing e-mails.
 
    Make sure your actual domain name is present instead of
    ``example.com``.
-
-
-   
