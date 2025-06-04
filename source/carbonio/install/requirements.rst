@@ -99,7 +99,8 @@ RHEL 9
 ------
              
 .. include:: /_includes/_installation/rh9.rst
-             
+
+.. include:: /_includes/_installation/ansible.rst
 .. include:: /_includes/_installation/zmcontrol-systemd.rst
 
 .. _inst-additional-req:
