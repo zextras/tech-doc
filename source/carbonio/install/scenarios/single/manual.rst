@@ -80,8 +80,8 @@ from the Internet.
 
 .. _single-core-inst:
 
-Core Node Installation
-======================
+Installation
+============
 
 The installation procedure start with the configuration of the
 repositories.
