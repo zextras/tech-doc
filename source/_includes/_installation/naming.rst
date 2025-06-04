@@ -1,11 +1,3 @@
-In this section, we list some naming conventions we use in the
-documentation and present some tasks you need to carry out on **each
-of the Nodes** before starting with the actual installation.
-
-.. _naming-conv:
-
-Naming conventions
-------------------
 
 When deciding the names of the Nodes, we suggest to match the Node
 name and the Component installed on it (or the main Component in case a Node
@@ -26,18 +18,3 @@ you only need to increase the sequence number:
 Additionally, throughout this documentation, we will use **Proxy
 Node(s)** to denote the Node(s) on which the Proxy Component is (are)
 installed; **MTA Node** the Node featuring the MTA, and so on.
-
-.. _repo-conf:
-
-Configure repositories
-----------------------
-
-.. include:: /_includes/_installation/step-repo-conf.rst
-.. include:: /_includes/_installation/repo-info.rst
-
-.. _set-hostname:
-
-Setting Hostname
-----------------
-
-.. include:: /_includes/_installation/steps-hostname.rst

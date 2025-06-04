@@ -1,7 +1,8 @@
 .. _carbonio-requirements:
 
-Requirements
-------------
+==============
+ Requirements
+==============
 
 |product| can be installed in Single-Server or Multi-Server, with the
 various services and **Components** spread across two or more **Nodes**.
@@ -17,7 +18,7 @@ Single-Server or each server in a Multi-Server infrastructure.
 .. _system-requirements:
 
 System Requirements for a Node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==============================
 
 .. grid:: 1 1 1 2
    :gutter: 2
@@ -53,7 +54,7 @@ System Requirements for a Node
 .. _software-requirements:
 
 Software Requirements for a Node
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+================================
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any of these vanilla distributions:
@@ -88,38 +89,6 @@ when it becomes available.
 The following requirements must be satisfied before attempting to
 install |product|.
 
-#. The whole |product| infrastructure must have at least **one public
-   IP address**. You need to create a DNS **A record** that resolves
-   to the public IP (e.g., ``A mail.example.com``)
-
-   .. hint:: You can check a domain's A record using the CLI utility
-      ``host``:
-
-      .. code:: console
-
-         # host -t A mail.example.com
-
-#. To allow the mail server to receive mail, it will be necessary to
-   set up an **MX record**, which must correspond to the A record
-   (e.g. MX: example.com = mail.example.com )
-
-   .. hint:: You can check a domain's MX record using the CLI utility
-      ``host``:
-
-      .. code:: console
-
-         # host -t MX example.com
-
-   If either of the ``A`` or ``MX`` records is not correctly
-   configured, the installation will be temporarily suspended to allow
-   the change of the hostname.
-   
-#. Each Node must be able to carry out DNS resolution autonomously and
-   be able to resolve all other Nodes
-
-#. For improved security of sending emails, you should also define TXT
-   records for SPF, DKIM and DMARC
-
 #. Python 3, latest version available on the chosen Operating System
 
 #. Perl, latest version available on the chosen Operating System
@@ -144,19 +113,33 @@ install |product|.
 .. _rhel-requirements:
 
 RHEL Specific Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
 .. note:: If you plan to install |product| automatically on a
    *Single-Server* using the downloadable script (see Section
    :ref:`single-install-auto`), these requirements are checked and
    automatically enabled if missing.
 
-.. include:: /_includes/_installation/preliminary-rh-ce.rst
+.. _rhel8-req:
+
+RHEL 8
+------
+
+.. include:: /_includes/_installation/rh8.rst
+
+.. _rhel9-req:
+
+RHEL 9
+------
+
+.. include:: /_includes/_installation/rh9.rst
+
+.. include:: /_includes/_installation/zmcontrol-systemd.rst
 
 .. _more-requirements:
    
 Additional Requirements
-~~~~~~~~~~~~~~~~~~~~~~~
+=======================
 
 When you do not use the :ref:`script-based installation
 <single-install-auto>`, i.e., Single-Server manual installation or
@@ -181,7 +164,7 @@ Multi-Server installation.
 .. _fw-ports:
 
 Firewall Ports
-~~~~~~~~~~~~~~
+==============
 
 For |ce| to operate properly, it is necessary to allow network
 communication on specific ports. On a Single-Server installation, only
@@ -209,7 +192,7 @@ table must be opened only on the Node on which the Component is installed.
 .. _fw-external:
 
 External Connections
-++++++++++++++++++++
+--------------------
 
 These ports must be forwarded to the Node installing each Component, to
 allow communication with remote services on the Internet.
@@ -260,7 +243,7 @@ allow communication with remote services on the Internet.
 .. _fw-internal:
 
 Internal Connections
-++++++++++++++++++++
+--------------------
 
 Traffic to these ports must be allowed on the Nodes where the
 corresponding Component is installed, for a proper communication among
