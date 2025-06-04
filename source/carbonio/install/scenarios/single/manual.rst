@@ -7,12 +7,22 @@
 The manual installation is organised in steps and requires to execute
 commands from the command line, so make sure you have access to it.
 
-The scenario features the Mail, Calendar, Contacts, Backup, Files, and
-Preview functionalities on the :ref:`single-core-inst` and is designed
-to be extended to two or three Nodes, adding :ref:`collaboration
-features <single-collab-inst>` (Docs, |WSC|, and Tasks) and
-:ref:`video streaming <single-vs-inst>` (Video Server) features,
-respectively.
+|product| can be installed on a single server node which provides the
+essential functionalities:
+
+* Mail
+* Calendar
+* Contacts
+* Backup
+* Files
+* Preview
+
+If your use case also requires collaboration tools or video features, the single-server installation can be extended by adding:
+
+* a :ref:`Collaboration Node <single-collab-inst>` that consists of
+  Docs, |wsc|, and Tasks
+* a :ref:`Video Server Node <single-vs-inst>` to enable video
+  streaming and video recording
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser, see Section
