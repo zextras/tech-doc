@@ -1,4 +1,3 @@
-
 .. _preliminary:
 
 ===============
@@ -52,6 +51,8 @@ be added to the domain's DNS configuration.
 
 .. seealso:: DKIM is an Internet Standard first defined in
    :rfc:`6376`, later updated in :rfc:`8301` and :rfc:`8463`.
+
+.. _dkim-record:
 
 Create a DKIM Record
 --------------------
