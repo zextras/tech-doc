@@ -41,11 +41,10 @@ each single Node in a |product| Multi-Node setup.
 
 * 8 vCPU
 * 24 GB memory
-* 50 GB disk space for the OS
-* Additional disk space for the users e-mails, taking into account the
-  quota. Purely as an example, if you have 150 users, each with a
-  quota of 5GB, you need to have at least **800GB of disk space**,
-  50GB for the OS and at 750 for user's total quota.
+* 100 GB disk space for the OS
+* Additional disk space for the users's e-mail storage, taking into
+  account the expected e-mail volume, quota, and retention
+  policies. This storage must be mounted under :file:`/opt/zextras`
 
 .. _scenario-single-network:
 

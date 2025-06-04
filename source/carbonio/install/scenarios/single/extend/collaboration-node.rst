@@ -27,9 +27,9 @@ Requirements
 
 Hardware Requirements for the Video Server Node are.
 
-* 8 vCPU
+* 4 vCPU
 * 16 GB memory
-* 50 GB disk space
+* 50 GB disk space for the operating system
 
 Network Configuration
 =====================
