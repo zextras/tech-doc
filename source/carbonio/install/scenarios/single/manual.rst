@@ -7,12 +7,22 @@
 The manual installation is organised in steps and requires to execute
 commands from the command line, so make sure you have access to it.
 
-The scenario features the Mail, Calendar, Contacts, Backup, Files, and
-Preview functionalities on the :ref:`single-core-inst` and is designed
-to be extended to two or three Nodes, adding :ref:`collaboration
-features <single-collab-inst>` (Docs, |WSC|, and Tasks) and
-:ref:`video streaming <single-vs-inst>` (Video Server) features,
-respectively.
+|product| can be installed on a single server node which provides the
+essential functionalities:
+
+* Mail
+* Calendar
+* Contacts
+* Backup
+* Files
+* Preview
+
+If your use case also requires collaboration tools or video features, the single-server installation can be extended by adding:
+
+* a :ref:`Collaboration Node <single-collab-inst>` that consists of
+  Docs, |wsc|, and Tasks
+* a :ref:`Video Server Node <single-vs-inst>` to enable video
+  streaming and video recording
 
 When the installation process has successfully finished, you can
 access |product|\'s GUI using a browser, see Section
@@ -41,11 +51,10 @@ each single Node in a |product| Multi-Node setup.
 
 * 8 vCPU
 * 24 GB memory
-* 50 GB disk space for the OS
-* Additional disk space for the users e-mails, taking into account the
-  quota. Purely as an example, if you have 150 users, each with a
-  quota of 5GB, you need to have at least **800GB of disk space**,
-  50GB for the OS and at 750 for user's total quota.
+* 100 GB disk space for the OS
+* Additional disk space for the users's e-mail storage, taking into
+  account the expected e-mail volume, quota, and retention
+  policies. This storage must be mounted under :file:`/opt/zextras`
 
 .. _scenario-single-network:
 
@@ -71,8 +80,8 @@ from the Internet.
 
 .. _single-core-inst:
 
-Core Node Installation
-======================
+Installation
+============
 
 The installation procedure start with the configuration of the
 repositories.

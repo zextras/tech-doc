@@ -1,8 +1,8 @@
 .. _single-collab-inst:
 
-====================
- Collaboration Node
-====================
+==============================================
+Extend Manual Installation: Collaboration Node
+==============================================
 
 This section contains the architectural diagram, requirements, network
 configuration, and directions to set up the additional *Collaboration
@@ -25,11 +25,11 @@ The architecture of this scenario is depicted in the following diagram.
 Requirements
 ============
 
-Hardware Requirements for the Video Server Node are.
+Hardware Requirements for the Collaboration Node are:
 
-* 8 vCPU
+* 4 vCPU
 * 16 GB memory
-* 50 GB disk space
+* 50 GB disk space for the operating system
 
 Network Configuration
 =====================

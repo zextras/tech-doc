@@ -9,12 +9,70 @@ The architecture of this scenario is depicted in the following diagram.
 
 .. _fig-single-core-ansible:
 
-.. figure:: /img/carbonio/scenario-single.png
-   :width: 70%
+.. figure:: /img/carbonio/scenario-single-ansible-without-files-and-preview.png
+   :width: 50%
    :align: center
 
    Sample diagram of the Single Server Node installed using Ansible.
 
+The scenario involves a single server node providing essential functions:
+
+* Mail
+* Calendar
+* Contacts
+* Backup
+
+If your use case requires other collaboration tools or video
+capabilities, the single-server installation can be extended by
+adding:
+
+* Preview/Files - on the same Node
+* Tasks/Docs/WSC  - on a second Node
+* Videoserver/Videorecording - on a third Node
+
+Depending on the features chosen, the architecture changes and can be
+seen in the following diagram.
+
+.. _fig-single-extended-ansible:
+
+.. figure:: /img/carbonio/scenario-single-vs-ansible-with-optional-files-and-preview.png
+   :width: 79%
+   :align: center
+
+   Sample diagram of the optional Collaboration and Video Server Nodes
+   within the Single Server scenario.
+
+Requirements
+============
+
+Hardware Requirements for the Single Node are more demanding compared
+to each single Node in a |product| Multi-Node setup.
+
+.. rubric:: Single-Server Node
+
+* 8 vCPU
+* 24 GB memory
+* 100 GB disk space for the OS
+* Additional disk space for the users's e-mail storage, taking into
+  account the expected e-mail volume, quota, and retention
+  policies. This storage must be mounted under :file:`/opt/zextras`
+
+.. rubric:: Optional Collaboration Node
+
+* 4 vCPU
+* 16 GB memory
+* 50 GB disk space for the operating system
+
+.. rubric:: Optional Video Server Node
+
+* 8 vCPU
+* 8 GB memory
+* 50 GB disk space
+* If you plan to record video meetings, you need to allocate
+  sufficient space to store temporary files on this Node
+
+Installation
+============
 
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
@@ -47,7 +105,7 @@ infrastructure.
 
    :download:`Download_inventory
    </playbook/carbonio-inventory-single>`
-   
+
    .. literalinclude:: /playbook/carbonio-inventory-single
 
 .. note:: To add any of the Components listed as optional, simply remove

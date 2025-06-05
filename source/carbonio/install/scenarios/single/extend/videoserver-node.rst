@@ -1,7 +1,8 @@
 .. _single-vs-inst:
 
-Video Server Node
-=================
+===============================================
+ Extend Manual Installation: Video Server Node
+===============================================
 
 This section contains the architectural diagram, requirements, network
 configuration, and directions to set up the additional *Video
@@ -27,9 +28,10 @@ Requirements
 Hardware Requirements for the Video Server Node are:
 
 * 8 vCPU
-* 16 GB memory
+* 8 GB memory
 * 50 GB disk space
-* at least 100 gb of space for video recordings temporary files
+* If you plan to record video meetings, you need to allocate
+  sufficient space to store temporary files on this Node
 
 Network Configuration
 =====================
