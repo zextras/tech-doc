@@ -42,6 +42,38 @@ seen in the following diagram.
    Sample diagram of the optional Collaboration and Video Server Nodes
    within the Single Server scenario.
 
+Requirements
+============
+
+Hardware Requirements for the Single Node are more demanding compared
+to each single Node in a |product| Multi-Node setup.
+
+.. rubric:: Single-Server Node
+
+* 8 vCPU
+* 24 GB memory
+* 100 GB disk space for the OS
+* Additional disk space for the users's e-mail storage, taking into
+  account the expected e-mail volume, quota, and retention
+  policies. This storage must be mounted under :file:`/opt/zextras`
+
+.. rubric:: Optional Collaboration Node
+
+* 4 vCPU
+* 16 GB memory
+* 50 GB disk space for the operating system
+
+.. rubric:: Optional Video Server Node
+
+* 8 vCPU
+* 8 GB memory
+* 50 GB disk space
+* If you plan to record video meetings, you need to allocate
+  sufficient space to store temporary files on this Node
+
+Installation
+============
+
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible`, then follow the directions on setting up
