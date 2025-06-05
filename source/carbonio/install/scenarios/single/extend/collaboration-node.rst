@@ -1,8 +1,8 @@
 .. _single-collab-inst:
 
-==========================
-Extend: Collaboration Node
-==========================
+==============================================
+Extend Manual Installation: Collaboration Node
+==============================================
 
 This section contains the architectural diagram, requirements, network
 configuration, and directions to set up the additional *Collaboration

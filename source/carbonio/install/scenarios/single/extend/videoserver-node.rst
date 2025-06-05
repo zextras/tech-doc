@@ -1,8 +1,8 @@
 .. _single-vs-inst:
 
-===========================
- Extend: Video Server Node
-===========================
+===============================================
+ Extend Manual Installation: Video Server Node
+===============================================
 
 This section contains the architectural diagram, requirements, network
 configuration, and directions to set up the additional *Video
