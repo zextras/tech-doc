@@ -15,6 +15,18 @@ The architecture of this scenario is depicted in the following diagram.
 
    Sample diagram of the Single Server Node installed using Ansible.
 
+The scenario involves a single server node providing essential functions:
+
+* Mail
+* Calendar
+* Contacts
+* Backup
+
+If your use case requires other collaboration tools or video capabilities, the single-server installation can be extended by adding:
+
+* Preview/Files - on the same Node
+* Tasks/Docs/WSC  - on a second Node
+* Videoserver/Videorecording - on a third Node
 
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
