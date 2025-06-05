@@ -42,23 +42,14 @@ seen in the following diagrams.
    Sample diagram of the Single Server scenario including optional
    components Files and Preview.
 
-.. _fig-single-collab-ansible:
+.. _fig-single-extended-ansible:
 
-.. figure:: /img/carbonio/scenario-single-collaboration.png
-   :width: 50%
-   :align: center
-
-   Sample diagram of the Collaboration Node within the Single Server
-   scenario.
-
-.. _fig-single-vs-ansible:
-
-.. figure:: /img/carbonio/scenario-single-vs.png
+.. figure:: /img/carbonio/scenario-single-vs-ansible-with-optional-files-and-preview.png
    :width: 79%
    :align: center
 
-   Sample diagram of Video Server Node within the Single Server
-   scenario.
+   Sample diagram of the optional Collaboration and Video Server Nodes
+   within the Single Server scenario.
 
 
 This Single Node scenario can be installed using Ansible: you need to
