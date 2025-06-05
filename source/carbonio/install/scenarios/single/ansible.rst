@@ -9,8 +9,8 @@ The architecture of this scenario is depicted in the following diagram.
 
 .. _fig-single-core-ansible:
 
-.. figure:: /img/carbonio/scenario-single.png
-   :width: 70%
+.. figure:: /img/carbonio/scenario-single-ansible-without-files-and-preview.png
+   :width: 50%
    :align: center
 
    Sample diagram of the Single Server Node installed using Ansible.
@@ -22,11 +22,44 @@ The scenario involves a single server node providing essential functions:
 * Contacts
 * Backup
 
-If your use case requires other collaboration tools or video capabilities, the single-server installation can be extended by adding:
+If your use case requires other collaboration tools or video
+capabilities, the single-server installation can be extended by
+adding:
 
 * Preview/Files - on the same Node
 * Tasks/Docs/WSC  - on a second Node
 * Videoserver/Videorecording - on a third Node
+
+Depending on the features chosen, the architecture changes and can be
+seen in the following diagrams.
+
+.. _fig-single-core-with-files-and-preview-ansible:
+
+.. figure:: /img/carbonio/scenario-single-core.png
+   :width: 50%
+   :align: center
+
+   Sample diagram of the Single Server scenario including optional
+   components Files and Preview.
+
+.. _fig-single-collab-ansible:
+
+.. figure:: /img/carbonio/scenario-single-collaboration.png
+   :width: 50%
+   :align: center
+
+   Sample diagram of the Collaboration Node within the Single Server
+   scenario.
+
+.. _fig-single-vs-ansible:
+
+.. figure:: /img/carbonio/scenario-single-vs.png
+   :width: 79%
+   :align: center
+
+   Sample diagram of Video Server Node within the Single Server
+   scenario.
+
 
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
@@ -59,7 +92,7 @@ infrastructure.
 
    :download:`Download_inventory
    </playbook/carbonio-inventory-single>`
-   
+
    .. literalinclude:: /playbook/carbonio-inventory-single
 
 .. note:: To add any of the Components listed as optional, simply remove
