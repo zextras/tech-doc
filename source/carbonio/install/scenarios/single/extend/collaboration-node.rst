@@ -25,7 +25,7 @@ The architecture of this scenario is depicted in the following diagram.
 Requirements
 ============
 
-Hardware Requirements for the Video Server Node are.
+Hardware Requirements for the Collaboration Node are:
 
 * 4 vCPU
 * 16 GB memory
