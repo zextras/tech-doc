@@ -31,16 +31,7 @@ adding:
 * Videoserver/Videorecording - on a third Node
 
 Depending on the features chosen, the architecture changes and can be
-seen in the following diagrams.
-
-.. _fig-single-core-with-files-and-preview-ansible:
-
-.. figure:: /img/carbonio/scenario-single-core.png
-   :width: 50%
-   :align: center
-
-   Sample diagram of the Single Server scenario including optional
-   components Files and Preview.
+seen in the following diagram.
 
 .. _fig-single-extended-ansible:
 
@@ -50,7 +41,6 @@ seen in the following diagrams.
 
    Sample diagram of the optional Collaboration and Video Server Nodes
    within the Single Server scenario.
-
 
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
