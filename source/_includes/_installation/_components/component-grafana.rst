@@ -132,29 +132,6 @@ You can log in for the first time with these credentials: **user** =
 .. hint:: After the first login don't forget to change the password
    for the account.
 
-Grafana Plugins Installation
-++++++++++++++++++++++++++++
-
-Some dasboards require a plugin to work, so we install them:
-
-#. Worldmap panel
-
-   .. code:: console
-
-      # grafana-cli plugins install grafana-worldmap-panel
-
-#.  Treemap panel
-
-    .. code:: console
-
-       # grafana-cli plugins install marcusolsson-treemap-panel
-
-#. Restart Grafana to use the new plugins:
-
-   .. code:: console
-
-      # systemctl restart grafana-server
-
 Grafana datasource config
 +++++++++++++++++++++++++
 
