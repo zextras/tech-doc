@@ -1,6 +1,6 @@
 In release 25.3.0, this package must be installed as part of the
 **Mesh & Directory** Component, instead of the **Proxy** Component. To
-intall it on the *Mesh & Directory* Node, execute as the |ru|
+install it on the *Mesh & Directory* Node, execute as the |ru|
 
 .. tab-set::
 
