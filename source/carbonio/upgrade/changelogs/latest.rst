@@ -7,407 +7,408 @@ Release Date: June 17th, 2025
 New Features List
 -----------------
 
+CDS-319: Align form section component
+   The FormSection component is now aligned with the UI-kit/Figma design, with improved layout and styling.
+
+
+CO-1287: Enhanced appointment visuals and Free/Busy
+   Improved visibility of reply icons and status borders on appointment cards. Event summaries now show organizer and status details. The Free/Busy selector in the editor aligns with the selected calendar color and updates dynamically when calendar or color changes.
+
+
+CO-1291: Multi-day events visual improvement
+   Multi-day events now fill the entire date range in the calendar, preventing other appointments from being inserted during that time.
+
+
+CO-1458: Multi-word token search enhancement
+   The search function now allows users to specify multi-word tokens in the search bar, filtering results to show only emails that contain the exact phrase or multi-word token input in the search bar.
+
+
+CO-1465: show placeholder when to field is empty
+   When an email is sent without any recipient in the 'To' field, a placeholder label is now shown in the message list and message display view to indicate that the field is intentionally empty, instead of leaving it blank.
+
+
+CO-1493: Carbonio Admin Panel Enhanced with Validated Phone Field in Account Profiles
+   The Carbonio Admin panel has been updated to include a phone number field in account profiles. This field now supports input validation, allowing only valid characters to ensure data consistency and accuracy.
+
+
+CO-1568: Update contact folder item count dynamically
+   The item count in Contact folders is now dynamically updated as users load more contacts by scrolling.
+
+
+CO-1767: removal of web.xml
+   Web.xml not found in directory /opt, no impact found, services running smoothly
+
+
+CO-1776: Polling interval value support improved
+   The mail settings page now correctly handles and displays custom values for the polling interval, this preventing empty selections in the dropdown. when the value is not included in the predefined list.
+
+
+CO-1833: Improved contact ui alignments and issues
+   The Contacts module now has improved UI alignments and functionality, including correct display of contact and contact group details, tooltips, and scrollable content.
+
+
+CO-1834: Align Contacts and Contact groups actions
+   The quick actions for contacts and contact groups have been aligned, with a consistent order and disabled actions when there are no email addresses or insufficient rights.
+
+
+CO-1835: Enhanced contact group management
+   Contact Groups now support multi-select, trash, move, and restore functionality, with improved permission checks for shared folders.
+
+
+CO-1837: Highlight selected address book
+   The selected address book is now properly highlighted when viewing it, providing a clearer and more intuitive user experience.
+
+
+CO-1920: Fix handling of partial data in notify
+   The software now correctly handles partial data in notify modified messages and conversations by preserving existing values when specific data is not received in the notification.
+
+
+CO-1942: OWASP library updated
+   The OWASP library is now updated to version 20240325.1, fixing issues with rendering certain emails and improving security.
+
+
+CO-1945: Improve auto-provisioning with timestamp-based polling
+   Auto-provisioning now uses createTimestamp + 1s for LDAP searches, with optional support for modifyTimestamp and improved tracking of last LDAP poll.
+
+
+CO-1949: "Send" Button Removed from Drop Folder Context Menu
+   In the latest Carbonio Webmail update, the "Send" button has been removed from the contextual menu of email items in the drop folder. The send action is no longer available directly from the action button. Users must now first edit the message before it can be sent. This change improves message review and reduces the chance of accidental sending.
+
+
+CO-1955: Remove default importance on reply email
+   When replying, replying all, or forwarding an important email, the response is no longer marked as important by default.
+
+
+CO-1973: Status Tooltips added to Appointment Cards
+   The Calendar, improved with hovering the mouse over the left side border of an appointment card, you can now see tooltips indicating the status — Free, Busy, Tentative, or Out of Office
+
+
+CO-1997: Update icons for calendar appointment replies
+   New icons are now used for calendar appointment replies to avoid reusing icons that are already present elsewhere in the module, following the updated figma design.
+
+
+CO-2000: New attributes introduces
+   Introduced new user preference attributes in Carbonio, enabling settings like carbonioPrefDarkMode to be stored persistently. The carbonioPrefDarkMode attribute now supports a default value of "auto", allowing the interface to adapt to system theme settings automatically.
+
+
+CO-2003: Enable S/MIME UI Setting Based on Global enableSmimeEncryption Attribute
+   The S/MIME user interface setting is now conditionally available based on the global enableSmimeEncryption attribute. Carbonio administrators can centrally enable or disable S/MIME functionality across all users by configuring this global attribute, providing improved control over encryption features in the environment.
+
+
+CO-2004: Tags Now Available in Mail and Contacts
+   The tags are now available in mail as well as in contacts, making it more useful to search items by tags in the advanced filter
+
+*****
+
 Bugfix List
 -----------
 
-WSC-1992: Fix pending setups for video services
-   The pending setups for carbonio-videoserver and carbonio-videorecorder now run in the correct order, ensuring a successful installation.
+**CDS-327: Captions rendering issue in safari fixed**
+   ChipInput captions are now rendered correctly in Safari browser, solving the issue where capital letters appeared trimmed or cut off visually.
 
 
-WSC-1962: Polish translation for copy virtual room link
-   The string "Copy Virtual Room's link" in the Chats module is now correctly translated into Polish when using the User UI.
+**CO-1215:  keywords label pluralised in contacts filter**
+   The label in the advanced filters of the Contacts search tab now uses the plural form “Keywords” to match the naming convention used elsewhere in the interface, ensuring consistency across modules.
 
 
-WSC-1958:  Translation for virtual room field added
-   The virtual room field in event creation now displays the correct translation.
+**CO-1217: Renamed "Reset" Button to "Reset Filters" and Updated "Advanced Filter" Label for Clarity**
+   The "Reset" button in Carbonio Contact has been renamed to "Reset Filters" to clearly indicate its functionality.
 
 
-WSC-1910: Fix Clearing Issue on Group Deletion
-   Users can now expect their chat to be accurately updated when a group is deleted, with no lingering conversations or messages remaining due to database inconsistencies.
+**CO-1221: Improved Search Functionality in Webmail**
+   Enhanced the search module in  Webmail to allow repeated searches with the same query string. The search button now remains enabled after the initial search, enabling users to re-execute the same search to retrieve newly arrived emails without needing to modify the search term.
 
 
-WSC-1901: Fix conversation loading issue
-   After deleting conversations, the latest messages of the remaining conversations are now correctly loaded and displayed.
+**CO-1230: User can remove date from advanced filters**
+   Users can now successfully remove dates from the "Sent Before", "Sent After", and "Sent On" fields in the advanced filters section, improving the overall search experience.
 
 
-WSC-1883: Enhanced screen share autopin
-   When a meeting participant starts sharing their screen, their screen is now automatically pinned for other participants, improving the meeting experience.
+**CO-1256: Fix drag and drop timezone issue**
+   The drag and drop functionality for appointments with different timezones now correctly updates the dates.
 
 
-WSC-1882: Fix sender name in browser notification
-   Browser notifications now display the sender's name correctly.
+**CO-1377: Attachment preview fixed in new tab**
+   Users can now correctly preview attachments, including PDFs and nested EMLs, even when the email is opened in a new browser tab using the "open in new tab" feature.
 
 
-WSC-1874: Fixed last conversation message "Read by" dropdown
-   The "Read by" dropdown in the last conversation message now functions correctly, remaining open after clicking on the "read" icon and displaying the list of people who have read the message.
+**CO-1454: Improve performance for large emails**
+   Carbonio Webmail now handles large emails with multiple conversations and embedded images more efficiently, reducing lag and improving responsiveness.
 
 
-WSC-1872: Remove async operations with CompletableFuture
-   Meeting operations now use synchronous operations, improving stability and readability.
+**CO-1487: Recovery process feedback improved**
+   When the user initiates message recovery from backup, the UI now clearly indicates that the process has started, preventing multiple unintended restore attempts.
 
 
-WSC-1840: Improve tile shimmering effect
-   The tile shimmering effect, indicating video loading, is now properly hidden behind screen share tiles and its speed has been adjusted for a better user experience
+**CO-1505: Check availability for all-day events fixed**
+   The availability check dropdown now correctly displays user availability for all-day appointments sent via distribution lists, resolving the issue where options appeared greyed out and unresponsive.
 
 
-WSC-1831: fix long room name display issue
-   The starting meeting page now correctly wraps long room names while maintaining center alignment.
+**CO-1544: Prevent uninitialized domains from delegation list**
+   Domains that have not been initialized for delegated administration no longer appear in the domain selection list when assigning delegated admin rights to an account. The system now avoids promoting accounts to delegated admin if no valid rights are selected, and uninitialized domains are filtered out to prevent misconfiguration.
 
 
-WSC-1204: None
-   None
+**CO-1572:  Fix polish translation for attachment**
+   The "Attachment" filter option in Mails advanced search is now correctly translated into Polish.
 
 
-UM-41: None
-   None
+**CO-1573: Fix translation for empty trash**
+   The "Empty Trash" modal title now correctly uses the translation system for system folders, ensuring accurate translations for languages like Polish.
 
 
-TSK-105: Tasks feature activation managed by new attribute
-   The activation and deactivation of the Tasks module can now be controlled using the new `carbonioFeatureTasksEnabled` attribute, Admin UI toggle now updates the new attribute accordingly.
+**CO-1594: Standardise email display in calendar**
+   The Calendar app now displays the email address consistently with other applications, improving overall consistency.
 
 
-TEAMS-4174: None
-   None
+**CO-1630: Domain quota threshold validation enhanced**
+   The Domain Quota threshold setting now only allows numeric values (including decimals) and displays an error message for invalid input.
 
 
-TEAMS-4173: Fix video recording layout issue
-   The video recording feature now correctly positions video and screen streams in the final layout, resolving issues with half-videos.
+**CO-1754: Improved folder creation performance**
+   Creating a new folder via the web UI in mailboxes with thousands of folders no longer causes the interface to freeze or become unresponsive; performance remains stable and input lag is eliminated.
 
 
-SHELL-281: Fix board background shift in focus mode
-   The dark background overlay now correctly covers the entire screen in focus mode.
+**CO-1790:  Fix today highlighting in month view**
+   The current date is now correctly highlighted in the month view, instead of highlighting the entire column.
 
 
-SHELL-78: Enhanced shell top bar layout issues
-   The top bar layout is now responsive and maintains its structure even on mobile screen sizes.
+**CO-1796: Shared folder unread counter updates in real-time**
+   The unread message counter in shared folders now updates in real-time when messages are marked as read/unread or moved into the folder, eliminating the need for a manual refresh.
 
 
-PREV-151: fix csp violations with css var
-   The software now correctly handles CSS variables, resolving CSP violations and improving security.
+**CO-1800: Mail module supports opening emails in multiple tabs**
+   Improved the mail module to allow users to open the same email in multiple browser tabs without errors. This update provides a smoother and more flexible experience when managing emails.
 
 
-PREV-149: Date Format fix in file module
-   The Files module has been enhanced to support consistent date formatting in documents, CSV files, and XLS files when the interface language changes.
+**CO-1815: Fix handling of outlook message headers**
+   The mail module now correctly handles quoted messages with custom OutlookMessageHeader divs, allowing users to read email content.
 
 
-IN-875: log permission error on startup fixed
-   The carbonio-message-dispatcher service no longer reports permission denied errors when attempting to access log files during startup, ensuring a clean and reliable initialization process.
+**CO-1819: Improved image copy paste issue**
+   Images copied from clipboard or inserted into emails in Carbonio Webmail are now correctly displayed in Gmail.
 
 
-IN-865: kyrgyz language added to admin ui
-   The Kyrgyz language is now correctly displayed in the Admin UI, providing sysadmins with more comprehensive language support.
+**CO-1831: Fix editor sticky toolbar**
+   The editor toolbar now remains fixed at the top of the window when scrolling, resolving the issue where it would become misaligned when moving the editor board.
 
 
-IN-863: fix ldap node support in script
-   The script /opt/zextras/libexec/zmaltermimeconfig now supports multiple LDAP nodes via the ldap_master_url setting in localconfig.
+**CO-1841: Action buttons properly displayed with long sender names**
+   Fixed an issue where long sender names, especially when using "on behalf of", caused action buttons like Reply, Forward, and Delete to disappear or misalign. The layout now correctly adjusts to long sender details, ensuring all action buttons remain visible and accessible.
 
 
-IN-862: service-discover added  to zimbraservicesinstalled
-   The service-discover service is now correctly added to the zimbraservicesinstalled LDAP attribute.
+**CO-1846: Enhanced concurrent public file downloads**
+   The Carbonio File module now handles multiple simultaneous downloads of publicly shared files without service interruptions.
 
 
-IN-855: CLI commands adapted to support systemd
-   The CLI commands in the libexec folder have been adapted to support systemd units and targets.
+**CO-1847: Fix ssl certificate upload corruption**
+   The SSL certificate upload process now correctly merges certificate files with a new line, ensuring valid certificates.
 
 
-IN-816: fix incorrect permissions on docs folder
-   The zmfixperms script has been updated to exclude the /opt/zextras/docs directory from its recursive chown operations, preventing unintended permission changes that disrupt the carbonio-docs-editor functionality.
+**CO-1848: Fix imap sql overload issue**
+   The IMAP client implementation now efficiently handles UID range searches, preventing excessive SQL queries and potential mailstore unavailability.
 
 
-FILES-933: Reset button disabled when no filters
-   The reset button in the advanced filters modal is now disabled when no filters are selected or applied, preventing users from triggering a no-op action.
+**CO-1850: Improved account status display issue**
+   The account is now correctly displayed for the current account in CarbonioAdmin, resolving the issue of displaying the previous account's status.
 
 
-FILES-931: None
-   None
+**CO-1860: Improved rabbitmq connection handling**
+   mailbox now maintains a single RabbitMQ connection per service instead of opening a new connection for each user, improving memory and connection efficiency.
 
 
-FILES-922: None
-   None
+**CO-1862: Send delay feature enhanced**
+   The Set send time option in email settings is now correctly set for new accounts, implementing a default 3-second delay before sending emails.
 
 
-FILES-919: None
-   None
+**CO-1868: HA data cleanup on AppServer deletion**
+   A scheduled task has been implemented to remove orphaned replica relationships from the High Availability (HA) database upon the deletion of an AppServer from the infrastructure.
 
 
-FILES-916: None
-   None
+**CO-1876: Enhanced tag click behavior in calendar**
+   Clicking on tags in the calendar now correctly performs a calendar search instead of a mail search.
 
 
-FILES-912: None
-   None
+**CO-1879: Fix domain list error on suspension**
+   The AdminUI domain list now correctly displays domains after changing their status to suspended, resolving the error that previously occurred.
 
 
-FILES-911: None
-   None
+**CO-1881: Fixed contact checkbox click area**
+   The contact checkbox is now fully clickable, resolving the issue where only half of the checkbox was active.
 
 
-FILES-910: Revoke public links on file delete
-   Public links are now revoked when the associated file is deleted, ensuring that deleted files are no longer accessible.
+**CO-1883: fixed reversed admin panel strings**
+   The delegate configuration windows in the Admin Panel now display the correct strings for "Switch to Simplified View" and "Switch to Advanced View".
 
 
-FILES-907: None
-   None
+**CO-1895: Move to folder modal rendering optimised**
+   Rendering performance of the “move to folder” modal has been improved, especially for accounts with large folder trees and shared/delegated folders, significantly reducing load time and ensuring better responsiveness across browsers.
 
 
-FILES-231: None
-   None
+**CO-1899: Improved Account List Filters with Consistent Pagination**
+   Account list filtering has been enhanced to maintain the applied filter across all pages. When navigating between pages, items now consistently reflect the filtered search criteria.
 
 
-DOCS-229: None
-   None
+**CO-1901: Fixed out of office misspelling**
+   The misspelling in the "out of office" settings has been corrected, changing "Invia ripose automatiche" to "Invia risposte automatiche".
 
 
-DOCS-215: Support password-protected ods files
-   The Carbonio File module now supports opening password-protected ODS (OpenDocument Spreadsheet) files, enhancing accessibility and workflow efficiency.
+**CO-1902: Italian Language Translation Fixed in Mail, Contacts, and Calendar Modules**
+   The Italian language translations in Crabonio Webmail have been corrected and are now displaying properly across the Mail, Contacts, and Calendar modules. 
 
 
-DOCS-188: None
-   None
+**CO-1903: Shard 'Inbox' Mount Point Now Successfully Created in Crabonio Webmail**
+   The Carbonio mail module has improved now. The mount point for the 'Inbox' shard is now being created successfully
 
 
-CO-2122: Fix delegate account issue in wizard
-   None
+**CO-1910: Sender name capitalization fixed**
+   The sender's name is now displayed consistently across the interface, with correct capitalization in both the left panel and right sidebar.
 
 
-CO-2090: Fix inline image preview issue
-   The software now correctly previews inline images in the editor, resolving issues with multiple image uploads.
+**CO-1912: Reply-to field correctly set and persisted**
+    The reply-to email address can now be set based on the selected identity in the mail editor, is persisted across drafts, and is included in the sent mail headers. The "send" option in the drafts context menu has been removed to enforce proper email composition before sending.
 
 
-CO-2089: Fix infinite loop in admin ui
-   The Admin UI no longer sends infinite NoOp requests, reducing CPU/RAM usage and preventing mailbox DDOS.
+**CO-1913: Fixed contact search result editing**
+   Contacts found in search results can now be edited or deleted, providing a seamless user experience when managing contacts.
 
 
-CO-2087: Fix content loss in large emails
-   The software now fully loads email bodies larger than 250KB when editing, preventing content truncation.
+**CO-1914: Preserve send as account in reply**
+   When replying to an email, the 'Send As' account is now correctly included in the 'CC' field, ensuring that all original recipients are preserved in the reply.
 
 
-CO-2085: Standardise email display in contacts
-   The Contacts module now displays the Account Name instead of the email address, ensuring consistency with the Mail and Calendar modules. If the Account Name is not available, the email address is shown as a fallback, aligning the display logic across all modules.
+**CO-1916: Carbonio Webmail Tags Now Persist After Reply or Forward**
+   The tag functionality in Carbonio Webmail has been improved. Tags assigned to mail items now remain intact even after replying to or forwarding a message. This ensures better organization and consistent tagging across all email actions.
 
 
-CO-2084: Standardise display name in mail
-   Display names are now consistently shown across Mail, Contacts, and Calendar modules, with email address used when display name is not set.
+**CO-1919: Backup restore request properly redirected**
+   The doRestoreOnNewAccount request on admin UI is now correctly directed to the server where the account has its backup, preventing errors due to misdirected API calls.
 
 
-CO-2083: Fix browser context menu for links
-   The browser context menu now works correctly for HTML links in message content.
+**CO-1921: Enhanced Carbonio Attachment and File Module with Cyrillic and Non-Latin Filename Support**
+   The Carbonio attachment and file modules have been enhanced to fully support Cyrillic and other non-Latin characters in filenames. Users can now attach files with non-Latin names, upload them to the file module, and pick or save them directly from the mail composer. File renaming within the mail writing board also preserves Cyrillic symbols accurately, ensuring seamless international character support across workflows.
 
 
-CO-2082: Fix contacts folder panel error
-   The Contacts module now correctly displays the folder panel without errors, resolving the "e is undefined" issue.
+**CO-1924: Consistent Date and Time Display for Appointments Across Views**
+   Carbonio Calendar now ensures that appointments and their corresponding appointment cards display the same date and time, even around daylight saving time (DST) changes during summer/winter transitions. This update improves consistency and prevents confusion caused by DST offsets.
 
 
-CO-2081: None
-   None
+**CO-1925: Unwanted Orphan Bracket Resolved in Shared Inbox View of Carbonio Webmail**
+   Resolved an interface issue in Carbonio Webmail where an extraneous closing bracket “)” was visible in the shared inbox folder view. The UI now renders cleanly without stray characters, improving visual consistency and user experience.
 
 
-CO-2080: Fix account data retention in edit mode
-   Editing multiple accounts in User Management no longer retains previous account's data.
+**CO-1926: Webmail UI Enhancement: Improved Visibility of Action Icons**
+   In Webmail, the icons for Reply, Reply All, Forward, and Delete within individual emails have been improved in size and clarity. These enhancements make the icons easier to see and interact with, improving the overall user experience.
 
 
-CO-2078: Make disclaimer comply with rfc 5322
-   The disclaimer feature now ensures compliance with RFC 5322, preventing message corruption.
+**CO-1932: Webmail mail module enhanced with attachment-based sorting**
+   The Carbonio Webmail mail module has been enhanced to support sorting of email items based on attachment size. Users can now easily sort emails in both ascending and descending order according to the size of attachments, improving usability and helping manage storage more efficiently.
 
 
-CO-2077: Fix create account page layout
-   The Create Account page now displays all options without content cutoff, improving visibility and usability.
+**CO-1933: Fix message list display issue**
+   The message list now consistently displays the sender's name, ensuring uniformity across all folders.
 
 
-CO-2076: None
-   None
+**CO-1937: Fxed popup blocker issue in eml**
+   Users now receive immediate feedback when opening nested .eml attachments in new tabs, resolving the popup blocker issue.
 
 
-CO-2075: Fix delegate acl removal in bulk
-   Removing all ACL/Rights on Delegate Account Settings now works correctly for large infrastructures, resolving the 5xx or 422 error issue by regrouping SOAP calls into batch requests.
+**CO-1938: improved performance when opening large conversations**
+   Opening large conversations in a new tab no longer causes significant browser slowdown or crashes. The message list in the conversation is now loaded using only essential metadata (From, To, Subject, and body fragment) instead of downloading entire messages upfront, reducing memory usage and improving responsiveness.
 
 
-CO-2074: Fix delegate account issue in wizard
-   The simplified wizard mode now allows adding and listing delegate accounts in the final step.
+**CO-1939: Mail Module handles Rapid Multi-Tab**
+   The webmail mail module has been enhanced to support rapid, repeated openings of the same mail item in new browser tabs without errors. Previously, such actions could lead to null or blank content on the first tab, but the issue has now been resolved, ensuring a stable and consistent user experience across all tabs.
 
 
-CO-2073: Fix delegate account creation in bulk
-   The Carbonio Admin panel now supports efficient adding and removing of more than 20 delegate rights, even in large organizations with up to 10,000 accounts. This improvement ensures smooth and scalable delegate management for enterprise environments.
+**CO-1940: Nested eml image rendering improved**
+   When opening a nested EML file in a new tab using Firefox, the UI no longer renders oversized images that break the layout; instead, the content is now constrained within the correct boundaries for better usability.
 
 
-CO-2072: Rename account and change password enhanced
-   Admins can now safely rename an account and change its password, including setting "Must change password", without causing conflicts. The operations are executed sequentially in the correct order to avoid failures or inconsistent user states.
+**CO-1941: Fix recipient info in new tab**
+   Recipient information is now correctly displayed when opening an email in a new tab using Firefox.
 
 
-CO-2071: Delegate Search Filter Optimized for Large Account Volumes
-   The search filter for adding delegates in the Carbonio Admin account management interface has been optimized to handle large volumes of accounts efficiently. It now performs smoothly even with datasets of 5,000 to 10,000 accounts, enhancing scalability and admin productivity.
+**CO-1943: Alphanumerical Sorting of Accounts in Carbonio Admin Restoration Menu**
+   The Restoration menu in the Carbonio Admin Panel now displays the list of accounts sorted alphanumerically by email address. This improvement enhances usability by making it easier and faster to locate specific accounts during restoration processes.
 
 
-CO-2070: Fix bucket list change issue
-   Admins can now change bucket list settings under Storage menu without requiring sendAnalytics to be enabled.
+**CO-1944: Handle non-existent accounts in powerstore**
+   The Powerstore doVolumeToVolumeMove operation now skips non-existent accounts and logs the skipped accounts.
 
 
-CO-2069: Carbonio Webmail Advanced Filter Enhanced
-   The advanced filtering feature in Carbonio Webmail has been improved. Filters using conditions like "Answered by Me," "Sent by Me," and "Not Flagged" now function correctly, ensuring more accurate and efficient email sorting and management.
+**CO-1954: localized date format in previews**
+   Attachment previews now display dates in the user's locale format, using the lang_tag parameter to determine the correct format.
 
 
-CO-2066: None
-   None
+**CO-1965: Webmail editor enhanced with persistent gray background**
+   The webmail editor has been improved to make it easier to write long emails. A consistent gray background is now shown across the whole writing area, helping keep the look uniform even during long compositions.
 
 
-CO-2065: Search support for multi-word tags
-   Users can now search appointments using tags with multiple words by typing the full tag name (e.g., `tag:meeting notes`) or clicking the tag in appointments, ensuring results appear in the search tab.
+**CO-1969: Fix shared contact folder visibility**
+   Contacts allows users to view shared contact folders. Shared users can now access and browse contact folders that have been shared with them, improving collaboration and contact management across teams.
 
 
-CO-2064: Carbonio Calendar Invitation Notification Improvement
-   Enhanced the Carbonio Calendar to include a longer description for events. Invitation notification emails now correctly render and appear properly in the mail list.
-
-
-CO-2063: Fix calendar view ui breaking issue
-   The calendar view UI is now stable and no longer breaks after navigating to settings and back.
-
-
-CO-2062: Carbonio webmail Draft Save Functionality Improved
-   The Carbonio Webmail interface has been updated to enhance the draft-saving experience. The "Save" and "Save as Draft" buttons now function as expected, ensuring that email content is properly saved before the mail composition modal is closed. This update improves reliability and prevents accidental data loss during email drafting.
-
-
-CO-2059: Improved OTP Notification Display in Carbonio Webmail
-   The Carbonio webmail interface now correctly displays One-Time Password (OTP) notification messages in both Russian and English. Notification content is no longer trimmed, ensuring complete and clear messaging for users in both languages.
-
-
-CO-2058: Carbonio HTML Preview/Print Updated with Improved Sanitization and Emoji Support
-   The HTML preview and print functionality in Carbonio Webmail has been updated. With zimbra_use_owasp_html_sanitizer enabled, inline images and emojis now render correctly in both the preview and compose editor. This ensures accurate visual formatting and improved compatibility when viewing or printing rich content emails.
-
-
-CO-2057: None
-   None
-
-
-CO-2056: Appointment mail content rendering improved
-   Appointment invitation emails now correctly display their content without excessive empty scroll and ensure visibility of all response buttons, even when appearance settings are set to large or extra-large in Chromium-based browsers.
-
-
-CO-2055: Carbonnio Calendar inmproved with  "Show Declined Meetings" Option Now Working as Expected
-   In Carbonnio Calendar, when the "Show declined meetings" setting is unchecked, declined meeting cards are no longer shown in the calendar view. This behavior is now functioning as expected, ensuring that only accepted or tentative meetings are visible unless the setting is enabled.
-
-
-CO-2050:  Contact tags search fixed
-   Contact tag filters are now correctly preserved after closing the search modal and are effectively applied during the contact search operation.
-
-
-CO-2043: Fix translation issue for smime password section
-   The S/MIME certificates password section is now correctly translated in Polish.
-
-
-CO-2042: Polish Translation Fix & Enhanced Mail Module Actions
-   Enhances the Carbonio webmail platform by fixing issues with the Polish translation and introducing improved action capabilities in the mail module, 
-
-
-CO-2041: Fix polish translation for clear search
-   the "CLEAR SEARCH" label was not translated to Polish in the Calendar, Contacts, and Files modules. This label is now correctly localized based on existing translations available on the translation portal.
-
-
-CO-2040: Carbonio Cantact translation fixed
-   Now Carbonio contacts are translating into the selected language "Polish" with all fields in the  new contact creation,
-
-
-CO-2039: Polish translations for folders and byte fixed
-   System folders in the mails module are now properly translated in the polish interface when editing them, and the unit for size now displays as "B" instead of the untranslated "byte".
-
-
-CO-2038: Improved Carbonio Tags with Color Names Now Translated
-   Carbonio's tag system has been enhanced to support localization. Tag color names are now translated according to the user's selected language, providing a more consistent and user-friendly experience across different locales.
-
-
-CO-2037: Tab Title Set When Opening a Message in a New Tab
-   When opening an email message in a new tab, the browser tab now correctly displays the message subject as the tab title. This enhancement improves usability and makes it easier to navigate between multiple open messages.
-
-
-CO-2033: Preserve signature CSS in message composition
-   Composing message settings no longer override signature CSS styles, ensuring consistent formatting.
-
-
-CO-2027: None
-   None
-
-
-CO-2013: Fixed Backup Restoration Date Issue in Admin Panel
-   Resolved an issue in the admin panel where the backup restoration date did not reflect the selected parameter. The date now displays correctly based on the user's selection.
-
-
-CO-2008: Fix calendar header misalignment issue
-   Calendar headings now correctly align with schedules, even with long daily appointment text.
-
-
-CO-2006: New "Clear All Search Results" Button Added to Carbonio Webmail
-   Carbonio Webmail has been enhanced with a new feature in the search module. A "Clear All Search Results" button is now available across all modules, allowing users to quickly clear search results from the screen, improving workflow efficiency and user experience.
-
-
-CO-1998: "Search String" Reset Button Now Enabled in Carbonio
-   The Carbonio webmail search functionality has been improved. The "Reset" button for the search string is now dynamically enabled only when the search field contains input (i.e., is not empty). This enhances user experience by preventing unnecessary interactions and making the interface more intuitive.
-
-
-CO-1996: Fixed video call black screen issue
-   The video calls no longer turn black when clicking on new email browser notifications.
-
-
-CO-1992: Show details popup works in focus mode
-   The 'Show details' button now correctly opens the message details popup even when the EML is opened in a new tab using focus mode, resolving the modal context initialization issue.
-
-
-CO-1986: Fix carriage return font in signature
-   Carriage returns in signatures now use the selected font, ensuring consistent formatting.
-
-
-CO-1985: Fix attachment loss on mail forward
-   Attachments are now preserved when forwarding emails, ensuring all files are included.
-
-
-CO-1982: Request read receipt honoured by default
-   When the attribute `zimbraPrefMailRequestReadReceipts` is set to TRUE for a user, class of service, all newly composed messages now have the "Request Read Receipt" option automatically enabled in the Web UI, without requiring manual user action.
-
-
-CO-1981: Mailbox quota list view fixed
-   Admins can now successfully view the mailbox quota list after changing the number of items per page to 25, 50, or 100 in the Admin Console without any display issues.
-
-
-CO-1980: Fix imap synchronization issue
-   IMAP synchronization now correctly fetches emails without corruption, ensuring reliable email syncing for clients.
-
-
-CO-1979: Fix scroll to bottom issue on paste with Firefox
-   Pasting content or links into a message reply no longer scrolls to the bottom in Firefox.
-
-
-CO-1978: Carbonio Webmail Enhanced with Improved Mail View
-   The Carbonio Webmail interface has been upgraded for better email readability. Inline images are now displayed correctly within the message body, maintaining their intended order and context. This enhancement ensures a smoother and more accurate email viewing experience.
-
-
-CO-1976: Moving event to shared calendar fixed
-    Editing a draft or saved event now allows moving it from the user's personal calendar to a shared delegate calendar, as long as the event does not have attendees and does not require a change of organiser.
-
-
-CO-1975: Mail view reset after message deletion fixed
-   The mail view no longer resets after deleting a message from a shared mailbox folder.
-
-
-CO-1974:  Allow deletion of appointments without organizer
-   Appointments created without an organizer (e.g., via external clients like Thunderbird) can now be deleted directly from the Carbonio WebUI without raising errors related to missing attributes.
-
-
-CO-1970: Remove zimbra wiki link from ssl notifications
+**CO-1970: Remove zimbra wiki link from ssl notifications**
    SSL certificate expiration email notifications no longer include a link to the Zimbra Wiki.
 
 
-CO-1969: Shared Contact Folders Now Visible to Shared Users
-   Carbonio Contacts allows users to view shared contact folders. Shared users can now access and browse contact folders that have been shared with them, improving collaboration and contact management across teams.
+**CO-1974:  Allow deletion of appointments without organizer**
+   Appointments created without an organizer (e.g., via external clients like Thunderbird) can now be deleted directly from the Carbonio WebUI without raising errors related to missing attributes.
 
 
-CO-1965: Carbonio Webmail Editor Enhanced with Persistent Gray Background
-   The Carbonio Webmail editor has been improved for better usability during long email composition. A consistent gray background is now applied throughout the entire content area, ensuring visual uniformity even when writing lengthy messages.
+**CO-1975: Mail view reset after message deletion fixed**
+   The mail view no longer resets after deleting a message from a shared mailbox folder.
 
 
-CO-1954: Attachment Date Remains Intact When Switching Languages in Carbonio
-   In Carbonio Webmail, the attachment date now remains consistent and unaffected when users switch between different languages in the settings. This improvement ensures accurate metadata display across all supported languages.
+**CO-1976: Moving event to shared calendar fixed**
+    Editing a draft or saved event now allows moving it from the user's personal calendar to a shared delegate calendar, as long as the event does not have attendees and does not require a change of organiser.
 
 
-CO-1952: None
-   None
+**CO-1978: Webmail enhanced with improved mail view**
+   The  Webmail interface has been upgraded for better email readability. Inline images are now displayed correctly within the message body, maintaining their intended order and context. This enhancement ensures a smoother and more accurate email viewing experience.
+
+
+**CO-1979: Fix scroll to bottom issue on paste with Firefox**
+   Pasting content or links into a message reply no longer scrolls to the bottom in Firefox.
+
+
+**CO-1980: Fix imap synchronization issue**
+   IMAP synchronization now correctly fetches emails without corruption, ensuring reliable email syncing for clients.
+
+
+**CO-1981: Mailbox quota list view fixed**
+   Admins can now successfully view the mailbox quota list after changing the number of items per page to 25, 50, or 100 in the Admin Console without any display issues.
+
+
+**CO-1982: Request read receipt honoured by default**
+   When the attribute `zimbraPrefMailRequestReadReceipts` is set to TRUE for a user, class of service, all newly composed messages now have the "Request Read Receipt" option automatically enabled in the Web UI, without requiring manual user action.
+
+
+**CO-1985: Fix attachment loss on mail forward**
+   Attachments are now preserved when forwarding emails, ensuring all files are included.
+
+
+**CO-1986: Fix carriage return font in signature**
+   Carriage returns in signatures now use the selected font, ensuring consistent formatting.
+
+
+**CO-1992: Show details popup works in focus mode**
+   The 'Show details' button now correctly opens the message details popup even when the EML is opened in a new tab using focus mode, resolving the modal context initialization issue.
+
+
+**CO-1996: Fixed video call black screen issue**
+   The video calls no longer turn black when clicking on new email browser notifications.
+
+
+**CO-1998: "Search String" Reset Button Now Enabled in mail**
+   The webmail search functionality has been improved. The "Reset" button for the search string is now dynamically enabled only when the search field contains input (i.e., is not empty). This enhances user experience by preventing unnecessary interactions and making the interface more intuitive.
+
+
+**CO-2006: New "Clear All Search Results" Button Added to Carbonio Webmail**
+   Carbonio Webmail has been enhanced with a new feature in the search module. A "Clear All Search Results" button is now available across all modules, allowing users to quickly clear search results from the screen, improving workflow efficiency and user experience.
+
+
+**CO-2008: Fix calendar header misalignment issue**
+   Calendar headings now correctly align with schedules, even with long daily appointment text.
 
 *****
 
