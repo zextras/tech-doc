@@ -340,7 +340,9 @@ corresponding Component is installed, for a proper communication among
 
       "8300", "TCP", "management of incoming requests from other
       agents"
-      "8302", "TCP and UDP", "management of Gossip protocol [4]_ in the WAN"
+      "8302", "TCP and UDP", "management of Gossip protocol [4]_ in
+      the WAN"
+      "8600", "TCP and UDP", "DNS service for |mesh|"
       "9107", "TCP", "|mesh| data export to |monit|"
       "15692", "TCP", "RabbitMQ data export to |monit|"
       "20000-21255", "TCP", "range for registrations ports for sidecar
