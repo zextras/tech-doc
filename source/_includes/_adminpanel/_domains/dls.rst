@@ -27,9 +27,9 @@ changing the description, notes, and members, and granting selected
 users the permission to send e-mails to the distribution list or
 making them Owners.
 
-Whenever new members are added to a Distribution List, it is necessary
-to refresh (or restart) the ``milter`` service. From the CLI, execute
-the command
+Whenever new members are added to a Distribution List or the list
+permissions are modified, it is necessary to refresh (or restart) the
+``milter`` service. From the CLI, execute the command
 
 .. tab-set::
 
