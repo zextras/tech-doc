@@ -27,13 +27,47 @@ changing the description, notes, and members, and granting selected
 users the permission to send e-mails to the distribution list or
 making them Owners.
 
-Whenever new members are added to a Distribution List, it is necessary
-to refresh (or restart) the ``milter`` service. From the CLI, as the
-``zextras`` user, execute this command
+Whenever new members are added to a Distribution List or the list
+permissions are modified, it is necessary to restart the ``milter``
+service. From the CLI, execute the command
 
-.. code:: console
+.. tab-set::
 
-   zextras$ zmmilterctl refresh
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      As the |zu|
+
+      .. code:: console
+
+         zextras$ zmmilterctl refresh
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      As the |ru|
+
+      .. code:: console
+
+         # systemctl restart carbonio-milter.service
+      
+   .. tab-item:: RHEL8
+      :sync: rhel8
+
+      As the |zu|
+
+      .. code:: console
+
+         zextras$ zmmilterctl refresh
+
+   .. tab-item:: RHEL9
+      :sync: rhel9
+
+      As the |ru|
+
+      .. code:: console
+
+         # systemctl restart carbonio-milter.service
 
 .. _ap-dl-dyn:
 
