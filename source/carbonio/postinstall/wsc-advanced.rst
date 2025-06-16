@@ -226,6 +226,7 @@ Connector <wsc-pool-opt>`, :ref:`Push Notifications Database
       :widths: 70, 30
 
       "carbonio-ws-collaboration/hikari/min-idle-connections", "10"
+      "carbonio-ws-collaboration/hikari/max-lifetime", "600000"
       "carbonio-ws-collaboration/hikari/max-pool-size", "10"
       "carbonio-ws-collaboration/hikari/idle-timeout", "10000"
       "carbonio-ws-collaboration/hikari/leak-detection-threshold", "5000"
