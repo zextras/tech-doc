@@ -164,13 +164,41 @@ the CLI.
 
      # consul kv put -token-file="$CONSUL_TOKEN_PATH" "$KEY" "$VALUE"
 
-In the commands, ``$CONSUL_TOKEN_PATH`` is the |mesh| secret stored on
-the **Directory Service server**, while ``$KEY`` and ``$VALUE`` are
+In the commands, ``$CONSUL_TOKEN_PATH`` refers to an **environment
+variable** that tells a command or a script **where to find the ACL token
+file** needed to authenticate with |mesh| when performing operations
+like reading or writing KV values, while ``$KEY`` and ``$VALUE`` are
 the *key name* and the *new value*, respectively, as written in the
 tables.
 
-.. hint:: The |mesh| token can be retrieved using the procedure
-   described in section :ref:`ts-token`.
+.. rubric:: Scenario:
+
+To get the value of
+**carbonio-ws-collaboration/hikari/leak-detection-threshold**,
+``CONSUL_TOKEN_PATH`` must be valued to
+:file:`/etc/carbonio/ws-collaboration/service-discover/token`.
+
+.. rubric:: Example:
+
+You can do this with:
+
+.. code-block:: console
+   :linenos:
+
+   #export CONSUL_TOKEN_PATH=/etc/carbonio/ws-collaboration/service-discover/token
+   #consul kv get -token-file="$CONSUL_TOKEN_PATH"  "carbonio-ws-collaboration/hikari/leak-detection-threshold"
+
+In this case you will:
+
+* Read the token from :file:`/etc/carbonio/ws-collaboration/service-discover/token`
+
+* Use that token to authenticate the request to |mesh|
+
+* Fetch the value of the KV key
+
+If you need to change the value of the key the ``CONSUL_TOKEN_PATH``
+variable should be passed in the same way.
+
 
 Configuration tables
 --------------------
