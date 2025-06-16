@@ -39,11 +39,14 @@ configuration, keeping in mind that:
   in Section :ref:`ip-change-net`
 
 * If you want to change IP Address **and** the subnet, you need to
-  follow the instructions in both Sections :ref:`ip-change-net` and
-  :ref:`ip-change-mta` 
+  follow the instructions in both Sections, :ref:`ip-change-net` and
+  :ref:`ip-change-mta`
+
+In all cases, execute also the tasks listed in Sections
+:ref:`ip-change-pv` and :ref:`ip-change-vs`.
 
 .. _ip-change-net:
-          
+
 Modify Network Configuration
 ----------------------------
 
@@ -51,7 +54,7 @@ The first step is to edit, as the ``root`` user, the
 :file:`/etc/hosts` file and replace the old IP with the new IP.
 
 .. parsed-literal::
-   
+
    10.0.0.50 crb-01.example.com crb-01 :bdg-danger:`OLD IP`
 
    192.168.10.50 crb-01.example.com crb-01 :bdg-success:`NEW IP`
@@ -69,7 +72,7 @@ manually edit its configuration file,
 
 As the ``zextras`` user, replace in this file the ``bind_addr``, so
 that the file contains the new IP::
-  
+
    {
      "bind_addr": "192.168.10.50"
    }
@@ -91,7 +94,7 @@ networks on which the MTA operates include the old one (*10.0.0.50*),
 for example:
 
 .. code:: console
-   
+
    zextras$ postconf mynetworks
    mynetworks = 127.0.0.0/8 [::1]/128  10.0.0.50/24
 
