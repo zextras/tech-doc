@@ -25,8 +25,6 @@ manages them as a logical group:
        ``carbonio-mailthreat``, ``carbonio-saslauthd.service``,
        ``carbonio-milter.service``
 
-``carbonio-milter.service``
-
 Two key units (``carbonio-configd.service`` and
 ``carbonio-stats.service``) are shared across all targets and play
 foundational roles in configuration generation and monitoring.
