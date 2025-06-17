@@ -1,18 +1,30 @@
 
-With ``systemd``, managing Carbonio services becomes more intuitive
-and powerful. These are the most common commands.
+In Carbonio, services are now managed using ``systemd``, which replaces the old ``zmcontrol`` command.  
+These are the most common commands:
 
-**Start All Services**
-
-.. code-block:: bash
-
-   # systemctl start carbonio-directory-server.target carbonio-appserver.target carbonio-proxy.target carbonio-mta.target
-
-**Stop All Services**
+**To start all the main Carbonio services on a node** (like directory, mail, proxy, etc.) at once, you can use:
 
 .. code-block:: bash
 
-   # systemctl stop carbonio-directory-server.target carbonio-appserver.target carbonio-proxy.target carbonio-mta.target
+   # systemctl start carbonio.target 
+
+This is similar to what ``zmcontrol start`` did before.  
+It brings up all core Carbonio components on that machine in the right order.
+
+**To stop all the main Carbonio services on a node** (like directory, proxy, web, etc.) at once, you can use:
+
+.. code-block:: bash
+
+   # systemctl stop carbonio.target
+
+This is similar to what ``zmcontrol stop`` did before.  
+It brings down all core Carbonio components on that machine in the right order.
+
+**Enable Target at Boot**
+
+.. code-block:: bash
+
+   # systemctl enable carbonio-directory-server.target
 
 **Disable a Target (prevents autostart)**
 
@@ -30,12 +42,6 @@ and powerful. These are the most common commands.
   
    # journalctl -u carbonio-nginx.service
 
-**Enable Target at Boot**
-
-.. code-block:: bash
-
-   # systemctl enable carbonio-directory-server.target
-
 **Inspect Dependencies**
 
 .. code-block:: bash
@@ -43,9 +49,23 @@ and powerful. These are the most common commands.
    # systemctl list-dependencies carbonio-mta.target
    # systemctl show carbonio-mta.target
 
-**Visualize Boot Sequence**
+**Manage other services**
+
+Some additional services (like preview generation, real-time documentation editing, chats, etc.)  
+are already systemd-native and can be started or stopped individually, like this:
 
 .. code-block:: bash
 
-   # systemd-analyze plot > boot.svg
-   # systemd-analyze critical-chain carbonio-directory-server.target
+   # systemctl start carbonio-preview.service
+   # systemctl stop carbonio-preview.service
+
+   # systemctl start carbonio-docs-editor.service
+   # systemctl stop carbonio-docs-editor.service
+
+   # systemctl start carbonio-ws-collaboration.service
+   # systemctl stop carbonio-ws-collaboration.service
+
+   ..
+
+
+

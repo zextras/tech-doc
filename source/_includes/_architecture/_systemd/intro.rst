@@ -8,6 +8,11 @@ can interact with the new system.
 Why Move to ``systemd``?
 ========================
 
+As of recent Linux distributions, **systemd** is the standard for service management
+and legacy init scripts are deprecated. Carbonio fully supports this shift
+supplying ``.service`` files for each component. This allows you to use systemctl
+to start, stop, enable, and monitor services, benefiting from systemd robust dependency resolution
+failure recovery, and centralized logging.
 After evaluating the current init system and its limitations, the Zextras team
 identified key opportunities for improvement that ``systemd`` helps address:
 
