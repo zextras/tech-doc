@@ -434,12 +434,12 @@ attributes* step will be executed.
    #. **All commands** and operations must be run on the **destination**
       server
 
-   #. Make sure that the |zu| has proper write access to the backup
-      path. Example:
+   #. Make sure that the |zu| has proper write access to the *source*
+      backup path. Example:
 
       .. code:: console
                 
-         # chown zextras:zextras /opt/zextras/backup/zextras
+         # chown -R zextras:zextras /opt/backup/zextras
 
 .. dropdown:: PHASE 1
    :open:
