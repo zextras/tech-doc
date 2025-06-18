@@ -23,7 +23,7 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* Since the **24.3.0** release, two major improvements have become
+* Since release **24.3.0**, two major improvements have become
   available for |product|:
 
   #. support for new Operating Systems (OS): **Ubuntu 22.04** and **RHEL 9**
@@ -32,8 +32,12 @@ the upgrade:
      **16** before upgrading |product| to |version|. Check section
      :ref:`pg-upgrade` for directions.
 
+* Since **release 25.6.0**, support for **Ubuntu 24.04** has been
+  added, while support for **Ubuntu 20.04** has been dropped:
+  |product| **does no longer work** on Ubuntu 20.04
+
 * You need to carry out the procedure on **each Node**, starting with
-  the one featuring the :ref:`component-mesh-install`.
+  the one featuring the :ref:`component-mesh-install`
 
 * During the upgrade of |product|, you might need to carry out manual
   tasks, for example because you need to modify some configuration
@@ -47,13 +51,13 @@ the upgrade:
 Checklist
 ---------
 
-The new packages or packages that should be moved on different nodes,
-should be installed or moved during the upgrade procedure:
+The following packages should be renamed or moved to different nodes during the upgrade procedure:
 
 #. carbonio-user-management
 #. carbonio-storages
 #. carbonio-catalog
 #. carbonio-message-broker
+#. carbonio-message-dispatcher
 
 Upgrade |product|
 -----------------

@@ -40,10 +40,10 @@ upgrade procedure with Ansible.
 
 * The upgrade procedure does not depend on the underlying
   :ref:`supported operating system <software-requirements>`. However,
-  note that this release, **25.03**, is the last version supporting
-  **Ubuntu 20.04 LTS**, which goes EOL in May 2025, so you are
-  strongly recommended to :ref:`upgrade to Ubuntu 22.04 LTS
-  <os-upgrade>`.
+  note that from release **25.06**, support for **Ubuntu 20.04 LTS**,
+  which went EOL in May 2025, **has been dropped**. Therefore, to
+  continue using |product|, you need to upgrade Ubuntu 20.04 LTS to
+  either :ref:`Ubuntu 22.04 LTS or Ubuntu 24.04 LTS <os-upgrade>`.
 
 * This upgrade procedure works even if you installed |product|
   manually: see Section :ref:`up-ansible-paths` for details
@@ -139,11 +139,18 @@ this case, you can use an inventory file from one of the
 section :ref:`ansible-inventory` for directions.
 
 These are the alternatives to upgrade an existent |product|
-infrastructure, depending if you have installed the latest **24.12**
+infrastructure, depending if you have installed the latest **25.03**
 version or an older one.
 
 .. hint:: If you are unsure, :ref:`check the command <ts-version>` to
    retrieve the correct version number.
+
+Upgrade From |product| 25.03
+----------------------------
+
+To upgrade from 25.03 version, there is no special case or task to
+carry out, therefore you can proceed to Section :ref:`up-ansible-run`
+below.
 
 Upgrade From |product| 24.12
 ----------------------------
