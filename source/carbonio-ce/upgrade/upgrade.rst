@@ -41,10 +41,11 @@ third-party software or new packages.
 Checklist
 ---------
 
-The new packages or packages that should be moved on different nodes,
-should be installed or moved during the upgrade procedure:
-
-#. carbonio-user-management
+A |wsc|-related package changed name in this release:
+``carbonio-message-dispatcher`` becomes
+``carbonio-message-dispatcher-ce``. You need to manually remove the
+former and install the new one. This task is included in the upgrade
+procedure, so simply follow the instructions.
 
 .. _up-proc:
 
@@ -80,15 +81,17 @@ Upgrade Nodes
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 3. Install or move packages
+   .. grid-item-card:: Step 3. Install new package
+      :columns: 12
 
-      The following packages needs to be moved from one Node to another
-      or installed on the given Node.
+      On the Node installing the |wsc| component, remove
+      package ``carbonio-message-dispatcher`` and install
+      ``carbonio-message-dispatcher-ce``.
 
-      .. dropdown:: ``carbonio-user-management``
-         :open:
+      .. code:: console
 
-         .. include:: /_includes/_upgrade/package-um.rst
+         # apt remove carbonio-message-dispatcher
+         # apt install carbonio-message-dispatcher-ce
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
 
