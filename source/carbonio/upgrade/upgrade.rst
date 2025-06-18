@@ -72,9 +72,3 @@ of Nodes, their load, the speed of network connection, and so on.
 .. include:: /_includes/_upgrade/first-part-cb.rst
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
-
-.. note:: After the upgrade has successfully completed, we strongly
-   suggest to carry out the tasks described in Troubleshooting
-   sections: :ref:`change Directory Server credentials
-   <ts-ds-credentials>` and :ref:`empty the pre-auth keys
-   <ts-auth-keys>`.
