@@ -10,7 +10,7 @@ key used for signing the packages and verify them.
 
 .. card:: Import GPG Key
 
-   This step is required only on Ubuntu systems (Ubuntu 20.04 and Ubuntu 22.04).
+   This step is required only on Ubuntu systems (Ubuntu 22.04 and Ubuntu 24.04).
 
    .. include:: /_includes/_installation/_repo/key-zx.rst
 

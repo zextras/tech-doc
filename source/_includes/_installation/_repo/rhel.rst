@@ -1,12 +1,12 @@
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       This step is not needed.
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       This step is not needed.
 
@@ -23,7 +23,7 @@
          # subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms
          # subscription-manager repos --enable=codeready-builder-for-rhel-8-x86_64-rpms
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       You need to add the EPEL repository and enable the BaseOS,

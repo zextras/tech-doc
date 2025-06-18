@@ -13,17 +13,16 @@ Requirements & Preliminaries
 ============================
 
 The upgrade to |version| may include some additional procedure that
-impacts the following *Roles*, packages, or third-party software,
+impacts the following *Components*, packages, or third-party software,
 which require some manual interaction before, during, or after the
 procedure. If you already have implemented them, please skip to the
 next section.
 
 .. card:: Operating system
 
-   |product| can be installed on **Ubuntu 22.04** and **RHEL 9**
-   (|beta| support) since version **24.5.0**.  If you plan to upgrade
-   both the OS and |product|, please refer to Section
-   :ref:`os-upgrade`.
+   |product| can be installed on **Ubuntu 22.04** and **RHEL 9** since
+   version **24.5.0**.  If you plan to upgrade both the OS and
+   |product|, please refer to Section :ref:`os-upgrade`.
 
    .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
@@ -42,10 +41,11 @@ third-party software or new packages.
 Checklist
 ---------
 
-The new packages or packages that should be moved on different nodes,
-should be installed or moved during the upgrade procedure:
-
-#. carbonio-user-management
+A |wsc|-related package changed name in this release:
+``carbonio-message-dispatcher`` becomes
+``carbonio-message-dispatcher-ce``. You need to manually remove the
+former and install the new one. This task is included in the upgrade
+procedure, so simply follow the instructions.
 
 .. _up-proc:
 
@@ -81,19 +81,16 @@ Upgrade Nodes
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 3. Install or move packages
+   .. grid-item-card:: Step 3. Install new package
+      :columns: 12
 
-      The following packages needs to be moved from one Node to another
-      or installed on the given Node.
+      On the Node installing the |wsc| component, remove
+      package ``carbonio-message-dispatcher`` and install
+      ``carbonio-message-dispatcher-ce``.
 
-      .. dropdown:: ``carbonio-user-management``
-         :open:
+      .. code:: console
 
-         .. include:: /_includes/_upgrade/package-um.rst
+         # apt remove carbonio-message-dispatcher
+         # apt install carbonio-message-dispatcher-ce
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
-
-.. note:: After the upgrade has successfully completed, we strongly
-   suggest to :ref:`change Directory Server credentials
-   <ts-ds-credentials>` and :ref:`empty the pre-auth keys
-   <ts-auth-keys>`.

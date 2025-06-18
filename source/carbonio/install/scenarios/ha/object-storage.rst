@@ -44,7 +44,7 @@ volume.
    zextras$ carbonio powerstore doCreateVolume MINIO centralized-ha primary ID_FROM_PREVIOUS_COMMAND centralized true
 
 Finally, set the volume as current, running on every Node with the MTA
-Role the command
+Component the command
 
 .. code:: console
 
@@ -76,7 +76,7 @@ volume.
 
 
 Finally, set the volume as current, running on every Node with the MTA
-Role the command
+Component the command
 
 .. code:: console
 

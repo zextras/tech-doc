@@ -1,8 +1,8 @@
 
 .. _clamav-manage:
 
-ClamAV Management
-=================
+Antivirus & Antispam Management
+===============================
 
 This section contains directions to manage the ClamAV Anti-Virus engine.
 

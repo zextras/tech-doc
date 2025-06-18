@@ -19,5 +19,5 @@ migration to |product|, and accessing the web interface.
       security
       web-access
       migration
-      disable-clamav
+      clamav-management
       wsc-advanced

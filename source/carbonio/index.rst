@@ -14,7 +14,7 @@ If you are looking for |ce|'s Administrator documentation, please
 refer to its `dedicated page <../../carbonio-ce/html/index.html>`_. If
 you are searching for the User Documentation, please refer to its
 `home page <https://docs.zextras.com/user-guides/carbonio/en/html>`_.
-
+        
 The content is organised in multiple parts:
 
 .. grid:: 1 2 2 3
@@ -53,7 +53,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: architecture/toc
 
-      Architecture of |product| and Roles description and installation
+      Architecture of |product| and Components description and installation
 
       .. toctree::
          :hidden:

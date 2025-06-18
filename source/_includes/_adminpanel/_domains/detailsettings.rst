@@ -36,6 +36,9 @@ domain.
 We build on the domain created in :ref:`previous section
 <ap-domain-new>` and attach some property.
 
+.. index:: ! Public Service Hostname; by GUI
+.. index:: ! PublicServiceHostname; by GUI
+
 .. grid:: 1 2 2 4
    :gutter: 1
    :outline:
@@ -75,6 +78,8 @@ We build on the domain created in :ref:`previous section
             record to be reachable publicly. If the ``A`` record is set to a
             private IP address, to reach the WebGUI you need some mechanism,
             like e.g., a VPN tunnel.
+
+            More details about this parameter in Section :ref:`domain-params`.
 
    .. grid-item-card::
       :columns: 12

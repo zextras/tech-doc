@@ -80,13 +80,13 @@ of them.
 
          auth
 
-   .. grid-item-card:: Proxy Role
+   .. grid-item-card:: Proxy Component
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: ref
       :link: ts-proxy
 
-      Issue related to the Proxy Role
+      Issue related to the Proxy Component
 
       .. toctree::
          :hidden:

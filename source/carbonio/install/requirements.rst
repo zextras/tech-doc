@@ -1,7 +1,8 @@
 .. _carbonio-requirements:
 
-Requirements
-============
+==============
+ Requirements
+==============
 
 Each Node must satisfy the :ref:`hw-requirements` and
 :ref:`software-requirements` below, while on the contrary,
@@ -13,7 +14,7 @@ the Admin Panel) must be opened only on the Node featuring the
 .. _hw-requirements:
 
 Hardware Requirements
-~~~~~~~~~~~~~~~~~~~~~
+=====================
 
 For each node, these are the hardware requirements to comply with. The
 **Disk Space** mentioned in the table refers only to the Operating
@@ -42,53 +43,20 @@ at 750 for user's total quota) to the node.
 .. _software-requirements:
 
 Software Requirements
-~~~~~~~~~~~~~~~~~~~~~
+=====================
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any of these vanilla distributions:
 
-* **Ubuntu 20.04 LTS Server Edition**: choose *Ubuntu Server*, not
-  *Ubuntu Server (minimized)*
 * **Ubuntu 22.04 LTS Server Edition**: choose *Ubuntu Server*, not
   *Ubuntu Server (minimized)*
+* **Ubuntu 24.04 LTS Server Edition**: choose *Ubuntu Server*, not
+  *Ubuntu Server (minimized)*
 * **RHEL 8** (see :ref:`specific requirements <rhel8-req>`)
-* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`) |beta|
+* **RHEL 9** (see :ref:`specific requirements <rhel9-req>`)
 
 The following requirements must be satisfied before attempting to
 install |product|.
-
-#. The whole |product| infrastructure must have at least **one public
-   IP address**. The IP address must have a domain name associated,
-   that coincides with the **A record** in the DNS (e.g., ``A
-   mail.example.com``)
-
-   .. hint:: You can check a domain's A record using the CLI utility
-      ``host``:
-
-      .. code:: console
-
-         # host -t A mail.example.com
-
-#. To allow the mail server to receive mail, it will be necessary to
-   set up an **MX record**, which must correspond to the A record
-   (e.g. MX: example.com = mail.example.com )
-
-   .. hint:: You can check a domain's MX record using the CLI utility
-      ``host``:
-
-      .. code:: console
-
-         # host -t MX example.com
-
-   If either of the ``A`` or ``MX`` records is not correctly
-   configured, the installation will be temporarily suspended to allow
-   the change of the hostname.
-
-#. Each Node must be able to carry out DNS resolution autonomously and
-   be able to resolve all other Nodes
-
-#. For improved security of sending emails, you should also define TXT
-   records for SPF, DKIM and DMARC
 
 #. Python 3, latest version available on the Operating System chosen
 
@@ -103,7 +71,7 @@ install |product|.
    procedure described in Section :ref:`locale-settings` to modify the
    configuration.
 
-.. note:: Only |product| Roles should be installed on a |product|
+.. note:: Only |product| Components should be installed on a |product|
    Node. Installing additional software is unsupported and may cause
    conflicts that could compromise |product|’s correct
    functioning. For example, software like Webmin, Cockpit, or Postfix
@@ -113,14 +81,32 @@ install |product|.
 .. _rhel-requirements:
 
 RHEL Specific Requirements
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+==========================
 
-.. include:: /_includes/_installation/preliminary-rh.rst
+You need to satisfy these requirements, depending on the RHEL version
+you want to install:
+
+.. _rhel8-req:
+
+RHEL 8
+------
+
+.. include:: /_includes/_installation/rh8.rst
+
+.. _rhel9-req:
+
+RHEL 9
+------
+             
+.. include:: /_includes/_installation/rh9.rst
+
+.. include:: /_includes/_installation/ansible.rst
+.. include:: /_includes/_installation/zmcontrol-systemd.rst
 
 .. _inst-additional-req:
 
 Additional Requirements
-~~~~~~~~~~~~~~~~~~~~~~~
+=======================
 
 * Acquaintance with the use of CLI is necessary.  All ``carbonio``
   commands must be executed as the ``zextras`` user (these commands
@@ -142,7 +128,7 @@ Additional Requirements
   values include: the IP address (public or private) of a node or the
   password of a database user.
 
-* Depending on the Roles installed on each Node, you need to open in
+* Depending on the Components installed on each Node, you need to open in
   your firewall the ports listed in :ref:`fw-ports` for all the
   services you will offer. In case there are problems in the internal
   network communication, try to disable the firewall and try again: if
@@ -151,8 +137,8 @@ Additional Requirements
 
 * If none of the nodes is exposed to the Internet, you need to forward
   two ports from the public IP: port **25/smtp** to the Node featuring
-  the MTA Role to be able to receive mail, and port **443/https** to
-  the node installing the Proxy Role to allow users to access their
+  the MTA Component to be able to receive mail, and port **443/https** to
+  the node installing the Proxy Component to allow users to access their
   webmail from a remote location
 
 * If you plan to enable other protocols (e.g., POP, IMAP) you should
@@ -175,7 +161,7 @@ Additional Requirements
 .. _fw-ports:
 
 Firewall Ports
-~~~~~~~~~~~~~~
+==============
 
 |product| employs SSL/TLS for the communication, and to operate
 properly, it is necessary to allow network communication on specific
@@ -185,30 +171,30 @@ The Nodes should be able to communicate with the other Nodes through a
 dedicated network. The ports listed in the *Internal Connections* must
 be forwarded on **all** nodes, while those in the *External
 Connections* should be forwarded only on the node on which the
-corresponding Role is installed. For example, port 443 should be
-forwarded only on the node hosting the **Proxy** Role.
+corresponding Component is installed. For example, port 443 should be
+forwarded only on the node hosting the **Proxy** Component.
 
 Furthermore, ports in Internal and External connections are grouped
-according to the Role that require them, so all ports listed in a
-table must be forwarded only on the Node on which the Role is installed.
+according to the Component that require them, so all ports listed in a
+table must be forwarded only on the Node on which the Component is installed.
 
 .. card:: Outgoing Traffic
 
    Carbonio requires no specific ports to communicate with the
    Internet (outgoing traffic), unless you want push notifications to
    be sent to mobile devices. In this case, the Node installing the
-   Mailstore & Provisioning Role must be able to communicate with the
+   Mailstore & Provisioning Component must be able to communicate with the
    URL **https://notifications.zextras.com/firebase/** on port **443**.
 
 .. _fw-external:
 
 External Connections
-++++++++++++++++++++
+--------------------
 
-These ports must be forwarded to the Node installing each Role, to
+These ports must be forwarded to the Node installing each Component, to
 allow communication with remote services on the Internet.
 
-.. card:: MTA Role
+.. card:: MTA Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -223,7 +209,7 @@ allow communication with remote services on the Internet.
       preferably only accessible from a VPN tunnel, if possible, to
       reduce the attack surface.
 
-.. card:: Proxy Role
+.. card:: Proxy Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -237,13 +223,13 @@ allow communication with remote services on the Internet.
       "995", "TCP", "external POP3 secure access"
       "6071", "TCP", "secure access to the Admin Panel"
       "8636", "TCP", "access to LDAP address books"
-      "5222", "TCP", "Message Dispatcher, required by the |wsc| Role"
+      "5222", "TCP", "Message Dispatcher, required by the |wsc| Component"
 
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
 
-.. card:: |vs| Role
+.. card:: |vs| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -255,10 +241,10 @@ allow communication with remote services on the Internet.
 .. _fw-internal:
 
 Internal Connections
-++++++++++++++++++++
+--------------------
 
 Traffic to these ports must be allowed on the Nodes where the
-corresponding Role is installed, for a proper communication among
+corresponding Component is installed, for a proper communication among
 |product|'s internal services.
 
 .. card:: Every Node
@@ -276,7 +262,7 @@ corresponding Role is installed, for a proper communication among
       used by |mesh| for message broadcasting and membership
       management.
 
-.. card:: Postgres Role
+.. card:: Postgres Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -285,7 +271,7 @@ corresponding Role is installed, for a proper communication among
       "5432", "TCP", "Postgres access"
       "9187", "TCP", "Postgres data export to |monit|"
 
-.. card:: Directory Server Role
+.. card:: Directory Server Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -295,7 +281,7 @@ corresponding Role is installed, for a proper communication among
       "636", "TCP", "secure LDAP connection"
       "9330", "TCP", "LDAP data export to |monit|"
 
-.. card:: MTA Role
+.. card:: MTA Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -308,7 +294,7 @@ corresponding Role is installed, for a proper communication among
       "7026", "TCP", "bind address of the Milter service"
       "9810", "TCP", "MTA data export to |monit|"
 
-.. card:: Mailstore & Provisioning Role
+.. card:: Mailstore & Provisioning Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -328,7 +314,7 @@ corresponding Role is installed, for a proper communication among
       "8743", "TCP", "internal HTTPS services, advanced module"
       "9330", "TCP", "MySQL data export to |monit|"
 
-.. card:: |vs| Role
+.. card:: |vs| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -337,7 +323,7 @@ corresponding Role is installed, for a proper communication among
       "8188", "TCP", "Internal connection"
       "8090", "TCP", "Servlet communication"
 
-.. card:: Proxy Role
+.. card:: Proxy Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -346,7 +332,7 @@ corresponding Role is installed, for a proper communication among
       "9113", "TCP", "nginx data export to |monit|"
       "11211", "TCP", "memcached access"
 
-.. card:: |mesh| Role
+.. card:: |mesh| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -354,7 +340,9 @@ corresponding Role is installed, for a proper communication among
 
       "8300", "TCP", "management of incoming requests from other
       agents"
-      "8302", "TCP and UDP", "management of Gossip protocol [4]_ in the WAN"
+      "8302", "TCP and UDP", "management of Gossip protocol [4]_ in
+      the WAN"
+      "8600", "TCP and UDP", "DNS service for |mesh|"
       "9107", "TCP", "|mesh| data export to |monit|"
       "15692", "TCP", "RabbitMQ data export to |monit|"
       "20000-21255", "TCP", "range for registrations ports for sidecar
@@ -364,7 +352,7 @@ corresponding Role is installed, for a proper communication among
       used by |mesh| for message broadcasting and membership
       management.
 
-.. card:: |monit| Role
+.. card:: |monit| Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"

@@ -44,9 +44,9 @@ file. Please read the following advises if you plan to add the HA
 infrastructure to different Node than the one we will use in the
 remainder of the scenario. 
 
-.. card:: Guidelines for Roles in HA Configuration
+.. card:: Guidelines for Components in HA Configuration
 
-   The initial Roles assigned during the standard installation (i.e.,
+   The initial Components assigned during the standard installation (i.e.,
    as **master** for LDAP or **primary** for PostgreSQL) should remain
    on the servers that were configured in the standard
    installation. Some services and configurations have already been
@@ -120,7 +120,7 @@ You need also to add variable to existing groups.
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
    will be moved from Postgres server to servers in
    ``[dbsConnectorServers]`` for HA. In our scenario we move them to
-   the Node hosting the Mailstore & Provisioning Role:
+   the Node hosting the Mailstore & Provisioning Component:
 
    .. code:: console
 

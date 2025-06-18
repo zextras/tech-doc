@@ -6,7 +6,7 @@
   imported. You can use, for example, a domain like ``carbonio.local``
 
 * All the CLI commands must be executed, unless differently specified,
-  on the Node featuring the **Mailstore & Provisioning Role** as the
+  on the Node featuring the **Mailstore & Provisioning Component** as the
   ``zextras`` user
 
 * Source backup must be available from ``zextras`` user and must not use

@@ -1,7 +1,7 @@
 .. _ts-proxy:
 
 ============================
- Proxy Role
+ Proxy Component
 ============================
 
 .. _ts-nginx:

@@ -14,7 +14,7 @@ Changes in the source code can be found in :pr:`827`.
 
 .. rubric:: 202502-1053 New Monitoring for RabbitMQ
 
-A new exporter for RabbitMQ data and a corresponding Monitoring dashboard have been added to the |monit| Role.
+A new exporter for RabbitMQ data and a corresponding Monitoring dashboard have been added to the |monit| Component.
 
 Changes in the source code can be found in :pr:`952`.
 

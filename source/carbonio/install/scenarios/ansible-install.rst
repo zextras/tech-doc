@@ -29,8 +29,8 @@ follow this one) and place it under a directory of your
 choice. Remember to give the inventory file a meaningful name.
 
 The :file:`carbonio_inventory` file contains various sections, one for
-each of the available Roles. You need to edit the file and provide the
-FQDN of the Node on which the role will be installed. Suppose that you
+each of the available Components. You need to edit the file and provide the
+FQDN of the Node on which the Component will be installed. Suppose that you
 install on 5 nodes, whose FQDNs are ``srv1.example.com`` to
 ``srv5.example.com``, an excerpt of the file might look like::
 
@@ -43,13 +43,13 @@ install on 5 nodes, whose FQDNs are ``srv1.example.com`` to
   [dbsConnectorServers]
   srv1.example.com
 
-If you do not want to install a Role, simply leave the corresponding
+If you do not want to install a Component, simply leave the corresponding
 section empty.
 
-For some of the Roles you need to provide some additional
+For some of the Components you need to provide some additional
 value for a proper configuration. Currently, these sections are
 
-* the Proxy Role::
+* the Proxy Component::
 
     [proxyServers:vars]
     #webmailHostname=webmailPublicHostname
@@ -65,7 +65,7 @@ value for a proper configuration. Currently, these sections are
     [videoServers]
     #hostname public_ip_address=x.y.z.t
 
-  In this case, supposing that the Role is installed on
+  In this case, supposing that the Component is installed on
   ``srv5.example.com`` and the public IP address of the |vs| is
   172.16.12.5, this entry should look like::
 

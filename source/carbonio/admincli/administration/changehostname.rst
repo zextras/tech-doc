@@ -35,7 +35,7 @@ procedure.
    stated differently
 
 #. Always start the procedure from the Node which installs the **Mesh
-   & Directory** Role
+   & Directory** Component
 
 #. The procedures are valid only for a change of hostname, not for a
    change in the domain name (i.e., of the FQDN)
@@ -46,8 +46,8 @@ Infrastructure Examples
 To cover most use cases, we take into account the following scenarios
 on which we apply the procedure. All other cases can be traced back to
 either of them. In the Multi-Node setups, except for the Node
-featuring the **Mesh & Directory** Role (and the **Directory
-Replica**, if present), it is not relevant which Roles are installed
+featuring the **Mesh & Directory** Component (and the **Directory
+Replica**, if present), it is not relevant which Components are installed
 on each Node.
 
 .. card:: Example A, Single-Server
@@ -83,9 +83,9 @@ on each Node.
    :ref:`hostname-no-change` on Nodes 3 and 4, and procedure
    :ref:`hostname-other` on Nodes 2 and 5.
 
-.. card:: Example D, setup with *Directory Replica* Role
+.. card:: Example D, setup with *Directory Replica* Component
 
-   If one or more *Directory Replica* Roles are installed within your
+   If one or more *Directory Replica* Components are installed within your
    infrastructure, there are slight changes to the procedures
    described below. Please refer to Section :ref:`hostname-replica`
    for more information.
@@ -99,7 +99,7 @@ Change Hostname to Mesh & Directory Node
    satisfied the :ref:`change-hostname-req`.
 
 This procedure must be used on the Node featuring the **Mesh &
-Directory** Role **only**.
+Directory** Component **only**.
 
 .. include:: /_includes/_admincli/hostname-ds.rst
 
@@ -109,7 +109,7 @@ Change Hostname of Other Nodes
 ------------------------------
 
 This procedure applies to all nodes that **do not** feature the **Mesh
-& Directory** Role, that is, **Node 1** in Scenario **B** and **Nodes
+& Directory** Component, that is, **Node 1** in Scenario **B** and **Nodes
 1, 2, and 5** in Scenario **C**.
 
 .. include:: /_includes/_admincli/keep-hostname.rst
@@ -131,8 +131,8 @@ following commands, as the |zu|.
 
 .. _hostname-replica:
 
-Tasks for the Directory Replica Role
-------------------------------------
+Tasks for the Directory Replica Component
+-----------------------------------------
 
 If your infrastructure features a **Directory Replica**, you need to
 carry out these tasks **on all Nodes**. Depending if you change
