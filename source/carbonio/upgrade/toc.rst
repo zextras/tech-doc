@@ -3,8 +3,8 @@
 ================================
 
 This section contains the manual upgrade procedures to the latest
-|carbonio| release, from the :ref:`latest 24.12 <carbonio-upgrade>`
-and from :ref:`oldest <up-old>` versions, the changelogs of recent and
+|carbonio| release, from the :ref:`latest 25.3.0 <carbonio-upgrade>`
+and from :ref:`older <up-old>` versions, the changelogs of recent and
 older releases, and any security advice, if present.
 
 |product| does not have any installer: whenever new versions are
