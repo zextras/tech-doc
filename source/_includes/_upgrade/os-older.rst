@@ -34,10 +34,6 @@ The procedure is divided into phases:
 
 #. complete the upgrade procedure
 
-.. warning:: While |product| can be installed on a clean Ubuntu 24.04,
-   **it is currently not possible to upgrade to Ubuntu 24.04** an
-   existing installation of |product| on Ubuntu 20.04 or Ubuntu 22.04.
-
 .. _up_ph1:
 
 Phase 1
