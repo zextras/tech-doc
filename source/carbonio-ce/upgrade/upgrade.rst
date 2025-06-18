@@ -94,8 +94,3 @@ Upgrade Nodes
          # apt install carbonio-message-dispatcher-ce
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
-
-.. note:: After the upgrade has successfully completed, we strongly
-   suggest to :ref:`change Directory Server credentials
-   <ts-ds-credentials>` and :ref:`empty the pre-auth keys
-   <ts-auth-keys>`.
