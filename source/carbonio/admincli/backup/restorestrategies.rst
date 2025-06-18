@@ -580,6 +580,13 @@ To start an External Restore operation, use the
 
    zextras$ carbonio backup doExternalRestore *source_path* [param VALUE[,VALUE]]
 
+.. note:: Make sure that the |zu| has proper write access to the
+   *source* backup path. Example:
+
+   .. code:: console
+
+      # chown -R zextras:zextras /opt/backup/zextras
+
 .. card:: Usage example
 
    .. code:: console
@@ -777,6 +784,13 @@ differs between the two, the second is the same.
 
    zextras$ carbonio backup doExternalRestore /opt/zextras/restore/ \
    blobs_archive <BUCKET_VOLUME_ID>
+
+.. note:: Make sure that the |zu| has proper write access to the
+   *source* backup path. Example:
+
+   .. code:: console
+
+      # chown -R zextras:zextras /opt/backup/zextras
 
 You can follow how the restore advances by adding the ``--progress``
 option. As soon as the restore ends, the Global Administrator will
