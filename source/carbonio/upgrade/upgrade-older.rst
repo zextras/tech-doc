@@ -55,8 +55,8 @@ the upgrade:
 Checklist
 ---------
 
-The new packages or packages that should be moved on different nodes,
-should be installed or moved during the upgrade procedure:
+The following packages should be moved to different nodes during the
+upgrade procedure:
 
 #. carbonio-user-management
 #. carbonio-storages
