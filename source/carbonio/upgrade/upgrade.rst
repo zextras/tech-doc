@@ -4,8 +4,8 @@
  Manual From Previous Version
 ==============================
 
-This section guides you in the upgrade from |product| **24.12**,
-regardless of any specific patch numbers, to the latest **25.3.0**.
+This section guides you in the upgrade from |product| **25.3.0**,
+regardless of any specific patch numbers, to the latest **25.6.0**.
 
 .. _up-prev-req:
 
@@ -70,19 +70,6 @@ of Nodes, their load, the speed of network connection, and so on.
 
 
 .. include:: /_includes/_upgrade/first-part-cb.rst
-
-.. grid:: 1 1 1 2
-   :gutter: 3
-
-   .. grid-item-card:: Step 3. Install or move packages
-
-      The following packages needs to be moved from one Node to
-      another or installed on the given Node.
-
-      .. dropdown:: ``carbonio-user-management``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-um.rst
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
 
