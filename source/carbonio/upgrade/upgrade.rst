@@ -38,13 +38,9 @@ next section.
    move some of the packages to the Database Component. The procedure to
    carry out this task can be found in Section :ref:`remove-pgpool`.
 
-Checklist
----------
-
-The new packages or packages that should be moved on different nodes,
-should be installed or moved during the upgrade procedure:
-
-#. carbonio-user-management
+.. no checklist for this release
+   Checklist
+   ---------
 
 .. _up-proc:
 
