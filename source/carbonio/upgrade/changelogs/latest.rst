@@ -2,7 +2,7 @@
 Release 25.6.0
 =================
 
-Release Date: June 17th, 2025
+Release Date: June 18th, 2025
 
 New Features List
 -----------------
