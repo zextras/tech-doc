@@ -8,7 +8,7 @@ This section features instructions to install |product| in different
 scenarios, which can be installed either by using the suggested
 method, based on an :ref:`Ansible playbook <ansible-run>` and the
 inventory template provided with each scenario, or manually by
-following instruction provided in Section :ref:`roles-installation`.
+following instruction provided in Section :ref:`components-installation`.
 
 Requirements and Limitations
 ============================
@@ -67,9 +67,9 @@ Scenarios
 
       |supp| Files
 
-      |unsup| docs/preview
+      |supp| docs/preview
 
-      |unsup| Videochat
+      |supp| Videochat
 
       |supp| Backup
 
@@ -78,6 +78,9 @@ Scenarios
       |unsup| Cluster, Files and Docs service redundancy
 
       |unsup| LDAP master-slave replica
+
+      .. note:: Availability of some features might require additional
+         Nodes setup.
             
    .. grid-item-card:: Scenario *Essential*
       :columns: 12 12 6 6

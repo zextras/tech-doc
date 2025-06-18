@@ -23,7 +23,7 @@ different Mailstores.
 
 The Replica part is in charge of encoding and transmitting all the
 transactions of the account to an :ref:`event-streaming queue
-<role-es-install>`.  Once processed by the Replica, the events are
+<component-es-install>`.  Once processed by the Replica, the events are
 consumed by one agent, or even by multiple agents, in the destination
 Mailstore.  *Active* means that the destination Mailstores are
 **active Nodes**, reducing the need for dedicated resources that store

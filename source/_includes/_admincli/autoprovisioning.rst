@@ -39,9 +39,7 @@ option.
 
 * A domain on which to bind in the form of SearchBase: **DC=zextraslab, DC=ad**
 
-* A correct search filter:
-  **CN=test247,CN=Users,DC=zextraslab,DC=ad**. By using this filter,
-  all user in AD's grou
+* A correct search filter: **CN=test247,CN=Users,DC=zextraslab,DC=ad**
 
 Additionally, on |product| we will use domain **test.auth** for the
 purpose of authenticating users and we will set a time interval of 1
@@ -56,7 +54,7 @@ Procedure
 To configure auto provisioning, follow the procedure in this section;
 to complete it successfully, remember that all the commands below must
 be run as the ``zextras`` user on a Node featuring the **Mailstore &
-Provisioning** Role.
+Provisioning** Component.
 
 ..  hint:: Make sure that all relevant information are enclosed in
     quotes, to prevent any issue with non-escaped characters.
@@ -106,14 +104,20 @@ Enter the IP address or hostname of the ad server.
    zextras$ carbonio prov md test.auth zimbraAutoProvLdapURL \
    ldap://128.24.0.50:3268
 
+.. note:: The zimbraAutoProvLdapBindDn parameter accepts both a DN of
+   type “CN=Auto Provisioning,CN=Users,DC=zextraslab,DC=ad” and the
+   userPrincipalName “autoprovisioning@zextraslab.ad”, according to
+   the setting of your Active Directory.
+
 Set the operation mode to **EAGER**.
 
 .. code:: console
 
    zextras$ carbonio prov md test.auth zimbraAutoProvMode EAGER
 
-Finally, set the provisioning polling interval to 1 minute for domain
-``test.auth``.
+Finally, schedule the provisioning setting a polling interval to an
+interval that allow the task to **complete before next execution** for
+domain ``test.auth``.
 
 .. code:: console
 

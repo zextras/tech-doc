@@ -12,7 +12,7 @@ deployed either using the :ref:`scenario-es-playbook`, or
 make sure you :ref:`configure the internal network
 <scenario-es-network>`.
 
-The Roles installed on the *3 Nodes*, depicted below, are:
+The Components installed on the *3 Nodes*, depicted below, are:
 
 * Node 1: Mesh & Directory, Database, Monitoring
 * Node 2: MTA AV/AS, Proxy

@@ -42,17 +42,17 @@ Changes in the documentation can be found in Section
 in :pr:`779` and :pr:`787`.
 
 
-.. rubric:: 202411-884 New  Role Mesh 
+.. rubric:: 202411-884 New Component Mesh
 
 When deploying a scenario with multiple |mesh| servers, only in the first Directory Server should be installed. 
-The introduction of this *Mesh-only* Role allows also to decouple the installation of multiple Directory Servers along multiple |Mesh| servers. 
+The introduction of this *Mesh-only* Component allows also to decouple the installation of multiple Directory Servers along multiple |Mesh| servers. 
 
-See :ref:`role-mesh-only-install` for the documentation and :pr:`773` for the source code.
+See :ref:`component-mesh-only-install` for the documentation and :pr:`773` for the source code.
 
 
-.. rubric:: 202411-881 Add the list of Roles to Scenario description 
+.. rubric:: 202411-881 Add the list of Components to Scenario description
 
-We added to each installation scenario the list of Roles that will be installed on each Node that is part of the scenario.
+We added to each installation scenario the list of Components that will be installed on each Node that is part of the scenario.
 
 See each scenario description in :ref:`scenarios` for the documentation and :pr:`772` for the source code.
 
@@ -82,7 +82,7 @@ There was an error in the name of the local domain (Carbonio) on which accounts 
 
 .. rubric:: 202411-900 Typos on wsc page
 
-We fixed two typos in the :ref:`role-wsc-install` that could lead to misunderstandings.
+We fixed two typos in the :ref:`component-wsc-install` that could lead to misunderstandings.
 
 Changes in the source code can be found in  in :pr:`790`.
 

@@ -41,7 +41,7 @@ command line or from the graphical administrator interface.
       :columns: 6
 
       As the ``zextras`` user, issue the following command on the Node
-      featuring the :ref:`role-prov-install` Role (if you have more
+      featuring the :ref:`component-prov-install` Component (if you have more
       than one, execute it on either of them), replacing **TOKEN**
       with your licence token.
 

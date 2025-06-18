@@ -1,7 +1,7 @@
 .. tab-set::
 
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubu20
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
@@ -9,8 +9,8 @@
 
          # wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 
@@ -30,7 +30,7 @@
 
          # dnf -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 
-   .. tab-item:: RHEL 9 |beta|
+   .. tab-item:: RHEL 9
       :sync: rhel9
 
       .. code:: console

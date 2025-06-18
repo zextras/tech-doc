@@ -16,7 +16,7 @@ either using the :ref:`scenario-st-playbook`, or :ref:`manually
 <scenario-st-manual>`, Node by Node. In both cases, make sure you
 :ref:`configure the internal network <scenario-st-network>`.
 
-The Roles installed on the *7 Nodes* are:
+The Components installed on the *7 Nodes* are:
 
 * Node 1: Mesh & Directory, Database, and Monitoring
 * Node 2: MTA AV/AS

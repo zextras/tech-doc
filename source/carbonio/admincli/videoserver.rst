@@ -12,7 +12,7 @@ Legacy Videoserver |dprc|
    packages in an existent |product| infrastructure.
 
    These instructions do not apply to the new
-   :ref:`role-vs-wsc-install`, which requires no configuration.
+   :ref:`component-vs-wsc-install`, which requires no configuration.
 
 The |vs| is a WebRTC stream aggregator that improves |team|\ 's
 performance by merging and decoding/re-encoding all streams in a
@@ -177,7 +177,7 @@ package must be installed on each node on which
 
 The package installs a service that needs to be associated with the
 |vs| instance, a task that needs to be executed from the CLI on a
-Node which installs the *Mailstore & Provisioning Role*, using a
+Node which installs the *Mailstore & Provisioning Component*, using a
 command that differ depending if you already installed and configured
 the |vs| or not.
 
@@ -188,7 +188,7 @@ the |vs| or not.
       :columns: 12 12 6 6
 
       If you already installed |vs|, execute this command on the Node
-      featuring the Mailstore & Provisioning Role
+      featuring the Mailstore & Provisioning Component
 
       .. code:: console
 
@@ -202,14 +202,14 @@ the |vs| or not.
       .. warning:: The value of the servlet port (*8090*) **must**
          match the one defined in file
          :file:`/etc/carbonio/videoserver-recorder/recordingEnv` on
-         the Node installing the Video Server Role.
+         the Node installing the Video Server Component.
 
    .. grid-item-card:: |vs| not yet installed
       :columns: 12 12 6 6
 
       If you did not yet install |vs|, you can execute the following
       command on the Node installing the Mailstore & Provisioning
-      Role, which configures at the same time both the |vs| and the
+      Component, which configures at the same time both the |vs| and the
       recording servlet.
 
       .. code:: console
@@ -221,7 +221,7 @@ the |vs| or not.
       recorder, respectively, and *A_SECRET_PASSWORD* with the value
       of the variable ``api_secret`` in file
       :file:`/etc/janus/janus.jcfg` on the Node installing the Video
-      Server Role, for example::
+      Server Component, for example::
 
         api_secret = "+xpghXktjPGGRIs7Y7ryoeBvW9ReS8RQ"
 
@@ -240,7 +240,7 @@ Configure |vs| Recording
 
 To complete the setup, you need to execute a few commands as the
 ``zextras`` user on the node with the Mailstore & Provisioning
-Role. First, make sure that the functionality is enabled on the
+Component. First, make sure that the functionality is enabled on the
 infrastructure at COS level.
 
 .. code:: console
@@ -343,4 +343,4 @@ Once done, remove the package
          # dnf remove service-discover-agent carbonio-videoserver
 
 Now the |vs| is completely removed from the node and you can install
-it on a different Node, using the corresponding :term:`Role` :ref:`installation procedure <role-vs-install>`.
+it on a different Node, using the corresponding :term:`Component` :ref:`installation procedure <component-vs-install>`.

@@ -29,7 +29,7 @@ One example in HTML::
 
 Every time you enable or disable the disclaimer or change the text,
 you need to issue the command as the ``zextras`` user on every Node
-featuring the :ref:`MTA role <role-mta-install>`
+featuring the :ref:`MTA Component <component-mta-install>`
 
 .. code:: console
 

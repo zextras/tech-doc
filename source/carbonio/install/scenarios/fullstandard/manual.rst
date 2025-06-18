@@ -1,12 +1,12 @@
 .. _scenario-st-manual:
 
-===========================
- Manual Roles Installation
-===========================
+================================
+ Manual Components Installation
+================================
 
 In case you do not want to install |product| on this scenario using
 Ansible, you can proceed with the manual installation of the various
-Roles on the Nodes, according to the following guidelines.
+Components on the Nodes, according to the following guidelines.
 
 .. include:: /_includes/_installation/multinode-suggestions.rst
 
@@ -45,59 +45,31 @@ Core Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
-   .. rubric:: Role Mesh & Directory
+   .. rubric:: Component Mesh & Directory
 
-   .. include:: /_includes/_installation/_packages/role-mesh-ds.rst
+   .. include:: /_includes/_installation/_packages/component-mesh-ds.rst
 
-   .. rubric:: Role Database
+   .. rubric:: Component Database
 
-   .. include:: /_includes/_installation/_packages/role-db.rst
+   .. include:: /_includes/_installation/_packages/component-db.rst
 
-   .. rubric:: Role Monitoring
+   .. rubric:: Component Monitoring
 
-   .. include:: /_includes/_installation/_packages/role-monit.rst
+   .. include:: /_includes/_installation/_packages/component-monit.rst
 
-   .. rubric:: DB Components
+   .. rubric:: DB Connectors
 
-   .. include:: /_includes/_installation/_packages/role-db-comp.rst
+   .. include:: /_includes/_installation/_packages/component-db-comp.rst
 
-   .. rubric:: WSC DB Components
+   .. rubric:: WSC DB Connectors
 
-   .. include:: /_includes/_installation/_packages/role-db-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-db-wsc.rst
 
 .. _st1-step4:
 
@@ -137,45 +109,42 @@ Core Node
 
 .. dropdown:: Step 8: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-directory-server.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -237,47 +206,19 @@ MTA Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Role MTA AV/AS
+   .. rubric:: Component MTA AV/AS
 
-   .. include:: /_includes/_installation/_packages/role-mta.rst
+   .. include:: /_includes/_installation/_packages/component-mta.rst
 
 .. _st2-step4:
 
@@ -309,44 +250,42 @@ MTA Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
+
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-mta.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -383,48 +322,19 @@ Proxy Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
-
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Role Proxy
+   .. rubric:: Component Proxy
 
-   .. include:: /_includes/_installation/_packages/role-proxy.rst
+   .. include:: /_includes/_installation/_packages/component-proxy.rst
 
 .. _st3-step4:
 
@@ -455,46 +365,43 @@ Proxy Node
 .. _st3-step6:
 
 .. dropdown:: Step 6: Complete Installation
-
+  
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-proxy.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -531,52 +438,23 @@ Mailstore & Provisioning and Tasks Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
-
+   .. include:: /_includes/_installation/pkg-upgrade.rst
  
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Role Mailstore & Provisioning
+   .. rubric:: Component Mailstore & Provisioning
 
-   .. include:: /_includes/_installation/_packages/role-mailstore-provisioning.rst
+   .. include:: /_includes/_installation/_packages/component-mailstore-provisioning.rst
 
-   .. rubric:: Role Tasks
+   .. rubric:: Component Tasks
 
-   .. include:: /_includes/_installation/_packages/role-tasks.rst
+   .. include:: /_includes/_installation/_packages/component-tasks.rst
 
 .. _st4-step4:
 
@@ -598,46 +476,43 @@ Mailstore & Provisioning and Tasks Node
 .. _st4-step6:
 
 .. dropdown:: Step 6: Complete Installation
-
+  
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -679,51 +554,23 @@ Files and |WSC| Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Role Files
+   .. rubric:: Component Files
 
-   .. include:: /_includes/_installation/_packages/role-files.rst
+   .. include:: /_includes/_installation/_packages/component-files.rst
 
-   .. rubric:: Role |wsc|
+   .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
 
 
 .. _st5-step4:
@@ -749,55 +596,52 @@ Files and |WSC| Node
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_roles/dispatcher-migration.rst
+   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
 
 .. _st5-step7:
 
 .. dropdown:: Step 7: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
-
+                   
             # systemctl restart carbonio-appserver.target
 
 
@@ -832,51 +676,23 @@ Docs and Preview Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Role Docs & Editor
+   .. rubric:: Component Docs & Editor
 
-   .. include:: /_includes/_installation/_packages/role-docs.rst
+   .. include:: /_includes/_installation/_packages/component-docs.rst
 
-   .. rubric:: Role Preview
+   .. rubric:: Component Preview
 
-   .. include:: /_includes/_installation/_packages/role-preview.rst
+   .. include:: /_includes/_installation/_packages/component-preview.rst
 
 .. _st6-step4:
 
@@ -899,45 +715,42 @@ Docs and Preview Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
 
@@ -974,51 +787,23 @@ Video Server Node
 
    We start by updating and upgrading the system.
 
-   .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: Ubuntu 22.04
-         :sync: ubu22
-
-         .. code:: console
-
-            # apt update && apt upgrade
-
-      .. tab-item:: RHEL 8
-         :sync: rhel8
-
-         .. code:: console
-
-            # dnf upgrade
-
-      .. tab-item:: RHEL 9 |beta|
-         :sync: rhel9
-
-         .. code:: console
-
-            # dnf upgrade
+   .. include:: /_includes/_installation/pkg-upgrade.rst
 
    Next, we install all packages needed for |product|. We divide them
-   by Role and functionality, but you can combine all packages and run
+   by Component and functionality, but you can combine all packages and run
    the install command once.
 
    .. rubric:: Mesh agent
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Role Video Server & Video Recording (WSC)
+   .. rubric:: Component Video Server & Video Recording (WSC)
 
-   .. include:: /_includes/_installation/_packages/role-vs-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-vs-wsc.rst
 
-   .. rubric:: Role |wsc|
+   .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/role-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
 
 .. _st7-step4:
 
@@ -1041,46 +826,43 @@ Video Server Node
 
 .. dropdown:: Step 6: Complete Installation
 
+   After the successful package installation, start all |product|
+   services by executing
+   
    .. tab-set::
-
-      .. tab-item:: Ubuntu 20.04
-         :sync: ubu20
-
-         After the successful package installation, start all |product|
-         services by using
-
-         .. code:: console
-
-            zextras$ zmcontrol restart
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
-         After the successful package installation, start all |product|
-         services by using
-
+         As the |zu|
+         
          .. code:: console
 
             zextras$ zmcontrol restart
 
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            # systemctl restart carbonio-appserver.target
 
       .. tab-item:: RHEL 8
          :sync: rhel8
 
-
-         After the successful package installation, start all |product|
-         services by using
+         As the |zu|
 
          .. code:: console
 
             zextras$ zmcontrol restart
 
-      .. tab-item:: RHEL 9 |beta|
+      .. tab-item:: RHEL 9
          :sync: rhel9
 
-         After the successful package installation, start all |product|
-         services by using
+         As the |ru|
 
          .. code:: console
-
+           
             # systemctl restart carbonio-appserver.target

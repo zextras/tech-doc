@@ -2,10 +2,10 @@
 
 .. card:: GPG Key of Grafana in Ubuntu 22.04
 
-   If you migrate from Ubuntu 20.04 to 22.04 and use Monitoring Role's
+   If you migrate from Ubuntu 20.04 to 22.04 and use Monitoring Component's
    Grafana, you need to update the location on which its GPG key is
    stored to prevent warning during upgrades. Log in to the Node on which
-   the |monit| Role is installed and execute the following commands.
+   the |monit| Component is installed and execute the following commands.
 
    * Remove existent repository
 

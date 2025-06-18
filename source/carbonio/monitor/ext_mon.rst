@@ -15,7 +15,7 @@ components like Kafka and Zookeeper.
 Additionally, fundamental system health indicators, such as disk usage, CPU load, and network availability, are included
 to provide a comprehensive monitoring strategy.
 
-.. topic:: Role: MTA
+.. topic:: Component: MTA
 
    **SMTP**
    Ports: ``25``, ``465``, ``587``
@@ -33,7 +33,7 @@ to provide a comprehensive monitoring strategy.
    **DKIM** (if enabled)
    Port: ``8465``
 
-.. topic:: Role: Proxy
+.. topic:: Component: Proxy
 
     **IMAP/IMAPS**
     To monitor the IMAP/S service we are going to connect to the following
@@ -55,7 +55,7 @@ to provide a comprehensive monitoring strategy.
 
     Port ``80``/ ``443``
 
-.. topic:: Role: Mailstore & Provisioning
+.. topic:: Component: Mailstore & Provisioning
 
     **LMTP**
     To monitor the LMTP service we are going to connect locally to the
@@ -78,7 +78,7 @@ to provide a comprehensive monitoring strategy.
 
     Location of the socket file: ``/run/carbonio/mysql.sock``
 
-.. topic:: Role: Mesh & Directory
+.. topic:: Component: Mesh & Directory
 
     **PostgreSQL**
 
@@ -103,7 +103,7 @@ to provide a comprehensive monitoring strategy.
 
     Ports ``8300``, ``8500``
 
-.. topic:: Role: Event streaming and other HA services
+.. topic:: Component: Event streaming and other HA services
 
 
     With Active Replica feature enabled the following are also necessary
@@ -129,7 +129,7 @@ to provide a comprehensive monitoring strategy.
 
     Port ``8008``
 
-.. topic:: All Nodes/Roles
+.. topic:: All Nodes/Components
 
     **SSH**
 

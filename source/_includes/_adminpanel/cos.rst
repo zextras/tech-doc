@@ -37,7 +37,7 @@ Features
 
 *Features* are settings that allow or forbid the user to access the
 various features related to the everyday use of |product|, like for
-example ActiveSync, |wsc|, web and mobile access.
+example ActiveSync, the legacy Chat module, web and mobile access.
 
 The Administrator can enforce authentication by requiring 2FA, and
 even prevent users to even access the `Settings` Module, meaning that
@@ -61,6 +61,17 @@ the *Auth* section of their `Settings` module.
 
 Some of these options can be enabled or disabled via CLI: please refer
 to section :ref:`cli-features` for more information.
+
+.. index:: Chat preferences; by COS
+
+.. _cos-chat:
+
+Chat
+~~~~
+
+Options in this section allow to customise some of the |wsc| features.
+
+.. include:: /_includes/_adminpanel/wsc.rst
 
 .. _cos-prefs:
 

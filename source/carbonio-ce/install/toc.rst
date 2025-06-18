@@ -15,7 +15,8 @@ section.
       :maxdepth: 1
 
       architecture
+      intro-systemd
       requirements
       preliminary
-      roles
+      components
       scenarios

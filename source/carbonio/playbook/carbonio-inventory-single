@@ -20,7 +20,7 @@ webmailHostname=srv1.example.com
 [applicationServers]
 srv1.example.com
 
-############ Optional Roles ############
+############ Optional Components ############
 
 [previewServers]
 srv1.example.com
@@ -28,7 +28,7 @@ srv1.example.com
 [filesServers]
 srv1.example.com
 
-############ Optional Roles - to be installed on a different VM ############
+############ Optional Components - to be installed on a different VM ############
 [taskServers]
 #srv2.example.com
 
@@ -41,7 +41,7 @@ srv1.example.com
 [workStreamServers]
 #srv2.example.com
 
-############ These Roles are not supported in Single-Server scenario ###########
+############ These Components are not supported in Single-Server scenario ###########
 ############ They are required for the proper Ansible installation #############
 
 [dbsConnectorServers]

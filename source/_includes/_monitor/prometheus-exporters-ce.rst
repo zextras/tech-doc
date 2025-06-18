@@ -1,7 +1,7 @@
 
 .. csv-table:: List of Available Prometheus Exporters
    :widths: 45 45 10
-   :header: "Exporter", "Role", "Port"
+   :header: "Exporter", "Component", "Port"
 
    "carbonio-prometheus-consul-exporter", "Mesh & Directory", "9107"
    "carbonio-prometheus-openldap-exporter", "Mesh & Directory", "9330"

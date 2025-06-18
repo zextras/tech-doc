@@ -10,24 +10,13 @@
 
 .. rubric:: Package Installation
 
-.. include:: /_includes/_installation/_packages/role-db.rst
+.. include:: /_includes/_installation/_packages/component-db.rst
 .. include:: /_includes/_installation/step-conf-db.rst
 
 Finally, allow the other nodes to access the databases that will be
 stored on this node by running these commands.
 
 .. tab-set::
-
-   .. tab-item:: Ubuntu 20.04
-      :sync: ubuntu
-
-      .. code:: console
-
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
-         # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
-         # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/16/main/pg_hba.conf
-         # systemctl restart postgresql
 
    .. tab-item:: Ubuntu 22.04
       :sync: ubu22
@@ -40,8 +29,30 @@ stored on this node by running these commands.
          # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/16/main/pg_hba.conf
          # systemctl restart postgresql
 
-   .. tab-item:: RHEL
-      :sync: rhel
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      .. code:: console
+
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
+         # echo "host    all             all             0.0.0.0/0            md5" >> /etc/postgresql/16/main/pg_hba.conf
+         # systemctl restart postgresql
+
+   .. tab-item:: RHEL8
+      :sync: rhel8
+
+      .. code:: console
+
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET listen_addresses TO '*';\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET max_connections = 500;\""
+         # su - postgres -c "psql --command=\"ALTER SYSTEM SET shared_buffers = 5000;\""
+         # echo "host    all             all             0.0.0.0/0            md5" >> /var/lib/pgsql/16/data/pg_hba.conf
+         # systemctl restart postgresql-16
+
+   .. tab-item:: RHEL9
+      :sync: rhel9
 
       .. code:: console
 

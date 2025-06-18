@@ -9,7 +9,7 @@ srv1.example.com
 [serviceDiscoverServers]
 srv1.example.com
 
-### Keep this Role empty and uncommented
+### Keep this Component empty and uncommented
 [dbsConnectorServers]
 
 [mtaServers]
@@ -40,5 +40,5 @@ srv1.example.com
 [syslogServer]
 srv1.example.com
 
-### Keep this Role empty and uncommented
+### Keep this Component empty and uncommented
 [workStreamServers]

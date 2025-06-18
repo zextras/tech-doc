@@ -39,11 +39,14 @@ configuration, keeping in mind that:
   in Section :ref:`ip-change-net`
 
 * If you want to change IP Address **and** the subnet, you need to
-  follow the instructions in both Sections :ref:`ip-change-net` and
-  :ref:`ip-change-mta` 
+  follow the instructions in both Sections, :ref:`ip-change-net` and
+  :ref:`ip-change-mta`
+
+In all cases, execute also the tasks listed in Sections
+:ref:`ip-change-pv` and :ref:`ip-change-vs`.
 
 .. _ip-change-net:
-          
+
 Modify Network Configuration
 ----------------------------
 
@@ -51,7 +54,7 @@ The first step is to edit, as the ``root`` user, the
 :file:`/etc/hosts` file and replace the old IP with the new IP.
 
 .. parsed-literal::
-   
+
    10.0.0.50 crb-01.example.com crb-01 :bdg-danger:`OLD IP`
 
    192.168.10.50 crb-01.example.com crb-01 :bdg-success:`NEW IP`
@@ -69,7 +72,7 @@ manually edit its configuration file,
 
 As the ``zextras`` user, replace in this file the ``bind_addr``, so
 that the file contains the new IP::
-  
+
    {
      "bind_addr": "192.168.10.50"
    }
@@ -91,7 +94,7 @@ networks on which the MTA operates include the old one (*10.0.0.50*),
 for example:
 
 .. code:: console
-   
+
    zextras$ postconf mynetworks
    mynetworks = 127.0.0.0/8 [::1]/128  10.0.0.50/24
 
@@ -99,18 +102,65 @@ You need to modify that configuration to include the new subnet
 (*192.168.10.1/24*) using the command
 
 .. code:: console
-   
+
    zextras$ carbonio prov ms crb-01.example.com zimbraMtaMyNetworks \
    '127.0.0.0/8 [::1]/128 192.168.10.1/24'
 
 Reload the MTA service
-          
+
 .. code:: console
-   
+
    zextras$ postfix reload
 
 Finally, Restart |product|
 
 .. code:: console
-   
+
    zextras$ zmcontrol restart
+
+
+.. _ip-change-pv:
+
+Modify Preview Component Configuration
+--------------------------------------
+
+Edit file :file:`/etc/carbonio/preview/config.ini` and replace the
+values of variables **nginx_lookup_servers_full_path_urls** and
+**memcached_server_full_path_urls** with the new IP address
+(**192.168.10.50**) ones.
+
+.. code-block:: ini
+
+   nginx_lookup_server_full_path_urls = https://192.168.10.50:7072
+   memcached_server_full_path_urls = 192.168.10.50:11211
+
+In case you have multiple Proxy Nodes, add the IP addresses of all
+Proxy Nodes as a comma-separated list, for example (assuming
+**192.168.10.51** is the second Proxy Node's IP).
+
+.. note:: In case you have a Multi-Server infrastructure, replace the
+   192.168.10.50 IP address in the snippets below with the correct IP
+   addresses, corresponding to the Proxy Node's IP address(es).
+
+.. code-block:: ini
+
+   nginx_lookup_server_full_path_urls = https://192.168.10.50:7072,https://192.168.10.51:7072
+   memcached_server_full_path_urls = 192.168.10.50:11211,192.168.10.51:11211
+
+.. seealso::
+
+   More information in Section :ref:`conf-memcached`
+
+.. _ip-change-vs:
+
+Modify |vs| Configuration
+-------------------------
+
+Edit file :file:`/etc/janus/janus.jcfg`, search the line with the
+variable **nat_1_1_mapping** and replace the value with the new one
+(**192.168.10.50**).
+
+
+.. code-block:: ini
+
+   nat_1_1_mapping = 192.168.10.50

@@ -11,7 +11,7 @@ using the :ref:`scenario-sm-playbook`, or :ref:`manually
 <scenario-fsm-manual>`, Node by Node. In both cases, make sure you
 :ref:`configure the internal network <scenario-fsm-network>`.
 
-The Roles installed on the *5 Nodes* are:
+The Components installed on the *5 Nodes* are:
 
 * Node 1: Mesh & Directory, Database, and Monitoring
 * Node 2: MTA AV/AS and Proxy
