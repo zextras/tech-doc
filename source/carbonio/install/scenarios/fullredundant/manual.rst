@@ -65,7 +65,7 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
    .. include:: /_includes/_installation/_packages/component-db-comp.rst
 
-   .. rubric:: WSC DB Connectors
+   .. rubric:: Chats DB Connectors
 
    .. include:: /_includes/_installation/_packages/component-db-chats.rst
 
@@ -116,7 +116,7 @@ This Node features the *Mesh & Directory* and *Database* Components.
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -263,14 +263,14 @@ This Node features the *Mesh* and *Directory Replica*  Components.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -416,14 +416,14 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -453,7 +453,7 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
          .. code:: console
 
-            # systemctl restart carbonio-directory-server.target   
+            # systemctl restart carbonio-directory-server.target
 
 .. _fr3-step9:
 
@@ -559,14 +559,14 @@ This Node features the *MTA AV/AS* Component.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -677,14 +677,14 @@ This Node features the (replicated) *MTA AV/AS* Component.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -795,14 +795,14 @@ This Node features the *Proxy* Component.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -913,14 +913,14 @@ This Node features the (replicated) *Proxy* Component.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -949,7 +949,7 @@ This Node features the (replicated) *Proxy* Component.
          As the |ru|
 
          .. code:: console
- 
+
             # systemctl restart carbonio-proxy.target
 
 .. _fr8:
@@ -1022,14 +1022,14 @@ This Node features the *Mailstore & Provisioning* Component.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1131,14 +1131,14 @@ This Node features the (replicated) *Mailstore & Provisioning* Component.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1175,7 +1175,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Component.
 Node Ten
 ========
 
-This Node features the *WSC*, *Files*, and *Tasks*  Components.
+This Node features the *, *Files*, and *Tasks*  Components.
 
 .. _fr10-step1:
 
@@ -1263,14 +1263,14 @@ This Node features the *WSC*, *Files*, and *Tasks*  Components.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1307,7 +1307,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Components.
 Node Eleven
 ===========
 
-This Node features the (replicated) *WSC*, *Files*, and *Tasks* Components.
+This Node features the (replicated) *, *Files*, and *Tasks* Components.
 
 .. _fr11-step1:
 
@@ -1396,14 +1396,14 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Components.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1516,7 +1516,7 @@ This Node features the *Docs & Editor* and *Preview* Components.
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1630,7 +1630,7 @@ Components.
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1705,7 +1705,7 @@ This Node features the *Video Server & Video Recording* Component.
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Component Video Server & Video Recording (WSC)
+   .. rubric:: Component Video Server & Video Recording
 
    .. include:: /_includes/_installation/_packages/component-vs-chats.rst
 
@@ -1739,7 +1739,7 @@ This Node features the *Video Server & Video Recording* Component.
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1806,7 +1806,7 @@ Component.
    We start by updating and upgrading the system.
 
    .. include:: /_includes/_installation/pkg-upgrade.rst
-              
+
    Next, we install all packages needed for |product|. We divide them
    by Component and functionality, but you can combine all packages and run
    the install command once.
@@ -1815,7 +1815,7 @@ Component.
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Component Video Server & Video Recording (WSC)
+   .. rubric:: Component Video Server & Video Recording
 
    .. include:: /_includes/_installation/_packages/component-vs-chats.rst
 
@@ -1842,14 +1842,14 @@ Component.
 
    After the successful package installation, start all |product|
    services by executing
-   
+
    .. tab-set::
 
       .. tab-item:: Ubuntu 22.04
          :sync: ubu22
 
          As the |zu|
-         
+
          .. code:: console
 
             zextras$ zmcontrol restart
@@ -1880,4 +1880,3 @@ Component.
          .. code:: console
 
             # systemctl restart carbonio-appserver.target
-         

@@ -7,14 +7,14 @@
       the :ref:`component-mesh-install` Node.
 
       This situation was previously required by the
-      :ref:`component-wsc-install` (WSC) Component, where it was installed, but
+      :ref:`component-wsc-install`  Component, where it was installed, but
       now is used by the whole |product|.
 
       In case you already installed |WSC|, remove the
       :file:`carbonio-message-broker` from the |wsc| Node, then
       install it on the **Mesh & Directory Node**.
 
-      If you never installed WSC, make sure you install this package
+      If you never installed |wsc|, make sure you install this package
       on the **Mesh & Directory Node**.
 
       To verify if the package is installed, execute the following
@@ -45,7 +45,7 @@
 
               carbonio-message-broker-0.2.0-1.el8.x86_64
 
-      If the package is installed on the WSC Node (if you have it
+      If the package is installed on the |wsc| Node (if you have it
       installed), remove it.
 
       .. tab-set::

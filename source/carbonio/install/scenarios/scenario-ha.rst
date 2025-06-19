@@ -90,7 +90,7 @@ requirements for each Carbonio service in a 5-node HA setup:
    "**Cluster**", "3", "", "N/A", "3"
    "**Files, Preview, and Docs**", "1", "", "1", "2"
    "**Video**", "1", "1", "N/A", "2"
-   "**WSC**", "1", "1", "N/A", "2"
+   "**Chats**", "1", "1", "N/A", "2"
 
 Each service, except for the Cluster service, has a mirrored HA node,
 creating a reliable failover configuration. The **(Core) Cluster
@@ -180,8 +180,8 @@ recommended specifications:
      - 2 (1 primary + 1 secondary)
      - Supports video functionality for user communication
      - Both nodes provide redundancy of video services
-   * - WSC
-     - Work Stream Collaboration
+   * - Chats
+     - Chats
      - 2 (1 primary + 1 secondary)
      - Supports chat functionality for user communication
      - Both nodes provide redundancy of chat services

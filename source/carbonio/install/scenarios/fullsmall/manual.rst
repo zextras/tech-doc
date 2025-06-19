@@ -67,7 +67,7 @@ Core Node
 
    .. include:: /_includes/_installation/_packages/component-db-comp.rst
 
-   .. rubric:: WSC DB Connectors
+   .. rubric:: Chats DB Connectors
 
    .. include:: /_includes/_installation/_packages/component-db-chats.rst
 
@@ -582,7 +582,7 @@ Video Server Node
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Component Video Server & Video Recording (WSC)
+   .. rubric:: Component Video Server & Video Recording
 
    .. include:: /_includes/_installation/_packages/component-vs-chats.rst
 

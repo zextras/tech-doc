@@ -73,7 +73,7 @@ upgrade procedure with Ansible.
   * The old, legacy Chats will be left untouched, i.e., it will
     neither be removed, nor set in read-only mode
 
-  * No migration of the old (legacy) Chats to WSC will be performed
+  * No migration of the old (legacy) Chats to |wsc| will be performed
 
 .. _ans-pb-install:
 

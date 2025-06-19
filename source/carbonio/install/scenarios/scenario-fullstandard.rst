@@ -22,7 +22,7 @@ The Components installed on the *7 Nodes* are:
 * Node 2: MTA AV/AS
 * Node 3: Proxy
 * Node 4: Mailstore & Provisioning, and Tasks
-* Node 5: WSC, Files
+* Node 5: Chats, Files
 * Node 6: Docs & Editor, Preview
 * Node 7: Video Server & Video Recording
 
