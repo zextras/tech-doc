@@ -60,7 +60,7 @@ Chat
 
 Options in this section allow to customise some of the |wsc| features.
 
-.. include:: /_includes/_adminpanel/wsc.rst
+.. include:: /_includes/_adminpanel/chats.rst
 
 .. _cos-prefs:
 

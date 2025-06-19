@@ -69,7 +69,7 @@ Core Node
 
    .. rubric:: WSC DB Connectors
 
-   .. include:: /_includes/_installation/_packages/component-db-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-db-chats.rst
 
 .. _st1-step4:
 
@@ -103,7 +103,7 @@ Core Node
 
    .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-   .. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst
+   .. include:: /_includes/_installation/_steps/db-bootstrap-chats.rst
 
 .. _st1-step8:
 
@@ -570,7 +570,7 @@ Files and |WSC| Node
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
 
 
 .. _st5-step4:
@@ -799,11 +799,11 @@ Video Server Node
 
    .. rubric:: Component Video Server & Video Recording (WSC)
 
-   .. include:: /_includes/_installation/_packages/component-vs-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-vs-chats.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
 
 .. _st7-step4:
 

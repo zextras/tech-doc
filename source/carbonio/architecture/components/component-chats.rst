@@ -113,7 +113,7 @@ Then, we update the list of packages.
 
 We are now ready to install all packages.
 
-.. include:: /_includes/_installation/_packages/component-wsc-cb.rst
+.. include:: /_includes/_installation/_packages/component-chats-cb.rst
 
 .. _component-wsc-bootstrap:
 

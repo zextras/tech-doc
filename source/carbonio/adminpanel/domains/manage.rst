@@ -269,9 +269,9 @@ restore the COS value.
 
    .. rubric:: Chat
 
-   Options here allow to configure the |wsc|\'s Chat
+   Options here allow to configure the |wsc|
 
-   .. include:: /_includes/_adminpanel/wsc.rst
+   .. include:: /_includes/_adminpanel/chats.rst
 
    .. rubric:: Features
 

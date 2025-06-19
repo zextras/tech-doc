@@ -67,7 +67,7 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
    .. rubric:: WSC DB Connectors
 
-   .. include:: /_includes/_installation/_packages/component-db-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-db-chats.rst
 
 .. _fr1-step4:
 
@@ -101,7 +101,7 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
    .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-   .. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst
+   .. include:: /_includes/_installation/_steps/db-bootstrap-chats.rst
 
 .. _fr1-step8:
 
@@ -1219,7 +1219,7 @@ This Node features the *WSC*, *Files*, and *Tasks*  Components.
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
 
    .. rubric:: Component Tasks
 
@@ -1351,7 +1351,7 @@ This Node features the (replicated) *WSC*, *Files*, and *Tasks* Components.
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
 
    .. rubric:: Component Tasks
 
@@ -1707,7 +1707,7 @@ This Node features the *Video Server & Video Recording* Component.
 
    .. rubric:: Component Video Server & Video Recording (WSC)
 
-   .. include:: /_includes/_installation/_packages/component-vs-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-vs-chats.rst
 
 .. _fr14-step4:
 
@@ -1817,7 +1817,7 @@ Component.
 
    .. rubric:: Component Video Server & Video Recording (WSC)
 
-   .. include:: /_includes/_installation/_packages/component-vs-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-vs-chats.rst
 
 .. _fr15-step4:
 
