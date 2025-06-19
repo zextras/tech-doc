@@ -20,9 +20,9 @@ next section.
 
 .. card:: Operating system
 
-   |product| can be installed on **Ubuntu 22.04** and **RHEL 9** since
-   version **24.5.0**.  If you plan to upgrade both the OS and
-   |product|, please refer to Section :ref:`os-upgrade`.
+   |product| can be installed on **Ubuntu 22.04 LTS**, **Ubuntu 24.04
+   LTS**, **RHEL 8**, and **RHEL 9**. If you plan to upgrade both the
+   OS and |product|, please refer to Section :ref:`os-upgrade`.
 
    .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
@@ -76,7 +76,7 @@ Upgrade Nodes
    .. include:: /_includes/_upgrade/ds.rst
 
 
-.. include:: /_includes/_upgrade/first-part-cb.rst
+.. include:: /_includes/_upgrade/first-part-ce.rst
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -84,7 +84,7 @@ Upgrade Nodes
    .. grid-item-card:: Step 3. Install new package
       :columns: 12
 
-      On the Node installing the |wsc| component, remove
+      On the Node installing the |wsc| Component, remove
       package ``carbonio-message-dispatcher`` and install
       ``carbonio-message-dispatcher-ce``.
 
@@ -93,4 +93,4 @@ Upgrade Nodes
          # apt remove carbonio-message-dispatcher
          # apt install carbonio-message-dispatcher-ce
 
-.. include:: /_includes/_upgrade/second-part-cb.rst
+.. include:: /_includes/_upgrade/second-part-ce.rst
