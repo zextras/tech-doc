@@ -1,19 +1,19 @@
 .. _wsc-adv:
 
-==============
- WSC Advanced
-==============
+================
+ |wsc| Advanced
+================
 
 This section contains advanced |wsc| configuration.
 
 .. _wsc_adv-conf:
 
-WSC Configuration
-=================
+|wsc| Configuration
+===================
 
 In this section we present advanced configuration options for |wsc|.
 
-.. index:: WSC; user search by CLI
+.. index:: Chats; user search by CLI
 
 User Search Across Domains
 --------------------------

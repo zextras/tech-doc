@@ -9,7 +9,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_components/component-wsc-ce.rst
+.. include:: /_includes/_installation/_components/component-chats-ce.rst
 
 
 Bootstrap |product|

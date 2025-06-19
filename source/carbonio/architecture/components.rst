@@ -304,7 +304,7 @@ installation, please review these important remarks:
    components/component-docs
    components/component-preview
    components/component-tasks
-   components/component-wsc
+   components/component-chats
    components/component-vs
    components/component-monit
    components/component-es

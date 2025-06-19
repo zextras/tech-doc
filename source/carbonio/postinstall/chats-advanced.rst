@@ -1,20 +1,20 @@
 .. _wsc-adv:
 
-==============
- WSC Advanced
-==============
+================
+ |wsc| Advanced
+================
 
 This section contains advanced |wsc| configuration and suggestions to
 improve performances and optimise the Module.
 
 .. _wsc_adv-conf:
 
-WSC Configuration
-=================
+|wsc| Configuration
+===================
 
 In this section we present advanced configuration options for |wsc|.
 
-.. index:: WSC; user search by CLI
+.. index:: Chats; user search by CLI
 
 User Search Across Domains
 --------------------------
@@ -42,7 +42,7 @@ To allow users to search other users only on their domain, use
 Set Legacy Chats Read Only
 --------------------------
 
-If you enabled |WSC|, to prevent user using the old Chats, you
+If you enabled |wsc|, to prevent user using the old Chats, you
 can set it in *read-only* mode. By doing so, users will still able to
 access the textual *Chats*, the *Spaces*, and the *Rooms*, but it
 will not be possible to message users or create new Spaces and
@@ -131,14 +131,14 @@ as the |ru|:
 
 .. _wsc-optimise:
 
-WSC Optimisations
-=================
+|wsc| Optimisations
+===================
 
 Once the :ref:`component-wsc-install` is operational, some tweaking can be
 applied to its configuration to improve performances.
 
 The remainder of this page contains a few tables that list the *Key
-names* and the *default values* of some |WSC| configuration values
+names* and the *default values* of some ||wsc|| configuration values
 that you can modify. You can take these tables into account in case you
 want to revert some values to their default after some unsatisfactory
 change.
@@ -205,7 +205,7 @@ Configuration tables
 
 The following tables are available to optimise |wsc|: :ref:`Push
 Connector <wsc-pool-opt>`, :ref:`Push Notifications Database
-<wsc-push-opt>`, and :ref:`the WSC databases <wsc-db-opt>`.
+<wsc-push-opt>`, and :ref:`the Chats databases <wsc-db-opt>`.
 
 .. _wsc-pool-opt:
 

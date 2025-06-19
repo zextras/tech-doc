@@ -67,9 +67,9 @@ Core Node
 
    .. include:: /_includes/_installation/_packages/component-db-comp.rst
 
-   .. rubric:: WSC DB Connectors
+   .. rubric:: Chats DB Connectors
 
-   .. include:: /_includes/_installation/_packages/component-db-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-db-chats.rst
 
 .. _fsm1-step4:
 
@@ -103,7 +103,7 @@ Core Node
 
    .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-   .. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst
+   .. include:: /_includes/_installation/_steps/db-bootstrap-chats.rst
 
 .. _fsm1-step8:
 
@@ -468,7 +468,7 @@ Collaboration Node
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
 
 .. _fsm4-step4:
 
@@ -582,13 +582,13 @@ Video Server Node
 
    .. include:: /_includes/_installation/_packages/mesh-agent.rst
 
-   .. rubric:: Component Video Server & Video Recording (WSC)
+   .. rubric:: Component Video Server & Video Recording
 
-   .. include:: /_includes/_installation/_packages/component-vs-wsc.rst
+   .. include:: /_includes/_installation/_packages/component-vs-chats.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-wsc-cb.rst
+   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
 
 .. _fsm5-step4:
 

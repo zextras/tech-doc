@@ -27,7 +27,7 @@ capabilities, the single-server installation can be extended by
 adding:
 
 * Preview/Files - on the same Node
-* Tasks/Docs/WSC  - on a second Node
+* Tasks/Docs/Chats - on a second Node
 * Videoserver/Videorecording - on a third Node
 
 Depending on the features chosen, the architecture changes and can be
