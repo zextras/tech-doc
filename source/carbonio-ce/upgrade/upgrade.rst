@@ -20,9 +20,9 @@ next section.
 
 .. card:: Operating system
 
-   |product| can be installed on **Ubuntu 22.04** and **RHEL 9** since
-   version **24.5.0**.  If you plan to upgrade both the OS and
-   |product|, please refer to Section :ref:`os-upgrade`.
+   |product| can be installed on **Ubuntu 22.04 LTS**, **Ubuntu 24.04
+   LTS**, **RHEL 8**, and **RHEL 9**. If you plan to upgrade both the
+   OS and |product|, please refer to Section :ref:`os-upgrade`.
 
    .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
