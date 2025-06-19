@@ -78,4 +78,4 @@ other administrator user created previously.
 If you plan to install also the :ref:`component-wsc-install`, execute also
 the following commands.
 
-.. include:: /_includes/_installation/_steps/db-bootstrap-wsc.rst
+.. include:: /_includes/_installation/_steps/db-bootstrap-chats.rst

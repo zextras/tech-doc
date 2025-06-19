@@ -20,4 +20,4 @@ migration to |product|, and accessing the web interface.
       web-access
       migration
       clamav-management
-      wsc-advanced
+      chats-advanced

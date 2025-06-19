@@ -105,7 +105,7 @@ of them.
       .. toctree::
          :hidden:
 
-         wsc
+         chats
 
    .. grid-item-card:: Services Status
       :columns: 12 12 6 6

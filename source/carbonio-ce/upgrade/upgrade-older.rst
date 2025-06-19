@@ -92,6 +92,18 @@ Upgrade |product|
 
          .. include:: /_includes/_upgrade/package-broker.rst
 
+      .. dropdown:: ``carbonio-message-dispatcher``
+         :open:
+
+         On the Node installing the |wsc| Component, remove
+         package ``carbonio-message-dispatcher`` and install
+         ``carbonio-message-dispatcher-ce``.
+
+         .. code:: console
+
+            # apt remove carbonio-message-dispatcher
+            # apt install carbonio-message-dispatcher-ce
+
 .. include:: /_includes/_upgrade/second-part-ce.rst
 
 Other Upgrades

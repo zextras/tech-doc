@@ -172,9 +172,9 @@ Step 8: Bootstrap |file| Databases
 
 .. include:: /_includes/_installation/_steps/db-bootstrap.rst
 
-.. include:: /_includes/_installation/_steps/db-bootstrap-wsc-ce.rst
+.. include:: /_includes/_installation/_steps/db-bootstrap-chats-ce.rst
 
-.. include:: /_includes/_installation/_steps/wsc-migration.rst
+.. include:: /_includes/_installation/_steps/chats-migration.rst
 
 .. include:: /_includes/_installation/complete.rst
 

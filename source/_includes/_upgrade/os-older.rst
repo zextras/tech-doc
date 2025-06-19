@@ -28,7 +28,7 @@ The procedure is divided into phases:
    .. warning:: This release, **25.06.0**, does no longer support
       **Ubuntu 20.04 LTS**, which went EOL in May 2025, so you are
       strongly recommended to **upgrade to Ubuntu 22.04 LTS** or **to
-      Ubuntu 22.04 LTS**.
+      Ubuntu 24.04 LTS**.
 
 #. upgrade |product|\'s packages to match the correct repository
 

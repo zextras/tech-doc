@@ -25,8 +25,8 @@ The Components installed on the *15 Nodes* are:
 * Node 7: Proxy
 * Node 8: Mailstore & Provisioning
 * Node 9: Mailstore & Provisioning
-* Node 10: WSC, Files, Tasks
-* Node 11: WSC, Files, Tasks
+* Node 10: Chats, Files, Tasks
+* Node 11: Chats, Files, Tasks
 * Node 12: Docs & Editor, Preview
 * Node 13: Docs & Editor, Preview
 * Node 14: Video Server & Video Recording
