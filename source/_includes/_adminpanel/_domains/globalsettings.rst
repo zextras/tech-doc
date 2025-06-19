@@ -31,7 +31,7 @@ user on every Node featuring the :ref:`MTA Component
 
    zextras$ zmamavisdctl restart && zmconfigdctl restart
 
-.. index:: WSC; user search by GUI
+.. index:: Chats; user search by GUI
 
 .. _wsc-user-search:
 

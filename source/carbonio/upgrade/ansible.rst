@@ -73,7 +73,7 @@ upgrade procedure with Ansible.
   * The old, legacy Chats will be left untouched, i.e., it will
     neither be removed, nor set in read-only mode
 
-  * No migration of the old (legacy) Chats to WSC will be performed
+  * No migration of the old (legacy) Chats to |wsc| will be performed
 
 .. _ans-pb-install:
 
@@ -173,9 +173,9 @@ you previously installed with Ansible or not.
    inventory file and add this block at the end of the file::
 
      [workStreamServers]
-     wsc.example.com
+     chats.example.com
 
-   Replace the ``wsc.example.com`` string with the actual FQDN of the
+   Replace the ``chats.example.com`` string with the actual FQDN of the
    Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
 
@@ -191,10 +191,10 @@ you previously installed with Ansible or not.
    inventory file and add this block at the end of the file::
 
      [workStreamServers]
-     wsc.example.com
+     chats.example.com
 
-   Replace the ``wsc.example.com`` string with the actual FQDN of the
-   Node on which |wsc| is installed, then proceed to Section
+   Replace the ``chats.example.com`` string with the actual FQDN of
+   the Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
 
 .. card:: |product| has both  |wsc| and Legacy Chats installed
@@ -204,7 +204,7 @@ you previously installed with Ansible or not.
    installed, you need to edit the inventory file like above::
 
      [workStreamServers]
-     wsc.example.com
+     chats.example.com
 
    Ansible will take care of upgrading all Nodes, including those
    installing the legacy Components. Note, however, that there are no

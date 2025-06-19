@@ -14,11 +14,10 @@ requirement for this Component.
 Install Packages
 ----------------
 
-This Component consists of *Video Server (WSC)* and *Video Recording
-(WSC)*.
+This Component consists of *Video Server* and *Video Recording*.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_packages/component-vs-wsc.rst
+.. include:: /_includes/_installation/_packages/component-vs-chats.rst
 
 Bootstrap |product|
 -------------------

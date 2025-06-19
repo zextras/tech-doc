@@ -1,6 +1,3 @@
-..
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 .. _backup_restore-strategies:
 
@@ -426,15 +423,23 @@ The workflow described below does not apply when using the
 will not be impacted, in Phase 1 only the *Restore all Accounts'
 attributes* step will be executed.
 
-.. important:: Two points of the External Restore must be highlighted:
+.. important:: These points of the External Restore must be
+   highlighted:
 
-   1. The External Restore is quite a complex and resource-intensive
+   #. The External Restore is quite a complex and resource-intensive
       procedure; to minimise its impact on the current server’s
       operations, read the :ref:`before_you_start` section below for
-      a few tips.
+      a few tips
 
-   2. **All commands** and operations must be run on the **destination**
-      server.
+   #. **All commands** and operations must be run on the **destination**
+      server
+
+   #. Make sure that the |zu| has proper write access to the *source*
+      backup path. Example:
+
+      .. code:: console
+                
+         # chown -R zextras:zextras /opt/backup/zextras
 
 .. dropdown:: PHASE 1
    :open:
@@ -574,6 +579,13 @@ To start an External Restore operation, use the
 :command:`doExternalRestore` command::
 
    zextras$ carbonio backup doExternalRestore *source_path* [param VALUE[,VALUE]]
+
+.. note:: Make sure that the |zu| has proper write access to the
+   *source* backup path. Example:
+
+   .. code:: console
+
+      # chown -R zextras:zextras /opt/backup/zextras
 
 .. card:: Usage example
 
@@ -772,6 +784,13 @@ differs between the two, the second is the same.
 
    zextras$ carbonio backup doExternalRestore /opt/zextras/restore/ \
    blobs_archive <BUCKET_VOLUME_ID>
+
+.. note:: Make sure that the |zu| has proper write access to the
+   *source* backup path. Example:
+
+   .. code:: console
+
+      # chown -R zextras:zextras /opt/backup/zextras
 
 You can follow how the restore advances by adding the ``--progress``
 option. As soon as the restore ends, the Global Administrator will
