@@ -76,7 +76,7 @@ Upgrade Nodes
    .. include:: /_includes/_upgrade/ds.rst
 
 
-.. include:: /_includes/_upgrade/first-part-cb.rst
+.. include:: /_includes/_upgrade/first-part-ce.rst
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -84,7 +84,7 @@ Upgrade Nodes
    .. grid-item-card:: Step 3. Install new package
       :columns: 12
 
-      On the Node installing the |wsc| component, remove
+      On the Node installing the |wsc| Component, remove
       package ``carbonio-message-dispatcher`` and install
       ``carbonio-message-dispatcher-ce``.
 
@@ -93,4 +93,4 @@ Upgrade Nodes
          # apt remove carbonio-message-dispatcher
          # apt install carbonio-message-dispatcher-ce
 
-.. include:: /_includes/_upgrade/second-part-cb.rst
+.. include:: /_includes/_upgrade/second-part-ce.rst
