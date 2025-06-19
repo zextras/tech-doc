@@ -2,7 +2,7 @@
    :gutter: 3
 
    .. grid-item-card:: Step 4. Upgrade Node
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       Update package list and install upgrades.
 
