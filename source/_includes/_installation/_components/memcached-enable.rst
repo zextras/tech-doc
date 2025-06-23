@@ -6,7 +6,7 @@ To enable Memcached access, use these two commands
 
       zextras$ carbonio prov ms $(zmhostname) zimbraMemcachedBindAddress $(hostname -i)
 
-#. Different on **RHEL 9**
+#. Different on **RHEL 9** and **Ubuntu 24.04**
 
    .. tab-set::
 
