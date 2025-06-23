@@ -188,24 +188,9 @@ Administrator privileges and repeat the commands.
 
    zextras$ carbonio config dump global
 
-
-.. code:: console
-
-   zextras$ carbonio chats clusterStatus
-
-.. code:: console
-
-   zextras$ carbonio chats getServices
-
-.. code:: console
-
-   zextras$ carbonio chats iceServer get
-
-
 .. code:: console
 
    zextras$ for cos in $(carbonio prov gac); do carbonio prov gc $cos; done
-
 
 .. code:: console
 
