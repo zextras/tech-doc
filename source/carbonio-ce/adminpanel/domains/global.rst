@@ -11,14 +11,14 @@ Settings
 
 .. include:: /_includes/_adminpanel/_domains/globalsettings-ce.rst
 
-.. _global-delegate:
+.. _admins:
 
-Global Delegates
-================
+Administrators
+==============
 
 This page is an excerpts of the :ref:`Accounts <ap-accounts>`
 (:menuselection:`Admin Panel --> Domains --> Manage --> Accounts`)
-table, showing all the Global Delegates.
+table, showing all the Administrators.
 
 .. _global-domains:
 
