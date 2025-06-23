@@ -143,30 +143,31 @@ Core Node
 
             # systemctl restart carbonio-directory-server.target
 
-.. _es1-step9:
+.. _es1-data:
 
-.. dropdown:: Step 9: Data Required for Additional Nodes
+Data Required for Additional Nodes
+----------------------------------
 
-   The following data from this Node will be needed during the
-   installation of the next two Nodes.
+The following data from this Node will be needed during the
+installation of the next two Nodes.
 
-   #. The **Core Node hostname**
+#. The **Core Node hostname**
 
-      .. code:: console
+   .. code:: console
 
-         # hostname -f
+      # hostname -f
 
-   #. The **LDAP password** for bootstrapping |product|
+#. The **LDAP password** for bootstrapping |product|
 
-      .. code:: console
+   .. code:: console
 
-         # su - zextras -c "zmlocalconfig -s ldap_root_password"
+      # su - zextras -c "zmlocalconfig -s ldap_root_password"
 
-   #. the |mesh| **secret**, that you can retrieve with command
+#. the |mesh| **secret**, that you can retrieve with command
 
-      .. code:: console
+   .. code:: console
 
-         # cat /var/lib/service-discover/password
+      # cat /var/lib/service-discover/password
 
 MTA/Proxy Node
 ==============
@@ -250,8 +251,8 @@ MTA/Proxy Node
 .. dropdown:: Step 4: Bootstrap |product|
 
    To carry out this step, you need the **LDAP password** and the
-   **Core Node hostname**. Check in :ref:`Step 9 of Core Node
-   installation <es1-step9>` the command to retrieve it.
+   **Core Node hostname**. Check in :ref:`es1-data` the command to
+   retrieve it.
 
 
    .. include:: /_includes/_installation/step-bootstrap.rst
@@ -264,8 +265,8 @@ MTA/Proxy Node
 .. dropdown:: Step 5: Setup |mesh|
 
    To carry out this step, you need the |mesh| **secret** generated
-   during the installation of the Core Node. Check in :ref:`Step 9 of
-   Core Node installation <es1-step9>` the command to retrieve it.
+   during the installation of the Core Node. Check in :ref:`es1-data`
+   the command to retrieve it.
 
    .. include:: /_includes/_installation/mesh.rst
 
@@ -273,7 +274,13 @@ MTA/Proxy Node
 
 .. _es2-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Enable ``memcached``
+           
+   .. include:: /_includes/_installation/_components/memcached-enable.rst
+     
+.. _es2-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    After the successful package installation, start all |product|
    services by using
