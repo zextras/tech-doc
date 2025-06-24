@@ -15,14 +15,14 @@ the Components along with the features they provide.
 ----
  
 
-A typical |product| installation consists of various components.
-Many components can be hosted on a single node (i.e., a virtual machine)
-to reduce infrastructure complexity. However, they can also be installed
-on separate nodes depending on:
+Fundamental Concepts
+--------------------
 
-- The number of mailboxes
-- The functionality used
-- The level of redundancy required
+|product| is built on a **multi-component architecture**.
+Each component is responsible for a specific part of the collaboration suite
+and can be installed on a single node or distributed across multiple nodes
+depending on the desired level of performance, scalability, and redundancy.
+
 
 Core and Collaboration Components
 ---------------------------------
@@ -31,7 +31,7 @@ Within the collection of Components, we can distinguish:
 
 **Core Components**
 
-These are required for the basic operation of Carbonio:
+These are required for the basic operation of |product|:
 
 - **MTA / AV-AS**: Sending and receiving emails
 - **Mailstore and Provisioning**: Account provisioning and message storage
@@ -40,7 +40,7 @@ These are required for the basic operation of Carbonio:
 
 **Collaboration Components**
 
-These add advanced collaboration and communication features to Carbonio:
+These add advanced collaboration and communication features to |product|:
 
 - Files
 - Chats
@@ -53,7 +53,7 @@ These add advanced collaboration and communication features to Carbonio:
 
 Some components serve special purposes:
 
-- **Monitoring**: Centralizing metrics with dashboards tailored for Carbonio
+- **Monitoring**: Centralizing metrics with dashboards tailored for |product|
 - **Redundancy (optional)**: e.g., Directory Replica, Event Streaming - needed in specific installation scenarios
 
 
@@ -64,13 +64,25 @@ List of the main |product| packages
 
 .. include:: /_includes/_architecture/pkg_list.rst
 
+Component Communication
+------------------------
+
+All components communicate over the **Carbonio Mesh**, a secure internal service layer that provides:
+
+- **Service discovery**
+- **Automatic configuration propagation**
+- **Secure RPC over HTTP/HTTPS**
+
+External clients (webmail, mobile apps, third-party clients) typically interact through the **Proxy node**
+which routes the traffic to internal services.
+
 Accessing Carbonio Services
 ---------------------------
 
-Once the installation is completed, Carbonio features are available via:
+Once the installation is completed, |product| features are available via:
 
 - The main webmail interface
-- Carbonio mobile apps (Mail, Files, and Chats)
+- |product| mobile apps (Mail, Files, and Chats)
 - Third-party clients
 
 Supported protocols include:
