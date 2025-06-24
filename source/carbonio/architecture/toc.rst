@@ -76,8 +76,8 @@ All components communicate over the **Carbonio Mesh**, a secure internal service
 External clients (webmail, mobile apps, third-party clients) typically interact through the **Proxy node**
 which routes the traffic to internal services.
 
-Accessing Carbonio Services
----------------------------
+Accessing |product| Services
+----------------------------
 
 Once the installation is completed, |product| features are available via:
 

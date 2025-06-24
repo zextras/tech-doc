@@ -3,46 +3,85 @@
  Architecture of |product|
 ===========================
 
-:numref:`fig-ce-arch` shows the internal architecture of |product|
-with all its components.
+This section contains a description of |product| architecture and of
+the Components along with the features they provide.
 
-.. card::
-   :width: 75%
+.. container::
 
-   .. _fig-ce-arch:
+  .. image:: /img/carbonio/architecture_Carbonio_CE_v2.png
+     :width: 80%
+     :alt: Simplified architecture of |product|
 
-   .. figure:: /img/carbonio/architecture_CE.png
-      :width: 100%
+----
+ 
 
-      Simplified architecture of |product|.
+Fundamental Concepts
+--------------------
 
-While in Single-Server all packages are installed on the same node, in
-a typical Multi-Server each of the services depicted by the red boxes
-should be installed on a dedicated node, while all the others can be
-combined and installed on any node, even on dedicated one. For
-example, **User Management** can be installed on the Proxy node
-instead of on a dedicated node.  In the :ref:`Example scenario
-<multiserver-installation>` we use as example, we show how to set up a
-cluster of *five* :term:`Nodes <node>` and combine the various |product|'s
-Components. A :term:`component` is a functionality that is considered atomic and
-can be added to the |product| by installing one or more software
-packages.
-
-In :numref:`fig-ce-arch`, *dependencies* are denoted by the boxes piled
-on top of the bottom one. In other words, all the ``*-UI`` packages,
-which contain the files necessary to show the Module to the users,
-**must be** installed on the Proxy Node.
-
-.. hint:: ``-UI`` packages provide the front-end files to access the
-   service from a browser or mobile app.
+|product| is built on a **multi-component architecture**.
+Each component is responsible for a specific part of the collaboration suite
+and can be installed on a single node or on a Multi-node infrastructure.
 
 
+Core and Collaboration Components
+---------------------------------
 
-Supported Mail Protocols
-========================
+Within the collection of Components, we can distinguish:
 
-|product| supports the following protocols:
+**Core Components**
 
-* POP3 and POP3S
-* SMTP and its secure protocol SMTPS (SMTP over TLS/SSL)
-* IMAP and its secure protocol IMAPS (IMAP over SSL)
+These are required for the basic operation of |product|:
+
+- **MTA / AV-AS**: Sending and receiving emails
+- **Mailstore and Provisioning**: Account provisioning and message storage
+- **Proxy**: Web access
+- **Database / Mesh and Directory**: Backend services required for infrastructure operation
+
+**Collaboration Components**
+
+These add advanced collaboration and communication features to |product|:
+
+- Files
+- Chats
+- Docs and Editor
+- Tasks
+- Preview
+- Video Server
+
+**Monitoring Component**
+
+- **Monitoring**: Centralizing metrics with dashboards tailored for |product|
+
+
+Component Communication
+------------------------
+
+All components communicate over the **Carbonio Mesh**, a secure internal service layer that provides:
+
+- **Service discovery**
+- **Automatic configuration propagation**
+- **Secure RPC over HTTP/HTTPS**
+
+External clients (webmail, mobile apps, third-party clients) typically interact through the **Proxy node**
+which routes the traffic to internal services.
+
+Accessing |product| Services
+----------------------------
+
+Once the installation is completed, |product| features are available via:
+
+- The main webmail interface
+- Carbonio mobile apps (Mail, Files, and Chats)
+- Third-party clients
+
+Supported protocols include:
+
+- POP3 and POP3S
+- SMTP and SMTPS (SMTP over TLS/SSL)
+- IMAP and IMAPS (IMAP over SSL)
+
+.. toctree::
+   :hidden:
+
+   components
+   intro-systemd
