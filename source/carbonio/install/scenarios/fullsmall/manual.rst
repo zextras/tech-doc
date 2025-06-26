@@ -501,10 +501,15 @@ Collaboration Node
 
    .. include:: /_includes/_installation/_components/dispatcher-migration.rst
 
-
 .. _fsm4-step7:
 
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 7: Configure ``memcached``
+
+   .. include:: /_includes/_installation/_components/memcached.rst
+
+.. _fsm4-step8:
+
+.. dropdown:: Step 8: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
