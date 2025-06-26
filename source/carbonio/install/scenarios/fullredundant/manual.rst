@@ -148,30 +148,31 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
             # systemctl restart carbonio-directory-server.target
 
-.. _fr1-step9:
+.. _fr1-data:
 
-.. dropdown:: Step 9: Data Required for Additional Nodes
+Data Required for Additional Nodes
+----------------------------------
 
-   The following data from this Node will be needed during the
-   installation of the next two Nodes.
+The following data from this Node will be needed during the
+installation of the next two Nodes.
 
-   #. The **Core Node hostname**
+#. The **Core Node hostname**
 
-      .. code:: console
+   .. code:: console
 
-         # hostname -f
+      # hostname -f
 
-   #. The **LDAP password** for bootstrapping |product|
+#. The **LDAP password** for bootstrapping |product|
 
-      .. code:: console
+   .. code:: console
 
-         # su - zextras -c "zmlocalconfig -s ldap_root_password"
+      # su - zextras -c "zmlocalconfig -s ldap_root_password"
 
-   #. the |mesh| **secret**, that you can retrieve with command
+#. the |mesh| **secret**, that you can retrieve with command
 
-      .. code:: console
+   .. code:: console
 
-         # cat /var/lib/service-discover/password
+      # cat /var/lib/service-discover/password
 
 .. _fr2:
 
@@ -532,9 +533,8 @@ This Node features the *MTA AV/AS* Component.
 .. dropdown:: Step 4: Bootstrap |product|
 
    To carry out this step, you need the **LDAP password** and the
-   **Core Node hostname**. Check in :ref:`Step 9 of Core Node
-   installation <fsm1-step9>` the command to retrieve it.
-
+   **Core Node hostname**. Check in :ref:`fr1-data` the command to
+   retrieve it.
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
@@ -546,8 +546,8 @@ This Node features the *MTA AV/AS* Component.
 .. dropdown:: Step 5: Setup |mesh|
 
    To carry out this step, you need the |mesh| **secret** generated
-   during the installation of the Core Node. Check in :ref:`Step 9 of
-   Core Node installation <fsm1-step9>` the command to retrieve it.
+   during the installation of the Core Node. Check in :ref:`fr1-data`
+   the command to retrieve it.
 
    .. include:: /_includes/_installation/mesh.rst
 
@@ -650,8 +650,8 @@ This Node features the (replicated) *MTA AV/AS* Component.
 .. dropdown:: Step 4: Bootstrap |product|
 
    To carry out this step, you need the **LDAP password** and the
-   **Core Node hostname**. Check in :ref:`Step 9 of Core Node
-   installation <fsm1-step9>` the command to retrieve it.
+   **Core Node hostname**. Check in :ref:`fr1-data` the command to
+   retrieve it.
 
 
    .. include:: /_includes/_installation/step-bootstrap.rst
@@ -664,8 +664,8 @@ This Node features the (replicated) *MTA AV/AS* Component.
 .. dropdown:: Step 5: Setup |mesh|
 
    To carry out this step, you need the |mesh| **secret** generated
-   during the installation of the Core Node. Check in :ref:`Step 9 of
-   Core Node installation <fsm1-step9>` the command to retrieve it.
+   during the installation of the Core Node. Check in :ref:`fr1-data` the command to
+   retrieve it.
 
    .. include:: /_includes/_installation/mesh.rst
 
@@ -768,9 +768,8 @@ This Node features the *Proxy* Component.
 .. dropdown:: Step 4: Bootstrap |product|
 
    To carry out this step, you need the **LDAP password** and the
-   **Core Node hostname**. Check in :ref:`Step 9 of Core Node
-   installation <fsm1-step9>` the command to retrieve it.
-
+   **Core Node hostname**. Check in :ref:`fr1-data` the command to
+   retrieve it.
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
@@ -782,8 +781,8 @@ This Node features the *Proxy* Component.
 .. dropdown:: Step 5: Setup |mesh|
 
    To carry out this step, you need the |mesh| **secret** generated
-   during the installation of the Core Node. Check in :ref:`Step 9 of
-   Core Node installation <fsm1-step9>` the command to retrieve it.
+   during the installation of the Core Node. Check in :ref:`fr1-data` the command to
+   retrieve it.
 
    .. include:: /_includes/_installation/mesh.rst
 
@@ -791,7 +790,13 @@ This Node features the *Proxy* Component.
 
 .. _fr6-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Enable ``memcached``
+
+   .. include:: /_includes/_installation/_components/memcached-enable.rst
+
+.. _fr6-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -886,9 +891,8 @@ This Node features the (replicated) *Proxy* Component.
 .. dropdown:: Step 4: Bootstrap |product|
 
    To carry out this step, you need the **LDAP password** and the
-   **Core Node hostname**. Check in :ref:`Step 9 of Core Node
-   installation <fsm1-step9>` the command to retrieve it.
-
+   **Core Node hostname**. Check in :ref:`fr1-data` the command to
+   retrieve it.
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
@@ -900,8 +904,8 @@ This Node features the (replicated) *Proxy* Component.
 .. dropdown:: Step 5: Setup |mesh|
 
    To carry out this step, you need the |mesh| **secret** generated
-   during the installation of the Core Node. Check in :ref:`Step 9 of
-   Core Node installation <fsm1-step9>` the command to retrieve it.
+   during the installation of the Core Node. Check in :ref:`fr1-data`
+   the command to retrieve it.
 
    .. include:: /_includes/_installation/mesh.rst
 
@@ -909,7 +913,13 @@ This Node features the (replicated) *Proxy* Component.
 
 .. _fr7-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Enable ``memcached``
+
+   .. include:: /_includes/_installation/_components/memcached-enable.rst
+
+.. _fr7-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -1175,7 +1185,7 @@ This Node features the (replicated) *Mailstore & Provisioning* Component.
 Node Ten
 ========
 
-This Node features the *, *Files*, and *Tasks*  Components.
+This Node features the *Chats*, *Files*, and *Tasks*  Components.
 
 .. _fr10-step1:
 
@@ -1307,7 +1317,7 @@ This Node features the *, *Files*, and *Tasks*  Components.
 Node Eleven
 ===========
 
-This Node features the (replicated) *, *Files*, and *Tasks* Components.
+This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
 
 .. _fr11-step1:
 
@@ -1505,7 +1515,13 @@ This Node features the *Docs & Editor* and *Preview* Components.
 
 .. _fr12-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Configure ``memcached``
+
+   .. include:: /_includes/_installation/_components/memcached-multipreview.rst
+
+.. _fr12-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -1617,9 +1633,16 @@ Components.
 
    .. include:: /_includes/_installation/pset.rst
 
+
 .. _fr13-step6:
 
-.. dropdown:: Step 6: Complete Installation
+.. dropdown:: Step 6: Configure ``memcached``
+
+   .. include:: /_includes/_installation/_components/memcached-multipreview.rst
+
+.. _fr13-step7:
+
+.. dropdown:: Step 7: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing

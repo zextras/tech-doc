@@ -1,0 +1,50 @@
+Changelog 2025-05
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202505-1181 Update list of firewall ports
+
+We updated the list of firewall ports required for a correct |product| operativity, adding ports for the |monit| Component and fixing a port range for the |mesh| Component.
+
+Changes in the source code can be found in :pr:`1108`.
+
+
+.. rubric:: 202505-1179 Require that |product| is not installed alongside other software
+
+We added a note to focus the importance that |product| be installed without any other software that may lead to resources conflicts, for example, because they use the same ports.
+
+Changes in the source code can be found in :pr:`1103`.
+
+
+.. rubric:: 202505-1178 Add 25.3.1 changelog
+
+Changelog for the latest |product| release has been added.
+
+Changes in the source code can be found in :pr:`1097` and :pr:`1099`.
+
+
+.. rubric:: 202505-1170 Specify elements migrated from |suite|
+
+We clarified what elements are migrated from |suite| to |product|.
+
+Changes in the source code can be found in PRs :pr:`1101` and :pr:`1102`.
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202505-1184 Missing command in scenarios 
+
+Command :command:`carbonio-message-dispatcher-migration` was missing in some proposed installation scenarios.
+
+Changes in the source code can be found in :pr:`1111`.
+
+*****
+
+End of changelog
+
