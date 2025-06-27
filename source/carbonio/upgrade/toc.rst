@@ -36,4 +36,3 @@ a snapshot of the Nodes and a backup of the data.
       upgrade-older
       os
       changelogs
-
