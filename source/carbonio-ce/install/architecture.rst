@@ -45,19 +45,12 @@ These add advanced collaboration and communication features to
 - Docs and Editor
 - Tasks
 - Preview
-- Video Server and Video Recording
+- Video Server
 
 .. rubric:: Additional Components and Monitoring
 
 - **Monitoring**: Centralising metrics with dashboards tailored for |product|
 
-
-.. _pkg-components:
-
-List of the Main |product| Packages
-===================================
-
-.. include:: /_includes/_architecture/pkg_list.rst
 
 Component Communication
 ------------------------
