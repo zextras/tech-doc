@@ -146,16 +146,11 @@ restore the COS value.
    * The type of the account, which is one of
 
      * *Normal*: a :term:`Regular user`
-     * *DelegatedAdmin*: a Delegated (Domain) Administrator
      * *Admin*: a Global Administrator
-     * *System*: special accounts used by |product|, i.e.,
-       GALsync, spam and ham training, and virus quarantine
-     * *External*: an account that does not use |product| for
-       authentication
 
      Upon clicking the arrow on the right-hand side of the option,
      the **Administration** tab will open, to allow changing the
-     user's Component.
+     account type.
 
    * To force the user to change password at the next login
 

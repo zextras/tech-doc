@@ -131,10 +131,17 @@ repositories.
 
    .. include:: /_includes/_installation/pset.rst
 
-
 .. _n1-s7:
 
-.. dropdown:: Step 7: Databases Bootstrap
+.. dropdown:: Step 7: Enable and configure ``memcached``
+           
+   .. include:: /_includes/_installation/_components/memcached-enable.rst
+     
+   .. include:: /_includes/_installation/_components/memcached.rst
+
+.. _n1-s8:
+
+.. dropdown:: Step 8: Databases Bootstrap
 
    Now you have to bootstrap some DBs with the password set in the Preliminary Tasks.
 
@@ -154,9 +161,10 @@ repositories.
       # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
       # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap  carbonio_adm 127.0.0.1
 
-.. _n1-s8:
 
-.. dropdown:: Step 8: Complete Installation
+.. _n1-s9:
+
+.. dropdown:: Step 9: Complete Installation
 
    After the successful package installation, start all |product|
    services by using
@@ -207,17 +215,18 @@ repositories.
 
    If you chose to install only the core services, installation has
    completed. Otherwise, if you plan to use collaboration features,
-   please read :ref:`Step 9 <n1-s9>` before proceeding
+   please read :ref:`n1-data` before proceeding
    to the installation of the other Nodes.
 
-.. _n1-s9:
+.. _n1-data:
 
-.. dropdown:: Step 9: Data Required for Additional Nodes
+Data Required for Additional Nodes
+----------------------------------
 
-   The following data from this Node will be needed during the
-   installation of the *Collaboration* and *Video Server* Nodes.
+The following data from this Node will be needed during the
+installation of the *Collaboration* and *Video Server* Nodes.
 
-   .. include:: /_includes/_installation/data-for-next-nodes.rst
+.. include:: /_includes/_installation/data-for-next-nodes.rst
 
 Check Services Status
 ---------------------
