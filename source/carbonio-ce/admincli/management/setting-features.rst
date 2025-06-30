@@ -26,8 +26,13 @@ We use a few available attributes:
    * - ``carbonioFeatureFilesAppEnabled``
      - ``TRUE``
      - The |file| component is available mobile apps
+   * - ``carbonioFeatureTasksEnabled``
+     - ``TRUE``
+     - The |task| component is available
 
-In order to modify these values, you can use or adapt the following commands
+
+In order to check or modify these values, you can use or adapt the
+following commands
 
 .. card::
 
