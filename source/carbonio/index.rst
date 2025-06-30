@@ -66,8 +66,8 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: install/toc
 
-      Information on |product| and its architecture, installation and
-      upgrade instructions, security tips
+      Information on |product| and its installation, requirements and some
+      pre-cooked installation Scenarios
 
       .. toctree::
          :hidden:
