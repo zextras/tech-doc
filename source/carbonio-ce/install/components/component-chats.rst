@@ -5,6 +5,15 @@
 
 The |wsc| Component adds the chat functionality to |product|.
 
+.. _component-wsc-req:
+
+Requirements
+------------
+
+The WebSocket protocol requires to be explicitly allowed on the Node
+hosting the **Proxy** Role. Please see Section :ref:`inst-websocket`
+for details.
+
 Install Packages
 ----------------
 

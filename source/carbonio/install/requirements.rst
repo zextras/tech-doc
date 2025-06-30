@@ -135,11 +135,15 @@ Additional Requirements
   it works, there was probably some firewall rule preventing
   communication.
 
-* If none of the nodes is exposed to the Internet, you need to forward
+* If none of the Nodes is exposed to the Internet, you need to forward
   two ports from the public IP: port **25/smtp** to the Node featuring
   the MTA Component to be able to receive mail, and port **443/https** to
   the node installing the Proxy Component to allow users to access their
   webmail from a remote location
+
+* WebSocket must be allowed and a Certificate including their support
+  must be used to access |product| if you plan to install the |wsc|
+  Component, see Section :ref:`inst-websocket`
 
 * If you plan to enable other protocols (e.g., POP, IMAP) you should
   forward also these ports accordingly. You can refer to section
@@ -157,6 +161,14 @@ Additional Requirements
 * The hostname of each Node must be a |FQDN|.
 
 * Every Node must be able to resolve all other host names
+
+.. _inst-websocket:
+
+Websocket Protocol
+------------------
+
+.. include:: /_includes/_installation/ws-note.rst
+
 
 .. _fw-ports:
 
@@ -209,6 +221,8 @@ allow communication with remote services on the Internet.
       preferably only accessible from a VPN tunnel, if possible, to
       reduce the attack surface.
 
+.. _fw-proxy:
+
 .. card:: Proxy Component
 
    .. csv-table::
@@ -219,6 +233,7 @@ allow communication with remote services on the Internet.
       "110", "TCP", "external POP3 services"
       "143", "TCP", "external IMAP services"
       "443", "TCP", "secure connection to the Carbonio web client"
+      "443", "TCP", "WebSocket protocol [1]_"
       "993", "TCP", "external IMAP secure access"
       "995", "TCP", "external POP3 secure access"
       "6071", "TCP", "secure access to the Admin Panel"
@@ -228,6 +243,13 @@ allow communication with remote services on the Internet.
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
+
+   .. [1] Required for proper |wsc| functioning. In case your
+          infrastructure lies behind an application firewall or any
+          firewall with :abbr:`DPI (Deep Packet Inspection)`, you need
+          to explicitly allow WebSocket packets to flow through port
+          443, otherwise they will be blocked because these firewalls
+          would allow only HTTPS traffic on port 443.
 
 .. card:: |vs| Component
 
