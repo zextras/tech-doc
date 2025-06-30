@@ -223,6 +223,13 @@ restore the COS value.
 
    .. include:: /_includes/_adminpanel/chats.rst
 
+   .. rubric:: Features
+
+   It is possible to prevent the user to access some of the |product|
+   features by using the switches for the various Components. For example,
+   `Web feature` means access to the web interface, `Mobile App`
+   allows access via cell phone or tablet, and so on.
+
 .. _act-prefs:
 
 .. dropdown:: User Preferences
