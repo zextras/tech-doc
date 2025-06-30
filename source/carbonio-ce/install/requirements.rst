@@ -143,7 +143,17 @@ Additional Requirements
 
 When you do not use the :ref:`script-based installation
 <single-install-auto>`, i.e., Single-Server manual installation or
-Multi-Server installation.
+Multi-Server installation, take into account the following points.
+
+* If none of the Nodes is exposed to the Internet, you need to forward
+  two ports from the public IP: port **25/smtp** to the Node featuring
+  the MTA Component to be able to receive mail, and port **443/https** to
+  the node installing the Proxy Component to allow users to access their
+  webmail from a remote location
+
+* WebSocket must be allowed and a Certificate including their support
+  must be used to access |product| if you plan to install the |wsc|
+  Component, see Section :ref:`inst-websocket`
 
 * All ``carbonio`` commands must be executed as the ``zextras`` user
   (these commands will feature a ``zextras$`` prompt), while all other
@@ -160,6 +170,13 @@ Multi-Server installation.
 
 * When no such tabs are given, the commands to run are the same on
   Ubuntu and RHEL 8.
+
+.. _inst-websocket:
+
+Websocket Protocol
+------------------
+
+.. include:: /_includes/_installation/ws-note.rst
 
 .. _fw-ports:
 
@@ -212,6 +229,8 @@ allow communication with remote services on the Internet.
       preferably only accessible from a VPN tunnel, if possible, to
       reduce the attack surface.
 
+.. _fw-proxy:
+
 .. card:: Proxy Component
 
    .. csv-table::
@@ -222,6 +241,7 @@ allow communication with remote services on the Internet.
       "110", "TCP", "external POP3 services"
       "143", "TCP", "external IMAP services"
       "443", "TCP", "secure connection to the Carbonio web client"
+      "443", "TCP", "WebSocket protocol [1]_" 
       "993", "TCP", "external IMAP secure access"
       "995", "TCP", "external POP3 secure access"
       "6071", "TCP", "secure access to the Admin Panel"
@@ -230,6 +250,8 @@ allow communication with remote services on the Internet.
    .. warning:: The IMAP, POP3, and 6071 ports should be exposed
       only if really needed, and preferably only accessible from a VPN
       tunnel, if possible, to reduce the attack surface.
+
+   .. [1] see Section :ref:`inst-websocket` for details
 
 .. card:: |vs| Component
 
