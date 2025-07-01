@@ -50,7 +50,9 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
-               'sphinx.ext.graphviz', 'sphinxcontrib.email' ]
+               'sphinx.ext.graphviz', 'sphinxcontrib.email', 'simple_sphinx_xml_sitemap' ]
+
+html_baseurl = 'https://docs.zextras.com/carbonio-ce/html/'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
