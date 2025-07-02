@@ -79,7 +79,6 @@ sitemap_show_lastmod = True
 sitemap_url_scheme = '{link}'
 # this is the default name anyway, adding for reference
 sitemap_filename = 'sitemap.xml'
-git_exclude_patterns = '/_includes/'
 
 # -- Options for HTML output -------------------------------------------------
 
