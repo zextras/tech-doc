@@ -47,8 +47,7 @@ extensions = [ 'sphinx_design', 'sphinx_copybutton',
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = [ '_includes', 'cli', 'playbook',
                      'admincli/administration/delegatedadmin.rst',
-                     'common/carbonio'
-                     , 'cli_commands' ]
+                     'common/carbonio' ]
 
 rst_prolog = """
 
