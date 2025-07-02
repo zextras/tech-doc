@@ -39,7 +39,7 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
-               'sphinxcontrib.email', 'sphinx.ext.extlinks' ],
+               'sphinxcontrib.email', 'sphinx.ext.extlinks',
                'sphinx_sitemap', 'sphinx_last_updated_by_git' ]
 
 # List of patterns, relative to source directory, that match files and
