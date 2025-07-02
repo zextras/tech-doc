@@ -26,6 +26,7 @@
 .. |wl| replace:: White-label
 .. feature previously know as ha
 .. |ur| replace:: User Mail Replica
+.. |rur| replace:: Redundant with User Mail Replica
 
 .. common replacements for all products
 
