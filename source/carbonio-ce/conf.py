@@ -66,9 +66,10 @@ numfig = True
 email_automode = True
 
 
-# sphinx-sitemap
+# sphinx-sitemap, sphinx-last-updated-by-git
 html_baseurl = 'https://docs.zextras.com/carbonio-ce/html/'
-sitemap_show_lastmod = True
+# setting to false due to Jenkins doing shallow clone - see section Caveats at https://github.com/mgeier/sphinx-last-updated-by-git/tree/master
+sitemap_show_lastmod = False
 # we do not need version or language
 sitemap_url_scheme = '{link}'
 # this is the default name anyway, adding for reference
