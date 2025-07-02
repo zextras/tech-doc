@@ -24,6 +24,8 @@
 .. |cwsc| replace:: |carbonio| Chats
 .. |wsc| replace:: Chats
 .. |wl| replace:: White-label
+.. feature previously know as ha
+.. |ur| replace:: User Mail Replica
 
 .. common replacements for all products
 
