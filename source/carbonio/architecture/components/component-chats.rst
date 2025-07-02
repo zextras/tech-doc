@@ -47,6 +47,10 @@ installing it:
      "20000-40000", "UDP", "|vs|", "Client connections for the audio and
      video streams"
      "5222", "TCP", "Proxy", "Message Dispatcher"
+     "443", "TCP", "Proxy", "WebSocket protocol"
+
+  The WebSocket protocol requires to be explicitly allowed. Please see
+  details on Section :ref:`inst-websocket`.
 
 .. _wsc-install:
 
