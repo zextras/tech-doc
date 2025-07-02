@@ -1,17 +1,17 @@
 .. _scenario-ha:
 
-=============
- Scenario HA
-=============
+================
+ Scenario |rur|
+================
 
-This section describes a |product| infrastructure which includes Components
-redundancy and |ha|. The number of required Nodes, the necessary steps,
-and the overall complexity involved require to pay attention to each
-task that needs to be carried out.
+This section describes a |product| infrastructure which includes
+Components redundancy and |ur|. The number of required Nodes, the
+necessary steps, and the overall complexity involved require to pay
+attention to each task that needs to be carried out.
 
 The installation of this scenario can be carried out **using Ansible
-only**, so if you do not have it installed yet please refer to
-Section :ref:`ansible-setup`: there you will find directions for its setup.
+only**, so if you do not have it installed yet please refer to Section
+:ref:`ansible-setup`: there you will find directions for its setup.
 
 This section covers the required components to set up the scenario,
 including load balancers, a Kafka cluster, a PostgreSQL cluster, an
@@ -37,8 +37,8 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`ha-install` describes how to install the scenario proposed in
    this page.
    
-#. :ref:`ha-conf` shows how to install the |ha| components and
-   configure them to introduce HA in the scenario
+#. :ref:`ha-conf` shows how to install the |ur| Components and
+   configure them
 
 #. :ref:`ha_promotion` introduces **habeat**, |product|'s python tool
    to ensure automatic promotion of a Mesh Service in case the master
@@ -47,11 +47,11 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`ha-storage` guides you in the creation of a centralised MinIO
    or S3 bucket
 
-#. :ref:`ha-replica` provides a scripts to activate a Directory
+#. :ref:`ha-replica` provides a scripts to activate a Directory Server
    Replica
 
 #. :ref:`ha-checks-scenario` contains a number of commands to check the status
-   of HA and related services.
+   of |ur| and related services.
 
 .. note:: The parts must be executed in their entirety and in the
    order given to successfully complete the procedure and start using
@@ -60,15 +60,15 @@ procedure and use the |product| infrastructure. In more details:
 We strongly suggest to look through the whole procedure to become
 acquainted with the procedure.
 
-.. _ha-scenario:
+.. _ha-scenario-overview:
 
 Scenario Overview
 =================
 
-To install a |ha| |carbonio| infrastructure, you need to ensure
-redundancy for all critical services.
+To install Scenario |rur| in a |carbonio| infrastructure, you need to
+ensure redundancy for all critical services.
 
-In a Carbonio HA setup, each Component except Monitoring is deployed
+In a Carbonio |ur| setup, each Component except Monitoring is deployed
 redundantly across multiple nodes. This setup guarantees continuous
 service availability, even in the event of individual node
 failures. Below is the recommended Node distribution and configuration
@@ -76,11 +76,13 @@ for each service to achieve redundancy and optimal performance, with
 centralised S3 storage.
 
 The following table summarises the Node distribution and redundancy
-requirements for each Carbonio service in a 5-node HA setup:
+requirements for each Carbonio service in a 5-node |ur| setup:
+
+.. rubric:: TODO (table headers)
 
 .. _tab-ha-nodes:
 
-.. csv-table:: The Node distribution in the HA scenario described here.
+.. csv-table:: The Node distribution in the scenario described here.
    :header: "**Service/Component**", **Primary Nodes**", "**Secondary** (Not full HA) **Nodes**", "**HA Nodes**", "**Total Nodes**"
    :widths: 36, 16, 16, 16, 16
 
@@ -92,7 +94,7 @@ requirements for each Carbonio service in a 5-node HA setup:
    "**Video**", "1", "1", "N/A", "2"
    "**Chats**", "1", "1", "N/A", "2"
 
-Each service, except for the Cluster service, has a mirrored HA node,
+Each service, except for the Cluster service, has a mirrored node,
 creating a reliable failover configuration. The **(Core) Cluster
 service** provides all the functionalities of a *Core Node* (Database,
 Mesh Server, and Directory Service) plus the Kafka and Zookeeper
@@ -100,7 +102,7 @@ software, which provide high-reliability services used by |product|:
 stream-processing and distributed synchronisation of configuration
 information, respectively. The configuration of the Cluster service
 includes three nodes to maintain quorum and prevent split-brain
-scenarios, ensuring stability in an HA environment.
+scenarios, ensuring stability in the environment.
 
 .. _ha-req:
 
@@ -109,7 +111,7 @@ Requirements
 
 - Each node must satisfy the overall :ref:`software-requirements` and :ref:`hw-requirements`
 
-- To implement an HA |carbonio| infrastructure, load-balancers are required
+- To implement a |rur| |carbonio| infrastructure, load-balancers are required
   in front of services that should be always available. Load-balancers are
   not included in |product|: an Open Source or commercial balancer can
   be used, with the requirement that it must support per-port TCP balancing.
@@ -128,7 +130,9 @@ Requirements
 Detailed Node Specifications
 ----------------------------
 
-To meet HA requirements, each Node should meet the following
+.. rubric:: TODO (HA in column VM Count)
+
+To meet |rur| requirements, each Node should meet the following
 recommended specifications:
 
 .. list-table::
@@ -186,8 +190,9 @@ recommended specifications:
      - Supports chat functionality for user communication
      - Both nodes provide redundancy of chat services
    
-.. warning:: Currently, the carbonio-message-broker and carbonio-message-dispatcher services
-             are not yet able to run in High Availability mode.
+.. warning:: Currently, the carbonio-message-broker and
+   carbonio-message-dispatcher services are not yet able to run in
+   High Availability mode.
 
 .. _ha-storage-req:
 
@@ -209,10 +214,9 @@ Centralised S3 Storage Requirements
 Pre-installation checks
 =======================
 
-
 The following is a list of essential pre-installation checks that you
 should carry out to ensure your setup is properly configured for a
-|product| |ha| installation:
+|product| |rur| installation:
 
 After all the software and hardware requirements are satisfied, here
 are some tasks to carry out before attempting the installation and a

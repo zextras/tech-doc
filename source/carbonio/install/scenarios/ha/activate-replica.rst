@@ -1,7 +1,8 @@
 .. _ha-replica:
 
-Automatic Replica Activation
+Automatic |ur| Activation
 ============================
+
 
 In order to automatically promote a Replica in case of the master
 becomes unavailable, you might want to download the
@@ -27,6 +28,8 @@ existing value with values that match your infrastructure.
 In the configuration file below, you need to provide the following
 data:
 
+.. rubric:: TODO (I guess Postgres HA is safe)
+            
 * LDAP Server hostname
 * LDAP username and password
 * Postgres Server hostname

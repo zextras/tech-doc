@@ -1,19 +1,21 @@
 .. _ha_promotion:
 
-HA Account Promotion
-====================
+|ur| Account Promotion
+=======================
 
-The Active Replica mechanism underlying |product| HA is described in
-Section :ref:`activereplica`. In particular, :ref:`ar-promo` shows how
-to manually activate a Replica. To automatise this
-process, the **habeat** Python tool has been developed to ensure
-seamless account promotion with high availability.
+The |ur| mechanism underlying |product| is described in Section
+:ref:`activereplica`. In particular, :ref:`ar-promo` shows how to
+manually activate an |ur|. To automatise this process, the **habeat**
+Python tool has been developed to ensure seamless account promotion
+with |ur|.
 
 The :command:`habeat` tool can be downloaded from the
 https://github.com/zextras/sps-habeat repository. You will need also a
 number of other files from that repository, so you might want to clone
 it.
 
+.. rubric:: TODO (HA Node also in the table following the paragraph)
+            
 All the commands in this section must be executed as the |ru| **for
 every HA Node**, i.e. for every Node listed in the column **HA Nodes**
 in :numref:`tab-ha-nodes`. Taking into account our inventory file,
@@ -85,6 +87,8 @@ Configure
 The configuration file, which you can find also in the repository, is
 similar to the following: as usual, remember to fill the options with
 values suitable to your infrastructure.
+
+.. rubric:: TODO (configuration file) 
 
 .. dropdown:: Habeat configuration file
    :open:

@@ -3,9 +3,9 @@
 Standard Carbonio Installation
 ==============================
 
-Before proceeding with the High Availability (HA) setup for Carbonio,
-it is essential to complete a standard installation of all core services.
-This initial setup provides the stable foundation required to create HA
+Before proceeding with the |rur| setup for Carbonio, it is essential
+to complete a standard installation of all core services.  This
+initial setup provides the stable foundation required to create |ur|
 infrastructure that will be built upon it.
 
 This scenario can be installed **only** using Ansible: you need to
@@ -23,7 +23,7 @@ infrastructure.
 
 .. include:: /_includes/_installation/read-req-pre.rst
 
-.. dropdown:: Inventory - "HA" Scenario
+.. dropdown:: Inventory - |rur| Scenario
    :open:
 
    :download:`Download_inventory </playbook/carbonio-inventory-ha>`

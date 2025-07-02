@@ -1,10 +1,10 @@
 .. _ha-checks:
 
-Check HA Services Status
-========================
+Check |ur| Services Status
+==========================
 
 This section is a collection of commands that can be used to verify
-the status of |product|\'s HA and related services.
+the status of |product|\'s |ur| and related services.
 
 Depending on the type of check, commands should be executed as either
 the |ru| or |zu|. All commands should be issued on the Node where the

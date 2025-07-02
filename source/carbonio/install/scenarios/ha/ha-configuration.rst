@@ -1,13 +1,13 @@
 .. _ha-conf:
 
-Carbonio HA Configuration
-=========================
+Carbonio |ur| Configuration
+===========================
 
-The main part of the installation is the set up of the HA
+The main part of the installation is the set up of the |ur|
 infrastructure, which will be built on the scenario described in the
 :ref:`previous section <ha-install>`.
 
-In order to complete the HA configuration, you need access to the
+In order to complete the |ur| configuration, you need access to the
 Ansible's Control Node and of the following items:
 
 #. The inventory file you used in previous section, which you must
@@ -38,13 +38,13 @@ successfully, you should have the following inventory files:
 
 -  inventory_consulpassword
 
-To configure the inventory for HA installation, you will need to add
+To configure the inventory for |rur| installation, you will need to add
 new groups and add specific variables to the :file:`inventory`
-file. Please read the following advises if you plan to add the HA
+file. Please read the following advises if you plan to add the |ur|
 infrastructure to different Node than the one we will use in the
 remainder of the scenario. 
 
-.. card:: Guidelines for Components in HA Configuration
+.. card:: Guidelines for Components in |ur| Configuration
 
    The initial Components assigned during the standard installation (i.e.,
    as **master** for LDAP or **primary** for PostgreSQL) should remain
@@ -58,10 +58,10 @@ remainder of the scenario.
 
    - If you plan to add extra master servers, configure them with
      roles **mmr** for Directory Server and **secondary** for
-     PostgreSQL in the HA inventory file.
+     PostgreSQL in the Ansible inventory file.
 
    This approach ensures that the pre-existing configurations and
-   initializations remain stable and compatible with the HA
+   initializations remain stable and compatible with the |ur|
    deployment.
 
 The two new groups to add at the bottom of the file are:
@@ -132,7 +132,7 @@ You need also to add variable to existing groups.
 The complete inventory file, filled according to the directions above,
 can be seen and downloaded here.
 
-.. dropdown:: Inventory - "HA" Scenario
+.. dropdown:: Inventory - |rur| Scenario
    :open:
 
    :download:`Download_inventory </playbook/carbonio-inventory-ha-complete>`
