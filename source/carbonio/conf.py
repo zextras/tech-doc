@@ -16,9 +16,8 @@ import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import time
 
-# This approach does not currently work with Docker/Jenkins, so we set only the main doc hub for now
-
-
+# This approach does not currently work with Docker/Jenkins, so we set
+# only the main doc hub for now
 hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
 
 # -- Get current year --------------------------------------------------------
@@ -40,7 +39,8 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
-               'sphinxcontrib.email', 'sphinx.ext.extlinks' ]
+               'sphinxcontrib.email', 'sphinx.ext.extlinks',
+               'sphinx_sitemap', 'sphinx_last_updated_by_git' ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -71,7 +71,14 @@ email_automode = True
 extlinks = {'pr': ('https://github.com/zextras/tech-doc/pull/%s',
                    'PR #%s') }
 
-graphviz_output_format = 'png'
+# sphinx-sitemap, sphinx-last-updated-by-git
+html_baseurl = 'https://docs.zextras.com/carbonio/html/'
+# setting to false due to Jenkins doing shallow clones - see section Caveats at https://github.com/mgeier/sphinx-last-updated-by-git/tree/master
+sitemap_show_lastmod = False
+# we do not need version or language
+sitemap_url_scheme = '{link}'
+# this is the default name anyway, adding for reference
+sitemap_filename = 'sitemap.xml'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -147,13 +154,13 @@ from sphinx.writers.html import HTMLTranslator
 class PatchedHTMLTranslator(HTMLTranslator):
     def starttag(self, node, tagname, *args, **attrs):
         if (
-            tagname == "a"
-            and "target" not in attrs
-            and (
-                "external" in attrs.get("class", "")
-                or "image-reference" in attrs.get("class", "")
-                or "external" in attrs.get("classes", [])
-            )
+                tagname == "a"
+                and "target" not in attrs
+                and (
+                    "external" in attrs.get("class", "")
+                    or "image-reference" in attrs.get("class", "")
+                    or "external" in attrs.get("classes", [])
+                )
         ):
             attrs["target"] = "_blank"
             attrs["ref"] = "noopener noreferrer"

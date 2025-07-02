@@ -16,19 +16,8 @@ import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import time
 
-# This approach does not currently work with Docker/Jenkins, so we set only the main doc hub for now
-
-# import git
-
-# # -- Get current branch and set hub's home page accordingly ------------------
-# repo = git.Repo(search_parent_directories=True)
-# branch = repo.active_branch
-
-# if branch.name == 'pre_release' :
-#     hubhome = 'http://zextrasdoc.s3-website-eu-west-1.amazonaws.com/landing/zextras_documentation.html'
-# else :
-#     hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
-
+# This approach does not currently work with Docker/Jenkins, so we set
+# only the main doc hub for now
 hubhome = 'https://docs.zextras.com/landing/zextras_documentation.html'
 
 # -- Get current year --------------------------------------------------------
@@ -50,7 +39,8 @@ version = release
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
-               'sphinx.ext.graphviz', 'sphinxcontrib.email' ]
+               'sphinxcontrib.email', 'sphinx_sitemap',
+               'sphinx_last_updated_by_git' ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -75,7 +65,15 @@ numfig = True
 
 email_automode = True
 
-graphviz_output_format = 'png'
+
+# sphinx-sitemap, sphinx-last-updated-by-git
+html_baseurl = 'https://docs.zextras.com/carbonio-ce/html/'
+# setting to false due to Jenkins doing shallow clone - see section Caveats at https://github.com/mgeier/sphinx-last-updated-by-git/tree/master
+sitemap_show_lastmod = False
+# we do not need version or language
+sitemap_url_scheme = '{link}'
+# this is the default name anyway, adding for reference
+sitemap_filename = 'sitemap.xml'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -89,7 +87,7 @@ html_show_sourcelink = False
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
-html_css_files = [ 'css/community.css' ]
+html_css_files = [ 'css/community.css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' ]
 html_js_files = [ 'js/posthog.js' ]
 html_favicon = 'img/favicon.ico'
 html_title = project + ' Documentation'
@@ -150,12 +148,12 @@ from sphinx.writers.html import HTMLTranslator
 class PatchedHTMLTranslator(HTMLTranslator):
     def starttag(self, node, tagname, *args, **attrs):
         if (
-            tagname == "a"
-            and "target" not in attrs
-            and (
-                "external" in attrs.get("class", "")
-                or "external" in attrs.get("classes", [])
-            )
+                tagname == "a"
+                and "target" not in attrs
+                and (
+                    "external" in attrs.get("class", "")
+                    or "external" in attrs.get("classes", [])
+                )
         ):
             attrs["target"] = "_blank"
             attrs["ref"] = "noopener noreferrer"
