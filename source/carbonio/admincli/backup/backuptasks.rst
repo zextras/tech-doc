@@ -152,7 +152,7 @@ restore:
 
 -  Node settings, i.e., the configuration of each Node
 -  Global settings of |product| product
--  Any customizations made to the software (Postfix, Jetty, etc…​)
+-  Any customizations made to the software (Postfix, Jetty, etc)
 
 For every item managed by |product|, every variation in its
 associated metadata is recorded and saved, allowing its restore at a
@@ -211,13 +211,13 @@ is enabled in the |adminui|.
 .. warning:: If none of the two Scan Operations is active, no backup
    is created!
 
-SmartScan runs at a fixed time—​that can be configured—​on a daily basis
-and is not deferred. This implies that, if for any reason (like e.g.,
-the server is turned off, or |carbonio| is not running), SmartScan
-does **not run**, it will **not run** until the next day. You may
-however configure the Backup to run the SmartScan every time
-|carbonio| is restarted (although this is discouraged), or you may
-manually run SmartScan to compensate for the missing run. 
+SmartScan runs at a fixed time (that can be customised) ​on a daily
+basis and is not deferred. This implies that, if for any reason (like
+e.g., the server is turned off, or |carbonio| is not running),
+SmartScan does **not run**, it will **not run** until the next
+day. You may however configure the Backup to run the SmartScan every
+time |carbonio| is restarted (although this is discouraged), or you
+may manually run SmartScan to compensate for the missing run.
 
 .. note:: Make sure that SmartScan is always running whenever you want
    to make any backup or restore operations, otherwise they will not
@@ -1076,9 +1076,9 @@ Backup on External Storage
 
 As described in section :ref:`backup-architecture`, |backup| is
 composed of metadata and blobs (compressed and deduplicated), saved by
-default on the same folder—​or mounted volume—​specified in the *Backup
-Path*. The real-time backup requires that the Backup Path be fast
-enough to avoid queuing operations and/or risk data loss.
+default on the same folder ​(or mounted volume) ​specified in the
+*Backup Path*. The real-time backup requires that the Backup Path be
+fast enough to avoid queuing operations and/or risk data loss.
 
 However, S3 buckets, NFS shares, and other storage mounted using Fuse
 can be very slow and might not be suited as storage mounted on the
