@@ -40,7 +40,7 @@ version = release
 # ones.
 extensions = [ 'sphinx_design', 'sphinx_copybutton',
                'sphinxcontrib.email', 'sphinx.ext.extlinks',
-               'sphinx_sitemap', 'sphinx_last_updated_by_git' ]
+               'sphinx_sitemap', 'sphinx_last_updated_by_git', 'sphinx.ext.todo' ]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -80,6 +80,7 @@ sitemap_url_scheme = '{link}'
 # this is the default name anyway, adding for reference
 sitemap_filename = 'sitemap.xml'
 
+todo_include_todos = True
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
