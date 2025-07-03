@@ -66,7 +66,7 @@ Changes in the source code can be found in :pr:`1137`.
 
 The technical documentation's changelog for April 2025 has been published.
 
-Changes in the source code can be found in :pr:`1075`.
+Changes in the source code can be found in :pr:`1135`.
 
 
 .. rubric:: 202506-1203 Merge DB-bootstrap commands
