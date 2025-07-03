@@ -27,6 +27,7 @@
 .. feature previously know as ha
 .. |ur| replace:: User Mail Replica
 .. |rur| replace:: Redundant with User Mail Replica
+.. |ds| replace:: Directory Server
 
 .. common replacements for all products
 
