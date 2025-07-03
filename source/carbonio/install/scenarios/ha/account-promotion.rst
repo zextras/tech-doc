@@ -14,7 +14,7 @@ https://github.com/zextras/sps-habeat repository. You will need also a
 number of other files from that repository, so you might want to clone
 it.
 
-.. rubric:: TODO (HA Node also in the table following the paragraph)
+.. todo:: mention of HA Node, also in the table following the paragraph
             
 All the commands in this section must be executed as the |ru| **for
 every HA Node**, i.e. for every Node listed in the column **HA Nodes**
@@ -88,7 +88,7 @@ The configuration file, which you can find also in the repository, is
 similar to the following: as usual, remember to fill the options with
 values suitable to your infrastructure.
 
-.. rubric:: TODO (configuration file) 
+.. todo:: mentions in configuration file
 
 .. dropdown:: Habeat configuration file
    :open:

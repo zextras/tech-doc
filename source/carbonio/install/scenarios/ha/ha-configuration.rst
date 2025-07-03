@@ -117,6 +117,8 @@ You need also to add variable to existing groups.
       svc1.example.com ldap_role=master
       svc2.example.com ldap_role=mmr
 
+.. todo:: This shoud be |ur|
+
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
    will be moved from Postgres server to servers in
    ``[dbsConnectorServers]`` for HA. In our scenario we move them to
@@ -194,7 +196,7 @@ collection:
 Promote Multi Master LDAP
 -------------------------
 
-It is needed only if replica is installed
+It is needed only if Directory Replica is installed
 
 .. code:: console
 

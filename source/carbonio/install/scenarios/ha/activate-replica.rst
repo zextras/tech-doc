@@ -4,8 +4,8 @@ Automatic |ur| Activation
 ============================
 
 
-In order to automatically promote a Replica in case of the master
-becomes unavailable, you might want to download the
+In order to automatically promote a Directory Replica in case the
+Master becomes unavailable, you might want to download the
 :command:`activateReplica.pl` script and its configuration file
 :command:`activateReplica.yml` from the github repository
 https://github.com/zextras/sps-ha-utils or even clone it locally.
@@ -28,7 +28,7 @@ existing value with values that match your infrastructure.
 In the configuration file below, you need to provide the following
 data:
 
-.. rubric:: TODO (I guess Postgres HA is safe)
+.. todo:: I guess Postgres HA is safe
             
 * LDAP Server hostname
 * LDAP username and password
@@ -75,7 +75,7 @@ data:
 
 The configuration file can be saved on the location and the name that you
 prefer. We use :file:`/opt/zextras/activateReplica.yml`. You can
-launch the automatic replica activation using command
+launch the automatic Directory Replica activation using command
 
 .. code:: console
 

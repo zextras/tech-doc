@@ -47,11 +47,11 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`ha-storage` guides you in the creation of a centralised MinIO
    or S3 bucket
 
-#. :ref:`ha-replica` provides a scripts to activate a Directory Server
+#. :ref:`ha-replica` provides a scripts to activate a Directory
    Replica
 
-#. :ref:`ha-checks-scenario` contains a number of commands to check the status
-   of |ur| and related services.
+#. :ref:`ha-checks-scenario` contains a number of commands to check
+   the status of |ur| and related services.
 
 .. note:: The parts must be executed in their entirety and in the
    order given to successfully complete the procedure and start using
