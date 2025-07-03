@@ -689,7 +689,7 @@ Thanks to the Realtime Scanner, it is possible to recover any item at
 any point in time.
 
 The Realtime Scanner reads all the events of the Mailstore &
-Provisioning in almost real-time, then it replicates the same
+Provisioning in almost real-time, then it repeats the same
 operations on its own data structure, creating items or updating their
 metadata. No information is ever overwritten in the backup, so every
 item has its own complete history.

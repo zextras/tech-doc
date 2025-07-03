@@ -51,8 +51,8 @@ Finally, remove the saved password:
 
    zextras$ unset newLdapPsw
 
-Update |ds| Replica Credentials
--------------------------------
+Update Directory Replica Credentials
+------------------------------------
 
 In case the |product| infrastructure includes the
 :ref:`component-ds-replica-install` Component, execute the following commands on
@@ -90,7 +90,7 @@ Finally, remove the saved password:
 
    zextras$ unset newLdapPsw
 
-As a final check, ensure the |ds| replica is working:
+As a final check, ensure the Directory Replica is working:
 
 .. code:: console
 

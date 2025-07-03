@@ -167,9 +167,10 @@ In both cases, when you executed the commands, restart all services
      data integrity
 
    * ``zimbraLdapURL`` ensures that the system can still authenticate
-     users and access LDAP data even if one of the replicas is down.
-     
+     users and access LDAP (|ds|) data even if one of the Directory
+     Replicas is down.
+
    In a Single-Server |product| setup, these values are typically the
-   same. In a Multi-Server setup with |ds| replication, they will
+   same. In a Multi-Server setup with Directory Replica, they will
    differ, with ``zimbraLdapURL`` listing all replicas and
    ``zimbraLdapMasterURL`` pointing only to the master.
