@@ -60,6 +60,9 @@ good practices we can suggest, including the following:
 
 - Carefully plan your updates and migrations
 
+.. todo:: this should be really clarified, as we do not yet provide
+   any guidelines about how to add redundancy. If not, better delete it.
+          
 - Consider implementing redundancy to replicate the services provided
   by |product|
 

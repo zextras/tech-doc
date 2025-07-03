@@ -140,14 +140,14 @@ Example of valid commands are:
    zextras$ carbonio ha setAccountDestination mailstore1.example.com 10 input_file /tmp/accounts
 
 The Global Administrator will receive a notification as soon as the
-replica initialisation is completed.
+|ur| initialisation is completed.
 
 .. _ar-monit:
 
 |ur| Monitoring
 ------------------
 
-To monitor the status of a replica, you can use the
+To monitor the status of a |ur|, you can use the
 :command:`getAccountStatus` command and refine the output by providing
 either of the following parameters:
 
@@ -202,21 +202,22 @@ Then, for each replica:
 |ur| Promotion
 --------------
 
-The architecture of |ur| allows for a quick promotion of a replica at
-any time. Indeed, since all the metadata are synchronously replicated
-in the event queue and the blobs are stored in the centralised volume,
-the Administrator can trigger the promotion even if the source
-Mailstore is offline (e.g., the Mailstore is in maintenance mode,
-there is a hardware failure o a network problem, and so on).
+The architecture of |ur| allows for a quick promotion of a replica
+Node at any time. Indeed, since all the metadata are synchronously
+replicated in the event queue and the blobs are stored in the
+centralised volume, the Administrator can trigger the promotion even
+if the source Mailstore is offline (e.g., the Mailstore is in
+maintenance mode, there is a hardware failure o a network problem, and
+so on).
 
 To promote an account, Administrators can use the
 :command:`promoteAccounts` command and refine the output by providing
 either of the following parameters:
 
 * ``accounts``, to promote one or more (comma separated) accounts,
-  using the first replica (lowest priority)
+  using the first |ur| (lowest priority)
 * ``input_file``, to promote accounts for a file (one per line), using
-  the first replica (lowest priority)
+  the first |ur| (lowest priority)
 * ``source_mail_host``, to promote all the accounts hosted by a
   specific Mailstore
 
@@ -240,7 +241,7 @@ Example of valid commands are:
 
       zextras$ carbonio ha promoteAccounts source_mail_host mbox1.example.com
 
-Global Admin will receive a notification as soon as the replica promotion is completed.
+Global Admin will receive a notification as soon as the |ur| promotion is completed.
 
 .. _ar-del:
 

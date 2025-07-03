@@ -136,10 +136,10 @@ Tasks for the Directory Replica Component
 
 If your infrastructure features a **Directory Replica**, you need to
 carry out these tasks **on all Nodes**. Depending if you change
-hostname on the *Mesh & Directory* Node only or also on the Replica,
+hostname on the *Mesh & Directory* Node only or also on the Directory Replica,
 the commands to execute slightly differ.
 
-#. If you change hostname  **only the Mesh & Directory**, execute
+#. If you change hostname **only to the Mesh & Directory**, execute
 
    .. code:: console
 
@@ -168,9 +168,8 @@ In both cases, when you executed the commands, restart all services
 
    * ``zimbraLdapURL`` ensures that the system can still authenticate
      users and access LDAP data even if one of the replicas is down.
-
      
    In a Single-Server |product| setup, these values are typically the
-   same. In a Multi-Server setup with LDAP replication, they will
+   same. In a Multi-Server setup with |ds| replication, they will
    differ, with ``zimbraLdapURL`` listing all replicas and
    ``zimbraLdapMasterURL`` pointing only to the master.
