@@ -603,6 +603,8 @@ This Node features the *MTA AV/AS* Component.
 Node Five
 =========
 
+.. todo:: is it safe to say replicated here?
+
 This Node features the (replicated) *MTA AV/AS* Component.
 
 .. _fr5-step1:
@@ -844,6 +846,8 @@ This Node features the *Proxy* Component.
 Node Seven
 ==========
 
+.. todo:: is it safe to say replicated here?
+
 This Node features the (replicated) *Proxy* Component.
 
 .. _fr7-step1:
@@ -1075,6 +1079,8 @@ This Node features the *Mailstore & Provisioning* Component.
 
 Node Nine
 =========
+
+.. todo:: is it safe to say replicated here?
 
 This Node features the (replicated) *Mailstore & Provisioning* Component.
 
@@ -1316,6 +1322,8 @@ This Node features the *Chats*, *Files*, and *Tasks*  Components.
 
 Node Eleven
 ===========
+
+.. todo:: is it safe to say replicated here?
 
 This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
 
@@ -1569,6 +1577,8 @@ This Node features the *Docs & Editor* and *Preview* Components.
 Node Thirteen
 =============
 
+.. todo:: is it safe to say replicated here?
+
 This Node features the (replicated) *Docs & Editor* and *Preview*
 Components.
 
@@ -1798,6 +1808,8 @@ This Node features the *Video Server & Video Recording* Component.
 
 Node Fifteen
 ============
+
+.. todo:: is it safe to say replicated here?
 
 This Node features the (replicated) *Video Server & Video Recording*
 Component.

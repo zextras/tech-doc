@@ -77,7 +77,7 @@ Scenarios
 
       |unsup| Cluster, Files and Docs service redundancy
 
-      |unsup| LDAP master-slave replica
+      |unsup| LDAP (|ds|) master-slave replica
 
       .. note:: Availability of some features might require additional
          Nodes setup.
@@ -107,7 +107,7 @@ Scenarios
 
       |unsup| Cluster, Files and Docs service redundancy
 
-      |unsup| LDAP master-slave replica
+      |unsup| LDAP (|ds|) master-slave replica
 
    .. grid-item-card:: Scenario *Full Small*
       :columns: 12 12 6 6
@@ -134,7 +134,7 @@ Scenarios
 
       |unsup| Cluster, Files and Docs service redundancy
 
-      |unsup| LDAP master-slave replica
+      |unsup| LDAP (|ds|) master-slave replica
 
    .. grid-item-card:: Scenario *Full Standard*
       :columns: 12 12 6 6
@@ -161,7 +161,7 @@ Scenarios
 
       |supp| Cluster, Files and Docs service redundancy
 
-      |supp| LDAP master-slave replica
+      |supp| LDAP (|ds|) master-slave replica
 
    .. grid-item-card:: Scenario *Full Redundant*
       :columns: 12 12 6 6
@@ -188,4 +188,4 @@ Scenarios
 
       |supp| Cluster, Files and Docs service redundancy
 
-      |supp| LDAP master-slave replica
+      |supp| LDAP (|ds|) master-slave replica
