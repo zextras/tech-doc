@@ -130,8 +130,17 @@ html_context = {
     'hubhome' : '%s' %hubhome,
 }
 
-# workaround for ZTD-581
-#html_extra_path = ['changelog.html', 'upgrade.html']
+# -- Options for Latex output ------------------------------------------------
+
+# This does not currently work, the line \Declare line must be added manually to latex source
+
+latex_elements = {
+    'preamble': r'''
+    \DeclareUnicodeCharacter{200B}{{\hskip 0pt}}
+    '''
+}
+
+sd_fontawesome_latex = True
 
 # -- Options for linkcheck output --------------------------------------------
 
