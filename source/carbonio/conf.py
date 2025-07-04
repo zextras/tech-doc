@@ -74,7 +74,7 @@ extlinks = {'pr': ('https://github.com/zextras/tech-doc/pull/%s',
 # sphinx-sitemap, sphinx-last-updated-by-git
 html_baseurl = 'https://docs.zextras.com/carbonio/html/'
 # setting to false due to Jenkins doing shallow clones - see section Caveats at https://github.com/mgeier/sphinx-last-updated-by-git/tree/master
-sitemap_show_lastmod = False
+sitemap_show_lastmod = True
 # we do not need version or language
 sitemap_url_scheme = '{link}'
 # this is the default name anyway, adding for reference
