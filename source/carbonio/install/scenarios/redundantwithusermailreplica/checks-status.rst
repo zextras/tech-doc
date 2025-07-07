@@ -1,4 +1,4 @@
-.. _ha-checks:
+.. _rur-checks:
 
 Check |ur| Services Status
 ==========================

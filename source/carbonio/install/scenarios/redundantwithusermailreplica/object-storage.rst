@@ -1,4 +1,4 @@
-.. _ha-storage:
+.. _rur-storage:
 
 Object Storage Configuration
 ============================

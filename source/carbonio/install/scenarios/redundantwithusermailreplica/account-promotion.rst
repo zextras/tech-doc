@@ -1,4 +1,4 @@
-.. _ha_promotion:
+.. _rur-promotion:
 
 |ur| Account Promotion
 =======================
@@ -18,10 +18,10 @@ it.
             
 All the commands in this section must be executed as the |ru| **for
 every HA Node**, i.e. for every Node listed in the column **HA Nodes**
-in :numref:`tab-ha-nodes`. Taking into account our inventory file,
+in :numref:`tab-rur-nodes`. Taking into account our inventory file,
 this means you must install and configure the utility on these Nodes:
 
-.. _tab-ha-fqdn:
+.. _tab-rur-fqdn:
 
 .. csv-table:: Nodes and FQDN
    :header: "HA Node", "FQDN"
@@ -37,7 +37,7 @@ Deploy
 
 To copy :command:`habeat` you can use preferable utility, for example
 :command:`scp`. Remember to replace ``node`` with the actual Node FQDN
-as shown in :numref:`tab-ha-fqdn` or with equivalent FQDN according to
+as shown in :numref:`tab-rur-fqdn` or with equivalent FQDN according to
 your infrastructure.
 
 First, copy the script and its configuration file.

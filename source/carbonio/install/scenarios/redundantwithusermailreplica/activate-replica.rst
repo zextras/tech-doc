@@ -1,4 +1,4 @@
-.. _ha-replica:
+.. _rur-replica:
 
 Automatic |ur| Activation
 ============================

@@ -1,4 +1,4 @@
-.. _scenario-ha:
+.. _scenario-rur:
 
 ================
  Scenario |rur|
@@ -20,7 +20,7 @@ Directory Server. A step-by-step approach to setting up VMs,
 configuring centralised storage, and deploying HA, will guide you in
 the procedure.
 
-.. _ha-procedure:
+.. _rur-procedure:
 
 Procedure Overview
 ==================
@@ -34,23 +34,23 @@ The rest of the procedure consists of a dedicated, self-contained
 guide to one of the parts required to successfully complete the
 procedure and use the |product| infrastructure. In more details:
 
-#. :ref:`ha-install` describes how to install the scenario proposed in
+#. :ref:`rur-install` describes how to install the scenario proposed in
    this page.
    
-#. :ref:`ha-conf` shows how to install the |ur| Components and
+#. :ref:`rur-conf` shows how to install the |ur| Components and
    configure them
 
-#. :ref:`ha_promotion` introduces **habeat**, |product|'s python tool
+#. :ref:`rur-promotion` introduces **habeat**, |product|'s python tool
    to ensure automatic promotion of a Mesh Service in case the master
    becomes unavailable
 
-#. :ref:`ha-storage` guides you in the creation of a centralised MinIO
+#. :ref:`rur-storage` guides you in the creation of a centralised MinIO
    or S3 bucket
 
-#. :ref:`ha-replica` provides a scripts to activate a Directory
+#. :ref:`rur-replica` provides a scripts to activate a Directory
    Replica
 
-#. :ref:`ha-checks-scenario` contains a number of commands to check
+#. :ref:`rur-checks-scenario` contains a number of commands to check
    the status of |ur| and related services.
 
 .. note:: The parts must be executed in their entirety and in the
@@ -60,7 +60,7 @@ procedure and use the |product| infrastructure. In more details:
 We strongly suggest to look through the whole procedure to become
 acquainted with the procedure.
 
-.. _ha-scenario-overview:
+.. _rur-scenario-overview:
 
 Scenario Overview
 =================
@@ -80,7 +80,7 @@ requirements for each Carbonio service in a 5-node |ur| setup:
 
 .. rubric:: TODO (table headers)
 
-.. _tab-ha-nodes:
+.. _tab-rur-nodes:
 
 .. csv-table:: The Node distribution in the scenario described here.
    :header: "**Service/Component**", **Primary Nodes**", "**Secondary** (Not full HA) **Nodes**", "**HA Nodes**", "**Total Nodes**"
@@ -104,7 +104,7 @@ information, respectively. The configuration of the Cluster service
 includes three nodes to maintain quorum and prevent split-brain
 scenarios, ensuring stability in the environment.
 
-.. _ha-req:
+.. _rur-req:
 
 Requirements
 ============
@@ -125,7 +125,7 @@ Requirements
 
 - An additional carbonio-directory-server node configured in *MultiMaster* mode (**mmr**)
 
-.. _ha-node-spec:
+.. _rur-node-spec:
 
 Detailed Node Specifications
 ----------------------------
@@ -194,7 +194,7 @@ recommended specifications:
    carbonio-message-dispatcher services are not yet able to run in
    High Availability mode.
 
-.. _ha-storage-req:
+.. _rur-storage-req:
 
 Centralised S3 Storage Requirements
 -----------------------------------
@@ -209,7 +209,7 @@ Centralised S3 Storage Requirements
    Mailstore nodes, facilitating redundancy in data storage and
    minimizing potential data loss in the event of a node failure.
 
-.. _ha-checks-scenario:
+.. _rur-checks-scenario:
 
 Pre-installation checks
 =======================
@@ -302,7 +302,7 @@ respectively. These will be used in the remainder of this section.
      the Primary storage mounted on :file:`/opt/`
 
    ..
-      * Cluster service (see :ref:`ha-scenario`) must have the root
+      * Cluster service (see :ref:`rur-scenario`) must have the root
         partition :file:`/` of the size specified in the sizing document
         shared with partner or customer::
 
@@ -342,9 +342,9 @@ respectively. These will be used in the remainder of this section.
    :hidden:
    :glob:
 
-   ha/standard-installation.rst
-   ha/ha-configuration.rst
-   ha/object-storage.rst
-   ha/account-promotion.rst
-   ha/activate-replica.rst
-   ha/checks-status.rst
+   redundantwithusermailreplica/standard-installation.rst
+   redundantwithusermailreplica/ur-configuration.rst
+   redundantwithusermailreplica/object-storage.rst
+   redundantwithusermailreplica/account-promotion.rst
+   redundantwithusermailreplica/activate-replica.rst
+   redundantwithusermailreplica/checks-status.rst

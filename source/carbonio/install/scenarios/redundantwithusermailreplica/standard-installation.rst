@@ -1,4 +1,4 @@
-.. _ha-install:
+.. _rur-install:
 
 Standard Carbonio Installation
 ==============================

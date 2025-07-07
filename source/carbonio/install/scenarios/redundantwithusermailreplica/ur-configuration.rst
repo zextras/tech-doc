@@ -1,11 +1,11 @@
-.. _ha-conf:
+.. _rur-conf:
 
 Carbonio |ur| Configuration
 ===========================
 
 The main part of the installation is the set up of the |ur|
 infrastructure, which will be built on the scenario described in the
-:ref:`previous section <ha-install>`.
+:ref:`previous section <rur-install>`.
 
 In order to complete the |ur| configuration, you need access to the
 Ansible's Control Node and of the following items:
