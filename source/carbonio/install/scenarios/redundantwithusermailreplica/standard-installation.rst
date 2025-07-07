@@ -26,9 +26,9 @@ infrastructure.
 .. dropdown:: Inventory - |rur| Scenario
    :open:
 
-   :download:`Download_inventory </playbook/carbonio-inventory-ha>`
+   :download:`Download_inventory </playbook/carbonio-inventory-rur>`
 
-   .. literalinclude:: /playbook/carbonio-inventory-ha
+   .. literalinclude:: /playbook/carbonio-inventory-rur
 
 Once you edited the inventory, save it in a directory of your choice
 as :file:`carbonio-inventory`. Now, you can run the script:

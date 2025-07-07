@@ -137,9 +137,9 @@ can be seen and downloaded here.
 .. dropdown:: Inventory - |rur| Scenario
    :open:
 
-   :download:`Download_inventory </playbook/carbonio-inventory-ha-complete>`
+   :download:`Download_inventory </playbook/carbonio-inventory-rur-complete>`
 
-   .. literalinclude:: /playbook/carbonio-inventory-ha-complete
+   .. literalinclude:: /playbook/carbonio-inventory-rur-complete
 
 Install Zookeper and Kafka
 --------------------------
