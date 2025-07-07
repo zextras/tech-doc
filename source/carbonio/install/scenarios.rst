@@ -79,6 +79,10 @@ Scenarios
 
       |unsup| LDAP (|ds|) master-slave replica
 
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
+
       .. note:: Availability of some features might require additional
          Nodes setup.
             
@@ -109,6 +113,10 @@ Scenarios
 
       |unsup| LDAP (|ds|) master-slave replica
 
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
+
    .. grid-item-card:: Scenario *Full Small*
       :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
@@ -135,6 +143,10 @@ Scenarios
       |unsup| Cluster, Files and Docs service redundancy
 
       |unsup| LDAP (|ds|) master-slave replica
+
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
 
    .. grid-item-card:: Scenario *Full Standard*
       :columns: 12 12 6 6
@@ -163,6 +175,10 @@ Scenarios
 
       |supp| LDAP (|ds|) master-slave replica
 
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
+
    .. grid-item-card:: Scenario *Full Redundant*
       :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
@@ -170,7 +186,7 @@ Scenarios
       :link-type: ref
 
       Suitable for any large infrastructure that requires scalability
-      and redundancy and is ready for High Availability.
+      and redundancy.
 
       +++++
 
@@ -189,3 +205,39 @@ Scenarios
       |supp| Cluster, Files and Docs service redundancy
 
       |supp| LDAP (|ds|) master-slave replica
+
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
+
+.. todo:: verify features and data of scenario below
+
+.. card:: Scenario *Redundant with User Mail Replica*
+   :class-header: sd-font-weight-bold sd-fs-5
+   :link: scenario-rur
+   :link-type: ref
+
+
+   Suitable for any large infrastructure that requires scalability,
+   redundancy, and |ur|. It can be installed using Ansible only.
+
+   +++++
+
+   **Nodes: (up to) 17**
+
+   |supp| Mail/calendar/contacts
+
+   |supp| Files/docs/preview
+
+   |supp| Videochat
+
+   |supp| Backup
+
+   |supp| High Avaliability ready
+
+   |supp| Cluster, Files and Docs service redundancy
+
+   |supp| LDAP (|ds|) master-master replica
+
+   |supp| User Mail Replica
+
