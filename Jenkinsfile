@@ -31,6 +31,7 @@ pipeline {
       steps {
         container('python-312') {
           sh '''
+git fetch --unshallow
 python3 -m venv .
 . bin/activate
 pip3 install -r requirements.txt
@@ -39,7 +40,6 @@ python3 -m sphinx source/carbonio build/carbonio/html
 python3 -m sphinx source/carbonio-ce build/carbonio-ce/html
 '''
         }
-        stash name: 'build_done', includes: 'build/**'
       }
     }
 
@@ -50,7 +50,6 @@ python3 -m sphinx source/carbonio-ce build/carbonio-ce/html
         branch 'devel'
       }
       steps {
-        unstash "build_done"
         withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
           s3Delete(bucket: DEVEL_BUCKET_NAME,
             path: 'carbonio/')
@@ -72,7 +71,6 @@ python3 -m sphinx source/carbonio-ce build/carbonio-ce/html
         branch 'pre_release'
       }
       steps {
-        unstash "build_done"
         withAWS(region: REGION, credentials: STAGING_CREDENTIALS) {
           s3Delete(bucket: STAGING_BUCKET_NAME,
             path: 'carbonio/')
@@ -93,7 +91,6 @@ python3 -m sphinx source/carbonio-ce build/carbonio-ce/html
         branch 'master'
       }
       steps {
-        unstash "build_done"
         withAWS(region: REGION, credentials: PRODUCTION_CREDENTIALS) {
           s3Delete(bucket: PRODUCTION_BUCKET_NAME,
             path: 'carbonio/')
