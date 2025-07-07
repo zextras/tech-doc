@@ -31,13 +31,13 @@ infrastructure.
 
 .. include:: /_includes/_installation/read-req-pre.rst
 
-.. dropdown:: Inventory - "Full Redundant" Scenario
+.. dropdown:: Inventory - "Redundant" Scenario
    :open:
 
    :download:`Download_inventory
-   </playbook/carbonio-inventory-fullredundant>`
+   </playbook/carbonio-inventory-redundant>`
 
-   .. literalinclude:: /playbook/carbonio-inventory-fullredundant
+   .. literalinclude:: /playbook/carbonio-inventory-redundant
 
 Once you edited the inventory, save it in a directory of your choice
 as :file:`carbonio-inventory`. Now, you can run the script:

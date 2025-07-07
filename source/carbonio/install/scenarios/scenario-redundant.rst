@@ -1,8 +1,8 @@
-.. _scenario-fullredundant:
+.. _scenario-redundant:
 
-========================
- Scenario Full Redundant
-========================
+====================
+ Scenario Redundant
+====================
 
 This scenario features all |product| functionalities and its intended
 use is any infrastructure that requires scalability and redundancy.
@@ -46,7 +46,7 @@ The following ports must be opened on the :ref:`external network
 <fw-external>`, i.e., they are required for proper access to
 |product| from the Internet.
 
-.. table:: Forwarded ports in Scenario "Full Redundant".
+.. table:: Forwarded ports in Scenario Redundant.
 
    +-------------------+--------------------------+-------------------+
    | Public hostname   | Ports & Service          | Balanced to       |
@@ -83,4 +83,4 @@ The incoming UDP streaming to the |vs| can be split as follows:
    :hidden:
    :glob:
 
-   fullredundant/*
+   redundant/*

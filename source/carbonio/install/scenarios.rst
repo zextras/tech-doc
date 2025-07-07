@@ -40,7 +40,7 @@ following:
    scenarios/scenario-essential
    scenarios/scenario-fullsmall
    scenarios/scenario-fullstandard
-   scenarios/scenario-fullredundant
+   scenarios/scenario-redundant
    scenarios/scenario-redundantwithusermailreplica
 
 Scenarios
@@ -179,10 +179,10 @@ Scenarios
 
       |unsup| User Mail Replica
 
-   .. grid-item-card:: Scenario *Full Redundant*
+   .. grid-item-card:: Scenario *Redundant*
       :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
-      :link: scenario-fullredundant
+      :link: scenario-redundant
       :link-type: ref
 
       Suitable for any large infrastructure that requires scalability
