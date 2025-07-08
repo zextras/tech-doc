@@ -29,11 +29,11 @@ Within the collection of Components, we can distinguish:
 
 These are required for the basic operation of |product|:
 
-- **MTA / AV-AS**: Sending and receiving emails
-- **Mailstore and Provisioning**: Account provisioning and message
+- **MTA AV/AS**: Sending and receiving emails
+- **Mailstore & Provisioning**: Account provisioning and message
   storage
 - **Proxy**: Web access
-- **Database / Mesh and Directory**: Backend services required for
+- **Database / Mesh & Directory**: Backend services required for
   infrastructure operation
 
 .. rubric:: Collaboration Components
@@ -43,10 +43,10 @@ These add advanced collaboration and communication features to
 
 - Files
 - Chats
-- Docs and Editor
+- Docs & Editor
 - Tasks
 - Preview
-- Video Server and Video Recording
+- Video Server & Video Recording
 
 .. rubric:: Additional Components and Monitoring
 

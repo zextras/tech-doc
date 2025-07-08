@@ -1,0 +1,188 @@
+Changelog 2025-06
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202506-1224 Remove obsolete Legacy Chats CLI commands
+
+A few no longer available CLI commands of the legacy Chats have been removed from the documentation
+
+Changes in the source code can be found in :pr:`1159`.
+
+
+.. rubric:: 202506-1223 Rename Work Stream Collaboration to Chats
+
+The |product| Work Stream Collaboration Component has been renamed to
+|product| Chats.
+
+Changes in the source code can be found in :pr:`1158`.
+
+
+.. rubric:: 202506-1221 Add command to external restore procedure
+
+To make sure the |backup| service work flawlessly, we added a command to make sure the |zu| has access to the backup path during External Restore  procedures.
+
+Changes in the source code can be found in :pr:`1155`.
+
+
+.. rubric:: 202506-1220 Added info to new systemd section
+
+Added  more info on how to manage services with systemd .
+
+Changes in the source code can be found in :pr:`1150`.
+
+
+.. rubric:: 202506-1219  Add 25.6.0 changelog
+
+Changelog for the latest Carbonio release has been added.
+
+Changes in the source code can be found in :pr:`1149` and :pr:`1153`.
+
+
+.. rubric:: 202506-1211 Milter restart command
+
+The command to restart the ``milter`` service after a change in the distribution lists is now part of the technical documentation.
+
+Changes in the source code can be found in :pr:`1146`.
+
+
+.. rubric:: 202506-1209 Single-Server Scenario hardware requirements
+
+Hardware requirement for the Single-Server Scenario have been introduced.
+
+Changes in the source code can be found in :pr:`1139`.
+
+
+.. rubric:: 202506-1207 Improved Single-Server Scenario
+
+We clarified documentation of manual Single-Server Scenario's installation, separating the expansions possibilities from the main installation, improving diagrams
+
+Changes in the source code can be found in :pr:`1137`.
+
+
+.. rubric:: 202506-1206  Documentation Changelog April 2025
+
+The technical documentation's changelog for April 2025 has been published.
+
+Changes in the source code can be found in :pr:`1135`.
+
+
+.. rubric:: 202506-1203 Merge DB-bootstrap commands
+
+All DB-bootstrap commands have been merged to allow for simpler copy&paste.
+
+Changes in the source code can be found in :pr:`1130`.
+
+
+.. rubric:: 202506-1202 Improved Antivirus& Antispam management
+
+We improved ClamAV management documentation, improving text to make it more readable, clarifying a few points, and adding a part in which it is described how to disable OpenDKIM.
+
+Changes in the source code can be found in :pr:`1128`.
+
+
+.. rubric:: 202506-1198 New DNS Setting section
+
+The DNS configuration settings were spread across the whole documentation, now they have been collected and a dedicated section has been created.
+
+Changes in the source code can be found in :pr:`1138`.
+
+
+.. rubric:: 202506-1197 Change IP Address documentation
+
+
+The procedure to change the IP address of a |product| infrastructure has been clarified for a Multi-Server Scenario, adding configuration of |pv| and of |vs|.
+
+Changes in the source code can be found in :pr:`1144` and :pr:`1145`.
+
+
+.. rubric:: 202506-1196 None
+
+This issue introduces in the documentation all changes in the upgrade procedure to 25.6.0
+
+Changes in the source code can be found in :pr:`966`.
+
+
+.. rubric:: 202506-1195 Improved documentation for Public Service Hostname
+
+Documentation for the **Public Service Hostname** settings has been vastly improved with description of the ``zimbraPublicServiceHostname``, ``zimbraVirtualHostname``, and other related LDAP attributes and clarified how the logins and file sharing processes are impacted.
+
+Changes in the source code can be found in :pr:`1129`.
+
+
+.. rubric:: 202506-1192 Imrpove External AD Documentation
+
+Documentation for autoprovisiong external AD has been slightly improved to lcarify the use of two options.
+
+Changes in the source code can be found in :pr:`1118`.
+
+
+.. rubric:: 202506-1186 Replace Role with Component
+
+The term *Role*, used documentation-wide to denote the groups of functionalities provided by |product|, has been replaced by the term **Component**.
+
+Changes in the source code can be found in :pr:`1117`.
+
+
+.. rubric:: 202506-1182 Review Delegated Administrators Documentation
+
+Documentation about the Delegated Administrators has been vastly improved to help a Global Administrator in the creation of most suitable Delegated Administrators for their domains. Additionally, the relation between the various types of Administrators and comparative tables of their permisisons have been added
+
+Changes in the source code can be found in :pr:`1122`.
+
+
+.. rubric:: 202506-1173 New 25.6.0 features in Admin Panel 
+
+New and changed features for the |adminui| introduced in release 25.6.0, including:
+
+* Allow Domain Administrators to define the maximum size up uploadable files in |file|
+* New |wsc| documentation in the |adminui|
+* Polling interval available in the |adminui|
+
+Changes in the source code can be found in :pr:`1119`, :pr:`1120`, :pr:`1121`, and :pr:`1131`.
+
+
+.. rubric:: 202506-1172 Operating System support in 25.6
+
+In this issue we removed **Ubuntu 20.04** and added **Ubuntu 24.04** from the supported distributions on which to install |product| and removed the :bdg-danger:`BETA` label from RHEL 9, making it officially supported.
+
+Changes in the source code can be found in :pr:`1123`.
+
+
+.. rubric:: 202506-1157 Review Account Configuration Section
+
+We updated Section :menuselection:`Domain --> Account --> Configuration` to include documentation for the new options.
+
+Changes in the source code can be found in :pr:`1096`.
+
+
+.. rubric:: 202506-770 Systemd documentation for new OSes
+
+In the most recent Operating Systems supported by |product| (i.e., Ubuntu 24.04 and RHEL 9), the :command:`zmcontrol` command used to manage services has been replaced by system-integrated :command:`systemctl` commands. This new documentation strives to clarify the new commands, to add comaprative tables, and to help system administrators in getting acquainted with the new system.
+
+Changes in the source code can be found in :pr:`1124` and :pr:`1126`.
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202506-1217 Missing port for Carbonio Mesh service
+
+Port 8600 used by the |mesh| service was missing from the list of firewall ports.
+
+Changes in the source code can be found in :pr:`1147`.
+
+.. rubric:: 202506-1214 Add  maxLifetime to Consul k/v interface
+
+We added a missing key/value pair to the Hikari documentation and clarified the text to better understand the meaning of variable ``CONSUL_TOKEN_PATH``.
+
+Changes in the source code can be found in :pr:`1148`.
+
+*****
+
+End of changelog
+
