@@ -75,9 +75,9 @@ The two new groups to add at the bottom of the file are:
 
       #kafka group
       [kafka]
-      svc1.example.com broker_id=1
-      svc2.example.com broker_id=2
-      svc3.example.com broker_id=3
+      srv1.example.com broker_id=1
+      srv2.example.com broker_id=2
+      srv3.example.com broker_id=3
 
 #. ``zookeeper_servers`` group, which will point to the Nodes where
    :command:`zookeper` will be installed: these are the three Cluster
@@ -88,9 +88,9 @@ The two new groups to add at the bottom of the file are:
 
       #zookeeper_servers group
       [zookeeper_servers]
-      svc1.example.com zookeeper_id=1
-      svc2.example.com zookeeper_id=2
-      svc3.example.com zookeeper_id=3
+      srv1.example.com zookeeper_id=1
+      srv2.example.com zookeeper_id=2
+      srv3.example.com zookeeper_id=3
 
 You need also to add variable to existing groups.
 
@@ -103,8 +103,8 @@ You need also to add variable to existing groups.
 
       #postgresServers group
       [postgresServers]
-      svc1.example.com postgres_version=16 patroni_role=primary
-      svc2.example.com postgres_version=16 patroni_role=secondary
+      srv1.example.com postgres_version=16 patroni_role=primary
+      srv2.example.com postgres_version=16 patroni_role=secondary
 
 #. The variable ``ldap_role`` must be added to the
    ``masterDirectoryServers`` group, and can assume the values
@@ -114,10 +114,10 @@ You need also to add variable to existing groups.
 
       #masterDirectoryServers group
       [masterDirectoryServers]
-      svc1.example.com ldap_role=master
-      svc2.example.com ldap_role=mmr
+      srv1.example.com ldap_role=master
+      srv2.example.com ldap_role=mmr
 
-.. todo:: This shoud be |ur|
+   .. todo:: The "for HA" below should be "for |ur|"
 
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
    will be moved from Postgres server to servers in
@@ -128,8 +128,8 @@ You need also to add variable to existing groups.
 
       #dbsConnectorServers group
       [dbsConnectorServers]
-      mbox1.example.com
-      mbox2.example.com
+      srv8.example.com
+      srv9.example.com
 
 The complete inventory file, filled according to the directions above,
 can be seen and downloaded here.
