@@ -130,18 +130,6 @@ html_context = {
     'hubhome' : '%s' %hubhome,
 }
 
-# -- Options for Latex output ------------------------------------------------
-
-# This does not currently work, the line \Declare line must be added manually to latex source
-
-latex_elements = {
-    'preamble': r'''
-    \DeclareUnicodeCharacter{200B}{{\hskip 0pt}}
-    '''
-}
-
-sd_fontawesome_latex = True
-
 # -- Options for linkcheck output --------------------------------------------
 
 # list of URLs to ignore
