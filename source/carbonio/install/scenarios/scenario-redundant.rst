@@ -9,7 +9,8 @@ use is any infrastructure that requires scalability and redundancy.
 
 Due to the large number of Nodes (15) that compose the |product|
 infrastructure, this scenario is designed to be deployed by using the
-:ref:`scenario-rd-playbook`.
+:ref:`scenario-rd-playbook`, although you can still proceed with a
+manual installation.
 
 Remember to :ref:`configure the internal network
 <scenario-rd-network>` before starting the deployment.
