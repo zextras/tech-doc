@@ -217,27 +217,11 @@ Scenarios
    :link: scenario-rur
    :link-type: ref
 
-
-   Suitable for any large infrastructure that requires scalability,
-   redundancy, and |ur|. It can be installed using Ansible only.
-
-   +++++
-
-   **Nodes: (up to) 17**
-
-   |supp| Mail/calendar/contacts
-
-   |supp| Files/docs/preview
-
-   |supp| Videochat
-
-   |supp| Backup
-
-   |supp| High Avaliability ready
-
-   |supp| Cluster, Files and Docs service redundancy
+   This Scenario is an extension of the Redundant Scenario, therefore
+   it encompasses all its functionalities, adding:
 
    |supp| LDAP (|ds|) master-master replica
 
    |supp| User Mail Replica
 
+   |supp| Centralised Storage
