@@ -22,9 +22,27 @@ Differences with Scenario Redundant
           * this section is needed
           * there's something missing
 
-Besides |ur|, there is one main difference in this scenario compared
-to the starting Scenario Redundant: This scenario includes a
-**Master/Master** |ds| setup, while the Scenario Redundant a
-*Master/Slave*. After you complete the deployment of this scenario,
-you will see two Master |ds|\s, one on srv1.example.com and the second
-on srv3.example.com, and one Slave |ds| on srv2.example.com
+These are the main differences in this Scenario, compared to the
+starting Scenario Redundant.
+
+
+.. rubric:: Master/Master |ds|
+
+This scenario includes a **Master/Master** |ds| setup, while the
+Scenario Redundant a *Master/Slave*. After you complete the deployment
+of this scenario, you will see two Master |ds|\s, one on
+srv1.example.com and the second on srv3.example.com, and one Slave
+|ds| on srv2.example.com
+
+.. rubric:: User Mail Replica
+
+|ur| is a replication mechanism that allows the Mailstore service to become
+*stateless* and keep multiple instances of a mailbox.
+
+.. seealso:: The |ur| functionality, along with various commands to
+   manage and interact with it by CLI, is described in Section :ref:`activereplica`
+
+.. rubric:: Centralised Storage
+
+This is a requirement for the |ur|, to make sure that all updates to
+the mailboxes remain consistent across all Mailstores.
