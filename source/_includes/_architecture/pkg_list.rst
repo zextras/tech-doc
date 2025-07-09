@@ -4,7 +4,7 @@ Below is the list of Carbonio packages collected by component and updated to ver
 
    Click each Component section below to see the packages that make it up.
 
-.. dropdown:: **Mesh and Directory**
+.. dropdown:: **Mesh & Directory**
 
    - **service-discover-server**: `service-discover-server` *(0.2.1)*
    - **carbonio-directory-server**: `carbonio-directory-server` *(4.22.0)*
