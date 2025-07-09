@@ -40,15 +40,8 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`rur-conf` shows how to install the |ur| Components and
    configure them
 
-#. :ref:`rur-promotion` introduces **habeat**, |product|'s python tool
-   to ensure automatic promotion of a Mesh Service in case the master
-   becomes unavailable
-
 #. :ref:`rur-storage` guides you in the creation of a centralised MinIO
    or S3 bucket
-
-#. :ref:`rur-replica` provides a scripts to activate a Directory
-   Replica
 
 #. :ref:`rur-checks-scenario` contains a number of commands to check
    the status of |ur| and related services.
@@ -345,6 +338,4 @@ respectively. These will be used in the remainder of this section.
    redundantwithusermailreplica/standard-installation.rst
    redundantwithusermailreplica/ur-configuration.rst
    redundantwithusermailreplica/object-storage.rst
-   redundantwithusermailreplica/account-promotion.rst
-   redundantwithusermailreplica/activate-replica.rst
    redundantwithusermailreplica/checks-status.rst
