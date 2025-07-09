@@ -25,6 +25,8 @@ the procedure.
 Procedure Overview
 ==================
 
+.. todo:: to be rewritten when the procedure is complete.
+
 The procedure to install this scenario is long and complex and it is
 divided into various parts for simplicity and to allow to follow it
 easily. In the remainder of this page you find a scenario overview,
@@ -71,7 +73,7 @@ centralised S3 storage.
 The following table summarises the Node distribution and redundancy
 requirements for each Carbonio service in a 5-node |ur| setup:
 
-.. rubric:: TODO (table headers)
+.. todo:: In table headers, rename "Not full HA" and "HA Nodes" 
 
 .. _tab-rur-nodes:
 
@@ -123,7 +125,7 @@ Requirements
 Detailed Node Specifications
 ----------------------------
 
-.. rubric:: TODO (HA in column VM Count)
+.. todo::  Rename HA in column *VM Count*
 
 To meet |rur| requirements, each Node should meet the following
 recommended specifications:
