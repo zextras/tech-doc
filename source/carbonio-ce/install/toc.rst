@@ -14,9 +14,6 @@ section.
    .. toctree::
       :maxdepth: 1
 
-      architecture
-      intro-systemd
       requirements
       preliminary
-      components
       scenarios
