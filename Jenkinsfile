@@ -31,7 +31,9 @@ pipeline {
       steps {
         container('python-312') {
           sh '''
+
 // git fetch --unshallow
+
 python3 -m venv .
 . bin/activate
 pip3 install -r requirements.txt
