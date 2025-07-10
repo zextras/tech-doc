@@ -48,14 +48,27 @@ The content is organised in multiple parts:
 
          upgrade/toc
 
+   .. grid-item-card:: Architecture
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: architecture/toc
+
+      Architecture of |product| and Components description and installation
+
+      .. toctree::
+         :hidden:
+
+         architecture/toc
+
    .. grid-item-card:: Install
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: doc
       :link: install/toc
 
-      Information on |product| and its architecture, installation and
-      upgrade instructions, security tips
+      Information on |product| and its installation, requirements and some
+      pre-cooked installation Scenarios
 
       .. toctree::
          :hidden:
