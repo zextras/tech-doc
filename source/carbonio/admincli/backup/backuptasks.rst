@@ -840,14 +840,7 @@ A *legal hold* is a functionality that allows to preserve and protect
 electronic data (for example e-mails and documents) for potential use
 in legal proceedings or investigations.
 
-In the context of |product|, the legal hold is a mechanism that allows
-to preserve an existent account in a state that can not be
-modified. This means that, as soon as an account is put in a legal
-hold state, nobody can access it and no change can be made to any
-items, folders, documents, or metadata. Moreover, an infinite
-retention time is set on the account that will override any other
-retention time defined and a *Restore on New Account* can be carried
-out by the Administrator for any need.
+In the context of Carbonio, the Legal Hold is a mechanism that ensures the integrity and retention of backup data for a selected account. When an account is placed under Legal Hold, the account itself remains fully operational—users can continue accessing and modifying it as usual. However, all backup states will be kept forever and preserved indefinitely, overriding any standard retention policies. This guarantees that any data present in the backup, including items that may later be modified or deleted in the live account, remain available. Additionally, administrators can perform a Restore on New Account to recreate the mailbox in its entirety, including all messages—even those that were subsequently deleted by the user.
 
 |product| makes available a set of CLI commands to manage the legal
 host status of the accounts: :command:`carbonio backup legalHold {get
