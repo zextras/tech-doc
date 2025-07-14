@@ -1,6 +1,4 @@
-
-During the upgrade of PostgreSQL, an error might be raised in case the
-existent databases have been created with older version of **libc**::
+You may encounter this error during the upgrade to PostgreSQL 16 if the existing databases were originally created with PostgreSQL 12 using an older version of the ``libc`` library. This can happen either directly during the PostgreSQL upgrade, or later - after a seemingly successful upgrade - when you upgrade the operating system from Ubuntu 20.04 to Ubuntu 22.04::
 
   2024-03-19 12:28:14.209 UTC [909825] HINT:  Rebuild all objects in this database that use the default collation and run ALTER DATABASE activesync REFRESH COLLATION VERSION, or build PostgreSQL with the right library version.
   2024-03-19 12:28:19.669 UTC [909915] WARNING:  database "abq" has a collation version mismatch
