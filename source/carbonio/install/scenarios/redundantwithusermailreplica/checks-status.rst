@@ -44,10 +44,7 @@ These are the commands to be issued as the |zu|.
 
       zextras$ carbonio config get global brokers
 
-.. todo:: changing this to **Check Carbonio User Mail Replica services
-   status** will make the associated command quite awkward
-   
-#. Check Carbonio HA services status
+#. Check status of service
 
    .. code:: console
 

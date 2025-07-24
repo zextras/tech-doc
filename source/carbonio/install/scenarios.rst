@@ -210,7 +210,7 @@ Scenarios
 
       |unsup| User Mail Replica
 
-.. todo:: verify features and data of scenario below
+*****
 
 .. card:: Scenario *Redundant with User Mail Replica*
    :class-header: sd-font-weight-bold sd-fs-5

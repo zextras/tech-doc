@@ -117,13 +117,10 @@ You need also to add variable to existing groups.
       srv1.example.com ldap_role=master
       srv2.example.com ldap_role=mmr
 
-   .. todo:: The "for HA" below should be "for |ur|"
-
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
-   will be moved from Postgres server to servers in
-   ``[dbsConnectorServers]`` for HA. In our scenario we move them to
-   the Node hosting the Mailstore & Provisioning Component:
-
+   will be moved from the Postgres Node to both Mailstore &
+   Provisioning Nodes, because at least one of them must always be
+   available at anytime and provide |ur|.
    .. code:: console
 
       #dbsConnectorServers group
@@ -164,10 +161,14 @@ PstgreSQL replica
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
+.. todo:: we need to wait for changes in the ansible playbook. While
+   the question has been rephrased and greenlit, the text of the
+   answers has not yet been decided.
+
 Before starting the HAProxy installation, note that during the
 installation you will be prompted with the following question::
 
-  Is this a full HA installation? (yes/no)
+  Do you want to enable MMR LDAP replica? (yes/no)
    
   - If you answer `yes`, HAProxy will be installed on all servers except the LDAP servers.
   - If you answer `no`, HAProxy will only be installed on the `dbconnectors`.

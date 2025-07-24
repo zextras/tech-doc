@@ -1,11 +1,8 @@
 .. _rur-install:
 
-=========================
- |carbonio| Installation
-=========================
-
-.. todo:: what about renaming this page *Preliminaries and
-   Installation*? This way we could add some more advice about this scenario
+===========================================
+ |carbonio| Preliminaries and Installation
+===========================================
 
 The |ur| setup for |product| builds on the **Scenario
 Redundant**. Therefore, it is essential to have a working installation
@@ -17,14 +14,8 @@ section, :ref:`rur-conf`.
 Differences with Scenario Redundant
 ===================================
 
-.. todo:: Check if:
-
-          * this section is needed
-          * there's something missing
-
 These are the main differences in this Scenario, compared to the
 starting Scenario Redundant.
-
 
 .. rubric:: Master/Master |ds|
 
@@ -46,3 +37,8 @@ srv1.example.com and the second on srv3.example.com, and one Slave
 
 This is a requirement for the |ur|, to make sure that all updates to
 the mailboxes remain consistent across all Mailstores.
+
+.. rubric:: PostgreSQL HA
+
+Thanks to ``patroni``, this scenario features a replicated PostgreSQL
+in High Availability.
