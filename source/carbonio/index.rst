@@ -20,21 +20,6 @@ The content is organised in multiple parts:
 .. grid:: 1 2 2 3
    :gutter: 3
 
-
-   .. grid-item-card:: HA Renaming TODO list
-      :columns: 12 12 12 12
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: todo
-
-      Todo list of all changes still required by the renaming of HA to
-      User Mail Replica and of Scenario HA to Scenario Redundant with User Mail Replica
-
-      .. toctree::
-         :hidden:
-
-         todo
-
    .. grid-item-card:: Introduction
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -242,12 +227,6 @@ The content is organised in multiple parts:
    .. grid-item-card::  Command Line Reference
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: cli_commands/toc
 
       List of all |product| CLI Commands
 
-      .. toctree::
-         :hidden:
-
-         cli_commands/toc

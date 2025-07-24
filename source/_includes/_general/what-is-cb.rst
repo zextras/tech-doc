@@ -14,8 +14,6 @@ including *robust backup*, *archiving*, *legal-hold* capabilities, and tools
 for *regulatory compliance*, ensure effective data management and
 sovereignty.
 
-.. todo:: active replication is too generic
-
 By leveraging the dynamic |product| Mesh technology, administrators can
 easily adapt the platform to meet both user and organisational needs,
 while also enabling horizontal and vertical scaling to accommodate

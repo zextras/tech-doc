@@ -161,9 +161,9 @@ PstgreSQL replica
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
-.. todo:: we need to wait for changes in the ansible playbook. While
-   the question has been rephrased and greenlit, the text of the
-   answers has not yet been decided.
+.. we need to wait for changes in the ansible playbook. While the
+   question has been rephrased and greenlit, the text of the answers
+   has not yet been decided.
 
 Before starting the HAProxy installation, note that during the
 installation you will be prompted with the following question::
