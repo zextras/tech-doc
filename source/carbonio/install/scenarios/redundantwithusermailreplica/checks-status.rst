@@ -1,10 +1,10 @@
-.. _ha-checks:
+.. _rur-checks:
 
-Check HA Services Status
-========================
+Check |ur| Services Status
+==========================
 
 This section is a collection of commands that can be used to verify
-the status of |product|\'s HA and related services.
+the status of |product|\'s |ur| and related services.
 
 Depending on the type of check, commands should be executed as either
 the |ru| or |zu|. All commands should be issued on the Node where the
@@ -44,13 +44,13 @@ These are the commands to be issued as the |zu|.
 
       zextras$ carbonio config get global brokers
 
-#. Check Carbonio HA services status
+#. Check status of service
 
    .. code:: console
 
       zextras$ carbonio ha getServices
 
-#. Check LDAP Multi Master status check
+#. Check LDAP (|ds|) Multi Master status check
 
    .. code:: console
 

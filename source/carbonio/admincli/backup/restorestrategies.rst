@@ -25,8 +25,8 @@ restore, and the purpose. Some examples of these scenarios are:
 
 In all these cases, data in a mailbox can be recovered and, depending
 on the destination of the recovered data, restore strategies are
-grouped in **two** categories: recovery on the same server—​or same
-infrastructure—​and recovery on a different infrastructure.
+grouped in **two** categories: recovery on the same server or
+infrastructure ​and recovery on a different infrastructure.
 
 Same infrastructure restore
    These strategies are meant to be used when you need to restore only
@@ -308,7 +308,7 @@ called ``unknown_XX``.
 
    2. Suppose you have a folder called **Conference 2021**, then delete all
       of the item it contains and rename it to **Conference 2022**. You
-      later—​on 15th of November 2021—​carry out an Undelete Restore on the
+      later (e.g., on 15th of November 2021) ​carry out an Undelete Restore on the
       mailbox. All of the items and content will be restored under folder
       **Conference 2021** and tagged as ``undelete_15_11_21``.
 
@@ -373,7 +373,7 @@ External Restore
 The External Restore allow to import backups that were produced on a
 different infrastructure, which is useful for setting up a test
 environment that resembles the production environment, and for advanced
-tasks like migration—​of accounts or of whole domains—​or disaster
+tasks like migration, ​of accounts or of whole domains, ​or disaster
 recovery. Moreover, it is the only strategy for which the source server
 and the destination server could **not** be the same.
 

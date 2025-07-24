@@ -55,11 +55,11 @@ You can check the log of the timer using command
 This proves useful If the output of the previous command reports the
 status as different from ``Active: active``, like in the following sample::
    
-   ● carbonio-certbot.timer - Run Carbonio Certbot twice daily
+    carbonio-certbot.timer - Run Carbonio Certbot twice daily
      Loaded: loaded (/lib/systemd/system/carbonio-certbot.timer; disabled; vendor preset: enabled)
      Active: inactive (dead)
     Trigger: n/a
-   Triggers: ● carbonio-certbot.service
+   Triggers: carbonio-certbot.service
 
 To start an inactive timer, use command
 

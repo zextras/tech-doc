@@ -1,98 +1,79 @@
-.. _scenario-ha:
+.. _scenario-rur:
 
-=============
- Scenario HA
-=============
+================
+ Scenario |rur|
+================
 
-This section describes a |product| infrastructure which includes Components
-redundancy and |ha|. The number of required Nodes, the necessary steps,
-and the overall complexity involved require to pay attention to each
-task that needs to be carried out.
+This section describes a |product| infrastructure that builds on the
+:ref:`scenario-redundant` and adds the necessary components to provide
+Components redundancy and |ur|.
+
+The number of required Nodes, the necessary steps, and the overall
+complexity involved require to pay attention to each task that needs
+to be carried out.
 
 The installation of this scenario can be carried out **using Ansible
-only**, so if you do not have it installed yet please refer to
-Section :ref:`ansible-setup`: there you will find directions for its setup.
+only**, so if you do not have it installed yet please refer to Section
+:ref:`ansible-setup`: there you will find directions for its setup.
 
 This section covers the required components to set up the scenario,
 including load balancers, a Kafka cluster, a PostgreSQL cluster, an
-object storage system like Minio or S3, and a multi-master Carbonio
-Directory Server. A step-by-step approach to setting up VMs,
-configuring centralised storage, and deploying HA, will guide you in
+Object Storage system like Minio or S3, and a multi-master Carbonio
+Directory Server. A step-by-step approach to setting up the Nodes,
+configuring centralised storage, and deploying |ur|, will guide you in
 the procedure.
 
-.. _ha-procedure:
+.. _rur-procedure:
 
 Procedure Overview
 ==================
 
 The procedure to install this scenario is long and complex and it is
 divided into various parts for simplicity and to allow to follow it
-easily. In the remainder of this page you find a scenario overview,
+easily.
+In the remainder of this page you find a scenario overview,
 requirements, and pre-installation tasks.
 
 The rest of the procedure consists of a dedicated, self-contained
 guide to one of the parts required to successfully complete the
 procedure and use the |product| infrastructure. In more details:
 
-#. :ref:`ha-install` describes how to install the scenario proposed in
-   this page.
-   
-#. :ref:`ha-conf` shows how to install the |ha| components and
-   configure them to introduce HA in the scenario
+#. :ref:`rur-install` describes how to install the scenario proposed in
+   this page
 
-#. :ref:`ha_promotion` introduces **habeat**, |product|'s python tool
-   to ensure automatic promotion of a Mesh Service in case the master
-   becomes unavailable
+#. :ref:`rur-conf` shows how to install the |ur| Components and
+   configure them
 
-#. :ref:`ha-storage` guides you in the creation of a centralised MinIO
+#. :ref:`rur-storage` guides you in the creation of a centralised MinIO
    or S3 bucket
 
-#. :ref:`ha-replica` provides a scripts to activate a Directory
-   Replica
-
-#. :ref:`ha-checks-scenario` contains a number of commands to check the status
-   of HA and related services.
+#. :ref:`rur-checks-scenario` contains a number of commands to check
+   the status of |ur| and related services.
 
 .. note:: The parts must be executed in their entirety and in the
    order given to successfully complete the procedure and start using
    the |product| infrastructure in this scenario.
 
 We strongly suggest to look through the whole procedure to become
-acquainted with the procedure.
+acquainted with it and make sure you have no doubts before actually
+starting the installation.
 
-.. _ha-scenario:
+.. _rur-scenario-overview:
 
 Scenario Overview
 =================
 
-To install a |ha| |carbonio| infrastructure, you need to ensure
-redundancy for all critical services.
+To install Scenario |rur| in a |carbonio| infrastructure, you need to
+ensure redundancy for all critical services.
 
-In a Carbonio HA setup, each Component except Monitoring is deployed
-redundantly across multiple nodes. This setup guarantees continuous
-service availability, even in the event of individual node
+In a Carbonio |ur| setup, each Component except Monitoring is deployed
+redundantly across multiple Nodes. This setup guarantees continuous
+service availability, even in the event of individual Node
 failures. Below is the recommended Node distribution and configuration
 for each service to achieve redundancy and optimal performance, with
 centralised S3 storage.
 
-The following table summarises the Node distribution and redundancy
-requirements for each Carbonio service in a 5-node HA setup:
-
-.. _tab-ha-nodes:
-
-.. csv-table:: The Node distribution in the HA scenario described here.
-   :header: "**Service/Component**", **Primary Nodes**", "**Secondary** (Not full HA) **Nodes**", "**HA Nodes**", "**Total Nodes**"
-   :widths: 36, 16, 16, 16, 16
-
-   "**MTA**", "1", "", "1", "2"
-   "**Proxy**", "1", "", "1", "2"
-   "**Mailstore & Provisioning**", "1", "", "1", "2"
-   "**Cluster**", "3", "", "N/A", "3"
-   "**Files, Preview, and Docs**", "1", "", "1", "2"
-   "**Video**", "1", "1", "N/A", "2"
-   "**Chats**", "1", "1", "N/A", "2"
-
-Each service, except for the Cluster service, has a mirrored HA node,
+Each service, except for the Cluster service, has a mirrored node,
 creating a reliable failover configuration. The **(Core) Cluster
 service** provides all the functionalities of a *Core Node* (Database,
 Mesh Server, and Directory Service) plus the Kafka and Zookeeper
@@ -100,16 +81,16 @@ software, which provide high-reliability services used by |product|:
 stream-processing and distributed synchronisation of configuration
 information, respectively. The configuration of the Cluster service
 includes three nodes to maintain quorum and prevent split-brain
-scenarios, ensuring stability in an HA environment.
+scenarios, ensuring stability in the environment.
 
-.. _ha-req:
+.. _rur-req:
 
 Requirements
 ============
 
-- Each node must satisfy the overall :ref:`software-requirements` and :ref:`hw-requirements`
+- Each Node must satisfy the overall :ref:`software-requirements` and :ref:`hw-requirements`
 
-- To implement an HA |carbonio| infrastructure, load-balancers are required
+- To implement a |rur| |carbonio| infrastructure, load-balancers are required
   in front of services that should be always available. Load-balancers are
   not included in |product|: an Open Source or commercial balancer can
   be used, with the requirement that it must support per-port TCP balancing.
@@ -121,98 +102,80 @@ Requirements
 
 - An object storage like MinIO or S3
 
-- An additional carbonio-directory-server node configured in *MultiMaster* mode (**mmr**)
+- An additional carbonio-directory-server Node configured in *MultiMaster* mode (**mmr**)
 
-.. _ha-node-spec:
+.. _rur-Node-spec:
 
 Detailed Node Specifications
 ----------------------------
 
-To meet HA requirements, each Node should meet the following
+To meet |rur| requirements, each Component should meet the following
 recommended specifications:
 
-.. list-table::
-   :header-rows: 1
-   :widths: 15 25 10 30 40
+.. csv-table::
+   :header: "Component", "Purpose", "Configuration"
+   :widths: 20 40 40
 
-   * - Nodes
-     - Component
-     - VM Count
-     - Purpose
-     - Configuration
-   * - MTA
-     - Mail Transfer Agent (MTA)
-     - 2 (1 primary + 1 HA)
-     - Ensures continuous mail transfer and reception, preventing downtime
-     - Both nodes are identically configured to handle failover, so if
-       one MTA node experiences an issue, the other seamlessly takes
-       over to maintain service continuity
-   * - Proxy
-     - Proxy
-     - 2 (1 primary + 1 HA)
-     - Manages incoming and outgoing client requests, providing
-       customers with consistent access to mail services
-     - Identical setup across both nodes enables a smooth transition
-       if the primary node fails, ensuring uninterrupted access
-   * - Mailstore
-     - Mailstore
-     - 2 (1 primary + 1 HA)
-     - Responsible for mailbox storage and retrieval, utilising
-       centralised S3 storage to ensure data availability
-     - Both nodes share S3 storage, ensuring real-time data
-       redundancy, so customer data is always accessible
-   * - Cluster
-     - Core Cluster Services (Postgres, Service Mesh Server, Directory Service, Kafka, and Zookeeper)
-     - 3 (for quorum maintenance)
-     - Manages core functions for cluster maintenance, including high
-       availability and distributed consensus
-     - A three-node setup prevents split-brain scenarios, ensuring
-       uninterrupted services by maintaining quorum even if one node
-       goes down
-   * - File/Preview/Docs
-     - File, Preview, Tasks and Document Management
-     - 2 (1 primary + 1 HA)
-     - Supports document handling, previews, and other file-related functions
-     - Redundant nodes ensure that document services are always
-       available, minimizing any impact from node failure
-   * - Video
-     - Video Services
-     - 2 (1 primary + 1 secondary)
-     - Supports video functionality for user communication
-     - Both nodes provide redundancy of video services
-   * - Chats
-     - Chats
-     - 2 (1 primary + 1 secondary)
-     - Supports chat functionality for user communication
-     - Both nodes provide redundancy of chat services
-   
-.. warning:: Currently, the carbonio-message-broker and carbonio-message-dispatcher services
-             are not yet able to run in High Availability mode.
+   "Mail Transfer Agent (MTA)", "Ensures continuous mail transfer and
+   reception, preventing downtime", "Both Nodes are identically
+   configured to handle failover, so if one MTA Node experiences an
+   issue, the other seamlessly takes over to maintain service
+   continuity"
+   "Proxy", "Manages incoming and outgoing client requests, providing
+   customers with consistent access to mail services", "Identical
+   setup across both Nodes enables a smooth transition if the primary
+   Node fails, ensuring uninterrupted access"
+   "Mailstore", "Responsible for mailbox storage and retrieval,
+   utilising centralised S3 storage to ensure continuous data
+   availability", "Both Nodes share S3 storage, ensuring real-time
+   data redundancy, so customer data is always accessible"
+   "Core Cluster Services [1]_", "Manage core functions for cluster
+   maintenance, including high availability and distributed
+   consensus", "A three-Node setup prevents split-brain scenarios,
+   ensuring uninterrupted services by maintaining quorum even if one
+   Node goes down"
+   "Files, Preview, Tasks, and Docs", "Supports document handling,
+   previews, and other file-related functions", "Redundant Nodes
+   ensure that document services are always available, minimizing any
+   impact from Node failure"
+   "Video Services", "Supports video functionality for user
+   communication", "Both Nodes provide redundancy of video services"
+   "Chats", "Supports chat functionality for communication between
+   users", "Both Nodes provide redundancy of chat services"
 
-.. _ha-storage-req:
+.. [1] Core Cluster Services are Postgres, Service Mesh Server,
+   Directory Service, Kafka, and Zookeeper
+
+The following software installed on a |product| infrastructure do not
+support redundancy, therefore only a single instance of them can be
+installed and run at a time within the infrastructure:
+``carbonio-message-broker`` and ``carbonio-message-dispatcher`` are
+used internally by |product|, while the :command:`carbonio-certbot`
+command is used to generate and renew the Let's Encrypt certificates.
+
+.. _rur-storage-req:
 
 Centralised S3 Storage Requirements
 -----------------------------------
 
 -  **Storage Performance**: A high-performance, centralized S3 storage
-   solution is crucial for Carbonio Mailstore nodes. The centralized
+   solution is crucial for Carbonio Mailstore Nodes. The centralized
    storage must be fast enough to handle real-time data retrieval and
-   storage across nodes, ensuring that data access times remain
+   storage across Nodes, ensuring that data access times remain
    consistent and efficient.
 
 -  **Shared Access**: The S3 storage must be accessible to both Carbonio
-   Mailstore nodes, facilitating redundancy in data storage and
-   minimizing potential data loss in the event of a node failure.
+   Mailstore Nodes, facilitating redundancy in data storage and
+   minimizing potential data loss in the event of a Node failure.
 
-.. _ha-checks-scenario:
+.. _rur-checks-scenario:
 
 Pre-installation checks
 =======================
 
-
 The following is a list of essential pre-installation checks that you
 should carry out to ensure your setup is properly configured for a
-|product| |ha| installation:
+|product| |rur| installation:
 
 After all the software and hardware requirements are satisfied, here
 are some tasks to carry out before attempting the installation and a
@@ -298,7 +261,7 @@ respectively. These will be used in the remainder of this section.
      the Primary storage mounted on :file:`/opt/`
 
    ..
-      * Cluster service (see :ref:`ha-scenario`) must have the root
+      * Cluster service (see :ref:`rur-scenario`) must have the root
         partition :file:`/` of the size specified in the sizing document
         shared with partner or customer::
 
@@ -338,9 +301,7 @@ respectively. These will be used in the remainder of this section.
    :hidden:
    :glob:
 
-   ha/standard-installation.rst
-   ha/ha-configuration.rst
-   ha/object-storage.rst
-   ha/account-promotion.rst
-   ha/activate-replica.rst
-   ha/checks-status.rst
+   redundantwithusermailreplica/standard-installation.rst
+   redundantwithusermailreplica/ur-configuration.rst
+   redundantwithusermailreplica/object-storage.rst
+   redundantwithusermailreplica/checks-status.rst

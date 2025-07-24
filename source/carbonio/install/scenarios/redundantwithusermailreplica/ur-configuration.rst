@@ -1,13 +1,13 @@
-.. _ha-conf:
+.. _rur-conf:
 
-Carbonio HA Configuration
-=========================
+Carbonio |ur| Configuration
+===========================
 
-The main part of the installation is the set up of the HA
+The main part of the installation is the set up of the |ur|
 infrastructure, which will be built on the scenario described in the
-:ref:`previous section <ha-install>`.
+:ref:`previous section <rur-install>`.
 
-In order to complete the HA configuration, you need access to the
+In order to complete the |ur| configuration, you need access to the
 Ansible's Control Node and of the following items:
 
 #. The inventory file you used in previous section, which you must
@@ -38,13 +38,13 @@ successfully, you should have the following inventory files:
 
 -  inventory_consulpassword
 
-To configure the inventory for HA installation, you will need to add
+To configure the inventory for |rur| installation, you will need to add
 new groups and add specific variables to the :file:`inventory`
-file. Please read the following advises if you plan to add the HA
+file. Please read the following advises if you plan to add the |ur|
 infrastructure to different Node than the one we will use in the
 remainder of the scenario. 
 
-.. card:: Guidelines for Components in HA Configuration
+.. card:: Guidelines for Components in |ur| Configuration
 
    The initial Components assigned during the standard installation (i.e.,
    as **master** for LDAP or **primary** for PostgreSQL) should remain
@@ -58,10 +58,10 @@ remainder of the scenario.
 
    - If you plan to add extra master servers, configure them with
      roles **mmr** for Directory Server and **secondary** for
-     PostgreSQL in the HA inventory file.
+     PostgreSQL in the Ansible inventory file.
 
    This approach ensures that the pre-existing configurations and
-   initializations remain stable and compatible with the HA
+   initializations remain stable and compatible with the |ur|
    deployment.
 
 The two new groups to add at the bottom of the file are:
@@ -75,9 +75,9 @@ The two new groups to add at the bottom of the file are:
 
       #kafka group
       [kafka]
-      svc1.example.com broker_id=1
-      svc2.example.com broker_id=2
-      svc3.example.com broker_id=3
+      srv1.example.com broker_id=1
+      srv2.example.com broker_id=2
+      srv3.example.com broker_id=3
 
 #. ``zookeeper_servers`` group, which will point to the Nodes where
    :command:`zookeper` will be installed: these are the three Cluster
@@ -88,9 +88,9 @@ The two new groups to add at the bottom of the file are:
 
       #zookeeper_servers group
       [zookeeper_servers]
-      svc1.example.com zookeeper_id=1
-      svc2.example.com zookeeper_id=2
-      svc3.example.com zookeeper_id=3
+      srv1.example.com zookeeper_id=1
+      srv2.example.com zookeeper_id=2
+      srv3.example.com zookeeper_id=3
 
 You need also to add variable to existing groups.
 
@@ -103,8 +103,8 @@ You need also to add variable to existing groups.
 
       #postgresServers group
       [postgresServers]
-      svc1.example.com postgres_version=16 patroni_role=primary
-      svc2.example.com postgres_version=16 patroni_role=secondary
+      srv1.example.com postgres_version=16 patroni_role=primary
+      srv2.example.com postgres_version=16 patroni_role=secondary
 
 #. The variable ``ldap_role`` must be added to the
    ``masterDirectoryServers`` group, and can assume the values
@@ -114,30 +114,29 @@ You need also to add variable to existing groups.
 
       #masterDirectoryServers group
       [masterDirectoryServers]
-      svc1.example.com ldap_role=master
-      svc2.example.com ldap_role=mmr
+      srv1.example.com ldap_role=master
+      srv2.example.com ldap_role=mmr
 
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
-   will be moved from Postgres server to servers in
-   ``[dbsConnectorServers]`` for HA. In our scenario we move them to
-   the Node hosting the Mailstore & Provisioning Component:
-
+   will be moved from the Postgres Node to both Mailstore &
+   Provisioning Nodes, because at least one of them must always be
+   available at anytime and provide |ur|.
    .. code:: console
 
       #dbsConnectorServers group
       [dbsConnectorServers]
-      mbox1.example.com
-      mbox2.example.com
+      srv8.example.com
+      srv9.example.com
 
 The complete inventory file, filled according to the directions above,
 can be seen and downloaded here.
 
-.. dropdown:: Inventory - "HA" Scenario
+.. dropdown:: Inventory - |rur| Scenario
    :open:
 
-   :download:`Download_inventory </playbook/carbonio-inventory-ha-complete>`
+   :download:`Download_inventory </playbook/carbonio-inventory-rur-complete>`
 
-   .. literalinclude:: /playbook/carbonio-inventory-ha-complete
+   .. literalinclude:: /playbook/carbonio-inventory-rur-complete
 
 Install Zookeper and Kafka
 --------------------------
@@ -162,10 +161,14 @@ PstgreSQL replica
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
+.. we need to wait for changes in the ansible playbook. While the
+   question has been rephrased and greenlit, the text of the answers
+   has not yet been decided.
+
 Before starting the HAProxy installation, note that during the
 installation you will be prompted with the following question::
 
-  Is this a full HA installation? (yes/no)
+  Do you want to enable MMR LDAP replica? (yes/no)
    
   - If you answer `yes`, HAProxy will be installed on all servers except the LDAP servers.
   - If you answer `no`, HAProxy will only be installed on the `dbconnectors`.
@@ -194,7 +197,7 @@ collection:
 Promote Multi Master LDAP
 -------------------------
 
-It is needed only if replica is installed
+It is needed only if Directory Replica is installed
 
 .. code:: console
 

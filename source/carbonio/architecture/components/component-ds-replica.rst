@@ -12,12 +12,13 @@ following requirements are satisfied.
 
 * A |product| infrastructure is already operating correctly
 
-* A new Node is available, on which to install the Replica, which
+* A new Node is available, on which to install the Directory Replica, which
   satisfies the :ref:`carbonio-requirements` and on which the
   :ref:`preliminary` have already been executed
 
-  .. note:: You can also install the Replica on an existent Node, but
-     not on the same Node which features the Primary Directory Component.
+  .. note:: You can also install the Directory Replica on an existent
+     Node, but not on the same Node which features the Master |ds|
+     Component.
 
 * Pay attention that some commands **must be executed** as the
   ``zextras`` user, while other as the ``root`` user
@@ -26,8 +27,8 @@ following requirements are satisfied.
   `ds-replica.example.com` whenever necessary. Remember to replace it
   with the name you give.
 
-* Have CLI access to the Main and Replica, as you need to execute
-  commands on both servers
+* Have CLI access to the Master |ds| and the Directory Replica, as you
+  need to execute commands on both servers
 
 .. _replica-installation:
 
@@ -43,10 +44,10 @@ Configuration
 ~~~~~~~~~~~~~
 
 Configuring the Directory Replica server requires a few steps. Make
-sure to execute the commands on the Master or Replica, as shown in each
-step description.
+sure to execute the commands on the Master or Directory Replica, as
+shown in each step description.
 
-.. card:: Step 1: Activate replica on Master
+.. card:: Step 1: Activate Directory Replica on Master
 
    Activate the replica by executing as the  ``zextras`` user
 
@@ -67,7 +68,7 @@ step description.
       services (replication, postfix, amavis, and nginx), retrieve
       also the following passwords, using :command:`zmlocalconfig`:
       ``ldap_replication_password``, ``ldap_postfix_password``
-      `ldap_amavis_password``, ``ldap_nginx_password``.
+      ``ldap_amavis_password``, ``ldap_nginx_password``.
 
 .. card:: Step 3: Bootstrap |product| on Directory Replica
 
@@ -186,9 +187,9 @@ with a few commands on the **Mesh & Directory**.
 
    If you plan to install multiple Directory Replicas, you can install
    all of them and then execute the above-mentioned command once for
-   all Replicas, making sure that their hostnames precede the **Mesh
-   and Directory hostname**. For example, provided you installed two
-   Replica Directory Servers on ``ds1-replica.example.com`` and
+   all Directory Replicas, making sure that their hostnames precede
+   the **Mesh and Directory hostname**. For example, provided you
+   installed two Directory Replica on ``ds1-replica.example.com`` and
    ``ldap://ds2-replica.example.com``, execute:
 
    .. code:: console

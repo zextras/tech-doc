@@ -3,8 +3,8 @@
 Event Streaming
 ===============
 
-This Component is required to enable the |carbonio| :ref:`Active Replica
-<activereplica>` feature, the foundation of High Availability on
+This Component is required to enable the |carbonio|
+:ref:`activereplica` feature, the foundation of High Availability on
 |product|, and is based on Apache's *Kafka* and *ZooKeeper*, which
 must be installed together on the same Node. For better performances,
 it is strongly suggested to install both the services on a dedicated

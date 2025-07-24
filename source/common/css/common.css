@@ -238,3 +238,7 @@ button.copybtn {
    opacity: 1;
    color: var(--zx-color-flame) !important;
 }
+
+hr {
+    border: 1px solid var(--zx-color-carbon);
+}

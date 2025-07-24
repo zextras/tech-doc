@@ -9,7 +9,7 @@
 
 .. _ar-ts:
 
-Active Replica
+|ur|
 ==============================
 
 When you set up :ref:`activereplica`, the following commands can prove

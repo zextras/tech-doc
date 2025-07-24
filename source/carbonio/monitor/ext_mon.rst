@@ -1,4 +1,4 @@
-Ports and paths useful for monitoring
+Ports And Paths Useful For Monitoring
 =====================================
 
 Effective monitoring is essential for maintaining the stability, security,
@@ -106,7 +106,7 @@ to provide a comprehensive monitoring strategy.
 .. topic:: Component: Event streaming and other HA services
 
 
-    With Active Replica feature enabled the following are also necessary
+    With |ur| feature enabled the following are also necessary
 
     **Kafka**
 

@@ -1,4 +1,3 @@
-
 .. _carbonio_auth:
 
 ============
@@ -47,10 +46,10 @@ Supported Authentication Methods
    .. grid-item-card:: Self Service Credentials Management
       :columns: 12 12 6 6
 
-      Self-service credential management allows every user to create new
-      passwords and QR codes for third-parties—​for example team members,
-      personal assistants—​accessing her/his email account and |Carbonio|
-      Applications from mobile devices.
+      Self-service credential management allows every user to create
+      new passwords and QR codes for third-parties, for example team
+      members or personal assistants, ​accessing their e-mail account
+      and |Carbonio| Applications from mobile devices.
 
       QR Codes in particular can be used to access Mobile Apps, currently
       |team| and |file|.
