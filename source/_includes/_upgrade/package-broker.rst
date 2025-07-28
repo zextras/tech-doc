@@ -1,84 +1,132 @@
 .. _broker-pkg:
 
-.. card:: Installation of package :file:`carbonio-message-broker`
+If you are upgrading from **24.9** versions or older, make sure
+that the :file:`carbonio-message-broker` package is installed on
+the :ref:`component-mesh-install` Node.
 
-      If you are upgrading from **24.9** versions or older, make sure
-      that the :file:`carbonio-message-broker` package is installed on
-      the :ref:`component-mesh-install` Node.
+This situation was previously required by the
+:ref:`component-wsc-install`  Component, where it was installed, but
+now is used by the whole |product|.
 
-      This situation was previously required by the
-      :ref:`component-wsc-install`  Component, where it was installed, but
-      now is used by the whole |product|.
+In case you already installed |WSC|, remove the
+:file:`carbonio-message-broker` from the |wsc| Node, then
+install it on the **Mesh & Directory Node**.
 
-      In case you already installed |WSC|, remove the
-      :file:`carbonio-message-broker` from the |wsc| Node, then
-      install it on the **Mesh & Directory Node**.
+If you never installed |wsc|, make sure you install this package
+on the **Mesh & Directory Node**.
 
-      If you never installed |wsc|, make sure you install this package
-      on the **Mesh & Directory Node**.
+To verify if the package is installed, execute the following
+command on the |wsc| (if installed) and the Mesh & Directory
+Node.
 
-      To verify if the package is installed, execute the following
-      command on the |wsc| (if installed) and the Mesh & Directory
-      Node.
+.. tab-set::
 
-      .. tab-set::
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+      .. code:: console
 
-            .. code:: console
+         # dpkg -l carbonio-message-broker
 
-               # dpkg -l carbonio-message-broker
+      The output should be (version may vary)::
 
-            The output should be (version may vary)::
+        ii  carbonio-message-broker 0.2.0-1jammy amd64   Carbonio message broker
 
-              ii  carbonio-message-broker 0.2.0-1jammy amd64   Carbonio message broker
+   .. tab-item:: RHEL 8
+      :sync: rhel8
 
-         .. tab-item:: RHEL
-            :sync: rhel
+      .. code:: console
 
-            .. code:: console
+         # rpm -q carbonio-message-broker
 
-               # rpm -q carbonio-message-broker
+      The output should be (version may vary)::
 
-            The output should be (version may vary)::
+        carbonio-message-broker-0.2.0-1.el8.x86_64
 
-              carbonio-message-broker-0.2.0-1.el8.x86_64
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
-      If the package is installed on the |wsc| Node (if you have it
-      installed), remove it.
+      .. code:: console
 
-      .. tab-set::
+         # dpkg -l carbonio-message-broker
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+      The output should be (version may vary)::
 
-            .. code:: console
+        ii  carbonio-message-broker 0.2.0-1jammy amd64   Carbonio message broker
 
-               # apt remove carbonio-message-broker
+   .. tab-item:: RHEL 9
+      :sync: rhel9
 
-         .. tab-item:: RHEL
-            :sync: rhel
+      .. code:: console
 
-            .. code:: console
+         # rpm -q carbonio-message-broker
 
-               # dnf remove carbonio-message-broker
+      The output should be (version may vary)::
 
-      If the package is **not** installed on the Mesh & Directory
-      Node, install it manually:
+        carbonio-message-broker-0.2.0-1.el8.x86_64
 
-      .. tab-set::
+If the package is installed on the |wsc| Node (if you have it
+installed), remove it.
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+.. tab-set::
 
-            .. code:: console
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
-               # apt install carbonio-message-broker
+      .. code:: console
 
-         .. tab-item:: RHEL
-            :sync: rhel
+         # apt remove carbonio-message-broker
 
-            .. code:: console
+   .. tab-item:: RHEL 8
+      :sync: rhel8
 
-               # dnf install carbonio-message-broker
+      .. code:: console
+
+         # dnf remove carbonio-message-broker
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      .. code:: console
+
+         # apt remove carbonio-message-broker
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      .. code:: console
+
+         # dnf remove carbonio-message-broker
+
+If the package is **not** installed on the Mesh & Directory
+Node, install it manually:
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      .. code:: console
+
+         # apt install carbonio-message-broker
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # dnf install carbonio-message-broker
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      .. code:: console
+
+         # apt install carbonio-message-broker
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      .. code:: console
+
+         # dnf install carbonio-message-broker

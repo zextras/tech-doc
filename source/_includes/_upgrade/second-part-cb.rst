@@ -8,15 +8,29 @@
 
       .. tab-set::
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
 
             .. code:: console
 
                # apt upgrade
 
-         .. tab-item:: RHEL
-            :sync: rhel
+         .. tab-item:: RHEL 8
+            :sync: rhel8
+
+            .. code:: console
+
+               # dnf upgrade --best --allowerasing
+
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt upgrade
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
 
             .. code:: console
 
@@ -31,31 +45,58 @@
 
       .. tab-set::
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
 
             .. code:: console
 
                # apt autoremove
 
-         .. tab-item:: RHEL
-            :sync: rhel
+         .. tab-item:: RHEL 8
+            :sync: rhel8
+
+            .. code:: console
+
+               # dnf autoremove
+
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt autoremove
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
 
             .. code:: console
 
                # dnf autoremove
 
    .. grid-item-card:: Step 6.  Register upgraded packages to |mesh|
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 7. Reboot
-      :columns: 12 12 6 6
+   .. grid-item-card:: Step 7. Bootstrap new database
+      :columns: 12 12 12 12
 
-      Once the upgrade has completed successfully, run command:
+      On the Database Node, run the following command.  You can use
+      the password of the Postgres user ``carbonio_adm`` that you
+      defined during the *Database* Component's installation, or of
+      any other administrator user created previously.
+
+      .. code:: console
+
+         # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
+   .. grid-item-card:: Step 8. Reboot
+      :columns: 12 12 12 12
+
+      Once the upgrade has completed successfully, make sure you
+      restart all services by running command:
 
       .. code:: console
 
