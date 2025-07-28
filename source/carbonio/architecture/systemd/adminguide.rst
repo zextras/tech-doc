@@ -1,3 +1,5 @@
+.. _systemd-guide:
+
 ``Systemd`` Usage Guide For Administrators
 ==========================================
 

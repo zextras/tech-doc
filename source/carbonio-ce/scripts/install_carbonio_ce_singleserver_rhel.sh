@@ -12,7 +12,7 @@ IP=$(hostname -i);
 
 echo "Carbonio will be installed on ${HOST}, using ${DOMAIN} as default domain and ${IP} as public IP"
 
-echo "Selinux will be set to ENFORCE"
+echo "Selinux will be set to PERMISSIVE"
 echo -e "SELINUX=permissive \nSELINUXTYPE=targeted \n" > /etc/selinux/config
 getenforce
 
