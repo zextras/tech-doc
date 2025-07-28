@@ -1,3 +1,5 @@
+.. _systemd-targets:
+
 Carbonio ``Systemd`` Targets
 ============================
 
