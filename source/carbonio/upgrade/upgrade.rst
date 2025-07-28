@@ -68,7 +68,9 @@ of Nodes, their load, the speed of network connection, and so on.
 
    .. include:: /_includes/_upgrade/ds.rst
 
+Remember to start the upgrade from the Node featuring the Directory
+Server, then all the other Nodes in the same order of installation.
 
-.. include:: /_includes/_upgrade/first-part-cb.rst
+.. include:: /_includes/_upgrade/first-part.rst
 
 .. include:: /_includes/_upgrade/second-part-cb.rst

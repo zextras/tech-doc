@@ -70,7 +70,10 @@ Upgrade |product|
 
    .. include:: /_includes/_upgrade/ds.rst
 
-.. include:: /_includes/_upgrade/first-part-cb.rst
+Remember to start the upgrade from the Node featuring the Directory
+Server, then all the other Nodes in the same order of installation.
+
+.. include:: /_includes/_upgrade/first-part.rst
 
 .. grid:: 1 1 1 2
    :gutter: 3
