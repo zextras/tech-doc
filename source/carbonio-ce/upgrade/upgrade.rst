@@ -75,8 +75,11 @@ Upgrade Nodes
 
    .. include:: /_includes/_upgrade/ds.rst
 
+If you are on a Multi-Server, remember to start from the Node
+featuring the Directory Server Component, then all the other Nodes in the same
+order of installation.
 
-.. include:: /_includes/_upgrade/first-part-ce.rst
+.. include:: /_includes/_upgrade/first-part.rst
 
 .. grid:: 1 1 1 2
    :gutter: 3

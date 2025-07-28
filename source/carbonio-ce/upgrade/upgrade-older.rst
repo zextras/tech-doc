@@ -66,7 +66,11 @@ Upgrade |product|
 
    .. include:: /_includes/_upgrade/ds.rst
 
-.. include:: /_includes/_upgrade/first-part-ce.rst
+If you are on a Multi-Server, remember to start from the Node
+featuring the Directory Server Component, then all the other Nodes in the same
+order of installation.
+
+.. include:: /_includes/_upgrade/first-part.rst
 
 .. grid:: 1 1 1 2
    :gutter: 3
@@ -99,11 +103,8 @@ Upgrade |product|
          package ``carbonio-message-dispatcher`` and install
          ``carbonio-message-dispatcher-ce``.
 
-         .. code:: console
-
-            # apt remove carbonio-message-dispatcher
-            # apt install carbonio-message-dispatcher-ce
-
+         .. include:: /_includes/_upgrade/package-dispatcher.rst
+                      
 .. include:: /_includes/_upgrade/second-part-ce.rst
 
 Other Upgrades
