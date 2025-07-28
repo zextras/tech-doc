@@ -83,50 +83,20 @@
    .. grid-item-card:: Step 7. Bootstrap new database
       :columns: 12 12 12 12
 
-      You can use the password of the Postgres user ``carbonio_adm``
-      that you defined during the *Database* Component's installation,
-      or of any other administrator user created previously.
+      On the Database Node, run the following command.  You can use
+      the password of the Postgres user ``carbonio_adm`` that you
+      defined during the *Database* Component's installation, or of
+      any other administrator user created previously.
 
       .. code:: console
 
          # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-      Then, restart the mailboxd service
-
-      .. tab-set::
-
-         .. tab-item:: Ubuntu 22.04
-            :sync: ubu22
-
-            .. code:: console
-
-               # apt autoremove
-
-         .. tab-item:: RHEL 8
-            :sync: rhel8
-
-            .. code:: console
-
-               # dnf autoremove
-
-         .. tab-item:: Ubuntu 24.04
-            :sync: ubu24
-
-            .. code:: console
-
-               # apt autoremove
-
-         .. tab-item:: RHEL 9
-            :sync: rhel9
-
-            .. code:: console
-
-               # dnf autoremove
-
    .. grid-item-card:: Step 8. Reboot
       :columns: 12 12 12 12
 
-      Once the upgrade has completed successfully, run command:
+      Once the upgrade has completed successfully, make sure you
+      restart all services by running command:
 
       .. code:: console
 

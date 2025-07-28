@@ -38,9 +38,16 @@ next section.
    move some of the packages to the Database Component. The procedure to
    carry out this task can be found in Section :ref:`remove-pgpool`.
 
-.. no checklist for this release
-   Checklist
-   ---------
+Checklist
+---------
+
+#. A new database for backups is added to |product|, so you will be
+   required to execute the following command during the upgrade of the
+   **Database Node** and then **reboot all the Nodes**
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
 .. _up-proc:
 

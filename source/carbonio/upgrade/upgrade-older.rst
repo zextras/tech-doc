@@ -55,13 +55,22 @@ the upgrade:
 Checklist
 ---------
 
-The following packages should be moved to different nodes during the
-upgrade procedure:
+#. The following packages should be moved to different nodes during the
+   upgrade procedure:
 
-#. carbonio-user-management
-#. carbonio-storages
-#. carbonio-catalog
-#. carbonio-message-broker
+   * carbonio-user-management
+   * carbonio-storages
+   * carbonio-catalog
+   * carbonio-message-broker
+
+#. A new database for backups is added to |product|, so you will be
+   required to execute the following command during the upgrade of the
+   **Database Node** and then **reboot all the Nodes**
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
+
 
 Upgrade |product|
 -----------------
