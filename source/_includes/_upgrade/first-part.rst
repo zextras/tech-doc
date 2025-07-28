@@ -1,6 +1,3 @@
-Remember to start the upgrade from the Node featuring the Directory
-Server, then all the other Nodes in the same order of installation.
-
 .. grid:: 1 1 1 2
    :gutter: 3
 
@@ -11,36 +8,64 @@ Server, then all the other Nodes in the same order of installation.
 
       .. tab-set::
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
 
             .. code:: console
 
                # apt clean
 
-         .. tab-item:: RHEL
-            :sync: rhel
+         .. tab-item:: RHEL 8
+            :sync: rhel8
 
             .. code:: console
 
                # dnf clean all
 
-   .. grid-item-card:: Step 2. Upgrade Node
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt clean
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
+
+            .. code:: console
+
+               # dnf clean all
+
+   .. grid-item-card:: Step 2. Update list of packages
       :columns: 12 12 6 6
 
       Update package list.
 
       .. tab-set::
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
 
             .. code:: console
 
                # apt update
 
-         .. tab-item:: RHEL
-            :sync: rhel
+         .. tab-item:: RHEL 8
+            :sync: rhel8
+
+            .. code:: console
+
+               # dnf check-update
+
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt update
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
 
             .. code:: console
 
