@@ -77,6 +77,7 @@ When installing the Components, be careful that:
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-notification-push-db
+      * carbonio-tasks-db
 
    .. grid-item-card:: Mesh
       :columns: 6
@@ -102,9 +103,7 @@ When installing the Components, be careful that:
       * carbonio-files-ui
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
-      * carbonio-search-ui
       * carbonio-avdb-updater
-      * service-discover-agent
       * carbonio-catalog
       * carbonio-chats-ui |dprc|
 
@@ -117,7 +116,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-mta
-      * service-discover-agent
 
    .. grid-item-card:: Mailstore & Provisioning
       :columns: 6
@@ -128,7 +126,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-advanced
-      * service-discover-agent
 
    .. grid-item-card:: Files
       :columns: 6
@@ -139,7 +136,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-files
-      * service-discover-agent
 
    .. grid-item-card:: Docs & Editor
       :columns: 6
@@ -151,7 +147,6 @@ When installing the Components, be careful that:
 
       * carbonio-docs-connector
       * carbonio-docs-editor
-      * service-discover-agent
 
    .. grid-item-card:: Preview
       :columns: 6
@@ -162,7 +157,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-preview
-      * service-discover-agent
 
    .. grid-item-card:: Tasks
       :columns: 6
@@ -173,7 +167,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-tasks
-      * service-discover-agent
 
    .. grid-item-card:: |wsc|
       :columns: 6
@@ -185,7 +178,6 @@ When installing the Components, be careful that:
 
       * carbonio-message-dispatcher
       * carbonio-ws-collaboration
-      * service-discover-agent
       * carbonio-push-connector
       * carbonio-notification-push
 
@@ -199,7 +191,6 @@ When installing the Components, be careful that:
 
       * carbonio-videoserver-advanced
       * carbonio-videorecorder
-      * service-discover-agent
 
    .. grid-item-card:: Monitoring
       :columns: 6
@@ -211,7 +202,6 @@ When installing the Components, be careful that:
 
       * carbonio-prometheus
       * grafana
-      * service-discover-agent
 
    .. grid-item-card:: Event Streaming
       :columns: 6
@@ -233,7 +223,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-directory-server
-      * service-discover-agent
                 
    .. grid-item::
       :columns: 1
@@ -246,7 +235,6 @@ When installing the Components, be careful that:
 
       * carbonio-videoserver
       * carbonio-videoserver-recorder
-      * service-discover-agent
 
 .. _multiserver-installation:
 
