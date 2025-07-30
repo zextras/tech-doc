@@ -36,9 +36,14 @@ The Components of |product|
 
 This is the list of Components that make up a |product| installation.
 
-.. note:: Postgres, Grafana, Zookeper, and Kafka are third-party
-   software that are installed from their respective official
-   repositories.
+When installing the Components, be careful that:
+
+* Postgres, Grafana, Zookeper, and Kafka are third-party software that
+  are installed from their respective official repositories
+
+* On each Node, you need to install package
+  ``service-discover-agent``, except on the Node on which
+  ``service-discover-server`` is installed
 
 .. grid:: 1 1 2 2
    :gutter: 3
