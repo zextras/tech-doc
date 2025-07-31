@@ -62,4 +62,4 @@ The following meta-labels are available for discovered targets:
    in Section :ref:`mesh-gui`.
 
    Relevant Consul commands that can be used to manage |mesh|,
-   discover services, and more, refer to Section :ref:`ts-mesh`.
+   discover services, and more, refer to Section :ref:`mesh-ops`.
