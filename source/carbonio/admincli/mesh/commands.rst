@@ -1,16 +1,22 @@
+.. _mesh-ops:
 
-.. _ts-mesh:
+===================
+ Common Operations
+===================
 
-========================
- |mesh|
-========================
+This section shown a few important commands used when working with
+|mesh| clusters and services
 
-.. include:: /_includes/_ts/mesh.rst
+.. include:: /_includes/_admincli/mesh/commands.rst
+
+.. temporarily left here, to be moved in Scenario RWUMR when it will
+   be reviewed
 
 .. _ar-ts:
 
+
 Active Replica
-==============================
+==============
 
 When you set up :ref:`activereplica`, the following commands can prove
 useful to verify the status of the service.

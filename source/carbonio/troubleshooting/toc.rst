@@ -28,19 +28,6 @@ of them.
 
          upgrade
 
-   .. grid-item-card:: |mesh|
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: ref
-      :link: ts-mesh
-
-      |mesh| problems
-
-      .. toctree::
-         :hidden:
-
-         mesh
-
    .. grid-item-card:: Directory Server
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -132,8 +119,11 @@ of them.
 
          services
 
+   .. grid-item::
+      :columns: 3 3 3 3
+
    .. grid-item-card:: Common Issues
-      :columns: 12 12 6 6
+      :columns: 6 6 6 6
       :class-title: sd-font-weight-bold sd-fs-4
       :link-type: ref
       :link: ts-generic
