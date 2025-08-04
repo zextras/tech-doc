@@ -1,4 +1,4 @@
-To find which |mesh| node is currently the leader Node, first get the
+To find which |mesh| node is currently the *leader node*, first get the
 |mesh| token.
 
 .. include:: /_includes/_admincli/mesh/gettoken.rst
