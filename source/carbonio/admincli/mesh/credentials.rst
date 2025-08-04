@@ -45,14 +45,12 @@ company), it is necessary to :ref:`mesh-reset`.
 Reset |mesh| Credentials
 ------------------------
 
-On a Multi-Server, before starting the procedure it is necessary to
-identify the **Leader Node**, on which to carry out some preliminary
-tasks, then wipe the old secret, generate the new one, and finally set
-up the other nodes by copying the credentials on the remaining nodes
-and restart the service.
-
-.. include:: /_includes/_admincli/mesh/leaderip.rst
-
+Before starting the procedure it is necessary to identify the **leader
+node**, on which to carry out some preliminary tasks, then wipe the
+old token, generate the new one, and finally set up the other nodes
+by copying the credentials on the remaining nodes and restart the
+service. Instructions to find the leader node can be found in Section
+:ref:`mesh-find-leader`.
            
 Wipe Old Credentials
 ~~~~~~~~~~~~~~~~~~~~
@@ -60,8 +58,10 @@ Wipe Old Credentials
 Please take into account that the |mesh| service will be **offline**
 for the whole duration of the procedure.
 
-Before starting the procedure, we need to know important
-information. Log in to Leader Node and execute command
+Before starting the procedure, we need to know an important
+information. Log in to **leader node** (see Section
+:ref:`mesh-find-leader` to find which is the leader node) and execute
+command
 
 .. include:: /_includes/_admincli/mesh-credentials-index.rst
 

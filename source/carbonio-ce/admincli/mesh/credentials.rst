@@ -70,7 +70,8 @@ On a Multi-Server, before starting the procedure it is necessary to
 identify the **Leader Node**, on which to carry out some preliminary
 tasks, then wipe the old secret, generate the new one, and finally set
 up the other nodes by copying the credentials on the remaining nodes
-and restart the service.
+and restart the service. Instructions to find the leader node can be found in Section
+:ref:`mesh-find-leader`.
 
 Find Leader Node's IP Address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
