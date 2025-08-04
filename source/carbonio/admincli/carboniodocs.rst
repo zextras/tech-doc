@@ -40,7 +40,7 @@ the *key name* and the *new value*, respectively, as written in the
 tables.
 
 .. hint:: The |mesh| token can be retrieved using the procedure
-   described in section :ref:`ts-token`.
+   described in section :ref:`mesh-token`.
 
 .. _docs-opt:
 
