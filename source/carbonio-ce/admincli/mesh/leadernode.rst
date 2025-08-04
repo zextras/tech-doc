@@ -11,3 +11,8 @@ Find the Leader Node
 ====================
 
 .. include:: /_includes/_admincli/mesh/findleader.rst
+
+Missing Leader Node
+===================
+
+.. include:: /_includes/_admincli/mesh/missingleader.rst
