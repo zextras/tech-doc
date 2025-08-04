@@ -34,13 +34,13 @@ the CLI.
   When changing any of this values, they are immediately picked up by
   the system, without the need to restart any services.
 
-In the commands, ``$CONSUL_TOKEN_PATH`` is the |mesh| secret stored on
-the **Directory Service server**, while ``$KEY`` and ``$VALUE`` are
-the *key name* and the *new value*, respectively, as written in the
-tables.
+In the commands, ``$CONSUL_TOKEN_PATH`` is the |mesh| bootstrap token
+stored on the **Directory Service server**, while ``$KEY`` and
+``$VALUE`` are the *key name* and the *new value*, respectively, as
+written in the tables.
 
-.. hint:: The |mesh| token can be retrieved using the procedure
-   described in section :ref:`mesh-token`.
+.. hint:: The |mesh| bootstrap token can be retrieved using the
+   procedure described in section :ref:`mesh-token`.
 
 .. _docs-opt:
 
