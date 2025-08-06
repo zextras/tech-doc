@@ -381,5 +381,5 @@ corresponding Component is installed, for a proper communication among
       :widths: 10 10 80
 
       "prometheus", "TCP", "9090"
-      "prometheus SSH", "TCP", "9090"
+      "prometheus SSH", "TCP", "9999"
 
