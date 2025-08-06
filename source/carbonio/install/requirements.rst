@@ -195,7 +195,7 @@ table must be forwarded only on the Node on which the Component is installed.
    Carbonio requires no specific ports to communicate with the
    Internet (outgoing traffic), unless you want push notifications to
    be sent to mobile devices. In this case, the Node installing the
-   Mailstore & Provisioning Component must be able to communicate with the
+   **Chats Component** must be able to communicate with the
    URL **https://notifications.zextras.com/firebase/** on port **443**.
 
 .. _fw-external:
