@@ -198,14 +198,6 @@ Furthermore, ports in Internal and External connections are grouped
 according to the Component that require them, so all ports listed in a
 table must be opened only on the Node on which the Component is installed.
 
-.. card:: Outgoing Traffic
-
-   Carbonio requires no specific ports to communicate with the
-   Internet (outgoing traffic), unless you want push notifications to
-   be sent to mobile devices. In this case, the Node installing the
-   Mailstore & Provisioning Component must be able to communicate with the
-   URL **https://notifications.zextras.com/firebase/** on port **443**.
-
 .. _fw-external:
 
 External Connections
