@@ -284,7 +284,7 @@ corresponding Component is installed, for a proper communication among
       used by |mesh| for message broadcasting and membership
       management.
 
-.. card:: Postgres Component
+.. card:: Database Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
