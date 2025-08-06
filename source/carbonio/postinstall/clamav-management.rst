@@ -13,6 +13,13 @@ ClamAV Signatures Updater
 
 .. include:: /_includes/_postinstallation/clamav-updater.rst
 
+.. _clamav-conf-sigs:
+
+Configure Signatures Updater
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: /_includes/_postinstallation/clamav-conf.rst
+
 .. _clamav-remove-sigs:
 
 Remove Signatures Updater
