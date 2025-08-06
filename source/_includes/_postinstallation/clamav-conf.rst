@@ -9,12 +9,15 @@ to configure.
 
 * ``pollingSeconds`` (default value: 3600 seconds). How often the
   updater will check for new signatures and download them)
+
 * ``numberOfThreads`` (default value: 1). How many threads the
   services use.
+
 * ``virusDefinitionsFolder`` (default value:
-  :file:`/opt/zextras/av_signatures`). The folder in which the
-  anti-virus signatures are stored. The directory must be manually
-  created as the |zu|, for example
+  :file:`/opt/zextras/av_signatures`). The folder where the antivirus
+  signatures are stored. If you do not want to use the default
+  directory, a new directory must be created manually as the |zu| and
+  its path specified in the properties file.
 
   .. code:: console
 
