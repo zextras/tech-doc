@@ -198,14 +198,6 @@ Furthermore, ports in Internal and External connections are grouped
 according to the Component that require them, so all ports listed in a
 table must be opened only on the Node on which the Component is installed.
 
-.. card:: Outgoing Traffic
-
-   Carbonio requires no specific ports to communicate with the
-   Internet (outgoing traffic), unless you want push notifications to
-   be sent to mobile devices. In this case, the Node installing the
-   Mailstore & Provisioning Component must be able to communicate with the
-   URL **https://notifications.zextras.com/firebase/** on port **443**.
-
 .. _fw-external:
 
 External Connections
@@ -286,7 +278,7 @@ corresponding Component is installed, for a proper communication among
       used by |mesh| for message broadcasting and membership
       management.
 
-.. card:: Postgres Component
+.. card:: Database Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -382,5 +374,5 @@ corresponding Component is installed, for a proper communication among
       :widths: 10 10 80
 
       "prometheus", "TCP", "9090"
-      "prometheus SSH", "TCP", "9090"
+      "prometheus SSH", "TCP", "9999"
 
