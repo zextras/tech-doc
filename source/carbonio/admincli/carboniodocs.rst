@@ -44,7 +44,7 @@ written in the tables.
 
 .. _docs-opt:
 
-Docs Configuration tables
+Docs Configuration Tables
 -------------------------
 
 The following table shows the keys and their default values to
@@ -69,26 +69,24 @@ and open.
 
 .. _files-opt:
 
-Files Configuration
--------------------
+Files Configuration Tables
+--------------------------
 
-The following table shows how to modify the maximum number of versions
-for each document stored in |file|.
+Using the |mesh| :ref:`kv interface <modify-kv>`, it is possible to
+change a few |file| parameters, according to the following table.
 
-.. _files-max-versions:
+.. csv-table::
+   :header: "Key name", "Default value"
+   :widths: 70, 30
 
-.. card:: Maximum number of versions
+   "carbonio-files/max-number-of-versions", "30"
+   "carbonio-files/max-uploadable-size-in-mb", "50"
 
-   Using the |mesh| :ref:`kv interface <modify-kv>`, it is possible
-   to change the maximum number of versions stored for each supported
-   file (text and word processor documents, spreadsheets,
-   presentations).
-
-   .. csv-table::
-      :header: "Key name", "Default value"
-      :widths: 70, 30
-
-      "carbonio-files/max-number-of-versions", "30"
-
-   You can raise the default **30** number, but keep in mind that this
+#. The maximum number of versions stored for each supported file (text
+   and word processor documents, spreadsheets, presentations).  You
+   can raise the default **30** number, but keep in mind that this
    implies that you need more storage to keep all versions.
+
+#. The maximum size of a document, in megabytes, that can be
+   uploaded. By default, the value **is not defined**, meaning that
+   there is no limit to the size of a document.
