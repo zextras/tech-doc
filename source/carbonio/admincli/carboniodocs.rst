@@ -14,79 +14,18 @@ change.
 How to Modify Values
 --------------------
 
-Values can be changed by using, from any Node, the |mesh| kv
-interface: you can access it using the :command:`consul` command from
-the CLI.
-
-* To verify the current value of any key, use command
-
-  .. code:: console
-
-     # consul kv get -token="$CONSUL_TOKEN_PATH" "$KEY"
-
-* To modify one of the values reported in the tables below, use
-  command
-
-  .. code:: console
-
-     # consul kv put -token="$CONSUL_TOKEN_PATH" "$KEY" "$VALUE"
-
-  When changing any of this values, they are immediately picked up by
-  the system, without the need to restart any services.
-
-In the commands, ``$CONSUL_TOKEN_PATH`` is the |mesh| bootstrap token
-stored on the **Directory Service server**, while ``$KEY`` and
-``$VALUE`` are the *key name* and the *new value*, respectively, as
-written in the tables.
-
-.. hint:: The |mesh| bootstrap token can be retrieved using the
-   procedure described in section :ref:`mesh-token`.
+.. include:: /_includes/_admincli/kv.rst
 
 .. _docs-opt:
 
 Docs Configuration Tables
 -------------------------
 
-The following table shows the keys and their default values to
-configure the maximum file size of documents that |docs| can manage
-and open.
-
-.. _docs-sizeopt:
-
-.. card:: File sizes
-
-   The following values can be modified via the |mesh| interface (see
-   Section :ref:`mesh-gui`) or via the CLI, using the commands
-   presented in the :ref:`previous section <modify-kv>`.
-
-   .. csv-table::
-      :header: "Key name", "Default value"
-      :widths: 70, 30
-
-      "carbonio-docs-connector/max-file-size-in-mb/document", "50"
-      "carbonio-docs-connector/max-file-size-in-mb/presentation", "100"
-      "carbonio-docs-connector/max-file-size-in-mb/spreadsheet", "10"
+.. include:: /_includes/_admincli/docs-tables.rst
 
 .. _files-opt:
 
 Files Configuration Tables
 --------------------------
 
-Using the |mesh| :ref:`kv interface <modify-kv>`, it is possible to
-change a few |file| parameters, according to the following table.
-
-.. csv-table::
-   :header: "Key name", "Default value"
-   :widths: 70, 30
-
-   "carbonio-files/max-number-of-versions", "30"
-   "carbonio-files/max-uploadable-size-in-mb", "50"
-
-#. The maximum number of versions stored for each supported file (text
-   and word processor documents, spreadsheets, presentations).  You
-   can raise the default **30** number, but keep in mind that this
-   implies that you need more storage to keep all versions.
-
-#. The maximum size of a document, in megabytes, that can be
-   uploaded. By default, the value **is not defined**, meaning that
-   there is no limit to the size of a document.
+.. include:: /_includes/_admincli/files-tables.rst
