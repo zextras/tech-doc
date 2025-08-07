@@ -1,6 +1,4 @@
-Guidance on Disabling Antivirus and Antispam Services
-
-Disabling Carbonio's internal Antivirus (AV) and Antispam (AS)
+Disabling |product|'s internal Antivirus (AV) and Antispam (AS)
 services should only be performed if your infrastructure is protected
 by an external mail filtering system (e.g., an email security gateway,
 cloud-based filtering service, or upstream MTA with integrated AV/AS
@@ -176,7 +174,7 @@ stronger protections.
 
             # systemctl restart carbonio-mta.target
 
-   .. note:: Disabling OpenDKIM means Carbonio will no longer sign
+   .. note:: Disabling OpenDKIM means |product| will no longer sign
       outgoing emails with DKIM. Ensure your external MTA is handling
       DKIM signing correctly.
 

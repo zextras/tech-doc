@@ -312,3 +312,152 @@ command, as the ``postgres`` user
 
 This command removes dead tuples (rows) to reduce the space used and
 keep database performances at an optimal level.
+
+Trust Self-Signed Certificates
+------------------------------
+
+This guide explains how to configure |product| to trust either a
+*self-signed certificate* or a certificate *signed by an internal
+Certificate Authority (CA)* when connecting to a remote backend
+endpoint (e.g., S3-compatible storage or LDAP databases) protected by
+self-signed certificates.
+
+For these connections to be successful and to avoid warnings and
+communication errors, it is mandatory to import the root or
+intermediate CA into:
+
+#. The Operating System’s trust store, to allow system tools to trust
+   the certificate
+
+#. The Jetty keystore of |product|, to allow internal services, like
+   ``mailboxd``, to establish secure TLS connections without warnings
+   or failures
+
+To achieve these results, carry out this procedure on all Nodes that
+should access the backend. For example, if the remote endpoint is a
+Storage, carry out the procedure on **all Nodes** installing the
+*Mailstore & Provisioning* Component.
+
+.. card:: Preliminaries
+
+   Before carrying out the procedure, please pay attention to the
+   following points.
+
+   - **Commands**. All commands must be executed as the |ru|
+   - **Certificate file extension**. Ensure the certificate file has
+     extension ``.crt`` on Ubuntu systems
+   - **Certificate file permissions**. The certificate file must be
+     readable by the |zu|
+   - **Services restart**. The last step of the procedure requires to
+     restart |carbonio| services, otherwise the new configuration
+     **will not** be used
+
+.. rubric:: Step 1. Obtain the CA Certificate
+
+Ensure your CA certificate is in PEM format (we will call it
+``ca.pem``): if it is in a ``.crt`` or ``.cer`` format, convert it to
+PEM format.
+
+.. rubric:: Step 2. Import the CA Certificate into the OS
+
+This step ensures that all OS-level tools and libraries (e.g., ``curl``,
+``wget``, backup utilities) can trust the endpoint.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      The file must have a ``.crt`` extension.
+
+      .. code:: console
+
+         # cp ca.pem /usr/local/share/ca-certificates/ca.crt
+         # update-ca-certificates
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      The file must have a ``.crt`` extension.
+
+      .. code:: console
+
+         # cp ca.pem /usr/local/share/ca-certificates/ca.crt
+         # update-ca-certificates
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # cp ca.pem /etc/pki/ca-trust/source/anchors/
+         # update-ca-trust
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      .. code:: console
+
+         # cp ca.pem /etc/pki/ca-trust/source/anchors/
+         # update-ca-trust
+
+.. rubric:: Step 3. Import the CA Certificate into |product|
+
+This step is mandatory to ensure that |product|’s internal Java-based
+services (Jetty) trust the certificate.
+
+.. code:: console
+
+   # chown zextras:zextras ca.pem
+   # /opt/zextras/bin/zmcertmgr addcacert ca.pem
+
+If successful, the output will confirm that the certificate was
+added to the keystore.
+
+.. rubric:: Step 4. Restart the services.
+
+Restart |product| services to apply the changes.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      As the |zu|
+
+      .. code:: console
+
+         zextras$ zmcontrol restart
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      As the |ru|
+
+      .. code:: console
+
+         # systemctl restart carbonio-directory-server.target
+         # systemctl restart carbonio-appserver.target
+         # systemctl restart carbonio-mta.target
+         # systemctl restart carbonio-proxy.target
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      As the |zu|
+
+      .. code:: console
+
+         zextras$ zmcontrol restart
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      As the |ru|
+
+      .. code:: console
+
+         # systemctl restart carbonio-directory-server.target
+         # systemctl restart carbonio-appserver.target
+         # systemctl restart carbonio-mta.target
+         # systemctl restart carbonio-proxy.target

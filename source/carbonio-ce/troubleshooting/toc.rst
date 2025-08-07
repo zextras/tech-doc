@@ -28,19 +28,6 @@ of them.
 
          upgrade
 
-   .. grid-item-card:: |mesh|
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: ref
-      :link: ts-mesh
-
-      |mesh| problems
-
-      .. toctree::
-         :hidden:
-
-         mesh
-
    .. grid-item-card:: Directory Server
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
