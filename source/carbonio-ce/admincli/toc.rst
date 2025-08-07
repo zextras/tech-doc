@@ -15,6 +15,7 @@ mandatory.
       :maxdepth: 1
 
       ldap
+      carboniodocs
       management
       advancedadmin
       mesh
