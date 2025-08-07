@@ -165,6 +165,8 @@ Step 7: Setup |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
+.. include:: /_includes/_installation/pset.rst
+
 .. _installation-step8:
 
 Step 8: Bootstrap |file| Databases

@@ -36,9 +36,14 @@ The Components of |product|
 
 This is the list of Components that make up a |product| installation.
 
-.. note:: Postgres, Grafana, Zookeper, and Kafka are third-party
-   software that are installed from their respective official
-   repositories.
+When installing the Components, be careful that:
+
+* Postgres, Grafana, Zookeper, and Kafka are third-party software that
+  are installed from their respective official repositories
+
+* On each Node, you need to install package
+  ``service-discover-agent``, except on the Node on which
+  ``service-discover-server`` is installed
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -72,6 +77,7 @@ This is the list of Components that make up a |product| installation.
       * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-notification-push-db
+      * carbonio-tasks-db
 
    .. grid-item-card:: Mesh
       :columns: 6
@@ -97,9 +103,7 @@ This is the list of Components that make up a |product| installation.
       * carbonio-files-ui
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui
-      * carbonio-search-ui
       * carbonio-avdb-updater
-      * service-discover-agent
       * carbonio-catalog
       * carbonio-chats-ui |dprc|
 
@@ -112,7 +116,6 @@ This is the list of Components that make up a |product| installation.
       Packages:
 
       * carbonio-mta
-      * service-discover-agent
 
    .. grid-item-card:: Mailstore & Provisioning
       :columns: 6
@@ -123,7 +126,6 @@ This is the list of Components that make up a |product| installation.
       Packages:
 
       * carbonio-advanced
-      * service-discover-agent
 
    .. grid-item-card:: Files
       :columns: 6
@@ -134,7 +136,6 @@ This is the list of Components that make up a |product| installation.
       Packages:
 
       * carbonio-files
-      * service-discover-agent
 
    .. grid-item-card:: Docs & Editor
       :columns: 6
@@ -146,7 +147,6 @@ This is the list of Components that make up a |product| installation.
 
       * carbonio-docs-connector
       * carbonio-docs-editor
-      * service-discover-agent
 
    .. grid-item-card:: Preview
       :columns: 6
@@ -157,7 +157,6 @@ This is the list of Components that make up a |product| installation.
       Packages:
 
       * carbonio-preview
-      * service-discover-agent
 
    .. grid-item-card:: Tasks
       :columns: 6
@@ -168,7 +167,6 @@ This is the list of Components that make up a |product| installation.
       Packages:
 
       * carbonio-tasks
-      * service-discover-agent
 
    .. grid-item-card:: |wsc|
       :columns: 6
@@ -180,7 +178,6 @@ This is the list of Components that make up a |product| installation.
 
       * carbonio-message-dispatcher
       * carbonio-ws-collaboration
-      * service-discover-agent
       * carbonio-push-connector
       * carbonio-notification-push
 
@@ -194,7 +191,6 @@ This is the list of Components that make up a |product| installation.
 
       * carbonio-videoserver-advanced
       * carbonio-videorecorder
-      * service-discover-agent
 
    .. grid-item-card:: Monitoring
       :columns: 6
@@ -206,7 +202,6 @@ This is the list of Components that make up a |product| installation.
 
       * carbonio-prometheus
       * grafana
-      * service-discover-agent
 
    .. grid-item-card:: Event Streaming
       :columns: 6
@@ -228,7 +223,6 @@ This is the list of Components that make up a |product| installation.
       Packages:
 
       * carbonio-directory-server
-      * service-discover-agent
                 
    .. grid-item::
       :columns: 1
@@ -241,7 +235,6 @@ This is the list of Components that make up a |product| installation.
 
       * carbonio-videoserver
       * carbonio-videoserver-recorder
-      * service-discover-agent
 
 .. _multiserver-installation:
 

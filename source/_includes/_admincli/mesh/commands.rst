@@ -1,56 +1,8 @@
-|mesh| is one of the main components of |product|, and is based on
-HashiCorp's `Consul <https://developer.hashicorp.com/consul>`_. This
-page is meant to provide some of the most used CLI commands to inspect
-and fix any issues that may arise with the use of Consul.
 
-It is possible to interact with Consul on any node of a cluster but
-remember that the :command:`consul` operates by default on the current
-node. To operate on a different node, you need to explicitly specify
-it, for example this command show all services running on node with
-#ID *7ea9631e*
+.. _consul-cluster-ops:
 
-  .. code:: console
-
-     # consul catalog services -node 7ea9631e
-
-.. warning:: Some of the commands listed on this page can be used to
-   or modify significantly or remove a service or a node from Consul,
-   thus potentially disrupting |mesh|. These commands are marked with
-   an icon: :octicon:`alert-fill;1em;sd-text-danger` Use them with
-   care!
-
-.. _ts-token:
-
-Retrieve Token
-==============
-
-Whenever you want to use Consul, the first operation is to retrieve
-the *bootstrap-token*, to allow connection and interaction with the
-service.
-
-.. code:: console
-
-   # service-discover bootstrap-token
-
-.. hint:: You need to provide the cluster credential password, which
-   is stored in :file:`/var/lib/service-discover/password`.
-
-Export the token, which is a string similar to *e5a4966f-a83e-689d-618d-08a0fe7e695b*
-
-.. code:: console
-
-   # export CONSUL_HTTP_TOKEN=e5a4966f-a83e-689d-618d-08a0fe7e695b
-
-You can automate the export process by using the following one-liner
-
-.. code:: console
-
-   # export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gpg | tar xOf - consul-acl-secret.json | jq .SecretID -r)
-
-.. _ts-consul-cluster:
-
-Common Cluster Operations
-=========================
+Cluster Commands
+================
 
 The following commands are used to inspect a cluster:
 
@@ -77,10 +29,10 @@ The following commands are used to inspect a cluster:
 
          # consul force-leave agent1-example-com
 
-.. _ts-consul-services:
+.. _consul-services-ops:
 
-Common Service Operations
-=========================
+Service Commands
+================
 
 These commands allow to retrieve a list of services registered to a
 Consul cluster and to manipulate them.
@@ -136,7 +88,7 @@ Consul cluster and to manipulate them.
       the case for |product|), simply delete the file and reload the
       agent on all nodes.
 
-.. _ts-consul-other:
+.. _consul-other-ops:
 
 Other Commands
 ==============
