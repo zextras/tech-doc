@@ -32,6 +32,7 @@ languages
          "Japanese","ja"
          "Kyrgyz","ky"
          "Polish","pl"
+         "Slovenian", "sl"
          "Turkish","tr"
          "Vietnamese","vi"
 
