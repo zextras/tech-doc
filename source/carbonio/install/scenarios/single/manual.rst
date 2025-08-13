@@ -133,11 +133,9 @@ repositories.
 
 .. _n1-s7:
 
-.. dropdown:: Step 7: Enable and configure ``memcached``
+.. dropdown:: Step 7: Enable ``memcached``
            
    .. include:: /_includes/_installation/_components/memcached-enable.rst
-     
-   .. include:: /_includes/_installation/_components/memcached.rst
 
 .. _n1-s8:
 

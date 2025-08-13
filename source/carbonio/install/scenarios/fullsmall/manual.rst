@@ -253,13 +253,7 @@ MTA/Proxy Node
 
 .. _fms2-step6:
 
-.. dropdown:: Step 6: Enable ``memcached``
-           
-   .. include:: /_includes/_installation/_components/memcached-enable.rst
-     
-.. _fsm2-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -503,13 +497,7 @@ Collaboration Node
 
 .. _fsm4-step7:
 
-.. dropdown:: Step 7: Configure ``memcached``
-
-   .. include:: /_includes/_installation/_components/memcached.rst
-
-.. _fsm4-step8:
-
-.. dropdown:: Step 8: Complete Installation
+.. dropdown:: Step 7: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
