@@ -580,13 +580,10 @@ Administrator is suited for **user-level** support.
 
       * View domain attributes
 
-      * Modify user information (personal data, preferences,
-        ActiveSync access)
+      * Modify user information (personal data, preferences)
 
       * Reset and assign user passwords, application credentials, and
         OTP codes
-
-      * Suspend and reset ActiveSync, HTTP, and IMAP sessions
 
       * Undelete emails, calendars, and contacts
 
@@ -607,11 +604,10 @@ Administrator is suited for **user-level** support.
 
         * personal data
         * user preferences
-        * enable or disable activesync access
+
 
       * Reset and Assign User Passwords, application credentials, and OTP
         codes
-      * Suspend and Reset ActiveSync sessions
       * Suspend and Reset HTTP/IMAP sessions
       * Undelete emails, calendars, and contacts
 
@@ -624,7 +620,7 @@ Administrator is suited for **user-level** support.
    "View domain attributes", "|y|", "|y|"
    "Modify user personal info and preferences", "|y|", "|n|"
    "Reset passwords, OTPs, and Auth (mobile/apps) credentials", "|y|", "|n|"
-   "Suspend/reset ActiveSync, HTTP, IMAP sessions", "|y|", "|n|"
+   "Suspend/reset HTTP, IMAP sessions", "|y|", "|n|"
    "Restore deleted emails, calendars, contacts", "|y|", "|n|"
    "Create/edit/delete user accounts", "|n|", "|n|"
    "Create/edit/delete distribution lists", "|n|", "|y|"
