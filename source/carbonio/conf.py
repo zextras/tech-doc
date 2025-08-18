@@ -151,8 +151,10 @@ latex_engine = 'lualatex'
 sd_fontawesome_latex = True
 master_doc = 'index'
 pdf_file = 'CarbonioAdminGuide.tex'
-latex_documents = [ [ master_doc, pdf_file, project, author, 'manual', True ] ]
-latex_use_xindy = True
+pdf_title = 'Administration Guide'
+latex_documents = [ [ master_doc, pdf_file, pdf_title, author, 'manual', True ] ]
+latex_use_xindy = False
+latex_logo = '_static/carbonio-logo.png'
 
 # ----------------------------------------------------------------------------
 ###
