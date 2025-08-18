@@ -25,7 +25,7 @@ current_year = time.strftime('%Y')
 
 # -- Project information -----------------------------------------------------
 
-project = 'Carbonio Admin'
+project = 'Carbonio Administration Guide'
 copyright = '2025: ZEXTRAS'
 author = 'The Zextras Team'
 
@@ -145,6 +145,16 @@ linkcheck_ignore = [ r'.*.example.com(:\d+)?/',
 # can be found at
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-the-linkcheck-builder
 
+# -- Options for latexpdf output ---------------------------------------------
+
+latex_engine = 'lualatex'
+sd_fontawesome_latex = True
+master_doc = 'index'
+pdf_file = 'CarbonioAdminGuide.tex'
+latex_documents = [ [ master_doc, pdf_file, project, author, 'manual', True ] ]
+latex_use_xindy = True
+
+# ----------------------------------------------------------------------------
 ###
 # This custom code is required as a workaround for a build error
 # caused by extension sphinx-new-tab-link
