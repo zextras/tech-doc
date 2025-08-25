@@ -30,7 +30,7 @@ copyright = '2025: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '25.6.0'
+release = '25.9.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
@@ -128,9 +128,6 @@ html_sidebars = { "**": [ 'navbar-logo.html',
 html_context = {
     'hubhome' : '%s' %hubhome,
 }
-
-# workaround for ZTD-581
-#html_extra_path = ['changelog.html', 'upgrade.html']
 
 # -- Options for linkcheck output --------------------------------------------
 

@@ -164,7 +164,7 @@ Additional Requirements
 
 .. _inst-websocket:
 
-Websocket Protocol
+WebSocket Protocol
 ------------------
 
 .. include:: /_includes/_installation/ws-note.rst
