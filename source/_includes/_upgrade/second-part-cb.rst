@@ -74,26 +74,14 @@
                # dnf autoremove
 
    .. grid-item-card:: Step 6.  Register upgraded packages to |mesh|
-      :columns: 12 12 12 12
+      :columns: 6 6 6 6
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 7. Bootstrap new database
-      :columns: 12 12 12 12
-
-      On the Database Node, run the following command.  You can use
-      the password of the Postgres user ``carbonio_adm`` that you
-      defined during the *Database* Component's installation, or of
-      any other administrator user created previously.
-
-      .. code:: console
-
-         # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-   .. grid-item-card:: Step 8. Reboot
-      :columns: 12 12 12 12
+   .. grid-item-card:: Step 7. Reboot
+      :columns: 6 6 6 6
 
       Once the upgrade has completed successfully, make sure you
       restart all services by running command:
