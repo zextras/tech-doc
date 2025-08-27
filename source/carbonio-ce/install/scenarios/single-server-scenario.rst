@@ -4,6 +4,18 @@
  Single-Server Installation
 ============================
 
+
+Architecture
+============
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. _fig-single:
+
+.. figure:: /img/carbonio/scenario-single-server-CE.png
+   :width: 70%
+   :align: center
+
 .. _single-install-auto:
 
 Automatic Script-based Installation
