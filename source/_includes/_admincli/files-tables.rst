@@ -18,8 +18,8 @@ change a few |file| parameters, according to the following table.
    uploaded. By default, the value **is not defined**, meaning that
    there is no limit to the size of a document.
 
-#. The maximum downloadable size of a document is by default not set,
-   meaning there every file can be downloaded. If a limit size (in
-   Megabytes) is set, trying to download a file larger than the limit
-   will result in a message being displayed, showing the current size
-   limit and the download will fail.
+#. The maximum downloadable size of a document is by default **not
+   set**, meaning there every file can be downloaded. If a limit size
+   (in Megabytes) is set, trying to download a file larger than the
+   limit will result in a message being displayed, showing the current
+   size limit and the download will fail.
