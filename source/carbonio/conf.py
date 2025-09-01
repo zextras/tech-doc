@@ -80,6 +80,7 @@ sitemap_url_scheme = '{link}'
 # this is the default name anyway, adding for reference
 sitemap_filename = 'sitemap.xml'
 
+todo_include_todos = False
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
