@@ -8,6 +8,8 @@
 getAccountStatus
 ********************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha getAccountStatus [param VALUE[,VALUE]]

@@ -8,9 +8,11 @@
 doStopService
 **************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
-   carbonio ha doStopService _service_name_ 
+   carbonio ha doStopService _service_name_
 
 
 .. rubric:: Parameter List
@@ -25,8 +27,8 @@ doStopService
      - DEFAULT
    * - service_name (M)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 
@@ -40,6 +42,3 @@ doStopService
 ::
 
    carbonio ha doStopService
-
-
-

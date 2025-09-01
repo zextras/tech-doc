@@ -4,6 +4,8 @@ Carbonio HA
 
 Commands regarding Active Replica
 
+.. include:: /_includes/deprecateha.rst
+
 .. card:: Table of
 
    .. toctree::
