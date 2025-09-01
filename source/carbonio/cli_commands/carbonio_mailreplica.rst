@@ -1,8 +1,8 @@
 .. _cli_mailreplica:
 
-===========================
-Carbonio MailReplica |dprc|
-===========================
+====================
+Carbonio MailReplica
+====================
 
 Commands regarding Mail Replica Module
 

@@ -1,6 +1,6 @@
-===========
-Carbonio HA
-===========
+==================
+Carbonio HA |dprc|
+==================
 
 Commands regarding Active Replica
 
