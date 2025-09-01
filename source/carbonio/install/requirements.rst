@@ -164,7 +164,7 @@ Additional Requirements
 
 .. _inst-websocket:
 
-Websocket Protocol
+WebSocket Protocol
 ------------------
 
 .. include:: /_includes/_installation/ws-note.rst
@@ -195,7 +195,7 @@ table must be forwarded only on the Node on which the Component is installed.
    Carbonio requires no specific ports to communicate with the
    Internet (outgoing traffic), unless you want push notifications to
    be sent to mobile devices. In this case, the Node installing the
-   Mailstore & Provisioning Component must be able to communicate with the
+   **Chats Component** must be able to communicate with the
    URL **https://notifications.zextras.com/firebase/** on port **443**.
 
 .. _fw-external:
@@ -284,7 +284,7 @@ corresponding Component is installed, for a proper communication among
       used by |mesh| for message broadcasting and membership
       management.
 
-.. card:: Postgres Component
+.. card:: Database Component
 
    .. csv-table::
       :header: "Port", "Protocol", "Service"
@@ -381,5 +381,5 @@ corresponding Component is installed, for a proper communication among
       :widths: 10 10 80
 
       "prometheus", "TCP", "9090"
-      "prometheus SSH", "TCP", "9090"
+      "prometheus SSH", "TCP", "9999"
 

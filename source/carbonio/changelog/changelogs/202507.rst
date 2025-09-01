@@ -1,0 +1,75 @@
+Changelog 2025-07
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202507-1247 Rephrase Legal Hold
+
+The description of the Legal Hold feature has been modified for clarity.
+
+Changes in the source code can be found in :pr:`1194`.
+
+
+.. rubric:: 202507-1236 Add a sitemap.xml to docs.zextras.com
+
+We added file sitemap.xml to the |product| web page.
+
+Changes in the source code can be found in :pr:`1179`, :pr:`1180`, and :pr:`1181`.
+
+
+.. rubric:: 202507-1232  Documentation Changelog June 2025
+
+The technical documentation's changelog for June 2025 has been published.
+
+Changes in the source code can be found in :pr:`1184` and :pr:`1185`.
+
+
+.. rubric:: 202507-1230 Remove Old Architecture Diagrams
+
+Old architecture images have been removed.
+
+Changes in the source code can be found in :pr:`1187`.
+
+
+.. rubric:: 202507-1205 New Attribute for Carbonio Tasks
+
+A new CLI attribute, ``carbonioFeatureTasksEnabled`` allows to show or hide |task| at COS or account level from the CLI. Corresponding options in the |adminui| allows to carry out the same operation.
+
+Changes in the source code can be found in :pr:`1177`.
+
+*****
+
+
+Bugfix List
+-----------
+
+.. rubric:: 202507-1252 Missing step in carbonio upgrade procedure
+
+We added the step to execute :command:`carbonio-mailbox-db-bootstrap`, which was missing from the upgrade procedure.
+
+Changes in the source code can be found in :pr:`1202`.
+
+.. rubric:: 202507-1242 Rename Components in Architecture Section
+
+A few instances of Components' names have been corrected and uniformed to their official name
+
+Changes in the source code can be found in :pr:`1188`.
+
+.. rubric:: 202507-1231 Change wrong CLI command
+
+A CLI command in the Scenario HA needs to run on the Node hosting the Mailstore & Provisioning instead of the MTA.
+
+Changes in the source code can be found in :pr:`1167`.
+
+.. rubric:: 202507-1228 Add Firewall Requirement for WebSocket Connections
+
+We added as requirement for |product| that WebSocket connections (WSS) be allowed. They use port 443 and may sometimes be blocked by firewall that carry out DPI on the packets (e.g., application firewalls) 
+
+Changes in the source code can be found in :pr:`1178`.
+
+*****
+
+End of changelog
+

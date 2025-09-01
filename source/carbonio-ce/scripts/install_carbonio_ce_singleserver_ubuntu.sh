@@ -60,9 +60,9 @@ apt install -y $PACKAGES
 pending-setups --execute-all
 PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
 
-PACKAGES="carbonio-message-dispatcher"
+PACKAGES="carbonio-message-dispatcher-ce"
 apt install -y $PACKAGES
-PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-migration carbonio_adm 127.0.0.1 20000
+PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-migration carbonio_adm 127.0.0.1
 
 PACKAGES="carbonio-videoserver-ce"
 apt install -y $PACKAGES

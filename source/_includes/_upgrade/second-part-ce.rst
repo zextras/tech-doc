@@ -4,26 +4,40 @@
    .. grid-item-card:: Step 4. Upgrade Node
       :columns: 12 12 12 12
 
-      Update package list and install upgrades.
+      Install upgrades.
 
       .. tab-set::
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
 
             .. code:: console
 
                # apt upgrade
 
-         .. tab-item:: RHEL
-            :sync: rhel
+         .. tab-item:: RHEL 8
+            :sync: rhel8
 
             .. code:: console
 
                # dnf upgrade --best --allowerasing
- 
+
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt upgrade
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
+
+            .. code:: console
+
+               # dnf upgrade --best --allowerasing
+
    .. grid-item-card:: Step 5. (Optional) Remove unused packages
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       After the latest packages have been installed, you can remove
       unused packages still installed on your system. If unsure, skip
@@ -31,22 +45,36 @@
 
       .. tab-set::
 
-         .. tab-item:: Ubuntu
-            :sync: ubuntu
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
 
             .. code:: console
 
                # apt autoremove
 
-         .. tab-item:: RHEL
-            :sync: rhel
+         .. tab-item:: RHEL 8
+            :sync: rhel8
+
+            .. code:: console
+
+               # dnf autoremove
+
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt autoremove
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
 
             .. code:: console
 
                # dnf autoremove
 
    .. grid-item-card:: Step 6.  Register upgraded packages to |mesh|
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       .. code:: console
 

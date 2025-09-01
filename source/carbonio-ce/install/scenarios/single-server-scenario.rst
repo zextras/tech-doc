@@ -4,6 +4,18 @@
  Single-Server Installation
 ============================
 
+
+Architecture
+============
+
+The architecture of this scenario is depicted in the following diagram.
+
+.. _fig-single:
+
+.. figure:: /img/carbonio/scenario-single-server-CE.png
+   :width: 70%
+   :align: center
+
 .. _single-install-auto:
 
 Automatic Script-based Installation
@@ -165,6 +177,8 @@ Step 7: Setup |mesh|
 
 .. include:: /_includes/_installation/mesh.rst
 
+.. include:: /_includes/_installation/pset.rst
+
 .. _installation-step8:
 
 Step 8: Bootstrap |file| Databases
@@ -174,7 +188,7 @@ Step 8: Bootstrap |file| Databases
 
 .. include:: /_includes/_installation/_steps/db-bootstrap-chats-ce.rst
 
-.. include:: /_includes/_installation/_steps/chats-migration.rst
+.. include:: /_includes/_installation/_steps/chats-migration-single-server-ce.rst
 
 .. include:: /_includes/_installation/complete.rst
 

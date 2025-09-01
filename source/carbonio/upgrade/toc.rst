@@ -1,3 +1,5 @@
+.. _upgrade-procedure:
+
 ================================
  Upgrade to |product| |release|
 ================================
