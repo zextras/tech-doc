@@ -132,12 +132,12 @@ Example of valid commands are:
 
 .. code:: console
 
-   zextras$ carbonio ha setAccountDestination mailstore1.example.com 10 accounts user1@customer.tld,user2@customer.tld
+   zextras$ carbonio MailReplica setAccountDestination mailstore1.example.com 10 accounts user1@customer.tld,user2@customer.tld
 
 
 .. code:: console
 
-   zextras$ carbonio ha setAccountDestination mailstore1.example.com 10 input_file /tmp/accounts
+   zextras$ carbonio MailReplica setAccountDestination mailstore1.example.com 10 input_file /tmp/accounts
 
 The Global Administrator will receive a notification as soon as the
 |ur| initialisation is completed.
@@ -227,19 +227,19 @@ Example of valid commands are:
 
   .. code:: console
 
-     zextras$ carbonio ha promoteAccounts accounts alice.doe@example.com,bob.doe@example.com
+     zextras$ carbonio MailReplica promoteAccounts accounts alice.doe@example.com,bob.doe@example.com
 
 * Promote accounts stored in a file
 
   .. code:: console
 
-     zextras$ carbonio ha promoteAccounts input_file /tmp/accounts
+     zextras$ carbonio MailReplica promoteAccounts input_file /tmp/accounts
 
 * Promote all accounts on a mailstore
 
    .. code:: console
 
-      zextras$ carbonio ha promoteAccounts source_mail_host mbox1.example.com
+      zextras$ carbonio MailReplica promoteAccounts source_mail_host mbox1.example.com
 
 Global Admin will receive a notification as soon as the |ur| promotion is completed.
 

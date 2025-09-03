@@ -48,7 +48,7 @@ These are the commands to be issued as the |zu|.
 
    .. code:: console
 
-      zextras$ carbonio ha getServices
+      zextras$ carbonio MailReplica getServices
 
 #. Check LDAP (|ds|) Multi Master status check
 
