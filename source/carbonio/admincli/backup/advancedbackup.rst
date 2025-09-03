@@ -59,7 +59,7 @@ good practices we can suggest, including the following:
   problems as soon as they appear
 
 - Carefully plan your updates and migrations
-
+          
 - Consider implementing redundancy to replicate the services provided
   by |product|
 

@@ -1,20 +1,28 @@
-.. _ha-install:
+.. _scenario-rd-playbook:
 
-Standard Carbonio Installation
-==============================
+Ansible Playbook
+================
 
-Before proceeding with the High Availability (HA) setup for Carbonio,
-it is essential to complete a standard installation of all core services.
-This initial setup provides the stable foundation required to create HA
-infrastructure that will be built upon it.
-
-This scenario can be installed **only** using Ansible: you need to
+This 15 Nodes scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section
 :ref:`install-with-ansible`, then follow the directions on setting up
 the control node). To access the control node, execute the following
 command to log in (replace ``mail.example.com`` with the name or IP of
 the control node)
 
+.. tab-set::
+
+   .. tab-item:: Ubuntu
+
+      .. code:: console
+
+         $ ssh root@mail.example.com
+
+   .. tab-item:: RHEL
+
+      .. code:: console
+
+         $ ssh -A root@mail.example.com
 
 After you have logged in to the control node, download the Ansible
 inventory (see below this paragraph), replace the FQDN and values
@@ -23,12 +31,13 @@ infrastructure.
 
 .. include:: /_includes/_installation/read-req-pre.rst
 
-.. dropdown:: Inventory - "HA" Scenario
+.. dropdown:: Inventory - "Redundant" Scenario
    :open:
 
-   :download:`Download_inventory </playbook/carbonio-inventory-ha>`
+   :download:`Download_inventory
+   </playbook/carbonio-inventory-redundant>`
 
-   .. literalinclude:: /playbook/carbonio-inventory-ha
+   .. literalinclude:: /playbook/carbonio-inventory-redundant
 
 Once you edited the inventory, save it in a directory of your choice
 as :file:`carbonio-inventory`. Now, you can run the script:
@@ -36,4 +45,5 @@ from that directory execute the command
 
 .. code:: console
 
-   ansible-playbook -i inventory zxbot.carbonio_install.carbonio_install
+   $ ansible-playbook zxbot.carbonio_install.carbonio_install \
+   -u root -i carbonio-inventory

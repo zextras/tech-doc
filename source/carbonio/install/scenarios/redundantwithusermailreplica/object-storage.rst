@@ -1,16 +1,17 @@
-.. _ha-storage:
+.. _rur-storage:
 
 Object Storage Configuration
 ============================
 
 
-A centralised volume is a mandatory requirement to configure an HA scenario.
-This section explains the commands required to configure a MinIO or S3 bucket
-in Carbonio and set it up as a centralised volume. Note that you
-should already have a MinIO or S3 service at your disposal, either
-within your infrastructure or purchased from a third-party, before
-configuring the bucket: the commands here will only connect to the
-bucket and configure it for the use with |product|.
+A centralised volume is a mandatory requirement to configure a |rur|
+scenario.  This section explains the commands required to configure a
+MinIO or S3 bucket in Carbonio and set it up as a centralised
+volume. Note that you should already have a MinIO or S3 service at
+your disposal, either within your infrastructure or purchased from a
+third-party, before configuring the bucket: the commands here will
+only connect to the bucket and configure it for the use with
+|product|.
 
 All commands in this section must be executed as the |zu|. Remember to
 replace all the example values with values suitable with your
