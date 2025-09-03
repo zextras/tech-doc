@@ -2,17 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_getServices:
+.. _carbonio_mailreplica_getServices:
 
 **********************
 getServices
 **********************
 
-.. include:: /_includes/deprecateha.rst
-
 ::
 
-   carbonio ha getServices
+   carbonio MailReplica getServices 
 
 
 .. rubric:: Usage example
@@ -20,4 +18,7 @@ getServices
 
 ::
 
-   carbonio ha getServices
+   carbonio MailReplica getServices
+
+
+

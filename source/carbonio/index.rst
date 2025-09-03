@@ -227,6 +227,12 @@ The content is organised in multiple parts:
    .. grid-item-card::  Command Line Reference
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: doc
+      :link: cli_commands/toc
 
       List of all |product| CLI Commands
 
+      .. toctree::
+         :hidden:
+
+         cli_commands/toc

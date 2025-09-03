@@ -2,17 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_doStartService:
+.. _carbonio_mailreplica_doStopService:
 
-****************************
-doStartService
-****************************
-
-.. include:: /_includes/deprecateha.rst
+**************************
+doStopService
+**************************
 
 ::
 
-   carbonio ha doStartService _service_name_
+   carbonio MailReplica doStopService _service_name_ 
 
 
 .. rubric:: Parameter List
@@ -27,8 +25,8 @@ doStartService
      - DEFAULT
    * - service_name (M)
      - String
-     -
-     -
+     - 
+     - 
 
 ::
 
@@ -41,4 +39,7 @@ doStartService
 
 ::
 
-   carbonio ha doStartService
+   carbonio MailReplica doStopService
+
+
+

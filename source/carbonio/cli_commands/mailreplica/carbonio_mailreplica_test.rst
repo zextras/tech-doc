@@ -2,17 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_test:
+.. _carbonio_mailreplica_test:
 
 ********
 test
 ********
 
-.. include:: /_includes/deprecateha.rst
-
 ::
 
-   carbonio ha test _brokers_ [param VALUE[,VALUE]]
+   carbonio MailReplica test _brokers_ [param VALUE[,VALUE]]
 
 
 .. rubric:: Parameter List
@@ -45,8 +43,8 @@ test
 
 ::
 
-   carbonio ha test broker1.example.com,broker2.example.com
+   carbonio MailReplica test broker1.example.com,broker2.example.com
 
 
 
-Test connection of ha module to broker1.example.com,broker2.example.com
+Test connection of MailReplica module to broker1.example.com,broker2.example.com

@@ -2,17 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_getAccountStatus:
+.. _carbonio_mailreplica_getAccountStatus:
 
 ********************************
 getAccountStatus
 ********************************
 
-.. include:: /_includes/deprecateha.rst
-
 ::
 
-   carbonio ha getAccountStatus [param VALUE[,VALUE]]
+   carbonio MailReplica getAccountStatus [param VALUE[,VALUE]]
 
 
 .. rubric:: Parameter List
@@ -61,18 +59,18 @@ getAccountStatus
 
 ::
 
-   carbonio ha getAccountStatus all
+   carbonio MailReplica getAccountStatus all
 
 
 
-Display replica status of all accounts registered for ha replica
+Display replica status of all accounts registered for MailReplica replica
 
 .. rubric:: Usage example
 
 
 ::
 
-   carbonio ha getAccountStatus u0@example.com,u1@example.com
+   carbonio MailReplica getAccountStatus u0@example.com,u1@example.com
 
 
 

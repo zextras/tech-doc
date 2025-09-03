@@ -2,17 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_pauseReplicas:
+.. _carbonio_mailreplica_restartReplicas:
 
-**************************
-pauseReplicas
-**************************
-
-.. include:: /_includes/deprecateha.rst
+******************************
+restartReplicas
+******************************
 
 ::
 
-   carbonio ha pauseReplicas [param VALUE[,VALUE]]
+   carbonio MailReplica restartReplicas [param VALUE[,VALUE]]
 
 
 .. rubric:: Parameter List
@@ -27,12 +25,12 @@ pauseReplicas
      - DEFAULT
    * - accounts (O)
      - Account Name/ID[,..]
-     -
-     -
+     - 
+     - 
    * - input_file (O)
      - String
-     -
-     -
+     - 
+     - 
 
 ::
 
@@ -45,8 +43,8 @@ pauseReplicas
 
 ::
 
-   carbonio ha pauseReplicas accounts u0@example.com,u1@example.com
+   carbonio MailReplica restartReplicas accounts u0@example.com,u1@example.com
 
 
 
-Pause all replicas for accounts u0@example.com and u1@example.com
+Restart all replicas for accounts u0@example.com and u1@example.com

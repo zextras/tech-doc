@@ -2,33 +2,35 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_doStartService:
+.. _carbonio_mailreplica_monitor:
 
-****************************
-doStartService
-****************************
-
-.. include:: /_includes/deprecateha.rst
+**************
+monitor
+**************
 
 ::
 
-   carbonio ha doStartService _service_name_
+   carbonio MailReplica monitor _operation_uuid_ [param VALUE[,VALUE]]
 
 
 .. rubric:: Parameter List
 
 .. list-table::
-   :widths: 22 15 21 15
+   :widths: 24 15 21 15
    :header-rows: 1
 
    * - NAME
      - TYPE
      - EXPECTED VALUES
      - DEFAULT
-   * - service_name (M)
+   * - operation_uuid (M)
+     - Uuid
+     - 
+     - 
+   * - operation_host (O)
      - String
-     -
-     -
+     - 
+     - 
 
 ::
 
@@ -41,4 +43,7 @@ doStartService
 
 ::
 
-   carbonio ha doStartService
+   carbonio MailReplica monitor
+
+
+

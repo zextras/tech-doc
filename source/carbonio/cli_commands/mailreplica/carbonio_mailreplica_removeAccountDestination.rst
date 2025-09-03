@@ -2,17 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_removeAccountDestination:
+.. _carbonio_mailreplica_removeAccountDestination:
 
 ************************************************
 removeAccountDestination
 ************************************************
 
-.. include:: /_includes/deprecateha.rst
-
 ::
 
-   carbonio ha removeAccountDestination _destination_ [param VALUE[,VALUE]]
+   carbonio MailReplica removeAccountDestination _destination_ [param VALUE[,VALUE]]
 
 
 .. rubric:: Parameter List
@@ -27,16 +25,16 @@ removeAccountDestination
      - DEFAULT
    * - destination (M)
      - Server Hostname/ID
-     -
-     -
+     - 
+     - 
    * - accounts (O)
      - Account Name/ID[,..]
-     -
-     -
+     - 
+     - 
    * - input_file (O)
      - String
-     -
-     -
+     - 
+     - 
 
 ::
 
@@ -49,7 +47,7 @@ removeAccountDestination
 
 ::
 
-   carbonio ha removeAccountDestination serverA accounts u0@example.com,u1@example.com
+   carbonio MailReplica removeAccountDestination serverA accounts u0@example.com,u1@example.com
 
 
 

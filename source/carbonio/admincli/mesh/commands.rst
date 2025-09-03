@@ -48,10 +48,10 @@ useful to verify the status of the service.
 
 .. code:: console
 
-   zextras$ carbonio ha test 10.0.10.11:9092,10.0.10.12:9092,10.0.10.13:9092
+   zextras$ carbonio MailReplica test 10.0.10.11:9092,10.0.10.12:9092,10.0.10.13:9092
 
 .. rubric:: Restart the HA service
 
 .. code:: console
 
-   zextras$ carbonio ha doRestartService module
+   zextras$ carbonio MailReplica doRestartService module

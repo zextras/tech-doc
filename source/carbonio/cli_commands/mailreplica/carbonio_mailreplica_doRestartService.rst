@@ -1,18 +1,13 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_doRestartService:
+.. _carbonio_mailreplica_doRestartService:
 
 ********************************
 doRestartService
 ********************************
 
-.. include:: /_includes/deprecateha.rst
-
 ::
 
-   carbonio ha doRestartService _service_name_
+   carbonio MailReplica doRestartService _service_name_ 
 
 
 .. rubric:: Parameter List
@@ -27,8 +22,8 @@ doRestartService
      - DEFAULT
    * - service_name (M)
      - String
-     -
-     -
+     - 
+     - 
 
 ::
 
@@ -41,4 +36,7 @@ doRestartService
 
 ::
 
-   carbonio ha doRestartService
+   carbonio MailReplica doRestartService
+
+
+

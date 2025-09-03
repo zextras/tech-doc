@@ -2,23 +2,21 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_restartReplicas:
+.. _carbonio_mailreplica_promoteAccounts:
 
 ******************************
-restartReplicas
+promoteAccounts
 ******************************
-
-.. include:: /_includes/deprecateha.rst
 
 ::
 
-   carbonio ha restartReplicas [param VALUE[,VALUE]]
+   carbonio MailReplica promoteAccounts [param VALUE[,VALUE]]
 
 
 .. rubric:: Parameter List
 
 .. list-table::
-   :widths: 20 26 21 15
+   :widths: 26 26 21 15
    :header-rows: 1
 
    * - NAME
@@ -27,12 +25,24 @@ restartReplicas
      - DEFAULT
    * - accounts (O)
      - Account Name/ID[,..]
-     -
-     -
+     - 
+     - all
    * - input_file (O)
      - String
-     -
-     -
+     - 
+     - 
+   * - source_mail_host (O)
+     - Server Hostname/ID
+     - 
+     - 
+   * - destination (O)
+     - String
+     - 
+     - 
+   * - threads (O)
+     - Integer
+     - 
+     - 4
 
 ::
 
@@ -45,8 +55,7 @@ restartReplicas
 
 ::
 
-   carbonio ha restartReplicas accounts u0@example.com,u1@example.com
+   carbonio MailReplica promoteAccounts
 
 
 
-Restart all replicas for accounts u0@example.com and u1@example.com

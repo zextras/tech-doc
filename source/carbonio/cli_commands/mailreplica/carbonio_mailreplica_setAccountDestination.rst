@@ -2,17 +2,15 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-.. _carbonio_ha_setAccountDestination:
+.. _carbonio_mailreplica_setAccountDestination:
 
 ******************************************
 setAccountDestination
 ******************************************
 
-.. include:: /_includes/deprecateha.rst
-
 ::
 
-   carbonio ha setAccountDestination _destination_ _priority_ [param VALUE[,VALUE]]
+   carbonio MailReplica setAccountDestination _destination_ _priority_ [param VALUE[,VALUE]]
 
 
 .. rubric:: Parameter List
@@ -27,20 +25,20 @@ setAccountDestination
      - DEFAULT
    * - destination (M)
      - Server Hostname/ID
-     -
-     -
+     - 
+     - 
    * - priority (M)
      - Integer
-     -
-     -
+     - 
+     - 
    * - accounts (O)
      - Account Name/ID[,..]
-     -
-     -
+     - 
+     - 
    * - input_file (O)
      - String
-     -
-     -
+     - 
+     - 
 
 ::
 
@@ -53,7 +51,7 @@ setAccountDestination
 
 ::
 
-   carbonio ha setAccountDestination server2.example.com 10 accounts u0@example.com,u1@example.com
+   carbonio MailReplica setAccountDestination server2.example.com 10 accounts u0@example.com,u1@example.com
 
 
 
@@ -64,7 +62,7 @@ Init the replica of accounts u0@example.com and u1@example.com on server2.exampl
 
 ::
 
-   carbonio ha setAccountDestination server3.example.com 20 input_file /tmp/accounts_for_replica
+   carbonio MailReplica setAccountDestination server3.example.com 20 input_file /tmp/accounts_for_replica
 
 
 
