@@ -35,3 +35,6 @@ Pending setups
 --------------
 
 .. include:: /_includes/_installation/pset.rst
+
+.. note:: Since version 25.9.0, thumbnail previews are managed by
+   |mesh|, so there is no longer need to configure Memcached.
