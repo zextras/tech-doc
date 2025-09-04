@@ -6,7 +6,7 @@ change a few |file| parameters, according to the following table.
    :widths: 70, 30
 
    "carbonio-files/max-number-of-versions", "30"
-   "carbonio-files/max-uploadable-size-in-mb", "50"
+   "carbonio-files/max-uploadable-size-in-mb", "unset"
    "carbonio-files/max-downloadable-size-in-mb", "unset"
 
 #. The maximum number of versions stored for each supported file (text
@@ -15,8 +15,8 @@ change a few |file| parameters, according to the following table.
    implies that you need more storage to keep all versions.
 
 #. The maximum size of a document, in megabytes, that can be
-   uploaded. By default, the value **is not defined**, meaning that
-   there is no limit to the size of a document.
+   uploaded. By default, the value is **not set**, meaning that there
+   is no limit to the size of a document.
 
 #. The maximum downloadable size of a document is by default **not
    set**, meaning there every file can be downloaded. If a limit size
