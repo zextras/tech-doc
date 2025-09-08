@@ -268,9 +268,9 @@ restore the COS value.
    .. rubric:: Features
 
    It is possible to prevent the user to access some of the |product|
-   features by using the switches for the various Components. For example,
-   `Web feature` means access to the web interface and `Mobile App`
-   allows access via cell phone or tablet.
+   features by using the switches for the various Components. For
+   example, `Web feature` means access to the web interface and
+   `Mobile App` allows access via Carbonio mobile applications.
 
    .. index:: Chat preferences; by Account
 
