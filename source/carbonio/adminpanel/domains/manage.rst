@@ -174,7 +174,7 @@ restore the COS value.
 
      Upon clicking the arrow on the right-hand side of the option,
      the **Administration** tab will open, to allow changing the
-     user's Component.
+     user's type of account.
 
    .. index:: Quota; by Account
 
@@ -265,6 +265,13 @@ restore the COS value.
    This advanced option proves useful only in split-domain or
    migration scenarios.
 
+   .. rubric:: Features
+
+   It is possible to prevent the user to access some of the |product|
+   features by using the switches for the various Components. For
+   example, `Web feature` means access to the web interface and
+   `Mobile App` allows access via Carbonio mobile applications.
+
    .. index:: Chat preferences; by Account
 
    .. rubric:: Chat
@@ -272,13 +279,6 @@ restore the COS value.
    Options here allow to configure the |wsc|
 
    .. include:: /_includes/_adminpanel/chats.rst
-
-   .. rubric:: Features
-
-   It is possible to prevent the user to access some of the |product|
-   features by using the switches for the various Components. For example,
-   `Web feature` means access to the web interface and `Mobile App`
-   allows access via cell phone or tablet.
 
 .. _act-prefs:
 
