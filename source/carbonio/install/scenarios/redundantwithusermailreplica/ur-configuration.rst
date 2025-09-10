@@ -193,12 +193,3 @@ collection:
 .. code:: console
 
    ansible-playbook -i inventory zxbot.carbonio_ldap.carbonio_install_mmr
-
-Promote Multi Master LDAP
--------------------------
-
-It is needed only if Directory Replica is installed
-
-.. code:: console
-
-   ansible-playbook -i inventory zxbot.carbonio_ldap.carbonio_promote_mmr
