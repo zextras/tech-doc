@@ -17,11 +17,11 @@ only**, so if you do not have it installed yet please refer to Section
 :ref:`ansible-setup`: there you will find directions for its setup.
 
 This section covers the required components to set up the scenario,
-including load balancers, a Kafka cluster, a PostgreSQL cluster, an
-Object Storage system like Minio or S3, and a multi-master Carbonio
-Directory Server. A step-by-step approach to setting up the Nodes,
-configuring centralised storage, and deploying |ur|, will guide you in
-the procedure.
+including load balancers, a Kafka cluster, a PostgreSQL cluster, a
+supported Object Storage system, and a multi-master Carbonio Directory
+Server. A step-by-step approach to setting up the Nodes, configuring
+centralised storage, and deploying |ur|, will guide you in the
+procedure.
 
 .. _rur-procedure:
 
@@ -44,8 +44,8 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`rur-conf` shows how to install the |ur| Components and
    configure them
 
-#. :ref:`rur-storage` guides you in the creation of a centralised MinIO
-   or S3 bucket
+#. :ref:`rur-storage` guides you in the creation of a centralised
+   MinIO or S3 bucket
 
 #. :ref:`rur-checks-scenario` contains a number of commands to check
    the status of |ur| and related services.
@@ -76,12 +76,12 @@ centralised S3 storage.
 Each service, except for the Cluster service, has a mirrored node,
 creating a reliable failover configuration. The **(Core) Cluster
 service** provides all the functionalities of a *Core Node* (Database,
-Mesh Server, and Directory Service) plus the Kafka and Zookeeper
-software, which provide high-reliability services used by |product|:
-stream-processing and distributed synchronisation of configuration
-information, respectively. The configuration of the Cluster service
-includes three nodes to maintain quorum and prevent split-brain
-scenarios, ensuring stability in the environment.
+Mesh Server, and Directory Service) plus the Kafka software, which
+provide high-reliability services used by |product|: stream-processing
+and distributed synchronisation of configuration information,
+respectively. The configuration of the Cluster service includes three
+nodes to maintain quorum and prevent split-brain scenarios, ensuring
+stability in the environment.
 
 .. _rur-req:
 
@@ -100,7 +100,7 @@ Requirements
 
 - A Postgres cluster setup
 
-- An object storage like MinIO or S3
+- A supported Object Storage
 
 - An additional carbonio-directory-server Node configured in *MultiMaster* mode (**mmr**)
 
@@ -144,7 +144,7 @@ recommended specifications:
    users", "Both Nodes provide redundancy of chat services"
 
 .. [1] Core Cluster Services are Postgres, Service Mesh Server,
-   Directory Service, Kafka, and Zookeeper
+   Directory Service, and Kafka
 
 The following software installed on a |product| infrastructure do not
 support redundancy, therefore only a single instance of them can be
@@ -190,7 +190,6 @@ respectively. These will be used in the remainder of this section.
    be installed by default on your system, may not be available, but
    equivalent alternatives are given. You can always install them or
    ever use other commands that you feel more confident with.
-
 
 .. card:: Each Node must have a FQDN
 

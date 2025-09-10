@@ -79,18 +79,13 @@ The two new groups to add at the bottom of the file are:
       srv2.example.com broker_id=2
       srv3.example.com broker_id=3
 
-#. ``zookeeper_servers`` group, which will point to the Nodes where
-   :command:`zookeper` will be installed: these are the three Cluster
-   Nodes.  To each Node, add the ``zookeeper_id`` variable with a
-   different value:
+#. ``zookeeper_servers`` group, which is no longer used and needs to
+   be kept empty
 
    .. code:: text
 
       #zookeeper_servers group
       [zookeeper_servers]
-      srv1.example.com zookeeper_id=1
-      srv2.example.com zookeeper_id=2
-      srv3.example.com zookeeper_id=3
 
 You need also to add variable to existing groups.
 
@@ -138,15 +133,14 @@ can be seen and downloaded here.
 
    .. literalinclude:: /playbook/carbonio-inventory-rur-complete
 
-Install Zookeper and Kafka
---------------------------
+Install Kafka
+-------------
 
-To install Zookeper and Kafka, use the necessary playbook from
-``carbonio_kafka`` collection:
+To install Kafka, use the necessary playbook from ``carbonio_kafka``
+collection:
 
 .. code:: console
 
-   # ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_zookeper_install
    # ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_kafka_install
 
 Install PostgreSQL HA

@@ -3,10 +3,9 @@ srv1.example.com broker_id=1
 srv2.example.com broker_id=2
 srv3.example.com broker_id=3
 
+### Keep this section empty for backward compatibility
 [zookeeper_servers]
-srv1.example.com zookeeper_id=1
-srv2.example.com zookeeper_id=2
-srv3.example.com zookeeper_id=3
+
 
 [postgresServers]
 srv1.example.com postgres_version=16 patroni_role=primary
