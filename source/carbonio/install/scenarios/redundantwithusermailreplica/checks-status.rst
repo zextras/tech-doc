@@ -18,12 +18,6 @@ These are the commands to be issued as the |ru|.
 
       # ssh root@mob-ha-svcs1.demo.zextras.io -L8550:127.0.0.1:8500
 
-#. Check zookeeper service status
-
-   .. code:: console
-
-      # systemctl status carbonio-zookeeper.service
-
 #. Check Kafka services status
 
    .. code:: console
