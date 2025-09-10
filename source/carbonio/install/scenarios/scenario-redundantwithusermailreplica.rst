@@ -38,10 +38,10 @@ The rest of the procedure consists of a dedicated, self-contained
 guide to one of the parts required to successfully complete the
 procedure and use the |product| infrastructure. In more details:
 
-#. :ref:`rur-install` describes how to install the scenario proposed in
+#. :ref:`std-install` describes how to install the scenario proposed in
    this page
 
-#. :ref:`rur-conf` shows how to install the |ur| Components and
+#. :ref:`rur-inst` shows how to install the |ur| Components and
    configure them
 
 #. :ref:`rur-storage` guides you in the creation of a centralised
@@ -280,6 +280,6 @@ respectively. These will be used in the remainder of this section.
    :glob:
 
    redundantwithusermailreplica/standard-installation.rst
-   redundantwithusermailreplica/ur-configuration.rst
+   redundantwithusermailreplica/ur-installation.rst
    redundantwithusermailreplica/object-storage.rst
    redundantwithusermailreplica/checks-status.rst
