@@ -210,28 +210,7 @@ respectively. These will be used in the remainder of this section.
 
 .. card:: DNS resolution of Nodes
 
-   All Nodes must be able to communicate with one another. In case
-   some Node can not reach one of the other ones, here are a few
-   commands that help in troubleshooting the network and find the
-   problem.
-
-
-   Supposing ``core.example.com`` can not reach ``video.example.com``,
-   you can use on ``core.example.com`` any of the following commands:
-
-   * :command:`ping 10.176.134.103` to check whether the other Node
-     answers to connections.
-
-   * Similar to the previous command, either of :command:`tracepath
-     10.176.134.103`, :command:`mtr 10.176.134.103` commands will show
-     if packets can reach the other Node
-
-   * To verify the DNS resolution works, execute either
-     :command:`dig +short video.example.com` or :command:`nslookup
-     video.example.com`. An empty answer (in the case of
-     :command:`dig`) or a string similar to ``** server can't find
-     video.example.com``) will imply there is a DNS resolution
-     problem.
+   All Nodes must be able to communicate with one another.
 
 .. card:: Check system time and timezone
 
