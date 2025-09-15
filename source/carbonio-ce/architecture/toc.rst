@@ -81,6 +81,8 @@ Supported protocols include:
 - POP3 and POP3S
 - SMTP and SMTPS (SMTP over TLS/SSL)
 - IMAP and IMAPS (IMAP over SSL)
+- CalDAV
+- CardDAV
 
 .. toctree::
    :hidden:
