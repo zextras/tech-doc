@@ -155,28 +155,16 @@ PstgreSQL replica
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
-.. we need to wait for changes in the ansible playbook. While the
-   question has been rephrased and greenlit, the text of the answers
-   has not yet been decided.
-
-Before starting the HAProxy installation, note that during the
-installation you will be prompted with the following question::
-
-  Do you want to enable MMR LDAP replica? (yes/no)
-   
-  - If you answer `yes`, HAProxy will be installed on all servers except the LDAP servers.
-  - If you answer `no`, HAProxy will only be installed on the `dbconnectors`.
-
-To install HAProxy, execute command
+Then install HAProxy by executeing the command
 
 .. code:: console
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_patroni_install
 
 This task also move DB Connectors from the PostgreSQL Node to db
-connector Nodes, as defined on the inventory file. This setup allows
-Db Connectors to connect to an available PostgreSQL node managed by
-Patroni.
+connector Nodes, if needed, as defined on the inventory file. This
+setup allows Db Connectors to connect to an available PostgreSQL Node
+managed by Patroni.
 
 Install Multi Master LDAP
 -------------------------
