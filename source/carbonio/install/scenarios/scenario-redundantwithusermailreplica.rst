@@ -31,6 +31,7 @@ Procedure Overview
 The procedure to install this scenario is long and complex and it is
 divided into various parts for simplicity and to allow to follow it
 easily.
+
 In the remainder of this page you find a scenario overview,
 requirements, and pre-installation tasks.
 
@@ -238,10 +239,11 @@ respectively. These will be used in the remainder of this section.
    * The Nodes hosting the *Mailstore & Provisioning* Component must have
      the Primary storage mounted on :file:`/opt/`
 
-   ..
-      * Cluster service (see :ref:`rur-scenario`) must have the root
-        partition :file:`/` of the size specified in the sizing document
-        shared with partner or customer::
+   * The Nodes hosting the Database and Video Server Components must
+     have enough disk space on the :file:`/` or :file:`/opt`
+     directories. This is especially required especially when there
+     are many mobile devices that use |product|\' s ActiveSync feature
+     (Database) and video meetings are often recorded (Video Server).
 
    * Command :command:`df -h` will output the size, usage, and other
      information about each of the mounted partitions on the system.
