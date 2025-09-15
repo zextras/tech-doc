@@ -45,9 +45,6 @@ procedure and use the |product| infrastructure. In more details:
 #. :ref:`rur-inst` shows how to install the |ur| Components and
    configure them
 
-#. :ref:`rur-storage` guides you in the creation of a centralised
-   MinIO or S3 bucket
-
 #. :ref:`rur-checks-scenario` contains a number of commands to check
    the status of |ur| and related services.
 
@@ -103,7 +100,12 @@ Requirements
 
 - A supported Object Storage
 
-- An additional carbonio-directory-server Node configured in *MultiMaster* mode (**mmr**)
+- An additional carbonio-directory-server Node configured in
+  *MultiMaster* mode (**mmr**)
+
+- A **centralised** Primary storage. Please refer to the following
+  sections to set it up, either  :ref:`from the Admin Panel <ap-storage>` pr
+  :ref:`from the CLI <pws_centralized_storage>`.
 
 .. _rur-Node-spec:
 
@@ -283,5 +285,4 @@ respectively. These will be used in the remainder of this section.
 
    redundantwithusermailreplica/standard-installation.rst
    redundantwithusermailreplica/ur-installation.rst
-   redundantwithusermailreplica/object-storage.rst
    redundantwithusermailreplica/checks-status.rst
