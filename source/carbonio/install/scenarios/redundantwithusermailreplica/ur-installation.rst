@@ -155,12 +155,6 @@ PstgreSQL replica
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
-Then install HAProxy by executeing the command
-
-.. code:: console
-
-   # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_patroni_install
-
 This task also move DB Connectors from the PostgreSQL Node to db
 connector Nodes, if needed, as defined on the inventory file. This
 setup allows Db Connectors to connect to an available PostgreSQL Node
