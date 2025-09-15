@@ -175,3 +175,9 @@ collection:
 .. code:: console
 
    ansible-playbook -i inventory zxbot.carbonio_ldap.carbonio_install_mmr
+
+|ur| management
+---------------
+
+CLI commands to manage the |ur|, to promote and replicate accounts on
+other Mailstores, can be found in the dedicated section :ref:`use-ur`.
