@@ -38,8 +38,8 @@ This is the list of Components that make up a |product| installation.
 
 When installing the Components, be careful that:
 
-* Postgres, Grafana, Zookeper, and Kafka are third-party software that
-  are installed from their respective official repositories
+* Postgres, Grafana, and Kafka are third-party software that are
+  installed from their respective official repositories
 
 * On each Node, you need to install package
   ``service-discover-agent``, except on the Node on which
@@ -211,7 +211,6 @@ When installing the Components, be careful that:
 
       Packages:
 
-      * ZooKeeper
       * Apache Kafka
 
    .. grid-item-card:: Directory Replica

@@ -1,4 +1,4 @@
-.. _rur-install:
+.. _std-install:
 
 ===========================================
  |carbonio| Preliminaries and Installation
@@ -9,7 +9,7 @@ Redundant**. Therefore, it is essential to have a working installation
 of that Scenario before starting to deploy the |ur| setup: if you do
 not have it yet, please refer to the installation procedure of the
 :ref:`scenario-redundant`, then you can proceed to the next
-section, :ref:`rur-conf`.
+section, :ref:`rur-inst`.
 
 Differences with Scenario Redundant
 ===================================

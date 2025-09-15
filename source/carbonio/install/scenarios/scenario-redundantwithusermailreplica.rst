@@ -17,11 +17,11 @@ only**, so if you do not have it installed yet please refer to Section
 :ref:`ansible-setup`: there you will find directions for its setup.
 
 This section covers the required components to set up the scenario,
-including load balancers, a Kafka cluster, a PostgreSQL cluster, an
-Object Storage system like Minio or S3, and a multi-master Carbonio
-Directory Server. A step-by-step approach to setting up the Nodes,
-configuring centralised storage, and deploying |ur|, will guide you in
-the procedure.
+including load balancers, a Kafka cluster, a PostgreSQL cluster, a
+supported Object Storage system, and a multi-master Carbonio Directory
+Server. A step-by-step approach to setting up the Nodes, configuring
+centralised storage, and deploying |ur|, will guide you in the
+procedure.
 
 .. _rur-procedure:
 
@@ -31,6 +31,7 @@ Procedure Overview
 The procedure to install this scenario is long and complex and it is
 divided into various parts for simplicity and to allow to follow it
 easily.
+
 In the remainder of this page you find a scenario overview,
 requirements, and pre-installation tasks.
 
@@ -38,14 +39,11 @@ The rest of the procedure consists of a dedicated, self-contained
 guide to one of the parts required to successfully complete the
 procedure and use the |product| infrastructure. In more details:
 
-#. :ref:`rur-install` describes how to install the scenario proposed in
+#. :ref:`std-install` describes how to install the scenario proposed in
    this page
 
-#. :ref:`rur-conf` shows how to install the |ur| Components and
+#. :ref:`rur-inst` shows how to install the |ur| Components and
    configure them
-
-#. :ref:`rur-storage` guides you in the creation of a centralised MinIO
-   or S3 bucket
 
 #. :ref:`rur-checks-scenario` contains a number of commands to check
    the status of |ur| and related services.
@@ -76,12 +74,12 @@ centralised S3 storage.
 Each service, except for the Cluster service, has a mirrored node,
 creating a reliable failover configuration. The **(Core) Cluster
 service** provides all the functionalities of a *Core Node* (Database,
-Mesh Server, and Directory Service) plus the Kafka and Zookeeper
-software, which provide high-reliability services used by |product|:
-stream-processing and distributed synchronisation of configuration
-information, respectively. The configuration of the Cluster service
-includes three nodes to maintain quorum and prevent split-brain
-scenarios, ensuring stability in the environment.
+Mesh Server, and Directory Service) plus the Kafka software, which
+provide high-reliability services used by |product|: stream-processing
+and distributed synchronisation of configuration information,
+respectively. The configuration of the Cluster service includes three
+nodes to maintain quorum and prevent split-brain scenarios, ensuring
+stability in the environment.
 
 .. _rur-req:
 
@@ -100,9 +98,14 @@ Requirements
 
 - A Postgres cluster setup
 
-- An object storage like MinIO or S3
+- A supported Object Storage
 
-- An additional carbonio-directory-server Node configured in *MultiMaster* mode (**mmr**)
+- An additional carbonio-directory-server Node configured in
+  *MultiMaster* mode (**mmr**)
+
+- A **centralised** Primary storage. Please refer to the following
+  sections to set it up, either  :ref:`from the Admin Panel <ap-storage>` pr
+  :ref:`from the CLI <pws_centralized_storage>`.
 
 .. _rur-Node-spec:
 
@@ -144,7 +147,7 @@ recommended specifications:
    users", "Both Nodes provide redundancy of chat services"
 
 .. [1] Core Cluster Services are Postgres, Service Mesh Server,
-   Directory Service, Kafka, and Zookeeper
+   Directory Service, and Kafka
 
 The following software installed on a |product| infrastructure do not
 support redundancy, therefore only a single instance of them can be
@@ -191,7 +194,6 @@ respectively. These will be used in the remainder of this section.
    equivalent alternatives are given. You can always install them or
    ever use other commands that you feel more confident with.
 
-
 .. card:: Each Node must have a FQDN
 
    You need to put the FQDN and IP address of each Node in the
@@ -211,28 +213,7 @@ respectively. These will be used in the remainder of this section.
 
 .. card:: DNS resolution of Nodes
 
-   All Nodes must be able to communicate with one another. In case
-   some Node can not reach one of the other ones, here are a few
-   commands that help in troubleshooting the network and find the
-   problem.
-
-
-   Supposing ``core.example.com`` can not reach ``video.example.com``,
-   you can use on ``core.example.com`` any of the following commands:
-
-   * :command:`ping 10.176.134.103` to check whether the other Node
-     answers to connections.
-
-   * Similar to the previous command, either of :command:`tracepath
-     10.176.134.103`, :command:`mtr 10.176.134.103` commands will show
-     if packets can reach the other Node
-
-   * To verify the DNS resolution works, execute either
-     :command:`dig +short video.example.com` or :command:`nslookup
-     video.example.com`. An empty answer (in the case of
-     :command:`dig`) or a string similar to ``** server can't find
-     video.example.com``) will imply there is a DNS resolution
-     problem.
+   All Nodes must be able to communicate with one another.
 
 .. card:: Check system time and timezone
 
@@ -260,10 +241,11 @@ respectively. These will be used in the remainder of this section.
    * The Nodes hosting the *Mailstore & Provisioning* Component must have
      the Primary storage mounted on :file:`/opt/`
 
-   ..
-      * Cluster service (see :ref:`rur-scenario`) must have the root
-        partition :file:`/` of the size specified in the sizing document
-        shared with partner or customer::
+   * The Nodes hosting the Database and Video Server Components must
+     have enough disk space on the :file:`/` or :file:`/opt`
+     directories. This is especially required especially when there
+     are many mobile devices that use |product|\' s ActiveSync feature
+     (Database) and video meetings are often recorded (Video Server).
 
    * Command :command:`df -h` will output the size, usage, and other
      information about each of the mounted partitions on the system.
@@ -302,6 +284,5 @@ respectively. These will be used in the remainder of this section.
    :glob:
 
    redundantwithusermailreplica/standard-installation.rst
-   redundantwithusermailreplica/ur-configuration.rst
-   redundantwithusermailreplica/object-storage.rst
+   redundantwithusermailreplica/ur-installation.rst
    redundantwithusermailreplica/checks-status.rst

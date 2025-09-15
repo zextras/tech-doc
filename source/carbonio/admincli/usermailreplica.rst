@@ -1,3 +1,5 @@
+.. _ureplica:
+
 .. _activereplica:
 
 =================
@@ -54,6 +56,8 @@ There are **two requirements** to satisfy to be able to install the
 #. All the primary volumes of the mailbox **must be configured** as
    :ref:`Centralized Storage <pws_centralized_storage>`.
 
+.. _enable-ur:
+
 Enabling |ur|
 =============
 
@@ -85,12 +89,14 @@ To verify that the settings have been applied and the service operates
 correctly, you can use the commands presented in section :ref:`ar-ts`
 below.
 
+.. _use-ur:
+
 |ur| Usage
 ==========
 
 A number of CLI commands can be used to carry out routine operations
-with the |ur|: :ref:`initialise <ar-init>`, :ref:`monitor
-<ar-monit>`, :ref:`promote <ar-promo>`, and :ref:`delete <ar-del>` a
+with the |ur|: :ref:`initialise <ur-init>`, :ref:`monitor
+<ur-monit>`, :ref:`promote <ur-promo>`, and :ref:`delete <ur-del>` a
 |ur|.
 
 Limitations of the Commands
@@ -104,7 +110,7 @@ The command presented in this section **do not support**:
 * distribution lists
 
 
-.. _ar-init:
+.. _ur-init:
 
 |ur| Initialisation
 ----------------------
@@ -142,7 +148,7 @@ Example of valid commands are:
 The Global Administrator will receive a notification as soon as the
 |ur| initialisation is completed.
 
-.. _ar-monit:
+.. _ur-monit:
 
 |ur| Monitoring
 ------------------
@@ -197,7 +203,7 @@ Then, for each replica:
    priority          prority of the replica
    canConnectToKafka status of connection to kafka
 
-.. _ar-promo:
+.. _ur-promo:
 
 |ur| Promotion
 --------------
@@ -243,7 +249,7 @@ Example of valid commands are:
 
 Global Admin will receive a notification as soon as the |ur| promotion is completed.
 
-.. _ar-del:
+.. _ur-del:
 
 |ur| Deletion
 -------------

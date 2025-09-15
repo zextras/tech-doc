@@ -25,7 +25,7 @@ mandatory.
       carboniobackup
       mobile
       storages
-      activereplica
+      usermailreplica
       videoserver
       custom
       mesh

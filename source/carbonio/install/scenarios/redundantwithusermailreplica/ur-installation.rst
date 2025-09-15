@@ -1,11 +1,11 @@
-.. _rur-conf:
+.. _rur-inst:
 
-Carbonio |ur| Configuration
+|ur| Installation
 ===========================
 
 The main part of the installation is the set up of the |ur|
 infrastructure, which will be built on the scenario described in the
-:ref:`previous section <rur-install>`.
+:ref:`previous section <std-install>`.
 
 In order to complete the |ur| configuration, you need access to the
 Ansible's Control Node and of the following items:
@@ -79,18 +79,13 @@ The two new groups to add at the bottom of the file are:
       srv2.example.com broker_id=2
       srv3.example.com broker_id=3
 
-#. ``zookeeper_servers`` group, which will point to the Nodes where
-   :command:`zookeper` will be installed: these are the three Cluster
-   Nodes.  To each Node, add the ``zookeeper_id`` variable with a
-   different value:
+#. ``zookeeper_servers`` group, which is no longer used and needs to
+   be kept empty
 
    .. code:: text
 
       #zookeeper_servers group
       [zookeeper_servers]
-      srv1.example.com zookeeper_id=1
-      srv2.example.com zookeeper_id=2
-      srv3.example.com zookeeper_id=3
 
 You need also to add variable to existing groups.
 
@@ -138,15 +133,14 @@ can be seen and downloaded here.
 
    .. literalinclude:: /playbook/carbonio-inventory-rur-complete
 
-Install Zookeper and Kafka
---------------------------
+Install Kafka
+-------------
 
-To install Zookeper and Kafka, use the necessary playbook from
-``carbonio_kafka`` collection:
+To install Kafka, use the necessary playbook from ``carbonio_kafka``
+collection:
 
 .. code:: console
 
-   # ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_zookeper_install
    # ansible-playbook -i inventory zxbot.carbonio_kafka.carbonio_kafka_install
 
 Install PostgreSQL HA
@@ -161,28 +155,10 @@ PstgreSQL replica
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
-.. we need to wait for changes in the ansible playbook. While the
-   question has been rephrased and greenlit, the text of the answers
-   has not yet been decided.
-
-Before starting the HAProxy installation, note that during the
-installation you will be prompted with the following question::
-
-  Do you want to enable MMR LDAP replica? (yes/no)
-   
-  - If you answer `yes`, HAProxy will be installed on all servers except the LDAP servers.
-  - If you answer `no`, HAProxy will only be installed on the `dbconnectors`.
-
-To install HAProxy, execute command
-
-.. code:: console
-
-   # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_patroni_install
-
 This task also move DB Connectors from the PostgreSQL Node to db
-connector Nodes, as defined on the inventory file. This setup allows
-Db Connectors to connect to an available PostgreSQL node managed by
-Patroni.
+connector Nodes, if needed, as defined on the inventory file. This
+setup allows Db Connectors to connect to an available PostgreSQL Node
+managed by Patroni.
 
 Install Multi Master LDAP
 -------------------------
@@ -194,11 +170,8 @@ collection:
 
    ansible-playbook -i inventory zxbot.carbonio_ldap.carbonio_install_mmr
 
-Promote Multi Master LDAP
--------------------------
+|ur| management
+---------------
 
-It is needed only if Directory Replica is installed
-
-.. code:: console
-
-   ansible-playbook -i inventory zxbot.carbonio_ldap.carbonio_promote_mmr
+CLI commands to manage the |ur|, to promote and replicate accounts on
+other Mailstores, can be found in the dedicated section :ref:`use-ur`.
