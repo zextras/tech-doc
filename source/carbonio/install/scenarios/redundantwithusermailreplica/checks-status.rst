@@ -32,6 +32,12 @@ These are the commands to be issued as the |ru|.
 
 These are the commands to be issued as the |zu|.
 
+#. Check patroni service, including finding the leader
+
+   .. code:: console
+
+      # sytemctl -u patroni -f
+
 #. Get Global Broker info
 
    .. code:: console
