@@ -3,6 +3,10 @@
 Event Streaming
 ===============
 
+.. warning:: The manual installation procedure for this Component is
+   |dprc| and will soon be replaced by a new one, based on Apache
+   Kafka Raft (KRaft) instead.
+
 This Component is required to enable the |carbonio| :ref:`Active Replica
 <activereplica>` feature, the foundation of High Availability on
 |product|, and is based on Apache's *Kafka* and *ZooKeeper*, which
