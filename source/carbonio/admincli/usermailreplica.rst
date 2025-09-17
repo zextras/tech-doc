@@ -23,14 +23,9 @@ account-based, real-time replication mechanism that allows |product|
 to keep multiple instances of a mailbox within different Mailstores.
 
 The |ur| part is in charge of encoding and transmitting all the
-transactions of the account to an :ref:`event-streaming queue
-<component-es-install>`.  Once processed by the |ur|, the events are
+transactions of the account.  Once processed by the |ur|, the events are
 consumed by one agent, or even by multiple agents, in the destination
-Mailstore.  *Active* means that the destination Mailstores are
-**active Nodes**, reducing the need for dedicated resources that store
-the passive node of the clusters.  This also improves the overall
-performance of the promotion stage, since the service is already up
-and running.
+Mailstore.
 
 |ur| Requirements
 =================
@@ -86,7 +81,7 @@ port **9092** reachable from each of the other Mailstores.
       zextras$ carbonio config set global brokers "10.0.10.11:9092,10.0.10.12:9092,10.0.10.13:9092"
 
 To verify that the settings have been applied and the service operates
-correctly, you can use the commands presented in section :ref:`ar-ts`
+correctly, you can use the commands presented in section :ref:`ur-ts`
 below.
 
 .. _use-ur:
