@@ -29,11 +29,11 @@ Retrieve Bootstrap Token
 .. temporarily left here, to be moved in Scenario RWUMR when it will
    be reviewed
 
-.. _ar-ts:
+.. _ur-ts:
 
 
-Active Replica
-==============
+|ur|
+====
 
 When you set up :ref:`activereplica`, the following commands can prove
 useful to verify the status of the service.
