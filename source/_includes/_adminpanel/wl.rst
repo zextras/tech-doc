@@ -132,7 +132,8 @@ mandatory to keep in sync the resources on all the Proxies instances.
    .. grid-item-card:: Login URL
       :columns: 6
 
-      The URL on which the user will land upon a successful login
+      The URL on which the user will be redirected to insert access
+      credentials.
 
    .. grid-item-card:: Logout URL
       :columns: 6
