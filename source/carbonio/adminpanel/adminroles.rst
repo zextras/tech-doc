@@ -338,8 +338,8 @@ domain. They have no access to :ref:`infra-settings`.
    :header: "Feature / Permission", "Global Administrator", "Domain Administrator"
 
    "Scope", "Single domain", "Entire Carbonio infrastructure"
-   "Can manage multiple domains", "|n|", "|y|"
-   "Access to global settings (infrastructure, COS, services, etc.)", "|n|", "|y|"
+   "Can manage multiple domains", "|y|", "|n|"
+   "Access to global settings (infrastructure, COS, services, etc.)", "|y|", "|n|"
    "Manage users within assigned domain", "|y|", "|y| (for all
    domains)"
    "Create/edit/delete other domain admins", "|y| (within the
@@ -347,9 +347,9 @@ domain. They have no access to :ref:`infra-settings`.
    "Assign rights and roles", "|y| (within the domain)", "|y| (Full
    rights and role delegation)"
    "Manage themes, GALSync, authentication", "|y| (domain-specific)", "|y| (globally and domain-specific)"
-   "Manage COS (Class of Service)", "|n|", "|y|"
-   "Modify Assigned COS, Max Account Number, Quota", "|n|", "|y|"
-   "Access server/infrastructure settings", "|n|", "|y|"
+   "Manage COS (Class of Service)", "|y|", "|n|"
+   "Modify Assigned COS, Max Account Number, Quota", "|y|", "|n|"
+   "Access server/infrastructure settings", "|y|", "|n|"
    "View analytics", "|y| (for domain/COS/account level)", "|y| (Full
    analytics access)"
 
