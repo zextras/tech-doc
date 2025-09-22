@@ -12,12 +12,6 @@ migration to |product|, and accessing the web interface.
 
    .. toctree::
       :maxdepth: 1
+      :glob:
 
-      logging
-      license
-      sshkeys
-      sslcert
-      security
-      web-access
-      clamav-management
-      chats-advanced
+      post-install/*
