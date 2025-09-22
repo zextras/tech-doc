@@ -106,6 +106,19 @@ of them.
 
          chats
 
+   .. grid-item-card:: Migration
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :link-type: ref
+      :link: ts-mig
+
+      Prevent errors that may block a flawless migration to |product|
+
+      .. toctree::
+         :hidden:
+
+         migration
+
    .. grid-item-card:: Services Status
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
