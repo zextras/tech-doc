@@ -29,3 +29,6 @@ mandatory.
       videoserver
       custom
       mesh
+      security
+      chats-advanced
+      clamav-management
