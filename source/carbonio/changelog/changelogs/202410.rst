@@ -103,9 +103,8 @@ implemented:
 * Added a note in Step 4. of the `Manual Upgrade` to make sure
   that the :file:`carbonio-message-broker` is installed on the
   :ref:`component-mesh-install` Node after the upgrade
-* Clarified on which Node to execute the CLI command to :doc:`activate
-  Carbonio </postinstall/license>`
-
+* Clarified on which Node to execute the CLI command to :ref:`activate
+  Carbonio <license>`
 
 See :pr:`729` for the source code.
 
