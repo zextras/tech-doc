@@ -195,6 +195,11 @@ want to import the Briefcases.
    ``operationid``, that can be used to follow output by using the
    :command:`zxsuite admin monitor <operationid>`.
 
+As soon as the process finishes, verify carefully that all Briefcases
+have been imported as Drive items. Once the check is completed, remove
+any left-over Briefcase items, even empty directories, to make sure in
+the backup you are going to export no reference to Briefcases remains.
+
 .. _mig-create-backup:
 
 Export Backup
