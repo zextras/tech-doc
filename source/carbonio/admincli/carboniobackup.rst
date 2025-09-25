@@ -15,7 +15,7 @@ into several sections:
    Backup
 
 #. :ref:`backup_common_tasks` shows how to enable |backup| and how to
-   carry out a Backup on an external storage.
+   carry out a Backup on an external storage
 
 #. :ref:`Restore Strategies <backup_restore-strategies>` for the
    Backup: how to restore items, accounts, or whole Mailstores from
