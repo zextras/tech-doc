@@ -34,7 +34,6 @@ into several sections:
    :hidden:
 
    Architecture <backup/architecture>
-   In Deep View <backup/backupindetails>
    Common Tasks <backup/backuptasks>
    backup/restorestrategies
    backup/advancedbackup
