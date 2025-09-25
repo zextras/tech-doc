@@ -35,5 +35,6 @@ into several sections:
 
    Architecture <backup/architecture>
    Common Tasks <backup/backuptasks>
+   backup/legalhold
    backup/restorestrategies
    backup/advancedbackup
