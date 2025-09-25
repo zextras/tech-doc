@@ -1,8 +1,9 @@
 
-.. _carbonio_backup_common_tasks:
+.. _backup_common_tasks:
 
-|backup| Common Tasks
-=====================
+=======================
+ |backup| Common Tasks
+=======================
 
 This section contains guidelines for the most common task required by
 the users; also links to technical resources are also provided.
@@ -10,7 +11,7 @@ the users; also links to technical resources are also provided.
 .. _init-carbonio-backup:
 
 How to Activate |backup|
-------------------------
+========================
 
 Once you have finished your |carbonio| setup, you need a few more steps to
 configure the Backup component and have all your data automatically backed
