@@ -41,6 +41,8 @@ Documentation of the Backup is therefore split in four main parts:
 .. toctree::
    :hidden:
 
-   backup/backuptasks.rst
-   backup/restorestrategies.rst
-   backup/advancedbackup.rst
+   Architecture <backup/architecture>
+   In Deep View <backup/backupindetails>
+   Common Tasks <backup/backuptasks>
+   backup/restorestrategies
+   backup/advancedbackup
