@@ -192,7 +192,7 @@ For a complete list of options, run:
 
 .. code::
 
-   s3-benchmark --help
+   # s3-benchmark --help
 
 .. _s3-bench-bp:
 

@@ -121,16 +121,24 @@ Once the OS upgrade to Ubuntu 24.04 or Red Hat 9 is complete:
      - systemd Target Command
 
    * - directory-server
-     - systemctl enable --now carbonio-directory-server.target
+     - .. code:: console
+
+          # systemctl enable --now carbonio-directory-server.target
 
    * - mta
-     - systemctl enable --now carbonio-mta.target
+     - .. code:: console
+
+          # systemctl enable --now carbonio-mta.target
 
    * - proxy
-     - systemctl enable --now carbonio-proxy.target
+     - .. code:: console
+
+          # systemctl enable --now carbonio-proxy.target
 
    * - mailbox
-     - systemctl enable --now carbonio-appserver.target
+     - .. code:: console
+
+          # systemctl enable --now carbonio-appserver.target
 
 
 .. note:: Only the services listed above require to be manually
@@ -179,9 +187,9 @@ Final Notes
 
 * Verify the status of any service after enablement using:
 
-   .. code:: console
+  .. code:: console
 
-      #  systemctl status <target>
+     #  systemctl status <target>
 
 .. _up_ph4:
 
