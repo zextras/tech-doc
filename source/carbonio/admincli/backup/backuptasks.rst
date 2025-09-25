@@ -8,6 +8,7 @@
 This section contains guidelines for the most common task required by
 the users; also links to technical resources are also provided.
 
+.. index:: Backup; activation of
 .. _init-carbonio-backup:
 
 How to Activate |backup|
@@ -82,6 +83,8 @@ up.
 
    - Change the :ref:`retention_policy`
 
+.. index:: Backup; External Storage, External Storage Backup
+
 .. _backup_on_external_storage:
 
 Backup on External Storage
@@ -96,8 +99,6 @@ fast enough to avoid queuing operations and/or risk data loss.
 However, S3 buckets, NFS shares, and other storage mounted using Fuse
 can be very slow and might not be suited as storage mounted on the
 Backup Path.
-
-.. index:: External Storage
 
 Because the most important part of backups is the metadata, the idea
 behind **Backup on External Storage** is to use two different storage:

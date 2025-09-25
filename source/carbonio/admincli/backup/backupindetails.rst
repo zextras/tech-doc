@@ -243,6 +243,8 @@ time.
 
          zextras$ carbonio backup monitor *operation_uuid* [param VALUE[,VALUE]]
 
+.. index:: Legal Hold
+
 .. _backup-legal-hold:
 
 Legal Hold

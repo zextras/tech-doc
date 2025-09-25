@@ -1,3 +1,5 @@
+.. index:: Backup; Architecture of
+
 .. _backup-architecture:
 
 Architecture of |backup|
@@ -39,7 +41,8 @@ change, while the SmartScan copies all items that have been modified,
 hence the possible loss of data is minimised and usually limited to
 those items that have changed between two consecutive run on SmartScan.
 
-.. index:: Item
+.. index:: Item, Backup; Item in
+
 
 .. _item:
 
@@ -388,7 +391,7 @@ The successful operation will display the **ok** message.
    :ref:`ap-bk-server-conf` (:menuselection:`Admin Panel --> Global
    Server Settings --> Server Config`).
 
-.. index:: Retention Policy
+.. index:: Retention Policy; in Backup
 
 .. _retention_policy:
 
