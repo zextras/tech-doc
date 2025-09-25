@@ -1,9 +1,9 @@
 
 .. _backup_restore-strategies:
 
-===========================================
- Backup :octicon:`dash` Restore Strategies
-===========================================
+====================
+ Restore Strategies
+====================
 
 **Restore strategies** are required in different scenarios, which may
 change according to the actors involved, the scope and extent of the
