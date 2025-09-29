@@ -7,10 +7,6 @@ Before installing this Component on the |product| infrastructure, make sure
 that you installed the :ref:`component-prov-install`, which is a
 requirement for this Component.
 
-.. note:: If you already have installed on your infrastructure the
-   deprecated ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
-   make sure this Component is installed on a different Node.
-
 Install Packages
 ----------------
 
