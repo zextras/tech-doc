@@ -7,6 +7,24 @@
 This section contains |product|'s changelog of the latest version in a
 dedicated page and older changelogs grouped in a subsection.
 
+.. toctree::
+   :hidden:
+
+   changelogs/latest
+   changelogs/older
+
+
+.. button-link:: https://docs.zextras.com/release_notes/changelog-25.9.0.html
+   :color: danger
+   :outline:
+
+   Release 25.9.0
+
+.. button-ref:: changelogs/older
+   :color: danger
+   :outline:
+
+
 Ansible Playbook Changelogs
 ===========================
 
