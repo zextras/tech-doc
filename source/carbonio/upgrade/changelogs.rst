@@ -13,7 +13,6 @@ changelog and to the section containing the older changelogs.
 .. toctree::
    :hidden:
 
-   changelogs/latest
    changelogs/older
 
 
