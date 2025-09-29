@@ -43,7 +43,8 @@ The repositories of the Ansible playbooks have their own changelogs
 that you can find here:
 
 
-.. button-link::  <https://github.com/zextras/carbonio-install-ansible/blob/main/CHANGELOG.md
+.. button-link::
+                  https://github.com/zextras/carbonio-install-ansible/blob/main/CHANGELOG.md
    :color: danger
    :outline:
 
