@@ -17,7 +17,7 @@ changelog and to the section containing the older changelogs.
    changelogs/older
 
 
-.. button-link:: https://docs.zextras.com/release_notes/changelog-25.9.0.html
+.. button-link:: ../../../release_notes/changelog-25.9.0.html
    :color: danger
    :outline:
 
