@@ -27,6 +27,14 @@ changelog and to the section containing the older changelogs.
    :color: danger
    :outline:
 
+Documentation Changelogs
+========================
+
+Click the button to go to the section containing the monthly Documentation changelogs.
+
+.. button-ref:: doc-changelogs
+   :color: danger
+   :outline:
 
 Ansible Playbook Changelogs
 ===========================
