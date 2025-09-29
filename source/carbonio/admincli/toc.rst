@@ -26,7 +26,6 @@ mandatory.
       mobile
       storages
       usermailreplica
-      videoserver
       custom
       mesh
       security

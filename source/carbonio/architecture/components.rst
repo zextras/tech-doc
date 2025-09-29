@@ -105,7 +105,6 @@ When installing the Components, be careful that:
       * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
       * carbonio-catalog
-      * carbonio-chats-ui |dprc|
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -222,18 +221,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-directory-server
-                
-   .. grid-item::
-      :columns: 1
-                
-   .. grid-item-card:: Video Server |dprc|
-      :columns: 8
-      :margin: 5 auto auto auto
-
-      Packages:
-
-      * carbonio-videoserver
-      * carbonio-videoserver-recorder
 
 .. _multiserver-installation:
 
@@ -301,4 +288,3 @@ installation, please review these important remarks:
    components/component-monit
    components/component-es
    components/component-ds-replica
-   components/component-vs-deprecated
