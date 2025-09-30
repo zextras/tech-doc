@@ -8,6 +8,8 @@
 promoteAccounts
 ******************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha promoteAccounts [param VALUE[,VALUE]]
@@ -25,23 +27,23 @@ promoteAccounts
      - DEFAULT
    * - accounts (O)
      - Account Name/ID[,..]
-     - 
+     -
      - all
    * - input_file (O)
      - String
-     - 
-     - 
+     -
+     -
    * - source_mail_host (O)
      - Server Hostname/ID
-     - 
-     - 
+     -
+     -
    * - destination (O)
      - String
-     - 
-     - 
+     -
+     -
    * - threads (O)
      - Integer
-     - 
+     -
      - 4
 
 ::
@@ -56,6 +58,3 @@ promoteAccounts
 ::
 
    carbonio ha promoteAccounts
-
-
-

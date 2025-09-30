@@ -1,25 +1,24 @@
 .. _ts-ds:
 
 ==================
- Directory Server
+ |ds|
 ==================
 
 In this section you can find directions and suggestions to deal with
-issues arising from the Directory Server.
+issues arising from the |ds|.
 
 .. _ts-ds-credentials:
 
 Update Credentials
 ==================
 
-
 In all cases when it is advisable to change the password of the
-Directory Server, follow the steps in the procedure described here.
+|ds|, follow the steps in the procedure described here.
 
 .. note:: The procedure requires CLI access; all the commands must be
    executed as the |zu|.
 
-Update Password on Master Directory Server
+Update Password on Master |ds|
 ------------------------------------------
 
 We start by defining a robust password
@@ -28,7 +27,7 @@ We start by defining a robust password
 
    zextras$ export newLdapPsw="aGoodPassword"
 
-Then change all the Directory Server passwords.
+Then change all the |ds| passwords.
 
 .. code:: console
 
@@ -60,7 +59,7 @@ In case the |product| infrastructure includes the
 each Node featuring the Component.
 
 Define the password, which must be the same as the one on the
-Master Directory Server:
+Master |ds|:
 
 .. code:: console
 
@@ -91,7 +90,7 @@ Finally, remove the saved password:
 
    zextras$ unset newLdapPsw
 
-As a final check, ensure the LDAP replica is working:
+As a final check, ensure the Directory Replica is working:
 
 .. code:: console
 
@@ -101,13 +100,13 @@ Align all Other Nodes
 ---------------------
 
 Define the password, which must be the same as the one on the
-Master Directory Server:
+Master |ds|:
 
 .. code:: console
 
    zextras$ export newLdapPsw="aGoodPassword"
 
-Then change all the Directory Server passwords.
+Then change all the |ds| passwords.
 
 .. code:: console
 

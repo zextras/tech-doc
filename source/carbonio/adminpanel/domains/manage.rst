@@ -174,7 +174,7 @@ restore the COS value.
 
      Upon clicking the arrow on the right-hand side of the option,
      the **Administration** tab will open, to allow changing the
-     user's Component.
+     user's type of account.
 
    .. index:: Quota; by Account
 
@@ -265,6 +265,13 @@ restore the COS value.
    This advanced option proves useful only in split-domain or
    migration scenarios.
 
+   .. rubric:: Features
+
+   It is possible to prevent the user to access some of the |product|
+   features by using the switches for the various Components. For
+   example, `Web feature` means access to the web interface and
+   `Mobile App` allows access via Carbonio mobile applications.
+
    .. index:: Chat preferences; by Account
 
    .. rubric:: Chat
@@ -272,14 +279,6 @@ restore the COS value.
    Options here allow to configure the |wsc|
 
    .. include:: /_includes/_adminpanel/chats.rst
-
-   .. rubric:: Features
-
-   It is possible to prevent the user to access some of the |product|
-   features by using the switches for the various Components. For example,
-   `Web feature` means access to the web interface, `Mobile App`
-   allows access via cell phone or tablet, `ActiveSync remote access`
-   enables the ActiveSync access.
 
 .. _act-prefs:
 
@@ -513,22 +512,23 @@ Resources
 
 .. include:: /_includes/_adminpanel/_domains/resources.rst
 
-.. _ap-sync:
+.. Commented according to CO-2145
+   .. _ap-sync:
 
-ActiveSync
-==========
+   ActiveSync
+   ==========
 
-This page gives information about all accounts connected using the
-ActiveSync protocol. For each connected device, some information is
-shown, including its unique Device ID and the time when it last
-connected. Clicking any of the connections will show additional
-information, including client data and the device's ABQ status (see
-:ref:`mobile_abq_allowblockquarantine_device_control`)
+   This page gives information about all accounts connected using the
+   ActiveSync protocol. For each connected device, some information is
+   shown, including its unique Device ID and the time when it last
+   connected. Clicking any of the connections will show additional
+   information, including client data and the device's ABQ status (see
+   :ref:`mobile_abq_allowblockquarantine_device_control`)
 
-The following actions can be carried out: :bdg-primary-line:`WIPE
-DEVICE` (bring the connected device back to factory settings), to
-:bdg-primary-line:`RESET DEVICE` (log out the device from the
-account), and :bdg-primary-line:`SUSPEND` the connection.
+   The following actions can be carried out: :bdg-primary-line:`WIPE
+   DEVICE` (bring the connected device back to factory settings), to
+   :bdg-primary-line:`RESET DEVICE` (log out the device from the
+   account), and :bdg-primary-line:`SUSPEND` the connection.
 
 .. _restore-account:
 

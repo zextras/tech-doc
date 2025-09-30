@@ -8,6 +8,8 @@
 monitor
 **************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha monitor _operation_uuid_ [param VALUE[,VALUE]]
@@ -25,12 +27,12 @@ monitor
      - DEFAULT
    * - operation_uuid (M)
      - Uuid
-     - 
-     - 
+     -
+     -
    * - operation_host (O)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 
@@ -44,6 +46,3 @@ monitor
 ::
 
    carbonio ha monitor
-
-
-

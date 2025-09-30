@@ -14,13 +14,12 @@ including *robust backup*, *archiving*, *legal-hold* capabilities, and tools
 for *regulatory compliance*, ensure effective data management and
 sovereignty.
 
-By leveraging the dynamic |product| Mesh technology, administrators can
-easily adapt the platform to meet both user and organisational needs,
-while also enabling horizontal and vertical scaling to accommodate
-growing resource demands. High availability and disaster recovery are
-ensured through full redundancy and active replication, complemented
-by robust security features including SAML and two-factor
-authentication (2FA).
+By leveraging the dynamic |product| Mesh technology, administrators
+can easily adapt the platform to meet both user and organisational
+needs, while also enabling horizontal and vertical scaling to
+accommodate growing resource demands. High availability and disaster
+recovery are ensured through full redundancy, complemented by robust
+security features including SAML and two-factor authentication (2FA).
 
 |product|'s user-friendly interface and comprehensive administration
 dashboard simplify management and facilitate deployment in both public

@@ -25,7 +25,9 @@ mandatory.
       carboniobackup
       mobile
       storages
-      activereplica
-      videoserver
+      usermailreplica
       custom
       mesh
+      security
+      chats-advanced
+      clamav-management

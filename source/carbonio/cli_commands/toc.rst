@@ -18,3 +18,4 @@ You can use the command line interface in place of the Carbonio Admin Panel.
       carbonio_mobile
       carbonio_powerstore
       carbonio_ha
+      carbonio_mailreplica

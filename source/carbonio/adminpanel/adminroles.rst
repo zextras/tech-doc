@@ -338,8 +338,8 @@ domain. They have no access to :ref:`infra-settings`.
    :header: "Feature / Permission", "Global Administrator", "Domain Administrator"
 
    "Scope", "Single domain", "Entire Carbonio infrastructure"
-   "Can manage multiple domains", "|n|", "|y|"
-   "Access to global settings (infrastructure, COS, services, etc.)", "|n|", "|y|"
+   "Can manage multiple domains", "|y|", "|n|"
+   "Access to global settings (infrastructure, COS, services, etc.)", "|y|", "|n|"
    "Manage users within assigned domain", "|y|", "|y| (for all
    domains)"
    "Create/edit/delete other domain admins", "|y| (within the
@@ -347,9 +347,9 @@ domain. They have no access to :ref:`infra-settings`.
    "Assign rights and roles", "|y| (within the domain)", "|y| (Full
    rights and role delegation)"
    "Manage themes, GALSync, authentication", "|y| (domain-specific)", "|y| (globally and domain-specific)"
-   "Manage COS (Class of Service)", "|n|", "|y|"
-   "Modify Assigned COS, Max Account Number, Quota", "|n|", "|y|"
-   "Access server/infrastructure settings", "|n|", "|y|"
+   "Manage COS (Class of Service)", "|y|", "|n|"
+   "Modify Assigned COS, Max Account Number, Quota", "|y|", "|n|"
+   "Access server/infrastructure settings", "|y|", "|n|"
    "View analytics", "|y| (for domain/COS/account level)", "|y| (Full
    analytics access)"
 
@@ -580,13 +580,10 @@ Administrator is suited for **user-level** support.
 
       * View domain attributes
 
-      * Modify user information (personal data, preferences,
-        ActiveSync access)
+      * Modify user information (personal data, preferences)
 
       * Reset and assign user passwords, application credentials, and
         OTP codes
-
-      * Suspend and reset ActiveSync, HTTP, and IMAP sessions
 
       * Undelete emails, calendars, and contacts
 
@@ -607,11 +604,10 @@ Administrator is suited for **user-level** support.
 
         * personal data
         * user preferences
-        * enable or disable activesync access
+
 
       * Reset and Assign User Passwords, application credentials, and OTP
         codes
-      * Suspend and Reset ActiveSync sessions
       * Suspend and Reset HTTP/IMAP sessions
       * Undelete emails, calendars, and contacts
 
@@ -624,7 +620,7 @@ Administrator is suited for **user-level** support.
    "View domain attributes", "|y|", "|y|"
    "Modify user personal info and preferences", "|y|", "|n|"
    "Reset passwords, OTPs, and Auth (mobile/apps) credentials", "|y|", "|n|"
-   "Suspend/reset ActiveSync, HTTP, IMAP sessions", "|y|", "|n|"
+   "Suspend/reset HTTP, IMAP sessions", "|y|", "|n|"
    "Restore deleted emails, calendars, contacts", "|y|", "|n|"
    "Create/edit/delete user accounts", "|n|", "|n|"
    "Create/edit/delete distribution lists", "|n|", "|y|"

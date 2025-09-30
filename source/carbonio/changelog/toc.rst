@@ -34,11 +34,17 @@ Contribution to the Documentation
 
 .. include:: /_includes/_general/contribute.rst
 
-.. card:: Available changelogs
+.. _doc-changelogs:
 
-   .. toctree::
-      :glob:
-      :maxdepth: 1
-      :reversed:
+Documentation Changelogs
+========================
 
-      changelogs/*
+The following is the list of changelog including the monthly changes
+to the documentation.
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+   :reversed:
+
+   changelogs/*

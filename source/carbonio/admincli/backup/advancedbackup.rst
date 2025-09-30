@@ -1,11 +1,7 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _backup_advanced_techniques:
 
 ============================================
- Backup :octicon:`dash` Advanced Techniques
+ Advanced Techniques
 ============================================
 
 This section contains various advanced techniques to deal with
@@ -59,7 +55,7 @@ good practices we can suggest, including the following:
   problems as soon as they appear
 
 - Carefully plan your updates and migrations
-
+          
 - Consider implementing redundancy to replicate the services provided
   by |product|
 

@@ -8,6 +8,8 @@
 removeAccountDestination
 ************************************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha removeAccountDestination _destination_ [param VALUE[,VALUE]]
@@ -25,16 +27,16 @@ removeAccountDestination
      - DEFAULT
    * - destination (M)
      - Server Hostname/ID
-     - 
-     - 
+     -
+     -
    * - accounts (O)
      - Account Name/ID[,..]
-     - 
-     - 
+     -
+     -
    * - input_file (O)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 

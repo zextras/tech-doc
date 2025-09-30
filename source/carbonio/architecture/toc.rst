@@ -96,6 +96,8 @@ Supported protocols include:
 - IMAP and IMAPS (IMAP over SSL)
 - ActiveSync
 - LDAP (*for external address books*)
+- CalDAV
+- CardDAV
 
 .. toctree::
    :hidden:

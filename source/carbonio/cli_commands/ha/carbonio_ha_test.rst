@@ -8,6 +8,8 @@
 test
 ********
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha test _brokers_ [param VALUE[,VALUE]]

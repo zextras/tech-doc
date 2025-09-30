@@ -70,11 +70,11 @@ To check the status of the timer, launch command
 
 If the output is like the following, the timer is disabled::
 
-  ● carbonio-certbot.timer - Run Carbonio Certbot twice daily
+  carbonio-certbot.timer - Run Carbonio Certbot twice daily
       Loaded: loaded (/lib/systemd/system/carbonio-certbot.timer; disabled; vendor preset: enabled)
       Active: inactive (dead)
      Trigger: n/a
-    Triggers: ● carbonio-certbot.service
+    Triggers:  carbonio-certbot.service
 
 To enable the timer, issue command
 

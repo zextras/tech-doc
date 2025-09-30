@@ -8,6 +8,8 @@
 restartReplicas
 ******************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha restartReplicas [param VALUE[,VALUE]]
@@ -25,12 +27,12 @@ restartReplicas
      - DEFAULT
    * - accounts (O)
      - Account Name/ID[,..]
-     - 
-     - 
+     -
+     -
    * - input_file (O)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 

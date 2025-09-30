@@ -8,9 +8,11 @@
 doStartService
 ****************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
-   carbonio ha doStartService _service_name_ 
+   carbonio ha doStartService _service_name_
 
 
 .. rubric:: Parameter List
@@ -25,8 +27,8 @@ doStartService
      - DEFAULT
    * - service_name (M)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 
@@ -40,6 +42,3 @@ doStartService
 ::
 
    carbonio ha doStartService
-
-
-

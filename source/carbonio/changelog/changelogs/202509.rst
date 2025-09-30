@@ -1,0 +1,67 @@
+Changelog 2025-09
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202509-1268 Update list of packages in Component
+
+We slightly updated the list of packages installed by the Proxy and Database Components.
+
+Changes in the source code can be found in :pr:`1207`.
+
+
+.. rubric:: 202509-1262 Fix requirements
+
+The requirement that |product| be able to communicate with URL  https://notifications.zextras.com/firebase/ has been moved to the wsc| Component. A few minor corrections to requirements have been fixed.
+
+Changes in the source code can be found in :pr:`1212`.
+
+
+.. rubric:: 202509-1261 Add parameter to k/v Mesh interface
+
+
+A new configuration parameter to control the maximum uploadable size of |file| items has been added to the |mesh| k/v interface. Additionally, now there are dedicated k/v tables for |docs| and |File|.
+
+Changes in the source code can be found in :pr:`1214`.
+
+
+.. rubric:: 202509-1255 Add Carbonio Mesh-related material
+
+A couple of new articles about |mesh| have been added to the technical documentation, which also led to a more sound organisation of the section.
+
+Changes in the source code can be found in :pr:`1209`.
+
+
+.. rubric:: 202509-1246 Carbonio Mesh member unable to rejoin cluster
+
+We added a procedure to allow a |mesh| cluster member to join again the cluster when it can not do so automatically.
+
+Changes in the source code can be found in :pr:`1199`.
+
+
+.. rubric:: 202509-1245 Unify Mesh information
+
+All |mesh| documentation has been grouped together under Section *Administration by CLI / Working with Carbonio Mesh* to simplify access to it.
+
+Changes in the source code can be found in :pr:`1208`.
+
+
+.. rubric:: 202509-1193 Trust Self-Signed Certificates
+
+A tutorial to prevent authentication errors when connecting to a remote backend
+endpoint using self-signed certificates has been added.
+
+Changes in the source code can be found in :pr:`1215`.
+
+
+.. rubric:: 202509-863 Customisation of Carbonio Anti Virus updater
+
+Users of :command:`carbonio-avdb-updater` software can now customise a few options and save them to a file for persistency.
+
+Changes in the source code can be found in :pr:`1213`.
+
+*****
+
+End of changelog
