@@ -61,3 +61,10 @@ that you can find here:
    :outline:
 
    Upgrade
+
+.. button-link::
+   https://github.com/zextras/sps-carbonio-ha-ansible-setup/blob/main/CHANGELOG.md
+   :color: danger
+   :outline:
+
+   Cluster Services Redundancy
