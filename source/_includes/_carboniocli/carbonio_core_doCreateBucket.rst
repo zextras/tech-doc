@@ -46,3 +46,6 @@
 
    * https\://example_bucket_provider.com is the endpoint to which
      Carbonio Storage connects to the bucket
+
+   .. seealso:: Please refer to Section :ref:`cli-core` for more detailed
+      information about the commands.

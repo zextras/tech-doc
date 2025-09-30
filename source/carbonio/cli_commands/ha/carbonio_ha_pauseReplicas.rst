@@ -8,6 +8,8 @@
 pauseReplicas
 **************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha pauseReplicas [param VALUE[,VALUE]]
@@ -25,12 +27,12 @@ pauseReplicas
      - DEFAULT
    * - accounts (O)
      - Account Name/ID[,..]
-     - 
-     - 
+     -
+     -
    * - input_file (O)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 

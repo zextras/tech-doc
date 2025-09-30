@@ -29,11 +29,11 @@ Retrieve Bootstrap Token
 .. temporarily left here, to be moved in Scenario RWUMR when it will
    be reviewed
 
-.. _ar-ts:
+.. _ur-ts:
 
 
-Active Replica
-==============
+|ur|
+====
 
 When you set up :ref:`activereplica`, the following commands can prove
 useful to verify the status of the service.
@@ -48,10 +48,10 @@ useful to verify the status of the service.
 
 .. code:: console
 
-   zextras$ carbonio ha test 10.0.10.11:9092,10.0.10.12:9092,10.0.10.13:9092
+   zextras$ carbonio MailReplica test 10.0.10.11:9092,10.0.10.12:9092,10.0.10.13:9092
 
 .. rubric:: Restart the HA service
 
 .. code:: console
 
-   zextras$ carbonio ha doRestartService module
+   zextras$ carbonio MailReplica doRestartService module

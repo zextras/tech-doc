@@ -7,10 +7,6 @@ Before installing this Component on the |product| infrastructure, make sure
 that you installed the :ref:`component-prov-install`, which is a
 requirement for this Component.
 
-.. note:: If you already have installed on your infrastructure the
-   deprecated ``carbonio-videoserver`` and ``carbonio-videoserver-recorder`` packages
-   make sure this Component is installed on a different Node.
-
 Install Packages
 ----------------
 
@@ -47,9 +43,9 @@ successfully, check that in the carbonio-videoserver logs
 Video Recording Notes
 ---------------------
 
-You can enable the Video Recorder at user, COS, or global
-level: please refer to section :ref:`vs-recorder-conf` for
-directions.
+You can enable the Video Recorder at user or COS level: please refer
+to sections :ref:`User's configuration <act-conf>` and
+:ref:`cos-chat`, respectively, for directions.
 
 A recorded session is temporary stored in directory
 :file:`/var/lib/videoserver/` on the Node featuring the |vs| Component:

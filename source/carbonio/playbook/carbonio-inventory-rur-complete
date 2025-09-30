@@ -1,0 +1,76 @@
+[kafka]
+srv1.example.com broker_id=1
+srv2.example.com broker_id=2
+srv3.example.com broker_id=3
+
+### Keep this section empty for backward compatibility
+[zookeeper_servers]
+
+
+[postgresServers]
+srv1.example.com postgres_version=16 patroni_role=primary
+srv2.example.com postgres_version=16 patroni_role=secondary
+
+[masterDirectoryServers]
+srv1.example.com ldap_role=master
+srv3.example.com ldap_role=mmr
+
+[replicaDirectoryServers]
+srv2.example.com
+
+[serviceDiscoverServers]
+srv1.example.com
+srv2.example.com
+srv3.example.com
+
+[dbsConnectorServers]
+srv8.example.com
+srv9.example.com
+
+[mtaServers]
+srv4.example.com
+srv5.example.com
+
+[proxyServers]
+srv6.example.com
+srv7.example.com
+
+[proxyServers:vars]
+webmailHostname=YourWebmailPublicHostname
+
+[applicationServers]
+srv8.example.com
+srv9.example.com
+
+[filesServers]
+srv10.example.com
+srv11.example.com
+
+[docsServers]
+srv12.example.com
+srv13.example.com
+
+[taskServers]
+srv10.example.com
+srv11.example.com
+
+[previewServers]
+srv12.example.com
+srv13.example.com
+
+### The IP address(es) might be the same, see section UDP Video
+### Streaming
+
+[videoServers]
+srv14.example.com public_ip_address=x.y.z.t
+srv15.example.com public_ip_address=w.u.v.s
+
+[prometheusServers]
+srv3.example.com
+
+[syslogServer]
+srv3.example.com
+
+[workStreamServers]
+srv10.example.com
+srv11.example.com

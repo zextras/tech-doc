@@ -58,3 +58,4 @@ alternatives to install |product|:
       requirements
       preliminary
       scenarios
+      post-install

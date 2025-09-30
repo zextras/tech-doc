@@ -36,15 +36,5 @@ Pending setups
 
 .. include:: /_includes/_installation/pset.rst
 
-.. _conf-memcached:
-
-Configure Memcached
--------------------
-
-.. include:: /_includes/_installation/_components/memcached.rst
-
-.. note:: In case you have multiple Mailstore & Provisioning or Proxy Nodes,
-   add all of them as a comma-separated list, for example::
-
-     nginx_lookup_server_full_path_urls = https://172.16.0.13:7072,https://172.16.0.23:7072
-     memcached_server_full_path_urls = 172.16.0.12:11211,172.16.0.22:11211
+.. note:: Since version 25.9.0, thumbnail previews are managed by
+   |mesh|, so there is no longer need to configure Memcached.

@@ -30,7 +30,7 @@ copyright = '2025: ZEXTRAS'
 author = 'The Zextras Team'
 
 # The full version, including alpha/beta/rc tags
-release = '25.6.0'
+release = '25.9.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
@@ -80,6 +80,7 @@ sitemap_url_scheme = '{link}'
 # this is the default name anyway, adding for reference
 sitemap_filename = 'sitemap.xml'
 
+todo_include_todos = False
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -128,9 +129,6 @@ html_sidebars = { "**": [ 'navbar-logo.html',
 html_context = {
     'hubhome' : '%s' %hubhome,
 }
-
-# workaround for ZTD-581
-#html_extra_path = ['changelog.html', 'upgrade.html']
 
 # -- Options for linkcheck output --------------------------------------------
 

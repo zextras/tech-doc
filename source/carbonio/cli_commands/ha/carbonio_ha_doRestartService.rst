@@ -8,9 +8,11 @@
 doRestartService
 ********************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
-   carbonio ha doRestartService _service_name_ 
+   carbonio ha doRestartService _service_name_
 
 
 .. rubric:: Parameter List
@@ -25,8 +27,8 @@ doRestartService
      - DEFAULT
    * - service_name (M)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 
@@ -40,6 +42,3 @@ doRestartService
 ::
 
    carbonio ha doRestartService
-
-
-

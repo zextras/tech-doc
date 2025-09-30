@@ -38,8 +38,8 @@ This is the list of Components that make up a |product| installation.
 
 When installing the Components, be careful that:
 
-* Postgres, Grafana, Zookeper, and Kafka are third-party software that
-  are installed from their respective official repositories
+* Postgres, Grafana, and Kafka are third-party software that are
+  installed from their respective official repositories
 
 * On each Node, you need to install package
   ``service-discover-agent``, except on the Node on which
@@ -105,7 +105,6 @@ When installing the Components, be careful that:
       * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
       * carbonio-catalog
-      * carbonio-chats-ui |dprc|
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -211,7 +210,6 @@ When installing the Components, be careful that:
 
       Packages:
 
-      * ZooKeeper
       * Apache Kafka
 
    .. grid-item-card:: Directory Replica
@@ -223,18 +221,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-directory-server
-                
-   .. grid-item::
-      :columns: 1
-                
-   .. grid-item-card:: Video Server |dprc|
-      :columns: 8
-      :margin: 5 auto auto auto
-
-      Packages:
-
-      * carbonio-videoserver
-      * carbonio-videoserver-recorder
 
 .. _multiserver-installation:
 
@@ -302,4 +288,3 @@ installation, please review these important remarks:
    components/component-monit
    components/component-es
    components/component-ds-replica
-   components/component-vs-deprecated

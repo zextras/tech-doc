@@ -8,9 +8,11 @@
 getServices
 **********************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
-   carbonio ha getServices 
+   carbonio ha getServices
 
 
 .. rubric:: Usage example
@@ -19,6 +21,3 @@ getServices
 ::
 
    carbonio ha getServices
-
-
-

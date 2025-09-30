@@ -1,8 +1,10 @@
-===========
-Carbonio HA
-===========
+==================
+Carbonio HA |dprc|
+==================
 
 Commands regarding Active Replica
+
+.. include:: /_includes/deprecateha.rst
 
 .. card:: Table of
 

@@ -31,9 +31,83 @@ activities:
 Before You Open a Ticket
 ------------------------
 
-Before you open a Support Ticket, you should gather some information
-and configuration values from |product| and its Components, to collect
-the information that will be relevant for the Technical Support Team.
+Before you open a Support Ticket, ensure that your |product|
+infrastructure is fully updated, that is, it features the latest
+version released and has the latest packages installed. If your
+|product| infrastructure is equipped with a version of |product| older
+than |version|, please follow the :ref:`appropriate upgrade procedure
+<upgrade-procedure>`. If you already run the latest version, make sure
+all the latest packages are installed by carrying out these two-step
+procedure on each Node of your |product| infrastructure.
+
+.. rubric:: Step 1. Update package list.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      .. code:: console
+
+         # apt update
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # dnf check-update
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      .. code:: console
+
+         # apt update
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      .. code:: console
+
+         # dnf check-update
+
+.. rubric:: Step 2. Install new packages, if any.
+
+.. tab-set::
+
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      .. code:: console
+
+         # apt upgrade
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      .. code:: console
+
+         # dnf upgrade --best --allowerasing
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      .. code:: console
+
+         # apt upgrade
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      .. code:: console
+
+         # dnf upgrade --best --allowerasing
+
+After you updated your |product| infrastructure, you should gather
+some information and configuration values from |product| and its
+Components, to collect the information that will be relevant for the
+Technical Support Team.
 
 This section focuses on how to retrieve this information: You need to
 provide existing log files and the output of some commands and scripts

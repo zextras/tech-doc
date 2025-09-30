@@ -40,8 +40,8 @@ following:
    scenarios/scenario-essential
    scenarios/scenario-fullsmall
    scenarios/scenario-fullstandard
-   scenarios/scenario-fullredundant
-   scenarios/scenario-ha
+   scenarios/scenario-redundant
+   scenarios/scenario-redundantwithusermailreplica
 
 Scenarios
 =========
@@ -77,7 +77,11 @@ Scenarios
 
       |unsup| Cluster, Files and Docs service redundancy
 
-      |unsup| LDAP master-slave replica
+      |unsup| LDAP (|ds|) master-slave replica
+
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
 
       .. note:: Availability of some features might require additional
          Nodes setup.
@@ -107,7 +111,11 @@ Scenarios
 
       |unsup| Cluster, Files and Docs service redundancy
 
-      |unsup| LDAP master-slave replica
+      |unsup| LDAP (|ds|) master-slave replica
+
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
 
    .. grid-item-card:: Scenario *Full Small*
       :columns: 12 12 6 6
@@ -134,7 +142,11 @@ Scenarios
 
       |unsup| Cluster, Files and Docs service redundancy
 
-      |unsup| LDAP master-slave replica
+      |unsup| LDAP (|ds|) master-slave replica
+
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
 
    .. grid-item-card:: Scenario *Full Standard*
       :columns: 12 12 6 6
@@ -161,16 +173,20 @@ Scenarios
 
       |supp| Cluster, Files and Docs service redundancy
 
-      |supp| LDAP master-slave replica
+      |supp| LDAP (|ds|) master-slave replica
 
-   .. grid-item-card:: Scenario *Full Redundant*
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
+
+   .. grid-item-card:: Scenario *Redundant*
       :columns: 12 12 6 6
       :class-header: sd-font-weight-bold sd-fs-5
-      :link: scenario-fullredundant
+      :link: scenario-redundant
       :link-type: ref
 
       Suitable for any large infrastructure that requires scalability
-      and redundancy and is ready for High Availability.
+      and redundancy.
 
       +++++
 
@@ -188,4 +204,24 @@ Scenarios
 
       |supp| Cluster, Files and Docs service redundancy
 
-      |supp| LDAP master-slave replica
+      |supp| LDAP (|ds|) master-slave replica
+
+      |unsup| LDAP (|ds|) master-master replica
+
+      |unsup| User Mail Replica
+
+*****
+
+.. card:: Scenario *Redundant with User Mail Replica*
+   :class-header: sd-font-weight-bold sd-fs-5
+   :link: scenario-rur
+   :link-type: ref
+
+   This Scenario is an extension of the Redundant Scenario, therefore
+   it encompasses all its functionalities, adding:
+
+   |supp| LDAP (|ds|) master-master replica
+
+   |supp| User Mail Replica
+
+   |supp| Centralised Storage

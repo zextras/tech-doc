@@ -37,7 +37,7 @@ Features
 
 *Features* are settings that allow or forbid the user to access the
 various features related to the everyday use of |product|, like for
-example ActiveSync, the legacy Chat module, web and mobile access.
+example the *Settings* module, e-mail signatures, web and mobile access.
 
 The Administrator can enforce authentication by requiring 2FA, and
 even prevent users to even access the `Settings` Module, meaning that
@@ -191,6 +191,10 @@ Timeout Policy
   interaction.
 
 Email Retention Policy
-  Define how long e-mail will be stored before being automatically
-  deleted from the Inbox (and its sub-folders), Trash, and Spam
+  Define how long e-mails will be stored before being automatically
+  deleted from the Inbox (including its sub-folders), Trash, and Spam
   folders.
+
+  .. note:: Even if you configure E-mail message lifetime with a value
+     below 31 days, the system will automatically enforce a minimum
+     retention of 31 days.

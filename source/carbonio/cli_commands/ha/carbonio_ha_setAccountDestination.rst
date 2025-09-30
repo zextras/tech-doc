@@ -8,6 +8,8 @@
 setAccountDestination
 ******************************************
 
+.. include:: /_includes/deprecateha.rst
+
 ::
 
    carbonio ha setAccountDestination _destination_ _priority_ [param VALUE[,VALUE]]
@@ -25,20 +27,20 @@ setAccountDestination
      - DEFAULT
    * - destination (M)
      - Server Hostname/ID
-     - 
-     - 
+     -
+     -
    * - priority (M)
      - Integer
-     - 
-     - 
+     -
+     -
    * - accounts (O)
      - Account Name/ID[,..]
-     - 
-     - 
+     -
+     -
    * - input_file (O)
      - String
-     - 
-     - 
+     -
+     -
 
 ::
 

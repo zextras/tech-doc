@@ -1,4 +1,4 @@
-Ports and paths useful for monitoring
+Ports And Paths Useful For Monitoring
 =====================================
 
 Effective monitoring is essential for maintaining the stability, security,
@@ -11,7 +11,7 @@ quickly detect issues, and optimize system performance.
 The document is structured by role, detailing the required endpoints for each service
 including MTA, Proxy, Mailstore & Provisioning, Mesh & Directory, Event Streaming, and general system health checks.
 It also covers critical services such as SMTP, IMAP, HTTP, databases (MariaDB, PostgreSQL), and high-availability
-components like Kafka and Zookeeper.
+components like Kafka.
 Additionally, fundamental system health indicators, such as disk usage, CPU load, and network availability, are included
 to provide a comprehensive monitoring strategy.
 
@@ -106,7 +106,7 @@ to provide a comprehensive monitoring strategy.
 .. topic:: Component: Event streaming and other HA services
 
 
-    With Active Replica feature enabled the following are also necessary
+    With |ur| feature enabled the following are also necessary
 
     **Kafka**
 
@@ -115,12 +115,6 @@ to provide a comprehensive monitoring strategy.
 
     Ports ``9308``, ``7072``
 
-    **Zookeeper**
-
-    To monitor the status of the Zookeeper service we are going to connect
-    to the following port from the external monitoring system:
-
-    Port ``2181``
 
     **Patroni**
 
