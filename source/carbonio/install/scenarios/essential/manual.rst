@@ -67,9 +67,15 @@ Core Node
 
 .. _es1-step4:
 
-.. dropdown:: Step 4: Configure PostgreSQL
+.. dropdown:: Step 4: Initialise and configure PostgreSQL
+
+   .. rubric:: Initialisation
 
    .. include:: /_includes/_installation/step-conf-db-single-cb.rst
+
+   .. rubric:: Configuration
+
+   .. include:: /_includes/_installation/_repo/pg-access.rst
 
 .. _es1-step5:
 
