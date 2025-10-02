@@ -35,6 +35,9 @@ During or after the upgrade from an older version, you may encounter
 one or more of the following issues that require a manual
 intervention.
 
+.. important:: You also need to address all the issues listed in
+   previous Section :ref:`ts-up-prev`.
+
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
 * Monitoring: a new configuration file for :ref:`carbonio-prometheus
   <upgrade-monit>` package must be installed
