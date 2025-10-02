@@ -47,22 +47,6 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
-* You might be asked to keep or replace the :ref:`Janus
-  <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
-  configuration files
-* E-mails' body are not displayed or their rendering is wrong, due to
-  :ref:`the value a variable <email-rendering>`
 
 .. include:: /_includes/_upgrade/issues.rst
 
-.. _upgrade-janus:
-
-.. include:: /_includes/_upgrade/issue-janus.rst
-
-.. _upgrade-mongoose:
-
-.. include:: /_includes/_upgrade/issue-mongoose.rst
-
-.. _email-rendering:
-
-.. include:: /_includes/_ts/issue-mail-rendering.rst
