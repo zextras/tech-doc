@@ -51,13 +51,18 @@ the upgrade:
 Checklist
 ---------
 
-The following packages should be renamed or moved to different nodes during the upgrade procedure:
+These packages must be renamed, if they still exist on your |product|
+infrastructure:
+
+#. carbonio-message-dispatcher :fas:`arrow-right` carbonio-message-dispatcher-ce
+#. carbonio-storages  :fas:`arrow-right` carbonio-storages-ce
+
+On a Multi-Server infrastructure, the following packages should be
+moved to different nodes during the upgrade procedure:
 
 #. carbonio-user-management
-#. carbonio-storages
 #. carbonio-catalog
 #. carbonio-message-broker
-#. carbonio-message-dispatcher
 
 Upgrade |product|
 -----------------
@@ -104,7 +109,16 @@ order of installation.
          ``carbonio-message-dispatcher-ce``.
 
          .. include:: /_includes/_upgrade/package-dispatcher.rst
-                      
+
+      .. dropdown:: ``carbonio-storages``
+         :open:
+
+         On the Node installing the |wsc| Component, remove
+         package ``carbonio-storages`` and install
+         ``carbonio-storages-ce``.
+
+      .. include:: /_includes/_upgrade/package-storages-ce.rst
+
 .. include:: /_includes/_upgrade/second-part-ce.rst
 
 Other Upgrades
