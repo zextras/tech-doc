@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _changelog:
 
 ============================
@@ -55,6 +51,3 @@ component within their respective GitHub repository.
 * :bdg-link-danger-line:`Carbonio User Management
   <https://github.com/Zextras/carbonio-user-management/blob/develop/CHANGELOG.md>`
   Carbonio User Management
-* :bdg-link-danger-line:`Consul Client
-  <https://github.com/Zextras/consul-client/blob/master/CHANGELOG.md>`
-  Consul client
