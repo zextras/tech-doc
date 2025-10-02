@@ -32,6 +32,9 @@ Known Issues (Older Releases)
    There is no know issue that impacts either the upgrade process to
    |product| |version| or the |product| operations afterwards.
 
+.. important:: You also need to address all the issues listed in
+   previous Section :ref:`ts-up-prev`.
+
 During or after the upgrade from an older version, you may encounter
 one or more of the following issues that require a manual
 intervention.
