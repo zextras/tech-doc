@@ -32,6 +32,9 @@ Known Issues (Older Releases)
    There is no know issue that impacts either the upgrade process to
    |product| |version| or the |product| operations afterwards.
 
+.. important:: You also need to address all the issues listed in
+   previous Section :ref:`ts-up-prev`.
+
 During or after the upgrade from an older version, you may encounter
 one or more of the following issues that require a manual
 intervention.
@@ -47,22 +50,6 @@ intervention.
 * :ref:`Domain Initialisation <init-domain-issue>` fails with an error
 * Older version included a package that has been replaced, but it can
   :ref:`cause conflicts <package-conflict>` during upgrades
-* You might be asked to keep or replace the :ref:`Janus
-  <upgrade-janus>` and :ref:`Mongoose <upgrade-mongoose>`
-  configuration files
-* E-mails' body are not displayed or their rendering is wrong, due to
-  :ref:`the value a variable <email-rendering>`
 
 .. include:: /_includes/_upgrade/issues.rst
 
-.. _upgrade-janus:
-
-.. include:: /_includes/_upgrade/issue-janus.rst
-
-.. _upgrade-mongoose:
-
-.. include:: /_includes/_upgrade/issue-mongoose.rst
-
-.. _email-rendering:
-
-.. include:: /_includes/_ts/issue-mail-rendering.rst

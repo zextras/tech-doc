@@ -35,6 +35,9 @@ During or after the upgrade from an older version, you may encounter
 one or more of the following issues that require a manual
 intervention.
 
+.. important:: You also need to address all the issues listed in
+   previous Section :ref:`ts-up-prev`.
+
 * New :ref:`GPG Key of Grafana <manual-grafana>` in Ubuntu 22.04
 * Monitoring: a new configuration file for :ref:`carbonio-prometheus
   <upgrade-monit>` package must be installed
@@ -42,10 +45,7 @@ intervention.
   upgrade
 * :ref:`PostgreSQL Upgrade <pg-upgrade-issue>` fails
 * A missing library causes a :ref:`RHEL Netcat Issue <rhel-netcat>`
-* You might be asked to keep or replace the :ref:`Janus
-  <upgrade-janus>` configuration files
-* E-mails' body are not displayed or their rendering is wrong, due to
-  :ref:`the value a variable <email-rendering>`
+
 
 .. _manual-grafana:
 
@@ -135,11 +135,3 @@ intervention.
    The solution is to install the libbsd package::
 
      # dnf install libbsd
-
-.. _upgrade-janus:
-
-.. include:: /_includes/_upgrade/issue-janus.rst
-
-.. _email-rendering:
-
-.. include:: /_includes/_ts/issue-mail-rendering.rst
