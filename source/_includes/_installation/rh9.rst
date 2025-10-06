@@ -4,25 +4,25 @@
    subscription to the following repositories, i.e., you must be able
    to fetch packages from them
 
-   * **BaseOS** and the other main repositories::
+   * **BaseOS** and the other main repositories:
 
      .. code:: console
 
         # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
 
-   * **Appstream**::
+   * **Appstream**:
 
      .. code:: console
 
         # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
 
-   * **CodeReady**::
+   * **CodeReady**:
 
      .. code:: console
 
         # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
-   * **EPEL**::
+   * **EPEL**:
 
      .. code:: console
 

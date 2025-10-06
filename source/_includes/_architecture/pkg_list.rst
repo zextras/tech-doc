@@ -9,8 +9,8 @@ Below is the list of Carbonio packages collected by component and updated to ver
    - **service-discover-server**: `service-discover-server` *(0.2.2)*
    - **carbonio-directory-server**: `carbonio-directory-server` *(4.23.1)*
    - **carbonio-message-broker**: `carbonio-message-broker` *(0.2.2)*
-   - **carbonio-storages**: `carbonio-storages` *(0.0.13)*
-   - **carbonio-user-management**: `carbonio-user-management` *(0.8.3)*
+   - **carbonio-storages**: `carbonio-storages` *(0.0.16)*
+   - **carbonio-user-management**: `carbonio-user-management` *(0.8.4)*
 
 .. dropdown:: **Database**
 

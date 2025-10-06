@@ -3,8 +3,8 @@
 From Older Versions
 ===================
 
-This section guides you in the upgrade from a |product| version older
-than **24.12** to the latest available version, |release|, which
+This section guides you in the upgrade from a |product| version **older
+than** |prev| to the latest available version, |current|, which
 contains a number of technical and performance improvements, bug
 fixes, and security fixes.
 

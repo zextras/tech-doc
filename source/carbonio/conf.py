@@ -29,6 +29,10 @@ project = 'Carbonio Administration Guide'
 copyright = '2025: ZEXTRAS'
 author = 'The Zextras Team'
 
+# this variable is used in the  upgrade procedure, remember to change it together with the release. Since upgrade doesn't discriminate on patch number, we do not need the last cipher.
+previous_release = '25.6'
+
+
 # The full version, including alpha/beta/rc tags
 release = '25.9.0'
 version = release
@@ -50,11 +54,11 @@ exclude_patterns = [ '_includes', 'cli', 'playbook',
                      'common/carbonio' ]
 
 rst_prolog = """
-
 .. |product| replace:: Carbonio
 .. |storage| replace:: Carbonio Storage
-
-""" + open("replace.txt").read()
+.. |prev| replace:: :strong:`%s`
+.. |current| replace:: :strong:`%s`
+""" %(previous_release, release)  + open("replace.txt").read()
 
 # -- Configuration of extensions ---------------------------------------------
 
