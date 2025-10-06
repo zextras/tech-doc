@@ -4,8 +4,8 @@ Manual From Older Versions
 ==========================
 
 This section guides you in the upgrade from a |product| version
-**24.12** or older to the latest available version, |release|, which
-contains a number of technical and performance improvements, bug
+**older than** |prev| to the latest available version, |current|,
+which contains a number of technical and performance improvements, bug
 fixes, and security fixes.
 
 .. note:: Upgrading from very old versions should work, but may
