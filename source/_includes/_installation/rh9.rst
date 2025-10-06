@@ -4,7 +4,7 @@
    subscription to the following repositories, i.e., you must be able
    to fetch packages from them
 
-   * **BaseOS** and the other main repositories::
+   * **BaseOS** and the other main repositories:
 
      .. code:: console
 
