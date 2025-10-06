@@ -10,19 +10,19 @@
 
         # subscription-manager repos --enable=rhel-9-for-x86_64-baseos-rpms
 
-   * **Appstream**::
+   * **Appstream**:
 
      .. code:: console
 
         # subscription-manager repos --enable=rhel-9-for-x86_64-appstream-rpms
 
-   * **CodeReady**::
+   * **CodeReady**:
 
      .. code:: console
 
         # subscription-manager repos --enable=codeready-builder-for-rhel-9-x86_64-rpms
 
-   * **EPEL**::
+   * **EPEL**:
 
      .. code:: console
 
