@@ -182,8 +182,7 @@ Final Notes
 * These actions are **mandatory** to ensure the |product| components
   start correctly on boot in the new OS.
 
-* The :command:`zmcontrol` utility will still report service status,
-  but it **no longer manages service startup** on Ubuntu 24.04 and Red Hat 9.
+* The :command:`zmcontrol` utility **no longer manages services** on Ubuntu 24.04 and Red Hat 9.
 
 * Verify the status of any service after enablement using:
 
