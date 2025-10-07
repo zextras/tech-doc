@@ -4,8 +4,8 @@
  Manual From Previous Version
 ==============================
 
-This section guides you in the upgrade from |product| **25.3.0**,
-regardless of any specific patch numbers, to the latest **25.6.0**.
+This section guides you in the upgrade from |product| |prev|,
+regardless of any specific patch numbers, to the latest |current|.
 
 .. _up-prev-req:
 
