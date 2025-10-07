@@ -16,7 +16,6 @@ srv1.example.com ldap_role=master
 srv3.example.com ldap_role=mmr
 
 [replicaDirectoryServers]
-srv2.example.com
 
 [serviceDiscoverServers]
 srv1.example.com
