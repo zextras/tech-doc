@@ -377,33 +377,27 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
 .. _fr3-step4:
 
-.. dropdown:: Step 4: Configure PostgreSQL
-
-   .. include:: /_includes/_installation/step-conf-db-single-cb.rst
-
-.. _fr3-step5:
-
-.. dropdown:: Step 5: Bootstrap |product|
+.. dropdown:: Step 4:  Bootstrap |product|
 
    .. include:: /_includes/_installation/step-bootstrap.rst
 
    The next steps concern the configuration and setup of the various
    |product| components.
 
-.. _fr3-step6:
+.. _fr3-step5:
 
-.. dropdown:: Step 6: Setup |mesh|
+.. dropdown:: Step 5: Setup |mesh|
 
    .. include:: /_includes/_installation/mesh.rst
 
    .. include:: /_includes/_installation/pset.rst
 
-.. _fr3-step7:
+.. _fr3-step6:
 
-.. dropdown:: Step 7: Databases Bootstrap
+.. dropdown:: Step 6: Databases Bootstrap
 
    Now you have to bootstrap the DB with the password set in
-   :ref:`Step 4 of Core Node installation <fr3-step4>`.
+   :ref:`Step 4 of Core Node installation <fr1-step4>`.
 
    .. card:: Mailbox DB Bootstrap
 
@@ -411,9 +405,9 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
         # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-.. _fr3-step8:
+.. _fr3-step7:
 
-.. dropdown:: Step 8: Complete Installation
+.. dropdown:: Step 7: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -456,9 +450,9 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
             # systemctl restart carbonio-directory-server.target
 
-.. _fr3-step9:
+.. _fr3-step8:
 
-.. dropdown:: Step 9: Data Required for Additional Nodes
+.. dropdown:: Step 8: Data Required for Additional Nodes
 
    The following data from this Node will be needed during the
    installation of the next two Nodes.
