@@ -29,7 +29,7 @@ Below is the list of Carbonio packages collected by component and updated to ver
    - **carbonio-files-public-folder-ui**: `carbonio-files-public-folder-ui` *(0.0.9)*
    - **carbonio-webui**: `carbonio-webui` *(4.4.3)*
    - **carbonio-tasks-ui**: `carbonio-tasks-ui` *(0.0.17)*
-   - **carbonio-files-ui**: `carbonio-files-ui` *(2.13.1)*
+   - **carbonio-files-ui**: `carbonio-files-ui` *(2.13.2)*
    - **carbonio-ws-collaboration-ui**: `carbonio-ws-collaboration-ui` *(0.9.17)*
    - **carbonio-avdb-updater**: `carbonio-avdb-updater` *(1.0.5)*
 
