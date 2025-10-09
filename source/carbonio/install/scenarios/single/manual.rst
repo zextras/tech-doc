@@ -109,7 +109,6 @@ repositories.
 .. dropdown:: Step 3: System Upgrade and Package Installation
 
    .. include:: /_includes/_installation/step-package-install-single-cb.rst
-   .. include:: /_includes/_installation/step-package-install-single-collaboration-node-cb.rst
 
 .. _n1-s4:
 
@@ -147,24 +146,13 @@ repositories.
 
 .. dropdown:: Step 8: Databases Bootstrap
 
-   Now you have to bootstrap some DBs with the password set in the Preliminary Tasks.
+   Now you have to bootstrap the DBs with the |dbadmpwd| password set
+   in the *Initialisation* in :ref:`Step 4 <n1-s4>`.
 
    .. code:: console
 
       # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
       # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
-
-   If you plan to install also the Collaboration Node, you need to
-   bootstrap also the following databases
-
-   .. code:: console
-
-      # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
-      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
-      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
-      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
-      # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap  carbonio_adm 127.0.0.1
-
 
 .. _n1-s9:
 
