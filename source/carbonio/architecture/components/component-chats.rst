@@ -65,18 +65,22 @@ into account the following points:
 * There is a *Preparation* phase that requires to install some package
   on other Nodes before starting the |wsc| installation.
 
-  #.  Install the database components on the **Database Node**: please
-      follow the instructions to Section :ref:`connectors-wsc-db-install`
-      remembering to bootstrap the Message Dispatcher and the |wsc| databases
+  #. DB connectors (packages ``carbonio-ws-collaboration-db``,
+     ``carbonio-message-dispatcher-db``, and
+     ``carbonio-notification-push-db``) on the
+     :ref:`component-db-install` Node: please follow the instructions
+     in Section :ref:`other-db-conn-install`, then execute the
+     :ref:`comp-db-ps`, and :ref:`initialise the databases
+     <chats-db-bootstrap>`
 
-  #. Install package :file:`carbonio-ws-collaboration-ui` on the
+  #. Package :file:`carbonio-ws-collaboration-ui` on the
      :ref:`component-proxy-install` Node
 
-  #. Install package :file:`carbonio-message-broker` on the
+  #. Package :file:`carbonio-message-broker` on the
      :ref:`component-mesh-install` Node
 
-  #. Install the :ref:`component-vs-wsc-install` Component on any
-     Node, even better if on a dedicated one
+  #. The :ref:`component-vs-wsc-install` Component on any Node, even
+     better if on a dedicated one
 
 Now, depending on how you plan to install |wsc|, the procedure
 slightly changes.
