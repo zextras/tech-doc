@@ -11,6 +11,33 @@ Settings
 
 .. include:: /_includes/_adminpanel/_domains/globalsettings.rst
 
+.. user search changes between CE and ADV
+
+.. index:: Chats; global user search (GUI)
+
+.. _wsc-user-search:
+
+.. card:: User search
+
+   The switch labelled **Allow searching users' information in all
+   domains**, when active, allows any user to search for other users
+   in all other domains configured on the |product| infrastructure.
+
+   For example: user John with e-mail address *john@example.com* will
+   be able to find user Jane *jane@acme.example* (which is on a
+   different domain) only if this switch is *active*, otherwise Jane
+   will not show up in the results.
+
+   If the option is **not active**, it will be possible to define in
+   each domain, :menuselection:`Domains --> Details --> General
+   Settings` (See :ref:`ap-domain-settings`) one or more of the other
+   domains from which to search users of other domains.
+
+   .. rubric:: Limitations
+
+   This settings is available to **Global Administrators** only and
+   currently for searches within the |wsc| module.
+
 .. _global-admins:
 
 Administrators
