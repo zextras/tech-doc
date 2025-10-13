@@ -21,6 +21,7 @@ options allow to define the time zone, the use of ``HTTP`` or
 ``HTTPS`` protocol (we suggest using always the latter), and a mail
 server used for spam-relay purposes.
 
+.. index:: Chats; user search by domain (GUI)
 
 .. card:: User search
 

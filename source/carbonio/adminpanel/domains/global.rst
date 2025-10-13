@@ -13,8 +13,7 @@ Settings
 
 .. user search changes between CE and ADV
 
-
-.. index:: Chats; user search by GUI
+.. index:: Chats; global user search (GUI)
 
 .. _wsc-user-search:
 
