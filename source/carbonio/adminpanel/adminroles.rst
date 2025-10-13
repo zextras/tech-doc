@@ -337,7 +337,7 @@ domain. They have no access to :ref:`infra-settings`.
 .. csv-table:: Comparison with Global Administrator
    :header: "Feature / Permission", "Global Administrator", "Domain Administrator"
 
-   "Scope", "Single domain", "Entire Carbonio infrastructure"
+   "Scope", "Entire Carbonio infrastructure", "Single domain"
    "Can manage multiple domains", "|y|", "|n|"
    "Access to global settings (infrastructure, COS, services, etc.)", "|y|", "|n|"
    "Manage users within assigned domain", "|y|", "|y| (for all
@@ -352,6 +352,7 @@ domain. They have no access to :ref:`infra-settings`.
    "Access server/infrastructure settings", "|y|", "|n|"
    "View analytics", "|y| (for domain/COS/account level)", "|y| (Full
    analytics access)"
+   "Manage |wsc| user search across domains", "|y|", "|n|"
 
 .. index:: Administrator; Delegated Domain
 
