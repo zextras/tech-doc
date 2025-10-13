@@ -96,21 +96,25 @@ Before The OS Upgrade
 
       zextras$ zmcontrol status
 
-#. Take note of the services listed as ``Running``. These will guide which
-   services need to be re-enabled post-upgrade.
+#. Take note of the services listed as ``Running``. While after the OS
+   upgrade they will be enabled and running, you will be quicker in
+   understanding which services need a manual restart in case
+   something goes wrong.
 
 After The OS Upgrade
 ~~~~~~~~~~~~~~~~~~~~
 
 Once the OS upgrade to Ubuntu 24.04 or Red Hat 9 is complete:
 
-#. Log in as root on each node.
+#. Log in as ``root`` on each Node
 
-#. For services identified earlier, use the corresponding command
-   below to enable and start it using systemd.
-
+#. Verify that the services identified earlier are correctly running,
+   by using the corresponding command below to check it. If any
+   service is *not running*, start it manually, replacing ``status``
+   with ``start``.
 
 .. list-table:: Mapping Table – zmcontrol Services to systemd Targets
+   (Ubuntu 24.04 and RHEL 9)
    :header-rows: 1
    :widths: 30 70
 
@@ -118,36 +122,28 @@ Once the OS upgrade to Ubuntu 24.04 or Red Hat 9 is complete:
      - Services Included
 
    * - zmcontrol Service
-     - systemd Target Command
+     - systemd Target Command (see :ref:`systemd-targets` for a
+       complete mapping)
 
    * - directory-server
      - .. code:: console
 
-          # systemctl enable --now carbonio-directory-server.target
+          # systemctl status carbonio-directory-server.target
 
    * - mta
      - .. code:: console
 
-          # systemctl enable --now carbonio-mta.target
+          # systemctl status carbonio-mta.target
 
    * - proxy
      - .. code:: console
 
-          # systemctl enable --now carbonio-proxy.target
+          # systemctl status carbonio-proxy.target
 
    * - mailbox
      - .. code:: console
 
-          # systemctl enable --now carbonio-appserver.target
-
-
-.. note:: Only the services listed above require to be manually
-   enabled after the OS upgrade.
-
-   The other services shown in the ``zmcontrol status`` output (e.g.,
-   service webapp, service-discover, memcached, stats, config service
-   etc.) will start automatically.  You do not need to manually enable
-   them.
+          # systemctl status carbonio-appserver.target
 
 .. card:: Example Scenario
 
@@ -171,10 +167,16 @@ Once the OS upgrade to Ubuntu 24.04 or Red Hat 9 is complete:
 
    .. code:: console
 
-      # systemctl enable --now carbonio-mta.target
-      # systemctl enable --now carbonio-proxy.target
+      # systemctl status carbonio-mta.target
+      # systemctl status carbonio-proxy.target
 
-   Repeat the process for each Node and each relevant service.
+   Repeat the process for each Node and each relevant service: any
+   service **does not** appear as ``Active``, must be manually
+   started, for example:
+
+   .. code:: console
+
+      # systemctl start carbonio-proxy.target
 
 Final Notes
 ~~~~~~~~~~~
