@@ -21,11 +21,16 @@ options allow to define the time zone, the use of ``HTTP`` or
 ``HTTPS`` protocol (we suggest using always the latter), and a mail
 server used for spam-relay purposes.
 
-Additionally, if option *Allow searching users' information in all
-domains* is **not** active in |adminui| :menuselection:`Domains -->
-Global --> Settings` (see :ref:`global-settings`), a Domain or Global
-Administrator will be able to allow, on a domain basis, the search for
-users in other domains configured on the |product| infrastructure.
+
+.. card:: User search
+
+   Option **Search users from a specific domain** allows to see
+   whether a Global Administrator has allowed users of the domain to
+   search for users in other domain. This option has effect only if
+   option **Allow searching users' information in all domains** is
+   disabled (see :menuselection:`Admin Panel --> Domains --> Global
+   --> Settings`, :ref:`this box <wsc-user-search>`), and **can not**
+   be modified by Domain Administrators.
 
 .. include:: /_includes/_adminpanel/_domains/detailsettings.rst
              
