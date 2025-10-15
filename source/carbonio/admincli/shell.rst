@@ -351,26 +351,24 @@ is the output on an upcoming 24.12.0 version.
    :emphasize-lines: 2
 
    zextras$ zmcontrol -v
-   Carbonio Release 24.12.0
+   Carbonio Release 25.9.0
    Advanced module version:
 
    CLI versions:
 
-           zextras_version                                     24.12.0-SNAPSHOT
-           zextras_commit                                      5a19e9dc7b27aec0ec3d94ae829eff1239993d2b
-           zal_version                                         24.12.0-SNAPSHOT
-           zal_commit                                          a4adc73297941a406384b391728266e4eb2e8ce4
-
+           zextras_version                                     25.9.0
+           zextras_commit                                      eb4a6972110cf318fcb67f54b7447f70eb071692
+           zal_version                                         25.9.0
+           zal_commit                                          50c08cb80775136ee405f078278caed51de110df
 
    Server versions:
 
-           version                                             24.12.0-SNAPSHOT
-           commit                                              fcd5553231cbd46f004163f77b2d00171b9fcc58
-           commit_dirty                                        true
+           version                                             25.9.0
+           commit                                              d11fb9b8fbfe37549b531bcba72032dbc3ddd745
            system_type                                         carbonio
            product                                             Carbonio
-           zal_version                                         24.12.0-SNAPSHOT
-           zal_commit                                          a4adc73297941a406384b391728266e4eb2e8ce4
+           zal_version                                         25.9.0
+           zal_commit                                          50c08cb80775136ee405f078278caed51de110df
 
 The important bit here is the first line of the output; while the
 various ``commit`` refer lines refer to the source code from which the
