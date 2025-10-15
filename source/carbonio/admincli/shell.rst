@@ -296,40 +296,41 @@ Besides the :command:`carbonio` command, another useful command is
 well, is used to check and verify the status of the services available
 on |product| and start or stop them.
 
-.. note:: On RHEL 9, :command:`zmcontrol` has a limited usage and is
-   mostly integrated with the ``systemd`` service: check the
-   :ref:`dedicated box <rhel-systemd>` for more information.
+.. note:: On Ubuntu 24.04 and RHEL 9, :command:`zmcontrol` has a
+   limited usage and is mostly replaced by ``systemd`` units: you can
+   interact with them using the standard :command:`systemctl`
+   command. Please check the :ref:`dedicated box <rhel-systemd>` for
+   more information.
 
 The ``status`` sub-command is used to verify which services and
 modules are running. A sample output of the command is::
 
   zextras$ zmcontrol status
-  Host mail.example.com
-      amavis                  Running
-      antispam                Running
-      directory-server        Running
-      mailbox                 Running
-       --Carbonio Advanced installed.
-       --Checking advanced modules status.
-       --Config is running
-       --Core is running
-       --Auth is running
-       --Mobile is running
-       --Chats is running
-       --Admin is running
-       --HA is NOT running
-       --Backup is running
-       --Powerstore is running
-       --Drive is NOT running
-       --SproxyD is running
-      memcached               Running
-      mta                     Running
-      opendkim                Running
-      proxy                   Running
-      service webapp          Running
-      service-discover        Running
-      stats                   Running
-      config service          Running
+  Host ztd-ub01.demo.zextras.io
+	amavis                  Running
+	antispam                Running
+	antivirus               Running
+	directory-server        Running
+	mailbox                 Running
+	 --Carbonio Advanced installed.
+	 --Checking advanced modules status.
+	 --Config is running
+	 --Core is running
+	 --Auth is running
+	 --Mobile is running
+	 --Chats is running
+	 --Admin is running
+	 --HA is NOT running
+	 --Backup is running
+	 --Powerstore is running
+	 --SproxyD is running
+	memcached               Running
+	mta                     Running
+	opendkim                Running
+	proxy                   Running
+	service webapp          Running
+	service-discover        Running
+	config service          Running
 
 The services (those in the main column, like *amavis*, *antispam* and
 so on) can be controlled using the sub-commands ``start``,
