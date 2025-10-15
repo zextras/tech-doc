@@ -5,11 +5,16 @@
 ===========================================
 
 The |ur| setup for |product| builds on the **Scenario
-Redundant**. Therefore, it is essential to have a working installation
-of that Scenario before starting to deploy the |ur| setup: if you do
-not have it yet, please refer to the installation procedure of the
-:ref:`scenario-redundant`, then you can proceed to the next
-section, :ref:`rur-inst`.
+Redundant**. Therefore, it is essential to have an installation of
+that Scenario before starting to deploy the |ur| setup: if you do not
+have it yet, please refer to the installation procedure of the
+:ref:`scenario-redundant`, then you can proceed to the next section,
+:ref:`rur-inst`.
+
+.. warning:: Since the Directory Replica is not needed in this
+   Scenario, when installing the initial **Scenario Redundant**, you
+   should empty the block ``[replicaDirectoryServers]`` from the
+   inventory file.
 
 Differences with Scenario Redundant
 ===================================
@@ -22,8 +27,7 @@ starting Scenario Redundant.
 This scenario includes a **Master/Master** |ds| setup, while the
 Scenario Redundant a *Master/Slave*. After you complete the deployment
 of this scenario, you will see two Master |ds|\s, one on
-srv1.example.com and the second on srv3.example.com, and one Slave
-|ds| on srv2.example.com
+srv1.example.com and the second on srv3.example.com.
 
 .. rubric:: User Mail Replica
 

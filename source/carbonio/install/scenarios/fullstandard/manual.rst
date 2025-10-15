@@ -369,13 +369,7 @@ Proxy Node
 
 .. _st3-step6:
 
-.. dropdown:: Step 6: Enable ``memcached``
-           
-   .. include:: /_includes/_installation/_components/memcached-enable.rst
-     
-.. _st3-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
   
    After the successful package installation, start all |product|
    services by executing

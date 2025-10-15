@@ -21,7 +21,7 @@ Ansible's Control Node and of the following items:
    .. code:: console
 
       # ansible-galaxy collection install zxbot.carbonio_kafka
-      # ansible-galaxy collection install zxbot.carbonio_patroni 
+      # ansible-galaxy collection install zxbot.carbonio_patroni
       # ansible-galaxy collection install zxbot.carbonio_ldap
 
 Prepare inventory
@@ -42,7 +42,7 @@ To configure the inventory for |rur| installation, you will need to add
 new groups and add specific variables to the :file:`inventory`
 file. Please read the following advises if you plan to add the |ur|
 infrastructure to different Node than the one we will use in the
-remainder of the scenario. 
+remainder of the scenario.
 
 .. card:: Guidelines for Components in |ur| Configuration
 
@@ -65,11 +65,11 @@ remainder of the scenario.
    deployment.
 
 The two new groups to add at the bottom of the file are:
-     
+
 #. ``kafka`` group, which will point to the Nodes where
    :command:`kafka` will be installed: these are the three Cluster
    Nodes. To each Node, add the ``broker_id`` variable with a
-   different value: 
+   different value:
 
    .. code:: text
 
@@ -110,12 +110,13 @@ You need also to add variable to existing groups.
       #masterDirectoryServers group
       [masterDirectoryServers]
       srv1.example.com ldap_role=master
-      srv2.example.com ldap_role=mmr
+      srv3.example.com ldap_role=mmr
 
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
    will be moved from the Postgres Node to both Mailstore &
    Provisioning Nodes, because at least one of them must always be
    available at anytime and provide |ur|.
+
    .. code:: console
 
       #dbsConnectorServers group
@@ -149,15 +150,21 @@ Install PostgreSQL HA
 PostgreSQL uses HAProxy to add load balancing, health checks, and
 more.  The HAProxy installation has been automated with Ansible and is
 included in the ``carbonio_patroni`` playbook. First, install the
-PstgreSQL replica
+PostgreSQL replica
 
 .. code:: console
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
-This task also move DB Connectors from the PostgreSQL Node to db
-connector Nodes, if needed, as defined on the inventory file. This
-setup allows Db Connectors to connect to an available PostgreSQL Node
+Then install ``carbonio_patroni``
+
+.. code:: console
+
+   # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_patroni_install
+
+This task also moves DB Connectors from the PostgreSQL Node to DB
+Connectors Node, if needed, as defined on the inventory file. This
+setup allows DB Connectors to connect to an available PostgreSQL Node
 managed by Patroni.
 
 Install Multi Master LDAP

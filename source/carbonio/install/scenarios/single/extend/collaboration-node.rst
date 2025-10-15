@@ -121,11 +121,20 @@ of them to expand the content.
             carbonio-docs-connector postgresql16 \
             carbonio-push-connector carbonio-notification-push
 
-.. dropdown:: Step 4: Package installation on **Core Node**
+.. dropdown:: Step 4: Tasks to carry out on the **Core Node**
    :color: danger
    :class-title: sd-bg-danger
 
-   Login to the *Core Node* and install the following packages.
+   These task are required only if you plan to install the
+   corresponding Component.
+
+   .. hint:: All the commands in this step **must be executed** on the
+      Core Node as the |ru|.
+
+   .. rubric:: Install user interface packages
+
+   These packages provide the Graphic User Interface for |wsc| and
+   |task|.
 
    .. tab-set::
 
@@ -160,6 +169,33 @@ of them to expand the content.
 
             # apt install carbonio-ws-collaboration-ui \
             carbonio-tasks-ui
+
+
+   .. rubric:: Install DB connectors packages
+
+   These packages provide access to the Database to |task|, |docs|, and |wsc|.
+
+   .. include:: /_includes/_installation/step-package-install-single-collaboration-node-cb.rst
+
+   .. rubric:: Register DB connectors to |mesh|
+
+   .. include:: /_includes/_installation/pset.rst
+
+   .. rubric:: Bootstrap Databases
+
+   Execute the following commands to initialise the
+   databases. Remember to use the password |dbadmpwd| password set in
+   the *Initialisation* in :ref:`Step 4 <n1-s4>` of Core Node's
+   installation.
+
+   .. code:: console
+
+      # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-ws-collaboration-db-bootstrap  carbonio_adm 127.0.0.1
+      # PGPASSWORD=$DB_ADM_PWD carbonio-notification-push-db-bootstrap  carbonio_adm 127.0.0.1
+
 
 .. dropdown:: Step 5: Bootstrap |product|
 

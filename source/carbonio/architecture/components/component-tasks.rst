@@ -10,6 +10,19 @@ Install Packages
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_installation/_packages/component-tasks.rst
 
+.. dropdown:: On the Database Node
+   :color: danger
+   :class-title: sd-bg-danger
+   :open:
+
+   Additionally, go to the Node which features the
+   :ref:`component-db-install` Component and make sure that the
+   corresponding :ref:`DB connector <other-db-conn-install>` package
+   (``carbonio-tasks-db``) is installed. If not, install it, then
+   execute the :ref:`comp-db-ps` and :ref:`initialise the database
+   <dbs-bootstrap>`.
+
+
 Bootstrap |carbonio|
 ====================
 

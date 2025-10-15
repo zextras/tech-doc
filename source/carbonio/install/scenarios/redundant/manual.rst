@@ -784,13 +784,7 @@ This Node features the *Proxy* Component.
 
 .. _fr6-step6:
 
-.. dropdown:: Step 6: Enable ``memcached``
-
-   .. include:: /_includes/_installation/_components/memcached-enable.rst
-
-.. _fr6-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -907,13 +901,7 @@ This Node features the (replicated) *Proxy* Component.
 
 .. _fr7-step6:
 
-.. dropdown:: Step 6: Enable ``memcached``
-
-   .. include:: /_includes/_installation/_components/memcached-enable.rst
-
-.. _fr7-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -1509,13 +1497,7 @@ This Node features the *Docs & Editor* and *Preview* Components.
 
 .. _fr12-step6:
 
-.. dropdown:: Step 6: Configure ``memcached``
-
-   .. include:: /_includes/_installation/_components/memcached-multipreview.rst
-
-.. _fr12-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -1630,13 +1612,7 @@ Components.
 
 .. _fr13-step6:
 
-.. dropdown:: Step 6: Configure ``memcached``
-
-   .. include:: /_includes/_installation/_components/memcached-multipreview.rst
-
-.. _fr13-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
