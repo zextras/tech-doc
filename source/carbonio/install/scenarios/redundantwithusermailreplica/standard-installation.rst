@@ -27,8 +27,7 @@ starting Scenario Redundant.
 This scenario includes a **Master/Master** |ds| setup, while the
 Scenario Redundant a *Master/Slave*. After you complete the deployment
 of this scenario, you will see two Master |ds|\s, one on
-srv1.example.com and the second on srv3.example.com, and one Slave
-|ds| on srv2.example.com
+srv1.example.com and the second on srv3.example.com.
 
 .. rubric:: User Mail Replica
 
