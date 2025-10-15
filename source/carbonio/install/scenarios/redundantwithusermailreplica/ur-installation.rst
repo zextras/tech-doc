@@ -110,12 +110,13 @@ You need also to add variable to existing groups.
       #masterDirectoryServers group
       [masterDirectoryServers]
       srv1.example.com ldap_role=master
-      srv2.example.com ldap_role=mmr
+      srv3.example.com ldap_role=mmr
 
 #. The ``dbsConnectorServers`` group must be filled out. DB Connectors
    will be moved from the Postgres Node to both Mailstore &
    Provisioning Nodes, because at least one of them must always be
    available at anytime and provide |ur|.
+
    .. code:: console
 
       #dbsConnectorServers group
