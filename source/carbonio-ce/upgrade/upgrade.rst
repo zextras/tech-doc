@@ -47,6 +47,19 @@ A |wsc|-related package changed name in this release:
 former and install the new one. This task is included in the upgrade
 procedure, so simply follow the instructions.
 
+
+#. The ``memcached`` software does no longer require a special
+   bind address, so after the upgrade you need to execute a command
+   to clear its configuration on the **Proxy Node**. After the upgrade
+   of that Node, before rebooting, execute command as the |zu|
+
+   .. code:: console
+
+      zextras$ carbonio prov -l ms $(zmhostname) zimbraMemcachedBindAddress ""
+
+   Then reboot the Node.
+
+
 .. _up-proc:
 
 Upgrade Procedure
