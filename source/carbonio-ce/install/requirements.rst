@@ -346,7 +346,6 @@ corresponding Component is installed, for a proper communication among
       :widths: 10 10 80
 
       "9113", "TCP", "nginx data export to |monit|"
-      "11211", "TCP", "memcached access"
 
 .. card:: |mesh| Component
 

@@ -118,39 +118,6 @@ Finally, Restart |product|
 
    zextras$ zmcontrol restart
 
-..
-   .. _ip-change-pv:
-
-   Modify Preview Component Configuration
-   --------------------------------------
-
-   Edit file :file:`/etc/carbonio/preview/config.ini` and replace the
-   values of variables **nginx_lookup_servers_full_path_urls** and
-   **memcached_server_full_path_urls** with the new IP address
-   (**192.168.10.50**) ones.
-
-   .. code-block:: ini
-
-      nginx_lookup_server_full_path_urls = https://192.168.10.50:7072
-      memcached_server_full_path_urls = 192.168.10.50:11211
-
-   In case you have multiple Proxy Nodes, add the IP addresses of all
-   Proxy Nodes as a comma-separated list, for example (assuming
-   **192.168.10.51** is the second Proxy Node's IP).
-
-   .. note:: In case you have a Multi-Server infrastructure, replace the
-      192.168.10.50 IP address in the snippets below with the correct IP
-      addresses, corresponding to the Proxy Node's IP address(es).
-
-   .. code-block:: ini
-
-      nginx_lookup_server_full_path_urls = https://192.168.10.50:7072,https://192.168.10.51:7072
-      memcached_server_full_path_urls = 192.168.10.50:11211,192.168.10.51:11211
-
-   .. seealso::
-
-      More information in Section :ref:`conf-memcached`
-
 .. _ip-change-vs:
 
 Modify |vs| Configuration
