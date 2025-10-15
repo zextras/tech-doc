@@ -31,8 +31,3 @@ Pending setups
 --------------
 
 .. include:: /_includes/_installation/pset.rst
-
-Enable ``Memcached``
---------------------
-
-.. include:: /_includes/_installation/_components/memcached-enable.rst
