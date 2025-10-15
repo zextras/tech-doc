@@ -14,26 +14,44 @@ improve performances and optimise the Module.
 
 In this section we present advanced configuration options for |wsc|.
 
-.. index:: Chats; user search by CLI
+.. index:: Chats; global user search (CLI)
 
 User Search Across Domains
 --------------------------
 
-In a multi-domain |product| infrastructure, Administrators can decide
-on which domains a user can be found when starting a new chat.
-
-The search on all domains can be activated with CLI command
+Within a multi-domain |product| infrastructure, there are two
+attributes that control how a user can search for users in other
+domains: ``carbonioSearchAllDomainsByFeature`` and
+``carbonioSearchSpecifiedDomainsByFeature``. Both available to the
+**Global Administrator only**, the first one enables a user to search
+for users in **all the domains** configured by using CLI command
 
 .. code:: console
 
    zextras$ carbonio prov mcf carbonioSearchAllDomainsByFeature TRUE
 
-To allow users to search other users only on their domain, use
-``FALSE`` instead of ``TRUE``.
+.. seealso:: This option is available on the |adminui|
+   (:menuselection:`Admin Panel --> Domains --> Global --> Settings`),
+   please see the :ref:`dedicated box <wsc-user-search>` in the
+   Domain's global settings.
 
-.. seealso:: This option is available on the |adminui|, please see the
-   :ref:`dedicated box <wsc-user-search>` in the Domain's global
-   settings.
+.. index:: Chats; user search by domain (CLI)
+
+The second attribute works only if
+``carbonioSearchAllDomainsByFeature`` is set to ``FALSE`` and allows
+only certain domains to be searched by a user, and can be configured
+as follows
+
+.. code:: console
+
+   zextras$ carbonio prov md example.com carbonioSearchSpecifiedDomainsByFeature test.edu
+
+This command allows a user of example.com to search for users in the
+test.edu domain and start a chat with them.
+
+.. seealso:: This option is available on the |adminui|
+   (:menuselection:`Admin Panel --> Domains --> Details --> General
+   Settings`).
 
 .. index:: Chats; set read only
 

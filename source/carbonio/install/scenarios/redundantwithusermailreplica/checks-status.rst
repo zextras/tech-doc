@@ -36,7 +36,7 @@ These are the commands to be issued as the |zu|.
 
    .. code:: console
 
-      # sytemctl -u patroni -f
+      # systemctl -u patroni -f
 
 #. Get Global Broker info
 

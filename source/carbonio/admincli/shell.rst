@@ -296,40 +296,41 @@ Besides the :command:`carbonio` command, another useful command is
 well, is used to check and verify the status of the services available
 on |product| and start or stop them.
 
-.. note:: On RHEL 9, :command:`zmcontrol` has a limited usage and is
-   mostly integrated with the ``systemd`` service: check the
-   :ref:`dedicated box <rhel-systemd>` for more information.
+.. note:: On Ubuntu 24.04 and RHEL 9, :command:`zmcontrol` has a
+   limited usage and is mostly replaced by ``systemd`` units: you can
+   interact with them using the standard :command:`systemctl`
+   command. Please check the :ref:`dedicated box <rhel-systemd>` for
+   more information.
 
 The ``status`` sub-command is used to verify which services and
 modules are running. A sample output of the command is::
 
   zextras$ zmcontrol status
-  Host mail.example.com
-      amavis                  Running
-      antispam                Running
-      directory-server        Running
-      mailbox                 Running
-       --Carbonio Advanced installed.
-       --Checking advanced modules status.
-       --Config is running
-       --Core is running
-       --Auth is running
-       --Mobile is running
-       --Chats is running
-       --Admin is running
-       --HA is NOT running
-       --Backup is running
-       --Powerstore is running
-       --Drive is NOT running
-       --SproxyD is running
-      memcached               Running
-      mta                     Running
-      opendkim                Running
-      proxy                   Running
-      service webapp          Running
-      service-discover        Running
-      stats                   Running
-      config service          Running
+  Host demo.example.com
+	amavis                  Running
+	antispam                Running
+	antivirus               Running
+	directory-server        Running
+	mailbox                 Running
+	 --Carbonio Advanced installed.
+	 --Checking advanced modules status.
+	 --Config is running
+	 --Core is running
+	 --Auth is running
+	 --Mobile is running
+	 --Chats is running
+	 --Admin is running
+	 --HA is NOT running
+	 --Backup is running
+	 --Powerstore is running
+	 --SproxyD is running
+	memcached               Running
+	mta                     Running
+	opendkim                Running
+	proxy                   Running
+	service webapp          Running
+	service-discover        Running
+	config service          Running
 
 The services (those in the main column, like *amavis*, *antispam* and
 so on) can be controlled using the sub-commands ``start``,
@@ -350,26 +351,24 @@ is the output on an upcoming 24.12.0 version.
    :emphasize-lines: 2
 
    zextras$ zmcontrol -v
-   Carbonio Release 24.12.0
+   Carbonio Release 25.9.0
    Advanced module version:
 
    CLI versions:
 
-           zextras_version                                     24.12.0-SNAPSHOT
-           zextras_commit                                      5a19e9dc7b27aec0ec3d94ae829eff1239993d2b
-           zal_version                                         24.12.0-SNAPSHOT
-           zal_commit                                          a4adc73297941a406384b391728266e4eb2e8ce4
-
+           zextras_version                                     25.9.0
+           zextras_commit                                      eb4a6972110cf318fcb67f54b7447f70eb071692
+           zal_version                                         25.9.0
+           zal_commit                                          50c08cb80775136ee405f078278caed51de110df
 
    Server versions:
 
-           version                                             24.12.0-SNAPSHOT
-           commit                                              fcd5553231cbd46f004163f77b2d00171b9fcc58
-           commit_dirty                                        true
+           version                                             25.9.0
+           commit                                              d11fb9b8fbfe37549b531bcba72032dbc3ddd745
            system_type                                         carbonio
            product                                             Carbonio
-           zal_version                                         24.12.0-SNAPSHOT
-           zal_commit                                          a4adc73297941a406384b391728266e4eb2e8ce4
+           zal_version                                         25.9.0
+           zal_commit                                          50c08cb80775136ee405f078278caed51de110df
 
 The important bit here is the first line of the output; while the
 various ``commit`` refer lines refer to the source code from which the
