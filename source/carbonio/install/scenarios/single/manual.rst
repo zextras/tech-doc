@@ -138,13 +138,7 @@ repositories.
 
 .. _n1-s7:
 
-.. dropdown:: Step 7: Enable ``memcached``
-           
-   .. include:: /_includes/_installation/_components/memcached-enable.rst
-
-.. _n1-s8:
-
-.. dropdown:: Step 8: Databases Bootstrap
+.. dropdown:: Step 7: Databases Bootstrap
 
    Now you have to bootstrap the DBs with the |dbadmpwd| password set
    in the *Initialisation* in :ref:`Step 4 <n1-s4>`.
@@ -154,9 +148,9 @@ repositories.
       # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
       # PGPASSWORD=$DB_ADM_PWD carbonio-files-db-bootstrap carbonio_adm 127.0.0.1
 
-.. _n1-s9:
+.. _n1-s8:
 
-.. dropdown:: Step 9: Complete Installation
+.. dropdown:: Step 8: Complete Installation
 
    After the successful package installation, start all |product|
    services by using

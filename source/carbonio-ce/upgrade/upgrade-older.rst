@@ -36,6 +36,9 @@ the upgrade:
   added, while support for **Ubuntu 20.04** has been dropped:
   |product| **does no longer work** on Ubuntu 20.04
 
+* Since **release 25.9.0**, there is no longer need to manually configure
+  ``memcached``. See Section :ref:`up-old-check` for directions.
+
 * You need to carry out the procedure on **each Node**, starting with
   the one featuring the :ref:`component-mesh-install`
 
@@ -48,21 +51,34 @@ the upgrade:
 
 .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
+.. _up-old-check:
+
 Checklist
 ---------
 
-These packages must be renamed, if they still exist on your |product|
-infrastructure:
+#. These packages must be renamed, if they still exist on your |product|
+   infrastructure:
 
-#. carbonio-message-dispatcher :fas:`arrow-right` carbonio-message-dispatcher-ce
-#. carbonio-storages  :fas:`arrow-right` carbonio-storages-ce
+   * ``carbonio-message-dispatcher`` :fas:`arrow-right` ``carbonio-message-dispatcher-ce``
+   * ``carbonio-storages``  :fas:`arrow-right` ``carbonio-storages-ce``
 
-On a Multi-Server infrastructure, the following packages should be
-moved to different nodes during the upgrade procedure:
+#. On a Multi-Server infrastructure, the following packages should be
+   moved to different nodes during the upgrade procedure:
 
-#. carbonio-user-management
-#. carbonio-catalog
-#. carbonio-message-broker
+   * ``carbonio-user-management``
+   * ``carbonio-catalog``
+   * ``carbonio-message-broker``
+
+#. The ``memcached`` software does no longer require a special
+   bind address, so after the upgrade you need to execute a command
+   to clear its configuration on the **Proxy Node**. After the upgrade
+   of that Node, before rebooting, execute command as the |zu|
+
+   .. code:: console
+
+      zextras$ carbonio prov -l ms $(zmhostname) zimbraMemcachedBindAddress ""
+
+   Then reboot the Node.
 
 Upgrade |product|
 -----------------
