@@ -41,13 +41,6 @@ third-party software or new packages.
 Checklist
 ---------
 
-A |wsc|-related package changed name in this release:
-``carbonio-message-dispatcher`` becomes
-``carbonio-message-dispatcher-ce``. You need to manually remove the
-former and install the new one. This task is included in the upgrade
-procedure, so simply follow the instructions.
-
-
 #. The ``memcached`` software does no longer require a special
    bind address, so after the upgrade you need to execute a command
    to clear its configuration on the **Proxy Node**. After the upgrade
