@@ -150,15 +150,21 @@ Install PostgreSQL HA
 PostgreSQL uses HAProxy to add load balancing, health checks, and
 more.  The HAProxy installation has been automated with Ansible and is
 included in the ``carbonio_patroni`` playbook. First, install the
-PstgreSQL replica
+PostgreSQL replica
 
 .. code:: console
 
    # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_replica_postgres_install
 
-This task also move DB Connectors from the PostgreSQL Node to db
-connector Nodes, if needed, as defined on the inventory file. This
-setup allows Db Connectors to connect to an available PostgreSQL Node
+Then install ``carbonio_patroni``
+
+.. code:: console
+
+   # ansible-playbook -i inventory zxbot.carbonio_patroni.carbonio_patroni_install
+
+This task also moves DB Connectors from the PostgreSQL Node to DB
+Connectors Node, if needed, as defined on the inventory file. This
+setup allows DB Connectors to connect to an available PostgreSQL Node
 managed by Patroni.
 
 Install Multi Master LDAP
