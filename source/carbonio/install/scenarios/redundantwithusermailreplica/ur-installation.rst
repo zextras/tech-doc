@@ -21,7 +21,7 @@ Ansible's Control Node and of the following items:
    .. code:: console
 
       # ansible-galaxy collection install zxbot.carbonio_kafka
-      # ansible-galaxy collection install zxbot.carbonio_patroni 
+      # ansible-galaxy collection install zxbot.carbonio_patroni
       # ansible-galaxy collection install zxbot.carbonio_ldap
 
 Prepare inventory
@@ -42,7 +42,7 @@ To configure the inventory for |rur| installation, you will need to add
 new groups and add specific variables to the :file:`inventory`
 file. Please read the following advises if you plan to add the |ur|
 infrastructure to different Node than the one we will use in the
-remainder of the scenario. 
+remainder of the scenario.
 
 .. card:: Guidelines for Components in |ur| Configuration
 
@@ -65,11 +65,11 @@ remainder of the scenario.
    deployment.
 
 The two new groups to add at the bottom of the file are:
-     
+
 #. ``kafka`` group, which will point to the Nodes where
    :command:`kafka` will be installed: these are the three Cluster
    Nodes. To each Node, add the ``broker_id`` variable with a
-   different value: 
+   different value:
 
    .. code:: text
 

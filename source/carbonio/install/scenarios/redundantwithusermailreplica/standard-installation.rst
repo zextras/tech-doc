@@ -5,11 +5,16 @@
 ===========================================
 
 The |ur| setup for |product| builds on the **Scenario
-Redundant**. Therefore, it is essential to have a working installation
-of that Scenario before starting to deploy the |ur| setup: if you do
-not have it yet, please refer to the installation procedure of the
-:ref:`scenario-redundant`, then you can proceed to the next
-section, :ref:`rur-inst`.
+Redundant**. Therefore, it is essential to have an installation of
+that Scenario before starting to deploy the |ur| setup: if you do not
+have it yet, please refer to the installation procedure of the
+:ref:`scenario-redundant`, then you can proceed to the next section,
+:ref:`rur-inst`.
+
+.. warning:: Since the Directory Replica is not needed in this
+   Scenario, when installing the initial **Scenario Redundant**, you
+   should empty the block ``[replicaDirectoryServers]`` from the
+   inventory file.
 
 Differences with Scenario Redundant
 ===================================
