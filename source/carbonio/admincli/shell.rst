@@ -306,7 +306,7 @@ The ``status`` sub-command is used to verify which services and
 modules are running. A sample output of the command is::
 
   zextras$ zmcontrol status
-  Host ztd-ub01.demo.zextras.io
+  Host demo.example.com
 	amavis                  Running
 	antispam                Running
 	antivirus               Running
