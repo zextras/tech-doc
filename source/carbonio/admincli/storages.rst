@@ -1,6 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
 =========
 |storage|
@@ -1175,6 +1172,8 @@ including all its blobs, the command is
 .. code:: console
 
    zextras$ carbonio powerstore example.net accounts alice@example.com
+
+.. index:: download endpoint; Storages, Storages; download endpoint
 
 Using |storage| as Download Endpoint
 ====================================
