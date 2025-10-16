@@ -79,4 +79,4 @@ These are the commands to be issued as the |zu|.
 
    .. code:: console
 
-      zextras$ carbonio prov gs $(zmhostname) \| grep -i servicezmprov -l ms $(zmhostname) +zimbraServiceInstalled service-discover +zimbraServiceEnabled service-discover
+      zextras$ carbonio prov gs $(zmhostname) | grep -i service
