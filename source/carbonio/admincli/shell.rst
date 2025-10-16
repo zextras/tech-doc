@@ -344,8 +344,7 @@ rule, that the corresponding :command:`carbonio` command be used.
 
 The :command:`zmcontrol` comes also with an important option: ``-v``,
 which outputs the current version of |product| and a few more
-information about the CLI and server's versions. As an example, this
-is the output on an upcoming 24.12.0 version.
+information about the CLI and server's versions. For example:
 
 .. code-block:: console
    :emphasize-lines: 2
