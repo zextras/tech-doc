@@ -13,24 +13,6 @@ Settings
 
 .. index:: Chats; user search by GUI
 
-.. _wsc-user-search:
-
-.. card:: User search
-
-   The switch labelled **Allow searching users' information in all
-   domains**, when active, allows any user to search for other users
-   in all other domains configured on the |product| infrastructure.
-
-   For example: user John with e-mail address *john@example.com* will
-   be able to find user Jane *jane@acme.example* (which is on a
-   different domain) only if this switch is *active*, otherwise Jane
-   will not show up in the results.
-
-   .. rubric:: Limitations
-
-   This option is available to **Global Administrators** only and
-   currently for searches within the |wsc| module.
-
 .. _admins:
 
 Administrators
