@@ -3,39 +3,14 @@
 Activate license
 ================
 
-The last task to complete before finishing installation is to
-activate the |product| license.
+The last task to complete before finishing installation is to purchase
+and activate the |product| license. To obtain the license, point a
+browser to the `dedicated page <https://zextras.com/get-carbonio>`_ in
+which you can find the information to complete the purchase process.
 
-How to obtain a |product| License
----------------------------------
-
-#. Fill the `Form <https://zextras.com/carbonio#contactsales>`_ with:
-
-   - First name
-   - Last name
-   - Company
-   - Email
-   - Phone (optional)
-
-#. Add the comments you might have on the **Additional notes** textarea
-
-#. Select a country from the drop-down menu
-
-#. Accept |zx| terms and conditions
-
-#. Tick the CAPTCHA *I'm not a robot*, select the images, and click
-   :bdg-primary:`VERIFY`
-
-#. Click the **Submit** button to proceed
-
-A Sales representative will get back to you shortly.
-
-
-How to activate a |product| License
------------------------------------
-
-You can activate the license from the
-command line or from the graphical administrator interface.
+Once you received the license token, you can use it to activate the
+|product| from the command line or from the graphical administrator
+interface.
 
 .. grid::
    :gutter: 3
