@@ -1175,3 +1175,29 @@ including all its blobs, the command is
 .. code:: console
 
    zextras$ carbonio powerstore example.net accounts alice@example.com
+
+Using |storage| as Download Endpoint
+====================================
+
+Usually, when downloading from the web mail a document from |file|, it
+is responsibility of the cache on the Mailstore to process the request
+and allocate resources for it. This workflow may represent a
+bottleneck when the Mailstore is already loaded, so an alternative
+solution has been introduced, that uses |storage| instead as a
+download endpoint, and a new attribute is available to decide which to
+use: ``carbonio_storages_download_enabled``
+
+By default, |product| uses the Mailstore endpoint, so the attributes
+evaluated to ``false``. To use the |storage| endpoint, as the |zu|
+execute command
+
+.. code:: console
+
+   zextras$ carbonio config set server $(zmhostname) carbonio_storages_download_enabled true
+
+To check the current value of the attribute, as the |zu| use command
+
+
+.. code:: console
+
+   zextras$ carbonio config get server $(zmhostname) carbonio_storages_download_enabled
