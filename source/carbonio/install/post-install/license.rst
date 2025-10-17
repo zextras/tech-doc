@@ -8,9 +8,8 @@ and activate the |product| license. To obtain the license, visit the
 `dedicated page <https://zextras.com/get-carbonio>`_ in which you can
 find the information to complete the purchase process.
 
-Once you received the license token, you can use it to activate the
-|product| from the command line or from the graphical administrator
-interface.
+After receiving the license token, you can activate |product| from the
+command line or the administration interface.
 
 .. grid::
    :gutter: 3
