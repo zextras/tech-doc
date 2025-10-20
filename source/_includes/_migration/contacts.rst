@@ -23,7 +23,7 @@ They can be imported into |product| using the following command:
 .. code:: console
 
    zextras$ for account in $(carbonio prov -l gaa SOURCE_DOMAIN); do \
-   echo "prov sa $account postRestURL '/Contacts?fmt=csv&csvfmt=thunderbird-csv' /tmp/backup/${account}.csv"; \
+   echo "prov sm $account postRestURL '/Contacts?fmt=csv&csvfmt=thunderbird-csv' /tmp/backup/${account}.csv"; \
    done | carbonio
 
 CSV files can be also be imported manually by each user according to
