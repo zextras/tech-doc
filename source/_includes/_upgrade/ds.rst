@@ -40,23 +40,15 @@ on the Node with the Directory Server Component installed.
       .. tab-item:: Ubuntu 24.04
          :sync: ubu24
 
-         .. code:: console
-
-            zextras$ zmcontrol status
-
-         .. hint:: To see the status of only a service, use the new
-            systemd commands that replace the :command:`zmcontrol`
-            commands (see :ref:`systemd-targets`).
+         To see the status of only a service, use the new systemd
+         commands that replace the :command:`zmcontrol` commands (see
+         :ref:`systemd-targets`).
 
       .. tab-item:: RHEL 9
          :sync: rhel9
 
-         .. code:: console
-
-            zextras$ zmcontrol status
-
-         .. hint:: To see the status of only a service, use the new
-            systemd commands that replace the :command:`zmcontrol`
-            commands (see :ref:`systemd-targets`).
+         To see the status of only a service, use the new systemd
+         commands that replace the :command:`zmcontrol` commands (see
+         :ref:`systemd-targets`).
 
    If in the output some service appears as not running, start it.
