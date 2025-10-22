@@ -3,5 +3,5 @@
 OS Upgrade
 ==========
 
-.. include:: /_includes/_upgrade/os-older.rst
+.. include:: /_includes/_upgrade/os.rst
              
