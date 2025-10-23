@@ -223,15 +223,15 @@ following command and verify that in the output they are appear as
 
 .. tab-set::
 
-   .. tab-item:: Ubuntu 24.04
-      :sync: ubu24
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
 
       .. code:: console
 
-         zextras$ zmcontrol status
+         # systemctl status carbonio.target
 
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
 
       .. code:: console
 
@@ -250,8 +250,5 @@ following command and verify that in the output they are appear as
 
       .. code:: console
 
-         zextras$ zmcontrol status
+         # systemctl status carbonio.target
 
-In case some of the services is not running, please refer to Section
-:ref:`ts-cli` (if you are running Ubuntu or RHEL 8) or to the
-dedicated :ref:`RHEL 9 box <rhel-systemd>`.
