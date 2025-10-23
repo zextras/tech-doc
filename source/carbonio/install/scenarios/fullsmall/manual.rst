@@ -499,7 +499,7 @@ Collaboration Node
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+   .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 .. _fsm4-step7:
 

@@ -1247,7 +1247,7 @@ This Node features the *Chats*, *Files*, and *Tasks*  Components.
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+   .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 .. _fr10-step7:
 
@@ -1380,7 +1380,7 @@ This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+   .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 .. _fr11-step7:
 

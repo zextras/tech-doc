@@ -53,4 +53,4 @@ Grafana Installation and Configuration
 As mentioned above, Grafana requires some manual interaction before
 and after the installation to configure the data sources and import them from |product|.
 
-.. include:: /_includes/_installation/_components/component-grafana.rst
+.. include:: /_includes/_architecture/_components/component-grafana.rst
