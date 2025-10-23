@@ -12,7 +12,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_packages/component-monit.rst
+.. include:: /_includes/_architecture/_packages/component-monit.rst
 
 Bootstrap |carbonio|
 --------------------
