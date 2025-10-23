@@ -119,19 +119,6 @@ of them.
 
          migration
 
-   .. grid-item-card:: Services Status
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: ref
-      :link: ts-services
-
-      A few commands to inspect the system on which |product| is installed
-
-      .. toctree::
-         :hidden:
-
-         services
-
    .. grid-item::
       :columns: 3 3 3 3
 
