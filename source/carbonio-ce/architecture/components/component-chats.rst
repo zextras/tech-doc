@@ -18,7 +18,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_components/component-chats-ce.rst
+.. include:: /_includes/_architecture/_components/component-chats-ce.rst
 
 
 Bootstrap |product|
@@ -50,7 +50,7 @@ Dispatcher DB Migration
 
 Initialise the message dispatcher
 
-.. include:: /_includes/_installation/_components/dispatcher-migration.rst
+.. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 
 Enable the |wsc| UI

@@ -8,7 +8,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_packages/component-docs.rst
+.. include:: /_includes/_architecture/_packages/component-docs.rst
 
 .. dropdown:: On the Database Node
    :color: danger

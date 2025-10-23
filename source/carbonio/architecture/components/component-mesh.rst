@@ -11,7 +11,7 @@ Mesh & Directory Component should be used on the first Node on which a
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/_packages/component-mesh.rst
+.. include:: /_includes/_architecture/_packages/component-mesh.rst
 
 Bootstrap |product|
 -------------------

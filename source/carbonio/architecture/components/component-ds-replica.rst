@@ -38,7 +38,7 @@ Installation
 The installation requires to execute install these packages on the
 Node on which you plan to install the Directory Replica Component.
 
-.. include:: /_includes/_installation/_packages/component-ds-replica.rst
+.. include:: /_includes/_architecture/_packages/component-ds-replica.rst
 
 Configuration
 ~~~~~~~~~~~~~
