@@ -7,7 +7,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_packages/component-preview.rst
+.. include:: /_includes/_architecture/_packages/component-preview.rst
 
 Bootstrap |carbonio|
 --------------------

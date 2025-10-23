@@ -10,7 +10,7 @@
 
 .. rubric:: Package Installation
 
-.. include:: /_includes/_installation/_packages/component-db.rst
+.. include:: /_includes/_architecture/_packages/component-db.rst
 .. include:: /_includes/_installation/step-conf-db.rst
 
 Finally, allow the other nodes to access the databases that will be
