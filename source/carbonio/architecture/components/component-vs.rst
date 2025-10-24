@@ -13,7 +13,7 @@ Install Packages
 This Component consists of *Video Server* and *Video Recording*.
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_packages/component-vs-chats.rst
+.. include:: /_includes/_architecture/_packages/component-vs-chats.rst
 
 Bootstrap |product|
 -------------------

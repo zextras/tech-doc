@@ -11,15 +11,10 @@ infrastructure, please read carefully Section :ref:`wsc-install`.
 
 .. _component-wsc-limits:
 
-Limitations
------------
+Limitation
+----------
 
-In the current release |release|, the following limitation apply to
-the installation of the |wsc| Component
-
-* It can not be installed on the same Node as |vs|
-* Data from the legacy Chats module can not be exported to new |wsc|
-  Component
+In the current release, the data from the legacy Chats module cannot be exported to the new |wsc| Component.
 
 .. _component-wsc-req:
 
@@ -115,7 +110,7 @@ Then, we update the list of packages.
 
 We are now ready to install all packages.
 
-.. include:: /_includes/_installation/_packages/component-chats-cb.rst
+.. include:: /_includes/_architecture/_packages/component-chats-cb.rst
 
 .. _component-wsc-bootstrap:
 
@@ -149,7 +144,7 @@ Dispatcher DB Migration
 
 Initialise the message dispatcher
 
-.. include:: /_includes/_installation/_components/dispatcher-migration.rst
+.. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 Enable |wsc|
 ------------

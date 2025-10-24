@@ -55,19 +55,19 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
    .. rubric:: Component Mesh & Directory
 
-   .. include:: /_includes/_installation/_packages/component-mesh-ds.rst
+   .. include:: /_includes/_architecture/_packages/component-mesh-ds.rst
 
    .. rubric:: Component Database
 
-   .. include:: /_includes/_installation/_packages/component-db.rst
+   .. include:: /_includes/_architecture/_packages/component-db.rst
 
    .. rubric:: DB Connectors
 
-   .. include:: /_includes/_installation/_packages/component-db-comp.rst
+   .. include:: /_includes/_architecture/_packages/component-db-comp.rst
 
    .. rubric:: Chats DB Connectors
 
-   .. include:: /_includes/_installation/_packages/component-db-chats.rst
+   .. include:: /_includes/_architecture/_packages/component-db-chats.rst
 
 .. _fr1-step4:
 
@@ -221,11 +221,11 @@ This Node features the *Mesh* and *Directory Replica*  Components.
 
    .. rubric:: Component Mesh
 
-   .. include:: /_includes/_installation/_packages/component-mesh.rst
+   .. include:: /_includes/_architecture/_packages/component-mesh.rst
 
    .. rubric:: Component Directory Replica
 
-   .. include:: /_includes/_installation/_packages/component-ds-replica.rst
+   .. include:: /_includes/_architecture/_packages/component-ds-replica.rst
 
 
 .. _fr2-step4:
@@ -369,11 +369,11 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
    .. rubric:: Component Mesh
 
-   .. include:: /_includes/_installation/_packages/component-mesh.rst
+   .. include:: /_includes/_architecture/_packages/component-mesh.rst
 
    .. rubric:: Component Monitoring
 
-   .. include:: /_includes/_installation/_packages/component-monit.rst
+   .. include:: /_includes/_architecture/_packages/component-monit.rst
 
 .. _fr3-step4:
 
@@ -516,11 +516,11 @@ This Node features the *MTA AV/AS* Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component MTA AV/AS
 
-   .. include:: /_includes/_installation/_packages/component-mta.rst
+   .. include:: /_includes/_architecture/_packages/component-mta.rst
 
 .. _fr4-step4:
 
@@ -633,11 +633,11 @@ This Node features the (replicated) *MTA AV/AS* Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component MTA AV/AS
 
-   .. include:: /_includes/_installation/_packages/component-mta.rst
+   .. include:: /_includes/_architecture/_packages/component-mta.rst
 
 .. _fr5-step4:
 
@@ -751,11 +751,11 @@ This Node features the *Proxy* Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Proxy
 
-   .. include:: /_includes/_installation/_packages/component-proxy.rst
+   .. include:: /_includes/_architecture/_packages/component-proxy.rst
 
 .. _fr6-step4:
 
@@ -868,11 +868,11 @@ This Node features the (replicated) *Proxy* Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Proxy
 
-   .. include:: /_includes/_installation/_packages/component-proxy.rst
+   .. include:: /_includes/_architecture/_packages/component-proxy.rst
 
 .. _fr7-step4:
 
@@ -985,11 +985,11 @@ This Node features the *Mailstore & Provisioning* Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Mailstore & Provisioning
 
-   .. include:: /_includes/_installation/_packages/component-mailstore-provisioning.rst
+   .. include:: /_includes/_architecture/_packages/component-mailstore-provisioning.rst
 
 .. _fr8-step4:
 
@@ -1094,11 +1094,11 @@ This Node features the (replicated) *Mailstore & Provisioning* Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Mailstore & Provisioning
 
-   .. include:: /_includes/_installation/_packages/component-mailstore-provisioning.rst
+   .. include:: /_includes/_architecture/_packages/component-mailstore-provisioning.rst
 
 .. _fr9-step4:
 
@@ -1207,19 +1207,19 @@ This Node features the *Chats*, *Files*, and *Tasks*  Components.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
+   .. include:: /_includes/_architecture/_packages/component-chats-cb.rst
 
    .. rubric:: Component Tasks
 
-   .. include:: /_includes/_installation/_packages/component-tasks.rst
+   .. include:: /_includes/_architecture/_packages/component-tasks.rst
 
    .. rubric:: Component Files
 
-   .. include:: /_includes/_installation/_packages/component-files.rst
+   .. include:: /_includes/_architecture/_packages/component-files.rst
 
 .. _fr10-step4:
 
@@ -1247,7 +1247,7 @@ This Node features the *Chats*, *Files*, and *Tasks*  Components.
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+   .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 .. _fr10-step7:
 
@@ -1339,19 +1339,19 @@ This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
+   .. include:: /_includes/_architecture/_packages/component-chats-cb.rst
 
    .. rubric:: Component Tasks
 
-   .. include:: /_includes/_installation/_packages/component-tasks.rst
+   .. include:: /_includes/_architecture/_packages/component-tasks.rst
 
    .. rubric:: Component Files
 
-   .. include:: /_includes/_installation/_packages/component-files.rst
+   .. include:: /_includes/_architecture/_packages/component-files.rst
 
 .. _fr11-step4:
 
@@ -1380,7 +1380,7 @@ This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+   .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 .. _fr11-step7:
 
@@ -1468,15 +1468,15 @@ This Node features the *Docs & Editor* and *Preview* Components.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Docs & Editor
 
-   .. include:: /_includes/_installation/_packages/component-docs.rst
+   .. include:: /_includes/_architecture/_packages/component-docs.rst
 
    .. rubric:: Component Preview
 
-   .. include:: /_includes/_installation/_packages/component-preview.rst
+   .. include:: /_includes/_architecture/_packages/component-preview.rst
 
 .. _fr12-step4:
 
@@ -1582,15 +1582,15 @@ Components.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Docs & Editor
 
-   .. include:: /_includes/_installation/_packages/component-docs.rst
+   .. include:: /_includes/_architecture/_packages/component-docs.rst
 
    .. rubric:: Component Preview
 
-   .. include:: /_includes/_installation/_packages/component-preview.rst
+   .. include:: /_includes/_architecture/_packages/component-preview.rst
 
 .. _fr13-step4:
 
@@ -1696,11 +1696,11 @@ This Node features the *Video Server & Video Recording* Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Video Server & Video Recording
 
-   .. include:: /_includes/_installation/_packages/component-vs-chats.rst
+   .. include:: /_includes/_architecture/_packages/component-vs-chats.rst
 
 .. _fr14-step4:
 
@@ -1806,11 +1806,11 @@ Component.
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Video Server & Video Recording
 
-   .. include:: /_includes/_installation/_packages/component-vs-chats.rst
+   .. include:: /_includes/_architecture/_packages/component-vs-chats.rst
 
 .. _fr15-step4:
 

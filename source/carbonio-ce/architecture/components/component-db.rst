@@ -3,7 +3,7 @@
 Database
 ========
 
-.. include:: /_includes/_installation/_components/component-db.rst
+.. include:: /_includes/_architecture/_components/component-db.rst
 
 Installation of PostgreSQL
 --------------------------
@@ -15,7 +15,7 @@ Installation of PostgreSQL
 Installation of |product| DB Connectors
 ---------------------------------------
 
-.. include:: /_includes/_installation/_components/component-db-connector-ce.rst
+.. include:: /_includes/_architecture/_components/component-db-connector-ce.rst
 
 Bootstrap |product|
 -------------------
