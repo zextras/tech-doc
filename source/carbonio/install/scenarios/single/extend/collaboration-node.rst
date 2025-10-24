@@ -236,7 +236,7 @@ of them to expand the content.
 
    Now, run command
 
-   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+   .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
    .. rubric:: Enable |wsc|
 

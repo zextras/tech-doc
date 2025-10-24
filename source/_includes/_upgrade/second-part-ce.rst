@@ -87,7 +87,7 @@
       ``carbonio-message-dispatcher-ce`` package, execute these
       commands
 
-      .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+      .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
    .. grid-item-card:: Step 8. Reboot
       :columns: 12 12 12 12

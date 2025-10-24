@@ -53,23 +53,23 @@ Core Node
 
    .. rubric:: Component Mesh & Directory
 
-   .. include:: /_includes/_installation/_packages/component-mesh-ds.rst
+   .. include:: /_includes/_architecture/_packages/component-mesh-ds.rst
 
    .. rubric:: Component Database
 
-   .. include:: /_includes/_installation/_packages/component-db.rst
+   .. include:: /_includes/_architecture/_packages/component-db.rst
 
    .. rubric:: Component Monitoring
 
-   .. include:: /_includes/_installation/_packages/component-monit.rst
+   .. include:: /_includes/_architecture/_packages/component-monit.rst
 
    .. rubric:: DB Connectors
 
-   .. include:: /_includes/_installation/_packages/component-db-comp.rst
+   .. include:: /_includes/_architecture/_packages/component-db-comp.rst
 
    .. rubric:: Chats DB Connectors
 
-   .. include:: /_includes/_installation/_packages/component-db-chats.rst
+   .. include:: /_includes/_architecture/_packages/component-db-chats.rst
 
 .. _fsm1-step4:
 
@@ -222,15 +222,15 @@ MTA/Proxy Node
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component MTA AV/AS
 
-   .. include:: /_includes/_installation/_packages/component-mta.rst
+   .. include:: /_includes/_architecture/_packages/component-mta.rst
 
    .. rubric:: Component Proxy
 
-   .. include:: /_includes/_installation/_packages/component-proxy.rst
+   .. include:: /_includes/_architecture/_packages/component-proxy.rst
 
 .. _fsm2-step4:
 
@@ -343,15 +343,15 @@ Mailstore & Provisioning and Tasks Node
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Mailstore & Provisioning
 
-   .. include:: /_includes/_installation/_packages/component-mailstore-provisioning.rst
+   .. include:: /_includes/_architecture/_packages/component-mailstore-provisioning.rst
 
    .. rubric:: Component Tasks
 
-   .. include:: /_includes/_installation/_packages/component-tasks.rst
+   .. include:: /_includes/_architecture/_packages/component-tasks.rst
 
 .. _fsm3-step4:
 
@@ -458,23 +458,23 @@ Collaboration Node
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Files
 
-   .. include:: /_includes/_installation/_packages/component-files.rst
+   .. include:: /_includes/_architecture/_packages/component-files.rst
 
    .. rubric:: Component Docs & Editor
 
-   .. include:: /_includes/_installation/_packages/component-docs.rst
+   .. include:: /_includes/_architecture/_packages/component-docs.rst
 
    .. rubric:: Component Preview
 
-   .. include:: /_includes/_installation/_packages/component-preview.rst
+   .. include:: /_includes/_architecture/_packages/component-preview.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
+   .. include:: /_includes/_architecture/_packages/component-chats-cb.rst
 
 .. _fsm4-step4:
 
@@ -499,7 +499,7 @@ Collaboration Node
 
    Initialise the message dispatcher
 
-   .. include:: /_includes/_installation/_components/dispatcher-migration.rst
+   .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
 .. _fsm4-step7:
 
@@ -585,15 +585,15 @@ Video Server Node
 
    .. rubric:: Mesh agent
 
-   .. include:: /_includes/_installation/_packages/mesh-agent.rst
+   .. include:: /_includes/_architecture/_packages/mesh-agent.rst
 
    .. rubric:: Component Video Server & Video Recording
 
-   .. include:: /_includes/_installation/_packages/component-vs-chats.rst
+   .. include:: /_includes/_architecture/_packages/component-vs-chats.rst
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_installation/_packages/component-chats-cb.rst
+   .. include:: /_includes/_architecture/_packages/component-chats-cb.rst
 
 .. _fsm5-step4:
 

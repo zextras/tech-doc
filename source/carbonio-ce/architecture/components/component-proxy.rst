@@ -7,7 +7,7 @@ Install Packages
 ----------------
 
 .. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_installation/_components/component-proxy-ce.rst
+.. include:: /_includes/_architecture/_components/component-proxy-ce.rst
 
 Bootstrap |carbonio|
 --------------------

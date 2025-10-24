@@ -109,6 +109,12 @@ install |product|.
    may be using the same ports as |product|, therefore interfering
    with its everyday use.
 
+.. _inst-net:
+
+Network Configuration Guidelines
+================================
+
+.. include:: /_includes/_installation/network.rst
 
 .. _rhel-requirements:
 

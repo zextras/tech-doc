@@ -86,7 +86,7 @@ access |product|\'s GUI using a browser: directions can be found in
 Section :ref:`web-access`.
 
 In case you experience some issues during the installation, please
-refer to Section :ref:`ts-cli`, in which you can find helpful
+refer to Section :ref:`systemd-guide`, in which you can find helpful
 commands.
 
 .. _rhel-pg:
