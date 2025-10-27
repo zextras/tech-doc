@@ -19,3 +19,7 @@ mandatory.
       management
       advancedadmin
       mesh
+      chats-advanced
+      clamav-management
+      migration
+      security
