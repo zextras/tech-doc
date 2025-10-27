@@ -6,10 +6,11 @@ section before starting the upgrade.
 
 .. card:: Upgrade to Ubuntu 24.04 or RHEL 9
 
-   With the upgrade of the operating system to **Ubuntu 24.04** or **RHEL 9**,
-   some |product| services **previously managed by** :command:`zmcontrol` **are now
-   handled directly by** :command:`systemd`. This transition requires **manual
-   re-enabling of certain services** after the OS upgrade and affects
+   With the upgrade of the operating system to **Ubuntu 24.04** or
+   **RHEL 9**, some |product| services **previously managed by**
+   :command:`zmcontrol` **are now handled directly by**
+   :command:`systemd`. This transition requires **manual re-enabling
+   of certain services** after the OS upgrade and affects
    :ref:`up_ph3` below.
 
    Refer to the :ref:`Systemd Integration Overview <intro_systemd>`
@@ -22,13 +23,13 @@ The procedure is divided into phases:
 
 #. manual upgrade |product| to |release|
 
-#. upgrade Ubuntu LTS to 22.04 (Jammy Jellifish) or 24.04 (Noble
-   Numbat), or RHEL 8 to RHEL 9
+#. upgrade Ubuntu LTS from 22.04 (Jammy Jellifish) to 24.04 (Noble
+   Numbat), or from RHEL 8 to RHEL 9
 
-   .. warning:: This release, **25.06.0**, does no longer support
-      **Ubuntu 20.04 LTS**, which went EOL in May 2025, so you are
-      strongly recommended to **upgrade to Ubuntu 22.04 LTS** or **to
-      Ubuntu 24.04 LTS**.
+   .. warning:: Since installation of |product| **25.6.0** did not
+      support **Ubuntu 20.04 LTS**, we assume you are already on
+      **Ubuntu 22.04 LTS**, therefore this procedure only describes
+      how to upgrade from Ubuntu **22.04 LTS** to **24.04 LTS**.
 
 #. upgrade |product|\'s packages to match the correct repository
 
