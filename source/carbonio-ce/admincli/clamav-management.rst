@@ -4,4 +4,4 @@
 Antivirus & Antispam Management
 ===============================
 
-.. include:: /_includes/_postinstallation/clamav-disable.rst
+.. include:: /_includes/_admincli/clamav-disable.rst

@@ -4,4 +4,4 @@
  Enable SSH Keys Automatic Login
 =================================
 
-.. include:: /_includes/_postinstallation/sshkeys.rst
+.. include:: /_includes/_installation/_post/sshkeys.rst
