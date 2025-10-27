@@ -11,26 +11,26 @@ This section contains directions to manage the ClamAV Anti-Virus engine.
 ClamAV Signatures Updater
 -------------------------
 
-.. include:: /_includes/_postinstallation/clamav-updater.rst
+.. include:: /_includes/_admincli/clamav-updater.rst
 
 .. _clamav-conf-sigs:
 
 Configure Signatures Updater
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_postinstallation/clamav-conf.rst
+.. include:: /_includes/_admincli/clamav-conf.rst
 
 .. _clamav-remove-sigs:
 
 Remove Signatures Updater
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: /_includes/_postinstallation/clamav-remove.rst
+.. include:: /_includes/_admincli/clamav-remove.rst
 
 .. _clamav-disable:
 
 Disable ClamAV
 --------------
 
-.. include:: /_includes/_postinstallation/clamav-disable.rst
+.. include:: /_includes/_admincli/clamav-disable.rst
 
