@@ -1,3 +1,6 @@
+
+.. index:: Systemd; targets
+
 .. _systemd-targets:
 
 Carbonio ``Systemd`` Targets
