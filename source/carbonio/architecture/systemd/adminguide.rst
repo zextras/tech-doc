@@ -1,3 +1,5 @@
+.. index:: Systemd; cheatsheet, Systemd; commands
+
 .. _systemd-guide:
 
 ``Systemd`` Usage Guide For Administrators
