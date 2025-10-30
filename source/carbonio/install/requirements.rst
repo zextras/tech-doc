@@ -186,32 +186,54 @@ Firewall Ports
 properly, it is necessary to allow network communication on specific
 ports.
 
-The Nodes should be able to communicate with the other Nodes through a
-dedicated network. The ports listed in the *Internal Connections* must
-be forwarded on **all** nodes, while those in the *External
-Connections* should be forwarded only on the node on which the
-corresponding Component is installed. For example, port 443 should be
-forwarded only on the node hosting the **Proxy** Component.
+Each Node must be able to communicate with the other Nodes through a
+dedicated, private network.
+
+Section :ref:`fw-out` lists sites that must be accessible from
+|product| and are used mostly for push notifications.
+
+The ports listed in the *Internal Connections* must be forwarded on
+**all** nodes, while those in the *External Connections* should be
+forwarded only on the node on which the corresponding Component is
+installed. For example, port 443 should be forwarded only on the Node
+hosting the **Proxy** Component.
 
 Furthermore, ports in Internal and External connections are grouped
 according to the Component that require them, so all ports listed in a
-table must be forwarded only on the Node on which the Component is installed.
+table must be forwarded only on the Node on which the Component is
+installed.
 
-.. card:: Outgoing Traffic
 
-   Carbonio requires no specific ports to communicate with the
-   Internet (outgoing traffic), unless you want push notifications to
-   be sent to mobile devices. In this case, the Node installing the
-   **Chats Component** must be able to communicate with the
-   URL **https://notifications.zextras.com/firebase/** on port **443**.
+.. _fw-out:
+
+Outgoing Traffic
+----------------
+
+Carbonio requires no specific ports to communicate with the Internet
+(outgoing traffic), unless you want push notifications to be sent to
+mobile devices. In this case, the Node installing the **Chats
+Component** must be able to communicate with the endpoints located at
+the following URLs:
+
+* https\://notification.zextras.io/auth
+
+* https\://notification.zextras.io/sendFirebase
+
+* https\://notification.zextras.io/sendApns
+
+In case you are still using the legacy Chats, which however will soon
+be discontinued, you must allow access to
+
+* https://notifications.zextras.com/firebase/
 
 .. _fw-external:
 
 External Connections
 --------------------
 
-These ports must be forwarded to the Node installing each Component, to
-allow communication with remote services on the Internet.
+These are the ports used by each Components: they must be forwarded to
+the Node installing the Component, to allow communication with remote
+services on the Internet.
 
 .. card:: MTA Component
 
