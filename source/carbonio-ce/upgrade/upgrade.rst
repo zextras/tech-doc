@@ -64,7 +64,7 @@ Upgrade Procedure
    hosting the Proxy Component** before proceeding with the
    upgrade. Missing this package may cause unexpected behavior or
    service issues.
-g
+
 The upgrade procedures requires that you log in to each node of
 your |product| infrastructure and execute some command, then rebooting
 the Node as soon as you have successfully completed the
