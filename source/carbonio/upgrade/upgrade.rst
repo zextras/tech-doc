@@ -65,6 +65,13 @@ Checklist
 Upgrade Procedure
 =================
 
+.. warning:: Starting from the latest Carbonio releases, the package
+   ``carbonio-catalog`` is now included as part of the **Proxy**
+   Component. Ensure that this package is installed on **every node
+   hosting the Proxy Component** before proceeding with the
+   upgrade. Missing this package may cause unexpected behavior or
+   service issues.
+
 The upgrade procedures requires that you log in to each node of
 your |product| infrastructure and execute some command, then rebooting
 the Node as soon as you have successfully completed the
