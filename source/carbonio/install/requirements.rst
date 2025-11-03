@@ -192,11 +192,11 @@ dedicated, private network.
 Section :ref:`fw-out` lists sites that must be accessible from
 |product| and are used mostly for push notifications.
 
-The ports listed in the *Internal Connections* must be forwarded on
-**all** nodes, while those in the *External Connections* should be
-forwarded only on the node on which the corresponding Component is
-installed. For example, port 443 should be forwarded only on the Node
-hosting the **Proxy** Component.
+The ports listed under *Internal Connections* must be open only for
+communication between internal Nodes, while those under *External
+Connections* should be forwarded only on the Node where the
+corresponding Component is installed. For example, port 443 should be
+forwarded exclusively on the node hosting the **Proxy** Component.
 
 Furthermore, ports in Internal and External connections are grouped
 according to the Component that require them, so all ports listed in a
