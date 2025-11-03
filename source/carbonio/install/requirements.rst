@@ -221,11 +221,6 @@ the following URLs:
 
 * https\://notification.zextras.io/sendApns
 
-In case you are still using the legacy Chats, which however will soon
-be discontinued, you must allow access to
-
-* https://notifications.zextras.com/firebase/
-
 .. _fw-external:
 
 External Connections
