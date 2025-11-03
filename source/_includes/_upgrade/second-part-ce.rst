@@ -36,7 +36,13 @@
 
                # dnf upgrade --best --allowerasing
 
-   .. grid-item-card:: Step 5. (Optional) Remove unused packages
+   .. grid-item-card:: Step 5. Make sure package ``carbonio-catalog`` is
+      installed properly
+      :columns: 12 12 12 12
+
+      .. include:: /_includes/_upgrade/package-catalog.rst
+
+   .. grid-item-card:: Step 6. (Optional) Remove unused packages
       :columns: 12 12 12 12
 
       After the latest packages have been installed, you can remove
@@ -73,14 +79,14 @@
 
                # dnf autoremove
 
-   .. grid-item-card:: Step 6.  Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 7.  Register upgraded packages to |mesh|
       :columns: 12 12 12 12
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 7. Migration of new Dispatcher package
+   .. grid-item-card:: Step 8. Migration of new Dispatcher package
       :columns: 12 12 12 12
 
       To complete the installation of the new
@@ -89,7 +95,7 @@
 
       .. include:: /_includes/_architecture/_components/dispatcher-migration.rst
 
-   .. grid-item-card:: Step 8. Reboot
+   .. grid-item-card:: Step 9. Reboot
       :columns: 12 12 12 12
 
       Once the upgrade has completed successfully, run command:
