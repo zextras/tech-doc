@@ -1,14 +1,15 @@
-.. index:: Systemd commands; on RHEL9
+.. index:: Systemd; and zmcontrol
 
 .. _rhel-systemd:
 
 .. card:: New ``systemd`` units to replace ``zmcontrol``
 
-   By installing |product| on RHEL 9 you will no longer be able to
-   manage |carbonio| services with the legacy :command:`zmcontrol
-   start <service>`, :command:`zmcontrol restart <service>`, and
-   :command:`zmcontrol stop <service>` commands. Interaction with
-   services should be done exclusively through systemd commands.
+   By installing |product| on RHEL 9 or Ubuntu 24.04 you will no
+   longer be able to manage |carbonio| services with the legacy
+   :command:`zmcontrol start <service>`, :command:`zmcontrol restart
+   <service>`, and :command:`zmcontrol stop <service>`
+   commands. Interaction with services should be done exclusively
+   through systemd commands.
 
    .. note:: The :command:`zmcontrol -v` command, used to retrieve
       |product|'s configuration, will continue working as usual.
@@ -46,3 +47,7 @@
          # systemctl start/stop/restart carbonio-appserver.target
          # systemctl start/stop/restart carbonio-mta.target
          # systemctl start/stop/restart carbonio-proxy.target
+
+   .. seealso:: Insights on the new ``systemd`` units and the new
+      commands can be found in sections :ref:`systemd-targets` and
+      :ref:`systemd-guide`, respectively.

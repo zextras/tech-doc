@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 The log system in |product| is ``rsyslog``, which supports a
 **centralised setup**: in other words, all log files produced by
 |product| can be sent to a unique host server (we call it *"Log
@@ -17,7 +13,7 @@ In this scenario, we configure a log Server on **Node 1** within the
 |product| infrastructure, and we use ``srv1.example.com`` as FQDN.
 
 .. card:: Centralised Logging Setup
-             
+
    On ``srv1.example.com``, open file :file:`/etc/rsyslog.conf`,
    find the following lines, and uncomment them (i.e., remove the
    ``#`` character at the beginning of the line)::
@@ -37,7 +33,7 @@ In this scenario, we configure a log Server on **Node 1** within the
       # systemctl restart rsyslog
 
    Finally, specify the host server that will receive logs: we already
-   called it ``srv1.example.com``, so use this hostname. 
+   called it ``srv1.example.com``, so use this hostname.
 
    .. code:: console
 
@@ -47,11 +43,10 @@ In this scenario, we configure a log Server on **Node 1** within the
       command must be run only once on one node.
 
 .. card:: Other Nodes Setup
-   
+
    Once the Log Server node has properly been initialised, on **all other
    nodes**, execute
 
    .. code:: console
 
       # /opt/zextras/libexec/zmsyslogsetup  && service rsyslog restart
-

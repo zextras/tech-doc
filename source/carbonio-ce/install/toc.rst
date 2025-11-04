@@ -17,3 +17,4 @@ section.
       requirements
       preliminary
       scenarios
+      post-install

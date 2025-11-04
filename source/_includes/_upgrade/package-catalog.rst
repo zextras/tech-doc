@@ -1,4 +1,4 @@
-On the Node featuring the **Proxy** Component, install package
+On the Nodes featuring the **Proxy** Component, install package
 ``carbonio-catalog`` by executing command
 
 .. tab-set::
