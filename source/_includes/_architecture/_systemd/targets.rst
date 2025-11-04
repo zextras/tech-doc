@@ -24,6 +24,9 @@ manages them as a logical group:
        ``carbonio-altermime-config``, ``carbonio-freshclam``,
        ``carbonio-mailthreat``, ``carbonio-saslauthd.service``,
        ``carbonio-milter.service``
+   *
+     - ``carbonio.target``
+     - All |product| services on a Node
 
 Two key units (``carbonio-configd.service`` and
 ``carbonio-stats.service``) are shared across all targets and play
