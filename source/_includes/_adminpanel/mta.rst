@@ -243,22 +243,36 @@ tuned from a few seconds to several weeks.
 Advanced
 --------
 
-In this section you can configure logging and some advanced options.
+In this section, you can configure logging and other advanced options.
+The descriptions focus on the most commonly used settings.
 
 .. rubric:: Logging
 
-Options in the *logging* section allow to define the verbosity (log
-level) for Amavis and TLS activity of SMTP and LMTP clients. For the
-*SAS Log level for Amavis*, choose either to log only informative
-(INFO) messages or all messages, while for the other the lower the
-value, the less messages will be saved.
+The following options are available  in the *logging* section:
+
+* *Log level for Amavis* defines the verbosity of the Amavis antivirus
+  and antispam engine. It accepts values from 0 (minimal logging) to 6
+  (maximum detail).  Higher levels produce more detailed diagnostic
+  output, useful for troubleshooting but not recommended for normal
+  operation due to increased log volume.
+
+* *LMTP client logging of TLS Activity* is the verbosity of the
+  TLS activity of local clients
 
 .. rubric:: Tuning
 
-These options concern the threads used by antivirus, LMTP, and MILTER
-processes, and the maximum size of an e-mail message. When a user adds
-an attachment that exceeds the maximum size, a pop up will ask to
-convert the attachment into a :term:`Smart Link`.
+With these options you can change the values for:
+
+* *Max Antivirus Threads* is the number of threads used by the ClamAV engine
+     
+* *LMTP Threads* is the number of threads used by the LMTP engine
+     
+* *MILTER Threads* is the number of threads used by the MILTER engine
+  
+* *Max size for mail messages* defines the attachment size (in
+  Megabytes) beyond which users are prompted to convert the file into
+  a :term:`Smart Link`.  When an attachment exceeds this threshold, a
+  pop-up appears suggesting the conversion.
 
 .. _ap-mta-queue:
 
