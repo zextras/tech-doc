@@ -228,14 +228,14 @@ following command and verify that in the output they are appear as
 
       .. code:: console
 
-         # systemctl status carbonio.target
+         # zmcontrol status
 
    .. tab-item:: Ubuntu 24.04
       :sync: ubu24
 
       .. code:: console
 
-         zextras$ zmcontrol status
+         zextras$ systemctl status carbonio.target
 
    .. tab-item:: RHEL 8
       :sync: rhel8
