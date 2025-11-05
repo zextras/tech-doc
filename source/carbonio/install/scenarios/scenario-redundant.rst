@@ -21,17 +21,17 @@ The Components installed on the *15 Nodes* are:
 * Node 2: Mesh, Directory Replica
 * Node 3: Mesh, Monitoring
 * Node 4: MTA AV/AS
-* Node 5: MTA AV/AS
+* Node 5: (replicated) MTA AV/AS
 * Node 6: Proxy
-* Node 7: Proxy
+* Node 7: (replicated) Proxy
 * Node 8: Mailstore & Provisioning
-* Node 9: Mailstore & Provisioning
+* Node 9: (replicated) Mailstore & Provisioning
 * Node 10: Chats, Files, Tasks
-* Node 11: Chats, Files, Tasks
+* Node 11: (replicated) Chats, Files, Tasks
 * Node 12: Docs & Editor, Preview
-* Node 13: Docs & Editor, Preview
+* Node 13: (replicated) Docs & Editor, Preview
 * Node 14: Video Server & Video Recording
-* Node 15: Video Server & Video Recording
+* Node 15: (replicated) Video Server & Video Recording
 
 .. hint:: To reduce the number of the VMs or IP addresses required by
    this scenario, you can use the same VM for example for one of the
