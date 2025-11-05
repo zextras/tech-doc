@@ -1329,7 +1329,7 @@ Node 11: (replicated) Chats, Files, Tasks
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_architecture/_packages/component-chats-cb.rst
+   .. include:: /_includes/_architecture/_packages/component-chats-cb-node-11-scenario-redundant.rst
 
    .. rubric:: Component Tasks
 
