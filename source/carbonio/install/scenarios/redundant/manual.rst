@@ -61,9 +61,17 @@ Node 1: Mesh & Directory, Database
 
    .. rubric:: DB Connectors
 
+   If you plan to diverge from the proposed scenario and prefer not to
+   install some of the Components (|file|, |docs|, |task|), please
+   also do not install the corresponding Connector.
+
    .. include:: /_includes/_architecture/_packages/component-db-comp.rst
 
    .. rubric:: Chats DB Connectors
+
+   If you plan to diverge from the proposed scenario and prefer not to
+   install the |wsc| Component, please do not install these
+   Connectors.
 
    .. include:: /_includes/_architecture/_packages/component-db-chats.rst
 
