@@ -1,3 +1,5 @@
+.. _upgrade-procedure:
+
 ================================
  Upgrade to |product| |release|
 ================================
@@ -29,5 +31,4 @@ a snapshot of the Nodes and a backup of the data.
 
       upgrade
       upgrade-older
-      os
       changelog
