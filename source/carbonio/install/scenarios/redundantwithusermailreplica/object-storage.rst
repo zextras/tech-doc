@@ -36,12 +36,19 @@ precise command and all options in the corresponding page:
 :octicon:`chevron-right` :ref:`Swift
 <carbonio_powerstore_doCreateVolume_Swift>`
 
+After you create the volumes, remember to set them as primary and
+centralised, by using the commands in Section :ref:`rur-centralised`.
+
 .. note:: All commands below must be executed as the |zu|. Remember to
    replace all the example values with values suitable with your
    infrastructure.
 
+Create Volume
+-------------
+
+
 Minio
------
+~~~~~
 
 If you use MinIO, the command below will create a bucket.
 
@@ -59,23 +66,12 @@ For example:
    zextras$ carbonio core doCreateBucket MINIO carbonio-ha admin MyBestPassword http://162.19.69.216:9000 ha-primary
 
 This command outputs a number of information about the bucket. Write
-down the **Bucket ID**, because you will need it in the next command
-(``ID_FROM_PREVIOUS_COMMAND``), which creates a centralised primary
-volume.
-
-.. code:: console
-
-   zextras$ carbonio powerstore doCreateVolume MINIO centralized-ha primary ID_FROM_PREVIOUS_COMMAND centralized true
-
-Finally, set the volume as current, running on every Node with the
-*Mailstore & Provisioning* Component the command
-
-.. code:: console
-
-   zextras$ carbonio powerstore doUpdateVolume MINIO centralized-ha current_volume true
+down the **Bucket ID**, because you will need it when creating a
+centralised primary volume: it will be called
+``ID_FROM_PREVIOUS_COMMAND`` in Section :ref:`rur-centralised`.
 
 S3
-----
+~~~~~
 
 If you use an S3 Object Storage, this command creates a bucket.
 
@@ -89,14 +85,28 @@ For example:
 
    zextras$ carbonio core doCreateBucket S3 bucket_name carbonio-ha accesskey secretkey region us-east-1 ha-primary
 
+
 This command outputs a number of information about the bucket. Write
-down the **Bucket ID**, because you will need it in the next command
-(``ID_FROM_PREVIOUS_COMMAND``), which creates a centralised primary
-volume.
+down the **Bucket ID**, because you will need it when creating a
+centralised primary volume: it will be called
+``ID_FROM_PREVIOUS_COMMAND`` in Section :ref:`rur-centralised`.
+
+
+.. _rur-centralised:
+
+Define Centralised Volume
+-------------------------
+
+In order to set up the volume as a centralised one, execute the
+following two commands, replacing ``TYPE`` with the type of the
+bucket, which is MINIO or S3 in our example, or the type you used.
+
+Remember also to use the bucket ID from the output of the previous
+commands (called ``ID_FROM_PREVIOUS_COMMAND`` in the command below)
 
 .. code:: console
 
-   zextras$ carbonio powerstore doCreateVolume S3 centralized-ha primary ID_FROM_PREVIOUS_COMMAND centralized true
+   zextras$ carbonio powerstore doCreateVolume  TYPE centralized-ha primary ID_FROM_PREVIOUS_COMMAND centralized true
 
 
 Finally, set the volume as current, running on every Node with the
@@ -104,4 +114,4 @@ Finally, set the volume as current, running on every Node with the
 
 .. code:: console
 
-   zextras$ carbonio powerstore doUpdateVolume S3 centralized-ha current_volume true
+   zextras$ carbonio powerstore doUpdateVolume TYPE centralized-ha current_volume true
