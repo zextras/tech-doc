@@ -36,5 +36,4 @@ a snapshot of the Nodes and a backup of the data.
       ansible
       upgrade
       upgrade-older
-      os
       changelogs
