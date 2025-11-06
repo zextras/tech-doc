@@ -10,8 +10,8 @@ configure a |rur| scenario.
 Before creating and configuring a volume, you should already have an
 S3-like service at your disposal, either within your infrastructure or
 purchased from a third-party. Indeed, the commands in this page will
-only connect to the bucket, then create a volume and configure it for
-the use with |product|.
+only connect to the bucket, then create a centralised volume and
+configure it for the use with |product|.
 
 In this section are showed as examples the commands to set up MinIO
 and S3 volumes.  In case you prefer to create a volume on other types
@@ -43,8 +43,8 @@ centralised, by using the commands in Section :ref:`rur-centralised`.
    replace all the example values with values suitable with your
    infrastructure.
 
-Create Volume
--------------
+Connect Bucket to |product|
+---------------------------
 
 
 Minio
