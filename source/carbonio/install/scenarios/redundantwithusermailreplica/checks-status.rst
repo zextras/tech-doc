@@ -1,7 +1,13 @@
 .. _rur-checks:
 
+|ur| Management
+===============
+
+CLI commands to manage the |ur|, to promote and replicate accounts on
+other Mailstores, can be found in the dedicated section :ref:`use-ur`.
+
 Check |ur| Services Status
-==========================
+--------------------------
 
 This section is a collection of commands that can be used to verify
 the status of |product|\'s |ur| and related services.

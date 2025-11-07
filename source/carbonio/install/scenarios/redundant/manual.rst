@@ -12,10 +12,8 @@ Components on the Nodes, according to the following guidelines.
 
 .. _fr1:
 
-Node One
-========
-
-This Node features the *Mesh & Directory* and *Database* Components.
+Node 1: Mesh & Directory, Database
+==================================
 
 .. _fr1-step1:
 
@@ -63,9 +61,17 @@ This Node features the *Mesh & Directory* and *Database* Components.
 
    .. rubric:: DB Connectors
 
+   If you plan to diverge from the proposed scenario and prefer not to
+   install some of the Components (|file|, |docs|, |task|), please
+   also do not install the corresponding Connector.
+
    .. include:: /_includes/_architecture/_packages/component-db-comp.rst
 
    .. rubric:: Chats DB Connectors
+
+   If you plan to diverge from the proposed scenario and prefer not to
+   install the |wsc| Component, please do not install these
+   Connectors.
 
    .. include:: /_includes/_architecture/_packages/component-db-chats.rst
 
@@ -182,10 +188,8 @@ installation of the next two Nodes.
 
 .. _fr2:
 
-Node Two
-========
-
-This Node features the *Mesh* and *Directory Replica*  Components.
+Node 2: Mesh, Directory Replica
+===============================
 
 .. _fr2-step1:
 
@@ -330,10 +334,8 @@ This Node features the *Mesh* and *Directory Replica*  Components.
 
 .. _fr3:
 
-Node Three
-==========
-
-This Node features the *Mesh* and *Monitoring*  Components.
+Node 3: Mesh, Monitoring
+========================
 
 .. _fr3-step1:
 
@@ -477,10 +479,8 @@ This Node features the *Mesh* and *Monitoring*  Components.
 
 .. _fr4:
 
-Node Four
-=========
-
-This Node features the *MTA AV/AS* Component.
+Node 4: MTA AV/AS
+=================
 
 .. _fr4-step1:
 
@@ -594,10 +594,8 @@ This Node features the *MTA AV/AS* Component.
 
 .. _fr5:
 
-Node Five
-=========
-
-This Node features the (replicated) *MTA AV/AS* Component.
+Node 5: (replicated) MTA AV/AS
+==============================
 
 .. _fr5-step1:
 
@@ -712,10 +710,8 @@ This Node features the (replicated) *MTA AV/AS* Component.
 
 .. _fr6:
 
-Node Six
-========
-
-This Node features the *Proxy* Component.
+Node 6: Proxy
+=============
 
 .. _fr6-step1:
 
@@ -829,10 +825,8 @@ This Node features the *Proxy* Component.
 
 .. _fr7:
 
-Node Seven
-==========
-
-This Node features the (replicated) *Proxy* Component.
+Node 7: (replicated) Proxy
+==========================
 
 .. _fr7-step1:
 
@@ -946,10 +940,8 @@ This Node features the (replicated) *Proxy* Component.
 
 .. _fr8:
 
-Node Eight
-==========
-
-This Node features the *Mailstore & Provisioning* Component.
+Node 8: Mailstore & Provisioning
+================================
 
 .. _fr8-step1:
 
@@ -1055,10 +1047,8 @@ This Node features the *Mailstore & Provisioning* Component.
 
 .. _fr9:
 
-Node Nine
-=========
-
-This Node features the (replicated) *Mailstore & Provisioning* Component.
+Node 9: (replicated) Mailstore & Provisioning
+=============================================
 
 .. _fr9-step1:
 
@@ -1164,10 +1154,8 @@ This Node features the (replicated) *Mailstore & Provisioning* Component.
 
 .. _fr10:
 
-Node Ten
-========
-
-This Node features the *Chats*, *Files*, and *Tasks*  Components.
+Node 10: Chats, Files, Tasks
+============================
 
 .. _fr10-step1:
 
@@ -1296,10 +1284,8 @@ This Node features the *Chats*, *Files*, and *Tasks*  Components.
 
 .. _fr11:
 
-Node Eleven
-===========
-
-This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
+Node 11: (replicated) Chats, Files, Tasks
+=========================================
 
 .. _fr11-step1:
 
@@ -1343,7 +1329,7 @@ This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
 
    .. rubric:: Component |wsc|
 
-   .. include:: /_includes/_architecture/_packages/component-chats-cb.rst
+   .. include:: /_includes/_architecture/_packages/component-chats-cb-node-11-scenario-redundant.rst
 
    .. rubric:: Component Tasks
 
@@ -1429,10 +1415,8 @@ This Node features the (replicated) *Chats*, *Files*, and *Tasks* Components.
 
 .. _fr-12:
 
-Node Twelve
-===========
-
-This Node features the *Docs & Editor* and *Preview* Components.
+Node 12: Docs & Editor, Preview
+===============================
 
 .. _fr12-step1:
 
@@ -1542,11 +1526,8 @@ This Node features the *Docs & Editor* and *Preview* Components.
 
 .. _fr-13:
 
-Node Thirteen
-=============
-
-This Node features the (replicated) *Docs & Editor* and *Preview*
-Components.
+Node 13: (replicated) Docs & Editor, Preview
+============================================
 
 .. _fr13-step1:
 
@@ -1657,10 +1638,8 @@ Components.
 
 .. _fr14:
 
-Node Fourteen
-=============
-
-This Node features the *Video Server & Video Recording* Component.
+Node 14: Video Server & Video Recording
+=======================================
 
 .. _fr14-step1:
 
@@ -1766,11 +1745,8 @@ This Node features the *Video Server & Video Recording* Component.
 
 .. _fr15:
 
-Node Fifteen
-============
-
-This Node features the (replicated) *Video Server & Video Recording*
-Component.
+Node 15: (replicated) Video Server & Video Recording
+====================================================
 
 .. _fr15-step1:
 

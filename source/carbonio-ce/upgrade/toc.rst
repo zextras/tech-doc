@@ -1,3 +1,5 @@
+.. _upgrade-procedure:
+
 ================================
  Upgrade to |product| |release|
 ================================
@@ -22,6 +24,31 @@ words, the starting version is not important: upgrading from *24.12*,
 Before starting an upgrade procedure, it is strongly suggested to make
 a snapshot of the Nodes and a backup of the data.
 
+Operating System Upgrade
+========================
+
+In case you need to upgrade the OS, you must update |product| and all
+repositories in a specific order to ensure compatibility and avoid
+package dependency errors.
+
+Follow this sequence:
+
+* Upgrade |product| to the latest available version for your current OS release
+
+* Upgrade the operating system and update its repositories
+
+* Perform the OS upgrade (for example, from Ubuntu 22.04 to 24.04 or
+  from RHEL 8 to 9), then update all system packages to the latest
+  versions
+
+* Update the PostgreSQL and |product| repositories to match the new OS
+  version. This step ensures the repositories point to the correct
+  package sources after the OS upgrade.
+
+* Upgrade the |product| packages again using the new repositories.
+  This final upgrade aligns all |product| components with the updated
+  OS environment.
+
 .. card:: Table of Contents
 
    .. toctree::
@@ -29,5 +56,4 @@ a snapshot of the Nodes and a backup of the data.
 
       upgrade
       upgrade-older
-      os
       changelog
