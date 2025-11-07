@@ -146,5 +146,4 @@ Other Upgrades
 #. If you want to upgrade the OS, you **must** upgrade PostgreSQL as
    well, since PostgreSQL 12 is not supported in either Ubuntu 22.04
    or RHEL 9. This is the most time-consuming resource, because you
-   need to carry out multiple tasks. Please refer to Section
-   :ref:`os-upgrade` for directions.
+   need to carry out multiple tasks.
