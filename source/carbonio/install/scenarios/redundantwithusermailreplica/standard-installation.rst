@@ -1,8 +1,8 @@
 .. _std-install:
 
-===========================================
- |carbonio| Preliminaries and Installation
-===========================================
+================================
+ Preliminaries and Installation
+================================
 
 The |ur| setup for |product| builds on the **Scenario
 Redundant**. Therefore, it is essential to have an installation of

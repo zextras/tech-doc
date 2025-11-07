@@ -42,7 +42,12 @@ Please note:
   ``service-discover`` software on which |product| is based does not
   require the agent to be installed along the server, therefore the
   ``service-discover-agent`` package is needed only in the other
-  nodes
+  Nodes
+
+* Within a |product| Multi-Server installation, it is possible to
+  install multiple |mesh| **servers**, provided they are in **odd**
+  numbers, e.g., 1, 3, 5 (or even more), because they can always find
+  a *quorum* and avoid deadlocks
 
 * The ``carbonio-message-broker`` package is unique within a |product|
   infrastructure

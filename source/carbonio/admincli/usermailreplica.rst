@@ -107,8 +107,8 @@ The command presented in this section **do not support**:
 
 .. _ur-init:
 
-|ur| Initialisation
-----------------------
+|ur| Activation
+---------------
 
 To replicate a mailbox to another Mailstore you can use the
 :command:`setAccountDestination` command, which needs as parameters
@@ -200,11 +200,11 @@ Then, for each replica:
 
 .. _ur-promo:
 
-|ur| Promotion
---------------
+|ur| Account Promotion
+----------------------
 
-The architecture of |ur| allows for a quick promotion of a replica
-Node at any time. Indeed, since all the metadata are synchronously
+The architecture of |ur| allows for a quick promotion of an account replica
+on a Node at any time. Indeed, since all the metadata are synchronously
 replicated in the event queue and the blobs are stored in the
 centralised volume, the Administrator can trigger the promotion even
 if the source Mailstore is offline (e.g., the Mailstore is in
@@ -246,8 +246,8 @@ Global Admin will receive a notification as soon as the |ur| promotion is comple
 
 .. _ur-del:
 
-|ur| Deletion
--------------
+Disabling |ur|
+--------------
 
 The Administrator can delete the replicated metadata anytime, using
 the :command:`removeAccountDestination` command, by providing either
