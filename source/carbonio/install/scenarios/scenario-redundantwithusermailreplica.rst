@@ -103,11 +103,10 @@ Requirements
 - An additional carbonio-directory-server Node configured in
   *MultiMaster* mode (**mmr**)
 
-- A **centralised** Primary storage. Please refer to the following
-  sections to set it up, either  :ref:`from the Admin Panel <ap-storage>` pr
-  :ref:`from the CLI <pws_centralized_storage>`.
+- A **centralised** Primary storage. To set it up, please refer to
+  section :ref:`rur-storage`.
 
-.. _rur-Node-spec:
+.. _rur-node-spec:
 
 Detailed Node Specifications
 ----------------------------
@@ -283,6 +282,8 @@ respectively. These will be used in the remainder of this section.
    :hidden:
    :glob:
 
-   redundantwithusermailreplica/standard-installation.rst
-   redundantwithusermailreplica/ur-installation.rst
-   redundantwithusermailreplica/checks-status.rst
+   redundantwithusermailreplica/standard-installation
+   redundantwithusermailreplica/ur-installation
+   redundantwithusermailreplica/object-storage
+   redundantwithusermailreplica/checks-status
+

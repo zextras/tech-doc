@@ -39,8 +39,8 @@ Below is the list of Carbonio packages collected by component and updated to ver
 
 .. dropdown:: **Mailstore & Provisioning**
 
-   - **carbonio-advanced**: `carbonio-advanced` *(1:4.24.1)*
-   - **carbonio-zal**: `carbonio-zal` *(1:4.25.0)*
+   - **carbonio-advanced**: `carbonio-advanced` *(4.24.4-1)*
+   - **carbonio-zal**: `carbonio-zal` *(4.25.0-1)*
 
 .. dropdown:: **Files**
 
