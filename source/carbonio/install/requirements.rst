@@ -192,17 +192,13 @@ dedicated, private network.
 Section :ref:`fw-out` lists sites that must be accessible from
 |product| and are used mostly for push notifications.
 
-The ports listed under *Internal Connections* must be open only for
-communication between internal Nodes, while those under *External
-Connections* should be forwarded only on the Node where the
-corresponding Component is installed. For example, port 443 should be
+The ports listed under *Internal Connections* are grouped by Component
+or Service and must be open only for communication between internal
+Nodes; while on the other hand, the ports listed under *External
+Connections* are grouped according to the Component that require them,
+so all ports listed in a table must be forwarded only on the Node on
+which the Component is installed.  For example, port 443 should be
 forwarded exclusively on the node hosting the **Proxy** Component.
-
-Furthermore, ports in Internal and External connections are grouped
-according to the Component that require them, so all ports listed in a
-table must be forwarded only on the Node on which the Component is
-installed.
-
 
 .. _fw-out:
 
@@ -389,7 +385,6 @@ corresponding Component is installed, for a proper communication among
       the WAN"
       "8600", "TCP and UDP", "DNS service for |mesh|"
       "9107", "TCP", "|mesh| data export to |monit|"
-      "15692", "TCP", "RabbitMQ data export to |monit|"
       "20000-21255", "TCP", "range for registrations ports for sidecar
       services (automatically assigned)"
 
@@ -406,3 +401,14 @@ corresponding Component is installed, for a proper communication among
       "prometheus", "TCP", "9090"
       "prometheus SSH", "TCP", "9999"
 
+.. card:: Other services
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "15692", "TCP", "carbonio-message-broker"
+
+   The services listed here are installed together with specific
+   Components but have roles and functions that have nothing to do
+   with them.
