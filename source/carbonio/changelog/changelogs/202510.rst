@@ -1,0 +1,316 @@
+Changelog 2025-10
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202510-1446 Improve doc for Chats attribute
+
+A new attribute, ``carbonioSearchSpecifiedDomainsByFeature`` available to Global Administrators only, allows |wsc| users from a domain to search for users in selected other domains configured on a |product| multi-tenant infrastructure. Use limitations and interactions with the attribute ``carbonioSearchAllDomainsByFeature`` have also been added to the documentation.
+
+Changes in the source code can be found in :pr:`1277`
+
+
+.. rubric:: 202510-1444 No longer needed memcached configuration
+
+``memcached`` does no longer need to connect through a dedicated port, therefore its manual configuration is of no use. We removed all mentions and added a post-upgrade command to clear its configuration.
+
+Changes in the source code can be found in :pr:`1278`
+
+
+.. rubric:: 202510-1442 Updated package version
+
+The architecture page has been updated with the latest version of the carbonio-files-ui package.
+Changes in the source code can be found in :pr:`1272`
+
+
+.. rubric:: 202510-1439 Remove outdated command
+
+|product|-related services no longer need to be manually (re-)started after upgrade, since they are now managed as :command:`systemd` units.
+
+Changes in the source code can be found in :pr:`1276`
+
+
+.. rubric:: 202510-1432 Updated packages version
+
+The architecture page has been updated with the latest versions of the carbonio-user-management and carbonio-storages packages.
+
+Changes in the source code can be found in :pr:`1262`
+
+
+.. rubric:: 202510-1422 Fixed Carbonio activate license page
+
+The “Activate License” page now correctly directs users to the intended landing page.
+The content has also been reviewed.
+
+Changes in the source code can be found in :pr:`1292`.
+
+
+.. rubric:: 202510-1405  Add 25.9.0 changelog
+
+Changelog for the latest Carbonio release has been added.
+
+Changes in the source code can be found in :pr:`1243` and :pr:`1245`.
+
+
+.. rubric:: 202510-1404 Add a warning in retention management
+
+We clarified that the COS' option has a minimum fixed value of 31 days.
+
+Changes in the source code can be found in :pr:`1242`.
+
+
+.. rubric:: 202510-1394 Add changelog of repo sps-carbonio-ha-ansible-setup
+
+Changelog for Ansibles's Cluster Service Redundancy repository has been added to |product|'s changelogs.
+
+Changes in the source code can be found in :pr:`1248`.
+
+
+.. rubric:: 202510-1391  Documentation Changelog August 2025
+
+The technical documentation's changelog for August 2025 has been published.
+
+Changes in the source code can be found in :pr:`1237`.
+
+
+.. rubric:: 202510-1387 Rewrite Component Event Streaming
+
+The Event Streaming Component has been rewritten to make clear that its manual installation is deprecated, because it will be using Apache Kafka Raft (KRaft) 4.
+
+Changes in the source code can be found in :pr:`1234`.
+
+
+.. rubric:: 202510-1381 Improved ActiveSync index documentation
+
+Documentation of the ActiveSync indexing functionality has been reviewed and vastly improved.
+
+Changes in the source code can be found in :pr:`1256`.
+
+
+.. rubric:: 202510-1378 Support of CardDAV and CalDAV
+
+We added CardDAV and CalDAV to the list of supported protocols to interact with |product|.
+
+Changes in the source code can be found in :pr:`1232`.
+
+
+.. rubric:: 202510-1371 Review Scenario Redundant With User Mail Replica
+
+Scenario Redundant With User Mail Replica was thoroughly reviewed to keep it up to date with the latest developments and to simplify the overall information, by removing no-longer needed information.
+
+Changes in the source code can be found in :pr:`1231`.
+
+
+.. rubric:: 202510-1356 Add command to CLI
+
+The set of commands :command:`carbonio core doCreateBucket`, used to create buckets on remote providers have been added to the CLI reference.
+
+Changes in the source code can be found in :pr:`1227`.
+
+
+.. rubric:: 202510-1344 Update diagrams of installation scenarios
+
+Diagrams of the installation scenarios have been replaced, making them clearer and aligned with the current terminology used in the documentation.
+
+Changes in the source code can be found in :pr:`1223`.
+
+
+.. rubric:: 202510-1343 Add Carbonio Mesh k/v option
+
+We added option ``carbonio-files/max-dowloadable-size-in-mb``, which is by default **unset**.
+
+Changes in the source code can be found in :pr:`1222`.
+
+
+.. rubric:: 202510-1307 Remove Legacy Chats
+
+Documentation for the legacy Chats has been removed from the documentation.
+
+Changes in the source code can be found in :pr:`1244`.
+
+
+.. rubric:: 202510-1300 New 25.9.0 features in Admin Panel
+
+New and changed features for the |adminui| introduced in release 25.9.0, including:
+
+* New supported language: Slovenian
+* In CLI, module ``HA`` has been replaced and obsoleted by ``MailReplica``
+* The contract end date has been added to the *Subscription* Section
+
+Changes in the source code can be found in :pr:`1220`, :pr:`1226`, and :pr:`1229`.
+
+
+.. rubric:: 202510-1299  Documentation Changelog July 2025
+
+The technical documentation's changelog for July 2025 has been published.
+
+Changes in the source code can be found in :pr:`1218`.
+
+
+.. rubric:: 202510-1284 New required task before opening a ticket
+
+We added instructions to make sure that customers upgrade their |product| infrastructure before opening a ticket.
+
+Changes in the source code can be found in :pr:`1221`.
+
+
+.. rubric:: 202510-1263 Remove mailbox database bootstrap from upgrade
+
+Command :command:`mailbox-db-bootstrap` is no longer required in the upgrade procedure.
+
+Changes in the source code can be found in :pr:`1225`.
+
+
+.. rubric:: 202510-1257 Address Briefcases migration errors
+
+We added in the *Troubleshooting* Section some indication about errors appearing during or after converting Briefcases while migrating from |suite| compatible platforms to |product|.
+
+Changes in the source code can be found in :pr:`1239`.
+
+
+.. rubric:: 202510-1254 DB Connectors improved documentation
+
+Documentation for the DB Connectors installation has been updated to reflect that they are tightly coupled with their respective Component.
+
+Changes in the source code can be found in :pr:`1275`.
+
+
+.. rubric:: 202510-1235 Remove config.manual configuration of Preview Component
+
+Manual configuration of file :file:`preview.ini` is no longer necessary and has been removed from the documentation.
+
+Changes in the source code can be found in :pr:`1219`.
+
+
+.. rubric:: 202510-1233 Rename Active Replica in User Mail Replica
+
+The Active Replica feature has been renamed to |ur|.
+
+Changes in the source code can be found in :pr:`1186`.
+
+
+.. rubric:: 202510-1212 Rearrange content of Carbonio Backup Section
+
+Section |backup| in *Admin by CLI* has been reorganised to improve clarity and allow for an easier access to its content, especially the architecture and the Legal Hold feature.
+
+Changes in the source code can be found in :pr:`1241`.
+
+
+.. rubric:: 202510-1106 Restructure postPinstall section
+
+Section Post-Install has been removed from the documentation, with its content included in the *Install* and the *Admin by Command Line* Sections.
+
+Changes in the source code can be found in :pr:`1238`.
+
+
+.. rubric:: 202510-988 Organise included files of Section Architecture
+
+Since the |product| Architecture has been moved as a new standalone section, also the files included there have been moved to a new directory.
+
+Changes in the source code can be found in :pr:`1301`.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202510-1457 Removed limitation from Chats section
+
+The line stating “It can not be installed on the same Node as Carbonio VideoServer” has been removed as this restriction is outdated.
+Changes in the source code can be found in :pr:`1297`
+
+
+.. rubric:: 202510-1450 Update zmcontrol command output
+
+The output of commands :command:`zmcontrol status` and :command:`zmcontrol -v` has been updated and fixed, since the one present was of a test environment.
+
+Changes in the source code can be found in :pr:`1281` and :pr:`1284`.
+
+
+.. rubric:: 202510-1448 Review User Mail Replica Installation
+
+Scenario |rur| contained a few slight mistakes and typos, which have been fixed. Also, the role polayed by the Directory Replica Component during the installation has been clarified.
+
+Changes in the source code can be found in :pr:`1279` and :pr:`1280`.
+
+
+.. rubric:: 202510-1436 Fix incorrect statement about zmcontrol
+
+A sentence referring to the zmcontrol command has been corrected.
+Changes in the source code can be found in :pr:`1268`
+
+
+.. rubric:: 202510-1437 Wrong PostgreSQL instructions on redundant scenario
+
+We removed PostgreSQL configuration instructions from Scenario Redundant's Nodes two and three, which do not have PostgreSQL installed.
+
+Changes in the source code can be found in :pr:`1271`.
+
+
+.. rubric:: 202510-1434 Fixed inventory in Redundant with User Mail Replica scenario
+
+Redundant with User Mail Replica scenario: the [replicaDirectoryServers] group in the inventory file is now left empty to ensure the group remains defined but unpopulated.
+
+Changes in the source code can be found in :pr:`1265`
+
+
+.. rubric:: 202510-1431 Wrong releases referenced in upgrade procedures
+
+Upgrade instructions still referenced old versions, causing confusion to readers. We improved them by adding a variable that is evaluated to the previous version and improved wording of the surrounding text.
+
+Changes in the source code can be found in :pr:`1263`.
+
+
+.. rubric:: 202510-1430 Wrong code blocks in RHEL requirements
+
+A few typos were fixed, that prevented the correct display of code blocks with instructions to add RHEL repositories required for the installation on |product| on RHEL systems.
+
+Changes in the source code can be found in :pr:`1260` and :pr:`1261`.
+
+
+.. rubric:: 202510-1421 25.9.0 documentation feedback
+
+We implemented the feedback received on the documentation of 25.9.0's new features, in particular we removed *Known Issues* that were present in both upgrade procedures, from previous and from older versions.
+
+Changes in the source code can be found in :pr:`1255`.
+
+
+.. rubric:: 202510-1413 Missing PostgreSQL configuration in Scenarios
+
+The missing configuration of PostgreSQL was added to the Scenario installation procedures.
+
+Changes in the source code can be found in :pr:`1254`.
+
+
+.. rubric:: 202510-1388 Wrong columns in Administrator's permissions comparison table
+
+The columns of a comparison table between Global and Domain Administrator's permissions were switched.
+
+Changes in the source code can be found in :pr:`1236`.
+
+
+.. rubric:: 202510-1386 Wrong Admin Panel's option
+
+The description of White-label's option *Login URL* has been corrected.
+
+Changes in the source code can be found in :pr:`1235`.
+
+
+.. rubric:: 202510-1383 Replace wrong link
+
+A broken link in the *Video Recording Notes* has been fixed.
+
+Changes in the source code can be found in :pr:`1233`.
+
+
+.. rubric:: 202510-1347 Fix default value of Carbonio Mesh k/v option
+
+We removed the default value of option ``carbonio-files/max-uploadable-size-in-mb``, which is initially **unset**.
+
+Changes in the source code can be found in :pr:`1228`.
+
+*****
+
+End of changelog
