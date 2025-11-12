@@ -389,7 +389,6 @@ corresponding Component is installed, for a proper communication among
       the WAN"
       "8600", "TCP and UDP", "DNS service for |mesh|"
       "9107", "TCP", "|mesh| data export to |monit|"
-      "15692", "TCP", "RabbitMQ data export to |monit|"
       "20000-21255", "TCP", "range for registrations ports for sidecar
       services (automatically assigned)"
 
