@@ -405,3 +405,14 @@ corresponding Component is installed, for a proper communication among
       "prometheus", "TCP", "9090"
       "prometheus SSH", "TCP", "9999"
 
+.. card:: Other services
+
+   .. csv-table::
+      :header: "Port", "Protocol", "Service"
+      :widths: 10 10 80
+
+      "15692", "TCP", "carbonio-message-broker"
+
+   The services listed here are installed together with specific
+   Components but have roles and functions that have nothing to do
+   with them.
