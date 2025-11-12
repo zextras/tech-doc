@@ -159,7 +159,7 @@ of them to expand the content.
 
          .. code:: console
 
-            # apt install carbonio-ws-collaboration-ui \
+            # dnf install carbonio-ws-collaboration-ui \
             carbonio-tasks-ui
 
       .. tab-item:: RHEL 9
@@ -167,7 +167,7 @@ of them to expand the content.
 
          .. code:: console
 
-            # apt install carbonio-ws-collaboration-ui \
+            # dnf install carbonio-ws-collaboration-ui \
             carbonio-tasks-ui
 
 
