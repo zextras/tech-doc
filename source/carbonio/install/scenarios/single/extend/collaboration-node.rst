@@ -83,7 +83,7 @@ of them to expand the content.
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql-client-16 \
-            carbonio-push-connector carbonio-notification-push
+            carbonio-notification-push
 
       .. tab-item:: Ubuntu 24.04
          :sync: ubu24
@@ -95,7 +95,7 @@ of them to expand the content.
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql-client-16 \
-            carbonio-push-connector carbonio-notification-push
+            carbonio-notification-push
 
       .. tab-item:: RHEL 8
          :sync: rhel8
@@ -107,7 +107,7 @@ of them to expand the content.
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql16 \
-            carbonio-push-connector carbonio-notification-push
+            carbonio-notification-push
 
       .. tab-item:: RHEL 9
          :sync: rhel9
@@ -119,7 +119,7 @@ of them to expand the content.
             carbonio-push-connector service-discover-agent \
             carbonio-tasks carbonio-docs-editor \
             carbonio-docs-connector postgresql16 \
-            carbonio-push-connector carbonio-notification-push
+            carbonio-notification-push
 
 .. dropdown:: Step 4: Tasks to carry out on the **Core Node**
    :color: danger
@@ -159,7 +159,7 @@ of them to expand the content.
 
          .. code:: console
 
-            # apt install carbonio-ws-collaboration-ui \
+            # dnf install carbonio-ws-collaboration-ui \
             carbonio-tasks-ui
 
       .. tab-item:: RHEL 9
@@ -167,7 +167,7 @@ of them to expand the content.
 
          .. code:: console
 
-            # apt install carbonio-ws-collaboration-ui \
+            # dnf install carbonio-ws-collaboration-ui \
             carbonio-tasks-ui
 
 
