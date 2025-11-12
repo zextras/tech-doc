@@ -512,6 +512,13 @@ Resources
 
 .. include:: /_includes/_adminpanel/_domains/resources.rst
 
+.. _ap-create-resource:
+
+How to create a Resource
+------------------------
+
+.. include:: /_includes/_adminpanel/_domains/create-new-resource.rst
+
 .. Commented according to CO-2145
    .. _ap-sync:
 
