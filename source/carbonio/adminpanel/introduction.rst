@@ -59,7 +59,11 @@ The landing page is shown in :numref:`fig_ap-top` and
 
       The list of Notifications follows: click the `GO TO
       NOTIFICATION` button to open the :ref:`dedicated page
-      <ap-notifications>`.      
+      <ap-notifications>`.
+
+      A banner will be shown in case the Maintenance is expired, which
+      upon clicking will take you to the :ref:`ap-subscriptions` page
+      where you can check the license details and enter a new token.
 
 .. grid:: 1 1 2 2
    :gutter: 3
