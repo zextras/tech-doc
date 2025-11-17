@@ -10,14 +10,14 @@ user and execute the command
 
    zextras$ carbonio prov sp zextras@example.com mynewsecurepassword
 
-Make sure that ``newpassword`` meets good security criteria!
+Make sure that ``mynewsecurepassword`` meets good security criteria!
 
 A breakdown of the above command:
 
 * :command:`carbonio prov` accesses the |carbonio| provisioning tool,
   which is used to manage accounts, domains, COS, and so on
 
-* ``sp`` (short form of``setPassword``) is the specific provisioning
+* ``sp`` (short form of ``setPassword``) is the specific provisioning
   tool's subcommand to change a user's password
   
 .. card:: The ``zextras`` and ``zextras@example.com`` users
