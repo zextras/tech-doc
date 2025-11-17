@@ -10,15 +10,29 @@ and point it to https\://acme.example:6071/, replacing `acme.example`
 with your domain.
 
 To access the |adminui|, you need an account that is marked as
-**Global Administrator**. The default Global Admin is
-``zextras@acme.example``; at the first login it will be prompted to
-change the password. This can be done from the CLI using the command
-shown in Section :ref:`manage-admins`. When a password expires and the
-Admin tries to login, a dialog will be show, which informs of the
-expired password and allows to change it.
+**Administrator**. The installation process creates by default one
+Administrator, whose username is ``zextras@acme.example``, but its
+password is empty and needs to be configured from the CLI using the
+command shown in Section :ref:`change-pwd`. You need to set this
+password before being able to access the |adminui|. When a password
+expires and the Admin tries to login, an informative dialog will be
+show, which allows to change password.
 
 Once logged in, more Global Admins can be added from the |adminui|;
 please refer to section :ref:`ap-new-admin` for directions.
+
+.. card:: The ``zextras`` and ``zextras@example.com`` users
+
+   There is a clear distinction between these two users, which are
+   intended to execute different tasks:
+
+   ``zextras``
+      This the **unix** account of the administrator and must be used to
+      carry out administrative tasks from the command line.
+
+   ``zextras@example.com``
+      This is the default administrator user to be used to access the
+      Admin UI and manage |product| from the web interface.
 
 |adminui| allows to manage the |product| domains, mailstores,
 accounts, |cos|, and privacy settings. The overall organisation of the
