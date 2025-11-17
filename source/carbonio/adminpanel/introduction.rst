@@ -1,7 +1,3 @@
-.. SPDX-FileCopyrightText: 2022 Zextras <https://www.zextras.com/>
-..
-.. SPDX-License-Identifier: CC-BY-NC-SA-4.0
-
 .. _adminpanel:
 
 |adminui| Overview
@@ -14,14 +10,14 @@ and point it to https\://acme.example:6071/, replacing `acme.example`
 with your domain.
 
 To access the |adminui|, you need an account that is marked as
-**Global Administrator**. The default Global Admin is
-``zextras@acme.example``; at the first login it will be prompted to
-change the password. This can be done from the CLI using the command
-shown in Section :ref:`manage-admins`. When a password expires and the
-Admin tries to login, a dialog will be show, which informs of the
-expired password and allows to change it.
+**Administrator**. After the first installation, only the default
+Global Admin exists, whose username is ``zextras@acme.example``, but
+its password is empty and needs to be configured from the CLI using
+the command shown in Section :ref:`manage-admins`. When a password
+expires and the Admin tries to login, a dialog will be show, which
+informs of the expired password and allows to change it.
 
-Once logged in, more Global Admins can be added from the |adminui|;
+Once logged in, more Admins can be added from the |adminui|;
 please refer to section :ref:`ap-new-admin` for directions.
 
 |adminui| allows to manage the |product| domains, mailstores,
