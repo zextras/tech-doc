@@ -8,6 +8,9 @@
 .. include:: /_includes/_installation/_post/web.rst
 .. include:: /_includes/_installation/_post/lostpwd-ce.rst
 
+.. index:: change password
+.. index:: password change
+
 .. _manage-admins:
 
 Manage Global Administrators
