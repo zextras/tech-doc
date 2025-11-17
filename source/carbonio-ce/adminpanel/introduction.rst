@@ -48,35 +48,36 @@ The landing page is shown in :numref:`fig_ap-top` and
 
    .. grid-item::
       :columns: 6
-      
+
       .. _fig_ap-top:
 
       .. figure:: /img/adminpanel/AP-landing-top.png
-	 :width: 100%
+    :width: 100%
 
          The upper part of Admin Panel's landing page
 
    .. grid-item::
       :columns: 6
-  
+
       The upper part contains information about the logged in
-      administrator, the version of |product| and, on the top.right
-      corner. the date and time of the last login.
-      
+      administrator, the version of |product| and, on the top-right
+      corner a user menu to be clicked to go to the documentation or
+      log out, right above the date and time of the last login.
+
       Moreover, clicking on either of the boxes will open the
       |adminui| page for the Accounts and distribution list,
       respectively.
 
 .. grid:: 1 1 2 2
    :gutter: 3
-                 
+
    .. grid-item::
       :columns: 6
 
       .. _fig_ap-bottom:
 
       .. figure:: /img/adminpanel/AP-landing-bottom.png
-	 :width: 100%
+    :width: 100%
 
          The lower part of Admin Panel's landing page
 
