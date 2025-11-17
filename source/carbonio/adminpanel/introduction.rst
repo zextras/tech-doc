@@ -13,7 +13,7 @@ To access the |adminui|, you need an account that is marked as
 **Administrator**. After the first installation, only the default
 Global Admin exists, whose username is ``zextras@acme.example``, but
 its password is empty and needs to be configured from the CLI using
-the command shown in Section :ref:`manage-admins`. When a password
+the command shown in Section :ref:`change-pwd`. When a password
 expires and the Admin tries to login, a dialog will be show, which
 informs of the expired password and allows to change it.
 

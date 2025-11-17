@@ -11,9 +11,9 @@
 .. index:: change password
 .. index:: password change
 
-.. _manage-admins:
+.. _change-pwd:
 
-Manage Global Administrators
-============================
+Set or Change Password
+======================
 
 .. include:: /_includes/_installation/_post/users.rst
