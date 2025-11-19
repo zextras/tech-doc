@@ -12,14 +12,6 @@ Before starting the procedure, make sure that you satisfy the
 :ref:`up-ansible-req`, then choose one of the supported
 :ref:`up-ansible-paths`.
 
-..
-   There is no know issue that impacts either the upgrade process to
-   |product| |version| or the |product| operations afterwards.
-
-Please also check Sections :ref:`ts-up-prev` or :ref:`ts-up-older` for
-known issues impacting the upgrade process, depending on the version
-from which you are upgrading.
-
 .. _up-ansible-req:
 
 Requirements & Preliminaries
@@ -59,10 +51,7 @@ upgrade procedure with Ansible.
   from which you do not want to upgrade packages.
 
 * Ansible will **not** upgrade **PostgreSQL to version 16**, you need
-  to upgrade it manually: please refer to Section :ref:`pg-upgrade`.
-  |product| :red:`no longer supports` PostgreSQL **12**, which must be
-  upgraded to version **16** before upgrading |product| to
-  |version|. Check section :ref:`pg-upgrade` for directions.
+  to upgrade it manually
 
 * The upgrade procedure using Ansible is slightly different depending
   if you already installed |wsc| or not. Choose the right
@@ -139,11 +128,8 @@ this case, you can use an inventory file from one of the
 section :ref:`ansible-inventory` for directions.
 
 These are the alternatives to upgrade an existent |product|
-infrastructure, depending if you have installed the latest **25.03**
+infrastructure, depending if you have installed the **25.03**
 version or an older one.
-
-.. hint:: If you are unsure, :ref:`check the command <ts-version>` to
-   retrieve the correct version number.
 
 Upgrade From |product| 25.03
 ----------------------------
