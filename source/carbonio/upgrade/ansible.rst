@@ -41,7 +41,7 @@ upgrade procedure with Ansible.
   manually: see Section :ref:`up-ansible-paths` for details
 
 * The version of |product| that you want to upgrade is not important:
-  you can start from any version (24.12, 24.9, or older) and you will
+  you can start from any version (25.1, 25.3, or older) and you will
   always end up with the latest version (|release| at the time of
   writing)
 

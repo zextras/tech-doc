@@ -22,11 +22,6 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* Since release **24.3.0**, two major improvements have become
-  available for |product|:
-
-  #. support for new Operating Systems (OS): **Ubuntu 22.04** and **RHEL 9**
-
 * Since **release 25.6.0**, support for **Ubuntu 24.04** has been
   added, while support for **Ubuntu 20.04** has been dropped:
   |product| **does no longer work** on Ubuntu 20.04

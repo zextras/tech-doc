@@ -18,12 +18,6 @@ which require some manual interaction before, during, or after the
 procedure. If you already have implemented them, please skip to the
 next section.
 
-.. card:: Operating system
-
-   |product| can be installed on **Ubuntu 22.04 LTS**, **Ubuntu 24.04
-   LTS**, **RHEL 8**, and **RHEL 9**. 
-
-   .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
 Checklist
 ---------
