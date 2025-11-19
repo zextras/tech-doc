@@ -25,18 +25,6 @@ next section.
 
    .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
-.. card:: PostgreSQL 16 support
-
-   |product| :red:`no longer supports` PostgreSQL **12**, which must be
-   upgraded to version **16** before upgrading |product| to
-   |version|. Check section :ref:`pg-upgrade` for directions.
-
-Additionally, please check Section :ref:`ts-up-prev` under
-:doc:`/troubleshooting/toc` before starting the upgrade. There you
-find a list of manual activities that might be required *during* or
-*after* the completion of the upgrade procedure that impact
-third-party software or new packages.
-
 Checklist
 ---------
 
