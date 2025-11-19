@@ -41,6 +41,7 @@ Checklist
 ---------
 
 .. in case a checklist is needed, comment next line
+
 In this version, there is no special item to take care of.
 
 .. _up-proc:
