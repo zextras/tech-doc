@@ -191,7 +191,6 @@ The content is organised in multiple parts:
    .. grid-item-card:: Index
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
-      :margin: 3 0 auto auto
       :link-type: ref
       :link: genindex
 
@@ -200,6 +199,7 @@ The content is organised in multiple parts:
    .. grid-item-card::  Command Line Reference
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
+      :margin: 3 0 auto auto
       :link-type: doc
       :link: cli_commands/toc
 
