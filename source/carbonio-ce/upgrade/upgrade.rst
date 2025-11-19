@@ -40,17 +40,8 @@ third-party software or new packages.
 Checklist
 ---------
 
-#. The ``memcached`` software does no longer require a special
-   bind address, so after the upgrade you need to execute a command
-   to clear its configuration on the **Proxy Node**. After the upgrade
-   of that Node, before rebooting, execute command as the |zu|
-
-   .. code:: console
-
-      zextras$ carbonio prov -l ms $(zmhostname) zimbraMemcachedBindAddress ""
-
-   Then reboot the Node.
-
+.. in case a checklist is needed, comment next line
+In this version, there is no special item to take care of.
 
 .. _up-proc:
 
