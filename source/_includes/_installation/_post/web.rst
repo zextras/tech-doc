@@ -3,7 +3,7 @@ The first task to carry out is to change the password of the
 ``zextras@example.com`` account. This is a very important task,
 because this user has full powers over all |product| functionalities,
 therefore its password must be robust. More details and the command to
-change the password can be found in section :ref:`manage-admins`.
+change the password can be found in Section :ref:`change-pwd`.
 
 After you change the password, point a :ref:`supported browser
 <browser_compatibility>` to the Proxy Node's IP or hostname and port
