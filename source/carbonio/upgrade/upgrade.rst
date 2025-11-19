@@ -25,18 +25,6 @@ next section.
 
    .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
-.. card:: Support for PostgreSQL 12 dropped
-
-   |product| :red:`no longer supports` PostgreSQL **12**, which must be
-   upgraded to version **16** before upgrading |product| to
-   |version|. Check section :ref:`pg-upgrade` for directions.
-
-.. card:: DB Connector Component
-
-   The DB Connector Component is no longer available, therefore you need to
-   move some of the packages to the Database Component. The procedure to
-   carry out this task can be found in Section :ref:`remove-pgpool`.
-
 Checklist
 ---------
 

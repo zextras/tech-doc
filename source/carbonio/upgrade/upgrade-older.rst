@@ -22,19 +22,10 @@ section.
 The following rules apply to any of the paths you decide to choose for
 the upgrade:
 
-* Since release **24.12.0**, the **DB connector Component** is no longer
-  supported and needs to be removed, therefore before starting the
-  upgrade procedure please read carefully section :ref:`remove-pgpool`
-  and execute the procedure described there
-
 * Since release **24.3.0**, two major improvements have become
   available for |product|:
 
   #. support for new Operating Systems (OS): **Ubuntu 22.04** and **RHEL 9**
-  #. support for **PostgreSQL 16**. |product| :red:`no longer
-     supports` PostgreSQL **12**, which must be upgraded to version
-     **16** before upgrading |product| to |version|. Check section
-     :ref:`pg-upgrade` for directions.
 
 * Since **release 25.6.0**, support for **Ubuntu 24.04** has been
   added, while support for **Ubuntu 20.04** has been dropped:
@@ -42,13 +33,6 @@ the upgrade:
 
 * You need to carry out the procedure on **each Node**, starting with
   the one featuring the :ref:`component-mesh-install`
-
-* During the upgrade of |product|, you might need to carry out manual
-  tasks, for example because you need to modify some configuration
-  file or some error or warning is shown. Please refer to Section
-  :ref:`ts-up-older` in :doc:`Upgrade Troubleshooting
-  </troubleshooting/upgrade>` for directions on how to tackle and fix
-  them.
 
 .. include:: /_includes/_upgrade/ubuntu-deprecation.rst
 
@@ -127,9 +111,6 @@ Server, then all the other Nodes in the same order of installation.
 
 Other Upgrades
 --------------
-
-#. If you want to upgrade PostgreSQL, but not the OS, you need to
-   follow directions in :ref:`pg-upgrade` before upgrading |product|
 
 #. If you want to upgrade the OS, you **must** upgrade PostgreSQL as
    well, since PostgreSQL 12 is not supported in either Ubuntu 22.04

@@ -8,8 +8,7 @@ New and Updated Content
 
 We found the workaround for an issue involving |wsc| and rabbitmq, which were not able to communicate due to an invalid (|mesh|) token.
 
-Changes in the documentation can be found in Section
-:ref:`rabbitmq`, those in the source code in :pr:`795`.
+Changes in the source code can be found in :pr:`795`.
 
 
 .. rubric:: 202411-902 Change IP address on Carbonio CE Single-Server
@@ -30,7 +29,7 @@ We also added a new section, :ref:`ap-create-user`, to make the
 three most common domain-related tasks more prominent in the
 Admin's technical documentation.
 
-Changes in the source code can be found in in :pr:`789`.
+Changes in the source code can be found in :pr:`789`.
 
 
 .. rubric:: 202411-891  Documentation Changelog October 2024

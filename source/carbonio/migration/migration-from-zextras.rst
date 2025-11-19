@@ -200,9 +200,6 @@ have been imported as Drive items. Once the check is completed, remove
 any left-over Briefcase items, even empty directories, to make sure in
 the backup you are going to export no reference to Briefcases remains.
 
-.. seealso:: Please refer to section :ref:`ts-briefcase`
-   for troubleshooting options.
-
 .. _mig-create-backup:
 
 Export Backup
