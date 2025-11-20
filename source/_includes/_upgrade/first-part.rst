@@ -2,7 +2,7 @@
    :gutter: 3
 
    .. grid-item-card:: Step 1. Clean package list
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       Clean cached package list, metadata, and information.
 
@@ -37,7 +37,7 @@
                # dnf clean all
 
    .. grid-item-card:: Step 2. Update list of packages
-      :columns: 12 12 6 6
+      :columns: 12 12 12 12
 
       Update package list.
 

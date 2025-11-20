@@ -29,18 +29,8 @@ the upgrade:
 * You need to carry out the procedure on **each Node**, starting with
   the one featuring the :ref:`component-mesh-install`
 
-.. include:: /_includes/_upgrade/ubuntu-deprecation.rst
-
 Checklist
 ---------
-
-#. The following packages should be moved to different nodes during the
-   upgrade procedure:
-
-   * carbonio-user-management
-   * carbonio-storages
-   * carbonio-catalog
-   * carbonio-message-broker
 
 #. A new database for backups is added to |product|, so you will be
    required to execute the following command during the upgrade of the
@@ -73,41 +63,5 @@ Server, then all the other Nodes in the same order of installation.
 
 .. include:: /_includes/_upgrade/first-part.rst
 
-.. grid:: 1 1 1 2
-   :gutter: 3
-
-   .. grid-item-card:: Step 3. Install or move packages
-      :columns: 12 12 12 12
-
-      The following packages needs to be moved from one Node to
-      another or installed on the given Node.
-
-      .. dropdown:: ``carbonio-user-management``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-um.rst
-
-      .. dropdown:: ``carbonio-storages``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-storages.rst
-
-      .. dropdown:: ``carbonio-catalog``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-catalog.rst
-
-      .. dropdown:: ``carbonio-message-broker``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-broker.rst
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
-
-Other Upgrades
---------------
-
-#. If you want to upgrade the OS, you **must** upgrade PostgreSQL as
-   well, since PostgreSQL 12 is not supported in either Ubuntu 22.04
-   or RHEL 9. This is the most time-consuming resource, because you
-   need to carry out multiple tasks. 
