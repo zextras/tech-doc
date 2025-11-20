@@ -30,8 +30,6 @@ the upgrade:
 * You need to carry out the procedure on **each Node**, starting with
   the one featuring the :ref:`component-mesh-install`
 
-.. include:: /_includes/_upgrade/ubuntu-deprecation.rst
-
 .. _up-old-check:
 
 Checklist
@@ -42,13 +40,6 @@ Checklist
 
    * ``carbonio-message-dispatcher`` :fas:`arrow-right` ``carbonio-message-dispatcher-ce``
    * ``carbonio-storages``  :fas:`arrow-right` ``carbonio-storages-ce``
-
-#. On a Multi-Server infrastructure, the following packages should be
-   moved to different nodes during the upgrade procedure:
-
-   * ``carbonio-user-management``
-   * ``carbonio-catalog``
-   * ``carbonio-message-broker``
 
 #. The ``memcached`` software does no longer require a special
    bind address, so after the upgrade you need to execute a command
@@ -77,26 +68,8 @@ order of installation.
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 3. Install or move packages
+   .. grid-item-card:: Step 3. Rename packages
       :columns: 12 12 12 12
-
-      The following packages needs to be moved from one Node to
-      another or installed on the given Node.
-
-      .. dropdown:: ``carbonio-user-management``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-um.rst
-
-      .. dropdown:: ``carbonio-catalog``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-catalog.rst
-
-      .. dropdown:: ``carbonio-message-broker``
-         :open:
-
-         .. include:: /_includes/_upgrade/package-broker.rst
 
       .. dropdown:: ``carbonio-message-dispatcher``
          :open:
