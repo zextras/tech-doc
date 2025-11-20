@@ -4,7 +4,8 @@
    .. grid-item-card:: Step 3. Upgrade Node
       :columns: 12 12 12 12
 
-      Install upgrades.
+      Install upgrades. Remember to keep the  :file:`localconfig.xml`
+      file, answering **NO** when asked to.
 
       .. tab-set::
 
