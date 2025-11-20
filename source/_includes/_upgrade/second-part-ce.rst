@@ -13,7 +13,7 @@
 
             .. code:: console
 
-               # apt upgrade
+               # apt full-upgrade
 
          .. tab-item:: RHEL 8
             :sync: rhel8
@@ -27,7 +27,7 @@
 
             .. code:: console
 
-               # apt upgrade
+               # apt full-upgrade
 
          .. tab-item:: RHEL 9
             :sync: rhel9
