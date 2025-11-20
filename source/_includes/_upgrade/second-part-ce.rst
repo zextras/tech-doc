@@ -4,7 +4,8 @@
    .. grid-item-card:: Step 4. Upgrade Node
       :columns: 12 12 12 12
 
-      Install upgrades.
+      Install upgrades. Remember to keep the  :file:`localconfig.xml`
+      file, answering **NO** when asked to.
 
       .. tab-set::
 
@@ -13,7 +14,7 @@
 
             .. code:: console
 
-               # apt upgrade
+               # apt full-upgrade
 
          .. tab-item:: RHEL 8
             :sync: rhel8
@@ -27,7 +28,7 @@
 
             .. code:: console
 
-               # apt upgrade
+               # apt full-upgrade
 
          .. tab-item:: RHEL 9
             :sync: rhel9

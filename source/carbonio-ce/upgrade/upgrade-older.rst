@@ -52,6 +52,14 @@ Checklist
 
    Then reboot the Node.
 
+#. During the packages installation, you will be prompted to replace
+   the :file:`localconfig.xml` file. The correct answer is **NO**,
+   which is also the default answer: you need to **keep the existing
+   file**, otherwise **several critical configuration parameters will
+   be lost**, causing the upgrade process to fail. Replacing the file
+   will lead to service disruption and requires a long, manual
+   recovery.
+
 Upgrade |product|
 -----------------
 
