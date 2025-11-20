@@ -65,11 +65,3 @@ Server, then all the other Nodes in the same order of installation.
 
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
-
-Other Upgrades
---------------
-
-#. If you want to upgrade the OS, you **must** upgrade PostgreSQL as
-   well, since PostgreSQL 12 is not supported in either Ubuntu 22.04
-   or RHEL 9. This is the most time-consuming resource, because you
-   need to carry out multiple tasks. 
