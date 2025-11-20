@@ -1,7 +1,7 @@
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 4. Upgrade Node
+   .. grid-item-card:: Step 3. Upgrade Node
       :columns: 12 12 12 12
 
       Install upgrades.
@@ -36,13 +36,8 @@
 
                # dnf upgrade --best --allowerasing
 
-   .. grid-item-card:: Step 5. Make sure package ``carbonio-catalog`` is
-      installed properly
-      :columns: 12 12 12 12
 
-      .. include:: /_includes/_upgrade/package-catalog.rst
-
-   .. grid-item-card:: Step 6. (Optional) Remove unused packages
+   .. grid-item-card:: Step 4. (Optional) Remove unused packages
       :columns: 12 12 12 12
 
       After the latest packages have been installed, you can remove
@@ -79,14 +74,14 @@
 
                # dnf autoremove
 
-   .. grid-item-card:: Step 7.  Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 5.  Register upgraded packages to |mesh|
       :columns: 6 6 6 6
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 8. Reboot
+   .. grid-item-card:: Step 6. Reboot
       :columns: 6 6 6 6
 
       Once the upgrade has completed successfully, make sure you
