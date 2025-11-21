@@ -76,14 +76,14 @@
                # dnf autoremove
 
    .. grid-item-card:: Step 5.  Register upgraded packages to |mesh|
-      :columns: 6 6 6 6
+      :columns: 12 12 12 12
 
       .. code:: console
 
          # pending-setups -a
 
    .. grid-item-card:: Step 6. Reboot
-      :columns: 6 6 6 6
+      :columns: 12 12 12 12
 
       Once the upgrade has completed successfully, make sure you
       restart all services by running command:
