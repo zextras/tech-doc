@@ -251,20 +251,7 @@ Node 2: Mesh, Directory Replica
 
 .. _fr2-step6:
 
-.. dropdown:: Step 6: Databases Bootstrap
-
-   Now you have to bootstrap the DB with the password set in
-   :ref:`Step 4 of Core Node installation <fr1-step4>`.
-
-   .. card:: Mailbox DB Bootstrap
-
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-.. _fr2-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -307,9 +294,9 @@ Node 2: Mesh, Directory Replica
 
             # systemctl restart carbonio-directory-server.target
 
-.. _fr2-step8:
+.. _fr2-step7:
 
-.. dropdown:: Step 8: Data Required for Additional Nodes
+.. dropdown:: Step 7: Data Required for Additional Nodes
 
    The following data from this Node will be needed during the
    installation of the next two Nodes.
@@ -396,20 +383,7 @@ Node 3: Mesh, Monitoring
 
 .. _fr3-step6:
 
-.. dropdown:: Step 6: Databases Bootstrap
-
-   Now you have to bootstrap the DB with the password set in
-   :ref:`Step 4 of Core Node installation <fr1-step4>`.
-
-   .. card:: Mailbox DB Bootstrap
-
-     .. code:: console
-
-        # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
-
-.. _fr3-step7:
-
-.. dropdown:: Step 7: Complete Installation
+.. dropdown:: Step 6: Complete Installation
 
    After the successful package installation, start all |product|
    services by executing
@@ -452,9 +426,9 @@ Node 3: Mesh, Monitoring
 
             # systemctl restart carbonio-directory-server.target
 
-.. _fr3-step8:
+.. _fr3-step7:
 
-.. dropdown:: Step 8: Data Required for Additional Nodes
+.. dropdown:: Step 7: Data Required for Additional Nodes
 
    The following data from this Node will be needed during the
    installation of the next two Nodes.
