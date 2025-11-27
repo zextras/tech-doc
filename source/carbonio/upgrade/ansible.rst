@@ -33,9 +33,7 @@ upgrade procedure with Ansible.
 * The upgrade procedure does not depend on the underlying
   :ref:`supported operating system <software-requirements>`. However,
   note that from release **25.06**, support for **Ubuntu 20.04 LTS**,
-  which went EOL in May 2025, **has been dropped**. Therefore, to
-  continue using |product|, you need to upgrade Ubuntu 20.04 LTS to
-  either **Ubuntu 22.04 LTS** or **Ubuntu 24.04 LTS**. 
+  which went EOL in May 2025, **has been dropped**.
 
 * This upgrade procedure works even if you installed |product|
   manually: see Section :ref:`up-ansible-paths` for details

@@ -4,37 +4,22 @@ Manual From Older Versions
 ==========================
 
 This section guides you in the upgrade from a |product| version
-**older than** |prev| to the latest available version, |current|,
-which contains a number of technical and performance improvements, bug
-fixes, and security fixes.
+**older than** |prev| to the latest available version, |current|.
 
 .. note:: Upgrading from very old versions should work, but may
    require a lot of manual tasks to be carried out before, during, and
    after the procedure, and might become an extremely long and
    error-prone process.
 
-Requirements and Limitations
-----------------------------
+To perform the upgrade, first follow all the steps documented in
+:ref:`Manual From Previous Version <carbonio-upgrade>`, then apply the additional actions described below.
 
-Before proceeding with the upgrade, please read carefully this whole
-section.
+Checklist for old versions
+--------------------------
 
-The following rules apply to any of the paths you decide to choose for
-the upgrade:
-
-* Since **release 25.6.0**, support for **Ubuntu 24.04** has been
-  added, while support for **Ubuntu 20.04** has been dropped:
-  |product| **does no longer work** on Ubuntu 20.04
-
-* You need to carry out the procedure on **each Node**, starting with
-  the one featuring the :ref:`component-mesh-install`
-
-Checklist
----------
-
-#. A new database for backups is added to |product|, so you will be
-   required to execute the following command during the upgrade of the
-   **Database Node** and then **reboot all the Nodes**
+#. A new backup database has been introduced in recent versions of |product|.
+   During the upgrade of the **Database Node** , you must run the following command 
+   and then **reboot all the Nodes**
 
    .. code:: console
 
@@ -49,27 +34,5 @@ Checklist
 
       zextras$ carbonio prov -l ms $(zmhostname) zimbraMemcachedBindAddress ""
 
-   Then reboot the Node.
+   Then reboot the server.
 
-#. During the packages installation, you will be prompted to replace
-   the :file:`localconfig.xml` file. The correct answer is **NO**,
-   which is also the default answer: you need to **keep the existing
-   file**, otherwise **several critical configuration parameters will
-   be lost**, causing the upgrade process to fail. Replacing the file
-   will lead to service disruption and requires a long, manual
-   recovery.
-
-Upgrade |product|
------------------
-
-.. card:: Preliminary Tasks
-
-   .. include:: /_includes/_upgrade/ds.rst
-
-Remember to start the upgrade from the Node featuring the Directory
-Server, then all the other Nodes in the same order of installation.
-
-.. include:: /_includes/_upgrade/first-part.rst
-
-
-.. include:: /_includes/_upgrade/second-part-cb.rst
