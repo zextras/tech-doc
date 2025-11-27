@@ -4,9 +4,9 @@
 
 .. _changelog-23.2.0:
 
-================
-Changelog 23.2.0
-================
+==============
+Release 23.2.0
+==============
 
 This is the Changelog for |product| 23.2.0, released on February 23rd,
 2023

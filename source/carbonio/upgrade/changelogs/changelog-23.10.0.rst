@@ -1,6 +1,6 @@
 
-Changelog 23.10.0
-=================
+Release 23.10.0
+===============
 
 Release Date: October 16th, 2023
 
