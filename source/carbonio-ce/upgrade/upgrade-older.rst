@@ -3,43 +3,19 @@
 From Older Versions
 ===================
 
-This section guides you in the upgrade from a |product| version **older
-than** |prev| to the latest available version, |current|, which
-contains a number of technical and performance improvements, bug
-fixes, and security fixes.
+This section guides you in the upgrade from a |product| version
+**older than** |prev| to the latest available version, |current|.
 
 .. note:: Upgrading from very old versions should work, but may
    require a lot of manual tasks to be carried out before, during, and
    after the procedure, and might become an extremely long and
    error-prone process.
 
+To perform the upgrade, first follow all the steps documented in
+:ref:`Manual From Previous Version <carbonio-upgrade>`, then apply the additional actions described below.
 
-Requirements and Limitations
-----------------------------
-
-Before proceeding with the upgrade, please read carefully this whole
-section.
-
-The following rules apply to any of the paths you decide to choose for
-the upgrade:
-
-* Since **release 25.6.0**, support for **Ubuntu 24.04** has been
-  added, while support for **Ubuntu 20.04** has been dropped:
-  |product| **does no longer work** on Ubuntu 20.04
-
-* You need to carry out the procedure on **each Node**, starting with
-  the one featuring the :ref:`component-mesh-install`
-
-.. _up-old-check:
-
-Checklist
----------
-
-#. These packages must be renamed, if they still exist on your |product|
-   infrastructure:
-
-   * ``carbonio-message-dispatcher`` :fas:`arrow-right` ``carbonio-message-dispatcher-ce``
-   * ``carbonio-storages``  :fas:`arrow-right` ``carbonio-storages-ce``
+Checklist for old versions
+--------------------------
 
 #. The ``memcached`` software does no longer require a special
    bind address, so after the upgrade you need to execute a command
@@ -52,31 +28,16 @@ Checklist
 
    Then reboot the Node.
 
-#. During the packages installation, you will be prompted to replace
-   the :file:`localconfig.xml` file. The correct answer is **NO**,
-   which is also the default answer: you need to **keep the existing
-   file**, otherwise **several critical configuration parameters will
-   be lost**, causing the upgrade process to fail. Replacing the file
-   will lead to service disruption and requires a long, manual
-   recovery.
+#. If you are upgrading from older releases, two packages have been renamed.
+   You must update them if they are still present in your infrastructure:
 
-Upgrade |product|
------------------
-
-.. card:: Preliminary Tasks
-
-   .. include:: /_includes/_upgrade/ds.rst
-
-If you are on a Multi-Server, remember to start from the Node
-featuring the Directory Server Component, then all the other Nodes in the same
-order of installation.
-
-.. include:: /_includes/_upgrade/first-part.rst
+   * ``carbonio-message-dispatcher`` :fas:`arrow-right` ``carbonio-message-dispatcher-ce``
+   * ``carbonio-storages``  :fas:`arrow-right` ``carbonio-storages-ce``
 
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 3. Rename packages
+   .. grid-item-card:: Steps to upgrade renamed packages
       :columns: 12 12 12 12
 
       .. dropdown:: ``carbonio-message-dispatcher``
@@ -91,10 +52,10 @@ order of installation.
       .. dropdown:: ``carbonio-storages``
          :open:
 
-         On the Node installing the |wsc| Component, remove
+         On the Node installing the Mailstore & Provisioning Component, remove
          package ``carbonio-storages`` and install
          ``carbonio-storages-ce``.
 
       .. include:: /_includes/_upgrade/package-storages-ce.rst
 
-.. include:: /_includes/_upgrade/second-part-ce.rst
+Run the ``pending-setups`` command to update Mesh information and reboot the node.
