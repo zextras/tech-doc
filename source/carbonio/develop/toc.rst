@@ -1,104 +1,174 @@
 .. _carbonio-api:
 
-=====
- API
-=====
+=============
+ API Overview
+=============
 
-This section is dedicated to developers who want to interact with
-|product| using the available APIs.
+|product| provides multiple API interfaces to integrate, extend, and automate its services.
+Developers can choose between SOAP, REST, and GraphQL depending on their use case, preferred
+data format, and level of control.
+This page introduces all available API families and serves as the main entry point
+for the entire |product| API documentation.
 
-.. grid:: 1 2 2 3
+
+API Types
+---------
+
+.. list-table::
+   :header-rows: 1
+
+   * - API Type
+     - Best For
+     - Advantages
+     - Notes
+   * - **SOAP**
+     - Full-featured operations, admin tasks, mailbox control
+     - Very complete, stable
+     - Most extensive API set
+   * - **REST**
+     - User-facing services, integrations, automation
+     - Simple, widely supported
+     - Resource-oriented
+   * - **GraphQL**
+     - Custom data retrieval, optimized queries
+     - Fetch exactly what you need
+     - Requires schema knowledge
+
+
+Authentication
+--------------
+
+Access to most Carbonio services requires authentication.
+
+1. Clients authenticate using the SOAP ``AuthRequest`` or the REST Login API.
+2. Successful authentication returns a valid ``authToken``.
+3. This token must be included in all subsequent requests:
+
+   - **REST:** via the ``ZM_AUTH_TOKEN`` cookie
+   - **SOAP:** inside the request header ``context.authToken`` for ``/service/soap``
+   - **GraphQL:** via the ``ZM_AUTH_TOKEN`` cookie or the ``Authorization`` header
+
+For more details on how each API type handles authentication with the authToken, see the dedicated documentation:
+
+.. toctree::
+   :maxdepth: 1
+
+   soap-api-auth.rst
+   rest-api-auth.rst
+   graphql-api-auth.rst
+
+
+API Reference Index
+-------------------
+
+Below is the complete list of Carbonio API categories.
+
+.. grid:: 2 2 3 3
    :gutter: 3
 
-   .. grid-item-card:: |product| Account, Admin, and Mail API
-      :columns: 12 12 12 12
-      :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
-      :link: ../../../apidoc/api-reference/index.html
+   .. grid-item-card:: SOAP APIs – User Level
+      :link: ../../../apidoc/api-reference/zimbraAccount/service-frame.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
 
-      This set of API is used to interact via SOAP with the main
-      functions of |product|
+      Operations available to end users:
 
-   .. grid-item-card:: |product| Authentication
-      :columns: 12 12 12 12
-      :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
+      - Account APIs
 
-      .. grid:: 1 1 1 1
-         :gutter: 2
+   .. grid-item-card:: SOAP APIs – User Level
+      :link: ../../../apidoc/api-reference/zimbraMail/service-frame.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
 
-         .. grid-item-card:: |product| Login page
-            :columns: 6 6 6 6
-            :class-title: sd-font-weight-bold sd-fs-4
-            :link: ../../../apidoc/carbonio-auth/login-page-api.html
+      Operations available to end users:
 
-            Interact with |product| login process and customise the
-            appearance of the login page
+      - Mailbox APIs
 
-         .. grid-item-card:: SAML configuration
-            :columns: 6 6 6 6
-            :class-title: sd-font-weight-bold sd-fs-4
-            :link: ../../../apidoc/carbonio-auth/saml-auth-config-api.html
 
-            Modify the SAML configuration
+   .. grid-item-card:: SOAP APIs – Admin Level
+      :link: ../../../apidoc/api-reference/zimbraAdmin/service-frame.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
 
-   .. grid-item-card:: |file|
-      :columns: 12 12 12 12
-      :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
+      Administrative APIs for managing:
 
-      .. grid:: 1 1 1 1
-         :gutter: 2
+      - Accounts
+      - Domains
+      - Server Configuration
 
-         .. grid-item-card:: |file| blob
-            :columns: 6 6 6 6
-            :class-title: sd-font-weight-bold sd-fs-4
-            :link: ../../../apidoc/files_blob/index.html
+   .. grid-item-card:: REST APIs
+      :link: ../../../apidoc/carbonio-auth/login-page-api.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
 
-            Manage the upload and download of BLOB files and links
-            to them
+      REST endpoints for:
 
-         .. grid-item-card:: |file| metadata
-            :columns: 6 6 6 6
-            :class-title: sd-font-weight-bold sd-fs-4
-            :link: ../../../apidoc/files_meta/index.html
+      - Login & Authentication
 
-            Access metadata of |file|\'s items
+   .. grid-item-card:: REST APIs
+      :link: ../../../apidoc/carbonio-auth/saml-auth-config-api.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
 
-      An how-to for the |file| API is available in section
-      :ref:`api-files-howto`
+      REST endpoints for:
 
-   .. grid-item-card:: |wsc|
-      :columns: 12 12 12 12
-      :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
+      - SAML Configuration
 
-      .. grid:: 1 1 1 1
-         :gutter: 2
-
-         .. grid-item-card:: Chats
-            :columns: 6 6 6 6
-            :class-title: sd-font-weight-bold sd-fs-4
-            :link: ../../../apidoc/carbonio-ws-collaboration/chats-api.html
-
-            Interact with the Chats API
-
-         .. grid-item-card:: Meeting
-            :columns: 6 6 6 6
-            :class-title: sd-font-weight-bold sd-fs-4
-            :link: ../../../apidoc/carbonio-ws-collaboration/meeting-api.html
-
-            Create and modify meetings and  related features
-
-   .. grid-item-card:: Storages
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
-      :link: ../../../apidoc/carbonio-storages/storages-api.html
-
-      Manage the upload, download, and deletion operations of items in |file|
-
-   .. grid-item-card:: Backup
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
+   .. grid-item-card:: REST APIs
       :link: ../../../apidoc/carbonio-backup/backup-api.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
 
-      Undelete blobs from |backup|
+      REST endpoints for:
+
+      - Backup
+
+   .. grid-item-card:: REST APIs
+      :link: ../../../apidoc/carbonio-storages/storages-api.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
+
+      REST endpoints for:
+
+      - Storage
+
+   .. grid-item-card:: REST APIs
+      :link: ../../../apidoc/carbonio-ws-collaboration/chats-api.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
+
+      REST endpoints for:
+
+      - Chats
+
+   .. grid-item-card:: REST APIs
+      :link: ../../../apidoc/carbonio-ws-collaboration/meeting-api.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
+
+      REST endpoints for:
+
+      - Meeting
+
+   .. grid-item-card:: GraphQL APIs
+      :link: ../../../apidoc/files_meta/index.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
+
+      GraphQL operations for:
+
+      - Metadata
+
+
+   .. grid-item-card:: GraphQL APIs
+      :link: ../../../apidoc/files_blob/index.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
+
+      GraphQL operations for:
+
+      - Blob access
+
 
    .. grid-item-card:: Third-party API
       :columns: 12 12 12 12
@@ -116,8 +186,3 @@ This section is dedicated to developers who want to interact with
       <https://github.com/benzino77/clamav-rest-api>`_). This approach has
       however not yet been thoroughly tested.
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   files-howto.rst
