@@ -37,8 +37,3 @@ languages
          "Vietnamese","vi"
 
 
-.. note:: Currently, the Kyrgyz language is not yet manageable from
-   the |adminui|, but Administrators can set it from CLI: in this
-   case, the corresponding field in the Carbonio Admin Panel will be
-   shown as empty. Users can select it autonomously from **General
-   Settings**.
