@@ -58,8 +58,8 @@ For more details on how each API type handles authentication with the authToken,
    graphql-api-auth.rst
 
 
-API Reference Index
--------------------
+API Reference
+-------------
 
 Below is the complete list of Carbonio API categories.
 
@@ -160,12 +160,12 @@ Below is the complete list of Carbonio API categories.
       - Metadata
 
 
-   .. grid-item-card:: GraphQL APIs
+   .. grid-item-card:: REST APIs
       :link: ../../../apidoc/files_blob/index.html
       :link-type: url
       :class-title: sd-font-weight-bold
 
-      GraphQL operations for:
+      REST endpoints for:
 
       - Blob access
 
