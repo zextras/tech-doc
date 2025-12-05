@@ -81,7 +81,34 @@
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 6. Reboot
+   .. grid-item-card:: Step 6.  Reinitialise the Message Dispatcher database
+      :columns: 12 12 12 12
+
+      Before proceeding, ensure that the environment variable $DB_ADM_PWD is correctly set.
+      This variable must contain the PostgreSQL administrative password that was defined
+      during the **Database** component installation. \
+
+      On the Node featuring the **Chats** Component, run:
+
+      .. code:: console
+
+         # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
+            carbonio_adm 127.78.0.10 20000
+
+      Note: only for **single-server** installations, use the loopback address:
+
+      .. code:: console
+
+         # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
+            carbonio_adm 127.0.0.1 
+
+      Then restart the **Message Dispatcher** service by running the following command:
+
+      .. code:: console
+
+         # systemctl restart carbonio-message-dispatcher
+
+   .. grid-item-card:: Step 7. Reboot
       :columns: 12 12 12 12
 
       Once the upgrade has completed successfully, run command:
