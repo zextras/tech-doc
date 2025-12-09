@@ -4,8 +4,15 @@
    .. grid-item-card:: Step 3. Upgrade Node
       :columns: 12 12 12 12
 
-      Install upgrades. Remember to keep the  :file:`localconfig.xml`
-      file, answering **NO** when asked to.
+      Install upgrades.
+      
+      .. danger::
+         Remember to keep the  :file:`localconfig.xml` file, answering **NO** when asked to.
+         Selecting YES can overwrite your configuration and break the installation.
+
+         **Recovery:** If the upgrade breaks the system due to selecting YES, restore the backup
+         of :file:`localconfig.xml` to its original location and rerun the upgrade to recover the installation.
+
 
       .. tab-set::
 
