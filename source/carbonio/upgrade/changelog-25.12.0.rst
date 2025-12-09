@@ -1,7 +1,10 @@
 Release 25.12.0 RC 
 ===================
 
-
+.. contents::
+   :local:
+   :depth: 1
+   :backlinks: none
 
 New Features and Enhancements (45)
 ----------------------------------
