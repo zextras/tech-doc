@@ -234,7 +234,7 @@ be found in the :ref:`dedicated section <wl>`.
 
 .. _domain-2fa:
 
-2-Factor-Autenthication
+2-Factor-Authentication
 =======================
 
 In this page it is possible to configure 2FA for the various services
