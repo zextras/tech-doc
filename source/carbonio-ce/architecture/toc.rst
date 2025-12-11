@@ -5,7 +5,7 @@
 This section contains a description of |product| architecture and of
 the Components along with the features they provide.
 
-.. figure:: /img/carbonio/architecture_Carbonio_CE_v2.png
+.. figure:: /img/carbonio/architecture_Carbonio_CE_v3.png
    :width: 80%
 
    Simplified architecture of |product|.
