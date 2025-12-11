@@ -141,14 +141,6 @@ Below is the complete list of Carbonio API categories.
 
       - Chats
 
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/carbonio-ws-collaboration/meeting-api.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - Meeting
 
    .. grid-item-card:: GraphQL APIs
       :link: ../../../apidoc/files_meta/index.html
