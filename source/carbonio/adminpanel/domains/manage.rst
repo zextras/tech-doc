@@ -286,8 +286,10 @@ restore the COS value.
    :open:
    :class-title: sd-text-primary
 
-   The preferences in this tab concern how a user sees or interacts
-   with the e-mails.
+   This tab contains settings that control how users view, manage
+   and interact with their data across the platform.
+   These preferences affect the behavior and appearance of emails,
+   calendars, and contacts, shaping the overall user experience in the client interface.
 
    **Mail Options**
 
