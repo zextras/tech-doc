@@ -1,16 +1,15 @@
-Release 25.12.0 RC 
-===================
+Release 25.12.0
+===============
 
 .. contents::
    :local:
    :depth: 1
    :backlinks: none
 
-New Features and Enhancements (45)
-----------------------------------
+New Features and Enhancements 
+-----------------------------
 
 This section highlights the new features and the enanchements introduced in this release. Each feature is designed to enhance user experience and system functionality. New features and Enhancements are visible to end users, for example, a new module, a new button, or a new option in a dropdown.
-
 
 
 Enable drag and drop file attachment from Files to email composer (CO-1905)
@@ -558,8 +557,8 @@ Original tracking code:  CO-2845 ['CO-2579']
 |
 
 
-Bug Fixes (72)
---------------
+Bug Fixes
+---------
 
 This section lists the bugs that have been fixed in this release. Bug fixes address issues reported by users or identified by the development team, improving the overall functionality and user experience of the system. These fixes ensure that the software operates as intended and resolves any problems that may have affected users.
 
@@ -1440,16 +1439,140 @@ Technical details: Component: carbonio-storages
  
 Original tracking code:  CO-2909 ['—']
     
+Clarify share modal messaging and section separation (CO-2982)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The share modal has been improved with clearer messaging for internal recipients, explicitly stating that external email addresses are not supported and cannot access shared calendars. Additionally, the internal and public sharing sections are now visually separated and labeled, improving clarity while preserving the benefits of the previous UX enhancement.
+
+Fix Files quota visibility issue in Admin UI and API after Consul update (CO-2961)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An issue preventing Files quota information from being displayed in the Admin UI and returned by direct API queries has been resolved.
+The problem was caused by a Consul update that removed HTTPS support, while Mailbox admin APIs require TLS.
+The configuration has been corrected to restore proper communication and quota visibility.
+
+Fix calendar selection when accepting appointment invites (CO-2956)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An issue preventing users from selecting a calendar different from the default when handling appointment invitations has been fixed.
+Users can now choose any available calendar when scheduling received appointments.
+Previously, the calendar selector was locked to the message’s parent calendar, preventing changes.
+
+Prevent potential loop when releasing retenant lock (CO-2943)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fixed an issue where releasing the retenant lock during auth table cleanup could cause a loop under certain conditions.
+The fix ensures the retenant lock is handled safely, preventing repeated execution.
+
+Fix inability to open EML attachments (CO-2941)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fixed an issue where users were unable to open .eml email attachments.
+Previously, clicking on an attached EML file caused a JavaScript error (TypeError: Cannot read properties of undefined (reading 'name')) and prevented the message from being displayed. The error has been resolved, allowing users to open and view forwarded emails as attachments correctly.
+
+Fix PEC email attachments not displayed in mail view (CO-2940)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where attachments in PEC emails were not visible or accessible in the mail view.
+The attachments were properly received but were previously not displayed in the web interface.
+Users can now view and open PEC email attachments correctly.
+
+Fix multi-selection action affecting previously moved emails (CO-2944)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fixed an issue where performing a second multi-selection action (move, delete, etc.) could also affect emails from a previous selection.
+Previously, after completing an action, the selection mode remained active, causing the first group of emails to be unintentionally included in the next action.
+Now, only the emails selected in the current action are affected, ensuring correct behavior for consecutive multi-selection operations.
+
+Fix push notifications failure to mobile clients (CO-2933)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where Carbonio Notification Push failed to send notifications to mobile clients, causing HTTP 500 errors in the logs.
+The problem was due to missing parameters for accessing the Java truststore.
+The parameters have been re-added to allow the push service to correctly locate the CA certificates, restoring proper push notification delivery.
+
+Fix Carbonio-push-connector service startup failure (CO-2931)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where the Carbonio-push-connector service failed to start after the infrastructure upgrade, causing chat notifications to stop.
+The problem was due to a missing GlassFish Jakarta EL dependency required by hibernate-validator-cdi and a misread maxLifetime Hikari configuration.
+Both issues have been fixed, restoring proper service startup and chat notification delivery.
+
+Fix stack trace in zmconfigd-log4j.log when restarting configd (CO-2946)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where restarting configd on Ubuntu 22.04 and 24.04 would produce a stack trace in /opt/zextras/log/zmconfigd-log4j.log related to LdapProvisioning.
+The LdapProvisioning constructor with CacheMode has been restored as public, preventing the error and ensuring clean log output during service restarts.
+
+Fix incorrect execution permissions on carbonio-videoserver systemd service file (CO-2948)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Corrected file permissions for /usr/lib/systemd/system/carbonio-videoserver.service, changing them to 644.
+Previously, the service file had executable permissions, causing repetitive systemd warnings in the journal.
+This update prevents unnecessary warnings while keeping the service fully functional.
+
+RPM file conflict blocks Carbonio VideoRecorder installation on RHEL 8 (CO-2930)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+On RHEL 8, installing carbonio-videorecorder previously failed due to a file conflict: the package freeze-2.5.0-26.el8.x86_64 (required by carbonio-perl-mail-spamassassin) provides /usr/bin/melt, which conflicted with carbonio-mlt-6.26.1-2.el8.x86_64, required by carbonio-videorecorder.
+This issue, which blocked installation on MTA nodes, has now been resolved.
+The conflicting packages have been adjusted, allowing successful installation of VideoRecorder without RPM transaction errors.
+
+Debounce FullAutocompleteRequest to prevent mailbox overload (CO-2896)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fixed an issue where each keystroke in address fields (To/Cc/Bcc), search UI, contacts groups, or calendar attendees triggered a FullAutocompleteRequest.
+On large infrastructures, this could flood the mailbox and impact performance.
+Now, requests are debounced (wait 500ms after the last keypress), reducing excessive requests and preventing mailbox overload while maintaining responsive autocomplete functionality.
+
+Fix inline image replacement issue in email composer (CO-2870)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where deleted inline images in the email composer could reappear when adding a new image.
+The composer now correctly displays the newly added image.
+This fix includes improved handling of uploaded images with ObjectURLs and ensures cleanup of removed attachments is properly executed before saving drafts.
+
+Correct email search results for “from” and “to” filters (CO-2907)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Fixed an issue where searching by “from” or “to” in Carbonio returned inconsistent and incorrect results, including unrelated messages.
+The problem was caused by malformed search queries missing required keywords.
+Searches now reliably return only messages that match the specified sender or recipient, restoring accurate and consistent email filtering for all users.
+
+Fix Video Server startup issue on nodes with WSC after reboot (CO-2950)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where the Video Server would start incorrectly after a reboot on nodes running both WSC and Video Server.
+Although the service appeared active, media capabilities such as camera, microphone, and screen sharing failed due to the Video Server starting before its sidecar had established a RabbitMQ connection.
+The startup check (carbonio-message-broker-consul-check) has been enhanced to verify that the message broker is fully ready and responsive to AMQP protocol messages, ensuring the Video Server launches only when all required services are operational.
+This restores full media functionality immediately after reboot.
+
+Fix default locale assignment for users without language during mobile auth (CO-2965)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where users without a language set in the Admin Console received an incorrect locale when authenticating via mobile apps.
+The system now automatically applies a default language for users with empty or invalid language settings, ensuring consistent and correct locale assignment during mobile authentication.
+
+Fix event attachments deletion when combining local and Files attachments (CO-2721)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where adding an attachment from Files after a local disk attachment caused all attachments to disappear until the event was saved.
+The issue occurred because Files attachments were not properly registered before saving.
+Now, attachments from both local folder and Files are correctly retained and displayed after saving the event, regardless of the order in which they are added.
 
 |
 
 
-Improvements (38)
------------------
+Improvements
+------------
 
 This section covers technical improvements that enhance the performance, stability, and maintainability of the system. These improvements may include backend optimizations, code refactoring, and infrastructure upgrades. While these changes may not be directly visible to end users, they contribute to a better overall experience by improving system reliability and efficiency.
 
+Suppress AWS SDK for Java v1 deprecation warning in Storages module (CO-2938)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A non-blocking AWS SDK for Java v1 deprecation warning, previously shown in the Storages module logs, has been suppressed.
+The application now disables the SDK deprecation announcement via a system property, reducing log noise without affecting functionality.
 
 
 Refactor Calendars sidebar (CO-1586)
@@ -1914,8 +2037,8 @@ Original tracking code:  CO-2842 ['—']
 |
 
 
-Third-parties update, CVE and Security fixes (11)
--------------------------------------------------
+Third-parties update, CVE and Security fixes
+--------------------------------------------
 
 This section includes updates to third-party libraries, CVE patches, and other security-related fixes. These updates are crucial for maintaining the security and integrity of the system, protecting against vulnerabilities, and ensuring compliance with security standards. Security fixes may not be directly visible to end users but are essential for safeguarding data and system operations.
 
@@ -2068,8 +2191,8 @@ Original tracking code:  CO-2804 ['—']
 |
 
 
-Translation Updates (1)
------------------------
+Translation Updates
+-------------------
 
 This section includes updates to translations and localization efforts. These updates ensure that the software is accessible to users in different languages and regions, enhancing usability and user satisfaction across diverse user bases.
 
@@ -2078,12 +2201,17 @@ This section includes updates to translations and localization efforts. These up
 Fix missing translations in Admin Panel (CO-2523)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
 Fixes missing translations for Create button, Logout, and Help & Documentation in the Admin Panel. Ensures UI consistency in English and Italian, with translations managed by the development team.
 
-
- 
 Original tracking code:  CO-2523 ['GB-836']
+
+
+Fix missing translation of “Calendar” in Appointment app (CO-2951)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Resolved an issue where the word “Calendar” was not translated in the Appointment app when changing the user language.
+The problem was due to the translation function being limited to mail folders and using an outdated context.
+The translation is now fetched directly in the secondary bar components, ensuring correct display for system folders (Calendar and Trash) in all supported languages.
     
 
 
