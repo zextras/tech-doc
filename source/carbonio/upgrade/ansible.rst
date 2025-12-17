@@ -12,14 +12,6 @@ Before starting the procedure, make sure that you satisfy the
 :ref:`up-ansible-req`, then choose one of the supported
 :ref:`up-ansible-paths`.
 
-..
-   There is no know issue that impacts either the upgrade process to
-   |product| |version| or the |product| operations afterwards.
-
-Please also check Sections :ref:`ts-up-prev` or :ref:`ts-up-older` for
-known issues impacting the upgrade process, depending on the version
-from which you are upgrading.
-
 .. _up-ansible-req:
 
 Requirements & Preliminaries
@@ -41,15 +33,13 @@ upgrade procedure with Ansible.
 * The upgrade procedure does not depend on the underlying
   :ref:`supported operating system <software-requirements>`. However,
   note that from release **25.06**, support for **Ubuntu 20.04 LTS**,
-  which went EOL in May 2025, **has been dropped**. Therefore, to
-  continue using |product|, you need to upgrade Ubuntu 20.04 LTS to
-  either **Ubuntu 22.04 LTS** or **Ubuntu 24.04 LTS**. 
+  which went EOL in May 2025, **has been dropped**.
 
 * This upgrade procedure works even if you installed |product|
   manually: see Section :ref:`up-ansible-paths` for details
 
 * The version of |product| that you want to upgrade is not important:
-  you can start from any version (24.12, 24.9, or older) and you will
+  you can start from any version (25.1, 25.3, or older) and you will
   always end up with the latest version (|release| at the time of
   writing)
 
@@ -59,10 +49,7 @@ upgrade procedure with Ansible.
   from which you do not want to upgrade packages.
 
 * Ansible will **not** upgrade **PostgreSQL to version 16**, you need
-  to upgrade it manually: please refer to Section :ref:`pg-upgrade`.
-  |product| :red:`no longer supports` PostgreSQL **12**, which must be
-  upgraded to version **16** before upgrading |product| to
-  |version|. Check section :ref:`pg-upgrade` for directions.
+  to upgrade it manually
 
 * The upgrade procedure using Ansible is slightly different depending
   if you already installed |wsc| or not. Choose the right
@@ -139,11 +126,8 @@ this case, you can use an inventory file from one of the
 section :ref:`ansible-inventory` for directions.
 
 These are the alternatives to upgrade an existent |product|
-infrastructure, depending if you have installed the latest **25.03**
+infrastructure, depending if you have installed the **25.03**
 version or an older one.
-
-.. hint:: If you are unsure, :ref:`check the command <ts-version>` to
-   retrieve the correct version number.
 
 Upgrade From |product| 25.03
 ----------------------------

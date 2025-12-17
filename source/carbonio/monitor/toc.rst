@@ -4,14 +4,14 @@
  Monitoring |product|
 ======================
 
-This section contains information about monitoring activities in
-|product| and how to interact with |monit| :octicon:`dash` including CLI
-commands  
+This section provides an overview of monitoring in
+|product| and explains how to observe, manage, and troubleshoot a |product| infrastructure using built-in
+monitoring components, log files, and command-line tools.
 
 .. _monit-intro:
 
-Introduction
-============
+Overview
+========
 
 .. include:: /_includes/_monitor/intro.rst
 
@@ -25,3 +25,4 @@ Introduction
       prometheus
       mesh
       ext_mon
+      alertmanager

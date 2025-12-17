@@ -1,10 +1,17 @@
 .. grid:: 1 1 1 2
    :gutter: 3
 
-   .. grid-item-card:: Step 4. Upgrade Node
+   .. grid-item-card:: Step 3. Upgrade Node
       :columns: 12 12 12 12
 
       Install upgrades.
+      
+      .. danger::
+         Remember to keep the  :file:`localconfig.xml` file, answering **NO** when asked to.
+         Selecting YES can overwrite your configuration and break the installation.
+
+         **Recovery:** If the upgrade breaks the system due to selecting YES, restore the backup
+         of :file:`localconfig.xml` to its original location and rerun the upgrade to recover the installation.
 
       .. tab-set::
 
@@ -13,7 +20,7 @@
 
             .. code:: console
 
-               # apt upgrade
+               # apt full-upgrade
 
          .. tab-item:: RHEL 8
             :sync: rhel8
@@ -27,7 +34,7 @@
 
             .. code:: console
 
-               # apt upgrade
+               # apt full-upgrade
 
          .. tab-item:: RHEL 9
             :sync: rhel9
@@ -36,13 +43,8 @@
 
                # dnf upgrade --best --allowerasing
 
-   .. grid-item-card:: Step 5. Make sure package ``carbonio-catalog`` is
-      installed properly
-      :columns: 12 12 12 12
 
-      .. include:: /_includes/_upgrade/package-catalog.rst
-
-   .. grid-item-card:: Step 6. (Optional) Remove unused packages
+   .. grid-item-card:: Step 4. (Optional) Remove unused packages
       :columns: 12 12 12 12
 
       After the latest packages have been installed, you can remove
@@ -79,15 +81,36 @@
 
                # dnf autoremove
 
-   .. grid-item-card:: Step 7.  Register upgraded packages to |mesh|
-      :columns: 6 6 6 6
+   .. grid-item-card:: Step 5.  Register upgraded packages to |mesh|
+      :columns: 12 12 12 12
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 8. Reboot
-      :columns: 6 6 6 6
+   .. grid-item-card:: Step 6.  Reinitialise the Message Dispatcher database
+      :columns: 12 12 12 12
+
+      Before proceeding, ensure that the environment variable $DB_ADM_PWD is correctly set.
+      This variable must contain the PostgreSQL administrative password that was defined
+      during the **Database** component installation. \
+
+      On the Node featuring the **Chats** Component, run:
+
+      .. code:: console
+
+         # PGPASSWORD=$DB_ADM_PWD carbonio-message-dispatcher-migration \
+            carbonio_adm 127.78.0.10 20000
+
+      Then restart the **Message Dispatcher** service by running the following command:
+
+      .. code:: console
+
+         # systemctl restart carbonio-message-dispatcher
+
+
+   .. grid-item-card:: Step 7. Reboot
+      :columns: 12 12 12 12
 
       Once the upgrade has completed successfully, make sure you
       restart all services by running command:

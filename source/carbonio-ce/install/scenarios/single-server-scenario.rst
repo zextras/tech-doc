@@ -21,7 +21,7 @@ The architecture of this scenario is depicted in the following diagram.
 Automatic Script-based Installation
 ===================================
 
-The installation on supported Ubuntu (**22.04** and **20.04**), or Red
+The installation on supported Ubuntu (**22.04** and **24.04**), or Red
 Hat (**RHEL 8** and **RHEL 9**) distributions can be carried out by
 downloading, editing, and running a dedicated **bash script** on the
 Server on which you want to install |product|.

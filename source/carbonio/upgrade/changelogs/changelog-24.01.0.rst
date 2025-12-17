@@ -2,8 +2,8 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Carbonio Changelog - Release 24.1.0
-===================================
+Release 24.1.0
+==============
 
 Release Date: January 30th, 2024
 
