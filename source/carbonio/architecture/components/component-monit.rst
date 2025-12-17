@@ -43,6 +43,21 @@ To complete the installation, restart prometheus service with:
 
    # systemctl restart carbonio-prometheus
 
+.. note::
+
+   **Alerting** can be enabled in a Carbonio infrastructure by installing the
+   ``carbonio-prometheus-alertmanager`` package either on the same node that
+   hosts Prometheus or on a different node.
+
+   When combined with Prometheus, Alertmanager allows administrators to define
+   alert rules, evaluate them against metrics, and receive notifications through
+   multiple channels (for example email or Telegram).
+
+   Detailed, step-by-step instructions on how to configure and enable alerting
+   with Prometheus and Alertmanager in Carbonio are available in the dedicated
+   how-to guide: :doc:`/monitor/alertmanager`
+
+
 .. _grafana-install:
 
 .. _grafana-conf:
