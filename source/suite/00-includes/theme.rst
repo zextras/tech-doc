@@ -24,42 +24,21 @@ It is both compatible with Zimbra 8 (8.6 and higher) and Zimbra 9.
 Availability
 ------------
 
-The Zextras Theme is included in Zextras Suite starting from version
-3.1.5, so Zextras Suite users will just need to update their software to
-obtain the theme.
-
-Zimbra Network Edition and Zimbra Open Source Editon users who are not
-also Zextras Suite users can freely download the theme from
-https://www.zextras.com/zextras-theme-zimbra-interface/ and follow the
-instructions below to install it manually.
-
-.. warning:: If you downloaded the Zextras Installer package before
-   November 30th, 2020 you will need to download it again in order for
-   the option to install the Zextras Theme to appear.
+The theme is distributed as a ZIP archive and must be deployed by following the instructions below.
 
 .. _installation_guide:
 
 Installation Guide
 ------------------
 
-The Zextras Suite installer will take care of downloading and deploying
-the theme.
+To deploy the Zextras Theme:
 
-Additionally, the theme can be manually downloaded and installed on all
-compatible Zimbra Open Source Edition and Zimbra Network Edition
-versions by following this simple steps:
+- Download the theme from the official GitHub repository:
 
--  Download the appropriate package for your distro from the `Zextras
-   Website <https://www.zextras.com/zextras-theme-zimbra-interface/>`_.
+  https://github.com/zextras/zextras-theme
 
--  Copy the package to your server.
+- Follow the deployment instructions provided in the ``README.md`` file included in the repository.
 
--  Unpack it by running ``tar zxvf zextras-theme-*.tgz``
-
--  Run **as root**: ``cd zextras-theme-installer && ./install.sh``
-
--  Once the installation is completed, restart the mailboxd service by
-   running ``su - zimbra -c 'zmmailboxdctl restart'``
 
 .. _enabling_the_theme:
 
