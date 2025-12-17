@@ -2,8 +2,8 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Changelog 23.11.0
-=================
+Release 23.11.0
+===============
 
 Release Date: November 13th, 2023
 

@@ -8,12 +8,11 @@ New and Updated Content
 
 .. rubric:: 202410-469 New Section Troubleshooting
 
-A new section :ref:`ts` has been added, collecting various content
+A new section `Troubleshooting` has been added, collecting various content
 from other parts of the documentation. The user has now all
 troubleshooting options in one place, separated by module or topic.
 
-See :ref:`ts` for the documentation, :pr:`720` and
-:pr:`722` for the source code.
+See :pr:`720` and :pr:`722` for the source code.
 
 
 .. rubric:: 202410-558 Provide ICS and CSV example files for migration to Carbonio

@@ -30,11 +30,11 @@ copyright = '2025: ZEXTRAS'
 author = 'The Zextras Team'
 
 # this variable is used in the  upgrade procedure, remember to change it together with the release. Since upgrade doesn't discriminate on patch number, we do not need the last cipher.
-previous_release = '25.6'
+previous_release = '25.9'
 
 
 # The full version, including alpha/beta/rc tags
-release = '25.9.0'
+release = '25.12.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
@@ -126,7 +126,6 @@ html_theme_options = {
     #'primary_sidebar_end': ['survey'],
 }
 html_sidebars = { "**": [ 'navbar-logo.html',
-			  'zxbrand',
                           'search-button-field.html',
                           'sbt-sidebar-nav.html', 'index.html', 'home.html' ] }
 

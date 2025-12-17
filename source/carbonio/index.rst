@@ -136,32 +136,6 @@ The content is organised in multiple parts:
 
          monitor/toc
 
-   .. grid-item-card:: Troubleshooting
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: troubleshooting/toc
-
-      Resources that help in resolving |product| issues
-
-      .. toctree::
-         :hidden:
-
-         troubleshooting/toc
-
-   .. grid-item-card:: Support
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: report/toc
-
-      Reporting problem and opening tickets
-
-      .. toctree::
-         :hidden:
-
-         report/toc
-
    .. grid-item-card:: API
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -204,7 +178,6 @@ The content is organised in multiple parts:
    .. grid-item-card:: Index
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
-      :margin: 3 0 auto auto
       :link-type: ref
       :link: genindex
 
@@ -213,6 +186,7 @@ The content is organised in multiple parts:
    .. grid-item-card::  Command Line Reference
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
+      :margin: 3 0 auto auto
       :link-type: doc
       :link: cli_commands/toc
 

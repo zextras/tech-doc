@@ -1,6 +1,6 @@
 
-Carbonio Changelog - Release 24.3.0
-===================================
+Release 24.3.0
+==============
 
 Release Date: March 13th, 2024
 

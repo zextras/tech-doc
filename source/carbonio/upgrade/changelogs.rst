@@ -14,13 +14,14 @@ changelog and to the section containing the older changelogs.
    :hidden:
 
    changelogs/older
+   changelog-25.12.0
 
 
-.. button-link:: ../../../release_notes/changelog-25.9.0.html
+.. button-link:: changelog-25.12.0.html
    :color: danger
    :outline:
 
-   Release 25.9.0
+   Release 25.12.0
 
 .. button-ref:: changelogs/older
    :color: danger

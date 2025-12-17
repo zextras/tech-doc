@@ -236,13 +236,149 @@ restore the COS value.
    :open:
    :class-title: sd-text-primary
 
+   This tab contains settings that control how users view, manage
+   and interact with their data across the platform.
+   These preferences affect the behavior and appearance of emails,
+   calendars, and contacts, shaping the overall user experience in the client interface.
 
-   The preferences in this tab concern how a user sees or interacts
-   with the e-mails, including polling interval, auto-replies, adding
-   a signature, other sending and receive options, and are mostly
-   inherited from the COS.
+   **Mail Options**
+
+   The *Mail Options* section controls how messages are displayed and managed.
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 35 65
+   
+      * - Option
+        - Description
+      * - View mail as HTML
+        - Enable or disable HTML rendering for email messages.
+      * - Group messages
+        - Choose whether emails are grouped by single message or by conversation.
+      * - Auto-delete duplicate messages
+        - Automatically remove duplicate emails when enabled.
+      * - New Mail Toast Notification
+        - Enable or disable toast notifications for newly received emails.
+      * - Default Charset
+        - Define the default character encoding used for emails.
+
+   **Receiving Mails**
+
+   The *Receiving Mails* section defines how and when incoming messages are handled.
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 35 65
+
+      * - Option
+        - Description
+      * - Check new email every
+        - Select the interval for checking new incoming messages from a predefined list of values.
+      * - Auto-reply messages
+        - Enable or disable automatic reply messages.
+      * - Out of office lifetime
+        - Define the start and end time for the out-of-office auto-reply.
+      * - Read Receipt Settings
+        - Configure how read receipt requests are processed.
+
+   **Sending Mails**
+
+   The *Sending Mails* section controls message sending behavior.
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 35 65
+
+      * - Option
+        - Description
+      * - Save to Sent
+        - Enable or disable saving sent messages in the Sent folder.
+      * - Allowed sender addresses
+        - Specify which email addresses are allowed for sending messages.
+      * - Ask for read receipt
+        - Enable or disable the ability to request read receipts when sending emails.
+
+   **Composing Mails**
+
+   The *Composing Mails* section manages email composition preferences.
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 35 65
+
+      * - Option
+        - Description
+      * - Mail signature
+        - Enable or disable the email signatures feature.
+      * - Signatures management
+        - Add, edit, or remove email signatures.
 
    .. note:: Signatures can not be assigned to :ref:`ap-resources`.
+
+   **Contact Options**
+
+   The *Contact Options* section configures contact management behavior.
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 35 65
+
+      * - Option
+        - Description
+      * - Auto-add contacts
+        - Automatically add email recipients to the contact list when enabled.
+      * - Use GAL auto-fit
+        - Enable or disable Global Address List auto-completion.
+
+   **Calendar Options**
+
+   The *Calendar Options* section defines default calendar behaviors and invitation handling.
+
+   Default Settings
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 35 65
+
+      * - Option
+        - Description
+      * - Time Zone
+        - Set the default time zone for the calendar.
+      * - Default appointment duration
+        - Define the default duration for new appointments.
+      * - Appointment reminder
+        - Set the reminder time (in minutes) before an appointment starts.
+      * - Default calendar view
+        - Choose the default calendar view (e.g. Day, Week, Month).
+      * - Week start
+        - Select the first day of the week.
+      * - Default appointment visibility
+        - Define the default visibility level for new appointments.
+
+   Additional Options
+
+   .. list-table::
+      :header-rows: 1
+      :widths: 35 65
+
+      * - Option
+        - Description
+      * - Past appointment reminders
+        - Enable or disable reminders for appointments in the past.
+      * - Send cancellation emails
+        - Enable or disable email notifications when appointments are cancelled.
+      * - Auto-add forwarded appointments
+        - Automatically add forwarded invitations to the calendar.
+      * - Add invites with PUBLISH method
+        - Enable or disable adding invitations using the PUBLISH method.
+      * - Auto-add invited appointments
+        - Automatically add appointments when the user is invited.
+      * - Auto-decline blacklisted senders
+        - Automatically decline invitations from blacklisted senders.
+      * - Notify delegated changes
+        - Enable or disable notifications for changes made by delegated accounts.
+      * - iCal delegation model
+        - Enable or disable the iCal delegation model for shared calendars.
 
 .. _act-sec:
 

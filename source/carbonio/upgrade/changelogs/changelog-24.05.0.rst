@@ -1,6 +1,6 @@
 
-Carbonio Changelog - Release 24.5.0
-===================================
+Release 24.5.0
+==============
 
 Release Date: May 22nd, 2024
 

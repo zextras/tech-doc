@@ -38,9 +38,6 @@ This section is dedicated to developers who want to interact with
 
             Access metadata of |file|\'s items
 
-      An how-to for the |file| API is available in section
-      :ref:`api-files-howto`
-
    .. grid-item-card:: |wsc|
       :columns: 12 12 12 12
       :class-title: sd-font-weight-bold sd-fs-4 sd-text-center
@@ -69,8 +66,3 @@ This section is dedicated to developers who want to interact with
 
       Access thumbnails and previews of items stored in |product|
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   files-howto.rst

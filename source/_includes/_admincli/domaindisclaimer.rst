@@ -15,9 +15,22 @@ commands.
    Make sure to restart the other involved services by executing on
    **every MTA Node** in your infrastructure the commands
 
-   .. code:: console
+   .. tab-set::
 
-      zextras$ zmamavisdctl restart && zmconfigdctl restart
+      .. tab-item:: Ubuntu 22.04 / Red Hat 8
+         :sync: ubu22rh8
+
+         .. code:: console
+
+            zextras$ zmconfigdctl restart && zmamavisdctl restart
+
+      .. tab-item:: Ubuntu 24.04 / Red Hat 9
+         :sync: ubu22rh8
+
+         .. code:: console
+
+            root$ systemctl restart carbonio-configd.service
+            root$ systemctl restart carbonio-mailthreat.service
 
 .. card:: Add a *plain text* Disclaimer
 
@@ -90,6 +103,22 @@ commands.
    Make sure to restart the other involved services by executing on
    **every MTA Node** in your infrastructure the commands
 
-   .. code:: console
+   .. tab-set::
 
-      zextras$ zmamavisdctl restart && zmconfigdctl restart
+      .. tab-item:: Ubuntu 22.04 / Red Hat 8
+         :sync: ubu22rh8
+
+         .. code:: console
+
+            zextras$ zmconfigdctl restart && zmamavisdctl restart
+
+      .. tab-item:: Ubuntu 24.04 / Red Hat 9
+         :sync: ubu22rh8
+
+         .. code:: console
+
+            root$ systemctl restart carbonio-configd.service
+            root$ systemctl restart carbonio-mailthreat.service
+
+
+
