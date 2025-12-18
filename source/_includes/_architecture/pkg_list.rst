@@ -6,73 +6,74 @@ Below is the list of Carbonio packages collected by component and updated to ver
 
 .. dropdown:: **Mesh & Directory**
 
-   - **service-discover-server**: `service-discover-server` *(0.2.2)*
-   - **carbonio-directory-server**: `carbonio-directory-server` *(4.23.1)*
-   - **carbonio-message-broker**: `carbonio-message-broker` *(0.2.2)*
-   - **carbonio-storages**: `carbonio-storages` *(0.0.16)*
-   - **carbonio-user-management**: `carbonio-user-management` *(0.8.4)*
+   - **service-discover-server**: `service-discover-server` *(0.2.2-1)*
+   - **carbonio-directory-server**: `carbonio-directory-server` *(4.24.1)*
+   - **carbonio-message-broker**: `carbonio-message-broker` *(0.2.3-1)*
+   - **carbonio-storages**: `carbonio-storages` *(0.0.17-3)*
+   - **carbonio-user-management**: `carbonio-user-management` *(1.0.1-1)*
 
 .. dropdown:: **Database**
 
-   - **carbonio-ws-collaboration-db**: `carbonio-ws-collaboration-db` *(0.2.4)*
-   - **carbonio-message-dispatcher-db**: `carbonio-message-dispatcher-db` *(0.2.3)*
-   - **carbonio-notification-push-db**: `carbonio-notification-push-db` *(0.1.3)*
-   - **carbonio-files-db**: `carbonio-files-db` *(0.1.7)*
-   - **carbonio-mailbox-db**: `carbonio-mailbox-db` *(0.2.2)*
-   - **carbonio-docs-connector-db**: `carbonio-docs-connector-db` *(0.0.3)*
-   - **carbonio-tasks-db**: `carbonio-tasks-db` *(0.0.4)*
+   - **carbonio-ws-collaboration-db**: `carbonio-ws-collaboration-db` *(0.2.5-1)*
+   - **carbonio-message-dispatcher-db**: `carbonio-message-dispatcher-db` *(0.2.4-1)*
+   - **carbonio-notification-push-db**: `carbonio-notification-push-db` *(0.1.4-1)*
+   - **carbonio-files-db**: `carbonio-files-db` *(0.1.8-1)*
+   - **carbonio-mailbox-db**: `carbonio-mailbox-db` *(0.2.3-1)*
+   - **carbonio-docs-connector-db**: `carbonio-docs-connector-db` *(0.0.4-1)*
+   - **carbonio-tasks-db**: `carbonio-tasks-db` *(0.0.5-1)*
 
 .. dropdown:: **Proxy**
 
-   - **carbonio-proxy**: `carbonio-proxy` *(4.9.3)*
-   - **carbonio-catalog**: `carbonio-catalog` *(0.0.2)*
-   - **carbonio-files-public-folder-ui**: `carbonio-files-public-folder-ui` *(0.0.9)*
-   - **carbonio-webui**: `carbonio-webui` *(4.4.3)*
-   - **carbonio-tasks-ui**: `carbonio-tasks-ui` *(0.0.17)*
-   - **carbonio-files-ui**: `carbonio-files-ui` *(2.13.2)*
-   - **carbonio-ws-collaboration-ui**: `carbonio-ws-collaboration-ui` *(0.9.17)*
-   - **carbonio-avdb-updater**: `carbonio-avdb-updater` *(1.0.5)*
+   - **carbonio-proxy**: `carbonio-proxy` *(4.10.0-1)*
+   - **carbonio-catalog**: `carbonio-catalog` *(0.0.3.-1)*
+   - **carbonio-files-public-folder-ui**: `carbonio-files-public-folder-ui` *(0.0.10-1)*
+   - **carbonio-webui**: `carbonio-webui` *(4.4.4-1)*
+   - **carbonio-tasks-ui**: `carbonio-tasks-ui` *(0.0.18-1)*
+   - **carbonio-files-ui**: `carbonio-files-ui` *(2.14.0-1)*
+   - **carbonio-ws-collaboration-ui**: `carbonio-ws-collaboration-ui` *(0.9.18-1)*
+   - **carbonio-avdb-updater**: `carbonio-avdb-updater` *(1.0.6-1)*
 
 .. dropdown:: **MTA**
 
-   - **carbonio-mta**: `carbonio-mta` *(4.2.1)*
+   - **carbonio-mta**: `carbonio-mta` *(4.2.2-1)*
 
 .. dropdown:: **Mailstore & Provisioning**
 
-   - **carbonio-advanced**: `carbonio-advanced` *(4.24.4-1)*
-   - **carbonio-zal**: `carbonio-zal` *(4.25.0-1)*
+   - **carbonio-advanced**: `carbonio-advanced` *(4.26.2-1)*
+   - **carbonio-zal**: `carbonio-zal` *(4.27.0-1)*
 
 .. dropdown:: **Files**
 
-   - **carbonio-files**: `carbonio-files` *(0.17.0)*
+   - **carbonio-files**: `carbonio-files` *(1.0.1-1)*
 
 .. dropdown:: **Docs & Editor**
 
-   - **carbonio-docs-editor**: `carbonio-docs-editor` *(25.04.3)*
-   - **carbonio-docs-connector**: `carbonio-docs-connector` *(0.8.2)*
+   - **carbonio-docs-editor**: `carbonio-docs-editor` *(25.04.3-2)*
+   - **carbonio-docs-connector**: `carbonio-docs-connector` *(1.0.0-1)*
 
 .. dropdown:: **Preview**
 
-   - **carbonio-preview**: `carbonio-preview` *(0.4.5)*
+   - **carbonio-preview**: `carbonio-preview` *(1.0.0-1)*
 
 .. dropdown:: **Tasks**
 
-   - **carbonio-tasks**: `carbonio-tasks` *(0.5.3)*
+   - **carbonio-tasks**: `carbonio-tasks` *(1.0.0-1)*
 
 .. dropdown:: **Chats**
 
-   - **carbonio-message-dispatcher**: `carbonio-message-dispatcher` *(0.15.3)*
-   - **carbonio-ws-collaboration**: `carbonio-ws-collaboration` *(1.6.2)*
-   - **carbonio-push-connector**: `carbonio-push-connector` *(0.1.4)*
-   - **carbonio-notification-push**: `carbonio-notification-push` *(0.2.2)*
+   - **carbonio-message-dispatcher**: `carbonio-message-dispatcher` *(0.16.0-1)*
+   - **carbonio-ws-collaboration**: `carbonio-ws-collaboration` *(1.6.5-1)*
+   - **carbonio-push-connector**: `carbonio-push-connector` *(0.1.6-1)*
+   - **carbonio-notification-push**: `carbonio-notification-push` *(0.2.4-1)*
 
 .. dropdown:: **Video Server & Video Recording**
 
-   - **carbonio-videoserver-advanced**: `carbonio-videoserver-advanced` *(2.0.13)*
-   - **carbonio-videorecorder**: `carbonio-videorecorder` *(1.2.0)*
+   - **carbonio-videoserver-advanced**: `carbonio-videoserver-advanced` *(2.0.16-1)*
+   - **carbonio-videorecorder**: `carbonio-videorecorder` *(1.2.2-1)*
 
 .. dropdown:: **Monitoring**
 
-   - **carbonio-prometheus**: `carbonio-prometheus` *(3.5.0)*
+   - **carbonio-prometheus**: `carbonio-prometheus` *(3.7.3-1)*
+   - **carbonio-prometheus-alertmanager**: `carbonio-prometheus-alertmanager` *(0.29.0-1)*
 
 
