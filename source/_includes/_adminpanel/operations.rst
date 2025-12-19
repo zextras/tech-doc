@@ -90,7 +90,7 @@ The **Other** section shows additional flags and operational parameters:
 Copy Operation Details
 ~~~~~~~~~~~~~~~~~~~~~~
 
-In the upper-right corner of the Operation Details panel, a **COPY** button is
+In the upper-right corner of the Operation Details panel, a :bdg-primary:`COPY` button is
 available.
 
 Clicking this button copies all the operation details to the clipboard in
