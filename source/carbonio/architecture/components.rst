@@ -270,6 +270,26 @@ installation, please review these important remarks:
   :ref:`component-db-install` Component. Then you can proceed with the other
   infrastructure Components and finally with all other Components.
 
+Optional Components
+===================
+
+If a component is not required in your environment, you can skip its installation.
+
+When a component is not installed, this may also allow you to **omit related packages on other nodes**, depending on your deployment architecture.
+
+For example, if your setup does not use the **Files** feature, you can avoid installing not only the main component package:
+
+- ``carbonio-files`` (**Files** "application" node)
+
+but also the related packages on other nodes:
+
+- ``carbonio-files-db`` (**Database** node)
+- ``carbonio-files-ui`` (**Proxy** node)
+
+This approach helps reduce system complexity and resource usage by installing only the components strictly required by your environment.
+
+
+
 .. toctree::
    :hidden:
 
