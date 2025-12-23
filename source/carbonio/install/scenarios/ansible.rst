@@ -69,6 +69,32 @@ Linux, macOS, or BSD, satisfying the following requirements
    #. have the |product| repository configured (see section
       :ref:`preliminary` for directions)
 
+.. card:: Version requirements
+
+   |product| installation and upgrade playbooks **require the full Ansible package**.
+
+   Ansible is distributed as a **community bundle** that includes:
+
+   - ``ansible-core`` – the execution engine
+   - A curated set of **required collections and plugins**
+ 
+   The ``ansible-core`` package alone provides only the execution engine and **is not sufficient** to run Carbonio install or upgrade playbooks.
+
+   .. warning::
+
+      Installing only ``ansible-core`` may cause playbooks to run but **complete with errors** due to missing collections and plugins.
+
+      For this reason, **Carbonio install and upgrade procedures require the** ``ansible`` **package**, not ``ansible-core`` alone.
+
+   **Supported Versions**
+
+   The supported ``ansible-core`` versions are **>= 2.16.5**
+
+   For more detailed information about available versions and compatibility between ``ansible`` and ``ansible-core``, refer to the official Ansible documentation:
+
+   - `Ansible Release and Maintenance <https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html>`_
+
+
 .. _ansible-setup:
 
 Ansible Setup
