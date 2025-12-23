@@ -253,11 +253,19 @@ Optional Components
 
 If a component is not required in your environment, you can skip its installation.
 
-For example, if your setup does not use the **Files** feature, you may omit the installation of the following components:
+When a component is not installed, this may also allow you to **omit related packages on other nodes**, depending on your deployment architecture.
 
-- The main component: ``carbonio-files``
-- The associated database component: ``carbonio-files-db``
-- The UI component provided through the Proxy: ``carbonio-files-ui``
+For example, if your setup does not use the **Files** feature, you can avoid installing not only the main component package:
+
+- ``carbonio-files`` (**Files** "application" node)
+
+but also the related packages on other nodes:
+
+- ``carbonio-files-db`` (**Database** node)
+- ``carbonio-files-ui`` (**Proxy** node)
+
+This approach helps reduce system complexity and resource usage by installing only the components strictly required by your environment.
+
 
 .. toctree::
    :hidden:
