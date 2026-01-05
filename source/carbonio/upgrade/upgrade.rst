@@ -1,8 +1,8 @@
 .. _carbonio-upgrade:
 
-==============================
- Manual From Previous Version
-==============================
+==================
+ Upgrade Manually
+==================
 
 This section guides you in the upgrade from |product| |prev|,
 regardless of any specific patch numbers, to the latest |current|.
@@ -56,3 +56,14 @@ Server, then all the other Nodes in the same order of installation.
 .. include:: /_includes/_upgrade/first-part.rst
 
 .. include:: /_includes/_upgrade/second-part-cb.rst
+
+For users upgrading from versions older than |prev|, additional guidance is available.
+
+Follow the steps in :ref:`up-old` to ensure a smooth transition and complete any necessary preparatory actions.
+
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   upgrade-older
