@@ -1,7 +1,7 @@
 .. _up-old:
 
-Manual From Older Versions
-==========================
+Upgrade Manuallly from older versions
+=====================================
 
 This section guides you in the upgrade from a |product| version
 **older than** |prev| to the latest available version, |current|.
@@ -12,7 +12,7 @@ This section guides you in the upgrade from a |product| version
    error-prone process.
 
 To perform the upgrade, first follow all the steps documented in
-:ref:`Manual From Previous Version <carbonio-upgrade>`, then apply the additional actions described below.
+:ref:`Upgrade Manually <carbonio-upgrade>`, then apply the additional actions described below.
 
 Checklist for old versions
 --------------------------
