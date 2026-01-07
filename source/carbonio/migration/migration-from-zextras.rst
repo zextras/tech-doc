@@ -345,7 +345,7 @@ To fix the shares, execute the following command.
 
 .. code:: console
 
-   zextras$ carbonio backup doFixShares /opt/zextras/backup/zextras/maps_[uuid]
+   zextras$ carbonio backup doFixShares /opt/zextras/backup/zextras/map_[uuid]
 
 Phase 3, Files
 ==============
@@ -400,7 +400,7 @@ that can be executed as root as follows.
 
    # carbonio-drive-migration -b /tmp/export  \
    -t https://mail.example.com/ \
-   -m /opt/zextras/backup/zextras/maps_[uuid]
+   -m /opt/zextras/backup/zextras/map_[uuid]
 
 In this command you should use the following values for the options:
 
