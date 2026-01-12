@@ -1,0 +1,118 @@
+
+Changelog 2025-12
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202512-1612 Clarified Ansible Version Requirements for Carbonio Upgrade Playbooks
+
+Documentation has been updated to clarify Ansible version requirements for Carbonio upgrade procedures. The Ansible community bundle (which includes ansible-core plus the required collections and plugins) is mandatory; ansible-core alone is not sufficient.
+
+
+.. rubric:: 202512-1610 Improve “Operations” Page in Carbonio Admin Panel Documentation
+
+The “Operations” page in the Carbonio Admin Panel documentation has been reviewed and updated. The page has been improved by adding meaningful and actionable content, increasing its usefulness for administrators.
+
+
+.. rubric:: 202512-1609 Update Package Versions in “List of the Main Carbonio Packages”
+
+The “List of the Main Carbonio Packages” documentation page has been reviewed and updated to reflect the latest Carbonio release. Package names and versions have been aligned with the versions actually shipped, outdated entries have been removed, and overall consistency and accuracy have been verified.
+
+
+.. rubric:: 202512-1607 Update Changelog with Issues Completed After December 2nd
+
+The 25.12.0 product changelog has been updated to include all issues completed after December 2nd, ensuring the changelog accurately reflects the full scope of delivered changes.
+
+
+.. rubric:: 202512-1599 Review and Improve User Preferences Page
+
+The User Preferences documentation page has been reviewed and improved to better explain the features available in the User Preferences menu. The documentation for the “Read receipt user” preference has been updated and moved to the correct location in the Admin UI feature management section.
+
+
+.. rubric:: 202512-1597 Added carbonio-prometheus-alertmanager Information to Official Documentation
+
+Information about the carbonio-prometheus-alertmanager package has been added to the official documentation. The update clarifies that the package is available starting from Carbonio 25.12 and documents the network configuration, including that the service listens on port 9095, instead of the default Alertmanager port (9093).
+
+
+.. rubric:: 202512-1585 Minor Typo Fix: “autenthication” in Admin Panel Section
+
+A minor typo has been fixed in the Admin Panel documentation. The term “autenthication” has been corrected to “authentication” in the Domains details section.
+
+
+.. rubric:: 202512-1564 Added Message Dispatcher Step to Manual Upgrade Procedure
+
+The manual upgrade documentation has been updated to include an additional step for initializing the Carbonio Message Dispatcher database. The procedure now documents the required migration commands for both single-node and multi-node installations, followed by restarting the Message Dispatcher service.
+
+This step is required up to Carbonio 25.12 to ensure database compatibility, as the migration is not automatically executed at startup. From Carbonio 26.03 onward, the migration process is fully automated and no manual intervention is required.
+
+
+.. rubric:: 202512-1540 Specific steps for upgrade procedure to 25.12.0
+
+We changed a command in the upgrade procedure and added directions for a required interactove step that is necessary for the correct upgrade to 25.12.0
+
+Changes in the source code can be found in :pr:`1343`.
+
+
+.. rubric:: 202512-1538 In-place upgrade to RHEL 9 is not supported
+
+The in-place upgrade of a |product| infrastructure installed on RHEL 8 to RHEL 9 is unsupported. We added to the documentation a procedure that allows to carry out the upgrade nonetheless. 
+
+Changes in the source code can be found in :pr:`1341`.
+
+
+.. rubric:: 202512-1537 Remove Section Troubleshooting
+
+Section *Troubleshooting* has been removed, as it consisted mostly of outdated workaround and procedures. 
+
+Changes in the source code can be found in :pr:`1338` and :pr:`1339`.
+
+
+.. rubric:: 202512-1536 Remove obsolete Section How to Report an Issue
+
+Obsolete Section *How to Report an Issue* has been removed. Customers now can find directions about opening a ticket in the support portal.
+
+Changes in the source code can be found in :pr:`1337`.
+
+
+.. rubric:: 202512-1534 Remove packages from upgrade procedure
+
+We removed from the upgrade procedure the indication to move some installed packages on a different Node, ass this caused some misunderstanding.
+
+Changes in the source code can be found in :pr:`1342`.
+
+
+.. rubric:: 202512-1528 New 25.12.0 features in Admin Panel
+
+New and changed features for the |adminui| introduced in release 25.12.0, including:
+
+* New screenshot for the Subscription page
+* Banners that inform about the impending license expiration
+* Removal of deprecated :command:`carbonio ha` CLI reference
+
+Changes in the source code can be found in :pr:`1336` and :pr:`1340`.
+
+
+.. rubric:: 202512-1258 Added Explicit Notes on REST API Support
+
+The documentation has been updated to explicitly indicate that Carbonio supports the REST API, clarifying information that was previously only implied.
+
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202512-1562 Removed Old Note About Kyrgyz Language
+
+The documentation has been updated to remove the outdated note regarding the Kyrgyz language from the General section. The removed note previously stated that Kyrgyz could not be managed from the Admin Panel and required CLI configuration; this information is no longer relevant.
+
+
+.. rubric:: 202512-1561 Fixed Restart Command in Domain Disclaimer Section
+
+The restart sequence for services has been corrected to ensure proper configuration reload. Equivalent systemd commands for Ubuntu 24 / RHEL 9 have also been added.
+
+*****
+
+End of changelog
