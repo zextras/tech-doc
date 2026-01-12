@@ -1,0 +1,185 @@
+
+Changelog 2025-11
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202511-1509  Documentation Changelog October 2025
+
+The technical documentation's changelog for September and October 2025 has been published.
+
+Changes in the source code can be found in :pr:`1331`.
+
+
+.. rubric:: 202511-1507 Fixed Advanced Package Versions
+
+The versions of the following packages have been corrected: carbonio-advanced updated to 4.24.4-1 and carbonio-zal updated to 4.25.0-1.
+
+
+.. rubric:: 202511-1505 Updated User Mail Replica Page
+
+The User Mail Replica documentation has been updated to clarify activation vs. initialization, account promotion, and differences between disabling and deleting a user mail replica.
+
+
+.. rubric:: 202511-1502 Fix port in Requirements
+
+We moved port *15692* from the |mesh| Component to an own card, since it is not strictly coupled with it.
+
+Changes in the source code can be found in :pr:`1333`.
+
+
+.. rubric:: 202511-1498 Remove OS Upgrade page
+
+Instructions to upgrade the Operating System on which |product| is installed have been removed.
+
+Changes in the source code can be found in :pr:`1323`.
+
+
+.. rubric:: 202511-1497 Improved Admin Panel's Resources documentation
+
+We improved the documentation of Resources (i.e., meeting rooms and equipment), adding an how-to as well.
+
+Changes in the source code can be found in :pr:`1330`.
+
+
+.. rubric:: 202511-1489 Updated Favicon Across Documentation and Support Platforms
+
+The favicon has been updated to the new company icon across all documentation, training, and support platforms to ensure consistent branding and visual identity.
+
+
+.. rubric:: 202511-1487 Add reminder to upgrade procedure for proper package installation
+
+We added to all upgrade procedures a reminder to install package ``carbonio-catalog`` on the proper Node.
+
+Changes in the source code can be found in :pr:`1315`. 
+
+
+.. rubric:: 202511-1484 Improved Resources Documentation
+
+The Resources section in the public documentation has been expanded and improved to provide more complete and useful information for administrators.
+
+
+.. rubric:: 202511-1475 Add warning about package in manual upgrade procedure
+
+A warning was added to the upgrade procedure to make sure the ``carbonio-catalog`` package was installed.
+
+Changes in the source code can be found in :pr:`1309`
+
+
+.. rubric:: 202511-1465 Improvements to installation scenario Redundant
+
+The Installation Scenario *Redundant* has been improved by adding labels to Nodes and clarifying how to install DB Connectors, package ``carbonio-message-dispatcher``, and multiple Mesh Servers.
+
+Changes in the source code can be found in :pr:`1320` and :pr:`1322`.
+
+
+.. rubric:: 202511-1464 Improve systemd Admin Guide
+
+The ``systemd`` Admin Guide has bee improved with a couple of useful commands borrowed from the Troubleshooting section.
+
+Changes in the source code can be found in :pr:`1302`.
+
+
+.. rubric:: 202511-1460 Move included files of section Post-Install
+
+
+Since the Post-Install section has been merged into the Installation and the Admin by Command Line sections, we have also moved the included files, to keep the repo better organised.
+
+Changes in the source code can be found in :pr:`1307`.
+
+
+.. rubric:: 202511-1459 Restore centralised volume creation commands in Scenario |rur|
+
+The Object Storage documentation in the Scenario |rur| has been restored and improved with cross references to all the  CLI commands
+
+Changes in the source code can be found in :pr:`1321`.
+
+
+.. rubric:: 202511-1417 Login to Carbonio with e-mail alias
+
+We modified the description of |product| login procedure, as now it is possible to login using an e-mail alias.
+
+ Changes in the source code can be found in :pr:`1299`
+
+
+.. rubric:: 202511-1415 New network guidelines and requirements
+
+Network guidelines for |product| installation have been added, including the requirement to add private IP addresses to each Node, which are used for intra-|product| communication.
+
+Changes in the source code can be found in :pr:`1295`.
+
+
+.. rubric:: 202511-1395 Fix syntax of wrong command
+
+A command in the Scenario |rur| has been amended.
+
+Changes in the source code can be found in :pr:`1287`.
+
+
+.. rubric:: 202511-1366 Improve Outgoing connections documentation
+
+We improved the documentation of outgoing connections' requirements and rewrote the introductions of Sections Firewall ports and External Corrections for more clarity.
+
+Changes in the source code can be found in :pr:`1310` and :pr:`1313`.
+
+
+.. rubric:: 202511-1361 Removed Mention of Mesh-Based Preview
+
+The note about manual Preview Component configuration has been removed from the upgrade documentation, reflecting that Mesh now communicates with the Preview Component and the old configuration is no longer needed.
+
+
+.. rubric:: 202511-1259 Systemd's carbonio.target documentation
+
+The visibility of the new systemd target has been improved with a couple of items in the index.
+
+Changes in the source code can be found in :pr:`1308`.
+
+
+.. rubric:: 202511-1116 Add some ansible terms to the glossary
+
+A few glossary items for Ansible have been added.
+
+Changes in the source code can be found in :pr:`1298`.
+
+
+.. rubric:: 202511-707 None
+
+None
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202511-1501 Wrong command and package name in Scenario Single Node
+
+In the Single Node's Collaboration Node package installation we fixed two slight errors:  the :command:`apt` command was used in RHEL-based commands and the package :file:`carbonio-push-connector` was listed twice.
+
+Changes in the source code can be found in :pr:`1332`.
+
+
+.. rubric:: 202511-1488 Fix incorrect commands
+
+The commands for checking running |product| services in Ubuntu 22.04 and 24.04 were switched.
+
+Changes in the source code can be found in :pr:`1314`.
+
+
+.. rubric:: 202511-1454 Remove wrong command from Upgrade
+
+A dangling :command:`zmcontrol status` command has been removed from the Upgrade procedure.
+
+Changes in the source code can be found in :pr:`1300`.
+
+
+.. rubric:: 202511-1229 Wrong command in Section Migration to Carbonio 
+
+A command in Section Migration to Carbonio has been amended
+
+Changes in the source code can be found in :pr:`1296`. 
+
+*****
+
+End of changelog
