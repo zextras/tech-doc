@@ -156,7 +156,7 @@ Once the :ref:`component-wsc-install` is operational, some tweaking can be
 applied to its configuration to improve performances.
 
 The remainder of this page contains a few tables that list the *Key
-names* and the *default values* of some ||wsc|| configuration values
+names* and the *default values* of some |wsc| configuration values
 that you can modify. You can take these tables into account in case you
 want to revert some values to their default after some unsatisfactory
 change.
@@ -221,9 +221,9 @@ variable should be passed in the same way.
 Configuration tables
 --------------------
 
-The following tables are available to optimise |wsc|: :ref:`Push
+The following tables are available to optimise Chats: :ref:`Push
 Connector <wsc-pool-opt>`, :ref:`Push Notifications Database
-<wsc-push-opt>`, and :ref:`the Chats databases <wsc-db-opt>`.
+<wsc-push-opt>`, and :ref:`the Chats Database <wsc-db-opt>`.
 
 .. _wsc-pool-opt:
 
