@@ -26,7 +26,7 @@ current_year = time.strftime('%Y')
 # -- Project information -----------------------------------------------------
 
 project = 'Carbonio Administration Guide'
-copyright = '2025: ZEXTRAS'
+copyright = ': ZEXTRAS'
 author = 'The Zextras Team'
 
 # this variable is used in the  upgrade procedure, remember to change it together with the release. Since upgrade doesn't discriminate on patch number, we do not need the last cipher.
