@@ -142,7 +142,7 @@ of them to expand the content.
 
    .. include:: /_includes/_installation/note-janus.rst
 
-   Finally, enable and start the service with the commands
+   Enable and start the service with the commands
 
    .. code:: console
 
