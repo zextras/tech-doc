@@ -24,3 +24,31 @@ IP address is present in the file: the line containing the
 ``nat_1_1_mapping`` variable should be::
 
   nat_1_1_mapping = "203.0.113.102"
+
+.. rubric:: VideoServer not exposed to the Internet (LAN-only deployments)
+
+In some deployment scenarios, the VideoServer is **not publicly
+exposed**, and video meetings take place only between peers within the
+same local network (LAN).
+
+In these cases, the automatically configured `public` IP address is not
+suitable and may cause connectivity issues.
+
+**Required action**
+
+When the VideoServer is not exposed externally, the
+``nat_1_1_mapping`` parameter **must be manually set to the private IP
+address** of the host where the VideoServer component is installed.
+
+For example:
+
+.. code-block:: ini
+
+  nat_1_1_mapping = "192.168.1.50"
+
+.. rubric:: Apply changes after updating janus.jcfg
+
+After each change to the ``nat_1_1_mapping`` parameter in the
+:file:`/etc/janus/janus.jcfg` configuration file, restart the
+VideoServer service to apply the new IP address.
+
