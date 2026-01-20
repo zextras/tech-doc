@@ -2,19 +2,10 @@
 ..
 .. SPDX-License-Identifier: CC-BY-NC-SA-4.0
 
-Besides this documentation, |zx| makes available the following online resources:
+.. card:: Partner Portal
 
-.. card:: Community
+   In addition to this documentation, authorized |zx| partners have access to further
+   resources and information through the `Partner Portal <https://partner.zextras.com/>`_.
 
-   Zextras Community is a collection of articles, guidelines, howtos,
-   and other useful material about |zx| products, including
-   |product|, whose dedicated section is
-   https://community.zextras.com/zextras-carbonio/
 
-.. card:: Official Discussion Forum
-
-    The `Official Forum <https://community.zextras.com/forum/>`_ is
-    the place where the community members interact, search for useful
-    resources, provide own feedback, share their experiences, or
-    comment articles. |product| has its own
-    https://community.zextras.com/forum/carbonio-general-thread/ section
+If you are not an authorized partner, please contact your solution provider for support and assistance.
