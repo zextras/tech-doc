@@ -22,17 +22,6 @@ The architecture of this scenario is depicted in the following diagram.
    Sample diagram of Video Server Node within the Single Server
    scenario.
 
-Requirements
-============
-
-Hardware Requirements for the Video Server Node are:
-
-* 8 vCPU
-* 8 GB memory
-* 50 GB disk space
-* If you plan to record video meetings, you need to allocate
-  sufficient space to store temporary files on this Node
-
 Network Configuration
 =====================
 

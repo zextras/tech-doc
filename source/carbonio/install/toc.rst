@@ -3,12 +3,7 @@
 =========
 
 This section contains the steps necessary to install Carbonio within
-your infrastructure, starting from the requirements.
-
-The core of this section is the description of the installation
-scenarios we envisioned and their deployment: the basic installation
-on a Single-Server, followed by more complex Multi-Node scenarios from
-3 to 15 Nodes.
+your infrastructure.
 
 As you will see in the next pages of this documentation, there are two
 alternatives to install |product|:
