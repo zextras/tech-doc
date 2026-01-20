@@ -49,7 +49,7 @@ therefore has the following architectural limitations:
    installing the **Collaboration Node** you need to install some
    packages also on the *Core Node*.
 
-   Architecture, requirements, and network configuration are specific
+   Architecture and network configuration are specific
    for each Node and can be found on the respective page:
    :ref:`Core Node <single-core-inst>`, :ref:`single-collab-inst`,
    :ref:`single-vs-inst`.
