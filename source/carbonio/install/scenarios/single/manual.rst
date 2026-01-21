@@ -43,19 +43,6 @@ The architecture of this scenario is depicted in the following diagram.
 
    Sample diagram of the Single Server Node.
 
-Requirements
-============
-
-Hardware Requirements for the Core Node are more demanding compared to
-each single Node in a |product| Multi-Node setup.
-
-* 8 vCPU
-* 24 GB memory
-* 100 GB disk space for the OS
-* Additional disk space for the users's e-mail storage, taking into
-  account the expected e-mail volume, quota, and retention
-  policies. This storage must be mounted under :file:`/opt/zextras`
-
 .. _scenario-single-network:
 
 Network Configuration
