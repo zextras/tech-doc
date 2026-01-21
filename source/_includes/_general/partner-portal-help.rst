@@ -10,7 +10,7 @@
 
 If you are not an authorized partner, please contact your solution provider for support and assistance.  
 
-For more information on how Carbonio is delivered, see:
+For more information on Carbonio, visit:
 
 .. raw:: html
 
