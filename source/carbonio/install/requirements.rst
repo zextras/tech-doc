@@ -16,13 +16,10 @@ the Admin Panel) must be opened only on the Node featuring the
 Hardware Requirements
 =====================
 
-For each node, these are the hardware requirements to comply with. The
-**Disk Space** mentioned in the table refers only to the Operating
-System and not the data (e-mail quota and e-mail traffic, number of
-documents stored, and so on), because space requirements for the data
-may vary considerably.
+Disk space requirements can vary significantly depending on e-mail
+quotas and traffic, the number of stored documents, and similar factors.
 
-Moreover, you must take into account the following:
+There are other factors you need to consider:
 
 * The Node that hosts |storage| and therefore the emails,
   is the node requiring more disk space.

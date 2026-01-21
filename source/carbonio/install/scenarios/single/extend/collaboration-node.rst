@@ -22,15 +22,6 @@ The architecture of this scenario is depicted in the following diagram.
    Sample diagram of the Collaboration Node within the Single Server
    scenario.
 
-Requirements
-============
-
-Hardware Requirements for the Collaboration Node are:
-
-* 4 vCPU
-* 16 GB memory
-* 50 GB disk space for the operating system
-
 Network Configuration
 =====================
 

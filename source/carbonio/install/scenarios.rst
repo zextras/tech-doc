@@ -4,11 +4,7 @@
  Installation Scenarios
 ========================
 
-This section features instructions to install |product| in different
-scenarios, which can be installed either by using the suggested
-method, based on an :ref:`Ansible playbook <ansible-run>` and the
-inventory template provided with each scenario, or manually by
-following instruction provided in Section :ref:`components-installation`.
+This section includes installation instructions for a number of suggested Carbonio installation scenarios.
 
 Requirements and Limitations
 ============================
@@ -16,19 +12,15 @@ Requirements and Limitations
 Before attempting to install a scenario, take into account the
 following:
 
-* In all scenarios, each Node should fulfil the
-  :ref:`carbonio-requirements`, except for the Single-Server, whose
-  *hardware requirements* slightly differ 
-
-* You need Customise the domain and FQDN in the *inventory files*
-  provided with each scenario
-
 * All scenarios, except for the Single-Server, feature the **Backup**
   functionality, which can be either local (e.g., a mounted local disk
   or partition), a dedicated NAS device, or a remote (cloud) storage.
 
 * In order to use Ansible_, set up a *control node* according to
   directions in section :ref:`install-with-ansible`
+
+* If you choose to install using Ansible, you need to customise the domain and FQDN in the inventory
+  files provided with each scenario.
 
 .. toctree::
    :maxdepth: 1

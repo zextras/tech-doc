@@ -40,5 +40,5 @@ Volunteer Translators
 Seeking Help on |product|
 =========================
 
-.. include:: /_includes/_general/community-help.rst
+.. include:: /_includes/_general/partner-portal-help.rst
 
