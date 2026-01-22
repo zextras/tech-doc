@@ -1167,11 +1167,11 @@ The syntax of the command is
 
 .. code:: console
 
-   zextras$ carbonio powerstore *destination server* accounts *account name*
+   zextras$ carbonio powerstore mailboxMove *destination server* accounts *account name*
 
-To move account ``alice@example.com`` to server ``example.net``
+To move account ``alice@example.com`` to server ``srv-02.example.net``
 including all its blobs, the command is
 
 .. code:: console
 
-   zextras$ carbonio powerstore example.net accounts alice@example.com
+   zextras$ carbonio powerstore mailboxMove srv-02.example.net accounts alice@example.com
