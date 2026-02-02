@@ -184,7 +184,7 @@ Step 7: Setup |mesh|
 Step 8: Bootstrap |file| Databases
 ----------------------------------
 
-.. include:: /_includes/_installation/_steps/db-bootstrap.rst
+.. include:: /_includes/_installation/_steps/db-bootstrap-ce.rst
 
 .. include:: /_includes/_installation/_steps/db-bootstrap-chats-ce.rst
 
