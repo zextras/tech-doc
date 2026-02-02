@@ -51,7 +51,7 @@ administrator user created previously.
 You need to run the commands only if the corresponding Component is
 installed.
 
-.. include:: /_includes/_installation/_steps/db-bootstrap.rst
+.. include:: /_includes/_installation/_steps/db-bootstrap-ce.rst
 
 .. include:: /_includes/_installation/_steps/db-bootstrap-chats-ce.rst
 
