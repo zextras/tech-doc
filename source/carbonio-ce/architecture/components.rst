@@ -74,7 +74,6 @@ When installing the Components, be careful that:
       * postgresql
       * carbonio-files-db
       * carbonio-mailbox-db
-      * carbonio-docs-connector-db
       * carbonio-tasks-db
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db
