@@ -123,7 +123,7 @@ shown, from top to bottom.
    .. hint:: A click on the :octicon:`square;2em;sd-text-primary`
       **All** checkbox toggles all items at once.
 
-   In our example, we remove all items older than 20 days: if today is
+   In our example, we move all items older than 20 days: if today is
    March 21st, this means all items whose date is before March 1st.
 
    .. image:: /img/adminpanel/new-hsm-settings.png
@@ -160,4 +160,10 @@ shown, from top to bottom.
    .. image:: /img/adminpanel/new-hsm-create.png
       :scale: 50
       :align: center
-              
+
+.. note::
+
+   For detailed information and advanced configuration options for HSM policies,
+   refer to the Command Line Interface (CLI) section:
+   :ref:`pws-policies`.
+
