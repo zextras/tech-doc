@@ -358,7 +358,7 @@ Hierarchical Storage Management
 ===============================
 
 The HSM feature requires a separate license (called **Storages HSM**
-in the |adminui|\' s *Subscriptions* section , therefore it may not be
+in the |adminui|\' s *Subscriptions* section), therefore it may not be
 available on your |carbonio| installation.
 
 :term:`HSM` is a data storage technique that moves data between
@@ -404,7 +404,7 @@ A policy can consist of a single rule that is valid for all item types
 .. rubric:: Accounts and Domains
             
 Contrary to the policies that can be defined in the |adminui| (see
-section :ref:`create-hsm-policy`, from the CLI you can create a policy that is
+section :ref:`create-hsm-policy`), from the CLI you can create a policy that is
 applied only on given accounts or domain, for example the policy::
 
   all:before:-10days domain:example.com

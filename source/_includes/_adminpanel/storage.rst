@@ -123,7 +123,7 @@ shown, from top to bottom.
    .. hint:: A click on the :octicon:`square;2em;sd-text-primary`
       **All** checkbox toggles all items at once.
 
-   In our example, we remove all items older than 20 days: if today is
+   In our example, we move all items older than 20 days: if today is
    March 21st, this means all items whose date is before March 1st.
 
    .. image:: /img/adminpanel/new-hsm-settings.png
