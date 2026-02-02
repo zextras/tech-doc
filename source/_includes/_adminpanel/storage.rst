@@ -160,4 +160,10 @@ shown, from top to bottom.
    .. image:: /img/adminpanel/new-hsm-create.png
       :scale: 50
       :align: center
-              
+
+.. note::
+
+   For detailed information and advanced configuration options for HSM policies,
+   refer to the Command Line Interface (CLI) section:
+   :ref:`pws-policies`.
+
