@@ -31,8 +31,6 @@ you can copy & paste all the following commands::
    psql -d activesync -c "ALTER DATABASE activesync REFRESH COLLATION VERSION;"
    psql -d auth -c "REINDEX DATABASE auth"
    psql -d auth -c "ALTER DATABASE auth REFRESH COLLATION VERSION;"
-   psql -d "carbonio-docs-connector-db" -c "REINDEX DATABASE \"carbonio-docs-connector-db\""
-   psql -d "carbonio-docs-connector-db" -c "ALTER DATABASE \"carbonio-docs-connector-db\" REFRESH COLLATION VERSION;"
    psql -d "carbonio-files-db" -c "REINDEX DATABASE \"carbonio-files-db\""
    psql -d "carbonio-files-db" -c "ALTER DATABASE \"carbonio-files-db\" REFRESH COLLATION VERSION;"
    psql -d "carbonio-tasks-db" -c "REINDEX DATABASE \"carbonio-tasks-db\""

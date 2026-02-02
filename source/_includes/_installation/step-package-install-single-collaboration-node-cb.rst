@@ -5,7 +5,7 @@
 
       .. code:: console
 
-         # apt install carbonio-tasks-db carbonio-docs-connector-db \
+         # apt install carbonio-tasks-db \
          carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
          carbonio-notification-push-db
 
@@ -14,7 +14,7 @@
 
       .. code:: console
 
-         # apt install carbonio-tasks-db carbonio-docs-connector-db \
+         # apt install carbonio-tasks-db \
          carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
          carbonio-notification-push-db
 
@@ -23,7 +23,7 @@
 
       .. code:: console
 
-         # dnf install carbonio-tasks-db carbonio-docs-connector-db \
+         # dnf install carbonio-tasks-db \
          carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
          carbonio-notification-push-db
 
@@ -32,6 +32,6 @@
 
       .. code:: console
 
-         # dnf install carbonio-tasks-db carbonio-docs-connector-db \
+         # dnf install carbonio-tasks-db \
          carbonio-ws-collaboration-db carbonio-message-dispatcher-db \
          carbonio-notification-push-db

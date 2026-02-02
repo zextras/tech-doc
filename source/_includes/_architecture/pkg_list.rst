@@ -19,7 +19,6 @@ Below is the list of Carbonio packages collected by component and updated to ver
    - **carbonio-notification-push-db**: `carbonio-notification-push-db` *(0.1.4-1)*
    - **carbonio-files-db**: `carbonio-files-db` *(0.1.8-1)*
    - **carbonio-mailbox-db**: `carbonio-mailbox-db` *(0.2.3-1)*
-   - **carbonio-docs-connector-db**: `carbonio-docs-connector-db` *(0.0.4-1)*
    - **carbonio-tasks-db**: `carbonio-tasks-db` *(0.0.5-1)*
 
 .. dropdown:: **Proxy**

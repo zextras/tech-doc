@@ -4,12 +4,6 @@
 
      # PGPASSWORD=$DB_ADM_PWD carbonio-mailbox-db-bootstrap carbonio_adm 127.0.0.1
 
-.. card:: |docs|
-
-  .. code:: console
-
-     # PGPASSWORD=$DB_ADM_PWD carbonio-docs-connector-db-bootstrap carbonio_adm 127.0.0.1
-
 .. card:: |file|
 
   .. code:: console

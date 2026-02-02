@@ -6,7 +6,7 @@
       .. code:: console
 
          # apt install carbonio-files-db carbonio-mailbox-db \
-         carbonio-docs-connector-db carbonio-tasks-db \
+         carbonio-tasks-db \
          carbonio-notification-push-db
 
    .. tab-item:: Ubuntu 24.04
@@ -15,7 +15,7 @@
       .. code:: console
 
          # apt install carbonio-files-db carbonio-mailbox-db \
-         carbonio-docs-connector-db carbonio-tasks-db \
+         carbonio-tasks-db \
          carbonio-notification-push-db
 
    .. tab-item:: RHEL 8
@@ -24,7 +24,7 @@
       .. code:: console
 
          # dnf install carbonio-files-db carbonio-mailbox-db \
-         carbonio-docs-connector-db carbonio-tasks-db \
+         carbonio-tasks-db \
          carbonio-notification-push-db
 
    .. tab-item:: RHEL 9
@@ -33,5 +33,5 @@
       .. code:: console
 
          # dnf install carbonio-files-db carbonio-mailbox-db \
-         carbonio-docs-connector-db carbonio-tasks-db \
+         carbonio-tasks-db \
          carbonio-notification-push-db
