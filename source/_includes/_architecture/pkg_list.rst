@@ -1,4 +1,4 @@
-Below is the list of Carbonio packages collected by component and updated to version 25.6.0.
+Below is the list of Carbonio packages collected by component:
 
 .. note::
 
