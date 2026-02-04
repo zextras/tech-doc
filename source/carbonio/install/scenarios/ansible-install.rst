@@ -123,8 +123,7 @@ Closing Remarks
 Once the script has successfully completed, you can immediately access
 your new |product| installation and execute the first necessary tasks,
 see Section :ref:`web-access`. You can then proceed to carry out further
-administration tasks, see :ref:`post-install`. In particular, if you plan
-to migrate to |product|, refer to section  :ref:`migration`.
+administration tasks, see :ref:`post-install`. 
 
 .. _ansible-ts:
 
