@@ -74,20 +74,6 @@ The content is organised in multiple parts:
 
          install/toc
 
-   .. grid-item-card:: Migration to |product|
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: migration/toc
-
-      How to migrate from an existing e-mail system, based on a |zx|
-      compatible platform or from a generic existent system.
-
-      .. toctree::
-         :hidden:
-
-         migration/toc
-
    .. grid-item-card:: Admin by Graphical User Interface
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
@@ -115,13 +101,6 @@ The content is organised in multiple parts:
 
          admincli/toc
 
-   .. grid-item-card:: |carbonio| User Guides
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link: https://docs.zextras.com/user-guides/carbonio/en/html
-
-      Everyday's usage of |product|, including its use on the
-      dedicated mobile Apps
 
    .. grid-item-card:: Monitoring
       :columns: 12 12 6 6
