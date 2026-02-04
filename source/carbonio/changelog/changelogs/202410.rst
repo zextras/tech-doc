@@ -22,8 +22,7 @@ to the documentation as example files to be imported for Calendar
 events and Contacts, respectively. For improved readability, they have
 been enclosed in drop-downs.
 
-See :ref:`migration` for the documentation, :pr:`709` and
-:pr:`710` for the source code.
+See :pr:`709` and :pr:`710` for the source code.
 
 
 .. rubric:: 202410-795 Add 24.9.0 changelog
