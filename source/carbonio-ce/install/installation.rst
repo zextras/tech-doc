@@ -6,9 +6,8 @@ Manual Installation
 
 .. _single-install-manual:
 
-The manual installation is organised in steps, some of which are
-preliminary configuration tasks, and some is optional.  During the
-installation and configuration of |product|, it is necessary to
+The manual installation is organised in steps.
+During the installation and configuration of |product|, it is necessary to
 execute commands from the command line, so make sure you have access
 to it.
 
@@ -36,7 +35,6 @@ Step 1: Repository Configuration
 --------------------------------
 
 .. include:: /_includes/_installation/step-repo-conf.rst
-.. include:: /_includes/_installation/repo-info.rst
 
 .. _installation-step2:
 
@@ -61,7 +59,7 @@ Step 3: System Upgrade and Package Installation
 
 .. div:: sd-fs-5
 
-   :octicon:`gear` Post-Installation tasks
+   :octicon:`gear` Package installation completed
 
 .. _installation-step4:
 

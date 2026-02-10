@@ -3,6 +3,8 @@
 
 .. include:: /_includes/_installation/_repo/pg.rst
 
+.. rubric:: Update Package List and Install Postgres
+   
 .. tab-set::
 
    .. tab-item:: Ubuntu 22.04
@@ -33,6 +35,6 @@
 
 .. include:: /_includes/_installation/step-conf-db.rst
 
-Finally, complete the Postgres configuration by running these commands.
+Complete the Postgres configuration by running these commands.
 
 .. include:: /_includes/_installation/_repo/pg-access.rst
