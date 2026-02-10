@@ -1,7 +1,7 @@
 
 .. div:: sd-fs-5
 
-   :octicon:`thumbsup`  Installation Complete
+   :octicon:`thumbsup`  Installation Completed
 
 At this point installation is complete and you can start using
 |product| and access its graphic interface as explained in section
