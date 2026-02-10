@@ -5,7 +5,7 @@ Components Description and Installation
 =======================================
 
 |product| can be installed as a Single-Server, with all Components on a
-same Node, or as a Multi-Server, with Components installed on multiple Nodes.
+same Node.
 
 Please review carefully this sections before attempting to install.
 
@@ -18,32 +18,11 @@ A |product| infrastructure is created with the installation of some
 A **Component** is a |product| functionality that is considered atomic and
 consists of one or more packages.
 
-.. card:: The modular nature of |product|
-
-   As we will see, it's possible to install a single Component on a
-   dedicated node or group multiple Components according to affinity rules.
-
-   Although this is not a suggested or supported scenario, it would be
-   technically possible to install almost all |product| Components on a
-   single virtual machine.
-
-   The possibility of installation by Components allows you to design
-   architectures that precisely correspond to the requirements and
-   purposes of your infrastructure.
 
 The Components of |product|
 ===========================
 
 This is the list of Components that make up a |product| installation.
-
-When installing the Components, be careful that:
-
-* Postgres, Grafana, Zookeper, and Kafka are third-party software that
-  are installed from their respective official repositories
-
-* On each Node, you need to install package
-  ``service-discover-agent``, except on the Node on which
-  ``service-discover-server`` is installed
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -246,25 +225,6 @@ installation, please review these important remarks:
   :ref:`component-db-install` Component. Then you can proceed with the
   other infrastructure Components and finally with any other Component you need
   in your installation.
-
-Optional Components
-===================
-
-If a component is not required in your environment, you can skip its installation.
-
-When a component is not installed, this may also allow you to **omit related packages on other nodes**, depending on your deployment architecture.
-
-For example, if your setup does not use the **Files** feature, you can avoid installing not only the main component package:
-
-- ``carbonio-files`` (**Files** "application" node)
-
-but also the related packages on other nodes:
-
-- ``carbonio-files-db`` (**Database** node)
-- ``carbonio-files-ui`` (**Proxy** node)
-
-This approach helps reduce system complexity and resource usage by installing only the components strictly required by your environment.
-
 
 .. toctree::
    :hidden:

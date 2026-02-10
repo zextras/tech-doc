@@ -18,13 +18,10 @@ Launch the |carbonio| bootstrap process
 
    # carbonio-bootstrap
 
-During the process, you need to provide these values, which you can
-retrieve from  the first Mesh and Directory node.
+During the process, you need to provide these values:
 
-* ``Ldap master host`` is the FQDN of the first Mesh and Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+* ``Ldap master host`` is the |product| FQDN 
+* ``Ldap Admin password`` (:ref:`ldap-admin-password <get-ldap-password>`)
 
 Join |mesh|
 -----------

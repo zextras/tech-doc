@@ -4,8 +4,8 @@
  Upgrade to |product| |release|
 ================================
 
-This section contains the manual upgrade procedures to the latest
-|carbonio| release, from the :ref:`latest <carbonio-upgrade>`
+This section contains the upgrade procedures to the latest
+|product| release, from the :ref:`latest <carbonio-upgrade>`
 |prev| and from :ref:`older <up-old>` versions, the changelogs of
 recent and older releases, and any security advice, if present.
 
@@ -16,13 +16,10 @@ for installation along with the other system updates. Therefore, the
 upgrade.
 
 The procedure will upgrade any version of |product| to
-the latest available at the moment you start the procedure. In other
-words, the starting version is not important: upgrading from *25.1*,
-*25.3* or *25.6* will bring |product| to the latest version of
-|product| (at the time of writing, |release|).
+the latest available at the moment you start the procedure (at the time of writing, |release|).
 
 Before starting an upgrade procedure, it is strongly suggested to make
-a snapshot of the Nodes and a backup of the data.
+a snapshot of the server and a backup of the data.
 
 .. index:: OS upgrade, Operating System upgrade
 

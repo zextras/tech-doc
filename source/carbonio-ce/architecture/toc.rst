@@ -16,7 +16,7 @@ Fundamental Concepts
 
 |product| is built on a **multi-component architecture**.
 Each component is responsible for a specific part of the collaboration suite
-and can be installed on a Single Node or distributed across multiple Nodes.
+and can be installed on a |product| node.
 
 
 Core and Collaboration Components
