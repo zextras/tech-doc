@@ -6,7 +6,6 @@ MTA AV/AS
 Install Packages
 ----------------
 
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
 .. include:: /_includes/_architecture/_packages/component-mta.rst
 
 Bootstrap |carbonio|
@@ -14,17 +13,13 @@ Bootstrap |carbonio|
 
 .. include:: /_includes/_installation/bootstrap.rst
 
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh and Directory node.
+During the process, you need to provide these values:
 
-* ``Ldap master host`` is the FQDN of the first Mesh and Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+* ``Ldap master host`` is the |product| FQDN 
+* ``Ldap Admin password`` (:ref:`ldap-admin-password <get-ldap-password>`)
 
 * ``Bind password for postfix ldap user`` and ``Bind password for
-  amavis ldap user`` are obtained from the first Mesh and Directory
-  node and unless they have been changed they will match the ``Ldap
+  amavis ldap user`` unless they have been changed they will match the ``Ldap
   Admin password``
 
 

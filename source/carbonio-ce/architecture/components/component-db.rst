@@ -3,12 +3,10 @@
 Database
 ========
 
-.. include:: /_includes/_architecture/_components/component-db.rst
+To install Carbonio CE, the availability of a Postgres database is required. 
 
 Installation of PostgreSQL
 --------------------------
-
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
 
 .. include:: /_includes/_installation/pg-ce.rst
 
@@ -22,13 +20,10 @@ Bootstrap |product|
 
 .. include:: /_includes/_installation/bootstrap.rst
 
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh and Directory node.
+During the process, you need to provide these values:
 
-* ``Ldap master host`` is the FQDN of the first Mesh and Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+* ``Ldap master host`` is the |product| FQDN 
+* ``Ldap Admin password`` (:ref:`ldap-admin-password <get-ldap-password>`)
 
 
 Join |mesh|

@@ -4,21 +4,17 @@
  Requirements
 ==============
 
-|product| can be installed in Single-Server or Multi-Server, with the
-various services and **Components** spread across two or more **Nodes**.
+|product| can be installed in a single machine. 
 
 Requirements are divided into groups: :ref:`system-requirements`,
 :ref:`software-requirements`, :ref:`rhel-requirements`, and
 :ref:`more-requirements`.
 
-To make requirements easier to understand, we provide software
-requirements for a **Node**, which is either the only server used in a
-Single-Server or each server in a Multi-Server infrastructure.
 
 .. _system-requirements:
 
-System Requirements for a Node
-==============================
+System Requirements
+===================
 
 .. grid:: 1 1 1 2
    :gutter: 2
@@ -32,9 +28,8 @@ System Requirements for a Node
          "RAM", "16 GB min., 32+ GB recommended"
          "Disk space (operating system and |product|)", "50 GB"
 
-      These requirements are valid for each Node in a |product|
-      Installation and may vary depending on the size of the
-      infrastructure, which includes the services running on each node
+      These requirements may vary depending on the size of the
+      infrastructure, which includes the services running
       and the number and size of each mailbox. This means that if for
       example you plan to assign a *10GB* quota to each of your *20
       users*, you must increase the Disk space requirements
@@ -53,8 +48,8 @@ System Requirements for a Node
 
 .. _software-requirements:
 
-Software Requirements for a Node
-================================
+Software Requirements
+=====================
 
 |product| is available for **64-bit** CPUs only and can be installed
 on top of any of these vanilla distributions:
@@ -103,7 +98,7 @@ install |product|.
    configuration.
 
 .. note:: Only |product| Components should be installed on a |product|
-   Node. Installing additional software is unsupported and may cause
+   server. Installing additional software is unsupported and may cause
    conflicts that could compromise |product|’s correct
    functioning. For example, software like Webmin, Cockpit, or Postfix
    may be using the same ports as |product|, therefore interfering
@@ -121,9 +116,9 @@ Network Configuration Guidelines
 RHEL Specific Requirements
 ==========================
 
-.. note:: If you plan to install |product| automatically on a
-   *Single-Server* using the downloadable script (see Section
-   :ref:`single-install-auto`), these requirements are checked and
+.. note:: If you plan to install |product|
+   using the downloadable script (see Section
+   :ref:`script-install`), these requirements are checked and
    automatically enabled if missing.
 
 .. _rhel8-req:
@@ -147,15 +142,11 @@ RHEL 9
 Additional Requirements
 =======================
 
-When you do not use the :ref:`script-based installation
-<single-install-auto>`, i.e., Single-Server manual installation or
-Multi-Server installation, take into account the following points.
+Take into account the following points.
 
-* If none of the Nodes is exposed to the Internet, you need to forward
-  two ports from the public IP: port **25/smtp** to the Node featuring
-  the MTA Component to be able to receive mail, and port **443/https** to
-  the node installing the Proxy Component to allow users to access their
-  webmail from a remote location
+* You need to forward two ports to the |product| server from the public IP: port **25/smtp**
+  to be able to receive mail, and port **443/https** to allow users to access their
+  webmail from a remote location.
 
 * WebSocket must be allowed and a Certificate including their support
   must be used to access |product| if you plan to install the |wsc|
@@ -190,26 +181,16 @@ Firewall Ports
 ==============
 
 For |ce| to operate properly, it is necessary to allow network
-communication on specific ports. On a Single-Server installation, only
-ports in the *External Connections* must be opened, because all the
-remaining traffic does not leave the server.
+communication on specific ports. 
 
-In Multi-Server installation, ports listed in the *Internal
-Connections* must be opened on **all** nodes, while those in the
-*External Connections* only on the node on which the corresponding
-Component is installed. For example, port 443 should be opened only on the
-node hosting the **Proxy** Component.
-
-Furthermore, ports in Internal and External connections are grouped
-according to the Component that require them, so all ports listed in a
-table must be opened only on the Node on which the Component is installed.
+Ports are grouped according to the Component that require them.
 
 .. _fw-external:
 
 External Connections
 --------------------
 
-These ports must be forwarded to the Node installing each Component, to
+These ports must be forwarded to |product|, to
 allow communication with remote services on the Internet.
 
 .. card:: MTA Component
@@ -259,125 +240,4 @@ allow communication with remote services on the Internet.
 
       "20000-40000", "UDP", "Client connections for the audio and
       video streams"
-
-.. _fw-internal:
-
-Internal Connections
---------------------
-
-Traffic to these ports must be allowed on the Nodes where the
-corresponding Component is installed, for a proper communication among
-|product|'s internal services.
-
-.. card:: Every Node
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "22", "TCP", "SSH access"
-      "8301", "TCP and UDP", "management of Gossip protocol [2]_ in the LAN"
-      "9100", "TCP", "|monit| Node exporter"
-      "9256", "TCP", "|monit| Process exporter"
-
-   .. [2] The Gossip protocol is an encrypted communication protocol
-      used by |mesh| for message broadcasting and membership
-      management.
-
-.. card:: Database Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "5432", "TCP", "Postgres access"
-      "9187", "TCP", "Postgres data export to |monit|"
-
-.. card:: Directory Server Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "389", "TCP", "unsecure LDAP connection"
-      "636", "TCP", "secure LDAP connection"
-      "9330", "TCP", "LDAP data export to |monit|"
-
-.. card:: MTA Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "25", "TCP", "Postfix incoming mail"
-      "465", "TCP", "Message Submission over TLS protocol"
-      "587", "TCP", "Port for SMTP autenthicated relay, requires STARTTLS
-      (or opportunistic SSL/TLS)"
-      "7026", "TCP", "bind address of the Milter service"
-      "9810", "TCP", "MTA data export to |monit|"
-
-.. card:: Mailstore & Provisioning Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "7025", "TCP", "local mail exchange using the LMTP protocol"
-      "7071", "TCP", "Port for SOAP services communication"
-      "7072", "TCP", "NGINX discovery and authentication"
-      "7073", "TCP", "SASL discovery and authentication"
-      "7110", "TCP", "internal POP3 services"
-      "7143", "TCP", "internal IMAP services"
-      "7993", "TCP", "internal IMAP secure access"
-      "7995", "TCP", "internal POP3 secure access"
-      "8080", "TCP", "internal HTTP services access"
-      "8735", "TCP", "Internal mailbox :octicon:`arrow-both` mailbox communication"
-      "8742", "TCP", "internal HTTP services, advanced module"
-      "8743", "TCP", "internal HTTPS services, advanced module"
-      "9330", "TCP", "MySQL data export to |monit|"
-
-.. card:: |vs| Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "8188", "TCP", "Internal connection"
-      "8090", "TCP", "Servlet communication"
-
-.. card:: Proxy Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "9113", "TCP", "nginx data export to |monit|"
-
-.. card:: |mesh| Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "8300", "TCP", "management of incoming requests from other
-      agents"
-      "8302", "TCP and UDP", "management of Gossip protocol [4]_ in the WAN"
-      "8600", "TCP and UDP", "DNS service for |mesh|"
-      "9107", "TCP", "|mesh| data export to |monit|"
-      "15692", "TCP", "RabbitMQ data export to |monit|"
-      "20000-21255", "TCP", "range for registrations ports for sidecar
-      services (automatically assigned)"
-
-   .. [4] The Gossip protocol is an encrypted communication protocol
-      used by |mesh| for message broadcasting and membership
-      management.
-
-.. card:: |monit| Component
-
-   .. csv-table::
-      :header: "Port", "Protocol", "Service"
-      :widths: 10 10 80
-
-      "prometheus", "TCP", "9090"
-      "prometheus SSH", "TCP", "9999"
 

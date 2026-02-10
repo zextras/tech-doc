@@ -3,6 +3,8 @@
 
 .. include:: /_includes/_installation/_repo/pg.rst
 
+.. rubric:: Update Package List and Install Postgres
+   
 .. tab-set::
 
    .. tab-item:: Ubuntu 22.04
@@ -25,7 +27,7 @@
       :sync: rhel8
 
       .. include:: /_includes/_installation/rhel-pg.rst
-
+         
    .. tab-item:: RHEL 9
       :sync: rhel9
 
@@ -33,7 +35,6 @@
 
 .. include:: /_includes/_installation/step-conf-db.rst
 
-Finally, allow the other nodes to access the databases that will be
-stored on this node by running these commands.
+Complete the Postgres configuration by running these commands.
 
 .. include:: /_includes/_installation/_repo/pg-access.rst

@@ -54,7 +54,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: architecture/toc
 
-      Architecture of |product| and Components description and installation
+      Architecture of |product| and Components description
 
       .. toctree::
          :hidden:
@@ -67,8 +67,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: install/toc
 
-      Information on |product| and its installation, requirements, some
-      pre-cooked installation Scenarios, and post-installation activities
+      Information on |product| installation, requirements and post-installation tasks
 
       .. toctree::
          :hidden:

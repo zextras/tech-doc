@@ -6,32 +6,26 @@
 In this section we introduce some important management tasks for
 advanced |carbonio| features. Currently, the available topics are:
 
-:ref:`manage-alias` explains how to add aliases to an e-mail address.
+:ref:`manage-alias` explains how to add aliases to an e-mail address
 
 :ref:`carb-customisations` guides you in the customisation of 
-|product|.
+|product|
 
 :ref:`cli-attachments` shows how to manage the attachments the users
-can send.
+can send
 
 :ref:`cli-features` explains how to set or check if Mails and Files
-components are enabled for a user or a COS.
+components are enabled for a user or a COS
 
 :ref:`le-renew` shows how to renew a Let's Encrypt-generated
-certificate, either manually or automatically.
+certificate, either manually or automatically
 
 :ref:`disclaimer-cli` contains useful commands to manage domain disclaimers
      
-:ref:`cli-analytics` explains how to enable or disable analytics.
+:ref:`cli-analytics` explains how to enable or disable analytics
 
 :ref:`change-ip` features direction to modify the IP address of
-|product| Single-Server
-
-:ref:`change-hostname` shows the procedures that you need to change
-the hostname(s) of a |product| infrastructure
-
-:ref:`cli-remove-node` guides you in the decommissioning of a Node
-from a |product| infrastructure
+|product| server
 
 :ref:`upstream-proxy` shows how to allow |product| to connect to the
 Internet through an HTTP Proxy
@@ -55,8 +49,6 @@ Webmail is served
    management/domaindisclaimer
    management/analytics
    management/changeip
-   management/changehostname
-   management/removeserver
    management/http-proxy
    management/freshclam-proxy
    management/locale

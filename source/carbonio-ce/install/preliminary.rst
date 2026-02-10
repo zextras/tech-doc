@@ -5,9 +5,8 @@
  Preliminaries
 ===============
 
-In this section, we list some naming conventions we use in the
-documentation and present some tasks you need to carry out on **each
-of the Nodes** before starting with the actual installation.
+In this section, we present some tasks you need to carry out before
+starting with the actual installation.
 
 .. hint:: We invite you to subscribe to our newsletter to gain early
    access to dedicated content for Carbonio CE admins, including:
@@ -21,12 +20,6 @@ of the Nodes** before starting with the actual installation.
    Please fill in the form at
    https://zextras.com/carbonio-community-edition#discoverproduct
 
-.. _naming-conv:
-
-Naming conventions
-==================
-
-.. include:: /_includes/_installation/naming.rst
 
 .. _repo-conf:
 

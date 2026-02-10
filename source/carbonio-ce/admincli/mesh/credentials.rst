@@ -31,23 +31,16 @@ the ``root`` user. The **secret** is needed when running the
 :command:`pending-setups` command and during the Service Discover
 installation wizard.
 
-Hence, if you do not remember the password, log in as ``root`` to your
-Single-Server |product|, while if you are on a Multi-Server, log in to
-any |mesh| *Server*, then read the
-:file:`/var/lib/service-discover/password` file.
-
 In case you want to change the secret, or you *need* to change it (for
 example because it has been compromised, shared with or sent to the
 wrong persons, or if one of the system administrators has left your
 company), it is necessary to Reset |mesh| credentials: in the
-remainder, you can find step-by-step directions for 
-:ref:`Single-Server <mesh-reset-single>` and for :ref:`Multi-Server
-<mesh-reset-multi>` 
+remainder, you can find step-by-step directions. 
 
 .. _mesh-reset-single:
 
-Reset |mesh| Credentials on Single-Server
------------------------------------------
+Reset |mesh| Credentials
+------------------------
 
 .. include:: /_includes/_admincli/mesh/credentials-single.rst
            
@@ -60,36 +53,3 @@ Generate New Credentials
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: /_includes/_admincli/mesh/generatecredentials.rst
-
-.. _mesh-reset-multi:
-
-Reset |mesh| Credentials on Multi-Server
-----------------------------------------
-
-On a Multi-Server, before starting the procedure it is necessary to
-identify the **Leader Node**, on which to carry out some preliminary
-tasks, then wipe the old secret, generate the new one, and finally set
-up the other nodes by copying the credentials on the remaining nodes
-and restart the service. Instructions to find the leader node can be found in Section
-:ref:`mesh-find-leader`.
-
-Find Leader Node's IP Address
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   
-.. include:: /_includes/_admincli/mesh/leaderip.rst
-          
-Wipe Old Credentials
-~~~~~~~~~~~~~~~~~~~~
-
-.. include:: /_includes/_admincli/mesh/wipecredentials.rst
-
-Generate New Credentials
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: /_includes/_admincli/mesh/generatecredentials.rst
-
-             
-Set up Other Nodes
-~~~~~~~~~~~~~~~~~~
-
-.. include:: /_includes/_admincli/mesh/othernodes.rst
