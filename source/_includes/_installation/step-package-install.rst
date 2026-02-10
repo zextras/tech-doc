@@ -105,23 +105,3 @@ Next, we install all packages needed for |product|.
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
          carbonio-catalog
 
-After the successful package installation, you can check that all
-|product| services are running, by using
-
-.. code:: console
-
-   # systemctl status carbonio-*
-
-If any service is in :red:`failed` status, restart it. Some of he
-|monit| exporters may not correctly start, because the bootstrap of
-the databases (see section :ref:`rhel-pg`) must be executed in
-advance. After that step, if any of the services is not in ``running``
-state, you will need to manually start it by running a command like
-the following, replacing
-``carbonio-prometheus-nginx-exporter.service`` with the service that
-is not running.
-
-
-.. code:: console
-
-   # systemctl restart carbonio-prometheus-nginx-exporter.service

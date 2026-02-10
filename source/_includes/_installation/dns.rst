@@ -2,10 +2,6 @@ This section collects all DNS-related settings, which are crucial in
 the setup of |product|, and examples to correctly verify them. To set
 them, you can use the DNS console of your domain administration panel.
 
-The most important settings, which is mandatory for a Multi-Node
-setup, is that each Node must be able to carry out DNS resolution
-autonomously and be able to resolve all other Nodes' IP addresses.
-
 In the remainder of this section, we assume that your |product|
 infrastructure has public IP **203.0.113.124** and FQDN
 **mail.example.com**.

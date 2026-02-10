@@ -46,5 +46,5 @@
          # systemctl restart postgresql-16
 
 .. hint:: You may replace the ``0.0.0.0/0`` network with the one
-   within the cluster is installed (e.g., **172.16.0.0/24**) to prevent
+   within |product| is installed (e.g., **172.16.0.0/24**) to prevent
    unwanted accesses.
