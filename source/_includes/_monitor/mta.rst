@@ -101,4 +101,4 @@ A more detailed help is provided by command
 
 .. code:: console
 
-   $zextras /opt/zextras/libexec/zmmsgtrace --help
+  zextras$ /opt/zextras/libexec/zmmsgtrace --help
