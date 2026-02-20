@@ -4,29 +4,19 @@
  Prepare the Ansible Environment
 =================================
 
-Section :ref:`components-installation` reviews all the Components that
-make up |product| and the tasks required to successfully complete the
-installation.
+Section :ref:`components-installation` reviews all the Components that make up |product|.
 
-To make the installation process easier and faster, this section
-introduces an alternative installation method based on Ansible Galaxy,
-an `Ansible playbook
-<https://docs.ansible.com/ansible/latest/index.html>`_, and an Ansible
-*inventory file* .
+This section describes the installation method based on Ansible.
 
-.. note:: Ansible is free software that allows you to automate the
-   configuration and management procedures on Unix-like and Windows
-   systems.
+Ansible is free and open-source software that automates configuration and management tasks on Unix-like and Windows systems.
+The installation relies on Ansible Galaxy, an Ansible playbook, and an Ansible inventory file.
 
-Ansible will read an `inventory file` containing a list of the Nodes
-on which to install the various Components and automatically execute on the
-proper Node all the necessary tasks.
+Ansible reads the `inventory file`, which contains the list of Nodes on which the various Components must be installed, and automatically
+executes all the required tasks on the appropriate Node.
 
-Once the **Control Node** (i.e., a workstation with Ansible installed
-and from which to launch |product| installations, see Section
-:ref:`ansible-setup` below) has been properly set up according the
-directions below, the ansible installation only requires to edit the
-inventory file and run **one CLI command** to execute the playbook.
+Once the **Control Node** (that is, a workstation with Ansible installed and from which Carbonio installations are launched; see Section
+:ref:`ansible-setup` below) has been properly configured according to the instructions
+provided, the installation procedure simply requires editing the inventory file and running **a single CLI command** to execute the playbook.
 
 .. _ansible-req:
 
@@ -139,21 +129,11 @@ system. You can follow these `directions
 Install |carbonio| Playbook
 ===========================
 
-|product| Playbook is available from Ansible Galaxy in two variants:
-one for Single-Server Scenario and one for all other scenarios. You
-need to simply run a command to install either of them. The playbooks
-are **version-dependant**: to install |product| you will need to use
-the corresponding playbook version. Please ensure that you always
-have installed the latest playbook to be able to install the most
+|product| Playbook is available from Ansible Galaxy.
+Please ensure that you always have installed the latest playbook to be able to install the most
 recent |product| release.
 
-.. card:: Playbook for Single-Server Scenario
-
-   .. code:: console
-
-      # ansible-galaxy collection install zxbot.carbonio_ssinstall -U
-
-.. card:: Playbook for all other Scenarios
+.. card:: Playbook for |product| installation
 
    .. code:: console
 
