@@ -1,8 +1,8 @@
 .. _carbonio-requirements:
 
-==============
- Requirements
-==============
+=======================
+ Carbonio Requirements
+=======================
 
 Each Node must satisfy the :ref:`hw-requirements` and
 :ref:`software-requirements` below, while on the contrary,

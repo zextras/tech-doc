@@ -7,7 +7,7 @@ To upgrade with Ansible, the inventory file must accurately reflect
 the |product| infrastructure. This is particularly important if you
 installed |product| manually and are now upgrading with Ansible. In
 this case, you can use an inventory file from one of the
-:ref:`scenarios` and adapt it to your |carbonio| infrastructure. See
+scenarios and adapt it to your |carbonio| infrastructure. See
 section :ref:`ansible-inventory` for directions.
 
 These are the alternatives to upgrade an existent |product|

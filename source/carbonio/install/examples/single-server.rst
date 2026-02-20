@@ -1,49 +1,33 @@
-Single-Server Installation with Ansible
-=======================================
+Example: 1 node Installation
+===============================
 
 
 Architecture
 ------------
 
-The architecture of this scenario is depicted in the following diagram.
+The architecture of this installation example is depicted in the following diagram.
 
 .. _fig-single-core-ansible:
 
-.. figure:: /img/carbonio/scenario-single-ansible-without-files-and-preview.png
-   :width: 50%
+.. figure:: /_images/1_node.png
+   :width: 80%
    :align: center
 
-   Sample diagram of the Single Server Node installed using Ansible.
+   Sample diagram of a Single Server Node.
 
-The scenario involves a single server node providing essential functions:
+The example involves a single server node providing essential functions:
 
 * Mail
 * Calendar
 * Contacts
 * Backup
+* Preview/Files 
+* Tasks/Docs/Chats
+* Videoserver/Videorecording
 
-If your use case requires other collaboration tools or video
-capabilities, the single-server installation can be extended by
-adding:
-
-* Preview/Files - on the same Node
-* Tasks/Docs/Chats - on a second Node
-* Videoserver/Videorecording - on a third Node
-
-Depending on the features chosen, the architecture changes and can be
-seen in the following diagram.
-
-.. _fig-single-extended-ansible:
-
-.. figure:: /img/carbonio/scenario-single-vs-ansible-with-optional-files-and-preview.png
-   :width: 79%
-   :align: center
-
-   Sample diagram of the optional Collaboration and Video Server Nodes
-   within the Single Server scenario.
 
 Installation
-============
+------------
 
 This Single Node scenario can be installed using Ansible: you need to
 setup a control node to run Ansible playbooks (please refer to section

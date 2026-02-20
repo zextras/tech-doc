@@ -81,14 +81,6 @@ code.
 
 Clarify on which Node the CLI command for registering |product| must be executed.
 
-
-.. rubric:: 202410-806 Split Carbonio Installation Instructions
-
-The :ref:`installation instructions <scenarios>` have been split and renamed to improve clarity and prevent misunderstandings.
-
-See :pr:`727` and :pr:`728` for the source code.
-
-
 .. rubric:: 202410-807 Additional Changes in 24.9.0
 
 In this issue, a few changes for the **24.9.0** release were

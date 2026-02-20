@@ -53,7 +53,7 @@ See :ref:`component-mesh-only-install` for the documentation and :pr:`773` for t
 
 We added to each installation scenario the list of Components that will be installed on each Node that is part of the scenario.
 
-See each scenario description in :ref:`scenarios` for the documentation and :pr:`772` for the source code.
+See each scenario description in scenarios for the documentation and :pr:`772` for the source code.
 
 
 .. rubric:: 202411-839 Change IP address on Carbonio CE Single-Server
