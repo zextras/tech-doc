@@ -8,7 +8,7 @@ Event Streaming
    Kafka Raft (KRaft) instead.
 
 This Component is required to enable the |carbonio|
-:ref:`activereplica` feature, and is based on Apache's *Kafka* and
+activereplica feature, and is based on Apache's *Kafka* and
 *ZooKeeper*, which must be installed together on the same Node. For
 better performances, it is strongly suggested to install both the
 services on a dedicated Node, otherwise you can opt to directly access
