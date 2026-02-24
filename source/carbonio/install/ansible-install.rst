@@ -5,8 +5,8 @@
 =================================
 
 |product| can be installed automatically by using the *inventory
-files*, provided with each installation scenario, with the Ansible
-software. The components of a sample |product| installation and their
+files*, with the Ansible.
+The components of a sample |product| installation and their
 interaction is depicted in the diagram below.
 
 .. _fig-ansible:
