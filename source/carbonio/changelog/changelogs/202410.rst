@@ -48,8 +48,7 @@ See :pr:`711` and :pr:`725` for the source code.
 
 The directions for the |product| upgrade with Ansible have been rewritten to mention that the playbook itself must be upgraded.
 
-See :ref:`carbonio-upgrade` for the documentation, :pr:`725` and
-:pr:`726` for the source code.
+See :pr:`725` and :pr:`726` for the source code.
 
 
 .. rubric:: 202410-801 Remove concept of supported versions
