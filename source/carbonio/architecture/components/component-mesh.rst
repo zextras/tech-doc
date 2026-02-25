@@ -3,28 +3,33 @@
 Mesh
 ====
 
-This Component should be used only when deploying multiple |Mesh| servers
-in the |product| infrastructure and *only* for additional Nodes (the
-Mesh & Directory Component should be used on the first Node on which a
-|Mesh| server is deployed).
-
-Install Packages
-----------------
-
-.. include:: /_includes/_architecture/_packages/component-mesh.rst
-
-Bootstrap |product|
--------------------
-
-.. include:: /_includes/_installation/bootstrap.rst
-
-Set up |mesh|
--------------
-
-.. include:: /_includes/_installation/mesh-agent.rst
+.. contents::
+   :local:
+   :depth: 2
 
 
-Pending setups
---------------
+Overview
+--------
 
-.. include:: /_includes/_installation/pset.rst
+The **Mesh** component corresponds to the Mesh & Directory component but does not include the Directory Server service.
+
+It provides the mesh infrastructure required for service discovery, coordination, and inter-service communication within the Carbonio ecosystem.
+
+This component is typically used in complex deployment scenarios where a high degree of redundancy and scalability is required. In such architectures, the Directory service is hosted on dedicated nodes, while additional Mesh nodes ensure resilience and distribution of the service discovery layer.
+
+
+Packages
+--------
+
+The following packages are required for the **Mesh** component:
+
+.. code-block:: bash
+
+   service-discover-server
+   carbonio-user-management
+
+
+.. important::
+
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.
