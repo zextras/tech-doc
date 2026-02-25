@@ -1,47 +1,35 @@
 .. _component-tasks-install:
 
-=======
- Tasks
-=======
+Tasks
+=====
 
-Install Packages
-================
-
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-tasks.rst
-
-.. dropdown:: On the Database Node
-   :color: danger
-   :class-title: sd-bg-danger
-   :open:
-
-   Additionally, go to the Node which features the
-   :ref:`component-db-install` Component and make sure that the
-   corresponding :ref:`DB connector <other-db-conn-install>` package
-   (``carbonio-tasks-db``) is installed. If not, install it, then
-   execute the :ref:`comp-db-ps` and :ref:`initialise the database
-   <dbs-bootstrap>`.
+.. contents::
+   :local:
+   :depth: 2
 
 
-Bootstrap |carbonio|
-====================
+Overview
+--------
 
-.. include:: /_includes/_installation/bootstrap.rst
+The **Tasks** component enables users to create, manage, and track tasks within the Carbonio platform.
 
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh & Directory node.
+It provides functionalities for task assignment, setting due dates, and monitoring progress, facilitating efficient task management and collaboration among users.
 
-* ``Ldap master host`` is the FQDN of the first Mesh & Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+The Tasks component integrates with other Carbonio services to provide a seamless user experience.  
+For example, it can interact with the email system to send notifications about task assignments or updates, and may integrate with the calendar to display task deadlines alongside other scheduled events, helping users manage their time effectively.
 
-Join |mesh|
-===========
 
-.. include:: /_includes/_installation/mesh-agent.rst
+Packages
+--------
 
-Pending setups
---------------
+The following packages are required for the **Tasks** component:
 
-.. include:: /_includes/_installation/pset.rst
+.. code-block:: bash
+
+   carbonio-tasks
+
+
+.. important::
+
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

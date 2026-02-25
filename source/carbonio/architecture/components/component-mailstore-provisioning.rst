@@ -3,31 +3,41 @@
 Mailstore & Provisioning
 ========================
 
-Install Packages
-----------------
+.. contents::
+   :local:
+   :depth: 2
 
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-mailstore-provisioning.rst
 
-Bootstrap |carbonio|
---------------------
+Overview
+--------
 
-.. include:: /_includes/_installation/bootstrap.rst
+The **Mailstore & Provisioning** component is a critical part of Carbonio responsible for managing user mailboxes and handling the storage of email data.  
 
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh & Directory node.
+It encompasses both the storage of email messages (**Mailstore**) and the management of user accounts and their associated resources (**Provisioning**).
 
-* ``Ldap master host`` is the FQDN of the first Mesh & Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+The Mailstore function ensures that all email data is properly stored, maintained, and accessible.  
+The Provisioning function manages user accounts, including creation, modification, deletion, and assignment of permissions and resources.
 
-Join |mesh|
------------
+This component is essential for the operation of several key Carbonio features:
 
-.. include:: /_includes/_installation/mesh-agent.rst
+* **Backup** – Data backup and restoration can only be configured and executed on nodes with Mailstore & Provisioning. In multi-node environments, each node requires its own independent backup configuration.
+* **Centralized Storage** – Volumes for centralized storage buckets are created on Mailstore & Provisioning nodes, can receive data immediately, and can be shared across nodes for efficient storage management.
 
-Pending setups
---------------
+Overall, this component is fundamental for email data management, user provisioning, backup, and storage scalability within Carbonio.
 
-.. include:: /_includes/_installation/pset.rst
+
+Packages
+--------
+
+The following packages are required for the **Mailstore & Provisioning** component:
+
+.. code-block:: bash
+
+   carbonio-advanced
+   carbonio-zal
+
+
+.. important::
+
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

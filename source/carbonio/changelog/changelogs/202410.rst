@@ -85,7 +85,6 @@ Clarify on which Node the CLI command for registering |product| must be executed
 In this issue, a few changes for the **24.9.0** release were
 implemented:
 
-* Rename *Uninstall a Directory Replica* to :ref:`ds-replica-stop`
 * Rename *Update from 24.7.1* to `Upgrade Using Ansible`
 * Rename *Update from previous versions* to
   `Manual Upgrade`. Introductory text has also been changed.

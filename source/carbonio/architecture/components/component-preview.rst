@@ -3,35 +3,30 @@
 Preview
 =======
 
-Install Packages
-----------------
+.. contents::
+   :local:
+   :depth: 2
 
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-preview.rst
 
-Bootstrap |carbonio|
---------------------
+Overview
+--------
 
-Launch the |carbonio| bootstrap process
+The **Preview** component is responsible for generating previews of documents and other files within the Carbonio platform.
 
-.. code:: console
+This functionality allows users to view file contents directly in the interface without needing to download or open them in external applications, enhancing both user experience and productivity.
 
-   # carbonio-bootstrap
 
-During the process, you need to provide these values, which you can
-retrieve from  the first Mesh & Directory node.
+Packages
+--------
 
-* ``Ldap master host`` is the FQDN of the first Mesh & Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+The following packages are required for the **Preview** component:
 
-Join |mesh|
------------
+.. code-block:: bash
 
-.. include:: /_includes/_installation/mesh-agent.rst
+   carbonio-preview
 
-Pending setups
---------------
 
-.. include:: /_includes/_installation/pset.rst
+.. important::
+
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.
