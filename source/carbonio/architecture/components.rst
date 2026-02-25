@@ -1,8 +1,8 @@
 .. _components-installation:
 
-=======================================
-Components Description and Installation
-=======================================
+======================
+Components Description
+======================
 
 A |product| infrastructure is created with the installation of some
 **Components**.
