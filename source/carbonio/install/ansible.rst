@@ -4,24 +4,34 @@
  Prepare the Ansible Environment
 =================================
 
+.. contents::
+   :local:
+   :depth: 2
+
 Section :ref:`components-installation` reviews all the Components that make up |product|.
 
-This section describes the installation method based on Ansible.
+This section describes the installation method using **Ansible**.
 
-Ansible is free and open-source software that automates configuration and management tasks on Unix-like and Windows systems.
-The installation relies on Ansible Galaxy, an Ansible playbook, and an Ansible inventory file.
+Ansible is free, open-source software that automates configuration and management tasks.
+The installation process relies on:
 
-Ansible reads the `inventory file`, which contains the list of Nodes on which the various Components must be installed, and automatically
-executes all the required tasks on the appropriate Node.
+* Ansible Galaxy
+* An Ansible playbook
+* An Ansible inventory file
 
-Once the **Control Node** (that is, a workstation with Ansible installed and from which Carbonio installations are launched; see Section
-:ref:`ansible-setup` below) has been properly configured according to the instructions
-provided, the installation procedure simply requires editing the inventory file and running **a single CLI command** to execute the playbook.
+The inventory file lists the Nodes on which the various Carbonio Components must be installed.
+Ansible reads this file and automatically executes all required tasks on the appropriate Node.
+
+Once the **Control Node** - a workstation with Ansible installed from which Carbonio installations
+are launched (see :ref:`ansible-setup`) - has been properly configured according to the instructions provided, the installation procedure requires only:
+
+1. Editing the inventory file
+2. Running a single CLI command to execute the playbook
 
 .. _ansible-req:
 
-Requirements
-============
+Ansible Requirements
+====================
 
 You can run the Ansible playbook form any control node, which runs
 Linux, macOS, or BSD, satisfying the following requirements
@@ -46,21 +56,6 @@ Linux, macOS, or BSD, satisfying the following requirements
          the control node to the :file:`.ssh/authorized_keys` file of
          the Nodes' ``root`` user
 
-.. card:: Nodes requirements
-
-   Besides the :ref:`carbonio-requirements` that every Node must
-   satisfy, each Nodes must
-
-   #. be equipped with the same **supported OS** (see section
-      :ref:`software-requirements`)
-
-   #. be able to reach one another via SSH
-
-   #. have the |product| repository configured (see section
-      :ref:`preliminary` for directions)
-
-.. card:: Version requirements
-
    |product| installation and upgrade playbooks **require the full Ansible package**.
 
    Ansible is distributed as a **community bundle** that includes:
@@ -83,6 +78,24 @@ Linux, macOS, or BSD, satisfying the following requirements
    For more detailed information about available versions and compatibility between ``ansible`` and ``ansible-core``, refer to the official Ansible documentation:
 
    - `Ansible Release and Maintenance <https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html>`_
+
+.. card:: Nodes (Target) Requirements
+
+   In addition to the :ref:`carbonio-requirements` that every Node must satisfy:
+
+   1. For **multi-node installations**, each Node must:
+
+       - Be equipped with the same **supported OS** (see section :ref:`software-requirements`)
+       - Be able to connect to the other Nodes via SSH **without entering a password**.  
+         For example, running::
+
+             ssh root@<other-node>
+
+         should log in directly without prompting for a password, which typically requires setting up SSH key-based authentication.
+
+   2. Each Node must have the |product| repository configured 
+      (see section :ref:`repo-conf` for setup instructions)
+
 
 
 .. _ansible-setup:
@@ -153,7 +166,7 @@ for directions.
 .. _ansible-multi-inventories:
 
 Multiple Inventories
-====================
+--------------------
 
 If you plan to install multiple instances of |carbonio| on different
 environments, we suggest that you create a dedicated directory to
