@@ -3,37 +3,32 @@
 MTA AV/AS
 =========
 
-Install Packages
-----------------
-
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-mta.rst
-
-Bootstrap |carbonio|
---------------------
-
-.. include:: /_includes/_installation/bootstrap.rst
-
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh & Directory node.
-
-* ``Ldap master host`` is the FQDN of the first Mesh & Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
-
-* ``Bind password for postfix ldap user`` and ``Bind password for
-  amavis ldap user`` are obtained from the first Mesh & Directory
-  node and unless they have been changed they will match the ``Ldap
-  Admin password``
+.. contents::
+   :local:
+   :depth: 2
 
 
-Join |mesh|
------------
+Overview
+--------
 
-.. include:: /_includes/_installation/mesh-agent.rst
+The **MTA AV/AS** component stands for *Mail Transfer Agent with AntiVirus and AntiSpam capabilities*.
 
-Pending setups
---------------
+This component is responsible for managing the transmission of emails and ensuring that both incoming and outgoing messages are scanned for viruses and spam, thereby maintaining the security and integrity of the email system.
 
-.. include:: /_includes/_installation/pset.rst
+The MTA service handles the routing and delivery of emails between servers, while the integrated AV (AntiVirus) and AS (AntiSpam) services protect the infrastructure from malicious content and unsolicited messages.
+
+
+Packages
+--------
+
+The following packages are required for the **MTA AV/AS** component:
+
+.. code-block:: bash
+
+   carbonio-mta
+
+
+.. important::
+
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

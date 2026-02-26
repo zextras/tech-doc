@@ -48,8 +48,7 @@ See :pr:`711` and :pr:`725` for the source code.
 
 The directions for the |product| upgrade with Ansible have been rewritten to mention that the playbook itself must be upgraded.
 
-See :ref:`carbonio-upgrade` for the documentation, :pr:`725` and
-:pr:`726` for the source code.
+See :pr:`725` and :pr:`726` for the source code.
 
 
 .. rubric:: 202410-801 Remove concept of supported versions
@@ -81,20 +80,11 @@ code.
 
 Clarify on which Node the CLI command for registering |product| must be executed.
 
-
-.. rubric:: 202410-806 Split Carbonio Installation Instructions
-
-The :ref:`installation instructions <scenarios>` have been split and renamed to improve clarity and prevent misunderstandings.
-
-See :pr:`727` and :pr:`728` for the source code.
-
-
 .. rubric:: 202410-807 Additional Changes in 24.9.0
 
 In this issue, a few changes for the **24.9.0** release were
 implemented:
 
-* Rename *Uninstall a Directory Replica* to :ref:`ds-replica-stop`
 * Rename *Update from 24.7.1* to `Upgrade Using Ansible`
 * Rename *Update from previous versions* to
   `Manual Upgrade`. Introductory text has also been changed.

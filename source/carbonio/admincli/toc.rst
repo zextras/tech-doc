@@ -29,7 +29,6 @@ Interface)`.
       carboniobackup
       mobile
       storages
-      usermailreplica
       custom
       mesh
       security

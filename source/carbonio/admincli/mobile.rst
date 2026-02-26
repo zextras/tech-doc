@@ -62,7 +62,6 @@ Module.
    :gutter: 3
 
    .. grid-item-card:: Enable |mobile|
-
       :columns: 6
 
       To enable |mobile| for a given user (e.g., `user@example.com`) in a COS

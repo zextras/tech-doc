@@ -4,34 +4,34 @@
  Prepare the Ansible Environment
 =================================
 
-Section :ref:`components-installation` reviews all the Components that
-make up |product| and the tasks required to successfully complete the
-installation.
+.. contents::
+   :local:
+   :depth: 2
 
-To make the installation process easier and faster, this section
-introduces an alternative installation method based on Ansible Galaxy,
-an `Ansible playbook
-<https://docs.ansible.com/ansible/latest/index.html>`_, and an Ansible
-*inventory file* .
+Section :ref:`components-installation` reviews all the Components that make up |product|.
 
-.. note:: Ansible is free software that allows you to automate the
-   configuration and management procedures on Unix-like and Windows
-   systems.
+This section describes the installation method using **Ansible**.
 
-Ansible will read an `inventory file` containing a list of the Nodes
-on which to install the various Components and automatically execute on the
-proper Node all the necessary tasks.
+Ansible is free, open-source software that automates configuration and management tasks.
+The installation process relies on:
 
-Once the **Control Node** (i.e., a workstation with Ansible installed
-and from which to launch |product| installations, see Section
-:ref:`ansible-setup` below) has been properly set up according the
-directions below, the ansible installation only requires to edit the
-inventory file and run **one CLI command** to execute the playbook.
+* Ansible Galaxy
+* An Ansible playbook
+* An Ansible inventory file
+
+The inventory file lists the Nodes on which the various Carbonio Components must be installed.
+Ansible reads this file and automatically executes all required tasks on the appropriate Node.
+
+Once the **Control Node** - a workstation with Ansible installed from which Carbonio installations
+are launched (see :ref:`ansible-setup`) - has been properly configured according to the instructions provided, the installation procedure requires only:
+
+1. Editing the inventory file
+2. Running a single CLI command to execute the playbook
 
 .. _ansible-req:
 
-Requirements
-============
+Ansible Requirements
+====================
 
 You can run the Ansible playbook form any control node, which runs
 Linux, macOS, or BSD, satisfying the following requirements
@@ -56,21 +56,6 @@ Linux, macOS, or BSD, satisfying the following requirements
          the control node to the :file:`.ssh/authorized_keys` file of
          the Nodes' ``root`` user
 
-.. card:: Nodes requirements
-
-   Besides the :ref:`carbonio-requirements` that every Node must
-   satisfy, each Nodes must
-
-   #. be equipped with the same **supported OS** (see section
-      :ref:`software-requirements`)
-
-   #. be able to reach one another via SSH
-
-   #. have the |product| repository configured (see section
-      :ref:`preliminary` for directions)
-
-.. card:: Version requirements
-
    |product| installation and upgrade playbooks **require the full Ansible package**.
 
    Ansible is distributed as a **community bundle** that includes:
@@ -93,6 +78,24 @@ Linux, macOS, or BSD, satisfying the following requirements
    For more detailed information about available versions and compatibility between ``ansible`` and ``ansible-core``, refer to the official Ansible documentation:
 
    - `Ansible Release and Maintenance <https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html>`_
+
+.. card:: Nodes (Target) Requirements
+
+   In addition to the :ref:`carbonio-requirements` that every Node must satisfy:
+
+   1. For **multi-node installations**, each Node must:
+
+       - Be equipped with the same **supported OS** (see section :ref:`software-requirements`)
+       - Be able to connect to the other Nodes via SSH **without entering a password**.  
+         For example, running::
+
+             ssh root@<other-node>
+
+         should log in directly without prompting for a password, which typically requires setting up SSH key-based authentication.
+
+   2. Each Node must have the |product| repository configured 
+      (see section :ref:`repo-conf` for setup instructions)
+
 
 
 .. _ansible-setup:
@@ -139,21 +142,11 @@ system. You can follow these `directions
 Install |carbonio| Playbook
 ===========================
 
-|product| Playbook is available from Ansible Galaxy in two variants:
-one for Single-Server Scenario and one for all other scenarios. You
-need to simply run a command to install either of them. The playbooks
-are **version-dependant**: to install |product| you will need to use
-the corresponding playbook version. Please ensure that you always
-have installed the latest playbook to be able to install the most
+|product| Playbook is available from Ansible Galaxy.
+Please ensure that you always have installed the latest playbook to be able to install the most
 recent |product| release.
 
-.. card:: Playbook for Single-Server Scenario
-
-   .. code:: console
-
-      # ansible-galaxy collection install zxbot.carbonio_ssinstall -U
-
-.. card:: Playbook for all other Scenarios
+.. card:: Playbook for |product| installation
 
    .. code:: console
 
@@ -173,7 +166,7 @@ for directions.
 .. _ansible-multi-inventories:
 
 Multiple Inventories
-====================
+--------------------
 
 If you plan to install multiple instances of |carbonio| on different
 environments, we suggest that you create a dedicated directory to

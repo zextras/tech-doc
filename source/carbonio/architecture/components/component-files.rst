@@ -3,43 +3,32 @@
 Files
 =====
 
-Install Packages
-----------------
+.. contents::
+   :local:
+   :depth: 2
 
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-files.rst
 
-.. dropdown:: On the Database Node
-   :color: danger
-   :class-title: sd-bg-danger
-   :open:
+Overview
+--------
 
-   Additionally, go to the Node which features the
-   :ref:`component-db-install` Component and make sure that the
-   corresponding :ref:`DB connector <other-db-conn-install>` package
-   (``carbonio-files-db``) is installed. If not, install it, then
-   execute the :ref:`comp-db-ps` and :ref:`initialise the database
-   <dbs-bootstrap>`.
+The **Files** component provides file storage and sharing capabilities within the Carbonio platform.
 
-Bootstrap |carbonio|
---------------------
+It allows users to store, manage, and share documents and other files seamlessly, enabling collaborative work environments by facilitating easy access to shared resources among team members.
 
-.. include:: /_includes/_installation/bootstrap.rst
+Additionally, the Files component integrates with other Carbonio components, such as **Work Stream Collaboration (Chats)**, allowing users to share files directly within chat conversations and enhancing the overall collaborative experience.
 
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh & Directory node.
 
-* ``Ldap master host`` is the FQDN of the first Mesh & Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+Packages
+--------
 
-Join |mesh|
------------
+The following packages are required for the **Files** component:
 
-.. include:: /_includes/_installation/mesh-agent.rst
+.. code-block:: bash
 
-Pending setups
---------------
+   carbonio-files
 
-.. include:: /_includes/_installation/pset.rst
+
+.. important::
+
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

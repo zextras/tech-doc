@@ -1,14 +1,8 @@
 .. _components-installation:
 
-=======================================
-Components Description and Installation
-=======================================
-
-Please review carefully this sections before attempting to install
-|carbonio| on a Single-Server or on a Multi-Node infrastructure.
-
-|product| is made of Components
-===============================
+======================
+Components Description
+======================
 
 A |product| infrastructure is created with the installation of some
 **Components**.
@@ -21,8 +15,7 @@ consists of one or more packages.
    As we will see, it's possible to install a single Component on a
    dedicated node or group multiple Components according to affinity rules.
 
-   Although this is not a suggested or supported scenario, it would be
-   technically possible to install almost all |product| Components on a
+   It is also possible to install all |product| Components on a
    single virtual machine.
 
    The possibility of installation by Components allows you to design
@@ -35,15 +28,6 @@ The Components of |product|
 ===========================
 
 This is the list of Components that make up a |product| installation.
-
-When installing the Components, be careful that:
-
-* Postgres, Grafana, and Kafka are third-party software that are
-  installed from their respective official repositories
-
-* On each Node, you need to install package
-  ``service-discover-agent``, except on the Node on which
-  ``service-discover-server`` is installed
 
 .. grid:: 1 1 2 2
    :gutter: 3
@@ -221,73 +205,6 @@ When installing the Components, be careful that:
       Packages:
 
       * carbonio-directory-server
-
-.. _multiserver-installation:
-
-How to install Components
-=========================
-
-Before presenting each Component and the tasks necessary for their correct
-installation, please review these important remarks:
-
-*  While the overall procedure is the same for both Ubuntu and RHEL 8,
-   the actual commands and file paths may differ on the two operating
-   system, so pay attention that you execute the correct command on the
-   correct files and operating system. The commands that differ are
-   separated as follows. Click the :blue:`Ubuntu` or :blue:`RHEL` tab
-   according to the Operating System on which you are installing
-   |product|.
-
-   .. tab-set::
-
-      .. tab-item:: Ubuntu
-         :sync: ubuntu
-
-         .. code::
-
-            # <command to be executed on Ubuntu systems>
-
-      .. tab-item:: RHEL
-         :sync: rhel
-
-         .. code::
-
-            #  <command to be executed on Red Hat systems>
-
-*  All the commands that are mentioned in this installation procedure
-   **must be executed** as the ``root`` user
-
-* In case you experience some issues during the installation, please
-  refer to Section :ref:`systemd-guide`, in which you can find helpful
-  commands
-
-*  When the installation process has successfully finished, you can
-   access |product|\'s GUI using a browser: directions can be found in
-   Section :ref:`web-access`
-
-* You **must** start with the installation of the
-  :ref:`component-mesh-install` Component, followed by the
-  :ref:`component-db-install` Component. Then you can proceed with the other
-  infrastructure Components and finally with all other Components.
-
-Optional Components
-===================
-
-If a component is not required in your environment, you can skip its installation.
-
-When a component is not installed, this may also allow you to **omit related packages on other nodes**, depending on your deployment architecture.
-
-For example, if your setup does not use the **Files** feature, you can avoid installing not only the main component package:
-
-- ``carbonio-files`` (**Files** "application" node)
-
-but also the related packages on other nodes:
-
-- ``carbonio-files-db`` (**Database** node)
-- ``carbonio-files-ui`` (**Proxy** node)
-
-This approach helps reduce system complexity and resource usage by installing only the components strictly required by your environment.
-
 
 
 .. toctree::
