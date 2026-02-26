@@ -4,6 +4,10 @@
  Install |product| Using Ansible
 =================================
 
+.. contents::
+   :local:
+   :depth: 2
+
 |product| can be installed automatically by using the *inventory
 files*, with the Ansible.
 The components of a sample |product| installation and their
@@ -76,18 +80,9 @@ value for a proper configuration. Currently, these sections are
      an actual public IP!
 
 In order to run the script, first go to the directory in which you
-saved the Inventory, then execute either command, depending on the
-Scenario.
+saved the Inventory.
 
-.. card:: Single-Server Scenario
-
-   .. code:: console
-
-      $ ansible-playbook zxbot.carbonio_ssinstall.carbonio_ssinstall \
-      -u root -i carbonio-inventory \
-      --extra-vars "install_path=zxbot.carbonio_install.carbonio_install"
-
-.. card:: All other Scenarios
+.. card:: Run the Playbook
 
    .. code:: console
 
@@ -97,17 +92,14 @@ Scenario.
 Make sure to replace :file:`carbonio-inventory` with the proper name of the
 inventory you want to install.
 
-The playbook will execute all the tasks necessary and print the result
-on the screen. When finished, a summary of the results is
-displayed. Moreover, the passwords created during the installation are
-saved in the directory from which the command was launched, along with
-the :file:`carbonio-inventory` file, so you have them always at your
-disposal when you need them, for example during upgrades or routine
-tasks. To protect them, make sure:
+The playbook executes all required tasks and displays the results on the screen. Once finished, a summary of the outcomes is shown.
+Additionally, any passwords created during the installation are saved in the directory from which the command was run, along with the :file:`carbonio-inventory` file.
+This ensures you always have access to them when needed, for example during upgrades or routine maintenance.
+To keep this sensitive information secure, make sure to:
 
-* to allow only trusted persons the access to the directory
+* Restrict access to the directory to trusted personnel only.
 
-* to make a backup of the directory
+* Create regular backups of the directory.
 
 .. card:: Failed inventory installation
 

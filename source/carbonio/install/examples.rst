@@ -15,6 +15,11 @@ Single-node installation (1 Node)
 
 In this scenario, all Carbonio features are installed on a single server.
 
+.. toctree::
+   :maxdepth: 1
+
+   examples/single-server
+
 
 Multi-node installation (5 Nodes)
 ----------------------------------
@@ -23,6 +28,11 @@ In this scenario, the installation is distributed across five servers, with
 services separated according to their role. This approach is designed for
 more structured environments that require service segregation and improved
 scalability.
+
+.. toctree::
+   :maxdepth: 1
+
+   examples/5-server
 
 
 .. note::
@@ -35,9 +45,3 @@ available on the Partner Portal:
 
 https://partner.zextras.com/
 
-
-.. toctree::
-   :maxdepth: 1
-
-   examples/single-server
-   examples/5-server

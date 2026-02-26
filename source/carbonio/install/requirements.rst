@@ -4,6 +4,10 @@
  Carbonio Requirements
 =======================
 
+.. contents::
+   :local:
+   :depth: 2
+
 Each Node must satisfy the :ref:`hw-requirements` and
 :ref:`software-requirements` below, while on the contrary,
 :ref:`fw-ports` must be opened only on the Node that hosts the
