@@ -1,49 +1,24 @@
+.. _install:
+
 =========
  Install
 =========
 
-This section contains the steps necessary to install Carbonio within
-your infrastructure.
+This section describes how to install |product| in your infrastructure.
 
-As you will see in the next pages of this documentation, there are two
-alternatives to install |product|:
+As explained in the following pages, |product| is deployed using **Ansible**, a configuration management and automation tool.
+Ansible can be installed either on your local workstation or on a dedicated machine (the **control node**).
+From there, it connects to the target virtual machines via SSH using a key pair and performs the installation automatically.
 
-* A **manual procedure**: connect to each node using :command:`ssh` and
-  execute some operations, summarised in this
-  schema:
+This deployment method is designed to ensure consistency and repeatability across all systems involved.
 
-  #. Configure repositories
+To proceed, you need to:
 
-  #. Set Hostname
+- Download the provided **Ansible playbook**
 
-  #. System Upgrade & Packages Installation
+- Configure the **inventory file** with the list of target nodes where |product| will be installed
 
-  #. Configure PostgreSQL (only on Database node)
-
-  #. Bootstrap Carbonio
-
-  #. Setup Carbonio Mesh & Run Pending setups
-
-  #. Database boostrap (only on Database node)
-
-  #. Verify that installed services are up & running
-
-  Some Components may require additional installation steps or specific checks.
-
-* By using a deployment tool (**Ansible**) that can be installed on
-  your workstation or on a dedicated one (called *control node*),
-  capable of accessing the virtual machines on which |product| will be
-  installed by exchanging an SSH key pair. This mode of installation
-  is suggested on complex infrastructures consisting of multiple
-  nodes, on which a manual installation is more error prone, due the
-  vast number of tasks.
-
-  To use this mode you will need to download a playbook and fill out
-  an inventory file with the list of target :term:`Nodes <Node>` on which you
-  install |product|.
-
-  The playbook will take care of the installation steps, controlling
-  the start of services and drastically reducing the chance of errors.
+The playbook orchestrates the entire installation process, manages service startup, and ensures a reliable and consistent deployment across your infrastructure.
 
 .. card:: Table of Contents
 
@@ -52,5 +27,8 @@ alternatives to install |product|:
 
       requirements
       preliminary
-      scenarios
+      ansible
+      ansible-install
+      examples.rst
       post-install
+

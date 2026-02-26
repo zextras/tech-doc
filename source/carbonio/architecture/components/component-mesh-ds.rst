@@ -3,36 +3,36 @@
 Mesh & Directory
 ================
 
-Install Packages
-----------------
+.. contents::
+   :local:
+   :depth: 2
 
-.. include:: /_includes/_architecture/_packages/component-mesh-ds.rst
 
-Bootstrap |product|
--------------------
+Overview
+--------
 
-.. include:: /_includes/_installation/bootstrap.rst
+The **Mesh & Directory** component is a fundamental part of the Carbonio architecture.  
+It manages both the directory services and the mesh infrastructure.
 
-Set up |mesh|
--------------
+The directory services handle user authentication and authorization, while the mesh infrastructure facilitates communication and coordination between different services within the Carbonio ecosystem.
 
-.. include:: /_includes/_installation/mesh.rst
+This component is essential for maintaining the integrity, service discovery, and operational efficiency of the entire system.
 
-Pending setups
---------------
 
-.. include:: /_includes/_installation/pset.rst
+Packages
+--------
 
-.. _get-ldap-password:
+The following packages are required for the **Mesh & Directory** component:
 
-Retrieve the LDAP Admin Password
---------------------------------
+.. code-block:: bash
 
-Once the installation of this Component is complete, you will be able to
-obtain the password by running the following command:
+   service-discover-server
+   carbonio-directory-server
+   carbonio-message-broker
+   carbonio-storages
+   carbonio-user-management
 
-.. code:: console
+.. important::
 
-   # su - zextras -c "zmlocalconfig -s | grep ldap_password"
-
-The password thus obtained will be necessary to install all other Components.
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

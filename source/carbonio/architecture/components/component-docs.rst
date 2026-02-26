@@ -2,47 +2,33 @@
 .. _component-docs-install:
 
 Docs & Editor
-===============
+=============
 
-Install Packages
-----------------
+.. contents::
+   :local:
+   :depth: 2
 
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-docs.rst
 
-.. dropdown:: On the Database Node
-   :color: danger
-   :class-title: sd-bg-danger
-   :open:
+Overview
+--------
 
-   Additionally, go to the Node which features the
-   :ref:`component-db-install` Component and make sure that the
-   corresponding :ref:`DB connector <other-db-conn-install>` package
-   (``carbonio-docs-connector-db``) is installed. If not, install it,
-   then execute the :ref:`comp-db-ps` and :ref:`initialise the
-   database <dbs-bootstrap>`.
+The **Docs & Editor** component is a service component that enables document creation, editing, and collaboration within the Carbonio platform.
 
-Bootstrap |carbonio|
---------------------
+It integrates with other Carbonio services to provide a seamless experience for managing and editing documents, supporting collaborative workflows and real-time editing among users.
 
-.. include:: /_includes/_installation/bootstrap.rst
 
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh & Directory node.
+Packages
+--------
 
-* ``Ldap master host`` is the FQDN of the first Mesh & Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+The following packages are required for the **Docs & Editor** component:
 
-Join |mesh|
------------
+.. code-block:: bash
 
-.. include:: /_includes/_installation/mesh-agent.rst
+   carbonio-docs-editor
+   carbonio-docs-connector
 
-Pending setups
---------------
 
-.. include:: /_includes/_installation/pset.rst
+.. important::
 
-             
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

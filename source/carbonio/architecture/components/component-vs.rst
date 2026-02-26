@@ -3,57 +3,34 @@
 Video Server & Video Recording
 ==============================
 
-Before installing this Component on the |product| infrastructure, make sure
-that you installed the :ref:`component-prov-install`, which is a
-requirement for this Component.
+.. contents::
+   :local:
+   :depth: 2
 
-Install Packages
-----------------
 
-This Component consists of *Video Server* and *Video Recording*.
+Overview
+--------
 
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-vs-chats.rst
+The **Video Server & Video Recording** component consists of two subcomponents: **Video Server** and **Video Recording**.
 
-Bootstrap |product|
--------------------
+* **Video Server** provides the platform for hosting and streaming video meetings.
+* **Video Recording** allows recording of video meetings and should be installed only if you plan to enable recording functionality.
 
-.. include:: /_includes/_installation/bootstrap.rst
+This separation allows deployments to include video conferencing capabilities without necessarily enabling recording, depending on the requirements.
 
-Join |mesh|
------------
 
-.. include:: /_includes/_installation/mesh-agent.rst
+Packages
+--------
 
-Pending setups
---------------
+The following packages are required for the **Video Server & Video Recording** component:
 
-.. include:: /_includes/_installation/pset.rst
+.. code-block:: bash
 
-Check Video Server & Broker
----------------------------
+   carbonio-videoserver-advanced
+   carbonio-videorecorder
 
-To make sure that videoserver and message broker are connected
-successfully, check that in the carbonio-videoserver logs
-(:command:`journalctl -u carbonio-videoserver`) you find the line::
 
-  RabbitMQEventHandler: Connected successfullySetup of RabbitMQ event
-  handler completed
+.. important::
 
-Video Recording Notes
----------------------
-
-You can enable the Video Recorder at user or COS level: please refer
-to sections :ref:`User's configuration <act-conf>` and
-:ref:`cos-chat`, respectively, for directions.
-
-A recorded session is temporary stored in directory
-:file:`/var/lib/videoserver/` on the Node featuring the |vs| Component:
-make sure that this directory has sufficient free space, otherwise
-recorded videos can not be stored. As soon as the recording session
-terminates, the file will be processed and moved to the Node featuring
-the :ref:`component-prov-install`.
-
-.. hint:: You can mount on that location a dedicated disk or
-   partition and keep it monitored for space usage.
-
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

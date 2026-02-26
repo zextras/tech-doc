@@ -4,6 +4,10 @@
  Preliminaries
 ===============
 
+.. contents::
+   :local:
+   :depth: 2
+
 In this section, we list some naming conventions we use in the
 documentation and present some tasks you need to carry out on **each
 of the Nodes** before starting with the actual installation.

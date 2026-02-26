@@ -3,31 +3,39 @@
 Proxy
 =====
 
-Install Packages
-----------------
+.. contents::
+   :local:
+   :depth: 2
 
-.. include:: /_includes/_installation/warningservicediscoveragent.rst
-.. include:: /_includes/_architecture/_packages/component-proxy.rst
 
-Bootstrap |carbonio|
---------------------
+Overview
+--------
 
-.. include:: /_includes/_installation/bootstrap.rst
+The **Proxy** component is responsible for managing and routing incoming and outgoing HTTP/S and mail proxy traffic.
 
-During the process, you need to provide these values, which you can
-retrieve from the first Mesh & Directory node.
+It acts as an intermediary between clients and backend services, handling requests and responses to ensure efficient and secure communication within the Carbonio infrastructure.
 
-* ``Ldap master host`` is the FQDN of the first Mesh & Directory
-  node, (example: ldap-mstr.example.com)
-* ``Ldap Admin password`` is obtained from the first Mesh and
-  Directory node (:ref:`ldap-admin-password <get-ldap-password>`)
+This component is essential for load balancing, SSL termination, and providing a unified access point for all exposed services, including Webmail and collaboration features.
 
-Join |mesh|
------------
 
-.. include:: /_includes/_installation/mesh-agent.rst
+Packages
+--------
 
-Pending setups
---------------
+The following packages are required for the **Proxy** component:
 
-.. include:: /_includes/_installation/pset.rst
+.. code-block:: bash
+
+   carbonio-proxy
+   carbonio-catalog
+   carbonio-files-public-folder-ui
+   carbonio-webui
+   carbonio-tasks-ui
+   carbonio-files-ui
+   carbonio-ws-collaboration-ui
+   carbonio-avdb-updater
+
+
+.. important::
+
+   Installation procedures are documented in the dedicated :ref:`install` section.
+   This page contains only the component description and package list.

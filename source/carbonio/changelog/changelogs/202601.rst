@@ -1,0 +1,49 @@
+
+Changelog 2026-01
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202601-1665 Added documentation warning for unsupported size-based HSM policies
+
+Added a documentation warning stating that size-based HSM policies using the larger: search operator are currently not supported due to a known limitation and must not be used.
+
+
+.. rubric:: 202601-1651 Fixed typo in moving an account across servers command
+
+Fixed a typo in the “Moving an Account Across Servers” section: added the missing mailboxMove parameter to the carbonio powerstore command and updated the example accordingly.
+
+
+.. rubric:: 202601-1647 Replaced Community link with Partner Portal in “Seeking for Help” section
+
+Updated the “Seeking for Help” section by removing the link to the Zextras Community and replacing it with a reference to the Partner Portal. The section now clarifies that authorized Zextras partners can access additional resources through the Partner Portal.
+
+
+.. rubric:: 202601-1629 Fixed a couple of scenario requirements
+
+Corrected node requirements in the documentation: clarified that additional email storage applies to Mailbox nodes (not MTA/Proxy) and adjusted LDAP and MTA/Proxy RAM values in the 3-node scenario to reflect proper multi-node sizing instead of single-server requirements.
+
+
+.. rubric:: 202601-1620 VideoServer NAT 1:1 mapping conf for non-exposed deployments
+
+Documented that, starting from Carbonio 25.3, the nat_1_1_mapping parameter in /etc/janus/janus.jcfg is auto-configured with the public IP, and clarified that in LAN-only deployments it must be manually set to the server’s private IP to avoid connectivity issues.
+
+
+.. rubric:: 202601-1618 Update Ansible docs to include only -U flag in collections commands
+
+Updated the install playbook examples to include the -U flag, ensuring the same command installs collection if not present or updates it if already installed, removing the need for separate procedures.
+
+
+.. rubric:: 202601-1614 Fixed typo in carbonio backup doFixShares
+
+Corrected a typo in the migration documentation (Phase 2 – Shares). The command carbonio backup doFixShares incorrectly referenced maps_[uuid]; it has been updated to the correct path map_[uuid] to match the actual file name and ensure the command works as expected.
+
+
+.. rubric:: 202601-1176 Clarified command usage on multi nodes infratsructures
+
+Updated the documentation to clarify which commands must be run on servers with the Mailstore & Provisioning role, covering carbonio admin, auth, backup, config, core, mobile, and powerstore, to reduce user confusion and support requests.
+
+
+
