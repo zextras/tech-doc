@@ -36,6 +36,11 @@ domain.
 We build on the domain created in :ref:`previous section
 <ap-domain-new>` and attach some property.
 
+.. _pub-srv-hostname:
+
+Public Service Hostname
+-----------------------
+
 .. index:: ! Public Service Hostname; by GUI
 .. index:: ! PublicServiceHostname; by GUI
 

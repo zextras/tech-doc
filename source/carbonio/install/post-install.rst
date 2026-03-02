@@ -17,8 +17,8 @@ to ensure a fully functional infrastructure:
 
 2. **Correctly Setting Parameters to Publish Carbonio Webmail**  
 
-   Configuring the domain parameters correctly ensures that Carbonio Webmail is published and accessible. See: 
-   :ref:`domain-params`.
+   Configuring the domain parameters correctly ensures that Carbonio Webmail is published and accessible.
+   These parameters can be configured either via the Command Line Interface (see :ref:`domain-params`) or from the Admin Panel (see :ref:`pub-srv-hostname`).
 
 Make sure these configurations are applied before proceeding with other post-installation steps.
 
