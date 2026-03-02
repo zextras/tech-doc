@@ -30,11 +30,11 @@ copyright = ': ZEXTRAS'
 author = 'The Zextras Team'
 
 # this variable is used in the  upgrade procedure, remember to change it together with the release. Since upgrade doesn't discriminate on patch number, we do not need the last cipher.
-previous_release = '25.9'
+previous_release = '25.12'
 
 
 # The full version, including alpha/beta/rc tags
-release = '25.12.0'
+release = '26.3.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
