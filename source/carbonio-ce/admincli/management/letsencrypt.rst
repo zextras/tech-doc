@@ -115,6 +115,6 @@ Once the certificate has been renewed, run the two deployment commands
    zextras$ /opt/zextras/bin/zmproxyctl reload
 
 
-In case you have multiple Proxy Nodes, run the two commands on all
-Proxy Nodes.
+
+
 
