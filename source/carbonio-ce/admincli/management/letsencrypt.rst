@@ -22,9 +22,8 @@ Manual renewal
 The manual renewal amounts to launch command :command:`certbot renew`
 on the Node installing the Proxy Component.
 
-In case your |product| infrastructure has multiple Proxy Nodes,
-first find the one which is responsible for the certificate
-management, using command
+In order to find the Node which is responsible for the certificate
+management, use command
 
 .. code:: console
 
