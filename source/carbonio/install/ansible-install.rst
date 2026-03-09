@@ -8,8 +8,7 @@
    :local:
    :depth: 2
 
-|product| can be installed automatically by using the *inventory
-files*, with the Ansible.
+|product| can be installed by using the *inventory file*, with the Ansible.
 The components of a sample |product| installation and their
 interaction is depicted in the diagram below.
 
@@ -27,9 +26,7 @@ interaction is depicted in the diagram below.
 Prepare Inventory
 =================
 
-Download the inventory file corresponding to the scenario that you
-want to install (you can find it in the various *Scenarios* page that
-follow this one) and place it under a directory of your
+Download the inventory file and place it under a directory of your
 choice. Remember to give the inventory file a meaningful name.
 
 The :file:`carbonio_inventory` file contains various sections, one for
@@ -45,7 +42,7 @@ install on 5 nodes, whose FQDNs are ``srv1.example.com`` to
   srv1.example.com
 
   [dbsConnectorServers]
-  srv1.example.com
+
 
 If you do not want to install a Component, simply leave the corresponding
 section empty.
@@ -53,7 +50,7 @@ section empty.
 For some of the Components you need to provide some additional
 value for a proper configuration. Currently, these sections are
 
-* the Proxy Component::
+* The Proxy Component::
 
     [proxyServers:vars]
     #webmailHostname=webmailPublicHostname
@@ -71,13 +68,24 @@ value for a proper configuration. Currently, these sections are
 
   In this case, supposing that the Component is installed on
   ``srv5.example.com`` and the public IP address of the |vs| is
-  172.16.12.5, this entry should look like::
+  8.9.10.11, this entry should look like::
 
     [videoServers]
-    srv5.example.com public_ip_address=172.16.12.5
+    srv5.example.com public_ip_address=8.9.10.11
 
-  .. note:: 172.16.12.5 is a private IP, remember to replace it with
-     an actual public IP!
+* The **Default Domain**::
+
+    #Custom Default Domain (Optional)
+    [masterDirectoryServers:vars]
+    #default_domain=domain.com # Replace with your desired domain
+    newcompany.com
+
+   
+This parameter allows administrators to explicitly define the default domain during installation.
+
+- If ``default_domain`` is set, the playbook uses this value as the name of the default (first) domain instead of deriving it from the server hostname.
+
+- If the parameter is omitted, the playbook falls back to generating a domain name based on the server’s hostname.
 
 In order to run the script, first go to the directory in which you
 saved the Inventory.
@@ -93,7 +101,7 @@ Make sure to replace :file:`carbonio-inventory` with the proper name of the
 inventory you want to install.
 
 The playbook executes all required tasks and displays the results on the screen. Once finished, a summary of the outcomes is shown.
-Additionally, any passwords created during the installation are saved in the directory from which the command was run, along with the :file:`carbonio-inventory` file.
+Any passwords created during the installation are saved in the directory from which the command was run, along with the :file:`carbonio-inventory` file.
 This ensures you always have access to them when needed, for example during upgrades or routine maintenance.
 To keep this sensitive information secure, make sure to:
 

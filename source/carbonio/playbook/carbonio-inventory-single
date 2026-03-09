@@ -1,54 +1,54 @@
-[postgresServers]
+[postgresServers]  
 srv1.example.com
 
-[masterDirectoryServers]
+[masterDirectoryServers]  
 srv1.example.com
 
-[serviceDiscoverServers]
+#Custom Default Domain (Optional)
+[masterDirectoryServers:vars]
+#default_domain=domain.com # Replace with your desired domain
+
+[replicaDirectoryServers]  
+
+[serviceDiscoverServers]  
+srv1.example.com   
+
+[dbsConnectorServers]  
+#must be empty
+
+[mtaServers]  
 srv1.example.com
 
-
-[mtaServers]
+[proxyServers]  
 srv1.example.com
 
-[proxyServers]
+#Specify the public hostname for the webmail like webmail.example.com
+[proxyServers:vars] 
+#webmailHostname=webmailPublicHostname
+
+[applicationServers]   
 srv1.example.com
 
-[proxyServers:vars]
-webmailHostname=srv1.example.com
-
-[applicationServers]
+[filesServers]  
 srv1.example.com
 
-############ Optional Components ############
-
-[previewServers]
+[docsServers]  
 srv1.example.com
 
-[filesServers]
+[taskServers]  
 srv1.example.com
 
-############ Optional Components - to be installed on a different VM ############
-[taskServers]
-#srv2.example.com
+[previewServers]  
+srv1.example.com
 
-[docsServers]
-#srv2.example.com
-
-[videoServers]
-#srv3.example.com public_ip_address=x.y.z.t
+#Specify the hostname and public IP address for every server
+[videoServers]  
+#hostname public_ip_address=x.y.z.t  
+srv1.example.com public_ip_address=8.9.10.11
 
 [workStreamServers]
-#srv2.example.com
+srv1.example.com
 
-############ These Components are not supported in Single-Server scenario ###########
-############ They are required for the proper Ansible installation #############
+[prometheusServers]  
 
-[dbsConnectorServers]
-#Only for HA infrastructure from 24.12.0. Don't fill it out
-
-[replicaDirectoryServers]
-
-[prometheusServers]
-
-[syslogServer]
+[syslogServer]  
