@@ -31,3 +31,23 @@ command line or the administration interface.
 
       Refer to section :ref:`ap-subscriptions` for directions.
 
+.. _fundamental_internet_requirement:
+
+Fundamental Requirement – Internet Connectivity
+===============================================
+
+**Requirement:**
+
+To perform license activation or updates, the |product| server responsible for licensing
+must have reliable outbound **internet access over TCP port 443 (HTTPS) to** ``api.zextras.io``.
+
+**Details:**
+
+* This access is **mandatory** for both initial license **activation** and any subsequent license **renewals**.
+
+* Only **outbound connections** are required; **inbound access is not needed**.
+
+* Typically, this applies to the **Mailstore & Provisioning** node, while other nodes (MTA, Proxy, etc.) do not require internet connectivity for licensing.
+
+* Firewalls, proxies, and SSL-inspecting appliances must permit this connection and **trust the endpoint’s SSL certificate**.
+
