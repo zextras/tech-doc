@@ -178,27 +178,6 @@ visible at the top of the discussion. Moderation rules apply to group chats.
 Tracking code: CO-2587
 
 
-Deep Linking for Mobile
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Meeting links from calendar appointments now open directly in the native
-Carbonio Chats application on iOS and Android devices.
-
-Tracking code: CO-2904, CO-2895
-
-
-ICE Restart for Call Continuity
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-ICE restart functionality has been introduced to maintain meeting connectivity
-when a user's network changes (for example, switching from WiFi to mobile data).
-
-This mechanism allows meetings to continue without requiring a manual
-reconnection.
-
-Tracking code: CO-2928, CO-2893
-
-
 Manual Chat History Export and Clear for Virtual Rooms
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
