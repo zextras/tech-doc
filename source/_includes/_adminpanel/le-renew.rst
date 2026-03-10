@@ -104,19 +104,19 @@ Finalise Renewal
 
 Once the certificate has been renewed, run the deployment commands based on your OS:
 
-Ubuntu 22 / Red Hat 8 (non-systemd based OS)
+**Ubuntu 22 / Red Hat 8** (non-systemd based OS)
 
 .. code:: console
 
    zextras$ /opt/zextras/libexec/zmproxyconfgen
    zextras$ /opt/zextras/bin/zmproxyctl reload
 
-Ubuntu 24 / Red Hat 9 (systemd based OS)
+**Ubuntu 24 / Red Hat 9** (systemd based OS)
 
 .. code:: console
 	
 	# systemctl restart carbonio-proxy.target
 
 
-In case you have multiple Proxy Nodes, run the two commands on all
+In case you have multiple Proxy Nodes, run the command(s) on all
 Proxy Nodes.
