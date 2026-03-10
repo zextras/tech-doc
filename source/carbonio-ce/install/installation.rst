@@ -117,7 +117,5 @@ Step 8: Bootstrap |file| Databases
 
 .. include:: /_includes/_installation/_steps/db-bootstrap-chats-ce.rst
 
-.. include:: /_includes/_installation/_steps/chats-migration-single-server-ce.rst
-
 .. include:: /_includes/_installation/complete.rst
 
