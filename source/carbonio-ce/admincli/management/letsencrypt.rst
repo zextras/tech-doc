@@ -107,14 +107,19 @@ You will see in the output::
 Finalise Renewal
 ----------------
 
-Once the certificate has been renewed, run the two deployment commands
+Once the certificate has been renewed, run the deployment commands based on your OS:
+
+Ubuntu 22 / Red Hat 8 (non-systemd based)
 
 .. code:: console
 
    zextras$ /opt/zextras/libexec/zmproxyconfgen
    zextras$ /opt/zextras/bin/zmproxyctl reload
 
+Ubuntu 24 / Red Hat 9 (systemd based)
 
-
+.. code:: console
+	
+	# systemctl restart carbonio-proxy.target
 
 
