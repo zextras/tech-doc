@@ -22,9 +22,8 @@ Manual renewal
 The manual renewal amounts to launch command :command:`certbot renew`
 on the Node installing the Proxy Component.
 
-In case your |product| infrastructure has multiple Proxy Nodes,
-first find the one which is responsible for the certificate
-management, using command
+In order to find the Node which is responsible for the certificate
+management, use command
 
 .. code:: console
 
@@ -108,14 +107,19 @@ You will see in the output::
 Finalise Renewal
 ----------------
 
-Once the certificate has been renewed, run the two deployment commands
+Once the certificate has been renewed, run the deployment commands based on your OS:
+
+Ubuntu 22 / Red Hat 8 (non-systemd based)
 
 .. code:: console
 
    zextras$ /opt/zextras/libexec/zmproxyconfgen
    zextras$ /opt/zextras/bin/zmproxyctl reload
 
+Ubuntu 24 / Red Hat 9 (systemd based)
 
-In case you have multiple Proxy Nodes, run the two commands on all
-Proxy Nodes.
+.. code:: console
+	
+	# systemctl restart carbonio-proxy.target
+
 

@@ -59,19 +59,7 @@ you previously installed with Ansible or not.
    the Node on which |wsc| is installed, then proceed to Section
    :ref:`up-ansible-run` below.
 
-.. card:: |product| has both  |wsc| and Legacy Chats installed
-
-   Regardless if you installed manually or with Ansible, if both the
-   |WSC| Component and the legacy Chats and Video Server Components are
-   installed, you need to edit the inventory file like above::
-
-     [workStreamServers]
-     chats.example.com
-
-   Ansible will take care of upgrading all Nodes, including those
-   installing the legacy Components. Note, however, that there are no
-   updates to the packages providing these Components, so they will keep
-   the same version.
+----
 
 In both cases, you need to save the inventory file in the :file:`data`
 directory (see Section :ref:`up-ansible-run` below`). You must also

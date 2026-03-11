@@ -133,27 +133,24 @@ Requirements
 In order to enable the authentication strategies available in
 |carbonio|, the following requirements need to be satisfied.
 
-.. note:: It is not necessary to enable all of them, simply configure
-   the one you need in your infrastructure.
 
 .. grid:: 1 1 2 4
    :gutter: 1
 
-   .. grid-item-card:: QR Code Requirements
+   .. grid-item-card:: General Requirements
       :columns: 12 12 6 4
 
-      The QR Code Application Password feature requires the following
-      properties to be set at domain level in order to be functional:
+      For any authentication strategy to work correctly, the system must be configured
+      with a publicly reachable service endpoint.
+      The following attributes must be properly defined:
 
-      -  ``zimbraPublicServiceHostname``
+      -  ``zimbraPublicServiceHostname`` - The public hostname used to access the service.
 
-      -  ``zimbraPublicServicePort``
+      -  ``zimbraPublicServicePort`` - The public port exposed for client connections.
 
-      -  ``zimbraPublicServiceProtocol``
+      -  ``zimbraPublicServiceProtocol`` - The protocol used to access the service (HTTP or HTTPS).
 
-      Should one or more of the properties be unset, a notification will be
-      delivered to the Admin reporting the affected domains and their missing
-      properties.
+      If these attributes are missing or incorrectly configured, authentication flows may fail or redirect to an invalid endpoint.
 
    .. grid-item-card:: 2FA Requirements
       :columns: 12 12 6 4

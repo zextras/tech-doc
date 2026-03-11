@@ -40,15 +40,6 @@ Pending setups
 
 .. include:: /_includes/_installation/pset.rst
 
-
-Dispatcher DB Migration
------------------------
-
-Initialise the message dispatcher
-
-.. include:: /_includes/_architecture/_components/dispatcher-migration.rst
-
-
 Enable the |wsc| UI
 -------------------
 
