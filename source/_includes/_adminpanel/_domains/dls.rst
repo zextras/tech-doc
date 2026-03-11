@@ -2,24 +2,32 @@ Distribution lists can be simply created by clicking the
 :bdg-primary:`+` button to open a tabbed modal dialog in which to
 configure it.
 
-In the first tab you can give a name, an address, and a description to
+In the first tab (GENERAL),  you can give a name, an address, and a description to
 the distribution list; if you want a dynamic mode, that automatically
 populates the list's members, refer to section :ref:`ap-dl-dyn`.
 
-In the second add *Members* by simply writing the e-mail addresses in
+In the second tab (MEMBERS),  you can add *Members* by simply writing the e-mail addresses in
 the test field.
 
 .. hint:: E-mail addresses are auto-completed while typing.
 
-In the third tab, advanced settings can be configured, including the
-option to notify new members that they have been added to the list and
-the presence of the distribution list in the GAL. Owners can be added
-to the list: they will see the lists of which they are owners in a
-dedicated menu item, where they can edit some details and the members.
+In the third tab (SECURITY), owner settings can be configured.
+Owners can be added to the list, and they will see the lists of which they are owners in a dedicated menu item, where they can manage details and members.
+In this tab, the admin can also configure "Sending Options," choosing who is allowed to send emails to the list.
+The available options are:
 
-The last tab recaps the settings: now you can either go back to any of
-the previous tabs and change some of the settings, or proceed to
-create the distribution list.
+- Everyone
+- Members only
+- Internal users only
+- Only users in a defined list
+
+From the last tab (DELEGATES), an admin can set one or more delegate users (or groups of users) among the domain users.
+These users or groups can be assigned one of two permissions:
+
+- Send
+- Send on Behalf of
+
+Once granted, the user, or any user in the group, can select the distribution list from the Webmail interface to send a new email.
 
 Once a distribution list has been created, it can be further
 configured by adding aliases, which work like e-mail accounts,
