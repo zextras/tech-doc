@@ -62,6 +62,7 @@ This is the list of Components that make up a |product| installation.
       * carbonio-docs-connector-db
       * carbonio-notification-push-db
       * carbonio-tasks-db
+      * carbonio-videorecorder-db
 
    .. grid-item-card:: Mesh
       :columns: 6
