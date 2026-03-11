@@ -34,6 +34,7 @@ The following packages are required for the **Database** component:
    carbonio-ws-collaboration-db
    carbonio-message-dispatcher-db
    carbonio-notification-push-db
+   carbonio-videorecorder-db
 
 
 .. important::
