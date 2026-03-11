@@ -629,19 +629,6 @@ Distribution List
 
 .. include:: /_includes/_adminpanel/_domains/dls.rst
 
-.. _ap-security-groups:
-
-Security Groups
-===============
-
-This page show the pre-built Security Groups, which are special lists
-whose members are regular users promoted to an Administration
-Component. Belonging to any of these Groups allow a regular user to gain
-some rights and manage specific parts of the |product| infrastructure.
-
-.. seealso:: To learn more about the rights of the different types of
-   Administrators, please refer to Section :ref:`ap-admin-roles`.
-
 .. _ap-resources:
 
 Resources
