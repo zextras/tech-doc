@@ -44,19 +44,21 @@ Linux, macOS, or BSD, satisfying the following requirements
 
 .. card:: Control Node requirements
 
-   #. The control node has a working installation of Ansible (see
-      Section :ref:`ansible-setup` for directions)
 
-   #. The control node has SSH access as the ``root`` user to all the
-      Nodes on which |product| must be installed. This is necessary
-      because Ansible needs to install packages and carry out various
-      tasks which require root privileges.
+   1. The control node has SSH access as the ``root`` user to all the
+   Nodes on which |product| must be installed. This is necessary
+   because Ansible needs to install packages and carry out various
+   tasks which require root privileges.
 
-      .. hint:: You can temporarily copy the SSH key of the user on
-         the control node to the :file:`.ssh/authorized_keys` file of
-         the Nodes' ``root`` user
+   .. hint:: You can temporarily copy the SSH key of the user on
+      the control node to the :file:`.ssh/authorized_keys` file of
+      the Nodes' ``root`` user      
 
-   |product| installation and upgrade playbooks **require the full Ansible package**.
+
+   2. The control node has a working installation of Ansible (see
+   Section :ref:`ansible-setup` for directions).
+
+   Both |product| installation and upgrade playbooks **require the full Ansible package**.
 
    Ansible is distributed as a **community bundle** that includes:
 
@@ -73,11 +75,22 @@ Linux, macOS, or BSD, satisfying the following requirements
 
    **Supported Versions**
 
-   The supported ``ansible-core`` versions are **>= 2.16.5**
+   The supported ``ansible-core`` versions are **>= 2.13.3**
 
    For more detailed information about available versions and compatibility between ``ansible`` and ``ansible-core``, refer to the official Ansible documentation:
 
    - `Ansible Release and Maintenance <https://docs.ansible.com/projects/ansible/latest/reference_appendices/release_and_maintenance.html>`_
+
+   **Python Version**
+
+   The supported Python version is **3.9 or higher**.
+
+   **Important:**
+
+   The *controller* node is the system from which Ansible is executed.
+   It can also be one of the nodes of the Carbonio cluster.
+
+   These requirements do **not** apply to managed (target) nodes, unless they are used as the controller.
 
 .. card:: Nodes (Target) Requirements
 
@@ -85,18 +98,24 @@ Linux, macOS, or BSD, satisfying the following requirements
 
    1. For **multi-node installations**, each Node must:
 
-       - Be equipped with the same **supported OS** (see section :ref:`software-requirements`)
-       - Be able to connect to the other Nodes via SSH **without entering a password**.  
-         For example, running::
+      - Be equipped with the same **supported OS** (see section :ref:`software-requirements`)
+      - Be able to connect to the other Nodes via SSH **without entering a password**.  
+      
+      For example, running::
 
-             ssh root@<other-node>
+         ssh root@<other-node>
 
-         should log in directly without prompting for a password, which typically requires setting up SSH key-based authentication.
+      should log in directly without prompting for a password, which typically requires setting up SSH key-based authentication.
 
    2. Each Node must have the |product| repository configured 
       (see section :ref:`repo-conf` for setup instructions)
 
+   **Important:**
 
+   Some third-party components used by Carbonio (for example, Patroni) may have their own runtime dependencies.
+   In specific installation scenarios, a third-party package may install its own Python version as part of its dependencies on the target node.
+
+   These dependencies are managed by the third-party package itself and may change over time.
 
 .. _ansible-setup:
 

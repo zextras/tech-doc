@@ -5,8 +5,7 @@
 
       .. code:: console
 
-         # apt install carbonio-files-db carbonio-mailbox-db \
-           carbonio-tasks-db \
+         # apt install carbonio-files-db carbonio-tasks-db \
            carbonio-message-dispatcher-db \
            carbonio-ws-collaboration-db
  
@@ -15,7 +14,6 @@
 
       .. code:: console
 
-         # dnf install carbonio-files-db carbonio-mailbox-db \
-           carbonio-tasks-db \
+         # dnf install carbonio-files-db carbonio-tasks-db \
            carbonio-message-dispatcher-db \
            carbonio-ws-collaboration-db

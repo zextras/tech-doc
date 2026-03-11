@@ -52,7 +52,6 @@ This is the list of Components that make up a |product| installation.
 
       * postgresql
       * carbonio-files-db
-      * carbonio-mailbox-db
       * carbonio-tasks-db
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db

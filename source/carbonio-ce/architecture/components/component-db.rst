@@ -50,6 +50,5 @@ installed.
 
 .. include:: /_includes/_installation/_steps/db-bootstrap-chats-ce.rst
 
-.. include:: /_includes/_installation/_steps/chats-migration.rst
 
 

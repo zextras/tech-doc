@@ -1,49 +1,57 @@
-[postgresServers]
+[postgresServers]  
 srv1.example.com
 
-[masterDirectoryServers]
+[masterDirectoryServers]  
 srv1.example.com
 
-[replicaDirectoryServers]
+#Custom Default Domain (Optional)
+[masterDirectoryServers:vars]
+#default_domain=domain.com # Replace with your desired domain
 
-[serviceDiscoverServers]
-srv1.example.com
+[replicaDirectoryServers]  
 
-### Keep this Component empty and uncommented
-[dbsConnectorServers]
+[serviceDiscoverServers]  
+srv1.example.com  
 
-[mtaServers]
+[dbsConnectorServers]  
+#must be empty
+
+[mtaServers]  
 srv2.example.com
 
-[proxyServers]
+[proxyServers]  
 srv2.example.com
 
-[proxyServers:vars]
-webmailHostname=YourWebmailPublicHostname
+#Specify the public hostname for the webmail like webmail.example.com
+[proxyServers:vars] 
+#webmailHostname=webmailPublicHostname
 
-[applicationServers]
+[applicationServers]   
 srv3.example.com
 
-[filesServers]
+[filesServers]  
 srv4.example.com
 
-[docsServers]
+[docsServers]  
 srv4.example.com
 
-[taskServers]
+[taskServers]  
 srv3.example.com
 
-[previewServers]
+[previewServers]  
 srv4.example.com
 
-[videoServers]
-srv5.example.com public_ip_address=x.y.z.t
-
-[prometheusServers]
-srv1.example.com
-
-[syslogServer]
-srv1.example.com
+#Specify the hostname and public IP address for every server
+[videoServers]  
+#hostname public_ip_address=x.y.z.t  
+srv5.example.com public_ip_address=8.9.10.11
 
 [workStreamServers]
 srv4.example.com
+
+[prometheusServers]  
+srv1.example.com
+
+[syslogServer]  
+srv1.example.com
+

@@ -234,3 +234,6 @@ These steps will allow you to quickly import a dashboard into Grafana using its 
           source to create a Grafana dashboard with the graph and
           singlestat panels. This is a standard Grafana Labs solution.
         - 17103
+      * - **Carbonio Installed Packages**
+        - The dashboard displays a list of Carbonio packages installed on monitored nodes, including the package name and version per instance.
+        - 24969
