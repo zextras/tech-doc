@@ -26,7 +26,7 @@ Next, we install all packages needed for |product|.
          carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-videoserver-ce carbonio-catalog
+         carbonio-videoserver-ce carbonio-catalog carbonio-memcached
 
    .. tab-item:: Ubuntu 24.04
       :sync: ubu24
@@ -45,7 +45,7 @@ Next, we install all packages needed for |product|.
          carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
-         carbonio-videoserver-ce carbonio-catalog
+         carbonio-videoserver-ce carbonio-catalog carbonio-memcached
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -74,7 +74,7 @@ Next, we install all packages needed for |product|.
          carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
-         carbonio-catalog
+         carbonio-catalog carbonio-memcached
 
    .. tab-item:: RHEL 9
       :sync: rhel9
@@ -103,5 +103,5 @@ Next, we install all packages needed for |product|.
          carbonio-message-dispatcher-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
-         carbonio-catalog
+         carbonio-catalog carbonio-memcached
 
