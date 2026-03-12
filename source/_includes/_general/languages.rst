@@ -26,6 +26,7 @@ languages
       .. csv-table::
          :header: "Language", "code"
 
+         "Bosnian","bs"
          "Dutch","nl"
          "German","de"
          "Hungarian", "hu"
