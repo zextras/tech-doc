@@ -72,6 +72,7 @@ This is the list of Components that make up a |product| installation.
       * carbonio-ws-collaboration-ui
       * carbonio-files-public-folder-ui
       * carbonio-catalog
+      * carbonio-memcached
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
@@ -222,8 +223,7 @@ installation, please review these important remarks:
 * You **must** start with the installation of the the
   :ref:`component-mesh-install` Component, followed by the
   :ref:`component-db-install` Component. Then you can proceed with the
-  other infrastructure Components and finally with any other Component you need
-  in your installation.
+  other Components.
 
 .. toctree::
    :hidden:
