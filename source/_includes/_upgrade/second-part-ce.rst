@@ -44,7 +44,45 @@
 
                # dnf upgrade --best --allowerasing
 
-   .. grid-item-card:: Step 4. (Optional) Remove unused packages
+   .. grid-item-card:: Step 4. Install new memcached package
+      :columns: 12 12 12 12
+
+      Install the :file:`carbonio-memcached` package, which is part of the **Proxy** component and is required by the latest version of Carbonio CE.
+
+      .. tab-set::
+
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
+
+            .. code:: console
+
+               # apt install carbonio-memcached
+
+         .. tab-item:: RHEL 8
+            :sync: rhel8
+
+            .. code:: console
+
+               # dnf install carbonio-memcached
+
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt install carbonio-memcached
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
+
+            .. code:: console
+
+               # dnf install carbonio-memcached
+
+
+
+
+   .. grid-item-card:: Step 5. (Optional) Remove unused packages
       :columns: 12 12 12 12
 
       After the latest packages have been installed, you can remove
@@ -81,14 +119,14 @@
 
                # dnf autoremove
 
-   .. grid-item-card:: Step 5.  Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 6.  Register upgraded packages to |mesh|
       :columns: 12 12 12 12
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 6. Reboot
+   .. grid-item-card:: Step 7. Reboot
       :columns: 12 12 12 12
 
       Once the upgrade has completed successfully, run command:
