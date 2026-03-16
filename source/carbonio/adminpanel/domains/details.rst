@@ -284,6 +284,9 @@ corresponding value, then clicking the :bdg-primary-line:`ADD`
 button. Remember also to add the SP certificate to the IDP's
 configuration.
 
+.. include:: /_includes/_auth/saml-login-note.rst
+
+
 .. _ap-disclaimer:
 
 Disclaimer
