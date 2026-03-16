@@ -369,6 +369,8 @@ You can now integrate a SAML application in |product| in two ways, either
 automatic or manual. The following sections describe each method in
 detail.
 
+
+
 .. _auth_import_saml_configuration_automatically:
 
 Import SAML Configuration Automatically
@@ -393,16 +395,19 @@ import the configuration using the command:
 You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the login page.
 
 .. card::
-   :width: 100%
+   :width: 50%
 
    .. figure:: /img/auth/saml-login.png
       :align: center
-      :width: 100%
+      :width: 50%
 
 
       Login page with enabled SAML.
 
 By clicking it, you will be redirect to the SAML IDP login page.
+
+.. include:: /_includes/_auth/saml-login-note.rst
+
 
 .. _auth_import_saml_configuration_manually:
 
