@@ -13,12 +13,12 @@ Each of the available Components and their features are  shown in the
 page, including the number of accounts licenced. Components for which
 no license has been purchased are hidden from the view.
 
-If the system is not yet registered, an activation token can be added,
-while if the system is already registered, the license can be
-deactivated or renewed.
+If the system is not yet registered, an activation token can be added.
+If the system is already registered, administrators can manually force the license renewal.
+
 
 .. figure:: /img/adminpanel/ap-subscriptions.png
-   :width: 99%
+   :width: 80%
 
    Sample subscription page with enables services.
 
