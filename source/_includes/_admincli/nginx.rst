@@ -30,7 +30,7 @@ custom filename, but must override the default
 
 .. card::
 
-   Custom Configuration
+   **Custom Configuration**
    ^^^^^
 
    Now, to implement the configuration mentioned at the beginning of this
@@ -78,13 +78,14 @@ custom filename, but must override the default
       .. code:: console
        
          # systemctl restart carbonio-proxy.target
+
  
-       NGINX will generate the configuration from the template files, then
-       start.
+      NGINX will generate the configuration from the template files, then
+      start.
 
 .. card::
 
-   Update of Customisations
+   **Update of Customisations**
    ^^^^^
 
    When a customisation is operational, the template does usually not
@@ -99,7 +100,7 @@ custom filename, but must override the default
 
 .. card::
 
-   Remove the Customisations
+   **Remove the Customisations**
    ^^^^^
 
    To remove the customisation, simply remove the customised template
