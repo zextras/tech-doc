@@ -1212,3 +1212,30 @@ e.g. "InternalGAL/_zextras".
 
 Other users' Address Books include the Display Name of the owner and the
 folder name, e.g. "John Doe/EMEA Partners".
+
+Removing Orphaned Address Books
+-------------------------------
+
+In some cases (for example, after deleting a user account), LDAP Address
+Book entries configured at domain or global level may remain orphaned and
+cannot be managed through standard commands.
+
+To remove these broken configurations, administrators can use the
+``carbonio mobile addressBook remove`` command by specifying the
+account ID (UUID) and using ``all`` as the folder parameter. This forces
+the removal of all associated address book entries for the given account.
+
+The account UUID can be retrieved using the following command::
+
+  carbonio prov ga user@example.com zimbraId
+
+Example output::
+
+  # name user@example.com
+  zimbraId: d54d53b1-46b8-496c-a451-bc2cc0d0bc05
+
+Examples::
+
+  carbonio mobile addressBook remove global d54d53b1-46b8-496c-a451-bc2cc0d0bc05 all
+
+  carbonio mobile addressBook remove domain example.com d54d53b1-46b8-496c-a451-bc2cc0d0bc05 all
