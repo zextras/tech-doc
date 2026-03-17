@@ -21,3 +21,7 @@ deactivated or renewed.
    :width: 99%
 
    Sample subscription page with enables services.
+
+.. _license_renewal_behavior:
+
+.. include:: /_includes/_license/renewal.rst
