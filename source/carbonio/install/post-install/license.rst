@@ -34,7 +34,7 @@ command line or the administration interface.
 .. _fundamental_internet_requirement:
 
 Fundamental Requirement – Internet Connectivity
-===============================================
+-----------------------------------------------
 
 **Requirement:**
 
@@ -50,4 +50,7 @@ must have reliable outbound **internet access over TCP port 443 (HTTPS) to** ``a
 * Typically, this applies to the **Mailstore & Provisioning** node, while other nodes (MTA, Proxy, etc.) do not require internet connectivity for licensing.
 
 * Firewalls, proxies, and SSL-inspecting appliances must permit this connection and **trust the endpoint’s SSL certificate**.
+
+.. include:: /_includes/_license/renewal.rst
+
 

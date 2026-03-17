@@ -30,7 +30,7 @@ custom filename, but must override the default
 
 .. card::
 
-   Custom Configuration
+   **Custom Configuration**
    ^^^^^
 
    Now, to implement the configuration mentioned at the beginning of this
@@ -65,19 +65,27 @@ custom filename, but must override the default
          proxy_set_header X-CUSTOM-Forwarded-For "audit@example.com";
          }
 
-   #. Restart the proxy system **as the** ``zextras`` **user**.
+   #. Restart the proxy system **as the** ``zextras`` **user** based on your OS.
 
+      **Ubuntu 22** / **Red Hat 8** (non-systemd based)
+ 
       .. code:: console
-
+ 
          zextras$ zmproxyctl restart
 
+      **Ubuntu 24** / **Red Hat 9** (systemd based)
+
+      .. code:: console
+       
+         # systemctl restart carbonio-proxy.target
+
+ 
       NGINX will generate the configuration from the template files, then
       start.
 
-
 .. card::
 
-   Update of Customisations
+   **Update of Customisations**
    ^^^^^
 
    When a customisation is operational, the template does usually not
@@ -92,7 +100,7 @@ custom filename, but must override the default
 
 .. card::
 
-   Remove the Customisations
+   **Remove the Customisations**
    ^^^^^
 
    To remove the customisation, simply remove the customised template
