@@ -67,17 +67,17 @@ custom filename, but must override the default
 
    #. Restart the proxy system **as the** ``zextras`` **user** based on your OS.
 
-+      **Ubuntu 22** / **Red Hat 8** (non-systemd based)
+      **Ubuntu 22** / **Red Hat 8** (non-systemd based)
  
-       .. code:: console
+      .. code:: console
  
--         zextras$ zmproxyctl restart
-+
-+      **Ubuntu 24** / **Red Hat 9** (systemd based)
-+
-       .. code:: console
-+       
-+         # systemctl restart carbonio-proxy.target
+         zextras$ zmproxyctl restart
+
+      **Ubuntu 24** / **Red Hat 9** (systemd based)
+
+      .. code:: console
+       
+         # systemctl restart carbonio-proxy.target
  
        NGINX will generate the configuration from the template files, then
        start.
