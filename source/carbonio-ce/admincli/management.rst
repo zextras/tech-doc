@@ -8,9 +8,6 @@ advanced |carbonio| features. Currently, the available topics are:
 
 :ref:`manage-alias` explains how to add aliases to an e-mail address
 
-:ref:`carb-customisations` guides you in the customisation of 
-|product|
-
 :ref:`cli-attachments` shows how to manage the attachments the users
 can send
 
@@ -42,7 +39,6 @@ Webmail is served
    :hidden: 
 
    management/managealias
-   management/custom
    management/attachments
    management/setting-features
    management/letsencrypt
