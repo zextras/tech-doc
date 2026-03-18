@@ -29,7 +29,6 @@ Interface)`.
       carboniobackup
       mobile
       storages
-      custom
       mesh
       security
       chats-advanced
