@@ -302,10 +302,8 @@ Restart |product| services to apply the changes.
 
       .. code:: console
 
-         # systemctl restart carbonio-directory-server.target
-         # systemctl restart carbonio-appserver.target
-         # systemctl restart carbonio-mta.target
-         # systemctl restart carbonio-proxy.target
+         systemctl restart carbonio.target
+
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -323,7 +321,5 @@ Restart |product| services to apply the changes.
 
       .. code:: console
 
-         # systemctl restart carbonio-directory-server.target
-         # systemctl restart carbonio-appserver.target
-         # systemctl restart carbonio-mta.target
-         # systemctl restart carbonio-proxy.target
+         systemctl restart carbonio.target
+
