@@ -53,7 +53,7 @@ Finally, restart the service.
 
       .. code:: console
 
-         zextras$ zmcontrol restart
+         zextras$ zmcproxyctl restart
 
    .. tab-item:: Ubuntu 24.04
       :sync: ubu24
@@ -62,7 +62,7 @@ Finally, restart the service.
 
       .. code:: console
 
-         # systemctl start/stop/restart carbonio-proxy.target
+         # systemctl restart carbonio-proxy.target
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -71,7 +71,7 @@ Finally, restart the service.
 
       .. code:: console
 
-         zextras$ zmcontrol restart
+         zextras$ zmproxyctl restart
 
    .. tab-item:: RHEL 9
       :sync: rhel9
@@ -80,4 +80,4 @@ Finally, restart the service.
 
       .. code:: console
 
-         # systemctl start/stop/restart carbonio-proxy.target
+         # systemctl restart carbonio-proxy.target
