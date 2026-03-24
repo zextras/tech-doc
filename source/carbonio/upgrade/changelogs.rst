@@ -49,22 +49,9 @@ that you can find here:
 
    Installation
 
-.. button-link:: https://github.com/zextras/carbonio-ansible-ssinstall/blob/main/CHANGELOG.md
-   :color: danger
-   :outline:
-
-   Single-Server Installation
-
 .. button-link::
    https://github.com/zextras/carbonio-upgrade-ansible/blob/main/CHANGELOG.md
    :color: danger
    :outline:
 
    Upgrade
-
-.. button-link::
-   https://github.com/zextras/sps-carbonio-ha-ansible-setup/blob/main/CHANGELOG.md
-   :color: danger
-   :outline:
-
-   Cluster Services Redundancy
