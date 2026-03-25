@@ -60,19 +60,6 @@ The content is organised in multiple parts:
 
          architecture/toc
 
-   .. grid-item-card:: System Concepts
-      :columns: 12 12 6 6
-      :class-title: sd-font-weight-bold sd-fs-4
-      :link-type: doc
-      :link: /system-concepts/toc
-
-      Core concepts, system behaviors, and internal mechanisms of |product| 
-
-      .. toctree::
-         :hidden:
-
-         system-concepts/toc
-
    .. grid-item-card:: Install
       :columns: 12 12 6 6
       :class-title: sd-font-weight-bold sd-fs-4
