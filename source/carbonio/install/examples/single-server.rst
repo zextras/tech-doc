@@ -10,7 +10,7 @@ The architecture of this installation example is depicted in the following diagr
 .. _fig-single-core-ansible:
 
 .. figure:: /_images/1_node.png
-   :width: 80%
+   :width: 40%
    :align: center
 
    Sample diagram of a Single Server Node.

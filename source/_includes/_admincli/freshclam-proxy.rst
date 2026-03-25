@@ -13,9 +13,44 @@ the file, by adding at the bottom the lines::
 As the |zu|, execute
 
 
-.. code:: console
+.. tab-set::
 
-   zextras$ zmclamdctl restart
+   .. tab-item:: Ubuntu 22.04
+      :sync: ubu22
+
+      As the |zu|
+
+      .. code:: console
+
+         zextras$ zmclamdctl restart
+
+   .. tab-item:: Ubuntu 24.04
+      :sync: ubu24
+
+      As the |ru|
+
+      .. code:: console
+
+         systemctl restart carbonio-freshclam.service
+
+
+   .. tab-item:: RHEL 8
+      :sync: rhel8
+
+      As the |zu|
+
+      .. code:: console
+
+         zextras$ zmclamdctl restart
+
+   .. tab-item:: RHEL 9
+      :sync: rhel9
+
+      As the |ru|
+
+      .. code:: console
+
+         systemctl restart carbonio-freshclam.service
 
 To verify that the new configuration is correct and the HTTP proxy is
 being used, check the log file
