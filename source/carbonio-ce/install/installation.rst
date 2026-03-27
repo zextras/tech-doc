@@ -110,8 +110,8 @@ Step 7: Setup |mesh|
 
 .. _installation-step8:
 
-Step 8: Bootstrap |file| Databases
-----------------------------------
+Step 8: Bootstrap |product| Databases
+-------------------------------------
 
 .. include:: /_includes/_installation/_steps/db-bootstrap-ce.rst
 
