@@ -36,48 +36,18 @@ procedure that requires only a few steps.
    number (and names) of the domains present on the |product|
    infrastructure.
 
-Select the virtual host, then click :blue:`VERIFY CERTIFICATE`. In the
-dialog, you can choose to use:
+Select the virtual host, then you can choose:
 
-* A Let's Encrypt *longChain* Certificate, i.e., including an
-  intermediate certificate. Make sure to :ref:`satisfy the
+* **GENERATE A LET'S ENCRYPT CERTIFICATE**: Make sure to :ref:`satisfy the
   requirements <le-procedure>` before clicking the
   :bdg-primary:`GENERATE CERTIFICATE` button. Complete the procedure
   according to the directions :ref:`below <le-procedure>`.
 
-* A Let's Encrypt *shortChain* Certificate, without intermediate
-  certificate: like the previous case, make sure to :ref:`satisfy the
-  requirements <le-procedure>` before clicking the
-  :bdg-primary:`GENERATE CERTIFICATE` button. Complete the procedure
-  according to the directions :ref:`below <le-procedure>`.
 
-  .. card:: Let's Encrypt's Short and Long Chain certificates.
-
-     Without going into much details, the difference between the two
-     types of certificates issued by Let's Encrypt (*"ISRG Root X1"*)
-     is the compatibility with older Android clients and SSL
-     libraries.
-
-     More technically, the difference is that the Short Chain contains
-     two certificates: Let's Encrypt's Root certificate and the one
-     issued to your website, signed by the former; while the Long
-     Chain three: the same of the Short Chain and an intermediate
-     certificate. The *ISRG Root X1* indeed, was issued quite recently
-     and may not be known to some browsers, devices, or clients,
-     therefore it was decided to add as intermediate certificate
-     another root certificate that is well known to clients, to expand
-     compatibility.
-
-     .. seealso:: More details and technicalities about the Short
-        vs. Long Chain certificates can be found in article `Long
-        (default) and Short (alternate) Certificate Chains Explained
-        <https://community.letsencrypt.org/t/long-default-and-short-alternate-certificate-chains-explained/>`_.
-
-* A custom certificate. In this case, you need to provide by yourself
+* **UPLOAD A CERTIFICATE**: In this case, you need to provide by yourself
   the three files of the authorisation chain (i.e., the *Domain
   Certificate*, the *Certificate CA Chain*, and the *Private
-  Key*). You can either click the paper clip icon to upload a
-  certificate file  or paste the content of the file in the
+  Key*). You can either upload a certificate file  or paste the content of the file in the
   corresponding textfields.
 
   .. note:: If you paste the certificate, remember to add a carriage
