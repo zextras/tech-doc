@@ -75,7 +75,7 @@ Linux, macOS, or BSD, satisfying the following requirements
 
    **Supported Versions**
 
-   The supported ``ansible-core`` versions are **>= 2.13.3**
+   The supported ``ansible-core`` versions are **>= 2.15.13**
 
    For more detailed information about available versions and compatibility between ``ansible`` and ``ansible-core``, refer to the official Ansible documentation:
 
