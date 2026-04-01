@@ -27,9 +27,43 @@ stronger protections.
    Restart the service on every MTA Node to make sure the new value is
    picked up by the system
 
-   .. code:: console
+   .. tab-set::
 
-      zextras$ zmamavisdctl restart
+      .. tab-item:: Ubuntu 22.04
+         :sync: ubu22
+
+         As the |zu|
+
+         .. code:: console
+
+            zextras$ zmamavisdctl restart
+
+      .. tab-item:: Ubuntu 24.04
+         :sync: ubu24
+
+         As the |ru|
+
+         .. code:: console
+
+            systemctl restart carbonio-mailthreat.service
+
+      .. tab-item:: RHEL 8
+         :sync: rhel8
+
+         As the |zu|
+
+         .. code:: console
+
+            zextras$ zmamavisdctl restart
+
+      .. tab-item:: RHEL 9
+         :sync: rhel9
+
+         As the |ru|
+
+         .. code:: console
+
+            systemctl restart carbonio-mailthreat.service
 
    You can check at any time the status of the variable and of the
    service with
