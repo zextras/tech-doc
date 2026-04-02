@@ -27,13 +27,5 @@ One example in HTML::
   <p>Company Phone: +00 123 456 7890</p>
   <p>Company e-mail: info@example.com</p>
 
-Every time you enable or disable the disclaimer or change the text,
-you need to issue the command as the ``zextras`` user on every Node
-featuring the :ref:`MTA Component <component-mta-install>`
-
-.. code:: console
-
-   zextras$ /opt/zextras/libexec/zmaltermimeconfig
-
 .. seealso:: Domain disclaimer can be managed from the CLI as well,
    please refer to Section :ref:`disclaimer-cli`.
