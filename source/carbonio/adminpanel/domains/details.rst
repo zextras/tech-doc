@@ -293,3 +293,6 @@ Disclaimer
 ==========
 
 .. include:: /_includes/_adminpanel/_domains/disclaimer.rst
+
+.. include:: /_includes/_adminpanel/_domains/discl-warn.rst
+
