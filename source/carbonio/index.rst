@@ -10,12 +10,21 @@
 Welcome to the Administrator documentation of |carbonio|, the fully private digital
 workplace.
 
+This documentation provides system administrators with the information needed to install, configure, manage, and monitor |carbonio|.
+
+To stay up to date with the latest changes, improvements, and fixes, please refer to the current release changelog:
+
+.. button-ref:: upgrade/changelogs/changelog-26.03.0
+   :color: danger
+   :outline:
+
+   Carbonio release notes
+
 If you are looking for |ce|'s Administrator documentation, please
-refer to its `dedicated page <../../carbonio-ce/html/index.html>`_. If
-you are searching for the User Documentation, please refer to its
-`home page <https://docs.zextras.com/user-guides/carbonio/en/html>`_.
+refer to its `dedicated page <../../carbonio-ce/html/index.html>`_.   
+For User Documentation, visit the corresponding `home page <https://docs.zextras.com/user-guides/carbonio/en/html>`_.
         
-The content is organised in multiple parts:
+The documentation is organized into the following sections:
 
 .. grid:: 1 2 2 3
    :gutter: 3
@@ -39,8 +48,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: upgrade/toc
 
-      Upgrade procedures and list of issues fixed in the current
-      release
+      Upgrade guides and version changelogs
 
       .. toctree::
          :hidden:
@@ -53,7 +61,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: architecture/toc
 
-      Architecture of |product| and Components description and installation
+      Architecture of |product| and Components description
 
       .. toctree::
          :hidden:
@@ -66,8 +74,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: install/toc
 
-      Information on |product| and its installation, requirements and some
-      pre-cooked installation Scenarios
+      Installation guides using Ansible, with practical examples
 
       .. toctree::
          :hidden:
@@ -93,8 +100,7 @@ The content is organised in multiple parts:
       :link-type: doc
       :link: admincli/toc
 
-      Administration of |product| from the command line: management
-      tasks and some advanced usage for |mesh|
+      Command-line administration, including management tasks and advanced |mesh| usage
 
       .. toctree::
          :hidden:
