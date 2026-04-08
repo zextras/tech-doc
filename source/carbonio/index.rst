@@ -48,8 +48,7 @@ The documentation is organized into the following sections:
       :link-type: doc
       :link: upgrade/toc
 
-      Upgrade procedures and list of issues fixed in the current
-      release
+      Upgrade guides and version changelogs
 
       .. toctree::
          :hidden:
