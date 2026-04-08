@@ -61,7 +61,7 @@ The documentation is organized into the following sections:
       :link-type: doc
       :link: architecture/toc
 
-      Architecture of |product| and Components description and installation
+      Architecture of |product| and Components description
 
       .. toctree::
          :hidden:
@@ -74,8 +74,7 @@ The documentation is organized into the following sections:
       :link-type: doc
       :link: install/toc
 
-      Information on |product| and its installation, requirements and some
-      pre-cooked installation Scenarios
+      Installation guides using Ansible, with practical examples
 
       .. toctree::
          :hidden:
@@ -101,8 +100,7 @@ The documentation is organized into the following sections:
       :link-type: doc
       :link: admincli/toc
 
-      Administration of |product| from the command line: management
-      tasks and some advanced usage for |mesh|
+      Command-line administration, including management tasks and advanced |mesh| usage
 
       .. toctree::
          :hidden:

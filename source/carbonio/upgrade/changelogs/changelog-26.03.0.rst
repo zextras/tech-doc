@@ -666,10 +666,10 @@ Tracking code: CO-3310
 UI and Usability Improvements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Calendars
-^^^^^^^^^
+Calendars Summary View Auto-Close
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Summary View Auto-Close: The calendar event summary view now automatically closes when switching modules, preventing UI clutter and improving user flow.
+The calendar event summary view now automatically closes when switching modules, preventing UI clutter and improving user flow.
 
 Tracking code: CO-3273
 
