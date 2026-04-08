@@ -592,3 +592,99 @@ Fixed an issue where new contacts could not be created and tabs were missing
 in the Contacts module.
 
 Tracking code: CO-2891, GB-797, GB-798, GB-855
+
+Hotfixes
+--------
+
+Security Fixes
+~~~~~~~~~~~~~~
+
+DOM-based XSS in Login Pages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We have fixed critical DOM-based Cross-Site Scripting (XSS) vulnerabilities in both the main and admin login pages. These fixes prevent arbitrary JavaScript execution and session token exfiltration, significantly reducing the risk of account takeover. Input validation and sanitization have been rigorously enforced on redirect URLs after authentication across all vulnerable authentication flows.
+
+Tracking code: CO-3375, CO-3376
+
+
+Stored XSS in Print Email Feature
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A stored XSS vulnerability in the email printing feature has been resolved. Malicious JavaScript in email participant display names can no longer execute when printing emails, thanks to enhanced sanitization in print templates and the application of Content Security Policy (CSP) headers.
+
+Tracking code: CO-3374
+
+
+Nginx Security Update
+^^^^^^^^^^^^^^^^^^^^^
+
+The bundled Nginx has been upgraded to version 1.28.3+ to address multiple upstream Common Vulnerabilities and Exposures (CVEs). All deployments must ensure their Nginx instance is updated to at least this version for optimal security.
+
+Tracking code: CO-3399
+
+Critical Bug Fixes and Regressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+IMAP Compatibility with iOS Clients
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A parsing bug in the IMAP LIST command's RETURN options has been fixed, resolving synchronization issues and excessive log growth experienced by iOS 18+ mail clients. The IMAP server logic has been updated to correctly handle spaces after STATUS options.
+
+Tracking code: CO-3380
+
+
+Login Redirection Regression
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We have corrected a regression that caused incorrect redirection of user logins to the admin UI login page. This release restores the intended login behavior.
+
+Tracking code: CO-3425
+
+
+Compose Editor: URL Autolink Regression
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The automatic conversion of URLs to clickable hyperlinks in the webmail compose editor has been restored, addressing a regression introduced in the 26.3.0 upgrade.
+
+Tracking code: CO-3360
+
+
+Admin Panel: Last Access Timestamp
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The "Last Access" field in the admin account detail panel now accurately displays the actual last logon timestamp instead of the account creation date.
+
+Tracking code: CO-3370
+
+
+Mails: Multiple saveDraft Requests
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+An issue where the HTML email composer triggered multiple saveDraft requests after typing stopped has been resolved, ensuring a single, efficient save request.
+
+Tracking code: CO-3310
+
+
+UI and Usability Improvements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Calendars
+^^^^^^^^^
+
+Summary View Auto-Close: The calendar event summary view now automatically closes when switching modules, preventing UI clutter and improving user flow.
+
+Tracking code: CO-3273
+
+
+Blocked Extensions Not Persisting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A UI bug preventing changes to the "Blocked Extensions" field in the Admin UI MTA General page from saving has been resolved. The UI now correctly loads and saves multi-value attributes.
+
+Tracking code: CO-3344
+
+
+Postscreen Tuning Page Crash
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A crash in the Postscreen Tuning admin page caused by unguarded .replace() calls on undefined LDAP attribute values has been fixed. All fields now safely handle null/undefined values.
+
+Tracking code: CO-3343
+
