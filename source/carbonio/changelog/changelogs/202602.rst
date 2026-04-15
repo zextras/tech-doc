@@ -1,0 +1,41 @@
+
+Changelog 2026-02
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202602-1678 Moved installation scenarios to Partner Portal
+
+All installation scenarios have been removed from the public documentation (docs.zextras.com) and moved to the Partner Portal, including the “Scenario Redundant with User Mail Replica”.
+
+
+.. rubric:: 202602-1653 HSM policy criteria not documented in Admin Console documentation
+
+The Admin Console documentation now includes explanations of the available criteria for configuring HSM policies.
+It provides clear examples of supported policy types, such as: Move after X days, Move after X MB/GB, other time- or size-based rules.
+This improves usability by helping users better understand how to correctly configure HSM policies according to their storage and lifecycle requirements.
+
+
+.. rubric:: 202602-1449 Added LDAP multimaster status check documentation
+
+The documentation page Checks and Status for the “Redundant with User Mail Replica” scenario now includes content describing how to verify LDAP multimaster and replica status.
+It introduces the commands required to validate both the multimaster configuration and replication health.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202602-1681 Fix incorrect command prompt in MTA Message Tracking documentation
+
+Corrected the shell prompt used in command examples on the MTA Message Tracking documentation page.
+
+Previously, commands were displayed with an incorrect user-specific prompt ($zextras), which could lead users to mistakenly copy the prompt as part of the command, causing execution issues.
+
+The prompt has been updated to the standard format (zextras$), ensuring that commands can be copied and executed correctly without unintended text.
+
+*****
+
+End of changelog

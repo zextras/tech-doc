@@ -1,0 +1,179 @@
+
+Changelog 2026-03
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202603-1763 Relocate customisations documentation to Partner Portal
+
+Moved “Customisations” documentation from the public Carbonio documentation site to the Partner Portal.
+
+
+.. rubric:: 202603-1755 Remove obsolete sections from changelog page
+
+Removed the “Single server installation” and “Cluster Services Redundancy” sections from the changelog page.
+
+
+.. rubric:: 202603-1754 Update restart instructions for Ubuntu 24 and RHEL 9
+
+Updated the “Restart Carbonio” and “Restart MTA” steps to include the correct commands for Ubuntu 24 and RHEL 9 (systemd-based systems). Also reviewed all occurrences of zmcontrol restart to ensure consistency and accuracy across supported operating systems.
+
+
+.. rubric:: 202603-1753 Update installation architecture diagrams
+
+Replaced outdated architecture diagrams in the One-Server and Multi-Server (5-node) installation documentation with the latest official images ensuring alignment with the current product architecture and visual standards.
+
+
+.. rubric:: 202603-1752 Simplify service restart using carbonio.target on Ubuntu 24 and RHEL 9
+
+Updated restart procedures in the Advanced Administration Tasks documentation to use the global carbonio.target instead of restarting individual service targets. This simplifies operations on Ubuntu 24 and RHEL 9 by ensuring all Carbonio services are restarted in the correct order with a single command, reducing complexity and the risk of missing components.
+
+
+.. rubric:: 202603-1745 Added Bosnian to Community Supported Languages list
+
+Added Bosnian to the list of Community Supported Languages in the documentation, reflecting its high translation completion status on Weblate and its availability in UI Preferences for users.
+
+
+.. rubric:: 202603-1744 Add Carbonio 26.3.0 Changelog to Documentation
+
+Addition of Product changelog for 26.3.0 Carbonio release
+
+
+.. rubric:: 202603-1742 Added internet requirement for Carbonio license activation steps
+
+Updated the license activation procedure to explicitly include the requirement for an active internet connection during the activation process in the Carbonio Administration documentation, ensuring clearer prerequisites for successful license activation.
+
+
+.. rubric:: 202603-1739 Added “Carbonio Installed Packages” dashboard to monitoring documentation
+
+Added the new “Carbonio Installed Packages” dashboard (ID: 24969) to the Monitoring dashboards documentation in the Grafana section. The dashboard provides visibility into installed Carbonio packages across monitored servers, including package names and versions per instance.
+
+
+.. rubric:: 202603-1730 Added proxy reload command for Ubuntu 24 and RHEL 9 in Let’s Encrypt renewal procedure
+
+Added the appropriate proxy reload command for Ubuntu 24 and RHEL 9 in the Let’s Encrypt certificate renewal documentation, ensuring correct and consistent proxy reload instructions across all supported operating systems in the Carbonio environment.
+
+
+.. rubric:: 202603-1727 Added SAML authentication flow documentation for Admin UI
+
+Added a new section in the Admin Guide describing the SAML authentication flow for the Carbonio Admin UI.
+
+
+.. rubric:: 202603-1724 Enhanced Distribution List support in Admin UI
+
+Enhanced the “Distribution List” administration documentation to reflect new UI capabilities and clarify the intended business use case of shared team identities.
+
+
+.. rubric:: 202603-1720 Updated Certbot / Let’s Encrypt instructions for Carbonio 26.3
+
+Reviewed and updated Certbot and Let’s Encrypt documentation to align with Carbonio 26.3.0 requirements. Ensured that all references to certificate management workflows reflect the current supported procedures, including validation of Certbot-based steps and removal or correction of outdated instructions where necessary.
+
+
+.. rubric:: 202603-1719 Updated subscription page component images for Carbonio 26.3
+
+Updated the subscription pages in the public documentation with the latest component images reflecting the Carbonio 26.3 release, ensuring the visual representation of available components is aligned with the current product structure.
+
+
+.. rubric:: 202603-1717 Added automatic license renewal behavior documentation
+
+Added a new section describing “Automatic License Renewal Behavior” to both the installation and Admin Panel subscription documentation for Carbonio. The update clarifies how license renewal is handled automatically.
+
+
+.. rubric:: 202603-1711 Updated SOAP API documentation for Carbonio 26.3.0
+
+Updated the SOAP API documentation to reflect changes introduced in Carbonio 26.3.0, ensuring alignment of API references, behaviors, and supported operations with the latest release.
+
+
+.. rubric:: 202603-1707 Updated redirect for 404 pages
+
+Updated redirect mechanism used on 404 pages in the Carbonio documentation to ensure correct handling of missing routes and improved navigation consistency across documentation pages.
+
+
+.. rubric:: 202603-1695 Refactored component documentation pages to remove installation instructions
+
+Reviewed all component pages in the Carbonio documentation and removed installation instructions, including commands and step-by-step procedures. Only package lists are now retained on component pages, centralizing all installation workflows in the dedicated Ansible-based installation documentation.
+
+
+.. rubric:: 202603-1694 Added RabbitMQ exporter to Monitoring documentation
+
+Added the carbonio-prometheus-rabbit-exporter to the Monitoring documentation.
+
+
+.. rubric:: 202603-1693 Clarified zimbraPublicServiceHostname requirements and configuration guidance
+
+Reviewed and clarified documentation regarding the zimbraPublicServiceHostname attribute to ensure consistent guidance on when it is required.
+
+
+.. rubric:: 202603-1690 Removed redundant installation scenario reference from Ansible install documentation
+
+Removed a phrase from the Ansible installation documentation.
+
+
+.. rubric:: 202603-1689 Removed manual upgrade documentation and consolidated upgrade process into Ansible workflow
+
+Removed legacy manual upgrade documentation pages and consolidated the upgrade process to support only the Ansible-based method for Carbonio. The manual upgrade guides have been deprecated, and any remaining required pre-upgrade operations have been integrated into the Ansible upgrade documentation under a new “Preliminary Steps” section to ensure a single, consistent upgrade procedure.
+
+
+.. rubric:: 202603-1688 Removed User Mail Replica documentation page
+
+Removed the “User Mail Replica” documentation page (admincli/usermailreplica.html) from the public Carbonio documentation, as the content has been migrated to the Partner Portal.
+
+
+.. rubric:: 202603-1682 Removed installation scenarios from public documentation
+
+Removed legacy installation scenario pages from the public Carbonio documentation.
+
+
+.. rubric:: 202603-1677 Documented new carbonio-videorecorder-db package
+
+Added documentation for the new carbonio-videorecorder-db component introduced with the Quarkus-based refactor of Carbonio Video Recorder.
+
+
+.. rubric:: 202603-1674 Removed legacy Chats upgrade requirement from documentation
+
+Removed outdated guidance related to legacy Chats from the Carbonio documentation, including sections on setting legacy Chats to read-only mode and disabling legacy Chats.
+
+
+.. rubric:: 202603-1649 Updated RHEL8 Python prerequisite for Ansible compatibility
+
+Updated Ansible installation and operation documentation to explicitly state that Red Hat Enterprise Linux 8 requires an updated Python version to ensure compatibility with the latest supported Ansible release.
+
+
+.. rubric:: 202603-1645 Added ability to remove broken AddressBook configurations via Account ID
+
+Updated the documentation for Carbonio AddressBook management to reflect a new administrative capability that allows removal of orphaned or broken global and domain address book configurations.
+
+
+.. rubric:: 202603-1644 Added optional default_domain parameter to Ansible inventory
+
+Added support for an optional default_domain parameter in the Carbonio Ansible inventory (carbonio-install-ansible).
+
+
+.. rubric:: 202603-1586 Removed manual Message Dispatcher migration requirement and PostgreSQL client dependency
+
+Starting from Carbonio 26.03, the message-dispatcher database migration is executed automatically during installation and upgrade. As a result, the previously required manual migration step has been removed from the documentation, and the installation of the PostgreSQL client on Chats nodes is no longer necessary.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202603-1773 Update supported Ansible version in installation documentation
+
+Corrected the supported Ansible version in the installation guide from 2.13.3 to 2.15.13 to reflect the currently supported release.
+
+
+.. rubric:: 202603-1767 Fix incomplete restart instructions for Freshclam proxy configuration
+
+Completed the restart instructions for Freshclam HTTP proxy configuration by adding the required service restart commands for all supported distributions, including Ubuntu 24 and Red Hat 9, ensuring consistent and correct post-configuration steps across documentation.
+
+
+.. rubric:: 202603-1751 Added proxy reload command for Ubuntu 24 and RHEL 9
+
+Added the appropriate proxy reload command for Ubuntu 24 and RHEL 9 to the custom NGINX template documentation, ensuring consistency with systemd-based service management across all supported operating systems.
+
+*****
+
+End of changelog
