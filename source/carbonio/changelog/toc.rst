@@ -39,12 +39,23 @@ Contribution to the Documentation
 Documentation Changelogs
 ========================
 
-The following is the list of changelog including the monthly changes
-to the documentation.
+The following is the list of documentation release notes for the current year,
+including the monthly changes to the documentation.
 
 .. toctree::
    :glob:
    :maxdepth: 1
    :reversed:
 
-   changelogs/*
+   changelogs/current
+
+If instead you are looking for historical changelogs from previous years,
+refer to the dedicated section containing archived changelogs.
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+   :reversed:
+
+   changelogs/older
+

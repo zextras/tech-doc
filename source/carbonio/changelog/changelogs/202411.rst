@@ -34,11 +34,8 @@ Changes in the source code can be found in :pr:`789`.
 
 .. rubric:: 202411-891  Documentation Changelog October 2024
 
-The technical documentation's changelog has been published
+The technical documentation's changelog has been published.
 
-Changes in the documentation can be found in Section
-:doc:`/changelog/changelogs/202410`, those in the source code
-in :pr:`779` and :pr:`787`.
 
 
 .. rubric:: 202411-884 New Component Mesh
