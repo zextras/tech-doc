@@ -62,5 +62,13 @@ be added to the domain's DNS configuration.
 Create a DKIM Record
 --------------------
 
+The utility ``/opt/zextras/libexec/zmdkimkeyutil`` is used to generate a **DKIM key pair** for a domain.
+The private key is stored in **LDAP**, while the public key must be published in public **DNS** as a ``TXT`` record.
+
+Once a **DKIM** key is generated, the **MTA** starts using it immediately.
+If the corresponding DNS record is not yet available (or not fully propagated), outgoing emails may receive a poor **DKIM score**.
+To avoid this, you can temporarily disable **DKIM** signing by clearing the relevant **LDAP** attribute until **DNS** configuration is complete.
+
+This document explains how to generate a **DKIM key**, verify **LDAP attributes**, temporarily disable **DKIM signing**, and finally activate it once **DNS** is ready.
 
 .. include:: /_includes/_installation/dkim.rst
