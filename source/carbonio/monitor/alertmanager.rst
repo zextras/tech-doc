@@ -144,7 +144,7 @@ To enable rules:
 
    Useful alert examples are available at:
    https://samber.github.io/awesome-prometheus-alerts/
-   
+
 Enable Alertmanager in Prometheus
 =================================
 
@@ -179,10 +179,10 @@ Ensure correct ownership:
 
    Carbonio uses port ``9095`` instead of the default ``9093``.
 
+.. _updating-alertmanager-configuration:
+
 Updating Alertmanager configuration
 ===================================
-
-.. _updating-alertmanager-configuration:
 
 Alertmanager configuration is stored in Consul KV, providing:
 
