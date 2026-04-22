@@ -1,171 +1,256 @@
-Enable Alerting with Prometheus and Alertmanager
-================================================
+===================================================
+Configure alerting with Prometheus and Alertmanager
+===================================================
 
-This guide explains how to enable alerting in a Carbonio infrastructure using
-Prometheus and Alertmanager.  
-After completing this how-to, an administrator will be able to configure alert
-rules and receive notifications (email, Telegram, etc.) when issues occur.
+This guide explains how to enable alerting in a Carbonio infrastructure using Prometheus and Alertmanager.
+
+Prometheus alerting works as a two-part process: Prometheus handles the detection of issues by evaluating defined rules against metric data, and a separate component called Alertmanager handles the processing, de-duplication, and notification of those issues.
+
+After completing this guide, an administrator will be able to configure alert rules and receive notifications (email, Telegram, etc.) when issues occur.
 
 Overview
---------
+========
 
-Prometheus alerting works as a two-part process:
+Prometheus alerting consists of two components:
 
-* **Prometheus** evaluates alert rules against collected metrics and determines
-  when an alert condition is met.
-* **Alertmanager** processes those alerts, de-duplicates them, groups them, and
-  routes notifications to the appropriate receivers.
+* **Prometheus** evaluates alert rules against collected metrics
+* **Alertmanager** processes alerts, de-duplicates them, groups them, and routes notifications
 
-Alert Lifecycle
----------------
+Alert rule evaluation (Prometheus Server)
+=========================================
 
-An alert evaluated by Prometheus goes through three states:
+The Prometheus server continuously evaluates alert conditions defined in rule files.
+
+**Define Rules**
+
+Alerting rules are defined in YAML files (for example ``rules.yml``). Each rule specifies a condition using the Prometheus Query Language (PromQL).
+
+Prometheus periodically evaluates these expressions. When a condition is met, an alert is triggered.
+
+**Alert Lifecycle**
+
+Each alert goes through three states:
 
 * **Pending**  
-  The alert condition is true, but it has not persisted for the duration
-  specified in the ``for`` clause. No notification is sent yet.
+  The condition is true but has not persisted for the duration specified in the ``for`` clause. No notification is sent.
 
 * **Firing**  
-  The alert condition has been continuously true for the entire ``for``
-  duration. Prometheus sends the alert to Alertmanager.
+  The condition has been true for the full ``for`` duration. Prometheus sends the alert to Alertmanager.
 
 * **Resolved**  
-  The alert condition is no longer true. Prometheus notifies Alertmanager that
-  the alert has been resolved.
+  The condition is no longer true. Prometheus notifies Alertmanager that the alert has been resolved.
 
-Once an alert is *firing*, Prometheus forwards it to Alertmanager, which handles
-routing and notifications based on alert labels (for example, routing
-``severity=blocker`` alerts to Telegram and ``severity=warning`` alerts to
-email).
+Once an alert is firing, Prometheus sends it to Alertmanager, which handles notification routing based on labels (for example, sending ``severity=blocker`` alerts to Telegram and ``severity=warning`` alerts via email).
 
-Enable Alert Rule Evaluation in Prometheus
-------------------------------------------
+Alertmanager installation
+=========================
 
-By default, rule evaluation is disabled in the Carbonio Prometheus
-configuration.
+Install the package using your system package manager.
 
-Edit the file:
+Ubuntu
+------
 
-.. code:: console
+.. code-block:: bash
 
-   /etc/carbonio/carbonio-prometheus/prometheus.yml
+   sudo apt update
+   sudo apt install carbonio-prometheus-alertmanager
 
-Uncomment or add the following sections:
+RHEL
+----
 
-.. code-block:: yaml
+.. code-block:: bash
 
-   # Alertmanager configuration
-   alerting:
-     alertmanagers:
-     - static_configs:
-       - targets:
-         - IP_AlertManager:9095
-
-   # Load rules once and periodically evaluate them according to the global
-   # 'evaluation_interval'.
-   rule_files:
-     - "/etc/carbonio/carbonio-prometheus/rules/*.yaml"
-
-.. important::
-
-   Carbonio uses port ``9095`` for Alertmanager instead of the default ``9093``.
-
-.. warning::
-
-   The file ``/etc/carbonio/carbonio-prometheus/prometheus.yml`` may be
-   overwritten during upgrades. Any custom changes must be re-applied after an
-   upgrade.
-
-Alert Rules
------------
-
-Sample alert rules are available in:
-
-.. code:: console
-
-   /etc/carbonio/carbonio-prometheus/sample-rules
-
-Example files include:
-
-* ``clamav.yaml``
-* ``consul.yaml``
-* ``mta_queues.yaml``
-* ``mysql.yaml``
-* ``nginx.yaml``
-* ``node_disk.yaml``
-* ``node-exporter.yaml``
-* ``postgres.yaml``
-
-Some files are intentionally empty so administrators can define custom alerts.
-
-To enable rules:
-
-1. Copy the desired files (or create new ones) into:
-
-   .. code:: console
-
-      /etc/carbonio/carbonio-prometheus/rules/
-
-2. Ensure the files are owned by the ``carbonio-prometheus`` user.
-
-After adding or modifying rules, force Prometheus to reload its configuration:
-
-.. code:: console
-
-   curl -X POST http://localhost:9090/-/reload
-
-Install Alertmanager
---------------------
-
-Install the ``carbonio-prometheus-alertmanager`` package using the appropriate
-package manager for your operating system.
-
-.. tab-set::
-
-   .. tab-item:: Ubuntu 22.04
-      :sync: ubu22
-
-      .. code:: console
-
-         apt install carbonio-prometheus-alertmanager
-
-   .. tab-item:: Ubuntu 24.04
-      :sync: ubu24
-
-      .. code:: console
-
-         apt install carbonio-prometheus-alertmanager
-
-   .. tab-item:: RHEL 8
-      :sync: rhel8
-
-      .. code:: console
-
-         dnf install carbonio-prometheus-alertmanager
-
-   .. tab-item:: RHEL 9
-      :sync: rhel9
-
-      .. code:: console
-
-         dnf install carbonio-prometheus-alertmanager
+   sudo yum install carbonio-prometheus-alertmanager
 
 .. note::
 
-   Alertmanager is usually installed on the same node as Prometheus, but it can
-   be installed on a different node. In that case, ensure that firewall rules
-   allow access to port ``9095``.
+   Alertmanager is usually installed on the same node as Prometheus, but it can run on a different node. Ensure firewall rules allow access to port ``9095``.
 
-Alertmanager Configuration
---------------------------
+Post-installation steps
+-----------------------
 
-The Alertmanager configuration file is located at:
+After installing the package:
 
-.. code:: console
+1. Run the pending setup procedure:
+
+   .. code-block:: bash
+
+      pending-setups
+
+   During this step, the Consul cluster credential password is required.
+
+2. Configure Alertmanager via Consul KV store (see section :ref:`updating-alertmanager-configuration`).
+
+During ``pending-setups``:
+
+* The template file:
+
+  ``/etc/carbonio/carbonio-prometheus-alertmanager/config-templates/alertmanager.yml``
+
+  is stored in Consul KV
+
+* The final configuration is generated at:
+
+  ``/etc/carbonio/carbonio-prometheus-alertmanager/alertmanager.yml``
+
+.. important::
+
+   The Alertmanager configuration is managed via Consul KV.  
+   Direct changes to the generated file are not persistent and may be overwritten.
+
+Rules definition
+================
+
+Sample rules are available in:
+
+::
+
+   /etc/carbonio/carbonio-prometheus/sample-rules
+
+Example files:
+
+* ``clamav.yml``
+* ``consul.yml``
+* ``mta_queues.yml``
+* ``mysql.yml``
+* ``nginx.yml``
+* ``node_disk.yml``
+* ``node-exporter.yml``
+* ``postgres.yml``
+
+Some files are intentionally empty to allow custom rule definitions.
+
+To enable rules:
+
+1. Copy or create rule files in:
+
+   ::
+
+      /etc/carbonio/carbonio-prometheus/rules/
+
+2. Ensure correct ownership:
+
+   .. code-block:: bash
+
+      chown carbonio-prometheus:carbonio-prometheus <file>
+
+3. Reload Prometheus configuration:
+
+   .. code-block:: bash
+
+      curl -X POST http://localhost:9090/-/reload
+
+.. note::
+
+   Useful alert examples are available at:
+   https://samber.github.io/awesome-prometheus-alerts/
+   
+Enable Alertmanager in Prometheus
+=================================
+
+Copy the sample Alertmanager configuration:
+
+.. code-block:: bash
+
+   cp /etc/carbonio/carbonio-prometheus/sample-alertmanager/alertmanager.yml \
+      /etc/carbonio/carbonio-prometheus/alertmanager/
+
+The default configuration includes:
+
+.. code-block:: yaml
+
+   - targets:
+       - "127.0.0.1:9095"
+
+If Alertmanager runs on another node, update the target:
+
+::
+
+   <ALERTMANAGER_IP>:9095
+
+Ensure correct ownership:
+
+.. code-block:: bash
+
+   chown carbonio-prometheus:carbonio-prometheus \
+     /etc/carbonio/carbonio-prometheus/alertmanager/alertmanager.yml
+
+.. important::
+
+   Carbonio uses port ``9095`` instead of the default ``9093``.
+
+Updating Alertmanager configuration
+===================================
+
+.. _updating-alertmanager-configuration:
+
+Alertmanager configuration is stored in Consul KV, providing:
+
+* Centralized configuration management
+* Consistency across nodes
+* Safe updates without manual synchronization
+* Integration with ``consul-template``
+
+Access Consul UI
+----------------
+
+Retrieve the ACL token:
+
+.. code-block:: bash
+
+   export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gpg | \
+   tar xOf - consul-acl-secret.json | jq .SecretID -r)
+
+Create an SSH tunnel:
+
+.. code-block:: bash
+
+   ssh -L 8500:localhost:8500 root@<IP_ADDRESS>
+
+Open:
+
+::
+
+   http://localhost:8500
+
+Editing configuration
+---------------------
+
+1. Navigate to **Key / Value**
+2. Locate:
+
+   ::
+
+      carbonio-alertmanager/config
+
+3. Apply changes and save
+
+Apply changes
+-------------
+
+Render configuration:
+
+.. code-block:: bash
+
+   consul-template -once \
+     -template "/etc/zextras/service-discover/templates/alertmanager.yml.ctmpl:/etc/carbonio/carbonio-prometheus-alertmanager/alertmanager.yml"
+
+Restart service:
+
+.. code-block:: bash
+
+   systemctl restart carbonio-prometheus-alertmanager
+
+Configuration overview
+======================
+
+The configuration file:
+
+::
 
    /etc/carbonio/carbonio-prometheus-alertmanager/alertmanager.yml
 
-Example configuration:
+Example:
 
 .. code-block:: yaml
 
@@ -186,98 +271,73 @@ Example configuration:
      group_interval: 1m
      repeat_interval: 1h
      receiver: email
-     routes:
-       - matchers:
-           - severity="blocker"
-         receiver: telegram
-         group_wait: 10s
-         repeat_interval: 8h
-         continue: false
-       - matchers:
-           - severity="warning"
-         receiver: email_external
-         group_wait: 30s
-         repeat_interval: 2h
-         continue: false
-       - matchers:
-           - severity="alert"
-         receiver: email
-         continue: false
 
    receivers:
-     - name: 'email_external'
-       email_configs:
-         - to: 'email@externaldomain.com'
-           headers:
-             subject: '{{ template "custom_mail_subject" . }}'
-             html: '{{ template "custom_mail_html" . }}'
-
      - name: 'email'
        email_configs:
          - to: 'email@example.com'
-           headers:
-             subject: '{{ template "custom_mail_subject" . }}'
-             html: '{{ template "custom_mail_html" . }}'
 
-     - name: 'telegram'
-       telegram_configs:
-         - bot_token: 'telegramToken'
-           api_url: 'https://api.telegram.org'
-           chat_id: 12345678
-           message: '{{ template "telegram.message" . }}'
-           parse_mode: 'HTML'
-
-Configuration Breakdown
+Configuration breakdown
 -----------------------
 
-Global Settings
-~~~~~~~~~~~~~~~
+Global settings
+^^^^^^^^^^^^^^^
 
-* ``resolve_timeout``  
-  Time after which an alert is considered resolved if no updates are received.
+Defines default behavior such as SMTP configuration and alert resolution timeout.
 
-* ``smtp_*`` settings -  
-  Define SMTP parameters for sending email notifications.
+.. warning::
+
+   Avoid storing sensitive data (like passwords) in plain text. Use environment variables or a secrets manager.
 
 Templates
-~~~~~~~~~
+^^^^^^^^^
 
-Custom templates allow formatting email subjects, email bodies, and Telegram
-messages using Go templating.
+Templates define formatting for notifications using Go templating.
 
 Routing
-~~~~~~~
+^^^^^^^
 
-The ``route`` section defines how alerts are grouped and routed:
-
-* ``group_by`` groups alerts by label (for example, ``alertname``).
-* ``group_wait`` delays notifications to allow grouping.
-* ``repeat_interval`` controls how often unresolved alerts are resent.
-* Sub-routes match alerts based on labels such as ``severity``.
+Controls how alerts are grouped and routed based on labels such as severity.
 
 Receivers
-~~~~~~~~~
+^^^^^^^^^
 
-Receivers define where notifications are sent, such as:
+Define notification targets such as:
 
-* Internal email
+* Email
 * External email
-* Telegram chats
+* Telegram
 
-Verify Alertmanager Installation
---------------------------------
+Verify installation
+===================
 
-Check that the Alertmanager service is running:
+Check service status:
 
-.. code:: console
+.. code-block:: bash
 
    systemctl status carbonio-prometheus-alertmanager
 
-To follow logs in real time:
+Follow logs:
 
-.. code:: console
+.. code-block:: bash
 
    journalctl -u carbonio-prometheus-alertmanager -f
 
-Once configured and running, Prometheus alerts will be evaluated, routed by
-Alertmanager, and delivered to the configured notification channels.
+Upgrade notes
+=============
+
+Upgrading from versions prior to 26.3 requires manual steps.
+
+After upgrade:
+
+* Review and update ``prometheus.yml``
+* Merge new configuration changes
+* Reconfigure Alertmanager via Consul KV
+
+Steps:
+
+1. Backup existing configuration
+2. Perform upgrade
+3. Re-apply configuration using Consul KV
+
+From version 26.3 onward, Alertmanager configuration is centrally managed via Consul KV.
