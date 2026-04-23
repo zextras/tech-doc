@@ -1,4 +1,4 @@
-In order to create a new DKIM record, two steps are necessary. As
+In order to create a new DKIM record, some steps are necessary. As
 usual, we are using `example.com` in our scenario as the domain name: replace it
 with the actual domain name.
 
@@ -11,6 +11,12 @@ with the actual domain name.
 
       $ /opt/zextras/libexec/zmdkimkeyutil -a -d example.com
 
+   This command:
+
+   - Generates a DKIM key pair
+   - Stores the private key in LDAP
+   - Creates the DKIM selector and public key information
+
    The output will be similar to the following::
 
      DKIM Data added to LDAP for domain example.com with selector D43CB080-8FE0-11EC-88DF-9958FFC5EFF5
@@ -22,8 +28,48 @@ with the actual domain name.
      XZZEedCK1POmFoOKwgqraxJtqiPdM7i+mjUOy7w1uqJa4fyxjbVp0QIDAQAB" ) ; ----- DKIM key D43CB080-8FE0-11EC-88D
      F-9958FFC5EFF5 for example.com
 
+.. Important::
 
-.. card:: Step 2: Add DKIM record to DNS settings
+   DKIM signing is automatically enabled immediately after generating the key.
+   If the DNS record is not yet configured or fully propagated, outgoing e-mails may be signed with an invalid
+   DKIM signature, which can negatively impact e-mail deliverability.
+
+.. card:: Step 2: Temporarily Disable DKIM Signing
+
+   To prevent invalid DKIM signatures while DNS is being configured, temporarily disable DKIM signing:
+
+   .. code:: console
+
+      $ carbonio prov md example.com DKIMIdentity ""
+
+After this step:
+
+- DKIM keys remain stored in LDAP
+- Outgoing e-mails will **not** be signed
+
+.. card:: Step 3: Verify DKIM Attributes in LDAP
+
+   To verify that the DKIM attributes have been correctly added to LDAP, issue the following command:
+
+   .. code:: console
+
+      $ carbonio prov -l gd example.com | grep DKIM
+
+   Expected output:
+
+   .. code:: console
+
+      # DKIMDomain: example.com
+      # DKIMIdentity: example.com
+      # DKIMKey: -----BEGIN RSA PRIVATE KEY-----
+      # DKIMPublicKey: A051B2F6-329C-11EE-B9A5-50D8E3D110F1._domainkey IN TXT ( "v=DKIM1; k=rsa; " "..." ) ;
+      # DKIMSelector: A051B2F6-329C-11EE-B9A5-50D8E3D110F1.example.com
+      # objectClass: DKIM
+
+Take note of the **DKIMSelector** and **DKIMPublicKey** values — you will need them for DNS configuration.
+
+
+.. card:: Step 4: Add DKIM record to DNS settings
 
    Edit the DNS settings of the domain and create a new record as
    follows, using the output of the previous command.
@@ -48,8 +94,13 @@ with the actual domain name.
      .. warning:: Depending on the DNS administration panel, it is possible that you need
         to remove the double quotes, the white spaces, or both!
 
+
+
 Test and Verify
 ---------------
+
+Before enabling DKIM signing, ensure that the TXT record is correctly published:
+
 
 There are several tests that can be carried out to verify that the
 DKIM has been added correctly to the domain DNS and works correctly to
@@ -73,7 +124,34 @@ sign the outgoing e-mails.
    retrieving it, you will not see the string **v=DKIM1** in the
    output.
 
-.. card:: DKIM service enabled
+   If no result is returned, wait for DNS propagation.
+
+.. card:: Activate DKIM Signing
+
+   Once the TXT record is correctly published, you can enable DKIM
+   signing again by executing the following command:
+
+   .. code:: console
+
+      $ carbonio prov md example.com DKIMIdentity "example.com"
+
+   Verify:
+
+   .. code:: console
+
+      $ carbonio prov -l gd example.com | grep DKIMIdentity
+
+   Expected:
+
+   .. code:: console
+
+      DKIMIdentity: example.com
+
+   .. note::
+         
+      ``carbonio prov`` may print a warning about an unknown attribute description — this is expected and harmless.
+
+.. card:: Check DKIM service is running
 
    The ``openDkim`` service must be running on the |product|
    installation for the outgoing e-mails to be correctly signed. This

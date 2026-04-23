@@ -350,24 +350,25 @@ information about the CLI and server's versions. For example:
    :emphasize-lines: 2
 
    zextras$ zmcontrol -v
-   Carbonio Release 25.9.0
+   Carbonio Release 26.3.0
    Advanced module version:
 
    CLI versions:
 
-           zextras_version                                     25.9.0
-           zextras_commit                                      eb4a6972110cf318fcb67f54b7447f70eb071692
-           zal_version                                         25.9.0
-           zal_commit                                          50c08cb80775136ee405f078278caed51de110df
+            zextras_version                                     26.3.1
+            zextras_commit                                      97dbab6a7491843684b80e95ecb2fb0d1d2442b0
+            zal_version                                         26.3.1
+            zal_commit                                          6db124701ef6e49a44951a025c432fc4f4f2bd9d
+
 
    Server versions:
 
-           version                                             25.9.0
-           commit                                              d11fb9b8fbfe37549b531bcba72032dbc3ddd745
-           system_type                                         carbonio
-           product                                             Carbonio
-           zal_version                                         25.9.0
-           zal_commit                                          50c08cb80775136ee405f078278caed51de110df
+            version                                             26.3.1
+            commit                                              97dbab6a7491843684b80e95ecb2fb0d1d2442b0
+            system_type                                         carbonio
+            product                                             Carbonio
+            zal_version                                         26.3.1
+            zal_commit                                          6db124701ef6e49a44951a025c432fc4f4f2bd9d
 
 The important bit here is the first line of the output; while the
 various ``commit`` refer lines refer to the source code from which the
