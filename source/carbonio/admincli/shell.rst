@@ -343,32 +343,13 @@ The modules (whose name is prefixed by ``--``) require, as a general
 rule, that the corresponding :command:`carbonio` command be used.
 
 The :command:`zmcontrol` comes also with an important option: ``-v``,
-which outputs the current version of |product| and a few more
-information about the CLI and server's versions. For example:
+which outputs the current version of |product|. For example:
 
 .. code-block:: console
    :emphasize-lines: 2
 
    zextras$ zmcontrol -v
-   Carbonio Release 26.3.0
-   Advanced module version:
-
-   CLI versions:
-
-            zextras_version                                     26.3.1
-            zextras_commit                                      97dbab6a7491843684b80e95ecb2fb0d1d2442b0
-            zal_version                                         26.3.1
-            zal_commit                                          6db124701ef6e49a44951a025c432fc4f4f2bd9d
-
-
-   Server versions:
-
-            version                                             26.3.1
-            commit                                              97dbab6a7491843684b80e95ecb2fb0d1d2442b0
-            system_type                                         carbonio
-            product                                             Carbonio
-            zal_version                                         26.3.1
-            zal_commit                                          6db124701ef6e49a44951a025c432fc4f4f2bd9d
+   Carbonio 26.6.0
 
 The important bit here is the first line of the output; while the
 various ``commit`` refer lines refer to the source code from which the
