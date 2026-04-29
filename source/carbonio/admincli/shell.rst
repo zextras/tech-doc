@@ -349,7 +349,7 @@ which outputs the current version of |product|. For example:
    :emphasize-lines: 2
 
    zextras$ zmcontrol -v
-   Carbonio 26.6.0
+   Carbonio Release 26.6.0
 
 The important bit here is the first line of the output; while the
 various ``commit`` refer lines refer to the source code from which the
