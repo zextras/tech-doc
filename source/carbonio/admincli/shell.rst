@@ -350,7 +350,3 @@ which outputs the current version of |product|. For example:
 
    zextras$ zmcontrol -v
    Carbonio Release 26.6.0
-
-The important bit here is the first line of the output; while the
-various ``commit`` refer lines refer to the source code from which the
-software was built.
