@@ -74,7 +74,7 @@ from that directory execute the command
 .. code:: console
 
    $ ansible-playbook zxbot.carbonio_install.carbonio_install \
-   -u root -i carbonio-inventory
+   -u root -i carbonio-inventory-single
 
 Antivirus Engine
 ----------------
