@@ -6,12 +6,13 @@ srv1.example.com
 
 #Custom Default Domain (Optional)
 [masterDirectoryServers:vars]
-#default_domain=domain.com # Replace with your desired domain
+# Replace domain.com with your desired domain
+#default_domain=example.com
 
 [replicaDirectoryServers]  
 
 [serviceDiscoverServers]  
-srv1.example.com   
+srv1.example.com  
 
 [dbsConnectorServers]  
 #must be empty
@@ -52,3 +53,4 @@ srv1.example.com
 [prometheusServers]  
 
 [syslogServer]  
+
