@@ -58,7 +58,6 @@ This is the list of Components that make up a |product| installation.
       * carbonio-message-dispatcher-db
       * carbonio-ws-collaboration-db
       * carbonio-files-db
-      * carbonio-mailbox-db
       * carbonio-docs-connector-db
       * carbonio-notification-push-db
       * carbonio-tasks-db
