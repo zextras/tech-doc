@@ -16,7 +16,7 @@ Next, we install all packages needed for |product|.
 
          # apt install service-discover-server \
          carbonio-directory-server carbonio-proxy carbonio-webui \
-         carbonio-files-ui carbonio-mta carbonio-mailbox-db \
+         carbonio-files-ui carbonio-mta \
          carbonio-appserver carbonio-user-management \
          carbonio-files-ce carbonio-files-public-folder-ui \
          carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
@@ -35,7 +35,7 @@ Next, we install all packages needed for |product|.
 
          # apt install service-discover-server \
          carbonio-directory-server carbonio-proxy carbonio-webui \
-         carbonio-files-ui carbonio-mta carbonio-mailbox-db \
+         carbonio-files-ui carbonio-mta \
          carbonio-appserver carbonio-user-management \
          carbonio-files-ce carbonio-files-public-folder-ui \
          carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
@@ -63,7 +63,7 @@ Next, we install all packages needed for |product|.
 
          # dnf install carbonio-directory-server carbonio-proxy \
          carbonio-webui carbonio-files-ui carbonio-mta \
-         carbonio-mailbox-db carbonio-appserver \
+         carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \
          carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
@@ -92,7 +92,7 @@ Next, we install all packages needed for |product|.
 
          # dnf install carbonio-directory-server carbonio-proxy \
          carbonio-webui carbonio-files-ui carbonio-mta \
-         carbonio-mailbox-db carbonio-appserver \
+         carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \
          carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
