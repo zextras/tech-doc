@@ -29,9 +29,7 @@ If the verification is successful, you can deploy the SSL certificate.
 
 Finally, restart |product|.
 
-.. code:: console
-
-   $ zmcontrol restart
+.. include:: /_includes/_general/carbonio-restart.rst
 
 Your certificate should now be installed: verify the certificate
 details by running this command:
