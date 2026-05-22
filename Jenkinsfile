@@ -22,7 +22,7 @@ pipeline {
     DEVEL_BRANCH = "devel"
     DEVEL_BUCKET_NAME = "zextrasdoc-devel"
     PRODUCTION_CREDENTIALS = "docs.zextras.com-s3-key"
-    STAGING_CREDENTIALS = "doc-zextras-area51-s3-key"
+    STAGING_CREDENTIALS = "zextras-dev-docs-s3-key"
     REGION = 'eu-west-1'
   }
 
