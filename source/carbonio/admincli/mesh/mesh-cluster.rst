@@ -9,9 +9,8 @@
 ==========================================
 
 Within a |product| Multi-Server installation, it is possible to
-install multiple |mesh| **servers**, provided they are in **odd**
-numbers, e.g., 1, 3, 5 (or even more), because they can always find a
-*quorum* and avoid deadlocks.
+install multiple |mesh| **servers**, provided there are either 1 or 3 of them, since  
+they can always form a quorum and avoid deadlocks. 
 
 Requirements
 ============
@@ -26,8 +25,7 @@ In order to setup additional |mesh| servers, you need:
   file created in the set up of the first instance of
   service-discovery
 
-Moreover, as mentioned before, make sure to install an **odd** number
-of |mesh| servers.
+Moreover, as mentioned before, make sure to install 1 or 3 |mesh| servers.
 
 .. _mesh_multiple-install:
 
