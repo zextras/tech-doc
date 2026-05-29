@@ -90,6 +90,7 @@ This is the list of Components that make up a |product| installation.
       * carbonio-ws-collaboration-ui
       * carbonio-avdb-updater
       * carbonio-catalog
+      * carbonio-storages-ui
 
    .. grid-item-card:: MTA AV/AS
       :columns: 6
