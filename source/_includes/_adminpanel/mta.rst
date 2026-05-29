@@ -238,6 +238,39 @@ button.
 Frequency of signatures update from the mirror can be defined next, and
 tuned from a few seconds to several weeks.
 
+.. rubric:: Blocked Spam Destiny
+
+The **Blocked Spam Destiny** option allows administrators to define
+how |product| handles emails identified as spam with a score higher than the configured blocking level.
+
+Configure Blocked Spam Destiny
+------------------------------
+
+To configure how spam emails are processed:
+
+#. Log in to the |product| Admin UI.
+#. Go to **MTA (Mail Transfer Agent)**.
+#. Open **Antivirus & Antispam**.
+#. Locate the **Blocked Spam Destiny** field.
+#. Select the desired option.
+#. **Save** the configuration.
+
+**Available Options**
+
+The following values can be set:
+
+``Discard``
+   Silently drops the email without notifying the sender or recipient.
+
+``Pass``
+   Delivers the email to the user.
+
+**Behavior of the Pass Option**
+
+If the option is set to ``Pass``, all spam emails, including messages with a spam score above the configured blocking level, are delivered to the user's mailbox.
+
+These emails are automatically placed in the **Junk** folder.
+
 .. _ap-mta-adv:
 
 Advanced
