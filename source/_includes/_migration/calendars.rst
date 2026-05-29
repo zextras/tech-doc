@@ -109,7 +109,7 @@ They can be imported into |product| using the following command:
 .. code:: console
 
    zextras$ for account in $(carbonio prov -l gaa SOURCE_DOMAIN); do \
-   echo "prov sa $account postRestURL '/Calendar?fmt=ics' /tmp/backup/${account}.ics"; \
+   echo "prov sm $account postRestURL '/Calendar?fmt=ics' /tmp/backup/${account}.ics"; \
    done | carbonio
 
 ICS files can be also be imported manually by each user according to
