@@ -3,7 +3,7 @@ Release 26.6.0
 
 .. contents::
    :local:
-   :depth: 1
+   :depth: 3
    :backlinks: none
 
 
@@ -48,7 +48,7 @@ Release Highlights
 ===============
 
 Unified Quota
--------------
+^^^^^^^^^^^^^
 
 .. note::
 
@@ -118,7 +118,7 @@ Security & Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Flexible 2FA Enrollment
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 This release completes the full 2FA enrollment and activation workflow initiated in Q1.
 
@@ -127,10 +127,10 @@ Administrators can now enforce OTP setup for users without triggering mass locko
 `CO-2783`, `CO-3085`, `CO-3090`, `CO-3091`, `CO-3108`, `CO-3315`, `CO-3346`, `CO-3377`, `CO-3402`, `CO-3545`, `CO-3546`, `CO-3562`, `ZIF-1386`, `ZIF-1556`
 
 Calendar
-========
+--------
 
 External Calendar Subscriptions (ICS and CalDAV)
--------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Users can now add external calendars in read-only mode with automatic synchronization:
 
@@ -140,10 +140,10 @@ Users can now add external calendars in read-only mode with automatic synchroniz
 `CO-2747`, `CO-3093`
 
 Chat & Meetings
-===============
+---------------
 
 Media and Document Gallery
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A new Media Gallery tab has been added to the conversation info panel in Carbonio Chats. All attachments shared in a conversation are listed and grouped by month, with keyset pagination for performance. Key capabilities:
 
@@ -157,7 +157,7 @@ A new Media Gallery tab has been added to the conversation info panel in Carboni
 `CO-2410`, `CO-2834`, `CO-3536`, `CO-3537`, `CO-3538`, `CO-3539`, `CO-3540`, `CO-3541`, `CO-3581`, `CO-3582`, `CO-3583`
 
 TURN Server for Video over Port 443 *(Beta — not yet officially supported)*
-----------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
@@ -175,34 +175,34 @@ A new ``carbonio-turn-server`` package enables TURN relay for video traffic over
 `CO-3097`
 
 Admin & Licensing
-=================
+-----------------
 
 Edition Fields in Subscription (Admin UI + CLI)
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 New edition fields are now exposed in the subscription management view and via CLI, providing explicit visibility into which capabilities are licensed for the current subscription.
 
 `CO-3556`
 
 Activate Subscription from Admin UI
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Admins can now activate a new subscription directly from the Admin UI, without requiring CLI access.
 
 `CO-3506`
 
 Monitoring
-==========
+----------
 
 Installed Package Versions as Prometheus Metrics
-------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Carbonio now collects the version of each installed Carbonio package on each VM and exposes them as Prometheus metrics. This enables monitoring dashboards and alerts to detect version drift across nodes in multi-server environments.
 
 `ZCT-1431`
 
 Recording Notifications in Files
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When a meeting recording completes processing, the recording owner now receives a notification in the Files module. The notification is interactive and navigates directly to the recording file.
 
@@ -210,10 +210,10 @@ When a meeting recording completes processing, the recording owner now receives 
 
 
 2. Improvements to Existing Features
-====================================
+=====================================
 
 Security & Authentication
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **Separate UserUI / AdminUI sessions:** User and admin sessions are now handled independently with separate session cookies. Logging out from the user interface no longer terminates the admin session, and vice versa, reducing the risk of unintended privilege escalation. `CO-3194`, `CO-3284`, `CO-3466`
 * **External change-password endpoint:** Admins can configure a custom external URL for password changes. When set, the Auth UI displays this URL in place of Carbonio's native password change link, enabling integration with enterprise identity systems or IdP portals. `CO-3472`
@@ -221,26 +221,26 @@ Security & Authentication
 * ``zimbraPasswordLocked`` **exposed in Admin UI:** Admins can now view and toggle the ``zimbraPasswordLocked`` attribute directly from the Admin UI account detail page. `CO-3605`
 
 Admin Panel
------------
+^^^^^^^^^^^^
 
 * **Read-only fields as plain text:** Admin UI now renders read-only data as plain text instead of disabled input fields, improving readability and reducing visual clutter. `CO-3419`
 * **Required fields and auto-focus across modules:** Required fields are now visually flagged with indicators across all module forms (Mails, Calendar, Chats, Files, Contacts, Admin UI). Forms auto-focus the first required field on open. `CO-3416`, `CO-3418`, `CO-3426`, `CO-3427`, `CO-3428`
 * **TURN server hostname override** *(Beta)*: Admins can configure a hostname override for the TURN server to handle NAT scenarios where the server's public address differs from the internal hostname. `CO-3604`
 
 UI / UX
--------
+^^^^^^^^
 
 * **Standardized delete icons:** The Trash Can icon is now used consistently for all delete actions across all modules platform-wide. `CO-3169`
 
 Calendar
---------
+^^^^^^^^
 
 * **Internal/public sharing distinction:** The calendar sharing modal now more clearly differentiates between sharing a calendar with specific internal users and making it publicly accessible. `CO-3429`
 * **Confirmation modal on board close:** The calendar event editor now displays a confirmation prompt before discarding unsaved changes. `CO-3431`
 * **ICS calendar indicator tooltips updated:** Tooltip text on ICS subscription indicators in the calendar list has been revised for clarity and consistency. `CO-3703`
 
 Chat & Meetings
----------------
+^^^^^^^^^^^^^^^
 
 * **Mobile push notification muting:** Users can now mute mobile push notifications from the chat notification settings panel, extending the existing mute behavior (previously web-only) to mobile push. `CO-3568`
 * **Incoming call notifications with cross-device sync:** Call notification handling has been improved with dedicated push notification types for incoming calls. Declining a call on one device now syncs the notification dismissal across all devices. `CO-3578`
@@ -250,7 +250,7 @@ Chat & Meetings
 * **Chat room caching for faster initial load:** Room and conversation data is now cached client-side, significantly improving initial loading performance in the chat list. `CO-3327`
 
 Mail
-----
+^^^^
 
 * **Send/On Behalf Of UI improvements:** The copywriting and interaction model for delegate send actions have been revised for clarity. Users granted "Send As" or "Send on Behalf" rights have clearer controls in the composer. `CO-3167`
 * **Mail actions unified for messages and conversations:** Single-message and conversation-level actions are now handled from a consistent, unified action set, reducing behavioral inconsistencies. `CO-3212`
@@ -258,12 +258,12 @@ Mail
 * **Composer extensibility API:** External integrations and modules can now inject custom actions into the Mail Compose editor toolbar, enabling third-party extensions to add buttons or actions. `CO-3424`
 
 Files & Docs
-------------
+^^^^^^^^^^^^
 
 * **Files description editing affordance improved:** The description field in the Files details panel now has a clearer visual treatment to indicate it is editable inline. `CO-3420`
 
 Infrastructure & Deployment
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **Ansible playbook pre-flight validations:** Multiple new validation checks have been added to the installation playbook: hostname/FQDN validated against the inventory, Ubuntu minimized installation detected, IP address format validated, deprecated ``ansible_*`` fact variables replaced with ``ansible_facts[]``. `ZCT-1741`, `ZCT-1805`, `ZCT-1827`, `ZCT-1842`, `ZCT-1921`, `ZCT-1926`
 * **Carbonio Erlang runtime updated:** The ``carbonio-erlang`` package and related dependencies have been upgraded. A service restart is required after upgrade. `CO-2407`
@@ -287,7 +287,7 @@ Infrastructure & Deployment
 * **Carbonio message-broker reorganized on cluster nodes.** `ZCT-1829`
 
 Localization
-------------
+^^^^^^^^^^^^^
 
 * **Hindi translations added:** Full Hindi UI translation is now available for Carbonio. `ZCT-1744`
 * **Indonesian and Chinese language selection fixed:** Selecting Indonesian or Chinese in language settings now correctly applies the selected language. `CO-3341`
@@ -299,7 +299,7 @@ Localization
 ============
 
 Security & Authentication
--------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Perpetual license activation failed for previously valid tokens. `CO-3201`
 * Login failure occurred when canceling OTP creation from the admin side. `CO-3520`
@@ -310,7 +310,7 @@ Security & Authentication
 * Unable to manage Send As / Send on Behalf permissions for Dynamic Distribution Lists in admin UI. `CO-3276`
 
 Mail
-----
+^^^^^
 
 * ``reject_unlisted_recipient`` MTA setting caused an infinite loop with the SendLater feature when the recipient address was an invalid internal address. `CO-2795`
 * Sending a file from the Files module to a mail composer never completed until the draft was explicitly saved. `CO-3448`
@@ -324,12 +324,12 @@ Mail
 * Removed the non-functional "Default Mail Search" setting, which caused inconsistent search behavior. `CO-3494`
 
 Calendar
---------
+^^^^^^^^
 
 * Removed the non-functioning "List" option from the Calendar default view setting. `CO-3446`
 
 Chat & Meetings
----------------
+^^^^^^^^^^^^^^^
 
 * Internal users were unable to re-enter a video conference room after leaving. `CO-2390`
 * Pinned meeting messages were not fully hidden when the sidebar was collapsed. `CO-3359`
@@ -338,7 +338,7 @@ Chat & Meetings
 * Calendar of a delegated mailbox could not be enabled or disabled (regression from previous release). `CO-3485`
 
 Admin Panel
------------
+^^^^^^^^^^^^
 
 * Account status displayed "Lockout" in the accounts list but "Active" in the General tab for the same account. `CO-3469`
 * Domain creation date displayed non-deterministic random values on each page load. `CO-3470`
@@ -346,7 +346,7 @@ Admin Panel
 * Multiple visual inconsistencies in quota-related Admin UI pages. `CO-3514`
 
 Files & Docs
-------------
+^^^^^^^^^^^^^
 
 * Files module silently ignored errors returned by Powerstore on delete operations, incorrectly showing a success confirmation. `CO-3553`
 * Docs editor redirected to wrong server instances in multi-server environments. `CO-3576`
@@ -354,7 +354,7 @@ Files & Docs
 * Body of printed messages was not visible in print preview. `CO-3386`
 
 Infrastructure & Backend
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * Carbonio Appserver failed to start due to a Redolog write error causing a mailbox crash on startup. `CO-3503`
 * Database sidecar services did not auto-start after a system reboot, due to a missing ``service-discover.target`` dependency in systemd unit files. `CO-3709`
@@ -376,13 +376,13 @@ Infrastructure & Backend
 * ``carbonio-prometheus-openldap-exporter`` was incorrectly configured for HA LDAP deployments, causing missing metrics. `ZCT-1934`
 
 Localization
-------------
+^^^^^^^^^^^^
 
 * Message date in mail print preview did not respect the user's locale (24-hour format and non-English date formats were ignored). `CO-2798`
 * Missing localized strings on the settings modal for several languages. `CO-3489`
 
 Other Technical Improvements (Sysadmin / Platform)
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **JNI replaced with Java FFM:** ``carbonio-mailbox-native`` JNI bindings have been replaced with Java Foreign Function and Memory (FFM) API and stdlib equivalents, removing the native shared library dependency. `CO-3493`
 * **Janus (videoserver) upgraded** to the latest upstream version, with dependency alignment across videoserver packages. `CO-3136`, `CO-3311`
