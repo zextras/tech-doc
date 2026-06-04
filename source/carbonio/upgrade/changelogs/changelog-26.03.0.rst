@@ -1,11 +1,6 @@
 Release 26.3.0
 ===============
 
-.. contents::
-   :local:
-   :depth: 1
-   :backlinks: none
-
 New Features & Major Changes
 ----------------------------
 
