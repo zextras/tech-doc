@@ -77,8 +77,8 @@ value for a proper configuration. Currently, these sections are
 
     #Custom Default Domain (Optional)
     [masterDirectoryServers:vars]
-    #default_domain=domain.com # Replace with your desired domain
-    newcompany.com
+    #Replace domain.com with your desired domain
+    default_domain=domain.com
 
    
 This parameter allows administrators to explicitly define the default domain during installation.
