@@ -3,6 +3,9 @@
 ========================
 
 This appendix provides instructions for using the Command Line Interface.
+
+....
+
 You can use the command line interface in place of the Carbonio Admin Panel.
 
 .. card:: Table of Contents
