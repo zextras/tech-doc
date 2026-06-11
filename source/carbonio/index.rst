@@ -14,7 +14,7 @@ This documentation provides system administrators with the information needed to
 
 To stay up to date with the latest changes, improvements, and fixes, please refer to the current release changelog:
 
-.. button-ref:: upgrade/changelogs/changelog-26.03.0
+.. button-ref:: upgrade/changelogs/changelog-26.06.0
    :color: danger
    :outline:
 

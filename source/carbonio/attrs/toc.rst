@@ -10,7 +10,7 @@ This reference is interactive and opens in a dedicated web tool.
 
 
 .. card:: Carbonio Attributes Table
-   :link: ../../../attrs/index.html
+   :link: ../../../attr/index.html
    :link-type: url
    :class-title: sd-font-weight-bold
 
