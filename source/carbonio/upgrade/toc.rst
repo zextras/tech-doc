@@ -15,10 +15,7 @@ upgrade.
 :ref:`using Ansible <upgrade-ansible>`. 
 
 This procedure will upgrade any version of |product| to
-the latest available at the moment you start the procedure. In other
-words, the starting version is not important: upgrading from *25.1*,
-*25.3* or *25.6* will bring |product| to the latest version of
-|product| (at the time of writing, |release|).
+the latest available at the moment you start the procedure.
 
 Before starting an upgrade procedure, it is strongly suggested to make
 a snapshot of the Nodes and a backup of the data.
