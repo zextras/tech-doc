@@ -6,17 +6,16 @@ including classes, object classes, flags, and metadata filters.
 
 ....
 
-This reference is interactive and opens in a dedicated web tool.
+Click on this card to open a dedicated page with the table of related attributes.
 
-
-.. card:: Carbonio Attributes Table
+.. card:: Carbonio Mailbox Attributes Table
    :link: ../../../attr/index.html
    :link-type: url
    :class-title: sd-font-weight-bold
 
-   - Attributes (interactive table with search and filters)
-   - Object classes view
-   - Faceted filtering by class, type, flags, and state
+   - **Attributes**: Interactive table with search and filtering capabilities for **mailbox server** attributes
+   - **Object Classes View**: Dedicated view for browsing and inspecting LDAP object classes used by the **mailbox server**
+   - **Faceted Filtering**: Advanced filtering options by class, type, flags, and state for easier data exploration
 
 
 
