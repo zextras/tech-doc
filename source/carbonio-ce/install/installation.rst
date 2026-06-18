@@ -76,7 +76,7 @@ Step 5: Configure |vs|
 
 .. include:: /_includes/_installation/note-janus.rst
 
-Finally, enable and start the service with the commands
+Enable and start the service with the commands
 
 .. code:: console
 
@@ -108,7 +108,15 @@ Step 7: Setup |mesh|
 
 .. include:: /_includes/_installation/pset.rst
 
+Now restart the **carbonio-ws-collaboration-sidecar** service with:
+
+.. code:: console
+
+   # systemctl restart  carbonio-ws-collaboration-sidecar.service
+
+
 .. _installation-step8:
+
 
 Step 8: Bootstrap |product| Databases
 -------------------------------------
