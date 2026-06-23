@@ -39,7 +39,12 @@ panel is similar to the others components: a the *Top Bar* allows
 quick creation of a new domain or COS by clicking the |create| button,
 while navigation items are on the left-hand column.
 
-.. note:: Keep in mind that an asterisk (*) indicates a mandatory field.
+.. note:: Any input field marked with an asterisk (*) will be treated as mandatory. The system prevents form submission when required fields are left empty.
+         For example, see the image below.
+
+   .. figure:: /img/adminpanel/asterisk-example.png
+      :width: 100%
+      :name: asterisk-example.png
 
 The landing page is shown in :numref:`fig_ap-top` and
 :numref:`fig_ap-bottom`.
