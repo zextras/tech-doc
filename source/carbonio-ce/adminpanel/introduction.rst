@@ -28,7 +28,7 @@ Logging out of Webmail terminates the session for Webmail only.
 The user remains signed in to Admin Panel.
 Similarly, logging out of Admin Panel terminates the session for Admin Panel only.
 The user remains signed in to Webmail.
-Previously, logging out from either interface would end the session for both. 
+Previously, logging out from either interface would end the session for both.
 This behavior has been changed so each logout action is isolated to its own UI.
 Each interface now manages logout independently.
 
