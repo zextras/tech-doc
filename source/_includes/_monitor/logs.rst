@@ -29,7 +29,7 @@ following
    Logs created by log4j are rotated at 00:00 and compressed by a
    scheduled task.
 
-In table :numref:`tab-logs`, some of the most relevant log files are
+In :numref:`tab-logs`, some of the most relevant log files are
 shown, along with their content and the service that creates them.
 
 .. _tab-logs:
@@ -50,6 +50,7 @@ shown, along with their content and the service that creates them.
    ":file:`/var/log/carbonio/docs`", "|docs|", "Messages from |docs|"
    ":file:`/var/log/carbonio/docs-db-connector`", "|docs|-connector", "Messages from |docs|-connector"
    ":file:`/var/log/carbonio/preview`", "|pv|", "Messages from |pv|"
+   ":file:`/var/log/carbonio/storage/application`", "Carbonio Storage", "Messages from Carbonio Storages / Quota"
 
 Searching Keywords in Log Files
 -------------------------------
