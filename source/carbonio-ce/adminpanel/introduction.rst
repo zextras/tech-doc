@@ -31,6 +31,7 @@ Similarly, logging out of Admin Panel terminates the session for Admin Panel onl
 The user remains signed in to Webmail.
 Logging out is managed independently for each interface. Logging out from one UI does not affect the session in the other UI.
 
+
 .. card:: The ``zextras`` and ``zextras@example.com`` users
 
    There is a clear distinction between these two users, which are
