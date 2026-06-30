@@ -24,19 +24,6 @@ show, which allows to change password.
 Once logged in, more Global Admins can be added from the |adminui|;
 please refer to section :ref:`ap-new-admin` for directions.
 
-<<<<<<< HEAD
-Logout Behavior for Webmail and Admin Panel
--------------------------------------------
-
-Logging out from one interface now affects only that interface:
-Logging out of Webmail terminates the session for Webmail only.
-The user remains signed in to Admin Panel.
-Similarly, logging out of Admin Panel terminates the session for Admin Panel only.
-The user remains signed in to Webmail.
-Logging out is managed independently for each interface. Logging out from one UI does not affect the session in the other UI.
-
-=======
->>>>>>> 484030f5 (restructured intro)
 
 .. card:: The ``zextras`` and ``zextras@example.com`` users
 
