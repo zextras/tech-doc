@@ -124,7 +124,7 @@ be added to the COS.
 .. _cos-adv:
 
 Advanced
-~~~~~~~~
+--------
 
 Multiple *Advanced* options can be configured here, divided into
 groups.
@@ -160,16 +160,6 @@ Forwarding
   Two options govern how to forward messages: how long an e-mail
   address can be and the maximum number of recipients allowed.
 
-.. index:: Quota; by COS
-
-Quotas
-  A set of options that show how much space a user can occupy on the
-  server for Mails and |file|, or how many contacts he can have. These
-  quotas are inherited from the COS the user belongs to and may be
-  changed for the current user. It also encompasses the options to
-  send periodic notifications when the user space raises over a given
-  threshold and a template for the notifications.
-
 .. index:: Password policies; by COS
 
 Password
@@ -198,3 +188,21 @@ Email Retention Policy
   .. note:: Even if you configure E-mail message lifetime with a value
      below 31 days, the system will automatically enforce a minimum
      retention of 31 days.
+
+.. index:: Quota; by COS
+
+Quota Management
+----------------
+
+A set of options that show how much space a user can occupy on the
+server for Mails, Chats and |file|.
+
+These quotas are inherited from the COS the user belongs to and may be
+changed for the current user.
+It also encompasses the options to send periodic notifications when the
+user space raises over a given threshold and a template for the notifications.
+
+.. note:: Storage is managed through a single unified quota.
+   Emails, Files, and Chats attachments all contribute to the same per-user storage quota
+   so the quota configured for a Class of Service (COS) represents the total storage available
+   to each user rather than separate limits for each service.
