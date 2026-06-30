@@ -24,7 +24,7 @@ a snapshot of the Nodes and a backup of the data.
    
                .. rubric:: **Unified Quota Model**
                
-               Starting with Carbonio 26.6, **Mail, Files, and Chats** no longer have separate storage quotas.
+               Starting with Carbonio 26.6, **Mails, Files, and Chats** no longer have separate storage quotas.
                Instead, they all contribute to a **single per-user storage quota**.
                
                Every email, file, and chat attachment stored by a user counts toward the same total quota.
