@@ -38,11 +38,13 @@ This scenario can be set up as follows:
 
 Resetting Quota Values to the Inherited Class of Service Value
 --------------------------------------------------------------
-Administrators can quickly restore quota settings to the value inherited from an account's Class of Service (COS) by using the Reset icon available next to quota-related input fields.
-When a quota value has been modified for a specific account, click the Reset icon to discard the account-specific custom value and restore the quota value defined by the account's COS. 
+Administrators can quickly restore quota settings to the value inherited from an account's Class of Service (COS)
+by using the **Reset** icon available next to quota-related input fields.
+
+When a quota value has been modified for a specific account, click the **Reset** icon to discard the account-specific custom value and restore the quota value defined by the account's COS. 
 This provides a faster alternative to manually reconfiguring the account.
 
-.. note:: Hovering over the Reset icon displays a tool tip indicating that the field can be reset to its inherited COS value.
+.. note:: Hovering over the **Reset** icon displays a tool tip indicating that the field can be reset to its inherited COS value.
 
 Benefits
 --------
