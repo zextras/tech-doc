@@ -6,7 +6,7 @@ Below is the list of Carbonio packages collected by component:
 
 .. dropdown:: **Mesh & Directory**
 
-   - **service-discover-server**: `service-discover-server` *(0.7.1-1)*
+   - **service-discover-server**: `service-discover-server` *(0.7.2-1)*
    - **carbonio-directory-server**: `carbonio-directory-server` *(5.0.1-1)*
    - **carbonio-message-broker**: `carbonio-message-broker` *(0.3.2-1)*
    - **carbonio-storages**: `carbonio-storages` *(0.15.0-1)*
@@ -17,21 +17,21 @@ Below is the list of Carbonio packages collected by component:
    - **carbonio-ws-collaboration-db**: `carbonio-ws-collaboration-db` *(0.4.1-1)*
    - **carbonio-message-dispatcher-db**: `carbonio-message-dispatcher-db` *(0.4.2-1)*
    - **carbonio-notification-push-db**: `carbonio-notification-push-db` *(0.3.1-1)*
-   - **carbonio-files-db**: `carbonio-files-db` *(0.3.1-1)*
+   - **carbonio-files-db**: `carbonio-files-db` *(0.4.0-1)*
    - **carbonio-mailbox-db**: `carbonio-mailbox-db` *(0.2.6-1)*
-   - **carbonio-docs-connector-db**: `carbonio-docs-connector-db` *(0.2.1-1)*
+   - **carbonio-docs-connector-db**: `carbonio-docs-connector-db` *(0.3.0-1)*
    - **carbonio-tasks-db**: `carbonio-tasks-db` *(0.2.1-1)*
    - **carbonio-videorecorder-db**: `carbonio-videorecorder-db` *(1.0.2-1)*
 
 .. dropdown:: **Proxy**
 
    - **carbonio-proxy**: `carbonio-proxy` *(4.14.2-1)*
-   - **carbonio-catalog**: `carbonio-catalog` *(0.5.0-1)*
+   - **carbonio-catalog**: `carbonio-catalog` *(0.5.1-1)*
    - **carbonio-files-public-folder-ui**: `carbonio-files-public-folder-ui` *(0.0.19-1)*
-   - **carbonio-webui**: `carbonio-webui` *(4.5.6-1)*
-   - **carbonio-tasks-ui**: `carbonio-tasks-ui` *(0.1.0-1)*
-   - **carbonio-files-ui**: `carbonio-files-ui` *(2.17.0-1)*
-   - **carbonio-ws-collaboration-ui**: `carbonio-ws-collaboration-ui` *(0.16.3-1)*
+   - **carbonio-webui**: `carbonio-webui` *(4.5.7-1)*
+   - **carbonio-tasks-ui**: `carbonio-tasks-ui` *(0.1.1-1)*
+   - **carbonio-files-ui**: `carbonio-files-ui` *(2.17.1-1)*
+   - **carbonio-ws-collaboration-ui**: `carbonio-ws-collaboration-ui` *(0.16.4-1)*
    - **carbonio-avdb-updater**: `carbonio-avdb-updater` *(1.0.9-1)*
 
 .. dropdown:: **MTA**
@@ -41,7 +41,7 @@ Below is the list of Carbonio packages collected by component:
 .. dropdown:: **Mailstore & Provisioning**
 
    - **carbonio-advanced**: `carbonio-advanced` *(4.30.3-1)*
-   - **carbonio-zal**: `carbonio-zal` *(4.31.5-1)*
+   - **carbonio-zal**: `carbonio-zal` *(4.31.6-1)*
 
 .. dropdown:: **Files**
 
