@@ -36,4 +36,20 @@ This scenario can be set up as follows:
 #. In the COS list, which is populated while carrying out step #2,
    select the first one (lite.acme.com) as the default one
 
+Resetting Quota Values to the Inherited Class of Service Value
+--------------------------------------------------------------
+Administrators can quickly restore quota settings to the value inherited from an account's Class of Service (COS) by using the Reset icon available next to quota-related input fields.
+When a quota value has been modified for a specific account, click the Reset icon to discard the account-specific custom value and restore the quota value defined by the account's COS. 
+This provides a faster alternative to manually reconfiguring the account.
 
+.. note:: Hovering over the Reset icon displays a tool tip indicating that the field can be reset to its inherited COS value.
+
+Benefits
+--------
+The reset action simplifies quota management by allowing administrators to:
+ 1. Quickly recover from incorrect account-specific quota configurations.
+ 2. Remove temporary quota overrides.
+ 3. Restore the quota value inherited from the account's Class of Service (COS) with a single click.
+ 4. Maintain centralized quota management by relying on Class of Service (COS) settings instead of individual account overrides.
+ 5. Improve visibility and consistency of quota policies across accounts by managing quotas through COS values.
+ 6. Reduce configuration errors and administrative effort.
