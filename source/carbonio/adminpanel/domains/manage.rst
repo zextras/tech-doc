@@ -597,8 +597,8 @@ To configure the storage quota for an account:
       to reset the quota to its inherited default (empty) value.
 
 8. After saving the changes, you can:
-   
-   - Click **View Mail** to open the mailbox. 
+
+   - Click **View Mail** to open the mailbox.
    - The configured quota is displayed in the mailbox storage information.
    - Click **Delete** if you want to remove the account.
 
