@@ -604,6 +604,9 @@ To configure the storage quota for an account:
 
 The updated quota is applied immediately.
 
+   .. figure:: /img/adminpanel/storage-quota.png
+      :width: 99%
+
 Upgrade Behavior
 ----------------
 
