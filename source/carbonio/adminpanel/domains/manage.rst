@@ -554,7 +554,7 @@ restore the COS value.
 
 .. _manage-account-storage-quota:
 
-Manage An Account Storage Quota
+Manage an Account Storage Quota
 -------------------------------
 
 Administrators can configure the storage quota for individual accounts
