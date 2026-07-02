@@ -591,10 +591,10 @@ To configure the storage quota for an account:
 
    - To allow unlimited storage, enable the **Unlimited quota** toggle and click **Save**.
    - To assign a storage limit, disable the **Unlimited quota** toggle, enter the required value in the **Total quota (GB)** field, and click **Save**.
-  
-.. note::
-   Click the **Restore** icon next to the **Total quota (GB)** field
-   to reset the quota to its inherited default (empty) value.
+
+   .. note::
+      Click the **Restore** icon next to the **Total quota (GB)** field
+      to reset the quota to its inherited default (empty) value.
 
 8. After saving the changes, you can:
    
