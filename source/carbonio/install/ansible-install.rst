@@ -117,6 +117,75 @@ To keep this sensitive information secure, make sure to:
    recognise the steps already successfully carried out and run only
    those that failed.
 
+
+Validating VM Hostname / FQDN with the Ansible inventory
+========================================================
+
+Starting from Carbonio 26.6.0, the Ansible installation playbook performs an early FQDN validation check.
+
+During the initial checks, the playbook compares the FQDN reported by each Node with the FQDN defined for the same Node in the Ansible inventory. If the two values do not match, the playbook stops before continuing with the installation.
+
+This check helps prevent configuration issues caused by installing Carbonio on a Node whose operating-system hostname does not match the inventory entry.
+
+The inventory must contain the full FQDN of each Node. Short hostnames, such as ``srv04``, are not valid for this check.
+
+To verify the FQDN reported by a Node, run the following command on the Node:
+
+.. code-block:: console
+
+   hostname -f
+
+The value returned by this command must match the corresponding hostname in the Ansible inventory.
+
+For example, if the inventory contains:
+
+.. code-block:: ini
+
+   [postgresServers]
+   srv04.example.com
+
+the Node must report:
+
+.. code-block:: console
+
+   $ hostname -f
+   srv04.example.com
+
+If the Node reports a different FQDN, for example:
+
+.. code-block:: console
+
+   $ hostname -f
+   srv-mail-04.example.com
+
+the playbook stops with an error similar to the following:
+
+.. code-block:: console
+
+   TASK [../roles/pre_installation_checks : FQDN CHECK | Fail if OS hostname does not match inventory FQDN] ***
+   [ERROR]: Task failed: Action failed: FQDN MISMATCH on srv04.example.com |  OS: srv-mail-04.example.com | Expected: srv04.example.com
+
+   fatal: [srv04.example.com]: FAILED! => {"changed": false, "msg": "FQDN MISMATCH on srv04.example.com |  OS: srv-mail-04.example.com | Expected: srv04.example.com"}
+
+In this example, the inventory expects ``srv04.example.com``, but the operating system reports ``srv-mail-04.example.com``.
+
+To solve the issue, make the Node hostname and the inventory hostname consistent, then run the playbook again.
+
+You can either update the inventory with the correct FQDN or correct the operating-system hostname, depending on which value is wrong. For example, on many Linux distributions, you can update the hostname with:
+
+.. code-block:: console
+
+   sudo hostnamectl set-hostname srv04.example.com
+
+After correcting the mismatch, verify the value again:
+
+.. code-block:: console
+
+   hostname -f
+
+When the FQDN reported by the Node matches the FQDN defined in the inventory, run the Carbonio installation playbook again.
+
+
 Closing Remarks
 ===============
 
