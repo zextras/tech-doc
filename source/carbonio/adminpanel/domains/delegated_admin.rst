@@ -8,7 +8,7 @@ This page shows all the accounts with some administration rights on the domain.
 The Delegated Domain Admins page is divided into two sections.
 
 The Domain Initialization section allows you to enable delegated administration for the domain.
-If delegated administration has not yet been configured, click :bdg-primary:`INIT DOMAIN`button to initialize the domain and enable delegations.
+If delegated administration has not yet been configured, click :bdg-primary:`INIT DOMAIN` button to initialize the domain and enable delegations.
 
 .. figure:: /img/adminpanel/init-domain.png
    :width: 99%
