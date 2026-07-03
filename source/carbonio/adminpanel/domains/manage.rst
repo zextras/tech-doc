@@ -178,30 +178,11 @@ restore the COS value.
 
    .. index:: Quota; by Account
 
-   * The quota used and available for the e-mails and the |file|
-     module. It is possible to insert up to **three** decimal
-     digits for each quota.
+   * Quota settings: Use the **Unlimited** option to remove quota limits for the account.
+     If Unlimited is disabled, specify a **maximum quota** value for the account.
+     Click the **Reset** button to discard the account-specific setting and restore the quota value inherited from the assigned Class of Service (COS).
 
-     .. rubric:: Quota management
-
-     Users are allowed to modify their documents stored in the |file|
-     module until they reach the assigned quota. The values of the
-     quota for the user are updated almost in real time, and sometimes
-     it may happen that the content added by a user to a document
-     during an editing session exceeds the quota limit.
-
-     For example, suppose user Bob is 10Kb short of his quota and
-     edits a document, adding a 20KB image and 20KB of text,
-     overflowing his quota by 30KB. When this happens, at the next
-     save attempt, Bob will be shown an error message, telling him
-     that he needs to free up some space before being able to save the
-     document.
-
-     Bob will experience the same behaviour if he tries to create a
-     new document adding the same 40KB content: upon saving, he will
-     be informed that his quota has been exceeded and he needs to free
-     some space in his |file| before being able to save the new
-     document.
+     For more information about quota management, see :ref:`manage-account-storage-quota`.
 
    * To force the user to change password at the next login
 

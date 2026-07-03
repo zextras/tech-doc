@@ -42,7 +42,6 @@ To configure the storage quota for an account:
 
    - Click **View Mail** to open the mailbox.
    - The configured quota is displayed in the mailbox storage information.
-   - Click **Delete** if you want to remove the account.
 
 The updated quota is applied immediately.
 
@@ -52,8 +51,8 @@ The updated quota is applied immediately.
 Upgrade Behavior
 ----------------
 
-Existing account quota settings are preserved during upgrade. Any
-quota configured before upgrading remains unchanged.
+Existing account quota settings are preserved during releaseupgrade.
+Any quota configured before upgrading remains unchanged.
 
 
 
