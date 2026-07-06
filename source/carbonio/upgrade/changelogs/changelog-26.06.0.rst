@@ -347,16 +347,16 @@ Security & Authentication
 -  ``zimbraPasswordLocked`` **exposed in Admin UI:** Admins can now
    view and toggle the ``zimbraPasswordLocked`` attribute directly from
    the Admin UI account detail page. ``CO-3605``
-- **Fixed a startup sequencing issue:** Resolved a startup sequencing 
-  issue where Carbonio Auth and Address Book health checks failed 
-  immediately after a system reboot, incorrectly reporting unhealthy 
-  status in Consul despite the underlying services running. 
-  Previously, administrators were required to manually restart 
-  ``carbonio-appserver.target`` to restore connectivity and clear 
-  "connection refused" or 404 errors. The fix ensures these components 
-  initialize correctly and register as healthy automatically during 
-  the standard boot sequence, eliminating the need for manual intervention 
-  or post-reboot workarounds. ``CO-3821``
+-  **Fixed a startup sequencing issue:** Resolved a startup sequencing
+   issue where Carbonio Auth and Address Book health checks failed
+   immediately after a system reboot, incorrectly reporting unhealthy
+   status in Consul despite the underlying services running. Previously,
+   administrators were required to manually restart
+   ``carbonio-appserver.target`` to restore connectivity and clear
+   "connection refused" or ``404`` errors. The fix ensures these
+   components initialize correctly and register as healthy automatically
+   during the standard boot sequence, eliminating the need for manual
+   intervention or post-reboot workarounds. ``CO-3821``
 - Fixed a DOM-based Cross-Site Scripting (XSS) vulnerability in the Carbonio 
   web client.
 - Resolved a DOM-based Cross-Site Scripting (XSS) vulnerability in the Carbonio 
