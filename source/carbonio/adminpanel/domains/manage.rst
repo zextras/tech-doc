@@ -178,30 +178,11 @@ restore the COS value.
 
    .. index:: Quota; by Account
 
-   * The quota used and available for the e-mails and the |file|
-     module. It is possible to insert up to **three** decimal
-     digits for each quota.
+   * Quota settings: Use the **Unlimited** option to remove quota limits for the account.
+     If Unlimited is disabled, specify a **maximum quota** value for the account.
+     Click the **Reset** button to discard the account-specific setting and restore the quota value inherited from the assigned Class of Service (COS).
 
-     .. rubric:: Over quota management
-
-     Users are allowed to modify their documents stored in the |file|
-     module until they reach the assigned quota. The values of the
-     quota for the user are updated almost in real time, and sometimes
-     it may happen that the content added by a user to a document
-     during an editing session exceeds the quota limit.
-
-     For example, suppose user Bob is 10Kb short of his quota and
-     edits a document, adding a 20KB image and 20KB of text,
-     overflowing his quota by 30KB. When this happens, at the next
-     save attempt, Bob will be shown an error message, telling him
-     that he needs to free up some space before being able to save the
-     document.
-
-     Bob will experience the same behaviour if he tries to create a
-     new document adding the same 40KB content: upon saving, he will
-     be informed that his quota has been exceeded and he needs to free
-     some space in his |file| before being able to save the new
-     document.
+     For more information about quota management, see :ref:`manage-account-storage-quota`.
 
    * To force the user to change password at the next login
 
@@ -462,7 +443,7 @@ restore the COS value.
 
    .. index:: OTP; by Account
 
-   **Second Factor Authentication**
+   **Two-Factor Authenticator**
 
    New OTP tokens can be created to allow the user to login by using a
    QR Code. The code can then be sent by e-mail to the user who
@@ -482,6 +463,26 @@ restore the COS value.
       still use the existing OTPs. To prevent this behaviour
       (and forbid the user to use the old OTPs), the user's
       OTP codes must be removed from the |adminui|.
+
+   **Two-Factor authenticator setup enforcement**
+
+   This section allows administrators to configure remote self-enrollment for two-factor authentication (2FA).
+   Users who have not yet configured 2FA can be allowed to enroll their one-time password (OTP) even when connecting
+   from an untrusted network, such as a home or public Internet connection.
+
+   Alternatively, you can configure the same settings at the Class of Service (CoS) level by navigating to Class of Service → Details → Features.
+
+   To enable remote self-enrollment:
+
+   #. Enable **Allow users to configure 2FA from untrusted networks**.
+   #. Configure the **Grace Period** by selecting an expiration date.
+   #. Save the changes.
+
+   Until the configured expiration date is reached, users connecting from an untrusted network can authenticate using their username and password.
+   Before completing the login process, they are prompted to configure their OTP through the enrollment wizard.
+
+   After the grace period expires, users who have not completed the enrollment can no longer configure 2FA remotely and must contact
+   an administrator to complete the setup.
 
    .. index:: Undelete mail; by Account
 
@@ -537,162 +538,14 @@ restore the COS value.
 .. dropdown:: Delegates
    :open:
    :class-title: sd-text-primary
-
+   
    In this tab it is possible to define which other accounts or
    groups have access to the account and which permissions
    (**"Rights"**) are granted.  The first setting allow to define
    whether to save or not a copy of the sent messages and where:
    only in delegated account's folder or also in the delegate's
    folder.
-
    To add delegation Rights to an account, please refer to the
    dedicated section, :ref:`ap-shared-account`.
-
-.. index:: ! Account status, Account; status
-
-.. _ap-account-status:
-
-Account Statuses
-----------------
-
-A user account can be in one of the following statuses.
-
-#. **Active**. The account is enabled and ready for everyday
-   operations: the user can log in and send and receive e-mails.
-
-#. **Under Maintenance**. This state occurs during maintenance operations
-   on the domain or account: backup, import, export, restore. The
-   user can not login, e-mails are queued on the MTA.
-
-#. **Locked**. The account can not be accessed by the user, but
-   incoming e-mails are still delivered. This status can be set for
-   example if the user violates the terms of service or if the
-   account has been cracked
-
-#. **Closed**. The user is not allowed to log in, incoming e-mails
-   are rejected.
-
-#. **Pending**. This status is usually seen during the account
-   creation, when it is not yet active. User can not log in,
-   incoming e-mails are rejected.
-
-#. **LockOut**. This is the only status that can not be set. It is
-   applied automatically when the log in attempts fail for a given
-   number of times. It is a preventive measure to avoid
-   unauthorised access of brute force attacks. The account will not
-   be accessible for a given interval (*"lockout period"*)
-
-   .. hint:: Both the number of failed attempts and the lockout
-      period can be configured.
-
-The status of an account also influences the items stored in that
-user's |file|: Whenever an account is in *Closed* status, the item
-shared by that user are no longer visible to the users who could
-access it.
-
-.. index:: ! Alias, Account; alias
-
-.. _ap-acc-alias:
-
-Account Aliases
----------------
-
-An alias is a new e-mail address that can be associated with an
-existent account. It works exactly like any other account, including
-the ability to login to |product| with it. All e-mails sent to the
-alias will land in the Account's mailbox.
-
-The aliases can be easily managed from the :ref:`General <act-gen>`
-tab of the user's option. Click the pencil icon right below the
-account's username: in the opening dialog window, provide a new alias
-and the domain then click :bdg-primary-line:`+` to add the alias to
-the user. Existent aliases can be modified or deleted using the small
-icons next to the e-mail in the *Your Available Aliases* field.
-
-.. _ap-dd-admins:
-
-Delegated Domain Admins
-=======================
-
-This page shows all the accounts with some administration rights on
-the domain. To enable delegations on the domain, click the
-:bdg-primary:`INIT DOMAIN` button. If the domain was already
-initialised and you changed Components to any Administrator, or created a
-new Administrator, you need to click on the button once more to allow
-the permission to be effective. In that case the button will be
-labelled :bdg-primary:`RE-INIT DOMAIN`.
-
-.. _ap-dls:
-
-Distribution List
-=================
-
-.. include:: /_includes/_adminpanel/_domains/dls.rst
-
-.. _ap-resources:
-
-Resources
-=========
-
-.. include:: /_includes/_adminpanel/_domains/resources.rst
-
-.. _ap-create-resource:
-
-How to create a Resource
-------------------------
-
-.. include:: /_includes/_adminpanel/_domains/create-new-resource.rst
-
-.. Commented according to CO-2145
-   .. _ap-sync:
-
-   ActiveSync
-   ==========
-
-   This page gives information about all accounts connected using the
-   ActiveSync protocol. For each connected device, some information is
-   shown, including its unique Device ID and the time when it last
-   connected. Clicking any of the connections will show additional
-   information, including client data and the device's ABQ status (see
-   :ref:`mobile_abq_allowblockquarantine_device_control`)
-
-   The following actions can be carried out: :bdg-primary-line:`WIPE
-   DEVICE` (bring the connected device back to factory settings), to
-   :bdg-primary-line:`RESET DEVICE` (log out the device from the
-   account), and :bdg-primary-line:`SUSPEND` the connection.
-
-.. _restore-account:
-
-Restore Account
-===============
-
-The *Restore Account* procedure allows you to restore the contents and
-preferences of a mailbox in the exact status when it was deleted.
-
-When a Restore Account starts, a new account is created (the
-*Destination Account*), and all the items existing in the source
-account at the moment of the deletion are recreated in the destination
-account, including the folder structure and all the user’s data. All
-restored items will be created in the current primary store unless the
-**Apply HSM Policy after the restore** box is checked.
-
-.. warning:: When restoring data on a new account, shared items
-   consistency is not preserved. This is because the original share
-   rules refer to the original account’s UUID, not to the *Destination
-   Account*, which has a completely different UUID.
-
-To start the procedure, type an e-mail address in the text-field or
-select an account from the list.
-
-Then, click on the :blue:`CONFIG` tab and select the options to apply for
-the Restore:
-
-* To which date and time to restore the account
-* On which domain the account should be restored
-* Whether to use the last available status of the account
-* If External Data Sources should be restored
-* Select an e-mail to which send a notification of the successful
-  restore.
-
-  .. hint:: This could be the alternate e-mail of the user whose
-     account is being restored.
+   
+   .. index:: ! Account status, Account; status

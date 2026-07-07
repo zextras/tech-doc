@@ -9,6 +9,9 @@ be reached using a :ref:`supported browser <browser_compatibility>`
 and point it to https\://acme.example:6071/, replacing `acme.example`
 with your domain.
 
+Getting Started with the Carbonio Admin Panel
+---------------------------------------------
+
 To access the |adminui|, you need an account that is marked as
 **Administrator**. The installation process creates by default one
 Global Administrator, whose username is ``zextras@acme.example``, but
@@ -19,6 +22,7 @@ show, which allows to change password.
 
 Once logged in, more Admins can be added from the |adminui|;
 please refer to section :ref:`ap-new-admin` for directions.
+
 
 .. card:: The ``zextras`` and ``zextras@example.com`` users
 
@@ -38,6 +42,16 @@ accounts, |cos|, and privacy settings. The overall organisation of the
 panel is similar to the others components: a the *Top Bar* allows
 quick creation of a new domain or COS by clicking the |create| button,
 while navigation items are on the left-hand column.
+
+.. note::
+   
+   Any input field marked with an asterisk (*) will be treated as mandatory.
+   The system prevents form submission when required fields are left empty.
+   For example, see the image below:
+
+   .. figure:: /img/adminpanel/asterisk-example.png
+      :width: 60%
+      :name: asterisk-example.png
 
 The landing page is shown in :numref:`fig_ap-top` and
 :numref:`fig_ap-bottom`.
@@ -96,3 +110,19 @@ The landing page is shown in :numref:`fig_ap-top` and
       |carbonio| infrastructure. The button `GO TO MAILSTORES SERVERS
       LIST` allows to open the :menuselection:`Storage --> Global
       Servers --> Server List` page (see :ref:`ap-storage`).
+
+
+Logout New Behavior for Webmail and Admin Panel
+-----------------------------------------------
+
+An administrator can sign in using the same credentials to both the Webmail and the Admin Panel at the same time
+maintaining two separate active sessions: one for each interface.
+
+Logging out from one interface now affects only that interface.
+
+- Logging out of **Webmail** terminates the Webmail session only. The user remains signed in to **Admin Panel**.
+- Logging out of **Admin Panel** terminates the Admin Panel session only. The user remains signed in to **Webmail**.
+
+Previously, logging out from either interface would end the session for both.
+This behavior has been changed so each logout action is isolated to its own UI.
+Each interface now manages logout independently.

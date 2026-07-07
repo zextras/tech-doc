@@ -14,7 +14,7 @@ This documentation provides system administrators with the information needed to
 
 To stay up to date with the latest changes, improvements, and fixes, please refer to the current release changelog:
 
-.. button-ref:: upgrade/changelogs/changelog-26.03.0
+.. button-ref:: upgrade/changelogs/changelog-26.06.0
    :color: danger
    :outline:
 
@@ -181,3 +181,17 @@ The documentation is organized into the following sections:
          :hidden:
 
          cli_commands/toc
+
+   .. grid-item-card::  Carbonio Attributes Reference
+      :columns: 12 12 6 6
+      :class-title: sd-font-weight-bold sd-fs-4
+      :margin: 3 0 auto auto
+      :link-type: doc
+      :link: cli_commands/toc
+
+      List of all |product| Attributes
+
+      .. toctree::
+         :hidden:
+
+         attrs/toc

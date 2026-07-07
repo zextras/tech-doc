@@ -73,9 +73,8 @@ from that directory execute the command
 
 .. code:: console
 
-   $ ansible-playbook zxbot.carbonio_ssinstall.carbonio_ssinstall \
-   -u root -i carbonio-inventory-single \
-   --extra-vars "install_path=zxbot.carbonio_install.carbonio_install"
+   $ ansible-playbook zxbot.carbonio_install.carbonio_install \
+   -u root -i carbonio-inventory-single
 
 Antivirus Engine
 ----------------

@@ -82,7 +82,7 @@ remove more than one Node, execute the following steps for each Node.
 
     .. code:: console
 
-       zextras$ grep serveHostname /tmp/ldap.bak
+       zextras$ grep serverHostname /tmp/ldap.bak
 
     .. hint:: The command can be run as either the ``root`` or
        ``zextras`` user.

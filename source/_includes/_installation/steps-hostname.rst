@@ -7,21 +7,21 @@ disruption in |product|\'s functionality.
 To configure the file and the hostname, execute these two
 commands.
 
-.. note:: Replace the values ``srv1.example.com`` and ``172.16.0.10``
+.. note:: Replace the values ``mail.example.com`` and ``172.16.0.10``
    with values suitable for your setup.
 
 First, set the hostname
 
 .. code:: console
 
-   # hostnamectl set-hostname srv1.example.com
+   # hostnamectl set-hostname mail.example.com
 
 then replace the content of the :file:`/etc/hosts` file with IP and
 hostname.
 
 .. code:: console
 
-   # echo -e  "127.0.0.1 localhost\n172.16.0.10 srv1.example.com srv1" > /etc/hosts
+   # echo -e  "127.0.0.1 localhost\n172.16.0.10 mail.example.com mail" > /etc/hosts
 
 You can also simply get the current IP and hostname and save it in the
 file :file:`/etc/hosts/`:

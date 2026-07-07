@@ -36,33 +36,88 @@ Features
 ~~~~~~~~
 
 *Features* are settings that allow or forbid the user to access the
-various features related to the everyday use of |product|, like for
-example the *Settings* module, e-mail signatures, web and mobile access.
-
-The Administrator can enforce authentication by requiring 2FA, and
-even prevent users to even access the `Settings` Module, meaning that
-the user can not customise anything in the web mail's Settings
-Module. This proves useful in some scenarios, like for example:
-
-* an organisation wants that all the communication of its employees
-  has the same branding (including also Out Of Office replies, the
-  visible name of the sender, and other)
-* another organisation needs that the e-mails be encrypted and does
-  not want users to send plain-text e-mails
-
-.. index:: OTP; by COS
-
-An important option in this page is the `One Time Password
-Management`. Members of a COS with this options enabled are allowed to
-access from untrusted networks (see :ref:`global-2fa`) using an OTP
-code; while if the option disabled, they are not allowed. In the
-latter case, users in this COS do not have the option to create OTP in
-the *Auth* section of their `Settings` module.
+various features related to the everyday use of |product|.
 
 Some of these options can be enabled or disabled via CLI: please refer
 to section :ref:`cli-features` for more information.
 
 .. index:: Chat preferences; by COS
+
+.. rubric:: **General**
+
+In this section, administrators can control whether users assigned to the current COS
+are allowed to access and modify their personal settings.
+
+.. note::
+
+  Prevent users to access the `Settings` can be useful in some scenarios, for example:
+
+  * An organisation wants that all the communication of its employees
+    has the same branding (including also Out Of Office replies, the
+    visible name of the sender, and other).
+  
+  * Another organisation needs that the e-mails be encrypted and does
+    not want users to send plain-text e-mails.
+
+.. rubric:: **Two-Factor authenticator**
+
+Allow users to configure two-factor authentication (2FA).
+Users can set up and manage their one-time passwords (OTPs) from their account settings.
+
+.. index:: OTP; by COS
+
+.. rubric:: **Two-Factor authenticator setup enforcement**
+
+This section allows administrators to configure remote self-enrollment for two-factor authentication (2FA).
+Users who have not yet configured 2FA can be allowed to enroll their one-time password (OTP) even when connecting
+from an untrusted network, such as a home or public Internet connection.
+
+The same settings can also be configured for individual users in the **Security** section of the account settings.
+
+To enable remote self-enrollment:
+
+#. Open the Class of Service (CoS) assigned to the users.
+#. Enable **Allow users to configure 2FA from untrusted networks**.
+#. Configure the **Grace Period** by selecting an expiration date.
+#. Save the changes.
+
+Until the configured expiration date is reached, users connecting from an untrusted network can authenticate using their username and password.
+Before completing the login process, they are prompted to configure their OTP through the enrollment wizard.
+
+After the grace period expires, users who have not completed the enrollment can no longer configure 2FA remotely and must contact
+an administrator to complete the setup.
+
+
+In the other sections, administrators can determine whether users assigned to the current COS can:
+
+.. rubric:: **Mail**
+
+Use the "Carbonio Mail" mobile app.
+
+.. rubric:: **Mail Signatures**
+
+Create, manage, and use email signatures.
+
+.. rubric:: **Out of Office Reply**
+
+Configure and customize automatic out-of-office replies.
+
+.. rubric:: **Contacts**
+
+Use the Contacts feature in the webmail.
+
+.. rubric:: **Calendar**
+
+Use the Calendar feature in the webmail.
+
+.. rubric:: **Tasks**
+
+Use the Tasks feature in the webmail.
+
+.. rubric:: **Files**
+
+Use the Files feature in the webmail and the "Carbonio Files" mobile app.
+
 
 .. _cos-chat:
 
@@ -124,7 +179,7 @@ be added to the COS.
 .. _cos-adv:
 
 Advanced
-~~~~~~~~
+--------
 
 Multiple *Advanced* options can be configured here, divided into
 groups.
@@ -160,16 +215,6 @@ Forwarding
   Two options govern how to forward messages: how long an e-mail
   address can be and the maximum number of recipients allowed.
 
-.. index:: Quota; by COS
-
-Quotas
-  A set of options that show how much space a user can occupy on the
-  server for Mails and |file|, or how many contacts he can have. These
-  quotas are inherited from the COS the user belongs to and may be
-  changed for the current user. It also encompasses the options to
-  send periodic notifications when the user space raises over a given
-  threshold and a template for the notifications.
-
 .. index:: Password policies; by COS
 
 Password
@@ -198,3 +243,55 @@ Email Retention Policy
   .. note:: Even if you configure E-mail message lifetime with a value
      below 31 days, the system will automatically enforce a minimum
      retention of 31 days.
+
+.. index:: Quota; by COS
+
+Quota Management
+----------------
+
+A set of options that show how much space a user can occupy on the
+server for Mails, Chats and |file|.
+
+These quotas are inherited from the COS the user belongs to and may be
+changed for the current user.
+It also encompasses the options to send periodic notifications when the
+user space raises over a given threshold and a template for the notifications.
+
+.. note:: Storage is managed through a single unified quota.
+   Emails, Files, and Chats attachments all contribute to the same per-user storage quota
+   so the quota configured for a Class of Service (COS) represents the total storage available
+   to each user rather than separate limits for each service.
+
+Resetting Quota Values to the Inherited Class of Service Value
+--------------------------------------------------------------
+Administrators can quickly restore quota settings to the value inherited from an account's Class of Service (COS)
+by using the **Reset** icon available next to quota-related input fields.
+
+When a quota value has been modified for a specific account, click the **Reset** icon to discard the account-specific custom value and restore the quota value defined by the account's COS. 
+This provides a faster alternative to manually reconfiguring the account.
+
+.. note:: Hovering over the **Reset** icon displays a tool tip indicating that the field can be reset to its inherited COS value.
+
+Benefits
+~~~~~~~~
+The reset action simplifies quota management by allowing administrators to:
+ 1. Quickly recover from incorrect account-specific quota configurations.
+ 2. Remove temporary quota overrides.
+ 3. Restore the quota value inherited from the account's Class of Service (COS) with a single click.
+ 4. Maintain centralized quota management by relying on Class of Service (COS) settings instead of individual account overrides.
+ 5. Improve visibility and consistency of quota policies across accounts by managing quotas through COS values.
+ 6. Reduce configuration errors and administrative effort.
+
+
+Shared Documents and Class of Service Quotas
+--------------------------------------------
+
+Storage usage for shared documents is always attributed to the **owner** of the document. As a result
+the quota inherited from the owner's **Class of Service (COS)** determines whether a shared document
+remains editable.
+
+If the owner exceeds their storage quota, any shared documents they own remain accessible to collaborators
+but become **read-only**. Collaborators cannot modify, save, or create new versions of these documents until
+the owner's storage usage falls below the configured quota or the owner's quota is increased.
+Once the owner is back within quota, editing is restored automatically without requiring any additional
+configuration.
