@@ -443,7 +443,7 @@ restore the COS value.
 
    .. index:: OTP; by Account
 
-   **Second Factor Authentication**
+   **Two-Factor Authenticator**
 
    New OTP tokens can be created to allow the user to login by using a
    QR Code. The code can then be sent by e-mail to the user who
@@ -463,6 +463,26 @@ restore the COS value.
       still use the existing OTPs. To prevent this behaviour
       (and forbid the user to use the old OTPs), the user's
       OTP codes must be removed from the |adminui|.
+
+   **Two-Factor authenticator setup enforcement**
+
+   This section allows administrators to configure remote self-enrollment for two-factor authentication (2FA).
+   Users who have not yet configured 2FA can be allowed to enroll their one-time password (OTP) even when connecting
+   from an untrusted network, such as a home or public Internet connection.
+
+   Alternatively, you can configure the same settings at the Class of Service (CoS) level by navigating to Class of Service → Details → Features.
+
+   To enable remote self-enrollment:
+
+   #. Enable **Allow users to configure 2FA from untrusted networks**.
+   #. Configure the **Grace Period** by selecting an expiration date.
+   #. Save the changes.
+
+   Until the configured expiration date is reached, users connecting from an untrusted network can authenticate using their username and password.
+   Before completing the login process, they are prompted to configure their OTP through the enrollment wizard.
+
+   After the grace period expires, users who have not completed the enrollment can no longer configure 2FA remotely and must contact
+   an administrator to complete the setup.
 
    .. index:: Undelete mail; by Account
 

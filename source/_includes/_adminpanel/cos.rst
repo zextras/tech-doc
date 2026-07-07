@@ -36,33 +36,88 @@ Features
 ~~~~~~~~
 
 *Features* are settings that allow or forbid the user to access the
-various features related to the everyday use of |product|, like for
-example the *Settings* module, e-mail signatures, web and mobile access.
-
-The Administrator can enforce authentication by requiring 2FA, and
-even prevent users to even access the `Settings` Module, meaning that
-the user can not customise anything in the web mail's Settings
-Module. This proves useful in some scenarios, like for example:
-
-* an organisation wants that all the communication of its employees
-  has the same branding (including also Out Of Office replies, the
-  visible name of the sender, and other)
-* another organisation needs that the e-mails be encrypted and does
-  not want users to send plain-text e-mails
-
-.. index:: OTP; by COS
-
-An important option in this page is the `One Time Password
-Management`. Members of a COS with this options enabled are allowed to
-access from untrusted networks (see :ref:`global-2fa`) using an OTP
-code; while if the option disabled, they are not allowed. In the
-latter case, users in this COS do not have the option to create OTP in
-the *Auth* section of their `Settings` module.
+various features related to the everyday use of |product|.
 
 Some of these options can be enabled or disabled via CLI: please refer
 to section :ref:`cli-features` for more information.
 
 .. index:: Chat preferences; by COS
+
+.. rubric:: **General**
+
+In this section, administrators can control whether users assigned to the current COS
+are allowed to access and modify their personal settings.
+
+.. note::
+
+  Prevent users to access the `Settings` can be useful in some scenarios, for example:
+
+  * An organisation wants that all the communication of its employees
+    has the same branding (including also Out Of Office replies, the
+    visible name of the sender, and other).
+  
+  * Another organisation needs that the e-mails be encrypted and does
+    not want users to send plain-text e-mails.
+
+.. rubric:: **Two-Factor authenticator**
+
+Allow users to configure two-factor authentication (2FA).
+Users can set up and manage their one-time passwords (OTPs) from their account settings.
+
+.. index:: OTP; by COS
+
+.. rubric:: **Two-Factor authenticator setup enforcement**
+
+This section allows administrators to configure remote self-enrollment for two-factor authentication (2FA).
+Users who have not yet configured 2FA can be allowed to enroll their one-time password (OTP) even when connecting
+from an untrusted network, such as a home or public Internet connection.
+
+The same settings can also be configured for individual users in the **Security** section of the account settings.
+
+To enable remote self-enrollment:
+
+#. Open the Class of Service (CoS) assigned to the users.
+#. Enable **Allow users to configure 2FA from untrusted networks**.
+#. Configure the **Grace Period** by selecting an expiration date.
+#. Save the changes.
+
+Until the configured expiration date is reached, users connecting from an untrusted network can authenticate using their username and password.
+Before completing the login process, they are prompted to configure their OTP through the enrollment wizard.
+
+After the grace period expires, users who have not completed the enrollment can no longer configure 2FA remotely and must contact
+an administrator to complete the setup.
+
+
+In the other sections, administrators can determine whether users assigned to the current COS can:
+
+.. rubric:: **Mail**
+
+Use the "Carbonio Mail" mobile app.
+
+.. rubric:: **Mail Signatures**
+
+Create, manage, and use email signatures.
+
+.. rubric:: **Out of Office Reply**
+
+Configure and customize automatic out-of-office replies.
+
+.. rubric:: **Contacts**
+
+Use the Contacts feature in the webmail.
+
+.. rubric:: **Calendar**
+
+Use the Calendar feature in the webmail.
+
+.. rubric:: **Tasks**
+
+Use the Tasks feature in the webmail.
+
+.. rubric:: **Files**
+
+Use the Files feature in the webmail and the "Carbonio Files" mobile app.
+
 
 .. _cos-chat:
 
