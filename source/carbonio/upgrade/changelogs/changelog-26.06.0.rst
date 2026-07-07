@@ -347,6 +347,27 @@ Security & Authentication
 -  ``zimbraPasswordLocked`` **exposed in Admin UI:** Admins can now
    view and toggle the ``zimbraPasswordLocked`` attribute directly from
    the Admin UI account detail page. ``CO-3605``
+-  **Fixed a startup sequencing issue:** Resolved a startup sequencing
+   issue where Carbonio Auth and Address Book health checks failed
+   immediately after a system reboot, incorrectly reporting unhealthy
+   status in Consul despite the underlying services running. Previously,
+   administrators were required to manually restart
+   ``carbonio-appserver.target`` to restore connectivity and clear
+   "connection refused" or ``404`` errors. The fix ensures these
+   components initialize correctly and register as healthy automatically
+   during the standard boot sequence, eliminating the need for manual
+   intervention or post-reboot workarounds. ``CO-3821``
+- Fixed a DOM-based Cross-Site Scripting (XSS) vulnerability in the Carbonio 
+  web client.
+- Resolved a DOM-based Cross-Site Scripting (XSS) vulnerability in the Carbonio 
+  web client that previously allowed arbitrary JavaScript execution when viewing 
+  specially crafted plain-text emails containing malicious markup. 
+- The system now strictly HTML-encodes all plain-text message content, 
+  including quoted text and interactive links, before rendering to prevent script 
+  injection and unauthorized session access. This update is applied automatically 
+  at runtime; no configuration changes are required. System administrators should 
+  verify that email previews, reply composers, and print functions render plain-text 
+  messages correctly after upgrading. ``CO-3874``
 
 
 Admin Panel
@@ -364,6 +385,22 @@ Admin Panel
    hostname override for the TURN server to handle NAT scenarios where
    the server's public address differs from the internal hostname.
    ``CO-3604``
+   
+- **Admin Console COS module improved:**
+   
+ - Refactored the Admin Console COS module to significantly improve code stability, 
+   navigation reliability, and data consistency using modern development tools.
+ - Synchronized page state with the browser URL, ensuring that page refreshes, 
+   bookmarks, direct links, and browser back/forward actions correctly restore the
+   specific view and selected Class of Service (COS) without errors.
+ - Enhanced form interactions by implementing real-time field validation, 
+   reliable dirty-state tracking, and clear user-facing error notifications to 
+   replace previous silent failures.
+ - Optimized data fetching and caching to reduce redundant API calls, 
+   prevent edge-case server-pool and quota-save errors, and display skeleton 
+   loading placeholders instead of blank screens.
+ - No administrative action is required; these improvements are automatically 
+   applied upon deployment of the updated admin-ui-cos package. ``CO-377``
 
  
 
@@ -511,8 +548,11 @@ Infrastructure & Deployment
    the public SOAP/REST layer. ``CO-3298``
 -  **Carbonio message-broker reorganized on cluster nodes.**
    ``ZCT-1829``
+   
+-  **Updated Playbook Terminology: WSC Replaced with Chats:**
+-  The installation, upgrade, and High Availability (HA) playbooks have been updated to replace the deprecated term "WSC" with the current product name, "Chats." This change aligns automated deployment scripts with official documentation and branding, ensuring that task descriptions and log outputs consistently reflect the correct nomenclature during system provisioning or maintenance.
+-  This is a textual update only; no underlying installation logic, service behavior, or configuration parameters have changed, so existing deployments require no manual intervention. However, system administrators maintaining custom playbook fragments or external scripts should verify and update any hardcoded references to "WSC" to ensure continued compatibility with future playbook runs.
 
- 
 
 Localization
 ------------
@@ -859,3 +899,15 @@ Security Fixes
    Authentication has been resolved. When 2FA is enabled, second-factor
    verification is now strictly enforced across both user and
    administrator authentication flows. ``CO-3809``
+-  **Resolved CVE-2026-42055:** 
+   This release resolves CVE-2026-42055 by upgrading the bundled Nginx 
+   component to a patched micro version. The update mitigates a
+   critical vulnerability that could otherwise allow remote attackers to 
+   cause a denial-of-service or potentially execute arbitrary code.  
+   The patch is applied automatically during the standard deployment process, 
+   and existing Nginx configurations and workloads will continue to operate 
+   without modification. While no manual configuration changes are required, 
+   system administrators should verify that the Nginx service restarts 
+   successfully and confirm the new version number (e.g., via ``nginx -v``) to 
+   ensure the fix is active. ``CO-3869``
+
