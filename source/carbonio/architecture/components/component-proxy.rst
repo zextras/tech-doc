@@ -33,6 +33,7 @@ The following packages are required for the **Proxy** component:
    carbonio-files-ui
    carbonio-ws-collaboration-ui
    carbonio-avdb-updater
+   carbonio-storages-ui
 
 
 .. important::

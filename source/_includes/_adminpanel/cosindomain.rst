@@ -21,7 +21,7 @@ limiting the accounts to **200**, including 50 **Base** and 30
 This scenario can be set up as follows: 
 
 #. Create the new domain (e.g., using the :bdg-primary:`NEW` button)
-   and assign it 200 *manageable accounts* and 30Gb of quota
+   and assign it 200 accounts
 
 #. Select the domain and in its *General Settings*, scroll to the
    bottom and select the Lite, Basic, and Pro COSes and assign
@@ -30,10 +30,9 @@ This scenario can be set up as follows:
 
    .. hint:: By duplicating a COS, it will be named as, e.g.,
       *lite.acme.com* and will be considered as an entirely separated
-      COS. Any change to the original COS will therefore **not be
-      propagated** to lite.acme.com.
+      COS. Any change to the original COS (e.g.,
+      *lite*) will therefore **not be propagated** to lite.acme.com.
 
 #. In the COS list, which is populated while carrying out step #2,
    select the first one (lite.acme.com) as the default one
-
 

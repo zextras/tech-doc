@@ -338,8 +338,21 @@ on the first position and accepts any one value corresponding to an
 S3-Compatible Services. The arguments that follow in the command now
 depend on the selected ``storeType``.
 
-The parameters required by these commands may differ depending on the
-`[type]` of volume to be defined, which is one of the following.
+.. note:: 
+   Starting from Carbonio **26.6.0**, the storage model has been simplified to reduce complexity and align with the new S3 connector strategy.
+
+Supported Volume Types
+----------------------
+
+Carbonio supports the following volume types:
+
+* **Local Storage (FileBlob)**
+* **Carbonio S3 Standard**
+* **Carbonio S3 for Amazon**
+
+The independent volume types connectors are being progressively deprecated.
+
+For versions **26.3.x** and earlier the independent connectors parameters required by these commands may differ depending on the `[type]` of volume to be defined, which is one of the following.
 
 -  FileBlob (Local)
 -  Alibaba

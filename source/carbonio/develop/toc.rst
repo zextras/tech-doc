@@ -130,7 +130,16 @@ Below is the complete list of Carbonio API categories.
 
       REST endpoints for:
 
-      - Storage
+      - Storages (Powerstore)
+
+   .. grid-item-card:: REST APIs
+      :link: ../../../apidoc/carbonio-storages/storages-quota-api.html
+      :link-type: url
+      :class-title: sd-font-weight-bold
+
+      REST endpoints for:
+
+      - Storages (Quota)   
 
    .. grid-item-card:: REST APIs
       :link: ../../../apidoc/carbonio-ws-collaboration/chats-api.html

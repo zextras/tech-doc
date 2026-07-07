@@ -49,6 +49,8 @@ export SETUP_CONSUL_TOKEN=$CONSUL_HTTP_TOKEN
 
 pending-setups --execute-all
 
+systemctl restart  carbonio-ws-collaboration-sidecar.service
+
 su - postgres -c "psql --command=\"CREATE ROLE carbonio_adm WITH LOGIN SUPERUSER encrypted password '$POSTGRES_SECRET';\""
 su - postgres -c "psql --command=\"CREATE DATABASE carbonio_adm OWNER carbonio_adm;\""
 

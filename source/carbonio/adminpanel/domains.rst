@@ -27,4 +27,11 @@ to the most common tasks related to the domain administration.
    domains/newuser
    domains/global
    domains/manage
+   domains/account_quota
+   domains/account_status
+   domains/account_alias
+   domains/account_restore
+   domains/delegated_admin
+   domains/distrib_list
+   domains/resources
    domains/details
