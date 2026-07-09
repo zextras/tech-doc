@@ -548,7 +548,7 @@ Infrastructure & Deployment
    the public SOAP/REST layer. ``CO-3298``
 -  **Carbonio message-broker reorganized on cluster nodes.**
    ``ZCT-1829``
--  Enhanced the ``carbonio_upgrade`` playbook to skip ``zmcontrol status`` validation on non-mailbox servers, 
+-  Enhanced the ``carbonio_upgrade`` playbook to skip ``zmcontrol status`` validation on non-mailbox servers,
    preventing random failures caused by inconsistent service status reporting. ``ZCT-2013``
    
 -  **Updated Playbook Terminology: WSC Replaced with Chats:**
