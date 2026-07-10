@@ -27,6 +27,7 @@ Below is the list of Carbonio packages collected by component:
 
    - **carbonio-proxy**: `carbonio-proxy` *(4.14.2-1)*
    - **carbonio-catalog**: `carbonio-catalog` *(0.5.1-1)*
+   - **carbonio-storages-ui**: `carbonio-storages-ui` *(0.17.5-1)*
    - **carbonio-files-public-folder-ui**: `carbonio-files-public-folder-ui` *(0.0.19-1)*
    - **carbonio-webui**: `carbonio-webui` *(4.5.7-1)*
    - **carbonio-tasks-ui**: `carbonio-tasks-ui` *(0.1.1-1)*
