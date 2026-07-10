@@ -548,6 +548,8 @@ Infrastructure & Deployment
    the public SOAP/REST layer. ``CO-3298``
 -  **Carbonio message-broker reorganized on cluster nodes.**
    ``ZCT-1829``
+-  Enhanced the ``carbonio_upgrade`` playbook to skip ``zmcontrol status`` validation on non-mailbox servers,
+   preventing random failures caused by inconsistent service status reporting. ``ZCT-2013``
    
 -  **Updated Playbook Terminology: WSC Replaced with Chats:**
 -  The installation, upgrade, and High Availability (HA) playbooks have been updated to replace the deprecated term "WSC" with the current product name, "Chats." This change aligns automated deployment scripts with official documentation and branding, ensuring that task descriptions and log outputs consistently reflect the correct nomenclature during system provisioning or maintenance.
