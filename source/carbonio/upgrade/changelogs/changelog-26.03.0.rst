@@ -609,6 +609,8 @@ A stored XSS vulnerability in the email printing feature has been resolved. Mali
 
 Tracking code: CO-3374
 
+**Credit:** Grzegorz Tworek (sec4check)
+
 
 Nginx Security Update
 ^^^^^^^^^^^^^^^^^^^^^
