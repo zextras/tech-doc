@@ -368,6 +368,7 @@ Security & Authentication
   at runtime; no configuration changes are required. System administrators should 
   verify that email previews, reply composers, and print functions render plain-text 
   messages correctly after upgrading. ``CO-3874``
+  **Credit**: Urs Müller (Compass Security AG)
 
 
 Admin Panel
