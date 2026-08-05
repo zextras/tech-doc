@@ -297,8 +297,8 @@ Disclaimer
 
 .. include:: /_includes/_adminpanel/_domains/discl-warn.rst
 
-Access Admin Panel from Untrusted Networks
-==========================================
+Using 2FA from Untrusted Networks
+=================================
 
 
 To enhance security, Carbonio can require Two-Factor Authentication (2FA) specifically when you sign in from an **untrusted network**.
