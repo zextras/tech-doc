@@ -146,3 +146,15 @@ There are 3 main application scenarios for 2FA:
      factor. Once the grant period is over, it will be necessary to
      log in again (to webmail or from a mobile app) by entering the
      second factor.
+.. card:: 2FA is enabled for admin
+
+   *  Locate the **Admin API** row.
+   *  Open the **What to trust?** drop-down menu.
+   *  Select either **Trust the IP** or **Trust the Device**.
+   *  In the **Trusted Networks (IP ranges)** field, enter the IP address or CIDR range that should bypass 2FA.
+   *  Repeat the same configuration for the **WebUI** row if you want the web interface to use the same trusted network policy.
+   *  Click **APPLY TO ALL SERVICES** if you want the same trusted IP configuration to be applied to all available services.
+
+   .. image:: /img/adminpanel/2fa_enabled_for_admin.png
+      :scale: 50
+      :align: center
