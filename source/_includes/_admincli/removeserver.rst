@@ -90,3 +90,27 @@ remove more than one Node, execute the following steps for each Node.
     The output of the command should be empty, meaning that the old
     Node is not part of the |product| infrastructure anymore. You can
     now power off the Node and decommission it.
+
+Additional Steps for Mailbox Nodes
+===================================
+
+If the node hosts mailbox services, perform the following steps **before** removing it from the infrastructure.
+
+1. Obtain a Consul token:
+
+   .. code-block:: bash
+
+      export CONSUL_HTTP_TOKEN=$(gpg -qdo - /etc/zextras/service-discover/cluster-credentials.tar.gpg | tar xOf - consul-acl-secret.json | jq .SecretID -r)
+
+2. Leave the Mesh
+
+   .. code-block:: bash
+
+      consul leave
+
+3. Promote all accounts hosted on the server to another mailbox node.
+
+
+   /opt/zextras/bin/carbonio prov -l ms $(carboniohostname) \
+     +carbonioServiceEnabled memcached \
+     +carbonioServiceInstalled memcached
