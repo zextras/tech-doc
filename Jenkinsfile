@@ -1,3 +1,12 @@
+library(
+    identifier: 'jenkins-lib-common@v4.10.0',
+    retriever: modernSCM([
+        $class: 'GitSCMSource',
+        remote: 'git@github.com:zextras/jenkins-lib-common.git',
+        credentialsId: 'jenkins-integration-with-github-account'
+    ])
+)
+
 pipeline {
   agent {
     node {
@@ -7,6 +16,7 @@ pipeline {
   options {
     buildDiscarder(logRotator(numToKeepStr: '10'))
     timeout(time: 60, unit: 'MINUTES')
+    disableConcurrentBuilds()
   }
   environment {
     SPHINX_DIR = '.'
