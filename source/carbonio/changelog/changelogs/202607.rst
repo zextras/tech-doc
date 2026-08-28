@@ -1,0 +1,168 @@
+Changelog 2026-07
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202607-1964 Updated contributor details in the 26.6 changelog
+
+Updated the Carbonio 26.6 changelog in both the Zendesk KB and public documentation to credit Urs Müller for identifying the stored XSS vulnerability in the print email feature
+
+
+.. rubric:: 202607-1958 Added credit to 26.3 changelog
+
+Added a credit to 26.3.0 changelog about the Stored XSS vulnerability in the email prining feature
+
+
+.. rubric:: 202607-1954 Added contribute for XSS issue in the product changelog
+
+The Carbonio 26.3.0 changelog was updated to include a security credit for Grzegorz Tworek (sec4check) regarding the fix for a stored XSS vulnerability in the print email feature. Additionally, the changelog structure was reorganized by major release series to improve navigation and maintainability.
+
+
+.. rubric:: 202607-1938 Added zmcontrol status hotfix to the Carbonio 26.6.0 changelog
+
+Update the Carbonio 26.6.0 product changelog by adding to the “Infrastructure” section an hotfix that addresses the issue where the zmcontrol status command gave inconsistent results on non-mailbox servers
+
+
+.. rubric:: 202607-1926 Delegated Domain Admins page is updated into two sections. 
+
+Updated the Delegated Domain Admins documentation to explain the INIT-DOMAIN and RE-INIT-DOMAIN actions, their use cases, and how to manage delegated administrators and their assigned administration rights.
+
+
+.. rubric:: 202607-1923 New issues added to the product Changelog
+
+Updated the Carbonio 26.06.0 upgrade changelog with additional resolved issues and security notes.
+
+
+.. rubric:: 202607-1919 Updated Carbonio logs public document table reference
+
+Updated the table details in the Carbonio public documentation to include log file information.
+
+
+.. rubric:: 202607-1916 Mandatory fields are marked with an asterisk
+
+Updated the Admin Panel documentation to mark mandatory fields with an asterisk (*).
+
+
+.. rubric:: 202607-1906 Added Carbonio mailbox attribute table to public doc
+
+Created a new page to introduce the LDAP attributes table, which will open in a separate window.
+
+
+.. rubric:: 202607-1901 Updated the ansible installation document
+
+Updated the Ansible installation documentation to correct the default domain configuration example and ensure the default_domain parameter is active and unambiguous.
+
+
+.. rubric:: 202607-1893 Documented Quota management from Admin UI account settings
+
+Updated the administration documentation to describe the new Admin UI functionality for viewing and modifying account quotas directly from the Account Settings page.
+
+
+.. rubric:: 202607-1889 Updated wew Carbonio 26.6.0 public changelog
+
+Added the Carbonio 26.6 technical changelog to the documentation portal in RST format, following documentation style guidelines and verifying formatting, links, and build integrity.
+
+
+.. rubric:: 202607-1888 Updated new unlimited storage quotas at COS level
+
+Updated the administration documentation to describe the new COS-level unlimited storage quota option in the Admin Console, including configuration steps, upgrade behavior, and compatibility with existing monitoring and billing workflows.
+
+
+.. rubric:: 202607-1886 Added new reset icon added to quota-related input fields.
+
+Updated the Admin UI documentation to describe the new quota reset control, including its placement, behavior, permission requirements, and use for quickly restoring quota values to system defaults.
+
+
+.. rubric:: 202607-1884 Updated quota enforcement changes for shared files
+
+Updated the documentation to describe the new owner-based quota enforcement for shared files, including read-only behavior when the owner exceeds their quota, recovery conditions, upgrade impact, and the absence of additional configuration requirements.
+
+
+.. rubric:: 202607-1881 Enabled or disabled the OTP setup wizard
+
+Updated the Admin Guide and KB to document how administrators can enable or disable the OTP setup wizard at both the COS and account levels.
+
+
+.. rubric:: 202607-1878 Updated documentation to include new carbonio-storages-ui package introduced in 26.6
+
+Updated the installation, upgrade, migration, and package verification documentation to include the new carbonio-storages-ui package introduced in Carbonio 26.6.
+
+
+.. rubric:: 202607-1873 Documented grace period management for 2FA at COS and account levels
+
+Updated the Admin Guide and User Guide to document 2FA Grace Period management at the COS and account levels, including configuration priority, remote OTP self-enrollment, and end-user login and 2FA setup behavior.
+
+
+.. rubric:: 202607-1869 Aligned property in get quota endpoints
+
+Updated the Admin Guide to add quota management information to the COS section and included an important note in the upgrade documentation.
+
+
+.. rubric:: 202607-1857 Updated API pages for 26.6.0 release
+
+Updated the Carbonio API Overview to ensure all referenced APIs use the current versions and follow the unified REST API deployment flow.
+
+
+.. rubric:: 202607-1856 Updated new logout behaviour
+
+Updated the documentation to describe the new independent logout behavior, where logging out of WebUI no longer terminates the AdminUI session and vice versa.
+
+
+.. rubric:: 202607-1850 Validated VM Hostname/FQDN against Inventory in Carbonio Install Ansible Playbook
+
+Updated the Ansible installation documentation to describe the new hostname/FQDN validation check, including inventory requirements, matching and mismatch scenarios, and the resulting failure behavior.
+
+
+.. rubric:: 202607-1839 Deprecated carbonio core getVersion
+
+Updated the documentation to remove the deprecated carbonio core getVersion command and identify zmcontrol -v as the authoritative method for retrieving the Carbonio platform version.
+
+
+.. rubric:: 202607-1833 Updated zmcontrol -v output to show only Carbonio version
+
+Updated the Admin CLI documentation to reflect the standardized zmcontrol -v output for both Carbonio and Carbonio CE, showing only the product name and version.
+
+
+.. rubric:: 202607-1815 Corrected typo in Remove a  Node From Carbonio Infrastructure
+
+Corrected the grep command in the node removal procedure and updated the documentation for both Carbonio and Carbonio CE.
+
+
+.. rubric:: 202607-1814 Updated documentation issues related to zimbraAutoProvAttrMap
+
+Updated the AutoProv documentation to correct the zimbraAutoProvAttrMap configuration syntax and added the supported attribute list with descriptions.
+
+
+.. rubric:: 202607-1779 Updated Documentation for Unified Installation via carbonio-install-ansible
+
+Updated the installation documentation and KB articles to reflect the unified carbonio-install-ansible playbook, including automatic single-server detection, optimization prompts, and deprecation of the ssinstall playbook.
+
+
+.. rubric:: 202607-1775 Updated supported volume types list in Storage document
+
+Updated the Carbonio Storage documentation to reflect the current supported volume types, consolidating storage options into Local Storage, Carbonio S3 Standard, and Carbonio S3 for Amazon, while removing Swift and OpenIO references.
+
+
+.. rubric:: 202607-1743 Improved documentation for managing spam from admin UI
+
+Added documentation for managing spam from the Admin UI, including available spam-handling settings and the Blocked Spam Destiny option and its supported values.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202607-1855 Added systemd restart command 
+
+Updated the commercial certificate installation documentation for Carbonio and Carbonio CE to include OS-specific restart instructions, including the systemctl restart carbonio.target command for systemd-based systems.
+
+
+.. rubric:: 202607-1816 Correct Service-Discovery Server Recommendations
+
+Updated the Carbonio Mesh documentation to clarify the recommended number of service-discovery servers, limiting the guidance to tested and supported configurations for large infrastructures.
+
+*****
+
+End of changelog
