@@ -22,7 +22,7 @@ The Carbonio 26.3.0 changelog was updated to include a security credit for Grzeg
 
 .. rubric:: 202607-1938 Added zmcontrol status hotfix to the Carbonio 26.6.0 changelog
 
-Update the Carbonio 26.6.0 product changelog by adding to the “Infrastructure” section an hotfix that addresses the issue where the zmcontrol status command gave inconsistent results on non-mailbox servers
+Updated the Carbonio 26.6.0 product changelog by adding to the “Infrastructure” section an hotfix that addresses the issue where the zmcontrol status command gave inconsistent results on non-mailbox servers
 
 
 .. rubric:: 202607-1926 Delegated Domain Admins page is updated into two sections. 
@@ -32,7 +32,7 @@ Updated the Delegated Domain Admins documentation to explain the INIT-DOMAIN and
 
 .. rubric:: 202607-1923 New issues added to the product Changelog
 
-Updated the Carbonio 26.06.0 upgrade changelog with additional resolved issues and security notes.
+Updated the Carbonio 26.6.0 upgrade changelog with additional resolved issues and security notes.
 
 
 .. rubric:: 202607-1919 Updated Carbonio logs public document table reference
