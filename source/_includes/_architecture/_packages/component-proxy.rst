@@ -6,7 +6,7 @@
       .. code:: console
 
          # apt install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
@@ -17,7 +17,7 @@
       .. code:: console
 
          # apt install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
@@ -28,7 +28,7 @@
       .. code:: console
 
          # dnf install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
@@ -38,6 +38,6 @@
       .. code:: console
 
          # dnf install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
