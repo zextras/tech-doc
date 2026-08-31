@@ -32,7 +32,7 @@ dnf -y install postgresql16 postgresql16-server;
 /usr/pgsql-16/bin/postgresql-16-setup initdb;
 systemctl enable --now postgresql-16;
 
-PACKAGES="service-discover-server carbonio-directory-server carbonio-proxy carbonio-webui carbonio-files-ui carbonio-mta carbonio-appserver carbonio-user-management carbonio-files-ce carbonio-files-public-folder-ui carbonio-files-db carbonio-tasks-ce carbonio-tasks-db carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce carbonio-docs-connector-ce carbonio-docs-editor carbonio-prometheus carbonio-message-broker  carbonio-ws-collaboration-ce carbonio-ws-collaboration-db carbonio-ws-collaboration-ui carbonio-catalog carbonio-memcached"
+PACKAGES="service-discover-server carbonio-directory-server carbonio-proxy carbonio-files-ui carbonio-mta carbonio-appserver carbonio-user-management carbonio-files-ce carbonio-files-public-folder-ui carbonio-files-db carbonio-tasks-ce carbonio-tasks-db carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce carbonio-docs-connector-ce carbonio-docs-editor carbonio-prometheus carbonio-message-broker  carbonio-ws-collaboration-ce carbonio-ws-collaboration-db carbonio-ws-collaboration-ui carbonio-catalog carbonio-memcached"
 
 echo '' > config.conf
 dnf install -y $PACKAGES 
@@ -94,4 +94,3 @@ echo "Please store it in a safe place, otherwise you will need to reset it!"
 else
     echo "###### Carbonio repo are not configured. ######"
 fi
-
