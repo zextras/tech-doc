@@ -18,7 +18,7 @@ Next, we install the base packages needed for |product|.
          carbonio-directory-server carbonio-proxy carbonio-mta \
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
-         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-preview carbonio-catalog \
          carbonio-files-public-folder-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
 
@@ -31,7 +31,7 @@ Next, we install the base packages needed for |product|.
          carbonio-directory-server carbonio-proxy carbonio-mta \
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
-         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-preview carbonio-catalog \
          carbonio-files-public-folder-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql-16
 
@@ -59,7 +59,7 @@ Next, we install the base packages needed for |product|.
          carbonio-directory-server carbonio-proxy carbonio-mta \
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
-         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-preview carbonio-catalog \
          carbonio-files-public-folder-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql16-server
 
@@ -94,7 +94,7 @@ Next, we install the base packages needed for |product|.
          carbonio-directory-server carbonio-proxy carbonio-mta \
          carbonio-advanced carbonio-zal carbonio-user-management \
          carbonio-storages carbonio-message-broker carbonio-files \
-         carbonio-preview carbonio-catalog carbonio-webui \
+         carbonio-preview carbonio-catalog \
          carbonio-files-public-folder-ui carbonio-files-ui \
          carbonio-mailbox-db carbonio-files-db postgresql16-server
 
