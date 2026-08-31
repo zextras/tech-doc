@@ -5,7 +5,7 @@
 
       .. code:: console
 
-         # apt install carbonio-proxy carbonio-webui \
+         # apt install carbonio-proxy \
            carbonio-files-ui carbonio-tasks-ui \
            carbonio-ws-collaboration-ui  carbonio-catalog \
            carbonio-files-public-folder-ui carbonio-memcached
@@ -15,7 +15,7 @@
 
       .. code:: console
 
-         # dnf install carbonio-proxy carbonio-webui \
+         # dnf install carbonio-proxy \
            carbonio-files-ui carbonio-tasks-ui \
            carbonio-ws-collaboration-ui carbonio-catalog \
            carbonio-files-public-folder-ui carbonio-memcached
