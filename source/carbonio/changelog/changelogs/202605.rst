@@ -1,0 +1,15 @@
+
+Changelog 2026-05
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202605-1813 Added checks for /etc/rsyslog.conf during upgrade
+
+Added instructions to verify and restore UDP and TCP remote logging in /etc/rsyslog.conf after upgrading from Ubuntu 22.04 to 24.04.
+
+*****
+
+End of changelog
