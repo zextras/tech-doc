@@ -28,7 +28,6 @@ The following packages are required for the **Proxy** component:
    carbonio-proxy
    carbonio-catalog
    carbonio-files-public-folder-ui
-   carbonio-webui
    carbonio-tasks-ui
    carbonio-files-ui
    carbonio-ws-collaboration-ui
