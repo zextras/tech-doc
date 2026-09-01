@@ -34,7 +34,7 @@ previous_release = '26.3'
 
 
 # The full version, including alpha/beta/rc tags
-release = '26.6.0'
+release = '26.9.0'
 version = release
 
 # -- General configuration ---------------------------------------------------
