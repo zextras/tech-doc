@@ -10,7 +10,6 @@ New and Updated Content
 
 Included ClamAV systemd equivalents in the documentation for Ubuntu 24 and RHEL 9 where applicable and/or missing
 
-
 *****
 
 Bugfix List
