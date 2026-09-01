@@ -1,0 +1,24 @@
+
+Changelog 2026-04
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202604-1778 Include systemd equivalents for ClamAV commands
+
+Included ClamAV systemd equivalents in the documentation for Ubuntu 24 and RHEL 9 where applicable and/or missing
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202604-1828 Replace obsolete zmcontrol -v output in the Admin CLI guide
+
+Updated the Admin CLI documentation to replace the obsolete sample output of the zmcontrol -v command. The example now reflects the current version information returned by the command, ensuring the documentation is accurate and aligned with the current product behavior.
+
+*****
+
+End of changelog
