@@ -9,7 +9,7 @@ build on the following scenario.
 .. include:: /_includes/_admincli/ext-ad.rst
 
 On |product|, set up the ``ad-auth.example.com`` domain for
-authentication on the external LDAP using the commands below. Remember
+ on the external LDAP using the commands below. Remember
 to change the values in the scenario with the actual values of your
 infrastructure!
 

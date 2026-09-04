@@ -75,8 +75,8 @@ Now, configure the AD auto provisioning.
    zextras$ carbonio prov md test.auth +zimbraAutoProvAttrMap givenName=givenName
    zextras$ carbonio prov md test.auth +zimbraAutoProvAttrMap cn=cn
    zextras$ carbonio prov md test.auth +zimbraAutoProvAttrMap sn=sn
-   zextras$ carbonio prov md test.auth +zimbraAutoProvAuthMech LDAP
-   zextras$ carbonio prov md test.auth +zimbraAutoProvBatchSize 4000
+   zextras$ carbonio prov md test.auth zimbraAutoProvAuthMech LDAP
+   zextras$ carbonio prov md test.auth zimbraAutoProvBatchSize 4000
 
 Configure the AD server from which to fetch the usersm using the data
 provided in the :ref:`ad-auto-scenario` above.
