@@ -111,6 +111,15 @@ restart synchronisation.
           
 .. _mobile-password:
 
+MDM Protocol Support
+====================
+Carbonio supports advanced Mobile Device Management (MDM)
+features via the Exchange ActiveSync (EAS) protocol, version 14 and newer.
+
+.. note:: MDM Support is provided in accordance with the applicable EAS protocol specifications
+   and is subject to the capabilities and limitations defined by the protocol and the
+   relevant client implementation.
+
 The Mobile Password Feature
 ===========================
 
