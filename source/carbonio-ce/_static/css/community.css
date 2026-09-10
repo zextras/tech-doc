@@ -31,7 +31,21 @@
     background-color: #ff9c9c;
 }
 
-.bordered-image {
-    border: 1px solid #d0d0d0;
-    padding: 2px;
+a.bordered-image {
+border: none;
+padding: 0;
+display: inline-block;
 }
+
+a.bordered-image::before,
+a.bordered-image::after {
+content: none;
+}
+
+a.bordered-image img.bordered-image {
+display: block;
+border: 1px solid #d0d0d0;
+padding: 2px;
+box-sizing: border-box;
+}
+
