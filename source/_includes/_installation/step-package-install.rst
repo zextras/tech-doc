@@ -15,7 +15,11 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # apt install service-discover-server \
-         carbonio-directory-server carbonio-proxy carbonio-webui \
+         carbonio-directory-server carbonio-proxy \
+         carbonio-admin-console-ui carbonio-admin-login-ui \
+         carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+         carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+         carbonio-shell-ui \
          carbonio-files-ui carbonio-mta \
          carbonio-appserver carbonio-user-management \
          carbonio-files-ce carbonio-files-public-folder-ui \
@@ -34,7 +38,11 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # apt install service-discover-server \
-         carbonio-directory-server carbonio-proxy carbonio-webui \
+         carbonio-directory-server carbonio-proxy \
+         carbonio-admin-console-ui carbonio-admin-login-ui \
+         carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+         carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+         carbonio-shell-ui \
          carbonio-files-ui carbonio-mta \
          carbonio-appserver carbonio-user-management \
          carbonio-files-ce carbonio-files-public-folder-ui \
@@ -62,7 +70,11 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # dnf install carbonio-directory-server carbonio-proxy \
-         carbonio-webui carbonio-files-ui carbonio-mta \
+         carbonio-admin-console-ui carbonio-admin-login-ui \
+         carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+         carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+         carbonio-shell-ui \
+         carbonio-files-ui carbonio-mta \
          carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \
@@ -91,7 +103,11 @@ Next, we install all packages needed for |product|.
       .. code:: console
 
          # dnf install carbonio-directory-server carbonio-proxy \
-         carbonio-webui carbonio-files-ui carbonio-mta \
+         carbonio-admin-console-ui carbonio-admin-login-ui \
+         carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+         carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+         carbonio-shell-ui \
+         carbonio-files-ui carbonio-mta \
          carbonio-appserver \
          carbonio-user-management carbonio-preview-ce \
          carbonio-files-ce carbonio-files-public-folder-ui \

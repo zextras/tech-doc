@@ -6,7 +6,11 @@
       .. code:: console
 
          # apt install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
+          carbonio-admin-console-ui carbonio-admin-login-ui \
+          carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+          carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+          carbonio-shell-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
@@ -17,7 +21,11 @@
       .. code:: console
 
          # apt install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
+          carbonio-admin-console-ui carbonio-admin-login-ui \
+          carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+          carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+          carbonio-shell-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
@@ -28,7 +36,11 @@
       .. code:: console
 
          # dnf install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
+          carbonio-admin-console-ui carbonio-admin-login-ui \
+          carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+          carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+          carbonio-shell-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
 
@@ -38,6 +50,10 @@
       .. code:: console
 
          # dnf install carbonio-proxy carbonio-catalog \
-          carbonio-files-public-folder-ui carbonio-webui \
+          carbonio-files-public-folder-ui \
+          carbonio-admin-console-ui carbonio-admin-login-ui \
+          carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui \
+          carbonio-login-ui carbonio-mails-ui carbonio-search-ui \
+          carbonio-shell-ui \
           carbonio-tasks-ui carbonio-files-ui \
           carbonio-ws-collaboration-ui carbonio-avdb-updater
