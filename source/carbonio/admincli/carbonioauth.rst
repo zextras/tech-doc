@@ -397,7 +397,7 @@ You are now DONE! You can see the :bdg-primary-line:`LOGIN SAML` button on the l
 .. card::
    :width: 50%
 
-   .. figure:: /img/auth/saml-login.png
+   .. figure:: /img/auth/saml-login-note.png
       :align: center
       :width: 50%
 
