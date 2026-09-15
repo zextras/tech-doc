@@ -1,4 +1,4 @@
-Sphinx==7.2.6
+Sphinx==7.4.7
 sphinx-design
 sphinx_rtd_theme
 sphinx-book-theme
