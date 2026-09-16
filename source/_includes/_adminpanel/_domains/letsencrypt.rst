@@ -56,6 +56,12 @@
 
       zextras$ /opt/zextras/libexec/zmproxyconfgen
       zextras$ zmproxyctl restart
+   
+   Ubuntu 24 / RHEL 9
+
+   .. code:: console
+
+      systemctl restart carbonio-proxy.target
 
 To correctly issue a Let's Encrypt certificate for your |product|
 installation, you should carry out the following steps.
