@@ -57,10 +57,11 @@
       zextras$ /opt/zextras/libexec/zmproxyconfgen
       zextras$ zmproxyctl restart
    
-   Ubuntu 24 / RHEL 9
+   Ubuntu 24.04 / RHEL 9
 
    .. code:: console
 
+      zextras$ /opt/zextras/libexec/zmproxyconfgen
       systemctl restart carbonio-proxy.target
 
 To correctly issue a Let's Encrypt certificate for your |product|
