@@ -52,6 +52,8 @@
    Once done, execute the following commands to pick up the changes on
    the Proxy Node
 
+   Ubuntu 22.04 / RHEL 8
+
    .. code:: console
 
       zextras$ /opt/zextras/libexec/zmproxyconfgen
