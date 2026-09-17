@@ -52,10 +52,19 @@
    Once done, execute the following commands to pick up the changes on
    the Proxy Node
 
+   Ubuntu 22.04 / RHEL 8
+
    .. code:: console
 
       zextras$ /opt/zextras/libexec/zmproxyconfgen
       zextras$ zmproxyctl restart
+   
+   Ubuntu 24.04 / RHEL 9
+
+   .. code:: console
+
+      zextras$ /opt/zextras/libexec/zmproxyconfgen
+      systemctl restart carbonio-proxy.target
 
 To correctly issue a Let's Encrypt certificate for your |product|
 installation, you should carry out the following steps.
