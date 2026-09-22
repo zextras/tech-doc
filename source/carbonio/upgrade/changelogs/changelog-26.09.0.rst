@@ -121,7 +121,7 @@ This release includes the following changes and improvements:
 
 **New packages handled:** Installation and upgrade playbooks now support the new ``carbonio-preview-db`` and ``carbonio-license-service`` packages introduced in 26.9.
 
-**``carbonio-webui`` meta-package removed:** The ``carbonio-webui`` meta-package has been removed in 26.9. **Action required:** custom playbooks and installation scripts must replace it with the nine individual web UI packages.
+**Webui meta-package removed:** The ``carbonio-webui`` meta-package has been removed in 26.9. **Action required:** custom playbooks and installation scripts must replace it with the nine individual web UI packages.
 
 **Mail logs no longer duplicated:** The default rsyslog configuration no longer duplicates mail messages in both the dedicated mail log and ``carbonio.log``. **Action required:** administrators using the old dedicated mail log must update archiving and analysis procedures to use ``carbonio.log``.
 
