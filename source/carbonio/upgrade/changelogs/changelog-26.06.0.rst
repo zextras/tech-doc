@@ -15,7 +15,7 @@ Release 26.6.0
 
 
 Release Highlights
-==================
+------------------
 
 
 #. **Unified Quota — Migration script required** This release introduces
@@ -67,9 +67,6 @@ Release Highlights
    TURN media reconnection after temporary network
    interruptions. ``ZCT-1936``, ``CO-3594``, ``CO-3808``, ``CO-3707``
 
-
-New Features
-============
 
 
 Unified Quota
@@ -325,10 +322,6 @@ interactive and navigates directly to the recording file.
 ``CO-3320``
 
 
-Improvements to Existing Features
-====================================
-
-
 Security & Authentication
 --------------------------
 
@@ -572,11 +565,6 @@ Localization
    in the Docs editor now uses the user's configured webmail language
    instead of always defaulting to English. ``CO-3549``
 
-
- 
-
-Bug Fixes
-=========
 
 Security & Authentication
 -------------------------
@@ -872,13 +860,8 @@ Other Technical Improvements (Sysadmin / Platform)
    version ``2.2.0``, eliminating the related deprecation
    warning. ``ZCT-1778``
 
-
-
- 
-
 Security Fixes
-==============
-
+--------------
 
 -  **CVE — XXE in WS-Collaboration chat message forward:** An XML
    External Entity (XXE) injection vulnerability in the chat message
