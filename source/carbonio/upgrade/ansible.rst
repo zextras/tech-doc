@@ -26,11 +26,6 @@ Before starting the upgrade procedure with Ansible, take the following points in
   enabled repositories, not only Carbonio packages.
   To avoid unintended upgrades, disable or comment out any repositories you do not
   want Ansible to use before running the playbook.
-* The upgrade procedure does **not** modify the chat system currently in use:
-
-  * If you are using legacy Chats, they will be left untouched.
-  * Legacy Chats will not be removed, set to read-only, or migrated to the new Chats
-    system.
 
 Install or Upgrade the ``carbonio_upgrade`` Collection
 ------------------------------------------------------
@@ -50,18 +45,3 @@ Carbonio upgrade.
 
 .. include:: /_includes/_upgrade/run-upgrade.rst
 
-
-Specific upgrade Paths
-----------------------
-
-If you are upgrading from older |product| releases or need to handle
-special inventory configurations, see:
-
-:ref:`up-ansible-old-rel`
-
-
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   ansible-older
