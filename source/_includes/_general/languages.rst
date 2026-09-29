@@ -36,5 +36,6 @@ languages
          "Slovenian", "sl"
          "Turkish","tr"
          "Vietnamese","vi"
+         "Greek","el"
 
 
