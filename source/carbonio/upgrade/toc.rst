@@ -27,10 +27,6 @@ a snapshot of the Nodes and a backup of the data.
                After an upgrade, users may experience unexpected errors or abnormal behavior in the web interface
                due to cached browser data from the previous version. If a user reports an issue immediately after an upgrade, **clearing the browser cache and reloading
                the web interface should be one of the first troubleshooting steps** before investigating the server-side configuration or services.
-
-               This is particularly relevant for **Carbonio Files**, where stale cached resources may cause errors when uploading files or loading Files data.
-               If the issue persists after clearing the cache, proceed
-               with the standard troubleshooting procedures and investigate the relevant server-side components.
                
                .. rubric:: **Unified Quota Model**
                
@@ -39,13 +35,8 @@ a snapshot of the Nodes and a backup of the data.
                
                Every email, file, and chat attachment stored by a user counts toward the same total quota.
                
-               .. rubric:: Post-Upgrade Quota Configuration
-
-               During the upgrade, existing quota configurations **are not migrated automatically**.
-               
-               After the upgrade, all accounts have **unlimited storage** until a quota is explicitly assigned by an administrator.
-               Before assigning quotas, review how storage is currently used in your environment and define a quota strategy that best fits your operational and business requirements.
                For detailed migration guidance, storage analysis tools, and example scripts to help plan and assign quotas, refer to the `Unified Quota Guide`_ available on the Partner Portal.
+               
 
 .. _Unified Quota Guide: https://support.zextras.com/hc/en-gb/articles/28451427597084-Upgrading-to-Carbonio-26-6-Unified-Quota-A-Partner-s-Guide-to-the-Quota-Model-Change
 
