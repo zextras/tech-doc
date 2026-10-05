@@ -284,19 +284,28 @@ This command outputs a status message, which is *"service stopped"* if
 it was successful. Similar messages are generated after using the
 :command:`doStartService` and :command:`doRestartService` commands.
 
-You can restart an entire Carbonio module using the following syntax:
+Restart an Entire Carbonio Module
+---------------------------------
+
+You can restart an **entire Carbonio module** using the following syntax:
 
 .. code:: console
 
   carbonio <module_name> doRestartService module
   
-For example, to restart the entire Carbonio Mobile module:
+For example, to restart the entire Carbonio **Mobile** module:
 
 .. code:: console
    
   zextras$ carbonio mobile doRestartService module
   
-Using module as the service name restarts the entire module.
+Using "module" as {service_name} restarts the entire module.
+
+To view the list of available Carbonio modules, run the following command:
+
+.. code:: console
+
+  zextras$ carbonio help
 
 
 .. index:: zmcontrol
