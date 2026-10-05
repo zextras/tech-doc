@@ -1,0 +1,19 @@
+
+Changelog 2026-08
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202608-1927 Browser cache refresh after upgrade
+
+Added a note in the documentation to the upgrade procedure advising users to perform a hard browser refresh after upgrading Carbonio to avoid issues caused by outdated cached content.
+
+*****
+
+Bugfix List
+-----------
+*****
+
+End of changelog
