@@ -165,7 +165,7 @@ stronger protections.
 
    .. code:: console
       
-      zextras$ zextras$ carbonio prov ms \
+      zextras$ carbonio prov ms \
       $(zmhostname) -zimbraServiceEnabled opendkim
 
    Then, depending on the OS you installed
