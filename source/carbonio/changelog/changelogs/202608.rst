@@ -11,8 +11,4 @@ Added a note in the documentation to the upgrade procedure advising users to per
 
 *****
 
-Bugfix List
------------
-*****
-
 End of changelog
