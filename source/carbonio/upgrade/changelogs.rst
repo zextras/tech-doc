@@ -20,7 +20,7 @@ changelog and to the section containing the older changelogs.
    :color: danger
    :outline:
 
-   Release 26.09.0
+   Release 26.9.0
 
 .. button-ref:: changelogs/older
    :color: danger
