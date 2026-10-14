@@ -24,7 +24,6 @@ Interface)`.
       ldap
       carbonioadmin
       carbonioauth
-      carboniocore
       carboniodocs
       carboniobackup
       mobile

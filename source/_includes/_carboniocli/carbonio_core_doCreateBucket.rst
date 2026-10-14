@@ -1,8 +1,8 @@
-.. card:: carbonio core doCreateBucket
+.. card:: carbonio powerstore s3connector create
 
    .. code:: console
 
-      zextras$ carbonio core doCreateBucket provider bucket_name access_key \
+      zextras$ carbonio powerstore s3connector create bucket_name access_key \
       secret [param VALUE[,VALUE]]
 
    .. rubric:: Parameter List
@@ -10,7 +10,6 @@
    .. csv-table::
       :header: "NAME", "TYPE", "EXPECTED VALUES", "DEFAULT"
 
-      "**provider** (M)", "String", "Supported storage provider", ""
       "**bucket_name** (M)", "String", "Amazon AWS bucket", ""
       "**access_key** (M)", "String", "Service username of bucket", "" 
       "**secret** (M)", "String", "Service password"
@@ -19,6 +18,7 @@
       "url (O)", "String", "S3 API compatible service URL (e.g., s3api.example.com)"
       "prefix (O)", "String", "Prefix added to blobs keys"
       "notes (O)", "String", "Bucket configuration details", ""
+      "insecureHttps (O)", "Boolean", "Pass https certification validation", ""
 
 
    \(M) == mandatory parameter, (O) == optional parameter
@@ -27,7 +27,7 @@
 
    .. code:: console
              
-      zextras$ carbonio core doCreateBucket S3 MyBucketName \
+      zextras$ carbonio powerstore s3connector create MyBucketName \
       X58Y54E5687R543 abCderT577eDfjhf My_New_Bucket url \
       https://example_bucket_provider.com
 
@@ -47,5 +47,5 @@
    * https\://example_bucket_provider.com is the endpoint to which
      Carbonio Storage connects to the bucket
 
-   .. seealso:: Please refer to Section :ref:`cli-core` for more detailed
+   .. seealso:: Please refer to Section :ref:`cli-powerstore` for more detailed
       information about the commands.
