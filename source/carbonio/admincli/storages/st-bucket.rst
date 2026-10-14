@@ -1,18 +1,9 @@
-.. _core-module:
-
-===============
- Carbonio Core
-===============
-
-This sections contains example of CLI activities that can be carried
-out by the |carbonio| Core Module.
-
 .. _manage-bucket:
 
 Bucket Management
 =================
 
-This section describes how to create new **buckets** and how to manage
+This section describes how to create new S3 compatible **buckets** and how to manage
 them in |product|. This functionality is available on the |adminui| as
 well, under :menuselection:`Admin Panel --> Storage --> Bucket list`
 (see Section :ref:`ap-st-bucket-list`).
@@ -49,22 +40,9 @@ Bucket Creation
 ---------------
 
 In this section, we will show the creation and management of an S3
-bucket; to create buckets on other providers replace *S3* with the
-name of your preferred provider.
+compatible bucket.
 
-Other supported providers are S3, Ceph, Cloudian, EMC, Scality S3,
-Custom S3, Alibaba, and MinIO.
-
-.. hint:: These values are used as the *type* of bucket in the command
-   presented in the remainder of the section.
-
-The option for these providers may vary, simply run :command:`carbonio
-core DoCreateBucket provider help`, replacing *provider* with any of
-the supported providers to obtain the list of the required parameters.
-
-
-The command used to create a bucket is :command:`carbonio core
-doCreateBucket`, whose syntax is the following
+The command used to create a bucket is :command:`carbonio powerstore s3connector create`, whose syntax is the following
 
 .. include:: /_includes/_carboniocli/carbonio_core_doCreateBucket.rst
 
@@ -105,7 +83,7 @@ correctly accessible to |product|.
 
    .. code:: console
 
-      zextras$ carbonio core testS3Connection 60b8139c-d56f-4012-a928-4b6182756301
+      zextras$ carbonio powerstore s3connector test 60b8139c-d56f-4012-a928-4b6182756301
 
    If the command is successful you will see the message ``connection
    ok``.
@@ -117,7 +95,7 @@ correctly accessible to |product|.
 
    .. code:: console
 
-      zextras$  carbonio core listBuckets all
+      zextras$  carbonio powerstore s3connector list
 
    The output will look similar to::
 

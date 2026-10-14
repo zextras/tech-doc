@@ -1,3 +1,5 @@
+.. _cli-powerstore:
+
 ===================
 Carbonio Powerstore
 ===================
