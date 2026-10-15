@@ -33,7 +33,7 @@ The table includes the following columns:
 
 - **Subject**  
   A short description summarizing the event or issue that triggered the notification  
-  (for example, *Carbonio Advanced License Disabled*). 
+  (for example, *Carbonio License Disabled*). 
 
 View Notifications by Type
 --------------------------
