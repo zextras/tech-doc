@@ -16,11 +16,11 @@ The lists of all configured server appears here.
 
 .. _ap-st-bucket-list:
 
-Bucket list
-~~~~~~~~~~~
+S3 Connectors
+~~~~~~~~~~~~~~~
 
 A new bucket can be added to the list by clicking the
-:bdg-primary-line:`CREATE +` button.  In the opening dialog, you can
+:bdg-primary-line:`CREATE A NEW S3` button.  In the opening dialog, you can
 add all the necessary data needed to set up and test communication
 with the remote bucket, including URL and access credentials. You can
 then proceed to section :ref:`ap-data-volumes` below to create volumes
