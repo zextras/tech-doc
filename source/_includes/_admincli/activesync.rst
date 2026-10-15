@@ -96,7 +96,7 @@ maintenance:
 
    .. code:: console
 
-      zextras$ zextras$ crontab -e
+      zextras$ crontab -e
 
    Scroll to the very end of the file (after the comment ``ZEXTRAS-END
    -- DO NOT EDIT ANYTHING BETWEEN THIS LINE AND ZEXTRAS-START``) and

@@ -5,15 +5,22 @@
 Issue the following commands to verify that the certificate and your
 private key match:
 
-* become the ``zextras`` user
+* Become the ``zextras`` user
 
   .. code:: console
 
      # su - zextras
 
-* upload the certificates received from the Authority to the :file:`/tmp` directory
+* Copy the certificates received from the Authority to the :file:`/tmp` directory
 
-* verify the certificates
+* Change the ownership of the certificate files to the zextras user:
+
+  .. code:: console
+
+     # chown zextras:zextras /tmp/commercial.crt
+     # chown zextras:zextras /tmp/commercial_ca.crt
+
+* Verify the certificates
 
   .. code:: console
 

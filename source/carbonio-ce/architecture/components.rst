@@ -66,7 +66,15 @@ This is the list of Components that make up a |product| installation.
       Packages:
 
       * carbonio-proxy
-      * carbonio-webui
+      * carbonio-admin-console-ui
+      * carbonio-admin-login-ui
+      * carbonio-auth-ui
+      * carbonio-calendars-ui
+      * carbonio-contacts-ui
+      * carbonio-login-ui
+      * carbonio-mails-ui
+      * carbonio-search-ui
+      * carbonio-shell-ui
       * carbonio-files-ui
       * carbonio-tasks-ui
       * carbonio-ws-collaboration-ui

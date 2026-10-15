@@ -28,7 +28,15 @@ The following packages are required for the **Proxy** component:
    carbonio-proxy
    carbonio-catalog
    carbonio-files-public-folder-ui
-   carbonio-webui
+   carbonio-admin-console-ui
+   carbonio-admin-login-ui
+   carbonio-auth-ui
+   carbonio-calendars-ui
+   carbonio-contacts-ui
+   carbonio-login-ui
+   carbonio-mails-ui
+   carbonio-search-ui
+   carbonio-shell-ui
    carbonio-tasks-ui
    carbonio-files-ui
    carbonio-ws-collaboration-ui
