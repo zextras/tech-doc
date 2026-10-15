@@ -97,6 +97,13 @@ possible to use the following command
 Here, ``account-uuid`` is the UUID of the user's account to which the
 device belongs, while  ``id`` is the identifier of the device.
 
+.. code:: console
+
+   zextras$ carbonio mobile doSuspendDeviceSync user@example.com id
+
+Here, ``user@example.com`` is the account name/email address to which the device belongs,
+while  ``id`` is the identifier of the device.
+
 .. hint:: Both parameters are mandatory.
 
 To restore synchronisation, use the command
@@ -104,6 +111,10 @@ To restore synchronisation, use the command
 .. code:: console
 
    zextras$ carbonio mobile doResumeDeviceSync account-uuid device_id id
+
+.. code:: console
+
+   zextras$ carbonio mobile doResumeDeviceSync user@example.com device_id id
 
 If you specify ``device_id id``, only synchronisation to that device
 will be resumed, while if you omit it, all user's device will be
