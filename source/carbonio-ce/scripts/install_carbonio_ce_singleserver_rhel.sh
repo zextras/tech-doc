@@ -67,9 +67,13 @@ dnf install -y $PACKAGES
 pending-setups --execute-all
 PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
 
+PACKAGES="carbonio-preview-db"
+dnf install -y $PACKAGES
+pending-setups --execute-all
+PGPASSWORD=$POSTGRES_SECRET carbonio-preview-db-bootstrap carbonio_adm 127.0.0.1
+
 PACKAGES="carbonio-message-dispatcher-ce"
 dnf install -y $PACKAGES
-
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 PACKAGES="carbonio-videoserver-ce"
