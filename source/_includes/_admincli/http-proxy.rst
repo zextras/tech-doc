@@ -53,7 +53,7 @@ Finally, restart the service.
 
       .. code:: console
 
-         zextras$ zmcproxyctl restart
+         zextras$ zmproxyctl restart
 
    .. tab-item:: Ubuntu 24.04
       :sync: ubu24

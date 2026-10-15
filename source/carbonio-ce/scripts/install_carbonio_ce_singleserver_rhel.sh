@@ -32,7 +32,7 @@ dnf -y install postgresql16 postgresql16-server;
 /usr/pgsql-16/bin/postgresql-16-setup initdb;
 systemctl enable --now postgresql-16;
 
-PACKAGES="service-discover-server carbonio-directory-server carbonio-proxy carbonio-webui carbonio-files-ui carbonio-mta carbonio-appserver carbonio-user-management carbonio-files-ce carbonio-files-public-folder-ui carbonio-files-db carbonio-tasks-ce carbonio-tasks-db carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce carbonio-docs-connector-ce carbonio-docs-editor carbonio-prometheus carbonio-message-broker  carbonio-ws-collaboration-ce carbonio-ws-collaboration-db carbonio-ws-collaboration-ui carbonio-catalog carbonio-memcached"
+PACKAGES="service-discover-server carbonio-directory-server carbonio-proxy carbonio-admin-console-ui carbonio-admin-login-ui carbonio-auth-ui carbonio-calendars-ui carbonio-contacts-ui carbonio-login-ui carbonio-mails-ui carbonio-search-ui carbonio-shell-ui carbonio-files-ui carbonio-mta carbonio-appserver carbonio-user-management carbonio-files-ce carbonio-files-public-folder-ui carbonio-files-db carbonio-tasks-ce carbonio-tasks-db carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce carbonio-docs-connector-ce carbonio-docs-editor carbonio-prometheus carbonio-message-broker  carbonio-ws-collaboration-ce carbonio-ws-collaboration-db carbonio-ws-collaboration-ui carbonio-catalog carbonio-memcached"
 
 echo '' > config.conf
 dnf install -y $PACKAGES 
@@ -67,9 +67,13 @@ dnf install -y $PACKAGES
 pending-setups --execute-all
 PGPASSWORD=$POSTGRES_SECRET carbonio-message-dispatcher-db-bootstrap carbonio_adm 127.0.0.1
 
+PACKAGES="carbonio-preview-db"
+dnf install -y $PACKAGES
+pending-setups --execute-all
+PGPASSWORD=$POSTGRES_SECRET carbonio-preview-db-bootstrap carbonio_adm 127.0.0.1
+
 PACKAGES="carbonio-message-dispatcher-ce"
 dnf install -y $PACKAGES
-
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 PACKAGES="carbonio-videoserver-ce"

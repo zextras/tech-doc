@@ -10,8 +10,7 @@ The |wsc| Component adds the chat functionality to |product|.
 Requirements
 ------------
 
-The WebSocket protocol requires to be explicitly allowed on the Node
-hosting the **Proxy** Role. Please see Section :ref:`inst-websocket`
+The WebSocket protocol must be explicitly allowed. Please see :ref:`inst-websocket`
 for details.
 
 Install Packages
@@ -29,11 +28,6 @@ During the process, you need to provide these values:
 
 * ``Ldap master host`` is the |product| FQDN 
 * ``Ldap Admin password`` (:ref:`ldap-admin-password <get-ldap-password>`)
-
-Join |mesh|
------------
-
-.. include:: /_includes/_installation/mesh-agent.rst
 
 Pending setups
 --------------

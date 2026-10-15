@@ -1,0 +1,44 @@
+
+Changelog 2026-09
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202609-1997 Added optional image border style to documentation
+
+Created a new CSS class to allow technical writers to apply borders to specific images. This change enabled better visual separation for images within the technical documentation when required.
+
+
+.. rubric:: 202609-1987 Document removal of carbonio-webui meta-package
+
+Updated installation commands and component package lists to replace the removed carbonio-webui meta-package
+
+
+.. rubric:: 202609-1973 Updated monthly documentation changelog for July 2026
+
+Updated the Carbonio documentation changelog for July 2026 by reviewing all documentation changes and following the internal procedure. The updated changelog was published to the production environment to reflect the latest modifications.
+
+
+.. rubric:: 202609-1895 Documented automatic 2FA enrollment for administrators
+
+Updated the Admin Guide to include the new guided setup wizard for Two-Factor Authentication when accessing the Admin Panel from untrusted networks. The documentation detailed the enrollment process, OTP verification, and the generation of backup codes to ensure secure administrative access.
+
+
+.. rubric:: 202609-1814 Updated documentation issues related to zimbraAutoProvAttrMap
+
+Updated the AutoProv documentation to correct the zimbraAutoProvAttrMap configuration syntax and added the supported attribute list with descriptions.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202609-1903 Updated server removal documentation for Carbonio
+
+Updated the Carbonio server removal guide with new information from the source documentation. The changes ensured that the administrative CLI instructions accurately reflected the current infrastructure deletion process.
+
+*****
+
+End of changelog

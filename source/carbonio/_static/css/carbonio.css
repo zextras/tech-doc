@@ -25,3 +25,22 @@
     border:  1px solid var(--zx-color-abyss);
     background-color: #a5c9d9;
 }
+
+a.bordered-image {
+border: none;
+padding: 0;
+display: inline-block;
+}
+
+a.bordered-image::before,
+a.bordered-image::after {
+content: none;
+}
+
+a.bordered-image img.bordered-image {
+display: block;
+border: 1px solid #d0d0d0;
+padding: 2px;
+box-sizing: border-box;
+}
+

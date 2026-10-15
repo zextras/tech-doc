@@ -26,9 +26,29 @@ Once you change any of the options, restart amavis as the ``zextras``
 user on every Node featuring the :ref:`MTA Component
 <component-mta-install>`.
 
-.. code:: console
+.. tab-set::
 
-   zextras$ zmamavisdctl restart && zmconfigdctl restart
+
+     .. tab-item:: Ubuntu 22.04 / Red Hat 8
+        :sync: ubu22rh8
+
+
+        .. code:: console
+
+
+           zextras$ zmconfigdctl restart && zmamavisdctl restart
+
+
+     .. tab-item:: Ubuntu 24.04 / Red Hat 9
+        :sync: ubu22rh8
+
+
+        .. code:: console
+
+
+           root$ systemctl restart carbonio-configd.service
+           root$ systemctl restart carbonio-mailthreat.service
+
 
 .. index:: Chats; user search by GUI
 
