@@ -22,6 +22,7 @@ Below is the list of Carbonio packages collected by component:
    - **carbonio-docs-connector-db**: `carbonio-docs-connector-db` *(1.0.20-1)*
    - **carbonio-tasks-db**: `carbonio-tasks-db` *(0.3.20-1)*
    - **carbonio-videorecorder-db**: `carbonio-videorecorder-db` *(1.1.21-1)*
+   - **carbonio-preview-db**: `carbonio-preview-db` *(1.0.21-1)*
 
 .. dropdown:: **Proxy**
 

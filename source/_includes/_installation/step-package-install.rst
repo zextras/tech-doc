@@ -25,7 +25,7 @@ Next, we install all packages needed for |product|.
          carbonio-files-ce carbonio-files-public-folder-ui \
          carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
          carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce \
-         carbonio-docs-connector-ce \
+         carbonio-docs-connector-ce carbonio-preview-db \
          carbonio-docs-editor carbonio-prometheus \
          carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
@@ -48,7 +48,7 @@ Next, we install all packages needed for |product|.
          carbonio-files-ce carbonio-files-public-folder-ui \
          carbonio-files-db carbonio-tasks-ce carbonio-tasks-db \
          carbonio-tasks-ui carbonio-storages-ce carbonio-preview-ce \
-         carbonio-docs-connector-ce \
+         carbonio-docs-connector-ce carbonio-preview-db \
          carbonio-docs-editor carbonio-prometheus \
          carbonio-message-broker carbonio-message-dispatcher-ce \
          carbonio-message-dispatcher-db carbonio-ws-collaboration-ce \
@@ -83,7 +83,7 @@ Next, we install all packages needed for |product|.
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-prometheus \
          carbonio-message-broker carbonio-message-dispatcher-ce \
-         carbonio-message-dispatcher-db \
+         carbonio-message-dispatcher-db carbonio-preview-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
          carbonio-catalog carbonio-memcached
@@ -116,7 +116,7 @@ Next, we install all packages needed for |product|.
          carbonio-docs-connector-ce carbonio-docs-editor \
          carbonio-prometheus \
          carbonio-message-broker carbonio-message-dispatcher-ce \
-         carbonio-message-dispatcher-db \
+         carbonio-message-dispatcher-db carbonio-preview-db \
          carbonio-ws-collaboration-db carbonio-ws-collaboration-ui \
          carbonio-ws-collaboration-ce carbonio-videoserver-ce \
          carbonio-catalog carbonio-memcached
