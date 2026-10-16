@@ -9,3 +9,9 @@
   .. code:: console
 
      # PGPASSWORD=$DB_ADM_PWD carbonio-tasks-db-bootstrap carbonio_adm 127.0.0.1
+
+.. card:: Preview
+
+  .. code:: console
+
+     # PGPASSWORD=$DB_ADM_PWD carbonio-preview-db-bootstrap carbonio_adm 127.0.0.1
