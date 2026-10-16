@@ -11,8 +11,24 @@ properties(defaultPipelineProperties())
 
 pipeline {
   agent {
-    node {
-      label 'python-v1'
+    kubernetes {
+      inheritFrom 'python-v1'
+      // s3Upload runs in the jnlp agent JVM; its default heap (25% of the
+      // 1536Mi limit = 384MB) is exhausted and the agent dies in a GC loop.
+      yaml '''
+spec:
+  containers:
+  - name: jnlp
+    env:
+    - name: JAVA_OPTS
+      value: "-XX:MaxRAMPercentage=70"
+    resources:
+      requests:
+        cpu: 100m
+        memory: 1Gi
+      limits:
+        memory: 2Gi
+'''
     }
   }
   options {
