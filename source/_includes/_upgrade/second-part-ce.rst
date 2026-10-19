@@ -79,10 +79,42 @@
 
                # dnf install carbonio-memcached
 
+   .. grid-item-card:: Step 5. Install new preview database package
+      :columns: 12 12 12 12
 
+      Install the :file:`carbonio-preview-db` package on the node containing the **Database** component, this is required by the latest version of Carbonio CE.
 
+      .. tab-set::
 
-   .. grid-item-card:: Step 5. (Optional) Remove unused packages
+         .. tab-item:: Ubuntu 22.04
+            :sync: ubu22
+
+            .. code:: console
+
+               # apt install carbonio-preview-db
+
+         .. tab-item:: RHEL 8
+            :sync: rhel8
+
+            .. code:: console
+
+               # dnf install carbonio-preview-db
+
+         .. tab-item:: Ubuntu 24.04
+            :sync: ubu24
+
+            .. code:: console
+
+               # apt install carbonio-preview-db
+
+         .. tab-item:: RHEL 9
+            :sync: rhel9
+
+            .. code:: console
+
+               # dnf install carbonio-preview-db
+
+   .. grid-item-card:: Step 6. (Optional) Remove unused packages
       :columns: 12 12 12 12
 
       After the latest packages have been installed, you can remove
@@ -119,14 +151,24 @@
 
                # dnf autoremove
 
-   .. grid-item-card:: Step 6.  Register upgraded packages to |mesh|
+   .. grid-item-card:: Step 7.  Register upgraded packages to |mesh|
       :columns: 12 12 12 12
 
       .. code:: console
 
          # pending-setups -a
 
-   .. grid-item-card:: Step 7. Reboot
+   .. grid-item-card:: Step 8.  Boostrap the Preview database
+      :columns: 12 12 12 12
+
+      After registering the packages with Carbonio Mesh, initialise the Preview database. 
+      Run the following command as root on the node where carbonio-preview-db is installed:
+
+      .. code:: console
+
+         # PGPASSWORD="$DB_ADM_PWD" carbonio-preview-db-bootstrap carbonio_adm 127.0.0.1
+
+   .. grid-item-card:: Step 9. Reboot
       :columns: 12 12 12 12
 
       Once the upgrade has completed successfully, run command:
