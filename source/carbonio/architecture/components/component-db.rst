@@ -35,6 +35,7 @@ The following packages are required for the **Database** component:
    carbonio-message-dispatcher-db
    carbonio-notification-push-db
    carbonio-videorecorder-db
+   carbonio-preview-db
 
 
 .. important::
