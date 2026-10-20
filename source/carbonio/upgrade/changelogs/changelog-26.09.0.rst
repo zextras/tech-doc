@@ -50,6 +50,8 @@ This release includes the following changes and improvements:
 
 **Support for external Class of Service identifiers:** The subscription module now accepts Class of Service identifiers that are not UUIDs, allowing configurations using identifiers such as defaultExternal to load and be edited correctly in the Admin Console.
 
+**Enhanced account restore wizard with comprehensive configuration options:** The account restore wizard has been enhanced with full configuration options, including destination account selection, point-in-time restore, HSM policy application, and email notifications. The restore summary now displays all selected options before execution. Fixed an issue preventing users from proceeding to the next wizard step due to incorrect account selection handling.
+
 :changelog-category:`Storages`
 -----------------------------------
 
