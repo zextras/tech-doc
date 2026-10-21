@@ -189,7 +189,6 @@ These options allow users assigned to the selected COS to **import an external m
 
 
 
-
 Enable mailbox import and export for an account
 ================================================
 
