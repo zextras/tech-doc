@@ -50,9 +50,11 @@ those items that have changed between two consecutive run on SmartScan.
 Item
 ====
 
-The whole architecture of |backup| revolves around the concept of
-**ITEM**: An **item** is the minimum object that is stored in the
-backup, for example:
+The |backup| architecture  is built around the concept of an **item**, the smallest unit of data stored in a backup.
+
+**What elements does Carbonio Backup cover?**
+
+|backup| manages the following types of items:
 
 -  an email message
 -  a contact or a group of contacts
