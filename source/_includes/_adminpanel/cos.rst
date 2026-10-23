@@ -295,3 +295,7 @@ but become **read-only**. Collaborators cannot modify, save, or create new versi
 the owner's storage usage falls below the configured quota or the owner's quota is increased.
 Once the owner is back within quota, editing is restored automatically without requiring any additional
 configuration.
+
+
+.. include:: /_includes/_adminpanel/cos-importexport.rst
+
