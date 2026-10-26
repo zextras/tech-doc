@@ -41,10 +41,15 @@ Replace ``<server>`` with the hostname or IP address of your Carbonio server.
 
 .. note::
 
-   The namespace is specified in the SOAP request body using the ``_jsns`` attribute.
-   For example, an ``AuthRequest`` uses ``urn:zimbraAccount``, while a ``GetFolderRequest`` uses ``urn:zimbraMail``.
+   The namespace is specified in the SOAP request body.
+   In **XML** requests, it is declared using the ``xmlns`` attribute.
+   
+   For example, an ``AuthRequest`` uses the ``urn:zimbraAccount`` namespace, while a ``GetFolderRequest`` uses the ``urn:zimbraMail`` namespace.
+
    Both requests use the standard ``/service/soap/`` endpoint.
    Administrative requests use ``/service/admin/soap``.
+   
+   When using the **JSON** syntax, the namespace is specified using the ``_jsns`` attribute instead.  
 
 
 Using the auth token
