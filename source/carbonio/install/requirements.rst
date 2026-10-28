@@ -280,6 +280,12 @@ services on the Internet.
       "20000-40000", "UDP", "Client connections for the audio and
       video streams"
 
+.. note::
+
+      If users need to participate in video meetings from both internal and external networks, ensure that the IP address configured for 
+      ``nat_1_1_mapping`` is reachable from both networks. Configure the firewall and NAT rules accordingly to ensure that video meetings 
+      work correctly for both internal and external participants.
+
 .. _fw-internal:
 
 Internal Connections

@@ -126,6 +126,7 @@ variable **nat_1_1_mapping** and replace the value with the new one
 
 .. note::
 
-   In a real-world deployment, the value of ``nat_1_1_mapping`` is
-   typically a **public IP address** (used for NAT), rather than a
-   private one as shown in this example.
+   In a real-world deployment, the value of ``nat_1_1_mapping`` is typically a **public IP address** used for NAT, 
+   rather than a private IP address as shown in this example. If users need to participate in video meetings with both 
+   internal colleagues and participants connecting from external networks, the configured IP address must be reachable
+   from both internal and external networks.
