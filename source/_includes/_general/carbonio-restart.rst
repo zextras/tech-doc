@@ -16,7 +16,7 @@
 
       .. code:: console
 
-         systemctl restart carbonio.target
+         systemctl restart carbonio-proxy.target
 
    .. tab-item:: RHEL 8
       :sync: rhel8
@@ -34,4 +34,4 @@
 
       .. code:: console
 
-         systemctl restart carbonio.target
+         systemctl restart carbonio-mta.target
