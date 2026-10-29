@@ -14,6 +14,44 @@ Example:
 
     {"Header":{"context":{"change":{"token":5675},"_jsns":"urn:zimbra"}},"Body":{"AuthResponse":{"authToken":[{"_content":"0_84391e0a087f869d4d8f738686f180f63141aebf_69643d33363a32623030313437392d353832312d346433302d623861322d3030336433633235643536643b6578703d31333a313735393037383736373235313b76763d313a303b747970653d363a7a696d6272613b753d313a613b7469643d31303a313832323632383039383b76657273696f6e3d383a636172626f6e696f3b"}],"lifetime":172799999,"_jsns":"urn:zimbraAccount"}},"_jsns":"urn:zimbraSoap"}
 
+SOAP API Endpoints by Namespace
+-------------------------------
+
+Carbonio uses different SOAP endpoints depending on the API being called.
+The namespace specified in the request identifies the API, while the endpoint determines the URL to which the request must be sent.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 40 50
+
+   * - Namespace
+     - Endpoint
+     - Purpose
+   * - ``urn:zimbraAccount``
+     - ``https://<server>/service/soap/``
+     - Account operations, including authentication with ``AuthRequest``.
+   * - ``urn:zimbraMail``
+     - ``https://<server>/service/soap/``
+     - Mail operations, including retrieving folders with ``GetFolderRequest``.
+   * - ``urn:zimbraAdmin``
+     - ``https://<server>/service/admin/soap``
+     - Administrative operations.
+
+Replace ``<server>`` with the hostname or IP address of your Carbonio server.
+
+.. note::
+
+   The namespace is specified in the SOAP request body.
+   In **XML** requests, it is declared using the ``xmlns`` attribute.
+   
+   For example, an ``AuthRequest`` uses the ``urn:zimbraAccount`` namespace, while a ``GetFolderRequest`` uses the ``urn:zimbraMail`` namespace.
+
+   Both requests use the standard ``/service/soap/`` endpoint.
+   Administrative requests use ``/service/admin/soap``.
+   
+   When using the **JSON** syntax, the namespace is specified using the ``_jsns`` attribute instead.  
+
+
 Using the auth token
 --------------------
 
