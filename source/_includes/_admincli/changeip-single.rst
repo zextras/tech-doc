@@ -126,6 +126,9 @@ variable **nat_1_1_mapping** and replace the value with the new one
 
 .. note::
 
-   In a real-world deployment, the value of ``nat_1_1_mapping`` is
-   typically a **public IP address** (used for NAT), rather than a
-   private one as shown in this example.
+   In a real-world deployment, the value of ``nat_1_1_mapping`` is typically a **public IP address** used for NAT, 
+   rather than a private IP address as shown in this example.
+   If users join video meetings from different networks, make sure the IP address set in ``nat_1_1_mapping`` is a public IP
+   address reachable from both the internal network (the network where Carbonio servers and internal users are connected) and external
+   networks (networks outside your infrastructure).
+   Configure the firewall and NAT rules to allow connections from both networks.

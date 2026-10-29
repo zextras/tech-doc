@@ -158,3 +158,5 @@ Email Retention Policy
   .. note:: Even if you configure E-mail message lifetime with a value
      below 31 days, the system will automatically enforce a minimum
      retention of 31 days.
+
+.. include:: /_includes/_adminpanel/cos-importexport.rst

@@ -280,6 +280,11 @@ services on the Internet.
       "20000-40000", "UDP", "Client connections for the audio and
       video streams"
 
+.. note::
+
+      If users join video meetings from different networks, make sure the IP address set in  
+      ``nat_1_1_mapping`` is a public IP address reachable from both the internal network (the network where Carbonio servers and internal users are connected) and external networks (networks outside your infrastructure). Configure the firewall and NAT rules to allow connections from both networks.
+
 .. _fw-internal:
 
 Internal Connections
