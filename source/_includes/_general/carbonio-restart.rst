@@ -34,4 +34,4 @@
 
       .. code:: console
 
-         systemctl restart carbonio-mta.target
+         systemctl restart carbonio.target
