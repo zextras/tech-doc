@@ -100,15 +100,11 @@ You need to modify that configuration to include the new subnet
    zextras$ carbonio prov ms crb-01.example.com zimbraMtaMyNetworks \
    '127.0.0.0/8 [::1]/128 192.168.10.1/24'
 
-Reload the MTA service
-
-.. code:: console
-
-   zextras$ postfix reload
 
 Finally, Restart |product|
 
 .. include:: /_includes/_general/carbonio-restart.rst
+
 
 .. _ip-change-vs:
 

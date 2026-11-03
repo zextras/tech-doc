@@ -55,7 +55,7 @@ This release includes the following changes and improvements:
 :changelog-category:`Storages`
 -----------------------------------
 
-**Storage types and S3 connectors:** Carbonio 26.9 consolidates storage into Local Storage, Standard S3 and Carbonio S3 for AWS, with unified CLI and Admin UI management, connection validation and clearer connector-to-volume relationships. **Action required:** Custom S3, Scality, Ceph and MinIO configurations must be migrated to Standard S3.
+**Storage types and S3 connectors:** Carbonio 26.9 consolidates storage into Local Storage, Standard S3 and Carbonio S3 for AWS, with unified CLI and Admin UI management, connection validation and clearer connector-to-volume relationships. **Action required:** Custom scripts or automation referencing legacy CLI commands (such as doCreateBucket, listBuckets, or testS3Connection) must be updated to use the unified carbonio powerstore s3Connector namespace. Existing connector configurations (such as Scality, Ceph, MinIO, or Custom S3) are migrated automatically to the Standard S3 model on upgrade.
 
 **Storages module now loads in the web client:** The Storages module is now correctly registered and exposed through the feature flag, allowing it to load in the web client when enabled for the user.
 
