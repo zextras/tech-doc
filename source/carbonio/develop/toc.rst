@@ -1,15 +1,14 @@
 .. _carbonio-api:
 
-=============
- API Overview
-=============
+===================
+ API Documentation
+===================
 
-|product| provides multiple API interfaces to integrate, extend, and automate its services.
-Developers can choose between SOAP, REST, and GraphQL depending on their use case, preferred
-data format, and level of control.
-This page introduces all available API families and serves as the main entry point
-for the entire |product| API documentation.
+|product| provides a set of APIs that allow developers to integrate external applications, automate operations, and interact with |product| services.
 
+Three API technologies are available: SOAP, REST, and GraphQL. Each provides access to different functionalities and follows its own request and authentication mechanisms.
+
+Use this page to explore the available APIs, identify the interfaces relevant to your integration, and access their technical references.
 
 API Types
 ---------
@@ -34,11 +33,58 @@ API Types
      - Fetch exactly what you need
      - Requires schema knowledge
 
+SOAP API
+--------
+
+The SOAP API provides access to a wide range of Carbonio operations, including mailbox management, account operations, and administrative tasks.
+
+Explore:
+~~~~~~~~
+
+- User APIs
+- Mailbox APIs
+- Administration APIs
+
+:ref:`Explore SOAP APIs <soap-api>` | :doc:`Authentication guide <soap-api-auth>`
+
+REST API
+--------
+
+The REST API exposes HTTP endpoints for interacting with specific Carbonio services. It is suitable for application integrations and service-level automation.
+
+Explore:
+~~~~~~~~
+
+- Login and authentication
+- SAML configuration
+- Backup
+- Storage and quotas
+- Chats
+- File access
+
+:ref:`Explore REST APIs <rest-api>` | :doc:`Authentication guide <rest-api-auth>`
+
+GraphQL API
+-----------
+
+The GraphQL API allows clients to retrieve structured data through queries, selecting the fields they need.
+
+Explore:
+~~~~~~~~
+
+Files metadata
+
+:ref:`Explore GraphQL APIs <graphql-api>` | :doc:`Authentication guide <graphql-api-auth>`
+
+----
 
 Authentication
 --------------
 
-Access to most Carbonio services requires authentication.
+Access to Carbonio APIs requires authentication.
+Depending on the API technology, clients use different authentication mechanisms to obtain and provide an authentication token.
+
+The authentication process generally follows these steps:
 
 1. Clients authenticate using the SOAP ``AuthRequest`` or the REST Login API.
 2. Successful authentication returns a valid ``authToken``.
@@ -48,7 +94,7 @@ Access to most Carbonio services requires authentication.
    - **SOAP:** inside the request header ``context.authToken`` for ``/service/soap``
    - **GraphQL:** via the ``ZM_AUTH_TOKEN`` cookie or the ``Authorization`` header
 
-For more details on how each API type handles authentication with the authToken, see the dedicated documentation:
+For detailed instructions and examples, refer to the authentication guide for each API technology:
 
 .. toctree::
    :maxdepth: 1
@@ -57,117 +103,18 @@ For more details on how each API type handles authentication with the authToken,
    rest-api-auth.rst
    graphql-api-auth.rst
 
+----
 
 API Reference
--------------
+--------------
 
-Below is the complete list of Carbonio API categories.
+Find detailed technical documentation for Carbonio APIs, including available operations, endpoints, request parameters, and response formats.
 
-.. grid:: 2 2 3 3
-   :gutter: 3
+.. toctree::
+   :maxdepth: 1
 
-   .. grid-item-card:: SOAP APIs – User Level
-      :link: ../../../apidoc/api-reference/zimbraAccount/service-frame.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      Operations available to end users:
-
-      - Account APIs
-
-   .. grid-item-card:: SOAP APIs – User Level
-      :link: ../../../apidoc/api-reference/zimbraMail/service-frame.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      Operations available to end users:
-
-      - Mailbox APIs
+   API Reference <api-reference>
 
 
-   .. grid-item-card:: SOAP APIs – Admin Level
-      :link: ../../../apidoc/api-reference/zimbraAdmin/service-frame.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      Administrative APIs for managing:
-
-      - Accounts
-      - Domains
-      - Server Configuration
-
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/carbonio-auth/login-page-api.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - Login & Authentication
-
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/carbonio-auth/saml-auth-config-api.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - SAML Configuration
-
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/carbonio-backup/backup-api.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - Backup
-
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/carbonio-storages/storages-api.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - Storages (Powerstore)
-
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/carbonio-storages/storages-quota-api.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - Storages (Quota)   
-
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/carbonio-ws-collaboration/chats-api.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - Chats
-
-
-   .. grid-item-card:: GraphQL APIs
-      :link: ../../../apidoc/files_meta/index.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      GraphQL operations for:
-
-      - Metadata
-
-
-   .. grid-item-card:: REST APIs
-      :link: ../../../apidoc/files_blob/index.html
-      :link-type: url
-      :class-title: sd-font-weight-bold
-
-      REST endpoints for:
-
-      - Blob access
 
 
