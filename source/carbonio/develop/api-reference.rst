@@ -4,8 +4,6 @@
  API Reference
 =============================
 
-Explore the Carbonio API reference documentation to discover the available operations, endpoints, and data structures exposed by Carbonio services.
-
 The API reference is organised by API technology (SOAP, REST, and GraphQL) and provides detailed technical information, including request parameters, authentication requirements, and response formats.
 
 Select an API below to access its reference documentation.

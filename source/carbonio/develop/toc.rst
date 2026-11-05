@@ -10,11 +10,6 @@ Three API technologies are available: SOAP, REST, and GraphQL. Each provides acc
 
 Use this page to explore the available APIs, identify the interfaces relevant to your integration, and access their technical references.
 
-Explore API technologies
-------------------------
-
-Choose an API technology to discover its capabilities, available operations, and authentication requirements.
-
 API Types
 ---------
 
@@ -60,7 +55,7 @@ The REST API exposes HTTP endpoints for interacting with specific Carbonio servi
 Explore:
 ~~~~~~~~
 
-- Authentication
+- Login and authentication
 - SAML configuration
 - Backup
 - Storage and quotas
@@ -110,8 +105,8 @@ For detailed instructions and examples, refer to the authentication guide for ea
 
 ----
 
-Explore the API Reference
--------------------------
+API Reference
+--------------
 
 Find detailed technical documentation for Carbonio APIs, including available operations, endpoints, request parameters, and response formats.
 
