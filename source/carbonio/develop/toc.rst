@@ -33,87 +33,30 @@ API Types
      - Fetch exactly what you need
      - Requires schema knowledge
 
-SOAP API
---------
+All API References
+------------------
 
-The SOAP API provides access to a wide range of Carbonio operations, including mailbox management, account operations, and administrative tasks.
-
-Explore:
-~~~~~~~~
-
-- User APIs
-- Mailbox APIs
-- Administration APIs
-
-:ref:`Explore SOAP APIs <soap-api>` | :doc:`Authentication guide <soap-api-auth>`
-
-REST API
---------
-
-The REST API exposes HTTP endpoints for interacting with specific Carbonio services. It is suitable for application integrations and service-level automation.
-
-Explore:
-~~~~~~~~
-
-- Login and authentication
-- SAML configuration
-- Backup
-- Storage and quotas
-- Chats
-- File access
-
-:ref:`Explore REST APIs <rest-api>` | :doc:`Authentication guide <rest-api-auth>`
-
-GraphQL API
------------
-
-The GraphQL API allows clients to retrieve structured data through queries, selecting the fields they need.
-
-Explore:
-~~~~~~~~
-
-Files metadata
-
-:ref:`Explore GraphQL APIs <graphql-api>` | :doc:`Authentication guide <graphql-api-auth>`
-
-----
-
-Authentication
---------------
-
-Access to Carbonio APIs requires authentication.
-Depending on the API technology, clients use different authentication mechanisms to obtain and provide an authentication token.
-
-The authentication process generally follows these steps:
-
-1. Clients authenticate using the SOAP ``AuthRequest`` or the REST Login API.
-2. Successful authentication returns a valid ``authToken``.
-3. This token must be included in all subsequent requests:
-
-   - **REST:** via the ``ZM_AUTH_TOKEN`` cookie
-   - **SOAP:** inside the request header ``context.authToken`` for ``/service/soap``
-   - **GraphQL:** via the ``ZM_AUTH_TOKEN`` cookie or the ``Authorization`` header
-
-For detailed instructions and examples, refer to the authentication guide for each API technology:
+Browse the complete collection of Carbonio API references to explore available SOAP, REST, and GraphQL APIs, their operations, endpoints, and technical specifications.
 
 .. toctree::
    :maxdepth: 1
 
-   soap-api-auth.rst
-   rest-api-auth.rst
-   graphql-api-auth.rst
+   All API References <api-reference>
 
-----
 
-API Reference
---------------
+Get Started with Authentication
+-------------------------------
 
-Find detailed technical documentation for Carbonio APIs, including available operations, endpoints, request parameters, and response formats.
+Before making API requests, learn how to authenticate and include the required authentication token.
+Choose the guide for the API technology you intend to use.
 
 .. toctree::
    :maxdepth: 1
 
-   API Reference <api-reference>
+   API Authentication <api-authentication/toc>
+
+
+
 
 
 
