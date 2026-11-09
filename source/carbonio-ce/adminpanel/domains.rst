@@ -12,6 +12,10 @@ presented. To choose a domain and show its configuration, click it on
 the list or start typing its name in the text box below the **Domain**
 label.
 
+When managing a domain, use the breadcrumb trail at the top of the page
+to return to a parent section. Clicking the corresponding item in the trail
+to opens that section. 
+
 For the sake of clarity, the *Domains*\'s documentation has been split
 in multiple pages: :ref:`Global <ap-global>`, :ref:`Manage
 <ap-manage-domains>`, and :ref:`Details <ap-domain-details>` follow
