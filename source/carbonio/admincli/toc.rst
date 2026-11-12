@@ -31,4 +31,4 @@ Interface)`.
       mesh
       security
       chats-advanced
-      clamav-management
+      clamav-sign-updater
