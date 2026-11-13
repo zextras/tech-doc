@@ -1,11 +1,3 @@
-
-.. _clamav-manage:
-
-Antivirus & Antispam Management
-===============================
-
-This section contains directions to manage the ClamAV Anti-Virus engine.
-
 .. _clamav-updater:
 
 ClamAV Signatures Updater
@@ -27,10 +19,4 @@ Remove Signatures Updater
 
 .. include:: /_includes/_admincli/clamav-remove.rst
 
-.. _clamav-disable:
-
-Disable ClamAV
---------------
-
-.. include:: /_includes/_admincli/clamav-disable.rst
 
