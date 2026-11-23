@@ -204,10 +204,3 @@ Services and Service management
 ===============================
 
 .. include:: /00-includes/services.rst
-
-.. _zextras-report-issue:
-
-How to report an issue
-======================
-
-.. include:: /00-includes/report-issue.rst
