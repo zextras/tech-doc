@@ -1,0 +1,143 @@
+Changelog 2026-10
+=================
+
+
+New and Updated Content
+-----------------------
+
+.. rubric:: 202610-2117 Updated SOAP API namespace syntax documentation
+
+Clarified the distinction between XML and JSON namespace syntax in the SOAP API Endpoints section. The documentation now separately explains the xmlns and _jsns formats to ensure accurate request construction.
+
+
+.. rubric:: 202610-2114 Updated Carbonio Backup item definition in documentation
+
+Removed the expression for example and revised the definition of item within the Carbonio Backup architecture page. These changes improved the clarity and conciseness of the technical description for users.
+
+
+.. rubric:: 202610-2113 Added SOAP API endpoints to authentication documentation
+
+Documented the SOAP endpoints for zimbraAccount, zimbraMail, and zimbraAdmin namespaces in the authentication guide. The update included endpoint URLs and clarified the relationship between namespaces and request submission points.
+
+
+.. rubric:: 202610-2112 Updated Carbonio 26.9 changelog with CO-4322
+
+Added the technical changes implemented in CO-4322 to the Carbonio 26.9 changelog. This ensured that the documentation accurately reflected all improvements included in the release.
+
+
+.. rubric:: 202610-2105 Removed Advanced from Carbonio license notification example
+
+Updated the Notifications documentation by removing the word Advanced from the Subject field example. This change ensured the documentation correctly reflected the official commercial product name Carbonio.
+
+
+.. rubric:: 202610-2101 Moved metrics reference commands to new section
+
+Relocated all metrics related CLI commands from the Core section to a newly created Metrics section in the documentation. This change improved the organization of the CLI reference by providing a dedicated space for metrics monitoring commands.
+
+
+.. rubric:: 202610-2095 Updated Core CLI documentation removing bucket commands
+
+Removed bucket management commands from the Carbonio Core CLI documentation pages. The updated documentation no longer includes commands such as testS3Connection and various doCreateBucket options.
+
+
+.. rubric:: 202610-2092 Updated Carbonio package versions in documentation
+
+Revised the List of the Main Carbonio Packages page to reflect the latest versions shipped in the 26.9.0 release. Verified that all package names were accurate and removed any deprecated or obsolete entries from the documentation.
+
+
+.. rubric:: 202610-2089 Reallocated bucket management documentation to Carbonio Powerstore
+
+Updated the documentation to reflect the move of bucket creation commands from Carbonio Core to Carbonio Powerstore for version 26.9. Removed obsolete command pages and corrected all references to ensure users follow the new CLI structure.
+
+
+.. rubric:: 202610-2088 Updated Carbonio Powerstore CLI storage documentation
+
+Removed obsolete storage types and added new S3 connector commands to the Powerstore CLI documentation page. These changes ensured the documentation accurately reflected the simplified storage support introduced in Carbonio 26.9.
+
+
+.. rubric:: 202610-2059 Updated mobile device sync CLI documentation
+
+Clarified that account identifiers for device sync commands accepted both UUID and email address. Added explicit examples and parameter descriptions for the suspend and resume sync operations.
+
+
+.. rubric:: 202610-2057 Updated Infrastructure SSL documentation with file ownership
+
+Added instructions to set the zextras user ownership for certificate files in the temporary directory. This change ensured that commercial certificate installations no longer failed due to permission issues.
+
+
+.. rubric:: 202610-2056 Updated Carbonio upgrade documentation sections
+
+Removed outdated Carbonio Files cache troubleshooting and post-upgrade quota configuration sections from the documentation. Added new information to the Unified Quota model section to ensure accurate migration guidance.
+
+
+.. rubric:: 202610-2051 Added Greek to community supported languages
+
+Updated the available languages section in the Carbonio documentation to include Greek as a community supported language. This change ensured that the Greek localization was listed consistently with other community supported languages for users.
+
+
+.. rubric:: 202610-2042 Updated API pages for 26.6.0 release
+
+Updated the Carbonio API Overview to ensure all referenced APIs use the current versions and follow the unified REST API deployment flow.
+
+
+.. rubric:: 202610-2030 Removed Ansible upgrade page for older versions
+
+Removed the Ansible upgrade documentation for older Carbonio versions from the public admin guide. This change ensured that the documentation aligned with the official support policy for only the three latest versions.
+
+
+.. rubric:: 202610-2016 Updated public changelog for Carbonio 26.9
+
+Documented the main user and administrator facing changes introduced in the Carbonio 26.9 release. Organized the updates by functional area to provide a concise overview of relevant improvements and new features.
+
+
+.. rubric:: 202610-1994 Updated monthly documentation changelog for August 2026
+
+The monthly documentation changelog was updated following the internal procedure to include all changes from August 2026. This ensured that all documentation modifications for the period were accurately reflected and reviewed for the Carbonio changelog.
+
+
+.. rubric:: 202610-1942 Updated Carbonio documentation version to 26.9.0
+
+Updated the release and version parameters to 26.9.0 across the configuration files of the tech-doc and tech-doc-user repositories. This change ensured version consistency for Carbonio, Carbonio CE, and User Guides in preparation for the new release.
+
+
+.. rubric:: 202610-1941 Documented new carbonio preview database package
+
+Updated installation and upgrade procedures to include the new carbonio-preview-db package and its required database bootstrap step. These changes ensured that all automation scripts and manual guides correctly supported the new component introduced in version 26.9.
+
+
+.. rubric:: 202610-1834 Update Package Versions in “List of the Main Carbonio Packages”
+
+The “List of the Main Carbonio Packages” documentation page has been reviewed and updated to reflect the latest Carbonio release. Package names and versions have been aligned with the versions actually shipped, outdated entries have been removed, and overall consistency and accuracy have been verified.
+
+
+.. rubric:: 202610-1728 Documented SAML authentication impact on Admin Panel
+
+Added a note to the SAML management procedures in the Admin Panel and CLI guides. This change clarified that enabling or disabling SAML authentication applied to both the User UI and the Admin Panel.
+
+
+.. rubric:: 202610-905 Documented MDM feature configuration for Carbonio
+
+Added comprehensive documentation for the Mobile Device Management feature within the Carbonio Mobile module. This update provided administrators with necessary guidance on protocol support and policy configuration to ensure proper device management.
+
+*****
+
+Bugfix List
+-----------
+
+.. rubric:: 202610-2083 Corrected zmproxyctl command typo in documentation
+
+Updated the Advanced AdminCLI documentation to replace the incorrect zmcproxyctl command with the correct zmproxyctl command. This change ensured that users have the accurate command for managing the Product and HTTP Proxy.
+
+
+.. rubric:: 202610-2064 Documented command to restart Carbonio modules
+
+Added the syntax and examples for restarting an entire Carbonio module using the command line interface. Clarified that specifying module as the service name allowed for a complete module restart instead of individual services.
+
+
+.. rubric:: 202610-2063 Fixed duplicated prompt in CLI command examples
+
+Removed the redundant zextras prompt from the OpenDKIM disable command in the Antivirus and Antispam Management documentation. Verified and corrected similar occurrences across other Carbonio documentation pages to ensure commands are usable when copied.
+
+*****
+
+End of changelog

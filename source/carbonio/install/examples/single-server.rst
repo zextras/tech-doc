@@ -94,6 +94,3 @@ company-wide antivirus engine, you can disable the one installed by
    -zimbraServiceEnabled opendkim \
    carbonioAmavisDisableVirusCheck TRUE
 
-To entirely disable ClamAV or carry out other management options, like
-modify signature lists or installing a signatures updater, please
-refer to Section :ref:`clamav-manage`.
