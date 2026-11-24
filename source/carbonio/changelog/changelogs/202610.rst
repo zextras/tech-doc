@@ -56,11 +56,6 @@ Updated the documentation to reflect the move of bucket creation commands from C
 Removed obsolete storage types and added new S3 connector commands to the Powerstore CLI documentation page. These changes ensured the documentation accurately reflected the simplified storage support introduced in Carbonio 26.9.
 
 
-.. rubric:: 202610-2079 None
-
-None
-
-
 .. rubric:: 202610-2059 Updated mobile device sync CLI documentation
 
 Clarified that account identifiers for device sync commands accepted both UUID and email address. Added explicit examples and parameter descriptions for the suspend and resume sync operations.
